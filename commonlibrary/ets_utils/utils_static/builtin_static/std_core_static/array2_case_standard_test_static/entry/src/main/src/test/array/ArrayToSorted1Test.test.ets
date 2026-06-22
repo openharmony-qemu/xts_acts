@@ -1426,6 +1426,23 @@ export default function ArrayToSorted1Test(): void {
       expect(second[2]).assertUndefined();
       expect(second.lastIndexOf(undefined)).assertEqual(2);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_ONE_8200
+     * @tc.name testArrayToSortedOne082
+     * @tc.desc Verify toSorted supports consecutive chained calls without mutating the original array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayToSortedOne082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<number>(3, 1, 2);
+      const result = arr.toSorted().toSorted();
+      expect(result.toString()).assertEqual('1,2,3');
+      expect(result !== arr).assertTrue();
+      expect(arr.toString()).assertEqual('3,1,2');
+    });
+
   });
 }
 

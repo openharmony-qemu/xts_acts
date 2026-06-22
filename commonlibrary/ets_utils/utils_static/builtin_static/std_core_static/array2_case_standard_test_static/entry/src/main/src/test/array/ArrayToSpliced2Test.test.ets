@@ -1686,5 +1686,23 @@ export default function ArrayToSpliced2Test(): void {
       expect(result[1]).assertEqual(9);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_TWO_9900
+     * @tc.name testArrayToSplicedTwo099
+     * @tc.desc Verify toSpliced with item helper supports consecutive chained calls
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayToSplicedTwo099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<number>(1, 2, 3, 4);
+      const firstItems: FixedArray<number> = [9, 8];
+      const secondItems: FixedArray<number> = [7];
+      const result = toSplicedWithItems(arr, 1, 2, firstItems);
+      const chained = toSplicedWithItems(result, 2, 1, secondItems);
+      expect(chained.toString()).assertEqual('1,9,7,4');
+      expect(arr.toString()).assertEqual('1,2,3,4');
+    });
+
   });
 }

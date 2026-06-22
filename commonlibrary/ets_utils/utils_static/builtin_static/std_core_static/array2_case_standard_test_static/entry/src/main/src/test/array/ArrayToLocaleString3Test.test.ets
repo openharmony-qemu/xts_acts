@@ -78,6 +78,11 @@ class LocaleLoggingItem {
   }
 }
 
+function toLocaleStringFromAnyNumberArrayThree(value: Any): string {
+  const arr = value as Array<number>;
+  return arr.toLocaleString();
+}
+
 class LocaleThrowingItem {
   log: Array<string> = new Array<string>();
 
@@ -608,11 +613,7 @@ export default function ArrayToLocaleString3Test(): void {
     it('testArrayToLocaleStringThree030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(100);
       const result = arr.toLocaleString();
-      if (result.length > 0) {
-        expect(result.substring(0, 1).length > 0).assertTrue();
-      } else {
-        expect(result).assertEqual('');
-      }
+      expect(result.substring(0, 1).length > 0).assertTrue();
     });
 
     /**
@@ -1380,6 +1381,32 @@ export default function ArrayToLocaleString3Test(): void {
       const arr = new Array<LocaleMutatingItem | LocaleStringItem>(first, second);
       const result = arr.toLocaleString();
       expect(result).assertEqual('x,99');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_7700
+     * @tc.name testArrayToLocaleStringThree077
+     * @tc.desc Verify toLocaleString works after narrowing an Any value back to Array<number>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayToLocaleStringThree077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyValue: Any = new Array<number>(1, 2, 3);
+      expect(toLocaleStringFromAnyNumberArrayThree(anyValue)).assertEqual('1,2,3');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_7800
+     * @tc.name testArrayToLocaleStringThree078
+     * @tc.desc Verify toLocaleString supports arrays whose element type is Any
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayToLocaleStringThree078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyArr = new Array<Any>(1, 'two', true);
+      expect(anyArr.toLocaleString()).assertEqual('1,two,true');
     });
 
   });

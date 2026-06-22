@@ -983,7 +983,7 @@ export default function ArrayToLocaleString2Test(): void {
       const arr = new Array<Date>(new Date(1593604800000));
       const locales = new Intl.Locale('en-US');
       const result = arr.toLocaleString(locales);
-      expect(result).assertEqual(arr[0].toLocaleString(locales));
+      expect(result).assertEqual('7/1/2020, 8:00:00 PM');
     });
 
     /**

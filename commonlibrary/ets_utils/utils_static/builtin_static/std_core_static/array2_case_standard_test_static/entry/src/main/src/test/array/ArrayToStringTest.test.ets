@@ -73,6 +73,11 @@ function createLargeNumberArray(size: int): Array<number> {
   return arr;
 }
 
+function toStringFromAnyNumberArray(value: Any): string {
+  const arr = value as Array<number>;
+  return arr.toString();
+}
+
 function processText(text: string): number {
   return text.length;
 }
@@ -93,7 +98,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0010
      * @tc.name testArrayToString001
      * @tc.desc Verify toString accepts no arguments
      * @tc.size MediumTest
@@ -107,7 +112,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0020
      * @tc.name testArrayToString002
      * @tc.desc Verify toString must be called without passing parameters
      * @tc.size MediumTest
@@ -121,7 +126,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0030
      * @tc.name testArrayToString003
      * @tc.desc Verify toString returns a string value
      * @tc.size MediumTest
@@ -135,7 +140,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0040
      * @tc.name testArrayToString004
      * @tc.desc Verify toString uses comma as the default separator
      * @tc.size MediumTest
@@ -149,7 +154,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0050
      * @tc.name testArrayToString005
      * @tc.desc Verify empty arrays return an empty string
      * @tc.size MediumTest
@@ -163,7 +168,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0060
      * @tc.name testArrayToString006
      * @tc.desc Verify single-element arrays return the element text only
      * @tc.size MediumTest
@@ -177,7 +182,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0070
      * @tc.name testArrayToString007
      * @tc.desc Verify two-element arrays are joined by one comma
      * @tc.size MediumTest
@@ -191,7 +196,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0080
      * @tc.name testArrayToString008
      * @tc.desc Verify large arrays can be converted to a non-empty comma-joined string
      * @tc.size MediumTest
@@ -207,7 +212,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0090
      * @tc.name testArrayToString009
      * @tc.desc Verify number arrays convert to comma-separated number text
      * @tc.size MediumTest
@@ -221,7 +226,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0100
      * @tc.name testArrayToString010
      * @tc.desc Verify string arrays convert to comma-separated text
      * @tc.size MediumTest
@@ -235,7 +240,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0110
      * @tc.name testArrayToString011
      * @tc.desc Verify boolean arrays convert to comma-separated boolean text
      * @tc.size MediumTest
@@ -249,7 +254,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0120
      * @tc.name testArrayToString012
      * @tc.desc Verify union-typed arrays convert each element before joining
      * @tc.size MediumTest
@@ -263,7 +268,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0130
      * @tc.name testArrayToString013
      * @tc.desc Verify null elements follow join-style empty-field behavior
      * @tc.size MediumTest
@@ -280,7 +285,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0140
      * @tc.name testArrayToString014
      * @tc.desc Verify undefined elements follow join-style empty-field behavior
      * @tc.size MediumTest
@@ -297,7 +302,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0150
      * @tc.name testArrayToString015
      * @tc.desc Verify zero values are converted without being dropped
      * @tc.size MediumTest
@@ -311,7 +316,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0160
      * @tc.name testArrayToString016
      * @tc.desc Verify empty-string elements create adjacent separators
      * @tc.size MediumTest
@@ -325,7 +330,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0170
      * @tc.name testArrayToString017
      * @tc.desc Verify negative numbers convert with their sign preserved
      * @tc.size MediumTest
@@ -339,7 +344,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0180
      * @tc.name testArrayToString018
      * @tc.desc Verify floating-point numbers keep their decimal representation
      * @tc.size MediumTest
@@ -353,7 +358,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0190
      * @tc.name testArrayToString019
      * @tc.desc Verify nested arrays contribute their own comma-separated string
      * @tc.size MediumTest
@@ -368,7 +373,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0200
      * @tc.name testArrayToString020
      * @tc.desc Verify multi-level nested arrays flatten through recursive toString calls
      * @tc.size MediumTest
@@ -384,7 +389,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0210
      * @tc.name testArrayToString021
      * @tc.desc Verify empty nested arrays still produce an empty field in the output
      * @tc.size MediumTest
@@ -399,7 +404,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0220
      * @tc.name testArrayToString022
      * @tc.desc Verify toString returns the same value as join with no separator argument
      * @tc.size MediumTest
@@ -414,7 +419,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0230
      * @tc.name testArrayToString023
      * @tc.desc Verify toString returns the same value as join with a comma separator
      * @tc.size MediumTest
@@ -429,7 +434,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0240
      * @tc.name testArrayToString024
      * @tc.desc Verify toString always uses commas while join can use custom separators
      * @tc.size MediumTest
@@ -445,7 +450,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0250
      * @tc.name testArrayToString025
      * @tc.desc Verify toString does not modify the original array
      * @tc.size MediumTest
@@ -462,7 +467,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0260
      * @tc.name testArrayToString026
      * @tc.desc Verify repeated toString calls return the same result
      * @tc.size MediumTest
@@ -477,7 +482,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0270
      * @tc.name testArrayToString027
      * @tc.desc Verify array objects use each element custom toString implementation
      * @tc.size MediumTest
@@ -493,7 +498,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0280
      * @tc.name testArrayToString028
      * @tc.desc Verify objects without a custom override still produce a non-empty string
      * @tc.size MediumTest
@@ -510,7 +515,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0290
      * @tc.name testArrayToString029
      * @tc.desc Verify toString can be used for array log output
      * @tc.size MediumTest
@@ -525,7 +530,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0300
      * @tc.name testArrayToString030
      * @tc.desc Verify toString can serialize a simple string array
      * @tc.size MediumTest
@@ -539,7 +544,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0310
      * @tc.name testArrayToString031
      * @tc.desc Verify toString can be embedded in display text
      * @tc.size MediumTest
@@ -553,7 +558,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0320
      * @tc.name testArrayToString032
      * @tc.desc Verify array contents can be compared through their toString results
      * @tc.size MediumTest
@@ -567,7 +572,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0330
      * @tc.name testArrayToString033
      * @tc.desc Verify string methods can be chained after toString
      * @tc.size MediumTest
@@ -581,7 +586,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0340
      * @tc.name testArrayToString034
      * @tc.desc Verify a toString result can be passed as a function argument
      * @tc.size MediumTest
@@ -595,7 +600,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0350
      * @tc.name testArrayToString035
      * @tc.desc Verify array-method chains can end with toString
      * @tc.size MediumTest
@@ -609,7 +614,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0360
      * @tc.name testArrayToString036
      * @tc.desc Verify element strings that contain commas are preserved as-is
      * @tc.size MediumTest
@@ -623,7 +628,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0370
      * @tc.name testArrayToString037
      * @tc.desc Verify escape characters are kept in the joined string output
      * @tc.size MediumTest
@@ -638,7 +643,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0380
      * @tc.name testArrayToString038
      * @tc.desc Verify different generic array instances still return string results
      * @tc.size MediumTest
@@ -653,7 +658,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0390
      * @tc.name testArrayToString039
      * @tc.desc Verify the return type can be stored in a string variable
      * @tc.size MediumTest
@@ -667,7 +672,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0400
      * @tc.name testArrayToString040
      * @tc.desc Verify large arrays can be converted to a non-empty string repeatedly
      * @tc.size MediumTest
@@ -683,7 +688,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0410
      * @tc.name testArrayToString041
      * @tc.desc Verify repeated toString calls remain stable in a loop
      * @tc.size MediumTest
@@ -700,7 +705,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0420
      * @tc.name testArrayToString042
      * @tc.desc Verify slice results can be converted by toString
      * @tc.size MediumTest
@@ -714,7 +719,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0430
      * @tc.name testArrayToString043
      * @tc.desc Verify mapped arrays can be converted by toString
      * @tc.size MediumTest
@@ -728,7 +733,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0440
      * @tc.name testArrayToString044
      * @tc.desc Verify filtered arrays can be converted by toString
      * @tc.size MediumTest
@@ -742,7 +747,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0450
      * @tc.name testArrayToString045
      * @tc.desc Verify empty-array toString results have zero length
      * @tc.size MediumTest
@@ -756,7 +761,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0460
      * @tc.name testArrayToString046
      * @tc.desc Verify one-element arrays preserve the single element text
      * @tc.size MediumTest
@@ -769,7 +774,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0470
      * @tc.name testArrayToString047
      * @tc.desc Verify two-element arrays produce two comma-separated fields
      * @tc.size MediumTest
@@ -783,7 +788,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0480
      * @tc.name testArrayToString048
      * @tc.desc Verify explicit undefined middle values follow join-style empty-field behavior
      * @tc.size MediumTest
@@ -801,7 +806,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0490
      * @tc.name testArrayToString049
      * @tc.desc Verify an explicit undefined tail value leaves a trailing empty field
      * @tc.size MediumTest
@@ -818,7 +823,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0500
      * @tc.name testArrayToString050
      * @tc.desc Verify an explicit undefined head value leaves a leading empty field
      * @tc.size MediumTest
@@ -835,7 +840,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0510
      * @tc.name testArrayToString051
      * @tc.desc Verify arrays filled with explicit undefined serialize as separators only
      * @tc.size MediumTest
@@ -851,7 +856,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_5200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0520
      * @tc.name testArrayToString052
      * @tc.desc Verify direct and generated explicit undefined values serialize the same way
      * @tc.size MediumTest
@@ -870,7 +875,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_5300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0530
      * @tc.name testArrayToString053
      * @tc.desc Verify toString ignores join custom separators and always uses comma
      * @tc.size MediumTest
@@ -884,7 +889,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_5400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0540
      * @tc.name testArrayToString054
      * @tc.desc Verify plus string concatenation can embed explicit toString output
      * @tc.size MediumTest
@@ -898,7 +903,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_5500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0550
      * @tc.name testArrayToString055
      * @tc.desc Verify template strings can embed explicit toString output
      * @tc.size MediumTest
@@ -912,7 +917,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_5600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0560
      * @tc.name testArrayToString056
      * @tc.desc Verify parseInt can consume single-element array toString output
      * @tc.size MediumTest
@@ -926,7 +931,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_5700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0570
      * @tc.name testArrayToString057
      * @tc.desc Verify parseFloat can consume single floating-point array text
      * @tc.size MediumTest
@@ -940,7 +945,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_5800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0580
      * @tc.name testArrayToString058
      * @tc.desc Verify multi-element numeric text cannot be parsed as one number
      * @tc.size MediumTest
@@ -954,7 +959,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_5900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0590
      * @tc.name testArrayToString059
      * @tc.desc Verify regex construction can use array toString text as the pattern
      * @tc.size MediumTest
@@ -968,7 +973,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_6000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0600
      * @tc.name testArrayToString060
      * @tc.desc Verify toString renders explicit undefined source elements as empty fields
      * @tc.size MediumTest
@@ -985,7 +990,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_6100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0610
      * @tc.name testArrayToString061
      * @tc.desc Verify toString serializes NaN and Infinity numeric values
      * @tc.size MediumTest
@@ -999,7 +1004,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_6200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0620
      * @tc.name testArrayToString062
      * @tc.desc Verify toString serializes negative zero as zero while preserving the value sign
      * @tc.size MediumTest
@@ -1013,7 +1018,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_6300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0630
      * @tc.name testArrayToString063
      * @tc.desc Verify toString serializes char arrays as their character text
      * @tc.size MediumTest
@@ -1027,7 +1032,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_6400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0640
      * @tc.name testArrayToString064
      * @tc.desc Verify toString serializes enum arrays using enum numeric values
      * @tc.size MediumTest
@@ -1041,7 +1046,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_6500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0650
      * @tc.name testArrayToString065
      * @tc.desc Verify toString calls object toString methods from left to right
      * @tc.size MediumTest
@@ -1062,7 +1067,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_6600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0660
      * @tc.name testArrayToString066
      * @tc.desc Verify object toString results containing commas are not escaped
      * @tc.size MediumTest
@@ -1077,7 +1082,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_6700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0670
      * @tc.name testArrayToString067
      * @tc.desc Verify comma-like string elements create indistinguishable comma fields
      * @tc.size MediumTest
@@ -1093,7 +1098,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_6800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0680
      * @tc.name testArrayToString068
      * @tc.desc Verify null and undefined produce empty fields around concrete values
      * @tc.size MediumTest
@@ -1106,7 +1111,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_6900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0690
      * @tc.name testArrayToString069
      * @tc.desc Verify nested arrays contribute inner commas to the outer comma stream
      * @tc.size MediumTest
@@ -1120,7 +1125,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_7000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0700
      * @tc.name testArrayToString070
      * @tc.desc Verify explicit undefined values become empty fields
      * @tc.size MediumTest
@@ -1136,7 +1141,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_7100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0710
      * @tc.name testArrayToString071
      * @tc.desc Verify separate dense arrays with undefined share the same toString text
      * @tc.size MediumTest
@@ -1154,7 +1159,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_7200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0720
      * @tc.name testArrayToString072
      * @tc.desc Verify toString uses the current order after reverse without changing length
      * @tc.size MediumTest
@@ -1169,7 +1174,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_7300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0730
      * @tc.name testArrayToString073
      * @tc.desc Verify toString on a sorted copy leaves the source order unchanged
      * @tc.size MediumTest
@@ -1192,7 +1197,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_7400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0740
      * @tc.name testArrayToString074
      * @tc.desc Verify toString on a toSpliced copy includes inserted comma-bearing text
      * @tc.size MediumTest
@@ -1207,7 +1212,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_7500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0750
      * @tc.name testArrayToString075
      * @tc.desc Verify toString on a with copy reflects the replacement only in the copy
      * @tc.size MediumTest
@@ -1220,7 +1225,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_7600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0760
      * @tc.name testArrayToString076
      * @tc.desc Verify toString reflects mutations made by object element conversion
      * @tc.size MediumTest
@@ -1237,7 +1242,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_7700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0770
      * @tc.name testArrayToString077
      * @tc.desc Verify toString uses comma positions after push adds nullish values
      * @tc.size MediumTest
@@ -1251,7 +1256,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_7800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0780
      * @tc.name testArrayToString078
      * @tc.desc Verify toString after unshift preserves argument order with comma text
      * @tc.size MediumTest
@@ -1265,7 +1270,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_7900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0790
      * @tc.name testArrayToString079
      * @tc.desc Verify toString after pop no longer observes the removed object
      * @tc.size MediumTest
@@ -1284,7 +1289,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_8000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0800
      * @tc.name testArrayToString080
      * @tc.desc Verify toString after shift serializes the new head first
      * @tc.size MediumTest
@@ -1298,7 +1303,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_8100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0810
      * @tc.name testArrayToString081
      * @tc.desc Verify toString after reverse still delegates to object toString in new order
      * @tc.size MediumTest
@@ -1318,7 +1323,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_8200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0820
      * @tc.name testArrayToString082
      * @tc.desc Verify toString after sort serializes special numbers in sorted positions
      * @tc.size MediumTest
@@ -1340,7 +1345,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_8300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0830
      * @tc.name testArrayToString083
      * @tc.desc Verify toString after splice replacement includes inserted object comma text
      * @tc.size MediumTest
@@ -1356,7 +1361,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_8400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0840
      * @tc.name testArrayToString084
      * @tc.desc Verify toString after length truncation ignores stale removed elements
      * @tc.size MediumTest
@@ -1370,7 +1375,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_8500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0850
      * @tc.name testArrayToString085
      * @tc.desc Verify toString after shrinkTo ignores truncated sparse and concrete tail slots
      * @tc.size MediumTest
@@ -1388,7 +1393,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_8600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0860
      * @tc.name testArrayToString086
      * @tc.desc Verify toString serializes Array.of values with comma-bearing strings
      * @tc.size MediumTest
@@ -1401,7 +1406,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_8700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0870
      * @tc.name testArrayToString087
      * @tc.desc Verify toString serializes Array.from Set values in insertion order
      * @tc.size MediumTest
@@ -1414,7 +1419,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_8800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0880
      * @tc.name testArrayToString088
      * @tc.desc Verify a self-referential empty array serializes as an empty field
      * @tc.size MediumTest
@@ -1428,7 +1433,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_8900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0890
      * @tc.name testArrayToString089
      * @tc.desc Verify self references after ordinary values become trailing empty fields
      * @tc.size MediumTest
@@ -1442,7 +1447,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_9000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0900
      * @tc.name testArrayToString090
      * @tc.desc Verify nested cyclic references are guarded during recursive toString
      * @tc.size MediumTest
@@ -1457,7 +1462,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_9100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0910
      * @tc.name testArrayToString091
      * @tc.desc Verify two nested arrays flatten through comma delegation
      * @tc.size MediumTest
@@ -1472,7 +1477,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_9200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0920
      * @tc.name testArrayToString092
      * @tc.desc Verify deeply nested single-element arrays collapse to one value
      * @tc.size MediumTest
@@ -1487,7 +1492,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_9300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0930
      * @tc.name testArrayToString093
      * @tc.desc Verify nested arrays with explicit undefined keep empty fields when flattened
      * @tc.size MediumTest
@@ -1504,7 +1509,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_9400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0940
      * @tc.name testArrayToString094
      * @tc.desc Verify nested empty arrays produce empty fields between neighbors
      * @tc.size MediumTest
@@ -1518,7 +1523,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_9500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0950
      * @tc.name testArrayToString095
      * @tc.desc Verify boolean and nullish values share join-style comma positions
      * @tc.size MediumTest
@@ -1531,7 +1536,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_9600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0960
      * @tc.name testArrayToString096
      * @tc.desc Verify string split can consume toString comma-separated output
      * @tc.size MediumTest
@@ -1546,7 +1551,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_9700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0970
      * @tc.name testArrayToString097
      * @tc.desc Verify Set based arrays serialize unique insertion order values
      * @tc.size MediumTest
@@ -1559,7 +1564,7 @@ export default function ArrayToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_9800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0980
      * @tc.name testArrayToString098
      * @tc.desc Verify toString output remains stable after the source is copied first
      * @tc.size MediumTest
@@ -1572,6 +1577,32 @@ export default function ArrayToStringTest(): void {
       arr.pushOne(4);
       expect(copied.toString()).assertEqual('1,2,3');
       expect(arr.toString()).assertEqual('1,2,3,4');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_0990
+     * @tc.name testArrayToString099
+     * @tc.desc Verify toString works after narrowing an Any value back to Array<number>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayToString099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyValue: Any = new Array<number>(1, 2, 3);
+      expect(toStringFromAnyNumberArray(anyValue)).assertEqual('1,2,3');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_1000
+     * @tc.name testArrayToString100
+     * @tc.desc Verify toString supports arrays whose element type is Any
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayToString100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyArr = new Array<Any>(1, 'two', true);
+      expect(anyArr.toString()).assertEqual('1,two,true');
     });
 
   });

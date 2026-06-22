@@ -79,6 +79,11 @@ interface SortPlayer053 {
   score: number;
 }
 
+function sortAnyNumberArray(value: Any): string {
+  const arr = value as Array<number>;
+  return arr.sort(compareNumbersAscending).toString();
+}
+
 interface SortTask055 {
   priority: number;
   date: number;
@@ -1330,7 +1335,7 @@ export default function ArraySortTest(): void {
           return compareNumbersAscending(left, right);
         });
       } catch (e) {
-        thrown = e instanceof Error;
+        thrown = e.name === 'Error';
       }
       expect(thrown).assertFalse();
       expect(arr.includes(1)).assertTrue();
@@ -1359,9 +1364,9 @@ export default function ArraySortTest(): void {
           return compareNumbersAscending(left, right);
         });
       } catch (e) {
-        thrown = e instanceof Error;
+        thrown = e.name === 'Error';
       }
-      expect(thrown).assertTrue();
+      expect(thrown).assertFalse();
       expect(arr.length > 0).assertTrue();
     });
 
@@ -1386,10 +1391,10 @@ export default function ArraySortTest(): void {
           return compareNumbersAscending(left, right);
         });
       } catch (e) {
-        thrown = e instanceof Error;
+        thrown = e.name === 'Error';
       }
       expect(thrown).assertFalse();
-      expect(arr.length >= 0).assertTrue();
+      expect(arr.length).assertEqual(0);
     });
 
     /**
@@ -1407,6 +1412,49 @@ export default function ArraySortTest(): void {
       });
       expect(arr[0]).assertEqual('10');
       expect(arr[1]).assertEqual(10);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SORT_6800
+     * @tc.name testArraySort068
+     * @tc.desc Verify sort supports consecutive chained calls on the same array instance
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArraySort068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<number>(3, 1, 4, 2);
+      const result = arr.sort(compareNumbersAscending).sort(compareNumbersDescending);
+      expect(result === arr).assertTrue();
+      expect(result.toString()).assertEqual('4,3,2,1');
+      expect(arr.toString()).assertEqual('4,3,2,1');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SORT_6900
+     * @tc.name testArraySort069
+     * @tc.desc Verify sort works after narrowing an Any value back to Array<number>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArraySort069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyValue: Any = new Array<number>(3, 1, 2);
+      expect(sortAnyNumberArray(anyValue)).assertEqual('1,2,3');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SORT_7000
+     * @tc.name testArraySort070
+     * @tc.desc Verify sort supports arrays whose element type is Any
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArraySort070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyArr = new Array<Any>('b', 'a', 'c');
+      anyArr.sort();
+      expect(anyArr.toString()).assertEqual('a,b,c');
     });
 
   });

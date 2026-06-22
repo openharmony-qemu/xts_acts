@@ -40,6 +40,11 @@ function createOneBasedArray(size: int): Array<number> {
   return arr;
 }
 
+function sliceAnyNumberArrayThree(value: Any, start: int, end: int): string {
+  const arr = value as Array<number>;
+  return arr.slice(start, end).toString();
+}
+
 export default function ArraySlice3Test(): void {
   describe('ArraySlice3Test', (): void => {
     beforeAll((): void => {
@@ -961,6 +966,49 @@ export default function ArraySlice3Test(): void {
       result.pushOne(9);
       expect(result.toString()).assertEqual('7,8,9');
       expect(arr.toString()).assertEqual('5,6,7,8');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SLICE_THREE_5200
+     * @tc.name testArraySliceThree052
+     * @tc.desc Verify slice supports consecutive chained calls on returned copies
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArraySliceThree052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<number>(1, 2, 3, 4, 5, 6);
+      const result = arr.slice(1, 5).slice(1, 3);
+      expect(result.toString()).assertEqual('3,4');
+      expect(arr.toString()).assertEqual('1,2,3,4,5,6');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SLICE_THREE_5300
+     * @tc.name testArraySliceThree053
+     * @tc.desc Verify slice works after narrowing an Any value back to Array<number>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArraySliceThree053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyValue: Any = new Array<number>(1, 2, 3, 4);
+      expect(sliceAnyNumberArrayThree(anyValue, 1, 3)).assertEqual('2,3');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SLICE_THREE_5400
+     * @tc.name testArraySliceThree054
+     * @tc.desc Verify slice supports arrays whose element type is Any
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArraySliceThree054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyArr = new Array<Any>(1, 'two', true, 4);
+      const result = anyArr.slice(1, 3);
+      expect(result.toString()).assertEqual('two,true');
+      expect(result.length).assertEqual(2);
     });
 
   });

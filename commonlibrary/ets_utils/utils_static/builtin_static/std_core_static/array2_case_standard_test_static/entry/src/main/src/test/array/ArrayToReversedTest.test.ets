@@ -68,6 +68,11 @@ function isFullyReversed(source: Array<number>, result: Array<number>): boolean 
   return true;
 }
 
+function toReversedFromAnyNumberArray(value: Any): string {
+  const arr = value as Array<number>;
+  return arr.toReversed().toString();
+}
+
 export default function ArrayToReversedTest(): void {
   describe('ArrayToReversedTest', (): void => {
     beforeAll((): void => {
@@ -1535,6 +1540,50 @@ export default function ArrayToReversedTest(): void {
       expect(result.lastIndexOf(undefined)).assertEqual(1);
       expect(arr.lastIndexOf(undefined)).assertEqual(1);
       expect(arr.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_REVERSED_8900
+     * @tc.name testArrayToReversed089
+     * @tc.desc Verify toReversed supports consecutive chained calls and restores the original order after two reversals
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayToReversed089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<number>(1, 2, 3, 4);
+      const result = arr.toReversed().toReversed();
+      expect(result !== arr).assertTrue();
+      expect(result.toString()).assertEqual('1,2,3,4');
+      expect(arr.toString()).assertEqual('1,2,3,4');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_REVERSED_9000
+     * @tc.name testArrayToReversed090
+     * @tc.desc Verify toReversed works after narrowing an Any value back to Array<number>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayToReversed090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyValue: Any = new Array<number>(1, 2, 3);
+      expect(toReversedFromAnyNumberArray(anyValue)).assertEqual('3,2,1');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_REVERSED_9100
+     * @tc.name testArrayToReversed091
+     * @tc.desc Verify toReversed supports arrays whose element type is Any
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayToReversed091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyArr = new Array<Any>(1, 'two', true);
+      const result = anyArr.toReversed();
+      expect(result.toString()).assertEqual('true,two,1');
+      expect(anyArr.toString()).assertEqual('1,two,true');
     });
 
   });

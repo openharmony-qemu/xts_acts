@@ -1335,6 +1335,58 @@ export default function ArrayToLocaleString1Test(): void {
       expect(arr.lastIndexOf(undefined)).assertEqual(1);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_7600
+     * @tc.name testArrayToLocaleStringOne076
+     * @tc.desc Verify long decimal fractions can be rounded with maximumFractionDigits
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayToLocaleStringOne076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<number>(1234.56789123, 0.123456789);
+      const locales = new Intl.Locale('en-US');
+      const options: Intl.NumberFormatOptions = { style: 'decimal', maximumFractionDigits: 4 };
+      const result = arr.toLocaleString(locales, options);
+      expect(result).assertEqual('1,234.5679,0.1235');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_7700
+     * @tc.name testArrayToLocaleStringOne077
+     * @tc.desc Verify long decimal fractions can preserve trailing digits with minimumFractionDigits and maximumFractionDigits
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayToLocaleStringOne077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<number>(1.23456789, 9.8);
+      const locales = new Intl.Locale('en-US');
+      const options: Intl.NumberFormatOptions = {
+        style: 'decimal',
+        minimumFractionDigits: 6,
+        maximumFractionDigits: 6
+      };
+      const result = arr.toLocaleString(locales, options);
+      expect(result).assertEqual('1.234568,9.800000');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_7800
+     * @tc.name testArrayToLocaleStringOne078
+     * @tc.desc Verify long negative decimal fractions keep the minus sign after localized rounding
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayToLocaleStringOne078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<number>(-1234.987654321, -0.00000049);
+      const locales = new Intl.Locale('en-US');
+      const options: Intl.NumberFormatOptions = { style: 'decimal', maximumFractionDigits: 6 };
+      const result = arr.toLocaleString(locales, options);
+      expect(result).assertEqual('-1,234.987654,-0');
+    });
+
   });
 }
 

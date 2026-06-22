@@ -44,6 +44,11 @@ function createRangeArray(size: int): Array<number> {
   return arr;
 }
 
+function spliceAnyNumberArrayTwo(value: Any, start: int): string {
+  const arr = value as Array<number>;
+  return arr.splice(start).toString() + '|' + arr.toString();
+}
+
 export default function ArraySplice2Test(): void {
   describe('ArraySplice2Test', (): void => {
     beforeAll((): void => {
@@ -1051,6 +1056,49 @@ export default function ArraySplice2Test(): void {
       expect(arr[2]).assertEqual(3);
       expect(arr.indexOf(undefined)).assertEqual(1);
       expect(removed.toString()).assertEqual('4');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SPLICE_TWO_6000
+     * @tc.name testArraySpliceTwo060
+     * @tc.desc Verify splice supports consecutive chained calls on the removed subarray
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArraySpliceTwo060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<number>(10, 20, 30, 40);
+      const result = arr.splice(1).splice(1);
+      expect(result.toString()).assertEqual('30,40');
+      expect(arr.toString()).assertEqual('10');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SPLICE_TWO_6100
+     * @tc.name testArraySpliceTwo061
+     * @tc.desc Verify one-argument splice works after narrowing an Any value back to Array<number>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArraySpliceTwo061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyValue: Any = new Array<number>(1, 2, 3, 4);
+      expect(spliceAnyNumberArrayTwo(anyValue, 2)).assertEqual('3,4|1,2');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SPLICE_TWO_6200
+     * @tc.name testArraySpliceTwo062
+     * @tc.desc Verify one-argument splice supports arrays whose element type is Any
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArraySpliceTwo062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyArr = new Array<Any>(1, 'two', true);
+      const removed = anyArr.splice(1);
+      expect(removed.toString()).assertEqual('two,true');
+      expect(anyArr.toString()).assertEqual('1');
     });
 
   });

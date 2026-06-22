@@ -1154,5 +1154,20 @@ export default function ArraySplice1Test(): void {
       expect(filledRemoved.indexOf(undefined)).assertEqual(0);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SPLICE_ONE_6700
+     * @tc.name testArraySpliceOne067
+     * @tc.desc Verify splice supports consecutive chained calls on arrays returned from prior removals
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArraySpliceOne067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const result = arr.splice(1, 3).splice(1, 1);
+      expect(result.toString()).assertEqual('3');
+      expect(arr.toString()).assertEqual('1,5');
+    });
+
   });
 }

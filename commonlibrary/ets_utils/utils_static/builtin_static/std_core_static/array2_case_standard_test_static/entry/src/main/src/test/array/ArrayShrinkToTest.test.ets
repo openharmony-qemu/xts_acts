@@ -53,6 +53,12 @@ function createRangeArray(size: int): Array<number> {
   return arr;
 }
 
+function shrinkAnyNumberArray(value: Any, target: int): string {
+  const arr = value as Array<number>;
+  arr.shrinkTo(target);
+  return arr.toString() + '|' + arr.length.toString();
+}
+
 export default function ArrayShrinkToTest(): void {
   describe('ArrayShrinkToTest', (): void => {
     beforeAll((): void => {
@@ -69,7 +75,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0010
      * @tc.name testArrayShrinkTo001
      * @tc.desc Verify arrayLength is required to shrink the array
      * @tc.size MediumTest
@@ -83,7 +89,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0020
      * @tc.name testArrayShrinkTo002
      * @tc.desc Verify shrinkTo keeps the requested normal target length
      * @tc.size MediumTest
@@ -98,7 +104,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0030
      * @tc.name testArrayShrinkTo003
      * @tc.desc Verify shrinkTo can clear an array and allow rebuilding it with later pushes
      * @tc.size MediumTest
@@ -114,7 +120,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0040
      * @tc.name testArrayShrinkTo004
      * @tc.desc Verify shrinkTo to one keeps only the first element, which can then be popped
      * @tc.size MediumTest
@@ -131,7 +137,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0050
      * @tc.name testArrayShrinkTo005
      * @tc.desc Verify shrinkTo keeps the array unchanged at the current length
      * @tc.size MediumTest
@@ -148,7 +154,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0060
      * @tc.name testArrayShrinkTo006
      * @tc.desc Verify very large target lengths do not expand the array
      * @tc.size MediumTest
@@ -163,7 +169,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0070
      * @tc.name testArrayShrinkTo007
      * @tc.desc Verify shrinkTo does not expand arrays when the target length is larger
      * @tc.size MediumTest
@@ -178,7 +184,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0080
      * @tc.name testArrayShrinkTo008
      * @tc.desc Verify negative target lengths throw RangeError
      * @tc.size MediumTest
@@ -196,7 +202,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0090
      * @tc.name testArrayShrinkTo009
      * @tc.desc Verify shrinkTo preserves prefix order for string arrays
      * @tc.size MediumTest
@@ -211,7 +217,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0100
      * @tc.name testArrayShrinkTo010
      * @tc.desc Verify shrinkTo can trim object arrays while preserving the first object reference
      * @tc.size MediumTest
@@ -227,7 +233,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0110
      * @tc.name testArrayShrinkTo011
      * @tc.desc Verify shrinkTo can reduce large generated arrays to a smaller prefix
      * @tc.size MediumTest
@@ -242,7 +248,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0120
      * @tc.name testArrayShrinkTo012
      * @tc.desc Verify scientific notation values can be used as numeric lengths
      * @tc.size MediumTest
@@ -257,7 +263,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0130
      * @tc.name testArrayShrinkTo013
      * @tc.desc Verify hexadecimal numeric values can be used as lengths
      * @tc.size MediumTest
@@ -272,7 +278,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0140
      * @tc.name testArrayShrinkTo014
      * @tc.desc Verify shrinkTo can reduce interface-typed arrays while preserving leading entries
      * @tc.size MediumTest
@@ -291,7 +297,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0150
      * @tc.name testArrayShrinkTo015
      * @tc.desc Verify shrinkTo returns void
      * @tc.size MediumTest
@@ -306,7 +312,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0160
      * @tc.name testArrayShrinkTo016
      * @tc.desc Verify shrinkTo keeps the leading string prefix after truncation
      * @tc.size MediumTest
@@ -321,7 +327,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0170
      * @tc.name testArrayShrinkTo017
      * @tc.desc Verify out-of-range elements cannot be accessed after shrinkTo truncates the array
      * @tc.size MediumTest
@@ -342,7 +348,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0180
      * @tc.name testArrayShrinkTo018
      * @tc.desc Verify multiple shrinkTo calls can progressively trim a string array while preserving order
      * @tc.size MediumTest
@@ -367,7 +373,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0190
      * @tc.name testArrayShrinkTo019
      * @tc.desc Verify shrinkTo supports staircase reductions with varying step sizes
      * @tc.size MediumTest
@@ -389,7 +395,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0200
      * @tc.name testArrayShrinkTo020
      * @tc.desc Verify shrinkTo works together with later extendTo calls
      * @tc.size MediumTest
@@ -410,7 +416,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0210
      * @tc.name testArrayShrinkTo021
      * @tc.desc Verify remaining elements can still be modified after shrinkTo
      * @tc.size MediumTest
@@ -430,7 +436,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0220
      * @tc.name testArrayShrinkTo022
      * @tc.desc Verify new elements can be appended after shrinkTo
      * @tc.size MediumTest
@@ -450,7 +456,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0230
      * @tc.name testArrayShrinkTo023
      * @tc.desc Verify shrinkTo works for number arrays
      * @tc.size MediumTest
@@ -464,7 +470,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0240
      * @tc.name testArrayShrinkTo024
      * @tc.desc Verify shrinkTo works for string arrays
      * @tc.size MediumTest
@@ -480,7 +486,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0250
      * @tc.name testArrayShrinkTo025
      * @tc.desc Verify shrinkTo works for boolean arrays
      * @tc.size MediumTest
@@ -496,7 +502,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0260
      * @tc.name testArrayShrinkTo026
      * @tc.desc Verify shrinkTo works for arrays of custom classes
      * @tc.size MediumTest
@@ -517,7 +523,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0270
      * @tc.name testArrayShrinkTo027
      * @tc.desc Verify shrinkTo works for arrays typed by interfaces
      * @tc.size MediumTest
@@ -537,7 +543,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0280
      * @tc.name testArrayShrinkTo028
      * @tc.desc Verify shrinkTo to zero prevents later indexed access
      * @tc.size MediumTest
@@ -557,7 +563,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0290
      * @tc.name testArrayShrinkTo029
      * @tc.desc Verify large arrays can be shrunk to a small boundary safely
      * @tc.size MediumTest
@@ -579,7 +585,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0300
      * @tc.name testArrayShrinkTo030
      * @tc.desc Verify shrinkTo can emulate keeping only the first N elements
      * @tc.size MediumTest
@@ -596,7 +602,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0310
      * @tc.name testArrayShrinkTo031
      * @tc.desc Verify shrinkTo can discard most elements to reduce retained data
      * @tc.size MediumTest
@@ -611,7 +617,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0320
      * @tc.name testArrayShrinkTo032
      * @tc.desc Verify shrinkTo can enforce a maximum retained size
      * @tc.size MediumTest
@@ -628,7 +634,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0330
      * @tc.name testArrayShrinkTo033
      * @tc.desc Verify shrinkTo and extendTo affect arrays in opposite directions
      * @tc.size MediumTest
@@ -646,7 +652,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0340
      * @tc.name testArrayShrinkTo034
      * @tc.desc Verify arrays can be extended and then shrunk while preserving prefix elements
      * @tc.size MediumTest
@@ -664,7 +670,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0350
      * @tc.name testArrayShrinkTo035
      * @tc.desc Verify shrinkTo supports large one-step reductions
      * @tc.size MediumTest
@@ -679,7 +685,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0360
      * @tc.name testArrayShrinkTo036
      * @tc.desc Verify repeated small shrinkTo calls can reach the same final boundary
      * @tc.size MediumTest
@@ -696,7 +702,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0370
      * @tc.name testArrayShrinkTo037
      * @tc.desc Verify all accessible positions remain valid after shrinkTo
      * @tc.size MediumTest
@@ -718,7 +724,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0380
      * @tc.name testArrayShrinkTo038
      * @tc.desc Verify shrinkTo preserves iteration over the retained prefix
      * @tc.size MediumTest
@@ -736,7 +742,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0390
      * @tc.name testArrayShrinkTo039
      * @tc.desc Verify lookup operations reflect the retained prefix after shrinkTo
      * @tc.size MediumTest
@@ -755,7 +761,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0400
      * @tc.name testArrayShrinkTo040
      * @tc.desc Verify shrinkTo returns undefined while the shortened array remains usable
      * @tc.size MediumTest
@@ -773,7 +779,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0410
      * @tc.name testArrayShrinkTo041
      * @tc.desc Verify shrinkTo and splice can produce the same truncated length
      * @tc.size MediumTest
@@ -791,7 +797,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0420
      * @tc.name testArrayShrinkTo042
      * @tc.desc Verify shrinkTo and the length setter keep the same retained prefix
      * @tc.size MediumTest
@@ -813,7 +819,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0430
      * @tc.name testArrayShrinkTo043
      * @tc.desc Verify shrinkTo keeps a NaN value in the retained prefix
      * @tc.size MediumTest
@@ -829,7 +835,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0440
      * @tc.name testArrayShrinkTo044
      * @tc.desc Verify shrinkTo preserves Infinity and negative Infinity when both remain in the prefix
      * @tc.size MediumTest
@@ -845,7 +851,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0450
      * @tc.name testArrayShrinkTo045
      * @tc.desc Verify shrinkTo preserves the sign of a retained negative zero value
      * @tc.size MediumTest
@@ -861,7 +867,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0460
      * @tc.name testArrayShrinkTo046
      * @tc.desc Verify shrinkTo keeps explicit undefined entries inside the retained prefix without adding extra values
      * @tc.size MediumTest
@@ -879,7 +885,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0470
      * @tc.name testArrayShrinkTo047
      * @tc.desc Verify shrinkTo keeps the rewritten prefix after copyWithin changes the front of the array
      * @tc.size MediumTest
@@ -895,7 +901,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0480
      * @tc.name testArrayShrinkTo048
      * @tc.desc Verify shrinkTo keeps values written into the retained prefix by fill
      * @tc.size MediumTest
@@ -911,7 +917,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0490
      * @tc.name testArrayShrinkTo049
      * @tc.desc Verify shrinkTo preserves nested array references in the retained prefix
      * @tc.size MediumTest
@@ -930,7 +936,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0500
      * @tc.name testArrayShrinkTo050
      * @tc.desc Verify shrinkTo preserves duplicate references when the same object occupies the kept prefix
      * @tc.size MediumTest
@@ -950,7 +956,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0510
      * @tc.name testArrayShrinkTo051
      * @tc.desc Verify retained object references remain writable after shrinkTo drops later objects
      * @tc.size MediumTest
@@ -972,7 +978,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_5200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0520
      * @tc.name testArrayShrinkTo052
      * @tc.desc Verify shrinkTo keeps a mixed union prefix with both object and primitive values
      * @tc.size MediumTest
@@ -990,7 +996,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_5300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0530
      * @tc.name testArrayShrinkTo053
      * @tc.desc Verify shrinkTo preserves surrounding whitespace in retained string prefixes
      * @tc.size MediumTest
@@ -1006,7 +1012,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_5400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0540
      * @tc.name testArrayShrinkTo054
      * @tc.desc Verify shrinkTo preserves negative bigint and zero values in the kept prefix
      * @tc.size MediumTest
@@ -1022,7 +1028,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_5500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0550
      * @tc.name testArrayShrinkTo055
      * @tc.desc Verify shrinkTo removes a defined sparse tail element that lies beyond the retained boundary
      * @tc.size MediumTest
@@ -1041,7 +1047,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_5600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0560
      * @tc.name testArrayShrinkTo056
      * @tc.desc Verify shrinkTo keeps an inserted head prefix after splice prepends a value
      * @tc.size MediumTest
@@ -1057,7 +1063,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_5700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0570
      * @tc.name testArrayShrinkTo057
      * @tc.desc Verify shrinkTo on a mapped copy does not alter the original source array
      * @tc.size MediumTest
@@ -1074,7 +1080,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_5800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0580
      * @tc.name testArrayShrinkTo058
      * @tc.desc Verify shrinkTo on an Array.from copy of a typed array leaves the typed source unchanged
      * @tc.size MediumTest
@@ -1091,7 +1097,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_5900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0590
      * @tc.name testArrayShrinkTo059
      * @tc.desc Verify shrinkTo on a descending toSorted copy keeps the reordered prefix while source stays unchanged
      * @tc.size MediumTest
@@ -1116,7 +1122,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_6000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0600
      * @tc.name testArrayShrinkTo060
      * @tc.desc Verify shrinkTo can keep a rebuilt prefix after manual length truncation and later append
      * @tc.size MediumTest
@@ -1133,7 +1139,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_6100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0610
      * @tc.name testArrayShrinkTo061
      * @tc.desc Verify shrinkTo keeps only the requested two-element prefix
      * @tc.size MediumTest
@@ -1147,7 +1153,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_6200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0620
      * @tc.name testArrayShrinkTo062
      * @tc.desc Verify shrinkTo can clear an array completely
      * @tc.size MediumTest
@@ -1161,7 +1167,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_6300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0630
      * @tc.name testArrayShrinkTo063
      * @tc.desc Verify shrinkTo leaves an array unchanged when target equals current length
      * @tc.size MediumTest
@@ -1176,7 +1182,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_6400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0640
      * @tc.name testArrayShrinkTo064
      * @tc.desc Verify shrinkTo does not expand an array when target exceeds current length
      * @tc.size MediumTest
@@ -1190,7 +1196,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_6500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0650
      * @tc.name testArrayShrinkTo065
      * @tc.desc Verify shrinkTo supports string arrays
      * @tc.size MediumTest
@@ -1204,7 +1210,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_6600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0660
      * @tc.name testArrayShrinkTo066
      * @tc.desc Verify shrinkTo supports boolean arrays
      * @tc.size MediumTest
@@ -1218,7 +1224,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_6700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0670
      * @tc.name testArrayShrinkTo067
      * @tc.desc Verify shrinkTo supports bigint arrays
      * @tc.size MediumTest
@@ -1232,7 +1238,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_6800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0680
      * @tc.name testArrayShrinkTo068
      * @tc.desc Verify shrinkTo preserves the first object reference
      * @tc.size MediumTest
@@ -1247,7 +1253,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_6900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0690
      * @tc.name testArrayShrinkTo069
      * @tc.desc Verify failed negative shrinkTo keeps the original array intact
      * @tc.size MediumTest
@@ -1267,7 +1273,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_7000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0700
      * @tc.name testArrayShrinkTo070
      * @tc.desc Verify shrinkTo can be followed by pushOne rebuilding
      * @tc.size MediumTest
@@ -1282,7 +1288,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_7100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0710
      * @tc.name testArrayShrinkTo071
      * @tc.desc Verify shrinkTo can be followed by push rebuilding from empty state
      * @tc.size MediumTest
@@ -1297,7 +1303,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_7200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0720
      * @tc.name testArrayShrinkTo072
      * @tc.desc Verify shrinkTo can be followed by unshift on the remaining prefix
      * @tc.size MediumTest
@@ -1312,7 +1318,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_7300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0730
      * @tc.name testArrayShrinkTo073
      * @tc.desc Verify shrinkTo can be followed by pop on the remaining prefix
      * @tc.size MediumTest
@@ -1326,7 +1332,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_7400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0740
      * @tc.name testArrayShrinkTo074
      * @tc.desc Verify shrinkTo can be followed by shift on the remaining prefix
      * @tc.size MediumTest
@@ -1340,7 +1346,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_7500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0750
      * @tc.name testArrayShrinkTo075
      * @tc.desc Verify shrinkTo can be followed by reverse on the remaining prefix
      * @tc.size MediumTest
@@ -1355,7 +1361,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_7600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0760
      * @tc.name testArrayShrinkTo076
      * @tc.desc Verify shrinkTo can be followed by sort on the remaining prefix
      * @tc.size MediumTest
@@ -1378,7 +1384,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_7700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0770
      * @tc.name testArrayShrinkTo077
      * @tc.desc Verify shrinkTo works after splice changes the middle
      * @tc.size MediumTest
@@ -1393,7 +1399,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_7800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0780
      * @tc.name testArrayShrinkTo078
      * @tc.desc Verify shrinkTo works after reverse changes order first
      * @tc.size MediumTest
@@ -1408,7 +1414,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_7900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0790
      * @tc.name testArrayShrinkTo079
      * @tc.desc Verify shrinkTo works after sort changes order first
      * @tc.size MediumTest
@@ -1431,7 +1437,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_8000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0800
      * @tc.name testArrayShrinkTo080
      * @tc.desc Verify shrinkTo works on arrays created by Array.of
      * @tc.size MediumTest
@@ -1445,7 +1451,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_8100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0810
      * @tc.name testArrayShrinkTo081
      * @tc.desc Verify shrinkTo works on arrays created by Array.from
      * @tc.size MediumTest
@@ -1459,7 +1465,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_8200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0820
      * @tc.name testArrayShrinkTo082
      * @tc.desc Verify shrinkTo preserves duplicate values in the kept prefix
      * @tc.size MediumTest
@@ -1473,7 +1479,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_8300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0830
      * @tc.name testArrayShrinkTo083
      * @tc.desc Verify shrinkTo preserves negative and zero values in the kept prefix
      * @tc.size MediumTest
@@ -1487,7 +1493,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_8400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0840
      * @tc.name testArrayShrinkTo084
      * @tc.desc Verify shrinkTo works on a large generated array
      * @tc.size MediumTest
@@ -1504,7 +1510,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_8500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0850
      * @tc.name testArrayShrinkTo085
      * @tc.desc Verify shrinkTo leaves the array identity unchanged
      * @tc.size MediumTest
@@ -1519,7 +1525,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_8600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0860
      * @tc.name testArrayShrinkTo086
      * @tc.desc Verify shrinkTo leaves a valid Array instance
      * @tc.size MediumTest
@@ -1533,7 +1539,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_8700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0870
      * @tc.name testArrayShrinkTo087
      * @tc.desc Verify shrinkTo works after length has already been truncated once
      * @tc.size MediumTest
@@ -1548,7 +1554,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_8800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0880
      * @tc.name testArrayShrinkTo088
      * @tc.desc Verify shrinkTo can keep a single negative element prefix
      * @tc.size MediumTest
@@ -1562,7 +1568,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_8900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0890
      * @tc.name testArrayShrinkTo089
      * @tc.desc Verify shrinkTo can keep a single string prefix
      * @tc.size MediumTest
@@ -1576,7 +1582,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_9000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0900
      * @tc.name testArrayShrinkTo090
      * @tc.desc Verify shrinkTo can keep a two-element prefix after concat
      * @tc.size MediumTest
@@ -1590,7 +1596,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_9100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0910
      * @tc.name testArrayShrinkTo091
      * @tc.desc Verify shrinkTo can keep a prefix after with returns a copy
      * @tc.size MediumTest
@@ -1604,7 +1610,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_9200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0920
      * @tc.name testArrayShrinkTo092
      * @tc.desc Verify shrinkTo can keep a prefix after toSpliced returns a copy
      * @tc.size MediumTest
@@ -1618,7 +1624,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_9300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0930
      * @tc.name testArrayShrinkTo093
      * @tc.desc Verify shrinkTo can keep a prefix after toReversed returns a copy
      * @tc.size MediumTest
@@ -1632,7 +1638,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_9400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0940
      * @tc.name testArrayShrinkTo094
      * @tc.desc Verify shrinkTo can keep a prefix after toSorted returns a copy
      * @tc.size MediumTest
@@ -1654,7 +1660,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_9500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0950
      * @tc.name testArrayShrinkTo095
      * @tc.desc Verify shrinkTo can be followed by slice for the kept prefix
      * @tc.size MediumTest
@@ -1668,7 +1674,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_9600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0960
      * @tc.name testArrayShrinkTo096
      * @tc.desc Verify shrinkTo can be followed by map for the kept prefix
      * @tc.size MediumTest
@@ -1682,7 +1688,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_9700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0970
      * @tc.name testArrayShrinkTo097
      * @tc.desc Verify shrinkTo can be followed by reduce for the kept prefix
      * @tc.size MediumTest
@@ -1696,7 +1702,7 @@ export default function ArrayShrinkToTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_9800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0980
      * @tc.name testArrayShrinkTo098
      * @tc.desc Verify shrinkTo keeps the first element accessible by index
      * @tc.size MediumTest
@@ -1707,6 +1713,50 @@ export default function ArrayShrinkToTest(): void {
       const arr = new Array<number>(8, 9, 10);
       arr.shrinkTo(2);
       expect(arr[0]).assertEqual(8);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_0990
+     * @tc.name testArrayShrinkTo099
+     * @tc.desc Verify shrinkTo keeps the array unchanged when the target length is greater than the current length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayShrinkTo099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<number>(11, 22, 33);
+      arr.shrinkTo(arr.length + 5);
+      expect(arr.length).assertEqual(3);
+      expect(arr.toString()).assertEqual('11,22,33');
+      expect(arr[2]).assertEqual(33);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_1000
+     * @tc.name testArrayShrinkTo100
+     * @tc.desc Verify shrinkTo works after narrowing an Any value back to Array<number>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayShrinkTo100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyValue: Any = new Array<number>(1, 2, 3, 4);
+      expect(shrinkAnyNumberArray(anyValue, 2)).assertEqual('1,2|2');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_1010
+     * @tc.name testArrayShrinkTo101
+     * @tc.desc Verify shrinkTo supports arrays whose element type is Any
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayShrinkTo101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyArr = new Array<Any>(1, 'two', true);
+      anyArr.shrinkTo(2);
+      expect(anyArr.length).assertEqual(2);
+      expect(anyArr.toString()).assertEqual('1,two');
     });
 
   });

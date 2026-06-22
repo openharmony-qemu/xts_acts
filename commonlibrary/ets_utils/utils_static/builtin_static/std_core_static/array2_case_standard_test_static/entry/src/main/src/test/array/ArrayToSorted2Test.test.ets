@@ -70,6 +70,11 @@ function compareNumbersDescendingTwo(a: number, b: number): int {
   return normalizeToSortedTwo(b - a);
 }
 
+function toSortedFromAnyNumberArrayTwo(value: Any): string {
+  const arr = value as Array<number>;
+  return arr.toSorted(compareNumbersAscendingTwo).toString();
+}
+
 function compareStringsAscendingTwo(a: string, b: string): int {
   return normalizeToSortedTwo(a.localeCompare(b));
 }
@@ -1666,6 +1671,49 @@ export default function ArrayToSorted2Test(): void {
       expect(result[0]).assertEqual(5n);
       expect(result[1]).assertEqual(10n);
       expect(result[2]).assertEqual(20n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_8100
+     * @tc.name testArrayToSortedTwo081
+     * @tc.desc Verify comparator-based toSorted supports consecutive chained calls with different sort orders
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayToSortedTwo081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<number>(3, 1, 4, 2);
+      const result = arr.toSorted(compareNumbersAscendingTwo).toSorted(compareNumbersDescendingTwo);
+      expect(result.toString()).assertEqual('4,3,2,1');
+      expect(arr.toString()).assertEqual('3,1,4,2');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_8200
+     * @tc.name testArrayToSortedTwo082
+     * @tc.desc Verify comparator-based toSorted works after narrowing an Any value back to Array<number>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayToSortedTwo082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyValue: Any = new Array<number>(3, 1, 2);
+      expect(toSortedFromAnyNumberArrayTwo(anyValue)).assertEqual('1,2,3');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_8300
+     * @tc.name testArrayToSortedTwo083
+     * @tc.desc Verify comparator-based toSorted supports arrays whose element type is Any
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayToSortedTwo083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyArr = new Array<Any>(3, 1, 2);
+      const result = anyArr.toSorted();
+      expect(result.toString()).assertEqual('1,2,3');
+      expect(anyArr.toString()).assertEqual('3,1,2');
     });
   });
 }

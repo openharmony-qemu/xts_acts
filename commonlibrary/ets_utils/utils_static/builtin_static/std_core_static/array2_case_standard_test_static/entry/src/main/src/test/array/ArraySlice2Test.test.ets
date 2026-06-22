@@ -1352,6 +1352,21 @@ export default function ArraySlice2Test(): void {
       expect(result[0]).assertEqual(1);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SLICE_TWO_8100
+     * @tc.name testArraySliceTwo081
+     * @tc.desc Verify a negative second parameter trims elements from the end when start uses a positive index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArraySliceTwo081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const result = arr.slice(1, -1);
+      expect(result.toString()).assertEqual('2,3,4');
+      expect(arr.toString()).assertEqual('1,2,3,4,5');
+    });
+
   });
 }
 

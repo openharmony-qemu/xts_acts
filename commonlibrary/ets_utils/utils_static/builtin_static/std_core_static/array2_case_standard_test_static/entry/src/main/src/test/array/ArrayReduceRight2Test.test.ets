@@ -51,6 +51,11 @@ function createLargeNumberArrayTwo(size: int): Array<number> {
   return arr;
 }
 
+function reduceRightAnyNumberArrayTwo(value: Any): number {
+  const arr = value as Array<number>;
+  return arr.reduceRight((acc: number, cur: number): number => acc + cur, 0);
+}
+
 export default function ArrayReduceRight2Test(): void {
   describe('ArrayReduceRight2Test', (): void => {
     beforeAll((): void => {
@@ -1603,6 +1608,33 @@ export default function ArrayReduceRight2Test(): void {
       }, 0);
       expect(text).assertEqual('3:4;2:8;1:2;0:1;');
       expect(result).assertEqual(45);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_TWO_8800
+     * @tc.name testArrayReduceRightTwo088
+     * @tc.desc Verify reduceRight with initial value works after narrowing an Any value back to Array<number>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayReduceRightTwo088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyValue: Any = new Array<number>(1, 2, 3);
+      expect(reduceRightAnyNumberArrayTwo(anyValue)).assertEqual(6);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_TWO_8900
+     * @tc.name testArrayReduceRightTwo089
+     * @tc.desc Verify reduceRight with initial value supports arrays whose element type is Any
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayReduceRightTwo089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyArr = new Array<Any>('a', 'b', 'c');
+      const result = anyArr.reduceRight((acc: int, _cur: Any): int => acc + 1, 0);
+      expect(result).assertEqual(3);
     });
 
   });

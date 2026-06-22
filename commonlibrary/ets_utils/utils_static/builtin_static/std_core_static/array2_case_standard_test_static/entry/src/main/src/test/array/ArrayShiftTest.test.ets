@@ -53,6 +53,15 @@ function createRangeArray(size: int): Array<number> {
   return arr;
 }
 
+function shiftAnyNumberArray(value: Any): string {
+  const arr = value as Array<number>;
+  const removed = arr.shift();
+  if (removed == undefined) {
+    return 'undefined|' + arr.length.toString();
+  }
+  return removed.toString() + '|' + arr.length.toString();
+}
+
 export default function ArrayShiftTest(): void {
   describe('ArrayShiftTest', (): void => {
     beforeAll((): void => {
@@ -260,9 +269,7 @@ export default function ArrayShiftTest(): void {
     it('testArrayShift012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3);
       let result: number | undefined = arr.shift();
-      if (result !== undefined) {
-        expect(typeof result).assertEqual('number');
-      }
+      expect(typeof result).assertEqual('number');
       expect(arr.length).assertEqual(2);
     });
 
@@ -322,14 +329,8 @@ export default function ArrayShiftTest(): void {
      */
     it('testArrayShift016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>();
-      let thrown = false;
-      try {
-        let result = arr.shift();
-        expect(result).assertUndefined();
-      } catch (_error) {
-        thrown = true;
-      }
-      expect(thrown).assertFalse();
+      let result = arr.shift();
+      expect(result).assertUndefined();
     });
 
     /**
@@ -1608,6 +1609,34 @@ export default function ArrayShiftTest(): void {
       arr.unshift(9);
       expect(arr.shift()).assertEqual(9);
       expect(arr.length).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_9600
+     * @tc.name testArrayShift096
+     * @tc.desc Verify shift works after narrowing an Any value back to Array<number>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayShift096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyValue: Any = new Array<number>(1, 2, 3);
+      expect(shiftAnyNumberArray(anyValue)).assertEqual('1|2');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_9700
+     * @tc.name testArrayShift097
+     * @tc.desc Verify shift supports arrays whose element type is Any
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayShift097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyArr = new Array<Any>(1, 'two', true);
+      const removed = anyArr.shift();
+      expect(removed == 1).assertTrue();
+      expect(anyArr.toString()).assertEqual('two,true');
     });
 
   });
