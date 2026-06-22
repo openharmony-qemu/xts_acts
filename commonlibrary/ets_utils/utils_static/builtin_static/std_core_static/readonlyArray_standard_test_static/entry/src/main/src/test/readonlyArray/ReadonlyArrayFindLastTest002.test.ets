@@ -317,7 +317,7 @@ export default function ReadonlyArrayFindLastTest002(): void {
           if (value === 30) { throw new Error("boom"); }
           return false;
         });
-        expect(false).assertTrue();
+        expect().assertFail();
       } catch (e) {
         expect((e as Error).message).assertEqual("boom");
       }

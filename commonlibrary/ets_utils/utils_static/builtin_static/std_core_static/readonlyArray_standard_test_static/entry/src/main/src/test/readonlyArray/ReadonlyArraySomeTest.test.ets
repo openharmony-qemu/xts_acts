@@ -1684,7 +1684,7 @@ export default function ReadonlyArraySomeTest(): void {
               });
               expect().assertFail();
       } catch (error) {
-              expect(error != null).assertTrue();
+              expect(error.name).assertEqual('Error');
       }
     });
 

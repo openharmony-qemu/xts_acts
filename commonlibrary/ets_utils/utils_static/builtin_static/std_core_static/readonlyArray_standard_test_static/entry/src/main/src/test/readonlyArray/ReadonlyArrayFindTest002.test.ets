@@ -171,7 +171,7 @@ export default function ReadonlyArrayFindTest002(): void {
           if (value === 3) { throw new Error("stop"); }
           return false;
         });
-        expect(false).assertTrue();
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('Error');
         expect(callCount).assertEqual(3);

@@ -1335,7 +1335,7 @@ export default function ReadonlyArrayFindLastIndexTest(): void {
               });
               expect().assertFail();
       } catch (error) {
-              expect(error != null).assertTrue();
+              expect(error.name).assertEqual('Error');
       }
     });
 

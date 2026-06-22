@@ -1351,7 +1351,7 @@ export default function ReadonlyArrayFilterTest(): void {
               });
               expect().assertFail();
       } catch (error) {
-              expect(error != null).assertTrue();
+              expect(error.name).assertEqual('Error');
       }
     });
 
@@ -1684,7 +1684,7 @@ export default function ReadonlyArrayFilterTest(): void {
           if (value === 3) { throw new Error("stop"); }
           return true;
         });
-        expect(false).assertTrue();
+        expect().assertFail();
       } catch (error) {
         expect((error as Error).message).assertEqual("stop");
         expect(visited).assertEqual(3);

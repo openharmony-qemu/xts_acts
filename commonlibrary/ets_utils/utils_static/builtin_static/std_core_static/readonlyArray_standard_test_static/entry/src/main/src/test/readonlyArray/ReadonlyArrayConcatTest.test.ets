@@ -1210,7 +1210,7 @@ export default function ReadonlyArrayConcatTest(): void {
       const more: ConcatArray<float> = [1.0f];
       const result = values.concat(more);
       expect(result.length).assertEqual(2);
-      expect(result[0] !== result[0]).assertTrue();
+      expect(Number.isNaN(result[0])).assertTrue();
       expect(result[1]).assertEqual(1.0f);
     });
 

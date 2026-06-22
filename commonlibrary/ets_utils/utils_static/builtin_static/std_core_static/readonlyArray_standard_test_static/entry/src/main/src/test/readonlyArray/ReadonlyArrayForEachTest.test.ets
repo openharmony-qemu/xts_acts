@@ -1516,7 +1516,7 @@ export default function ReadonlyArrayForEachTest(): void {
               });
               expect().assertFail();
       } catch (error) {
-              expect(error != null).assertTrue();
+              expect(error.name).assertEqual('Error');
       }
     });
 
@@ -1969,7 +1969,7 @@ export default function ReadonlyArrayForEachTest(): void {
         arr.forEach((value: int): void => {
           if (value === 20) { throw new Error("forEach-trip"); }
         });
-        expect(false).assertTrue();
+        expect().assertFail();
       } catch (error) {
         caughtMessage = (error as Error).message;
       }
@@ -2045,9 +2045,9 @@ export default function ReadonlyArrayForEachTest(): void {
           count++;
           if (value === 1) { throw new Error("first"); }
         });
-        expect(false).assertTrue();
+        expect().assertFail();
       } catch (error) {
-        expect((error as Error).name).assertEqual("Error");
+        expect(error.name).assertEqual("Error");
       }
       expect(count).assertEqual(1);
     });

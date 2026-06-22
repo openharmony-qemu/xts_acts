@@ -1416,7 +1416,7 @@ export default function ReadonlyArrayMapTest(): void {
               });
               expect().assertFail();
       } catch (error) {
-              expect(error != null).assertTrue();
+              expect(error.name).assertEqual('Error');
       }
     });
 
@@ -1861,7 +1861,7 @@ export default function ReadonlyArrayMapTest(): void {
         arr.map<int>((value: int): int => {
           throw new Error("boom-map");
         });
-        expect(false).assertTrue();
+        expect().assertFail();
       } catch (e) {
         caught = true;
         msg = (e as Error).message;
@@ -1910,7 +1910,7 @@ export default function ReadonlyArrayMapTest(): void {
           if (value === 1) { throw new Error("stop"); }
           return value;
         });
-        expect(false).assertTrue();
+        expect().assertFail();
       } catch (e) {
         caught = true;
       }

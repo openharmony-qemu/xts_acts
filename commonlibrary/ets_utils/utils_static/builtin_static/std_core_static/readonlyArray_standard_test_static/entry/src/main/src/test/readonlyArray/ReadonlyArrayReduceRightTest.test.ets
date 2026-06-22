@@ -1052,7 +1052,7 @@ export default function ReadonlyArrayReduceRightTest(): void {
               arr.reduceRight((prev: int, cur: int): int => prev + cur);
               expect().assertFail();
       } catch (error) {
-              expect(error != null).assertTrue();
+              expect(error.name).assertEqual('TypeError');
       }
     });
 
@@ -1321,6 +1321,26 @@ export default function ReadonlyArrayReduceRightTest(): void {
       const arr: ReadonlyArray<ReadonlyArrayReduceRightGeneratedItem> = [obj1, obj2];
       const result = arr.reduceRight<int>((previous: int, _current: ReadonlyArrayReduceRightGeneratedItem): int => previous + 1, 0);
       expect(result).assertEqual(arr.length);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_7700
+     * @tc.name testReadonlyArrayReduceRight077
+     * @tc.desc Verify ReadonlyArray.reduceRight behavior: callback fourth parameter array is the same reference as the source ReadonlyArray
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayReduceRight077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<int> = [7, 8, 9];
+      let sameRefCount: int = 0;
+      arr.reduceRight((prev: int, cur: int, idx: int, array: ReadonlyArray<int>): int => {
+        if ((array as Object) === (arr as Object)) {
+          sameRefCount++;
+        }
+        return prev + cur;
+      }, 0);
+      expect(sameRefCount).assertEqual(3);
     });
 
   });

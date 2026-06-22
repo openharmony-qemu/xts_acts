@@ -973,7 +973,7 @@ export default function ReadonlyArrayReduceTest(): void {
               arr.reduce((prev: int, cur: int): int => prev + cur);
               expect().assertFail();
       } catch (error) {
-              expect(error != null).assertTrue();
+              expect(error.name).assertEqual('TypeError');
       }
     });
 

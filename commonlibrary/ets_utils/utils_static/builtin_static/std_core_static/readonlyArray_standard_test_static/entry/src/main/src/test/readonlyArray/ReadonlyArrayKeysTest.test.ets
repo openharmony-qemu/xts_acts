@@ -1270,5 +1270,42 @@ export default function ReadonlyArrayKeysTest(): void {
       expect(arr[4]).assertEqual(50);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_KEYS_6700
+     * @tc.name testReadonlyArrayKeys067
+     * @tc.desc Verify ReadonlyArray.keys behavior: two consecutive keys() calls return distinct iterator instances
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayKeys067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<int> = [1, 2, 3];
+      const iter1 = arr.keys();
+      const iter2 = arr.keys();
+      expect((iter1 as Object) === (iter2 as Object)).assertFalse();
+      expect(iter1.next().value).assertEqual(0);
+      expect(iter2.next().value).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_KEYS_6800
+     * @tc.name testReadonlyArrayKeys068
+     * @tc.desc Verify ReadonlyArray.keys behavior: nullable object array with null element still yields full index sequence
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayKeys068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj1: ComboObjarr = new ComboObjarr();
+      const arr: ReadonlyArray<ComboObjarr | null> = [obj1, null, obj1];
+      let count: int = 0;
+      for (const key of arr.keys()) {
+        expect(key).assertEqual(count);
+        count++;
+      }
+      expect(count).assertEqual(arr.length);
+      expect(arr[1]).assertEqual(null);
+    });
+
   });
 }

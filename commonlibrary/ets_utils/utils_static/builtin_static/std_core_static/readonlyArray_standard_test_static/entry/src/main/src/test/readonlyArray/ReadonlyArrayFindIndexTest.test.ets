@@ -1349,7 +1349,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
               });
               expect().assertFail();
       } catch (error) {
-              expect(error != null).assertTrue();
+              expect(error.name).assertEqual('Error');
       }
     });
 
@@ -1641,7 +1641,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
           if (value === 2) { throw new Error("specific-msg"); }
           return false;
         });
-        expect(false).assertTrue();
+        expect().assertFail();
       } catch (error) {
         expect((error as Error).message).assertEqual("specific-msg");
       }

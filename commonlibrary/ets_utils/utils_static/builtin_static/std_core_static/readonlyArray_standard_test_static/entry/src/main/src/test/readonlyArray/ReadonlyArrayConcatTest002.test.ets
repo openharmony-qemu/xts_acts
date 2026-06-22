@@ -177,7 +177,7 @@ export default function ReadonlyArrayConcatTest002(): void {
       const more: ConcatArray<float> = [2.0f];
       const result = values.concat(more);
       expect(result.length).assertEqual(2);
-      expect(result[0] !== result[0]).assertTrue();
+      expect(Number.isNaN(result[0])).assertTrue();
       expect(result[1]).assertEqual(2.0f);
     });
 
@@ -265,7 +265,7 @@ export default function ReadonlyArrayConcatTest002(): void {
       const more: ConcatArray<double> = [3.3];
       const result = values.concat(more);
       expect(result.length).assertEqual(2);
-      expect(result[0] !== result[0]).assertTrue();
+      expect(Number.isNaN(result[0])).assertTrue();
       expect(result[1]).assertEqual(3.3);
     });
 
@@ -1004,7 +1004,7 @@ export default function ReadonlyArrayConcatTest002(): void {
 
       const result = arr.concat([99.0] as ConcatArray<double>);
       expect(result.length).assertEqual(4);
-      expect(result[0] !== result[0]).assertTrue();
+      expect(Number.isNaN(result[0])).assertTrue();
       expect(result[1]).assertEqual(0.0);
       expect(result[2]).assertEqual(-0.0);
       expect(result[3]).assertEqual(99.0);

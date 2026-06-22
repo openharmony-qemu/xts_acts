@@ -1182,7 +1182,7 @@ export default function ReadonlyArrayEveryTest(): void {
               });
               expect().assertFail();
       } catch (error) {
-              expect(error != null).assertTrue();
+              expect(error.name).assertEqual('Error');
       }
     });
 
@@ -1659,7 +1659,7 @@ export default function ReadonlyArrayEveryTest(): void {
           }
           return true;
         });
-        expect(false).assertTrue();
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('Error');
         expect(visits).assertEqual(2);

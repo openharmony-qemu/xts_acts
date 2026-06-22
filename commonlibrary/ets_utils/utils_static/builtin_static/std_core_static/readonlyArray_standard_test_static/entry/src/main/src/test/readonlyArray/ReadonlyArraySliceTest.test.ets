@@ -784,7 +784,7 @@ export default function ReadonlyArraySliceTest(): void {
       const arr: ReadonlyArray<float> = [1.0f, nan, 3.0f];
       const result = arr.slice(1, 2);
       expect(result.length).assertEqual(1);
-      expect(result[0] !== result[0]).assertTrue();
+      expect(Number.isNaN(result[0])).assertTrue();
     });
 
     /**
@@ -1145,7 +1145,7 @@ export default function ReadonlyArraySliceTest(): void {
       const arr: ReadonlyArray<double> = [1.1, Number.NaN, 3.3];
       const result = arr.slice(1, 2);
       expect(result.length).assertEqual(1);
-      expect(result[0] !== result[0]).assertTrue();
+      expect(Number.isNaN(result[0])).assertTrue();
     });
 
     /**
@@ -1738,7 +1738,7 @@ export default function ReadonlyArraySliceTest(): void {
       const arr: ReadonlyArray<float> = [nan, 1.0f, 2.0f];
       const result = arr.slice(0, 1);
       expect(result.length).assertEqual(1);
-      expect(result[0] !== result[0]).assertTrue();
+      expect(Number.isNaN(result[0])).assertTrue();
     });
 
     /**
