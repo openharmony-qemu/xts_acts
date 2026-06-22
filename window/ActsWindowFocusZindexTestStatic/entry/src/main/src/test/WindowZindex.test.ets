@@ -2014,20 +2014,22 @@ TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Pr
   let dialogWindow: window.Window = await window.createWindow(config);
   try {
     dialogWindow.raiseToAppTop(async (err: BusinessError<void> | null): void => {
-      const errCode: number = err!.code;
-      if (errCode) {
-        hilog.error(domain, tag,
-          msgStr + ` Failed to raise the window to app top. Cause code: ${err!.code}, message: ${err!.message}`);
-        await dialogWindow.destroyWindow()
-        expect(err!.code).assertEqual(1300004);
-        expect(err!.message !== null).assertTrue();
-        done();
-      } else {
-        hilog.info(domain, tag, msgStr + 'Succeeded in raising the window to app top.');
-        await dialogWindow.destroyWindow()
-        expect(false).assertTrue();
-        done();
-      }
+        (async () => {
+            const errCode: number = err!.code;
+            if (errCode) {
+              hilog.error(domain, tag,
+                msgStr + ` Failed to raise the window to app top. Cause code: ${err!.code}, message: ${err!.message}`);
+              await dialogWindow.destroyWindow()
+              expect(err!.code).assertEqual(1300004);
+              expect(err!.message !== null).assertTrue();
+              done();
+            } else {
+              hilog.info(domain, tag, msgStr + 'Succeeded in raising the window to app top.');
+              await dialogWindow.destroyWindow()
+              expect(false).assertTrue();
+              done();
+            }
+            })().awaitSync()
     });
   } catch (exception) {
     hilog.error(domain, tag,
