@@ -811,7 +811,7 @@ export default function ArrayIndexOf2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayIndexOfTwo052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<string>('🌍', '👩‍�?);
+      const arr = new Array<string>('🌍', '👩‍');
       expect(arr.indexOf('🌍')).assertEqual(0);
     });
 
@@ -824,7 +824,7 @@ export default function ArrayIndexOf2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayIndexOfTwo053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<string>('👩‍�?);
+      const arr = new Array<string>('👩‍');
       expect(arr.indexOf('👩')).assertEqual(-1);
     });
 
