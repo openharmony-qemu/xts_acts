@@ -43,6 +43,7 @@ group("ActsAceEtsModuleAdvancedComponentsTest") {
       "ace_ets_module_counter:ActsAceEtsModuleCounterTest",
       "ace_ets_module_advance_counter_static:ActsAceEtsModuleAdvanceCounterStaticTest",
       "ace_ets_module_composeTitleBar_nowear:ActsAceEtsModuleComposeTitleBarNoWearTest",
+      "ace_ets_module_composeTitleBarV2_nowear:ActsAceEtsModuleComposeTitleBarV2Test",
       "ace_ets_module_editableTitleBar_nowear:ActsAceEtsModuleEditableTitleBarNoWearTest",
       "ace_ets_module_editableTitleBarV2_nowear:ActsAceEtsModuleEditableTitleBarV2Test",
       "ace_ets_module_exceptionPrompt_nowear:ActsAceEtsModuleExceptionPromptNoWearTest",
