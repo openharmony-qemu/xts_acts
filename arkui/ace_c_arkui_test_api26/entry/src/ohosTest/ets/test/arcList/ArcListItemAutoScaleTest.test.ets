@@ -26,16 +26,40 @@ export default function ArcListItemAutoScaleTest() {
       done();
     });
 
+    /**
+     * @tc.name   ArcListItemAutoScaleTest_001
+     * @tc.number SUB_ARKUI_ARCLISTITEMAUTOSCALE_TEST_0100
+     * @tc.desc   Test NODE_ARC_LIST_ITEM_AUTO_SCALE with true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcListItemAutoScale001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListItemAutoScale001()).assertEqual(0)
       done()
     })
 
+    /**
+     * @tc.name   ArcListItemAutoScaleTest_002
+     * @tc.number SUB_ARKUI_ARCLISTITEMAUTOSCALE_TEST_0200
+     * @tc.desc   Test NODE_ARC_LIST_ITEM_AUTO_SCALE with false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcListItemAutoScale002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListItemAutoScale002()).assertEqual(0)
       done()
     })
 
+    /**
+     * @tc.name   ArcListItemAutoScaleTest_003
+     * @tc.number SUB_ARKUI_ARCLISTITEMAUTOSCALE_TEST_0300
+     * @tc.desc   Test NODE_ARC_LIST_ITEM_AUTO_SCALE reset attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcListItemAutoScale003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListItemAutoScale003()).assertEqual(0)
       done()

@@ -26,21 +26,53 @@ export default function ArcListDigitalCrownSensitivityTest() {
       done();
     });
 
+    /**
+     * @tc.name   ArcListDigitalCrownSensitivityTest_001
+     * @tc.number SUB_ARKUI_ARCLISTDIGITALCROWNSSENSITIVITY_TEST_0100
+     * @tc.desc   Test NODE_ARC_LIST_DIGITAL_CROWN_SENSITIVITY with low sensitivity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcListDigitalCrownSensitivity001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListDigitalCrownSensitivity001()).assertEqual(0)
       done()
     })
 
+    /**
+     * @tc.name   ArcListDigitalCrownSensitivityTest_002
+     * @tc.number SUB_ARKUI_ARCLISTDIGITALCROWNSSENSITIVITY_TEST_0200
+     * @tc.desc   Test NODE_ARC_LIST_DIGITAL_CROWN_SENSITIVITY with medium sensitivity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcListDigitalCrownSensitivity002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListDigitalCrownSensitivity002()).assertEqual(0)
       done()
     })
 
+    /**
+     * @tc.name   ArcListDigitalCrownSensitivityTest_003
+     * @tc.number SUB_ARKUI_ARCLISTDIGITALCROWNSSENSITIVITY_TEST_0300
+     * @tc.desc   Test NODE_ARC_LIST_DIGITAL_CROWN_SENSITIVITY with high sensitivity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testArcListDigitalCrownSensitivity003', Level.LEVEL2, async (done: Function) => {
       expect(nativeFunc.testArcListDigitalCrownSensitivity003()).assertEqual(0)
       done()
     })
 
+    /**
+     * @tc.name   ArcListDigitalCrownSensitivityTest_004
+     * @tc.number SUB_ARKUI_ARCLISTDIGITALCROWNSSENSITIVITY_TEST_0400
+     * @tc.desc   Test NODE_ARC_LIST_DIGITAL_CROWN_SENSITIVITY reset attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcListDigitalCrownSensitivity004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListDigitalCrownSensitivity004()).assertEqual(0)
       done()

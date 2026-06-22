@@ -26,21 +26,53 @@ export default function ArcListFlingSpeedLimitTest() {
       done();
     });
 
+    /**
+     * @tc.name   ArcListFlingSpeedLimitTest_001
+     * @tc.number SUB_ARKUI_ARCLISTFLINGSPEEDLIMIT_TEST_0100
+     * @tc.desc   Test NODE_ARC_LIST_FLING_SPEED_LIMIT with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcListFlingSpeedLimit001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListFlingSpeedLimit001()).assertEqual(0)
       done()
     })
 
+    /**
+     * @tc.name   ArcListFlingSpeedLimitTest_002
+     * @tc.number SUB_ARKUI_ARCLISTFLINGSPEEDLIMIT_TEST_0200
+     * @tc.desc   Test NODE_ARC_LIST_FLING_SPEED_LIMIT with different value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcListFlingSpeedLimit002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListFlingSpeedLimit002()).assertEqual(0)
       done()
     })
 
+    /**
+     * @tc.name   ArcListFlingSpeedLimitTest_003
+     * @tc.number SUB_ARKUI_ARCLISTFLINGSPEEDLIMIT_TEST_0300
+     * @tc.desc   Test NODE_ARC_LIST_FLING_SPEED_LIMIT with invalid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testArcListFlingSpeedLimit003', Level.LEVEL2, async (done: Function) => {
       expect(nativeFunc.testArcListFlingSpeedLimit003()).assertEqual(0)
       done()
     })
 
+    /**
+     * @tc.name   ArcListFlingSpeedLimitTest_004
+     * @tc.number SUB_ARKUI_ARCLISTFLINGSPEEDLIMIT_TEST_0400
+     * @tc.desc   Test NODE_ARC_LIST_FLING_SPEED_LIMIT reset attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcListFlingSpeedLimit004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListFlingSpeedLimit004()).assertEqual(0)
       done()

@@ -26,21 +26,53 @@ export default function ArcScrollBarDisplayModeTest() {
       done();
     });
 
+    /**
+     * @tc.name   ArcScrollBarDisplayModeTest_001
+     * @tc.number SUB_ARKUI_ARCSBDISPLAYMODE_TEST_0100
+     * @tc.desc   Test NODE_SCROLL_BAR_DISPLAY_MODE with normal display mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcScrollBarDisplayMode001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcScrollBarDisplayMode001()).assertEqual(0)
       done()
     })
 
+    /**
+     * @tc.name   ArcScrollBarDisplayModeTest_002
+     * @tc.number SUB_ARKUI_ARCSBDISPLAYMODE_TEST_0200
+     * @tc.desc   Test NODE_SCROLL_BAR_DISPLAY_MODE with auto display mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcScrollBarDisplayMode002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcScrollBarDisplayMode002()).assertEqual(0)
       done()
     })
 
+    /**
+     * @tc.name   ArcScrollBarDisplayModeTest_003
+     * @tc.number SUB_ARKUI_ARCSBDISPLAYMODE_TEST_0300
+     * @tc.desc   Test NODE_SCROLL_BAR_DISPLAY_MODE with off display mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcScrollBarDisplayMode003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcScrollBarDisplayMode003()).assertEqual(0)
       done()
     })
 
+    /**
+     * @tc.name   ArcScrollBarDisplayModeTest_004
+     * @tc.number SUB_ARKUI_ARCSBDISPLAYMODE_TEST_0400
+     * @tc.desc   Test NODE_SCROLL_BAR_DISPLAY_MODE with on display mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcScrollBarDisplayMode004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcScrollBarDisplayMode004()).assertEqual(0)
       done()

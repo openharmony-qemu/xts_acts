@@ -26,16 +26,40 @@ export default function ArcListSetHeaderTest() {
       done();
     });
 
+    /**
+     * @tc.name   ArcListSetHeaderTest_001
+     * @tc.number SUB_ARKUI_ARCLISTSETHEADER_TEST_0100
+     * @tc.desc   Test NODE_ARC_LIST_SET_HEADER with normal header node
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcListSetHeader001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListSetHeader001()).assertEqual(0)
       done()
     })
 
+    /**
+     * @tc.name   ArcListSetHeaderTest_002
+     * @tc.number SUB_ARKUI_ARCLISTSETHEADER_TEST_0200
+     * @tc.desc   Test NODE_ARC_LIST_SET_HEADER with null header node
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcListSetHeader002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListSetHeader002()).assertEqual(0)
       done()
     })
 
+    /**
+     * @tc.name   ArcListSetHeaderTest_003
+     * @tc.number SUB_ARKUI_ARCLISTSETHEADER_TEST_0300
+     * @tc.desc   Test NODE_ARC_LIST_SET_HEADER reset attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcListSetHeader003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListSetHeader003()).assertEqual(0)
       done()

@@ -26,21 +26,53 @@ export default function ArcListFrictionTest() {
       done();
     });
 
+    /**
+     * @tc.name   ArcListFrictionTest_001
+     * @tc.number SUB_ARKUI_ARCLISTFRICTION_TEST_0100
+     * @tc.desc   Test NODE_ARC_LIST_FRICTION with normal value 1.1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcListFriction001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListFriction001()).assertEqual(0)
       done()
     })
 
+    /**
+     * @tc.name   ArcListFrictionTest_002
+     * @tc.number SUB_ARKUI_ARCLISTFRICTION_TEST_0200
+     * @tc.desc   Test NODE_ARC_LIST_FRICTION with normal value 0.8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcListFriction002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListFriction002()).assertEqual(0)
       done()
     })
 
+    /**
+     * @tc.name   ArcListFrictionTest_003
+     * @tc.number SUB_ARKUI_ARCLISTFRICTION_TEST_0300
+     * @tc.desc   Test NODE_ARC_LIST_FRICTION with invalid negative value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testArcListFriction003', Level.LEVEL2, async (done: Function) => {
       expect(nativeFunc.testArcListFriction003()).assertEqual(0)
       done()
     })
 
+    /**
+     * @tc.name   ArcListFrictionTest_004
+     * @tc.number SUB_ARKUI_ARCLISTFRICTION_TEST_0400
+     * @tc.desc   Test NODE_ARC_LIST_FRICTION reset attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcListFriction004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListFriction004()).assertEqual(0)
       done()

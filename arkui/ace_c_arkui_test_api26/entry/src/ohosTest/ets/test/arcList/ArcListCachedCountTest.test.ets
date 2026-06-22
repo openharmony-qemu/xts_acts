@@ -26,26 +26,66 @@ export default function ArcListCachedCountTest() {
       done();
     });
 
+    /**
+     * @tc.name   ArcListCachedCountTest_001
+     * @tc.number SUB_ARKUI_ARCLISTCACHEDCOUNT_TEST_0100
+     * @tc.desc   Test NODE_ARC_LIST_CACHED_COUNT with normal value 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcListCachedCount001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListCachedCount001()).assertEqual(0)
       done()
     })
 
+    /**
+     * @tc.name   ArcListCachedCountTest_002
+     * @tc.number SUB_ARKUI_ARCLISTCACHEDCOUNT_TEST_0200
+     * @tc.desc   Test NODE_ARC_LIST_CACHED_COUNT with normal value 5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcListCachedCount002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListCachedCount002()).assertEqual(0)
       done()
     })
 
+    /**
+     * @tc.name   ArcListCachedCountTest_003
+     * @tc.number SUB_ARKUI_ARCLISTCACHEDCOUNT_TEST_0300
+     * @tc.desc   Test NODE_ARC_LIST_CACHED_COUNT with invalid negative value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testArcListCachedCount003', Level.LEVEL2, async (done: Function) => {
       expect(nativeFunc.testArcListCachedCount003()).assertEqual(0)
       done()
     })
 
+    /**
+     * @tc.name   ArcListCachedCountTest_004
+     * @tc.number SUB_ARKUI_ARCLISTCACHEDCOUNT_TEST_0400
+     * @tc.desc   Test NODE_ARC_LIST_CACHED_COUNT with empty parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcListCachedCount004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListCachedCount004()).assertEqual(0)
       done()
     })
 
+    /**
+     * @tc.name   ArcListCachedCountTest_005
+     * @tc.number SUB_ARKUI_ARCLISTCACHEDCOUNT_TEST_0500
+     * @tc.desc   Test NODE_ARC_LIST_CACHED_COUNT reset attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcListCachedCount005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListCachedCount005()).assertEqual(0)
       done()

@@ -26,16 +26,40 @@ export default function ArcListEnableScrollInteractionTest() {
       done();
     });
 
+    /**
+     * @tc.name   ArcListEnableScrollInteractionTest_001
+     * @tc.number SUB_ARKUI_ARCLISTENABLESCROLLINTERACTION_TEST_0100
+     * @tc.desc   Test NODE_ARC_LIST_ENABLE_SCROLL_INTERACTION with true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcListEnableScrollInteraction001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListEnableScrollInteraction001()).assertEqual(0)
       done()
     })
 
+    /**
+     * @tc.name   ArcListEnableScrollInteractionTest_002
+     * @tc.number SUB_ARKUI_ARCLISTENABLESCROLLINTERACTION_TEST_0200
+     * @tc.desc   Test NODE_ARC_LIST_ENABLE_SCROLL_INTERACTION with false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcListEnableScrollInteraction002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListEnableScrollInteraction002()).assertEqual(0)
       done()
     })
 
+    /**
+     * @tc.name   ArcListEnableScrollInteractionTest_003
+     * @tc.number SUB_ARKUI_ARCLISTENABLESCROLLINTERACTION_TEST_0300
+     * @tc.desc   Test NODE_ARC_LIST_ENABLE_SCROLL_INTERACTION reset attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcListEnableScrollInteraction003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListEnableScrollInteraction003()).assertEqual(0)
       done()

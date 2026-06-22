@@ -26,16 +26,40 @@ export default function ArcListScrollBarColorTest() {
       done();
     });
 
+    /**
+     * @tc.name   ArcListScrollBarColorTest_001
+     * @tc.number SUB_ARKUI_ARCLISTSCROLLBARCOLOR_TEST_0100
+     * @tc.desc   Test NODE_SCROLL_BAR_COLOR with normal color value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcListScrollBarColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListScrollBarColor001()).assertEqual(0)
       done()
     })
 
+    /**
+     * @tc.name   ArcListScrollBarColorTest_002
+     * @tc.number SUB_ARKUI_ARCLISTSCROLLBARCOLOR_TEST_0200
+     * @tc.desc   Test NODE_SCROLL_BAR_COLOR with different color value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcListScrollBarColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListScrollBarColor002()).assertEqual(0)
       done()
     })
 
+    /**
+     * @tc.name   ArcListScrollBarColorTest_003
+     * @tc.number SUB_ARKUI_ARCLISTSCROLLBARCOLOR_TEST_0300
+     * @tc.desc   Test NODE_SCROLL_BAR_COLOR reset attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcListScrollBarColor003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListScrollBarColor003()).assertEqual(0)
       done()

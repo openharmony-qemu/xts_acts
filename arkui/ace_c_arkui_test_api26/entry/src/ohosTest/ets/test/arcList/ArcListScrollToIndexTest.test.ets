@@ -26,16 +26,40 @@ export default function ArcListScrollToIndexTest() {
       done();
     });
 
+    /**
+     * @tc.name   ArcListScrollToIndexTest_001
+     * @tc.number SUB_ARKUI_ARCLISTSCROLLTOINDEX_TEST_0100
+     * @tc.desc   Test NODE_ARC_LIST_SCROLL_TO_INDEX with index value 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcListScrollToIndex001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListScrollToIndex001()).assertEqual(0)
       done()
     })
 
+    /**
+     * @tc.name   ArcListScrollToIndexTest_002
+     * @tc.number SUB_ARKUI_ARCLISTSCROLLTOINDEX_TEST_0200
+     * @tc.desc   Test NODE_ARC_LIST_SCROLL_TO_INDEX with index value 5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcListScrollToIndex002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListScrollToIndex002()).assertEqual(0)
       done()
     })
 
+    /**
+     * @tc.name   ArcListScrollToIndexTest_003
+     * @tc.number SUB_ARKUI_ARCLISTSCROLLTOINDEX_TEST_0300
+     * @tc.desc   Test NODE_ARC_LIST_SCROLL_TO_INDEX attribute value verification
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testArcListScrollToIndex003', Level.LEVEL2, async (done: Function) => {
       expect(nativeFunc.testArcListScrollToIndex003()).assertEqual(0)
       done()

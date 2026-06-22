@@ -26,16 +26,40 @@ export default function ArcScrollBarBindScrollableTest() {
       done();
     });
 
+    /**
+     * @tc.name   ArcScrollBarBindScrollableTest_001
+     * @tc.number SUB_ARKUI_ARCSBBINDSCROLLABLE_TEST_0100
+     * @tc.desc   Test NODE_SCROLL_BAR_BIND_SCROLLABLE with normal parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcScrollBarBindScrollable001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcScrollBarBindScrollable001()).assertEqual(0)
       done()
     })
 
+    /**
+     * @tc.name   ArcScrollBarBindScrollableTest_002
+     * @tc.number SUB_ARKUI_ARCSBBINDSCROLLABLE_TEST_0200
+     * @tc.desc   Test NODE_SCROLL_BAR_BIND_SCROLLABLE with scrollable direction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcScrollBarBindScrollable002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcScrollBarBindScrollable002()).assertEqual(0)
       done()
     })
 
+    /**
+     * @tc.name   ArcScrollBarBindScrollableTest_003
+     * @tc.number SUB_ARKUI_ARCSBBINDSCROLLABLE_TEST_0300
+     * @tc.desc   Test NODE_SCROLL_BAR_BIND_SCROLLABLE reset attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcScrollBarBindScrollable003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcScrollBarBindScrollable003()).assertEqual(0)
       done()

@@ -26,21 +26,53 @@ export default function ArcListScrollBarTest() {
       done();
     });
 
+    /**
+     * @tc.name   ArcListScrollBarTest_001
+     * @tc.number SUB_ARKUI_ARCLISTSCROLLBAR_TEST_0100
+     * @tc.desc   Test NODE_SCROLL_BAR with normal scrollbar
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcListScrollBar001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListScrollBar001()).assertEqual(0)
       done()
     })
 
+    /**
+     * @tc.name   ArcListScrollBarTest_002
+     * @tc.number SUB_ARKUI_ARCLISTSCROLLBAR_TEST_0200
+     * @tc.desc   Test NODE_SCROLL_BAR with different scrollbar configuration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcListScrollBar002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListScrollBar002()).assertEqual(0)
       done()
     })
 
+    /**
+     * @tc.name   ArcListScrollBarTest_003
+     * @tc.number SUB_ARKUI_ARCLISTSCROLLBAR_TEST_0300
+     * @tc.desc   Test NODE_SCROLL_BAR with scrollbar style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcListScrollBar003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListScrollBar003()).assertEqual(0)
       done()
     })
 
+    /**
+     * @tc.name   ArcListScrollBarTest_004
+     * @tc.number SUB_ARKUI_ARCLISTSCROLLBAR_TEST_0400
+     * @tc.desc   Test NODE_SCROLL_BAR reset attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcListScrollBar004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListScrollBar004()).assertEqual(0)
       done()

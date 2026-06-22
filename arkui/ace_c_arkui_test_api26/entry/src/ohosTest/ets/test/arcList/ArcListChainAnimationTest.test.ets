@@ -26,16 +26,40 @@ export default function ArcListChainAnimationTest() {
       done();
     });
 
+    /**
+     * @tc.name   ArcListChainAnimationTest_001
+     * @tc.number SUB_ARKUI_ARCLISTCHAINANIMATION_TEST_0100
+     * @tc.desc   Test NODE_ARC_LIST_CHAIN_ANIMATION with normal parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcListChainAnimation001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListChainAnimation001()).assertEqual(0)
       done()
     })
 
+    /**
+     * @tc.name   ArcListChainAnimationTest_002
+     * @tc.number SUB_ARKUI_ARCLISTCHAINANIMATION_TEST_0200
+     * @tc.desc   Test NODE_ARC_LIST_CHAIN_ANIMATION with different parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcListChainAnimation002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListChainAnimation002()).assertEqual(0)
       done()
     })
 
+    /**
+     * @tc.name   ArcListChainAnimationTest_003
+     * @tc.number SUB_ARKUI_ARCLISTCHAINANIMATION_TEST_0300
+     * @tc.desc   Test NODE_ARC_LIST_CHAIN_ANIMATION reset attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcListChainAnimation003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListChainAnimation003()).assertEqual(0)
       done()

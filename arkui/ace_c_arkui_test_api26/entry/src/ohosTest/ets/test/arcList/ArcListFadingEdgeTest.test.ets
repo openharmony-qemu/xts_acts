@@ -26,16 +26,40 @@ export default function ArcListFadingEdgeTest() {
       done();
     });
 
+    /**
+     * @tc.name   ArcListFadingEdgeTest_001
+     * @tc.number SUB_ARKUI_ARCLISTFADINGEDGE_TEST_0100
+     * @tc.desc   Test NODE_ARC_LIST_FADING_EDGE with normal parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcListFadingEdge001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListFadingEdge001()).assertEqual(0)
       done()
     })
 
+    /**
+     * @tc.name   ArcListFadingEdgeTest_002
+     * @tc.number SUB_ARKUI_ARCLISTFADINGEDGE_TEST_0200
+     * @tc.desc   Test NODE_ARC_LIST_FADING_EDGE with different parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcListFadingEdge002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListFadingEdge002()).assertEqual(0)
       done()
     })
 
+    /**
+     * @tc.name   ArcListFadingEdgeTest_003
+     * @tc.number SUB_ARKUI_ARCLISTFADINGEDGE_TEST_0300
+     * @tc.desc   Test NODE_ARC_LIST_FADING_EDGE reset attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testArcListFadingEdge003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListFadingEdge003()).assertEqual(0)
       done()
