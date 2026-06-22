@@ -1266,7 +1266,6 @@ export default function DisplayNdkTest() {
             windowClass!.recover();
             done()
             } else if (!isFreeWindowMode && isSupportRotate && isSyscapSessionManagerSupported) {
-          } else if (!isFreeWindowMode && isSupportRotate && ) {
             await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
             await sleep(1000);
             await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
