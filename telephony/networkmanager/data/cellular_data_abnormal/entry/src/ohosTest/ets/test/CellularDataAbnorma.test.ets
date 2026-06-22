@@ -529,7 +529,7 @@ export default function ActsCellularDataAbnormalTest() {
       let caseName: string = 'testTelephonyDataSetPreferredApn_0100';
       console.info(`${caseName} test start `);
       try {
-        await data.setPreferredApn(1).then((result:boolean)=>{
+        await cellular.setPreferredApn(1).then((result:boolean)=>{
           console.log(`${caseName}  setPreferredApn success `);
           ExpectTrue(result === true);
           done();
@@ -558,7 +558,7 @@ export default function ActsCellularDataAbnormalTest() {
       let caseName: string = 'testTelephonyDataQueryAllApns_0100';
       console.info(`${caseName} test start `);
       try {
-        await data.queryAllApns().then((apnInfos: Array<data.ApnInfo>)=>{
+        await cellular.queryAllApns().then((apnInfos: Array<cellular.ApnInfo>)=>{
           console.log(`${caseName}  get queryAllApns success `);
           ExpectTrue(apnInfos.length > 0);
           done();
@@ -587,9 +587,9 @@ export default function ActsCellularDataAbnormalTest() {
       let caseName: string = 'testTelephonyDataQueryApnIds_0100';
       console.info(`${caseName} test start `);
       try {
-        await data.queryAllApns().then(async (apnInfos: Array<data.ApnInfo>)=>{
+        await cellular.queryAllApns().then(async (apnInfos: Array<cellular.ApnInfo>)=>{
           console.log(`${caseName}  get queryAllApns success `);
-          let result: Array<number> = await data.queryApnIds(apnInfos[1]);
+          let result: Array<number> = await cellular.queryApnIds(apnInfos[1]);
           ExpectTrue(result.length > 0);
           done();
         }).catch((err: BusinessError )=>{
@@ -617,10 +617,10 @@ export default function ActsCellularDataAbnormalTest() {
       let caseName: string = 'testTelephonyDataQueryApnIds_0200';
       console.info(`${caseName} test start `);
       try {
-        await data.queryAllApns().then(async (apnInfos: Array<data.ApnInfo>)=>{
+        await cellular.queryAllApns().then(async (apnInfos: Array<cellular.ApnInfo>)=>{
           console.log(`${caseName}  get queryAllApns success `);
-          let apnInfos[0].apn = 'invalidApn';
-          let result: Array<number> = await data.queryApnIds(apnInfos[0]);
+          apnInfos[0].apn = 'invalidApn';
+          let result: Array<number> = await cellular.queryApnIds(apnInfos[0]);
           ExpectTrue(result.length === 0);
           done();
         }).catch((err: BusinessError )=>{
