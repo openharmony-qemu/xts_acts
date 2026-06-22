@@ -246,7 +246,7 @@ struct ExecuteAIPageCommandTest {
             case 'testExecuteAIPageCommand015': {
               let msg = 'testExecuteAIPageCommand015'
               try {
-                this.controller.executeAIPageCommand("");
+                this.controller.executeAIPageCommand('');
                 Utils.emitEvent(true, 148125)
               } catch (error) {
                 error = error as BusinessError;
@@ -258,7 +258,7 @@ struct ExecuteAIPageCommandTest {
             case 'testExecuteAIPageCommand016': {
               let msg = 'testExecuteAIPageCommand016'
               try {
-                this.controller.executeAIPageCommand("not valid json");
+                this.controller.executeAIPageCommand('not valid json');
                 Utils.emitEvent(true, 148126)
               } catch (error) {
                 error = error as BusinessError;
@@ -270,7 +270,7 @@ struct ExecuteAIPageCommandTest {
             case 'testExecuteAIPageCommand018': {
               let msg = 'testExecuteAIPageCommand018'
               try {
-                this.controller.executeAIPageCommand("{}");
+                this.controller.executeAIPageCommand('{}');
                 Utils.emitEvent(true, 148128)
               } catch (error) {
                 error = error as BusinessError;
@@ -594,7 +594,7 @@ struct ExecuteAIPageCommandTest {
             case 'testExecuteAIPageCommand045': {
               let msg = 'testExecuteAIPageCommand045'
               try {
-                this.controller.executeAIPageCommand("   ");
+                this.controller.executeAIPageCommand(' ');
                 Utils.emitEvent(true, 148155)
               } catch (error) {
                 error = error as BusinessError;
@@ -606,7 +606,7 @@ struct ExecuteAIPageCommandTest {
             case 'testExecuteAIPageCommand046': {
               let msg = 'testExecuteAIPageCommand046'
               try {
-                this.controller.executeAIPageCommand("[]");
+                this.controller.executeAIPageCommand('[]');
                 Utils.emitEvent(true, 148156)
               } catch (error) {
                 error = error as BusinessError;
