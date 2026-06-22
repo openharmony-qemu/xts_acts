@@ -1006,27 +1006,31 @@ int VideoEncodeHevcCapability3000Test()
 
 int VideoEncodeSetMaxFrameDelayCount0100Test()
 {
-    venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
-    ASSERT_NE(nullptr, venc_);
-    format = OH_AVFormat_Create();
-    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
-    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
-    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
-    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_MAX_FRAME_DELAY_COUNT, -1);
-    ASSERT_EQ(AV_ERR_INVALID_VAL, OH_VideoEncoder_Configure(venc_, format));
+    if (cap) {
+        venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
+        ASSERT_NE(nullptr, venc_);
+        format = OH_AVFormat_Create();
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_MAX_FRAME_DELAY_COUNT, -1);
+        ASSERT_EQ(AV_ERR_INVALID_VAL, OH_VideoEncoder_Configure(venc_, format));
+    }
     return 0;
 }
 
 int VideoEncodeSetMaxFrameDelayCount0200Test()
 {
-    venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
-    ASSERT_NE(nullptr, venc_);
-    format = OH_AVFormat_Create();
-    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
-    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
-    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
-    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_MAX_FRAME_DELAY_COUNT, -1);
-    ASSERT_EQ(AV_ERR_INVALID_VAL, OH_VideoEncoder_Configure(venc_, format));
+    if (cap_hevc) {
+        venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
+        ASSERT_NE(nullptr, venc_);
+        format = OH_AVFormat_Create();
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_MAX_FRAME_DELAY_COUNT, -1);
+        ASSERT_EQ(AV_ERR_INVALID_VAL, OH_VideoEncoder_Configure(venc_, format));
+    }
     return 0;
 }
 
