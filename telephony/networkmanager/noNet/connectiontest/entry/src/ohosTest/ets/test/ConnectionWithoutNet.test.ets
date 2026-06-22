@@ -1480,15 +1480,16 @@ export default function ConnectionWithoutNetTest() {
           if (error) {
             console.info(caseName + "unregister fail: " + JSON.stringify(error));
             ExpectFail(caseName);
+            done()
           } else {
             console.info(caseName + " unregister success ");
             console.info(caseName + " ListenTimes is :" + ListenTimes);
             ExpectTrue(caseName, ListenTimes === 20000);
+            done()
           }
         });
         netConn2.unregister((error: BusinessError) => {
           console.info(`${caseName}---End`);
-          done()
         })
       } catch (err) {
         ExpectFail(caseName);
@@ -1559,15 +1560,16 @@ export default function ConnectionWithoutNetTest() {
           if (error) {
             console.info(caseName + "unregister fail: " + JSON.stringify(error));
             ExpectFail(caseName);
+            done()
           } else {
             console.info(caseName + " unregister success ");
             console.info(caseName + " ListenTimes is :" + ListenTimes);
             ExpectTrue(caseName, ListenTimes === 20000);
+            done()
           }
         });
         netConn2.unregister((error: BusinessError) => {
           console.info(`${caseName}---End`);
-          done()
         })
       } catch (err) {
         ExpectFail(caseName);
