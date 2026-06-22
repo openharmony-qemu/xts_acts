@@ -12,96 +12,65 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { LazyDynamicLayout, LazyDynamicLayoutAttribute } from '@kit.ArkUI';
-import { MyDataSource } from './data/MyDataSource';
-import { LazyListLayout } from './data/LazyListLayout';
 
-// 自定义懒加载列表布局组件
-@Component
-struct MyLazyListLayout {
-  // 间隔大小，使用@Watch监听变化，变化时触发onSpaceChange方法
-  @Prop @Watch('onSpaceChange') space: number;
-  arr: MyDataSource<string> = new MyDataSource<string>();
-  private itemHeight: number = 30;
-  // 懒加载布局算法实例，将高度转换为像素单位
-  private lazyAlgorithm: LazyListLayout = new LazyListLayout(this.getUIContext().vp2px(this.itemHeight));
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import router from '@ohos.router';
+import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
+import CommonFunc from '../../MainAbility/common/Common';
 
-  // 间隔变化时更新布局算法中的间隔值
-  onSpaceChange(): void {
-    this.lazyAlgorithm.setSpace(this.getUIContext().vp2px(this.space));
-  }
-
-  aboutToAppear(): void {
-    this.lazyAlgorithm.setSpace(this.getUIContext().vp2px(this.space));
-  }
-
-  build() {
-    // 使用LazyDynamicLayout组件，传入懒加载布局算法
-    LazyDynamicLayout(this.lazyAlgorithm) {
-      LazyForEach(this.arr, (item: string) => {
-        Text('lazy_'+item)
-          .id('lazyDynamicLayout_item_' + item)//点击space按钮，lazy_item1的top更低
-          .height(this.itemHeight)
-          .width('100%')
-          .borderRadius(8)
-          .backgroundColor('#E0E0FF')
-          .padding(10)
-      })
-    }
-    // 监听可视区域内子组件索引变化
-    .onVisibleIndexesChange((child: number[]) => {
-      console.info(`onVisibleIndexesChange:start:${child}`);
-    })
-  }
-}
-
-// 定义分组数据接口
-interface groupData {
-  title: string;
-  data: MyDataSource<string>;
-}
-
-// 主页面组件
-@Entry
-@Component
-struct CustomListLayoutTest {
-  @State groupArr: groupData[] = []; // 分组数据数组
-  @State space: number = 5; // 列表项间隔大小
-
-  aboutToAppear(): void {
-    for (let i = 0; i < 2; i++) {
-      let data = new MyDataSource<string>();
-      for (let j = 0; j <= 6; j++) {
-        data.pushData('item' + j.toString());
+export default function customListLayoutTest() {
+  describe('customListLayoutTest', () => {
+    beforeEach(async (done: Function) => {
+      console.info("customListLayoutTest beforeEach start");
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/LazyDynamicLayout/customListLayoutTest',
       }
-      this.groupArr.push({ title: 'group' + i.toString(), data: data });
-    }
-  }
-
-  build() {
-    Column() {
-      Button('Space:' + this.space.toString())
-        .onClick(() => {
-          // 在5和10之间切换间隔大小，切换前后保持显示区域第一个子组件位置不变
-          this.space = this.space === 5 ? 10 : 5;
-        })
-      List() {
-        ForEach(this.groupArr, (item: groupData) => {
-          ListItem() {
-            Text(item.title).margin({ top: 20, bottom: 8 })
-          }
-
-          // 使用自定义懒加载布局组件
-          MyLazyListLayout({ arr: item.data, space: this.space })
-        })
+      try {
+        router.clear();
+        let pages = router.getState();
+        console.info("get customListLayoutTest state pages:" + JSON.stringify(pages));
+        if (!("customListLayoutTest" == pages.name)) {
+          console.info("get customListLayoutTest pages.name:" + JSON.stringify(pages.name));
+          let result = await router.pushUrl(options);
+          await CommonFunc.sleep(2000);
+          console.info("push customListLayoutTest page result:" + JSON.stringify(result));
+        }
+      } catch (err) {
+        console.error("push customListLayoutTest page error:" + err);
       }
-      .layoutWeight(1)
-      .padding({ left: 12, right: 12 })
-      .height('100%')
-      .width('100%')
-    }
-    .height('60%')
-    .width('100%')
+      console.info("customListLayoutTest beforeEach end");
+      done();
+    });
 
-  }
+    /**
+     * @tc.name   customListLayoutTest_0100
+     * @tc.number SUB_ARKUI_LAZYDYNAMICLAYOUT_SPACE_PARAM_0100
+     * @tc.desc   Test LazyDynamicLayout space property with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('customListLayoutTest_0100', Level.LEVEL0, async (done: Function) => {
+      console.info('[customListLayoutTest_0100] START');
+      await CommonFunc.sleep(1000);
+      let driver = await Driver.create();
+      let item1 = await driver.findComponent(ON.id('lazyDynamicLayout_item_1'));
+      let rect = await item1.getBounds();
+      let itemTop = rect.top;
+      console.info('[customListLayoutTest_0100] item1_top: '+ itemTop)
+
+      let spaceBtn = await driver.findComponent(ON.id('lazyDynamicLayout_space_btn'));
+      await spaceBtn.click();
+      console.info('customListLayoutTest_0100 pushBtn clicked');
+      await CommonFunc.sleep(1500);
+
+      let itemNew1 = await driver.findComponent(ON.id('lazyDynamicLayout_item_1'));
+      let rectNew = await itemNew1.getBounds();
+      let itemNewTop = rectNew.top;
+      console.info('[customListLayoutTest_0100] item1_top new: '+ itemNewTop)
+      expect(itemTop < itemNewTop).assertTrue();
+      console.info('[customListLayoutTest_0100] END');
+      done();
+    });
+  });
 }

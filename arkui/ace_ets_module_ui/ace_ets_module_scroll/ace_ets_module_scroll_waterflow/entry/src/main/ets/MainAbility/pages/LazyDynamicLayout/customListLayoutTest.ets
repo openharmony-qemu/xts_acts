@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 import { LazyDynamicLayout, LazyDynamicLayoutAttribute } from '@kit.ArkUI';
-import { MyDataSource } from './data/MyDataSource';
-import { LazyListLayout } from './data/LazyListLayout';
+import { MyDataSource } from '../data/MyDataSource';
+import { LazyListLayout } from '../data/LazyListLayout';
 
 // 自定义懒加载列表布局组件
 @Component
@@ -40,7 +40,7 @@ struct MyLazyListLayout {
     LazyDynamicLayout(this.lazyAlgorithm) {
       LazyForEach(this.arr, (item: string) => {
         Text('lazy_'+item)
-          .id('lazyDynamicLayout_item_' + item)//点击space按钮，lazy_item1的top更低
+          .id('lazyDynamicLayout_item_' + item)
           .height(this.itemHeight)
           .width('100%')
           .borderRadius(8)
@@ -61,7 +61,7 @@ interface groupData {
   data: MyDataSource<string>;
 }
 
-// 主页面组件
+
 @Entry
 @Component
 struct CustomListLayoutTest {
@@ -81,6 +81,7 @@ struct CustomListLayoutTest {
   build() {
     Column() {
       Button('Space:' + this.space.toString())
+        .id('lazyDynamicLayout_space_btn')
         .onClick(() => {
           // 在5和10之间切换间隔大小，切换前后保持显示区域第一个子组件位置不变
           this.space = this.space === 5 ? 10 : 5;
