@@ -5790,7 +5790,7 @@ export default function BufferTest1(): void {
     it("testBlobSize0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       TAG = "testBlobSize0002";
       try {
-        let blob = new buffer.Blob([]);
+        let blob = new buffer.Blob([] as Array<ArrayBuffer>);
         let size = blob.size;
         expect(String(size)).assertEqual('0');
       } catch (err) {
