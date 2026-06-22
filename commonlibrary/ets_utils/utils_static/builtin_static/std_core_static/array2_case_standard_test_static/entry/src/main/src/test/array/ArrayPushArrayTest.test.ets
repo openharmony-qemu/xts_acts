@@ -981,10 +981,10 @@ export default function ArrayPushArrayTest(): void {
      */
     it('testArrayPushArray056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>();
-      const result = arr.pushArray('🌍', '👩‍�?);
+      const result = arr.pushArray('🌍', '👩‍');
       expect(result).assertEqual(2);
       expect(arr[0]).assertEqual('🌍');
-      expect(arr[1]).assertEqual('👩‍�?);
+      expect(arr[1]).assertEqual('👩‍');
     });
 
     /**

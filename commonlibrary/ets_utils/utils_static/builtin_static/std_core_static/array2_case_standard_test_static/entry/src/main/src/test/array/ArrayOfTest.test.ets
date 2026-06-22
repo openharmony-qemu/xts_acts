@@ -804,13 +804,13 @@ export default function ArrayOfTest(): void {
      * @tc.level Level 2
      */
     it('testArrayOf047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = Array.of<string>('', 'a', 'long-string-value', '\u0000', '娴ｇ姴銈芥稉鏍�?);
+      let arr = Array.of<string>('', 'a', 'long-string-value', '\u0000', '👩‍');
       expect(arr.length).assertEqual(5);
       expect(arr[0]).assertEqual('');
       expect(arr[1]).assertEqual('a');
       expect(arr[2]).assertEqual('long-string-value');
       expect(arr[3]).assertEqual('\u0000');
-      expect(arr[4]).assertEqual('娴ｇ姴銈芥稉鏍�?);
+      expect(arr[4]).assertEqual('👩‍');
     });
 
     /**

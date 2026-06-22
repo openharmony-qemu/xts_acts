@@ -930,9 +930,9 @@ export default function ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testArrayJoin059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<string>('🌍', '👩‍�?);
+      const arr = new Array<string>('🌍', '👩‍');
       const result = arr.join('-');
-      expect(result).assertEqual('🌍-👩‍�?);
+      expect(result).assertEqual('🌍-👩‍');
     });
 
     /**
@@ -945,8 +945,8 @@ export default function ArrayJoinTest(): void {
      */
     it('testArrayJoin060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('a', 'b');
-      const result = arr.join('👩‍�?);
-      expect(result).assertEqual('a👩‍💻b');
+      const result = arr.join('\u0041');
+      expect(result).assertEqual('a\u0041b');
     });
 
     /**
