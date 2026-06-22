@@ -18,7 +18,7 @@ import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import { describe, it, expect, beforeAll, Level, beforeEach, afterEach, afterAll, Hypium } from "../../../../hypium";
 import { getPermission, LOG_TAG } from '../common';
 import common from '@ohos.app.ability.common';
-import { UIContext, Context } from '@ohos.arkui.UIContext';
+import { Context } from '@ohos.arkui.UIContext';
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 
 let testContext: Context = Hypium.get('Context') as Context;
