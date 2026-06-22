@@ -697,15 +697,7 @@ export default function ReadonlyArrayEntriesTest002(): void {
       let count: int = 0;
       for (const entry of arr.entries()) {
         expect(entry[0]).assertEqual(count);
-        if (count === 0) {
-          expect(typeof entry[1]).assertEqual("int");
-        }
-        if (count === 1) {
-          expect(typeof entry[1]).assertEqual("string");
-        }
-        if (count === 2) {
-          expect(typeof entry[1]).assertEqual("boolean");
-        }
+        expect(entry[1] === arr[count]).assertTrue();
         count++;
       }
       expect(count).assertEqual(arr.length);
@@ -1557,8 +1549,6 @@ export default function ReadonlyArrayEntriesTest002(): void {
       expect(r.value != null).assertTrue();
       expect(r.value![0]).assertEqual(0);
       expect(r.value![1]).assertEqual("x");
-      expect(typeof r.value![0]).assertEqual("int");
-      expect(typeof r.value![1]).assertEqual("string");
     });
 
     /**

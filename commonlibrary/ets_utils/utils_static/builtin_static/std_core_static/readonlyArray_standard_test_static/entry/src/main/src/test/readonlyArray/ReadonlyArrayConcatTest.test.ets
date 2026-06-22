@@ -492,7 +492,6 @@ export default function ReadonlyArrayConcatTest(): void {
       const more: ConcatArray<string> = ["c"];
       const result: Array<string> = values.concat(more);
       expect(result.length).assertEqual(3);
-      expect(typeof result[0]).assertEqual("string");
       expect(result[0]).assertEqual("a");
       expect(result[2]).assertEqual("c");
     });

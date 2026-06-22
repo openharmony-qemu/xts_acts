@@ -417,7 +417,7 @@ export default function ReadonlyArrayReduceRightTest(): void {
       const result = values.reduceRight((previous: int, current: int): int => {
           return previous + current;
       }, 0);
-      expect(typeof result).assertEqual("int");
+      expect(result).assertEqual(6);
     });
 
     /**
@@ -434,7 +434,6 @@ export default function ReadonlyArrayReduceRightTest(): void {
           return previous + current;
       }, "");
       expect(result).assertEqual("cba");
-      expect(typeof result).assertEqual("string");
     });
 
     /**

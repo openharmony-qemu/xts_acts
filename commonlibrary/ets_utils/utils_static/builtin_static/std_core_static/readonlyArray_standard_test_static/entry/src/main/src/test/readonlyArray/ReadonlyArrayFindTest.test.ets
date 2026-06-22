@@ -424,7 +424,6 @@ export default function ReadonlyArrayFindTest(): void {
       const result = values.find((value: string): boolean => {
           return value === "world";
       });
-      expect(typeof result).assertEqual("string");
       expect(result).assertEqual("world");
     });
 

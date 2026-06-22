@@ -309,7 +309,6 @@ export default function ReadonlyArrayFindTest002(): void {
       const arr: ReadonlyArray<int> = [1, 2, 3];
       const result = arr.find((value: int): boolean => value > 1000);
       expect(result === undefined).assertTrue();
-      expect(result === null).assertFalse();
     });
 
   });

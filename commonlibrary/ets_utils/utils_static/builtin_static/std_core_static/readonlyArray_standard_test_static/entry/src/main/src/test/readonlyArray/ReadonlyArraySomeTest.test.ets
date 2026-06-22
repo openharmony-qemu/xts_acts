@@ -376,11 +376,11 @@ export default function ReadonlyArraySomeTest(): void {
       const resultTrue = values.some((value: int): boolean => {
           return value == 2;
       });
-      expect(typeof resultTrue).assertEqual("boolean");
+      expect(resultTrue).assertTrue();
       const resultFalse = values.some((value: int): boolean => {
           return value > 100;
       });
-      expect(typeof resultFalse).assertEqual("boolean");
+      expect(resultFalse).assertFalse();
     });
 
     /**

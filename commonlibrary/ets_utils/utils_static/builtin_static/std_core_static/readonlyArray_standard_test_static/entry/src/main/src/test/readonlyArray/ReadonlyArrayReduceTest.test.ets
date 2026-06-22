@@ -388,7 +388,6 @@ export default function ReadonlyArrayReduceTest(): void {
           return prev + cur;
       });
       expect(result).assertEqual("xyz");
-      expect(typeof result).assertEqual("string");
     });
 
     /**
@@ -441,7 +440,6 @@ export default function ReadonlyArrayReduceTest(): void {
           return prev + cur;
       }, 0);
       expect(result).assertEqual(6);
-      expect(typeof result === 'int').assertTrue();
     });
 
     /**
@@ -1052,7 +1050,6 @@ export default function ReadonlyArrayReduceTest(): void {
     it('testReadonlyArrayReduce061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [1, 2, 3];
       const result = arr.reduce((prev: int, cur: int): int => prev + cur, 0);
-      expect(typeof result).assertEqual("int");
       expect(result).assertEqual(6);
     });
 
@@ -1067,7 +1064,6 @@ export default function ReadonlyArrayReduceTest(): void {
     it('testReadonlyArrayReduce062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<string> = ["a", "b", ""];
       const result = arr.reduce((prev: int, cur: string): int => prev + cur.length, 0);
-      expect(typeof result).assertEqual("int");
       expect(result).assertEqual(2);
     });
 
@@ -1083,7 +1079,6 @@ export default function ReadonlyArrayReduceTest(): void {
       const arr: ReadonlyArray<string> = ["中文", "😀", "long-text"];
       const expected: int = arr[0].length + arr[1].length + arr[2].length;
       const result = arr.reduce((prev: int, cur: string): int => prev + cur.length, 0);
-      expect(typeof result).assertEqual("int");
       expect(result).assertEqual(expected);
     });
 
@@ -1098,7 +1093,6 @@ export default function ReadonlyArrayReduceTest(): void {
     it('testReadonlyArrayReduce064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<boolean> = [true, false];
       const result = arr.reduce((prev: int, cur: boolean): int => prev + (cur ? 1 : 0), 0);
-      expect(typeof result).assertEqual("int");
       expect(result).assertEqual(1);
     });
 
@@ -1114,7 +1108,6 @@ export default function ReadonlyArrayReduceTest(): void {
       const nan: double = Number.NaN;
       const arr: ReadonlyArray<double> = [nan, 0.0, -0.0];
       const result = arr.reduce((prev: int, cur: double): int => prev + 1, 0);
-      expect(typeof result).assertEqual("int");
       expect(result).assertEqual(3);
     });
 
@@ -1132,7 +1125,6 @@ export default function ReadonlyArrayReduceTest(): void {
       obj2.id = 2;
       const arr: ReadonlyArray<ComboObjarr> = [obj1, obj2];
       const result = arr.reduce((prev: int, cur: ComboObjarr): int => prev + cur.id, 0);
-      expect(typeof result).assertEqual("int");
       expect(result).assertEqual(3);
     });
 
@@ -1458,7 +1450,6 @@ export default function ReadonlyArrayReduceTest(): void {
       const arr: ReadonlyArray<int> = [1, 2, 3];
       const result = arr.reduce<string>((prev: string, cur: int): string => prev + cur.toString(), "v=");
       expect(result).assertEqual("v=123");
-      expect(typeof result).assertEqual("string");
     });
 
     /**

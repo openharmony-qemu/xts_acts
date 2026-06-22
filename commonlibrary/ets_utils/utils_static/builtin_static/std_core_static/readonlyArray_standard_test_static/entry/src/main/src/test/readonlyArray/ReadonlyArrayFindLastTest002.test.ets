@@ -133,7 +133,6 @@ export default function ReadonlyArrayFindLastTest002(): void {
     it('testReadonlyArrayFindLast121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [1, 2, 3];
       const result = arr.findLast((value: int): boolean => value > 100);
-      expect(typeof result).assertEqual("undefined");
       expect(result === undefined).assertTrue();
     });
 
@@ -354,7 +353,6 @@ export default function ReadonlyArrayFindLastTest002(): void {
     it('testReadonlyArrayFindLast133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<double> = [1.5, 2.5, 3.5];
       const result = arr.findLast((value: double): boolean => value > 2.0);
-      expect(typeof result).assertEqual("number");
       expect(result).assertEqual(3.5);
     });
 

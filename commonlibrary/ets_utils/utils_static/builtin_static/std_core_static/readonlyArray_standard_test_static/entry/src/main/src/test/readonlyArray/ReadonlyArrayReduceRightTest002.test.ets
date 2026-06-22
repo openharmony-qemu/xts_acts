@@ -37,14 +37,14 @@ export default function ReadonlyArrayReduceRightTest002(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_7700
-     * @tc.name testReadonlyArrayReduceRight077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_7800
+     * @tc.name testReadonlyArrayReduceRight078
      * @tc.desc Verify ReadonlyArray.reduceRight behavior: order distinguishing - nested int array values right-to-left index visiting
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayReduceRight077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayReduceRight078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<Array<int>> = [[1], [2, 3]];
       const result = arr.reduceRight<string>(
         (previous: string, _current: Array<int>, index: int): string => previous + index.toString(),
@@ -54,14 +54,14 @@ export default function ReadonlyArrayReduceRightTest002(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_7800
-     * @tc.name testReadonlyArrayReduceRight078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_7900
+     * @tc.name testReadonlyArrayReduceRight079
      * @tc.desc Verify ReadonlyArray.reduceRight behavior: order distinguishing - repeated int elements right-to-left index visiting
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayReduceRight078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayReduceRight079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [1, 1, 2];
       const result = arr.reduceRight<string>(
         (previous: string, _current: int, index: int): string => previous + index.toString(),
@@ -71,14 +71,14 @@ export default function ReadonlyArrayReduceRightTest002(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_7900
-     * @tc.name testReadonlyArrayReduceRight079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_8000
+     * @tc.name testReadonlyArrayReduceRight080
      * @tc.desc Verify ReadonlyArray.reduceRight behavior: order distinguishing - string concat verifies right-to-left iteration
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayReduceRight079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayReduceRight080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<string> = ["a", "b", ""];
       const result = arr.reduceRight<string>(
         (previous: string, current: string): string => previous + current,
@@ -88,14 +88,14 @@ export default function ReadonlyArrayReduceRightTest002(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_8000
-     * @tc.name testReadonlyArrayReduceRight080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_8100
+     * @tc.name testReadonlyArrayReduceRight081
      * @tc.desc Verify ReadonlyArray.reduceRight behavior: order distinguishing - Unicode string values right-to-left index visiting
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayReduceRight080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayReduceRight081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<string> = ["中文", "😀", "long-text"];
       const result = arr.reduceRight<string>(
         (previous: string, _current: string, index: int): string => previous + index.toString(),
@@ -105,14 +105,14 @@ export default function ReadonlyArrayReduceRightTest002(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_8100
-     * @tc.name testReadonlyArrayReduceRight081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_8200
+     * @tc.name testReadonlyArrayReduceRight082
      * @tc.desc Verify ReadonlyArray.reduceRight behavior: order distinguishing - boolean values right-to-left index visiting
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayReduceRight081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayReduceRight082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<boolean> = [true, false];
       const result = arr.reduceRight<string>(
         (previous: string, _current: boolean, index: int): string => previous + index.toString(),
@@ -122,14 +122,14 @@ export default function ReadonlyArrayReduceRightTest002(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_8200
-     * @tc.name testReadonlyArrayReduceRight082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_8300
+     * @tc.name testReadonlyArrayReduceRight083
      * @tc.desc Verify ReadonlyArray.reduceRight behavior: order distinguishing - NaN zero negative-zero right-to-left index visiting
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayReduceRight082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayReduceRight083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<double> = [Number.NaN, 0.0, -0.0];
       const result = arr.reduceRight<string>(
         (previous: string, _current: double, index: int): string => previous + index.toString(),
@@ -139,14 +139,14 @@ export default function ReadonlyArrayReduceRightTest002(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_8300
-     * @tc.name testReadonlyArrayReduceRight083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_8400
+     * @tc.name testReadonlyArrayReduceRight084
      * @tc.desc Verify ReadonlyArray.reduceRight behavior: order distinguishing - object reference values right-to-left index visiting
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayReduceRight083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayReduceRight084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const obj1: ReadonlyArrayReduceRightGeneratedItem = new ReadonlyArrayReduceRightGeneratedItem(1);
       const obj2: ReadonlyArrayReduceRightGeneratedItem = new ReadonlyArrayReduceRightGeneratedItem(2);
       const arr: ReadonlyArray<ReadonlyArrayReduceRightGeneratedItem> = [obj1, obj2];
@@ -158,14 +158,14 @@ export default function ReadonlyArrayReduceRightTest002(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_8400
-     * @tc.name testReadonlyArrayReduceRight084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_8500
+     * @tc.name testReadonlyArrayReduceRight085
      * @tc.desc Verify ReadonlyArray.reduceRight behavior: T to U accumulation - int array reduced to string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayReduceRight084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayReduceRight085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [1, 2, 3];
       const result = arr.reduceRight<string>(
         (previous: string, current: int): string => previous + current.toString(),
@@ -175,14 +175,14 @@ export default function ReadonlyArrayReduceRightTest002(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_8500
-     * @tc.name testReadonlyArrayReduceRight085
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_8600
+     * @tc.name testReadonlyArrayReduceRight086
      * @tc.desc Verify ReadonlyArray.reduceRight behavior: T to U accumulation - int array reduced to boolean all-positive
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayReduceRight085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayReduceRight086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [3, 5, 7];
       const result = arr.reduceRight<boolean>(
         (previous: boolean, current: int): boolean => previous && current > 0,
@@ -198,28 +198,28 @@ export default function ReadonlyArrayReduceRightTest002(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_8600
-     * @tc.name testReadonlyArrayReduceRight086
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_8700
+     * @tc.name testReadonlyArrayReduceRight087
      * @tc.desc Verify ReadonlyArray.reduceRight behavior: find maximum value via reduceRight
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayReduceRight086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayReduceRight087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [3, 9, 1, 7, 5];
       const result = arr.reduceRight((prev: int, cur: int): int => prev > cur ? prev : cur);
       expect(result).assertEqual(9);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_8700
-     * @tc.name testReadonlyArrayReduceRight087
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_8800
+     * @tc.name testReadonlyArrayReduceRight088
      * @tc.desc Verify ReadonlyArray.reduceRight behavior: aggregate object id properties via reduceRight
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayReduceRight087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayReduceRight088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: ReadonlyArrayReduceRightGeneratedItem = new ReadonlyArrayReduceRightGeneratedItem(10);
       const b: ReadonlyArrayReduceRightGeneratedItem = new ReadonlyArrayReduceRightGeneratedItem(20);
       const c: ReadonlyArrayReduceRightGeneratedItem = new ReadonlyArrayReduceRightGeneratedItem(30);
@@ -232,14 +232,14 @@ export default function ReadonlyArrayReduceRightTest002(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_8800
-     * @tc.name testReadonlyArrayReduceRight088
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_8900
+     * @tc.name testReadonlyArrayReduceRight089
      * @tc.desc Verify ReadonlyArray.reduceRight behavior: callback throws mid-iteration - elements before throw point not processed (right-to-left)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayReduceRight088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayReduceRight089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [1, 2, 3, 4, 5];
       let callCount: int = 0;
       try {
@@ -258,14 +258,14 @@ export default function ReadonlyArrayReduceRightTest002(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_8900
-     * @tc.name testReadonlyArrayReduceRight089
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_9000
+     * @tc.name testReadonlyArrayReduceRight090
      * @tc.desc Verify ReadonlyArray.reduceRight behavior: +0 and -0 both processed without skipping
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayReduceRight089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayReduceRight090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<double> = [0.0, -0.0, 0.0];
       let callCount: int = 0;
       const result = arr.reduceRight<int>((prev: int, cur: double): int => {
@@ -277,14 +277,14 @@ export default function ReadonlyArrayReduceRightTest002(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_9000
-     * @tc.name testReadonlyArrayReduceRight090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_9100
+     * @tc.name testReadonlyArrayReduceRight091
      * @tc.desc Verify ReadonlyArray.reduceRight behavior: object element references in original array preserved after call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayReduceRight090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayReduceRight091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: ReadonlyArrayReduceRightGeneratedItem = new ReadonlyArrayReduceRightGeneratedItem(1);
       const b: ReadonlyArrayReduceRightGeneratedItem = new ReadonlyArrayReduceRightGeneratedItem(2);
       const arr: ReadonlyArray<ReadonlyArrayReduceRightGeneratedItem> = [a, b];
@@ -294,14 +294,14 @@ export default function ReadonlyArrayReduceRightTest002(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_9100
-     * @tc.name testReadonlyArrayReduceRight091
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_9200
+     * @tc.name testReadonlyArrayReduceRight092
      * @tc.desc Verify ReadonlyArray.reduceRight behavior: consecutive calls produce identical results (no hidden state)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayReduceRight091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayReduceRight092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [1, 2, 3, 4];
       const r1 = arr.reduceRight((prev: int, cur: int): int => prev * 10 + cur, 0);
       const r2 = arr.reduceRight((prev: int, cur: int): int => prev * 10 + cur, 0);
@@ -310,14 +310,14 @@ export default function ReadonlyArrayReduceRightTest002(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_9200
-     * @tc.name testReadonlyArrayReduceRight092
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_9300
+     * @tc.name testReadonlyArrayReduceRight093
      * @tc.desc Verify ReadonlyArray.reduceRight behavior: callback receives ReadonlyArray with same length and elements at every step
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayReduceRight092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayReduceRight093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [10, 20, 30];
       let lengthMatches: int = 0;
       let elementMatches: int = 0;
@@ -331,14 +331,14 @@ export default function ReadonlyArrayReduceRightTest002(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_9300
-     * @tc.name testReadonlyArrayReduceRight093
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_9400
+     * @tc.name testReadonlyArrayReduceRight094
      * @tc.desc Verify ReadonlyArray.reduceRight behavior: union type number with undefined - all elements visited including undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayReduceRight093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayReduceRight094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int | undefined> = [1, undefined, 2];
       let visited: int = 0;
       let undefinedSeen: boolean = false;
@@ -356,14 +356,14 @@ export default function ReadonlyArrayReduceRightTest002(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_9400
-     * @tc.name testReadonlyArrayReduceRight094
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_9500
+     * @tc.name testReadonlyArrayReduceRight095
      * @tc.desc Verify ReadonlyArray.reduceRight behavior: union type string with null - null element processed as element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayReduceRight094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayReduceRight095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<string | null> = ["a", null, "b"];
       let nullSeen: boolean = false;
       const out = arr.reduceRight<string>((prev: string, cur: string | null): string => {
@@ -378,14 +378,14 @@ export default function ReadonlyArrayReduceRightTest002(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_9500
-     * @tc.name testReadonlyArrayReduceRight095
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_REDUCE_RIGHT_9600
+     * @tc.name testReadonlyArrayReduceRight096
      * @tc.desc Verify ReadonlyArray.reduceRight behavior: char element type accumulation right-to-left
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayReduceRight095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayReduceRight096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<char> = [c'a', c'b', c'c'];
       const result = arr.reduceRight<string>(
         (prev: string, cur: char): string => prev + cur.toString(),

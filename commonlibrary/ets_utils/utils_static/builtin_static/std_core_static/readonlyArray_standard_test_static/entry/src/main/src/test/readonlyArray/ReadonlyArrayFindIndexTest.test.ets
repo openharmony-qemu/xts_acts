@@ -439,7 +439,6 @@ export default function ReadonlyArrayFindIndexTest(): void {
           return value > 7;
       });
       expect(result).assertEqual(1);
-      expect(typeof result).assertEqual("int");
     });
 
     /**

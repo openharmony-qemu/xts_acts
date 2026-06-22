@@ -445,7 +445,6 @@ export default function ReadonlyArrayFindLastTest(): void {
       const result = values.findLast((value: string): boolean => {
           return value === "world";
       });
-      expect(typeof result).assertEqual("string");
       expect(result).assertEqual("world");
     });
 

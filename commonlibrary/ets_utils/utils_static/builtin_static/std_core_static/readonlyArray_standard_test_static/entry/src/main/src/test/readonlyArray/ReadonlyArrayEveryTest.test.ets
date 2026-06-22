@@ -370,7 +370,7 @@ export default function ReadonlyArrayEveryTest(): void {
       const result = values.every((value: int): boolean => {
           return value > 0;
       });
-      expect(typeof result === "boolean").assertTrue();
+      expect(result).assertTrue();
     });
 
     /**
@@ -871,7 +871,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<byte> = [-128 as byte, 127 as byte];
       const result = arr.every((value: byte): boolean => {
-          return value >= -128 as byte;
+          return value === -128 as byte || value === 127 as byte;
       });
       expect(result).assertTrue();
     });
@@ -887,7 +887,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<short> = [-32768 as short, 32767 as short];
       const result = arr.every((value: short): boolean => {
-          return value <= 32767 as short;
+          return value === -32768 as short || value === 32767 as short;
       });
       expect(result).assertTrue();
     });
