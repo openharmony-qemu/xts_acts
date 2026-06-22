@@ -20,6 +20,7 @@ import { Driver, ON, Component } from '@ohos.UiTest';
 import { router } from '@kit.ArkUI';
 import Utils from '../../MainAbility/common/Utils';
 import CommonFunc from '../../MainAbility/common/Common';
+import { uiMaterial } from '@kit.ArkUI';
 
 export default function ActionMenuOptionsSystemMaterialTest() {
   describe('ActionMenuOptionsSystemMaterialTest', () => {
@@ -63,12 +64,17 @@ export default function ActionMenuOptionsSystemMaterialTest() {
 		await CommonFunc.sleep(1000);
 
 		let titleText = await driver.findComponent(ON.text('ActionMenu Undefined'));
-		let materialType = Utils.getDialogSystemMaterialType('ActionMenuOptionsSystemMaterial_0100');
+		let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+		let dialog: ESObject = obj.$children[1]
 
-		console.info('[ActionMenuOptionsSystemMaterial_0100] materialType=' + materialType);
+		expect(dialog).not().assertUndefined();
+		expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
+		expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
+		expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
+		expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
+		expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
 
-		expect(materialType).assertEqual('MaterialType.IMMERSIVE');
-		console.info('ActionMenuOptionsSystemMaterial_0100 Menu title is visible');
+		// ULTRA_THIN 0 THIN 1 REGULAR 2 THICK  3 ULTRA_THICK 4
 
 		await CommonFunc.sleep(500);
 		let closeButton = await driver.findComponent(ON.text('Button1'));
@@ -89,27 +95,27 @@ export default function ActionMenuOptionsSystemMaterialTest() {
 	* @tc.level  LEVEL2 
 	*/
 	it('ActionMenuOptionsSystemMaterial_0200', Level.LEVEL2, async (done: Function) => {
-	console.info('ActionMenuOptionsSystemMaterial_0200 START');
-	let driver = await Driver.create()
-	await CommonFunc.sleep(1000);
-	let button = await driver.findComponent(ON.id('hds_thick'));
-	await button.click();
-	await CommonFunc.sleep(1000);
+		console.info('ActionMenuOptionsSystemMaterial_0200 START');
+		let driver = await Driver.create()
+		await CommonFunc.sleep(1000);
+		let button = await driver.findComponent(ON.id('hds_thick'));
+		await button.click();
+		await CommonFunc.sleep(1000);
 
-	let titleText = await driver.findComponent(ON.text('ActionMenu HDS THICK'));
-	let materialType = Utils.getDialogSystemMaterialType('ActionMenuOptionsSystemMaterial_0200');
+		let titleText = await driver.findComponent(ON.text('ActionMenu HDS THICK'));
+		let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+		let dialog: ESObject = obj.$children[1]
 
-	console.info('[ActionMenuOptionsSystemMaterial_0200] materialType=' + materialType);
+		expect(dialog).not().assertUndefined();
 
-	expect(materialType).assertEqual('MaterialType.IMMERSIVE');
-	console.info('ActionMenuOptionsSystemMaterial_0200 Menu title is visible');
+		console.info('ActionMenuOptionsSystemMaterial_0200 Menu title is visible');
 
-	await CommonFunc.sleep(500);
-	let closeButton = await driver.findComponent(ON.text('Button1'));
-	await closeButton.click();
-	await CommonFunc.sleep(1000);
-	console.info('ActionMenuOptionsSystemMaterial_0200 END');
-	done();
+		await CommonFunc.sleep(500);
+		let closeButton = await driver.findComponent(ON.text('Button1'));
+		await closeButton.click();
+		await CommonFunc.sleep(1000);
+		console.info('ActionMenuOptionsSystemMaterial_0200 END');
+		done();
 	});
 
 	/**
@@ -122,28 +128,27 @@ export default function ActionMenuOptionsSystemMaterialTest() {
 	* @tc.level  LEVEL2 
 	*/
 	it('ActionMenuOptionsSystemMaterial_0300', Level.LEVEL2, async (done: Function) => {
-	console.info('ActionMenuOptionsSystemMaterial_0300 START');
-	let driver = await Driver.create()
-	await CommonFunc.sleep(1000);
-	let button = await driver.findComponent(ON.id('semi_transparent'));
-	await button.click();
-	await CommonFunc.sleep(1000);
+		console.info('ActionMenuOptionsSystemMaterial_0300 START');
+		let driver = await Driver.create()
+		await CommonFunc.sleep(1000);
+		let button = await driver.findComponent(ON.id('semi_transparent'));
+		await button.click();
+		await CommonFunc.sleep(1000);
 
-	let titleText = await driver.findComponent(ON.text('ActionMenu SEMI_TRANSPARENT'));
-	let materialType = Utils.getDialogSystemMaterialType('ActionMenuOptionsSystemMaterial_0300');
+		let titleText = await driver.findComponent(ON.text('ActionMenu SEMI_TRANSPARENT'));
+		let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+		let dialog: ESObject = obj.$children[1]
 
-	console.info('[ActionMenuOptionsSystemMaterial_0300] materialType=' + materialType);
+		expect(dialog).not().assertUndefined();
 
-	expect(materialType).assertEqual('MaterialType.SEMI_TRANSPARENT');
+		console.info('ActionMenuOptionsSystemMaterial_0300 Menu title is visible');
 
-	console.info('ActionMenuOptionsSystemMaterial_0300 Menu title is visible');
-
-	await CommonFunc.sleep(500);
-	let closeButton = await driver.findComponent(ON.text('Button1'));
-	await closeButton.click();
-	await CommonFunc.sleep(1000);
-	console.info('ActionMenuOptionsSystemMaterial_0300 END');
-	done();
+		await CommonFunc.sleep(500);
+		let closeButton = await driver.findComponent(ON.text('Button1'));
+		await closeButton.click();
+		await CommonFunc.sleep(1000);
+		console.info('ActionMenuOptionsSystemMaterial_0300 END');
+		done();
 	});
 
 	/**
@@ -156,24 +161,26 @@ export default function ActionMenuOptionsSystemMaterialTest() {
 	* @tc.level  LEVEL2 
 	*/
 	it('ActionMenuOptionsSystemMaterial_0400', Level.LEVEL2, async (done: Function) => {
-	console.info('ActionMenuOptionsSystemMaterial_0400 START');
-	let driver = await Driver.create()
-	await CommonFunc.sleep(1000);
-	let button = await driver.findComponent(ON.id('immersive_thick'));
-	await button.click();
-	await CommonFunc.sleep(1000);
+		console.info('ActionMenuOptionsSystemMaterial_0400 START');
+		let driver = await Driver.create()
+		await CommonFunc.sleep(1000);
+		let button = await driver.findComponent(ON.id('immersive_thick'));
+		await button.click();
+		await CommonFunc.sleep(1000);
 
-	let titleText = await driver.findComponent(ON.text('ActionMenu Immersive THICK'));
-	console.info('ActionMenuOptionsSystemMaterial_0400 Menu title is visible');
-	let materialType = Utils.getDialogSystemMaterialType('ActionMenuOptionsSystemMaterial_0400');
-	console.info('[ActionMenuOptionsSystemMaterial_0400] materialType=' + materialType);
-	expect(materialType).assertEqual('MaterialType.IMMERSIVE');
-	await CommonFunc.sleep(500);
-	let closeButton = await driver.findComponent(ON.text('Button1'));
-	await closeButton.click();
-	await CommonFunc.sleep(1000);
-	console.info('ActionMenuOptionsSystemMaterial_0400 END');
-	done();
+		let titleText = await driver.findComponent(ON.text('ActionMenu Immersive THICK'));
+		console.info('ActionMenuOptionsSystemMaterial_0400 Menu title is visible');
+		let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+		let dialog: ESObject = obj.$children[1]
+
+		expect(dialog).not().assertUndefined();
+
+		await CommonFunc.sleep(500);
+		let closeButton = await driver.findComponent(ON.text('Button1'));
+		await closeButton.click();
+		await CommonFunc.sleep(1000);
+		console.info('ActionMenuOptionsSystemMaterial_0400 END');
+		done();
 	});
 
 	/**
@@ -186,25 +193,27 @@ export default function ActionMenuOptionsSystemMaterialTest() {
 	* @tc.level  LEVEL2 
 	*/
 	it('ActionMenuOptionsSystemMaterial_0500', Level.LEVEL2, async (done: Function) => {
-	console.info('ActionMenuOptionsSystemMaterial_0500 START');
-	let driver = await Driver.create()
-	await CommonFunc.sleep(1000);
-	let button = await driver.findComponent(ON.id('immersive_ultra_thin'));
-	await button.click();
-	await CommonFunc.sleep(1000);
+		console.info('ActionMenuOptionsSystemMaterial_0500 START');
+		let driver = await Driver.create()
+		await CommonFunc.sleep(1000);
+		let button = await driver.findComponent(ON.id('immersive_ultra_thin'));
+		await button.click();
+		await CommonFunc.sleep(1000);
 
-	let titleText = await driver.findComponent(ON.text('ActionMenu Immersive ULTRA_THIN'));
-	let materialType = Utils.getDialogSystemMaterialType('ActionMenuOptionsSystemMaterial_0500');
-	console.info('[ActionMenuOptionsSystemMaterial_0500] materialType=' + materialType);
-	expect(materialType).assertEqual('MaterialType.IMMERSIVE');
-	console.info('ActionMenuOptionsSystemMaterial_0500 Menu title is visible');
+		let titleText = await driver.findComponent(ON.text('ActionMenu Immersive ULTRA_THIN'));
+		let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+		let dialog: ESObject = obj.$children[1]
 
-	await CommonFunc.sleep(500);
-	let closeButton = await driver.findComponent(ON.text('Button1'));
-	await closeButton.click();
-	await CommonFunc.sleep(1000);
-	console.info('ActionMenuOptionsSystemMaterial_0500 END');
-	done();
+		expect(dialog).not().assertUndefined();
+
+		console.info('ActionMenuOptionsSystemMaterial_0500 Menu title is visible');
+
+		await CommonFunc.sleep(500);
+		let closeButton = await driver.findComponent(ON.text('Button1'));
+		await closeButton.click();
+		await CommonFunc.sleep(1000);
+		console.info('ActionMenuOptionsSystemMaterial_0500 END');
+		done();
 	});
 
 	/**
@@ -217,27 +226,30 @@ export default function ActionMenuOptionsSystemMaterialTest() {
 	* @tc.level  LEVEL2 
 	*/
 	it('ActionMenuOptionsSystemMaterial_0600', Level.LEVEL2, async (done: Function) => {
-	console.info('ActionMenuOptionsSystemMaterial_0600 START');
-	let driver = await Driver.create()
-	await CommonFunc.sleep(1000);
-	let button = await driver.findComponent(ON.id('none'));
-	await button.click();
-	await CommonFunc.sleep(1000);
+		console.info('ActionMenuOptionsSystemMaterial_0600 START');
+		let driver = await Driver.create()
+		await CommonFunc.sleep(1000);
+		let button = await driver.findComponent(ON.id('none'));
+		await button.click();
+		await CommonFunc.sleep(1000);
 
-	let titleText = await driver.findComponent(ON.text('ActionMenu NONE'));
-	let materialType = Utils.getDialogSystemMaterialType('ActionMenuOptionsSystemMaterial_0600');
+		let titleText = await driver.findComponent(ON.text('ActionMenu NONE'));
+		let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+		let dialog: ESObject = obj.$children[1]
 
-	console.info('[ActionMenuOptionsSystemMaterial_0600] materialType=' + materialType);
+		expect(dialog).not().assertUndefined();
 
-	expect(materialType).assertEqual('MaterialType.NONE');
-	console.info('ActionMenuOptionsSystemMaterial_0600 Menu title is visible');
+		let date = JSON.stringify(obj.$children[1].$children[0])
+		console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
+		expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+		console.info('ActionMenuOptionsSystemMaterial_0600 Menu title is visible');
 
-	await CommonFunc.sleep(500);
-	let closeButton = await driver.findComponent(ON.text('Button1'));
-	await closeButton.click();
-	await CommonFunc.sleep(1000);
-	console.info('ActionMenuOptionsSystemMaterial_0600 END');
-	done();
+		await CommonFunc.sleep(500);
+		let closeButton = await driver.findComponent(ON.text('Button1'));
+		await closeButton.click();
+		await CommonFunc.sleep(1000);
+		console.info('ActionMenuOptionsSystemMaterial_0600 END');
+		done();
 	});
 
   })
