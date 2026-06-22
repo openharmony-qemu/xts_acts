@@ -859,5 +859,1179 @@ export default function ReadonlyArrayLastIndexOfTest(): void {
       const arr: ReadonlyArray<float> = [1.0f, 0.0f, 2.0f];
       expect(arr.lastIndexOf(0.0f, -1)).assertEqual(1);
     });
-  })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0600
+     * @tc.name testReadonlyArrayLastIndexOf060
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex - 1 search double
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<double> = [1.0, 0.0, 2.0];
+      expect(arr.lastIndexOf(0.0, -1)).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0610
+     * @tc.name testReadonlyArrayLastIndexOf061
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex - 1 search char
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<char> = [c'a', c'x', c'b'];
+      expect(arr.lastIndexOf(c'x', -1)).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0620
+     * @tc.name testReadonlyArrayLastIndexOf062
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex - 1 search boolean
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<boolean> = [true, false, true];
+      expect(arr.lastIndexOf(false, -1)).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0630
+     * @tc.name testReadonlyArrayLastIndexOf063
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex - 1 search string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<string> = ["a", "z", "b"];
+      expect(arr.lastIndexOf("z", -1)).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0640
+     * @tc.name testReadonlyArrayLastIndexOf064
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex negative length search byte
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<byte> = [0 as byte, 1 as byte];
+      expect(arr.lastIndexOf(0 as byte, -arr.length)).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0650
+     * @tc.name testReadonlyArrayLastIndexOf065
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex negative length search short
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<short> = [0 as short, 1 as short];
+      expect(arr.lastIndexOf(0 as short, -arr.length)).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0660
+     * @tc.name testReadonlyArrayLastIndexOf066
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex negative length search int
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<int> = [0, 1, 2];
+      expect(arr.lastIndexOf(0, -arr.length)).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0670
+     * @tc.name testReadonlyArrayLastIndexOf067
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex negative length search long
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<long> = [0, 1, 2];
+      expect(arr.lastIndexOf(0, -arr.length)).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0680
+     * @tc.name testReadonlyArrayLastIndexOf068
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex negative length search float
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<float> = [0.0f, 1.0f, 2.0f];
+      expect(arr.lastIndexOf(0.0f, -arr.length)).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0690
+     * @tc.name testReadonlyArrayLastIndexOf069
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex negative length search double
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<double> = [0.0, 1.0, 2.0];
+      expect(arr.lastIndexOf(0.0, -arr.length)).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0700
+     * @tc.name testReadonlyArrayLastIndexOf070
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex negative length search char
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<char> = [c'x', c'a', c'b'];
+      expect(arr.lastIndexOf(c'x', -arr.length)).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0710
+     * @tc.name testReadonlyArrayLastIndexOf071
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex negative length search boolean
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<boolean> = [false, true, true];
+      expect(arr.lastIndexOf(false, -arr.length)).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0720
+     * @tc.name testReadonlyArrayLastIndexOf072
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex negative length search string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<string> = ["z", "a", "b"];
+      expect(arr.lastIndexOf("z", -arr.length)).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0730
+     * @tc.name testReadonlyArrayLastIndexOf073
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex negative beyond length search byte
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<byte> = [1 as byte, 0 as byte];
+      expect(arr.lastIndexOf(0 as byte, -(arr.length + 1))).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0740
+     * @tc.name testReadonlyArrayLastIndexOf074
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex negative beyond length search short
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<short> = [1 as short, 0 as short];
+      expect(arr.lastIndexOf(0 as short, -(arr.length + 1))).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0750
+     * @tc.name testReadonlyArrayLastIndexOf075
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex negative beyond length search int
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<int> = [1, 0, 2];
+      expect(arr.lastIndexOf(0, -(arr.length + 1))).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0760
+     * @tc.name testReadonlyArrayLastIndexOf076
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex negative beyond length search long
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<long> = [1, 0, 2];
+      expect(arr.lastIndexOf(0, -(arr.length + 1))).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0770
+     * @tc.name testReadonlyArrayLastIndexOf077
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex negative beyond length search float
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<float> = [1.0f, 0.0f, 2.0f];
+      expect(arr.lastIndexOf(0.0f, -(arr.length + 1))).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0780
+     * @tc.name testReadonlyArrayLastIndexOf078
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex negative beyond length search double
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<double> = [1.0, 0.0, 2.0];
+      expect(arr.lastIndexOf(0.0, -(arr.length + 1))).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0790
+     * @tc.name testReadonlyArrayLastIndexOf079
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex negative beyond length search char
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<char> = [c'a', c'x', c'b'];
+      expect(arr.lastIndexOf(c'x', -(arr.length + 1))).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0800
+     * @tc.name testReadonlyArrayLastIndexOf080
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex negative beyond length search boolean
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<boolean> = [true, false, true];
+      expect(arr.lastIndexOf(false, -(arr.length + 1))).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0810
+     * @tc.name testReadonlyArrayLastIndexOf081
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex negative beyond length search string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<string> = ["a", "z", "b"];
+      expect(arr.lastIndexOf("z", -(arr.length + 1))).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0820
+     * @tc.name testReadonlyArrayLastIndexOf082
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex int max search byte
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<byte> = [1 as byte, 0 as byte];
+      expect(arr.lastIndexOf(0 as byte, 2147483647)).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0830
+     * @tc.name testReadonlyArrayLastIndexOf083
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex int max search short
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<short> = [1 as short, 0 as short];
+      expect(arr.lastIndexOf(0 as short, 2147483647)).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0840
+     * @tc.name testReadonlyArrayLastIndexOf084
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex int max search int
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<int> = [1, 0, 2];
+      expect(arr.lastIndexOf(0, 2147483647)).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0850
+     * @tc.name testReadonlyArrayLastIndexOf085
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex int max search long
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<long> = [1, 0, 2];
+      expect(arr.lastIndexOf(0, 2147483647)).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0860
+     * @tc.name testReadonlyArrayLastIndexOf086
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex int max search float
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<float> = [1.0f, 0.0f, 2.0f];
+      expect(arr.lastIndexOf(0.0f, 2147483647)).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0870
+     * @tc.name testReadonlyArrayLastIndexOf087
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex int max search double
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<double> = [1.0, 0.0, 2.0];
+      expect(arr.lastIndexOf(0.0, 2147483647)).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0880
+     * @tc.name testReadonlyArrayLastIndexOf088
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex int max search char
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<char> = [c'a', c'x', c'b'];
+      expect(arr.lastIndexOf(c'x', 2147483647)).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0890
+     * @tc.name testReadonlyArrayLastIndexOf089
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex int max search boolean
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<boolean> = [true, false, true];
+      expect(arr.lastIndexOf(false, 2147483647)).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0900
+     * @tc.name testReadonlyArrayLastIndexOf090
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex int max search string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<string> = ["a", "z", "b"];
+      expect(arr.lastIndexOf("z", 2147483647)).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0910
+     * @tc.name testReadonlyArrayLastIndexOf091
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex int min search byte
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<byte> = [1 as byte, 0 as byte];
+      expect(arr.lastIndexOf(0 as byte, -2147483648)).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0920
+     * @tc.name testReadonlyArrayLastIndexOf092
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex int min search short
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<short> = [1 as short, 0 as short];
+      expect(arr.lastIndexOf(0 as short, -2147483648)).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0930
+     * @tc.name testReadonlyArrayLastIndexOf093
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex int min search int
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<int> = [1, 0, 2];
+      expect(arr.lastIndexOf(0, -2147483648)).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0940
+     * @tc.name testReadonlyArrayLastIndexOf094
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex int min search long
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<long> = [1, 0, 2];
+      expect(arr.lastIndexOf(0, -2147483648)).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0950
+     * @tc.name testReadonlyArrayLastIndexOf095
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex int min search float
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<float> = [1.0f, 0.0f, 2.0f];
+      expect(arr.lastIndexOf(0.0f, -2147483648)).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0960
+     * @tc.name testReadonlyArrayLastIndexOf096
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex int min search double
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<double> = [1.0, 0.0, 2.0];
+      expect(arr.lastIndexOf(0.0, -2147483648)).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0970
+     * @tc.name testReadonlyArrayLastIndexOf097
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex int min search char
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<char> = [c'a', c'x', c'b'];
+      expect(arr.lastIndexOf(c'x', -2147483648)).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0980
+     * @tc.name testReadonlyArrayLastIndexOf098
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex int min search boolean
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<boolean> = [true, false, true];
+      expect(arr.lastIndexOf(false, -2147483648)).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_0990
+     * @tc.name testReadonlyArrayLastIndexOf099
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex int min search string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<string> = ["a", "z", "b"];
+      expect(arr.lastIndexOf("z", -2147483648)).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1000
+     * @tc.name testReadonlyArrayLastIndexOf100
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: duplicate search last occurrence index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<int> = [1, 2, 3, 2];
+      expect(arr.lastIndexOf(2)).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1010
+     * @tc.name testReadonlyArrayLastIndexOf101
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: search missing value returns - 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<int> = [1, 2, 3, 2];
+      expect(arr.lastIndexOf(9)).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1020
+     * @tc.name testReadonlyArrayLastIndexOf102
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: empty array search returns - 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<int> = [];
+      expect(arr.lastIndexOf(1)).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1030
+     * @tc.name testReadonlyArrayLastIndexOf103
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: single element hit returns index 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<int> = [42];
+      expect(arr.lastIndexOf(42)).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1040
+     * @tc.name testReadonlyArrayLastIndexOf104
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: single element miss returns - 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<int> = [42];
+      expect(arr.lastIndexOf(43)).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1050
+     * @tc.name testReadonlyArrayLastIndexOf105
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: NaN strict equality returns - 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const nan: float = Double.toFloat(Number.NaN);
+      const arr: ReadonlyArray<float> = [1.0f, nan, 2.0f];
+      expect(arr.lastIndexOf(nan)).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1060
+     * @tc.name testReadonlyArrayLastIndexOf106
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: search 0.0f matches last zero index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<float> = [1.0f, -0.0f, 0.0f];
+      expect(arr.lastIndexOf(0.0f)).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1070
+     * @tc.name testReadonlyArrayLastIndexOf107
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: 100 element array search last index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const data: Array<int> = [];
+      for (let i: int = 0; i < 100; i++) { data.push(i); }
+      const arr: ReadonlyArray<int> = data as ReadonlyArray<int>;
+      expect(arr.lastIndexOf(99)).assertEqual(99);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1080
+     * @tc.name testReadonlyArrayLastIndexOf108
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: 1000 element array search last index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const data: Array<int> = [];
+      for (let i: int = 0; i < 1000; i++) { data.push(i); }
+      const arr: ReadonlyArray<int> = data as ReadonlyArray<int>;
+      expect(arr.lastIndexOf(999)).assertEqual(999);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1090
+     * @tc.name testReadonlyArrayLastIndexOf109
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: search zero int last index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<int> = [5, 0, 7, 0];
+      expect(arr.lastIndexOf(0)).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1100
+     * @tc.name testReadonlyArrayLastIndexOf110
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: boolean array search false last index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<boolean> = [true, false, true, false];
+      expect(arr.lastIndexOf(false)).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1110
+     * @tc.name testReadonlyArrayLastIndexOf111
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: string array search empty string last index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<string> = ["a", "", "b", ""];
+      expect(arr.lastIndexOf("")).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1120
+     * @tc.name testReadonlyArrayLastIndexOf112
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: search zero width space last index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<string> = ["a", "\u200B", "b", "\u200B"];
+      expect(arr.lastIndexOf("\u200B")).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1130
+     * @tc.name testReadonlyArrayLastIndexOf113
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: fromIndex limits backward search upper bound
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<int> = [1, 2, 3, 2, 1];
+      expect(arr.lastIndexOf(2, 2)).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1140
+     * @tc.name testReadonlyArrayLastIndexOf114
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: call does not change source array length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<int> = [1, 2, 3];
+      const len: int = arr.length;
+      arr.lastIndexOf(2);
+      expect(arr.length).assertEqual(len);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1150
+     * @tc.name testReadonlyArrayLastIndexOf115
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: search empty string element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<string> = ["x", "", ""];
+      expect(arr.lastIndexOf("")).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1160
+     * @tc.name testReadonlyArrayLastIndexOf116
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: search unicode Chinese element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<string> = ["x", "\u4e2d\u6587", "\u4e2d\u6587"];
+      expect(arr.lastIndexOf("\u4e2d\u6587")).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1170
+     * @tc.name testReadonlyArrayLastIndexOf117
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: search emoji element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<string> = ["x", "\uD83D\uDE00", "\uD83D\uDE00"];
+      expect(arr.lastIndexOf("\uD83D\uDE00")).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1180
+     * @tc.name testReadonlyArrayLastIndexOf118
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: search zwsp element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<string> = ["x", "\u200B", "\u200B"];
+      expect(arr.lastIndexOf("\u200B")).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1190
+     * @tc.name testReadonlyArrayLastIndexOf119
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: search tab element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<string> = ["x", "\t", "\t"];
+      expect(arr.lastIndexOf("\t")).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1200
+     * @tc.name testReadonlyArrayLastIndexOf120
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: search crlf element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<string> = ["x", "\r\n", "\r\n"];
+      expect(arr.lastIndexOf("\r\n")).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1210
+     * @tc.name testReadonlyArrayLastIndexOf121
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: search Japanese element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<string> = ["x", "\u30C6\u30B9\u30C8", "\u30C6\u30B9\u30C8"];
+      expect(arr.lastIndexOf("\u30C6\u30B9\u30C8")).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1220
+     * @tc.name testReadonlyArrayLastIndexOf122
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: search Korean element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<string> = ["x", "\uD14C\uC2A4\uD2B8", "\uD14C\uC2A4\uD2B8"];
+      expect(arr.lastIndexOf("\uD14C\uC2A4\uD2B8")).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1230
+     * @tc.name testReadonlyArrayLastIndexOf123
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: search Russian element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<string> = ["x", "袗袘袙袚袛", "袗袘袙袚袛"];
+      expect(arr.lastIndexOf("袗袘袙袚袛")).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1240
+     * @tc.name testReadonlyArrayLastIndexOf124
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: search Arabic element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<string> = ["x", "丕賱丕禺鬲亘丕乇", "丕賱丕禺鬲亘丕乇"];
+      expect(arr.lastIndexOf("丕賱丕禺鬲亘丕乇")).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1250
+     * @tc.name testReadonlyArrayLastIndexOf125
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: search email element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<string> = ["x", "test@example.com", "test@example.com"];
+      expect(arr.lastIndexOf("test@example.com")).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1260
+     * @tc.name testReadonlyArrayLastIndexOf126
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: search phone element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<string> = ["x", "13800138000", "13800138000"];
+      expect(arr.lastIndexOf("13800138000")).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1270
+     * @tc.name testReadonlyArrayLastIndexOf127
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: search hex string element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<string> = ["x", "0x123", "0x123"];
+      expect(arr.lastIndexOf("0x123")).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1280
+     * @tc.name testReadonlyArrayLastIndexOf128
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: search oct string element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<string> = ["x", "0123", "0123"];
+      expect(arr.lastIndexOf("0123")).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1290
+     * @tc.name testReadonlyArrayLastIndexOf129
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: search bin string element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<string> = ["x", "0b1010", "0b1010"];
+      expect(arr.lastIndexOf("0b1010")).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1300
+     * @tc.name testReadonlyArrayLastIndexOf130
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: search sci string element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<string> = ["x", "123.45e6", "123.45e6"];
+      expect(arr.lastIndexOf("123.45e6")).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1310
+     * @tc.name testReadonlyArrayLastIndexOf131
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: search mojibake element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<string> = ["x", "忙碌猫炉", "忙碌猫炉"];
+      expect(arr.lastIndexOf("忙碌猫炉")).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1320
+     * @tc.name testReadonlyArrayLastIndexOf132
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: search replacement element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<string> = ["x", "\uFFFD", "\uFFFD"];
+      expect(arr.lastIndexOf("\uFFFD")).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1330
+     * @tc.name testReadonlyArrayLastIndexOf133
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: search lone surrogate element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<string> = ["x", "\udc04", "\udc04"];
+      expect(arr.lastIndexOf("\udc04")).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1340
+     * @tc.name testReadonlyArrayLastIndexOf134
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: search XSS element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<string> = ["x", "<script>alert(1)</script>", "<script>alert(1)</script>"];
+      expect(arr.lastIndexOf("<script>alert(1)</script>")).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1350
+     * @tc.name testReadonlyArrayLastIndexOf135
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: search fullwidth dash element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<string> = ["x", "\uFF0D", "\uFF0D"];
+      expect(arr.lastIndexOf("\uFF0D")).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1360
+     * @tc.name testReadonlyArrayLastIndexOf136
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: search 100 char element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      let s: string = "";
+      for (let i: int = 0; i < 100; i++) { s = s + "a"; }
+      const arr: ReadonlyArray<string> = ["x", s, s];
+      expect(arr.lastIndexOf(s)).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1370
+     * @tc.name testReadonlyArrayLastIndexOf137
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: search mixed language element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<string> = ["x", "Test 娓│", "Test 娓│"];
+      expect(arr.lastIndexOf("Test 娓│")).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1380
+     * @tc.name testReadonlyArrayLastIndexOf138
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: search int boundary 0 last index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<int> = [1, 0, 0];
+      expect(arr.lastIndexOf(0)).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1390
+     * @tc.name testReadonlyArrayLastIndexOf139
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: search int boundary 2147483647 last index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<int> = [0, 2147483647, 2147483647];
+      expect(arr.lastIndexOf(2147483647)).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1400
+     * @tc.name testReadonlyArrayLastIndexOf140
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: search int boundary - 2147483648 last index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      const arr: ReadonlyArray<int> = [0, -2147483648];
+      expect(arr.lastIndexOf(-2147483648)).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1410
+     * @tc.name testReadonlyArrayLastIndexOf141
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: NaN - lastIndexOf NaN - 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nan: double = Number.NaN;
+      const arr: ReadonlyArray<double> = [nan, 1.0];
+      expect(arr.lastIndexOf(nan)).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_LAST_INDEX_OF_1420
+     * @tc.name testReadonlyArrayLastIndexOf142
+     * @tc.desc Verify ReadonlyArray.lastIndexOf behavior: readonly constraint - original array length unchanged after call - length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayLastIndexOf142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<int> = [1, 2, 3];
+      const before: int = arr.length;
+      arr.lastIndexOf(1);
+      expect(arr.length).assertEqual(before);
+    });
+
+  });
 }
+
