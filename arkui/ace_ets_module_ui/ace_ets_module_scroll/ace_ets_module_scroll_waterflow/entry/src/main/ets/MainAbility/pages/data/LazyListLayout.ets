@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { LayoutConstraint, LazyLayoutHelper, LazyCustomLayoutAlgorithm, ExpandMode, ChildrenCountMode,
-  LazyLayoutDirection, LazyCustomLayoutAlgorithmOptions} from "@kit.ArkUI"
+  LazyLayoutDirection, LazyCustomLayoutAlgorithmOptions} from '@kit.ArkUI'
 
 export class LazyListLayout extends LazyCustomLayoutAlgorithm {
   private itemHeight: number = 150
@@ -23,7 +23,7 @@ export class LazyListLayout extends LazyCustomLayoutAlgorithm {
   private endIndex: number = -1;
   private space: number = 0;
   private prevSpace: number = 0;
-  selfNode?: FrameNode;
+  private selfNode?: FrameNode;
 
   constructor(itemHeight: number,option?: LazyCustomLayoutAlgorithmOptions) {
     super({axis: Axis.Vertical})
