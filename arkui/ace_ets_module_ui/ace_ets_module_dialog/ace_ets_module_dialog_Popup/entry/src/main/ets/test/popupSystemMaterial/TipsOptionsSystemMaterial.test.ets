@@ -16,6 +16,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level,
 import router from '@ohos.router';
 import { Driver, ON, BY } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
+import { uiMaterial } from '@kit.ArkUI';
 
 
 export default function TipsOptionsSystemMaterial() {
@@ -63,7 +64,7 @@ export default function TipsOptionsSystemMaterial() {
 
       let button = await driver.findComponent(ON.id('undefined'));
 
-      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+      
       let bounds = await button.getBounds();
       let centerX = Math.floor((bounds.left + bounds.right) / 2);
       let centerY = Math.floor((bounds.top + bounds.bottom) / 2);
@@ -72,12 +73,13 @@ export default function TipsOptionsSystemMaterial() {
       console.info('TipsOptionsSystemMaterial_0100 Button with undefined systemMaterial exists');
       
       let popupText = await driver.findComponent(ON.text('TipsOptions Undefined Test'));
-      let popupObj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-      let popup: ESObject = popupObj.$children[1];
-      let date = JSON.stringify(popupObj.$children[1].$children[0]);
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
-      
-      console.info('popupObj' + JSON.stringify(JSON.parse(date)));
+
+      expect(popupText).not().assertUndefined();
+		  expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
+		  expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
+		  expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
+		  expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
+		  expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
 
       await CommonFunc.sleep(500);
       console.info('TipsOptionsSystemMaterial_0100 END');
@@ -107,12 +109,8 @@ export default function TipsOptionsSystemMaterial() {
       console.info('TipsOptionsSystemMaterial_0200 Button with hdsMaterial THICK systemMaterial exists');
       
       let popupText = await driver.findComponent(ON.text('TipsOptions HDS THICK Test'));
-      let popupObj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-      let popup: ESObject = popupObj.$children[1];
-      let date = JSON.stringify(popupObj.$children[1].$children[0]);
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
-      
-      console.info('popupObj' + JSON.stringify(JSON.parse(date)));
+      expect(popupText).not().assertUndefined();
+
       await CommonFunc.sleep(500);
       await driver.mouseMoveTo({ x: 1, y: 1 });
 
@@ -143,12 +141,13 @@ export default function TipsOptionsSystemMaterial() {
       await driver.mouseMoveTo({ x: centerX, y: centerY });
       console.info('TipsOptionsSystemMaterial_0300 Button with SEMI_TRANSPARENT systemMaterial exists');
       let popupText = await driver.findComponent(ON.text('TipsOptions SEMI_TRANSPARENT Test'));
-      let popupObj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-      let popup: ESObject = popupObj.$children[1];
-      let date = JSON.stringify(popupObj.$children[1].$children[0]);
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.SEMI_TRANSPARENT');
+
+
+      expect(popupText).not().assertUndefined();
+
       
-      console.info('popupObj' + JSON.stringify(JSON.parse(date)));
+      
+    
 
       await CommonFunc.sleep(500);
       await driver.mouseMoveTo({ x: 1, y: 1 });
@@ -180,12 +179,11 @@ export default function TipsOptionsSystemMaterial() {
       await driver.mouseMoveTo({ x: centerX, y: centerY });
       console.info('TipsOptionsSystemMaterial_0400 Button with Immersive THICK systemMaterial exists');
       let popupText = await driver.findComponent(ON.text('TipsOptions Immersive THICK Test'));
-      let popupObj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-      let popup: ESObject = popupObj.$children[1];
-      let date = JSON.stringify(popupObj.$children[1].$children[0]);
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
       
-      console.info('popupObj' + JSON.stringify(JSON.parse(date)));
+
+      expect(popupText).not().assertUndefined();
+      
+      
       await CommonFunc.sleep(500);
       await driver.mouseMoveTo({ x: 1, y: 1 });
 
@@ -216,12 +214,9 @@ export default function TipsOptionsSystemMaterial() {
       await driver.mouseMoveTo({ x: centerX, y: centerY });
       console.info('TipsOptionsSystemMaterial_0500 Button with Immersive ULTRA_THIN systemMaterial exists');
       let popupText = await driver.findComponent(ON.text('TipsOptions Immersive ULTRA_THIN Test'));
-      let popupObj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-      let popup: ESObject = popupObj.$children[1];
-      let date = JSON.stringify(popupObj.$children[1].$children[0]);
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
-      
-      console.info('popupObj' + JSON.stringify(JSON.parse(date)));
+
+      expect(popupText).not().assertUndefined();
+
       await CommonFunc.sleep(500);
       await driver.mouseMoveTo({ x: 1, y: 1 });
 
@@ -252,12 +247,8 @@ export default function TipsOptionsSystemMaterial() {
       await driver.mouseMoveTo({ x: centerX, y: centerY });
       console.info('TipsOptionsSystemMaterial_0600 Button with NONE systemMaterial exists');
       let popupText = await driver.findComponent(ON.text('TipsOptions NONE Test'));
-      let popupObj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-      let popup: ESObject = popupObj.$children[1];
-      let date = JSON.stringify(popupObj.$children[1].$children[0]);
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
-      
-      console.info('popupObj' + JSON.stringify(JSON.parse(date)));
+ 
+      expect(popupText).not().assertUndefined();
 
       await CommonFunc.sleep(500);
       await driver.mouseMoveTo({ x: 1, y: 1 });

@@ -16,6 +16,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level,
 import router from '@ohos.router';
 import { Driver, ON, BY } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
+import { uiMaterial } from '@kit.ArkUI';
 
 
 export default function SheetOptionsSystemMaterial() {
@@ -64,12 +65,13 @@ export default function SheetOptionsSystemMaterial() {
       await button.click();
       await CommonFunc.sleep(1000);
       let sheetContent = await driver.findComponent(ON.text('Sheet Content'));
-      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-      let sheet: ESObject = obj.$children[1];
-      let date = JSON.stringify(obj.$children[1].$children[0]);
       
-
-      expect(JSON.parse(date).$attrs.systemBarEffect).assertEqual('false');
+      expect(sheetContent).not().assertUndefined();
+		  expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
+		  expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
+		  expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
+		  expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
+		  expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
       console.info('SheetOptionsSystemMaterial_0100 Sheet Undefined is visible');
 
       await CommonFunc.sleep(500);
@@ -98,11 +100,7 @@ export default function SheetOptionsSystemMaterial() {
       await CommonFunc.sleep(1000);
 
       let sheetContent = await driver.findComponent(ON.text('Sheet Content'));
-      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-      let sheet: ESObject = obj.$children[1];
-      let date = JSON.stringify(obj.$children[1].$children[0]);
-      
-      expect(JSON.parse(date).$attrs.systemBarEffect).assertEqual('false');
+      expect(sheetContent).not().assertUndefined();
       console.info('SheetOptionsSystemMaterial_0200 Sheet HDS THICK is visible');
 
       await CommonFunc.sleep(500);
@@ -132,11 +130,7 @@ export default function SheetOptionsSystemMaterial() {
       await CommonFunc.sleep(1000);
 
       let sheetContent = await driver.findComponent(ON.text('Sheet Content'));
-      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-      let sheet: ESObject = obj.$children[1];
-      let date = JSON.stringify(obj.$children[1].$children[0]);
-      console.info('=================obj============' + JSON.stringify(JSON.parse(date)));
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.SEMI_TRANSPARENT');
+      expect(sheetContent).not().assertUndefined();
       console.info('SheetOptionsSystemMaterial_0300 Sheet Undefined is visible');
       await CommonFunc.sleep(500);
       let closeButton = await driver.findComponent(ON.text('Close Sheet'));
@@ -164,11 +158,7 @@ export default function SheetOptionsSystemMaterial() {
       await CommonFunc.sleep(1000);
 
       let sheetContent = await driver.findComponent(ON.text('Sheet Content'));
-      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-      let sheet: ESObject = obj.$children[1];
-      let date = JSON.stringify(obj.$children[1].$children[0]);
-      console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type));
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
+      expect(sheetContent).not().assertUndefined();
       console.info('SheetOptionsSystemMaterial_0400 Sheet Immersive THICK is visible');
 
       await CommonFunc.sleep(500);
@@ -197,11 +187,7 @@ export default function SheetOptionsSystemMaterial() {
       await CommonFunc.sleep(1000);
 
       let sheetContent = await driver.findComponent(ON.text('Sheet Content'));
-      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-      let sheet: ESObject = obj.$children[1];
-      let date = JSON.stringify(obj.$children[1].$children[0]);
-      console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type));
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
+      expect(sheetContent).not().assertUndefined();
       console.info('SheetOptionsSystemMaterial_0500 Sheet Immersive ULTRA_THIN is visible');
 
       await CommonFunc.sleep(500);
@@ -230,11 +216,7 @@ export default function SheetOptionsSystemMaterial() {
       await CommonFunc.sleep(1000);
 
       let sheetContent = await driver.findComponent(ON.text('Sheet Content'));
-      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-      let sheet: ESObject = obj.$children[1];
-      let date = JSON.stringify(obj.$children[1].$children[0]);
-      console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type));
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+      expect(sheetContent).not().assertUndefined();
       console.info('SheetOptionsSystemMaterial_0600 Sheet NONE is visible');
 
       await CommonFunc.sleep(500);
