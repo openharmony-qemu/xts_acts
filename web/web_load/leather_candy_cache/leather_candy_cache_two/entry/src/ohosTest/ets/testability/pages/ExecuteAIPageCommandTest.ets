@@ -649,7 +649,7 @@ struct ExecuteAIPageCommandTest {
           }
         })
       }
-      Web({ src: 'https://www.example.com', controller: this.controller })
+      Web({ src: 'resource://rawfile/index.html', controller: this.controller })
     }
   }
 }
