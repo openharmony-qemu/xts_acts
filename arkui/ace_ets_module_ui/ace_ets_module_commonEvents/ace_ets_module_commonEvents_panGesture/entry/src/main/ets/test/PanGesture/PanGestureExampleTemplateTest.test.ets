@@ -57,7 +57,7 @@ export default function PanGestureExampleTemplateTest() {
     it('PanGestureExampleTemplateTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('PanGestureExampleTemplateTest_0010 START');
       await CommonFunc.sleep(1000);
-      let areaObj1 = CommonFunc.getComponentRectOnScreen('PanGestureExampleTemplate_Click');
+      let areaObj1 = CommonFunc.getComponentRectOnScreen('PanGestureExampleTemplate' + '_Click');
       let areaHeight1 = areaObj1.bottom - areaObj1.top
       let areaWidth1 = areaObj1.right - areaObj1.left
       console.log('PanGestureExampleTemplateTest_0010 areaObj1',areaObj1.left,areaObj1.top,areaObj1.right,areaObj1.bottom)
@@ -72,7 +72,7 @@ export default function PanGestureExampleTemplateTest() {
       await button.click();
       await CommonFunc.sleep(3000);
 
-      let text1 = getInspectorByKey('PanGestureExampleTemplate_Text');
+      let text1 = getInspectorByKey('PanGestureExampleTemplate' + '_Text');
       let obj1: ESObject = JSON.parse(text1);
       console.log('PanGestureExampleTemplateTest_0010 obj1 $attrs content',obj1.$attrs.content,obj1)
       expect(AppStorage.get('notNullGetHistoricalPoints')).assertLarger(0);
@@ -92,7 +92,7 @@ export default function PanGestureExampleTemplateTest() {
     it('PanGestureExampleTemplateTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('PanGestureExampleTemplateTest_0020 START');
       let driver = await Driver.create()
-      let text: Component = await driver.findComponent(ON.id('PanGestureExampleTemplate_Click'));
+      let text: Component = await driver.findComponent(ON.id('PanGestureExampleTemplate' + '_Click'));
       await text.click();
       expect(AppStorage.get('nullGetHistoricalPoints')).assertEqual(0);
       console.info('PanGestureExampleTemplateTest_0020 END');

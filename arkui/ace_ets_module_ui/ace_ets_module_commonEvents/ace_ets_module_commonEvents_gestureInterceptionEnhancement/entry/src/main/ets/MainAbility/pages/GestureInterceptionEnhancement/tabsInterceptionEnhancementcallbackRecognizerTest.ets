@@ -136,6 +136,7 @@ struct GestureTest5 {
             return GestureJudgeResult.CONTINUE;
           }, true)
           .id("gestureId")
+          .key("secondTabsContent")
         }.tabBar(this.tabBuilder(1, 'blue and pink'))
         TabContent() {
           Column(){

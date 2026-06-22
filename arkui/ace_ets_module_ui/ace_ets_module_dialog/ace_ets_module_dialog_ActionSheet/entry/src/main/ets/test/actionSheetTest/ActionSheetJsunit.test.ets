@@ -54,10 +54,10 @@ export default function ActionSheetJsunit() {
     it('ActionSheetJsunit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ActionSheetJsunit_0100 START');
 	    let driver = await UiDriver.create()
-      let button = await driver.findComponent(BY.key('ActionSheet'));
+      let button = await driver.findComponent(BY.key('ActionSheetOptions' + '_ActionSheet'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('ActionSheet');
+      let strJson = getInspectorByKey('ActionSheetOptions' + '_ActionSheet');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ActionSheetJsunit_0100] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.label).assertEqual("Click to Show ActionSheet");

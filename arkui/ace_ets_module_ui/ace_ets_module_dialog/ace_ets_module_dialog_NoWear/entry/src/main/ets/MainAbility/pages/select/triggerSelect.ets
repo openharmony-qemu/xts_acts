@@ -40,7 +40,7 @@ struct triggerSelectExample {
   build() {
     Column() {
       Row() {
-        Text(this.triggerSelect).margin(30).id("triggerSelectValue")
+        Text(this.triggerSelect).margin(30).id("triggerSelectValue").key('triggerSelectValue')
         Select([{ value: 'item1', icon: $r("app.media.icon") },
           { value: 'item2', icon: $r("app.media.icon") }])
           .value(this.text)
@@ -50,7 +50,7 @@ struct triggerSelectExample {
             console.info('Select text:' + text)
           })
           .menuItemContentModifier(new MyMenuItemContentModifier("我来自Modifier"))
-          .id("SelectClick")
+          .key('triggerSelect_select')
 
       }.alignItems(VerticalAlign.Center).height("50%")
     }

@@ -38,7 +38,7 @@ struct onKeyEventExample4 {
           .onClick((e: ClickEvent) => {
             this.isOnKeyEventDispatchUndefined = !this.isOnKeyEventDispatchUndefined
           })
-          .key('Common_OnKeyEventDispatch')
+          .key('onKeyEventDispatchUndefined_Common_OnKeyEventDispatch')
       }
     }
   }

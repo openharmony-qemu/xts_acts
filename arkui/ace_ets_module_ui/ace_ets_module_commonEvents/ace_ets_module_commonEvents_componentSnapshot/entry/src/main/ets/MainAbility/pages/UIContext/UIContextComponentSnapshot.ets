@@ -24,10 +24,10 @@ struct UIContextComponentSnapshot{
 
   build() {
     Column({space:5}){
-      Text(''+this.code).key('ERRORcODE')
-      Text(''+this.code1).key('ERRORcODE1')
-      Text(''+this.code2).key('ERRORcODE2')
-      Text(''+this.code3).key('ERRORcODE3')
+      Text(''+this.code).key('UIContextComponentSnapshot_ERRORcODE')
+      Text(''+this.code1).key('UIContextComponentSnapshot_ERRORcODE1')
+      Text(''+this.code2).key('UIContextComponentSnapshot_ERRORcODE2')
+      Text(''+this.code3).key('UIContextComponentSnapshot_ERRORcODE3')
 
       Row({space:5}){
         Image(this.pixmap).width('10%').height('10%').border({color:Color.Black,width:2}).objectFit(ImageFit.None)

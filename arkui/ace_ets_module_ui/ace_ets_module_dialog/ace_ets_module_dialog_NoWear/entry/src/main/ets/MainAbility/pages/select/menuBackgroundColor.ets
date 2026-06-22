@@ -25,7 +25,7 @@ struct menuBackgroundColorExample {
         { value: 'bbb', icon: $r("app.media.selecticon") },
         { value: 'ccc', icon: $r("app.media.selecticon") },
         { value: 'ddd', icon: $r("app.media.selecticon") }])
-        .id("menuBackgroundColor")
+        .key('menuBackgroundColor_select')
         .margin(100)
         .menuBackgroundColor(Color.Gray)
         .selected(this.index)

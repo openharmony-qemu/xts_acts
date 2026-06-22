@@ -59,7 +59,7 @@ export default function onKeyEventDispatchTest3() {
       await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_ALT_LEFT, KeyCode.KEYCODE_SHIFT_LEFT)
       await CommonFunc.sleep(1500);
 
-      let strJson = getInspectorByKey('modifierStatePress');
+      let strJson = getInspectorByKey('onkeyEventDispatch03' + '_modifierStatePress');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[onKeyEventDispatchTest3_0100] obj is: " + obj.$attrs.content);
       expect(obj.$attrs.content).assertEqual('ctrl & alt & shift  is press');
@@ -67,7 +67,7 @@ export default function onKeyEventDispatchTest3() {
       // test ctrl & shift
       await driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_CTRL_LEFT)
       await CommonFunc.sleep(1500);
-      let strJson3 = getInspectorByKey('modifierStatePress');
+      let strJson3 = getInspectorByKey('onkeyEventDispatch03' + '_modifierStatePress');
       let obj3: ESObject = JSON.parse(strJson3);
       console.info("[onKeyEventDispatchTest3_0100] obj is: " + obj3.$attrs.content);
       expect(obj3.$attrs.content).assertEqual('ctrl & shift  is press');
@@ -75,7 +75,7 @@ export default function onKeyEventDispatchTest3() {
       // test ctrl & alt
       await driver.triggerCombineKeys(KeyCode.KEYCODE_ALT_LEFT, KeyCode.KEYCODE_CTRL_LEFT)
       await CommonFunc.sleep(1500);
-      let strJson4 = getInspectorByKey('modifierStatePress');
+      let strJson4 = getInspectorByKey('onkeyEventDispatch03' + '_modifierStatePress');
       let obj4: ESObject = JSON.parse(strJson4);
       console.info("[onKeyEventDispatchTest3_0100] obj is: " + obj4.$attrs.content);
       expect(obj4.$attrs.content).assertEqual('ctrl & alt  is press');
@@ -83,7 +83,7 @@ export default function onKeyEventDispatchTest3() {
       // test alt & shift
       await driver.triggerCombineKeys(KeyCode.KEYCODE_ALT_LEFT, KeyCode.KEYCODE_SHIFT_LEFT)
       await CommonFunc.sleep(1500);
-      let strJson6 = getInspectorByKey('modifierStatePress');
+      let strJson6 = getInspectorByKey('onkeyEventDispatch03' + '_modifierStatePress');
       let obj6: ESObject = JSON.parse(strJson6);
       console.info("[onKeyEventDispatchTest3_0100] obj is: " + obj6.$attrs.content);
       expect(obj6.$attrs.content).assertEqual('alt & shift  is press');
@@ -91,7 +91,7 @@ export default function onKeyEventDispatchTest3() {
       //  test ctrl
       await driver.triggerKey(KeyCode.KEYCODE_CTRL_LEFT)
       await CommonFunc.sleep(1500);
-      let strJson8 = getInspectorByKey('modifierStatePress');
+      let strJson8 = getInspectorByKey('onkeyEventDispatch03' + '_modifierStatePress');
       let obj8: ESObject = JSON.parse(strJson8);
       console.info("[onKeyEventDispatchTest3_0100] obj is: " + obj8.$attrs.content);
       expect(obj8.$attrs.content).assertEqual('ctrl is press');
@@ -99,7 +99,7 @@ export default function onKeyEventDispatchTest3() {
       //  test alt
       await driver.triggerKey(KeyCode.KEYCODE_ALT_LEFT)
       await CommonFunc.sleep(1500);
-      let strJson9 = getInspectorByKey('modifierStatePress');
+      let strJson9 = getInspectorByKey('onkeyEventDispatch03' + '_modifierStatePress');
       let obj9: ESObject = JSON.parse(strJson9);
       console.info("[onKeyEventDispatchTest3_0100] obj is: " + obj9.$attrs.content);
       expect(obj9.$attrs.content).assertEqual('alt is press');
@@ -107,7 +107,7 @@ export default function onKeyEventDispatchTest3() {
       //  test shift
       await driver.triggerKey(KeyCode.KEYCODE_SHIFT_LEFT)
       await CommonFunc.sleep(1500);
-      let strJson10 = getInspectorByKey('modifierStatePress');
+      let strJson10 = getInspectorByKey('onkeyEventDispatch03' + '_modifierStatePress');
       let obj10: ESObject = JSON.parse(strJson10);
       console.info("[onKeyEventDispatchTest3_0100] obj is: " + obj10.$attrs.content);
       expect(obj10.$attrs.content).assertEqual('shift is press');

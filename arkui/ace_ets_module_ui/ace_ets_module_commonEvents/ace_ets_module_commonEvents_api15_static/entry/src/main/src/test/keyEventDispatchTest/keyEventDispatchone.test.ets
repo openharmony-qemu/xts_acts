@@ -76,54 +76,54 @@ it('keyEventDispatchTest_static_0100', Level.LEVEL0, async (done: () => void): P
       await driver.triggerKey(2049);
       await CommonFunc.sleep(2000);
       // test the  keyEvent.type
-      let strJson = inspector.getInspectorByKey('keyEvent0');
+      let strJson = inspector.getInspectorByKey('keyEventDispatchTest01' + '_keyEvent0');
       await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[keyEventDispatchTest_static_0100] obj is: " + obj.getElement('$attrs').getString('content'));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('0');
-      let strJson1 = inspector.getInspectorByKey('keyEvent1');
+      let strJson1 = inspector.getInspectorByKey('keyEventDispatchTest01' + '_keyEvent1');
       await CommonFunc.sleep(2000);
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[keyEventDispatchTest_static_0100] obj is: " + obj1.getElement('$attrs').getString('content'));
       expect(obj1.getElement('$attrs').getString('content')).assertEqual('1');
 
       // test the keyCode
-      let strJson2 = inspector.getInspectorByKey('keyEvent2');
+      let strJson2 = inspector.getInspectorByKey('keyEventDispatchTest01' + '_keyEvent2');
       await CommonFunc.sleep(2000);
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[keyEventDispatchTest_static_0100] obj is: " + obj2.getElement('$attrs').getString('content'));
       expect(obj2.getElement('$attrs').getString('content')).assertEqual('2049');
 
       // test key source
-      let strJson3 = inspector.getInspectorByKey('keyEvent3');
+      let strJson3 = inspector.getInspectorByKey('keyEventDispatchTest01' + '_keyEvent3');
       await CommonFunc.sleep(2000);
       let obj3 = JSON.parseJsonElement(strJson3);
       console.info("[keyEventDispatchTest_static_0100] obj is: " + obj3.getElement('$attrs').getString('content'));
       expect(obj3.getElement('$attrs').getString('content')).assertEqual('4');
 
       // test keyText
-      let strJson5 = inspector.getInspectorByKey('keyEvent5');
+      let strJson5 = inspector.getInspectorByKey('keyEventDispatchTest01' + '_keyEvent5');
       await CommonFunc.sleep(2000);
       let obj5 = JSON.parseJsonElement(strJson5);
       console.info("[keyEventDispatchTest_0500] obj is: " + obj5.getElement('$attrs').getString('content'));
       expect(obj5.getElement('$attrs').getString('content')).assertEqual("KEYCODE_TAB");
 
       // test metaKey
-      let strJson6 = inspector.getInspectorByKey('keyEvent6');
+      let strJson6 = inspector.getInspectorByKey('keyEventDispatchTest01' + '_keyEvent6');
       await CommonFunc.sleep(2000);
       let obj6 = JSON.parseJsonElement(strJson6);
       console.info("[keyEventDispatchTest_0600] obj is: " + obj6.getElement('$attrs').getString('content'));
       expect(obj6.getElement('$attrs').getString('content')).assertEqual("0");
 
       // test timestamp
-      let strJson7 = inspector.getInspectorByKey('keyEvent7');
+      let strJson7 = inspector.getInspectorByKey('keyEventDispatchTest01' + '_keyEvent7');
       await CommonFunc.sleep(2000);
       let obj7 = JSON.parseJsonElement(strJson7);
       console.info("[keyEventDispatchTest_0700] obj is: " + obj7.getElement('$attrs').getString('content'));
       expect(Number(obj7.getElement('$attrs').getString('content')) > 0).assertTrue();
 
       // test intentionCode
-      let strJson8 = inspector.getInspectorByKey('keyEvent8');
+      let strJson8 = inspector.getInspectorByKey('keyEventDispatchTest01' + '_keyEvent8');
       await CommonFunc.sleep(2000);
       let obj8 = JSON.parseJsonElement(strJson8);
       console.info("[keyEventDispatchTest_0800] obj is: " + obj8.getElement('$attrs').getString('content'));

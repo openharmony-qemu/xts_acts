@@ -26,12 +26,11 @@ export default function SelectAttr() {
         url: 'MainAbility/pages/select/SelectAttr',
       }
       try {
-        router.clear();
         let pages = router.getState();
         console.info("get SelectAttr state success " + JSON.stringify(pages));
-        if (!("SelectAttr" == pages.name)) {
-          console.info("get SelectAttr state success " + JSON.stringify(pages.name));
-          let result = await router.push(options);
+        if (pages.name !== 'SelectAttr') {
+          router.clear();
+          let result = await router.pushUrl(options);
           await Utils.sleep(2000);
           console.info("push SelectAttr page success " + JSON.stringify(result));
         }
@@ -56,15 +55,10 @@ export default function SelectAttr() {
     it('SelectAttr_001', Level.LEVEL1, async (done: Function) => {
       console.info('[SelectAttr_001] START');
       await Utils.sleep(1000);
-
-      let driver= Driver.create();
-      await Utils.sleep(1000);
-      let btn1 = await driver.findComponent(ON.id('SelectAttr_Select'));
-      await btn1.click()
+      expect(sendEventByKey('SelectAttr_Select', 10, '')).assertTrue();
       await Utils.sleep(3000);
 
-      let strJson1 = getInspectorByKey('SelectAttr_Select');
-      let obj1: Record<string, ESObject> = JSON.parse(strJson1);
+      let obj1: Record<string, ESObject> = JSON.parse(getInspectorByKey('SelectAttr_Select'));
       await Utils.sleep(1000);
       console.info("[SelectAttr_001] obj1 is: " + JSON.stringify(obj1));
 

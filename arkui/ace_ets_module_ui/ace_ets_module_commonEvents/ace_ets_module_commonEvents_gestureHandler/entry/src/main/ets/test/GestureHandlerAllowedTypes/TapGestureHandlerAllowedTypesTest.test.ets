@@ -60,12 +60,12 @@ export default function TapGestureHandlerAllowedTypesTest() {
       let windowOffsetX:number = globalThis.winLeft
       let windowOffsetY:number = globalThis.winTop
       console.log('TapGestureHandlerAllowedTypesTest_0010 windowOffsetX and windowOffsetY',windowOffsetX, windowOffsetY)
-      let FatherObj = CommonFunc.getComponentRectOnScreen('TapGestureHandlerAllowedTypes_Father');
+      let FatherObj = CommonFunc.getComponentRectOnScreen('TapGestureHandlerAllowedTypes' + '_Father');
       let FatherObjHeight = FatherObj.bottom - FatherObj.top
       let FatherObjWidth = FatherObj.right - FatherObj.left
       console.log('TapGestureHandlerAllowedTypesTest_0010 FatherObj',FatherObj.left,FatherObj.top,FatherObj.right,FatherObj.bottom)
       await CommonFunc.sleep(1000);
-      let areaObj = CommonFunc.getComponentRectOnScreen('TapGestureHandlerAllowedTypes_Text');
+      let areaObj = CommonFunc.getComponentRectOnScreen('TapGestureHandlerAllowedTypes' + '_Text');
       let areaHeight = areaObj.bottom - areaObj.top
       let areaWidth = areaObj.right - areaObj.left
       console.log('TapGestureHandlerAllowedTypesTest_0010 areaObj',areaObj.left,areaObj.top,areaObj.right,areaObj.bottom)
@@ -76,7 +76,7 @@ export default function TapGestureHandlerAllowedTypesTest() {
       await CommonFunc.sleep(1000);
       await driver.click(Math.round(areaObj.left + areaWidth/2),Math.round(areaObj.top + areaHeight/2));
       await CommonFunc.sleep(3000);
-      let text1 = getInspectorByKey('TapGestureHandlerAllowedTypes_result');
+      let text1 = getInspectorByKey('TapGestureHandlerAllowedTypes' + '_result');
       let obj1: ESObject = JSON.parse(text1);
       console.log('TapGestureHandlerAllowedTypesTest_0010 obj1 $attrs content',obj1.$attrs.content,obj1)
       expect(obj1.$attrs.content).assertEqual('allowed types success');
@@ -85,7 +85,7 @@ export default function TapGestureHandlerAllowedTypesTest() {
       await CommonFunc.sleep(1000);
       await driver.mouseClick({x: Math.round(areaObj.left + areaWidth/2), y: Math.round(areaObj.top + areaHeight/2)}, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(3000);
-      let text2 = getInspectorByKey('TapGestureHandlerAllowedTypes_result');
+      let text2 = getInspectorByKey('TapGestureHandlerAllowedTypes' + '_result');
       let obj2: ESObject = JSON.parse(text2);
       console.log('TapGestureHandlerAllowedTypesTest_0010 obj2 $attrs content',obj2.$attrs.content,obj2)
       expect(obj2.$attrs.content).assertEqual('allowed types success');
@@ -94,7 +94,7 @@ export default function TapGestureHandlerAllowedTypesTest() {
       let button1 = await driver.findComponent(ON.id('Mouse_Type'));
       await button1.click();
       await CommonFunc.sleep(3000);
-      let text3 = getInspectorByKey('TapGestureHandlerAllowedTypes_result');
+      let text3 = getInspectorByKey('TapGestureHandlerAllowedTypes' + '_result');
       let obj3: ESObject = JSON.parse(text3);
       console.log('TapGestureHandlerAllowedTypesTest_0010 obj3 $attrs content',obj3.$attrs.content,obj3)
       expect(obj3.$attrs.content).assertEqual('allowed types default');
@@ -103,7 +103,7 @@ export default function TapGestureHandlerAllowedTypesTest() {
       await CommonFunc.sleep(1000);
       await driver.click(Math.round(areaObj.left + areaWidth/2),Math.round(areaObj.top + areaHeight/2));
       await CommonFunc.sleep(3000);
-      let text4 = getInspectorByKey('TapGestureHandlerAllowedTypes_result');
+      let text4 = getInspectorByKey('TapGestureHandlerAllowedTypes' + '_result');
       let obj4: ESObject = JSON.parse(text4);
       console.log('TapGestureHandlerAllowedTypesTest_0010 obj4 $attrs content',obj4.$attrs.content,obj4)
       expect(obj4.$attrs.content).assertEqual('allowed types default');
@@ -112,7 +112,7 @@ export default function TapGestureHandlerAllowedTypesTest() {
       await CommonFunc.sleep(1000);
       await driver.mouseClick({x: Math.round(areaObj.left + areaWidth/2), y: Math.round(areaObj.top + areaHeight/2)}, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(3000);
-      let text5 = getInspectorByKey('TapGestureHandlerAllowedTypes_result');
+      let text5 = getInspectorByKey('TapGestureHandlerAllowedTypes' + '_result');
       let obj5: ESObject = JSON.parse(text5);
       console.log('TapGestureHandlerAllowedTypesTest_0010 obj5 $attrs content',obj5.$attrs.content,obj5)
       expect(obj5.$attrs.content).assertEqual('allowed types success');
@@ -121,7 +121,7 @@ export default function TapGestureHandlerAllowedTypesTest() {
       let button2 = await driver.findComponent(ON.id('Finger_Type'));
       await button2.click();
       await CommonFunc.sleep(3000);
-      let text6 = getInspectorByKey('TapGestureHandlerAllowedTypes_result');
+      let text6 = getInspectorByKey('TapGestureHandlerAllowedTypes' + '_result');
       let obj6: ESObject = JSON.parse(text6);
       console.log('TapGestureHandlerAllowedTypesTest_0010 obj6 $attrs content',obj6.$attrs.content,obj6)
       expect(obj6.$attrs.content).assertEqual('allowed types default');
@@ -130,7 +130,7 @@ export default function TapGestureHandlerAllowedTypesTest() {
       await CommonFunc.sleep(1000);
       await driver.mouseClick({x: Math.round(areaObj.left + areaWidth/2), y: Math.round(areaObj.top + areaHeight/2)}, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(3000);
-      let text7 = getInspectorByKey('TapGestureHandlerAllowedTypes_result');
+      let text7 = getInspectorByKey('TapGestureHandlerAllowedTypes' + '_result');
       let obj7: ESObject = JSON.parse(text7);
       console.log('TapGestureAllowedTypesTest_0010 obj7 $attrs content',obj7.$attrs.content,obj7)
       expect(obj7.$attrs.content).assertEqual('allowed types default');
@@ -139,7 +139,7 @@ export default function TapGestureHandlerAllowedTypesTest() {
       await CommonFunc.sleep(1000);
       await driver.click(Math.round(areaObj.left + areaWidth/2),Math.round(areaObj.top + areaHeight/2));
       await CommonFunc.sleep(3000);
-      let text8 = getInspectorByKey('TapGestureHandlerAllowedTypes_result');
+      let text8 = getInspectorByKey('TapGestureHandlerAllowedTypes' + '_result');
       let obj8: ESObject = JSON.parse(text8);
       console.log('TapGestureAllowedTypesTest_0010 obj8 $attrs content',obj8.$attrs.content,obj8)
       expect(obj8.$attrs.content).assertEqual('allowed types success');
@@ -149,7 +149,7 @@ export default function TapGestureHandlerAllowedTypesTest() {
       let button3 = await driver.findComponent(ON.id('Invalid_type'));
       await button3.click();
       await CommonFunc.sleep(3000);
-      let text9 = getInspectorByKey('TapGestureHandlerAllowedTypes_result');
+      let text9 = getInspectorByKey('TapGestureHandlerAllowedTypes' + '_result');
       let obj9: ESObject = JSON.parse(text9);
       console.log('TapGestureHandlerAllowedTypesTest_0010 obj9 $attrs content',obj9.$attrs.content,obj9)
       expect(obj9.$attrs.content).assertEqual('allowed types default');
@@ -158,7 +158,7 @@ export default function TapGestureHandlerAllowedTypesTest() {
       await CommonFunc.sleep(1000);
       await driver.click(Math.round(areaObj.left + areaWidth/2),Math.round(areaObj.top + areaHeight/2));
       await CommonFunc.sleep(3000);
-      let text10 = getInspectorByKey('TapGestureHandlerAllowedTypes_result');
+      let text10 = getInspectorByKey('TapGestureHandlerAllowedTypes' + '_result');
       let obj10: ESObject = JSON.parse(text10);
       console.log('TapGestureHandlerAllowedTypesTest_0010 obj10 $attrs content',obj10.$attrs.content,obj10)
       expect(obj10.$attrs.content).assertEqual('allowed types success');

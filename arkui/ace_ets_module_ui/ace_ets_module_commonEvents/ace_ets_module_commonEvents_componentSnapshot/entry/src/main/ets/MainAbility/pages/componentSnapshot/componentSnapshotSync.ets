@@ -25,10 +25,10 @@ struct componentSnapshotSync{
   @State code4:string =''
   build() {
       Column({space:5}){
-      Text(''+this.code).key('ERRORcODE')
-      Text(''+this.code1).key('ERRORcODE1')
-      Text(''+this.code2).key('ERRORcODE2')
-      Text(''+this.code3).key('ERRORcODE3')
+      Text(''+this.code).key('componentSnapshotSync_ERRORcODE')
+      Text(''+this.code1).key('componentSnapshotSync_ERRORcODE1')
+      Text(''+this.code2).key('componentSnapshotSync_ERRORcODE2')
+      Text(''+this.code3).key('componentSnapshotSync_ERRORcODE3')
       Text(''+this.code4).key('ERRORcODE4')
 
       Row({space:5}){

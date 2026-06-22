@@ -44,12 +44,12 @@ struct PanGestureAllowedTypes {
 
       Text(this.result).key('PanGestureAllowedTypes_result')
 
-      Button('Mouse').key('Mouse_Type')
+      Button('Mouse').key('PanGestureAllowedTypes_Mouse_Type')
         .onClick((e: ClickEvent) => {
           this.result = 'allowed types default';
           this.types = [SourceTool.MOUSE];
         })
-      Button('Finger').key('Finger_Type')
+      Button('Finger').key('PanGestureAllowedTypes_Finger_Type')
         .onClick((e: ClickEvent) => {
           this.result = 'allowed types default';
           this.types = [SourceTool.Finger];

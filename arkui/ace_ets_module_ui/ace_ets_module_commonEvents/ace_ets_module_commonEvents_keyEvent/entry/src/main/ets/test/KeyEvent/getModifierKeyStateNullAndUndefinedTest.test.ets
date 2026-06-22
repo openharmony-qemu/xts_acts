@@ -60,7 +60,7 @@ export default function getModifierKeyStateNullAndUndefinedTest() {
       console.info('[SUB_ARKUI_KEYEVENT_GETMODIFIERKEYSTATE_PARAM_001] START');
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
-      let button: Component = await driver.findComponent(ON.id('testNull'));
+      let button: Component = await driver.findComponent(ON.id('getModifierKeyStateNullAndUndefined' + '_testNull'));
       let point = await button.getBoundsCenter();
       await driver.mouseClick({ x: point.x, y: point.y }, MouseButton.MOUSE_BUTTON_LEFT, 2072);
       await CommonFunc.sleep(200);
@@ -84,7 +84,7 @@ export default function getModifierKeyStateNullAndUndefinedTest() {
       console.info('[SUB_ARKUI_KEYEVENT_GETMODIFIERKEYSTATE_PARAM_002] START');
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
-      let button: Component = await driver.findComponent(ON.id('testUndefined'));
+      let button: Component = await driver.findComponent(ON.id('getModifierKeyStateNullAndUndefined' + '_testUndefined'));
       let point = await button.getBoundsCenter();
       await driver.mouseClick({ x: point.x, y: point.y }, MouseButton.MOUSE_BUTTON_LEFT, 2072);
       await CommonFunc.sleep(200);

@@ -13,10 +13,11 @@
  * limitations under the License.
  */
 import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium';
-import { Driver, ON, Component} from '@ohos.UiTest';
 import router from '@ohos.router';
 import Utils from '../../MainAbility/common/Utils';
+
 const SLEEP_TIME = 1000;
+const UI_EVENT_CLICK: number = 10;
 
 export default function showInSubWindowValueTest() {
   describe('showInSubWindowValueTest', () => {
@@ -25,106 +26,104 @@ export default function showInSubWindowValueTest() {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/select/showInSubWindow',
       }
-      router.clear();
       let pages = router.getState();
       console.info("get showInSubWindowValueTest state pages: " + JSON.stringify(pages));
-      if (!("showInSubWindow" == pages.name)) {
-        console.info("get showInSubWindowValueTest state pages.name: " + JSON.stringify(pages.name));
-        let result = await router.push(options);
+      if (pages.name !== 'showInSubWindow') {
+        router.clear();
+        let result = await router.pushUrl(options);
+        await Utils.sleep(3000);
         console.info("push showInSubWindowValueTest success: " + JSON.stringify(result));
+      } else {
+        await Utils.sleep(1000);
       }
       done();
     });
 
     /**
-     * @tc.number: showInSubWindow_value_0001
-     * @tc.name  : showInSubWindow_value_0001
-     * @tc.desc  : set showInSubWindow:true,levelUniqueId: Normal value
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.number    SUB_ACE_Select_showInSubWindow_0100
+     * @tc.name      showInSubWindow_value_0001
+     * @tc.desc      set showInSubWindow:false,levelUniqueId: Normal value
+     * @tc.level     Level 3
+     * @tc.type      FUNCTION
+     * @tc.size      MEDIUMTEST
      */
-    it('showInSubWindow_value_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('showInSubWindow_value_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
       console.info('showInSubWindow_value_0001 START');
-      let selectValue = getInspectorByKey('select');
-      console.info('showInSubWindow_value_0001' + JSON.stringify(JSON.parse(selectValue).$attrs.showInSubWindow));
-      expect(JSON.parse(selectValue).$attrs.showInSubWindow).assertEqual('false');
+      await Utils.sleep(SLEEP_TIME);
+      let obj: ESObject = Utils.parseInspectorKey('showInSubWindow_select');
+      expect(obj.$attrs.showInSubWindow).assertEqual('false');
       console.info('showInSubWindow_value_0001 END');
       done();
     });
 
     /**
-     * @tc.number: showInSubWindow_value_0002
-     * @tc.name  : showInSubWindow_value_0002
-     * @tc.desc  : set showInSubWindow:true,levelUniqueId: Normal value
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.number    SUB_ACE_Select_showInSubWindow_0200
+     * @tc.name      showInSubWindow_value_0002
+     * @tc.desc      set showInSubWindow:true,levelUniqueId: Normal value
+     * @tc.level     Level 3
+     * @tc.type      FUNCTION
+     * @tc.size      MEDIUMTEST
      */
-    it('showInSubWindow_value_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('showInSubWindow_value_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
       console.info('showInSubWindow_value_0002 START');
-      let driver: Driver = Driver.create();
-      let button = await driver.findComponent(ON.id('showInSubWindowButton'));
-      await button.click();
       await Utils.sleep(SLEEP_TIME);
-      let selectValue = getInspectorByKey('select');
-      console.info('showInSubWindow_value_0002' + JSON.stringify(JSON.parse(selectValue).$attrs.showInSubWindow));
-      expect(JSON.parse(selectValue).$attrs.showInSubWindow).assertEqual('true');
+      expect(sendEventByKey('showInSubWindow_button', UI_EVENT_CLICK, '')).assertTrue();
+      await Utils.sleep(SLEEP_TIME);
+      let obj: ESObject = Utils.parseInspectorKey('showInSubWindow_select');
+      expect(obj.$attrs.showInSubWindow).assertEqual('true');
       console.info('showInSubWindow_value_0002 END');
       done();
     });
 
     /**
-     * @tc.number: showInSubWindow_value_0003
-     * @tc.name  : showInSubWindow_value_0003
-     * @tc.desc  : set showInSubWindow:undefined,levelUniqueId: Abnormal value
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.number    SUB_ACE_Select_showInSubWindow_0300
+     * @tc.name      showInSubWindow_value_0003
+     * @tc.desc      set showInSubWindow:undefined,levelUniqueId: Abnormal value
+     * @tc.level     Level 3
+     * @tc.type      FUNCTION
+     * @tc.size      MEDIUMTEST
      */
-    it('showInSubWindow_value_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('showInSubWindow_value_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
       console.info('showInSubWindow_value_0003 START');
-      let resource = getInspectorByKey('resource');
-      let showInSubWindowValue = JSON.stringify(JSON.parse(resource).$attrs.content);
-      console.log('select_showInSubWindow_0003 sys.string.ohos_id_expand_display为' + showInSubWindowValue);
-      let driver: Driver = Driver.create();
-      let button = await driver.findComponent(ON.id('showInSubWindowButton'));
-      await button.click();
+      let resource: ESObject = Utils.parseInspectorKey('resource');
+      let showInSubWindowValue: string = JSON.stringify(resource.$attrs.content);
       await Utils.sleep(SLEEP_TIME);
-      let selectValue = getInspectorByKey('select');
-      console.info('showInSubWindow_value_0003' + JSON.stringify(JSON.parse(selectValue).$attrs.showInSubWindow));
-      if(showInSubWindowValue === '"false"'){
-        expect(JSON.parse(selectValue).$attrs.showInSubWindow ).assertEqual('false');
-      }else{
-        expect(JSON.parse(selectValue).$attrs.showInSubWindow ).assertEqual('true');
+      expect(sendEventByKey('showInSubWindow_button', UI_EVENT_CLICK, '')).assertTrue();
+      await Utils.sleep(SLEEP_TIME);
+      let obj: ESObject = Utils.parseInspectorKey('showInSubWindow_select');
+      if (showInSubWindowValue === '"false"') {
+        expect(obj.$attrs.showInSubWindow).assertEqual('false');
+      } else {
+        expect(obj.$attrs.showInSubWindow).assertEqual('true');
       }
       console.info('showInSubWindow_value_0003 END');
       done();
     });
 
     /**
-     * @tc.number: showInSubWindow_value_0004
-     * @tc.name  : showInSubWindow_value_0004
-     * @tc.desc  : set showInSubWindow:null,levelUniqueId: Abnormal value
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.number    SUB_ACE_Select_showInSubWindow_0400
+     * @tc.name      showInSubWindow_value_0004
+     * @tc.desc      set showInSubWindow:null,levelUniqueId: Abnormal value
+     * @tc.level     Level 3
+     * @tc.type      FUNCTION
+     * @tc.size      MEDIUMTEST
      */
-    it('showInSubWindow_value_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('showInSubWindow_value_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
       console.info('showInSubWindow_value_0004 START');
-      let resource = getInspectorByKey('resource');
-      let showInSubWindowValue = JSON.stringify(JSON.parse(resource).$attrs.content);
-      console.log('select_showInSubWindow_0004 sys.string.ohos_id_expand_display为' + showInSubWindowValue);
-      let driver: Driver = Driver.create();
-      let button = await driver.findComponent(ON.id('showInSubWindowButton'));
-      await button.click();
+      let resource: ESObject = Utils.parseInspectorKey('resource');
+      let showInSubWindowValue: string = JSON.stringify(resource.$attrs.content);
       await Utils.sleep(SLEEP_TIME);
-      let selectValue = getInspectorByKey('select');
-      console.info('showInSubWindow_value_0004' + JSON.stringify(JSON.parse(selectValue).$attrs.showInSubWindow));
-      if(showInSubWindowValue === '"false"'){
-        expect(JSON.parse(selectValue).$attrs.showInSubWindow ).assertEqual('false');
-      }else{
-        expect(JSON.parse(selectValue).$attrs.showInSubWindow ).assertEqual('true');
+      expect(sendEventByKey('showInSubWindow_button', UI_EVENT_CLICK, '')).assertTrue();
+      await Utils.sleep(SLEEP_TIME);
+      let obj: ESObject = Utils.parseInspectorKey('showInSubWindow_select');
+      if (showInSubWindowValue === '"false"') {
+        expect(obj.$attrs.showInSubWindow).assertEqual('false');
+      } else {
+        expect(obj.$attrs.showInSubWindow).assertEqual('true');
       }
       console.info('showInSubWindow_value_0004 END');
       done();

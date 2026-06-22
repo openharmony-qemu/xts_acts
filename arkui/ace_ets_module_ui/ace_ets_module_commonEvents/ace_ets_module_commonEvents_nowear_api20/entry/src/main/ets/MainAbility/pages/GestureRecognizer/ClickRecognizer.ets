@@ -20,7 +20,7 @@ struct ClickRecognizerExample {
 
   build() {
     Column() {
-      Text(this.message).key('PanRecognizer')
+      Text(this.message).key('ClickRecognizer_PanRecognizer')
     }
     .key('Click')
     .margin(5)

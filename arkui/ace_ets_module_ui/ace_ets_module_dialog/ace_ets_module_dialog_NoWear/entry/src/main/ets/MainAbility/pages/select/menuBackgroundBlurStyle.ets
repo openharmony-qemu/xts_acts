@@ -25,7 +25,7 @@ struct menuBackgroundBlurStyleExample {
         { value: 'bbb', icon: $r("app.media.selecticon") },
         { value: 'ccc', icon: $r("app.media.selecticon") },
         { value: 'ddd', icon: $r("app.media.selecticon") }])
-        .id("menuBackgroundBlurStyle")
+        .key('menuBackgroundBlurStyle_select')
         .margin(100)
         .menuBackgroundColor(Color.Orange)
         .menuBackgroundBlurStyle(BlurStyle.Thin)

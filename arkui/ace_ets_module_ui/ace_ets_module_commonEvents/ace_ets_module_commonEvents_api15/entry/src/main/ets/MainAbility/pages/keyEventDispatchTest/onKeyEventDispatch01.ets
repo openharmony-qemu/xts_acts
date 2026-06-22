@@ -49,17 +49,17 @@ struct onKeyEventExample {
   build() {
     Column() {
       Row() {
-          Text(this.text).key('keyEvent0')
-          Text(this.text1).key('keyEvent1')
-          Text(this.text2).key('keyEvent2')
-          Text(this.text3).key('keyEvent3')
-          Text(this.text4).key('keyEvent4')
+          Text(this.text).key('onKeyEventDispatch01_keyEvent0')
+          Text(this.text1).key('onKeyEventDispatch01_keyEvent1')
+          Text(this.text2).key('onKeyEventDispatch01_keyEvent2')
+          Text(this.text3).key('onKeyEventDispatch01_keyEvent3')
+          Text(this.text4).key('onKeyEventDispatch01_keyEvent4')
       }
       Row() {
-        Text(this.text5).key('keyEvent5')
-        Text(this.text6).key('keyEvent6')
-        Text(this.text7).key('keyEvent7')
-        Text(this.text8).key('keyEvent8')
+        Text(this.text5).key('onKeyEventDispatch01_keyEvent5')
+        Text(this.text6).key('onKeyEventDispatch01_keyEvent6')
+        Text(this.text7).key('onKeyEventDispatch01_keyEvent7')
+        Text(this.text8).key('onKeyEventDispatch01_keyEvent8')
       }
       Button('KeyEvent')
         .onKeyEventDispatch(this.eventHandler)

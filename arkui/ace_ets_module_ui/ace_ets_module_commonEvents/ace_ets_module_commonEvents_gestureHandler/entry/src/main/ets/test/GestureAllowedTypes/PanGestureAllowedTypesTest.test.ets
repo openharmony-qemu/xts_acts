@@ -61,7 +61,7 @@ export default function PanGestureAllowedTypesTest() {
       let windowOffsetX:number = globalThis.winLeft
       let windowOffsetY:number = globalThis.winTop
       console.log('PanGestureAllowedTypesTest_0010 windowOffsetX and windowOffsetY',windowOffsetX, windowOffsetY)
-      let areaObj1 = CommonFunc.getComponentRectOnScreen('PanGestureAllowedTypes_Text');
+      let areaObj1 = CommonFunc.getComponentRectOnScreen('PanGestureAllowedTypes' + '_Text');
       let areaHeight1 = areaObj1.bottom - areaObj1.top
       let areaWidth1 = areaObj1.right - areaObj1.left
       console.log('PanGestureAllowedTypesTest_0010 areaObj1',areaObj1.left,areaObj1.top,areaObj1.right,areaObj1.bottom)
@@ -73,7 +73,7 @@ export default function PanGestureAllowedTypesTest() {
       await CommonFunc.sleep(1000);
       await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.8),Math.round(areaObj1.top + areaHeight1/2),Math.round(areaObj1.left + areaWidth1 * 0.4),Math.round(areaObj1.top + areaHeight1/2))
       await CommonFunc.sleep(3000);
-      let text1 = getInspectorByKey('PanGestureAllowedTypes_result');
+      let text1 = getInspectorByKey('PanGestureAllowedTypes' + '_result');
       let obj1: ESObject = JSON.parse(text1);
       console.log('PanGestureAllowedTypesTest_0010 obj1 $attrs content',obj1.$attrs.content,obj1)
       expect(obj1.$attrs.content).assertEqual('allowed types success');
@@ -82,16 +82,16 @@ export default function PanGestureAllowedTypesTest() {
       await CommonFunc.sleep(1000);
       await driver.mouseDrag({x: Math.round(areaObj1.left + areaWidth1 * 0.8),y: Math.round(areaObj1.top + areaHeight1/2)}, {x: Math.round(areaObj1.left + areaWidth1 * 0.4), y: Math.round(areaObj1.top + areaHeight1/2)})
       await CommonFunc.sleep(3000);
-      let text2 = getInspectorByKey('PanGestureAllowedTypes_result');
+      let text2 = getInspectorByKey('PanGestureAllowedTypes' + '_result');
       let obj2: ESObject = JSON.parse(text2);
       console.log('PanGestureAllowedTypesTest_0010 obj2 $attrs content',obj2.$attrs.content,obj2)
       expect(obj2.$attrs.content).assertEqual('allowed types success');
 
       // click button to change types to [SourceTool.MOUSE]
-      let button1 = await driver.findComponent(ON.id('Mouse_Type'));
+      let button1 = await driver.findComponent(ON.id('PanGestureAllowedTypes' + '_Mouse_Type'));
       await button1.click();
       await CommonFunc.sleep(3000);
-      let text3 = getInspectorByKey('PanGestureAllowedTypes_result');
+      let text3 = getInspectorByKey('PanGestureAllowedTypes' + '_result');
       let obj3: ESObject = JSON.parse(text3);
       console.log('PanGestureAllowedTypesTest_0010 obj3 $attrs content',obj3.$attrs.content,obj3)
       expect(obj3.$attrs.content).assertEqual('allowed types default');
@@ -100,7 +100,7 @@ export default function PanGestureAllowedTypesTest() {
       await CommonFunc.sleep(1000);
       await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.8),Math.round(areaObj1.top + areaHeight1/2),Math.round(areaObj1.left + areaWidth1 * 0.4),Math.round(areaObj1.top + areaHeight1/2))
       await CommonFunc.sleep(3000);
-      let text4 = getInspectorByKey('PanGestureAllowedTypes_result');
+      let text4 = getInspectorByKey('PanGestureAllowedTypes' + '_result');
       let obj4: ESObject = JSON.parse(text4);
       console.log('PanGestureAllowedTypesTest_0010 obj4 $attrs content',obj4.$attrs.content,obj4)
       expect(obj4.$attrs.content).assertEqual('allowed types default');
@@ -109,16 +109,16 @@ export default function PanGestureAllowedTypesTest() {
       await CommonFunc.sleep(1000);
       await driver.mouseDrag({x: Math.round(areaObj1.left + areaWidth1 * 0.8),y: Math.round(areaObj1.top + areaHeight1/2)}, {x: Math.round(areaObj1.left + areaWidth1 * 0.4), y: Math.round(areaObj1.top + areaHeight1/2)})
       await CommonFunc.sleep(3000);
-      let text5 = getInspectorByKey('PanGestureAllowedTypes_result');
+      let text5 = getInspectorByKey('PanGestureAllowedTypes' + '_result');
       let obj5: ESObject = JSON.parse(text5);
       console.log('PanGestureAllowedTypesTest_0010 obj5 $attrs content',obj5.$attrs.content,obj5)
       expect(obj5.$attrs.content).assertEqual('allowed types success');
 
       // click button to change types to [SourceTool.Finger]
-      let button2 = await driver.findComponent(ON.id('Finger_Type'));
+      let button2 = await driver.findComponent(ON.id('PanGestureAllowedTypes' + '_Finger_Type'));
       await button2.click();
       await CommonFunc.sleep(3000);
-      let text6 = getInspectorByKey('PanGestureAllowedTypes_result');
+      let text6 = getInspectorByKey('PanGestureAllowedTypes' + '_result');
       let obj6: ESObject = JSON.parse(text6);
       console.log('PanGestureAllowedTypesTest_0010 obj6 $attrs content',obj6.$attrs.content,obj6)
       expect(obj6.$attrs.content).assertEqual('allowed types default');
@@ -127,7 +127,7 @@ export default function PanGestureAllowedTypesTest() {
       await CommonFunc.sleep(1000);
       await driver.mouseDrag({x: Math.round(areaObj1.left + areaWidth1 * 0.8),y: Math.round(areaObj1.top + areaHeight1/2)}, {x: Math.round(areaObj1.left + areaWidth1 * 0.4), y: Math.round(areaObj1.top + areaHeight1/2)})
       await CommonFunc.sleep(3000);
-      let text7 = getInspectorByKey('PanGestureAllowedTypes_result');
+      let text7 = getInspectorByKey('PanGestureAllowedTypes' + '_result');
       let obj7: ESObject = JSON.parse(text7);
       console.log('PanGestureAllowedTypesTest_0010 obj7 $attrs content',obj7.$attrs.content,obj7)
       expect(obj7.$attrs.content).assertEqual('allowed types default');
@@ -136,7 +136,7 @@ export default function PanGestureAllowedTypesTest() {
       await CommonFunc.sleep(1000);
       await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.8),Math.round(areaObj1.top + areaHeight1/2),Math.round(areaObj1.left + areaWidth1 * 0.4),Math.round(areaObj1.top + areaHeight1/2))
       await CommonFunc.sleep(3000);
-      let text8 = getInspectorByKey('PanGestureAllowedTypes_result');
+      let text8 = getInspectorByKey('PanGestureAllowedTypes' + '_result');
       let obj8: ESObject = JSON.parse(text8);
       console.log('PanGestureAllowedTypesTest_0010 obj8 $attrs content',obj8.$attrs.content,obj8)
       expect(obj8.$attrs.content).assertEqual('allowed types success');
@@ -146,7 +146,7 @@ export default function PanGestureAllowedTypesTest() {
       let button3 = await driver.findComponent(ON.id('Invalid_type'));
       await button3.click();
       await CommonFunc.sleep(3000);
-      let text9 = getInspectorByKey('PanGestureAllowedTypes_result');
+      let text9 = getInspectorByKey('PanGestureAllowedTypes' + '_result');
       let obj9: ESObject = JSON.parse(text9);
       console.log('PanGestureAllowedTypesTest_0010 obj9 $attrs content',obj9.$attrs.content,obj9)
       expect(obj9.$attrs.content).assertEqual('allowed types default');
@@ -155,7 +155,7 @@ export default function PanGestureAllowedTypesTest() {
       await CommonFunc.sleep(1000);
       await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.8),Math.round(areaObj1.top + areaHeight1/2),Math.round(areaObj1.left + areaWidth1 * 0.4),Math.round(areaObj1.top + areaHeight1/2))
       await CommonFunc.sleep(3000);
-      let text10 = getInspectorByKey('PanGestureAllowedTypes_result');
+      let text10 = getInspectorByKey('PanGestureAllowedTypes' + '_result');
       let obj10: ESObject = JSON.parse(text10);
       console.log('PanGestureAllowedTypesTest_0010 obj10 $attrs content',obj10.$attrs.content,obj10)
       expect(obj10.$attrs.content).assertEqual('allowed types success');

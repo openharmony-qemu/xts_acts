@@ -39,7 +39,7 @@ struct bindPopupOffset {
     Row({ space: 2 }) {
       Text('Custom Popup')
         .fontSize(12)
-        .key('text')
+        .key('bindPopupOffset_text')
     }
     .width(100)
     .height(50)

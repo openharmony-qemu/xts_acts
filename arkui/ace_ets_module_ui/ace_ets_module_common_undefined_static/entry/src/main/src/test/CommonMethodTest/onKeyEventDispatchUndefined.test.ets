@@ -89,7 +89,7 @@ export default function OnKeyEventDispatchUndefinedTest() {
       await CommonFunc.sleep(1000);
       expect(await (text?.getText() as Promise<String>)).assertEqual('parentTab');
       await CommonFunc.sleep(1000);
-      let changeBtn = await driver.findComponent(ON.id('Common_OnKeyEventDispatch'));
+      let changeBtn = await driver.findComponent(ON.id('onKeyEventDispatchUndefined' + '_Common_OnKeyEventDispatch'));
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       await driver.triggerKey(2049);

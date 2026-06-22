@@ -24,11 +24,10 @@ export default function SelectJsunit1() {
         url: 'MainAbility/pages/select/select1',
       }
       try {
-        router.clear();
         let pages = router.getState();
         console.info("get select state success " + JSON.stringify(pages));
-        if (!("select" == pages.name)) {
-          console.info("get select success " + JSON.stringify(pages.name));
+        if (pages.name !== 'select1') {
+          router.clear();
           let result = await router.pushUrl(options);
           await Utils.sleep(2000);
           console.info("push select page success " + JSON.stringify(result));
@@ -54,7 +53,7 @@ export default function SelectJsunit1() {
     it('selectTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('selectTest_0100 START');
       await Utils.sleep(1000);
-      let strJson: string = getInspectorByKey('select');
+      let strJson: string = getInspectorByKey('select1' + '_select');
       console.info("selectTest_0100 component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$attrs.value).assertEqual('10');
       await Utils.sleep(1000);
@@ -87,7 +86,7 @@ export default function SelectJsunit1() {
         console.log("[selectTest_0200] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJsonNew = getInspectorByKey('select');
+      let strJsonNew = getInspectorByKey('select1' + '_select');
       console.info("[selectTest_0200] component objNew is: " + JSON.stringify(JSON.parse(strJsonNew)));
       expect(JSON.parse(strJsonNew).$attrs.value).assertEqual('5');
       done();
@@ -103,7 +102,7 @@ export default function SelectJsunit1() {
     it('selectTest_0300', Level.LEVEL1, async (done: Function) => {
       console.info('[selectTest_0300] START');
       await Utils.sleep(2000);
-      let strJson: string = getInspectorByKey('select');
+      let strJson: string = getInspectorByKey('select1' + '_select');
       console.info("[selectTest_0300] component strJson:" + strJson);
       console.info("[selectTest_0300] font:" + JSON.parse(strJson).$attrs.font);
       expect(JSON.parse(JSON.parse(strJson).$attrs.font).size).assertEqual('30.00fp');
@@ -142,7 +141,7 @@ export default function SelectJsunit1() {
         console.log("[selectTest_0400] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJson: string = getInspectorByKey('select');
+      let strJson: string = getInspectorByKey('select1' + '_select');
       console.info("[selectTest_0400] component strJson:" + strJson);
       console.info("[selectTest_0400] font:" + JSON.parse(strJson).$attrs.font);
       expect(JSON.parse(JSON.parse(strJson).$attrs.font).size).assertEqual('24.00fp');
@@ -162,7 +161,7 @@ export default function SelectJsunit1() {
     it('selectTest_0500', Level.LEVEL1, async (done: Function) => {
       console.info('[selectTest_0500] START');
       await Utils.sleep(2000);
-      let strJson: string = getInspectorByKey('select');
+      let strJson: string = getInspectorByKey('select1' + '_select');
       console.info("[selectTest_0500] component strJson:" + strJson);
       console.info("[selectTest_0500] fontColor:" + JSON.parse(strJson).$attrs.fontColor);
       expect(JSON.parse(strJson).$attrs.fontColor).assertEqual('#FFCCCCCC');
@@ -195,7 +194,7 @@ export default function SelectJsunit1() {
         console.log("[selectTest_0600] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(4000);
-      let strJson: string = getInspectorByKey('select');
+      let strJson: string = getInspectorByKey('select1' + '_select');
       console.info("[selectTest_0600] component strJson:" + strJson);
       console.info("[selectTest_0600] fontColor:" + JSON.parse(strJson).$attrs.fontColor);
       expect(JSON.parse(strJson).$attrs.fontColor).assertEqual('#FF000990');
@@ -228,7 +227,7 @@ export default function SelectJsunit1() {
         console.log("[selectTest_0700] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJsonNew = getInspectorByKey('select');
+      let strJsonNew = getInspectorByKey('select1' + '_select');
       console.info("[selectTest_0700] component objNew is: " + JSON.stringify(JSON.parse(strJsonNew)));
       expect(JSON.parse(strJsonNew).$attrs.value).assertEqual('-10');
       done();
@@ -260,7 +259,7 @@ export default function SelectJsunit1() {
         console.log("[selectTest_0800] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJsonNew = getInspectorByKey('select');
+      let strJsonNew = getInspectorByKey('select1' + '_select');
       console.info("[selectTest_0800] component objNew is: " + JSON.stringify(JSON.parse(strJsonNew)));
       expect(JSON.parse(strJsonNew).$attrs.value).assertEqual('1111111111');
       done();
@@ -292,7 +291,7 @@ export default function SelectJsunit1() {
         console.log("[selectTest_0900] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJsonNew = getInspectorByKey('select');
+      let strJsonNew = getInspectorByKey('select1' + '_select');
       console.info("[selectTest_0900] component objNew is: " + JSON.stringify(JSON.parse(strJsonNew)));
       expect(JSON.parse(strJsonNew).$attrs.value).assertEqual('1111111111aaa');
       done();
@@ -323,7 +322,7 @@ export default function SelectJsunit1() {
         console.log("[selectTest_1000] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(4000);
-      let strJson: string = getInspectorByKey('select');
+      let strJson: string = getInspectorByKey('select1' + '_select');
       console.info("[selectTest_1000] component strJson:" + strJson);
 
       console.info("[selectTest_1000] fontColor:" + JSON.parse(strJson).$attrs.fontColor);
