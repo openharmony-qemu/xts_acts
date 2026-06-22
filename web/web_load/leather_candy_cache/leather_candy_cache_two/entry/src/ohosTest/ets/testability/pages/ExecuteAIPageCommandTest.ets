@@ -99,8 +99,8 @@ struct ExecuteAIPageCommandTest {
   build() {
     Column() {
       Row() {
-        Button("ExecuteAIPageCommandTest click").key('ExecuteAIPageCommandTestButton').onClick(async () => {
-          console.info("key==>" + this.str)
+        Button('ExecuteAIPageCommandTest click').key('ExecuteAIPageCommandTestButton').onClick(async () => {
+          console.info('key==>' + this.str)
           switch (this.str) {
             case 'testExecuteAIPageCommand001': {
               let msg = 'testExecuteAIPageCommand001'
