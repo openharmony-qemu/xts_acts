@@ -61,6 +61,7 @@ export default function AlertDialogSystemMaterialTest() {
       await CommonFunc.sleep(1000);
 
       let titleText = await driver.findComponent(ON.text('AlertDialog Undefined'));
+      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       let dialog: ESObject = obj.$children[1]
       expect(dialog).not().assertUndefined();
 		  expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);

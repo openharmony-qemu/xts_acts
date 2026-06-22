@@ -244,6 +244,7 @@ export default function ActionSheetOptionsSystemMaterialTest() {
       await closeButton.click();
       await CommonFunc.sleep(1000);
       console.info('ActionSheetOptionsSystemMaterial_0600 END');
+      done();
     });
   })
 }
