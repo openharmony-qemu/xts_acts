@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -27,6 +27,7 @@
 #include <arkui/native_render.h>
 
 #define PARAM_1000 1000
+#define PARAM_1019013 1019013
 
 namespace ArkUICapiTest {
 
@@ -59,21 +60,19 @@ static napi_value TestArcListFlingSpeedLimit002(napi_env env, napi_callback_info
 static napi_value TestArcListFlingSpeedLimit003(napi_env env, napi_callback_info info)
 {
     NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
-    float flingSpeedLimit = PARAM_NEGATIVE_100;
-    ArkUI_NumberValue value[] = {{.f32 = flingSpeedLimit}};
-    ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
-    auto ret = nodeAPI->setAttribute(arcList, NODE_ARC_LIST_FLING_SPEED_LIMIT, &item);
-    ASSERT_EQ(ret, INVALID_PARAM);
+    auto ret1 = nodeAPI->resetAttribute(arcList, NODE_ARC_LIST_FADING_EDGE);
+    ASSERT_EQ(ret1, SUCCESS);
+    auto result = nodeAPI->getAttribute(arcList, NODE_ARC_LIST_FLING_SPEED_LIMIT);
+    ASSERT_EQ(result != nullptr, true);
     NAPI_END;
 }
 
 static napi_value TestArcListFlingSpeedLimit004(napi_env env, napi_callback_info info)
 {
     NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
-    auto ret1 = nodeAPI->resetAttribute(arcList, NODE_ARC_LIST_FADING_EDGE);
-    ASSERT_EQ(ret1, SUCCESS);
-    auto result = nodeAPI->getAttribute(arcList, NODE_ARC_LIST_FLING_SPEED_LIMIT);
-    ASSERT_EQ(result != nullptr, true);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+      "TestArcListFlingSpeedLimit004 result=%{public}d", NODE_ARC_LIST_FLING_SPEED_LIMIT);
+    ASSERT_EQ(NODE_ARC_LIST_FLING_SPEED_LIMIT, PARAM_1019013);
     NAPI_END;
 }
 

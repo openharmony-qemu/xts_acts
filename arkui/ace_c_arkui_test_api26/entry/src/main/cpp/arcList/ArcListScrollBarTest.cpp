@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -31,7 +31,7 @@ namespace ArkUICapiTest {
 static napi_value TestArcListScrollBar001(napi_env env, napi_callback_info info)
 {
     NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
-    int32_t scrollBar = PARAM_1;
+    int32_t scrollBar = ARKUI_SCROLL_BAR_DISPLAY_MODE_AUTO;
     ArkUI_NumberValue value[] = {{.i32 = scrollBar}};
     ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     auto ret = nodeAPI->setAttribute(arcList, NODE_ARC_LIST_SCROLL_BAR, &item);
@@ -44,7 +44,7 @@ static napi_value TestArcListScrollBar001(napi_env env, napi_callback_info info)
 static napi_value TestArcListScrollBar002(napi_env env, napi_callback_info info)
 {
     NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
-    int32_t scrollBar = PARAM_0;
+    int32_t scrollBar = ARKUI_SCROLL_BAR_DISPLAY_MODE_OFF;
     ArkUI_NumberValue value[] = {{.i32 = scrollBar}};
     ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     auto ret = nodeAPI->setAttribute(arcList, NODE_ARC_LIST_SCROLL_BAR, &item);
@@ -57,7 +57,7 @@ static napi_value TestArcListScrollBar002(napi_env env, napi_callback_info info)
 static napi_value TestArcListScrollBar003(napi_env env, napi_callback_info info)
 {
     NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
-    int32_t scrollBar = PARAM_2;
+    int32_t scrollBar = ARKUI_SCROLL_BAR_DISPLAY_MODE_ON;
     ArkUI_NumberValue value[] = {{.i32 = scrollBar}};
     ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     auto ret = nodeAPI->setAttribute(arcList, NODE_ARC_LIST_SCROLL_BAR, &item);
@@ -73,7 +73,7 @@ static napi_value TestArcListScrollBar004(napi_env env, napi_callback_info info)
     auto ret1 = nodeAPI->resetAttribute(arcList, NODE_ARC_LIST_SCROLL_BAR);
     ASSERT_EQ(ret1, SUCCESS);
     auto result = nodeAPI->getAttribute(arcList, NODE_ARC_LIST_SCROLL_BAR);
-    ASSERT_EQ(result->value[PARAM_0].i32, PARAM_0);
+    ASSERT_EQ(result->value[PARAM_0].i32, ARKUI_SCROLL_BAR_DISPLAY_MODE_AUTO);
     NAPI_END;
 }
 

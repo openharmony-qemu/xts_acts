@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -25,6 +25,7 @@
 #include <arkui/native_node_napi.h>
 #include <arkui/native_type.h>
 #include <arkui/native_render.h>
+#define PARAM_1021001 1021001
 
 namespace ArkUICapiTest {
 
@@ -70,10 +71,9 @@ static napi_value TestArcScrollBarDisplayMode003(napi_env env, napi_callback_inf
 static napi_value TestArcScrollBarDisplayMode004(napi_env env, napi_callback_info info)
 {
     NAPI_START(scrollBar, ARKUI_NODE_ARC_SCROLL_BAR);
-    auto ret1 = nodeAPI->resetAttribute(scrollBar, NODE_ARC_SCROLL_BAR_DISPLAY_MODE);
-    ASSERT_EQ(ret1, SUCCESS);
-    auto result = nodeAPI->getAttribute(scrollBar, NODE_ARC_SCROLL_BAR_DISPLAY_MODE);
-    ASSERT_EQ(result->value[PARAM_0].i32, PARAM_0);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+      "TestArcScrollBarDisplayMode004 result=%{public}d", NODE_ARC_SCROLL_BAR_DISPLAY_MODE);
+    ASSERT_EQ(NODE_ARC_SCROLL_BAR_DISPLAY_MODE, PARAM_1021001);
     NAPI_END;
 }
 

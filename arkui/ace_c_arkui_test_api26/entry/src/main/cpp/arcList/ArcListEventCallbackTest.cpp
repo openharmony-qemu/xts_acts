@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+ 
 #include "ArcListEventCallbackTest.h"
 #include <string>
 #include "../manager/PluginManagerTest.h"
@@ -21,14 +21,14 @@
 #include <arkui/native_node.h>
 #include <arkui/native_interface.h>
 #define TEST_COMPONENT_NUMBER 100
-
+ 
 namespace ArkUICapiTest {
-
+ 
 napi_value ArcListEventCallbackTest::CreateNativeNode(napi_env env, napi_callback_info info)
- {
+{
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "arcListTest", "CreateNativeNode");
     ArkUI_NodeHandle ItemBuf[TEST_COMPONENT_NUMBER];
-
+ 
     size_t argc = PARAM_1;
     napi_value args[PARAM_1] = {nullptr};
     napi_get_cb_info( env , info , &argc , args , nullptr , nullptr );
@@ -36,53 +36,53 @@ napi_value ArcListEventCallbackTest::CreateNativeNode(napi_env env, napi_callbac
     size_t strLength = PARAM_0;
     char xComponentID[PARAM_64] = {PARAM_0};
     napi_get_value_string_utf8( env , args[PARAM_0] , xComponentID , length , &strLength );
-
+ 
     if ((env == nullptr) || (info == nullptr)) {
         return nullptr;
     }
-
+ 
     ArkUI_NativeNodeAPI_1 *nodeAPI = nullptr;
     OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, nodeAPI);
-
+ 
     // 创建column节点组件
     auto column = nodeAPI->createNode(ARKUI_NODE_COLUMN);
-
+ 
     // 创建arclist节点组件
     auto list = nodeAPI->createNode(ARKUI_NODE_ARC_LIST);
     if (list == nullptr) {
         OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "arcListTest", "create arclist failed");
     }
     nodeAPI->addChild(column, list);
-
+ 
     // arcList组件属性--scrollToindex
     ArkUI_NumberValue scrollToindex_value[] = {{.i32 = 3}};
     ArkUI_AttributeItem scrollToindex_item = {scrollToindex_value, sizeof(scrollToindex_value) / sizeof(ArkUI_NumberValue)};
     nodeAPI->setAttribute(list, NODE_ARC_LIST_SCROLL_TO_INDEX, &scrollToindex_item);
-
+ 
     // arcList组件属性--childrenmainsize
     auto childrenmainsize = OH_ArkUI_ListChildrenMainSizeOption_Create();
     OH_ArkUI_ListChildrenMainSizeOption_SetDefaultMainSize(childrenmainsize, 100);
     ArkUI_AttributeItem childrenmainsize_item = {.object = childrenmainsize};
     nodeAPI->setAttribute(list, NODE_ARC_LIST_CHILDREN_MAIN_SIZE, &childrenmainsize_item);
-
+ 
     // arcList组件属性-- header
     auto text = nodeAPI->createNode(ARKUI_NODE_TEXT);
     ArkUI_AttributeItem content_item = {};
     content_item.string = "Test attribute of the C API";
     nodeAPI->setAttribute(text, NODE_TEXT_CONTENT, &content_item);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "arcListTest", "create text = %{public}p", &text);
-
+ 
     ArkUI_AttributeItem item = {.object = text};
     nodeAPI->setAttribute(list, NODE_ARC_LIST_SET_HEADER, &item);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "arcListTest", "create item = %{public}p object = %{public}p", &item, item.object);
     auto header = nodeAPI->getAttribute(list, NODE_ARC_LIST_SET_HEADER);
     auto headertext = nodeAPI->getAttribute(static_cast<ArkUI_NodeHandle>(header->object), NODE_TEXT_CONTENT);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "arcListTest", "headertext = %{public}s", headertext->string);
-
+ 
     nodeAPI->resetAttribute(list, NODE_ARC_LIST_SET_HEADER);
     header = nodeAPI->getAttribute(list, NODE_ARC_LIST_SET_HEADER);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "arcListTest", "NODE_ARC_LIST_SET_HEADER = %{public}p", header->object);
-
+ 
     // 通用属性
     ArkUI_NumberValue width_value[] = {{.f32 = 200}};
     ArkUI_AttributeItem width_item = {width_value, sizeof(width_value) / sizeof(ArkUI_NumberValue)};
@@ -90,13 +90,12 @@ napi_value ArcListEventCallbackTest::CreateNativeNode(napi_env env, napi_callbac
     ArkUI_NumberValue height_value[] = {{.f32 = 250}};
     ArkUI_AttributeItem height_item = {height_value, sizeof(height_value) / sizeof(ArkUI_NumberValue)};
     nodeAPI->setAttribute(list, NODE_HEIGHT, &height_item);
-
+ 
     ArkUI_AttributeItem id_item = {.string = "arc_list_call"};    
     nodeAPI->setAttribute(list, NODE_ID, &id_item);
     auto listid = nodeAPI->getAttribute(list, NODE_ID);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "arcListTest", "listid = %{public}s", listid->string);
-
-
+ 
     for (int i = 0; i < 5; ++i) {
         // 创建arcListItem组件，添加trace打点
         ItemBuf[i] = nodeAPI->createNode(ARKUI_NODE_ARC_LIST_ITEM);
@@ -138,7 +137,14 @@ napi_value ArcListEventCallbackTest::CreateNativeNode(napi_env env, napi_callbac
         ArkUI_AttributeItem swipeActionitem = {.object = swipeAction};
         nodeAPI->setAttribute(ItemBuf[i], NODE_ARC_LIST_ITEM_SWIPE_ACTION, &swipeActionitem);
     }
-
+    //创建arcscrollbar
+    auto scrollBar = nodeAPI->createNode(ARKUI_NODE_ARC_SCROLL_BAR);
+    nodeAPI->addChild(column, scrollBar);
+    
+    //绑定arclist
+    ArkUI_AttributeItem scrolleritem = {.object = list};
+    nodeAPI->setAttribute(scrollBar, NODE_ARC_SCROLL_BAR_BIND_SCROLLABLE, &scrolleritem);
+ 
     //arclist绑定事件
     nodeAPI->registerNodeEvent(list, NODE_ARC_LIST_ON_SCROLL_INDEX, 0, nullptr);
     nodeAPI->registerNodeEvent(list, NODE_ARC_LIST_ON_REACH_START, 0, nullptr);
@@ -147,76 +153,69 @@ napi_value ArcListEventCallbackTest::CreateNativeNode(napi_env env, napi_callbac
     nodeAPI->registerNodeEvent(list, NODE_ARC_LIST_ON_SCROLL_STOP, 0, nullptr);
     nodeAPI->registerNodeEvent(list, NODE_ARC_LIST_ON_WILL_SCROLL, 0, nullptr);
     nodeAPI->registerNodeEvent(list, NODE_ARC_LIST_ON_DID_SCROLL, 0, nullptr);
-
-    auto NodeEventReceiver = [](ArkUI_NodeEvent *event) {
+ 
+    nodeAPI->registerNodeEventReceiver([](ArkUI_NodeEvent *event) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "arcListTest", "enter NodeEventReceiver");
         auto eventType = OH_ArkUI_NodeEvent_GetEventType(event);
+ 
         switch (eventType) {
-        case NODE_ARC_LIST_ON_SCROLL_INDEX: 
-        {
-            auto start = OH_ArkUI_NodeEvent_GetNodeComponentEvent(event)->data[0].i32;
-            auto end = OH_ArkUI_NodeEvent_GetNodeComponentEvent(event)->data[1].i32;
-            auto center = OH_ArkUI_NodeEvent_GetNodeComponentEvent(event)->data[2].i32;
-            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "arcListTest", "NODE_ARC_LIST_ON_SCROLL_INDEX
-             start = %{public}d, end = %{public}d, center = %{public}d", start, end, center);
-            break;
+            case NODE_ARC_LIST_ON_SCROLL_INDEX: 
+            {
+                auto start = OH_ArkUI_NodeEvent_GetNodeComponentEvent(event)->data[0].i32;
+                auto end = OH_ArkUI_NodeEvent_GetNodeComponentEvent(event)->data[1].i32;
+                auto center = OH_ArkUI_NodeEvent_GetNodeComponentEvent(event)->data[2].i32;
+                OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "NODE_ARC_LIST_ON_SCROLL_INDEX","start: %{public}d", start);
+                OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "NODE_ARC_LIST_ON_SCROLL_INDEX","end: %{public}d", end);
+                OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "NODE_ARC_LIST_ON_SCROLL_INDEX","center: %{public}d", center);
+                break;
+            }
+                
+            case NODE_ARC_LIST_ON_REACH_START:
+            {
+                OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "arcListTest", "NODE_ARC_LIST_ON_REACH_START ");
+                break;
+            }
+        
+            case NODE_ARC_LIST_ON_REACH_END:
+            {
+                OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "arcListTest", "NODE_ARC_LIST_ON_REACH_END ");
+                break;
+            }
+        
+            case NODE_ARC_LIST_ON_SCROLL_START:
+            {
+                OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "arcListTest", "NODE_ARC_LIST_ON_SCROLL_START");
+                break;
+            }
+        
+            case NODE_ARC_LIST_ON_SCROLL_STOP:
+            {
+                OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "arcListTest", "NODE_ARC_LIST_ON_SCROLL_STOP");
+                break;
+            }
+        
+            case NODE_ARC_LIST_ON_WILL_SCROLL:
+            {
+                auto distance = OH_ArkUI_NodeEvent_GetNodeComponentEvent(event)->data[0].f32;
+                auto state = OH_ArkUI_NodeEvent_GetNodeComponentEvent(event)->data[1].i32;
+                auto source = OH_ArkUI_NodeEvent_GetNodeComponentEvent(event)->data[2].i32;
+                OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "NODE_ARC_LIST_ON_WILL_SCROLL","distance: %{public}f", distance);
+                OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "NODE_ARC_LIST_ON_WILL_SCROLL","state: %{public}d", state);
+                OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "NODE_ARC_LIST_ON_WILL_SCROLL","source: %{public}d", source);
+                break;
+            }
+        
+            case NODE_ARC_LIST_ON_DID_SCROLL:
+            {
+                auto distance = OH_ArkUI_NodeEvent_GetNodeComponentEvent(event)->data[0].f32;
+                auto state = OH_ArkUI_NodeEvent_GetNodeComponentEvent(event)->data[1].i32;
+                OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "NODE_ARC_LIST_ON_DID_SCROLL","distance: %{public}f", distance);
+                OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "NODE_ARC_LIST_ON_DID_SCROLL","state: %{public}d", state);
+                break;
+            }
         }
-            
-        case NODE_ARC_LIST_ON_REACH_START:
-        {
-            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "arcListTest", "NODE_ARC_LIST_ON_REACH_START ");
-            break;
-        }
-    
-        case NODE_ARC_LIST_ON_REACH_END:
-        {
-            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "arcListTest", "NODE_ARC_LIST_ON_REACH_END ");
-            break;
-        }
-    
-        case NODE_ARC_LIST_ON_SCROLL_START:
-        {
-            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "arcListTest", "NODE_ARC_LIST_ON_SCROLL_START");
-            break;
-        }
-    
-        case NODE_ARC_LIST_ON_SCROLL_STOP:
-        {
-            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "arcListTest", "NODE_ARC_LIST_ON_SCROLL_STOP");
-            break;
-        }
-    
-        case NODE_ARC_LIST_ON_WILL_SCROLL:
-        {
-            auto distance = OH_ArkUI_NodeEvent_GetNodeComponentEvent(event)->data[0].f32;
-            auto state = OH_ArkUI_NodeEvent_GetNodeComponentEvent(event)->data[1].i32;
-            auto source = OH_ArkUI_NodeEvent_GetNodeComponentEvent(event)->data[2].i32;
-            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "arcListTest", "NODE_ARC_LIST_ON_WILL_SCROLL
-              distance = %{public}f, state = %{public}d, source = %{public}d", distance, state, source);
-            break;
-        }
-    
-        case NODE_ARC_LIST_ON_DID_SCROLL:
-        {
-            auto distance = OH_ArkUI_NodeEvent_GetNodeComponentEvent(event)->data[0].f32;
-            auto state = OH_ArkUI_NodeEvent_GetNodeComponentEvent(event)->data[1].i32;
-            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "arcListTest", "NODE_ARC_LIST_ON_DID_SCROLL
-             distance = %{public}f, state = %{public}d", distance, state);
-            break;
-        }
-
-        }
-    };
-    nodeAPI->addNodeEventReceiver(list, NodeEventReceiver);
-
-    //创建arcscrollbar
-    auto scrollBar = nodeAPI->createNode(ARKUI_NODE_ARC_SCROLL_BAR);
-    nodeAPI->addChild(column, scrollBar);
-    
-    //绑定arclist
-    ArkUI_AttributeItem scrolleritem = {.object = list};
-    nodeAPI->setAttribute(scrollBar, NODE_ARC_SCROLL_BAR_BIND_SCROLLABLE, &scrolleritem);
-
+    });
+ 
     std::string id(xComponentID);
     if (OH_NativeXComponent_AttachNativeRootNode(PluginManager::GetInstance()->GetNativeXComponent(id),
                                                     column) == INVALID_PARAM) {
@@ -230,4 +229,4 @@ napi_value ArcListEventCallbackTest::CreateNativeNode(napi_env env, napi_callbac
     }
     return exports;
 }
-} // namespace ArkUICApiDemo
+} // namespace ArkUICapiTest

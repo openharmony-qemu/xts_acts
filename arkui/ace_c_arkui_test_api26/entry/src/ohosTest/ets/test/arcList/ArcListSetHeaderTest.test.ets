@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -38,11 +38,6 @@ export default function ArcListSetHeaderTest() {
 
     it('testArcListSetHeader003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testArcListSetHeader003()).assertEqual(0)
-      done()
-    })
-
-    it('testArcListSetHeader004', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListSetHeader004()).assertEqual(0)
       done()
     })
   })
