@@ -270,7 +270,7 @@ struct ExecuteAIPageCommandTest {
             case 'testExecuteAIPageCommand015': {
               let msg = 'testExecuteAIPageCommand015'
               try {
-                await this.controller.executeAIPageCommand("");
+                await this.controller.executeAIPageCommand('');
                 Utils.emitEvent(true, 148125)
               } catch (error) {
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
@@ -281,7 +281,7 @@ struct ExecuteAIPageCommandTest {
             case 'testExecuteAIPageCommand016': {
               let msg = 'testExecuteAIPageCommand016'
               try {
-                await this.controller.executeAIPageCommand("not valid json");
+                await this.controller.executeAIPageCommand('not valid json');
                 Utils.emitEvent(true, 148126)
               } catch (error) {
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
@@ -292,7 +292,7 @@ struct ExecuteAIPageCommandTest {
             case 'testExecuteAIPageCommand018': {
               let msg = 'testExecuteAIPageCommand018'
               try {
-                let result: string = await this.controller.executeAIPageCommand("{}");
+                let result: string = await this.controller.executeAIPageCommand('{}');
                 console.info(`executeAIPageCommand result: ${result}`);
                 Utils.emitEvent(true, 148128)
               } catch (error) {
@@ -616,7 +616,7 @@ struct ExecuteAIPageCommandTest {
             case 'testExecuteAIPageCommand045': {
               let msg = 'testExecuteAIPageCommand045'
               try {
-                await this.controller.executeAIPageCommand("   ");
+                await this.controller.executeAIPageCommand(' ');
                 Utils.emitEvent(true, 148155)
               } catch (error) {
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
@@ -627,7 +627,7 @@ struct ExecuteAIPageCommandTest {
             case 'testExecuteAIPageCommand046': {
               let msg = 'testExecuteAIPageCommand046'
               try {
-                await this.controller.executeAIPageCommand("[]");
+                await this.controller.executeAIPageCommand('[]');
                 Utils.emitEvent(true, 148156)
               } catch (error) {
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
