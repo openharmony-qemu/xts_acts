@@ -63,7 +63,7 @@ struct EditableTitleBarV2MenuButton {
         })
 
         EditableTitleBarV2({
-          title: 'Accessibility Menu',
+          title: 'Ac Menu',
           options: new EditableTitleBarStyleV2(),
           menuItems: [
             new EditableTitleBarMenuItemV2({ 
