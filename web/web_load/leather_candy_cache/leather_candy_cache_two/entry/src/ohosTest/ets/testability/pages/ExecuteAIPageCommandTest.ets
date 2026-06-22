@@ -102,8 +102,8 @@ struct ExecuteAIPageCommandTest {
         Button("ExecuteAIPageCommandTest click").key('ExecuteAIPageCommandTestButton').onClick(async () => {
           console.info("key==>" + this.str)
           switch (this.str) {
-            case "testExecuteAIPageCommand001": {
-              let msg = "testExecuteAIPageCommand001"
+            case 'testExecuteAIPageCommand001': {
+              let msg = 'testExecuteAIPageCommand001'
               try {
               let result: string = await this.controller.executeAIPageCommand(fullDomFunction0001);
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -114,8 +114,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand002": {
-              let msg = "testExecuteAIPageCommand002"
+            case 'testExecuteAIPageCommand002': {
+              let msg = 'testExecuteAIPageCommand002'
               try {
                 await this.controller.executeAIPageCommand(undefined);
                 Utils.emitEvent(true, 148112)
@@ -125,8 +125,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand003": {
-              let msg = "testExecuteAIPageCommand003"
+            case 'testExecuteAIPageCommand003': {
+              let msg = 'testExecuteAIPageCommand003'
               try {
                 await this.controllerNull.executeAIPageCommand(null);
                 Utils.emitEvent(true, 148113)
@@ -136,8 +136,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand004": {
-              let msg = "testExecuteAIPageCommand004"
+            case 'testExecuteAIPageCommand004': {
+              let msg = 'testExecuteAIPageCommand004'
               try {
                 let result: string = await this.controller.executeAIPageCommand(fullDomFunction0002);
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -148,8 +148,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand005": {
-              let msg = "testExecuteAIPageCommand005"
+            case 'testExecuteAIPageCommand005': {
+              let msg = 'testExecuteAIPageCommand005'
               try {
                 let result: string = await this.controller.executeAIPageCommand(fullDomFunction0003);
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -160,8 +160,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand006": {
-              let msg = "testExecuteAIPageCommand006"
+            case 'testExecuteAIPageCommand006': {
+              let msg = 'testExecuteAIPageCommand006'
               try {
                 let result: string = await this.controller.executeAIPageCommand(fullDomFunction0004);
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -172,8 +172,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand007": {
-              let msg = "testExecuteAIPageCommand007"
+            case 'testExecuteAIPageCommand007': {
+              let msg = 'testExecuteAIPageCommand007'
               try {
                 let result: string = await this.controller.executeAIPageCommand(fullDomFunction0005);
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -184,8 +184,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand008": {
-              let msg = "testExecuteAIPageCommand008"
+            case 'testExecuteAIPageCommand008': {
+              let msg = 'testExecuteAIPageCommand008'
               try {
                 let result: string = await this.controller.executeAIPageCommand(fullDomFunction0000);
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -196,8 +196,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand009": {
-              let msg = "testExecuteAIPageCommand009"
+            case 'testExecuteAIPageCommand009': {
+              let msg = 'testExecuteAIPageCommand009'
               try {
                 let result: string = await this.controller.executeAIPageCommand(fullDomFunction0006);
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -208,8 +208,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand010": {
-              let msg = "testExecuteAIPageCommand010"
+            case 'testExecuteAIPageCommand010': {
+              let msg = 'testExecuteAIPageCommand010'
               try {
                 let result: string = await this.controller.executeAIPageCommand(fullDomFunction0007);
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -220,8 +220,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand011": {
-              let msg = "testExecuteAIPageCommand011"
+            case 'testExecuteAIPageCommand011': {
+              let msg = 'testExecuteAIPageCommand011'
               try {
                 let result: string = await this.controller.executeAIPageCommand(fullDomFunction0008);
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -232,8 +232,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand012": {
-              let msg = "testExecuteAIPageCommand012"
+            case 'testExecuteAIPageCommand012': {
+              let msg = 'testExecuteAIPageCommand012'
               try {
                 let result: string = await this.controller.executeAIPageCommand(fullDomFunction0009);
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -244,8 +244,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand013": {
-              let msg = "testExecuteAIPageCommand013"
+            case 'testExecuteAIPageCommand013': {
+              let msg = 'testExecuteAIPageCommand013'
               try {
                 let result: string = await this.controller.executeAIPageCommand(fullDomFunction0010);
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -256,8 +256,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand014": {
-              let msg = "testExecuteAIPageCommand014"
+            case 'testExecuteAIPageCommand014': {
+              let msg = 'testExecuteAIPageCommand014'
               try {
                 await this.controller.executeAIPageCommand(fullDomFunction0011);
                 Utils.emitEvent(true, 148124)
@@ -267,8 +267,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand015": {
-              let msg = "testExecuteAIPageCommand015"
+            case 'testExecuteAIPageCommand015': {
+              let msg = 'testExecuteAIPageCommand015'
               try {
                 await this.controller.executeAIPageCommand("");
                 Utils.emitEvent(true, 148125)
@@ -278,8 +278,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand016": {
-              let msg = "testExecuteAIPageCommand016"
+            case 'testExecuteAIPageCommand016': {
+              let msg = 'testExecuteAIPageCommand016'
               try {
                 await this.controller.executeAIPageCommand("not valid json");
                 Utils.emitEvent(true, 148126)
@@ -289,8 +289,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand018": {
-              let msg = "testExecuteAIPageCommand018"
+            case 'testExecuteAIPageCommand018': {
+              let msg = 'testExecuteAIPageCommand018'
               try {
                 let result: string = await this.controller.executeAIPageCommand("{}");
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -301,8 +301,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand019": {
-              let msg = "testExecuteAIPageCommand019"
+            case 'testExecuteAIPageCommand019': {
+              let msg = 'testExecuteAIPageCommand019'
               try {
                 let result: string = await this.controller.executeAIPageCommand(liteDomFunction0001);
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -313,8 +313,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand020": {
-              let msg = "testExecuteAIPageCommand020"
+            case 'testExecuteAIPageCommand020': {
+              let msg = 'testExecuteAIPageCommand020'
               try {
                 let result: string = await this.controller.executeAIPageCommand(liteDomFunction0000);
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -325,8 +325,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand021": {
-              let msg = "testExecuteAIPageCommand021"
+            case 'testExecuteAIPageCommand021': {
+              let msg = 'testExecuteAIPageCommand021'
               try {
                 let result: string = await this.controller.executeAIPageCommand(liteDomFunction0002);
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -337,8 +337,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand022": {
-              let msg = "testExecuteAIPageCommand022"
+            case 'testExecuteAIPageCommand022': {
+              let msg = 'testExecuteAIPageCommand022'
               try {
                 let result: string = await this.controller.executeAIPageCommand(liteDomFunction0003);
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -349,8 +349,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand023": {
-              let msg = "testExecuteAIPageCommand023"
+            case 'testExecuteAIPageCommand023': {
+              let msg = 'testExecuteAIPageCommand023'
               try {
                 let result: string = await this.controller.executeAIPageCommand(liteDomFunction0004);
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -361,8 +361,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand024": {
-              let msg = "testExecuteAIPageCommand024"
+            case 'testExecuteAIPageCommand024': {
+              let msg = 'testExecuteAIPageCommand024'
               try {
                 let result: string = await this.controller.executeAIPageCommand(liteDomFunction0005);
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -373,8 +373,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand025": {
-              let msg = "testExecuteAIPageCommand025"
+            case 'testExecuteAIPageCommand025': {
+              let msg = 'testExecuteAIPageCommand025'
               try {
                 let result: string = await this.controller.executeAIPageCommand(liteDomFunction0006);
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -385,8 +385,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand026": {
-              let msg = "testExecuteAIPageCommand026"
+            case 'testExecuteAIPageCommand026': {
+              let msg = 'testExecuteAIPageCommand026'
               try {
                 let result: string = await this.controller.executeAIPageCommand(liteDomFunction0007);
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -397,8 +397,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand027": {
-              let msg = "testExecuteAIPageCommand027"
+            case 'testExecuteAIPageCommand027': {
+              let msg = 'testExecuteAIPageCommand027'
               try {
                 let result: string = await this.controller.executeAIPageCommand(liteDomFunction0008);
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -409,8 +409,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand028": {
-              let msg = "testExecuteAIPageCommand028"
+            case 'testExecuteAIPageCommand028': {
+              let msg = 'testExecuteAIPageCommand028'
               try {
                 let result: string = await this.controller.executeAIPageCommand(liteDomFunction0009);
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -421,8 +421,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand029": {
-              let msg = "testExecuteAIPageCommand029"
+            case 'testExecuteAIPageCommand029': {
+              let msg = 'testExecuteAIPageCommand029'
               try {
                 let result: string = await this.controller.executeAIPageCommand(liteDomFunction0010);
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -433,8 +433,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand030": {
-              let msg = "testExecuteAIPageCommand030"
+            case 'testExecuteAIPageCommand030': {
+              let msg = 'testExecuteAIPageCommand030'
               try {
                 let result: string = await this.controller.executeAIPageCommand(liteDomFunction0011);
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -445,8 +445,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand031": {
-              let msg = "testExecuteAIPageCommand031"
+            case 'testExecuteAIPageCommand031': {
+              let msg = 'testExecuteAIPageCommand031'
               try {
                 let result: string = await this.controller.executeAIPageCommand(liteDomFunction0012);
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -457,8 +457,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand032": {
-              let msg = "testExecuteAIPageCommand032"
+            case 'testExecuteAIPageCommand032': {
+              let msg = 'testExecuteAIPageCommand032'
               try {
                 let result: string = await this.controller.executeAIPageCommand(liteDomFunction0013);
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -469,8 +469,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand033": {
-              let msg = "testExecuteAIPageCommand033"
+            case 'testExecuteAIPageCommand033': {
+              let msg = 'testExecuteAIPageCommand033'
               try {
                 let result: string = await this.controller.executeAIPageCommand(liteDomFunction0014);
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -481,8 +481,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand034": {
-              let msg = "testExecuteAIPageCommand034"
+            case 'testExecuteAIPageCommand034': {
+              let msg = 'testExecuteAIPageCommand034'
               try {
                 let result: string = await this.controller.executeAIPageCommand(liteDomFunction0015);
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -493,8 +493,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand035": {
-              let msg = "testExecuteAIPageCommand035"
+            case 'testExecuteAIPageCommand035': {
+              let msg = 'testExecuteAIPageCommand035'
               try {
                 let result: string = await this.controller.executeAIPageCommand(liteDomFunction0016);
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -505,8 +505,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand036": {
-              let msg = "testExecuteAIPageCommand036"
+            case 'testExecuteAIPageCommand036': {
+              let msg = 'testExecuteAIPageCommand036'
               try {
                 let result: string = await this.controller.executeAIPageCommand(liteDomFunction0017);
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -517,8 +517,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand037": {
-              let msg = "testExecuteAIPageCommand037"
+            case 'testExecuteAIPageCommand037': {
+              let msg = 'testExecuteAIPageCommand037'
               try {
                 let result: string = await this.controller.executeAIPageCommand(liteDomFunction0018);
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -529,8 +529,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand038": {
-              let msg = "testExecuteAIPageCommand038"
+            case 'testExecuteAIPageCommand038': {
+              let msg = 'testExecuteAIPageCommand038'
               try {
                 let result: string = await this.controller.executeAIPageCommand(liteDomFunction0019);
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -541,8 +541,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand039": {
-              let msg = "testExecuteAIPageCommand039"
+            case 'testExecuteAIPageCommand039': {
+              let msg = 'testExecuteAIPageCommand039'
               try {
                 let result: string = await this.controller.executeAIPageCommand(liteDomFunction0020);
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -553,8 +553,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand040": {
-              let msg = "testExecuteAIPageCommand040"
+            case 'testExecuteAIPageCommand040': {
+              let msg = 'testExecuteAIPageCommand040'
               try {
                 let result: string = await this.controller.executeAIPageCommand(liteDomFunction0021);
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -565,8 +565,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand041": {
-              let msg = "testExecuteAIPageCommand041"
+            case 'testExecuteAIPageCommand041': {
+              let msg = 'testExecuteAIPageCommand041'
               try {
                 let result: string = await this.controller.executeAIPageCommand(liteDomFunction0022);
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -577,8 +577,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand042": {
-              let msg = "testExecuteAIPageCommand042"
+            case 'testExecuteAIPageCommand042': {
+              let msg = 'testExecuteAIPageCommand042'
               try {
                 let result: string = await this.controller.executeAIPageCommand(liteDomFunction0023);
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -589,8 +589,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand043": {
-              let msg = "testExecuteAIPageCommand043"
+            case 'testExecuteAIPageCommand043': {
+              let msg = 'testExecuteAIPageCommand043'
               try {
                 let result: string = await this.controller.executeAIPageCommand(liteDomFunction0024);
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -601,8 +601,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand044": {
-              let msg = "testExecuteAIPageCommand044"
+            case 'testExecuteAIPageCommand044': {
+              let msg = 'testExecuteAIPageCommand044'
               try {
                 let result: string = await this.controller.executeAIPageCommand(liteDomFunction0025);
                 console.info(`executeAIPageCommand result: ${result}`);
@@ -613,8 +613,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand045": {
-              let msg = "testExecuteAIPageCommand045"
+            case 'testExecuteAIPageCommand045': {
+              let msg = 'testExecuteAIPageCommand045'
               try {
                 await this.controller.executeAIPageCommand("   ");
                 Utils.emitEvent(true, 148155)
@@ -624,8 +624,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand046": {
-              let msg = "testExecuteAIPageCommand046"
+            case 'testExecuteAIPageCommand046': {
+              let msg = 'testExecuteAIPageCommand046'
               try {
                 await this.controller.executeAIPageCommand("[]");
                 Utils.emitEvent(true, 148156)
@@ -635,8 +635,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand047": {
-              let msg = "testExecuteAIPageCommand047"
+            case 'testExecuteAIPageCommand047': {
+              let msg = 'testExecuteAIPageCommand047'
               try {
                 await this.controller.executeAIPageCommand('123');
                 Utils.emitEvent(true, 148157)
