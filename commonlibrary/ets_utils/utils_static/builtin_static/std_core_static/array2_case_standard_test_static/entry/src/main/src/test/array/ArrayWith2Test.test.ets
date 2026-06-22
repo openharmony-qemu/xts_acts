@@ -56,6 +56,11 @@ function createLargeNumberArrayTwo(size: int): Array<number> {
   return arr;
 }
 
+function withAnyNumberArrayTwo(value: Any, index: int, replacement: number): string {
+  const arr = value as Array<number>;
+  return arr.with(index, replacement).toString();
+}
+
 export default function ArrayWith2Test(): void {
   describe('ArrayWith2Test', (): void => {
     beforeAll((): void => {
@@ -279,7 +284,11 @@ export default function ArrayWith2Test(): void {
       const originalLength = arr.length;
       const originalFirst = arr[0];
       const originalLast = arr[arr.length - 1];
-      arr.with(1, 99);
+      const result = arr.with(1, 99);
+      expect(result.length).assertEqual(originalLength);
+      expect(result[0]).assertEqual(originalFirst);
+      expect(result[1]).assertEqual(99);
+      expect(result[2]).assertEqual(originalLast);
       expect(arr.length).assertEqual(originalLength);
       expect(arr[0]).assertEqual(originalFirst);
       expect(arr[1]).assertEqual(2);
@@ -1707,6 +1716,51 @@ export default function ArrayWith2Test(): void {
       const result = arr.with(index, arr[index] + arr[index + 1]);
       expect(result.toString()).assertEqual('10,20,70,40,50');
       expect(arr.toString()).assertEqual('10,20,30,40,50');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_9700
+     * @tc.name testArrayWithTwo097
+     * @tc.desc Verify with supports consecutive chained calls with int index inputs
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayWithTwo097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<number>(1, 2, 3, 4);
+      const firstIndex: int = 1;
+      const secondIndex: int = 3;
+      const result = arr.with(firstIndex, 20).with(secondIndex, 40);
+      expect(result.toString()).assertEqual('1,20,3,40');
+      expect(arr.toString()).assertEqual('1,2,3,4');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_9800
+     * @tc.name testArrayWithTwo098
+     * @tc.desc Verify with works after narrowing an Any value back to Array<number>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayWithTwo098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyValue: Any = new Array<number>(1, 2, 3);
+      expect(withAnyNumberArrayTwo(anyValue, -1, 9)).assertEqual('1,2,9');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_9900
+     * @tc.name testArrayWithTwo099
+     * @tc.desc Verify with supports arrays whose element type is Any
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayWithTwo099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyArr = new Array<Any>(1, 'two', true);
+      const result = anyArr.with(-2, 'tail');
+      expect(result.toString()).assertEqual('1,tail,true');
+      expect(anyArr.toString()).assertEqual('1,two,true');
     });
 
   });

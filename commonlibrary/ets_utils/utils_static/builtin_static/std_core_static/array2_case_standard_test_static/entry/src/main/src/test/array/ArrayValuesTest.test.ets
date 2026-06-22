@@ -59,6 +59,11 @@ function collectNumbers(iterator: IterableIterator<number>): Array<number> {
   return values;
 }
 
+function valuesFromAnyNumberArray(value: Any): string {
+  const arr = value as Array<number>;
+  return collectNumbers(arr.values()).toString();
+}
+
 export default function ArrayValuesTest(): void {
   describe('ArrayValuesTest', (): void => {
     beforeAll((): void => {
@@ -1859,6 +1864,41 @@ export default function ArrayValuesTest(): void {
       const afterPush = iterator.next();
       expect(afterPush.done).assertTrue();
       expect(afterPush.value).assertUndefined();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_VALUES_1010
+     * @tc.name testArrayValues101
+     * @tc.desc Verify values works after narrowing an Any value back to Array<number>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayValues101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyValue: Any = new Array<number>(1, 2, 3);
+      expect(valuesFromAnyNumberArray(anyValue)).assertEqual('1,2,3');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_VALUES_1020
+     * @tc.name testArrayValues102
+     * @tc.desc Verify values supports arrays whose element type is Any
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayValues102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyArr = new Array<Any>(1, 'two', true);
+      const iterator = anyArr.values();
+      const first = iterator.next();
+      const second = iterator.next();
+      const third = iterator.next();
+      expect(first.done).assertFalse();
+      expect(second.done).assertFalse();
+      expect(third.done).assertFalse();
+      expect(first.value == 1).assertTrue();
+      expect(second.value == 'two').assertTrue();
+      expect(third.value == true).assertTrue();
     });
 
   });
