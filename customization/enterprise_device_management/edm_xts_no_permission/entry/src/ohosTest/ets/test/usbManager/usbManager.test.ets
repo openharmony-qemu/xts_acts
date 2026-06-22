@@ -33,6 +33,9 @@ export default function usbManagerTest() {
     testAddDisallowedUsbDevices();
     testRemoveDisallowedUsbDevices();
     testGetDisallowedUsbDevices();
+    testAddDisallowedPermissiveUsbDevices();
+    testRemoveDisallowedPermissiveUsbDevices();
+    testGetDisallowedPermissiveUsbDevices();
   })
 }
 
@@ -233,6 +236,81 @@ function testGetDisallowedUsbDevices() {
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code == 201).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testAddDisallowedPermissiveUsbDevices() {
+  /**
+   * @tc.name   test_add_disallowed_permissive_usb_devices_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_PERMISSIVE_USB_DEVICES_NO_PERMISSION_JS_0100
+   * @tc.desc   test usbManager addDisallowedPermissiveUsbDevices with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_disallowed_permissive_usb_devices_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      let devices: Array<usbManager.PermissiveUsbDeviceType> = [
+        {baseClass: 3, subClass: 1, protocol: 2, descriptor: usbManager.Descriptor.INTERFACE},
+      ]
+      usbManager.addDisallowedPermissiveUsbDevices(SELFWANT, devices);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 201).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testRemoveDisallowedPermissiveUsbDevices() {
+  /**
+   * @tc.name   test_remove_disallowed_permissive_usb_devices_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_PERMISSIVE_USB_DEVICES_NO_PERMISSION_JS_0100
+   * @tc.desc   test usbManager removeDisallowedPermissiveUsbDevices with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_disallowed_permissive_usb_devices_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      let devices: Array<usbManager.PermissiveUsbDeviceType> = [
+        {baseClass: 3, subClass: 1, protocol: 2, descriptor: usbManager.Descriptor.INTERFACE},
+      ]
+      usbManager.removeDisallowedPermissiveUsbDevices(SELFWANT, devices);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 201).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testGetDisallowedPermissiveUsbDevices() {
+  /**
+   * @tc.name   test_get_disallowed_permissive_usb_devices_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_PERMISSIVE_USB_DEVICES_NO_PERMISSION_JS_0100
+   * @tc.desc   test usbManager getDisallowedPermissiveUsbDevices with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_permissive_usb_devices_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      usbManager.getDisallowedPermissiveUsbDevices(SELFWANT);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 201).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
