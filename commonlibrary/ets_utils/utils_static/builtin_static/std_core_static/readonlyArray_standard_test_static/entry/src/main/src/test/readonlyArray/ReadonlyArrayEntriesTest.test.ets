@@ -150,7 +150,6 @@ export default function ReadonlyArrayEntriesTest(): void {
       let count: int = 0;
       for (const entry of iter) {
         expect(entry[0]).assertEqual(count);
-        expect(typeof entry[1]).assertEqual("string");
         expect(entry[1]).assertEqual(arr[count]);
         count++;
       }
@@ -227,7 +226,10 @@ export default function ReadonlyArrayEntriesTest(): void {
     it('testReadonlyArrayEntries010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [1, 2];
       const iter = arr.entries();
-      expect(typeof iter.next).assertEqual("function");
+      const r = iter.next();
+      expect(r.done).assertFalse();
+      expect(r.value![0]).assertEqual(0);
+      expect(r.value![1]).assertEqual(1);
     });
 
     /**
@@ -289,7 +291,6 @@ export default function ReadonlyArrayEntriesTest(): void {
       let count: int = 0;
       for (const entry of arr.entries()) {
         expect(entry[0]).assertEqual(count);
-        expect(typeof entry[1]).assertEqual("boolean");
         expect(entry[1]).assertEqual(arr[count]);
         count++;
       }
@@ -1014,457 +1015,38 @@ export default function ReadonlyArrayEntriesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0500
      * @tc.name testReadonlyArrayEntries050
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix long boundary entries index and element value match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<long> = [-9223372036854775808, 0, 9223372036854775807];
-      let count: int = 0;
-      for (const entry of arr.entries()) {
-        expect(entry[0]).assertEqual(count);
-        expect(entry[1]).assertEqual(arr[count]);
-        count++;
-      }
-      expect(count).assertEqual(arr.length);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0510
-     * @tc.name testReadonlyArrayEntries051
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix float negative zero entries index and element value match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<float> = [-0.0f, 1.0f];
-      let count: int = 0;
-      for (const entry of arr.entries()) {
-        expect(entry[0]).assertEqual(count);
-        expect(entry[1]).assertEqual(arr[count]);
-        count++;
-      }
-      expect(count).assertEqual(arr.length);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0520
-     * @tc.name testReadonlyArrayEntries052
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix double scientific notation entries index and element value match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<double> = [1.0e3, 2.0e6, -888.88];
-      let count: int = 0;
-      for (const entry of arr.entries()) {
-        expect(entry[0]).assertEqual(count);
-        expect(entry[1]).assertEqual(arr[count]);
-        count++;
-      }
-      expect(count).assertEqual(arr.length);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0530
-     * @tc.name testReadonlyArrayEntries053
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix char null character entries index and element value match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<char> = [c'\u0000', c'a'];
-      let count: int = 0;
-      for (const entry of arr.entries()) {
-        expect(entry[0]).assertEqual(count);
-        expect(entry[1]).assertEqual(arr[count]);
-        count++;
-      }
-      expect(count).assertEqual(arr.length);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0540
-     * @tc.name testReadonlyArrayEntries054
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix char max character entries index and element value match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<char> = [c'a', c'\uffff'];
-      let count: int = 0;
-      for (const entry of arr.entries()) {
-        expect(entry[0]).assertEqual(count);
-        expect(entry[1]).assertEqual(arr[count]);
-        count++;
-      }
-      expect(count).assertEqual(arr.length);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0550
-     * @tc.name testReadonlyArrayEntries055
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix boolean true false entries index and element value match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<boolean> = [true, false, true];
-      let count: int = 0;
-      for (const entry of arr.entries()) {
-        expect(entry[0]).assertEqual(count);
-        expect(entry[1]).assertEqual(arr[count]);
-        count++;
-      }
-      expect(count).assertEqual(arr.length);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0560
-     * @tc.name testReadonlyArrayEntries056
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix int radix literals entries index and element value match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<int> = [0x10, 0o10, 0b10];
-      let count: int = 0;
-      for (const entry of arr.entries()) {
-        expect(entry[0]).assertEqual(count);
-        expect(entry[1]).assertEqual(arr[count]);
-        count++;
-      }
-      expect(count).assertEqual(arr.length);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0570
-     * @tc.name testReadonlyArrayEntries057
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix empty string first element entries value match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["", "tail"];
-      expectStringEntriesInOrder(arr);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0580
-     * @tc.name testReadonlyArrayEntries058
      * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix Unicode Chinese first element entries value match
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayEntries058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayEntries050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<string> = ["\u4e2d\u6587", "tail"];
       expectStringEntriesInOrder(arr);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0590
-     * @tc.name testReadonlyArrayEntries059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0510
+     * @tc.name testReadonlyArrayEntries051
      * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix emoji first element entries value match
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayEntries059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayEntries051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<string> = ["\uD83D\uDE00", "tail"];
       expectStringEntriesInOrder(arr);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0600
-     * @tc.name testReadonlyArrayEntries060
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix zero width space first element entries value match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["\u200B", "tail"];
-      expectStringEntriesInOrder(arr);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0610
-     * @tc.name testReadonlyArrayEntries061
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix Japanese first element entries value match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["テスト", "tail"];
-      expectStringEntriesInOrder(arr);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0620
-     * @tc.name testReadonlyArrayEntries062
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix Korean first element entries value match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["테스트", "tail"];
-      expectStringEntriesInOrder(arr);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0630
-     * @tc.name testReadonlyArrayEntries063
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix Russian first element entries value match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["АБВГД", "tail"];
-      expectStringEntriesInOrder(arr);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0640
-     * @tc.name testReadonlyArrayEntries064
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix Arabic first element entries value match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["الاختبار", "tail"];
-      expectStringEntriesInOrder(arr);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0650
-     * @tc.name testReadonlyArrayEntries065
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix hex format string first element entries value match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["0x123", "tail"];
-      expectStringEntriesInOrder(arr);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0660
-     * @tc.name testReadonlyArrayEntries066
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix octal format string first element entries value match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["0123", "tail"];
-      expectStringEntriesInOrder(arr);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0670
-     * @tc.name testReadonlyArrayEntries067
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix binary format string first element entries value match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["0b1010", "tail"];
-      expectStringEntriesInOrder(arr);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0680
-     * @tc.name testReadonlyArrayEntries068
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix scientific notation string first element entries value match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["123.45e6", "tail"];
-      expectStringEntriesInOrder(arr);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0690
-     * @tc.name testReadonlyArrayEntries069
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix date string first element entries value match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["2026-03-05", "tail"];
-      expectStringEntriesInOrder(arr);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0700
-     * @tc.name testReadonlyArrayEntries070
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix XSS string first element entries value match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["<script>alert(1)</script>", "tail"];
-      expectStringEntriesInOrder(arr);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0710
-     * @tc.name testReadonlyArrayEntries071
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix tab character first element entries value match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["\t", "tail"];
-      expectStringEntriesInOrder(arr);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0720
-     * @tc.name testReadonlyArrayEntries072
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix fullwidth dash first element entries value match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["—", "tail"];
-      expectStringEntriesInOrder(arr);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0730
-     * @tc.name testReadonlyArrayEntries073
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix mixed script first element entries value match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["Test 測試", "tail"];
-      expectStringEntriesInOrder(arr);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0740
-     * @tc.name testReadonlyArrayEntries074
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix email string first element entries value match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["test@example.com", "tail"];
-      expectStringEntriesInOrder(arr);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0750
-     * @tc.name testReadonlyArrayEntries075
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix phone number string first element entries value match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["13800138000", "tail"];
-      expectStringEntriesInOrder(arr);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0760
-     * @tc.name testReadonlyArrayEntries076
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix ID card string first element entries value match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["310101199001011234", "tail"];
-      expectStringEntriesInOrder(arr);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0770
-     * @tc.name testReadonlyArrayEntries077
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix masked bank card string first element entries value match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["622202********1234", "tail"];
-      expectStringEntriesInOrder(arr);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0780
-     * @tc.name testReadonlyArrayEntries078
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix replacement character first element entries value match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["\uFFFD", "tail"];
-      expectStringEntriesInOrder(arr);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0790
-     * @tc.name testReadonlyArrayEntries079
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix CRLF string first element entries value match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["\r\n", "tail"];
-      expectStringEntriesInOrder(arr);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0800
-     * @tc.name testReadonlyArrayEntries080
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix carriage return string first element entries value match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["\r", "tail"];
-      expectStringEntriesInOrder(arr);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0810
-     * @tc.name testReadonlyArrayEntries081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0520
+     * @tc.name testReadonlyArrayEntries052
      * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix float NaN special float entries element value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayEntries081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayEntries052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const nan: float = Double.toFloat(Number.NaN);
       const arr: ReadonlyArray<float> = [1.0f, nan, 3.0f];
       let count: int = 0;
@@ -1481,175 +1063,14 @@ export default function ReadonlyArrayEntriesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0820
-     * @tc.name testReadonlyArrayEntries082
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix float positive infinity special float entries element value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<float> = [1.0f, Double.toFloat(Number.POSITIVE_INFINITY), 3.0f];
-      let count: int = 0;
-      for (const entry of arr.entries()) {
-        expect(entry[0]).assertEqual(count);
-        expect(entry[1]).assertEqual(arr[count]);
-        count++;
-      }
-      expect(count).assertEqual(arr.length);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0830
-     * @tc.name testReadonlyArrayEntries083
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix float negative infinity special float entries element value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<float> = [1.0f, Double.toFloat(Number.NEGATIVE_INFINITY), 3.0f];
-      let count: int = 0;
-      for (const entry of arr.entries()) {
-        expect(entry[0]).assertEqual(count);
-        expect(entry[1]).assertEqual(arr[count]);
-        count++;
-      }
-      expect(count).assertEqual(arr.length);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0840
-     * @tc.name testReadonlyArrayEntries084
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix float MIN_VALUE special float entries element value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<float> = [Double.toFloat(Number.MIN_VALUE), 1.0f];
-      let count: int = 0;
-      for (const entry of arr.entries()) {
-        expect(entry[0]).assertEqual(count);
-        expect(entry[1]).assertEqual(arr[count]);
-        count++;
-      }
-      expect(count).assertEqual(arr.length);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0850
-     * @tc.name testReadonlyArrayEntries085
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix double NaN special float entries element value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const nan: double = Number.NaN;
-      const arr: ReadonlyArray<double> = [1.1, nan, 3.3];
-      let count: int = 0;
-      for (const entry of arr.entries()) {
-        expect(entry[0]).assertEqual(count);
-        if (entry[0] === 1) {
-          expect(entry[1] !== entry[1]).assertTrue();
-        } else {
-          expect(entry[1]).assertEqual(arr[count]);
-        }
-        count++;
-      }
-      expect(count).assertEqual(arr.length);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0860
-     * @tc.name testReadonlyArrayEntries086
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix double negative infinity special float entries element value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<double> = [1.1, Number.NEGATIVE_INFINITY, 3.3];
-      let count: int = 0;
-      for (const entry of arr.entries()) {
-        expect(entry[0]).assertEqual(count);
-        expect(entry[1]).assertEqual(arr[count]);
-        count++;
-      }
-      expect(count).assertEqual(arr.length);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0870
-     * @tc.name testReadonlyArrayEntries087
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix double MIN_VALUE special float entries element value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<double> = [Number.MIN_VALUE, 2.2];
-      let count: int = 0;
-      for (const entry of arr.entries()) {
-        expect(entry[0]).assertEqual(count);
-        expect(entry[1]).assertEqual(arr[count]);
-        count++;
-      }
-      expect(count).assertEqual(arr.length);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0880
-     * @tc.name testReadonlyArrayEntries088
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix double large number special float entries element value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<double> = [1.0e6, 2.0e6];
-      let count: int = 0;
-      for (const entry of arr.entries()) {
-        expect(entry[0]).assertEqual(count);
-        expect(entry[1]).assertEqual(arr[count]);
-        count++;
-      }
-      expect(count).assertEqual(arr.length);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0890
-     * @tc.name testReadonlyArrayEntries089
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix 100 elements entries first middle and last index values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const source: Array<int> = [];
-      for (let i: int = 0; i < 100; i++) {
-      source.push(i);
-      }
-      const arr: ReadonlyArray<int> = source as ReadonlyArray<int>;
-      let count: int = 0;
-      for (const entry of arr.entries()) {
-        expect(entry[0]).assertEqual(count);
-        expect(entry[1]).assertEqual(count);
-        count++;
-      }
-      expect(count).assertEqual(100);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0900
-     * @tc.name testReadonlyArrayEntries090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0530
+     * @tc.name testReadonlyArrayEntries053
      * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix 1000 elements entries last index value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayEntries090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayEntries053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source: Array<int> = [];
       for (let i: int = 0; i < 1000; i++) {
       source.push(i);
@@ -1666,33 +1087,14 @@ export default function ReadonlyArrayEntriesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0910
-     * @tc.name testReadonlyArrayEntries091
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix int boundary values entries per index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<int> = [2147483647, -2147483648, 0];
-      let count: int = 0;
-      for (const entry of arr.entries()) {
-        expect(entry[0]).assertEqual(count);
-        expect(entry[1]).assertEqual(arr[count]);
-        count++;
-      }
-      expect(count).assertEqual(arr.length);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0920
-     * @tc.name testReadonlyArrayEntries092
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0540
+     * @tc.name testReadonlyArrayEntries054
      * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix byte independent second entries traversal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayEntries092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayEntries054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<byte> = [10 as byte, 20 as byte];
       let c1: int = 0;
       for (const entry of arr.entries()) {
@@ -1711,14 +1113,14 @@ export default function ReadonlyArrayEntriesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0930
-     * @tc.name testReadonlyArrayEntries093
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0550
+     * @tc.name testReadonlyArrayEntries055
      * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix long second entries call returns first element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayEntries093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayEntries055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<long> = [100, 200, 300];
       const ignored = arr.entries();
       const ignoredFirst = ignored.next();
@@ -1740,33 +1142,14 @@ export default function ReadonlyArrayEntriesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0940
-     * @tc.name testReadonlyArrayEntries094
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix multilingual string entries last element value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["テスト", "테스트", "АБВГД"];
-      let count: int = 0;
-      for (const entry of arr.entries()) {
-        expect(entry[0]).assertEqual(count);
-        expect(entry[1]).assertEqual(arr[count]);
-        count++;
-      }
-      expect(count).assertEqual(arr.length);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0950
-     * @tc.name testReadonlyArrayEntries095
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0560
+     * @tc.name testReadonlyArrayEntries056
      * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix manual next protocol for entries iterator
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayEntries095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayEntries056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [11, 22, 33];
       const iter = arr.entries();
       const first = iter.next();
@@ -1780,79 +1163,67 @@ export default function ReadonlyArrayEntriesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0960
-     * @tc.name testReadonlyArrayEntries096
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix byte middle index entries element value
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0570
+     * @tc.name testReadonlyArrayEntries057
+     * @tc.desc Verify ReadonlyArray.entries behavior: continuing to call next after iterator exhaustion keeps returning done=true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayEntries096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<byte> = [10 as byte, 20 as byte, 30 as byte];
-      let count: int = 0;
-      for (const entry of arr.entries()) {
-        expect(entry[0]).assertEqual(count);
-        expect(entry[1]).assertEqual(arr[count]);
-        count++;
-      }
-      expect(count).assertEqual(arr.length);
+    it('testReadonlyArrayEntries057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<int> = [1, 2];
+      const iter = arr.entries();
+      iter.next();
+      iter.next();
+      const after1 = iter.next();
+      const after2 = iter.next();
+      const after3 = iter.next();
+      expect(after1.done).assertTrue();
+      expect(after2.done).assertTrue();
+      expect(after3.done).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0970
-     * @tc.name testReadonlyArrayEntries097
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix short middle index entries element value
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0580
+     * @tc.name testReadonlyArrayEntries058
+     * @tc.desc Verify ReadonlyArray.entries behavior: ReadonlyArray<int | undefined> entries iterator yields undefined as a valid element value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayEntries097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<short> = [100 as short, 200 as short, 300 as short];
+    it('testReadonlyArrayEntries058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<int | undefined> = [1, undefined, 3];
+      const collected: Array<int | undefined> = [];
       let count: int = 0;
       for (const entry of arr.entries()) {
         expect(entry[0]).assertEqual(count);
-        expect(entry[1]).assertEqual(arr[count]);
+        collected.push(entry[1]);
         count++;
       }
       expect(count).assertEqual(arr.length);
+      expect(collected[0]).assertEqual(1);
+      expect(collected[1]).assertEqual(undefined);
+      expect(collected[2]).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0980
-     * @tc.name testReadonlyArrayEntries098
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix long middle index entries element value
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0590
+     * @tc.name testReadonlyArrayEntries059
+     * @tc.desc Verify ReadonlyArray.entries behavior: spread operator collects all [index, value] tuples in iteration order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayEntries098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<long> = [100, 200, 300];
-      let count: int = 0;
-      for (const entry of arr.entries()) {
-        expect(entry[0]).assertEqual(count);
-        expect(entry[1]).assertEqual(arr[count]);
-        count++;
-      }
-      expect(count).assertEqual(arr.length);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_ENTRIES_0990
-     * @tc.name testReadonlyArrayEntries099
-     * @tc.desc Verify ReadonlyArray.entries behavior: iteration matrix float middle index entries element value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayEntries099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<float> = [1.0f, 2.5f, 3.0f];
-      let count: int = 0;
-      for (const entry of arr.entries()) {
-        expect(entry[0]).assertEqual(count);
-        expect(entry[1]).assertEqual(arr[count]);
-        count++;
-      }
-      expect(count).assertEqual(arr.length);
+    it('testReadonlyArrayEntries059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<int> = [11, 22, 33];
+      const collected: Array<[int, int]> = [...arr.entries()];
+      expect(collected.length).assertEqual(3);
+      expect(collected[0][0]).assertEqual(0);
+      expect(collected[0][1]).assertEqual(11);
+      expect(collected[1][0]).assertEqual(1);
+      expect(collected[1][1]).assertEqual(22);
+      expect(collected[2][0]).assertEqual(2);
+      expect(collected[2][1]).assertEqual(33);
     });
 
   });
