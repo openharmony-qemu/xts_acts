@@ -39,3 +39,95 @@ export const AccessibilityNextFocusIdTest_002: () => number;
 export const AccessibilityDefaultFocusTest_001: () => number;
 export const AccessibilityDefaultFocusTest_002: () => number;
 export const Hovered_UI_STATE_HOVERED: () => number;
+
+
+export const testArcListCachedCount001: () => number;
+export const testArcListCachedCount002: () => number;
+export const testArcListCachedCount003: () => number;
+export const testArcListCachedCount004: () => number;
+export const testArcListCachedCount005: () => number;
+
+export const testArcListChainAnimation001: () => number;
+export const testArcListChainAnimation002: () => number;
+export const testArcListChainAnimation003: () => number;
+
+export const testArcListChildrenMainSize001: () => number;
+export const testArcListChildrenMainSize002: () => number;
+export const testArcListChildrenMainSize003: () => number;
+export const testArcListChildrenMainSize004: () => number;
+export const testArcListChildrenMainSize005: () => number;
+export const testArcListChildrenMainSize006: () => number;
+export const testArcListChildrenMainSize007: () => number;
+export const testArcListChildrenMainSize008: () => number;
+export const testArcListChildrenMainSize009: () => number;
+export const testArcListChildrenMainSize010: () => number;
+export const testArcListChildrenMainSize011: () => number;
+
+export const testArcListDigitalCrownSensitivity001: () => number;
+export const testArcListDigitalCrownSensitivity002: () => number;
+export const testArcListDigitalCrownSensitivity003: () => number;
+export const testArcListDigitalCrownSensitivity004: () => number;
+
+export const testArcListEnableScrollInteraction001: () => number;
+export const testArcListEnableScrollInteraction002: () => number;
+export const testArcListEnableScrollInteraction003: () => number;
+
+export const testArcListFadingEdge001: () => number;
+export const testArcListFadingEdge002: () => number;
+export const testArcListFadingEdge003: () => number;
+
+export const testArcListFlingSpeedLimit001: () => number;
+export const testArcListFlingSpeedLimit002: () => number;
+export const testArcListFlingSpeedLimit003: () => number;
+export const testArcListFlingSpeedLimit004: () => number;
+
+export const testArcListFriction001: () => number;
+export const testArcListFriction002: () => number;
+export const testArcListFriction003: () => number;
+export const testArcListFriction004: () => number;
+
+export const testArcListItemAutoScale001: () => number;
+export const testArcListItemAutoScale002: () => number;
+export const testArcListItemAutoScale003: () => number;
+
+export const testArcListItemSwipeAction001: () => number;
+export const testArcListItemSwipeAction002: () => number;
+export const testArcListItemSwipeAction003: () => number;
+export const testArcListItemSwipeAction004: () => number;
+
+export const testArcListScrollBar001: () => number;
+export const testArcListScrollBar002: () => number;
+export const testArcListScrollBar003: () => number;
+export const testArcListScrollBar004: () => number;
+
+export const testArcListScrollBarColor001: () => number;
+export const testArcListScrollBarColor002: () => number;
+export const testArcListScrollBarColor003: () => number;
+
+export const testArcListScrollBarWidth001: () => number;
+export const testArcListScrollBarWidth002: () => number;
+export const testArcListScrollBarWidth003: () => number;
+export const testArcListScrollBarWidth004: () => number;
+
+export const testArcListScrollToIndex001: () => number;
+export const testArcListScrollToIndex002: () => number;
+export const testArcListScrollToIndex003: () => number;
+
+export const testArcListSetHeader001: () => number;
+export const testArcListSetHeader002: () => number;
+export const testArcListSetHeader003: () => number;
+
+export const testArcListSpace001: () => number;
+export const testArcListSpace002: () => number;
+export const testArcListSpace003: () => number;
+export const testArcListSpace004: () => number;
+export const testArcListSpace005: () => number;
+
+export const testArcScrollBarBindScrollable001: () => number;
+export const testArcScrollBarBindScrollable002: () => number;
+export const testArcScrollBarBindScrollable003: () => number;
+
+export const testArcScrollBarDisplayMode001: () => number;
+export const testArcScrollBarDisplayMode002: () => number;
+export const testArcScrollBarDisplayMode003: () => number;
+export const testArcScrollBarDisplayMode004: () => number;
