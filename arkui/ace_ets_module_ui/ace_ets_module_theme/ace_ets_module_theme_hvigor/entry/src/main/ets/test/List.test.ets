@@ -51,7 +51,6 @@ export default function testsuite() {
   setDefaultThemeTest();
   systemThemeTest();
   withThemeTest();
-  themeTokenType();
   // components
   alphabetIndexerThemeTest();
   badgeThemeTest();
@@ -80,4 +79,5 @@ export default function testsuite() {
   textPickerThemeTest();
   timePickerThemeTest();
   toggleThemeTest();
+  themeTokenType();
 }
