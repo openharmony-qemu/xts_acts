@@ -51,6 +51,7 @@ group("std_core_static") {
       "math_standard_test_static:ActsMathCaseStaticTest",
       "map_standard_test_static:ActsMapCaseStaticTest",
       "blockingqueue_standard_test_static:ActsBlockingqueueCaseStaticTest",
+      "box_test_static:ActsBoxStaticTest",
     ]
   }
 }
