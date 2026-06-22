@@ -90,7 +90,7 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
     })
 
     afterEach(async()=>{
-      await Utils.msSleep(8000)
+      await Utils.msSleep(5000)
     })
 
     /**
