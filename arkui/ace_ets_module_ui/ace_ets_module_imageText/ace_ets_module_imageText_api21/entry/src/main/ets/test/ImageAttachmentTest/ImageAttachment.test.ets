@@ -90,7 +90,7 @@ export default function ImageAttachmentTest() {
       let strJson = getInspectorByKey('textId');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[ImageAttachmentTest002] obj.$attrs.content is: ' + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertEqual('sizeInVp width:33.33height:33.33');
+      expect(obj.$attrs.content).assertEqual('sizeInVp width:'+px2vp(50).toFixed(2)+'height:'+px2vp(50).toFixed(2));
       console.info('[ImageAttachmentTest002] END');
       done();
     });
