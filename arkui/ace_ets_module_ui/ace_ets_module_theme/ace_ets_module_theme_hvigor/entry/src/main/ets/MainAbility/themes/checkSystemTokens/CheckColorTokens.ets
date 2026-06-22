@@ -14,9 +14,6 @@
  */
 export class ColorsValues {
   public readonly brand: string = 'sys.color.brand';
-  public readonly primary: string = 'sys.color.primary';
-  public readonly onPrimary: string = 'sys.color.on_primary';
-  public readonly container: string = 'sys.color.container';
   public readonly warning: string = 'sys.color.warning' ;
   public readonly alert: string = 'sys.color.alert';
   public readonly confirm: string = 'sys.color.confirm';

@@ -25,6 +25,7 @@
         "MainAbility/pages/LazyVWaterFlowLayout/LazyVWaterFlowLayoutProperties",
         "MainAbility/pages/LazyColumnLayout/LazyColumnLayoutProperties",
         "MainAbility/pages/LazyVWaterFlowLayout/headerFooterStickyFlow",
-        "MainAbility/pages/LazyColumnLayout/headerFooterStickyColumn"
+        "MainAbility/pages/LazyColumnLayout/headerFooterStickyColumn",
+        "MainAbility/pages/LazyDynamicLayout/customListLayoutTest"
     ]
 }
