@@ -7979,3 +7979,4 @@ export const testCustomDialogSetSystemMaterialInOptions001: () => number;
 export const testCustomDialogSetSystemMaterialInOptions002: () => number;
 export const testCustomDialogSetSystemMaterialInOptions003: () => number;
 export const testCustomDialogSetSystemMaterialInOptions004: () => number;
+export const testCustomDialogSetSystemMaterialInOptions005: () => number;

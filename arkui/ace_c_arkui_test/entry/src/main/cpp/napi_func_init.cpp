@@ -7918,6 +7918,8 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testCustomDialogSetSystemMaterialInOptions004", nullptr, TestCustomDialogSetSystemMaterialInOptions004,
          nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testCustomDialogSetSystemMaterialInOptions005", nullptr, TestCustomDialogSetSystemMaterialInOptions005,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testCustomDialogSetCornerRadius001", nullptr, TestCustomDialogSetCornerRadius001, nullptr, nullptr,
          nullptr, napi_default, nullptr},
         {"testCustomDialogSetCornerRadius002", nullptr, TestCustomDialogSetCornerRadius002, nullptr, nullptr,
