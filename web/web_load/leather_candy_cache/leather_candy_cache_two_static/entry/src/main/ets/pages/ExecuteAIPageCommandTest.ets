@@ -618,7 +618,7 @@ struct ExecuteAIPageCommandTest {
             case "testExecuteAIPageCommand047": {
               let msg = "testExecuteAIPageCommand047"
               try {
-                this.controller.executeAIPageCommand("123");
+                this.controller.executeAIPageCommand('123');
                 Utils.emitEvent(true, 148157)
               } catch (error) {
                 error = error as BusinessError;
