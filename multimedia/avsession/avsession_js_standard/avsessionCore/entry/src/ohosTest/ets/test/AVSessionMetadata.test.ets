@@ -739,6 +739,7 @@ export default function abilityTest() {
             });
           }
         })
+        await sleep(2000);
       } catch (error) {
         console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
         expect(false).assertTrue();
@@ -826,6 +827,7 @@ export default function abilityTest() {
             })
           }
         })
+        await sleep(2000);
       } catch (error) {
         console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
         expect(false).assertTrue();
@@ -1349,6 +1351,7 @@ export default function abilityTest() {
             })
           }
         })
+        await sleep(2000);
       } catch (error) {
         console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
         expect(false).assertTrue();
@@ -3170,6 +3173,7 @@ export default function abilityTest() {
             console.info('SendControlCommand successfully');
           }
         });
+        await sleep(2000);
       } catch (error) {
         console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
         expect(false).assertTrue();
