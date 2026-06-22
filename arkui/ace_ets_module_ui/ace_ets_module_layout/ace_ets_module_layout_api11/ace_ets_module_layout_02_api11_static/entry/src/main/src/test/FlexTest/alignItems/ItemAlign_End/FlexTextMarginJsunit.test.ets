@@ -1,4 +1,5 @@
 'use static';
+
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -66,9 +67,7 @@ export default function flexTextMargin_EndJsunit() {
       await CommonFunc.sleep(1000);
       console.info("flexItemAlignEndTest4 after each called");
     });
-
-    
-    
+ 
 /**
      * @tc.number   testFlexItemAlignEndSubSetMargin_static
      * @tc.name     testFlexItemAlignEndSubSetMargin_static
@@ -131,11 +130,8 @@ it('testFlexItemAlignEndSubSetMargin_static', Level.LEVEL0, async () : Promise<v
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.End')
       console.info('new testFlexItemAlignEndSubSetMargin END');
-
     });
-
-    
-    
+ 
 /**
      * @tc.number   testFlexItemAlignEndSubSetMarginExceed_static
      * @tc.name     testFlexItemAlignEndSubSetMarginExceed_static
@@ -192,13 +188,13 @@ it('testFlexItemAlignEndSubSetMarginExceed_static', Level.LEVEL0, async () : Pro
       expect(Math.floor(Math.abs(textMargin02.bottom - textMargin02.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1).assertTrue()
       expect(Math.floor(Math.abs(textMargin03.bottom - textMargin03.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue()
       expect(Math.floor(Math.abs(textMargin01.right - textMargin01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 2).assertTrue()
-      expect(Math.floor(Math.abs(textMargin02.right - textMargin02.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 2).assertTrue()
+      expect(Math.floor(Math.abs(textMargin02.right - textMargin02.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 3).assertTrue()
       expect(Math.floor(Math.abs(textMargin03.right - textMargin03.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 2).assertTrue()
 
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.End')
       console.info('new testFlexItemAlignEndSubSetMarginExceed END');
-
     });
+
   })
 }

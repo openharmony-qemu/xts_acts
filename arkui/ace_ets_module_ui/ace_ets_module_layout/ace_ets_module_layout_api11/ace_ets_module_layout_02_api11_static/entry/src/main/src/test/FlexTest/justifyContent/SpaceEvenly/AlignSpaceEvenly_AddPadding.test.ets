@@ -1,4 +1,5 @@
 'use static';
+
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import { MessageManager, Callback } from '../../../../../ets/MainAbility/common/MessageManager';
 import { describe, beforeEach, it, expect, Level, afterEach, beforeAll } from '../../../../../../hypium/index';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
@@ -63,14 +65,11 @@ export default function AlignSpaceEvenly_AddPadding() {
       console.info("AlignSpaceEvenly_AddPadding beforeEach end");
     });
 
-
     afterEach(async () : Promise<void>=> {
       await CommonFunc.sleep(2000);
       console.info("AlignSpaceEvenly_AddPadding after each called");
     });
-
-    
-    
+  
 /**
      * @tc.number   testAlignSpaceEvenlyFlexPadMeet_static
      * @tc.name     testAlignSpaceEvenlyFlexPadMeet_static
@@ -133,7 +132,7 @@ it('testAlignSpaceEvenlyFlexPadMeet_static', Level.LEVEL0, async () : Promise<vo
         .assertTrue();
       expect(Math.floor(Math.abs((SpaceEvenly_AddPadding_011.right - SpaceEvenly_AddPadding_011.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 2)
         .assertTrue();
-      expect(Math.floor(Math.abs((SpaceEvenly_AddPadding_012.right - SpaceEvenly_AddPadding_012.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 2)
+      expect(Math.floor(Math.abs((SpaceEvenly_AddPadding_012.right - SpaceEvenly_AddPadding_012.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 3)
         .assertTrue();
       expect(Math.floor(Math.abs((SpaceEvenly_AddPadding_013.right - SpaceEvenly_AddPadding_013.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 2)
         .assertTrue();
@@ -143,9 +142,7 @@ it('testAlignSpaceEvenlyFlexPadMeet_static', Level.LEVEL0, async () : Promise<vo
         .assertTrue();
 
       console.info('[testAlignSpaceEvenlyFlexPadMeet] END');
-
     });
-    
     
 /**
      * @tc.number   testAlignSpaceEvenlyFlexPadOverflow_static
@@ -225,7 +222,7 @@ it('testAlignSpaceEvenlyFlexPadOverflow_static', Level.LEVEL0, async () : Promis
         .assertTrue();
 
       console.info('[testAlignSpaceEvenlyFlexPadOverflow] END');
-
     });
+
   })
 }

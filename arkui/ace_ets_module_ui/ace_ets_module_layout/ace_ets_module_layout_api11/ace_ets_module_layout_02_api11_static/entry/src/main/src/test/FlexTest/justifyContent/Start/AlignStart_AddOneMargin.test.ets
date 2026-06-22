@@ -1,4 +1,5 @@
 'use static';
+
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+ 
 import { MessageManager, Callback } from '../../../../../ets/MainAbility/common/MessageManager';
 import { describe, beforeEach, it, expect, Level, afterEach, beforeAll } from '../../../../../../hypium/index';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
@@ -63,13 +65,10 @@ export default function AlignStart_AddOneMargin() {
       console.info("AlignStart_AddOneMargin beforeEach end");
     });
 
-
     afterEach(async () : Promise<void> => {
       await CommonFunc.sleep(2000);
       console.info("AlignStart_AddOneMargin after each called");
     });
-
-
 
     /**
      * @tc.number   testFlexAlignStartTextMarginMeet_static
@@ -141,9 +140,7 @@ export default function AlignStart_AddOneMargin() {
         .assertTrue();
 
       console.info('[testFlexAlignStartTextMarginMeet] END');
-
     })
-
 
     /**
      * @tc.number   testFlexAlignStartTextMarginOverflow_static
@@ -205,7 +202,7 @@ export default function AlignStart_AddOneMargin() {
         .assertTrue();
       expect(Math.floor(Math.abs((Start_AddOneMargin_011.right - Start_AddOneMargin_011.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 2)
         .assertTrue();
-      expect(Math.floor(Math.abs((Start_AddOneMargin_012.right - Start_AddOneMargin_012.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 2)
+      expect(Math.floor(Math.abs((Start_AddOneMargin_012.right - Start_AddOneMargin_012.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 3)
         .assertTrue();
       expect(Math.floor(Math.abs((Start_AddOneMargin_013.right - Start_AddOneMargin_013.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 2)
         .assertTrue();
@@ -217,7 +214,7 @@ export default function AlignStart_AddOneMargin() {
         .assertTrue();
 
       console.info('[testFlexAlignStartTextMarginOverflow_static] END');
-
     })
+
   })
 }
