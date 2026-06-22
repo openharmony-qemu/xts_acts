@@ -1417,10 +1417,10 @@ export default function ActsNotificationAnsReduceAlertsTest(){
         await Utils.msSleep(1500)
         await driver.assertComponentExist(ON.text('横幅通知'));
         await Utils.msSleep(1500)
-        let scrollBarOne = await driver.findComponent(ON.type('Scroll').isAfter(ON.text('通知管理')));
-        console.info(TAG + `scrollToBottom Scroll, ${JSON.stringify(scrollBarOne)} `);
-        await scrollBarOne?.scrollToBottom()
-        await Utils.msSleep(500)
+        //let scrollBarOne = await driver.findComponent(ON.type('Scroll').isAfter(ON.text('通知管理')));
+        //console.info(TAG + `scrollToBottom Scroll, ${JSON.stringify(scrollBarOne)} `);
+        //await scrollBarOne?.scrollToBottom()
+        //await Utils.msSleep(500)
         let button = await driver.findComponent(ON.text('横幅通知'));
         console.info(TEST_SUITE_NAME + TAG + `button is ${JSON.stringify(button)}`);
         if (button !== null) {
