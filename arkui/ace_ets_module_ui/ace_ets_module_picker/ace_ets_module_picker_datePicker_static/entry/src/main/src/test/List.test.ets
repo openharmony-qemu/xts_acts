@@ -18,9 +18,29 @@ import DataPickerCanLoopTest from './datePickerTest/DataPickerCanLoop.test'
 import DataPickerCanLoopModifierTest from './datePickerTest/DataPickerCanLoopModifier.test'
 import DatePickerTest from './datePickerTest/DataPickerCanLoopModifier.test'
 import DataPanelTest from './DataPanelTest/DataPanel.test'
+import DatePickerComponentConstructorTest from './datePickerComponentTest/DatePickerComponentConstructor.test'
+import DatePickerComponentDisplayModeTest from './datePickerComponentTest/DatePickerComponentDisplayMode.test'
+import DatePickerComponentDateModeTest from './datePickerComponentTest/DatePickerComponentDateMode.test'
+import DatePickerComponentLunarTest from './datePickerComponentTest/DatePickerComponentLunar.test'
+import DatePickerComponentLoopTest from './datePickerComponentTest/DatePickerComponentLoop.test'
+import DatePickerComponentEnableHapticFeedbackTest from './datePickerComponentTest/DatePickerComponentEnableHapticFeedback.test'
+import DatePickerComponentTimeFormatTest from './datePickerComponentTest/DatePickerComponentTimeFormat.test'
+import DatePickerComponentUseMilitaryTimeTest from './datePickerComponentTest/DatePickerComponentUseMilitaryTime.test'
+import DatePickerComponentOnChangeTest from './datePickerComponentTest/DatePickerComponentOnChange.test'
+import DatePickerComponentOnScrollStopTest from './datePickerComponentTest/DatePickerComponentOnScrollStop.test'
 export default function testsuite() {
   DataPickerCanLoopTest();
   DataPickerCanLoopModifierTest();
   DatePickerTest();
   DataPanelTest();
+  DatePickerComponentConstructorTest();
+  DatePickerComponentDisplayModeTest();
+  DatePickerComponentDateModeTest();
+  DatePickerComponentLunarTest();
+  DatePickerComponentLoopTest();
+  DatePickerComponentEnableHapticFeedbackTest();
+  DatePickerComponentTimeFormatTest();
+  DatePickerComponentUseMilitaryTimeTest();
+  DatePickerComponentOnChangeTest();
+  DatePickerComponentOnScrollStopTest();
 }

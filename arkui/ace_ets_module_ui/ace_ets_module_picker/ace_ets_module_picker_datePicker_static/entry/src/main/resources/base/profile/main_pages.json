@@ -4,6 +4,16 @@
     "MainAbility/pages/datePicker/DataPickerCanLoop",
     "MainAbility/pages/datePicker/DataPickerCanLoopModifier",
     "MainAbility/pages/datePicker/DataPicker",
-    "MainAbility/pages/DataPanel/DataPanel"
+    "MainAbility/pages/DataPanel/DataPanel",
+    "MainAbility/pages/datePickerComponent/DatePickerComponentConstructor",
+    "MainAbility/pages/datePickerComponent/DatePickerComponentDisplayMode",
+    "MainAbility/pages/datePickerComponent/DatePickerComponentDateMode",
+    "MainAbility/pages/datePickerComponent/DatePickerComponentLunar",
+    "MainAbility/pages/datePickerComponent/DatePickerComponentLoop",
+    "MainAbility/pages/datePickerComponent/DatePickerComponentEnableHapticFeedback",
+    "MainAbility/pages/datePickerComponent/DatePickerComponentTimeFormat",
+    "MainAbility/pages/datePickerComponent/DatePickerComponentUseMilitaryTime",
+    "MainAbility/pages/datePickerComponent/DatePickerComponentOnChange",
+    "MainAbility/pages/datePickerComponent/DatePickerComponentOnScrollStop"
   ]
 }
