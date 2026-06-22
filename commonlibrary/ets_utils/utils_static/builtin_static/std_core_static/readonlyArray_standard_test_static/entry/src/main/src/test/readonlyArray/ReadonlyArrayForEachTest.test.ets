@@ -1103,5 +1103,991 @@ export default function ReadonlyArrayForEachTest(): void {
       });
       expect(count).assertEqual(1);
     });
-  })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0600
+     * @tc.name testReadonlyArrayForEach060
+     * @tc.desc Verify ReadonlyArray.for.each behavior: string BOM forEach
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const bom: string = "\uFEFF";
+      const arr: ReadonlyArray<string> = [bom, "t"];
+      let count: int = 0;
+      arr.forEach((value: string): void => {
+          if (value.length > 0) {
+              count++;
+          }
+      });
+      expect(count).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0610
+     * @tc.name testReadonlyArrayForEach061
+     * @tc.desc Verify ReadonlyArray.for.each behavior: string mojibake forEach
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const garbled: string = "æµè¯";
+      const arr: ReadonlyArray<string> = [garbled];
+      let len: int = 0;
+      arr.forEach((value: string): void => {
+          len = value.length;
+      });
+      expect(len).assertEqual(garbled.length);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0620
+     * @tc.name testReadonlyArrayForEach062
+     * @tc.desc Verify ReadonlyArray.for.each behavior: byte boundary forEach
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<byte> = [-128 as byte, 127 as byte];
+      let sum: int = 0;
+      arr.forEach((value: byte): void => {
+          sum += value;
+      });
+      expect(sum).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0630
+     * @tc.name testReadonlyArrayForEach063
+     * @tc.desc Verify ReadonlyArray.for.each behavior: adjacent forEach next item
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<int> = [1, 2, 3];
+      let hit: boolean = false;
+      arr.forEach((value: int, index: int, array: ReadonlyArray<int>): void => {
+          if (index < array.length - 1 && array[index + 1] === 3) {
+              hit = true;
+          }
+      });
+      expect(hit).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0640
+     * @tc.name testReadonlyArrayForEach064
+     * @tc.desc Verify ReadonlyArray.for.each behavior: 1000 elements forEach count
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source: Array<int> = [];
+      for (let i: int = 0; i < 1000; i++) { source.push(i); }
+      const arr: ReadonlyArray<int> = source as ReadonlyArray<int>;
+      let count: int = 0;
+      arr.forEach((_value: int): void => {
+          count++;
+      });
+      expect(count).assertEqual(1000);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0650
+     * @tc.name testReadonlyArrayForEach065
+     * @tc.desc Verify ReadonlyArray.for.each behavior: forEach callback array same reference
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<int> = [1, 2];
+      let same: boolean = false;
+      arr.forEach((value: int, index: int, array: ReadonlyArray<int>): void => {
+          same = array === arr;
+      });
+      expect(same).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0660
+     * @tc.name testReadonlyArrayForEach066
+     * @tc.desc Verify ReadonlyArray.for.each behavior: float positive infinity forEach
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<float> = [Double.toFloat(Number.POSITIVE_INFINITY)];
+      let count: int = 0;
+      arr.forEach((value: float): void => {
+          if (value > 1.0e10f) {
+              count++;
+          }
+      });
+      expect(count).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0670
+     * @tc.name testReadonlyArrayForEach067
+     * @tc.desc Verify ReadonlyArray.for.each behavior: int radix forEach sum
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<int> = [0x10, 0o10, 0b10];
+      let sum: int = 0;
+      arr.forEach((value: int): void => {
+          sum += value;
+      });
+      expect(sum).assertEqual(0x10 + 0o10 + 0b10);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0680
+     * @tc.name testReadonlyArrayForEach068
+     * @tc.desc Verify ReadonlyArray.for.each behavior: boolean forEach count
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<boolean> = [true, false, true];
+      let falseCount: int = 0;
+      arr.forEach((value: boolean): void => {
+          if (!value) {
+              falseCount++;
+          }
+      });
+      expect(falseCount).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0690
+     * @tc.name testReadonlyArrayForEach069
+     * @tc.desc Verify ReadonlyArray.for.each behavior: forEach index parameter validation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<int> = [10, 20, 30];
+      let sumIdx: int = 0;
+      arr.forEach((value: int, index: int): void => {
+          sumIdx += index;
+      });
+      expect(sumIdx).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0700
+     * @tc.name testReadonlyArrayForEach070
+     * @tc.desc Verify ReadonlyArray.for.each behavior: continuation phone number - forEach
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: string = "13800138000";
+      const arr: ReadonlyArray<string> = [target];
+      let matched: boolean = false;
+      arr.forEach((value: string): void => {
+          if (value === target) {
+              matched = true;
+          }
+      });
+      expect(matched).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0710
+     * @tc.name testReadonlyArrayForEach071
+     * @tc.desc Verify ReadonlyArray.for.each behavior: continuation email - forEach
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: string = "test@example.com";
+      const arr: ReadonlyArray<string> = [target];
+      let matched: boolean = false;
+      arr.forEach((value: string): void => {
+          if (value === target) {
+              matched = true;
+          }
+      });
+      expect(matched).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0720
+     * @tc.name testReadonlyArrayForEach072
+     * @tc.desc Verify ReadonlyArray.for.each behavior: continuation double positive infinity forEach
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<double> = [Number.POSITIVE_INFINITY, 1.0];
+      let count: int = 0;
+      arr.forEach((value: double): void => {
+          if (value > 0.0) {
+              count++;
+          }
+      });
+      expect(count).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0730
+     * @tc.name testReadonlyArrayForEach073
+     * @tc.desc Verify ReadonlyArray.for.each behavior: continuation int repeated elements forEach
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<int> = [7, 7, 7];
+      let allSeven: boolean = true;
+      arr.forEach((value: int): void => {
+          if (value !== 7) {
+              allSeven = false;
+          }
+      });
+      expect(allSeven).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0740
+     * @tc.name testReadonlyArrayForEach074
+     * @tc.desc Verify ReadonlyArray.for.each behavior: continuation 100 elements forEach all positive
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source: Array<int> = [];
+      for (let i: int = 1; i <= 100; i++) { source.push(i); }
+      const arr: ReadonlyArray<int> = source as ReadonlyArray<int>;
+      let count: int = 0;
+      arr.forEach((value: int): void => {
+          if (value > 0) {
+              count++;
+          }
+      });
+      expect(count).assertEqual(100);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0750
+     * @tc.name testReadonlyArrayForEach075
+     * @tc.desc Verify ReadonlyArray.for.each behavior: continuation hexadecimal string - forEach
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: string = "0x123";
+      const arr: ReadonlyArray<string> = [target];
+      let ok: boolean = false;
+      arr.forEach((value: string): void => {
+          if (value === target) {
+              ok = true;
+          }
+      });
+      expect(ok).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0760
+     * @tc.name testReadonlyArrayForEach076
+     * @tc.desc Verify ReadonlyArray.for.each behavior: continuation zero width space - forEach
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: string = "\u200B";
+      const arr: ReadonlyArray<string> = [target];
+      let ok: boolean = false;
+      arr.forEach((value: string): void => {
+          if (value === target) {
+              ok = true;
+          }
+      });
+      expect(ok).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0770
+     * @tc.name testReadonlyArrayForEach077
+     * @tc.desc Verify ReadonlyArray.for.each behavior: continuation double positive infinity forEach
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<double> = [Number.POSITIVE_INFINITY];
+      let count: int = 0;
+      arr.forEach((value: double): void => {
+          if (value > 0.0) {
+              count++;
+          }
+      });
+      expect(count).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0780
+     * @tc.name testReadonlyArrayForEach078
+     * @tc.desc Verify ReadonlyArray.for.each behavior: continuation int repeated forEach
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<int> = [6, 6, 6];
+      let sum: int = 0;
+      arr.forEach((value: int): void => {
+          sum += value;
+      });
+      expect(sum).assertEqual(18);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0790
+     * @tc.name testReadonlyArrayForEach079
+     * @tc.desc Verify ReadonlyArray.for.each behavior: continuation 100 elements forEach
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source: Array<int> = [];
+      for (let i: int = 0; i < 100; i++) { source.push(1); }
+      const arr: ReadonlyArray<int> = source as ReadonlyArray<int>;
+      let count: int = 0;
+      arr.forEach((_value: int): void => {
+          count++;
+      });
+      expect(count).assertEqual(100);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0800
+     * @tc.name testReadonlyArrayForEach080
+     * @tc.desc Verify ReadonlyArray.for.each behavior: continuation index parameter forEach
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<int> = [1, 2, 3];
+      let sum: int = 0;
+      arr.forEach((_value: int, index: int): void => {
+          sum += index;
+      });
+      expect(sum).assertEqual(3);
+    });
+
+
+
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0810
+     * @tc.name testReadonlyArrayForEach081
+     * @tc.desc Verify ReadonlyArray.forEach behavior: error path - callback Error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<int> = [1, 2, 3];
+      try {
+              arr.forEach((_value: int, index: int): void => {
+                if (index === 1) { throw new Error("predicate error"); }
+              });
+              expect().assertFail();
+      } catch (error) {
+              expect(error != null).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0820
+     * @tc.name testReadonlyArrayForEach082
+     * @tc.desc Verify ReadonlyArray.forEach behavior: readonly constraint - original array length unchanged after call - length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<int> = [1, 2, 3];
+      const before: int = arr.length;
+      arr.forEach((_value: int): void => {});
+      expect(arr.length).assertEqual(before);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0830
+     * @tc.name testReadonlyArrayForEach083
+     * @tc.desc Verify ReadonlyArray.forEach behavior: boundary scale - array length equals 2
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<int> = [10, 20];
+      let count: int = 0;
+      let sum: int = 0;
+      arr.forEach((value: int, index: int, array: ReadonlyArray<int>): void => {
+        expect(index).assertEqual(count);
+        expect(array.length).assertEqual(2);
+        sum += value;
+        count++;
+      });
+      expect(count).assertEqual(2);
+      expect(sum).assertEqual(30);
+      expect(arr.length).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0840
+     * @tc.name testReadonlyArrayForEach084
+     * @tc.desc Verify ReadonlyArray.forEach behavior: boundary scale - array length equals 1024 - /
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arrSource: Array<int> = [];
+      for (let i: int = 0; i < 1024; i++) {
+        arrSource.push(i);
+      }
+      const arr: ReadonlyArray<int> = arrSource as ReadonlyArray<int>;
+      let count: int = 0;
+      arr.forEach((_value: int): void => { count++; });
+      expect(count).assertEqual(1024);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0850
+     * @tc.name testReadonlyArrayForEach085
+     * @tc.desc Verify ReadonlyArray.forEach behavior: call consistency - ReadonlyArray assigned from regular Array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source: Array<int> = [1, 2, 3];
+      const arr: ReadonlyArray<int> = source as ReadonlyArray<int>;
+      let count: int = 0;
+      let sum: int = 0;
+      arr.forEach((value: int, index: int, array: ReadonlyArray<int>): void => {
+        expect(index).assertEqual(count);
+        expect(array.length).assertEqual(source.length);
+        sum += value;
+        count++;
+      });
+      expect(count).assertEqual(3);
+      expect(sum).assertEqual(6);
+      expect(arr.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0860
+     * @tc.name testReadonlyArrayForEach086
+     * @tc.desc Verify ReadonlyArray.forEach behavior: combination coverage - ReadonlyArray<int> = 1, 2, 3 group 1 interface behavior - ReadonlyArray
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<int> = [1, 2, 3];
+      let count: int = 0;
+      arr.forEach((_value: int): void => { count++; });
+      expect(count).assertEqual(3);
+      expect(arr.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0870
+     * @tc.name testReadonlyArrayForEach087
+     * @tc.desc Verify ReadonlyArray.forEach behavior: combination coverage - ReadonlyArray<string> = "a", "b", "" group 1 interface behavior - ReadonlyArray
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<string> = ["a", "b", ""];
+      let count: int = 0;
+      arr.forEach((_value: string): void => { count++; });
+      expect(count).assertEqual(3);
+      expect(arr.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0880
+     * @tc.name testReadonlyArrayForEach088
+     * @tc.desc Verify ReadonlyArray.forEach behavior: combination coverage - ReadonlyArray<string> = " ", "emoji", "long..." group 1 interface behavior - ReadonlyArray
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<string> = ["\u4e2d\u6587", "\uD83D\uDE00", "long-text"];
+      let count: int = 0;
+      arr.forEach((_value: string): void => { count++; });
+      expect(count).assertEqual(3);
+      expect(arr.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0890
+     * @tc.name testReadonlyArrayForEach089
+     * @tc.desc Verify ReadonlyArray.forEach behavior: combination coverage - ReadonlyArray<boolean> = true, false group 1 interface behavior - ReadonlyArray
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<boolean> = [true, false];
+      let count: int = 0;
+      arr.forEach((_value: boolean): void => { count++; });
+      expect(count).assertEqual(2);
+      expect(arr.length).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0900
+     * @tc.name testReadonlyArrayForEach090
+     * @tc.desc Verify ReadonlyArray.forEach behavior: combination coverage - ReadonlyArray<number> = NaN, 0, - 0 group 1 interface behavior - ReadonlyArray
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nan: double = Number.NaN;
+      const arr: ReadonlyArray<double> = [nan, 0.0, -0.0];
+      let count: int = 0;
+      arr.forEach((_value: double): void => { count++; });
+      expect(count).assertEqual(3);
+      expect(arr.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0910
+     * @tc.name testReadonlyArrayForEach091
+     * @tc.desc Verify ReadonlyArray.forEach behavior: combination coverage - ReadonlyArray<Object> = obj1, obj2 group 1 interface behavior - ReadonlyArray
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj1: ComboObjarr = new ComboObjarr();
+      const obj2: ComboObjarr = new ComboObjarr();
+      obj2.id = 2;
+      const arr: ReadonlyArray<ComboObjarr> = [obj1, obj2];
+      let count: int = 0;
+      arr.forEach((_value: ComboObjarr): void => { count++; });
+      expect(count).assertEqual(2);
+      expect(arr.length).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0920
+     * @tc.name testReadonlyArrayForEach092
+     * @tc.desc Verify ReadonlyArray.forEach behavior: combination coverage - nested int array values group 1 interface behavior
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<Array<int>> = [[1], [2, 3]];
+      let count: int = 0;
+      arr.forEach((_value: Array<int>): void => {
+        count++;
+      });
+      expect(count).assertEqual(arr.length);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0930
+     * @tc.name testReadonlyArrayForEach093
+     * @tc.desc Verify ReadonlyArray.forEach behavior: combination coverage - repeated int elements group 1 interface behavior
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<int> = [1, 1, 2];
+      let count: int = 0;
+      arr.forEach((_value: int): void => {
+        count++;
+      });
+      expect(count).assertEqual(arr.length);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0940
+     * @tc.name testReadonlyArrayForEach094
+     * @tc.desc Verify ReadonlyArray.forEach behavior: combination coverage - int sequence 1, 2, 3 group 2 interface behavior
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<int> = [1, 2, 3];
+      let count: int = 0;
+      arr.forEach((_value: int): void => {
+        count++;
+      });
+      expect(count).assertEqual(arr.length);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0950
+     * @tc.name testReadonlyArrayForEach095
+     * @tc.desc Verify ReadonlyArray.forEach behavior: combination coverage - string values with empty string group 2 interface behavior
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<string> = ["a", "b", ""];
+      let count: int = 0;
+      arr.forEach((_value: string): void => {
+        count++;
+      });
+      expect(count).assertEqual(arr.length);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0960
+     * @tc.name testReadonlyArrayForEach096
+     * @tc.desc Verify ReadonlyArray.forEach behavior: combination coverage - Unicode string values group 2 interface behavior
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<string> = ["\u4e2d\u6587", "\uD83D\uDE00", "long-text"];
+      let count: int = 0;
+      arr.forEach((_value: string): void => {
+        count++;
+      });
+      expect(count).assertEqual(arr.length);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0970
+     * @tc.name testReadonlyArrayForEach097
+     * @tc.desc Verify ReadonlyArray.forEach behavior: combination coverage - boolean true false values group 2 interface behavior
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<boolean> = [true, false];
+      let count: int = 0;
+      arr.forEach((_value: boolean): void => {
+        count++;
+      });
+      expect(count).assertEqual(arr.length);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0980
+     * @tc.name testReadonlyArrayForEach098
+     * @tc.desc Verify ReadonlyArray.forEach behavior: combination coverage - NaN zero and negative zero values group 2 interface behavior
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<double> = [Number.NaN, 0.0, -0.0];
+      let count: int = 0;
+      arr.forEach((_value: double): void => {
+        count++;
+      });
+      expect(count).assertEqual(arr.length);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_0990
+     * @tc.name testReadonlyArrayForEach099
+     * @tc.desc Verify ReadonlyArray.forEach behavior: combination coverage - object reference values group 2 interface behavior
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj1: ReadonlyArrayForEachGeneratedItem = new ReadonlyArrayForEachGeneratedItem(1);
+      const obj2: ReadonlyArrayForEachGeneratedItem = new ReadonlyArrayForEachGeneratedItem(2);
+      const arr: ReadonlyArray<ReadonlyArrayForEachGeneratedItem> = [obj1, obj2];
+      let count: int = 0;
+      arr.forEach((_value: ReadonlyArrayForEachGeneratedItem): void => {
+        count++;
+      });
+      expect(count).assertEqual(arr.length);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_1000
+     * @tc.name testReadonlyArrayForEach100
+     * @tc.desc Verify ReadonlyArray.forEach behavior: object element reference identity preserved through callback (TC018/TC042)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj1: ReadonlyArrayForEachGeneratedItem = new ReadonlyArrayForEachGeneratedItem(7);
+      const obj2: ReadonlyArrayForEachGeneratedItem = new ReadonlyArrayForEachGeneratedItem(9);
+      const arr: ReadonlyArray<ReadonlyArrayForEachGeneratedItem> = [obj1, obj2];
+      const refs: Array<ReadonlyArrayForEachGeneratedItem> = [];
+      arr.forEach((value: ReadonlyArrayForEachGeneratedItem): void => {
+        refs.push(value);
+      });
+      expect(refs[0] === obj1).assertTrue();
+      expect(refs[1] === obj2).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_1010
+     * @tc.name testReadonlyArrayForEach101
+     * @tc.desc Verify ReadonlyArray.forEach behavior: object element id property accessible in callback (TC017)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj1: ReadonlyArrayForEachGeneratedItem = new ReadonlyArrayForEachGeneratedItem(11);
+      const obj2: ReadonlyArrayForEachGeneratedItem = new ReadonlyArrayForEachGeneratedItem(22);
+      const arr: ReadonlyArray<ReadonlyArrayForEachGeneratedItem> = [obj1, obj2];
+      let idSum: int = 0;
+      arr.forEach((value: ReadonlyArrayForEachGeneratedItem): void => {
+        idSum += value.id;
+      });
+      expect(idSum).assertEqual(33);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_1020
+     * @tc.name testReadonlyArrayForEach102
+     * @tc.desc Verify ReadonlyArray.forEach behavior: two consecutive forEach calls produce identical sequences (TC019/TC048)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<int> = [4, 8, 15, 16, 23];
+      const first: Array<int> = [];
+      const second: Array<int> = [];
+      arr.forEach((value: int): void => { first.push(value); });
+      arr.forEach((value: int): void => { second.push(value); });
+      expect(first.length).assertEqual(second.length);
+      for (let i: int = 0; i < first.length; i++) {
+        expect(first[i]).assertEqual(second[i]);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_1030
+     * @tc.name testReadonlyArrayForEach103
+     * @tc.desc Verify ReadonlyArray.forEach behavior: nested array elements maintain reference identity (TC032/TC062)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner1: Array<int> = [1, 2];
+      const inner2: Array<int> = [3, 4, 5];
+      const arr: ReadonlyArray<Array<int>> = [inner1, inner2];
+      const refs: Array<Array<int>> = [];
+      arr.forEach((value: Array<int>): void => { refs.push(value); });
+      expect(refs[0] === inner1).assertTrue();
+      expect(refs[1] === inner2).assertTrue();
+      expect(refs[1].length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_1040
+     * @tc.name testReadonlyArrayForEach104
+     * @tc.desc Verify ReadonlyArray.forEach behavior: empty string element not skipped during iteration (TC037)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<string> = ["x", "", "y"];
+      let emptySeen: boolean = false;
+      let count: int = 0;
+      arr.forEach((value: string, index: int): void => {
+        if (index === 1 && value === "") { emptySeen = true; }
+        count++;
+      });
+      expect(emptySeen).assertTrue();
+      expect(count).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_1050
+     * @tc.name testReadonlyArrayForEach105
+     * @tc.desc Verify ReadonlyArray.forEach behavior: +0 and -0 both visited and treated equal by === (TC036)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<double> = [0.0, -0.0];
+      let zeroEqualCount: int = 0;
+      arr.forEach((value: double): void => {
+        if (value === 0.0) { zeroEqualCount++; }
+      });
+      expect(zeroEqualCount).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_1060
+     * @tc.name testReadonlyArrayForEach106
+     * @tc.desc Verify ReadonlyArray.forEach behavior: callback throw preserves error message text (TC011)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<int> = [10, 20, 30];
+      let caughtMessage: string = "";
+      try {
+        arr.forEach((value: int): void => {
+          if (value === 20) { throw new Error("forEach-trip"); }
+        });
+        expect(false).assertTrue();
+      } catch (error) {
+        caughtMessage = (error as Error).message;
+      }
+      expect(caughtMessage).assertEqual("forEach-trip");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_1070
+     * @tc.name testReadonlyArrayForEach107
+     * @tc.desc Verify ReadonlyArray.forEach behavior: forEach call does not replace object references in original array (TC042)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj1: ReadonlyArrayForEachGeneratedItem = new ReadonlyArrayForEachGeneratedItem(1);
+      const obj2: ReadonlyArrayForEachGeneratedItem = new ReadonlyArrayForEachGeneratedItem(2);
+      const arr: ReadonlyArray<ReadonlyArrayForEachGeneratedItem> = [obj1, obj2];
+      arr.forEach((_value: ReadonlyArrayForEachGeneratedItem): void => {});
+      expect(arr[0] === obj1).assertTrue();
+      expect(arr[1] === obj2).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_1080
+     * @tc.name testReadonlyArrayForEach108
+     * @tc.desc Verify ReadonlyArray.forEach behavior: value parameter equals array[index] at each iteration (signature contract)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<string> = ["alpha", "beta", "gamma"];
+      let mismatches: int = 0;
+      arr.forEach((value: string, index: int, array: ReadonlyArray<string>): void => {
+        if (array[index] !== value) { mismatches++; }
+      });
+      expect(mismatches).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_1090
+     * @tc.name testReadonlyArrayForEach109
+     * @tc.desc Verify ReadonlyArray.forEach behavior: long string element preserved without truncation (TC039)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let longText: string = "";
+      for (let i: int = 0; i < 200; i++) { longText += "ab"; }
+      const arr: ReadonlyArray<string> = [longText, "tail"];
+      let observedLen: int = 0;
+      arr.forEach((value: string, index: int): void => {
+        if (index === 0) { observedLen = value.length; }
+      });
+      expect(observedLen).assertEqual(400);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_1100
+     * @tc.name testReadonlyArrayForEach110
+     * @tc.desc Verify ReadonlyArray.forEach behavior: callback throw at first element prevents further iteration (TC012)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<int> = [1, 2, 3, 4];
+      let count: int = 0;
+      try {
+        arr.forEach((value: int): void => {
+          count++;
+          if (value === 1) { throw new Error("first"); }
+        });
+        expect(false).assertTrue();
+      } catch (error) {
+        expect((error as Error).name).assertEqual("Error");
+      }
+      expect(count).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_1110
+     * @tc.name testReadonlyArrayForEach111
+     * @tc.desc Verify ReadonlyArray.forEach behavior: outer counter side-effect equals length for repeated values (TC024 reinforced)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<int> = [9, 9, 9, 9];
+      let visits: int = 0;
+      let total: int = 0;
+      arr.forEach((value: int): void => {
+        visits++;
+        total += value;
+      });
+      expect(visits).assertEqual(4);
+      expect(total).assertEqual(36);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FOR_EACH_1120
+     * @tc.name testReadonlyArrayForEach112
+     * @tc.desc Verify ReadonlyArray.forEach behavior: array-typed callback parameter length equals receiver length each call (TC003)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReadonlyArrayForEach112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<int> = [1, 2, 3, 4, 5];
+      let lenMismatch: int = 0;
+      arr.forEach((_value: int, _index: int, array: ReadonlyArray<int>): void => {
+        if (array.length !== 5) { lenMismatch++; }
+      });
+      expect(lenMismatch).assertEqual(0);
+    });
+
+  });
 }
