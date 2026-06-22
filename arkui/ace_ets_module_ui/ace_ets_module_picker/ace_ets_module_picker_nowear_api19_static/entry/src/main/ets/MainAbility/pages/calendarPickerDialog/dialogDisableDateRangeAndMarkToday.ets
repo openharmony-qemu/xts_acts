@@ -14,10 +14,8 @@
  * limitations under the License.
  */
 import EnvironmentCallback from '@ohos.app.ability.EnvironmentCallback';
-import { Entry, Component, Column, Text, Image, Color, Padding, Button, ClickEvent, ColumnOptions, Direction, Scroll, CalendarPicker, CalendarPickerDialog,
- Row, RowOptions, DateRange, CalendarPickerDialog } from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
-
+import { Entry, Component, Column, Text, Image, Color, Padding, Button, ClickEvent, ColumnOptions, Direction, Scroll, CalendarPicker, CalendarPickerDialog, Row, RowOptions, DateRange } from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 let environmentCallback: EnvironmentCallback
 
 @Entry

@@ -13,39 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import emitter from '@ohos.events.emitter'
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  Text,
-  Row,
-  Color,
-  $r,
-  Margin,
-  ColumnOptions,
-  Flex,
-  ResourceColor,
-  Builder,
-  Padding,
-  FlexDirection,
-  PopupOptions,
-  CustomPopupOptions,
-  Position,
-  RowOptions,
-  Image,
-  $rawfile,
-  Placement,
-  PopupOptions,
-  CustomPopupOptions,
-  PopupStateChangeParam,
-  PopupMaskType
-} from '@ohos.arkui.component';
+import emitter from '@ohos.events.emitter';
+import { Entry, Column, Component, Button, Text, Row, Color, $r, Margin, ColumnOptions, Flex, ResourceColor, Builder, Padding, FlexDirection, PopupOptions, CustomPopupOptions, Position, RowOptions, Image, $rawfile, Placement, PopupStateChangeParam, PopupMaskType, ClickEvent } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
-import { ClickEvent } from '@ohos.arkui.component';
 import { RecordData } from '@ohos.base';
-
 @Entry
 @Component
 struct PopupExample {

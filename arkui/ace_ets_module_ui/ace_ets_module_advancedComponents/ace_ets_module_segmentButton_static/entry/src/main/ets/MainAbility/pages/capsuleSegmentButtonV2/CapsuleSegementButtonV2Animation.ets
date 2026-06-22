@@ -15,10 +15,9 @@
  */
 
 import { LengthMetrics, ColorMetrics } from '@ohos.arkui.node';
-import { Entry, ComponentV2, Scroll, Column, ColumnOptions, Row, FontWeight, LocalizedPadding, ShadowStyle, BlurStyle, FlexAlign,$r,Button,Text } from '@ohos.arkui.component';
+import { Entry, ComponentV2, Scroll, Column, ColumnOptions, Row, FontWeight, LocalizedPadding, ShadowStyle, BlurStyle, FlexAlign, $r, Button, Text } from '@ohos.arkui.component';
 import { Local } from '@ohos.arkui.stateManagement';
-import { SegmentButtonV2Items, CapsuleSegmentButtonV2, SegmentButtonV2ItemOptions, TabSegmentButtonV2,SegmentButtonV2ItemOptions } from '@ohos.arkui.advanced.SegmentButtonV2'
-
+import { SegmentButtonV2Items, CapsuleSegmentButtonV2, SegmentButtonV2ItemOptions, TabSegmentButtonV2 } from '@ohos.arkui.advanced.SegmentButtonV2';
 @Entry
 @ComponentV2
 struct CapsuleSegmentButtonV2Example {

@@ -13,22 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Component,
-  Column,
-  Text,
-  ImageSpan,
-  $r,
-  Callback,
-  ImageCompleteCallback,
-  ImageLoadResult,
-  ImageCompleteCallback
-} from '@ohos.arkui.component'
-import { AppStorage } from '@ohos.arkui.stateManagement'
+import { Entry, Component, Column, Text, ImageSpan, $r, Callback, ImageCompleteCallback, ImageLoadResult } from '@ohos.arkui.component';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-
-
 @Entry
 @Component
 struct ImageLoadResult1 {

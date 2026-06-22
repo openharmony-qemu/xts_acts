@@ -13,16 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {DataReloadOperation, DataOperationType,  Entry, Text, TextAttribute, Column, Component, Stack, WaterFlow, LazyForEach, FlowItem, DataOperation, Color, TextAlign, DataChangeListener, IDataSource, Button, ButtonAttribute, ClickEvent, Image, Search, Row, Column, SearchController, ColumnOptions} from '@ohos.arkui.component'
-import {
-  State,
-  Link,
-  PropRef,
-} from '@ohos.arkui.stateManagement'
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { DataReloadOperation, DataOperationType, Entry, Text, TextAttribute, Column, Component, Stack, WaterFlow, LazyForEach, FlowItem, DataOperation, Color, TextAlign, DataChangeListener, IDataSource, Button, ButtonAttribute, ClickEvent, Image, Search, Row, SearchController, ColumnOptions } from '@ohos.arkui.component';
+import { State, Link, PropRef, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import common from '@ohos.app.ability.common';
-
 export class WaterFlowDataSource implements IDataSource<string> {
   private dataArray: number[] = []
   private listeners: DataChangeListener[] = []

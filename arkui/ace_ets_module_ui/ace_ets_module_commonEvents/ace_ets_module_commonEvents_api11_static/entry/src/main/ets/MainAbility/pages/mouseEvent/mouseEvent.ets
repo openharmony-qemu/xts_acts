@@ -13,37 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Component,
-  Column,
-  Row,
-  Flex,
-  Text,
-  ColumnOptions,
-  TouchType,
-  CustomBuilder,
-  DragItemInfo,
-  Color,
-  TextArea,
-  CopyOptions,
-  Visibility,
-  Button,
-  TextAlign,
-  FlexAlign,
-  ItemAlign,
-  FlexDirection,
-  Padding,
-  Margin,
-  $rawfile,
-  ColumnOptions,
-  MouseButton,
-  MouseAction,
-  MouseEvent
-} from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { Entry, Component, Column, Row, Flex, Text, ColumnOptions, TouchType, CustomBuilder, DragItemInfo, Color, TextArea, CopyOptions, Visibility, Button, TextAlign, FlexAlign, ItemAlign, FlexDirection, Padding, Margin, $rawfile, MouseButton, MouseAction, MouseEvent } from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-
 @Entry
 @Component
 struct MouseEventExample {

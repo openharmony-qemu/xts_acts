@@ -13,41 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  Text,
-  Row,
-  Color,
-  $r,
-  RenderingContextSettings,
-  OffscreenCanvas,
-  OffscreenCanvasRenderingContext2D,
-  PixelMap,
-  ParagraphStyle,
-  LineHeightStyle,
-  StyledString,
-  TextController,
-  ColumnOptions,
-  TextAlign,
-  WordBreak,
-  TextOverflow,
-  StyledStringKey,
-  CopyOptions,
-  Margin,
-  TextAlign,
-  WordBreak,
-  TextAlign,
-  WordBreak,
-  LeadingMarginPlaceholder,
-  TextOverflow
-} from '@ohos.arkui.component';
+import { Entry, Column, Component, Button, Text, Row, Color, $r, RenderingContextSettings, OffscreenCanvas, OffscreenCanvasRenderingContext2D, PixelMap, ParagraphStyle, LineHeightStyle, StyledString, TextController, ColumnOptions, TextAlign, WordBreak, TextOverflow, StyledStringKey, CopyOptions, Margin, LeadingMarginPlaceholder, ClickEvent } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
-import { ClickEvent } from '@ohos.arkui.component';
-import { LengthMetrics } from '@kit.ArkUI'
-
+import { LengthMetrics } from '@kit.ArkUI';
 const canvasWidth = 1000
 const canvasHeight = 100
 

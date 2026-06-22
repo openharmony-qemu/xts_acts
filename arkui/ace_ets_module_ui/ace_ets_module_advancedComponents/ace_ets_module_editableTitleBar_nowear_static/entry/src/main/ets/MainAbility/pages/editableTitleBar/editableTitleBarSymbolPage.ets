@@ -15,32 +15,10 @@
  */
 
 import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
-import { EditableTitleBar, EditableLeftIconType } from '@ohos.arkui.advanced.EditableTitleBar'
+import { EditableTitleBar, EditableLeftIconType } from '@ohos.arkui.advanced.EditableTitleBar';
 import { LengthMetrics } from '@ohos.arkui.node';
-import {
-  Entry,
-  Column,
-  Component,
-  TextAlign,
-  Text,
-  Color,
-  Row,
-  ClickEvent,
-  Stack,
-  Alignment,
-  Button,
-  Alignment,
-  Scroll,
-  HorizontalAlign,
-  Margin,
-  Divider,
-  Builder,
-  LocalizedMargin,
-  BlurStyle,
-  $r
-} from '@ohos.arkui.component';
+import { Entry, Column, Component, TextAlign, Text, Color, Row, ClickEvent, Stack, Alignment, Button, Scroll, HorizontalAlign, Margin, Divider, Builder, LocalizedMargin, BlurStyle, $r } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
-
 @Entry
 @Component
 struct Index {

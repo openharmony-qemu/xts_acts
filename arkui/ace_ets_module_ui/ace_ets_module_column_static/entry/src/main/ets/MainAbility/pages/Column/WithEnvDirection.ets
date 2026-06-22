@@ -15,26 +15,12 @@
  * limitations under the License.
  */
 
-import {
-  $r,
-  Button,
-  ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  Entry,RowOptions,
-  Resource,
-  Row,FlexAlign,
-  Text,RowOptions,
-  Bindable,
-} from '@ohos.arkui.component';
-import { State, } from '@ohos.arkui.stateManagement';
+import { $r, Button, ClickEvent, Color, Column, ColumnOptions, Component, Entry, RowOptions, Resource, Row, FlexAlign, Text, Bindable } from '@ohos.arkui.component';
+import { State } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { WithEnv,WithEnvAttribute } from '@ohos.arkui.WithEnv'
+import { WithEnv, WithEnvAttribute } from '@ohos.arkui.WithEnv';
 import { Env, SystemEnvKey, WritableEnvKey, Direction } from '@kit.ArkUI';
-import i18n from '@ohos.i18n'
-
+import i18n from '@ohos.i18n';
 @Entry
 @Component
 struct WithEnvDirection {

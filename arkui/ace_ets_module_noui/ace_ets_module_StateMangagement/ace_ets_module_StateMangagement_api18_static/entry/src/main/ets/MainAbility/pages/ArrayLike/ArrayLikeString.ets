@@ -14,32 +14,8 @@
  * limitations under the License.
  */
 
-import {
-  Entry,
-  Component,
-  $r,
-  Column,
-  ColumnOptions,
-  Text,
-  Color,
-  Flex,
-  FlexDirection,
-  ItemAlign,
-  Row,
-  Button,
-  ClickEvent,
-  Week,List,
-  FontWeight,RowOptions,ComponentV2,Scroller,ReusableV2,Repeat,ListItem,
-  Axis,AlertDialogParamWithButtons,DialogAlignment,DialogButtonStyle,DialogAlignment,
-  Margin,TransitionEffect,FlexAlign,TransitionEdge,AlertDialogParamWithConfirm,
-  PickerTextStyle, CalendarAlign, CalendarPicker,Builder,TextOverflow, TextHeightAdaptivePolicy,
-  ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,RepeatItem,SelectOption
-} from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  PropRef,AppStorage, ObservedV2, Local, Trace, Monitor,
-} from '@ohos.arkui.stateManagement';
+import { Entry, Component, $r, Column, ColumnOptions, Text, Color, Flex, FlexDirection, ItemAlign, Row, Button, ClickEvent, Week, List, FontWeight, RowOptions, ComponentV2, Scroller, ReusableV2, Repeat, ListItem, Axis, AlertDialogParamWithButtons, DialogAlignment, DialogButtonStyle, Margin, TransitionEffect, FlexAlign, TransitionEdge, AlertDialogParamWithConfirm, PickerTextStyle, CalendarAlign, CalendarPicker, Builder, TextOverflow, TextHeightAdaptivePolicy, ArrowPosition, Select, BlurStyle, MenuAlignType, TextInputController, RepeatItem, SelectOption } from '@ohos.arkui.component';
+import { State, Link, PropRef, AppStorage, ObservedV2, Local, Trace, Monitor } from '@ohos.arkui.stateManagement';
 @Entry
 @ComponentV2
 struct ArrayLikeString {

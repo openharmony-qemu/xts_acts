@@ -14,27 +14,8 @@
  * limitations under the License.
  */
 
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  ForEach,
-  Text,
-  Row,
-  List,
-  ListItem,
-  Color,
-  FlexAlign,ComponentV2,TabsController,Tabs,Builder,ResourceColor
-} from '@ohos.arkui.component'
-import {
-  State,
-  Watch,
-  Link,
-  StorageLink,Consume,PropRef,Provide,StoragePropRef,Param,Event,PropRef
-} from '@ohos.arkui.stateManagement'
-
+import { Entry, Column, Component, Button, ClickEvent, ForEach, Text, Row, List, ListItem, Color, FlexAlign, ComponentV2, TabsController, Tabs, Builder, ResourceColor } from '@ohos.arkui.component';
+import { State, Watch, Link, StorageLink, Consume, PropRef, Provide, StoragePropRef, Param, Event } from '@ohos.arkui.stateManagement';
 export enum MemberType {
   first = 1,
   second = 2

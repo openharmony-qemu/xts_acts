@@ -13,27 +13,14 @@
  * limitations under the License.
  */
 
-import {
-  OnRenderExitedEvent,
-  Entry,
-  Component,
-  Column,
-  Row,
-  Button,
-  ClickEvent,
-  Web,
-  RenderExitReason,
-  OnRenderExitedEvent
-} from "@ohos.arkui.component"
-import { State } from "@ohos.arkui.stateManagement" // should be insert by ui-plugins
-import web_webview from '@ohos.web.webview'
-import { BusinessError, RecordData } from '@ohos.base';
-import { Hypium } from "../../../hypium";
+import { OnRenderExitedEvent, Entry, Component, Column, Row, Button, ClickEvent, Web, RenderExitReason } from '@ohos.arkui.component';
+import { State } from '@ohos.arkui.stateManagement';
+import web_webview from '@ohos.web.webview';
+import { BusinessError, RecordData, Callback } from '@ohos.base';
+import { Hypium } from '../../../hypium';
 import emitter from '@ohos.events.emitter';
 import testsuite from '../../src/test/List.test';
 import Utils from '../../src/test/Util.test';
-import { Callback } from '@ohos.base'
-
 @Entry
 @Component
 struct webAttributeTest {

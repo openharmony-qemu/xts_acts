@@ -13,14 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Component,$r,Column,Stack,ColumnOptions, SideBarPosition, SideBarContainerAttribute,Select,Resource,ArrowPosition,Image,FlexAlign,SideBarContainer,SideBarContainerType,FontStyle,Position,RowSplit,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  PropRef,
-} from '@ohos.arkui.stateManagement';
-import { SideBarContainerModifier } from "@ohos.arkui.modifier";
-
+import { Entry, Component, $r, Column, Stack, ColumnOptions, SideBarPosition, SideBarContainerAttribute, Select, Resource, ArrowPosition, Image, FlexAlign, SideBarContainer, SideBarContainerType, FontStyle, Position, RowSplit, EffectType, EffectComponent, Text, Color, Flex, FlexDirection, ItemAlign, Row, Button, ClickEvent, Week, FontWeight, Axis, Margin, Swiper, ForEach, PickerTextStyle, CalendarAlign, CalendarPicker, EdgeEffect, Curve, SwiperDisplayMode, BlurStyle, MenuAlignType, TextInputController, TextAlign, AlphabetIndexer } from '@ohos.arkui.component';
+import { State, Link, PropRef } from '@ohos.arkui.stateManagement';
+import { SideBarContainerModifier } from '@ohos.arkui.modifier';
 class CustomModifier extends SideBarContainerModifier {
   applyNormalAttribute(instance: SideBarContainerAttribute): void {
     super.applyNormalAttribute(instance);

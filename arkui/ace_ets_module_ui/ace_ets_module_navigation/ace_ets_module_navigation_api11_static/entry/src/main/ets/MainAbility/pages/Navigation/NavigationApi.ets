@@ -13,18 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,AnimateParam,Search,TextAlign,Axis,NavBarPosition,NavPathInfo,
-  NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,
-  Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,
-  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign,NavigationCommonTitle,NavDestinationCommonTitle
-,NavPathStack} from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  PropRef,Provide
-} from '@ohos.arkui.stateManagement';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { Entry, Component, $r, Scroll, Builder, List, ListItem, Resource, AnimateParam, Search, TextAlign, Axis, NavBarPosition, NavPathInfo, NavigationTitleMode, Image, NavigationMode, Column, Navigation, ButtonType, NavDestination, Stack, ColumnOptions, Position, EffectType, EffectComponent, Text, Color, Flex, FlexDirection, ItemAlign, Row, Button, ClickEvent, FontWeight, Margin, Swiper, ForEach, PickerTextStyle, CalendarAlign, NavigationCommonTitle, NavDestinationCommonTitle, NavPathStack } from '@ohos.arkui.component';
+import { State, Link, PropRef, Provide, AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct NavigationApi {

@@ -14,26 +14,10 @@
  * limitations under the License.
  */
 
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  ForEach,
-  Text,ContentCoverOptions,Menu,FontWeight,MenuItem,
-  Row,Color,Builder,FlexAlign,$$,MenuItem,MenuItemOptions
-} from '@ohos.arkui.component'
-import {
-  State,
-  Watch,PropRef,ObjectLink,
-  Link,LocalStoragePropRef,LocalStorageLink,Consume,Provide,
-  StorageLink,Observed,Track,LocalStorage
-} from '@ohos.arkui.stateManagement'
+import { Entry, Column, Component, Button, ClickEvent, ForEach, Text, ContentCoverOptions, Menu, FontWeight, MenuItem, Row, Color, Builder, FlexAlign, $$, MenuItemOptions } from '@ohos.arkui.component';
+import { State, Watch, PropRef, ObjectLink, Link, LocalStoragePropRef, LocalStorageLink, Consume, Provide, StorageLink, Observed, Track, LocalStorage, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
-
 @Entry
 @Component
 struct MenuItemTest {

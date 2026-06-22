@@ -14,9 +14,7 @@
  * limitations under the License.
  */
 
-import { Entry, Column, Component, Row, Toggle,  Text, Button, ClickEvent, ButtonRole, Checkbox,
-  ColumnOptions, Shape, Path, Flex, Builder, TextAlign, FontWeight, FlexAlign, ItemAlign, CheckBoxConfiguration,wrapBuilder,
-  Margin, Visibility, LineJoinStyle, ToggleType, ContentModifier,CustomBuilderT,CheckBoxConfiguration,Color,WrappedBuilder } from '@ohos.arkui.component'
+import { Entry, Column, Component, Row, Toggle, Text, Button, ClickEvent, ButtonRole, Checkbox, ColumnOptions, Shape, Path, Flex, Builder, TextAlign, FontWeight, FlexAlign, ItemAlign, CheckBoxConfiguration, wrapBuilder, Margin, Visibility, LineJoinStyle, ToggleType, ContentModifier, CustomBuilderT, Color, WrappedBuilder } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 class MyCheckboxStyle_trigger implements ContentModifier<CheckBoxConfiguration> {
   selectedColor: Color = Color.White

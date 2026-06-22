@@ -13,30 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Component,
-  Column,
-  RichEditor,
-  RichEditorController,
-  ClickEvent,
-  RichEditorTextSpanResult,
-  Button,
-  Color,
-  ShadowOptions,
-  RichEditorTextSpanResult,
-  RichEditorImageSpanResult,
-  RichEditorTextStyle,
-  RichEditorOptions,
-  Row,
-  ShadowType,
-  RichEditorUpdateTextSpanStyleOptions,
-  Resource,
-  ColoringStrategy
-} from '@ohos.arkui.component';
-import { State } from '@ohos.arkui.stateManagement';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-
+import { Entry, Component, Column, RichEditor, RichEditorController, ClickEvent, RichEditorTextSpanResult, Button, Color, ShadowOptions, RichEditorImageSpanResult, RichEditorTextStyle, RichEditorOptions, Row, ShadowType, RichEditorUpdateTextSpanStyleOptions, Resource, ColoringStrategy } from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct textShadowTest {

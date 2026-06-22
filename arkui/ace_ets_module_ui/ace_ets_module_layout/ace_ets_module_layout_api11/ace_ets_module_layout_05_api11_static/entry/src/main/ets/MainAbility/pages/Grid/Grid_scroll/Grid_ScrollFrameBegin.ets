@@ -14,37 +14,8 @@
  * limitations under the License.
  */
 
-import {
-  Entry,
-  Curve,
-  Text,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  Scroller,
-  Scroll,
-  ForEach,
-  Search,
-  Color,
-  EdgeEffect,
-  ColumnOptions,
-  Edge,
-  Stack,
-  Edge,
-  Alignment,
-  Grid,
-  ScrollBar,
-  Margin,
-  GridItem,
-  TextAlign,
-  ScrollBarDirection,
-  BarState,
-  ScrollState,
-  ScrollAnimationOptions,
-  OnScrollFrameBeginHandlerResult
-} from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { Entry, Curve, Text, Column, Component, Button, ClickEvent, Scroller, Scroll, ForEach, Search, Color, EdgeEffect, ColumnOptions, Edge, Stack, Alignment, Grid, ScrollBar, Margin, GridItem, TextAlign, ScrollBarDirection, BarState, ScrollState, ScrollAnimationOptions, OnScrollFrameBeginHandlerResult } from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct Grid_ScrollFrameBegin {

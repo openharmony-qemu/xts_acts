@@ -13,27 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  ForEach,CaretOffset,TextAreaController,TextArea,
-  Text,ContentCoverOptions,Menu,FontWeight,MenuItem,TextAreaOptions,
-  Row,Color,Builder,FlexAlign,$$,MenuItem,MenuItemOptions
-} from '@ohos.arkui.component'
-import {
-  State,
-  Watch,PropRef,ObjectLink,
-  Link,LocalStoragePropRef,LocalStorageLink,Consume,Provide,
-  StorageLink,Observed,Track,LocalStorage
-} from '@ohos.arkui.stateManagement'
+import { Entry, Column, Component, Button, ClickEvent, ForEach, CaretOffset, TextAreaController, TextArea, Text, ContentCoverOptions, Menu, FontWeight, MenuItem, TextAreaOptions, Row, Color, Builder, FlexAlign, $$, MenuItemOptions } from '@ohos.arkui.component';
+import { State, Watch, PropRef, ObjectLink, Link, LocalStoragePropRef, LocalStorageLink, Consume, Provide, StorageLink, Observed, Track, LocalStorage, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
-
-
 @Entry
 @Component
 struct TextAreaExample {

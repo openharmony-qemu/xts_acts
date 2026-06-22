@@ -1,5 +1,5 @@
 import { NodeController, BuilderNode, NodeRenderType, FrameNode } from '@ohos.arkui.node';
-import { Color,NativeEmbedDataInfo,  Entry, Component, Column, Row, Button, ClickEvent, Web, $rawfile, NativeEmbedTouchInfo, NativeEmbedDataInfo, NativeEmbedParamStatus, EmbedOptions, NativeEmbedParamItem, NativeEmbedParamDataInfo, WebDarkMode } from '@ohos.arkui.component'
+import { Color,NativeEmbedDataInfo,  Entry, Component, Column, Row, Button, ClickEvent, Web, $rawfile, NativeEmbedTouchInfo, NativeEmbedParamStatus, EmbedOptions, NativeEmbedParamItem, NativeEmbedParamDataInfo, WebDarkMode } from '@ohos.arkui.component'
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import emitter from '@ohos.events.emitter';

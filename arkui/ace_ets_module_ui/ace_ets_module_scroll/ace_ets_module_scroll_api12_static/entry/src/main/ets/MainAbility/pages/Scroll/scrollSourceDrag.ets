@@ -14,38 +14,8 @@
  * limitations under the License.
  */
 
-import {
-  Entry,
-  Column,
-  Component,
-  Text,
-  List,
-  ForEach,
-  ListItem,
-  TextAlign,
-  Axis,
-  Button,
-  ScrollSource,
-  OffsetResult,
-  ScrollDirection,
-  EdgeEffect,
-  ColumnOptions,
-  ClickEvent,
-  Edge,
-  Stack,
-  Alignment,
-  ScrollState,
-  ScrollResult,
-  Margin,
-  BarState,
-  Color,
-  ScrollAlign,
-  ClickEvent,
-  Scroller,
-  Scroll
-} from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
-
+import { Entry, Column, Component, Text, List, ForEach, ListItem, TextAlign, Axis, Button, ScrollSource, OffsetResult, ScrollDirection, EdgeEffect, ColumnOptions, ClickEvent, Edge, Stack, Alignment, ScrollState, ScrollResult, Margin, BarState, Color, ScrollAlign, Scroller, Scroll } from '@ohos.arkui.component';
+import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct ScrollSourceDRAGExample {

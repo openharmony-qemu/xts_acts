@@ -15,32 +15,7 @@
  */
 import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
 import inspector from '@ohos.arkui.inspector';
-import {
-  Entry,
-  Column,
-  ComponentV2,
-  Color,
-  $r,
-  ColumnOptions,
-  ChipV2,
-  ChipV2Options,
-  ChipV2Label,
-  ChipV2PrefixImageIcon,
-  ChipV2LabelConfig,
-  Button,
-  Text,
-  ChipV2Size,
-  ChipV2SuffixImageIcon,
-  LengthMetrics,
-  ColorMetrics,
-  Local,
-  ChipV2PrefixImageIcon,
-  ChipV2SuffixSymbolIcon,
-  ChipV2PrefixSymbolIcon,
-  ChipV2PrefixSymbolIconConfig,
-  ChipV2SuffixSymbolIconConfig
-} from '@kit.ArkUI';
-
+import { Entry, Column, ComponentV2, Color, $r, ColumnOptions, ChipV2, ChipV2Options, ChipV2Label, ChipV2PrefixImageIcon, ChipV2LabelConfig, Button, Text, ChipV2Size, ChipV2SuffixImageIcon, LengthMetrics, ColorMetrics, Local, ChipV2SuffixSymbolIcon, ChipV2PrefixSymbolIcon, ChipV2PrefixSymbolIconConfig, ChipV2SuffixSymbolIconConfig } from '@kit.ArkUI';
 @Entry
 @ComponentV2
 struct ChipV2Api1 {

@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Component, Column, RichEditor, Button, TextAlign, BorderOptions, Color, FontWeight, LayoutManager, ClickEvent, RichEditorController,RichEditorOptions, LayoutManager } from '@ohos.arkui.component';
+import { Entry, Component, Column, RichEditor, Button, TextAlign, BorderOptions, Color, FontWeight, LayoutManager, ClickEvent, RichEditorController, RichEditorOptions } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
-import text from '@ohos.graphics.text.d'
+import text from '@ohos.graphics.text.d';
 @Entry
 @Component
 struct getRectsForRange {

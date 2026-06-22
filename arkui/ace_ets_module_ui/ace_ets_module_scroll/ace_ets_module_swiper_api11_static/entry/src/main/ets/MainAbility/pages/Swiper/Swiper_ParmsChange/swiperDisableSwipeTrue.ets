@@ -14,35 +14,8 @@
  * limitations under the License.
  */
 
-import {
-  Entry,
-  Component,
-  SwiperController,
-  Column,
-  Text,
-  LazyForEach,
-  Margin,
-  IDataSource,
-  DataChangeListener,
-  DotIndicator,
-  ColumnOptions,
-  Swiper,
-  TextAlign,
-  Color,
-  EdgeEffect,
-  Visibility,
-  ClickEvent,
-  SwiperDisplayMode,
-  SwiperAnimationEvent,
-  Row,
-  RowOptions,
-  Button,
-  Curve,
-  SwiperAnimationEvent,
-  HorizontalAlign
-} from '@ohos.arkui.component';
+import { Entry, Component, SwiperController, Column, Text, LazyForEach, Margin, IDataSource, DataChangeListener, DotIndicator, ColumnOptions, Swiper, TextAlign, Color, EdgeEffect, Visibility, ClickEvent, SwiperDisplayMode, SwiperAnimationEvent, Row, RowOptions, Button, Curve, HorizontalAlign } from '@ohos.arkui.component';
 import { MessageManager, Callback } from '../../../common/MessageManager1';
-
 @Entry
 @Component
 struct SwiperDisableSwipeTrueTest {

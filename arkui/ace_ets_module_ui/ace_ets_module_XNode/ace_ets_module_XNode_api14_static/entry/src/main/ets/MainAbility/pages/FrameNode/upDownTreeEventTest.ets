@@ -14,34 +14,9 @@
  * limitations under the License.
  */
 import { FrameNode, NodeController, BuilderNode } from '@ohos.arkui.node';
-import {
-  Entry,
-  Component,
-  $r,
-  Column,
-  ColumnOptions,
-  Text,
-  Color,
-  Row,
-  Margin,
-  TextAlign,
-  Button,
-  ClickEvent,
-  Stack,
-  Visibility,
-  PanGestureHandler,
-  GestureEvent,
-  NodeContainer,
-  Color,
-  Builder,
-  WrappedBuilder,
-  Padding,
-  wrapBuilder,
-  CustomBuilderT
-} from '@ohos.arkui.component';
+import { Entry, Component, $r, Column, ColumnOptions, Text, Color, Row, Margin, TextAlign, Button, ClickEvent, Stack, Visibility, PanGestureHandler, GestureEvent, NodeContainer, Builder, WrappedBuilder, Padding, wrapBuilder, CustomBuilderT } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-
 class Params {
   public text: string = 'this is a text'
 }

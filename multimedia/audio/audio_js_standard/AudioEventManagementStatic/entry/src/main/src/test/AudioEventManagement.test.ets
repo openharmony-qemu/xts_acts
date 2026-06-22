@@ -13,9 +13,8 @@
  * limitations under the License.
  */
 import audio from '@ohos.multimedia.audio';
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll, Level, TestType, Size } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll } from '../../../hypium/index';
 import Utils from './Util.test';
-
 let TagFrmwk:string  = "AudioFrameworkTest";
 let audioManager: audio.AudioManager;
 function getAudioManager() {

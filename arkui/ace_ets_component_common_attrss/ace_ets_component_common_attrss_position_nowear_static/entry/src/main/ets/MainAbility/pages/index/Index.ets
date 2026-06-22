@@ -15,31 +15,9 @@
  */
 
 
-import {
-  Entry,
-  Text,
-  TextAttribute,
-  Column,
-  Component,
-  Button,
-  ButtonAttribute,
-  ClickEvent,
-  Image,
-  ImageFit,
-  Scroller,
-  Flex,
-  Margin,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  ButtonType,
-  ClickEvent,
-  Margin,
-  FontWeight
-} from '@ohos.arkui.component'
+import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, Image, ImageFit, Scroller, Flex, Margin, FlexDirection, ItemAlign, FlexAlign, ButtonType, FontWeight } from '@ohos.arkui.component';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-
 @Entry
 @Component
 struct Index {

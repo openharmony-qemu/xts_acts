@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { Entry, Component, $rawfile, Column, Row, Button, ClickEvent, Web, $rawfile, MicrophoneCaptureStateChangeInfo, MicrophoneCaptureState } from '@ohos.arkui.component';
+import { Entry, Component, $rawfile, Column, Row, Button, ClickEvent, Web,  MicrophoneCaptureStateChangeInfo, MicrophoneCaptureState } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import Utils from '../../src/test/Util.test';
 import webView from '@ohos.web.webview';

@@ -13,8 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Component, Column, Color, GridRow,BreakpointsReference, Row, GridRowColumnOption, BreakPoints, GridCol, GridRowColumnOption, BreakPoints, GridRowDirection, ForEach, $r } from '@ohos.arkui.component'
-import { State,AppStorage } from '@ohos.arkui.stateManagement';
+import { Entry, Component, Column, Color, GridRow, BreakpointsReference, Row, GridRowColumnOption, BreakPoints, GridCol, GridRowDirection, ForEach, $r } from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct Gutter_Length_Resource {

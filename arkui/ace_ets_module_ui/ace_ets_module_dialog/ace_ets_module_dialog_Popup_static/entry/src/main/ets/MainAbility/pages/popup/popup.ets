@@ -14,14 +14,10 @@
  * limitations under the License.
  */
 
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
-  DismissPopupAction,PopupOptions,Placement,PopupStateChangeParam,DismissReason,ColumnOptions,$r,
-  Row, ClickEvent, Margin, ColumnOptions, CalendarPickerDialog, ButtonType,
-  ButtonStyleMode, Direction, ButtonRole, Color, FontStyle} from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
+import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight, DismissPopupAction, PopupOptions, Placement, PopupStateChangeParam, DismissReason, ColumnOptions, $r, Row, ClickEvent, Margin, CalendarPickerDialog, ButtonType, ButtonStyleMode, Direction, ButtonRole, Color, FontStyle } from '@ohos.arkui.component';
+import { State } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
 import { Popup, PopupButtonOptions, PopupIconOptions, PopupTextOptions } from '@ohos.arkui.advanced.Popup';
-
 @Entry
 @Component
 struct PopupExample {

@@ -1,43 +1,7 @@
 'use static'
-import {
-  Entry,
-  Text,
-  Column,
-  ColumnOptions,
-  Component,
-  Button,
-  ClickEvent,
-  Color,
-  Row,
-  $r,
-  Builder,
-  ToolbarItem,
-  NavDestination,
-  NavigationMenuItem,
-  NavPathStack,
-  NavPathInfo,
-  Navigation,
-  Text,
-  NavigationOperation,
-  NavDestinationTransition,
-  Callback,
-  NavDestinationTransitionDelegate,
-  Curve,
-  Scroller,
-  Scroll,
-  Margin,
-  List,
-  ListItem,
-  BarState,
-  NestedScrollMode,
-  TextAlign,
-  NestedScrollInfo,
-  NavigationSystemTransitionType,
-  NavDestinationMode
-} from '@ohos.arkui.component'
-import { State, Observed } from '@ohos.arkui.stateManagement'
-import hilog from '@ohos.hilog'
-
+import { Entry, Text, Column, ColumnOptions, Component, Button, ClickEvent, Color, Row, $r, Builder, ToolbarItem, NavDestination, NavigationMenuItem, NavPathStack, NavPathInfo, Navigation, NavigationOperation, NavDestinationTransition, Callback, NavDestinationTransitionDelegate, Curve, Scroller, Scroll, Margin, List, ListItem, BarState, NestedScrollMode, TextAlign, NestedScrollInfo, NavigationSystemTransitionType, NavDestinationMode } from '@ohos.arkui.component';
+import { State, Observed } from '@ohos.arkui.stateManagement';
+import hilog from '@ohos.hilog';
 @Entry
 @Component
 struct Index {

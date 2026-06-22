@@ -13,25 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Component,
-  Column,
-  Text,
-  PinchGesture,
-  BaseGestureEvent,
-  GestureRecognizer,
-  GestureJudgeResult,
-  GestureControl,
-  PinchRecognizer,
-  GestureJudgeResult
-} from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  PropRef,
-} from '@ohos.arkui.stateManagement';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { Entry, Component, Column, Text, PinchGesture, BaseGestureEvent, GestureRecognizer, GestureJudgeResult, GestureControl, PinchRecognizer } from '@ohos.arkui.component';
+import { State, Link, PropRef, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 @Entry

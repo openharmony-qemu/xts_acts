@@ -14,20 +14,12 @@
  * limitations under the License.
  */
 
-import router from '@ohos.router'
-import {
-  Entry,Text,Column,Button,Component,FlexDirection,ItemAlign,ImageFit,FontWeight,$r,TextInput,TextArea,List,ListItem,Search,WebviewController,Rectangle,Builder,
-  Image,Grid,GridItem,Rating,MenuItemGroup,MenuItem,Menu,ImageAnimator,DatePicker,CheckboxGroup,Checkbox,Counter,ColumnSplit,AlphabetIndexer,Web,Toggle,TimePicker,
-  TextPicker,Slider,Select,Swiper,Tabs,TabContent,SideBarContainer,Scroll,RowSplit,GridCol,ForEach,Row,GridRow,Flex,Color,FlexAlign,applyStyles,CommonMethod,
-  ColumnOptions,Scroller,Margin,TextAlign,MenuItemOptions,Radio,ToggleType,GridRowDirection,Axis,ListItemGroup,SideBarContainerType,Stack,BreakPoints,GridRowOptions,GutterOption,BreakpointsReference,GridColColumnOption,Blank,
-  DataPanel,Divider,Gauge,LoadingProgress,Marquee,Navigation,Progress,QRCode,ScrollBar,SliderStyle,TextClock,TextTimer,Circle,Ellipse,Line,Polyline,Polygon,Path,ClickEvent,
-  Rect,Shape,Badge,Refresh,RelativeContainer,BarState,WaterFlow,ProgressType,FlowItem,BadgeParamWithNumber,HorizontalAlign,VerticalAlign,GridColOptions,CommonMethod,AlignRuleOption
-} from '@ohos.arkui.component'
-import { SetValue } from '../../common/Utils'
+import router from '@ohos.router';
+import { Entry, Text, Column, Button, Component, FlexDirection, ItemAlign, ImageFit, FontWeight, $r, TextInput, TextArea, List, ListItem, Search, WebviewController, Rectangle, Builder, Image, Grid, GridItem, Rating, MenuItemGroup, MenuItem, Menu, ImageAnimator, DatePicker, CheckboxGroup, Checkbox, Counter, ColumnSplit, AlphabetIndexer, Web, Toggle, TimePicker, TextPicker, Slider, Select, Swiper, Tabs, TabContent, SideBarContainer, Scroll, RowSplit, GridCol, ForEach, Row, GridRow, Flex, Color, FlexAlign, applyStyles, CommonMethod, ColumnOptions, Scroller, Margin, TextAlign, MenuItemOptions, Radio, ToggleType, GridRowDirection, Axis, ListItemGroup, SideBarContainerType, Stack, BreakPoints, GridRowOptions, GutterOption, BreakpointsReference, GridColColumnOption, Blank, DataPanel, Divider, Gauge, LoadingProgress, Marquee, Navigation, Progress, QRCode, ScrollBar, SliderStyle, TextClock, TextTimer, Circle, Ellipse, Line, Polyline, Polygon, Path, ClickEvent, Rect, Shape, Badge, Refresh, RelativeContainer, BarState, WaterFlow, ProgressType, FlowItem, BadgeParamWithNumber, HorizontalAlign, VerticalAlign, GridColOptions, AlignRuleOption } from '@ohos.arkui.component';
+import { SetValue, RouterParams } from '../../common/Utils';
 import { attrsManager } from '../../common/AttrsManager';
-import { RouterParams } from '../../common/Utils';
-import { State, AppStorage ,StoragePropRef} from '@ohos.arkui.stateManagement'
-import { UIContext, Router } from '@ohos.arkui.UIContext'
+import { State, AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 interface ViewOption {
 targetView: string
 componentKey: string

@@ -14,8 +14,7 @@
  * limitations under the License.
  */
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { BadgeParamWithNumber, BadgeParamWithString, Color, HorizontalAlign, Button,  $r, Entry, Component, Column, ColumnOptions, NodeContainer,
-  Text, Badge, Image, $r, Row, QRCode} from '@ohos.arkui.component'
+import { BadgeParamWithNumber, BadgeParamWithString, Color, HorizontalAlign, Button, $r, Entry, Component, Column, ColumnOptions, NodeContainer, Text, Badge, Image, Row, QRCode } from '@ohos.arkui.component';
 import { typeNode, NodeController, FrameNode } from '@ohos.arkui.node';
 let data:(string) =  '123'
 

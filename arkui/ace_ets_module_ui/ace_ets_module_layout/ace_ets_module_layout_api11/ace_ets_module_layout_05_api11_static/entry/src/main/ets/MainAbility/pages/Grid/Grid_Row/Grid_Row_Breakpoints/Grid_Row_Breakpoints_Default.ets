@@ -15,31 +15,8 @@
  */
 
 import { MessageManager, Callback, Message } from '../../../../common/MessageManager';
-import {
-  Entry,
-  Text,
-  Row,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  Scroller,
-  Scroll,
-  ForEach,
-  Search,
-  Color,
-  EdgeEffect,
-  ColumnOptions,
-  GridRow,
-  GutterOption,
-  BreakPoints,
-  GridRowColumnOption,
-  GridRowOptions,
-  GridRowDirection,
-  GridCol,GridRowSizeOption,BreakpointsReference, Row,
-  BreakpointsReference
-} from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { Entry, Text, Row, Column, Component, Button, ClickEvent, Scroller, Scroll, ForEach, Search, Color, EdgeEffect, ColumnOptions, GridRow, GutterOption, BreakPoints, GridRowColumnOption, GridRowOptions, GridRowDirection, GridCol, GridRowSizeOption, BreakpointsReference } from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct Grid_Row_Breakpoints_Default {
