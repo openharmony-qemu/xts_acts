@@ -27,24 +27,24 @@ import InspectorLabelTest from './inspectorLabel/InspectorLabelTest.test'
 import AccessibilityFocusIdTest from './accessibilityFocusId/AccessibilityFocusIdTest.test'
 import hoveredTest from './hovered/hovered.test'
 import shouldRecognizerParallelWith from "./shouldRecognizerParallelWith/shouldRecognizerParallelWith.test"
-import arcListSpaceTest from './arcList/ArcListSpaceTest.test'
-import arcListCachedCountTest from './arcList/ArcListCachedCountTest.test'
-import arcListScrollToIndexTest from './arcList/ArcListScrollToIndexTest.test'
-import arcListFlingSpeedLimitTest from './arcList/ArcListFlingSpeedLimitTest.test'
-import arcListFrictionTest from './arcList/ArcListFrictionTest.test'
-import arcListFadingEdgeTest from './arcList/ArcListFadingEdgeTest.test'
-import arcListEnableScrollInteractionTest from './arcList/ArcListEnableScrollInteractionTest.test'
-import arcListScrollBarTest from './arcList/ArcListScrollBarTest.test'
-import arcListScrollBarWidthTest from './arcList/ArcListScrollBarWidthTest.test'
-import arcListScrollBarColorTest from './arcList/ArcListScrollBarColorTest.test'
-import arcListSetHeaderTest from './arcList/ArcListSetHeaderTest.test'
-import arcListChildrenMainSizeTest from './arcList/ArcListChildrenMainSizeTest.test'
-import arcListChainAnimationTest from './arcList/ArcListChainAnimationTest.test'
-import arcListItemSwipeActionTest from './arcList/ArcListItemSwipeActionTest.test'
-import arcListItemAutoScaleTest from './arcList/ArcListItemAutoScaleTest.test'
-import arcListDigitalCrownSensitivityTest from './arcList/ArcListDigitalCrownSensitivityTest.test'
-import arcScrollBarDisplayModeTest from './arcList/ArcScrollBarDisplayModeTest.test'
-import arcScrollBarBindScrollableTest from './arcList/ArcScrollBarBindScrollableTest.test'
+import ArcListSpaceTest from './arcList/ArcListSpaceTest.test'
+import ArcListCachedCountTest from './arcList/ArcListCachedCountTest.test'
+import ArcListScrollToIndexTest from './arcList/ArcListScrollToIndexTest.test'
+import ArcListFlingSpeedLimitTest from './arcList/ArcListFlingSpeedLimitTest.test'
+import ArcListFrictionTest from './arcList/ArcListFrictionTest.test'
+import ArcListFadingEdgeTest from './arcList/ArcListFadingEdgeTest.test'
+import ArcListEnableScrollInteractionTest from './arcList/ArcListEnableScrollInteractionTest.test'
+import ArcListScrollBarTest from './arcList/ArcListScrollBarTest.test'
+import ArcListScrollBarWidthTest from './arcList/ArcListScrollBarWidthTest.test'
+import ArcListScrollBarColorTest from './arcList/ArcListScrollBarColorTest.test'
+import ArcListSetHeaderTest from './arcList/ArcListSetHeaderTest.test'
+import ArcListChildrenMainSizeTest from './arcList/ArcListChildrenMainSizeTest.test'
+import ArcListChainAnimationTest from './arcList/ArcListChainAnimationTest.test'
+import ArcListItemSwipeActionTest from './arcList/ArcListItemSwipeActionTest.test'
+import ArcListItemAutoScaleTest from './arcList/ArcListItemAutoScaleTest.test'
+import ArcListDigitalCrownSensitivityTest from './arcList/ArcListDigitalCrownSensitivityTest.test'
+import ArcScrollBarDisplayModeTest from './arcList/ArcScrollBarDisplayModeTest.test'
+import ArcScrollBarBindScrollableTest from './arcList/ArcScrollBarBindScrollableTest.test'
 import ArcListEventCallbackTest from './arcList/ArcListEventCallbackTest.test'
 
 export default function testsuite() {
@@ -63,23 +63,23 @@ export default function testsuite() {
   AccessibilityFocusIdTest();
   hoveredTest();
   shouldRecognizerParallelWith();
-  arcListSpaceTest()
-  arcListCachedCountTest()
-  arcListScrollToIndexTest()
-  arcListFlingSpeedLimitTest()
-  arcListFrictionTest()
-  arcListFadingEdgeTest()
-  arcListEnableScrollInteractionTest()
-  arcListScrollBarTest()
-  arcListScrollBarWidthTest()
-  arcListScrollBarColorTest()
-  arcListSetHeaderTest()
-  arcListChildrenMainSizeTest()
-  arcListChainAnimationTest()
-  arcListItemSwipeActionTest()
-  arcListItemAutoScaleTest()
-  arcListDigitalCrownSensitivityTest()
-  arcScrollBarDisplayModeTest()
-  arcScrollBarBindScrollableTest()
+  ArcListSpaceTest()
+  ArcListCachedCountTest()
+  ArcListScrollToIndexTest()
+  ArcListFlingSpeedLimitTest()
+  ArcListFrictionTest()
+  ArcListFadingEdgeTest()
+  ArcListEnableScrollInteractionTest()
+  ArcListScrollBarTest()
+  ArcListScrollBarWidthTest()
+  ArcListScrollBarColorTest()
+  ArcListSetHeaderTest()
+  ArcListChildrenMainSizeTest()
+  ArcListChainAnimationTest()
+  ArcListItemSwipeActionTest()
+  ArcListItemAutoScaleTest()
+  ArcListDigitalCrownSensitivityTest()
+  ArcScrollBarDisplayModeTest()
+  ArcScrollBarBindScrollableTest()
   ArcListEventCallbackTest()
 }

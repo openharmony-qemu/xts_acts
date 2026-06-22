@@ -26,7 +26,7 @@ struct ArcListEventCallbackTest {
       CommonView({
         pageTag: this.PAGE_TAG,
       }).onAppear(() => {
-        nativeRender.CreateNativeNode(this.PAGE_TAG);
+        nativeRender.ArcListEventCallbackTest(this.PAGE_TAG);
       })
     }
     .width('100%')
