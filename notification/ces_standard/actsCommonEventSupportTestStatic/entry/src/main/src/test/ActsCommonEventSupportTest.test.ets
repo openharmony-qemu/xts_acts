@@ -379,6 +379,24 @@ export default function ActsCommonEventSupportTest() {
       done()
     })
 
+    /**
+     * @tc.name   Sub_Notification_Ces_Publish_Support_Static_4000
+     * @tc.number Sub_Notification_Ces_Publish_Support_Static_4000
+     * @tc.desc   sandbox bundle added/removed common event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Notification_Ces_Publish_Support_Static_4000',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> =>{
+      hilog.info(domain,TAG, `Sub_Notification_Ces_Publish_Support_Static_4000 START`)
+      expect(commonEventManager.Support.COMMON_EVENT_SANDBOX_BUNDLE_ADDED.valueOf())
+        .assertEqual('usual.event.SANDBOX_BUNDLE_ADDED')
+      expect(commonEventManager.Support.COMMON_EVENT_SANDBOX_BUNDLE_REMOVED.valueOf())
+        .assertEqual('usual.event.SANDBOX_BUNDLE_REMOVED')
+      hilog.info(domain,TAG, `Sub_Notification_Ces_Publish_Support_Static_4000 END`)
+      done()
+    })
+
     hilog.info(domain,TAG,'SUB_NOTIFICATION_CES_SUPPORT_ENUM_TEST END')
   })
 }
