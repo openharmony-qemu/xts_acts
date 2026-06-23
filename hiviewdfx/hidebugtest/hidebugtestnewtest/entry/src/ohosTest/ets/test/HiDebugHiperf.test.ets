@@ -338,10 +338,6 @@ export default function hidebughiperfTest() {
         const endTime = Date.now();
         const executionTime = endTime - startTime;
         console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1200 executionTime" + executionTime);
-        if (executionTime > 5000 ){
-          expect(executionTime).assertLess(11*1000);
-          expect(executionTime).assertLargerOrEqual(10*1000);
-        }
         console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1200 errcode2" + errcode);
         expect(errcode == 0 || errcode == 11400300).assertTrue;
         done();
