@@ -25,7 +25,6 @@ async function sleep(time: int): Promise<int> {
   });
 }
 
-
 function check_value_from_type_A_1(v: string): boolean {
   return v === "Done" || v === "In Progress" || v === "On Review";
 }
@@ -48,20 +47,29 @@ function f2_1(v: "Done" | "In Progress" | "On Review"): number {
   }
 }
 
-
 export default function DiffTypeIsSubOfTypeObjOnStrLitTest(): void {
   describe('DiffTypeIsSubOfTypeObjOnStrLitTest', () => {
     beforeAll(() => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
     })
 
     beforeEach(async () => {
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
       await sleep(30);
     })
 
     afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
     })
 
     afterAll(() => {
+      // Presets an action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: preset action function.
     })
 
     /**

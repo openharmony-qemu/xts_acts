@@ -25,7 +25,6 @@ async function sleep(time: int): Promise<int> {
   });
 }
 
-
 interface I_8 {}
 interface II1_8 extends I_8 {}
 interface II2_8 extends I_8 {}
@@ -77,16 +76,26 @@ function f2_8(v: III1_8 | III2_8 | II2_8): number {
 export default function DiffTypeIsSubOfTypeObjOnNonGenTest(): void{
   describe('DiffTypeIsSubOfTypeObjOnNonGenTest', () => {
     beforeAll(() => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
     })
 
     beforeEach(async () => {
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
       await sleep(30);
     })
 
     afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
     })
 
     afterAll(() => {
+      // Presets an action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: preset action function.
     })
     /**
      * @tc.number    SUB_DIFF_TYPE_IS_SUB_OF_TYPE_OBJ_ON_NON_GEN_0800

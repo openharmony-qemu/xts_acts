@@ -24,7 +24,6 @@ async function sleep(time: int): Promise<int> {
   });
 }
 
-
 abstract class A_1<U, V> {}
 abstract class B1_1<U, V> extends A_1<U, V> {}
 class B2_1<U, V> extends A_1<U, V> {
@@ -80,14 +79,12 @@ function f2_1(v: C1_1<number, null> | C2_1<number, string> | B2_1<bigint, undefi
   }
 }
 
-
 export interface I1_9<U, V> {}
 export interface I2_9<U, V> {}
 export interface II1_9<U, V> extends I1_9<U, V>, I2_9<U, V> {}
 export interface II2_9<U, V> extends I1_9<U, V>, I2_9<U, V> {}
 export interface III1_9<U, V> extends II1_9<U, V> {}
 export interface III2_9<U, V> extends II1_9<U, V> {}
-
 
 abstract class A_7<U, V> {}
 abstract class B1_7<U, V> extends A_7<U, V> {}
@@ -221,16 +218,26 @@ namespace testNS3_9 {
 export default function DiffTypeIsSubOfTypeObjOnGenTest(): void {
   describe('DiffTypeIsSubOfTypeObjOnGenTest', () => {
     beforeAll(() => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
     })
 
     beforeEach(async () => {
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
       await sleep(30);
     })
 
     afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
     })
 
     afterAll(() => {
+      // Presets an action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: preset action function.
     })
 
     /**
@@ -249,7 +256,6 @@ export default function DiffTypeIsSubOfTypeObjOnGenTest(): void {
       expect(res).assertEqual(2)
     });
 
-
     /**
      * @tc.number    SUB_DIFF_TYPE_IS_SUB_OF_TYPE_OBJ_ON_GEN_0700
      * @tc.name      testDiffTypeIsSubOfTypeObjOnGen0007
@@ -265,7 +271,6 @@ export default function DiffTypeIsSubOfTypeObjOnGenTest(): void {
       res = f1_7(new B2_7<bigint, undefined>(123n));
       expect(res).assertEqual(2);
     });
-
 
     /**
      * @tc.number    SUB_DIFF_TYPE_IS_SUB_OF_TYPE_OBJ_ON_GEN_0900

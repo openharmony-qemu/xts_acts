@@ -82,7 +82,6 @@ function f2_13(v: III1_13<number, null> | III2_13<number, string> | II2_13<bigin
   }
 }
 
-
 export default function DiffTypeIsSubOfTypeTOnGenTest01(): void {
   describe('DiffTypeIsSubOfTypeTOnGenTest01', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -101,12 +100,12 @@ export default function DiffTypeIsSubOfTypeTOnGenTest01(): void {
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
+      // This API supports only one parameter: preset action function.
     })
 
     afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
+      // Presets an action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: preset action function.
     })
     /**
      * @tc.number    SUB_DIFF_TYPE_IS_SUB_OF_TYPE_T_ON_GEN_1300

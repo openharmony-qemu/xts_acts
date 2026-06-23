@@ -1,4 +1,4 @@
-﻿'use static'
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -128,12 +128,12 @@ export default function DiffTypeIsSubOfTypeObjOnGenTest01(): void {
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
+      // This API supports only one parameter: preset action function.
     })
 
     afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
+      // Presets an action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: preset action function.
     })
 
     /**
