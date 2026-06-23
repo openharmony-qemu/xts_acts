@@ -43,7 +43,7 @@ export default function HidebugStaticTest() {
                   done();
                 }).catch((err) => {
                   hilog.error(0x0000, 'hidebug', `SUB_DFX_DFR_Hidebug_Interface_0100 error1 code: ${err.code}, message: ${err.message}`)
-                  expect(false).assertTrue();
+                  expect(err.code == 11400302).assertTrue();
                   done();
                 })
             } catch (err) {
@@ -75,7 +75,7 @@ export default function HidebugStaticTest() {
                   done();
                 }).catch((err) => {
                   hilog.error(0x0000, 'hidebug', `SUB_DFX_DFR_Hidebug_Interface_0200 error1 code: ${err.code}, message: ${err.message}`)
-                  expect(false).assertTrue();
+                  expect(err.code == 11400302).assertTrue();
                   done();
                 })
             } catch (err) {
@@ -107,7 +107,7 @@ export default function HidebugStaticTest() {
                   done();
                 }).catch((err) => {
                   hilog.error(0x0000, 'hidebug', `SUB_DFX_DFR_Hidebug_Interface_0300 error1 code: ${err.code}, message: ${err.message}`)
-                  expect(false).assertTrue();
+                  expect(err.code == 11400302).assertTrue();
                   done();
                 })
             } catch (err) {
