@@ -54,7 +54,6 @@ let foodbr23 = fooDBR23<Derived23,Base23>
 let fooddr23 = fooDDR23<Derived23,Derived23>
 foodd23 = foobd23
 
-
 class Base24 {}
 class Derived24 extends Base24 {}
 function fooBB24<T24>(p: T24): T24 {return p}
@@ -90,7 +89,6 @@ let foobdr24 = fooBDR24<Base24,Derived24>
 let foodbr24 = fooDBR24<Derived24,Base24>
 let fooddr24 = fooDDR24<Derived24,Derived24>
 foobbn24 = foobb24
-
 
 class Base25 {}
 class Derived25 extends Base25 {}
@@ -128,7 +126,6 @@ let foodbr25 = fooDBR25<Derived25,Base25>
 let fooddr25 = fooDDR25<Derived25,Derived25>
 foobbo25 = foobb25
 
-
 class Base26 {}
 class Derived26 extends Base26 {}
 function fooBB26<T26>(p: T26): T26 {return p}
@@ -164,7 +161,6 @@ let foobdr26 = fooBDR26<Base26,Derived26>
 let foodbr26 = fooDBR26<Derived26,Base26>
 let fooddr26 = fooDDR26<Derived26,Derived26>
 foobbn26 = foobd26
-
 
 class Base27 {}
 class Derived27 extends Base27 {}
@@ -202,7 +198,6 @@ let foodbr27 = fooDBR27<Derived27,Base27>
 let fooddr27 = fooDDR27<Derived27,Derived27>
 foobbn27 = foobb27
 
-
 class Base28 {}
 class Derived28 extends Base28 {}
 function fooBB28<T28>(p: T28): T28 {return p}
@@ -238,7 +233,6 @@ let foobdr28 = fooBDR28<Base28,Derived28>
 let foodbr28 = fooDBR28<Derived28,Base28>
 let fooddr28 = fooDDR28<Derived28,Derived28>
 foodbn28 = foobd28
-
 
 class Base29 {}
 class Derived29 extends Base29 {}
@@ -276,7 +270,6 @@ let foodbr29 = fooDBR29<Derived29,Base29>
 let fooddr29 = fooDDR29<Derived29,Derived29>
 foodbo29 = foobd29
 
-
 class Base30 {}
 class Derived30 extends Base30 {}
 function fooBB30<T30>(p: T30): T30 {return p}
@@ -312,7 +305,6 @@ let foobdr30 = fooBDR30<Base30,Derived30>
 let foodbr30 = fooDBR30<Derived30,Base30>
 let fooddr30 = fooDDR30<Derived30,Derived30>
 foodbn30 = fooddn30
-
 
 class Base31 {}
 class Derived31 extends Base31 {}
@@ -350,7 +342,6 @@ let foodbr31 = fooDBR31<Derived31,Base31>
 let fooddr31 = fooDDR31<Derived31,Derived31>
 foodbo31 = fooddo31
 
-
 class Base32 {}
 class Derived32 extends Base32 {}
 function fooBB32<T32>(p: T32): T32 {return p}
@@ -386,7 +377,6 @@ let foobdr32 = fooBDR32<Base32,Derived32>
 let foodbr32 = fooDBR32<Derived32,Base32>
 let fooddr32 = fooDDR32<Derived32,Derived32>
 foodbr32 = fooddr32
-
 
 class Base33 {}
 class Derived33 extends Base33 {}
@@ -424,7 +414,6 @@ let foodbr33 = fooDBR33<Derived33,Base33>
 let fooddr33 = fooDDR33<Derived33,Derived33>
 foodbn33 = foobdn33
 
-
 class Base34 {}
 class Derived34 extends Base34 {}
 function fooBB34<T34>(p: T34): T34 {return p}
@@ -460,7 +449,6 @@ let foobdr34 = fooBDR34<Base34,Derived34>
 let foodbr34 = fooDBR34<Derived34,Base34>
 let fooddr34 = fooDDR34<Derived34,Derived34>
 foodbo34 = foobdo34
-
 
 class Base35 {}
 class Derived35 extends Base35 {}
@@ -498,7 +486,6 @@ let foodbr35 = fooDBR35<Derived35,Base35>
 let fooddr35 = fooDDR35<Derived35,Derived35>
 foodbr35 = foobdr35
 
-
 class Base36 {}
 class Derived36 extends Base36 {}
 function fooBB36<T36>(p: T36): T36 {return p}
@@ -535,7 +522,6 @@ let foodbr36 = fooDBR36<Derived36,Base36>
 let fooddr36 = fooDDR36<Derived36,Derived36>
 foodbn36 = foobbn36
 
-
 class Base37 {}
 class Derived37 extends Base37 {}
 function fooBB37<T37>(p: T37): T37 {return p}
@@ -571,7 +557,6 @@ let foobdr37 = fooBDR37<Base37,Derived37>
 let foodbr37 = fooDBR37<Derived37,Base37>
 let fooddr37 = fooDDR37<Derived37,Derived37>
 foodbo37 = foobbo37
-
 
 class Base38 {}
 class Derived38 extends Base38 {}
@@ -652,7 +637,6 @@ let foodbr39 = c39.fooDBR39
 let fooddr39 = c39.fooDDR39
 foobb39 = foobd39 // OK: identical parameter types, and covariant return type
 
-
 class Base40 {
   b: string = 'b'
 }
@@ -695,7 +679,6 @@ let foobdr40 = c40.fooBDR40
 let foodbr40 = c40.fooDBR40
 let fooddr40 = c40.fooDDR40
 foodb40 = foobd40 // OK: identical parameter types, and covariant return type
-
 
 class Base41 {
   b: string = 'b'
@@ -740,7 +723,6 @@ let foodbr41 = c41.fooDBR41
 let fooddr41 = c41.fooDDR41
 foodb41 = foodd41
 
-
 class Base42 {
   b: string = 'b'
 }
@@ -784,7 +766,6 @@ let foodbr42 = c42.fooDBR42
 let fooddr42 = c42.fooDDR42
 foodd42 = foobd42
 
-
 class Base43 {
   b: string = 'b'
 }
@@ -827,7 +808,6 @@ let foobdr43 = c43.fooBDR43
 let foodbr43 = c43.fooDBR43
 let fooddr43 = c43.fooDDR43
 foobbn43 = foobb43
-
 
 class Base44 {
   b: string = 'b'
@@ -889,13 +869,12 @@ export default function SubtypingForFunctionTypesTest01(): void {
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
-
+      // This API supports only one parameter: preset action function.
     })
 
     afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
+      // Presets an action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: preset action function.
     })
 
     /**
