@@ -1205,7 +1205,6 @@ export default function DataViewSetFloat64Test(): void {
     it('testDataViewSetFloat640087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(4);
       let view = new DataView(buf);
-       
       try {
         view.setFloat64(0, 3.5);
         expect().assertFail();
@@ -1243,7 +1242,6 @@ export default function DataViewSetFloat64Test(): void {
      * @tc.level Level 2
      */
     it('testDataViewSetFloat640089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-       
       try {
         let buf = new ArrayBuffer(2);
         let view = new DataView(buf);

@@ -1313,7 +1313,6 @@ export default function DataViewSetFloat32Test(): void {
      * @tc.level Level 2
      */
     it('testDataViewSetFloat320112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-       
       try {
         const view = new DataView(new ArrayBuffer(8));
         view.setFloat32(0, 2.5f);
