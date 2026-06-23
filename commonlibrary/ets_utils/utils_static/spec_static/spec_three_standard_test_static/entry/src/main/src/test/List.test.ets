@@ -112,36 +112,51 @@ import UnaryOverflow from './semanticrules/semanticessentials/UnaryOverflow.test
 import SpecificsOfStringOperatorContextsTest from './semanticrules/semanticessentials/SpecificsOfStringOperatorContextsTest.test'
 import SpecificsOfTypeParametersTest from './semanticrules/semanticessentials/SpecificsOfTypeParametersTest.test'
 import SubtypingForFunctionTypesTest from './semanticrules/subtyping/SubtypingForFunctionTypesTest.test'
+import SubtypingForFunctionTypesTest01 from './semanticrules/subtyping/SubtypingForFunctionTypesTest01.test'
+import SubtypingForFunctionTypesTest02 from './semanticrules/subtyping/SubtypingForFunctionTypesTest02.test'
+import SubtypingForFunctionTypesTest03 from './semanticrules/subtyping/SubtypingForFunctionTypesTest03.test'
 import SubtypingForGenericClassesAndInterfacesTest from './semanticrules/subtyping/SubtypingForGenericClassesAndInterfacesTest.test'
 import SubtypingForLiteralTypesTest from './semanticrules/subtyping/SubtypingForLiteralTypesTest.test'
 import SubtypingForNonGenericClassesAndInterfacesTest from './semanticrules/subtyping/SubtypingForNonGenericClassesAndInterfacesTest.test'
 import SubtypingForUnionTypesTest from './semanticrules/subtyping/SubtypingForUnionTypesTest.test'
 import InterTypeIsSubOfTypeObjOnGenTest from './semanticrules/subtyping/InterTypeIsSubOfTypeObjOnGenTest.test'
 import InterTypeIsSubOfTypeObjOnGenTest01 from './semanticrules/subtyping/InterTypeIsSubOfTypeObjOnGenTest01.test'
+import InterTypeIsSubOfTypeObjOnNonGenTest from './semanticrules/subtyping/InterTypeIsSubOfTypeObjOnNonGenTest.test'
 import InterTypeIsSubOfTypeObjOnPredefinedTest from './semanticrules/subtyping/InterTypeIsSubOfTypeObjOnPredefinedTest.test'
 import InterTypeIsSubOfTypeObjOnStrLitTest from './semanticrules/subtyping/InterTypeIsSubOfTypeObjOnStrLitTest.test'
 import InterTypeIsSubOfTypeTOnGenTest from './semanticrules/subtyping/InterTypeIsSubOfTypeTOnGenTest.test'
 import InterTypeIsSubOfTypeTOnGenTest01 from './semanticrules/subtyping/InterTypeIsSubOfTypeTOnGenTest01.test'
 import InterTypeIsSubOfTypeTOnGenTest02 from './semanticrules/subtyping/InterTypeIsSubOfTypeTOnGenTest02.test'
+import InterTypeIsSubOfTypeTOnGenTest03 from './semanticrules/subtyping/InterTypeIsSubOfTypeTOnGenTest03.test'
 import InterTypeIsSubOfTypeTOnNonGenTest from './semanticrules/subtyping/InterTypeIsSubOfTypeTOnNonGenTest.test'
 import InterTypeIsSubOfTypeTOnNonGenTest01 from './semanticrules/subtyping/InterTypeIsSubOfTypeTOnNonGenTest01.test'
+import InterTypeIsSubOfTypeTOnNonGenTest02 from './semanticrules/subtyping/InterTypeIsSubOfTypeTOnNonGenTest02.test'
 import InterTypeIsSubOfTypeTOnPredefinedTest from './semanticrules/subtyping/InterTypeIsSubOfTypeTOnPredefinedTest.test'
 import InterTypeIsSubOfTypeTOnPredefinedTest01 from './semanticrules/subtyping/InterTypeIsSubOfTypeTOnPredefinedTest01.test'
+import InterTypeIsSubOfTypeTOnPredefinedTest02 from './semanticrules/subtyping/InterTypeIsSubOfTypeTOnPredefinedTest02.test'
+import InterTypeIsSubOfTypeTOnPredefinedTest03 from './semanticrules/subtyping/InterTypeIsSubOfTypeTOnPredefinedTest03.test'
 import InterTypeIsSubOfTypeTOnStrLit1Test from './semanticrules/subtyping/InterTypeIsSubOfTypeTOnStrLit1Test.test'
 import InterTypeIsSubOfTypeTOnStrLit1Test01 from './semanticrules/subtyping/InterTypeIsSubOfTypeTOnStrLit1Test01.test'
 import InterTypeIsSubOfTypeTOnStrLit2Test from './semanticrules/subtyping/InterTypeIsSubOfTypeTOnStrLit2Test.test'
+import TypeTIsSubOfInterTypeOnGenTest from './semanticrules/subtyping/TypeTIsSubOfInterTypeOnGenTest.test'
 import TypeTIsSubOfInterTypeOnGenTest01 from './semanticrules/subtyping/TypeTIsSubOfInterTypeOnGenTest01.test'
+import TypeTIsSubOfInterTypeOnGenTest02 from './semanticrules/subtyping/TypeTIsSubOfInterTypeOnGenTest02.test'
+import TypeTIsSubOfInterTypeOnGenTest03 from './semanticrules/subtyping/TypeTIsSubOfInterTypeOnGenTest03.test'
 import SubtypingAmongArrayTypesTest from './semanticrules/subtyping/SubtypingAmongArrayTypesTest.test'
 import SupertypingAmongArrayTypesTest from './semanticrules/subtyping/SupertypingAmongArrayTypesTest.test'
 import SubtypingAmongPrimitiveTypestTest from './semanticrules/subtyping/SubtypingAmongPrimitiveTypestTest.test'
 import DiffTypeIsSubOfTypeObjOnGenTest from './semanticrules/subtyping/DiffTypeIsSubOfTypeObjOnGenTest.test'
-import TypeTIsSubOfInterTypeOnPredefinedTest from './semanticrules/subtyping/TypeTIsSubOfInterTypeOnPredefinedTest.test'
 import TypeTIsSubOfInterTypeOnStrLitTest01 from './semanticrules/subtyping/TypeTIsSubOfInterTypeOnStrLitTest01.test'
 import DiffTypeIsSubOfTypeObjOnNonGenTest from './semanticrules/subtyping/DiffTypeIsSubOfTypeObjOnNonGenTest.test'
 import DiffTypeIsSubOfTypeObjOnPredefinedTest from './semanticrules/subtyping/DiffTypeIsSubOfTypeObjOnPredefinedTest.test'
 import DiffTypeIsSubOfTypeObjOnStrLitTest from './semanticrules/subtyping/DiffTypeIsSubOfTypeObjOnStrLitTest.test'
-import DiffTypeIsSubOfTypeTOnGenTest01 from './semanticrules/subtyping/DiffTypeIsSubOfTypeTOnGenTest.test'
+import DiffTypeIsSubOfTypeTOnGenTest from './semanticrules/subtyping/DiffTypeIsSubOfTypeTOnGenTest.test'
+import DiffTypeIsSubOfTypeTOnGenTest01 from './semanticrules/subtyping/DiffTypeIsSubOfTypeTOnGenTest01.test'
+import DiffTypeIsSubOfTypeTOnGenTest02 from './semanticrules/subtyping/DiffTypeIsSubOfTypeTOnGenTest02.test'
+import DiffTypeIsSubOfTypeTOnNonGenTest from './semanticrules/subtyping/DiffTypeIsSubOfTypeTOnNonGenTest.test'
+import DiffTypeIsSubOfTypeTOnNonGenTest01 from './semanticrules/subtyping/DiffTypeIsSubOfTypeTOnNonGenTest01.test'
 import DiffTypeIsSubOfTypeTOnPredefinedTest from './semanticrules/subtyping/DiffTypeIsSubOfTypeTOnPredefinedTest.test'
+import DiffTypeIsSubOfTypeTOnPredefinedTest01 from './semanticrules/subtyping/DiffTypeIsSubOfTypeTOnPredefinedTest01.test'
 import DiffTypeIsSubOfTypeTOnStrLitTest from './semanticrules/subtyping/DiffTypeIsSubOfTypeTOnStrLitTest.test'
 import TypeTIsSubOfDiffOnGenTest from './semanticrules/subtyping/TypeTIsSubOfDiffOnGenTest.test'
 import TypeTIsSubOfDiffOnGenTest01 from './semanticrules/subtyping/TypeTIsSubOfDiffOnGenTest01.test'
@@ -271,36 +286,51 @@ export default function testsuite(): void {
   SpecificsOfStringOperatorContextsTest();
   SpecificsOfTypeParametersTest();
   SubtypingForFunctionTypesTest();
+  SubtypingForFunctionTypesTest01();
+  SubtypingForFunctionTypesTest02();
+  SubtypingForFunctionTypesTest03();
   SubtypingForGenericClassesAndInterfacesTest();
   SubtypingForLiteralTypesTest();
   SubtypingForNonGenericClassesAndInterfacesTest();
   SubtypingForUnionTypesTest();
   InterTypeIsSubOfTypeObjOnGenTest();
   InterTypeIsSubOfTypeObjOnGenTest01();
+  InterTypeIsSubOfTypeObjOnNonGenTest();
   InterTypeIsSubOfTypeObjOnPredefinedTest();
   InterTypeIsSubOfTypeObjOnStrLitTest();
   InterTypeIsSubOfTypeTOnGenTest();
   InterTypeIsSubOfTypeTOnGenTest01();
   InterTypeIsSubOfTypeTOnGenTest02();
+  InterTypeIsSubOfTypeTOnGenTest03();
   InterTypeIsSubOfTypeTOnNonGenTest();
   InterTypeIsSubOfTypeTOnNonGenTest01();
+  InterTypeIsSubOfTypeTOnNonGenTest02();
   InterTypeIsSubOfTypeTOnPredefinedTest();
   InterTypeIsSubOfTypeTOnPredefinedTest01();
+  InterTypeIsSubOfTypeTOnPredefinedTest02();
+  InterTypeIsSubOfTypeTOnPredefinedTest03();
   InterTypeIsSubOfTypeTOnStrLit1Test();
   InterTypeIsSubOfTypeTOnStrLit1Test01();
   InterTypeIsSubOfTypeTOnStrLit2Test();
+  TypeTIsSubOfInterTypeOnGenTest();
   TypeTIsSubOfInterTypeOnGenTest01();
+  TypeTIsSubOfInterTypeOnGenTest02();
+  TypeTIsSubOfInterTypeOnGenTest03();
   SubtypingAmongArrayTypesTest();
   SupertypingAmongArrayTypesTest();
   SubtypingAmongPrimitiveTypestTest();
   DiffTypeIsSubOfTypeObjOnGenTest();
-  TypeTIsSubOfInterTypeOnPredefinedTest();
   TypeTIsSubOfInterTypeOnStrLitTest01();
   DiffTypeIsSubOfTypeObjOnNonGenTest();
   DiffTypeIsSubOfTypeObjOnPredefinedTest();
   DiffTypeIsSubOfTypeObjOnStrLitTest();
+  DiffTypeIsSubOfTypeTOnGenTest();
   DiffTypeIsSubOfTypeTOnGenTest01();
+  DiffTypeIsSubOfTypeTOnGenTest02();
+  DiffTypeIsSubOfTypeTOnNonGenTest();
+  DiffTypeIsSubOfTypeTOnNonGenTest01();
   DiffTypeIsSubOfTypeTOnPredefinedTest();
+  DiffTypeIsSubOfTypeTOnPredefinedTest01();
   DiffTypeIsSubOfTypeTOnStrLitTest();
   TypeTIsSubOfDiffOnGenTest();
   TypeTIsSubOfDiffOnGenTest01();
