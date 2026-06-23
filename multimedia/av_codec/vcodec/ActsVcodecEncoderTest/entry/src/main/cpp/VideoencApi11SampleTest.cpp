@@ -900,7 +900,7 @@ void VEncAPI11Sample::AbortNativeBuffer(OH_NativeBuffer *nativeBuffer, OHNativeW
     }
 }
 
-void isRunning()
+void VEncAPI11Sample::isRunning()
 {
     isRunning_.store(false);
     signal_->inCond_.notify_all();
