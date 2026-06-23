@@ -54,6 +54,9 @@ group("builtin_static") {
       "double_standard_test_static:ActsDoubleStaticTest",
       "deepcopy_standard_test_static:ActsDeepcopyStaticTest",
       "eithon_standard_test_static:ActsEithonStaticTest",
+      "byte_standard_test_static:ActsByteStaticTest",
+      "date001_standard_test_static:ActsDate1StaticTest",
+      "dateview001_standard_test_static:ActsDateView1StaticTest",
     ]
   }
 }
