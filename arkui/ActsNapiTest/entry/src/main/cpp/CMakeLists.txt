@@ -13,10 +13,10 @@ aux_source_directory(${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_functi
 add_library(securec SHARED ${SECUREC_SRCS})
 
 add_library(napiBuffer SHARED ./napi/napiBuffer.cpp)
-target_link_libraries(napiBuffer PUBLIC securec libace_napi.z.so libuv.so libhilog_ndk.z.so libc++.a)
+target_link_libraries(napiBuffer PUBLIC securec libace_napi.z.so libuv.so)
 
 add_library(napiData SHARED ./napi/napiData.cpp)
-target_link_libraries(napiData PUBLIC securec libace_napi.z.so libuv.so libhilog_ndk.z.so libc++.a)
+target_link_libraries(napiData PUBLIC securec libace_napi.z.so libuv.so)
 
 add_library(napiString SHARED ./napi/napiString.cpp)
-target_link_libraries(napiString PUBLIC securec libace_napi.z.so libuv.so libhilog_ndk.z.so libc++.a)
+target_link_libraries(napiString PUBLIC securec libace_napi.z.so libuv.so)
