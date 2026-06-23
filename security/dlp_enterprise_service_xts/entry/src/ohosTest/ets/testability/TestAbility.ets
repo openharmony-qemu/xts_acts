@@ -31,6 +31,10 @@ export default class TestAbility extends UIAbility {
         abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
         let abilityDelegatorArguments: AbilityDelegatorRegistry.AbilityDelegatorArgs
         abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
+        if (!abilityDelegator || !abilityDelegatorArguments) {
+            hilog.error(0x0000, 'testTag', 'abilityDelegator or abilityDelegatorArguments is null');
+            return;
+        }
         hilog.info(0x0000, 'testTag', '%{public}s', 'start run testcase!!!');
         Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
     }
