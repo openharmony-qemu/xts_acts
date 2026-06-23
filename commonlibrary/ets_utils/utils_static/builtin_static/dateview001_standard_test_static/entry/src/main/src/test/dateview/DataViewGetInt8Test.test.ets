@@ -414,7 +414,6 @@ export default function DataViewGetInt8Test(): void {
       view.setInt8(0, -1);
       let result = view.getInt8(0);
       expect(result).assertEqual(-1);
-      expect(result < 0).assertTrue();
     });
 
     /**

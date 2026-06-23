@@ -428,7 +428,6 @@ export default function DataViewGetUint32Test(): void {
       view.setUint32(0, 2147483648);
       let result = view.getUint32(0);
       expect(result).assertEqual(2147483648);
-      expect(result > 0).assertTrue();
     });
 
     /**
@@ -665,7 +664,7 @@ export default function DataViewGetUint32Test(): void {
     /**
      * @tc.number SUB_DTVW_DATA_VIEW_GET_U32_5000
      * @tc.name testDataViewGetUintThirtyTwo0050
-     * @tc.desc Verify finally block always executes regardless of exception
+     * @tc.desc Verify getUint32 reads a value correctly under normal conditions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -673,13 +672,9 @@ export default function DataViewGetUint32Test(): void {
     it('testDataViewGetUintThirtyTwo0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const buf = new ArrayBuffer(8);
       const view = new DataView(buf);
-      let finallyExecuted = false;
-      try {
-        view.getUint32(0);
-      } finally {
-        finallyExecuted = true;
-      }
-      expect(finallyExecuted).assertTrue();
+      view.setUint32(0, 12345);
+      const result = view.getUint32(0);
+      expect(result).assertEqual(12345);
     });
 
     /**

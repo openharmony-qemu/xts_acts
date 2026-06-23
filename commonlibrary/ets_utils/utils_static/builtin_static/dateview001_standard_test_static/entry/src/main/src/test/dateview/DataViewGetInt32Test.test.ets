@@ -327,25 +327,6 @@ export default function DataViewGetInt32Test(): void {
     });
 
     /**
-     * @tc.number SUB_DTVW_DATA_VIEW_GET_I32_2600
-     * @tc.name testDataViewGetIntThirtytwo0026
-     * @tc.desc Verify getInt32 returns expected result when littleEndian is false
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testDataViewGetIntThirtytwo0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const buffer = new ArrayBuffer(8);
-      const view = new DataView(buffer);
-      view.setInt32(0, 1024);
-      try {
-        let result = view.getInt32(0, false);
-      } catch (error) {
-        expect(error.name).assertEqual('ClassCastError');
-      }
-    });
-
-    /**
      * @tc.number SUB_DTVW_DATA_VIEW_GET_I32_2700
      * @tc.name testDataViewGetIntThirtytwo0027
      * @tc.desc Verify getInt32 treats undefined littleEndian as default
@@ -831,14 +812,13 @@ export default function DataViewGetInt32Test(): void {
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('RangeError');
-        
       }
     });
 
     /**
      * @tc.number SUB_DTVW_DATA_VIEW_GET_I32_6400
      * @tc.name testDataViewGetIntThirtytwo0064
-     * @tc.desc Verify finally block executes in normal execution path
+     * @tc.desc Verify getInt32 reads the correct value written by setInt32 under normal conditions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -847,14 +827,8 @@ export default function DataViewGetInt32Test(): void {
       const buffer = new ArrayBuffer(8);
       const view = new DataView(buffer);
       view.setInt32(0, 42);
-      let finallyExecuted = false;
-      try {
-        let result = view.getInt32(0);
-        expect(result).assertEqual(42);
-      } finally {
-        finallyExecuted = true;
-      }
-      expect(finallyExecuted).assertTrue();
+      let result = view.getInt32(0);
+      expect(result).assertEqual(42);
     });
 
     /**

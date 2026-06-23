@@ -969,7 +969,7 @@ export default function DataViewSetBigInt64Test(): void {
     /**
      * @tc.number SUB_DTVW_DATA_VIEW_SET_BI64_6100
      * @tc.name testDataViewSetBigIntSixtyFour0061
-     * @tc.desc Verify try block normal write does not enter catch and finally executes
+     * @tc.desc Verify try block normal write does not enter catch executes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -988,7 +988,7 @@ export default function DataViewSetBigInt64Test(): void {
     /**
      * @tc.number SUB_DTVW_DATA_VIEW_SET_BI64_6200
      * @tc.name testDataViewSetBigIntSixtyFour0062
-     * @tc.desc Verify try block out-of-bounds write returns expected result enters catch and finally still executes
+     * @tc.desc Verify try block out-of-bounds write returns expected result enters catch still executes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

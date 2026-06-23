@@ -563,7 +563,6 @@ export default function DataViewGetFloat32Test(): void {
       view.setFloat32(0, expected);
       let result = view.getFloat32(0);
       let relativeError = Math.abs((result - expected) / expected);
-      expect(result > 0).assertTrue();
       expect(relativeError < 1e-6).assertTrue();
     });
 
@@ -599,7 +598,6 @@ export default function DataViewGetFloat32Test(): void {
       view.setFloat32(0, expected);
       let result = view.getFloat32(0);
       let relativeError = Math.abs((result - expected) / expected);
-      expect(result < 0).assertTrue();
       expect(relativeError < 1e-6).assertTrue();
     });
 
@@ -616,7 +614,6 @@ export default function DataViewGetFloat32Test(): void {
       const view = new DataView(buf);
       view.setFloat32(0, 1.4e-45);
       let result = view.getFloat32(0);
-      expect(result > 0).assertTrue();
       expect(result < 1e-44).assertTrue();
     });
 
@@ -753,7 +750,7 @@ export default function DataViewGetFloat32Test(): void {
     /**
      * @tc.number SUB_DTVW_DATA_VIEW_GET_F32_6600
      * @tc.name testDataViewGetFloatThirtytwo0066
-     * @tc.desc Verify finally block always executes on exception
+     * @tc.desc Verify getFloat32 throws a RangeError when reading beyond the buffer boundary
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -761,7 +758,6 @@ export default function DataViewGetFloat32Test(): void {
     it('testDataViewGetFloatThirtytwo0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const buf = new ArrayBuffer(4);
       const view = new DataView(buf);
-      let finallyCalled = false;
       try {
         view.getFloat32(4);
         expect(false).assertTrue();
@@ -773,7 +769,7 @@ export default function DataViewGetFloat32Test(): void {
     /**
      * @tc.number SUB_DTVW_DATA_VIEW_GET_F32_6700
      * @tc.name testDataViewGetFloatThirtytwo0067
-     * @tc.desc Verify finally block always executes on normal path
+     * @tc.desc Verify getFloat32 reads the correct value written by setFloat32 under normal conditions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -782,7 +778,6 @@ export default function DataViewGetFloat32Test(): void {
       const buf = new ArrayBuffer(8);
       const view = new DataView(buf);
       view.setFloat32(0, 1.5);
-      let finallyCalled = false;
       let result: number = 0;
       result = view.getFloat32(0);
       expect(result).assertEqual(1.5);

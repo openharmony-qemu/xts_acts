@@ -1555,7 +1555,7 @@ export default function DataViewSetUint16Test(): void {
     /**
      * @tc.number SUB_DTVW_DATA_VIEW_SET_U16_EXT_0400
      * @tc.name testDataViewSetUint160129
-     * @tc.desc Verify finally executes after error catch
+     * @tc.desc Verify setUint16 throws a RangeError when writing beyond the buffer boundary
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1568,25 +1568,6 @@ export default function DataViewSetUint16Test(): void {
       } catch (error) {
         expect(error.name).assertEqual('RangeError');
       }
-    });
-
-    /**
-     * @tc.number SUB_DTVW_DATA_VIEW_SET_U16_EXT_0500
-     * @tc.name testDataViewSetUint160130
-     * @tc.desc Verify finally executes after normal write
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testDataViewSetUint160130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const view = new DataView(new ArrayBuffer(4));
-      let finallyExecuted = false;
-      try {
-        view.setUint16(0, 100);
-      } finally {
-        finallyExecuted = true;
-      }
-      expect(finallyExecuted).assertEqual(true);
     });
 
     /**

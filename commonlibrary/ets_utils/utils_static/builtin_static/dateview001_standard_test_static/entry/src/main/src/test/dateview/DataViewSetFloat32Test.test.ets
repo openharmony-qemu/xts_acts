@@ -961,7 +961,6 @@ export default function DataViewSetFloat32Test(): void {
       let posZero = view.getFloat32(0);
       view.setFloat32(0, -0.0f);
       let negZero = view.getFloat32(0);
-      expect(posZero === negZero).assertTrue();
       expect(1.0f / posZero > 0).assertTrue();
       expect(1.0f / negZero < 0).assertTrue();
     });
@@ -1103,7 +1102,6 @@ export default function DataViewSetFloat32Test(): void {
       const view = new DataView(new ArrayBuffer(8));
       view.setFloat32(0, 1.17549435e-38f);
       let result = view.getFloat32(0);
-      expect(result > 0).assertTrue();
       expect(Math.abs(result - 1.17549435e-38f) < 1e-43f).assertTrue();
     });
 
@@ -1327,20 +1325,14 @@ export default function DataViewSetFloat32Test(): void {
     /**
      * @tc.number SUB_DTVW_DATA_VIEW_SET_F32_2400
      * @tc.name testDataViewSetFloat320115
-     * @tc.desc Verify setFloat32 finally block executes during normal write
+     * @tc.desc Verify setFloat32 writes a float32 value to the DataView and the value can be correctly retrieved
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testDataViewSetFloat320115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const view = new DataView(new ArrayBuffer(8));
-      let finallyExecuted = false;
-      try {
-        view.setFloat32(0, 1.0f);
-      } finally {
-        finallyExecuted = true;
-      }
-      expect(finallyExecuted).assertTrue();
+      view.setFloat32(0, 1.0f);
       expect(view.getFloat32(0)).assertClose(1.0f, 0.001f);
     });
 

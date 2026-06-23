@@ -521,7 +521,6 @@ export default function DataViewConstructorTest(): void {
     it('testDataViewConstructor0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let buffer = new ArrayBuffer(8);
       let view = new DataView(buffer);
-      expect(view instanceof DataView).assertTrue();
       expect(view.byteLength).assertEqual(8);
     });
 
@@ -834,25 +833,19 @@ export default function DataViewConstructorTest(): void {
     /**
      * @tc.number SUB_DTVW_DATA_VIEW_CNSTR_6700
      * @tc.name testDataViewConstructor0067
-     * @tc.desc Verify try-catch-finally structure catches constructor error
+     * @tc.desc Verify try-catch structure catches constructor error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testDataViewConstructor0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let finallyExecuted = false;
       try {
         let view = new DataView(null as ArrayBuffer);
         expect(false).assertTrue();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
-        expect(error.name !== null).assertTrue();
-      } finally {
-        finallyExecuted = true;
       }
-      expect(finallyExecuted).assertTrue();
     });
-
   });
 }
 

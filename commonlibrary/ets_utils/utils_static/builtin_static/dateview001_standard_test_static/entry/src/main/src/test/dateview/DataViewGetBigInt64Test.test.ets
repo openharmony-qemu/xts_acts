@@ -704,7 +704,6 @@ export default function DataViewGetBigInt64Test(): void {
       view.setBigInt64(0, 42n);
       let result = view.getBigInt64(0);
       expect(result).assertEqual(42n);
-      expect(result === 42n).assertTrue();
     });
 
     /**
@@ -904,7 +903,7 @@ export default function DataViewGetBigInt64Test(): void {
     /**
      * @tc.number SUB_DTVW_DATA_VIEW_GET_BI64_6800
      * @tc.name testDataViewGetBigIntSixtyfour0068
-     * @tc.desc Verify finally block executes when no exception is thrown
+     * @tc.desc Verify getBigInt64 reads the correct BigInt64 value after setBigInt64 under normal conditions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -913,20 +912,14 @@ export default function DataViewGetBigInt64Test(): void {
       const buffer = new ArrayBuffer(16);
       const view = new DataView(buffer);
       view.setBigInt64(0, 42n);
-      let finallyExecuted = false;
-      try {
-        let result = view.getBigInt64(0);
-        expect(result).assertEqual(42n);
-      } finally {
-        finallyExecuted = true;
-      }
-      expect(finallyExecuted).assertTrue();
+      let result = view.getBigInt64(0);
+      expect(result).assertEqual(42n);
     });
 
     /**
      * @tc.number SUB_DTVW_DATA_VIEW_GET_BI64_6900
      * @tc.name testDataViewGetBigIntSixtyfour0069
-     * @tc.desc Verify finally block executes when exception is thrown
+     * @tc.desc Verify getBigInt64 throws a RangeError when reading beyond the buffer boundary
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -934,16 +927,12 @@ export default function DataViewGetBigInt64Test(): void {
     it('testDataViewGetBigIntSixtyfour0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const buffer = new ArrayBuffer(16);
       const view = new DataView(buffer);
-      let finallyExecuted = false;
       try {
         view.getBigInt64(100);
         expect(false).assertTrue();
       } catch (error) {
         expect(error.name).assertEqual('RangeError');
-      } finally {
-        finallyExecuted = true;
       }
-      expect(finallyExecuted).assertTrue();
     });
 
     /**

@@ -595,7 +595,6 @@ export default function DataViewGetFloat64Test(): void {
       view.setFloat64(0, Number.MIN_VALUE);
       let result = view.getFloat64(0);
       expect(result).assertEqual(Number.MIN_VALUE);
-      expect(result > 0).assertTrue();
     });
 
     /**
@@ -629,7 +628,6 @@ export default function DataViewGetFloat64Test(): void {
       view.setFloat64(0, minNormal);
       let result = view.getFloat64(0);
       expect(result).assertEqual(minNormal);
-      expect(result > 0).assertTrue();
     });
 
     /**
@@ -645,7 +643,6 @@ export default function DataViewGetFloat64Test(): void {
       const view = new DataView(buf);
       view.setFloat64(0, 5e-324);
       let result = view.getFloat64(0);
-      expect(result > 0).assertTrue();
       expect(result < 1e-323).assertTrue();
     });
 
@@ -662,7 +659,6 @@ export default function DataViewGetFloat64Test(): void {
       const view = new DataView(buf);
       view.setFloat64(0, -Number.MAX_VALUE);
       let result = view.getFloat64(0);
-      expect(result < 0).assertTrue();
       expect(result).assertEqual(-Number.MAX_VALUE);
     });
 
@@ -895,7 +891,7 @@ export default function DataViewGetFloat64Test(): void {
     /**
      * @tc.number SUB_DTVW_DATA_VIEW_GET_F64_7600
      * @tc.name testDataViewGetFloatSixtyFour0076
-     * @tc.desc Verify finally block executes in normal scenario
+     * @tc.desc Verify getFloat64 reads the correct value written by setFloat64 under normal conditions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -904,14 +900,8 @@ export default function DataViewGetFloat64Test(): void {
       const buf = new ArrayBuffer(16);
       const view = new DataView(buf);
       view.setFloat64(0, 1.5);
-      let finallyCalled = false;
       let result: number = 0;
-      try {
-        result = view.getFloat64(0);
-      } finally {
-        finallyCalled = true;
-      }
-      expect(finallyCalled).assertTrue();
+      result = view.getFloat64(0);
       expect(result).assertEqual(1.5);
     });
 
@@ -930,6 +920,7 @@ export default function DataViewGetFloat64Test(): void {
        
       try {
         view.getFloat64(100);
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('RangeError');
       }

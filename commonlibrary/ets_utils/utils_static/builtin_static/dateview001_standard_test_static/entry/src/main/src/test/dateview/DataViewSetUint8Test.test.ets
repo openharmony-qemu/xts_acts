@@ -1156,7 +1156,7 @@ export default function DataViewSetUint8Test(): void {
     /**
      * @tc.number SUB_DTVW_DATA_VIEW_SET_U8_8700
      * @tc.name testDataViewSetUint80087
-     * @tc.desc Verify try-catch-finally executes correctly on out-of-bounds write (overload 1)
+     * @tc.desc Verify try-catch executes correctly on out-of-bounds write (overload 1)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1174,7 +1174,7 @@ export default function DataViewSetUint8Test(): void {
     /**
      * @tc.number SUB_DTVW_DATA_VIEW_SET_U8_8800
      * @tc.name testDataViewSetUint80088
-     * @tc.desc Verify try-catch-finally executes correctly on out-of-bounds write (overload 2)
+     * @tc.desc Verify try-catch executes correctly on out-of-bounds write (overload 2)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

@@ -600,34 +600,22 @@ export default function DataViewGetBigUint64Test(): void {
     /**
      * @tc.number SUB_DTVW_DATA_VIEW_GET_BU64_4300
      * @tc.name testDataViewGetBigUintSixtyfour0043
-     * @tc.desc Verify finally block always executes regardless of exception
+     * @tc.desc Verify getBigUint64 throws a RangeError when reading beyond the buffer boundary
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testDataViewGetBigUintSixtyfour0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-       
       try {
         const buf = new ArrayBuffer(8);
         const view = new DataView(buf);
         view.setBigUint64(0, 100n);
-        let finallyExecuted = false;
-        try {
-          view.getBigUint64(0);
-        } finally {
-          finallyExecuted = true;
-        }
-        finallyExecuted = false;
-        try {
-          view.getBigUint64(999);
-          expect().assertFail();
-        } finally {
-          finallyExecuted = true;
-        }
+        view.getBigUint64(0);
+        view.getBigUint64(999);
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('RangeError');
       }
-       
     });
 
     /**

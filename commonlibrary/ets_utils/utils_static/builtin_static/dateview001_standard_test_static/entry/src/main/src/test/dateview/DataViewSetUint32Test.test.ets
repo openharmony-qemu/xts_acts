@@ -1294,7 +1294,7 @@ export default function DataViewSetUint32Test(): void {
     /**
      * @tc.number SUB_DTVW_DATA_VIEW_SET_U32_8500
      * @tc.name testDataViewSetUint320085
-     * @tc.desc Verify finally block executes in normal case
+     * @tc.desc Verify setUint32 writes the correct value and can be read back via getUint32 under normal conditions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1302,13 +1302,7 @@ export default function DataViewSetUint32Test(): void {
     it('testDataViewSetUint320085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       const view = new DataView(buf);
-      let finallyCalled = false;
-      try {
-        view.setUint32(0, 1024);
-      } finally {
-        finallyCalled = true;
-      }
-      expect(finallyCalled).assertTrue();
+      view.setUint32(0, 1024);
       expect(view.getUint32(0)).assertEqual(1024);
     });
 
@@ -1323,7 +1317,6 @@ export default function DataViewSetUint32Test(): void {
     it('testDataViewSetUint320086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(4);
       const view = new DataView(buf);
-      let finallyCalled = false;
       try {
         view.setUint32(5, 1);
         expect().assertFail();

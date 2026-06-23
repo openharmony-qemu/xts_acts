@@ -1250,8 +1250,9 @@ export default function DataViewSetInt32Test(): void {
      */
     it('testDataViewSetInt320103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const view = new DataView(new ArrayBuffer(8));
-      let result = view.setInt32(0, 100);
-      expect(typeof result).assertEqual("undefined");
+      view.setInt32(0, 100);
+      let result = view.getInt32(0);
+      expect(result).assertEqual(100);
     });
 
     /**
@@ -1362,20 +1363,14 @@ export default function DataViewSetInt32Test(): void {
     /**
      * @tc.number SUB_DTVW_DATA_VIEW_SET_I32_8300
      * @tc.name testDataViewSetInt320118
-     * @tc.desc Verify finally executes in normal scenario
+     * @tc.desc Verify setInt32 writes the correct value and can be read back via getInt32 under normal conditions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testDataViewSetInt320118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const view = new DataView(new ArrayBuffer(8));
-      let finallyCalled = false;
-      try {
-        view.setInt32(0, 100);
-      } finally {
-        finallyCalled = true;
-      }
-      expect(finallyCalled).assertTrue();
+      view.setInt32(0, 100);
       expect(view.getInt32(0)).assertEqual(100);
     });
 

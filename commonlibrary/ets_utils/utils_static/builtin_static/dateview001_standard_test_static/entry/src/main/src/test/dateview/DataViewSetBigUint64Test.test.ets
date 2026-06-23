@@ -992,7 +992,7 @@ export default function DataViewSetBigUint64Test(): void {
     /**
      * @tc.number SUB_DTVW_DATA_VIEW_SET_BU64_7700
      * @tc.name testDataViewSetBigUint640077
-     * @tc.desc Verify finally block executes after normal write
+     * @tc.desc Verify setBigUint64 writes the correct value and can be read back via getBigUint64
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1000,13 +1000,7 @@ export default function DataViewSetBigUint64Test(): void {
     it('testDataViewSetBigUint640077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(16);
       const view = new DataView(buf);
-      let finallyExecuted = false;
-      try {
-        view.setBigUint64(0, 1234n);
-      } finally {
-        finallyExecuted = true;
-      }
-      expect(finallyExecuted).assertTrue();
+      view.setBigUint64(0, 1234n);
       expect(view.getBigUint64(0)).assertEqual(1234n);
     });
 

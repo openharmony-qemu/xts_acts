@@ -1216,7 +1216,7 @@ export default function DataViewSetFloat64Test(): void {
     /**
      * @tc.number SUB_DTVW_DATA_VIEW_SET_F64_8800
      * @tc.name testDataViewSetFloat640088
-     * @tc.desc Verify finally block executes regardless of exception
+     * @tc.desc Verify setFloat64 writes a float64 value correctly under normal conditions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1224,19 +1224,15 @@ export default function DataViewSetFloat64Test(): void {
     it('testDataViewSetFloat640088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(8);
       let view = new DataView(buf);
-      let finallyExecuted = false;
-      try {
-        view.setFloat64(0, 3.5);
-      } finally {
-        finallyExecuted = true;
-      }
-      expect(finallyExecuted).assertTrue();
+      view.setFloat64(0, 3.5);
+      let result = view.getFloat64(0);
+      expect(result).assertEqual(3.5);
     });
 
     /**
      * @tc.number SUB_DTVW_DATA_VIEW_SET_F64_8900
      * @tc.name testDataViewSetFloat640089
-     * @tc.desc Verify finally block executes in exception path
+     * @tc.desc Verify setFloat64 throws a RangeError when the buffer is too small for float64
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
