@@ -15,7 +15,7 @@
 import { beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { huks } from '@kit.UniversalKeystoreKit';
 import { DeleteParam, GenParam, GetEmptyOptions, GetParam, MergeOptions, PrintOptions, SetInData, SetParam } from './utils/huks/HuksOptionsUtils';
-import { GetMlKemGenerateOptions, GetRsaGenerateOptions, GetSm4GenerateOptions } from './utils/huks/GenerateKeyUtils';
+import { GetMlKemGenerateOptions, GetSm4GenerateOptions } from './utils/huks/GenerateKeyUtils';
 import { GetImportKeyPairOptions, GetImportPubKeyOptions, GetMlKemImportData } from './utils/huks/ImportKeyUtils';
 import { Logger } from './utils/common/Logger';
 import { HuksDefaultKeyVersion, HuksDefaultOsPatchLevel, HuksDefaultOsVersion, HuksMinGroupId } from './utils/huks/HuksCommonUtils';
@@ -1163,7 +1163,7 @@ export default function SecurityHuksMlKemTest() {
         expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_KEY_FLAG)).assertEqual(huks.HuksKeyFlag.HUKS_KEY_FLAG_GENERATE_KEY);
 
         await huks.decapsulate(keyAlias, wrapParams.properties, encapResult.outData, decapSharedKeyAlias, sharedKeyParams.properties);
-        getKeyPropertiesRes = await huks.getKeyItemProperties(encapSharedKeyAlias, baseKeyOptions);
+        getKeyPropertiesRes = await huks.getKeyItemProperties(decapSharedKeyAlias, baseKeyOptions);
         keyProperties = getKeyPropertiesRes.properties as huks.HuksParam[];
         expect(keyProperties.length).assertEqual(10);
         expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_ALGORITHM)).assertEqual(huks.HuksKeyAlg.HUKS_ALG_AES);
@@ -1221,7 +1221,7 @@ export default function SecurityHuksMlKemTest() {
         expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_KEY_FLAG)).assertEqual(huks.HuksKeyFlag.HUKS_KEY_FLAG_GENERATE_KEY);
         
         await huks.decapsulate(keyAlias, wrapParams.properties, encapResult.outData, decapSharedKeyAlias, sharedKeyParams.properties);
-        getKeyPropertiesRes = await huks.getKeyItemProperties(encapSharedKeyAlias, baseKeyOptions);
+        getKeyPropertiesRes = await huks.getKeyItemProperties(decapSharedKeyAlias, baseKeyOptions);
         keyProperties = getKeyPropertiesRes.properties as huks.HuksParam[];
         expect(keyProperties.length).assertEqual(10);
         expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_ALGORITHM)).assertEqual(huks.HuksKeyAlg.HUKS_ALG_AES);
@@ -1280,7 +1280,7 @@ export default function SecurityHuksMlKemTest() {
         expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_KEY_FLAG)).assertEqual(huks.HuksKeyFlag.HUKS_KEY_FLAG_GENERATE_KEY);
 
         await huks.decapsulate(keyAlias, wrapParams.properties, encapResult.outData, decapSharedKeyAlias, sharedKeyParams.properties);
-        getKeyPropertiesRes = await huks.getKeyItemProperties(encapSharedKeyAlias, baseKeyOptions);
+        getKeyPropertiesRes = await huks.getKeyItemProperties(decapSharedKeyAlias, baseKeyOptions);
         keyProperties = getKeyPropertiesRes.properties as huks.HuksParam[];
         expect(keyProperties.length).assertEqual(10);
         expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_ALGORITHM)).assertEqual(huks.HuksKeyAlg.HUKS_ALG_AES);
@@ -1340,7 +1340,7 @@ export default function SecurityHuksMlKemTest() {
         expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_KEY_FLAG)).assertEqual(huks.HuksKeyFlag.HUKS_KEY_FLAG_GENERATE_KEY);
 
         await huks.decapsulate(keyAlias, wrapParams.properties, encapResult.outData, decapSharedKeyAlias, sharedKeyParams.properties);
-        getKeyPropertiesRes = await huks.getKeyItemProperties(encapSharedKeyAlias, baseKeyOptions);
+        getKeyPropertiesRes = await huks.getKeyItemProperties(decapSharedKeyAlias, baseKeyOptions);
         keyProperties = getKeyPropertiesRes.properties as huks.HuksParam[];
         expect(keyProperties.length).assertEqual(12);
         expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_ALGORITHM)).assertEqual(huks.HuksKeyAlg.HUKS_ALG_AES);
@@ -1512,7 +1512,7 @@ export default function SecurityHuksMlKemTest() {
     /**
      * @tc.name   SUB_Security_HUKS_WrapKey_MLKEM_API26_Func_2400
      * @tc.number SUB_Security_HUKS_WrapKey_MLKEM_API26_Func_2400
-     * @tc.desc   Encapsulate with sharedKeyParams containing unsupported key type, expect error 12000018
+     * @tc.desc   Encapsulate with sharedKeyParams containing unsupported key type, expect error 12000003
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level   LEVEL3
@@ -1524,7 +1524,7 @@ export default function SecurityHuksMlKemTest() {
       let sharedKeyAlias: string = testNumber + "_shared";
       let generateKeyOptions = GetMlKemGenerateOptions(768);
       let wrapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
-      let wrongSharedKeyParams = GetRsaGenerateOptions(1024);
+      let wrongSharedKeyParams = SetParam(GetAesGenerateOptions(256), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_RSA);
 
       try {
         await huks.generateKeyItem(genKeyAlias, generateKeyOptions);
@@ -1532,7 +1532,7 @@ export default function SecurityHuksMlKemTest() {
         expect(null).assertFail();
       } catch (err) {
         Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
-        expect(err.code).assertEqual(12000018);
+        expect(err.code).assertEqual(12000003);
       }
     })
 
@@ -1551,8 +1551,7 @@ export default function SecurityHuksMlKemTest() {
       let sharedKeyAlias: string = testNumber + "_shared";
       let generateKeyOptions = GetMlKemGenerateOptions(768);
       let wrapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
-      let wrongSharedKeyParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_AES);
-      SetParam(wrongSharedKeyParams, huks.HuksTag.HUKS_TAG_KEY_SIZE, 128);
+      let wrongSharedKeyParams = SetParam(GetAesGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_SIZE, 128);
 
       try {
         await huks.generateKeyItem(genKeyAlias, generateKeyOptions);
@@ -1560,7 +1559,7 @@ export default function SecurityHuksMlKemTest() {
         expect(null).assertFail();
       } catch (err) {
         Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
-        expect(err.code).assertEqual(12000002);
+        expect(err.code).assertEqual(12000003);
       }
     })
 
@@ -1579,9 +1578,7 @@ export default function SecurityHuksMlKemTest() {
       let sharedKeyAlias: string = testNumber + "_shared";
       let generateKeyOptions = GetMlKemGenerateOptions(768);
       let wrapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
-      let wrongSharedKeyParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_AES);
-      SetParam(wrongSharedKeyParams, huks.HuksTag.HUKS_TAG_KEY_SIZE, 256);
-      SetParam(wrongSharedKeyParams, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN);
+      let wrongSharedKeyParams = SetParam(GetAesGenerateOptions(256), huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN);
 
       try {
         await huks.generateKeyItem(genKeyAlias, generateKeyOptions);
@@ -1624,7 +1621,7 @@ export default function SecurityHuksMlKemTest() {
     /**
      * @tc.name   SUB_Security_HUKS_WrapKey_MLKEM_API26_Func_2800
      * @tc.number SUB_Security_HUKS_WrapKey_MLKEM_API26_Func_2800
-     * @tc.desc   Encapsulate with sharedKeyParams missing key size, expect error 12000018
+     * @tc.desc   Encapsulate with sharedKeyParams missing key size, expect error 12000002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level   LEVEL3
@@ -1645,7 +1642,7 @@ export default function SecurityHuksMlKemTest() {
         expect(null).assertFail();
       } catch (err) {
         Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
-        expect(err.code).assertEqual(12000018);
+        expect(err.code).assertEqual(12000002);
       }
     })
 
@@ -1784,7 +1781,7 @@ export default function SecurityHuksMlKemTest() {
     /**
      * @tc.name   SUB_Security_HUKS_WrapKey_MLKEM_API26_Func_3400
      * @tc.number SUB_Security_HUKS_WrapKey_MLKEM_API26_Func_3400
-     * @tc.desc   Decapsulate with sharedKeyParams containing unsupported key type, expect error 12000018
+     * @tc.desc   Decapsulate with sharedKeyParams containing unsupported key type, expect error 12000003
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level   LEVEL3
@@ -1796,7 +1793,7 @@ export default function SecurityHuksMlKemTest() {
       let sharedKeyAlias: string = testNumber + "_shared";
       let generateKeyOptions = GetMlKemGenerateOptions(768);
       let wrapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
-      let wrongSharedKeyParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_RSA);
+      let wrongSharedKeyParams = SetParam(GetAesGenerateOptions(256), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_RSA);
 
       try {
         await huks.generateKeyItem(genKeyAlias, generateKeyOptions);
@@ -1805,7 +1802,7 @@ export default function SecurityHuksMlKemTest() {
         expect(null).assertFail();
       } catch (err) {
         Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
-        expect(err.code).assertEqual(12000018);
+        expect(err.code).assertEqual(12000003);
       }
     })
 
@@ -1824,8 +1821,7 @@ export default function SecurityHuksMlKemTest() {
       let sharedKeyAlias: string = testNumber + "_shared";
       let generateKeyOptions = GetMlKemGenerateOptions(768);
       let wrapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
-      let wrongSharedKeyParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_AES);
-      SetParam(wrongSharedKeyParams, huks.HuksTag.HUKS_TAG_KEY_SIZE, 128);
+      let wrongSharedKeyParams = SetParam(GetAesGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_SIZE, 128);
 
       try {
         await huks.generateKeyItem(genKeyAlias, generateKeyOptions);
@@ -1834,7 +1830,7 @@ export default function SecurityHuksMlKemTest() {
         expect(null).assertFail();
       } catch (err) {
         Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
-        expect(err.code).assertEqual(12000002);
+        expect(err.code).assertEqual(12000003);
       }
     })
 
@@ -1853,9 +1849,7 @@ export default function SecurityHuksMlKemTest() {
       let sharedKeyAlias: string = testNumber + "_shared";
       let generateKeyOptions = GetMlKemGenerateOptions(768);
       let wrapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
-      let wrongSharedKeyParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_AES);
-      SetParam(wrongSharedKeyParams, huks.HuksTag.HUKS_TAG_KEY_SIZE, 256);
-      SetParam(wrongSharedKeyParams, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN);
+      let wrongSharedKeyParams = SetParam(GetAesGenerateOptions(256), huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN);
 
       try {
         await huks.generateKeyItem(genKeyAlias, generateKeyOptions);
@@ -1900,7 +1894,7 @@ export default function SecurityHuksMlKemTest() {
     /**
      * @tc.name   SUB_Security_HUKS_WrapKey_MLKEM_API26_Func_3800
      * @tc.number SUB_Security_HUKS_WrapKey_MLKEM_API26_Func_3800
-     * @tc.desc   Decapsulate with sharedKeyParams missing key size, expect error 12000018
+     * @tc.desc   Decapsulate with sharedKeyParams missing key size, expect error 12000002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level   LEVEL3
@@ -1922,7 +1916,7 @@ export default function SecurityHuksMlKemTest() {
         expect(null).assertFail();
       } catch (err) {
         Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
-        expect(err.code).assertEqual(12000018);
+        expect(err.code).assertEqual(12000002);
       }
     })
 
