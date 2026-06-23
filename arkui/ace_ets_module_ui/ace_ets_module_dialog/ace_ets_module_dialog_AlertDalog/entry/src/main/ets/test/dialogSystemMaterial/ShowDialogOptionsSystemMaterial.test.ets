@@ -131,6 +131,7 @@ export default function ShowDialogOptionsSystemMaterialTest() {
 
       let titleText = await driver.findComponent(ON.text('ShowDialog SEMI_TRANSPARENT'));
       let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+      let dialog: ESObject = obj.$children[1]
       expect(dialog).not().assertUndefined();
       console.info('ShowDialogOptionsSystemMaterial_0300 Dialog SEMI_TRANSPARENT is visible');
 
