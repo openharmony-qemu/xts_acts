@@ -24,11 +24,11 @@ class Derived2 extends Base2 {}
 let x2: Base2 | string = new Base2
 const y2: Derived2 | string = 'just a test'
 
-let u3: number | string = 1 // ok
+let u3: number | string = 1
 
 let a4: '1' | '2' = '1'
 
-let u5: 'abc' | 'cde' | string // type of 'u' is string
+let u5: 'abc' | 'cde' | string
 
 let ab6: Array<'a'>|Array<'b'> = ['a', 'a', 'a']
 const a6: Array<'a'> = ['a', 'a']
@@ -39,13 +39,6 @@ class C7 {}
 let ac7: Array<A7>|Array<C7> = [new A7, new B7]
 let b7: Array<B7> = [new B7, new B7]
 
-class A8 {}
-class B8 extends A8 {}
-class C8 {}
-type FooA8 = (a8: A8) => B8
-type FooB8 = (b8: B8) => A8
-type FooC8 = () => C8
-let fooAB8: FooB8|FooC8 = (b8: B8): A8 => {return b8 as A8}
 
 enum Color9 { Red, Green, Blue }
 type WithEnum9 = Color9|String|Number
@@ -68,37 +61,23 @@ let cdf11: C11|D11|F11 = new F11
 
 class A12 {}
 class B12 {}
-class E12 {}
 class C12 extends A12 {}
 class D12 extends B12 {}
 class F12 extends D12 {}
 let cdf12: C12|D12|F12 = new F12
 
-
-
 export default function SubtypingForUnionTypesTest(): void {
   describe('SubtypingForUnionTypesTest', () => {
-    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
     })
     
     beforeEach(() => {
-      // Presets an action, which is performed before each unit test case starts.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: preset action function.
     })
     
     afterEach(() => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
     })
     
     afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
     })
 
     /**
@@ -116,7 +95,7 @@ export default function SubtypingForUnionTypesTest(): void {
       a1 = 'abc'
       b1 = 42
       expect(a1 instanceof String).assertTrue()
-      a1 = b1 // OK, u2 is wider
+      a1 = b1
       expect(a1 instanceof Number).assertTrue()
     });
 
@@ -134,7 +113,7 @@ export default function SubtypingForUnionTypesTest(): void {
 
       x2 = new Base2
       expect(x2 instanceof Base2).assertTrue()
-      x2 = y2 // OK, Derived is subtype of Base
+      x2 = y2
       expect(x2 instanceof String).assertTrue()
     });
 
@@ -148,9 +127,9 @@ export default function SubtypingForUnionTypesTest(): void {
      */
     it("testPositive0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
-      u3 = 'aa' // ok
+      u3 = 'aa'
       expect(u3 instanceof String).assertTrue()
-      u3 = 1 // ok, int is converted to number
+      u3 = 1
       expect(u3 instanceof Number).assertTrue()
     });
 
@@ -165,7 +144,7 @@ export default function SubtypingForUnionTypesTest(): void {
     it("testPositive0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       expect(a4 instanceof String).assertTrue()
-      let b4: string = a4 // ok, literals fit type 'string'
+      let b4: string = a4
       expect(b4 instanceof String).assertTrue()
     });
 
