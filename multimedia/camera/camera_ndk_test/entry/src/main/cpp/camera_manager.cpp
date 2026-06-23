@@ -3547,7 +3547,7 @@ Camera_ErrorCode NDKCamera::GetCameraDevices(int useCaseCode)
     if (isDeviceQueryInfoInvalid_) {
         deviceQueryInfo_ = new Camera_DeviceQueryInfo;
         deviceQueryInfo_->cameraPosition = CAMERA_POSITION_UNSPECIFIED;
-        deviceQueryInfo_->connectionType = CAMERA_CONNECTION_BUILT_IN;
+        deviceQueryInfo_->connectionType = static_cast<Camera_Connection>(-1);
         deviceQueryInfo_->cameraTypeSize = 0;
         Camera_Type* types = new Camera_Type[1];
         types[0] = CAMERA_TYPE_DEFAULT;

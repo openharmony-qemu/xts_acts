@@ -432,7 +432,7 @@ napi_value captureGetSupportedFullCameraOutputCapabilityWithSceneMode(napi_env e
     int32_t index;
     napi_get_value_int32(env, args[0], &index);
     Camera_ErrorCode result;
-    Camera_OutputCapability **cameraOutputCapability;
+    Camera_OutputCapability *cameraOutputCapability = nullptr;
     uint32_t cameraSize = 0;
     Camera_Type type = CAMERA_TYPE_DEFAULT;
     Camera_Device *cameras = nullptr;
@@ -453,7 +453,7 @@ napi_value captureGetSupportedFullCameraOutputCapabilityWithSceneMode(napi_env e
             break;
         };
         result = OH_CameraManager_GetSupportedFullCameraOutputCapabilityWithSceneMode(
-            cameraManager, cameras, NORMAL_PHOTO, cameraOutputCapability);
+            cameraManager, cameras, NORMAL_PHOTO, &cameraOutputCapability);
         break;
     case CASE_INDEX_2:
         if (cameraManager == nullptr || cameras == nullptr) {
@@ -461,7 +461,7 @@ napi_value captureGetSupportedFullCameraOutputCapabilityWithSceneMode(napi_env e
             break;
         };
         result = OH_CameraManager_GetSupportedFullCameraOutputCapabilityWithSceneMode(
-            cameraManager, cameras, NORMAL_VIDEO, cameraOutputCapability);
+            cameraManager, cameras, NORMAL_VIDEO, &cameraOutputCapability);
         break;
     case CASE_INDEX_3:
         if (cameraManager == nullptr || cameras == nullptr) {
@@ -469,19 +469,19 @@ napi_value captureGetSupportedFullCameraOutputCapabilityWithSceneMode(napi_env e
             break;
         };
         result = OH_CameraManager_GetSupportedFullCameraOutputCapabilityWithSceneMode(
-            cameraManager, cameras, SECURE_PHOTO, cameraOutputCapability);
+            cameraManager, cameras, SECURE_PHOTO, &cameraOutputCapability);
         break;
     case CASE_INDEX_4:
         result = OH_CameraManager_GetSupportedFullCameraOutputCapabilityWithSceneMode(
-            cameraManager, nullptr, NORMAL_PHOTO, cameraOutputCapability);
+            cameraManager, nullptr, NORMAL_PHOTO, &cameraOutputCapability);
         break;
     case CASE_INDEX_5:
         result = OH_CameraManager_GetSupportedFullCameraOutputCapabilityWithSceneMode(
-            cameraManager, nullptr, NORMAL_VIDEO, cameraOutputCapability);
+            cameraManager, nullptr, NORMAL_VIDEO, &cameraOutputCapability);
         break;
     case CASE_INDEX_6:
         result = OH_CameraManager_GetSupportedFullCameraOutputCapabilityWithSceneMode(
-            cameraManager, nullptr, SECURE_PHOTO, cameraOutputCapability);
+            cameraManager, nullptr, SECURE_PHOTO, &cameraOutputCapability);
         break;
     default:
         break;
