@@ -21,7 +21,7 @@
             "run-command": [
                 "sh -c 'if [ $$(param get const.product.devicetype) = 2in1 ]; then param set const.dlp.functiontypes 1; fi'",
                 "wait 2",
-                "sh -c 'if [ $(param get const.product.devicetype) = 2in1 ]; then pkill dlp_credential; fi'"
+                "sh -c 'if [ $$(param get const.product.devicetype) = 2in1 ]; then pkill dlp_credential; fi'"
             ],
             "teardown-command": [
                 "reboot"
