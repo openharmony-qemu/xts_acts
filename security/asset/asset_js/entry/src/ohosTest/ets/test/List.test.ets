@@ -23,6 +23,8 @@ import AssetBatchAddTest from './AssetBatchAdd.test';
 import AssetBatchRemoveTest from './AssetBatchRemove.test';
 import AssetBatchUpdateTest from './AssetBatchUpdate.test';
 import AssetApiCoverEnumTest from './AssetApiCoverEnum.test';
+import AssetApiCoverParamSpecTest from './AssetApiCoverParamSpec.test';
+import AssetApiCoverErrorCodeTest from './AssetApiCoverErrorCode.test';
 
 export default function testsuite() {
 
@@ -36,4 +38,6 @@ export default function testsuite() {
   AssetBatchRemoveTest();
   AssetBatchUpdateTest();
   AssetApiCoverEnumTest();
+  AssetApiCoverParamSpecTest();
+  AssetApiCoverErrorCodeTest();
 }
