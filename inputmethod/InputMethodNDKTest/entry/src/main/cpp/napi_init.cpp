@@ -1267,6 +1267,102 @@ static napi_value SUB_IMF_NDK_TextConfig_SetPlaceholder_0400(napi_env env, napi_
     return result;
 }
 
+static napi_value SUB_IMF_NDK_TextConfig_SetConsumeKeyEvents_0100(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextConfig *config = OH_TextConfig_Create();
+    bool consumeKeyEvents = false;
+    InputMethod_ErrorCode returnValue = OH_TextConfig_SetConsumeKeyEvents(config, consumeKeyEvents);
+    if (returnValue != InputMethod_ErrorCode::IME_ERR_OK) {
+        napi_value result = nullptr;
+        NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>OH_TextConfig_SetConsumeKeyEvents fail.");
+        return result;
+    }
+    bool actConsumeKeyEvents = true;
+    returnValue = OH_TextConfig_GetConsumeKeyEvents(config, &actConsumeKeyEvents);
+    if (returnValue != InputMethod_ErrorCode::IME_ERR_OK) {
+        napi_value result = nullptr;
+        NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>OH_TextConfig_GetConsumeKeyEvents fail.");
+        return result;
+    }
+    if (actConsumeKeyEvents != consumeKeyEvents) {
+        napi_value result = nullptr;
+        NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>OH_InputMethodProxy_SendPrivateCommand fail.");
+        return result;
+    }
+    OH_TextConfig_Destroy(config);
+    napi_value result = nullptr;
+    NAPI_CALL(env, napi_create_string_utf8(env, "OK", NAPI_AUTO_LENGTH, &result));
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>SUB_IMF_NDK_TextConfig_SetConsumeKeyEvents_0100 successful.");
+    return result;
+}
+
+static napi_value SUB_IMF_NDK_TextConfig_SetConsumeKeyEvents_0200(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextConfig *config = OH_TextConfig_Create();
+    bool consumeKeyEvents = true;
+    InputMethod_ErrorCode returnValue = OH_TextConfig_SetConsumeKeyEvents(config, consumeKeyEvents);
+    if (returnValue != InputMethod_ErrorCode::IME_ERR_OK) {
+        napi_value result = nullptr;
+        NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>OH_TextConfig_SetConsumeKeyEvents fail.");
+        return result;
+    }
+    bool actConsumeKeyEvents = false;
+    returnValue = OH_TextConfig_GetConsumeKeyEvents(config, &actConsumeKeyEvents);
+    if (returnValue != InputMethod_ErrorCode::IME_ERR_OK) {
+        napi_value result = nullptr;
+        NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>OH_TextConfig_GetConsumeKeyEvents fail.");
+        return result;
+    }
+    if (actConsumeKeyEvents != consumeKeyEvents) {
+        napi_value result = nullptr;
+        NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>OH_InputMethodProxy_SendPrivateCommand fail.");
+        return result;
+    }
+    OH_TextConfig_Destroy(config);
+    napi_value result = nullptr;
+    NAPI_CALL(env, napi_create_string_utf8(env, "OK", NAPI_AUTO_LENGTH, &result));
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>SUB_IMF_NDK_TextConfig_SetConsumeKeyEvents_0200 successful.");
+    return result;
+}
+
+static napi_value SUB_IMF_NDK_TextConfig_SetConsumeKeyEvents_0300(napi_env env, napi_callback_info info)
+{
+    bool consumeKeyEvents = true;
+    InputMethod_ErrorCode returnValue = OH_TextConfig_SetConsumeKeyEvents(NULL, consumeKeyEvents);
+    if (returnValue == InputMethod_ErrorCode::IME_ERR_NULL_POINTER) {
+        napi_value result = nullptr;
+        NAPI_CALL(env, napi_create_string_utf8(env, "OK", NAPI_AUTO_LENGTH, &result));
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>OH_TextConfig_SetConsumeKeyEvents successful.");
+        return result;
+    }
+    napi_value result = nullptr;
+    NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>SUB_IMF_NDK_TextConfig_SetConsumeKeyEvents_0300 successful.");
+    return result;
+}
+
+static napi_value SUB_IMF_NDK_TextConfig_GetConsumeKeyEvents_0400(napi_env env, napi_callback_info info)
+{
+    bool consumeKeyEvents = true;
+    InputMethod_ErrorCode returnValue = OH_TextConfig_GetConsumeKeyEvents(NULL, &consumeKeyEvents);
+    if (returnValue == InputMethod_ErrorCode::IME_ERR_NULL_POINTER) {
+        napi_value result = nullptr;
+        NAPI_CALL(env, napi_create_string_utf8(env, "OK", NAPI_AUTO_LENGTH, &result));
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>OH_TextConfig_GetConsumeKeyEvents successful.");
+        return result;
+    }
+    napi_value result = nullptr;
+    NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>SUB_IMF_NDK_TextConfig_GetConsumeKeyEvents_0400 successful.");
+    return result;
+}
+
 
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
@@ -1338,6 +1434,14 @@ static napi_value Init(napi_env env, napi_value exports)
          SUB_IMF_NDK_TextConfig_SetPlaceholder_0300, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"SUB_IMF_NDK_TextConfig_SetPlaceholder_0400", nullptr,
          SUB_IMF_NDK_TextConfig_SetPlaceholder_0400, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"SUB_IMF_NDK_TextConfig_SetConsumeKeyEvents_0100", nullptr,
+         SUB_IMF_NDK_TextConfig_SetConsumeKeyEvents_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"SUB_IMF_NDK_TextConfig_SetConsumeKeyEvents_0200", nullptr,
+         SUB_IMF_NDK_TextConfig_SetConsumeKeyEvents_0200, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"SUB_IMF_NDK_TextConfig_SetConsumeKeyEvents_0300", nullptr,
+         SUB_IMF_NDK_TextConfig_SetConsumeKeyEvents_0300, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"SUB_IMF_NDK_TextConfig_GetConsumeKeyEvents_0400", nullptr,
+         SUB_IMF_NDK_TextConfig_GetConsumeKeyEvents_0400, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"SUB_IMF_NDK_InputMethod_ErrorCode_0100", nullptr,
          SUB_IMF_NDK_InputMethod_ErrorCode_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"SUB_IMF_NDK_InputMethodController_AttachWithUIContext_0100", nullptr,
