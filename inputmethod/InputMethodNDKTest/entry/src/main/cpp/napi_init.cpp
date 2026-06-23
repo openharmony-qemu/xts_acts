@@ -1289,7 +1289,7 @@ static napi_value SUB_IMF_NDK_TextConfig_SetConsumeKeyEvents_0100(napi_env env, 
     if (actConsumeKeyEvents != consumeKeyEvents) {
         napi_value result = nullptr;
         NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
-        OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>OH_InputMethodProxy_SendPrivateCommand fail.");
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>SetConsumeKeyEvents/GetConsumeKeyEvents fail.");
         return result;
     }
     OH_TextConfig_Destroy(config);
@@ -1321,7 +1321,7 @@ static napi_value SUB_IMF_NDK_TextConfig_SetConsumeKeyEvents_0200(napi_env env, 
     if (actConsumeKeyEvents != consumeKeyEvents) {
         napi_value result = nullptr;
         NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
-        OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>OH_InputMethodProxy_SendPrivateCommand fail.");
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>SetConsumeKeyEvents/GetConsumeKeyEvents fail.");
         return result;
     }
     OH_TextConfig_Destroy(config);
