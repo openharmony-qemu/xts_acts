@@ -55,7 +55,7 @@ export default class OpenHarmonyTestRunner implements TestRunner {
         }
 
         const bundleName = abilityDelegatorArguments.bundleName;
-        var testAbilityName = bundleName + '.TestAbility'
+        let testAbilityName = bundleName + '.TestAbility'
         let lMonitor = {
             abilityName: testAbilityName,
             onAbilityCreate: onAbilityCreateCallback,
@@ -63,11 +63,11 @@ export default class OpenHarmonyTestRunner implements TestRunner {
         abilityDelegator.addAbilityMonitor(lMonitor, addAbilityMonitorCallback)
 
         let cmdArgs: string[] = ['aa', 'start', '-d', '0', '-a', 'TestAbility', '-b', bundleName];
-        var debug = abilityDelegatorArguments.parameters['-D']
+        let debug = abilityDelegatorArguments.parameters['-D']
         if (debug == 'true') {
             cmdArgs.push('-D');
         }
-        var user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+        let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
         if (user !== undefined && user !== null) {
             cmdArgs.push('-u', String(user));
         }
