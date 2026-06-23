@@ -13,11 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import uiMaterial from '@ohos.arkui.uiMaterial'
 import {
-  Entry, Text, Column, Component, Tabs, TabContent, BarPosition, Color,
-  Divider, Scroll, FloatingTabBarStyle
+  Entry, 
+  Text, 
+  Column, 
+  Component, 
+  Tabs, 
+  TabContent, 
+  BarPosition, 
+  Color, 
+  BarMode,
+  Divider, 
+  Scroll, 
+  FloatingTabBarStyle, 
+  LayoutSafeAreaType, 
+  LayoutSafeAreaEdge
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 
@@ -47,7 +58,7 @@ struct SystemMaterialTabsBarStylePage {
         .ignoreLayoutSafeArea([LayoutSafeAreaType.SYSTEM], [LayoutSafeAreaEdge.TOP, LayoutSafeAreaEdge.BOTTOM])
         .barFloatingStyle({
           barWidth: {
-            smallBarWidth:50, mediumBarWidth:100, largeBarWidth:200
+            smallBarWidth:100, mediumBarWidth:150, largeBarWidth:200
           },
           barSideMargin: 80,
           barBottomMargin: 50,
@@ -84,9 +95,6 @@ struct SystemMaterialTabsBarStylePage {
           TabContent() {
             Column().width('100%').height('100%').backgroundColor(Color.Orange)
           }.tabBar('Orange')
-          TabContent() {
-            Column().width('100%').height('100%').backgroundColor(Color.Pink)
-          }.tabBar('Pink')
         }
         .id('tabs_systemMaterial_ultra_thin')
         .barFloatingStyle({
@@ -114,9 +122,6 @@ struct SystemMaterialTabsBarStylePage {
           TabContent() {
             Column().width('100%').height('100%').backgroundColor(Color.Orange)
           }.tabBar('Orange')
-          TabContent() {
-            Column().width('100%').height('100%').backgroundColor(Color.Pink)
-          }.tabBar('Pink')
         }
         .id('tabs_systemMaterial_regular')
         .barFloatingStyle({
@@ -145,9 +150,6 @@ struct SystemMaterialTabsBarStylePage {
           TabContent() {
             Column().width('100%').height('100%').backgroundColor(Color.Orange)
           }.tabBar('Orange')
-          TabContent() {
-            Column().width('100%').height('100%').backgroundColor(Color.Pink)
-          }.tabBar('Pink')
         }
         .id('tabs_adapt_systemMaterial_true')
         .barFloatingStyle({
@@ -176,9 +178,6 @@ struct SystemMaterialTabsBarStylePage {
           TabContent() {
             Column().width('100%').height('100%').backgroundColor(Color.Orange)
           }.tabBar('Orange')
-          TabContent() {
-            Column().width('100%').height('100%').backgroundColor(Color.Pink)
-          }.tabBar('Pink')
         }
         .id('tabs_systemMaterial_barWidth')
         .barFloatingStyle({

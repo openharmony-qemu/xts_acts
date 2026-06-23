@@ -18,7 +18,6 @@ import { Color } from '@ohos.arkui.component'
 import uiMaterial from '@ohos.arkui.uiMaterial'
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import Utils from '../../../ets/MainAbility/common/Utils';
 import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import hilog from '@ohos.hilog'

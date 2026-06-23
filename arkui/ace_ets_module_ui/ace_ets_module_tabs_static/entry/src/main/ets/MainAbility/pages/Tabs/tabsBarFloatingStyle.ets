@@ -13,10 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import {
-  Entry, Text, Column, Component, Tabs, TabContent, BarPosition, Color,
-  Divider, Scroll, FloatingTabBarStyle
+  Entry, 
+  Text, 
+  Column, 
+  Component, 
+  Tabs, 
+  TabContent, 
+  BarPosition, 
+  Color,
+  Divider, 
+  Scroll, 
+  FloatingTabBarStyle
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 

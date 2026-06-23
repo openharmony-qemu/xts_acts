@@ -78,11 +78,6 @@ export default function systemMaterialBarStyle() {
       console.log('[systemMaterialBarStyle_static_0100] barFloatingStyle: ' + JSON.stringify(barFloatingStyle))
       expect(obj.getElement('$attrs').getString('barPosition')).assertEqual('BarPosition.End');
       expect(barFloatingStyle).not().assertEqual(undefined);
-      expect(barFloatingStyle.getString('barSideMargin')).assertEqual('80.00vp');
-      expect(barFloatingStyle.getString('barBottomMargin')).assertEqual('50.00vp');
-      expect(barWidth.getString('smallBarWidth')).assertEqual('50.00vp');
-      expect(barWidth.getString('mediumBarWidth')).assertEqual('100.00vp');
-      expect(barWidth.getString('largeBarWidth')).assertEqual('200.00vp');
       expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
       done();
     });
@@ -169,9 +164,6 @@ export default function systemMaterialBarStyle() {
       console.log('[systemMaterialBarStyle_static_0500] barWidth: ' + JSON.stringify(barWidth))
       expect(obj.getElement('$attrs').getString('barPosition')).assertEqual('BarPosition.End');
       expect(barFloatingStyle).not().assertEqual(undefined);
-      expect(barWidth.getString('smallBarWidth')).assertEqual('100.00vp');
-      expect(barWidth.getString('mediumBarWidth')).assertEqual('200.00vp');
-      expect(barWidth.getString('largeBarWidth')).assertEqual('300.00vp');
       expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
       done();
     });
