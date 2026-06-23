@@ -112,7 +112,6 @@ export default function FontPart4(): void {
           expect(path !== null && path !== undefined).assertTrue();
           console.info(msg + ' getTextPathWithFallback success');
           let pathLength = path.getLength(false);
-          let pathLength = path.getLength(false);
           console.info(msg + ' getLength success, pathLength:' + pathLength);
           expect(Math.abs(pathLength - 195.50) < 0.01).assertTrue();
           let lastPoint = path.getLastPoint();
