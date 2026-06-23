@@ -193,7 +193,7 @@ export default function cameraJSUnitOutput() {
     });
     afterAll(() => {
       closeFd();
-      cameraObj.releaseCamera();
+      cameraObj.releaseCamera()
       console.info(TAG + 'afterAll case');
     });
     /**
