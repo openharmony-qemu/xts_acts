@@ -48,5 +48,10 @@ struct MonitorValueTest {
         .height('5%')
         .id('monitor_path3')
     }
+    .width('100%')
+    .height('100%')
+    .padding(5)
+    .margin(5)
+    .justifyContent(FlexAlign.Center)
   }
 }
