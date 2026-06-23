@@ -13,34 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Component,
-  $r,
-  Margin,
-  Column,
-  Button,
-  ColumnOptions,
-  Text,
-  HorizontalAlign,
-  Color,
-  Line,
-  Swiper,
-  Scroll,
-  List,
-  Grid,
-  Flex,
-  Image,
-  Checkbox,
-  ForEach,
-  ColumnOptions,
-  TouchEvent,
-  TouchType,
-} from '@ohos.arkui.component';
+import { Entry, Component, $r, Margin, Column, Button, ColumnOptions, Text, HorizontalAlign, Color, Line, Swiper, Scroll, List, Grid, Flex, Image, Checkbox, ForEach, TouchEvent, TouchType } from '@ohos.arkui.component';
 import { MessageManager, Callback } from '../../common/MessageManager';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-
 @Entry
 @Component
 struct RollAngleExample {

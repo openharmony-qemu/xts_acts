@@ -13,32 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { LengthMetrics } from '@ohos.arkui.node'
-import {
-  Entry,
-  MutableStyledString,
-  ColorFilter,
-  ClickEvent,
-  Component,
-  RichEditor,
-  Column,
-  Text,
-  ImageSpan,
-  Visibility,
-  $r,
-  FlexAlign,
-  HorizontalAlign,
-  RichEditorStyledStringController,
-  RichEditorStyledStringOptions,
-  ColumnOptions,
-  ImageAttachment,
-  Button,
-  Row,
-  Margin,
-  TextController,
-  Image,
-  Component
-} from '@ohos.arkui.component';
+import { LengthMetrics } from '@ohos.arkui.node';
+import { Entry, MutableStyledString, ColorFilter, ClickEvent, Component, RichEditor, Column, Text, ImageSpan, Visibility, $r, FlexAlign, HorizontalAlign, RichEditorStyledStringController, RichEditorStyledStringOptions, ColumnOptions, ImageAttachment, Button, Row, Margin, TextController, Image } from '@ohos.arkui.component';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 @Entry

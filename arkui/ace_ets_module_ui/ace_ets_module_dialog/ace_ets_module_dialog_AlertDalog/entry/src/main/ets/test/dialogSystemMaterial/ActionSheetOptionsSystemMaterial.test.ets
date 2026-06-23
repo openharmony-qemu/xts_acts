@@ -60,11 +60,11 @@ export default function ActionSheetOptionsSystemMaterialTest() {
       await CommonFunc.sleep(1000);
 
       let titleText = await driver.findComponent(ON.text('ActionSheet Undefined'));
-      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-      let dialog: ESObject = obj.$children[1]
-      let date = JSON.stringify(obj.$children[1].$children[0])
-      console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
+      let materialType = Utils.getDialogSystemMaterialType('ActionSheetOptionsSystemMaterial_0100');
+
+      console.info('[ActionSheetOptionsSystemMaterial_0100] materialType=' + materialType);
+
+      expect(materialType).assertEqual('MaterialType.IMMERSIVE');
       console.info('ActionSheetOptionsSystemMaterial_0100 Sheet title is visible');
 
       await CommonFunc.sleep(500);
@@ -93,11 +93,11 @@ export default function ActionSheetOptionsSystemMaterialTest() {
       await CommonFunc.sleep(1000);
 
       let titleText = await driver.findComponent(ON.text('ActionSheet HDS THICK'));
-      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-      let dialog: ESObject = obj.$children[1]
-      let date = JSON.stringify(obj.$children[1].$children[0])
-      console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
+      let materialType = Utils.getDialogSystemMaterialType('ActionSheetOptionsSystemMaterial_0200');
+
+      console.info('[ActionSheetOptionsSystemMaterial_0200] materialType=' + materialType);
+
+      expect(materialType).assertEqual('MaterialType.IMMERSIVE');
       console.info('ActionSheetOptionsSystemMaterial_0200 Sheet title is visible');
 
       await CommonFunc.sleep(500);
@@ -126,11 +126,11 @@ export default function ActionSheetOptionsSystemMaterialTest() {
       await CommonFunc.sleep(1000);
 
       let titleText = await driver.findComponent(ON.text('ActionSheet SEMI_TRANSPARENT'));
-      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-      let dialog: ESObject = obj.$children[1];
-      let date = JSON.stringify(obj.$children[1].$children[0]);
-      console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type));
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.SEMI_TRANSPARENT');
+      let materialType = Utils.getDialogSystemMaterialType('ActionSheetOptionsSystemMaterial_0300');
+
+      console.info('[ActionSheetOptionsSystemMaterial_0300] materialType=' + materialType);
+
+      expect(materialType).assertEqual('MaterialType.SEMI_TRANSPARENT');
       console.info('ActionSheetOptionsSystemMaterial_0300 Sheet title is visible');
 
       await CommonFunc.sleep(500);
@@ -159,11 +159,11 @@ export default function ActionSheetOptionsSystemMaterialTest() {
       await CommonFunc.sleep(1000);
 
       let titleText = await driver.findComponent(ON.text('ActionSheet Immersive THICK'));
-      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-      let dialog: ESObject = obj.$children[1]
-      let date = JSON.stringify(obj.$children[1].$children[0])
-      console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
+      let materialType = Utils.getDialogSystemMaterialType('ActionSheetOptionsSystemMaterial_0400');
+
+      console.info('[ActionSheetOptionsSystemMaterial_0400] materialType=' + materialType);
+
+      expect(materialType).assertEqual('MaterialType.IMMERSIVE');
       console.info('ActionSheetOptionsSystemMaterial_0400 Sheet title is visible');
 
       await CommonFunc.sleep(500);
@@ -192,11 +192,11 @@ export default function ActionSheetOptionsSystemMaterialTest() {
       await CommonFunc.sleep(1000);
 
       let titleText = await driver.findComponent(ON.text('ActionSheet Immersive ULTRA_THIN'));
-      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-      let dialog: ESObject = obj.$children[1]
-      let date = JSON.stringify(obj.$children[1].$children[0])
-      console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
+      let materialType = Utils.getDialogSystemMaterialType('ActionSheetOptionsSystemMaterial_0500');
+
+      console.info('[ActionSheetOptionsSystemMaterial_0500] materialType=' + materialType);
+
+      expect(materialType).assertEqual('MaterialType.IMMERSIVE');
       console.info('ActionSheetOptionsSystemMaterial_0500 Sheet title is visible');
 
       await CommonFunc.sleep(500);
@@ -225,11 +225,11 @@ export default function ActionSheetOptionsSystemMaterialTest() {
       await CommonFunc.sleep(1000);
 
       let titleText = await driver.findComponent(ON.text('ActionSheet NONE'));
-      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-      let dialog: ESObject = obj.$children[1]
-      let date = JSON.stringify(obj.$children[1].$children[0])
-      console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+      let materialType = Utils.getDialogSystemMaterialType('ActionSheetOptionsSystemMaterial_0600');
+
+      console.info('[ActionSheetOptionsSystemMaterial_0600] materialType=' + materialType);
+
+      expect(materialType).assertEqual('MaterialType.NONE');
       console.info('ActionSheetOptionsSystemMaterial_0600 Sheet title is visible');
 
       await CommonFunc.sleep(500);

@@ -13,10 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Component, Column, Color, ColumnOptions, Grid, GridItem, Text, TextAlign, Text } from '@ohos.arkui.component'
+import { Entry, Component, Column, Color, ColumnOptions, Grid, GridItem, Text, TextAlign } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { MessageManager, Callback, Message } from '../../../common/MessageManager';
-
 @Entry
 @Component
 struct OnlyRowsTemplate2 {

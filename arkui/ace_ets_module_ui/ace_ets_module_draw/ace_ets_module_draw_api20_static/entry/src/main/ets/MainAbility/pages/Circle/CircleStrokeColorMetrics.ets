@@ -15,23 +15,9 @@
  * limitations under the License.
  */
 
-import {
-  $r,
-  Button,
-  ClickEvent,
-  Color,Circle,
-  Column,Text,
-  ColumnOptions,
-  Component,
-  Entry,RowOptions,
-  Resource,ResourceColor,
-  Row,FlexAlign,
-  Text,RowOptions,
-  Bindable,
-} from '@ohos.arkui.component';
+import { $r, Button, ClickEvent, Color, Circle, Column, Text, ColumnOptions, Component, Entry, RowOptions, Resource, ResourceColor, Row, FlexAlign, Bindable } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
-import { ColorMetrics,ColorSpace } from '@kit.ArkUI';
-
+import { ColorMetrics, ColorSpace } from '@kit.ArkUI';
 type ColorChannel = 'Red' | 'Green' | 'Blue' | 'White';
 
 @Entry

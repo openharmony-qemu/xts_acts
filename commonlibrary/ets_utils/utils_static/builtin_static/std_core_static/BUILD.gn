@@ -22,6 +22,7 @@ group("std_core_static") {
       "enum_standard_test_static:ActsEnumStaticTest",
       "reflect_standard_test_static:ActsReflectStaticTest",
       "array_case_standard_test_static:ActsArrayCaseStaticTest",
+      "array2_case_standard_test_static:ActsArrayCaseStaticTest2",
       "array_buffer_standard_test_static:ActsArrayBufferStaticTest",
       "error_standard_test_static:ActsErrorCaseStaticTest",
       "errorhandler_standard_test_static:ActsErrorHandlerStaticTest",
@@ -51,6 +52,7 @@ group("std_core_static") {
       "math_standard_test_static:ActsMathCaseStaticTest",
       "map_standard_test_static:ActsMapCaseStaticTest",
       "blockingqueue_standard_test_static:ActsBlockingqueueCaseStaticTest",
+      "box_test_static:ActsBoxStaticTest",
     ]
   }
 }

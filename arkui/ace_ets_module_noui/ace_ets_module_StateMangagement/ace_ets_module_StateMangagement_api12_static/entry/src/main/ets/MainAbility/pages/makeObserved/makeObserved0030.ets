@@ -13,27 +13,8 @@
  //  * See the License for the specific language governing permissions and
  //  * limitations under the License.
  //  */
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  ForEach,
-  Text,
-  Row,
-  List,
-  ListItem,
-  Color,Scroller,Divider,Flex,
-  FlexAlign,ComponentV2,HorizontalAlign
-} from '@ohos.arkui.component'
-import {
-  State,
-  Watch,
-  Link,Local,Trace,Track,PropRef,
-  StorageLink,LocalStorage,UIUtils,Observed,ObservedV2,Trace
-} from '@ohos.arkui.stateManagement'
-
+import { Entry, Column, Component, Button, ClickEvent, ForEach, Text, Row, List, ListItem, Color, Scroller, Divider, Flex, FlexAlign, ComponentV2, HorizontalAlign } from '@ohos.arkui.component';
+import { State, Watch, Link, Local, Trace, Track, PropRef, StorageLink, LocalStorage, UIUtils, Observed, ObservedV2 } from '@ohos.arkui.stateManagement';
 @ObservedV2
 export class Info {
   @Trace

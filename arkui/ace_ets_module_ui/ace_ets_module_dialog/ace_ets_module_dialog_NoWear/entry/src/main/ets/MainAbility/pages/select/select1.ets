@@ -57,7 +57,7 @@ struct select1 {
         .fontColor(this.fontColor)
         .selectedOptionFont({ size: 40, weight: 500, family: 'serif', style: FontStyle.Normal })
         .optionFont({ size: 30, weight: 400, family: 'serif', style: FontStyle.Normal })
-        .key('select')
+        .key('select1_select')
         .onSelect((index: number) => {
           console.info("Select:" + index)
         })

@@ -16,37 +16,8 @@
 import GlobalContext from './../../common/GlobalContext';
 import { ValueT } from './../../common/Value';
 import { MessageManager, Callback, Message } from './../../common/MessageManager';
-import {
-  Entry,
-  Text,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  Scroller,
-  Scroll,
-  ForEach,
-  Search,
-  Color,
-  EdgeEffect,
-  ColumnOptions,
-  BarState,
-  GridDirection,
-  Row,
-  Grid,
-  ForEach,
-  GridItem,
-  ItemDragInfo,
-  ScrollState,
-  OnScrollFrameBeginHandlerResult,
-  TextAlign,
-  Margin,
-  ScrollState
-} from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
-
-
-
+import { Entry, Text, Column, Component, Button, ClickEvent, Scroller, Scroll, ForEach, Search, Color, EdgeEffect, ColumnOptions, BarState, GridDirection, Row, Grid, GridItem, ItemDragInfo, ScrollState, OnScrollFrameBeginHandlerResult, TextAlign, Margin } from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct GridPage {

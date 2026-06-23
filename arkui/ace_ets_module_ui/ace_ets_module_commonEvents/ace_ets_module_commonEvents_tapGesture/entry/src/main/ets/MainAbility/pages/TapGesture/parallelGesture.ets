@@ -41,7 +41,7 @@ struct GestureSettingsExample {
           }
         })
       )
-        .key('tapGesture')
+        .key('parallelGesture_tapGesture')
     }
     .key('parallelGesture')
     .height(200)

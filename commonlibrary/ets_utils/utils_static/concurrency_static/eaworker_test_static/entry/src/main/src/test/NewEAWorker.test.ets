@@ -13,22 +13,8 @@
  * limitations under the License.
  */
 
-import {
-  afterAll,
-  afterEach,
-  beforeAll,
-  beforeEach,
-  describe,
-  it,
-  expect,
-  TestType,
-  Size,
-  Level,
-  beforeAll
-} from "../../../hypium/index";
-import Utils from './Util.test';
-import {quitErrorMsg} from './Util.test';
-
+import { afterAll, afterEach, beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from '../../../hypium/index';
+import Utils, { quitErrorMsg } from './Util.test';
 class MessageObject {
   id: number
 

@@ -15,45 +15,8 @@
  */
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import hilog from '@ohos.hilog';
-import {
-  Entry,
-  Component,
-  SwiperController,
-  Column,
-  Text,
-  ForEach,
-  Margin,
-  IDataSource,
-  DataChangeListener,
-  DotIndicator,
-  ColumnOptions,
-  Swiper,
-  TextAlign,
-  Color,
-  EdgeEffect,
-  Visibility,
-  ClickEvent,
-  SwiperDisplayMode,
-  SwiperAnimationEvent,
-  Row,
-  RowOptions,
-  Button,
-  Curve,
-  SwiperAnimationEvent,
-  HorizontalAlign,
-  ArrowStyle,
-  SwiperAutoFill,
-  Padding,
-  Indicator,
-  FontWeight,
-  Flex,
-  FlexAlign,
-  List,
-  ListItem,
-  $r
-} from '@ohos.arkui.component';
+import { Entry, Component, SwiperController, Column, Text, ForEach, Margin, IDataSource, DataChangeListener, DotIndicator, ColumnOptions, Swiper, TextAlign, Color, EdgeEffect, Visibility, ClickEvent, SwiperDisplayMode, SwiperAnimationEvent, Row, RowOptions, Button, Curve, HorizontalAlign, ArrowStyle, SwiperAutoFill, Padding, Indicator, FontWeight, Flex, FlexAlign, List, ListItem, $r } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
-
 export class MyDataSource implements IDataSource<number> {
   public list: number[] = []
   private listener?: DataChangeListener = undefined

@@ -13,11 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Row, Toggle,  Text, Button, ClickEvent, ButtonRole, Checkbox,
-  ColumnOptions, Shape, Path, Flex, Builder, Rating, Circle, RatingConfiguration, Margin,Visibility,CircleOptions,
-  Color, FlexAlign, WrappedBuilder, CustomBuilderT, RatingConfiguration, wrapBuilder, ContentModifier} from '@ohos.arkui.component'
+import { Entry, Column, Component, Row, Toggle, Text, Button, ClickEvent, ButtonRole, Checkbox, ColumnOptions, Shape, Path, Flex, Builder, Rating, Circle, RatingConfiguration, Margin, Visibility, CircleOptions, Color, FlexAlign, WrappedBuilder, CustomBuilderT, wrapBuilder, ContentModifier } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
-
 class MyRatingStyle10 implements ContentModifier<RatingConfiguration> {
   private name: string = ''
   private style: number = 0

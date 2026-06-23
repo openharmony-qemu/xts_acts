@@ -13,24 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,AnimateParam,Search,TextAlign,Axis,NavBarPosition,FlexAlign,
-  NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,
-  Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,
-  FontWeight,Axis,Margin,Swiper,ForEach,Slider,$rawfile, SliderStyle, ImageFit,NavigationCommonTitle,NavDestinationCommonTitle,Alignment
-,NavPathStack} from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  PropRef,Provide
-} from '@ohos.arkui.stateManagement';
+import { Entry, Component, $r, Scroll, Builder, List, ListItem, Resource, AnimateParam, Search, TextAlign, Axis, NavBarPosition, FlexAlign, NavigationTitleMode, Image, NavigationMode, Column, Navigation, ButtonType, NavDestination, Stack, ColumnOptions, TextInput, SearchController, Position, EffectType, EffectComponent, Text, Color, Flex, FlexDirection, ItemAlign, Row, Button, ClickEvent, NavDestinationMode, Dimension, TextOverflow, FontWeight, Margin, Swiper, ForEach, Slider, $rawfile, SliderStyle, ImageFit, NavigationCommonTitle, NavDestinationCommonTitle, Alignment, NavPathStack } from '@ohos.arkui.component';
+import { State, Link, PropRef, Provide, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router';
 import events_emitter from '@ohos.events.emitter';
-import { BusinessError } from '@ohos.base';
-import { RecordData } from '@ohos.base';
-
+import { BusinessError, RecordData } from '@ohos.base';
 @Entry
 @Component
 struct PageRouteExample {

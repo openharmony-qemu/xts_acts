@@ -1,34 +1,6 @@
 'use static'
-import {
-  Entry,
-  Flex,
-  FlexAlign,
-  ItemAlign,
-  FlexDirection,
-  FlexAttribute,
-  Text,
-  Column,
-  Row,
-  Component,
-  Button,
-  ClickEvent,
-  OffsetOptions,
-  TextPicker,
-  FontWeight,
-  TextPickerTextStyle,
-  TextOverflow,
-  PickerTextStyle,
-  Margin,
-  DividerOptions,
-  ColumnOptions,
-  FlexAlign,
-  HorizontalAlign,
-  Scroll,
-  BarState,
-  CrownSensitivity
-} from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
-
+import { Entry, Flex, FlexAlign, ItemAlign, FlexDirection, FlexAttribute, Text, Column, Row, Component, Button, ClickEvent, OffsetOptions, TextPicker, FontWeight, TextPickerTextStyle, TextOverflow, PickerTextStyle, Margin, DividerOptions, ColumnOptions, HorizontalAlign, Scroll, BarState, CrownSensitivity } from '@ohos.arkui.component';
+import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct Index {

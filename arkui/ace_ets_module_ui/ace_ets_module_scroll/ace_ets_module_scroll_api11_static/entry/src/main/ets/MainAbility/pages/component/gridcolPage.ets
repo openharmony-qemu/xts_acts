@@ -14,27 +14,9 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import {
-  Entry,
-  Component,
-  Column,
-  Flex,
-  GridCol,
-  GridRow,
-  Row,
-  Text,
-  AttributeModifier,
-  GridColAttribute,
-  GridColColumnOption,
-  BreakpointsReference,
-  GridRowDirection,
-  Color,
-  Padding,
-  GridColColumnOption
-} from '@ohos.arkui.component'
+import { Entry, Component, Column, Flex, GridCol, GridRow, Row, Text, AttributeModifier, GridColAttribute, GridColColumnOption, BreakpointsReference, GridRowDirection, Color, Padding } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import { RecordData } from '@ohos.base';
-
 export class MyGridColOffsetModifier1 implements AttributeModifier<GridColAttribute> {
   isNum: number = 0
 

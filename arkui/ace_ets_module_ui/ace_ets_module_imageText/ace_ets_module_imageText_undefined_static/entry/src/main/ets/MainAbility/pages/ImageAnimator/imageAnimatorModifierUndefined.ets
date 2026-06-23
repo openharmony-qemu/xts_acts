@@ -1,33 +1,7 @@
 'use static'
-import {
-  Entry,
-  Text,
-  Column,
-  Component,
-  Button,
-  Image,
-  Tabs,
-  Color,
-  $r,
-  Row,
-  ClickEvent,
-  ImageAnimator,
-  AnimationStatus,
-  Margin,
-  ForEach,
-  TextAlign,
-  Text,
-  Scroller,
-  Scroll,
-  Blank,
-  FillMode,
-  ImageFrameInfo,
-  ImageAnimatorAttribute,
-  AttributeModifier
-} from '@ohos.arkui.component'
-import { State, Observed } from '@ohos.arkui.stateManagement'
-import hilog from '@ohos.hilog'
-
+import { Entry, Text, Column, Component, Button, Image, Tabs, Color, $r, Row, ClickEvent, ImageAnimator, AnimationStatus, Margin, ForEach, TextAlign, Scroller, Scroll, Blank, FillMode, ImageFrameInfo, ImageAnimatorAttribute, AttributeModifier } from '@ohos.arkui.component';
+import { State, Observed } from '@ohos.arkui.stateManagement';
+import hilog from '@ohos.hilog';
 @Observed
 export class MyPointModifier implements AttributeModifier<ImageAnimatorAttribute> {
   public isDuration: boolean = true;

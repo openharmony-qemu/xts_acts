@@ -36,12 +36,12 @@ struct SwipeGestureAllowedTypes {
 
       Text(this.result).key('SwipeGestureAllowedTypes_result').height('10%')
 
-      Button('Mouse').key('Mouse_Type')
+      Button('Mouse').key('SwipeGestureAllowedTypes_Mouse_Type')
         .onClick(() => {
           this.result = 'allowed types default';
           this.types = [SourceTool.MOUSE];
         }).height('10%')
-      Button('Finger').key('Finger_Type')
+      Button('Finger').key('SwipeGestureAllowedTypes_Finger_Type')
         .onClick(() => {
           this.result = 'allowed types default';
           this.types = [SourceTool.Finger];

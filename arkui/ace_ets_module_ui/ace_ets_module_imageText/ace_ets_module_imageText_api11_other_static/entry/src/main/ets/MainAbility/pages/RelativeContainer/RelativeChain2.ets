@@ -13,46 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  Text,
-  Row,
-  Color,
-  $r,
-  Margin,
-  ColumnOptions,
-  Flex,
-  Scroll,
-  Padding,
-  Position,
-  Builder,
-  Image,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  Alignment,
-  TextAlign,
-  TextOverflow,
-  RelativeContainer,
-  VerticalAlign,
-  HorizontalAlign,
-  BarrierDirection,
-  ChainStyle,
-  Axis,
-  BarrierStyle,
-  AlignRuleOption,
-  ChainStyle,
-  Axis,
-  BarrierStyle,
-  AlignRuleOption
-} from '@ohos.arkui.component';
+import { Entry, Column, Component, Button, Text, Row, Color, $r, Margin, ColumnOptions, Flex, Scroll, Padding, Position, Builder, Image, FlexDirection, ItemAlign, FlexAlign, Alignment, TextAlign, TextOverflow, RelativeContainer, VerticalAlign, HorizontalAlign, BarrierDirection, ChainStyle, Axis, BarrierStyle, AlignRuleOption, ClickEvent } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
-import { ClickEvent } from '@ohos.arkui.component';
 import { UIContext } from '@ohos.arkui.UIContext';
-
 @Entry
 @Component
 struct RelativeChain2 {

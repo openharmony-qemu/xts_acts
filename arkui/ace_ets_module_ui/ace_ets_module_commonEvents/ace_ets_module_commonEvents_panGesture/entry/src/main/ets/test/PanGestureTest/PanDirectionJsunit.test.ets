@@ -64,7 +64,7 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
      */
     it('panDirectionText_0100', Level.LEVEL0, async (done: Function) => {
       console.info('panDirectionText_0100 START');
-      let strJson: string = getInspectorByKey('panDirection');
+      let strJson: string = getInspectorByKey('panDirection' + '_panDirection');
       console.info("panDirectionText_0100 component strJson:" + strJson);
       console.info("panDirectionText_0100 component obj is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$type).assertEqual('Flex');

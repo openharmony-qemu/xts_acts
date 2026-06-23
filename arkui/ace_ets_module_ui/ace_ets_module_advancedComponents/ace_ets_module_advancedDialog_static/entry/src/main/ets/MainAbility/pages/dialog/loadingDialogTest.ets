@@ -16,26 +16,8 @@
 
 import { LoadingDialog } from '@ohos.arkui.advanced.Dialog';
 import { CustomColors, CustomTheme, CustomDarkColors } from '@ohos.arkui.theme';
-import {
-  Button,
-  ClickEvent,
-  Color,
-  Column,
-  Component,
-  CustomDialogController,
-  CustomDialogControllerOptions,
-  Entry,
-  FlexAlign,
-  Row,
-  SizeOptions,
-  Text,
-  TextAlign,
-  ThemeColorMode,
-  ResourceColor,
-  ClickEvent
-} from '@ohos.arkui.component';
+import { Button, ClickEvent, Color, Column, Component, CustomDialogController, CustomDialogControllerOptions, Entry, FlexAlign, Row, SizeOptions, Text, TextAlign, ThemeColorMode, ResourceColor } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
-
 class CustomThemeImpl implements CustomTheme {
   public colors?: CustomColors;
   public darkColors?: CustomDarkColors;

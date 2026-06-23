@@ -13,12 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component,RichEditorController ,Column,RichEditorOptions,RichEditorRange,
-  RichEditor,Text,Color,$r,RichEditorTextSpanOptions,RichEditorImageSpanOptions
-
-} from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
-import { ClickEvent } from '@ohos.arkui.component';
+import { Entry, Column, Component, RichEditorController, RichEditorOptions, RichEditorRange, RichEditor, Text, Color, $r, RichEditorTextSpanOptions, RichEditorImageSpanOptions, ClickEvent } from '@ohos.arkui.component';
+import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct onSelectionChange19 {

@@ -13,30 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,ResourceColor,
-  Component,
-  ClickEvent,
-  InputType,
-  Color,
-  Font,
-  EnterKeyType,
-  CopyOptions,
-  TextInputStyle,
-  TextAlign,
-  TextInputController,
-  Column,
-  EnterKeyType,
-  TextInput,
-  Text,
-  Button
-} from '@ohos.arkui.component'
-import {
-  State,
-} from '@ohos.arkui.stateManagement'
-import { MessageManager, Callback,Message } from '../../common/MessageManager';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import events_emitter from '@ohos.events.emitter'
+import { Entry, ResourceColor, Component, ClickEvent, InputType, Color, Font, EnterKeyType, CopyOptions, TextInputStyle, TextAlign, TextInputController, Column, TextInput, Text, Button } from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
+import { MessageManager, Callback, Message } from '../../common/MessageManager';
+import events_emitter from '@ohos.events.emitter';
 import { RecordData } from '@ohos.base';
 @Entry
 @Component

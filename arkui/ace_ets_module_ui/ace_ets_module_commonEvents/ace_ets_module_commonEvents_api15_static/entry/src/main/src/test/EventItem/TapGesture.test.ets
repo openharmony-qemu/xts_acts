@@ -76,7 +76,7 @@ it('TapGesture1_static_0100', Level.LEVEL0, async (done: () => void): Promise<vo
       let Column = await (driver.findComponent(ON.id('TapGesture1')) as Promise<Component>);
       await (Column?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('value');
+      let strJson = inspector.getInspectorByKey('TapGesture' + '_value');
       let obj = JSON.parseJsonElement(strJson);
       console.info('[TapGesture1_static_0100] component obj is: ' + JSON.stringify(obj));
       console.info('[TapGesture1_static_0100] title: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));

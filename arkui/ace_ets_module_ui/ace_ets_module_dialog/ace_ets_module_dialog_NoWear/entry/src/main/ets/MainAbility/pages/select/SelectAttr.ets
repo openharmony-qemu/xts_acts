@@ -24,7 +24,7 @@ struct SelectAttrExample {
     Column() {
       Select([{ value: 'aaa' },
         { value: 'bbb'}])
-        .id('SelectAttr_Select')
+        .key('SelectAttr_Select')
         .width('200vp')
         .selected(this.index)
         .value(this.text)
