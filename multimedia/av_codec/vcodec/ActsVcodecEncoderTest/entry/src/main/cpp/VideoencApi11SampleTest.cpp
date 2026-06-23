@@ -900,7 +900,7 @@ void VEncAPI11Sample::AbortNativeBuffer(OH_NativeBuffer *nativeBuffer, OHNativeW
     }
 }
 
-void VEncAPI11Sample::isRunning()
+void VEncAPI11Sample::StopAndNotify()
 {
     isRunning_.store(false);
     signal_->inCond_.notify_all();
@@ -918,7 +918,7 @@ void VEncAPI11Sample::InputFuncSurface()
         uint8_t *dst = nullptr;
         int err = InitBuffer(ohNativeWindowBuffer, nativeBuffer, dst);
         if (err == 0) {
-            isRunning();
+            StopAndNotify();
             break;
         } else if (err == -1) {
             continue;
@@ -926,7 +926,7 @@ void VEncAPI11Sample::InputFuncSurface()
         err = ReadFrameData(dst, readFileIndex, ohNativeWindowBuffer);
         if (!isRunning_.load()) {
             AbortNativeBuffer(nativeBuffer, ohNativeWindowBuffer);
-            isRunning();
+            StopAndNotify();
             break;
         }
         if (err == FILE_END) {
@@ -935,16 +935,16 @@ void VEncAPI11Sample::InputFuncSurface()
         }
         if (err == LOOP_END) {
             AbortNativeBuffer(nativeBuffer, ohNativeWindowBuffer);
-            isRunning();
+            StopAndNotify();
             break;
         }
         if (FlushSurf(ohNativeWindowBuffer, nativeBuffer) != 0) {
             AbortNativeBuffer(nativeBuffer, ohNativeWindowBuffer);
-            isRunning();
+            StopAndNotify();
             break;
         }
         if (HandleParamSwitch(inputframeCount, isParamSetSurface) != 0) {
-            isRunning();
+            StopAndNotify();
             break;
         }
         inputframeCount++;

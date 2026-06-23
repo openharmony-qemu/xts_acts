@@ -191,7 +191,7 @@ public:
     OH_AVBuffer *GetOutputBuffer(uint32_t index);
     void GetVideoSupportedPixelFormats();
     void GetFormatKey();
-    void isRunning();
+    void StopAndNotify();
     bool isGetVideoSupportedPixelFormats = false;
     bool isGetFormatKey = false;
     int isGetVideoSupportedPixelFormatsNum = 0;
