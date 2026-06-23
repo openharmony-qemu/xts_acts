@@ -260,6 +260,7 @@ export default function windowRotationTest() {
     it('test_RotationChange_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'test_RotationChange_0500';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
+      let count = 0;
       console.log(msgStr + 'begin');
       if (isSupportRotate) {
         let subWindowClass: window.Window = await windowStage.createSubWindow('test_RotationChange_0500');
@@ -283,6 +284,7 @@ export default function windowRotationTest() {
                 height: 0,
               }
             };
+            count ++ ;
             console.log(`${caseName} :rotationCallback rotationInfo: ${JSON.stringify(rotationInfo)}`);
             if (rotationInfo.type === window.RotationChangeType.WINDOW_WILL_ROTATE) {
               rotationResult.rectType = window.RectType.RELATIVE_TO_SCREEN;
@@ -346,6 +348,8 @@ export default function windowRotationTest() {
           expect(subWindowProperties3.windowRect.width).assertEqual(subWindowLimits.minWidth);
           expect(subWindowProperties3.windowRect.width).assertEqual(subWindowLimits.minHeight);
           subWindowClass.off('rotationChange', rotationCallback);
+          console.log(`${msgStr} + 'count' : ${count}`);
+          expect(count).assertEqual(2);
           await subWindowClass.destroyWindow();
           await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
           done();
