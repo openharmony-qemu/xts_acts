@@ -54,7 +54,7 @@ export default function customListLayoutTest() {
       console.info('[customListLayoutTest_0100] START');
       await CommonFunc.sleep(1000);
       let driver = await Driver.create();
-      let item1 = await driver.findComponent(ON.id('lazyDynamicLayout_item_1'));
+      let item1 = await driver.findComponent(ON.id('lazyDynamicLayout_item1'));
       let rect = await item1.getBounds();
       let itemTop = rect.top;
       console.info('[customListLayoutTest_0100] item1_top: '+ itemTop)
@@ -64,7 +64,7 @@ export default function customListLayoutTest() {
       console.info('customListLayoutTest_0100 pushBtn clicked');
       await CommonFunc.sleep(1500);
 
-      let itemNew1 = await driver.findComponent(ON.id('lazyDynamicLayout_item_1'));
+      let itemNew1 = await driver.findComponent(ON.id('lazyDynamicLayout_item1'));
       let rectNew = await itemNew1.getBounds();
       let itemNewTop = rectNew.top;
       console.info('[customListLayoutTest_0100] item1_top new: '+ itemNewTop)

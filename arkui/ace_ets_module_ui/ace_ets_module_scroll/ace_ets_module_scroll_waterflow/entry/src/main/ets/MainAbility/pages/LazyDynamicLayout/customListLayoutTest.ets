@@ -40,7 +40,7 @@ struct MyLazyListLayout {
     LazyDynamicLayout(this.lazyAlgorithm) {
       LazyForEach(this.arr, (item: string) => {
         Text('lazy_'+item)
-          .id('lazyDynamicLayout_item_' + item)
+          .id('lazyDynamicLayout_' + item)
           .height(this.itemHeight)
           .width('100%')
           .borderRadius(8)
