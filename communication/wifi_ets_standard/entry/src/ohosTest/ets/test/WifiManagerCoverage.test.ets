@@ -26,10 +26,10 @@ function sleep(delay:number): Promise<void> {
   }); 
 }
 async function tryToEnableWifi(){
-  if(!wifiMg.isWifiActive()){
-    console.info("wifi_test/enable wifi:" + wifiMg.enableWifi());
+  if(!wifiManager.isWifiActive()){
+    console.info("wifi_test enable wifi:" + wifiManager.enableWifi());
     for (let i = 0; i <= 200; i++) {
-      if (wifiMg.isWifiActive()) {
+      if (wifiManager.isWifiActive()) {
         console.info("WiFi已成功开启");
         break;
       }
@@ -37,7 +37,7 @@ async function tryToEnableWifi(){
       await sleep(100);
     }
   }
-  console.info("wifi_test/wifi status:" + wifiMg.isWifiActive());
+  console.info("wifi_test/wifi status:" + wifiManager.isWifiActive());
 }
 export default function wifiManagerCoverage() {
 
