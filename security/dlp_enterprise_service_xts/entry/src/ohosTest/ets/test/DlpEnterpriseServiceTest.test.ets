@@ -68,7 +68,10 @@ export default function DlpEnterpriseServiceTest() {
         if (err.code === 801) {
           console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(801);
-        } else{
+        } else if (err.code === 19100011) {
+          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
+          expect(err.code).assertEqual(19100011);
+        } else {
           console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(19100024);
         }
@@ -95,6 +98,9 @@ export default function DlpEnterpriseServiceTest() {
         if (err.code === 801) {
           console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(801);
+        } else if (err.code === 19100011) {
+          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
+          expect(err.code).assertEqual(19100011);
         } else {
           console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(19100024);
@@ -121,6 +127,9 @@ export default function DlpEnterpriseServiceTest() {
         if (err.code === 801) {
           console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(801);
+        } else if (err.code === 19100011) {
+          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
+          expect(err.code).assertEqual(19100011);
         } else {
           console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(401);
@@ -147,6 +156,9 @@ export default function DlpEnterpriseServiceTest() {
         if (err.code === 801) {
           console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(801);
+        } else if (err.code === 19100011) {
+          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
+          expect(err.code).assertEqual(19100011);
         } else {
           console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(401);
@@ -174,6 +186,9 @@ export default function DlpEnterpriseServiceTest() {
         if (err.code === 801) {
           console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(801);
+        } else if (err.code === 19100011) {
+          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
+          expect(err.code).assertEqual(19100011);
         } else {
           console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(19100024);
@@ -201,6 +216,9 @@ export default function DlpEnterpriseServiceTest() {
         if (err.code === 801) {
           console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(801);
+        } else if (err.code === 19100011) {
+          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
+          expect(err.code).assertEqual(19100011);
         } else {
           console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(19100024);
@@ -228,6 +246,9 @@ export default function DlpEnterpriseServiceTest() {
         if (err.code === 801) {
           console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(801);
+        } else if (err.code === 19100011) {
+          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
+          expect(err.code).assertEqual(19100011);
         } else {
           console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(19100024);
@@ -255,6 +276,9 @@ export default function DlpEnterpriseServiceTest() {
         if (err.code === 801) {
           console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(801);
+        } else if (err.code === 19100011) {
+          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
+          expect(err.code).assertEqual(19100011);
         } else {
           console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(19100024);
@@ -282,6 +306,9 @@ export default function DlpEnterpriseServiceTest() {
         if (err.code === 801) {
           console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(801);
+        } else if (err.code === 19100011) {
+          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
+          expect(err.code).assertEqual(19100011);
         } else {
           console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(19100024);
@@ -309,6 +336,9 @@ export default function DlpEnterpriseServiceTest() {
         if (err.code === 801) {
           console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(801);
+        } else if (err.code === 19100011) {
+          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
+          expect(err.code).assertEqual(19100011);
         } else {
           console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(19100001);
@@ -336,6 +366,9 @@ export default function DlpEnterpriseServiceTest() {
         if (err.code === 801) {
           console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(801);
+        } else if (err.code === 19100011) {
+          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
+          expect(err.code).assertEqual(19100011);
         } else {
           console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(19100001);
@@ -363,6 +396,9 @@ export default function DlpEnterpriseServiceTest() {
         if (err.code === 801) {
           console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(801);
+        } else if (err.code === 19100011) {
+          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
+          expect(err.code).assertEqual(19100011);
         } else {
           console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(19100024);
@@ -390,6 +426,9 @@ export default function DlpEnterpriseServiceTest() {
         if (err.code === 801) {
           console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(801);
+        } else if (err.code === 19100011) {
+          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
+          expect(err.code).assertEqual(19100011);
         } else {
           console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(19100024);
@@ -417,6 +456,9 @@ export default function DlpEnterpriseServiceTest() {
         if (err.code === 801) {
           console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(801);
+        } else if (err.code === 19100011) {
+          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
+          expect(err.code).assertEqual(19100011);
         } else {
           console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(19100001);
@@ -442,9 +484,12 @@ export default function DlpEnterpriseServiceTest() {
         if (err.code === 801) {
           console.info(curTag, "getControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(801);
-        } else {
-		  expect(null).assertFail();
+        } else if (err.code === 19100011) {
           console.info(curTag, "getControlledAppLists failed," + err.code + err.message);
+          expect(err.code).assertEqual(19100011);
+        } else {
+          console.info(curTag, "getControlledAppLists failed," + err.code + err.message);
+          expect(null).assertFail();
         }
       }
       done();

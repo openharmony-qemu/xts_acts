@@ -23,7 +23,7 @@
     "deliveryWithInstall": true,
     "installationFree": false,
     "pages": "$profile:main_pages",
-    "requestPermission": [
+    "requestPermissions": [
       {
         "name":"ohos.permission.DLP_POLICY_MANAGER"
       }
