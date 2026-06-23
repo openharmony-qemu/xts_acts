@@ -6,7 +6,7 @@
         "shell-timeout": "600000",
         "testcase-timeout": "180000",
         "bundle-name": "com.acts.ace.napinewtest",
-        "module-name": "entry_test"
+        "module-name": "entry_test",
         "testcase-timeout": 60000
     },
     "kits": [
