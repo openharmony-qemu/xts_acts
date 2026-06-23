@@ -262,7 +262,7 @@ export default function ByteIsLessEqualThanTest_02(): void {
         let b: byte = 65 as byte;
         let other: byte = 70 as byte;
         let result: boolean = b.isLessEqualThan(other);
-        expect(typeof result).assertEqual("boolean");
+        expect(result).assertTrue();
       });
 
     /**

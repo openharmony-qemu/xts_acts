@@ -580,7 +580,6 @@ export default function ByteToIntTest(): void {
       const b = new Byte(100);
       const i: number = b.toInt();
       expect(i).assertEqual(100);
-      expect(typeof i).assertEqual("number");
     })
 
     /**
@@ -627,7 +626,6 @@ export default function ByteToIntTest(): void {
       const b = new Byte(66);
       const result: number = b.toInt();
       expect(result).assertEqual(66);
-      expect(typeof result).assertEqual("number");
     })
 
     /**

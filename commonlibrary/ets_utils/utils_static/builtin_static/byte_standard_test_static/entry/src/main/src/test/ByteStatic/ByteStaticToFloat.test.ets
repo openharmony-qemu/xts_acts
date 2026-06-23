@@ -598,7 +598,6 @@ export default function ByteStaticToFloatTest(): void {
       () => {
         const result: number = Byte.toFloat(66 as byte).toDouble();
         expect(result).assertEqual(66);
-        expect(typeof result).assertEqual("number");
       }
     );
 

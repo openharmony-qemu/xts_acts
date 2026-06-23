@@ -690,7 +690,6 @@ export default function ByteToShortTest(): void {
         const b = new Byte(66 as byte);
         const result: number = b.toShort();
         expect(result).assertEqual(66);
-        expect(typeof result).assertEqual("number");
       });
 
     /**

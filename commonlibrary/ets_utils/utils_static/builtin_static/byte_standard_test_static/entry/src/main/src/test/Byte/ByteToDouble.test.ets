@@ -99,7 +99,6 @@ export default function ByteToDoubleTest(): void {
       () => {
         const b = new Byte(64 as byte);
         const result = b.toDouble();
-        expect(typeof result).assertEqual("number");
         expect(result).assertEqual(64);
       }
     );
@@ -207,7 +206,7 @@ export default function ByteToDoubleTest(): void {
       () => {
         const b = new Byte(50 as byte);
         const result = b.toDouble();
-        expect(typeof result).assertEqual("number");
+        expect(result).assertEqual(50);
       }
     );
 
@@ -365,7 +364,7 @@ export default function ByteToDoubleTest(): void {
         let b: Byte | null = null;
         try {
           b!.toDouble();
-          expect(false).assertTrue();
+          expect().assertFail();
         } catch (e) {
           expect(e.name).assertEqual('NullPointerError');
         }
@@ -385,7 +384,7 @@ export default function ByteToDoubleTest(): void {
         let b: Byte | undefined = undefined;
         try {
           b!.toDouble();
-          expect(false).assertTrue();
+          expect().assertFail();
         } catch (e) {
           expect(e.name).assertEqual('NullPointerError');
         }
@@ -477,7 +476,6 @@ export default function ByteToDoubleTest(): void {
       () => {
         const b: Byte = Int.toByte(50);
         const result = b.toDouble();
-        expect(typeof result).assertEqual("number");
         expect(result).assertEqual(50);
       }
     );
@@ -676,7 +674,6 @@ export default function ByteToDoubleTest(): void {
       () => {
         const b = new Byte(42 as byte);
         const result = b.toDouble();
-        expect(typeof result).assertEqual("number");
         expect(result).assertEqual(42);
       }
     );

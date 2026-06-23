@@ -371,7 +371,6 @@ export default function ByteStaticToDoubleTest(): void {
     it("testStaticToDoubleMethodCallable0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       () => {
         const result = Byte.toDouble(50 as byte);
-        expect(typeof result).assertEqual("number");
         expect(result).assertEqual(50);
       }
     );

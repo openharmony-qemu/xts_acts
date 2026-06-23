@@ -46,8 +46,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const b = new Byte(50 as byte);
         const result = Byte.toInt(b.toByte());
         expect(result).assertEqual(50);
@@ -61,8 +60,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const byteNum = Int.toByte(50);
         const result = Byte.toInt(byteNum);
         expect(result).assertEqual(50);
@@ -76,8 +74,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const result = Byte.toInt(100 as byte);
         expect(result).assertEqual(100);
       });
@@ -90,8 +87,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const b = new Byte(64 as byte);
         const result = Byte.toInt(b.toByte());
         expect(result).assertEqual(64);
@@ -100,14 +96,13 @@ export default function ByteStaticToIntTest(): void {
     /**
      * @tc.number     SUB_BYTE_TOINT_S_TEST_0500
      * @tc.name       testStaticToInt0005
-     * @tc.desc       Assert Byte.toInt(100) directly equals 100 in expect (static method)
+     * @tc.desc       Assert Byte.toInt(3) directly equals 3 in expect (static method)
      * @tc.size       MediumTest
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
-        expect(Byte.toInt(100 as byte)).assertEqual(100);
+    it("testStaticToInt0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+        expect(Byte.toInt(3 as byte)).assertEqual(3);
       });
 
     /**
@@ -118,8 +113,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const result = Byte.toInt(-100 as byte);
         expect(result).assertEqual(-100);
       });
@@ -132,8 +126,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const result = Byte.toInt(0 as byte);
         expect(result).assertEqual(0);
       });
@@ -146,8 +139,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const result = Byte.toInt(127 as byte);
         expect(result).assertEqual(127);
         expect(result).assertEqual(Byte.MAX_VALUE);
@@ -161,8 +153,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const result = Byte.toInt(-128 as byte);
         expect(result).assertEqual(-128);
         expect(result).assertEqual(Byte.MIN_VALUE);
@@ -176,8 +167,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const result = Byte.toInt(-1 as byte);
         expect(result).assertEqual(-1);
       });
@@ -190,8 +180,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const result = Byte.toInt(1 as byte);
         expect(result).assertEqual(1);
       });
@@ -199,15 +188,14 @@ export default function ByteStaticToIntTest(): void {
     /**
      * @tc.number     SUB_BYTE_TOINT_S_TEST_1200
      * @tc.name       testStaticToInt0012
-     * @tc.desc       Convert Byte to Int with value 50 using let-declared result (static method)
+     * @tc.desc       Convert Byte to Int with value 2 using let-declared result (static method)
      * @tc.size       MediumTest
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
-        let result = Byte.toInt(50 as byte);
-        expect(result).assertEqual(50);
+    it("testStaticToInt0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+        let result = Byte.toInt(2 as byte);
+        expect(result).assertEqual(2);
       });
 
     /**
@@ -218,8 +206,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const result = Byte.toInt(50 as byte);
         expect(+result).assertEqual(50);
       });
@@ -232,8 +219,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const convertResult = Byte.toInt(50 as byte);
         expect(convertResult).assertEqual(50);
       });
@@ -246,8 +232,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const result = Byte.toInt(99 as byte);
         expect(result).assertEqual(99);
       });
@@ -260,8 +245,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const result = Byte.toInt(77 as byte);
         expect(result).assertEqual(77);
       });
@@ -274,8 +258,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const result = Byte.toInt(64 as byte);
         expect(result).assertEqual(64);
       });
@@ -288,8 +271,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const r1 = Byte.toInt(88 as byte);
         const r2 = Byte.toInt(88 as byte);
         expect(r1).assertEqual(r2);
@@ -304,8 +286,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const b = new Byte(66 as byte);
         const result = Byte.toInt(b.toByte());
         expect(result).assertEqual(66);
@@ -314,14 +295,14 @@ export default function ByteStaticToIntTest(): void {
     /**
      * @tc.number     SUB_BYTE_TOINT_S_TEST_2500
      * @tc.name       testStaticToInt0025
-     * @tc.desc       Convert Byte to Int with array of values [0,1,-1,127,-128,50,-50] (static method)
+     * @tc.desc       Convert Int instances to byte then to Int with array of values [0,1,-1,127,-128,50,-50] (static method)
      * @tc.size       MediumTest
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
-        const values: Int[] = [new Int(0), new Int(1), new Int(-1), new Int(127), new Int(-128), new Int(50), new Int(-50)];
+    it("testStaticToInt0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+        const values: Int[] =
+          [new Int(0), new Int(1), new Int(-1), new Int(127), new Int(-128), new Int(50), new Int(-50)];
         const expected: number[] = [0, 1, -1, 127, -128, 50, -50];
         for (let i = 0; i < values.length; i++) {
           const result = Byte.toInt(values[i].toByte());
@@ -337,8 +318,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const b = new Byte(88 as byte);
         const result = Byte.toInt(b.toByte());
         expect(result).assertEqual(88);
@@ -352,8 +332,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const b = new Byte(44 as byte);
         const result = Byte.toInt(b.toByte());
         expect(result).assertEqual(44);
@@ -367,8 +346,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const b = new Byte(33 as byte);
         const result = Byte.toInt(b.toByte());
         expect(result).assertEqual(33);
@@ -382,8 +360,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const b = new Byte(55 as byte);
         const result = Byte.toInt(b.toByte());
         expect(result).assertEqual(55);
@@ -397,8 +374,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const result = Byte.toInt(55 as byte);
         expect(result).assertEqual(55);
       });
@@ -411,8 +387,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const b = new Byte(60 as byte);
         const result = Byte.toInt(b.toByte());
         const i: number = result;
@@ -427,8 +402,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const r1 = Byte.toInt(50 as byte);
         const r2 = Byte.toInt(60 as byte);
         expect(r1 < r2).assertTrue();
@@ -442,8 +416,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         expect(Byte.toInt(-128 as byte)).assertEqual(-128);
         expect(Byte.toInt(127 as byte)).assertEqual(127);
         expect(Byte.toInt(50 as byte)).assertEqual(50);
@@ -459,9 +432,9 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
-        const boundaryValues: Int[] = [new Int(-128), new Int(-127), new Int(-1), new Int(0), new Int(1), new Int(126), new Int(127)];
+    it("testStaticToInt0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+        const boundaryValues: Int[] =
+          [new Int(-128), new Int(-127), new Int(-1), new Int(0), new Int(1), new Int(126), new Int(127)];
         const expected: number[] = [-128, -127, -1, 0, 1, 126, 127];
         for (let i = 0; i < boundaryValues.length; i++) {
           const result = Byte.toInt(boundaryValues[i].toByte());
@@ -477,8 +450,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const i: number = Byte.toInt(100 as byte);
         expect(i).assertEqual(100);
       });
@@ -491,8 +463,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const r1 = Byte.toInt(30 as byte);
         const r2 = Byte.toInt(20 as byte);
         const sum = r1 + r2;
@@ -507,8 +478,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const result = Byte.toInt(88 as byte);
         expect(result).assertEqual(88);
       });
@@ -521,8 +491,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const v: byte = 99 as byte;
         const intVal = Byte.toInt(v);
         const shortVal = Byte.toShort(v);
@@ -544,8 +513,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         for (let i = 0; i < 10; i++) {
           const result = Byte.toInt(123 as byte);
           expect(result).assertEqual(123);
@@ -560,8 +528,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const intValues: Int[] = [];
         for (let i = -128; i <= 127; i++) {
           intValues.push(new Int(i));
@@ -580,8 +547,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const processValue = (input: byte): number => {
           return Byte.toInt(input);
         }
@@ -592,24 +558,21 @@ export default function ByteStaticToIntTest(): void {
     /**
      * @tc.number     SUB_BYTE_TOINT_S_TEST_4500
      * @tc.name       testStaticToInt0045
-     * @tc.desc       Byte.toInt with nested loops over [10,20,30,40,50] byte array (static method)
+     * @tc.desc       Byte.toInt with byte array [10,20,30,40,50] converted to number array (static method)
      * @tc.size       MediumTest
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const data: byte[] = [10 as byte, 20 as byte, 30 as byte, 40 as byte, 50 as byte];
-        for (const outerV of data) {
-          const ints: number[] = [];
-          for (const innerV of data) {
-            const result = Byte.toInt(innerV);
-            ints.push(result);
-          }
-          expect(ints.length).assertEqual(5);
-          expect(ints[0]).assertEqual(10);
-          expect(ints[4]).assertEqual(50);
+        const ints: number[] = [];
+        for (const v of data) {
+          const result = Byte.toInt(v);
+          ints.push(result);
         }
+        expect(ints.length).assertEqual(5);
+        expect(ints[0]).assertEqual(10);
+        expect(ints[4]).assertEqual(50);
       });
 
     /**
@@ -620,8 +583,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const i: number = Byte.toInt(-128 as byte);
         expect(i).assertEqual(-128);
         expect(i >= -2147483648).assertTrue();
@@ -636,8 +598,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const i: number = Byte.toInt(127 as byte);
         expect(i).assertEqual(127);
         expect(i >= -2147483648).assertTrue();
@@ -652,8 +613,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const result: number = Byte.toInt(88 as byte);
         expect(result).assertEqual(88);
       });
@@ -666,8 +626,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const result: number = Byte.toInt(66 as byte);
         expect(result).assertEqual(66);
       });
@@ -680,8 +639,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const v: byte = 77 as byte;
         const intVal: number = Byte.toInt(v);
         const longVal: number = Byte.toLong(v);
@@ -697,8 +655,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const byteInstance = new Byte(64 as byte);
         const result = Byte.toInt(byteInstance.toByte());
         expect(result).assertEqual(64);
@@ -712,8 +669,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const value1 = Byte.toInt(99 as byte);
         const value2 = Byte.toInt(99 as byte);
         const value3 = Byte.toInt(99 as byte);
@@ -725,20 +681,21 @@ export default function ByteStaticToIntTest(): void {
     /**
      * @tc.number     SUB_BYTE_TOINT_S_TEST_5600
      * @tc.name       testStaticToInt0056
-     * @tc.desc       Collect four Byte.toInt(77) results into array and verify each (static method)
+     * @tc.desc       Collect Byte.toInt results of different values into array and verify each (static method)
      * @tc.size       MediumTest
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+        const inputs: byte[] = [-1 as byte, 0 as byte, 1 as byte, 127 as byte];
+        const expected: number[] = [-1, 0, 1, 127];
         const results: number[] = [];
-        for (let i = 0; i < 4; i++) {
-          results.push(Byte.toInt(77 as byte));
+        for (let i = 0; i < inputs.length; i++) {
+          const result = Byte.toInt(inputs[i]);
+          expect(result).assertEqual(expected[i]);
+          results.push(result);
         }
-        for (const r of results) {
-          expect(r).assertEqual(77);
-        }
+        expect(results.length).assertEqual(4);
       });
 
     /**
@@ -749,8 +706,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const i = Byte.toInt(100 as byte);
         expect(i).assertEqual(100);
         expect(i >= -2147483648).assertTrue();
@@ -765,8 +721,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const r1 = Byte.toInt(-100 as byte);
         const r2 = Byte.toInt(100 as byte);
         expect(r1 < 0).assertTrue();
@@ -781,8 +736,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const values: byte[] = [-128 as byte, -1 as byte, 0 as byte, 1 as byte, 127 as byte];
         const expected: number[] = [-128, -1, 0, 1, 127];
         for (let i = 0; i < values.length; i++) {
@@ -799,11 +753,8 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const r1 = Byte.toInt(99 as byte);
-        const r2 = 99;
-        expect(r1).assertEqual(r2);
         expect(r1).assertEqual(99);
       });
 
@@ -815,8 +766,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const byteVal: byte = Int.toByte(123);
         const result = Byte.toInt(byteVal);
         expect(Number.isInteger(result)).assertTrue();
@@ -831,11 +781,9 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const i: number = Byte.toInt(100 as byte);
         expect(i).assertEqual(100);
-        expect(typeof i).assertEqual("number");
       });
 
     /**
@@ -846,8 +794,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const v: byte = 100 as byte;
         const i: number = Byte.toInt(v);
         const l: number = Byte.toLong(v);
@@ -863,8 +810,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const r1 = Byte.toInt(50 as byte);
         const r2 = Byte.toInt(30 as byte);
         const sum = r1 + r2;
@@ -879,8 +825,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const r1 = Byte.toInt(50 as byte);
         const r2 = Byte.toInt(30 as byte);
         const diff = r1 - r2;
@@ -895,8 +840,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const r1 = Byte.toInt(10 as byte);
         const r2 = Byte.toInt(5 as byte);
         const product = r1 * r2;
@@ -911,8 +855,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const r1 = Byte.toInt(100 as byte);
         const r2 = Byte.toInt(4 as byte);
         const quotient = r1 / r2;
@@ -927,8 +870,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const r1 = Byte.toInt(16 as byte);
         const shiftResult = r1 << 3;
         expect(shiftResult).assertEqual(128);
@@ -942,8 +884,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const bytes: byte[] = [10 as byte, 20 as byte, 30 as byte, 40 as byte, 50 as byte];
         const ints: number[] = [];
         for (const v of bytes) {
@@ -966,8 +907,7 @@ export default function ByteStaticToIntTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it("testStaticToInt0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      () => {
+    it("testStaticToInt0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const bytes: byte[] = [10 as byte, 20 as byte, 30 as byte, 40 as byte, 50 as byte];
         let sum: number = 0;
         for (const v of bytes) {

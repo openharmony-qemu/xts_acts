@@ -392,7 +392,8 @@ export default function ByteAddTest07(): void {
     it("testByteAddHaveAdd0031", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
         const b: Byte = new Byte(50);
-        expect(typeof b.add).assertEqual("function");
+        const result: Byte = b.add(new Byte(25));
+        expect(result.toByte()).assertEqual(75);
       });
 
     /**
@@ -423,10 +424,11 @@ export default function ByteAddTest07(): void {
     it("testByteAddAllCalculateWayHad0033", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
         const b: Byte = new Byte(50);
-        expect(typeof b.add).assertEqual("function");
-        expect(typeof b.sub).assertEqual("function");
-        expect(typeof b.mul).assertEqual("function");
-        expect(typeof b.div).assertEqual("function");
+        const b2: Byte = new Byte(25);
+        expect(b.add(b2).toByte()).assertEqual(75);
+        expect(b.sub(b2).toByte()).assertEqual(25);
+        expect(b.mul(new Byte(2)).toByte()).assertEqual(100);
+        expect(b.div(b2).toByte()).assertEqual(2);
       });
 
     /**

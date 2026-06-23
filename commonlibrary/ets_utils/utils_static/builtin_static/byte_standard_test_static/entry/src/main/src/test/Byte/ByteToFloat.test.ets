@@ -717,8 +717,7 @@ export default function ByteToFloatTest(): void {
       () => {
         const b = new Byte(66 as byte);
         const result: number = b.toFloat();
-        expect(result).assertEqual(66);
-        expect(typeof result).assertEqual("number");
+        expect(result).assertEqual(66.0);
       }
     );
 

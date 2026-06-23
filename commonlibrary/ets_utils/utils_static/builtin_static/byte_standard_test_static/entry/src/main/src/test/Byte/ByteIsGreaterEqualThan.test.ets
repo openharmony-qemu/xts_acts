@@ -244,7 +244,7 @@ export default function ByteIsGreaterEqualThanTest_02(): void {
         let b: byte = 70 as byte;
         let other: byte = 65 as byte;
         let result: boolean = b.isGreaterEqualThan(other);
-        expect(typeof result).assertEqual("boolean");
+        expect(result).assertTrue();
       });
 
     /**

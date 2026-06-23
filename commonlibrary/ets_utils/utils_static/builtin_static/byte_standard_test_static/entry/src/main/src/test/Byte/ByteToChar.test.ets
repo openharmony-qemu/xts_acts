@@ -386,7 +386,7 @@ export default function ByteToCharTest(): void {
         let b: Byte | null = null;
         try {
           b!.toChar();
-          expect(false).assertTrue();
+          expect().assertFail();
         } catch (e) {
           expect(e.name).assertEqual('NullPointerError');
         }
@@ -406,7 +406,7 @@ export default function ByteToCharTest(): void {
         let b: Byte | undefined = undefined;
         try {
           b!.toChar();
-          expect(false).assertTrue();
+          expect().assertFail();
         } catch (e) {
           expect(e.name).assertEqual('NullPointerError');
         }

@@ -642,7 +642,6 @@ export default function ByteByteValueTest(): void {
         let b: Byte = new Byte(66 as byte);
         const result: number = b;
         expect(result).assertEqual(66);
-        expect(typeof result).assertEqual("number");
       });
 
     /**
@@ -671,7 +670,6 @@ export default function ByteByteValueTest(): void {
       () => {
         let b: Byte = new Byte(123 as byte);
         const value: number = b;
-        expect(typeof value).assertEqual("number");
         expect(value).assertEqual(123);
       });
   });

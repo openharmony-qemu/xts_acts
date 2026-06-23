@@ -161,7 +161,7 @@ export default function ByteDoubleValueTest_02(): void {
       () => {
         let b: byte = 50 as byte;
         let result: number = b.toDouble();
-        expect(typeof result).assertEqual("number");
+        expect(result).assertEqual(50);
       });
 
     /**
@@ -176,7 +176,6 @@ export default function ByteDoubleValueTest_02(): void {
       () => {
         let b: byte = 64 as byte;
         let result: number = b.toDouble();
-        expect(typeof result).assertEqual("number");
         expect(result).assertEqual(64);
       });
 
@@ -266,8 +265,6 @@ export default function ByteDoubleValueTest_02(): void {
         let d: number = b.toDouble();
         let f: number = b.toFloat();
         expect(d).assertEqual(f);
-        expect(typeof d).assertEqual("number");
-        expect(typeof f).assertEqual("number");
       });
 
     /**
@@ -379,7 +376,6 @@ export default function ByteDoubleValueTest_02(): void {
       () => {
         let b: byte = 44 as byte;
         let result: number = b.toDouble();
-        expect(typeof result).assertEqual("number");
         expect(result).assertEqual(44);
       });
 
@@ -624,7 +620,6 @@ export default function ByteDoubleValueTest_02(): void {
       () => {
         let b: byte = 42 as byte;
         let result: number = b.toDouble();
-        expect(typeof result).assertEqual("number");
         expect(result).assertEqual(42);
       });
 

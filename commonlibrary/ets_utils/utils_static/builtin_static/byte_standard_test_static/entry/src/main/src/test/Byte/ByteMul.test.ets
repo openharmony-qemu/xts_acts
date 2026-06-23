@@ -496,8 +496,10 @@ export default function Byte_mul06_01test(): void {
      */
     it('testByteMul0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       () => {
-        let b: byte = 10 as byte;
-        expect(typeof b.mul).assertEqual('function');
+        let b1: byte = 10 as byte;
+        let b2: byte = 5 as byte;
+        const result = b1.mul(b2);
+        expect(result).assertEqual(50);
       });
 
     /**
@@ -527,10 +529,10 @@ export default function Byte_mul06_01test(): void {
     it('testByteMul0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       () => {
         let b: byte = 10 as byte;
-        expect(typeof b.add).assertEqual('function');
-        expect(typeof b.sub).assertEqual('function');
-        expect(typeof b.mul).assertEqual('function');
-        expect(typeof b.div).assertEqual('function');
+        expect(b.add(5 as byte)).assertEqual(15);
+        expect(b.sub(3 as byte)).assertEqual(7);
+        expect(b.mul(2 as byte)).assertEqual(20);
+        expect(b.div(2 as byte)).assertEqual(5);
       });
 
     /**

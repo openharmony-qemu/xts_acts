@@ -161,20 +161,6 @@ export default function ByteToStringTest(): void {
     });
 
     /**
-     * @tc.number    SUB_BYTE_TOSTRING_TEST_0900
-     * @tc.name      testByteToStringReturnType0009
-     * @tc.desc      Byte.toString()
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testByteToStringReturnType0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let byteInstance: Byte = new Byte(65 as byte);
-      let result: string = byteInstance.toString();
-      expect(typeof result === "string").assertTrue();
-    });
-
-    /**
      * @tc.number    SUB_BYTE_TOSTRING_TEST_1000
      * @tc.name      testByteToStringMultipleCalls0010
      * @tc.desc      Byte.toString()

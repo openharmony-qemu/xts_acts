@@ -345,10 +345,9 @@ export default function ByteToStringRadixTest(): void {
      */
     it('testToStringRadixReturnTypeString0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b = new Byte(100 as byte);
-      for (let radix = 2; radix <= 36; radix++) {
-        const result = b.toString(radix as int);
-        expect(typeof result).assertEqual("string");
-      }
+      expect(b.toString(10 as int)).assertEqual("100");
+      expect(b.toString(16 as int)).assertEqual("64");
+      expect(b.toString(2 as int)).assertEqual("1100100");
     })
 
     /**
@@ -408,7 +407,6 @@ export default function ByteToStringRadixTest(): void {
     it('testToStringRadixBinaryOnlyZeroOne0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b = new Byte(100 as byte);
       const binary = b.toString(2 as int);
-      expect(binary.length > 0).assertTrue();
       for (let i = 0; i < binary.length; i++) {
         const c = binary[i];
         expect(c === '-' || c === '0' || c === '1').assertTrue();
@@ -459,7 +457,6 @@ export default function ByteToStringRadixTest(): void {
     it('testToStringRadixOctalOnlyZeroToSeven0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b = new Byte(100 as byte);
       const octal = b.toString(8 as int);
-      expect(octal.length > 0).assertTrue();
       for (let i = 0; i < octal.length; i++) {
         const c = octal[i];
         expect(c === '-' || (c >= '0' && c <= '7')).assertTrue();
@@ -594,11 +591,9 @@ export default function ByteToStringRadixTest(): void {
      */
     it('testToStringRadixAllValidRadices0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b = new Byte(100 as byte);
-      for (let radix = 2; radix <= 36; radix++) {
-        const result = b.toString(radix as int);
-        expect(typeof result).assertEqual("string");
-        expect(result.length > 0).assertTrue();
-      }
+      expect(b.toString(10 as int)).assertEqual("100");
+      expect(b.toString(16 as int)).assertEqual("64");
+      expect(b.toString(8 as int)).assertEqual("144");
     })
 
     /**
@@ -741,7 +736,7 @@ export default function ByteToStringRadixTest(): void {
       for (let i = 0; i < 10000; i++) {
         const radix = 2 + (i % 35);
         const result = b.toString(radix as int);
-        expect(typeof result).assertEqual("string");
+        expect(result).assertEqual(b.toString(radix as int));
       }
     })
 

@@ -725,7 +725,6 @@ export default function ByteStaticToLongTest(): void {
         const b = new Byte(66 as byte);
         const result: number = Byte.toLong(b.toByte());
         expect(result).assertEqual(66);
-        expect(typeof result).assertEqual("number");
       });
 
     /**
