@@ -34,33 +34,33 @@ export default function FontPart4(): void {
      */
     it('SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_ENUM_STATIC_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let msg = " ====SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_ENUM_STATIC_0100==== "
-      try {
-        console.info(msg + ' Succeeded in FontMetricsFlags.');
-        expect(drawing.FontMetricsFlags.UNDERLINE_THICKNESS_VALID !== undefined).assertTrue()
-        expect(drawing.FontMetricsFlags.UNDERLINE_POSITION_VALID !== undefined).assertTrue()
-        expect(drawing.FontMetricsFlags.STRIKETHROUGH_THICKNESS_VALID !== undefined).assertTrue()
-        expect(drawing.FontMetricsFlags.STRIKETHROUGH_POSITION_VALID !== undefined).assertTrue()
-        expect(drawing.FontMetricsFlags.BOUNDS_INVALID !== undefined).assertTrue()
-        console.info(msg + ' drawing.FontMetricsFlags.UNDERLINE_THICKNESS_VALID: '
-          + drawing.FontMetricsFlags.UNDERLINE_THICKNESS_VALID);
-        console.info(msg + ' drawing.FontMetricsFlags.UNDERLINE_POSITION_VALID: '
-          + drawing.FontMetricsFlags.UNDERLINE_POSITION_VALID);
-        console.info(msg + ' drawing.FontMetricsFlags.STRIKETHROUGH_THICKNESS_VALID: '
-          + drawing.FontMetricsFlags.STRIKETHROUGH_THICKNESS_VALID);
-        console.info(msg + ' drawing.FontMetricsFlags.STRIKETHROUGH_POSITION_VALID: '
-          + drawing.FontMetricsFlags.STRIKETHROUGH_POSITION_VALID);
-        console.info(msg + ' drawing.FontMetricsFlags.BOUNDS_INVALID: '
-          + drawing.FontMetricsFlags.BOUNDS_INVALID);
-        done()
-      } catch (err) {
-        console.log(msg + " Failed in SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_ENUM_STATIC_0100 "
-          + JSON.stringify(err))
-        console.log(msg + " Failed in SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_ENUM_STATIC_0100 " + err)
-        expect().assertFail()
-        done()
-      }
-    })
+        let msg = " ====SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_ENUM_STATIC_0100==== "
+        try {
+          console.info(msg + ' Succeeded in FontMetricsFlags.');
+          expect(drawing.FontMetricsFlags.UNDERLINE_THICKNESS_VALID !== undefined).assertTrue()
+          expect(drawing.FontMetricsFlags.UNDERLINE_POSITION_VALID !== undefined).assertTrue()
+          expect(drawing.FontMetricsFlags.STRIKETHROUGH_THICKNESS_VALID !== undefined).assertTrue()
+          expect(drawing.FontMetricsFlags.STRIKETHROUGH_POSITION_VALID !== undefined).assertTrue()
+          expect(drawing.FontMetricsFlags.BOUNDS_INVALID !== undefined).assertTrue()
+          console.info(msg + ' drawing.FontMetricsFlags.UNDERLINE_THICKNESS_VALID: '
+            + drawing.FontMetricsFlags.UNDERLINE_THICKNESS_VALID);
+          console.info(msg + ' drawing.FontMetricsFlags.UNDERLINE_POSITION_VALID: '
+            + drawing.FontMetricsFlags.UNDERLINE_POSITION_VALID);
+          console.info(msg + ' drawing.FontMetricsFlags.STRIKETHROUGH_THICKNESS_VALID: '
+            + drawing.FontMetricsFlags.STRIKETHROUGH_THICKNESS_VALID);
+          console.info(msg + ' drawing.FontMetricsFlags.STRIKETHROUGH_POSITION_VALID: '
+            + drawing.FontMetricsFlags.STRIKETHROUGH_POSITION_VALID);
+          console.info(msg + ' drawing.FontMetricsFlags.BOUNDS_INVALID: '
+            + drawing.FontMetricsFlags.BOUNDS_INVALID);
+          done()
+        } catch (err) {
+          console.log(msg + " Failed in SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_ENUM_STATIC_0100 "
+            + JSON.stringify(err))
+          console.log(msg + " Failed in SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_ENUM_STATIC_0100 " + err)
+          expect().assertFail()
+          done()
+        }
+      })
 
     /**
      * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_ENUM_STATIC_0200
@@ -111,6 +111,14 @@ export default function FontPart4(): void {
         } else {
           expect(path !== null && path !== undefined).assertTrue();
           console.info(msg + ' getTextPathWithFallback success');
+          let pathLength = path.getLength(false);
+          console.info(msg + ' getLength success, pathLength:' + pathLength);
+          expect(Math.floor(pathLength * 100) / 100).assertEqual(195.50);
+          let lastPoint = path.getLastPoint();
+          console.info(msg + ' getLastPoint success, lastPoint.x:' + lastPoint.x + ' lastPoint.y:' + lastPoint.y);
+          expect(lastPoint !== null && lastPoint !== undefined).assertTrue();
+          expect(Math.floor(lastPoint.x * 100) / 100).assertEqual(94.84);
+          expect(Math.floor(lastPoint.y * 100) / 100).assertEqual(86.99);
         }
       } catch (e) {
         e = e as BusinessError;
@@ -141,6 +149,13 @@ export default function FontPart4(): void {
         } else {
           expect(path !== null && path !== undefined).assertTrue();
           console.info(msg + ' getTextPathWithFallback success');
+          let pathLength = path.getLength(false);
+          console.info(msg + ' getLength success, pathLength:' + pathLength);
+          expect(Math.floor(pathLength * 100) / 100).assertEqual(76.05);
+          let lastPoint = path.getLastPoint();
+          console.info(msg + ' getLastPoint success, lastPoint.x:' + lastPoint.x + ' lastPoint.y:' + lastPoint.y);
+          expect(Math.floor(lastPoint.x * 100) / 100).assertEqual(153.84);
+          expect(Math.floor(lastPoint.y * 100) / 100).assertEqual(92.39);
         }
       } catch (e) {
         e = e as BusinessError;
@@ -171,6 +186,13 @@ export default function FontPart4(): void {
         } else {
           expect(path !== null && path !== undefined).assertTrue();
           console.info(msg + ' getTextPathWithFallback success');
+          let pathLength = path.getLength(false);
+          console.info(msg + ' getLength success, pathLength:' + pathLength);
+          expect(Math.floor(pathLength * 100) / 100).assertEqual(195.50);
+          let lastPoint = path.getLastPoint();
+          console.info(msg + ' getLastPoint success, lastPoint.x:' + lastPoint.x + ' lastPoint.y:' + lastPoint.y);
+          expect(Math.floor(lastPoint.x * 100) / 100).assertEqual(410.84);
+          expect(Math.floor(lastPoint.y * 100) / 100).assertEqual(92.39);
         }
       } catch (e) {
         e = e as BusinessError;
@@ -200,6 +222,11 @@ export default function FontPart4(): void {
         } else {
           expect(path !== null && path !== undefined).assertTrue();
           console.info(msg + ' getTextPathWithFallback success');
+          let pathLength = path.getLength(false);
+          console.info(msg + ' getLength success, pathLength:' + pathLength);
+          expect(pathLength).assertEqual(0);
+          let lastPoint = path.getLastPoint();
+          expect(lastPoint== undefined).assertTrue();
         }
       } catch (e) {
         e = e as BusinessError;
@@ -230,6 +257,13 @@ export default function FontPart4(): void {
         } else {
           expect(path !== null && path !== undefined).assertTrue();
           console.info(msg + ' getTextPathWithFallback success');
+          let pathLength = path.getLength(false);
+          console.info(msg + ' getLength success, pathLength:' + pathLength);
+          expect(Math.floor(pathLength * 100) / 100).assertEqual(195.50);
+          let lastPoint = path.getLastPoint();
+          console.info(msg + ' getLastPoint success, lastPoint.x:' + lastPoint.x + ' lastPoint.y:' + lastPoint.y);
+          expect(Math.floor(lastPoint.x * 100) / 100).assertEqual(94.84);
+          expect(Math.floor(lastPoint.y * 100) / 100).assertEqual(86.99);
         }
       } catch (e) {
         e = e as BusinessError;
@@ -260,6 +294,13 @@ export default function FontPart4(): void {
         } else {
           expect(path !== null && path !== undefined).assertTrue();
           console.info(msg + ' getTextPathWithFallback success');
+          let pathLength = path.getLength(false);
+          console.info(msg + ' getLength success, pathLength:' + pathLength);
+          expect(Math.floor(pathLength * 100) / 100).assertEqual(195.50);
+          let lastPoint = path.getLastPoint();
+          console.info(msg + ' getLastPoint success, lastPoint.x:' + lastPoint.x + ' lastPoint.y:' + lastPoint.y);
+          expect(Math.floor(lastPoint.x * 100) / 100).assertEqual(94.84);
+          expect(Math.floor(lastPoint.y * 100) / 100).assertEqual(86.99);
         }
       } catch (e) {
         e = e as BusinessError;
@@ -289,6 +330,13 @@ export default function FontPart4(): void {
         } else {
           expect(path !== null && path !== undefined).assertTrue();
           console.info(msg + ' getTextPathWithFallback success');
+          let pathLength = path.getLength(false);
+          console.info(msg + ' getLength success, pathLength:' + pathLength);
+          expect(Math.floor(pathLength * 100) / 100).assertEqual(195.50);
+          let lastPoint = path.getLastPoint();
+          console.info(msg + ' getLastPoint success, lastPoint.x:' + lastPoint.x + ' lastPoint.y:' + lastPoint.y);
+          expect(Math.floor(lastPoint.x * 100) / 100).assertEqual(94.84);
+          expect(Math.floor(lastPoint.y * 100) / 100).assertEqual(86.99);
         }
       } catch (e) {
         e = e as BusinessError;
@@ -319,6 +367,13 @@ export default function FontPart4(): void {
         } else {
           expect(path !== null && path !== undefined).assertTrue();
           console.info(msg + ' getTextPathWithFallback success');
+          let pathLength = path.getLength(false);
+          console.info(msg + ' getLength success, pathLength:' + pathLength);
+          expect(Math.floor(pathLength * 100) / 100).assertEqual(195.50);
+          let lastPoint = path.getLastPoint();
+          console.info(msg + ' getLastPoint success, lastPoint.x:' + lastPoint.x + ' lastPoint.y:' + lastPoint.y);
+          expect(Math.floor(lastPoint.x * 100) / 100).assertEqual(194.84);
+          expect(Math.floor(lastPoint.y * 100) / 100).assertEqual(86.99);
         }
       } catch (e) {
         e = e as BusinessError;
@@ -349,6 +404,13 @@ export default function FontPart4(): void {
         } else {
           expect(path !== null && path !== undefined).assertTrue();
           console.info(msg + ' getTextPathWithFallback success');
+          let pathLength = path.getLength(false);
+          console.info(msg + ' getLength success, pathLength:' + pathLength);
+          expect(Math.floor(pathLength * 100) / 100).assertEqual(195.50);
+          let lastPoint = path.getLastPoint();
+          console.info(msg + ' getLastPoint success, lastPoint.x:' + lastPoint.x + ' lastPoint.y:' + lastPoint.y);
+          expect(Math.floor(lastPoint.x * 100) / 100).assertEqual(195.34);
+          expect(Math.floor(lastPoint.y * 100) / 100).assertEqual(86.99);
         }
       } catch (e) {
         e = e as BusinessError;
@@ -379,6 +441,13 @@ export default function FontPart4(): void {
         } else {
           expect(path !== null && path !== undefined).assertTrue();
           console.info(msg + ' getTextPathWithFallback success');
+          let pathLength = path.getLength(false);
+          console.info(msg + ' getLength success, pathLength:' + pathLength);
+          expect(Math.floor(pathLength * 100) / 100).assertEqual(195.50);
+          let lastPoint = path.getLastPoint();
+          console.info(msg + ' getLastPoint success, lastPoint.x:' + lastPoint.x + ' lastPoint.y:' + lastPoint.y);
+          expect(Math.floor(lastPoint.x * 100) / 100).assertEqual(94.84);
+          expect(Math.floor(lastPoint.y * 100) / 100).assertEqual(86.99);
         }
       } catch (e) {
         e = e as BusinessError;
@@ -409,6 +478,13 @@ export default function FontPart4(): void {
         } else {
           expect(path !== null && path !== undefined).assertTrue();
           console.info(msg + ' getTextPathWithFallback success');
+          let pathLength = path.getLength(false);
+          console.info(msg + ' getLength success, pathLength:' + pathLength);
+          expect(Math.floor(pathLength * 100) / 100).assertEqual(195.50);
+          let lastPoint = path.getLastPoint();
+          console.info(msg + ' getLastPoint success, lastPoint.x:' + lastPoint.x + ' lastPoint.y:' + lastPoint.y);
+          expect(parseFloat(lastPoint.x.toFixed(2))).assertEqual(-5.15);
+          expect(Math.floor(lastPoint.y * 100) / 100).assertEqual(86.99);
         }
       } catch (e) {
         e = e as BusinessError;
@@ -439,6 +515,13 @@ export default function FontPart4(): void {
         } else {
           expect(path !== null && path !== undefined).assertTrue();
           console.info(msg + ' getTextPathWithFallback success');
+          let pathLength = path.getLength(false);
+          console.info(msg + ' getLength success, pathLength:' + pathLength);
+          expect(Math.floor(pathLength * 100) / 100).assertEqual(186.40);
+          let lastPoint = path.getLastPoint();
+          console.info(msg + ' getLastPoint success, lastPoint.x:' + lastPoint.x + ' lastPoint.y:' + lastPoint.y);
+          expect(Math.floor(lastPoint.x * 100) / 100).assertEqual(100000096);
+          expect(Math.floor(lastPoint.y * 100) / 100).assertEqual(86.99);
         }
       } catch (e) {
         e = e as BusinessError;
@@ -469,6 +552,13 @@ export default function FontPart4(): void {
         } else {
           expect(path !== null && path !== undefined).assertTrue();
           console.info(msg + ' getTextPathWithFallback success');
+          let pathLength = path.getLength(false);
+          console.info(msg + ' getLength success, pathLength:' + pathLength);
+          expect(Math.floor(pathLength * 100) / 100).assertEqual(195.50);
+          let lastPoint = path.getLastPoint();
+          console.info(msg + ' getLastPoint success, lastPoint.x:' + lastPoint.x + ' lastPoint.y:' + lastPoint.y);
+          expect(Math.floor(lastPoint.x * 100) / 100).assertEqual(94.84);
+          expect(Math.floor(lastPoint.y * 100) / 100).assertEqual(186.99);
         }
       } catch (e) {
         e = e as BusinessError;
@@ -499,6 +589,13 @@ export default function FontPart4(): void {
         } else {
           expect(path !== null && path !== undefined).assertTrue();
           console.info(msg + ' getTextPathWithFallback success');
+          let pathLength = path.getLength(false);
+          console.info(msg + ' getLength success, pathLength:' + pathLength);
+          expect(Math.floor(pathLength * 100) / 100).assertEqual(195.50);
+          let lastPoint = path.getLastPoint();
+          console.info(msg + ' getLastPoint success, lastPoint.x:' + lastPoint.x + ' lastPoint.y:' + lastPoint.y);
+          expect(Math.floor(lastPoint.x * 100) / 100).assertEqual(94.84);
+          expect(Math.floor(lastPoint.y * 100) / 100).assertEqual(87.49);
         }
       } catch (e) {
         e = e as BusinessError;
@@ -529,6 +626,13 @@ export default function FontPart4(): void {
         } else {
           expect(path !== null && path !== undefined).assertTrue();
           console.info(msg + ' getTextPathWithFallback success');
+          let pathLength = path.getLength(false);
+          console.info(msg + ' getLength success, pathLength:' + pathLength);
+          expect(Math.floor(pathLength * 100) / 100).assertEqual(195.50);
+          let lastPoint = path.getLastPoint();
+          console.info(msg + ' getLastPoint success, lastPoint.x:' + lastPoint.x + ' lastPoint.y:' + lastPoint.y);
+          expect(Math.floor(lastPoint.x * 100) / 100).assertEqual(94.84);
+          expect(parseFloat(lastPoint.y.toFixed(2))).assertEqual(-13.00);
         }
       } catch (e) {
         e = e as BusinessError;
@@ -559,6 +663,13 @@ export default function FontPart4(): void {
         } else {
           expect(path !== null && path !== undefined).assertTrue();
           console.info(msg + ' getTextPathWithFallback success');
+          let pathLength = path.getLength(false);
+          console.info(msg + ' getLength success, pathLength:' + pathLength);
+          expect(Math.floor(pathLength * 100) / 100).assertEqual(195.50);
+          let lastPoint = path.getLastPoint();
+          console.info(msg + ' getLastPoint success, lastPoint.x:' + lastPoint.x + ' lastPoint.y:' + lastPoint.y);
+          expect(Math.floor(lastPoint.x * 100) / 100).assertEqual(94.84);
+          expect(parseFloat(lastPoint.y.toFixed(2))).assertEqual(-113.00);
         }
       } catch (e) {
         e = e as BusinessError;
@@ -589,6 +700,13 @@ export default function FontPart4(): void {
         } else {
           expect(path !== null && path !== undefined).assertTrue();
           console.info(msg + ' getTextPathWithFallback success');
+          let pathLength = path.getLength(false);
+          console.info(msg + ' getLength success, pathLength:' + pathLength);
+          expect(Math.floor(pathLength * 100) / 100).assertEqual(201.10);
+          let lastPoint = path.getLastPoint();
+          console.info(msg + ' getLastPoint success, lastPoint.x:' + lastPoint.x + ' lastPoint.y:' + lastPoint.y);
+          expect(Math.floor(lastPoint.x * 100) / 100).assertEqual(94.84);
+          expect(Math.floor(lastPoint.y * 100) / 100).assertEqual(99999984);
         }
       } catch (e) {
         e = e as BusinessError;
@@ -619,6 +737,11 @@ export default function FontPart4(): void {
         } else {
           expect(path !== null && path !== undefined).assertTrue();
           console.info(msg + ' getTextPathWithFallback success');
+          let pathLength = path.getLength(false);
+          console.info(msg + ' getLength success, pathLength:' + pathLength);
+          expect(pathLength).assertEqual(0);
+          let lastPoint = path.getLastPoint();
+          expect(lastPoint== undefined).assertTrue();
         }
       } catch (e) {
         e = e as BusinessError;
@@ -648,6 +771,13 @@ export default function FontPart4(): void {
         } else {
           console.info(msg + ' getTextPathWithFallback path1 success');
           expect(path1 !== null && path1 !== undefined).assertTrue();
+          let pathLength = path1.getLength(false);
+          console.info(msg + ' getLength success, pathLength:' + pathLength);
+          expect(Math.floor(pathLength * 100) / 100).assertEqual(195.50);
+          let lastPoint = path1.getLastPoint();
+          console.info(msg + ' getLastPoint success, lastPoint.x:' + lastPoint.x + ' lastPoint.y:' + lastPoint.y);
+          expect(Math.floor(lastPoint.x * 100) / 100).assertEqual(94.84);
+          expect(Math.floor(lastPoint.y * 100) / 100).assertEqual(86.99);
         }
         let path2 = font.getTextPathWithFallback(myString, length, 0, 200);
         if(path2 == undefined){
@@ -656,6 +786,13 @@ export default function FontPart4(): void {
         } else {
           console.info(msg + ' getTextPathWithFallback path2 success');
           expect(path2 !== null && path2 !== undefined).assertTrue();
+          let pathLength = path2.getLength(false);
+          console.info(msg + ' getLength success, pathLength:' + pathLength);
+          expect(Math.floor(pathLength * 100) / 100).assertEqual(195.50);
+          let lastPoint = path2.getLastPoint();
+          console.info(msg + ' getLastPoint success, lastPoint.x:' + lastPoint.x + ' lastPoint.y:' + lastPoint.y);
+          expect(Math.floor(lastPoint.x * 100) / 100).assertEqual(94.84);
+          expect(Math.floor(lastPoint.y * 100) / 100).assertEqual(186.99);
         }
         let path3 = font.getTextPathWithFallback(myString, length, 100, 100);
         if(path3 == undefined){
@@ -664,6 +801,13 @@ export default function FontPart4(): void {
         } else {
           console.info(msg + ' getTextPathWithFallback path3 success');
           expect(path3 !== null && path3 !== undefined).assertTrue();
+          let pathLength = path3.getLength(false);
+          console.info(msg + ' getLength success, pathLength:' + pathLength);
+          expect(Math.floor(pathLength * 100) / 100).assertEqual(195.50);
+          let lastPoint = path3.getLastPoint();
+          console.info(msg + ' getLastPoint success, lastPoint.x:' + lastPoint.x + ' lastPoint.y:' + lastPoint.y);
+          expect(Math.floor(lastPoint.x * 100) / 100).assertEqual(194.84);
+          expect(Math.floor(lastPoint.y * 100) / 100).assertEqual(86.99);
         }
         console.info(msg + ' getTextPathWithFallback multiple calls success');
       } catch (e) {
@@ -698,6 +842,10 @@ export default function FontPart4(): void {
           expect(bounds !== null && bounds !== undefined).assertTrue();
           console.info(msg + ' getTextPathWithFallback success, bounds left:' + bounds!.left + ' top:' + bounds!.top
             + ' right:' + bounds!.right + ' bottom:' + bounds!.bottom);
+          expect(Math.floor(bounds.left * 100) / 100).assertEqual(4.34);
+          expect(Math.floor(bounds.top * 100) / 100).assertEqual(61.95);
+          expect(Math.floor(bounds.right * 100) / 100).assertEqual(115.19);
+          expect(Math.floor(bounds.bottom * 100) / 100).assertEqual(100.54);
         }
       } catch (e) {
         e = e as BusinessError;
@@ -761,6 +909,13 @@ export default function FontPart4(): void {
         } else {
           expect(path !== null && path !== undefined).assertTrue();
           console.info(msg + ' getTextPathWithFallback success');
+          let pathLength = path.getLength(false);
+          console.info(msg + ' getLength success, pathLength:' + pathLength);
+          expect(Math.floor(pathLength * 100) / 100).assertEqual(17.44);
+          let lastPoint = path.getLastPoint();
+          console.info(msg + ' getLastPoint success, lastPoint.x:' + lastPoint.x + ' lastPoint.y:' + lastPoint.y);
+          expect(Math.floor(lastPoint.x * 100) / 100).assertEqual(272.74);
+          expect(Math.floor(lastPoint.y * 100) / 100).assertEqual(82.39);
         }
       } catch (e) {
         e = e as BusinessError;
@@ -790,6 +945,13 @@ export default function FontPart4(): void {
         } else {
           expect(path !== null && path !== undefined).assertTrue();
           console.info(msg + ' getTextPathWithFallback success');
+          let pathLength = path.getLength(false);
+          console.info(msg + ' getLength success, pathLength:' + pathLength);
+          expect(Math.floor(pathLength * 100) / 100).assertEqual(195.50);
+          let lastPoint = path.getLastPoint();
+          console.info(msg + ' getLastPoint success, lastPoint.x:' + lastPoint.x + ' lastPoint.y:' + lastPoint.y);
+          expect(Math.floor(lastPoint.x * 100) / 100).assertEqual(94.84);
+          expect(Math.floor(lastPoint.y * 100) / 100).assertEqual(86.99);
         }
       } catch (e) {
         e = e as BusinessError;
@@ -819,6 +981,13 @@ export default function FontPart4(): void {
         } else {
           expect(path !== null && path !== undefined).assertTrue();
           console.info(msg + ' getTextPathWithFallback success');
+          let pathLength = path.getLength(false);
+          console.info(msg + ' getLength success, pathLength:' + pathLength);
+          expect(Math.floor(pathLength * 100) / 100).assertEqual(195.50);
+          let lastPoint = path.getLastPoint();
+          console.info(msg + ' getLastPoint success, lastPoint.x:' + lastPoint.x + ' lastPoint.y:' + lastPoint.y);
+          expect(Math.floor(lastPoint.x * 100) / 100).assertEqual(4.34);
+          expect(Math.floor(lastPoint.y * 100) / 100).assertEqual(63.40);
         }
       } catch (e) {
         e = e as BusinessError;
@@ -849,6 +1018,13 @@ export default function FontPart4(): void {
         } else {
           expect(path !== null && path !== undefined).assertTrue();
           console.info(msg + ' getTextPathWithFallback success');
+          let pathLength = path.getLength(false);
+          console.info(msg + ' getLength success, pathLength:' + pathLength);
+          expect(Math.floor(pathLength * 100) / 100).assertEqual(195.50);
+          let lastPoint = path.getLastPoint();
+          console.info(msg + ' getLastPoint success, lastPoint.x:' + lastPoint.x + ' lastPoint.y:' + lastPoint.y);
+          expect(Math.floor(lastPoint.x * 100) / 100).assertEqual(95.84);
+          expect(Math.floor(lastPoint.y * 100) / 100).assertEqual(86.99);
         }
       } catch (e) {
         e = e as BusinessError;
@@ -879,6 +1055,13 @@ export default function FontPart4(): void {
         } else {
           expect(path !== null && path !== undefined).assertTrue();
           console.info(msg + ' getTextPathWithFallback success');
+          let pathLength = path.getLength(false);
+          console.info(msg + ' getLength success, pathLength:' + pathLength);
+          expect(Math.floor(pathLength * 100) / 100).assertEqual(195.50);
+          let lastPoint = path.getLastPoint();
+          console.info(msg + ' getLastPoint success, lastPoint.x:' + lastPoint.x + ' lastPoint.y:' + lastPoint.y);
+          expect(Math.floor(lastPoint.x * 100) / 100).assertEqual(94.84);
+          expect(parseFloat(lastPoint.y.toFixed(2))).assertEqual(-12.00);
         }
       } catch (e) {
         e = e as BusinessError;
@@ -909,6 +1092,13 @@ export default function FontPart4(): void {
         } else {
           expect(path !== null && path !== undefined).assertTrue();
           console.info(msg + ' getTextPathWithFallback success');
+          let pathLength = path.getLength(false);
+          console.info(msg + ' getLength success, pathLength:' + pathLength);
+          expect(Math.floor(pathLength * 100) / 100).assertEqual(127.58);
+          let lastPoint = path.getLastPoint();
+          console.info(msg + ' getLastPoint success, lastPoint.x:' + lastPoint.x + ' lastPoint.y:' + lastPoint.y);
+          expect(Math.floor(lastPoint.x * 100) / 100).assertEqual(1775.95);
+          expect(Math.floor(lastPoint.y * 100) / 100).assertEqual(102.35);
         }
       } catch (e) {
         e = e as BusinessError;
@@ -939,6 +1129,13 @@ export default function FontPart4(): void {
         } else {
           expect(path !== null && path !== undefined).assertTrue();
           console.info(msg + ' getTextPathWithFallback success');
+          let pathLength = path.getLength(false);
+          console.info(msg + ' getLength success, pathLength:' + pathLength);
+          expect(Math.floor(pathLength * 100) / 100).assertEqual(195.50);
+          let lastPoint = path.getLastPoint();
+          console.info(msg + ' getLastPoint success, lastPoint.x:' + lastPoint.x + ' lastPoint.y:' + lastPoint.y);
+          expect(Math.floor(lastPoint.x * 100) / 100).assertEqual(234.23);
+          expect(Math.floor(lastPoint.y * 100) / 100).assertEqual(92.39);
         }
       } catch (e) {
         e = e as BusinessError;
@@ -969,6 +1166,13 @@ export default function FontPart4(): void {
         } else {
           expect(path !== null && path !== undefined).assertTrue();
           console.info(msg + ' getTextPathWithFallback success');
+          let pathLength = path.getLength(false);
+          console.info(msg + ' getLength success, pathLength:' + pathLength);
+          expect(Math.floor(pathLength * 100) / 100).assertEqual(195.50);
+          let lastPoint = path.getLastPoint();
+          console.info(msg + ' getLastPoint success, lastPoint.x:' + lastPoint.x + ' lastPoint.y:' + lastPoint.y);
+          expect(Math.floor(lastPoint.x * 100) / 100).assertEqual(94.84);
+          expect(Math.floor(lastPoint.y * 100) / 100).assertEqual(86.99);
         }
       } catch (e) {
         e = e as BusinessError;
@@ -999,6 +1203,13 @@ export default function FontPart4(): void {
         } else {
           expect(path !== null && path !== undefined).assertTrue();
           console.info(msg + ' getTextPathWithFallback success');
+          let pathLength = path.getLength(false);
+          console.info(msg + ' getLength success, pathLength:' + pathLength);
+          expect(Math.floor(pathLength * 100) / 100).assertEqual(195.50);
+          let lastPoint = path.getLastPoint();
+          console.info(msg + ' getLastPoint success, lastPoint.x:' + lastPoint.x + ' lastPoint.y:' + lastPoint.y);
+          expect(Math.floor(lastPoint.x * 100) / 100).assertEqual(94.84);
+          expect(Math.floor(lastPoint.y * 100) / 100).assertEqual(86.99);
         }
       } catch (e) {
         e = e as BusinessError;
