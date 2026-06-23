@@ -146,6 +146,8 @@ import SubtypingAmongArrayTypesTest from './semanticrules/subtyping/SubtypingAmo
 import SupertypingAmongArrayTypesTest from './semanticrules/subtyping/SupertypingAmongArrayTypesTest.test'
 import SubtypingAmongPrimitiveTypestTest from './semanticrules/subtyping/SubtypingAmongPrimitiveTypestTest.test'
 import DiffTypeIsSubOfTypeObjOnGenTest from './semanticrules/subtyping/DiffTypeIsSubOfTypeObjOnGenTest.test'
+import DiffTypeIsSubOfTypeObjOnGenTest01 from './semanticrules/subtyping/DiffTypeIsSubOfTypeObjOnGenTest01.test'
+import TypeTIsSubOfInterTypeOnStrLitTest from './semanticrules/subtyping/TypeTIsSubOfInterTypeOnStrLitTest.test'
 import TypeTIsSubOfInterTypeOnStrLitTest01 from './semanticrules/subtyping/TypeTIsSubOfInterTypeOnStrLitTest01.test'
 import DiffTypeIsSubOfTypeObjOnNonGenTest from './semanticrules/subtyping/DiffTypeIsSubOfTypeObjOnNonGenTest.test'
 import DiffTypeIsSubOfTypeObjOnPredefinedTest from './semanticrules/subtyping/DiffTypeIsSubOfTypeObjOnPredefinedTest.test'
@@ -320,6 +322,8 @@ export default function testsuite(): void {
   SupertypingAmongArrayTypesTest();
   SubtypingAmongPrimitiveTypestTest();
   DiffTypeIsSubOfTypeObjOnGenTest();
+  DiffTypeIsSubOfTypeObjOnGenTest01();
+  TypeTIsSubOfInterTypeOnStrLitTest();
   TypeTIsSubOfInterTypeOnStrLitTest01();
   DiffTypeIsSubOfTypeObjOnNonGenTest();
   DiffTypeIsSubOfTypeObjOnPredefinedTest();
