@@ -246,15 +246,25 @@ interface B31 extends A31 {}
 export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
   describe('SubtypingForNonGenericClassesAndInterfacesTest', () => {
     beforeAll(() => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
     })
-    
+
     beforeEach(() => {
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
     })
-    
+
     afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
     })
-    
+
     afterAll(() => {
+      // Presets an action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: preset action function.
     })
 
     /**
@@ -439,7 +449,7 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        
+
       t14 = {}
       let base = foo14(t14)
       let derived = foo14(t14 = s14)

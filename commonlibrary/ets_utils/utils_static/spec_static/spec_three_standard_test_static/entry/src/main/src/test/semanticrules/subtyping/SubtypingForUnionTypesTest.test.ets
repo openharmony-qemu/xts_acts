@@ -39,7 +39,6 @@ class C7 {}
 let ac7: Array<A7>|Array<C7> = [new A7, new B7]
 let b7: Array<B7> = [new B7, new B7]
 
-
 enum Color9 { Red, Green, Blue }
 type WithEnum9 = Color9|String|Number
 let v9: WithEnum9 = Color9.Green
@@ -69,15 +68,25 @@ let cdf12: C12|D12|F12 = new F12
 export default function SubtypingForUnionTypesTest(): void {
   describe('SubtypingForUnionTypesTest', () => {
     beforeAll(() => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
     })
-    
+
     beforeEach(() => {
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
     })
-    
+
     afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
     })
-    
+
     afterAll(() => {
+      // Presets an action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: preset action function.
     })
 
     /**
@@ -191,7 +200,7 @@ export default function SubtypingForUnionTypesTest(): void {
       ac7 = b7 as Array<A7> | Array<C7>
       expect(ac7 instanceof Array).assertTrue()
     });
-    
+
     /**
      * @tc.number    SUB_SUBTYPING_FOR_UNION_TYPES_0900
      * @tc.name      testPositive0009

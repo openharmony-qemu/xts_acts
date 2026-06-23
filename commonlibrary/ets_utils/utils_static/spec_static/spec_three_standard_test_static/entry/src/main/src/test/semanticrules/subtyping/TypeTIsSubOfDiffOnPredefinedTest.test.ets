@@ -25,7 +25,6 @@ async function sleep(time: int): Promise<int> {
   });
 }
 
-
 function check_1(v: Object,
   is_subtype_of_A: boolean, v_id: number): boolean {
   let res: boolean = false
@@ -70,7 +69,6 @@ function check_is_not_in_B_type_1(v: Any, v_id: number): void {
   expect(thrown).assertEqual(true);
 }
 
-
 function check_2(v: Object,
   is_subtype_of_A: boolean, v_id: number): boolean {
   let res: boolean = false
@@ -112,7 +110,6 @@ function check_is_not_in_B_type_2(v: string | number | object | undefined | null
   }
   expect(thrown).assertEqual(true);
 }
-
 
 function check_3(v: number,
   is_subtype_of_A: boolean, v_id: number): boolean {
@@ -161,16 +158,26 @@ function check_is_not_in_B_type_3(v: Any, v_id: number): void {
 export default function TypeTIsSubOfDiffOnPredefinedTest(): void {
   describe('TypeTIsSubOfDiffOnPredefinedTest', () => {
     beforeAll(() => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
     })
 
     beforeEach(async () => {
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
       await sleep(30);
     })
 
     afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
     })
 
     afterAll(() => {
+      // Presets an action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: preset action function.
     })
 
     /**

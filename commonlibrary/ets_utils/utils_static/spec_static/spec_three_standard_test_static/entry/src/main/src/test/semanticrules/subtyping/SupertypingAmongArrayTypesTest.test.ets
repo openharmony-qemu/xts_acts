@@ -42,15 +42,25 @@ class B2 extends A {
 export default function SupertypingAmongArrayTypesTest(): void {
   describe('SupertypingAmongArrayTypesTest', () => {
     beforeAll(() => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
     })
-    
+
     beforeEach(() => {
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
     })
-    
+
     afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
     })
-    
+
     afterAll(() => {
+      // Presets an action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: preset action function.
     })
 
     /**
@@ -103,7 +113,7 @@ export default function SupertypingAmongArrayTypesTest(): void {
       let a1: Object = 1;
       let a2: Object = 2;
       let instance: number[] = [Number(a1), Number(a2)];
-      
+
       expect(typeof instance[0]).assertEqual('number');
       expect(typeof instance[1]).assertEqual('number');
    });

@@ -25,7 +25,6 @@ async function sleep(time: int): Promise<int> {
   });
 }
 
-
 interface I1_4<U, V> {}
 interface I2_4<U, V> {}
 interface II1_4<U, V> extends I1_4<U, V>, I2_4<U, V> {}
@@ -93,7 +92,6 @@ function check_is_not_in_B_type_4(v: Any, v_id: number): void {
   check_value_4(v, v_id);
   expect(v instanceof II1_4).assertEqual(false);
 }
-
 
 interface I_5<U, V> {}
 interface II1_5<U, V> extends I_5<U, V> {}
@@ -163,7 +161,6 @@ function check_is_not_in_B_type_5(v: Any, v_id: number): void {
   check_value_5(v, v_id);
   expect(v instanceof III2_5).assertEqual(false);
 }
-
 
 class C1_6<in T1, out T2> {
   readonly c1_v: T2
@@ -236,16 +233,26 @@ function check_is_not_in_B_type_6(v: Any, v_id: number): void {
 export default function TypeTIsSubOfDiffOnGenTest01(): void {
   describe('TypeTIsSubOfDiffOnGenTest01', () => {
     beforeAll(() => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
     })
 
     beforeEach(async () => {
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
       await sleep(30);
     })
 
     afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
     })
 
     afterAll(() => {
+      // Presets an action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: preset action function.
     })
 
     /**

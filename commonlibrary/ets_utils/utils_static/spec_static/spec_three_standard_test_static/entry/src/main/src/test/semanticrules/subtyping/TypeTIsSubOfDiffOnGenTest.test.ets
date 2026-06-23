@@ -25,7 +25,6 @@ async function sleep(time: int): Promise<int> {
   });
 }
 
-
 abstract class A_1<U, V> {}
 abstract class B1_1<U, V> extends A_1<U, V> {}
 class B2_1<U, V> extends A_1<U, V> {
@@ -97,7 +96,6 @@ function check_is_not_in_B_type_1(v: Any, v_id: number): void {
   expect(v instanceof B1_1).assertEqual(false)
 }
 
-
 abstract class A_2<U, V> {}
 abstract class B1_2<U, V> extends A_2<U, V> {}
 class B2_2<U=bigint, V=undefined> extends A_2<U, V> {
@@ -166,7 +164,6 @@ function check_is_not_in_B_type_2(v: Any, v_id: number): void {
   check_value_2(v, v_id)
   expect(v instanceof B1_2).assertEqual(false)
 }
-
 
 interface I1_3<U, V> {}
 interface I2_3<U, V> {}
@@ -241,16 +238,26 @@ function check_is_not_in_B_type_3(v: Any, v_id: number): void {
 export default function TypeTIsSubOfDiffOnGenTest(): void {
   describe('TypeTIsSubOfDiffOnGenTest', () => {
     beforeAll(() => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
     })
 
     beforeEach(async () => {
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
       await sleep(30);
     })
 
     afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
     })
 
     afterAll(() => {
+      // Presets an action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: preset action function.
     })
 
     /**

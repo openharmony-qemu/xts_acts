@@ -45,7 +45,6 @@ let foo2_4: (v: 'b') => 'a'|'b'|'c' = (v: 'b'): 'a'|'b'|'c' => {return 'b'};
 let x5: null = null
 let y5: null = null
 
-
 type StringUnion7 = 'some_string' | 'some_other_string'
 type StrLiteral7 = 'some_string'
 function foo7(a: StrLiteral7, b: StringUnion7) {
@@ -57,15 +56,25 @@ function foo7(a: StrLiteral7, b: StringUnion7) {
 export default function SubtypingForLiteralTypesTest(): void {
   describe('SubtypingForLiteralTypesTest', () => {
     beforeAll(() => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
     })
-    
+
     beforeEach(() => {
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
     })
-    
+
     afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
     })
-    
+
     afterAll(() => {
+      // Presets an action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: preset action function.
     })
 
     /**
