@@ -1,6 +1,8 @@
 {
   "src": [
     "MainAbility/pages/index/index",
-    "MainAbility/pages/Tabs/TabsIndex"
+    "MainAbility/pages/Tabs/TabsIndex",
+    "MainAbility/pages/Tabs/tabsBarFloatingStyle",
+    "MainAbility/pages/Tabs/systemMaterialBarStyle"
   ]
 }
