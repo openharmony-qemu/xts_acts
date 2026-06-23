@@ -1996,3 +1996,281 @@ export default function IterableTest(): void {
       expect(iter.next().value).assertEqual(1);
       expect(iter.next().value).assertEqual(2);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERABLE_8800
+     * @tc.name testIterable088
+     * @tc.desc Verify EmptyStringIter1 used directly is empty
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIterable088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let iter = new EmptyStringIter1();
+      let r = iter.next();
+      expect(r.done).assertTrue();
+      expect(r.value === undefined).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERABLE_8900
+     * @tc.name testIterable089
+     * @tc.desc Verify ReverseInnerIter1 yields elements from end to start
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIterable089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let iter = new ReverseInnerIter1(['a', 'b', 'c']);
+      expect(iter.next().value).assertEqual('c');
+      expect(iter.next().value).assertEqual('b');
+      expect(iter.next().value).assertEqual('a');
+      expect(iter.next().done).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERABLE_9000
+     * @tc.name testIterable090
+     * @tc.desc Verify same iterable yields equal sums via collectAll and for-of
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIterable090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let iterable = new NumberCollection1();
+      let helperSum: number = 0;
+      let helperCollected = collectAll<number>(iterable);
+      for (let i: int = 0; i < helperCollected.length; i++) {
+        helperSum += helperCollected[i];
+      }
+      let forOfSum: number = 0;
+      for (let v of iterable) {
+        forOfSum += v;
+      }
+      expect(helperSum).assertEqual(forOfSum);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERABLE_9100
+     * @tc.name testIterable091
+     * @tc.desc Verify Iterable<Animal2>[] holds covariant DogIterable1 element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIterable091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let bag: Iterable<Animal2>[] = [new DogIterable1() as Iterable<Animal2>];
+      let total: number = 0;
+      for (let i: int = 0; i < bag.length; i++) {
+        let source: Iterable<Animal2> = bag[i];
+        let collected: Animal2[] = [];
+        for (let v of source) {
+          collected.push(v);
+        }
+        total += collected.length;
+      }
+      expect(total).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERABLE_9200
+     * @tc.name testIterable092
+     * @tc.desc Verify Iterable used in generic helper firstN returns first 2 elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIterable092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let iterable = new SimpleIterable1();
+      let collected: number[] = [];
+      let count: number = 0;
+      for (let v of iterable) {
+        if (count >= 2) {
+          break;
+        }
+        collected.push(v);
+        count++;
+      }
+      expect(collected.length).assertEqual(2);
+      expect(collected[0]).assertEqual(10);
+      expect(collected[1]).assertEqual(20);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERABLE_9300
+     * @tc.name testIterable093
+     * @tc.desc Verify Iterable iteration with n larger than length collects all elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIterable093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let iterable = new SimpleIterable1();
+      let collected: number[] = [];
+      let count: number = 0;
+      for (let v of iterable) {
+        if (count >= 100) {
+          break;
+        }
+        collected.push(v);
+        count++;
+      }
+      expect(collected.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERABLE_9400
+     * @tc.name testIterable094
+     * @tc.desc Verify two collectAll invocations on same instance return equal arrays
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIterable094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let iterable = new ColorIterable1();
+      let first = collectAll<string>(iterable);
+      let second = collectAll<string>(iterable);
+      expect(first.length).assertEqual(second.length);
+      expect(first[0]).assertEqual(second[0]);
+      expect(first[2]).assertEqual(second[2]);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERABLE_9500
+     * @tc.name testIterable095
+     * @tc.desc Verify Iterable<Item1> for-of can read both id and name fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIterable095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let col = new ObjectCollection1();
+      let names: string[] = [];
+      let ids: number[] = [];
+      for (let item of col) {
+        names.push(item.name);
+        ids.push(item.id);
+      }
+      expect(names.length).assertEqual(2);
+      expect(names[0]).assertEqual('item1');
+      expect(ids[1]).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERABLE_9600
+     * @tc.name testIterable096
+     * @tc.desc Verify Iterable<number[]> outer for-of yields first elements in source order
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIterable096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let col = new ArrayCollection1();
+      let firstElements: number[] = [];
+      for (let arr of col) {
+        firstElements.push(arr[0]);
+      }
+      expect(firstElements.length).assertEqual(3);
+      expect(firstElements[0]).assertEqual(1);
+      expect(firstElements[1]).assertEqual(3);
+      expect(firstElements[2]).assertEqual(5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERABLE_9700
+     * @tc.name testIterable097
+     * @tc.desc Verify Iterable inside Map<string, Iterable<string>> exposes iteration
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIterable097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let map = new Map<string, Iterable<string>>();
+      map.set('color', new ColorIterable1());
+      let stored = map.get('color');
+      expect(stored !== undefined).assertTrue();
+      if (stored !== undefined) {
+        let collected = collectAll<string>(stored);
+        expect(collected.length).assertEqual(3);
+        expect(collected[0]).assertEqual('red');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERABLE_9800
+     * @tc.name testIterable098
+     * @tc.desc Verify NumberList1 chain of iterators each from $_iterator() are distinct
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIterable098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let iterable = new NumberList1([1, 2, 3]);
+      let iter1 = iterable.$_iterator();
+      let iter2 = iterable.$_iterator();
+      let iter3 = iterable.$_iterator();
+      expect(iter1 === iter2).assertFalse();
+      expect(iter2 === iter3).assertFalse();
+      expect(iter1 === iter3).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERABLE_9900
+     * @tc.name testIterable099
+     * @tc.desc Verify two for-of loops on same iterable consume independent iterators
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIterable099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let iterable = new SimpleIterable1();
+      let firstSum: number = 0;
+      for (let v of iterable) {
+        firstSum += v;
+      }
+      let secondSum: number = 0;
+      for (let v of iterable) {
+        secondSum += v;
+      }
+      expect(firstSum).assertEqual(secondSum);
+      expect(firstSum).assertEqual(60);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERABLE_10000
+     * @tc.name testIterable100
+     * @tc.desc Verify Iterable<Pair1> exposes objects whose keys can be sorted
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIterable100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let pairs = new PairIterable1();
+      let keys: string[] = [];
+      for (let p of pairs) {
+        keys.push(p.key);
+      }
+      expect(keys.length).assertEqual(2);
+      let sortedFirst: string = keys[0] < keys[1] ? keys[0] : keys[1];
+      expect(sortedFirst).assertEqual('a');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERABLE_10100
+     * @tc.name testIterable101
+     * @tc.desc Verify Iterable<Animal2> via DogIterable1 yields elements with name == animal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIterable101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let animals: Iterable<Animal2> = new DogIterable1();
+      let names: string[] = [];
+      for (let a of animals) {
+        names.push(a.name);
+      }
+      expect(names.length).assertEqual(2);
+      expect(names[0]).assertEqual('animal');
+    });
+  });
+}
