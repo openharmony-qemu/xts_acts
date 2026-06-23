@@ -36,26 +36,48 @@ export default class OpenHarmonyTestRunner implements TestRunner {
         hilog.info(0x0000, 'testTag', '%{public}s', 'OpenHarmonyTestRunner OnPrepare ');
     }
 
+    escapeShellArg(arg: string): string {
+        return `'${arg.replace(/'/g, "'\\''")}'`;
+    }
+
+    buildCommand(args: string[]): string {
+        return args.map(arg => this.escapeShellArg(arg)).join(' ');
+    }
+
     async onRun() {
         hilog.info(0x0000, 'testTag', '%{public}s', 'OpenHarmonyTestRunner onRun run');
         abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
         abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
-        var testAbilityName = abilityDelegatorArguments.bundleName + '.TestAbility'
+
+        if (!abilityDelegatorArguments || !abilityDelegatorArguments.bundleName) {
+            hilog.error(0x0000, 'testTag', 'abilityDelegatorArguments or bundleName is null');
+            return;
+        }
+
+        if (!abilityDelegator) {
+            hilog.error(0x0000, 'testTag', 'abilityDelegator is null');
+            return;
+        }
+
+        const bundleName = abilityDelegatorArguments.bundleName;
+        var testAbilityName = bundleName + '.TestAbility'
         let lMonitor = {
             abilityName: testAbilityName,
             onAbilityCreate: onAbilityCreateCallback,
         };
         abilityDelegator.addAbilityMonitor(lMonitor, addAbilityMonitorCallback)
-        let cmd = 'aa start -d 0 -a TestAbility' + ' -b ' + abilityDelegatorArguments.bundleName
+
+        let cmdArgs: string[] = ['aa', 'start', '-d', '0', '-a', 'TestAbility', '-b', bundleName];
         var debug = abilityDelegatorArguments.parameters['-D']
-        if (debug == 'true')
-        {
-            cmd += ' -D'
+        if (debug == 'true') {
+            cmdArgs.push('-D');
         }
         var user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
-        if(user !== undefined){
-            cmd += ' -u ' + user;
+        if (user !== undefined && user !== null) {
+            cmdArgs.push('-u', String(user));
         }
+
+        let cmd = this.buildCommand(cmdArgs);
         hilog.info(0x0000, 'testTag', 'cmd : %{public}s', cmd);
         abilityDelegator.executeShellCommand(cmd,
             (err: any, d: any) => {
