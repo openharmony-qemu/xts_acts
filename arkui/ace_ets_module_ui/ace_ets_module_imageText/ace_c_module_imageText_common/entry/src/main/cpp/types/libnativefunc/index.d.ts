@@ -96,3 +96,17 @@ export const TextAreaPunctuationOverflowTest_002: () => number;
 export const TextAreaPunctuationOverflowTest_003: () => number;
 export const TextAreaPunctuationOverflowTest_004: () => number;
 export const TextAreaPunctuationOverflowTest_005: () => number;
+
+export const TextTailIndentsTest_001: () => number;
+export const TextTailIndentsTest_002: () => number;
+export const TextTailIndentsTest_003: () => number;
+export const TextTailIndentsTest_004: () => number;
+export const TextTailIndentsTest_005: () => number;
+
+export const ParagraphStyleTailIndentsTest_001: () => number;
+export const ParagraphStyleTailIndentsTest_002: () => number;
+export const ParagraphStyleTailIndentsTest_003: () => number;
+export const ParagraphStyleTailIndentsTest_004: () => number;
+export const ParagraphStyleTailIndentsTest_005: () => number;
+export const ParagraphStyleTailIndentsTest_006: () => number;
+export const ParagraphStyleTailIndentsTest_007: () => number;

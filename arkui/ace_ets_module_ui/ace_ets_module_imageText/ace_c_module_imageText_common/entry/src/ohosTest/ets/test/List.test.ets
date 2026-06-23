@@ -22,6 +22,8 @@ import RichEditorScrollToVisibleTest from "./RichEditorTest/RichEditorScrollToVi
 import TextPunctuationOverflowTest from "./TextCommonTest/TextPunctuationOverflow.test"
 import TextInputPunctuationOverflowTest from "./TextInputTest/TextInputPunctuationOverflow.test"
 import TextAreaPunctuationOverflowTest from "./TextAreaTest/TextAreaPunctuationOverflow.test"
+import TextTailIndentsTest from "./TextCommonTest/TextTailIndents.test"
+import ParagraphStyleTailIndentsTest from "./TextCommonTest/ParagraphStyleTailIndents.test"
 
 export default function testsuite() {
   TextEnumTest();
@@ -34,4 +36,6 @@ export default function testsuite() {
   TextPunctuationOverflowTest();
   TextInputPunctuationOverflowTest();
   TextAreaPunctuationOverflowTest();
+  TextTailIndentsTest();
+  ParagraphStyleTailIndentsTest();
 }
