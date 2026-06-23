@@ -24,7 +24,7 @@ async function onAbilityCreateCallback() {
     hilog.info(0x0000, 'testTag', '%{public}s', 'onAbilityCreateCallback');
 }
 
-async function addAbilityMonitorCallback(err: any) {
+async function addAbilityMonitorCallback(err: Error) {
     hilog.info(0x0000, 'testTag', 'addAbilityMonitorCallback : %{public}s', JSON.stringify(err) ?? '');
 }
 
@@ -48,7 +48,7 @@ export default class OpenHarmonyTestRunner implements TestRunner {
         abilityDelegator.addAbilityMonitor(lMonitor, addAbilityMonitorCallback)
         let cmd = 'aa start -d 0 -a com.acts.ace.napinewtest.EntryAbility' + ' -b ' + abilityDelegatorArguments.bundleName
         let debug = abilityDelegatorArguments.parameters['-D']
-        if (debug == 'true')
+        if (debug === 'true')
         {
             cmd += ' -D'
         }
@@ -57,8 +57,9 @@ export default class OpenHarmonyTestRunner implements TestRunner {
             cmd += ' -u ' + user;
         }
         hilog.info(0x0000, 'testTag', 'cmd : %{public}s', cmd);
+
         abilityDelegator.executeShellCommand(cmd,
-            (err: any, d: any) => {
+            (err: Error | null, d: { stdResult: string, exitCode: number }) => {
                 hilog.info(0x0000, 'testTag', 'executeShellCommand : err : %{public}s', JSON.stringify(err) ?? '');
                 hilog.info(0x0000, 'testTag', 'executeShellCommand : data : %{public}s', d.stdResult ?? '');
                 hilog.info(0x0000, 'testTag', 'executeShellCommand : data : %{public}s', d.exitCode ?? '');
