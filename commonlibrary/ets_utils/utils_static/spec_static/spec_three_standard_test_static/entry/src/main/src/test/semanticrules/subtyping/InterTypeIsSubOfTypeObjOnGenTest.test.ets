@@ -24,7 +24,6 @@ async function sleep(time: int): Promise<int> {
   });
 }
 
-
 namespace testNS2_3 {
   interface I1_3<U, V> {}
   interface I2_3<U, V> {}
@@ -263,16 +262,26 @@ function check_is_in_T_type_3(v: III1_3<int, null> | III2_3<number, string> | II
 export default function InterTypeIsSubOfTypeObjOnGenTest(): void {
   describe('InterTypeIsSubOfTypeObjOnGenTest', () => {
     beforeAll(() => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
     })
 
     beforeEach(async () => {
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
       await sleep(30);
     })
 
     afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
     })
 
     afterAll(() => {
+      // Presets an action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: preset action function.
     })
     /**
      * @tc.number    SUB_INTER_TYPE_IS_SUB_OF_TYPE_OBJ_ON_GEN_0300

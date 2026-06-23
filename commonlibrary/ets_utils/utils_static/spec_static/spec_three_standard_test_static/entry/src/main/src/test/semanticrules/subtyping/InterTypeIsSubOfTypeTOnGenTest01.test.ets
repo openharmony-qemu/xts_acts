@@ -226,16 +226,26 @@ function check_is_in_T_type_4(v: C1_4 | C2_4| B2_4 | Other_4 | B1_4<int, null> |
 export default function InterTypeIsSubOfTypeTOnGenTest01(): void {
   describe('InterTypeIsSubOfTypeTOnGenTest01', () => {
     beforeAll(() => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
     })
 
     beforeEach(async () => {
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
       await sleep(30);
     })
 
     afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
     })
 
     afterAll(() => {
+      // Presets an action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: preset action function.
     })
 
     /**

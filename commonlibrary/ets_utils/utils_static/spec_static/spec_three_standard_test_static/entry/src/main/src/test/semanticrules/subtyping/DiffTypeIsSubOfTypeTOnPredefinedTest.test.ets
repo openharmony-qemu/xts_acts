@@ -25,7 +25,6 @@ async function sleep(time: int): Promise<int> {
   });
 }
 
-
 function foo_1(v: Object | undefined | null): void {
   expect(v === undefined || v === null || v instanceof Object).assertTrue()
 }
@@ -66,7 +65,6 @@ function f2_2(v: Object | undefined): number {
     return 2
   }
 }
-
 
 function foo_3(v: Any): void {
   expect(v instanceof Object || v === undefined || v === null).assertTrue()
@@ -203,7 +201,6 @@ function f2_9(v: number | string | boolean): number {
   }
   else {
     expect(typeof v === 'number' || typeof v === 'string' || typeof v === 'boolean').assertTrue()
-    expect(typeof v === 'number' || typeof v === 'boolean' || typeof v === 'string').assertTrue()
     foo_9(v)
     expect(v).assertEqual(5)
     return 2
@@ -278,17 +275,29 @@ function f2_12(v: null | Object | undefined): number {
   }
 }
 
-
 export default function DiffTypeIsSubOfTypeTOnPredefinedTest(): void {
   describe('DiffTypeIsSubOfTypeTOnPredefinedTest', () => {
     beforeAll(() => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
     })
+
     beforeEach(async () => {
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
       await sleep(30);
     })
+
     afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
     })
+
     afterAll(() => {
+      // Presets an action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: preset action function.
     })
     /**
      * @tc.number    SUB_DIFF_TYPE_IS_SUB_OF_TYPE_T_ON_PREDEFINED_0100
