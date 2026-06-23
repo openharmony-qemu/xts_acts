@@ -4156,6 +4156,8 @@ export default function windowImmersiveTest() {
           console.info(caseName + ' Sub window resized and moved to match main window');
           await subWindow.setUIContent("testability/pages/First/index2");
           await subWindow.showWindow();
+          await windowClass.setWindowSystemBarEnable(['status']);
+          await sleep(700);
           try {
             let avoidArea1 = windowClass.getWindowAvoidAreaIgnoringVisibility(window.AvoidAreaType.TYPE_SYSTEM);
             console.info(caseName + ' avoidArea1: ' + JSON.stringify(avoidArea1));
