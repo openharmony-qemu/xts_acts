@@ -388,7 +388,7 @@ export default function DateGetMonthTest(): void {
       try {
         let d: Date = null as Date;
         d.getMonth();
-        expect(false).assertTrue();
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
       }
@@ -421,15 +421,9 @@ export default function DateGetMonthTest(): void {
      * @tc.level Level1
      */
     it('testDateGetMonth0039', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      let finallyExecuted: boolean = false;
-      try {
-        const date = new Date(2024, 1, 2);
-        let result: int = date.getMonth();
-        expect(result).assertEqual(1);
-      } finally {
-        finallyExecuted = true;
-      }
-      expect(finallyExecuted).assertTrue();
+      const date = new Date(2024, 1, 2);
+      let result: int = date.getMonth();
+      expect(result).assertEqual(1);
     })
 
     /**

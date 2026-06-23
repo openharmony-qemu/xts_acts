@@ -345,8 +345,7 @@ export default function DateSetUTCMonthTest(): void {
     it('testDateSetUTCMonth0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(0);
       let result = date.setUTCMonth(1);
-      expect(typeof result === 'number' || typeof result === 'long' || typeof result === 'int').assertTrue();
-      expect(result > 0).assertTrue();
+      expect(result).assertEqual(date.getTime());
     });
 
     /**
@@ -360,8 +359,7 @@ export default function DateSetUTCMonthTest(): void {
     it('testDateSetUTCMonth0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(0);
       let result = date.setUTCMonth(1, 2);
-      expect(typeof result === 'number' || typeof result === 'long' || typeof result === 'int').assertTrue();
-      expect(result > 0).assertTrue();
+      expect(result).assertEqual(date.getTime());
     });
 
     /**
@@ -432,7 +430,7 @@ export default function DateSetUTCMonthTest(): void {
     it('testDateSetUTCMonth0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(0);
       let result = date.setUTCMonth(1);
-      expect(typeof result === 'number' || typeof result === 'long' || typeof result === 'int').assertTrue();
+      expect(result).assertEqual(date.getTime());
     });
 
     /**

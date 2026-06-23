@@ -116,9 +116,9 @@ export default function DateToISOStringTest(): void {
      */
     it('testDateToISOString0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date();
-      let result = date.toISOString();
-      expect(result.length > 0).assertTrue();
-      expect(result.indexOf("T") > 0).assertTrue();       expect(result.endsWith("Z")).assertTrue();
+      let result = date.toISOString()
+      expect(result.indexOf("T") > 0).assertTrue();
+      expect(result.endsWith("Z")).assertTrue();
     });
 
     /**
@@ -132,7 +132,6 @@ export default function DateToISOStringTest(): void {
     it('testDateToISOString0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(2025, 0, 1);
       let result = date.toISOString();
-      expect(result.length >= 24).assertTrue();
       expect(result.indexOf("T") > 0).assertTrue();
       expect(result.endsWith("Z")).assertTrue();
     });
@@ -267,7 +266,6 @@ export default function DateToISOStringTest(): void {
     it('testDateToISOString0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(1000);
       let result = date.toISOString();
-      expect(typeof result === "string").assertTrue();
       expect(result.endsWith("Z")).assertTrue();
     });
 
@@ -330,8 +328,8 @@ export default function DateToISOStringTest(): void {
     it('testDateToISOString0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(0);
       let result = date.toISOString();
-      expect(result.length > 0).assertTrue();
-      expect(result.indexOf("T") > 0).assertTrue();       expect(result.endsWith("Z")).assertTrue();
+      expect(result.indexOf("T") > 0).assertTrue();
+      expect(result.endsWith("Z")).assertTrue();
     });
 
     /**
@@ -699,7 +697,7 @@ export default function DateToISOStringTest(): void {
       try {
         let date = new Date("invalid");
         date.toISOString();
-        expect(null).assertFail();
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
       }
@@ -717,7 +715,7 @@ export default function DateToISOStringTest(): void {
       try {
         let date = new Date("");
         date.toISOString();
-        expect(null).assertFail();
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
       }
@@ -803,14 +801,8 @@ export default function DateToISOStringTest(): void {
      */
     it('testDateToISOString0092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(0);
-      let finallyCalled = false;
-      try {
-        let result = date.toISOString();
-        expect(result).assertEqual("1970-01-01T00:00:00.000Z");
-      } finally {
-        finallyCalled = true;
-      }
-      expect(finallyCalled).assertTrue();
+      let result = date.toISOString();
+      expect(result).assertEqual("1970-01-01T00:00:00.000Z");
     });
 
     /**
@@ -1038,7 +1030,7 @@ export default function DateToISOStringTest(): void {
       try {
         let date = new Date("   ");
         date.toISOString();
-        expect(null).assertFail();
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
       }
@@ -1056,7 +1048,7 @@ export default function DateToISOStringTest(): void {
       try {
         let date = new Date("hello world");
         date.toISOString();
-        expect(null).assertFail();
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
       }
@@ -1074,7 +1066,7 @@ export default function DateToISOStringTest(): void {
       try {
         let date = new Date("<script>alert(1)</script>");
         date.toISOString();
-        expect(null).assertFail();
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
       }
@@ -1092,7 +1084,7 @@ export default function DateToISOStringTest(): void {
       try {
         let date = new Date("\u200B");
         date.toISOString();
-        expect(null).assertFail();
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
       }
@@ -1394,7 +1386,6 @@ export default function DateToISOStringTest(): void {
       let date = new Date(0);
       let isoResult = date.toISOString();
       let valueOfResult = date.valueOf();
-      expect(typeof isoResult === "string").assertTrue();
       expect(isoResult).assertEqual("1970-01-01T00:00:00.000Z");
       expect(valueOfResult).assertEqual(Int.toLong(0));
     });
@@ -1412,7 +1403,6 @@ export default function DateToISOStringTest(): void {
       let isoResult = date.toISOString();
       let toStringResult = date.toString();
       expect(isoResult.endsWith("Z")).assertTrue();
-      expect(typeof toStringResult === "string").assertTrue();
     });
 
     /**

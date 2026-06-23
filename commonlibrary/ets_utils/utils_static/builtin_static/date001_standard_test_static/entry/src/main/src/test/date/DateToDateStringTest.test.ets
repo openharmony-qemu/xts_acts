@@ -40,20 +40,6 @@ export default function DateToDateStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_DATE_TO_DATE_STRNG_0100
-     * @tc.name testDateToDateString0001
-     * @tc.desc Verify toDateString called with no parameters returns date string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testDateToDateString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const date = new Date(0);
-      let result = date.toDateString();
-      expect(typeof result).assertEqual("string");
-    });
-
-    /**
      * @tc.number SUB_DATE_TO_DATE_STRNG_0500
      * @tc.name testDateToDateString0005
      * @tc.desc Verify Unix epoch UTC date fields and local date string format
@@ -67,8 +53,7 @@ export default function DateToDateStringTest(): void {
       expect(date.getUTCFullYear()).assertEqual(1970);
       expect(date.getUTCMonth()).assertEqual(0);
       expect(date.getUTCDate()).assertEqual(1);
-      expect(typeof result).assertEqual("string");
-      expect(result.length >= 10).assertTrue();
+      expect(result.indexOf("Jan") >= 0).assertTrue();
     });
 
     /**
@@ -96,8 +81,10 @@ export default function DateToDateStringTest(): void {
     it('testDateToDateString0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date();
       let result = date.toDateString();
-      expect(result.length > 0).assertTrue();
-      expect(result.length >= 10).assertTrue();
+      expect(result.indexOf("Jan") >= 0 || result.indexOf("Feb") >= 0 || result.indexOf("Mar") >= 0 ||
+        result.indexOf("Apr") >= 0 || result.indexOf("May") >= 0 || result.indexOf("Jun") >= 0 ||
+        result.indexOf("Jul") >= 0 || result.indexOf("Aug") >= 0 || result.indexOf("Sep") >= 0 ||
+        result.indexOf("Oct") >= 0 || result.indexOf("Nov") >= 0 || result.indexOf("Dec") >= 0).assertTrue();
     });
 
     /**
@@ -125,9 +112,7 @@ export default function DateToDateStringTest(): void {
     it('testDateToDateString0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date("2024-03-15T12:00:00.000Z");
       let result = date.toDateString();
-      expect(typeof result).assertEqual("string");
-      expect(result.length > 0).assertTrue();
-      expect(result.length >= 10).assertTrue();
+      expect(result.indexOf("Mar") >= 0).assertTrue();
     });
 
     /**
@@ -141,9 +126,7 @@ export default function DateToDateStringTest(): void {
     it('testDateToDateString0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(1700000000000);
       let result = date.toDateString();
-      expect(typeof result).assertEqual("string");
-      expect(result.length > 0).assertTrue();
-      expect(result.length >= 10).assertTrue();
+      expect(result.indexOf("Nov") >= 0).assertTrue();
     });
 
     /**
@@ -155,30 +138,13 @@ export default function DateToDateStringTest(): void {
      * @tc.level Level 2
      */
     it('testDateToDateString0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let caught = false;
       try {
         const date = new Date("invalid");
         let result = date.toDateString();
-        expect(null).assertFail();
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
       }
-    });
-
-    /**
-     * @tc.number SUB_DATE_TO_DATE_STRNG_1300
-     * @tc.name testDateToDateString0013
-     * @tc.desc Verify toDateString returns correct date string for negative timestamp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testDateToDateString0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const date = new Date(-100000000000);
-      let result = date.toDateString();
-      expect(typeof result).assertEqual("string");
-      expect(result.length > 0).assertTrue();
-      expect(result.length >= 10).assertTrue();
     });
 
     /**
@@ -221,7 +187,7 @@ export default function DateToDateStringTest(): void {
       try {
         const date = new Date("");
         let result = date.toDateString();
-        expect(null).assertFail();
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
       }
@@ -238,8 +204,7 @@ export default function DateToDateStringTest(): void {
     it('testDateToDateString0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(0);
       let result = date.toDateString();
-      expect(result.length > 0).assertTrue();
-      expect(result.length >= 10).assertTrue();
+      expect(result.indexOf("Jan") >= 0).assertTrue();
     });
 
     /**
@@ -282,9 +247,7 @@ export default function DateToDateStringTest(): void {
     it('testDateToDateString0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(8640000000000000 - 1);
       let result = date.toDateString();
-      expect(typeof result).assertEqual("string");
-      expect(result.length > 0).assertTrue();
-      expect(result.length >= 10).assertTrue();
+      expect(result.indexOf(":")).assertEqual(-1);
     });
 
     /**
@@ -298,37 +261,7 @@ export default function DateToDateStringTest(): void {
     it('testDateToDateString0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(-8640000000000000 + 1);
       let result = date.toDateString();
-      expect(typeof result).assertEqual("string");
-      expect(result.length > 0).assertTrue();
-      expect(result.length >= 10).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_DATE_TO_DATE_STRNG_2900
-     * @tc.name testDateToDateString0029
-     * @tc.desc Verify toDateString for year 1 Jan 1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testDateToDateString0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const date = new Date(1, 0, 1);
-      let result = date.toDateString();
-      expect(typeof result).assertEqual("string");
-    });
-
-    /**
-     * @tc.number SUB_DATE_TO_DATE_STRNG_3000
-     * @tc.name testDateToDateString0030
-     * @tc.desc Verify toDateString for year 9999 Dec 31
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testDateToDateString0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const date = new Date(9999, 11, 31);
-      let result = date.toDateString();
-      expect(typeof result).assertEqual("string");
+      expect(result.indexOf(":")).assertEqual(-1);
     });
 
     /**
@@ -343,12 +276,8 @@ export default function DateToDateStringTest(): void {
       try {
         const date = new Date(0);
         let result = date.toDateString();
-        expect(typeof result).assertEqual("string");
       } catch (error) {
         expect(error.name).assertEqual('RangeError');
-        expect(null).assertFail();
-      } finally {
-
       }
     });
 

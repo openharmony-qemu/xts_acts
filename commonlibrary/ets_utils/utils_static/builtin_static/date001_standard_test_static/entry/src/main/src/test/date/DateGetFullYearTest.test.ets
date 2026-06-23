@@ -290,15 +290,9 @@ export default function DateGetFullYearTest(): void {
      * @tc.level Level 1
      */
     it('testDateGetFullYear0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let finallyExecuted: boolean = false;
-      try {
-        const date = new Date(2024, 0, 2);
-        let year: int = date.getFullYear();
-        expect(year).assertEqual(2024);
-      } finally {
-        finallyExecuted = true;
-      }
-      expect(finallyExecuted).assertTrue();
+      const date = new Date(2024, 0, 2);
+      let year: int = date.getFullYear();
+      expect(year).assertEqual(2024);
     });
 
     /**

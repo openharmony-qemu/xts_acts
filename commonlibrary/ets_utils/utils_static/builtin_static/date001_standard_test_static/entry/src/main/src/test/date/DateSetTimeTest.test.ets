@@ -268,14 +268,8 @@ export default function DateSetTimeTest(): void {
      */
     it('testDateSetTime0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date();
-      let finallyExecuted = false;
-      try {
-        date.setTime(100);
-        expect(date.getTime()).assertEqual(100);
-      } finally {
-        finallyExecuted = true;
-      }
-      expect(finallyExecuted).assertTrue();
+      date.setTime(100);
+      expect(date.getTime()).assertEqual(100);
     });
 
     /**

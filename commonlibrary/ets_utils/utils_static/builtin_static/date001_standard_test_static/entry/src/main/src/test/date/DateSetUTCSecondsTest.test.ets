@@ -351,7 +351,6 @@ export default function DateSetUTCSecondsTest(): void {
     it('testDateSetUTCSeconds0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(0);
       let result = date.setUTCSeconds(6);
-      expect(typeof result === 'number' || typeof result === 'long' || typeof result === 'int').assertTrue();
       expect(result).assertEqual(6000);
     });
 
@@ -366,7 +365,6 @@ export default function DateSetUTCSecondsTest(): void {
     it('testDateSetUTCSeconds0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(0);
       let result = date.setUTCSeconds(6, 7);
-      expect(typeof result === 'number' || typeof result === 'long' || typeof result === 'int').assertTrue();
       expect(result).assertEqual(6007);
     });
 
@@ -425,7 +423,7 @@ export default function DateSetUTCSecondsTest(): void {
     it('testDateSetUTCSeconds0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(0);
       let result = date.setUTCSeconds(30);
-      expect(typeof result === 'number' || typeof result === 'long' || typeof result === 'int').assertTrue();
+      expect(!Number.isNaN(result)).assertTrue();
     });
 
     /**
@@ -439,7 +437,7 @@ export default function DateSetUTCSecondsTest(): void {
     it('testDateSetUTCSeconds0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(0);
       let result = date.setUTCSeconds(6, 7);
-      expect(typeof result === 'number' || typeof result === 'long' || typeof result === 'int').assertTrue();
+      expect(!Number.isNaN(result)).assertTrue();
     });
 
     /**
@@ -468,7 +466,7 @@ export default function DateSetUTCSecondsTest(): void {
     it('testDateSetUTCSeconds0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(0);
       let result = date.setUTCSeconds(2147483647);
-      expect(typeof result === 'number' || typeof result === 'long' || typeof result === 'int').assertTrue();
+      expect(!Number.isNaN(result)).assertTrue();
     });
 
     /**
@@ -482,7 +480,7 @@ export default function DateSetUTCSecondsTest(): void {
     it('testDateSetUTCSeconds0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(Date.UTC(2023, 5, 15, 10, 30, 0));
       let result = date.setUTCSeconds(-86400);
-      expect(typeof result === 'number' || typeof result === 'long' || typeof result === 'int').assertTrue();
+      expect(!Number.isNaN(result)).assertTrue();
     });
 
     /**

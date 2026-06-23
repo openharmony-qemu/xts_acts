@@ -187,7 +187,7 @@ export default function DateGetSecondsTest(): void {
       try {
         let obj: Date | null = null;
         (obj as Date).getSeconds();
-        expect(null).assertFail();
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
       }

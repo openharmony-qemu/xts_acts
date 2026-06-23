@@ -50,8 +50,7 @@ export default function DateGetTimezoneNameTest(): void {
     it('testDateGetTimezoneName0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(0);
       let result: string = date.toString();
-      expect(typeof result).assertEqual('string');
-      expect(result.length > 0).assertTrue();
+      expect(result.indexOf("GMT") >= 0 || result.indexOf("UTC") >= 0).assertTrue();
     });
 
     /**
@@ -65,8 +64,7 @@ export default function DateGetTimezoneNameTest(): void {
     it('testDateGetTimezoneName0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(1000);
       let result: string = date.toLocaleString();
-      expect(typeof result).assertEqual('string');
-      expect(result.length > 0).assertTrue();
+      expect(result !== date.toString()).assertTrue();
     });
   });
 }

@@ -193,7 +193,6 @@ export default function DateNowTest(): void {
       let ts: long = Date.now();
       let date = new Date(ts);
       let isoStr: string = date.toISOString();
-      expect(isoStr.length > 0).assertTrue();
       expect(isoStr.endsWith("Z")).assertTrue();
       expect(isoStr.indexOf("T") > 0).assertTrue();
     });

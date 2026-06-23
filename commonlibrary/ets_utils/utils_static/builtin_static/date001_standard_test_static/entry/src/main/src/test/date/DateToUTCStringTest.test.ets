@@ -50,7 +50,7 @@ export default function DateToUTCStringTest(): void {
     it('testDateToUTCString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(0);
       let result = date.toUTCString();
-      expect(typeof result).assertEqual("string");
+      expect(result).assertEqual("Thu, 01 Jan 1970 00:00:00 GMT");
     });
 
     /**
@@ -106,7 +106,6 @@ export default function DateToUTCStringTest(): void {
     it('testDateToUTCString0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date();
       let result = date.toUTCString();
-      expect(result.length > 0).assertTrue();
       expect(result.indexOf("GMT") > 0).assertTrue();
     });
 
@@ -121,8 +120,6 @@ export default function DateToUTCStringTest(): void {
     it('testDateToUTCString0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(2024, 5, 15, 10, 30, 0);
       let result = date.toUTCString();
-      expect(typeof result).assertEqual("string");
-      expect(result.length > 0).assertTrue();
       expect(result.indexOf("GMT") > 0).assertTrue();
     });
 
@@ -137,7 +134,6 @@ export default function DateToUTCStringTest(): void {
     it('testDateToUTCString0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date("2024-06-15T10:30:00Z");
       let result = date.toUTCString();
-      expect(typeof result).assertEqual("string");
       expect(result.indexOf("Jun") >= 0).assertTrue();
     });
 
@@ -153,7 +149,7 @@ export default function DateToUTCStringTest(): void {
       try {
         let date = new Date("invalid");
         let result = date.toUTCString();
-        expect(null).assertFail();
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
       }
@@ -171,7 +167,7 @@ export default function DateToUTCStringTest(): void {
       try {
         let date = new Date("");
         let result = date.toUTCString();
-        expect(null).assertFail();
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
       }
@@ -188,7 +184,6 @@ export default function DateToUTCStringTest(): void {
     it('testDateToUTCString0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(0);
       let result = date.toUTCString();
-      expect(result.length > 0).assertTrue();
       expect(result.indexOf("GMT") > 0).assertTrue();
     });
 
@@ -249,7 +244,6 @@ export default function DateToUTCStringTest(): void {
     it('testDateToUTCString0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(-8640000000000000);
       let result = date.toUTCString();
-      expect(typeof result).assertEqual("string");
       expect(result !== "Invalid Date").assertTrue();
     });
 
@@ -264,7 +258,6 @@ export default function DateToUTCStringTest(): void {
     it('testDateToUTCString0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(8640000000000000);
       let result = date.toUTCString();
-      expect(typeof result).assertEqual("string");
       expect(result !== "Invalid Date").assertTrue();
     });
 
@@ -311,12 +304,10 @@ export default function DateToUTCStringTest(): void {
      * @tc.level Level 2
      */
     it('testDateToUTCString0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let caught = false;
-      let finallyExecuted = false;
       try {
         let date = new Date("invalid");
         date.toUTCString();
-        expect(null).assertFail();
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
       }

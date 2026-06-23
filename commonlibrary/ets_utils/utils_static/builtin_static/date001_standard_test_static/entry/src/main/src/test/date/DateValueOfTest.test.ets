@@ -249,7 +249,7 @@ export default function DateValueOfTest(): void {
       let date = new Date(0);
       try {
         let result = Number(date.valueOf());
-        expect(typeof result === "number").assertTrue();
+        expect(result).assertEqual(0);
       } catch (error) {
         expect(error.name).assertEqual('RangeError');
       }
@@ -265,14 +265,8 @@ export default function DateValueOfTest(): void {
      */
     it('testDateValueOf0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(0);
-      let finallyCalled = false;
-      try {
-        let result = Number(date.valueOf());
-        expect(result).assertEqual(0);
-      } finally {
-        finallyCalled = true;
-      }
-      expect(finallyCalled).assertTrue();
+      let result = Number(date.valueOf());
+      expect(result).assertEqual(0);
     });
 
     /**
@@ -307,7 +301,7 @@ export default function DateValueOfTest(): void {
         let result1 = Number(date.valueOf());
         let result2 = Number(date.valueOf());
         let result3 = Number(date.valueOf());
-        expect(null).assertFail();
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
       }
@@ -388,7 +382,7 @@ export default function DateValueOfTest(): void {
         let date = new Date("invalid");
         let valueOfResult = Number(date.valueOf());
         let getTimeResult = date.getTime();
-        expect(null).assertFail();
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
       }
@@ -421,8 +415,6 @@ export default function DateValueOfTest(): void {
       let date = new Date(1000);
       let valueOfResult = date.valueOf();
       let getTimeResult = date.getTime();
-      expect(typeof valueOfResult !== "string").assertTrue();
-      expect(typeof valueOfResult !== "boolean").assertTrue();
       expect(Number(valueOfResult)).assertEqual(1000);
       expect(Number(getTimeResult)).assertEqual(1000);
       expect(Number(valueOfResult)).assertEqual(Number(getTimeResult));
@@ -524,7 +516,6 @@ export default function DateValueOfTest(): void {
     it('testDateValueOf0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date("2025-06-09T12:30:45.000Z");
       let result = Number(date.valueOf());
-      expect(typeof result === "number").assertTrue();
       expect(result).assertEqual(date.getTime());
     });
 
@@ -557,7 +548,7 @@ export default function DateValueOfTest(): void {
       try {
         let date = new Date("")
         let result = Number(date.valueOf());
-        expect(null).assertFail();
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
       }
@@ -575,7 +566,7 @@ export default function DateValueOfTest(): void {
       try {
         let date = new Date("   ");
         let result = Number(date.valueOf());
-        expect(null).assertFail();
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
       }
@@ -593,7 +584,7 @@ export default function DateValueOfTest(): void {
       try {
         let date = new Date("hello world");
         let result = Number(date.valueOf());
-        expect(null).assertFail();
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
       }
@@ -698,7 +689,6 @@ export default function DateValueOfTest(): void {
       date.setFullYear(2025);
       let newValue = Number(date.valueOf());
       expect(newValue !== originalValue).assertTrue();
-      expect(typeof newValue === "number").assertTrue();
     });
 
     /**
@@ -729,7 +719,6 @@ export default function DateValueOfTest(): void {
       let date = new Date(0);
       date.setSeconds(45);
       let result = Number(date.valueOf());
-      expect(typeof result === "number").assertTrue();
       expect(result).assertEqual(45000);
     });
 
@@ -836,7 +825,7 @@ export default function DateValueOfTest(): void {
       try {
         let date1 = new Date(1000);
         let date2 = new Date("invalid");
-        expect(null).assertFail();
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
       }
@@ -874,7 +863,7 @@ export default function DateValueOfTest(): void {
           let date = new Date("invalid");
           let result = Number(date.valueOf());
         }
-        expect(null).assertFail();
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
       }
@@ -892,10 +881,7 @@ export default function DateValueOfTest(): void {
       let date = new Date(0);
       let valueOfResult = date.valueOf();
       let toStringResult = date.toString();
-      expect(typeof valueOfResult !== "string").assertTrue();
-      expect(typeof toStringResult === "string").assertTrue();
       expect(Number(valueOfResult)).assertEqual(0);
-      expect(toStringResult.length > 0).assertTrue();
     });
 
     /**

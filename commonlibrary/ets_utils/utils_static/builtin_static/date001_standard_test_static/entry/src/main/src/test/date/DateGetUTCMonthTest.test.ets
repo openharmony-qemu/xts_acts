@@ -207,15 +207,9 @@ export default function DateGetUTCMonthTest(): void {
      * @tc.level Level 2
      */
     it('testDateGetUTCMonth0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let finallyExecuted: boolean = false;
-      try {
-        const date = new Date(0);
-        let result: int = date.getUTCMonth();
-        expect(result).assertEqual(0);
-      } finally {
-        finallyExecuted = true;
-      }
-      expect(finallyExecuted).assertTrue();
+      const date = new Date(0);
+      let result: int = date.getUTCMonth();
+      expect(result).assertEqual(0);
     });
 
     /**

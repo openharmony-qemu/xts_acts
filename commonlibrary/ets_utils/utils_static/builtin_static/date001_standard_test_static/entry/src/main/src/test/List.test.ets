@@ -1,6 +1,4 @@
-import DateConstructor1Test from "./date/DateConstructor1Test.test";
-import DateConstructor2Test from "./date/DateConstructor2Test.test";
-import DateConstructor3Test from "./date/DateConstructor3Test.test";
+import DateConstructor1Test from "./date/DateConstructorTest.test";
 import DateGetDateTest from "./date/DateGetDateTest.test";
 import DateGetDayTest from "./date/DateGetDayTest.test";
 import DateGetFullYearTest from "./date/DateGetFullYearTest.test";
@@ -56,8 +54,6 @@ import DateValueOfTest from "./date/DateValueOfTest.test";
 
 export default function testsuite(): void {
   DateConstructor1Test();
-  DateConstructor2Test();
-  DateConstructor3Test();
   DateGetDateTest();
   DateGetDayTest();
   DateGetFullYearTest();

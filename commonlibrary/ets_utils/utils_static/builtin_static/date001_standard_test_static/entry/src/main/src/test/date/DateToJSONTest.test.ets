@@ -63,9 +63,9 @@ export default function DateToJSONTest(): void {
      */
     it('testDateToJSON0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(2024, 5, 15, 10, 30, 0);
-      let result: string | null = date.toJSON();
-      expect(typeof result).assertEqual("string");
-      expect(result !== null).assertTrue();
+      let result = date.toJSON()!;
+      expect(result.includes("2024")).assertTrue();
+      expect(result.endsWith("Z")).assertTrue();
     });
 
     /**
@@ -78,8 +78,8 @@ export default function DateToJSONTest(): void {
      */
     it('testDateToJSON0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date();
-      let result: string | null = date.toJSON();
-      expect(result !== null).assertTrue();
+      let result = date.toJSON()!;
+      expect(result.endsWith("Z")).assertTrue();
     });
 
     /**
@@ -92,9 +92,9 @@ export default function DateToJSONTest(): void {
      */
     it('testDateToJSON0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(1700000000000);
-      let result: string | null = date.toJSON();
-      expect(typeof result).assertEqual("string");
-      expect(result !== null).assertTrue();
+      let result = date.toJSON()!;
+      expect(result.includes("T")).assertTrue();
+      expect(result.endsWith("Z")).assertTrue();
     });
 
     /**
@@ -107,9 +107,9 @@ export default function DateToJSONTest(): void {
      */
     it('testDateToJSON0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(-86400000);
-      let result: string | null = date.toJSON();
-      expect(typeof result).assertEqual("string");
-      expect(result !== null).assertTrue();
+      let result = date.toJSON()!;
+      expect(result.includes("T")).assertTrue();
+      expect(result.endsWith("Z")).assertTrue();
     });
 
     /**
@@ -124,24 +124,10 @@ export default function DateToJSONTest(): void {
       try {
         const date = new Date("invalid");
         let result = date.toJSON();
-        expect(null).assertFail();
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
       }
-    });
-
-    /**
-     * @tc.number SUB_DATE_TO_JSON_CHK_1200
-     * @tc.name testDateToJSON0012
-     * @tc.desc Verify Date with out-of-range month returns null from toJSON
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testDateToJSON0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const date = new Date(2024, 0, 1);
-      let result = date.toJSON();
-      expect(typeof result).assertEqual("string");
     });
 
     /**
@@ -155,7 +141,7 @@ export default function DateToJSONTest(): void {
     it('testDateToJSON0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(0);
       let result = date.toJSON();
-      expect(typeof result).assertEqual("string");
+      expect(result).assertEqual("1970-01-01T00:00:00.000Z");
     });
 
     /**
@@ -197,7 +183,6 @@ export default function DateToJSONTest(): void {
     it('testDateToJSON0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(0);
       let result: string | null = date.toJSON();
-      expect(result !== null).assertTrue();
       let parsed = new Date(result!);
       expect(parsed.getTime()).assertEqual(date.getTime());
     });
@@ -259,15 +244,9 @@ export default function DateToJSONTest(): void {
      * @tc.level Level 2
      */
     it('testDateToJSON0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let finallyExecuted = false;
-      try {
-        const date = new Date(0);
-        let result = date.toJSON();
-        expect(result).assertEqual("1970-01-01T00:00:00.000Z");
-      } finally {
-        finallyExecuted = true;
-      }
-      expect(finallyExecuted).assertTrue();
+      const date = new Date(0);
+      let result = date.toJSON();
+      expect(result).assertEqual("1970-01-01T00:00:00.000Z");
     });
 
     /**
@@ -280,7 +259,8 @@ export default function DateToJSONTest(): void {
      */
     it('testDateToJSON0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(0);
-      expect(typeof date.toJSON).assertEqual("function");
+      let result = date.toJSON();
+      expect(result).assertEqual("1970-01-01T00:00:00.000Z");
     });
 
     /**
@@ -407,7 +387,7 @@ export default function DateToJSONTest(): void {
         const date = new Date("invalid");
         let result1 = date.toJSON();
         let result2 = date.toJSON();
-        expect(null).assertFail();
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
       }

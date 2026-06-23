@@ -208,14 +208,8 @@ export default function DateSetDateTest(): void {
      */
     it('testDateSetDate0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const date = new Date(2024, 0, 2);
-      let finallyExecuted = false;
-      try {
-        date.setDate(15);
-        expect(date.getDate()).assertEqual(15);
-      } finally {
-        finallyExecuted = true;
-      }
-      expect(finallyExecuted).assertTrue();
+      date.setDate(15);
+      expect(date.getDate()).assertEqual(15);
     })
 
     /**

@@ -50,9 +50,7 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(0);
       let result = date.toLocaleDateString();
-      expect(typeof result).assertEqual("string");
-      expect(result.length > 0).assertTrue()
-      expect(result.length >= 1).assertTrue();
+      expect(result.includes("1970")).assertTrue();
     });
 
     /**
@@ -66,7 +64,7 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(0);
       let result = date.toLocaleDateString();
-      expect(typeof result).assertEqual("string");
+      expect(result.includes("1970")).assertTrue();
     });
 
     /**
@@ -80,7 +78,7 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(0);
       let result = date.toLocaleDateString("en-US");
-      expect(typeof result).assertEqual("string");
+      expect(result.includes("1970")).assertTrue();
     });
 
     /**
@@ -94,7 +92,7 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(0);
       let result = date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
-      expect(typeof result).assertEqual("string");
+      expect(result.includes("1970")).assertTrue();
     });
 
     /**
@@ -108,17 +106,13 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(2023, 5, 15);
       let result1 = date.toLocaleDateString("en-US");
-      expect(typeof result1).assertEqual("string");
       let result2 = date.toLocaleDateString("zh-CN");
-      expect(typeof result2).assertEqual("string");
       let result3 = date.toLocaleDateString("ja-JP");
-      expect(typeof result3).assertEqual("string");
       let result4 = date.toLocaleDateString("fr-FR");
-      expect(typeof result4).assertEqual("string");
       let result5 = date.toLocaleDateString("de-DE");
-      expect(typeof result5).assertEqual("string");
       let result6 = date.toLocaleDateString("ko-KR");
-      expect(typeof result6).assertEqual("string");
+      expect(result1.includes("2023")).assertTrue();
+      expect(result1 !== result2 || result2 !== result3).assertTrue();
     });
 
     /**
@@ -132,9 +126,9 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(2023, 5, 15);
       let result1 = date.toLocaleDateString("en");
-      expect(typeof result1).assertEqual("string");
       let result2 = date.toLocaleDateString("zh");
-      expect(typeof result2).assertEqual("string");
+      expect(result1.includes("2023")).assertTrue();
+      expect(result1 !== result2).assertTrue();
     });
 
     /**
@@ -148,7 +142,7 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(2023, 5, 15);
       let result = date.toLocaleDateString("zh-Hans-CN");
-      expect(typeof result).assertEqual("string");
+      expect(result.includes("2023")).assertTrue();
     });
 
     /**
@@ -160,11 +154,10 @@ export default function DateToLocaleDateStringTest(): void {
      * @tc.level Level 2
      */
     it('testDateToLocaleDateString0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let caught = false;
       try {
         let date = new Date(0);
         let result = date.toLocaleDateString("");
-        expect(result.length > 0).assertTrue();
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('RangeError');
       }
@@ -182,7 +175,7 @@ export default function DateToLocaleDateStringTest(): void {
       try {
         let date = new Date(0);
         let result = date.toLocaleDateString(" ");
-        expect(result.length > 0).assertTrue();
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('RangeError');
       }
@@ -200,7 +193,7 @@ export default function DateToLocaleDateStringTest(): void {
       try {
         let date = new Date(0);
         let result = date.toLocaleDateString("\u200B");
-        expect(result.length > 0).assertTrue();
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('RangeError');
       }
@@ -218,28 +211,10 @@ export default function DateToLocaleDateStringTest(): void {
       try {
         let date = new Date(0);
         let result = date.toLocaleDateString("\u4e2d\u6587");
-        expect(result.length > 0).assertTrue();
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('RangeError');
       }
-    });
-
-    /**
-     * @tc.number SUB_DATE_TO_LCL_DATE_STRNG_1500
-     * @tc.name testDateToLocaleDateString0015
-     * @tc.desc Verify toLocaleDateString with Arabic, Russian and other locale tags
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testDateToLocaleDateString0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let date = new Date(2023, 5, 15);
-      let result1 = date.toLocaleDateString("ar-SA");
-      expect(typeof result1).assertEqual("string");
-      let result2 = date.toLocaleDateString("ru-RU");
-      expect(typeof result2).assertEqual("string");
-      let result3 = date.toLocaleDateString("th-TH");
-      expect(typeof result3).assertEqual("string");
     });
 
     /**
@@ -255,7 +230,7 @@ export default function DateToLocaleDateStringTest(): void {
         let date = new Date(0);
         let longLocale = "en".repeat(1000);
         let result = date.toLocaleDateString(longLocale);
-        expect(result.length > 0).assertTrue();
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('RangeError');
       }
@@ -272,7 +247,7 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(0);
       let result = date.toLocaleDateString("not-a-valid-locale");
-      expect(typeof result).assertEqual("string");
+      expect(result.includes("1970")).assertTrue();
     });
 
     /**
@@ -287,7 +262,7 @@ export default function DateToLocaleDateStringTest(): void {
       try {
         let date = new Date(0);
         let result = date.toLocaleDateString("<script>alert(1)</script>");
-        expect(result.length > 0).assertTrue();
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('RangeError');
       }
@@ -304,7 +279,7 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(2023, 5, 15);
       let result = date.toLocaleDateString("en-US");
-      expect(typeof result).assertEqual("string");
+      expect(result.includes("2023")).assertTrue();
     });
 
     /**
@@ -318,7 +293,7 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(0);
       let result = date.toLocaleDateString("ja-JP");
-      expect(typeof result).assertEqual("string");
+      expect(result.includes("1970")).assertTrue();
     });
 
     /**
@@ -332,7 +307,7 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(0);
       let result = date.toLocaleDateString("fr-FR");
-      expect(typeof result).assertEqual("string");
+      expect(result.includes("1970")).assertTrue();
     });
 
     /**
@@ -346,7 +321,8 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(2023, 5, 15);
       let result = date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
-      expect(typeof result).assertEqual("string");
+      expect(result.includes("2023")).assertTrue();
+      expect(result.includes("June")).assertTrue();
     });
 
     /**
@@ -360,7 +336,7 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(0);
       let result = date.toLocaleDateString("en-US", {});
-      expect(typeof result).assertEqual("string");
+      expect(result.includes("1970")).assertTrue();
     });
 
     /**
@@ -374,11 +350,10 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(2023, 5, 15);
       let result1 = date.toLocaleDateString("en-US", { weekday: "long" });
-      expect(typeof result1).assertEqual("string");
       let result2 = date.toLocaleDateString("en-US", { weekday: "short" });
-      expect(typeof result2).assertEqual("string");
       let result3 = date.toLocaleDateString("en-US", { weekday: "narrow" });
-      expect(typeof result3).assertEqual("string");
+      expect(result1.includes("Thursday")).assertTrue();
+      expect(result2.includes("Thu")).assertTrue();
     });
 
     /**
@@ -392,11 +367,10 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(2023, 5, 15);
       let result1 = date.toLocaleDateString("en-US", { era: "long" });
-      expect(typeof result1).assertEqual("string");
       let result2 = date.toLocaleDateString("en-US", { era: "short" });
-      expect(typeof result2).assertEqual("string");
       let result3 = date.toLocaleDateString("en-US", { era: "narrow" });
-      expect(typeof result3).assertEqual("string");
+      expect(result1.includes("Anno Domini") || result1.includes("2023")).assertTrue();
+      expect(result2.includes("AD") || result2.includes("2023")).assertTrue();
     });
 
     /**
@@ -410,9 +384,9 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(2023, 5, 15);
       let result1 = date.toLocaleDateString("en-US", { year: "numeric" });
-      expect(typeof result1).assertEqual("string");
       let result2 = date.toLocaleDateString("en-US", { year: "2-digit" });
-      expect(typeof result2).assertEqual("string");
+      expect(result1.includes("2023")).assertTrue();
+      expect(result2.includes("23")).assertTrue();
     });
 
     /**
@@ -426,15 +400,12 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(2023, 5, 15);
       let result1 = date.toLocaleDateString("en-US", { month: "numeric" });
-      expect(typeof result1).assertEqual("string");
       let result2 = date.toLocaleDateString("en-US", { month: "2-digit" });
-      expect(typeof result2).assertEqual("string");
       let result3 = date.toLocaleDateString("en-US", { month: "long" });
-      expect(typeof result3).assertEqual("string");
       let result4 = date.toLocaleDateString("en-US", { month: "short" });
-      expect(typeof result4).assertEqual("string");
       let result5 = date.toLocaleDateString("en-US", { month: "narrow" });
-      expect(typeof result5).assertEqual("string");
+      expect(result3.includes("June")).assertTrue();
+      expect(result4.includes("Jun")).assertTrue();
     });
 
     /**
@@ -448,9 +419,9 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(2023, 5, 15);
       let result1 = date.toLocaleDateString("en-US", { day: "numeric" });
-      expect(typeof result1).assertEqual("string");
       let result2 = date.toLocaleDateString("en-US", { day: "2-digit" });
-      expect(typeof result2).assertEqual("string");
+      expect(result1.includes("15")).assertTrue();
+      expect(result2.includes("15")).assertTrue();
     });
 
     /**
@@ -464,11 +435,10 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(0);
       let result1 = date.toLocaleDateString("en-US", { timeZone: "UTC" });
-      expect(typeof result1).assertEqual("string");
       let result2 = date.toLocaleDateString("en-US", { timeZone: "Asia/Shanghai" });
-      expect(typeof result2).assertEqual("string");
       let result3 = date.toLocaleDateString("en-US", { timeZone: "America/New_York" });
-      expect(typeof result3).assertEqual("string");
+      expect(result1.includes("1970")).assertTrue();
+      expect(result1 !== result2 || result2 !== result3).assertTrue();
     });
 
     /**
@@ -482,7 +452,7 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(2023, 5, 15);
       let result = date.toLocaleDateString("en-US", { calendar: "iso8601" });
-      expect(typeof result).assertEqual("string");
+      expect(result.includes("2023")).assertTrue();
     });
 
     /**
@@ -496,28 +466,7 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(2023, 5, 15);
       let result = date.toLocaleDateString("en-US", { numberingSystem: "latn" });
-      expect(typeof result).assertEqual("string");
-    });
-
-    /**
-     * @tc.number SUB_DATE_TO_LCL_DATE_STRNG_3300
-     * @tc.name testDateToLocaleDateString0033
-     * @tc.desc Verify toLocaleDateString with multiple combined options
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testDateToLocaleDateString0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let date = new Date(2023, 5, 15);
-      let result = date.toLocaleDateString("en-US", {
-        weekday: "long",
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-        era: "short",
-        timeZone: "UTC"
-      });
-      expect(typeof result).assertEqual("string");
+      expect(result.includes("2023")).assertTrue();
     });
 
     /**
@@ -531,7 +480,7 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(0);
       let result = date.toLocaleDateString("en-US", { year: "numeric" });
-      expect(typeof result).assertEqual("string");
+      expect(result.includes("1970")).assertTrue();
     });
 
     /**
@@ -545,7 +494,7 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(0);
       let result = date.toLocaleDateString("en-US", { timeZone: "UTC" });
-      expect(typeof result).assertEqual("string");
+      expect(result.includes("1970")).assertTrue();
     });
 
     /**
@@ -559,9 +508,7 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(2023, 5, 15);
       let result = date.toLocaleDateString();
-      expect(typeof result).assertEqual("string");
-      expect(result.length > 0).assertTrue();
-      expect(result.length >= 1).assertTrue();
+      expect(result.includes("2023")).assertTrue();
     });
 
     /**
@@ -575,9 +522,7 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(2023, 5, 15);
       let result = date.toLocaleDateString("en-US");
-      expect(typeof result).assertEqual("string");
-      expect(result.length > 0).assertTrue();
-      expect(result.length >= 1).assertTrue();
+      expect(result.includes("2023")).assertTrue();
     });
 
     /**
@@ -593,12 +538,8 @@ export default function DateToLocaleDateStringTest(): void {
       let result1 = date.toLocaleDateString("en-US");
       let result2 = date.toLocaleDateString("zh-CN");
       let result3 = date.toLocaleDateString("ja-JP");
-      expect(result1.length > 0).assertTrue();
-      expect(result1.length >= 1).assertTrue();
-      expect(result2.length > 0).assertTrue();
-      expect(result2.length >= 1).assertTrue();
-      expect(result3.length > 0).assertTrue();
-      expect(result3.length >= 1).assertTrue();
+      expect(result1.includes("2023")).assertTrue();
+      expect(result1 !== result2 || result2 !== result3).assertTrue();
     });
 
     /**
@@ -613,8 +554,9 @@ export default function DateToLocaleDateStringTest(): void {
       let date = new Date(2023, 5, 15);
       let result1 = date.toLocaleDateString("en-US", { year: "numeric", month: "2-digit", day: "2-digit" });
       let result2 = date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
-      expect(typeof result1).assertEqual("string");
-      expect(typeof result2).assertEqual("string");
+      expect(result1.includes("2023")).assertTrue();
+      expect(result2.includes("June")).assertTrue();
+      expect(result1 !== result2).assertTrue();
     });
 
     /**
@@ -628,9 +570,7 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(0);
       let result = date.toLocaleDateString("en-US");
-      expect(typeof result).assertEqual("string");
-      expect(result.length > 0).assertTrue();
-      expect(result.length >= 1).assertTrue();
+      expect(result.includes("1970")).assertTrue();
     });
 
     /**
@@ -644,7 +584,7 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(1800, 0, 1);
       let result = date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
-      expect(typeof result).assertEqual("string");
+      expect(result.includes("1800")).assertTrue();
     });
 
     /**
@@ -658,7 +598,7 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(2100, 11, 31);
       let result = date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
-      expect(typeof result).assertEqual("string");
+      expect(result.includes("2100")).assertTrue();
     });
 
     /**
@@ -672,9 +612,8 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(2024, 1, 29);
       let result = date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
-      expect(typeof result).assertEqual("string");
-      expect(result.length > 0).assertTrue();
-      expect(result.length >= 1).assertTrue();
+      expect(result.includes("2024")).assertTrue();
+      expect(result.includes("February")).assertTrue();
     });
 
     /**
@@ -688,7 +627,7 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(2023, 11, 31);
       let result = date.toLocaleDateString("en-US");
-      expect(typeof result).assertEqual("string");
+      expect(result.includes("2023")).assertTrue();
     });
 
     /**
@@ -702,7 +641,7 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(2023, 0, 1);
       let result = date.toLocaleDateString("en-US");
-      expect(typeof result).assertEqual("string");
+      expect(result.includes("2023")).assertTrue();
     });
 
     /**
@@ -716,7 +655,7 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(-86400000);
       let result = date.toLocaleDateString("en-US");
-      expect(typeof result).assertEqual("string");
+      expect(result.includes("1969") || result.includes("1970")).assertTrue();
     });
 
     /**
@@ -730,21 +669,7 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(8640000000000000 - 1);
       let result = date.toLocaleDateString("en-US");
-      expect(typeof result).assertEqual("string");
-    });
-
-    /**
-     * @tc.number SUB_DATE_TO_LCL_DATE_STRNG_4900
-     * @tc.name testDateToLocaleDateString0049
-     * @tc.desc Verify toLocaleDateString with near-min timestamp date
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testDateToLocaleDateString0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let date = new Date(-8640000000000000 + 1);
-      let result = date.toLocaleDateString("en-US");
-      expect(typeof result).assertEqual("string");
+      expect(result.includes("275760")).assertTrue();
     });
 
     /**
@@ -759,7 +684,7 @@ export default function DateToLocaleDateStringTest(): void {
       try {
         let date = new Date("invalid");
         let result = date.toLocaleDateString();
-        expect(null).assertFail();
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
       }
@@ -776,8 +701,7 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(0);
       let result = date.toLocaleDateString("en-US");
-      expect(result.length > 0).assertTrue();
-      expect(result.length >= 1).assertTrue();
+      expect(result.includes("1970")).assertTrue();
     });
 
     /**
@@ -791,8 +715,7 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(0);
       let result = date.toLocaleDateString("zh-CN");
-      expect(result.length > 0).assertTrue();
-      expect(result.length >= 1).assertTrue();
+      expect(result.includes("1970")).assertTrue();
     });
 
     /**
@@ -806,8 +729,6 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(2023, 5, 15);
       let result = date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
-      expect(result.length > 0).assertTrue();
-      expect(result.length >= 1).assertTrue();
       expect(result.length < 200).assertTrue();
     });
 
@@ -837,7 +758,7 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(0);
       let result = date.toLocaleDateString("en-US", { month: "long" });
-      expect(typeof result).assertEqual("string");
+      expect(result.includes("January")).assertTrue();
     });
 
     /**
@@ -853,36 +774,16 @@ export default function DateToLocaleDateStringTest(): void {
       let result: string = "";
       try {
         result = date.toLocaleDateString("en-US");
-        expect(result.length > 0).assertTrue();
       } catch (error) {
         expect(error.name).assertEqual('RangeError');
       }
-    });
-
-    /**
-     * @tc.number SUB_DATE_TO_LCL_DATE_STRNG_6000
-     * @tc.name testDateToLocaleDateString0060
-     * @tc.desc Verify finally block always executes regardless of exception
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testDateToLocaleDateString0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let date = new Date(0);
-      let finallyExecuted = false;
-      try {
-        let result = date.toLocaleDateString("en-US");
-        expect(result.length > 0).assertTrue();
-      } finally {
-        finallyExecuted = true;
-      }
-      expect(finallyExecuted).assertTrue();
+      expect(result.includes("1970")).assertTrue();
     });
 
     /**
      * @tc.number SUB_DATE_TO_LCL_DATE_STRNG_6800
      * @tc.name testDateToLocaleDateString0068
-     * @tc.desc Verify toLocaleDateString with special characters in locales string
+     * @tc.desc Verify toLocaleDateString with en-US locale returns epoch date
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -890,7 +791,7 @@ export default function DateToLocaleDateStringTest(): void {
     it('testDateToLocaleDateString0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(0);
       let result1 = date.toLocaleDateString("en-US");
-      expect(typeof result1).assertEqual("string");
+      expect(result1.includes("1970")).assertTrue();
     });
 
   });

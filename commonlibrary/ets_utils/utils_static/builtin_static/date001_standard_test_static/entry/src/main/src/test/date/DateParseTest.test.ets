@@ -193,7 +193,7 @@ export default function DateParseTest(): void {
     it('testDateParse0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let time: long = Date.parse("12:30:45");
-        expect(typeof time).assertEqual("number");
+
         expect(Number.isNaN(time)).assertTrue();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
@@ -211,7 +211,6 @@ export default function DateParseTest(): void {
     it('testDateParse0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let time: long = Date.parse("");
-        expect(typeof time).assertEqual("number");
         expect(Number.isNaN(time)).assertTrue();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
@@ -229,7 +228,6 @@ export default function DateParseTest(): void {
     it('testDateParse0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let time: long = Date.parse("   ");
-        expect(typeof time).assertEqual("number");
         expect(Number.isNaN(time)).assertTrue();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
@@ -249,7 +247,6 @@ export default function DateParseTest(): void {
       try {
         let time: long = Date.parse(input);
         expect(input.length).assertEqual(1);
-        expect(typeof time).assertEqual("number");
         expect(Number.isNaN(time)).assertTrue();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
@@ -267,7 +264,6 @@ export default function DateParseTest(): void {
     it('testDateParse0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let time: long = Date.parse("\t");
-        expect(typeof time).assertEqual("number");
         expect(Number.isNaN(time)).assertTrue();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
@@ -285,7 +281,6 @@ export default function DateParseTest(): void {
     it('testDateParse0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let time: long = Date.parse("\n");
-        expect(typeof time).assertEqual("number");
         expect(Number.isNaN(time)).assertTrue();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
@@ -303,7 +298,6 @@ export default function DateParseTest(): void {
     it('testDateParse0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let time: long = Date.parse("notadate");
-        expect(typeof time).assertEqual("number");
         expect(Number.isNaN(time)).assertTrue();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
@@ -321,7 +315,6 @@ export default function DateParseTest(): void {
     it('testDateParse0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let time: long = Date.parse("!@#$%^&*()");
-        expect(typeof time).assertEqual("number");
         expect(Number.isNaN(time)).assertTrue();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
@@ -355,7 +348,6 @@ export default function DateParseTest(): void {
     it('testDateParse0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let time: long = Date.parse("2024-13-01T00:00:00.000Z");
-        expect(typeof time).assertEqual("number");
         expect(Number.isNaN(time)).assertTrue();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
@@ -373,7 +365,6 @@ export default function DateParseTest(): void {
     it('testDateParse0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let time: long = Date.parse("2024-01-32T00:00:00.000Z");
-        expect(typeof time).assertEqual("number");
         expect(Number.isNaN(time)).assertTrue();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
@@ -391,7 +382,6 @@ export default function DateParseTest(): void {
     it('testDateParse0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let time: long = Date.parse("2024-01-01T25:00:00.000Z");
-        expect(typeof time).assertEqual("number");
         expect(Number.isNaN(time)).assertTrue();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
@@ -426,7 +416,6 @@ export default function DateParseTest(): void {
       let longStr: string = "2024-06-15T00:00:00.000Z" + "a".repeat(10000);
       try {
         let time: long = Date.parse(longStr);
-        expect(typeof time).assertEqual("number");
         expect(Number.isNaN(time)).assertTrue();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
@@ -444,7 +433,6 @@ export default function DateParseTest(): void {
     it('testDateParse0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let time: long = Date.parse("2024-06-15T00:00:00.000Z2024-06-15T00:00:00.000Z");
-        expect(typeof time).assertEqual("number");
         expect(Number.isNaN(time)).assertTrue();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
@@ -462,7 +450,6 @@ export default function DateParseTest(): void {
     it('testDateParse0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let time: long = Date.parse("<script>alert(1)</script>");
-        expect(typeof time).assertEqual("number");
         expect(Number.isNaN(time)).assertTrue();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
@@ -480,7 +467,6 @@ export default function DateParseTest(): void {
     it('testDateParse0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let time: long = Date.parse("<b>2024-06-15</b>");
-        expect(typeof time).assertEqual("number");
         expect(Number.isNaN(time)).assertTrue();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
@@ -498,7 +484,6 @@ export default function DateParseTest(): void {
     it('testDateParse0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let time: long = Date.parse("2024&#45;06&#45;15");
-        expect(typeof time).assertEqual("number");
         expect(Number.isNaN(time)).assertTrue();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
@@ -516,7 +501,6 @@ export default function DateParseTest(): void {
     it('testDateParse0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let time: long = Date.parse("٢٠٢٤-٠٦-١٥");
-        expect(typeof time).assertEqual("number");
         expect(Number.isNaN(time)).assertTrue();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
@@ -534,7 +518,6 @@ export default function DateParseTest(): void {
     it('testDateParse0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let time: long = Date.parse("２０２４-０６-１５");
-        expect(typeof time).assertEqual("number");
         expect(Number.isNaN(time)).assertTrue();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
@@ -552,7 +535,6 @@ export default function DateParseTest(): void {
     it('testDateParse0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let time: long = Date.parse("\udc04");
-        expect(typeof time).assertEqual("number");
         expect(Number.isNaN(time)).assertTrue();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
@@ -570,7 +552,6 @@ export default function DateParseTest(): void {
     it('testDateParse0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let time: long = Date.parse("\xe4\x3f\xad");
-        expect(typeof time).assertEqual("number");
         expect(Number.isNaN(time)).assertTrue();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
@@ -588,7 +569,6 @@ export default function DateParseTest(): void {
     it('testDateParse0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let time: long = Date.parse("\xc0\x81");
-        expect(typeof time).assertEqual("number");
         expect(Number.isNaN(time)).assertTrue();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
@@ -801,7 +781,6 @@ export default function DateParseTest(): void {
     it('testDateParse0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let time: long = Date.parse("2024-06-15T24:00:00.000Z");
-        expect(typeof time).assertEqual("number");
         expect(Number.isNaN(time)).assertTrue();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
@@ -820,7 +799,7 @@ export default function DateParseTest(): void {
       try {
         let bad: long = Date.parse("invalid");
         let good: long = Date.parse("2024-06-15T12:30:45.123Z");
-        expect(null).assertFail();
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
       }
@@ -840,7 +819,6 @@ export default function DateParseTest(): void {
         Date.parse("bad2");
         Date.parse("bad3");
         let time: long = Date.parse("2024-06-15T12:30:45.123Z");
-        expect(typeof time).assertEqual("number");
         expect(Number.isNaN(time)).assertTrue();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');

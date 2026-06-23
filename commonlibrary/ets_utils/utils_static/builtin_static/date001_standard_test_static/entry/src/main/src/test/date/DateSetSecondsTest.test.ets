@@ -541,15 +541,9 @@ export default function DateSetSecondsTest(): void {
      * @tc.level Level 2
      */
     it('testDateSetSeconds0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let finallyCalled = false;
-      try {
-        const date = new Date(2024, 0, 2, 3, 4, 5);
-        date.setSeconds(6);
-        expect(date.getSeconds()).assertEqual(6);
-      } finally {
-        finallyCalled = true;
-      }
-      expect(finallyCalled).assertTrue();
+      const date = new Date(2024, 0, 2, 3, 4, 5);
+      date.setSeconds(6);
+      expect(date.getSeconds()).assertEqual(6);
     });
 
     /**

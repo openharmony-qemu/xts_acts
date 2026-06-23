@@ -287,7 +287,7 @@ export default function DateGetUTCSecondsTest(): void {
      */
     it('testDateGetUTCSeconds0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date();
-      expect(typeof date.getUTCSeconds).assertEqual('function');
+      expect(Number.isInteger(date.getUTCSeconds())).assertTrue();
     });
 
     /**

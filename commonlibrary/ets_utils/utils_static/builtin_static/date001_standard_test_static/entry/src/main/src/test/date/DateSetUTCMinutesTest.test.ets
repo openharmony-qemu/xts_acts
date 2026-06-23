@@ -777,8 +777,7 @@ export default function DateSetUTCMinutesTest(): void {
     it('testDateSetUTCMinutes0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(0);
       let result = date.setUTCMinutes(5);
-      expect(typeof result === 'number' || typeof result === 'long' || typeof result === 'int').assertTrue();
-      expect(result > 0).assertTrue();
+      expect(result).assertEqual(date.getTime());
     });
 
     /**
@@ -854,7 +853,7 @@ export default function DateSetUTCMinutesTest(): void {
     it('testDateSetUTCMinutes0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(Date.UTC(2024, 0, 2, 12, 0));
       let result = date.setUTCMinutes(30);
-      expect(result > 0).assertTrue();
+      expect(result).assertEqual(date.getTime());
     });
 
     /**
@@ -902,7 +901,6 @@ export default function DateSetUTCMinutesTest(): void {
     it('testDateSetUTCMinutes0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(0);
       let result = date.setUTCMinutes(5);
-      expect(typeof result === 'number' || typeof result === 'long' || typeof result === 'int').assertTrue();
       expect(Number.isInteger(result)).assertTrue();
     });
 
@@ -974,7 +972,6 @@ export default function DateSetUTCMinutesTest(): void {
     it('testDateSetUTCMinutes0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(Date.UTC(2100, 0, 1, 12, 0));
       let result = date.setUTCMinutes(30);
-      expect(result > 0).assertTrue();
       let lowerBound: long = 4000000000000;
       expect(result > lowerBound).assertTrue();
     });
@@ -1055,7 +1052,7 @@ export default function DateSetUTCMinutesTest(): void {
     it('testDateSetUTCMinutes0091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(0);
       let result = date.setUTCMinutes(5);
-      expect(typeof result === 'number' || typeof result === 'long' || typeof result === 'int').assertTrue();
+      expect(result).assertEqual(date.getTime());
     });
 
     /**
@@ -1069,7 +1066,6 @@ export default function DateSetUTCMinutesTest(): void {
     it('testDateSetUTCMinutes0092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(0);
       let result = date.setUTCMinutes(5);
-      expect(typeof result === 'number' || typeof result === 'long' || typeof result === 'int').assertTrue();
       expect(date.getUTCMinutes()).assertEqual(5);
     });
 
@@ -1135,7 +1131,7 @@ export default function DateSetUTCMinutesTest(): void {
     it('testDateSetUTCMinutes0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(Date.UTC(2024, 0, 2, 12, 0));
       let result = date.setUTCMinutes(0);
-      expect(typeof result === 'number' || typeof result === 'long' || typeof result === 'int').assertTrue();
+      expect(result).assertEqual(date.getTime());
     });
 
     /**
@@ -1149,7 +1145,7 @@ export default function DateSetUTCMinutesTest(): void {
     it('testDateSetUTCMinutes0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(Date.UTC(2024, 0, 2, 12, 0));
       let result = date.setUTCMinutes(1);
-      expect(typeof result === 'number' || typeof result === 'long' || typeof result === 'int').assertTrue();
+      expect(result).assertEqual(date.getTime());
     });
 
     /**
@@ -1221,7 +1217,6 @@ export default function DateSetUTCMinutesTest(): void {
       const date = new Date();
       let result = date.setUTCMinutes(30);
       expect(date.getUTCMinutes()).assertEqual(30);
-      expect(typeof result === 'number' || typeof result === 'long' || typeof result === 'int').assertTrue();
     });
 
     /**
@@ -1402,14 +1397,11 @@ export default function DateSetUTCMinutesTest(): void {
     it('testDateSetUTCMinutes0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(0);
       let r1 = date.setUTCMinutes(5);
-      expect(typeof r1 === 'number' || typeof r1 === 'long' || typeof r1 === 'int').assertTrue();
-      expect(Number.isFinite(r1)).assertTrue();
       let r2 = date.setUTCMinutes(5, 6);
-      expect(typeof r2 === 'number' || typeof r2 === 'long' || typeof r2 === 'int').assertTrue();
-      expect(Number.isFinite(r2)).assertTrue();
       let r3 = date.setUTCMinutes(5, 6, 7);
-      expect(typeof r3 === 'number' || typeof r3 === 'long' || typeof r3 === 'int').assertTrue();
-      expect(Number.isFinite(r3)).assertTrue();
+      expect(!Number.isNaN(r1)).assertTrue();
+      expect(!Number.isNaN(r2)).assertTrue();
+      expect(!Number.isNaN(r3)).assertTrue();
     });
   });
 }

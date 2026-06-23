@@ -158,7 +158,7 @@ export default function DateSetUTCDateTest(): void {
     it('testDateSetUTCDate0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(0);
       let result = date.setUTCDate(2147483647);
-      expect(typeof result === 'number' || typeof result === 'long' || typeof result === 'int').assertTrue();
+      expect(!Number.isNaN(result)).assertTrue();
     });
 
     /**
@@ -172,7 +172,7 @@ export default function DateSetUTCDateTest(): void {
     it('testDateSetUTCDate0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(0);
       let result = date.setUTCDate(-2147483648);
-      expect(typeof result === 'number' || typeof result === 'long' || typeof result === 'int').assertTrue();
+      expect(!Number.isNaN(result)).assertTrue();
     });
 
     /**
@@ -319,7 +319,7 @@ export default function DateSetUTCDateTest(): void {
     it('testDateSetUTCDate0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(0);
       let result = date.setUTCDate(15);
-      expect(typeof result === 'number' || typeof result === 'long' || typeof result === 'int').assertTrue();
+      expect(!Number.isNaN(result)).assertTrue();
       expect(Number.isInteger(result)).assertTrue();
     });
 
@@ -470,7 +470,7 @@ export default function DateSetUTCDateTest(): void {
       try {
         const date = new Date("invalid");
         let result = date.setUTCDate(15);
-        expect(result).assertFail();
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
       }

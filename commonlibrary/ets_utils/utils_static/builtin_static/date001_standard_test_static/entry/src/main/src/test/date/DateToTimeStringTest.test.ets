@@ -50,7 +50,6 @@ export default function DateToTimeStringTest(): void {
     it('testDateToTimeString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(0);
       let result: string = date.toTimeString();
-      expect(result.length > 0).assertTrue();
       expect(result.indexOf(":") > 0).assertTrue();
     });
 
@@ -65,7 +64,7 @@ export default function DateToTimeStringTest(): void {
     it('testDateToTimeString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(0);
       let result: string = date.toTimeString();
-      expect(typeof result).assertEqual("string");
+      expect(result.indexOf(":") > 0).assertTrue();
     });
 
     /**
@@ -79,7 +78,6 @@ export default function DateToTimeStringTest(): void {
     it('testDateToTimeString0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(2026, 0, 1, 12, 30, 45);
       let result: string = date.toTimeString();
-      expect(result.length > 0).assertTrue();
       expect(result.indexOf(":") > 0).assertTrue();
     });
 
@@ -94,7 +92,6 @@ export default function DateToTimeStringTest(): void {
     it('testDateToTimeString0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date();
       let result: string = date.toTimeString();
-      expect(result.length > 0).assertTrue();
       expect(result.indexOf(":") > 0).assertTrue();
     });
 
@@ -109,7 +106,6 @@ export default function DateToTimeStringTest(): void {
     it('testDateToTimeString0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date("2026-05-09T12:30:45");
       let result: string = date.toTimeString();
-      expect(result.length > 0).assertTrue();
       expect(result.indexOf(":") > 0).assertTrue();
     });
 
@@ -124,7 +120,6 @@ export default function DateToTimeStringTest(): void {
     it('testDateToTimeString0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(2026, 4, 9, 8, 30, 15, 500);
       let result: string = date.toTimeString();
-      expect(result.length > 0).assertTrue();
       expect(result.indexOf(":") > 0).assertTrue();
     });
 
@@ -139,7 +134,7 @@ export default function DateToTimeStringTest(): void {
     it('testDateToTimeString0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(-86400000);
       let result: string = date.toTimeString();
-      expect(typeof result).assertEqual("string");
+      expect(result.indexOf(":") > 0).assertTrue();
     });
 
     /**
@@ -153,8 +148,6 @@ export default function DateToTimeStringTest(): void {
     it('testDateToTimeString0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(0);
       let result: string = date.toTimeString();
-      expect(typeof result).assertEqual("string");
-      expect(result.length > 0).assertTrue();
       expect(result.indexOf(":") > 0).assertTrue();
     });
 
@@ -169,8 +162,6 @@ export default function DateToTimeStringTest(): void {
     it('testDateToTimeString0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(2026, 4, 9, 14, 30, 45);
       let result: string = date.toTimeString();
-      expect(typeof result).assertEqual("string");
-      expect(result.length > 0).assertTrue();
       expect(result.indexOf(":") > 0).assertTrue();
     });
 
@@ -185,8 +176,6 @@ export default function DateToTimeStringTest(): void {
     it('testDateToTimeString0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(2026, 0, 1, 0, 0, 0);
       let result: string = date.toTimeString();
-      expect(typeof result).assertEqual("string");
-      expect(result.length > 0).assertTrue();
       expect(result.indexOf(":") > 0).assertTrue();
     });
 
@@ -201,8 +190,6 @@ export default function DateToTimeStringTest(): void {
     it('testDateToTimeString0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(2026, 11, 31, 23, 59, 59);
       let result: string = date.toTimeString();
-      expect(typeof result).assertEqual("string");
-      expect(result.length > 0).assertTrue();
       expect(result.indexOf(":") > 0).assertTrue();
     });
 
@@ -217,8 +204,6 @@ export default function DateToTimeStringTest(): void {
     it('testDateToTimeString0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(2026, 4, 9, 12, 30, 45, 123);
       let result: string = date.toTimeString();
-      expect(typeof result).assertEqual("string");
-      expect(result.length > 0).assertTrue();
       expect(result.indexOf(":") > 0).assertTrue();
     });
 
@@ -233,7 +218,7 @@ export default function DateToTimeStringTest(): void {
     it('testDateToTimeString0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(-8640000000000000);
       let result: string = date.toTimeString();
-      expect(typeof result).assertEqual("string");
+      expect(result.indexOf(":") > 0).assertTrue();
     });
 
     /**
@@ -247,7 +232,7 @@ export default function DateToTimeStringTest(): void {
     it('testDateToTimeString0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(8640000000000000);
       let result: string = date.toTimeString();
-      expect(typeof result).assertEqual("string");
+      expect(result.indexOf(":") > 0).assertTrue();
     });
 
     /**
@@ -263,34 +248,6 @@ export default function DateToTimeStringTest(): void {
       let result1: string = date.toTimeString();
       let result2: string = date.toTimeString();
       expect(result1).assertEqual(result2);
-    });
-
-    /**
-     * @tc.number SUB_DATE_TO_TIME_STRNG_2100
-     * @tc.name testDateToTimeString0021
-     * @tc.desc Verify return type is not number
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testDateToTimeString0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const date = new Date(0);
-      let result: string = date.toTimeString();
-      expect(typeof result === "number").assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_DATE_TO_TIME_STRNG_2200
-     * @tc.name testDateToTimeString0022
-     * @tc.desc Verify return type is not object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testDateToTimeString0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const date = new Date(0);
-      let result: string = date.toTimeString();
-      expect(typeof result === "object").assertFalse();
     });
 
     /**
@@ -320,8 +277,6 @@ export default function DateToTimeStringTest(): void {
     it('testDateToTimeString0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(2026, 0, 2, 0, 0, 0);
       let result: string = date.toTimeString();
-      expect(typeof result).assertEqual("string");
-      expect(result.length > 0).assertTrue();
       expect(result.indexOf(":") > 0).assertTrue();
     });
 
@@ -336,8 +291,6 @@ export default function DateToTimeStringTest(): void {
     it('testDateToTimeString0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(2024, 1, 29, 12, 0, 0);
       let result: string = date.toTimeString();
-      expect(typeof result).assertEqual("string");
-      expect(result.length > 0).assertTrue();
       expect(result.indexOf(":") > 0).assertTrue();
     });
 
@@ -353,7 +306,7 @@ export default function DateToTimeStringTest(): void {
       try {
         const date = new Date("invalid date string");
         let result: string = date.toTimeString();
-        expect(null).assertFail();
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
       }
@@ -371,7 +324,7 @@ export default function DateToTimeStringTest(): void {
       try {
         const date = new Date("invalid");
         let result: string = date.toTimeString();
-        expect(null).assertFail();
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
       }
@@ -389,7 +342,6 @@ export default function DateToTimeStringTest(): void {
       try {
         const date = new Date(0);
         let result: string = date.toTimeString();
-        expect(result.length > 0).assertTrue();
         expect(result.indexOf(":") > 0).assertTrue();
       } catch (error) {
         expect(error.name).assertEqual('RangeError');
@@ -409,7 +361,6 @@ export default function DateToTimeStringTest(): void {
       try {
         for (let i = 0; i < 100; i++) {
           let result: string = date.toTimeString();
-          expect(typeof result).assertEqual("string");
         }
       } catch (error) {
         expect(error.name).assertEqual('RangeError');
@@ -432,9 +383,8 @@ export default function DateToTimeStringTest(): void {
         let r1: string = date1.toTimeString();
         let r2: string = date2.toTimeString();
         let r3: string = date3.toTimeString();
-        expect(typeof r1).assertEqual("string");
-        expect(typeof r2).assertEqual("string");
-        expect(typeof r3).assertEqual("string");
+        expect(r1.indexOf(":") > 0).assertTrue();
+        expect(r1 !== r2 || r2 !== r3).assertTrue();
       } catch (error) {
         expect(error.name).assertEqual('RangeError');
       }
@@ -452,7 +402,7 @@ export default function DateToTimeStringTest(): void {
       try {
         const date = new Date("");
         let result: string = date.toTimeString();
-        expect(null).assertFail();
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
       }
@@ -469,7 +419,7 @@ export default function DateToTimeStringTest(): void {
     it('testDateToTimeString0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date();
       let result: string = date.toTimeString();
-      expect(typeof result).assertEqual("string");
+      expect(result.indexOf(":") > 0).assertTrue();
     });
   });
 }

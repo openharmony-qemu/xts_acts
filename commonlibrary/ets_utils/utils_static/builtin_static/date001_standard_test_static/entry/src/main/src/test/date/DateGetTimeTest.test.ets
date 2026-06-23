@@ -152,12 +152,8 @@ export default function DateGetTimeTest(): void {
     it('testDateGetTime0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(1609459200000);
       const result = date.getTime();
-
-      console.info(`[DateGetTime008] result = ${result}, type = ${typeof result}`);
-
       const numericValue = Number(result);
       expect(!isNaN(numericValue)).assertTrue();
-
       expect(numericValue).assertEqual(1609459200000);
     });
 

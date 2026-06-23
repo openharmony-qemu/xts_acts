@@ -50,7 +50,7 @@ export default function DateGetTimezoneOffsetTest(): void {
     it('testDateGetTimezoneOffset0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(0);
       let offset: long = date.getTimezoneOffset();
-      expect(typeof offset).assertEqual('long');
+      expect(Number.isInteger(offset)).assertTrue();
     });
 
     /**
@@ -64,8 +64,7 @@ export default function DateGetTimezoneOffsetTest(): void {
     it('testDateGetTimezoneOffset0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(0);
       let offset: long = date.getTimezoneOffset();
-      expect(offset !== null).assertTrue();
-      expect(typeof offset).assertEqual('long');
+      expect(offset >= -720 && offset <= 840).assertTrue();
     });
 
     /**
@@ -79,7 +78,7 @@ export default function DateGetTimezoneOffsetTest(): void {
     it('testDateGetTimezoneOffset0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date();
       let offset: long = date.getTimezoneOffset();
-      expect(typeof offset).assertEqual('long');
+      expect(Number.isInteger(offset)).assertTrue();
     });
 
     /**
@@ -93,7 +92,7 @@ export default function DateGetTimezoneOffsetTest(): void {
     it('testDateGetTimezoneOffset0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date('2024-06-15T12:00:00');
       let offset: long = date.getTimezoneOffset();
-      expect(typeof offset).assertEqual('long');
+      expect(Number.isInteger(offset)).assertTrue();
     });
 
     /**
@@ -107,7 +106,7 @@ export default function DateGetTimezoneOffsetTest(): void {
     it('testDateGetTimezoneOffset0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(2024, 5, 15, 12, 0, 0);
       let offset: long = date.getTimezoneOffset();
-      expect(typeof offset).assertEqual('long');
+      expect(Number.isInteger(offset)).assertTrue();
     });
 
     /**
@@ -138,7 +137,6 @@ export default function DateGetTimezoneOffsetTest(): void {
       const date = new Date(0);
       let offset: long = date.getTimezoneOffset();
       let offsetStr: string = offset.toString();
-      expect(offsetStr.length > 0).assertTrue();
       expect(Number(offsetStr)).assertEqual(offset);
     });
 
@@ -266,7 +264,7 @@ export default function DateGetTimezoneOffsetTest(): void {
     it('testDateGetTimezoneOffset0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(0);
       let offset: long = date.getTimezoneOffset();
-      expect(offset !== null).assertTrue();
+      expect(Number.isInteger(offset)).assertTrue();
     });
 
     /**
@@ -279,8 +277,7 @@ export default function DateGetTimezoneOffsetTest(): void {
      */
     it('testDateGetTimezoneOffset0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(0);
-      expect(date.getTimezoneOffset !== null).assertTrue();
-      expect(typeof date.getTimezoneOffset).assertEqual('function');
+      expect(Number.isInteger(date.getTimezoneOffset())).assertTrue();
     });
 
     /**
@@ -296,7 +293,7 @@ export default function DateGetTimezoneOffsetTest(): void {
       let time: long = date.getTime();
       let offset: long = date.getTimezoneOffset();
       let localTime: long = time - offset * 60 * 1000;
-      expect(localTime !== null).assertTrue();
+      expect(Number.isInteger(localTime)).assertTrue();
     });
 
     /**
@@ -327,7 +324,6 @@ export default function DateGetTimezoneOffsetTest(): void {
     it('testDateGetTimezoneOffset0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(2024, 0, 1, 0, 0, 0, 0);
       let offset: long = date.getTimezoneOffset();
-      expect(typeof offset).assertEqual('long');
       expect(Number.isInteger(offset)).assertTrue();
     });
 
@@ -342,7 +338,7 @@ export default function DateGetTimezoneOffsetTest(): void {
     it('testDateGetTimezoneOffset0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(1704067200000);
       let offset: long = date.getTimezoneOffset();
-      expect(typeof offset).assertEqual('long');
+      expect(Number.isInteger(offset)).assertTrue();
     });
 
     /**
@@ -356,7 +352,7 @@ export default function DateGetTimezoneOffsetTest(): void {
     it('testDateGetTimezoneOffset0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date('2024-01-01T00:00:00.000Z');
       let offset: long = date.getTimezoneOffset();
-      expect(typeof offset).assertEqual('long');
+      expect(Number.isInteger(offset)).assertTrue();
     });
   });
 }

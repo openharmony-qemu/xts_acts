@@ -237,7 +237,7 @@ export default function DateGetMillisecondsTest(): void {
       try {
         const date: Date = new Date('invalid');
         resultValue = date.getMilliseconds();
-        expect(null).assertFail();
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('FormatError');
       }

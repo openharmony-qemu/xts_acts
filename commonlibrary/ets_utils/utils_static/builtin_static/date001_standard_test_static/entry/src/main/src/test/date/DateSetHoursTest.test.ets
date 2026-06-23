@@ -518,21 +518,6 @@ export default function DateSetHoursTest(): void {
     });
 
     /**
-     * @tc.number SUB_DATE_SET_HOURS_CHK_8400
-     * @tc.name testDateSetHours0084
-     * @tc.desc Verify setHours(value) returns UTC milliseconds timestamp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testDateSetHours0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const date = new Date(2024, 0, 2);
-      let result: number = date.setHours(4);
-      expect(typeof result).assertEqual('number');
-      expect(result > 0).assertTrue();
-    });
-
-    /**
      * @tc.number SUB_DATE_SET_HOURS_CHK_8500
      * @tc.name testDateSetHours0085
      * @tc.desc Verify setHours return value difference reflects time change

@@ -176,7 +176,7 @@ export default function DateSetUTCFullYearTest(): void {
     it('testDateSetUTCFullYear0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(0);
       const result = date.setUTCFullYear(2147483647);
-      expect(typeof result === 'number' || typeof result === 'long' || typeof result === 'int').assertTrue();
+      expect(!Number.isNaN(result)).assertTrue();
     });
 
     /**
@@ -190,7 +190,7 @@ export default function DateSetUTCFullYearTest(): void {
     it('testDateSetUTCFullYear0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const date = new Date(0);
       const result = date.setUTCFullYear(-2147483648);
-      expect(typeof result === 'number' || typeof result === 'long' || typeof result === 'int').assertTrue();
+      expect(!Number.isNaN(result)).assertTrue();
     });
 
     /**
