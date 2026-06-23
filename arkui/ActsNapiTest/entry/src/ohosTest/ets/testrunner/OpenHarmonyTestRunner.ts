@@ -50,7 +50,7 @@ export default class OpenHarmonyTestRunner implements TestRunner {
         let debug = abilityDelegatorArguments.parameters['-D'];
         if (debug === 'true')
         {
-            cmd += ' -D'
+            cmd += ' -D';
         }
         let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
         if (user !== undefined) {
