@@ -33,8 +33,16 @@ export default function dataTest() {
      * @tc.level  LEVEL0
      */
     it('testNapiData001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      expect(testNapi.add(1, 2)).assertEqual(3);
-      done()
+      let TAG = "testNapiData001";
+      console.info(`${TAG} START`);
+      try {
+        let value = testNapi.napiCreateDate();
+        expect(value).assertEqual(1);
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
     });
   })
 }

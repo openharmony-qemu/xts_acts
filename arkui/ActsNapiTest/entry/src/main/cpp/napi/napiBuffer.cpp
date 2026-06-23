@@ -2,35 +2,31 @@
 #include "common/native_common.h"
 #include <securec.h>
 
-static napi_value Add(napi_env env, napi_callback_info info)
+static napi_value IsBuffer(napi_env env, napi_callback_info info)
 {
-    size_t argc = 2;
-    napi_value args[2] = {nullptr};
-
-    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-
-    napi_valuetype valuetype0;
-    napi_typeof(env, args[0], &valuetype0);
-
-    napi_valuetype valuetype1;
-    napi_typeof(env, args[1], &valuetype1);
-
-    double value0;
-    napi_get_value_double(env, args[0], &value0);
-
-    double value1;
-    napi_get_value_double(env, args[1], &value1);
-
-    napi_value sum;
-    napi_create_double(env, value0 + value1, &sum);
-    return sum;
+    napi_value args[1];
+    size_t argc = 1;
+    if (napi_get_cb_info(env, info, &argc, args, nullptr, nullptr) != napi_ok) {
+        napi_throw_error(env, nullptr, "Failed to parse arguments");
+        return nullptr;
+    }
+    NAPI_ASSERT(env, argc == 1, "The number of arguments provided is incorrect.");
+    napi_value napiBuffer = args[0];
+    bool result;
+    napi_status status = napi_is_buffer(env, napiBuffer, &result);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "The parameter instance is not of type buffer.");
+    }
+    napi_value returnValue;
+    NAPI_CALL(env, napi_get_boolean(env, result, &returnValue));
+    return returnValue;
 }
 
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        { "add", nullptr, Add, nullptr, nullptr, nullptr, napi_default, nullptr }
+        DECLARE_NAPI_FUNCTION("IsBuffer", IsBuffer),
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

@@ -2,35 +2,42 @@
 #include "common/native_common.h"
 #include <securec.h>
 
-static napi_value Add(napi_env env, napi_callback_info info)
+napi_value createStringUtf8(napi_env env, napi_callback_info info)
 {
-    size_t argc = 2;
-    napi_value args[2] = {nullptr};
-
-    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-
-    napi_valuetype valuetype0;
-    napi_typeof(env, args[0], &valuetype0);
-
-    napi_valuetype valuetype1;
-    napi_typeof(env, args[1], &valuetype1);
-
-    double value0;
-    napi_get_value_double(env, args[0], &value0);
-
-    double value1;
-    napi_get_value_double(env, args[1], &value1);
-
-    napi_value sum;
-    napi_create_double(env, value0 + value1, &sum);
-    return sum;
+    napi_status status;
+    size_t argc = 1;
+    napi_value argv[1];
+    status = napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "Failed to parse arguments");
+        return nullptr;
+    }
+    if (argc < 1) {
+        napi_throw_type_error(env, nullptr, "Wrong number of arguments");
+        return nullptr;
+    }
+    napi_value strValue = argv[0];
+    char str[NAPI_UTF8_LENGTH];
+    size_t strLength;
+    status = napi_get_value_string_utf8(env, strValue, str, NAPI_UTF8_LENGTH, &strLength);
+    if (status != napi_ok) {
+        napi_throw_type_error(env, nullptr, "Invalid string was passed as argument");
+        return nullptr;
+    }
+    napi_value result;
+    status = napi_create_string_utf8(env, str, strLength, &result);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "Failed to create string");
+        return nullptr;
+    }
+    return result;
 }
 
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        { "add", nullptr, Add, nullptr, nullptr, nullptr, napi_default, nullptr }
+        DECLARE_NAPI_FUNCTION("createStringUtf8", createStringUtf8),
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

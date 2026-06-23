@@ -33,8 +33,16 @@ export default function stringTest() {
      * @tc.level  LEVEL0
      */
     it('testNapiString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      expect(testNapi.add(1, 2)).assertEqual(3);
-      done()
+      console.info('testNapiString001 START');
+      try {
+        let ret = testNapi.createStringUtf8('abc');
+        console.info('testCreateStringUtf80001 ret is: ' + ret);
+        expect(ret).assertEqual('abc');
+      } catch (err) {
+        console.error('testNapiString001 err msg' + err.message);
+        expect().assertFail();
+      }
+      done();
     });
   })
 }
