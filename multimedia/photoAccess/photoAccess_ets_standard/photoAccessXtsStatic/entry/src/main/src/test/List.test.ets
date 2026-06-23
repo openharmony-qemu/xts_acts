@@ -25,6 +25,7 @@ export default function testsuite(): void {
   photoAccessHelperNoPermissionStaticTest();
   photoAccessHelperReadPermissionStaticTest();
   photoMediaLibraryNoPermissionStatic();
+  getTest();
   MediaLibraryAvailabilitySupp();
   MediaAssetManagerStaticTest();
   MediaAssetChangeRequestStaticTest();
@@ -43,5 +44,4 @@ export default function testsuite(): void {
   AddResourceChangeRequestUrlSuppTest();
   CommitModifySuppTest();
   MediaAlbumChangeRequestSetAlbumNameStatic();
-  getTest();
 }
