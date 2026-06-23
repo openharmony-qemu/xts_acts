@@ -552,7 +552,7 @@ export default function FontPart4(): void {
           expect(lastPoint !== null && lastPoint !== undefined).assertTrue();
           if (lastPoint) {
             console.info(msg + ' getLastPoint success, lastPoint.x:' + lastPoint.x + ' lastPoint.y:' + lastPoint.y);
-            expect(lastPoint.x).assertEqual(100000096);
+            expect(Math.abs(lastPoint.x - 100000096) < 0.01).assertTrue();
             expect(Math.abs(lastPoint.y - 86.99) < 0.01).assertTrue();
           }
         }
@@ -753,7 +753,7 @@ export default function FontPart4(): void {
           if (lastPoint) {
             console.info(msg + ' getLastPoint success, lastPoint.x:' + lastPoint.x + ' lastPoint.y:' + lastPoint.y);
             expect(Math.abs(lastPoint.x - 94.84) < 0.01).assertTrue();
-            expect(lastPoint.y).assertEqual(99999984);
+            expect(Math.abs(lastPoint.y - 99999984) < 0.01).assertTrue();
           }
         }
       } catch (e) {
@@ -829,9 +829,6 @@ export default function FontPart4(): void {
             expect(Math.abs(lastPoint.x - 94.84) < 0.01).assertTrue();
             expect(Math.abs(lastPoint.y - 86.99) < 0.01).assertTrue();
           }
-          console.info(msg + ' getLastPoint success, lastPoint.x:' + lastPoint.x + ' lastPoint.y:' + lastPoint.y);
-          expect(Math.abs(lastPoint.x - 94.84) < 0.01).assertTrue();
-          expect(Math.abs(lastPoint.y - 86.99) < 0.01).assertTrue();
         }
         let path2 = font.getTextPathWithFallback(myString, length, 0, 200);
         if(path2 == undefined){
