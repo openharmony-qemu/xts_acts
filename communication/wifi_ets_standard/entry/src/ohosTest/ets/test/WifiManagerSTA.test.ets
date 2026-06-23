@@ -27,7 +27,7 @@ function sleep(delay:number): Promise<void> {
 
 async function tryToEnableWifi(){
   if(!wifiMg.isWifiActive()){
-    console.info("wifi_test/enable wifi:" + wifiMg.enableWifi());
+    console.info("wifi_test enable wifi:" + wifiMg.enableWifi());
     for (let i = 0; i <= 200; i++) {
       if (wifiMg.isWifiActive()) {
         console.info("WiFi已成功开启");
@@ -41,7 +41,7 @@ async function tryToEnableWifi(){
 }
 async function tryToDisableWifi(){
   if(wifiMg.isWifiActive()){
-    console.info("wifi_test/enable wifi:" + wifiMg.disableWifi());
+    console.info("wifi_test disable wifi:" + wifiMg.disableWifi());
     for (let i = 0; i <= 200; i++) {
       if (!wifiMg.isWifiActive()) {
         console.info("WiFi已成功关闭");
