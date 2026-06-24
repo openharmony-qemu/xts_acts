@@ -41,6 +41,7 @@ import columnWidths from './textPicker/columnWidths.test';
 import textPickerDialogSystemMaterialTest from './textPickerDialog/textPickerDialogSystemMaterial.test';
 import timePickerDialogSystemMaterialTest from './timePickerDialog/timePickerDialogSystemMaterial.test';
 import calendarPickerDialogSystemMaterialTest from './calendarPickerDialogTest/calendarPickerDialogSystemMaterial.test';
+import datePickerDialogSystemMaterialTest from './datePickerDialogTest/datePickerDialogSystemMaterial.test';
 
 export default function testsuite() {
     calendarPickerDialogStartEndTest()
@@ -71,4 +72,5 @@ export default function testsuite() {
     textPickerDialogSystemMaterialTest();
     timePickerDialogSystemMaterialTest();
     calendarPickerDialogSystemMaterialTest();
+    datePickerDialogSystemMaterialTest();
 }
