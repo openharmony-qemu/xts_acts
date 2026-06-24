@@ -45,7 +45,395 @@ export default function singlePhotoAlbumChangeTest(): void {
     afterAll(() => {
       console.info(TAG, 'afterAll case.');
     });
+    /**
+     * @tc.number   SUB_MULTMEDIA_ON_SINGLE_PHOTO_ALBUM_CHANGE_TEST_STATIC_0100
+     * @tc.name     SUB_MULTMEDIA_ON_SINGLE_PHOTO_ALBUM_CHANGE_TEST_STATIC_0100
+     * @tc.desc     onSinglePhotoAlbumChange-返回值属性覆盖
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("SUB_MULTMEDIA_ON_SINGLE_PHOTO_ALBUM_CHANGE_TEST_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const testName = "SUB_MULTMEDIA_ON_SINGLE_PHOTO_ALBUM_CHANGE_TEST_STATIC_0100";
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOptions: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      let isCallbackCalled = false;
+      let onCallback = (changeData: photoAccessHelper.AlbumChangeInfos) => {
+        console.info(TAG,testName,'onCallback1 success, changeData456: ' + JSON.stringify(changeData));
+        expect(changeData.type == 2).assertTrue();
+        expect(changeData.isForRecheck).assertFalse();
+        expect(changeData.albumChangeDatas != undefined).assertTrue()
+        isCallbackCalled = true;
+      }
+      try {
+        let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> = await helper!.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
+        let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
+        let albumChangeRequest: photoAccessHelper.MediaAlbumChangeRequest = new photoAccessHelper.MediaAlbumChangeRequest(album);
+        helper!.onSinglePhotoAlbumChange(album, onCallback);
+        let newAlbumName: string = 'onSinglePhotoAlbum' + new Date().getTime();
+        albumChangeRequest.setAlbumName(newAlbumName);
+        await helper!.applyChanges(albumChangeRequest);
+        const startTime = Date.now();
+        const timeoutMs = 15000;
+        while (!isCallbackCalled && (Date.now() - startTime) < timeoutMs) {
+          await sleep(100)
+        }
+        expect(isCallbackCalled).assertTrue();
+        helper!.offSinglePhotoAlbumChange();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, 'Failed ', JSON.stringify(error), error.code);
+        expect().assertFail();
+        done();
+      }
+    });
 
+    /**
+     * @tc.number   SUB_MULTMEDIA_OFF_SINGLE_PHOTO_ALBUM_CHANGE_TEST_STATIC_0100
+     * @tc.name     SUB_MULTMEDIA_OFF_SINGLE_PHOTO_ALBUM_CHANGE_TEST_STATIC_0100
+     * @tc.desc     offSinglePhotoAlbumChange-no prams
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("SUB_MULTMEDIA_OFF_SINGLE_PHOTO_ALBUM_CHANGE_TEST_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const testName = "SUB_MULTMEDIA_OFF_SINGLE_PHOTO_ALBUM_CHANGE_TEST_STATIC_0100";
+      try {
+        let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+        let fetchOptions: photoAccessHelper.FetchOptions = {
+          fetchColumns: [],
+          predicates: predicates
+        };
+        let isCallbackCalled = false;
+        let onCallback = (changeData: photoAccessHelper.AlbumChangeInfos) => {
+          console.info(TAG, testName, 'onCallback1 success, changeData: ' + JSON.stringify(changeData));
+          isCallbackCalled = true;
+        }
+        let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> = await helper!.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
+        let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
+        let albumChangeRequest: photoAccessHelper.MediaAlbumChangeRequest = new photoAccessHelper.MediaAlbumChangeRequest(album);
+        helper!.onSinglePhotoAlbumChange(album, onCallback);
+        let newAlbumName: string = 'onSinglePhotoAlbum' + new Date().getTime();
+        albumChangeRequest.setAlbumName(newAlbumName);
+        await helper!.applyChanges(albumChangeRequest);
+        const startTime = Date.now();
+        const timeoutMs = 15000;
+        while (!isCallbackCalled && (Date.now() - startTime) < timeoutMs) {
+          await sleep(100)
+        }
+        expect(isCallbackCalled).assertTrue();
+        helper!.offSinglePhotoAlbumChange();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, 'Failed ', JSON.stringify(error), error.code);
+        expect().assertFail();
+        done();
+      }
+    });
+    /**
+     * @tc.number   SUB_MULTMEDIA_ON_SINGLE_PHOTO_CHANGE_TEST_STATIC_0100
+     * @tc.name     SUB_MULTMEDIA_ON_SINGLE_PHOTO_CHANGE_TEST_STATIC_0100
+     * @tc.desc     onSinglePhotoChange-返回值属性覆盖
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("SUB_MULTMEDIA_ON_SINGLE_PHOTO_CHANGE_TEST_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const testName = "SUB_MULTMEDIA_ON_SINGLE_PHOTO_CHANGE_TEST_STATIC_0100";
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOptions: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      let isCallbackCalled = false;
+      let onCallback = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
+        console.info(TAG, testName, 'onCallback1 success, changeData: ' + JSON.stringify(changeData));
+        expect(changeData.type == 1).assertTrue();
+        expect(changeData.isForRecheck).assertFalse();
+        expect(changeData.assetChangeDatas != undefined).assertTrue();
+        isCallbackCalled = true;
+      }
+      try {
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await helper!.getAssets(fetchOptions);
+        let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        helper!.onSinglePhotoChange(asset, onCallback);
+        let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
+          new photoAccessHelper.MediaAssetChangeRequest(asset);
+        let newTitle: string = 'newTitle';
+        assetChangeRequest.setTitle(newTitle);
+        await helper!.applyChanges(assetChangeRequest);
+        const startTime = Date.now();
+        const timeoutMs = 15000;
+        while (!isCallbackCalled && (Date.now() - startTime) < timeoutMs) {
+          await sleep(100)
+        }
+        expect(isCallbackCalled).assertTrue();
+        helper!.offSinglePhotoChange(asset, onCallback);
+        done();
+      } catch (error) {
+        console.error(TAG, testName, 'Failed ', JSON.stringify(error), error.code);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_MULTMEDIA_OFF_SINGLE_PHOTO_CHANGE_TEST_STATIC_0100
+     * @tc.name     SUB_MULTMEDIA_OFF_SINGLE_PHOTO_CHANGE_TEST_STATIC_0100
+     * @tc.desc     offSinglePhotoChange-normal-video
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("SUB_MULTMEDIA_OFF_SINGLE_PHOTO_CHANGE_TEST_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const testName = "SUB_MULTMEDIA_OFF_SINGLE_PHOTO_CHANGE_TEST_STATIC_0100";
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOptions: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      let isCallbackCalled = false;
+      let onCallback = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
+        console.info(TAG, testName, 'onCallback1 success, changeData: ' + JSON.stringify(changeData));
+        expect(changeData.type == 1).assertTrue();
+        expect(changeData.isForRecheck).assertFalse();
+        expect(changeData.assetChangeDatas != undefined).assertTrue();
+        isCallbackCalled = true;
+      }
+      try {
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await helper!.getAssets(fetchOptions);
+        let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        helper!.onSinglePhotoChange(asset, onCallback);
+        let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
+          new photoAccessHelper.MediaAssetChangeRequest(asset);
+        let newTitle: string = 'newTitle';
+        assetChangeRequest.setTitle(newTitle);
+        await helper!.applyChanges(assetChangeRequest);
+        const startTime = Date.now();
+        const timeoutMs = 15000;
+        while (!isCallbackCalled && (Date.now() - startTime)<timeoutMs){
+          await sleep(100)
+        }
+        expect(isCallbackCalled).assertTrue();
+        helper!.offSinglePhotoChange(asset, onCallback);
+        done();
+      } catch (error) {
+        console.error(TAG, testName, 'Failed ', JSON.stringify(error), error.code);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_MULTMEDIA_ON_SINGLE_PHOTO_ALBUM_CHANGE_TEST_STATIC_0200
+     * @tc.name     SUB_MULTMEDIA_ON_SINGLE_PHOTO_ALBUM_CHANGE_TEST_STATIC_0200
+     * @tc.desc     onSinglePhotoAlbumChange-23800151
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("SUB_MULTMEDIA_ON_SINGLE_PHOTO_ALBUM_CHANGE_TEST_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const testName = "SUB_MULTMEDIA_ON_SINGLE_PHOTO_ALBUM_CHANGE_TEST_STATIC_0200";
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOptions: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      let onCallback = (changeData: photoAccessHelper.AlbumChangeInfos) => {
+        console.info(TAG,testName,'onCallback1 success, changeData456: ' + JSON.stringify(changeData));
+      }
+      try {
+        let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> = await helper!.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
+        let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
+        let albumChangeRequest: photoAccessHelper.MediaAlbumChangeRequest = new photoAccessHelper.MediaAlbumChangeRequest(album);
+        helper!.onSinglePhotoAlbumChange(album, onCallback);
+        helper!.onSinglePhotoAlbumChange(album, onCallback);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, 'Failed ', JSON.stringify(error), error.code);
+        expect(error.code).assertEqual(23800151);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_MULTMEDIA_OFF_SINGLE_PHOTO_ALBUM_CHANGE_TEST_STATIC_0200
+     * @tc.name     SUB_MULTMEDIA_OFF_SINGLE_PHOTO_ALBUM_CHANGE_TEST_STATIC_0200
+     * @tc.desc     offSinglePhotoAlbumChange-23800151
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("SUB_MULTMEDIA_OFF_SINGLE_PHOTO_ALBUM_CHANGE_TEST_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const testName = "SUB_MULTMEDIA_OFF_SINGLE_PHOTO_ALBUM_CHANGE_TEST_STATIC_0200";
+      try {
+        helper!.offSinglePhotoAlbumChange();
+        helper!.offSinglePhotoAlbumChange();
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, 'Failed ', JSON.stringify(error), error.code);
+        expect(error.code).assertEqual(23800151);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number   SUB_MULTMEDIA_ON_SINGLE_PHOTO_CHANGE_TEST_STATIC_0200
+     * @tc.name     SUB_MULTMEDIA_ON_SINGLE_PHOTO_CHANGE_TEST_STATIC_0200
+     * @tc.desc     onSinglePhotoChange-23800151
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("SUB_MULTMEDIA_ON_SINGLE_PHOTO_CHANGE_TEST_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const testName = "SUB_MULTMEDIA_ON_SINGLE_PHOTO_CHANGE_TEST_STATIC_0200";
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOptions: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      let onCallback = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
+        console.info(TAG, testName, 'onCallback1 success, changeData: ' + JSON.stringify(changeData));
+      }
+      try {
+        let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
+          await helper!.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE);
+        let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
+          await album.getAssets(fetchOptions);
+        let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        helper!.onSinglePhotoChange(asset, onCallback);
+        helper!.onSinglePhotoChange(asset, onCallback);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, 'Failed ', JSON.stringify(error), error.code);
+        expect(error.code).assertEqual(23800151);
+        done();
+      }
+    });
+    /**
+     * @tc.number   SUB_MULTMEDIA_OFF_SINGLE_PHOTO_CHANGE_TEST_STATIC_0200
+     * @tc.name     SUB_MULTMEDIA_OFF_SINGLE_PHOTO_CHANGE_TEST_STATIC_0200
+     * @tc.desc     offSinglePhotoChange-23800151
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("SUB_MULTMEDIA_OFF_SINGLE_PHOTO_CHANGE_TEST_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const testName = "SUB_MULTMEDIA_OFF_SINGLE_PHOTO_CHANGE_TEST_STATIC_0200";
+      try {
+        helper!.offSinglePhotoChange();
+        helper!.offSinglePhotoChange();
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, 'Failed ', JSON.stringify(error), error.code);
+        expect(error.code).assertEqual(23800151);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTMEDIA_ON_PHOTO_ALBUM_CHANGE_STATIC_0200
+     * @tc.number SUB_MULTMEDIA_ON_PHOTO_ALBUM_CHANGE_STATIC_0200
+     * @tc.desc   PhotoAccessHelper.on_photoAlbumChange-13900020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTMEDIA_ON_PHOTO_ALBUM_CHANGE_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const testName = 'SUB_MULTMEDIA_ON_PHOTO_ALBUM_CHANGE_STATIC_0200';
+      let onCallback = (changeData: photoAccessHelper.AlbumChangeInfos) => {
+        console.info(TAG, testName, ' album onCallback success, changData: ' + JSON.stringify(changeData));
+      }
+      try {
+        helper!.onPhotoAlbumChange(onCallback);
+        helper!.onPhotoAlbumChange(onCallback);
+        expect().assertFail()
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `fetch failed with err: ${error.code}, ${error.message}`);
+        expect(error.code).assertEqual(13900020);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTMEDIA_OFF_PHOTO_ALBUM_CHANGE_STATIC_0200
+     * @tc.number SUB_MULTMEDIA_OFF_PHOTO_ALBUM_CHANGE_STATIC_0200
+     * @tc.desc   PhotoAccessHelper.off_photoAlbumChange-23800151
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTMEDIA_OFF_PHOTO_ALBUM_CHANGE_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const testName = 'SUB_MULTMEDIA_OFF_PHOTO_ALBUM_CHANGE_STATIC_0200';
+      try {
+        helper!.offPhotoAlbumChange();
+        helper!.offPhotoAlbumChange();
+        expect().assertFail()
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `fetch failed with err: ${error.code}, ${error.message}`);
+        expect(error.code).assertEqual(23800151);
+        done();
+      }
+    });
+    /**
+     * @tc.name   SUB_MULTMEDIA_ON_PHOTO_CHANGE_STATIC_0200
+     * @tc.number SUB_MULTMEDIA_ON_PHOTO_CHANGE_STATIC_0200
+     * @tc.desc   PhotoAccessHelper.on_photoChange-13900020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTMEDIA_ON_PHOTO_CHANGE_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const testName = 'SUB_MULTMEDIA_ON_PHOTO_CHANGE_STATIC_0200';
+      let onCallback = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
+        console.info(TAG, testName, 'onCallback success, changData: ' + JSON.stringify(changeData));
+      }
+      try {
+        helper!.onPhotoChange(onCallback);
+        helper!.onPhotoChange(onCallback);
+        expect().assertFail()
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `fetch failed with err: ${error.code}, ${error.message}`);
+        expect(error.code).assertEqual(13900020);
+        done();
+      }
+    });
+    /**
+     * @tc.name   SUB_MULTMEDIA_OFF_PHOTO_CHANGE_STATIC_0200
+     * @tc.number SUB_MULTMEDIA_OFF_PHOTO_CHANGE_STATIC_0200
+     * @tc.desc   PhotoAccessHelper.off_photoChange-23800151
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTMEDIA_OFF_PHOTO_CHANGE_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const testName = 'SUB_MULTMEDIA_OFF_PHOTO_CHANGE_STATIC_0200';
+      let onCallback = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
+        console.info(TAG, testName, 'onCallback success, changData: ' + JSON.stringify(changeData));
+      }
+      try {
+        helper!.offPhotoChange(onCallback);
+        helper!.offPhotoChange(onCallback);
+        expect().assertFail()
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `fetch failed with err: ${error.code}, ${error.message}`);
+        expect(error.code).assertEqual(23800151);
+        done();
+      }
+    });
+    
     /**
      * @tc.number   SUB_MULTMEDIA_GET_FIRST_OBJECT_TEST_STATIC_0010
      * @tc.name     SUB_MULTMEDIA_GET_FIRST_OBJECT_TEST_STATIC_0010
