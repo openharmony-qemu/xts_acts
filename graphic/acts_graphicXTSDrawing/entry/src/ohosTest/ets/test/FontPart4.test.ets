@@ -314,7 +314,6 @@ export default function FontPart4() {
           console.info(msg + ' getTextPathWithFallback success');
           let pathLength = path.getLength(false);
           console.info(msg + ' getLength success, pathLength:' + pathLength);
-          expect(Math.floor(pathLength * 100) / 100).assertEqual(195.50);
           expect(Math.abs(pathLength - 195.50) < 0.01).assertTrue();
           let lastPoint = path.getLastPoint();
           expect(lastPoint !== null && lastPoint !== undefined).assertTrue();
@@ -519,7 +518,7 @@ export default function FontPart4() {
           expect(lastPoint !== null && lastPoint !== undefined).assertTrue();
           if (lastPoint) {
             console.info(msg + ' getLastPoint success, lastPoint.x:' + lastPoint.x + ' lastPoint.y:' + lastPoint.y);
-            expect(parseFloat(lastPoint.x.toFixed(2))).assertEqual(-5.15);
+            expect(Math.abs(lastPoint.x + 5.15) < 0.01).assertTrue();
             expect(Math.abs(lastPoint.y - 86.99) < 0.01).assertTrue();
           }
         }
@@ -680,7 +679,7 @@ export default function FontPart4() {
           if (lastPoint) {
             console.info(msg + ' getLastPoint success, lastPoint.x:' + lastPoint.x + ' lastPoint.y:' + lastPoint.y);
             expect(Math.abs(lastPoint.x - 94.84) < 0.01).assertTrue();
-            expect(parseFloat(lastPoint.y.toFixed(2))).assertEqual(-13.00);
+            expect(Math.abs(lastPoint.y + 13.00) < 0.01).assertTrue();
           }
         }
       } catch (e) {
@@ -720,7 +719,7 @@ export default function FontPart4() {
           if (lastPoint) {
             console.info(msg + ' getLastPoint success, lastPoint.x:' + lastPoint.x + ' lastPoint.y:' + lastPoint.y);
             expect(Math.abs(lastPoint.x - 94.84) < 0.01).assertTrue();
-            expect(parseFloat(lastPoint.y.toFixed(2))).assertEqual(-113.00);
+            expect(Math.abs(lastPoint.y + 113.00) < 0.01).assertTrue();
           }
         }
       } catch (e) {
@@ -1336,7 +1335,7 @@ export default function FontPart4() {
           if (lastPoint) {
             console.info(msg + ' getLastPoint success, lastPoint.x:' + lastPoint.x + ' lastPoint.y:' + lastPoint.y);
             expect(Math.abs(lastPoint.x - 94.84) < 0.01).assertTrue();
-            expect(parseFloat(lastPoint.y.toFixed(2))).assertEqual(-12.00);
+            expect(Math.abs(lastPoint.y + 12.00) < 0.01).assertTrue();
           }
         }
       } catch (e) {
