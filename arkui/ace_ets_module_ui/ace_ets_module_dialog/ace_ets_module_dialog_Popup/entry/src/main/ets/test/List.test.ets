@@ -82,11 +82,11 @@ export default function testsuite() {
   // ImmersiveOptionsColorInvertTest();
   // ImmersiveOptionsApplyShadowTest();
   UIMaterialTest();
-  // SheetOptionsSystemMaterial();
-  // PopupCommonOptionsSystemMaterial();
-  // PopupOptionsSystemMaterial();
-  // CustomPopupOptionsSystemMaterial();
-  // TipsOptionsSystemMaterial();
+  SheetOptionsSystemMaterial();
+  PopupCommonOptionsSystemMaterial();
+  PopupOptionsSystemMaterial();
+  CustomPopupOptionsSystemMaterial();
+  TipsOptionsSystemMaterial();
   PopupColorMode();
   PopupBackgroundEffectTest();
   PopupLevelModeTest();
