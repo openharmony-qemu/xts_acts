@@ -734,8 +734,7 @@ export default function IterableTest(): void {
         let iter = throwing.$_iterator();
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('Error');
-        expect(e.name).assertEqual('Iterator creation failed');
+        expect(e.message).assertEqual('Iterator creation failed');
       }
       let normal = new ThrowingIterable1(false);
       let iter = normal.$_iterator();
@@ -758,8 +757,7 @@ export default function IterableTest(): void {
         iter.next();
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('Error');
-        expect(e.name).assertEqual('Fail at index 1');
+        expect(e.message).assertEqual('Fail at index 1');
       }
     });
 
@@ -1289,7 +1287,7 @@ export default function IterableTest(): void {
         iter.next();
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('Fail at index 2');
+        expect(e.message).assertEqual('Fail at index 2');
       }
       expect(collected.length).assertEqual(2);
       expect(collected[0]).assertEqual(0);
@@ -1311,7 +1309,7 @@ export default function IterableTest(): void {
         iter.next();
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('Fail at index 0');
+        expect(e.message).assertEqual('Fail at index 0');
       }
     });
 

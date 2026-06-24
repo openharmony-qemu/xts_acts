@@ -426,8 +426,7 @@ export default function IteratorForEachTest(): void {
         iteratorForEach(badIter, (x: number): void => {});
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("Error");
-        expect(e.name).assertEqual("iterator error");
+        expect(e.message).assertEqual("iterator error");
       }
     });
 

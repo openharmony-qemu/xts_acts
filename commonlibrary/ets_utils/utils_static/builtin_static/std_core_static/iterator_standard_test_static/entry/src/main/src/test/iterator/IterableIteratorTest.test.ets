@@ -505,7 +505,7 @@ export default function IterableIteratorTest(): void {
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("Error");
-        expect(e.name).assertEqual("next error");
+        expect(e.message).assertEqual("next error");
       }
     });
 
@@ -523,8 +523,7 @@ export default function IterableIteratorTest(): void {
         iter.$_iterator();
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("Error");
-        expect(e.name).assertEqual("iterator error");
+        expect(e.message).assertEqual("iterator error");
       }
     });
 

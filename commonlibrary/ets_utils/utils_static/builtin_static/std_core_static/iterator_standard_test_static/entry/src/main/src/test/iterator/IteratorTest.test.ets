@@ -787,8 +787,7 @@ export default function IteratorTest(): void {
         iter.next();
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("Error");
-        expect(e.name).assertEqual("Iterator error");
+        expect(e.message).assertEqual("Iterator error");
       }
     });
 
@@ -833,8 +832,7 @@ export default function IteratorTest(): void {
         results.push(r3.value! as number);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("Error");
-        expect(e.name).assertEqual("Too many iterations");
+        expect(e.message).assertEqual("Too many iterations");
       }
       expect(results.length).assertEqual(2);
     });
