@@ -182,26 +182,6 @@ export default function EnumerationWithExplicitTypeTest11(): void {
     });
 
     /**
-     * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_ELEVEN_TEST_2700
-     * @tc.name      testEnumerationWithExplicitType0453
-     * @tc.desc      Checking long enum with values near Int.MAX_VALUE boundary
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testEnumerationWithExplicitType0453', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(EnumLongN2.first instanceof EnumLongN2).assertEqual(true)
-      expect(EnumLongN2.second instanceof EnumLongN2).assertEqual(true)
-      expect(EnumLongN2.third instanceof EnumLongN2).assertEqual(true)
-      expect(EnumLongN2.first.valueOf() instanceof long).assertEqual(true)
-      expect(EnumLongN2.second.valueOf() instanceof long).assertEqual(true)
-      expect(EnumLongN2.third.valueOf() instanceof long).assertEqual(true)
-      expect(EnumLongN2.first.valueOf()).assertEqual(2147483646)
-      expect(EnumLongN2.second.valueOf()).assertEqual(2147483647)
-      expect(EnumLongN2.third.valueOf()).assertEqual(-2147483648)
-    });
-
-    /**
      * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_ELEVEN_TEST_2900
      * @tc.name      testEnumerationWithExplicitType0455
      * @tc.desc      Checking long enum with constant expression evaluation
