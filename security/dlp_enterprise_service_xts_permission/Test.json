@@ -1,0 +1,25 @@
+{
+    "description": "Configuration for DLP Enterprise Service Permission Tests",
+    "driver": {
+        "type": "OHJSUnitTest",
+        "test-timeout": "1200000",
+        "shell-timeout": "900000",
+        "testcase-timeout": "600000",
+        "bundle-name": "com.ohos.dlp_permission_xts",
+        "module-name": "entry_test"
+    },
+    "kits": [
+        {
+            "test-file-name": [
+                "ActsDlpEnterpriseServicePermissionTest.hap"
+            ],
+            "type": "AppInstallKit",
+            "cleanup-apps": true
+        },
+        {
+            "type": "ShellKit",
+            "run-command": [],
+            "teardown-command": []
+        }
+    ]
+}
