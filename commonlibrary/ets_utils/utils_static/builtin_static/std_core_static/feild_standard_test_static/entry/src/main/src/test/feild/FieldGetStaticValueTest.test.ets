@@ -179,6 +179,16 @@ class SvNumericMatrix2300 {
   static ratio: float = 1.5f;
 }
 
+class SvNullableMatrix2400 {
+  parA: undefined = undefined;
+  parB: null = null;
+  parC: string | undefined = undefined;
+  parD: string | null = null;
+  parE?: string;
+  parF: Array<string> = new Array<string>();
+  parG: string[] = [];
+}
+
 export default function FieldGetStaticValueTest(): void {
   describe('FieldGetStaticValueTest', (): void => {
     beforeAll((): void => {
@@ -559,6 +569,76 @@ export default function FieldGetStaticValueTest(): void {
       expect(ratio.getStaticValue() as float).assertEqual(0.0f);
       expect(bigValue.getType().toString()).assertEqual("long");
       expect(ratio.getType().toString()).assertEqual("float");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIELD_GET_STATIC_VALUE_1700
+     * @tc.name testGetStaticValue1700
+     * @tc.desc Verify getStaticValue throws TypeError for undefined null union and optional instance fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testGetStaticValue1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const classType = Type.from<SvNullableMatrix2400>() as ClassType;
+      const parA = classType.getFieldByName("parA");
+      const parB = classType.getFieldByName("parB");
+      const parC = classType.getFieldByName("parC");
+      const parD = classType.getFieldByName("parD");
+      const parE = classType.getFieldByName("parE");
+      const parF = classType.getFieldByName("parF");
+      const parG = classType.getFieldByName("parG");
+      try {
+        parA.getStaticValue();
+        expect().assertFail();
+      } catch (e) {
+        expect((e as Error).name).assertEqual('TypeError');
+      }
+      try {
+        parB.getStaticValue();
+        expect().assertFail();
+      } catch (e) {
+        expect((e as Error).name).assertEqual('TypeError');
+      }
+      try {
+        parC.getStaticValue();
+        expect().assertFail();
+      } catch (e) {
+        expect((e as Error).name).assertEqual('TypeError');
+      }
+      try {
+        parD.getStaticValue();
+        expect().assertFail();
+      } catch (e) {
+        expect((e as Error).name).assertEqual('TypeError');
+      }
+      try {
+        parE.getStaticValue();
+        expect().assertFail();
+      } catch (e) {
+        expect((e as Error).name).assertEqual('TypeError');
+      }
+      try {
+        parF.getStaticValue();
+        expect().assertFail();
+      } catch (e) {
+        expect((e as Error).name).assertEqual('TypeError');
+      }
+      try {
+        parG.getStaticValue();
+        expect().assertFail();
+      } catch (e) {
+        expect((e as Error).name).assertEqual('TypeError');
+      }
+      expect(parF.getType().toString()).assertEqual("std.core.Array");
+      expect(parG.getType().toString()).assertEqual("std.core.Array");
+      expect(parA.isStatic()).assertFalse();
+      expect(parB.isStatic()).assertFalse();
+      expect(parC.isStatic()).assertFalse();
+      expect(parD.isStatic()).assertFalse();
+      expect(parE.isStatic()).assertFalse();
+      expect(parF.isStatic()).assertFalse();
+      expect(parG.isStatic()).assertFalse();
     });
   });
 }

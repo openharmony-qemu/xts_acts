@@ -202,6 +202,16 @@ class RoStaticRestore034 {
   static readonly fixed: int = 2;
 }
 
+class RoNullableMatrix035 {
+  parA: undefined = undefined;
+  parB: null = null;
+  parC: string | undefined = undefined;
+  parD: string | null = null;
+  parE?: string;
+  parF: Array<string> = new Array<string>();
+  parG: string[] = [];
+}
+
 export default function FieldIsReadonlyTest(): void {
   describe('FieldIsReadonlyTest', (): void => {
     beforeAll((): void => {
@@ -827,6 +837,36 @@ export default function FieldIsReadonlyTest(): void {
       expect(fixed.getType().toString()).assertEqual("int");
       expect(fixed.isStatic()).assertTrue();
       expect(fixed.isReadonly()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIELD_IS_READONLY_3000
+     * @tc.name testIsReadonly3000
+     * @tc.desc Verify undefined null union and optional template fields report non-readonly state
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testIsReadonly3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const classType = Type.from<RoNullableMatrix035>() as ClassType;
+      const parA = classType.getFieldByName("parA");
+      const parB = classType.getFieldByName("parB");
+      const parC = classType.getFieldByName("parC");
+      const parD = classType.getFieldByName("parD");
+      const parE = classType.getFieldByName("parE");
+      const parF = classType.getFieldByName("parF");
+      const parG = classType.getFieldByName("parG");
+      expect(parA.isReadonly()).assertFalse();
+      expect(parB.isReadonly()).assertFalse();
+      expect(parC.isReadonly()).assertFalse();
+      expect(parD.isReadonly()).assertFalse();
+      expect(parE.isReadonly()).assertFalse();
+      expect(parF.isReadonly()).assertFalse();
+      expect(parG.isReadonly()).assertFalse();
+      expect(parF.getType().toString()).assertEqual("std.core.Array");
+      expect(parG.getType().toString()).assertEqual("std.core.Array");
+      expect(parC.isStatic()).assertFalse();
+      expect(parD.getOwnerType().getName()).assertEqual(classType.getName());
     });
   });
 }

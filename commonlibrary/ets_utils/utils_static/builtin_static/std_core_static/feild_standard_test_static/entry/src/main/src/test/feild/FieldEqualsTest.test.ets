@@ -167,6 +167,16 @@ class EqExceptionTypeMatrix {
   static textOrCount: string | int = "ready";
 }
 
+class EqNullableMatrix {
+  parA: undefined = undefined;
+  parB: null = null;
+  parC: string | undefined = undefined;
+  parD: string | null = null;
+  parE?: string;
+  parF: Array<string> = new Array<string>();
+  parG: string[] = [];
+}
+
 export default function FieldEqualsTest(): void {
   describe('FieldEqualsTest', (): void => {
     beforeAll((): void => {
@@ -785,6 +795,38 @@ export default function FieldEqualsTest(): void {
       expect(ids.equals(names)).assertFalse();
       expect(ids.getName()).assertEqual("ids");
       expect(names.getName()).assertEqual("names");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIELD_EQUALS_3300
+     * @tc.name testEquals3300
+     * @tc.desc Verify equals behavior for undefined null union and optional template fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testEquals3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const classType = Type.from<EqNullableMatrix>() as ClassType;
+      const parA = classType.getFieldByName("parA");
+      const parAAgain = classType.getFieldByName("parA");
+      const parB = classType.getFieldByName("parB");
+      const parC = classType.getFieldByName("parC");
+      const parD = classType.getFieldByName("parD");
+      const parE = classType.getFieldByName("parE");
+      const parF = classType.getFieldByName("parF");
+      const parFAgain = classType.getFieldByName("parF");
+      const parG = classType.getFieldByName("parG");
+      expect(parA.equals(parAAgain)).assertTrue();
+      expect(parA.equals(parB)).assertFalse();
+      expect(parC.equals(parD)).assertFalse();
+      expect(parC.equals(parE)).assertFalse();
+      expect(parF.equals(parFAgain)).assertTrue();
+      expect(parF.equals(parG)).assertFalse();
+      expect(parF.getType().toString()).assertEqual(parG.getType().toString());
+      expect(parE.equals(null)).assertFalse();
+      expect(parE.equals(undefined)).assertFalse();
+      expect(parA.isStatic()).assertFalse();
+      expect(parE.isReadonly()).assertFalse();
     });
   });
 }

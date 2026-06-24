@@ -209,6 +209,16 @@ class GnNameCase046 {
   static NAME_1: int = 1;
 }
 
+class GnNameNullable047 {
+  parA: undefined = undefined;
+  parB: null = null;
+  parC: string | undefined = undefined;
+  parD: string | null = null;
+  parE?: string;
+  parF: Array<string> = new Array<string>();
+  parG: string[] = [];
+}
+
 export default function FieldGetNameTest(): void {
   describe('FieldGetNameTest', (): void => {
     beforeAll((): void => {
@@ -899,6 +909,36 @@ export default function FieldGetNameTest(): void {
       expect(field.getOwnerType().getName()).assertEqual(classType.getName());
       expect(field.equals(repeated)).assertTrue();
       expect(field.equals(mutable)).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIELD_GET_NAME_3800
+     * @tc.name testGetName3800
+     * @tc.desc Verify getName returns exact names for undefined null union and optional template fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testGetName3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const classType = Type.from<GnNameNullable047>() as ClassType;
+      const parA = classType.getFieldByName("parA");
+      const parB = classType.getFieldByName("parB");
+      const parC = classType.getFieldByName("parC");
+      const parD = classType.getFieldByName("parD");
+      const parE = classType.getFieldByName("parE");
+      const parF = classType.getFieldByName("parF");
+      const parG = classType.getFieldByName("parG");
+      expect(parA.getName()).assertEqual("parA");
+      expect(parB.getName()).assertEqual("parB");
+      expect(parC.getName()).assertEqual("parC");
+      expect(parD.getName()).assertEqual("parD");
+      expect(parE.getName()).assertEqual("parE");
+      expect(parF.getName()).assertEqual("parF");
+      expect(parG.getName()).assertEqual("parG");
+      expect(parF.getType().toString()).assertEqual("std.core.Array");
+      expect(parG.getType().toString()).assertEqual("std.core.Array");
+      expect(parA.isStatic()).assertFalse();
+      expect(parE.isReadonly()).assertFalse();
     });
 
   });

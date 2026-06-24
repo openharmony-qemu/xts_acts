@@ -208,6 +208,16 @@ class SsRepeatMatrix3400 {
   static payload: SsPayload2300 = new SsPayload2300(1, "start");
 }
 
+class SsNullableMatrix3500 {
+  parA: undefined = undefined;
+  parB: null = null;
+  parC: string | undefined = undefined;
+  parD: string | null = null;
+  parE?: string;
+  parF: Array<string> = new Array<string>();
+  parG: string[] = [];
+}
+
 export default function FieldSetStaticValueTest(): void {
   describe('FieldSetStaticValueTest', (): void => {
     beforeAll((): void => {
@@ -1286,6 +1296,76 @@ export default function FieldSetStaticValueTest(): void {
       expect(SsSample001.count).assertEqual(originalInt);
       expect(SsSample018.name).assertEqual(originalString);
       expect(SsObjectMatrix2300.payload).assertEqual(originalObject);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIELD_SET_STATIC_VALUE_3500
+     * @tc.name testSetStaticValue3500
+     * @tc.desc Verify setStaticValue throws TypeError for undefined null union and optional instance fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testSetStaticValue3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const classType = Type.from<SsNullableMatrix3500>() as ClassType;
+      const parA = classType.getFieldByName("parA");
+      const parB = classType.getFieldByName("parB");
+      const parC = classType.getFieldByName("parC");
+      const parD = classType.getFieldByName("parD");
+      const parE = classType.getFieldByName("parE");
+      const parF = classType.getFieldByName("parF");
+      const parG = classType.getFieldByName("parG");
+      try {
+        parA.setStaticValue(undefined);
+        expect().assertFail();
+      } catch (e) {
+        expect((e as Error).name).assertEqual('TypeError');
+      }
+      try {
+        parB.setStaticValue(null);
+        expect().assertFail();
+      } catch (e) {
+        expect((e as Error).name).assertEqual('TypeError');
+      }
+      try {
+        parC.setStaticValue("defined");
+        expect().assertFail();
+      } catch (e) {
+        expect((e as Error).name).assertEqual('TypeError');
+      }
+      try {
+        parD.setStaticValue("not-null");
+        expect().assertFail();
+      } catch (e) {
+        expect((e as Error).name).assertEqual('TypeError');
+      }
+      try {
+        parE.setStaticValue("bad-instance");
+        expect().assertFail();
+      } catch (e) {
+        expect((e as Error).name).assertEqual('TypeError');
+      }
+      try {
+        parF.setStaticValue(new Array<string>());
+        expect().assertFail();
+      } catch (e) {
+        expect((e as Error).name).assertEqual('TypeError');
+      }
+      try {
+        parG.setStaticValue(new Array<string>());
+        expect().assertFail();
+      } catch (e) {
+        expect((e as Error).name).assertEqual('TypeError');
+      }
+      expect(parF.getType().toString()).assertEqual("std.core.Array");
+      expect(parG.getType().toString()).assertEqual("std.core.Array");
+      expect(parA.isStatic()).assertFalse();
+      expect(parB.isStatic()).assertFalse();
+      expect(parC.isStatic()).assertFalse();
+      expect(parD.isStatic()).assertFalse();
+      expect(parE.isStatic()).assertFalse();
+      expect(parF.isStatic()).assertFalse();
+      expect(parG.isStatic()).assertFalse();
     });
   });
 }

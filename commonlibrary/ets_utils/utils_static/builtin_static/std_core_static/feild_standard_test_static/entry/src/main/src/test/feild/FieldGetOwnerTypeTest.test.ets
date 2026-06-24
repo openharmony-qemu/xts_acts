@@ -166,6 +166,16 @@ class GoOwnerUninitialized027 {
   count!: int;
 }
 
+class GoOwnerNullable028 {
+  parA: undefined = undefined;
+  parB: null = null;
+  parC: string | undefined = undefined;
+  parD: string | null = null;
+  parE?: string;
+  parF: Array<string> = new Array<string>();
+  parG: string[] = [];
+}
+
 export default function FieldGetOwnerTypeTest(): void {
   describe('FieldGetOwnerTypeTest', (): void => {
     beforeAll((): void => {
@@ -731,6 +741,38 @@ export default function FieldGetOwnerTypeTest(): void {
       expect(count.getName()).assertEqual("count");
       expect(count.isStatic()).assertFalse();
       expect(count.isReadonly()).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIELD_GET_OWNER_TYPE_2600
+     * @tc.name testGetOwnerType2600
+     * @tc.desc Verify undefined null union and optional fields keep the declaring owner type
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testGetOwnerType2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const classType = Type.from<GoOwnerNullable028>() as ClassType;
+      const parA = classType.getFieldByName("parA");
+      const parB = classType.getFieldByName("parB");
+      const parC = classType.getFieldByName("parC");
+      const parD = classType.getFieldByName("parD");
+      const parE = classType.getFieldByName("parE");
+      const parF = classType.getFieldByName("parF");
+      const parG = classType.getFieldByName("parG");
+      expect(parA.getOwnerType().getName()).assertEqual(classType.getName());
+      expect(parB.getOwnerType().getName()).assertEqual(classType.getName());
+      expect(parC.getOwnerType().getName()).assertEqual(classType.getName());
+      expect(parD.getOwnerType().getName()).assertEqual(classType.getName());
+      expect(parE.getOwnerType().getName()).assertEqual(classType.getName());
+      expect(parF.getOwnerType().getName()).assertEqual(classType.getName());
+      expect(parG.getOwnerType().getName()).assertEqual(classType.getName());
+      expect(parF.getType().toString()).assertEqual("std.core.Array");
+      expect(parG.getType().toString()).assertEqual("std.core.Array");
+      expect(parF.toString()).assertEqual("parF: std.core.Array");
+      expect(parG.toString()).assertEqual("parG: std.core.Array");
+      expect(parA.isStatic()).assertFalse();
+      expect(parE.isReadonly()).assertFalse();
     });
 
   });

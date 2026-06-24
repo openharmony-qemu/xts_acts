@@ -282,6 +282,23 @@ class GtBuiltInGeneric035 {
   names: Array<string> = new Array<string>();
 }
 
+class GtNullableMatrix036 {
+  parA: undefined = undefined;
+  parB: null = null;
+  parC: string | undefined = undefined;
+  parD: string | null = null;
+  parE?: string;
+  parF: Array<string> = new Array<string>();
+  parG: string[] = [];
+}
+
+class GtUnionMatrix037 {
+  unionA: int | string = 1;
+  unionB: boolean | string = true;
+  unionC: GtObjectPayload022 | string = new GtObjectPayload022();
+  unionD: int[] | string[] = [1, 2];
+}
+
 export default function FieldGetTypeTest(): void {
   describe('FieldGetTypeTest', (): void => {
     beforeAll((): void => {
@@ -942,6 +959,59 @@ export default function FieldGetTypeTest(): void {
       expect(names.isStatic()).assertFalse();
       expect(ids.getName()).assertEqual("ids");
       expect(names.getName()).assertEqual("names");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIELD_GET_TYPE_3700
+     * @tc.name testGetType3700
+     * @tc.desc Verify getType reflects undefined null union and optional field declarations
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testGetType3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const classType = Type.from<GtNullableMatrix036>() as ClassType;
+      const parA = classType.getFieldByName("parA");
+      const parB = classType.getFieldByName("parB");
+      const parC = classType.getFieldByName("parC");
+      const parD = classType.getFieldByName("parD");
+      const parE = classType.getFieldByName("parE");
+      const parF = classType.getFieldByName("parF");
+      const parG = classType.getFieldByName("parG");
+      expect(parA.toString()).assertEqual("parA: " + parA.getType().toString());
+      expect(parB.toString()).assertEqual("parB: " + parB.getType().toString());
+      expect(parC.toString()).assertEqual("parC: " + parC.getType().toString());
+      expect(parD.toString()).assertEqual("parD: " + parD.getType().toString());
+      expect(parE.toString()).assertEqual("parE: " + parE.getType().toString());
+      expect(parF.getType().toString()).assertEqual("std.core.Array");
+      expect(parG.getType().toString()).assertEqual("std.core.Array");
+      expect(parF.toString()).assertEqual("parF: std.core.Array");
+      expect(parG.toString()).assertEqual("parG: std.core.Array");
+      expect(parE.isStatic()).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIELD_GET_TYPE_3800
+     * @tc.name testGetType3800
+     * @tc.desc Verify getType handles union declarations without Type.from union acquisition
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testGetType3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const classType = Type.from<GtUnionMatrix037>() as ClassType;
+      const unionA = classType.getFieldByName("unionA");
+      const unionB = classType.getFieldByName("unionB");
+      const unionC = classType.getFieldByName("unionC");
+      const unionD = classType.getFieldByName("unionD");
+      expect(unionA.toString()).assertEqual("unionA: " + unionA.getType().toString());
+      expect(unionB.toString()).assertEqual("unionB: " + unionB.getType().toString());
+      expect(unionC.toString()).assertEqual("unionC: " + unionC.getType().toString());
+      expect(unionD.toString()).assertEqual("unionD: " + unionD.getType().toString());
+      expect(unionA.getOwnerType().getName()).assertEqual(classType.getName());
+      expect(unionB.getOwnerType().getName()).assertEqual(classType.getName());
+      expect(unionC.isStatic()).assertFalse();
+      expect(unionD.isReadonly()).assertFalse();
     });
 
   });

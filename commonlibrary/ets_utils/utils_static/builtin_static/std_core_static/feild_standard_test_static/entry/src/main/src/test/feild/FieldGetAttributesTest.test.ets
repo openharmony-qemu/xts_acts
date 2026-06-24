@@ -151,6 +151,16 @@ class GxAttrMap030 {
 class GxAttrEmpty031 {
 }
 
+class GxAttrNullable032 {
+  parA: undefined = undefined;
+  parB: null = null;
+  parC: string | undefined = undefined;
+  parD: string | null = null;
+  parE?: string;
+  parF: Array<string> = new Array<string>();
+  parG: string[] = [];
+}
+
 export default function FieldGetAttributesTest(): void {
   describe('FieldGetAttributesTest', (): void => {
     beforeAll((): void => {
@@ -841,6 +851,37 @@ export default function FieldGetAttributesTest(): void {
       expect(staticArray.isStatic()).assertTrue();
       expect(readonlyLabel.isReadonly()).assertTrue();
       expect(staticArray.getAttributes() === readonlyLabel.getAttributes()).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIELD_GET_ATTRIBUTES_3000
+     * @tc.name testGetAttributes3000
+     * @tc.desc Verify undefined null union and optional template fields keep plain instance attributes
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testGetAttributes3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const classType = Type.from<GxAttrNullable032>() as ClassType;
+      const parA = classType.getFieldByName("parA");
+      const parB = classType.getFieldByName("parB");
+      const parC = classType.getFieldByName("parC");
+      const parD = classType.getFieldByName("parD");
+      const parE = classType.getFieldByName("parE");
+      const parF = classType.getFieldByName("parF");
+      const parG = classType.getFieldByName("parG");
+      const plainAttrs: int = (Type.from<GxSample012>() as ClassType).getFieldByName("strField").getAttributes();
+      expect(parA.getAttributes()).assertEqual(plainAttrs);
+      expect(parB.getAttributes()).assertEqual(plainAttrs);
+      expect(parC.getAttributes()).assertEqual(plainAttrs);
+      expect(parD.getAttributes()).assertEqual(plainAttrs);
+      expect(parE.getAttributes()).assertEqual(plainAttrs);
+      expect(parF.getAttributes()).assertEqual(plainAttrs);
+      expect(parG.getAttributes()).assertEqual(plainAttrs);
+      expect(parF.getType().toString()).assertEqual("std.core.Array");
+      expect(parG.getType().toString()).assertEqual("std.core.Array");
+      expect(parA.isStatic()).assertFalse();
+      expect(parE.isReadonly()).assertFalse();
     });
   });
 }

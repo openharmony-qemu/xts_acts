@@ -201,6 +201,16 @@ class TsMap048 {
   static scores: Map<string, int> = new Map<string, int>();
 }
 
+class TsNullable049 {
+  parA: undefined = undefined;
+  parB: null = null;
+  parC: string | undefined = undefined;
+  parD: string | null = null;
+  parE?: string;
+  parF: Array<string> = new Array<string>();
+  parG: string[] = [];
+}
+
 export default function FieldToStringTest(): void {
   describe('FieldToStringTest', (): void => {
     beforeAll((): void => {
@@ -674,6 +684,34 @@ export default function FieldToStringTest(): void {
         field.setStaticValue(original);
       }
       expect(field.toString()).assertEqual("stringBox: " + Type.from<TsBox041<string>>().toString());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIELD_TO_STRING_2800
+     * @tc.name testToString2800
+     * @tc.desc Verify toString formats undefined null union and optional fields by declared type metadata
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testToString2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const classType = Type.from<TsNullable049>() as ClassType;
+      const parA = classType.getFieldByName("parA");
+      const parB = classType.getFieldByName("parB");
+      const parC = classType.getFieldByName("parC");
+      const parD = classType.getFieldByName("parD");
+      const parE = classType.getFieldByName("parE");
+      const parF = classType.getFieldByName("parF");
+      const parG = classType.getFieldByName("parG");
+      expect(parA.toString()).assertEqual("parA: " + parA.getType().toString());
+      expect(parB.toString()).assertEqual("parB: " + parB.getType().toString());
+      expect(parC.toString()).assertEqual("parC: " + parC.getType().toString());
+      expect(parD.toString()).assertEqual("parD: " + parD.getType().toString());
+      expect(parE.toString()).assertEqual("parE: " + parE.getType().toString());
+      expect(parF.toString()).assertEqual("parF: std.core.Array");
+      expect(parG.toString()).assertEqual("parG: std.core.Array");
+      expect(parF.getType().toString()).assertEqual(parG.getType().toString());
+      expect(parE.getOwnerType().getName()).assertEqual(classType.getName());
     });
   });
 }

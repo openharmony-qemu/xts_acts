@@ -155,6 +155,16 @@ class GaAccessSpecial029 {
 class GaAccessEmpty030 {
 }
 
+class GaAccessNullable031 {
+  parA: undefined = undefined;
+  parB: null = null;
+  parC: string | undefined = undefined;
+  parD: string | null = null;
+  parE?: string;
+  parF: Array<string> = new Array<string>();
+  parG: string[] = [];
+}
+
 export default function FieldGetAccessModifierTest(): void {
 
   describe('FieldGetAccessModifierTest', (): void => {
@@ -848,6 +858,38 @@ export default function FieldGetAccessModifierTest(): void {
       expect(count.getType().toString()).assertEqual("int");
       expect(title.getType().toString()).assertEqual("string");
       expect(enabled.getType().toString()).assertEqual("boolean");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIELD_GET_ACCESS_MODIFIER_3100
+     * @tc.name testGetAccessModifier3100
+     * @tc.desc Verify undefined null union and optional template fields keep public access modifier metadata
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testGetAccessModifier3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const classType = Type.from<GaAccessNullable031>() as ClassType;
+      const parA = classType.getFieldByName("parA");
+      const parB = classType.getFieldByName("parB");
+      const parC = classType.getFieldByName("parC");
+      const parD = classType.getFieldByName("parD");
+      const parE = classType.getFieldByName("parE");
+      const parF = classType.getFieldByName("parF");
+      const parG = classType.getFieldByName("parG");
+      const publicModifier: int =
+        (Type.from<GaSample010>() as ClassType).getFieldByName("pubField").getAccessModifier();
+      expect(parA.getAccessModifier()).assertEqual(publicModifier);
+      expect(parB.getAccessModifier()).assertEqual(publicModifier);
+      expect(parC.getAccessModifier()).assertEqual(publicModifier);
+      expect(parD.getAccessModifier()).assertEqual(publicModifier);
+      expect(parE.getAccessModifier()).assertEqual(publicModifier);
+      expect(parF.getAccessModifier()).assertEqual(publicModifier);
+      expect(parG.getAccessModifier()).assertEqual(publicModifier);
+      expect(parF.getType().toString()).assertEqual("std.core.Array");
+      expect(parG.getType().toString()).assertEqual("std.core.Array");
+      expect(parA.isStatic()).assertFalse();
+      expect(parE.isReadonly()).assertFalse();
     });
   });
 }
