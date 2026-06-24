@@ -8,6 +8,10 @@ static napi_value IsDate(napi_env env, napi_callback_info info)
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    if (argc < 1) {
+        napi_throw_type_error(env, nullptr, "Wrong number of arguments");
+        return nullptr;
+    }
 
     // 调用napi_is_date接口判断给定入参是否为Date数据
     bool result = false;

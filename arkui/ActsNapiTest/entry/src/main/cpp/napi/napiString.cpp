@@ -26,6 +26,9 @@ napi_value CreateStringUtf8(napi_env env, napi_callback_info info)
         napi_throw_type_error(env, nullptr, "Invalid string was passed as argument");
         return nullptr;
     }
+    if (strLength >= NAPI_UTF8_LENGTH) {
+        strLength = NAPI_UTF8_LENGTH - 1;
+    }
     napi_value result;
     status = napi_create_string_utf8(env, str, strLength, &result);
     if (status != napi_ok) {
