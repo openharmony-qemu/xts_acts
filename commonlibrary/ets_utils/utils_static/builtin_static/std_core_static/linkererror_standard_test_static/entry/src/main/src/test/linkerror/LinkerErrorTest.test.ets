@@ -1,4 +1,4 @@
-﻿'use static'
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -48,7 +48,7 @@ export default function linkerErrorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0100
      * @tc.name testLinkerError001
      * @tc.desc Verify 3-param constructor with all required args stores name message cause
      * @tc.size MediumTest
@@ -64,7 +64,7 @@ export default function linkerErrorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0200
      * @tc.name testLinkerError002
      * @tc.desc Verify name parameter with normal English string
      * @tc.size MediumTest
@@ -78,7 +78,7 @@ export default function linkerErrorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0300
      * @tc.name testLinkerError003
      * @tc.desc Verify Map as name is rejected by runtime as-cast
      * @tc.size MediumTest
@@ -96,7 +96,7 @@ export default function linkerErrorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0400
      * @tc.name testLinkerError004
      * @tc.desc Verify name parameter with Chinese string
      * @tc.size MediumTest
@@ -110,7 +110,7 @@ export default function linkerErrorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0500
      * @tc.name testLinkerError005
      * @tc.desc Verify name parameter with empty string
      * @tc.size MediumTest
@@ -123,7 +123,7 @@ export default function linkerErrorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0600
      * @tc.name testLinkerError006
      * @tc.desc Verify name parameter with single character
      * @tc.size MediumTest
@@ -136,7 +136,7 @@ export default function linkerErrorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0700
      * @tc.name testLinkerError007
      * @tc.desc Verify name parameter with long string 1000 chars
      * @tc.size MediumTest
@@ -151,7 +151,7 @@ export default function linkerErrorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0800
      * @tc.name testLinkerError008
      * @tc.desc Verify message parameter with normal string
      * @tc.size MediumTest
@@ -164,7 +164,7 @@ export default function linkerErrorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0900
      * @tc.name testLinkerError009
      * @tc.desc Verify message parameter with undefined yields empty string
      * @tc.size MediumTest
@@ -177,7 +177,7 @@ export default function linkerErrorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_1000
      * @tc.name testLinkerError010
      * @tc.desc Verify message parameter with empty string
      * @tc.size MediumTest
@@ -190,7 +190,7 @@ export default function linkerErrorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0110
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_1100
      * @tc.name testLinkerError011
      * @tc.desc Verify message parameter with long string
      * @tc.size MediumTest
@@ -205,7 +205,7 @@ export default function linkerErrorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0120
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_1200
      * @tc.name testLinkerError012
      * @tc.desc Verify Function as name is rejected by runtime as-cast
      * @tc.size MediumTest
@@ -224,7 +224,7 @@ export default function linkerErrorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0130
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_1300
      * @tc.name testLinkerError013
      * @tc.desc Verify options with TypeError subclass cause
      * @tc.size MediumTest
@@ -238,7 +238,7 @@ export default function linkerErrorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0140
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_1400
      * @tc.name testLinkerError014
      * @tc.desc Verify options undefined yields undefined cause
      * @tc.size MediumTest
@@ -251,7 +251,7 @@ export default function linkerErrorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0150
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_1500
      * @tc.name testLinkerError015
      * @tc.desc Verify options empty object yields undefined cause
      * @tc.size MediumTest
@@ -265,7 +265,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError016
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0160
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_1600
      * @tc.desc Verify lone high surrogate as name and message
      * @tc.type Function
      * @tc.size MediumTest
@@ -279,7 +279,7 @@ export default function linkerErrorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0170
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_1700
      * @tc.name testLinkerError017
      * @tc.desc Verify message undefined with options valid
      * @tc.size MediumTest
@@ -294,7 +294,7 @@ export default function linkerErrorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0180
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_1800
      * @tc.name testLinkerError018
      * @tc.desc Verify multi-instance independence
      * @tc.size MediumTest
@@ -311,7 +311,7 @@ export default function linkerErrorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0190
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_1900
      * @tc.name testLinkerError019
      * @tc.desc Verify cause chain with LinkerError as cause
      * @tc.size MediumTest
@@ -326,7 +326,7 @@ export default function linkerErrorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_2000
      * @tc.name testLinkerError020
      * @tc.desc Verify cause chain remains readable through nested errors
      * @tc.size MediumTest
@@ -342,7 +342,7 @@ export default function linkerErrorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0210
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_2100
      * @tc.name testLinkerError021
      * @tc.desc Verify name property is writable
      * @tc.size MediumTest
@@ -356,7 +356,7 @@ export default function linkerErrorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0220
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_2200
      * @tc.name testLinkerError022
      * @tc.desc Verify message property is writable
      * @tc.size MediumTest
@@ -371,7 +371,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError023
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0230
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_2300
      * @tc.desc Verify Unicode non-character FFFF as name
      * @tc.type Function
      * @tc.size MediumTest
@@ -385,7 +385,7 @@ export default function linkerErrorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0240
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_2400
      * @tc.name testLinkerError024
      * @tc.desc Verify toString returns name and message
      * @tc.size MediumTest
@@ -398,7 +398,7 @@ export default function linkerErrorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0250
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_2500
      * @tc.name testLinkerError025
      * @tc.desc Verify toString default format is name: message
      * @tc.size MediumTest
@@ -412,7 +412,7 @@ export default function linkerErrorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0260
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_2600
      * @tc.name testLinkerError026
      * @tc.desc Verify throw LinkerError caught with correct name
      * @tc.size MediumTest
@@ -431,7 +431,7 @@ export default function linkerErrorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0270
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_2700
      * @tc.name testLinkerError027
      * @tc.desc Verify cause chain preserved in throw catch
      * @tc.size MediumTest
@@ -451,7 +451,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError028
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0280
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_2800
      * @tc.desc Verify 2-param constructor no arguments sets name to LinkerError
      * @tc.type Function
      * @tc.size MediumTest
@@ -466,7 +466,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError029
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0290
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_2900
      * @tc.desc Verify emoji as name
      * @tc.type Function
      * @tc.size MediumTest
@@ -483,7 +483,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError030
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_3000
      * @tc.desc Verify RTL as name
      * @tc.type Function
      * @tc.size MediumTest
@@ -500,7 +500,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError031
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0310
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_3100
      * @tc.desc Verify fullwidth as name
      * @tc.type Function
      * @tc.size MediumTest
@@ -517,7 +517,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError032
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0320
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_3200
      * @tc.desc Verify whitespace-only name
      * @tc.type Function
      * @tc.size MediumTest
@@ -534,7 +534,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError033
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0330
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_3300
      * @tc.desc Verify tab-only name
      * @tc.type Function
      * @tc.size MediumTest
@@ -551,7 +551,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError034
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0340
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_3400
      * @tc.desc Verify 65535-char name
      * @tc.type Function
      * @tc.size MediumTest
@@ -565,7 +565,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError035
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0350
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_3500
      * @tc.desc Verify Number.MAX_VALUE.toString() as name
      * @tc.type Function
      * @tc.size MediumTest
@@ -582,7 +582,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError036
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0360
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_3600
      * @tc.desc Verify 2-param constructor message only stores message and default name
      * @tc.type Function
      * @tc.size MediumTest
@@ -596,7 +596,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError037
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0370
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_3700
      * @tc.desc Verify mojibake garbled text as name and message
      * @tc.type Function
      * @tc.size MediumTest
@@ -611,7 +611,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError038
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0380
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_3800
      * @tc.desc Verify 2-param constructor undefined message yields empty message
      * @tc.type Function
      * @tc.size MediumTest
@@ -625,7 +625,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError039
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0390
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_3900
      * @tc.desc Verify 2-param constructor message and cause stores both
      * @tc.type Function
      * @tc.size MediumTest
@@ -641,7 +641,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError040
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_4000
      * @tc.desc Verify 2-param constructor message and empty options
      * @tc.type Function
      * @tc.size MediumTest
@@ -656,7 +656,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError041
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0410
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_4100
      * @tc.desc Verify 2-param constructor undefined message and cause
      * @tc.type Function
      * @tc.size MediumTest
@@ -672,7 +672,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError042
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0420
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_4200
      * @tc.desc Verify 3-param constructor empty message and cause preserves name and cause
      * @tc.type Function
      * @tc.size MediumTest
@@ -688,7 +688,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError043
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0430
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_4300
      * @tc.desc Verify 2-param constructor message and explicit undefined options
      * @tc.type Function
      * @tc.size MediumTest
@@ -702,7 +702,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError044
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0440
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_4400
      * @tc.desc Verify 2-param constructor undefined message and explicit empty options
      * @tc.type Function
      * @tc.size MediumTest
@@ -717,7 +717,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError045
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0450
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_4500
      * @tc.desc Verify 2-param constructor both arguments explicitly undefined
      * @tc.type Function
      * @tc.size MediumTest
@@ -731,7 +731,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError046
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0460
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_4600
      * @tc.desc Verify name=A.repeat(1001) + emoji message
      * @tc.type Function
      * @tc.size MediumTest
@@ -747,7 +747,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError047
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0470
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_4700
      * @tc.desc Verify zero-width space as name and message
      * @tc.type Function
      * @tc.size MediumTest
@@ -764,7 +764,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError048
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0480
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_4800
      * @tc.desc Verify newline escape as name and message
      * @tc.type Function
      * @tc.size MediumTest
@@ -779,7 +779,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError049
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0490
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_4900
      * @tc.desc Verify carriage return escape as name and message
      * @tc.type Function
      * @tc.size MediumTest
@@ -794,7 +794,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError050
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_5000
      * @tc.desc Verify Unicode replacement character as name
      * @tc.type Function
      * @tc.size MediumTest
@@ -809,7 +809,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError051
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0510
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_5100
      * @tc.desc Verify Russian multi-language as name and message
      * @tc.type Function
      * @tc.size MediumTest
@@ -824,7 +824,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError052
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0520
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_5200
      * @tc.desc Verify special punctuation as name and message
      * @tc.type Function
      * @tc.size MediumTest
@@ -839,7 +839,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError053
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0530
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_5300
      * @tc.desc Verify lone surrogate character as name and message
      * @tc.type Function
      * @tc.size MediumTest
@@ -854,7 +854,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError054
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0540
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_5400
      * @tc.desc Verify 65535 chars of 0 as message
      * @tc.type Function
      * @tc.size MediumTest
@@ -868,7 +868,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError055
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0550
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_5500
      * @tc.desc Verify name fullwidth numerical string
      * @tc.type Function
      * @tc.size MediumTest
@@ -885,7 +885,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError056
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0560
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_5600
      * @tc.desc Verify deep cause chain 10 levels with escalating abnormal names
      * @tc.type Function
      * @tc.size MediumTest
@@ -916,7 +916,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError057
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0570
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_5700
      * @tc.desc Verify name + message + options all whitespace only
      * @tc.type Function
      * @tc.size MediumTest
@@ -933,7 +933,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError058
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0580
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_5800
      * @tc.desc Verify illegal Unicode non-character as name
      * @tc.type Function
      * @tc.size MediumTest
@@ -948,7 +948,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError059
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0590
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_5900
      * @tc.desc Verify ASCII math symbols as name
      * @tc.type Function
      * @tc.size MediumTest
@@ -962,7 +962,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError060
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_6000
      * @tc.desc Verify Unicode math symbols as name
      * @tc.type Function
      * @tc.size MediumTest
@@ -976,7 +976,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError061
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0610
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_6100
      * @tc.desc Verify toString with whitespace name and message
      * @tc.type Function
      * @tc.size MediumTest
@@ -989,7 +989,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError062
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0620
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_6200
      * @tc.desc Verify toString with fullwidth name and message
      * @tc.type Function
      * @tc.size MediumTest
@@ -1002,7 +1002,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError063
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0630
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_6300
      * @tc.desc Verify mixed Latin and Chinese as name and message
      * @tc.type Function
      * @tc.size MediumTest
@@ -1017,7 +1017,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError064
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0640
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_6400
      * @tc.desc Verify multi-language Japanese and Korean as name and message
      * @tc.type Function
      * @tc.size MediumTest
@@ -1033,7 +1033,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError065
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0650
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_6500
      * @tc.desc Verify Arabic multi-language as name and message
      * @tc.type Function
      * @tc.size MediumTest
@@ -1048,7 +1048,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError066
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0660
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_6600
      * @tc.desc Verify XSS string as message preserves special characters
      * @tc.type Function
      * @tc.size MediumTest
@@ -1063,7 +1063,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError067
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0670
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_6700
      * @tc.desc Verify name whitespace and message undefined with options undefined
      * @tc.type Function
      * @tc.size MediumTest
@@ -1077,7 +1077,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError068
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0680
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_6800
      * @tc.desc Verify Number.MAX_SAFE_INTEGER.toString as name
      * @tc.type Function
      * @tc.size MediumTest
@@ -1091,7 +1091,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError069
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0690
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_6900
      * @tc.desc Verify multi-level try-catch wrapping preserves full cause chain
      * @tc.type Function
      * @tc.size MediumTest
@@ -1137,7 +1137,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError070
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_7000
      * @tc.desc Verify Set as name is rejected by runtime as-cast
      * @tc.type Function
      * @tc.size MediumTest
@@ -1155,7 +1155,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError071
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0710
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_7100
      * @tc.desc Verify Date as name is rejected by runtime as-cast
      * @tc.type Function
      * @tc.size MediumTest
@@ -1173,7 +1173,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError072
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0720
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_7200
      * @tc.desc Verify RegExp as name is rejected by runtime as-cast
      * @tc.type Function
      * @tc.size MediumTest
@@ -1191,7 +1191,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError073
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0730
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_7300
      * @tc.desc Verify NaN as name throws ClassCastError with correct properties
      * @tc.type Function
      * @tc.size MediumTest
@@ -1208,7 +1208,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError074
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0740
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_7400
      * @tc.desc Verify Infinity as name throws ClassCastError
      * @tc.type Function
      * @tc.size MediumTest
@@ -1225,7 +1225,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError075
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0750
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_7500
      * @tc.desc Verify stack property contains error name
      * @tc.type Function
      * @tc.size MediumTest
@@ -1245,7 +1245,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError076
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0760
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_7600
      * @tc.desc Verify self-referencing cause chain preserves reference
      * @tc.type Function
      * @tc.size MediumTest
@@ -1261,7 +1261,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError077
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0770
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_7700
      * @tc.desc Verify Map as message is rejected by runtime as-cast
      * @tc.type Function
      * @tc.size MediumTest
@@ -1279,7 +1279,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError078
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0780
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_7800
      * @tc.desc Verify Set as message is rejected by runtime as-cast
      * @tc.type Function
      * @tc.size MediumTest
@@ -1297,7 +1297,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError079
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0790
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_7900
      * @tc.desc Verify Date as message is rejected by runtime as-cast
      * @tc.type Function
      * @tc.size MediumTest
@@ -1315,7 +1315,7 @@ export default function linkerErrorTest(): void {
 
     /**
      * @tc.name testLinkerError080
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_8000
      * @tc.desc Verify RegExp as message is rejected by runtime as-cast
      * @tc.type Function
      * @tc.size MediumTest
@@ -1332,7 +1332,7 @@ export default function linkerErrorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0810
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_8100
      * @tc.name testLinkerError081
      * @tc.desc Verify empty string message is stored correctly
      * @tc.size MediumTest
@@ -1345,7 +1345,7 @@ export default function linkerErrorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0820
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_8200
      * @tc.name testLinkerError082
      * @tc.desc Verify long string message is stored correctly
      * @tc.size MediumTest
@@ -1359,7 +1359,7 @@ export default function linkerErrorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0830
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_8300
      * @tc.name testLinkerError083
      * @tc.desc Verify Unicode string message is stored correctly
      * @tc.size MediumTest
@@ -1373,7 +1373,7 @@ export default function linkerErrorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0840
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_8400
      * @tc.name testLinkerError084
      * @tc.desc Verify cause as Error instance is stored correctly
      * @tc.size MediumTest
@@ -1387,7 +1387,7 @@ export default function linkerErrorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0850
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_8500
      * @tc.name testLinkerError085
      * @tc.desc Verify cause as LinkerError preserves identity and name
      * @tc.size MediumTest
@@ -1401,7 +1401,7 @@ export default function linkerErrorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0860
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_8600
      * @tc.name testLinkerError086
      * @tc.desc Verify cause as plain object is stored by reference
      * @tc.size MediumTest
@@ -1415,7 +1415,7 @@ export default function linkerErrorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0870
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_8700
      * @tc.name testLinkerError087
      * @tc.desc Verify string cause is stored correctly
      * @tc.size MediumTest
@@ -1428,7 +1428,7 @@ export default function linkerErrorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0880
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_8800
      * @tc.name testLinkerError088
      * @tc.desc Verify number cause is stored correctly
      * @tc.size MediumTest
@@ -1441,7 +1441,7 @@ export default function linkerErrorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0890
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_8900
      * @tc.name testLinkerError089
      * @tc.desc Verify null cause is stored as null
      * @tc.size MediumTest
@@ -1454,7 +1454,7 @@ export default function linkerErrorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_9000
      * @tc.name testLinkerError090
      * @tc.desc Verify undefined cause results in undefined cause property
      * @tc.size MediumTest
@@ -1467,7 +1467,7 @@ export default function linkerErrorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0910
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_9100
      * @tc.name testLinkerError091
      * @tc.desc Verify boolean cause is stored correctly
      * @tc.size MediumTest
@@ -1480,7 +1480,7 @@ export default function linkerErrorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_0920
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_9200
      * @tc.name testLinkerError092
      * @tc.desc Verify options with extra properties preserves cause
      * @tc.size MediumTest
