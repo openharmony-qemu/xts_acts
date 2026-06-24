@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,7 +14,9 @@
  */
 
 import exceptionPromptV2PageTest from './exceptionPromptV2/ExceptionPromptV2Page.test';
+import exceptionPromptV2Page01Test from './exceptionPromptV2/ExceptionPromptV2Page01.test';
 
 export default function testsuite() {
   exceptionPromptV2PageTest();
+  exceptionPromptV2Page01Test();
 }
