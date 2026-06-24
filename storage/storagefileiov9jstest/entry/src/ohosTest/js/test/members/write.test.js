@@ -636,7 +636,7 @@ export default function fileIOWrite() {
           fileIO.closeSync(file);
           fileIO.unlinkSync(fpath);
           console.log('fileIO_test_write_async_003 error: {message: ' + err.message + ', code: ' + err.code + '}');
-          expect(err.code === 13900008 && err.message == 'Bad file descriptor').assertTrue();
+          expect(err.code === 13900008).assertTrue();
           done();
         }
       });

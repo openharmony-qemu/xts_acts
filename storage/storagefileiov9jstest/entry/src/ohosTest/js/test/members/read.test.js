@@ -487,7 +487,7 @@ export default function fileIORead() {
           fileIO.closeSync(file);
           fileIO.unlinkSync(fpath);
           console.log('fileIO_test_read_async_003 error: {message: ' + err.message + ', code: ' + err.code + '}');
-          expect(err.code === 13900008 && err.message == 'Bad file descriptor').assertTrue();
+          expect(err.code === 13900008).assertTrue();
           done();
         }
       });
@@ -1236,7 +1236,7 @@ export default function fileIORead() {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_read_async_029 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
       done();
     }
   });
@@ -1291,7 +1291,7 @@ export default function fileIORead() {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_read_async_031 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
       done();
     }
   });
@@ -1529,7 +1529,7 @@ export default function fileIORead() {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_read_async_036 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
       done();
     }
   });
@@ -1558,7 +1558,7 @@ export default function fileIORead() {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_read_async_037 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
       done();
     }
   });

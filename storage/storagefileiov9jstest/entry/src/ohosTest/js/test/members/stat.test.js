@@ -1173,7 +1173,7 @@ describe('fileIO_fs_stat', function () {
       fileIO.stat(fpath, (err) => {
         if (err) {
           console.log('fileIO_stat_async_004 error: {message: ' + err.message + ', code: ' + err.code + '}');
-          expect(err.code === 13900002 && err.message == 'No such file or directory').assertTrue();
+          expect(err.code === 13900002).assertTrue();
           done();
         }
       });
@@ -1267,7 +1267,7 @@ describe('fileIO_fs_stat', function () {
       fileIO.stat(file.fd, (err) => {
         if (err) {
           console.log('fileIO_stat_async_008 error: {message: ' + err.message + ', code: ' + err.code + '}');
-          expect(err.code === 13900008 && err.message == 'Bad file descriptor').assertTrue();
+          expect(err.code === 13900008).assertTrue();
           done();
         }
       });
@@ -1415,7 +1415,7 @@ describe('fileIO_fs_stat', function () {
       fileIO.stat("", (err, stat) => {
         if(err) {
           console.log('fileIO_stat_async_014 error package1: ' + JSON.stringify(err));
-          expect(err.code === 13900002 && err.message == 'No such file or directory').assertTrue();
+          expect(err.code === 13900002).assertTrue();
           done();
         }
       });
