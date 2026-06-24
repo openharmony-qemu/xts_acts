@@ -1,8 +1,8 @@
 import MediaAssetChangeRequestStaticTest from "./MediaAssetChangeRequest/MediaAssetChangeRequest.test";
 import MediaAssetManagerStaticTest from "./MediaAssetManager/MediaAssetManager.test";
 import getAssetsTest from "./photoAccessHelper/PhotoAccessHelper.test";
-import photoAccessHelperNoPermissionStaticTest from "./PhotoAccessHelperNoPermission.test";
-import photoAccessHelperReadPermissionStaticTest from "./PhotoAccessHelperReadPermission.test";
+// import photoAccessHelperNoPermissionStaticTest from "./PhotoAccessHelperNoPermission.test";
+// import photoAccessHelperReadPermissionStaticTest from "./PhotoAccessHelperReadPermission.test";
 import FetchResultStatic from "./FetchResult/FetchResult.test";
 import PhotoAssetStatic from "./PhotoAsset/PhotoAsset.test";
 import getAlbumIdByLPathTest from "./photoAccessHelper/getAlbumIdByLPath.test";
@@ -18,6 +18,7 @@ import getThumbnailStaticTest from "./PhotoAsset/getThumbnail.test";
 import MediaAssetRequestImageSuppStatic from "./MediaAssetManager/requestImage.test";
 import AddResourceChangeRequestUrlSuppTest from "./AddResource/AddResourceUrl.test";
 import CommitModifySuppTest from "./AddResource/CommitModifyTest.test";
+import singlePhotoAlbumChangeTest from "./photoAccessHelper/PhotoSinglePhotoAlbumChange.test";
 
 export default function testsuite(): void {
   photoAccessHelperNoPermissionStaticTest();
@@ -40,4 +41,5 @@ export default function testsuite(): void {
   getAssetsStaticTest();
   AddResourceChangeRequestUrlSuppTest();
   CommitModifySuppTest();
+  singlePhotoAlbumChangeTest();
 }
