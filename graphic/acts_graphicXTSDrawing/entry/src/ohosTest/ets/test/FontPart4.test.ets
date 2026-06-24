@@ -121,7 +121,6 @@ export default function FontPart4() {
           console.info(msg + ' getLength success, pathLength:' + pathLength);
           expect(Math.abs(pathLength - 195.50) < 0.01).assertTrue();
           let lastPoint = path.getLastPoint();
-          console.info(msg + ' getLastPoint success, lastPoint.x:' + lastPoint.x + ' lastPoint.y:' + lastPoint.y);
           expect(lastPoint !== null && lastPoint !== undefined).assertTrue();
           if (lastPoint) {
             console.info(msg + ' getLastPoint success, lastPoint.x:' + lastPoint.x + ' lastPoint.y:' + lastPoint.y);
