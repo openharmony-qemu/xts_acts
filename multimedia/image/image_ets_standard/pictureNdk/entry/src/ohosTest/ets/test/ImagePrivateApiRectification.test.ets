@@ -1136,6 +1136,12 @@ export default function ImagePrivateApiRectification() {
     it('SUB_MULTIMEDIA_PICTURE_AUXILIAEY_PICTURE_AND_METADATA_3000', Level.LEVEL0, async (done: Function) => {
       let caseName: string = `SUB_MULTIMEDIA_PICTURE_AUXILIAEY_PICTURE_AND_METADATA_3000`;
       hilog.info(domain, testTag, caseName + ` begin`);
+      hilog.info(domain, testTag, caseName + ` begin`);
+      if (!isSupportHeic) {
+        console.info("device is not support heic");
+        done();
+        return;
+      }
       try {
         let fd = await getFd(`HEIC_(664x374)_yuv420p_(fail_name)_(EXIF_HDR)_SDR.heic`);
         let result = ndkTest.GetMetadataCount(fd);
@@ -1159,6 +1165,12 @@ export default function ImagePrivateApiRectification() {
     it('SUB_MULTIMEDIA_PICTURE_AUXILIAEY_PICTURE_AND_METADATA_3100', Level.LEVEL0, async (done: Function) => {
       let caseName: string = `SUB_MULTIMEDIA_PICTURE_AUXILIAEY_PICTURE_AND_METADATA_3100`;
       hilog.info(domain, testTag, caseName + ` begin`);
+      hilog.info(domain, testTag, caseName + ` begin`);
+      if (!isSupportHeic) {
+        console.info("device is not support heic");
+        done();
+        return;
+      }
       try {
         let fd = await getFd(`HEIC_(664x374)_yuv420p_(fail_name)_(EXIF_HDR)_SDR.heic`);
         let result = ndkTest.GetMetadataTypes(fd);
@@ -1210,6 +1222,12 @@ export default function ImagePrivateApiRectification() {
     it('SUB_MULTIMEDIA_PICTURE_AUXILIAEY_PICTURE_AND_METADATA_3300', Level.LEVEL0, async (done: Function) => {
       let caseName: string = `SUB_MULTIMEDIA_PICTURE_AUXILIAEY_PICTURE_AND_METADATA_3300`;
       hilog.info(domain, testTag, caseName + ` begin`);
+      hilog.info(domain, testTag, caseName + ` begin`);
+      if (!isSupportHeic) {
+        console.info("device is not support heic");
+        done();
+        return;
+      }
       try {
         let fd = await getFd(`HEIC_(664x374)_yuv420p_(fail_name)_(EXIF_HDR)_SDR.heic`);
         let result = ndkTest.RemoveMetadata(fd);
