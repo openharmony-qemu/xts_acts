@@ -35,13 +35,8 @@ export default function dataTest() {
     it('testNapiData001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let TAG = "testNapiData001";
       console.info(`${TAG} START`);
-      try {
-        let now: Date = new Date();
-        expect(testNapi.isDate(now)).assertTrue();
-      } catch (err) {
-        console.error(`${TAG} error is ${err} `);
-        expect().assertFail();
-      }
+      let now: Date = new Date();
+      expect(testNapi.isDate(now)).assertTrue();
       done();
     });
   })

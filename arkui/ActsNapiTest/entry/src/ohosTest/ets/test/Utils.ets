@@ -14,13 +14,12 @@
  */
 
 export default class Utils {
-  static sleep(time: number) {
-    return new Promise<string>((resolve, reject) => {
+  static sleep(time: number): Promise<void> {
+    return new Promise<void>((resolve) => {
       setTimeout(() => {
-        resolve("ok")
-      }, time)
-    }).then(() => {
-      console.info(`sleep ${time} over...`)
-    })
+        resolve();
+        console.info(`sleep ${time} over...`);
+      }, time);
+    });
   }
 }

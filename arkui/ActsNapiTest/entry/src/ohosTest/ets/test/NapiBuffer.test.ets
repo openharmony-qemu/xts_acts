@@ -35,12 +35,7 @@ export default function bufferTest() {
     it('testNapiBuffer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let TAG = "testNapiBuffer001";
       console.info(`${TAG} START`);
-      try {
-        expect(testNapi.isBuffer()).assertTrue();
-      } catch (err) {
-        console.error(`${TAG} error is ${err} `);
-        expect().assertFail();
-      }
+      expect(testNapi.isBuffer()).assertTrue();
       done();
     });
   })

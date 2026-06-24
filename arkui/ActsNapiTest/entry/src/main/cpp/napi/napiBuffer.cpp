@@ -5,18 +5,35 @@
 
 static napi_value IsBuffer(napi_env env, napi_callback_info info)
 {
+    napi_status status;
+    
     // 创建一个Buffer对象
     std::string str = "buffer";
     napi_value buffer = nullptr;
     void *bufferPtr = nullptr;
-    napi_create_buffer(env, str.size(), &bufferPtr, &buffer);
+    
+    status = napi_create_buffer(env, str.size(), &bufferPtr, &buffer);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "Failed to create buffer");
+        return nullptr;
+    }
 
     // 调用napi_is_buffer接口判断创建的对象是否为buffer
     bool result = false;
-    napi_is_buffer(env, buffer, &result);
+    status = napi_is_buffer(env, buffer, &result);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "Failed to check buffer type");
+        return nullptr;
+    }
+    
     // 将结果返回出去
     napi_value returnValue = nullptr;
-    napi_get_boolean(env, result, &returnValue);
+    status = napi_get_boolean(env, result, &returnValue);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "Failed to create boolean return value");
+        return nullptr;
+    }
+    
     return returnValue;
 }
 
