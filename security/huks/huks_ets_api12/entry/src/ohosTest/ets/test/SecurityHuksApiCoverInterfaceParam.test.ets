@@ -3947,6 +3947,34 @@ export default function SecurityHuksApiCoverInterfaceParam() {
     });
 
     /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_3300
+     * @tc.number SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_3300
+     * @tc.desc   test encapsulate without sharedKeyParams parameter, expect error 12000018
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_3300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Encapsulate_Interface_3300";
+
+      let keyAlias: string = testNumber + "_key";
+      let sharedKeyAlias: string = testNumber + "_shared";
+
+      let mlKemGenOptions = GetMlKemGenerateOptions(768);
+      let wrapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+
+      await huks.generateKeyItem(keyAlias, mlKemGenOptions);
+
+      try {
+        await huks.encapsulate(keyAlias, wrapParams.properties, sharedKeyAlias);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000018);
+      }
+    });
+
+    /**
      * @tc.name   SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_0000
      * @tc.number SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_0000
      * @tc.desc   test decapsulate with keyAlias length 1 (valid boundary)
@@ -3960,14 +3988,13 @@ export default function SecurityHuksApiCoverInterfaceParam() {
       let keyAlias = "a";
 
       let mlKemGenOptions = GetMlKemGenerateOptions(768);
-      let mlKemEncapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
-      let mlKemDecapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+      let wrapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
 
       await huks.generateKeyItem(keyAlias, mlKemGenOptions);
-      let encapResult = await huks.encapsulate(keyAlias, mlKemEncapParams.properties);
+      let encapResult = await huks.encapsulate(keyAlias, wrapParams.properties);
 
       try {
-        let decapResult = await huks.decapsulate(keyAlias, mlKemDecapParams.properties, encapResult.outData);
+        let decapResult = await huks.decapsulate(keyAlias, wrapParams.properties, encapResult.outData);
         expect(decapResult.sharedSecret?.length).assertLarger(0);
         expect(Uint8ArrayToHexString(encapResult.sharedSecret!)).assertEqual(Uint8ArrayToHexString(decapResult.sharedSecret!));
       } catch (err) {
@@ -3990,14 +4017,13 @@ export default function SecurityHuksApiCoverInterfaceParam() {
       let keyAlias: string = GetDataBySize(HuksMaxAliasLength);
 
       let mlKemGenOptions = GetMlKemGenerateOptions(768);
-      let mlKemEncapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
-      let mlKemDecapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+      let wrapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
 
       await huks.generateKeyItem(keyAlias, mlKemGenOptions);
-      let encapResult = await huks.encapsulate(keyAlias, mlKemEncapParams.properties);
+      let encapResult = await huks.encapsulate(keyAlias, wrapParams.properties);
 
       try {
-        let decapResult = await huks.decapsulate(keyAlias, mlKemDecapParams.properties, encapResult.outData);
+        let decapResult = await huks.decapsulate(keyAlias, wrapParams.properties, encapResult.outData);
         expect(decapResult.sharedSecret?.length).assertLarger(0);
         expect(Uint8ArrayToHexString(encapResult.sharedSecret!)).assertEqual(Uint8ArrayToHexString(decapResult.sharedSecret!));
       } catch (err) {
@@ -4276,15 +4302,23 @@ export default function SecurityHuksApiCoverInterfaceParam() {
       let sharedKeyAlias = "a";
 
       let mlKemGenOptions = GetMlKemGenerateOptions(768);
-      let mlKemEncapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
-      let mlKemDecapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
-      let sharedKeyParams = MergeOptions(GetAesGenerateOptions(256), GetCtrNoPaddingOptions(16));
+      let wrapParams: Array<huks.HuksParam> = [
+        { tag: huks.HuksTag.HUKS_TAG_ALGORITHM, value: huks.HuksKeyAlg.HUKS_ALG_ML_KEM }
+      ];
+      let sharedKeyParams: Array<huks.HuksParam> = [
+        { tag: huks.HuksTag.HUKS_TAG_ALGORITHM, value: huks.HuksKeyAlg.HUKS_ALG_AES },
+        { tag: huks.HuksTag.HUKS_TAG_KEY_SIZE, value: 256 },
+        { tag: huks.HuksTag.HUKS_TAG_PURPOSE, value: huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT },
+        { tag: huks.HuksTag.HUKS_TAG_BLOCK_MODE, value: huks.HuksCipherMode.HUKS_MODE_CTR },
+        { tag: huks.HuksTag.HUKS_TAG_PADDING, value: huks.HuksKeyPadding.HUKS_PADDING_NONE },
+        { tag: huks.HuksTag.HUKS_TAG_IV, value: StringToUint8Array(GetDataBySize(16)) }
+      ];
 
       await huks.generateKeyItem(keyAlias, mlKemGenOptions);
-      let encapResult = await huks.encapsulate(keyAlias, mlKemEncapParams.properties, sharedKeyAlias, sharedKeyParams.properties);
+      let encapResult = await huks.encapsulate(keyAlias, wrapParams, sharedKeyAlias, sharedKeyParams);
 
       try {
-        await huks.decapsulate(keyAlias, mlKemDecapParams.properties, encapResult.outData, sharedKeyAlias, sharedKeyParams.properties);
+        await huks.decapsulate(keyAlias, wrapParams, encapResult.outData, sharedKeyAlias, sharedKeyParams);
       } catch (err) {
         Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
@@ -4306,14 +4340,14 @@ export default function SecurityHuksApiCoverInterfaceParam() {
       let sharedKeyAlias: string = GetDataBySize(HuksMaxAliasLength);
 
       let mlKemGenOptions = GetMlKemGenerateOptions(768);
-      let mlKemEncapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
-      let mlKemDecapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+      let wrapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
       let sharedKeyParams = MergeOptions(GetAesGenerateOptions(256), GetCtrNoPaddingOptions(16));
+
       await huks.generateKeyItem(keyAlias, mlKemGenOptions);
-      let encapResult = await huks.encapsulate(keyAlias, mlKemEncapParams.properties, sharedKeyAlias, sharedKeyParams.properties);
+      let encapResult = await huks.encapsulate(keyAlias, wrapParams.properties, sharedKeyAlias, sharedKeyParams.properties);
 
       try {
-        await huks.decapsulate(keyAlias, mlKemDecapParams.properties, encapResult.outData, sharedKeyAlias, sharedKeyParams.properties);
+        await huks.decapsulate(keyAlias, wrapParams.properties, encapResult.outData, sharedKeyAlias, sharedKeyParams.properties);
       } catch (err) {
         Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
@@ -4334,15 +4368,14 @@ export default function SecurityHuksApiCoverInterfaceParam() {
       let keyAlias: string = testNumber + "_key";
 
       let mlKemGenOptions = GetMlKemGenerateOptions(768);
-      let mlKemEncapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
-      let mlKemDecapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+      let wrapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
       let sharedKeyParams = MergeOptions(GetAesGenerateOptions(256), GetCtrNoPaddingOptions(16));
 
       await huks.generateKeyItem(keyAlias, mlKemGenOptions);
-      let encapResult = await huks.encapsulate(keyAlias, mlKemEncapParams.properties);
+      let encapResult = await huks.encapsulate(keyAlias, wrapParams.properties);
 
       try {
-        await huks.decapsulate(keyAlias, mlKemDecapParams.properties, encapResult.outData, "", sharedKeyParams.properties);
+        await huks.decapsulate(keyAlias, wrapParams.properties, encapResult.outData, "", sharedKeyParams.properties);
         expect(null).assertFail();
       } catch (err) {
         Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
@@ -4365,15 +4398,14 @@ export default function SecurityHuksApiCoverInterfaceParam() {
       let sharedKeyAlias: string = testNumber.padEnd(HuksMaxAliasLength + 1, "a");
 
       let mlKemGenOptions = GetMlKemGenerateOptions(768);
-      let mlKemEncapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
-      let mlKemDecapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+      let wrapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
       let sharedKeyParams = MergeOptions(GetAesGenerateOptions(256), GetCtrNoPaddingOptions(16));
 
       await huks.generateKeyItem(keyAlias, mlKemGenOptions);
-      let encapResult = await huks.encapsulate(keyAlias, mlKemEncapParams.properties);
+      let encapResult = await huks.encapsulate(keyAlias, wrapParams.properties);
 
       try {
-        await huks.decapsulate(keyAlias, mlKemDecapParams.properties, encapResult.outData, sharedKeyAlias, sharedKeyParams.properties);
+        await huks.decapsulate(keyAlias, wrapParams.properties, encapResult.outData, sharedKeyAlias, sharedKeyParams.properties);
         expect(null).assertFail();
       } catch (err) {
         Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
@@ -4395,15 +4427,14 @@ export default function SecurityHuksApiCoverInterfaceParam() {
       let keyAlias: string = testNumber + "_key";
 
       let mlKemGenOptions = GetMlKemGenerateOptions(768);
-      let mlKemEncapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
-      let mlKemDecapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+      let wrapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
       let sharedKeyParams = MergeOptions(GetAesGenerateOptions(256), GetCtrNoPaddingOptions(16));
 
       await huks.generateKeyItem(keyAlias, mlKemGenOptions);
-      let encapResult = await huks.encapsulate(keyAlias, mlKemEncapParams.properties);
+      let encapResult = await huks.encapsulate(keyAlias, wrapParams.properties);
 
       try {
-        await huks.decapsulate(keyAlias, mlKemDecapParams.properties, encapResult.outData, null, sharedKeyParams.properties);
+        await huks.decapsulate(keyAlias, wrapParams.properties, encapResult.outData, null, sharedKeyParams.properties);
         expect(null).assertFail();
       } catch (err) {
         Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
@@ -4425,15 +4456,14 @@ export default function SecurityHuksApiCoverInterfaceParam() {
       let keyAlias: string = testNumber + "_key";
 
       let mlKemGenOptions = GetMlKemGenerateOptions(768);
-      let mlKemEncapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
-      let mlKemDecapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+      let wrapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
       let sharedKeyParams = MergeOptions(GetAesGenerateOptions(256), GetCtrNoPaddingOptions(16));
 
       await huks.generateKeyItem(keyAlias, mlKemGenOptions);
-      let encapResult = await huks.encapsulate(keyAlias, mlKemEncapParams.properties);
+      let encapResult = await huks.encapsulate(keyAlias, wrapParams.properties);
 
       try {
-        await huks.decapsulate(keyAlias, mlKemDecapParams.properties, encapResult.outData, undefined, sharedKeyParams.properties);
+        await huks.decapsulate(keyAlias, wrapParams.properties, encapResult.outData, undefined, sharedKeyParams.properties);
         expect(null).assertFail();
       } catch (err) {
         Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
@@ -4457,15 +4487,14 @@ export default function SecurityHuksApiCoverInterfaceParam() {
       let encapSharedKeyAlias: string = testNumber + "_encap_shared";
 
       let mlKemGenOptions = GetMlKemGenerateOptions(768);
-      let mlKemEncapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
-      let mlKemDecapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+      let wrapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
       let sharedKeyParams = MergeOptions(GetAesGenerateOptions(256), GetCtrNoPaddingOptions(16));
 
       await huks.generateKeyItem(keyAlias, mlKemGenOptions);
-      let encapResult = await huks.encapsulate(keyAlias, mlKemEncapParams.properties, encapSharedKeyAlias, sharedKeyParams.properties);
+      let encapResult = await huks.encapsulate(keyAlias, wrapParams.properties, encapSharedKeyAlias, sharedKeyParams.properties);
 
       try {
-        await huks.decapsulate(keyAlias, mlKemDecapParams.properties, encapResult.outData, sharedKeyAlias, []);
+        await huks.decapsulate(keyAlias, wrapParams.properties, encapResult.outData, sharedKeyAlias, []);
         expect(null).assertFail();
       } catch (err) {
         Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
@@ -4489,15 +4518,14 @@ export default function SecurityHuksApiCoverInterfaceParam() {
       let encapSharedKeyAlias: string = testNumber + "_encap_shared";
 
       let mlKemGenOptions = GetMlKemGenerateOptions(768);
-      let mlKemEncapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
-      let mlKemDecapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+      let wrapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
       let sharedKeyParams = MergeOptions(GetAesGenerateOptions(256), GetCtrNoPaddingOptions(16));
 
       await huks.generateKeyItem(keyAlias, mlKemGenOptions);
-      let encapResult = await huks.encapsulate(keyAlias, mlKemEncapParams.properties, encapSharedKeyAlias, sharedKeyParams.properties);
+      let encapResult = await huks.encapsulate(keyAlias, wrapParams.properties, encapSharedKeyAlias, sharedKeyParams.properties);
 
       try {
-        await huks.decapsulate(keyAlias, mlKemDecapParams.properties, encapResult.outData, sharedKeyAlias, null);
+        await huks.decapsulate(keyAlias, wrapParams.properties, encapResult.outData, sharedKeyAlias, null);
         expect(null).assertFail();
       } catch (err) {
         Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
@@ -4521,19 +4549,49 @@ export default function SecurityHuksApiCoverInterfaceParam() {
       let encapSharedKeyAlias: string = testNumber + "_encap_shared";
 
       let mlKemGenOptions = GetMlKemGenerateOptions(768);
-      let mlKemEncapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
-      let mlKemDecapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+      let wrapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
       let sharedKeyParams = MergeOptions(GetAesGenerateOptions(256), GetCtrNoPaddingOptions(16));
 
       await huks.generateKeyItem(keyAlias, mlKemGenOptions);
-      let encapResult = await huks.encapsulate(keyAlias, mlKemEncapParams.properties, encapSharedKeyAlias, sharedKeyParams.properties);
+      let encapResult = await huks.encapsulate(keyAlias, wrapParams.properties, encapSharedKeyAlias, sharedKeyParams.properties);
 
       try {
-        await huks.decapsulate(keyAlias, mlKemDecapParams.properties, encapResult.outData, sharedKeyAlias, undefined);
+        await huks.decapsulate(keyAlias, wrapParams.properties, encapResult.outData, sharedKeyAlias, undefined);
         expect(null).assertFail();
       } catch (err) {
         Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_4300
+     * @tc.number SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_4300
+     * @tc.desc   test decapsulate without sharedKeyParams parameter, expect error 12000018
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_4300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_Decapsulate_Interface_4300";
+
+      let keyAlias: string = testNumber + "_key";
+      let sharedKeyAlias: string = testNumber + "_decap_shared";
+      let encapSharedKeyAlias: string = testNumber + "_encap_shared";
+
+      let mlKemGenOptions = GetMlKemGenerateOptions(768);
+      let wrapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+      let sharedKeyParams = MergeOptions(GetAesGenerateOptions(256), GetCtrNoPaddingOptions(16));
+
+      await huks.generateKeyItem(keyAlias, mlKemGenOptions);
+      let encapResult = await huks.encapsulate(keyAlias, wrapParams.properties, encapSharedKeyAlias, sharedKeyParams.properties);
+
+      try {
+        await huks.decapsulate(keyAlias, wrapParams.properties, encapResult.outData, sharedKeyAlias);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000018);
       }
     });
 
