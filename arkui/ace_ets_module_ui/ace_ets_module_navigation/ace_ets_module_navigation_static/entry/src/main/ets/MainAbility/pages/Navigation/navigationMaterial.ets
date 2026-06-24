@@ -24,7 +24,7 @@ import { State, Provider, Param, Require, Local, Consumer, Consume } from '@ohos
 
 @Component
 struct TestComponent {
-  private arr: int[] = new Array<int>();
+  private arr: int[] = [];
 
   aboutToAppear(): void {
     for (let i = 0; i < 10; i++) {
