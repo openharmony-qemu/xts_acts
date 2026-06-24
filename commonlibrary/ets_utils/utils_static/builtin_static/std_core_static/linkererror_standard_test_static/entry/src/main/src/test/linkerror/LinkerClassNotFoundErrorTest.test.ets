@@ -620,6 +620,7 @@ export default function linkerClassNotFoundErrorTest(): void {
       let nanOpts: ErrorOptions = { cause: NaN as Object };
       let err = new LinkerClassNotFoundError('msg', nanOpts);
       expect(isErr(err as Object)).assertEqual(true);
+      expect(isNaN(err.cause as number)).assertTrue();
     })
 
     /**

@@ -620,6 +620,7 @@ export default function linkerMethodConflictErrorTest(): void {
       let nanOpts: ErrorOptions = { cause: NaN as Object };
       let err = new LinkerMethodConflictError('msg', nanOpts);
       expect(isErr(err as Object)).assertEqual(true);
+      expect(isNaN(err.cause as number)).assertTrue();
     })
 
     /**
