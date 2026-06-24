@@ -15,7 +15,12 @@
 import AreaChangeErrorCodeTest from './onAreaChange/AreaChangeErrorCodeTest.test'
 import ScrollWithMouseTest from "./scroll/scrollWithMouseTest.test";
 import AutoAdjustMarginTest from "./scroll/autoAdjustMarginTest.test";
+import ScrollBarHeightTest from "./scroll/scrollBarHeightTest.test";
 import ListBackBehaviorTest from "./list/listBackBehaviorTest.test";
+import ListEnableEditModeTest from "./list/listEnableEditModeTest.test";
+import ListEditModeOptionsTest from "./list/listEditModeOptionsTest.test";
+import GridEnableEditModeTest from "./grid/gridEnableEditModeTest.test";
+import GridEditModeOptionsTest from "./grid/gridEditModeOptionsTest.test";
 import RegisterCommonAreaApproximateChangeEventTest from './onAreaChange/RegisterCommonAreaApproximateChangeEventTest.test'
 import UnregisterCommonAreaApproximateChangeEventTest from './onAreaChange/UnregisterCommonAreaApproximateChangeEventTest.test'
 import OrphanCharOptimizationTest from './orphanCharOptimization/orphanCharOptimizationTest.test'
@@ -53,7 +58,12 @@ export default function testsuite() {
   AreaChangeErrorCodeTest();
   ScrollWithMouseTest();
   AutoAdjustMarginTest();
+  ScrollBarHeightTest();
   ListBackBehaviorTest();
+  ListEnableEditModeTest();
+  ListEditModeOptionsTest();
+  GridEnableEditModeTest();
+  GridEditModeOptionsTest();
   OrphanCharOptimizationTest();
   passThroughTest();
   gestureErrorCodeTest();
