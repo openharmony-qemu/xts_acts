@@ -17,19 +17,10 @@ import dataHasCardNoDataTest from './DataManagerNoCard.test';
 import EmptyTest from './Empty.test'
 import sim from '@ohos.telephony.sim';
 import connection from '@ohos.net.connection';
-let isNet: number = connection.getDefaultNetSync().netId;
-let simState: sim.SimState = sim.getSimStateSync(0);
 
 export default function testsuite() {
   if (sim.getMaxSimCount() != 0 ) {
-    if(sim.hasSimCardSync(0) && isNet == 0){
-        if(simState != sim.SimState.SIM_STATE_UNKNOWN)
-            dataHasCardNoDataTest()
-        else
-            EmptyTest();
-    } else {
-      EmptyTest()
-    }
+    dataHasCardNoDataTest()
   }else{
     EmptyTest()
   }
