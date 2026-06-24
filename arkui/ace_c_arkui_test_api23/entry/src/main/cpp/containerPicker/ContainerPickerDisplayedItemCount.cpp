@@ -36,7 +36,7 @@ static napi_value TestContainerPickerDisplayedItemCount001(napi_env env, napi_ca
     auto ret = nodeAPI->setAttribute(containerPicker, NODE_PICKER_DISPLAYED_ITEM_COUNT, &countItem);
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
     ASSERT_EQ(
-        nodeAPI->getAttribute(containerPicker, NODE_PICKER_DISPLAYED_ITEM_COUNT)->value[0].i32, itemCountReal);
+        nodeAPI->getAttribute(containerPicker, NODE_PICKER_DISPLAYED_ITEM_COUNT)->value[PARAM_0].i32, itemCountReal);
     NAPI_END;
 }
 static napi_value TestContainerPickerDisplayedItemCount002(napi_env env, napi_callback_info info)
@@ -52,7 +52,7 @@ static napi_value TestContainerPickerDisplayedItemCount002(napi_env env, napi_ca
     auto ret = nodeAPI->setAttribute(containerPicker, NODE_PICKER_DISPLAYED_ITEM_COUNT, &countItem);
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
     ASSERT_EQ(
-        nodeAPI->getAttribute(containerPicker, NODE_PICKER_DISPLAYED_ITEM_COUNT)->value[0].i32, itemCountReal);
+        nodeAPI->getAttribute(containerPicker, NODE_PICKER_DISPLAYED_ITEM_COUNT)->value[PARAM_0].i32, itemCountReal);
     NAPI_END;
 }
 static napi_value TestContainerPickerDisplayedItemCount003(napi_env env, napi_callback_info info)
@@ -68,7 +68,7 @@ static napi_value TestContainerPickerDisplayedItemCount003(napi_env env, napi_ca
     auto ret = nodeAPI->setAttribute(containerPicker, NODE_PICKER_DISPLAYED_ITEM_COUNT, &countItem);
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
     ASSERT_EQ(
-        nodeAPI->getAttribute(containerPicker, NODE_PICKER_DISPLAYED_ITEM_COUNT)->value[0].i32, itemCountReal);
+        nodeAPI->getAttribute(containerPicker, NODE_PICKER_DISPLAYED_ITEM_COUNT)->value[PARAM_0].i32, itemCountReal);
     NAPI_END;
 }
 static napi_value TestContainerPickerDisplayedItemCount004(napi_env env, napi_callback_info info)
@@ -84,7 +84,7 @@ static napi_value TestContainerPickerDisplayedItemCount004(napi_env env, napi_ca
     auto ret = nodeAPI->setAttribute(containerPicker, NODE_PICKER_DISPLAYED_ITEM_COUNT, &countItem);
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
     ASSERT_EQ(
-        nodeAPI->getAttribute(containerPicker, NODE_PICKER_DISPLAYED_ITEM_COUNT)->value[0].i32, itemCountReal);
+        nodeAPI->getAttribute(containerPicker, NODE_PICKER_DISPLAYED_ITEM_COUNT)->value[PARAM_0].i32, itemCountReal);
     NAPI_END;
 }
 static napi_value TestContainerPickerDisplayedItemCount005(napi_env env, napi_callback_info info)
