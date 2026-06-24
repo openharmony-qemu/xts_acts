@@ -45,13 +45,21 @@ export async function test2(): Promise<string> {
 }
 
 export async function testUI(): Promise<string> {
-  await testUISec()
-  return ''
+  return new Promise<string>((re, je) => {
+    waitForCompletion(async () => {
+      await testUISec()
+      re('')
+    })
+  })
 }
 
 export async function testUI1(): Promise<string> {
-  await testUISec()
-  return ''
+  return new Promise<string>((re, je) => {
+    waitForCompletion(async () => {
+      await testUISec()
+      re('')
+    })
+  })
 }
 
 // export class Contexts {

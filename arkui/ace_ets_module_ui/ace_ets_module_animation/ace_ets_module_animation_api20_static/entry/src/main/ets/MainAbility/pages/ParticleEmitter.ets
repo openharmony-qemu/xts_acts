@@ -139,7 +139,9 @@ struct ParticleEmitter {
         console.log('XHQ GetInspector start')
         let filterTree = inspector.getInspectorByKey('particle');
         console.log('XHQ GetInspector start filterTree')
-        CommonFunc.sleep(2000).awaitSync()
+        waitForCompletion(async ()=>{	 
+          await CommonFunc.sleep(2000)	 
+        })
         console.log('XHQ GetInspector start filterTree2')
         if (filterTree) {
           console.log('XHQ' +

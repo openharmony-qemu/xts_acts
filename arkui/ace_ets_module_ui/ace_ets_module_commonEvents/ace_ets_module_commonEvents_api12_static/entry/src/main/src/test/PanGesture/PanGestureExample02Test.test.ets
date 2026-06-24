@@ -46,7 +46,7 @@ const uiContext = new UIContext();
 export default function PanGestureExample02Test() {
   describe('PanGestureExample02Test', () => {
 
-    UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility").awaitSync()
+    waitForCompletion(async ()=>{await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")})
 
 
     const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!

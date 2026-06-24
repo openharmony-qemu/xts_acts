@@ -1569,13 +1569,17 @@ export default function RdbStoreResultNullEtsTest() {
           "data1": "hello world"
         };
         if (rdbStore!= undefined) {
-          try {
-            let rowId = await rdbStore!.insert("test", valueBucket1, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
-            console.info(tag +`Insert is successful, rowId = ${rowId}`);
-            expect(rowId).assertEqual(1);
-            await rdbStore!.close();
-            console.info(tag +`close succsee`);
-            rdbStore!.executeSql("SELECT * FROM test where data1 = ?", ['hello world'], (err) => {
+          rdbStore!.insert("test", valueBucket1, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE,
+            (err, rowId) => {
+              if (err) {
+                console.error(tag +`Insert is failed, code is ${err.code}, message is ${err.message}`);
+                expect(true).assertFail();
+              }else{
+                console.info(tag +`Insert is successful, rowId = ${rowId}`);
+                expect(rowId).assertEqual(1);
+                waitForCompletion(async () => {await rdbStore!.close();})
+                console.info(tag +`close succsee`);
+                rdbStore!.executeSql("SELECT * FROM test where data1 = ?", ['hello world'], (err) => {
                   if (err) {
                     console.error(tag +`Query failed, code is ${err.code}, message is ${err.message}`);
                     expect(14800014).assertEqual(err.code);
@@ -1584,10 +1588,8 @@ export default function RdbStoreResultNullEtsTest() {
                     expect(true).assertFail();
                   }
                 })
-          } catch (err) {
-            console.error(tag +`Insert is failed, code is ${err.code}, message is ${err.message}`);
-            expect(true).assertFail();
-          }
+              }
+            });
         }
         done()
         console.log(tag + "************* testRdbexecuteSql005 end *************");

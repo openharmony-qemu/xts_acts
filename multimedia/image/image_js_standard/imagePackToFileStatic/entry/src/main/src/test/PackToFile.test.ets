@@ -167,57 +167,77 @@ export default function imagePackToFile() {
             done();
           }
           if (source instanceof image.ImageSource) {
-            try {
-              await imagePacker.packToFile(source as image.ImageSource, fd, ops);
-              let imgSource = image.createImageSource(fPath);
-              if (imgSource == undefined) {
-              expect().assertFail();
-              } else {
-              let info = await imgSource.getImageInfo();
-              if (info == undefined) {
-              expect().assertFail();
-              } else {
-              await imgSource.release();
-              console.log(`${testNum} file size ${info.size.width}`);
-              console.log(`${testNum} file size ${info.size.height}`);
-              checkSize(info.size.width, info.size.height)
-              }
-              }
-              done();
-            } catch (err) {
-              console.info(`${testNum} pack failerr: ${err}`);
-              expect(false).assertTrue();
-              done();
-              console.log("packToFileCallback err: " + err);
-              expect().assertFail();
-              done();
-            }
+            imagePacker.packToFile(source as image.ImageSource, fd, ops, (err: BusinessError | null) => {
+              waitForCompletion(async () => {
+                try {
+                  await imagePacker.release();
+                  await source.release();
+                  fileio.closeSync(fd)
+                  console.info(`${testNum} file size ${fileio.statSync(fPath).size}`);
+                  if (err && err.code) {
+                    console.info(`${testNum} pack failerr: ${err}`);
+                    expect(false).assertTrue();
+                    done();
+                  } else {
+                    let imgSource = image.createImageSource(fPath);
+                    if (imgSource == undefined) {
+                      expect().assertFail();
+                    } else {
+                      let info = await imgSource.getImageInfo();
+                      if (info == undefined) {
+                        expect().assertFail();
+                      } else {
+                        await imgSource.release();
+                        console.log(`${testNum} file size ${info.size.width}`);
+                        console.log(`${testNum} file size ${info.size.height}`);
+                        checkSize(info.size.width, info.size.height)
+                      }
+                    }
+                    done();
+                  }
+                } catch (e1) {
+                  console.log("packToFileCallback e1: " + e1);
+                  expect().assertFail();
+                  done();
+                }
+              })
+            })
           } else {
-            try {
-              await imagePacker.packToFile(source as image.PixelMap, fd, ops);
-              let imgSource = image.createImageSource(fPath);
-              if(imgSource == undefined) {
-              expect().assertFail();
-              } else {
-              let info = await imgSource.getImageInfo();
-              await imgSource.release();
-              if(info != undefined) {
-              console.log(`${testNum} file size ${info.size.width}`);
-              console.log(`${testNum} file size ${info.size.height}`);
-              checkSize(info.size.width, info.size.height)
-              } else {
-              expect().assertFail();
-              }
-              }
-              done();
-            } catch (err) {
-              console.info(`${testNum} pack failerr: ${err}`);
-              expect(false).assertTrue();
-              done();
-              console.log("packToFileCallback err: " + err);
-              expect().assertFail();
-              done();
-            }
+            imagePacker.packToFile(source as image.PixelMap, fd, ops, (err: BusinessError | null) => {
+              waitForCompletion(async () => {
+                try {
+                  await imagePacker.release();
+                  await source.release();
+                  fileio.closeSync(fd)
+                  console.info(`${testNum} file size ${fileio.statSync(fPath).size}`);
+                  if (err && err.code) {
+                    console.info(`${testNum} pack failerr: ${err}`);
+                    expect(false).assertTrue();
+                    done();
+                  } else {
+                    let imgSource = image.createImageSource(fPath);
+                    if(imgSource == undefined) {
+                      expect().assertFail();
+                    } else {
+                      let info = await imgSource.getImageInfo();
+                      await imgSource.release();
+                      if(info != undefined) {
+                        console.log(`${testNum} file size ${info.size.width}`);
+                        console.log(`${testNum} file size ${info.size.height}`);
+                        checkSize(info.size.width, info.size.height)
+                      } else {
+                        expect().assertFail();
+                      }
+                    }
+                    done();
+                  }
+                } catch (e1) {
+                  console.log("packToFileCallback e1: " + e1);
+                  expect().assertFail();
+                  done();
+                }
+              })
+            })
           }
         } catch (error) {
           console.log("packToFileCallback error: " + error);
@@ -240,33 +260,39 @@ export default function imagePackToFile() {
           done();
         }
         if (source instanceof image.ImageSource) {
-          try {
-            await imagePacker.packToFile(source as image.ImageSource, fd, ops);
-            fileio.closeSync(fd);
-                          await imagePacker.release();
-                          await source.release();
-            expect(false).assertTrue();
-            done();
-          } catch (err) {
-            console.info(`${testNum} pack failerr: ${JSON.stringify(err)}`);
-            console.info(`${testNum} file size ${fileio.statSync(fPath).size}`);
-            expect(err!.code == ERROR_CODE).assertTrue();
-            done();
-          }
+          imagePacker.packToFile(source as image.ImageSource, fd, ops, (err: BusinessError|null) => {
+            waitForCompletion(async () => {
+              fileio.closeSync(fd);
+              await imagePacker.release();
+              await source.release();
+              if (err && err.code) {
+                console.info(`${testNum} pack failerr: ${JSON.stringify(err)}`);
+                console.info(`${testNum} file size ${fileio.statSync(fPath).size}`);
+                expect(err!.code == ERROR_CODE).assertTrue();
+                done();
+              } else {
+                expect(false).assertTrue();
+                done();
+              }
+            })
+          })
         } else {
-          try {
-            await imagePacker.packToFile(source as image.PixelMap, fd, ops);
-            fileio.closeSync(fd);
-                          await imagePacker.release();
-                          await source.release();
-            expect(false).assertTrue();
-            done();
-          } catch (err) {
-            console.info(`${testNum} pack failerr: ${JSON.stringify(err)}`);
-            console.info(`${testNum} file size ${fileio.statSync(fPath).size}`);
-            expect(err!.code == ERROR_CODE).assertTrue();
-            done();
-          }
+          imagePacker.packToFile(source as image.PixelMap, fd, ops, (err: BusinessError|null) => {
+            waitForCompletion(async () => {
+              fileio.closeSync(fd);
+              await imagePacker.release();
+              await source.release();
+              if (err && err.code) {
+                console.info(`${testNum} pack failerr: ${JSON.stringify(err)}`);
+                console.info(`${testNum} file size ${fileio.statSync(fPath).size}`);
+                expect(err!.code == ERROR_CODE).assertTrue();
+                done();
+              } else {
+                expect(false).assertTrue();
+                done();
+              }
+            })
+          });
         }
       } catch (error) {
         console.log("packToFileCallback error: " + error);

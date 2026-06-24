@@ -119,8 +119,11 @@ export default function imageJsTest() {
             await imageSourceApi.release();
             done();
           } else if (flag == 'Callback') {
-            try {
-              let imageInfo = await imageSourceApi.getImageInfo();
+            imageSourceApi.getImageInfo((err: BusinessError | null, imageInfo: image.ImageInfo | undefined) => {
+              if (err && err.code) {
+                expect(false).assertTrue();
+                logger.log("getImageInfo error: " + err);
+              }
               if (imageInfo != undefined && imageInfo != null) {
                 expect(imageInfo!.mimeType == expectedMimetype).assertTrue();
                 logger.log("success imageInfo.encodedFormat: " + imageInfo.mimeType);
@@ -128,16 +131,15 @@ export default function imageJsTest() {
                 expect(false).assertTrue();
                 logger.log("getImageInfo failed.");
               }
-              await imageSourceApi!.release();
+              waitForCompletion(async () => {await imageSourceApi!.release();})
               done();
-            } catch (err) {
-              expect(false).assertTrue();
-              logger.log("getImageInfo error: " + err);
-              done();
-            }
+            });
           } else if (flag == 'CallbackNumber') {
-            try {
-              let imageInfo = await imageSourceApi.getImageInfo(0);
+            imageSourceApi.getImageInfo(0, (err: BusinessError | null, imageInfo: image.ImageInfo | undefined) => {
+              if (err && err.code) {
+                expect(false).assertTrue();
+                logger.log("getImageInfo error: " + err);
+              }
               if (imageInfo != undefined && imageInfo != null) {
                 expect(imageInfo!.mimeType == expectedMimetype).assertTrue();
                 logger.log("success imageInfo.encodedFormat: " + imageInfo.mimeType);
@@ -145,13 +147,9 @@ export default function imageJsTest() {
                 expect(false).assertTrue();
                 logger.log("getImageInfo failed.");
               }
-              await imageSourceApi!.release();
+              waitForCompletion(async () => {await imageSourceApi!.release();})
               done();
-            } catch (err) {
-              expect(false).assertTrue();
-              logger.log("getImageInfo error: " + err);
-              done();
-            }
+            });
           }
         }
       } catch (error) {

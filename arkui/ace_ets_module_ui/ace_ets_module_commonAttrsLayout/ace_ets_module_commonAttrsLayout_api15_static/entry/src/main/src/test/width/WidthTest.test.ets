@@ -72,10 +72,10 @@ it('WidthTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void
       console.info('WidthTest_static_0100 START');
       await CommonFunc.sleep(1000);
 
-      let column_parent = await Utils.getComponentRect('WidthTest_0100_Column_Parent');
+      let column_parent = Utils.getComponentRect('WidthTest_0100_Column_Parent');
       let column_parent_width = column_parent.right - column_parent.left;
       let column_parent_height = column_parent.bottom - column_parent.top;
-      let column_child = await Utils.getComponentRect('WidthTest_0100_Column_Child');
+      let column_child = Utils.getComponentRect('WidthTest_0100_Column_Child');
       let column_child_width = column_child.right - column_child.left;
       let column_child_height = column_child.bottom - column_child.top;
       console.log('[WidthTest_static_0100] column_parent_width is:' + column_parent_width);

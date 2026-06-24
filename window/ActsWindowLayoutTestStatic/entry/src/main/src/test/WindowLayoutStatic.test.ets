@@ -3654,13 +3654,13 @@ export default function WindowLayoutStaticTest() {
             await mainWindow.showWindow();
             let ratio = 1.0;
             mainWindow.setAspectRatio(ratio).then(()=>{
-                (async () => {
+                waitForCompletion(async () => {
                 hilog.info(domain, tag, msgStr + 'Succeeded in setting aspect ratio.');
                 await mainWindow.destroyWindow();
                 done();
-                })().awaitSync()
+                })
             }).catch((err: Error): PromiseLike<void> | undefined => {
-                (async () => {
+                waitForCompletion(async () => {
                 err === err as BusinessError;
                 hilog.error(domain, tag, msgStr + 'Failed to set aspect ratio. Cause code: ' + err!.code + ', message: ' + err!.message);
                 if (err!.code === 801) {
@@ -3673,7 +3673,7 @@ export default function WindowLayoutStaticTest() {
                     expect(false).assertTrue();
                     done();
                 }
-                })().awaitSync()
+                })
             });
         })
 
@@ -3807,14 +3807,14 @@ export default function WindowLayoutStaticTest() {
             // await subWindow.showWindow();
             let ratio = 1.0;
             subWindow.setAspectRatio(ratio).then(()=>{
-                (async () => {
+                waitForCompletion(async () => {
                 hilog.info(domain, tag, msgStr + 'Succeeded in setting aspect ratio.');
                 expect(false).assertTrue();
                 await subWindow.destroyWindow();
                 done();
-                })().awaitSync()
+                })
             }).catch((err: Error): PromiseLike<void> | undefined => {
-                (async () => {
+                waitForCompletion(async () => {
                 err === err as BusinessError;
                 if (err!.code === 1300004) {
                     hilog.error(domain, tag, msgStr + 'Failed to set aspect ratio. Cause code: ' + err!.code + ', message: ' + err!.message);
@@ -3827,7 +3827,7 @@ export default function WindowLayoutStaticTest() {
                     await subWindow.destroyWindow();
                     done();
                 }
-                })().awaitSync()
+                })
             });
         })
 
@@ -3849,7 +3849,7 @@ export default function WindowLayoutStaticTest() {
             // await subWindow.showWindow();
             let ratio = 1.0;
             subWindow.setAspectRatio(ratio, (err: BusinessError<void> | null): void => {
-                (async () => {
+                waitForCompletion(async () => {
                 if (err!.code) {
                     hilog.error(domain, tag, msgStr + 'Failed to set aspect ratio. Cause code: ' + err!.code + ', message: ' + err!.message);
                     if (err!.code === 801) {
@@ -3868,7 +3868,7 @@ export default function WindowLayoutStaticTest() {
                 expect(false).assertTrue();
                 await subWindow.destroyWindow();
                 done();
-                })().awaitSync()
+                })
             });
         })
 
@@ -4031,14 +4031,14 @@ export default function WindowLayoutStaticTest() {
             // await subWindow.showWindow();
             let ratio = 1.0;
             subWindow.setContentAspectRatio(ratio).then(async ()=>{
-                (async () => {
+                waitForCompletion(async () => {
                 hilog.info(domain, tag, msgStr + 'Succeeded in setting content aspect ratio.');
                 expect(false).assertTrue();
                 await subWindow.destroyWindow();
                 done();
-                })().awaitSync()
+                })
             }).catch((err: Error): PromiseLike<void> | undefined => {
-                (async () => {
+                waitForCompletion(async () => {
                 err === err as BusinessError;
                 if (err!.code === 801) {
                     hilog.info(domain, tag, msgStr + 'Capability not supported on this device.');
@@ -4051,7 +4051,7 @@ export default function WindowLayoutStaticTest() {
                     await subWindow.destroyWindow();
                     done();
                 }
-                })().awaitSync()
+                })
             });
         })
 
@@ -4131,20 +4131,20 @@ export default function WindowLayoutStaticTest() {
             let subWindow: window.Window = await windowStage!.createSubWindow('testResetAspectRatio_Promise_Error1300004_0200');
             expect(!!subWindow).assertTrue();
             subWindow.resetAspectRatio().then(async ()=>{
-                (async () => {
+                waitForCompletion(async () => {
                 hilog.info(domain, tag, msgStr + 'Succeeded in resetting aspect ratio on destroyed window.');
                 expect(false).assertTrue();
                 await subWindow.destroyWindow();
                 done();
-                })().awaitSync()
+                })
             }).catch((err: Error): PromiseLike<void> | undefined => {
-                (async () => {
+                waitForCompletion(async () => {
                 err === err as BusinessError;
                 hilog.error(domain, tag, msgStr + 'Failed to reset aspect ratio. Cause code: ' + err!.code + ', message: ' + err!.message);
                 expect(err!.code).assertEqual(1300004);
                 await subWindow.destroyWindow();
                 done();
-                })().awaitSync()
+                })
             });
         })
 
@@ -4191,7 +4191,7 @@ export default function WindowLayoutStaticTest() {
             let subWindow: window.Window = await windowStage!.createSubWindow('testResetAspectRatio_callback_Error1300004_0400');
             expect(!!subWindow).assertTrue();
             subWindow.resetAspectRatio((err: BusinessError<void> | null): void => {
-                (async () => {
+                waitForCompletion(async () => {
                 if (err!.code === 1300004) {
                     hilog.error(domain, tag, msgStr + 'Failed to set aspect ratio. Cause code: ' + err!.code + ', message: ' + err!.message);
                     expect(err!.code).assertEqual(1300004);
@@ -4203,7 +4203,7 @@ export default function WindowLayoutStaticTest() {
                     await subWindow.destroyWindow();
                     done();
                 }
-                })().awaitSync()
+                })
             });
         })
 
@@ -4417,7 +4417,7 @@ export default function WindowLayoutStaticTest() {
                 await subWindow.destroyWindow();
                 done();
             }).catch((err: Error): PromiseLike<void> | undefined => {
-                (async () => {
+                waitForCompletion(async () => {
                 err === err as BusinessError;
                 if (err!.code === 801) {
                     hilog.info(domain, tag, msgStr + 'Capability not supported on this device.');
@@ -4430,7 +4430,7 @@ export default function WindowLayoutStaticTest() {
                     expect(false).assertTrue();
                     done();
                 }
-                })().awaitSync()
+                })
             });
         })
 
@@ -4463,7 +4463,7 @@ export default function WindowLayoutStaticTest() {
                 await subWindow.destroyWindow();
                 done();
             }).catch((err: Error): PromiseLike<void> | undefined => {
-                (async () => {
+                waitForCompletion(async () => {
                 err === err as BusinessError;
                 if (err!.code === 801) {
                     hilog.info(domain, tag, msgStr + 'Capability not supported on this device.');
@@ -4476,7 +4476,7 @@ export default function WindowLayoutStaticTest() {
                     expect(false).assertTrue();
                     done();
                 }
-                })().awaitSync()
+                })
             });
         })
 
@@ -4509,7 +4509,7 @@ export default function WindowLayoutStaticTest() {
                 await subWindow.destroyWindow();
                 done();
             }).catch((err: Error): PromiseLike<void> | undefined => {
-                (async () => {
+                waitForCompletion(async () => {
                 err === err as BusinessError;
                 if (err!.code === 801) {
                     hilog.info(domain, tag, msgStr + 'Capability not supported on this device.');
@@ -4522,7 +4522,7 @@ export default function WindowLayoutStaticTest() {
                     expect(false).assertTrue();
                     done();
                 }
-                })().awaitSync()
+                })
             });
         })
 
@@ -4556,7 +4556,7 @@ export default function WindowLayoutStaticTest() {
                 await subWindow.destroyWindow();
                 done();
             }).catch((err: Error): PromiseLike<void> | undefined => {
-                (async () => {
+                waitForCompletion(async () => {
                 err === err as BusinessError;
                 if (err!.code === 801) {
                     hilog.info(domain, tag, msgStr + 'Capability not supported on this device.');
@@ -4569,7 +4569,7 @@ export default function WindowLayoutStaticTest() {
                     expect(false).assertTrue();
                     done();
                 }
-                })().awaitSync()
+                })
             });
         })
 

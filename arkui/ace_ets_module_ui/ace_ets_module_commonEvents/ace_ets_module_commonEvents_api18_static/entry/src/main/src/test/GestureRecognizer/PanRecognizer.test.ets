@@ -90,7 +90,7 @@ it('PanRecognizer_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       let windowOffsetY: number = AppStorage.get<number>("winTop") as number;
       await CommonFunc.sleep(1000);
       console.log('PanRecognizer_static_0100 windowOffsetX and windowOffsetY', windowOffsetX, windowOffsetY)
-      let areaObj = await CommonFunc.getComponentRectOnScreen('PanRecognizer1');
+      let areaObj = CommonFunc.getComponentRectOnScreen('PanRecognizer1');
       await CommonFunc.sleep(1000);
       let areaHeight = areaObj.bottom - areaObj.top
       let areaWidth = areaObj.right - areaObj.left

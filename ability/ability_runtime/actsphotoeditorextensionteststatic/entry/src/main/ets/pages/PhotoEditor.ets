@@ -116,7 +116,7 @@ struct PhotoEditor {
     try {
       hilog.info(0x0000, TAG, '%{public}s', 'PhotoEditor createImageSource');
       let imageSourceApi: image.ImageSource | undefined = image.createImageSource(testJpg.buffer);
-      (async () => {
+      waitForCompletion(async () => {
         if (imageSourceApi) {
           let pixmap: image.PixelMap | undefined = await imageSourceApi.createPixelMap();
           hilog.info(0x0000, TAG, '%{public}s', 'PhotoEditor PackingOption');
@@ -132,7 +132,7 @@ struct PhotoEditor {
             })
           }
         }
-      })().awaitSync()
+      })
     } catch (e) {
       hilog.error(0x0000, TAG, `saveContentEditingWithImage failed:${e}`);
     }

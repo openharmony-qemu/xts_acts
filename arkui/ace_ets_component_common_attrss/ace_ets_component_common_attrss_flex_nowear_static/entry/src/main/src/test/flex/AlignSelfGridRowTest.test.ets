@@ -43,7 +43,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function alignSelfGridRowTest() {
 
-  UtilsTest.startAbility("com.acts.arkui.component.common.attrs.flex.nowear.test.static", "EntryAbility").awaitSync()
+  waitForCompletion(async ()=>{await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.flex.nowear.test.static", "EntryAbility")})
 
   const uiContext: UIContext = AppStorage.get<UIContext>('uiContext')!
 
@@ -147,8 +147,8 @@ export default function alignSelfGridRowTest() {
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
 
       //Get component rect and parent component rect
-      let parentRect = await Utils.getComponentRect(data.pageConfig.parentComponentKey as string);
-      let rect = await Utils.getComponentRect(data.pageConfig.componentKey as string);
+      let parentRect = Utils.getComponentRect(data.pageConfig.parentComponentKey as string);
+      let rect = Utils.getComponentRect(data.pageConfig.componentKey as string);
       console.log('parentComponentKey is ' + data.pageConfig.parentComponentKey + 'componentKey is ' +
       data.pageConfig.componentKey)
       let uiContext: UIContext = AppStorage.get<UIContext>('uiContext')!

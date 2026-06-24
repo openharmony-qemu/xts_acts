@@ -70,28 +70,31 @@ export default function atomicServiceBarTest() {
      */
 it('ArkuiContext_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkuiContext_static_0100 START');
-      await CommonFunc.sleep(3500);
-      // try{
-      let uiContext = AppStorage.get<UIContext>('uiContext')
-      console.log('++++++++++++++++1',uiContext)
-        let atomicServiceBar: Nullable<AtomicServiceBar> = uiContext!.getAtomicServiceBar(); //appDied
-      console.log('++++++++++++++++2')
-        await CommonFunc.sleep(2000);
-        if (atomicServiceBar != undefined) {
-            // support service
-            hilog.info(0x0000, 'testTag', 'Get AtomServiceBar Successfully.');
-            atomicServiceBar.setVisible(false);
-            expect(true).assertTrue();
-        } else {
-          // no support AtomServiceBar
-          console.log('++++++++++++++++3')
-          expect(atomicServiceBar ==undefined).assertTrue();
-        }
-      // } catch(err) {
-      //   expect().assertFail()
-      //   console.info('ArkuiContext_static_0100  '+ JSON.stringify(err));
-      // }
-      done();
+      setTimeout(()=>{
+        waitForCompletion(async () => {
+          // try{
+          let uiContext = AppStorage.get<UIContext>('uiContext')
+          console.log('++++++++++++++++1',uiContext)
+            let atomicServiceBar: Nullable<AtomicServiceBar> = uiContext!.getAtomicServiceBar(); //appDied
+          console.log('++++++++++++++++2')
+            await CommonFunc.sleep(2000);
+            if (atomicServiceBar != undefined) {
+                // support service
+                hilog.info(0x0000, 'testTag', 'Get AtomServiceBar Successfully.');
+                atomicServiceBar.setVisible(false);
+                expect(true).assertTrue();
+            } else {
+              // no support AtomServiceBar
+              console.log('++++++++++++++++3')
+              expect(atomicServiceBar ==undefined).assertTrue();
+            }
+          // } catch(err) {
+          //   expect().assertFail()
+          //   console.info('ArkuiContext_static_0100  '+ JSON.stringify(err));
+          // }
+          done();
+        })
+      },3500)
     });
 
     
@@ -104,23 +107,26 @@ it('ArkuiContext_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
      */
 it('ArkuiContext_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkuiContext_static_0200 START');
-      await CommonFunc.sleep(3500);
-      try{
-        let atomicServiceBar: Nullable<AtomicServiceBar> = uiContext!.getAtomicServiceBar();
-        await CommonFunc.sleep(2000);
-        if (atomicServiceBar != undefined) {
-          hilog.info(0x0000, 'testTag', 'Get AtomServiceBar Successfully.');
-          atomicServiceBar.setBackgroundColor(0x88888888.toInt());
-          expect(true).assertTrue();
-        } else {
-          // no support AtomServiceBar
-          expect(atomicServiceBar ==undefined).assertTrue();
-        }
-      } catch(err) {
-        expect().assertFail()
-        console.info('ArkuiContext_static_0200  '+ JSON.stringify(err));
-      }
-      done();
+      setTimeout(()=>{
+        waitForCompletion(async () => {
+          try{
+            let atomicServiceBar: Nullable<AtomicServiceBar> = uiContext!.getAtomicServiceBar();
+            await CommonFunc.sleep(2000);
+            if (atomicServiceBar != undefined) {
+              hilog.info(0x0000, 'testTag', 'Get AtomServiceBar Successfully.');
+              atomicServiceBar.setBackgroundColor(0x88888888.toInt());
+              expect(true).assertTrue();
+            } else {
+              // no support AtomServiceBar
+              expect(atomicServiceBar ==undefined).assertTrue();
+            }
+          } catch(err) {
+            expect().assertFail()
+            console.info('ArkuiContext_static_0200  '+ JSON.stringify(err));
+          }
+          done();
+        })
+      },3500)
     });
 
     
@@ -133,23 +139,26 @@ it('ArkuiContext_static_0200', Level.LEVEL0, async (done: () => void): Promise<v
      */
 it('ArkuiContext_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkuiContext_static_0300 START');
-      await CommonFunc.sleep(500);
-      try{
-        let atomicServiceBar: Nullable<AtomicServiceBar> = uiContext!.getAtomicServiceBar();
-        await CommonFunc.sleep(2000);
-        if (atomicServiceBar != undefined) {
-          hilog.info(0x0000, 'testTag', 'Get AtomServiceBar Successfully.');
-          atomicServiceBar.setTitleContent('text2');
-          expect(true).assertTrue();
-        } else {
-          // no support AtomServiceBar
-          expect(atomicServiceBar ==undefined).assertTrue();
-        }
-      } catch(err) {
-        expect().assertFail()
-        console.info('ArkuiContext_static_0300  '+ JSON.stringify(err));
-      }
-      done();
+      setTimeout(()=>{
+        waitForCompletion(async () => {
+          try{
+            let atomicServiceBar: Nullable<AtomicServiceBar> = uiContext!.getAtomicServiceBar();
+            await CommonFunc.sleep(2000);
+            if (atomicServiceBar != undefined) {
+              hilog.info(0x0000, 'testTag', 'Get AtomServiceBar Successfully.');
+              atomicServiceBar.setTitleContent('text2');
+              expect(true).assertTrue();
+            } else {
+              // no support AtomServiceBar
+              expect(atomicServiceBar ==undefined).assertTrue();
+            }
+          } catch(err) {
+            expect().assertFail()
+            console.info('ArkuiContext_static_0300  '+ JSON.stringify(err));
+          }
+          done();
+        })
+      },500)
     });
 
 
@@ -163,23 +172,26 @@ it('ArkuiContext_static_0300', Level.LEVEL0, async (done: () => void): Promise<v
      */
 it('ArkuiContext_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkuiContext_static_0500 START');
-      await CommonFunc.sleep(500);
-      try{
-        let atomicServiceBar: Nullable<AtomicServiceBar> = uiContext!.getAtomicServiceBar();
-        await CommonFunc.sleep(2000);
-        if (atomicServiceBar != undefined) {
-          hilog.info(0x0000, 'testTag', 'Get AtomServiceBar Successfully.');
-          atomicServiceBar.setTitleFontStyle(FontStyle.Normal);
-          expect(true).assertTrue();
-        } else {
-          // no support AtomServiceBar
-          expect(atomicServiceBar ==undefined).assertTrue();
-        }
-      } catch(err) {
-        expect().assertFail()
-        console.info('ArkuiContext_static_0500  '+ JSON.stringify(err));
-      }
-      done();
+      setTimeout(()=>{
+        waitForCompletion(async () => {
+          try{
+            let atomicServiceBar: Nullable<AtomicServiceBar> = uiContext!.getAtomicServiceBar();
+            await CommonFunc.sleep(2000);
+            if (atomicServiceBar != undefined) {
+              hilog.info(0x0000, 'testTag', 'Get AtomServiceBar Successfully.');
+              atomicServiceBar.setTitleFontStyle(FontStyle.Normal);
+              expect(true).assertTrue();
+            } else {
+              // no support AtomServiceBar
+              expect(atomicServiceBar ==undefined).assertTrue();
+            }
+          } catch(err) {
+            expect().assertFail()
+            console.info('ArkuiContext_static_0500  '+ JSON.stringify(err));
+          }
+          done();
+        })
+      },500)
     });
 
     
@@ -192,23 +204,26 @@ it('ArkuiContext_static_0500', Level.LEVEL0, async (done: () => void): Promise<v
      */
 it('ArkuiContext_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkuiContext_static_0600 START');
-      await CommonFunc.sleep(500);
-      try{
-        let atomicServiceBar: Nullable<AtomicServiceBar> = uiContext!.getAtomicServiceBar();
-        await CommonFunc.sleep(2000);
-        if (atomicServiceBar != undefined) {
-          hilog.info(0x0000, 'testTag', 'Get AtomServiceBar Successfully.');
-          atomicServiceBar.setIconColor(0x12345678);
-          expect(true).assertTrue();
-        }  else {
-          // no support AtomServiceBar
-          expect(atomicServiceBar ==undefined).assertTrue();
-        }
-      } catch(err) {
-        expect().assertFail()
-        console.info('ArkuiContext_static_0600  '+ JSON.stringify(err));
-      }
-      done();
+      setTimeout(()=>{
+        waitForCompletion(async () => {
+          try{
+            let atomicServiceBar: Nullable<AtomicServiceBar> = uiContext!.getAtomicServiceBar();
+            await CommonFunc.sleep(2000);
+            if (atomicServiceBar != undefined) {
+              hilog.info(0x0000, 'testTag', 'Get AtomServiceBar Successfully.');
+              atomicServiceBar.setIconColor(0x12345678);
+              expect(true).assertTrue();
+            }  else {
+              // no support AtomServiceBar
+              expect(atomicServiceBar ==undefined).assertTrue();
+            }
+          } catch(err) {
+            expect().assertFail()
+            console.info('ArkuiContext_static_0600  '+ JSON.stringify(err));
+          }
+          done();
+        })
+      },500)
     });
 
     
@@ -221,27 +236,30 @@ it('ArkuiContext_static_0600', Level.LEVEL0, async (done: () => void): Promise<v
      */
 it('ArkuiContext_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkuiContext_static_0700 START');
-      await CommonFunc.sleep(500);
-      try{
-        let atomicServiceBar: Nullable<AtomicServiceBar> = uiContext!.getAtomicServiceBar();
-        await CommonFunc.sleep(2000);
-        if (atomicServiceBar != undefined) {
-          hilog.info(0x0000, 'testTag', 'Get AtomServiceBar Successfully.');
-          uiContext!.setKeyboardAvoidMode(KeyboardAvoidMode.RESIZE);
-          let keyboardAvoidMode:KeyboardAvoidMode = uiContext!.getKeyboardAvoidMode();
-          expect(keyboardAvoidMode != null).assertTrue();
-          uiContext!.setKeyboardAvoidMode(KeyboardAvoidMode.OFFSET);
-          let keyboardAvoidMode2:KeyboardAvoidMode = uiContext!.getKeyboardAvoidMode();
-          expect(keyboardAvoidMode2 != null).assertTrue();
-        }  else {
-          // no support AtomServiceBar
-          expect(atomicServiceBar ==undefined).assertTrue();
-        }
-      } catch(err) {
-        expect().assertFail()
-        console.info('ArkuiContext_static_0700  '+ JSON.stringify(err));
-      }
-      done();
+      setTimeout(()=>{
+        waitForCompletion(async () => {
+          try{
+            let atomicServiceBar: Nullable<AtomicServiceBar> = uiContext!.getAtomicServiceBar();
+            await CommonFunc.sleep(2000);
+            if (atomicServiceBar != undefined) {
+              hilog.info(0x0000, 'testTag', 'Get AtomServiceBar Successfully.');
+              uiContext!.setKeyboardAvoidMode(KeyboardAvoidMode.RESIZE);
+              let keyboardAvoidMode:KeyboardAvoidMode = uiContext!.getKeyboardAvoidMode();
+              expect(keyboardAvoidMode != null).assertTrue();
+              uiContext!.setKeyboardAvoidMode(KeyboardAvoidMode.OFFSET);
+              let keyboardAvoidMode2:KeyboardAvoidMode = uiContext!.getKeyboardAvoidMode();
+              expect(keyboardAvoidMode2 != null).assertTrue();
+            }  else {
+              // no support AtomServiceBar
+              expect(atomicServiceBar ==undefined).assertTrue();
+            }
+          } catch(err) {
+            expect().assertFail()
+            console.info('ArkuiContext_static_0700  '+ JSON.stringify(err));
+          }
+          done();
+        })
+      },500)
     })
   })
 }

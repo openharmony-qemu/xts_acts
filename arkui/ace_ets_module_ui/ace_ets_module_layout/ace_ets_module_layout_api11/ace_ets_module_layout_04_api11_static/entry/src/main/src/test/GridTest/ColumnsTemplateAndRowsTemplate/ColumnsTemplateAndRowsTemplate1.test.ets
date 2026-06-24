@@ -85,8 +85,8 @@ export default function ColumnsTemplateAndRowsTemplate1() {
         await CommonFunc.sleep(2000);
 
         console.log('get Initial value')
-        let GridItem_01: RectValue = await CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1' + '_GridItem_01');
-        let Grid_1: RectValue = await CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1' + '_Grid_1');
+        let GridItem_01: RectValue = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_GridItem_01');
+        let Grid_1: RectValue = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_Grid_1');
 
         console.log('assert position')
         console.log('GridItem_01.left' + GridItem_01.left)
@@ -125,8 +125,8 @@ export default function ColumnsTemplateAndRowsTemplate1() {
         await CommonFunc.sleep(1000);
 
         console.log('get Initial value')
-        let GridItem_01: RectValue = await CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1' + '_GridItem_01');
-        let Grid_1: RectValue = await CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1' + '_Grid_1');
+        let GridItem_01: RectValue = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_GridItem_01');
+        let Grid_1: RectValue = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_Grid_1');
 
         console.log('assert position')
 
@@ -153,8 +153,8 @@ export default function ColumnsTemplateAndRowsTemplate1() {
       })
       await CommonFunc.sleep(2000);
       console.log('get Initial value')
-      let GridItem_01: RectValue = await CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1' + '_GridItem_01');
-      let Grid_1: RectValue = await CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1' + '_Grid_1');
+      let GridItem_01: RectValue = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_GridItem_01');
+      let Grid_1: RectValue = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_Grid_1');
 
       console.log('assert position')
       console.log('GridItem_01.left' + GridItem_01.left)
@@ -192,8 +192,8 @@ export default function ColumnsTemplateAndRowsTemplate1() {
         await CommonFunc.sleep(2000);
 
         console.log('get Initial value')
-        let GridItem_01: RectValue = await CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1' + '_GridItem_01');
-        let Grid_1: RectValue = await CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1' + '_Grid_1');
+        let GridItem_01: RectValue = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_GridItem_01');
+        let Grid_1: RectValue = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_Grid_1');
 
         console.log('assert position')
         console.log('GridItem_01.left' + GridItem_01.left)
@@ -230,8 +230,8 @@ export default function ColumnsTemplateAndRowsTemplate1() {
       await CommonFunc.sleep(2000);
 
       console.log('get Initial value')
-      let GridItem_01: RectValue = await CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1' + '_GridItem_01');
-      let Grid_1: RectValue = await CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1' + '_Grid_1');
+      let GridItem_01: RectValue = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_GridItem_01');
+      let Grid_1: RectValue = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_Grid_1');
 
       console.log('assert position')
       console.log('GridItem_01.left' + GridItem_01.left)
@@ -266,8 +266,8 @@ export default function ColumnsTemplateAndRowsTemplate1() {
       await CommonFunc.sleep(2000);
 
       console.log('SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_0700 get Initial value')
-      let GridItem_01: RectValue = await CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1' + '_GridItem_01');
-      let Grid_1: RectValue = await CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1' + '_Grid_1');
+      let GridItem_01: RectValue = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_GridItem_01');
+      let Grid_1: RectValue = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplate1_Grid_1');
 
 
       console.log('SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_static_0700 assert size')

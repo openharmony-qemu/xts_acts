@@ -27,9 +27,9 @@ let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
-async function expectEvent(data: BasePageConfig, event: string) {
-  let referenceComponent = await Utils.getComponentByKey(data.pageConfig.referenceComponentKey);
-  await Utils.sleep(2000)
+function expectEvent(data: BasePageConfig, event: string) {
+  let referenceComponent = Utils.getComponentByKey(data.pageConfig.referenceComponentKey);
+  waitForCompletion(async ()=>{await Utils.sleep(2000)})
   console.info(JSON.stringify(referenceComponent) + ' verify onHover11.')
   if (isEnabledTrue(data)) {
     console.info('isEnabledTrue == true -> ' + referenceComponent.getElement('$attrs').getString('content'))
@@ -218,7 +218,7 @@ export default function enabledTest() {
       await Utils.sleep(2000);
 
       if ('' !=
-      (await Utils.getComponentByKey(data.pageConfig.referenceComponentKey)).getElement('$attrs').getString('content')) {
+      Utils.getComponentByKey(data.pageConfig.referenceComponentKey).getElement('$attrs').getString('content')) {
         console.info('[' + data.caseTag + '] reset status.');
         await Utils.sleep(1000);
       }
@@ -226,7 +226,7 @@ export default function enabledTest() {
       if (data.testValue.describe.indexOf('OnClick') >= 0) {
         //Verify onClick
         console.info('[' + data.caseTag + '] verify onClick.');
-        let clickResult = await Utils.performClick(data.pageConfig.componentKey!);
+        let clickResult = Utils.performClick(data.pageConfig.componentKey!);
         await Utils.sleep(2000);
         console.info('[' + data.pageConfig.componentKey + '] data.pageConfig.componentKey.');
         console.info('[' + clickResult + '] clickResult');
@@ -236,14 +236,14 @@ export default function enabledTest() {
           //After selecting, need to click again to close the dropdown box.
           await Utils.sleep(2000);
           console.log('test before ' + data)
-          await expectEvent(data, 'onClick');
+          expectEvent(data, 'onClick');
           console.log('test after ' + data)
-          await Utils.performClick(data.pageConfig.componentKey!);
+          Utils.performClick(data.pageConfig.componentKey!);
           await Utils.sleep(2000);
         } else {
           console.log("=================== " + "onClick")
           await Utils.sleep(1000);
-          await expectEvent(data, 'onClick');
+          expectEvent(data, 'onClick');
         }
       } else if (data.testValue.describe.indexOf('OnFocus') >= 0) {
         //Verify onFocus
@@ -254,7 +254,7 @@ export default function enabledTest() {
         focusResult = Utils.requestFocus(data.pageConfig.componentKey!);
         expect(focusResult).assertEqual(isEnabledTrue(data));
         await Utils.sleep(1000);
-        await expectEvent(data, 'onFocus');
+        expectEvent(data, 'onFocus');
       } else if (data.testValue.describe.indexOf('OnBlur') >= 0) {
         //Verify onBlur
         console.info('[' + data.caseTag + '] verify onBlur.');
@@ -276,7 +276,7 @@ export default function enabledTest() {
         await Utils.sleep(1000);
 
         console.log('Test117  ' + JSON.stringify(data))
-        await expectEvent(data, 'onBlur');
+        expectEvent(data, 'onBlur');
       } else if (data.testValue.describe.indexOf('OnHover') >= 0) {
         //Verify onHover
         console.info('[' + data.caseTag + '] verify onHover.');
@@ -287,7 +287,7 @@ export default function enabledTest() {
         expect(hoverResult).assertEqual(true);
         await Utils.sleep(1000);
         console.info('[' + data + '] verify onHover11.')
-        await expectEvent(data, 'onHover');
+        expectEvent(data, 'onHover');
       } else if (data.testValue.describe.indexOf('OnMouse') >= 0) {
         //Verify onMouse
         console.info('[' + data.caseTag + '] verify onMouse.');
@@ -295,12 +295,12 @@ export default function enabledTest() {
           , MouseButton.Left, MouseAction.Press);
         expect(mouseResult).assertEqual(true);
         await Utils.sleep(1000);
-        await expectEvent(data, 'onMouse');
+        expectEvent(data, 'onMouse');
       }
 
       //Verify enabled value.
       console.info('[' + data.caseTag + '] Verify enabled value.');
-      expect((await Utils.getComponentByKey(data.pageConfig.componentKey!)).getElement('$attrs').getBoolean('enabled'))
+      expect(Utils.getComponentByKey(data.pageConfig.componentKey!).getElement('$attrs').getBoolean('enabled'))
         .assertEqual(data.testValue.expectValue);
     })
   })

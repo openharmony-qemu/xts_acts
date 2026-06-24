@@ -14,7 +14,7 @@ export default function ArrayBlockingQueueStressTest(): void {
      * @tc.level LEVEL1
      */
     it("Array_Blocking_Queue_Push_Blocking_When_Full_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      (): void => {
+      async (): Promise<void> => {
         let queue: containers.ArrayBlockingQueue<number> = new containers.ArrayBlockingQueue<number>(1);
         queue.push(1);
 
@@ -27,7 +27,7 @@ export default function ArrayBlockingQueueStressTest(): void {
         let pushPromise: Promise<Any> = taskpool.execute(pushTask);
 
         queue.pop();
-        let pushValue: number = pushPromise.awaitSync() as number;
+        let pushValue: number = await pushPromise as number
 
         expect(pushValue).assertEqual(999);
         expect(queue.size).assertEqual(1);
@@ -54,7 +54,7 @@ export default function ArrayBlockingQueueStressTest(): void {
 
         queue.push(888);
 
-        let popValue: number = popPromise.awaitSync() as number;
+        let popValue: number = waitForCompletion(() => popPromise) as number;
 
         expect(popValue).assertEqual(888);
       });

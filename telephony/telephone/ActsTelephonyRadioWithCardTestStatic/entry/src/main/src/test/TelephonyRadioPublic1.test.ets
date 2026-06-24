@@ -293,8 +293,8 @@ export default function TelephonyRadioPublic1Static() {
         let caseName: string = 'testTelephonyRadioGetRadioTech_static_0700';
         hilog.info(domain, tag, `${caseName} test start`);
         try {
-          try {
-            let data = await sim.hasSimCard(SLOT_0);
+          sim.hasSimCard(SLOT_0, (err: BusinessError<void> | null, data: boolean | undefined) => {
+            waitForCompletion(async () => {
             if (data === true) {
               try {
                 let data = await radio.getRadioTech(SLOT_0);
@@ -315,9 +315,8 @@ export default function TelephonyRadioPublic1Static() {
               hilog.info(domain, tag, `${caseName} test end`);
               done();
             }
-          } catch (err) {
-            console.error('hasSimCard failed: ' + err);
-          }
+          })
+          });
         } catch (error) {
           let err = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, catch: err->${JSON.stringify(err)}`);

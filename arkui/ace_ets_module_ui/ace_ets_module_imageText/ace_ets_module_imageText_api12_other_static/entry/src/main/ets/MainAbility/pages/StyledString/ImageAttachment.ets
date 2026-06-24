@@ -47,13 +47,13 @@ struct styled_string_imageAttachment {
   private getPixmapFromMedia(resource: Resource) {
     let unit8Array = this.getUIContext().getHostContext()?.resourceManager?.getMediaContent(resource.id)
     let data: ArrayBuffer | undefined;
-    (async ()=>{ data = (await unit8Array!).buffer.slice(0, (await unit8Array!).buffer.byteLength); })().awaitSync()
+    waitForCompletion(async ()=>{ data = (await unit8Array!).buffer.slice(0, (await unit8Array!).buffer.byteLength); })
     let imageSource = image.createImageSource(data as ArrayBuffer)!
     let createPixelMap: image.PixelMap | undefined;
-    (async ()=>{
+    waitForCompletion(async ()=>{
       createPixelMap = ( await imageSource.createPixelMap({ desiredPixelFormat: image.PixelMapFormat.RGBA_8888 }))!;
       await imageSource.release();
-    })().awaitSync()
+    })
     return createPixelMap as image.PixelMap;
   }
 

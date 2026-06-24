@@ -35,7 +35,7 @@ const uiContext = new UIContext();
 export default function dragIsSystem() {
   describe('dragIsSystem', () => {
 
-    UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility").awaitSync()
+    waitForCompletion(async ()=>{await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")})
     
 
     const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!

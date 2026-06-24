@@ -81,7 +81,7 @@ async function clickButtonDriver(){
 
 }
 async function startAbility(caseName: string, context: common.UIAbilityContext, options?: StartOptions) : Promise<window.WindowStage> {
-  
+  return new Promise<window.WindowStage>((resolve, reject) => {
     let want: Want = {
       bundleName: "com.example.actswindowtest.static",
       abilityName: 'StartAbility'
@@ -99,10 +99,10 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
         hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
       });
     }
-    await Utils.msSleep(1000)
+    waitForCompletion(async () => {await Utils.msSleep(1000)})
     let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
-    return windowStageStart;
-  
+    resolve(windowStageStart);
+  })
 }
 
 async function terminateAbility(caseName: string) {
@@ -2626,7 +2626,8 @@ export default function DisplayTest():void {
             }).then(async (displayId: Long) => {
                 console.log(caseName + 'createVirtualScreen success');
                 await display.makeUnique(displayId);
-                await display.makeUnique(displayId).then(async () => {
+                display.makeUnique(displayId).then(() => {
+                    waitForCompletion(async () => {
                     console.log(caseName + 'succeeded in makeUnique');
                     let options: StartOptions = {
                         displayId: displayId
@@ -2640,6 +2641,7 @@ export default function DisplayTest():void {
                     console.log(caseName + 'setWindowFocusable true ssuccess');
                     await terminateAbility(caseName);
                     done();
+                    })
                 }).catch(async (err: Error) => {
                     console.error(caseName + 'failed in makeUnique, err : ' + err+ err.code);
                     if (err.code == 801) {

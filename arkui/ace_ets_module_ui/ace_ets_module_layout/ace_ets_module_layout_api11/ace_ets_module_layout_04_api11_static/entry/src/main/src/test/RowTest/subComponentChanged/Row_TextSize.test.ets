@@ -81,18 +81,18 @@ export default function row_TextSizeTest() {
      */
 it('testRowTextSizeHeight_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testRowTextSizeHeight_static_01] START');
-      let secondText: RectValue = await CommonFunc.getComponentRect('Row_TextSize2');
+      let secondText: RectValue = CommonFunc.getComponentRect('Row_TextSize2');
       let secondTextTop: number = secondText.top;
       let secondTextLeft: number = secondText.left;
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
         name: 'height', value: 130
       });
       await CommonFunc.sleep(3000);
-      let firstText: RectValue = await CommonFunc.getComponentRect('Row_TextSize1');
-      secondText = await CommonFunc.getComponentRect('Row_TextSize2');
-      let thirdText: RectValue = await CommonFunc.getComponentRect('Row_TextSize3');
-      let rowContainer: RectValue = await CommonFunc.getComponentRect('Row_TextSize' + '_Container01');
-      let rowContainerStrJson = inspector.getInspectorByKey('Row_TextSize' + '_Container01');
+      let firstText: RectValue = CommonFunc.getComponentRect('Row_TextSize1');
+      secondText = CommonFunc.getComponentRect('Row_TextSize2');
+      let thirdText: RectValue = CommonFunc.getComponentRect('Row_TextSize3');
+      let rowContainer: RectValue = CommonFunc.getComponentRect('Row_TextSize_Container01');
+      let rowContainerStrJson = inspector.getInspectorByKey('Row_TextSize_Container01');
   let obj = JSON.parseJsonElement(rowContainerStrJson);
   expect(obj.getString('$type')).assertEqual('Row');
 
@@ -133,18 +133,18 @@ it('testRowTextSizeHeight_static_01', Level.LEVEL0, async (done: () => void): Pr
      */
 it('testRowTextSizeWidth_static_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testRowTextSizeWidth_static_02] START');
-      let secondText: RectValue = await CommonFunc.getComponentRect('Row_TextSize2');
+      let secondText: RectValue = CommonFunc.getComponentRect('Row_TextSize2');
       let secondTextTop: number = secondText.top;
       let secondTextLeft: number = secondText.left;
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
         name: 'width', value: 130
       });
       await CommonFunc.sleep(3000);
-      let firstText: RectValue = await CommonFunc.getComponentRect('Row_TextSize1');
-      secondText = await CommonFunc.getComponentRect('Row_TextSize2');
-      let thirdText: RectValue = await CommonFunc.getComponentRect('Row_TextSize3');
-      let rowContainer: RectValue = await CommonFunc.getComponentRect('Row_TextSize' + '_Container01');
-      let rowContainerStrJson = inspector.getInspectorByKey('Row_TextSize' + '_Container01');
+      let firstText: RectValue = CommonFunc.getComponentRect('Row_TextSize1');
+      secondText = CommonFunc.getComponentRect('Row_TextSize2');
+      let thirdText: RectValue = CommonFunc.getComponentRect('Row_TextSize3');
+      let rowContainer: RectValue = CommonFunc.getComponentRect('Row_TextSize_Container01');
+      let rowContainerStrJson = inspector.getInspectorByKey('Row_TextSize_Container01');
 
   let obj = JSON.parseJsonElement(rowContainerStrJson);
   expect(obj.getString('$type')).assertEqual('Row');

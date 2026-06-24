@@ -1083,7 +1083,8 @@ export default function AtomicsTest() {
           }
           for (let i = 0; i < taskCount; i++) {
             notifyTasks.push(new Promise<void>((resolve, reject) => {
-              taskpool.execute(() => {
+              waitForCompletion(async () => {
+                await taskpool.execute(() => {
                   Atomics.add(readyCounter, 0, 1);
                   setTimeout(() => {
                     const newValue = BigInt(i + 1);
@@ -1092,7 +1093,8 @@ export default function AtomicsTest() {
                     Atomics.store(sharedArray, 0, 1n);
                     resolve(undefined);
                   }, 500);
-                }).awaitSync()
+                });
+              })
             }));
           }
           while (Atomics.load(readyCounter, 0) < taskCount * 2) {

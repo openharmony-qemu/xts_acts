@@ -1647,28 +1647,30 @@ export default function AudioHapticTest() {
       audioHapticManager.setStreamUsage(id, usage);
       let options:audioHaptic.AudioHapticPlayerOptions = {muteAudio:false, muteHaptics:false};
       let audioHapticPlayer:audioHaptic.AudioHapticPlayer;
-      await audioHapticManager.createPlayer(id, options).then(async (value:audioHaptic.AudioHapticPlayer | null) => {
-        console.info(`Create Success`);
-        audioHapticPlayer = value as audioHaptic.AudioHapticPlayer;
-        await audioHapticPlayer.start().then(() => {
+      await audioHapticManager.createPlayer(id, options).then((value:audioHaptic.AudioHapticPlayer | null) => {
+        waitForCompletion(async () => {
           console.info(`Create Success`);
-        }).catch((err: Error) => {
-          console.error(`fail to start playing, ${err}`);
-          expect(false).assertTrue();
-        });
-        await sleep(1000);
-        await audioHapticPlayer.stop().then(()=>{
-          console.info(`promise return to indicate stop successfully`);
-        }).catch((err: Error) => {
-          console.error(`fail to start playing, ${err}`);
-          expect(false).assertTrue();
-        });
-        await audioHapticPlayer.release().then(()=>{
-          console.info(`release player successfully`);
-        }).catch((err: Error) => {
-          console.error(`fail to start playing, ${err}`);
-          expect(false).assertTrue();
-        });
+          audioHapticPlayer = value as audioHaptic.AudioHapticPlayer;
+          await audioHapticPlayer.start().then(() => {
+            console.info(`Create Success`);
+          }).catch((err: Error) => {
+            console.error(`fail to start playing, ${err}`);
+            expect(false).assertTrue();
+          });
+          await sleep(1000);
+          await audioHapticPlayer.stop().then(()=>{
+            console.info(`promise return to indicate stop successfully`);
+          }).catch((err: Error) => {
+            console.error(`fail to start playing, ${err}`);
+            expect(false).assertTrue();
+          });
+          await audioHapticPlayer.release().then(()=>{
+            console.info(`release player successfully`);
+          }).catch((err: Error) => {
+            console.error(`fail to start playing, ${err}`);
+            expect(false).assertTrue();
+          });
+        })
       }).catch((err: Error) => {
         console.error(`fail to start playing, ${err}`);
         expect(false).assertTrue();

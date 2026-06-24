@@ -790,11 +790,14 @@ export default function abilityTest() {
       let pasteData = pasteboard.createData('string', ARRAY_BUFFER);
       let systemPasteBoard = pasteboard.getSystemPasteboard();
       try {
-        await systemPasteBoard.setData(pasteData);
-        let hasData = await systemPasteBoard.hasData();
-        let data = systemPasteBoard.getDataSync();
-        expect(hasData).assertTrue();
-        done();
+        systemPasteBoard.setData(pasteData, (err) => {
+          waitForCompletion(async () => {
+            let hasData = await systemPasteBoard.hasData();
+            let data = systemPasteBoard.getDataSync();
+            expect(hasData).assertTrue();
+            done();
+          })
+        });
       } catch (err) {
         err = err as BusinessError;
         console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
@@ -815,10 +818,13 @@ export default function abilityTest() {
       hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_SystemPasteboard_Static_0020----------");
       let systemPasteBoard = pasteboard.getSystemPasteboard();
       try {
-        await systemPasteBoard.clearData();
-        let hasData = await systemPasteBoard.hasData();
-        expect(hasData).assertFalse();
-        done();
+        systemPasteBoard.clearData((err) => {
+          waitForCompletion(async () => {
+            let hasData = await systemPasteBoard.hasData();
+            expect(hasData).assertFalse();
+            done();
+          })
+        });
       } catch (err) {
         err = err as BusinessError;
         console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);

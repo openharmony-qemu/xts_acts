@@ -82,9 +82,9 @@ it('SUB_ACE_RelativeContainer_AnchorPoint_Offset_TEST_static_0100', Level.LEVEL0
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let RelativeContainer_AnchorPoint_Offset_bt1: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Offset' + '_bt1');
-      let RelativeContainer_AnchorPoint_Offset_tx2: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Offset' + '_tx2');
-      let RelativeContainer_AnchorPoint_Offset_r1: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Offset' + '_r1');
+      let RelativeContainer_AnchorPoint_Offset_bt1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Offset_bt1');
+      let RelativeContainer_AnchorPoint_Offset_tx2: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Offset_tx2');
+      let RelativeContainer_AnchorPoint_Offset_r1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Offset_r1');
 
 
       console.log('assert position')

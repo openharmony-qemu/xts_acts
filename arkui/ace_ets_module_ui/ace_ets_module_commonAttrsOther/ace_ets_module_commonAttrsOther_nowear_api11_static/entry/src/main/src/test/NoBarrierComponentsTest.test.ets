@@ -82,18 +82,21 @@ export default function noBarrierComponentsTest() {
      */
 it('noBarrierComponents025_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('noBarrierComponents025 START');
-      await CommonFunc.sleep(500);
-      try {
-        let strJson = inspector.getInspectorByKey("Select");
-        await CommonFunc.sleep(1000);
-        console.info(' START  :' + JSON.stringify(strJson));
-        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Select");
-        console.info('noBarrierComponents025 END ');
-      } catch (err) {
-        expect().assertFail()
-        console.info('noBarrierComponents025 ERR  ' + JSON.stringify(err));
-      }
-      done();
+      setTimeout(() => {
+        waitForCompletion(async () => {
+          try {
+            let strJson = inspector.getInspectorByKey("Select");
+            await CommonFunc.sleep(1000);
+            console.info(' START  :' + JSON.stringify(strJson));
+            expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Select");
+            console.info('noBarrierComponents025 END ');
+          } catch (err) {
+            expect().assertFail()
+            console.info('noBarrierComponents025 ERR  ' + JSON.stringify(err));
+          }
+          done();
+        })
+      }, 500)
     });
 
     

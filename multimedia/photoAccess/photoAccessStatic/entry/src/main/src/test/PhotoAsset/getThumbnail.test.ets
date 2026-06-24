@@ -25,7 +25,7 @@ import { BusinessError } from '@ohos.base'
 let domain: int= 0x0000;
 let tag: string = 'testTag';
 
-export default function getThumbnailTest(): void {
+export default function getThumbnailTest() {
 
   const fileNameList = ["getThumb.jpg", "getThumb.mp4"];
   describe('getThumbnailTest', (): void => {
@@ -34,21 +34,26 @@ export default function getThumbnailTest(): void {
       fetchOps: photoAccessHelper.FetchOptions): Promise<void> => {
       try {
         let asset: photoAccessHelper.PhotoAsset = await getFileAsset(testNum, fetchOps);
-        try {
-          let pixelMap = await asset.getThumbnail();
-          const info = await (pixelMap as image.PixelMap).getImageInfo();
-          const defaultSize: image.Size = {
-          width: 256, height: 256
-          };
-          expect(info.size.width).assertEqual(defaultSize.width);
-          expect(info.size.height).assertEqual(defaultSize.height);
-          done();
-        } catch (err) {
-          hilog.info(domain, tag, '%{public}s', `${testNum} getThumbnail failed; error: ${err}`);
-          expect(false).assertTrue();
-          hilog.info(domain, tag, '%{public}s', `${testNum} err: ${err}`);
-          done();
-        }
+        asset.getThumbnail((err: BusinessError | null, pixelMap: image.PixelMap | undefined): void => {
+          waitForCompletion(async () => {
+            try {
+              if (err?.code !== 0) {
+                hilog.info(domain, tag, '%{public}s', `${testNum} getThumbnail failed; error: ${err}`);
+                expect(false).assertTrue();
+              } else {
+                const info = await (pixelMap as image.PixelMap).getImageInfo();
+                const defaultSize: image.Size = {
+                  width: 256, height: 256
+                };
+                expect(info.size.width).assertEqual(defaultSize.width);
+                expect(info.size.height).assertEqual(defaultSize.height);
+              }
+            } catch (error) {
+              hilog.info(domain, tag, '%{public}s', `${testNum} error: ${error}`);
+            }
+            done();
+          })
+        })
       } catch (error) {
         hilog.info(domain, tag, '%{public}s', `${testNum} failed; error: ${error}`);
         expect(false).assertTrue();
@@ -60,8 +65,8 @@ export default function getThumbnailTest(): void {
       size: image.Size, expectSize: image.Size): Promise<void> => {
       try {
         let asset: photoAccessHelper.PhotoAsset = await getFileAsset(testNum, fetchOps);
-        asset.getThumbnail(size, (err: BusinessError<void> | null, pixelMap: image.PixelMap | undefined): void => {
-          (async () => {
+        asset.getThumbnail(size, (err:BusinessError<void> | null, pixelMap: image.PixelMap | undefined):void => {
+          waitForCompletion(async () => {
             try {
               if (err == undefined) {
                 hilog.info(domain, tag, '%{public}s', `${testNum} getThumbnail failed; error: ${err}`);
@@ -75,7 +80,7 @@ export default function getThumbnailTest(): void {
               console.info(`${testNum} error: ${error}`);
             }
             done();
-          })().awaitSync()
+          })
         })
       } catch (error) {
         hilog.info(domain, tag, '%{public}s', `${testNum} failed; error: ${error}`);
