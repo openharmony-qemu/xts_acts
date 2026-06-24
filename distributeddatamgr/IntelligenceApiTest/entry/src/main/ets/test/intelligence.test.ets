@@ -1223,7 +1223,8 @@ export default function intelligenceTest() {
      */
     it("intelligenceApiTest3500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info(TAG + "intelligenceApiTest3500 start");
-      intelligence.getSupportedCloudModel()
+      if (currentDeviceIsPc) {
+        intelligence.getSupportedCloudModel()
         .then((data: Array<intelligence.CloudModelInfo>) => {
           console.info(TAG + "getSupportedCloudModel result: " + data);
           let ret = false;
@@ -1238,6 +1239,34 @@ export default function intelligenceTest() {
           expect().assertFail();
           done();
         })
+      } else if (currentDeviceIsPhoneOrTablet) {
+        intelligence.getSupportedCloudModel()
+        .then((data: Array<intelligence.CloudModelInfo>) => {
+          console.info(TAG + "getSupportedCloudModel result: " + data);
+          let ret = false;
+          if (data != null && Array.isArray(data)) {
+            ret = true;
+          }
+          expect(ret).assertEqual(true);
+          done();
+        })
+        .catch((err: BusinessError) => {
+          console.info(TAG + "getSupportedCloudModel failed: " + err.code);
+          expect().assertFail();
+          done();
+        })
+      } else {
+        intelligence.getSupportedCloudModel()
+        .then((data: Array<intelligence.CloudModelInfo>) => {
+          expect().assertFail();
+          done();
+        })
+        .catch((err: BusinessError) => {
+          console.info(TAG + "getSupportedCloudModel result: " + err.code);
+          expect(err.code).assertEqual(801);
+          done();
+        })
+      }
     })
 
     /**
@@ -1250,7 +1279,8 @@ export default function intelligenceTest() {
      */
     it("intelligenceApiTest3600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "intelligenceApiTest3600 start");
-      intelligence.getSupportedCloudModel()
+      if (currentDeviceIsPc) {
+        intelligence.getSupportedCloudModel()
         .then((data: Array<intelligence.CloudModelInfo>) => {
           console.info(TAG + "getSupportedCloudModel result: " + JSON.stringify(data));
           if (data && data.length > 0) {
@@ -1274,6 +1304,43 @@ export default function intelligenceTest() {
           expect().assertFail();
           done();
         })
+      } else if (currentDeviceIsPhoneOrTablet) {
+        intelligence.getSupportedCloudModel()
+        .then((data: Array<intelligence.CloudModelInfo>) => {
+          console.info(TAG + "getSupportedCloudModel result: " + JSON.stringify(data));
+          if (data && data.length > 0) {
+            let cloudModelInfo: intelligence.CloudModelInfo = data[0];
+            let hasModelType = cloudModelInfo.modelType != undefined && typeof cloudModelInfo.modelType === 'string';
+            expect(hasModelType).assertEqual(true);
+            if (cloudModelInfo.modelVersionCode) {
+              let hasVersionCode = typeof cloudModelInfo.modelVersionCode === 'string';
+              console.info(TAG + "modelVersionCode result: " + cloudModelInfo.modelVersionCode);
+              expect(hasVersionCode).assertEqual(true);
+            }
+            done();
+          } else {
+            console.info(TAG + "CloudModelInfo array is empty");
+            expect().assertFail();
+            done();
+          }
+        })
+        .catch((err: BusinessError) => {
+          console.info(TAG + "getSupportedCloudModel failed: " + err.code);
+          expect().assertFail();
+          done();
+        })
+      } else {
+        intelligence.getSupportedCloudModel()
+        .then((data: Array<intelligence.CloudModelInfo>) => {
+          expect().assertFail();
+          done();
+        })
+        .catch((err: BusinessError) => {
+          console.info(TAG + "getSupportedCloudModel result: " + err.code);
+          expect(err.code).assertEqual(801);
+          done();
+        })
+      }
     })
 
     /**
