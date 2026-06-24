@@ -6,6 +6,7 @@
     "MainAbility/pages/SwiperController/SwiperController",
     "MainAbility/pages/navigationNavDestination/navigationNavDestination",
     "MainAbility/pages/toolBarItemDebugLine/toolBarItemDebugLine",
-    "MainAbility/pages/Navigation/NavScrollEffectOptions"
+    "MainAbility/pages/Navigation/NavScrollEffectOptions",
+    "MainAbility/pages/Navigation/navigationMaterial"
   ]
 }
