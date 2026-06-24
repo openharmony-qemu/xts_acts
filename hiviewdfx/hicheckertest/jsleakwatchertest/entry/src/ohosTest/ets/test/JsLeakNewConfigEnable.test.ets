@@ -1538,6 +1538,12 @@ export default function JsLeakNewConfigEnable() {
         done();
       } catch (err) {
         console.error(`SUB_DFX_DFR_jsLeakWatcherNew_Interface_4900 > err code: ${err.code}, err msg: ${err.message}`)
+        console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_4900 fail!");
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_4900 end");
+    })
 
     /**
      * @tc.name   testNewJsLeakWatcher50
