@@ -400,15 +400,18 @@ export default function linkerErrorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_2500
      * @tc.name testLinkerError025
-     * @tc.desc Verify toString default format is name: message
+     * @tc.desc Verify null as name throws ClassCastError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testLinkerError025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err = new LinkerError('CustomLinkerError', 'demo', undefined);
-      let str = err.toString();
-      expect(str).assertEqual('CustomLinkerError: demo');
+      try {
+        let err = new LinkerError(null as Object as String, 'msg', undefined);
+        expect().assertFail();
+      } catch (e) {
+        expect((e as Error).name).assertEqual('ClassCastError');
+      }
     })
 
     /**
@@ -1234,13 +1237,13 @@ export default function linkerErrorTest(): void {
     it('testLinkerError075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err = new LinkerError("StackName1", "msg", { cause: new Error("root") } as ErrorOptions);
       let stack = err.stack as string;
-      let stackLower = stack.toLowerCase();
       expect(stack.length > 0).assertTrue();
-      expect(stack.length > 0).assertTrue();
+      expect(stack.includes('LinkerError')).assertTrue();
 
       let errShort = new LinkerError("A", "b", {});
-      let stackShort = (errShort.stack as string).toLowerCase();
+      let stackShort = errShort.stack as string;
       expect(stackShort.length > 0).assertTrue();
+      expect(stackShort.includes('LinkerError')).assertTrue();
     })
 
     /**
@@ -1375,15 +1378,18 @@ export default function linkerErrorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_8400
      * @tc.name testLinkerError084
-     * @tc.desc Verify cause as Error instance is stored correctly
+     * @tc.desc Verify boolean true as name throws ClassCastError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testLinkerError084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let c = new Error('reason');
-      let err = new LinkerError('msg', { cause: c } as ErrorOptions);
-      expect(err.cause === c).assertTrue();
+      try {
+        let err = new LinkerError(true as Object as String, 'msg', undefined);
+        expect().assertFail();
+      } catch (e) {
+        expect((e as Error).name).assertEqual('ClassCastError');
+      }
     })
 
     /**
@@ -1403,15 +1409,17 @@ export default function linkerErrorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_8600
      * @tc.name testLinkerError086
-     * @tc.desc Verify cause as plain object is stored by reference
+     * @tc.desc Verify LinkerError base class holds subclass instance as cause
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testLinkerError086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cause = new Error('with_code');
-      let err = new LinkerError('msg', { cause: cause } as ErrorOptions);
-      expect(err.cause === cause).assertTrue();
+      let subCause = new LinkerVerificationError('verification failure');
+      let err = new LinkerError('base', { cause: subCause } as ErrorOptions);
+      expect(err.cause === subCause).assertTrue();
+      expect((err.cause as LinkerVerificationError).name).assertEqual('LinkerVerificationError');
+      expect((err.cause as LinkerVerificationError).message).assertEqual('verification failure');
     })
 
     /**
@@ -1443,14 +1451,18 @@ export default function linkerErrorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_8900
      * @tc.name testLinkerError089
-     * @tc.desc Verify null cause is stored as null
+     * @tc.desc Verify null as message throws ClassCastError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testLinkerError089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let err = new LinkerError('msg', {});
-      expect(err.cause === undefined).assertTrue();
+      try {
+        let err = new LinkerError('NullMsg', null as Object as string, {} as ErrorOptions);
+        expect().assertFail();
+      } catch (e) {
+        expect((e as Error).name).assertEqual('ClassCastError');
+      }
     })
 
     /**
@@ -1482,15 +1494,18 @@ export default function linkerErrorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LINKER_ERROR_9200
      * @tc.name testLinkerError092
-     * @tc.desc Verify options with extra properties preserves cause
+     * @tc.desc Verify cause property can be assigned after construction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testLinkerError092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let causeErr = new Error('r');
-      let err = new LinkerError('msg', { cause: causeErr } as ErrorOptions);
-      expect(err.cause === causeErr).assertTrue();
+      let err = new LinkerError('msg');
+      expect(err.cause === undefined).assertTrue();
+      let lateCause = new Error('late assigned');
+      err.cause = lateCause;
+      expect(err.cause === lateCause).assertTrue();
+      expect((err.cause as Error).message).assertEqual('late assigned');
     })
   })
 }
