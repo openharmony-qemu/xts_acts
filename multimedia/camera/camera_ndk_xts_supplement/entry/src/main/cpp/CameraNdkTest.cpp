@@ -593,23 +593,23 @@ napi_value captureGetCameraDevices(napi_env env, napi_callback_info info)
     Camera_DeviceQueryInfo queryInfo0 = {.cameraType = &type0,
                                          .cameraTypeSize = cameraSize,
                                          .cameraPosition = CAMERA_POSITION_FRONT,
-                                         .connectionType = CAMERA_CONNECTION_REMOTE};
+                                         .connectionType = static_cast<Camera_Connection>(-1)};
     Camera_DeviceQueryInfo queryInfo1 = {.cameraType = &type1,
                                          .cameraTypeSize = cameraSize,
                                          .cameraPosition = CAMERA_POSITION_FRONT,
-                                         .connectionType = CAMERA_CONNECTION_REMOTE};
+                                         .connectionType = static_cast<Camera_Connection>(-1)};
     Camera_DeviceQueryInfo queryInfo2 = {.cameraType = &type2,
                                          .cameraTypeSize = cameraSize,
                                          .cameraPosition = CAMERA_POSITION_FRONT,
-                                         .connectionType = CAMERA_CONNECTION_REMOTE};
+                                         .connectionType = static_cast<Camera_Connection>(-1)};
     Camera_DeviceQueryInfo queryInfo3 = {.cameraType = &type3,
                                          .cameraTypeSize = cameraSize,
                                          .cameraPosition = CAMERA_POSITION_FRONT,
-                                         .connectionType = CAMERA_CONNECTION_REMOTE};
+                                         .connectionType = static_cast<Camera_Connection>(-1)};
     Camera_DeviceQueryInfo queryInfo4 = {.cameraType = &type4,
                                          .cameraTypeSize = cameraSize,
                                          .cameraPosition = CAMERA_POSITION_FRONT,
-                                         .connectionType = CAMERA_CONNECTION_REMOTE};
+                                         .connectionType = static_cast<Camera_Connection>(-1)};
     switch (index) {
     case CASE_INDEX_1:
         result = OH_CameraManager_GetCameraDevices(cameraManager, &queryInfo0, &cameraSize, &cameras);
