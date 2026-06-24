@@ -895,7 +895,7 @@ OH_AVErrCode ProcessAndAppendSingleRoi(OH_AVFormat *roiFormat, char **finalRoiSt
     return ret;
 }
 
-OH_AVErrCode VEncAPI11Sample::RebuildAndSetRoiToEncoder(OH_AVFormat **roiFormats,uint32_t count)
+OH_AVErrCode VEncAPI11Sample::RebuildAndSetRoiToEncoder(OH_AVFormat **roiFormats, uint32_t count)
 {
     if (roiFormats == nullptr || count == 0 || venc_ == nullptr) {
         return AV_ERR_INVALID_VAL;

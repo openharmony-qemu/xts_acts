@@ -492,8 +492,8 @@ int VIDEO_HW_ENCODE_ROI_FUNC_017()
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080; //1080
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
-    vEncSample->roiInfo = "0,0-100,100=dqp:-6,slb:1;100,100-200,200=dqp:-6;
-                        200,200-300,300=slb:0;300,300-400,400";
+    vEncSample->roiInfo = "0,0-100,100=dqp:-6,slb:1;100,100-200,200=dqp:-6;"
+                        "200,200-300,300=slb:0;300,300-400,400";
     vEncSample->outDir = OUT_DIR;
     vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
