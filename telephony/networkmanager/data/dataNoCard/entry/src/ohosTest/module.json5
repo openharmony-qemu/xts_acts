@@ -27,6 +27,8 @@
     "requestPermissions": [
       {
         "name": "ohos.permission.GET_NETWORK_INFO"
+      },{
+        "name": "ohos.permission.MANAGE_APN_SETTING"
       }
     ],
     "abilities": [
