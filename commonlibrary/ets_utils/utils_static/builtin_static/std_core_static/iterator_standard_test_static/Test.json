@@ -10,7 +10,7 @@
     },
     "kits": [{
         "test-file-name": [
-            "ActsIteratorStaticTest.hap"
+            "ActsIteratorStaticTest"
         ],
         "type": "AppInstallKit",
         "cleanup-apps": true
