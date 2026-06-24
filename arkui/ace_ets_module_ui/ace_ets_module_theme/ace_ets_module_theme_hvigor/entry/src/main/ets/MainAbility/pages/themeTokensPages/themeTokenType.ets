@@ -119,14 +119,14 @@ struct TextTokenTypePage {
             .onClick((event: ClickEvent) => {
               this.setColor('#ffff0000')
             })
-          Button('number: 0xff0000').id('theme_number_btn')
+          Button('number: 0x0000ff00').id('theme_number_btn')
             .onClick((event: ClickEvent) => {
               this.setColor(0x0000ff00)
             })
         }.width('100%')
 
         Row(){
-          Button('color: Color.Pink').id('theme_color_btn')
+          Button('color: Color.Orange').id('theme_color_btn')
             .onClick((event: ClickEvent) => {
               this.setColor(Color.Orange)
             })
