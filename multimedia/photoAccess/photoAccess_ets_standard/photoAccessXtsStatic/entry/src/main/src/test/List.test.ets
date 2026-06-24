@@ -38,7 +38,6 @@ export default function testsuite(): void {
   getThumbnailStaticTest();
   MediaAssetRequestImageSuppStatic();
   createPhotoAssetTest();
-  getAssetsByPredicatesTest();
   createAssetTest();
   getAlbumsStaticTest();
   getAssetsStaticTest();
@@ -46,4 +45,5 @@ export default function testsuite(): void {
   CommitModifySuppTest();
   MediaAlbumChangeRequestSetAlbumNameStatic();
   singlePhotoAlbumChangeTest();
+  getAssetsByPredicatesTest();
 }
