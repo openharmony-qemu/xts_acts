@@ -20,7 +20,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { Driver, ON } from '@kit.TestKit';
 import settings from '@ohos.settings';
 import type Want from '@ohos.app.ability.Want';
-import { StartOptions, bundleManager } from '@kit.AbilityKit';
+import { StartOptions, bundleManager, AbilityConstant } from '@kit.AbilityKit';
 import display from '@ohos.display';
 import deviceInfo from '@ohos.deviceInfo';
 
@@ -4181,12 +4181,12 @@ export default function windowPCTest() {
                     await sleep(1000);
                     await startAbility(caseName, context!, options);
                     console.info(msgStr + 'Succeeded in start window from split screen.');
-                    console.info(msgStr + `window status: ${windowStatus}`);
+                    console.info(msgStr + `window status: ${finalStatus}`);
                     mainWindow.off('windowStatusChange', callback);
                     console.info(msgStr + 'Succeeded in unregistering windowStatusChange callback.');
                     await terminateAbility(caseName);
                     console.info(msgStr + 'Succeeded in terminating ability.');
-                    expect(windowStatus).assertEqual(window.WindowStatusType.SPLIT_SCREEN);
+                    expect(finalStatus).assertEqual(window.WindowStatusType.SPLIT_SCREEN);
                     done();
                 } catch (exception) {
                     if (mainWindow) {
