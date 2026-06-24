@@ -46,7 +46,7 @@ export default class OpenHarmonyTestRunner implements TestRunner {
             onAbilityCreate: onAbilityCreateCallback,
         };
         abilityDelegator.addAbilityMonitor(lMonitor, addAbilityMonitorCallback);
-        let cmd = 'aa start -d 0 -a com.acts.ace.napinewtest.EntryAbility' + ' -b ' + abilityDelegatorArguments.bundleName;
+        let cmd = 'aa start -d 0 -a TestAbility' + ' -b ' + abilityDelegatorArguments.bundleName;
         let debug = abilityDelegatorArguments.parameters['-D'];
         if (debug === 'true')
         {

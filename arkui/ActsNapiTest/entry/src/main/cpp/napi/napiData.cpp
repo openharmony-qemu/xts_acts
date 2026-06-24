@@ -2,29 +2,32 @@
 #include "common/native_common.h"
 #include <securec.h>
 
-static napi_value napiCreateDate(napi_env env, napi_callback_info info)
+static napi_value IsDate(napi_env env, napi_callback_info info)
 {
-    napi_value createResult = nullptr;
-    double time = 202110181203150;
-    napi_status status = napi_create_date(env, time, &createResult);
-    NAPI_ASSERT(env, status == napi_ok, "napi_create_date success");
-    double getTime = false;
-    napi_get_date_value(env, createResult, &getTime);
+    // 接受一个入参
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    // 调用napi_is_date接口判断给定入参是否为Date数据
     bool result = false;
-    if (time == getTime) {
-        result = true;
+    napi_status status = napi_is_date(env, args[0], &result);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "Node-API napi_is_date fail");
+        return nullptr;
     }
-    napi_value value;
-    NAPI_CALL(env, napi_create_int32(env, result, &value));
-    
-    return value;
+    // 将结果转成napi_value类型返回
+    napi_value returnValue = nullptr;
+    napi_get_boolean(env, result, &returnValue);
+
+    return returnValue;
 }
 
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        DECLARE_NAPI_FUNCTION("napiCreateDate", napiCreateDate),
+        DECLARE_NAPI_FUNCTION("isDate", IsDate),
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

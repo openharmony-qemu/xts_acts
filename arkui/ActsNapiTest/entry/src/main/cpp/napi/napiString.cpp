@@ -2,7 +2,9 @@
 #include "common/native_common.h"
 #include <securec.h>
 
-napi_value createStringUtf8(napi_env env, napi_callback_info info)
+const int NAPI_UTF8_LENGTH = 256；
+
+napi_value CreateStringUtf8(napi_env env, napi_callback_info info)
 {
     napi_status status;
     size_t argc = 1;
@@ -37,7 +39,7 @@ EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        DECLARE_NAPI_FUNCTION("createStringUtf8", createStringUtf8),
+        DECLARE_NAPI_FUNCTION("createStringUtf8", CreateStringUtf8),
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

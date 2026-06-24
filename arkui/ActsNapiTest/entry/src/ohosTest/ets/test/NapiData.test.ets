@@ -36,8 +36,8 @@ export default function dataTest() {
       let TAG = "testNapiData001";
       console.info(`${TAG} START`);
       try {
-        let value = testNapi.napiCreateDate();
-        expect(value).assertEqual(1);
+        let now: Date = new Date();
+        expect(testNapi.isDate(now)).assertTrue();
       } catch (err) {
         console.error(`${TAG} error is ${err} `);
         expect().assertFail();

@@ -14,7 +14,7 @@
  */
 
 import { beforeEach, describe, expect, it , TestType, Size, Level } from "@ohos/hypium"
-import Utils from './Utils'
+import Utils from './Utils';
 import testNapi from 'libnapiBuffer.so';
 
 export default function bufferTest() {
@@ -36,8 +36,7 @@ export default function bufferTest() {
       let TAG = "testNapiBuffer001";
       console.info(`${TAG} START`);
       try {
-        let buffer = testNapi.CreateBuffer();
-        expect(testNapi.IsBuffer(buffer)).assertTrue();
+        expect(testNapi.IsBuffer()).assertTrue();
       } catch (err) {
         console.error(`${TAG} error is ${err} `);
         expect().assertFail();

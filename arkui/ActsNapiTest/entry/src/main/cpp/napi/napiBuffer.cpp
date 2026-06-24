@@ -1,24 +1,22 @@
 #include "napi/native_api.h"
 #include "common/native_common.h"
 #include <securec.h>
+#include <string>
 
 static napi_value IsBuffer(napi_env env, napi_callback_info info)
 {
-    napi_value args[1];
-    size_t argc = 1;
-    if (napi_get_cb_info(env, info, &argc, args, nullptr, nullptr) != napi_ok) {
-        napi_throw_error(env, nullptr, "Failed to parse arguments");
-        return nullptr;
-    }
-    NAPI_ASSERT(env, argc == 1, "The number of arguments provided is incorrect.");
-    napi_value napiBuffer = args[0];
-    bool result;
-    napi_status status = napi_is_buffer(env, napiBuffer, &result);
-    if (status != napi_ok) {
-        napi_throw_error(env, nullptr, "The parameter instance is not of type buffer.");
-    }
-    napi_value returnValue;
-    NAPI_CALL(env, napi_get_boolean(env, result, &returnValue));
+    // 创建一个Buffer对象
+    std::string str = "buffer";
+    napi_value buffer = nullptr;
+    void *bufferPtr = nullptr;
+    napi_create_buffer(env, str.size(), &bufferPtr, &buffer);
+
+    // 调用napi_is_buffer接口判断创建的对象是否为buffer
+    bool result = false;
+    napi_is_buffer(env, buffer, &result);
+    // 将结果返回出去
+    napi_value returnValue = nullptr;
+    napi_get_boolean(env, result, &returnValue);
     return returnValue;
 }
 
@@ -26,7 +24,7 @@ EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        DECLARE_NAPI_FUNCTION("IsBuffer", IsBuffer),
+        DECLARE_NAPI_FUNCTION("isBuffer", IsBuffer),
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
