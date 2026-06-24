@@ -506,7 +506,7 @@ static napi_value Archive_Buffer_Test_Abnormal(napi_env env, napi_callback_info 
 static uint64_t WriteHandler(const void* data, uint64_t size, void* user_data)
 {
     uint8_t* buffer = (uint8_t*)user_data;
-    (void)memcpy_s(buffer, data, size);
+    (void)memcpy(buffer, data, size);
     return size;
 }
 
