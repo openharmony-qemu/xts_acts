@@ -30,6 +30,8 @@
 #include "waterFlow/WaterFlowEmptyTest.cpp"
 #include "TextMarqueeOptions/TextMarqueeOptionsTest.cpp"
 #include "TextMarqueeOptions/ControllerBaseCreatTest.cpp"
+#include "containerPicker/ContainerPickerDisplayedItemCount.cpp"
+#include "containerPicker/ContainerPickerItemHeight.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -247,6 +249,26 @@ static napi_value Init(napi_env env, napi_value exports)
          napi_default, nullptr},
         {"WaterFlowEmptyTest_004", nullptr, WaterFlowEmptyTest_004, nullptr, nullptr, nullptr,
          napi_default, nullptr},
+        {"TestContainerPickerDisplayedItemCount001", nullptr,
+         TestContainerPickerDisplayedItemCount001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestContainerPickerDisplayedItemCount002", nullptr,
+         TestContainerPickerDisplayedItemCount002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestContainerPickerDisplayedItemCount003", nullptr,
+         TestContainerPickerDisplayedItemCount003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestContainerPickerDisplayedItemCount004", nullptr,
+         TestContainerPickerDisplayedItemCount004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestContainerPickerDisplayedItemCount005", nullptr,
+         TestContainerPickerDisplayedItemCount005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestContainerPickerItemHeight001", nullptr,
+         TestContainerPickerItemHeight001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestContainerPickerItemHeight002", nullptr,
+         TestContainerPickerItemHeight002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestContainerPickerItemHeight003", nullptr,
+         TestContainerPickerItemHeight003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestContainerPickerItemHeight004", nullptr,
+         TestContainerPickerItemHeight004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestContainerPickerItemHeight005", nullptr,
+         TestContainerPickerItemHeight005, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");
