@@ -26,7 +26,7 @@ struct ComposeTitleBarV2Example {
   build() {
     Column() {
       Scroll() {
-        Column({ space: 20 }) {
+        Column({ space: 12 }) {
           Text('基本用法 - 仅标题')
             .fontSize(16)
             .fontWeight(FontWeight.Bold)
