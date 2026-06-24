@@ -898,8 +898,8 @@ export default function FontPart4(): void {
           let bounds = path.getBounds();
           expect(bounds !== null && bounds !== undefined).assertTrue();
           if(bounds) {
-            console.info(msg + ' getTextPathWithFallback success, bounds left:' + bounds!.left + ' top:' + bounds!.top
-              + ' right:' + bounds!.right + ' bottom:' + bounds!.bottom);
+            console.info(msg + ' getTextPathWithFallback success, bounds left:' + bounds.left + ' top:' + bounds.top
+              + ' right:' + bounds.right + ' bottom:' + bounds.bottom);
             expect(Math.abs(bounds.left - 4.34) < 0.01).assertTrue();
             expect(Math.abs(bounds.top - 61.95) < 0.01).assertTrue();
             expect(Math.abs(bounds.right - 115.19) < 0.01).assertTrue();
