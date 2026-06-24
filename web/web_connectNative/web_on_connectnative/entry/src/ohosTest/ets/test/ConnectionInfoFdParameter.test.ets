@@ -43,7 +43,7 @@ export default function connectionInfoFdParameterTest() {
       let info: ConnectionInfo = {
         connectionId: 100,
         bundleName: 'com.example.webnative',
-        extensionOrigin: 'https://example.test',
+        extensionOrigin: 'data:text/plain,origin',
         fdRead: 3,
         fdWrite: 4
       };
@@ -63,7 +63,7 @@ export default function connectionInfoFdParameterTest() {
       let info: ConnectionInfo = {
         connectionId: 101,
         bundleName: 'com.example.webnative',
-        extensionOrigin: 'https://example.test',
+        extensionOrigin: 'data:text/plain,origin',
         fdRead: 0,
         fdWrite: 5
       };
@@ -82,7 +82,7 @@ export default function connectionInfoFdParameterTest() {
       let info: ConnectionInfo = {
         connectionId: 102,
         bundleName: 'com.example.webnative',
-        extensionOrigin: 'https://example.test',
+        extensionOrigin: 'data:text/plain,origin',
         fdRead: 6,
         fdWrite: 7
       };
@@ -102,7 +102,7 @@ export default function connectionInfoFdParameterTest() {
       let info: ConnectionInfo = {
         connectionId: 103,
         bundleName: 'com.example.webnative',
-        extensionOrigin: 'https://example.test',
+        extensionOrigin: 'data:text/plain,origin',
         fdRead: 8,
         fdWrite: 0
       };

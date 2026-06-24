@@ -119,8 +119,8 @@ struct Index {
                 this.controllerNull.loadData('<html><body>loadData</body></html>',
                   'text/html',
                   'UTF-8',
-                  'https://www.example.com',
-                  'https://www.example.com'
+                  'data:text/html,base',
+                  'data:text/html,history'
                 );
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
