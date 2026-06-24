@@ -846,7 +846,7 @@ OH_AVFormat **ParseExtrenalRoiString(const char *externalRoiString, uint32_t *pa
         return nullptr;
     }
 
-    ret OH_VideoMetadata_ParseRoiString(externalRoiString, roiFormats, capacity, parsedCount);
+    ret = OH_VideoMetadata_ParseRoiString(externalRoiString, roiFormats, capacity, parsedCount);
     if (ret != AV_ERR_OK || *parsedCount == 0) {
         OH_LOG_INFO(LOG_APP, "=== onEncInputParam START, index=%{public}d ====", ret);
         free(roiFormats);
