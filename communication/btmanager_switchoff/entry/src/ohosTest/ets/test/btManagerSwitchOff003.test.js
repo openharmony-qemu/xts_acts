@@ -1108,29 +1108,34 @@ export default function btManagerError003Test() {
          */
         it('SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             if (!closeUnsupport) {
-                bluetooth.disableBluetooth();
-            await clickTheWindow(CLOSE_BT_TEXT);
-            await sleep(3000);
-            let state = bluetooth.getState();
-            console.info('[bluetooth_js] bt turn off1:'+ JSON.stringify(state));
-            function onReceiveEvent(data)
-            {
-                console.info('[bluetooth_js] BLEscan device result8'+JSON.stringify(data));
-                expect(data.length == 0).assertTrue();
-            }
-            bluetooth.BLE.on("BLEDeviceFind", onReceiveEvent)
-            bluetooth.BLE.startBLEScan(
-                [{}],
-                {
-                    interval: 100,
-                    dutyMode: bluetooth.ScanDuty.SCAN_MODE_LOW_POWER,
-                    matchMode: bluetooth.MatchMode.MATCH_MODE_AGGRESSIVE,
+                try{
+                    bluetooth.disableBluetooth();
+                    await clickTheWindow(CLOSE_BT_TEXT);
+                    await sleep(3000);
+                    let state = bluetooth.getState();
+                    console.info('[bluetooth_js] bt turn off1:'+ JSON.stringify(state));
+                    function onReceiveEvent(data)
+                    {
+                        console.info('[bluetooth_js] BLEscan device result8'+JSON.stringify(data));
+                        expect(data.length == 0).assertTrue();
+                    }
+                    bluetooth.BLE.on("BLEDeviceFind", onReceiveEvent)
+                    bluetooth.BLE.startBLEScan(
+                        [{}],
+                        {
+                            interval: 100,
+                            dutyMode: bluetooth.ScanDuty.SCAN_MODE_LOW_POWER,
+                            matchMode: bluetooth.MatchMode.MATCH_MODE_AGGRESSIVE,
+                        }
+                    );
+                    await sleep(1000);
+                    console.info('[bluetooth_js] BLE scan off8');
+                    bluetooth.BLE.off('BLEDeviceFind', onReceiveEvent);
+                    bluetooth.BLE.stopBLEScan();
+                } catch (error) {
+                    console.info("startBLEScan errCode:" + error.code + ",errMessage:" + error.message);
+                    expect(Number(error.code)).assertEqual(2900003);
                 }
-            );
-            await sleep(1000);
-            console.info('[bluetooth_js] BLE scan off8');
-            bluetooth.BLE.off('BLEDeviceFind', onReceiveEvent);
-            bluetooth.BLE.stopBLEScan();
             } else {
                 expect(true).assertTrue();
             }
@@ -1148,16 +1153,16 @@ export default function btManagerError003Test() {
         it('SUB_COMMUNICATION_BTMANAGER_SWITCH_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             if (!closeUnsupport) {
                 let state = bluetooth.getState();
-            console.info('[bluetooth_js] getState1 off = '+ JSON.stringify(state));
-            if(state == bluetooth.BluetoothState.STATE_OFF) {
-                let result2= bluetooth.disableBluetooth();
-                await clickTheWindow(CLOSE_BT_TEXT);
-                console.info('[bluetooth_js]disable result1'+ JSON.stringify(result2));
-                expect(result2).assertFalse();
-                let state1 = bluetooth.getState();
-                console.info('[bluetooth_js] getState4 off = '+ JSON.stringify(state1));
-                expect(state1).assertEqual(bluetooth.BluetoothState.STATE_OFF);
-            }
+                console.info('[bluetooth_js] getState1 off = '+ JSON.stringify(state));
+                if(state == bluetooth.BluetoothState.STATE_OFF) {
+                    let result2= bluetooth.disableBluetooth();
+                    await clickTheWindow(CLOSE_BT_TEXT);
+                    console.info('[bluetooth_js]disable result1'+ JSON.stringify(result2));
+                    expect(result2).assertFalse();
+                    let state1 = bluetooth.getState();
+                    console.info('[bluetooth_js] getState4 off = '+ JSON.stringify(state1));
+                    expect(state1).assertEqual(bluetooth.BluetoothState.STATE_OFF);
+                }
             } else {
                 expect(true).assertTrue();
             }
