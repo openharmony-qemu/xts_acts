@@ -789,15 +789,15 @@ export default function singlePhotoAlbumChangeTest(): void {
           }
         })
         /**
-         * @tc.name   SUB_MULTMEDIA_PHOTO_ASSET_CLONE_STATIC_0500
-         * @tc.number SUB_MULTMEDIA_PHOTO_ASSET_CLONE_STATIC_0500
+         * @tc.name   SUB_MULTMEDIA_PHOTO_ASSET_CLONE_STATIC_0600
+         * @tc.number SUB_MULTMEDIA_PHOTO_ASSET_CLONE_STATIC_0600
          * @tc.desc   photoAsset.clone -无效字符串-{}
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_MULTMEDIA_PHOTO_ASSET_CLONE_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          const testName = 'SUB_MULTMEDIA_PHOTO_ASSET_CLONE_STATIC_0500';
+        it('SUB_MULTMEDIA_PHOTO_ASSET_CLONE_STATIC_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+          const testName = 'SUB_MULTMEDIA_PHOTO_ASSET_CLONE_STATIC_0600';
           let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
           let fetchOption: photoAccessHelper.FetchOptions = {
             fetchColumns: [],
@@ -817,15 +817,15 @@ export default function singlePhotoAlbumChangeTest(): void {
           }
         })
         /**
-         * @tc.name   SUB_MULTMEDIA_PHOTO_ASSET_CLONE_STATIC_0600
-         * @tc.number SUB_MULTMEDIA_PHOTO_ASSET_CLONE_STATIC_0600
+         * @tc.name   SUB_MULTMEDIA_PHOTO_ASSET_CLONE_STATIC_0700
+         * @tc.number SUB_MULTMEDIA_PHOTO_ASSET_CLONE_STATIC_0700
          * @tc.desc   photoAsset.clone -无效字符串-[]
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_MULTMEDIA_PHOTO_ASSET_CLONE_STATIC_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          const testName = 'SUB_MULTMEDIA_PHOTO_ASSET_CLONE_STATIC_0600';
+        it('SUB_MULTMEDIA_PHOTO_ASSET_CLONE_STATIC_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+          const testName = 'SUB_MULTMEDIA_PHOTO_ASSET_CLONE_STATIC_0700';
           let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
           let fetchOption: photoAccessHelper.FetchOptions = {
             fetchColumns: [],
@@ -845,15 +845,15 @@ export default function singlePhotoAlbumChangeTest(): void {
           }
         })
         /**
-         * @tc.name   SUB_MULTMEDIA_PHOTO_ASSET_CLONE_STATIC_0700
-         * @tc.number SUB_MULTMEDIA_PHOTO_ASSET_CLONE_STATIC_0700
+         * @tc.name   SUB_MULTMEDIA_PHOTO_ASSET_CLONE_STATIC_0800
+         * @tc.number SUB_MULTMEDIA_PHOTO_ASSET_CLONE_STATIC_0800
          * @tc.desc   photoAsset.clone -空字符串
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_MULTMEDIA_PHOTO_ASSET_CLONE_STATIC_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          const testName = 'SUB_MULTMEDIA_PHOTO_ASSET_CLONE_STATIC_0700';
+        it('SUB_MULTMEDIA_PHOTO_ASSET_CLONE_STATIC_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
+          const testName = 'SUB_MULTMEDIA_PHOTO_ASSET_CLONE_STATIC_0800';
           let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
           let fetchOption: photoAccessHelper.FetchOptions = {
             fetchColumns: [],
@@ -872,7 +872,40 @@ export default function singlePhotoAlbumChangeTest(): void {
             done();
           }
         })
-    /**
+
+        /**
+     * @tc.name   SUB_MULTMEDIA_PHOTO_ASSET_COMMIT_MODIFY_ABNORMAL_CALLBACK_STATIC_0010
+     * @tc.number SUB_MULTMEDIA_PHOTO_ASSET_COMMIT_MODIFY_ABNORMAL_CALLBACK_STATIC_0010
+     * @tc.desc   modify image title
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTMEDIA_PHOTO_ASSET_COMMIT_MODIFY_ABNORMAL_CALLBACK_STATIC_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      const testName = 'SUB_MULTMEDIA_PHOTO_ASSET_COMMIT_MODIFY_ABNORMAL_CALLBACK_STATIC_0010';
+      const value: string = 'newTitle';
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, '01.jpg');
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      try {
+        const fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await helper!.getAssets(fetchOption);
+        const asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        let title: string = photoAccessHelper.PhotoKeys.TITLE.toString();
+        asset.set(title, value);
+        await asset.commitModify();
+        expect(asset.uri.toString().includes('file:')).assertTrue();
+        done();
+      } catch (error) {
+        console.info(TAG, `commitModifyAbnormalCallback error, ${testName} failed; error: ${error?.code}, ${error?.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+    
+        /**
      * @tc.name   SUB_MULTMEDIA_PHOTO_ASSET_COMMIT_MODIFY_CALLBACK_STATIC_0020
      * @tc.number SUB_MULTMEDIA_PHOTO_ASSET_COMMIT_MODIFY_CALLBACK_STATIC_0020
      * @tc.desc   modify image displayName '一...' (83)
@@ -944,37 +977,6 @@ export default function singlePhotoAlbumChangeTest(): void {
       }
     });
 
-    /**
-     * @tc.name   SUB_MULTMEDIA_PHOTO_ASSET_COMMIT_MODIFY_ABNORMAL_CALLBACK_STATIC_0010
-     * @tc.number SUB_MULTMEDIA_PHOTO_ASSET_COMMIT_MODIFY_ABNORMAL_CALLBACK_STATIC_0010
-     * @tc.desc   modify image title
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_MULTMEDIA_PHOTO_ASSET_COMMIT_MODIFY_ABNORMAL_CALLBACK_STATIC_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      const testName = 'SUB_MULTMEDIA_PHOTO_ASSET_COMMIT_MODIFY_ABNORMAL_CALLBACK_STATIC_0010';
-      const value: string = 'newTitle';
-      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-      predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, '01.jpg');
-      let fetchOption: photoAccessHelper.FetchOptions = {
-        fetchColumns: [],
-        predicates: predicates
-      };
-      try {
-        const fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await helper!.getAssets(fetchOption);
-        const asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-        let title: string = photoAccessHelper.PhotoKeys.TITLE.toString();
-        asset.set(title, value);
-        await asset.commitModify();
-        expect(asset.uri.toString().includes('file:')).assertTrue();
-        done();
-      } catch (error) {
-        console.info(TAG, `commitModifyAbnormalCallback error, ${testName} failed; error: ${error?.code}, ${error?.message}`);
-        expect().assertFail();
-        done();
-      }
-    });
-
+    
   })
 }
