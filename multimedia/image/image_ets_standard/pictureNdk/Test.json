@@ -59,7 +59,12 @@
                 "./resource/image/0801_sdr2.heic ->/data/app/el2/100/base/ohos.acts.multimedia.image.pictureNdk/haps/entry_test/files",
                 "./resource/image/test.bmp ->/data/app/el2/100/base/ohos.acts.multimedia.image.pictureNdk/haps/entry_test/files",
                 "./resource/image/test_dng.dng ->/data/app/el2/100/base/ohos.acts.multimedia.image.pictureNdk/haps/entry_test/files",
-                "./resource/image/heif.heic ->/data/app/el2/100/base/ohos.acts.multimedia.image.pictureNdk/haps/entry_test/files"
+                "./resource/image/heif.heic ->/data/app/el2/100/base/ohos.acts.multimedia.image.pictureNdk/haps/entry_test/files",
+                "./resource/image/heif.heic ->/data/app/el2/100/base/ohos.acts.multimedia.image.pictureNdk/haps/entry_test/files",
+                "./resource/image/8bit_I420_497_323.avif ->/data/app/el2/100/base/ohos.acts.multimedia.image.pictureNdk/haps/entry_test/files",
+                "./resource/image/10bit_I010_1080_720.avif ->/data/app/el2/100/base/ohos.acts.multimedia.image.pictureNdk/haps/entry_test/files",
+                "./resource/image/HEIC_(664x374)_yuv420p_(fail_name)_(EXIF_HDR)_SDR.heic ->/data/app/el2/100/base/ohos.acts.multimedia.image.pictureNdk/haps/entry_test/files",
+                "./resource/image/bird_8bit_I420_599x359_fps10.avif ->/data/app/el2/100/base/ohos.acts.multimedia.image.pictureNdk/haps/entry_test/files"
             ]
         },
         {
