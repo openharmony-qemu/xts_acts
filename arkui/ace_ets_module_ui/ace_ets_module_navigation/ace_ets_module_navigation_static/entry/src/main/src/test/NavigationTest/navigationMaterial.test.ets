@@ -71,7 +71,7 @@ export default function navigationMaterial() {
       let obj = JSON.parseJsonElement(strJson);
       console.info("[navigationMaterial_static_0100] mode: " +
         JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('mode')));
-      expect(obj.getElement('$attrs').getString('mode')).assertEqual('NavigationMode.STACK');
+      expect(obj.getElement('$attrs').getString('mode')).assertEqual('NavigationMode.AUTO_WITH_ASPECT_RATIO');
       console.info('[navigationMaterial_static_0100] END');
       done();
     });

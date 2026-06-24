@@ -24,7 +24,7 @@ import { State, Provider, Param, Require, Local, Consumer, Consume } from '@ohos
 
 @Component
 struct TestComponent {
-  private arr: int[] = [];
+  private arr: int[] = new Array<int>();
 
   aboutToAppear(): void {
     for (let i = 0; i < 10; i++) {
@@ -92,7 +92,7 @@ struct NavigationTitleMaterialDemo {
       .id('navigation_systemMaterial_1')
       .width('100%')
       .height('30%')
-      .mode(NavigationMode.Stack)
+      .mode(NavigationMode.AUTO_WITH_ASPECT_RATIO)
       .navDestination(this.MyMap)
       .title('', {
         barStyle: BarStyle.STACK,
@@ -129,7 +129,7 @@ struct NavigationTitleMaterialDemo {
       }
       .width('100%')
       .height('25%')
-      .mode(NavigationMode.Stack)
+      .mode(NavigationMode.AUTO_WITH_ASPECT_RATIO)
       .navDestination(this.MyMap)
       .title('', {
         barStyle: BarStyle.STACK,
@@ -166,7 +166,7 @@ struct NavigationTitleMaterialDemo {
       }
       .width('100%')
       .height('25%')
-      .mode(NavigationMode.Stack)
+      .mode(NavigationMode.AUTO_WITH_ASPECT_RATIO)
       .navDestination(this.MyMap)
       .title('', {
         barStyle: BarStyle.STACK,
