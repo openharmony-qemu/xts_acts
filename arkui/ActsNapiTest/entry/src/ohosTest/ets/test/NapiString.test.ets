@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it , TestType, Size, Level } from "@ohos/hypium"
+import { beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium";
 import Utils from './Utils'
 import testNapi from 'libnapiString.so';
 
@@ -35,7 +35,7 @@ export default function stringTest() {
     it('testNapiString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('testNapiString001 START');
       try {
-        let ret：string = testNapi.createStringUtf8('abc');
+        let ret: string = testNapi.createStringUtf8('abc');
         console.info('testCreateStringUtf80001 ret is: ' + ret);
         expect(ret).assertEqual('abc');
       } catch (err) {

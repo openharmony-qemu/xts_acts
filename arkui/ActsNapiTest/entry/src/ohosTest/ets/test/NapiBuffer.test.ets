@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it , TestType, Size, Level } from "@ohos/hypium"
+import { beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium";
 import Utils from './Utils';
 import testNapi from 'libnapiBuffer.so';
 
@@ -36,7 +36,7 @@ export default function bufferTest() {
       let TAG = "testNapiBuffer001";
       console.info(`${TAG} START`);
       try {
-        expect(testNapi.IsBuffer()).assertTrue();
+        expect(testNapi.isBuffer()).assertTrue();
       } catch (err) {
         console.error(`${TAG} error is ${err} `);
         expect().assertFail();

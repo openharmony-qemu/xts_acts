@@ -2,7 +2,7 @@
 #include "common/native_common.h"
 #include <securec.h>
 
-const int NAPI_UTF8_LENGTH = 256；
+const int NAPI_UTF8_LENGTH = 256;
 
 napi_value CreateStringUtf8(napi_env env, napi_callback_info info)
 {
