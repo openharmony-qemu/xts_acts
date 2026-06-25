@@ -45,8 +45,8 @@ export enum TokenType {
 }
 
 export class PageCustomTheme implements CustomTheme {
-  colors?: CustomColors;
-  darkColors?: CustomDarkColors;
+  public colors?: CustomColors;
+  public darkColors?: CustomDarkColors;
 
   constructor(colors: CustomColors) {
     this.colors = colors;
