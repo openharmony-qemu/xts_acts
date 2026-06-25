@@ -63,6 +63,8 @@ import ChipV2OptionsSuffixIconTest from './ChipV2Test/ChipV2OptionsSuffixIconTes
 import ChipV2OptionsSuffixSymbolTest from './ChipV2Test/ChipV2OptionsSuffixSymbolTest.test';
 import ChipV2Page from './ChipV2Test/ChipV2Page.test';
 import ChipV2PrefixIconTest from './ChipV2Test/ChipV2PrefixIconTest.test';
+import ChipGroupSystemMaterialTest from './ChipGroupTest/ChipGroupSystemMaterialTest.test';
+import ChipGroupAbnormalSystemMaterialTest from './ChipGroupTest/ChipGroupAbnormalSystemMaterialTest.test';
 import ChipV2SizeTest from './ChipV2Test/ChipV2SizeTest.test';
 
 export default function testsuite() {
@@ -116,4 +118,6 @@ export default function testsuite() {
   ChipV2Page();
   ChipV2PrefixIconTest();
   ChipV2SizeTest();
+  ChipGroupSystemMaterialTest();
+  ChipGroupAbnormalSystemMaterialTest();
 }
