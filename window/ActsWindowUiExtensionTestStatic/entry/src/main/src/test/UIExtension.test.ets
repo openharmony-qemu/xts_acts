@@ -1280,7 +1280,7 @@ export default function UIExtensionTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testEnvWindowSizeInUec', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testEnvWindowSizeInUec', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName = 'testEnvWindowSizeInUec ';
       console.log(caseName + 'start run');
       let subWindowClass: window.Window | undefined;
