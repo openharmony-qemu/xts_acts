@@ -281,6 +281,20 @@ class EqualsParamOrderStringIntSample {
   }
 }
 
+class EqualsOverloadSample {
+  m(value: int): int {
+    return value + 1;
+  }
+
+  m(value: string): string {
+    return value + "1";
+  }
+
+  m(value: int, label: string): int {
+    return value;
+  }
+}
+
 interface EqualsInterfaceRunSample {
   run(): void;
 }
@@ -1185,6 +1199,34 @@ export default function MethodEqualsTest(): void {
       const charMethod = findEqualsMethod(Type.from<EqualsParamCharSample>() as ClassType, "m");
       const stringMethod = findEqualsMethod(Type.from<EqualsParamStringSample>() as ClassType, "m");
       expect(charMethod.equals(stringMethod)).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_EQUALS_4900
+     * @tc.name testMethodEquals049
+     * @tc.desc Verify overloaded methods with the same name but different signatures are not equal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testMethodEquals049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const classType = Type.from<EqualsOverloadSample>() as ClassType;
+      let oneParamMethod: Method | undefined = undefined;
+      let twoParamMethod: Method | undefined = undefined;
+      for (let i: long = 0; i < classType.getMethodsNum(); i += 1) {
+        const method = classType.getMethod(i);
+        if (method.getName() === "m") {
+          const parameterCount = method.getType().getParametersNum();
+          if (parameterCount === 1) {
+            oneParamMethod = method;
+          } else if (parameterCount === 2) {
+            twoParamMethod = method;
+          }
+        }
+      }
+            expect(oneParamMethod !== undefined).assertTrue();
+            expect(twoParamMethod !== undefined).assertTrue();
+      expect(oneParamMethod!.equals(twoParamMethod!)).assertFalse();
     });
   });
 }

@@ -235,6 +235,11 @@ class ToStrComplexStableSample {
     }
 }
 
+class ToStrOverloadSample {
+    method(value: int): void {}
+    method(value: int, text: string): void {}
+}
+
 class ToStrComplexOptions {
     flag: boolean = false;
 }
@@ -871,6 +876,20 @@ export default function MethodToStringTest(): void {
             const method = (Type.from<ToStrComplexStableSample>() as ClassType).getMethodByName("complex");
             expectMethodString(method);
             expect(method.isAsync()).assertTrue();
+        });
+
+        /**
+         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_TO_STRING_4100
+         * @tc.name testMethodToString041
+         * @tc.desc Verify overloaded methods produce non-empty strings
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level Level 2
+         */
+        it('testMethodToString041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+            const classType = Type.from<ToStrOverloadSample>() as ClassType;
+            const method = classType.getMethodByName("method");
+            expectMethodString(method);
         });
     });
 }

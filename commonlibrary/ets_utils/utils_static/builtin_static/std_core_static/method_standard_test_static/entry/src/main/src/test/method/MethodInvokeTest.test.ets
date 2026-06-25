@@ -54,6 +54,16 @@ class InvokeCalculator {
     }
 }
 
+class InvokeOverloadSample {
+    compute(value: int): int {
+        return value + 1;
+    }
+
+    compute(value: int, extra: int): int {
+        return value + extra;
+    }
+}
+
 class InvokeGreeter {
     greet(name: string): string {
         return "Hello, " + name;
@@ -812,8 +822,8 @@ export default function MethodInvokeTest(): void {
             const args: FixedArray<int> = [10, 3];
             const result = method.invoke(new InvokeCalculator(), args);
             let resultValue: double = result as double;
-            expect(resultValue > 3.33).assertTrue();
-            expect(resultValue < 3.34).assertTrue();
+            expect(resultValue).assertLarger(3.33);
+            expect(resultValue).assertLess(3.34);
         });
 
         /**
@@ -1836,6 +1846,35 @@ export default function MethodInvokeTest(): void {
             expect(method.invoke(second, [1] as FixedArray<int>) as int).assertEqual(101);
             expect(first.value).assertEqual(1);
             expect(second.value).assertEqual(101);
+        });
+
+        /**
+         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_8700
+         * @tc.name testMethodInvoke087
+         * @tc.desc Verify overloaded methods can be invoked by signature and return different results
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level Level 2
+         */
+        it('testMethodInvoke087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+            const classType = Type.from<InvokeOverloadSample>() as ClassType;
+            let oneParamMethod: Method | undefined = undefined;
+            let twoParamMethod: Method | undefined = undefined;
+            for (let i: long = 0; i < classType.getMethodsNum(); i += 1) {
+                const method = classType.getMethod(i);
+                if (method.getName() === "compute") {
+                    const parameterCount = method.getType().getParametersNum();
+                    if (parameterCount === 1) {
+                        oneParamMethod = method;
+                    } else if (parameterCount === 2) {
+                        twoParamMethod = method;
+                    }
+                }
+            }
+            expect(oneParamMethod !== undefined).assertTrue();
+            expect(twoParamMethod !== undefined).assertTrue();
+            expect(oneParamMethod!.invoke(new InvokeOverloadSample(), [1] as FixedArray<int>) as int).assertEqual(2);
+            expect(twoParamMethod!.invoke(new InvokeOverloadSample(), [1, 2] as FixedArray<int>) as int).assertEqual(3);
         });
     });
 }
