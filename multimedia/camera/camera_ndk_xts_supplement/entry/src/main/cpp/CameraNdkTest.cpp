@@ -219,6 +219,7 @@ void CreatePhotoSession()
 void ReleasePhotoSession()
 {
     if (cameraInput != nullptr) {
+        LOGI("yzh OH_CameraInput_Release is called");
         OH_CameraInput_Release(cameraInput);
     }
     if (previewOutput != nullptr) {
@@ -560,6 +561,7 @@ napi_value captureUnregisterOcclusionDetectionCallback(napi_env env, napi_callba
     default:
         break;
     }
+    LOGI("yzh Unregister case_index_%{public}d", index);
     ReleasePhotoSession();
     napi_value ret;
     napi_create_int32(env, result, &ret);
