@@ -85,7 +85,7 @@ static napi_value ScrollAlignmentStartTest_001(napi_env env, napi_callback_info 
     ArkUI_NumberValue value[] = { { .i32 = 38 }, { .i32 = 1 }, { .i32 = ARKUI_SCROLL_ALIGNMENT_START }, { .i32 = 1 } };
     ArkUI_AttributeItem item = { .value = value, .size = PARAM_4 };
     auto setResult = nodeAPI->setAttribute(scroll, NODE_LIST_SCROLL_TO_INDEX, &item);
-    ASSERT_EQ(ret, SUCCESS);
+    ASSERT_EQ(setResult, SUCCESS);
     NAPI_END;
 }
 }
