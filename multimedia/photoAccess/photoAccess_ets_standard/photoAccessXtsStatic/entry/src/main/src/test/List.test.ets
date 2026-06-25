@@ -44,6 +44,6 @@ export default function testsuite(): void {
   AddResourceChangeRequestUrlSuppTest();
   CommitModifySuppTest();
   MediaAlbumChangeRequestSetAlbumNameStatic();
-  singlePhotoAlbumChangeTest();
   getAssetsByPredicatesTest();
+  singlePhotoAlbumChangeTest();
 }
