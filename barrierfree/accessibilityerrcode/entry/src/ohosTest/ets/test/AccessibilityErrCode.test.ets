@@ -1124,6 +1124,91 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibilityErrCode_0500
+     * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibilityErrCode_0500
+     * @tc.desc   test AccessibilityGetWindowRootElement
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_BARRIERFREE_API_AccessibilityErrCode_0500', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
+      if (axContext != null) {
+        try {
+          axContext.getWindowRootElement().then((data) => {
+            console.info('SUB_BASIC_BARRIERFREE_API_AccessibilityErrCode_0500 data:' + JSON.stringify(data));
+            done();
+          }).catch((err) => {
+            console.info('SUB_BASIC_BARRIERFREE_API_AccessibilityErrCode_0500 err:' + JSON.stringify(err));
+            done();
+          });
+        } catch (exception) {
+          console.error('failed to get root element of the window, ' + JSON.stringify(exception));
+          expect(false).assertTrue();
+          done();
+        }
+      } else {
+        console.log('axContext null');
+        done();
+      }
+    })
+
+
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibilityErrCode_0501
+     * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibilityErrCode_0501
+     * @tc.desc   test AccessibilityGetWindowRootElement
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_BARRIERFREE_API_AccessibilityErrCode_0501', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
+      if (axContext != null) {
+        try {
+          axContext.getWindowRootElement((err, data) => {
+            console.info('SUB_BASIC_BARRIERFREE_API_AccessibilityErrCode_0501 err' + JSON.stringify(err) + ' data:' + JSON.stringify(data));
+            done();
+          });
+        } catch (exception) {
+          console.error('failed to get root element of the window, because ' + JSON.stringify(exception));
+          expect(false).assertTrue();
+          done();
+        }
+      } else {
+        console.log('axContext null');
+        done();
+      }
+    })
+
+
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibilityErrCode_0502
+     * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibilityErrCode_0502
+     * @tc.desc   test AccessibilityGetWindowRootElement
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_BASIC_BARRIERFREE_API_AccessibilityErrCode_0502', TestType.FUNCTION | Size.SmallTest| Level.LEVEL1, async function (done) {
+      if (axContext != null) {
+        let windowId = 10;
+        try {
+          axContext.getWindowRootElement(windowId, (err, data) => {
+            console.info('SUB_BASIC_BARRIERFREE_API_AccessibilityErrCode_0502 err' + JSON.stringify(err) + ' data:' + JSON.stringify(data));
+            done();
+          });
+        } catch (exception) {
+          console.error('failed to get root element of the window, because ' + JSON.stringify(exception));
+          expect(false).assertTrue();
+          done();
+        }
+      } else {
+        console.log('axContext null');
+        done();
+      }
+    })
+
+
+    /**
      * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibilityErrCode_0600
      * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibilityErrCode_0600
      * @tc.desc   test AccessibilityGetWindows
@@ -1208,6 +1293,35 @@ export default function abilityTest() {
       }
     })
 
+
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibilityErrCode_0602
+     * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibilityErrCode_0602
+     * @tc.desc   test AccessibilityGetWindows
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_BASIC_BARRIERFREE_API_AccessibilityErrCode_0602', TestType.FUNCTION | Size.SmallTest| Level.LEVEL1, async function (done) {
+      if (axContext != null) {
+        let displayId = 10;
+        try {
+          axContext.getWindows(displayId, (err, data) => {
+            console.info('SUB_BASIC_BARRIERFREE_API_AccessibilityErrCode_0602 err' + JSON.stringify(err) + ' data:' + JSON.stringify(data));
+            done();
+          });
+        } catch (exception) {
+          console.error('failed to get windows, because ' + JSON.stringify(exception));
+          expect(false).assertTrue();
+          done();
+        }
+      } else {
+        console.log('axContext null');
+        done();
+      }
+    })
+
+
     /**
      * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibilityErrCode_0700
      * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibilityErrCode_0700
@@ -1264,6 +1378,33 @@ export default function abilityTest() {
           });
         } catch (exception) {
           console.error('failed to inject gesture, because ' + JSON.stringify(exception));
+          expect(false).assertTrue();
+          done();
+        }
+      } else {
+        console.log('axContext null');
+        done();
+      }
+    })
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibilityErrCode_0702
+     * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibilityErrCode_0702
+     * @tc.desc   test AccessibilityInjectGesture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_BASIC_BARRIERFREE_API_AccessibilityErrCode_0702', TestType.FUNCTION | Size.SmallTest| Level.LEVEL1, async function (done) {
+      if (axContext != null) {
+        let gesturePath = new GesturePath.GesturePath(100);
+        try {
+          for (let i = 0; i < 10; i++) {
+            let gesturePoint = new GesturePoint.GesturePoint(100, i * 200);
+            gesturePath.points.push(gesturePoint);
+          }
+          axContext.injectGestureSync(gesturePath);
+        } catch (exception) {
+          console.error('SUB_BASIC_BARRIERFREE_API_AccessibilityErrCode_0702  failed to inject gesture, because ' + JSON.stringify(exception));
           expect(false).assertTrue();
           done();
         }
