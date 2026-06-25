@@ -82,72 +82,51 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
             switch ( this.stringObj.str) {
               case 'testAddIntelligentTrackingPreventionBypassingListError001': {
                 try {
-                  let addTrackingList = webView.WebviewController.addIntelligentTrackingPreventionBypassingList as ((hostList: null) => void);
-                  addTrackingList(null);
-                  Utils.emitEvent('NO_ERROR', 202503301);
-                } catch (error) {
-                  let e: BusinessError = error as BusinessError;
-                  console.error(`ErrorCode: ${e.code}, Message: ${e.message}`);
-                  Utils.emitEvent(`${e.code}`, 202503301);
-                }
-                break;
-              }
-              case 'testAddIntelligentTrackingPreventionBypassingListError002': {
-                try {
-                  let list = ['www.test1.com','www.test2.com'];
+                  let list = ['www.test1.com', 'www.test2.com'];
                   webView.WebviewController.addIntelligentTrackingPreventionBypassingList(list);
-                  Utils.emitEvent('NO_ERROR', 202503304);
+                  Utils.emitEvent(true, 202503301);
                 } catch (error) {
                   let e: BusinessError = error as BusinessError;
-                  console.error(`ErrorCode: ${e.code}, Message: ${e.message}`);
-                  Utils.emitEvent(`${e.code}`, 202503304);
+                  console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                  if (e.code == 801) {
+                    console.log(`The current device type does not support Cause code:${e.code},  Message: ${e.message}`)
+                    Utils.emitEvent(true, 202503301)
+                  } else {
+                    Utils.emitEvent(false, 202503301)
+                  }
                 }
                 break;
               }
               case 'testRemoveIntelligentTrackingPreventionBypassingListError001': {
                 try {
-                  let removeTrackingList = webView.WebviewController.removeIntelligentTrackingPreventionBypassingList as ((hostList: null) => void);
-                  removeTrackingList(null);
-                  Utils.emitEvent('NO_ERROR', 202503302);
-                } catch (error) {
-                  let e: BusinessError = error as BusinessError;
-                  console.error(`ErrorCode: ${e.code}, Message: ${e.message}`);
-                  Utils.emitEvent(`${e.code}`, 202503302);
-                }
-                break;
-              }
-              case 'testRemoveIntelligentTrackingPreventionBypassingListError002': {
-                try {
-                  let list = ['www.test1.com','www.test2.com'];
+                  let list = ['www.test1.com', 'www.test2.com'];
                   webView.WebviewController.removeIntelligentTrackingPreventionBypassingList(list);
-                  Utils.emitEvent('NO_ERROR', 202503305);
+                  Utils.emitEvent(true, 202503302);
                 } catch (error) {
                   let e: BusinessError = error as BusinessError;
-                  console.error(`ErrorCode: ${e.code}, Message: ${e.message}`);
-                  Utils.emitEvent(`${e.code}`, 202503305);
+                  console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                  if (e.code == 801) {
+                    console.log(`The current device type does not support Cause code:${e.code},  Message: ${e.message}`)
+                    Utils.emitEvent(true, 202503302)
+                  } else {
+                    Utils.emitEvent(false, 202503302)
+                  }
                 }
                 break;
               }
               case 'testClearIntelligentTrackingPreventionBypassingListError001': {
                 try {
-                  let clearTrackingList = webView.WebviewController.clearIntelligentTrackingPreventionBypassingList as ((hostList: null) => void);
-                  clearTrackingList(null);
-                  Utils.emitEvent('NO_ERROR', 202503303);
-                } catch (error) {
-                  let e: BusinessError = error as BusinessError;
-                  console.error(`ErrorCode: ${e.code}, Message: ${e.message}`);
-                  Utils.emitEvent(`${e.code}`, 202503303);
-                }
-                break;
-              }
-              case 'testClearIntelligentTrackingPreventionBypassingListError002': {
-                try {
                   webView.WebviewController.clearIntelligentTrackingPreventionBypassingList();
-                  Utils.emitEvent('NO_ERROR', 202503306);
+                  Utils.emitEvent(true, 202503303);
                 } catch (error) {
                   let e: BusinessError = error as BusinessError;
-                  console.error(`ErrorCode: ${e.code}, Message: ${e.message}`);
-                  Utils.emitEvent(`${e.code}`, 202503306);
+                  console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                  if (e.code == 801) {
+                    console.log(`The current device type does not support Cause code:${e.code},  Message: ${e.message}`)
+                    Utils.emitEvent(true, 202503303)
+                  } else {
+                    Utils.emitEvent(false, 202503303)
+                  }
                 }
                 break;
               }
