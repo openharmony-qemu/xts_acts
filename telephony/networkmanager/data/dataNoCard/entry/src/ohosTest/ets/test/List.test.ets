@@ -20,7 +20,7 @@ import connection from '@ohos.net.connection';
 
 export default function testsuite() {
   if (sim.getMaxSimCount() != 0 ) {
-    if(sim.hasSimCardsync(0) == false && sim.hasSimCardsync(1) == false){
+    if(sim.hasSimCardSync(0) == false && sim.hasSimCardSync(1) == false){
         dataNoCardTest();
     }else{
       EmptyTest();
