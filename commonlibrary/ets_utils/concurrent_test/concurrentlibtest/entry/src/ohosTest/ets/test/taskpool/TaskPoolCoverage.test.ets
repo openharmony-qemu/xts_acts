@@ -887,8 +887,8 @@ export default function taskPoolCoverageTest() {
         console.log(`${tag} test start.`)
         const task = new taskpool.Task(simpleFunc, 1);
         try {
-          const result = await taskpool.executeDelayed(null, task);
-          console.log(`${tag} test catch: ${result}`)
+          await taskpool.executeDelayed(null, task);
+          expect().assertFail();
         } catch (error) {
           console.log(`${tag} test catch: ${error.code}`)
           expect(error.code).assertEqual(401);
@@ -910,8 +910,8 @@ export default function taskPoolCoverageTest() {
         console.log(`${tag} test start.`)
         const task = new taskpool.Task(simpleFunc, 1);
         try {
-          const result = await taskpool.executeDelayed(undefined, task);
-          console.log(`${tag} test catch: ${result}`)
+          await taskpool.executeDelayed(undefined, task);
+          expect().assertFail();
         } catch (error) {
           console.log(`${tag} test catch: ${error.code}`)
           expect(error.code).assertEqual(401);
@@ -932,8 +932,8 @@ export default function taskPoolCoverageTest() {
         let tag = "testExecuteDelayedWithNullTask"
         console.log(`${tag} test start.`)
         try {
-          const result = await taskpool.executeDelayed(100, null);
-          console.log(`${tag} test catch: ${result}`)
+          await taskpool.executeDelayed(100, null);
+          expect().assertFail();
         } catch (error) {
           console.log(`${tag} test catch: ${error.code}`)
           expect(error.code).assertEqual(401);
@@ -954,8 +954,8 @@ export default function taskPoolCoverageTest() {
         let tag = "testExecuteDelayedWithUndefinedTask"
         console.log(`${tag} test start.`)
         try {
-          const result = await taskpool.executeDelayed(100, undefined);
-          console.log(`${tag} test catch: ${result}`)
+          await taskpool.executeDelayed(100, undefined);
+          expect().assertFail();
         } catch (error) {
           console.log(`${tag} test catch: ${error.code}`)
           expect(error.code).assertEqual(401);
@@ -1605,8 +1605,8 @@ export default function taskPoolCoverageTest() {
       const taskId = task.taskId;
       await taskpool.execute(task);
       try {
-        const foundTask = taskpool.getTask(taskId, null);
-        console.log(`${tag} foundTask: ${foundTask}`)
+        taskpool.getTask(taskId, null);
+        expect().assertFail();
       } catch (error) {
         console.log(`${tag} test catch: ${error.code}`)
         expect(error.code).assertEqual(401);
