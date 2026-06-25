@@ -242,6 +242,14 @@ class AccUnicodeNameSample {
   }
 }
 
+class AccOverloadSample {
+  method(value: int): void {
+  }
+
+  method(value: int, text: string): void {
+  }
+}
+
 function findAccessMethod(classType: ClassType, name: string, wantStatic?: boolean): Method {
   for (let i: long = 0; i < classType.getMethodsNum(); i += 1) {
     const method = classType.getMethod(i);
@@ -460,7 +468,7 @@ export default function MethodGetAccessModifierTest(): void {
      */
     it('testMethodGetAccessModifier012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const method = findAccessMethod(Type.from<AccPrivateSample>() as ClassType, "subtract");
-      expect(method.getAccessModifier() > 0).assertTrue();
+      expect(method.getAccessModifier()).assertEqual(AccessModifier.PRIVATE);
     });
 
     /**
@@ -473,7 +481,7 @@ export default function MethodGetAccessModifierTest(): void {
      */
     it('testMethodGetAccessModifier013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const method = findAccessMethod(Type.from<AccProtectedSample>() as ClassType, "doProtected");
-      expect(method.getAccessModifier() > 0).assertTrue();
+      expect(method.getAccessModifier()).assertEqual(AccessModifier.PROTECTED);
     });
 
     /**
@@ -514,7 +522,7 @@ export default function MethodGetAccessModifierTest(): void {
      */
     it('testMethodGetAccessModifier016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const method = findAccessMethod(Type.from<AccStaticPrivateSample>() as ClassType, "staticPrivate", true);
-      expect(method.getAccessModifier() > 0).assertTrue();
+      expect(method.getAccessModifier()).assertEqual(AccessModifier.PRIVATE);
     });
 
     /**
@@ -527,7 +535,7 @@ export default function MethodGetAccessModifierTest(): void {
      */
     it('testMethodGetAccessModifier017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const method = findAccessMethod(Type.from<AccStaticProtectedSample>() as ClassType, "staticProtected", true);
-      expect(method.getAccessModifier() > 0).assertTrue();
+      expect(method.getAccessModifier()).assertEqual(AccessModifier.PROTECTED);
     });
 
     /**
@@ -568,7 +576,7 @@ export default function MethodGetAccessModifierTest(): void {
      */
     it('testMethodGetAccessModifier020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const method = findAccessMethod(Type.from<AccAbstractProtectedSample>() as ClassType, "doProtectedAbstract");
-      expect(method.getAccessModifier() > 0).assertTrue();
+      expect(method.getAccessModifier()).assertEqual(AccessModifier.PROTECTED);
     });
 
     /**
@@ -679,7 +687,7 @@ export default function MethodGetAccessModifierTest(): void {
      */
     it('testMethodGetAccessModifier028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const method = findAccessMethod(Type.from<AccHideChildPrivateSample>() as ClassType, "hiddenTarget");
-      expect(method.getAccessModifier() > 0).assertTrue();
+      expect(method.getAccessModifier()).assertEqual(AccessModifier.PRIVATE);
     });
 
     /**
@@ -692,7 +700,7 @@ export default function MethodGetAccessModifierTest(): void {
      */
     it('testMethodGetAccessModifier029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const method = findAccessMethod(Type.from<AccHideChildProtectedSample>() as ClassType, "hiddenTarget");
-      expect(method.getAccessModifier() > 0).assertTrue();
+      expect(method.getAccessModifier()).assertEqual(AccessModifier.PROTECTED);
     });
 
     /**
@@ -719,7 +727,7 @@ export default function MethodGetAccessModifierTest(): void {
      */
     it('testMethodGetAccessModifier031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const method = findAccessMethod(Type.from<AccSelfReturnSample>() as ClassType, "self");
-      expect(method.getAccessModifier() > 0).assertTrue();
+      expect(method.getAccessModifier()).assertEqual(AccessModifier.PRIVATE);
     });
 
     /**
@@ -851,6 +859,34 @@ export default function MethodGetAccessModifierTest(): void {
       const publicMethod = findAccessMethod(Type.from<AccPublicSample>() as ClassType, "add");
       const objectMethod = findAccessMethod(Type.from<AccObjectParamSample>() as ClassType, "acceptObject");
       expect(objectMethod.getAccessModifier()).assertEqual(publicMethod.getAccessModifier());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_ACCESS_MODIFIER_4100
+     * @tc.name testMethodGetAccessModifier041
+     * @tc.desc Verify overloaded methods keep the same access modifier
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testMethodGetAccessModifier041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const classType = Type.from<AccOverloadSample>() as ClassType;
+      let oneParamMethod: Method | undefined = undefined;
+      let twoParamMethod: Method | undefined = undefined;
+      for (let i: long = 0; i < classType.getMethodsNum(); i += 1) {
+        const method = classType.getMethod(i);
+        if (method.getName() === "method") {
+          const parameterCount = method.getType().getParametersNum();
+          if (parameterCount === 1) {
+            oneParamMethod = method;
+          } else if (parameterCount === 2) {
+            twoParamMethod = method;
+          }
+        }
+      }
+            expect(oneParamMethod !== undefined).assertTrue();
+            expect(twoParamMethod !== undefined).assertTrue();
+      expect(oneParamMethod!.getAccessModifier()).assertEqual(twoParamMethod!.getAccessModifier());
     });
   });
 }

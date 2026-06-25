@@ -236,6 +236,11 @@ class OwnerToStringSample {
     }
 }
 
+class OwnerOverloadSample {
+    method(value: int): void {}
+    method(value: int, text: string): void {}
+}
+
 function findOwnerMethod(classType: ClassType, name: string, wantStatic?: boolean): Method {
     for (let i: long = 0; i < classType.getMethodsNum(); i += 1) {
         const method = classType.getMethod(i);
@@ -273,7 +278,7 @@ export default function MethodGetOwnerTypeTest(): void {
             const method = (Type.from<OwnerNormalSample>() as ClassType).getMethodByName("add");
             let ownerType: Type = method.getOwnerType();
             expect(ownerType !== null && ownerType !== undefined).assertTrue();
-            expect(typeof ownerType === "object").assertTrue();
+            expect(typeof ownerType).assertEqual("object");
             expect(ownerType.getName()).assertEqual("entry.src.main.src.test.method.MethodGetOwnerTypeTest.test.OwnerNormalSample");
         });
 
@@ -464,6 +469,7 @@ export default function MethodGetOwnerTypeTest(): void {
                 throw new Error("simulated error after getOwnerType");
             } catch (e) {
                 caught = e.name === 'Error' && e.message === 'simulated error after getOwnerType'
+                expect(caught).assertTrue();
             }
         });
 
@@ -850,6 +856,34 @@ export default function MethodGetOwnerTypeTest(): void {
             const objectMethod = findOwnerMethod(Type.from<OwnerObjectParamSample>() as ClassType, "acceptObject");
             expect(enumMethod.getOwnerType().getName()).assertEqual("entry.src.main.src.test.method.MethodGetOwnerTypeTest.test.OwnerEnumMethodSample");
             expect(objectMethod.getOwnerType().getName()).assertEqual("entry.src.main.src.test.method.MethodGetOwnerTypeTest.test.OwnerObjectParamSample");
+        });
+
+        /**
+         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_OWNER_TYPE_4200
+         * @tc.name testMethodGetOwnerType042
+         * @tc.desc Verify overloaded methods return the same owner type
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level Level 2
+         */
+        it('testMethodGetOwnerType042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+            const classType = Type.from<OwnerOverloadSample>() as ClassType;
+            let oneParamMethod: Method | undefined = undefined;
+            let twoParamMethod: Method | undefined = undefined;
+            for (let i: long = 0; i < classType.getMethodsNum(); i += 1) {
+                const method = classType.getMethod(i);
+                if (method.getName() === "method") {
+                    const parameterCount = method.getType().getParametersNum();
+                    if (parameterCount === 1) {
+                        oneParamMethod = method;
+                    } else if (parameterCount === 2) {
+                        twoParamMethod = method;
+                    }
+                }
+            }
+            expect(oneParamMethod !== undefined).assertTrue();
+            expect(twoParamMethod !== undefined).assertTrue();
+            expect(oneParamMethod!.getOwnerType().getName()).assertEqual(twoParamMethod!.getOwnerType().getName());
         });
     });
 }

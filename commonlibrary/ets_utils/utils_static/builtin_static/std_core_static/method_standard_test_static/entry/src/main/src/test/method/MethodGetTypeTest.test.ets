@@ -292,6 +292,16 @@ class GetTypeSelfReturnSample {
     }
 }
 
+class GetTypeOverloadSample {
+    method(value: int): int {
+        return value;
+    }
+
+    method(value: int, text: string): int {
+        return value + text.length;
+    }
+}
+
 function findGetTypeMethod(classType: ClassType, name: string, wantStatic?: boolean): Method {
     for (let i: long = 0; i < classType.getMethodsNum(); i += 1) {
         const method = classType.getMethod(i);
@@ -758,7 +768,7 @@ export default function MethodGetTypeTest(): void {
          */
         it('testMethodGetType029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = findGetTypeMethod(Type.from<GetTypePrimitiveMoreSample>() as ClassType, "nullValue");
-            expect(method.getType().getResultType() !== undefined).assertTrue();
+            expect(method.getType().getResultType().toString()).assertEqual("null");
         });
 
         /**
@@ -771,7 +781,7 @@ export default function MethodGetTypeTest(): void {
          */
         it('testMethodGetType030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = findGetTypeMethod(Type.from<GetTypeObjectReturnSample>() as ClassType, "getUser");
-            expect(method.getType().getResultType() !== undefined).assertTrue();
+            expect(method.getType().getResultType().toString()).assertContain("GetTypeUserSample");
         });
 
         /**
@@ -784,7 +794,7 @@ export default function MethodGetTypeTest(): void {
          */
         it('testMethodGetType031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = findGetTypeMethod(Type.from<GetTypeObjectReturnSample>() as ClassType, "getConfig");
-            expect(method.getType().getResultType() !== undefined).assertTrue();
+            expect(method.getType().getResultType().toString()).assertContain("GetTypeConfigSample");
         });
 
         /**
@@ -797,7 +807,7 @@ export default function MethodGetTypeTest(): void {
          */
         it('testMethodGetType032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = findGetTypeMethod(Type.from<GetTypeObjectReturnSample>() as ClassType, "nullable");
-            expect(method.getType().getResultType() !== undefined).assertTrue();
+            expect(method.getType().getResultType().toString()).assertEqual("(... | ...)");
         });
 
         /**
@@ -836,7 +846,7 @@ export default function MethodGetTypeTest(): void {
          */
         it('testMethodGetType035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = findGetTypeMethod(Type.from<GetTypeGenericReturnSample<string>>() as ClassType, "identity");
-            expect(method.getType().getResultType() !== undefined).assertTrue();
+            expect(method.getType().getResultType().toString()).assertEqual("Y");
         });
 
         /**
@@ -849,7 +859,7 @@ export default function MethodGetTypeTest(): void {
          */
         it('testMethodGetType036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = findGetTypeMethod(Type.from<GetTypeGenericReturnSample<string>>() as ClassType, "values");
-            expect(method.getType().getResultType() !== undefined).assertTrue();
+            expect(method.getType().getResultType().toString()).assertEqual("std.core.Array");
         });
 
         /**
@@ -862,7 +872,7 @@ export default function MethodGetTypeTest(): void {
          */
         it('testMethodGetType037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = findGetTypeMethod(Type.from<GetTypeGenericBoundReturnSample<GetTypeGenericBoundBaseSample>>() as ClassType, "getValue");
-            expect(method.getType().getResultType() !== undefined).assertTrue();
+            expect(method.getType().getResultType().toString()).assertContain("GetTypeGenericBoundBaseSample");
         });
 
         /**
@@ -875,7 +885,7 @@ export default function MethodGetTypeTest(): void {
          */
         it('testMethodGetType038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = findGetTypeMethod(Type.from<GetTypePromiseReturnSample>() as ClassType, "asyncVoid");
-            expect(method.getType().getResultType() !== undefined).assertTrue();
+            expect(method.getType().getResultType().toString()).assertContain("Promise");
         });
 
         /**
@@ -888,7 +898,7 @@ export default function MethodGetTypeTest(): void {
          */
         it('testMethodGetType039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = findGetTypeMethod(Type.from<GetTypePromiseReturnSample>() as ClassType, "asyncString");
-            expect(method.getType().getResultType() !== undefined).assertTrue();
+            expect(method.getType().getResultType().toString()).assertContain("Promise");
         });
 
         /**
@@ -901,7 +911,7 @@ export default function MethodGetTypeTest(): void {
          */
         it('testMethodGetType040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = findGetTypeMethod(Type.from<GetTypePromiseReturnSample>() as ClassType, "loadUser");
-            expect(method.getType().getResultType() !== undefined).assertTrue();
+            expect(method.getType().getResultType().toString()).assertContain("Promise");
         });
 
         /**
@@ -927,7 +937,7 @@ export default function MethodGetTypeTest(): void {
          */
         it('testMethodGetType042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = findGetTypeMethod(Type.from<GetTypeAccessorPairSample>() as ClassType, "%%set-name");
-            expect(method.getType().getResultType() !== undefined).assertTrue();
+            expect(method.getType().getResultType().toString()).assertEqual("void");
         });
 
         /**
@@ -953,7 +963,7 @@ export default function MethodGetTypeTest(): void {
          */
         it('testMethodGetType044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = findGetTypeMethod(Type.from<GetTypeAccessorPairSample>() as ClassType, "%%set-count", true);
-            expect(method.getType().getResultType() !== undefined).assertTrue();
+            expect(method.getType().getResultType().toString()).assertEqual("void");
         });
 
         /**
@@ -992,7 +1002,7 @@ export default function MethodGetTypeTest(): void {
          */
         it('testMethodGetType047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = findGetTypeMethod(Type.from<GetTypeStaticCreateSample>() as ClassType, "create", true);
-            expect(method.getType().getResultType() !== undefined).assertTrue();
+            expect(method.getType().getResultType().toString()).assertContain("GetTypeStaticCreateSample");
         });
 
         /**
@@ -1018,7 +1028,7 @@ export default function MethodGetTypeTest(): void {
          */
         it('testMethodGetType049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = findGetTypeMethod(Type.from<GetTypeEnumReturnSample>() as ClassType, "getStatus");
-            expect(method.getType().getResultType() !== undefined).assertTrue();
+            expect(method.getType().getResultType().toString()).assertContain("GetTypeStatusSample");
         });
 
         /**
@@ -1096,7 +1106,36 @@ export default function MethodGetTypeTest(): void {
          */
         it('testMethodGetType055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = findGetTypeMethod(Type.from<GetTypeSelfReturnSample>() as ClassType, "step");
-            expect(method.getType().getResultType() !== undefined).assertTrue();
+            expect(method.getType().getResultType().toString()).assertContain("GetTypeSelfReturnSample");
+        });
+
+        /**
+         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_TYPE_5600
+         * @tc.name testMethodGetType056
+         * @tc.desc Verify overloaded methods keep distinct parameter counts in type metadata
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level Level 2
+         */
+        it('testMethodGetType056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+            const classType = Type.from<GetTypeOverloadSample>() as ClassType;
+            let oneParamMethod: Method | undefined = undefined;
+            let twoParamMethod: Method | undefined = undefined;
+            for (let i: long = 0; i < classType.getMethodsNum(); i += 1) {
+                const method = classType.getMethod(i);
+                if (method.getName() === "method") {
+                    const parameterCount = method.getType().getParametersNum();
+                    if (parameterCount === 1) {
+                        oneParamMethod = method;
+                    } else if (parameterCount === 2) {
+                        twoParamMethod = method;
+                    }
+                }
+            }
+            expect(oneParamMethod !== undefined).assertTrue();
+            expect(twoParamMethod !== undefined).assertTrue();
+            expect(oneParamMethod!.getType().getParametersNum()).assertEqual(1);
+            expect(twoParamMethod!.getType().getParametersNum()).assertEqual(2);
         });
     });
 }

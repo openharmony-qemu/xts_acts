@@ -249,6 +249,11 @@ class GetNameSuperChildSample extends GetNameSuperParentSample {
     }
 }
 
+class GetNameOverloadSample {
+    method(value: int): void {}
+    method(value: int, text: string): void {}
+}
+
 function findGetNameMethod(classType: ClassType, name: string, wantStatic?: boolean): Method {
     for (let i: long = 0; i < classType.getMethodsNum(); i += 1) {
         const method = classType.getMethod(i);
@@ -897,6 +902,34 @@ export default function MethodGetNameTest(): void {
         it('testMethodGetName044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = (Type.from<GetNameEnumMethodSample>() as ClassType).getMethodByName("acceptEnum");
             expect(method.getName()).assertEqual("acceptEnum");
+        });
+
+        /**
+         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_NAME_4500
+         * @tc.name testMethodGetName045
+         * @tc.desc Verify overloaded methods keep the same method name
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level Level 2
+         */
+        it('testMethodGetName045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+            const classType = Type.from<GetNameOverloadSample>() as ClassType;
+            let oneParamMethod: Method | undefined = undefined;
+            let twoParamMethod: Method | undefined = undefined;
+            for (let i: long = 0; i < classType.getMethodsNum(); i += 1) {
+                const method = classType.getMethod(i);
+                if (method.getName() === "method") {
+                    const parameterCount = method.getType().getParametersNum();
+                    if (parameterCount === 1) {
+                        oneParamMethod = method;
+                    } else if (parameterCount === 2) {
+                        twoParamMethod = method;
+                    }
+                }
+            }
+            expect(oneParamMethod !== undefined).assertTrue();
+            expect(twoParamMethod !== undefined).assertTrue();
+            expect(oneParamMethod!.getName()).assertEqual(twoParamMethod!.getName());
         });
     });
 }

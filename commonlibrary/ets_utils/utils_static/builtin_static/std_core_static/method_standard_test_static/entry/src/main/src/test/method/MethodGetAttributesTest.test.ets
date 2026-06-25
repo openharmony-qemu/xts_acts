@@ -195,6 +195,11 @@ class AttrsStaticInstanceSameNameSample {
     sameName(): void {}
 }
 
+class AttrsOverloadSample {
+    method(value: int): void {}
+    method(value: int, text: string): void {}
+}
+
 function findAttrsMethod(classType: ClassType, name: string, wantStatic?: boolean): Method {
     for (let i: long = 0; i < classType.getMethodsNum(); i += 1) {
         const method = classType.getMethod(i);
@@ -231,7 +236,7 @@ export default function MethodGetAttributesTest(): void {
         it('testMethodGetAttributes001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = (Type.from<AttrsNormalSample>() as ClassType).getMethodByName("add");
             const attrs = method.getAttributes();
-            expect(typeof attrs === "int").assertTrue();
+            expect(typeof attrs).assertEqual("int");
             expect(attrs).assertEqual(0);
             expect(method.isStatic()).assertFalse();
         });
@@ -255,7 +260,7 @@ export default function MethodGetAttributesTest(): void {
                 }
             }
             const attrs = method!.getAttributes();
-            expect(typeof attrs === "int").assertTrue();
+            expect(typeof attrs).assertEqual("int");
             expect(method!.isStatic()).assertTrue();
         });
 
@@ -270,7 +275,7 @@ export default function MethodGetAttributesTest(): void {
         it('testMethodGetAttributes003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = (Type.from<AttrsFinalSample>() as ClassType).getMethodByName("doFinal");
             const attrs = method.getAttributes();
-            expect(typeof attrs === "int").assertTrue();
+            expect(typeof attrs).assertEqual("int");
             expect(method.isFinal()).assertTrue();
         });
 
@@ -285,7 +290,7 @@ export default function MethodGetAttributesTest(): void {
         it('testMethodGetAttributes004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = (Type.from<AttrsAbstractSample>() as ClassType).getMethodByName("doAbstract");
             const attrs = method.getAttributes();
-            expect(typeof attrs === "int").assertTrue();
+            expect(typeof attrs).assertEqual("int");
             expect(method.isAbstract()).assertTrue();
         });
 
@@ -300,7 +305,7 @@ export default function MethodGetAttributesTest(): void {
         it('testMethodGetAttributes005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = (Type.from<AttrsCtorSample>() as ClassType).getConstructor(0);
             const attrs = method.getAttributes();
-            expect(typeof attrs === "int").assertTrue();
+            expect(typeof attrs).assertEqual("int");
             expect(method.isConstructor()).assertTrue();
         });
 
@@ -315,7 +320,7 @@ export default function MethodGetAttributesTest(): void {
         it('testMethodGetAttributes006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = (Type.from<AttrsGetterSample>() as ClassType).getMethodByName("%%get-value");
             const attrs = method.getAttributes();
-            expect(typeof attrs === "int").assertTrue();
+            expect(typeof attrs).assertEqual("int");
             expect(method.isGetter()).assertTrue();
         });
 
@@ -330,7 +335,7 @@ export default function MethodGetAttributesTest(): void {
         it('testMethodGetAttributes007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = (Type.from<AttrsSetterSample>() as ClassType).getMethodByName("%%set-value");
             const attrs = method.getAttributes();
-            expect(typeof attrs === "int").assertTrue();
+            expect(typeof attrs).assertEqual("int");
             expect(method.isSetter()).assertTrue();
         });
 
@@ -345,7 +350,7 @@ export default function MethodGetAttributesTest(): void {
         it('testMethodGetAttributes008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = (Type.from<AttrsNativeSample>() as ClassType).getMethodByName("doNative");
             const attrs = method.getAttributes();
-            expect(typeof attrs === "int").assertTrue();
+            expect(typeof attrs).assertEqual("int");
             expect(method.isNative()).assertTrue();
         });
 
@@ -360,8 +365,8 @@ export default function MethodGetAttributesTest(): void {
         it('testMethodGetAttributes009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = (Type.from<AttrsPrivateSample>() as ClassType).getMethodByName("doPrivate");
             const attrs = method.getAttributes();
-            expect(typeof attrs === "int").assertTrue();
-            expect(method.getAccessModifier() > 0).assertTrue();
+            expect(typeof attrs).assertEqual("int");
+            expect(method.getAccessModifier()).assertLarger(0);
         });
 
         /**
@@ -379,7 +384,7 @@ export default function MethodGetAttributesTest(): void {
             expect(method.isStatic()).assertFalse();
             expect(method.isGetter()).assertFalse();
             expect(method.isSetter()).assertFalse();
-            expect(method.getAccessModifier() === 0).assertTrue();
+            expect(method.getAccessModifier()).assertEqual(0);
         });
 
         /**
@@ -401,10 +406,10 @@ export default function MethodGetAttributesTest(): void {
                 }
             }
             const attrs = method!.getAttributes();
-            expect(typeof attrs === "int").assertTrue();
-            expect(attrs > 0).assertTrue();
+            expect(typeof attrs).assertEqual("int");
+            expect(attrs).assertLarger(0);
             expect(method!.isStatic()).assertTrue();
-            expect(method!.getAccessModifier() > 0).assertTrue();
+            expect(method!.getAccessModifier()).assertLarger(0);
         });
 
         /**
@@ -420,7 +425,8 @@ export default function MethodGetAttributesTest(): void {
             const attrs1 = method.getAttributes();
             const attrs2 = method.getAttributes();
             const attrs3 = method.getAttributes();
-            expect(attrs1 === attrs2 && attrs2 === attrs3).assertTrue();
+            expect(attrs1).assertEqual(attrs2);
+            expect(attrs2).assertEqual(attrs3);
         });
 
         /**
@@ -486,7 +492,7 @@ export default function MethodGetAttributesTest(): void {
          */
         it('testMethodGetAttributes015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = findAttrsMethod(Type.from<AttrsAsyncSample>() as ClassType, "doAsync");
-            expect(typeof method.getAttributes() === "int").assertTrue();
+            expect(typeof method.getAttributes()).assertEqual("int");
             expect(method.isAsync()).assertTrue();
         });
 
@@ -500,7 +506,7 @@ export default function MethodGetAttributesTest(): void {
          */
         it('testMethodGetAttributes016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = findAttrsMethod(Type.from<AttrsStaticAsyncSample>() as ClassType, "doStaticAsync", true);
-            expect(typeof method.getAttributes() === "int").assertTrue();
+            expect(typeof method.getAttributes()).assertEqual("int");
             expect(method.isStatic()).assertTrue();
             expect(method.isAsync()).assertTrue();
         });
@@ -515,7 +521,7 @@ export default function MethodGetAttributesTest(): void {
          */
         it('testMethodGetAttributes017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = findAttrsMethod(Type.from<AttrsStaticNativeSample>() as ClassType, "doStaticNative", true);
-            expect(typeof method.getAttributes() === "int").assertTrue();
+            expect(typeof method.getAttributes()).assertEqual("int");
             expect(method.isStatic()).assertTrue();
             expect(method.isNative()).assertTrue();
         });
@@ -530,7 +536,7 @@ export default function MethodGetAttributesTest(): void {
          */
         it('testMethodGetAttributes018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = findAttrsMethod(Type.from<AttrsFinalGetterSample>() as ClassType, "%%get-value");
-            expect(typeof method.getAttributes() === "int").assertTrue();
+            expect(typeof method.getAttributes()).assertEqual("int");
             expect(method.isGetter()).assertTrue();
             expect(method.isFinal()).assertTrue();
         });
@@ -545,7 +551,7 @@ export default function MethodGetAttributesTest(): void {
          */
         it('testMethodGetAttributes019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = findAttrsMethod(Type.from<AttrsFinalSetterSample>() as ClassType, "%%set-value");
-            expect(typeof method.getAttributes() === "int").assertTrue();
+            expect(typeof method.getAttributes()).assertEqual("int");
             expect(method.isSetter()).assertTrue();
             expect(method.isFinal()).assertTrue();
         });
@@ -830,6 +836,34 @@ export default function MethodGetAttributesTest(): void {
             const publicMethod = findAttrsMethod(Type.from<AttrsPlainSample>() as ClassType, "plain");
             const booleanMethod = findAttrsMethod(Type.from<AttrsBooleanParamSample>() as ClassType, "acceptBoolean");
             expect(booleanMethod.getAttributes()).assertEqual(publicMethod.getAttributes());
+        });
+
+        /**
+         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_ATTRIBUTES_4000
+         * @tc.name testMethodGetAttributes040
+         * @tc.desc Verify overloaded methods keep stable attribute bits
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level Level 2
+         */
+        it('testMethodGetAttributes040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+            const classType = Type.from<AttrsOverloadSample>() as ClassType;
+            let oneParamMethod: Method | undefined = undefined;
+            let twoParamMethod: Method | undefined = undefined;
+            for (let i: long = 0; i < classType.getMethodsNum(); i += 1) {
+                const method = classType.getMethod(i);
+                if (method.getName() === "method") {
+                    const parameterCount = method.getType().getParametersNum();
+                    if (parameterCount === 1) {
+                        oneParamMethod = method;
+                    } else if (parameterCount === 2) {
+                        twoParamMethod = method;
+                    }
+                }
+            }
+            expect(oneParamMethod !== undefined).assertTrue();
+            expect(twoParamMethod !== undefined).assertTrue();
+            expect(oneParamMethod!.getAttributes()).assertEqual(twoParamMethod!.getAttributes());
         });
     });
 }
