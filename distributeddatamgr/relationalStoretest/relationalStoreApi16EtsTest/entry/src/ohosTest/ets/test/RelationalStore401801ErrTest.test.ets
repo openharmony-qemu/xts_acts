@@ -1622,7 +1622,54 @@ export default function relationalStoreInterfaceErrTest() {
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_emit_ErrTest_0200 end-----")
       })
-
+    /**
+         * @tc.name   SUB_DistributedData_RelationalStore_emit_ErrTest_0300
+         * @tc.number SUB_DistributedData_RelationalStore_emit_ErrTest_0300
+         * @tc.desc   Test emit
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+    it('SUB_DistributedData_RelationalStore_emit_ErrTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    async () => {
+      console.info(TAG + "-----SUB_DistributedData_RelationalStore_emit_ErrTest_0300 start-----")
+      let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
+      store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+      if (store != undefined) {
+        try {
+          (store as relationalStore.RdbStore).emit(undefined);
+          expect().assertFail();
+        } catch (err) {
+          console.error(TAG + 'Failed to emit.Code: ' + err.code + ',message:' + err.message);
+          expect(err.code).assertEqual('401');
+        }
+      }
+      console.info(TAG + "-----SUB_DistributedData_RelationalStore_emit_ErrTest_0300 end-----")
+    })
+    /**
+         * @tc.name   SUB_DistributedData_RelationalStore_emit_ErrTest_0400
+         * @tc.number SUB_DistributedData_RelationalStore_emit_ErrTest_0400
+         * @tc.desc   Test emit
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+    it('SUB_DistributedData_RelationalStore_emit_ErrTest_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    async () => {
+      console.info(TAG + "-----SUB_DistributedData_RelationalStore_emit_ErrTest_0400 start-----")
+      let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
+      store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+      if (store != undefined) {
+        try {
+          (store as relationalStore.RdbStore).emit('');
+          expect().assertFail();
+        } catch (err) {
+          console.error(TAG + 'Failed to emit.Code: ' + err.code + ',message:' + err.message);
+          expect(err.code).assertEqual('401');
+        }
+      }
+      console.info(TAG + "-----SUB_DistributedData_RelationalStore_emit_ErrTest_0400 end-----")
+    })
     /**
      * @tc.name   SUB_DistributedData_RelationalStore_queryLockedRow_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_queryLockedRow_ErrTest_0100
