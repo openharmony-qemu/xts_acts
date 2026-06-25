@@ -858,7 +858,7 @@ OH_AVFormat **ParseExtrenalRoiString(const char *externalRoiString, uint32_t *pa
 OH_AVErrCode ProcessAndAppendSingleRoi(OH_AVFormat *roiFormat, char **finalRoiString)
 {
     if (roiFormat == nullptr || finalRoiString == nullptr) {
-        return AV_ERR_INVALID_AVL;
+        return AV_ERR_INVALID_VAL;
     }
 
     OH_AVFormat *roiParam = OH_AVFormat_Create();
@@ -887,7 +887,7 @@ OH_AVErrCode ProcessAndAppendSingleRoi(OH_AVFormat *roiFormat, char **finalRoiSt
 
     int32_t semLabel = 0;
     if (OH_AVFormat_GetIntValue(roiFormat, OH_MD_KEY_VIDEO_METADATA_ROI_SEM_LABEL, &semLabel)) {
-        OH_AVFormat_GetIntValue(roiFormat, OH_MD_KEY_VIDEO_METADATA_ROI_SEM_LABEL, semLabel);
+        OH_AVFormat_SetIntValue(roiFormat, OH_MD_KEY_VIDEO_METADATA_ROI_SEM_LABEL, semLabel);
     }
 
     OH_AVErrCode ret = OH_VideoMetadata_AppendRoiString(finalRoiString, roiParam);
@@ -901,20 +901,21 @@ OH_AVErrCode VEncAPI11Sample::RebuildAndSetRoiToEncoder(OH_AVFormat **roiFormats
         return AV_ERR_INVALID_VAL;
     }
 
-    char *finalRoiSting = nullptr;
+    char *finalRoiString = nullptr;
     OH_AVErrCode ret = AV_ERR_OK;
 
     for (uint32_t i = 0; i < count; i++) {
         if (roiFormats[i] != nullptr) {
-            ret = ProcessAndAppendSingleRoi(roiFormat[i], &finalRoiString);
+            ret = ProcessAndAppendSingleRoi(roiFormats[i], &finalRoiString);
             if (ret != AV_ERR_OK) {
                 break;
             }
         }
     }
 
-    if (ret == AV_EER_OK && finalRoiString != nullptr) {
-        OH_LOG_INFO(LOG_APP, "=== Successfully rebuilt ROI=%{pubilc}s ====" finalRoiString);
+    if (ret == AV_ERR_OK && finalRoiString != nullptr) {
+        OH_LOG_INFO(LOG_APP, "=== Successfully rebuilt ROI=%{pubilc}s ====", finalRoiString);
+        OH_AVFormat *encoderParam = OH_AVFormat_Create();
         OH_AVFormat_SetStringValue(encoderParam, OH_MD_KEY_VIDEO_ENCODER_ROI_PARAMS, finalRoiString);
         OH_AVErrCode setParamResult = OH_VideoEncoder_SetParameter(venc_, encoderParam);
         OH_AVFormat_Destroy(encoderParam);
@@ -937,7 +938,7 @@ void CleanupParsedRoiFormats(OH_AVFormat **roiFormats, uint32_t capacity)
     for (uint32_t i = 0; i < capacity; i++) {
         if (roiFormats[i] != nullptr) {
             OH_AVFormat_Destroy(roiFormats[i]);
-            roiFormat[i] = nullptr;
+            roiFormats[i] = nullptr;
         }
     }
     free(roiFormats);
@@ -946,11 +947,11 @@ void CleanupParsedRoiFormats(OH_AVFormat **roiFormats, uint32_t capacity)
 int32_t VEncAPI11Sample::CompleteRoiWorkflow(const char *externalRoiString)
 {
     uint32_t parsedCount = 0;
-    OH_AVFormat **roiFormats = ParseExternalRoiString(externalRoiString, &parsedCount);
+    OH_AVFormat **roiFormats = ParseExtrenalRoiString(externalRoiString, &parsedCount);
     OH_LOG_INFO(LOG_APP, "=== Successfully parsedCount=%{public}u", parsedCount);
     if (roiFormats == nullptr) {
         OH_LOG_INFO(LOG_APP, "Failed to parse ROI string");
-        retrun AV_ERR_UNKNOWN;
+        return AV_ERR_UNKNOWN;
     }
     uint32_t capacity = (parsedCount > BUINESS_MAX_ROI_COUNT) ? BUINESS_MAX_ROI_COUNT : parsedCount;
     OH_AVErrCode result = RebuildAndSetRoiToEncoder(roiFormats, parsedCount);
