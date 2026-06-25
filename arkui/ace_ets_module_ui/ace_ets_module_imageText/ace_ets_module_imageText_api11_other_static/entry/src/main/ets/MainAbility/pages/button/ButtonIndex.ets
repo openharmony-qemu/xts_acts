@@ -15,52 +15,12 @@
  */
 import events_emitter from '@ohos.events.emitter';
 import { Hypium } from '../../../../../hypium/index';
-import { AppStorage } from '@ohos.arkui.stateManagement'
-import inspector from '@ohos.arkui.inspector'
+import { AppStorage, State } from '@ohos.arkui.stateManagement';
+import inspector from '@ohos.arkui.inspector';
 import hilog from '@ohos.hilog';
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  Text,
-  Row,
-  Color,
-  $r,
-  Margin,
-  ColumnOptions,
-  Flex,
-  Scroll,
-  Padding,
-  Position,
-  Builder,
-  Image,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  Alignment,
-  TextAlign,
-  TextOverflow,
-  Scroller,
-  Stack,
-  TextHeightAdaptivePolicy,
-  FontWeight,
-  FontStyle,
-  ButtonType,
-  BarState,
-  ScrollDirection,
-  ScrollBar,
-  ControlSize,
-  ButtonStyleMode,
-  ScrollBarDirection,
-  ControlSize,
-  ButtonStyleMode
-} from '@ohos.arkui.component';
-import { State, AppStorage } from '@ohos.arkui.stateManagement';
-import { ClickEvent } from '@ohos.arkui.component';
+import { Entry, Column, Component, Button, Text, Row, Color, $r, Margin, ColumnOptions, Flex, Scroll, Padding, Position, Builder, Image, FlexDirection, ItemAlign, FlexAlign, Alignment, TextAlign, TextOverflow, Scroller, Stack, TextHeightAdaptivePolicy, FontWeight, FontStyle, ButtonType, BarState, ScrollDirection, ScrollBar, ControlSize, ButtonStyleMode, ScrollBarDirection, ClickEvent } from '@ohos.arkui.component';
 import { UIContext } from '@ohos.arkui.UIContext';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-
 @Entry
 @Component
 struct textInputTest {

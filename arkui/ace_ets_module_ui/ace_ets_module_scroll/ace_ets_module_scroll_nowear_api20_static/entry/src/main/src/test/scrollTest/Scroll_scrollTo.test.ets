@@ -12,25 +12,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  describe,
-  beforeEach,
-  it,
-  expect,
-  Level,
-  beforeAll,
-  beforeEach,
-  Size,
-  afterEach,
-  TestType
-} from '../../../../hypium/index';
-import { Color } from '@ohos.arkui.component'
+import { describe, beforeEach, it, expect, Level, beforeAll, Size, afterEach, TestType } from '../../../../hypium/index';
+import { Color } from '@ohos.arkui.component';
 import router from '@ohos.router';
 import CommonFunc from '../common/Common';
 import Utils from '../common/Utils';
 import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
@@ -38,7 +27,6 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
-
 export default function Scroll_scrollTo() {
   describe('Scroll_scrollTo', () => {
 

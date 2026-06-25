@@ -13,43 +13,22 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
-import hilog from '@ohos.hilog'
+import { describe, it, expect, TestType, Size, Level, beforeAll } from '../../../hypium/index';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
 import cert from '@ohos.security.cert';
 import cryptoFramework from '@ohos.security.cryptoFramework';
-import {
-  caCert, caCert1, caCrl, caInterCert,
-  caInterCert1, caSubCert, caSubCert1, certCheckCA,
-  certEntryMaxObject, certEntryObject, certErrorOid, certExtension,
-  certExtensionsPath_2147483648, certIssuerDisName, certKeyUsage,
-  certNoCRLPoint, certNoExtension, certNoKeyUsage, certNoPubKey,
-  certNoSubjectAltName, certNotAfterTime, certNotBeforeTime,
-  certNotEffect, certNotSignAlgName, certNotSignature, certNotSignatureOid,
-  certSignParams, chainPem, createCertExtension, createCertWithXts,
-  crlBadData, crlBadSerial, crlCert, crlErrorIssuer,
-  crlErrorSignAlg, crlErrorSignOid, crlIsRevokedMax, crlLastNextMaxLen,
-  crlMaxIssuerNameLen, crlNoLastDataNoNextData,
-  crlNoSignature, crlPem, crlRevokedCert, crlSignPubKey, crlVerify,
-  crlVerifyPubKeyFalse, crlVerifyPubKeyTrue, extData,
-  getCRLRevokedCerts, pkcs12Cert,
-  revokedCertPem, rsaPem4096, rsaPem4096_other,
-  selectCRLs, verify, x509CertErrorPubkey } from "./utils/certificate/certX509Pem";
-import { stringTouInt8Array } from "./utils/common/commonFunction";
-import { certUft8WithChineseSubject } from "./utils/certificate/publicCertificatePromise";
-import { stringToUint8Array } from "./utils/certificate/p12";
-import { rsa_p8_enc_pem, rsa_p8_enc_pem_cert } from "./utils/cms/cms";
-import {
-  unstructuredName,
-  challengePassword,
-  keyUsage, rsa_pkcs1_enc_pem, subj, } from "./utils/csr/csr";
-
+import { caCert, caCert1, caCrl, caInterCert, caInterCert1, caSubCert, caSubCert1, certCheckCA, certEntryMaxObject, certEntryObject, certErrorOid, certExtension, certExtensionsPath_2147483648, certIssuerDisName, certKeyUsage, certNoCRLPoint, certNoExtension, certNoKeyUsage, certNoPubKey, certNoSubjectAltName, certNotAfterTime, certNotBeforeTime, certNotEffect, certNotSignAlgName, certNotSignature, certNotSignatureOid, certSignParams, chainPem, createCertExtension, createCertWithXts, crlBadData, crlBadSerial, crlCert, crlErrorIssuer, crlErrorSignAlg, crlErrorSignOid, crlIsRevokedMax, crlLastNextMaxLen, crlMaxIssuerNameLen, crlNoLastDataNoNextData, crlNoSignature, crlPem, crlRevokedCert, crlSignPubKey, crlVerify, crlVerifyPubKeyFalse, crlVerifyPubKeyTrue, extData, getCRLRevokedCerts, pkcs12Cert, revokedCertPem, rsaPem4096, rsaPem4096_other, selectCRLs, verify, x509CertErrorPubkey } from './utils/certificate/certX509Pem';
+import { stringTouInt8Array } from './utils/common/commonFunction';
+import { certUft8WithChineseSubject } from './utils/certificate/publicCertificatePromise';
+import { stringToUint8Array } from './utils/certificate/p12';
+import { rsa_p8_enc_pem, rsa_p8_enc_pem_cert } from './utils/cms/cms';
+import { unstructuredName, challengePassword, keyUsage, rsa_pkcs1_enc_pem, subj } from './utils/csr/csr';
 export default function certFrameworkResultCodeTestUnit() {
   describe("certFrameworkResultCodeTestUnit", () => {
     beforeAll(async () => {

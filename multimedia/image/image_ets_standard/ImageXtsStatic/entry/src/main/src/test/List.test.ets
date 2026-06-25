@@ -70,6 +70,15 @@ import PicturePackingPixelMapFirTestSupp
 import PicturePackToFileSuppImageSourceTestStatic
   from './testStatic/image/ImagerPackerSupplement/PicturePackToFileSuppStatic.test';
 import ImageSourceCreatePixelMapListSuppStatic from './testStatic/image/imageSource/ImageSourceCreatePixelMapListStatic.test';
+import getHdrComposedPixelmapStaticSuppTest from './testStatic/image/Picture/getHdrComposedPixelmapStatic.test';
+import imageGetMetaDataStaticTest from './testStatic/image/Picture/getMetadataStatic.test';
+import PictureGetGainmapPixelmapTest from './testStatic/image/Picture/PictureGetGainmapPixelmap.test';
+import ImageSetAuxiliaryPictureStaticTest from './testStatic/image/Picture/setAuxiliaryPictureStatic.test';
+import imagePackerPackingSuppStaticTest from './testStatic/image/ImagePacker/packingStatic.test';
+import imagePackerPackToDataTestSuppStatic from './testStatic/image/ImagePacker/packToDataStatic.test';
+import setAuxiliaryPictureGetMetadataStaticTest
+  from './testStatic/image/AuxiliaryPicture/setAuxiliaryPictureInfoStatic.test';
+import SetMetadataAxuStaticTest from './testStatic/image/AuxiliaryPicture/setMetadataAxuStatic.test';
 import ImageEnumSupp from './testStatic/image/image/ImageEnum.test';
 import ImageSourceGetDisposalTypeListTest from './testStatic/image/imageSource/getDisposalTypeList.test';
 import ImageSourceGetFrameCountTest from './testStatic/image/imageSource/getFrameCount.test';
@@ -95,7 +104,7 @@ import pixelMapScaleTest from './testStatic/image/pixelMap/scale.test';
 import pixelMapTranslateTest from './testStatic/image/pixelMap/translate.test';
 import pixelMapWritePixelsTest from './testStatic/image/pixelMap/writePixels.test';
 import ImagePictureAuxiliaryPicture from './testStatic/image/image/ImagePictureAuxiliaryPicture.test';
-
+import ImagePropertyKeyArrayTest from  "./testStatic/image/imageSource/ImagePropertyKeyArrayTest.test";
 
 export default function testsuite(): void {
   metaDataStaticTest();
@@ -164,6 +173,14 @@ export default function testsuite(): void {
   PicturePackingPixelMapFirTestSupp();
   PicturePackToFileSuppImageSourceTestStatic();
   ImageSourceCreatePixelMapListSuppStatic();
+  getHdrComposedPixelmapStaticSuppTest();
+  SetMetadataAxuStaticTest();
+  imageGetMetaDataStaticTest();
+  PictureGetGainmapPixelmapTest();
+  ImageSetAuxiliaryPictureStaticTest();
+  imagePackerPackingSuppStaticTest();
+  imagePackerPackToDataTestSuppStatic();
+  setAuxiliaryPictureGetMetadataStaticTest();
   ImageEnumSupp();
   ImageSourceGetDisposalTypeListTest();
   ImageSourceGetFrameCountTest();
@@ -189,5 +206,6 @@ export default function testsuite(): void {
   pixelMapTranslateTest();
   pixelMapWritePixelsTest();
   ImagePictureAuxiliaryPicture();
+  ImagePropertyKeyArrayTest();
 }
 

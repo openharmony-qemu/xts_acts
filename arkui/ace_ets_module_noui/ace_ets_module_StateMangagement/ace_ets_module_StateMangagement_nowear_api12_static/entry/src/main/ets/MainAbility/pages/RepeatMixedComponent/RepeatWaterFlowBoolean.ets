@@ -14,39 +14,10 @@
  * limitations under the License.
  */
 
-import {
-  DataReloadOperation,
-  DataOperationType,
-  Entry,
-  Text,
-  TextAttribute,
-  Column,
-  Component,
-  Stack,
-  WaterFlow,
-  LazyForEach,
-  FlowItem,
-  DataOperation,
-  Color,
-  TextAlign,
-  DataChangeListener,
-  IDataSource,
-  Button,
-  ButtonAttribute,
-  ClickEvent,
-
-  Image,
-  Search,
-  Row,WaterFlowLayoutMode,
-  Column,Repeat,RepeatItem,$r,FlexAlign,
-  SearchController,ComponentV2,ForEach,
-  ColumnOptions,WaterFlowSections,Scroller,SectionOptions
-} from '@ohos.arkui.component'
-import { State, Link, PropRef , Local ,ObservedV2,Trace } from '@ohos.arkui.stateManagement'
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { DataReloadOperation, DataOperationType, Entry, Text, TextAttribute, Column, Component, Stack, WaterFlow, LazyForEach, FlowItem, DataOperation, Color, TextAlign, DataChangeListener, IDataSource, Button, ButtonAttribute, ClickEvent, Image, Search, Row, WaterFlowLayoutMode, Repeat, RepeatItem, $r, FlexAlign, SearchController, ComponentV2, ForEach, ColumnOptions, WaterFlowSections, Scroller, SectionOptions } from '@ohos.arkui.component';
+import { State, Link, PropRef, Local, ObservedV2, Trace, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import common from '@ohos.app.ability.common';
-
 @Entry
 @ComponentV2
 struct RepeatWaterFlowBoolean {

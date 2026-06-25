@@ -13,21 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,AnimateParam,Search,TextAlign,Axis,NavBarPosition,
-  NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,
-  Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,Padding,$rawfile,
-  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, SharedTransitionEffectType, Visibility,NavigationCommonTitle,NavDestinationCommonTitle
-,NavPathStack} from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  PropRef,Provide
-} from '@ohos.arkui.stateManagement';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import events_emitter from '@ohos.events.emitter'
-import { BusinessError } from '@ohos.base';
-import { RecordData } from '@ohos.base';
+import { Entry, Component, $r, Scroll, Builder, List, ListItem, Resource, AnimateParam, Search, TextAlign, Axis, NavBarPosition, NavigationTitleMode, Image, NavigationMode, Column, Navigation, ButtonType, NavDestination, Stack, ColumnOptions, TextInput, Position, EffectType, EffectComponent, Text, Color, Flex, FlexDirection, ItemAlign, Row, Button, ClickEvent, NavDestinationMode, Dimension, Padding, $rawfile, FontWeight, Margin, Swiper, ForEach, PickerTextStyle, SharedTransitionEffectType, Visibility, NavigationCommonTitle, NavDestinationCommonTitle, NavPathStack } from '@ohos.arkui.component';
+import { State, Link, PropRef, Provide, AppStorage } from '@ohos.arkui.stateManagement';
+import events_emitter from '@ohos.events.emitter';
+import { BusinessError, RecordData } from '@ohos.base';
 interface Param {
   duration: int
   delay: int

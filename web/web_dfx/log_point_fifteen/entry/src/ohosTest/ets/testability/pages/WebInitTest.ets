@@ -21,14 +21,12 @@ import testsuite from '../../test/List.test';
 import web_webview from '@ohos.web.webview';
 import { WebNetErrorList } from '@ohos.web.netErrorList'
 import { BusinessError } from '@ohos.base';
-import { XtsTestServer } from 'library';
 const EVENT_ID_SET_EIMIT_KEY = 101000;
 
 @Entry
 @Component
 struct WebInitTest {
   controller: web_webview.WebviewController = new web_webview.WebviewController();
-  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State str: string = ""
   @State webInit: boolean = false
   @State webCreated: boolean = false
@@ -58,7 +56,7 @@ struct WebInitTest {
         this.str = eventData.data.ACTION;
         this.isReceive = 1;
         try {
-          this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
+          this.controller.loadUrl("resource://rawfile/index.html");
         } catch (error) {
           console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
         }
@@ -71,10 +69,6 @@ struct WebInitTest {
     let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
     console.info('start run testcase!!!')
     Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
-  }
-
-  aboutToDisappear() {
-    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   build() {
@@ -422,7 +416,7 @@ struct WebInitTest {
             }
           })
 
-        Web({ src: this.mServer.getAssetUrl('index.html'), controller: this.controller })
+        Web({ src: $rawfile('index.html'), controller: this.controller })
           .height('50%')
           .width('100%')
           .javaScriptAccess(true)

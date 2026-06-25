@@ -148,34 +148,10 @@ struct pasteButtonSetNull {
                   console.error('====>page_pasteButton emit action state err: ' + JSON.stringify(err.message))
                 }
               })
-              .fontSize(null)
-              .key('setNull4')
-          }
-          .visibility(this.isShow === 4 ? Visibility.Visible : Visibility.None)
-
-          Column() {
-            PasteButton()
-              .onClick((event: ClickEvent, result: PasteButtonOnClickResult) => {
-                try {
-                  let clickData:events_emitter.EventData = {
-                    data: {
-                      'clickResult': result,
-                    }
-                  }
-                  let clickEvent:events_emitter.InnerEvent = {
-                    eventId: 2,
-                    priority: events_emitter.EventPriority.LOW
-                  }
-                  console.info('====>page_pasteButton onclick result:' + JSON.stringify(result))
-                  events_emitter.emit(clickEvent, clickData)
-                } catch (err) {
-                  console.error('====>page_pasteButton emit action state err: ' + JSON.stringify(err.message))
-                }
-              })
               .fontStyle(null)
               .key('setNull5')
           }
-          .visibility(this.isShow === 5 ? Visibility.Visible : Visibility.None)
+          .visibility(this.isShow === 4 ? Visibility.Visible : Visibility.None)
 
           Column() {
             PasteButton()
@@ -199,7 +175,7 @@ struct pasteButtonSetNull {
               .fontWeight(null)
               .key('setNull6')
           }
-          .visibility(this.isShow === 6 ? Visibility.Visible : Visibility.None)
+          .visibility(this.isShow === 5 ? Visibility.Visible : Visibility.None)
 
           Column() {
             PasteButton()
@@ -223,7 +199,7 @@ struct pasteButtonSetNull {
               .fontFamily(null)
               .key('setNull7')
           }
-          .visibility(this.isShow === 7 ? Visibility.Visible : Visibility.None)
+          .visibility(this.isShow === 6 ? Visibility.Visible : Visibility.None)
 
           Column() {
             PasteButton().key('setNull8-1')
@@ -249,7 +225,7 @@ struct pasteButtonSetNull {
               .fontColor(null)
               .key('setNull8-2')
           }
-          .visibility(this.isShow === 8 ? Visibility.Visible : Visibility.None)
+          .visibility(this.isShow === 7 ? Visibility.Visible : Visibility.None)
 
           Column() {
             PasteButton().key('setNull9-1')
@@ -275,7 +251,7 @@ struct pasteButtonSetNull {
               .iconColor(null)
               .key('setNull9-2')
           }
-          .visibility(this.isShow === 9 ? Visibility.Visible : Visibility.None)
+          .visibility(this.isShow === 8 ? Visibility.Visible : Visibility.None)
 
           Column() {
             PasteButton().key('setNull10-1')
@@ -301,7 +277,7 @@ struct pasteButtonSetNull {
               .backgroundColor(null)
               .key('setNull10-2')
           }
-          .visibility(this.isShow === 10 ? Visibility.Visible : Visibility.None)
+          .visibility(this.isShow === 9 ? Visibility.Visible : Visibility.None)
 
           Column() {
             PasteButton()
@@ -325,7 +301,7 @@ struct pasteButtonSetNull {
               .borderStyle(null)
               .key('setNull11')
           }
-          .visibility(this.isShow === 11 ? Visibility.Visible : Visibility.None)
+          .visibility(this.isShow === 10 ? Visibility.Visible : Visibility.None)
 
           Column() {
             PasteButton()
@@ -349,7 +325,7 @@ struct pasteButtonSetNull {
               .borderWidth(null)
               .key('setNull12')
           }
-          .visibility(this.isShow === 12 ? Visibility.Visible : Visibility.None)
+          .visibility(this.isShow === 11 ? Visibility.Visible : Visibility.None)
 
           Column() {
             PasteButton()
@@ -373,7 +349,7 @@ struct pasteButtonSetNull {
               .borderColor(null)
               .key('setNull13')
           }
-          .visibility(this.isShow === 13 ? Visibility.Visible : Visibility.None)
+          .visibility(this.isShow === 12 ? Visibility.Visible : Visibility.None)
 
           Column() {
             PasteButton()
@@ -397,7 +373,7 @@ struct pasteButtonSetNull {
               .borderRadius(null)
               .key('setNull14')
           }
-          .visibility(this.isShow === 14 ? Visibility.Visible : Visibility.None)
+          .visibility(this.isShow === 13 ? Visibility.Visible : Visibility.None)
 
           Column() {
             PasteButton()
@@ -426,7 +402,7 @@ struct pasteButtonSetNull {
               })
               .key('setNull15')
           }
-          .visibility(this.isShow === 15 ? Visibility.Visible : Visibility.None)
+          .visibility(this.isShow === 14 ? Visibility.Visible : Visibility.None)
 
           Column() {
             PasteButton()
@@ -450,7 +426,7 @@ struct pasteButtonSetNull {
               .padding(null)
               .key('setNull16')
           }
-          .visibility(this.isShow === 16 ? Visibility.Visible : Visibility.None)
+          .visibility(this.isShow === 15 ? Visibility.Visible : Visibility.None)
 
           Column() {
             PasteButton()
@@ -474,7 +450,7 @@ struct pasteButtonSetNull {
               .textIconSpace(null)
               .key('setNull17')
           }
-          .visibility(this.isShow === 17 ? Visibility.Visible : Visibility.None)
+          .visibility(this.isShow === 16 ? Visibility.Visible : Visibility.None)
 
           Column() {
             PasteButton().key('setNull18-1')
@@ -500,7 +476,7 @@ struct pasteButtonSetNull {
               .width(null)
               .key('setNull18-2')
           }
-          .visibility(this.isShow === 18 ? Visibility.Visible : Visibility.None)
+          .visibility(this.isShow === 17 ? Visibility.Visible : Visibility.None)
 
           Column() {
             PasteButton().key('setNull19-1')
@@ -526,7 +502,7 @@ struct pasteButtonSetNull {
               .height(null)
               .key('setNull19-2')
           }
-          .visibility(this.isShow === 19 ? Visibility.Visible : Visibility.None)
+          .visibility(this.isShow === 18 ? Visibility.Visible : Visibility.None)
 
           Column() {
             PasteButton().key('setNull20-1')
@@ -552,7 +528,7 @@ struct pasteButtonSetNull {
               .size(null)
               .key('setNull20-2')
           }
-          .visibility(this.isShow === 20 ? Visibility.Visible : Visibility.None)
+          .visibility(this.isShow === 19 ? Visibility.Visible : Visibility.None)
 
           Column() {
             PasteButton().key('setNull21-1')
@@ -578,7 +554,7 @@ struct pasteButtonSetNull {
               .constraintSize(null)
               .key('setNull21-2')
           }
-          .visibility(this.isShow === 21 ? Visibility.Visible : Visibility.None)
+          .visibility(this.isShow === 20 ? Visibility.Visible : Visibility.None)
 
           Column() {
               PasteButton()
@@ -602,7 +578,7 @@ struct pasteButtonSetNull {
               .align(null)
               .key('setNull22')
           }
-          .visibility(this.isShow === 22 ? Visibility.Visible : Visibility.None)
+          .visibility(this.isShow === 21 ? Visibility.Visible : Visibility.None)
 
           Column() {
             PasteButton().key('setNull23-1')
@@ -628,7 +604,7 @@ struct pasteButtonSetNull {
               .alignRules(null)
               .key('setNull23-2')
           }
-          .visibility(this.isShow === 23 ? Visibility.Visible : Visibility.None)
+          .visibility(this.isShow === 22 ? Visibility.Visible : Visibility.None)
 
           Column() {
               PasteButton()
@@ -652,7 +628,7 @@ struct pasteButtonSetNull {
               .id(null)
               .key('setNull24')
           }
-          .visibility(this.isShow === 24 ? Visibility.Visible : Visibility.None)
+          .visibility(this.isShow === 23 ? Visibility.Visible : Visibility.None)
 
           Column() {
             PasteButton().key('setNull25-1')
@@ -678,7 +654,7 @@ struct pasteButtonSetNull {
               .chainMode(null, null)
               .key('setNull25-2')
           }
-          .visibility(this.isShow === 25 ? Visibility.Visible : Visibility.None)
+          .visibility(this.isShow === 24 ? Visibility.Visible : Visibility.None)
 
           Column() {
             PasteButton().key('setNull26-1')
@@ -704,7 +680,7 @@ struct pasteButtonSetNull {
               .minFontScale(null)
               .key('setNull26-2')
           }
-          .visibility(this.isShow === 26 ? Visibility.Visible : Visibility.None)
+          .visibility(this.isShow === 25 ? Visibility.Visible : Visibility.None)
 
           Column() {
             PasteButton().key('setNull27-1')
@@ -730,7 +706,7 @@ struct pasteButtonSetNull {
               .maxFontScale(null)
               .key('setNull27-2')
           }
-          .visibility(this.isShow === 27 ? Visibility.Visible : Visibility.None)
+          .visibility(this.isShow === 26 ? Visibility.Visible : Visibility.None)
 
           Column() {
             PasteButton().key('setNull28-1')
@@ -756,7 +732,7 @@ struct pasteButtonSetNull {
               .minFontSize(null)
               .key('setNull28-2')
           }
-          .visibility(this.isShow === 28 ? Visibility.Visible : Visibility.None)
+          .visibility(this.isShow === 27 ? Visibility.Visible : Visibility.None)
 
           Column() {
             PasteButton().key('setNull29-1')
@@ -782,7 +758,7 @@ struct pasteButtonSetNull {
               .maxFontSize(null)
               .key('setNull29-2')
           }
-          .visibility(this.isShow === 29 ? Visibility.Visible : Visibility.None)
+          .visibility(this.isShow === 28 ? Visibility.Visible : Visibility.None)
 
           Column() {
             PasteButton()
@@ -806,7 +782,7 @@ struct pasteButtonSetNull {
               .maxLines(null)
               .key('setNull30')
           }
-          .visibility(this.isShow === 30 ? Visibility.Visible : Visibility.None)
+          .visibility(this.isShow === 29 ? Visibility.Visible : Visibility.None)
 
           Column() {
             PasteButton()
@@ -830,7 +806,7 @@ struct pasteButtonSetNull {
               .heightAdaptivePolicy(null)
               .key('setNull31')
           }
-          .visibility(this.isShow === 31 ? Visibility.Visible : Visibility.None)
+          .visibility(this.isShow === 30 ? Visibility.Visible : Visibility.None)
 
           Column() {
             PasteButton().key('setNull32-1')
@@ -856,7 +832,7 @@ struct pasteButtonSetNull {
               .focusBox(null)
               .key('setNull32-2')
           }
-          .visibility(this.isShow === 32 ? Visibility.Visible : Visibility.None)
+          .visibility(this.isShow === 31 ? Visibility.Visible : Visibility.None)
 
           Column() {
             PasteButton().key('setNullStr01-1')
@@ -883,7 +859,7 @@ struct pasteButtonSetNull {
               .minFontSize('')
               .key('setNullStr01-2')
           }
-          .visibility(this.isShow === 33 ? Visibility.Visible : Visibility.None)
+          .visibility(this.isShow === 32 ? Visibility.Visible : Visibility.None)
 
           Button('点击切换安全控件')
             .width('50%')

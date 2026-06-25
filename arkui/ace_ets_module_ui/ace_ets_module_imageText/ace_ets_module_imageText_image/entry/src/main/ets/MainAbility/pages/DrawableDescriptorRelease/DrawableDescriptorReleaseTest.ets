@@ -39,116 +39,139 @@ struct DrawableDescriptorReleaseTest {
 
   build() {
     Scroll() {
-      Column({ space: 20 }) {
-        Text('DrawableDescriptor release/isReleased 测试 (API 26+)')
-          .fontSize(22)
+      Column({ space: 10 }) {
+        Text('DrawableDescriptor release/isReleased')
+          .fontSize(14)
           .fontWeight(FontWeight.Bold)
-          .margin({ top: 20, bottom: 10 })
           .fontColor(0x333333)
 
         this.BuildSectionTitle('1. DrawableDescriptor 测试')
 
-        Button('E2E_001release→isReleased')
-          .id('btnTest001')
-          .onClick(() => this.Test001())
-        Text(this.testResult001)
-          .id('txtTestResult001')
-          .fontSize(14)
-          .margin({ bottom: 10 })
+        Row() {
+          Button('release→isReleased')
+            .id('btnTest001')
+            .height('5%')
+            .onClick(() => this.Test001())
+          Text(this.testResult001)
+            .id('txtTestResult001')
+            .fontSize(10)
+        }
 
-        Button('E2E_002release→getPixelMap')
-          .id('btnTest002')
-          .onClick(() => this.Test002())
-        Text(this.testResult002)
-          .id('txtTestResult002')
-          .fontSize(14)
-          .margin({ bottom: 10 })
+        Row() {
+          Button('release→getPixelMap')
+            .id('btnTest002')
+            .height('5%')
+            .onClick(() => this.Test002())
+          Text(this.testResult002)
+            .id('txtTestResult002')
+            .fontSize(10)
+        }
 
-        Button('E2E_003double release')
-          .id('btnTest003')
-          .onClick(() => this.Test003())
-        Text(this.testResult003)
-          .id('txtTestResult003')
-          .fontSize(14)
-          .margin({ bottom: 10 })
+        Row() {
+          Button('double release')
+            .id('btnTest003')
+            .height('5%')
+            .onClick(() => this.Test003())
+          Text(this.testResult003)
+            .id('txtTestResult003')
+            .fontSize(10)
+        }
 
         this.BuildSectionTitle('2. LayeredDrawableDescriptor 测试')
 
-        Button('E2E_004release→getForeground')
-          .id('btnTest004')
-          .onClick(() => this.Test004())
-        Text(this.testResult004)
-          .id('txtTestResult004')
-          .fontSize(14)
-          .margin({ bottom: 10 })
+        Row() {
+          Button('release→getForeground')
+            .id('btnTest004')
+            .height('5%')
+            .onClick(() => this.Test004())
+          Text(this.testResult004)
+            .id('txtTestResult004')
+            .fontSize(10)
+        }
 
-        Button('E2E_005release→getBackground')
-          .id('btnTest005')
-          .onClick(() => this.Test005())
-        Text(this.testResult005)
-          .id('txtTestResult005')
-          .fontSize(14)
-          .margin({ bottom: 10 })
+        Row() {
+          Button('release→getBackground')
+            .id('btnTest005')
+            .height('5%')
+            .onClick(() => this.Test005())
+          Text(this.testResult005)
+            .id('txtTestResult005')
+            .fontSize(10)
+        }
 
-        Button('E2E_006release→getMask')
-          .id('btnTest006')
-          .onClick(() => this.Test006())
-        Text(this.testResult006)
-          .id('txtTestResult006')
-          .fontSize(14)
-          .margin({ bottom: 10 })
+        Row() {
+          Button('release→getMask')
+            .id('btnTest006')
+            .height('5%')
+            .onClick(() => this.Test006())
+          Text(this.testResult006)
+            .id('txtTestResult006')
+            .fontSize(10)
+        }
 
         this.BuildSectionTitle('3. PixelMapDrawableDescriptor 测试')
 
-        Button('E2E_007release→getPixelMap')
-          .id('btnTest007')
-          .onClick(() => this.Test007())
-        Text(this.testResult007)
-          .id('txtTestResult007')
-          .fontSize(14)
-          .margin({ bottom: 10 })
+        Row() {
+          Button('release→getPixelMap')
+            .id('btnTest007')
+            .height('5%')
+            .onClick(() => this.Test007())
+          Text(this.testResult007)
+            .id('txtTestResult007')
+            .fontSize(10)
+        }
 
         this.BuildSectionTitle('4. AnimatedDrawableDescriptor 测试')
 
-        Button('E2E_008release→getPixelMap')
-          .id('btnTest008')
-          .onClick(() => this.Test008())
-        Text(this.testResult008)
-          .id('txtTestResult008')
-          .fontSize(14)
-          .margin({ bottom: 10 })
+        Row() {
+          Button('release→getPixelMap')
+            .id('btnTest008')
+            .height('5%')
+            .onClick(() => this.Test008())
+          Text(this.testResult008)
+            .id('txtTestResult008')
+            .fontSize(10)
+        }
 
-        Button('E2E_009release→getController')
-          .id('btnTest009')
-          .onClick(() => this.Test009())
-        Text(this.testResult009)
-          .id('txtTestResult009')
-          .fontSize(14)
-          .margin({ bottom: 10 })
+        Row() {
+          Button('release→getController')
+            .id('btnTest009')
+            .height('5%')
+            .onClick(() => this.Test009())
+          Text(this.testResult009)
+            .id('txtTestResult009')
+            .fontSize(10)
+        }
 
-        Button('E2E_010release→loadSync')
-          .id('btnTest010')
-          .onClick(() => this.Test010())
-        Text(this.testResult010)
-          .id('txtTestResult010')
-          .fontSize(14)
-          .margin({ bottom: 10 })
+        Row() {
+          Button('release→loadSync')
+            .id('btnTest010')
+            .height('5%')
+            .onClick(() => this.Test010())
+          Text(this.testResult010)
+            .id('txtTestResult010')
+            .fontSize(10)
+        }
 
-        Button('E2E_011release→load')
-          .id('btnTest011')
-          .onClick(async () => await this.Test011())
-        Text(this.testResult011)
-          .id('txtTestResult011')
-          .fontSize(14)
-          .margin({ bottom: 10 })
+        Row() {
+          Button('release→load')
+            .id('btnTest011')
+            .height('5%')
+            .onClick(async () => await this.Test011())
+          Text(this.testResult011)
+            .id('txtTestResult011')
+            .fontSize(10)
+        }
 
-        Button('E2E_012double release')
-          .id('btnTest012')
-          .onClick(() => this.Test012())
-        Text(this.testResult012)
-          .id('txtTestResult012')
-          .fontSize(14)
-          .margin({ bottom: 10 })
+        Row() {
+          Button('double release')
+            .id('btnTest012')
+            .height('5%')
+            .onClick(() => this.Test012())
+          Text(this.testResult012)
+            .id('txtTestResult012')
+            .fontSize(10)
+        }
       }
       .width('80%')
     }
@@ -160,11 +183,10 @@ struct DrawableDescriptorReleaseTest {
   @Builder
   BuildSectionTitle(title: string) {
     Text(title)
-      .fontSize(16)
+      .fontSize(12)
       .fontWeight(FontWeight.Medium)
       .fontColor(Color.Black)
       .width('100%')
-      .margin({ top: 10 })
   }
 
   private getErrorCode(e: Object): number {

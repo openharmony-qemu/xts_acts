@@ -13,31 +13,19 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import {
-  Component,
-  Driver,
-  Component,
-  UiWindow,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix
-} from '@ohos.UiTest';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
+import inspector from '@ohos.arkui.inspector';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility } from '../Util.test';
-
 export default function OnKeyEventDispatchAttrsModifierUndefinedTest() {
   describe('OnKeyEventDispatchAttrsModifierUndefinedTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -89,7 +77,7 @@ export default function OnKeyEventDispatchAttrsModifierUndefinedTest() {
       await CommonFunc.sleep(1000);
       expect(await (text?.getText() as Promise<String>)).assertEqual('parentTab');
       await CommonFunc.sleep(1000);
-      let changeBtn = await driver.findComponent(ON.id('Common_OnKeyEventDispatch'));
+      let changeBtn = await driver.findComponent(ON.id('onKeyEventDispatchAttrsModifierUndefined' + '_Common_OnKeyEventDispatch'));
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       await driver.triggerKey(2049);

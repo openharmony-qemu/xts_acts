@@ -47,6 +47,8 @@ import orphanCharOptimization from './orphanCharOptimization/orphanCharOptimizat
 import orphanCharOptimizationundefined from './orphanCharOptimization/orphanCharOptimization_undefined.test'
 import HoveredAttributeTest from './hoveredAttribute/HoveredAttributeTest.test'
 import EnableEventPassthroughTest from './enableEventPassthrough/EnableEventPassthroughTest.test'
+import shouldRecognizerParallelWith_undefined from './shouldRecognizerParallelWith/shouldRecognizerParallelWith_undefined.test'
+import smartGestureShortcutStaticTest from './SmartGestureTest/SmartGestureShortcut.test'
 
 export default function testsuite() {
   HoveredAttributeTest();
@@ -83,4 +85,6 @@ export default function testsuite() {
   shouldRecognizerParallelWith();
   orphanCharOptimizationundefined();
   EnableEventPassthroughTest();
+  shouldRecognizerParallelWith_undefined();
+  smartGestureShortcutStaticTest();
 }

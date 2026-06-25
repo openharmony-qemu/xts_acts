@@ -13,19 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
-import inspector from '@ohos.arkui.inspector'
-
-import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
+import inspector from '@ohos.arkui.inspector';
+import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import window from '@ohos.window';
-import { UIContext } from '@ohos.arkui.UIContext';
 export default function APIgetFrameNodeByUniqueId() {
   describe('APIgetFrameNodeByUniqueId', () => {
     beforeAll(async (): Promise<void> => {

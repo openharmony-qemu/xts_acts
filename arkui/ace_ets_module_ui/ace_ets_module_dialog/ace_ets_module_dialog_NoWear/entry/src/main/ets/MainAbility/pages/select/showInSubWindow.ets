@@ -27,7 +27,7 @@ struct SelectExample4 {
     Column() {
       Column(){
         Button('showInSubWindow数值切换' + this.countIndex)
-          .id('showInSubWindowButton')
+          .key('showInSubWindow_button')
           .onClick(() => {
            this.countIndex = (this.countIndex + 1) % this.countList.length;
           })
@@ -39,7 +39,7 @@ struct SelectExample4 {
           { value: 'bbb', icon: $r('app.media.app_icon') },
           { value: 'ccc', icon: $r('app.media.app_icon') },
           { value: 'ddd', icon: $r('app.media.app_icon') }])
-          .key('select')
+          .key('showInSubWindow_select')
           .showInSubWindow(this.countList[this.countIndex])
       }
     }.width('100%')

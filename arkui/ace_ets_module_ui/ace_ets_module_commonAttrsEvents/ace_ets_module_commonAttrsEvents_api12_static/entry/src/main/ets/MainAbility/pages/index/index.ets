@@ -13,27 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Button,
-  ButtonType,
-  ClickEvent,
-  Column,
-  Component,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  FontWeight,
-  ItemAlign,
-  Margin,
-  Text
-} from '@ohos.arkui.component'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
+import { Button, ButtonType, ClickEvent, Column, Component, Entry, Flex, FlexAlign, FlexDirection, FontWeight, ItemAlign, Margin, Text } from '@ohos.arkui.component';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import common2D from '@ohos.graphics.displaySync'
-import { AppStorage } from '@ohos.arkui.stateManagement';
-
+import common2D from '@ohos.graphics.displaySync';
 @Entry
 @Component
 struct Index {

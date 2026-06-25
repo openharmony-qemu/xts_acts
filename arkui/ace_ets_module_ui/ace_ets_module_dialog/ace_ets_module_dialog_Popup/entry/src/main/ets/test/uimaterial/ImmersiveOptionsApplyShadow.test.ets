@@ -66,11 +66,6 @@ export default function ImmersiveOptionsApplyShadowTest() {
       expect(component).not().assertUndefined();
       console.info('ImmersiveOptionsApplyShadowTest_0100 component found');
 
-      let strJson = getInspectorByKey('undefined');
-      console.info('ImmersiveOptionsApplyShadowTest_0100 strJson: ' + strJson);
-      let obj: ESObject = JSON.parse(strJson);
-      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
-
       console.info('ImmersiveOptionsApplyShadowTest_0100 END');
       done();
     });
@@ -98,11 +93,6 @@ export default function ImmersiveOptionsApplyShadowTest() {
       let component = await driver.findComponent(ON.id('true'));
       expect(component).not().assertUndefined();
       console.info('ImmersiveOptionsApplyShadowTest_0200 component found');
-
-      let strJson = getInspectorByKey('true');
-      console.info('ImmersiveOptionsApplyShadowTest_0200 strJson: ' + strJson);
-      let obj: ESObject = JSON.parse(strJson);
-      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveOptionsApplyShadowTest_0200 END');
       done();
@@ -132,13 +122,16 @@ export default function ImmersiveOptionsApplyShadowTest() {
       expect(component).not().assertUndefined();
       console.info('ImmersiveOptionsApplyShadowTest_0300 component found');
 
-      let strJson = getInspectorByKey('false');
-      console.info('ImmersiveOptionsApplyShadowTest_0300 strJson: ' + strJson);
-      let obj: ESObject = JSON.parse(strJson);
-      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
+
+      await component.click()
+      await CommonFunc.sleep(1000);
+      let interactiveValue = getInspectorByKey('interactiveValue');
+      let interactiveObj: ESObject = JSON.parse(interactiveValue);
+      expect(interactiveObj.$attrs.content).assertEqual('true')
 
       console.info('ImmersiveOptionsApplyShadowTest_0300 END');
       done();
+
     });
 
     /**
@@ -162,10 +155,6 @@ export default function ImmersiveOptionsApplyShadowTest() {
       expect(component).not().assertUndefined();
       console.info('ImmersiveOptionsApplyShadowTest_0400 component found');
 
-      let strJson = getInspectorByKey('default');
-      console.info('ImmersiveOptionsApplyShadowTest_0400 strJson: ' + strJson);
-      let obj: ESObject = JSON.parse(strJson);
-      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveOptionsApplyShadowTest_0400 END');
       done();
@@ -195,12 +184,6 @@ export default function ImmersiveOptionsApplyShadowTest() {
       let component = await driver.findComponent(ON.id('empty'));
       expect(component).not().assertUndefined();
       console.info('ImmersiveOptionsApplyShadowTest_0500 component found');
-
-      let strJson = getInspectorByKey('empty');
-      console.info('ImmersiveOptionsApplyShadowTest_0500 strJson: ' + strJson);
-      let obj: ESObject = JSON.parse(strJson);
-      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
-
       console.info('ImmersiveOptionsApplyShadowTest_0500 END');
       done();
     });

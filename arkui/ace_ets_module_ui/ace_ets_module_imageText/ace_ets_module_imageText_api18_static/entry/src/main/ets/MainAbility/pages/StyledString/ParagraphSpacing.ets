@@ -13,57 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { LengthMetrics } from '@ohos.arkui.node'
-import {
-  Entry,
-  MutableStyledString,
-  ColorFilter,
-  ClickEvent,
-  Component,
-  RichEditor,
-  Column,
-  Text,
-  ImageSpan,
-  Visibility,
-  $r,
-  FlexAlign,
-  HorizontalAlign,
-  RichEditorStyledStringController,
-  RichEditorStyledStringOptions,
-  ColumnOptions,
-  ImageAttachment,
-  Button,
-  Row,
-  Margin,
-  Scroller,
-  AnimationStatus,
-  Stack,
-  Alignment,
-  Scroll,
-  ImageAnimator,
-  ForEach,
-  ScrollDirection,
-  BarState,
-  TextAlign,
-  Color,
-  EdgeEffect,
-  RowOptions,
-  Button,
-  Padding,
-  ScrollState,
-  Edge,
-  ParagraphStyle,
-  ParagraphStyleInterface,
-  LineHeightStyle,
-  StyledString,
-  TextController,
-  StyledStringKey,
-  CopyOptions
-} from '@ohos.arkui.component';
+import { LengthMetrics, LengthUnit } from '@ohos.arkui.node';
+import { Entry, MutableStyledString, ColorFilter, ClickEvent, Component, RichEditor, Column, Text, ImageSpan, Visibility, $r, FlexAlign, HorizontalAlign, RichEditorStyledStringController, RichEditorStyledStringOptions, ColumnOptions, ImageAttachment, Button, Row, Margin, Scroller, AnimationStatus, Stack, Alignment, Scroll, ImageAnimator, ForEach, ScrollDirection, BarState, TextAlign, Color, EdgeEffect, RowOptions, Padding, ScrollState, Edge, ParagraphStyle, ParagraphStyleInterface, LineHeightStyle, StyledString, TextController, StyledStringKey, CopyOptions } from '@ohos.arkui.component';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
-import { LengthUnit } from '@ohos.arkui.node';
-
 @Entry
 @Component
 struct ParagraphSpacingTest {

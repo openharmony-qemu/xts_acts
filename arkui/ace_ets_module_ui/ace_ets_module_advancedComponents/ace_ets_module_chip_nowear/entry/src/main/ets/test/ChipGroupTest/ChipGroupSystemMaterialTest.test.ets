@@ -62,8 +62,8 @@ export default function ChipGroupSystemMaterialTest() {
     it('chipGroupBackgroundSystemMaterial_0100', Level.LEVEL0, async () => {
       hilog.info(0x0000, 'ChipGroupSystemMaterialTest', 'chipGroupBackgroundSystemMaterial_0100 START');
       let result: ESObject = getInspectorTree();
-      let systemMaterial: string = result.$children[0].$children[0].$children[0].$children[0].$children[0].$children[0].$children[0].$children[1].$attrs.systemMaterial?.material?.immersiveOptions?.style;
-      expect(systemMaterial).assertEqual('ImmersiveStyle.ULTRA_THIN');
+      let systemMaterial: string = result.$children[0].$children[0].$children[0].$children[0].$children[0].$children[0].$children[1].$attrs.systemMaterial?.material?.immersiveOptions?.style;
+      expect(systemMaterial).assertEqual('ImmersiveStyle.ULTRA_THIN_EC_SUB');
       hilog.info(0x0000, 'ChipGroupSystemMaterialTest', 'chipGroupBackgroundSystemMaterial_0100 END');
     });
 
@@ -78,8 +78,8 @@ export default function ChipGroupSystemMaterialTest() {
     it('chipGroupBackgroundSystemMaterial_0200', Level.LEVEL0, async () => {
       hilog.info(0x0000, 'ChipGroupSystemMaterialTest', 'chipGroupBackgroundSystemMaterial_0200 START');
       let result: ESObject = getInspectorTree();
-      let systemMaterial: string = result.$children[0].$children[0].$children[1].$children[0].$children[0].$children[0].$children[0].$attrs.systemMaterial?.material?.immersiveOptions?.style;
-      expect(systemMaterial).assertEqual('ImmersiveStyle.ULTRA_THICK');
+      let systemMaterial: string = result.$children[0].$children[0].$children[1].$children[0].$children[0].$children[0].$attrs.systemMaterial?.material?.immersiveOptions?.style;
+      expect(systemMaterial).assertEqual('ImmersiveStyle.ULTRA_THICK_EC_SUB');
       hilog.info(0x0000, 'ChipGroupSystemMaterialTest', 'chipGroupBackgroundSystemMaterial_0200 END');
     });
 

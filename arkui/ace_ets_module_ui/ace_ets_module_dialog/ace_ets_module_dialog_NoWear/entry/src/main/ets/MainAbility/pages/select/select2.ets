@@ -51,7 +51,7 @@ class SelectModifier12 implements AttributeModifier<SelectAttribute> {
                 .onSelect((index: number) => {
                     console.info("Select:" + index)
                 })
-                .key('selectTest')
+                .key('select2_selectTest')
                 .margin({ bottom: 40 })
                 .attributeModifier(this.selectModifier1)
 

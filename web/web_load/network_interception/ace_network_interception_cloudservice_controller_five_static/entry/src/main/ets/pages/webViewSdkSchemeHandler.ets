@@ -12,31 +12,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  OnRenderExitedEvent,
-  OnPageBeginEvent,
-  RenderProcessNotRespondingReason,
-  RenderProcessNotRespondingData,
-  Entry,
-  Component,
-  Column,
-  Row,
-  Button,
-  ClickEvent,
-  Web
-} from "@ohos.arkui.component"
-import { State } from "@ohos.arkui.stateManagement"
-import webview from '@ohos.web.webview'
-import { BusinessError } from '@ohos.base';
-import buffer from '@ohos.buffer'
+import { OnRenderExitedEvent, OnPageBeginEvent, RenderProcessNotRespondingReason, RenderProcessNotRespondingData, Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component';
+import { State } from '@ohos.arkui.stateManagement';
+import webview from '@ohos.web.webview';
+import { BusinessError, Callback, RecordData } from '@ohos.base';
+import buffer from '@ohos.buffer';
 import Utils from '../../src/test/Util.test';
-import events_emitter from '@ohos.events.emitter';
-import { Callback } from '@ohos.base'
-import { WebNetErrorList } from '@ohos.web.netErrorList'
 import emitter from '@ohos.events.emitter';
-import { Callback, RecordData } from '@ohos.base'
-import { UIContext, Router } from '@ohos.arkui.UIContext'
-
+import events_emitter from '@ohos.events.emitter';
+import { WebNetErrorList } from '@ohos.web.netErrorList';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 export class StringFields {
   public str: string = '';
 }

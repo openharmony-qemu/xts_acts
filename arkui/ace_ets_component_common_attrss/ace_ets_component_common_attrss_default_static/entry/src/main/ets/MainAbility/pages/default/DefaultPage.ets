@@ -13,19 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Component, Column, Scroller, Row, /*WebController,*/ TextTimerController } from '@ohos.arkui.component'
+import { Entry, Component, Column, Scroller, Row, TextTimerController, AlphabetIndexer, Blank, Button, Checkbox, CheckboxGroup, DataPanel, DatePicker, Divider, Gauge, Image, ImageAnimator, LoadingProgress, Marquee, Menu, Navigation, Progress, QRCode, Radio, Rating, RichText, ScrollBar, Search, Select, Slider, Text, TextArea, TextClock, TextInput, TextPicker, TextTimer, TimePicker, Toggle, Web, Badge, ColumnSplit, Counter, Flex, WaterFlow, GridRow, Grid, List, Refresh, RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, Circle, Ellipse, Line, Polyline, Polygon, Path, Rect, Shape, Color, $r, MenuItem, MenuItemGroup, ToggleType, TextAlign, FlowItem, GridCol, GridItem, ListItem, ListItemGroup, SideBarContainerType, NavPathStack, TabContent, MenuItemOptions, BadgeParam, BadgeStyle, BadgeParamWithString, CommonMethod, applyStyles, WebviewController, Builder } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import { RouterParams } from '../../common/Utils';
 import router from '@ohos.router';
-import { AlphabetIndexer, Blank, Button, Checkbox, CheckboxGroup, DataPanel, DatePicker, Divider, Gauge, Image, ImageAnimator, LoadingProgress, Marquee,
-  Menu, Navigation, Progress, QRCode, Radio, Rating, RichText, ScrollBar, Search, Select, Slider, Text,
-  TextArea, TextClock, TextInput, TextPicker, TextTimer, TimePicker, Toggle, Web, Badge, ColumnSplit, Counter, Flex, WaterFlow, GridRow,
-  Grid, List, Refresh, RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, Circle,
-  Ellipse, Line, Polyline, Polygon, Path, Rect, Shape, Color, $r, MenuItem, MenuItemGroup, ToggleType, TextAlign, FlowItem, GridCol, GridItem,
-  ListItem, ListItemGroup, SideBarContainerType, NavPathStack, TabContent, MenuItemOptions, BadgeParam, BadgeStyle, BadgeParamWithString,
-  CommonMethod,applyStyles, WebviewController, Builder } from '@ohos.arkui.component'
-import { RouterParams } from '../../common/Utils';
-
 @Entry
 @Component
 struct DefaultPage {

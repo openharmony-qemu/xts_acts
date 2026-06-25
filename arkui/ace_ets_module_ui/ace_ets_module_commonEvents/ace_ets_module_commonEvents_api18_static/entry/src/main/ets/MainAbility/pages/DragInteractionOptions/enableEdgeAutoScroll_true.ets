@@ -13,44 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// import { LengthMetricsUnit } from '@kit.ArkUI'
-import {
-  Entry,
-  Component,
-  $r,
-  Column,
-  ColumnOptions,
-  Text,
-  HorizontalAlign,
-  Color,
-  Line,
-  Swiper,
-  Scroll,
-  List,
-  Grid,
-  Flex,
-  Image,
-  Checkbox,
-  ForEach,
-  PreDragStatus,
-  DragEvent,
-  Margin,
-  Image,
-  ListItem,
-  Scroller,
-  Row,
-  TextAlign,
-  DragItemInfo,
-} from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  PropRef,
-} from '@ohos.arkui.stateManagement';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { Entry, Component, $r, Column, ColumnOptions, Text, HorizontalAlign, Color, Line, Swiper, Scroll, List, Grid, Flex, Image, Checkbox, ForEach, PreDragStatus, DragEvent, Margin, ListItem, Scroller, Row, TextAlign, DragItemInfo } from '@ohos.arkui.component';
+import { State, Link, PropRef, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
-
 @Entry
 @Component
 struct EnableEdgeAutoScroll_TrueExample {
@@ -60,7 +26,7 @@ struct EnableEdgeAutoScroll_TrueExample {
   build() {
       Column() {
         Column() {
-          Image($r('app.media.app_icon')).key('image')
+          Image($r('app.media.app_icon')).key('enableEdgeAutoScroll_true_image')
             .draggable(true)
             .width('15%')
             .height('10%')
@@ -90,7 +56,7 @@ struct EnableEdgeAutoScroll_TrueExample {
           .height('45%')
           .dragPreviewOptions({}, { isMultiSelectionEnabled: false, enableEdgeAutoScroll: true })
 
-       Column().key('Text')
+       Column().key('enableEdgeAutoScroll_true_Text')
 
           Column() {
             Text(this.text).key('text_true')

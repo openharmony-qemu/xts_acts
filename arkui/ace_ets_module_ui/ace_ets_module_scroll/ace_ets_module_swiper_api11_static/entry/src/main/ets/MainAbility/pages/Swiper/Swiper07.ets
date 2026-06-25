@@ -14,48 +14,8 @@
  * limitations under the License.
  */
 
-import {
-  Entry,
-  Component,
-  SwiperController,
-  Column,
-  Text,
-  LazyForEach,
-  Margin,
-  IDataSource,
-  DataChangeListener,
-  DotIndicator,
-  ColumnOptions,
-  Swiper,
-  TextAlign,
-  Color,
-  EdgeEffect,
-  Visibility,
-  ClickEvent,
-  SwiperDisplayMode,
-  SwiperAnimationEvent,
-  Row,
-  RowOptions,
-  Button,
-  Curve,
-  SwiperAnimationEvent,
-  HorizontalAlign,
-  ArrowStyle,
-  SwiperAutoFill,
-  Padding,
-  Indicator,
-  FontWeight,
-  Flex,
-  FlexAlign,
-  List,
-  ListItem,
-  $r,
-  Alignment,
-  TextOverflow,
-  SwiperAutoFill
-} from '@ohos.arkui.component';
+import { Entry, Component, SwiperController, Column, Text, LazyForEach, Margin, IDataSource, DataChangeListener, DotIndicator, ColumnOptions, Swiper, TextAlign, Color, EdgeEffect, Visibility, ClickEvent, SwiperDisplayMode, SwiperAnimationEvent, Row, RowOptions, Button, Curve, HorizontalAlign, ArrowStyle, SwiperAutoFill, Padding, Indicator, FontWeight, Flex, FlexAlign, List, ListItem, $r, Alignment, TextOverflow } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
-
 export class MyDataSourceSwiper07 implements IDataSource<string> {
   private list: string[] = []
   private listener?: DataChangeListener = undefined

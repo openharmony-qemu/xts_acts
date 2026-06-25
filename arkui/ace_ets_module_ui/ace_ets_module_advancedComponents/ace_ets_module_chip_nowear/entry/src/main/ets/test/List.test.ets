@@ -56,6 +56,7 @@ import ChipGroupV2IconItemOptionsTest from './ChipGroupV2Test/ChipGroupV2IconIte
 import ChipGroupV2ItemSpaceTest from './ChipGroupV2Test/ChipGroupV2ItemSpaceTest.test';
 import ChipGroupV2StartSpaceTest from './ChipGroupV2Test/ChipGroupV2StartSpaceTest.test';
 import ChipGroupV2SymbolItemOptionsTest from './ChipGroupV2Test/ChipGroupV2SymbolItemOptionsTest.test';
+import ChipGroupV2IconItemOptions2Test from './ChipGroupV2Test/ChipGroupV2IconItemOptions2Test.test';
 export default function testsuite() {
   chipDirectionTest();
   ChipAction();
@@ -98,4 +99,5 @@ export default function testsuite() {
   ChipGroupV2ItemSpaceTest();
   ChipGroupV2StartSpaceTest();
   ChipGroupV2SymbolItemOptionsTest();
+  ChipGroupV2IconItemOptions2Test();
 }

@@ -13,47 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  ForEach,
-  Text,
-  Row,
-  Flex,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  Builder,
-  NavPathStack,
-  FontWeight,
-  Navigation,
-  NavDestination,
-  NavigationMode,
-  ButtonType,
-  Color,
-  DatePicker
-} from '@ohos.arkui.component'
-import {
-  State,
-  Watch,
-  Link,
-  Provide,
-  PropRef,
-  ObjectLink,
-  Observed,
-  Consume,
-  StoragePropRef,
-  StorageLink,
-  LocalStorage,
-  LocalStoragePropRef,
-  LocalStorageLink,
-  Observed
-} from '@ohos.arkui.stateManagement'
+import { Entry, Column, Component, Button, ClickEvent, ForEach, Text, Row, Flex, FlexDirection, ItemAlign, FlexAlign, Builder, NavPathStack, FontWeight, Navigation, NavDestination, NavigationMode, ButtonType, Color, DatePicker } from '@ohos.arkui.component';
+import { State, Watch, Link, Provide, PropRef, ObjectLink, Observed, Consume, StoragePropRef, StorageLink, LocalStorage, LocalStoragePropRef, LocalStorageLink, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 export enum KFC{A11=1,B11=2,C11=3}
 

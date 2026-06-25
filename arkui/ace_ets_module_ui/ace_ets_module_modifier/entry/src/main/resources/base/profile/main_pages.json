@@ -4,6 +4,7 @@
         "MainAbility/pages/index/index",
         "MainAbility/pages/second/second",
         "MainAbility/pages/tabsFirst",
+        "MainAbility/pages/tabContentModifier",
         "MainAbility/pages/navigation",
         "MainAbility/pages/navigator",
         "MainAbility/pages/button",

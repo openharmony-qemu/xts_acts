@@ -13,22 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  Color,
-  CommonAttribute,
-  OutlineStyle,
-  AttributeModifier,
-  Image,
-  $r,
-  Color
-} from '@ohos.arkui.component'
-import { State, Observed } from '@ohos.arkui.stateManagement'
-
+import { Entry, Column, Component, Button, ClickEvent, Color, CommonAttribute, OutlineStyle, AttributeModifier, Image, $r } from '@ohos.arkui.component';
+import { State, Observed } from '@ohos.arkui.stateManagement';
 @Observed
 export class MyOutlineWidthModifier implements AttributeModifier<CommonAttribute> {
   public isChange: boolean = true;

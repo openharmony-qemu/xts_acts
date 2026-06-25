@@ -16,8 +16,12 @@
 
 import counterDirectionTest from './counter/counterDirection.test';
 import CounterAttrsTest from './counter/CounterAttrsTest.test';
+import CounterV2DirectionTest from './CounterV2/CounterV2Direction.test';
+import CounterV2AttrsTest from './CounterV2/CounterV2AttrsTest.test';
 
 export default function testsuite() {
   counterDirectionTest();
   CounterAttrsTest();
+  CounterV2DirectionTest();
+  CounterV2AttrsTest();
 }

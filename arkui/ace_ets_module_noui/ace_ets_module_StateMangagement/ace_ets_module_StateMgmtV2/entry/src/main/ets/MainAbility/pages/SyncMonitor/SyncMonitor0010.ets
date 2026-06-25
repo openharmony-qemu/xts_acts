@@ -36,9 +36,12 @@ struct SyncMonitor0010 {
         .id('btnSyncMonitor0010')
         .onClick(()=>{
           for(let i = 1; i <= 2; i++){
-          this.cls.name += '!'
+            this.cls.name += '!'
           }
         })
     }
+    .width('100%')
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
   }
 }

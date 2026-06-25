@@ -15,17 +15,11 @@
  */
 
 import { ComponentContent } from '@kit.ArkUI';
-import { BuilderNode, FrameNode, NodeController,typeNode } from '@ohos.arkui.node'
+import { BuilderNode, FrameNode, NodeController, typeNode } from '@ohos.arkui.node';
 import { BusinessError } from '@ohos.base';
-import { Entry, Column, Component,Builder,Text,ColumnOptions,Margin,Button,NodeContainer,
-  Visibility,wrapBuilder,FontWeight,Color,WrappedBuilder,Scroll,Scroller,ColumnOptions,
-  CustomBuilderT
-} from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
-import { ClickEvent } from '@ohos.arkui.component';
+import { Entry, Column, Component, Builder, Text, ColumnOptions, Margin, Button, NodeContainer, Visibility, wrapBuilder, FontWeight, Color, WrappedBuilder, Scroll, Scroller, CustomBuilderT, ClickEvent } from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-
 @Component
 struct TestComponent {
   build() {

@@ -13,35 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll,beforeEach} from "../../../hypium/index";
-import hilog from '@ohos.hilog'
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach } from '../../../hypium/index';
+import hilog from '@ohos.hilog';
 import Utils from './Util.test';
-import pipWindow from "@ohos.PiPWindow"
-import { canIUse } from "@internal.full.global";
-import {
-    XComponent,
-    XComponentType,
-    XComponentOptions,
-    XComponentController
-} from '@ohos.arkui.component'
-import deviceInfo from '@ohos.deviceInfo'
-
+import pipWindow from '@ohos.PiPWindow';
+import { canIUse } from '@internal.full.global';
+import { XComponent, XComponentType, XComponentOptions, XComponentController } from '@ohos.arkui.component';
+import deviceInfo from '@ohos.deviceInfo';
 import display from '@ohos.display';
 import window from '@ohos.window';
 import settings from '@ohos.settings';
 import { UIContext } from '@ohos.arkui.UIContext';
-import { AppStorage , LocalStorage } from '@ohos.arkui.stateManagement';
-import type { AsyncCallback, Callback} from '@ohos.base'
+import { AppStorage, LocalStorage } from '@ohos.arkui.stateManagement';
+import type { AsyncCallback, Callback } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import Want from '@ohos.app.ability.Want';
 import bundleManager from '@ohos.bundle.bundleManager';
-import StartOptions from '@ohos.app.ability.StartOptions'
-import  { Driver } from '@ohos.UiTest';
-import  { ON } from '@ohos.UiTest';
-import { typeNode } from 'arkui.FrameNode'
-import Utils from './Util.test';
+import StartOptions from '@ohos.app.ability.StartOptions';
+import { Driver, ON } from '@ohos.UiTest';
+import { typeNode } from 'arkui.FrameNode';
 import { TextNodeController } from './CustomNode.test';
-
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 

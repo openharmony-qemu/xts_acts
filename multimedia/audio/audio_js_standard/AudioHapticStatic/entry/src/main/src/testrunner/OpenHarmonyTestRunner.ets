@@ -20,7 +20,6 @@ import hilog from '@ohos.hilog';
 import Utils from '../test/Util.test';
 import testsuite from '../test/List.test';
 import { Hypium } from '../../../hypium/index';
-import testsuite from '../test/List.test';
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
 let abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs;
 

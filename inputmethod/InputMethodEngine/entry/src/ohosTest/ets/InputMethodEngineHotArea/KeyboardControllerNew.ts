@@ -36,7 +36,7 @@ let portraitHeight = Math.floor((disp.height > disp.width ? disp.height : disp.w
 let portraitWidth = Math.floor((disp.height > disp.width ? disp.width : disp.height) * 0.7);
 let portraitTop = Math.floor((disp.height > disp.width ? disp.height : disp.width) - portraitHeight);
 let landscapeHeight = Math.floor((disp.height > disp.width ? disp.width : disp.height) * 0.4);
-let landscapeWidth = Math.floor((disp.height > disp.width ? disp.height : disp.height) * 0.7);
+let landscapeWidth = Math.floor((disp.height > disp.width ? disp.height : disp.width) * 0.7);
 let landscapeTop = Math.floor((disp.height > disp.width ? disp.width : disp.height) - landscapeHeight);
 let landscapeRect1: window.Rect = {
   left: 100,
@@ -108,6 +108,10 @@ export class KeyboardControllerNew {
           console.info(TAG + '====>Sub_InputMethod_IME_HotAreaTest_0100 event:' + data.event);
           that.Sub_InputMethod_IME_HotAreaTest_0100();
           break;
+        case 2:
+          console.info(TAG + '====>Sub_InputMethod_IME_HotAreaTest_0200 event:' + data.event);
+          that.Sub_InputMethod_IME_HotAreaTest_0200();
+          break;
       }
     }
     let subscriber;
@@ -122,9 +126,9 @@ export class KeyboardControllerNew {
   }
 
   public insertText(text: string): void {
-    if ( this.InputClient) {
+    if (this.InputClient) {
       this.InputClient.insertText(text);
-      console.info(TAG + '====>pinsertText success ');
+      console.info(TAG + '====>insertText success ');
     } else {
       console.info(TAG + '====>InputClient is NA');
     }
@@ -138,6 +142,7 @@ export class KeyboardControllerNew {
       let length: number = 4;
       let text = await this.InputClient.getForward(length);
       console.info(TAG + `====>Sub_InputMethod_IME_HotAreaTest_0100 getForward success text:${text}`);
+      await this.InputClient.deleteForward(length);
       if (text === '1234') {
         commonEventPublishData = {
           data: 'SUCCESS'
@@ -147,6 +152,72 @@ export class KeyboardControllerNew {
       console.info(TAG + `====>Sub_InputMethod_IME_HotAreaTest_0100 catch code: ${err.code}, message: ${err.message}`);
     }
     commoneventmanager.publish('Sub_InputMethod_IME_HotAreaTest_0100', commonEventPublishData, this.publishCallback);
+  }
+
+  async Sub_InputMethod_IME_HotAreaTest_0200(): Promise<void> {
+    let commonEventPublishData = {
+      data: 'FAILED'
+    };
+    try {
+      let dis = display.getDefaultDisplaySync();
+      if (dis.height > dis.width) {
+        let landscapeRect: window.Rect = {
+          left: 0,
+          top: 0,
+          width: 0,
+          height: 0
+        };
+        let portraitRect: window.Rect = {
+          left: 0,
+          top: Math.floor(disp.height - disp.height * 0.7),
+          width: dis.width,
+          height: Math.floor(dis.height * 0.7)
+        };
+        let panelRect1: inputmethodengine.PanelRect = {
+          landscapeRect: landscapeRect,
+          portraitRect: portraitRect,
+        };
+        console.info(TAG + `====>panelFlag ${panelFlag}, panelRect ${JSON.stringify(panelRect)}`);
+        await this.softKeyboardPanel.adjustPanelRect(panelFlag, panelRect1);
+        console.info(TAG + `====>adjustPanelRect success`);
+      } else {
+        let landscapeRect: window.Rect = {
+          left: 0,
+          top: Math.floor(disp.height - disp.height * 0.7),
+          width: dis.width,
+          height: Math.floor(dis.height * 0.7)
+        };
+        let portraitRect: window.Rect = {
+          left: 0,
+          top: 0,
+          width: 0,
+          height: 0
+        };
+        let panelRect1: inputmethodengine.PanelRect = {
+          landscapeRect: landscapeRect,
+          portraitRect: portraitRect,
+        };
+        console.info(TAG + `====>panelFlag ${panelFlag}, panelRect ${JSON.stringify(panelRect)}`);
+        await this.softKeyboardPanel.adjustPanelRect(panelFlag, panelRect1);
+        console.info(TAG + `====>adjustPanelRect success`);
+      }
+      setTimeout(async () => {
+        let length: number = 4;
+        let text = await this.InputClient.getForward(length);
+        console.info(TAG + `====>Sub_InputMethod_IME_HotAreaTest_0200 getForward success text:${text}`);
+        await this.InputClient.deleteForward(length);
+        if (text === '1234') {
+          commonEventPublishData = {
+            data: 'SUCCESS'
+          };
+        }
+        commoneventmanager.publish('Sub_InputMethod_IME_HotAreaTest_0200', commonEventPublishData, this.publishCallback);
+      }, 8000);
+      
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_IME_HotAreaTest_0200 catch code: ${err.code}, message: ${err.message}`);
+      commoneventmanager.publish('Sub_InputMethod_IME_HotAreaTest_0200', commonEventPublishData, this.publishCallback);
+    }
   }
   
 }

@@ -14,46 +14,8 @@
  * limitations under the License.
  */
 
-import {
-  Entry,
-  Text,
-  TextAttribute,
-  Column,
-  Component,
-  Button,
-  ButtonAttribute,
-  ClickEvent,
-  Image,
-  ImageFit,
-  Scroller,
-  Scroll,
-  ForEach,
-  Search,
-  SafeAreaType,
-  ScrollDirection,
-  BarState,
-  Color,
-  EdgeEffect,
-  HorizontalAlign,
-  FlexAlign,
-  ColumnOptions,
-  Edge,
-  Stack,
-  Edge,
-  Alignment,
-  Grid,
-  ScrollBar,
-  Margin,
-  GridItem,
-  TextAlign,
-  ScrollBarDirection,
-  ScrollState
-} from '@ohos.arkui.component'
-import {
-  State,
-  AppStorage
-} from '@ohos.arkui.stateManagement'
-
+import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, Image, ImageFit, Scroller, Scroll, ForEach, Search, SafeAreaType, ScrollDirection, BarState, Color, EdgeEffect, HorizontalAlign, FlexAlign, ColumnOptions, Edge, Stack, Alignment, Grid, ScrollBar, Margin, GridItem, TextAlign, ScrollBarDirection, ScrollState } from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct Grid_ScrollAndScrollIndex {

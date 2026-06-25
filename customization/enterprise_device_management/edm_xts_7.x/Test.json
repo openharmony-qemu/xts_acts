@@ -14,7 +14,8 @@
             "run-command": [
                 "remount",
                 "mkdir -p /data/app/el2/100/base/com.edm.acts.test7x/haps/entry",
-                "mkdir -p /data/app/el2/100/base/com.edm.acts.test7x/haps/entry/testinstall"
+                "mkdir -p /data/app/el2/100/base/com.edm.acts.test7x/haps/entry/testinstall",
+                "param set const.enterprise.external_storage_device.manage.enable true"
             ]
         },
         {

@@ -12,33 +12,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
-import hilog from '@ohos.hilog'
+import { describe, it, expect, TestType, Size, Level, beforeAll } from '../../../hypium/index';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
-import  buffer  from '@ohos.buffer';
-import { cryptoFramework } from '@kit.CryptoArchitectureKit'
-import {
-  aes256_key,
-  C_MAC_SPEC,
-  doCmacPromiseSpilt,
-  doCmacSyncSpilt,
-  doFinalMacCallback,
-  doInitMacCallback,
-  doMacPromise, doMacSync,
-  doUpdateMacCallback,
-  genSymKey,
-  intervalTime,
-  macInfo,
-  secret_null,
-  stressTimeout,
-  vectorInfo,
-  vectors} from './utils/cmac/cmacUtils';
+import buffer from '@ohos.buffer';
+import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { aes256_key, C_MAC_SPEC, doCmacPromiseSpilt, doCmacSyncSpilt, doFinalMacCallback, doInitMacCallback, doMacPromise, doMacSync, doUpdateMacCallback, genSymKey, intervalTime, macInfo, secret_null, stressTimeout, vectorInfo, vectors } from './utils/cmac/cmacUtils';
 import { convertSymKey, getMacSize, H_MAC_SPEC } from './utils/hmac/hmacSyncUtils';
 import { compareDataBlob, createFullData } from './utils/common/commonUtils';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
