@@ -36,6 +36,7 @@ import gridEditModeChange from './Grid/gridEditModeChange.test'
 import gridEditModeOptions from './Grid/gridEditModeOptions.test'
 import listEnableEditMode from './List/listEnableEditMode.test'
 import listEditModeChange from './List/listEditModeChange.test'
+import ScrollScrollBarHeight from './Scroll/scrollScrollBarHeight.test'
 
 export default function testsuite() {
   GridScrollBarWidthTest();
@@ -60,4 +61,5 @@ export default function testsuite() {
   gridEditModeOptions();
   listEnableEditMode();
   listEditModeChange();
+  ScrollScrollBarHeight();
 }
