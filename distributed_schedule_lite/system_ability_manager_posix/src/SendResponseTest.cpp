@@ -276,7 +276,7 @@ static DemoFeature g_feature03 = {
     },
     .identity = {-1, 2, nullptr},
     .featureCalledCount = 0,
-    .featureStatus = TRUE,
+    .featureStatus = FALSE,
 };
 
 static void GServiceInit(void)
@@ -339,6 +339,7 @@ protected:
     // SetUpTestCase: Testsuit setup, run before 1st testcase
     static void SetUpTestCase(void)
     {
+        SystemInitProxy();
     }
     // TearDownTestCase: Testsuit teardown, run after last testcase
     static void TearDownTestCase(void)
