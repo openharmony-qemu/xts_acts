@@ -379,7 +379,6 @@ async function setZoomRatioPhoto(done: Function, testName: string, index: number
       await sleep(SLEEP_TIME_500);
       if (isEmpty(zoomRatioRange) || (!isEmpty(zoomRatioRange) && zoomRatioRange[0] == zoomRatioRange[1])) {
         console.info(TAG, testName + ' no supported zoomRatioRange.');
-        done();
       } else {
         console.info(TAG, testName + ' zoomRatioRange: ' + zoomRatioRange);
         await sleep(SLEEP_TIME_500);
@@ -431,7 +430,6 @@ async function setZoomRatioVideo(done: Function, testName: string, index: number
         await sleep(SLEEP_TIME_500);
         if (isEmpty(zoomRatioRange)) {
           console.info(TAG, testName + ' no supported zoomRatioRange.');
-          done();
         } else {
           console.info(TAG, testName + ' zoomRatioRange: ' + zoomRatioRange);
           await sleep(SLEEP_TIME_500);
