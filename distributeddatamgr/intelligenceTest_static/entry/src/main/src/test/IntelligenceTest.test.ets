@@ -1147,7 +1147,7 @@ export default function intelligenceTest(): void {
             done();
           }
         })
-        .catch((err: BusinessError) => {
+        .catch((err) => {
           console.info(TAG + "getSupportedCloudModel failed: " + err.code);
           expect().assertFail();
           done();
@@ -1172,7 +1172,7 @@ export default function intelligenceTest(): void {
             done();
           }
         })
-        .catch((err: BusinessError) => {
+        .catch((err) => {
           console.info(TAG + "getSupportedCloudModel failed: " + err.code);
           expect().assertFail();
           done();
@@ -1183,12 +1183,12 @@ export default function intelligenceTest(): void {
           expect().assertFail();
           done();
         })
-        .catch((err: BusinessError) => {
+        .catch((err) => {
           console.info(TAG + "getSupportedCloudModel result: " + err.code);
           expect(err.code).assertEqual(801);
           done();
         })
-      }
+      } 
     })
 
     /**
