@@ -21,6 +21,14 @@ class ComboObjarr {
   id: int = 1;
 }
 
+function toByteValue(value: int): byte {
+  return Int.toByte(value);
+}
+
+function toShortValue(value: int): short {
+  return Int.toShort(value);
+}
+
 export default function ReadonlyArrayIncludesTest(): void {
   describe('ReadonlyArrayIncludesTest', (): void => {
     beforeAll((): void => {
@@ -442,236 +450,54 @@ export default function ReadonlyArrayIncludesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0300
      * @tc.name testReadonlyArrayIncludes030
-     * @tc.desc Verify ReadonlyArray.includes behavior: string type empty u200B verify includes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["\u200B", "other"];
-      const result = arr.includes("\u200B");
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0310
-     * @tc.name testReadonlyArrayIncludes031
-     * @tc.desc Verify ReadonlyArray.includes behavior: string type verify includes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["テスト", "other"];
-      const result = arr.includes("テスト");
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0320
-     * @tc.name testReadonlyArrayIncludes032
-     * @tc.desc Verify ReadonlyArray.includes behavior: string type verify includes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["테스트", "other"];
-      const result = arr.includes("테스트");
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0330
-     * @tc.name testReadonlyArrayIncludes033
-     * @tc.desc Verify ReadonlyArray.includes behavior: string type verify includes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["АБВГД", "other"];
-      const result = arr.includes("АБВГД");
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0340
-     * @tc.name testReadonlyArrayIncludes034
-     * @tc.desc Verify ReadonlyArray.includes behavior: string type verify includes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["الاختبار", "other"];
-      const result = arr.includes("الاختبار");
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0350
-     * @tc.name testReadonlyArrayIncludes035
      * @tc.desc Verify ReadonlyArray.includes behavior: string type string 0x123 verify includes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayIncludes030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<string> = ["0x123", "other"];
       const result = arr.includes("0x123");
       expect(result).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0360
-     * @tc.name testReadonlyArrayIncludes036
-     * @tc.desc Verify ReadonlyArray.includes behavior: string type string 0o123 verify includes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["0123", "other"];
-      const result = arr.includes("0123");
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0370
-     * @tc.name testReadonlyArrayIncludes037
-     * @tc.desc Verify ReadonlyArray.includes behavior: string type string 0b1010 verify includes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["0b1010", "other"];
-      const result = arr.includes("0b1010");
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0380
-     * @tc.name testReadonlyArrayIncludes038
-     * @tc.desc Verify ReadonlyArray.includes behavior: string type 123.45e6 verify includes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["123.45e6", "other"];
-      const result = arr.includes("123.45e6");
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0390
-     * @tc.name testReadonlyArrayIncludes039
-     * @tc.desc Verify ReadonlyArray.includes behavior: string type string 2026 - 0o3 - 0o5 verify includes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["2026-0o3-0o5", "other"];
-      const result = arr.includes("2026-0o3-0o5");
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0400
-     * @tc.name testReadonlyArrayIncludes040
-     * @tc.desc Verify ReadonlyArray.includes behavior: string type XSS string verify includes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["<script>alert(1)</script>", "other"];
-      const result = arr.includes("<script>alert(1)</script>");
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0410
-     * @tc.name testReadonlyArrayIncludes041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0310
+     * @tc.name testReadonlyArrayIncludes031
      * @tc.desc Verify ReadonlyArray.includes behavior: string type t verify includes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayIncludes031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<string> = ["\t", "other"];
       const result = arr.includes("\t");
       expect(result).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0420
-     * @tc.name testReadonlyArrayIncludes042
-     * @tc.desc Verify ReadonlyArray.includes behavior: string type verify includes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["—", "other"];
-      const result = arr.includes("—");
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0430
-     * @tc.name testReadonlyArrayIncludes043
-     * @tc.desc Verify ReadonlyArray.includes behavior: string type Test verify includes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["Test 測試", "other"];
-      const result = arr.includes("Test 測試");
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0440
-     * @tc.name testReadonlyArrayIncludes044
-     * @tc.desc Verify ReadonlyArray.includes behavior: string type test example.com verify includes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["test@example.com", "other"];
-      const result = arr.includes("test@example.com");
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0450
-     * @tc.name testReadonlyArrayIncludes045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0320
+     * @tc.name testReadonlyArrayIncludes032
      * @tc.desc Verify ReadonlyArray.includes behavior: element 0 verify falsy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayIncludes032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [0, 1, 2];
       const result = arr.includes(0);
       expect(result).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0460
-     * @tc.name testReadonlyArrayIncludes046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0330
+     * @tc.name testReadonlyArrayIncludes033
      * @tc.desc Verify ReadonlyArray.includes behavior: includes after original array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayIncludes033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [1, 2, 3];
       const len = arr.length;
       const result = arr.includes(2);
@@ -681,14 +507,14 @@ export default function ReadonlyArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0470
-     * @tc.name testReadonlyArrayIncludes047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0340
+     * @tc.name testReadonlyArrayIncludes034
      * @tc.desc Verify ReadonlyArray.includes behavior: float NaN element SameValueZero match
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayIncludes034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const nan: float = Double.toFloat(Number.NaN);
       const arr: ReadonlyArray<float> = [1.0f, nan, 2.0f];
       const result = arr.includes(nan);
@@ -696,28 +522,28 @@ export default function ReadonlyArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0480
-     * @tc.name testReadonlyArrayIncludes048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0350
+     * @tc.name testReadonlyArrayIncludes035
      * @tc.desc Verify ReadonlyArray.includes behavior: search 0.0f matches - 0.0f array element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayIncludes035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<float> = [-0.0f, 1.0f];
       const result = arr.includes(0.0f);
       expect(result).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0490
-     * @tc.name testReadonlyArrayIncludes049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0360
+     * @tc.name testReadonlyArrayIncludes036
      * @tc.desc Verify ReadonlyArray.includes behavior: double NaN element match
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayIncludes036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const nan: double = Number.NaN;
       const arr: ReadonlyArray<double> = [1.1, nan, 2.2];
       const result = arr.includes(nan);
@@ -725,367 +551,101 @@ export default function ReadonlyArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0500
-     * @tc.name testReadonlyArrayIncludes050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0370
+     * @tc.name testReadonlyArrayIncludes037
      * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex matrix - int repeated elements - fromIndex=2, verify includes searches from the specified position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayIncludes037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [10, 20, 10, 30, 10];
       const result = arr.includes(10, 2);
       expect(result).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0510
-     * @tc.name testReadonlyArrayIncludes051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0380
+     * @tc.name testReadonlyArrayIncludes038
      * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex matrix - int repeated elements - fromIndex=1, verify includes searches from the specified position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayIncludes038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [10, 20, 10, 30, 10];
       const result = arr.includes(10, 1);
       expect(result).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0520
-     * @tc.name testReadonlyArrayIncludes052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0390
+     * @tc.name testReadonlyArrayIncludes039
      * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex matrix - byte repeated elements - fromIndex=2, verify includes searches from the specified position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayIncludes039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<byte> = [10 as byte, 20 as byte, 10 as byte, 30 as byte, 10 as byte];
       const result = arr.includes(10 as byte, 2);
       expect(result).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0530
-     * @tc.name testReadonlyArrayIncludes053
-     * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex matrix - short repeated elements - fromIndex=2, verify includes searches from the specified position
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<short> = [100 as short, 200 as short, 100 as short, 300 as short, 100 as short];
-      const result = arr.includes(100 as short, 2);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0540
-     * @tc.name testReadonlyArrayIncludes054
-     * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex matrix - long repeated elements - fromIndex=2, verify includes searches from the specified position
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<long> = [100, 200, 100, 300, 100];
-      const result = arr.includes(100, 2);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0550
-     * @tc.name testReadonlyArrayIncludes055
-     * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex matrix - float repeated elements - fromIndex=2, verify includes searches from the specified position
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<float> = [10.0f, 20.0f, 10.0f, 30.0f, 10.0f];
-      const result = arr.includes(10.0f, 2);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0560
-     * @tc.name testReadonlyArrayIncludes056
-     * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex matrix - double repeated elements - fromIndex=2, verify includes searches from the specified position
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<double> = [10.0, 20.0, 10.0, 30.0, 10.0];
-      const result = arr.includes(10.0, 2);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0570
-     * @tc.name testReadonlyArrayIncludes057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0400
+     * @tc.name testReadonlyArrayIncludes040
      * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex matrix - char repeated elements - fromIndex=2, verify includes searches from the specified position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayIncludes040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<char> = [c'a', c'b', c'a', c'c', c'a'];
       const result = arr.includes(c'a', 2);
       expect(result).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0580
-     * @tc.name testReadonlyArrayIncludes058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0410
+     * @tc.name testReadonlyArrayIncludes041
      * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex matrix - boolean repeated elements - fromIndex=2, verify includes searches from the specified position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayIncludes041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<boolean> = [true, false, true, false, true];
       const result = arr.includes(true, 2);
       expect(result).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0590
-     * @tc.name testReadonlyArrayIncludes059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0420
+     * @tc.name testReadonlyArrayIncludes042
      * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex matrix - string - empty string - fromIndex=2, verify includes searches from the specified position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayIncludes042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<string> = ["x", "", "y", "z", ""];
       const result = arr.includes("", 2);
       expect(result).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0600
-     * @tc.name testReadonlyArrayIncludes060
-     * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex matrix - string - Unicode Chinese - fromIndex=2, verify includes searches from the specified position
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["x", "\u4e2d\u6587", "y", "z", "\u4e2d\u6587"];
-      const result = arr.includes("\u4e2d\u6587", 2);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0610
-     * @tc.name testReadonlyArrayIncludes061
-     * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex matrix - string - emoji - fromIndex=2, verify includes searches from the specified position
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["x", "\uD83D\uDE00", "y", "z", "\uD83D\uDE00"];
-      const result = arr.includes("\uD83D\uDE00", 2);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0620
-     * @tc.name testReadonlyArrayIncludes062
-     * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex matrix - string - zero width space - fromIndex=2, verify includes searches from the specified position
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["x", "\u200B", "y", "z", "\u200B"];
-      const result = arr.includes("\u200B", 2);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0630
-     * @tc.name testReadonlyArrayIncludes063
-     * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex matrix - string - Japanese - fromIndex=2, verify includes searches from the specified position
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["x", "テスト", "y", "z", "テスト"];
-      const result = arr.includes("テスト", 2);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0640
-     * @tc.name testReadonlyArrayIncludes064
-     * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex matrix - string - Korean - fromIndex=2, verify includes searches from the specified position
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["x", "테스트", "y", "z", "테스트"];
-      const result = arr.includes("테스트", 2);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0650
-     * @tc.name testReadonlyArrayIncludes065
-     * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex matrix - string - Russian - fromIndex=2, verify includes searches from the specified position
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["x", "АБВГД", "y", "z", "АБВГД"];
-      const result = arr.includes("АБВГД", 2);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0660
-     * @tc.name testReadonlyArrayIncludes066
-     * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex matrix - string - Arabic - fromIndex=2, verify includes searches from the specified position
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["x", "الاختبار", "y", "z", "الاختبار"];
-      const result = arr.includes("الاختبار", 2);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0670
-     * @tc.name testReadonlyArrayIncludes067
-     * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex matrix - string - hexadecimal string 0x123 - fromIndex=2, verify includes searches from the specified position
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["x", "0x123", "y", "z", "0x123"];
-      const result = arr.includes("0x123", 2);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0680
-     * @tc.name testReadonlyArrayIncludes068
-     * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex matrix - string - octal string 0123 - fromIndex=2, verify includes searches from the specified position
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["x", "0123", "y", "z", "0123"];
-      const result = arr.includes("0123", 2);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0690
-     * @tc.name testReadonlyArrayIncludes069
-     * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex matrix - string - extended case count extended case - fromIndex=2, verify includes searches from the specified position
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["x", "123.45e6", "y", "z", "123.45e6"];
-      const result = arr.includes("123.45e6", 2);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0700
-     * @tc.name testReadonlyArrayIncludes070
-     * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex matrix - string - email - fromIndex=2, verify includes searches from the specified position
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["x", "test@example.com", "y", "z", "test@example.com"];
-      const result = arr.includes("test@example.com", 2);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0710
-     * @tc.name testReadonlyArrayIncludes071
-     * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex matrix - string - XSS - fromIndex=2, verify includes searches from the specified position
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["x", "<script>alert(1)</script>", "y", "z", "<script>alert(1)</script>"];
-      const result = arr.includes("<script>alert(1)</script>", 2);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0720
-     * @tc.name testReadonlyArrayIncludes072
-     * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex matrix - string - tab - fromIndex=2, verify includes searches from the specified position
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["x", "\t", "y", "z", "\t"];
-      const result = arr.includes("\t", 2);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0730
-     * @tc.name testReadonlyArrayIncludes073
-     * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex matrix - string - fullwidth dash - fromIndex=2, verify includes searches from the specified position
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["x", "—", "y", "z", "—"];
-      const result = arr.includes("—", 2);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0740
-     * @tc.name testReadonlyArrayIncludes074
-     * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex matrix - string - mixed script Test extended case - fromIndex=2, verify includes searches from the specified position
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<string> = ["x", "Test 測試", "y", "z", "Test 測試"];
-      const result = arr.includes("Test 測試", 2);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0750
-     * @tc.name testReadonlyArrayIncludes075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0430
+     * @tc.name testReadonlyArrayIncludes043
      * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex matrix - 100 elements array - fromIndex=50, verify includes extended case middle extended case search extended case elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayIncludes043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source: Array<int> = [];
       for (let i: int = 0; i < 100; i++) {
-      source.push(i);
+        source.push(i);
       }
       const arr: ReadonlyArray<int> = source as ReadonlyArray<int>;
       const result = arr.includes(99, 50);
@@ -1093,14 +653,14 @@ export default function ReadonlyArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0760
-     * @tc.name testReadonlyArrayIncludes076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0440
+     * @tc.name testReadonlyArrayIncludes044
      * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex matrix - float NaN - fromIndex=3, verify includes searches the second NaN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayIncludes044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const nan: float = Double.toFloat(Number.NaN);
       const arr: ReadonlyArray<float> = [1.0f, nan, 2.0f, nan, 3.0f];
       const result = arr.includes(nan, 3);
@@ -1108,14 +668,14 @@ export default function ReadonlyArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0770
-     * @tc.name testReadonlyArrayIncludes077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0450
+     * @tc.name testReadonlyArrayIncludes045
      * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex matrix - double NaN - fromIndex=3, verify includes searches the second NaN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayIncludes045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const nan: double = Number.NaN;
       const arr: ReadonlyArray<double> = [1.0, nan, 2.0, nan, 3.0];
       const result = arr.includes(nan, 3);
@@ -1123,399 +683,249 @@ export default function ReadonlyArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0780
-     * @tc.name testReadonlyArrayIncludes078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0460
+     * @tc.name testReadonlyArrayIncludes046
      * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex matrix - int boundary 2147483647 - fromIndex=2, verify includes searches from the specified position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayIncludes046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [2147483647, 0, 2147483647, -1, 2147483647];
       const result = arr.includes(2147483647, 2);
       expect(result).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0790
-     * @tc.name testReadonlyArrayIncludes079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0470
+     * @tc.name testReadonlyArrayIncludes047
      * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex matrix - int extended case elements - fromIndex=2, verify includes not found 20
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayIncludes047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [10, 20, 10, 30, 10];
       const result = arr.includes(20, 2);
       expect(result).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0800
-     * @tc.name testReadonlyArrayIncludes080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0480
+     * @tc.name testReadonlyArrayIncludes048
      * @tc.desc Verify ReadonlyArray.includes behavior: empty array search returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayIncludes048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [];
       const result = arr.includes(1);
       expect(result).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0810
-     * @tc.name testReadonlyArrayIncludes081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0490
+     * @tc.name testReadonlyArrayIncludes049
      * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex negative beyond length search empty string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
+    it('testReadonlyArrayIncludes049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<string> = ["a", ""];
       const result = arr.includes("", -(arr.length + 1));
       expect(result).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0820
-     * @tc.name testReadonlyArrayIncludes082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0500
+     * @tc.name testReadonlyArrayIncludes050
      * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex int max search byte element out of range returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
+    it('testReadonlyArrayIncludes050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<byte> = [0 as byte, 1 as byte];
       const result = arr.includes(0 as byte, 2147483647);
       expect(result).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0830
-     * @tc.name testReadonlyArrayIncludes083
-     * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex int max search short element out of range returns false
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      const arr: ReadonlyArray<short> = [0 as short, 1 as short];
-      const result = arr.includes(0 as short, 2147483647);
-      expect(result).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0840
-     * @tc.name testReadonlyArrayIncludes084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0510
+     * @tc.name testReadonlyArrayIncludes051
      * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex int max search int element out of range returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
+    it('testReadonlyArrayIncludes051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [0, 1];
       const result = arr.includes(0, 2147483647);
       expect(result).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0850
-     * @tc.name testReadonlyArrayIncludes085
-     * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex int max search long element out of range returns false
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      const arr: ReadonlyArray<long> = [0, 1];
-      const result = arr.includes(0, 2147483647);
-      expect(result).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0860
-     * @tc.name testReadonlyArrayIncludes086
-     * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex int max search float element out of range returns false
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      const arr: ReadonlyArray<float> = [0.0f, 1.0f];
-      const result = arr.includes(0.0f, 2147483647);
-      expect(result).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0870
-     * @tc.name testReadonlyArrayIncludes087
-     * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex int max search double element out of range returns false
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      const arr: ReadonlyArray<double> = [0.0, 1.0];
-      const result = arr.includes(0.0, 2147483647);
-      expect(result).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0880
-     * @tc.name testReadonlyArrayIncludes088
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0520
+     * @tc.name testReadonlyArrayIncludes052
      * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex int max search char element out of range returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
+    it('testReadonlyArrayIncludes052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<char> = [c'a', c'b'];
       const result = arr.includes(c'a', 2147483647);
       expect(result).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0890
-     * @tc.name testReadonlyArrayIncludes089
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0530
+     * @tc.name testReadonlyArrayIncludes053
      * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex int max search boolean element out of range returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
+    it('testReadonlyArrayIncludes053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<boolean> = [true, false];
       const result = arr.includes(true, 2147483647);
       expect(result).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0900
-     * @tc.name testReadonlyArrayIncludes090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0540
+     * @tc.name testReadonlyArrayIncludes054
      * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex int max search string element out of range returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
+    it('testReadonlyArrayIncludes054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<string> = ["x", "y"];
       const result = arr.includes("x", 2147483647);
       expect(result).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0910
-     * @tc.name testReadonlyArrayIncludes091
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0550
+     * @tc.name testReadonlyArrayIncludes055
      * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex int min search byte element from start
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
+    it('testReadonlyArrayIncludes055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<byte> = [0 as byte, 1 as byte];
       const result = arr.includes(0 as byte, -2147483648);
       expect(result).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0920
-     * @tc.name testReadonlyArrayIncludes092
-     * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex int min search short element from start
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      const arr: ReadonlyArray<short> = [0 as short, 1 as short];
-      const result = arr.includes(0 as short, -2147483648);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0930
-     * @tc.name testReadonlyArrayIncludes093
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0560
+     * @tc.name testReadonlyArrayIncludes056
      * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex int min search int element from start
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
+    it('testReadonlyArrayIncludes056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [0, 1];
       const result = arr.includes(0, -2147483648);
       expect(result).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0940
-     * @tc.name testReadonlyArrayIncludes094
-     * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex int min search long element from start
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      const arr: ReadonlyArray<long> = [0, 1];
-      const result = arr.includes(0, -2147483648);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0950
-     * @tc.name testReadonlyArrayIncludes095
-     * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex int min search float element from start
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      const arr: ReadonlyArray<float> = [0.0f, 1.0f];
-      const result = arr.includes(0.0f, -2147483648);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0960
-     * @tc.name testReadonlyArrayIncludes096
-     * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex int min search double element from start
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      const arr: ReadonlyArray<double> = [0.0, 1.0];
-      const result = arr.includes(0.0, -2147483648);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0970
-     * @tc.name testReadonlyArrayIncludes097
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0570
+     * @tc.name testReadonlyArrayIncludes057
      * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex int min search char element from start
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
+    it('testReadonlyArrayIncludes057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<char> = [c'a', c'b'];
       const result = arr.includes(c'a', -2147483648);
       expect(result).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0980
-     * @tc.name testReadonlyArrayIncludes098
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0580
+     * @tc.name testReadonlyArrayIncludes058
      * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex int min search boolean element from start
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
+    it('testReadonlyArrayIncludes058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<boolean> = [true, false];
       const result = arr.includes(true, -2147483648);
       expect(result).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0990
-     * @tc.name testReadonlyArrayIncludes099
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0590
+     * @tc.name testReadonlyArrayIncludes059
      * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex int min search string element from start
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
+    it('testReadonlyArrayIncludes059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<string> = ["x", "y"];
       const result = arr.includes("x", -2147483648);
       expect(result).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_1000
-     * @tc.name testReadonlyArrayIncludes100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0600
+     * @tc.name testReadonlyArrayIncludes060
      * @tc.desc Verify ReadonlyArray.includes behavior: duplicate element search middle value found
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
+    it('testReadonlyArrayIncludes060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [1, 2, 3, 2];
       expect(arr.includes(2)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_1010
-     * @tc.name testReadonlyArrayIncludes101
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0610
+     * @tc.name testReadonlyArrayIncludes061
      * @tc.desc Verify ReadonlyArray.includes behavior: duplicate element search missing value returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
+    it('testReadonlyArrayIncludes061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [1, 2, 3, 2];
       expect(arr.includes(9)).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_1020
-     * @tc.name testReadonlyArrayIncludes102
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0620
+     * @tc.name testReadonlyArrayIncludes062
      * @tc.desc Verify ReadonlyArray.includes behavior: single element array search miss returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
+    it('testReadonlyArrayIncludes062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [42];
       expect(arr.includes(43)).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_1030
-     * @tc.name testReadonlyArrayIncludes103
-     * @tc.desc Verify ReadonlyArray.includes behavior: float NaN SameValueZero includes returns true
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      const nan: float = Double.toFloat(Number.NaN);
-      const arr: ReadonlyArray<float> = [1.0f, nan];
-      expect(arr.includes(nan)).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_1040
-     * @tc.name testReadonlyArrayIncludes104
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0630
+     * @tc.name testReadonlyArrayIncludes063
      * @tc.desc Verify ReadonlyArray.includes behavior: 100 element array search last index value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
+    it('testReadonlyArrayIncludes063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const data: Array<int> = [];
       for (let i: int = 0; i < 100; i++) { data.push(i); }
       const arr: ReadonlyArray<int> = data as ReadonlyArray<int>;
@@ -1523,15 +933,14 @@ export default function ReadonlyArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_1050
-     * @tc.name testReadonlyArrayIncludes105
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0640
+     * @tc.name testReadonlyArrayIncludes064
      * @tc.desc Verify ReadonlyArray.includes behavior: 1000 element array search last index value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
+    it('testReadonlyArrayIncludes064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const data: Array<int> = [];
       for (let i: int = 0; i < 1000; i++) { data.push(i); }
       const arr: ReadonlyArray<int> = data as ReadonlyArray<int>;
@@ -1539,174 +948,124 @@ export default function ReadonlyArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_1060
-     * @tc.name testReadonlyArrayIncludes106
-     * @tc.desc Verify ReadonlyArray.includes behavior: search zero int falsy value still found
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      const arr: ReadonlyArray<int> = [5, 0, 7];
-      expect(arr.includes(0)).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_1070
-     * @tc.name testReadonlyArrayIncludes107
-     * @tc.desc Verify ReadonlyArray.includes behavior: string array search empty string element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      const arr: ReadonlyArray<string> = [""];
-      expect(arr.includes("")).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_1080
-     * @tc.name testReadonlyArrayIncludes108
-     * @tc.desc Verify ReadonlyArray.includes behavior: string array search zero width space element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayIncludes108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      const arr: ReadonlyArray<string> = ["\u200B", "a"];
-      expect(arr.includes("\u200B")).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_1090
-     * @tc.name testReadonlyArrayIncludes109
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0650
+     * @tc.name testReadonlyArrayIncludes065
      * @tc.desc Verify ReadonlyArray.includes behavior: fromIndex limits search range for duplicate int
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
+    it('testReadonlyArrayIncludes065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [1, 2, 1];
       expect(arr.includes(1, 2)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_1100
-     * @tc.name testReadonlyArrayIncludes110
-     * @tc.desc Verify ReadonlyArray.includes behavior: search crlf string element
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0660
+     * @tc.name testReadonlyArrayIncludes066
+     * @tc.desc Verify ReadonlyArray.includes behavior: byte max+1 overflow wraps to min and is included
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      const arr: ReadonlyArray<string> = ["\r\n", "other"];
-      expect(arr.includes("\r\n")).assertTrue();
+    it('testReadonlyArrayIncludes066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<byte> = [-128 as byte];
+      const overflow: int = 127 + 1;
+      expect(arr.includes(toByteValue(overflow))).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_1110
-     * @tc.name testReadonlyArrayIncludes111
-     * @tc.desc Verify ReadonlyArray.includes behavior: search phone string element
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0670
+     * @tc.name testReadonlyArrayIncludes067
+     * @tc.desc Verify ReadonlyArray.includes behavior: byte min-1 overflow wraps to max and is included
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      const arr: ReadonlyArray<string> = ["13800138000", "other"];
-      expect(arr.includes("13800138000")).assertTrue();
+    it('testReadonlyArrayIncludes067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<byte> = [127 as byte];
+      const overflow: int = -128 - 1;
+      expect(arr.includes(toByteValue(overflow))).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_1120
-     * @tc.name testReadonlyArrayIncludes112
-     * @tc.desc Verify ReadonlyArray.includes behavior: search mojibake string element
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0680
+     * @tc.name testReadonlyArrayIncludes068
+     * @tc.desc Verify ReadonlyArray.includes behavior: short max+1 overflow wraps to min and is included
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      const arr: ReadonlyArray<string> = ["æµè¯", "other"];
-      expect(arr.includes("æµè¯")).assertTrue();
+    it('testReadonlyArrayIncludes068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<short> = [-32768 as short];
+      const overflow: int = 32767 + 1;
+      expect(arr.includes(toShortValue(overflow))).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_1130
-     * @tc.name testReadonlyArrayIncludes113
-     * @tc.desc Verify ReadonlyArray.includes behavior: search replacement char string element
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0690
+     * @tc.name testReadonlyArrayIncludes069
+     * @tc.desc Verify ReadonlyArray.includes behavior: short min-1 overflow wraps to max and is included
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      const arr: ReadonlyArray<string> = ["\uFFFD", "other"];
-      expect(arr.includes("\uFFFD")).assertTrue();
+    it('testReadonlyArrayIncludes069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<short> = [32767 as short];
+      const overflow: int = -32768 - 1;
+      expect(arr.includes(toShortValue(overflow))).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_1140
-     * @tc.name testReadonlyArrayIncludes114
-     * @tc.desc Verify ReadonlyArray.includes behavior: search lone surrogate string element
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0700
+     * @tc.name testReadonlyArrayIncludes070
+     * @tc.desc Verify ReadonlyArray.includes behavior: int max+1 overflow wraps to min and is included
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      const arr: ReadonlyArray<string> = ["\udc04", "other"];
-      expect(arr.includes("\udc04")).assertTrue();
+    it('testReadonlyArrayIncludes070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<int> = [-2147483648];
+      expect(arr.includes(2147483647 + 1)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_1150
-     * @tc.name testReadonlyArrayIncludes115
-     * @tc.desc Verify ReadonlyArray.includes behavior: search 100 char string string element
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0710
+     * @tc.name testReadonlyArrayIncludes071
+     * @tc.desc Verify ReadonlyArray.includes behavior: int min-1 overflow wraps to max and is included
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      let s: string = "";
-      for (let i: int = 0; i < 100; i++) { s = s + "a"; }
-      const arr: ReadonlyArray<string> = [s];
-      expect(arr.includes(s)).assertTrue();
+    it('testReadonlyArrayIncludes071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<int> = [2147483647];
+      expect(arr.includes(-2147483648 - 1)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_1160
-     * @tc.name testReadonlyArrayIncludes116
-     * @tc.desc Verify ReadonlyArray.includes behavior: search int boundary value 2147483647
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0720
+     * @tc.name testReadonlyArrayIncludes072
+     * @tc.desc Verify ReadonlyArray.includes behavior: long max+1 overflow wraps to min and is included
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      const arr: ReadonlyArray<int> = [2147483647, 0];
-      expect(arr.includes(2147483647)).assertTrue();
+    it('testReadonlyArrayIncludes072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<long> = [-9223372036854775808];
+      expect(arr.includes(9223372036854775807 + 1)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_1170
-     * @tc.name testReadonlyArrayIncludes117
-     * @tc.desc Verify ReadonlyArray.includes behavior: search int boundary value - 2147483648
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_INCLUDES_0730
+     * @tc.name testReadonlyArrayIncludes073
+     * @tc.desc Verify ReadonlyArray.includes behavior: long min-1 overflow wraps to max and is included
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayIncludes117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      const arr: ReadonlyArray<int> = [-2147483648, 0];
-      expect(arr.includes(-2147483648)).assertTrue();
+    it('testReadonlyArrayIncludes073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<long> = [9223372036854775807];
+      expect(arr.includes(-9223372036854775808 - 1)).assertTrue();
     });
-
   });
 }
