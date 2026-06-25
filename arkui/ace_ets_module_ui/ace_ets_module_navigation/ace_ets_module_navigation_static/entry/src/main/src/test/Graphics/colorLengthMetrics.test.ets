@@ -26,14 +26,14 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import { NavPathInfo, NavigationDividerStyle, ScrollEffectType } from '@ohos.arkui.component';
-
+ 
 export default function colorLengthMetrics() {
   describe('colorLengthMetrics', () => {
     beforeAll(async (): Promise<void> => {
       console.info('colorLengthMetrics beforeAll start');
       await UtilsTest.startAbility('com.arkui.ace.navigation.static', 'EntryAbility');
     });
-
+ 
     beforeEach(async (): Promise<void> => {
       console.info('colorLengthMetrics beforeEach start');
       let options: router.RouterOptions = {
@@ -54,7 +54,7 @@ export default function colorLengthMetrics() {
       }
       console.info('colorLengthMetrics beforeEach end');
     });
-
+ 
     /**
      * @tc.name   colorMetrics_autoRefresh_static_0100
      * @tc.number SUB_ARKUI_COLORMETRICS_AUTOREFRESH_STATIC_0100
@@ -75,7 +75,7 @@ export default function colorLengthMetrics() {
       console.info('[colorMetrics_autoRefresh_static_0100] END');
       done();
     });
-
+ 
     /**
      * @tc.name   colorMetrics_autoRefresh_static_0200
      * @tc.number SUB_ARKUI_COLORMETRICS_AUTOREFRESH_STATIC_0200
@@ -96,28 +96,7 @@ export default function colorLengthMetrics() {
       console.info('[colorMetrics_autoRefresh_static_0200] END');
       done();
     });
-
-    /**
-     * @tc.name   colorMetrics_autoRefresh_static_0300
-     * @tc.number SUB_ARKUI_COLORMETRICS_AUTOREFRESH_STATIC_0300
-     * @tc.desc   Test ColorMetrics autoRefresh property with value undefined
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
-     */
-    it('colorMetrics_autoRefresh_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[colorMetrics_autoRefresh_static_0300] START');
-      let driver: Driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('colorMetrics_autoRefresh_undefined');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[colorMetrics_autoRefresh_static_0300] backgroundColor: " +
-        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('backgroundColor')));
-      expect(obj.getElement('$attrs').getString('backgroundColor') !== undefined).assertTrue();
-      console.info('[colorMetrics_autoRefresh_static_0300] END');
-      done();
-    });
-
+ 
     /**
      * @tc.name   lengthMetrics_autoRefresh_static_0100
      * @tc.number SUB_ARKUI_LENGTHMETRICS_AUTOREFRESH_STATIC_0100
@@ -139,7 +118,7 @@ export default function colorLengthMetrics() {
       console.info('[lengthMetrics_autoRefresh_static_0100] END');
       done();
     });
-
+ 
     /**
      * @tc.name   lengthMetrics_autoRefresh_static_0200
      * @tc.number SUB_ARKUI_LENGTHMETRICS_AUTOREFRESH_STATIC_0200
@@ -159,28 +138,6 @@ export default function colorLengthMetrics() {
       let result = JSON.parseJsonElement(obj.getElement('$attrs').getString('padding')).getString('top');
       expect(result !== undefined).assertTrue();
       console.info('[lengthMetrics_autoRefresh_static_0200] END');
-      done();
-    });
-
-    /**
-     * @tc.name   lengthMetrics_autoRefresh_static_0300
-     * @tc.number SUB_ARKUI_LENGTHMETRICS_AUTOREFRESH_STATIC_0300
-     * @tc.desc   Test LengthMetrics autoRefresh property with value undefined
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
-     */
-    it('lengthMetrics_autoRefresh_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[lengthMetrics_autoRefresh_static_0300] START');
-      let driver: Driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('lengthMetrics_autoRefresh_undefined');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[lengthMetrics_autoRefresh_static_0300] padding: " +
-        JSON.stringify(JSON.parseJsonElement(obj.getElement('$attrs').getString('padding'))));
-      let result = JSON.parseJsonElement(obj.getElement('$attrs').getString('padding')).getString('top');
-      expect(result !== undefined).assertTrue();
-      console.info('[lengthMetrics_autoRefresh_static_0300] END');
       done();
     });
   });

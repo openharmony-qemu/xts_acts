@@ -36,17 +36,15 @@ import {
 import { State } from '@ohos.arkui.stateManagement'
 import inspector from '@ohos.arkui.inspector'
 import { ColorMetrics, LengthMetrics  } from '@kit.ArkUI';
-
+ 
 @Entry
 @Component
 struct MyAutoRefreshSample {
   @State colorMetrics: ColorMetrics = ColorMetrics.resourceColor($r('sys.color.font_primary')).autoRefresh!(true)
   @State colorMetrics1: ColorMetrics = ColorMetrics.resourceColor($r('sys.color.font_primary')).autoRefresh!(false)
-  @State colorMetrics2: ColorMetrics = ColorMetrics.resourceColor($r('sys.color.font_primary')).autoRefresh!(undefined)
   @State lengthMetrics: LengthMetrics = LengthMetrics.resource($r('sys.float.ohos_id_button_min_width')).autoRefresh!(true)
   @State lengthMetrics1: LengthMetrics = LengthMetrics.resource($r('sys.float.ohos_id_button_min_width')).autoRefresh!(false)
-  @State lengthMetrics2: LengthMetrics = LengthMetrics.resource($r('sys.float.ohos_id_button_min_width')).autoRefresh!(undefined)
-
+ 
   build() {
     Column() {
       Text('ColorMetrics autoRefresh').fontWeight(FontWeight.Bold).fontSize(20)
@@ -60,7 +58,7 @@ struct MyAutoRefreshSample {
         .width('30%')
         .height('10%')
         .margin(5)
-
+ 
         Column() {
           Text('false')
             .fontColor(Color.Blue)
@@ -71,41 +69,21 @@ struct MyAutoRefreshSample {
         .height('10%')
       }
       .margin(5)
-
-      Row(){
-        Column() {
-          Text('undefined')
-            .fontColor(Color.Red)
-        }
-        .id('colorMetrics_autoRefresh_undefined')
-        .backgroundColor(this.colorMetrics2)
-        .width('30%')
-        .height('10%')
-        .margin(5)
-      }
-      .margin(5)
-
+ 
       Text('LengthMetrics autoRefresh').fontWeight(FontWeight.Bold).fontSize(20)
       Row(){
         Button('true')
           .width('40%')
           .id('lengthMetrics_autoRefresh_true')
           .padding({ top: this.lengthMetrics })
-
+ 
         Button('false')
           .width('40%')
           .id('lengthMetrics_autoRefresh_false')
           .padding({ top: this.lengthMetrics1 })
       }
       .margin(5)
-      Row(){
-        Button('undefined')
-          .id('lengthMetrics_autoRefresh_undefined')
-          .padding({ top: this.lengthMetrics2 })
-          .width('40%')
-          .margin(5)
-      }
-
+ 
     }
     .width('100%')
     .height('100%')
