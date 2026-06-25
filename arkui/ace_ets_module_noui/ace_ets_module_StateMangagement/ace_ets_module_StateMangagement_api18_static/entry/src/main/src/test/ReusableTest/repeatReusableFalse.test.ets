@@ -27,7 +27,7 @@ import common from '@ohos.app.ability.common';
 import deviceInfo from '@ohos.deviceInfo';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-export default function repeatReusableFalse() {
+export default function repeatReusableFalse(): void {
   describe('repeatReusableFalse', () => {
     beforeAll(async (): Promise<void> => {
 

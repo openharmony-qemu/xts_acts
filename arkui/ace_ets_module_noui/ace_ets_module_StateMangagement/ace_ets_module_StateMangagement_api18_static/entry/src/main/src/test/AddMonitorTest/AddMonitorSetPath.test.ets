@@ -30,7 +30,7 @@ let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-export default function AddMonitorSetPath() {
+export default function AddMonitorSetPath(): void {
   describe('AddMonitorSetPath', () => {
     beforeAll(async (): Promise<void> => {
       console.info("AddMonitorSetPath beforeEach start");
