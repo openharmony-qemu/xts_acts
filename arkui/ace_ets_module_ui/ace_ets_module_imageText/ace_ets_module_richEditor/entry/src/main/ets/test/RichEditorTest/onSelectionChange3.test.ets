@@ -62,7 +62,7 @@ export default function onSelectionChange3() {
 
       let richEditor = await driver.findComponent(ON.id('onSelectionChange3_RichEditor'));
       await richEditor.longClick();
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(3000);
       let text1_1 = getInspectorByKey('onSelectionChange3_text1');
       let Obj1_1: ESObject = JSON.parse(text1_1);
       expect(Obj1_1.$attrs.content).assertEqual('1');
