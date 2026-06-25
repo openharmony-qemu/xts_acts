@@ -232,6 +232,26 @@ export default function nfcControllerTest() {
             done();
         })
 
+        /**
+         * @tc.number SUB_COMMUNICATION_NFC_Cont_static_1000
+         * @tc.name SUB_COMMUNICATION_NFC_Cont_static_1000
+         * @tc.desc Check whether the NFC function is enabled.
+         * @tc.size since 7
+         * @tc.type Function
+         * @tc.level Level 1
+         */
+        it('SUB_COMMUNICATION_NFC_Cont_static_1000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let isNFCSupported:boolean = controller.isNFCSupported();
+            if (isNFCSupported == true) {
+                hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_1000 Nfc isopenstate is ->' + isNFCSupported);
+                expect(isNFCSupported).assertTrue();
+            } else if (isNFCSupported == false){
+                hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_1000 Nfc isopenstate is ->' + isNFCSupported);
+                expect(isNFCSupported).assertFalse();
+            }
+            done();
+        })
+
         console.info("*************[nfc_test] start nfc js unit test end*************");
     })
 }
