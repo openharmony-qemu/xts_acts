@@ -17,22 +17,23 @@
 #define ARKTS_ANI_TEST_ATTACHDETACHTEST_H
 
 #include "Common.h"
+#include "hilog/log.h"
 #include <atomic>
 #include <thread>
-#include "hilog/log.h"
+#include <vector>
 
-ani_int test_AttachDetach([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
+ani_int test_AttachDetach([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object) {
     ani_vm *vm = nullptr;
     if (env->GetVM(&vm) != ANI_OK) {
         OH_LOG_INFO(LOG_APP, "testTag : test_AttachDetach GetVM failed");
         return ANI_FALSE;
     }
     ani_env *mainEnv = nullptr;
-    ani_options mainoptions {0, nullptr};
+    ani_options mainoptions{0, nullptr};
     ani_status mainstatus = vm->AttachCurrentThread(&mainoptions, ANI_VERSION_1, &mainEnv);
     if (mainstatus == ANI_OK) {
-        OH_LOG_INFO(LOG_APP, "testTag : AttachCurrentThread in main thread should failed, but successed here!");
+        OH_LOG_INFO(LOG_APP, "testTag : AttachCurrentThread in main thread should "
+                             "failed, but successed here!");
         return ANI_FALSE;
     }
 
@@ -40,7 +41,7 @@ ani_int test_AttachDetach([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_ob
 
     std::thread worker([&result, vm]() {
         ani_env *workerEnv = nullptr;
-        ani_options options {0, nullptr};
+        ani_options options{0, nullptr};
 
         ani_status status = vm->AttachCurrentThread(&options, ANI_VERSION_1, &workerEnv);
         if (status != ANI_OK || workerEnv == nullptr) {
@@ -72,8 +73,7 @@ ani_int test_AttachDetach([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_ob
     return result.load();
 }
 
-ani_int test_AttachDetach_WithInterop([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
+ani_int test_AttachDetach_WithInterop([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object) {
     ani_vm *vm = nullptr;
     if (env->GetVM(&vm) != ANI_OK) {
         OH_LOG_INFO(LOG_APP, "testTag : test_AttachDetach_WithInterop GetVM failed");
@@ -81,10 +81,11 @@ ani_int test_AttachDetach_WithInterop([[maybe_unused]] ani_env *env, [[maybe_unu
     }
     ani_env *mainEnv = nullptr;
     ani_option maininteropEnabled = {"--interop=enable", nullptr};
-    ani_options mainoptions {1, &maininteropEnabled};
+    ani_options mainoptions{1, &maininteropEnabled};
     ani_status mainstatus = vm->AttachCurrentThread(&mainoptions, ANI_VERSION_1, &mainEnv);
     if (mainstatus == ANI_OK) {
-        OH_LOG_INFO(LOG_APP, "testTag : AttachCurrentThread in main thread should failed, but successed here!");
+        OH_LOG_INFO(LOG_APP, "testTag : AttachCurrentThread in main thread should "
+                             "failed, but successed here!");
         return ANI_FALSE;
     }
 
@@ -93,11 +94,14 @@ ani_int test_AttachDetach_WithInterop([[maybe_unused]] ani_env *env, [[maybe_unu
     std::thread worker([&result, vm]() {
         ani_env *workerEnv = nullptr;
         ani_option interopEnabled = {"--interop=enable", nullptr};
-        ani_options options {1, &interopEnabled};
+        ani_options options{1, &interopEnabled};
 
         ani_status status = vm->AttachCurrentThread(&options, ANI_VERSION_1, &workerEnv);
         if (status != ANI_OK || workerEnv == nullptr) {
-            OH_LOG_INFO(LOG_APP, "testTag : AttachCurrentThread with interop failed, status=%{public}d", status);
+            OH_LOG_INFO(LOG_APP,
+                        "testTag : AttachCurrentThread with interop failed, "
+                        "status=%{public}d",
+                        status);
             result.store(ANI_FALSE);
             return;
         }
@@ -112,7 +116,10 @@ ani_int test_AttachDetach_WithInterop([[maybe_unused]] ani_env *env, [[maybe_unu
 
         status = vm->DetachCurrentThread();
         if (status != ANI_OK) {
-            OH_LOG_INFO(LOG_APP, "testTag : DetachCurrentThread with interop failed, status=%{public}d", status);
+            OH_LOG_INFO(LOG_APP,
+                        "testTag : DetachCurrentThread with interop failed, "
+                        "status=%{public}d",
+                        status);
             result.store(ANI_FALSE);
             return;
         }
@@ -125,8 +132,7 @@ ani_int test_AttachDetach_WithInterop([[maybe_unused]] ani_env *env, [[maybe_unu
     return result.load();
 }
 
-ani_int test_ConcurrentAttach([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
+ani_int test_ConcurrentAttach([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object) {
     ani_vm *vm = nullptr;
     if (env->GetVM(&vm) != ANI_OK) {
         OH_LOG_INFO(LOG_APP, "testTag : test_ConcurrentAttach GetVM failed");
@@ -160,9 +166,9 @@ ani_int test_ConcurrentAttach([[maybe_unused]] ani_env *env, [[maybe_unused]] an
         OH_LOG_INFO(LOG_APP, "testTag : mainThread GlobalReference_Create failed");
         return ANI_FALSE;
     }
-    
+
     ani_int sumResult;
-    if (env->Object_CallMethodByName_Int(mainTestObj, "sum", "ii:i", &sumResult, 3,4) != ANI_OK || sumResult != 7) {
+    if (env->Object_CallMethodByName_Int(mainTestObj, "sum", "ii:i", &sumResult, 3, 4) != ANI_OK || sumResult != 7) {
         OH_LOG_INFO(LOG_APP, "testTag : mainThread sum method failed");
         return ANI_FALSE;
     }
@@ -181,10 +187,10 @@ ani_int test_ConcurrentAttach([[maybe_unused]] ani_env *env, [[maybe_unused]] an
 
             if (useInterop) {
                 ani_option interopEnabled = {"--interop=enable", nullptr};
-                ani_options options {1, &interopEnabled};
+                ani_options options{1, &interopEnabled};
                 status = vm->AttachCurrentThread(&options, ANI_VERSION_1, &workerEnv);
             } else {
-                ani_options options {0, nullptr};
+                ani_options options{0, nullptr};
                 status = vm->AttachCurrentThread(&options, ANI_VERSION_1, &workerEnv);
             }
 
@@ -201,12 +207,39 @@ ani_int test_ConcurrentAttach([[maybe_unused]] ani_env *env, [[maybe_unused]] an
                 failCount++;
                 return;
             }
-        
+
+            ani_class cls;
+            // 子线程 不能继承
+            // 主线程加载的类，不能用FindClass，需用globalref访问主线程的类
+            //            ani_status status2;
+            //            status2 =
+            //            workerEnv->FindClass("entry.src.main.src.ets.Index.TestClass",
+            //            &cls); if (status2 != ANI_OK) {
+            //                OH_LOG_INFO(LOG_APP, "testTag : Thread %{public}d
+            //                FindClass failed", i); if(status2 == ANI_PENDING_ERROR)
+            //                OH_LOG_INFO(LOG_APP, "status2 = ANI_PENDING_ERROR");
+            //                else if(status2 == ANI_NOT_FOUND) OH_LOG_INFO(LOG_APP,
+            //                "status2 = ANI_NOT_FOUND"); vm->DetachCurrentThread();
+            //                failCount++;
+            //                return;
+            //            }
+
+            //            ani_static_method sumMethod;
+            //            if
+            //            (workerEnv->Class_FindStaticMethod(static_cast<ani_class>(g_objectref),
+            //            "sum", "ii:i", &sumMethod) != ANI_OK) {
+            //                OH_LOG_INFO(LOG_APP, "testTag : Thread %d Find sum
+            //                method failed", i); vm->DetachCurrentThread();
+            //                failCount++;
+            //                return;
+            //            }
             ani_value args[2U];
             args[0U].i = 3;
             args[1U].i = 4;
             ani_int sumResult;
-            if (workerEnv->Object_CallMethodByName_Int(static_cast<ani_object>(g_objectref), "sum", "ii:i", &sumResult, 3,4) != ANI_OK || sumResult != 7) {
+            if (workerEnv->Object_CallMethodByName_Int(static_cast<ani_object>(g_objectref), "sum", "ii:i", &sumResult,
+                                                       3, 4) != ANI_OK ||
+                sumResult != 7) {
                 OH_LOG_INFO(LOG_APP, "testTag : Thread %d sum method failed", i);
                 vm->DetachCurrentThread();
                 failCount++;
@@ -225,135 +258,138 @@ ani_int test_ConcurrentAttach([[maybe_unused]] ani_env *env, [[maybe_unused]] an
     }
 
     startFlag.store(true);
-    for (auto& t : threads) {
+    for (auto &t : threads) {
         t.join();
     }
-    
+
     env->GlobalReference_Delete(g_objectref);
     g_objectref = nullptr;
 
     if (successCount == THREAD_COUNT && failCount == 0) {
-        OH_LOG_INFO(LOG_APP, "testTag : ConcurrentAttach test passed, success=%{public}d, fail=%{public}d",
+        OH_LOG_INFO(LOG_APP,
+                    "testTag : ConcurrentAttach test passed, success=%{public}d, "
+                    "fail=%{public}d",
                     successCount.load(), failCount.load());
         return ANI_TRUE;
     } else {
-        OH_LOG_INFO(LOG_APP, "testTag : ConcurrentAttach test failed, success=%{public}d, fail=%{public}d",
+        OH_LOG_INFO(LOG_APP,
+                    "testTag : ConcurrentAttach test failed, success=%{public}d, "
+                    "fail=%{public}d",
                     successCount.load(), failCount.load());
         return ANI_FALSE;
     }
 }
 
-ani_int test_ConcurrentMainThreadWorker([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
+ani_int test_ConcurrentMainThreadWorker([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object) {
     ani_ref g_testClassRef = nullptr;
     ani_method g_sumMethod = nullptr;
-    
+
     ani_vm *vm = nullptr;
     if (env->GetVM(&vm) != ANI_OK) {
         OH_LOG_INFO(LOG_APP, "testTag : test_ConcurrentMainThreadWorker GetVM failed");
         return ANI_FALSE;
     }
-    
+
     if (g_testClassRef != nullptr && env != nullptr) {
         env->GlobalReference_Delete(g_testClassRef);
         g_testClassRef = nullptr;
     }
-    
+
     std::atomic<bool> startFlag(false);
     std::atomic<int> workerSuccess(0);
     std::atomic<int> mainSuccess(0);
-    
+
     ani_class cls;
     ani_method constructor;
     ani_object testObj;
-    
+
     if (env->FindClass("entry.src.main.src.ets.Index.TestClass", &cls) != ANI_OK) {
         OH_LOG_INFO(LOG_APP, "testTag : mainThread FindClass failed");
         return ANI_FALSE;
     }
-    
+
     if (env->Class_FindMethod(cls, "<ctor>", ":", &constructor) != ANI_OK) {
         OH_LOG_INFO(LOG_APP, "testTag : mainThread FindConstructor failed");
         return ANI_FALSE;
     }
-    
+
     if (env->Object_New(cls, constructor, &testObj) != ANI_OK) {
         OH_LOG_INFO(LOG_APP, "testTag : mainThread Object_New failed");
         return ANI_FALSE;
     }
-    
+
     if (env->Class_FindMethod(cls, "sum", "ii:i", &g_sumMethod) != ANI_OK) {
         OH_LOG_INFO(LOG_APP, "testTag : mainThread FindMethod failed");
         return ANI_FALSE;
     }
-    
+
     if (env->GlobalReference_Create(testObj, &g_testClassRef) != ANI_OK) {
         OH_LOG_INFO(LOG_APP, "testTag : mainThread GlobalReference_Create failed");
         return ANI_FALSE;
     }
-    
+
     ani_int sumResult;
     if (env->Object_CallMethod_Int(testObj, g_sumMethod, &sumResult, 7, 8) != ANI_OK) {
         OH_LOG_INFO(LOG_APP, "testTag : mainThread Object_CallMethod_Int failed");
         return ANI_FALSE;
     }
-    
+
     if (sumResult != 15) {
         OH_LOG_INFO(LOG_APP, "testTag : mainThread got wrong sum result: %{public}d", sumResult);
         return ANI_FALSE;
     }
-    
+
     mainSuccess++;
-    
+
     std::thread worker([&vm, &g_testClassRef, &startFlag, &workerSuccess]() {
         while (!startFlag.load()) {
             std::this_thread::yield();
         }
-        
+
         ani_env *workerEnv = nullptr;
-        ani_options options {0, nullptr};
+        ani_options options{0, nullptr};
         if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &workerEnv) != ANI_OK) {
             OH_LOG_INFO(LOG_APP, "testTag : Worker Attach failed");
             return;
         }
-        
+
         ani_object obj = static_cast<ani_object>(g_testClassRef);
-        
+
         ani_int workerSumResult;
         if (workerEnv->Object_CallMethodByName_Int(obj, "sum", "ii:i", &workerSumResult, 5, 6) != ANI_OK) {
             OH_LOG_INFO(LOG_APP, "testTag : Worker Object_CallMethodByName_Int failed");
             vm->DetachCurrentThread();
             return;
         }
-        
+
         if (workerSumResult != 11) {
             OH_LOG_INFO(LOG_APP, "testTag : Worker got wrong sum result: %{public}d", workerSumResult);
             vm->DetachCurrentThread();
             return;
         }
-        
+
         vm->DetachCurrentThread();
         workerSuccess++;
     });
-    
+
     startFlag.store(true);
     worker.join();
     env->GlobalReference_Delete(g_testClassRef);
     g_testClassRef = nullptr;
-    
+
     if (workerSuccess == 1 && mainSuccess == 1) {
         OH_LOG_INFO(LOG_APP, "testTag : ConcurrentMainThreadWorker test passed");
         return ANI_TRUE;
     } else {
-        OH_LOG_INFO(LOG_APP, "testTag : ConcurrentMainThreadWorker test failed, worker=%{public}d, main=%{public}d",
+        OH_LOG_INFO(LOG_APP,
+                    "testTag : ConcurrentMainThreadWorker test failed, "
+                    "worker=%{public}d, main=%{public}d",
                     workerSuccess.load(), mainSuccess.load());
         return ANI_FALSE;
     }
-    
 }
 
-ani_int test_Detach_WithoutAttach([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
+ani_int test_Detach_WithoutAttach([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object) {
     ani_vm *vm = nullptr;
     if (env->GetVM(&vm) != ANI_OK) {
         OH_LOG_INFO(LOG_APP, "testTag : test_Detach_WithoutAttach GetVM failed");
@@ -365,10 +401,14 @@ ani_int test_Detach_WithoutAttach([[maybe_unused]] ani_env *env, [[maybe_unused]
     std::thread worker([&result, vm]() {
         ani_status status = vm->DetachCurrentThread();
         if (status == ANI_ERROR) {
-            OH_LOG_INFO(LOG_APP, "testTag : DetachCurrentThread without attach returned ANI_ERROR as expected");
+            OH_LOG_INFO(LOG_APP, "testTag : DetachCurrentThread without attach "
+                                 "returned ANI_ERROR as expected");
             result.store(ANI_TRUE);
         } else {
-            OH_LOG_INFO(LOG_APP, "testTag : DetachCurrentThread without attach returned unexpected status=%{public}d", status);
+            OH_LOG_INFO(LOG_APP,
+                        "testTag : DetachCurrentThread without attach returned "
+                        "unexpected status=%{public}d",
+                        status);
             result.store(ANI_FALSE);
         }
     });
@@ -377,8 +417,7 @@ ani_int test_Detach_WithoutAttach([[maybe_unused]] ani_env *env, [[maybe_unused]
     return result.load();
 }
 
-ani_int test_Attach_RepeatAttach([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
+ani_int test_Attach_RepeatAttach([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object) {
     ani_vm *vm = nullptr;
     if (env->GetVM(&vm) != ANI_OK) {
         OH_LOG_INFO(LOG_APP, "testTag : test_Attach_RepeatAttach GetVM failed");
@@ -389,7 +428,7 @@ ani_int test_Attach_RepeatAttach([[maybe_unused]] ani_env *env, [[maybe_unused]]
 
     std::thread worker([&result, vm]() {
         ani_env *workerEnv1 = nullptr;
-        ani_options options {0, nullptr};
+        ani_options options{0, nullptr};
 
         ani_status status = vm->AttachCurrentThread(&options, ANI_VERSION_1, &workerEnv1);
         if (status != ANI_OK || workerEnv1 == nullptr) {
@@ -401,11 +440,15 @@ ani_int test_Attach_RepeatAttach([[maybe_unused]] ani_env *env, [[maybe_unused]]
         ani_env *workerEnv2 = nullptr;
         status = vm->AttachCurrentThread(&options, ANI_VERSION_1, &workerEnv2);
         if (status == ANI_ERROR) {
-            OH_LOG_INFO(LOG_APP, "testTag : Second AttachCurrentThread returned ANI_ERROR as expected");
+            OH_LOG_INFO(LOG_APP, "testTag : Second AttachCurrentThread returned "
+                                 "ANI_ERROR as expected");
             vm->DetachCurrentThread();
             result.store(ANI_TRUE);
         } else {
-            OH_LOG_INFO(LOG_APP, "testTag : Second AttachCurrentThread returned unexpected status=%{public}d", status);
+            OH_LOG_INFO(LOG_APP,
+                        "testTag : Second AttachCurrentThread returned unexpected "
+                        "status=%{public}d",
+                        status);
             vm->DetachCurrentThread();
             result.store(ANI_FALSE);
         }
@@ -415,8 +458,7 @@ ani_int test_Attach_RepeatAttach([[maybe_unused]] ani_env *env, [[maybe_unused]]
     return result.load();
 }
 
-ani_int test_Attach_RepeatDetach([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
+ani_int test_Attach_RepeatDetach([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object) {
     ani_vm *vm = nullptr;
     if (env->GetVM(&vm) != ANI_OK) {
         OH_LOG_INFO(LOG_APP, "testTag : test_Attach_RepeatDetach GetVM failed");
@@ -427,7 +469,7 @@ ani_int test_Attach_RepeatDetach([[maybe_unused]] ani_env *env, [[maybe_unused]]
 
     std::thread worker([&result, vm]() {
         ani_env *workerEnv = nullptr;
-        ani_options options {0, nullptr};
+        ani_options options{0, nullptr};
 
         ani_status status = vm->AttachCurrentThread(&options, ANI_VERSION_1, &workerEnv);
         if (status != ANI_OK || workerEnv == nullptr) {
@@ -445,10 +487,14 @@ ani_int test_Attach_RepeatDetach([[maybe_unused]] ani_env *env, [[maybe_unused]]
 
         status = vm->DetachCurrentThread();
         if (status == ANI_ERROR) {
-            OH_LOG_INFO(LOG_APP, "testTag : Second DetachCurrentThread returned ANI_ERROR as expected");
+            OH_LOG_INFO(LOG_APP, "testTag : Second DetachCurrentThread returned "
+                                 "ANI_ERROR as expected");
             result.store(ANI_TRUE);
         } else {
-            OH_LOG_INFO(LOG_APP, "testTag : Second DetachCurrentThread returned unexpected status=%{public}d", status);
+            OH_LOG_INFO(LOG_APP,
+                        "testTag : Second DetachCurrentThread returned unexpected "
+                        "status=%{public}d",
+                        status);
             result.store(ANI_FALSE);
         }
     });
@@ -457,8 +503,7 @@ ani_int test_Attach_RepeatDetach([[maybe_unused]] ani_env *env, [[maybe_unused]]
     return result.load();
 }
 
-ani_int test_Attach_InvalidResult([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
+ani_int test_Attach_InvalidResult([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object) {
     ani_vm *vm = nullptr;
     if (env->GetVM(&vm) != ANI_OK) {
         OH_LOG_INFO(LOG_APP, "testTag : test_Attach_InvalidResult GetVM failed");
@@ -468,14 +513,18 @@ ani_int test_Attach_InvalidResult([[maybe_unused]] ani_env *env, [[maybe_unused]
     std::atomic<ani_int> result(ANI_FALSE);
 
     std::thread worker([&result, vm]() {
-        ani_options options {0, nullptr};
+        ani_options options{0, nullptr};
 
         ani_status status = vm->AttachCurrentThread(&options, ANI_VERSION_1, nullptr);
         if (status == ANI_INVALID_ARGS) {
-            OH_LOG_INFO(LOG_APP, "testTag : AttachCurrentThread with nullptr result returned ANI_INVALID_ARGS as expected");
+            OH_LOG_INFO(LOG_APP, "testTag : AttachCurrentThread with nullptr result "
+                                 "returned ANI_INVALID_ARGS as expected");
             result.store(ANI_TRUE);
         } else {
-            OH_LOG_INFO(LOG_APP, "testTag : AttachCurrentThread with nullptr result returned unexpected status=%{public}d", status);
+            OH_LOG_INFO(LOG_APP,
+                        "testTag : AttachCurrentThread with nullptr result returned "
+                        "unexpected status=%{public}d",
+                        status);
             result.store(ANI_FALSE);
         }
     });
@@ -484,8 +533,7 @@ ani_int test_Attach_InvalidResult([[maybe_unused]] ani_env *env, [[maybe_unused]
     return result.load();
 }
 
-ani_int test_Attach_InvalidVersion([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
+ani_int test_Attach_InvalidVersion([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object) {
     ani_vm *vm = nullptr;
     if (env->GetVM(&vm) != ANI_OK) {
         OH_LOG_INFO(LOG_APP, "testTag : test_Attach_InvalidVersion GetVM failed");
@@ -496,14 +544,18 @@ ani_int test_Attach_InvalidVersion([[maybe_unused]] ani_env *env, [[maybe_unused
 
     std::thread worker([&result, vm]() {
         ani_env *workerEnv = nullptr;
-        ani_options options {0, nullptr};
+        ani_options options{0, nullptr};
 
         ani_status status = vm->AttachCurrentThread(&options, 0, &workerEnv);
         if (status == ANI_INVALID_VERSION) {
-            OH_LOG_INFO(LOG_APP, "testTag : AttachCurrentThread with invalid version returned ANI_INVALID_VERSION as expected");
+            OH_LOG_INFO(LOG_APP, "testTag : AttachCurrentThread with invalid version "
+                                 "returned ANI_INVALID_VERSION as expected");
             result.store(ANI_TRUE);
         } else {
-            OH_LOG_INFO(LOG_APP, "testTag : AttachCurrentThread with invalid version returned unexpected status=%{public}d", status);
+            OH_LOG_INFO(LOG_APP,
+                        "testTag : AttachCurrentThread with invalid version returned "
+                        "unexpected status=%{public}d",
+                        status);
             result.store(ANI_FALSE);
         }
     });
@@ -514,8 +566,7 @@ ani_int test_Attach_InvalidVersion([[maybe_unused]] ani_env *env, [[maybe_unused
 
 ani_ref g_globalObject = nullptr;
 
-ani_int test_Attach_InvalidOption([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
+ani_int test_Attach_InvalidOption([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object) {
     ani_vm *vm = nullptr;
     if (env->GetVM(&vm) != ANI_OK) {
         OH_LOG_INFO(LOG_APP, "testTag : test_Attach_InvalidOption GetVM failed");
@@ -527,15 +578,19 @@ ani_int test_Attach_InvalidOption([[maybe_unused]] ani_env *env, [[maybe_unused]
     std::thread worker([&result, vm]() {
         ani_env *workerEnv = nullptr;
         ani_option invalidOption = {"--invalid-option", nullptr};
-        ani_options options {1, &invalidOption};
+        ani_options options{1, &invalidOption};
 
         ani_status status = vm->AttachCurrentThread(&options, ANI_VERSION_1, &workerEnv);
         if (status == ANI_OK && workerEnv != nullptr) {
-            OH_LOG_INFO(LOG_APP, "testTag : AttachCurrentThread with invalid option succeeded (invalid option ignored) as expected");
+            OH_LOG_INFO(LOG_APP, "testTag : AttachCurrentThread with invalid option "
+                                 "succeeded (invalid option ignored) as expected");
             vm->DetachCurrentThread();
             result.store(ANI_TRUE);
         } else {
-            OH_LOG_INFO(LOG_APP, "testTag : AttachCurrentThread with invalid option returned unexpected status=%{public}d", status);
+            OH_LOG_INFO(LOG_APP,
+                        "testTag : AttachCurrentThread with invalid option returned "
+                        "unexpected status=%{public}d",
+                        status);
             result.store(ANI_FALSE);
         }
     });
@@ -544,8 +599,7 @@ ani_int test_Attach_InvalidOption([[maybe_unused]] ani_env *env, [[maybe_unused]
     return result.load();
 }
 
-ani_int test_CreateObjectInWorker([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
+ani_int test_CreateObjectInWorker([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object) {
     ani_ref g_testClassRef = nullptr;
     ani_method g_sumMethod = nullptr;
     ani_vm *vm = nullptr;
@@ -553,7 +607,7 @@ ani_int test_CreateObjectInWorker([[maybe_unused]] ani_env *env, [[maybe_unused]
         OH_LOG_INFO(LOG_APP, "testTag : test_CreateObjectInWorker GetVM failed");
         return ANI_FALSE;
     }
-    
+
     if (g_testClassRef != nullptr && env != nullptr) {
         env->GlobalReference_Delete(g_testClassRef);
         g_testClassRef = nullptr;
@@ -562,17 +616,17 @@ ani_int test_CreateObjectInWorker([[maybe_unused]] ani_env *env, [[maybe_unused]
     ani_class cls;
     ani_method constructor;
     ani_object testObj;
-    
+
     if (env->FindClass("entry.src.main.src.ets.Index.TestClass", &cls) != ANI_OK) {
         OH_LOG_INFO(LOG_APP, "testTag : mainThread FindClass failed");
         return ANI_FALSE;
     }
-    
+
     if (env->Class_FindMethod(cls, "<ctor>", ":", &constructor) != ANI_OK) {
         OH_LOG_INFO(LOG_APP, "testTag : mainThread FindConstructor failed");
         return ANI_FALSE;
     }
-    
+
     if (env->Object_New(cls, constructor, &testObj) != ANI_OK) {
         OH_LOG_INFO(LOG_APP, "testTag : mainThread Object_New failed");
         return ANI_FALSE;
@@ -588,7 +642,7 @@ ani_int test_CreateObjectInWorker([[maybe_unused]] ani_env *env, [[maybe_unused]
 
     std::thread worker([&result, &g_testClassRef, vm, &workerDone]() {
         ani_env *workerEnv = nullptr;
-        ani_options options {0, nullptr};
+        ani_options options{0, nullptr};
 
         ani_status status = vm->AttachCurrentThread(&options, ANI_VERSION_1, &workerEnv);
         if (status != ANI_OK || workerEnv == nullptr) {
@@ -597,8 +651,26 @@ ani_int test_CreateObjectInWorker([[maybe_unused]] ani_env *env, [[maybe_unused]
             return;
         }
 
+        //        ani_class cls;
+        //        if (workerEnv->FindClass("entry.src.main.src.ets.Index.Foo", &cls)
+        //        != ANI_OK) {
+        //            OH_LOG_INFO(LOG_APP, "testTag : Worker FindClass failed");
+        //            vm->DetachCurrentThread();
+        //            workerDone.store(true);
+        //            return;
+        //        }
+        //
+        //        ani_static_method newMethod;
+        //        if (workerEnv->Class_FindStaticMethod(cls, "new_Foo",
+        //        ":C{entry.src.main.src.ets.Index.Foo}", &newMethod) != ANI_OK) {
+        //            OH_LOG_INFO(LOG_APP, "testTag : Worker FindStaticMethod
+        //            failed"); vm->DetachCurrentThread(); workerDone.store(true);
+        //            return;
+        //        }
+
         ani_ref ref;
-        if (workerEnv->Object_CallMethodByName_Ref(static_cast<ani_object>(g_testClassRef), "newClass", ":C{entry.src.main.src.ets.Index.TestClass}",&ref) != ANI_OK) {
+        if (workerEnv->Object_CallMethodByName_Ref(static_cast<ani_object>(g_testClassRef), "newClass",
+                                                   ":C{entry.src.main.src.ets.Index.TestClass}", &ref) != ANI_OK) {
             OH_LOG_INFO(LOG_APP, "testTag : Worker CallMethodByName_Ref failed");
             vm->DetachCurrentThread();
             workerDone.store(true);
@@ -675,4 +747,328 @@ ani_int test_CreateObjectInWorker([[maybe_unused]] ani_env *env, [[maybe_unused]
     return ANI_TRUE;
 }
 
-#endif //ARKTS_ANI_TEST_ATTACHDETACHTEST_H
+ani_int test_Attach_DetachThenGetEnvAndReattach([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object) {
+    ani_vm *vm = nullptr;
+    if (env->GetVM(&vm) != ANI_OK) {
+        OH_LOG_INFO(LOG_APP, "testTag : test_Attach_DetachThenGetEnvAndReattach GetVM failed");
+        return ANI_FALSE;
+    }
+
+    std::atomic<ani_int> result(ANI_FALSE);
+    std::thread worker([&result, vm]() {
+        ani_env *workerEnv = nullptr;
+        ani_options options{0, nullptr};
+        ani_status status = vm->AttachCurrentThread(&options, ANI_VERSION_1, &workerEnv);
+        if (status != ANI_OK || workerEnv == nullptr) {
+            OH_LOG_INFO(LOG_APP, "testTag : first AttachCurrentThread failed, status=%{public}d", status);
+            return;
+        }
+
+        status = vm->DetachCurrentThread();
+        if (status != ANI_OK) {
+            OH_LOG_INFO(LOG_APP, "testTag : first DetachCurrentThread failed, status=%{public}d", status);
+            return;
+        }
+
+        ani_env *detachedEnv = nullptr;
+        status = vm->GetEnv(ANI_VERSION_1, &detachedEnv);
+        if (status == ANI_OK || detachedEnv != nullptr) {
+            OH_LOG_INFO(LOG_APP, "testTag : GetEnv after Detach should fail, status=%{public}d", status);
+            return;
+        }
+
+        ani_env *reattachEnv = nullptr;
+        status = vm->AttachCurrentThread(&options, ANI_VERSION_1, &reattachEnv);
+        if (status != ANI_OK || reattachEnv == nullptr) {
+            OH_LOG_INFO(LOG_APP, "testTag : reattach failed, status=%{public}d", status);
+            return;
+        }
+
+        status = vm->DetachCurrentThread();
+        if (status != ANI_OK) {
+            OH_LOG_INFO(LOG_APP, "testTag : second DetachCurrentThread failed, status=%{public}d", status);
+            return;
+        }
+
+        result.store(ANI_TRUE);
+    });
+
+    worker.join();
+    return result.load();
+}
+
+ani_int test_Attach_InvalidHighVersion([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object) {
+    ani_vm *vm = nullptr;
+    if (env->GetVM(&vm) != ANI_OK) {
+        OH_LOG_INFO(LOG_APP, "testTag : test_Attach_InvalidHighVersion GetVM failed");
+        return ANI_FALSE;
+    }
+
+    std::atomic<ani_int> result(ANI_FALSE);
+    std::thread worker([&result, vm]() {
+        ani_env *workerEnv = nullptr;
+        ani_options options{0, nullptr};
+        ani_status status = vm->AttachCurrentThread(&options, 0xFFFFFFFFU, &workerEnv);
+        if (status == ANI_INVALID_VERSION && workerEnv == nullptr) {
+            result.store(ANI_TRUE);
+        } else {
+            OH_LOG_INFO(LOG_APP,
+                        "testTag : high invalid version returned unexpected "
+                        "status=%{public}d",
+                        status);
+        }
+    });
+
+    worker.join();
+    return result.load();
+}
+
+ani_int test_Attach_DisableInterop([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object) {
+    ani_vm *vm = nullptr;
+    if (env->GetVM(&vm) != ANI_OK) {
+        OH_LOG_INFO(LOG_APP, "testTag : test_Attach_DisableInterop GetVM failed");
+        return ANI_FALSE;
+    }
+
+    std::atomic<ani_int> result(ANI_FALSE);
+    std::thread worker([&result, vm]() {
+        ani_env *workerEnv = nullptr;
+        ani_option interopDisabled = {"--interop=disable", nullptr};
+        ani_options options{1, &interopDisabled};
+        ani_status status = vm->AttachCurrentThread(&options, ANI_VERSION_1, &workerEnv);
+        if (status != ANI_OK || workerEnv == nullptr) {
+            OH_LOG_INFO(LOG_APP,
+                        "testTag : AttachCurrentThread with interop disabled failed, "
+                        "status=%{public}d",
+                        status);
+            return;
+        }
+
+        ani_vm *testVm = nullptr;
+        if (workerEnv->GetVM(&testVm) != ANI_OK || testVm == nullptr) {
+            OH_LOG_INFO(LOG_APP, "testTag : workerEnv GetVM with interop disabled failed");
+            vm->DetachCurrentThread();
+            return;
+        }
+
+        status = vm->DetachCurrentThread();
+        if (status != ANI_OK) {
+            OH_LOG_INFO(LOG_APP,
+                        "testTag : DetachCurrentThread with interop disabled failed, "
+                        "status=%{public}d",
+                        status);
+            return;
+        }
+        result.store(ANI_TRUE);
+    });
+
+    worker.join();
+    return result.load();
+}
+
+ani_int test_Attach_FailedAttachStateRecovery([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object) {
+    ani_vm *vm = nullptr;
+    if (env->GetVM(&vm) != ANI_OK) {
+        OH_LOG_INFO(LOG_APP, "testTag : test_Attach_FailedAttachStateRecovery GetVM failed");
+        return ANI_FALSE;
+    }
+
+    std::atomic<ani_int> result(ANI_FALSE);
+    std::thread worker([&result, vm]() {
+        ani_env *workerEnv = nullptr;
+        ani_options options{0, nullptr};
+        ani_status status = vm->AttachCurrentThread(&options, 0, &workerEnv);
+        if (status != ANI_INVALID_VERSION || workerEnv != nullptr) {
+            OH_LOG_INFO(LOG_APP,
+                        "testTag : invalid version should fail without env, "
+                        "status=%{public}d",
+                        status);
+            return;
+        }
+
+        status = vm->DetachCurrentThread();
+        if (status != ANI_ERROR) {
+            OH_LOG_INFO(LOG_APP,
+                        "testTag : Detach after failed attach should return "
+                        "ANI_ERROR, status=%{public}d",
+                        status);
+            return;
+        }
+
+        status = vm->AttachCurrentThread(&options, ANI_VERSION_1, &workerEnv);
+        if (status != ANI_OK || workerEnv == nullptr) {
+            OH_LOG_INFO(LOG_APP,
+                        "testTag : Attach after failed attach did not recover, "
+                        "status=%{public}d",
+                        status);
+            return;
+        }
+
+        status = vm->DetachCurrentThread();
+        if (status != ANI_OK) {
+            OH_LOG_INFO(LOG_APP, "testTag : Detach after recovery attach failed, status=%{public}d", status);
+            return;
+        }
+        result.store(ANI_TRUE);
+    });
+
+    worker.join();
+    return result.load();
+}
+
+ani_int test_Attach_CurrentManagedThreadShouldFail([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object) {
+    ani_vm *vm = nullptr;
+    if (env->GetVM(&vm) != ANI_OK) {
+        OH_LOG_INFO(LOG_APP, "testTag : test_Attach_CurrentManagedThreadShouldFail GetVM failed");
+        return ANI_FALSE;
+    }
+
+    ani_env *attachedEnv = nullptr;
+    ani_options options{0, nullptr};
+    ani_status status = vm->AttachCurrentThread(&options, ANI_VERSION_1, &attachedEnv);
+    if (status == ANI_ERROR && attachedEnv == nullptr) {
+        return ANI_TRUE;
+    }
+    OH_LOG_INFO(LOG_APP,
+                "testTag : AttachCurrentThread on managed thread returned "
+                "unexpected status=%{public}d",
+                status);
+    return ANI_FALSE;
+}
+
+ani_int test_ConcurrentMainThreadWorkerOverlap([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object) {
+    ani_vm *vm = nullptr;
+    if (env->GetVM(&vm) != ANI_OK) {
+        OH_LOG_INFO(LOG_APP, "testTag : test_ConcurrentMainThreadWorkerOverlap GetVM failed");
+        return ANI_FALSE;
+    }
+
+    ani_class cls;
+    ani_method constructor;
+    ani_method sumMethod;
+    ani_object testObj;
+    ani_ref globalRef;
+    if (env->FindClass("entry.src.main.src.ets.Index.TestClass", &cls) != ANI_OK ||
+        env->Class_FindMethod(cls, "<ctor>", ":", &constructor) != ANI_OK ||
+        env->Class_FindMethod(cls, "sum", "ii:i", &sumMethod) != ANI_OK ||
+        env->Object_New(cls, constructor, &testObj) != ANI_OK ||
+        env->GlobalReference_Create(testObj, &globalRef) != ANI_OK) {
+        OH_LOG_INFO(LOG_APP, "testTag : main thread prepare TestClass failed");
+        return ANI_FALSE;
+    }
+
+    std::atomic<bool> startFlag(false);
+    std::atomic<bool> workerReady(false);
+    std::atomic<bool> workerDone(false);
+    std::atomic<int> workerSuccess(0);
+    std::atomic<int> mainSuccess(0);
+
+    std::thread worker([vm, globalRef, &startFlag, &workerReady, &workerDone, &workerSuccess]() {
+        while (!startFlag.load()) {
+            std::this_thread::yield();
+        }
+        ani_env *workerEnv = nullptr;
+        ani_options options{0, nullptr};
+        if (vm->AttachCurrentThread(&options, ANI_VERSION_1, &workerEnv) != ANI_OK || workerEnv == nullptr) {
+            workerDone.store(true);
+            return;
+        }
+        workerReady.store(true);
+
+        for (int i = 0; i < 50; i++) {
+            ani_int value = 0;
+            if (workerEnv->Object_CallMethodByName_Int(static_cast<ani_object>(globalRef), "sum", "ii:i", &value, i,
+                                                       i + 1) != ANI_OK ||
+                value != (2 * i + 1)) {
+                vm->DetachCurrentThread();
+                workerDone.store(true);
+                return;
+            }
+            std::this_thread::yield();
+        }
+
+        if (vm->DetachCurrentThread() == ANI_OK) {
+            workerSuccess.store(1);
+        }
+        workerDone.store(true);
+    });
+
+    startFlag.store(true);
+    while (!workerReady.load() && !workerDone.load()) {
+        std::this_thread::yield();
+    }
+
+    if (workerReady.load()) {
+        for (int i = 0; i < 50; i++) {
+            ani_int value = 0;
+            if (env->Object_CallMethod_Int(testObj, sumMethod, &value, i + 2, i + 3) != ANI_OK ||
+                value != (2 * i + 5)) {
+                OH_LOG_INFO(LOG_APP, "testTag : main thread overlap call failed at %{public}d", i);
+                break;
+            }
+            mainSuccess++;
+            std::this_thread::yield();
+        }
+    }
+
+    worker.join();
+    env->GlobalReference_Delete(globalRef);
+    if (workerSuccess.load() == 1 && mainSuccess.load() == 50) {
+        return ANI_TRUE;
+    }
+    OH_LOG_INFO(LOG_APP, "testTag : overlap test failed, worker=%{public}d, main=%{public}d", workerSuccess.load(),
+                mainSuccess.load());
+    return ANI_FALSE;
+}
+
+ani_int test_Attach_LocalScopeStress([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object) {
+    ani_vm *vm = nullptr;
+    if (env->GetVM(&vm) != ANI_OK) {
+        OH_LOG_INFO(LOG_APP, "testTag : test_Attach_LocalScopeStress GetVM failed");
+        return ANI_FALSE;
+    }
+
+    std::atomic<ani_int> result(ANI_FALSE);
+    std::thread worker([&result, vm]() {
+        ani_env *workerEnv = nullptr;
+        ani_options options{0, nullptr};
+        ani_status status = vm->AttachCurrentThread(&options, ANI_VERSION_1, &workerEnv);
+        if (status != ANI_OK || workerEnv == nullptr) {
+            OH_LOG_INFO(LOG_APP,
+                        "testTag : AttachCurrentThread in LocalScopeStress failed, "
+                        "status=%{public}d",
+                        status);
+            return;
+        }
+
+        const char *message = "attach local scope stress";
+        for (int i = 0; i < 200; i++) {
+            if (workerEnv->CreateLocalScope(16) != ANI_OK) {
+                OH_LOG_INFO(LOG_APP, "testTag : CreateLocalScope failed at %{public}d", i);
+                vm->DetachCurrentThread();
+                return;
+            }
+            ani_string str = nullptr;
+            if (workerEnv->String_NewUTF8(message, std::strlen(message), &str) != ANI_OK || str == nullptr) {
+                OH_LOG_INFO(LOG_APP, "testTag : String_NewUTF8 failed at %{public}d", i);
+                workerEnv->DestroyLocalScope();
+                vm->DetachCurrentThread();
+                return;
+            }
+            if (workerEnv->DestroyLocalScope() != ANI_OK) {
+                OH_LOG_INFO(LOG_APP, "testTag : DestroyLocalScope failed at %{public}d", i);
+                vm->DetachCurrentThread();
+                return;
+            }
+        }
+
+        if (vm->DetachCurrentThread() == ANI_OK) {
+            result.store(ANI_TRUE);
+        }
+    });
+
+    worker.join();
+    return result.load();
+}
+
+#endif // ARKTS_ANI_TEST_ATTACHDETACHTEST_H
