@@ -209,30 +209,6 @@ ani_int test_ConcurrentAttach([[maybe_unused]] ani_env *env, [[maybe_unused]] an
             }
 
             ani_class cls;
-            // 子线程 不能继承
-            // 主线程加载的类，不能用FindClass，需用globalref访问主线程的类
-            //            ani_status status2;
-            //            status2 =
-            //            workerEnv->FindClass("entry.src.main.src.ets.Index.TestClass",
-            //            &cls); if (status2 != ANI_OK) {
-            //                OH_LOG_INFO(LOG_APP, "testTag : Thread %{public}d
-            //                FindClass failed", i); if(status2 == ANI_PENDING_ERROR)
-            //                OH_LOG_INFO(LOG_APP, "status2 = ANI_PENDING_ERROR");
-            //                else if(status2 == ANI_NOT_FOUND) OH_LOG_INFO(LOG_APP,
-            //                "status2 = ANI_NOT_FOUND"); vm->DetachCurrentThread();
-            //                failCount++;
-            //                return;
-            //            }
-
-            //            ani_static_method sumMethod;
-            //            if
-            //            (workerEnv->Class_FindStaticMethod(static_cast<ani_class>(g_objectref),
-            //            "sum", "ii:i", &sumMethod) != ANI_OK) {
-            //                OH_LOG_INFO(LOG_APP, "testTag : Thread %d Find sum
-            //                method failed", i); vm->DetachCurrentThread();
-            //                failCount++;
-            //                return;
-            //            }
             ani_value args[2U];
             args[0U].i = 3;
             args[1U].i = 4;
@@ -650,24 +626,7 @@ ani_int test_CreateObjectInWorker([[maybe_unused]] ani_env *env, [[maybe_unused]
             workerDone.store(true);
             return;
         }
-
-        //        ani_class cls;
-        //        if (workerEnv->FindClass("entry.src.main.src.ets.Index.Foo", &cls)
-        //        != ANI_OK) {
-        //            OH_LOG_INFO(LOG_APP, "testTag : Worker FindClass failed");
-        //            vm->DetachCurrentThread();
-        //            workerDone.store(true);
-        //            return;
-        //        }
-        //
-        //        ani_static_method newMethod;
-        //        if (workerEnv->Class_FindStaticMethod(cls, "new_Foo",
-        //        ":C{entry.src.main.src.ets.Index.Foo}", &newMethod) != ANI_OK) {
-        //            OH_LOG_INFO(LOG_APP, "testTag : Worker FindStaticMethod
-        //            failed"); vm->DetachCurrentThread(); workerDone.store(true);
-        //            return;
-        //        }
-
+        
         ani_ref ref;
         if (workerEnv->Object_CallMethodByName_Ref(static_cast<ani_object>(g_testClassRef), "newClass",
                                                    ":C{entry.src.main.src.ets.Index.TestClass}", &ref) != ANI_OK) {
