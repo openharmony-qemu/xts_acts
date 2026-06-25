@@ -1772,5 +1772,127 @@ export default function HasCard2PublicTest() {
       }
       console.log(`==========> ${caseName} Test end ==========>`);
     });
+
+    /**
+     * @tc.name   Telephony_Call_Call_MakeCallWithToken_0200
+     * @tc.number Telephony_Call_Call_MakeCallWithToken_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+    */
+    it("Telephony_Call_Call_MakeCallWithToken_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName: string = "Telephony_Call_Call_MakeCallWithToken_0200";
+      console.log(`==========> ${caseName} Test start ==========>`);
+      if(!sim.hasSimCardSync(0)){
+        console.info(`${caseName} failed, NO SIM`);
+        console.info(`${caseName} test end`);
+        done();
+      } else {
+        try {
+          await call.makeCallWithToken(undefined);
+          expect(false).assertTrue();
+          done();
+        } catch (err) {
+          console.log("makeCallWithToken throw: err->" + JSON.stringify(err));
+          expect(err.code).assertEqual(401);
+          done();
+        }
+      }
+      console.log(`==========> ${caseName} Test end ==========>`);
+    });
+
+    /**
+     * @tc.name   Telephony_Call_Call_MakeCallWithToken_0300
+     * @tc.number Telephony_Call_Call_MakeCallWithToken_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+    */
+    it("Telephony_Call_Call_MakeCallWithToken_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName: string = "Telephony_Call_Call_MakeCallWithToken_0300";
+      console.log(`==========> ${caseName} Test start ==========>`);
+      if(!sim.hasSimCardSync(0)){
+        console.info(`${caseName} failed, NO SIM`);
+        console.info(`${caseName} test end`);
+        done();
+      } else {
+        try {
+          await call.makeCallWithToken("138xxxxxxxx");
+          console.log("makeCallWithToken success");
+          done();
+        } catch (err) {
+          console.log("makeCallWithToken throw: err->" + JSON.stringify(err));
+          expect(false).assertTrue();
+          done();
+        }
+      }
+      console.log(`==========> ${caseName} Test end ==========>`);
+    });
+
+    /**
+     * @tc.name   Telephony_Call_Call_MakeCallWithToken_0400
+     * @tc.number Telephony_Call_Call_MakeCallWithToken_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+    */
+    it("Telephony_Call_Call_MakeCallWithToken_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName: string = "Telephony_Call_Call_MakeCallWithToken_0400";
+      console.log(`==========> ${caseName} Test start ==========>`);
+      if(!sim.hasSimCardSync(0)){
+        console.info(`${caseName} failed, NO SIM`);
+        console.info(`${caseName} test end`);
+        done();
+      } else {
+        try {
+          let option: call.MakeCallOptions = {
+            isCustomAccessibility : true
+          }
+          await call.makeCallWithToken("138xxxxxxxx", option);
+          console.log("makeCallWithToken success");
+          done();
+        } catch (err) {
+          console.log("makeCallWithToken throw: err->" + JSON.stringify(err));
+          expect(false).assertTrue();
+          done();
+        }
+      }
+      console.log(`==========> ${caseName} Test end ==========>`);
+    });
+
+    /**
+     * @tc.name   Telephony_Call_Call_MakeCallWithToken_0500
+     * @tc.number Telephony_Call_Call_MakeCallWithToken_0500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+    */
+    it("Telephony_Call_Call_MakeCallWithToken_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName: string = "Telephony_Call_Call_MakeCallWithToken_0500";
+      console.log(`==========> ${caseName} Test start ==========>`);
+      if(!sim.hasSimCardSync(0)){
+        console.info(`${caseName} failed, NO SIM`);
+        console.info(`${caseName} test end`);
+        done();
+      } else {
+        try {
+          let option: call.MakeCallOptions = {
+            isCustomAccessibility : false
+          }
+          await call.makeCallWithToken("138xxxxxxxx", option);
+          console.log("makeCallWithToken success");
+          done();
+        } catch (err) {
+          console.log("makeCallWithToken throw: err->" + JSON.stringify(err));
+          expect(false).assertTrue();
+          done();
+        }
+      }
+      console.log(`==========> ${caseName} Test end ==========>`);
+    });
   });
 }
