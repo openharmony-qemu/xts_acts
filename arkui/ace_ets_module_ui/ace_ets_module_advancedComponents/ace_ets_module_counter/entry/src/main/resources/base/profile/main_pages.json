@@ -10,6 +10,11 @@
     "MainAbility/pages/CounterV2/ActsAceCounterV2ComponentTest",
     "MainAbility/pages/CounterV2/CounterV2Api",
     "MainAbility/pages/CounterV2/CounterV2ComponentTest",
-    "MainAbility/pages/CounterV2/CounterV2Direction"
+    "MainAbility/pages/CounterV2/CounterV2Direction",
+    "MainAbility/pages/CounterV2/CounterV2Attrs",
+    "MainAbility/pages/CounterV2/abnormal/CounterV2AbnormalOptions",
+    "MainAbility/pages/CounterV2/abnormal/CounterV2AbnormalNumber",
+    "MainAbility/pages/CounterV2/abnormal/CounterV2AbnormalInline",
+    "MainAbility/pages/CounterV2/abnormal/CounterV2AbnormalDate"
   ]
 }
