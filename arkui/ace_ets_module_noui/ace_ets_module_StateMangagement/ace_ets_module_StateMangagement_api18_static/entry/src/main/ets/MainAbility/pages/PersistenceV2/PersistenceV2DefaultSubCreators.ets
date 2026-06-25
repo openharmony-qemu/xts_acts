@@ -21,13 +21,13 @@ import {
 
 @ObservedV2
 class SubRecord {
-  @Trace tag: string = 'sub-init';
+  @Trace public tag: string = 'sub-init';
 }
 
 @ObservedV2
 class RootRecord {
-  @Trace title: string = 'root';
-  @Trace sub: SubRecord = new SubRecord();
+  @Trace public title: string = 'root';
+  @Trace public sub: SubRecord = new SubRecord();
 }
 
 function makeSubCreators(): Map<Class, () => object> {

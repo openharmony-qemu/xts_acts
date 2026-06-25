@@ -261,6 +261,18 @@ export default function ChipV2AbnormalOptionsTest() {
     });
 
     /**
+     * @tc.name   SUB_ARKUI_CHIPV2_ABN_BGSYSMATERIAL_UNDEFINED_0100
+     * @tc.number SUB_ARKUI_CHIPV2_ABN_BGSYSMATERIAL_UNDEFINED_0100
+     * @tc.desc   backgroundSystemMaterial undefined 与默认 systemMaterial 一致
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ARKUI_CHIPV2_ABN_BGSYSMATERIAL_UNDEFINED_0100', Level.LEVEL0, async () => {
+      assertSystemMaterialSame('abn_bgSysMaterial_u', 'abn_bgSysMaterial_d');
+    });
+
+    /**
      * @tc.name   SUB_ARKUI_CHIPV2_ABN_ACTBGSYSMATERIAL_UNDEFINED_0100
      * @tc.number SUB_ARKUI_CHIPV2_ABN_ACTBGSYSMATERIAL_UNDEFINED_0100
      * @tc.desc   activatedBackgroundSystemMaterial undefined 与默认 systemMaterial 一致

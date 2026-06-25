@@ -20,13 +20,13 @@ import {
 
 @ObservedV2
 class AbnSubRecord {
-  @Trace tag: string = 'abn-sub';
+  @Trace public tag: string = 'abn-sub';
 }
 
 @ObservedV2
 class AbnRootRecord {
-  @Trace title: string = 'abn-root';
-  @Trace sub: AbnSubRecord = new AbnSubRecord();
+  @Trace public title: string = 'abn-root';
+  @Trace public sub: AbnSubRecord = new AbnSubRecord();
 }
 
 @Entry

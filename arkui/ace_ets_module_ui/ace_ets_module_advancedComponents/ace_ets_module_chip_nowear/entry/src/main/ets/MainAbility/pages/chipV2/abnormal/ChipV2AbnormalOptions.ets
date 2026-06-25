@@ -190,6 +190,15 @@ struct ChipV2AbnormalOptions {
           })
         }).id('abn_fontSize_u')
 
+        ChipV2({ chipV2Options: new ChipV2Options({ label: this.lbl('bgSysMaterial') }) })
+          .id('abn_bgSysMaterial_d')
+        ChipV2({
+          chipV2Options: new ChipV2Options({
+            label: this.lbl('bgSysMaterial'),
+            backgroundSystemMaterial: undefined,
+          })
+        }).id('abn_bgSysMaterial_u')
+
         ChipV2({ chipV2Options: new ChipV2Options({ label: this.lbl('actBgSysMaterial') }) })
           .id('abn_actBgSysMaterial_d')
         ChipV2({

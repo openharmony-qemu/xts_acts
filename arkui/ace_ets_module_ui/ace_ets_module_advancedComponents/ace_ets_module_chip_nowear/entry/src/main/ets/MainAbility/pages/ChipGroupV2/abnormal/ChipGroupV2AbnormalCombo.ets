@@ -52,7 +52,12 @@ struct ChipGroupV2AbnormalCombo {
         ChipGroupV2({
           items: this.defaultItems(),
           selectedIndexes: this.selectedIndex,
-          itemStyle: new ChipGroupV2ItemStyle({ backgroundColor: undefined, fontColor: undefined, selectedFontColor: undefined, selectedBackgroundColor: undefined }),
+          itemStyle: new ChipGroupV2ItemStyle({
+            backgroundColor: undefined,
+            fontColor: undefined,
+            selectedFontColor: undefined,
+            selectedBackgroundColor: undefined,
+          }),
         }).id('abn_cmbG1_u')
         ChipGroupV2({
           items: this.defaultItems(),
@@ -65,7 +70,15 @@ struct ChipGroupV2AbnormalCombo {
           chipGroupSpace: new ChipGroupV2Space({ itemSpace: undefined, startSpace: undefined, endSpace: undefined }),
         }).id('abn_cmbG2_u')
         ChipGroupV2({ items: [new ChipGroupV2Item({ label: { text: 'cmbG3' } })] }).id('abn_cmbG3_d')
-        ChipGroupV2({ items: [new ChipGroupV2Item({ label: { text: 'cmbG3' }, prefixIcon: undefined, suffixIcon: undefined, prefixSymbolIcon: undefined, suffixSymbolIcon: undefined })] }).id('abn_cmbG3_u')
+        ChipGroupV2({
+          items: [new ChipGroupV2Item({
+            label: { text: 'cmbG3' },
+            prefixIcon: undefined,
+            suffixIcon: undefined,
+            prefixSymbolIcon: undefined,
+            suffixSymbolIcon: undefined,
+          })],
+        }).id('abn_cmbG3_u')
         ChipGroupV2({ items: this.defaultItems(), suffix: this.SfxG4D.bind(this) }).id('abn_cmbG4_d')
         ChipGroupV2({ items: this.defaultItems(), suffix: this.SfxG4.bind(this) }).id('abn_cmbG4_u')
         ChipGroupV2({
