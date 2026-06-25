@@ -22,7 +22,7 @@ import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import { AppStorage, PersistentStorage } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
-export default function PersistentStorageApi() {
+export default function PersistentStorageApi(): void {
   describe('PersistentStorageApi', () => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api18.static", "EntryAbility");
