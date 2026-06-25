@@ -112,7 +112,15 @@
         "exported": true,
         "srcEntry": "./ets/entryability/uiExtension/EmbeddedGetWindowAvoidAreaAbility.ets",
         "type": "embeddedUI"
-      }
+      },
+      {
+        "name": "EvnEmbeddedAbility",
+        "description": "$string:EntryAbility_desc",
+        "label": "$string:EntryAbility_label",
+        "exported": true,
+        "srcEntry": "./ets/entryability/uiExtension/EvnEmbeddedAbility.ets",
+        "type": "embeddedUI"
+      },
     ],
     "requestPermissions": [
       {"name": "ohos.permission.PRIVACY_WINDOW"},
