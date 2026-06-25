@@ -4070,11 +4070,14 @@ export default function windowImmersiveTest() {
               expect(avoidArea7.bottomRect.width).assertEqual(0);
               expect(avoidArea7.bottomRect.height).assertEqual(0);
             }
-            
+            await windowClass.setWindowSystemBarEnable(['status']);
+            await sleep(700);
             await terminateAbility3(caseName);
             done()
           } catch (error) {
             console.error(caseName + ' failed4, error: ' + JSON.stringify(error));
+            await windowClass.setWindowSystemBarEnable(['status']);
+            await sleep(700);
             await terminateAbility3(caseName);
             if (!canIUseRes) {
               expect(error.code).assertEqual(801)
@@ -4084,11 +4087,15 @@ export default function windowImmersiveTest() {
             done()
           }
         } else {
+          await windowClass.setWindowSystemBarEnable(['status']);
+          await sleep(700);
           await terminateAbility3(caseName);
           done();
         }
       } catch (err) {
         console.error(caseName + ' failed, err: ' + JSON.stringify(err));
+        await windowClass.setWindowSystemBarEnable(['status']);
+        await sleep(700);
         expect().assertFail();
         await terminateAbility3(caseName);
         done();
@@ -4156,8 +4163,6 @@ export default function windowImmersiveTest() {
           console.info(caseName + ' Sub window resized and moved to match main window');
           await subWindow.setUIContent("testability/pages/First/index2");
           await subWindow.showWindow();
-          await windowClass.setWindowSystemBarEnable(['status']);
-          await sleep(700);
           try {
             let avoidArea1 = windowClass.getWindowAvoidAreaIgnoringVisibility(window.AvoidAreaType.TYPE_SYSTEM);
             console.info(caseName + ' avoidArea1: ' + JSON.stringify(avoidArea1));
