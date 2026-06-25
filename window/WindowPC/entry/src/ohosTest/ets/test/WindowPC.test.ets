@@ -3988,7 +3988,7 @@ export default function windowPCTest() {
             let caseName: string = 'testOnWindowStatusChange_FULLSCREEN_001';
             let msgStr: string = 'jsunittest ' + caseName + ' ';
             console.info(msgStr + 'begin');
-            if (deviceType === '2in1' || isFreeWindowMode) {
+            if (deviceType === '2in1') {
                 let mainWindow: window.Window | undefined = undefined;
                 let finalStatus: window.WindowStatusType =window.WindowStatusType.UNDEFINED;
                 const callback: Callback<window.WindowStatusType> = (data: window.WindowStatusType) => {
@@ -4016,15 +4016,9 @@ export default function windowPCTest() {
                         console.info(msgStr + 'Succeeded in unregistering windowStatusChange callback in catch.');
                     }
                     await terminateAbility(caseName);
-                    if (exception!.code === 801) {
-                        console.info(msgStr + 'Capability not supported.');
-                        expect(exception!.code).assertEqual(801);
-                        done();
-                    } else {
-                        console.error(msgStr + `Failed. Cause code: ${exception!.code}, message: ${exception.message}`);
-                        expect(false).assertTrue();
-                        done();
-                    }
+                    console.error(msgStr + `Failed. Cause code: ${exception!.code}, message: ${exception.message}`);
+                    expect(false).assertTrue();
+                    done();
                 }
             } else {
                 console.info(msgStr + `Device not 2in1 or not in free window mode, skip test.`);
@@ -4044,7 +4038,7 @@ export default function windowPCTest() {
             let caseName: string = 'testOnWindowStatusChange_MAXIMIZE_002';
             let msgStr: string = 'jsunittest ' + caseName + ' ';
             console.info(msgStr + 'begin');
-            if (deviceType === '2in1' || isFreeWindowMode) {
+            if (deviceType === '2in1') {
                 let mainWindow: window.Window | undefined = undefined;
                  let finalStatus: window.WindowStatusType =window.WindowStatusType.UNDEFINED;
                 const callback: Callback<window.WindowStatusType> = (data: window.WindowStatusType) => {
@@ -4072,15 +4066,9 @@ export default function windowPCTest() {
                         console.info(msgStr + 'Succeeded in unregistering windowStatusChange callback in catch.');
                     }
                     await terminateAbility(caseName);
-                    if (exception!.code === 801) {
-                        console.info(msgStr + 'Capability not supported.');
-                        expect(exception!.code).assertEqual(801);
-                        done();
-                    } else {
-                        console.error(msgStr + `Failed. Cause code: ${exception!.code}, message: ${exception.message}`);
-                        expect(false).assertTrue();
-                        done();
-                    }
+                    console.error(msgStr + `Failed. Cause code: ${exception!.code}, message: ${exception.message}`);
+                    expect(false).assertTrue();
+                    done();
                 }
             } else {
                 console.info(msgStr + `Device not 2in1 or not in free window mode, skip test.`);
@@ -4100,7 +4088,7 @@ export default function windowPCTest() {
             let caseName: string = 'testOnWindowStatusChange_MINIMIZE_003';
             let msgStr: string = 'jsunittest ' + caseName + ' ';
             console.info(msgStr + 'begin');
-            if (deviceType === '2in1' || isFreeWindowMode) {
+            if (deviceType === '2in1') {
                 let mainWindow: window.Window | undefined = undefined;
                 let finalStatus: window.WindowStatusType =window.WindowStatusType.UNDEFINED;
                 const callback: Callback<window.WindowStatusType> = (data: window.WindowStatusType) => {
@@ -4133,15 +4121,9 @@ export default function windowPCTest() {
                         console.info(msgStr + 'Succeeded in unregistering windowStatusChange callback in catch.');
                     }
                     await terminateAbility(caseName);
-                    if (exception!.code === 801) {
-                        console.info(msgStr + 'Capability not supported.');
-                        expect(exception!.code).assertEqual(801);
-                        done();
-                    } else {
-                        console.error(msgStr + `Failed. Cause code: ${exception!.code}, message: ${exception.message}`);
-                        expect(false).assertTrue();
-                        done();
-                    }
+                    console.error(msgStr + `Failed. Cause code: ${exception!.code}, message: ${exception.message}`);
+                    expect(false).assertTrue();
+                    done();
                 }
             } else {
                 console.info(msgStr + `Device not 2in1 or not in free window mode, skip test.`);
@@ -4161,7 +4143,7 @@ export default function windowPCTest() {
             let caseName: string = 'testOnWindowStatusChange_SPLIT_SCREEN_005';
             let msgStr: string = 'jsunittest ' + caseName + ' ';
             console.info(msgStr + 'begin');
-            if (deviceType === '2in1' || isFreeWindowMode) {
+            if (deviceType === '2in1') {
                 let mainWindow: window.Window | undefined = undefined;
                 let finalStatus: window.WindowStatusType =window.WindowStatusType.UNDEFINED;
                 const callback: Callback<window.WindowStatusType> = (data: window.WindowStatusType) => {
@@ -4194,15 +4176,9 @@ export default function windowPCTest() {
                         console.info(msgStr + 'Succeeded in unregistering windowStatusChange callback in catch.');
                     }
                     await terminateAbility(caseName);
-                    if (exception!.code === 801) {
-                        console.info(msgStr + 'Capability not supported.');
-                        expect(exception!.code).assertEqual(801);
-                        done();
-                    } else {
-                        console.error(msgStr + `Failed. Cause code: ${exception!.code}, message: ${exception.message}`);
-                        expect(false).assertTrue();
-                        done();
-                    }
+                    console.error(msgStr + `Failed. Cause code: ${exception!.code}, message: ${exception.message}`);
+                    expect(false).assertTrue();
+                    done();
                 }
             } else {
                 console.info(msgStr + `Device not 2in1 or not in free window mode, skip test.`);
