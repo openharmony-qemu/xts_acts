@@ -1741,7 +1741,7 @@ export default function taskPoolCoverageTest() {
         console.log(`${tag} test start.`);
         const runner = new taskpool.AsyncRunner(1);
         try {
-          runner.execute(undefined);
+          runner.execute(undefined, taskpool.Priority.IDLE);
           expect().assertFail();
         } catch (error) {
           console.log(`${tag} catch error.code: ${error.code}`);
@@ -1844,26 +1844,6 @@ export default function taskPoolCoverageTest() {
         const runner = new taskpool.AsyncRunner(1);
         const task = new taskpool.Task(simpleFunc, 5);
         let result = await runner.execute(task, taskpool.Priority.LOW);
-        expect(result).assertEqual(10);
-        console.log(`${tag} test end.`);
-        done();
-      });
-
-    /**
-     * @tc.name   testAsyncRunnerExecuteWithIDLE
-     * @tc.number SUB_CONCURRENCY_ASYNCRUNNER_EXECUTE_PRIORITY_003
-     * @tc.desc   test AsyncRunner.execute with IDLE priority
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('testAsyncRunnerExecuteWithIDLE', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
-      async (done: Function) => {
-        const tag = "testAsyncRunnerExecuteWithIDLE";
-        console.log(`${tag} test start.`);
-        const runner = new taskpool.AsyncRunner(1);
-        const task = new taskpool.Task(simpleFunc, 5);
-        let result = await runner.execute(task, taskpool.Priority.IDLE);
         expect(result).assertEqual(10);
         console.log(`${tag} test end.`);
         done();
