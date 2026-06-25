@@ -51,7 +51,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3, 4, 5];
       const result = values.filter((value: int, index: int, array: ReadonlyArray<int>): boolean => {
-          return value > 2;
+        return value > 2;
       });
       expect(result.length).assertEqual(3);
       expect(result[0]).assertEqual(3);
@@ -70,7 +70,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3, 4, 5];
       const result = values.filter((value: int, index: int, array: ReadonlyArray<int>): boolean => {
-          return value % 2 === 0;
+        return value % 2 === 0;
       });
       expect(result.length).assertEqual(2);
       expect(result[0]).assertEqual(2);
@@ -88,7 +88,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [10, 20, 30];
       const result = values.filter((value: int): boolean => {
-          return value > 15;
+        return value > 15;
       });
       expect(result.length).assertEqual(2);
       expect(result[0]).assertEqual(20);
@@ -106,7 +106,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [10, 20, 30, 40];
       const result = values.filter((value: int, index: int): boolean => {
-          return index % 2 === 0;
+        return index % 2 === 0;
       });
       expect(result.length).assertEqual(2);
       expect(result[0]).assertEqual(10);
@@ -124,7 +124,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [5, 10, 15, 20];
       const result = values.filter((value: int, index: int, array: ReadonlyArray<int>): boolean => {
-          return value > array[0] && index < 3;
+        return value > array[0] && index < 3;
       });
       expect(result.length).assertEqual(2);
       expect(result[0]).assertEqual(10);
@@ -143,8 +143,8 @@ export default function ReadonlyArrayFilterTest(): void {
       const values: ReadonlyArray<int> = [100, 200, 300];
       const collected: number[] = [];
       values.filter((value: int, index: int, array: ReadonlyArray<int>): boolean => {
-          collected.push(value);
-          return true;
+        collected.push(value);
+        return true;
       });
       expect(collected[0]).assertEqual(100);
       expect(collected[1]).assertEqual(200);
@@ -163,8 +163,8 @@ export default function ReadonlyArrayFilterTest(): void {
       const values: ReadonlyArray<int> = [7, 8, 9, 10];
       const indices: number[] = [];
       values.filter((value: int, index: int, array: ReadonlyArray<int>): boolean => {
-          indices.push(index);
-          return true;
+        indices.push(index);
+        return true;
       });
       expect(indices[0]).assertEqual(0);
       expect(indices[1]).assertEqual(1);
@@ -205,7 +205,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3, 4, 5];
       const result = values.filter((value: int, index: int, array: ReadonlyArray<int>): boolean => {
-          return true;
+        return true;
       });
       expect(result.length).assertEqual(5);
       expect(result[0]).assertEqual(1);
@@ -223,7 +223,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3, 4, 5];
       const result = values.filter((value: int, index: int, array: ReadonlyArray<int>): boolean => {
-          return false;
+        return false;
       });
       expect(result.length).assertEqual(0);
     });
@@ -239,7 +239,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3, 4, 5, 6];
       const result = values.filter((value: int): boolean => {
-          return value % 2 === 0;
+        return value % 2 === 0;
       });
       expect(result.length).assertEqual(3);
       expect(result[0]).assertEqual(2);
@@ -258,7 +258,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [2, 4, 6, 8];
       const result = values.filter((value: int): boolean => {
-          return value % 2 === 0;
+        return value % 2 === 0;
       });
       expect(result.length).assertEqual(4);
       expect(result[0]).assertEqual(2);
@@ -278,7 +278,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 3, 5, 7];
       const result = values.filter((value: int): boolean => {
-          return value % 2 === 0;
+        return value % 2 === 0;
       });
       expect(result.length).assertEqual(0);
     });
@@ -294,7 +294,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [];
       const result = values.filter((value: int): boolean => {
-          return value > 0;
+        return value > 0;
       });
       expect(result.length).assertEqual(0);
     });
@@ -310,7 +310,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [5];
       const result = values.filter((value: int): boolean => {
-          return value > 0;
+        return value > 0;
       });
       expect(result.length).assertEqual(1);
       expect(result[0]).assertEqual(5);
@@ -327,7 +327,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [-1];
       const result = values.filter((value: int): boolean => {
-          return value > 0;
+        return value > 0;
       });
       expect(result.length).assertEqual(0);
     });
@@ -343,7 +343,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [5, 3, 8, 1, 9, 2, 7];
       const result = values.filter((value: int): boolean => {
-          return value > 4;
+        return value > 4;
       });
       expect(result.length).assertEqual(4);
       expect(result[0]).assertEqual(5);
@@ -363,7 +363,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<string> = ["apple", "banana", "cherry", "date"];
       const result = values.filter((value: string): boolean => {
-          return value.length > 5;
+        return value.length > 5;
       });
       expect(result.length).assertEqual(2);
       expect(result[0]).assertEqual("banana");
@@ -381,7 +381,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<double> = [1.1, 2.5, 3.0, 4.8, 5.2];
       const result = values.filter((value: number): boolean => {
-          return value > 3.0;
+        return value > 3.0;
       });
       expect(result.length).assertEqual(2);
       expect(Math.abs(result[0] - 4.8) < 0.001).assertTrue();
@@ -399,7 +399,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3];
       const result = values.filter((value: int): boolean => {
-          return true;
+        return true;
       });
       expect(result !== values).assertTrue();
       expect(result.length).assertEqual(values.length);
@@ -416,7 +416,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
       const result = values.filter((value: int): boolean => {
-          return value % 3 === 0;
+        return value % 3 === 0;
       });
       expect(result.length).assertEqual(3);
       expect(result[0]).assertEqual(3);
@@ -435,7 +435,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [10, 20, 30, 40, 50];
       const result = values.filter((value: int): boolean => {
-          return value >= 30;
+        return value >= 30;
       });
       expect(result.length).assertEqual(3);
       expect(result[0]).assertEqual(30);
@@ -454,7 +454,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [-3, -2, -1, 0, 1, 2, 3];
       const result = values.filter((value: int): boolean => {
-          return value >= 0;
+        return value >= 0;
       });
       expect(result.length).assertEqual(4);
       expect(result[0]).assertEqual(0);
@@ -474,7 +474,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3, 4, 5];
       const result: Array<int> = values.filter((value: int): boolean => {
-          return value > 2;
+        return value > 2;
       });
       expect(result.length).assertEqual(3);
       result.push(6);
@@ -493,7 +493,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<string> = ["hello", "world", "test"];
       const result = values.filter((value: string): boolean => {
-          return value.includes("o");
+        return value.includes("o");
       });
       expect(result.length).assertEqual(2);
       expect(result[0]).assertEqual("hello");
@@ -511,7 +511,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3, 4, 5];
       const result = values.filter((value: int): boolean => {
-          return value < 3;
+        return value < 3;
       });
       expect(result.length).assertEqual(2);
     });
@@ -531,7 +531,7 @@ export default function ReadonlyArrayFilterTest(): void {
       }
       const readonlyValues: ReadonlyArray<int> = values;
       const result = readonlyValues.filter((value: int): boolean => {
-          return value % 100 === 0;
+        return value % 100 === 0;
       });
       expect(result.length).assertEqual(10);
       expect(result[0]).assertEqual(0);
@@ -553,7 +553,7 @@ export default function ReadonlyArrayFilterTest(): void {
       }
       const readonlyValues: ReadonlyArray<int> = values;
       const result = readonlyValues.filter((value: int): boolean => {
-          return value > 0;
+        return value > 0;
       });
       expect(result.length).assertEqual(100);
       expect(result[0]).assertEqual(1);
@@ -572,7 +572,7 @@ export default function ReadonlyArrayFilterTest(): void {
       const values: ReadonlyArray<int> = [1, 2, 3, 4, 5];
       const originalLength = values.length;
       const result = values.filter((value: int): boolean => {
-          return value > 3;
+        return value > 3;
       });
       expect(result.length).assertEqual(2);
       expect(result[0]).assertEqual(4);
@@ -593,13 +593,13 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3];
       try {
-          values.filter((value: int, index: int, array: ReadonlyArray<int>): boolean => {
-              if (value === 2) {
-                  throw new Error("predicate error");
-              }
-              return true;
-          });
-          expect().assertFail();
+        values.filter((value: int, index: int, array: ReadonlyArray<int>): boolean => {
+          if (value === 2) {
+            throw new Error("predicate error");
+          }
+          return true;
+        });
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('Error');
       }
@@ -617,8 +617,8 @@ export default function ReadonlyArrayFilterTest(): void {
       const values: ReadonlyArray<int> = [1, 2, 3, 4, 5];
       let callCount: number = 0;
       const result = values.filter((value: int, index: int, array: ReadonlyArray<int>): boolean => {
-          callCount++;
-          return value > 2;
+        callCount++;
+        return value > 2;
       });
       expect(callCount).assertEqual(5);
       expect(result.length).assertEqual(3);
@@ -635,7 +635,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3];
       const result = values.filter((value: int, index: int, array: ReadonlyArray<int>): boolean => {
-          return value > 1;
+        return value > 1;
       });
       expect(result.length).assertEqual(2);
       expect(result[0]).assertEqual(2);
@@ -653,7 +653,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<boolean> = [true, false, true, false, true];
       const result = arr.filter((value: boolean): boolean => {
-          return value;
+        return value;
       });
       expect(result.length).assertEqual(3);
       expect(result[0]).assertTrue();
@@ -672,7 +672,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [0, -1, 1000000, 5];
       const result = arr.filter((value: int): boolean => {
-          return value >= 0;
+        return value >= 0;
       });
       expect(result.length).assertEqual(3);
       expect(result[0]).assertEqual(0);
@@ -691,7 +691,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [0x10, 0o10, 0b10];
       const result = arr.filter((value: int): boolean => {
-          return value >= 0x10;
+        return value >= 0x10;
       });
       expect(result.length).assertEqual(1);
       expect(result[0]).assertEqual(0x10);
@@ -708,7 +708,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<string> = ["a", "", "b"];
       const result = arr.filter((value: string): boolean => {
-          return value === "";
+        return value === "";
       });
       expect(result.length).assertEqual(1);
     });
@@ -725,7 +725,7 @@ export default function ReadonlyArrayFilterTest(): void {
       const cn: string = "\u4e2d\u6587";
       const arr: ReadonlyArray<string> = ["x", cn, "y"];
       const result = arr.filter((value: string): boolean => {
-          return value === cn;
+        return value === cn;
       });
       expect(result.length).assertEqual(1);
     });
@@ -741,7 +741,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [2, 4, 6];
       const result = values.filter((value: int): boolean => {
-          return value > 0;
+        return value > 0;
       });
       expect(result.length).assertEqual(3);
       expect(result[0]).assertEqual(2);
@@ -760,7 +760,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3];
       values.filter((value: int): boolean => {
-          return value > 1;
+        return value > 1;
       });
       expect(values.length).assertEqual(3);
       expect(values[0]).assertEqual(1);
@@ -777,7 +777,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<byte> = [10 as byte, 20 as byte, 30 as byte];
       const result = arr.filter((value, index: int): boolean => {
-          return value === 10 as byte || value === 20 as byte;
+        return value === 10 as byte || value === 20 as byte;
       });
       expect(result.length).assertEqual(2);
     });
@@ -793,7 +793,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<short> = [100 as short, 32767 as short];
       const result = arr.filter((value, index: int): boolean => {
-          return value === 100 as short || value === 32767 as short;
+        return value === 100 as short || value === 32767 as short;
       });
       expect(result.length).assertEqual(2);
     });
@@ -809,7 +809,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<boolean> = [true, false, true];
       const result = arr.filter((value, index: int): boolean => {
-          return value === true || value === false;
+        return value === true || value === false;
       });
       expect(result.length).assertEqual(3);
     });
@@ -826,7 +826,7 @@ export default function ReadonlyArrayFilterTest(): void {
       const nan: float = Double.toFloat(Number.NaN);
       const arr: ReadonlyArray<float> = [1.0f, nan, 2.0f];
       const result = arr.filter((value: float): boolean => {
-          return value !== value;
+        return Number.isNaN(value);
       });
       expect(result.length).assertEqual(1);
     });
@@ -843,7 +843,7 @@ export default function ReadonlyArrayFilterTest(): void {
       const nan: double = Number.NaN;
       const arr: ReadonlyArray<double> = [1.1, nan, 2.2];
       const result = arr.filter((value: double): boolean => {
-          return value !== value;
+        return Number.isNaN(value);
       });
       expect(result.length).assertEqual(1);
     });
@@ -859,7 +859,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<float> = [1.0f, Double.toFloat(Number.NEGATIVE_INFINITY), 2.0f];
       const result = arr.filter((value: float): boolean => {
-          return value < 0.0f;
+        return value < 0.0f;
       });
       expect(result.length).assertEqual(1);
     });
@@ -876,7 +876,7 @@ export default function ReadonlyArrayFilterTest(): void {
       const minVal: float = Double.toFloat(Number.MIN_VALUE);
       const arr: ReadonlyArray<float> = [minVal, 2.0f];
       const result = arr.filter((value: float): boolean => {
-          return value === minVal;
+        return value === minVal;
       });
       expect(result.length).assertEqual(1);
     });
@@ -892,7 +892,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<double> = [1.1, Number.NEGATIVE_INFINITY];
       const result = arr.filter((value: double): boolean => {
-          return value < 0.0;
+        return value < 0.0;
       });
       expect(result.length).assertEqual(1);
     });
@@ -908,7 +908,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<float> = [-0.0f, 1.0f, -0.0f];
       const result = arr.filter((value: float): boolean => {
-          return value === 0.0f;
+        return value === 0.0f;
       });
       expect(result.length).assertEqual(2);
     });
@@ -925,7 +925,7 @@ export default function ReadonlyArrayFilterTest(): void {
       const rep: string = "\uFFFD";
       const arr: ReadonlyArray<string> = ["a", rep, "b"];
       const result = arr.filter((value: string): boolean => {
-          return value === rep;
+        return value === rep;
       });
       expect(result.length).assertEqual(1);
       expect(result[0]).assertEqual(rep);
@@ -943,7 +943,7 @@ export default function ReadonlyArrayFilterTest(): void {
       const crlf: string = "\r\n";
       const arr: ReadonlyArray<string> = ["x", crlf];
       const result = arr.filter((value: string): boolean => {
-          return value === crlf;
+        return value === crlf;
       });
       expect(result.length).assertEqual(1);
     });
@@ -960,7 +960,7 @@ export default function ReadonlyArrayFilterTest(): void {
       const cr: string = "\r";
       const arr: ReadonlyArray<string> = [cr, "ab"];
       const result = arr.filter((value: string): boolean => {
-          return value === cr;
+        return value === cr;
       });
       expect(result.length).assertEqual(1);
     });
@@ -977,7 +977,7 @@ export default function ReadonlyArrayFilterTest(): void {
       const bom: string = "\uFEFF";
       const arr: ReadonlyArray<string> = [bom, "t"];
       const result = arr.filter((value: string): boolean => {
-          return value === bom;
+        return value === bom;
       });
       expect(result.length).assertEqual(1);
     });
@@ -994,7 +994,7 @@ export default function ReadonlyArrayFilterTest(): void {
       const garbled: string = "æµè¯";
       const arr: ReadonlyArray<string> = ["en", garbled];
       const result = arr.filter((value: string): boolean => {
-          return value === garbled;
+        return value === garbled;
       });
       expect(result.length).assertEqual(1);
     });
@@ -1010,7 +1010,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<byte> = [-128 as byte, 0 as byte, 127 as byte];
       const result = arr.filter((value: byte): boolean => {
-          return value < 0 as byte;
+        return value < 0 as byte;
       });
       expect(result.length).assertEqual(1);
     });
@@ -1026,7 +1026,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<short> = [-32768 as short, 32767 as short];
       const result = arr.filter((value: short): boolean => {
-          return value === 32767 as short;
+        return value === 32767 as short;
       });
       expect(result.length).assertEqual(1);
     });
@@ -1042,7 +1042,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<long> = [9223372036854775807, 0];
       const result = arr.filter((value: long): boolean => {
-          return value > 0;
+        return value > 0;
       });
       expect(result.length).assertEqual(1);
     });
@@ -1058,7 +1058,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<char> = [c'a', c'\uffff'];
       const result = arr.filter((value: char): boolean => {
-          return value === c'\uffff';
+        return value === c'\uffff';
       });
       expect(result.length).assertEqual(1);
     });
@@ -1074,7 +1074,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [1, 5, 10];
       const result = arr.filter((value: int, index: int, array: ReadonlyArray<int>): boolean => {
-          return index < array.length - 1 && array[index + 1] > value;
+        return index < array.length - 1 && array[index + 1] > value;
       });
       expect(result.length).assertEqual(2);
     });
@@ -1090,7 +1090,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [1, 5, 10];
       const result = arr.filter((value: int, index: int, array: ReadonlyArray<int>): boolean => {
-          return index > 0 && array[index - 1] < value;
+        return index > 0 && array[index - 1] < value;
       });
       expect(result.length).assertEqual(2);
     });
@@ -1106,11 +1106,11 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source: Array<int> = [];
       for (let i: int = 0; i < 1000; i++) {
-      source.push(i);
+        source.push(i);
       }
       const arr: ReadonlyArray<int> = source as ReadonlyArray<int>;
       const result = arr.filter((value: int): boolean => {
-          return value % 2 === 0;
+        return value % 2 === 0;
       });
       expect(result.length).assertEqual(500);
     });
@@ -1126,11 +1126,11 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source: Array<int> = [];
       for (let i: int = 0; i < 1000; i++) {
-      source.push(i);
+        source.push(i);
       }
       const arr: ReadonlyArray<int> = source as ReadonlyArray<int>;
       const result = arr.filter((value: int): boolean => {
-          return value === 999;
+        return value === 999;
       });
       expect(result.length).assertEqual(1);
       expect(result[0]).assertEqual(999);
@@ -1148,8 +1148,8 @@ export default function ReadonlyArrayFilterTest(): void {
       const arr: ReadonlyArray<int> = [1, 2, 3];
       let same: boolean = false;
       arr.filter((value: int, index: int, array: ReadonlyArray<int>): boolean => {
-      same = array === arr;
-      return true;
+        same = array === arr;
+        return true;
       });
       expect(same).assertTrue();
     });
@@ -1165,7 +1165,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<float> = [Double.toFloat(Number.POSITIVE_INFINITY), 1.0f];
       const result = arr.filter((value: float): boolean => {
-          return value > 1.0e10f;
+        return value > 1.0e10f;
       });
       expect(result.length).assertEqual(1);
     });
@@ -1181,7 +1181,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [0x10, 0o10, 0b10];
       const result = arr.filter((value: int): boolean => {
-          return value === 0x10;
+        return value === 0x10;
       });
       expect(result.length).assertEqual(1);
     });
@@ -1197,7 +1197,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [2147483647, -2147483648, 0];
       const result = arr.filter((value: int): boolean => {
-          return value === -2147483648;
+        return value === -2147483648;
       });
       expect(result.length).assertEqual(1);
     });
@@ -1213,7 +1213,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<boolean> = [true, false, true];
       const result = arr.filter((value: boolean): boolean => {
-          return !value;
+        return !value;
       });
       expect(result.length).assertEqual(1);
     });
@@ -1229,7 +1229,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [10, 20, 30];
       const result = arr.filter((_value: int, index: int): boolean => {
-          return index % 2 === 0;
+        return index % 2 === 0;
       });
       expect(result.length).assertEqual(2);
       expect(result[0]).assertEqual(10);
@@ -1247,7 +1247,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<double> = [Number.POSITIVE_INFINITY, 1.0];
       const result = arr.filter((value: double): boolean => {
-          return value > 1.0e10;
+        return value > 1.0e10;
       });
       expect(result.length).assertEqual(1);
     });
@@ -1263,7 +1263,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<char> = [c'\u0000', c'z'];
       const result = arr.filter((value: char): boolean => {
-          return value === c'\u0000';
+        return value === c'\u0000';
       });
       expect(result.length).assertEqual(1);
     });
@@ -1279,7 +1279,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [4, 4, 5];
       const result = arr.filter((value: int): boolean => {
-          return value === 4;
+        return value === 4;
       });
       expect(result.length).assertEqual(2);
     });
@@ -1297,7 +1297,7 @@ export default function ReadonlyArrayFilterTest(): void {
       for (let i: int = 0; i < 100; i++) { source.push(i % 3); }
       const arr: ReadonlyArray<int> = source as ReadonlyArray<int>;
       const result = arr.filter((value: int): boolean => {
-          return value === 0;
+        return value === 0;
       });
       expect(result.length).assertEqual(34);
     });
@@ -1345,13 +1345,13 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [1, 2, 3];
       try {
-              arr.filter((_value: int, index: int): boolean => {
-                if (index === 1) { throw new Error("predicate error"); }
-                return true;
-              });
-              expect().assertFail();
+        arr.filter((_value: int, index: int): boolean => {
+          if (index === 1) { throw new Error("predicate error"); }
+          return true;
+        });
+        expect().assertFail();
       } catch (error) {
-              expect(error.name).assertEqual('Error');
+        expect(error.name).assertEqual('Error');
       }
     });
 
@@ -1366,7 +1366,7 @@ export default function ReadonlyArrayFilterTest(): void {
     it('testReadonlyArrayFilter075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [10, 20];
       const result = arr.filter((value: int): boolean => {
-          return value >= 15;
+        return value >= 15;
       });
       expect(result.length).assertEqual(1);
       expect(result[0]).assertEqual(20);

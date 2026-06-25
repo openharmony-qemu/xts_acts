@@ -51,7 +51,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3];
       const result = values.every((value: int, index: int, array: ReadonlyArray<int>): boolean => {
-          return value > 0;
+        return value > 0;
       });
       expect(result).assertTrue();
     });
@@ -67,7 +67,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [2, 4, 6];
       const result = values.every((value: int): boolean => {
-          return value % 2 === 0;
+        return value % 2 === 0;
       });
       expect(result).assertTrue();
     });
@@ -83,7 +83,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [10, 20, 30];
       const result = values.every((value: int, index: int): boolean => {
-          return value > index * 5;
+        return value > index * 5;
       });
       expect(result).assertTrue();
     });
@@ -99,7 +99,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [5, 5, 5];
       const result = values.every((value: int, index: int, array: ReadonlyArray<int>): boolean => {
-          return value === array[0];
+        return value === array[0];
       });
       expect(result).assertTrue();
     });
@@ -157,7 +157,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3];
       const result = values.every((value: int, index: int, array: ReadonlyArray<int>): boolean => {
-          return value > 0;
+        return value > 0;
       });
       expect(result).assertTrue();
     });
@@ -173,7 +173,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3];
       const result = values.every((value: int, index: int, array: ReadonlyArray<int>): boolean => {
-          return true;
+        return true;
       });
       expect(result).assertTrue();
     });
@@ -189,7 +189,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3];
       const result = values.every((value: int, index: int, array: ReadonlyArray<int>): boolean => {
-          return false;
+        return false;
       });
       expect(result).assertFalse();
     });
@@ -205,7 +205,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [2, 4, 6, 8];
       const result = values.every((value: int): boolean => {
-          return value % 2 === 0;
+        return value % 2 === 0;
       });
       expect(result).assertTrue();
     });
@@ -221,7 +221,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [2, 3, 6, 8];
       const result = values.every((value: int): boolean => {
-          return value % 2 === 0;
+        return value % 2 === 0;
       });
       expect(result).assertFalse();
     });
@@ -237,7 +237,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 3, 5, 7];
       const result = values.every((value: int): boolean => {
-          return value % 2 === 0;
+        return value % 2 === 0;
       });
       expect(result).assertFalse();
     });
@@ -253,7 +253,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [];
       const result = values.every((value: int): boolean => {
-          return value > 0;
+        return value > 0;
       });
       expect(result).assertTrue();
     });
@@ -269,7 +269,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [5];
       const result = values.every((value: int): boolean => {
-          return value > 0;
+        return value > 0;
       });
       expect(result).assertTrue();
     });
@@ -285,7 +285,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [-1];
       const result = values.every((value: int): boolean => {
-          return value > 0;
+        return value > 0;
       });
       expect(result).assertFalse();
     });
@@ -320,7 +320,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<string> = ["hello", "world", "test"];
       const result = values.every((value: string): boolean => {
-          return value.length > 0;
+        return value.length > 0;
       });
       expect(result).assertTrue();
     });
@@ -336,7 +336,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<double> = [1.1, 2.2, 3.3];
       const result = values.every((value: double): boolean => {
-          return value > 0;
+        return value > 0;
       });
       expect(result).assertTrue();
     });
@@ -352,7 +352,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [0, -1, -5, 3];
       const result = values.every((value: int): boolean => {
-          return value > 0;
+        return value > 0;
       });
       expect(result).assertFalse();
     });
@@ -368,7 +368,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3];
       const result = values.every((value: int): boolean => {
-          return value > 0;
+        return value > 0;
       });
       expect(result).assertTrue();
     });
@@ -388,7 +388,7 @@ export default function ReadonlyArrayEveryTest(): void {
       }
       const values: ReadonlyArray<int> = valuesSource as ReadonlyArray<int>;
       const result = values.every((value: int): boolean => {
-          return value > 0;
+        return value > 0;
       });
       expect(result).assertTrue();
     });
@@ -409,7 +409,7 @@ export default function ReadonlyArrayEveryTest(): void {
       valuesSource[50] = -1;
       const values: ReadonlyArray<int> = valuesSource as ReadonlyArray<int>;
       const result = values.every((value: int): boolean => {
-          return value > 0;
+        return value > 0;
       });
       expect(result).assertFalse();
     });
@@ -426,7 +426,7 @@ export default function ReadonlyArrayEveryTest(): void {
       const values: ReadonlyArray<int> = [1, 2, 3];
       const originalLength = values.length;
       values.every((value: int): boolean => {
-          return value > 0;
+        return value > 0;
       });
       expect(values.length).assertEqual(originalLength);
       expect(values[0]).assertEqual(1);
@@ -446,7 +446,7 @@ export default function ReadonlyArrayEveryTest(): void {
       const values: ReadonlyArray<int> = [1, 2, 3];
       const originalFirst = values[0];
       values.every((value: int, index: int, array: ReadonlyArray<int>): boolean => {
-          return value > 0;
+        return value > 0;
       });
       expect(values[0]).assertEqual(originalFirst);
     });
@@ -464,7 +464,7 @@ export default function ReadonlyArrayEveryTest(): void {
       try {
         values.every((value: int): boolean => {
           if (value === 2) {
-      throw new Error("Test error in predicate");
+            throw new Error("Test error in predicate");
           }
           return true;
         });
@@ -504,7 +504,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [0, -1, 1000000, 5];
       const result = arr.every((value: int): boolean => {
-          return value >= 0;
+        return value >= 0;
       });
       expect(result).assertFalse();
     });
@@ -520,7 +520,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [0x10, 0o10, 0b10];
       const result = arr.every((value: int): boolean => {
-          return value > 0;
+        return value > 0;
       });
       expect(result).assertTrue();
     });
@@ -537,7 +537,7 @@ export default function ReadonlyArrayEveryTest(): void {
       const zwsp: string = "\u200B";
       const arr: ReadonlyArray<string> = ["a", zwsp, "c"];
       const result = arr.every((value: string): boolean => {
-          return value === zwsp || value === "a" || value === "c";
+        return value === zwsp || value === "a" || value === "c";
       });
       expect(result).assertTrue();
     });
@@ -553,7 +553,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 0, 3];
       const result = values.every((value: int): boolean => {
-          return value > 0;
+        return value > 0;
       });
       expect(result).assertFalse();
     });
@@ -587,7 +587,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<byte> = [10 as byte, 20 as byte, 30 as byte];
       const result = arr.every((value, index: int): boolean => {
-          return value === 10 as byte || value === 20 as byte || value === 30 as byte;
+        return value === 10 as byte || value === 20 as byte || value === 30 as byte;
       });
       expect(result).assertTrue();
     });
@@ -603,7 +603,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<short> = [100 as short, 32767 as short];
       const result = arr.every((value, index: int): boolean => {
-          return value === 100 as short || value === 32767 as short;
+        return value === 100 as short || value === 32767 as short;
       });
       expect(result).assertTrue();
     });
@@ -619,7 +619,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<long> = [100, 9223372036854775807];
       const result = arr.every((value, index: int): boolean => {
-          return value === 100 || value === 9223372036854775807;
+        return value === 100 || value === 9223372036854775807;
       });
       expect(result).assertTrue();
     });
@@ -635,7 +635,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<boolean> = [true, false, true];
       const result = arr.every((value, index: int): boolean => {
-          return value === true || value === false;
+        return value === true || value === false;
       });
       expect(result).assertTrue();
     });
@@ -655,7 +655,7 @@ export default function ReadonlyArrayEveryTest(): void {
       }
       const arr: ReadonlyArray<int> = source as ReadonlyArray<int>;
       const result = arr.every((value: int): boolean => {
-          return value === 1;
+        return value === 1;
       });
       expect(result).assertTrue();
       expect(arr.length).assertEqual(1000);
@@ -673,7 +673,7 @@ export default function ReadonlyArrayEveryTest(): void {
       const nan: float = Double.toFloat(Number.NaN);
       const arr: ReadonlyArray<float> = [nan, nan];
       const result = arr.every((value: float): boolean => {
-          return value !== value;
+        return Number.isNaN(value);
       });
       expect(result).assertTrue();
     });
@@ -689,7 +689,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<float> = [Double.toFloat(Number.NEGATIVE_INFINITY), 1.0f];
       const result = arr.every((value: float): boolean => {
-          return value > 0.0f;
+        return value > 0.0f;
       });
       expect(result).assertFalse();
     });
@@ -705,7 +705,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<float> = [Double.toFloat(Number.MIN_VALUE), 1.0f];
       const result = arr.every((value: float): boolean => {
-          return value >= 0.0f;
+        return value >= 0.0f;
       });
       expect(result).assertTrue();
     });
@@ -721,7 +721,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<double> = [Number.NEGATIVE_INFINITY, 2.2];
       const result = arr.every((value: double): boolean => {
-          return value < 0.0;
+        return value < 0.0;
       });
       expect(result).assertFalse();
     });
@@ -737,7 +737,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<double> = [Number.MIN_VALUE, 1.0];
       const result = arr.every((value: double): boolean => {
-          return value >= 0.0;
+        return value >= 0.0;
       });
       expect(result).assertTrue();
     });
@@ -754,7 +754,7 @@ export default function ReadonlyArrayEveryTest(): void {
       const nan: double = Number.NaN;
       const arr: ReadonlyArray<double> = [nan, nan];
       const result = arr.every((value: double): boolean => {
-          return value !== value;
+        return Number.isNaN(value);
       });
       expect(result).assertTrue();
     });
@@ -770,7 +770,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<float> = [-0.0f, 1.0f];
       const result = arr.every((value: float): boolean => {
-          return value === value;
+        return value === value;
       });
       expect(result).assertTrue();
     });
@@ -787,7 +787,7 @@ export default function ReadonlyArrayEveryTest(): void {
       const rep: string = "\uFFFD";
       const arr: ReadonlyArray<string> = [rep, "ok"];
       const result = arr.every((value: string): boolean => {
-          return value.length > 0;
+        return value.length > 0;
       });
       expect(result).assertTrue();
     });
@@ -804,7 +804,7 @@ export default function ReadonlyArrayEveryTest(): void {
       const crlf: string = "\r\n";
       const arr: ReadonlyArray<string> = [crlf, "x"];
       const result = arr.every((value: string): boolean => {
-          return value.length >= 2;
+        return value.length >= 2;
       });
       expect(result).assertFalse();
     });
@@ -821,7 +821,7 @@ export default function ReadonlyArrayEveryTest(): void {
       const cr: string = "\r";
       const arr: ReadonlyArray<string> = [cr, "ab"];
       const result = arr.every((value: string): boolean => {
-          return value.length > 1;
+        return value.length > 1;
       });
       expect(result).assertFalse();
     });
@@ -838,7 +838,7 @@ export default function ReadonlyArrayEveryTest(): void {
       const bom: string = "\uFEFF";
       const arr: ReadonlyArray<string> = [bom, "text"];
       const result = arr.every((value: string): boolean => {
-          return value.length > 0;
+        return value.length > 0;
       });
       expect(result).assertTrue();
     });
@@ -855,7 +855,7 @@ export default function ReadonlyArrayEveryTest(): void {
       const garbled: string = "æµè¯";
       const arr: ReadonlyArray<string> = [garbled, "en"];
       const result = arr.every((value: string): boolean => {
-          return value.length > 0;
+        return value.length > 0;
       });
       expect(result).assertTrue();
     });
@@ -871,7 +871,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<byte> = [-128 as byte, 127 as byte];
       const result = arr.every((value: byte): boolean => {
-          return value === -128 as byte || value === 127 as byte;
+        return value === -128 as byte || value === 127 as byte;
       });
       expect(result).assertTrue();
     });
@@ -887,7 +887,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<short> = [-32768 as short, 32767 as short];
       const result = arr.every((value: short): boolean => {
-          return value === -32768 as short || value === 32767 as short;
+        return value === -32768 as short || value === 32767 as short;
       });
       expect(result).assertTrue();
     });
@@ -903,7 +903,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<long> = [9223372036854775807, -9223372036854775808];
       const result = arr.every((value: long): boolean => {
-          return value === 9223372036854775807 || value === -9223372036854775808;
+        return value === 9223372036854775807 || value === -9223372036854775808;
       });
       expect(result).assertTrue();
     });
@@ -919,7 +919,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<char> = [c'\uffff', c'a'];
       const result = arr.every((value: char): boolean => {
-          return value >= c'a';
+        return value >= c'a';
       });
       expect(result).assertTrue();
     });
@@ -935,10 +935,10 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [1, 2, 3];
       const result = arr.every((value: int, index: int, array: ReadonlyArray<int>): boolean => {
-      if (index === array.length - 1) {
-      return true;
-      }
-      return array[index + 1] > value;
+        if (index === array.length - 1) {
+          return true;
+        }
+        return array[index + 1] > value;
       });
       expect(result).assertTrue();
     });
@@ -954,10 +954,10 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [1, 2, 3];
       const result = arr.every((value: int, index: int, array: ReadonlyArray<int>): boolean => {
-      if (index === 0) {
-      return value === 1;
-      }
-      return array[index - 1] < value;
+        if (index === 0) {
+          return value === 1;
+        }
+        return array[index - 1] < value;
       });
       expect(result).assertTrue();
     });
@@ -973,13 +973,13 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source: Array<int> = [];
       for (let i: int = 0; i < 1000; i++) {
-      source.push(1);
+        source.push(1);
       }
       const arr: ReadonlyArray<int> = source as ReadonlyArray<int>;
       let visits: int = 0;
       const result = arr.every((value: int): boolean => {
-      visits++;
-      return value === 1;
+        visits++;
+        return value === 1;
       });
       expect(result).assertTrue();
       expect(visits).assertEqual(1000);
@@ -997,8 +997,8 @@ export default function ReadonlyArrayEveryTest(): void {
       const arr: ReadonlyArray<int> = [1, 2];
       let same: boolean = false;
       arr.every((value: int, index: int, array: ReadonlyArray<int>): boolean => {
-      same = array === arr;
-      return true;
+        same = array === arr;
+        return true;
       });
       expect(same).assertTrue();
     });
@@ -1014,7 +1014,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<float> = [Double.toFloat(Number.POSITIVE_INFINITY), 1.0f];
       const result = arr.every((value: float): boolean => {
-          return value > 0.0f;
+        return value > 0.0f;
       });
       expect(result).assertTrue();
     });
@@ -1031,7 +1031,7 @@ export default function ReadonlyArrayEveryTest(): void {
       const target: string = "—";
       const arr: ReadonlyArray<string> = [target, target];
       const result = arr.every((value: string): boolean => {
-          return value.length >= target.length;
+        return value.length >= target.length;
       });
       expect(result).assertTrue();
     });
@@ -1048,7 +1048,7 @@ export default function ReadonlyArrayEveryTest(): void {
       const target: string = "0b1010";
       const arr: ReadonlyArray<string> = [target, target];
       const result = arr.every((value: string): boolean => {
-          return value.length >= target.length;
+        return value.length >= target.length;
       });
       expect(result).assertTrue();
     });
@@ -1064,7 +1064,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<double> = [Number.POSITIVE_INFINITY, 1.0];
       const result = arr.every((value: double): boolean => {
-          return value > 0.0;
+        return value > 0.0;
       });
       expect(result).assertTrue();
     });
@@ -1080,7 +1080,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<char> = [c'\u0000', c'b'];
       const result = arr.every((value: char): boolean => {
-          return value === c'\u0000' || value === c'b';
+        return value === c'\u0000' || value === c'b';
       });
       expect(result).assertTrue();
     });
@@ -1096,7 +1096,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [7, 7, 7];
       const result = arr.every((value: int): boolean => {
-          return value === 7;
+        return value === 7;
       });
       expect(result).assertTrue();
     });
@@ -1114,7 +1114,7 @@ export default function ReadonlyArrayEveryTest(): void {
       for (let i: int = 1; i <= 100; i++) { source.push(i); }
       const arr: ReadonlyArray<int> = source as ReadonlyArray<int>;
       const result = arr.every((value: int): boolean => {
-          return value > 0;
+        return value > 0;
       });
       expect(result).assertTrue();
     });
@@ -1130,7 +1130,7 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [10, 20, 30];
       const result = arr.every((_value: int, index: int): boolean => {
-          return index < 3;
+        return index < 3;
       });
       expect(result).assertTrue();
     });
@@ -1176,13 +1176,13 @@ export default function ReadonlyArrayEveryTest(): void {
     it('testReadonlyArrayEvery067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [1, 2, 3];
       try {
-              arr.every((_value: int, index: int): boolean => {
-                if (index === 1) { throw new Error("predicate error"); }
-                return true;
-              });
-              expect().assertFail();
+        arr.every((_value: int, index: int): boolean => {
+          if (index === 1) { throw new Error("predicate error"); }
+          return true;
+        });
+        expect().assertFail();
       } catch (error) {
-              expect(error.name).assertEqual('Error');
+        expect(error.name).assertEqual('Error');
       }
     });
 

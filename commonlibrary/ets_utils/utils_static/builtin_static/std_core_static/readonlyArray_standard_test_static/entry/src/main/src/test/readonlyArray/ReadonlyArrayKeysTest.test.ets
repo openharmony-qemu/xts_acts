@@ -202,10 +202,10 @@ export default function ReadonlyArrayKeysTest(): void {
      */
     it('testReadonlyArrayKeys010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source: Array<int> = [];
-        for (let i: int = 0; i < 1000; i++) {
-          source.push(i);
-        }
-        const arr: ReadonlyArray<int> = source as ReadonlyArray<int>;
+      for (let i: int = 0; i < 1000; i++) {
+        source.push(i);
+      }
+      const arr: ReadonlyArray<int> = source as ReadonlyArray<int>;
       let count = 0;
       for (const key of arr.keys()) {
         expect(key).assertEqual(count);
@@ -718,8 +718,8 @@ export default function ReadonlyArrayKeysTest(): void {
       const arr: ReadonlyArray<float> = [1.0f, nan, 3.0f];
       let count: int = 0;
       for (const key of arr.keys()) {
-              expect(key).assertEqual(count);
-              count++;
+        expect(key).assertEqual(count);
+        count++;
       }
       expect(count).assertEqual(arr.length);
     });

@@ -58,7 +58,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3];
       const result = values.map<int>((value: int, index: int, array: ReadonlyArray<int>): int => {
-          return value * 2;
+        return value * 2;
       });
       expect(result.length).assertEqual(3);
       expect(result[0]).assertEqual(2);
@@ -77,7 +77,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [10, 20, 30];
       const result = values.map<int>((value: int): int => {
-          return value + 5;
+        return value + 5;
       });
       expect(result[0]).assertEqual(15);
       expect(result[1]).assertEqual(25);
@@ -95,7 +95,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [10, 20, 30];
       const result = values.map<int>((value: int, index: int): int => {
-          return value + index;
+        return value + index;
       });
       expect(result[0]).assertEqual(10);
       expect(result[1]).assertEqual(21);
@@ -113,7 +113,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3];
       const result = values.map<int>((value: int, index: int, array: ReadonlyArray<int>): int => {
-          return value + index + array[0];
+        return value + index + array[0];
       });
       expect(result[0]).assertEqual(2);
       expect(result[1]).assertEqual(4);
@@ -151,7 +151,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3];
       const result = values.map<int>((value: int): int => {
-          return value;
+        return value;
       });
       expect(result[0]).assertEqual(1);
       expect(result[1]).assertEqual(2);
@@ -169,7 +169,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3];
       const result = values.map<int>((): int => {
-          return 42;
+        return 42;
       });
       expect(result[0]).assertEqual(42);
       expect(result[1]).assertEqual(42);
@@ -187,7 +187,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3];
       const result = values.map<int>((value: int): int => {
-          return value * 10;
+        return value * 10;
       });
       expect(result[0]).assertEqual(10);
       expect(result[1]).assertEqual(20);
@@ -205,7 +205,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3];
       const result = values.map<string>((value: int): string => {
-          return value.toString();
+        return value.toString();
       });
       expect(result[0]).assertEqual("1");
       expect(result[1]).assertEqual("2");
@@ -223,7 +223,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3];
       const result = values.map<Item012>((value: int): Item012 => {
-          return new Item012(value);
+        return new Item012(value);
       });
       expect(result[0].x).assertEqual(1);
       expect(result[1].x).assertEqual(2);
@@ -241,7 +241,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3, 4, 5];
       const result = values.map<int>((value: int): int => {
-          return value * 2;
+        return value * 2;
       });
       expect(result[0]).assertEqual(2);
       expect(result[1]).assertEqual(4);
@@ -261,7 +261,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [42];
       const result = values.map<int>((value: int): int => {
-          return value + 1;
+        return value + 1;
       });
       expect(result.length).assertEqual(1);
       expect(result[0]).assertEqual(43);
@@ -278,7 +278,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [10, 20, 30];
       const result = values.map<string>((value: int): string => {
-          return "val:" + value.toString();
+        return "val:" + value.toString();
       });
       expect(result[0]).assertEqual("val:10");
       expect(result[1]).assertEqual("val:20");
@@ -296,7 +296,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [5, 3, 1, 4, 2];
       const result = values.map<int>((value: int): int => {
-          return value * 10;
+        return value * 10;
       });
       expect(result[0]).assertEqual(50);
       expect(result[1]).assertEqual(30);
@@ -316,7 +316,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<string> = ["a", "b", "c"];
       const result = values.map<string>((value: string): string => {
-          return value.toUpperCase();
+        return value.toUpperCase();
       });
       expect(result[0]).assertEqual("A");
       expect(result[1]).assertEqual("B");
@@ -334,7 +334,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3];
       const result = values.map<int>((): int => {
-          return 0;
+        return 0;
       });
       expect(result[0]).assertEqual(0);
       expect(result[1]).assertEqual(0);
@@ -352,7 +352,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3];
       const result = values.map<int>((value: int): int => {
-          return -value;
+        return -value;
       });
       expect(result[0]).assertEqual(-1);
       expect(result[1]).assertEqual(-2);
@@ -370,7 +370,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [0, 0, 0, 0, 0];
       const result = values.map<int>((value: int, index: int): int => {
-          return index;
+        return index;
       });
       expect(result[0]).assertEqual(0);
       expect(result[1]).assertEqual(1);
@@ -390,7 +390,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3];
       const result: Array<int> = values.map<int>((value: int): int => {
-          return value * 2;
+        return value * 2;
       });
       expect(result.length).assertEqual(3);
       expect(result[0]).assertEqual(2);
@@ -409,7 +409,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3];
       const result = values.map<string>((value: int): string => {
-          return "item" + value.toString();
+        return "item" + value.toString();
       });
       expect(result.length).assertEqual(3);
       expect(result[0]).assertEqual("item1");
@@ -432,7 +432,7 @@ export default function ReadonlyArrayMapTest(): void {
       }
       const values: ReadonlyArray<int> = arr;
       const result = values.map<int>((value: int): int => {
-          return value + 1;
+        return value + 1;
       });
       expect(result.length).assertEqual(1000);
       expect(result[0]).assertEqual(1);
@@ -450,7 +450,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<boolean> = [true, false, true];
       const result = arr.map<int>((value: boolean): int => {
-          return value ? 1 : 0;
+        return value ? 1 : 0;
       });
       expect(result[0]).assertEqual(1);
       expect(result[1]).assertEqual(0);
@@ -468,7 +468,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [0x10, 0o10, 0b10];
       const result = arr.map<int>((value: int): int => {
-          return value + 1;
+        return value + 1;
       });
       expect(result[0]).assertEqual(0x10 + 1);
       expect(result[1]).assertEqual(0o10 + 1);
@@ -487,7 +487,7 @@ export default function ReadonlyArrayMapTest(): void {
       const cn: string = "\u4e2d\u6587";
       const arr: ReadonlyArray<string> = ["a", cn, "hello"];
       const result = arr.map<int>((value: string): int => {
-          return value.length;
+        return value.length;
       });
       expect(result[0]).assertEqual(1);
       expect(result[1]).assertEqual(2);
@@ -506,7 +506,7 @@ export default function ReadonlyArrayMapTest(): void {
       const zwsp: string = "\u200B";
       const arr: ReadonlyArray<string> = ["", " ", zwsp];
       const result = arr.map<int>((value: string): int => {
-          return value.length;
+        return value.length;
       });
       expect(result[0]).assertEqual(0);
       expect(result[1]).assertEqual(1);
@@ -524,7 +524,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<double> = [0.0, 1.0e6, -888.88];
       const result = arr.map<double>((value: double): double => {
-          return value * 2.0;
+        return value * 2.0;
       });
       expect(result[0]).assertEqual(0.0);
       expect(result[1]).assertEqual(2.0e6);
@@ -542,7 +542,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2];
       const result = values.map<string>((value: int): string => {
-          return value.toString();
+        return value.toString();
       });
       expect(result[0]).assertEqual("1");
       expect(result[1]).assertEqual("2");
@@ -559,7 +559,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<byte> = [10 as byte, 20 as byte];
       const result = arr.map<int>((value: byte): int => {
-          return value + 1;
+        return value + 1;
       });
       expect(result.length).assertEqual(2);
       expect(result[0]).assertEqual(11);
@@ -577,7 +577,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<string> = ["13800138000"];
       const result = arr.map<int>((value: string): int => {
-          return value.length;
+        return value.length;
       });
       expect(result.length).assertEqual(1);
       expect(result[0]).assertEqual(11);
@@ -594,7 +594,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<string> = ["only"];
       const result = arr.map<string>((value: string): string => {
-          return value + "!";
+        return value + "!";
       });
       expect(result[0]).assertEqual("only!");
     });
@@ -610,7 +610,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<float> = [Double.toFloat(Number.MIN_VALUE), 2.0f];
       const result = arr.map<int>((value: float): int => {
-          return value < 1.0f ? 0 : 1;
+        return value < 1.0f ? 0 : 1;
       });
       expect(result[0]).assertEqual(0);
     });
@@ -626,7 +626,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<double> = [Number.NEGATIVE_INFINITY, 2.2];
       const result = arr.map<int>((value: double): int => {
-          return value < 0.0 ? -1 : 1;
+        return value < 0.0 ? -1 : 1;
       });
       expect(result[0]).assertEqual(-1);
     });
@@ -642,7 +642,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<double> = [Number.MIN_VALUE, 5.0];
       const result = arr.map<int>((value: double): int => {
-          return value < 1.0 ? 0 : 1;
+        return value < 1.0 ? 0 : 1;
       });
       expect(result[0]).assertEqual(0);
     });
@@ -659,7 +659,7 @@ export default function ReadonlyArrayMapTest(): void {
       const rep: string = "\uFFFD";
       const arr: ReadonlyArray<string> = [rep, "abc"];
       const result = arr.map<int>((value: string): int => {
-          return value.length;
+        return value.length;
       });
       expect(result[0]).assertEqual(1);
     });
@@ -676,7 +676,7 @@ export default function ReadonlyArrayMapTest(): void {
       const crlf: string = "\r\n";
       const arr: ReadonlyArray<string> = [crlf];
       const result = arr.map<int>((value: string): int => {
-          return value.length;
+        return value.length;
       });
       expect(result[0]).assertEqual(2);
     });
@@ -693,7 +693,7 @@ export default function ReadonlyArrayMapTest(): void {
       const cr: string = "\r";
       const arr: ReadonlyArray<string> = [cr, "ab"];
       const result = arr.map<int>((value: string): int => {
-          return value.length;
+        return value.length;
       });
       expect(result[0]).assertEqual(1);
     });
@@ -710,7 +710,7 @@ export default function ReadonlyArrayMapTest(): void {
       const bom: string = "\uFEFF";
       const arr: ReadonlyArray<string> = [bom, "t"];
       const result = arr.map<string>((value: string): string => {
-          return value + "x";
+        return value + "x";
       });
       expect(result[0]).assertEqual(bom + "x");
     });
@@ -727,7 +727,7 @@ export default function ReadonlyArrayMapTest(): void {
       const garbled: string = "æµè¯";
       const arr: ReadonlyArray<string> = [garbled];
       const result = arr.map<int>((value: string): int => {
-          return value.length;
+        return value.length;
       });
       expect(result[0]).assertEqual(garbled.length);
     });
@@ -743,7 +743,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<short> = [-32768 as short, 32767 as short];
       const result = arr.map<short>((value: short): short => {
-          return value;
+        return value;
       });
       expect(result[0]).assertEqual(-32768 as short);
       expect(result[1]).assertEqual(32767 as short);
@@ -760,7 +760,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<long> = [9223372036854775807, 0];
       const result = arr.map<long>((value: long): long => {
-          return value;
+        return value;
       });
       expect(result[0]).assertEqual(9223372036854775807);
     });
@@ -776,7 +776,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<char> = [c'\uffff', c'a'];
       const result = arr.map<char>((value: char): char => {
-          return value;
+        return value;
       });
       expect(result[0]).assertEqual(c'\uffff');
     });
@@ -792,7 +792,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [1, 2, 3];
       const result = arr.map<int>((value: int, index: int, array: ReadonlyArray<int>): int => {
-          return index < array.length - 1 ? array[index + 1] : value;
+        return index < array.length - 1 ? array[index + 1] : value;
       });
       expect(result[0]).assertEqual(2);
       expect(result[1]).assertEqual(3);
@@ -810,7 +810,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [1, 2, 3];
       const result = arr.map<int>((value: int, index: int, array: ReadonlyArray<int>): int => {
-          return index > 0 ? array[index - 1] + value : value;
+        return index > 0 ? array[index - 1] + value : value;
       });
       expect(result[0]).assertEqual(1);
       expect(result[1]).assertEqual(3);
@@ -830,7 +830,7 @@ export default function ReadonlyArrayMapTest(): void {
       for (let i: int = 0; i < 1000; i++) { source.push(i); }
       const arr: ReadonlyArray<int> = source as ReadonlyArray<int>;
       const result = arr.map<int>((value: int): int => {
-          return value;
+        return value;
       });
       expect(result.length).assertEqual(1000);
       expect(result[999]).assertEqual(999);
@@ -849,7 +849,7 @@ export default function ReadonlyArrayMapTest(): void {
       for (let i: int = 0; i < 1000; i++) { source.push(i); }
       const arr: ReadonlyArray<int> = source as ReadonlyArray<int>;
       const result = arr.map<int>((value: int): int => {
-          return value * 2;
+        return value * 2;
       });
       expect(result[500]).assertEqual(1000);
     });
@@ -865,7 +865,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<float> = [Double.toFloat(Number.POSITIVE_INFINITY)];
       const result = arr.map<int>((value: float): int => {
-          return value > 0.0f ? 1 : 0;
+        return value > 0.0f ? 1 : 0;
       });
       expect(result[0]).assertEqual(1);
     });
@@ -881,7 +881,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [2147483647, -2147483648];
       const result = arr.map<int>((value: int): int => {
-          return value;
+        return value;
       });
       expect(result[0]).assertEqual(2147483647);
       expect(result[1]).assertEqual(-2147483648);
@@ -898,7 +898,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<boolean> = [true, false];
       const result = arr.map<boolean>((value: boolean): boolean => {
-          return !value;
+        return !value;
       });
       expect(result[0]).assertFalse();
       expect(result[1]).assertTrue();
@@ -915,7 +915,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<byte> = [10 as byte, 20 as byte];
       const result = arr.map<int>((value: byte): int => {
-          return value;
+        return value;
       });
       expect(result[0]).assertEqual(10);
       expect(result[1]).assertEqual(20);
@@ -932,7 +932,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<short> = [100 as short, 200 as short];
       const result = arr.map<int>((value: short): int => {
-          return value;
+        return value;
       });
       expect(result[0]).assertEqual(100);
       expect(result[1]).assertEqual(200);
@@ -950,7 +950,7 @@ export default function ReadonlyArrayMapTest(): void {
       const target: string = "13800138000";
       const arr: ReadonlyArray<string> = [target];
       const result = arr.map<int>((value: string): int => {
-          return value.length;
+        return value.length;
       });
       expect(result[0]).assertEqual(11);
     });
@@ -967,7 +967,7 @@ export default function ReadonlyArrayMapTest(): void {
       const target: string = "test@example.com";
       const arr: ReadonlyArray<string> = [target];
       const result = arr.map<int>((value: string): int => {
-          return value.length;
+        return value.length;
       });
       expect(result[0]).assertEqual(16);
     });
@@ -984,7 +984,7 @@ export default function ReadonlyArrayMapTest(): void {
       const target: string = "0x123";
       const arr: ReadonlyArray<string> = [target];
       const result = arr.map<int>((value: string): int => {
-          return value.length;
+        return value.length;
       });
       expect(result[0]).assertEqual(5);
     });
@@ -1001,7 +1001,7 @@ export default function ReadonlyArrayMapTest(): void {
       const target: string = "\u200B";
       const arr: ReadonlyArray<string> = [target];
       const result = arr.map<int>((value: string): int => {
-          return value.length;
+        return value.length;
       });
       expect(result[0]).assertEqual(1);
     });
@@ -1018,7 +1018,7 @@ export default function ReadonlyArrayMapTest(): void {
       const target: string = "\n";
       const arr: ReadonlyArray<string> = [target];
       const result = arr.map<int>((value: string): int => {
-          return value.length;
+        return value.length;
       });
       expect(result[0]).assertEqual(1);
     });
@@ -1035,7 +1035,7 @@ export default function ReadonlyArrayMapTest(): void {
       const target: string = "Test 測試";
       const arr: ReadonlyArray<string> = [target];
       const result = arr.map<int>((value: string): int => {
-          return value.length;
+        return value.length;
       });
       expect(result[0]).assertEqual(7);
     });
@@ -1052,7 +1052,7 @@ export default function ReadonlyArrayMapTest(): void {
       const target: string = "—";
       const arr: ReadonlyArray<string> = [target];
       const result = arr.map<int>((value: string): int => {
-          return value.length;
+        return value.length;
       });
       expect(result[0]).assertEqual(1);
     });
@@ -1069,7 +1069,7 @@ export default function ReadonlyArrayMapTest(): void {
       const target: string = "0b1010";
       const arr: ReadonlyArray<string> = [target];
       const result = arr.map<int>((value: string): int => {
-          return value.length;
+        return value.length;
       });
       expect(result[0]).assertEqual(6);
     });
@@ -1086,7 +1086,7 @@ export default function ReadonlyArrayMapTest(): void {
       const target: string = "123.45e6";
       const arr: ReadonlyArray<string> = [target];
       const result = arr.map<int>((value: string): int => {
-          return value.length;
+        return value.length;
       });
       expect(result[0]).assertEqual(8);
     });
@@ -1102,7 +1102,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<double> = [Number.POSITIVE_INFINITY, 1.0];
       const result = arr.map<int>((value: double): int => {
-          return value > 0.0 ? 1 : 0;
+        return value > 0.0 ? 1 : 0;
       });
       expect(result.length).assertEqual(2);
       expect(result[0]).assertEqual(1);
@@ -1120,7 +1120,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<char> = [c'\u0000', c'b'];
       const result = arr.map<char>((value: char): char => {
-          return value;
+        return value;
       });
       expect(result.length).assertEqual(2);
       expect(result[0]).assertEqual(c'\u0000');
@@ -1138,7 +1138,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [7, 7, 7];
       const result = arr.map<int>((value: int): int => {
-          return value * 10;
+        return value * 10;
       });
       expect(result.length).assertEqual(3);
       expect(result[0]).assertEqual(70);
@@ -1159,7 +1159,7 @@ export default function ReadonlyArrayMapTest(): void {
       for (let i: int = 1; i <= 100; i++) { source.push(i); }
       const arr: ReadonlyArray<int> = source as ReadonlyArray<int>;
       const result = arr.map<int>((value: int): int => {
-          return value + 1;
+        return value + 1;
       });
       expect(result.length).assertEqual(100);
       expect(result[0]).assertEqual(2);
@@ -1177,7 +1177,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [10, 20, 30];
       const result = arr.map<int>((value: int, index: int): int => {
-          return value + index;
+        return value + index;
       });
       expect(result.length).assertEqual(3);
       expect(result[0]).assertEqual(10);
@@ -1197,7 +1197,7 @@ export default function ReadonlyArrayMapTest(): void {
       const target: string = "13800138000";
       const arr: ReadonlyArray<string> = [target, "z"];
       const result = arr.map<int>((value: string): int => {
-          return value.length;
+        return value.length;
       });
       expect(result[0]).assertEqual(11);
     });
@@ -1214,7 +1214,7 @@ export default function ReadonlyArrayMapTest(): void {
       const target: string = "test@example.com";
       const arr: ReadonlyArray<string> = [target, "z"];
       const result = arr.map<int>((value: string): int => {
-          return value.length;
+        return value.length;
       });
       expect(result[0]).assertEqual(16);
     });
@@ -1231,7 +1231,7 @@ export default function ReadonlyArrayMapTest(): void {
       const target: string = "0x123";
       const arr: ReadonlyArray<string> = [target, "z"];
       const result = arr.map<int>((value: string): int => {
-          return value.length;
+        return value.length;
       });
       expect(result[0]).assertEqual(5);
     });
@@ -1248,7 +1248,7 @@ export default function ReadonlyArrayMapTest(): void {
       const target: string = "\u200B";
       const arr: ReadonlyArray<string> = [target, "z"];
       const result = arr.map<int>((value: string): int => {
-          return value.length;
+        return value.length;
       });
       expect(result[0]).assertEqual(1);
     });
@@ -1265,7 +1265,7 @@ export default function ReadonlyArrayMapTest(): void {
       const target: string = "\n";
       const arr: ReadonlyArray<string> = [target, "z"];
       const result = arr.map<int>((value: string): int => {
-          return value.length;
+        return value.length;
       });
       expect(result[0]).assertEqual(1);
     });
@@ -1281,7 +1281,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<double> = [Number.POSITIVE_INFINITY];
       const result = arr.map<int>((value: double): int => {
-          return value > 0.0 ? 1 : 0;
+        return value > 0.0 ? 1 : 0;
       });
       expect(result[0]).assertEqual(1);
     });
@@ -1297,7 +1297,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<char> = [c'\u0000'];
       const result = arr.map<char>((value: char): char => {
-          return value;
+        return value;
       });
       expect(result[0]).assertEqual(c'\u0000');
     });
@@ -1313,7 +1313,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [2, 2, 3];
       const result = arr.map<int>((value: int): int => {
-          return value * 10;
+        return value * 10;
       });
       expect(result[0]).assertEqual(20);
       expect(result[1]).assertEqual(20);
@@ -1333,7 +1333,7 @@ export default function ReadonlyArrayMapTest(): void {
       for (let i: int = 0; i < 100; i++) { source.push(i); }
       const arr: ReadonlyArray<int> = source as ReadonlyArray<int>;
       const result = arr.map<int>((value: int): int => {
-          return value + 1;
+        return value + 1;
       });
       expect(result[99]).assertEqual(100);
     });
@@ -1349,7 +1349,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [1, 2, 3];
       const result = arr.map<int>((value: int, index: int): int => {
-          return value + index;
+        return value + index;
       });
       expect(result[0]).assertEqual(1);
       expect(result[1]).assertEqual(3);
@@ -1367,7 +1367,7 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [];
       const result = values.map<int>((value: int): int => {
-          return value * 2;
+        return value * 2;
       });
       expect(result.length).assertEqual(0);
     });
@@ -1410,13 +1410,13 @@ export default function ReadonlyArrayMapTest(): void {
     it('testReadonlyArrayMap077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [1, 2, 3];
       try {
-              arr.map((_value: int, index: int): boolean => {
-                if (index === 1) { throw new Error("predicate error"); }
-                return true;
-              });
-              expect().assertFail();
+        arr.map((_value: int, index: int): boolean => {
+          if (index === 1) { throw new Error("predicate error"); }
+          return true;
+        });
+        expect().assertFail();
       } catch (error) {
-              expect(error.name).assertEqual('Error');
+        expect(error.name).assertEqual('Error');
       }
     });
 

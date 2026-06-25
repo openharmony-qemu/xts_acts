@@ -51,7 +51,7 @@ export default function ReadonlyArrayReduceTest(): void {
     it('testReadonlyArrayReduce001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [1, 2, 3];
       const result = arr.reduce((prev: int, cur: int): int => {
-          return prev + cur;
+        return prev + cur;
       });
       expect(result).assertEqual(6);
     });
@@ -257,7 +257,7 @@ export default function ReadonlyArrayReduceTest(): void {
     it('testReadonlyArrayReduce013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [10, 20, 30];
       const result = arr.reduce((prev: int, cur: int): int => {
-          return prev + cur;
+        return prev + cur;
       });
       expect(result).assertEqual(60);
     });
@@ -273,7 +273,7 @@ export default function ReadonlyArrayReduceTest(): void {
     it('testReadonlyArrayReduce014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<string> = ["Hello", " ", "World", "!"];
       const result = arr.reduce((prev: string, cur: string): string => {
-          return prev + cur;
+        return prev + cur;
       });
       expect(result).assertEqual("Hello World!");
     });
@@ -305,7 +305,7 @@ export default function ReadonlyArrayReduceTest(): void {
     it('testReadonlyArrayReduce016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [99];
       const result = arr.reduce((prev: int, cur: int): int => {
-          return prev + cur;
+        return prev + cur;
       });
       expect(result).assertEqual(99);
     });
@@ -337,7 +337,7 @@ export default function ReadonlyArrayReduceTest(): void {
     it('testReadonlyArrayReduce018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [3, 7, 1, 9, 4];
       const result = arr.reduce((prev: int, cur: int): int => {
-          return prev > cur ? prev : cur;
+        return prev > cur ? prev : cur;
       });
       expect(result).assertEqual(9);
     });
@@ -353,7 +353,7 @@ export default function ReadonlyArrayReduceTest(): void {
     it('testReadonlyArrayReduce019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [3, 7, 1, 9, 4];
       const result = arr.reduce((prev: int, cur: int): int => {
-          return prev < cur ? prev : cur;
+        return prev < cur ? prev : cur;
       });
       expect(result).assertEqual(1);
     });
@@ -385,7 +385,7 @@ export default function ReadonlyArrayReduceTest(): void {
     it('testReadonlyArrayReduce021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<string> = ["x", "y", "z"];
       const result = arr.reduce((prev: string, cur: string): string => {
-          return prev + cur;
+        return prev + cur;
       });
       expect(result).assertEqual("xyz");
     });
@@ -401,10 +401,10 @@ export default function ReadonlyArrayReduceTest(): void {
     it('testReadonlyArrayReduce022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [];
       try {
-          arr.reduce((prev: int, cur: int): int => {
-              return prev + cur;
-          });
-          expect().assertFail();
+        arr.reduce((prev: int, cur: int): int => {
+            return prev + cur;
+        });
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('TypeError');
       }
@@ -453,7 +453,7 @@ export default function ReadonlyArrayReduceTest(): void {
     it('testReadonlyArrayReduce025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const strArr: ReadonlyArray<string> = ["a", "b"];
       const strResult: string = strArr.reduce((prev: string, cur: string): string => {
-          return prev + cur;
+        return prev + cur;
       });
       expect(strResult).assertEqual("ab");
     });
@@ -505,13 +505,13 @@ export default function ReadonlyArrayReduceTest(): void {
     it('testReadonlyArrayReduce028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [1, 2, 3];
       try {
-          arr.reduce((prev: int, cur: int): int => {
-              if (cur === 2) {
-                  throw new Error("test error");
-              }
-              return prev + cur;
-          }, 0);
-          expect().assertFail();
+        arr.reduce((prev: int, cur: int): int => {
+            if (cur === 2) {
+                throw new Error("test error");
+            }
+            return prev + cur;
+        }, 0);
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('Error');
       }
@@ -918,7 +918,7 @@ export default function ReadonlyArrayReduceTest(): void {
       const result = arr.reduce((prev: float, cur: float, index: int, array: ReadonlyArray<float>): float => {
           return prev + cur;
       }, nan);
-      expect(result !== result).assertTrue();
+      expect(Number.isNaN(result)).assertTrue();
     });
 
     /**
@@ -933,9 +933,9 @@ export default function ReadonlyArrayReduceTest(): void {
       const nan: double = Number.NaN;
       const arr: ReadonlyArray<double> = [nan];
       const result = arr.reduce((prev: double, cur: double): double => {
-          return prev + cur;
+        return prev + cur;
       });
-      expect(result !== result).assertTrue();
+      expect(Number.isNaN(result)).assertTrue();
     });
 
     /**
@@ -968,10 +968,10 @@ export default function ReadonlyArrayReduceTest(): void {
     it('testReadonlyArrayReduce056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [];
       try {
-              arr.reduce((prev: int, cur: int): int => prev + cur);
-              expect().assertFail();
+        arr.reduce((prev: int, cur: int): int => prev + cur);
+        expect().assertFail();
       } catch (error) {
-              expect(error.name).assertEqual('TypeError');
+        expect(error.name).assertEqual('TypeError');
       }
     });
 

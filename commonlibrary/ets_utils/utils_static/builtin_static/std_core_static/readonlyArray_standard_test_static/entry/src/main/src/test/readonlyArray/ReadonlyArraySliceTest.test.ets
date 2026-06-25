@@ -811,7 +811,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<string> = ["0123", "tail"];
       const result = arr.slice(0, 1);
       expect(result.length).assertEqual(1);
@@ -827,7 +826,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<string> = ["0b1010", "tail"];
       const result = arr.slice(0, 1);
       expect(result.length).assertEqual(1);
@@ -843,7 +841,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<string> = ["123.45e6", "tail"];
       const result = arr.slice(0, 1);
       expect(result.length).assertEqual(1);
@@ -859,7 +856,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<string> = ["æµè¯", "tail"];
       const result = arr.slice(0, 1);
       expect(result.length).assertEqual(1);
@@ -875,7 +871,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<string> = ["\uFFFD", "tail"];
       const result = arr.slice(0, 1);
       expect(result.length).assertEqual(1);
@@ -891,7 +886,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<string> = ["\udc04", "tail"];
       const result = arr.slice(0, 1);
       expect(result.length).assertEqual(1);
@@ -907,7 +901,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<string> = ["<script>alert(1)</script>", "tail"];
       const result = arr.slice(0, 1);
       expect(result.length).assertEqual(1);
@@ -923,7 +916,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<string> = ["—", "tail"];
       const result = arr.slice(0, 1);
       expect(result.length).assertEqual(1);
@@ -939,7 +931,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       let longStr: string = "";
       for (let i: int = 0; i < 100; i++) {
         longStr = longStr + "a";
@@ -959,7 +950,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<string> = ["Test 測試", "tail"];
       const result = arr.slice(0, 1);
       expect(result.length).assertEqual(1);
@@ -975,7 +965,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const values: ReadonlyArray<int> = [1, 2, 3, 4];
       const result = values.slice(1, 3);
       expect(result === values).assertFalse();
@@ -991,7 +980,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const values: ReadonlyArray<int> = [10, 20, 30];
       const result: Array<int> = values.slice(1, 3);
       result[0] = 99;
@@ -1008,7 +996,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const obj: Item010 = new Item010(7);
       const values: ReadonlyArray<Item010> = [obj, new Item010(8)];
       const result = values.slice(0, 1);
@@ -1025,7 +1012,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const values: ReadonlyArray<int> = [1, 2, 3];
       const result = values.slice(3, 3);
       expect(result.length).assertEqual(0);
@@ -1040,7 +1026,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<float> = [-0.0f, 1.0f, 2.0f];
       const result = arr.slice(0, 1);
       expect(result.length).assertEqual(1);
@@ -1056,7 +1041,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const data: Array<int> = [];
       for (let i: int = 0; i < 1000; i++) {
         data.push(i);
@@ -1077,7 +1061,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<int> = [1, 1, 1];
       const result = arr.slice(1, 2);
       expect(result.length).assertEqual(1);
@@ -1093,7 +1076,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<byte> = [0 as byte, 127 as byte, -128 as byte, 0x0A as byte];
       const result = arr.slice(1, 3);
       expect(result.length).assertEqual(2);
@@ -1109,7 +1091,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<short> = [32767 as short, -32768 as short, 0 as short];
       const result = arr.slice(0, 2);
       expect(result.length).assertEqual(2);
@@ -1125,7 +1106,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<long> = [9223372036854775807, -9223372036854775807, 0];
       const result = arr.slice(0, 2);
       expect(result.length).assertEqual(2);
@@ -1141,7 +1121,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<double> = [1.1, Number.NaN, 3.3];
       const result = arr.slice(1, 2);
       expect(result.length).assertEqual(1);
@@ -1157,7 +1136,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<double> = [1.0, Number.POSITIVE_INFINITY, 2.0];
       const result = arr.slice(1, 2);
       expect(result.length).assertEqual(1);
@@ -1173,7 +1151,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<double> = [1.0, Number.NEGATIVE_INFINITY, 2.0];
       const result = arr.slice(1, 2);
       expect(result.length).assertEqual(1);
@@ -1189,7 +1166,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const inf: float = Double.toFloat(Number.POSITIVE_INFINITY);
       const arr: ReadonlyArray<float> = [1.0f, inf, 2.0f];
       const result = arr.slice(1, 2);
@@ -1206,7 +1182,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const ninf: float = Double.toFloat(Number.NEGATIVE_INFINITY);
       const arr: ReadonlyArray<float> = [1.0f, ninf, 2.0f];
       const result = arr.slice(1, 2);
@@ -1223,7 +1198,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const minVal: float = Double.toFloat(Number.MIN_VALUE);
       const arr: ReadonlyArray<float> = [1.0f, minVal, 2.0f];
       const result = arr.slice(1, 2);
@@ -1240,7 +1214,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<double> = [5.0, Number.MIN_VALUE, 6.0];
       const result = arr.slice(1, 2);
       expect(result.length).assertEqual(1);
@@ -1256,7 +1229,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<char> = [c'\u0000', c'a', c'b'];
       const result = arr.slice(0, 1);
       expect(result.length).assertEqual(1);
@@ -1272,7 +1244,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<char> = [c'a', c'\uffff', c'b'];
       const result = arr.slice(1, 2);
       expect(result.length).assertEqual(1);
@@ -1288,7 +1259,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<boolean> = [true, false, true];
       const result = arr.slice(1, 2);
       expect(result.length).assertEqual(1);
@@ -1304,7 +1274,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<int> = [0x10, 0o10, 0b1010, 99];
       const result = arr.slice(1, 3);
       expect(result.length).assertEqual(2);
@@ -1321,7 +1290,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<int> = [1, 2, 3, 4, 5];
       const result = arr.slice(1, 4).slice(1, 2);
       expect(result.length).assertEqual(1);
@@ -1337,7 +1305,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const data: Array<int> = [];
       for (let i: int = 0; i < 1000; i++) { data.push(i); }
       const arr: ReadonlyArray<int> = data as ReadonlyArray<int>;
@@ -1356,7 +1323,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const data: Array<int> = [];
       for (let i: int = 0; i < 1000; i++) { data.push(i); }
       const arr: ReadonlyArray<int> = data as ReadonlyArray<int>;
@@ -1374,7 +1340,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const data: Array<int> = [];
       for (let i: int = 0; i < 1000; i++) { data.push(i); }
       const arr: ReadonlyArray<int> = data as ReadonlyArray<int>;
@@ -1392,7 +1357,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<int> = [1, 2, 3];
       const result = arr.slice(10, 20);
       expect(result.length).assertEqual(0);
@@ -1407,7 +1371,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<int> = [1, 2, 3];
       const result = arr.slice(-10, 2);
       expect(result.length).assertEqual(2);
@@ -1423,7 +1386,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<int> = [1, 2, 3, 4];
       const result = arr.slice(1, 0);
       expect(result.length).assertEqual(0);
@@ -1438,7 +1400,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<string> = ["only"];
       const result = arr.slice();
       expect(result.length).assertEqual(1);
@@ -1455,7 +1416,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<string> = ["test@example.com", "other"];
       const result = arr.slice(0, 1);
       expect(result[0]).assertEqual("test@example.com");
@@ -1470,7 +1430,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<string> = ["13800138000", "x"];
       const result = arr.slice(0, 1);
       expect(result[0]).assertEqual("13800138000");
@@ -1485,7 +1444,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<string> = ["a", "0x123", "b"];
       const result = arr.slice(1, 2);
       expect(result[0]).assertEqual("0x123");
@@ -1500,7 +1458,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<string> = ["АБВГД", "en"];
       const result = arr.slice(0, 1);
       expect(result[0]).assertEqual("АБВГД");
@@ -1515,7 +1472,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<string> = ["الاختبار", "en"];
       const result = arr.slice(0, 1);
       expect(result[0]).assertEqual("الاختبار");
@@ -1530,7 +1486,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<string> = ["테스트", "en"];
       const result = arr.slice(0, 1);
       expect(result[0]).assertEqual("테스트");
@@ -1545,7 +1500,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const nearMax: double = 1.7976931348623157E308;
       const arr: ReadonlyArray<double> = [1.0, nearMax, 2.0];
       const result = arr.slice(1, 2);
@@ -1561,7 +1515,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<int> = [2147483647, -2147483648, 0];
       const result = arr.slice(0, 2);
       expect(result.length).assertEqual(2);
@@ -1577,7 +1530,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<int> = [1, 2, 3];
       const result: Array<int> = arr.slice(1, 2);
       result[0] = 99;
@@ -1593,7 +1545,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<int> = [1, 2, 3, 4, 5];
       const result = arr.slice(0, -1);
       expect(result.length).assertEqual(4);
@@ -1609,7 +1560,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<int> = [10, 20, 30, 40, 50];
       const result = arr.slice(-4, -2);
       expect(result.length).assertEqual(2);
@@ -1626,7 +1576,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<float> = [1.0f, 2.0f, 3.0f];
       const result = arr.slice(2, 2);
       expect(result.length).assertEqual(0);
@@ -1641,7 +1590,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<string> = ["a", "b"];
       const result = arr.slice(2, 2);
       expect(result.length).assertEqual(0);
@@ -1656,7 +1604,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<int> = [1, 2];
       const result = arr.slice(2147483647);
       expect(result.length).assertEqual(0);
@@ -1671,7 +1618,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<int> = [1, 2];
       const result = arr.slice(0, -2147483648);
       expect(result.length).assertEqual(0);
@@ -1686,7 +1632,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<int> = [7, 8];
       const result = arr.slice(0, 1);
       expect(result.length).assertEqual(1);
@@ -1702,7 +1647,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<int> = [7, 8];
       const result = arr.slice(1, 2);
       expect(result.length).assertEqual(1);
@@ -1718,7 +1662,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<string> = ["x", "x", "x"];
       const result = arr.slice(1, 2);
       expect(result[0]).assertEqual("x");
@@ -1733,7 +1676,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const nan: float = Double.toFloat(Number.NaN);
       const arr: ReadonlyArray<float> = [nan, 1.0f, 2.0f];
       const result = arr.slice(0, 1);
@@ -1750,7 +1692,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<float> = [0.0f, -0.0f, 1.0f];
       const r1 = arr.slice(0, 1);
       const r2 = arr.slice(1, 2);
@@ -1767,7 +1708,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<long> = [0, 1, 2];
       const result = arr.slice(0, 1);
       expect(result[0]).assertEqual(0);
@@ -1782,7 +1722,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<byte> = [42 as byte];
       const result = arr.slice();
       expect(result.length).assertEqual(1);
@@ -1798,7 +1737,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<short> = [1 as short, 2 as short, 3 as short];
       const result = arr.slice(-1);
       expect(result[0]).assertEqual(3 as short);
@@ -1813,7 +1751,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<char> = [c'a', c'b', c'c'];
       const result = arr.slice(0, 3);
       expect(result.length).assertEqual(3);
@@ -1829,7 +1766,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<boolean> = [true, true, true];
       const result = arr.slice(1, 3);
       expect(result.length).assertEqual(2);
@@ -1845,7 +1781,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<string> = ["\t", "\n", "z"];
       const result = arr.slice(0, 2);
       expect(result[0]).assertEqual("\t");
@@ -1861,7 +1796,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<string> = ["\u200B", "a"];
       const result = arr.slice(0, 1);
       expect(result[0]).assertEqual("\u200B");
@@ -1876,7 +1810,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<int> = [1, -1, 2, -2, 3];
       const result = arr.slice(2, 4);
       expect(result.length).assertEqual(2);
@@ -1893,7 +1826,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<double> = [1.1, 2.2, 3.3, 4.4];
       const result = arr.slice(2);
       expect(result.length).assertEqual(2);
@@ -1909,7 +1841,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<float> = [1.0f, 2.0f, 3.0f, 4.0f];
       const result = arr.slice(0, 3);
       expect(result.length).assertEqual(3);
@@ -1925,7 +1856,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<string> = ["\uD83D\uDE00", "plain"];
       const result = arr.slice(0, 1);
       expect(result[0]).assertEqual("\uD83D\uDE00");
@@ -1940,7 +1870,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<string> = ["\u4e2d\u6587", "en"];
       const result = arr.slice(0, 1);
       expect(result[0]).assertEqual("\u4e2d\u6587");
@@ -1955,7 +1884,6 @@ export default function ReadonlyArraySliceTest(): void {
      * @tc.level Level 2
      */
     it('testReadonlyArraySlice120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const arr: ReadonlyArray<int> = [10, 20, 30, 40, 50];
       const result = arr.slice(1, 4);
       expect(result.length).assertEqual(3);

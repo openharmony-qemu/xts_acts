@@ -965,7 +965,7 @@ export default function ReadonlyArrayEntriesTest(): void {
       for (const entry of arr.entries()) {
         expect(entry[0]).assertEqual(count);
         if (entry[0] === 1) {
-          expect(entry[1] !== entry[1]).assertTrue();
+          expect(Number.isNaN(entry[1])).assertTrue();
         } else {
           expect(entry[1]).assertEqual(arr[count]);
         }
@@ -1053,7 +1053,7 @@ export default function ReadonlyArrayEntriesTest(): void {
       for (const entry of arr.entries()) {
         expect(entry[0]).assertEqual(count);
         if (entry[0] === 1) {
-          expect(entry[1] !== entry[1]).assertTrue();
+          expect(Number.isNaN(entry[1])).assertTrue();
         } else {
           expect(entry[1]).assertEqual(arr[count]);
         }
@@ -1073,7 +1073,7 @@ export default function ReadonlyArrayEntriesTest(): void {
     it('testReadonlyArrayEntries053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source: Array<int> = [];
       for (let i: int = 0; i < 1000; i++) {
-      source.push(i);
+        source.push(i);
       }
       const arr: ReadonlyArray<int> = source as ReadonlyArray<int>;
       let count: int = 0;

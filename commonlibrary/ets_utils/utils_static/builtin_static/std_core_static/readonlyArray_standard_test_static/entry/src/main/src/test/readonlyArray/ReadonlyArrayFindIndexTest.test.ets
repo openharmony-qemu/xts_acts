@@ -51,7 +51,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3, 4, 5];
       const result = values.findIndex((value: int, index: int, obj: ReadonlyArray<int>): boolean => {
-          return value == 3;
+        return value == 3;
       });
       expect(result).assertEqual(2);
     });
@@ -67,7 +67,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [5, 10, 15];
       const result = values.findIndex((value: int, index: int, obj: ReadonlyArray<int>): boolean => {
-          return value >= 10;
+        return value >= 10;
       });
       expect(result).assertEqual(1);
     });
@@ -83,7 +83,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3];
       const result = values.findIndex((value: int): boolean => {
-          return value == 2;
+        return value == 2;
       });
       expect(result).assertEqual(1);
     });
@@ -99,7 +99,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [10, 20, 30, 40];
       const result = values.findIndex((value: int, index: int): boolean => {
-          return index == 2;
+        return index == 2;
       });
       expect(result).assertEqual(2);
     });
@@ -115,7 +115,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3];
       const result = values.findIndex((value: int, index: int, obj: ReadonlyArray<int>): boolean => {
-          return obj.length > 0 && value == 2;
+        return obj.length > 0 && value == 2;
       });
       expect(result).assertEqual(1);
     });
@@ -190,7 +190,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [42, 99, 100];
       const result = values.findIndex((value: int, index: int, obj: ReadonlyArray<int>): boolean => {
-          return true;
+        return true;
       });
       expect(result).assertEqual(0);
     });
@@ -206,7 +206,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3];
       const result = values.findIndex((value: int, index: int, obj: ReadonlyArray<int>): boolean => {
-          return false;
+        return false;
       });
       expect(result).assertEqual(-1);
     });
@@ -222,7 +222,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 5, 10, 15];
       const result = values.findIndex((value: int): boolean => {
-          return value == 10;
+        return value == 10;
       });
       expect(result).assertEqual(2);
     });
@@ -238,7 +238,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3, 2, 5];
       const result = values.findIndex((value: int): boolean => {
-          return value == 2;
+        return value == 2;
       });
       expect(result).assertEqual(1);
     });
@@ -254,7 +254,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 3, 5, 7];
       const result = values.findIndex((value: int): boolean => {
-          return value == 4;
+        return value == 4;
       });
       expect(result).assertEqual(-1);
     });
@@ -270,7 +270,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [];
       const result = values.findIndex((value: int): boolean => {
-          return value > 0;
+        return value > 0;
       });
       expect(result).assertEqual(-1);
     });
@@ -286,7 +286,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [42];
       const result = values.findIndex((value: int): boolean => {
-          return value == 42;
+        return value == 42;
       });
       expect(result).assertEqual(0);
     });
@@ -302,7 +302,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [42];
       const result = values.findIndex((value: int): boolean => {
-          return value > 100;
+        return value > 100;
       });
       expect(result).assertEqual(-1);
     });
@@ -318,7 +318,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<string> = ["apple", "banana", "cherry"];
       const result = values.findIndex((value: string): boolean => {
-          return value == "banana";
+        return value == "banana";
       });
       expect(result).assertEqual(1);
     });
@@ -334,7 +334,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<double> = [1.1, 2.2, 3.3];
       const result = values.findIndex((value: double): boolean => {
-          return value > 2.0;
+        return value > 2.0;
       });
       expect(result).assertEqual(1);
     });
@@ -350,7 +350,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [10, 20, 30];
       const result = values.findIndex((value: int): boolean => {
-          return value < 0;
+        return value < 0;
       });
       expect(result).assertEqual(-1);
     });
@@ -366,7 +366,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [99, 1, 2];
       const result = values.findIndex((value: int): boolean => {
-          return value == 99;
+        return value == 99;
       });
       expect(result).assertEqual(0);
     });
@@ -420,7 +420,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3];
       const result: int = values.findIndex((value: int): boolean => {
-          return value == 2;
+        return value == 2;
       });
       expect(result).assertEqual(1);
     });
@@ -436,7 +436,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [5, 10, 15];
       const result = values.findIndex((value: int): boolean => {
-          return value > 7;
+        return value > 7;
       });
       expect(result).assertEqual(1);
     });
@@ -452,7 +452,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [10, 20, 30];
       const result = values.findIndex((value: int): boolean => {
-          return value >= 10;
+        return value >= 10;
       });
       expect(result).assertEqual(0);
     });
@@ -472,7 +472,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
       }
       const values: ReadonlyArray<int> = arr;
       const result = values.findIndex((value: int): boolean => {
-          return value == 9999;
+        return value == 9999;
       });
       expect(result).assertEqual(9999);
     });
@@ -488,7 +488,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [10, 20, 30, 40, 50];
       const result = values.findIndex((value: int): boolean => {
-          return value == 50;
+        return value == 50;
       });
       expect(result).assertEqual(4);
       expect(result).assertEqual(values.length - 1);
@@ -506,7 +506,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
       const values: ReadonlyArray<int> = [1, 2, 3];
       const originalLength = values.length;
       const result = values.findIndex((value: int): boolean => {
-          return value == 2;
+        return value == 2;
       });
       expect(result).assertEqual(1);
       expect(values.length).assertEqual(originalLength);
@@ -526,7 +526,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<string> = ["a", "b", "c"];
       const result = values.findIndex((value: string): boolean => {
-          return value == "b";
+        return value == "b";
       });
       expect(result).assertEqual(1);
       expect(values[0]).assertEqual("a");
@@ -547,7 +547,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
       try {
         values.findIndex((value: int): boolean => {
           if (value == 2) {
-      throw new Error("predicate error");
+            throw new Error("predicate error");
           }
           return false;
         });
@@ -568,10 +568,10 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [10, 20, 30, 40];
       const index = values.findIndex((value: int): boolean => {
-          return value > 15;
+        return value > 15;
       });
       const element = values.find((value: int): boolean => {
-          return value > 15;
+        return value > 15;
       });
       expect(index).assertEqual(1);
       expect(element).assertEqual(20);
@@ -607,7 +607,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [0, -1, 1000000, 5];
       const result = arr.findIndex((value: int): boolean => {
-          return value < 0;
+        return value < 0;
       });
       expect(result).assertEqual(1);
     });
@@ -623,7 +623,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [0x10, 0o10, 0b10];
       const result = arr.findIndex((value: int): boolean => {
-          return value === 0b10;
+        return value === 0b10;
       });
       expect(result).assertEqual(2);
     });
@@ -639,7 +639,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<string> = ["a", "", "b"];
       const result = arr.findIndex((value: string): boolean => {
-          return value === "";
+        return value === "";
       });
       expect(result).assertEqual(1);
     });
@@ -656,7 +656,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
       const cn: string = "\u4e2d\u6587";
       const arr: ReadonlyArray<string> = ["x", cn, "y"];
       const result = arr.findIndex((value: string): boolean => {
-          return value === cn;
+        return value === cn;
       });
       expect(result).assertEqual(1);
     });
@@ -673,7 +673,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
       const zwsp: string = "\u200B";
       const arr: ReadonlyArray<string> = ["a", zwsp, "c"];
       const result = arr.findIndex((value: string): boolean => {
-          return value === zwsp;
+        return value === zwsp;
       });
       expect(result).assertEqual(1);
     });
@@ -689,7 +689,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 3, 5];
       const result = values.findIndex((value: int): boolean => {
-          return value > 10;
+        return value > 10;
       });
       expect(result).assertEqual(-1);
     });
@@ -705,7 +705,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [2, 3, 2];
       const result = values.findIndex((value: int): boolean => {
-          return value == 2;
+        return value == 2;
       });
       expect(result).assertEqual(0);
     });
@@ -721,7 +721,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<byte> = [10 as byte, 20 as byte, 30 as byte];
       const result = arr.findIndex((value, index: int): boolean => {
-          return value === 10 as byte || value === 20 as byte;
+        return value === 10 as byte || value === 20 as byte;
       });
       expect(result).assertEqual(0);
     });
@@ -737,7 +737,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<short> = [100 as short, 32767 as short];
       const result = arr.findIndex((value, index: int): boolean => {
-          return value === 100 as short || value === 32767 as short;
+        return value === 100 as short || value === 32767 as short;
       });
       expect(result).assertEqual(0);
     });
@@ -753,7 +753,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<string> = ["a", "\uD83D\uDE00", "b"];
       const result = arr.findIndex((value, index: int): boolean => {
-          return value === "a" || value === "\uD83D\uDE00";
+        return value === "a" || value === "\uD83D\uDE00";
       });
       expect(result).assertEqual(0);
     });
@@ -769,7 +769,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<string> = ["13800138000", "x"];
       const result = arr.findIndex((value, index: int): boolean => {
-          return value === "13800138000" || value === "x";
+        return value === "13800138000" || value === "x";
       });
       expect(result).assertEqual(0);
     });
@@ -788,7 +788,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
         (arr as Array<int>).push(i);
       }
       const result = arr.findIndex((value: int, index: int): boolean => {
-          return value === 99;
+        return value === 99;
       });
       expect(result).assertEqual(99);
     });
@@ -805,7 +805,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
       const mail: string = "test@example.com";
       const arr: ReadonlyArray<string> = [mail, "other"];
       const result = arr.findIndex((value: string): boolean => {
-          return value === mail;
+        return value === mail;
       });
       expect(result).assertEqual(0);
     });
@@ -821,7 +821,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<char> = [c'\u0000', c'a'];
       const result = arr.findIndex((value: char): boolean => {
-          return value === (c'\u0000');
+        return value === (c'\u0000');
       });
       expect(result).assertEqual(0);
     });
@@ -838,7 +838,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
       const hexStr: string = "0x123";
       const arr: ReadonlyArray<string> = ["0123", hexStr];
       const result = arr.findIndex((value: string): boolean => {
-          return value === hexStr;
+        return value === hexStr;
       });
       expect(result).assertEqual(1);
     });
@@ -855,7 +855,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
       const mix: string = "Test 測試";
       const arr: ReadonlyArray<string> = [mix, "en"];
       const result = arr.findIndex((value: string): boolean => {
-          return value === mix;
+        return value === mix;
       });
       expect(result).assertEqual(0);
     });
@@ -872,7 +872,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
       const nan: float = Double.toFloat(Number.NaN);
       const arr: ReadonlyArray<float> = [1.0f, nan, 2.0f];
       const result = arr.findIndex((value: float): boolean => {
-          return value !== value;
+        return Number.isNaN(value);
       });
       expect(result).assertEqual(1);
     });
@@ -888,7 +888,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [10, 20, 30];
       const result = arr.findIndex((value: int, index: int, array: ReadonlyArray<int>): boolean => {
-          return index > 0 && array[index - 1] === 10;
+        return index > 0 && array[index - 1] === 10;
       });
       expect(result).assertEqual(1);
     });
@@ -904,7 +904,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<float> = [1.0f, Double.toFloat(Number.NEGATIVE_INFINITY), 2.0f];
       const result = arr.findIndex((value: float): boolean => {
-          return value < 0.0f;
+        return value < 0.0f;
       });
       expect(result).assertEqual(1);
     });
@@ -921,7 +921,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
       const minVal: float = Double.toFloat(Number.MIN_VALUE);
       const arr: ReadonlyArray<float> = [minVal, 2.0f];
       const result = arr.findIndex((value: float): boolean => {
-          return value === minVal;
+        return value === minVal;
       });
       expect(result).assertEqual(0);
     });
@@ -937,7 +937,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<double> = [1.1, Number.NEGATIVE_INFINITY];
       const result = arr.findIndex((value: double): boolean => {
-          return value < 0.0;
+        return value < 0.0;
       });
       expect(result).assertEqual(1);
     });
@@ -953,7 +953,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<double> = [Number.MIN_VALUE, 5.0];
       const result = arr.findIndex((value: double): boolean => {
-          return value >= 0.0 && value < 1.0;
+        return value >= 0.0 && value < 1.0;
       });
       expect(result).assertEqual(0);
     });
@@ -970,7 +970,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
       const nan: double = Number.NaN;
       const arr: ReadonlyArray<double> = [1.1, nan, 2.2];
       const result = arr.findIndex((value: double): boolean => {
-          return value !== value;
+        return Number.isNaN(value);
       });
       expect(result).assertEqual(1);
     });
@@ -986,7 +986,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<float> = [1.0f, -0.0f];
       const result = arr.findIndex((value: float): boolean => {
-          return value === 0.0f;
+        return value === 0.0f;
       });
       expect(result).assertEqual(1);
     });
@@ -1003,7 +1003,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
       const target: string = "\uFFFD";
       const arr: ReadonlyArray<string> = ["a", target, "b"];
       const result = arr.findIndex((value: string): boolean => {
-          return value === target;
+        return value === target;
       });
       expect(result).assertEqual(1);
     });
@@ -1020,7 +1020,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
       const target: string = "\r\n";
       const arr: ReadonlyArray<string> = ["a", target, "b"];
       const result = arr.findIndex((value: string): boolean => {
-          return value === target;
+        return value === target;
       });
       expect(result).assertEqual(1);
     });
@@ -1036,7 +1036,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<byte> = [0 as byte, -128 as byte];
       const result = arr.findIndex((value: byte): boolean => {
-          return value === -128 as byte;
+        return value === -128 as byte;
       });
       expect(result).assertEqual(1);
     });
@@ -1052,7 +1052,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<short> = [32767 as short, 0 as short];
       const result = arr.findIndex((value: short): boolean => {
-          return value === 32767 as short;
+        return value === 32767 as short;
       });
       expect(result).assertEqual(0);
     });
@@ -1068,7 +1068,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<long> = [9223372036854775807, 0];
       const result = arr.findIndex((value: long): boolean => {
-          return value > 0;
+        return value > 0;
       });
       expect(result).assertEqual(0);
     });
@@ -1084,7 +1084,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<char> = [c'a', c'\uffff'];
       const result = arr.findIndex((value: char): boolean => {
-          return value === c'\uffff';
+        return value === c'\uffff';
       });
       expect(result).assertEqual(1);
     });
@@ -1100,7 +1100,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [5, 10, 3];
       const result = arr.findIndex((value: int, index: int, array: ReadonlyArray<int>): boolean => {
-          return index < array.length - 1 && array[index + 1] === 10;
+        return index < array.length - 1 && array[index + 1] === 10;
       });
       expect(result).assertEqual(0);
     });
@@ -1116,7 +1116,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [5, 10, 3];
       const result = arr.findIndex((value: int, index: int, array: ReadonlyArray<int>): boolean => {
-          return index > 0 && array[index - 1] === 5;
+        return index > 0 && array[index - 1] === 5;
       });
       expect(result).assertEqual(1);
     });
@@ -1134,7 +1134,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
       for (let i: int = 0; i < 1000; i++) { source.push(i); }
       const arr: ReadonlyArray<int> = source as ReadonlyArray<int>;
       const result = arr.findIndex((value: int): boolean => {
-          return value === 999;
+        return value === 999;
       });
       expect(result).assertEqual(999);
     });
@@ -1151,8 +1151,8 @@ export default function ReadonlyArrayFindIndexTest(): void {
       const arr: ReadonlyArray<int> = [1, 2];
       let same: boolean = false;
       arr.findIndex((value: int, index: int, array: ReadonlyArray<int>): boolean => {
-      same = array === arr;
-      return false;
+        same = array === arr;
+        return false;
       });
       expect(same).assertTrue();
     });
@@ -1168,7 +1168,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<float> = [Double.toFloat(Number.POSITIVE_INFINITY), 1.0f];
       const result = arr.findIndex((value: float): boolean => {
-          return value > 1.0e10f;
+        return value > 1.0e10f;
       });
       expect(result).assertEqual(0);
     });
@@ -1184,7 +1184,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [0x10, 0o10, 0b10];
       const result = arr.findIndex((value: int): boolean => {
-          return value === 0o10;
+        return value === 0o10;
       });
       expect(result).assertEqual(1);
     });
@@ -1200,7 +1200,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [2147483647, -2147483648];
       const result = arr.findIndex((value: int): boolean => {
-          return value === -2147483648;
+        return value === -2147483648;
       });
       expect(result).assertEqual(1);
     });
@@ -1216,7 +1216,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<boolean> = [true, false, true];
       const result = arr.findIndex((value: boolean): boolean => {
-          return !value;
+        return !value;
       });
       expect(result).assertEqual(1);
     });
@@ -1232,7 +1232,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<double> = [1.0, Number.POSITIVE_INFINITY];
       const result = arr.findIndex((value: double): boolean => {
-          return value > 1.0e10;
+        return value > 1.0e10;
       });
       expect(result).assertEqual(1);
     });
@@ -1248,7 +1248,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<char> = [c'a', c'\u0000'];
       const result = arr.findIndex((value: char): boolean => {
-          return value === c'\u0000';
+        return value === c'\u0000';
       });
       expect(result).assertEqual(1);
     });
@@ -1264,7 +1264,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [8, 8, 9];
       const result = arr.findIndex((value: int): boolean => {
-          return value === 8;
+        return value === 8;
       });
       expect(result).assertEqual(0);
     });
@@ -1282,7 +1282,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
       for (let i: int = 0; i < 100; i++) { source.push(i); }
       const arr: ReadonlyArray<int> = source as ReadonlyArray<int>;
       const result = arr.findIndex((value: int): boolean => {
-          return value === 77;
+        return value === 77;
       });
       expect(result).assertEqual(77);
     });
@@ -1298,7 +1298,7 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [10, 20, 30];
       const result = arr.findIndex((_value: int, index: int): boolean => {
-          return index === 2;
+        return index === 2;
       });
       expect(result).assertEqual(2);
     });
@@ -1342,13 +1342,13 @@ export default function ReadonlyArrayFindIndexTest(): void {
     it('testReadonlyArrayFindIndex078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [1, 2, 3];
       try {
-              arr.findIndex((_value: int, index: int): boolean => {
-                if (index === 1) { throw new Error("predicate error"); }
-                return false;
-              });
-              expect().assertFail();
+        arr.findIndex((_value: int, index: int): boolean => {
+          if (index === 1) { throw new Error("predicate error"); }
+          return false;
+        });
+        expect().assertFail();
       } catch (error) {
-              expect(error.name).assertEqual('Error');
+        expect(error.name).assertEqual('Error');
       }
     });
 

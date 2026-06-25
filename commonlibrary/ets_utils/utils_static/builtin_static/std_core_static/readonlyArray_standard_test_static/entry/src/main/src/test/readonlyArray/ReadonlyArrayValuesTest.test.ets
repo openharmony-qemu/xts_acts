@@ -741,7 +741,8 @@ export default function ReadonlyArrayValuesTest(): void {
       const iter = arr.values();
       iter.next();
       const second = iter.next();
-      expect(second.value !== second.value).assertTrue();
+      expect(second.value !== undefined).assertTrue();
+      expect(Number.isNaN(second.value!)).assertTrue();
     });
 
     /**
@@ -794,7 +795,7 @@ export default function ReadonlyArrayValuesTest(): void {
       let count: int = 0;
       for (const value of arr.values()) {
         if (count === 1) {
-          expect(value !== value).assertTrue();
+          expect(Number.isNaN(value)).assertTrue();
         }
         count++;
       }
@@ -1017,7 +1018,7 @@ export default function ReadonlyArrayValuesTest(): void {
         collected.push(item);
       }
       expect(collected.length).assertEqual(arr.length);
-      expect(collected[0] !== collected[0]).assertTrue();
+      expect(Number.isNaN(collected[0])).assertTrue();
       expect(collected[1]).assertEqual(0.0);
       expect(collected[2]).assertEqual(-0.0);
     });

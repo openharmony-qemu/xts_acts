@@ -37,42 +37,28 @@ export default function ReadonlyArrayFindTest002(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FIND_1160
-     * @tc.name testReadonlyArrayFind116
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FIND_0010
+     * @tc.name testReadonlyArrayFind001
      * @tc.desc Verify ReadonlyArray.find behavior: combination coverage - repeated int elements group 1 interface behavior
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayFind116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayFind001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [1, 1, 2];
       const found = arr.find((_value: int): boolean => true);
       expect(found).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FIND_1170
-     * @tc.name testReadonlyArrayFind117
-     * @tc.desc Verify ReadonlyArray.find behavior: combination coverage - int sequence 1, 2, 3 group 2 interface behavior
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testReadonlyArrayFind117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<int> = [1, 2, 3];
-      const found = arr.find((_value: int): boolean => true);
-      expect(found).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FIND_1180
-     * @tc.name testReadonlyArrayFind118
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FIND_0020
+     * @tc.name testReadonlyArrayFind002
      * @tc.desc Verify ReadonlyArray.find behavior: combination coverage - object reference values group 2 interface behavior
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayFind118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayFind002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const obj1: ReadonlyArrayFindGeneratedItem = new ReadonlyArrayFindGeneratedItem(1);
       const obj2: ReadonlyArrayFindGeneratedItem = new ReadonlyArrayFindGeneratedItem(2);
       const arr: ReadonlyArray<ReadonlyArrayFindGeneratedItem> = [obj1, obj2];
@@ -82,70 +68,71 @@ export default function ReadonlyArrayFindTest002(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FIND_1190
-     * @tc.name testReadonlyArrayFind119
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FIND_0030
+     * @tc.name testReadonlyArrayFind003
      * @tc.desc Verify ReadonlyArray.find behavior: combination coverage - string values with empty string group 3 interface behavior
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayFind119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayFind003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<string> = ["a", "b", ""];
       const found = arr.find((_value: string): boolean => true);
       expect(found).assertEqual("a");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FIND_1200
-     * @tc.name testReadonlyArrayFind120
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FIND_0040
+     * @tc.name testReadonlyArrayFind004
      * @tc.desc Verify ReadonlyArray.find behavior: combination coverage - Unicode string values group 3 interface behavior
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayFind120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayFind004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<string> = ["中文", "😀", "long-text"];
       const found = arr.find((_value: string): boolean => true);
       expect(found).assertEqual("中文");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FIND_1210
-     * @tc.name testReadonlyArrayFind121
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FIND_0050
+     * @tc.name testReadonlyArrayFind005
      * @tc.desc Verify ReadonlyArray.find behavior: combination coverage - boolean true false values group 3 interface behavior
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayFind121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayFind005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<boolean> = [true, false];
       const found = arr.find((_value: boolean): boolean => true);
       expect(found).assertEqual(true);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FIND_1220
-     * @tc.name testReadonlyArrayFind122
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FIND_0060
+     * @tc.name testReadonlyArrayFind006
      * @tc.desc Verify ReadonlyArray.find behavior: combination coverage - NaN zero and negative zero values group 3 interface behavior
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayFind122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayFind006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<double> = [Number.NaN, 0.0, -0.0];
       const found = arr.find((_value: double): boolean => true);
-      expect(found !== found).assertTrue();
+      expect(found !== undefined).assertTrue();
+      expect(Number.isNaN(found!)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FIND_1230
-     * @tc.name testReadonlyArrayFind123
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FIND_0070
+     * @tc.name testReadonlyArrayFind007
      * @tc.desc Verify ReadonlyArray.find behavior: call consistency - calling find twice consecutively yields identical result with no hidden state
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayFind123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayFind007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [10, 20, 30, 40];
       const r1 = arr.find((value: int): boolean => value > 25);
       const r2 = arr.find((value: int): boolean => value > 25);
@@ -155,14 +142,14 @@ export default function ReadonlyArrayFindTest002(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FIND_1240
-     * @tc.name testReadonlyArrayFind124
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FIND_0080
+     * @tc.name testReadonlyArrayFind008
      * @tc.desc Verify ReadonlyArray.find behavior: error path - predicate throws at middle element stops iteration immediately
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayFind124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayFind008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [1, 2, 3, 4, 5];
       let callCount: int = 0;
       try {
@@ -179,14 +166,14 @@ export default function ReadonlyArrayFindTest002(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FIND_1250
-     * @tc.name testReadonlyArrayFind125
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FIND_0090
+     * @tc.name testReadonlyArrayFind009
      * @tc.desc Verify ReadonlyArray.find behavior: empty array - predicate is never invoked
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayFind125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayFind009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [];
       let callCount: int = 0;
       const result = arr.find((_value: int): boolean => {
@@ -198,14 +185,14 @@ export default function ReadonlyArrayFindTest002(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FIND_1260
-     * @tc.name testReadonlyArrayFind126
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FIND_0100
+     * @tc.name testReadonlyArrayFind010
      * @tc.desc Verify ReadonlyArray.find behavior: readonly constraint - returned object is the same reference as the element, not a copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayFind126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayFind010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: ReadonlyArrayFindGeneratedItem = new ReadonlyArrayFindGeneratedItem(1);
       const b: ReadonlyArrayFindGeneratedItem = new ReadonlyArrayFindGeneratedItem(2);
       const arr: ReadonlyArray<ReadonlyArrayFindGeneratedItem> = [a, b];
@@ -215,14 +202,14 @@ export default function ReadonlyArrayFindTest002(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FIND_1270
-     * @tc.name testReadonlyArrayFind127
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FIND_0110
+     * @tc.name testReadonlyArrayFind011
      * @tc.desc Verify ReadonlyArray.find behavior: predicate uses closure variable as threshold
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayFind127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayFind011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [5, 10, 15, 20];
       const threshold: int = 12;
       const result = arr.find((value: int): boolean => value > threshold);
@@ -230,14 +217,14 @@ export default function ReadonlyArrayFindTest002(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FIND_1280
-     * @tc.name testReadonlyArrayFind128
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FIND_0120
+     * @tc.name testReadonlyArrayFind012
      * @tc.desc Verify ReadonlyArray.find behavior: predicate's third obj parameter supports indexing - obj[index] equals value during iteration
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayFind128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayFind012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [7, 8, 9];
       let allMatch: boolean = true;
       arr.find((value: int, index: int, obj: ReadonlyArray<int>): boolean => {
@@ -248,14 +235,14 @@ export default function ReadonlyArrayFindTest002(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FIND_1290
-     * @tc.name testReadonlyArrayFind129
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FIND_0130
+     * @tc.name testReadonlyArrayFind013
      * @tc.desc Verify ReadonlyArray.find behavior: nested array element - returned inner Array reference is the same object as the array element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayFind129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayFind013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const inner1: Array<int> = [1];
       const inner2: Array<int> = [2, 3];
       const arr: ReadonlyArray<Array<int>> = [inner1, inner2];
@@ -265,14 +252,14 @@ export default function ReadonlyArrayFindTest002(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FIND_1300
-     * @tc.name testReadonlyArrayFind130
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FIND_0140
+     * @tc.name testReadonlyArrayFind014
      * @tc.desc Verify ReadonlyArray.find behavior: short-circuit - only last element matches, predicate runs exactly length times
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayFind130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayFind014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [1, 2, 3, 4, 5];
       let callCount: int = 0;
       const result = arr.find((value: int): boolean => {
@@ -284,28 +271,28 @@ export default function ReadonlyArrayFindTest002(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FIND_1310
-     * @tc.name testReadonlyArrayFind131
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FIND_0150
+     * @tc.name testReadonlyArrayFind015
      * @tc.desc Verify ReadonlyArray.find behavior: special elements - ReadonlyArray of int union undefined, find undefined element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayFind131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayFind015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int | undefined> = [1, undefined, 3];
       const result = arr.find((v: int | undefined): boolean => v === undefined);
       expect(result === undefined).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FIND_1320
-     * @tc.name testReadonlyArrayFind132
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLY_ARRAY_FIND_0160
+     * @tc.name testReadonlyArrayFind016
      * @tc.desc Verify ReadonlyArray.find behavior: not found result strictly equals undefined via === comparison
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testReadonlyArrayFind132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlyArrayFind016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [1, 2, 3];
       const result = arr.find((value: int): boolean => value > 1000);
       expect(result === undefined).assertTrue();

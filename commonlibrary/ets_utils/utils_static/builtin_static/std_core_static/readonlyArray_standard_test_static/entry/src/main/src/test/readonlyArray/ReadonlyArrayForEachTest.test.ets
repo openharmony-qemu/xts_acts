@@ -52,7 +52,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const values: ReadonlyArray<int> = [1, 2, 3];
       let sum: int = 0;
       values.forEach((value: int, index: int, array: ReadonlyArray<int>): void => {
-          sum += value;
+        sum += value;
       });
       expect(sum).assertEqual(6);
     });
@@ -69,7 +69,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const values: ReadonlyArray<string> = ["a", "b", "c"];
       let result: string = "";
       values.forEach((value: string): void => {
-          result += value;
+        result += value;
       });
       expect(result).assertEqual("abc");
     });
@@ -86,7 +86,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const values: ReadonlyArray<int> = [10, 20, 30];
       let indices: Array<int> = [];
       values.forEach((value: int, index: int): void => {
-          indices.push(index);
+        indices.push(index);
       });
       expect(indices[0]).assertEqual(0);
       expect(indices[1]).assertEqual(1);
@@ -105,9 +105,9 @@ export default function ReadonlyArrayForEachTest(): void {
       const values: ReadonlyArray<int> = [5, 10, 15];
       let count: int = 0;
       values.forEach((value: int, index: int, array: ReadonlyArray<int>): void => {
-          expect(array.length).assertEqual(3);
-          expect(array[index]).assertEqual(value);
-          count++;
+        expect(array.length).assertEqual(3);
+        expect(array[index]).assertEqual(value);
+        count++;
       });
       expect(count).assertEqual(3);
     });
@@ -124,7 +124,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const values: ReadonlyArray<string> = ["hello", "world"];
       let results: Array<string> = [];
       values.forEach((value: string, index: int, array: ReadonlyArray<string>): void => {
-          results.push(value);
+        results.push(value);
       });
       expect(results[0]).assertEqual("hello");
       expect(results[1]).assertEqual("world");
@@ -142,8 +142,8 @@ export default function ReadonlyArrayForEachTest(): void {
       const values: ReadonlyArray<int> = [100, 200, 300, 400];
       let prevIndex: int = -1;
       values.forEach((value: int, index: int): void => {
-          expect(index).assertEqual(prevIndex + 1);
-          prevIndex = index;
+        expect(index).assertEqual(prevIndex + 1);
+        prevIndex = index;
       });
       expect(prevIndex).assertEqual(3);
     });
@@ -159,7 +159,7 @@ export default function ReadonlyArrayForEachTest(): void {
     it('testReadonlyArrayForEach007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3];
       values.forEach((value: int, index: int, array: ReadonlyArray<int>): void => {
-          expect(array === values).assertTrue();
+        expect(array === values).assertTrue();
       });
     });
 
@@ -190,7 +190,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const values: ReadonlyArray<int> = [1, 2, 3, 4, 5];
       let collected: Array<int> = [];
       values.forEach((value: int): void => {
-          collected.push(value);
+        collected.push(value);
       });
       expect(collected.length).assertEqual(5);
       expect(collected[0]).assertEqual(1);
@@ -209,7 +209,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const values: ReadonlyArray<int> = [];
       let called: boolean = false;
       values.forEach((value: int): void => {
-          called = true;
+        called = true;
       });
       expect(called).assertFalse();
     });
@@ -226,8 +226,8 @@ export default function ReadonlyArrayForEachTest(): void {
       const values: ReadonlyArray<int> = [42];
       let count: int = 0;
       values.forEach((value: int): void => {
-          count++;
-          expect(value).assertEqual(42);
+        count++;
+        expect(value).assertEqual(42);
       });
       expect(count).assertEqual(1);
     });
@@ -244,7 +244,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const values: ReadonlyArray<int> = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
       let count: int = 0;
       values.forEach((value: int): void => {
-          count++;
+        count++;
       });
       expect(count).assertEqual(10);
     });
@@ -261,7 +261,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const values: ReadonlyArray<string> = ["a", "b", "c", "d"];
       let result: string = "";
       values.forEach((value: string): void => {
-          result += value;
+        result += value;
       });
       expect(result).assertEqual("abcd");
     });
@@ -278,7 +278,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const values: ReadonlyArray<string> = ["hello", "world"];
       let result: string = "";
       values.forEach((value: string): void => {
-          result += value + " ";
+        result += value + " ";
       });
       expect(result).assertEqual("hello world ");
     });
@@ -295,7 +295,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const values: ReadonlyArray<double> = [1.1, 2.2, 3.3];
       let sum: double = 0.0;
       values.forEach((value: double): void => {
-          sum += value;
+        sum += value;
       });
       expect(Math.abs(sum - 6.6) < 0.001).assertTrue();
     });
@@ -311,7 +311,6 @@ export default function ReadonlyArrayForEachTest(): void {
     it('testReadonlyArrayForEach016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3];
       let result: void = values.forEach((value: int): void => {
-
       });
       expect(result).assertEqual(undefined);
     });
@@ -348,7 +347,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const values: ReadonlyArray<int> = [10, 20, 30, 40, 50];
       let collected: Array<int> = [];
       values.forEach((value: int): void => {
-          collected.push(value);
+        collected.push(value);
       });
       for (let i = 0; i < values.length; i++) {
           expect(collected[i]).assertEqual(values[i]);
@@ -367,8 +366,8 @@ export default function ReadonlyArrayForEachTest(): void {
       const values: ReadonlyArray<int> = [1, 2, 3];
       let count: int = 0;
       const result = values.forEach((value: int): void => {
-          count++;
-          expect(value).assertEqual(values[count - 1]);
+        count++;
+        expect(value).assertEqual(values[count - 1]);
       });
       expect(result).assertEqual(undefined);
       expect(count).assertEqual(3);
@@ -390,7 +389,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const values: ReadonlyArray<int> = arr;
       let count: int = 0;
       values.forEach((value: int): void => {
-          count++;
+        count++;
       });
       expect(count).assertEqual(1000);
     });
@@ -407,7 +406,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const values: ReadonlyArray<int> = [1, 2, 3, 4, 5];
       let forEachResult: Array<int> = [];
       values.forEach((value: int): void => {
-          forEachResult.push(value);
+        forEachResult.push(value);
       });
       let forOfResult: Array<int> = [];
       for (const item of values) {
@@ -448,13 +447,13 @@ export default function ReadonlyArrayForEachTest(): void {
       const values: ReadonlyArray<int> = [1, 2, 3, 4, 5];
       let count: int = 0;
       try {
-          values.forEach((value: int): void => {
-              count++;
-              if (value === 3) {
-                  throw new Error("stop");
-              }
-          });
-          expect().assertFail();
+        values.forEach((value: int): void => {
+          count++;
+          if (value === 3) {
+            throw new Error("stop");
+          }
+        });
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('Error');
         expect(count).assertEqual(3);
@@ -472,7 +471,6 @@ export default function ReadonlyArrayForEachTest(): void {
     it('testReadonlyArrayForEach024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3];
       const forEachResult = values.forEach((value: int): void => {
-
       });
       expect(forEachResult).assertEqual(undefined);
     });
@@ -489,7 +487,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const values: ReadonlyArray<int> = [10, 20, 30, 40, 50];
       let callCount: int = 0;
       values.forEach((value: int, index: int, array: ReadonlyArray<int>): void => {
-          callCount++;
+        callCount++;
       });
       expect(callCount).assertEqual(values.length);
     });
@@ -506,7 +504,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const values: ReadonlyArray<int> = [1, 2, 3];
       const collected: Array<int> = [];
       values.forEach((value: int, index: int, array: ReadonlyArray<int>): void => {
-          collected.push(value);
+        collected.push(value);
       });
       expect(collected.length).assertEqual(3);
       expect(collected[0]).assertEqual(1);
@@ -526,7 +524,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const arr: ReadonlyArray<boolean> = [true, false, true];
       const collected: Array<boolean> = [];
       arr.forEach((value: boolean): void => {
-          collected.push(value);
+        collected.push(value);
       });
       expect(collected.length).assertEqual(3);
       expect(collected[0]).assertTrue();
@@ -546,7 +544,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const arr: ReadonlyArray<int> = [0x10, 0o10, 0b10];
       const collected: Array<int> = [];
       arr.forEach((value: int): void => {
-          collected.push(value);
+        collected.push(value);
       });
       expect(collected.length).assertEqual(3);
       expect(collected[0]).assertEqual(0x10);
@@ -581,7 +579,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const arr: ReadonlyArray<byte> = [10 as byte, 20 as byte, 30 as byte];
       let count: int = 0;
       arr.forEach((_value: byte): void => {
-          count++;
+        count++;
       });
       expect(count).assertEqual(3);
     });
@@ -598,7 +596,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const arr: ReadonlyArray<short> = [100 as short, 200 as short];
       let count: int = 0;
       arr.forEach((_value: short): void => {
-          count++;
+        count++;
       });
       expect(count).assertEqual(2);
     });
@@ -615,7 +613,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const arr: ReadonlyArray<long> = [0, 100, 200];
       let count: int = 0;
       arr.forEach((_value: long): void => {
-          count++;
+        count++;
       });
       expect(count).assertEqual(3);
     });
@@ -632,7 +630,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const arr: ReadonlyArray<float> = [0.0f, 3.14f, -1.0f];
       let count: int = 0;
       arr.forEach((_value: float): void => {
-          count++;
+        count++;
       });
       expect(count).assertEqual(3);
     });
@@ -649,7 +647,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const arr: ReadonlyArray<char> = [c'a', c'b'];
       let count: int = 0;
       arr.forEach((_value: char): void => {
-          count++;
+        count++;
       });
       expect(count).assertEqual(2);
     });
@@ -666,7 +664,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const arr: ReadonlyArray<string> = ["a", "\uD83D\uDE00"];
       let count: int = 0;
       arr.forEach((_value: string): void => {
-          count++;
+        count++;
       });
       expect(count).assertEqual(2);
     });
@@ -683,7 +681,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const arr: ReadonlyArray<boolean> = [true, false, true];
       let count: int = 0;
       arr.forEach((_value: boolean): void => {
-          count++;
+        count++;
       });
       expect(count).assertEqual(3);
     });
@@ -701,7 +699,7 @@ export default function ReadonlyArrayForEachTest(): void {
       for (let i: int = 0; i < 100; i++) { (arr as Array<int>).push(i); }
       let count: int = 0;
       arr.forEach((_value: int): void => {
-          count++;
+        count++;
       });
       expect(count).assertEqual(100);
     });
@@ -718,7 +716,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const arr: ReadonlyArray<string> = ["테스트", "en"];
       let count: int = 0;
       arr.forEach((_value: string): void => {
-          count++;
+        count++;
       });
       expect(count).assertEqual(arr.length);
     });
@@ -735,7 +733,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const arr: ReadonlyArray<string> = ["الاختبار", "en"];
       let count: int = 0;
       arr.forEach((_value: string): void => {
-          count++;
+        count++;
       });
       expect(count).assertEqual(arr.length);
     });
@@ -752,7 +750,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const arr: ReadonlyArray<int> = [2147483647, -2147483648];
       let count: int = 0;
       arr.forEach((_value: int): void => {
-          count++;
+        count++;
       });
       expect(count).assertEqual(arr.length);
     });
@@ -769,7 +767,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const arr: ReadonlyArray<int> = [5, 5, 5];
       let count: int = 0;
       arr.forEach((_value: int): void => {
-          count++;
+        count++;
       });
       expect(count).assertEqual(arr.length);
     });
@@ -786,7 +784,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const arr: ReadonlyArray<long> = [9223372036854775807, 0];
       let count: int = 0;
       arr.forEach((_value: long): void => {
-          count++;
+        count++;
       });
       expect(count).assertEqual(arr.length);
     });
@@ -803,7 +801,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const arr: ReadonlyArray<float> = [Double.toFloat(Number.POSITIVE_INFINITY), 1.0f];
       let count: int = 0;
       arr.forEach((_value: float): void => {
-          count++;
+        count++;
       });
       expect(count).assertEqual(arr.length);
     });
@@ -820,7 +818,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const arr: ReadonlyArray<byte> = [-128 as byte, 127 as byte];
       let count: int = 0;
       arr.forEach((_value: byte): void => {
-          count++;
+        count++;
       });
       expect(count).assertEqual(arr.length);
     });
@@ -837,7 +835,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const arr: ReadonlyArray<short> = [-32768 as short, 32767 as short];
       let count: int = 0;
       arr.forEach((_value: short): void => {
-          count++;
+        count++;
       });
       expect(count).assertEqual(arr.length);
     });
@@ -854,7 +852,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const arr: ReadonlyArray<char> = [c'\uffff', c'a'];
       let count: int = 0;
       arr.forEach((_value: char): void => {
-          count++;
+        count++;
       });
       expect(count).assertEqual(arr.length);
     });
@@ -871,7 +869,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const arr: ReadonlyArray<float> = [-0.0f, 1.0f];
       let count: int = 0;
       arr.forEach((_value: float): void => {
-          count++;
+        count++;
       });
       expect(count).assertEqual(arr.length);
     });
@@ -888,7 +886,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const arr: ReadonlyArray<int> = [10, 20, 30];
       const collected: Array<int> = [];
       arr.forEach((value: int): void => {
-          collected.push(value);
+        collected.push(value);
       });
       expect(collected.length).assertEqual(3);
     });
@@ -905,7 +903,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const arr: ReadonlyArray<int> = [];
       let count: int = 0;
       arr.forEach((_value: int): void => {
-          count++;
+        count++;
       });
       expect(count).assertEqual(0);
     });
@@ -923,7 +921,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const arr: ReadonlyArray<float> = [1.0f, nan, 2.0f];
       let count: int = 0;
       arr.forEach((value: float): void => {
-        if (value !== value) {
+        if (Number.isNaN(value)) {
           count++;
         }
       });
@@ -1020,7 +1018,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const arr: ReadonlyArray<double> = [1.1, nan];
       let count: int = 0;
       arr.forEach((value: double): void => {
-          if (value !== value) {
+          if (Number.isNaN(value)) {
               count++;
           }
       });
@@ -1079,7 +1077,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const arr: ReadonlyArray<string> = [crlf];
       let len: int = 0;
       arr.forEach((value: string): void => {
-          len = value.length;
+        len = value.length;
       });
       expect(len).assertEqual(2);
     });
@@ -1137,7 +1135,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const arr: ReadonlyArray<string> = [garbled];
       let len: int = 0;
       arr.forEach((value: string): void => {
-          len = value.length;
+        len = value.length;
       });
       expect(len).assertEqual(garbled.length);
     });
@@ -1154,7 +1152,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const arr: ReadonlyArray<byte> = [-128 as byte, 127 as byte];
       let sum: int = 0;
       arr.forEach((value: byte): void => {
-          sum += value;
+        sum += value;
       });
       expect(sum).assertEqual(-1);
     });
@@ -1192,7 +1190,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const arr: ReadonlyArray<int> = source as ReadonlyArray<int>;
       let count: int = 0;
       arr.forEach((_value: int): void => {
-          count++;
+        count++;
       });
       expect(count).assertEqual(1000);
     });
@@ -1209,7 +1207,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const arr: ReadonlyArray<int> = [1, 2];
       let same: boolean = false;
       arr.forEach((value: int, index: int, array: ReadonlyArray<int>): void => {
-          same = array === arr;
+        same = array === arr;
       });
       expect(same).assertTrue();
     });
@@ -1245,7 +1243,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const arr: ReadonlyArray<int> = [0x10, 0o10, 0b10];
       let sum: int = 0;
       arr.forEach((value: int): void => {
-          sum += value;
+        sum += value;
       });
       expect(sum).assertEqual(0x10 + 0o10 + 0b10);
     });
@@ -1281,7 +1279,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const arr: ReadonlyArray<int> = [10, 20, 30];
       let sumIdx: int = 0;
       arr.forEach((value: int, index: int): void => {
-          sumIdx += index;
+        sumIdx += index;
       });
       expect(sumIdx).assertEqual(3);
     });
@@ -1456,7 +1454,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const arr: ReadonlyArray<int> = [6, 6, 6];
       let sum: int = 0;
       arr.forEach((value: int): void => {
-          sum += value;
+        sum += value;
       });
       expect(sum).assertEqual(18);
     });
@@ -1475,7 +1473,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const arr: ReadonlyArray<int> = source as ReadonlyArray<int>;
       let count: int = 0;
       arr.forEach((_value: int): void => {
-          count++;
+        count++;
       });
       expect(count).assertEqual(100);
     });
@@ -1492,7 +1490,7 @@ export default function ReadonlyArrayForEachTest(): void {
       const arr: ReadonlyArray<int> = [1, 2, 3];
       let sum: int = 0;
       arr.forEach((_value: int, index: int): void => {
-          sum += index;
+        sum += index;
       });
       expect(sum).assertEqual(3);
     });
@@ -1511,12 +1509,12 @@ export default function ReadonlyArrayForEachTest(): void {
     it('testReadonlyArrayForEach081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [1, 2, 3];
       try {
-              arr.forEach((_value: int, index: int): void => {
-                if (index === 1) { throw new Error("predicate error"); }
-              });
-              expect().assertFail();
+        arr.forEach((_value: int, index: int): void => {
+          if (index === 1) { throw new Error("predicate error"); }
+        });
+        expect().assertFail();
       } catch (error) {
-              expect(error.name).assertEqual('Error');
+        expect(error.name).assertEqual('Error');
       }
     });
 

@@ -51,7 +51,7 @@ export default function ReadonlyArrayReduceRightTest(): void {
     it('testReadonlyArrayReduceRight001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3];
       const result = values.reduceRight((previous: int, current: int): int => {
-          return previous + current;
+        return previous + current;
       });
       expect(result).assertEqual(6);
     });
@@ -83,7 +83,7 @@ export default function ReadonlyArrayReduceRightTest(): void {
     it('testReadonlyArrayReduceRight003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3];
       const result = values.reduceRight((previous: int, current: int): int => {
-          return previous - current;
+        return previous - current;
       });
       expect(result).assertEqual(0);
     });
@@ -243,7 +243,7 @@ export default function ReadonlyArrayReduceRightTest(): void {
     it('testReadonlyArrayReduceRight012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3, 4];
       const result = values.reduceRight((previous: int, current: int): int => {
-          return previous - current;
+        return previous - current;
       });
       expect(result).assertEqual(((4 - 3) - 2) - 1);
     });
@@ -295,7 +295,7 @@ export default function ReadonlyArrayReduceRightTest(): void {
     it('testReadonlyArrayReduceRight015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [99];
       const result = values.reduceRight((previous: int, current: int): int => {
-          return previous + current;
+        return previous + current;
       });
       expect(result).assertEqual(99);
     });
@@ -327,7 +327,7 @@ export default function ReadonlyArrayReduceRightTest(): void {
     it('testReadonlyArrayReduceRight017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3, 4];
       const result = values.reduceRight((previous: int, current: int): int => {
-          return previous - current;
+        return previous - current;
       });
       expect(result).assertEqual(-2);
     });
@@ -359,10 +359,10 @@ export default function ReadonlyArrayReduceRightTest(): void {
     it('testReadonlyArrayReduceRight019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [1, 2, 3];
       const reduceRightResult = values.reduceRight((previous: int, current: int): int => {
-          return previous - current;
+        return previous - current;
       });
       const reduceResult = values.reduce((previous: int, current: int): int => {
-          return previous - current;
+        return previous - current;
       });
       expect(reduceRightResult).assertEqual(0);
       expect(reduceResult).assertEqual(-4);
@@ -380,7 +380,7 @@ export default function ReadonlyArrayReduceRightTest(): void {
       const values: ReadonlyArray<int> = [];
       try {
         values.reduceRight((previous: int, current: int): int => {
-      return previous + current;
+          return previous + current;
         });
         expect().assertFail();
       } catch (error) {
@@ -504,7 +504,7 @@ export default function ReadonlyArrayReduceRightTest(): void {
       try {
         values.reduceRight((previous: int, current: int): int => {
           if (current === 2) {
-      throw new Error("Test error in callback");
+            throw new Error("Test error in callback");
           }
           return previous + current;
         }, 0);
@@ -549,10 +549,10 @@ export default function ReadonlyArrayReduceRightTest(): void {
     it('testReadonlyArrayReduceRight029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: ReadonlyArray<int> = [2, 3, 4];
       const reduceRightResult = values.reduceRight((previous: int, current: int): int => {
-          return previous - current;
+        return previous - current;
       });
       const reduceResult = values.reduce((previous: int, current: int): int => {
-          return previous - current;
+        return previous - current;
       });
       expect(reduceRightResult).assertEqual(-1);
       expect(reduceResult).assertEqual(-5);
@@ -895,7 +895,7 @@ export default function ReadonlyArrayReduceRightTest(): void {
     it('testReadonlyArrayReduceRight050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [10, 20, 30];
       const result = arr.reduceRight((p: int, c: int): int => {
-          return p + c;
+        return p + c;
       });
       expect(result).assertEqual(60);
     });
@@ -960,9 +960,9 @@ export default function ReadonlyArrayReduceRightTest(): void {
       const nan: float = Double.toFloat(Number.NaN);
       const arr: ReadonlyArray<float> = [nan];
       const result = arr.reduceRight((prev: float, cur: float): float => {
-          return prev + cur;
+        return prev + cur;
       });
-      expect(result !== result).assertTrue();
+      expect(Number.isNaN(result)).assertTrue();
     });
 
     /**
@@ -979,7 +979,7 @@ export default function ReadonlyArrayReduceRightTest(): void {
       const result = arr.reduceRight((prev: float, cur: float, index: int, array: ReadonlyArray<float>): float => {
           return prev + cur;
       }, nanF);
-      expect(result !== result).assertTrue();
+      expect(Number.isNaN(result)).assertTrue();
     });
 
     /**
@@ -1008,7 +1008,7 @@ export default function ReadonlyArrayReduceRightTest(): void {
       const nan: float = Double.toFloat(Number.NaN);
       const arr: ReadonlyArray<float> = [nan];
       const result = arr.reduceRight((prev: float, cur: float): float => prev + cur);
-      expect(result !== result).assertTrue();
+      expect(Number.isNaN(result)).assertTrue();
     });
 
     /**
@@ -1024,7 +1024,7 @@ export default function ReadonlyArrayReduceRightTest(): void {
       const arr: ReadonlyArray<float> = [1.0f, 2.0f];
       const nanF: float = Double.toFloat(Number.NaN);
       const result = arr.reduceRight((prev: float, cur: float, index: int, array: ReadonlyArray<float>): float => prev + cur, nanF);
-      expect(result !== result).assertTrue();
+      expect(Number.isNaN(result)).assertTrue();
     });
 
 
@@ -1048,10 +1048,10 @@ export default function ReadonlyArrayReduceRightTest(): void {
     it('testReadonlyArrayReduceRight059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ReadonlyArray<int> = [];
       try {
-              arr.reduceRight((prev: int, cur: int): int => prev + cur);
-              expect().assertFail();
+        arr.reduceRight((prev: int, cur: int): int => prev + cur);
+        expect().assertFail();
       } catch (error) {
-              expect(error.name).assertEqual('TypeError');
+        expect(error.name).assertEqual('TypeError');
       }
     });
 
