@@ -379,8 +379,6 @@ export default function TupleUnsafeGetTest(): void {
       expect(caught).assertTrue();
     });
 
-
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_UNSAFE_GET_2400
      * @tc.name testTupleUnsafeGet024
@@ -571,7 +569,6 @@ export default function TupleUnsafeGetTest(): void {
       expect(tuple.unsafeGet(5) as boolean).assertFalse();
       expect(tuple.unsafeGet(9) as string).assertEqual("emoji馃檪");
     });
-
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_UNSAFE_GET_3400

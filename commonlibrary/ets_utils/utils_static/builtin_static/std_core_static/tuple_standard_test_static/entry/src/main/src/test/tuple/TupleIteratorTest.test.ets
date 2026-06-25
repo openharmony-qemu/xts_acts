@@ -335,9 +335,6 @@ export default function TupleIteratorTest(): void {
       expect(nested.$1).assertEqual("inner");
     });
 
-
-
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_1700
      * @tc.name testTupleIterator017

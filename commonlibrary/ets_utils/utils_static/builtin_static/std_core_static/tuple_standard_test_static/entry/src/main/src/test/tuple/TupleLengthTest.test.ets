@@ -81,8 +81,6 @@ export default function TupleLengthTest(): void {
       expect(t1.length).assertEqual(1);
     });
 
-
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_LENGTH_0500
      * @tc.name testTupleLength005
@@ -264,8 +262,6 @@ export default function TupleLengthTest(): void {
       expect(len.toString()).assertEqual("2");
     });
 
-
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_LENGTH_1800
      * @tc.name testTupleLength018
@@ -434,7 +430,6 @@ export default function TupleLengthTest(): void {
       expect(tuple.$2.length).assertEqual(3);
     });
 
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_LENGTH_2800
      * @tc.name testTupleLength028
@@ -455,10 +450,6 @@ export default function TupleLengthTest(): void {
       expect(count).assertEqual(6);
       expect(after).assertEqual(before);
     });
-
-
-
-
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_LENGTH_2900
@@ -835,7 +826,6 @@ export default function TupleLengthTest(): void {
       expect(branch).assertEqual("empty");
     });
 
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_LENGTH_5200
      * @tc.name testTupleLength052
@@ -905,8 +895,6 @@ export default function TupleLengthTest(): void {
       expect(total).assertEqual(55);
     });
 
-
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_LENGTH_5500
      * @tc.name testTupleLength055
@@ -955,8 +943,6 @@ export default function TupleLengthTest(): void {
       expect(after).assertEqual(before);
       expect(sum).assertEqual(150);
     });
-
-
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_LENGTH_5800

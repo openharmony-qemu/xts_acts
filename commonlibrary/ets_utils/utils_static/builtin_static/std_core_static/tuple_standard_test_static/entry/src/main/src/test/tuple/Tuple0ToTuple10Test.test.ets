@@ -464,12 +464,6 @@ export default function Tuple0ToTuple10Test(): void {
       expect(t.$0).assertEqual(undefined);
     });
 
-
-
-
-
-
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_0320
      * @tc.name testTuple0ToTuple10032
