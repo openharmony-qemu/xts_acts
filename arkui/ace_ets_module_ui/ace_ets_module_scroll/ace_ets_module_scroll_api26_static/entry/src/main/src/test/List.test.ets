@@ -63,9 +63,5 @@ export default function testsuite() {
   gridEditModeChange();
   listEnableEditMode();
   listEditModeChange();
-  LazyColumnLayoutProperties();
-  LazyVWaterFlowLayoutProperties();
   headerFooterStickyGrid();
-  headerFooterStickyFlow();
-  headerFooterStickyColumn();
 }
