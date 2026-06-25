@@ -125,7 +125,7 @@ export default function gridEditModeOptions() {
     it('gridEditModeOptions_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[gridEditModeOptions_static_0300] START');
       await CommonFunc.sleep(500);
-      let strJson = inspector.getInspectorByKey('grid_useDefaultMultiSelectStyle_undefined');
+      let strJson = inspector.getInspectorByKey('grid_editModeOptions_undefined');
       let obj = JSON.parseJsonElement(strJson);
       let content = obj.getElement('$attrs').getElement('editModeOptions');
       console.log('[gridEditModeOptions_static_0300] editModeOptions: '+ content)

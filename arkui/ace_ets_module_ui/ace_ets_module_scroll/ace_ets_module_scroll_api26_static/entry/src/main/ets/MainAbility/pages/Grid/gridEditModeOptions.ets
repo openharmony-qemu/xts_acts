@@ -138,15 +138,15 @@ struct GridEditModeOptions {
           })
         }, (idx: int) => idx.toString())
       }
-      .id('grid_editModeOptions_parameter_undefined')
+      .id('grid_editModeOptions_undefined')
       .columnsTemplate('1fr 1fr 1fr')
       .columnsGap(5)
       .rowsGap(5)
       .enableEditMode(true)
       .editModeOptions({
-        useDefaultMultiSelectStyle: true,
-        enableGatherSelectedItemsAnimation: true,
-        enableTwoFingerMultiSelect: true,
+        useDefaultMultiSelectStyle: undefined,
+        enableGatherSelectedItemsAnimation: undefined,
+        enableTwoFingerMultiSelect: undefined,
         onGetPreviewBadge: () => {
           console.log('numberBadge: '+ this.numberBadge)
           return this.numberBadge;
