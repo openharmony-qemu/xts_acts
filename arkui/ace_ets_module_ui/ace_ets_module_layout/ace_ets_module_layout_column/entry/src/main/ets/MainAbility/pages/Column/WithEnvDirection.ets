@@ -79,13 +79,33 @@ struct WithEnvDirection {
 
       WithEnv(){
         Row({space:3}){
-          Text('01').width(60).backgroundColor(0xF5DEB3).id('WithEnvDirectionText1')
-          Text('02').width(60).backgroundColor(0xD2B48C).id('WithEnvDirectionText2')
+          Text('01').width(60).backgroundColor(0xF5DEB3).id('WithEnvDirectionText1').height(15)
+          Text('02').width(60).backgroundColor(0xD2B48C).id('WithEnvDirectionText2').height(15)
         }
         .padding(5)
         .backgroundColor('#77000000')
       }
       .env(WritableEnvKey.DIRECTION,this.dirProvider)
+      WithEnv(){
+        Row({space:3}){
+          Text('01').width(60).backgroundColor(0xF5DEB3).id('WithEnvDirectionText1').height(15)
+          Text('02').width(60).backgroundColor(0xD2B48C).id('WithEnvDirectionText2').height(15)
+        }
+        .padding(5)
+        .backgroundColor('#77000000')
+      }
+      .customEnv(null,null)
+      .env(null,null)
+      WithEnv(){
+        Row({space:3}){
+          Text('01').width(60).backgroundColor(0xF5DEB3).id('WithEnvDirectionText1').height(15)
+          Text('02').width(60).backgroundColor(0xD2B48C).id('WithEnvDirectionText2').height(15)
+        }
+        .padding(5)
+        .backgroundColor('#77000000')
+      }
+      .customEnv(undefined,undefined)
+      .env(undefined,undefined)
     }
     .height('100%')
     .width('100%')
