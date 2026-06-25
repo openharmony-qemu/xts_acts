@@ -84,7 +84,10 @@ struct ChipGroupV2AbnormalCombo {
         ChipGroupV2({
           items: this.defaultItems(),
           selectedIndexes: this.selectedIndex,
-          itemStyle: new ChipGroupV2ItemStyle({ backgroundSystemMaterial: undefined, selectedBackgroundSystemMaterial: undefined }),
+          itemStyle: new ChipGroupV2ItemStyle({
+            backgroundSystemMaterial: undefined,
+            selectedBackgroundSystemMaterial: undefined,
+          }),
         }).id('abn_cmbG6_u')
       }
       .width('100%')

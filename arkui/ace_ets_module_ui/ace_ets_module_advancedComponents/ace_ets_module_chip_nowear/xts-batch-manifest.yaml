@@ -5,10 +5,10 @@ sdk:
 docs:
   - title: ChipV2
     path: "/root/aiSkill/docs/zh-cn/application-dev/reference/apis-arkui/arkui-ts/ohos-arkui-advanced-ChipV2.md"
-    url: "https://gitcode.com/openharmony/docs/blob/master/zh-cn/application-dev/reference/apis-arkui/arkui-ts/ohos-arkui-advanced-ChipV2.md"
+    url: "https://gitcode.com/openharmony/docs/blob/main/zh-cn/application-dev/reference/apis-arkui/arkui-ts/ohos-arkui-advanced-ChipV2.md"
   - title: ChipGroupV2
     path: "/root/aiSkill/docs/zh-cn/application-dev/reference/apis-arkui/arkui-ts/ohos-arkui-advanced-ChipGroupV2.md"
-    url: "https://gitcode.com/openharmony/docs/blob/master/zh-cn/application-dev/reference/apis-arkui/arkui-ts/ohos-arkui-advanced-ChipGroupV2.md"
+    url: "https://gitcode.com/openharmony/docs/blob/main/zh-cn/application-dev/reference/apis-arkui/arkui-ts/ohos-arkui-advanced-ChipGroupV2.md"
 project:
   repo: "/root/aiSkill/develop/xts_acts_0622"
   module: "arkui/ace_ets_module_ui/ace_ets_module_advancedComponents/ace_ets_module_chip_nowear"
