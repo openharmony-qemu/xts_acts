@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import partnerAgent from '@ohos.FusionConnectivity.partnerAgent';
+import ranging from '@ohos.FusionConnectivity.ranging';
 import common from '@ohos.bluetooth.common';
 const PERMISSION_DENIED_CODE = 201
 let btAddr: common.BluetoothAddress = {
