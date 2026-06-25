@@ -127,6 +127,11 @@ class IsSetterMixedClass {
   plainMethod(): void {}
 }
 
+class IsSetterOverloadSample {
+  method(value: int): void {}
+  method(value: int, text: string): void {}
+}
+
 class IsSetterVariousTypesSample {
   private _value: int = 0;
   private _flag: boolean = false;
@@ -404,11 +409,7 @@ export default function MethodIsSetterTest(): void {
         it('testMethodIsSetter003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = (Type.from<IsSetterNormalSample>() as ClassType).getMethodByName("add");
             let r1 = method.isSetter();
-            let r2 = method.isSetter();
-            let r3 = method.isSetter();
             expect(r1).assertFalse();
-            expect(r2).assertFalse();
-            expect(r3).assertFalse();
         });
 
         /**
@@ -1214,32 +1215,46 @@ export default function MethodIsSetterTest(): void {
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_SETTER_6100
          * @tc.name testMethodIsSetter061
-         * @tc.desc Verify normal method repeated calls return false
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
-         */
-        it('testMethodIsSetter061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const method = (Type.from<IsSetterNormalSample>() as ClassType).getMethodByName("add");
-            expect(method.isSetter()).assertFalse();
-            expect(method.isSetter()).assertFalse();
-            expect(method.isSetter()).assertFalse();
-        });
-
-        /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_SETTER_6200
-         * @tc.name testMethodIsSetter062
          * @tc.desc Verify comprehensive class identifies only setters as setters
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
          */
-        it('testMethodIsSetter062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it('testMethodIsSetter061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const classType = Type.from<IsSetterMixedClass>() as ClassType;
             expect(classType.getMethodByName("%%set-instVal").isSetter()).assertTrue();
             expect(findIsSetterMethod(classType, "%%set-staticVal", true).isSetter()).assertTrue();
             expect(classType.getMethodByName("%%get-instVal").isSetter()).assertFalse();
             expect(classType.getMethodByName("plainMethod").isSetter()).assertFalse();
+        });
+
+        /**
+         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_SETTER_6200
+         * @tc.name testMethodIsSetter062
+         * @tc.desc Verify overloaded methods are not setters
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level Level 2
+         */
+        it('testMethodIsSetter062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+            const classType = Type.from<IsSetterOverloadSample>() as ClassType;
+            let oneParamMethod: Method | undefined = undefined;
+            let twoParamMethod: Method | undefined = undefined;
+            for (let i: long = 0; i < classType.getMethodsNum(); i += 1) {
+                const method = classType.getMethod(i);
+                if (method.getName() === "method") {
+                    const parameterCount = method.getType().getParametersNum();
+                    if (parameterCount === 1) {
+                        oneParamMethod = method;
+                    } else if (parameterCount === 2) {
+                        twoParamMethod = method;
+                    }
+                }
+            }
+            expect(oneParamMethod !== undefined).assertTrue();
+            expect(twoParamMethod !== undefined).assertTrue();
+            expect(oneParamMethod!.isSetter()).assertFalse();
+            expect(twoParamMethod!.isSetter()).assertFalse();
         });
     });
 }

@@ -61,6 +61,11 @@ class IsAbstractChildB extends IsAbstractBase {
     process(): void {}
 }
 
+class IsAbstractOverloadSample {
+    method(value: int): void {}
+    method(value: int, text: string): void {}
+}
+
 class IsAbstractConstructorSample {
     value: int = 0;
     constructor() {}
@@ -814,6 +819,35 @@ export default function MethodIsAbstractTest(): void {
             const method = findIsAbstractMethod(Type.from<IsAbstractProtectedBase>() as ClassType, "publicWork");
             expect(method.isAbstract()).assertTrue();
             expect(method.getName()).assertEqual("publicWork");
+        });
+
+        /**
+         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_ABSTRACT_4100
+         * @tc.name testMethodIsAbstract041
+         * @tc.desc Verify overloaded methods are not abstract
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level Level 2
+         */
+        it('testMethodIsAbstract041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+            const classType = Type.from<IsAbstractOverloadSample>() as ClassType;
+            let oneParamMethod: Method | undefined = undefined;
+            let twoParamMethod: Method | undefined = undefined;
+            for (let i: long = 0; i < classType.getMethodsNum(); i += 1) {
+                const method = classType.getMethod(i);
+                if (method.getName() === "method") {
+                    const parameterCount = method.getType().getParametersNum();
+                    if (parameterCount === 1) {
+                        oneParamMethod = method;
+                    } else if (parameterCount === 2) {
+                        twoParamMethod = method;
+                    }
+                }
+            }
+            expect(oneParamMethod !== undefined).assertTrue();
+            expect(twoParamMethod !== undefined).assertTrue();
+            expect(oneParamMethod!.isAbstract()).assertFalse();
+            expect(twoParamMethod!.isAbstract()).assertFalse();
         });
     });
 }

@@ -138,6 +138,11 @@ class IsGetterVariousTypesSample {
     }
 }
 
+class IsGetterOverloadSample {
+    method(value: int): void {}
+    method(value: int, text: string): void {}
+}
+
 class IsGetterObjectVoidSample {
     get obj(): Object {
         return new Object();
@@ -478,7 +483,7 @@ export default function MethodIsGetterTest(): void {
             const method = (Type.from<IsGetterNormalSample>() as ClassType).getMethodByName("add");
             let result: boolean = method.isGetter();
             expect(result).assertEqual(false);
-            expect(typeof result === "boolean").assertTrue();
+            expect(typeof result).assertEqual("boolean");
         });
 
         /**
@@ -524,7 +529,7 @@ export default function MethodIsGetterTest(): void {
         it('testMethodIsGetter006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = (Type.from<IsGetterNormalSample>() as ClassType).getMethodByName("add");
             let result: boolean = method.isGetter();
-            expect(typeof result === "boolean").assertTrue();
+            expect(typeof result).assertEqual("boolean");
         });
 
         /**
@@ -1344,6 +1349,35 @@ export default function MethodIsGetterTest(): void {
         it('testMethodIsGetter065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = (Type.from<IsGetterObjectVoidSample>() as ClassType).getMethodByName("%%get-obj");
             expect(method.isGetter()).assertTrue();
+        });
+
+        /**
+         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_GETTER_6600
+         * @tc.name testMethodIsGetter066
+         * @tc.desc Verify overloaded methods are not getters
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level Level 2
+         */
+        it('testMethodIsGetter066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+            const classType = Type.from<IsGetterOverloadSample>() as ClassType;
+            let oneParamMethod: Method | undefined = undefined;
+            let twoParamMethod: Method | undefined = undefined;
+            for (let i: long = 0; i < classType.getMethodsNum(); i += 1) {
+                const method = classType.getMethod(i);
+                if (method.getName() === "method") {
+                    const parameterCount = method.getType().getParametersNum();
+                    if (parameterCount === 1) {
+                        oneParamMethod = method;
+                    } else if (parameterCount === 2) {
+                        twoParamMethod = method;
+                    }
+                }
+            }
+            expect(oneParamMethod !== undefined).assertTrue();
+            expect(twoParamMethod !== undefined).assertTrue();
+            expect(oneParamMethod!.isGetter()).assertFalse();
+            expect(twoParamMethod!.isGetter()).assertFalse();
         });
     });
 }

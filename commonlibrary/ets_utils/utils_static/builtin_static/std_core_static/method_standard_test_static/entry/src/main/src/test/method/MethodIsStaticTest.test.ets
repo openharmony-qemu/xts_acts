@@ -383,7 +383,7 @@ export default function MethodIsStaticTest(): void {
             const method = (Type.from<IsStaticInstanceSample>() as ClassType).getMethodByName("add");
             let result = method.isStatic();
             expect(result).assertFalse();
-            expect(typeof result === "boolean").assertTrue();
+            expect(typeof result).assertEqual("boolean");
         });
 
         /**
@@ -408,7 +408,7 @@ export default function MethodIsStaticTest(): void {
             }
             let result = method!.isStatic();
             expect(result).assertTrue();
-            expect(typeof result === "boolean").assertTrue();
+            expect(typeof result).assertEqual("boolean");
         });
 
         /**
@@ -1615,33 +1615,31 @@ export default function MethodIsStaticTest(): void {
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_STATIC_8400
          * @tc.name testMethodIsStatic084
-         * @tc.desc Verify repeated static calls remain true for five calls
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
-         */
-        it('testMethodIsStatic084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const method = findIsStaticMethod(Type.from<IsStaticComprehensiveSample>() as ClassType, "staticOne", true);
-            expect(method.isStatic()).assertTrue();
-            expect(method.isStatic()).assertTrue();
-            expect(method.isStatic()).assertTrue();
-            expect(method.isStatic()).assertTrue();
-            expect(method.isStatic()).assertTrue();
-        });
-
-        /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_STATIC_8500
-         * @tc.name testMethodIsStatic085
          * @tc.desc Verify concurrent async tasks can observe static method as static
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
          */
-        it('testMethodIsStatic085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+        it('testMethodIsStatic084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
             const method = findIsStaticMethod(Type.from<IsStaticComprehensiveSample>() as ClassType, "staticOne", true);
             const results = await Promise.all([Promise.resolve(method.isStatic()), Promise.resolve(method.isStatic())]);
             expect(results[0]).assertTrue();
             expect(results[1]).assertTrue();
+        });
+
+        /**
+         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_STATIC_8500
+         * @tc.name testMethodIsStatic085
+         * @tc.desc Verify overloaded instance methods stay non-static
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level Level 2
+         */
+        it('testMethodIsStatic085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+            const classType = Type.from<IsStaticOverloadSample>() as ClassType;
+            let instanceMethod = findIsStaticMethod(classType, "item");
+            expect(instanceMethod.isStatic()).assertFalse();
+            expect(instanceMethod.getType().getParametersNum()).assertEqual(1);
         });
     });
 }

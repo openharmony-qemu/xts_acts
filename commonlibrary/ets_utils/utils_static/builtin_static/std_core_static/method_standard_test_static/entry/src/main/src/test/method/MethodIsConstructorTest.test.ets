@@ -107,6 +107,11 @@ class IsCtorMixedSample {
     static staticMethod(): void {}
 }
 
+class IsCtorMethodOverloadSample {
+    method(value: int): void {}
+    method(value: int, text: string): void {}
+}
+
 class IsCtorDefaultSample {
     value: int = 1;
 }
@@ -1331,6 +1336,35 @@ export default function MethodIsConstructorTest(): void {
             expect(findIsCtorMethod(classType, "create", true).isConstructor()).assertFalse();
             expect(classType.getMethodByName("%%get-data").isConstructor()).assertFalse();
             expect(classType.getMethodByName("%%set-data").isConstructor()).assertFalse();
+        });
+
+        /**
+         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_CONSTRUCTOR_7100
+         * @tc.name testMethodIsConstructor071
+         * @tc.desc Verify overloaded methods are not constructors
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level Level 2
+         */
+        it('testMethodIsConstructor071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+            const classType = Type.from<IsCtorMethodOverloadSample>() as ClassType;
+            let oneParamMethod: Method | undefined = undefined;
+            let twoParamMethod: Method | undefined = undefined;
+            for (let i: long = 0; i < classType.getMethodsNum(); i += 1) {
+                const method = classType.getMethod(i);
+                if (method.getName() === "method") {
+                    const parameterCount = method.getType().getParametersNum();
+                    if (parameterCount === 1) {
+                        oneParamMethod = method;
+                    } else if (parameterCount === 2) {
+                        twoParamMethod = method;
+                    }
+                }
+            }
+            expect(oneParamMethod !== undefined).assertTrue();
+            expect(twoParamMethod !== undefined).assertTrue();
+            expect(oneParamMethod!.isConstructor()).assertFalse();
+            expect(twoParamMethod!.isConstructor()).assertFalse();
         });
     });
 }

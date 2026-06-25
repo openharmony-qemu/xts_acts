@@ -250,6 +250,11 @@ class IsAsyncNormalReturnPromiseSample {
     }
 }
 
+class IsAsyncOverloadSample {
+    method(value: int): void {}
+    method(value: int, text: string): void {}
+}
+
 function findIsAsyncMethod(classType: ClassType, name: string, wantStatic?: boolean): Method {
     for (let i: long = 0; i < classType.getMethodsNum(); i += 1) {
         const method = classType.getMethod(i);
@@ -313,7 +318,7 @@ export default function MethodIsAsyncTest(): void {
         it('testMethodIsAsync003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = (Type.from<IsAsyncPromiseSample>() as ClassType).getMethodByName("getData");
             let result: boolean = method.isAsync();
-            expect(typeof result === "boolean").assertTrue();
+            expect(typeof result).assertEqual("boolean");
             expect(result).assertFalse();
         });
 
@@ -341,7 +346,7 @@ export default function MethodIsAsyncTest(): void {
         it('testMethodIsAsync005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = (Type.from<IsAsyncGetterSample>() as ClassType).getMethodByName("%%get-value");
             let result: boolean = method.isAsync();
-            expect(typeof result === "boolean").assertTrue();
+            expect(typeof result).assertEqual("boolean");
             expect(result).assertFalse();
         });
 
@@ -356,7 +361,7 @@ export default function MethodIsAsyncTest(): void {
         it('testMethodIsAsync006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = (Type.from<IsAsyncSetterSample>() as ClassType).getMethodByName("%%set-value");
             let result: boolean = method.isAsync();
-            expect(typeof result === "boolean").assertTrue();
+            expect(typeof result).assertEqual("boolean");
             expect(result).assertFalse();
         });
 
@@ -435,7 +440,7 @@ export default function MethodIsAsyncTest(): void {
         it('testMethodIsAsync011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = (Type.from<IsAsyncOverrideChild>() as ClassType).getMethodByName("doWork");
             let result: boolean = method.isAsync();
-            expect(typeof result === "boolean").assertTrue();
+            expect(typeof result).assertEqual("boolean");
             expect(result).assertTrue();
         });
 
@@ -543,6 +548,7 @@ export default function MethodIsAsyncTest(): void {
                 throw new Error("simulated error");
             } catch (e) {
                 catchCalled = e.name === 'Error' && e.message === 'simulated error'
+                expect(catchCalled).assertTrue();
             }
         });
 
@@ -858,6 +864,35 @@ export default function MethodIsAsyncTest(): void {
             const method = findIsAsyncMethod(Type.from<IsAsyncGetNameSample>() as ClassType, "fetchItem");
             expect(method.getName()).assertEqual("fetchItem");
             expect(method.isAsync()).assertTrue();
+        });
+
+        /**
+         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_ASYNC_4100
+         * @tc.name testMethodIsAsync041
+         * @tc.desc Verify overloaded methods are not async by default
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level Level 2
+         */
+        it('testMethodIsAsync041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+            const classType = Type.from<IsAsyncOverloadSample>() as ClassType;
+            let oneParamMethod: Method | undefined = undefined;
+            let twoParamMethod: Method | undefined = undefined;
+            for (let i: long = 0; i < classType.getMethodsNum(); i += 1) {
+                const method = classType.getMethod(i);
+                if (method.getName() === "method") {
+                    const parameterCount = method.getType().getParametersNum();
+                    if (parameterCount === 1) {
+                        oneParamMethod = method;
+                    } else if (parameterCount === 2) {
+                        twoParamMethod = method;
+                    }
+                }
+            }
+            expect(oneParamMethod !== undefined).assertTrue();
+            expect(twoParamMethod !== undefined).assertTrue();
+            expect(oneParamMethod!.isAsync()).assertFalse();
+            expect(twoParamMethod!.isAsync()).assertFalse();
         });
     });
 }

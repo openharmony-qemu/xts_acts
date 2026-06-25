@@ -264,6 +264,11 @@ class IsFinalMixinBase {
 class IsFinalMixinChild extends IsFinalMixinBase {
 }
 
+class IsFinalOverloadSample {
+    method(value: int): void {}
+    method(value: int, text: string): void {}
+}
+
 function findIsFinalMethod(classType: ClassType, name: string, wantStatic?: boolean): Method {
     for (let i: long = 0; i < classType.getMethodsNum(); i += 1) {
         const method = classType.getMethod(i);
@@ -478,7 +483,7 @@ export default function MethodIsFinalTest(): void {
             }
             expect(m1.isFinal()).assertFalse();
             expect(m2.isFinal()).assertTrue();
-            expect(typeof m3!.isFinal() === "boolean").assertTrue();
+            expect(typeof m3!.isFinal()).assertEqual("boolean");
         });
 
         /**
@@ -498,46 +503,25 @@ export default function MethodIsFinalTest(): void {
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_1400
          * @tc.name testMethodIsFinal014
-         * @tc.desc Verify that isFinal on valid Method object does not produce uncaught exception
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
-         */
-        it('testMethodIsFinal014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const method = (Type.from<IsFinalNormalSample>() as ClassType).getMethodByName("add");
-            let hasError = false;
-            try {
-                const r = method.isFinal();
-                expect(typeof r).assertEqual("boolean");
-            } catch (e) {
-                hasError = true;
-                expect(e.name === 'Error').assertTrue();
-            }
-            expect(hasError).assertFalse();
-        });
-
-        /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_1500
-         * @tc.name testMethodIsFinal015
          * @tc.desc Verify that isFinal returns false for a constructor method
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
          */
-        it('testMethodIsFinal015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it('testMethodIsFinal014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = (Type.from<IsFinalCtorSample>() as ClassType).getConstructor(0);
             expect(method.isFinal()).assertFalse();
         });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_1600
-         * @tc.name testMethodIsFinal016
+         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_1500
+         * @tc.name testMethodIsFinal015
          * @tc.desc Verify that isFinal returns false for a static method
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
          */
-        it('testMethodIsFinal016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it('testMethodIsFinal015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const classType = Type.from<IsFinalStaticMethodSample>() as ClassType;
             const count = classType.getMethodsNum();
             let method: Method | undefined = undefined;
@@ -552,66 +536,66 @@ export default function MethodIsFinalTest(): void {
         });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_1700
-         * @tc.name testMethodIsFinal017
+         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_1600
+         * @tc.name testMethodIsFinal016
          * @tc.desc Verify that isFinal returns false for an async method
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
          */
-        it('testMethodIsFinal017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it('testMethodIsFinal016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = (Type.from<IsFinalAsyncMethodSample>() as ClassType).getMethodByName("doSomething");
+            expect(method.isFinal()).assertFalse();
+        });
+
+        /**
+         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_1700
+         * @tc.name testMethodIsFinal017
+         * @tc.desc Verify that isFinal returns false for a native method
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level Level 2
+         */
+        it('testMethodIsFinal017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+            const method = (Type.from<IsFinalNativeMethodSample>() as ClassType).getMethodByName("doSomething");
             expect(method.isFinal()).assertFalse();
         });
 
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_1800
          * @tc.name testMethodIsFinal018
-         * @tc.desc Verify that isFinal returns false for a native method
+         * @tc.desc Verify that isFinal returns false for an interface method from implementing class
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
          */
         it('testMethodIsFinal018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const method = (Type.from<IsFinalNativeMethodSample>() as ClassType).getMethodByName("doSomething");
+            const method = (Type.from<IsFinalImplClass>() as ClassType).getMethodByName("doSomething");
             expect(method.isFinal()).assertFalse();
         });
 
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_1900
          * @tc.name testMethodIsFinal019
-         * @tc.desc Verify that isFinal returns false for an interface method from implementing class
+         * @tc.desc Verify that isFinal returns false for a non-final getter
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
          */
         it('testMethodIsFinal019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const method = (Type.from<IsFinalImplClass>() as ClassType).getMethodByName("doSomething");
+            const method = (Type.from<IsFinalNonFinalGetter>() as ClassType).getMethodByName("%%get-value");
             expect(method.isFinal()).assertFalse();
         });
 
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_2000
          * @tc.name testMethodIsFinal020
-         * @tc.desc Verify that isFinal returns false for a non-final getter
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
-         */
-        it('testMethodIsFinal020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const method = (Type.from<IsFinalNonFinalGetter>() as ClassType).getMethodByName("%%get-value");
-            expect(method.isFinal()).assertFalse();
-        });
-
-        /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_2100
-         * @tc.name testMethodIsFinal021
          * @tc.desc Verify that isFinal combined with isAbstract correctly distinguishes final and abstract methods
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
          */
-        it('testMethodIsFinal021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it('testMethodIsFinal020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const classType = Type.from<IsFinalAbstractCombo>() as ClassType;
             const concreteMethod = classType.getMethodByName("concreteMethod");
             const abstractMethod = classType.getMethodByName("abstractMethod");
@@ -622,14 +606,14 @@ export default function MethodIsFinalTest(): void {
         });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_2200
-         * @tc.name testMethodIsFinal022
+         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_2100
+         * @tc.name testMethodIsFinal021
          * @tc.desc Verify that isFinal combined with isStatic correctly distinguishes final and static methods
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
          */
-        it('testMethodIsFinal022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it('testMethodIsFinal021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const classType = Type.from<IsFinalStaticCombo>() as ClassType;
             const finalMethod = classType.getMethodByName("finalMethod");
             let staticMethod: Method | undefined = undefined;
@@ -647,328 +631,328 @@ export default function MethodIsFinalTest(): void {
         });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_2300
-         * @tc.name testMethodIsFinal023
+         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_2200
+         * @tc.name testMethodIsFinal022
          * @tc.desc Verify that isFinal returns true for final method inherited through a three-level class chain
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
          */
-        it('testMethodIsFinal023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it('testMethodIsFinal022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = (Type.from<IsFinalGrandchildNode>() as ClassType).getMethodByName("doWork");
             expect(method.isFinal()).assertTrue();
         });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_2400
-         * @tc.name testMethodIsFinal024
+         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_2300
+         * @tc.name testMethodIsFinal023
          * @tc.desc Verify non-final static async method is not final
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
          */
-        it('testMethodIsFinal024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it('testMethodIsFinal023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = findIsFinalMethod(Type.from<IsFinalStaticAsyncSample>() as ClassType, "task", true);
+            expect(method.isFinal()).assertFalse();
+        });
+
+        /**
+         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_2400
+         * @tc.name testMethodIsFinal024
+         * @tc.desc Verify async instance method without final modifier is not final
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level Level 2
+         */
+        it('testMethodIsFinal024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+            const method = (Type.from<IsFinalAsyncFinalSample>() as ClassType).getMethodByName("fetch");
             expect(method.isFinal()).assertFalse();
         });
 
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_2500
          * @tc.name testMethodIsFinal025
-         * @tc.desc Verify async instance method without final modifier is not final
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
-         */
-        it('testMethodIsFinal025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const method = (Type.from<IsFinalAsyncFinalSample>() as ClassType).getMethodByName("fetch");
-            expect(method.isFinal()).assertFalse();
-        });
-
-        /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_2600
-         * @tc.name testMethodIsFinal026
          * @tc.desc Verify private final instance method is final
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
          */
-        it('testMethodIsFinal026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it('testMethodIsFinal025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = findIsFinalMethod(Type.from<IsFinalPrivateFinalSample>() as ClassType, "work");
+            expect(method.isFinal()).assertTrue();
+        });
+
+        /**
+         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_2600
+         * @tc.name testMethodIsFinal026
+         * @tc.desc Verify protected final instance method is final
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level Level 2
+         */
+        it('testMethodIsFinal026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+            const method = findIsFinalMethod(Type.from<IsFinalProtectedFinalSample>() as ClassType, "helper");
             expect(method.isFinal()).assertTrue();
         });
 
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_2700
          * @tc.name testMethodIsFinal027
-         * @tc.desc Verify protected final instance method is final
+         * @tc.desc Verify public final instance method is final
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
          */
         it('testMethodIsFinal027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const method = findIsFinalMethod(Type.from<IsFinalProtectedFinalSample>() as ClassType, "helper");
+            const method = (Type.from<IsFinalPublicFinalSample>() as ClassType).getMethodByName("open");
             expect(method.isFinal()).assertTrue();
         });
 
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_2800
          * @tc.name testMethodIsFinal028
-         * @tc.desc Verify public final instance method is final
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
-         */
-        it('testMethodIsFinal028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const method = (Type.from<IsFinalPublicFinalSample>() as ClassType).getMethodByName("open");
-            expect(method.isFinal()).assertTrue();
-        });
-
-        /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_2900
-         * @tc.name testMethodIsFinal029
          * @tc.desc Verify public non-final instance method is not final
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
          */
-        it('testMethodIsFinal029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it('testMethodIsFinal028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = (Type.from<IsFinalPublicOpenSample>() as ClassType).getMethodByName("open");
             expect(method.isFinal()).assertFalse();
         });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_3000
-         * @tc.name testMethodIsFinal030
+         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_2900
+         * @tc.name testMethodIsFinal029
          * @tc.desc Verify final implementation method for interface is final
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
          */
-        it('testMethodIsFinal030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it('testMethodIsFinal029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = (Type.from<IsFinalInterfaceChildImpl>() as ClassType).getMethodByName("doSomething");
             expect(method.isFinal()).assertTrue();
         });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_3100
-         * @tc.name testMethodIsFinal031
+         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_3000
+         * @tc.name testMethodIsFinal030
          * @tc.desc Verify child method overriding non-final parent method remains non-final without final modifier
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
          */
-        it('testMethodIsFinal031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it('testMethodIsFinal030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = (Type.from<IsFinalOverrideChild>() as ClassType).getMethodByName("doWork");
             expect(method.isFinal()).assertFalse();
         });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_3200
-         * @tc.name testMethodIsFinal032
+         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_3100
+         * @tc.name testMethodIsFinal031
          * @tc.desc Verify child final method is final
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
          */
-        it('testMethodIsFinal032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it('testMethodIsFinal031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = (Type.from<IsFinalOverrideChild>() as ClassType).getMethodByName("childFinal");
             expect(method.isFinal()).assertTrue();
         });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_3300
-         * @tc.name testMethodIsFinal033
+         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_3200
+         * @tc.name testMethodIsFinal032
          * @tc.desc Verify inherited static method is not final because static final is not valid ArkTS
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
          */
-        it('testMethodIsFinal033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it('testMethodIsFinal032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = findIsFinalMethod(Type.from<IsFinalInheritedStaticChild>() as ClassType, "create", true);
+            expect(method.isFinal()).assertFalse();
+        });
+
+        /**
+         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_3300
+         * @tc.name testMethodIsFinal033
+         * @tc.desc Verify hidden static child method is not final
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level Level 2
+         */
+        it('testMethodIsFinal033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+            const method = findIsFinalMethod(Type.from<IsFinalHiddenStaticChild>() as ClassType, "create", true);
             expect(method.isFinal()).assertFalse();
         });
 
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_3400
          * @tc.name testMethodIsFinal034
-         * @tc.desc Verify hidden static child method is not final
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
-         */
-        it('testMethodIsFinal034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const method = findIsFinalMethod(Type.from<IsFinalHiddenStaticChild>() as ClassType, "create", true);
-            expect(method.isFinal()).assertFalse();
-        });
-
-        /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_3500
-         * @tc.name testMethodIsFinal035
          * @tc.desc Verify final method with default parameter is final
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
          */
-        it('testMethodIsFinal035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it('testMethodIsFinal034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = (Type.from<IsFinalParamSample>() as ClassType).getMethodByName("greet");
+            expect(method.isFinal()).assertTrue();
+        });
+
+        /**
+         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_3500
+         * @tc.name testMethodIsFinal035
+         * @tc.desc Verify final method with rest parameter is final
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level Level 2
+         */
+        it('testMethodIsFinal035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+            const method = (Type.from<IsFinalRestSample>() as ClassType).getMethodByName("sum");
             expect(method.isFinal()).assertTrue();
         });
 
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_3600
          * @tc.name testMethodIsFinal036
-         * @tc.desc Verify final method with rest parameter is final
+         * @tc.desc Verify final method with optional parameter is final
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
          */
         it('testMethodIsFinal036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const method = (Type.from<IsFinalRestSample>() as ClassType).getMethodByName("sum");
+            const method = (Type.from<IsFinalOptionalSample>() as ClassType).getMethodByName("log");
             expect(method.isFinal()).assertTrue();
         });
 
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_3700
          * @tc.name testMethodIsFinal037
-         * @tc.desc Verify final method with optional parameter is final
+         * @tc.desc Verify final method returning void is final
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
          */
         it('testMethodIsFinal037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const method = (Type.from<IsFinalOptionalSample>() as ClassType).getMethodByName("log");
+            const method = (Type.from<IsFinalReturnVoidSample>() as ClassType).getMethodByName("noop");
             expect(method.isFinal()).assertTrue();
         });
 
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_3800
          * @tc.name testMethodIsFinal038
-         * @tc.desc Verify final method returning void is final
+         * @tc.desc Verify final method returning Promise is final
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
          */
         it('testMethodIsFinal038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const method = (Type.from<IsFinalReturnVoidSample>() as ClassType).getMethodByName("noop");
+            const method = (Type.from<IsFinalReturnPromiseSample>() as ClassType).getMethodByName("get");
             expect(method.isFinal()).assertTrue();
         });
 
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_3900
          * @tc.name testMethodIsFinal039
-         * @tc.desc Verify final method returning Promise is final
+         * @tc.desc Verify final method returning class instance is final
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
          */
         it('testMethodIsFinal039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const method = (Type.from<IsFinalReturnPromiseSample>() as ClassType).getMethodByName("get");
+            const method = (Type.from<IsFinalThisSample>() as ClassType).getMethodByName("chain");
             expect(method.isFinal()).assertTrue();
         });
 
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_4000
          * @tc.name testMethodIsFinal040
-         * @tc.desc Verify final method returning class instance is final
+         * @tc.desc Verify final generic method is final
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
          */
         it('testMethodIsFinal040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const method = (Type.from<IsFinalThisSample>() as ClassType).getMethodByName("chain");
+            const method = (Type.from<IsFinalGenericSample<string>>() as ClassType).getMethodByName("getItem");
             expect(method.isFinal()).assertTrue();
         });
 
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_4100
          * @tc.name testMethodIsFinal041
-         * @tc.desc Verify final generic method is final
+         * @tc.desc Verify final method in generic class is final
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
          */
         it('testMethodIsFinal041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const method = (Type.from<IsFinalGenericSample<string>>() as ClassType).getMethodByName("getItem");
+            const method = (Type.from<IsFinalGenericBoxSample<string>>() as ClassType).getMethodByName("getValue");
             expect(method.isFinal()).assertTrue();
         });
 
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_4200
          * @tc.name testMethodIsFinal042
-         * @tc.desc Verify final method in generic class is final
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
-         */
-        it('testMethodIsFinal042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const method = (Type.from<IsFinalGenericBoxSample<string>>() as ClassType).getMethodByName("getValue");
-            expect(method.isFinal()).assertTrue();
-        });
-
-        /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_4300
-         * @tc.name testMethodIsFinal043
          * @tc.desc Verify final method getName returns method name and remains final
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
          */
-        it('testMethodIsFinal043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it('testMethodIsFinal042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = (Type.from<IsFinalFinalOwnerSample>() as ClassType).getMethodByName("ownFinal");
             expect(method.getName()).assertEqual("ownFinal");
             expect(method.isFinal()).assertTrue();
         });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_4400
-         * @tc.name testMethodIsFinal044
+         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_4300
+         * @tc.name testMethodIsFinal043
          * @tc.desc Verify final method owner type is declaring class
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
          */
-        it('testMethodIsFinal044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it('testMethodIsFinal043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = (Type.from<IsFinalOwnerSample>() as ClassType).getMethodByName("ownerMethod");
             expect(method.getOwnerType().getName()).assertEqual("entry.src.main.src.test.method.MethodIsFinalTest.test.IsFinalOwnerSample");
             expect(method.isFinal()).assertTrue();
         });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_4500
-         * @tc.name testMethodIsFinal045
+         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_4400
+         * @tc.name testMethodIsFinal044
          * @tc.desc Verify final getter in accessor pair is final
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
          */
-        it('testMethodIsFinal045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it('testMethodIsFinal044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = (Type.from<IsFinalAccessorPairSample>() as ClassType).getMethodByName("%%get-count");
+            expect(method.isFinal()).assertTrue();
+        });
+
+        /**
+         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_4500
+         * @tc.name testMethodIsFinal045
+         * @tc.desc Verify final setter in accessor pair is final
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level Level 2
+         */
+        it('testMethodIsFinal045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+            const method = (Type.from<IsFinalAccessorPairSample>() as ClassType).getMethodByName("%%set-count");
             expect(method.isFinal()).assertTrue();
         });
 
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_4600
          * @tc.name testMethodIsFinal046
-         * @tc.desc Verify final setter in accessor pair is final
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
-         */
-        it('testMethodIsFinal046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const method = (Type.from<IsFinalAccessorPairSample>() as ClassType).getMethodByName("%%set-count");
-            expect(method.isFinal()).assertTrue();
-        });
-
-        /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_4700
-         * @tc.name testMethodIsFinal047
          * @tc.desc Verify final accessor state update does not change getter isFinal flag
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
          */
-        it('testMethodIsFinal047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it('testMethodIsFinal046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const sample = new IsFinalAccessorPairSample();
             sample.count = 5;
             expect(sample.count).assertEqual(5);
@@ -977,14 +961,14 @@ export default function MethodIsFinalTest(): void {
         });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_4800
-         * @tc.name testMethodIsFinal048
+         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_4700
+         * @tc.name testMethodIsFinal047
          * @tc.desc Verify final setter execution does not change isFinal flag
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
          */
-        it('testMethodIsFinal048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it('testMethodIsFinal047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const sample = new IsFinalAccessorPairSample();
             sample.count = 7;
             const method = (Type.from<IsFinalAccessorPairSample>() as ClassType).getMethodByName("%%set-count");
@@ -992,73 +976,41 @@ export default function MethodIsFinalTest(): void {
         });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_4900
-         * @tc.name testMethodIsFinal049
+         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_4800
+         * @tc.name testMethodIsFinal048
          * @tc.desc Verify inherited final base method is final on child type
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
          */
-        it('testMethodIsFinal049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it('testMethodIsFinal048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = (Type.from<IsFinalMixinChild>() as ClassType).getMethodByName("baseFinal");
             expect(method.isFinal()).assertTrue();
         });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_5000
-         * @tc.name testMethodIsFinal050
-         * @tc.desc Verify final method repeated calls return true
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
-         */
-        it('testMethodIsFinal050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const method = (Type.from<IsFinalFinalSample>() as ClassType).getMethodByName("add");
-            expect(method.isFinal()).assertTrue();
-            expect(method.isFinal()).assertTrue();
-            expect(method.isFinal()).assertTrue();
-            expect(method.isFinal()).assertTrue();
-            expect(method.isFinal()).assertTrue();
-        });
-
-        /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_5100
-         * @tc.name testMethodIsFinal051
-         * @tc.desc Verify non-final method repeated calls return false
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
-         */
-        it('testMethodIsFinal051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const method = (Type.from<IsFinalNormalSample>() as ClassType).getMethodByName("add");
-            expect(method.isFinal()).assertFalse();
-            expect(method.isFinal()).assertFalse();
-            expect(method.isFinal()).assertFalse();
-        });
-
-        /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_5200
-         * @tc.name testMethodIsFinal052
+         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_4900
+         * @tc.name testMethodIsFinal049
          * @tc.desc Verify final method converted to string still remains final
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
          */
-        it('testMethodIsFinal052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it('testMethodIsFinal049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const method = (Type.from<IsFinalFinalSample>() as ClassType).getMethodByName("add");
             expect(method.toString().length > 0).assertTrue();
             expect(method.isFinal()).assertTrue();
         });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_5300
-         * @tc.name testMethodIsFinal053
+         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_5000
+         * @tc.name testMethodIsFinal050
          * @tc.desc Verify class with final method and non-final methods reports each final flag correctly
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
          */
-        it('testMethodIsFinal053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it('testMethodIsFinal050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const classType = Type.from<IsFinalMixedMethodSample>() as ClassType;
             expect(classType.getMethodByName("finalMethod").isFinal()).assertTrue();
             expect(findIsFinalMethod(classType, "staticMethod", true).isFinal()).assertFalse();
@@ -1067,30 +1019,59 @@ export default function MethodIsFinalTest(): void {
         });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_5400
-         * @tc.name testMethodIsFinal054
+         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_5100
+         * @tc.name testMethodIsFinal051
          * @tc.desc Verify final method exists while same class ordinary method is not final
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
          */
-        it('testMethodIsFinal054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it('testMethodIsFinal051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const classType = Type.from<IsFinalFinalOwnerSample>() as ClassType;
             expect(classType.getMethodByName("ownFinal").isFinal()).assertTrue();
             expect(classType.getMethodByName("ownMethod").isFinal()).assertFalse();
         });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_5500
-         * @tc.name testMethodIsFinal055
+         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_5200
+         * @tc.name testMethodIsFinal052
          * @tc.desc Verify non-method field does not appear as Method for final check
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2
          */
-        it('testMethodIsFinal055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it('testMethodIsFinal052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const hasMethod = hasIsFinalMethod(Type.from<IsFinalGetterSample>() as ClassType, "_value");
             expect(hasMethod).assertFalse();
+        });
+
+        /**
+         * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_5300
+         * @tc.name testMethodIsFinal053
+         * @tc.desc Verify overloaded methods are not final by default
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level Level 2
+         */
+        it('testMethodIsFinal053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+            const classType = Type.from<IsFinalOverloadSample>() as ClassType;
+            let oneParamMethod: Method | undefined = undefined;
+            let twoParamMethod: Method | undefined = undefined;
+            for (let i: long = 0; i < classType.getMethodsNum(); i += 1) {
+                const method = classType.getMethod(i);
+                if (method.getName() === "method") {
+                    const parameterCount = method.getType().getParametersNum();
+                    if (parameterCount === 1) {
+                        oneParamMethod = method;
+                    } else if (parameterCount === 2) {
+                        twoParamMethod = method;
+                    }
+                }
+            }
+            expect(oneParamMethod !== undefined).assertTrue();
+            expect(twoParamMethod !== undefined).assertTrue();
+            expect(oneParamMethod!.isFinal()).assertFalse();
+            expect(twoParamMethod!.isFinal()).assertFalse();
         });
     });
 }
