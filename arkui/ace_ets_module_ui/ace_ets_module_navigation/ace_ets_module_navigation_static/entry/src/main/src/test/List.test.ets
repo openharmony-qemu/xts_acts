@@ -21,6 +21,8 @@ import NavigationNavDestinationTest from './NavigationNavDestinationTest/Navigat
 import ToolBarItemDebugLineTest from './ToolBarItemDebugLineTest/ToolBarItemDebugLine.test';
 import NavScrollEffectOptions from './NavigationTest/NavScrollEffectOptions.test';
 import navigationMaterial from './NavigationTest/navigationMaterial.test';
+import configurationNav from './NavigationNavDestinationTest/configurationNav.test';
+import colorLengthMetrics from './Graphics/colorLengthMetrics.test';
 
 export default function testsuite() {
   NavDestinationTest();
@@ -30,4 +32,6 @@ export default function testsuite() {
   ToolBarItemDebugLineTest();
   NavScrollEffectOptions();
   navigationMaterial();
+  configurationNav();
+  colorLengthMetrics();
 }
