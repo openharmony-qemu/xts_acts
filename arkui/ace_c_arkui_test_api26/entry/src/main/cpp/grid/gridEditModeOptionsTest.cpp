@@ -43,12 +43,12 @@ static napi_value GridEditModeOptionsTest_002(napi_env env, napi_callback_info i
 {
     NAPI_START(grid, ARKUI_NODE_GRID);
 
-    ArkUI_NumberValue value[] = {{.i32 = ARKUI_GRID_EDIT_MODE_OPTION_DELETE}};
+    ArkUI_NumberValue value[] = {{.i32 = PARAM_1}};
     ArkUI_AttributeItem value_item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     auto ret = nodeAPI->setAttribute(grid, NODE_GRID_EDIT_MODE_OPTIONS, &value_item);
     auto ret1 = nodeAPI->getAttribute(grid, NODE_GRID_EDIT_MODE_OPTIONS)->value[PARAM_0].i32;
     ASSERT_EQ(ret, SUCCESS);
-    ASSERT_EQ(ret1, ARKUI_GRID_EDIT_MODE_OPTION_DELETE);
+    ASSERT_EQ(ret1, PARAM_1);
     NAPI_END;
 }
 
@@ -56,25 +56,22 @@ static napi_value GridEditModeOptionsTest_003(napi_env env, napi_callback_info i
 {
     NAPI_START(grid, ARKUI_NODE_GRID);
 
-    ArkUI_NumberValue value[] = {{.i32 = ARKUI_GRID_EDIT_MODE_OPTION_NONE}};
+    ArkUI_NumberValue value[] = {{.i32 = PARAM_0}};
     ArkUI_AttributeItem value_item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     auto ret = nodeAPI->setAttribute(grid, NODE_GRID_EDIT_MODE_OPTIONS, &value_item);
     auto ret1 = nodeAPI->getAttribute(grid, NODE_GRID_EDIT_MODE_OPTIONS)->value[PARAM_0].i32;
     ASSERT_EQ(ret, SUCCESS);
-    ASSERT_EQ(ret1, ARKUI_GRID_EDIT_MODE_OPTION_NONE);
+    ASSERT_EQ(ret1, PARAM_0);
     NAPI_END;
 }
 
 static napi_value GridEditModeOptionsTest_004(napi_env env, napi_callback_info info)
 {
     NAPI_START(grid, ARKUI_NODE_GRID);
-    int32_t emptyBranch = napi_undefined;
-    ArkUI_NumberValue value[] = {{.i32 = emptyBranch}};
-    ArkUI_AttributeItem valueItem = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
-    auto ret = nodeAPI->setAttribute(grid, NODE_GRID_EDIT_MODE_OPTIONS, &valueItem);
-    auto ret1 = nodeAPI->getAttribute(grid, NODE_GRID_EDIT_MODE_OPTIONS)->value[PARAM_0].i32;
-    ASSERT_EQ(ret, SUCCESS);
-    ASSERT_EQ(ret1, ARKUI_GRID_EDIT_MODE_OPTION_NONE);
+    auto ret1 = nodeAPI->resetAttribute(grid, NODE_GRID_EDIT_MODE_OPTIONS);
+    ASSERT_EQ(ret1, SUCCESS);
+    auto result = nodeAPI->getAttribute(grid, NODE_GRID_EDIT_MODE_OPTIONS);
+    ASSERT_EQ(result->value[PARAM_0].i32, PARAM_1);
     NAPI_END;
 }
 

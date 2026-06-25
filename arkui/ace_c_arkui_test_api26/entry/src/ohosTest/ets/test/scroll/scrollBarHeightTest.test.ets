@@ -76,5 +76,18 @@ export default function ScrollBarHeightTest() {
       expect(nativeFunc.ScrollBarHeightTest_004()).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.name   ScrollAlignmentStartTest_001
+     * @tc.number SUB_ARKUI_SCROLL_ALIGNMENT_START_TEST_0100
+     * @tc.desc   Test the ARKUI_SCROLL_ALIGNMENT_START with values(0)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ScrollAlignmentStartTest_001', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.ScrollAlignmentStartTest_001()).assertEqual(0);
+      done();
+    });
   })
 }

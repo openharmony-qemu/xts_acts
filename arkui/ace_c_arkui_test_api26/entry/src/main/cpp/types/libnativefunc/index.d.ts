@@ -31,6 +31,7 @@ export const ScrollBarHeightTest_001: () => number;
 export const ScrollBarHeightTest_002: () => number;
 export const ScrollBarHeightTest_003: () => number;
 export const ScrollBarHeightTest_004: () => number;
+export const ScrollAlignmentStartTest_001: () => number;
 export const ListBackBehaviorTest_001: () => number;
 export const ListBackBehaviorTest_002: () => number;
 export const ListBackBehaviorTest_003: () => number;

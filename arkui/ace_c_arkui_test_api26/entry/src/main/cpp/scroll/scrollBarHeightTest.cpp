@@ -76,4 +76,16 @@ static napi_value ScrollBarHeightTest_004(napi_env env, napi_callback_info info)
     ASSERT_EQ(ret1, emptyBranch);
     NAPI_END;
 }
+
+static napi_value ScrollAlignmentStartTest_001(napi_env env, napi_callback_info info)
+{
+    ArkUI_NativeNodeAPI_1 *nodeAPI = nullptr;
+    OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, nodeAPI);
+    auto scroll = nodeAPI->createNode(ARKUI_NODE_SCROLL);
+    ArkUI_NumberValue value[] = { { .i32 = 38 }, { .i32 = 1 }, { .i32 = ARKUI_SCROLL_ALIGNMENT_START }, { .i32 = 1 } };
+    ArkUI_AttributeItem item = { .value = value, .size = PARAM_4 };
+    auto setResult = nodeAPI->setAttribute(scroll, NODE_LIST_SCROLL_TO_INDEX, &item);
+    ASSERT_EQ(ret, SUCCESS);
+    NAPI_END;
+}
 }
