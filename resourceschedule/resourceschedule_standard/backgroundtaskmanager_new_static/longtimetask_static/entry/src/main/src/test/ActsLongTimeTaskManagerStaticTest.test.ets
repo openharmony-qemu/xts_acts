@@ -2959,7 +2959,7 @@ export default function ActsLongTimeTaskManagerStaticTest() {
                 expect(res.contentType).assertEqual(4);
                 expect(res.notificationId).assertLarger(-1);
                 backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
-                  hilog .info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_6500 stopBackgroundRunning promise run success.');
+                  hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_6500 stopBackgroundRunning promise run success.');
                 }).catch((error: Error) => {
                   console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_6500 stopBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
                   done();
@@ -3051,7 +3051,7 @@ export default function ActsLongTimeTaskManagerStaticTest() {
               continuousTaskRequest.requestAuthFromUser(ability.context, callbackAuth);
             } catch (error) {
               console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_6700 Operation requestAuthFromUser failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
-              expect(error.code === 9800005).assertTrue();  
+              expect(error.code === 9800005).assertTrue();
               done();
               hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_6700 requestAuthFromUser try end---');
             }
