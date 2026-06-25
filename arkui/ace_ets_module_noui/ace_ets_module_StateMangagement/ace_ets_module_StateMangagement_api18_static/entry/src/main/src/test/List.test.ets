@@ -40,6 +40,8 @@ import LazyForEachCustomComponentFreezeModeStaticTest from './LazyForeach/LazyFo
 import SyncMonitorNotWildcardsTest from './SyncMonitor/SyncMonitorNotWildcards.test';
 import PersistentStorageApiTest from './PersistentStorage/PersistentStorageApi.test';
 import PersistenceV2ApiTest from './PersistenceV2/PersistenceV2Api.test';
+import PersistenceV2DefaultSubCreatorsTest from './PersistenceV2/PersistenceV2DefaultSubCreators.test';
+import PersistenceV2AbnormalDefaultSubCreatorsTest from './PersistenceV2/PersistenceV2AbnormalDefaultSubCreators.test';
 import AddMonitorWildcard from './AddMonitorTest/AddMonitorWildcard.test';
 import AddMonitorWildcardUnerfined from './AddMonitorTest/AddMonitorWildcardUnerfined.test';
 import MonitorWildcards from './Monitor/MonitorWildcards.test';
@@ -58,7 +60,7 @@ import GlobalReusePool002Test from './uiutilsTest/GlobalReusePool002.test';
 import GlobalReusePool003Test from './uiutilsTest/GlobalReusePool003.test';
 
 
-export default function testsuite() {
+export default function testsuite(): void {
   ArrayLikeStringTest(); 
   //RepeatCloseReuseTest0110(); 
   //RepeatLazyTest0150();  
@@ -85,6 +87,8 @@ export default function testsuite() {
   SyncMonitorNotWildcardsTest();
   PersistentStorageApiTest();
   PersistenceV2ApiTest();
+  PersistenceV2DefaultSubCreatorsTest();
+  PersistenceV2AbnormalDefaultSubCreatorsTest();
   PersistenceV2NotifyOnErrorTest();
   AddMonitorWildcard();
   MonitorWildcards();
