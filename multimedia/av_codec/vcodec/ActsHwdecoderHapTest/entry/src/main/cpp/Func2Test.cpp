@@ -1556,7 +1556,7 @@ int  VIDEO_DECODE_ORDER_0300()
 int  VIDEO_DECODE_ORDER_0400()
 {
     if (cap_vvc != nullptr && g_codecNameVVC.find("hisi") != string::npos) {
-        if (OH_AVCapability_IsFeatureSupported(cap, VIDEO_DECODER_OUTPUT_IN_DECODING_ORDER)) {
+        if (OH_AVCapability_IsFeatureSupported(cap_vvc, VIDEO_DECODER_OUTPUT_IN_DECODING_ORDER)) {
             auto vDecSample = make_shared<VDecAPI11Sample>();
             vDecSample->inpDir = INP_DIR_VVC_1080;
             vDecSample->defaultWidth = PORTRAIT_WIDTH;
