@@ -19,6 +19,7 @@ import audioRoutingManager from './AudioRoutingManager.test';
 import audioSessionManagerTest from './AudioSessionManager.test';
 import getAudioSceneApi12 from './GetAudioScene.test';
 import audioSpatializationManager from './AudioSpatializationManager.test';
+import audioSpatializationManager2 from './AudioSpatializationManager2.test';
 import audioLoopBack from './AudioLoopBack.test';
 import audioManagerOnInterrupt from './AudioManagerOnInterrupt.test';
 import audioDeviceEnhanceManager from './AudioDeviceEnhanceManagerTest.test';
@@ -31,7 +32,7 @@ function getPermission() {
   let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
   let testContext:ESObject = AppStorage.get('testContext');
   let permissions: Array<Permissions> =
-    ["ohos.permission.MANAGE_AUDIO_CONFIG", "ohos.permission.MICROPHONE"];
+    ["ohos.permission.MANAGE_AUDIO_CONFIG", "ohos.permission.MICROPHONE", "ohos.permission.MANAGE_SYSTEM_AUDIO_EFFECTS"];
   atManager.requestPermissionsFromUser(testContext, permissions,
     (err: BusinessError, data: PermissionRequestResult) => {
       console.info("request success permissions" + JSON.stringify(data));
@@ -68,6 +69,7 @@ export default function testsuite() {
   audioRoutingManager();
   getAudioSceneApi12();
   audioSpatializationManager();
+  audioSpatializationManager2();
   audioLoopBack();
   audioManagerOnInterrupt();
 }
