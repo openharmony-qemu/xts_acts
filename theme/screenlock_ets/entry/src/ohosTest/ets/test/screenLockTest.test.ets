@@ -159,6 +159,50 @@ export default function screenLockJSUnit() {
             }
         });
 
+        /*
+        * @tc.number  Sub_Theme_ScreenLock_DFX_0310
+        * @tc.name    Test isScreenLocked after unlock
+        * @tc.desc    Function test
+        * @tc.level   2
+        */
+        it('Sub_Theme_ScreenLock_DFX_0310', Level.LEVEL2, async (done: Function) => {
+            console.info("====>Sub_Theme_ScreenLock_DFX_0310 start");
+            try {
+                await screenLock.unlock();
+                let isLocked: boolean = await screenLock.isScreenLocked();
+                console.info("====>Sub_Theme_ScreenLock_DFX_0310 isScreenLocked result: " + isLocked);
+                expect(isLocked).assertEqual(false);
+                done();
+            } catch(err) {
+                console.info("====>Sub_Theme_ScreenLock_DFX_0310 catch err: " + JSON.stringify(err));
+                expect().assertFail();
+                done();
+            }
+        });
+
+        /*
+        * @tc.number  Sub_Theme_ScreenLock_DFX_0410
+        * @tc.name    Test isScreenLocked after lock
+        * @tc.desc    Function test
+        * @tc.level   2
+        */
+        it('Sub_Theme_ScreenLock_DFX_0410', Level.LEVEL2, async (done: Function) => {
+            console.info("====>Sub_Theme_ScreenLock_DFX_0410 start");
+            try {
+                await screenLock.lock();
+                let data: boolean = await screenLock.isScreenLocked();
+                console.info("====>Sub_Theme_ScreenLock_DFX_0410 isScreenLocked result: " + data);
+                expect(data).assertEqual(true);
+                await screenLock.unlock();
+                done();
+            } catch(err) {
+                console.info("====>Sub_Theme_ScreenLock_DFX_0410 catch err: " + JSON.stringify(err));
+                await screenLock.unlock();
+                expect().assertFail();
+                done();
+            }
+        })
+
         /**
          * @tc.name   SUB_MISC_THEME_screenLock_API_0007
          * @tc.number SUB_MISC_THEME_screenLock_API_0007
