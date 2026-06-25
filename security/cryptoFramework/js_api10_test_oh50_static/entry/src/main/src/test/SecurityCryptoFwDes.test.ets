@@ -12,26 +12,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
-import hilog from '@ohos.hilog'
+import { describe, it, expect, TestType, Size, Level, beforeAll } from '../../../hypium/index';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
-import  buffer  from '@ohos.buffer';
+import buffer from '@ohos.buffer';
 import cryptoFramework from '@ohos.security.cryptoFramework';
-import { convertSymKey, DES64_KEY_SIZE,
-  DES64_MODE,
-  DES64_PADDING,
-  DES64_WEAK_KEYS,
-  doCipher,
-  doUpdatePromise,
-  doUpdateSync,
-  generateRandom, generateSymKey,
-  parityCheck } from './utils/syncSymKey/syncSymKeyUtils';
+import { convertSymKey, DES64_KEY_SIZE, DES64_MODE, DES64_PADDING, DES64_WEAK_KEYS, doCipher, doUpdatePromise, doUpdateSync, generateRandom, generateSymKey, parityCheck } from './utils/syncSymKey/syncSymKeyUtils';
 import { asyncType, compareDataBlob, createData } from './utils/common/commonUtils';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为

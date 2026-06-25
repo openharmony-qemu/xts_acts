@@ -28,7 +28,7 @@ import {
 import { BusinessError } from '@ohos.base';
 import Utils from '../Util.test';
 
-export default function HashMapTest1() {
+export default function HashMapTest1(): void {
   describe("HashMapTest1", (): void => {
     afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)

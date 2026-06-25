@@ -14,7 +14,10 @@
  */
 import WindowLayoutTest from "./WindowLayout.test";
 import WindowLayoutStaticTest from "./WindowLayoutStatic.test";
+import WindowLayoutTest2 from "./WindowLayout2.test";
+
 export default function testsuite() {
   WindowLayoutStaticTest();
   WindowLayoutTest();
+  WindowLayoutTest2();
 }

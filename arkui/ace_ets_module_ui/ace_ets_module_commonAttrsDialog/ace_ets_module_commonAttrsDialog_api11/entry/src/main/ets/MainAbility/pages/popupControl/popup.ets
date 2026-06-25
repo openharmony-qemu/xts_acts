@@ -31,7 +31,7 @@ struct PopupExample12 {
     Row({ space: 2 }) {
       Text('Custom Popup')
         .fontSize(12)
-        .key('Custom_popup')
+        .key('popup_Custom_popup')
     }
     .width(100)
     .height(50)

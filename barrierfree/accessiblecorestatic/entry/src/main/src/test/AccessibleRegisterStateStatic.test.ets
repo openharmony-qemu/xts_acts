@@ -1210,5 +1210,38 @@ export default function abilityTest() {
         });
       })
 
+      /**
+      * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_1800
+      * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_1800
+      * @tc.desc   getSeniorModeStateForSelf
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+      it('SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_1800', TestType.FUNCTION | Size.MEDIUMTEST| Level.LEVEL0, async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, 'SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_1800');
+        accessibility.setSeniorModeStateForSelf(false).then(() => {
+            hilog.info(domain, tag, `AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_1800 setSeniorModeStateForSelf success`);
+            accessibility.getSeniorModeStateForSelf().then((result) => {
+                hilog.info(domain, tag, `AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_1800 getSeniorModeStateForSelf result: ${result}`);
+                expect(typeof (result)).assertEqual('boolean');
+                expect(result).assertEqual(false);
+                done();
+            }).catch((err) => {
+                if (err && err.code != 0){
+                    hilog.error(domain, tag, `AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_1800 has error: ${err.code}`);
+                    expect(null).assertFail();
+                    done();
+                }
+            });
+        }).catch((err) => {
+            if (err && err.code != 0){
+                hilog.error(domain, tag, `AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_1800 has error: ${err.code}`);
+                expect(null).assertFail();
+                done();
+            }
+        });
+      })
+
   })
 }

@@ -16,6 +16,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
+import uiMaterial from '@ohos.arkui.uiMaterial';
 
 export default function systemMaterialBarStyle() {
   describe('systemMaterialBarStyle', () => {
@@ -56,11 +57,14 @@ export default function systemMaterialBarStyle() {
       let strJson: string = getInspectorByKey('tabs_systemMaterial_ultra_thin');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[systemMaterialBarStyle_0100] type: " + JSON.stringify(obj.$type));
-      console.info("[systemMaterialBarStyle_0100] attrs: " + JSON.stringify(obj.$attrs));
       console.info("[systemMaterialBarStyle_0100] barPosition: " + obj.$attrs.barPosition);
+      console.info('[systemMaterialBarStyle_0100] systemMaterial: '+ obj.$attrs.barFloatingStyle.systemMaterial);
+      console.info('[systemMaterialBarStyle_0100] ULTRA_THIN = ' + uiMaterial.ImmersiveStyle.ULTRA_THIN);
 
       expect(JSON.parse(strJson).$type).assertEqual('Tabs');
       expect(JSON.parse(strJson).$attrs.barPosition).assertEqual("BarPosition.End");
+      expect(obj.$attrs.barFloatingStyle).not().assertEqual(undefined);
+      expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
       console.info('[systemMaterialBarStyle_0100] END');
       done();
     })
@@ -80,11 +84,14 @@ export default function systemMaterialBarStyle() {
       let strJson: string = getInspectorByKey('tabs_systemMaterial_thin');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[systemMaterialBarStyle_0200] type: " + JSON.stringify(obj.$type));
-      console.info("[systemMaterialBarStyle_0200] attrs: " + JSON.stringify(obj.$attrs));
       console.info("[systemMaterialBarStyle_0200] barPosition: " + obj.$attrs.barPosition);
+      console.info('[systemMaterialBarStyle_0200] systemMaterial: '+ obj.$attrs.barFloatingStyle.systemMaterial);
+      console.info('[systemMaterialBarStyle_0200] THIN = ' + uiMaterial.ImmersiveStyle.THIN);
 
       expect(JSON.parse(strJson).$type).assertEqual('Tabs');
       expect(JSON.parse(strJson).$attrs.barPosition).assertEqual("BarPosition.End");
+      expect(obj.$attrs.barFloatingStyle).not().assertEqual(undefined);
+      expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
       console.info('[systemMaterialBarStyle_0200] END');
       done();
     })
@@ -106,9 +113,12 @@ export default function systemMaterialBarStyle() {
       console.info("[systemMaterialBarStyle_0300] type: " + JSON.stringify(obj.$type));
       console.info("[systemMaterialBarStyle_0300] attrs: " + JSON.stringify(obj.$attrs));
       console.info("[systemMaterialBarStyle_0300] barPosition: " + obj.$attrs.barPosition);
+      console.info('[systemMaterialBarStyle_0300] systemMaterial: '+ obj.$attrs.barFloatingStyle.systemMaterial);
 
       expect(JSON.parse(strJson).$type).assertEqual('Tabs');
       expect(JSON.parse(strJson).$attrs.barPosition).assertEqual("BarPosition.End");
+      expect(obj.$attrs.barFloatingStyle).not().assertEqual(undefined);
+      expect(obj.$attrs.barFloatingStyle.adaptToHandedness).assertEqual(true);
       console.info('[systemMaterialBarStyle_0300] END');
       done();
     })

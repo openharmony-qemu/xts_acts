@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -46,7 +47,7 @@ export default function addProcessorTest() {
                 done()
             }
             catch (err) {
-                err = err as BusinessError;
+               
                 hilog.error(domain, tag, `testHiAppEvent008 > error code: ${err.code}, error msg: ${err.message}`);
                 expect(false).assertTrue()
                 done();
@@ -73,7 +74,7 @@ export default function addProcessorTest() {
                 done()
             }
             catch (err) {
-                err = err as BusinessError;
+               
                 hilog.error(domain, tag, `testHiAppEvent009 > error code: ${err.code}, error msg: ${err.message}`);
                 expect(err.code == 401).assertTrue()
                 done();
@@ -122,8 +123,99 @@ export default function addProcessorTest() {
                 done()
             }
             catch (err) {
-                err = err as BusinessError;
+               
                 hilog.error(domain, tag, `testHiAppEvent010 > error code: ${err.code}, error msg: ${err.message}`);
+                expect(false).assertTrue()
+                done();
+            }
+        });
+
+        /**
+         * @tc.name   testHiAppEvent011
+         * @tc.number SUB_DFX_DFT_HiAppEvent_Js_0400
+         * @tc.desc   验证添加数据处理者addProcessor，Processor可选参数非法，调用成功，有日志打印Parameter error
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testHiAppEvent011', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, 'testHiAppEvent010 start');
+            let config: Record<string, string> = {
+                "": "",
+            };
+            let processor: hiAppEvent.Processor = {
+                name: 'test_processor',
+                debugMode: true,
+                routeInfo: '',
+                appId: '',
+                onStartReport: false,
+                onBackgroundReport: false,
+                periodReport: -1,
+                batchReport: -2,
+                userIds: [],
+                userProperties: [],
+                configId: -1,
+                customConfigs: config,
+                eventConfigs: [],
+                configName:  'SDK_OCG'
+            }
+            try {
+                let processorId = hiAppEvent.addProcessor(processor);
+                hilog.info(domain, tag, `testHiAppEvent011 > processorId: ${processorId}`)
+                hiAppEvent.removeProcessor(processorId)
+                done();
+            }
+            catch (err) {
+                hilog.error(domain, tag, `testHiAppEvent011 > error code: ${err.code}, error msg: ${err.message}`);
+                expect(false).assertTrue()
+                done();
+            }
+        });
+
+        /**
+         * @tc.name   testHiAppEvent012
+         * @tc.number SUB_DFX_DFT_HiAppEvent_Js_0500
+         * @tc.desc   验证添加数据处理者addProcessor，Processor可选参数非法，调用成功，有日志打印Parameter error
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testHiAppEvent012', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, 'testHiAppEvent012 start');
+            let config: Record<string, string> = {
+                "": "",
+            };
+            let processor: hiAppEvent.Processor = {
+                name: 'test_processor',
+                debugMode: false,
+                routeInfo: '',
+                appId: '',
+                onStartReport: true,
+                onBackgroundReport: true,
+                periodReport: -1,
+                batchReport: -2,
+                userIds: [''],
+                userProperties: [''],
+                configId: -1,
+                customConfigs: config,
+                eventConfigs: [
+                    {
+                        domain: '',
+                        name: 'testEvent',
+                        isRealTime: true
+                    }
+                ],
+               configName:  'SDK_OCG'
+            }
+            try {
+                let processorId = hiAppEvent.addProcessor(processor);
+                hilog.info(domain, tag, `testHiAppEvent012 > processorId: ${processorId}`)
+                hiAppEvent.removeProcessor(processorId)
+                done()
+            }
+            catch (err) {
+               
+                hilog.error(domain, tag, `testHiAppEvent012 > error code: ${err.code}, error msg: ${err.message}`);
                 expect(false).assertTrue()
                 done();
             }

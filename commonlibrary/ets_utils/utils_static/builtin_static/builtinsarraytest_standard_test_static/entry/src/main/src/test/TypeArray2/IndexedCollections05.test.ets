@@ -226,7 +226,7 @@ class Arr {
   }
 }
 
-export default function IndexedCollections05Test() {
+export default function IndexedCollections05Test(): void {
   describe('IndexedCollections05Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

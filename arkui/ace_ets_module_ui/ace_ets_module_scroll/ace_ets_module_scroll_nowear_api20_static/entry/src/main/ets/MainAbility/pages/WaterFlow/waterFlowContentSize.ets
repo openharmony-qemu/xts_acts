@@ -1,10 +1,8 @@
 'use static'
 
-import { Entry, Text, Column, Component, Button, ClickEvent, WaterFlow, Scroller, HorizontalAlign,
-  FontWeight, Divider, Color, FontWeight, ForEach, FlowItem, TextAlign } from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
-import hilog from '@ohos.hilog'
-
+import { Entry, Text, Column, Component, Button, ClickEvent, WaterFlow, Scroller, HorizontalAlign, FontWeight, Divider, Color, ForEach, FlowItem, TextAlign } from '@ohos.arkui.component';
+import { State } from '@ohos.arkui.stateManagement';
+import hilog from '@ohos.hilog';
 @Entry
 @Component
 struct WaterFlowContentSize {

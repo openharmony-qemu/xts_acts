@@ -377,15 +377,13 @@ export default function windowControlsTest() {
               done()
             }).catch((err: BusinessError) => {
               console.error(caseName +` Failed to set image for recent. Cause code: ${err.code}, message: ${err.message}`);
-              expect(false).assertTrue();
+              expect(err.code).assertEqual(1300016);
               done()
             });
           } catch (exception) {
             console.error(caseName +` Failed to set image for recent.`+exception.code+','+exception.message);
-            expect(exception.code).assertEqual(1300016);
-            expect(exception.message).assertEqual('Parameter validation error. Possible causes: 1.The value of the parameter is out of the allowed range;2.The length of the parameter exceeds the allowed length;3.The parameter format is incorrect.')
+            expect(false).assertTrue();
             done();
-
           }
         })
       } else {
@@ -712,12 +710,12 @@ it('testsetImageForRecent_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
                     done()
                 }).catch((err: BusinessError) => {
                     console.error(caseName +` Failed to set image for recent. Cause code: ${err.code}, message: ${err.message}`);
-                    expect(false).assertTrue();
+                    expect(err.code).assertEqual(1300016);
                     done();
                 });
             } catch (exception) {
                 console.error(caseName +` Failed to set image for recent mjb. errcode : ${exception.code}, errmessage : ${exception.message}`);
-                expect(exception.code).assertEqual(1300016);
+                expect(false).assertTrue();
                 done()
             }
         })

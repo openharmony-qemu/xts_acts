@@ -388,7 +388,7 @@ class Test056OuterClass {
   inner: Test056InnerClass = new Test056InnerClass();
 }
 
-export default function JSONStringifyClassBasicTest() {
+export default function JSONStringifyClassBasicTest(): void {
   describe('JSONStringifyClassBasicTest', () => {
     beforeAll(() => {
     })

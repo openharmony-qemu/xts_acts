@@ -49,8 +49,9 @@ let openDialog = async (dialogKey: string, text: string) => {
         await moreButtons[moreButtons.length -1].click();
         hilog.info(DOMAIN, LOG_TAG, '更多打开方式 clicked');
       }
-      await sleep(500);
+      await sleep(1000);
     }
+    hilog.info(DOMAIN, LOG_TAG, 'findComponents: start');
     let buttons = await driver.findComponents(ON.text(text, MatchPattern.CONTAINS));
     hilog.info(DOMAIN, LOG_TAG, 'buttons: %{public}s', JSON.stringify(buttons));
     if (buttons && buttons.length > 0) {
@@ -222,7 +223,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         expect().assertFail();
         done();
       }
-      await sleep(500);
+      await sleep(1000);
 
       try {
         await allowOpen();
@@ -290,7 +291,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         expect().assertFail();
         done();
       }
-      await sleep(500);
+      await sleep(1000);
 
       try {
         await disallowOpen();
@@ -362,7 +363,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         expect().assertFail();
         done();
       }
-      await sleep(500);
+      await sleep(1000);
       if(isOpen){
         try {
           await openDialog('选择打开方式', 'CompletionHandlerRely');
@@ -434,7 +435,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         expect().assertFail();
         done();
       }
-      await sleep(500);
+      await sleep(1000);
       if(isOpen){
         try {
           await closeDialog('选择打开方式');
@@ -495,7 +496,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
       } catch (e) {
         hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0500 startAbility failed, ${JSON.stringify(e)}`);
       }
-      await sleep(500);
+      await sleep(1000);
       if(isOpen){
         try {
           await openDialog('暂无可用打开方式', '知道了');
@@ -567,7 +568,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         expect().assertFail();
         done();
       }
-      await sleep(500);
+      await sleep(1000);
       if(isOpen){
         try {
           await allowOpen();
@@ -641,7 +642,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         expect().assertFail();
         done();
       }
-      await sleep(500);
+      await sleep(1000);
       if(isOpen){
         try {
           await disallowOpen();
@@ -707,7 +708,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
         expect().assertFail();
         done();
       }
-      await sleep(500);
+      await sleep(1000);
 
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0800 end');
     })

@@ -13,14 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Builder,Component,Video,BarPosition,ButtonAttribute,Resource,$r,FlexAlign,Divider,Tabs,TabContent,TabsController,TextPicker,TextAreaController,PlaybackSpeed,$rawfile,Column,Margin,ColumnOptions,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  PropRef
-} from '@ohos.arkui.stateManagement';
+import { Entry, Builder, Component, Video, BarPosition, ButtonAttribute, Resource, $r, FlexAlign, Divider, Tabs, TabContent, TabsController, TextPicker, TextAreaController, PlaybackSpeed, $rawfile, Column, Margin, ColumnOptions, Text, Color, Flex, FlexDirection, ItemAlign, Row, Button, ClickEvent, Week, FontWeight, Axis, Swiper, ForEach, PickerTextStyle, CalendarAlign, CalendarPicker, EdgeEffect, Curve, SwiperDisplayMode, ArrowPosition, Select, BlurStyle, MenuAlignType, TextInputController, TextAlign, AlphabetIndexer } from '@ohos.arkui.component';
+import { State, Link, PropRef } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { AttributeUpdater } from "@ohos.arkui.modifier";
+import { AttributeUpdater } from '@ohos.arkui.modifier';
 export class MyButtonModifier extends AttributeUpdater<ButtonAttribute> {
   initializeModifier(instance: ButtonAttribute): void {
     instance.backgroundColor('#ff2787d9')

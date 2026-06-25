@@ -4429,13 +4429,15 @@ function testUninstallEnterpriseReSignatureCertificate() {
      */
     it("getPasswordPolicy_test_001", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getPasswordPolicy_test_001  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        securityManager.getPasswordPolicy(null);
-        console.info(' --- getPasswordPolicy_test_001 error is expected, but it done.');
-        expect(false).assertTrue();
+        let result: securityManager.PasswordPolicy = securityManager.getPasswordPolicy(null);
+        expect(result !== undefined).assertTrue();
       } catch (error) {
         console.info(' --- getPasswordPolicy_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getPasswordPolicy_test_001  -------- END --------');

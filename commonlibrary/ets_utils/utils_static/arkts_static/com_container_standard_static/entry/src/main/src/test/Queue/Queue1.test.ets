@@ -23,7 +23,7 @@ class C1 {
     this.age = age;
   }
 }
-export default function queueTest1() {
+export default function queueTest1(): void {
   describe('queueTest1', (): void => {
     afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)

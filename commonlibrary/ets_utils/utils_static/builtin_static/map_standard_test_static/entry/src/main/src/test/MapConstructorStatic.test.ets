@@ -18,7 +18,7 @@ import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestTy
 import Utils from './Util.test';
 class MyClass {
 }
-export default function MapConstructorTest() {
+export default function MapConstructorTest(): void {
   describe('MapConstructorTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

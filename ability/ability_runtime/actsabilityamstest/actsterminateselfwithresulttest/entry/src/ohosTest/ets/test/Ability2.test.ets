@@ -40,6 +40,10 @@ export default function abilityTest2() {
     let context: common.UIAbilityContext;
     let driver = Driver.create();
     let cmdBeforeEach = 'aa start -d 0 -a TestAbility' + ' -b ' + 'com.example.actsterminateselfwithresulttest';
+    let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+    if(user !== undefined){
+        cmdBeforeEach += ' -u ' + user;
+    }
     beforeAll(async (done: Function) => {
       await sleep(1000);
       context = getContext() as common.UIAbilityContext;

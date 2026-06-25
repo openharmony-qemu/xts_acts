@@ -34,6 +34,11 @@ import waterFlowEventNullUndefined from './waterFlowDefault/waterFlowEventNullUn
 import WaterFlowScrollScrollBarWidthTest from './WaterFlowScrollScrollBarWidth.test';
 import sectionsNullUndefined from './waterFlowDefault/sectionsNullUndefined.test';
 import waterFlowEmptyLazy from './WaterFlow/waterFlowEmptyLazy.test';
+import LazyVWaterFlowLayoutProperties from './LazyVWaterFlowLayout/LazyVWaterFlowLayoutProperties.test';
+import LazyColumnLayoutProperties from './LazyColumnLayout/LazyColumnLayoutProperties.test';
+import headerFooterStickyFlow from './LazyVWaterFlowLayout/headerFooterStickyFlow.test';
+import headerFooterStickyColumn from './LazyColumnLayout/headerFooterStickyColumn.test';
+import customListLayoutTest from './LazyDynamicLayout/customListLayoutTest.test';
 
 export default function testsuite() {
   WaterFlowScrollScrollBarWidthTest();
@@ -57,4 +62,9 @@ export default function testsuite() {
   waterFlowEventNullUndefined();
   sectionsNullUndefined();
   waterFlowEmptyLazy();
+  LazyVWaterFlowLayoutProperties();
+  LazyColumnLayoutProperties();
+  headerFooterStickyFlow();
+  headerFooterStickyColumn();
+  customListLayoutTest();
 }

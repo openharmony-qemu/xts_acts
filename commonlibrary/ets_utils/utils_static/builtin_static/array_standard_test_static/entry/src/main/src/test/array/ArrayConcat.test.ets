@@ -30,7 +30,7 @@ class Person087 {
   }
 }
 
-export default function ArrayConcatTest() {
+export default function ArrayConcatTest(): void {
   describe('ArrayConcatTest', () => {
     beforeAll(() => {
     });

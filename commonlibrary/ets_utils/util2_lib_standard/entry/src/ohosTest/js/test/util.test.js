@@ -5490,7 +5490,8 @@ describe('Base64HelperTest', function () {
             var array = new Uint32Array([66, 97, 115, 101, 54, 52]);
             var result = that.encodeSync(array);
         } catch (e) {
-            expect(e.code).assertEqual(401)
+            expect(e.toString()).assertEqual("Error: Parameter error. The type of Parameter must be Uint8Array and " +
+                                             "the length greater than zero.")
         }
     })
 
@@ -5584,8 +5585,8 @@ describe('Base64HelperTest', function () {
             var array = new Uint32Array([66, 97, 115, 101, 54, 52]);
             var result = that.encodeToStringSync(array);
         } catch (e) {
-            expect(e.toString()).assertEqual("BusinessError: Parameter error. The type of Parameter " +
-                                             "must be Uint8Array and the length greater than zero.")
+            expect(e.toString()).assertEqual("Error: Parameter error. The type of Parameter must be Uint8Array and " +
+                                             "the length greater than zero.")
         }
     })
 
@@ -5694,8 +5695,8 @@ describe('Base64HelperTest', function () {
             var array = new Uint32Array([99,122,69,122]);
             var result = that.decodeSync(array);
         } catch (e) {
-            expect(e.toString()).assertEqual("BusinessError: Parameter error. The type of Parameter " +
-                                             "must be Uint8Array or string and the length greater than 0.")
+            expect(e.toString()).assertEqual("Error: Parameter error. The type of Parameter must be Uint8Array or " +
+                                             "string and the length greater than 0.")
         }
     })
 
@@ -5885,7 +5886,7 @@ describe('Base64HelperTest', function () {
             var array = new Uint32Array([66, 97, 115, 101, 54, 52]);
             that.encode(array)
         } catch (e) {
-            expect(e.toString()).assertEqual("BusinessError: Parameter error. The type of Parameter must be Uint8Array and " +
+            expect(e.toString()).assertEqual("Error: Parameter error. The type of Parameter must be Uint8Array and " +
                                              "the length greater than zero.")
         }
 
@@ -5986,7 +5987,7 @@ describe('Base64HelperTest', function () {
             var array = new Uint32Array([66, 97, 115, 101, 54, 52]);
             that.encodeToString(array)
         } catch (e) {
-            expect(e.toString()).assertEqual("BusinessError: Parameter error. The type of Parameter must be Uint8Array and " +
+            expect(e.toString()).assertEqual("Error: Parameter error. The type of Parameter must be Uint8Array and " +
                                              "the length greater than zero.")
         }
     })
@@ -6198,7 +6199,7 @@ describe('Base64HelperTest', function () {
             var array = new Uint16Array([99,122,69,122]);
             that.decode(array)
         } catch (e) {
-            expect(e.toString()).assertEqual("BusinessError: Parameter error. The type of Parameter must be Uint8Array or " +
+            expect(e.toString()).assertEqual("Error: Parameter error. The type of Parameter must be Uint8Array or " +
                                              "string and the length greater than 0.")
         }
     })
@@ -6425,7 +6426,7 @@ describe('Base64HelperTest', function () {
             var str = "";
             that.decodeSync(str)
         } catch (e) {
-            expect(e.toString()).assertEqual("BusinessError: Parameter error. The type of Parameter must be string and the length greater than 0.")
+            expect(e.toString()).assertEqual("Error: Parameter error. The type of Parameter must be string and the length greater than 0.")
         }
     })
 
@@ -6461,7 +6462,7 @@ describe('Base64HelperTest', function () {
             let array = new Uint8Array([2,192,254,253,5,132,69]);
             let result = that.encodeToStringSync(array, util.Type.MIME);
         } catch (e) {
-            expect(e.toString()).assertEqual("BusinessError: Parameter error. The parameter length does not meet this encoding format.")
+            expect(e.toString()).assertEqual("Error: The parameter length does not meet this encoding format.")
         }
     })
 
@@ -7179,7 +7180,7 @@ describe('Base64HelperTest', function () {
             var array = new Uint8Array([]);
             var result = that.encodeSync(array);
         } catch (e) {
-            expect(e.toString()).assertEqual("BusinessError: Parameter error. The type of Parameter must be Uint8Array and " +
+            expect(e.toString()).assertEqual("Error: Parameter error. The type of Parameter must be Uint8Array and " +
                                              "the length greater than zero.");
         }
     })
@@ -7198,7 +7199,7 @@ describe('Base64HelperTest', function () {
             var array = new Uint8Array([]);
             var result = that.encodeToStringSync(array);
         } catch (e) {
-            expect(e.toString()).assertEqual("BusinessError: Parameter error. The type of Parameter must be Uint8Array and " +
+            expect(e.toString()).assertEqual("Error: Parameter error. The type of Parameter must be Uint8Array and " +
                                              "the length greater than zero.");
         }
     })
@@ -7217,7 +7218,7 @@ describe('Base64HelperTest', function () {
             var array = new Uint8Array([]);
             var result = that.decodeSync(array);
         } catch (e) {
-            expect(e.toString()).assertEqual("BusinessError: Parameter error. The type of Parameter must be Uint8Array or " +
+            expect(e.toString()).assertEqual("Error: Parameter error. The type of Parameter must be Uint8Array or " +
                                              "string and the length greater than 0.");
         }
     })
@@ -7236,7 +7237,7 @@ describe('Base64HelperTest', function () {
             var array = new Uint8Array([]);
             that.encode(array)
         } catch (e) {
-            expect(e.toString()).assertEqual("BusinessError: Parameter error. The type of Parameter must be Uint8Array and " +
+            expect(e.toString()).assertEqual("Error: Parameter error. The type of Parameter must be Uint8Array and " +
                                              "the length greater than zero.");
         }
     })
@@ -7255,7 +7256,7 @@ describe('Base64HelperTest', function () {
             var array = new Uint8Array([]);
             that.encodeToString(array)
         } catch (e) {
-            expect(e.toString()).assertEqual("BusinessError: Parameter error. The type of Parameter must be Uint8Array and " +
+            expect(e.toString()).assertEqual("Error: Parameter error. The type of Parameter must be Uint8Array and " +
                                              "the length greater than zero.");
         }
     })
@@ -7274,7 +7275,7 @@ describe('Base64HelperTest', function () {
             var array = new Uint8Array([]);
             that.decode(array)
         } catch (e) {
-            expect(e.toString()).assertEqual("BusinessError: Parameter error. The type of Parameter must be Uint8Array or " +
+            expect(e.toString()).assertEqual("Error: Parameter error. The type of Parameter must be Uint8Array or " +
                                              "string and the length greater than 0.");
         }
     })

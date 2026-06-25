@@ -13,16 +13,14 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../hypium/index";
-import request from "@ohos.request";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../hypium/index';
+import request from '@ohos.request';
 import { BusinessError } from '@kit.BasicServicesKit';
 import common from '@ohos.app.ability.common';
 import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import Utils from './Util.test';
-import hilog from '@ohos.hilog';
-
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let baseContext: common.UIAbilityContext | undefined;
@@ -39,7 +37,12 @@ export default function requestDownloadOneStaticTest() {
         hilog.info(domain, tag, '%{public}s', 'beforeAll start');
         let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
         await Utils.msSleep(1000);
-        abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.helloworld")
+        let cmd = "aa start -a EntryAbility -b com.example.helloworld";
+        let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
+        abilityDelegator.executeShellCommand(cmd)
         await Utils.msSleep(4000);
         hilog.info(domain, tag, '%{public}s', 'beforeAll end');
         baseContext = AppStorage.get<common.UIAbilityContext>("context") as common.UIAbilityContext;

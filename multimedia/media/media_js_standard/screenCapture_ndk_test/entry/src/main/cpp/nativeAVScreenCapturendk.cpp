@@ -2983,10 +2983,196 @@ static napi_value normalMultiDisplayCaptureCapabilityTest(napi_env env, napi_cal
     napi_create_int32(env, result1, &res);
     return res;
 }
+
+int NULL_CHECK_001()
+{
+    std::vector<int32_t> rectData = { 0, 0, 5, 5 };
+    int32_t* rectDepth = rectData.data();
+
+    bool ret = OH_AVFormat_SetIntBuffer(nullptr, OH_SCREEN_CAPTURE_CONTENT_RECT, rectDepth, rectData.size());
+    if (ret) {
+        return TEST_FAILED;
+    }
+    return TEST_PASS;
+}
+
+int NULL_CHECK_002()
+{
+    OH_AVFormat* format = OH_AVFormat_Create();
+    std::vector<int32_t> rectData = { 0, 0, 5, 5 };
+    int32_t* rectDepth = rectData.data();
+
+    bool ret = OH_AVFormat_SetIntBuffer(format, nullptr, rectDepth, rectData.size());
+    OH_AVFormat_Destroy(format);
+    if (ret) {
+        return TEST_FAILED;
+    }
+    return TEST_PASS;
+}
+
+int NULL_CHECK_003()
+{
+    OH_AVFormat* format = OH_AVFormat_Create();
+    std::vector<int32_t> rectData = { 0, 0, 5, 5 };
+    int32_t* rectDepth = rectData.data();
+
+    bool ret = OH_AVFormat_SetIntBuffer(format, OH_SCREEN_CAPTURE_CONTENT_RECT, nullptr, rectData.size());
+    OH_AVFormat_Destroy(format);
+
+    if (ret) {
+        return TEST_FAILED;
+    }
+    return TEST_PASS;
+}
+
+int NULL_CHECK_004()
+{
+    OH_AVFormat* format = OH_AVFormat_Create();
+    std::vector<int32_t> rectData = { 0, 0, 5, 5 };
+    int32_t* rectDepth = rectData.data();
+
+    bool ret = OH_AVFormat_SetIntBuffer(format, OH_SCREEN_CAPTURE_CONTENT_RECT, rectDepth, 0);
+    OH_AVFormat_Destroy(format);
+
+    if (ret) {
+        return TEST_FAILED;
+    }
+    return TEST_PASS;
+}
+
+int NULL_CHECK_005()
+{
+    OH_AVFormat* format = OH_AVFormat_Create();
+    std::vector<int32_t> rectData = { 0, 0, 5, 5 };
+    int32_t* rectDepth = rectData.data();
+
+    bool ret = OH_AVFormat_SetIntBuffer(format, OH_SCREEN_CAPTURE_CONTENT_RECT, rectDepth, rectData.size());
+    if (!ret) {
+        return TEST_FAILED;
+    }
+    OH_LOG_INFO(LOG_APP, "NULL_CHECK_005 OH_AVFormat_SetIntBuffer success");
+    int32_t *rectBuffer = nullptr;
+    size_t bufferSize;
+    
+    ret = OH_AVFormat_GetIntBuffer(nullptr, OH_SCREEN_CAPTURE_CONTENT_RECT, &rectBuffer, &bufferSize);
+    OH_AVFormat_Destroy(format);
+    if (ret) {
+        return TEST_FAILED;
+    }
+    return TEST_PASS;
+}
+
+int NULL_CHECK_006()
+{
+    OH_AVFormat* format = OH_AVFormat_Create();
+    std::vector<int32_t> rectData = { 0, 0, 5, 5 };
+    int32_t* rectDepth = rectData.data();
+
+    bool ret = OH_AVFormat_SetIntBuffer(format, OH_SCREEN_CAPTURE_CONTENT_RECT, rectDepth, rectData.size());
+    if (!ret) {
+        return TEST_FAILED;
+    }
+    OH_LOG_INFO(LOG_APP, "NULL_CHECK_006 OH_AVFormat_SetIntBuffer success");
+    int32_t *rectBuffer = nullptr;
+    size_t bufferSize;
+    
+    ret = OH_AVFormat_GetIntBuffer(format, nullptr, &rectBuffer, &bufferSize);
+    OH_AVFormat_Destroy(format);
+    if (ret) {
+        return TEST_FAILED;
+    }
+    return TEST_PASS;
+}
+
+int NULL_CHECK_007()
+{
+    OH_AVFormat* format = OH_AVFormat_Create();
+    std::vector<int32_t> rectData = { 0, 0, 5, 5 };
+    int32_t* rectDepth = rectData.data();
+
+    bool ret = OH_AVFormat_SetIntBuffer(format, OH_SCREEN_CAPTURE_CONTENT_RECT, rectDepth, rectData.size());
+    if (!ret) {
+        return TEST_FAILED;
+    }
+    OH_LOG_INFO(LOG_APP, "NULL_CHECK_007 OH_AVFormat_SetIntBuffer success");
+    int32_t *rectBuffer = nullptr;
+    size_t bufferSize;
+    
+    ret = OH_AVFormat_GetIntBuffer(format, OH_SCREEN_CAPTURE_CONTENT_RECT, nullptr, &bufferSize);
+    OH_AVFormat_Destroy(format);
+    if (ret) {
+        return TEST_FAILED;
+    }
+    return TEST_PASS;
+}
+
+int NULL_CHECK_008()
+{
+    OH_AVFormat* format = OH_AVFormat_Create();
+    std::vector<int32_t> rectData = { 0, 0, 5, 5 };
+    int32_t* rectDepth = rectData.data();
+
+    bool ret = OH_AVFormat_SetIntBuffer(format, OH_SCREEN_CAPTURE_CONTENT_RECT, rectDepth, rectData.size());
+    if (!ret) {
+        return TEST_FAILED;
+    }
+    OH_LOG_INFO(LOG_APP, "NULL_CHECK_008 OH_AVFormat_SetIntBuffer success");
+    int32_t *rectBuffer = nullptr;
+    size_t bufferSize;
+    
+    ret = OH_AVFormat_GetIntBuffer(format, OH_SCREEN_CAPTURE_CONTENT_RECT, &rectBuffer, nullptr);
+    OH_AVFormat_Destroy(format);
+    if (ret) {
+        return TEST_FAILED;
+    }
+    return TEST_PASS;
+}
+
+static napi_value normalAVbufferTest(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    int result = NULL_CHECK_001();
+    OH_LOG_INFO(LOG_APP, "normalAVbufferTest NULL_CHECK_001 = %{public}d", result);
+    int result1 = NULL_CHECK_002();
+    OH_LOG_INFO(LOG_APP, "normalAVbufferTest NULL_CHECK_002 = %{public}d", result);
+    if (result != TEST_PASS || result1 != TEST_PASS) {
+        napi_create_int32(env, TEST_FAILED, &res);
+        return res;
+    }
+    result = NULL_CHECK_003();
+    OH_LOG_INFO(LOG_APP, "normalAVbufferTest NULL_CHECK_003 = %{public}d", result);
+    result1 = NULL_CHECK_004();
+    OH_LOG_INFO(LOG_APP, "normalAVbufferTest NULL_CHECK_004 = %{public}d", result);
+    if (result != TEST_PASS || result1 != TEST_PASS) {
+        napi_create_int32(env, TEST_FAILED, &res);
+        return res;
+    }
+    result = NULL_CHECK_005();
+    OH_LOG_INFO(LOG_APP, "normalAVbufferTest NULL_CHECK_005 = %{public}d", result);
+    result1 = NULL_CHECK_006();
+    OH_LOG_INFO(LOG_APP, "normalAVbufferTest NULL_CHECK_006 = %{public}d", result);
+    if (result != TEST_PASS || result1 != TEST_PASS) {
+        napi_create_int32(env, TEST_FAILED, &res);
+        return res;
+    }
+    result = NULL_CHECK_007();
+    OH_LOG_INFO(LOG_APP, "normalAVbufferTest NULL_CHECK_007 = %{public}d", result);
+    result1 = NULL_CHECK_008();
+    OH_LOG_INFO(LOG_APP, "normalAVbufferTest NULL_CHECK_008 = %{public}d", result);
+    if (result != TEST_PASS || result1 != TEST_PASS) {
+        napi_create_int32(env, TEST_FAILED, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_PASS, &res);
+    return res;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
+        {"normalAVbufferTest", nullptr, normalAVbufferTest, nullptr, nullptr, nullptr, napi_default,
+            nullptr},
         {"normalAVScreenCaptureTest", nullptr, NormalAVScreenCaptureTest, nullptr, nullptr, nullptr, napi_default,
             nullptr},
         {"normalAVScreenRecordTest", nullptr, NormalAVScreenRecordTest, nullptr, nullptr, nullptr, napi_default,

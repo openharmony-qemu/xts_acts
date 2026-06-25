@@ -36,6 +36,7 @@ import HttpRequestEnableAutoCookieTest from './HttpRequestEnableAutoCookie.test'
 import HttpRequestSocket5Test from './HttpRequestSocket5.test';
 import HttpRequestTlcpEnablePartialChainTest from './HttpRequestTlcpEnablePartialChain.test';
 import HttpRequestTlsEnablePartialChainTest from './HttpRequestTlsEnablePartialChain.test';
+import HttpBodyParametersTest from './HttpRequestBodyParams.test';
 import connection from '@ohos.net.connection';
 let netHandle = connection.getDefaultNetSync();
 export default function testsuite() {
@@ -63,6 +64,7 @@ export default function testsuite() {
       HttpRequestSocket5Test();
       HttpRequestTlcpEnablePartialChainTest();
       HttpRequestTlsEnablePartialChainTest();
+      HttpBodyParametersTest();
     } else {
       EmptyTest();
     }

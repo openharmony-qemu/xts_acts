@@ -31,7 +31,7 @@ import { Link } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 export struct FlowItemView {
-  private _position: Position = { x: 0, y: 0 } as Position;
+  @Link _position!: Position;
   private componentKey: string = '';
   private parentWidth: number = 0;
   private parentHeight: number = 0;

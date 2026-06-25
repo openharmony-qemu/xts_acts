@@ -43,6 +43,7 @@ import VideoSupportMoreSpeedTest from './Video/VideoSupportMoreSpeedTest'
 import VideoOneBoundaryTest from './Video/VideoOneBoundaryTest'
 import videoApiNullUndefinedTest from './Video/videoApiNullUndefinedTest.test';
 import VideoSupportMoreNumberSpeedTest from './Video/VideoSupportMoreNumberSpeedTest.test';
+import videoControllerAsyncTest from './Video/videoControllerAsyncTest.test';
 
 export default function testsuite() {
   videoEnableShortcutKeyTest();
@@ -73,5 +74,6 @@ export default function testsuite() {
   VideoOneBoundaryTest()
   videoApiNullUndefinedTest()
   VideoSupportMoreNumberSpeedTest()
+  videoControllerAsyncTest()
   videoOnFullscreenChangeJsunit()
 }

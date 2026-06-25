@@ -15,28 +15,11 @@
  * limitations under the License.
  */
 
-import { Entry, Text, Column, Component, Button, ClickEvent } from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
-import hilog from '@ohos.hilog'
-import {
-  Text,
-  Column,
-  Component,
-  UIContext,
-  Builder,
-  Entry,
-  List, ListItem, LazyForEach,
-  Row,ColumnOptions,
-  wrapBuilder,
-  NodeContainer,
-  FontWeight,
-  DataChangeListener,IDataSource,DataOperation,Scroller,Axis,Color
-  , IDataSource,Entry, ComponentV2, LengthMetrics,Reusable,Component ,ScrollToIndexOptions,Color
-  ,LazyForEach,ListItem,Scroller,Scroll,Axis,ScrollToIndexOptions,ScrollAlign,ExpandMode
-} from '@ohos.arkui.component';
+import { Entry, Text, Column, Component, Button, ClickEvent, UIContext, Builder, List, ListItem, LazyForEach, Row, ColumnOptions, wrapBuilder, NodeContainer, FontWeight, DataChangeListener, IDataSource, DataOperation, Scroller, Axis, Color, ComponentV2, LengthMetrics, Reusable, ScrollToIndexOptions, Scroll, ScrollAlign, ExpandMode } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
+import hilog from '@ohos.hilog';
 import { NodeController, BuilderNode, FrameNode } from '@ohos.arkui.node';
-import {ChildrenCountMode} from 'arkui.FrameNode'
+import { ChildrenCountMode } from 'arkui.FrameNode';
 const TEST_TAG: string = 'hello'
 export class BasicDataSource implements IDataSource<string> {
   private listeners: DataChangeListener[] = [];

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -46,7 +46,7 @@ class TestAbc {
   }
 }
 
-export default function LightWeightMapTest1() {
+export default function LightWeightMapTest1(): void {
   describe("LightWeightMapTest1", (): void => {
     afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)

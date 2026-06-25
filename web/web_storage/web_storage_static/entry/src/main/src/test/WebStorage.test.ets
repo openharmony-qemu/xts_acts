@@ -1,13 +1,12 @@
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
-import hilog from '@ohos.hilog'
+import { describe, it, expect, TestType, Size, Level, beforeAll } from '../../../hypium/index';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
-import webView from '@ohos.web.webview'
+import webView from '@ohos.web.webview';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let testAbilityContext:common.UIAbilityContext;
@@ -33,7 +32,12 @@ export default function webStorageTest() {
                 }
             });
             await Utils.msSleep(2000)
-            abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actswebstoragetest.static")
+            let cmd = "aa start -a EntryAbility -b com.example.actswebstoragetest.static";
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+            if(user !== undefined){
+                cmd += ' -u ' + user;
+            }
+            abilityDelegator.executeShellCommand(cmd)
             await Utils.msSleep(4000)
             console.info('beforeAll end,%s', 'Succeed!')
         })

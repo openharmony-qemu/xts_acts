@@ -21,9 +21,6 @@
 #include <js_native_api_types.h>
 #include <napi/native_api.h>
 
-namespace {
-static const uint32_t MAX_NAME_LENGTH = 1024;
-}
 EXTERN_C_START
 
 static void InitPush1(std::vector<napi_property_descriptor> &desc)
@@ -586,6 +583,44 @@ static void InitPushOH_VideoEncoderFunction2Test(std::vector<napi_property_descr
     desc.push_back(XL("VideoDecoder_Start", VideoDecoder_Start_Test));
 }
 
+static void InitPushAudioEncoderSettingKey(std::vector<napi_property_descriptor> &desc)
+{
+    desc.push_back(XL("AudioEncoderSetMaxInputBufferSize_Zero", AudioEncoderSetMaxInputBufferSize_Zero));
+    desc.push_back(XL("AudioEncoderSetMaxInputBufferSize_10M", AudioEncoderSetMaxInputBufferSize_10M));
+    desc.push_back(XL("AudioEncoderSetPTSMode_Default", AudioEncoderSetPTSMode_Default));
+    desc.push_back(XL("AudioEncoderSetPTSMode_ZeroStart", AudioEncoderSetPTSMode_ZeroStart));
+    desc.push_back(XL("AudioEncoderSetPTSMode_FirstInputStart", AudioEncoderSetPTSMode_FirstInputStart));
+    desc.push_back(XL("AudioEncoderSetPTSMode_InvalidValue3", AudioEncoderSetPTSMode_InvalidValue3));
+    desc.push_back(XL("AudioEncoderSetPTSMode_Negative", AudioEncoderSetPTSMode_Negative));
+    desc.push_back(XL("AudioEncoderSetSampleConvert_Enable", AudioEncoderSetSampleConvert_Enable));
+    desc.push_back(XL("AudioEncoderSetSampleConvert_Disable", AudioEncoderSetSampleConvert_Disable));
+    desc.push_back(XL("AudioEncoderSetSampleConvert_Default", AudioEncoderSetSampleConvert_Default));
+    desc.push_back(XL("AudioEncoderSetSampleConvert_Invalid2", AudioEncoderSetSampleConvert_Invalid2));
+    desc.push_back(XL("AudioEncoderSetSampleConvert_Negative", AudioEncoderSetSampleConvert_Negative));
+    desc.push_back(XL("AudioEncoderSetSampleConvert_WithUnsupportedFormat",
+                      AudioEncoderSetSampleConvert_WithUnsupportedFormat));
+    desc.push_back(XL("AudioEncoderSetSampleConvert_WithSupportedFormat",
+                      AudioEncoderSetSampleConvert_WithSupportedFormat));
+    desc.push_back(XL("AudioEncoderFLAC_SetMaxInputBufferSize", AudioEncoderFLAC_SetMaxInputBufferSize));
+    desc.push_back(XL("AudioEncoderFLAC_SetPTSMode", AudioEncoderFLAC_SetPTSMode));
+    desc.push_back(XL("AudioEncoderFLAC_SetSampleConvert", AudioEncoderFLAC_SetSampleConvert));
+    desc.push_back(XL("AudioEncoderMP3_SetMaxInputBufferSize", AudioEncoderMP3_SetMaxInputBufferSize));
+    desc.push_back(XL("AudioEncoderMP3_SetPTSMode", AudioEncoderMP3_SetPTSMode));
+    desc.push_back(XL("AudioEncoderMP3_SetSampleConvert", AudioEncoderMP3_SetSampleConvert));
+    desc.push_back(XL("AudioEncoderOPUS_SetMaxInputBufferSize", AudioEncoderOPUS_SetMaxInputBufferSize));
+    desc.push_back(XL("AudioEncoderOPUS_SetPTSMode", AudioEncoderOPUS_SetPTSMode));
+    desc.push_back(XL("AudioEncoderOPUS_SetSampleConvert", AudioEncoderOPUS_SetSampleConvert));
+    desc.push_back(XL("AudioEncoderAMRNB_SetMaxInputBufferSize", AudioEncoderAMRNB_SetMaxInputBufferSize));
+    desc.push_back(XL("AudioEncoderAMRNB_SetPTSMode", AudioEncoderAMRNB_SetPTSMode));
+    desc.push_back(XL("AudioEncoderAMRNB_SetSampleConvert", AudioEncoderAMRNB_SetSampleConvert));
+    desc.push_back(XL("AudioEncoderG711mu_SetMaxInputBufferSize", AudioEncoderG711mu_SetMaxInputBufferSize));
+    desc.push_back(XL("AudioEncoderG711mu_SetPTSMode", AudioEncoderG711mu_SetPTSMode));
+    desc.push_back(XL("AudioEncoderG711mu_SetSampleConvert", AudioEncoderG711mu_SetSampleConvert));
+    desc.push_back(XL("AudioEncoderAMRWB_SetMaxInputBufferSize", AudioEncoderAMRWB_SetMaxInputBufferSize));
+    desc.push_back(XL("AudioEncoderAMRWB_SetPTSMode", AudioEncoderAMRWB_SetPTSMode));
+    desc.push_back(XL("AudioEncoderAMRWB_SetSampleConvert", AudioEncoderAMRWB_SetSampleConvert));
+}
+
 static napi_value Init(napi_env env, napi_value exports)
 {
     std::vector<napi_property_descriptor> desc;
@@ -605,6 +640,7 @@ static napi_value Init(napi_env env, napi_value exports)
     InitPushOH_AVDemuxeFunctionTest(desc);
     InitPushOH_AVErrCodeTest(desc);
     InitPushOH_VideoEncoderFunction2Test(desc);
+    InitPushAudioEncoderSettingKey(desc);
     napi_define_properties(env, exports, desc.size(), desc.data());
     return exports;
 }

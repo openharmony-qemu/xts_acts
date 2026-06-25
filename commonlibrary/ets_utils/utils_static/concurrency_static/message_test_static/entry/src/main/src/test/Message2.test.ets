@@ -39,7 +39,7 @@ function TSleep(delay:int):void {
   for(let t = Date.now(); Date.now() - t <= delay;);
 }
 
-export const Sleep = (ms: int) => {
+export function Sleep(ms: int): Promise<number> {
   return new Promise<number>((resolve) => {
     setTimeout(() => {
       resolve(1)
@@ -55,7 +55,7 @@ export function syncSleep(ms: int): void {
 
 type CB = () => void;
 
-export default function MessageTest2() {
+export default function MessageTest2(): void {
   describe('MessageTest2', (): void => {
     afterEach(async () => {
       await Utils.msSleep(100);

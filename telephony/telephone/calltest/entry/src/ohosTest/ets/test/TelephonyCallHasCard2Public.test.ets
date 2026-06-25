@@ -1651,9 +1651,8 @@ export default function HasCard2PublicTest() {
     it("Telephony_Call_Call_MakeCall_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName: string = "Telephony_Call_Call_MakeCall_0100";
       console.log(`==========> ${caseName} Test start ==========>`);
-      let simState: sim.SimState = sim.getSimStateSync(0);
-      if (simState == sim.SimState.SIM_STATE_UNKNOWN) {
-        console.info(`${caseName} failed, SIM STATE IS UNKNOWN`);
+      if(!sim.hasSimCardSync(0)){
+        console.info(`${caseName} failed, NO SIM`);
         console.info(`${caseName} test end`);
         done();
       } else {
@@ -1687,9 +1686,8 @@ export default function HasCard2PublicTest() {
     it("Telephony_Call_Call_MakeCall_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName: string = "Telephony_Call_Call_MakeCall_0200";
       console.log(`==========> ${caseName} Test start ==========>`);
-      let simState: sim.SimState = sim.getSimStateSync(0);
-      if (simState == sim.SimState.SIM_STATE_UNKNOWN) {
-        console.info(`${caseName} failed, SIM STATE IS UNKNOWN`);
+      if(!sim.hasSimCardSync(0)){
+        console.info(`${caseName} failed, NO SIM`);
         console.info(`${caseName} test end`);
         done();
       } else {
@@ -1722,9 +1720,8 @@ export default function HasCard2PublicTest() {
     it("Telephony_Call_Call_MakeCall_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName: string = "Telephony_Call_Call_MakeCall_0600";
       console.log(`==========> ${caseName} Test start ==========>`);
-      let simState: sim.SimState = sim.getSimStateSync(0);
-      if (simState == sim.SimState.SIM_STATE_UNKNOWN) {
-        console.info(`${caseName} failed, SIM STATE IS UNKNOWN`);
+      if(!sim.hasSimCardSync(0)){
+        console.info(`${caseName} failed, NO SIM`);
         console.info(`${caseName} test end`);
         done();
       } else {
@@ -1745,6 +1742,35 @@ export default function HasCard2PublicTest() {
       }
       console.log(`==========> ${caseName} Test end ==========>`);
     });
-    
+
+    /**
+     * @tc.name   Telephony_Call_Call_MakeCallWithToken_0100
+     * @tc.number Telephony_Call_Call_MakeCallWithToken_0100
+     * @tc.desc   makeCallWithToken with empty string should return error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+    */
+    it("Telephony_Call_Call_MakeCallWithToken_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName: string = "Telephony_Call_Call_MakeCallWithToken_0100";
+      console.log(`==========> ${caseName} Test start ==========>`);
+      if(!sim.hasSimCardSync(0)){
+        console.info(`${caseName} failed, NO SIM`);
+        console.info(`${caseName} test end`);
+        done();
+      } else {
+        try {
+          await call.makeCallWithToken("");
+          console.log("makeCallWithToken promise resolve unexpectedly");
+          expect(false).assertTrue();
+          done();
+        } catch (err) {
+          console.log("makeCallWithToken throw: err->" + JSON.stringify(err));
+          expect(err.code).assertEqual(8300001);
+          done();
+        }
+      }
+      console.log(`==========> ${caseName} Test end ==========>`);
+    });
   });
 }

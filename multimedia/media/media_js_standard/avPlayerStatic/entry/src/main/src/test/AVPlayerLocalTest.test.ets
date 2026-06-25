@@ -1070,6 +1070,26 @@ function OffSeiMessageReceived(avPlayer: media.AVPlayer | null, done: () => void
   done();
 }
 
+function OffSeiMessageReceived02(avPlayer: media.AVPlayer | null, done: () => void) {
+  let surfaceID: string = globalThis.value;
+  let pauseCount = 0
+  avPlayer!.onSeiMessageReceived([5], (messages: Array<media.SeiMessage>, playbackPosition?: int) => {
+    console.info('seiMessageReceived playbackPosition ' + playbackPosition);
+  });
+  avPlayer!.offSeiMessageReceived([]);
+  done();
+}
+  
+function OffSeiMessageReceived03(avPlayer: media.AVPlayer | null, done: () => void) {
+  let surfaceID: string = globalThis.value;
+  let pauseCount = 0
+  avPlayer!.onSeiMessageReceived([5], (messages: Array<media.SeiMessage>, playbackPosition?: int) => {
+    console.info('seiMessageReceived playbackPosition ' + playbackPosition);
+  });
+  avPlayer!.offSeiMessageReceived([5]);
+  done();
+}
+
 async function testOffSeiMessageReceived(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
   done: () => void) {
   console.info(`case media source: ${src}`)
@@ -1088,6 +1108,45 @@ async function testOffSeiMessageReceived(src: string | media.AVFileDescriptor, a
     }
   });
 }
+
+async function testOffSeiMessageReceived02(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
+  done: () => void) {
+  console.info(`case media source: ${src}`)
+  media.createAVPlayer((err: BusinessError | null, video: media.AVPlayer | undefined) => {
+    console.info(`case media err: ${err}`)
+    if (video) {
+      console.info('case createAVPlayer success');
+      avPlayer = video;
+      OffSeiMessageReceived02(avPlayer!, done)
+      setSource(avPlayer!, src);
+    }
+    if (err!!.code != 0) {
+      console.error(`case createAVPlayer error, errMessage is ${err!!.message}`);
+      expect().assertFail();
+      done();
+    }
+  });
+}
+
+async function testOffSeiMessageReceived03(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
+  done: () => void) {
+  console.info(`case media source: ${src}`)
+  media.createAVPlayer((err: BusinessError | null, video: media.AVPlayer | undefined) => {
+    console.info(`case media err: ${err}`)
+    if (video) {
+      console.info('case createAVPlayer success');
+      avPlayer = video;
+      OffSeiMessageReceived03(avPlayer!, done)
+      setSource(avPlayer!, src);
+    }
+    if (err!!.code != 0) {
+      console.error(`case createAVPlayer error, errMessage is ${err!!.message}`);
+      expect().assertFail();
+      done();
+    }
+  });
+}
+
 function OnOffAudioOutputDeviceChangeWithInfo(avPlayer: media.AVPlayer | null, done: () => void) {
   let surfaceID: string = globalThis.value;
   let pauseCount = 0
@@ -1095,6 +1154,20 @@ function OnOffAudioOutputDeviceChangeWithInfo(avPlayer: media.AVPlayer | null, d
     console.info(`${JSON.stringify(data)}`);
   });
   avPlayer!.offAudioOutputDeviceChangeWithInfo();
+  done();
+}
+
+function OnOffAudioOutputDeviceChangeWithInfo02(avPlayer: media.AVPlayer | null, done: () => void) {
+  let surfaceID: string = globalThis.value;
+  let pauseCount = 0
+  avPlayer!.onAudioOutputDeviceChangeWithInfo((data: audio.AudioStreamDeviceChangeInfo) => {
+    console.info(`${JSON.stringify(data)}`);
+  });
+  avPlayer!.offAudioOutputDeviceChangeWithInfo();
+  avPlayer?.onError((err: BusinessError) => {
+    console.error(`case error called, errMessage is ${err.message}`);
+    expect(err.code == 401).assertTrue()
+  });
   done();
 }
 
@@ -1116,6 +1189,26 @@ async function testOnOffAudioOutputDeviceChangeWithInfo(src: string | media.AVFi
     }
   });
 }
+
+async function testOnOffAudioOutputDeviceChangeWithInfo02(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
+  done: () => void) {
+  console.info(`case media source: ${src}`)
+  media.createAVPlayer((err: BusinessError | null, video: media.AVPlayer | undefined) => {
+    console.info(`case media err: ${err}`)
+    if (video) {
+      console.info('case createAVPlayer success');
+      avPlayer = video;
+      OnOffAudioOutputDeviceChangeWithInfo02(avPlayer!, done)
+      setSource(avPlayer!, src);
+    }
+    if (err!!.code != 0) {
+      console.error(`case createAVPlayer error, errMessage is ${err!!.message}`);
+      expect().assertFail();
+      done();
+    }
+  });
+}
+
 function OnOffMediaKeySystemInfoUpdate(avPlayer: media.AVPlayer | null, done: () => void) {
   avPlayer!.onMediaKeySystemInfoUpdate((mediaKeySystemInfo: Array<drm.MediaKeySystemInfo>) => {
   });
@@ -1170,6 +1263,63 @@ function OnOffBitrateDone(avPlayer: media.AVPlayer | null, done: () => void) {
   avPlayer!.offBitrateDone();
   done();
 }
+
+function OnOffSeekDone(avPlayer: media.AVPlayer | null, done: () => void) {
+  avPlayer!.onSeekDone((data: int) => {
+  });
+  avPlayer!.offSeekDone();
+  done();
+}
+
+function OnOffSpeedDone(avPlayer: media.AVPlayer | null, done: () => void) {
+  avPlayer!.onSpeedDone((data: int) => {
+  });
+  avPlayer!.offSpeedDone();
+  done();
+}
+
+function OnOffTimeUpdate(avPlayer: media.AVPlayer | null, done: () => void) {
+  avPlayer!.onTimeUpdate((data: int) => {
+  });
+  avPlayer!.offTimeUpdate();
+  done();
+}
+
+function OnOffDurationUpdate(avPlayer: media.AVPlayer | null, done: () => void) {
+  avPlayer!.onDurationUpdate((data: int) => {
+  });
+  avPlayer!.offDurationUpdate();
+  done();
+}
+
+function OnOffStartRenderFrame(avPlayer: media.AVPlayer | null, done: () => void) {
+  avPlayer!.onStartRenderFrame(() => {
+  });
+  avPlayer!.offStartRenderFrame();
+  done();
+}
+
+function OnOffAvailableBitrates(avPlayer: media.AVPlayer | null, done: () => void) {
+  avPlayer!.onAvailableBitrates((bitrates: Array<int>) => {
+  });
+  avPlayer!.offAvailableBitrates();
+  done();
+}
+
+function OnOffVolumeChange(avPlayer: media.AVPlayer | null, done: () => void) {
+  avPlayer!.onVolumeChange((data: double) => {
+  });
+  avPlayer!.offVolumeChange();
+  done();
+}
+
+function OnOffMetricsEventDone(avPlayer: media.AVPlayer | null, done: () => void) {
+  avPlayer!.onMetricsEvent((info: Array<media.AVMetricsEvent>) => {
+  });
+  avPlayer!.offMetricsEvent();
+  done();
+}
+
 async function testOnOffBitrateDone(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
   done: () => void) {
   console.info(`case media source: ${src}`)
@@ -1188,6 +1338,159 @@ async function testOnOffBitrateDone(src: string | media.AVFileDescriptor, avPlay
     }
   });
 }
+
+async function testOnOffSeekDone(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
+  done: () => void) {
+  console.info(`case media source: ${src}`)
+  media.createAVPlayer((err: BusinessError | null, video: media.AVPlayer | undefined) => {
+    console.info(`case media err: ${err}`)
+    if (video) {
+      console.info('case createAVPlayer success');
+      avPlayer = video;
+      OnOffSeekDone(avPlayer!, done)
+      setSource(avPlayer!, src);
+    }
+    if (err!!.code != 0) {
+      console.error(`case createAVPlayer error, errMessage is ${err!!.message}`);
+      expect().assertFail();
+      done();
+    }
+  });
+}
+
+async function testOnOffSpeedDone(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
+  done: () => void) {
+  console.info(`case media source: ${src}`)
+  media.createAVPlayer((err: BusinessError | null, video: media.AVPlayer | undefined) => {
+    console.info(`case media err: ${err}`)
+    if (video) {
+      console.info('case createAVPlayer success');
+      avPlayer = video;
+      OnOffSpeedDone(avPlayer!, done)
+      setSource(avPlayer!, src);
+    }
+    if (err!!.code != 0) {
+      console.error(`case createAVPlayer error, errMessage is ${err!!.message}`);
+      expect().assertFail();
+      done();
+    }
+  });
+}
+
+async function testOnOffTimeUpdate(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
+  done: () => void) {
+  console.info(`case media source: ${src}`)
+  media.createAVPlayer((err: BusinessError | null, video: media.AVPlayer | undefined) => {
+    console.info(`case media err: ${err}`)
+    if (video) {
+      console.info('case createAVPlayer success');
+      avPlayer = video;
+      OnOffTimeUpdate(avPlayer!, done)
+      setSource(avPlayer!, src);
+    }
+    if (err!!.code != 0) {
+      console.error(`case createAVPlayer error, errMessage is ${err!!.message}`);
+      expect().assertFail();
+      done();
+    }
+  });
+}
+
+async function testOnOffDurationUpdate(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
+  done: () => void) {
+  console.info(`case media source: ${src}`)
+  media.createAVPlayer((err: BusinessError | null, video: media.AVPlayer | undefined) => {
+    console.info(`case media err: ${err}`)
+    if (video) {
+      console.info('case createAVPlayer success');
+      avPlayer = video;
+      OnOffDurationUpdate(avPlayer!, done)
+      setSource(avPlayer!, src);
+    }
+    if (err!!.code != 0) {
+      console.error(`case createAVPlayer error, errMessage is ${err!!.message}`);
+      expect().assertFail();
+      done();
+    }
+  });
+}
+
+async function testOnOffStartRenderFrame(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
+  done: () => void) {
+  console.info(`case media source: ${src}`)
+  media.createAVPlayer((err: BusinessError | null, video: media.AVPlayer | undefined) => {
+    console.info(`case media err: ${err}`)
+    if (video) {
+      console.info('case createAVPlayer success');
+      avPlayer = video;
+      OnOffStartRenderFrame(avPlayer!, done)
+      setSource(avPlayer!, src);
+    }
+    if (err!!.code != 0) {
+      console.error(`case createAVPlayer error, errMessage is ${err!!.message}`);
+      expect().assertFail();
+      done();
+    }
+  });
+}
+
+async function testOnOffAvailableBitrates(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
+  done: () => void) {
+  console.info(`case media source: ${src}`)
+  media.createAVPlayer((err: BusinessError | null, video: media.AVPlayer | undefined) => {
+    console.info(`case media err: ${err}`)
+    if (video) {
+      console.info('case createAVPlayer success');
+      avPlayer = video;
+      OnOffAvailableBitrates(avPlayer!, done)
+      setSource(avPlayer!, src);
+    }
+    if (err!!.code != 0) {
+      console.error(`case createAVPlayer error, errMessage is ${err!!.message}`);
+      expect().assertFail();
+      done();
+    }
+  });
+}
+
+async function testOnOffVolumeChange(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
+  done: () => void) {
+  console.info(`case media source: ${src}`)
+  media.createAVPlayer((err: BusinessError | null, video: media.AVPlayer | undefined) => {
+    console.info(`case media err: ${err}`)
+    if (video) {
+      console.info('case createAVPlayer success');
+      avPlayer = video;
+      OnOffVolumeChange(avPlayer!, done)
+      setSource(avPlayer!, src);
+    }
+    if (err!!.code != 0) {
+      console.error(`case createAVPlayer error, errMessage is ${err!!.message}`);
+      expect().assertFail();
+      done();
+    }
+  });
+}
+
+async function testOnOffMetricsEvent(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
+  done: () => void) {
+  console.info(`case media source: ${src}`)
+  media.createAVPlayer((err: BusinessError | null, video: media.AVPlayer | undefined) => {
+    console.info(`case media err: ${err}`)
+    if (video) {
+      console.info('case createAVPlayer success');
+      avPlayer = video;
+      OnOffMetricsEventDone(avPlayer!, done)
+      setSource(avPlayer!, src);
+    }
+    if (err!!.code != 0) {
+      console.error(`case createAVPlayer error, errMessage is ${err!!.message}`);
+      expect().assertFail();
+      done();
+    }
+  });
+}
+
 function setAvPlayerDataSrc(avPlayer: media.AVPlayer | null, dataSrc: media.AVDataSrcDescriptor, done: () => void) {
   const stateChangeCallback = (state: media.AVPlayerState) => {
     switch (state) {
@@ -1586,6 +1889,133 @@ async function testMetricsListening(src: media.AVFileDescriptor,
   });
 }
 
+async function testGetPlaybackSpeed(src: string | media.AVFileDescriptor, speed: number, done: () => void){
+  media.createAVPlayer((err: BusinessError | null, video: media.AVPlayer | undefined) => {
+    console.info(`case media err: ${err}`)
+    if (typeof (video) !== 'undefined') {
+      console.info('case createAVPlayer success');
+      avPlayer = video;
+      setAVPlayerCb(avPlayer!, speed, done);
+      setSource(avPlayer!!, src);
+    }
+    if (err != null) {
+      console.error(`case createAVPlayer error, errMessage is ${err.message}`);
+      expect().assertFail();
+      done();
+    }
+  })
+}
+
+async function testSetLoudness(src: media.AVFileDescriptor, done: () => void, LoudnessGain: double){
+  media.createAVPlayer((err: BusinessError | null, video: media.AVPlayer | undefined) => {
+  console.info(`case media err: ${err}`)
+    if (video) {
+      console.info('case createAVPlayer success');
+      avPlayer = video;
+      setLoudness(avPlayer!, done, LoudnessGain);
+      setSource(avPlayer!, src);
+    }
+    if (err!!.code != 0) {
+      console.error(`case createAVPlayer error, errMessage is ${err!!.message}`);
+      expect().assertFail();
+      done();
+    }
+  })
+}
+
+function setAVPlayerCb(avPlayer: media.AVPlayer | null, speed: number, done: () => void) {
+  avPlayer?.onStateChange((state, reason: media.StateChangeReason | undefined) => {
+    switch (state) {
+      case INITIALIZED:
+        if (!avPlayer) {
+          console.info(`avPlayer is null`);
+          break;
+        }
+        console.info(`case INITIALIZED`);
+        expect(avPlayer!!.state).assertEqual(INITIALIZED);
+        avPlayer!!.audioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_MOVIE,
+          rendererFlags: 0
+        }
+        avPlayer!!.prepare((err) => {
+          console.info('case prepare called' + err);
+          if (err != null) {
+            console.error(`case prepare error, errMessage is ${err!!.message}`);
+            expect().assertFail();
+            done();
+          } else if (avPlayer) {
+            console.info('case avPlayer.duration: ' + avPlayer!!.duration);
+          }
+        });
+        break;
+      case PREPARED:
+        avPlayer?.play();
+        break;
+      case PLAYING:
+        avPlayer?.setPlaybackRate(speed);
+        avPlayer?.release();
+        break;
+      case RELEASED:
+        avPlayer = null;
+        done();
+        break;
+      case ERROR:
+        expect().assertFail();
+        avPlayer?.release().then(() =>{          
+        }).catch(mediaTestBase.catchCallback);
+        avPlayer = null;
+        break;
+      default:
+        break;
+    }
+  })
+}
+
+function setLoudness(avPlayer: media.AVPlayer | null, done: () =>void, LoudnessGain: number) {
+  avPlayer?.onStateChange((state: media.AVPlayerState) =>{
+      switch (state) {
+      case INITIALIZED:
+          if (!avPlayer) {
+              console.info(`avPlayer is null`);
+              break;
+          }
+          console.info(`case INITIALIZED`);
+          expect(avPlayer !! .state).assertEqual(INITIALIZED);
+          avPlayer !! .audioRendererInfo = {
+              usage: audio.StreamUsage.STREAM_USAGE_MOVIE,
+              rendererFlags: 0
+          }
+          avPlayer !! .prepare((err) =>{
+              console.info('case prepare called' + err);
+              if (err != null) {
+                  console.error(`case prepare error, errMessage is ${err!!.message}`);
+                  expect().assertFail();
+                  done();
+              } else if (avPlayer) {
+                  console.info('case avPlayer.duration: ' + avPlayer !! .duration);
+              }
+          });
+          break;
+      case PREPARED:
+          avPlayer?.setLoudnessGain(LoudnessGain);
+          avPlayer?.release();
+          break;
+      case RELEASED:
+          avPlayer = null;
+          done();
+          break;
+      case ERROR:
+          expect().assertFail();
+          avPlayer?.release().then(() =>{
+          }).catch(mediaTestBase.catchCallback);
+          avPlayer = null;
+          break;
+      default:
+          break;
+      }
+  })
+}
+
 async function timedMetaDataON(avPlayer: media.AVPlayer | undefined, done: () => void) {
   avPlayer!.onTimedMetaData((metaData: media.AVTimedMetaData) => {
     if (metaData) {
@@ -1675,6 +2105,174 @@ async function testTimedMetaDataListening(src: media.AVFileDescriptor,
     }
   });
 }
+
+async function testGetCurrentTrack(src: media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined, done: () => void) {
+  console.info(`case media source: ${src}`)
+  media.createAVPlayer((err: BusinessError | null, video: media.AVPlayer | undefined) => {
+    if (err != null) {
+      console.error(`case createAVPlayer error, errMessage is ${err.message}`);
+      expect().assertFail();
+      done();
+    } else {
+      if (video) {
+        console.info('case createAVPlayer success');
+        avPlayer = video;
+        avPlayer?.getCurrentTrack(media.MediaType.MEDIA_TYPE_AUD).then((track) => {
+          console.info('case getCurrentTrack AUDIO track: ' + track);
+          expect(track).assertEqual(0);
+        }).catch(mediaTestBase.catchCallback);
+        getCurrentTrackCb(avPlayer!, done);
+        avPlayer!.fdSrc = src;
+        done();
+      } else {
+        console.error(`case createAVPlayer failed`);
+        expect().assertFail();
+        done();
+      }
+    }
+  });
+}
+
+function getCurrentTrackCb(avPlayer: media.AVPlayer | null, done: () => void) {
+  let surfaceID: string = globalThis.value;
+  avPlayer?.onStateChange((state: media.AVPlayerState, reason: media.StateChangeReason) => {
+    switch (state) {
+      case INITIALIZED:
+        if (!avPlayer) {
+          console.info(`avPlayer is null`);
+          break;
+        }
+        console.info(`case INITIALIZED`);
+        expect(avPlayer!!.state).assertEqual(INITIALIZED);
+        avPlayer!!.surfaceId = surfaceID;
+        avPlayer!!.prepare().then(() => {
+          console.info('case prepare success');
+        }).catch(mediaTestBase.catchCallback);
+        break;
+      case PREPARED:
+        console.info('case PREPARED');
+        avPlayer?.getCurrentTrack(media.MediaType.MEDIA_TYPE_AUD).then((track) => {
+          console.info('case getCurrentTrack AUDIO track: ' + track);
+          expect(track).assertEqual(0);
+        }).catch(mediaTestBase.catchCallback);
+
+        avPlayer?.getCurrentTrack(media.MediaType.MEDIA_TYPE_VID).then((track) => {
+          console.info('case getCurrentTrack VIDEO track: ' + track);
+          expect(track).assertEqual(0);
+        }).catch(mediaTestBase.catchCallback);
+
+        avPlayer?.play((err) => {
+          console.info('case play called' + err);
+          if (err != null) {
+            console.error(`case play error, errMessage is ${err!!.message}`);
+            expect().assertFail();
+            done();
+          }
+        });
+        break;
+      case PLAYING:
+        console.info('case PLAYING');
+        avPlayer?.getCurrentTrack(media.MediaType.MEDIA_TYPE_AUD).then((track) => {
+          console.info('case getCurrentTrack AUDIO track in PLAYING: ' + track);
+          expect(track).assertEqual(0);
+        }).catch(mediaTestBase.catchCallback);
+
+        avPlayer?.stop((err) => {
+          console.info('case stop called' + err);
+          if (err != null) {
+            console.error(`case stop error, errMessage is ${err!!.message}`);
+            expect().assertFail();
+            done();
+          }
+        });
+        break;
+      case STOPPED:
+        console.info('case STOPPED');
+        avPlayer?.release();
+        break;
+      case RELEASED:
+        console.info('case RELEASED');
+        avPlayer = null;
+        done();
+        break;
+      case ERROR:
+        expect().assertFail();
+        avPlayer?.release().then(() => {
+        }).catch(mediaTestBase.catchCallback);
+        avPlayer = null;
+        break;
+      default:
+        break;
+    }
+  });
+}
+
+async function testPrivacyType(src: media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined, 
+  done: () => void, type: audio.AudioPrivacyType) {
+  console.info(`case media source: ${src}`)
+  media.createAVPlayer((err: BusinessError | null, video: media.AVPlayer | undefined) => {
+    if (err != null) {
+      console.error(`case createAVPlayer error, errMessage is ${err.message}`);
+      expect().assertFail();
+      done();
+    } else {
+      if (video) {
+        console.info('case createAVPlayer success');
+        avPlayer = video;
+        avPlayer!!.privacyType = type;
+        privacyTypeCb(avPlayer!, done, type);
+        avPlayer!.fdSrc = src;
+        done();
+      } else {
+        console.error(`case createAVPlayer failed`);
+        expect().assertFail();
+        done();
+      }
+    }
+  });
+}
+
+function privacyTypeCb(avPlayer: media.AVPlayer | null, done: () => void, type: audio.AudioPrivacyType) {
+  let surfaceID: string = globalThis.value;
+  avPlayer?.onStateChange((state: media.AVPlayerState, reason: media.StateChangeReason) => {
+    switch (state) {
+      case INITIALIZED:
+        if (!avPlayer) {
+          console.info(`avPlayer is null`);
+          break;
+        }
+        console.info(`case INITIALIZED`);
+        expect(avPlayer!!.state).assertEqual(INITIALIZED);
+        avPlayer!!.surfaceId = surfaceID;
+        console.info(`case set privacyType: ${type}`);
+        avPlayer!!.privacyType = type;
+        avPlayer!!.prepare().then(() => {
+          console.info('case prepare success');
+        }).catch(mediaTestBase.catchCallback);
+        break;
+      case PREPARED:
+        console.info('case PREPARED');
+        console.info(`case avPlayer privacyType: ${avPlayer!!.privacyType}`);
+        expect(avPlayer!!.privacyType).assertEqual(type);
+        avPlayer?.release();
+        break;
+      case RELEASED:
+        console.info('case RELEASED');
+        avPlayer = null;
+        done();
+        break;
+      case ERROR:
+        expect().assertFail();
+        avPlayer?.release().then(() => {
+        }).catch(mediaTestBase.catchCallback);
+        avPlayer = null;
+        break;
+      default:
+        break;
+    }
+  });
+}
+
 export default function AVPlayerLocalTest() {
   describe('AVPlayerLocalTest', () => {
     beforeAll(async () => {
@@ -1936,6 +2534,7 @@ export default function AVPlayerLocalTest() {
         });
       })
 
+
       /**
        * @tc.name   SUB_MULTIMEDIA_PLAYER_OFF_SEIMESSAGERECEIVED_FUNCTION_static_0100
        * @tc.number SUB_MULTIMEDIA_PLAYER_OFF_SEIMESSAGERECEIVED_FUNCTION_static_0100
@@ -1963,6 +2562,21 @@ export default function AVPlayerLocalTest() {
         if (fileDescriptor) {
           expect(fileDescriptor).not().assertNull();
           testOnOffAudioOutputDeviceChangeWithInfo(fileDescriptor!, avPlayer, done);
+        }
+      })
+
+      /**
+       * @tc.name   SUB_MULTIMEDIA_PLAYER_ON_OFF_AUDIOOUTPUTDEVICECHANGEWITHINFO_FUNCTION_static_0200
+       * @tc.number SUB_MULTIMEDIA_PLAYER_ON_OFF_AUDIOOUTPUTDEVICECHANGEWITHINFO_FUNCTION_static_0200
+       * @tc.desc   test on/off audioOutputDeviceChangeWithInfo
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
+      it('SUB_MULTIMEDIA_PLAYER_ON_OFF_AUDIOOUTPUTDEVICECHANGEWITHINFO_FUNCTION_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+        if (fileDescriptor) {
+          expect(fileDescriptor).not().assertNull();
+          testOnOffAudioOutputDeviceChangeWithInfo02(fileDescriptor!, avPlayer, done);
         }
       })
 
@@ -2095,13 +2709,13 @@ export default function AVPlayerLocalTest() {
         }
       })
       /**
-      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_GET_CURRENT_PRESENTATION_TIMESTAMP_static_0100
-      * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_GET_CURRENT_PRESENTATION_TIMESTAMP_static_0100
-      * @tc.desc   Local Video getCurrentPresentationTimestamp control test
-      * @tc.type   FUNCTION
-      * @tc.size   MEDIUMTEST
-      * @tc.level  LEVEL0
-      */
+       * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_GET_CURRENT_PRESENTATION_TIMESTAMP_static_0100
+       * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_GET_CURRENT_PRESENTATION_TIMESTAMP_static_0100
+       * @tc.desc   Local Video getCurrentPresentationTimestamp control test
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('SUB_MULTIMEDIA_MEDIA_VIDEO_GET_CURRENT_PRESENTATION_TIMESTAMP_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
         try {
           if (fileDescriptor) {
@@ -2113,6 +2727,550 @@ export default function AVPlayerLocalTest() {
           done();
         }
       });
+      /**
+       * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0100
+       * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0100
+       * @tc.desc   Local Video subtitle control test
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
+      it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: () =>void) =>{
+        try {
+          if (fileDescriptor) {
+            testSetLoudness(fileDescriptor ! , done, 0.0);
+          }
+        } catch(error) {
+          console.error(`Test exception: ${JSON.stringify(error)}`);
+          expect().assertFail();
+          done();
+        }
+      });
+      /**
+       * @tc.name    SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0200
+       * @tc.number  SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0200
+       * @tc.desc    Local Video subtitle control test
+       * @tc.type    FUNCTION
+       * @tc.size    MEDIUMTEST
+       * @tc.level   LEVEL0
+       */
+       it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: () =>void) =>{
+         try {
+           if (fileDescriptor) {
+             testSetLoudness(fileDescriptor ! , done, -90.0);
+           }
+         } catch(error) {
+           console.error(`Test exception: ${JSON.stringify(error)}`);
+           expect().assertFail();
+           done();
+         }
+       });
+      /**
+       * @tc.name    SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0300
+       * @tc.number  SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0300
+       * @tc.desc    Local Video subtitle control test
+       * @tc.type    FUNCTION
+       * @tc.size    MEDIUMTEST
+       * @tc.level   LEVEL0
+       */
+       it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: () =>void) =>{
+         try {
+           if (fileDescriptor) {
+             testSetLoudness(fileDescriptor ! , done, 24.0);
+           }
+         } catch(error) {
+           console.error(`Test exception: ${JSON.stringify(error)}`);
+           expect().assertFail();
+           done();
+         }
+       });
+      /**
+       * @tc.name    SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0400
+       * @tc.number  SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0400
+       * @tc.desc    Local Video subtitle control test
+       * @tc.type    FUNCTION
+       * @tc.size    MEDIUMTEST
+       * @tc.level   LEVEL0
+       */
+       it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: () =>void) =>{
+         try {
+           if (fileDescriptor) {
+             testSetLoudness(fileDescriptor ! , done, -40.0);
+           }
+         } catch(error) {
+           console.error(`Test exception: ${JSON.stringify(error)}`);
+           expect().assertFail();
+           done();
+         }
+       });
+      /**
+       * @tc.name    SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0500
+       * @tc.number  SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0500
+       * @tc.desc    Local Video subtitle control test
+       * @tc.type    FUNCTION
+       * @tc.size    MEDIUMTEST
+       * @tc.level   LEVEL0
+       */
+       it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: () =>void) =>{
+         try {
+           if (fileDescriptor) {
+             testSetLoudness(fileDescriptor ! , done, 10.8);
+           }
+         } catch(error) {
+           console.error(`Test exception: ${JSON.stringify(error)}`);
+           expect().assertFail();
+           done();
+         }
+       });
+      /**
+       * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0600
+       * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0600
+       * @tc.desc   Local Video subtitle control test
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
+       it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: () =>void) =>{
+         try {
+           if (fileDescriptor) {
+             testSetLoudness(fileDescriptor ! , done, -90.1);
+           }
+         } catch(error) {
+           console.error(`Test exception: ${JSON.stringify(error)}`);
+           expect(error.code).assertEqual(5400108);
+           done();
+         }
+       });
+      /**
+       * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0700
+       * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0700
+       * @tc.desc   Local Video subtitle control test
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
+       it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: () =>void) =>{
+         try {
+           if (fileDescriptor) {
+             testSetLoudness(fileDescriptor ! , done, -100.4);
+           }
+         } catch(error) {
+           console.error(`Test exception: ${JSON.stringify(error)}`);
+           expect(error.code).assertEqual(5400108);
+           done();
+         }
+       });
+      /**
+       * @tc.name    SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0800
+       * @tc.number  SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0800
+       * @tc.desc    Local Video subtitle control test
+       * @tc.type    FUNCTION
+       * @tc.size    MEDIUMTEST
+       * @tc.level   LEVEL0
+       */
+       it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: () =>void) =>{
+         try {
+           if (fileDescriptor) {
+             testSetLoudness(fileDescriptor ! , done, 24.1);
+           }
+         } catch(error) {
+           console.error(`Test exception: ${JSON.stringify(error)}`);
+           expect(error.code).assertEqual(5400108);
+           done();
+         }
+       });
+      /**
+       * @tc.name    SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0900
+       * @tc.number  SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0900
+       * @tc.desc    Local Video subtitle control test
+       * @tc.type    FUNCTION
+       * @tc.size    MEDIUMTEST
+       * @tc.level   LEVEL0
+       */
+       it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: () =>void) =>{
+         try {
+           if (fileDescriptor) {
+             testSetLoudness(fileDescriptor ! , done, 60.2);
+           }
+         } catch(error) {
+           console.error(`Test exception: ${JSON.stringify(error)}`);
+           expect(error.code).assertEqual(5400108);
+           done();
+         }
+       });
+ 
+      /**
+       * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_METRICS_ON_0100
+       * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_METRICS_ON_0100
+       * @tc.desc   local video metrics control test
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
+      it('SUB_MULTIMEDIA_MEDIA_VIDEO_METRICS_ON_0100', Level.LEVEL0, async (done: () => void) => {
+        expect(fileDescriptor).not().assertNull();
+        if (fileDescriptor && subtitleFdSrc) {
+          testMetricsListening(fileDescriptor!, avPlayer, done);
+        }
+      });
+
+      /**
+       * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ON_OFF_VOLUMECHANGE_0100
+       * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ON_OFF_VOLUMECHANGE_0100
+       * @tc.desc   Http playback control test
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
+      it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ON_OFF_VOLUMECHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+        if (fileDescriptor) {
+          expect(fileDescriptor).not().assertNull();
+          testOnOffVolumeChange(fileDescriptor!, avPlayer, done);
+        }
+      })
+
+      /**
+       * @tc.name   SUB_MULTIMEDIA_PLAYER_ON_OFF_SEEKDONE_FUNCTION_static_0100
+       * @tc.number SUB_MULTIMEDIA_PLAYER_ON_OFF_SEEKDONE_FUNCTION_static_0100
+       * @tc.desc   test on/off SeekDone
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
+      it('SUB_MULTIMEDIA_PLAYER_ON_OFF_SEEKDONE_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+        if (fileDescriptor) {
+          expect(fileDescriptor).not().assertNull();
+          testOnOffSeekDone(fileDescriptor!, avPlayer, done);
+        }
+      })
+
+      /**
+       * @tc.name   SUB_MULTIMEDIA_PLAYER_ON_OFF_SPEEDDONE_FUNCTION_static_0100
+       * @tc.number SUB_MULTIMEDIA_PLAYER_ON_OFF_SPEEDDONE_FUNCTION_static_0100
+       * @tc.desc   test on/off SpeedDone
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
+      it('SUB_MULTIMEDIA_PLAYER_ON_OFF_SPEEDDONE_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+        if (fileDescriptor) {
+          expect(fileDescriptor).not().assertNull();
+          testOnOffSpeedDone(fileDescriptor!, avPlayer, done);
+        }
+      })
+
+      /**
+       * @tc.name   SUB_MULTIMEDIA_PLAYER_ON_OFF_TIMEUPDATE_FUNCTION_static_0100
+       * @tc.number SUB_MULTIMEDIA_PLAYER_ON_OFF_TIMEUPDATE_FUNCTION_static_0100
+       * @tc.desc   test on/off TimeUpdate
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
+      it('SUB_MULTIMEDIA_PLAYER_ON_OFF_TIMEUPDATE_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+        if (fileDescriptor) {
+          expect(fileDescriptor).not().assertNull();
+          testOnOffTimeUpdate(fileDescriptor!, avPlayer, done);
+        }
+      })
+
+      /**
+       * @tc.name   SUB_MULTIMEDIA_PLAYER_ON_OFF_DURATIONUPDATE_FUNCTION_static_0100
+       * @tc.number SUB_MULTIMEDIA_PLAYER_ON_OFF_DURATIONUPDATE_FUNCTION_static_0100
+       * @tc.desc   test on/off DurationUpdate
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
+      it('SUB_MULTIMEDIA_PLAYER_ON_OFF_DURATIONUPDATE_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+        if (fileDescriptor) {
+          expect(fileDescriptor).not().assertNull();
+          testOnOffDurationUpdate(fileDescriptor!, avPlayer, done);
+        }
+      })
+
+      /**
+       * @tc.name   SUB_MULTIMEDIA_PLAYER_ON_OFF_STARTRENDERFRAME_FUNCTION_static_0100
+       * @tc.number SUB_MULTIMEDIA_PLAYER_ON_OFF_STARTRENDERFRAME_FUNCTION_static_0100
+       * @tc.desc   test on/off StartRenderFrame
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
+      it('SUB_MULTIMEDIA_PLAYER_ON_OFF_STARTRENDERFRAME_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+        if (fileDescriptor) {
+          expect(fileDescriptor).not().assertNull();
+          testOnOffStartRenderFrame(fileDescriptor!, avPlayer, done);
+        }
+      })
+
+      /**
+       * @tc.name   SUB_MULTIMEDIA_PLAYER_ON_OFF_AVAILABLEBITRATES_FUNCTION_static_0100
+       * @tc.number SUB_MULTIMEDIA_PLAYER_ON_OFF_AVAILABLEBITRATES_FUNCTION_static_0100
+       * @tc.desc   test on/off AvailableBitrates
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
+      it('SUB_MULTIMEDIA_PLAYER_ON_OFF_AVAILABLEBITRATES_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+        if (fileDescriptor) {
+          expect(fileDescriptor).not().assertNull();
+          testOnOffAvailableBitrates(fileDescriptor!, avPlayer, done);
+        }
+      })
+
+      /**
+       * @tc.name   SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0001
+       * @tc.number SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0001
+       * @tc.desc   Test getPlaybackSpeed interface, verify return value after setSpeed
+       *            test avPlayer  getPlaybackSpeed, set speed SPEED_FORWARD_0_75_X
+       * @tc.size   MediumTest
+       * @tc.type   FUNCTION
+       * @tc.level  LEVEL0
+       */
+      it('SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+        try {
+          if (fileDescriptor) {
+            testGetPlaybackSpeed(fileDescriptor!, 0.75, done);
+          }
+        } catch (error) {
+          console.error(`Test exception: ${JSON.stringify(error)}`);
+          expect().assertFail();
+          done();
+        }
+      });
+
+      /**
+       * @tc.name   SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0002
+       * @tc.number SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0002
+       * @tc.desc   Test getPlaybackSpeed interface, verify return value after setSpeed
+       *            test avPlayer  getPlaybackSpeed, set speed SPEED_FORWARD_1_00_X
+       * @tc.size   MediumTest
+       * @tc.type   FUNCTION
+       * @tc.level  Level0
+       */
+      it('SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+        try {
+          if (fileDescriptor) {
+            testGetPlaybackSpeed(fileDescriptor!, 1.00, done);
+          }
+        } catch (error) {
+          console.error(`Test exception: ${JSON.stringify(error)}`);
+          expect().assertFail();
+          done();
+        }
+      });
+
+      /**
+       * @tc.name   SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0003
+       * @tc.number SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0003
+       * @tc.desc   Test getPlaybackSpeed interface, verify return value after setSpeed
+       *            test avPlayer  getPlaybackSpeed, set speed SPEED_FORWARD_1_125_X
+       * @tc.size   MediumTest
+       * @tc.type   FUNCTION
+       * @tc.level  Level0
+       */
+      it('SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+        try {
+          if (fileDescriptor) {
+            testGetPlaybackSpeed(fileDescriptor!, 1.125, done);
+          }
+        } catch (error) {
+          console.error(`Test exception: ${JSON.stringify(error)}`);
+          expect().assertFail();
+          done();
+        }
+      });
+
+      /**
+       * @tc.name   SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0004
+       * @tc.number SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0004
+       * @tc.desc   Test getPlaybackSpeed interface, verify return value after setSpeed
+       *            test avPlayer  getPlaybackSpeed, set speed SPEED_FORWARD_1_75_X
+       * @tc.size   MediumTest
+       * @tc.type   FUNCTION
+       * @tc.level  Level0
+       */
+      it('SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+        try {
+          if (fileDescriptor) {
+            testGetPlaybackSpeed(fileDescriptor!, 1.75, done);
+          }
+        } catch (error) {
+          console.error(`Test exception: ${JSON.stringify(error)}`);
+          expect().assertFail();
+          done();
+        }
+      });
+
+      /**
+       * @tc.name   SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0005
+       * @tc.number SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0005
+       * @tc.desc   Test getPlaybackSpeed interface, verify return value after setSpeed
+       *            test avPlayer  getPlaybackSpeed, set speed SPEED_FORWARD_2_0_X
+       * @tc.size   MediumTest
+       * @tc.type   FUNCTION
+       * @tc.level  Level0
+       */
+      it('SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+        try {
+          if (fileDescriptor) {
+            testGetPlaybackSpeed(fileDescriptor!, 2.0, done);
+          }
+        } catch (error) {
+          console.error(`Test exception: ${JSON.stringify(error)}`);
+          expect().assertFail();
+          done();
+        }
+      });
+
+      /**
+       * @tc.name   SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0006
+       * @tc.number SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0006
+       * @tc.desc   Test getPlaybackSpeed interface, verify return value after setSpeed
+       *            test avPlayer  getPlaybackSpeed, set speed SPEED_FORWARD_0_5_X
+       * @tc.size   MediumTest
+       * @tc.type   FUNCTION
+       * @tc.level  Level0
+       */
+      it('SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+        try {
+          if (fileDescriptor) {
+            testGetPlaybackSpeed(fileDescriptor!, 0.5, done);
+          }
+        } catch (error) {
+          console.error(`Test exception: ${JSON.stringify(error)}`);
+          expect().assertFail();
+          done();
+        }
+      });
+
+      /**
+       * @tc.name   SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0007
+       * @tc.number SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0007
+       * @tc.desc   Test getPlaybackSpeed interface, verify return value after setSpeed
+       *            test avPlayer  getPlaybackSpeed, set speed SPEED_FORWARD_1_5_X
+       * @tc.size   MediumTest
+       * @tc.type   FUNCTION
+       * @tc.level  Level0
+       */
+      it('SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+        try {
+          if (fileDescriptor) {
+            testGetPlaybackSpeed(fileDescriptor!, 1.5, done);
+          }
+        } catch (error) {
+          console.error(`Test exception: ${JSON.stringify(error)}`);
+          expect().assertFail();
+          done();
+        }
+      });
+      /**
+       * @tc.name   SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0008
+       * @tc.number SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0008
+       * @tc.desc   Test getPlaybackSpeed interface, verify return value after setSpeed
+       *            test avPlayer  getPlaybackSpeed, set speed SPEED_FORWARD_3_0_X
+       * @tc.size   MediumTest
+       * @tc.type   FUNCTION
+       * @tc.level  Level0
+       */
+      it('SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+        try {
+          if (fileDescriptor) {
+            testGetPlaybackSpeed(fileDescriptor!, 3.0, done);
+          }
+        } catch (error) {
+          console.error(`Test exception: ${JSON.stringify(error)}`);
+          expect().assertFail();
+          done();
+        }
+      });
+      /**
+       * @tc.name   SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0009
+       * @tc.number SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0009
+       * @tc.desc   Test getPlaybackSpeed interface, verify return value after setSpeed
+       *            test avPlayer  getPlaybackSpeed, set speed SPEED_FORWARD_0_25_X
+       * @tc.size   MediumTest
+       * @tc.type   FUNCTION
+       * @tc.level  Level0
+       */
+      it('SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+        try {
+          if (fileDescriptor) {
+            testGetPlaybackSpeed(fileDescriptor!, 0.25, done);
+          }
+        } catch (error) {
+          console.error(`Test exception: ${JSON.stringify(error)}`);
+          expect().assertFail();
+          done();
+        }
+      });
+      /**
+       * @tc.name   SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0010
+       * @tc.number SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0010
+       * @tc.desc   Test getPlaybackSpeed interface, verify return value after setSpeed
+       *            test avPlayer  getPlaybackSpeed, set speed SPEED_FORWARD_0_125_X
+       * @tc.size   MediumTest
+       * @tc.type   FUNCTION
+       * @tc.level  Level0
+       */
+      it('SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+        try {
+          if (fileDescriptor) {
+            testGetPlaybackSpeed(fileDescriptor!, 0.125, done);
+          }
+        } catch (error) {
+          console.error(`Test exception: ${JSON.stringify(error)}`);
+          expect().assertFail();
+          done();
+        }
+      });
+
+      /**
+       * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ON_OFF_METRICSEVENT_0100
+       * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ON_OFF_METRICSEVENT_0100
+       * @tc.desc   Http playback control test
+       * @tc.size   MEDIUMTEST
+       * @tc.type   FUNCTION
+       * @tc.level  Level0
+       */
+      it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ON_OFF_METRICSEVENT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+        if (fileDescriptor) {
+          expect(fileDescriptor).not().assertNull();
+          testOnOffMetricsEvent(fileDescriptor!, avPlayer, done);
+        }
+      })
+
+      /**
+       * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ON_OFF_SEEKDONE_0100
+       * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ON_OFF_SEEKDONE_0100
+       * @tc.desc   Http playback control test
+       * @tc.size   MEDIUMTEST
+       * @tc.type   FUNCTION
+       * @tc.level  Level0
+       */
+      it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ON_OFF_SEEKDONE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+        if (fileDescriptor) {
+          expect(fileDescriptor).not().assertNull();
+          testOnOffSeekDone(fileDescriptor!, avPlayer, done);
+        }
+      })
+
+      /**
+       * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ON_OFF_SPEEDDONE_0100
+       * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ON_OFF_SPEEDDONE_0100
+       * @tc.desc   Http playback control test
+       * @tc.size   MEDIUMTEST
+       * @tc.type   FUNCTION
+       * @tc.level  Level0
+       */
+      it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ON_OFF_SPEEDDONE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+        if (fileDescriptor) {
+          expect(fileDescriptor).not().assertNull();
+          testOnOffSeekDone(fileDescriptor!, avPlayer, done);
+        }
+      })
+
       /**
       * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_GETPLAYBACKSTATISTICMETRICS_0100
       * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_GETPLAYBACKSTATISTICMETRICS_0100
@@ -2139,19 +3297,79 @@ export default function AVPlayerLocalTest() {
       });
 
       /**
-      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_METRICS_ON_0100
-      * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_METRICS_ON_0100
-      * @tc.desc   Local Video metrics control test
+      * @tc.name   SUB_MULTIMEDIA_PLAYER_OFF_SEIMESSAGERECEIVED_FUNCTION_static_0200
+      * @tc.number SUB_MULTIMEDIA_PLAYER_OFF_SEIMESSAGERECEIVED_FUNCTION_static_0200
+      * @tc.desc   test off seiMessageReceived function
       * @tc.type   FUNCTION
       * @tc.size   MEDIUMTEST
       * @tc.level  LEVEL0
       */
-      it('SUB_MULTIMEDIA_MEDIA_VIDEO_METRICS_ON_0100', Level.LEVEL0, async (done: () => void) => {
-        expect(fileDescriptor).not().assertNull();
-        if (fileDescriptor && subtitleFdSrc) {
-          testMetricsListening(fileDescriptor!, avPlayer, done);
+      it('SUB_MULTIMEDIA_PLAYER_OFF_SEIMESSAGERECEIVED_FUNCTION_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+        if (fileDescriptor) {
+          expect(fileDescriptor).not().assertNull();
+          testOffSeiMessageReceived02(fileDescriptor!, avPlayer, done);
         }
-      });
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_PLAYER_OFF_SEIMESSAGERECEIVED_FUNCTION_static_0300
+    * @tc.number SUB_MULTIMEDIA_PLAYER_OFF_SEIMESSAGERECEIVED_FUNCTION_static_0300
+    * @tc.desc   test off seiMessageReceived function
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_PLAYER_OFF_SEIMESSAGERECEIVED_FUNCTION_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+        if (fileDescriptor) {
+          expect(fileDescriptor).not().assertNull();
+          testOffSeiMessageReceived03(fileDescriptor!, avPlayer, done);
+        }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_GETCURRENTTRACK_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_GETCURRENTTRACK_static_0100
+     * @tc.desc   Local Video getCurrentTrack test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_VIDEO_GETCURRENTTRACK_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      expect(fileDescriptor).not().assertNull();
+      if (fileDescriptor) {
+        testGetCurrentTrack(fileDescriptor!, avPlayer, done);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_PRIVACYTYPE_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_PRIVACYTYPE_static_0100
+     * @tc.desc   Test privacyType set to PRIVACY_TYPE_PUBLIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_PRIVACYTYPE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      expect(fileDescriptor).not().assertNull();
+      if (fileDescriptor) {
+        testPrivacyType(fileDescriptor!, avPlayer, done, audio.AudioPrivacyType.PRIVACY_TYPE_PUBLIC);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_PRIVACYTYPE_static_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_PRIVACYTYPE_static_0200
+     * @tc.desc   Test privacyType set to PRIVACY_TYPE_PRIVATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_PRIVACYTYPE_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      expect(fileDescriptor).not().assertNull();
+      if (fileDescriptor) {
+        testPrivacyType(fileDescriptor!, avPlayer, done, audio.AudioPrivacyType.PRIVACY_TYPE_PRIVATE);
+      }
+    });
 
       /**
       * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_TIMEDMETADATA_ON_0100

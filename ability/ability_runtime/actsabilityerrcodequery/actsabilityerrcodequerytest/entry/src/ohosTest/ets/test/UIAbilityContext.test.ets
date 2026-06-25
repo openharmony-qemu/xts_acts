@@ -81,7 +81,12 @@ export default function UIAbilityContext() {
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
       abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
-      await abilityDelegator.executeShellCommand("aa start -b com.acts.moveabilitytobgtest -a TestAbility");
+      let cmd = "aa start -b com.acts.moveabilitytobgtest -a TestAbility";
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd);
       abilityDelegator.waitAbilityMonitor(monitor, timeout, (error: BusinessError, data: UIAbility) => {
         if (error && error.code !== 0) {
           console.info(`waitAbilityMonitor fail, error: ${JSON.stringify(error)}`);

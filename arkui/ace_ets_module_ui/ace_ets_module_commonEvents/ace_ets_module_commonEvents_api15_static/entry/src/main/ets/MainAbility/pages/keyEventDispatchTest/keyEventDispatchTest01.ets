@@ -35,17 +35,17 @@ struct KeyEventExample {
 build() {
     Column() {
       Row() {
-          Text(this.text).key('keyEvent0')
-          Text(this.text1).key('keyEvent1')
-          Text(this.text2).key('keyEvent2')
-          Text(this.text3).key('keyEvent3')
-          Text(this.text4).key('keyEvent4')
+          Text(this.text).key('keyEventDispatchTest01_keyEvent0')
+          Text(this.text1).key('keyEventDispatchTest01_keyEvent1')
+          Text(this.text2).key('keyEventDispatchTest01_keyEvent2')
+          Text(this.text3).key('keyEventDispatchTest01_keyEvent3')
+          Text(this.text4).key('keyEventDispatchTest01_keyEvent4')
       }
       Row() {
-        Text(this.text5).key('keyEvent5')
-        Text(this.text6).key('keyEvent6')
-        Text(this.text7).key('keyEvent7')
-        Text(this.text8).key('keyEvent8')
+        Text(this.text5).key('keyEventDispatchTest01_keyEvent5')
+        Text(this.text6).key('keyEventDispatchTest01_keyEvent6')
+        Text(this.text7).key('keyEventDispatchTest01_keyEvent7')
+        Text(this.text8).key('keyEventDispatchTest01_keyEvent8')
       }
       Button('KeyEvent')
         .onKeyEvent(((keyEvent: KeyEvent):boolean => {

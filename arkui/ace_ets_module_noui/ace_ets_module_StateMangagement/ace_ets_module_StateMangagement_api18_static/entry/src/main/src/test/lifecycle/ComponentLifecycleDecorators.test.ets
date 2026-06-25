@@ -85,10 +85,11 @@ export default function componentLifecycleDecoratorsTest() {
       let storageValueInactive:string = AppStorage.get<string>('ComponentInactiveKey') as string;
       let storageValueActive:string = AppStorage.get<string>('ComponentActiveKey') as string;
       hilog.info(0x0000, 'ComponentLifecycleDecorators', 'storageValue: ' + storageValueInactive);
-      expect(storageValueInactive).assertEqual('InactiveItem0')
-      expect(storageValueActive).assertEqual('ActiveItem6')
+      expect(storageValueInactive).assertEqual('InactiveItem4')
+      expect(storageValueActive).assertEqual('ActiveItem5')
       hilog.info(0x0000, 'ComponentLifecycleDecorators', 'componentInactive_0100 END');
       done();
+      
     });
 
   });

@@ -113,7 +113,7 @@ struct DragEventSetData {
         .width('90%')
         .height('8%')
         .fontSize(16)
-        .key('testNull')
+        .key('setDataNullAndUndefined_testNull')
         .onClick(() => {
           this.resetStates();
         })
@@ -132,7 +132,7 @@ struct DragEventSetData {
         .width('90%')
         .height('8%')
         .fontSize(16)
-        .key('testUndefined')
+        .key('setDataNullAndUndefined_testUndefined')
         .onClick(() => {
           this.resetStates();
         })
@@ -151,7 +151,7 @@ struct DragEventSetData {
         .width('90%')
         .height('8%')
         .fontSize(16)
-        .key('resetStates')
+        .key('setDataNullAndUndefined_resetStates')
         .onClick(() => {
           this.resetStates();
         })

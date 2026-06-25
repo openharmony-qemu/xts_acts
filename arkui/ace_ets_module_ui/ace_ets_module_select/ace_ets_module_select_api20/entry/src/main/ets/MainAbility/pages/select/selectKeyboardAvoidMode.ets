@@ -128,7 +128,6 @@ struct Index {
           this.keyboardAvoidMode = this.modeArray[1].toString()
         })
     }
-    .position({ bottom: 20 })
     .height('50%')
     .width('100%')
   }

@@ -57,7 +57,7 @@ export default function overLayJsunit() {
     it('testOverlay01', Level.LEVEL0, async (done: Function) => {
       console.info('[testOverlay01] START');
       await CommonFunc.sleep(1000);
-      let strJson: string = getInspectorByKey('overlay');
+      let strJson: string = getInspectorByKey('overlay_overlay');
 
       console.info("[testOverlay01] JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson).$attrs.overlay));
       expect(JSON.parse(strJson).$attrs.overlay.title).assertEqual("old title");
@@ -94,7 +94,7 @@ export default function overLayJsunit() {
         console.log("[testOverlay02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJson: string = getInspectorByKey('overlay');
+      let strJson: string = getInspectorByKey('overlay_overlay');
 
       console.info("[testOverlay02] JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson).$attrs.overlay));
       expect(JSON.parse(strJson).$attrs.overlay.title).assertEqual("new title");
@@ -130,7 +130,7 @@ export default function overLayJsunit() {
         console.log("[testOverlay03] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJson: string = getInspectorByKey('overlay');
+      let strJson: string = getInspectorByKey('overlay_overlay');
 
       console.info("[testOverlay03] JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson).$attrs.overlay));
       expect(JSON.parse(strJson).$attrs.overlay.options.align).assertEqual("Alignment.TopStart");
@@ -168,7 +168,7 @@ export default function overLayJsunit() {
         console.log("[testOverlay04] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJson: string = getInspectorByKey('overlay');
+      let strJson: string = getInspectorByKey('overlay_overlay');
 
       console.info("[testOverlay04] JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson).$attrs.overlay));
       expect(JSON.parse(strJson).$attrs.overlay.options.align).assertEqual("Alignment.TopStart");
@@ -202,7 +202,7 @@ export default function overLayJsunit() {
         console.log("[testOverlay05] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJson: string = getInspectorByKey('overlay');
+      let strJson: string = getInspectorByKey('overlay_overlay');
 
       console.info("[testOverlay05] JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson).$attrs.overlay));
       expect(JSON.parse(strJson).$attrs.overlay.options.align).assertEqual("Alignment.Center");
@@ -237,7 +237,7 @@ export default function overLayJsunit() {
         console.log("[testOverlay06] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJson: string = getInspectorByKey('overlay');
+      let strJson: string = getInspectorByKey('overlay_overlay');
 
       console.info("[testOverlay06] JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson).$attrs.overlay));
       expect(JSON.parse(strJson).$attrs.overlay.options.offset.x).assertEqual('-30.00vp');
@@ -272,7 +272,7 @@ export default function overLayJsunit() {
         console.log("[testOverlay07] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJson: string = getInspectorByKey('overlay');
+      let strJson: string = getInspectorByKey('overlay_overlay');
 
       console.info("[testOverlay07] JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson).$attrs.overlay));
       expect(JSON.parse(strJson).$attrs.overlay.options.offset.x).assertEqual('1111111111.00vp');
@@ -306,7 +306,7 @@ export default function overLayJsunit() {
         console.log("[testOverlay08] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJson: string = getInspectorByKey('overlay');
+      let strJson: string = getInspectorByKey('overlay_overlay');
       console.info("[testOverlay08] JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson).$attrs.overlay));
       expect(JSON.parse(strJson).$attrs.overlay.options.offset.x).assertEqual('1111111111.00vp');
       console.info('testOverlay08 END');

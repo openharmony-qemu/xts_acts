@@ -62,6 +62,10 @@ export default class OpenHarmonyTestRunner implements TestRunner {
     }
     abilityDelegator.addAbilityMonitor(lMonitor, addAbilityMonitorCallback);
     let cmd = 'aa start -d 0 -a MainAbility' + ' -b ' + abilityDelegatorArguments.bundleName;
+    let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
     cmd += ' ' + translateParamsToString(abilityDelegatorArguments.parameters);
     console.info('cmd : ' + cmd);
     abilityDelegator.executeShellCommand(cmd,

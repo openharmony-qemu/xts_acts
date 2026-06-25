@@ -1,3 +1,18 @@
+'use static';
+/**
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import hilog from '@ohos.hilog'
 
@@ -20,7 +35,12 @@ class UtilsTest {
   static async startAbility(bundleName: string, abilityName: string): Promise<boolean> {
     try {
       if (!UtilsTest.isStartedAbility) {
-        await abilityDelegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`);
+        let cmd = `aa start -b ${bundleName} -a ${abilityName}`;
+        let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
+        await abilityDelegator.executeShellCommand(cmd);
         hilog.info(domain, tag, `loadAndSetUpUiTest, success`);
         UtilsTest.isStartedAbility = true;
       }
@@ -35,7 +55,12 @@ class UtilsTest {
 
 async function startAbility(bundleName: string, abilityName: string): Promise<boolean> {
   try {
-    await abilityDelegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`);
+    let cmd = `aa start -b ${bundleName} -a ${abilityName}`;
+    let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
+    await abilityDelegator.executeShellCommand(cmd);
     console.info(`UiTestCase, start abilityFinished`);
     hilog.info(domain, tag, `UiTestCase, start abilityFinished`);
     return true;

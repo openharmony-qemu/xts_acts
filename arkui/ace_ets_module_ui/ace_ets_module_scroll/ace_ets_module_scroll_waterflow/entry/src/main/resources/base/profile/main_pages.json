@@ -21,6 +21,11 @@
         "MainAbility/pages/waterFlowDefault/waterFlowEventNullUndefined",
         "MainAbility/pages/WaterFlowScrollBarWidth",
         "MainAbility/pages/waterFlowDefault/sectionsNullUndefined",
-        "MainAbility/pages/WaterFlow/waterFlowEmptyLazy"
+        "MainAbility/pages/WaterFlow/waterFlowEmptyLazy",
+        "MainAbility/pages/LazyVWaterFlowLayout/LazyVWaterFlowLayoutProperties",
+        "MainAbility/pages/LazyColumnLayout/LazyColumnLayoutProperties",
+        "MainAbility/pages/LazyVWaterFlowLayout/headerFooterStickyFlow",
+        "MainAbility/pages/LazyColumnLayout/headerFooterStickyColumn",
+        "MainAbility/pages/LazyDynamicLayout/customListLayoutTest"
     ]
 }

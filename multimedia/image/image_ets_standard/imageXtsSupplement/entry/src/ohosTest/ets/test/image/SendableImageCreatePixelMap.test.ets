@@ -40,7 +40,7 @@ async function getImageSource(path: string): Promise<image.ImageSource> {
 }
 
 async function createPictureSUPP(context : Context): Promise<image.Picture> {
-  let array = new ArrayBuffer(300000000);
+  let array = new ArrayBuffer(25000000);
   let pathUri = 'AllAuxiliaryPictures_exclude_fragment.jpg'
   let path = `file://${context.filesDir}/${pathUri}`;
   const fd = await fs.open(path, fs.OpenMode.READ_ONLY);

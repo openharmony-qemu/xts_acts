@@ -14,5 +14,6 @@
 group("TextPickerTest") {
   testonly = true
   deps =
-      [ "ace_ets_module_picker_view_api12:ActsAceEtsModulePickerViewApi12Test" ]
+      [ "ace_ets_module_picker_view_api12:ActsAceEtsModulePickerViewApi12Test",
+        "ace_ets_module_picker_view_api12_static:ActsAceEtsModulePickerViewApi12StaticTest" ]
 }

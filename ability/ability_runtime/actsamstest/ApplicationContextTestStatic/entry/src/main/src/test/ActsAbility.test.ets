@@ -50,7 +50,12 @@ export default function abilityDelegatorStage() {
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll start1');
       await Utils.msSleep(2000)
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll start2');
-      abilityDelegator?.executeShellCommand('aa start -a EntryAbility -b com.acts.applicationcontexttest.static')
+      let cmd = 'aa start -a EntryAbility -b com.acts.applicationcontexttest.static';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator?.executeShellCommand(cmd)
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll start3');
       await Utils.msSleep(2000)
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll end');
@@ -230,7 +235,12 @@ export default function abilityDelegatorStage() {
     it('SUB_Ability_AbilityRuntime_ProcessCache_3000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
         'SUB_Ability_AbilityRuntime_ProcessCache_3000 begin');
-      abilityDelegator?.executeShellCommand('aa start -a EntryAbility -b com.acts.applicationcontexttest.static')
+      let cmd = 'aa start -a EntryAbility -b com.acts.applicationcontexttest.static';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator?.executeShellCommand(cmd)
       await Utils.msSleep(2000)
       try {
         testAbilityContext?.startAbilityForResult({
@@ -262,7 +272,12 @@ export default function abilityDelegatorStage() {
     it('SUB_Ability_AbilityRuntime_ProcessCache_3100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
         'SUB_Ability_AbilityRuntime_ProcessCache_3100 begin');
-      abilityDelegator?.executeShellCommand('aa start -a EntryAbility -b com.acts.applicationcontexttest.static')
+      let cmd = 'aa start -a EntryAbility -b com.acts.applicationcontexttest.static';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator?.executeShellCommand(cmd)
       await Utils.msSleep(2000)
       try {
         testAbilityContext?.startAbilityForResult({
@@ -294,7 +309,12 @@ export default function abilityDelegatorStage() {
     it('SUB_Ability_AbilityRuntime_ProcessCache_3200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
         'SUB_Ability_AbilityRuntime_ProcessCache_3200 begin');
-      abilityDelegator?.executeShellCommand('aa start -a EntryAbility -b com.acts.applicationcontexttest.static')
+      let cmd = 'aa start -a EntryAbility -b com.acts.applicationcontexttest.static';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator?.executeShellCommand(cmd)
       await Utils.msSleep(2000)
       try {
         testAbilityContext?.startAbilityForResult({
@@ -326,7 +346,12 @@ export default function abilityDelegatorStage() {
     it('SUB_Ability_AbilityRuntime_clearUpApplicationData_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
         'SUB_Ability_AbilityRuntime_clearUpApplicationData_0100 begin');
-      abilityDelegator?.executeShellCommand('aa start -a EntryAbility -b com.acts.applicationcontexttest.static')
+      let cmd = 'aa start -a EntryAbility -b com.acts.applicationcontexttest.static';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator?.executeShellCommand(cmd)
       await Utils.msSleep(2000)
       try {
         testAbilityContext?.startAbilityForResult({
@@ -359,7 +384,12 @@ export default function abilityDelegatorStage() {
     it('SUB_Ability_AbilityRuntime_clearUpApplicationData_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
         'SUB_Ability_AbilityRuntime_clearUpApplicationData_0200 begin');
-      abilityDelegator?.executeShellCommand('aa start -a EntryAbility -b com.acts.applicationcontexttest.static')
+      let cmd = 'aa start -a EntryAbility -b com.acts.applicationcontexttest.static';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator?.executeShellCommand(cmd)
       await Utils.msSleep(2000)
       try {
         testAbilityContext?.startAbilityForResult({
@@ -392,7 +422,12 @@ export default function abilityDelegatorStage() {
     it('SUB_Ability_AbilityRuntime_restartApp_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
         'SUB_Ability_AbilityRuntime_restartApp_0100 begin');
-      abilityDelegator?.executeShellCommand('aa start -a EntryAbility -b com.acts.applicationcontexttest.static')
+      let cmd = 'aa start -a EntryAbility -b com.acts.applicationcontexttest.static';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator?.executeShellCommand(cmd)
       await Utils.msSleep(2000);
       let SubscribeCallBack = (err:BusinessError | null, data:CommonEventManager.CommonEventData | undefined):void => {
         hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
@@ -438,7 +473,12 @@ export default function abilityDelegatorStage() {
       hilog.info(0x0000, 'testTag', '%{public}s',
         'SUB_Ability_AbilityRuntime_restartApp_0300 begin');
       await Utils.msSleep(1000)
-      abilityDelegator?.executeShellCommand('aa start -a EntryAbility -b com.acts.applicationcontexttest.static')
+      let cmd = 'aa start -a EntryAbility -b com.acts.applicationcontexttest.static';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator?.executeShellCommand(cmd)
       await Utils.msSleep(2000)
             hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_restartApp_0300 afterback');
       let ApplicationContexts:common.ApplicationContext = testAbilityContext!.getApplicationContext();

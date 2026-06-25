@@ -212,6 +212,7 @@ import RichEditorBaseControllerSetStyledPlaceholderTest from './RichEditorApi24T
 import RichEditorHorizontalScrollingTest from './RichEditorApi26Test/RichEditorHorizontalScrolling.test';
 import RichEditorStrokeJoinStyleTest from './RichEditorApi26Test/RichEditorStrokeJoinStyle.test';
 import RichEditorShaderStyleTest from './RichEditorApi26Test/RichEditorShaderStyle.test';
+import RichEditorScrollToVisibleTest from './RichEditorApi26Test/RichEditorScrollToVisible.test';
 
 export default function testsuite() {
   ActsRichEditorTest();
@@ -415,4 +416,5 @@ export default function testsuite() {
   RichEditorHorizontalScrollingTest()
   RichEditorStrokeJoinStyleTest()
   RichEditorShaderStyleTest()
+   RichEditorScrollToVisibleTest()
 }

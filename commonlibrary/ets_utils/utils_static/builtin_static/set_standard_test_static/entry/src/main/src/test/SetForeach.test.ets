@@ -1,6 +1,6 @@
 
 /*
-* Copyright (C) 2024 HiHope Open Source Organization.
+* Copyright (C) 2024-2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -111,7 +111,7 @@ class Item {
 
 type selfSet = Set<number | selfSet>
 
-export default function SetForeachTest() {
+export default function SetForeachTest(): void {
   describe('SetForeachTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

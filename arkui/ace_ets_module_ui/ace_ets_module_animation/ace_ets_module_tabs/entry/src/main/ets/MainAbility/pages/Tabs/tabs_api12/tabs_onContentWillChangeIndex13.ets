@@ -46,19 +46,19 @@ struct TabsExampleApi12I13 {
         TabContent() {
           Column(){
             Text('推荐的内容')
-          }.width('100%').height('100%').backgroundColor('#FFBF00').justifyContent(FlexAlign.Center).key("content3x4")
+          }.width('100%').height('100%').backgroundColor('#FFBF00').justifyContent(FlexAlign.Center).key("tabs_onContentWillChangeIndex13_content3x4")
         }.tabBar(this.tabBuilder('推荐',2))
 
         TabContent() {
           Column(){
             Text('我的内容')
-          }.width('100%').height('100%').backgroundColor('#E67C92').justifyContent(FlexAlign.Center).key("content4x4")
+          }.width('100%').height('100%').backgroundColor('#E67C92').justifyContent(FlexAlign.Center).key("tabs_onContentWillChangeIndex13_content4x4")
         }.tabBar(this.tabBuilder('我的',3))
 
         TabContent() {
           Column(){
             Text('党史1949')
-          }.width('100%').height('100%').backgroundColor('#E67C92').justifyContent(FlexAlign.Center).key("content5x4")
+          }.width('100%').height('100%').backgroundColor('#E67C92').justifyContent(FlexAlign.Center).key("tabs_onContentWillChangeIndex13_content5x4")
         }.tabBar(this.tabBuilder('党史1949',3))
       }
       .vertical(true)

@@ -57,5 +57,7 @@ napi_value VideoSwdecH265Speed0060Test(napi_env env, napi_callback_info info);
 napi_value VideoSwdecH265Speed0070Test(napi_env env, napi_callback_info info);
 napi_value VideoSwdecH265Speed0080Test(napi_env env, napi_callback_info info);
 napi_value VideoSwdecH265Speed0090Test(napi_env env, napi_callback_info info);
-
+napi_value VideoSwdecH265SurfExpired0010Test(napi_env env, napi_callback_info info);
+napi_value VideoSwdecH265SetMaxInputSize0010Test(napi_env env, napi_callback_info info);
+napi_value VideoSwdecH265GetCropSize0010Test(napi_env env, napi_callback_info info);
 #endif //FUNCTEST_H

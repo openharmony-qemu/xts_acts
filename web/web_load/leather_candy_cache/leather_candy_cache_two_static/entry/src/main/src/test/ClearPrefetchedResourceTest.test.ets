@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
  * limitations under the License.
  */
 
+
 import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '../../../hypium/index';
 import router from '@ohos.router';
 import Utils from './Util.test';
@@ -25,7 +27,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 let testAbilityContext: common.UIAbilityContext;
 
 
-export default function ClearPrefetchedResourceTest() {
+export default function ClearPrefetchedResourceTest() : void {
 
   describe('componentLifeCycleTestOne', (): void => {
     beforeAll(async (): Promise<void> => {
@@ -45,7 +47,12 @@ export default function ClearPrefetchedResourceTest() {
         console.log("BusinessError  end")
       });
       await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.open.harmony.leathercandycachetwotest.static")
+      let cmd = "aa start -a EntryAbility -b com.open.harmony.leathercandycachetwotest.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(2000)
       console.log("beforeAll end,%s", "Succeed!")
     });

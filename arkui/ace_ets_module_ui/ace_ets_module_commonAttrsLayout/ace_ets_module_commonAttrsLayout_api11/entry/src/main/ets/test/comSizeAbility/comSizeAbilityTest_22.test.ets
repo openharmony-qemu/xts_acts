@@ -66,7 +66,8 @@ export default function comSizeAbilityTest_22() {
       console.info('comSizeAbilityTestJsunit_55 START')
       await CommonFunc.sleep(1000);
       let modePosition: componentUtils.ComponentInfo = componentUtils.getRectangleById("DataPanel_Offset");
-      let modePosition1: componentUtils.ComponentInfo = componentUtils.getRectangleById("Checkbox_Size");
+      let modePosition1: componentUtils.ComponentInfo =
+        componentUtils.getRectangleById('comSizeAbilityTest_22' + '_Checkbox_Size');
       let modePosition2: componentUtils.ComponentInfo = componentUtils.getRectangleById("DataPanel_Father");
       let Size = modePosition1.size
       let SizeWidth = Size.width

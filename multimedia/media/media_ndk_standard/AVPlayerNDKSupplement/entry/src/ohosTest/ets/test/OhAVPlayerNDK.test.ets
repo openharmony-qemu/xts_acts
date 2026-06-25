@@ -95,7 +95,7 @@ export default function OhAVPlayerNDKTest() {
       console.info("====> OhAVPlayerNDKTest beforeAll case");
       testContext = AppStorage.get('testContext') as common.UIAbilityContext;
       filePath = testContext.filesDir + "/H264_AAC.mp4"
-      filePath1 = testContext.filesDir + "/H265_7680x4320_24fps_8bit.mp4"
+      filePath1 = testContext.filesDir + "/output_hdr10.mp4"
       fileDescriptor = await getFile(filePath);
       fileDescriptor1 = await getFile(filePath1);
       fileSize = fileDescriptor.length as number;

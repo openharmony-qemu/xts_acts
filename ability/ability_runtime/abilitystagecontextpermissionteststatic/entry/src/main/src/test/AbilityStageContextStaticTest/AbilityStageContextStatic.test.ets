@@ -36,7 +36,12 @@ export default function AbilityStageContextStatic() {
       hilog.info(domain, tag, 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       hilog.info(domain, tag, 'beforeAll AbilityDelegator');
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.stagecontextpermissiontest.static")
+      let cmd = "aa start -a EntryAbility -b com.example.stagecontextpermissiontest.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(2000);
       hilog.info(domain, tag, 'beforeAll end');
     })

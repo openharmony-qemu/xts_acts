@@ -22,6 +22,7 @@ import common from '@ohos.app.ability.common';
 import abilityAccessCtrl, { PermissionRequestResult } from '@ohos.abilityAccessCtrl';
 import business_error, { BusinessError } from '@ohos.base';
 import { waitForExist } from '../../test/WaitTest.test';
+import { XtsTestServer } from 'library';
 
 let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
 try {
@@ -44,6 +45,7 @@ struct WebCameraApiNoCrash {
   @State isPageEnd: number = -1;
   controller: web_webview.WebviewController = new web_webview.WebviewController()
   controllerTwo: web_webview.WebviewController = new web_webview.WebviewController()
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -55,6 +57,10 @@ struct WebCameraApiNoCrash {
 
   onPageHide() {
     events_emitter.off(300400)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -223,13 +229,13 @@ struct WebCameraApiNoCrash {
         })
       }
 
-      Web({ src: 'https://www.example.com', controller: this.controller, renderMode: RenderMode.SYNC_RENDER })
+      Web({ src: $rawfile('index.html'), controller: this.controller, renderMode: RenderMode.SYNC_RENDER })
         .javaScriptAccess(true)
         .domStorageAccess(true)
         .onPageEnd(()=>{
           this.isPageEnd = 0;
         })
-      Web({ src: 'https://www.example.com', controller: this.controllerTwo, renderMode: RenderMode.ASYNC_RENDER })
+      Web({ src: $rawfile('index.html'), controller: this.controllerTwo, renderMode: RenderMode.ASYNC_RENDER })
         .javaScriptAccess(true)
         .domStorageAccess(true)
         .onPageEnd(()=>{

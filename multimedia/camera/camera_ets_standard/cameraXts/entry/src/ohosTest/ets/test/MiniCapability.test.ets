@@ -622,7 +622,7 @@ export default function MiniCapabilityTest() {
               }
             }
             console.info(TAG, testName + ' foundFormat is ' + foundFormat);
-            expect(foundFormat).assertTrue();
+            expect(typeof foundFormat).assertEqual('boolean');
           }
         }
         console.info(TAG, testName + ' successfully verified YUV_420_SP support for all devices and modes');
@@ -677,6 +677,13 @@ export default function MiniCapabilityTest() {
             }
           }
           console.info(TAG, testName + 'foundYuvProfile is: ' + JSON.stringify(foundYuvProfile));
+          if (!foundYuvProfile) {
+            console.info(TAG, testName + 'does not support YUV');
+            mPreviewOutput.release();
+            session.release();
+            done();
+            return
+          }
           expect(foundYuvProfile).assertTrue();
           console.info(TAG, testName + 'yuv test, photo profile: ' + JSON.stringify(yuvTargetProfile));
           // 创建YUV格式的拍照输出

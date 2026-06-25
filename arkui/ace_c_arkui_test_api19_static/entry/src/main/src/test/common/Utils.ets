@@ -15,7 +15,6 @@
  */
 import events_emitter from '@ohos.events.emitter';
 import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
-import { ComponentInfo } from './Interfaces';
 import systemDateTime from '@ohos.systemDateTime';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import fs from '@ohos.file.fs';

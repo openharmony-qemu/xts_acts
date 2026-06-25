@@ -86,7 +86,12 @@ export default function TelephonyVcardManagerStatic() {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       try {
         let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-        abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actstelephonyvcardmanagertest.static");
+        let cmd = "aa start -a EntryAbility -b com.example.actstelephonyvcardmanagertest.static";
+        let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
+        abilityDelegator.executeShellCommand(cmd);
         await Utils.msSleep(2000);
         context = AppStorage.get<common.UIAbilityContext>("Context") as common.UIAbilityContext;
         await getPermissions();

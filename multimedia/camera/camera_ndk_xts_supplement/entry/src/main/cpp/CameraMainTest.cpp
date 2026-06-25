@@ -93,6 +93,15 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("captureEnableBandwidthCompressionError", captureEnableBandwidthCompressionError),
     DESCRIPTOR("captureIsGetCameraDevices", captureIsGetCameraDevices),
     DESCRIPTOR("getPreviewRotationWithoutDisplayRotation", getPreviewRotationWithoutDisplayRotation),
+    DESCRIPTOR("TestOHMetadataObjectExtGetBoundingBox", TestOHMetadataObjectExtGetBoundingBox),
+    DESCRIPTOR("TestOHMetadataObjectExtGetEmotion", TestOHMetadataObjectExtGetEmotion),
+    DESCRIPTOR("TestOHMetadataObjectExtGetLeftEyeBoundingBox", TestOHMetadataObjectExtGetLeftEyeBoundingBox),
+    DESCRIPTOR("TestOHMetadataObjectExtGetMetadataObjectType", TestOHMetadataObjectExtGetMetadataObjectType),
+    DESCRIPTOR("TestOHMetadataObjectExtGetPitchAngle", TestOHMetadataObjectExtGetPitchAngle),
+    DESCRIPTOR("TestOHMetadataObjectExtGetRightEyeBoundingBox", TestOHMetadataObjectExtGetRightEyeBoundingBox),
+    DESCRIPTOR("TestOHMetadataObjectExtGetRollAngle", TestOHMetadataObjectExtGetRollAngle),
+    DESCRIPTOR("TestOHMetadataObjectExtGetTimestamp", TestOHMetadataObjectExtGetTimestamp),
+    DESCRIPTOR("TestOHMetadataObjectExtGetYawAngle", TestOHMetadataObjectExtGetYawAngle),
 };
 
 EXTERN_C_START 

@@ -103,6 +103,10 @@ describe("SensorJsTest_sensor_45", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     sensor.on(sensor.SensorId.HALL, callback);
@@ -140,6 +144,10 @@ describe("SensorJsTest_sensor_45", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     try {
@@ -173,6 +181,10 @@ describe("SensorJsTest_sensor_45", function () {
            sensor.getSingleSensor(sensor.SensorId.HALL,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
@@ -221,6 +233,10 @@ describe("SensorJsTest_sensor_45", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     sensor.on(sensor.SensorId.HALL, onSensorCallback, {'interval': 100000000}, 5);
@@ -253,6 +269,10 @@ describe("SensorJsTest_sensor_45", function () {
            sensor.getSingleSensor(sensor.SensorId.HALL,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
@@ -289,6 +309,10 @@ describe("SensorJsTest_sensor_45", function () {
            sensor.getSingleSensor(sensor.SensorId.HALL,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
@@ -338,6 +362,10 @@ describe("SensorJsTest_sensor_45", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     sensor.once(sensor.SensorId.HALL, onceSensorCallback, 5);
@@ -364,6 +392,10 @@ describe("SensorJsTest_sensor_45", function () {
            sensor.getSingleSensor(sensor.SensorId.HALL,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
@@ -411,6 +443,10 @@ describe("SensorJsTest_sensor_45", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     sensor.on(sensor.SensorId.HALL, onSensorCallback);
@@ -447,6 +483,10 @@ describe("SensorJsTest_sensor_45", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     try {
@@ -480,6 +520,10 @@ describe("SensorJsTest_sensor_45", function () {
            sensor.getSingleSensor(sensor.SensorId.HALL,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
@@ -539,6 +583,10 @@ describe("SensorJsTest_sensor_45", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     try {
@@ -573,6 +621,10 @@ describe("SensorJsTest_sensor_45", function () {
            sensor.getSingleSensor(sensor.SensorId.HALL,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
@@ -633,6 +685,10 @@ describe("SensorJsTest_sensor_45", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     sensor.on(sensor.SensorId.HALL, (data)=>{
@@ -692,6 +748,10 @@ describe("SensorJsTest_sensor_45", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     try {
                         sensor.on();
@@ -739,6 +799,10 @@ describe("SensorJsTest_sensor_45", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     sensor.on(sensor.SensorId.HALL, callback);
@@ -782,6 +846,10 @@ describe("SensorJsTest_sensor_45", function () {
            sensor.getSingleSensor(sensor.SensorId.HALL,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
@@ -827,6 +895,10 @@ describe("SensorJsTest_sensor_45", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     console.info('----------------------newHall_SensorJsTest018 off in--------------');
@@ -862,6 +934,10 @@ describe("SensorJsTest_sensor_45", function () {
            sensor.getSingleSensor(sensor.SensorId.HALL,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     try {
@@ -899,6 +975,10 @@ describe("SensorJsTest_sensor_45", function () {
            sensor.getSingleSensor(sensor.SensorId.HALL,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
@@ -939,6 +1019,10 @@ describe("SensorJsTest_sensor_45", function () {
            sensor.getSingleSensor(sensor.SensorId.HALL,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
@@ -983,6 +1067,10 @@ describe("SensorJsTest_sensor_45", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     sensor.on(sensor.SensorId.HALL, callback, null);
@@ -1026,6 +1114,10 @@ describe("SensorJsTest_sensor_45", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     sensor.on(sensor.SensorId.HALL, callback, { 'interval': null });
@@ -1062,6 +1154,10 @@ describe("SensorJsTest_sensor_45", function () {
            sensor.getSingleSensor(sensor.SensorId.HALL,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");

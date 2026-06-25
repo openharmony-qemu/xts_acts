@@ -62,6 +62,10 @@ export default class OpenHarmonyTestRunner implements TestRunner {
     var cmd =
       'aa start -d 0 -a com.arkui.ace.information.api12.MainAbility' + ' -b ' + abilityDelegatorArguments.bundleName;
     cmd += ' ' + translateParamsToString(abilityDelegatorArguments.parameters);
+    var user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
     var debug = abilityDelegatorArguments.parameters["-D"];
     if (debug == 'true') {
       cmd += ' -D';

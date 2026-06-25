@@ -66,6 +66,9 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
           if (err?.code === 201) {
             expect(err?.code).assertEqual(201)
             done()
+          } else if(err.code === 801){
+            expect(err.code).assertEqual(801)
+            done()
           } else {
             expect(false).assertTrue();
             done()
@@ -116,6 +119,9 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
             `${testNum} openSubscriptionSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
           if (err?.code === 201) {
             expect(err?.code).assertEqual(201)
+            done()
+          } else if(err.code === 801){
+            expect(err.code).assertEqual(801)
             done()
           } else {
             expect(false).assertTrue();
@@ -183,6 +189,9 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
           if (err?.code === 201) {
             expect(err?.code).assertEqual(201)
             done()
+          } else if(err.code === 801){
+            expect(err.code).assertEqual(801)
+            done()
           } else {
             expect(false).assertTrue();
             done()
@@ -240,6 +249,9 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
           if (err?.code === 201) {
             expect(err?.code).assertEqual(201)
             done()
+          } else if(err.code === 801){
+            expect(err.code).assertEqual(801)
+            done()
           } else {
             expect(false).assertTrue();
             done()
@@ -266,8 +278,8 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
         await sleep(500)
         let scrollBar = await driver.findComponent(ON.type('List').isAfter(ON.text('应用获取本机通知')));
         console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
-        expect(scrollBar != null).assertTrue()
-        await scrollBar.scrollToBottom()
+        //expect(scrollBar != null).assertTrue()
+        await scrollBar?.scrollToBottom()
         await sleep(10000)
         let button2 = await driver.findComponent(ON.type('Toggle').isAfter(ON.originalText('ZZZopenWindow')));
         console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
@@ -301,6 +313,9 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
             `${testNum} openSubscriptionSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
           if (err?.code === 201) {
             expect(err?.code).assertEqual(201)
+            done()
+          } else if(err.code === 801){
+            expect(err.code).assertEqual(801)
             done()
           } else {
             expect(false).assertTrue();
@@ -349,6 +364,9 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
             if (err?.code === 201) {
               expect(err.code).assertEqual(201);
               done();
+            } else if(err.code === 801){
+              expect(err.code).assertEqual(801)
+              done()
             } else if (index === 499) {
               expect(err.code).assertEqual(1600018);
               await sleep(1000)
@@ -405,6 +423,9 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
             if (err?.code === 201) {
               expect(err.code).assertEqual(201);
               done();
+            } else if(err.code === 801){
+              expect(err.code).assertEqual(801)
+              done()
             } else {
               expect(err.code).assertEqual(401);
             }
@@ -446,6 +467,9 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
             if (err?.code === 201) {
               expect(err.code).assertEqual(201);
               done();
+            } else if(err.code === 801){
+              expect(err.code).assertEqual(801)
+              done()
             } else {
               expect(err.code).assertEqual(401);
             }

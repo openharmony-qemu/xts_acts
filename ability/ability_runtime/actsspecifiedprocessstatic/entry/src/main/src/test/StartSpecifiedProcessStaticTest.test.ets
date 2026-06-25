@@ -58,7 +58,12 @@ export default function StartSpecifiedProcessStaticTest() {
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll start1');
       await Utils.msSleep(2000)
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll start2');
-      abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.example.actsspecifiedprocess.static')
+      let cmd = 'aa start -a EntryAbility -b com.example.actsspecifiedprocess.static';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll start3');
       await Utils.msSleep(5000)
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll end');
@@ -66,7 +71,12 @@ export default function StartSpecifiedProcessStaticTest() {
     })
 
     afterEach(async() => {
-      abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.example.actsspecifiedprocess.static')
+      let cmd = 'aa start -a EntryAbility -b com.example.actsspecifiedprocess.static';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       hilog.info(0x0000, tag, '%{public}s', 'EntryAbility start');
       await Utils.msSleep(2000)
     })

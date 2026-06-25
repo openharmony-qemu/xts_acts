@@ -36,7 +36,7 @@ export default function navRouterJsunit() {
         }
       } catch (err) {
         console.error("push NavRouter page error: " + err);
-        expect().assertFail();
+        expect(false).assertEqual(true);
       }
       done();
     });

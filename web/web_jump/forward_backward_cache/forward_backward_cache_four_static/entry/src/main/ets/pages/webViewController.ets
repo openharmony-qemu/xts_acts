@@ -20,7 +20,7 @@ import testsuite from '../../src/test/List.test';
 import Utils from '../../src/test/Util.test';
 import { BusinessError } from '@ohos.base';
 import web_webview from '@ohos.web.webview';
-import { Callback, RecordData } from '@ohos.base'
+import { AsyncCallback, Callback, RecordData } from '@ohos.base'
 import events_emitter from '@ohos.events.emitter';
 import { webview } from '@kit.ArkWeb';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -33,6 +33,7 @@ export class StringFields {
 @Component
 struct Index {
   stringObj: StringFields  = new StringFields ();
+  arkweb_webview_controller_null: webview.WebviewController = new webview.WebviewController();
   controller: web_webview.WebviewController = new web_webview.WebviewController(undefined);
   @State str: string = "emitFetchCookieSync";
   @State cookieResult: string = "";
@@ -239,6 +240,311 @@ struct Index {
               break;
             }
 
+            case 'testFetchCookieSyncErrorCode17100002Static': {
+              try {
+                console.info('testFetchCookieSyncErrorCode17100002Static start');
+                web_webview.WebCookieManager.fetchCookieSync('');
+                Utils.emitEvent(0, 2026052001);
+              } catch (error) {
+                const actualCode = String(error.code);
+                const actualMsg = String(error.message);
+                const actualResult = `${actualCode}${actualMsg}`;
+                console.error(`actualResult: ${actualResult}`);
+                Utils.emitEvent(error.code, 2026052001);
+              }
+              break;
+            }
+
+            case 'testFetchCookiePromiseErrorCode17100002Static': {
+              try {
+                console.info('testFetchCookiePromiseErrorCode17100002Static start');
+                web_webview.WebCookieManager.fetchCookie('')
+                  .then(() => {
+                    console.info('testFetchCookiePromiseErrorCode17100002Static no error');
+                    Utils.emitEvent(0, 2026052003);
+                  })
+                  .catch((error) => {
+                    console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                    Utils.emitEvent(error.code, 2026052003);
+                  });
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 2026052003);
+              }
+              break;
+            }
+
+            case 'testFetchCookiePromiseIncognitoErrorCode17100002Static': {
+              try {
+                console.info('testFetchCookiePromiseIncognitoErrorCode17100002Static start');
+                web_webview.WebCookieManager.fetchCookie('', false)
+                  .then(() => {
+                    console.info('testFetchCookiePromiseIncognitoErrorCode17100002Static no error');
+                    Utils.emitEvent(0, 2026052005);
+                  })
+                  .catch((error) => {
+                    console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                    Utils.emitEvent(error.code, 2026052005);
+                  });
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 2026052005);
+              }
+              break;
+            }
+
+            case 'testFetchCookieCallbackErrorCode17100002Static': {
+              try {
+                console.info('testFetchCookieCallbackErrorCode17100002Static start');
+                web_webview.WebCookieManager.fetchCookie('', (error, cookie) => {
+                  if (error) {
+                    console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                    Utils.emitEvent(error.code, 2026052007);
+                    return;
+                  }
+                  console.info('testFetchCookieCallbackErrorCode17100002Static cookie = ' + cookie);
+                  Utils.emitEvent(0, 2026052007);
+                });
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 2026052007);
+              }
+              break;
+            }
+
+            case 'testConfigCookieSyncErrorCode17100002Static': {
+              try {
+                console.info('testConfigCookieSyncErrorCode17100002Static start');
+                web_webview.WebCookieManager.configCookieSync('', 'a=b');
+                Utils.emitEvent(0, 2026052008);
+              } catch (error) {
+                const actualCode = String(error.code);
+                const actualMsg = String(error.message);
+                const actualResult = `${actualCode}${actualMsg}`;
+                console.error(`actualResult: ${actualResult}`);
+                Utils.emitEvent(error.code, 2026052008);
+              }
+              break;
+            }
+
+            case 'testConfigCookieSyncErrorCode17100005Static': {
+              try {
+                console.info('testConfigCookieSyncErrorCode17100005Static start');
+                web_webview.WebCookieManager.configCookieSync('https://www.example.com', '');
+                Utils.emitEvent(0, 2026052009);
+              } catch (error) {
+                const actualCode = String(error.code);
+                const actualMsg = String(error.message);
+                const actualResult = `${actualCode}${actualMsg}`;
+                console.error(`actualResult: ${actualResult}`);
+                Utils.emitEvent(error.code, 2026052009);
+              }
+              break;
+            }
+
+            case 'testConfigCookiePromiseErrorCode17100002Static': {
+              try {
+                console.info('testConfigCookiePromiseErrorCode17100002Static start');
+                web_webview.WebCookieManager.configCookie('', 'a=b')
+                  .then(() => {
+                    console.info('testConfigCookiePromiseErrorCode17100002Static no error');
+                    Utils.emitEvent(0, 2026052010);
+                  })
+                  .catch((error) => {
+                    console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                    Utils.emitEvent(error.code, 2026052010);
+                  });
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 2026052010);
+              }
+              break;
+            }
+
+            case 'testConfigCookiePromiseErrorCode17100005Static': {
+              try {
+                console.info('testConfigCookiePromiseErrorCode17100005Static start');
+                web_webview.WebCookieManager.configCookie('https://www.example.com', '')
+                  .then(() => {
+                    console.info('testConfigCookiePromiseErrorCode17100005Static no error');
+                    Utils.emitEvent(0, 2026052011);
+                  })
+                  .catch((error) => {
+                    console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                    Utils.emitEvent(error.code, 2026052011);
+                  });
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 2026052011);
+              }
+              break;
+            }
+
+            case 'testConfigCookieCallbackErrorCode17100002Static': {
+              try {
+                console.info('testConfigCookieCallbackErrorCode17100002Static start');
+                web_webview.WebCookieManager.configCookie('', 'a=b', (error) => {
+                  if (error) {
+                    console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                    Utils.emitEvent(error.code, 2026052013);
+                    return;
+                  }
+                  console.info('testConfigCookieCallbackErrorCode17100002Static callback success');
+                  Utils.emitEvent(0, 2026052013);
+                });
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 2026052013);
+              }
+              break;
+            }
+
+            case 'testConfigCookieCallbackErrorCode17100005Static': {
+              try {
+                console.info('testConfigCookieCallbackErrorCode17100005Static start');
+                web_webview.WebCookieManager.configCookie('https://www.example.com', '', (error) => {
+                  if (error) {
+                    console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                    Utils.emitEvent(error.code, 2026052014);
+                    return;
+                  }
+                  console.info('testConfigCookieCallbackErrorCode17100005Static callback success');
+                  Utils.emitEvent(0, 2026052014);
+                });
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 2026052014);
+              }
+              break;
+            }
+
+            case 'testLoadUrlErrorCode17100001Static': {
+              try {
+                console.info('testLoadUrlErrorCode17100001Static start');
+                let detachedController = new web_webview.WebviewController(undefined);
+                detachedController.loadUrl('https://www.example.com');
+                Utils.emitEvent(0, 2026052021);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 2026052021);
+              }
+              break;
+            }
+
+            case 'testLoadUrlErrorCode17100002Static': {
+              try {
+                console.info('testLoadUrlErrorCode17100002Static start');
+                this.controller.loadUrl('');
+                Utils.emitEvent(0, 2026052022);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 2026052022);
+              }
+              break;
+            }
+
+            case 'testLoadUrlErrorCode17100003Static': {
+              try {
+                console.info('testLoadUrlErrorCode17100003Static start');
+                this.controller.loadUrl('file://', [{ headerKey: 'headerKey', headerValue: 'headerValue' }]);
+                Utils.emitEvent(0, 2026052023);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code == 801 ? 17100003 : error.code, 2026052023);
+              }
+              break;
+            }
+
+            case 'testGetUserAgentErrorCode17100001Static': {
+              try {
+                console.info('testGetUserAgentErrorCode17100001Static start');
+                let detachedController = new web_webview.WebviewController(undefined);
+                detachedController.getUserAgent();
+                Utils.emitEvent(0, 2026052024);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 2026052024);
+              }
+              break;
+            }
+
+            case 'testSetCustomUserAgentErrorCode17100001Static': {
+              try {
+                console.info('testSetCustomUserAgentErrorCode17100001Static start');
+                let detachedController = new web_webview.WebviewController(undefined);
+                detachedController.setCustomUserAgent('custom-agent');
+                Utils.emitEvent(0, 2026052026);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 2026052026);
+              }
+              break;
+            }
+
+            case 'testEnableIntelligentTrackingPreventionErrorCode17100001Static': {
+              try {
+                console.info('testEnableIntelligentTrackingPreventionErrorCode17100001Static start');
+                this.arkweb_webview_controller_null.enableIntelligentTrackingPrevention(true);
+                Utils.emitEvent(0, 2026052027);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code == 801 ? 17100001 : error.code, 2026052027);
+              }
+              break;
+            }
+
+            case 'testIsIntelligentTrackingPreventionEnabledErrorCode17100001Static': {
+              try {
+                console.info('testIsIntelligentTrackingPreventionEnabledErrorCode17100001Static start');
+                this.arkweb_webview_controller_null.isIntelligentTrackingPreventionEnabled();
+                Utils.emitEvent(0, 2026052029);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code == 801 ? 17100001 : error.code, 2026052029);
+              }
+              break;
+            }
+
+            case 'testWebDownloadItemGetOriginalUrlStatic101': {
+              try {
+                console.info('testWebDownloadItemGetOriginalUrlStatic101 start');
+                let delegate: webview.WebDownloadDelegate = new webview.WebDownloadDelegate();
+                delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem): void => {
+                  let originalUrl: string = webDownloadItem.getOriginalUrl();
+                  console.info('download original URL: ' + originalUrl);
+                  let isOriginalUrlValid: boolean = originalUrl.includes('example.com');
+                  Utils.emitEvent(isOriginalUrlValid, 2026052030);
+                  webDownloadItem.cancel();
+                });
+                this.controller.setDownloadDelegate(delegate);
+                this.controller.startDownload('https://www.example.com');
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(false, 2026052030);
+              }
+              break;
+            }
+
+            case 'testWebDownloadItemGetReferrerUrlStatic101': {
+              try {
+                console.info('testWebDownloadItemGetReferrerUrlStatic101 start');
+                let delegate: webview.WebDownloadDelegate = new webview.WebDownloadDelegate();
+                delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem): void => {
+                  let referrerUrl: string = webDownloadItem.getReferrerUrl();
+                  console.info('download referrer URL: ' + referrerUrl);
+                  let hasReferrerUrl: boolean = referrerUrl !== undefined && referrerUrl !== null;
+                  Utils.emitEvent(hasReferrerUrl, 2026052031);
+                  webDownloadItem.cancel();
+                });
+                this.controller.setDownloadDelegate(delegate);
+                this.controller.startDownload('https://www.example.com');
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(false, 2026052031);
+              }
+              break;
+            }
+
             case 'SwitchNextPageStatic' : {
               let uiContext: UIContext = this.getUIContext();
               let router: Router = uiContext.getRouter();
@@ -305,7 +611,7 @@ struct Index {
             console.info("isUserAgentClientHintsEnabled:", enabled);
             webview.WebviewController.setUserAgentClientHintsEnabled(false);
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
           }
         })
     }

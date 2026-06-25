@@ -51,6 +51,7 @@ import CanvasRenderingContext2DShadowOffsetXTest from './CanvasRenderingContext2
 import CanvasRenderingContext2DShadowOffsetYTest from './CanvasRenderingContext2D/CanvasRenderingContext2DShadowOffsetYTest.test';
 import CanvasRenderingContext2DTextAlignTest from './CanvasRenderingContext2D/CanvasRenderingContext2DTextAlignTest.test';
 import CanvasRenderingContext2DTextBaselineTest from './CanvasRenderingContext2D/CanvasRenderingContext2DTextBaselineTest.test';
+import CircleStrokeColorMetricsTest from './Circle/CircleStrokeColorMetricsTest.test';
 
 export default function testsuite() {
   RoundRectTest();
@@ -91,5 +92,6 @@ export default function testsuite() {
   CanvasRenderingContext2DShadowOffsetYTest();
   CanvasRenderingContext2DTextAlignTest();
   CanvasRenderingContext2DTextBaselineTest();
+  CircleStrokeColorMetricsTest();
 
 }

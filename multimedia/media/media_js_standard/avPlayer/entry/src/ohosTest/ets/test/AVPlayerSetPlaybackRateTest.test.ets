@@ -1160,7 +1160,7 @@ export default function AVPlayerSetPlaybackRateTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_SETPLAYBACKRATE_ERROR_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-            let setrate = 4.001
+            let setrate = 8.001
             let operationRecord: Record<string, Function> = {}
             operationRecord[PREPARED] = async () => {
                 avPlayer.setPlaybackRate(setrate)

@@ -702,7 +702,76 @@ export default function Func2Test() {
       expect(result).assertEqual(0);
       done();
     })
-    
-    
+
+    /**
+     * @tc.name   SUB_MEDIA_VIDEO_DECODE_ORDER_0100
+     * @tc.number SUB_MEDIA_VIDEO_DECODE_ORDER_0100
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_VIDEO_DECODE_ORDER_0100', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.Func2_Test(48);
+      expect(result).assertEqual(0);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MEDIA_VIDEO_DECODE_ORDER_0200
+     * @tc.number SUB_MEDIA_VIDEO_DECODE_ORDER_0200
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_VIDEO_DECODE_ORDER_0200', Level.LEVEL0, async (done: Function) => {
+      const result = await entry.Func2_Test(49);
+      expect(result).assertEqual(0);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MEDIA_VIDEO_DECODE_ORDER_0300
+     * @tc.number SUB_MEDIA_VIDEO_DECODE_ORDER_0300
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MEDIA_VIDEO_DECODE_ORDER_0300', Level.LEVEL2, async (done: Function) => {
+      const result = await entry.Func2_Test(50);
+      expect(result).assertEqual(0);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MEDIA_VIDEO_DECODE_ORDER_0400
+     * @tc.number SUB_MEDIA_VIDEO_DECODE_ORDER_0400
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MEDIA_VIDEO_DECODE_ORDER_0400', Level.LEVEL2, async (done: Function) => {
+      const result = await entry.Func2_Test(51);
+      expect(result).assertEqual(0);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MEDIA_VIDEO_DECODE_ORDER_0500
+     * @tc.number SUB_MEDIA_VIDEO_DECODE_ORDER_0500
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MEDIA_VIDEO_DECODE_ORDER_0500', Level.LEVEL2, async (done: Function) => {
+      const result = await entry.Func2_Test(52);
+      expect(result).assertEqual(0);
+      done();
+    })
+
   })
 }

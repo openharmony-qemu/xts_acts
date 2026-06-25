@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -13,14 +14,17 @@
  * limitations under the License.
  */
 
+
 import ClearPrefetchedResourceTest from './ClearPrefetchedResourceTest.test'
 import InjectOfflineResourcesTest from './InjectOfflineResourcesTest.test'
 import SetBlanklessLoadingWithParams from "./SetBlanklessLoadingWithParams.test";
 import SetBlanklessLoadingWithKey from "./SetBlanklessLoadingWithKey.test";
+import ExecuteAIPageCommandTest from "./ExecuteAIPageCommand.test";
 
-export default function testsuite() {
+export default function testsuite() : void{
   ClearPrefetchedResourceTest();
   InjectOfflineResourcesTest();
   SetBlanklessLoadingWithParams();
   SetBlanklessLoadingWithKey();
+  ExecuteAIPageCommandTest();
 }

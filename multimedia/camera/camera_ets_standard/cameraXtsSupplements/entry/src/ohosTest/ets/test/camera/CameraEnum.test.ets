@@ -351,5 +351,33 @@ export default function cameraEnumTestSupp() {
       console.info(TAG,'--------SUB_MEDIA_CAMERA_ENUM_List_002,end here---------')
       done();
     })
+    /**
+     * @tc.name   SUB_MEDIA_CAMERA_ENUM_List_0300
+     * @tc.number SUB_MEDIA_CAMERA_ENUM_List_0300
+     * @tc.desc   AutomotiveCameraPosition Enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MEDIA_CAMERA_ENUM_List_0300', Level.LEVEL1, async (done:Function)=> {
+      console.info(TAG,'--------SUB_MEDIA_CAMERA_ENUM_List_0300---------')
+      expect(camera.AutomotiveCameraPosition.AUTOMOTIVE_CAMERA_POSITION_EXTERIOR_OTHER == 0).assertTrue();
+      expect(camera.AutomotiveCameraPosition.AUTOMOTIVE_CAMERA_POSITION_EXTERIOR_FRONT == 1).assertTrue();
+      expect(camera.AutomotiveCameraPosition.AUTOMOTIVE_CAMERA_POSITION_EXTERIOR_REAR == 2).assertTrue();
+      expect(camera.AutomotiveCameraPosition.AUTOMOTIVE_CAMERA_POSITION_EXTERIOR_LEFT == 3).assertTrue();
+      expect(camera.AutomotiveCameraPosition.AUTOMOTIVE_CAMERA_POSITION_EXTERIOR_RIGHT == 4).assertTrue();
+      expect(camera.AutomotiveCameraPosition.AUTOMOTIVE_CAMERA_POSITION_INTERIOR_OTHER == 5).assertTrue();
+      expect(camera.AutomotiveCameraPosition.AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_1_LEFT == 6).assertTrue();
+      expect(camera.AutomotiveCameraPosition.AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_1_CENTER == 7).assertTrue();
+      expect(camera.AutomotiveCameraPosition.AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_1_RIGHT == 8).assertTrue();
+      expect(camera.AutomotiveCameraPosition.AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_2_LEFT == 9).assertTrue();
+      expect(camera.AutomotiveCameraPosition.AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_2_CENTER == 10).assertTrue();
+      expect(camera.AutomotiveCameraPosition.AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_2_RIGHT == 11).assertTrue();
+      expect(camera.AutomotiveCameraPosition.AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_3_LEFT == 12).assertTrue();
+      expect(camera.AutomotiveCameraPosition.AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_3_CENTER == 13).assertTrue();
+      expect(camera.AutomotiveCameraPosition.AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_3_RIGHT == 14).assertTrue();
+      console.info(TAG,'--------SUB_MEDIA_CAMERA_ENUM_List_0300,end here---------')
+      done();
+    })
   })
 }

@@ -14,32 +14,10 @@
  * limitations under the License.
  */
 
-import {
-  Entry,
-  Text,
-  TextAttribute,
-  Column,
-  Component,
-  Button,
-  ButtonAttribute,
-  ClickEvent,
-  Image,
-  ImageFit,
-  Scroller,
-  Flex,
-  Margin,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  FontWeight,
-  ButtonType,
-  ClickEvent,
-  Margin
-} from '@ohos.arkui.component';
+import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, Image, ImageFit, Scroller, Flex, Margin, FlexDirection, ItemAlign, FlexAlign, FontWeight, ButtonType } from '@ohos.arkui.component';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { Router,UIContext } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import common from '@ohos.app.ability.common';
-
 @Entry
 @Component
 struct Index {

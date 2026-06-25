@@ -15,7 +15,7 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-export default function builtinsArraySpliceTest() {
+export default function builtinsArraySpliceTest(): void {
   describe('builtinsArraySpliceTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

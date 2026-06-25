@@ -143,6 +143,7 @@
     "pages/ArkUI/AccessibilityFocusDrawLevel",
     "entryembeddeduiextability/pages/EntryEmbeddedUIExtAbilityPage",
     "pages/ArkUI/AccessibilityNextFocusIdPage",
+    "pages/ArkUI/AccessibilityNextFocusId26Page",
     "pages/ArkUI/AccessibilityDefaultFocusPage",
     "pages/ArkUI/AccessibilityScrollTriggerablePage",
     "pages/ArkUI/EmbeddedComponentInstanceTest",
@@ -204,6 +205,8 @@
     "pages/ArkUI/SmartGestureMonitor001",
     "pages/ArkUI/SmartGestureMonitor002",
     "pages/ArkUI/SmartGestureMonitor003",
-    "pages/ArkUI/SmartGestureCallBack"
+    "pages/ArkUI/SmartGestureCallBack",
+    "pages/ArkUI/selectMenuBackgroundBlurStyleOptions",
+    "pages/ArkUI/selectMenuBackgroundEffect"
   ]
 }

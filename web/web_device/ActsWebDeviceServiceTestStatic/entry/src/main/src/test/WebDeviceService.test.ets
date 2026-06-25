@@ -45,7 +45,12 @@ export default function webDeviceServiceTest() {
                 console.info('BusinessError  end')
             });
             await Utils.msSleep(2000)
-            abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actswebdeviceservicetest.static")
+            let cmd = "aa start -a EntryAbility -b com.example.actswebdeviceservicetest.static";
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+            if(user !== undefined){
+                cmd += ' -u ' + user;
+            }
+            abilityDelegator.executeShellCommand(cmd)
             await Utils.msSleep(2000)
             console.info('beforeAll end,%s', 'Succeed!')
          });

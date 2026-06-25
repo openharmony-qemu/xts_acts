@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { SmartGestureLogStore } from '../common/SmartGestureCommon';
-import { BaseGestureHandlingProposal, GestureHandlingResolution } from '@ohos.arkui.UIContext';
+import { BaseGestureHandlingProposal, GestureHandlingResolution, TargetedGestureProposal } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
 import promptAction from '@ohos.promptAction';
 import FirstDialog from '../model/FirstDialog';
@@ -34,7 +34,7 @@ struct SmartGestureCallBack {
     '5.继续执行[划一划]手势,直到页面无任何响应\n' +
     '6.执行[翻腕]手势,在搜索日志[xxx->action]\n' +
     '预期结果：\n' + '1.[页面内日志]文本变为[1]\n' +
-    '2.[节点1]按钮有选中框,[页面内日志]文本变为[3]\n' +
+    '2.[节点1]按钮有选中框,[页面内日志]文本变为[3node_1]\n' +
     '3.[页面内日志]文本变为[4]\n' +
     '4.页面滑动,[页面内日志]文本变为[2]\n' +
     '5.页面无响应,[页面内日志]文本变为[0]\n' +
@@ -48,6 +48,7 @@ struct SmartGestureCallBack {
   @State lastClicked: string = 'none';
   @State isText: string = ''
   private readonly passThroughCallback = (proposal: BaseGestureHandlingProposal): GestureHandlingResolution => {
+    let targetProposal = proposal as TargetedGestureProposal;
     if (proposal.action == SmartGestureAction.NONE) {
       this.isText = '0';
     }
@@ -58,7 +59,7 @@ struct SmartGestureCallBack {
       this.isText = '2';
     }
     if (proposal.action == SmartGestureAction.SELECT) {
-      this.isText = '3';
+      this.isText = '3' + targetProposal.node.getId();
     }
     if (proposal.action == SmartGestureAction.CLICK) {
       this.isText = '4';
@@ -234,6 +235,7 @@ struct SmartGestureCallBack {
                   Button('节点1').onClick(() => {
                     console.info('xxx->callBack 选中节点1')
                   }).smartGestureShortcut({ action: GestureShortcut.PRIMARY, enabled: true, selectable: true })
+                    .id('node_1')
                   ForEach([0, 1, 2, 3, 4, 5], (item: number) => {
                     Button(`${item}`)
                       .margin(8)

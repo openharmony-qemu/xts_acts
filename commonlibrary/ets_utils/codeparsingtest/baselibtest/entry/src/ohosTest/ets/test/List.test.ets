@@ -64,6 +64,10 @@ import fastBuffer3Test from './fastbuffer/FastBuffer3.test';
 import fastBuffer4Test from './fastbuffer/FastBuffer4.test';
 import Vector1Test from './vector/Vector.test';
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function testsuite() {
   buffer1Test();
   buffer2Test();

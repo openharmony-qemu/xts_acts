@@ -47,6 +47,10 @@ export default class OpenHarmonyTestRunner implements TestRunner {
         };
         abilityDelegator.addAbilityMonitor(lMonitor, addAbilityMonitorCallback)
         var cmd = 'aa start -d 0 -a com.arkui.ace.platform.xcomponent.MainAbility' + ' -b ' + abilityDelegatorArguments.bundleName;
+        var user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
         var debug = abilityDelegatorArguments.parameters['-D']
         if (debug == 'true')
         {

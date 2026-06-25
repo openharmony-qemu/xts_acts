@@ -39,7 +39,7 @@ class InfoC {
   }
 }
 
-export default function TreeMapTest1() {
+export default function TreeMapTest1(): void {
   describe("TreeMapTest1", (): void => {
     afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)

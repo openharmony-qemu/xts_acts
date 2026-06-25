@@ -36,6 +36,8 @@
     "MainAbility/pages/popupSystemMaterial/PopupCommonOptionsSystemMaterial",
     "MainAbility/pages/popupSystemMaterial/PopupOptionsSystemMaterial",
     "MainAbility/pages/popupSystemMaterial/TipsOptionsSystemMaterial",
-    "MainAbility/pages/popup/PopupColorMode"
+    "MainAbility/pages/popup/PopupColorMode",
+    "MainAbility/pages/popup/PopupBackgroundTestPage",
+    "MainAbility/pages/popup/PopupLevelMode"
   ]
 }

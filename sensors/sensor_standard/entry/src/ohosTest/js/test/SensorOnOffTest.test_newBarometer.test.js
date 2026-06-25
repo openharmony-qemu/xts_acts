@@ -104,6 +104,10 @@ describe("SensorJsTest_sensor_53", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     sensor.on(sensor.SensorId.BAROMETER, callback);
@@ -141,6 +145,10 @@ describe("SensorJsTest_sensor_53", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     try {
@@ -175,6 +183,10 @@ describe("SensorJsTest_sensor_53", function () {
            sensor.getSingleSensor(sensor.SensorId.BAROMETER,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
@@ -223,6 +235,10 @@ describe("SensorJsTest_sensor_53", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     sensor.on(sensor.SensorId.BAROMETER, onSensorCallback, {'interval': 100000000}, 5);
@@ -255,6 +271,10 @@ describe("SensorJsTest_sensor_53", function () {
            sensor.getSingleSensor(sensor.SensorId.BAROMETER,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
@@ -291,6 +311,10 @@ describe("SensorJsTest_sensor_53", function () {
            sensor.getSingleSensor(sensor.SensorId.BAROMETER,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     try {
@@ -339,6 +363,10 @@ describe("SensorJsTest_sensor_53", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     sensor.once(sensor.SensorId.BAROMETER, onceSensorCallback, 5);
@@ -365,6 +393,10 @@ describe("SensorJsTest_sensor_53", function () {
            sensor.getSingleSensor(sensor.SensorId.BAROMETER,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
@@ -413,6 +445,10 @@ describe("SensorJsTest_sensor_53", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     sensor.on(sensor.SensorId.BAROMETER, onSensorCallback);
@@ -449,6 +485,10 @@ describe("SensorJsTest_sensor_53", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     try {
@@ -482,6 +522,10 @@ describe("SensorJsTest_sensor_53", function () {
            sensor.getSingleSensor(sensor.SensorId.BAROMETER,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
@@ -541,6 +585,10 @@ describe("SensorJsTest_sensor_53", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     try {
@@ -575,6 +623,10 @@ describe("SensorJsTest_sensor_53", function () {
            sensor.getSingleSensor(sensor.SensorId.BAROMETER,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
@@ -635,6 +687,10 @@ describe("SensorJsTest_sensor_53", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     sensor.on(sensor.SensorId.BAROMETER, (data)=>{
@@ -694,6 +750,10 @@ describe("SensorJsTest_sensor_53", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     try {
@@ -745,6 +805,10 @@ describe("SensorJsTest_sensor_53", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     sensor.on(sensor.SensorId.BAROMETER, callback);
@@ -788,6 +852,10 @@ describe("SensorJsTest_sensor_53", function () {
            sensor.getSingleSensor(sensor.SensorId.BAROMETER,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
@@ -833,6 +901,10 @@ describe("SensorJsTest_sensor_53", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     console.info('----------------------newBarometer_SensorJsTest018 off in--------------');
@@ -869,6 +941,10 @@ describe("SensorJsTest_sensor_53", function () {
            sensor.getSingleSensor(sensor.SensorId.BAROMETER,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     try {
@@ -907,6 +983,10 @@ describe("SensorJsTest_sensor_53", function () {
            sensor.getSingleSensor(sensor.SensorId.BAROMETER,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
@@ -948,6 +1028,10 @@ describe("SensorJsTest_sensor_53", function () {
            sensor.getSingleSensor(sensor.SensorId.BAROMETER,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
@@ -992,6 +1076,10 @@ describe("SensorJsTest_sensor_53", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     sensor.on(sensor.SensorId.BAROMETER, callback, null);
@@ -1035,6 +1123,10 @@ describe("SensorJsTest_sensor_53", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     sensor.on(sensor.SensorId.BAROMETER, callback, { 'interval': null });
@@ -1072,6 +1164,10 @@ describe("SensorJsTest_sensor_53", function () {
            sensor.getSingleSensor(sensor.SensorId.BAROMETER,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");

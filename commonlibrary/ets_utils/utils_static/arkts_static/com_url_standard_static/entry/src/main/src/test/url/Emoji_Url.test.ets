@@ -30,7 +30,7 @@ import hilog from '@ohos.hilog';
 import Url from '@ohos.url';
 import Utils from '../Util.test';
 
-export default function Url_Emoji() {
+export default function Url_Emoji(): void {
   describe('Url_Emoji', (): void => {
     afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)

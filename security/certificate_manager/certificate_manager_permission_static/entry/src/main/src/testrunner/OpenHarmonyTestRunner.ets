@@ -40,7 +40,12 @@ export class GlobalContext {
       }
       abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       hilog.info(domain, tag, 'beforeAll abilityDelegator');
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.openharmony.certificate_manager_permission.static");
+      let cmd = "aa start -a EntryAbility -b com.openharmony.certificate_manager_permission.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd);
       setTimeout(()=>{
         GlobalContext.context = AppStorage.get<common.UIAbilityContext>("Context") as common.UIAbilityContext;
         GlobalContext.isContextCreated = true;

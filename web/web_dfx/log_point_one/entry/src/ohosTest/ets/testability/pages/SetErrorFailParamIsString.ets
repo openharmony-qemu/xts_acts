@@ -21,6 +21,7 @@ import { abilityDelegatorRegistry } from '@kit.TestKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
+import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_SUITE_KEY = 123001;
 
@@ -28,6 +29,7 @@ const EVENT_ID_SET_SUITE_KEY = 123001;
 @Component
 struct testWebResponseSetErrorFailParamIsString {
   controller: web_webview.WebviewController = new web_webview.WebviewController('scheme-handler');
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State str: string = ''
 
   @State isReceive: number = -1;
@@ -55,6 +57,10 @@ struct testWebResponseSetErrorFailParamIsString {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_SUITE_KEY)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -89,10 +95,7 @@ struct testWebResponseSetErrorFailParamIsString {
             }
           }
         })
-      Web({
-        src: 'https:' +
-          '//www.example.com', controller: this.controller
-      })
+      Web({ src: this.mServer.getAssetUrl('index.html'), controller: this.controller })
       .onPageEnd((event) => {
         console.log('onPageEnd url:' + event.url);
         this.isPageEnd = 1;

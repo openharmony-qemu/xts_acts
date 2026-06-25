@@ -143,7 +143,7 @@ it('animateTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<vo
       } catch (err) {
         console.info("animateTest_0100 on emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('button1', 10, "")));
+      console.info("animateTest_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('animate_button1', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_0100 END');
       done();
@@ -172,7 +172,7 @@ it('animateTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<vo
       } catch (err) {
         console.info("animateTest_0200 on emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_0200 click result is: " + JSON.stringify(inspector.sendEventByKey('button2', 10, "")));
+      console.info("animateTest_0200 click result is: " + JSON.stringify(inspector.sendEventByKey('animate_button2', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_0200 END');
       done();
@@ -205,7 +205,7 @@ it('animateTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<vo
       } catch (err) {
         console.info("animateTest_0300 on emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_0300 click result is: " + JSON.stringify(inspector.sendEventByKey('button3', 10, "")));
+      console.info("animateTest_0300 click result is: " + JSON.stringify(inspector.sendEventByKey('animate_button3', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_0300 END');
       done();
@@ -234,7 +234,7 @@ it('animateTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<vo
       } catch (err) {
         console.info("animateTest_0400 on emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_0400 click result is: " + JSON.stringify(inspector.sendEventByKey('button4', 10, "")));
+      console.info("animateTest_0400 click result is: " + JSON.stringify(inspector.sendEventByKey('animate_button4', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_0400 END');
       done();
@@ -263,7 +263,7 @@ it('animateTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<vo
       } catch (err) {
         console.info("animateTest_0500 on emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_0500 click result is: " + JSON.stringify(inspector.sendEventByKey('button5', 10, "")));
+      console.info("animateTest_0500 click result is: " + JSON.stringify(inspector.sendEventByKey('animate_button5', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_0500 END');
       done();
@@ -301,7 +301,7 @@ it('animateTest_static_0600', Level.LEVEL0, async (done: () => void): Promise<vo
       } catch (err) {
         console.info("animateTest_0600 on emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_0600 click result is: " + JSON.stringify(inspector.sendEventByKey('button11', 10, "")));
+      console.info("animateTest_0600 click result is: " + JSON.stringify(inspector.sendEventByKey('animate_button11', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_0600 END');
       done();
@@ -339,7 +339,7 @@ it('animateTest_static_0700', Level.LEVEL0, async (done: () => void): Promise<vo
       } catch (err) {
         console.info("animateTest_0700 on emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_0700 click result is: " + JSON.stringify(inspector.sendEventByKey('button12', 10, "")));
+      console.info("animateTest_0700 click result is: " + JSON.stringify(inspector.sendEventByKey('animate_button12', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_0700 END');
       done();
@@ -378,7 +378,7 @@ it('animateTest_static_0800', Level.LEVEL0, async (done: () => void): Promise<vo
       } catch (err) {
         console.info("animateTest_0800 on emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_0800 click result is: " + JSON.stringify(inspector.sendEventByKey('button13', 10, "")));
+      console.info("animateTest_0800 click result is: " + JSON.stringify(inspector.sendEventByKey('animate_button13', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_0800 END');
       done();
@@ -417,7 +417,7 @@ it('animateTest_static_0900', Level.LEVEL0, async (done: () => void): Promise<vo
       } catch (err) {
         console.info("animateTest_0900 on emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_0900 click result is: " + JSON.stringify(inspector.sendEventByKey('button14', 10, "")));
+      console.info("animateTest_0900 click result is: " + JSON.stringify(inspector.sendEventByKey('animate_button14', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_0900 END');
       done();
@@ -456,7 +456,7 @@ it('animateTest_static_1000', Level.LEVEL0, async (done: () => void): Promise<vo
       } catch (err) {
         console.info("animateTest_1000 on emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_1000 click result is: " + JSON.stringify(inspector.sendEventByKey('button15', 10, "")));
+      console.info("animateTest_1000 click result is: " + JSON.stringify(inspector.sendEventByKey('animate_button15', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_1000 END');
       done();
@@ -494,7 +494,7 @@ it('animateTest_static_1100', Level.LEVEL0, async (done: () => void): Promise<vo
       } catch (err) {
         console.info("animateTest_1100 on emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_1100 click result is: " + JSON.stringify(inspector.sendEventByKey('button6', 10, "")));
+      console.info("animateTest_1100 click result is: " + JSON.stringify(inspector.sendEventByKey('animate_button6', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_1100 END');
       done();
@@ -533,7 +533,7 @@ it('animateTest_static_1200', Level.LEVEL0, async (done: () => void): Promise<vo
       } catch (err) {
         console.info("animateTest_1200 on emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_1200 click result is: " + JSON.stringify(inspector.sendEventByKey('button7', 10, "")));
+      console.info("animateTest_1200 click result is: " + JSON.stringify(inspector.sendEventByKey('animate_button7', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_1200 END');
       done();
@@ -572,7 +572,7 @@ it('animateTest_static_1300', Level.LEVEL0, async (done: () => void): Promise<vo
       } catch (err) {
         console.info("animateTest_1300 on emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_1300 click result is: " + JSON.stringify(inspector.sendEventByKey('button8', 10, "")));
+      console.info("animateTest_1300 click result is: " + JSON.stringify(inspector.sendEventByKey('animate_button8', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_1300 END');
       done();
@@ -611,7 +611,7 @@ it('animateTest_static_1400', Level.LEVEL0, async (done: () => void): Promise<vo
       } catch (err) {
         console.info("animateTest_1400 on emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_1400 click result is: " + JSON.stringify(inspector.sendEventByKey('button9', 10, "")));
+      console.info("animateTest_1400 click result is: " + JSON.stringify(inspector.sendEventByKey('animate_button9', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_1400 END');
       done();
@@ -649,7 +649,7 @@ it('animateTest_static_1500', Level.LEVEL0, async (done: () => void): Promise<vo
       } catch (err) {
         console.info("animateTest_1500 on emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_1500 click result is: " + JSON.stringify(inspector.sendEventByKey('button10', 10, "")));
+      console.info("animateTest_1500 click result is: " + JSON.stringify(inspector.sendEventByKey('animate_button10', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_1500 END');
       done();
@@ -688,7 +688,7 @@ it('animateTest_static_1600', Level.LEVEL0, async (done: () => void): Promise<vo
         console.info("animateTest_1600 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_1600 click result is: " +
-      JSON.stringify(inspector.sendEventByKey('button111', 10, "")));
+      JSON.stringify(inspector.sendEventByKey('animate_button111', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_1600 END');
       done();
@@ -727,7 +727,7 @@ it('animateTest_static_1700', Level.LEVEL0, async (done: () => void): Promise<vo
         console.info("animateTest_1700 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_1700 click result is: " +
-      JSON.stringify(inspector.sendEventByKey('button121', 10, "")));
+      JSON.stringify(inspector.sendEventByKey('animate_button121', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_1700 END');
       done();
@@ -767,7 +767,7 @@ it('animateTest_static_1800', Level.LEVEL0, async (done: () => void): Promise<vo
         console.info("animateTest_1800 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_1800 click result is: " +
-      JSON.stringify(inspector.sendEventByKey('button131', 10, "")));
+      JSON.stringify(inspector.sendEventByKey('animate_button131', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_1800 END');
       done();
@@ -807,7 +807,7 @@ it('animateTest_static_1900', Level.LEVEL0, async (done: () => void): Promise<vo
         console.info("animateTest_1900 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_1900 click result is: " +
-      JSON.stringify(inspector.sendEventByKey('button141', 10, "")));
+      JSON.stringify(inspector.sendEventByKey('animate_button141', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_1900 END');
       done();
@@ -846,7 +846,7 @@ it('animateTest_static_2000', Level.LEVEL0, async (done: () => void): Promise<vo
         console.info("animateTest_2000 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateTest_2000 click result is: " +
-      JSON.stringify(inspector.sendEventByKey('button151', 10, "")));
+      JSON.stringify(inspector.sendEventByKey('animate_button151', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_2000 END');
       done();

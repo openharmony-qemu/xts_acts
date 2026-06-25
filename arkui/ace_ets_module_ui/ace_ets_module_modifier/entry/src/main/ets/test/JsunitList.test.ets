@@ -17,6 +17,7 @@ import marqueeJsunit from './MarqueeJsunit.test';
 import swiperJsunit from './SwiperJsunit.test';
 import buttonJsunit from './ButtonJsunit.test';
 import tabsFirstJsunit from './TabsFirstJsunit.test';
+import tabContentModifier from './tabContentModifier.test';
 import columnJsunit from './ColumnJsunit.test';
 import rowJsunit from './RowJsunit.test';
 import imageSpanJsunit from './ImageSpanJsunit.test';
@@ -136,6 +137,7 @@ export default function testsuite() {
   navRouterJsunit();
   stackJsunit();
   tabsFirstJsunit();
+  tabContentModifier();
   gridJsunit();
   gridNestedScrollJsunit();
   gridItemJsunit();

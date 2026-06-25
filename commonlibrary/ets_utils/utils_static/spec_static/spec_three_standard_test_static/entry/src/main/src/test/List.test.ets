@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -64,10 +65,124 @@ import DestructuringAssignmentTest from './experimentalfeatures/patternmatching/
 import GenericsExperimentalTest from './experimentalfeatures/genericsexperimental/GenericsExperimentalTest.test';
 import NonNullishTypeParameterTest from './experimentalfeatures/genericsexperimental/nonnullishtypeparameter/NonNullishTypeParameterTest.test';
 
+import NumericDefaultLiteralTypesTest01 from './semanticrules/typeinference/typeinferencefornumericliterals/NumericDefaultLiteralTypesTest01.test';
+import ReturnTypeInferenceTest02 from './semanticrules/typeinference/returntypeinference/ReturnTypeInferenceTest02.test'
+import ComputingSmartTypesTest01 from './semanticrules/smartcastsandsmarttypes/computingsmarttypes/ComputingSmartTypesTest01.test'
+import ComputingSmartTypesTest11 from './semanticrules/smartcastsandsmarttypes/computingsmarttypes/ComputingSmartTypesTest11.test'
+import IntersectionTypesTest from './semanticrules/smartcastsandsmarttypes/intersectiontypes/IntersectionTypesTest.test'
+import SmartCastExamplesTest from './semanticrules/smartcastsandsmarttypes/smartcastexamples/SmartCastExamplesTest.test'
+import OverrideCompatibleSignaturesTest02 from './semanticrules/overriding/overridecompatiblesignatures/OverrideCompatibleSignaturesTest02.test'
+import OverrideCompatibleSignaturesTest04 from './semanticrules/overriding/overridecompatiblesignatures/OverrideCompatibleSignaturesTest04.test'
+import OverridingConflictTest from './semanticrules/overriding/overridingconflict/OverridingConflictTest.test';
+import OverridingInClassesTest from './semanticrules/overriding/overridinginclasses/OverridingInClassesTest.test'
+import OverridingTest from './semanticrules/overriding/overridingininterfaces/OverridingTest.test'
+import FirstMatchTest01 from './semanticrules/overloading/firstmatch/FirstMatchTest01.test'
+import SingleClassOverloadTest from './semanticrules/overloading/SingleClassOverloadTest.test'
+import ImplicitConstructorOverloadingTest01 from './semanticrules/overloading/implicitconstructoroverloading/ImplicitConstructorOverloadingTest01.test'
+import ImplicitFunctionOverloadingTest01 from './semanticrules/overloading/implicitfunctionoverloading/ImplicitFunctionOverloadingTest01.test'
+import ImplicitMethodOverloadingTest01 from './semanticrules/overloading/implicitmethodoverloading/ImplicitMethodOverloadingTest01.test'
+import InterfacesTest from './semanticrules/overloading/interfaces/InterfacesTest.test'
+import OverloadEquivalentSignaturesTest from './semanticrules/overloading/overloadequivalentsignatures/OverloadEquivalentSignaturesTest.test'
+import OverloadWithImportTest01 from './semanticrules/overloading/overloadwithimport/OverloadWithImportTest01.test'
+
 import FixedArrayTypesTest from "./experimentalfeatures/fixedarraytypes/FixedArrayTypesTest.test";
+import ExtendedConditionalExpressionsTest01 from "./semanticrules/compatibilityfeatures/extendedconditionalexpressions/ExtendedConditionalExpressionsTest01.test";
+import DispatchTest from "./semanticrules/dispatch/DispatchTest.test";
+import OverloadSetForClassInstanceMethodsTest from "./semanticrules/overloadresolution/overloadsetforclassinstancemethods/OverloadSetForClassInstanceMethodsTest.test";
+import OverloadSetForConstructorsTest02 from "./semanticrules/overloadresolution/overloadsetforconstructors/OverloadSetForConstructorsTest02.test";
+import OverloadSetForFunctionsTest01 from "./semanticrules/overloadresolution/overloadsetforfunctions/OverloadSetForFunctionsTest01.test";
+import StaticInitializationExecOrderTest from "./semanticrules/staticinitialization/execorder/StaticInitializationExecOrderTest.test";
+import StaticInitializationIncompleteTest from "./semanticrules/staticinitialization/incompleteinitialization/StaticInitializationIncompleteTest.test";
+import StaticInitializationNamespaceTest from "./semanticrules/staticinitialization/namespace/StaticInitializationNamespaceTest.test";
+import StaticInitializationSafetyTest from "./semanticrules/staticinitialization/staticinitializationsafety/StaticInitializationSafetyTest.test";
+import StaticInitializationTest from "./semanticrules/staticinitialization/StaticInitializationTest.test";
+import TypeErasureTest from "./semanticrules/typeerasure/TypeErasureTest.test";
+
+import SpecificsOfAssignmentLikeContexts from './semanticrules/semanticessentials/AssignmentContextPositiveCases.test'
+import BinaryOverflow from './semanticrules/semanticessentials/BinaryOverflow.test'
+import CompoundAssignmentByte from './semanticrules/semanticessentials/CompoundAssignmentByte.test'
+import CompoundAssignmentInt from './semanticrules/semanticessentials/CompoundAssignmentInt.test'
+import CompoundAssignmentMixed from './semanticrules/semanticessentials/CompoundAssignmentMixed.test'
+import CompoundAssignmentShort from './semanticrules/semanticessentials/CompoundAssignmentShort.test'
+import DecrementUnaryOverflow from './semanticrules/semanticessentials/DecrementUnaryOverflow.test'
+import NumericExpressions from './semanticrules/semanticessentials/NumericExpressions.test'
+import SpecificsOfVariableInitializationContext from './semanticrules/semanticessentials/SpecificsOfVariableInitializationContext.test'
+import TypeOfStandaloneExpression from './semanticrules/semanticessentials/TypeOfStandaloneExpression.test'
+import UnaryOverflow from './semanticrules/semanticessentials/UnaryOverflow.test'
+import SpecificsOfStringOperatorContextsTest from './semanticrules/semanticessentials/SpecificsOfStringOperatorContextsTest.test'
+import SpecificsOfTypeParametersTest from './semanticrules/semanticessentials/SpecificsOfTypeParametersTest.test'
+import SubtypingForFunctionTypesTest from './semanticrules/subtyping/SubtypingForFunctionTypesTest.test'
+import SubtypingForFunctionTypesTest01 from './semanticrules/subtyping/SubtypingForFunctionTypesTest01.test'
+import SubtypingForGenericClassesAndInterfacesTest from './semanticrules/subtyping/SubtypingForGenericClassesAndInterfacesTest.test'
+import SubtypingForLiteralTypesTest from './semanticrules/subtyping/SubtypingForLiteralTypesTest.test'
+import SubtypingForNonGenericClassesAndInterfacesTest from './semanticrules/subtyping/SubtypingForNonGenericClassesAndInterfacesTest.test'
+import SubtypingForUnionTypesTest from './semanticrules/subtyping/SubtypingForUnionTypesTest.test'
+import InterTypeIsSubOfTypeObjOnGenTest from './semanticrules/subtyping/InterTypeIsSubOfTypeObjOnGenTest.test'
+import InterTypeIsSubOfTypeObjOnGenTest01 from './semanticrules/subtyping/InterTypeIsSubOfTypeObjOnGenTest01.test'
+import InterTypeIsSubOfTypeObjOnNonGenTest from './semanticrules/subtyping/InterTypeIsSubOfTypeObjOnNonGenTest.test'
+import InterTypeIsSubOfTypeObjOnPredefinedTest from './semanticrules/subtyping/InterTypeIsSubOfTypeObjOnPredefinedTest.test'
+import InterTypeIsSubOfTypeObjOnStrLitTest from './semanticrules/subtyping/InterTypeIsSubOfTypeObjOnStrLitTest.test'
+import InterTypeIsSubOfTypeTOnGenTest from './semanticrules/subtyping/InterTypeIsSubOfTypeTOnGenTest.test'
+import InterTypeIsSubOfTypeTOnGenTest01 from './semanticrules/subtyping/InterTypeIsSubOfTypeTOnGenTest01.test'
+import InterTypeIsSubOfTypeTOnGenTest02 from './semanticrules/subtyping/InterTypeIsSubOfTypeTOnGenTest02.test'
+import InterTypeIsSubOfTypeTOnGenTest03 from './semanticrules/subtyping/InterTypeIsSubOfTypeTOnGenTest03.test'
+import InterTypeIsSubOfTypeTOnNonGenTest from './semanticrules/subtyping/InterTypeIsSubOfTypeTOnNonGenTest.test'
+import InterTypeIsSubOfTypeTOnNonGenTest01 from './semanticrules/subtyping/InterTypeIsSubOfTypeTOnNonGenTest01.test'
+import InterTypeIsSubOfTypeTOnNonGenTest02 from './semanticrules/subtyping/InterTypeIsSubOfTypeTOnNonGenTest02.test'
+import InterTypeIsSubOfTypeTOnPredefinedTest from './semanticrules/subtyping/InterTypeIsSubOfTypeTOnPredefinedTest.test'
+import InterTypeIsSubOfTypeTOnStrLit1Test from './semanticrules/subtyping/InterTypeIsSubOfTypeTOnStrLit1Test.test'
+import InterTypeIsSubOfTypeTOnStrLit2Test from './semanticrules/subtyping/InterTypeIsSubOfTypeTOnStrLit2Test.test'
+import TypeTIsSubOfInterTypeOnGenTest from './semanticrules/subtyping/TypeTIsSubOfInterTypeOnGenTest.test'
+import TypeTIsSubOfInterTypeOnGenTest01 from './semanticrules/subtyping/TypeTIsSubOfInterTypeOnGenTest01.test'
+import SubtypingAmongArrayTypesTest from './semanticrules/subtyping/SubtypingAmongArrayTypesTest.test'
+import SupertypingAmongArrayTypesTest from './semanticrules/subtyping/SupertypingAmongArrayTypesTest.test'
+import SubtypingAmongPrimitiveTypestTest from './semanticrules/subtyping/SubtypingAmongPrimitiveTypestTest.test'
+import DiffTypeIsSubOfTypeObjOnGenTest from './semanticrules/subtyping/DiffTypeIsSubOfTypeObjOnGenTest.test'
+import DiffTypeIsSubOfTypeObjOnGenTest01 from './semanticrules/subtyping/DiffTypeIsSubOfTypeObjOnGenTest01.test'
+import TypeTIsSubOfInterTypeOnStrLitTest from './semanticrules/subtyping/TypeTIsSubOfInterTypeOnStrLitTest.test'
+import DiffTypeIsSubOfTypeObjOnNonGenTest from './semanticrules/subtyping/DiffTypeIsSubOfTypeObjOnNonGenTest.test'
+import DiffTypeIsSubOfTypeObjOnPredefinedTest from './semanticrules/subtyping/DiffTypeIsSubOfTypeObjOnPredefinedTest.test'
+import DiffTypeIsSubOfTypeObjOnStrLitTest from './semanticrules/subtyping/DiffTypeIsSubOfTypeObjOnStrLitTest.test'
+import DiffTypeIsSubOfTypeTOnGenTest from './semanticrules/subtyping/DiffTypeIsSubOfTypeTOnGenTest.test'
+import DiffTypeIsSubOfTypeTOnGenTest01 from './semanticrules/subtyping/DiffTypeIsSubOfTypeTOnGenTest01.test'
+import DiffTypeIsSubOfTypeTOnGenTest02 from './semanticrules/subtyping/DiffTypeIsSubOfTypeTOnGenTest02.test'
+import DiffTypeIsSubOfTypeTOnNonGenTest from './semanticrules/subtyping/DiffTypeIsSubOfTypeTOnNonGenTest.test'
+import DiffTypeIsSubOfTypeTOnNonGenTest01 from './semanticrules/subtyping/DiffTypeIsSubOfTypeTOnNonGenTest01.test'
+import DiffTypeIsSubOfTypeTOnPredefinedTest from './semanticrules/subtyping/DiffTypeIsSubOfTypeTOnPredefinedTest.test'
+import DiffTypeIsSubOfTypeTOnPredefinedTest01 from './semanticrules/subtyping/DiffTypeIsSubOfTypeTOnPredefinedTest01.test'
+import DiffTypeIsSubOfTypeTOnStrLitTest from './semanticrules/subtyping/DiffTypeIsSubOfTypeTOnStrLitTest.test'
+import TypeTIsSubOfDiffOnGenTest from './semanticrules/subtyping/TypeTIsSubOfDiffOnGenTest.test'
+import TypeTIsSubOfDiffOnGenTest01 from './semanticrules/subtyping/TypeTIsSubOfDiffOnGenTest01.test'
+import TypeTIsSubOfDiffOnNonGenTest from './semanticrules/subtyping/TypeTIsSubOfDiffOnNonGenTest.test'
+import TypeTIsSubOfDiffOnNonGenTest01 from './semanticrules/subtyping/TypeTIsSubOfDiffOnNonGenTest01.test'
+import TypeTIsSubOfDiffOnPredefinedTest from './semanticrules/subtyping/TypeTIsSubOfDiffOnPredefinedTest.test'
+import TypeTIsSubOfDiffOnStrLitTest from './semanticrules/subtyping/TypeTIsSubOfDiffOnStrLitTest.test'
+import ArrayTypesIdentityTest from './semanticrules/typeidentity/ArrayTypesIdentityTest.test'
+import UnionTypesIdentityTest from './semanticrules/typeidentity/UnionTypesIdentityTest.test'
+import SemanticRulesTypeIdentity from './semanticrules/typeidentity/SemanticRulesTypeIdentity.test'
+import TypeIdentityCaseTest from './semanticrules/typeidentity/TypeIdentityCaseTest.test'
+import ArrayOfArraysTypesIdentityTest from './semanticrules/typeidentity/ArrayOfArraysTypesIdentityTest.test'
+import AssignabilityTest from './semanticrules/assignability/AssignabilityTest.test'
+import InvarianceCovarianceAndContravarianceContravarianceTest from './semanticrules/invariancecovarianceandcontravariance/InvarianceCovarianceAndContravarianceContravarianceTest.test'
+import InvarianceCovarianceAndContravarianceCovarianceTest from './semanticrules/invariancecovarianceandcontravariance/InvarianceCovarianceAndContravarianceCovarianceTest.test'
+import InvarianceCovarianceAndContravarianceExamplesTest from './semanticrules/invariancecovarianceandcontravariance/InvarianceCovarianceAndContravarianceExamplesTest.test'
+import InvarianceCovarianceAndContravarianceInvarianceTest from './semanticrules/invariancecovarianceandcontravariance/InvarianceCovarianceAndContravarianceInvarianceTest.test'
+import AsymmetricVerificationCaseTest from './semanticrules/compatibilitycallargs/AsymmetricVerificationCaseTest.test'
+import BoundaryCaseTest from './semanticrules/compatibilitycallargs/BoundaryCaseTest.test'
+import DiffTypeCompatCaseTest from './semanticrules/compatibilitycallargs/DiffTypeCompatCaseTest.test'
+import ImplicitCompatCaseTest from './semanticrules/compatibilitycallargs/ImplicitCompatCaseTest.test'
+import InheritanceRelationshipCompatibilityCaseTest from './semanticrules/compatibilitycallargs/InheritanceRelationshipCompatibilityCaseTest.test'
+import InterfaceImplementationCompatibilityCaseTest from './semanticrules/compatibilitycallargs/InterfaceImplementationCompatibilityCaseTest.test'
+import RestParameterWithOptionalTest from './semanticrules/compatibilitycallargs/RestParameterWithOptionalTest.test'
+import RestParamsSpreadTest from './semanticrules/compatibilitycallargs/RestParamsSpreadTest.test'
+import RestParamsTest from './semanticrules/compatibilitycallargs/RestParamsTest.test'
+import SameTypeCompatNoImplicitCaseTest from './semanticrules/compatibilitycallargs/SameTypeCompatNoImplicitCaseTest.test'
+import SingleParamsTest from './semanticrules/compatibilitycallargs/SingleParamsTest.test'
+import SpecExamples2Test from './semanticrules/compatibilitycallargs/SpecExamples2Test.test'
+import SpecExamplesTest from './semanticrules/compatibilitycallargs/SpecExamplesTest.test'
+import TupleRestParamsTest from './semanticrules/compatibilitycallargs/TupleRestParamsTest.test'
 
 export default function testsuite(): void {
-
 
   ProgramEntryPointTest();
   StandArdLibraryUsageTest();
@@ -79,7 +194,6 @@ export default function testsuite(): void {
   SelectiveBindingTest();
   SeveralBindingsForOneImportPathTest();
   ImportPathFileTest();
-
   GenericsExperimentalTest();
   NonNullishTypeParameterTest();
   DestructuringAssignmentTest();
@@ -119,5 +233,118 @@ export default function testsuite(): void {
   ExplicitClassMethodOverloadTest();
   ForOfTypeAnnotationTest();
   ExplicitInterfaceMethodOverloadTest();
+  NumericDefaultLiteralTypesTest01();
+  ReturnTypeInferenceTest02();
+  ComputingSmartTypesTest01();
+  ComputingSmartTypesTest11();
+  IntersectionTypesTest();
+  SmartCastExamplesTest();
+  OverridingInClassesTest();
+  OverridingTest();
+  OverrideCompatibleSignaturesTest02();
+  OverrideCompatibleSignaturesTest04();
+  OverridingConflictTest();
+  SingleClassOverloadTest();
+  ImplicitFunctionOverloadingTest01();
+  ImplicitMethodOverloadingTest01();
+  ImplicitConstructorOverloadingTest01();
+  OverloadEquivalentSignaturesTest();
+  FirstMatchTest01();
+  InterfacesTest();
+  OverloadWithImportTest01();
+  DispatchTest();
+  ExtendedConditionalExpressionsTest01();
   FixedArrayTypesTest();
+  OverloadSetForClassInstanceMethodsTest();
+  OverloadSetForConstructorsTest02();
+  OverloadSetForFunctionsTest01();
+  StaticInitializationExecOrderTest();
+  StaticInitializationIncompleteTest();
+  StaticInitializationNamespaceTest();
+  StaticInitializationSafetyTest();
+  StaticInitializationTest();
+  TypeErasureTest();
+  SpecificsOfAssignmentLikeContexts();
+  BinaryOverflow();
+  CompoundAssignmentByte();
+  CompoundAssignmentInt();
+  CompoundAssignmentMixed();
+  CompoundAssignmentShort();
+  DecrementUnaryOverflow();
+  NumericExpressions();
+  SpecificsOfVariableInitializationContext();
+  TypeOfStandaloneExpression();
+  UnaryOverflow();
+  SpecificsOfStringOperatorContextsTest();
+  SpecificsOfTypeParametersTest();
+  SubtypingForFunctionTypesTest();
+  SubtypingForFunctionTypesTest01();
+  SubtypingForGenericClassesAndInterfacesTest();
+  SubtypingForLiteralTypesTest();
+  SubtypingForNonGenericClassesAndInterfacesTest();
+  SubtypingForUnionTypesTest();
+  InterTypeIsSubOfTypeObjOnGenTest();
+  InterTypeIsSubOfTypeObjOnGenTest01();
+  InterTypeIsSubOfTypeObjOnNonGenTest();
+  InterTypeIsSubOfTypeObjOnPredefinedTest();
+  InterTypeIsSubOfTypeObjOnStrLitTest();
+  InterTypeIsSubOfTypeTOnGenTest();
+  InterTypeIsSubOfTypeTOnGenTest01();
+  InterTypeIsSubOfTypeTOnGenTest02();
+  InterTypeIsSubOfTypeTOnGenTest03();
+  InterTypeIsSubOfTypeTOnNonGenTest();
+  InterTypeIsSubOfTypeTOnNonGenTest01();
+  InterTypeIsSubOfTypeTOnNonGenTest02();
+  InterTypeIsSubOfTypeTOnPredefinedTest();
+  InterTypeIsSubOfTypeTOnStrLit1Test();
+  InterTypeIsSubOfTypeTOnStrLit2Test();
+  TypeTIsSubOfInterTypeOnGenTest();
+  TypeTIsSubOfInterTypeOnGenTest01();
+  SubtypingAmongArrayTypesTest();
+  SupertypingAmongArrayTypesTest();
+  SubtypingAmongPrimitiveTypestTest();
+  DiffTypeIsSubOfTypeObjOnGenTest();
+  DiffTypeIsSubOfTypeObjOnGenTest01();
+  TypeTIsSubOfInterTypeOnStrLitTest();
+  DiffTypeIsSubOfTypeObjOnNonGenTest();
+  DiffTypeIsSubOfTypeObjOnPredefinedTest();
+  DiffTypeIsSubOfTypeObjOnStrLitTest();
+  DiffTypeIsSubOfTypeTOnGenTest();
+  DiffTypeIsSubOfTypeTOnGenTest01();
+  DiffTypeIsSubOfTypeTOnGenTest02();
+  DiffTypeIsSubOfTypeTOnNonGenTest();
+  DiffTypeIsSubOfTypeTOnNonGenTest01();
+  DiffTypeIsSubOfTypeTOnPredefinedTest();
+  DiffTypeIsSubOfTypeTOnPredefinedTest01();
+  DiffTypeIsSubOfTypeTOnStrLitTest();
+  TypeTIsSubOfDiffOnGenTest();
+  TypeTIsSubOfDiffOnGenTest01();
+  TypeTIsSubOfDiffOnNonGenTest();
+  TypeTIsSubOfDiffOnNonGenTest01();
+  TypeTIsSubOfDiffOnPredefinedTest();
+  TypeTIsSubOfDiffOnStrLitTest();
+  ArrayTypesIdentityTest();
+  UnionTypesIdentityTest();
+  SemanticRulesTypeIdentity();
+  TypeIdentityCaseTest();
+  ArrayOfArraysTypesIdentityTest();
+  AssignabilityTest();
+  InvarianceCovarianceAndContravarianceContravarianceTest();
+  InvarianceCovarianceAndContravarianceCovarianceTest();
+  InvarianceCovarianceAndContravarianceExamplesTest();
+  InvarianceCovarianceAndContravarianceInvarianceTest();
+  AsymmetricVerificationCaseTest();
+  BoundaryCaseTest();
+  DiffTypeCompatCaseTest();
+  ImplicitCompatCaseTest();
+  InheritanceRelationshipCompatibilityCaseTest();
+  InterfaceImplementationCompatibilityCaseTest();
+  RestParameterWithOptionalTest();
+  RestParamsSpreadTest();
+  RestParamsTest();
+  SameTypeCompatNoImplicitCaseTest();
+  SingleParamsTest();
+  SpecExamples2Test();
+  SpecExamplesTest();
+  TupleRestParamsTest();
 }

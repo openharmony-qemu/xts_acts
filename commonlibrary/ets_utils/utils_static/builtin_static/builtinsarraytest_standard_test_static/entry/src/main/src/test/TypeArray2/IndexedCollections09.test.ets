@@ -56,7 +56,7 @@ class CustomCollection {
   }
 }
 
-export default function IndexedCollections09Test() {
+export default function IndexedCollections09Test(): void {
   describe('IndexedCollections09Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

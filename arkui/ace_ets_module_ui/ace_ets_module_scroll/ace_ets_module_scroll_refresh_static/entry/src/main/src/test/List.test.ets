@@ -16,8 +16,10 @@
 
 import refreshTest from './RefreshTest/Refresh.test';
 import RefreshAttributeTest from './RefreshAttributeTest/RefreshAttribute.test';
+import refreshOffsetUndefined from './RefreshTest/refreshOffsetUndefined.test';
 
 export default function testsuite() {
   refreshTest();
   RefreshAttributeTest();
+  refreshOffsetUndefined();
 }

@@ -20,38 +20,34 @@ async function sleep(time: number) {
   return new Promise<void>((resolve) => setTimeout(resolve, time));
 }
 
-let context = getContext(this) as common.UIAbilityContext;
+let context: common.UIAbilityContext;
 
 export default function actsNotificationAnsCovered() {
   describe('actsNotificationAnsCovered', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(async (done:Function) => {
-      NotificationManager.requestEnableNotification((err) => {
-        if (err) {
-          console.error(Tag+`requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
-          expect(false).assertTrue();
-          console.info(`${Tag}` + `test case end`);
-          done();
+    beforeAll(async () => {
+      context = AppStorage.get<common.UIAbilityContext>("abilityContext") as common.UIAbilityContext
+      NotificationManager.requestEnableNotification(context).then(() => {
+        console.info(`requestEnableNotification succeeded`);
+      }).catch((err: BusinessError) => {
+        console.info(`requestEnableNotification err: ` + JSON.stringify(err));
+        if (err?.code === 801) {
+          expect(err.code).assertEqual(801);
         } else {
-          console.info(Tag + "requestEnableNotification success");
+          expect().assertFail();
         }
       });
-
-      await sleep(1500);
+      await sleep(1000)
       let driver = Driver.create();
-      console.log(Tag + `driver is ${JSON.stringify(driver)}`);
-      await driver.assertComponentExist(ON.text('允许'));
       let button = await driver.findComponent(ON.text('允许'));
-      console.log(Tag + `button is ${JSON.stringify(button)}`);
+      console.info(`button is ${JSON.stringify(button)}`);
       if (button !== null) {
-
+        await sleep(1000);
         await button.click();
-        await sleep(1500);
-        done()
+        await sleep(1000);
       } else {
-        console.log(Tag + `button is null`)
-        expect(false).assertTrue();
-        done()
+        console.info(`null button`);
+        expect(button).assertContain('允许')
       }
     })
     beforeEach(() => {
@@ -1682,8 +1678,17 @@ export default function actsNotificationAnsCovered() {
               expect(false).assertTrue();
               done();
             } else {
-              console.info(`${TAG} getSlot AsyncCallback success`);
-              expect(NotificationSlot.notificationType).assertEqual(4)
+              console.info(`${TAG} getSlot AsyncCallback success ${JSON.stringify(NotificationSlot)}`);
+ 	            expect(NotificationSlot.notificationType).assertEqual(4);
+ 	            expect(NotificationSlot.badgeFlag).assertEqual(true);
+ 	            expect(NotificationSlot.bypassDnd).assertEqual(false);
+ 	            expect(NotificationSlot.vibrationEnabled).assertEqual(true);
+ 	            expect(NotificationSlot.lockscreenVisibility).assertEqual(2);
+ 	            expect(NotificationSlot.sound).assertEqual("file://system/etc/Light.ogg");
+ 	            expect(NotificationSlot.lightEnabled).assertEqual(false);
+ 	            expect(NotificationSlot.enabled).assertEqual(true);
+ 	            expect(NotificationSlot.vibrationValues).assertContain([200]);
+ 	            expect(NotificationSlot.lightColor).assertEqual(0);
               console.info(TAG + 'Acts_NotificationSlot_0100 END');
               done();
             }

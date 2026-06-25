@@ -37,6 +37,7 @@ import CameraVideoSessionBackTest from './Session/CameraVideoSessionBack.test';
 import CameraPhotoSessionBackTest from './Session/CameraPhotoSessionBack.test';
 import MiniCapabilityTest from './MiniCapability.test';
 import VideoSessionManualControlTest from './VideoSession/VideoSessionManualControl.test'
+import MetadataOutputTest from './CameraOutput/MetadataOutput.test'
 
 export default function testsuite() {
   CameraNoPermissionTest();
@@ -78,4 +79,5 @@ export default function testsuite() {
   VideoOutputBackTest();
   MiniCapabilityTest();
   VideoSessionManualControlTest();
+  MetadataOutputTest();
 }

@@ -36,7 +36,7 @@ struct PanelExample {
           Text('1. afternoon 4:00 The project meeting')
         }
       }
-      .key('panel')
+      .key('Panel_panel')
       .type(PanelType.Foldable)
       .mode(PanelMode.Half)
       .dragBar(true)

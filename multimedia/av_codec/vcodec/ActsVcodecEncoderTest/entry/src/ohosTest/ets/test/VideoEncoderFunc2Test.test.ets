@@ -1066,5 +1066,32 @@ export default function VideoEncoderFunc2Test() {
       let result: number = await testNapi.runFunc2Test(68);
       expect(result).assertEqual(0);
     });
+    /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_ENCODER_SET_XPS_0010
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_ENCODER_SET_XPS_0010
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_ENCODER_SET_XPS_0010', Level.LEVEL2, async () => {
+      console.info('VIDEO_ENCODER_SET_XPS_0010 start');
+      let result: number = await testNapi.runFunc2Test(69);
+      expect(result).assertEqual(0);
+    });
+
+     /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_ENCODER_SET_XPS_0020
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_ENCODER_SET_XPS_0020
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_ENCODER_SET_XPS_0020', Level.LEVEL2, async () => {
+      console.info('VIDEO_ENCODER_SET_XPS_0020 start');
+      let result: number = await testNapi.runFunc2Test(70);
+      expect(result).assertEqual(0);
+    });
   });
 }

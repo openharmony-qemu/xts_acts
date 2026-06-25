@@ -45,7 +45,12 @@ export default function HitTest() {
         console.log("BusinessError  end")
       });
       await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.pageInteractionThree.test.static")
+      let cmd = "aa start -a EntryAbility -b com.pageInteractionThree.test.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(2000)
       console.log("[Boruto-0]:beforeAll end,%s", "Succeed!")
     });

@@ -16,6 +16,23 @@ import { describe, beforeEach, it, expect, Level } from "@ohos/hypium"
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 
+const fontWeightArray = [
+  '100',
+  '200',
+  '300',
+  '400',
+  '500',
+  '600',
+  '700',
+  '800',
+  '900',
+  'FontWeight.Bold',
+  'FontWeight.Normal',
+  'FontWeight.Bolder',
+  'FontWeight.Lighter',
+  'FontWeight.Medium',
+  'FontWeight.Regular',
+]
 
 export default function SymbolGlyphFontWeightTest() {
   describe('SymbolGlyphFontWeightTest', () => {
@@ -55,7 +72,8 @@ export default function SymbolGlyphFontWeightTest() {
       let strJson = getInspectorByKey('SymbolGlyph_FontWeight_default');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[SymbolGlyphFontWeightTest_0010] fontWeight: " + JSON.stringify(obj.$attrs.fontWeight));
-      expect(obj.$attrs.fontWeight).assertEqual('FontWeight.Normal');
+      let fontweightNum:number = getContext().resourceManager.getNumber($r('sys.float.font_weight').id)
+      expect(obj.$attrs.fontWeight).assertEqual(fontWeightArray[fontweightNum]);
       console.info('[SymbolGlyphFontWeightTest_0010] END');
       done();
     });
@@ -74,7 +92,8 @@ export default function SymbolGlyphFontWeightTest() {
       let strJson = getInspectorByKey('SymbolGlyph_FontWeight_undefined');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[SymbolGlyphFontWeightTest_0020] fontWeight: " + JSON.stringify(obj.$attrs.fontWeight));
-      expect(obj.$attrs.fontWeight).assertEqual('FontWeight.Normal');
+      let fontweightNum:number = getContext().resourceManager.getNumber($r('sys.float.font_weight').id)
+      expect(obj.$attrs.fontWeight).assertEqual(fontWeightArray[fontweightNum]);
       console.info('[SymbolGlyphFontWeightTest_0020] END');
       done();
     });

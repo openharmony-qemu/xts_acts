@@ -24,7 +24,7 @@ class MyArray042 extends Array<number | (number | number[])[]> {
 
 interface Item008 { value: number }
 
-export default function ArrayFlatTest() {
+export default function ArrayFlatTest(): void {
   describe('ArrayFlatTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

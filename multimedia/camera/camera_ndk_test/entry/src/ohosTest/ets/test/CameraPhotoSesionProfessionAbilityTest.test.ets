@@ -601,7 +601,7 @@ export default function CameraPhotoSesionProfessionAbilityTest() {
       createCameraSessionInstance();
       let ret = cameraObj.oHGetExposureMeteringMode(0);
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_0500 ret is "+ret);
-      expect(ret).assertEqual(CAMERA_OPERATION_NOT_ALLOWED)
+      expect(ret).assertEqual(CAMERA_SESSION_NOT_CONFIG)
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_EXPOSURE_METERING_MODE_0500 ends here");
       await releaseCameraSessionInstance();
     });
@@ -819,7 +819,7 @@ export default function CameraPhotoSesionProfessionAbilityTest() {
       createCameraSessionInstance();
       let ret = cameraObj.oHgetIso(0);
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0400 ret is "+ret);
-      expect(ret).assertEqual(CAMERA_OPERATION_NOT_ALLOWED)
+      expect(ret).assertEqual(CAMERA_SESSION_NOT_CONFIG)
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0400 ends here");
       await releaseCameraSessionInstance();
     });

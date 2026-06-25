@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,7 +37,7 @@ function test_div_005 (dividend: string, divisor: string, expected: string) {
   expect(expected).assertEqual(Decimal.div(dividend, divisor).valueOf());
   expect(expected).assertEqual(new Decimal(dividend).div(divisor).valueOf());
 }
-export default function DecimalTest030() {
+export default function DecimalTest030(): void {
   describe("DecimalTest030", () => {
     beforeAll(() => {
       console.info("beforeAll: Prerequisites at the test suite level, which are executed before the test suite is executed.");

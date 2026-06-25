@@ -16,6 +16,8 @@
     "MainAbility/pages/image/ImageHdrBrightness",
     "MainAbility/pages/ListImage/ListImage",
     "MainAbility/pages/ImageColorFilter/ImageColorFilter",
-    "MainAbility/pages/image/ImageReloadKey"
+    "MainAbility/pages/image/ImageReloadKey",
+    "MainAbility/pages/drawableDescriptor/DrawableDescriptorReleaseTest",
+    "MainAbility/pages/drawableDescriptor/PixelMapDrawableDescriptorConstructor"
   ]
 }

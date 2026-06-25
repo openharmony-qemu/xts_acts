@@ -138,7 +138,7 @@ interface Inner128 { x: number };
 interface Obj128 { data: Inner128 };
 
 
-export default function ArrayPopTest() {
+export default function ArrayPopTest(): void {
   describe('ArrayPopTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

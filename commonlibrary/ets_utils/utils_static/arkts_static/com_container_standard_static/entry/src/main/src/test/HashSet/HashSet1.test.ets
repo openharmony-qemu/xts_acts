@@ -38,7 +38,7 @@ class InfoC {
   }
 }
 
-export default function HashSetTest1() {
+export default function HashSetTest1(): void {
   describe("HashSetTest1", (): void => {
     afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)

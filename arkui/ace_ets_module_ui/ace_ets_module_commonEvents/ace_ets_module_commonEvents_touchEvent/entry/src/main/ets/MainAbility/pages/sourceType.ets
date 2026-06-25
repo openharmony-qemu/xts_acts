@@ -66,7 +66,7 @@ struct sourceExample {
           }
         })
         .key('button')
-      Text(this.text).padding(15).fontSize(20).key('text')
+      Text(this.text).padding(15).fontSize(20).key('sourceType_text')
     }.height(350).width('100%').padding(10)
   }
 }

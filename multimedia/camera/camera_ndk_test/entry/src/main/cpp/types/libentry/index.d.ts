@@ -198,6 +198,10 @@ export const getCameraHostName: () => number;
 
 export const getCameraHostType: () => number;
 
+export const testOHGetSensorPixelArraySizeWithoutCamera: () => number;
+
+export const testOHGetSensorColorFilterArrangementWithoutCamera: () => number;
+
 export const getWhiteBalanceTest: () => number;
 
 export const getMacroStatusChangeTest: () => number;
@@ -373,6 +377,10 @@ export const sessionGetZoomRatioRange: () => zoomRatio // return ZoomRatioRange
 export const sessionGetZoomRatio: () => number; // return current ZoomRatio
 
 export const sessionSetZoomRatio: (a: number) => number;
+
+export const sessionGetZoomPointInfos: (a: number) => number;
+
+export const sessionDeleteZoomPointInfos: (a: number) => number;
 
 export const sessionIsVideoStabilizationModeSupported: (a: number) => boolean;
 
@@ -678,3 +686,37 @@ export const getColorTint: (index: number) => number;
 export const getZoomPointInfos: (index: number) => number;
 
 export const deleteZoomPointInfo: (index: number) => number;
+
+export const getEnumNotificationName: (index: number) => number;
+
+export const getEnumProximityStateForFocus: (index: number) => number;
+
+export const registerNotificationReceivedCallback: (index: number) => number;
+
+export const unregisterNotificationReceivedCallback: (index: number) => number;
+
+export const getNotificationName: (index: number) => number;
+
+export const getProximityStateForFocus: (index: number) => number;
+
+export const destroyCameraNotificationInfo: (index: number) => number;
+
+export const createPhotoCaptureSettingExt: (index: number) => number;
+
+export const destroyPhotoCaptureSettingExt: (index: number) => number;
+
+export const setCompressionQuality: (index: number, compression: number) => number;
+
+export const setImageRotation: (index: number, rotation: number) => number;
+
+export const setMirror: (index: number, isMirror: boolean) => number;
+
+export const setLocation: (index: number, latitude: number, longitude: number, altitude: number) => number;
+
+export const captureWithCaptureSettingExt: (index: number) => number;
+
+export const getAutomotiveCameraPosition: () => number;
+
+export const getAutomotiveCameraPositionErrorParameter: () => number;
+
+export const enumTestAutomotiveCameraPosition: () => number;

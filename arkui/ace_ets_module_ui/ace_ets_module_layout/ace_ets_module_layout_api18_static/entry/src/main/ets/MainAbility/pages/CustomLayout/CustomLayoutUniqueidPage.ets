@@ -14,31 +14,9 @@
  * limitations under the License.
  */
 import { FrameNode, NodeController } from '@ohos.arkui.node';
-import {
-  Entry,
-  NodeContainer,
-  Text,
-  Column,
-  Component,
-  ColumnOptions,
-  Color,
-  $r,
-  ImageLoadResult,
-  Builder,
-  BuilderParam,
-  SizeResult,
-  GeometryInfo,
-  Layoutable,
-  ConstraintSizeOptions,
-  GeometryInfo,
-  Measurable,
-  ConstraintSizeOptions,
-  ForEach,
-  CustomLayout
-} from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { Entry, NodeContainer, Text, Column, Component, ColumnOptions, Color, $r, ImageLoadResult, Builder, BuilderParam, SizeResult, GeometryInfo, Layoutable, ConstraintSizeOptions, Measurable, ForEach, CustomLayout } from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-
 @Entry
 @Component
 struct CustomLayoutUniqueidPage {

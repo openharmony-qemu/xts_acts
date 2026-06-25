@@ -13,11 +13,10 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, afterEach, beforeAll, afterEach, beforeEach } from "../../../hypium/index";
-import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
+import { describe, it, expect, TestType, Size, Level, afterEach, beforeAll, beforeEach } from '../../../hypium/index';
+import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import { Driver, ON } from '@ohos.UiTest';
-
 export default function GetAppContextTest() {
   describe("GetAppContextTest", () => {
 

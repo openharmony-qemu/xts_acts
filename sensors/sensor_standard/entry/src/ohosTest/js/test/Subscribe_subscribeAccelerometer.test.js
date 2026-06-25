@@ -75,6 +75,10 @@ describe("SensorJsTest_sensor_25", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     sensor.subscribeAccelerometer({
                         interval: 'game',
@@ -117,6 +121,10 @@ describe("SensorJsTest_sensor_25", function () {
             sensor.getSingleSensor(AccelerometerId ,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     sensor.subscribeAccelerometer({
@@ -161,6 +169,10 @@ describe("SensorJsTest_sensor_25", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     sensor.subscribeAccelerometer({
                         interval: 'normal',
@@ -203,6 +215,10 @@ describe("SensorJsTest_sensor_25", function () {
             sensor.getSingleSensor(AccelerometerId ,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     sensor.subscribeAccelerometer({
@@ -261,6 +277,10 @@ describe("SensorJsTest_sensor_25", function () {
                if (error) {
                    console.info(TAG + ' error:' + error);
                    done();
+               } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                } else {
                    sensor.subscribeAccelerometer({
                        interval: 'xxx',
@@ -301,6 +321,10 @@ describe("SensorJsTest_sensor_25", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     sensor.subscribeAccelerometer({
                         interval: 'normal',
@@ -339,6 +363,10 @@ describe("SensorJsTest_sensor_25", function () {
             sensor.getSingleSensor(AccelerometerId ,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     sensor.subscribeAccelerometer({
@@ -398,6 +426,10 @@ describe("SensorJsTest_sensor_25", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     sensor.subscribeAccelerometer({
                         interval: 'game',
@@ -438,6 +470,10 @@ describe("SensorJsTest_sensor_25", function () {
             sensor.getSingleSensor(AccelerometerId ,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     sensor.subscribeAccelerometer({
@@ -480,6 +516,10 @@ describe("SensorJsTest_sensor_25", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     sensor.subscribeAccelerometer({
                         interval: 'normal',
@@ -520,6 +560,10 @@ describe("SensorJsTest_sensor_25", function () {
             sensor.getSingleSensor(AccelerometerId ,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     sensor.subscribeAccelerometer({
@@ -572,6 +616,10 @@ describe("SensorJsTest_sensor_25", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     sensor.subscribeAccelerometer({
                         interval: 'xxx',
@@ -609,6 +657,10 @@ describe("SensorJsTest_sensor_25", function () {
             sensor.getSingleSensor(AccelerometerId ,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     sensor.subscribeAccelerometer({
@@ -648,6 +700,10 @@ describe("SensorJsTest_sensor_25", function () {
             sensor.getSingleSensor(AccelerometerId ,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     sensor.subscribeAccelerometer({

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -194,7 +195,7 @@ export default function setEventParamTest() {
               names: [hiAppEvent.event.APP_LAUNCH, hiAppEvent.event.SCROLL_JANK, hiAppEvent.event.CPU_USAGE_HIGH,
                 hiAppEvent.event.BATTERY_USAGE, hiAppEvent.event.RESOURCE_OVERLIMIT, hiAppEvent.event.ADDRESS_SANITIZER,
                 hiAppEvent.event.MAIN_THREAD_JANK, hiAppEvent.event.APP_KILLED, hiAppEvent.event.APP_HICOLLIE,
-                hiAppEvent.event.AUDIO_JANK_FRAME, hiAppEvent.event.SCROLL_ARKWEB_FLING_JANK]}
+                hiAppEvent.event.AUDIO_JANK_FRAME, hiAppEvent.event.SCROLL_ARKWEB_FLING_JANK, hiAppEvent.event.appFreezeWarning]}
           ],
           onTrigger: (curRow: int, curSize: int, holder: hiAppEvent.AppEventPackageHolder) => {
             expect(holder != null).assertTrue();
@@ -272,7 +273,7 @@ export default function setEventParamTest() {
           await hiAppEvent.setEventParam(eventParams, "test_domain_");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam03 Event parameters set successfully.');
         } catch (error) {
-          error = error as BusinessError;
+         
           hilog.error(logDomain, tag, 'testHiAppEventSetPam03 Error:', error.message, 'testHiAppEventSetPam03 Code:', error.code);
           expect(error.code == 11101001).assertTrue()
           done()
@@ -302,7 +303,7 @@ export default function setEventParamTest() {
           await hiAppEvent.setEventParam(eventParams, "test_?domain");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam04 Event parameters set successfully.');
         } catch (error) {
-          error = error as BusinessError;
+         
           hilog.error(logDomain, tag, 'testHiAppEventSetPam04 Error:', error.message, 'HiAppEventSub71 Code:', error.code);
           expect(error.code == 11101001).assertTrue()
           done()
@@ -332,7 +333,7 @@ export default function setEventParamTest() {
           await hiAppEvent.setEventParam(eventParams, "123test_domain");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam05 Event parameters set successfully.');
         } catch (error) {
-          error = error as BusinessError;
+         
           hilog.error(logDomain, tag, 'testHiAppEventSetPam05 Error:', error.message, 'HiAppEventSub71 Code:', error.code);
           expect(error.code == 11101001).assertTrue()
           done()
@@ -362,7 +363,7 @@ export default function setEventParamTest() {
           await hiAppEvent.setEventParam(eventParams, "");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam06 Event parameters set successfully.');
         } catch (error) {
-          error = error as BusinessError;
+         
           hilog.error(logDomain, tag, 'testHiAppEventSetPam06 Error:', error.message, 'HiAppEventSub71 Code:', error.code);
           expect(error.code == 11101001).assertTrue()
           done()
@@ -392,7 +393,7 @@ export default function setEventParamTest() {
           await hiAppEvent.setEventParam(eventParams, "Test_123domain_Test_123domain_TES");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam07 Event parameters set successfully.');
         } catch (error) {
-          error = error as BusinessError;
+         
           hilog.error(logDomain, tag, 'testHiAppEventSetPam07 Error:', error.message, 'HiAppEventSub71 Code:', error.code);
           expect(error.code == 11101001).assertTrue()
           done()
@@ -422,7 +423,7 @@ export default function setEventParamTest() {
           await hiAppEvent.setEventParam(eventParams, "test_domain", "test_name_");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam09 Event parameters set successfully.');
         } catch (error) {
-          error = error as BusinessError;
+         
           hilog.error(logDomain, tag, 'testHiAppEventSetPam09 Error:', error.message, 'HiAppEventSub71 Code:', error.code);
           expect(error.code == 11101002).assertTrue()
           done()
@@ -452,7 +453,7 @@ export default function setEventParamTest() {
           await hiAppEvent.setEventParam(eventParams, "test_domain", "test_?name");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam10 Event parameters set successfully.');
         } catch (error) {
-          error = error as BusinessError;
+         
           hilog.error(logDomain, tag, 'testHiAppEventSetPam10 Error:', error.message, 'HiAppEventSub71 Code:', error.code);
           expect(error.code == 11101002).assertTrue()
           done()
@@ -482,7 +483,7 @@ export default function setEventParamTest() {
           await hiAppEvent.setEventParam(eventParams, "test_domain", "123test_name");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam11 Event parameters set successfully.');
         } catch (error) {
-          error = error as BusinessError;
+         
           hilog.error(logDomain, tag, 'testHiAppEventSetPam11 Error:', error.message, 'HiAppEventSub71 Code:', error.code);
           expect(error.code == 11101002).assertTrue()
           done()
@@ -543,7 +544,7 @@ export default function setEventParamTest() {
             "Test_123name_Test_123name_Test_123name_Test_123Na");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam13 Event parameters set successfully.');
         } catch (error) {
-          error = error as BusinessError;
+         
           hilog.error(logDomain, tag, 'testHiAppEventSetPam13 Error:', error.message, 'HiAppEventSub71 Code:', error.code);
           expect(error.code == 11101002).assertTrue()
           done()
@@ -573,7 +574,7 @@ export default function setEventParamTest() {
           await hiAppEvent.setEventParam(eventParams, "test_domain", "test_name");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam15 Event parameters set successfully.');
         } catch (error) {
-          error = error as BusinessError;
+         
           hilog.error(logDomain, tag, 'testHiAppEventSetPam15 Error:', error.message, 'HiAppEventSub71 Code:', error.code);
           expect(error.code == 11101005).assertTrue()
           done()
@@ -603,7 +604,7 @@ export default function setEventParamTest() {
           await hiAppEvent.setEventParam(eventParams, "test_domain", "test_name");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam16 Event parameters set successfully.');
         } catch (error) {
-          error = error as BusinessError;
+         
           hilog.error(logDomain, tag, 'testHiAppEventSetPam16 Error:', error.message, 'HiAppEventSub71 Code:', error.code);
           expect(error.code == 11101005).assertTrue()
           done()
@@ -633,7 +634,7 @@ export default function setEventParamTest() {
           await hiAppEvent.setEventParam(eventParams, "test_domain", "test_name");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam17 Event parameters set successfully.');
         } catch (error) {
-          error = error as BusinessError;
+         
           hilog.error(logDomain, tag, 'testHiAppEventSetPam17 Error:', error.message, 'HiAppEventSub71 Code:', error.code);
           expect(error.code == 11101005).assertTrue()
           done()
@@ -663,7 +664,7 @@ export default function setEventParamTest() {
           await hiAppEvent.setEventParam(eventParams, "test_domain", "test_name");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam18 Event parameters set successfully.');
         } catch (error) {
-          error = error as BusinessError;
+         
           hilog.error(logDomain, tag, 'testHiAppEventSetPam18 Error:', error.message, 'HiAppEventSub71 Code:', error.code);
           expect(error.code == 11101005).assertTrue()
           done()
@@ -693,7 +694,7 @@ export default function setEventParamTest() {
           await hiAppEvent.setEventParam(eventParams, "test_domain", "test_name");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam19 Event parameters set successfully.');
         } catch (error) {
-          error = error as BusinessError;
+         
           hilog.error(logDomain, tag, 'testHiAppEventSetPam19 Error:', error.message, 'HiAppEventSub71 Code:', error.code);
           expect(error.code == 11101005).assertTrue()
           done()
@@ -727,7 +728,7 @@ export default function setEventParamTest() {
           await hiAppEvent.setEventParam(eventParams, "test_domain", "test_name");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam20 Event parameters set successfully.');
         } catch (error) {
-          error = error as BusinessError;
+         
           hilog.error(logDomain, tag, 'testHiAppEventSetPam20 Error:', error.message, 'HiAppEventSub71 Code:', error.code);
           expect(error.code == 11101004).assertTrue()
           done()
@@ -758,7 +759,7 @@ export default function setEventParamTest() {
           await hiAppEvent.setEventParam(eventParams, "test_domain", "test_name");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam21 Event parameters set successfully.');
         } catch (error) {
-          error = error as BusinessError;
+         
           hilog.error(logDomain, tag, 'testHiAppEventSetPam21 Error:', error.message, 'HiAppEventSub71 Code:', error.code);
           expect(error.code == 11101007).assertTrue()
           done()
@@ -771,30 +772,30 @@ export default function setEventParamTest() {
     })
 
     /**
-     * @tc.name   testHiAppEventSetPam24
-     * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_2400
+     * @tc.name   SUB_DFX_DFT_HiAppEvent_SetPam_Static_2200
+     * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_Static_2200
      * @tc.desc   验证setEventParam接口在关闭打点功能后,返回错误码11100001
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testHiAppEventSetPam24', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      console.info('testHiAppEventSetPam24 start');
+    it('SUB_DFX_DFT_HiAppEvent_SetPam_Static_2200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('SUB_DFX_DFT_HiAppEvent_SetPam_Static_2200 start');
       hiAppEvent.configure({disable: true});
       try {
         let eventParams: Record<string, hiAppEvent.ParamType> = {
           "test_param": true,
         };
         hiAppEvent.setEventParam(eventParams, hiAppEvent.domain.OS).then(() => {
-          console.log('testHiAppEventSetPam24 Event parameters set successfully.');
+          console.log('SUB_DFX_DFT_HiAppEvent_SetPam_Static_2200 Event parameters set successfully.');
       }).catch((err: Error) => {
           const bErr = err as BusinessError;
-          console.error('testHiAppEventSetPam24 Error:', bErr.message, 'testHiAppEventSetPam24 Code:', bErr.code);
+          console.error('SUB_DFX_DFT_HiAppEvent_SetPam_Static_2200 Error:', bErr.message, 'SUB_DFX_DFT_HiAppEvent_SetPam_Static_2200 Code:', bErr.code);
           expect(bErr.code == 11100001).assertTrue()
           done();
         });
       } catch (error) {
-        console.error(`testHiAppEventSetPam24 > error code: ${error.code}, error msg: ${error.message}`);
+        console.error(`SUB_DFX_DFT_HiAppEvent_SetPam_Static_2200 > error code: ${error.code}, error msg: ${error.message}`);
         expect(false).assertTrue()
         done();
       }
@@ -803,24 +804,73 @@ export default function setEventParamTest() {
     })
 
     /**
-     * @tc.name   testHiAppEventSetPam25
-     * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_2500
+     * @tc.name   SUB_DFX_DFT_HiAppEvent_SetPam_Static_2300
+     * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_Static_2300
      * @tc.desc   验证setEventParam接口可设置事件关联自定义参数，并通过onTrigger回调获取
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testHiAppEventSetPam25', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(logDomain, tag, 'testHiAppEventSetPam25 start');
+    it('SUB_DFX_DFT_HiAppEvent_SetPam_Static_2300', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      hilog.info(logDomain, tag, 'SUB_DFX_DFT_HiAppEvent_SetPam_Static_2300 start');
       let holder = hiAppEvent.addWatcher({
         name: "watcher1",
       });
       let eventPkg = holder.takeNext();
-      console.log('testHiAppEventSetPam25 done');
+      console.log('SUB_DFX_DFT_HiAppEvent_SetPam_Static_2300 done');
       expect(eventPkg).assertNull()
       hiAppEvent.removeWatcher({name:"watcher1"});
       done();
     });
+
+    /**
+     * @tc.name   testHiAppEventSetPam24
+     * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_2400
+     * @tc.desc   验证setEventParam接口name为null,返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testHiAppEventSetPam24', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('testHiAppEventSetPam24 start');
+      let eventParams: Record<string, hiAppEvent.ParamType> = {
+        "test_param": true,
+      };
+      hiAppEvent.setEventParam(eventParams, hiAppEvent.domain.OS, ).then(() => {
+        done();
+        console.log('testHiAppEventSetPam24 Event parameters set successfully.');
+      }).catch((err: Error) => {
+        const bErr = err as BusinessError;
+        console.error('testHiAppEventSetPam24 Error:', bErr.message, 'testHiAppEventSetPam24 Code:', bErr.code);
+        expect(bErr.code == 401).assertTrue()
+        done();
+      });
+    })
+
+    /**
+     * @tc.name   testHiAppEventSetPam25
+     * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_2500
+     * @tc.desc   验证setEventParam接口name为undefined,返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testHiAppEventSetPam25', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('testHiAppEventSetPam22 start');
+      let eventParams: Record<string, hiAppEvent.ParamType> = {
+        "test_param": true,
+      };
+      hiAppEvent.setEventParam(eventParams, hiAppEvent.domain.OS, undefined).then(() => {
+        done();
+        console.log('testHiAppEventSetPam25 Event parameters set successfully.');
+      }).catch((err: Error) => {
+        const bErr = err as BusinessError;
+        console.error('testHiAppEventSetPam25 Error:', bErr.message, 'testHiAppEventSetPam22 Code:', bErr.code);
+        expect(bErr.code == 401).assertTrue()
+        done();
+      });
+    })
+
   })
   hilog.info(logDomain, tag, 'setEventParamTest end');
 }

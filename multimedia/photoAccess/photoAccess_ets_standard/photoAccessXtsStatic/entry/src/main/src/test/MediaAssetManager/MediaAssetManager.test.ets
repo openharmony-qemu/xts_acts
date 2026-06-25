@@ -662,6 +662,44 @@ export default function MediaAssetManagerStaticTest(): void {
     });
 
     /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_CANCEL_REQUEST_STATIC_1600
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_CANCEL_REQUEST_STATIC_1600
+     * @tc.desc      cancelRequest-success
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     LEVEL0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_CANCEL_REQUEST_STATIC_1600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_CANCEL_REQUEST_STATIC_1600';
+      const handler = new MediaHandler();
+      let testContext: Context = Hypium.get('Context') as Context;
+      const helper = photoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      try {
+        let requestOptions: photoAccessHelper.RequestOptions = {
+          deliveryMode: photoAccessHelper.DeliveryMode.HIGH_QUALITY_MODE,
+        }
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await helper!.getAssets(fetchOption);
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        let requestId = await photoAccessHelper.MediaAssetManager.requestImage(testContext, photoAsset, requestOptions, handler)
+        await photoAccessHelper.MediaAssetManager.cancelRequest(testContext, requestId);
+        expect(requestId !== undefined).assertTrue();
+        done();
+      }
+      catch (error) {
+        console.error(`${testNum} failed; error: ${error.code}`);
+        expect(Number(error.code)).assertEqual(401);
+        done();
+      }
+    });
+
+
+
+    /**
      * @tc.number    SUB_PHOTO_ACCESS_HELPER_CANCEL_REQUEST_STATIC_1700
      * @tc.name      SUB_PHOTO_ACCESS_HELPER_CANCEL_REQUEST_STATIC_1700
      * @tc.desc      cancelRequest-success
@@ -1365,6 +1403,139 @@ export default function MediaAssetManagerStaticTest(): void {
       catch (error) {
         console.error(TAG,`${testNum} failed; error: ${error.code}`);
         expect(Number(error.code)).assertEqual(14000011);
+        done();
+      }
+    });
+
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PREFERRED_COMPATIBLE_MODE_STATIC_3800
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PREFERRED_COMPATIBLE_MODE_STATIC_3800
+     * @tc.desc      PreferredCompatibleMode
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     LEVEL0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PREFERRED_COMPATIBLE_MODE_STATIC_3800', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PREFERRED_COMPATIBLE_MODE_STATIC_3800';
+      try {
+        let DEFAULT =  photoAccessHelper.PreferredCompatibleMode.DEFAULT;
+        let CURRENT =  photoAccessHelper.PreferredCompatibleMode.CURRENT;
+        let COMPATIBLE =  photoAccessHelper.PreferredCompatibleMode.COMPATIBLE;
+        expect(DEFAULT).assertEqual(0);
+        expect(CURRENT).assertEqual(1);
+        expect(COMPATIBLE).assertEqual(2);
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_PERMISSION_STATIC_3900
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_PERMISSION_STATIC_3900
+     * @tc.desc      MediaAssetPermissionState
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     LEVEL0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_PERMISSION_STATIC_3900', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_MEDIA_ASSET_PERMISSION_STATIC_3900';
+      try {
+        let uriFormat =  photoAccessHelper.MediaAssetPermissionState.URI_FORMAT_ERROR;
+        let fileNotExist =  photoAccessHelper.MediaAssetPermissionState.FILE_NOT_EXIST;
+        let readPermission =  photoAccessHelper.MediaAssetPermissionState.READ_PERMISSION;
+        let noPermission =  photoAccessHelper.MediaAssetPermissionState.NO_READ_PERMISSION;
+        expect(uriFormat).assertEqual(0);
+        expect(fileNotExist).assertEqual(1);
+        expect(readPermission).assertEqual(2);
+        expect(noPermission).assertEqual(3);
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_AVAILABILITY_STATUS_STATIC_4000
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_AVAILABILITY_STATUS_STATIC_4000
+     * @tc.desc      AvailabilityStatus
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     LEVEL0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_AVAILABILITY_STATUS_STATIC_4000', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_AVAILABILITY_STATUS_STATIC_4000';
+      try {
+        let availableA =  photoAccessHelper.AvailabilityStatus.AVAILABLE;
+        let unavailableA =  photoAccessHelper.AvailabilityStatus.UNAVAILABLE;
+        expect(availableA).assertEqual('available');
+        expect(unavailableA).assertEqual('unavailable');
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_CHECK_PHOTO_URIS_READ_PERMISSION_STATIC_4100
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_CHECK_PHOTO_URIS_READ_PERMISSION_STATIC_4100
+     * @tc.desc      checkPhotoUrisReadPermission-success
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     LEVEL0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_CHECK_PHOTO_URIS_READ_PERMISSION_STATIC_4100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_CHECK_PHOTO_URIS_READ_PERMISSION_STATIC_4100';
+      let testContext: Context = Hypium.get('Context') as Context;
+      let helper: photoAccessHelper.PhotoAccessHelper|null = photoAccessHelper.getPhotoAccessHelper(testContext);
+      try {
+        let uris: string[] = [
+          testContext.filesDir + '/test_mov_1.mp4'
+        ];
+        let permissionMap: Map<string, photoAccessHelper.MediaAssetPermissionState> = await helper!.checkPhotoUrisReadPermission(uris);
+        expect(permissionMap != undefined).assertTrue();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error:`,JSON.stringify(error.code));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_CHECK_PHOTO_URIS_READ_PERMISSION_STATIC_4200
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_CHECK_PHOTO_URIS_READ_PERMISSION_STATIC_4200
+     * @tc.desc      checkPhotoUrisReadPermission-success
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     LEVEL0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_CHECK_PHOTO_URIS_READ_PERMISSION_STATIC_4200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_CHECK_PHOTO_URIS_READ_PERMISSION_STATIC_4200';
+      let testContext: Context = Hypium.get('Context') as Context;
+      let helper: photoAccessHelper.PhotoAccessHelper|null = photoAccessHelper.getPhotoAccessHelper(testContext);
+      try {
+        let uris: string[] = [
+          ''
+        ];
+        let permissionMap: Map<string, photoAccessHelper.MediaAssetPermissionState> = await helper!.checkPhotoUrisReadPermission(uris);
+        expect().assertFail();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error:`,JSON.stringify(error.code),error.message,JSON.stringify(error.message));
+        expect(error.code).assertEqual(13900020);
         done();
       }
     });

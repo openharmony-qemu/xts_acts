@@ -60,12 +60,13 @@ struct UpdatePopupNullAndUndefined {
     Column() {
       Text('UpdatePopup Property Test')
         .fontWeight(FontWeight.Bold)
-        .width('100%')
+        .width('80%')
+        .margin({top:20})
         .textAlign(TextAlign.Center)
 
       Text(this.resultText)
         .id('resultTextUpdatePopup')
-        .width('90%')
+        .width('80%')
         .height('5%')
 
       Scroll() {
@@ -73,6 +74,7 @@ struct UpdatePopupNullAndUndefined {
           Button('Open Popup')
             .id('btnOpenPopup')
             .width('45%')
+            .height('10vp')
             .onClick(async () => {
               try {
                 let frameNode = this.ctx.getFrameNodeByUniqueId(this.getUniqueId());
@@ -95,7 +97,7 @@ struct UpdatePopupNullAndUndefined {
           Button('Update partialUpdate true')
             .id('btnPartialUpdateTrue')
             .width('45%')
-
+            .height('10vp')
             .onClick(async () => {
               if (!this.popupOpened) {
                 this.resultText = 'Please open popup first';
@@ -116,7 +118,7 @@ struct UpdatePopupNullAndUndefined {
           Button('Update partialUpdate false')
             .id('btnPartialUpdateFalse')
             .width('45%')
-
+            .height('10vp')
             .onClick(async () => {
               if (!this.popupOpened) {
                 this.resultText = 'Please open popup first';
@@ -137,7 +139,7 @@ struct UpdatePopupNullAndUndefined {
           Button('content null')
             .id('btnContentNull')
             .width('45%')
-
+            .height('10vp')
             .onClick(async () => {
               try {
                 await this.promptAction.updatePopup(null as ESObject, { enableArrow: true }, true)
@@ -154,7 +156,7 @@ struct UpdatePopupNullAndUndefined {
           Button('content undefined')
             .id('btnContentUndefined')
             .width('45%')
-
+            .height('10vp')
             .onClick(async () => {
               try {
                 await this.promptAction.updatePopup(undefined as ESObject, { enableArrow: true }, true)
@@ -171,7 +173,7 @@ struct UpdatePopupNullAndUndefined {
           Button('options null')
             .id('btnOptionsNull')
             .width('45%')
-
+            .height('10vp')
             .onClick(async () => {
               if (!this.popupOpened) {
                 this.resultText = 'Please open popup first';
@@ -192,7 +194,7 @@ struct UpdatePopupNullAndUndefined {
           Button('options undefined')
             .id('btnOptionsUndefined')
             .width('45%')
-
+            .height('10vp')
             .onClick(async () => {
               if (!this.popupOpened) {
                 this.resultText = 'Please open popup first';

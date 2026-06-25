@@ -58,7 +58,7 @@ export default function overLayJsunit() {
     it('overLayJsunit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[overLayJsunit_0100] START');
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('overlay');
+      let strJson = getInspectorByKey('overlayUI_overlay');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[overLayJsunit_0100] obj is: " + JSON.stringify(obj.$attrs.overlay));
       expect(obj.$attrs.overlay.title).assertEqual("old title");
@@ -95,7 +95,7 @@ export default function overLayJsunit() {
         console.log("[overLayJsunit_0200] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('overlay');
+      let strJson = getInspectorByKey('overlayUI_overlay');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[overLayJsunit_0200] obj is: " + JSON.stringify(obj.$attrs.overlay));
       expect(obj.$attrs.overlay.title).assertEqual("new title");
@@ -131,7 +131,7 @@ export default function overLayJsunit() {
         console.log("[overLayJsunit_0300] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('overlay');
+      let strJson = getInspectorByKey('overlayUI_overlay');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[overLayJsunit_0300] obj is: " + JSON.stringify(obj.$attrs.overlay));
       expect(obj.$attrs.overlay.options.align).assertEqual("Alignment.TopStart");
@@ -168,7 +168,7 @@ export default function overLayJsunit() {
         console.log("[overLayJsunit_0400] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('overlay');
+      let strJson = getInspectorByKey('overlayUI_overlay');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[overLayJsunit_0400] obj is: " + JSON.stringify(obj.$attrs.overlay));
       expect(obj.$attrs.overlay.options.align).assertEqual("Alignment.TopStart");
@@ -202,7 +202,7 @@ export default function overLayJsunit() {
         console.log("[overLayJsunit_0500] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('overlay');
+      let strJson = getInspectorByKey('overlayUI_overlay');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[overLayJsunit_0500] obj is: " + JSON.stringify(obj.$attrs.overlay));
       expect(obj.$attrs.overlay.options.align).assertEqual("Alignment.Center");
@@ -237,7 +237,7 @@ export default function overLayJsunit() {
         console.log("[overLayJsunit_0600] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('overlay');
+      let strJson = getInspectorByKey('overlayUI_overlay');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[overLayJsunit_0600] obj is: " + JSON.stringify(obj.$attrs.overlay));
       expect(obj.$attrs.overlay.options.offset.x).assertEqual('-30.00vp');
@@ -272,7 +272,7 @@ export default function overLayJsunit() {
         console.log("[overLayJsunit_0700] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('overlay');
+      let strJson = getInspectorByKey('overlayUI_overlay');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[overLayJsunit_0700] obj is: " + JSON.stringify(obj.$attrs.overlay));
       expect(obj.$attrs.overlay.options.offset.x).assertEqual('1111111111.00vp');
@@ -306,7 +306,7 @@ export default function overLayJsunit() {
         console.log("[overLayJsunit_0800] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('overlay');
+      let strJson = getInspectorByKey('overlayUI_overlay');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[overLayJsunit_0800] obj is: " + JSON.stringify(obj.$attrs.overlay));
       expect(obj.$attrs.overlay.options.offset.x).assertEqual('1111111111.00vp');
@@ -341,7 +341,7 @@ export default function overLayJsunit() {
         console.log("[overLayJsunit_0900] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('overlay');
+      let strJson = getInspectorByKey('overlayUI_overlay');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[overLayJsunit_0900] obj is: " + JSON.stringify(obj.$attrs.overlay));
       expect(obj.$attrs.overlay.options.align).assertEqual("Alignment.TopStart");
@@ -376,7 +376,7 @@ export default function overLayJsunit() {
         console.log("[overLayJsunit_1000] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('overlay');
+      let strJson = getInspectorByKey('overlayUI_overlay');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[overLayJsunit_1000] obj is: " + JSON.stringify(obj.$attrs.overlay));
       expect(obj.$attrs.overlay.options.align).assertEqual("Alignment.TopStart");
@@ -411,7 +411,7 @@ export default function overLayJsunit() {
         console.log("[overLayJsunit_1100] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('overlay');
+      let strJson = getInspectorByKey('overlayUI_overlay');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[overLayJsunit_1100] obj is: " + JSON.stringify(obj.$attrs.overlay));
       expect(obj.$attrs.overlay.options.align).assertEqual("Alignment.TopStart");
@@ -446,7 +446,7 @@ export default function overLayJsunit() {
         console.log("[overLayJsunit_1200] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('overlay');
+      let strJson = getInspectorByKey('overlayUI_overlay');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[overLayJsunit_1200] obj is: " + JSON.stringify(obj.$attrs.overlay));
       expect(obj.$attrs.overlay.options.align).assertEqual("Alignment.TopStart");
@@ -481,7 +481,7 @@ export default function overLayJsunit() {
         console.log("[overLayJsunit_1300] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('overlay');
+      let strJson = getInspectorByKey('overlayUI_overlay');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[overLayJsunit_1300] obj is: " + JSON.stringify(obj.$attrs.overlay));
       expect(obj.$attrs.overlay.options.align).assertEqual("Alignment.TopStart");
@@ -516,7 +516,7 @@ export default function overLayJsunit() {
         console.log("[overLayJsunit_1400] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('overlay');
+      let strJson = getInspectorByKey('overlayUI_overlay');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[overLayJsunit_1400] obj is: " + JSON.stringify(obj.$attrs.overlay));
       expect(obj.$attrs.overlay.options.align).assertEqual("Alignment.TopStart");

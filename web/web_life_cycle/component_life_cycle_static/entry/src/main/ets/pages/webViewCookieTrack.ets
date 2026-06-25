@@ -16,22 +16,19 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { Hypium } from '../../../hypium/index';
 import testsuite from '../../src/test/List.test';
 import fs from '@ohos.file.fs';
-import { OnErrorReceiveEvent,IntelligentTrackingPreventionDetails,CacheMode,OnPageEndEvent,$rawfile,OnRenderExitedEvent, OnPageBeginEvent, RenderProcessNotRespondingReason, RenderProcessNotRespondingData, Entry, Component, Column, Row, Button, ClickEvent, Web } from "@ohos.arkui.component"
-import { State } from "@ohos.arkui.stateManagement"
-import web_webview from '@ohos.web.webview'
-import { BusinessError } from '@ohos.base';
-import Utils from '../../src/test/Util.test';
-import events_emitter from '@ohos.events.emitter';
-import { Callback } from '@ohos.base'
-import image from '@ohos.multimedia.image';
+import { OnErrorReceiveEvent, IntelligentTrackingPreventionDetails, CacheMode, OnPageEndEvent, $rawfile, OnRenderExitedEvent, OnPageBeginEvent, RenderProcessNotRespondingReason, RenderProcessNotRespondingData, Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component';
+import { State } from '@ohos.arkui.stateManagement';
+import web_webview from '@ohos.web.webview';
 import webView from '@ohos.web.webview';
-import { JsProxyObject } from '../../src/test/Interfaces';
-import { AppStorage } from 'arkui.stateManagement.storage.appStorage'
+import { BusinessError, Callback, RecordData } from '@ohos.base';
+import Utils from '../../src/test/Util.test';
 import emitter from '@ohos.events.emitter';
-import { Callback, RecordData } from '@ohos.base'
 import events_emitter from '@ohos.events.emitter';
+import image from '@ohos.multimedia.image';
+import { JsProxyObject } from '../../src/test/Interfaces';
+import { AppStorage } from 'arkui.stateManagement.storage.appStorage';
 import webNativeMessagingExtensionManager from '@ohos.web.webNativeMessagingExtensionManager';
-import { UIContext, Router } from '@ohos.arkui.UIContext'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 class DataTrans {
   constructor() {
   }

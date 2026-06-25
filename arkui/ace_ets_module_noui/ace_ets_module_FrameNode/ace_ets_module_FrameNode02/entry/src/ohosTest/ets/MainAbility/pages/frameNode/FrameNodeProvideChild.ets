@@ -158,12 +158,14 @@ export class MyNodeController extends NodeController {
   private rootNode: FrameNode | null = null;
   private data: MyDataSource = new MyDataSource();
   private scroller: Scroller = new Scroller();
+  public dataNode:BuilderNode<[Params]> | null = null
   makeNode(uiContext: UIContext): FrameNode | null {
     for (let i = 0; i <= 15; i++) {
       this.data.pushData(`N${i}`);
     }
     const params: Params = new Params(this.data, this.scroller);
     const dataNode: BuilderNode<[Params]> = new BuilderNode(uiContext);
+    this.dataNode = dataNode
     dataNode.build(wrapBuilder<[Params]>(buildData), params);
     this.rootNode = dataNode.getFrameNode();
     const scrollToIndexOptions: ScrollToIndexOptions = {

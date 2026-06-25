@@ -16,6 +16,7 @@ import SetEventConfigMinidumpTest from './SetEventConfigMinidumpTest.test';
 import abilityTest from './Ability.test';
 import processorNDKTest from './processorNDK.test';
 import OhHiAppEventSetEventConfig from './OhHiAppEventSetEventConfig.test';
+import OhHiAppEventParameter  from './OhHiAppEventParameter.test'
 import ReportFrameworkMemAnomalyTest from './ReportFrameworkMemAnomalyTest.test';
 
 export default function testsuite() {
@@ -23,5 +24,6 @@ export default function testsuite() {
   abilityTest();
   processorNDKTest();
   OhHiAppEventSetEventConfig();
+  OhHiAppEventParameter();
   ReportFrameworkMemAnomalyTest();
 }

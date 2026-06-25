@@ -66,6 +66,8 @@ group("bundlemanager") {
       "actsbundlemanagermultiAppmodetype2teststatic:ActsbundlemanagermultiAppmodetype2StaticTest",
       "actsbundlemanagertestcaseGetLaunchWantForBundleSync:ActsbundlemanagercaseGetLaunchWantForBundleSyncTest",
       "actsbundlemanagertestcaseGetWantSyncstatic:ActsbundlemgrcaseGetWantSyncStaticTest",
+      "actsbmspcselfdistplugintest:ActsBmsPCSelfDistPluginTest",
+      "actsbmspcselfdistpluginteststatic:ActsBmsPCSelfDistPluginStaticTest",
       "sceneProject/bmsaccesstokenfive:bmsAccessTokenTest5",
       "sceneProject/bmsaccesstokenfour:bmsAccessTokenTest4",
       "sceneProject/bmsaccesstokenone:bmsAccessTokenTest1",

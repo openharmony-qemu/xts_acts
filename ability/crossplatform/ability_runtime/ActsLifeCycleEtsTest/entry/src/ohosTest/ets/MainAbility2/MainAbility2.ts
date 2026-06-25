@@ -57,13 +57,15 @@ export default class MainAbility2 extends Ability {
       console.log('MainAbility2 onForeground publish succeed' + JSON.stringify(err) + JSON.stringify(data));
     });
     globalThis.MainAbility2onForeground = true;
-    globalThis.ability2.terminateSelf()
+    setTimeout(()=>{
+      globalThis.ability2.terminateSelf()
       .then((data) => {
         globalThis.MainAbility2terminateSelf = true;
         console.info('[Demo] MainAbility2 terminateself succeeded: ' + data);
       }).catch((error) => {
       console.error('[Demo] MainAbility2 terminateself failed. Cause: ' + error);
     });
+    }, 1000)
   }
 
   onBackground() {

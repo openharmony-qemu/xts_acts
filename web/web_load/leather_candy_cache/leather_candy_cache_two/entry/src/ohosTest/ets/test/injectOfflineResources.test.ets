@@ -152,5 +152,37 @@ export default function injectOfflineResourcesTest() {
         });
       Utils.waitAndClickComponent('injectOfflineResourcesTestButton',driver)
     })
+    /**
+     * @tc.name   testInjectOfflineResources007
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_INJECTOFFLINERESOURCES_0700
+     * @tc.desc   test injectOfflineResources urlList is []
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testInjectOfflineResources007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testInjectOfflineResources007", 148311)
+      Utils.registerBaseEvent("testInjectOfflineResources007", true, 148407, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected)
+        });
+      Utils.waitAndClickComponent('injectOfflineResourcesTestButton',driver)
+    })
+    /**
+     * @tc.name   testInjectOfflineResources008
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_INJECTOFFLINERESOURCES_0800
+     * @tc.desc   test injectOfflineResources responseHeaders is []
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testInjectOfflineResources008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testInjectOfflineResources008", 148311)
+      Utils.registerBaseEvent("testInjectOfflineResources008", true, 148408, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected)
+        });
+      Utils.waitAndClickComponent('injectOfflineResourcesTestButton',driver)
+    })
   })
 }

@@ -7,10 +7,16 @@
     "MainAbility/pages/popup/PopupOptions",
     "MainAbility/pages/popup/PopupCommonOptions",
     "MainAbility/pages/TipsOptions/TipsOptions",
+    "MainAbility/pages/uimaterial/ImmersiveOptionsApplyShadow",
+    "MainAbility/pages/dialogSystemMaterial/AlertDialogSystemMaterial",
+    "MainAbility/pages/dialogSystemMaterial/ShowDialogOptionsSystemMaterial",
+    "MainAbility/pages/dialogSystemMaterial/BaseDialogOptionsSystemMaterial",
+    "MainAbility/pages/dialogSystemMaterial/ActionMenuOptionsSystemMaterial",
+    "MainAbility/pages/dialogSystemMaterial/ActionSheetOptionsSystemMaterial",
+    "MainAbility/pages/dialogSystemMaterial/ShowToastOptionsTestPage",
     "MainAbility/pages/uimaterial/ImmersiveStyleTest",
     "MainAbility/pages/uimaterial/ImmersiveOptionsMaterialColor",
     "MainAbility/pages/uimaterial/ImmersiveOptionsColorInvert",
-    "MainAbility/pages/uimaterial/ImmersiveOptionsApplyShadow",
     "MainAbility/pages/uimaterial/UIMaterialTestPage"
   ]
 }

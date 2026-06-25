@@ -19,6 +19,7 @@ import events_emitter from '@ohos.events.emitter';
 import { Driver, ON } from '@ohos.UiTest';
 import business_error, { BusinessError } from '@ohos.base';
 import {waitForExist} from '../../test/WaitTest';
+import { XtsTestServer } from 'library';
 
 class TestObj {
   constructor() {
@@ -64,6 +65,8 @@ struct WebViewEnumAndFontLibraryTwo {
   }
 
   controller: webView.WebviewController = new webView.WebviewController();
+
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   testObj: TestObj = new TestObj()
   @State Permission: Boolean = false
   @State str: string = ""
@@ -126,6 +129,13 @@ struct WebViewEnumAndFontLibraryTwo {
       }
     }
   }
+
+  aboutToDisappear() {
+
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
+
+  }
+
 
   build() {
     Column() {
@@ -216,7 +226,7 @@ struct WebViewEnumAndFontLibraryTwo {
         Text(this.webResultText).fontSize(20)
       }
 
-      Web({ src: $rawfile("indexJru.html"), controller: this.controller })
+      Web({ src: $rawfile('indexJru.html'), controller: this.controller })
         .onControllerAttached(() => {
           try {
             let id = this.controller.getWebId();

@@ -152,6 +152,7 @@ import TextOrphanCharOptimizationTest from './TextTest/TextOrphanCharOptimizatio
 import OrphanCharOptimizationTest from './TextTest/OrphanCharOptimizationTest.test';
 import TextFontVariationsTest from './TextTest/TextFontVariations.test';
 import OrphanCharOptimizationnullTest from './TextTest/OrphanCharOptimization_null.test';
+import TextPunctuationOverflowTest from './TextTest/TextPunctuationOverflow.test';
 
 
 
@@ -296,4 +297,5 @@ export default function testsuite() {
   OrphanCharOptimizationTest();
   TextFontVariationsTest();
   OrphanCharOptimizationnullTest();
+  TextPunctuationOverflowTest();
 }

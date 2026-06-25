@@ -28,6 +28,7 @@ import styledStringChange from './StyledStringTest/styledStringChange.test'
 import MovingPhotoViewApi13Test from './MovingPhotoViewTest/MovingPhotoViewApi13.test';
 import MovingPhotoViewApi18Test from './MovingPhotoViewTest/MovingPhotoViewApi18.test';
 import SpanOnHoverTest from './SpanTest/SpanOnHoverTest.test';
+import SelectionMenuBackgroundSystemMaterialTest from './SelectionMenuTest/SelectionMenuBackgroundSystemMaterial.test';
 
 
 export default function testsuite() {
@@ -47,4 +48,5 @@ export default function testsuite() {
   MovingPhotoViewApi18Test()
   SpanOnHoverTest()
   editMenuIdAIWriterTest()
+  SelectionMenuBackgroundSystemMaterialTest()
 }

@@ -98,10 +98,10 @@ export default function customPropertyTest(){
       await Utils.sleep(1000)
       let driver = await Driver.create()
       await Utils.sleep(1000)
-      let button = await driver.findComponent(ON.id('onClick'));
+      let button = await driver.findComponent(ON.id('onClick4'));
       await button.click();
       await Utils.sleep(1000)
-      expect(Utils.getComponentInfoByKey('onClick').$attrs.backgroundColor).assertEqual('#FF00FF00')
+      expect(Utils.getComponentInfoByKey('onClick4').$attrs.backgroundColor).assertEqual('#FF00FF00')
       done();
     });
 

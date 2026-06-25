@@ -32,7 +32,12 @@ export default function WebUrlRegexRules() {
     beforeAll(async (): Promise<void> => {
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.open.harmony.injectjavascriptfourtest.static')
+      let cmd = 'aa start -a EntryAbility -b com.open.harmony.injectjavascriptfourtest.static';
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(8000)
       console.log('beforeAll end,%s', 'Succeed!')
     });

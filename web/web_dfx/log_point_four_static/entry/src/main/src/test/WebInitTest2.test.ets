@@ -20,10 +20,8 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import { Driver, ON } from '@ohos.UiTest';
-import inspector from '@ohos.arkui.inspector';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-
-import { UIContext, Router } from '@ohos.arkui.UIContext'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 let testAbilityContext:common.UIAbilityContext;
 export default function webViewInitTest() {
   describe('ActsAceWebViewInitTest', (): void => {
@@ -42,7 +40,12 @@ export default function webViewInitTest() {
         console.log('BusinessError  end')
       });
       await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.open.harmony.logpointfourtest.static')
+      let cmd = 'aa start -a EntryAbility -b com.open.harmony.logpointfourtest.static';
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(5000)
       console.log('beforeAll end,%s', 'Succeed!')
     });

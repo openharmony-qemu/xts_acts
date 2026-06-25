@@ -12,12 +12,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeEach, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
-import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import { Driver } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
-import {MessageManager,Callback} from '../../MainAbility/common/MessageManager';
+import Utils from '../../MainAbility/common/Utils';
 
+const UI_EVENT_CLICK: number = 10;
 
 export default function triggerSelect() {
   describe('triggerSelect', () => {
@@ -27,14 +28,11 @@ export default function triggerSelect() {
         url: 'MainAbility/pages/select/triggerSelect',
       }
       try {
-        router.clear();
         let pages = router.getState();
-        console.info("get triggerSelect state pages: " + JSON.stringify(pages));
-        if (!("triggerSelect" == pages.name)) {
-          console.info("get triggerSelect state pages.name: " + JSON.stringify(pages.name));
-          let result = await router.push(options);
+        if (pages.name !== 'triggerSelect') {
+          router.clear();
+          await router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push triggerSelect success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push triggerSelect page error: " + err);
@@ -42,37 +40,29 @@ export default function triggerSelect() {
       }
       done();
     });
-    
+
     /**
-     * @tc.name   triggerSelect_0100
-     * @tc.number SUB_ACE_triggerSelect_0100
-     * @tc.desc   set api
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.number    SUB_ACE_triggerSelect_0100
+     * @tc.name      triggerSelect_0100
+     * @tc.desc      set api
+     * @tc.type      FUNCTION
+     * @tc.size      MEDIUMTEST
+     * @tc.level     Level 1
      */
     it('triggerSelect_0100', Level.LEVEL1, async (done: Function) => {
       console.info('triggerSelect_0100 START');
-      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('SelectClick'));
-      await button.click();
+      await Utils.openSelectMenu('triggerSelect_select', 2000);
+
+      let driver = await Driver.create();
+      let menuPt = Utils.getSelectMenuItemPoint('triggerSelect_select', 0);
+      await driver.click(menuPt.x, menuPt.y);
       await CommonFunc.sleep(1000);
 
-      let value = await driver.findComponent(ON.id('RowValue'));
-      await value.click();
-      await CommonFunc.sleep(1000);
-
-      let strJson = getInspectorByKey('triggerSelectValue');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[triggerSelect_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[triggerSelect_0100] title: " + JSON.stringify(obj.$attrs.content));
+      let obj: ESObject = JSON.parse(getInspectorByKey('triggerSelectValue'));
       expect(obj.$attrs.content).assertEqual('Select index:0Select text:item1');
       console.info('[triggerSelect_0100] END');
       done();
     });
-    
-
   })
 }
-

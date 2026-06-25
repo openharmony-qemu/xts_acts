@@ -53,7 +53,12 @@ export default function moveAbilityToBackgroundTestStatic() {
       try {
         let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
         hilog.info(domain, tag, 'getAbilityDelegator success');
-        abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.acts.moveabilitytobgtest.static")
+        let cmd = "aa start -a EntryAbility -b com.acts.moveabilitytobgtest.static";
+        let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
+        abilityDelegator.executeShellCommand(cmd)
         await Utils.msSleep(2000);
         hilog.info(domain, tag, 'start success');
         let context: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
@@ -96,7 +101,12 @@ export default function moveAbilityToBackgroundTestStatic() {
       try {
         let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
         hilog.info(domain, tag, 'getAbilityDelegator success');
-        abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.acts.moveabilitytobgtest.static")
+        let cmd = "aa start -a EntryAbility -b com.acts.moveabilitytobgtest.static";
+        let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
+        abilityDelegator.executeShellCommand(cmd)
         await Utils.msSleep(2000);
         hilog.info(domain, tag, 'start success');
         let context: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext

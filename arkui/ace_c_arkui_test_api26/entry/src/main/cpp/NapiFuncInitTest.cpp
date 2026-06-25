@@ -20,6 +20,25 @@
 #include "list/listBackBehaviorTest.cpp"
 #include "inspectorLabel/InspectorLabelTest.cpp"
 #include "accessibilityFocusId/AccessibilityFocusIdTest.cpp"
+#include "hovered/HoveredTest.cpp"
+#include "arcList/ArcListDigitalCrownSensitivityTest.cpp"
+#include "arcList/ArcListSpaceTest.cpp"
+#include "arcList/ArcListCachedCountTest.cpp"
+#include "arcList/ArcListScrollToIndexTest.cpp"
+#include "arcList/ArcListChainAnimationTest.cpp"
+#include "arcList/ArcListChildrenMainSizeTest.cpp"
+#include "arcList/ArcListSetHeaderTest.cpp"
+#include "arcList/ArcListScrollBarTest.cpp"
+#include "arcList/ArcListScrollBarColorTest.cpp"
+#include "arcList/ArcListScrollBarWidthTest.cpp"
+#include "arcList/ArcListEnableScrollInteractionTest.cpp"
+#include "arcList/ArcListFadingEdgeTest.cpp"
+#include "arcList/ArcListFrictionTest.cpp"
+#include "arcList/ArcListFlingSpeedLimitTest.cpp"
+#include "arcList/ArcListItemAutoScaleTest.cpp"
+#include "arcList/ArcListItemSwipeActionTest.cpp"
+#include "arcList/ArcScrollBarBindScrollableTest.cpp"
+#include "arcList/ArcScrollBarDisplayModeTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -76,6 +95,82 @@ static napi_value Init(napi_env env, napi_value exports)
          napi_default, nullptr},
         {"AccessibilityDefaultFocusTest_002", nullptr, AccessibilityDefaultFocusTest_002, nullptr, nullptr, nullptr,
          napi_default, nullptr},
+        {"Hovered_UI_STATE_HOVERED", nullptr, Hovered_UI_STATE_HOVERED, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+
+        {"testArcListCachedCount001", nullptr, TestArcListCachedCount001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListCachedCount002", nullptr, TestArcListCachedCount002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListCachedCount003", nullptr, TestArcListCachedCount003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListCachedCount004", nullptr, TestArcListCachedCount004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListCachedCount005", nullptr, TestArcListCachedCount005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListChainAnimation001", nullptr, TestArcListChainAnimation001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListChainAnimation002", nullptr, TestArcListChainAnimation002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListChainAnimation003", nullptr, TestArcListChainAnimation003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListChildrenMainSize001", nullptr, TestArcListChildrenMainSize001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListChildrenMainSize002", nullptr, TestArcListChildrenMainSize002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListChildrenMainSize003", nullptr, TestArcListChildrenMainSize003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListChildrenMainSize004", nullptr, TestArcListChildrenMainSize004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListChildrenMainSize005", nullptr, TestArcListChildrenMainSize005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListChildrenMainSize006", nullptr, TestArcListChildrenMainSize006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListChildrenMainSize007", nullptr, TestArcListChildrenMainSize007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListChildrenMainSize008", nullptr, TestArcListChildrenMainSize008, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListChildrenMainSize009", nullptr, TestArcListChildrenMainSize009, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListChildrenMainSize010", nullptr, TestArcListChildrenMainSize010, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListChildrenMainSize011", nullptr, TestArcListChildrenMainSize011, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListDigitalCrownSensitivity001", nullptr, TestArcListDigitalCrownSensitivity001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListDigitalCrownSensitivity002", nullptr, TestArcListDigitalCrownSensitivity002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListDigitalCrownSensitivity003", nullptr, TestArcListDigitalCrownSensitivity003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListDigitalCrownSensitivity004", nullptr, TestArcListDigitalCrownSensitivity004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListEnableScrollInteraction001", nullptr, TestArcListEnableScrollInteraction001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListEnableScrollInteraction002", nullptr, TestArcListEnableScrollInteraction002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListEnableScrollInteraction003", nullptr, TestArcListEnableScrollInteraction003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListFadingEdge001", nullptr, TestArcListFadingEdge001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListFadingEdge002", nullptr, TestArcListFadingEdge002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListFadingEdge003", nullptr, TestArcListFadingEdge003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListFlingSpeedLimit001", nullptr, TestArcListFlingSpeedLimit001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListFlingSpeedLimit002", nullptr, TestArcListFlingSpeedLimit002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListFlingSpeedLimit003", nullptr, TestArcListFlingSpeedLimit003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListFlingSpeedLimit004", nullptr, TestArcListFlingSpeedLimit004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListFriction001", nullptr, TestArcListFriction001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListFriction002", nullptr, TestArcListFriction002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListFriction003", nullptr, TestArcListFriction003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListFriction004", nullptr, TestArcListFriction004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListItemAutoScale001", nullptr, TestArcListItemAutoScale001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListItemAutoScale002", nullptr, TestArcListItemAutoScale002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListItemAutoScale003", nullptr, TestArcListItemAutoScale003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListItemSwipeAction001", nullptr, TestArcListItemSwipeAction001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListItemSwipeAction002", nullptr, TestArcListItemSwipeAction002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListItemSwipeAction003", nullptr, TestArcListItemSwipeAction003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListItemSwipeAction004", nullptr, TestArcListItemSwipeAction004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListScrollBar001", nullptr, TestArcListScrollBar001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListScrollBar002", nullptr, TestArcListScrollBar002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListScrollBar003", nullptr, TestArcListScrollBar003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListScrollBar004", nullptr, TestArcListScrollBar004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListScrollBarWidth001", nullptr, TestArcListScrollBarWidth001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListScrollBarWidth002", nullptr, TestArcListScrollBarWidth002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListScrollBarWidth003", nullptr, TestArcListScrollBarWidth003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListScrollBarWidth004", nullptr, TestArcListScrollBarWidth004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListScrollBarColor001", nullptr, TestArcListScrollBarColor001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListScrollBarColor002", nullptr, TestArcListScrollBarColor002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListScrollBarColor003", nullptr, TestArcListScrollBarColor003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListScrollToIndex001", nullptr, TestArcListScrollToIndex001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListScrollToIndex002", nullptr, TestArcListScrollToIndex002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListScrollToIndex003", nullptr, TestArcListScrollToIndex003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListSpace001", nullptr, TestArcListSpace001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListSpace002", nullptr, TestArcListSpace002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListSpace003", nullptr, TestArcListSpace003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListSpace004", nullptr, TestArcListSpace004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListSpace005", nullptr, TestArcListSpace005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListSetHeader001", nullptr, TestArcListSetHeader001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListSetHeader002", nullptr, TestArcListSetHeader002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcListSetHeader003", nullptr, TestArcListSetHeader003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcScrollBarBindScrollable001", nullptr, TestArcScrollBarBindScrollable001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcScrollBarBindScrollable002", nullptr, TestArcScrollBarBindScrollable002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcScrollBarBindScrollable003", nullptr, TestArcScrollBarBindScrollable003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcScrollBarDisplayMode001", nullptr, TestArcScrollBarDisplayMode001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcScrollBarDisplayMode002", nullptr, TestArcScrollBarDisplayMode002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcScrollBarDisplayMode003", nullptr, TestArcScrollBarDisplayMode003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testArcScrollBarDisplayMode004", nullptr, TestArcScrollBarDisplayMode004, nullptr, nullptr, nullptr, napi_default, nullptr},
         };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

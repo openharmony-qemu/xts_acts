@@ -58,7 +58,7 @@ export default function gestureInterceptionEnhancementCallbackTest() {
         console.info('gestureInterceptionEnhancementCallbackTest_0010 START');
         let driver: Driver = await Driver.create()
         await CommonFunc.sleep(1000);
-        let firstTabs = CommonFunc.getComponentRectOnScreen('firstTabsContent');
+        let firstTabs = CommonFunc.getComponentRectOnScreen('tabsInterceptionEnhancementcallbackTest' + '_firstTabsContent');
         let top = firstTabs.top;
         let right = firstTabs.right;
         let left = firstTabs.left;

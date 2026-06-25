@@ -77,7 +77,7 @@ import builtinsShortBoxSetText from './shortBox/BuiltinsShortBoxSetTest.test';
 import builtinsShortCharGetText from './shortBox/BuiltinsShortBoxGetTest.test';
 
 
-export default function testsuite() {
+export default function testsuite(): void {
   builtinsBooleanBoxBoxText();
   builtinsBooleanBoxConstructorText();
   builtinsBooleanBoxGetText();

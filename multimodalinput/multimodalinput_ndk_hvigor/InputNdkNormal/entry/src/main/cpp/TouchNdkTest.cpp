@@ -729,6 +729,8 @@ static napi_value KeyCode26(napi_env env, napi_callback_info info)
     int32_t keyCode6 = 3213;
     int32_t keyCode7 = 3220;
     int32_t keyCode8 = 3232;
+    int32_t keyCode9 = 3233;
+    int32_t keyCode10 = 3234;
     napi_create_int32(env,
                       (Input_KeyCode::KEYCODE_BTN_7 == keyCode1 &&
                       Input_KeyCode::KEYCODE_BTN_8 == keyCode2 &&
@@ -737,7 +739,9 @@ static napi_value KeyCode26(napi_env env, napi_callback_info info)
                       Input_KeyCode::KEYCODE_DAGGER_DOUBLE_CLICK == keyCode5 &&
                       Input_KeyCode::KEYCODE_DAGGER_LONG_PRESS == keyCode6 &&
                       Input_KeyCode::KEYCODE_DIV == keyCode7 &&
-                      Input_KeyCode::KEYCODE_XKEY == keyCode8) ? 1 : 0, &result);
+                      Input_KeyCode::KEYCODE_XKEY == keyCode8 &&
+                      Input_KeyCode::KEYCODE_FINGERPRINT_SLIDE_UP == keyCode9 &&
+                      Input_KeyCode::KEYCODE_FINGERPRINT_SLIDE_DOWN == keyCode10) ? 1 : 0, &result);
     return result;
 }
 

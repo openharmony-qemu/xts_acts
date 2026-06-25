@@ -9,7 +9,7 @@ import Int32ArrayTest from './Int32Array.test.ets'
 import typedArray from './TypedArray.test.ets'
 import Uint8ArrayTest from './Uint8Array.test.ets'
 import Uint32ArrayTest from './Uint32Array.test.ets'
-export default function testsuite() {
+export default function testsuite(): void {
   arrayTest()
   BigInt64ArrayTest()
   BigUint64ArrayTest()

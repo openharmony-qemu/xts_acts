@@ -53,6 +53,6 @@ struct TapGestureExample {
         }
       })
     )
-    .key('tapGesture')
+    .key('tapGesture_tapGesture')
   }
 }

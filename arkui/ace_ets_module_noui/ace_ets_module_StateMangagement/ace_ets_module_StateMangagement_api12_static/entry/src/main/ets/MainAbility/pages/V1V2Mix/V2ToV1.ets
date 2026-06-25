@@ -13,27 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  ForEach,
-  Text,
-  Row,
-  List,
-  ListItem,
-  Color,BuilderParam,Builder,
-  FlexAlign,ComponentV2,TabsController,Tabs
-} from '@ohos.arkui.component'
-import {
-  State,
-  Watch,Param,
-  Link,Monitor,Trace,ObservedV2,Event,Consumer,Observed,ObservedV2,
-  StorageLink,IMonitor,IMonitorValue,Local,Provider,PropRef,Provide,PropRef
-} from '@ohos.arkui.stateManagement'
-
+import { Entry, Column, Component, Button, ClickEvent, ForEach, Text, Row, List, ListItem, Color, BuilderParam, Builder, FlexAlign, ComponentV2, TabsController, Tabs } from '@ohos.arkui.component';
+import { State, Watch, Param, Link, Monitor, Trace, ObservedV2, Event, Consumer, Observed, StorageLink, IMonitor, IMonitorValue, Local, Provider, PropRef, Provide } from '@ohos.arkui.stateManagement';
 export enum MemberType {
   first = 1,
   second = 2

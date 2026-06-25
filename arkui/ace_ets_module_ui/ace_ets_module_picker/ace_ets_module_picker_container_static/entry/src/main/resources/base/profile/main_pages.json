@@ -11,6 +11,8 @@
     "MainAbility/pages/UIPickerComponent/UIPickerEnableHapModifier",
     "MainAbility/pages/UIPickerComponent/UIPickerOnChangeModifier",
     "MainAbility/pages/UIPickerComponent/UIPickerOnScrollStopModifier",
-    "MainAbility/pages/UIPickerComponent/UIPickerIndicatorModifier"
+    "MainAbility/pages/UIPickerComponent/UIPickerIndicatorModifier",
+    "MainAbility/pages/UIPickerComponent/UIPickerItemHeight",
+    "MainAbility/pages/UIPickerComponent/UIPickerDisplayedItemCount"
   ]
 }

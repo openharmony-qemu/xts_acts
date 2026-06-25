@@ -1,5 +1,6 @@
+'use static'
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -49,7 +50,12 @@ export class OpenHarmonyTestRunner implements TestRunner {
       }
       hilog.info(domain, tag, '%{public}s', 'BusinessError  end');
     });
-    abilityDelegator.executeShellCommand('aa start -a EntryAbility -b ohos.acts.multimedia.image.xts.static')
+    let cmd = 'aa start -a EntryAbility -b ohos.acts.multimedia.image.xts.static';
+    let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
+    abilityDelegator.executeShellCommand(cmd)
     hilog.info(domain, tag, '  onRun end');
   }
 }

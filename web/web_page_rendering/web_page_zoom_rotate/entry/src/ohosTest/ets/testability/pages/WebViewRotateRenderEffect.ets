@@ -16,12 +16,14 @@ import events_emitter from '@ohos.events.emitter';
 import webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import { waitForExist} from '../../test/WaitTest.test';
+import { XtsTestServer } from 'library';
 const EVENT_ID_SET_SUITE_KEY = 183002;
 
 @Entry
 @Component
 struct WebComponent {
   controller: webview.WebviewController = new webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State rotateRenderEffectArr: WebRotateEffect[]= [WebRotateEffect.RESIZE_COVER_EFFECT,WebRotateEffect.TOPLEFT_EFFECT]
   @State emitKey: string = '';
   @State isReceive: number = -1;
@@ -38,6 +40,10 @@ struct WebComponent {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_SUITE_KEY)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -72,7 +78,7 @@ struct WebComponent {
       })
 
       // 使用Web组件加载网页
-      Web({ src: 'https://www.baidu.com', controller: new webview.WebviewController() })
+      Web({ src: $rawfile('index.html'), controller: this.controller })
         .rotateRenderEffect(WebRotateEffect.RESIZE_COVER_EFFECT)
         .width('100%')
         .height('100%')

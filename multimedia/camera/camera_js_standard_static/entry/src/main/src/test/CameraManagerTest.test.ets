@@ -17,15 +17,13 @@ import cameraObj from '@ohos.multimedia.camera';
 import image from '@ohos.multimedia.image';
 import fs from '@ohos.file.fs';
 import media from '@ohos.multimedia.media';
-import image from '@ohos.multimedia.image';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Hypium, TestType, Size, Level } from "../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Hypium, TestType, Size, Level } from '../../../hypium/index';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Want from '@ohos.app.ability.Want';
 import { Driver, MatchPattern, ON } from '@ohos.UiTest';
-import Context from "application.Context";
+import Context from 'application.Context';
 import Utils from './Util.test';
 import { BusinessError } from '@ohos.base';
-
 const TAG = "CameraUnitTest: ";
 
 let mPhotoSurface: string;
@@ -240,7 +238,6 @@ export default function cameraManagerTest() {
     })
 
     afterAll(async (): Promise<void> => {
-      await releaseVideoReceiveSurface();
       Utils.msSleep(1000);
       console.info('afterAll case');
     })

@@ -197,6 +197,11 @@ int TestFontMeasureSingleChaWithFeaturesCalls();
 int TestFontFeaturesAddFeatureNormal();
 int TestFontFeaturesAddFeatureAbNormal();
 int TestFontFeaturesandFeatureDestroyNull();
+
+// Font GetTextPathWithFallback related functions
+int TestFontGetTextPathWithFallbackNomal();
+int TestFontGetTextPathWithFallbackNull();
+int TestFontGetTextPathWithFallbackMultipleCalls();
 } // namespace Drawing
 } // namespace Rosen
 } // namespace OHOS

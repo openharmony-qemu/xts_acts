@@ -15,7 +15,7 @@
 
 import events_emitter from '@ohos.events.emitter';
 import emitter from '@ohos.events.emitter';
-import { beforeAll, beforeEach, TestType,afterEach, describe, it, TestType, Size, Level } from '../../../hypium/index';
+import { beforeAll, beforeEach, TestType,afterEach, describe, it, Size, Level } from '../../../hypium/index';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import Utils from '../test/Util.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -45,7 +45,12 @@ export default function ActsAceWebAdsBlockManager() {
         }
         console.log('BusinessError  end')
       });
-      abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.open.harmony.advertisingfilteringonetest.static')
+      let cmd = 'aa start -a EntryAbility -b com.open.harmony.advertisingfilteringonetest.static';
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(4000);
       console.log('beforeAll end,%s', 'Succeed!')
     });

@@ -21,6 +21,7 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import { BusinessError } from '@kit.BasicServicesKit';
+import { XtsTestServer } from 'library';
 
 let driver: Driver = Driver.create();
 @Entry
@@ -29,6 +30,7 @@ struct ScreenCapture {
   @State str: string = ""
   @State text: string = ''
   controller: webView.WebviewController = new webView.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State isPageEnd: number = -1;
   @State isReceive: number = -1;
   @State isRunJSEnd: number = -1;
@@ -62,6 +64,13 @@ struct ScreenCapture {
     console.info('start run testcase!!!');
     Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
   }
+
+  aboutToDisappear() {
+
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
+
+  }
+
 
   build() {
     Column() {
@@ -126,7 +135,7 @@ struct ScreenCapture {
         })
       }
 
-      Web({ src: $rawfile("indexJru.html"), controller: this.controller })
+      Web({ src: $rawfile('indexJru.html'), controller: this.controller })
         .onScreenCaptureRequest(async (event) => {
           console.log("event : >>>" + event)
           if (event) {

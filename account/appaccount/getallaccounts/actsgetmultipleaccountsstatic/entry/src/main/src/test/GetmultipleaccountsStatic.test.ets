@@ -34,7 +34,12 @@ export default function ActsGetMultipleAccountsStatic(): void {
     beforeAll(async (done: () => void): Promise<void> => {
       hilog.info(0x0000, tag, '====>beforeAll start====');
       let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-      await abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.getmultipleaccountstest.static");
+      let cmd = "aa start -a EntryAbility -b com.example.getmultipleaccountstest.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd);
       await Utils.msSleep(2000);
       let want: Want = {
         deviceId: "",

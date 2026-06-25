@@ -201,7 +201,7 @@ class ToJSONArrayClass implements JsonSerializable {
 //   }
 // }
 
-export default function JSONStringifyBasicTest() {
+export default function JSONStringifyBasicTest(): void {
   describe('JSONStringifyBasicTest', () => {
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.

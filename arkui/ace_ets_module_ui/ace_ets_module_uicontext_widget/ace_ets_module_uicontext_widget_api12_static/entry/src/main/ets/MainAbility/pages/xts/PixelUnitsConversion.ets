@@ -13,14 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight, ButtonType, ClickEvent, Margin,
-  ColumnOptions,Scroller,Scroll
-} from '@ohos.arkui.component'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
+import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight, ButtonType, ClickEvent, Margin, ColumnOptions, Scroller, Scroll } from '@ohos.arkui.component';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import { State } from '@ohos.arkui.stateManagement'
-import { ClickEvent } from '@ohos.arkui.component';
+import { AppStorage, State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct PixelUnitsConversion {

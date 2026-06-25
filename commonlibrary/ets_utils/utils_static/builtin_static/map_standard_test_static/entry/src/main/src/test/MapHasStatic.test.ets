@@ -19,7 +19,7 @@ import Utils from './Util.test';
 class TestClass {
 }
 
-export default function MapHasTest() {
+export default function MapHasTest(): void {
   describe('MapHasTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

@@ -1164,12 +1164,17 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
       } else if (isFreeWindowMode === true){
         testSetPreferredOrientation_Promise_CheckReturnFail();
       } else {
-        console.info(`====>${msgStr} end fail====`);
-        expect().assertFail();
+        let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+        console.info(caseName + 'canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+        if (!canIUseRes) {
+          done();
+        } else {
+          console.info(`====>${msgStr} end fail====`);
+          expect().assertFail();
+          done();
+        }
       }
-
       done()
-
     })
     /**
      * @tc.name   testSetForbidSplitMove_Promise

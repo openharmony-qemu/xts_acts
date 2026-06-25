@@ -6,6 +6,7 @@
 **/oh-package-lock.json5
 **/oh_modules
 **/.vscode
+**/.idea
 **/.history
 
 # Claude Config Manager Extension - Security Rules

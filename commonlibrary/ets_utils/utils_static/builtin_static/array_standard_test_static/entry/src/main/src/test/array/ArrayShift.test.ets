@@ -30,7 +30,7 @@ class Person087 {
   }
 }
 
-export default function ArrayShiftTest() {
+export default function ArrayShiftTest(): void {
   describe('ArrayShiftTest', () => {
     beforeAll(() => {
     });

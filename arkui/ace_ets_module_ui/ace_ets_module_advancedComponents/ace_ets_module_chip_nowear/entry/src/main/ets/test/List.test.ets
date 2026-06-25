@@ -34,7 +34,29 @@ import endSpaceTest from './ChipGroupTest/endSpaceTest.test'
 import itemSpaceTest from './ChipGroupTest/itemSpaceTest.test'
 import localizedLabelMarginTest from './chip/localizedLabelMarginTest';
 import ChipGroupIconItemOptionsTest from './ChipGroupTest/ChipGroupIconItemOptionsTest.test';
+import ChipGroupSystemMaterialTest from './ChipGroupTest/ChipGroupSystemMaterialTest.test';
 import ChipGroupSymbolItemOptionsTest from './ChipGroupTest/ChipGroupSymbolItemOptionsTest.test';
+import accessibilitySelectedTypeTestV2 from './chipV2/accessibilitySelectedTypeTestV2.test';
+import ChipV2Action from './chipV2/ChipV2Action.test';
+import ChipV2Action2 from './chipV2/ChipV2Action2.test';
+import ChipV2Api1 from './chipV2/ChipV2Api1.test';
+import ChipV2BackgroundSystemMaterialTest from './chipV2/ChipV2BackgroundSystemMaterialTest.test';
+import ChipV2CloseOptions from './chipV2/ChipV2CloseOptions.test';
+import chipV2DirectionTest from './chipV2/chipV2Direction.test';
+import ChipV2FontScale from './chipV2/ChipV2FontScale.test';
+import ChipV2FontSize from './chipV2/ChipV2FontSize.test';
+import ChipV2OnClick from './chipV2/ChipV2OnClick.test';
+import ChipV2OnClose from './chipV2/ChipV2OnClose.test';
+import ChipV2OnClose2 from './chipV2/ChipV2OnClose2.test';
+import ChipV2Padding from './chipV2/ChipV2Padding.test';
+import ChipV2Page from './chipV2/ChipV2Page.test';
+import ChipV2localizedLabelMargin from './chipV2/ChipV2localizedLabelMargin.test';
+import ChipGroupV2EndSpaceTest from './ChipGroupV2Test/ChipGroupV2EndSpaceTest.test';
+import ChipGroupV2IconItemOptionsTest from './ChipGroupV2Test/ChipGroupV2IconItemOptionsTest.test';
+import ChipGroupV2ItemSpaceTest from './ChipGroupV2Test/ChipGroupV2ItemSpaceTest.test';
+import ChipGroupV2StartSpaceTest from './ChipGroupV2Test/ChipGroupV2StartSpaceTest.test';
+import ChipGroupV2SymbolItemOptionsTest from './ChipGroupV2Test/ChipGroupV2SymbolItemOptionsTest.test';
+import ChipGroupV2IconItemOptions2Test from './ChipGroupV2Test/ChipGroupV2IconItemOptions2Test.test';
 export default function testsuite() {
   chipDirectionTest();
   ChipAction();
@@ -55,5 +77,27 @@ export default function testsuite() {
   ChipFontSize();
   ChipFontScale();
   ChipCloseOptions();
+  ChipGroupSystemMaterialTest();
   ChipBackgroundSystemMaterialTest();
+  accessibilitySelectedTypeTestV2();
+  ChipV2Action();
+  ChipV2Action2();
+  ChipV2Api1();
+  ChipV2BackgroundSystemMaterialTest();
+  ChipV2CloseOptions();
+  chipV2DirectionTest();
+  ChipV2FontScale();
+  ChipV2FontSize();
+  ChipV2OnClick();
+  ChipV2OnClose();
+  ChipV2OnClose2();
+  ChipV2Padding();
+  ChipV2Page();
+  ChipV2localizedLabelMargin();
+  ChipGroupV2EndSpaceTest();
+  ChipGroupV2IconItemOptionsTest();
+  ChipGroupV2ItemSpaceTest();
+  ChipGroupV2StartSpaceTest();
+  ChipGroupV2SymbolItemOptionsTest();
+  ChipGroupV2IconItemOptions2Test();
 }

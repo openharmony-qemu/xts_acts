@@ -89,11 +89,13 @@ struct Second {
               break;
             }
 
-            case "onSslErrorEvent": {
+            case "emitOnSslErrorEvent": {
+              console.log('this.onSslErrorEvent1: ' + this.onSslErrorEvent);
               this.webviewCtl.refresh();
               this.webviewCtl.loadUrl("https://example.com/404-test",);
               setTimeout(() => {
                 Utils.emitEvent(this.onSslErrorEvent, 2024120993)
+                console.log('this.onSslErrorEvent2: ' + this.onSslErrorEvent);
               }, 3000)
               break;
             }

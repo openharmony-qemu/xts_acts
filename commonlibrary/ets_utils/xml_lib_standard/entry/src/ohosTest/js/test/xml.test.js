@@ -2201,7 +2201,7 @@ describe('XmlSerializerXmlPullParserTest', function () {
             let that = new xml.XmlPullParser(uint8, 'UTF-8');
             expect().assertFail();
         } catch (e) {
-            expect(e.message).assertEqual("Parameter error. The type of Parameter must be ArrayBuffer or " +
+            expect(e.toString()).assertEqual("Error: Parameter error. The type of Parameter must be ArrayBuffer or " +
                                              "DataView.");
         }
     })
@@ -2222,7 +2222,7 @@ describe('XmlSerializerXmlPullParserTest', function () {
             let thatSer = new xml.XmlSerializer(uint);
             expect().assertFail();
         } catch (e) {
-            expect(e.toString()).assertEqual("BusinessError: Parameter error. The type of Parameter must be ArrayBuffer or " +
+            expect(e.toString()).assertEqual("Error: Parameter error. The type of Parameter must be ArrayBuffer or " +
                                              "DataView.");
         }
     })

@@ -383,7 +383,7 @@ export default function abilityTest() {
      */
     it('SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_CALLBACK_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try{
-         await session.getOutputDevice((err: BusinessError, device_Info: avSession.OutputDeviceInfo) => {
+        await session.getOutputDevice((err: BusinessError, device_Info: avSession.OutputDeviceInfo) => {
           if (err) {
             console.info(`Get device BusinessError: ${err.code}, message: ${err.message}`);
             expect(false).assertTrue();
@@ -399,8 +399,9 @@ export default function abilityTest() {
               console.info('getOutputDevice value error.')
               expect(false).assertTrue();
           }
-          done();
         });
+          await sleep(1000);
+          done();
       } catch(err) {
           console.info(`Get device BusinessError: ${err.code}, message: ${err.message}`);
           expect(false).assertTrue();

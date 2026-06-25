@@ -132,17 +132,19 @@ static void onEncOutputBufferAvailable(OH_AVCodec *codec, uint32_t index, OH_AVB
 
 static void onEncInputParam(OH_AVCodec *codec, uint32_t index, OH_AVFormat *parameter, void *userData)
 {
-    if (g_encSample == nullptr || g_encSample->roiInfo == nullptr) {
-        cout << "g_encSample or roiInfo is null" << endl;
-        return;
+    OH_LOG_INFO(LOG_APP, "=== onEncInputParam START, index=%{public}u ===", index);
+    
+    VEncAPI11Sample *sample = static_cast<VEncAPI11Sample *>(userData);
+    OH_LOG_INFO(LOG_APP, "sample=%{public}p, enableRoi=%{public}d", sample, sample ? sample->enableRoi : false);
+    
+    if (sample && sample->enableRoi && sample->roiInfo && parameter) {
+        OH_LOG_INFO(LOG_APP, "Setting ROI: %{public}s", sample->roiInfo);
+        OH_AVFormat_SetStringValue(parameter, OH_MD_KEY_VIDEO_ENCODER_ROI_PARAMS, sample->roiInfo);
     }
-    if (g_encSample->enableRoi) {
-        OH_AVFormat_SetStringValue(parameter, OH_MD_KEY_VIDEO_ENCODER_ROI_PARAMS, g_encSample->roiInfo);
-        if (!parameter || !userData) {
-            return;
-        }
-        OH_VideoEncoder_PushInputParameter(codec, index);
-    }
+    
+    OH_LOG_INFO(LOG_APP, "Calling PushInputParameter...");
+    int32_t err = OH_VideoEncoder_PushInputParameter(codec, index);
+    OH_LOG_INFO(LOG_APP, "PushInputParameter result=%{public}d ===", err);
 }
 
 int64_t VEncAPI11Sample::GetSystemTimeUs()
@@ -496,57 +498,47 @@ void VEncAPI11Sample::InputFuncSurface()
         OH_NativeBuffer *nativeBuffer = nullptr;
         uint8_t *dst = nullptr;
         int err = InitBuffer(ohNativeWindowBuffer, nativeBuffer, dst);
+        OH_LOG_INFO(LOG_APP, "InitBuffer result=%{public}d", err);
         if (err == 0) {
+            OH_LOG_INFO(LOG_APP, "InitBuffer returned 0, breaking loop");
             g_flagValue = false;
             break;
         } else if (err == -1) {
+            OH_LOG_INFO(LOG_APP, "InitBuffer returned -1, continuing");
             continue;
         }
+        OH_LOG_INFO(LOG_APP, "Reading frame data...");
         if (!ReadOneFrameYUV420SP(dst)) {
+            OH_LOG_INFO(LOG_APP, "EOF reached, notifying EOS");
             OH_NativeWindow_NativeWindowAbortBuffer(nativeWindow, ohNativeWindowBuffer);
             OH_VideoEncoder_NotifyEndOfStream(venc_);
             g_flagValue = false;
             break;
         }
+        OH_LOG_INFO(LOG_APP, "Flushing buffer...");
         err = FlushSurf(ohNativeWindowBuffer, nativeBuffer);
+        OH_LOG_INFO(LOG_APP, "FlushSurf result=%{public}d", err);
         if (err != 0) {
+            OH_LOG_INFO(LOG_APP, "FlushSurf failed, breaking loop");
             g_flagValue = false;
             break;
         }
         if (inputframeCount == FIVE && !isParamSetSurface && enableParameter) {
+            OH_LOG_INFO(LOG_APP, "Setting parameter at frame 5");
             int32_t paramResult = SetParameter();
             if (paramResult != 0) {
-                cout << "set param failed, error:" << paramResult << endl;
+                OH_LOG_INFO(LOG_APP, "SetParameter failed, error=%{public}d", paramResult);
                 errCount = errCount + 1;
                 break;
             }
             isParamSetSurface = true;
+            OH_LOG_INFO(LOG_APP, "SetParameter success");
         }
         inputframeCount++;
+        OH_LOG_INFO(LOG_APP, "Frame flushed, count=%{public}d", inputframeCount);
         usleep(FRAME_INTERVAL);
-        if (enableRoi) {
-            InputEnableRepeatSleep();
-        }
     }
-}
-
-void VEncAPI11Sample::InputEnableRepeatSleep()
-{
-    inCount = inCount + 1;
-    int32_t inCountNum = 15;
-    if (enableRepeat && inCount == inCountNum) {
-        if (setMaxCount) {
-            int32_t sleepTimeMaxCount = 730000;
-            usleep(sleepTimeMaxCount);
-        } else {
-            int32_t sleepTime = 1000000;
-            usleep(sleepTime);
-        }
-        if (enableSeekEos) {
-            inFile_->clear();
-            inFile_->seekg(-1, ios::beg);
-        }
-    }
+    OH_LOG_INFO(LOG_APP, "=== InputFuncSurface EXITED, total frames=%{public}d ===", inputframeCount);
 }
 
 int32_t VEncAPI11Sample::InitBuffer(OHNativeWindowBuffer *&ohNativeWindowBuffer,

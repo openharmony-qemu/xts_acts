@@ -757,6 +757,7 @@ export default function WindowKeyBoardTest() {
             await subWindowClass.showWindow();
             try {
                 if (isFreeWindowMode === true) {
+                    await subWindowClass.destroyWindow()
                     done();
                 } else {
                     const callback = (height: int) => {
@@ -813,6 +814,7 @@ export default function WindowKeyBoardTest() {
             await subWindowClass.showWindow();
             try {
                 if (isFreeWindowMode === true) {
+                    await subWindowClass.destroyWindow()
                     done();
                 } else {
                     const callback = (keyboardInfo: window.KeyboardInfo) => {
@@ -888,6 +890,7 @@ export default function WindowKeyBoardTest() {
             await subWindowClass.showWindow();
             try {
                 if (isFreeWindowMode === true) {
+                    await subWindowClass.destroyWindow()
                     done();
                 } else {
                     const callback = (keyboardInfo: window.KeyboardInfo) => {
@@ -963,6 +966,7 @@ export default function WindowKeyBoardTest() {
             await subWindowClass.showWindow();
             try {
                 if (isFreeWindowMode === true) {
+                    await subWindowClass.destroyWindow()
                     done();
                 } else {
                     const callback = (keyboardInfo: window.KeyboardInfo) => {
@@ -1034,6 +1038,7 @@ export default function WindowKeyBoardTest() {
             await subWindowClass.showWindow();
             try {
                 if (isFreeWindowMode === true) {
+                    await subWindowClass.destroyWindow()
                     done();
                 } else {
                     const callback = (keyboardInfo: window.KeyboardInfo) => {

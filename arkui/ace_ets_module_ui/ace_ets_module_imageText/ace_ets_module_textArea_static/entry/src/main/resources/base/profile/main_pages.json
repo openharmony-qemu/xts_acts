@@ -3,6 +3,8 @@
     "MainAbility/pages/index/index",
     "MainAbility/pages/TextArea/TextAreaAttributeIndex",
     "MainAbility/pages/TextAreaApi26/TextAreaOnWillCopy",
- 	  "MainAbility/pages/TextAreaApi26/TextAreaOnWillCut"
+    "MainAbility/pages/TextAreaApi26/TextAreaOnWillCut",
+    "MainAbility/pages/TextAreaApi26/TextAreaShaderStyle",
+    "MainAbility/pages/TextAreaApi26/TextAreaStrokeJoinStyle"
   ]
 }

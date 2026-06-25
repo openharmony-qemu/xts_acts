@@ -38,35 +38,35 @@ struct TabsExampleApi12I15 {
                TabContent() {
                  Column(){
                    Text('首页的内容')
-                 }.width('100%').height('100%').backgroundColor('#00CB87').justifyContent(FlexAlign.Center).key("content1x4")
+                 }.width('100%').height('100%').backgroundColor('#00CB87').justifyContent(FlexAlign.Center).key("tabs_onContentWillChangeIndex15_content1x4")
                }.tabBar(this.tabBuilder('首页',0))
              }
              if(item == 1) {
                TabContent() {
                  Column(){
                    Text('发现的内容')
-                 }.width('100%').height('100%').backgroundColor('#007DFF').justifyContent(FlexAlign.Center).key("content2x4")
+                 }.width('100%').height('100%').backgroundColor('#007DFF').justifyContent(FlexAlign.Center).key("tabs_onContentWillChangeIndex15_content2x4")
                }.tabBar(this.tabBuilder('发现',1))
              }
             if(item == 2) {
               TabContent() {
                 Column(){
                   Text('推荐的内容')
-                }.width('100%').height('100%').backgroundColor('#FFBF00').justifyContent(FlexAlign.Center).key("content3x4")
+                }.width('100%').height('100%').backgroundColor('#FFBF00').justifyContent(FlexAlign.Center).key("tabs_onContentWillChangeIndex15_content3x4")
               }.tabBar(this.tabBuilder('推荐',2))
              }
             if(item == 3) {
               TabContent() {
                 Column(){
                   Text('我的内容')
-                }.width('100%').height('100%').backgroundColor('#E67C92').justifyContent(FlexAlign.Center).key("content4x4")
+                }.width('100%').height('100%').backgroundColor('#E67C92').justifyContent(FlexAlign.Center).key("tabs_onContentWillChangeIndex15_content4x4")
               }.tabBar(this.tabBuilder('我的',3))
             }
             if(item == 4) {
               TabContent() {
                 Column(){
                   Text('党史1949')
-                }.width('100%').height('100%').backgroundColor('#E67C92').justifyContent(FlexAlign.Center).key("content5x4")
+                }.width('100%').height('100%').backgroundColor('#E67C92').justifyContent(FlexAlign.Center).key("tabs_onContentWillChangeIndex15_content5x4_01")
               }.tabBar(this.tabBuilder('党史1949',4))
            }
 
@@ -74,7 +74,7 @@ struct TabsExampleApi12I15 {
             TabContent() {
               Column(){
                 Text('建国1950')
-              }.width('100%').height('100%').backgroundColor('#E67C92').justifyContent(FlexAlign.Center).key("content5x4")
+              }.width('100%').height('100%').backgroundColor('#E67C92').justifyContent(FlexAlign.Center).key("tabs_onContentWillChangeIndex15_content5x4_02")
             }.tabBar(this.tabBuilder('建国1950',5))
           }
 

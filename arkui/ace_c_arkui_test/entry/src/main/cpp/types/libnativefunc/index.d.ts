@@ -7970,3 +7970,13 @@ export const testScrollBarWidth003: () => number;
 export const testScrollBarWidth004: () => number;
 export const testScrollBarWidth005: () => number;
 export const testScrollBarWidth006: () => number;
+
+export const testCustomDialogSetSystemMaterial001: () => number;
+export const testCustomDialogSetSystemMaterial002: () => number;
+export const testCustomDialogSetSystemMaterial003: () => number;
+export const testCustomDialogSetSystemMaterial004: () => number;
+export const testCustomDialogSetSystemMaterialInOptions001: () => number;
+export const testCustomDialogSetSystemMaterialInOptions002: () => number;
+export const testCustomDialogSetSystemMaterialInOptions003: () => number;
+export const testCustomDialogSetSystemMaterialInOptions004: () => number;
+export const testCustomDialogSetSystemMaterialInOptions005: () => number;

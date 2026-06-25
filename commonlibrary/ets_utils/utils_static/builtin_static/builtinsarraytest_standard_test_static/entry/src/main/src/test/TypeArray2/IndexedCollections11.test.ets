@@ -79,7 +79,7 @@ interface ObjType {
   b?: number;
 }
 
-export default function IndexedCollections11Test() {
+export default function IndexedCollections11Test(): void {
   describe('IndexedCollections11Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

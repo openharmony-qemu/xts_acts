@@ -14,29 +14,15 @@
 */
 import hilog from '@ohos.hilog';
 import notificationManager from '@ohos.notificationManager';
-import { Driver, ON } from '@ohos.UiTest';
-import { describe, it, expect, TestType, Size, Level,beforeAll } from "../../../hypium/index";
+import { Driver, ON, Component, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation } from '@ohos.UiTest';
+import { describe, it, expect, TestType, Size, Level, beforeAll } from '../../../hypium/index';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import commonEventManager from '@ohos.commonEventManager';
-import {
-  Component,
-  Driver,
-  ON,
-  On,
-  MatchPattern,
-  MouseButton,
-  WindowMode,
-  UIElementInfo,
-  UiDirection,
-  PointerMatrix,
-  DisplayRotation
-} from '@ohos.UiTest'
-import { AppStorage } from '@ohos.arkui.stateManagement'
-
+import { AppStorage } from '@ohos.arkui.stateManagement';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let bundle :string = 'com.example.actsnotificationmanagerrequestenablenotificationallowtest.static'
@@ -59,7 +45,12 @@ export default function ActsAllowTest() {
       
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${JSON.stringify(bundle)}`)
+      let cmd = `aa start -a EntryAbility -b ${JSON.stringify(bundle)}`;
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(2000)
       testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
       hilog.info(domain, tag, '%{public}s', 'beforeAll end');

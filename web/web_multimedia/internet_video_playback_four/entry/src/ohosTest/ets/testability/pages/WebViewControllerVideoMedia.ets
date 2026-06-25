@@ -18,7 +18,8 @@ import Utils from '../../test/Utils.test';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { Driver, ON } from '@ohos.UiTest';
-
+import { UiDriver } from '@kit.TestKit';
+import { KeyCode } from '@kit.InputKit';
 const driver = Driver.create();
 const EVENT_ID_SET_EMIT_KEY = 350000;
 
@@ -30,7 +31,6 @@ struct WebViewControllerVideoMedia {
   @State isPageEnd:number = -1;
   @State isReceive: number = -1;
   controller: webView.WebviewController = new webView.WebviewController();
-
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: EVENT_ID_SET_EMIT_KEY,
@@ -63,6 +63,201 @@ struct WebViewControllerVideoMedia {
           await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
           this.isReceive = -1;
           switch (this.str) {
+            case "StopAllMedia0100": {
+              let res: webView.MediaPlaybackState;
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile("video1.html"))
+                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent(3, 350010)
+                }else{
+                  this.controller.runJavaScript("playVideo()");
+                  await Utils.sleep(5000);
+                  this.controller.stopAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("StopAllMedia0100 res: " + res);
+                  Utils.emitEvent(res, 350010)
+                }
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case "StopAllMedia0200": {
+              let res: webView.MediaPlaybackState;
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile("video1.html"))
+                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent(0, 350020)
+                }else{
+                  this.controller.stopAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("StopAllMedia0200 res: " + res);
+                  Utils.emitEvent(res, 350020)
+                }
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case "StopAllMedia0300": {
+              let res: webView.MediaPlaybackState;
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile("video1.html"))
+                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                this.userAgentPC = this.controller.getUserAgent();
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent(3, 350030)
+                }else{
+                  this.controller.runJavaScript("playVideo()");
+                  await Utils.sleep(3000);
+                  this.controller.stopAllMedia();
+                  await Utils.sleep(2000);
+                  this.controller.stopAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("StopAllMedia0300 res: " + res);
+                  Utils.emitEvent(res, 350030)
+                }
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case "StopAllMedia0400": {
+              let res: webView.MediaPlaybackState;
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile("video1.html"))
+                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent(2, 350040)
+                }else{
+                  this.controller.runJavaScript("playVideo()");
+                  await Utils.sleep(5000);
+                  this.controller.runJavaScript("pauseVideo()");
+                  await Utils.sleep(2000);
+                  this.controller.stopAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("StopAllMedia0400 res: " + res);
+                  Utils.emitEvent(res, 350040)
+                }
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case "StopAllMedia0500": {
+              let res: webView.MediaPlaybackState;
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile("video1.html"))
+                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent(2, 350050)
+                }else{
+                  this.controller.runJavaScript("playVideo()");
+                  await Utils.sleep(5000);
+                  this.controller.pauseAllMedia();
+                  await Utils.sleep(2000);
+                  this.controller.stopAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("StopAllMedia0500 res: " + res);
+                  Utils.emitEvent(res, 350050)
+                }
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case "StopAllMedia0600": {
+              let res: webView.MediaPlaybackState;
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile("video2.html"))
+                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent(3, 350060)
+                }else{
+                  this.controller.runJavaScript("playVideo1()");
+                  this.controller.runJavaScript("playVideo2()");
+                  await Utils.sleep(3000);
+                  this.controller.stopAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("StopAllMedia0600 res: " + res);
+                  Utils.emitEvent(res, 350060)
+                }
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case "StopAllMedia0700": {
+              let res: webView.MediaPlaybackState;
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile("video2.html"))
+                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent(3, 350070)
+                }else{
+                  this.controller.runJavaScript("playVideo1()");
+                  this.controller.runJavaScript("playVideo2()");
+                  await Utils.sleep(3000);
+                  this.controller.runJavaScript("pauseVideo2()");
+                  await Utils.sleep(2000);
+                  this.controller.stopAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("StopAllMedia0700 res: " + res);
+                  Utils.emitEvent(res, 350070)
+                }
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case "StopAllMedia0800": {
+              let res: webView.MediaPlaybackState;
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile("video3.html"))
+                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent(3, 350080)
+                }else{
+                  this.controller.runJavaScript("playVideo1()");
+                  this.controller.runJavaScript("playVideo2()");
+                  this.controller.runJavaScript("playAudio()");
+                  await Utils.sleep(5000);
+                  this.controller.stopAllMedia();
+                  await Utils.sleep(2000);
+                  res = this.controller.getMediaPlaybackState();
+                  console.log("StopAllMedia0800 res: " + res);
+                  Utils.emitEvent(res, 350080)
+                }
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
             case "ResumeAllMedia0100": {
               let res: webView.MediaPlaybackState;
               try {
@@ -73,10 +268,6 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(1, 350100)
                 }else{
-                  let size = await driver.getDisplaySize();
-                  console.log("size x:" + size.x)
-                  console.log("size y:" + size.y)
-                  await driver.click(size.x / 2, size.y / 2);
                   this.controller.runJavaScript("playVideo()");
                   await Utils.sleep(2000);
                   this.controller.pauseAllMedia();
@@ -102,10 +293,6 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(0, 350120)
                 }else{
-                  let size = await driver.getDisplaySize();
-                  console.log("size x:" + size.x)
-                  console.log("size y:" + size.y)
-                  await driver.click(size.x / 2, size.y / 2);
                   this.controller.resumeAllMedia();
                   await Utils.sleep(2000);
                   res = this.controller.getMediaPlaybackState();
@@ -127,10 +314,6 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(1, 350130)
                 }else{
-                  let size = await driver.getDisplaySize();
-                  console.log("size x:" + size.x)
-                  console.log("size y:" + size.y)
-                  await driver.click(size.x / 2, size.y / 2);
                   this.controller.runJavaScript("playVideo()");
                   await Utils.sleep(5000);
                   this.controller.resumeAllMedia();
@@ -154,10 +337,6 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(2, 350140)
                 }else{
-                  let size = await driver.getDisplaySize();
-                  console.log("size x:" + size.x)
-                  console.log("size y:" + size.y)
-                  await driver.click(size.x / 2, size.y / 2);
                   this.controller.runJavaScript("playVideo()");
                   await Utils.sleep(3000);
                   this.controller.runJavaScript("pauseVideo()");
@@ -187,10 +366,6 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(3, 350150)
                 }else{
-                  let size = await driver.getDisplaySize();
-                  console.log("size x:" + size.x)
-                  console.log("size y:" + size.y)
-                  await driver.click(size.x / 2, size.y / 2);
                   this.controller.runJavaScript("playVideo()");
                   await Utils.sleep(5000);
                   this.controller.stopAllMedia();
@@ -216,10 +391,6 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(1, 350160)
                 }else{
-                  let size = await driver.getDisplaySize();
-                  console.log("size x:" + size.x)
-                  console.log("size y:" + size.y)
-                  await driver.click(size.x / 2, size.y / 2);
                   this.controller.runJavaScript("playVideo1()");
                   this.controller.runJavaScript("playVideo2()");
                   await Utils.sleep(2000);
@@ -246,10 +417,6 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(1, 350170)
                 }else{
-                  let size = await driver.getDisplaySize();
-                  console.log("size x:" + size.x)
-                  console.log("size y:" + size.y)
-                  await driver.click(size.x / 2, size.y / 2);
                   this.controller.runJavaScript("playVideo1()");
                   this.controller.runJavaScript("playVideo2()");
                   this.controller.runJavaScript("playAudio()");
@@ -277,10 +444,6 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(2, 350210)
                 }else{
-                  let size = await driver.getDisplaySize();
-                  console.log("size x:" + size.x)
-                  console.log("size y:" + size.y)
-                  await driver.click(size.x / 2, size.y / 2);
                   this.controller.runJavaScript("playVideo()");
                   await Utils.sleep(2000);
                   this.controller.pauseAllMedia();
@@ -304,10 +467,6 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(2, 350220)
                 }else{
-                  let size = await driver.getDisplaySize();
-                  console.log("size x:" + size.x)
-                  console.log("size y:" + size.y)
-                  await driver.click(size.x / 2, size.y / 2);
                   this.controller.pauseAllMedia();
                   await Utils.sleep(2000);
                   res = this.controller.getMediaPlaybackState();
@@ -329,11 +488,6 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(2, 350230)
                 }else{
-
-                  let size = await driver.getDisplaySize();
-                  console.log("size x:" + size.x)
-                  console.log("size y:" + size.y)
-                  await driver.click(size.x / 2, size.y / 2);
                   this.controller.runJavaScript("playVideo()");
                   await Utils.sleep(2000);
                   this.controller.stopAllMedia();
@@ -359,10 +513,6 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(2, 350240)
                 }else{
-                  let size = await driver.getDisplaySize();
-                  console.log("size x:" + size.x)
-                  console.log("size y:" + size.y)
-                  await driver.click(size.x / 2, size.y / 2);
                   this.controller.runJavaScript("playVideo()");
                   await Utils.sleep(2000);
                   this.controller.runJavaScript("pauseVideo()");
@@ -388,10 +538,6 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(2, 350250)
                 }else{
-                  let size = await driver.getDisplaySize();
-                  console.log("size x:" + size.x)
-                  console.log("size y:" + size.y)
-                  await driver.click(size.x / 2, size.y / 2);
                   this.controller.runJavaScript("playVideo()");
                   await Utils.sleep(2000);
                   this.controller.pauseAllMedia();
@@ -417,10 +563,6 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(2, 350260)
                 }else{
-                  let size = await driver.getDisplaySize();
-                  console.log("size x:" + size.x)
-                  console.log("size y:" + size.y)
-                  await driver.click(size.x / 2, size.y / 2);
                   this.controller.runJavaScript("playVideo1()");
                   this.controller.runJavaScript("playVideo2()");
                   await Utils.sleep(2000);
@@ -445,10 +587,6 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(2, 350270)
                 }else{
-                  let size = await driver.getDisplaySize();
-                  console.log("size x:" + size.x)
-                  console.log("size y:" + size.y)
-                  await driver.click(size.x / 2, size.y / 2);
                   this.controller.runJavaScript("playVideo1()");
                   this.controller.runJavaScript("playVideo2()");
                   await Utils.sleep(2000);
@@ -475,10 +613,6 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(2, 350280)
                 }else{
-                  let size = await driver.getDisplaySize();
-                  console.log("size x:" + size.x)
-                  console.log("size y:" + size.y)
-                  await driver.click(size.x / 2, size.y / 2);
                   this.controller.runJavaScript("playVideo1()");
                   this.controller.runJavaScript("playVideo2()");
                   this.controller.runJavaScript("playAudio()");
@@ -506,24 +640,13 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(true, 350310)
                 }else{
-                  let size = await driver.getDisplaySize();
-                  console.log("size x:" + size.x)
-                  console.log("size y:" + size.y)
-                  await driver.click(size.x / 2, size.y / 2);
+                  let driver: UiDriver = UiDriver.create();
+                  await driver.triggerKey(KeyCode.KEYCODE_ENTER);
+                  await Utils.sleep(2000);
                   this.controller.runJavaScript("enterFullScreen()");
                   await Utils.sleep(2000);
                   this.controller.runJavaScript("playVideo()");
-                  let nums=1;
-                  let tryTime=200
-                  while(nums < tryTime) {
-                    await Utils.sleep(1000);
-                    //播放状态
-                    if (this.controller.getMediaPlaybackState() == 1) {
-                      break;
-                    }
-                    console.log('CloseAllMediaPresentations0100---' + nums)
-                    nums++;
-                  }
+                  await Utils.sleep(2000);
                   this.controller.closeAllMediaPresentations();
                   await Utils.sleep(2000);
                   this.isPageEnd = -1;
@@ -557,11 +680,9 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(true, 350320)
                 }else{
-
-                  let size = await driver.getDisplaySize();
-                  console.log("size x:" + size.x)
-                  console.log("size y:" + size.y)
-                  await driver.click(size.x / 2, size.y / 2);
+                  let driver: UiDriver = UiDriver.create();
+                  await driver.triggerKey(KeyCode.KEYCODE_ENTER);
+                  await Utils.sleep(2000);
                   this.controller.runJavaScript("enterFullScreen()");
                   await Utils.sleep(2000);
                   this.controller.closeAllMediaPresentations();
@@ -597,10 +718,9 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(true, 350330)
                 }else{
-                  let size = await driver.getDisplaySize();
-                  console.log("size x:" + size.x)
-                  console.log("size y:" + size.y)
-                  await driver.click(size.x / 2, size.y / 2);
+                  let driver: UiDriver = UiDriver.create();
+                  await driver.triggerKey(KeyCode.KEYCODE_ENTER);
+                  await Utils.sleep(2000);
                   this.controller.runJavaScript("enterFullScreen()");
                   await Utils.sleep(2000);
                   this.controller.runJavaScript("playVideo()");
@@ -637,10 +757,9 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(true, 350340)
                 }else{
-                  let size = await driver.getDisplaySize();
-                  console.log("size x:" + size.x)
-                  console.log("size y:" + size.y)
-                  await driver.click(size.x / 2, size.y / 2);
+                  let driver: UiDriver = UiDriver.create();
+                  await driver.triggerKey(KeyCode.KEYCODE_ENTER);
+                  await Utils.sleep(2000);
                   this.controller.runJavaScript("enterFullScreen()");
                   await Utils.sleep(2000);
                   this.controller.runJavaScript("playVideo()");
@@ -677,11 +796,9 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(true, 350350)
                 }else{
-
-                  let size = await driver.getDisplaySize();
-                  console.log("size x:" + size.x)
-                  console.log("size y:" + size.y)
-                  await driver.click(size.x / 2, size.y / 2);
+                  let driver: UiDriver = UiDriver.create();
+                  await driver.triggerKey(KeyCode.KEYCODE_ENTER);
+                  await Utils.sleep(2000);
                   this.controller.runJavaScript("enterFullScreen()");
                   await Utils.sleep(2000);
                   this.controller.runJavaScript("playVideo()");
@@ -718,10 +835,6 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(0, 350360)
                 }else{
-                  let size = await driver.getDisplaySize();
-                  console.log("size x:" + size.x)
-                  console.log("size y:" + size.y)
-                  await driver.click(size.x / 2, size.y / 2);
                   res = this.controller.getMediaPlaybackState();
                   console.log("GetMediaPlaybackState0100 res: " + res);
                   Utils.emitEvent(res, 350360)
@@ -742,10 +855,6 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(1, 350370)
                 }else{
-                  let size = await driver.getDisplaySize();
-                  console.log("size x:" + size.x)
-                  console.log("size y:" + size.y)
-                  await driver.click(size.x / 2, size.y / 2);
                   this.controller.runJavaScript("playVideo()");
                   await Utils.sleep(3000);
                   res = this.controller.getMediaPlaybackState();
@@ -767,10 +876,6 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(2, 350380)
                 }else{
-                  let size = await driver.getDisplaySize();
-                  console.log("size x:" + size.x)
-                  console.log("size y:" + size.y)
-                  await driver.click(size.x / 2, size.y / 2);
                   this.controller.runJavaScript("playVideo()");
                   await Utils.sleep(2000);
                   this.controller.pauseAllMedia()
@@ -795,10 +900,6 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(2, 350390)
                 }else{
-                  let size = await driver.getDisplaySize();
-                  console.log("size x:" + size.x)
-                  console.log("size y:" + size.y)
-                  await driver.click(size.x / 2, size.y / 2);
                   this.controller.runJavaScript("playVideo()");
                   await Utils.sleep(2000);
                   this.controller.runJavaScript("pauseVideo()");
@@ -823,10 +924,6 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(3, 350400)
                 }else{
-                  let size = await driver.getDisplaySize();
-                  console.log("size x:" + size.x)
-                  console.log("size y:" + size.y)
-                  await driver.click(size.x / 2, size.y / 2);
                   this.controller.runJavaScript("playVideo()");
                   await Utils.sleep(2000);
                   this.controller.stopAllMedia();
@@ -852,10 +949,9 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(true, 350410)
                 }else{
-                  let size = await driver.getDisplaySize();
-                  console.log("size x:" + size.x)
-                  console.log("size y:" + size.y)
-                  await driver.click(size.x / 2, size.y / 2);
+                  let driver: UiDriver = UiDriver.create();
+                  await driver.triggerKey(KeyCode.KEYCODE_ENTER);
+                  await Utils.sleep(2000);
                   this.controller.runJavaScript("enterFullScreen()");
                   await Utils.sleep(2000);
                   this.controller.runJavaScript("playVideo()");
@@ -891,10 +987,6 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(0, 350420)
                 }else{
-                  let size = await driver.getDisplaySize();
-                  console.log("size x:" + size.x)
-                  console.log("size y:" + size.y)
-                  await driver.click(size.x / 2, size.y / 2);
                   res = this.controller.getMediaPlaybackState();
                   console.log("GetMediaPlaybackState0700 res: " + res);
                   Utils.emitEvent(res, 350420)
@@ -914,10 +1006,6 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(1, 350430)
                 }else{
-                  let size = await driver.getDisplaySize();
-                  console.log("size x:" + size.x)
-                  console.log("size y:" + size.y)
-                  await driver.click(size.x / 2, size.y / 2);
                   this.controller.runJavaScript("playVideo1()");
                   await Utils.sleep(6000);
                   res = this.controller.getMediaPlaybackState();
@@ -939,10 +1027,6 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(1, 350440)
                 }else{
-                  let size = await driver.getDisplaySize();
-                  console.log("size x:" + size.x)
-                  console.log("size y:" + size.y)
-                  await driver.click(size.x / 2, size.y / 2);
                   this.controller.runJavaScript("playVideo1()");
                   this.controller.runJavaScript("playVideo2()");
                   await Utils.sleep(2000);
@@ -965,10 +1049,6 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(1, 350450)
                 }else{
-                  let size = await driver.getDisplaySize();
-                  console.log("size x:" + size.x)
-                  console.log("size y:" + size.y)
-                  await driver.click(size.x / 2, size.y / 2);
                   this.controller.runJavaScript("playVideo1()");
                   this.controller.runJavaScript("playVideo2()");
                   await Utils.sleep(2000);
@@ -993,10 +1073,6 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(2, 350460)
                 }else{
-                  let size = await driver.getDisplaySize();
-                  console.log("size x:" + size.x)
-                  console.log("size y:" + size.y)
-                  await driver.click(size.x / 2, size.y / 2);
                   this.controller.runJavaScript("playVideo1()");
                   this.controller.runJavaScript("playVideo2()");
                   await Utils.sleep(3000);
@@ -1023,10 +1099,6 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(2, 350470)
                 }else{
-                  let size = await driver.getDisplaySize();
-                  console.log("size x:" + size.x)
-                  console.log("size y:" + size.y)
-                  await driver.click(size.x / 2, size.y / 2);
                   this.controller.runJavaScript("playVideo1()");
                   this.controller.runJavaScript("playVideo2()");
                   await Utils.sleep(2000);
@@ -1051,10 +1123,6 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(1, 350480)
                 }else{
-                  let size = await driver.getDisplaySize();
-                  console.log("size x:" + size.x)
-                  console.log("size y:" + size.y)
-                  await driver.click(size.x / 2, size.y / 2);
                   this.controller.runJavaScript("playVideo1()");
                   this.controller.runJavaScript("playVideo2()");
                   await Utils.sleep(3000);
@@ -1077,6 +1145,7 @@ struct WebViewControllerVideoMedia {
       }
 
       Web({ src: $rawfile("video1.html"), controller: this.controller })
+        .key('videoButton')
         .mediaPlayGestureAccess(false)
         .javaScriptAccess(true)
         .onPageEnd((event) => {

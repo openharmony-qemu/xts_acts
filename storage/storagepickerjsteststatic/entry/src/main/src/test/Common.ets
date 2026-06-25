@@ -22,7 +22,12 @@ let tag: string = 'testTag';
 const delegator = abilityDelegatorRegistry.getAbilityDelegator();
 
 export async function startAbility(bundleName: string, abilityName: string) {
-  await delegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`).then(result => {
+  let cmd = `aa start -b ${bundleName} -a ${abilityName}`;
+  let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+  if(user !== undefined){
+      cmd += ' -u ' + user;
+  }
+  await delegator.executeShellCommand(cmd).then(result => {
     hilog.info(domain, tag, '%{public}s', `[picker] start abilityFinished: ${result}`)
   }).catch((err: Error) => {
     hilog.error(domain, tag, '%{public}s', `[picker] start abilityFailed: ${err}`)

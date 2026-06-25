@@ -183,6 +183,7 @@ public:
         void *&virAddr);
     void InputEnableRepeatSleep();
     int32_t ReadFrameData(uint8_t *dst, int32_t &readFileIndex, OHNativeWindowBuffer *ohNativeWindowBuffer);
+    void AbortNativeBuffer(OH_NativeBuffer *nativeBuffer, OHNativeWindowBuffer *ohNativeWindowBuffer);
     int32_t HandleParamSwitch(int32_t inputframeCount, bool &isParamSetSurface);
     int32_t QueryInputBuffer(uint32_t index, int64_t timeoutUs);
     int32_t QueryOutputBuffer(uint32_t index, int64_t timeoutUs);
@@ -190,6 +191,7 @@ public:
     OH_AVBuffer *GetOutputBuffer(uint32_t index);
     void GetVideoSupportedPixelFormats();
     void GetFormatKey();
+    void StopAndNotify();
     bool isGetVideoSupportedPixelFormats = false;
     bool isGetFormatKey = false;
     int isGetVideoSupportedPixelFormatsNum = 0;
@@ -273,6 +275,7 @@ private:
     int stride_;
     static constexpr uint32_t SAMPLE_RATIO = 2;
 };
+void ResetLtrStaticState();
 } // namespace Media
 } // namespace OHOS
 

@@ -2152,7 +2152,7 @@ export default function rdbResultSetTest() {
         {
           resultSet.goToRow(2);
           const isColumnNull4 = resultSet.isColumnNull(resultSet.getColumnIndex("data4"));
-          expect(true).assertEqual(isColumnNull4);
+          expect(false).assertEqual(isColumnNull4);  // 插入空blob类型，api版本大于14，查询结果的类型为空blob
           resultSet.close();
         }
         resultSet = null;

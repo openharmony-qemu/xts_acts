@@ -19,9 +19,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import { Driver, ON } from '@ohos.UiTest';
-import inspector from '@ohos.arkui.inspector';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-
 let testAbilityContext:common.UIAbilityContext;
 
 // @ts-nocheck
@@ -48,7 +46,12 @@ export default function ActsAceWebViewSdkSchemeHandlerEnhanced() {
           console.log('BusinessError  end')
         });
         await Utils.msSleep(2000)
-        abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.open.harmony.resourceinterceptioncloudservicesixtest.static')
+        let cmd = 'aa start -a EntryAbility -b com.open.harmony.resourceinterceptioncloudservicesixtest.static';
+        let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
+        abilityDelegator.executeShellCommand(cmd)
         await Utils.msSleep(2000)
         console.log('beforeAll end,%s', 'Succeed!')
       } catch (error) {

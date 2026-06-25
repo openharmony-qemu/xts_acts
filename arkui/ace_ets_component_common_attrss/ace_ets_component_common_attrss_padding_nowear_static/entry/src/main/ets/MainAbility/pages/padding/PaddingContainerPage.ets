@@ -13,30 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { attrsManager  }  from '../../common/AttrsManager';
-import { RouterParams , SetValue } from '../../common/Utils';
-import router from '@ohos.router'
-import {
-  Entry,
-  Component,
-  Text,CommonMethod,applyStyles,
-  AlphabetIndexer,Checkbox,CheckboxGroup,DataPanel,DatePicker,Divider,Gauge,ImageAnimator,LoadingProgress,Marquee,Menu,Navigation,
-  Progress,QRCode,Radio,Rating,ScrollBar,Select,Slider,TextArea,TextClock,TextInput,TextPicker,TextTimer,TimePicker,Toggle,Badge,
-  Counter,GridRow,Grid,List,RelativeContainer,Row,Refresh,TextAlign,SideBarContainer,Stack,Swiper,Tabs,WaterFlow,
-  Circle,Ellipse,Line,Polyline,Polygon,Path,Rect,Shape,ColumnSplit,RowSplit,Blank
-,Builder,Button,DataPanelType,Image,MenuItem,ProgressType,BarState,Search,SliderStyle,Axis,ToggleType,Column,Flex,GridRowDirection,GridCol
-,GridItem,ListItem,Scroll,SideBarContainerType,TabContent,FlowItem,$r,MenuItemOptions,Scroller,BadgeParamWithNumber,BadgeStyle,GridColOptions,GridColColumnOption,
-  AlignRuleOption,VerticalAlign,HorizontalAlign,ColumnOptions,FlexAlign,ImageFit,Position,PolylineOptions,RectOptions,FlexDirection
-,Padding,Web,WebviewController,RichText,MenuItemGroup,GridRowOptions,GutterOption,RefreshOptions,ForEach,BreakpointsReference,BreakPoints,ListOptions,
-  ListItemGroup,AlphabetIndexerOptions,MenuItemGroupOptions
-} from '@ohos.arkui.component'
-import {
-  State,
-  AppStorage,
-  StoragePropRef
-} from '@ohos.arkui.stateManagement'
-import { UIContext, Router } from '@ohos.arkui.UIContext'
-import { Color,Padding } from '@ohos.arkui.component'
+import { attrsManager } from '../../common/AttrsManager';
+import { RouterParams, SetValue } from '../../common/Utils';
+import router from '@ohos.router';
+import { Entry, Component, Text, CommonMethod, applyStyles, AlphabetIndexer, Checkbox, CheckboxGroup, DataPanel, DatePicker, Divider, Gauge, ImageAnimator, LoadingProgress, Marquee, Menu, Navigation, Progress, QRCode, Radio, Rating, ScrollBar, Select, Slider, TextArea, TextClock, TextInput, TextPicker, TextTimer, TimePicker, Toggle, Badge, Counter, GridRow, Grid, List, RelativeContainer, Row, Refresh, TextAlign, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, Circle, Ellipse, Line, Polyline, Polygon, Path, Rect, Shape, ColumnSplit, RowSplit, Blank, Builder, Button, DataPanelType, Image, MenuItem, ProgressType, BarState, Search, SliderStyle, Axis, ToggleType, Column, Flex, GridRowDirection, GridCol, GridItem, ListItem, Scroll, SideBarContainerType, TabContent, FlowItem, $r, MenuItemOptions, Scroller, BadgeParamWithNumber, BadgeStyle, GridColOptions, GridColColumnOption, AlignRuleOption, VerticalAlign, HorizontalAlign, ColumnOptions, FlexAlign, ImageFit, Position, PolylineOptions, RectOptions, FlexDirection, Padding, Web, WebviewController, RichText, MenuItemGroup, GridRowOptions, GutterOption, RefreshOptions, ForEach, BreakpointsReference, BreakPoints, ListOptions, ListItemGroup, AlphabetIndexerOptions, MenuItemGroupOptions, Color } from '@ohos.arkui.component';
+import { State, AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 interface ViewOption {
   targetView: string
   componentKey: string

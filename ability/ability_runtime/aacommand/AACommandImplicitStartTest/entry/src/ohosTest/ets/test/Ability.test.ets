@@ -65,7 +65,12 @@ export default function aaImplicitStartTest() {
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0100', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
-      await abilityDelegator.executeShellCommand('aa start -b com.example.aacommandimplicitstarttest -a EntryAbility').then(data => {
+      let cmd = 'aa start -b com.example.aacommandimplicitstarttest -a EntryAbility';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd).then(data => {
         res = data.stdResult;
       }).catch((err:BusinessError) => {
         hilog.info(0x0000, 'debuggabletest', '%{public}s',
@@ -85,7 +90,12 @@ export default function aaImplicitStartTest() {
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0200', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
-      await abilityDelegator.executeShellCommand('aa start -U "https://uri.aacommandimplicitstarttest.com" -t uri-type').then(data => {
+      let cmd = 'aa start -U "https://uri.aacommandimplicitstarttest.com" -t uri-type';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd).then(data => {
         res = data.stdResult;
       }).catch((err:BusinessError) => {
         hilog.info(0x0000, 'debuggabletest', '%{public}s',
@@ -105,7 +115,12 @@ export default function aaImplicitStartTest() {
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0300', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
-      await abilityDelegator.executeShellCommand('aa start -A "action.aacommandimplicitstarttest.home"').then(data => {
+      let cmd = 'aa start -A "action.aacommandimplicitstarttest.home"';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd).then(data => {
         res = data.stdResult;
       }).catch((err:BusinessError) => {
         hilog.info(0x0000, 'debuggabletest', '%{public}s',
@@ -125,7 +140,12 @@ export default function aaImplicitStartTest() {
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0400', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
-      await abilityDelegator.executeShellCommand('aa start -e "entity.aacommandimplicitstarttest.home"').then(data => {
+      let cmd = 'aa start -e "entity.aacommandimplicitstarttest.home"';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd).then(data => {
         res = data.stdResult;
       }).catch((err:BusinessError) => {
         hilog.info(0x0000, 'debuggabletest', '%{public}s',
@@ -145,7 +165,12 @@ export default function aaImplicitStartTest() {
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0500', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
-      await abilityDelegator.executeShellCommand('aa start -h').then(data => {
+      let cmd = 'aa start -h';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd).then(data => {
         res = data.stdResult;
       }).catch((err:BusinessError) => {
         hilog.info(0x0000, 'debuggabletest', '%{public}s',
@@ -173,7 +198,12 @@ export default function aaImplicitStartTest() {
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0600', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
-      await abilityDelegator.executeShellCommand('aa start -U')
+      let cmd = 'aa start -U';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
           hilog.info(0x0000, 'debuggabletest', '%{public}s',
             'SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0600 data is: ' + JSON.stringify(data));
@@ -197,7 +227,12 @@ export default function aaImplicitStartTest() {
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0700', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
-      await abilityDelegator.executeShellCommand('aa start -A')
+      let cmd = 'aa start -A';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
           hilog.info(0x0000, 'debuggabletest', '%{public}s',
             'SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0700 data is: ' + JSON.stringify(data));
@@ -222,7 +257,12 @@ export default function aaImplicitStartTest() {
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0800', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
-      await abilityDelegator.executeShellCommand('aa start -e')
+      let cmd = 'aa start -e';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
           hilog.info(0x0000, 'debuggabletest', '%{public}s',
             'SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0800 data is: ' + JSON.stringify(data));
@@ -247,7 +287,12 @@ export default function aaImplicitStartTest() {
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0900', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
-      await abilityDelegator.executeShellCommand('aa start -t')
+      let cmd = 'aa start -t';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
           hilog.info(0x0000, 'debuggabletest', '%{public}s',
             'SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0900 data is: ' + JSON.stringify(data));
@@ -271,7 +316,12 @@ export default function aaImplicitStartTest() {
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1000', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
-      await abilityDelegator.executeShellCommand('aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pi kinteger 13 --pb kbool1 true --pb kbool2 f --ps kstring1 value1 --ps string2 value2 --psn knullstring1 --psn knullstring2').then(data => {
+      let cmd = 'aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pi kinteger 13 --pb kbool1 true --pb kbool2 f --ps kstring1 value1 --ps string2 value2 --psn knullstring1 --psn knullstring2';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd).then(data => {
         res = data.stdResult;
       }).catch((err:BusinessError) => {
         hilog.info(0x0000, 'debuggabletest', '%{public}s',
@@ -291,7 +341,12 @@ export default function aaImplicitStartTest() {
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1100', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
-      await abilityDelegator.executeShellCommand('aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pi')
+      let cmd = 'aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pi';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
           hilog.info(0x0000, 'debuggabletest', '%{public}s',
             'SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1100 data is: ' + JSON.stringify(data));
@@ -315,7 +370,12 @@ export default function aaImplicitStartTest() {
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1200', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
-      await abilityDelegator.executeShellCommand('aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pi kinteger')
+      let cmd = 'aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pi kinteger';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
           hilog.info(0x0000, 'debuggabletest', '%{public}s',
             'SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1200 data is: ' + JSON.stringify(data));
@@ -340,7 +400,12 @@ export default function aaImplicitStartTest() {
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1300', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
-      await abilityDelegator.executeShellCommand('aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pi kinteger invalidnum')
+      let cmd = 'aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pi kinteger invalidnum';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
           hilog.info(0x0000, 'debuggabletest', '%{public}s',
             'SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1300 data is: ' + JSON.stringify(data));
@@ -364,7 +429,12 @@ export default function aaImplicitStartTest() {
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1400', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
-      await abilityDelegator.executeShellCommand('aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb')
+      let cmd = 'aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
           hilog.info(0x0000, 'debuggabletest', '%{public}s',
             'SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1400 data is: ' + JSON.stringify(data));
@@ -388,7 +458,12 @@ export default function aaImplicitStartTest() {
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1500', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
-      await abilityDelegator.executeShellCommand('aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbbol')
+      let cmd = 'aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbbol';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
           hilog.info(0x0000, 'debuggabletest', '%{public}s',
             'SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1500 data is: ' + JSON.stringify(data));
@@ -413,7 +488,12 @@ export default function aaImplicitStartTest() {
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1600', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
-      await abilityDelegator.executeShellCommand('aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pi kbool invalidbool')
+      let cmd = 'aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pi kbool invalidbool';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
           hilog.info(0x0000, 'debuggabletest', '%{public}s',
             'SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1600 data is: ' + JSON.stringify(data));
@@ -438,7 +518,12 @@ export default function aaImplicitStartTest() {
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1700', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
-      await abilityDelegator.executeShellCommand('aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --ps')
+      let cmd = 'aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --ps';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
           hilog.info(0x0000, 'debuggabletest', '%{public}s',
             'SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1700 data is: ' + JSON.stringify(data));
@@ -463,7 +548,12 @@ export default function aaImplicitStartTest() {
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1800', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
-      await abilityDelegator.executeShellCommand('aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --ps kstring')
+      let cmd = 'aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --ps kstring';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
           hilog.info(0x0000, 'debuggabletest', '%{public}s',
             'SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1800 data is: ' + JSON.stringify(data));
@@ -488,7 +578,12 @@ export default function aaImplicitStartTest() {
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1900', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
-      await abilityDelegator.executeShellCommand('aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --ps kstring value1 value2')
+      let cmd = 'aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --ps kstring value1 value2';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
           hilog.info(0x0000, 'debuggabletest', '%{public}s',
             'SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1900 data is: ' + JSON.stringify(data));
@@ -513,7 +608,12 @@ export default function aaImplicitStartTest() {
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2000', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
-      await abilityDelegator.executeShellCommand('aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --psn knullstring value')
+      let cmd = 'aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --psn knullstring value';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
           hilog.info(0x0000, 'debuggabletest', '%{public}s',
             'SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2000 data is: ' + JSON.stringify(data));
@@ -538,7 +638,12 @@ export default function aaImplicitStartTest() {
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2100', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
-      await abilityDelegator.executeShellCommand('aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pi kinteger 100 200')
+      let cmd = 'aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pi kinteger 100 200';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
           hilog.info(0x0000, 'debuggabletest', '%{public}s',
             'SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2100 data is: ' + JSON.stringify(data));
@@ -562,7 +667,12 @@ export default function aaImplicitStartTest() {
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2200', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
-      await abilityDelegator.executeShellCommand('aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool true false')
+      let cmd = 'aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool true false';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
           hilog.info(0x0000, 'debuggabletest', '%{public}s',
             'SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2200 data is: ' + JSON.stringify(data));
@@ -586,7 +696,12 @@ export default function aaImplicitStartTest() {
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2300', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
-      await abilityDelegator.executeShellCommand('aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool TRUE')
+      let cmd = 'aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool TRUE';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
           res = data.stdResult;
         }).catch((err:BusinessError) => {
@@ -609,7 +724,12 @@ export default function aaImplicitStartTest() {
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2400', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
-      await abilityDelegator.executeShellCommand('aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool T')
+      let cmd = 'aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool T';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
           res = data.stdResult;
         }).catch((err:BusinessError) => {
@@ -631,7 +751,12 @@ export default function aaImplicitStartTest() {
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2500', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
-      await abilityDelegator.executeShellCommand('aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool True')
+      let cmd = 'aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool True';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
           res = data.stdResult;
         }).catch((err:BusinessError) => {
@@ -653,7 +778,12 @@ export default function aaImplicitStartTest() {
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2600', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
-      await abilityDelegator.executeShellCommand('aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool FALSE')
+      let cmd = 'aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool FALSE';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
           res = data.stdResult;
         }).catch((err:BusinessError) => {
@@ -675,7 +805,12 @@ export default function aaImplicitStartTest() {
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2700', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
-      await abilityDelegator.executeShellCommand('aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool False')
+      let cmd = 'aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool False';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
           res = data.stdResult;
         }).catch((err:BusinessError) => {
@@ -697,7 +832,12 @@ export default function aaImplicitStartTest() {
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2800', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
-      await abilityDelegator.executeShellCommand('aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool false')
+      let cmd = 'aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool false';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
           res = data.stdResult;
         }).catch((err:BusinessError) => {
@@ -719,7 +859,12 @@ export default function aaImplicitStartTest() {
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2900', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
-      await abilityDelegator.executeShellCommand('aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool F')
+      let cmd = 'aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool F';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
           res = data.stdResult;
         }).catch((err:BusinessError) => {
@@ -741,7 +886,12 @@ export default function aaImplicitStartTest() {
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_3000', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
-      await abilityDelegator.executeShellCommand('aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool f')
+      let cmd = 'aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool f';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
           res = data.stdResult;
         }).catch((err:BusinessError) => {
@@ -763,7 +913,12 @@ export default function aaImplicitStartTest() {
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_3100', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
-      await abilityDelegator.executeShellCommand('aa start -b com.example.aacommandimplicitstarttest -a UnexportedAbility')
+      let cmd = 'aa start -b com.example.aacommandimplicitstarttest -a UnexportedAbility';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
           res = data.stdResult;
         }).catch((err:BusinessError) => {
@@ -784,7 +939,12 @@ export default function aaImplicitStartTest() {
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_3200', Level.LEVEL0, async (done: Function) => {
       let res:string = "";
-      await abilityDelegator.executeShellCommand('aa start -b com.example.aacommandimplicitstarttest -a EntryAbility -s timeout 3000')
+      let cmd = 'aa start -b com.example.aacommandimplicitstarttest -a EntryAbility -s timeout 3000';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
           res = data.stdResult;
         }).catch((err:BusinessError) => {

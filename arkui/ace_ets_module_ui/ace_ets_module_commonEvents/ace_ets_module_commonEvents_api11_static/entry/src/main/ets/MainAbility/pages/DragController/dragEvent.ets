@@ -88,7 +88,7 @@ struct DragExample {
           .width('25%')
           .height(35)
           .fontSize(16)
-          .key('apple')
+          .key('dragEvent_apple')
           .textAlign(TextAlign.Center)
           .backgroundColor(Color.Blue)
           .visibility(this.appleVisible)
@@ -190,7 +190,7 @@ struct DragExample {
               .textAlign(TextAlign.Center)
               .backgroundColor(Color.Blue)
           }
-          .key('listItem')
+          .key('dragEvent_listItem')
           .onDragStart((event: DragEvent, extraParams?: String | undefined): CustomBuilder => {
             console.log('ListItem onDragStarts, ' + extraParams)
             this.bool1 = true

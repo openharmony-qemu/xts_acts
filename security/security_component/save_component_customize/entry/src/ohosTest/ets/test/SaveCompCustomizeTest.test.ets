@@ -584,7 +584,7 @@ export default function saveCompCustomizeTest() {
     /**
      * @tc.name   Test_Security_Button_Save_Customize_1100
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_Customize_1100
-     * @tc.desc   Test SaveComponent attr SymbolFontWeight set empty string validated and Authorization is successful
+     * @tc.desc   Test SaveComponent attr SymbolIconColor set empty array and SymbolFontWeight set empty string validated and Authorization is successful
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -599,6 +599,7 @@ export default function saveCompCustomizeTest() {
           data: {
             'cuIcon': customIcon,
             'cuText': customText,
+            'symbolIconColor': [],
             'symbolFontWeight': ''
           }
         }
@@ -614,6 +615,7 @@ export default function saveCompCustomizeTest() {
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('keySave');
       let obj : ESObject = JSON.parse(strJson);
+      expect(obj.$attrs.symbolIconColor).assertEqual('#FFFFFFFF');
       expect(obj.$attrs.SymbolFontWeight).assertEqual('FontWeight.Normal');
       await Utils.sleep(1000);
       sucCallback(TCNAME, done);

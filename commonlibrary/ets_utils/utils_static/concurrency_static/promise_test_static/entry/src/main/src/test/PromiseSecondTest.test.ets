@@ -204,7 +204,7 @@ export default function PromiseSecondTest() {
             const innerPromise = Promise.reject(new Error('Failed'));
             arr.push(2);
             innerPromise
-              .then((result: string):string => {
+              .then((result: string):void => {
                 arr.push(6);
                 resolve(result);
               })
@@ -737,7 +737,7 @@ export default function PromiseSecondTest() {
                 innerReject(new Error('Inner promise is rejected!'));
               });
               innerPromise
-                .then((value:number):number => {
+                .then((value:number):void => {
                   arr.push(6);
                   resolve(value);
                 })
@@ -796,7 +796,7 @@ export default function PromiseSecondTest() {
                 innerReject(new Error('Inner promise is rejected!'));
               });
               innerPromise
-                .then((value:number):number => {
+                .then((value:number):void => {
                   arr.push(22);
                   resolve(value);
                 })
@@ -953,7 +953,7 @@ export default function PromiseSecondTest() {
                 innerReject(new Error('Inner promise is rejected!'));
               });
               innerPromise
-                .then((value:number):number => {
+                .then((value:number):void => {
                   arr.push(12);
                   resolve(value);
                 })

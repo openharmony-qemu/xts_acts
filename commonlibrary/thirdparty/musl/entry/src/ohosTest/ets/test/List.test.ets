@@ -128,6 +128,12 @@ import wcharNdk1Test from './WcharNdk1.test';
 import timeNdk1Test from './TimeNdk1.test';
 import timexNdk1Test from './TimexNdk1.test';
 import unistdNdk1Test from './UnistdNdk1.test';
+import qsortrNdkTest from './Qsortrndk.test';
+import wcstoflNdkTest from './Wcstoflndk.test';
+import wcstoldlNdkTest from './Wcstoldlndk.test';
+import openExtNdkTest from './OpenExtNdkTest.test';
+import fdeltchkNdkTest from './Fdeltchkndk.test';
+import explicitbzerochkNdkTest from './Explicitbzerochkndk.test';
 
 export default function testsuite() {
   mathNdkTest();
@@ -233,4 +239,10 @@ export default function testsuite() {
   termiosNdk1Test();
   threadsNdk1Test();
   muslResourceNdk1Test();
+  qsortrNdkTest();
+  wcstoflNdkTest();
+  wcstoldlNdkTest();
+  openExtNdkTest();
+  fdeltchkNdkTest();
+  explicitbzerochkNdkTest();
 }

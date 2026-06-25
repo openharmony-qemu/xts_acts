@@ -137,7 +137,7 @@ class Obj118 {
     }
 }
 
-export default function ArrayFindTest() {
+export default function ArrayFindTest(): void {
   describe('ArrayFindTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

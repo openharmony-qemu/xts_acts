@@ -38,7 +38,12 @@ export default function AppAccountAuthenticatorStage2StageStatic(): void {
     beforeAll(async (done: () => void): Promise<void> => {
       hilog.info(0x0000, tag, "====>AuthenticatorStage2Stage beforeAll start====");
       let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-      await abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.accounttstest.static");
+      let cmd = "aa start -a EntryAbility -b com.example.accounttstest.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd);
       await Utils.msSleep(2000);
       let wantInfo: Want = {
         deviceId: '',

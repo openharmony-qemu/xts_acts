@@ -22,7 +22,7 @@ export async function sleep(time: int): Promise<int> {
     }, time);
   });
 }
-export default function builtinsDoubleFourthPrototypebTest() {
+export default function builtinsDoubleFourthPrototypebTest(): void {
   describe('builtinsDoubleFourthPrototypebTest', ():void => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(():void => {

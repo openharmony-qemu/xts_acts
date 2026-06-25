@@ -38,7 +38,7 @@ import StringTrimEndTest from './String_trimEnd/StringTrimEndTest.test';
 import StringTrimStartTest from './String_trimStart/StringTrimStartTest.test';
 import String_ValueOf from './String_ValueOf/StringValueOfTest.test';
 
-export default function testsuite() {
+export default function testsuite(): void {
   StringLastIndexOfBasicTest();
   StringLocaleCompareBasicTest();
   StringMatchBasicTest();

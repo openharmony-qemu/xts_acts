@@ -36,7 +36,7 @@ export class PhotoPickerResult {
   public edgeEffect: EdgeEffect = EdgeEffect.Spring;
   public mimeType: photoAccessHelper.PhotoViewMIMETypes = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE;
   public mimeTypeFilter: photoAccessHelper.MimeTypeFilter = { mimeTypeArray:[] };
-  public singleSelectionMode: photoAccessHelper.SingleSelectionMode = 
+  public singleSelectionMode: photoAccessHelper.SingleSelectionMode =
     photoAccessHelper.SingleSelectionMode.BROWSER_AND_SELECT_MODE;
   public preselectedUris: Array<string> = [];
   public movingPhotoBadgeStates?: number[];
@@ -47,4 +47,6 @@ export class PhotoPickerResult {
   public contextRecoveryInfo?: photoAccessHelper.ContextRecoveryInfo;
   public photoUris?: Array<string>;
   public completedResult?: CompletedResult;
+  public gridMargin?: Margin;
+  public photoBrowserMargin?: Margin;
 }

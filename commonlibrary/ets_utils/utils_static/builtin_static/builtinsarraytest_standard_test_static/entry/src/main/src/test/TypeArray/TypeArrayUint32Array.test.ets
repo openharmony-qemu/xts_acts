@@ -21,7 +21,7 @@ interface GeneratedObjectLiteralInterface_1 {
   values: Uint32Array;
 }
 
-export default function typeArrayUint32ArrayTest() {
+export default function typeArrayUint32ArrayTest(): void {
   describe('TypeArrayUint32ArrayTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

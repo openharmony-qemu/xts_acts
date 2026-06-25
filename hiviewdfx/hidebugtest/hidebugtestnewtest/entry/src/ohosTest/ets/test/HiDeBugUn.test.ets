@@ -18,6 +18,10 @@ import hidebug from '@ohos.hidebug'
 import featureAbility from '@ohos.ability.featureAbility';
 import fileIo from '@ohos.file.fs';
 import fs from '@ohos.file.fs';
+@Concurrent
+export function asyncSleep(time: number): Promise<Object> {
+  return new Promise(resolve => setTimeout(resolve, time));
+}
 export default function HidebugTest() {
   describe('HidebugTest', () => {
     /**
@@ -100,7 +104,8 @@ export default function HidebugTest() {
     it("HidebugTest_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info("HidebugTest_0002 start");
       try{
-        hidebug.dumpHeapData(undefined);
+        await hidebug.dumpHeapData(undefined);
+        await asyncSleep(3000);
         console.info("====> HidebugTest_0002 dumpHeapData undefined");
         done();
       }catch(err){
@@ -121,7 +126,8 @@ export default function HidebugTest() {
     it("HidebugTest_0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info("HidebugTest_0018 start");
       try{
-        hidebug.dumpHeapData(null);
+        await hidebug.dumpHeapData(null);
+        await asyncSleep(3000);
         console.info("====> HidebugTest_0018 dumpHeapData null end");
         done();
       }catch(err){
@@ -142,7 +148,8 @@ export default function HidebugTest() {
     it("HidebugTest_0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info("HidebugTest_0019 start");
       try{
-        hidebug.dumpHeapData("");
+        await hidebug.dumpHeapData("");
+        await asyncSleep(3000);
         console.info("====> HidebugTest_0019 dumpHeapData empty end");
         done();
       }catch(err){

@@ -60,7 +60,7 @@ export default function setDataLoadParamsNullAndUndefinedTest() {
       await CommonFunc.sleep(1000);
       // 触发拖拽到null测试区域
       let image1 = await driver.findComponent(ON.id('image1'));
-      let button = await driver.findComponent(ON.id('testNull'));
+      let button = await driver.findComponent(ON.id('setDataLoadParamsNullAndUndefined_testNull'));
       await image1.dragTo(button);
       await CommonFunc.sleep(1000);
       console.info('[SUB_ARKUI_DRAGEVENT_SETDATALOADPARAMS_PARAM_001] setDataLoadParamsNullResult: ' + AppStorage.get('setDataLoadParamsNullResult'));
@@ -83,7 +83,7 @@ export default function setDataLoadParamsNullAndUndefinedTest() {
       await CommonFunc.sleep(1000);
       // 触发拖拽到undefined测试区域
       let image1 = await driver.findComponent(ON.id('image1'));
-      let button = await driver.findComponent(ON.id('testUndefined'));
+      let button = await driver.findComponent(ON.id('setDataLoadParamsNullAndUndefined_testUndefined'));
       await image1.dragTo(button);
       await CommonFunc.sleep(1000);
       console.info('[SUB_ARKUI_DRAGEVENT_SETDATALOADPARAMS_PARAM_002] setDataLoadParamsUndefinedResult: ' + AppStorage.get('setDataLoadParamsUndefinedResult'));

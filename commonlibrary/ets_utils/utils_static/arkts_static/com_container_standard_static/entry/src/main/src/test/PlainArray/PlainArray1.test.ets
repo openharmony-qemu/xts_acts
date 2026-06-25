@@ -38,7 +38,7 @@ class InfoC {
   }
 }
 
-export default function PlainArrayTest1() {
+export default function PlainArrayTest1(): void {
   describe("PlainArrayTest1", (): void => {
     afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)

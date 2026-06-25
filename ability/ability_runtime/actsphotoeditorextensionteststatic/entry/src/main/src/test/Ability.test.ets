@@ -106,7 +106,12 @@ export default function abilityTest() {
             let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
             hilog.info(DOMAIN_NUMBER, TAG, 'beforeAll AbilityDelegator');
             // 1.2 need to subscribe first, then publish.
-            abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actsphotoeditorextensiontest.static")
+            let cmd = "aa start -a EntryAbility -b com.example.actsphotoeditorextensiontest.static";
+            let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+            if(user !== undefined){
+                cmd += ' -u ' + user;
+            }
+            abilityDelegator.executeShellCommand(cmd)
             await Utils.msSleep(4000);
 
             setTimeout(async () => {

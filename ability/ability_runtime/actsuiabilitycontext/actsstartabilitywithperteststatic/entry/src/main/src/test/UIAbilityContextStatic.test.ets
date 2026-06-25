@@ -47,7 +47,12 @@ export default function UIAbilityContextStatic() {
       } catch (err) {
         console.error('findComponent failed: ' + JSON.stringify(err));
       }
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.acts.startabilityforresulttest2.static")
+      let cmd = "aa start -a EntryAbility -b com.acts.startabilityforresulttest2.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(2000);
       hilog.info(domain, tag, 'start success');
       context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext

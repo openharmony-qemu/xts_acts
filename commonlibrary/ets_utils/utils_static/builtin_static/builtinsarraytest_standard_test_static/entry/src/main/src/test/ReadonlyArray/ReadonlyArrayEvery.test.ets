@@ -20,7 +20,7 @@ interface TestA {
   b?: number
 }
 
-export default function builtinsReadonlyArrayEveryTest() {
+export default function builtinsReadonlyArrayEveryTest(): void {
   describe('builtinsReadonlyArrayEveryTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

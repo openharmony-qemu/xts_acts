@@ -16,6 +16,7 @@
 import { image } from '@kit.ImageKit';
 import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium';
 import { LOG_TAG } from '../common';
+import { common } from '@kit.AbilityKit';
 
 const TAG = LOG_TAG + 'CreateAuxiliaryPictureTestSupp';
 
@@ -23,6 +24,8 @@ const TAG = LOG_TAG + 'CreateAuxiliaryPictureTestSupp';
 
 export default function CreateAuxiliaryPictureTest() {
   describe('CreateAuxiliaryPictureTest', () => {
+    const testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+    const resourceMgr = testContext.resourceManager;
 
     beforeAll(async () => {
       AppStorage.setOrCreate('empty_value','')
@@ -899,6 +902,39 @@ export default function CreateAuxiliaryPictureTest() {
       } catch (error) {
         console.error(TAG, testName, `failed; error: ${error},${error?.code}`);
         expect(error.code).assertEqual('401');
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_0100
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_0100
+     * @tc.desc   枚举覆盖-LHDR_GAINMAP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_0100';
+      const path = 'AllAuxiliaryPictures.jpg';
+      const rawFile = await resourceMgr.getRawFileContent(path);
+      let auxBuffer: ArrayBuffer = rawFile.buffer as ArrayBuffer;
+      let auxSize: Size = {
+        height: 180,
+        width: 240
+      };
+      let auxType: image.AuxiliaryPictureType = image.AuxiliaryPictureType.LHDR_GAINMAP;
+      try {
+        console.info(TAG, testName, `Start`);
+        let auxPictureObj = image.createAuxiliaryPicture(auxBuffer,auxSize,auxType);
+        let type: image.AuxiliaryPictureType = auxPictureObj.getType();
+        console.info(TAG, testName, `CreateAuxiliaryPicture succeeded this.Aux_picture.type ${type}`);
+        expect(auxPictureObj.getType()).assertEqual(10);
+        auxPictureObj.release();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `failed; error: ${error},${error?.code}`);
+        expect().assertFail();
         done();
       }
     });

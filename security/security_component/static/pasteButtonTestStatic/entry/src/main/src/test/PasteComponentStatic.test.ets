@@ -1551,6 +1551,7 @@ export default function pasteComponentStaticTest() {
       console.info('====>[Test_Security_Button_StaticPaste_1500] START====');
       await UtilsTest.msSleep(1000);
       let positX: String = '0';
+      let button_width: String = '0';
       gContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext;
       try {
         let windowClass: window.Window | undefined = await window.getLastWindow(gContext);
@@ -1560,6 +1561,8 @@ export default function pasteComponentStaticTest() {
           let window_width: Int = properties.windowRect.width;
           console.info('====>[Test_Security_Button_StaticPaste_1500] properties.windowRect.width is: ' + window_width);
           positX = `-${Math.trunc(window_width / 2).toFixed(2)}px`;
+          button_width = `${Math.trunc(window_width / 2).toFixed(2)}px`;
+          console.info('====>[Test_Security_Button_StaticPaste_1500] button_width is: ' + button_width);
         }
       } catch (err) {
         err = err as BusinessError;
@@ -1588,6 +1591,7 @@ export default function pasteComponentStaticTest() {
           'borderWid': 0,
           'borderCol': '#ffffffff',
           'borderRad': 0,
+          'buWidth': button_width,
           'left': 12,
           'right': 12,
           'top': 4,

@@ -1638,9 +1638,9 @@ export default function ImageReceiverTest() {
             let ret = false;
             if (typeof result != 'number') {
                 console.info(`${TAG} waitForCondition result is ${JSON.stringify(result)}`);
-                ret = result.imageInfo!.format == 35 &&
-                      result.imageInfo!.strideAlignedRet == true &&
-                      isValidColorSpace(result.imageInfo!.colorSpace);
+                ret = (result.imageInfo!.format == 35) &&
+                    result.imageInfo!.strideAlignedRet == true &&
+                    isValidColorSpace(result.imageInfo!.colorSpace);
             } else {
                 console.info(`${TAG} result is number ${result}`);
             }
@@ -1688,9 +1688,9 @@ export default function ImageReceiverTest() {
             let ret = false;
             if (typeof result != 'number') {
                 console.info(`${TAG} waitForCondition result is ${JSON.stringify(result)}`);
-                ret = result.imageInfo!.format == 36 &&
-                      result.imageInfo!.strideAlignedRet == true &&
-                      isValidColorSpace(result.imageInfo!.colorSpace);
+                ret = (result.imageInfo!.format == 36) &&
+                    result.imageInfo!.strideAlignedRet == true &&
+                    isValidColorSpace(result.imageInfo!.colorSpace);
             } else {
                 console.info(`${TAG} result is number ${result}`);
             }

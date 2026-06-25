@@ -13,45 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Component,
-  CustomSpan,
-  CustomSpanMeasureInfo,
-  CustomSpanMetrics,
-  DrawContext,
-  CustomSpanDrawInfo,
-  TextController,
-  InputType,
-  TextAreaType,
-  Resource,
-  $r,
-  TextStyle,
-  Column,
-  Margin,
-  Text,
-  TextInput,
-  CopyOptions,
-  EditableTextOnChangeCallback,
-  PreviewText,
-  TextChangeOptions,
-  MutableStyledString,
-  StyledStringKey,
-  Color,
-  FontStyle,
-  FontWeight,
-  StyledString
-} from '@ohos.arkui.component'
-import {
-  State,
-} from '@ohos.arkui.stateManagement'
-import { UIContext } from "@ohos.arkui.UIContext";
+import { Entry, Component, CustomSpan, CustomSpanMeasureInfo, CustomSpanMetrics, DrawContext, CustomSpanDrawInfo, TextController, InputType, TextAreaType, Resource, $r, TextStyle, Column, Margin, Text, TextInput, CopyOptions, EditableTextOnChangeCallback, PreviewText, TextChangeOptions, MutableStyledString, StyledStringKey, Color, FontStyle, FontWeight, StyledString } from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
+import { UIContext } from '@ohos.arkui.UIContext';
 import drawing from '@ohos.graphics.drawing';
-import image from '@ohos.multimedia.image'
+import image from '@ohos.multimedia.image';
 import { LengthMetrics } from '@ohos.arkui.node';
-import drawing from '@ohos.graphics.drawing';
-import image from '@ohos.multimedia.image'
-import { AppStorage } from '@ohos.arkui.stateManagement';
 export class MyCustomSpan extends CustomSpan {
 
   constructor(word: string, width: number, height: number) {

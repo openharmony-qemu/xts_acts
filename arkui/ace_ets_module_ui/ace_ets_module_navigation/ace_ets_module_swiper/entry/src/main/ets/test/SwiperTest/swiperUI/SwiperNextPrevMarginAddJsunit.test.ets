@@ -1460,8 +1460,13 @@ export default function SwiperNextPrevMarginAddJsunit() {
     let prevMargin: string =   obj.$attrs.prevMargin;
     expect(nextMargin).assertEqual("30.00vp");
     expect(prevMargin).assertEqual("30.00vp");
+    console.info('SwiperNextPrevMarginAddJsunit_0083 left: ' + left + ', swiperLeft: ' + swiperLeft);
+    console.info('SwiperNextPrevMarginAddJsunit_0083 right: ' + right + ', swiperRight: ' + swiperRight);
+    console.info('SwiperNextPrevMarginAddJsunit_0083 vp2px(3 + 30): ' + vp2px(3 + 30));
+    console.info('SwiperNextPrevMarginAddJsunit_0083 vp2px(3): ' + vp2px(3) + ', vp2px(30): ' + vp2px(30));
 
-    expect(Math.floor(Math.abs((swiperRight - swiperLeft)- (right - left + vp2px(2*3 + 2 *30)))) <= 1).assertTrue();
+    expect(Math.floor(Math.abs(left - (swiperLeft + vp2px(3 + 30)))) <= 1).assertTrue();
+    expect(Math.floor(Math.abs(swiperRight - (right + vp2px(3 + 30)))) <= 1).assertTrue();
     done();
   });
 

@@ -43,7 +43,12 @@ export default function WebEngineVersion() {
         console.log("BusinessError  end")
       });
       await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.open.harmony.com.open.harmony.logdottingtentest.static")
+      let cmd = "aa start -a EntryAbility -b com.open.harmony.com.open.harmony.logdottingtentest.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(2000)
       console.log("beforeAll end,%s", "Succeed!")
     });

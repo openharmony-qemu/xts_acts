@@ -24,6 +24,7 @@ group("hiviewdfxtestacts") {
       "faultlogtest/faultloggerndktest:ActsFaultExTest",
       "faultlogtest/faultloggerndkteststatic:ActsFaultExStaticTest",
       "hiappeventtest/hiappeventapmtest:ActsHiAppEventJsTest",
+
       "hiappeventtest/hiappeventjstest:ActsHiAppeventTest",
       "hiappeventtest/hiappeventndktest:ActsHiappeventNdkTest",
       "hiappeventtest/hiappeventpamtest:ActsHiAppEventPamTest",
@@ -56,6 +57,7 @@ group("hiviewdfxtestacts") {
       "hiview/faultlogger/faultloggerjs:faultloggerjs_test",
       "hiRetrievaltest:ActsHiRetrievalTest",
       "errormangerteststatic:ActsErrormangerStaticTest",
+      "hiRetrievalteststatic:ActsHiRetrievalStaticTest",
     ]
   }
 }

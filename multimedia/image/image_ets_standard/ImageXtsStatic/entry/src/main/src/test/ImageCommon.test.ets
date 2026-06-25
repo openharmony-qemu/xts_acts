@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,7 +27,7 @@ import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import { common } from '@kit.AbilityKit';
 
-export const LOG_TAG = '[PhotoAccessXts].';
+export const LOG_TAG: string = '[PhotoAccessXts].';
 
 const delegator = abilityDelegatorRegistry.getAbilityDelegator();
 const COMMON_WAIT_DURATION: number = 500;

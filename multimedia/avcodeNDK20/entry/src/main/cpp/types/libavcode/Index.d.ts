@@ -984,3 +984,67 @@ export const EnumOHScalingMode2: () => number;
 export const EnumOHEnableSkipSamples1: () => number;
 
 export const EnumOHEnableSkipSamples2: () => number;
+
+export const AudioEncoderSetMaxInputBufferSize_Zero: () => number;
+
+export const AudioEncoderSetMaxInputBufferSize_10M: () => number;
+
+export const AudioEncoderSetPTSMode_Default: () => number;
+
+export const AudioEncoderSetPTSMode_ZeroStart: () => number;
+
+export const AudioEncoderSetPTSMode_FirstInputStart: () => number;
+
+export const AudioEncoderSetPTSMode_InvalidValue3: () => number;
+
+export const AudioEncoderSetPTSMode_Negative: () => number;
+
+export const AudioEncoderSetSampleConvert_Enable: () => number;
+
+export const AudioEncoderSetSampleConvert_Disable: () => number;
+
+export const AudioEncoderSetSampleConvert_Default: () => number;
+
+export const AudioEncoderSetSampleConvert_Invalid2: () => number;
+
+export const AudioEncoderSetSampleConvert_Negative: () => number;
+
+export const AudioEncoderSetSampleConvert_WithUnsupportedFormat: () => number;
+
+export const AudioEncoderSetSampleConvert_WithSupportedFormat: () => number;
+
+export const AudioEncoderFLAC_SetMaxInputBufferSize: () => number;
+
+export const AudioEncoderFLAC_SetPTSMode: () => number;
+
+export const AudioEncoderFLAC_SetSampleConvert: () => number;
+
+export const AudioEncoderMP3_SetMaxInputBufferSize: () => number;
+
+export const AudioEncoderMP3_SetPTSMode: () => number;
+
+export const AudioEncoderMP3_SetSampleConvert: () => number;
+
+export const AudioEncoderOPUS_SetMaxInputBufferSize: () => number;
+
+export const AudioEncoderOPUS_SetPTSMode: () => number;
+
+export const AudioEncoderOPUS_SetSampleConvert: () => number;
+
+export const AudioEncoderAMRNB_SetMaxInputBufferSize: () => number;
+
+export const AudioEncoderAMRNB_SetPTSMode: () => number;
+
+export const AudioEncoderAMRNB_SetSampleConvert: () => number;
+
+export const AudioEncoderG711mu_SetMaxInputBufferSize: () => number;
+
+export const AudioEncoderG711mu_SetPTSMode: () => number;
+
+export const AudioEncoderG711mu_SetSampleConvert: () => number;
+
+export const AudioEncoderAMRWB_SetMaxInputBufferSize: () => number;
+
+export const AudioEncoderAMRWB_SetPTSMode: () => number;
+
+export const AudioEncoderAMRWB_SetSampleConvert: () => number;

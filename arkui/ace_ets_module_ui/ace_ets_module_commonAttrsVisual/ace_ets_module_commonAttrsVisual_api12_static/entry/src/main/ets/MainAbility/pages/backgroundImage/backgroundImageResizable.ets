@@ -13,32 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Component,
-  $r,
-  Column,
-  ColumnOptions,
-  Text,
-  Color,
-  Image,
-  SizeOptions,
-  ImageSize,
-  Position,
-  Alignment,
-  Row,
-  Padding,
-  ThemeColorMode,
-  BlurStyle,
-  ImageSize,
-  AdaptiveColor,
-} from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  PropRef,
-} from '@ohos.arkui.stateManagement';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { Entry, Component, $r, Column, ColumnOptions, Text, Color, Image, SizeOptions, ImageSize, Position, Alignment, Row, Padding, ThemeColorMode, BlurStyle, AdaptiveColor } from '@ohos.arkui.component';
+import { State, Link, PropRef, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 @Entry

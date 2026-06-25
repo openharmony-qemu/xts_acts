@@ -1,7 +1,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-export default function builtinsJsonSerializationStringifyInterfaceTest() {
+export default function builtinsJsonSerializationStringifyInterfaceTest(): void {
   describe('BuiltinsJsonSerializationStringifyInterfaceTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

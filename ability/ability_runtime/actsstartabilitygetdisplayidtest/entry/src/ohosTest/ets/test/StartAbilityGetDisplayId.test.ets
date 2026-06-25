@@ -68,7 +68,12 @@ export default function StartAbilityGetDisplayIdTest() {
 
   describe('ActsAbilityTest', () => {
     afterEach(async (done:Function) => {
-      await abilityDelegator.executeShellCommand('aa start -b com.ohos.startabilitygetdisplayidtest -a TestAbility');
+      let cmd = 'aa start -b com.ohos.startabilitygetdisplayidtest -a TestAbility';
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd);
       done();
     });
 

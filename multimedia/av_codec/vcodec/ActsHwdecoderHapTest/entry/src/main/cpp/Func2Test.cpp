@@ -1464,5 +1464,146 @@ int VIDEO_CAPABILITY_CONFIG_0030()
     }
     return SUCCESS_CODE;
 }
+/**
+ * @tc.number    : VIDEO_DECODE_ORDER_0100
+ * @tc.name      : VIDEO_DECODE_ORDER_0100
+ * @tc.desc      : function test
+ */
+int  VIDEO_DECODE_ORDER_0100()
+{
+    if (cap != nullptr) {
+        if (OH_AVCapability_IsFeatureSupported(cap, VIDEO_DECODER_OUTPUT_IN_DECODING_ORDER)) {
+            auto vDecSample = make_shared<VDecAPI11Sample>();
+            vDecSample->inpDir = INP_DIR_IPB_264_8BIT;
+            vDecSample->defaultWidth = PORTRAIT_WIDTH;
+            vDecSample->defaultHeight = PORTRAIT_HEIGHT;
+            vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
+            vDecSample->isChecklowLatency = true;
+            vDecSample->enableOrderDecode = true;
+            ASSERT_EQ(AV_ERR_OK, vDecSample->RunVideoDec(g_codecName));
+            vDecSample->WaitForEOS();
+            ASSERT_EQ(AV_ERR_OK, vDecSample->errCount);
+        } else {
+            auto vDecSample = make_shared<VDecAPI11Sample>();
+            vDecSample->enableOrderDecode = true;
+            ASSERT_EQ(AV_ERR_INVALID_VAL, vDecSample->RunVideoDec(g_codecName));
+        }
+    }
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.number    : VIDEO_DECODE_ORDER_0200
+ * @tc.name      : VIDEO_DECODE_ORDER_0200
+ * @tc.desc      : function test
+ */
+int  VIDEO_DECODE_ORDER_0200()
+{
+    if (cap_hevc != nullptr) {
+        if (OH_AVCapability_IsFeatureSupported(cap_hevc, VIDEO_DECODER_OUTPUT_IN_DECODING_ORDER)) {
+            auto vDecSample = make_shared<VDecAPI11Sample>();
+            vDecSample->inpDir = INP_DIR_IPB_265_8BIT;
+            vDecSample->defaultWidth = PORTRAIT_WIDTH;
+            vDecSample->defaultHeight = PORTRAIT_HEIGHT;
+            vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
+            vDecSample->isChecklowLatency = true;
+            vDecSample->enableOrderDecode = true;
+            ASSERT_EQ(AV_ERR_OK, vDecSample->RunVideoDec(g_codecNameHEVC));
+            vDecSample->WaitForEOS();
+            ASSERT_EQ(AV_ERR_OK, vDecSample->errCount);
+        } else {
+            auto vDecSample = make_shared<VDecAPI11Sample>();
+            vDecSample->enableOrderDecode = true;
+            ASSERT_EQ(AV_ERR_INVALID_VAL, vDecSample->RunVideoDec(g_codecNameHEVC));
+        }
+    }
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.number    : VIDEO_DECODE_ORDER_0300
+ * @tc.name      : VIDEO_DECODE_ORDER_0300
+ * @tc.desc      : function test
+ */
+int  VIDEO_DECODE_ORDER_0300()
+{
+    if (cap_hevc != nullptr && !access("/system/lib64/media/", 0)) {
+        if (OH_AVCapability_IsFeatureSupported(cap_hevc, VIDEO_DECODER_OUTPUT_IN_DECODING_ORDER)) {
+            auto vDecSample = make_shared<VDecAPI11Sample>();
+            vDecSample->inpDir = INP_DIR_IPB_265_10BIT;
+            vDecSample->defaultWidth = PORTRAIT_WIDTH;
+            vDecSample->defaultHeight = PORTRAIT_HEIGHT;
+            vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
+            vDecSample->isChecklowLatency = true;
+            vDecSample->enableOrderDecode = true;
+            ASSERT_EQ(AV_ERR_OK, vDecSample->RunVideoDec(g_codecNameHEVC));
+            vDecSample->WaitForEOS();
+            ASSERT_EQ(AV_ERR_OK, vDecSample->errCount);
+        } else {
+            auto vDecSample = make_shared<VDecAPI11Sample>();
+            vDecSample->enableOrderDecode = true;
+            ASSERT_EQ(AV_ERR_INVALID_VAL, vDecSample->RunVideoDec(g_codecNameHEVC));
+        }
+    }
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.number    : VIDEO_DECODE_ORDER_0400
+ * @tc.name      : VIDEO_DECODE_ORDER_0400
+ * @tc.desc      : function test
+ */
+int  VIDEO_DECODE_ORDER_0400()
+{
+    if (cap_vvc != nullptr && g_codecNameVVC.find("hisi") != string::npos) {
+        if (OH_AVCapability_IsFeatureSupported(cap, VIDEO_DECODER_OUTPUT_IN_DECODING_ORDER)) {
+            auto vDecSample = make_shared<VDecAPI11Sample>();
+            vDecSample->inpDir = INP_DIR_VVC_1080;
+            vDecSample->defaultWidth = PORTRAIT_WIDTH;
+            vDecSample->defaultHeight = PORTRAIT_HEIGHT;
+            vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
+            vDecSample->enableOrderDecode = true;
+            vDecSample->enableSyncMode = 1;
+            ASSERT_EQ(AV_ERR_OK, vDecSample->CreateVideoDecoder(g_codecNameVVC));
+            ASSERT_EQ(AV_ERR_OK, vDecSample->ConfigureVideoDecoder());
+            ASSERT_EQ(AV_ERR_OK, vDecSample->StartVideoDecoder());
+            vDecSample->WaitForEOS();
+            ASSERT_EQ(AV_ERR_OK, vDecSample->errCount);
+        } else {
+            auto vDecSample = make_shared<VDecAPI11Sample>();
+            vDecSample->enableOrderDecode = true;
+            ASSERT_EQ(AV_ERR_INVALID_VAL, vDecSample->RunVideoDec(g_codecNameVVC));
+        }
+    }
+    return SUCCESS_CODE;
+}
+
+/**
+ * @tc.number    : VIDEO_DECODE_ORDER_0500
+ * @tc.name      : VIDEO_DECODE_ORDER_0500
+ * @tc.desc      : function test
+ */
+int  VIDEO_DECODE_ORDER_0500()
+{
+    if (cap_hevc != nullptr) {
+        if (OH_AVCapability_IsFeatureSupported(cap_hevc, VIDEO_DECODER_OUTPUT_IN_DECODING_ORDER)) {
+            auto vDecSample = make_shared<VDecAPI11Sample>();
+            vDecSample->inpDir = INP_DIR_IPB_265_8BIT;
+            vDecSample->defaultWidth = PORTRAIT_WIDTH;
+            vDecSample->defaultHeight = PORTRAIT_HEIGHT;
+            vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
+            vDecSample->isChecklowLatency = true;
+            vDecSample->enableOrderDecode = true;
+            ASSERT_EQ(AV_ERR_OK, vDecSample->RunVideoDecSurface(g_codecNameHEVC));
+            vDecSample->WaitForEOS();
+            ASSERT_EQ(AV_ERR_OK, vDecSample->errCount);
+        } else {
+            auto vDecSample = make_shared<VDecAPI11Sample>();
+            vDecSample->enableOrderDecode = true;
+            ASSERT_EQ(AV_ERR_INVALID_VAL, vDecSample->RunVideoDecSurface(g_codecNameHEVC));
+        }
+    }
+    return SUCCESS_CODE;
+}
 } // namespace Media
 } // namespace OHOS

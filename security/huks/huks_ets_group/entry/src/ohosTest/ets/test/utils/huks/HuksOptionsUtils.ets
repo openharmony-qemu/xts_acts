@@ -44,11 +44,16 @@ export function SetMultiParam(huksOptions: huks.HuksOptions, paramTag: huks.Huks
   return huksOptions;
 }
 
-export function GetParam(huksOptions: huks.HuksOptions, paramTag: huks.HuksTag): boolean | number | bigint | Uint8Array | null {
-  let properties: Array<huks.HuksParam> = huksOptions.properties as Array<huks.HuksParam>;
+export function GetParam(huksOptions: huks.HuksOptions | huks.HuksParam[], paramTag: huks.HuksTag): boolean | number | bigint | Uint8Array | null {
+  let properties: Array<huks.HuksParam>;
+  if (Array.isArray(huksOptions)) {
+    properties = huksOptions;
+  } else {
+    properties = (huksOptions as huks.HuksOptions).properties as Array<huks.HuksParam>;
+  }
   for (let i = 0; i < properties.length; i++) {
     if (properties[i].tag == paramTag) {
-      return properties[i].tag;
+      return properties[i].value;
     }
   }
   return null;
@@ -98,32 +103,6 @@ export function GetEmptyOptions() {
   return huksOptions;
 }
 
-export function CopyHuksOptions(huksOptions: huks.HuksOptions): huks.HuksOptions {
-  let copyOne: huks.HuksOptions = {
-    properties: [],
-    inData: new Uint8Array
-  }
-  if (huksOptions?.properties) {
-    for (let param of huksOptions?.properties) {
-      if (param.value instanceof Uint8Array) {
-        copyOne?.properties?.push({
-          tag: param?.tag,
-          value: new Uint8Array(param?.value)
-        })
-      } else {
-        copyOne?.properties?.push({
-          tag: param.tag,
-          value: param.value
-        })
-      }
-    }
-  }
-  if (huksOptions?.inData) {
-    copyOne.inData = new Uint8Array(huksOptions?.inData)
-  }
-  return copyOne
-}
-
 export async function CheckSoftware() {
   let dsaAlias = "useDsaToCheckSoftware";
   let dsaOptions: huks.HuksOptions = {
@@ -165,5 +144,25 @@ export async function CheckWearable() {
     return true;
   } catch (err) {
     return false;
+  }
+}
+
+export async function ClearAllKeys() {
+  let storageLevels: Array<huks.HuksAuthStorageLevel> = [
+    huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_DE,
+    huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_CE,
+    huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_ECE
+  ]
+  let huksOptions: huks.HuksOptions = GetEmptyOptions();
+  try {
+    for (let i = 0; i < storageLevels.length; i++) {
+      SetParam(huksOptions, huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL, storageLevels[i]);
+      let keyAliases = await huks.listAliases(huksOptions);
+      for (let j = 0; j < keyAliases.keyAliases.length; j++) {
+        await huks.deleteKeyItem(keyAliases.keyAliases[j], huksOptions);
+      }
+    }
+  } catch (err) {
+    Logger.error(`ClearAllKeys catch error ${JSON.stringify(err)}`)
   }
 }

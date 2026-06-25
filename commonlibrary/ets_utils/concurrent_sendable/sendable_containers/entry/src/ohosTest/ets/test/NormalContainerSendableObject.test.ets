@@ -533,6 +533,9 @@ class AllTypesContainer {
 }
 
 export default function normalContainerSendableObjectTest() {
+  let id = setInterval(() => {
+    gc();
+  }, 5000)
   describe('normalContainerSendableObjectTest', () => {
     beforeAll(() => {
     })
@@ -542,7 +545,7 @@ export default function normalContainerSendableObjectTest() {
     afterEach(() => {
     })
     afterAll(() => {
-      gc()
+      clearInterval(id);
     })
 
     /**

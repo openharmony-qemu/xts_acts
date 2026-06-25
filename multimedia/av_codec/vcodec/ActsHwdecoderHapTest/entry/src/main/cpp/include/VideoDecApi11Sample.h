@@ -92,6 +92,7 @@ public:
     int32_t picHeight_ = 0;
     bool enableVRR = false;
     bool enableLowLatency = false;
+    bool enableOrderDecode = false;
     int lowLatency = 1;
     bool getInputBufferIndexRepeat = false;
     int32_t enableSyncMode = 0;

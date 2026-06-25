@@ -14,12 +14,9 @@
  * limitations under the License.
  */
 
-import { Entry, Component, Column, Image, Button, Edges, $r, ClickEvent, LocalizedEdges, ColumnOptions,
-  Flex, FlexDirection, ItemAlign, FlexAlign, Text, FontWeight, ColumnOptions, Row,BlurStyle
-} from '@ohos.arkui.component'
+import { Entry, Component, Column, Image, Button, Edges, $r, ClickEvent, LocalizedEdges, ColumnOptions, Flex, FlexDirection, ItemAlign, FlexAlign, Text, FontWeight, Row, BlurStyle } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
-import { SegmentButtonOptions, ItemRestriction,SegmentButtonIconTextItem, SegmentButton, SegmentButtonItemOptions } from '@ohos.arkui.advanced.SegmentButton'
-
+import { SegmentButtonOptions, ItemRestriction, SegmentButtonIconTextItem, SegmentButton, SegmentButtonItemOptions } from '@ohos.arkui.advanced.SegmentButton';
 @Entry
 @Component
 struct SegmentButton005 {

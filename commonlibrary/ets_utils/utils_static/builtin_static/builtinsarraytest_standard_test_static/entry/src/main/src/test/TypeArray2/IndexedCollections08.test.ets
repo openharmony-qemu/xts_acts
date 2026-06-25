@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,7 +19,7 @@ import Utils from '../Util.test';
 interface TestObject01 {
   x: number;
 }
-export default function IndexedCollections08Test() {
+export default function IndexedCollections08Test(): void {
   describe('IndexedCollections08Test', () => {
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.

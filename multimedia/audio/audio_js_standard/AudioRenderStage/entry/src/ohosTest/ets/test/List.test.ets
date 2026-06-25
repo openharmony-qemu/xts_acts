@@ -14,11 +14,7 @@
  */
 
 import audioRendererTest from './AudioRenderer.test'    
-import call from  '@ohos.telephony.call'
 
-let voice = call.hasVoiceCapability()
 export default function testsuite() {
-    if (voice){
-        audioRendererTest()        
-    }
+    audioRendererTest()
 }

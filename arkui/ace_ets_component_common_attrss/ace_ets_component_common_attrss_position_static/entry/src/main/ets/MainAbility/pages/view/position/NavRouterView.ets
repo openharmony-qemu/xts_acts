@@ -30,20 +30,20 @@ import {
   Color,
   NavDestination,
   $r,
-  Padding
+  Padding,Navigation
 } from '@ohos.arkui.component';
-import { Link, State } from '@ohos.arkui.stateManagement';
+import { Link, State, PropRef} from '@ohos.arkui.stateManagement';
 
 @Entry
 @Component
 export struct NavRouterView {
   @State isActive: boolean = false
   @State dex: number = 0
-  @Link _position!: Position;
+  @PropRef _position: Position = { x:0,y:0 } as Position;
   private componentKey: string = '';
 
   build():void {
-    Column(){
+    Navigation() {
       Row() {
         Image($r('app.media.icon')).width(30).height(30).borderRadius(30).margin({ left: 3, right: 10 } as Margin)
         Text(`NavRouter`)

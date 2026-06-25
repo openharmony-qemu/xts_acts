@@ -18,6 +18,7 @@ import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import business_error, { BusinessError } from '@ohos.base';
 import {waitForExist} from '../../test/WaitTest.test';
+import { XtsTestServer } from 'library';
 
 @Entry
 @Component
@@ -27,6 +28,7 @@ struct webFantasyFont {
   @State defaultFontSize: number = 13
   @State minLogicalFontSize: number = 8
   controller: webView.WebviewController = new webView.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State family: string|null|undefined = "fantasy";
   @State family2: string|null|undefined = "cursive";
   @State isReceive: number = -1;
@@ -45,6 +47,10 @@ struct webFantasyFont {
     events_emitter.off(150120)
   }
 
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
+  }
+
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
     console.info("web page valueChangeCallBack");
     if (eventData != null) {
@@ -58,7 +64,7 @@ struct webFantasyFont {
   aboutToAppear(): void {
     try {
       webView.WebviewController.setWebDebuggingAccess(true);
-      this.controller.prefetchPage('https://www.taobao.com');
+      this.controller.prefetchPage(this.mServer.getAssetUrl('index.html'));
     } catch (error) {
       console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
     }

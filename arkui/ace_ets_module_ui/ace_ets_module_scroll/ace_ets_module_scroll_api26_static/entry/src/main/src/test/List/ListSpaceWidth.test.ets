@@ -106,6 +106,31 @@ export default function ListSpaceWidthTest() {
       console.log('[SUB_ARKUI_LISTSPACEWIDTH_STATICTEST_0200] content item'+ contentItem)
       console.log('[SUB_ARKUI_LISTSPACEWIDTH_STATICTEST_0200] content '+ content)
       expect(content).assertEqual('0.00vp');
+      expect(contentItem).assertEqual('0.00vp');
+      done();
+    });
+    /**
+     * @tc.number   SUB_ARKUI_LISTSPACEWIDTH_STATICTEST_0300
+     * @tc.name     SUB_ARKUI_LISTSPACEWIDTH_STATICTEST_0300
+     * @tc.desc     Set the value return 200.00vp.
+     * @tc.size     MEDIUMTEST
+     * @tc.level    Level.LEVEL0
+     */
+    it('SUB_ARKUI_LISTSPACEWIDTH_STATICTEST_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let driver = Driver.create();
+      await Utils.sleep(1000);
+      let btn = await driver.findComponent(ON.id('changeSpaceWListValue0'));
+      await (btn?.click() as Promise<void>);
+      await Utils.sleep(1000);
+      let strJsonItem = inspector.getInspectorByKey('listItemGroupSpaceWidthIdStatic');
+      let objItem = JSON.parseJsonElement(strJsonItem);
+      let contentItem :string = objItem.getElement('$attrs').getString('spaceWidth');
+      let strJson = inspector.getInspectorByKey('listSpaceWidthIdStatic');
+      let obj = JSON.parseJsonElement(strJson);
+      let content :string = obj.getElement('$attrs').getString('spaceWidth');
+      console.log('[SUB_ARKUI_LISTSPACEWIDTH_STATICTEST_0300] content item'+ JSON.stringify(strJsonItem))
+      console.log('[SUB_ARKUI_LISTSPACEWIDTH_STATICTEST_0300] content '+ content)
+      expect(contentItem).assertEqual('200.00vp');
       done();
     });
   })

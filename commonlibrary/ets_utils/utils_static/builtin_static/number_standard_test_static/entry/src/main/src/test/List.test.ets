@@ -10,7 +10,7 @@ import BuiltinsToStringTest from "./ToString001.test";
 import BuiltinsValueOfTest from "./ValueOf001.test";
 import ArrayTest from "./Array.test";
 
-export default function testsuite() {
+export default function testsuite(): void {
   BuiltinsNumberConstructorTest();   
   BuiltinsNumberIsFiniteTest();      
   BuiltinsNumberIsIntegerTest();    

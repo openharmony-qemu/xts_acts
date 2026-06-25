@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2025 HiHope Open Source Organization.
+* Copyright (C) 2025-2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the 'License');
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -31,7 +31,7 @@ interface Thenable3 {
   then: (resolve: (value: string) => void, reject: (reason: Error) => void) => void;
 }
 
-export default function PromiseRejectSecondTest() {
+export default function PromiseRejectSecondTest(): void {
   describe('PromiseRejectSecondTest', (): void => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(():void => {

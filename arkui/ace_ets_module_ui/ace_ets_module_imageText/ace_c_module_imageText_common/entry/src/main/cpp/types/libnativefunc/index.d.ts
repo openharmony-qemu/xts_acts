@@ -60,3 +60,39 @@ export const TextInputEnumTest_002: () => number;
 export const TextInputEnumTest_003: () => number;
 export const TextInputEnumTest_004: () => number;
 export const TextInputEnumTest_005: () => number;
+
+export const TextAreaGradientTest_001: () => number;
+export const TextAreaGradientTest_002: () => number;
+
+export const TextInputGradientTest_001: () => number;
+export const TextInputGradientTest_002: () => number;
+
+export const RichEditorPunctuationOverflowTest_001: () => number;
+export const RichEditorPunctuationOverflowTest_002: () => number;
+export const RichEditorPunctuationOverflowTest_003: () => number;
+export const RichEditorPunctuationOverflowTest_004: () => number;
+export const RichEditorPunctuationOverflowTest_005: () => number;
+
+export const RichEditorScrollToVisibleTest_001: () => number;
+export const RichEditorScrollToVisibleTest_002: () => number;
+export const RichEditorScrollToVisibleTest_003: () => number;
+export const RichEditorScrollToVisibleTest_004: () => number;
+export const RichEditorScrollToVisibleTest_005: () => number;
+
+export const TextPunctuationOverflowTest_001: () => number;
+export const TextPunctuationOverflowTest_002: () => number;
+export const TextPunctuationOverflowTest_003: () => number;
+export const TextPunctuationOverflowTest_004: () => number;
+export const TextPunctuationOverflowTest_005: () => number;
+
+export const TextInputPunctuationOverflowTest_001: () => number;
+export const TextInputPunctuationOverflowTest_002: () => number;
+export const TextInputPunctuationOverflowTest_003: () => number;
+export const TextInputPunctuationOverflowTest_004: () => number;
+export const TextInputPunctuationOverflowTest_005: () => number;
+
+export const TextAreaPunctuationOverflowTest_001: () => number;
+export const TextAreaPunctuationOverflowTest_002: () => number;
+export const TextAreaPunctuationOverflowTest_003: () => number;
+export const TextAreaPunctuationOverflowTest_004: () => number;
+export const TextAreaPunctuationOverflowTest_005: () => number;

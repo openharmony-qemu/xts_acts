@@ -17,7 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 
-export default function Int16ArrayTest() {
+export default function Int16ArrayTest(): void {
   describe('Int16ArrayTest', ():void => {
     afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);

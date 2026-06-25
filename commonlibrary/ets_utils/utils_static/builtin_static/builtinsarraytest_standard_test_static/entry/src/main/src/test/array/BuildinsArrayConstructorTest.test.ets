@@ -16,7 +16,7 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level
 import Utils from '../Util.test';
 
 
-export default function builtinsArrayConstructorTest() {
+export default function builtinsArrayConstructorTest(): void {
   describe('BuiltinsArrayConstructorTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

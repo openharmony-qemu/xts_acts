@@ -65,7 +65,12 @@ export default function moveAbilityToBackgroundTest() {
       console.log(`${tag}, it begin`);
       if (mpEnable === 'true') {
         try {
-          await abilityDelegator.executeShellCommand("aa start -b com.acts.moveabilitytobgtest -a EntryAbility");
+          let cmd = "aa start -b com.acts.moveabilitytobgtest -a EntryAbility";
+          let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+          if(user !== undefined){
+              cmd += ' -u ' + user;
+          }
+          await abilityDelegator.executeShellCommand(cmd);
           let button = await driver.waitForComponent(ON.text("Move To background"), 4000);
           expect(button != null).assertTrue();
           let subscribeInfo: CommonEventManager.CommonEventSubscribeInfo = {

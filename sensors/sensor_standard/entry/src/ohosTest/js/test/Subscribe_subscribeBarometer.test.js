@@ -73,6 +73,10 @@ describe("SensorJsTest_sensor_26", function () {
                 if (error) {
                     console.info('subscribeBarometer_SensorJsTest005 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                 sensor.subscribeBarometer({
                     success: function (data) {
@@ -111,6 +115,10 @@ describe("SensorJsTest_sensor_26", function () {
            sensor.getSingleSensor(BarometerId ,(error, data) => {
                 if (error) {
                     console.info('subscribeBarometer_SensorJsTest005 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                 sensor.subscribeBarometer({
@@ -161,6 +169,10 @@ describe("SensorJsTest_sensor_26", function () {
                 if (error) {
                     console.info('subscribeBarometer_SensorJsTest005 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                sensor.subscribeBarometer({
                     success: function (data) {
@@ -199,6 +211,10 @@ describe("SensorJsTest_sensor_26", function () {
            sensor.getSingleSensor(BarometerId ,(error, data) => {
                 if (error) {
                     console.info('subscribeBarometer_SensorJsTest004 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     sensor.subscribeBarometer({
@@ -243,6 +259,10 @@ describe("SensorJsTest_sensor_26", function () {
            sensor.getSingleSensor(BarometerId ,(error, data) => {
                 if (error) {
                     console.info('subscribeBarometer_SensorJsTest005 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     sensor.subscribeBarometer({

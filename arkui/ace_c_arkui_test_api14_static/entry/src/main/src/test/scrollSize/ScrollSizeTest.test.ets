@@ -14,17 +14,14 @@
  * limitations under the License.
  */
 
-import { expect, describe, it, afterEach, Level, describe, beforeAll, beforeEach } from '../../../../hypium';
+import { expect, describe, it, afterEach, Level, beforeAll, beforeEach } from '../../../../hypium';
 import { Component, Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import Utils from '../common/Utils';
 import router from '@ohos.router';
-import { UtilsTest, startAbility, stopApplication } from "../Util.test"
-import inspector from '@ohos.arkui.inspector'
+import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+import inspector from '@ohos.arkui.inspector';
 import { UIContext, UIInspector, Context } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-
-
-
 export default function ScrollSizeTest() {
 
   describe('ScrollSizeTest', (): void => {

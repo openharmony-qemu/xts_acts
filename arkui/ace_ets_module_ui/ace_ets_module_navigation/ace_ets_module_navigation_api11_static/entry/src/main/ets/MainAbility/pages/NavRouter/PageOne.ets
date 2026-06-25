@@ -13,19 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,AnimateParam,Search,TextAlign,Axis,NavBarPosition,FlexAlign,
-  NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,
-  Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,
-  FontWeight,Axis,Margin,Swiper,ForEach,Slider,$rawfile, SliderStyle, ImageFit,NavigationCommonTitle,NavDestinationCommonTitle,Alignment
-,NavPathStack} from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  PropRef,Provide,Consume
-} from '@ohos.arkui.stateManagement';
+import { Entry, Component, $r, Scroll, Builder, List, ListItem, Resource, AnimateParam, Search, TextAlign, Axis, NavBarPosition, FlexAlign, NavigationTitleMode, Image, NavigationMode, Column, Navigation, ButtonType, NavDestination, Stack, ColumnOptions, TextInput, SearchController, Position, EffectType, EffectComponent, Text, Color, Flex, FlexDirection, ItemAlign, Row, Button, ClickEvent, NavDestinationMode, Dimension, TextOverflow, FontWeight, Margin, Swiper, ForEach, Slider, $rawfile, SliderStyle, ImageFit, NavigationCommonTitle, NavDestinationCommonTitle, Alignment, NavPathStack } from '@ohos.arkui.component';
+import { State, Link, PropRef, Provide, Consume, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
 class TmpClass{
   count:number=10
 }

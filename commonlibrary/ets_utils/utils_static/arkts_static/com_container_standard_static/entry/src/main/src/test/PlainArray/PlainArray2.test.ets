@@ -22,7 +22,7 @@ class Tmp {
   }
 }
 
-export default function PlainArrayTest2() {
+export default function PlainArrayTest2(): void {
   describe('plainArrayTest2', (): void => {
     afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)

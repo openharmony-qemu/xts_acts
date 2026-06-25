@@ -28,7 +28,7 @@ class InfoC {
   }
 }
 
-export default function TreeSetTest1() {
+export default function TreeSetTest1(): void {
   describe("TreeSetTest1", (): void => {
     afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)

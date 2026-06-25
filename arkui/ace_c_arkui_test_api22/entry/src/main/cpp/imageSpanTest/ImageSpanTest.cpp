@@ -106,7 +106,7 @@ static ArkUI_NodeHandle CreateImageSpan()
 
     ArkUI_NumberValue svg2[] = {{.i32 = 1}};
     ArkUI_AttributeItem svg2Attr = { svg2, 1 };
-    nodeAPI->setAttribute(img, NODE_IMAGE_SUPPORT_SVG2, &svg2Attr);
+    nodeAPI->setAttribute(img, NODE_IMAGE_SPAN_SUPPORT_SVG2, &svg2Attr);
 
     ArkUI_NumberValue w[] = {{.f32 =300}};
     ArkUI_AttributeItem widthAttr = { w, 1 };

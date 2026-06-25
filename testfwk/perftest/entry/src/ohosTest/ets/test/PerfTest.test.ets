@@ -24,7 +24,12 @@ import { PerfUtils } from '../../../main/ets/utils/PerfUtils';
 const delegator = abilityDelegatorRegistry.getAbilityDelegator();
 
 async function startAbility(bundleName: string, abilityName: string) {
-  await delegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`).then(result => {
+  let cmd = `aa start -b ${bundleName} -a ${abilityName}`;
+  let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+  if(user !== undefined){
+      cmd += ' -u ' + user;
+  }
+  await delegator.executeShellCommand(cmd).then(result => {
     console.info(`PerfTestCase, start abilityFinished: ${result}`)
   }).catch((err : BusinessError) => {
     console.error(`PerfTestCase, start abilityFailed: ${err}`)

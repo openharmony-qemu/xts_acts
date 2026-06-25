@@ -103,20 +103,25 @@ export default function inputMethodEngineStatic() {
         beforeAll(async (done: ()=> void) => {
             try {
               let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-              await Utils.msSleep(2000);
-              abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.acts.inputmethodwidmanage.test.static');
-              await Utils.msSleep(2000);
+              await Utils.msSleep(1000);
+              let cmd = 'aa start -a EntryAbility -b com.acts.inputmethodwidmanage.test.static';
+              let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+              if(user !== undefined){
+                  cmd += ' -u ' + user;
+              }
+              abilityDelegator.executeShellCommand(cmd);
+              await Utils.msSleep(1000);
               await abilityDelegator.executeShellCommand('ime -e com.acts.inputmethodwidmanage.test.static -f');
               await abilityDelegator.executeShellCommand('ime -s com.acts.inputmethodwidmanage.test.static');
               console.info('====>beforeAll inputMethod_enable success');
-              await Utils.msSleep(1000);
+              await Utils.msSleep(500);
               textArea = await driver.findComponent(ON.type('TextArea'));
               console.info('====>beforeAll inputMethodSwitch window textArea:' + JSON.stringify(textArea));
               rectInfo = await textArea!.getBounds();
               console.info('====>beforeAll inputMethodSwitch textArea rectInfo:' + JSON.stringify(rectInfo));
-              await Utils.msSleep(1000);
+              await Utils.msSleep(500);
               await runCmd(rectInfo);
-              await Utils.msSleep(1000);
+              await Utils.msSleep(500);
               done();
             } catch (err) {
               console.info('====>beforeAll throw err:' + JSON.stringify(err.message));
@@ -194,6 +199,198 @@ export default function inputMethodEngineStatic() {
          */
         it('Sub_InputMethod_IMF_SecurityKeyboard_static_0700', Level.LEVEL2, async (done: () => void): Promise<void> => {
             testTemplate('Sub_InputMethod_IMF_SecurityKeyboard_static_0700', 6, done);
+        });
+
+        /**
+         * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_static_0100
+         * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_static_0100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_InputMethod_IME_updatePanelRectSync_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+            testTemplate('Sub_InputMethod_IME_updatePanelRectSync_static_0100', 7, done);
+        });
+
+        /**
+         * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_static_0200
+         * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_static_0200
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_InputMethod_IME_updatePanelRectSync_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+            testTemplate('Sub_InputMethod_IME_updatePanelRectSync_static_0200', 8, done);
+        });
+
+        /**
+         * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_static_0300
+         * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_static_0300
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_InputMethod_IME_updatePanelRectSync_static_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
+            testTemplate('Sub_InputMethod_IME_updatePanelRectSync_static_0300', 9, done);
+        });
+
+        /**
+         * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_static_0400
+         * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_static_0400
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_InputMethod_IME_updatePanelRectSync_static_0400', Level.LEVEL2, async (done: () => void): Promise<void> => {
+            testTemplate('Sub_InputMethod_IME_updatePanelRectSync_static_0400', 10, done);
+        });
+
+        /**
+         * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_static_0500
+         * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_static_0500
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_InputMethod_IME_updatePanelRectSync_static_0500', Level.LEVEL2, async (done: () => void): Promise<void> => {
+            testTemplate('Sub_InputMethod_IME_updatePanelRectSync_static_0500', 11, done);
+        });
+
+        /**
+         * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_static_0600
+         * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_static_0600
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_InputMethod_IME_updatePanelRectSync_static_0600', Level.LEVEL2, async (done: () => void): Promise<void> => {
+            testTemplate('Sub_InputMethod_IME_updatePanelRectSync_static_0600', 12, done);
+        });
+
+        /**
+         * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_static_0700
+         * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_static_0700
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_InputMethod_IME_updatePanelRectSync_static_0700', Level.LEVEL2, async (done: () => void): Promise<void> => {
+            testTemplate('Sub_InputMethod_IME_updatePanelRectSync_static_0700', 13, done);
+        });
+
+        /**
+         * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_static_0800
+         * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_static_0800
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_InputMethod_IME_updatePanelRectSync_static_0800', Level.LEVEL2, async (done: () => void): Promise<void> => {
+            testTemplate('Sub_InputMethod_IME_updatePanelRectSync_static_0800', 14, done);
+        });
+
+        /**
+         * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_static_0900
+         * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_static_0900
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_InputMethod_IME_updatePanelRectSync_static_0900', Level.LEVEL2, async (done: () => void): Promise<void> => {
+            testTemplate('Sub_InputMethod_IME_updatePanelRectSync_static_0900', 15, done);
+        });
+
+        /**
+         * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_static_1000
+         * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_static_1000
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_InputMethod_IME_updatePanelRectSync_static_1000', Level.LEVEL2, async (done: () => void): Promise<void> => {
+            testTemplate('Sub_InputMethod_IME_updatePanelRectSync_static_1000', 16, done);
+        });
+
+        /**
+         * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_static_1100
+         * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_static_1100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_InputMethod_IME_updatePanelRectSync_static_1100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+            testTemplate('Sub_InputMethod_IME_updatePanelRectSync_static_1100', 17, done);
+        });
+
+        /**
+         * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_static_1200
+         * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_static_1200
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_InputMethod_IME_updatePanelRectSync_static_1200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+            testTemplate('Sub_InputMethod_IME_updatePanelRectSync_static_1200', 18, done);
+        });
+
+        /**
+         * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_static_1300
+         * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_static_1300
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_InputMethod_IME_updatePanelRectSync_static_1300', Level.LEVEL2, async (done: () => void): Promise<void> => {
+            testTemplate('Sub_InputMethod_IME_updatePanelRectSync_static_1300', 19, done);
+        });
+
+        /**
+         * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_static_1400
+         * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_static_1400
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_InputMethod_IME_updatePanelRectSync_static_1400', Level.LEVEL2, async (done: () => void): Promise<void> => {
+            testTemplate('Sub_InputMethod_IME_updatePanelRectSync_static_1400', 20, done);
+        });
+
+        /**
+         * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_static_1500
+         * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_static_1500
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_InputMethod_IME_updatePanelRectSync_static_1500', Level.LEVEL2, async (done: () => void): Promise<void> => {
+            testTemplate('Sub_InputMethod_IME_updatePanelRectSync_static_1500', 21, done);
+        });
+
+        /**
+         * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_static_1600
+         * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_static_1600
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_InputMethod_IME_updatePanelRectSync_static_1600', Level.LEVEL2, async (done: () => void): Promise<void> => {
+            testTemplate('Sub_InputMethod_IME_updatePanelRectSync_static_1600', 22, done);
         });
 
         /** 

@@ -66,6 +66,7 @@ import Provider15Test from './ProviderTest/Provider15.test';
 import Provider18Test from './ProviderTest/Provider18.test';
 import Provider0300Test from './ProviderTest/Provider0300Test.test';
 import ProviderTest0270 from './ProviderTest/ProviderTest0270.test';
+import providerNullUndefinedTest from './ProviderTest/ProviderNullUndefinedTest.test';
 import appStorageV2 from './StorageTest/appStorageV2.test';
 import ASV20010Test from './appstoragev2/ASV20010Test.test';
 import persistenceV2 from './StorageTest/persistenceV2.test';
@@ -78,6 +79,8 @@ import SyncMonitor0010Test from './SyncMonitorTest/SyncMonitor0010Test.test';
 import SyncMonitor0020Test from './SyncMonitorTest/SyncMonitor0020Test.test';
 import appStorageV2NullUndefinedTest from './appstoragev2/AppStorageV2NullUndefinedTest.test';
 import persistenceV2NullUndefinedTest from './PersistenceV2Test/PersistenceV2NullUndefinedTest.test';
+import CustomEnvTest from './CustomEnvTest/CustomEnvTest.test';
+
 export default function testsuite() {
 	ArrayLikeStringTest();
     Env001();
@@ -129,6 +132,7 @@ export default function testsuite() {
     Provider18Test();
     Provider0300Test();
     ProviderTest0270();
+    providerNullUndefinedTest();
     appStorageV2();
     ASV20010Test();
     persistenceV2();
@@ -143,4 +147,5 @@ export default function testsuite() {
     appStorageV2NullUndefinedTest();
     persistenceV2NotifyOnErrorTest();
     persistenceV2TypeMismatchTest();
+    CustomEnvTest();
 }

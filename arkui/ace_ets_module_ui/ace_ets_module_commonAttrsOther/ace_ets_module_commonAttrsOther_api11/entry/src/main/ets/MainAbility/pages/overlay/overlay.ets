@@ -68,7 +68,7 @@ struct OverlayExample {
         Column() {
           Image('/images/img.jpeg')
             .width(340).height(240)
-            .key('overlay')
+            .key('overlay_overlay')
             .overlay(this.title,
               { align: this.alignment, offset: { x: this.x, y: this.y } })
         }.border({ color: Color.Black, width: 2 })

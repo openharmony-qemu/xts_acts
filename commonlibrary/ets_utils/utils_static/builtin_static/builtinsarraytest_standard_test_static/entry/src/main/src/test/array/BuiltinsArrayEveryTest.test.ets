@@ -24,7 +24,7 @@ class DataTest {
   public abc?: number
 }
 
-export default function builtinsArrayEveryTest() {
+export default function builtinsArrayEveryTest(): void {
   describe('BuiltinsArrayEveryTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

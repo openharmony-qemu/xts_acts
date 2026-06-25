@@ -11,8 +11,8 @@
     "kits": [
         {
             "test-file-name": [
-                "ActsAceCArkUIImageTextCommonTest.hap",
-                "ActsAceCArkUIImageTextCommon.hap"
+                "ActsAceCArkUITextCommonTest.hap",
+                "ActsAceCArkUITextCommon.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true

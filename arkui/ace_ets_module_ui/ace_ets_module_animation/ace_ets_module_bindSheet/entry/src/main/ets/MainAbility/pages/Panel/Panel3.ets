@@ -46,7 +46,7 @@ struct PanelBackgroundMask {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key('onHeightChangeText')
+        .key('Panel3_onHeightChangeText')
         .onClick(() => {
           this.mode = PanelMode.Half
         })
@@ -56,7 +56,7 @@ struct PanelBackgroundMask {
           Text('panel-BackgroundMask').fontSize(30)
         }
       }
-      .key('panel')
+      .key('Panel3_panel')
       .mode(this.mode)
       .backgroundColor('green')
       .type(PanelType.Foldable)

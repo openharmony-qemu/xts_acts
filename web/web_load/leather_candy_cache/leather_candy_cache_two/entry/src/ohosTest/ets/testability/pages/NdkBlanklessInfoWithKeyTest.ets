@@ -20,12 +20,14 @@ import { JsProxyObject } from '../../test/Interfaces';
 import webview from '@ohos.web.webview';
 import testNapi from 'libentry.so'
 import { waitForExist } from '../../test/WaitTest.test';
+import { XtsTestServer } from 'library';
 
 @Entry
 @Component
 struct ndkBlanklessInfoWithKeyTest {
   @State webTag: string = 'WebTag';
   controller: webview.WebviewController = new webview.WebviewController(this.webTag);
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   message: webView.WebMessageExt = new webView.WebMessageExt();
   @State str: string = ''
   @State javaScriptAccess: boolean = true;
@@ -65,6 +67,13 @@ struct ndkBlanklessInfoWithKeyTest {
       return 'precompileJavaScript test';
     }
   }
+
+  aboutToDisappear() {
+
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
+
+  }
+
 
   build() {
     Column() {

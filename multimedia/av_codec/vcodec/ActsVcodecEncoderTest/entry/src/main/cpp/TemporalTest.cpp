@@ -106,7 +106,11 @@ static void SetUpTestCase()
     }
 }
 static void TearDownTestCase() {}
-static void SetUp() {}
+static void SetUp()
+{
+    OHOS::Media::ResetLtrStaticState();
+}
+
 static void TearDown()
 {
     if (venc_ != NULL) {

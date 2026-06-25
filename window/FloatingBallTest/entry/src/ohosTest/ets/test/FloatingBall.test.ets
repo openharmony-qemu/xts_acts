@@ -1314,6 +1314,8 @@ export default function abilityTest() {
         content: 'content',
         icon:await getPixelMap(context,$r('app.media.icon')),
         backgroundColor:'#008EF5',
+        titleColor: '#008EF5',
+        contentColor: '#008EF5'
       };
       try {
         let floatingBallController = await floatingBall.create(config);

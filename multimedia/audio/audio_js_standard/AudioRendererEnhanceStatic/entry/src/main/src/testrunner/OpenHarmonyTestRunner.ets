@@ -51,6 +51,10 @@ export class OpenHarmonyTestRunner implements TestRunner {
       hilog.info(domain, tag, 'hypiumTest end');
     }, 5000);
 
+    let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
     abilityDelegator.executeShellCommand(cmd, (err: BusinessError<void> | null, d: ShellCmdResult | undefined) => {
       hilog.info(domain, tag, 'executeShellCommand : err : %{public}s', JSON.stringify(err) ?? '');
       hilog.info(domain, tag, 'executeShellCommand : data : %{public}s', d?.stdResult ?? '');

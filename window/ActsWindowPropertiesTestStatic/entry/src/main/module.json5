@@ -63,6 +63,9 @@
         "name": "ohos.permission.SET_WINDOW_TRANSPARENT"
       },
       {
+ 	      "name": "ohos.permission.SET_WINDOW_ALPHA"
+ 	    },
+      {
         "name": "ohos.permission.WINDOW_TOPMOST"
       },
       {

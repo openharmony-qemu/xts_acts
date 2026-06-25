@@ -63,6 +63,12 @@
     "MainAbility/pages/Watch/Watch",
     "MainAbility/pages/Watch/WatchLink0050",
     "MainAbility/pages/Observed/Observed0060",
+
+    "MainAbility/pages/Reusable/ReusableChildState1Test",
+    "MainAbility/pages/Reusable/ReusableChildState2Test",
+    "MainAbility/pages/Reusable/ReusableChildState3Test",
+    "MainAbility/pages/Reusable/ReusableChildState4Test",
+
     "MainAbility/pages/index/index"
   ]
 }

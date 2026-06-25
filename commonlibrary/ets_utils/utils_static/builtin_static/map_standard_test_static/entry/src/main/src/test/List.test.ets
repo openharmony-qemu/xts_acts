@@ -23,7 +23,7 @@ import MapGetTest from "./MapGetStatic.test";
 import MapHasTest from "./MapHasStatic.test";
 import MapValueTest from "./MapValuesStatic.test";
 
-export default function testsuite() {
+export default function testsuite(): void {
   MapConstructorTest();
   MapClearTest();
   MapDeleteTest();

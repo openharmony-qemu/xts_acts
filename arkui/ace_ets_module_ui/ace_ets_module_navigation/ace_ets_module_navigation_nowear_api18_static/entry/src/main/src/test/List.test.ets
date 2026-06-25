@@ -17,9 +17,11 @@
 import EnableToolBarAdaptation from './EnableToolBarAdaptation.test'
 import OnNewParamPage from './OnNewParamPage.test'
 import PreferredOrientation from './PreferredOrientation.test'
+import sideBarWithGesture from './SideBarContainerTest/sideBarWithGesture.test'
 
 export default function testsuite() {
   EnableToolBarAdaptation();
   OnNewParamPage();
   PreferredOrientation();
+  sideBarWithGesture();
 }

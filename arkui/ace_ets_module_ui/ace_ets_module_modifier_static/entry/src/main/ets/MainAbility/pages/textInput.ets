@@ -13,15 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Component,Video,Resource,$r,TextPicker,TextInputStyle,BarState,InputType,EnterKeyType,FontStyle,CopyOptions,TextInputAttribute,TextInput,PlaybackSpeed,$rawfile,Column,Margin,ColumnOptions,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  PropRef,
-} from '@ohos.arkui.stateManagement';
+import { Entry, Component, Video, Resource, $r, TextPicker, TextInputStyle, BarState, InputType, EnterKeyType, FontStyle, CopyOptions, TextInputAttribute, TextInput, PlaybackSpeed, $rawfile, Column, Margin, ColumnOptions, Text, Color, Flex, FlexDirection, ItemAlign, Row, Button, ClickEvent, Week, FontWeight, Axis, Swiper, ForEach, PickerTextStyle, CalendarAlign, CalendarPicker, EdgeEffect, Curve, SwiperDisplayMode, ArrowPosition, Select, BlurStyle, MenuAlignType, TextInputController, TextAlign, AlphabetIndexer } from '@ohos.arkui.component';
+import { State, Link, PropRef } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { TextInputModifier } from "@ohos.arkui.modifier";
-
+import { TextInputModifier } from '@ohos.arkui.modifier';
 class CustomModifier extends TextInputModifier {
   applyNormalAttribute(instance: TextInputAttribute): void {
     // super.applyNormalAttribute?.(instance);

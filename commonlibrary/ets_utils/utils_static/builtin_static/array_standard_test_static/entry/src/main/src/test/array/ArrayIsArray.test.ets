@@ -75,7 +75,7 @@ interface MockNodeList044 {
     item: (index: number) => null;
 }
 
-export default function ArrayIsArrayTest() {
+export default function ArrayIsArrayTest(): void {
   describe('ArrayIsArrayTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

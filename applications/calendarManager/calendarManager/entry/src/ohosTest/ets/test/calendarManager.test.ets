@@ -7021,5 +7021,239 @@ export default function CalendarManagerTest() {
       });
 
     });
+
+    /**
+     * @tc.name   SUB_Application_CalendarManagerApi_OpenEventEditPage_ParameterError_negative_0100
+     * @tc.number SUB_Application_CalendarManagerApi_OpenEventEditPage_ParameterError_negative_0100
+     * @tc.desc   Test openEventEditPage with invalid parameter - negative id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_Application_CalendarManagerApi_OpenEventEditPage_ParameterError_negative_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      let CaseName = 'SUB_Application_CalendarManagerApi_OpenEventEditPage_ParameterError_negative_0100';
+      let CalendarAccounts: calendarManager.CalendarAccount = {
+        name: '本地帐户',
+        type: calendarManager.CalendarType.LOCAL,
+        displayName: '本地帐户'
+      }
+      calendarMgr?.createCalendar(CalendarAccounts).then(async (Calendar) => {
+        console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
+        await Calendar.openEventEditPage(-1);
+        expect().assertFail();
+      }).catch((err: BusinessError) => {
+        console.info(CaseName + `Failed to openEventEditPage, Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(23900001);
+      });
+    });
+
+    /**
+     * @tc.name   SUB_Application_CalendarManagerApi_OpenEventEditPage_ParameterError_zero_0200
+     * @tc.number SUB_Application_CalendarManagerApi_OpenEventEditPage_ParameterError_zero_0200
+     * @tc.desc   Test openEventEditPage with invalid parameter - zero id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_Application_CalendarManagerApi_OpenEventEditPage_ParameterError_zero_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      let CaseName = 'SUB_Application_CalendarManagerApi_OpenEventEditPage_ParameterError_zero_0200';
+      let CalendarAccounts: calendarManager.CalendarAccount = {
+        name: '本地帐户',
+        type: calendarManager.CalendarType.LOCAL,
+        displayName: '本地帐户'
+      }
+      calendarMgr?.createCalendar(CalendarAccounts).then(async (Calendar) => {
+        console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
+        await Calendar.openEventEditPage(0);
+        expect().assertFail();
+      }).catch((err: BusinessError) => {
+        console.info(CaseName + `Failed to openEventEditPage, Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(23900001);
+      });
+    });
+
+    /**
+     * @tc.name   SUB_Application_CalendarManagerApi_OpenEventEditPage_ParameterError_undefined_0300
+     * @tc.number SUB_Application_CalendarManagerApi_OpenEventEditPage_ParameterError_undefined_0300
+     * @tc.desc   Test openEventEditPage with invalid parameter - undefined id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_Application_CalendarManagerApi_OpenEventEditPage_ParameterError_undefined_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      let CaseName = 'SUB_Application_CalendarManagerApi_OpenEventEditPage_ParameterError_undefined_0300';
+      let CalendarAccounts: calendarManager.CalendarAccount = {
+        name: '本地帐户',
+        type: calendarManager.CalendarType.LOCAL,
+        displayName: '本地帐户'
+      }
+      calendarMgr?.createCalendar(CalendarAccounts).then(async (Calendar) => {
+        console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
+        await Calendar.openEventEditPage(undefined);
+        expect().assertFail();
+      }).catch((err: BusinessError) => {
+        console.info(CaseName + `Failed to openEventEditPage, Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(23900001);
+      });
+    });
+
+    /**
+     * @tc.name   SUB_Application_CalendarManagerApi_OpenEventEditPage_NonExistentEvent_0100
+     * @tc.number SUB_Application_CalendarManagerApi_OpenEventEditPage_NonExistentEvent_0100
+     * @tc.desc   Test openEventEditPage with non-existent event id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_Application_CalendarManagerApi_OpenEventEditPage_NonExistentEvent_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      let CaseName = 'SUB_Application_CalendarManagerApi_OpenEventEditPage_NonExistentEvent_0100';
+      let CalendarAccounts: calendarManager.CalendarAccount = {
+        name: '本地帐户',
+        type: calendarManager.CalendarType.LOCAL,
+        displayName: '本地帐户'
+      }
+      calendarMgr?.createCalendar(CalendarAccounts).then(async (Calendar) => {
+        console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
+        await Calendar.openEventEditPage(999999999);
+        expect().assertFail();
+      }).catch((err: BusinessError) => {
+        console.info(CaseName + `Failed to openEventEditPage, Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(23900005);
+      });
+    });
+
+    /**
+     * @tc.name   SUB_Application_CalendarManagerApi_OpenEventEditPage_NonLocalAccount_0100
+     * @tc.number SUB_Application_CalendarManagerApi_OpenEventEditPage_NonLocalAccount_0100
+     * @tc.desc   Test openEventEditPage with non-local account - email account
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_Application_CalendarManagerApi_OpenEventEditPage_NonLocalAccount_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      let CaseName = 'SUB_Application_CalendarManagerApi_OpenEventEditPage_NonLocalAccount_0100';
+      let CalendarAccounts: calendarManager.CalendarAccount = {
+        name: 'test@email.com',
+        type: calendarManager.CalendarType.EMAIL,
+        displayName: '邮箱帐户'
+      }
+      const event: calendarManager.Event = {
+        type: calendarManager.EventType.NORMAL,
+        title: 'Test Event for Non-Local Account',
+        startTime: new Date().getTime(),
+        endTime: new Date().getTime() + 60 * 60 * 1000
+      }
+      calendarMgr?.createCalendar(CalendarAccounts).then(async (Calendar) => {
+        console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
+        let eventId = await Calendar.addEvent(event);
+        console.info(CaseName + "Succeeded in addEvent, eventId: " + eventId);
+        await Calendar.openEventEditPage(eventId);
+        expect().assertFail();
+      }).catch((err: BusinessError) => {
+        console.info(CaseName + `Failed to openEventEditPage, Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(23900005);
+      });
+    });
+
+    /**
+     * @tc.name   SUB_Application_CalendarManagerApi_OpenEventEditPage_ImportantEvent_0100
+     * @tc.number SUB_Application_CalendarManagerApi_OpenEventEditPage_ImportantEvent_0100
+     * @tc.desc   Test openEventEditPage with important event type - IMPORTANT event cannot be edited
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_Application_CalendarManagerApi_OpenEventEditPage_ImportantEvent_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      let CaseName = 'SUB_Application_CalendarManagerApi_OpenEventEditPage_ImportantEvent_0100';
+      let CalendarAccounts: calendarManager.CalendarAccount = {
+        name: '本地帐户',
+        type: calendarManager.CalendarType.LOCAL,
+        displayName: '本地帐户'
+      }
+      const event: calendarManager.Event = {
+        type: calendarManager.EventType.IMPORTANT,
+        title: 'Important Event',
+        startTime: new Date().getTime(),
+        endTime: new Date().getTime() + 60 * 60 * 1000
+      }
+      calendarMgr?.createCalendar(CalendarAccounts).then(async (Calendar) => {
+        console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
+        let eventId = await Calendar.addEvent(event);
+        console.info(CaseName + "Succeeded in addEvent, eventId: " + eventId);
+        await Calendar.openEventEditPage(eventId);
+        expect().assertFail();
+      }).catch((err: BusinessError) => {
+        console.info(CaseName + `Failed to openEventEditPage, Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(23900005);
+      });
+    });
+
+    /**
+     * @tc.name   SUB_Application_CalendarManagerApi_OpenEventEditPage_Normal_0100
+     * @tc.number SUB_Application_CalendarManagerApi_OpenEventEditPage_Normal_0100
+     * @tc.desc   Test openEventEditPage with valid event id - creates and edits event via addEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Application_CalendarManagerApi_OpenEventEditPage_Normal_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      let CaseName = 'SUB_Application_CalendarManagerApi_OpenEventEditPage_Normal_0100';
+      let CalendarAccounts: calendarManager.CalendarAccount = {
+        name: '本地帐户',
+        type: calendarManager.CalendarType.LOCAL,
+        displayName: '本地帐户'
+      }
+      const event: calendarManager.Event = {
+        type: calendarManager.EventType.NORMAL,
+        title: 'Test Event for OpenEventEditPage',
+        startTime: new Date().getTime(),
+        endTime: new Date().getTime() + 60 * 60 * 1000
+      }
+      calendarMgr?.createCalendar(CalendarAccounts).then(async (Calendar) => {
+        console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
+        let eventId = await Calendar.addEvent(event);
+        console.info(CaseName + "Succeeded in addEvent, eventId: " + eventId);
+        expect(eventId > 0).assertTrue();
+        await Calendar.openEventEditPage(eventId);
+        console.info(CaseName + "Succeeded in openEventEditPage");
+      }).catch((err: BusinessError) => {
+        console.info(CaseName + `Failed to openEventEditPage, Code is ${err.code}, message is ${err.message}`);
+        expect().assertFail();
+      });
+    });
+
+    /**
+     * @tc.name   SUB_Application_CalendarManagerApi_OpenEventEditPage_Normal_0200
+     * @tc.number SUB_Application_CalendarManagerApi_OpenEventEditPage_Normal_0200
+     * @tc.desc   Test openEventEditPage with valid event id - creates event via editEvent then edits
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Application_CalendarManagerApi_OpenEventEditPage_Normal_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      let CaseName = 'SUB_Application_CalendarManagerApi_OpenEventEditPage_Normal_0200';
+      let CalendarAccounts: calendarManager.CalendarAccount = {
+        name: '本地帐户',
+        type: calendarManager.CalendarType.LOCAL,
+        displayName: '本地帐户'
+      }
+      const event: calendarManager.Event = {
+        type: calendarManager.EventType.NORMAL,
+        title: 'Test Event for OpenEventEditPage via editEvent',
+        startTime: new Date().getTime(),
+        endTime: new Date().getTime() + 60 * 60 * 1000
+      }
+      calendarMgr?.createCalendar(CalendarAccounts).then(async (Calendar) => {
+        console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
+        let eventId = await calendarMgr?.editEvent(event);
+        console.info(CaseName + "Succeeded in editEvent, eventId: " + eventId);
+        expect(eventId != null).assertTrue();
+        await Calendar.openEventEditPage(eventId);
+        console.info(CaseName + "Succeeded in openEventEditPage");
+      }).catch((err: BusinessError) => {
+        console.info(CaseName + `Failed to openEventEditPage, Code is ${err.code}, message is ${err.message}`);
+        expect().assertFail();
+      });
+    });
   });
 }

@@ -9,6 +9,13 @@ import getAlbumIdByLPathTest from "./photoAccessHelper/getAlbumIdByLPath.test";
 import PhotoGetAssetsTestSupp from "./photoAccessHelper/PhotoGetAssets.test";
 import MediaLibraryAvailabilitySupp from "./photoAccessHelper/MediaLibraryAvailability.test";
 import photoMediaLibraryNoPermissionStatic from "./photoAccessHelper/MediaLibraryAvailabilityNoPermission.test";
+import getAssetsByPredicatesTest from "./photoAccessHelper/getAssetsByPredicates.test";
+import createPhotoAssetTest from "./photoAccessHelper/createPhotoAsset.test";
+import createAssetTest from "./photoAccessHelper/createAsset.test";
+import getAlbumsStaticTest from "./photoAccessHelper/getAlbums.test";
+import getAssetsStaticTest from "./photoAccessHelper/getAssets.test";
+import getThumbnailStaticTest from "./PhotoAsset/getThumbnail.test";
+import MediaAssetRequestImageSuppStatic from "./MediaAssetManager/requestImage.test";
 import AddResourceChangeRequestUrlSuppTest from "./AddResource/AddResourceUrl.test";
 import CommitModifySuppTest from "./AddResource/CommitModifyTest.test";
 import ApplyChangesSuppTestStatic from "./ApplyChange/ApplyChangesSupp.test";
@@ -19,11 +26,14 @@ import getObjectsIndexSetTestStatic from "./photoAccessHelper/getObjectsIndexSet
 import getRangeObjectsTestStatic from "./photoAccessHelper/getRangeObjects.test";
 import PhotoAccessHelperAssetsTestStatic from "./photoAccessHelper/PhotoAccessHelperAssets.test";
 import PhotoAccessHelperEnumAlbumKeysStatic from "./photoAccessHelper/PhotoAccessHelperEnumAlbumKeys.test";
+import MediaAlbumChangeRequestSetAlbumNameStatic from "./MediaAssetChangeRequest/setAlbumName.test";
+import getTest from "./PhotoAsset/get.test";
 
 export default function testsuite(): void {
   photoAccessHelperNoPermissionStaticTest();
   photoAccessHelperReadPermissionStaticTest();
   photoMediaLibraryNoPermissionStatic();
+  getTest();
   MediaLibraryAvailabilitySupp();
   MediaAssetManagerStaticTest();
   MediaAssetChangeRequestStaticTest();
@@ -32,6 +42,13 @@ export default function testsuite(): void {
   FetchResultStatic();
   PhotoGetAssetsTestSupp();
   getAlbumIdByLPathTest();
+  getThumbnailStaticTest();
+  MediaAssetRequestImageSuppStatic();
+  createPhotoAssetTest();
+  getAssetsByPredicatesTest();
+  createAssetTest();
+  getAlbumsStaticTest();
+  getAssetsStaticTest();
   AddResourceChangeRequestUrlSuppTest();
   CommitModifySuppTest();
   ApplyChangesSuppTestStatic();
@@ -42,5 +59,5 @@ export default function testsuite(): void {
   PhotoAccessHelperEnumStatic();
   PhotoAccessHelperEnumAlbumKeysStatic();
   photoAccessHelperEnumImageFileTypeStatic();
-
+  MediaAlbumChangeRequestSetAlbumNameStatic();
 }

@@ -507,6 +507,8 @@ export default function nfcIsoDepTagTest() {
             expect(tag.MIFARE_ULTRALIGHT).assertEqual(9);
             console.info('[nfc_test]43 NDEF_FORMATABLE Enumerated value test pass:' + tag.NDEF_FORMATABLE)
             expect(tag.NDEF_FORMATABLE).assertEqual(7);
+            console.info('[nfc_test]44 SKIP_NDEF value test pass:' + tag.SKIP_NDEF);
+            expect(tag.SKIP_NDEF).assertEqual(11);
         })
 
         /**
@@ -590,6 +592,7 @@ export default function nfcIsoDepTagTest() {
                 expect().assertFail();
                 done();
             })
+            done();
         })
 
         /**

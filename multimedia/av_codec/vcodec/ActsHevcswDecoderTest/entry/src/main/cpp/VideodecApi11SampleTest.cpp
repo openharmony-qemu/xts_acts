@@ -398,7 +398,7 @@ void VDecAPI11Sample::CreateSurface()
     cNativeImage[0] = OH_ConsumerSurface_Create();
     impl->consumerListenerBuffer[0] = new ConsumerListenerBuffer(cNativeImage[0], outDir);
     pNativeWindow[0] = OH_NativeImage_AcquireNativeWindow(cNativeImage[0]);
-    if (autoSwitchSurface) {
+    if (autoSwitchSurface || expireSurface) {
         cNativeImage[1] = OH_ConsumerSurface_Create();
         impl->consumerListenerBuffer[1] = new ConsumerListenerBuffer(cNativeImage[1], outDir2);
         pNativeWindow[1] = OH_NativeImage_AcquireNativeWindow(cNativeImage[1]);
@@ -659,6 +659,26 @@ void VDecAPI11Sample::TestApi()
     OH_VideoDecoder_IsValid(vdec_, &isvalid);
 }
 
+void VDecAPI11Sample::ExpireSurface()
+{
+    if (!expireSurface) {
+        return;
+    }
+    if (!isSurfaceExpired) {
+        OH_NativeWindow_DestroyNativeWindow(pNativeWindow[0]);
+        pNativeWindow[0] = nullptr;
+        cNativeImage[0] = nullptr;
+        isSurfaceExpired = true;
+        return;
+    }
+    if (isSurfaceExpired && !isSurfaceReset) {
+        if (OH_VideoDecoder_SetSurface(vdec_, pNativeWindow[1]) != AV_ERR_OK) {
+            errCount++;
+        }
+        isSurfaceReset = true;
+    }
+}
+
 void VDecAPI11Sample::WaitForEOS()
 {
     if (!afterEosDestroyCodec && inputLoop_ && inputLoop_->joinable()) {
@@ -685,6 +705,10 @@ void VDecAPI11Sample::InFuncTest()
         inFile_->clear();
         inFile_->seekg(0, ios::beg);
         OH_VideoDecoder_Start(vdec_);
+    }
+    inputCount++;
+    if (inputCount % MAX_FRANGE == 0) {
+        ExpireSurface();
     }
 }
 

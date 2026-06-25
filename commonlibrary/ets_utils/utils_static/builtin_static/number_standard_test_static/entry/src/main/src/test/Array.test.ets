@@ -29,7 +29,7 @@ class Person {
   }
 }
 type union = number | string;
-export default function ArrayTest() {
+export default function ArrayTest(): void {
   describe("ArrayTest", (): void => {
 
     /**

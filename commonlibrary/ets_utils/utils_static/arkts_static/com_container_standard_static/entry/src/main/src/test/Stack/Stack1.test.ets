@@ -34,7 +34,7 @@ class C1 {
   name: string = ""
   age: string = ""
 }
-export default function StackTest1() {
+export default function StackTest1(): void {
   describe('StackTest1', (): void => {
     afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)

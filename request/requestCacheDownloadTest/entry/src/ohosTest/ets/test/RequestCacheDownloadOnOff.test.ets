@@ -1170,5 +1170,650 @@ export default function requestCacheDownloadOnOffUnitTest() {
       }
     });
 
+    
+    /**
+     * @tc.name   SUB_Request_cacheDownload_GlobalTimeout_0100
+     * @tc.number SUB_Request_cacheDownload_GlobalTimeout_0100
+     * @tc.desc   setGlobalTimeoutOptions with invalid networkCheckTimeout -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_GlobalTimeout_0100', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_GlobalTimeout_0100 is starting-----------------------");
+      try {
+        let timeoutOptions: cacheDownload.TimeoutOptions = {
+          networkCheckTimeout: -1,
+        }
+        cacheDownload.setGlobalTimeoutOptions(timeoutOptions);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_GlobalTimeout_0100 catch err code:" + err.code + "err message:" + err.message);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_GlobalTimeout_0200
+     * @tc.number SUB_Request_cacheDownload_GlobalTimeout_0200
+     * @tc.desc   setGlobalTimeoutOptions with invalid networkCheckTimeout 21
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_GlobalTimeout_0200', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_GlobalTimeout_0200 is starting-----------------------");
+      try {
+        let timeoutOptions: cacheDownload.TimeoutOptions = {
+          networkCheckTimeout: 21,
+        }
+        cacheDownload.setGlobalTimeoutOptions(timeoutOptions);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_GlobalTimeout_0200 catch err code:" + err.code + "err message:" + err.message);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_GlobalTimeout_0300
+     * @tc.number SUB_Request_cacheDownload_GlobalTimeout_0300
+     * @tc.desc   setGlobalTimeoutOptions with valid networkCheckTimeout 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_GlobalTimeout_0300', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_GlobalTimeout_0300 is starting-----------------------");
+      try {
+        let timeoutOptions: cacheDownload.TimeoutOptions = {
+          networkCheckTimeout: 0,
+        }
+        cacheDownload.setGlobalTimeoutOptions(timeoutOptions);
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_GlobalTimeout_0300 catch err code:" + err.code + "err message:" + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_GlobalTimeout_0400
+     * @tc.number SUB_Request_cacheDownload_GlobalTimeout_0400
+     * @tc.desc   setGlobalTimeoutOptions with valid networkCheckTimeout 20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_GlobalTimeout_0400', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_GlobalTimeout_0400 is starting-----------------------");
+      try {
+        let timeoutOptions: cacheDownload.TimeoutOptions = {
+          networkCheckTimeout: 20,
+        }
+        cacheDownload.setGlobalTimeoutOptions(timeoutOptions);
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_GlobalTimeout_0400 catch err code:" + err.code + "err message:" + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_GlobalTimeout_0500
+     * @tc.number SUB_Request_cacheDownload_GlobalTimeout_0500
+     * @tc.desc   setGlobalTimeoutOptions with invalid httpTotalTimeout 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_GlobalTimeout_0500', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_GlobalTimeout_0500 is starting-----------------------");
+      try {
+        let timeoutOptions: cacheDownload.TimeoutOptions = {
+          httpTotalTimeout: 0,
+        }
+        cacheDownload.setGlobalTimeoutOptions(timeoutOptions);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_GlobalTimeout_0500 catch err code:" + err.code + "err message:" + err.message);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_GlobalTimeout_0600
+     * @tc.number SUB_Request_cacheDownload_GlobalTimeout_0600
+     * @tc.desc   setGlobalTimeoutOptions with invalid httpTotalTimeout 4294968
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_GlobalTimeout_0600', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_GlobalTimeout_0600 is starting-----------------------");
+      try {
+        let timeoutOptions: cacheDownload.TimeoutOptions = {
+          httpTotalTimeout: 4294968,
+        }
+        cacheDownload.setGlobalTimeoutOptions(timeoutOptions);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_GlobalTimeout_0600 catch err code:" + err.code + "err message:" + err.message);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_GlobalTimeout_0700
+     * @tc.number SUB_Request_cacheDownload_GlobalTimeout_0700
+     * @tc.desc   setGlobalTimeoutOptions with valid httpTotalTimeout 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_GlobalTimeout_0700', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_GlobalTimeout_0700 is starting-----------------------");
+      try {
+        let timeoutOptions: cacheDownload.TimeoutOptions = {
+          httpTotalTimeout: 1,
+        }
+        cacheDownload.setGlobalTimeoutOptions(timeoutOptions);
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_GlobalTimeout_0700 catch err code:" + err.code + "err message:" + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_GlobalTimeout_0800
+     * @tc.number SUB_Request_cacheDownload_GlobalTimeout_0800
+     * @tc.desc   setGlobalTimeoutOptions with valid httpTotalTimeout 4294967
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_GlobalTimeout_0800', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_GlobalTimeout_0800 is starting-----------------------");
+      try {
+        let timeoutOptions: cacheDownload.TimeoutOptions = {
+          httpTotalTimeout: 4294967,
+        }
+        cacheDownload.setGlobalTimeoutOptions(timeoutOptions);
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_GlobalTimeout_0800 catch err code:" + err.code + "err message:" + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_GlobalRetry_0100
+     * @tc.number SUB_Request_cacheDownload_GlobalRetry_0100
+     * @tc.desc   setGlobalRetryOptions with invalid maxRetryCount -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_GlobalRetry_0100', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_GlobalRetry_0100 is starting-----------------------");
+      try {
+        let retryOptions: cacheDownload.RetryOptions = {
+          maxRetryCount: -1,
+        }
+        cacheDownload.setGlobalRetryOptions(retryOptions);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_GlobalRetry_0100 catch err code:" + err.code + "err message:" + err.message);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_GlobalRetry_0200
+     * @tc.number SUB_Request_cacheDownload_GlobalRetry_0200
+     * @tc.desc   setGlobalRetryOptions with invalid maxRetryCount 11
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_GlobalRetry_0200', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_GlobalRetry_0200 is starting-----------------------");
+      try {
+        let retryOptions: cacheDownload.RetryOptions = {
+          maxRetryCount: 11,
+        }
+        cacheDownload.setGlobalRetryOptions(retryOptions);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_GlobalRetry_0200 catch err code:" + err.code + "err message:" + err.message);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_GlobalRetry_0300
+     * @tc.number SUB_Request_cacheDownload_GlobalRetry_0300
+     * @tc.desc   setGlobalRetryOptions with valid maxRetryCount 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_GlobalRetry_0300', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_GlobalRetry_0300 is starting-----------------------");
+      try {
+        let retryOptions: cacheDownload.RetryOptions = {
+          maxRetryCount: 0,
+        }
+        cacheDownload.setGlobalRetryOptions(retryOptions);
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_GlobalRetry_0300 catch err code:" + err.code + "err message:" + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_GlobalRetry_0400
+     * @tc.number SUB_Request_cacheDownload_GlobalRetry_0400
+     * @tc.desc   setGlobalRetryOptions with valid maxRetryCount 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_GlobalRetry_0400', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_GlobalRetry_0400 is starting-----------------------");
+      try {
+        let retryOptions: cacheDownload.RetryOptions = {
+          maxRetryCount: 10,
+        }
+        cacheDownload.setGlobalRetryOptions(retryOptions);
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_GlobalRetry_0400 catch err code:" + err.code + "err message:" + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_TaskRetry_0100
+     * @tc.number SUB_Request_cacheDownload_TaskRetry_0100
+     * @tc.desc   download with invalid retry maxRetryCount -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_TaskRetry_0100', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_TaskRetry_0100 is starting-----------------------");
+      try {
+        let retryOptions: cacheDownload.RetryOptions = {
+          maxRetryCount: -1,
+        }
+        let url: string = 'https://gitcode.com/gzccc/request_test/blob/main/README.md';
+        let downloadOptions: cacheDownload.CacheDownloadOptions = {
+          retry: retryOptions,
+        }
+        cacheDownload.download(url, downloadOptions);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_TaskRetry_0100 catch err code:" + err.code + "err message:" + err.message);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_TaskRetry_0200
+     * @tc.number SUB_Request_cacheDownload_TaskRetry_0200
+     * @tc.desc   download with invalid retry maxRetryCount 11
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_TaskRetry_0200', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_TaskRetry_0200 is starting-----------------------");
+      try {
+        let retryOptions: cacheDownload.RetryOptions = {
+          maxRetryCount: 11,
+        }
+        let url: string = 'https://gitcode.com/gzccc/request_test/blob/main/README.md';
+        let downloadOptions: cacheDownload.CacheDownloadOptions = {
+          retry: retryOptions,
+        }
+        cacheDownload.download(url, downloadOptions);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_TaskRetry_0200 catch err code:" + err.code + "err message:" + err.message);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_TaskRetry_0300
+     * @tc.number SUB_Request_cacheDownload_TaskRetry_0300
+     * @tc.desc   download with valid retry maxRetryCount 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_TaskRetry_0300', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_TaskRetry_0300 is starting-----------------------");
+      try {
+        let retryOptions: cacheDownload.RetryOptions = {
+          maxRetryCount: 0,
+        }
+        let url: string = 'https://gitcode.com/gzccc/request_test/blob/main/README.md';
+        let downloadOptions: cacheDownload.CacheDownloadOptions = {
+          retry: retryOptions,
+        }
+        cacheDownload.download(url, downloadOptions);
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_TaskRetry_0300 catch err code:" + err.code + "err message:" + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_TaskRetry_0400
+     * @tc.number SUB_Request_cacheDownload_TaskRetry_0400
+     * @tc.desc   download with valid retry maxRetryCount 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_TaskRetry_0400', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_TaskRetry_0400 is starting-----------------------");
+      try {
+        let retryOptions: cacheDownload.RetryOptions = {
+          maxRetryCount: 10,
+        }
+        let url: string = 'https://gitcode.com/gzccc/request_test/blob/main/README.md';
+        let downloadOptions: cacheDownload.CacheDownloadOptions = {
+          retry: retryOptions,
+        }
+        cacheDownload.download(url, downloadOptions);
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_TaskRetry_0400 catch err code:" + err.code + "err message:" + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_TaskTimeout_0100
+     * @tc.number SUB_Request_cacheDownload_TaskTimeout_0100
+     * @tc.desc   download with invalid timeout networkCheckTimeout -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_TaskTimeout_0100', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_TaskTimeout_0100 is starting-----------------------");
+      try {
+        let timeoutOptions: cacheDownload.TimeoutOptions = {
+          networkCheckTimeout: -1,
+        }
+        let url: string = 'https://gitcode.com/gzccc/request_test/blob/main/README.md';
+        let downloadOptions: cacheDownload.CacheDownloadOptions = {
+          timeout: timeoutOptions,
+        }
+        cacheDownload.download(url, downloadOptions);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_TaskTimeout_0100 catch err code:" + err.code + "err message:" + err.message);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_TaskTimeout_0200
+     * @tc.number SUB_Request_cacheDownload_TaskTimeout_0200
+     * @tc.desc   download with invalid timeout networkCheckTimeout 21
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_TaskTimeout_0200', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_TaskTimeout_0200 is starting-----------------------");
+      try {
+        let timeoutOptions: cacheDownload.TimeoutOptions = {
+          networkCheckTimeout: 21,
+        }
+        let url: string = 'https://gitcode.com/gzccc/request_test/blob/main/README.md';
+        let downloadOptions: cacheDownload.CacheDownloadOptions = {
+          timeout: timeoutOptions,
+        }
+        cacheDownload.download(url, downloadOptions);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_TaskTimeout_0200 catch err code:" + err.code + "err message:" + err.message);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_TaskTimeout_0300
+     * @tc.number SUB_Request_cacheDownload_TaskTimeout_0300
+     * @tc.desc   download with valid timeout networkCheckTimeout 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_TaskTimeout_0300', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_TaskTimeout_0300 is starting-----------------------");
+      try {
+        let timeoutOptions: cacheDownload.TimeoutOptions = {
+          networkCheckTimeout: 0,
+        }
+        let url: string = 'https://gitcode.com/gzccc/request_test/blob/main/README.md';
+        let downloadOptions: cacheDownload.CacheDownloadOptions = {
+          timeout: timeoutOptions,
+        }
+        cacheDownload.download(url, downloadOptions);
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_TaskTimeout_0300 catch err code:" + err.code + "err message:" + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_TaskTimeout_0400
+     * @tc.number SUB_Request_cacheDownload_TaskTimeout_0400
+     * @tc.desc   download with valid timeout networkCheckTimeout 20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_TaskTimeout_0400', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_TaskTimeout_0400 is starting-----------------------");
+      try {
+        let timeoutOptions: cacheDownload.TimeoutOptions = {
+          networkCheckTimeout: 20,
+        }
+        let url: string = 'https://gitcode.com/gzccc/request_test/blob/main/README.md';
+        let downloadOptions: cacheDownload.CacheDownloadOptions = {
+          timeout: timeoutOptions,
+        }
+        cacheDownload.download(url, downloadOptions);
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_TaskTimeout_0400 catch err code:" + err.code + "err message:" + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_TaskTimeout_0500
+     * @tc.number SUB_Request_cacheDownload_TaskTimeout_0500
+     * @tc.desc   download with invalid timeout httpTotalTimeout 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_TaskTimeout_0500', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_TaskTimeout_0500 is starting-----------------------");
+      try {
+        let timeoutOptions: cacheDownload.TimeoutOptions = {
+          httpTotalTimeout: 0,
+        }
+        let url: string = 'https://gitcode.com/gzccc/request_test/blob/main/README.md';
+        let downloadOptions: cacheDownload.CacheDownloadOptions = {
+          timeout: timeoutOptions,
+        }
+        cacheDownload.download(url, downloadOptions);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_TaskTimeout_0500 catch err code:" + err.code + "err message:" + err.message);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_TaskTimeout_0600
+     * @tc.number SUB_Request_cacheDownload_TaskTimeout_0600
+     * @tc.desc   download with invalid timeout httpTotalTimeout 4294968
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_TaskTimeout_0600', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_TaskTimeout_0600 is starting-----------------------");
+      try {
+        let timeoutOptions: cacheDownload.TimeoutOptions = {
+          httpTotalTimeout: 4294968,
+        }
+        let url: string = 'https://gitcode.com/gzccc/request_test/blob/main/README.md';
+        let downloadOptions: cacheDownload.CacheDownloadOptions = {
+          timeout: timeoutOptions,
+        }
+        cacheDownload.download(url, downloadOptions);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_TaskTimeout_0600 catch err code:" + err.code + "err message:" + err.message);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_TaskTimeout_0700
+     * @tc.number SUB_Request_cacheDownload_TaskTimeout_0700
+     * @tc.desc   download with valid timeout httpTotalTimeout 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_TaskTimeout_0700', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_TaskTimeout_0700 is starting-----------------------");
+      try {
+        let timeoutOptions: cacheDownload.TimeoutOptions = {
+          httpTotalTimeout: 1,
+        }
+        let url: string = 'https://gitcode.com/gzccc/request_test/blob/main/README.md';
+        let downloadOptions: cacheDownload.CacheDownloadOptions = {
+          timeout: timeoutOptions,
+        }
+        cacheDownload.download(url, downloadOptions);
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_TaskTimeout_0700 catch err code:" + err.code + "err message:" + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_TaskTimeout_0800
+     * @tc.number SUB_Request_cacheDownload_TaskTimeout_0800
+     * @tc.desc   download with valid timeout httpTotalTimeout 4294967
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_TaskTimeout_0800', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_TaskTimeout_0800 is starting-----------------------");
+      try {
+        let timeoutOptions: cacheDownload.TimeoutOptions = {
+          httpTotalTimeout: 4294967,
+        }
+        let url: string = 'https://gitcode.com/gzccc/request_test/blob/main/README.md';
+        let downloadOptions: cacheDownload.CacheDownloadOptions = {
+          timeout: timeoutOptions,
+        }
+        cacheDownload.download(url, downloadOptions);
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_TaskTimeout_0800 catch err code:" + err.code + "err message:" + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_Timeout_Option_0100
+     * @tc.number SUB_Request_cacheDownload_Timeout_Option_0100
+     * @tc.desc   the boundary value of TimeoutOptions.httpTotalTimeout  
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_Timeout_Option_0100',  Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_Timeout_Option_0100 is starting-----------------------");
+      try {
+        let timeoutOptions: cacheDownload.TimeoutOptions = {
+          httpTotalTimeout: 1,
+          networkCheckTimeout: 0,
+        }
+        let retryOptions: cacheDownload.RetryOptions = {
+          maxRetryCount: 0,
+        }
+        let url: string = 'https://gitcode.com/gzccc/request_test/blob/main/README.md';
+        let downloadOptions: cacheDownload.CacheDownloadOptions = {
+          timeout: timeoutOptions,
+          retry: retryOptions
+        }
+        cacheDownload.download(url, downloadOptions);
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_Timeout_Option_0100 catch err code:" + err.code + "err message:" + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
+
   });
 }

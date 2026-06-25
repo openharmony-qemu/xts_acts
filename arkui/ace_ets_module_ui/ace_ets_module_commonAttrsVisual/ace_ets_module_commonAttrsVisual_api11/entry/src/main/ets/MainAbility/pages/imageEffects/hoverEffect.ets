@@ -43,7 +43,7 @@ struct HoverEffectPage {
         .hoverEffect(HoverEffect.Scale)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("ScaleText")
+        .key("hoverEffect_ScaleText")
         .minFontSize('50px')
         .onClick(() => {
         })
@@ -61,7 +61,7 @@ struct HoverEffectPage {
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
         .hoverEffect(HoverEffect.Highlight)
-        .key("HighlightText")
+        .key("hoverEffect_HighlightText")
         .copyOption(0)
     }
     .width("100%")

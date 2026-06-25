@@ -20,6 +20,7 @@ import audioLoopBack from './AudioLoopBack.test';
 import audioSpatializationManager from './AudioSpatializationManager.test';
 import audioSessionManagerTest from './AudioSessionManager.test';
 import audioDeviceEnhanceManager from './AudioDeviceEnhanceManagerTest.test';
+import audioDebuggingManager from './AudioDebuggingManager.test';
 import Utils from './Util.test';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -63,6 +64,7 @@ export default function testsuite() {
     getPermission();
     audioSessionManagerTest();
     audioDeviceEnhanceManager();
+    audioDebuggingManager();
     audioManagerApi9();
     audioFramework();
     audioRoutingManager();

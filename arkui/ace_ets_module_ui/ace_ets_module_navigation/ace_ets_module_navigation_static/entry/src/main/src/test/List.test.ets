@@ -19,6 +19,7 @@ import NavigationTest from './NavigationTest/Navigation.test';
 import SwiperControllerTest from './SwiperControllerTest/SwiperController.test';
 import NavigationNavDestinationTest from './NavigationNavDestinationTest/NavigationNavDestination.test';
 import ToolBarItemDebugLineTest from './ToolBarItemDebugLineTest/ToolBarItemDebugLine.test';
+import NavScrollEffectOptions from './NavigationTest/NavScrollEffectOptions.test';
 
 export default function testsuite() {
   NavDestinationTest();
@@ -26,4 +27,5 @@ export default function testsuite() {
   SwiperControllerTest();
   NavigationNavDestinationTest();
   ToolBarItemDebugLineTest();
+  NavScrollEffectOptions();
 }

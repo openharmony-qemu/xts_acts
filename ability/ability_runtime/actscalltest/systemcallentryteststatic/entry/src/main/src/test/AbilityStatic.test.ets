@@ -45,7 +45,12 @@ export default function AbilityStaticTest() {
     beforeAll(async () => {
       hilog.info(domain, tag, 'beforeAll start');
       hilog.info(domain, tag, 'beforeAll AbilityDelegator');
-      abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${BUNDLE_NAME}`);
+      let cmd = `aa start -a EntryAbility -b ${BUNDLE_NAME}`;
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd);
       await Utils.msSleep(5000)
       caller = AppStorage.get<Caller>('Caller') as Caller;
       hilog.info(domain, tag, `beforeAll Caller: ${!!caller!}`);

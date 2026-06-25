@@ -72,7 +72,7 @@ export default function bmsZlibChecksumCrc64Test() {
       async (done: () => void): Promise<void> => {
         try {
           hilog.info(Domain, TAG, `Sub_Bms_Zlib_Checksum_Check_static_0500 start`);
-          await checksum.getCrc64Table().then((data: Array<long>): Promise<Array<long>> => {
+          await checksum.getCrc64Table().then((data: Array<long>): void => {
             hilog.info(Domain, TAG, 'Sub_Bms_Zlib_Checksum_Check_static_0500 getCrc64Table success' + JSON.stringify(data));
             expect(data[0]).assertEqual(0);
             done();

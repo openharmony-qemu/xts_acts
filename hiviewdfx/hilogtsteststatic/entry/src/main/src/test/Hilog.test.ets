@@ -394,6 +394,52 @@ export default function HilogTsTest() {
     })
 
     /**
+     * @tc.name   testHilogTsApiStatic20
+     * @tc.number SUB_DFX_DFT_Hiview_Libhilog_Hilog_Static_2000
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogTsApiStatic20', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      hilog.info(domain, tag, 'testHilogTsApiStatic20 start');
+      try{
+        hilog.debug(domain, "", "%{public}s World ", "testHilogTsApiStatic20");
+        hilog.info(domain, "", "%{public}s World ", "testHilogTsApiStatic20");
+        hilog.error(domain, "", "%{public}s World ", "testHilogTsApiStatic20");
+        hilog.warn(domain, "", "%{public}s World ", "testHilogTsApiStatic20");
+        hilog.fatal(domain, "","%{public}s World ", "testHilogTsApiStatic20");
+      } catch (error){
+        hilog.error(domain, tag, `testHilogTsApiStatic20 got an error: ${JSON.stringify(error)}`)
+        expect().assertFail()
+      }
+      hilog.info(domain, tag, 'testHilogTsApiStatic20 end');
+    })
+ 
+    /**
+     * @tc.name   testHilogTsApiStatic21
+     * @tc.number SUB_DFX_DFT_Hiview_Libhilog_Hilog_Static_2100
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogTsApiStatic21', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      hilog.info(domain, tag, 'testHilogTsApiStatic21 start');
+      try{
+        hilog.debug(domain, tag, "", "testHilogTsApiStatic21");
+        hilog.info(domain, tag, "", "testHilogTsApiStatic21");
+        hilog.error(domain, tag, "", "testHilogTsApiStatic21");
+        hilog.warn(domain, tag, "", "testHilogTsApiStatic21");
+        hilog.fatal(domain, tag,"", "testHilogTsApiStatic21");
+      } catch (error){
+        hilog.error(domain, tag, `testHilogTsApiStatic21 got an error: ${JSON.stringify(error)}`)
+        expect().assertFail()
+      }
+      hilog.info(domain, tag, 'testHilogTsApiStatic21 end');
+    })
+
+    /**
      * @tc.name   SUB_DFX_DFT_DefaultLevel_Static_0100
      * @tc.number SUB_DFX_DFT_DefaultLevel_Static_0100
      * @tc.desc   hilog begin interface test.
@@ -559,6 +605,367 @@ export default function HilogTsTest() {
       let res3 = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.FATAL);
       expect(res2).assertEqual(true);
       expect(res3).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testHilogSetOutputType0100
+     * @tc.number SUB_DFX_DFT_SetOutputType_0100
+     * @tc.desc   hilog的SetOutputType方法
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogSetOutputType0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let lastType = hilog.setOutputType(hilog.OutputType.DEFAULT);
+        hilog.info(0x0001, "testTag", 'set output type result:%{public}d', lastType);
+        expect(lastType >= 0 && lastType <= 4).assertTrue();
+      } catch (err) {
+        console.error(`====> testHilogSetOutputType0100 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   testHilogSetOutputType0200
+     * @tc.number SUB_DFX_DFT_SetOutputType_0200
+     * @tc.desc   hilog的SetOutputType方法2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogSetOutputType0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let lastType = hilog.setOutputType(hilog.OutputType.PRIVATE_SANDBOX_ONLY);
+        hilog.info(0x0001, "testTag", 'private sandbox log');
+        expect(lastType >= 0 && lastType <= 4).assertTrue();
+      } catch (err) {
+        console.error(`====> testHilogSetOutputType0200 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   testHilogSetOutputType0300
+     * @tc.number SUB_DFX_DFT_SetOutputType_0300
+     * @tc.desc   hilog的SetOutputType方法3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogSetOutputType0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let lastType = hilog.setOutputType(hilog.OutputType.SHARE_SANDBOX_ONLY);
+        hilog.info(0x0001, "testTag", 'share sandbox log');
+        expect(lastType >= 0 && lastType <= 4).assertTrue();
+      } catch (err) {
+        console.error(`====> testHilogSetOutputType0300 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   testHilogSetOutputType0400
+     * @tc.number SUB_DFX_DFT_SetOutputType_0400
+     * @tc.desc   hilog的SetOutputType方法4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogSetOutputType0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let lastType = hilog.setOutputType(hilog.OutputType.PRIVATE_SANDBOX_WITH_CONSOLE);
+        hilog.info(0x0001, "testTag", 'private sandbox with console log');
+        expect(lastType >= 0 && lastType <= 4).assertTrue();
+      } catch (err) {
+        console.error(`====> testHilogSetOutputType0400 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   testHilogSetOutputType0500
+     * @tc.number SUB_DFX_DFT_SetOutputType_0500
+     * @tc.desc   hilog的SetOutputType方法5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogSetOutputType0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let lastType = hilog.setOutputType(hilog.OutputType.SHARE_SANDBOX_WITH_CONSOLE);
+        hilog.info(0x0001, "testTag", 'share sandbox with console log');
+        expect(lastType >= 0 && lastType <= 4).assertTrue();
+      } catch (err) {
+        console.error(`====> testHilogSetOutputType0500 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   testHilogSetOutputTypeByDomainID0100
+     * @tc.number SUB_DFX_DFT_SetOutputTypeByDomainID_0100
+     * @tc.desc   hilog的SetOutputTypeByDomainID方法
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogSetOutputTypeByDomainID0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let lastType = hilog.setOutputTypeByDomainID(hilog.OutputType.SHARE_SANDBOX_ONLY, [1, 2, 3], false);
+        hilog.info(0x0001, "testTag", 'domain 1 log');
+        hilog.info(0x0002, "testTag", 'domain 2 log');
+        expect(lastType >= 0 && lastType <= 4).assertTrue();
+      } catch (err) {
+        console.error(`====> testHilogSetOutputTypeByDomainID0100 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   testHilogSetOutputTypeByDomainID0200
+     * @tc.number SUB_DFX_DFT_SetOutputTypeByDomainID_0200
+     * @tc.desc   hilog的SetOutputTypeByDomainID方法
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogSetOutputTypeByDomainID0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let lastType = hilog.setOutputTypeByDomainID(hilog.OutputType.SHARE_SANDBOX_ONLY, [1, 2, 3], true);
+        hilog.info(0x0004, "testTag", 'domain 4 log');
+        expect(lastType >= 0 && lastType <= 4).assertTrue();
+      } catch (err) {
+        console.error(`====> testHilogSetOutputTypeByDomainID0200 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   testHilogSetOutputTypeByDomainID0300
+     * @tc.number SUB_DFX_DFT_SetOutputTypeByDomainID_0300
+     * @tc.desc   hilog的SetOutputTypeByDomainID方法
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogSetOutputTypeByDomainID0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let lastType = hilog.setOutputTypeByDomainID(hilog.OutputType.SHARE_SANDBOX_ONLY, [], false);
+        hilog.info(0x0001, "testTag", 'empty domain list log');
+        expect(lastType >= 0 && lastType <= 4).assertTrue();
+      } catch (err) {
+        console.error(`====> testHilogSetOutputTypeByDomainID0300 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   testHilogSetOutputTypeByDomainID0400
+     * @tc.number SUB_DFX_DFT_SetOutputTypeByDomainID_0400
+     * @tc.desc   hilog的SetOutputTypeByDomainID方法
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogSetOutputTypeByDomainID0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let lastType = hilog.setOutputTypeByDomainID(hilog.OutputType.PRIVATE_SANDBOX_ONLY, [1, 100, 1000, 65535], false);
+        hilog.info(0x0001, "testTag", 'multi domain log');
+        expect(lastType >= 0 && lastType <= 4).assertTrue();
+      } catch (err) {
+        console.error(`====> testHilogSetOutputTypeByDomainID0400 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   testHilogGetOutputType0100
+     * @tc.number SUB_DFX_DFT_GetOutputType_0100
+     * @tc.desc   hilog的GetOutputType方法
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogGetOutputType0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        hilog.setOutputType(hilog.OutputType.SHARE_SANDBOX_ONLY);
+        let currentType = hilog.getOutputType();
+        hilog.info(0x0001, "testTag", 'current output type:%{public}d', currentType);
+        expect(currentType >= 0 && currentType <= 4).assertTrue();
+      } catch (err) {
+        console.error(`====> testHilogGetOutputType0100 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   testHilogGetOutputDir0100
+     * @tc.number SUB_DFX_DFT_GetOutputDir_0100
+     * @tc.desc   hilog的GetOutputDir方法
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogGetOutputDir0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        hilog.setOutputType(hilog.OutputType.SHARE_SANDBOX_ONLY);
+        let dir = hilog.getOutputDir();
+        hilog.info(0x0001, "testTag", 'sandbox output dir:%{public}s', dir);
+        expect(dir.length > 0).assertTrue();
+      } catch (err) {
+        console.error(`====> testHilogGetOutputDir0100 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue(); 
+      }
+    })
+
+    /**
+     * @tc.name   testHilogGetOutputDir0200
+     * @tc.number SUB_DFX_DFT_GetOutputDir_0200
+     * @tc.desc   hilog的GetOutputDir方法
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogGetOutputDir0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        hilog.setOutputType(hilog.OutputType.DEFAULT);
+        let dir = hilog.getOutputDir();
+        hilog.info(0x0001, "testTag", 'default output dir:%{public}s', dir);
+        expect(dir.length == 0).assertTrue();
+      } catch (err) {
+        console.error(`====> testHilogGetOutputDir0200 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   testHilogClean0100
+     * @tc.number SUB_DFX_DFT_Clean_0100
+     * @tc.desc   hilog的clean方法
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogClean0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        hilog.setOutputType(hilog.OutputType.SHARE_SANDBOX_ONLY);
+        hilog.info(0x0001, "testTag", 'log before clean');
+        hilog.clean();
+        hilog.info(0x0001, "testTag", 'log after clean');
+      } catch (err) {
+        console.error(`====> testHilogClean0100 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   testHilogFlush0100
+     * @tc.number SUB_DFX_DFT_Flush_0100
+     * @tc.desc   hilog的flush方法
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogFlush0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        hilog.setOutputType(hilog.OutputType.SHARE_SANDBOX_ONLY);
+        hilog.info(0x0001, "testTag", 'log before flush');
+        hilog.flush();
+        hilog.info(0x0001, "testTag", 'log after flush');
+      } catch (err) {
+        console.error(`====> testHilogFlush0100 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   testHilogGetLogFile0100
+     * @tc.number SUB_DFX_DFT_GetLogFile_0100
+     * @tc.desc   hilog的getLogFile方法
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogGetLogFile0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        hilog.setOutputType(hilog.OutputType.SHARE_SANDBOX_ONLY);
+        hilog.info(0x0001, "testTag", 'test get log file');
+        hilog.flush();
+        let files = hilog.getLogFile(10);
+        hilog.info(0x0001, "testTag", 'log files count:%{public}d', files.length);
+        expect(files.length >= 0).assertTrue();
+      } catch (err) {
+        console.error(`====> testHilogGetLogFile0100 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   testHilogGetLogFile0200
+     * @tc.number SUB_DFX_DFT_GetLogFile_0200
+     * @tc.desc   hilog的getLogFile方法
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogGetLogFile0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        hilog.setOutputType(hilog.OutputType.SHARE_SANDBOX_ONLY);
+        let files = hilog.getLogFile(0);
+        hilog.info(0x0001, "testTag", '0 seconds log files count:%{public}d', files.length);
+        expect(files.length >= 0).assertTrue();
+      } catch (err) {
+        console.error(`====> testHilogGetLogFile0200 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   testHilogGetLogFile0300
+     * @tc.number SUB_DFX_DFT_GetLogFile_0300
+     * @tc.desc   hilog的getLogFile方法
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogGetLogFile0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        hilog.setOutputType(hilog.OutputType.SHARE_SANDBOX_WITH_CONSOLE);
+        hilog.info(0x0001, "testTag", 'long time test log');
+        hilog.flush();
+        let files = hilog.getLogFile(-1);
+        if (files === null || files === undefined) {
+          expect(false).assertTrue();
+        }
+        hilog.info(0x0001, "testTag", 'testHilogGetLogFile0300 negative seconds log files count:%{public}d', files.length);
+        expect(files.length == 0).assertTrue();
+      } catch (err) {
+        console.error(`====>testTag testHilogGetLogFile0300 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   testHilogGetLogFile0400
+     * @tc.number SUB_DFX_DFT_GetLogFile_0400
+     * @tc.desc   hilog的getLogFile方法
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogGetLogFile0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        hilog.setOutputType(hilog.OutputType.SHARE_SANDBOX_ONLY);
+        hilog.info(0x0001, "testTag", 'long time test log');
+        hilog.flush();
+        let files = hilog.getLogFile(3600);
+        hilog.info(0x0001, "testTag", 'long time log files count:%{public}d', files.length);
+        expect(files.length >= 0).assertTrue();
+      } catch (err) {
+        console.error(`====> testHilogGetLogFile0400 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+      }
     })
 
   })

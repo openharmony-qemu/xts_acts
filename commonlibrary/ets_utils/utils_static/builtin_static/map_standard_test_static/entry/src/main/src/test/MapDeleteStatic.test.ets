@@ -18,7 +18,7 @@ import Utils from './Util.test';
 
 class C {
 }
-export default function MapDeleteTest() {
+export default function MapDeleteTest(): void {
   describe('MapDeleteTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

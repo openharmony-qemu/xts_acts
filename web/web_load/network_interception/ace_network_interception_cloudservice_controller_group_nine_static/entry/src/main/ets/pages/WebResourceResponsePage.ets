@@ -12,33 +12,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  OnHttpErrorReceiveEvent,
-  OnInterceptRequestEvent,
-  Header,
-  WebResourceResponse,
-  OnRenderExitedEvent,
-  OnPageBeginEvent,
-  RenderProcessNotRespondingReason,
-  RenderProcessNotRespondingData,
-  Entry,
-  Component,
-  Column,
-  Row,
-  Button,
-  ClickEvent,
-  Web
-} from "@ohos.arkui.component"
-import { State } from "@ohos.arkui.stateManagement" // should be insert by ui-plugins
-import webview from '@ohos.web.webview'
-import { BusinessError } from '@ohos.base';
+import { OnHttpErrorReceiveEvent, OnInterceptRequestEvent, Header, WebResourceResponse, OnRenderExitedEvent, OnPageBeginEvent, RenderProcessNotRespondingReason, RenderProcessNotRespondingData, Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component';
+import { State } from '@ohos.arkui.stateManagement';
+import webview from '@ohos.web.webview';
+import { BusinessError, Callback, RecordData } from '@ohos.base';
 import Utils from '../../src/test/Util.test';
-import events_emitter from '@ohos.events.emitter';
-import { Callback } from '@ohos.base'
 import emitter from '@ohos.events.emitter';
-import { Callback, RecordData } from '@ohos.base'
-import { UIContext, Router } from '@ohos.arkui.UIContext'
-
+import events_emitter from '@ohos.events.emitter';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 export class StringFields {
   public str: string = '';
 }

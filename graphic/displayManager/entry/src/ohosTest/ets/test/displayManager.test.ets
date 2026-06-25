@@ -95,6 +95,7 @@ export default function displayTest() {
     let isPCMode: boolean = false;
     let displayClass = display.getDefaultDisplaySync();
     let isSyscapSessionManagerSupported = false;
+    let curWindowBrightness = 0.0;
     beforeAll(async () => {
       windowStage = AppStorage.get('windowStage') as window.WindowStage;
       context = AppStorage.get('context') as common.UIAbilityContext;
@@ -115,7 +116,7 @@ export default function displayTest() {
       let promiseSnapshot = windowClass.getWindowStateSnapshot();
       promiseSnapshot.then((data) => {
         let jsonObj: object = JSON.parse(data);
-        console.info(`beforeAll: Succeeded. data=${data}, isPcMode=${jsonObj["isPcMode"]}`);
+        console.info(`beforeAll: Succeeded. data=${data}, isPCMode=${jsonObj["isPcMode"]}`);
         isPCMode = jsonObj["isPcMode"];
       }).catch((err: BusinessError) => {
         console.error(`beforeAll: getWindowStateSnapshot Failed. Cause code: ${err.code}, cancel message: ${err.message}`);
@@ -150,6 +151,16 @@ export default function displayTest() {
       console.log(`beforeAll isSupportRotate: ${JSON.stringify(isSupportRotate)},Orientation1: ${JSON.stringify(Orientation1)},Orientation2: ${JSON.stringify(Orientation2)}`)
       isSyscapSessionManagerSupported = canIUse('SystemCapability.Window.SessionManager');
       console.info(`beforeAll isSyscapSessionManagerSupported: ` + isSyscapSessionManagerSupported);
+      //提前调整，覆盖系统亮度
+      await windowClass.setWindowBrightness(0.5);
+      await sleep(300);
+      try {
+        let properties = windowClass.getWindowProperties();
+        curWindowBrightness = properties.brightness;
+        console.log(`beforeAll getBrightnessInfo: ${JSON.stringify(curWindowBrightness)}`);
+      } catch (exception) {
+        console.error(`beforeAll Failed to obtain the window properties. Cause code: ${exception.code}, message: ${exception.message}`);
+      }
     });
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.
@@ -3268,41 +3279,52 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
     });
 
     /**
-     * @tc.number     SUB_BASIC_DMS_GET_BRIGHTNESS_INFO_0100
-     * @tc.name       testGetBrightnessInfowithMainDisplayid
-     * @tc.desc       查询主屏亮度信息
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
-     */
+    * @tc.number     SUB_BASIC_DMS_GET_BRIGHTNESS_INFO_0100
+    * @tc.name       testGetBrightnessInfowithMainDisplayid
+    * @tc.desc       查询主屏亮度信息
+    * @tc.size       MediumTest
+    * @tc.type       Function
+    * @tc.level      Level0
+    */
     it('testGetBrightnessInfowithMainDisplayid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testGetBrightnessInfowithMainDisplayid';
       try {
-        let brightnessInfo = display.getBrightnessInfo(0);
+        let brightnessInfo = await display.getBrightnessInfo(0);
         console.log(`${caseName} brightnessInfo: ${JSON.stringify(brightnessInfo)}`);
-        expect(brightnessInfo.sdrNits).assertLarger(0);
-        expect(brightnessInfo.currentHeadroom).assertLarger(0);
-        expect(brightnessInfo.maxHeadroom).assertLarger(0);
+        if (deviceType !== 'tv') {
+          expect(brightnessInfo.sdrNits).assertLarger(0);
+          expect(brightnessInfo.currentHeadroom).assertLarger(0);
+          expect(brightnessInfo.maxHeadroom).assertLarger(0);
+          expect(brightnessInfo.brightnessPosition).assertLargerOrEqual(curWindowBrightness - 0.01);
+          expect(brightnessInfo.brightnessPosition).assertLessOrEqual(curWindowBrightness + 0.01);
+        } else {
+          expect(brightnessInfo.sdrNits).assertLarger(0);
+          expect(brightnessInfo.currentHeadroom).assertLarger(0);
+          expect(brightnessInfo.maxHeadroom).assertLarger(0);
+          expect(brightnessInfo.brightnessPosition).assertLargerOrEqual(0);
+          expect(brightnessInfo.brightnessPosition).assertLessOrEqual(1);
+        }
         done();
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-        if (e.code == 801) {
+        if (!isSyscapSessionManagerSupported) {
+          expect(e.code).assertEqual(801);
           done()
         } else {
           expect(false).assertTrue();
-          done();
+          done()
         }
       }
     });
 
     /**
-     * @tc.number     SUB_BASIC_DMS_GET_BRIGHTNESS_INFO_0200
-     * @tc.name       testGetBrightnessInfowithVirtualDisplayid
-     * @tc.desc       查询虚拟屏亮度信息
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
-     */
+    * @tc.number     SUB_BASIC_DMS_GET_BRIGHTNESS_INFO_0200
+    * @tc.name       testGetBrightnessInfowithVirtualDisplayid
+    * @tc.desc       查询虚拟屏亮度信息
+    * @tc.size       MediumTest
+    * @tc.type       Function
+    * @tc.level      Level0
+    */
     it('testGetBrightnessInfowithVirtualDisplayid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testGetBrightnessInfowithVirtualDisplayid';
       try {
@@ -3321,6 +3343,7 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
         expect(brightnessInfo.sdrNits).assertEqual(500);
         expect(brightnessInfo.currentHeadroom).assertEqual(1);
         expect(brightnessInfo.maxHeadroom).assertEqual(1);
+        expect(brightnessInfo.brightnessPosition).assertEqual(0);
         await display.destroyVirtualScreen(screenId).then(() =>{
           console.info(caseName + 'Succeeded in destroyVirtualScreen1');
         }).catch((err:BusinessError) => {
@@ -3329,23 +3352,24 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
         done();
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-        if (e.code == 801) {
+        if (!isSyscapSessionManagerSupported) {
+          expect(e.code).assertEqual(801);
           done()
         } else {
           expect(false).assertTrue();
-          done();
+          done()
         }
       }
     });
 
     /**
-     * @tc.number     SUB_BASIC_DMS_GET_BRIGHTNESS_INFO_0300
-     * @tc.name       testGetBrightnessInfowithNonExistedDisplayId
-     * @tc.desc       查询大于0但不存在的屏幕亮度信息
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level3
-     */
+    * @tc.number     SUB_BASIC_DMS_GET_BRIGHTNESS_INFO_0300
+    * @tc.name       testGetBrightnessInfowithNonExistedDisplayId
+    * @tc.desc       查询大于0但不存在的屏幕亮度信息
+    * @tc.size       MediumTest
+    * @tc.type       Function
+    * @tc.level      Level3
+    */
     it('testGetBrightnessInfowithNonExistedDisplayId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testGetBrightnessInfowithNonExistedDisplayId';
       try {
@@ -3355,23 +3379,24 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
         done();
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-        if (e.code == 801) {
+        if (!isSyscapSessionManagerSupported) {
+          expect(e.code).assertEqual(801);
           done()
         } else {
           expect(e.code).assertEqual(1400004);
-          done();
+          done()
         }
       }
     });
 
     /**
-     * @tc.number     SUB_BASIC_DMS_GET_BRIGHTNESS_INFO_0400
-     * @tc.name       testGetBrightnessInfowithNegativeDisplayId
-     * @tc.desc       查询小于0不存在的屏幕亮度信息
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level3
-     */
+    * @tc.number     SUB_BASIC_DMS_GET_BRIGHTNESS_INFO_0400
+    * @tc.name       testGetBrightnessInfowithNegativeDisplayId
+    * @tc.desc       查询小于0不存在的屏幕亮度信息
+    * @tc.size       MediumTest
+    * @tc.type       Function
+    * @tc.level      Level3
+    */
     it('testGetBrightnessInfowithNegativeDisplayId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testGetBrightnessInfowithNegativeDisplayId';
       try {
@@ -3381,11 +3406,13 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
         done();
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-        if (e.code == 801) {
+        
+        if (!isSyscapSessionManagerSupported) {
+          expect(e.code).assertEqual(801);
           done()
         } else {
           expect(e.code).assertEqual(1400004);
-          done();
+          done()
         }
       }
     });
@@ -3419,6 +3446,8 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
             expect(brightnessInfo.sdrNits).assertLarger(0);
             expect(brightnessInfo.currentHeadroom).assertLarger(0);
             expect(brightnessInfo.maxHeadroom).assertLarger(0);
+            expect(brightnessInfo.brightnessPosition).assertLargerOrEqual(0);
+            expect(brightnessInfo.brightnessPosition).assertLessOrEqual(1);
             console.info(`${caseName} Callback1: brightnessChangeCount1 = ${brightnessChangeCount1}`);
           };
 
@@ -3431,6 +3460,8 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
             expect(brightnessInfo.sdrNits).assertLarger(0);
             expect(brightnessInfo.currentHeadroom).assertLarger(0);
             expect(brightnessInfo.maxHeadroom).assertLarger(0);
+            expect(brightnessInfo.brightnessPosition).assertLargerOrEqual(0);
+            expect(brightnessInfo.brightnessPosition).assertLessOrEqual(1);
             console.info(`${caseName} Callback2: brightnessChangeCount2 = ${brightnessChangeCount2}`);
           };
           display.on('brightnessInfoChange', callback1);
@@ -3489,12 +3520,13 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
         done();
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-        if (e.code == 801) {
+        if (!isSyscapSessionManagerSupported) {
+          expect(e.code).assertEqual(801);
           done()
         } else {
           display.off('brightnessInfoChange');
           expect(false).assertTrue();
-          done();
+          done()
         }
       }
     });
@@ -3534,6 +3566,8 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
             expect(brightnessInfo.sdrNits).assertLarger(0);
             expect(brightnessInfo.currentHeadroom).assertLarger(0);
             expect(brightnessInfo.maxHeadroom).assertLarger(0);
+            expect(brightnessInfo.brightnessPosition).assertLargerOrEqual(0);
+            expect(brightnessInfo.brightnessPosition).assertLessOrEqual(1);
             console.info(`${caseName} Callback1: brightnessChangeCount1 = ${brightnessChangeCount1}`);
           };
 
@@ -3546,6 +3580,8 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
             expect(brightnessInfo.sdrNits).assertLarger(0);
             expect(brightnessInfo.currentHeadroom).assertLarger(0);
             expect(brightnessInfo.maxHeadroom).assertLarger(0);
+            expect(brightnessInfo.brightnessPosition).assertLargerOrEqual(0);
+            expect(brightnessInfo.brightnessPosition).assertLessOrEqual(1);
             console.info(`${caseName} Callback2: brightnessChangeCount2 = ${brightnessChangeCount2}`);
           };
           display.on('brightnessInfoChange', callback1);
@@ -3616,12 +3652,13 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
         done();
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-        display.off('brightnessInfoChange');
-        if (e.code == 801) {
+        if (!isSyscapSessionManagerSupported) {
+          expect(e.code).assertEqual(801);
           done()
         } else {
+          display.off('brightnessInfoChange');
           expect(false).assertTrue();
-          done();
+          done()
         }
       }
     });
@@ -3689,6 +3726,8 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
           expect(brightnessInfo.sdrNits).assertLarger(0);
           expect(brightnessInfo.currentHeadroom).assertLarger(0);
           expect(brightnessInfo.maxHeadroom).assertLarger(0);
+          expect(brightnessInfo.brightnessPosition).assertLargerOrEqual(0);
+          expect(brightnessInfo.brightnessPosition).assertLessOrEqual(1);
           console.info(`${caseName} Callback1: brightnessChangeCount1 = ${brightnessChangeCount1}`);
         };
 
@@ -3740,13 +3779,15 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
         await subWindowClass?.destroyWindow();
-        if (e.code == 801) {
+
+        if (!isSyscapSessionManagerSupported) {
+          expect(e.code).assertEqual(801);
           done()
         } else {
           display.off('brightnessInfoChange');
           await terminateAbility(caseName);
           expect(false).assertTrue();
-          done();
+          done()
         }
       }
     });
@@ -4604,7 +4645,7 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
             console.info(caseName + ' Listening enabled. Data: ' + JSON.stringify(data));
             count++;
         };
-        if (deviceType === '2in1' || (deviceType === 'tablet' && isPCMode)) {
+        if (isFreeWindowMode) {
           let cap: string = displayClass.getDisplayCapability();
           let curFoldStatus: display.FoldStatus = display.getFoldStatus();
           console.info(caseName + ` Succeeded in obtaining fold status. Data: ${curFoldStatus}`);
@@ -4638,7 +4679,7 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
           expect(count).assertLarger(0);
           windowClass.recover();
           displayClass.off('availableAreaChange', callback);
-        } else if (deviceType === 'phone' || (deviceType === 'tablet' && !isPCMode)) {
+        } else if (!isFreeWindowMode && isSupportRotate && isSyscapSessionManagerSupported) {
           displayClass.on('availableAreaChange', callback);
           await sleep(2000);
           await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
@@ -4659,8 +4700,6 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
         done();
       }
     });
-
-
 
 
   })

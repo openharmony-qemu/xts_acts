@@ -31,7 +31,7 @@ class TestClass {
   }
 }
 
-export default function SetSymbolIteratorTest() {
+export default function SetSymbolIteratorTest(): void {
   describe('SetSymbolIteratorTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

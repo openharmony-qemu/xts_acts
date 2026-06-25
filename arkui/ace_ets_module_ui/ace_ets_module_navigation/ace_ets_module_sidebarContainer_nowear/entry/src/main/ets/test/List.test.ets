@@ -26,6 +26,8 @@ import sidebarTypeTest from './SideBarContainerTest/SidebarType.test';
 import SideBarWidth1 from './SideBarContainerTest/SideBarWidth1.test'
 import SideBarWidth2 from './SideBarContainerTest/SideBarWidth2.test';
 import SideBarContainerAttributeNullUndefined from './AttributeNullUndefined/SideBarContainerAttributeNullUndefined.test'
+import sideBarWithGesture from './SideBarContainerTest/sideBarWithGesture.test'
+import sideBarWithGestureModifier from './SideBarContainerTest/sideBarWithGestureModifier.test';
 
 export default function testsuite() {
   SideBarContainer_Attribute();
@@ -41,4 +43,6 @@ export default function testsuite() {
   SideBarWidth1();
   SideBarWidth2();
   SideBarContainerAttributeNullUndefined();
+  sideBarWithGesture();
+  sideBarWithGestureModifier();
 }

@@ -16,6 +16,8 @@ import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll
 import { image } from '@kit.ImageKit';
 import common from '@ohos.app.ability.common';
 import { JSON } from '@kit.ArkTS';
+import { sleep } from '../common';
+
 const TAG = 'xts.GetImagePropertySuppTest';
 
 export default function GetImagePropertyJPGNullTest() {
@@ -35,8 +37,9 @@ export default function GetImagePropertyJPGNullTest() {
     afterEach(() => {
       console.info(TAG, 'afterEach case.');
     });
-    afterAll(() => {
-      ImageSource.release();
+    afterAll(async () => {
+      await ImageSource.release();
+      await sleep(500);
       console.info(TAG, 'afterAll case.');
     });
     /**

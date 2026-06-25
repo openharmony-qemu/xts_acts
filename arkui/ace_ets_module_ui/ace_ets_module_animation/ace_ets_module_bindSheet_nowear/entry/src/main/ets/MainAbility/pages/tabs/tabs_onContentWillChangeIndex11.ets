@@ -34,31 +34,31 @@ struct TabsExampleApi12I11 {
         TabContent() {
           Column(){
             Text('首页的内容')
-          }.width('100%').height('100%').backgroundColor('#00CB87').justifyContent(FlexAlign.Center).key("content1x4")
+          }.width('100%').height('100%').backgroundColor('#00CB87').justifyContent(FlexAlign.Center).key("tabs_onContentWillChangeIndex11_content1x4")
         }.tabBar(this.tabBuilder('首页',0))
 
         TabContent() {
           Column(){
             Text('发现的内容')
-          }.width('100%').height('100%').backgroundColor('#007DFF').justifyContent(FlexAlign.Center).key("content2x4")
+          }.width('100%').height('100%').backgroundColor('#007DFF').justifyContent(FlexAlign.Center).key("tabs_onContentWillChangeIndex11_content2x4")
         }.tabBar(this.tabBuilder('发现',1))
 
         TabContent() {
           Column(){
             Text('推荐的内容')
-          }.width('100%').height('100%').backgroundColor('#FFBF00').justifyContent(FlexAlign.Center).key("content3x4")
+          }.width('100%').height('100%').backgroundColor('#FFBF00').justifyContent(FlexAlign.Center).key("tabs_onContentWillChangeIndex11_content3x4")
         }.tabBar(this.tabBuilder('推荐',2))
 
         TabContent() {
           Column(){
             Text('我的内容')
-          }.width('100%').height('100%').backgroundColor('#E67C92').justifyContent(FlexAlign.Center).key("content4x4")
+          }.width('100%').height('100%').backgroundColor('#E67C92').justifyContent(FlexAlign.Center).key("tabs_onContentWillChangeIndex11_content4x4")
         }.tabBar(this.tabBuilder('我的',3))
 
         TabContent() {
           Column(){
             Text('党史1949')
-          }.width('100%').height('100%').backgroundColor('#E67C92').justifyContent(FlexAlign.Center).key("content5x4")
+          }.width('100%').height('100%').backgroundColor('#E67C92').justifyContent(FlexAlign.Center).key("tabs_onContentWillChangeIndex11_content5x4")
         }.tabBar(this.tabBuilder('党史1949',3))
       }
       .vertical(false)

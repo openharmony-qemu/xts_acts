@@ -24,6 +24,7 @@ import { beforeAll, describe, expect, Hypium, it, Level, Size, TAG, TestType } f
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import { fileIo } from '@kit.CoreFileKit';
 import { createUserAlbum } from '../Common.test';
+import Utils from '../Util.test';
 let testContext: Context = Hypium.get('Context') as Context;
 
 export default function MediaAssetChangeRequestStaticTest(): void {
@@ -648,22 +649,33 @@ export default function MediaAssetChangeRequestStaticTest(): void {
           fetchColumns: [],
           predicates: predicates
         };
+        let isCallbackCalled = false; // Boolean flag
         let albumList: photoAccessHelper.FetchResult<photoAccessHelper.Album> = await helper!.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC, albumFetchOptions);
         let album: photoAccessHelper.Album = await albumList.getFirstObject();
-        album.albumName = 'hello';
+        console.info(TAG,testNum,'albumList.getFirstObject() succ', album);
+        album.albumName = 'hello' + new Date().getTime();
         album.commitModify((err:BusinessError<void> | null) => {
-          if (err !== undefined) {
-            console.error(`commitModify failed `);
-            expect().assertFail();
+          isCallbackCalled = true;
+          if (err!.code != 0) {
+            console.error(TAG,testNum,`commitModify failed -- `, err,err!.code,JSON.stringify(err));
+            expect(err!.code).assertEqual(0);
           } else {
-            console.info('commitModify successfully');
+            console.info(TAG,testNum,'commitModify successfully');
           }
         });
+        const startTime = Date.now();
+        const timeoutMs = 15000;
+        while (!isCallbackCalled && (Date.now() - startTime) < timeoutMs) {
+          await Utils.msSleep(100);
+        }
+        album = await albumList.getFirstObject();
+        console.info(TAG,testNum,'after commitModify succ', album);
+        expect(isCallbackCalled).assertTrue();
         done();
       }
       catch (error) {
         console.error(`${testNum} failed; error: ${error.code}`);
-        expect().assertFail();
+        expect(error.code).assertEqual(0);
         done();
       }
     });

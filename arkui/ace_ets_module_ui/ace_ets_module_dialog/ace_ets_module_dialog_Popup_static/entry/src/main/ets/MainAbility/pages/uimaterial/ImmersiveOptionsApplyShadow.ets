@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,20 +13,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { uiMaterial, Entry, Component, Column ,ColumnOptions, Text, FontWeight,
-  Row, FlexAlign, HorizontalAlign} from '@kit.ArkUI';
+import {
+  uiMaterial,
+  Entry,
+  Component,
+  State,
+  Column,
+  Text,
+  FontWeight,
+  Row,
+  FlexAlign,
+  Color,
+  HorizontalAlign,
+  ColumnOptions,
+  RowOptions,
+} from '@kit.ArkUI';
 
 @Entry
 @Component
 struct ImmersiveOptionsApplyShadow {
+  @State interactiveValue: boolean = false;
   build() {
-    Column() {
+    Column({ space: 10 } as ColumnOptions) {
       Text('ImmersiveOptions.applyShadow Test')
         .fontSize(20)
         .fontWeight(FontWeight.Bold)
         .margin({ top: 20 })
+      Text(this.interactiveValue.toString()).id('interactiveValue')
 
-      Row() {
+      Row({ space: 10 } as RowOptions) {
         Column() {
           Text('undefined')
         }
@@ -54,7 +69,7 @@ struct ImmersiveOptionsApplyShadow {
         }))
       }
 
-      Row() {
+      Row({ space: 10 } as RowOptions) {
         Column() {
           Text('false')
         }
@@ -62,9 +77,14 @@ struct ImmersiveOptionsApplyShadow {
         .width('45%')
         .height('10%')
         .borderRadius(20)
+        .onClick( () => {
+          this.interactiveValue = !this.interactiveValue
+        })
         .justifyContent(FlexAlign.Center)
         .systemMaterial(new uiMaterial.ImmersiveMaterial({
           style: uiMaterial.ImmersiveStyle.THICK,
+          lightEffect:{color:Color.Blue},
+          interactive:this.interactiveValue,
           applyShadow: false
         }))
 

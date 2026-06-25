@@ -834,8 +834,10 @@ export default function MultimodalKeyCodeTest() {
       let caseName = "SUB_MMI_Input_Api_Static_KeyCode_0100";
       hilog.info(domain, tag, `${caseName} enter`);
       try {
+        expect(KeyCode.KEYCODE_AOD_SINGLE_CLICK === 2740).assertTrue();
         expect(KeyCode.KEYCODE_XKEY === 3232).assertTrue();
-        expect(KeyCode.KEYCODE_AOD_SINGLE_CLICK  === 2740).assertTrue();
+        expect(KeyCode.KEYCODE_FINGERPRINT_SLIDE_UP == 3233).assertTrue();
+        expect(KeyCode.KEYCODE_FINGERPRINT_SLIDE_DOWN == 3234).assertTrue();
         done();
       } catch (error) {
         console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);

@@ -37,7 +37,7 @@ import ArrayConcatTest from './array/ArrayConcat.test';
 import ArrayReverseTest from './array/ArrayReverse.test';
 import ArrayShiftTest from './array/ArrayShift.test';
 
-export default function testsuite() {
+export default function testsuite(): void {
     ArrayEveryTest();
     ArrayOfTest();
     ArrayPopTest();
