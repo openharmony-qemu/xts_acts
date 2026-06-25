@@ -872,7 +872,62 @@ export default function singlePhotoAlbumChangeTest(): void {
             done();
           }
         })
-
+        /**
+     * @tc.name   SUB_MULTMEDIA_PHOTO_ASSET_CLONE_STATIC_0900
+     * @tc.number SUB_MULTMEDIA_PHOTO_ASSET_CLONE_STATIC_0900
+     * @tc.desc   photoAsset.clone -'?'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTMEDIA_PHOTO_ASSET_CLONE_STATIC_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const testName = 'SUB_MULTMEDIA_PHOTO_ASSET_CLONE_STATIC_0900';
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      try {
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await helper!.getAssets(fetchOption);
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        let newAsset: photoAccessHelper.PhotoAsset = await photoAsset.clone('?');
+        console.info(TAG,testName,'get new asset successfully');
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, 'Failed ', JSON.stringify(error), error.code);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+    })
+/**
+     * @tc.name   SUB_MULTMEDIA_PHOTO_ASSET_CLONE_STATIC_1000
+     * @tc.number SUB_MULTMEDIA_PHOTO_ASSET_CLONE_STATIC_1000
+     * @tc.desc   photoAsset.clone -'|'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTMEDIA_PHOTO_ASSET_CLONE_STATIC_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const testName = 'SUB_MULTMEDIA_PHOTO_ASSET_CLONE_STATIC_1000';
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      try {
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await helper!.getAssets(fetchOption);
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        let newAsset: photoAccessHelper.PhotoAsset = await photoAsset.clone('|');
+        console.info(TAG,testName,'get new asset successfully');
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, 'Failed ', JSON.stringify(error), error.code);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+    })
 
     
   })
