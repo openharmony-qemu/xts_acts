@@ -39,14 +39,9 @@ struct DrawableDescriptorReleaseTest {
 
   build() {
     Scroll() {
-      Column({ space: 10 }) {
-        Text('DrawableDescriptor release/isReleased')
-          .fontSize(14)
-          .fontWeight(FontWeight.Bold)
-          .fontColor(0x333333)
-
-        this.BuildSectionTitle('1. DrawableDescriptor 测试')
-
+      Column({ space: 5 }) {
+        // DrawableDescriptor release/isReleased
+        // 1. DrawableDescriptor 测试
         Row() {
           Button('release→isReleased')
             .id('btnTest001')
@@ -77,8 +72,7 @@ struct DrawableDescriptorReleaseTest {
             .fontSize(10)
         }
 
-        this.BuildSectionTitle('2. LayeredDrawableDescriptor 测试')
-
+        // 2. LayeredDrawableDescriptor 测试
         Row() {
           Button('release→getForeground')
             .id('btnTest004')
@@ -109,8 +103,7 @@ struct DrawableDescriptorReleaseTest {
             .fontSize(10)
         }
 
-        this.BuildSectionTitle('3. PixelMapDrawableDescriptor 测试')
-
+        // 3. PixelMapDrawableDescriptor 测试
         Row() {
           Button('release→getPixelMap')
             .id('btnTest007')
@@ -121,8 +114,7 @@ struct DrawableDescriptorReleaseTest {
             .fontSize(10)
         }
 
-        this.BuildSectionTitle('4. AnimatedDrawableDescriptor 测试')
-
+        // 4. AnimatedDrawableDescriptor 测试
         Row() {
           Button('release→getPixelMap')
             .id('btnTest008')
@@ -178,15 +170,6 @@ struct DrawableDescriptorReleaseTest {
     .width('100%')
     .height('100%')
     .backgroundColor(0xF5F5F5)
-  }
-
-  @Builder
-  BuildSectionTitle(title: string) {
-    Text(title)
-      .fontSize(12)
-      .fontWeight(FontWeight.Medium)
-      .fontColor(Color.Black)
-      .width('100%')
   }
 
   private getErrorCode(e: Object): number {
