@@ -46,7 +46,6 @@ namespace {
         ani_native_function{"test_ConcurrentMainThreadWorkerOverlap", ":i",
                             reinterpret_cast<void *>(test_ConcurrentMainThreadWorkerOverlap)},
         ani_native_function{"test_Attach_LocalScopeStress", ":i", reinterpret_cast<void *>(test_Attach_LocalScopeStress)},
-        ani_native_function{"test_Handling_Error_28", ":i", reinterpret_cast<void *>(test_Handling_Error_28)},
 
         ani_native_function{"testBoxBooleanNative", ":z",
             reinterpret_cast<void *>(testBoxBooleanNative)},
