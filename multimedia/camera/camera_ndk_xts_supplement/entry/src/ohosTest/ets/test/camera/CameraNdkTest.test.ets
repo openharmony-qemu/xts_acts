@@ -759,8 +759,6 @@ export default function CameraNdkTest() {
     it('SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_00001', Level.LEVEL0, async () => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_00001'
       let res = cameraObj.captureCameraDeviceQueryInfoCameraType(CASE_INDEX_1);
-      const myse = 'yzh aa:'
-      console.info(TAG, myse, res);
       console.info(TAG, testName, res);
       expect(res).assertEqual(CAMERA_SERVICE_FATAL_ERROR);
     });
@@ -776,8 +774,6 @@ export default function CameraNdkTest() {
     it('SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_00002', Level.LEVEL0, async () => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_00002'
       let res = cameraObj.captureCameraDeviceQueryInfoCameraType(CASE_INDEX_2);
-      const myse = 'yzh aa:'
-      console.info(TAG, myse, res);
       console.info(TAG, testName, res);
       expect(res).assertEqual(CAMERA_SERVICE_FATAL_ERROR);
     });
@@ -793,8 +789,6 @@ export default function CameraNdkTest() {
     it('SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_00003', Level.LEVEL0, async () => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_00003'
       let res = cameraObj.captureCameraDeviceQueryInfoCameraType(CASE_INDEX_3);
-      const myse = 'yzh aa:'
-      console.info(TAG, myse, res);
       console.info(TAG, testName, res);
       expect(res).assertEqual(CAMERA_SERVICE_FATAL_ERROR);
     });
@@ -809,9 +803,7 @@ export default function CameraNdkTest() {
      */
     it('SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_00004', Level.LEVEL0, async () => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_00004'
-      const myse = 'yzh aa:'
       let res = cameraObj.captureCameraDeviceQueryInfoCameraType(CASE_INDEX_4);
-      console.info(TAG, myse, res);
       console.info(TAG, testName, res);
       expect(res).assertEqual(CAMERA_SERVICE_FATAL_ERROR);
     });
@@ -827,8 +819,6 @@ export default function CameraNdkTest() {
     it('SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_00005', Level.LEVEL0, async () => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_00005'
       let res = cameraObj.captureCameraDeviceQueryInfoCameraType(CASE_INDEX_5);
-      const myse = 'yzh aa:'
-      console.info(TAG, myse, res);
       console.info(TAG, testName, res);
       expect(res).assertEqual(CAMERA_SERVICE_FATAL_ERROR);
     });
