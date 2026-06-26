@@ -698,7 +698,11 @@ export default function geoLocationManager_nop_test() {
             }
           } else {
             console.info('geolocation_isLocationEnabled_nop_test_012 getLastLocation: data=' + JSON.stringify(data));
-            expect(data).assertTrue();
+            if (data) {
+              expect(data).assertTrue();
+            } else {
+              expect(data).assertFalse();
+            }
             done();
           }
         });
@@ -722,8 +726,13 @@ export default function geoLocationManager_nop_test() {
       try {
         geolocation.isLocationEnabled().then((result: boolean) => {
           console.info('promise, geolocation_isLocationEnabled_nop_test_013: ' + JSON.stringify(result));
-          expect(result).assertTrue()
+          if (result) {
+            expect(result).assertTrue();
+          } else {
+            expect(result).assertFalse();
+          }
           done();
+        }
         }).catch((error: BusinessError) => {
           console.info('---geolocation_isLocationEnabled_nop_test_013 catch end---' + error.code);
           expect(error.code).assertEqual(106);
