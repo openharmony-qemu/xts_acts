@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -91,7 +91,7 @@ export default function AddMonitorWildcard2() {
       await CommonFunc.sleep(1000);
 
       // Get updated num value (should be incremented)
-      let strJson2 = inspector.getInspectorByKey('asynchronous_text');
+      let strJson2 = inspector.getInspectorByKey('synchronous_text');
       await CommonFunc.sleep(1000);
       let updatedNum = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('label'));
 
@@ -122,7 +122,7 @@ export default function AddMonitorWildcard2() {
 
       // Get updated num value (should be incremented)
       let strJson2 = inspector.getInspectorByKey('asynchronous_text');
-      await CommonFunc.sleep(1000);
+      //await CommonFunc.sleep(1000);
       let updatedNum = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('label'));
 
       expect(updatedNum).assertEqual('Asynchronous monitoring value:2,1');

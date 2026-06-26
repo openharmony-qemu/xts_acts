@@ -46,7 +46,11 @@ struct AddMonitorWildcard2 {
   build() {
     Column() {
       Text(`Synchronous monitoring value:${this.value1},${this.num1}`)
+        .height('5%')
+        .id('synchronous_text')
       Text(`Asynchronous monitoring value:${this.value2},${this.num2}`)
+        .height('5%')
+        .id('asynchronous_text')
       Button('Synchronous_monitoring')
         .height('5%')
         .id('synchronous_monitoring_001')
