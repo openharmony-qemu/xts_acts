@@ -226,7 +226,8 @@ struct PopupBackgroundEffect {
           .bindPopup(this.handlePopup15, {
             message: 'Popup policy ALWAYS_INACTIVE inactiveColor',
             placement: Placement.Bottom,
-            backgroundEffect: { radius: 20, policy: BlurStyleActivePolicy.ALWAYS_INACTIVE, inactiveColor: Color.Orange },
+            backgroundEffect: { radius: 20, policy: BlurStyleActivePolicy.ALWAYS_INACTIVE,
+               inactiveColor: Color.Orange },
             onStateChange: (e) => { if (!e.isVisible) { this.handlePopup15 = false; } }
           })
 

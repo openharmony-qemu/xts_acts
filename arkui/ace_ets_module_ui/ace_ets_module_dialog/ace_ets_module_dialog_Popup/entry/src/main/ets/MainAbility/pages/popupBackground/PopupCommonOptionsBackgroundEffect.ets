@@ -289,7 +289,8 @@ struct PopupCommonOptionsBackgroundEffect {
           .onClick(async () => {
             let promptAction = this.getUIContext().getPromptAction();
             let popupParam: PopupParam = { closeFunc: undefined };
-            this.contentCombined = new ComponentContent(this.getUIContext(), wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
+            this.contentCombined = new ComponentContent(this.getUIContext(),
+             wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
             popupParam.closeFunc = () => { promptAction.closePopup(this.contentCombined!); };
             await promptAction.openPopup(this.contentCombined, { id: 'combinedOptions' }, {
               backgroundEffect: {

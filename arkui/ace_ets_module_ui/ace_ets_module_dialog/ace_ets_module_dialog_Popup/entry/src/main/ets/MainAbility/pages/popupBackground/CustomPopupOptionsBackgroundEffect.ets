@@ -227,7 +227,8 @@ struct CustomPopupOptionsBackgroundEffect {
           .width('30%')
           .bindPopup(this.handlePopup15, {
             builder: () => this.customPopupBuilder(() => { this.handlePopup15 = false; }),
-            backgroundEffect: { radius: 20, policy: BlurStyleActivePolicy.ALWAYS_INACTIVE, inactiveColor: Color.Orange },
+            backgroundEffect: { radius: 20, policy: BlurStyleActivePolicy.ALWAYS_INACTIVE,
+             inactiveColor: Color.Orange },
             onStateChange: (e) => { if (!e.isVisible) { this.handlePopup15 = false; } }
           })
           .onClick(() => { this.handlePopup15 = !this.handlePopup15; })
