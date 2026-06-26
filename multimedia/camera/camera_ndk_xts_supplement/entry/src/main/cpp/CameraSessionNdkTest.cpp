@@ -881,11 +881,9 @@ napi_value TestGetPhysicalApertureSucc(napi_env env, napi_callback_info info)
         napi_create_int32(env, CAMERA_OK, &result);
         return result;
     }
-    double setAperture;
-    setAperture = apertures[0].apertures[0];
+    double setAperture = apertures[0].apertures[0];
     OH_LOG_ERROR(LOG_APP, "setAperture is %{public}f", setAperture);
-    float zoom;
-    zoom = apertures->zoomRange.maxZoom;
+    float zoom = apertures->zoomRange.maxZoom;
     OH_LOG_ERROR(LOG_APP, "zoom is %{public}f", zoom);
     OH_CaptureSession_SetZoomRatio(captureSession, zoom);
     const int waitZoomSeconds = 1;
