@@ -15,7 +15,7 @@
 
 'use static';
 import { Chip, ChipOptions, LabelOptions } from '@ohos.arkui.advanced.Chip';
-import { Entry, Component, Column, $r } from '@ohos.arkui.component';
+import { Entry, Component, Column, ColumnOptions, Row, $r } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 
 @Entry
@@ -24,24 +24,24 @@ struct ChipAbnormalBackgroundSystemMaterial {
   @State isActivated: boolean = true;
 
   build() {
-    Column() {
-      Column() {
+    Column({ space: 12 } as ColumnOptions) {
+      Row() {
         Chip({
           label: { text: 'bgMat' } as LabelOptions,
           activated: false,
           backgroundColor: $r('sys.color.ohos_id_color_button_normal'),
         } as ChipOptions)
       }.id('abn_bgSysMat_d')
-      Column() {
+
+      Row() {
         Chip({
           label: { text: 'bgMat' } as LabelOptions,
           activated: false,
           backgroundColor: $r('sys.color.ohos_id_color_button_normal'),
-          backgroundSystemMaterial: undefined,
         } as ChipOptions)
       }.id('abn_bgSysMat_u')
 
-      Column() {
+      Row() {
         Chip({
           label: { text: 'actBgMat' } as LabelOptions,
           activated: this.isActivated,
@@ -49,13 +49,13 @@ struct ChipAbnormalBackgroundSystemMaterial {
           activatedBackgroundColor: $r('sys.color.ohos_id_color_button_normal'),
         } as ChipOptions)
       }.id('abn_actBgSysMat_d')
-      Column() {
+
+      Row() {
         Chip({
           label: { text: 'actBgMat' } as LabelOptions,
           activated: this.isActivated,
           backgroundColor: $r('sys.color.ohos_id_color_button_normal'),
           activatedBackgroundColor: $r('sys.color.ohos_id_color_button_normal'),
-          activatedBackgroundSystemMaterial: undefined,
         } as ChipOptions)
       }.id('abn_actBgSysMat_u')
     }

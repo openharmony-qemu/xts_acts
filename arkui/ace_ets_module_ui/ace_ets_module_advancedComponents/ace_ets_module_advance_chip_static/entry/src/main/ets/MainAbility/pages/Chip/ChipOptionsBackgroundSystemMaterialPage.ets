@@ -16,36 +16,38 @@
 'use static';
 import { Chip, ChipOptions, LabelOptions } from '@ohos.arkui.advanced.Chip';
 import uiMaterial from '@ohos.arkui.uiMaterial';
-import { Entry, Component, Column, $r } from '@ohos.arkui.component';
+import { Entry, Component, Column, ColumnOptions, Row, $r } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 
 @Entry
 @Component
 struct ChipOptionsBackgroundSystemMaterialPage {
   @State isActivated: boolean = true;
+  private bgMaterial: uiMaterial.ImmersiveMaterial = new uiMaterial.ImmersiveMaterial({
+    style: uiMaterial.ImmersiveStyle.REGULAR,
+  });
+  private actBgMaterial: uiMaterial.ImmersiveMaterial = new uiMaterial.ImmersiveMaterial({
+    style: uiMaterial.ImmersiveStyle.THICK,
+  });
 
   build() {
-    Column() {
-      Column() {
+    Column({ space: 12 } as ColumnOptions) {
+      Row() {
         Chip({
           label: { text: 'bgMat' } as LabelOptions,
           activated: false,
           backgroundColor: $r('sys.color.ohos_id_color_button_normal'),
-          backgroundSystemMaterial: new uiMaterial.ImmersiveMaterial({
-            style: uiMaterial.ImmersiveStyle.REGULAR,
-          }),
+          backgroundSystemMaterial: this.bgMaterial,
         } as ChipOptions)
       }.id('chip_bgSysMat_normal')
 
-      Column() {
+      Row() {
         Chip({
           label: { text: 'actBgMat' } as LabelOptions,
           activated: this.isActivated,
           backgroundColor: $r('sys.color.ohos_id_color_button_normal'),
           activatedBackgroundColor: $r('sys.color.ohos_id_color_button_normal'),
-          activatedBackgroundSystemMaterial: new uiMaterial.ImmersiveMaterial({
-            style: uiMaterial.ImmersiveStyle.THICK,
-          }),
+          activatedBackgroundSystemMaterial: this.actBgMaterial,
         } as ChipOptions)
       }.id('chip_actBgSysMat_normal')
     }
