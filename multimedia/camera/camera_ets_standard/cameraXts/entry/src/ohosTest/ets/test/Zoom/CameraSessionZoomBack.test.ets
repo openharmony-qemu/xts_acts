@@ -894,7 +894,6 @@ export default function CameraSessionZoomBackTest() {
             let zoomRatioRange = mVideoSession.getZoomRatioRange();
             if (isEmpty(zoomRatioRange)) {
               console.info(TAG, testName + ' no supported zoomRatioRange.');
-              done();
             } else {
               console.info(TAG, testName + ' video mode, status: ' + zoomRatioRange);
               expect(true).assertTrue();
