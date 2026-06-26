@@ -30,8 +30,13 @@ const STORE_CONFIG: relationalStore.StoreConfig = {
   name: "rdbQueryByStep.db",
   securityLevel: relationalStore.SecurityLevel.S1,
 }
-
-
+const u8 = new Uint8Array([1, 2, 3]);
+const valuesBucket1: relationalStore.ValuesBucket = {
+  'data1': 'zhangsan',
+  'data2': 18,
+  'data3': 25000.0,
+  'data4': u8,
+};
 function checkResultSetForNormalGet(resultSet : relationalStore.ResultSet){
   let count = 0;
   let rowCount = resultSet.rowCount;
@@ -168,15 +173,15 @@ export default function RdbQueryByStep() : void {
       console.log(TAG + "************* queryByStep_001_normal_columns end *************");
     })
 
-      /**
-       * @tc.number SUB_DistributedData_RelationalStore_SDK_QueryByStep_Predicates_0900
-       * @tc.name   queryByStep_003_normal_columns
-       * @tc.desc   1.The optional parameters columns are not transferred.
-       *            2.Set columns to ["data1"].
-       * @tc.type   FUNCTION
-       * @tc.size   MEDIUMTEST
-       * @tc.level  LEVEL2
-       */
+    /**
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_QueryByStep_Predicates_0900
+     * @tc.name   queryByStep_003_normal_columns
+     * @tc.desc   1.The optional parameters columns are not transferred.
+     *            2.Set columns to ["data1"].
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('queryByStep_003_normal_columns',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  () => {
       console.log(TAG + "************* queryByStep_003_normal_columns start *************");
       let resultSet: relationalStore.ResultSet | undefined;
@@ -198,15 +203,15 @@ export default function RdbQueryByStep() : void {
       console.log(TAG + "************* queryByStep_003_normal_columns end *************");
     })
 
-      /**
-       * @tc.number SUB_DistributedData_RelationalStore_SDK_QueryByStep_Predicates_1900
-       * @tc.name   queryByStep_004_normal_columns
-       * @tc.desc   1.The optional parameters columns are not transferred.
-       *            2.Set columns to ["data1"].
-       * @tc.type   FUNCTION
-       * @tc.size   MEDIUMTEST
-       * @tc.level  LEVEL2
-       */
+    /**
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_QueryByStep_Predicates_1900
+     * @tc.name   queryByStep_004_normal_columns
+     * @tc.desc   1.The optional parameters columns are not transferred.
+     *            2.Set columns to ["data1"].
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('queryByStep_004_normal_columns',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  () => {
       console.log(TAG + "************* queryByStep_004_normal_columns start *************");
       let resultSet: relationalStore.ResultSet | undefined;
@@ -549,7 +554,7 @@ export default function RdbQueryByStep() : void {
       console.log(TAG + "************* queryByStep_004_Abnormal_columns end *************");
     })
 
-     /**
+    /**
      * @tc.number SUB_DistributedData_RelationalStore_SDK_QueryByStep_1700
      * @tc.name   queryByStep_005_abnormal_predicates
      * @tc.desc   1.Set RdbPredicates to [null]
@@ -621,19 +626,19 @@ export default function RdbQueryByStep() : void {
      */
     it('relationalstoretestQueryByStepSql_0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async  () => {
       console.info(TAG + '************* relationalstoretestQueryByStepSql_0023 start *************');
-      let predicates = new data_relationalStore.RdbPredicates('test');
-      let rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
+      let predicates = new relationalStore.RdbPredicates('test');
+      let rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
       await rdbStore.executeSql(CREATE_TABLE_TEST, []);
       try{
         let insertNum = await rdbStore.insert("test", valuesBucket1);
-        expect(insertNum).assertEqual(1);
+        expect(insertNum).assertEqual(3);
         let resultSet = await rdbStore?.queryByStep(predicates);
         console.info(TAG + " resultSet rowCount " + resultSet.rowCount);
-        expect(resultSet.rowCount).assertEqual(1);
+        expect(resultSet.rowCount).assertEqual(3);
         console.info(TAG + " resultSet columnNames " + JSON.stringify(resultSet.columnNames));
         expect(resultSet.columnNames[0]).assertEqual("id");
         console.info(TAG + " resultSet columnCount " + JSON.stringify(resultSet.columnCount));
-        expect(resultSet.columnCount).assertEqual(10);
+        expect(resultSet.columnCount).assertEqual(5);
         console.info(TAG + " resultSet rowCount " + resultSet.rowCount);
         console.info(TAG + " resultSet rowIndex " + resultSet.rowIndex);
         console.info(TAG + " resultSet isAtFirstRow " + resultSet.isAtFirstRow);
