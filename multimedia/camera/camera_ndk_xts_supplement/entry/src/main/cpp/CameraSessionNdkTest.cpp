@@ -861,11 +861,12 @@ napi_value TestSetTorchModeOnWithLevelErr(napi_env env, napi_callback_info info)
 napi_value TestGetPhysicalApertureSucc(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
+    size_t uuidLen = 0;
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     char faceID[256];
-    CreateAndOpenCamera();
-    createPhotoOutput(faceID);
-    CreateCaptureSession();
-    OH_Camera_PhysicalAperture* apertures = nullptr;
+    napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
     uint32_t size;
     OH_CaptureSession_GetSupportedPhysicalApertures(captureSession, &apertures, &size);
     OH_LOG_ERROR(LOG_APP, "apertures is %{public}d", apertures);
@@ -941,7 +942,12 @@ napi_value TestGetPhysicalApertureWithUnconfiguredSession(napi_env env, napi_cal
 napi_value TestSetPhysicalApertureSucc(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
+    size_t uuidLen = 0;
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     char faceID[256];
+    napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
     CreateAndOpenCamera();
     createPhotoOutput(faceID);
     CreateCaptureSession();
@@ -992,7 +998,12 @@ napi_value TestSetPhysicalApertureWithNullSession(napi_env env, napi_callback_in
 napi_value TestSetPhysicalApertureWithUnconfiguredStream(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
+    size_t uuidLen = 0;
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     char faceID[256];
+    napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
     CreateAndOpenCamera();
     createPhotoOutput(faceID);
     CreateCaptureSession();
@@ -1034,7 +1045,12 @@ napi_value TestSetPhysicalApertureWithUnconfiguredStream(napi_env env, napi_call
 napi_value TestGetSupportedExposureDurationRangeSucc(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
+    size_t uuidLen = 0;
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     char faceID[256];
+    napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
     CreateAndOpenCamera();
     createPhotoOutput(faceID);
     CreateCaptureSession();
@@ -1095,7 +1111,12 @@ napi_value TestGetSupportedExposureDurationRangeWithUnconfiguredStream(napi_env 
 napi_value TestSetExposureDurationSucc(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
+    size_t uuidLen = 0;
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     char faceID[256];
+    napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
     CreateAndOpenCamera();
     createPhotoOutput(faceID);
     CreateCaptureSession();
@@ -1157,7 +1178,12 @@ napi_value TestSetExposureDurationWithUnconfiguredStream(napi_env env, napi_call
 napi_value TestGetExposureDurationSucc(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
+    size_t uuidLen = 0;
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     char faceID[256];
+    napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
     CreateAndOpenCamera();
     createPhotoOutput(faceID);
     CreateCaptureSession();
