@@ -42,8 +42,8 @@ export default function audioCapturer() {
     let file_to_play:ESObject;
     let filePath: string;
     let dirPath: string;
-    let errPermision:string = "401";
-    let errParamter:string = "6800103";
+    let errPermision: number = 401;
+    let errParamter: number = 6800103;
     let audioCapturer:audio.AudioCapturer | null = null;
     let LE24 = -1;
     let LE32 = -1;
