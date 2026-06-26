@@ -249,7 +249,5 @@ export default function callJsunit() {
         hilog.info(domain, tag, '%{public}s', caseName + ' Test end');
       }
   });
-
-
   });
 }
