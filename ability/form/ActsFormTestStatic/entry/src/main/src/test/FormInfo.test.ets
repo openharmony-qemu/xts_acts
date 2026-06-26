@@ -71,6 +71,9 @@ export default function formInfoTest() {
             expect('ohos.extra.param.key.edit_form_id').assertEqual(formInfo.FormParam.EDIT_FORM_KEY);
             expect("ohos.extra.param.key.update_form_reason").assertEqual(formInfo.FormParam.UPDATE_FORM_REASON_KEY);
 
+            expect(-1).assertEqual(formInfo.FormUpdateReason.UNKNOWN as int);
+            expect(0).assertEqual(formInfo.FormUpdateReason.FORM_NODE_REUSE as int);
+
             expect(1).assertEqual(formInfo.FormDimension.Dimension_1_2);
             expect(2).assertEqual(formInfo.FormDimension.Dimension_2_2);
             expect(3).assertEqual(formInfo.FormDimension.Dimension_2_4);
@@ -219,22 +222,6 @@ export default function formInfoTest() {
 
             done();
             hilog.info(DOMAIN, TAG, 'FormInfoStaticTest003 end');
-        })
-
-        /**
-         * @tc.name   FormInfoStaticTest004
-         * @tc.number SUB_ABILITY_FWK_FORMINFOSTATICTEST_0100
-         * @tc.desc   check formInfo
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
-         */
-        it("FormInfoStaticTest004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            const itName: string = 'FormInfoStaticTest004';
-            hilog.info(DOMAIN, TAG, `${itName} start`);
-            expect(-1).assertEqual(formInfo.FormUpdateReason.UNKNOWN);
-            expect(0).assertEqual(formInfo.FormUpdateReason.FORM_NODE_REUSE);
-            hilog.info(DOMAIN, TAG, `${itName} end`);
         })
     })
 }
