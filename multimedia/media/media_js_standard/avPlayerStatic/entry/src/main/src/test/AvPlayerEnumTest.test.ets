@@ -327,6 +327,7 @@ export default function AvPlayerEnumTest() {
      */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_static_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       expect(Number(media.AVMetricsEventType.AV_METRICS_EVENT_STALLING)).assertEqual(1);
+      expect(Number(media.AVMetricsEventType.AV_METRICS_EVENT_LIP_ASYNC)).assertEqual(2);
       expect(Number(media.AVMetricsEventType.AV_METRICS_EVENT_LOADINGRATE_CHANGE)).assertEqual(3);
       expect(Number(media.AVMetricsEventType.AV_METRICS_EVENT_LOADING_ERROR)).assertEqual(4);
       expect(Number(media.AVMetricsEventType.AV_METRICS_EVENT_CONTENT_DISCONTINUITY)).assertEqual(6);
