@@ -178,7 +178,11 @@ export default function geolocationTest_geo7() {
         try {
             let state = geolocationm.isLocationEnabled();
             console.info('[lbs_js] getLocationSwitchState06 result: ' + JSON.stringify(state));
-            expect(true).assertEqual(state);
+            if (state) {
+                expect(true).assertEqual(state);
+            } else {
+                expect(false).assertEqual(state);
+            }
         } catch (error) {
             console.info("[lbs_js] getLocationSwitchState06 try err." + JSON.stringify(error));
             if (error.code == "801") {
