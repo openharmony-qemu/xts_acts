@@ -1704,6 +1704,29 @@ export default function geoLocationManager_nop_test() {
       }
       });
 
+      /**
+       * @tc.number  SUB_Location_nop_getPoiInfo_0100
+       * @tc.name    SUB_Location_nop_getPoiInfo_0100
+       * @tc.desc    Test getPoiInfo error code 201 without permission
+       * @tc.level   Level 3
+       * @tc.type    Function
+       * @tc.size    MEDIUMTEST
+       */
+      it('SUB_Location_nop_getPoiInfo_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        try {
+          await geoLocationManager.getPoiInfo();
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.info('SUB_Location_nop_getPoiInfo_0100 error: ' + JSON.stringify(err));
+          if (err.code === 801) {
+            expect(err.code).assertEqual(801);
+          } else {
+            expect(err.code).assertEqual(201);
+          }
+          done();
+        }
+      });
 
   })
 }
