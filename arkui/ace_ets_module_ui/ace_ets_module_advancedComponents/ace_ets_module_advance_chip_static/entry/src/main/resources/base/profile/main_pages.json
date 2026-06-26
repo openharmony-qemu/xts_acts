@@ -7,6 +7,8 @@
     "MainAbility/pages/ChipGroup/ChipGroupSymbolItemOptionsPage",
     "MainAbility/pages/ChipGroup/ChipGroupSystemMaterialPage",
     "MainAbility/pages/ChipGroup/abnormal/ChipGroupAbnormalSystemMaterial",
+    "MainAbility/pages/Chip/ChipOptionsBackgroundSystemMaterialPage",
+    "MainAbility/pages/Chip/abnormal/ChipAbnormalBackgroundSystemMaterial",
     "MainAbility/pages/Chip/ChipPage",
     "MainAbility/pages/Chip/chipSizeTest",
     "MainAbility/pages/Chip/prefixIconTest",

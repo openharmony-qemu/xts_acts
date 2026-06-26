@@ -67,7 +67,11 @@ struct ChipGroupV2AbnormalCombo {
         ChipGroupV2({
           items: this.defaultItems(),
           selectedIndexes: this.selectedIndex,
-          chipGroupSpace: new ChipGroupV2Space({ itemSpace: undefined, startSpace: undefined, endSpace: undefined }),
+          chipGroupSpace: new ChipGroupV2Space({
+            itemSpace: undefined,
+            startSpace: undefined,
+            endSpace: undefined,
+          }),
         }).id('abn_cmbG2_u')
         ChipGroupV2({ items: [new ChipGroupV2Item({ label: { text: 'cmbG3' } })] }).id('abn_cmbG3_d')
         ChipGroupV2({

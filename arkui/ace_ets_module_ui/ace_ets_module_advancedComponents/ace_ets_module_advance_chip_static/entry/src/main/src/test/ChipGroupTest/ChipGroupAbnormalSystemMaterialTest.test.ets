@@ -49,6 +49,10 @@ export default function ChipGroupAbnormalSystemMaterialTest(): void {
       await CommonFunc.sleep(500);
     });
 
+    it('SUB_ARKUI_CHIPGROUP_ABN_BGSYSMAT_UNDEFINED_0100', Level.LEVEL0, async () => {
+      assertSystemMaterialSame('abn_bgSysMat_u', 'abn_bgSysMat_d');
+    });
+
     it('SUB_ARKUI_CHIPGROUP_ABN_SELBGMAT_UNDEFINED_0100', Level.LEVEL0, async () => {
       assertSystemMaterialSame('abn_selBgMat_u', 'abn_selBgMat_d');
     });

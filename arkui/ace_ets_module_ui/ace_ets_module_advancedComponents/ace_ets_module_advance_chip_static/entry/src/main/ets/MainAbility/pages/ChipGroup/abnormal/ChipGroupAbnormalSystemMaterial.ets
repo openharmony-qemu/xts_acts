@@ -63,6 +63,22 @@ struct ChipGroupAbnormalSystemMaterial {
         onChange: (indexes: Array<Int>) => {
           this.selectedIndexes = indexes;
         },
+      }).id('abn_bgSysMat_d')
+      ChipGroup({
+        items: this.defaultItems(),
+        selectedIndexes: this.selectedIndexes,
+        backgroundSystemMaterial: undefined,
+        onChange: (indexes: Array<Int>) => {
+          this.selectedIndexes = indexes;
+        },
+      }).id('abn_bgSysMat_u')
+
+      ChipGroup({
+        items: this.defaultItems(),
+        selectedIndexes: this.selectedIndexes,
+        onChange: (indexes: Array<Int>) => {
+          this.selectedIndexes = indexes;
+        },
       }).id('abn_selBgMat_d')
       ChipGroup({
         items: this.defaultItems(),

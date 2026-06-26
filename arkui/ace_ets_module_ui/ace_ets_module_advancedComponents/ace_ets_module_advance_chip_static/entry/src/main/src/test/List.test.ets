@@ -65,9 +65,11 @@ import ChipV2Page from './ChipV2Test/ChipV2Page.test';
 import ChipV2PrefixIconTest from './ChipV2Test/ChipV2PrefixIconTest.test';
 import ChipGroupSystemMaterialTest from './ChipGroupTest/ChipGroupSystemMaterialTest.test';
 import ChipGroupAbnormalSystemMaterialTest from './ChipGroupTest/ChipGroupAbnormalSystemMaterialTest.test';
+import ChipOptionsBackgroundSystemMaterialTest from './ChipTest/ChipOptionsBackgroundSystemMaterialTest.test';
+import ChipAbnormalBackgroundSystemMaterialTest from './ChipTest/ChipAbnormalBackgroundSystemMaterialTest.test';
 import ChipV2SizeTest from './ChipV2Test/ChipV2SizeTest.test';
 
-export default function testsuite() {
+export default function testsuite(): void {
   ChipGroupItemOptionsPage2Test();
   chipGroupIconItemOptionsTest();
   ChipGroupItemOptionsTest();
@@ -120,4 +122,6 @@ export default function testsuite() {
   ChipV2SizeTest();
   ChipGroupSystemMaterialTest();
   ChipGroupAbnormalSystemMaterialTest();
+  ChipOptionsBackgroundSystemMaterialTest();
+  ChipAbnormalBackgroundSystemMaterialTest();
 }

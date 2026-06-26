@@ -49,6 +49,20 @@ struct ChipGroupSystemMaterialPage {
           { label: { text: '选项B' } } as ChipGroupItemOptions,
         ],
         selectedIndexes: this.selectedIndexes,
+        backgroundSystemMaterial: new uiMaterial.ImmersiveMaterial({
+          style: uiMaterial.ImmersiveStyle.ULTRA_THIN,
+        }),
+        onChange: (indexes: Array<Int>) => {
+          this.selectedIndexes = indexes;
+        },
+      }).id('cg_bgSysMat_normal')
+
+      ChipGroup({
+        items: [
+          { label: { text: '选项A' } } as ChipGroupItemOptions,
+          { label: { text: '选项B' } } as ChipGroupItemOptions,
+        ],
+        selectedIndexes: this.selectedIndexes,
         selectedBackgroundSystemMaterial: new uiMaterial.ImmersiveMaterial({
           style: uiMaterial.ImmersiveStyle.ULTRA_THICK,
         }),

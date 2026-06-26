@@ -50,6 +50,10 @@ export default function ChipGroupSystemMaterialTest(): void {
       await CommonFunc.sleep(500);
     });
 
+    it('SUB_ARKUI_CHIPGROUP_BGSYSMAT_NORMAL_0100', Level.LEVEL0, async () => {
+      assertSystemMaterialSame('cg_bgSysMat_normal', 'cg_bgSysMat_normal');
+    });
+
     it('SUB_ARKUI_CHIPGROUP_SELBGMAT_NORMAL_0100', Level.LEVEL0, async () => {
       assertSmoke('cg_selBgMat_normal', 'cg_selBgMat_normal');
     });
