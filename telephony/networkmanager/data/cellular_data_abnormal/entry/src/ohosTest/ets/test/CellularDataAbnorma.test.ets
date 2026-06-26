@@ -529,22 +529,16 @@ export default function ActsCellularDataAbnormalTest() {
       let caseName: string = 'testTelephonyDataSetPreferredApn_0100';
       console.info(`${caseName} test start `);
       try {
-        await cellular.setPreferredApn(1).then((result:boolean)=>{
-          console.log(`${caseName}  setPreferredApn success `);
-          ExpectTrue(result === true);
-          done();
-        }).catch((err: BusinessError )=>{
-          console.log(`${caseName} catch error in`,err);
-          ExpectTrue(false);
-          done();
-        })
-      } catch (error) {
-        console.info(`${caseName} fall`,JSON.stringify(error));
+        let result: boolean = await cellular.setPreferredApn(1);
+        console.log(`${caseName}  setPreferredApn success `);
+        ExpectTrue(result === true);
+      } catch (err: BusinessError) {
+        console.log(`${caseName} catch error in`, err);
         ExpectTrue(false);
-        done();
       }
       console.info(`${caseName} test end`);
-    });;
+      done();
+    });
 
     /**
      * @tc.name   testTelephonyDataQueryAllApns_0100
@@ -558,21 +552,15 @@ export default function ActsCellularDataAbnormalTest() {
       let caseName: string = 'testTelephonyDataQueryAllApns_0100';
       console.info(`${caseName} test start `);
       try {
-        await cellular.queryAllApns().then((apnInfos: Array<cellular.ApnInfo>)=>{
-          console.log(`${caseName}  get queryAllApns success `);
-          ExpectTrue(apnInfos.length > 0);
-          done();
-        }).catch((err: BusinessError )=>{
-          console.log(`${caseName} catch error in`,err)
-          ExpectTrue(false);
-          done();
-        })
-      } catch (error) {
-        console.info(`${caseName} fall`,JSON.stringify(error));
+        let apnInfos: Array<cellular.ApnInfo> = await cellular.queryAllApns();
+        console.log(`${caseName}  get queryAllApns success `);
+        ExpectTrue(apnInfos.length > 0);
+      } catch (err: BusinessError) {
+        console.log(`${caseName} catch error in`, err);
         ExpectTrue(false);
-        done();
       }
       console.info(`${caseName} test end`);
+      done();
     });
 
     /**
@@ -587,22 +575,16 @@ export default function ActsCellularDataAbnormalTest() {
       let caseName: string = 'testTelephonyDataQueryApnIds_0100';
       console.info(`${caseName} test start `);
       try {
-        await cellular.queryAllApns().then(async (apnInfos: Array<cellular.ApnInfo>)=>{
-          console.log(`${caseName}  get queryAllApns success `);
-          let result: Array<number> = await cellular.queryApnIds(apnInfos[1]);
-          ExpectTrue(result.length > 0);
-          done();
-        }).catch((err: BusinessError )=>{
-          console.log(`${caseName} catch error in`,err)
-          ExpectTrue(false);
-          done();
-        })
-      } catch (error) {
-        console.info(`${caseName} fall`,JSON.stringify(error));
+        let apnInfos: Array<cellular.ApnInfo> = await cellular.queryAllApns();
+        console.log(`${caseName}  get queryAllApns success `);
+        let result: Array<number> = await cellular.queryApnIds(apnInfos[1]);
+        ExpectTrue(result.length > 0);
+      } catch (err: BusinessError) {
+        console.log(`${caseName} catch error in`, err);
         ExpectTrue(false);
-        done();
       }
       console.info(`${caseName} test end`);
+      done();
     });
 
     /**
@@ -617,23 +599,17 @@ export default function ActsCellularDataAbnormalTest() {
       let caseName: string = 'testTelephonyDataQueryApnIds_0200';
       console.info(`${caseName} test start `);
       try {
-        await cellular.queryAllApns().then(async (apnInfos: Array<cellular.ApnInfo>)=>{
-          console.log(`${caseName}  get queryAllApns success `);
-          apnInfos[0].apn = 'invalidApn';
-          let result: Array<number> = await cellular.queryApnIds(apnInfos[0]);
-          ExpectTrue(result.length === 0);
-          done();
-        }).catch((err: BusinessError )=>{
-          console.log(`${caseName} catch error in`,err)
-          ExpectTrue(false);
-          done();
-        })
-      } catch (error) {
-        console.info(`${caseName} fall`,JSON.stringify(error));
+        let apnInfos: Array<cellular.ApnInfo> = await cellular.queryAllApns();
+        console.log(`${caseName}  get queryAllApns success `);
+        apnInfos[0].apn = 'invalidApn';
+        let result: Array<number> = await cellular.queryApnIds(apnInfos[0]);
+        ExpectTrue(result.length === 0);
+      } catch (err: BusinessError) {
+        console.log(`${caseName} catch error in`, err);
         ExpectTrue(false);
-        done();
       }
       console.info(`${caseName} test end`);
+      done();
     });
 
   });

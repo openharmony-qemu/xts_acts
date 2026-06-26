@@ -40,22 +40,16 @@ export default function dataHasCardNoDataTest() {
       let caseName: string = 'testTelephonyDataSetPreferredApnNoCard_0100';
       console.info(`${caseName} test start `);
       try {
-        await data.setPreferredApn(1).then((result:boolean)=>{
-          console.log(`${caseName}  setPreferredApn success `)
-          ExpectTrue(result === false);
-          done()
-        }).catch((err: BusinessError )=>{
-          console.log(`${caseName} catch error in`,err)
-          ExpectTrue(false);
-          done();
-        })
-      } catch (error) {
-        console.info(`${caseName} fall`,JSON.stringify(error));
+        let result: boolean = await data.setPreferredApn(1);
+        console.log(`${caseName}  setPreferredApn success `);
+        ExpectTrue(result === false);
+      } catch (err: BusinessError) {
+        console.log(`${caseName} catch error in`, err);
         ExpectTrue(false);
-        done();
       }
       console.info(`${caseName} test end`);
-    });;
+      done();
+    });
 
     /**
      * @tc.name   testTelephonyDataQueryAllApnsNoCard_0100
@@ -69,21 +63,15 @@ export default function dataHasCardNoDataTest() {
       let caseName: string = 'testTelephonyDataQueryAllApnsNoCard_0100';
       console.info(`${caseName} test start `);
       try {
-        await data.queryAllApns().then((apnInfos: Array<data.ApnInfo>)=>{
-          console.log(`${caseName}  get queryAllApns success `)
-          ExpectTrue(apnInfos.length === 0);
-          done();
-        }).catch((err: BusinessError )=>{
-          console.log(`${caseName} catch error in`,err)
-          ExpectTrue(false);
-          done();
-        })
-      } catch (error) {
-        console.info(`${caseName} fall`,JSON.stringify(error));
+        let apnInfos: Array<data.ApnInfo> = await data.queryAllApns();
+        console.log(`${caseName}  get queryAllApns success `);
+        ExpectTrue(apnInfos.length === 0);
+      } catch (err: BusinessError) {
+        console.log(`${caseName} catch error in`, err);
         ExpectTrue(false);
-        done();
       }
       console.info(`${caseName} test end`);
+      done();
     });
 
   }
