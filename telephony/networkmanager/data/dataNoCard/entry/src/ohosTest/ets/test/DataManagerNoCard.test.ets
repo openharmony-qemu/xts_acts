@@ -43,7 +43,7 @@ export default function dataHasCardNoDataTest() {
         let result: boolean = await data.setPreferredApn(1);
         console.log(`${caseName}  setPreferredApn success `);
         ExpectTrue(result === false);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(`${caseName} catch error in`, err);
         ExpectTrue(false);
       }
@@ -66,7 +66,7 @@ export default function dataHasCardNoDataTest() {
         let apnInfos: Array<data.ApnInfo> = await data.queryAllApns();
         console.log(`${caseName}  get queryAllApns success `);
         ExpectTrue(apnInfos.length === 0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(`${caseName} catch error in`, err);
         ExpectTrue(false);
       }
