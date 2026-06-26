@@ -93,9 +93,9 @@ export default function AddMonitorWildcard2() {
       // Get updated num value (should be incremented)
       let strJson2 = inspector.getInspectorByKey('synchronous_text');
       await CommonFunc.sleep(1000);
-      let updatedNum = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('label'));
+      let updatedNum = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('content'));
 
-      expect(updatedNum).assertEqual('Synchronous monitoring value:2,2');
+      expect(updatedNum).assertEqual('"Synchronous monitoring value:2,2"');
 
       done();
     });
@@ -123,9 +123,9 @@ export default function AddMonitorWildcard2() {
       // Get updated num value (should be incremented)
       let strJson2 = inspector.getInspectorByKey('asynchronous_text');
       //await CommonFunc.sleep(1000);
-      let updatedNum = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('label'));
+      let updatedNum = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('content'));
 
-      expect(updatedNum).assertEqual('Asynchronous monitoring value:2,1');
+      expect(updatedNum).assertEqual('"Asynchronous monitoring value:2,1"');
 
       done();
     });

@@ -107,56 +107,65 @@ export default function GlobalReusePool004Test() {
       expect(globalReuse004).assertUndefined();
       let button = await driver.findComponent(ON.id('GlobalReuse004Change'));
       await (button?.click() as Promise<void>);
-      await driver.delayMs(500);
+      await CommonFunc.sleep(1000);
       await (button?.click() as Promise<void>);
-      await driver.delayMs(500);
+      await CommonFunc.sleep(1000);
       await (button?.click() as Promise<void>);
-      await driver.delayMs(500);
+      await CommonFunc.sleep(1000);
       globalReuse004 = AppStorage.get<boolean | undefined>('GlobalReuse004') as boolean | undefined
       expect(globalReuse004).assertTrue()
 
       let button1 = await driver.findComponent(ON.id('GlobalReuse004_002'));
       await (button1?.click() as Promise<void>);
-      await driver.delayMs(500);
+      await CommonFunc.sleep(1000);
 
       let strJsonNew = inspector.getInspectorByKey('GlobalReuse004_001');
+      await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('@State: 110');
 
       let strJsonNew1 = inspector.getInspectorByKey('ChildGlobal001_001');
+      await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJsonNew1).getElement('$attrs').getString('content'))
         .assertEqual('ChildGlobal001 @Link: 110,@v1PropRef: 0,@v1State: 0,@v1ObjectLink: 100,@v1Provide: 11');
 
       let strJsonNew2 = inspector.getInspectorByKey('SubChildGlobalV1_001');
+      await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJsonNew2).getElement('$attrs').getString('content'))
         .assertEqual('SubChildGlobalV1  @Consume: 11,@Link: 110,@LocalStoragePropRef: 10,@Provide: 11,@State: 10,@PropRef: 0,@StoragePropRef: 10,@ObjectLink: 100');
 
       let button2 = await driver.findComponent(ON.id('ChildGlobal001_005'));
       await (button2?.click() as Promise<void>);
-      await driver.delayMs(500);
+      await CommonFunc.sleep(1000);
 
       strJsonNew = inspector.getInspectorByKey('GlobalReuse004_001');
+      await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('@State: 120');
 
       strJsonNew1 = inspector.getInspectorByKey('ChildGlobal001_001');
+      await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJsonNew1).getElement('$attrs').getString('content'))
         .assertEqual('ChildGlobal001 @Link: 120,@v1PropRef: 0,@v1State: 0,@v1ObjectLink: 100,@v1Provide: 11');
 
       strJsonNew2 = inspector.getInspectorByKey('SubChildGlobalV1_001');
+      await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJsonNew2).getElement('$attrs').getString('content'))
         .assertEqual('SubChildGlobalV1  @Consume: 11,@Link: 120,@LocalStoragePropRef: 10,@Provide: 11,@State: 10,@PropRef: 0,@StoragePropRef: 10,@ObjectLink: 100');
 
       let button3 = await driver.findComponent(ON.id('SubChildGlobalV1_002'));
       await (button3?.click() as Promise<void>);
-      await driver.delayMs(500);
+      await CommonFunc.sleep(1000);
 
       strJsonNew = inspector.getInspectorByKey('GlobalReuse004_001');
+      await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('@State: 121');
 
       strJsonNew1 = inspector.getInspectorByKey('ChildGlobal001_001');
+      await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJsonNew1).getElement('$attrs').getString('content'))
         .assertEqual('ChildGlobal001 @Link: 121,@v1PropRef: 0,@v1State: 0,@v1ObjectLink: 101,@v1Provide: 12');
 
       strJsonNew2 = inspector.getInspectorByKey('SubChildGlobalV1_001');
+      await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJsonNew2).getElement('$attrs').getString('content'))
         .assertEqual('SubChildGlobalV1  @Consume: 12,@Link: 121,@LocalStoragePropRef: 10,@Provide: 12,@State: 11,@PropRef: 1,@StoragePropRef: 10,@ObjectLink: 101');
       console.info('SUB_ARKUI_GLOBALREUSEPOOL_POOLACCEPTS_0100 END');
