@@ -532,7 +532,7 @@ export default function ActsCellularDataAbnormalTest() {
         let result: boolean = await cellular.setPreferredApn(1);
         console.log(`${caseName}  setPreferredApn success `);
         ExpectTrue(result === true);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(`${caseName} catch error in`, err);
         ExpectTrue(false);
       }
@@ -555,7 +555,7 @@ export default function ActsCellularDataAbnormalTest() {
         let apnInfos: Array<cellular.ApnInfo> = await cellular.queryAllApns();
         console.log(`${caseName}  get queryAllApns success `);
         ExpectTrue(apnInfos.length > 0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(`${caseName} catch error in`, err);
         ExpectTrue(false);
       }
@@ -579,7 +579,7 @@ export default function ActsCellularDataAbnormalTest() {
         console.log(`${caseName}  get queryAllApns success `);
         let result: Array<number> = await cellular.queryApnIds(apnInfos[1]);
         ExpectTrue(result.length > 0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(`${caseName} catch error in`, err);
         ExpectTrue(false);
       }
@@ -604,7 +604,7 @@ export default function ActsCellularDataAbnormalTest() {
         apnInfos[0].apn = 'invalidApn';
         let result: Array<number> = await cellular.queryApnIds(apnInfos[0]);
         ExpectTrue(result.length === 0);
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(`${caseName} catch error in`, err);
         ExpectTrue(false);
       }
