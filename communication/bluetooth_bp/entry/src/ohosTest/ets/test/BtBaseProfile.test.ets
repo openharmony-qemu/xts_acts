@@ -794,5 +794,57 @@ export default function btBaseProfileTest() {
         }
         done();
       })
+
+       /**
+        * @tc.name SUB_COMMUNICATION_BLUETOOTH_PAN_ISPANSUPPORTED_0100
+        * @tc.number SUB_COMMUNICATION_BLUETOOTH_PAN_ISPANSUPPORTED_0100
+        * @tc.desc 测试 pan.PanProfile.isPanSupported - 设备支持PAN返回值
+        * @tc.type FUNCTION
+        * @tc.size MEDIUMTEST
+        * @tc.level LEVEL0
+        * @co.authored.by.agent
+        */
+        it('SUB_COMMUNICATION_BLUETOOTH_PAN_ISPANSUPPORTED_0100', Level.LEVEL0, () => {
+            try {
+                let panProfile: pan.PanProfile = pan.createPanProfile();
+                let result: boolean = panProfile.isPanSupported();
+                console.info('[bt_arkts] SUB_COMMUNICATION_BLUETOOTH_PAN_ISPANSUPPORTED_0100 result is ' + JSON.stringify(result));
+                expect(typeof result).assertEqual("boolean");
+            } catch (err) {
+                console.info("[bt_arkts] SUB_COMMUNICATION_BLUETOOTH_PAN_ISPANSUPPORTED_0100 error: " + JSON.stringify(err));
+                if (err.code === 801) {
+                console.info("设备 is not support.");
+                expect(err.code).assertEqual(801);
+                } else {
+                expect().assertFail();
+                }
+            }
+        });
+
+       /**
+        * @tc.name SUB_COMMUNICATION_BLUETOOTH_PAN_ISTETHERINGON_0100
+        * @tc.number SUB_COMMUNICATION_BLUETOOTH_PAN_ISTETHERINGON_0100
+        * @tc.desc 测试 PanProfile 的 isTetheringOn 方法 - 获取网络共享状态
+        * @tc.type FUNCTION
+        * @tc.size MEDIUMTEST
+        * @tc.level LEVEL0
+        * @co.authored.by.agent
+        */
+        it('SUB_COMMUNICATION_BLUETOOTH_PAN_ISTETHERINGON_0100', Level.LEVEL0, () => {
+            let panProfile: pan.PanProfile = pan.createPanProfile();
+            try {
+                let result: boolean = panProfile.isTetheringOn();
+                expect(typeof result).assertEqual('boolean');
+                console.info('[bt_arkts] isTetheringOn result is ' + JSON.stringify(result));
+            } catch (err) {
+                console.info("[bt_arkts] isTetheringOn error: " + JSON.stringify(err));
+                if (err.code === 801) {
+                console.info("设备 is not support.");
+                expect(err.code).assertEqual(801);
+                } else {
+                expect().assertFail();
+                }
+            }
+        });
     })
 }

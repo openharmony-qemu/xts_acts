@@ -15,6 +15,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from "@ohos/hypium";
 import baseProfile from '@ohos.bluetooth.baseProfile';
 import a2dp from '@ohos.bluetooth.a2dp';
+import pan from '@ohos.bluetooth.pan';
 import hilog from '@ohos.hilog';
 
 const PERMISSION_DENIED_CODE = 201
@@ -105,5 +106,31 @@ export default function btProfileNopUiJsunit() {
       }
       done();
     })
+
+    /**
+     * @tc.name SUB_COMMUNICATION_BLUETOOTH_PAN_ISTETHERINGON_NOP_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_PAN_ISTETHERINGON_NOP_0100
+     * @tc.desc 测试 PanProfile 的 isTetheringOn 方法 - 缺少蓝牙访问权限
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     * @co.authored.by.agent
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_PAN_ISTETHERINGON_NOP_0100', Level.LEVEL1,   () => {
+      let panProfile: pan.PanProfile = pan.createPanProfile();
+
+      try {
+        panProfile.isTetheringOn();
+        expect().assertFail();
+      } catch (err) {
+        console.info("[bt_arkts] isTetheringOn error: " + JSON.stringify(err));
+        if (Number(err.code) === 801) {
+          console.info("设备 is not support.");
+          expect(Number(err.code)).assertEqual(801);
+        } else {
+          expect(Number(err.code)).assertEqual(201);
+        }
+      }
+    });
   })
 }
