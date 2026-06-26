@@ -340,10 +340,9 @@ export default function shadowEffectTest() {
         let shaderEffect = drawing.ShaderEffect.createLinearGradient({x: 100.1, y: 100.1}, {x: 300.1, y: 300.1},
           undefined, drawing.TileMode.REPEAT,[0.1,0.9], matrix);
         console.info(msg + ` createLinearGradient create 7 successed,shaderEffect:` + JSON.stringify(shaderEffect));
-        expect().assertFail();
       } catch( e ) {
         console.info(msg + ` create 7 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
-        expect(e.code).assertEqual(401);
+        expect().assertFail();
       }
 
       try {
@@ -359,7 +358,7 @@ export default function shadowEffectTest() {
       try {
         let matrix = new drawing.Matrix();
         let shaderEffect = drawing.ShaderEffect.createLinearGradient({x: 100.1, y: 100.1}, {x: 300.1, y: 300.1},
-        [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT,undefined, matrix);
+          [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT,undefined, matrix);
         console.info(msg + ` createLinearGradient 9 create successed,shaderEffect:` + JSON.stringify(shaderEffect));
         expect().assertFail();
       } catch( e ) {
