@@ -432,7 +432,7 @@ napi_value captureGetSupportedFullCameraOutputCapabilityWithSceneMode(napi_env e
     int32_t index;
     napi_get_value_int32(env, args[0], &index);
     Camera_ErrorCode result;
-    Camera_OutputCapability **cameraOutputCapability;
+    Camera_OutputCapability *cameraOutputCapability = nullptr;
     uint32_t cameraSize = 0;
     Camera_Type type = CAMERA_TYPE_DEFAULT;
     Camera_Device *cameras = nullptr;
@@ -453,7 +453,7 @@ napi_value captureGetSupportedFullCameraOutputCapabilityWithSceneMode(napi_env e
             break;
         };
         result = OH_CameraManager_GetSupportedFullCameraOutputCapabilityWithSceneMode(
-            cameraManager, cameras, NORMAL_PHOTO, cameraOutputCapability);
+            cameraManager, cameras, NORMAL_PHOTO, &cameraOutputCapability);
         break;
     case CASE_INDEX_2:
         if (cameraManager == nullptr || cameras == nullptr) {
@@ -461,7 +461,7 @@ napi_value captureGetSupportedFullCameraOutputCapabilityWithSceneMode(napi_env e
             break;
         };
         result = OH_CameraManager_GetSupportedFullCameraOutputCapabilityWithSceneMode(
-            cameraManager, cameras, NORMAL_VIDEO, cameraOutputCapability);
+            cameraManager, cameras, NORMAL_VIDEO, &cameraOutputCapability);
         break;
     case CASE_INDEX_3:
         if (cameraManager == nullptr || cameras == nullptr) {
@@ -469,19 +469,19 @@ napi_value captureGetSupportedFullCameraOutputCapabilityWithSceneMode(napi_env e
             break;
         };
         result = OH_CameraManager_GetSupportedFullCameraOutputCapabilityWithSceneMode(
-            cameraManager, cameras, SECURE_PHOTO, cameraOutputCapability);
+            cameraManager, cameras, SECURE_PHOTO, &cameraOutputCapability);
         break;
     case CASE_INDEX_4:
         result = OH_CameraManager_GetSupportedFullCameraOutputCapabilityWithSceneMode(
-            cameraManager, nullptr, NORMAL_PHOTO, cameraOutputCapability);
+            cameraManager, nullptr, NORMAL_PHOTO, &cameraOutputCapability);
         break;
     case CASE_INDEX_5:
         result = OH_CameraManager_GetSupportedFullCameraOutputCapabilityWithSceneMode(
-            cameraManager, nullptr, NORMAL_VIDEO, cameraOutputCapability);
+            cameraManager, nullptr, NORMAL_VIDEO, &cameraOutputCapability);
         break;
     case CASE_INDEX_6:
         result = OH_CameraManager_GetSupportedFullCameraOutputCapabilityWithSceneMode(
-            cameraManager, nullptr, SECURE_PHOTO, cameraOutputCapability);
+            cameraManager, nullptr, SECURE_PHOTO, &cameraOutputCapability);
         break;
     default:
         break;
@@ -560,6 +560,7 @@ napi_value captureUnregisterOcclusionDetectionCallback(napi_env env, napi_callba
     default:
         break;
     }
+    LOGI("yzh Unregister case_index_%{public}d", index);
     ReleasePhotoSession();
     napi_value ret;
     napi_create_int32(env, result, &ret);
@@ -691,23 +692,23 @@ napi_value captureCameraDeviceQueryInfoCameraType(napi_env env, napi_callback_in
     Camera_DeviceQueryInfo queryInfo0 = {.cameraType = &type0,
                                          .cameraTypeSize = cameraSize,
                                          .cameraPosition = CAMERA_POSITION_UNSPECIFIED,
-                                         .connectionType = CAMERA_CONNECTION_BUILT_IN};
+                                         .connectionType = static_cast<Camera_Connection>(-1)};
     Camera_DeviceQueryInfo queryInfo1 = {.cameraType = &type1,
                                          .cameraTypeSize = cameraSize,
                                          .cameraPosition = CAMERA_POSITION_UNSPECIFIED,
-                                         .connectionType = CAMERA_CONNECTION_BUILT_IN};
+                                         .connectionType = static_cast<Camera_Connection>(-1)};
     Camera_DeviceQueryInfo queryInfo2 = {.cameraType = &type2,
                                          .cameraTypeSize = cameraSize,
                                          .cameraPosition = CAMERA_POSITION_UNSPECIFIED,
-                                         .connectionType = CAMERA_CONNECTION_BUILT_IN};
+                                         .connectionType = static_cast<Camera_Connection>(-1)};
     Camera_DeviceQueryInfo queryInfo3 = {.cameraType = &type3,
                                          .cameraTypeSize = cameraSize,
                                          .cameraPosition = CAMERA_POSITION_UNSPECIFIED,
-                                         .connectionType = CAMERA_CONNECTION_BUILT_IN};
+                                         .connectionType = static_cast<Camera_Connection>(-1)};
     Camera_DeviceQueryInfo queryInfo4 = {.cameraType = &type4,
                                          .cameraTypeSize = cameraSize,
                                          .cameraPosition = CAMERA_POSITION_UNSPECIFIED,
-                                         .connectionType = CAMERA_CONNECTION_BUILT_IN};
+                                         .connectionType = static_cast<Camera_Connection>(-1)};
     switch (index) {
     case CASE_INDEX_1:
         result = OH_CameraManager_GetCameraDevices(cameraManager, &queryInfo0, &cameraSize, &cameras);
