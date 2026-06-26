@@ -279,6 +279,7 @@ protected:
     static void SetUpTestCase(void)
     {
         printf("[hcpptest]SetUpTestCase ! \n");
+        SystemInitProxy();
     }
     // TearDownTestCase: Testsuit teardown, run after last testcase
     static void TearDownTestCase(void)
