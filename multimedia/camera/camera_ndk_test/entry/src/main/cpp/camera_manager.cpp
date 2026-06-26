@@ -4592,11 +4592,14 @@ Camera_ErrorCode NDKCamera::GetColorTint(int useCaseCode)
 
 OH_Camera_ZoomPointInfo* cameraZoomPointInfo;
 uint32_t g_zoomSize;
-Camera_ErrorCode NDKCamera::GetZoomPointInfos(int useCaseCode)
+int32_t NDKCamera::GetZoomPointInfos(int useCaseCode)
 {
     LOG("OH_CaptureSession_GetZoomPointInfos useCaseCode: %d", useCaseCode);
     if (useCaseCode == PARAMETER_OK) {
         ret_ = OH_CaptureSession_GetZoomPointInfos(captureSession_, &g_zoomSize, &cameraZoomPointInfo);
+        if (ret_ == CAMERA_OK && g_zoomSize == 0) {
+            return -1;
+        }
     } else if (useCaseCode == PARAMETER1_ERROR) {
         ret_ = OH_CaptureSession_GetZoomPointInfos(nullptr, &g_zoomSize, &cameraZoomPointInfo);
     } else if (useCaseCode == PARAMETER2_ERROR) {
