@@ -143,7 +143,7 @@ export default function callJsunit() {
         hilog.info(domain, tag, '%{public}s', caseName + ' start');
         try {
           let telNumber: string = "";
-          await.call.makeCallWithToken(telNumber)
+          await call.makeCallWithToken(telNumber)
           expect(false).assertTrue();
           done();
         } catch (error) {
@@ -171,7 +171,7 @@ export default function callJsunit() {
         hilog.info(domain, tag, '%{public}s', caseName + ' start');
         try {
           let telNumber: string = "138xxxxxxxx";
-          let res: string = await.call.makeCallWithToken(telNumber);
+          let res: string = await call.makeCallWithToken(telNumber);
           hilog.info(domain, tag, '%{public}s', caseName + 'makeCallWithToken success');
            expect(res != "" && res != undefined && res != null).assertTrue();
           done();
@@ -204,7 +204,7 @@ export default function callJsunit() {
              isCustomAccessibility : true
            }
           let telNumber: string = "138xxxxxxxx";
-          let res: string = await.call.makeCallWithToken(telNumber, option);
+          let res: string = await call.makeCallWithToken(telNumber, option);
           hilog.info(domain, tag, '%{public}s', caseName + 'makeCallWithToken success');
            expect(res != "" && res != undefined && res != null).assertTrue();
           done();
@@ -237,7 +237,7 @@ export default function callJsunit() {
              isCustomAccessibility : false
            }
           let telNumber: string = "138xxxxxxxx";
-          let res: string = await.call.makeCallWithToken(telNumber, option);
+          let res: string = await call.makeCallWithToken(telNumber, option);
           hilog.info(domain, tag, '%{public}s', caseName + 'makeCallWithToken success');
            expect(res != "" && res != undefined && res != null).assertTrue();
           done();
@@ -249,6 +249,7 @@ export default function callJsunit() {
         hilog.info(domain, tag, '%{public}s', caseName + ' Test end');
       }
   });
+
 
   });
 }
