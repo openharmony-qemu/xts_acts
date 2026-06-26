@@ -56,6 +56,12 @@ export default function PersistenceV2DefaultSubCreatorsTest(): void {
       await CommonFunc.sleep(500);
     });
 
+    /**
+     * @tc.number  SUB_ARKUI_PersistenceV2_defaultSubCreators_normal_0100
+     * @tc.name    SUB_ARKUI_PersistenceV2_defaultSubCreators_normal_0100
+     * @tc.desc    Test PersistenceV2 defaultSubCreators normal value - verify root title and sub-init tag
+     * @tc.level   Level.LEVEL0
+     */
     it('SUB_ARKUI_PersistenceV2_defaultSubCreators_normal_0100', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         expect(readContent('text_root_title')).assertContain('root');
