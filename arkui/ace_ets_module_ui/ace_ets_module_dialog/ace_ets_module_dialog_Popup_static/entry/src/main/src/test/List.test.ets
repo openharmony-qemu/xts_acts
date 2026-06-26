@@ -14,39 +14,16 @@
  * limitations under the License.
  */
 
-import popupTest from './PopupTest/popupTest.test';
-import PopupNodeTest from './PopupTest/PopupNodeTest.test';
-import CustomPopupOptionsTest from './PopupTest/CustomPopupOptions.test';
-import PopupCommonTest from './PopupTest/PopupCommon.test';
-import PopupOptionsTest from './PopupTest/PopupOptions.test';
-import TipsOptionsTest from './TipsOptionsTest/TipsOptions.test';
-import ImmersiveOptionsApplyShadowTest from './uimaterial/ImmersiveOptionsApplyShadow.test';
-import ActionMenuOptionsSystemMaterialTest from './dialogSystemMaterial/ActionMenuOptionsSystemMaterial.test';
-import ActionSheetOptionsSystemMaterialTest from './dialogSystemMaterial/ActionSheetOptionsSystemMaterial.test';
-import AlertDialogSystemMaterialTest from './dialogSystemMaterial/AlertDialogSystemMaterial.test';
-import BaseDialogOptionsSystemMaterialTest from './dialogSystemMaterial/BaseDialogOptionsSystemMaterial.test';
-import ShowDialogOptionsSystemMaterialTest from './dialogSystemMaterial/ShowDialogOptionsSystemMaterial.test';
-import ShowToastOptionsTest from './dialogSystemMaterial/ShowToastOptions.test';
-import ImmersiveStyleTest from './uimaterial/ImmersiveStyleTest.test';
-import ImmersiveOptionsMaterialColorTest from './uimaterial/ImmersiveOptionsMaterialColor.test';
-import ImmersiveOptionsColorInvertTest from './uimaterial/ImmersiveOptionsColorInvert.test';
-import UIMaterialTest from './uimaterial/UIMaterial.test';
+import PopupOptionsSystemMaterialTest from './popupSystemMaterial/PopupOptionsSystemMaterial.test';
+import CustomPopupOptionsSystemMaterialTest from './popupSystemMaterial/CustomPopupOptionsSystemMaterial.test';
+import PopupCommonOptionsSystemMaterialTest from './popupSystemMaterial/PopupCommonOptionsSystemMaterial.test';
+import SheetOptionsSystemMaterialTest from './popupSystemMaterial/SheetOptionsSystemMaterial.test';
+import TipsOptionsSystemMaterialTest from './popupSystemMaterial/TipsOptionsSystemMaterial.test';
 
-export default function testsuite() {
-  popupTest();
-  PopupNodeTest();
-  CustomPopupOptionsTest();
-  PopupCommonTest();
-  PopupOptionsTest();
-  TipsOptionsTest();
-  ImmersiveOptionsApplyShadowTest();
-  ActionMenuOptionsSystemMaterialTest();
-  ActionSheetOptionsSystemMaterialTest();
-  AlertDialogSystemMaterialTest();
-  BaseDialogOptionsSystemMaterialTest();
-  ShowDialogOptionsSystemMaterialTest();
-  ShowToastOptionsTest();
-  ImmersiveStyleTest();
-  ImmersiveOptionsMaterialColorTest();
-  ImmersiveOptionsColorInvertTest();
+export default function testsuite(): void {
+  PopupOptionsSystemMaterialTest();
+  CustomPopupOptionsSystemMaterialTest();
+  PopupCommonOptionsSystemMaterialTest();
+  SheetOptionsSystemMaterialTest();
+  TipsOptionsSystemMaterialTest();
 }
