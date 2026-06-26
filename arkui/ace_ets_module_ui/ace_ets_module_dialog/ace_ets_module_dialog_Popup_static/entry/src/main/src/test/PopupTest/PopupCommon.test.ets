@@ -16,7 +16,7 @@
 'use static';
 
 import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { abilityDelegatorRegistry, Driver, ON, MatchPattern } from '@kit.TestKit';
+import { abilityDelegatorRegistry, Driver, ON, MatchPattern, Component } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -41,9 +41,10 @@ function logLongString(tag: string, longStr: string): void {
   }
 }
 
-export default function PopupCommonTest() {
+export default function PopupCommonTest(): void {
   describe('PopupCommonTest', () => {
-    beforeAll(async (): Promise<void> => {
+    beforeAll(async () => {
+
       console.info("PopupCommonTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.popup.static", "EntryAbility");
 
@@ -65,7 +66,8 @@ export default function PopupCommonTest() {
       }
     });
 
-    beforeEach(async (): Promise<void> => {
+    beforeEach(async () => {
+
       console.info("PopupCommonTest beforeEach start");
     });
 
@@ -82,14 +84,15 @@ export default function PopupCommonTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('popupCommonOptionsAvoidTarget', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('popupCommonOptionsAvoidTarget', Level.LEVEL1, async () => {
+
       console.info('PopupCommonTest execute: popupCommonOptionsAvoidTarget START');
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
         const openPopupButton = await driver.findComponent(ON.id('btnOpenPopup'));
         expect(!!openPopupButton).assertEqual(true);
-        await (openPopupButton?.click() as Promise<void>);
+        await ((await driver.findComponent(ON.id('PLACEHOLDER'))) as Component).click();
         await Utils.sleep(500);
         const popupContent = await driver.findComponent(ON.id('popupContent'));
         if (popupContent !== undefined) {
@@ -100,11 +103,9 @@ export default function PopupCommonTest() {
         await driver.pressBack();
         await Utils.sleep(200);
         console.info('PopupCommonTest execute: popupCommonOptionsAvoidTarget END');
-        done();
       } catch (error) {
         console.error('PopupCommonTest execute: popupCommonOptionsAvoidTarget error:' + error);
         expect().assertFail();
-        done();
       }
     });
 
@@ -116,14 +117,15 @@ export default function PopupCommonTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('popupCommonOptionsOutlineWidth', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('popupCommonOptionsOutlineWidth', Level.LEVEL1, async () => {
+
       console.info('PopupCommonTest execute: popupCommonOptionsOutlineWidth START');
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
         const openPopupButton = await driver.findComponent(ON.id('btnOpenPopup'));
         expect(!!openPopupButton).assertEqual(true);
-        await (openPopupButton?.click() as Promise<void>);
+        await ((await driver.findComponent(ON.id('PLACEHOLDER'))) as Component).click();
         await Utils.sleep(500);
         
         const popupContent = await driver.findComponent(ON.id('popupContent'));
@@ -136,11 +138,9 @@ export default function PopupCommonTest() {
         await driver.pressBack();
         await Utils.sleep(200);
         console.info('PopupCommonTest execute: popupCommonOptionsOutlineWidth END');
-        done();
       } catch (error) {
         console.error('PopupCommonTest execute: popupCommonOptionsOutlineWidth error:' + error);
         expect().assertFail();
-        done();
       }
     });
 
@@ -152,14 +152,15 @@ export default function PopupCommonTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('popupCommonOptionsBorderWidth', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('popupCommonOptionsBorderWidth', Level.LEVEL1, async () => {
+
       console.info('PopupCommonTest execute: popupCommonOptionsBorderWidth START');
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
         const openPopupButton = await driver.findComponent(ON.id('btnOpenPopup'));
         expect(!!openPopupButton).assertEqual(true);
-        await (openPopupButton?.click() as Promise<void>);
+        await ((await driver.findComponent(ON.id('PLACEHOLDER'))) as Component).click();
         await Utils.sleep(500);
         
         const popupContent = await driver.findComponent(ON.id('popupContent'));
@@ -172,11 +173,9 @@ export default function PopupCommonTest() {
         await driver.pressBack();
         await Utils.sleep(200);
         console.info('PopupCommonTest execute: popupCommonOptionsBorderWidth END');
-        done();
       } catch (error) {
         console.error('PopupCommonTest execute: popupCommonOptionsBorderWidth error:' + error);
         expect().assertFail();
-        done();
       }
     });
 
@@ -188,14 +187,15 @@ export default function PopupCommonTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('popupCommonOptionsOutlineLinearGradient', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('popupCommonOptionsOutlineLinearGradient', Level.LEVEL1, async () => {
+
       console.info('PopupCommonTest execute: popupCommonOptionsOutlineLinearGradient START');
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
         const openPopupButton = await driver.findComponent(ON.id('btnOpenPopup'));
         expect(!!openPopupButton).assertEqual(true);
-        await (openPopupButton?.click() as Promise<void>);
+        await ((await driver.findComponent(ON.id('PLACEHOLDER'))) as Component).click();
         await Utils.sleep(500);
         
         const popupContent = await driver.findComponent(ON.id('popupContent'));
@@ -208,11 +208,9 @@ export default function PopupCommonTest() {
         await driver.pressBack();
         await Utils.sleep(200);
         console.info('PopupCommonTest execute: popupCommonOptionsOutlineLinearGradient END');
-        done();
       } catch (error) {
         console.error('PopupCommonTest execute: popupCommonOptionsOutlineLinearGradient error:' + error);
         expect().assertFail();
-        done();
       }
     });
 
@@ -224,14 +222,15 @@ export default function PopupCommonTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('popupCommonOptionsBorderLinearGradient', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('popupCommonOptionsBorderLinearGradient', Level.LEVEL1, async () => {
+
       console.info('PopupCommonTest execute: popupCommonOptionsBorderLinearGradient START');
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
         const openPopupButton = await driver.findComponent(ON.id('btnOpenPopup'));
         expect(!!openPopupButton).assertEqual(true);
-        await (openPopupButton?.click() as Promise<void>);
+        await ((await driver.findComponent(ON.id('PLACEHOLDER'))) as Component).click();
         await Utils.sleep(500);
         
         const popupContent = await driver.findComponent(ON.id('popupContent'));
@@ -244,11 +243,9 @@ export default function PopupCommonTest() {
         await driver.pressBack();
         await Utils.sleep(200);
         console.info('PopupCommonTest execute: popupCommonOptionsBorderLinearGradient END');
-        done();
       } catch (error) {
         console.error('PopupCommonTest execute: popupCommonOptionsBorderLinearGradient error:' + error);
         expect().assertFail();
-        done();
       }
     });
   });
