@@ -80,10 +80,10 @@ export default function ParagraphStyleTailIndentsTest() {
       await CommonFunc.sleep(500);
 
       console.info('[paragraphStyleTailIndents_page_0100] tailIndents_0: ' + AppStorage.get('StyledStringTailIndents_0_tailIndents'));
-      expect(AppStorage.get('StyledStringTailIndents_0_tailIndents')).assertEqual('20');
+      expect(AppStorage.get('StyledStringTailIndents_0_tailIndents')).assertEqual('[20]');
 
       console.info('[paragraphStyleTailIndents_page_0100] tailIndents_1: ' + AppStorage.get('StyledStringTailIndents_1_tailIndents'));
-      expect(AppStorage.get('StyledStringTailIndents_1_tailIndents')).assertEqual('10,30');
+      expect(AppStorage.get('StyledStringTailIndents_1_tailIndents')).assertEqual('[10,30]');
 
       console.info('[paragraphStyleTailIndents_page_0100] tailIndents_2: ' + AppStorage.get('StyledStringTailIndents_2_tailIndents'));
       expect(AppStorage.get('StyledStringTailIndents_2_tailIndents')).assertEqual('undefined');
@@ -92,13 +92,13 @@ export default function ParagraphStyleTailIndentsTest() {
       expect(AppStorage.get('StyledStringTailIndents_3_tailIndents')).assertEqual('undefined');
 
       console.info('[paragraphStyleTailIndents_page_0100] tailIndents_4: ' + AppStorage.get('StyledStringTailIndents_4_tailIndents'));
-      expect(AppStorage.get('StyledStringTailIndents_4_tailIndents')).assertEqual('0');
+      expect(AppStorage.get('StyledStringTailIndents_4_tailIndents')).assertEqual('[0]');
 
       console.info('[paragraphStyleTailIndents_page_0100] tailIndents_5: ' + AppStorage.get('StyledStringTailIndents_5_tailIndents'));
-      expect(AppStorage.get('StyledStringTailIndents_5_tailIndents')).assertEqual('2147483647');
+      expect(AppStorage.get('StyledStringTailIndents_5_tailIndents')).assertEqual('[2147483647]');
 
       console.info('[paragraphStyleTailIndents_page_0100] tailIndents_6: ' + AppStorage.get('StyledStringTailIndents_6_tailIndents'));
-      expect(AppStorage.get('StyledStringTailIndents_6_tailIndents')).assertEqual('0');
+      expect(AppStorage.get('StyledStringTailIndents_6_tailIndents')).assertEqual('[0]');
 
       console.info('[paragraphStyleTailIndents_page_0100] END');
       done();

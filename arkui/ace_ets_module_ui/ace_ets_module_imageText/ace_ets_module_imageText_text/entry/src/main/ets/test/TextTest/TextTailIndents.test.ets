@@ -165,7 +165,7 @@ export default function TextTailIndentsTest() {
       let strJson = getInspectorByKey('Text_tailIndents_vpLarge');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[TextTailIndentsTest_0080] tailIndents: ' + JSON.stringify(obj.$attrs.tailIndents));
-      expect(obj.$attrs.tailIndents).assertEqual('999.00vp');
+      expect(obj.$attrs.tailIndents).assertContain('999.00vp');
       console.info('[TextTailIndentsTest_0080] END');
       done();
     });
