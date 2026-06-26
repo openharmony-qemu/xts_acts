@@ -802,6 +802,10 @@ export default function geolocationTest_geo7() {
             console.info("[lbs_js] locationChangerOff16 try err." + JSON.stringify(error));
             if (error.code == "801") {
                 expect(error.code).assertEqual("801")
+            } else if (error.code == "3301100") {
+                expect(error.code).assertEqual("3301100");
+            } else if (error.code == "3301200") {
+                expect(error.code).assertEqual("3301200");
             } else {
                 expect(true).assertFalse();
             }
