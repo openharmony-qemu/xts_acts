@@ -21,13 +21,6 @@
     {
       "name": "release",
       "arkOptions": {
-        "obfuscation": {
-          "ruleOptions": {
-            "enable": false,
-            "files": [
-            ]
-          }
-        }
       }
     },
   ],
