@@ -13,26 +13,6 @@ function expectFail(info: string = ''): void {
   }
 }
 
-let netAddress: socket.NetAddress = {
-  address: '1.1.1.1',
-  port: 80
-};
-
-let tcpConnectOptions: socket.TCPConnectOptions = {
-  address: netAddress,
-  timeout: 6000
-};
-
-let netFAddress: socket.NetAddress = {
-  address: '192.168.1.132',
-  port: 80
-};
-
-let tcpConnectFOptions: socket.TCPConnectOptions = {
-  address: netFAddress,
-  timeout: 6000
-};
-
 export default function TCPSocketAsyncConnectTest() {
   describe('TCPSocketAsyncConnectTest', () => {
 
@@ -49,11 +29,42 @@ export default function TCPSocketAsyncConnectTest() {
         let caseName: string = 'testNetworkMgrSocketTCPSocketAsyncConnect0100';
         try {
           console.info(`${caseName} test start`);
+          let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+          let listenAddress: socket.NetAddress = {
+            address: '127.0.0.1',
+            port: 14099,
+            family: 1
+          };
+          let tcpConnectlocalFOptions: socket.TCPConnectOptions = {
+            address: listenAddress
+          };
+          await tcpServer.listen(listenAddress).catch((err:BusinessError) => {
+            console.info('fail to listen' + err.code.toString());
+          });
+          tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
+            let tcpSendOption: socket.TCPSendOptions = {
+              data: 'Hello, client!',
+              encoding: ''
+            };
+            client.send(tcpSendOption, (err: BusinessError) => {
+              if (err) {
+                console.info(`${caseName} fail err:${JSON.stringify(err)}`);
+                expectFail();
+                done();
+              } else {
+                console.info(`${caseName} success`);
+                expectSuccess();
+                done();
+              };
+              tcpServer.off('connect');
+              done();
+            });
+          });
           let callbackFinished = 0;
           let totalFinished = 21;
           for (let i = 0; i < 20; i++) {
             let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
-            tcp.connect(tcpConnectFOptions, (err: BusinessError) => {
+            tcp.connect(tcpConnectlocalFOptions, (err: BusinessError) => {
               if (err) {
                 console.info(`${caseName} fail to connect ${err.code.toString()}`);
               } else {
@@ -62,13 +73,12 @@ export default function TCPSocketAsyncConnectTest() {
               }
               callbackFinished++;
               if (callbackFinished === totalFinished) {
-                console.info(`${caseName} test end`);
                 done();
               }
             });
           }
           let tcpInstance: socket.TCPSocket = socket.constructTCPSocketInstance();
-          tcpInstance.connect(tcpConnectOptions, (err: BusinessError) => {
+          tcpInstance.connect(tcpConnectlocalFOptions, (err: BusinessError) => {
             if (err) {
               console.info(`${caseName} fail to connect ${err.code.toString()}`);
               expectFail();
@@ -104,11 +114,42 @@ export default function TCPSocketAsyncConnectTest() {
         let caseName: string = 'testNetworkMgrSocketTCPSocketAsyncConnect0200';
         try {
           console.info(`${caseName} test start`);
+          let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+          let listenAddress: socket.NetAddress = {
+            address: '127.0.0.1',
+            port: 14100,
+            family: 1
+          };
+          let tcpConnectlocalFOptions: socket.TCPConnectOptions = {
+            address: listenAddress
+          };
+          await tcpServer.listen(listenAddress).catch((err:BusinessError) => {
+            console.info('fail to listen' + err.code.toString());
+          });
+          tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
+            let tcpSendOption: socket.TCPSendOptions = {
+              data: 'Hello, client!',
+              encoding: ''
+            };
+            client.send(tcpSendOption, (err: BusinessError) => {
+              if (err) {
+                console.info(`${caseName} fail err:${JSON.stringify(err)}`);
+                expectFail();
+                done();
+              } else {
+                console.info(`${caseName} success`);
+                expectSuccess();
+                done();
+              };
+              tcpServer.off('connect');
+              done();
+            });
+          });
           let callbackFinished = 0;
           let totalFinished = 64;
           for (let i = 0; i < 64; i++) {
             let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
-            tcp.connect(tcpConnectOptions, (err: BusinessError) => {
+            tcp.connect(tcpConnectlocalFOptions, (err: BusinessError) => {
               if (err) {
                 console.info(`${caseName} fail to connect ${err.code.toString()}`);
                 expectFail();
@@ -145,11 +186,42 @@ export default function TCPSocketAsyncConnectTest() {
         let caseName: string = 'testNetworkMgrSocketTCPSocketAsyncConnect0300';
         try {
           console.info(`${caseName} test start`);
+          let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+          let listenAddress: socket.NetAddress = {
+            address: '127.0.0.1',
+            port: 14101,
+            family: 1
+          };
+          let tcpConnectlocalFOptions: socket.TCPConnectOptions = {
+            address: listenAddress
+          };
+          await tcpServer.listen(listenAddress).catch((err:BusinessError) => {
+            console.info('fail to listen' + err.code.toString());
+          });
+          tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
+            let tcpSendOption: socket.TCPSendOptions = {
+              data: 'Hello, client!',
+              encoding: ''
+            };
+            client.send(tcpSendOption, (err: BusinessError) => {
+              if (err) {
+                console.info(`${caseName} fail err:${JSON.stringify(err)}`);
+                expectFail();
+                done();
+              } else {
+                console.info(`${caseName} success`);
+                expectSuccess();
+                done();
+              };
+              tcpServer.off('connect');
+              done();
+            });
+          });
           let callbackFinished = 0;
           let totalFinished = 64;
           for (let i = 0; i < 63; i++) {
             let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
-            tcp.connect(tcpConnectFOptions, (err: BusinessError) => {
+            tcp.connect(tcpConnectlocalFOptions, (err: BusinessError) => {
               if (err) {
                 console.info(`${caseName} fail to connect ${err.code.toString()}`);
               } else {
@@ -164,7 +236,7 @@ export default function TCPSocketAsyncConnectTest() {
             });
           }
           let tcpInstance: socket.TCPSocket = socket.constructTCPSocketInstance();
-          tcpInstance.connect(tcpConnectOptions, (err: BusinessError) => {
+          tcpInstance.connect(tcpConnectlocalFOptions, (err: BusinessError) => {
             if (err) {
               console.info(`${caseName} fail to connect ${err.code.toString()}`);
               expectFail();
@@ -200,11 +272,42 @@ export default function TCPSocketAsyncConnectTest() {
         let caseName: string = 'testNetworkMgrSocketTCPSocketAsyncConnect0400';
         try {
           console.info(`${caseName} test start`);
+          let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+          let listenAddress: socket.NetAddress = {
+            address: '127.0.0.1',
+            port: 14102,
+            family: 1
+          };
+          let tcpConnectlocalFOptions: socket.TCPConnectOptions = {
+            address: listenAddress
+          };
+          await tcpServer.listen(listenAddress).catch((err:BusinessError) => {
+            console.info('fail to listen' + err.code.toString());
+          });
+          tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
+            let tcpSendOption: socket.TCPSendOptions = {
+              data: 'Hello, client!',
+              encoding: ''
+            };
+            client.send(tcpSendOption, (err: BusinessError) => {
+              if (err) {
+                console.info(`${caseName} fail err:${JSON.stringify(err)}`);
+                expectFail();
+                done();
+              } else {
+                console.info(`${caseName} success`);
+                expectSuccess();
+                done();
+              };
+              tcpServer.off('connect');
+              done();
+            });
+          });
           let callbackFinished = 0;
           let totalFinished = 64;
           for (let i = 0; i < 64; i++) {
             let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
-            tcp.connect(tcpConnectFOptions, (err: BusinessError) => {
+            tcp.connect(tcpConnectlocalFOptions, (err: BusinessError) => {
               if (err) {
                 console.info(`${caseName} fail to connect ${err.code.toString()}`);
               } else {
@@ -219,7 +322,7 @@ export default function TCPSocketAsyncConnectTest() {
             });
           }
           let tcpInstance: socket.TCPSocket = socket.constructTCPSocketInstance();
-          tcpInstance.connect(tcpConnectOptions, (err: BusinessError) => {
+          tcpInstance.connect(tcpConnectlocalFOptions, (err: BusinessError) => {
             if (err) {
               console.info(`${caseName} fail to connect ${err.code.toString()}`);
               expectFail();
