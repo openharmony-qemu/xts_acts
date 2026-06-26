@@ -42,6 +42,9 @@ export default function audioCapturer() {
     let file_to_play:ESObject;
     let filePath: string;
     let dirPath: string;
+    let errPermision:string = "401";
+    let errParamter:string = "6800103";
+    let audioCapturer:audio.AudioCapturer | null = null;
     let LE24 = -1;
     let LE32 = -1;
     let sleep = (ms: number): Promise<ESObject> => {
@@ -1152,6 +1155,812 @@ export default function audioCapturer() {
       await sleep(100);
       await closeFileDescriptor(PLAY_FILE);
       done();
+    })
+    
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_MODE_ENUM_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_MODE_ENUM_0100
+     * @tc.desc    AudioPlaybackCaptureMode MODE_DEFAULT value test.
+     *             测试点：验证 MODE_DEFAULT 枚举值
+     *             测试输入：AudioPlaybackCaptureMode.MODE_DEFAULT
+     *             测试输出：枚举值等于 0x0
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_MODE_ENUM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG = "SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_MODE_ENUM_0100";
+      try {
+        expect(audio.AudioPlaybackCaptureMode.MODE_DEFAULT).assertEqual(0x0);
+        console.info(`${TAG}: MODE_DEFAULT 枚举值验证成功`);
+      } catch (err) {
+        console.error(`${TAG}: 测试失败: ${err.code}, ${err.message}`);
+        expect().assertFail();
+      }
+      done();
+    })
+  
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_MODE_ENUM_0200
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_MODE_ENUM_0200
+      * @tc.desc    AudioPlaybackCaptureMode MODE_MEDIA value test.
+      *             测试点：验证 MODE_MEDIA 枚举值
+      *             测试输入：AudioPlaybackCaptureMode.MODE_MEDIA
+      *             测试输出：枚举值等于 0x1
+      * @tc.type    FUNCTION
+      * @tc.size    MEDIUMTEST
+      * @tc.level   LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_MODE_ENUM_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG = "SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_MODE_ENUM_0200";
+      try {
+        expect(audio.AudioPlaybackCaptureMode.MODE_MEDIA).assertEqual(0x1);
+        console.info(`${TAG}: MODE_MEDIA 枚举值验证成功`);
+      } catch (err) {
+        console.error(`${TAG}: 测试失败: ${err.code}, ${err.message}`);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_MODE_ENUM_0300
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_MODE_ENUM_0300
+      * @tc.desc    AudioPlaybackCaptureMode MODE_EXCLUDING_SELF value test.
+      *             测试点：验证 MODE_EXCLUDING_SELF 枚举值
+      *             测试输入：AudioPlaybackCaptureMode.MODE_EXCLUDING_SELF
+      *             测试输出：枚举值等于 0x8000
+      * @tc.type    FUNCTION
+      * @tc.size    MEDIUMTEST
+      * @tc.level   LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_MODE_ENUM_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG = "SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_MODE_ENUM_0300";
+      try {
+        expect(audio.AudioPlaybackCaptureMode.MODE_EXCLUDING_SELF).assertEqual(0x8000);
+        console.info(`${TAG}: MODE_EXCLUDING_SELF 枚举值验证成功`);
+      } catch (err) {
+        console.error(`${TAG}: 测试失败: ${err.code}, ${err.message}`);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_START_STATE_ENUM_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_START_STATE_ENUM_0100
+      * @tc.desc    PlaybackCaptureStartState STATE_SUCCESS value test.
+      *             测试点：验证 STATE_SUCCESS 枚举值
+      *             测试输入：PlaybackCaptureStartState.STATE_SUCCESS
+      *             测试输出：枚举值等于 0
+      * @tc.type    FUNCTION
+      * @tc.size    MEDIUMTEST
+      * @tc.level   LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_START_STATE_ENUM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG = "SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_START_STATE_ENUM_0100";
+      try {
+        expect(audio.PlaybackCaptureStartState.STATE_SUCCESS).assertEqual(0);
+        console.info(`${TAG}: STATE_SUCCESS 枚举值验证成功`);
+      } catch (err) {
+        console.error(`${TAG}: 测试失败: ${err.code}, ${err.message}`);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_START_STATE_ENUM_0200
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_START_STATE_ENUM_0200
+      * @tc.desc    PlaybackCaptureStartState STATE_FAILED value test.
+      *             测试点：验证 STATE_FAILED 枚举值
+      *             测试输入：PlaybackCaptureStartState.STATE_FAILED
+      *             测试输出：枚举值等于 1
+      * @tc.type    FUNCTION
+      * @tc.size    MEDIUMTEST
+      * @tc.level   LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_START_STATE_ENUM_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG = "SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_START_STATE_ENUM_0200";
+      try {
+        expect(audio.PlaybackCaptureStartState.STATE_FAILED).assertEqual(1);
+        console.info(`${TAG}: STATE_FAILED 枚举值验证成功`);
+      } catch (err) {
+        console.error(`${TAG}: 测试失败: ${err.code}, ${err.message}`);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_START_STATE_ENUM_0300
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_START_STATE_ENUM_0300
+      * @tc.desc    PlaybackCaptureStartState STATE_NOT_AUTHORIZED value test.
+      *             测试点：验证 STATE_NOT_AUTHORIZED 枚举值
+      *             测试输入：PlaybackCaptureStartState.STATE_NOT_AUTHORIZED
+      *             测试输出：枚举值等于 2
+      * @tc.type    FUNCTION
+      * @tc.size    MEDIUMTEST
+      * @tc.level   LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_START_STATE_ENUM_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG = "SUB_MULTIMEDIA_AUDIO_PLAYBACK_CAPTURE_START_STATE_ENUM_0300";
+      try {
+        expect(audio.PlaybackCaptureStartState.STATE_NOT_AUTHORIZED).assertEqual(2);
+        console.info(`${TAG}: STATE_NOT_AUTHORIZED 枚举值验证成功`);
+      } catch (err) {  
+        console.error(`${TAG}: 测试失败: ${err.code}, ${err.message}`);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURE_START_PARAM_0200
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURE_START_PARAM_0200
+      * @tc.desc    requestPlaybackCaptureStart with null callback test.
+      *             测试点：验证 callback 参数为 null
+      *             测试输入：callback = null
+      *             测试输出：抛出参数错误
+      * @tc.type    FUNCTION
+      * @tc.size    MEDIUMTEST
+      * @tc.level   LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURE_START_PARAM_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURE_START_PARAM_0200";
+      try {
+        let audioCapturerOptions: audio.AudioCapturerOptions = {
+          streamInfo: {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+          },
+          capturerInfo: {
+            source: audio.SourceType.SOURCE_TYPE_MIC,
+            capturerFlags: 0,
+          },
+          playbackCaptureMode: audio.AudioPlaybackCaptureMode.MODE_DEFAULT
+        };
+
+        audioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+        expect(audioCapturer != null).assertTrue();
+
+        audioCapturer.requestPlaybackCaptureStart(null);
+        expect().assertFail();
+      } catch (err) {
+        console.info(`${TAG}: 预期错误: ${err.code}, ${err.message}`);
+        expect(err.code === errPermision).assertTrue();
+      }
+      if(audioCapturer !== null){
+        audioCapturer.release();
+      }
+      audioCapturer = null;
+      done();
+    })
+  
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURE_START_PARAM_0300
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURE_START_PARAM_0300
+      * @tc.desc    requestPlaybackCaptureStart with undefined callback test.
+      *             测试点：验证 callback 参数为 undefined
+      *             测试输入：callback = undefined
+      *             测试输出：抛出参数错误
+      * @tc.type    FUNCTION
+      * @tc.size    MEDIUMTEST
+      * @tc.level   LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURE_START_PARAM_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURE_START_PARAM_0300";
+      try {
+        let audioCapturerOptions: audio.AudioCapturerOptions = {
+          streamInfo: {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+          },
+          capturerInfo: {
+            source: audio.SourceType.SOURCE_TYPE_MIC,
+            capturerFlags: 0,
+          },
+          playbackCaptureMode: audio.AudioPlaybackCaptureMode.MODE_DEFAULT
+        };
+
+        audioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+        expect(audioCapturer != null).assertTrue();
+
+        audioCapturer.requestPlaybackCaptureStart(undefined);
+        expect().assertFail();
+      } catch (err) {
+        console.log(`${TAG}: 预期错误: ${err.code}, ${err.message}`);
+        expect(err.code === errPermision).assertTrue();
+      }
+      if (audioCapturer !== null){
+        audioCapturer.release();
+      }
+      audioCapturer = null;
+      done();
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_CAPTURER_INFO_PLAYBACK_CAPTURE_MODE_PARAM_0500
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_CAPTURER_INFO_PLAYBACK_CAPTURE_MODE_PARAM_0500
+      * @tc.desc    AudioCapturerInfo without playbackCaptureMode test.
+      *             测试点：验证不设置 playbackCaptureMode 创建 AudioCapturer
+      *             测试输入：不设置 playbackCaptureMode 属性
+      *             测试输出：requestPlaybackCaptureStart 调用失败
+      * @tc.type    FUNCTION
+      * @tc.size    MEDIUMTEST
+      * @tc.level   LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_INFO_PLAYBACK_CAPTURE_MODE_PARAM_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG = "SUB_MULTIMEDIA_AUDIO_CAPTURER_INFO_PLAYBACK_CAPTURE_MODE_PARAM_0500";
+      try {
+        let audioCapturerOptions: audio.AudioCapturerOptions = {
+          streamInfo: {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+          },
+          capturerInfo: {
+            source: audio.SourceType.SOURCE_TYPE_MIC,
+            capturerFlags: 0
+          }
+        };
+        audioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+        let result: void = audioCapturer.requestPlaybackCaptureStart((state: audio.PlaybackCaptureStartState) =>{
+          console.info(`${TAG} 回调触发, state: ${state}`);
+        });
+        console.info(`${TAG}: AudioCapturer  playbackCaptureMode 测试失败`);
+        expect().assertFail();
+      } catch (err) {
+        console.log(`${TAG}: 测试成功: playbackCaptureMode 调用失败: ${err.code}, ${err.message}`);
+        expect(err.code === errParamter).assertTrue();
+      }
+      if (audioCapturer) {
+        audioCapturer.release();
+      }
+      audioCapturer = null;
+      done();
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURE_START_STATE_SUCCESS_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURE_START_STATE_SUCCESS_0100
+      * @tc.desc    requestPlaybackCaptureStart state STATE_SUCCESS test.
+      *             测试点：验证回调返回 STATE_SUCCESS 状态值
+      *             测试输入：正常参数 MODE_DEFAULT
+      *             测试输出：回调返回 STATE_SUCCESS 状态值
+      * @tc.type    FUNCTION
+      * @tc.size    MEDIUMTEST
+      * @tc.level   LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURE_START_STATE_SUCCESS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURE_START_STATE_SUCCESS_0100";
+      let localAudioCapturer: audio.AudioCapturer | null = null;
+      let driver: Driver | null = null;
+      let hasClickedPermission: boolean = false;
+      let callbackTriggered: boolean = false;
+      let finalState: audio.PlaybackCaptureStartState | null = null;
+
+      try {
+        let audioCapturerOptions: audio.AudioCapturerOptions = {
+          streamInfo: {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+          },
+          capturerInfo: {
+            source: audio.SourceType.SOURCE_TYPE_MIC,
+            capturerFlags: 0,
+          },
+          playbackCaptureMode: audio.AudioPlaybackCaptureMode.MODE_DEFAULT
+        };
+
+        localAudioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+        expect(localAudioCapturer != null).assertTrue();
+        console.log(`${TAG}:AudioCapturer 创建成功`);
+
+        driver = await Driver.create();
+        console.log(`${TAG}:Driver 创建成功`);
+
+        const permissionTask = (async () => {
+          if(!hasClickedPermission){
+            console.log(`${TAG}: 准备点击允许按钮...`);
+            const permissionBtn = await driver?.waitForComponent(ON.text('允许', MatchPattern.EQUALS),5000);
+            if (permissionBtn){
+              console.log(`${TAG}:正在点击允许按钮`);
+              await permissionBtn?.click();
+              hasClickedPermission = true;
+              await sleep(1000);
+            } else {
+              console.log(`${TAG}: 未找到允许按钮`);
+              expect().assertFail();
+            }
+          }
+        })();
+
+        localAudioCapturer.requestPlaybackCaptureStart((state: audio.PlaybackCaptureStartState) => {
+          console.log(`${TAG}:回调触发，state:${state}`);
+          finalState = state;
+          callbackTriggered = true;
+        });
+
+        await permissionTask;
+        await sleep(1000);
+        
+        if (!callbackTriggered) {
+          console.log(`${TAG}:回调未触发，测试失败`);
+          expect().assertFail();
+        } else {
+          console.info(`${TAG}: 检查最终state:${finalState}`);
+          if (finalState === audio.PlaybackCaptureStartState.STATE_SUCCESS){
+            console.log(`${TAG}:启动内录成功-符合预期`);
+            expect(finalState === audio.PlaybackCaptureStartState.STATE_SUCCESS).assertTrue();
+          } else {
+            console.log(`${TAG}:内录启动失败，state:${finalState}`);
+            expect().assertFail();
+          }
+        }
+      } catch (err) {
+        console.log(`${TAG}: 处理弹出过程中出错: ${err.code}, ${err.message}`);
+        expect().assertFail();
+      } finally{
+        if (localAudioCapturer){
+          await localAudioCapturer.release();
+        }
+      }
+      done();
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURE_START_STATE_SUCCESS_0200
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURE_START_STATE_SUCCESS_0200
+      * @tc.desc    requestPlaybackCaptureStart state STATE_SUCCESS test.
+      *             测试点：验证回调返回 STATE_SUCCESS 状态值
+      *             测试输入：正常参数 MODE_MEDIA
+      *             测试输出：回调返回 STATE_SUCCESS 状态值
+      * @tc.type    FUNCTION
+      * @tc.size    MEDIUMTEST
+      * @tc.level   LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURE_START_STATE_SUCCESS_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURE_START_STATE_SUCCESS_0200";
+      let localAudioCapturer: audio.AudioCapturer | null = null;
+      let driver: Driver | null = null;
+      let hasClickedPermission: boolean = false;
+      let callbackTriggered: boolean = false;
+      let finalState: audio.PlaybackCaptureStartState | null = null;
+
+      try {
+        let audioCapturerOptions: audio.AudioCapturerOptions = {
+          streamInfo: {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+          },
+          capturerInfo: {
+            source: audio.SourceType.SOURCE_TYPE_MIC,
+            capturerFlags: 0,
+          },
+          playbackCaptureMode: audio.AudioPlaybackCaptureMode.MODE_MEDIA
+        };
+
+        localAudioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+        expect(localAudioCapturer != null).assertTrue();
+        console.log(`${TAG}:AudioCapturer 创建成功`);
+
+        driver = await Driver.create();
+        console.log(`${TAG}:Driver 创建成功`);
+
+        const permissionTask = (async () => {
+          if(!hasClickedPermission){
+            console.log(`${TAG}: 准备点击允许按钮...`);
+            const permissionBtn = await driver?.waitForComponent(ON.text('允许', MatchPattern.EQUALS),5000);
+            if (permissionBtn){
+              console.log(`${TAG}:正在点击允许按钮`);
+              await permissionBtn?.click();
+              hasClickedPermission = true;
+              await sleep(1000);
+            } else {
+              console.log(`${TAG}: 未找到允许按钮`);
+              expect().assertFail();
+            }
+          }
+        })();
+
+        localAudioCapturer.requestPlaybackCaptureStart((state: audio.PlaybackCaptureStartState) => {
+          console.log(`${TAG}:回调触发，state:${state}`);
+          finalState = state;
+          callbackTriggered = true;
+        });
+
+        await permissionTask;
+        await sleep(1000);
+        
+        if (!callbackTriggered) {
+          console.log(`${TAG}:回调未触发，测试失败`);
+          expect().assertFail();
+        } else {
+          console.info(`${TAG}: 检查最终state:${finalState}`);
+          if (finalState === audio.PlaybackCaptureStartState.STATE_SUCCESS){
+            console.log(`${TAG}:启动内录成功-符合预期`);
+            expect(finalState === audio.PlaybackCaptureStartState.STATE_SUCCESS).assertTrue();
+          } else {
+            console.log(`${TAG}:内录启动失败，state:${finalState}`);
+            expect().assertFail();
+          }
+        }
+      } catch (err) {
+        console.log(`${TAG}: 处理弹出过程中出错: ${err.code}, ${err.message}`);
+        expect().assertFail();
+      } finally{
+        if (localAudioCapturer){
+          await localAudioCapturer.release();
+        }
+      }
+      done();
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURE_START_STATE_SUCCESS_0300
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURE_START_STATE_SUCCESS_0300
+      * @tc.desc    requestPlaybackCaptureStart state STATE_SUCCESS test.
+      *             测试点：验证回调返回 STATE_SUCCESS 状态值
+      *             测试输入：正常参数 MODE_EXCLUDING_SELF
+      *             测试输出：回调返回 STATE_SUCCESS 状态值
+      * @tc.type    FUNCTION
+      * @tc.size    MEDIUMTEST
+      * @tc.level   LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURE_START_STATE_SUCCESS_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURE_START_STATE_SUCCESS_0300";
+      let localAudioCapturer: audio.AudioCapturer | null = null;
+      let driver: Driver | null = null;
+      let hasClickedPermission: boolean = false;
+      let callbackTriggered: boolean = false;
+      let finalState: audio.PlaybackCaptureStartState | null = null;
+
+      try {
+        let audioCapturerOptions: audio.AudioCapturerOptions = {
+          streamInfo: {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+          },
+          capturerInfo: {
+            source: audio.SourceType.SOURCE_TYPE_MIC,
+            capturerFlags: 0,
+          },
+          playbackCaptureMode: audio.AudioPlaybackCaptureMode.MODE_EXCLUDING_SELF
+        };
+
+        localAudioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+        expect(localAudioCapturer != null).assertTrue();
+        console.log(`${TAG}:AudioCapturer 创建成功`);
+
+        driver = await Driver.create();
+        console.log(`${TAG}:Driver 创建成功`);
+
+        const permissionTask = (async () => {
+          if(!hasClickedPermission){
+            console.log(`${TAG}: 准备点击允许按钮...`);
+            const permissionBtn = await driver?.waitForComponent(ON.text('允许', MatchPattern.EQUALS),5000);
+            if (permissionBtn){
+              console.log(`${TAG}:正在点击允许按钮`);
+              await permissionBtn?.click();
+              hasClickedPermission = true;
+              await sleep(1000);
+            } else {
+              console.log(`${TAG}: 未找到允许按钮`);
+              expect().assertFail();
+            }
+          }
+        })();
+
+        localAudioCapturer.requestPlaybackCaptureStart((state: audio.PlaybackCaptureStartState) => {
+          console.log(`${TAG}:回调触发，state:${state}`);
+          finalState = state;
+          callbackTriggered = true;
+        });
+
+        await permissionTask;
+        await sleep(1000);
+        
+        if (!callbackTriggered) {
+          console.log(`${TAG}:回调未触发，测试失败`);
+          expect().assertFail();
+        } else {
+          console.info(`${TAG}: 检查最终state:${finalState}`);
+          if (finalState === audio.PlaybackCaptureStartState.STATE_SUCCESS){
+            console.log(`${TAG}:启动内录成功-符合预期`);
+            expect(finalState === audio.PlaybackCaptureStartState.STATE_SUCCESS).assertTrue();
+          } else {
+            console.log(`${TAG}:内录启动失败，state:${finalState}`);
+            expect().assertFail();
+          }
+        }
+      } catch (err) {
+        console.log(`${TAG}: 处理弹出过程中出错: ${err.code}, ${err.message}`);
+        expect().assertFail();
+      } finally{
+        if (localAudioCapturer){
+          await localAudioCapturer.release();
+        }
+      }
+      done();
+    })    
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURER_START_STATE_NOT_AUTHORIZED_0100
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURER_START_STATE_NOT_AUTHORIZED_0100
+      * @tc.desc    requestPlaybackCaptureStart state STATE_NOT_AUTHORIZED test
+      *             测试点：验证回调返回 STATE_NOT_AUTHORIZED 状态
+      *             测试输入：正常参数 MODE_DEFAULT
+      *             测试输出：回调返回 STATE_NOT_AUTHORIZED
+      * @tc.type    FUNCTION
+      * @tc.size    MEDIUMTEST
+      * @tc.level   LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURER_START_STATE_NOT_AUTHORIZED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURER_START_STATE_NOT_AUTHORIZED_0100";
+      let localAudioCapturer:audio.AudioCapturer | null = null;
+      let driver:Driver | null = null;
+      let hasClickedPermission:boolean = false;
+      let callbackTriggered:boolean = false;
+      let finalState: audio.PlaybackCaptureStartState | null = null;
+      try {
+        let audioCapturerOptions: audio.AudioCapturerOptions = {
+          streamInfo: {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+          },
+          capturerInfo: {
+            source: audio.SourceType.SOURCE_TYPE_MIC,
+            capturerFlags: 0
+          },
+          playbackCaptureMode: audio.AudioPlaybackCaptureMode.MODE_DEFAULT
+        };
+        localAudioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+        expect(localAudioCapturer != null).assertTrue();
+        console.log(`${TAG}:AudioCapturer 创建成功`);
+
+        driver = await Driver.create();
+        console.log(`${TAG}:Driver 创建成功`);
+
+        const permissionTask = (async () => {
+          if (!hasClickedPermission){
+            console.log(`${TAG}:准备寻找并点击不允许按钮`);
+            const permissionBtn = await driver?.waitForComponent(ON.text('不允许', MatchPattern.EQUALS), 5000);
+
+            if (permissionBtn){
+              console.log(`${TAG}:找到不允许按钮，正在点击`);
+              await permissionBtn?.click();
+              hasClickedPermission = true;
+              await sleep(1000);
+            } else {
+              console.log(`${TAG}: 未找到不允许按钮`);
+              expect().assertFalse();
+            }
+          }
+        })();
+
+        localAudioCapturer.requestPlaybackCaptureStart((state: audio.PlaybackCaptureStartState) => {
+          console.log(`${TAG}:回调触发，state:${state}`);
+          finalState = state;
+          callbackTriggered = true;
+        });
+
+        await permissionTask;
+        await sleep(1000);
+
+        if (!callbackTriggered){
+          console.error(`${TAG}:回调未触发，测试失败`);
+          expect().assertFail();
+        } else {
+          console.log(`${TAG}:检测最终state:${finalState}`);
+          if (finalState === audio.PlaybackCaptureStartState.STATE_NOT_AUTHORIZED){
+            console.log(`内录启动失败-符合预期`);
+            expect(finalState === audio.PlaybackCaptureStartState.STATE_NOT_AUTHORIZED).assertTrue();
+          } else{
+            console.log(`${TAG}，state:${finalState}`);
+            expect().assertFail();
+          }
+        }
+      } catch (err) {
+        console.log(`${TAG}: error code: ${err.code}, message: ${err.message}`);
+        expect().assertFail();
+      } finally{
+        if (localAudioCapturer){
+          await localAudioCapturer.release();
+        }
+        done();
+      }
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURER_START_STATE_NOT_AUTHORIZED_0200
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURER_START_STATE_NOT_AUTHORIZED_0200
+      * @tc.desc    requestPlaybackCaptureStart state STATE_NOT_AUTHORIZED test
+      *             测试点：验证回调返回 STATE_NOT_AUTHORIZED 状态
+      *             测试输入：正常参数 MODE_MEDIA
+      *             测试输出：回调返回 STATE_NOT_AUTHORIZED
+      * @tc.type    FUNCTION
+      * @tc.size    MEDIUMTEST
+      * @tc.level   LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURER_START_STATE_NOT_AUTHORIZED_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURER_START_STATE_NOT_AUTHORIZED_0200";
+      let localAudioCapturer:audio.AudioCapturer | null = null;
+      let driver:Driver | null = null;
+      let hasClickedPermission:boolean = false;
+      let callbackTriggered:boolean = false;
+      let finalState: audio.PlaybackCaptureStartState | null = null;
+      try {
+        let audioCapturerOptions: audio.AudioCapturerOptions = {
+          streamInfo: {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+          },
+          capturerInfo: {
+            source: audio.SourceType.SOURCE_TYPE_MIC,
+            capturerFlags: 0
+          },
+          playbackCaptureMode: audio.AudioPlaybackCaptureMode.MODE_MEDIA
+        };
+        localAudioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+        expect(localAudioCapturer != null).assertTrue();
+        console.log(`${TAG}:AudioCapturer 创建成功`);
+
+        driver = await Driver.create();
+        console.log(`${TAG}:Driver 创建成功`);
+
+        const permissionTask = (async () => {
+          if (!hasClickedPermission){
+            console.log(`${TAG}:准备寻找并点击不允许按钮`);
+            const permissionBtn = await driver?.waitForComponent(ON.text('不允许', MatchPattern.EQUALS), 5000);
+
+            if (permissionBtn){
+              console.log(`${TAG}:找到不允许按钮，正在点击`);
+              await permissionBtn?.click();
+              hasClickedPermission = true;
+              await sleep(1000);
+            } else {
+              console.log(`${TAG}: 未找到不允许按钮`);
+              expect().assertFalse();
+            }
+          }
+        })();
+
+        localAudioCapturer.requestPlaybackCaptureStart((state: audio.PlaybackCaptureStartState) => {
+          console.log(`${TAG}:回调触发，state:${state}`);
+          finalState = state;
+          callbackTriggered = true;
+        });
+
+        await permissionTask;
+        await sleep(1000);
+
+        if (!callbackTriggered){
+          console.error(`${TAG}:回调未触发，测试失败`);
+          expect().assertFail();
+        } else {
+          console.log(`${TAG}:检测最终state:${finalState}`);
+          if (finalState === audio.PlaybackCaptureStartState.STATE_NOT_AUTHORIZED){
+            console.log(`内录启动失败-符合预期`);
+            expect(finalState === audio.PlaybackCaptureStartState.STATE_NOT_AUTHORIZED).assertTrue();
+          } else{
+            console.log(`${TAG}，state:${finalState}`);
+            expect().assertFail();
+          }
+        }
+      } catch (err) {
+        console.log(`${TAG}: error code: ${err.code}, message: ${err.message}`);
+        expect().assertFail();
+      } finally{
+        if (localAudioCapturer){
+          await localAudioCapturer.release();
+        }
+        done();
+      }
+    })
+
+    /**
+      * @tc.name    SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURER_START_STATE_NOT_AUTHORIZED_0300
+      * @tc.number  SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURER_START_STATE_NOT_AUTHORIZED_0300
+      * @tc.desc    requestPlaybackCaptureStart state STATE_NOT_AUTHORIZED test
+      *             测试点：验证回调返回 STATE_NOT_AUTHORIZED 状态
+      *             测试输入：正常参数 MODE_EXCLUDING_SELF
+      *             测试输出：回调返回 STATE_NOT_AUTHORIZED
+      * @tc.type    FUNCTION
+      * @tc.size    MEDIUMTEST
+      * @tc.level   LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURER_START_STATE_NOT_AUTHORIZED_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "SUB_MULTIMEDIA_AUDIO_REQUEST_PLAYBACK_CAPTURER_START_STATE_NOT_AUTHORIZED_0300";
+      let localAudioCapturer:audio.AudioCapturer | null = null;
+      let driver:Driver | null = null;
+      let hasClickedPermission:boolean = false;
+      let callbackTriggered:boolean = false;
+      let finalState: audio.PlaybackCaptureStartState | null = null;
+      try {
+        let audioCapturerOptions: audio.AudioCapturerOptions = {
+          streamInfo: {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+          },
+          capturerInfo: {
+            source: audio.SourceType.SOURCE_TYPE_MIC,
+            capturerFlags: 0
+          },
+          playbackCaptureMode: audio.AudioPlaybackCaptureMode.MODE_EXCLUDING_SELF
+        };
+        localAudioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+        expect(localAudioCapturer != null).assertTrue();
+        console.log(`${TAG}:AudioCapturer 创建成功`);
+
+        driver = await Driver.create();
+        console.log(`${TAG}:Driver 创建成功`);
+
+        const permissionTask = (async () => {
+          if (!hasClickedPermission){
+            console.log(`${TAG}:准备寻找并点击不允许按钮`);
+            const permissionBtn = await driver?.waitForComponent(ON.text('不允许', MatchPattern.EQUALS), 5000);
+
+            if (permissionBtn){
+              console.log(`${TAG}:找到不允许按钮，正在点击`);
+              await permissionBtn?.click();
+              hasClickedPermission = true;
+              await sleep(1000);
+            } else {
+              console.log(`${TAG}: 未找到不允许按钮`);
+              expect().assertFalse();
+            }
+          }
+        })();
+
+        localAudioCapturer.requestPlaybackCaptureStart((state: audio.PlaybackCaptureStartState) => {
+          console.log(`${TAG}:回调触发，state:${state}`);
+          finalState = state;
+          callbackTriggered = true;
+        });
+
+        await permissionTask;
+        await sleep(1000);
+
+        if (!callbackTriggered){
+          console.error(`${TAG}:回调未触发，测试失败`);
+          expect().assertFail();
+        } else {
+          console.log(`${TAG}:检测最终state:${finalState}`);
+          if (finalState === audio.PlaybackCaptureStartState.STATE_NOT_AUTHORIZED){
+            console.log(`内录启动失败-符合预期`);
+            expect(finalState === audio.PlaybackCaptureStartState.STATE_NOT_AUTHORIZED).assertTrue();
+          } else{
+            console.log(`${TAG}，state:${finalState}`);
+            expect().assertFail();
+          }
+        }
+      } catch (err) {
+        console.log(`${TAG}: error code: ${err.code}, message: ${err.message}`);
+        expect().assertFail();
+      } finally{
+        if (localAudioCapturer){
+          await localAudioCapturer.release();
+        }
+        done();
+      }
     })
 
     /**
