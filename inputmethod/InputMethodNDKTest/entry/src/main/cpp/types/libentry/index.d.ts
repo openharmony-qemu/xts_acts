@@ -47,3 +47,7 @@ export const SUB_IMF_NDK_TextConfig_SetPlaceholder_0400: () => string;
 export const SUB_IMF_NDK_InputMethod_ErrorCode_0100: () => number;
 export const SUB_IMF_NDK_InputMethodController_AttachWithUIContext_0100: (context: ArkUI.UIContext) => string;
 export const SUB_IMF_NDK_InputMethodController_AttachWithUIContext_0200: () => string;
+export const SUB_IMF_NDK_TextConfig_SetConsumeKeyEvents_0100: () => string;
+export const SUB_IMF_NDK_TextConfig_SetConsumeKeyEvents_0200: () => string;
+export const SUB_IMF_NDK_TextConfig_SetConsumeKeyEvents_0300: () => string;
+export const SUB_IMF_NDK_TextConfig_GetConsumeKeyEvents_0400: () => string;

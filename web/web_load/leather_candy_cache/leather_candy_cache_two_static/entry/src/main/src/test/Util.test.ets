@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 
 import events_emitter from '@ohos.events.emitter';
 import { expect } from "../../../hypium/index";
@@ -48,7 +50,7 @@ export default class Utils{
   }
 
   static registerBaseEvent(testCaseName: string, expected: Object, eventId: Long,
-    done: () => void, expectFunction: (backData: events_emitter.EventData, expected: Object) => void) {
+    done: () => void, expectFunction: (backData: events_emitter.EventData, expected: Object) => void) : void{
     console.info(`[${testCaseName}] START`);
     try {
       let callBack = (backData: events_emitter.EventData) => {
@@ -70,7 +72,7 @@ export default class Utils{
     }
   }
 
-  static registerEvent(testCaseName: string, expectedValue: Object, eventId: Long, done: () => void) {
+  static registerEvent(testCaseName: string, expectedValue: Object, eventId: Long, done: () => void) : void{
     Utils.registerBaseEvent(testCaseName, expectedValue, eventId, done, (backData: events_emitter.EventData, expected: Object) => {
       const data = backData?.data as Record<string, RecordData>;
       const action = data['ACTION'];

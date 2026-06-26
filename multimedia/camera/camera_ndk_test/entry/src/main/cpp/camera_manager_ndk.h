@@ -164,6 +164,7 @@ public:
     bool isCreatePhotoOutputWithoutSurface_;
     bool isMacroSupported_;
     bool isEnableMacro_;
+    OH_Camera_PhotoCaptureSettingExt* PhotoCaptureSettingExt_;
 
     //callback
     static CameraCallbackCode cameraCallbackCode_;
@@ -183,6 +184,8 @@ public:
     Camera_ErrorCode GetCameraHostNameInspection(void);
     Camera_ErrorCode GetCameraHostTypeInspection(void);
     Camera_ErrorCode GetCameraHostType(void);
+    Camera_ErrorCode GetAutomotiveCameraPosition(void);
+    Camera_ErrorCode GetAutomotiveCameraPositionErrorParameter(void);
     Camera_ErrorCode TestOHGetSensorPixelArraySizeWithoutCamera(void);
     Camera_ErrorCode TestOHGetSensorColorFilterArrangementWithoutCamera(void);
     Camera_ErrorCode GetSupportedOutputCapability(void);
@@ -495,6 +498,14 @@ public:
     Camera_ErrorCode GetNotificationName(int useCaseCode);
     Camera_ErrorCode GetProximityStateForFocus(int useCaseCode);
     Camera_ErrorCode DestroyCameraNotificationInfo(int useCaseCode);
+
+    Camera_ErrorCode CreatePhotoCaptureSettingExt(int useCaseCode);
+    Camera_ErrorCode DestroyPhotoCaptureSettingExt(int useCaseCode);
+    Camera_ErrorCode SetCompressionQuality(int useCaseCode, int compressionQuality);
+    Camera_ErrorCode SetImageRotation(int useCaseCode, Camera_ImageRotation ImageRotation);
+    Camera_ErrorCode SetMirror(int useCaseCode, bool isMirror);
+    Camera_ErrorCode SetLocation(int useCaseCode, Camera_Location location);
+    Camera_ErrorCode CaptureWithCaptureSettingExt(int useCaseCode);
 
     // test aid
     Camera_ErrorCode SetSceneMode(int useCaseCode);

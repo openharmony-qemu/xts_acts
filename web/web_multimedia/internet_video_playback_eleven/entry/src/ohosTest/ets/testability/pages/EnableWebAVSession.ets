@@ -16,14 +16,12 @@ import web_webview from '@ohos.web.webview';
 import Utils from '../../test/Utils.test';
 import events_emitter from '@ohos.events.emitter';
 import { waitForExist } from '../../test/WaitTest.test';
-import { XtsTestServer } from 'library';
 
 
 @Entry
 @Component
 struct WebComponent {
   controller: web_webview.WebviewController = new web_webview.WebviewController();
-  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State str: string = "enableWebAVSession01";
   @State options: WebMediaOptions = { resumeInterval: 10, audioExclusive: true }
   @State isPageEnd: number = -1;
@@ -39,10 +37,6 @@ struct WebComponent {
 
   onPageHide() {
     events_emitter.off(132760)
-  }
-
-  aboutToDisappear() {
-    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -77,7 +71,8 @@ struct WebComponent {
 
 
       Text('enableWebAVSession').fontSize(14).id('textContent')
-      Web({src:this.mServer.getAssetUrl('iframeVideoPoster.html'), controller:this.controller})
+      Web({src:"https://assets-res-cn.c.huawei.com/file-html-app/f34ffa0a861df9c482702aaf92c842d620240806183443/index.html#/", controller:this.controller})
+        // Web({src:$rawfile('iframeVideoPoster.html'), controller:this.controller})
         .mediaOptions(this.options)
         .javaScriptAccess(true)
         .zoomAccess(false)

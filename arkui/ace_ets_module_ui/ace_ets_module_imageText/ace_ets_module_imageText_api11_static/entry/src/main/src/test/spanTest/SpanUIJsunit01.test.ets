@@ -74,7 +74,7 @@ export default function spanUIJsunit() {
         }
       } catch (err) {
         console.error("push spanUIJsunit page error:" + err);
-        expect().assertFail();
+        expect(false).assertEqual(true);
       }
     });
 

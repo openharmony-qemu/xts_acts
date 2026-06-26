@@ -13,13 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry, Component, Column, Text, Margin, Alignment, Direction, Flex, BarState, ScrollDirection, InputType, ScrollBarDirection,
-  ColumnOptions, Color, Row, Stack, RowOptions, Image, BorderStyle, IconOptions, FontWeight, ForEach, TextAlign, GridItem,
-  Position, Scroller, Button, Checkbox, Radio, Scroll, ScrollBar, Select, Grid, List, TextInput, Margin, ButtonType,
-  Axis, EdgeEffect, $r, FlexDirection, ListItem
-} from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
+import { Entry, Component, Column, Text, Margin, Alignment, Direction, Flex, BarState, ScrollDirection, InputType, ScrollBarDirection, ColumnOptions, Color, Row, Stack, RowOptions, Image, BorderStyle, IconOptions, FontWeight, ForEach, TextAlign, GridItem, Position, Scroller, Button, Checkbox, Radio, Scroll, ScrollBar, Select, Grid, List, TextInput, ButtonType, Axis, EdgeEffect, $r, FlexDirection, ListItem } from '@ohos.arkui.component';
+import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct getcomponentadd {

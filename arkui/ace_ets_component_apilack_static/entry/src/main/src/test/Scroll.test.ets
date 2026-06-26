@@ -235,14 +235,18 @@ it('testscrollOnScrollBegin_static_0007', Level.LEVEL0, async () => {
      */
 it('testscrollOnScrollBegin_static_0008', Level.LEVEL0, async () => {
       console.info('testEdgeEffectOptions testscrollOnScrollBegin0008 START');
+      AppStorage.delete('alwaysEnabled');
       await Utils.sleep(2000);
+      console.info("edgeEffectOptions get: " + AppStorage.get<boolean>('alwaysEnabled'));
       AppStorage.setOrCreate('alwaysEnabled', true);
       await Utils.sleep(2000);
+      console.info("edgeEffectOptions get2: " + AppStorage.get<boolean>('alwaysEnabled'));
       let strJson = inspector.getInspectorByKey('Scroll');
       let obj1 = JSON.parseJsonElement(strJson);
       expect(obj1.getElement('$attrs').getElement('edgeEffectOptions').getBoolean('alwaysEnabled')).assertTrue();
       console.info("edgeEffectOptions value :" +
       obj1.getElement('$attrs').getElement('edgeEffectOptions').getBoolean('alwaysEnabled'));
+      AppStorage.delete('alwaysEnabled');
 
     });
   })

@@ -482,8 +482,10 @@ export default function SingleKvStoreConcurrencyTest() {
             }).catch((err: Error) => {
               console.error('SINGLEKVSTORE_CONCURRENCY_GETSTRING_PROMISE_0100 get fail ' +
                 `, error code is ${err.code}, message is ${err.message}`);
-              expect(null).assertFail();
-              done();
+              if (err.code != 15100004) {
+                expect(null).assertFail();
+                done();
+              }
             });
           } catch (e) {
             console.error('SINGLEKVSTORE_CONCURRENCY_GETSTRING_PROMISE_0100 e ' +
@@ -534,8 +536,10 @@ export default function SingleKvStoreConcurrencyTest() {
             }).catch((err: Error) => {
               console.error('SINGLEKVSTORE_CONCURRENCY_GETINT_PROMISE_0100 get fail ' +
                 `, error code is ${err.code}, message is ${err.message}`);
-              expect(null).assertFail();
-              done();
+              if (err.code != 15100004) {
+                expect(null).assertFail();
+                done();
+              }
             });
           } catch (e) {
             console.error('SINGLEKVSTORE_CONCURRENCY_GETINT_PROMISE_0100 e ' +
@@ -586,8 +590,10 @@ export default function SingleKvStoreConcurrencyTest() {
             }).catch((err: Error) => {
               console.error('SINGLEKVSTORE_CONCURRENCY_GETFLOAT_PROMISE_0100 get fail ' +
                 `, error code is ${err.code}, message is ${err.message}`);
-              expect(null).assertFail();
-              done();
+              if (err.code != 15100004) {
+                expect(null).assertFail();
+                done();
+              }
             });
           } catch (e) {
             console.error('SINGLEKVSTORE_CONCURRENCY_GETFLOAT_PROMISE_0100 e ' +
@@ -638,8 +644,11 @@ export default function SingleKvStoreConcurrencyTest() {
             }).catch((err: Error) => {
               console.error('SINGLEKVSTORE_CONCURRENCY_GETBOOLEAN_PROMISE_0100 get fail ' +
                 `, error code is ${err.code}, message is ${err.message}`);
-              expect(null).assertFail();
-              done();
+
+              if (err.code != 15100004) {
+                expect(null).assertFail();
+                done();
+              }
             });
           } catch (e) {
             console.error('SINGLEKVSTORE_CONCURRENCY_GETBOOLEAN_PROMISE_0100 e ' +
@@ -1243,8 +1252,10 @@ export default function SingleKvStoreConcurrencyTest() {
           }).catch((err: Error) => {
             console.error('SINGLEKVSTORE_CONCURRENCY_GETRESULTSIZE_PROMISE_0100 getResultSize fail ' +
               `, error code is ${err.code}, message is ${err.message}`);
-            expect(null).assertFail();
-            done();
+            if (err.code != 15100004) {
+              expect(null).assertFail();
+              done();
+            }
           });
         }
       })

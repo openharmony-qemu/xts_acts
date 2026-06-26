@@ -112,19 +112,19 @@ struct UIContextDispatchKeyEvent {
           Button('Test String Node')
             .width('43%')
             .height('7%')
-            .key('testString')
+            .key('dispatchKeyEventNullAndUndefined_testString_01')
             .onClick(() => {
               this.resetStates();
             })
             .onKeyEvent(this.dispatchHandler)
-            .key('testString')
+            .key('dispatchKeyEventNullAndUndefined_testString_02')
         }
 
         Row({ space: 3 }) {
           Button('Test Null Node')
             .width('43%')
             .height('7%')
-            .key('testNull')
+            .key('dispatchKeyEventNullAndUndefined_testNull')
             .onClick(() => {
               this.resetStates();
             })
@@ -133,7 +133,7 @@ struct UIContextDispatchKeyEvent {
           Button('Test Undefined Node')
             .width('43%')
             .height('7%')
-            .key('testUndefined')
+            .key('dispatchKeyEventNullAndUndefined_testUndefined')
             .onClick(() => {
               this.resetStates();
             })
@@ -179,7 +179,7 @@ struct UIContextDispatchKeyEvent {
         Button('Reset States')
           .width('90%')
           .height('7%')
-          .key('resetStates')
+          .key('dispatchKeyEventNullAndUndefined_resetStates')
           .onClick(() => {
             this.resetStates();
           })

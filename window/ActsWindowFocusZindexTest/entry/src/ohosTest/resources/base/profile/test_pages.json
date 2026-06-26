@@ -1,0 +1,13 @@
+{
+  "src": [
+    "testability/pages/Index",
+    "testability/pages/Index2",
+    "testability/pages/Index5",
+    "testability/pages/shiftAppWindow/subWindow",
+    "testability/pages/shiftAppWindow/mainWindow",
+    "testability/pages/WindowTest/Modality",
+    "testability/pages/First/index1",
+    "testability/pages/First/index2",
+    "testability/pages/First/index3"
+  ]
+}

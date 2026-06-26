@@ -16,19 +16,10 @@
 import { ListItemGroupView } from '../../view/markAnchor/ListItemGroupView';
 import { NavRouterView } from '../../view/markAnchor/NavRouterView';
 import { RouterParams } from '../../common/Utils';
-import router from '@ohos.router'
-import {
-  Entry,TextAttribute,Component,$r,AlignRuleOption,Row,Button,Margin,IDataSource,DataChangeListener,SwiperController,Column,ColumnOptions,ClickEvent,RowOptions,LazyForEach,Text,
-  FlexAlign,TextCase,TextDecorationType,Resource,VerticalAlign,HorizontalAlign,RelativeContainer,Color,Scroller,Menu,ScrollBar,TextTimer,ColumnSplit,RowSplit,Refresh,Shape,Rect,Path,ButtonAttribute,
-  Polygon,Polyline,Line,Ellipse,Circle,WaterFlow,Tabs,Swiper,Stack,SideBarContainer,Scroll,List,GridRow,Grid,Flex,Counter,Badge,Toggle,
-  TimePicker,TextPicker,TextInput,TextClock,TextArea,Slider,Search,Rating,QRCode,Progress,AlphabetIndexer,ImageAnimator,Image,Navigation,Marquee,LoadingProgress,Gauge,Divider,
-  DatePicker,DataPanel,CheckboxGroup,Checkbox,Select,Radio,MenuItem,ProgressType,ToggleType,ForEach,GridRowDirection,BarState,SideBarContainerType,TextAlign,GridItem,BadgeStyle,BadgeParamWithString,
-  GutterOption,BreakPoints,BreakpointsReference,GridCol,GridColOptions,GridColColumnOption,ColumnOptions,MenuItemOptions,Position,TabContent,Axis,ListItem,CommonMethod,applyStyles,FlowItem,FlexDirection,MenuItemGroup,
-  Blank,Builder,NavPathStack
-} from '@ohos.arkui.component';
-import { AppStorage, State,StoragePropRef } from '@ohos.arkui.stateManagement';
+import router from '@ohos.router';
+import { Entry, TextAttribute, Component, $r, AlignRuleOption, Row, Button, Margin, IDataSource, DataChangeListener, SwiperController, Column, ColumnOptions, ClickEvent, RowOptions, LazyForEach, Text, FlexAlign, TextCase, TextDecorationType, Resource, VerticalAlign, HorizontalAlign, RelativeContainer, Color, Scroller, Menu, ScrollBar, TextTimer, ColumnSplit, RowSplit, Refresh, Shape, Rect, Path, ButtonAttribute, Polygon, Polyline, Line, Ellipse, Circle, WaterFlow, Tabs, Swiper, Stack, SideBarContainer, Scroll, List, GridRow, Grid, Flex, Counter, Badge, Toggle, TimePicker, TextPicker, TextInput, TextClock, TextArea, Slider, Search, Rating, QRCode, Progress, AlphabetIndexer, ImageAnimator, Image, Navigation, Marquee, LoadingProgress, Gauge, Divider, DatePicker, DataPanel, CheckboxGroup, Checkbox, Select, Radio, MenuItem, ProgressType, ToggleType, ForEach, GridRowDirection, BarState, SideBarContainerType, TextAlign, GridItem, BadgeStyle, BadgeParamWithString, GutterOption, BreakPoints, BreakpointsReference, GridCol, GridColOptions, GridColColumnOption, MenuItemOptions, Position, TabContent, Axis, ListItem, CommonMethod, applyStyles, FlowItem, FlexDirection, MenuItemGroup, Blank, Builder, NavPathStack } from '@ohos.arkui.component';
+import { AppStorage, State, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-
 /**
  * Test page of common attribute: markAnchor
  */

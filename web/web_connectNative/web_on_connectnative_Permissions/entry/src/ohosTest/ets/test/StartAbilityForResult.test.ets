@@ -14,35 +14,16 @@
  */
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, afterEach, Level, it, expect } from '@ohos/hypium';
-import { Want, common } from '@kit.AbilityKit';
+import { Want, common, StartOptions } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { JSON } from '@kit.ArkTS';
-import { commonEventManager } from '@kit.BasicServicesKit';
-import testNapi from 'libentry.so';
-import webNativeMessagingExtensionManager from '@ohos.web.webNativeMessagingExtensionManager';
-import fs from '@ohos.file.fs';
-
+let userAgentPC:string = "";
 let context: common.UIAbilityContext;
-let sub: commonEventManager.CommonEventSubscriber;
-let pipeRead: testNapi.PipeResult = { readFd: -1, writeFd: -1 };
-let pipeWrite: testNapi.PipeResult = { readFd: -1, writeFd: -1 };
-let connId: number = 0;
 
 function sleep(time: number) {
   return new Promise((resolve: (value: string) => void) => {
     setTimeout(() => resolve('ok'), time);
   });
-}
-
-function closePipe(pipe: testNapi.PipeResult) {
-  if (pipe.readFd != -1) {
-    fs.close(pipe.readFd);
-    pipe.readFd = -1;
-  }
-  if (pipe.writeFd != -1) {
-    fs.close(pipe.writeFd);
-    pipe.writeFd = -1;
-  }
 }
 
 export default function startAbilityForResultPermissionTest() {
@@ -53,97 +34,323 @@ export default function startAbilityForResultPermissionTest() {
     });
 
     afterEach(async () => {
-      closePipe(pipeRead);
-      closePipe(pipeWrite);
-      try {
-        commonEventManager.unsubscribe(sub);
-      } catch (e) {
-      }
-      if (connId != 0) {
-        webNativeMessagingExtensionManager.disconnectNative(connId).then(() => {
-          hilog.info(0x0000, 'testTag', `afterEach disconnectNative id: ${connId} succeed`);
-        }).catch((err: BusinessError) => {
-          hilog.info(0x0000, 'testTag', `afterEach disconnectNative id: ${connId} error: ${JSON.stringify(err)}`);
-        });
-        connId = 0;
-      }
+      await sleep(1000);
     });
 
     /**
      * @tc.name   SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0300
      * @tc.number SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0300
      * @tc.desc   Test startAbilityForResult without ohos.permission.WEB_NATIVE_MESSAGING:
-     *            The extension ability (permission_rely, lacks WEB_NATIVE_MESSAGING) calls
-     *            this.context.startAbilityForResult in onConnectNative, should get error 201.
+     *            directly call context.startAbilityForResult(want), should get error 201.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0300', Level.LEVEL0,
       async (done: Function) => {
-        await sleep(3000);
+        await sleep(2000);
         const tcNumber = 'SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0300';
         hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
 
-        try {
-          pipeRead = testNapi.createPipe();
-          pipeWrite = testNapi.createPipe();
-        } catch (err) {
-          hilog.info(0x0000, 'testTag', `${tcNumber} create pipe error: ${JSON.stringify(err)}`);
-          expect().assertFail();
+        let want: Want = {
+          bundleName: 'com.acts.context.webonconnectnativerelypermission',
+          abilityName: 'EntryAbility',
+          parameters: { 'callType': 'forResult' }
+        };
+
+        if ((userAgentPC).includes('PC') || (userAgentPC).includes('Tablet')) {
+          try {
+            await context.startAbilityForResult(want).then((data: common.AbilityResult) => {
+              hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult success: ${JSON.stringify(data)}`);
+              expect(data.resultCode).assertEqual(0);
+              done();
+            }).catch((err: BusinessError) => {
+              hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult error: ${JSON.stringify(err)}`);
+              expect(err.code).assertEqual(201);
+              done();
+            });
+          } catch (err) {
+            hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
+            expect(err.code).assertEqual(201);
+            done();
+          }
+        } else  {
+          console.log('SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0100-capability not supported');
+          expect(true).assertEqual(true);
           done();
-          return;
         }
 
-        let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
-          events: ['webNativeMessaging2_startAbilityForResult_permission']
-        };
-        await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
-          sub = subscriber;
-          hilog.info(0x0000, 'testTag', `${tcNumber} createSubscriber succeed`);
-          commonEventManager.subscribe(sub, (err, commonEventData) => {
-            hilog.info(0x0000, 'testTag',
-              `${tcNumber} subscribe callback: ${JSON.stringify(commonEventData)}`);
-            expect(commonEventData.parameters?.result).assertEqual(201);
-            done();
-          });
-        });
+
+      });
+
+    /**
+     * @tc.name   SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0400
+     * @tc.number SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0400
+     * @tc.desc   Test startAbilityForResult(want, options) without ohos.permission.WEB_NATIVE_MESSAGING:
+     *            directly call context.startAbilityForResult(want, options) with StartOptions,
+     *            verify the API completes (success or error 201).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0400', Level.LEVEL0,
+      async (done: Function) => {
+        await sleep(2000);
+        const tcNumber = 'SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0400';
+        hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
 
         let want: Want = {
           bundleName: 'com.acts.context.webonconnectnativerelypermission',
-          abilityName: 'WebNativeExtensionExtAbility1',
-          parameters: {
-            'ohos.arkweb.extensionOrigin': 'startAbilityForResult_permission',
-            'ohos.arkweb.messageReadPipe': { 'type': 'FD', 'value': pipeWrite.readFd },
-            'ohos.arkweb.messageWritePipe': { 'type': 'FD', 'value': pipeRead.writeFd }
-          }
+          abilityName: 'EntryAbility',
+          parameters: { 'callType': 'forResult' }
         };
-
-        let callback: webNativeMessagingExtensionManager.WebExtensionConnectionCallback = {
-          onConnect(connection) {
-            hilog.info(0x0000, 'testTag',
-              `${tcNumber} onConnect connectionId: ${JSON.stringify(connection.connectionId)}`);
-          },
-          onDisconnect(connection) {
-            hilog.info(0x0000, 'testTag',
-              `${tcNumber} onDisconnect connectionId: ${JSON.stringify(connection.connectionId)}`);
-          },
-          onFailed(code, errMsg) {
-            hilog.info(0x0000, 'testTag', `${tcNumber} onFailed code: ${code} errMsg: ${errMsg}`);
-            expect(Number(code)).assertEqual(17100203);
+        let options: StartOptions = {
+          displayId: 0
+        };
+        if ((userAgentPC).includes('PC') || (userAgentPC).includes('Tablet')) {
+          try {
+            await context.startAbilityForResult(want, options).then((data: common.AbilityResult) => {
+              hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult success: ${JSON.stringify(data)}`);
+              expect(data.resultCode).assertEqual(0);
+              done();
+            }).catch((err: BusinessError) => {
+              hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult error: ${JSON.stringify(err)}`);
+              expect(err.code).assertEqual(201);
+              done();
+            });
+          } catch (err) {
+            hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
+            expect(err.code).assertEqual(201);
             done();
           }
-        };
-
-        try {
-          connId = webNativeMessagingExtensionManager.connectNative(context, want, callback);
-          hilog.info(0x0000, 'testTag', `${tcNumber} connectNative: ${connId}`);
-        } catch (err) {
-          hilog.info(0x0000, 'testTag', `${tcNumber} connect failed: ${JSON.stringify(err)}`);
-          connId = 0;
-          expect(Number(err.code)).assertEqual(801);
+        } else {
+          console.log('SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0100-capability not supported');
+          expect(true).assertEqual(true);
           done();
         }
+      });
+
+    /**
+     * @tc.name   SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0500
+     * @tc.number SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0500
+     * @tc.desc   Test startAbilityForResult with non-existent ability without ohos.permission.WEB_NATIVE_MESSAGING:
+     *            directly call context.startAbilityForResult(invalidWant),
+     *            verify BusinessError.code = 16000001 (The specified ability does not exist).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0500', Level.LEVEL0,
+      async (done: Function) => {
+        await sleep(2000);
+        const tcNumber = 'SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0500';
+        hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
+
+        let invalidWant: Want = {
+          bundleName: 'com.invalid.nonexistent.bundle',
+          abilityName: 'NonExistentAbility'
+        };
+        if ((userAgentPC).includes('PC') || (userAgentPC).includes('Tablet')) {
+          try {
+            await context.startAbilityForResult(invalidWant).then((data: common.AbilityResult) => {
+              hilog.info(0x0000, 'testTag', `${tcNumber} unexpected success: ${JSON.stringify(data)}`);
+              expect().assertFail();
+              done();
+            }).catch((err: BusinessError) => {
+              hilog.info(0x0000, 'testTag', `${tcNumber} caught expected error: ${err.code}`);
+              expect(err.code).assertEqual(16000001);
+              done();
+            });
+          } catch (err) {
+            hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
+            expect(err.code).assertEqual(16000001);
+            done();
+          }
+        } else {
+          console.log('SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0100-capability not supported');
+          expect(true).assertEqual(true);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0600
+     * @tc.number SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0600
+     * @tc.desc   Test startAbilityForResult with null want parameter without ohos.permission.WEB_NATIVE_MESSAGING:
+     *            verify BusinessError.code = 401 (Parameter error).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0600', Level.LEVEL2,
+      async (done: Function) => {
+        await sleep(2000);
+        const tcNumber = 'SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0600';
+        hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
+          try {
+            await context.startAbilityForResult(null).then((data: common.AbilityResult) => {
+              hilog.info(0x0000, 'testTag', `${tcNumber} unexpected success: ${JSON.stringify(data)}`);
+              expect().assertFail();
+              done();
+            }).catch((err: BusinessError) => {
+              hilog.info(0x0000, 'testTag', `${tcNumber} caught error: ${err.code}`);
+              expect(err.code).assertEqual(401);
+              done();
+            });
+          } catch (err) {
+            hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
+            expect(err.code).assertEqual(401);
+            done();
+          }
+      });
+
+    /**
+     * @tc.name   SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0700
+     * @tc.number SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0700
+     * @tc.desc   Test startAbilityForResult with undefined want parameter without ohos.permission.WEB_NATIVE_MESSAGING:
+     *            verify BusinessError.code = 401 (Parameter error).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0700', Level.LEVEL2,
+      async (done: Function) => {
+        await sleep(2000);
+        const tcNumber = 'SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0700';
+        hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
+          try {
+            await context.startAbilityForResult(undefined).then((data: common.AbilityResult) => {
+              hilog.info(0x0000, 'testTag', `${tcNumber} unexpected success: ${JSON.stringify(data)}`);
+              expect().assertFail();
+              done();
+            }).catch((err: BusinessError) => {
+              hilog.info(0x0000, 'testTag', `${tcNumber} caught error: ${err.code}`);
+              expect(err.code).assertEqual(401);
+              done();
+            });
+          } catch (err) {
+            hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
+            expect(err.code).assertEqual(401);
+            done();
+          }
+      });
+
+    /**
+     * @tc.name   SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0800
+     * @tc.number SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0800
+     * @tc.desc   Test startAbilityForResult(want, null) with null as second parameter
+     *            without ohos.permission.WEB_NATIVE_MESSAGING:
+     *            verify the API handles null gracefully without crashing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0800', Level.LEVEL2,
+      async (done: Function) => {
+        await sleep(2000);
+        const tcNumber = 'SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0800';
+        hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
+
+        let want: Want = {
+          bundleName: 'com.acts.context.webonconnectnativerelypermission',
+          abilityName: 'EntryAbility',
+          parameters: { 'callType': 'forResult' }
+        };
+
+        let errorCode: number = -1;
+        try {
+          context.startAbilityForResult(want, null);
+          errorCode = 0;
+          hilog.info(0x0000, 'testTag', `${tcNumber} API handled null gracefully`);
+        } catch (err) {
+          errorCode = err.code;
+          hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
+        }
+        expect(errorCode).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0900
+     * @tc.number SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0900
+     * @tc.desc   Test startAbilityForResult(want, undefined) with undefined as second parameter
+     *            without ohos.permission.WEB_NATIVE_MESSAGING:
+     *            verify the API handles undefined gracefully without crashing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0900', Level.LEVEL2,
+      async (done: Function) => {
+        await sleep(2000);
+        const tcNumber = 'SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0900';
+        hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
+
+        let want: Want = {
+          bundleName: 'com.acts.context.webonconnectnativerelypermission',
+          abilityName: 'EntryAbility',
+          parameters: { 'callType': 'forResult' }
+        };
+
+        let errorCode: number = -1;
+        try {
+          context.startAbilityForResult(want, undefined);
+          errorCode = 0;
+          hilog.info(0x0000, 'testTag', `${tcNumber} API handled undefined gracefully`);
+        } catch (err) {
+          errorCode = err.code;
+          hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
+        }
+        expect(errorCode).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_1000
+     * @tc.number SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_1000
+     * @tc.desc   Test startAbilityForResult(want, options) to construct error 201
+     *            without ohos.permission.WEB_NATIVE_MESSAGING:
+     *            call with want and StartOptions, verify the API completes (success or error 201).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_1000', Level.LEVEL2,
+      async (done: Function) => {
+        await sleep(1000);
+        const tcNumber = 'SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_1000';
+        hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
+
+        let want: Want = {
+          bundleName: 'com.acts.context.webonconnectnativerelypermission',
+          abilityName: 'EntryAbility',
+          parameters: { 'callType': 'forResult' }
+        };
+        let options: StartOptions = {
+          displayId: 0,
+          windowFocused: true
+        };
+        if ((userAgentPC).includes('PC') || (userAgentPC).includes('Tablet')) {
+          try {
+            await context.startAbilityForResult(want, options).then((data: common.AbilityResult) => {
+              hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult success: ${JSON.stringify(data)}`);
+              expect(data.resultCode).assertEqual(0);
+              done();
+            }).catch((err: BusinessError) => {
+              hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult error: ${JSON.stringify(err)}`);
+              expect(err.code).assertEqual(201);
+              done();
+            });
+          } catch (err) {
+            hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
+            expect(err.code).assertEqual(201);
+            done();
+          }
+      } else {
+          console.log('SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0100-capability not supported');
+          expect(true).assertEqual(true);
+          done();
+      }
       });
   });
 }

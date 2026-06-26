@@ -21,57 +21,57 @@ import { BusinessError } from '@kit.BasicServicesKit';
 const TAG = '[ImageReceiver].release';
 
 async function releasePromiseTest(done: () => void, testName: string): Promise<void> {
-    let size: image.Size = {
-      height: 8192,
-      width: 8
+  try {
+    const size: image.Size = { height: 8192, width: 8 };
+    const receiver: image.ImageReceiver | undefined = await image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
+    if (receiver === undefined) {
+      expect().assertFail();
+      done();
+      return;
     }
-    const creator: image.ImageCreator = await image.createImageCreator(size, image.ImageFormat.JPEG, 8);
-    creator.dequeueImage((err: BusinessError | null, img: image.Image | undefined) => {
-      if (err) {
-        console.error(TAG, `Failed to dequeue the Image.code ${err.code},message is ${err.message}`);
-        expect().assertFail();
-        done();
-      } else {
-        img?.release().then(() => {
-          console.info(TAG, 'Succeeded promise in releasing the image instance.');
-          done();
-        }).catch((error) => {
-          // let error1 = error as BusinessError
-          console.error(TAG, `Failed to release the image instance.code ${error.code},message is ${error.message}`);
-          expect().assertFail();
-          done();
-        })
-      }
-    })
+    await receiver.release();
+    try {
+      await receiver.getReceivingSurfaceId();
+      expect().assertFail();
+    } catch (e) {
+      console.info(TAG, 'Succeeded in releasing the ImageReceiver. Receiver is no longer usable.');
+    }
+    done();
+  } catch (error) {
+    console.error(TAG, `Failed. error: ${error}`);
+    expect().assertFail();
+    done();
+  }
 }
 
 async function releaseCallbackTest(done: () => void, testName: string): Promise<void> {
   try {
-    let size: image.Size = {
-      height: 8192,
-      width: 8
+    const size: image.Size = { height: 8192, width: 8 };
+    const receiver: image.ImageReceiver | undefined = await image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
+    if (receiver === undefined) {
+      expect().assertFail();
+      done();
+      return;
     }
-    const creator: image.ImageCreator = await image.createImageCreator(size, image.ImageFormat.JPEG, 8);
-    creator.dequeueImage((err: BusinessError | null, img: image.Image | undefined) => {
+    receiver.release((err: BusinessError | null) => {
       if (err) {
-        console.error(TAG, `Failed to dequeue the Image.code ${err.code},message is ${err.message}`);
+        console.error(TAG, `Failed to release. code ${err.code}, message ${err.message}`);
         expect().assertFail();
-        done();
       } else {
-        img?.release((error: Error | null) => {
-          if (error) {
-            // let error1 = error as BusinessError;
-            console.error(TAG, `Failed to release the image instance.code ${error.code},message is ${error.message}`);
-            expect().assertFail();
-          } else {
-            console.info(TAG, 'Succeeded callback in releasing the image instance.');
-          }
-          done();
-        })
+        try {
+          receiver.getReceivingSurfaceId((e: BusinessError | null, id: string | undefined) => {
+            if (e === null) {
+              expect().assertFail();
+            }
+          });
+        } catch (error) {
+          console.info(TAG, 'Succeeded in releasing the ImageReceiver.');
+        }
       }
-    })
+      done();
+    });
   } catch (error) {
-    console.info(TAG, `failed; error: ${error},${error.code}`, testName);
+    console.error(TAG, `Failed. error: ${error}`);
     expect().assertFail();
     done();
   }

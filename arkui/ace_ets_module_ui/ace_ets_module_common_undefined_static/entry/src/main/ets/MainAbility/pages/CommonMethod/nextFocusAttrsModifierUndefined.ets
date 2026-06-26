@@ -1,22 +1,6 @@
 'use static'
-import {
-  Entry,
-  Component,
-  Column,
-  Button,
-  ColumnOptions,
-  ClickEvent,
-  AttributeModifier,
-  ButtonAttribute,
-  Row,
-  FocusMovement,
-  Optional,
-  focusControl,
-  AttributeModifier,
-  ButtonAttribute
-} from '@ohos.arkui.component'
-import { State, Observed } from '@ohos.arkui.stateManagement'
-
+import { Entry, Component, Column, Button, ColumnOptions, ClickEvent, AttributeModifier, ButtonAttribute, Row, FocusMovement, Optional, focusControl } from '@ohos.arkui.component';
+import { State, Observed } from '@ohos.arkui.stateManagement';
 @Observed
 export class MyModifier implements AttributeModifier<ButtonAttribute> {
   public isNextFocusUndefined: boolean = true;

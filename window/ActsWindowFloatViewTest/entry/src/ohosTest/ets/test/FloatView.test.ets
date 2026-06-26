@@ -93,11 +93,15 @@ async function stopFloatViewOnStarted(floatViewController: floatView.FloatViewCo
 }
 
 // 监听到stop调用done停止用例
-function callDoneOnStopped(floatViewController: floatView.FloatViewController, caseName: string, done: Function): void {
+function callDoneOnStopped(floatViewController: floatView.FloatViewController, caseName: string, done: Function, click: boolean = false): void {
   let onStateChange = (info: floatView.FloatViewStateChangeInfo) => {
     console.info(caseName + ' callDoneOnStopped Float view stateChange: ' + info.state + ' ' + info.stopReason);
     if (info.state === floatView.FloatViewState.STOPPED) {
-      expect(info.stopReason).assertEqual('APP_STOP')
+      if (click) {
+        expect(info.stopReason).assertEqual('TITLE_BAR_STOP_CLICK')
+      } else {
+        expect(info.stopReason).assertEqual('APP_STOP')
+      }
       floatViewController.offStateChange(onStateChange);
       console.info(caseName + ' callDoneOnStopped Succeeded in unregistering stateChange callback.');
       done();
@@ -3557,6 +3561,364 @@ export default function abilityTest() {
           expect(err.code).assertEqual(1300016);
           expect(err.message != null).assertTrue();
         });
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if (e.code === 801 && !isDeviceSupportFloatView) {
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   test_switchTemplate_param_null
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_SWITCHTEMPLATE_0600
+     * @tc.desc   test switchTemplate with null parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_switchTemplate_param_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let CaseName: string = 'test_switchTemplate_param_null';
+      console.log(CaseName + ' begin.');
+      let config: floatView.FloatViewConfiguration = {
+        context: context,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
+      };
+      let floatViewController: floatView.FloatViewController | null = null;
+      try {
+        floatViewController = await floatView.create(config);
+        console.info(CaseName + ' Succeeded in creating float view controller.');
+        await floatViewController.setUIContext("testability/pages/First/index");
+        console.info(CaseName + ' Succeeded in setting UI context.');
+        await floatViewController.start();
+        console.info(CaseName + ' Succeeded in starting float view.');
+        await sleep(1000);
+        
+        floatViewController.switchTemplate(null).then(async () => {
+          console.info(CaseName + ' Succeeded in switching template.');
+          await floatViewController?.stop();
+          await sleep(1000);
+          expect(false).assertTrue();
+          done();
+        }).catch(async (err: BusinessError) => {
+          console.error(CaseName + ' Failed to switch template. Cause: ' + err.code + ', message: ' + err.message);
+          await floatViewController?.stop();
+          await sleep(1000);
+          expect(false).assertTrue();
+          done();
+        });
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.code).assertEqual(401);
+        expect(e.message != null).assertTrue();
+        await floatViewController?.stop();
+        await sleep(1000);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   test_switchTemplate_param_undefined
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_SWITCHTEMPLATE_0700
+     * @tc.desc   test switchTemplate with undefined parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_switchTemplate_param_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let CaseName: string = 'test_switchTemplate_param_undefined';
+      console.log(CaseName + ' begin.');
+      let config: floatView.FloatViewConfiguration = {
+        context: context,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
+      };
+      let floatViewController: floatView.FloatViewController | null = null;
+      try {
+        floatViewController = await floatView.create(config);
+        console.info(CaseName + ' Succeeded in creating float view controller.');
+        await floatViewController.setUIContext("testability/pages/First/index");
+        console.info(CaseName + ' Succeeded in setting UI context.');
+        await floatViewController.start();
+        console.info(CaseName + ' Succeeded in starting float view.');
+        await sleep(1000);
+        
+        floatViewController.switchTemplate(undefined).then(async () => {
+          console.info(CaseName + ' Succeeded in switching template.');
+          await floatViewController?.stop();
+          expect(false).assertTrue();
+          done();
+        }).catch(async (err: BusinessError) => {
+          console.error(CaseName + ' Failed to switch template. Cause: ' + err.code + ', message: ' + err.message);
+          await floatViewController?.stop();
+          expect(false).assertTrue();
+          done();
+        });
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        await floatViewController?.stop();
+        await sleep(1000);
+        expect(e.code).assertEqual(401);
+        expect(e.message != null).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   test_switchTemplate_onRectChange
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_SWITCHTEMPLATE_0800
+     * @tc.desc   test switchTemplate triggers onRectChange callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_switchTemplate_onRectChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let CaseName: string = 'test_switchTemplate_onRectChange';
+      console.log(CaseName + ' begin.');
+      let config: floatView.FloatViewConfiguration = {
+        context: context,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
+      };
+      let rectChanged: boolean = false;
+      let onRectChange = (info: floatView.FloatViewRectChangeInfo) => {
+        console.info(CaseName + ' Float view rectChange: ' + JSON.stringify(info));
+        expect(typeof info.windowRect.left === 'number').assertTrue();
+        expect(typeof info.windowRect.top === 'number').assertTrue();
+        expect(info.windowRect.width).assertLarger(0);
+        expect(info.windowRect.height).assertLarger(0);
+        expect(info.windowScale).assertLarger(0);
+        rectChanged = true;
+      };
+      try {
+        let floatViewController = await floatView.create(config);
+        callDoneOnStopped(floatViewController, CaseName, done)
+        console.info(CaseName + ' Succeeded in creating float view controller.');
+        await floatViewController.setUIContext("testability/pages/First/index");
+        console.info(CaseName + ' Succeeded in setting UI context.');
+        floatViewController.onRectChange(onRectChange);
+        console.info(CaseName + ' Succeeded in registering rectChange callback.');
+        await floatViewController.start();
+        console.info(CaseName + ' Succeeded in starting float view.');
+        await sleep(1000);
+        
+        let limits = floatView.getFloatViewLimits(floatView.FloatViewTemplateType.HORIZONTAL_BAR);
+        let newSize: window.Size = {
+          width: limits.minSize.width + 50,
+          height: limits.minSize.height + 50
+        };
+        let templateProperty: floatView.TemplateProperty = {
+          templateType: floatView.FloatViewTemplateType.HORIZONTAL_BAR,
+          size: newSize,
+        };
+        
+        await floatViewController.switchTemplate(templateProperty);
+        console.info(CaseName + ' Succeeded in switching template to HORIZONTAL_BAR.');
+        await sleep(500);
+        expect(rectChanged).assertTrue();
+        console.info(CaseName + ' onRectChange callback triggered after switchTemplate.');
+        floatViewController.offRectChange(onRectChange);
+        console.info(CaseName + ' Succeeded in unregistering rectChange callback.');
+        await sleep(1000);
+        await floatViewController.stop();
+        console.info(CaseName + ' Succeeded in stopping float view.');
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if (e.code === 801 && !isDeviceSupportFloatView) {
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+
+    /**
+     * @tc.name   test_switchTemplate_onLimitsChange
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_SWITCHTEMPLATE_0500
+     * @tc.desc   test switchTemplate triggers onLimitsChange callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_switchTemplate_onLimitsChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let CaseName: string = 'test_switchTemplate_onLimitsChange';
+      console.log(CaseName + ' begin.');
+      let config: floatView.FloatViewConfiguration = {
+        context: context,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
+      };
+      let limitsChanged: boolean = false;
+      let onLimitsChange = (limits: floatView.FloatViewLimits) => {
+        console.info(CaseName + ' Float view limitsChange: ' + JSON.stringify(limits));
+        expect(limits != null).assertTrue();
+        expect(limits.minSize != null).assertTrue();
+        expect(limits.minSize.width).assertLarger(0);
+        expect(limits.minSize.height).assertLarger(0);
+        expect(limits.maxSize != null).assertTrue();
+        expect(limits.maxSize.width).assertLarger(0);
+        expect(limits.maxSize.height).assertLarger(0);
+        limitsChanged = true;
+      };
+      try {
+        let floatViewController = await floatView.create(config);
+        callDoneOnStopped(floatViewController, CaseName, done)
+        console.info(CaseName + ' Succeeded in creating float view controller.');
+        await floatViewController.setUIContext("testability/pages/First/index");
+        console.info(CaseName + ' Succeeded in setting UI context.');
+        floatViewController.onLimitsChange(onLimitsChange);
+        console.info(CaseName + ' Succeeded in registering limitsChange callback.');
+        await floatViewController.start();
+        console.info(CaseName + ' Succeeded in starting float view.');
+        await sleep(1000);
+        
+        let limits = floatView.getFloatViewLimits(floatView.FloatViewTemplateType.HORIZONTAL_BAR);
+        let newSize: window.Size = {
+          width: limits.minSize.width + 50,
+          height: limits.minSize.height + 50
+        };
+        let templateProperty: floatView.TemplateProperty = {
+          templateType: floatView.FloatViewTemplateType.HORIZONTAL_BAR,
+          size: newSize,
+        };
+        
+        await floatViewController.switchTemplate(templateProperty);
+        console.info(CaseName + ' Succeeded in switching template to HORIZONTAL_BAR.');
+        await sleep(500);
+        expect(limitsChanged).assertTrue();
+        console.info(CaseName + ' onLimitsChange callback triggered after switchTemplate.');
+        floatViewController.offLimitsChange(onLimitsChange);
+        console.info(CaseName + ' Succeeded in unregistering limitsChange callback.');
+        await sleep(1000);
+        await floatViewController.stop();
+        console.info(CaseName + ' Succeeded in stopping float view.');
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if (e.code === 801 && !isDeviceSupportFloatView) {
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   test_isConfirmOnClose_true
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_ISCONFIRMONCLOSE_0100
+     * @tc.desc   test isConfirmOnClose with true, click close button and confirm to close
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_isConfirmOnClose_true', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let CaseName: string = 'test_isConfirmOnClose_true';
+      console.log(CaseName + ' begin.');
+      let config: floatView.FloatViewConfiguration = {
+        context: context,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE,
+        isConfirmOnClose: true
+      };
+      try {
+        let floatViewController = await floatView.create(config);
+        callDoneOnStopped(floatViewController, CaseName, done, true)
+        console.info(CaseName + ' Succeeded in creating float view controller.');
+        await floatViewController.setUIContext("testability/pages/First/index");
+        console.info(CaseName + ' Succeeded in setting UI context.');
+        await floatViewController.start();
+        console.info(CaseName + ' Succeeded in starting float view.');
+        await sleep(1000);
+        
+        let driver = Driver.create();
+        let closeButton = await driver.findComponent(ON.id('FloatViewRightButtonId'));
+        if (closeButton != null) {
+          await closeButton.click();
+          console.info(CaseName + ' Clicked close button.');
+          await sleep(500);
+          
+          let confirmButton = await driver.findComponent(ON.text('退出'));
+          if (confirmButton != null) {
+            await confirmButton.click();
+            console.info(CaseName + ' Clicked confirm button in dialog.');
+            await sleep(1000);
+          } else {
+            console.error(CaseName + ' Confirm button not found.');
+            await floatViewController.stop();
+            expect(false).assertTrue();
+          }
+        } else {
+          console.error(CaseName + ' Close button not found.');
+          await floatViewController.stop();
+          expect(false).assertTrue();
+        }
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if (e.code === 801 && !isDeviceSupportFloatView) {
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   test_isConfirmOnClose_false
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_ISCONFIRMONCLOSE_0200
+     * @tc.desc   test isConfirmOnClose with false, click close button to close directly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_isConfirmOnClose_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let CaseName: string = 'test_isConfirmOnClose_false';
+      console.log(CaseName + ' begin.');
+      let config: floatView.FloatViewConfiguration = {
+        context: context,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE,
+        isConfirmOnClose: false
+      };
+      let stopped: boolean = false;
+      try {
+        let floatViewController = await floatView.create(config);
+        let onStateChange = async (info: floatView.FloatViewStateChangeInfo) => {
+          console.info(CaseName + ' Float view stateChange: ' + info.state);
+          if (info.state === floatView.FloatViewState.STOPPED) {
+            stopped = true;
+            floatViewController.offStateChange(onStateChange);
+            console.info(CaseName + ' Succeeded in unregistering stateChange callback.');
+          }
+        };
+        floatViewController.onStateChange(onStateChange);
+        console.info(CaseName + ' Succeeded in registering stateChange callback.');
+        console.info(CaseName + ' Succeeded in creating float view controller.');
+        await floatViewController.setUIContext("testability/pages/First/index");
+        console.info(CaseName + ' Succeeded in setting UI context.');
+        await floatViewController.start();
+        console.info(CaseName + ' Succeeded in starting float view.');
+        await sleep(1000);
+        
+        let driver = Driver.create();
+        let closeButton = await driver.findComponent(ON.id('FloatViewRightButtonId'));
+        if (closeButton != null) {
+          await closeButton.click();
+          console.info(CaseName + ' Clicked close button.');
+          await sleep(1000);
+          expect(stopped).assertTrue();
+          console.info(CaseName + ' Float view closed directly without confirmation dialog.');
+          done();
+        } else {
+          console.error(CaseName + ' Close button not found.');
+          await floatViewController.stop();
+          expect(false).assertTrue();
+          done();
+        }
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();

@@ -1,0 +1,169 @@
+'use static';
+/**
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import {
+  Entry,
+  Column,
+  Row,
+  ComponentV2,
+  Color,
+  $r,
+  ColumnOptions,
+  Direction,
+  Button,
+  Text,
+  LengthMetrics,
+  FlexAlign
+} from '@ohos.arkui.component';
+import { Local } from '@ohos.arkui.stateManagement';
+import {
+  ChipV2,
+  ChipV2Size,
+  ChipV2PrefixImageIcon,
+  ChipV2SuffixImageIcon,
+  ChipV2Options,
+  ChipV2Label,
+  ChipV2PrefixImageIconConfig,
+  ChipV2SuffixImageIconConfig,
+  ChipV2ImageIconConfig,
+  ChipV2LabelConfig,
+  ChipV2LocalizedLabelMarginConfig,
+  ColorMetrics,
+  SizeT
+} from '@kit.ArkUI';
+
+@Entry
+@ComponentV2
+struct ChipV2LocalizedLabelMarginPage {
+  @Local text: string = ''
+
+  build() {
+    Column() {
+      ChipV2({
+        chipV2Options: new ChipV2Options({
+          prefixIcon: new ChipV2PrefixImageIcon({
+            src: $r('sys.media.ohos_app_icon'),
+            size: { width: LengthMetrics.vp(16), height: LengthMetrics.vp(16) } as SizeT<LengthMetrics>,
+            fillColor: ColorMetrics.resourceColor(Color.Red),
+          }) as ChipV2PrefixImageIcon,
+          label: new ChipV2Label({
+            text: 'label1',
+            fontSize: LengthMetrics.fp(12),
+            fontColor: ColorMetrics.resourceColor(Color.Blue),
+            fontFamily: 'HarmonySans',
+            activatedFontColor: ColorMetrics.resourceColor('#FFFF0000'),
+            localizedLabelMargin: { start: LengthMetrics.vp(20), end: LengthMetrics.vp(30) },
+          }),
+          suffixIcon: new ChipV2SuffixImageIcon({
+            src: $r('sys.media.ohos_app_icon'),
+            size: { width: LengthMetrics.vp(16), height: LengthMetrics.vp(16) } as SizeT<LengthMetrics>,
+            fillColor: ColorMetrics.resourceColor(Color.Red),
+            action: () => {
+              this.text = 'action'
+              console.info('chip on action');
+            }
+          }) as ChipV2SuffixImageIcon,
+          size: ChipV2Size.NORMAL,
+          allowClose: true,
+          enabled: true,
+          activated: true,
+          onClose: () => {
+            console.info('chip on close');
+          },
+          onClicked: () => {
+            console.info('chip on clicked');
+          }
+        })
+      })
+      ChipV2({
+        chipV2Options: new ChipV2Options({
+          prefixIcon: new ChipV2PrefixImageIcon({
+            src: $r('sys.media.ohos_app_icon'),
+            size: { width: LengthMetrics.vp(16), height: LengthMetrics.vp(16) } as SizeT<LengthMetrics>,
+            fillColor: ColorMetrics.resourceColor(Color.Red),
+          }) as ChipV2PrefixImageIcon,
+          label: new ChipV2Label({
+            text: 'label2',
+            fontSize: LengthMetrics.fp(12),
+            fontColor: ColorMetrics.resourceColor(Color.Blue),
+            fontFamily: 'HarmonySans',
+            activatedFontColor: ColorMetrics.resourceColor($r('sys.color.ohos_id_color_text_primary_contrary')),
+            localizedLabelMargin: {
+              start: LengthMetrics.resource($r('sys.float.chip_normal_text_margin')),
+              end: LengthMetrics.resource($r('sys.float.chip_normal_text_margin'))
+            },
+          }),
+          suffixIcon: new ChipV2SuffixImageIcon({
+            src: $r('sys.media.ohos_app_icon'),
+            size: { width: LengthMetrics.vp(16), height: LengthMetrics.vp(16) } as SizeT<LengthMetrics>,
+            fillColor: ColorMetrics.resourceColor(Color.Red),
+            action: () => {
+              this.text = 'action'
+              console.info('chip on action');
+            }
+          }) as ChipV2SuffixImageIcon,
+          size: ChipV2Size.NORMAL,
+          allowClose: true,
+          enabled: true,
+          activated: true,
+          onClose: () => {
+            console.info('chip on close');
+          },
+          onClicked: () => {
+            console.info('chip on clicked');
+          }
+        })
+      })
+      ChipV2({
+        chipV2Options: new ChipV2Options({
+          prefixIcon: new ChipV2PrefixImageIcon({
+            src: $r('sys.media.ohos_app_icon'),
+            size: { width: LengthMetrics.vp(16), height: LengthMetrics.vp(16) } as SizeT<LengthMetrics>,
+            fillColor: ColorMetrics.resourceColor(Color.Red),
+          }) as ChipV2PrefixImageIcon,
+          label: new ChipV2Label({
+            text: 'label3',
+            fontSize: LengthMetrics.fp(12),
+            fontColor: ColorMetrics.resourceColor(Color.Blue),
+            fontFamily: 'HarmonySans',
+            activatedFontColor: undefined,
+            localizedLabelMargin: undefined,
+          }),
+          suffixIcon: new ChipV2SuffixImageIcon({
+            src: $r('sys.media.ohos_app_icon'),
+            size: { width: LengthMetrics.vp(16), height: LengthMetrics.vp(16) } as SizeT<LengthMetrics>,
+            fillColor: ColorMetrics.resourceColor(Color.Red),
+            action: () => {
+              this.text = 'action'
+              console.info('chip on action');
+            }
+          }) as ChipV2SuffixImageIcon,
+          size: ChipV2Size.NORMAL,
+          allowClose: true,
+          enabled: true,
+          activated: true,
+          onClose: () => {
+            console.info('chip on close');
+          },
+          onClicked: () => {
+            console.info('chip on clicked');
+          }
+        })
+      })
+    }.justifyContent(FlexAlign.Center)
+    .width('100%')
+    .height('100%')
+  }
+}

@@ -147,6 +147,8 @@ import OverridingFieldsTest from "./classes/overriding_fields/OverridingFields.t
 import OverridingFieldsOneTest from "./classes/overriding_fields/OverridingFieldsOne.test";
 import OverridingFieldsThreeTest from "./classes/overriding_fields/OverridingFieldsThree.test";
 import OverridingFieldsTwoTest from "./classes/overriding_fields/OverridingFieldsTwo.test";
+import TypeSafeFieldInheritanceRtTest from "./classes/typeSafeFieldInheritance/TypeSafeFieldInheritanceRtTest.test";
+import TypeSafeFieldInheritanceTest from "./classes/typeSafeFieldInheritance/TypeSafeFieldInheritanceTest.test";
 
 export default function testsuite(): void {
   ExpressionsIndexingArrayTest();
@@ -284,4 +286,6 @@ export default function testsuite(): void {
   OverridingFieldsOneTest();
   OverridingFieldsThreeTest();
   OverridingFieldsTwoTest();
+  TypeSafeFieldInheritanceRtTest();
+  TypeSafeFieldInheritanceTest();
 }

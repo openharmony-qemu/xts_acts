@@ -17,9 +17,7 @@ import { image } from '@kit.ImageKit';
 import fs from '@ohos.file.fs';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect,Hypium, it, Level} from '../../../../../../hypium';
 import { common } from '@kit.AbilityKit';
-
 const TAG = 'xts_static_ImageMetadataTest'
-
 export default function ImageMetadataTestStatic(): void {
   describe('ImageMetadataTestStatic', () => {
     let testContext: common.UIAbilityContext = Hypium.get('Context') as common.UIAbilityContext;
@@ -1797,5 +1795,491 @@ export default function ImageMetadataTestStatic(): void {
       }
       done();
     });
+
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_BinaryBufferInfo_static_0100
+     * @tc.name       SUB_MEDIA_IMAGE_BinaryBufferInfo_static_0100
+     * @tc.desc       image - BinaryBufferInfo  size/ data /bytesPerRow, resolutionUnit:1
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_MEDIA_IMAGE_BinaryBufferInfo_static_0100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_BinaryBufferInfo_static_0100';
+      const width = 100;
+      const height = 100;
+      const rowBytes = 13;
+      const bufferSize = rowBytes * height;
+      const data: ArrayBuffer = new ArrayBuffer(bufferSize);
+      let bufferInfo: image.BinaryBufferInfo = {
+        size: { width: width, height: height },
+        data: data,
+        bytesPerRow: rowBytes
+      };
+      let tiffOptions: image.PackingOptionsForTiff = {
+        compression: 4,
+        resolutionUnit:1,
+        };
+      try {
+        const imagePackerObj: image.ImagePacker = image.createImagePacker();
+       let ArrayBuffer = await imagePackerObj.packBinaryImageToTiffData(bufferInfo, tiffOptions)
+        console.info(TAG,testName,` packBinaryImageToTiffData result is: ${ArrayBuffer.byteLength}`);
+        expect(ArrayBuffer.byteLength >0).assertTrue();
+        done();
+      } catch (error) {
+        console.info(TAG, `failed; error: ${error},${error.code}`, testName);
+        expect().assertFail()
+        done();
+      }
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_BinaryBufferInfo_static_0200
+     * @tc.name       SUB_MEDIA_IMAGE_BinaryBufferInfo_static_0200
+     * @tc.desc       image - BinaryBufferInfo  size/ data /bytesPerRow, resolutionUnit:2
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_MEDIA_IMAGE_BinaryBufferInfo_static_0200', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_BinaryBufferInfo_static_0200';
+      const width = 100;
+      const height = 100;
+      const rowBytes = 13;
+      const bufferSize = rowBytes * height;
+      const data: ArrayBuffer = new ArrayBuffer(bufferSize);
+      let bufferInfo: image.BinaryBufferInfo = {
+        size: { width: width, height: height },
+        data: data,
+        bytesPerRow: rowBytes
+      };
+      let tiffOptions: image.PackingOptionsForTiff = {
+        compression: 4,
+        resolutionUnit:2,
+      };
+      try {
+        const imagePackerObj: image.ImagePacker = image.createImagePacker();
+        let ArrayBuffer = await imagePackerObj.packBinaryImageToTiffData(bufferInfo, tiffOptions)
+        console.info(TAG,testName,` packBinaryImageToTiffData result is: ${ArrayBuffer.byteLength}`);
+        expect(ArrayBuffer.byteLength >0).assertTrue();
+        done();
+      } catch (error) {
+        console.info(TAG, `failed; error: ${error},${error.code}`, testName);
+        expect().assertFail()
+        done();
+      }
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_BinaryBufferInfo_static_0300
+     * @tc.name       SUB_MEDIA_IMAGE_BinaryBufferInfo_static_0300
+     * @tc.desc       image - BinaryBufferInfo  size/ data /bytesPerRow, resolutionUnit:3
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_MEDIA_IMAGE_BinaryBufferInfo_static_0300', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_BinaryBufferInfo_static_0300';
+      const width = 100;
+      const height = 100;
+      const rowBytes = 13;
+      const bufferSize = rowBytes * height;
+      const data: ArrayBuffer = new ArrayBuffer(bufferSize);
+      let bufferInfo: image.BinaryBufferInfo = {
+        size: { width: width, height: height },
+        data: data,
+        bytesPerRow: rowBytes
+      };
+      let tiffOptions: image.PackingOptionsForTiff = {
+        compression: 4,
+        resolutionUnit:3,
+      };
+      try {
+        const imagePackerObj: image.ImagePacker = image.createImagePacker();
+        let ArrayBuffer = await imagePackerObj.packBinaryImageToTiffData(bufferInfo, tiffOptions)
+        console.info(TAG,testName,` packBinaryImageToTiffData result is: ${ArrayBuffer.byteLength}`);
+        expect(ArrayBuffer.byteLength >0).assertTrue();
+        done();
+      } catch (error) {
+        console.info(TAG, `failed; error: ${error},${error.code}`, testName);
+        expect().assertFail()
+        done();
+      }
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_BinaryBufferInfo_AbNormal_static_0400
+     * @tc.name       SUB_MEDIA_IMAGE_BinaryBufferInfo_AbNormal_static_0400
+     * @tc.desc       image - PackingOptionsForTiff,abnormal:resolutionUnit:4
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_MEDIA_IMAGE_BinaryBufferInfo_AbNormal_static_0400', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_BinaryBufferInfo_AbNormal_static_0400';
+      const width = 100;
+      const height = 100;
+      const rowBytes = 13;
+      const bufferSize = rowBytes * height;
+      const data: ArrayBuffer = new ArrayBuffer(bufferSize);
+      let bufferInfo: image.BinaryBufferInfo = {
+        size: { width: width, height: height },
+        data: data,
+        bytesPerRow: rowBytes
+      };
+      let tiffOptions: image.PackingOptionsForTiff = {
+        compression: 4,
+        resolutionUnit:4,
+      };
+      try {
+        const imagePackerObj: image.ImagePacker = image.createImagePacker();
+        let ArrayBuffer = await imagePackerObj.packBinaryImageToTiffData(bufferInfo, tiffOptions)
+        console.info(TAG,testName,` packBinaryImageToTiffData result is: ${ArrayBuffer.byteLength}`);
+        expect(ArrayBuffer.byteLength >0).assertTrue();
+        done();
+      } catch (error) {
+        console.info(TAG, `failed; error: ${error},${error.code}`, testName);
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_BinaryBufferInfo_AbNormal_static_0500
+     * @tc.name       SUB_MEDIA_IMAGE_BinaryBufferInfo_AbNormal_static_0500
+     * @tc.desc       image - PackingOptionsForTiff,abnormal:resolutionUnit:-1
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_MEDIA_IMAGE_BinaryBufferInfo_AbNormal_static_0500', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_BinaryBufferInfo_AbNormal_static_0500';
+      const width = 100;
+      const height = 100;
+      const rowBytes = 13;
+      const bufferSize = rowBytes * height;
+      const data: ArrayBuffer = new ArrayBuffer(bufferSize);
+      let bufferInfo: image.BinaryBufferInfo = {
+        size: { width: width, height: height },
+        data: data,
+        bytesPerRow: rowBytes
+      };
+      let tiffOptions: image.PackingOptionsForTiff = {
+        compression: 4,
+        resolutionUnit:-1,
+      };
+      try {
+        const imagePackerObj: image.ImagePacker = image.createImagePacker();
+        let ArrayBuffer = await imagePackerObj.packBinaryImageToTiffData(bufferInfo, tiffOptions)
+        console.info(TAG,testName,` packBinaryImageToTiffData result is: ${ArrayBuffer.byteLength}`);
+        expect(ArrayBuffer.byteLength >0).assertTrue();
+        done();
+      } catch (error) {
+        console.info(TAG, `failed; error: ${error},${error.code}`, testName);
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_0600
+     * @tc.name       SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_0600
+     * @tc.desc       image - PackingOptionsForTiff,orientation:image.Orientation.TOP_LEFT
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_0600', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_0600';
+      const width = 100;
+      const height = 100;
+      const rowBytes = 13;
+      const bufferSize = rowBytes * height;
+      const data: ArrayBuffer = new ArrayBuffer(bufferSize);
+      let bufferInfo: image.BinaryBufferInfo = {
+        size: { width: width, height: height },
+        data: data,
+        bytesPerRow: rowBytes
+      };
+      let tiffOptions: image.PackingOptionsForTiff = {
+        compression: 4,
+        resolutionUnit:1,
+        xResolution:100,
+        yResolution:200,
+        orientation:image.Orientation.TOP_LEFT,
+      };
+      try {
+        const imagePackerObj: image.ImagePacker = image.createImagePacker();
+        let ArrayBuffer = await imagePackerObj.packBinaryImageToTiffData(bufferInfo, tiffOptions)
+        console.info(TAG,testName,` packBinaryImageToTiffData result is: ${ArrayBuffer.byteLength}`);
+        expect(ArrayBuffer.byteLength >0).assertTrue();
+        done();
+      } catch (error) {
+        console.info(TAG, `failed; error: ${error},${error.code}`, testName);
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_0700
+     * @tc.name       SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_0700
+     * @tc.desc       image - PackingOptionsForTiff,orientation:image.Orientation.TOP_RIGHT
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_0700', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_0700';
+      const width = 100;
+      const height = 100;
+      const rowBytes = 13;
+      const bufferSize = rowBytes * height;
+      const data: ArrayBuffer = new ArrayBuffer(bufferSize);
+      let bufferInfo: image.BinaryBufferInfo = {
+        size: { width: width, height: height },
+        data: data,
+        bytesPerRow: rowBytes
+      };
+      let tiffOptions: image.PackingOptionsForTiff = {
+        orientation:image.Orientation.TOP_RIGHT,
+      };
+      try {
+        const imagePackerObj: image.ImagePacker = image.createImagePacker();
+        let ArrayBuffer = await imagePackerObj.packBinaryImageToTiffData(bufferInfo, tiffOptions)
+        console.info(TAG,testName,` packBinaryImageToTiffData result is: ${ArrayBuffer.byteLength}`);
+        expect(ArrayBuffer.byteLength >0).assertTrue();
+        done();
+      } catch (error) {
+        console.info(TAG, `failed; error: ${error},${error.code}`, testName);
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_0800
+     * @tc.name       SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_0800
+     * @tc.desc       image - PackingOptionsForTiff,orientation:image.Orientation.BOTTOM_RIGHT
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_0800', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_0800';
+      const width = 100;
+      const height = 100;
+      const rowBytes = 13;
+      const bufferSize = rowBytes * height;
+      const data: ArrayBuffer = new ArrayBuffer(bufferSize);
+      let bufferInfo: image.BinaryBufferInfo = {
+        size: { width: width, height: height },
+        data: data,
+        bytesPerRow: rowBytes
+      };
+      let tiffOptions: image.PackingOptionsForTiff = {
+        orientation:image.Orientation.BOTTOM_RIGHT,
+      };
+      try {
+        const imagePackerObj: image.ImagePacker = image.createImagePacker();
+        let ArrayBuffer = await imagePackerObj.packBinaryImageToTiffData(bufferInfo, tiffOptions)
+        console.info(TAG,testName,` packBinaryImageToTiffData result is: ${ArrayBuffer.byteLength}`);
+        expect(ArrayBuffer.byteLength >0).assertTrue();
+        done();
+      } catch (error) {
+        console.info(TAG, `failed; error: ${error},${error.code}`, testName);
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_0900
+     * @tc.name       SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_0900
+     * @tc.desc       image - PackingOptionsForTiff,orientation:image.Orientation.BOTTOM_LEFT
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_0900', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_0900';
+      const width = 100;
+      const height = 100;
+      const rowBytes = 13;
+      const bufferSize = rowBytes * height;
+      const data: ArrayBuffer = new ArrayBuffer(bufferSize);
+      let bufferInfo: image.BinaryBufferInfo = {
+        size: { width: width, height: height },
+        data: data,
+        bytesPerRow: rowBytes
+      };
+      let tiffOptions: image.PackingOptionsForTiff = {
+        orientation:image.Orientation.BOTTOM_LEFT,
+      };
+      try {
+        const imagePackerObj: image.ImagePacker = image.createImagePacker();
+        let ArrayBuffer = await imagePackerObj.packBinaryImageToTiffData(bufferInfo, tiffOptions)
+        console.info(TAG,testName,` packBinaryImageToTiffData result is: ${ArrayBuffer.byteLength}`);
+        expect(ArrayBuffer.byteLength >0).assertTrue();
+        done();
+      } catch (error) {
+        console.info(TAG, `failed; error: ${error},${error.code}`, testName);
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_1000
+     * @tc.name       SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_1000
+     * @tc.desc       image - PackingOptionsForTiff,orientation:image.Orientation.LEFT_TOP
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_1000', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_1000';
+      const width = 100;
+      const height = 100;
+      const rowBytes = 13;
+      const bufferSize = rowBytes * height;
+      const data: ArrayBuffer = new ArrayBuffer(bufferSize);
+      let bufferInfo: image.BinaryBufferInfo = {
+        size: { width: width, height: height },
+        data: data,
+        bytesPerRow: rowBytes
+      };
+      let tiffOptions: image.PackingOptionsForTiff = {
+        orientation:image.Orientation.LEFT_TOP,
+      };
+      try {
+        const imagePackerObj: image.ImagePacker = image.createImagePacker();
+        let ArrayBuffer = await imagePackerObj.packBinaryImageToTiffData(bufferInfo, tiffOptions)
+        console.info(TAG,testName,` packBinaryImageToTiffData result is: ${ArrayBuffer.byteLength}`);
+        expect(ArrayBuffer.byteLength >0).assertTrue();
+        done();
+      } catch (error) {
+        console.info(TAG, `failed; error: ${error},${error.code}`, testName);
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_1100
+     * @tc.name       SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_1100
+     * @tc.desc       image - PackingOptionsForTiff,orientation:image.Orientation.RIGHT_TOP
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_1100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_1100';
+      const width = 100;
+      const height = 100;
+      const rowBytes = 13;
+      const bufferSize = rowBytes * height;
+      const data: ArrayBuffer = new ArrayBuffer(bufferSize);
+      let bufferInfo: image.BinaryBufferInfo = {
+        size: { width: width, height: height },
+        data: data,
+        bytesPerRow: rowBytes
+      };
+      let tiffOptions: image.PackingOptionsForTiff = {
+        orientation:image.Orientation.RIGHT_TOP,
+      };
+      try {
+        const imagePackerObj: image.ImagePacker = image.createImagePacker();
+        let ArrayBuffer = await imagePackerObj.packBinaryImageToTiffData(bufferInfo, tiffOptions)
+        console.info(TAG,testName,` packBinaryImageToTiffData result is: ${ArrayBuffer.byteLength}`);
+        expect(ArrayBuffer.byteLength >0).assertTrue();
+        done();
+      } catch (error) {
+        console.info(TAG, `failed; error: ${error},${error.code}`, testName);
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_1200
+     * @tc.name       SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_1200
+     * @tc.desc       image - PackingOptionsForTiff,orientation:image.Orientation.RIGHT_BOTTOM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_1200', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_1200';
+      const width = 100;
+      const height = 100;
+      const rowBytes = 13;
+      const bufferSize = rowBytes * height;
+      const data: ArrayBuffer = new ArrayBuffer(bufferSize);
+      let bufferInfo: image.BinaryBufferInfo = {
+        size: { width: width, height: height },
+        data: data,
+        bytesPerRow: rowBytes
+      };
+      let tiffOptions: image.PackingOptionsForTiff = {
+        orientation:image.Orientation.RIGHT_BOTTOM,
+      };
+      try {
+        const imagePackerObj: image.ImagePacker = image.createImagePacker();
+        let ArrayBuffer = await imagePackerObj.packBinaryImageToTiffData(bufferInfo, tiffOptions)
+        console.info(TAG,testName,` packBinaryImageToTiffData result is: ${ArrayBuffer.byteLength}`);
+        expect(ArrayBuffer.byteLength >0).assertTrue();
+        done();
+      } catch (error) {
+        console.info(TAG, `failed; error: ${error},${error.code}`, testName);
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_1300
+     * @tc.name       SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_1300
+     * @tc.desc       image - PackingOptionsForTiff,orientation:image.Orientation.LEFT_BOTTOM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_1300', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_1300';
+      const width = 100;
+      const height = 100;
+      const rowBytes = 13;
+      const bufferSize = rowBytes * height;
+      const data: ArrayBuffer = new ArrayBuffer(bufferSize);
+      let bufferInfo: image.BinaryBufferInfo = {
+        size: { width: width, height: height },
+        data: data,
+        bytesPerRow: rowBytes
+      };
+      let tiffOptions: image.PackingOptionsForTiff = {
+        orientation:image.Orientation.LEFT_BOTTOM,
+      };
+      try {
+        const imagePackerObj: image.ImagePacker = image.createImagePacker();
+        let ArrayBuffer = await imagePackerObj.packBinaryImageToTiffData(bufferInfo, tiffOptions)
+        console.info(TAG,testName,` packBinaryImageToTiffData result is: ${ArrayBuffer.byteLength}`);
+        expect(ArrayBuffer.byteLength >0).assertTrue();
+        done();
+      } catch (error) {
+        console.info(TAG, `failed; error: ${error},${error.code}`, testName);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_packBinaryImageToTiffData_Normal_static_0100
+     * @tc.name       SUB_MEDIA_IMAGE_packBinaryImageToTiffData_Normal_static_0100
+     * @tc.desc       cover packBinaryImageToTiffData(bufferInfo)
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_MEDIA_IMAGE_packBinaryImageToTiffData_Normal_static_0100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_packBinaryImageToTiffData_Normal_static_0100';
+      const width = 100;
+      const height = 100;
+      const rowBytes = 13;
+      const bufferSize = rowBytes * height;
+      const data: ArrayBuffer = new ArrayBuffer(bufferSize);
+      let bufferInfo: image.BinaryBufferInfo = {
+        size: { width: width, height: height },
+        data: data,
+        bytesPerRow: rowBytes
+      };
+      try {
+        const imagePackerObj: image.ImagePacker = image.createImagePacker();
+        let ArrayBuffer = await imagePackerObj.packBinaryImageToTiffData(bufferInfo)
+        console.info(TAG,testName,` packBinaryImageToTiffData result is: ${ArrayBuffer.byteLength}`);
+        expect(ArrayBuffer.byteLength >0).assertTrue();
+        done();
+      } catch (error) {
+        console.info(TAG, `failed; error: ${error},${error.code}`, testName);
+        expect().assertFail();
+        done();
+      }
+    })
   })
 }

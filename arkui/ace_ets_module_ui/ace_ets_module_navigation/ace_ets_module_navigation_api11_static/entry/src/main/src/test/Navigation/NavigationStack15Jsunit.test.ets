@@ -14,21 +14,19 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, beforeAll, afterEach, it, expect, Level} from "../../../../hypium/index"
+import { describe, beforeEach, beforeAll, afterEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Driver, Component, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { MessageManager,Callback  } from '../../../ets/MainAbility/common/MessageManager';
+import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import events_emitter from '@ohos.events.emitter';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import inspector from '@ohos.arkui.inspector'
+import inspector from '@ohos.arkui.inspector';
 import common from '@ohos.app.ability.common';
 import { UtilsTest, startAbility } from '../Util.test';
-import {SharedTransitionEffectType,Color} from '@ohos.arkui.component';
+import { SharedTransitionEffectType, Color } from '@ohos.arkui.component';
 import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-
-import { UtilsTest, startAbility } from '../Util.test';
 export default function NavigationStack15Jsunit() {
   describe('NavigationStack15Jsunit', () => {
     beforeAll(async (): Promise<void> => {

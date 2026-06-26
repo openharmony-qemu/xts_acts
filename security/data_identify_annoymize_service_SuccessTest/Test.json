@@ -4,7 +4,7 @@
         "type": "OHJSUnitTest",
         "test-timeout": "180000",
         "shell-timeout": "600000",
-        "bundle-name": "com.edm.acts.normal",
+        "bundle-name": "com.ohos.dlp_xts",
         "module-name": "entry_test",
         "testcase-timeout": "30000"
     },
@@ -13,8 +13,8 @@
             "type": "ShellKit",
             "run-command": [
                 "remount",
-                "mkdir -p /data/app/el2/100/base/com.edm.acts.normal/haps/entry",
-                "mkdir -p /data/app/el2/100/base/com.edm.acts.normal/haps/entry/testinstall",
+                "mkdir -p /data/app/el2/100/base/com.ohos.dlp_xts/haps/entry",
+                "mkdir -p /data/app/el2/100/base/com.ohos.dlp_xts/haps/entry/testinstall",
                 "param set const.product.developmentmode 1",
                 "param set const.bms.allowenterprisebundle true"
             ]

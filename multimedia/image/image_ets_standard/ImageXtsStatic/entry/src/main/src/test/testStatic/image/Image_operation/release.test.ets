@@ -41,11 +41,11 @@ async function releasePromiseTest(done: () => void, testName: string): Promise<v
       expect().assertFail();
       done();
     } else {
-      img?.release().then(() => {
+      img!.release().then(() => {
+        expect(err == null).assertTrue();
         console.info(TAG, 'Succeeded in releasing the image instance.');
         done();
       }).catch((error) => {
-        // let error1 = error as BusinessError
         console.error(TAG, `Failed to release the image instance.code ${error.code},message is ${error.message}`);
         expect().assertFail();
         done();
@@ -70,6 +70,7 @@ async function releaseCallbackTest(done: () => void, testName: string): Promise<
           console.error(TAG, `Failed to release the image instance.code ${err.code},message is ${err.message}`);
           expect().assertFail();
         } else {
+          expect(err == null).assertTrue();
           console.info(TAG, 'Succeeded in releasing the image instance.');
         }
         done();

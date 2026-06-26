@@ -96,7 +96,7 @@ struct blankLessInfoWithKeyTest {
               let key = 'blankLessInfoWithKey';
               try {
                 this.isPageEnd = -1
-                this.controller.loadUrl(this.mServer.getAssetUrl('indexPhoto.html'))
+                this.controller.loadUrl($rawfile('indexPhoto.html'))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
                 console.log(msg, 'first loadUrl finish');
                 let infoOne = this.controller.getBlanklessInfoWithKey(key);
@@ -108,7 +108,7 @@ struct blankLessInfoWithKeyTest {
                 }
 
                 this.isPageEnd = -1
-                this.controller.loadUrl(this.mServer.getAssetUrl('indexPhoto.html'))
+                this.controller.loadUrl($rawfile('indexPhoto.html'))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
                 console.log(msg, 'first loadUrl finish');
                 let infoTwo = this.controller.getBlanklessInfoWithKey(key);
@@ -120,7 +120,7 @@ struct blankLessInfoWithKeyTest {
                 }
 
                 this.isPageEnd = -1
-                this.controller.loadUrl(this.mServer.getAssetUrl('indexPhoto.html'))
+                this.controller.loadUrl($rawfile('indexPhoto.html'))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
                 console.log(msg, 'first loadUrl finish');
                 let infoThree = this.controller.getBlanklessInfoWithKey(key);
@@ -558,11 +558,46 @@ struct blankLessInfoWithKeyTest {
               }
               break;
             }
+            case 'testblankLessInfoWithKey018': {
+              let msg = 'testblankLessInfoWithKey018'
+              try {
+                let infoSet: webview.WebBlanklessErrorCode = this.controller.setBlanklessLoadingWithKey('', true);
+                Utils.emitEvent(infoSet, 148018)
+              } catch (error) {
+                if (Number(error.code) == 801) {
+                  Utils.emitEvent(-2, 148018)
+                } else {
+                  Utils.emitEvent(401, 148018)
+                }
+                console.error(`${msg} ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'testblankLessInfoWithKey019': {
+              let msg = 'testblankLessInfoWithKey019'
+              try {
+                this.controller.setBlanklessLoadingWithKey(null, true);
+              } catch (error) {
+                Utils.emitEvent(401, 148019)
+                console.error(`${msg} ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'testblankLessInfoWithKey020': {
+              let msg = 'testblankLessInfoWithKey020'
+              try {
+                this.controller.setBlanklessLoadingWithKey(undefined, true);
+              } catch (error) {
+                Utils.emitEvent(401, 148020)
+                console.error(`${msg} ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
           }
         })
       }
 
-      Web({ src: this.mServer.getAssetUrl('indexPhoto.html'), controller: this.controller })
+      Web({ src: $rawfile('indexPhoto.html'), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .onLoadIntercept((event) => {
           this.isPageEnd = 0

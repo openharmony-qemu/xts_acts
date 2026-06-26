@@ -21,7 +21,7 @@ struct PanRecognizerExample {
   build() {
     Column() {
       Column() {
-        Text(this.message).key('PanRecognizer')
+        Text(this.message).key('PanRecognizer_PanRecognizer_01')
       }
       .key('PanRecognizer1')
       .margin(5)
@@ -47,7 +47,7 @@ struct PanRecognizerExample {
       })
 
       Column() {
-        Text(this.message).key('PanRecognizer')
+        Text(this.message).key('PanRecognizer_PanRecognizer_02')
       }
       .key('Horizontal')
       .margin(5)
@@ -72,7 +72,7 @@ struct PanRecognizerExample {
       })
 
       Column() {
-        Text(this.message).key('PanRecognizer')
+        Text(this.message).key('PanRecognizer_PanRecognizer_03')
       }
       .key('Left')
       .margin(5)
@@ -95,7 +95,7 @@ struct PanRecognizerExample {
       })
 
       Column() {
-        Text(this.message).key('PanRecognizer')
+        Text(this.message).key('PanRecognizer_PanRecognizer_04')
       }
       .key('Right')
       .margin(5)
@@ -118,7 +118,7 @@ struct PanRecognizerExample {
       })
 
       Column() {
-        Text(this.message).key('PanRecognizer')
+        Text(this.message).key('PanRecognizer_PanRecognizer_05')
       }
       .key('Vertical')
       .margin(5)
@@ -141,7 +141,7 @@ struct PanRecognizerExample {
       })
 
       Column() {
-        Text(this.message).key('PanRecognizer')
+        Text(this.message).key('PanRecognizer_PanRecognizer_06')
       }
       .key('Up')
       .margin(5)
@@ -164,7 +164,7 @@ struct PanRecognizerExample {
       })
 
       Column() {
-        Text(this.message).key('PanRecognizer')
+        Text(this.message).key('PanRecognizer_PanRecognizer_07')
       }
       .key('Down')
       .margin(5)
@@ -187,7 +187,7 @@ struct PanRecognizerExample {
       })
 
       Column() {
-        Text(this.message).key('PanRecognizer')
+        Text(this.message).key('PanRecognizer_PanRecognizer_08')
       }
       .key('None')
       .margin(5)

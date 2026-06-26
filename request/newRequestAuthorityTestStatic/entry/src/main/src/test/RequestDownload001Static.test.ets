@@ -13,16 +13,14 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../hypium/index";
-import request from "@ohos.request";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../hypium/index';
+import request from '@ohos.request';
 import { BusinessError } from '@kit.BasicServicesKit';
 import common from '@ohos.app.ability.common';
 import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import Utils from './Util.test';
-import hilog from '@ohos.hilog';
-
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let baseContext: common.UIAbilityContext | undefined;

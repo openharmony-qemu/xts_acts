@@ -47,6 +47,7 @@
     "MainAbility/pages/Provider/Provider18",
     "MainAbility/pages/Provider/Provider0300",
     "MainAbility/pages/Provider/Provider0270",
+    "MainAbility/pages/Provider/ProviderNullUndefined",
     "MainAbility/pages/Param/Param",
     "MainAbility/pages/Param/ParamChange",
     "MainAbility/pages/Param/ParamAndOnce",

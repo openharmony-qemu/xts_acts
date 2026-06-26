@@ -153,3 +153,13 @@ export function GetMlDsaGenerateOptions(size: number): huks.HuksOptions {
   };
   return huksOptions;
 }
+
+export function GetMlKemGenerateOptions(size: number): huks.HuksOptions {
+  let huksOptions: huks.HuksOptions = {
+    properties: new Array(
+      GenParam(huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM),
+      GenParam(huks.HuksTag.HUKS_TAG_KEY_SIZE, size),
+      GenParam(huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_WRAP | huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_UNWRAP))
+  };
+  return huksOptions;
+}

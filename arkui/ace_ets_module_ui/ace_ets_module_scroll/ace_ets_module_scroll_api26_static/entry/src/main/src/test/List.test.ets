@@ -33,6 +33,7 @@ import arcSwiperBoolean from './ArcSwiperTest/arcSwiperBoolean.test'
 import arcSwiperEffectMode from './ArcSwiperTest/arcSwiperEffectMode.test'
 import gridEnableEditMode from './Grid/gridEnableEditMode.test'
 import gridEditModeChange from './Grid/gridEditModeChange.test'
+import gridEditModeOptions from './Grid/gridEditModeOptions.test'
 import listEnableEditMode from './List/listEnableEditMode.test'
 import listEditModeChange from './List/listEditModeChange.test'
 import LazyColumnLayoutProperties from './LazyColumnLayout/LazyColumnLayoutProperties.test'
@@ -43,6 +44,7 @@ import headerFooterStickyColumn from './LazyColumnLayout/headerFooterStickyColum
 import lazyColumnLayoutModifier from './LazyColumnLayout/lazyColumnLayoutModifier.test'
 import lazyVWaterFlowLayoutModifier from './LazyVWaterFlowLayout/lazyVWaterFlowLayoutModifier.test'
 import lazyVGridLayoutModifier from './LazyVGridLayout/lazyVGridLayoutModifier.test'
+import ScrollScrollBarHeight from './Scroll/scrollScrollBarHeight.test'
 
 export default function testsuite() {
   GridScrollBarWidthTest();
@@ -64,8 +66,10 @@ export default function testsuite() {
   arcSwiperEffectMode();
   gridEnableEditMode();
   gridEditModeChange();
+  gridEditModeOptions();
   listEnableEditMode();
   listEditModeChange();
   headerFooterStickyGrid();
   lazyVGridLayoutModifier();
+  ScrollScrollBarHeight();
 }

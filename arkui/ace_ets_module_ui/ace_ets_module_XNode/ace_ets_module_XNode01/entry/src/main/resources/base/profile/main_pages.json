@@ -75,6 +75,7 @@
         "MainAbility/pages/Graphics/getBlue",
         "MainAbility/pages/Graphics/getRed",
         "MainAbility/pages/Graphics/getGreen",
+        "MainAbility/pages/Graphics/colorLengthMetrics",
         "MainAbility/pages/Graphics/GraphicsApi/Corner",
         "MainAbility/pages/Graphics/GraphicsApi/LengthMetricsUnit",
         "MainAbility/pages/Graphics/GraphicsApi/PercentReference",

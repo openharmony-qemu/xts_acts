@@ -13,25 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  Text,
-  Row,
-  Scroll,
-  ButtonType
-} from '@ohos.arkui.component'
-import {
-  State,
-  Link,
-  PropRef,
-  PropRef
-} from '@ohos.arkui.stateManagement'
+import { Entry, Column, Component, Button, ClickEvent, Text, Row, Scroll, ButtonType } from '@ohos.arkui.component';
+import { State, Link, PropRef, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 @Component
 struct CountDownComponent1{

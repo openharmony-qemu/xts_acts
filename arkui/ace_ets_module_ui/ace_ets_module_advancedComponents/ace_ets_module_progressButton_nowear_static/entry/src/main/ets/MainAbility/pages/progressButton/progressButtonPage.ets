@@ -16,27 +16,8 @@
 
 import { ProgressButton } from '@ohos.arkui.advanced.ProgressButton';
 import { LengthMetrics } from '@ohos.arkui.node';
-import {
-  Entry,
-  Column,
-  Component,
-  TextAlign,
-  Text,
-  Color,
-  Row,
-  ClickEvent,
-  Stack,
-  Alignment,
-  Button,
-  Alignment,
-  Scroll,
-  HorizontalAlign,
-  Margin,
-  Builder,
-  ColumnOptions
-} from '@ohos.arkui.component';
+import { Entry, Column, Component, TextAlign, Text, Color, Row, ClickEvent, Stack, Alignment, Button, Scroll, HorizontalAlign, Margin, Builder, ColumnOptions } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
-
 @Entry
 @Component
 struct Index {

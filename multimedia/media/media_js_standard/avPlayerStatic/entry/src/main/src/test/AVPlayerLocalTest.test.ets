@@ -2105,6 +2105,174 @@ async function testTimedMetaDataListening(src: media.AVFileDescriptor,
     }
   });
 }
+
+async function testGetCurrentTrack(src: media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined, done: () => void) {
+  console.info(`case media source: ${src}`)
+  media.createAVPlayer((err: BusinessError | null, video: media.AVPlayer | undefined) => {
+    if (err != null) {
+      console.error(`case createAVPlayer error, errMessage is ${err.message}`);
+      expect().assertFail();
+      done();
+    } else {
+      if (video) {
+        console.info('case createAVPlayer success');
+        avPlayer = video;
+        avPlayer?.getCurrentTrack(media.MediaType.MEDIA_TYPE_AUD).then((track) => {
+          console.info('case getCurrentTrack AUDIO track: ' + track);
+          expect(track).assertEqual(0);
+        }).catch(mediaTestBase.catchCallback);
+        getCurrentTrackCb(avPlayer!, done);
+        avPlayer!.fdSrc = src;
+        done();
+      } else {
+        console.error(`case createAVPlayer failed`);
+        expect().assertFail();
+        done();
+      }
+    }
+  });
+}
+
+function getCurrentTrackCb(avPlayer: media.AVPlayer | null, done: () => void) {
+  let surfaceID: string = globalThis.value;
+  avPlayer?.onStateChange((state: media.AVPlayerState, reason: media.StateChangeReason) => {
+    switch (state) {
+      case INITIALIZED:
+        if (!avPlayer) {
+          console.info(`avPlayer is null`);
+          break;
+        }
+        console.info(`case INITIALIZED`);
+        expect(avPlayer!!.state).assertEqual(INITIALIZED);
+        avPlayer!!.surfaceId = surfaceID;
+        avPlayer!!.prepare().then(() => {
+          console.info('case prepare success');
+        }).catch(mediaTestBase.catchCallback);
+        break;
+      case PREPARED:
+        console.info('case PREPARED');
+        avPlayer?.getCurrentTrack(media.MediaType.MEDIA_TYPE_AUD).then((track) => {
+          console.info('case getCurrentTrack AUDIO track: ' + track);
+          expect(track).assertEqual(0);
+        }).catch(mediaTestBase.catchCallback);
+
+        avPlayer?.getCurrentTrack(media.MediaType.MEDIA_TYPE_VID).then((track) => {
+          console.info('case getCurrentTrack VIDEO track: ' + track);
+          expect(track).assertEqual(0);
+        }).catch(mediaTestBase.catchCallback);
+
+        avPlayer?.play((err) => {
+          console.info('case play called' + err);
+          if (err != null) {
+            console.error(`case play error, errMessage is ${err!!.message}`);
+            expect().assertFail();
+            done();
+          }
+        });
+        break;
+      case PLAYING:
+        console.info('case PLAYING');
+        avPlayer?.getCurrentTrack(media.MediaType.MEDIA_TYPE_AUD).then((track) => {
+          console.info('case getCurrentTrack AUDIO track in PLAYING: ' + track);
+          expect(track).assertEqual(0);
+        }).catch(mediaTestBase.catchCallback);
+
+        avPlayer?.stop((err) => {
+          console.info('case stop called' + err);
+          if (err != null) {
+            console.error(`case stop error, errMessage is ${err!!.message}`);
+            expect().assertFail();
+            done();
+          }
+        });
+        break;
+      case STOPPED:
+        console.info('case STOPPED');
+        avPlayer?.release();
+        break;
+      case RELEASED:
+        console.info('case RELEASED');
+        avPlayer = null;
+        done();
+        break;
+      case ERROR:
+        expect().assertFail();
+        avPlayer?.release().then(() => {
+        }).catch(mediaTestBase.catchCallback);
+        avPlayer = null;
+        break;
+      default:
+        break;
+    }
+  });
+}
+
+async function testPrivacyType(src: media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined, 
+  done: () => void, type: audio.AudioPrivacyType) {
+  console.info(`case media source: ${src}`)
+  media.createAVPlayer((err: BusinessError | null, video: media.AVPlayer | undefined) => {
+    if (err != null) {
+      console.error(`case createAVPlayer error, errMessage is ${err.message}`);
+      expect().assertFail();
+      done();
+    } else {
+      if (video) {
+        console.info('case createAVPlayer success');
+        avPlayer = video;
+        avPlayer!!.privacyType = type;
+        privacyTypeCb(avPlayer!, done, type);
+        avPlayer!.fdSrc = src;
+        done();
+      } else {
+        console.error(`case createAVPlayer failed`);
+        expect().assertFail();
+        done();
+      }
+    }
+  });
+}
+
+function privacyTypeCb(avPlayer: media.AVPlayer | null, done: () => void, type: audio.AudioPrivacyType) {
+  let surfaceID: string = globalThis.value;
+  avPlayer?.onStateChange((state: media.AVPlayerState, reason: media.StateChangeReason) => {
+    switch (state) {
+      case INITIALIZED:
+        if (!avPlayer) {
+          console.info(`avPlayer is null`);
+          break;
+        }
+        console.info(`case INITIALIZED`);
+        expect(avPlayer!!.state).assertEqual(INITIALIZED);
+        avPlayer!!.surfaceId = surfaceID;
+        console.info(`case set privacyType: ${type}`);
+        avPlayer!!.privacyType = type;
+        avPlayer!!.prepare().then(() => {
+          console.info('case prepare success');
+        }).catch(mediaTestBase.catchCallback);
+        break;
+      case PREPARED:
+        console.info('case PREPARED');
+        console.info(`case avPlayer privacyType: ${avPlayer!!.privacyType}`);
+        expect(avPlayer!!.privacyType).assertEqual(type);
+        avPlayer?.release();
+        break;
+      case RELEASED:
+        console.info('case RELEASED');
+        avPlayer = null;
+        done();
+        break;
+      case ERROR:
+        expect().assertFail();
+        avPlayer?.release().then(() => {
+        }).catch(mediaTestBase.catchCallback);
+        avPlayer = null;
+        break;
+      default:
+        break;
+    }
+  });
+}
+
 export default function AVPlayerLocalTest() {
   describe('AVPlayerLocalTest', () => {
     beforeAll(async () => {
@@ -3158,6 +3326,51 @@ export default function AVPlayerLocalTest() {
         }
     })
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_GETCURRENTTRACK_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_GETCURRENTTRACK_static_0100
+     * @tc.desc   Local Video getCurrentTrack test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_VIDEO_GETCURRENTTRACK_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      expect(fileDescriptor).not().assertNull();
+      if (fileDescriptor) {
+        testGetCurrentTrack(fileDescriptor!, avPlayer, done);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_PRIVACYTYPE_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_PRIVACYTYPE_static_0100
+     * @tc.desc   Test privacyType set to PRIVACY_TYPE_PUBLIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_PRIVACYTYPE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      expect(fileDescriptor).not().assertNull();
+      if (fileDescriptor) {
+        testPrivacyType(fileDescriptor!, avPlayer, done, audio.AudioPrivacyType.PRIVACY_TYPE_PUBLIC);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_PRIVACYTYPE_static_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_PRIVACYTYPE_static_0200
+     * @tc.desc   Test privacyType set to PRIVACY_TYPE_PRIVATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_PRIVACYTYPE_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      expect(fileDescriptor).not().assertNull();
+      if (fileDescriptor) {
+        testPrivacyType(fileDescriptor!, avPlayer, done, audio.AudioPrivacyType.PRIVACY_TYPE_PRIVATE);
+      }
+    });
+
       /**
       * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_TIMEDMETADATA_ON_0100
       * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_TIMEDMETADATA_ON_0100
@@ -3184,18 +3397,19 @@ export default function AVPlayerLocalTest() {
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_STOP_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG,'SUB_MULTIMEDIA_MEDIA_AVPLAYER_STOP_static_0100 begin');
       avPlayer = await media.createAVPlayer();
-      let currentState = avPlayer!.state;
-      console.info(TAG, 'Initial state: ' + currentState);
-      expect(currentState).assertEqual(IDLE);
-      await avPlayer!.stop().then(() => {
-        console.info(TAG, 'stop() should not succeed in IDLE state');
-        expect().assertFail();
-      }).catch((err: Error) => {
-        console.info(TAG, 'stop() failed with error code: ' + err.code);
-        expect(err.code).assertEqual(5400102);
-      });
-      console.info(TAG,'SUB_MULTIMEDIA_MEDIA_AVPLAYER_STOP_static_0100 end');
-      done();
+      try {
+        let currentState = avPlayer!.state;
+        console.info(TAG, 'Initial state: ' + currentState);
+        expect(currentState).assertEqual(IDLE);
+        await avPlayer!.stop().then(() => {
+          console.info(TAG, 'stop() should not succeed in IDLE state');
+          expect().assertFail();
+        });
+      } catch (error) {
+        console.info(TAG, 'stop() failed with error code: ' + error.code + error.message);
+        expect(error.code).assertEqual(5400102);
+        done();
+      }
     });
 
     /**
@@ -3237,17 +3451,17 @@ export default function AVPlayerLocalTest() {
             });
             break;
           case RELEASED:
-            console.info('case PREPARED');
-            avPlayer!.reset().then(() => {
-              console.info(TAG, testName + 'Reset Succeeded')
-              expect().assertFail();
+            console.info('case RELEASED');
+            try {
+              avPlayer!.reset().then(() => {
+                console.info(TAG, testName + 'Reset Succeeded')
+                expect().assertFail();
+              });
+            } catch (error) {
+              console.info(TAG, 'stop() failed with error code: ' + error.code + error.message);
+              expect(error.code).assertEqual(5400102);
               done();
-            }).catch((err: Error) => {
-              let businessError = err as BusinessError;
-              console.error(TAG, testName + 'Reset failed, error code: ' + businessError.message);
-              expect(businessError.code).assertEqual(5400102);
-              done();
-            });
+            }
             break;
         }
       });

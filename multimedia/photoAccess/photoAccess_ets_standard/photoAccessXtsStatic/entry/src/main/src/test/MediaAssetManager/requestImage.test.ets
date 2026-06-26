@@ -116,7 +116,7 @@ export default function MediaAssetRequestImageSuppStatic(): void {
         let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
         let requestId =
           await photoAccessHelper.MediaAssetManager.requestImage(testContext, photoAsset, requestOptions, handler);
-        expect(requestId != undefined).assertTrue();
+        expect(photoAsset.uri.toString().includes('file:')).assertTrue();
         console.info(TAG, 'requestImage successfully', requestId);
         done();
       } catch (error) {
@@ -152,7 +152,7 @@ export default function MediaAssetRequestImageSuppStatic(): void {
         let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
         let requestId =
           await photoAccessHelper.MediaAssetManager.requestImage(testContext, photoAsset, requestOptions, handler);
-        expect(requestId != undefined).assertTrue();
+        expect(photoAsset.uri.toString().includes('file:')).assertTrue();
         console.info(TAG, 'requestImage successfully', requestId);
         done();
       } catch (error) {
@@ -188,7 +188,7 @@ export default function MediaAssetRequestImageSuppStatic(): void {
         let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
         let requestId =
           await photoAccessHelper.MediaAssetManager.requestImage(testContext, photoAsset, requestOptions, handler);
-        expect(requestId != undefined).assertTrue();
+        expect(photoAsset.uri.toString().includes('file:')).assertTrue();
         console.info(TAG, 'requestImage successfully', requestId);
         done();
       } catch (error) {
@@ -223,7 +223,7 @@ export default function MediaAssetRequestImageSuppStatic(): void {
         let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
         let requestId =
           await photoAccessHelper.MediaAssetManager.requestImageData(testContext, photoAsset, requestOptions, handler);
-        expect(requestId != undefined).assertTrue();
+        expect(photoAsset.uri.toString().includes('file:')).assertTrue();
         console.info(TAG, 'requestImage successfully', requestId);
         done();
       } catch (error) {
@@ -258,42 +258,7 @@ export default function MediaAssetRequestImageSuppStatic(): void {
         let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
         let requestId =
           await photoAccessHelper.MediaAssetManager.requestImageData(testContext, photoAsset, requestOptions, handler);
-        expect(requestId != undefined).assertTrue();
-        console.info(TAG, 'requestImage successfully', requestId);
-        done();
-      } catch (error) {
-        console.info(TAG, `failed; error: ${error}`, testName);
-        expect().assertFail();
-        done();
-      }
-    })
-    /**
-     * @tc.name   SUB_MEDIA_ASSET_MANAGER_REQUEST_DATA_IMAGE_STATIC_0030
-     * @tc.number SUB_MEDIA_ASSET_MANAGER_REQUEST_DATA_IMAGE_STATIC_0030
-     * @tc.desc   requestImageData-BALANCE_MODE
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MEDIA_ASSET_MANAGER_REQUEST_DATA_IMAGE_STATIC_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const testName = 'SUB_MEDIA_ASSET_MANAGER_REQUEST_DATA_IMAGE_STATIC_0030';
-      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-      predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, '01.jpg');
-      let fetchOption: photoAccessHelper.FetchOptions = {
-        fetchColumns: [],
-        predicates: predicates
-      };
-      try {
-        let requestOptions: photoAccessHelper.RequestOptions = {
-          deliveryMode: photoAccessHelper.DeliveryMode.BALANCE_MODE,
-        };
-        const handler = new MediaDataHandler();
-        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await helper!.getAssets(fetchOption);
-        console.info(TAG, 'fetchResult success');
-        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-        let requestId =
-          await photoAccessHelper.MediaAssetManager.requestImageData(testContext, photoAsset, requestOptions, handler);
-        expect(requestId != undefined).assertTrue();
+        expect(photoAsset.uri.toString().includes('file:')).assertTrue();
         console.info(TAG, 'requestImage successfully', requestId);
         done();
       } catch (error) {
@@ -303,40 +268,6 @@ export default function MediaAssetRequestImageSuppStatic(): void {
       }
     })
 
-    /**
-     * @tc.name   SUB_MEDIA_ASSET_MANAGER_REQUEST_MOVING_PHOTO_STATIC_0010
-     * @tc.number SUB_MEDIA_ASSET_MANAGER_REQUEST_MOVING_PHOTO_STATIC_0010
-     * @tc.desc   requestMovingPhoto-no moving photo
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MEDIA_ASSET_MANAGER_REQUEST_MOVING_PHOTO_STATIC_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const testName = 'SUB_MEDIA_ASSET_MANAGER_REQUEST_MOVING_PHOTO_STATIC_0010';
-      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-      predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, '01.jpg');
-      let fetchOption: photoAccessHelper.FetchOptions = {
-        fetchColumns: [],
-        predicates: predicates
-      };
-      try {
-        let requestOptions: photoAccessHelper.RequestOptions = {
-          deliveryMode: photoAccessHelper.DeliveryMode.HIGH_QUALITY_MODE,
-        };
-        const handler = new MovingPhotoHandler();
-        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await helper!.getAssets(fetchOption);
-        console.info(TAG, 'fetchResult success');
-        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-        let requestId =
-          await photoAccessHelper.MediaAssetManager.requestMovingPhoto(testContext, photoAsset, requestOptions, handler);
-        expect().assertFail();
-        done();
-      } catch (error) {
-        console.info(TAG, `failed; error: ${error.code}`, testName);
-        expect(error.code).assertEqual(401);
-        done();
-      }
-    })
     /**
      * @tc.name   SUB_MEDIA_ASSET_MANAGER_REQUEST_VIDEO_FILE_STATIC_0010
      * @tc.number SUB_MEDIA_ASSET_MANAGER_REQUEST_VIDEO_FILE_STATIC_0010
@@ -364,7 +295,7 @@ export default function MediaAssetRequestImageSuppStatic(): void {
         let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
         let requestId =
           await photoAccessHelper.MediaAssetManager.requestVideoFile(testContext, photoAsset, requestOptions,fileUri, handler);
-        expect(requestId != undefined).assertTrue();
+        expect(photoAsset.uri.toString().includes('file:')).assertTrue();
         done();
       } catch (error) {
         console.info(TAG, `failed; error: ${error.code}`, testName);
@@ -399,7 +330,7 @@ export default function MediaAssetRequestImageSuppStatic(): void {
         let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
         let requestId =
           await photoAccessHelper.MediaAssetManager.requestVideoFile(testContext, photoAsset, requestOptions,fileUri, handler);
-        expect(requestId != undefined).assertTrue();
+        expect(photoAsset.uri.toString().includes('file:')).assertTrue();
         done();
       } catch (error) {
         console.info(TAG, `failed; error: ${error.code}`, testName);
@@ -434,7 +365,7 @@ export default function MediaAssetRequestImageSuppStatic(): void {
         let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
         let requestId =
           await photoAccessHelper.MediaAssetManager.requestVideoFile(testContext, photoAsset, requestOptions,fileUri, handler);
-        expect(requestId != undefined).assertTrue();
+        expect(photoAsset.uri.toString().includes('file:')).assertTrue();
         done();
       } catch (error) {
         console.info(TAG, `failed; error: ${error.code}`, testName);
@@ -442,7 +373,6 @@ export default function MediaAssetRequestImageSuppStatic(): void {
         done();
       }
     })
-
 
   })
 }

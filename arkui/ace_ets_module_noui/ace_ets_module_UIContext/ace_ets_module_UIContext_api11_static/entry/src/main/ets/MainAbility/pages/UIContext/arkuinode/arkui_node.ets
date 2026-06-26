@@ -16,13 +16,8 @@
 
 import { UIContext } from '@ohos.arkui.UIContext';
 import { NodeController, BuilderNode, Size, FrameNode } from '@ohos.arkui.node';
-import {
-  Entry, Component,
-  Column, ColumnOptions, Row, Builder, TouchEvent,Color, WrappedBuilder, NodeContainer, CustomBuilderT,
-  Text, Button, FontWeight, ClickEvent, Margin, WidthBreakpoint, HeightBreakpoint, CustomBuilderT
-} from '@ohos.arkui.component'
+import { Entry, Component, Column, ColumnOptions, Row, Builder, TouchEvent, Color, WrappedBuilder, NodeContainer, CustomBuilderT, Text, Button, FontWeight, ClickEvent, Margin, WidthBreakpoint, HeightBreakpoint } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
-
 class Params {
   text: string = "this is a text"
 }

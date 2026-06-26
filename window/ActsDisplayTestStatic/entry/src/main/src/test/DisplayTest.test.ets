@@ -64,7 +64,7 @@ async function getPermision(): Promise<void> {
             hilog.info(domain, tag, 'requestPermission StdProcess.tid():' + StdProcess.tid());
         });
     } catch (err) {
-        console.error('capture requestPermissionsFromUser failed: ' + JSON.stringify(err));
+        console.error('capture requestPermissionsFromUser failed: ' + err.code);
     }
 }
 
@@ -73,7 +73,7 @@ async function clickButtonDriver(){
     let driver: Driver = Driver.create();
     console.error(`come in Driver create`);
     let buttonOne = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 10000);
-    console.error(`buttonOne is ${JSON.stringify(buttonOne)}`);
+    console.error(`buttonOne is ${buttonOne}`);
     if(buttonOne!=null){
         await buttonOne.click();
     }
@@ -113,10 +113,10 @@ async function terminateAbility(caseName: string) {
     pageContext.terminateSelf().then(() => {
       hilog.info(domain, tag,`${caseName} terminateSelf success`);
     }).catch((err: Error):PromiseLike<void>|undefined => {
-      hilog.error(domain, tag,`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
+      hilog.error(domain, tag,`${caseName} terminateSelf fail, err: ${err.code}, , message: ${err.message}`);
     });
   } catch (e) {
-    hilog.error(domain, tag,`${caseName} pageContext.terminateSelf fail, err: ${JSON.stringify(e)}`);
+    hilog.error(domain, tag,`${caseName} pageContext.terminateSelf fail, err: ${e.code}, , message: ${e.message}`);
   }
   await Utils.msSleep(1000)
 }
@@ -212,7 +212,7 @@ export default function DisplayTest():void {
                 // }
             } catch (err) {
                 
-                hilog.info(domain, tag, 'jsUnittest beforeAll getDisplayCapability failed ' + err.code);
+                hilog.info(domain, tag, 'jsUnittest beforeAll getDisplayCapability failed, code: ' + err.code + 'message:'+ err.message);
                 hilog.info(domain, tag, 'jsUnittest beforeAll code =' + code);
                 if(err.code == 801){
                     code = 801;
@@ -271,7 +271,7 @@ export default function DisplayTest():void {
                 expect(data[0].yDPI != null).assertTrue();
                 done();
             }).catch((err:Error) :PromiseLike<void>|undefined => {
-                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to obtain all the display objects. Code: ' + JSON.stringify(err));
+                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to obtain all the display objects. Code: ' + err.code + ', message:' + err.message);
                 expect().assertFail();
                 done();
             });
@@ -305,7 +305,7 @@ export default function DisplayTest():void {
             expect(dsp.yDPI !== null).assertTrue();
             done();
         } catch (err) {
-            hilog.error(0x0000, '[ANI]','getDefaultDisplaySyncTest1 error ' + JSON.stringify(err));
+            hilog.error(0x0000, '[ANI]','getDefaultDisplaySyncTest1 error ' + err.code + ', message:' + err.message);
             expect().assertFail();
             done();
         }
@@ -371,7 +371,7 @@ export default function DisplayTest():void {
         }
         catch (err) {
             
-            hilog.info(domain, tag, caseName + 'error in createVirtualScreen or destroyVirtualScreen, err : ' + JSON.stringify(err));
+            hilog.info(domain, tag, caseName + 'error in createVirtualScreen or destroyVirtualScreen, err : ' + err.code + ', message:' + err.message);
             if (err.code === 801) {
                 hilog.info(domain, tag, caseName + 'device not support createVirtualScreen');
             }
@@ -395,11 +395,11 @@ export default function DisplayTest():void {
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
             display.getAllDisplays((err: BusinessError<void> | null, data: Array<display.Display> | undefined): void => {
                 if (err && err.code) {
-                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to obtain all the display objects. Code: ' + JSON.stringify(err));
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to obtain all the display objects. Code: ' + err.code + ', message:' + err.message);
                     try {
                         expect().assertFail();
                     } catch (error) {
-                        hilog.info(0x0000, '[ANI]',`display.getAllDisplays catch error: ${JSON.stringify(error)}`);
+                        hilog.info(0x0000, '[ANI]',`display.getAllDisplays catch error: ${error.code}, message: ${err.message}`);
                     }
                     done();
                     return;
@@ -443,14 +443,14 @@ export default function DisplayTest():void {
             try {
                 display.onFoldStatusChange(callback);
             } catch (exception) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + exception.code + ', message:' + exception.message);
                 expect().assertFail();
                 done();
             }
             try {
                 display.offFoldStatusChange(callback);
             } catch (exception) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + exception.code + ', message:' + exception.message);
                 expect().assertFail();
                 done();
             }
@@ -458,7 +458,7 @@ export default function DisplayTest():void {
                 display.offFoldStatusChange();
                 done();
             } catch (exception) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + exception.code + ', message:' + exception.message);
                 expect().assertFail();
                 done();
             }
@@ -479,7 +479,7 @@ export default function DisplayTest():void {
                 display.offFoldStatusChange();
                 done();
             } catch (exception) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + exception.code + ', message:' + exception.message);
                 expect().assertFail();
                 done();
             }
@@ -502,14 +502,14 @@ export default function DisplayTest():void {
             try {
                 display.onFoldDisplayModeChange(callback);
             } catch (exception) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + exception.code + ', message:' + exception.message);
                 expect().assertFail();
                 done();
             }
             try {
                 display.offFoldDisplayModeChange(callback);
             } catch (exception) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + exception.code + ', message:' + exception.message);
                 expect().assertFail();
                 done();
             }
@@ -517,7 +517,7 @@ export default function DisplayTest():void {
                 display.offFoldDisplayModeChange();
                 done();
             } catch (exception) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + exception.code + ', message:' + exception.message);
                 expect().assertFail();
                 done();
             }
@@ -553,7 +553,7 @@ export default function DisplayTest():void {
                     done();
                 }
             } catch (err) {
-                hilog.error(0x0000, '[ANI]',tag + 'getCurrentFoldCreaseRegion failed, err : ' + JSON.stringify(err))
+                hilog.error(0x0000, '[ANI]',tag + 'getCurrentFoldCreaseRegion failed, err : ' + err.code + ', message:' + err.message)
                 expect().assertFail();
                 done();
             }
@@ -581,7 +581,7 @@ export default function DisplayTest():void {
                 hilog.info(0x0000, '[ANI]',`${caseName} CutoutInfo.waterfallDisplayAreaRects.bottom: ${info.waterfallDisplayAreaRects.bottom}`);
                 done();
             } catch (error) {
-                hilog.error(0x0000, '[ANI]',`jsunittets ${caseName} fail to get display available info :` + error);
+                hilog.error(0x0000, '[ANI]',`jsunittets ${caseName} fail to get display available info :` + error.code + ', message:' + error.message);
                 expect().assertFail();
                 done();
             }
@@ -627,7 +627,7 @@ export default function DisplayTest():void {
                 expect(data!.waterfallDisplayAreaRects.bottom.height).assertLargerOrEqual(0);
                 done();
                 if (err && err.code) {
-                    hilog.error(0x0000, '[ANI]',msgStr + 'failed in getting cutoutInfo. cause: ' + JSON.stringify(err));
+                    hilog.error(0x0000, '[ANI]',msgStr + 'failed in getting cutoutInfo. cause: ' + err.code + ', message:' + err.message);
                     expect(false).assertTrue();
                     done()
                 } else {
@@ -678,7 +678,7 @@ export default function DisplayTest():void {
                 expect(data!.waterfallDisplayAreaRects.bottom.height).assertLargerOrEqual(0);
                 done();
             }).catch((error: Error) =>{
-                hilog.error(0x0000, '[ANI]',msgStr + 'failed in getting cutoutInfo. cause: ' + JSON.stringify(error));
+                hilog.error(0x0000, '[ANI]',msgStr + 'failed in getting cutoutInfo. cause: ' + error.code + ', message:' + error.message);
                 expect(false).assertTrue();
                 done()
             });
@@ -732,7 +732,7 @@ export default function DisplayTest():void {
                 expect(display.FoldDisplayMode.FOLD_DISPLAY_MODE_COORDINATION).assertEqual(4);
                 done();
             } catch (err) {
-                hilog.error(0x0000, '[ANI]',tag + 'getFoldDisplayMode failed, err : ' + JSON.stringify(err))
+                hilog.error(0x0000, '[ANI]',tag + 'getFoldDisplayMode failed, err : ' + err.code + ', message:' + err.message)
                 expect().assertFail();
                 done();
             }
@@ -766,7 +766,7 @@ export default function DisplayTest():void {
                 expect(dsp.yDPI != null).assertTrue();
                 done();
             } catch (err) {
-                hilog.error(0x0000, '[ANI]','getDisplayByIdSyncTest1 error ' + JSON.stringify(err));
+                hilog.error(0x0000, '[ANI]','getDisplayByIdSyncTest1 error ' + err.code + ', message:' + err.message);
                 expect().assertFail();
                 done();
             }
@@ -821,7 +821,7 @@ export default function DisplayTest():void {
             try {
                 display.onAdd(callback);
             } catch (exception) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + exception.code + ', message:' + exception.message);
                 expect().assertFail();
                 done();
 
@@ -829,7 +829,7 @@ export default function DisplayTest():void {
             try {
                 display.offAdd();
             } catch (exception) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + exception.code + ', message:' + exception.message);
                 expect().assertFail();
                 done();
             }
@@ -837,7 +837,7 @@ export default function DisplayTest():void {
                 display.offAdd();
                 done();
             } catch (exception) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + exception.code + ', message:' + exception.message);
                 expect().assertFail();
                 done();
             }
@@ -860,14 +860,14 @@ export default function DisplayTest():void {
             try {
                 display.onChange(callback);
             } catch (exception) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + exception.code + ', message:' + exception.message);
                 expect().assertFail();
                 done();
             }
             try {
                 display.offChange();
             } catch (exception) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + exception.code + ', message:' + exception.message);
                 expect().assertFail();
                 done();
             }
@@ -876,7 +876,7 @@ export default function DisplayTest():void {
                 done();
 
             } catch (exception) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + exception.code + ', message:' + exception.message);
                 expect().assertFail();
                 done();
             }
@@ -899,14 +899,14 @@ export default function DisplayTest():void {
             try {
                 display.onRemove(callback);
             } catch (exception) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + exception.code + ', message:' + exception.message);
                 expect().assertFail();
                 done();
             }
             try {
                 display.offRemove();
             } catch (exception) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + exception.code + ', message:' + exception.message);
                 expect().assertFail();
                 done();
             }
@@ -914,7 +914,7 @@ export default function DisplayTest():void {
                 display.offRemove();
                 done();
             } catch (exception) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + exception.code + ', message:' + exception.message);
                 expect().assertFail();
                 done();
             }
@@ -934,7 +934,7 @@ export default function DisplayTest():void {
                 display.isFoldable();
                 done();
             } catch (err) {
-                hilog.info(0x0000, '[ANI]',tag + 'get isFoldable failed, err : ' + JSON.stringify(err))
+                hilog.info(0x0000, '[ANI]',tag + 'get isFoldable failed, err : ' + err.code + ', message:' + err.message)
                 expect().assertFail();
                 done();
             }
@@ -957,7 +957,7 @@ export default function DisplayTest():void {
                 expect(foldStatus).assertLargerOrEqual(0);
                 done();
             } catch (err) {
-                hilog.error(0x0000, '[ANI]',tag + 'getFoldStatus failed, err : ' + JSON.stringify(err))
+                hilog.error(0x0000, '[ANI]',tag + 'getFoldStatus failed, err : ' + err.code + ', message:' + err.message)
                 expect().assertFail();
                 done();
             }
@@ -986,7 +986,7 @@ export default function DisplayTest():void {
                 display.onFoldAngleChange(callback);
             }
             catch (exception) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + exception.code + ', message:' + exception.message);
                 expect().assertFail();
                 done();
             }
@@ -995,7 +995,7 @@ export default function DisplayTest():void {
                 done();
             }
             catch (exception) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + exception.code + ', message:' + exception.message);
                 expect().assertFail();
                 done();
             }
@@ -1023,7 +1023,7 @@ export default function DisplayTest():void {
                 display.onFoldAngleChange(callback);
             }
             catch (exception) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + exception.code + ', message:' + exception.message);
                 expect().assertFail();
                 done();
             }
@@ -1031,7 +1031,7 @@ export default function DisplayTest():void {
                 display.offFoldAngleChange(callback);
             }
             catch (exception) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + exception.code + ', message:' + exception.message);
                 expect().assertFail();
                 done();
             }
@@ -1040,7 +1040,7 @@ export default function DisplayTest():void {
                 done();
             }
             catch (exception) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + exception.code + ', message:' + exception.message);
                 expect().assertFail();
                 done();
             }
@@ -1062,7 +1062,7 @@ export default function DisplayTest():void {
                 done();
             }
             catch (exception) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + exception.code + ', message:' + exception.message);
                 expect().assertFail();
                 done();
             }
@@ -1087,7 +1087,7 @@ export default function DisplayTest():void {
                 display.onCaptureStatusChange(callback);
             }
             catch (exception) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + exception.code + ', message:' + exception.message);
                 expect().assertFail();
                 done();
             }
@@ -1096,7 +1096,7 @@ export default function DisplayTest():void {
                 done();
             }
             catch (exception) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + exception.code + ', message:' + exception.message);
                 expect().assertFail();
                 done();
             }
@@ -1120,7 +1120,7 @@ export default function DisplayTest():void {
                 display.onCaptureStatusChange(callback);
             }
             catch (exception) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + exception.code + ', message:' + exception.message);
                 expect().assertFail();
                 done();
             }
@@ -1128,7 +1128,7 @@ export default function DisplayTest():void {
                 display.offCaptureStatusChange();
             }
             catch (exception) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + exception.code + ', message:' + exception.message);
                 expect().assertFail();
                 done();
             }
@@ -1137,7 +1137,7 @@ export default function DisplayTest():void {
                 done();
             }
             catch (exception) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + exception.code + ', message:' + exception.message);
                 expect().assertFail();
                 done();
             }
@@ -1159,7 +1159,7 @@ export default function DisplayTest():void {
                 done();
             }
             catch (exception) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + exception.code + ', message:' + exception.message);
                 expect().assertFail();
                 done();
             }
@@ -1183,7 +1183,7 @@ export default function DisplayTest():void {
                 done();
             }
             catch (exception) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + exception.code + ', message:' + exception.message);
                 expect().assertFail();
                 done();
             }
@@ -1223,7 +1223,7 @@ export default function DisplayTest():void {
                 hilog.info(domain, tag, msgStr + 'Success in destroyVirtualScreen');
                 done();
             } catch (exception) {
-                hilog.error(domain, tag, msgStr + 'Failed. Code: ' + exception.code);
+                hilog.error(domain, tag, msgStr + 'Failed. Code: ' + exception.code + ', message:' + exception.message);
                 expect().assertFail();
                 done();
             }
@@ -1264,7 +1264,7 @@ export default function DisplayTest():void {
                 hilog.info(domain, tag, msgStr + 'Success in destroyVirtualScreen');
                 done();
             } catch (exception) {
-                hilog.error(domain, tag, msgStr + 'Failed. Code: ' + exception.code);
+                hilog.error(domain, tag, msgStr + 'Failed. Code: ' + exception.code + ', message:' + exception.message);
                 expect().assertFail();
                 done();
             }
@@ -1293,7 +1293,7 @@ export default function DisplayTest():void {
                 expect().assertFail();
                 done();
             } catch (error) {
-                hilog.error(domain, tag, msgStr + 'Failed. Code: ' + error.code);
+                hilog.error(domain, tag, msgStr + 'Failed. Code: ' + error.code + ', message:' + error.message);
                 expect(error.code).assertEqual(1400004);
                 done();
             }
@@ -1354,7 +1354,7 @@ export default function DisplayTest():void {
                 done();
             } catch (err) {
                 
-                hilog.info(domain, tag, caseName + 'error in createVirtualScreen or destroyVirtualScreen, err : ' + err.code);
+                hilog.info(domain, tag, caseName + 'error in createVirtualScreen or destroyVirtualScreen, err : ' + err.code + ', message:' + err.message);
                 if (err.code === 801) {
                     hilog.info(domain, tag, caseName + 'device not support createVirtualScreen');
                 }
@@ -1379,7 +1379,7 @@ export default function DisplayTest():void {
                 expect(6).assertEqual(display.DisplayState.STATE_ON_SUSPEND);
                 done();
             } catch (err) {
-                hilog.error(0x0000, '[ANI]','test enum value of windowDisplayState error ' + JSON.stringify(err));
+                hilog.error(0x0000, '[ANI]','test enum value of windowDisplayState error ' + err.code + ', message:' + err.message);
                 expect().assertFail();
                 done();
             }
@@ -1527,7 +1527,7 @@ export default function DisplayTest():void {
                         done();
                     });
                 }).catch((err: Error):PromiseLike<void>|undefined => {
-                    hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                    hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + err.code + ', message:' + err.message);
                     expect(false).assertTrue();
                     done();
                 });
@@ -1996,7 +1996,7 @@ export default function DisplayTest():void {
             done();
           }
         } catch (e) {
-          hilog.info(0x0000, '[ANI]',`${caseName} Failed.err:${JSON.stringify(e)}`);
+          hilog.info(0x0000, '[ANI]',`${caseName} Failed.err:${e.code}, message:${e.message}`);
           expect().assertFail();
           done()
         }
@@ -2018,7 +2018,7 @@ export default function DisplayTest():void {
           expect(display.ScreenShape.ROUND).assertEqual(1)
           done();
         } catch (error) {
-          hilog.info(0x0000, '[ANI]',`jsunittets ${caseName} fail to test_ScreenShape, cause:` + error);
+          hilog.info(0x0000, '[ANI]',`jsunittets ${caseName} fail to test_ScreenShape, cause:` + error.code + ', message:' + error.message);
           expect().assertFail();
           done();
         }
@@ -2152,13 +2152,13 @@ export default function DisplayTest():void {
                     expect(false).assertTrue();
                     done();
                 }).catch((err: Error) :PromiseLike<void>|undefined=> {
-                    hilog.info(domain, tag,caseName + 'failed to create the virtual screen, err : ' + JSON.stringify(err));
+                    hilog.info(domain, tag,caseName + 'failed to create the virtual screen, err : ' + err.code + ', message:' + err.message);
                     expect(err.code == 1400001).assertTrue();
                     done();
                 })
             } catch (err) {
                 
-                hilog.info(domain, tag,caseName + 'error in createVirtualScreen, err : ' + JSON.stringify(err));
+                hilog.info(domain, tag,caseName + 'error in createVirtualScreen, err : ' + err.code + ', message:' + err.message);
                 if (err.code != 801) {
                     expect(false).assertTrue();
                 }
@@ -2189,14 +2189,14 @@ export default function DisplayTest():void {
                         hilog.info(domain, tag,caseName + 'succeeded in destroyVirtualScreen');
                         done();
                     }).catch((err: Error):PromiseLike<void>|undefined => {
-                        hilog.info(domain, tag,caseName + 'failed to destroyVirtualScreen, err : ' + JSON.stringify(err));
+                        hilog.info(domain, tag,caseName + 'failed to destroyVirtualScreen, err : ' + err.code + ', message:' + err.message);
                         expect(false).assertTrue();
                         done();
                     })
                 })
             } catch (err) {
                 
-                hilog.info(domain, tag,caseName + 'error in createVirtualScreen, err : ' + JSON.stringify(err));
+                hilog.info(domain, tag,caseName + 'error in createVirtualScreen, err : ' + err.code + ', message:' + err.message);
                 expect(err.code == 801).assertTrue();
                 done();
             }
@@ -2217,13 +2217,13 @@ export default function DisplayTest():void {
                     expect(false).assertTrue();
                     done();
                 }).catch((err: Error):PromiseLike<void>|undefined => {
-                    hilog.info(domain, tag,caseName + 'failed to destroyVirtualScreen, err : ' + JSON.stringify(err));
+                    hilog.info(domain, tag,caseName + 'failed to destroyVirtualScreen, err : ' + err.code + ', message:' + err.message);
                      expect(err.code).assertTrue();
                     done();
                 })
             } catch (err) {
                 
-                hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
+                hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + err.code + ', message:' + err.message);
                 if (err.code === 801) {
                     done();
                 } else {
@@ -2270,13 +2270,13 @@ export default function DisplayTest():void {
                     })
                     
                 }).catch((err: Error):PromiseLike<void>|undefined => {
-                    hilog.info(domain, tag,caseName + 'failed to createVirtualScreen, err : ' + JSON.stringify(err));
+                    hilog.info(domain, tag,caseName + 'failed to createVirtualScreen, err : ' + err.code + ', message:' + err.message);
                     expect(false).assertTrue();
                     done();
                 })
             } catch (err) {
                 
-                hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
+                hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + err.code + ', message:' + err.message);
                 expect(err.code == 801);
                 done();
             }
@@ -2298,13 +2298,13 @@ export default function DisplayTest():void {
                     expect(false).assertTrue();
                     done();
                 }).catch((err: Error):PromiseLike<void>|undefined => {
-                     hilog.info(domain, tag,caseName + 'failed to setVirtualScreenSurface, err : ' + JSON.stringify(err));
+                     hilog.info(domain, tag,caseName + 'failed to setVirtualScreenSurface, err : ' + err.code + ', message:' + err.message);
                      expect(false).assertTrue();
                      done();
                  })
             } catch (err) {
                 
-                hilog.info(domain, tag,caseName + 'error in setVirtualScreenSurface, err : ' + JSON.stringify(err));
+                hilog.info(domain, tag,caseName + 'error in setVirtualScreenSurface, err : ' + err.code + ', message:' + err.message);
                 if (err.code === 801) {
                     done();
                 } else {
@@ -2338,13 +2338,13 @@ export default function DisplayTest():void {
                     expect(false).assertTrue();
                     done();
                 }).catch((err: Error):PromiseLike<void>|undefined => {
-                     hilog.info(domain, tag,caseName + 'failed to setVirtualScreenSurface, err : ' + JSON.stringify(err));
+                     hilog.info(domain, tag,caseName + 'failed to setVirtualScreenSurface, err : ' + err.code + ', message:' + err.message);
                      expect(err.code == 401).assertTrue();
                      done();
                  })
             } catch (err) {
                 
-                hilog.info(domain, tag,caseName + 'error in setVirtualScreenSurface, err : ' + JSON.stringify(err));
+                hilog.info(domain, tag,caseName + 'error in setVirtualScreenSurface, err : ' + err.code + ', message:' + err.message);
                 if(err.code == 801){
                     expect(err.code == 801).assertTrue();
                     done();
@@ -2371,13 +2371,13 @@ export default function DisplayTest():void {
                     expect(false).assertTrue();
                     done();
                 }).catch((err: Error) :PromiseLike<void>|undefined => {
-                    hilog.info(domain, tag,caseName + 'Error in makeUnique, err: ' + JSON.stringify(err));
+                    hilog.info(domain, tag,caseName + 'Error in makeUnique, err: ' + err.code + ', message:' + err.message);
                     expect(false).assertTrue();
                     done();
                 })
             } catch (err) {
                 
-                hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
+                hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + err.code + ', message:' + err.message);
                 if (err.code === 801) {
                     done();
                 } else {
@@ -2414,7 +2414,7 @@ export default function DisplayTest():void {
                     expect(false).assertTrue();
                     done();
                 }).catch((err: Error) :PromiseLike<void>|undefined=> {
-                    hilog.info(domain, tag,caseName + 'Failed to makeUnique, err: ' + JSON.stringify(err));
+                    hilog.info(domain, tag,caseName + 'Failed to makeUnique, err: ' + err.code + ', message:' + err.message);
                     if (!isSyscapSessionManagerSupported) {
                         expect(err.code).assertEqual(801)
                         done();
@@ -2425,7 +2425,7 @@ export default function DisplayTest():void {
                 })
             } catch (err) {
                 
-                hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
+                hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + err.code + ', message:' + err.message);
                 expect(err.code == 801);
                 done();
             }
@@ -2469,7 +2469,7 @@ export default function DisplayTest():void {
                             done();
                         })
                     }).catch((err: Error):PromiseLike<void>|undefined => {
-                        hilog.info(domain, tag,caseName +'Failed to save screenshot. Code: ' + JSON.stringify(err));
+                        hilog.info(domain, tag,caseName +'Failed to save screenshot. Code: ' + err.code + ', message:' + err.message);
                         if(err.code == 801){
                             windowClass.setWindowPrivacyMode(false);
                             done();
@@ -2486,7 +2486,7 @@ export default function DisplayTest():void {
 
             } catch (err) {
                 
-                hilog.info(domain, tag,caseName + ': fail:'+ err + ' '+err.code);
+                hilog.info(domain, tag,caseName + ': fail:'+ err + ' '+err.code + ', message:' + err.message);
                 expect(false).assertTrue();
                 done();
             }
@@ -2517,7 +2517,7 @@ export default function DisplayTest():void {
                 done();
             } catch (e) {
                 
-                hilog.error(domain, tag,`${caseName} Failed. err: ${JSON.stringify(e)}`);
+                hilog.error(domain, tag,`${caseName} Failed. err: ${e.code}, message:${e.message}`);
                 expect(e.code).assertEqual(1400004);
                 expect(e.message!=null).assertTrue();
                 done()
@@ -2546,7 +2546,7 @@ export default function DisplayTest():void {
                 done();
             } catch (e) {
                 
-                hilog.error(domain, tag,`${caseName} Failed. err: ${JSON.stringify(e)}`);
+                hilog.error(domain, tag,`${caseName} Failed. err: ${e.code}, message:${e.message}`);
                 expect(e.code).assertEqual(1400004)
                 expect(e.message!=null).assertTrue();
                 done()
@@ -2586,7 +2586,7 @@ export default function DisplayTest():void {
                 done();
             } catch (e) {
                 
-                hilog.error(domain, tag,`${caseName} Failed2. err: ${JSON.stringify(e)}`);
+                hilog.error(domain, tag,`${caseName} Failed2. err: ${e.code}, message: ${e.message}`);
                 if (e.code === 801) {
                     expect(e.message!=null).assertTrue();
                     done()
@@ -2629,7 +2629,7 @@ export default function DisplayTest():void {
                 done();
             } catch (e) {
                 
-                hilog.error(domain, tag,`${caseName} Failed2. err: ${JSON.stringify(e)}`);
+                hilog.error(domain, tag,`${caseName} Failed2. err: ${e.code}, message:${e.message}`);
                 if (e.code === 801) {
                     expect(e.message!=null).assertTrue();
                     done()
@@ -2677,7 +2677,7 @@ export default function DisplayTest():void {
                 done();
             } catch (e) {
                 
-                hilog.error(domain, tag,`${caseName} Failed2. err: ${JSON.stringify(e)}`);
+                hilog.error(domain, tag,`${caseName} Failed2. err: ${e.code}, message:${e.message}`);
                 if (e.code === 801) {
                     expect(e.message!=null).assertTrue();
                     done()
@@ -2716,7 +2716,7 @@ export default function DisplayTest():void {
             done();
         } catch (e) {
             
-            console.error(`${caseName} Failed. err: ${JSON.stringify(e)}`);
+            console.error(`${caseName} Failed. err: ${e.code}, message:${e.message}`);
             expect(e.code).assertEqual(1400004)
             done()
         }
@@ -2760,7 +2760,7 @@ export default function DisplayTest():void {
             }
             done();
         } catch (e) {
-            console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+            console.error(`${caseName} Failed. Cause: ${e.code}, message:${e.message}`);
             if (!isSyscapSessionManagerSupported) {
                 expect(e.code).assertEqual(801)
                 done();
@@ -2804,7 +2804,7 @@ export default function DisplayTest():void {
             })
             done();
         } catch (e) {
-            console.error(`${caseName} Failed. Cause: ${e.code}`);
+            console.error(`${caseName} Failed. Cause: ${e.code}, message:${e.message}`);
             if (!isSyscapSessionManagerSupported) {
                 expect(e.code).assertEqual(801)
                 done();
@@ -2917,7 +2917,7 @@ export default function DisplayTest():void {
             }
             done();
         } catch (e) {
-            console.error(`${caseName} Failed. Cause: ${e}`);
+            console.error(`${caseName} Failed. Cause: ${e.code}, message:${e.message}`);
             if (!isSyscapSessionManagerSupported) {
                 expect(e.code).assertEqual(801)
                 done();
@@ -2988,7 +2988,7 @@ export default function DisplayTest():void {
             })
         } catch (e) {
             
-            console.error(`${caseName} Failed. Cause: ${e}`);
+            console.error(`${caseName} Failed. Cause: ${e.code}, message:${e.message}`);
             await terminateAbility(caseName);
             expect(false).assertTrue();
             done();
@@ -3011,7 +3011,7 @@ export default function DisplayTest():void {
             done();
         } catch (err) {
             
-            hilog.info(domain, tag, caseName + 'error in getDisplayByIdSync, err : ' + JSON.stringify(err));
+            hilog.info(domain, tag, caseName + 'error in getDisplayByIdSync, err : ' + err.code + ', message: ' + err.message);
             expect(err.code === 401).assertTrue();
             done();
         }
@@ -3059,7 +3059,7 @@ export default function DisplayTest():void {
                 done();
             }
         } catch (err) {
-            console.error(0x0000, '[ANI]', msgStr + 'Failed. case ：' + JSON.stringify(err));
+            console.error(0x0000, '[ANI]', msgStr + 'Failed. case :' + err.code + ', message: ' + err.message);
             if (err.code === 801) {
                 done();
             } else {
@@ -3104,7 +3104,7 @@ export default function DisplayTest():void {
             await display.destroyVirtualScreen(vid);
             done()
         } catch (err) {
-            console.error(0x0000, '[ANI]', msgStr + 'Failed. case ：' + JSON.stringify(err));
+            console.error(0x0000, '[ANI]', msgStr + 'Failed. case :' + err.code + ', message: ' + err.message);
             if (err.code === 801) {
                 done();
             } else {
@@ -3155,7 +3155,7 @@ export default function DisplayTest():void {
                 display.makeUnique(vid).then(() => {
                     hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in make unique screen');
                 }).catch((e)=> {
-                    hilog.error(0x0000, '[ANI]', msgStr + 'Failed to make unique screen, err: ' + e.code);
+                    hilog.error(0x0000, '[ANI]', msgStr + 'Failed to make unique screen, err: ' + e.code + ', message: ' + e.message);
                     if (e.code === 801) {
                         hilog.info(domain, tag, caseName + 'device not support makeUnique');
                         done();
@@ -3163,7 +3163,7 @@ export default function DisplayTest():void {
                 })
             }catch (err) {
                 
-                hilog.error(0x0000, '[ANI]', msgStr + 'Failed to make unique screen, err: ' + err.code);
+                hilog.error(0x0000, '[ANI]', msgStr + 'Failed to make unique screen, err: ' + err.code + ', message: ' + err.message);
                 if (err.code === 801) {
                         hilog.info(domain, tag, caseName + 'device not support makeUnique');
                         done();
@@ -3188,7 +3188,7 @@ export default function DisplayTest():void {
         }
         catch (err) {
             
-            hilog.info(0x0000, '[ANI]', msgStr + 'error in createVirtualScreen, err : ' + JSON.stringify(err));
+            hilog.info(0x0000, '[ANI]', msgStr + 'error in createVirtualScreen, err : ' + err.code + ', message: ' + err.message);
             if (err.code === 801) {
                 hilog.info(domain, tag, caseName + 'device not support createVirtualScreen');
                 done();
@@ -3240,7 +3240,7 @@ export default function DisplayTest():void {
         display.makeUnique(vid).then(() => {
             hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in make unique screen');
         }).catch((e)=> {
-            hilog.error(0x0000, '[ANI]', msgStr + 'Failed to make unique screen, err: ' + e.code);
+            hilog.error(0x0000, '[ANI]', msgStr + 'Failed to make unique screen, err: ' + e.code + ', message: ' + e.message);
             if (e.code === 801) {
                 hilog.info(domain, tag, caseName + 'device not support makeUnique');
                 done();
@@ -3248,7 +3248,7 @@ export default function DisplayTest():void {
         })
         }catch (err) {
         
-        hilog.error(0x0000, '[ANI]', msgStr + 'Failed to make unique screen, err: ' + err.code);
+        hilog.error(0x0000, '[ANI]', msgStr + 'Failed to make unique screen, err: ' + err.code + ', message: ' + err.message);
             if (err.code === 801) {
                     hilog.info(domain, tag, caseName + 'device not support makeUnique');
                     done();
@@ -3273,7 +3273,7 @@ export default function DisplayTest():void {
     }
     catch (err) {
         
-        hilog.info(0x0000, '[ANI]', msgStr + 'error in createVirtualScreen, err : ' + JSON.stringify(err));
+        hilog.info(0x0000, '[ANI]', msgStr + 'error in createVirtualScreen, err : ' + err.code + ', message: ' + err.message);
         if (err.code === 801) {
         hilog.info(domain, tag, caseName + 'device not support createVirtualScreen');
         done();
@@ -3337,7 +3337,7 @@ export default function DisplayTest():void {
         }
 
     } catch (e) {
-        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        console.error(`${caseName} Failed. Cause: ${e.code}, message: ${e.message}`);
         if (e.code === 801) {
         done();
         } else {
@@ -3401,7 +3401,7 @@ export default function DisplayTest():void {
         }
 
     } catch (e) {
-        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        console.error(`${caseName} Failed. Cause: ${e.code}, message: ${e.message}`);
         if (e.code === 801) {
         done();
         } else {
@@ -3466,7 +3466,7 @@ export default function DisplayTest():void {
         done();
         }
     } catch (e) {
-        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        console.error(`${caseName} Failed. Cause: ${e.code}, message: ${e.message}`);
         if (e.code === 801) {
         done();
         } else {
@@ -3515,7 +3515,7 @@ export default function DisplayTest():void {
         done();
         }
     } catch (e) {
-        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        console.error(`${caseName} Failed. Cause: ${e.code}, message: ${e.message}`);
         if (e.code === 801) {
         done();
         } else {
@@ -3587,7 +3587,7 @@ export default function DisplayTest():void {
         }
         catch (err) {
         
-        hilog.info(domain, tag, caseName + 'error in createVirtualScreen or destroyVirtualScreen, err : ' + JSON.stringify(err));
+        hilog.info(domain, tag, caseName + 'error in createVirtualScreen or destroyVirtualScreen, err : ' + err.code + ', message: ' + err.message);
         if (err.code === 801) {
             hilog.info(domain, tag, caseName + 'device not support createVirtualScreen');
         }
@@ -3612,7 +3612,7 @@ export default function DisplayTest():void {
         done();
         } catch (e) {
             
-            console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+            console.error(`${caseName} Failed. Cause: ${e.code} , message: ${e.message}`);
         if (e.code === 801) {
             done()
         } else {
@@ -3650,7 +3650,7 @@ export default function DisplayTest():void {
                 done();
             } catch (e) {
                 
-                console.error(`${caseName} Failed. err: ${JSON.stringify(e)}`);
+                console.error(`${caseName} Failed. err: ${e.code} , message: ${e.message}`);
                 expect(e.code).assertEqual(1400004)
                 done()
             }
@@ -3689,7 +3689,7 @@ export default function DisplayTest():void {
         })
         } catch (exception) {
         exception = exception as BusinessError;
-        hilog.error(domain, tag,caseName + 'Failed to pick Code: ' + exception.code +':msg:'+ JSON.stringify(exception.message));
+        hilog.error(domain, tag,caseName + 'Failed to pick Code: ' + exception.code +':msg:'+ exception.message);
         expect(exception.message!=null).assertTrue();
         if (exception.code === 801) {
             done();
@@ -3737,7 +3737,7 @@ export default function DisplayTest():void {
             }
 
         } catch (e) {
-            console.error(`${caseName} Failed. Cause: ` + e!.code);
+            console.error(`${caseName} Failed. Cause code: ${e.code}, message: ${e.message}`);
             if (e.code === 801) {
                 done();
             } else {
@@ -3816,7 +3816,7 @@ export default function DisplayTest():void {
             }
             done();
         } catch (e) {
-            console.error(`${caseName} Failed. Cause: ${e}`);
+            console.error(`${caseName} Failed. Cause: ${e.code}, message: ${e.message}`);
             if (!isSyscapSessionManagerSupported) {
                 expect(e.code).assertEqual(801)
                 done()
@@ -3948,7 +3948,7 @@ export default function DisplayTest():void {
                 windowClass!.recover();
                 displayClass.offAvailableAreaChange(callback);
                 done();
-            } else if (!isFreeWindowMode && isSupportRotate) {
+            } else if (!isFreeWindowMode && isSupportRotate && isSyscapSessionManagerSupported) {
                 displayClass.onAvailableAreaChange(callback);
                 await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
                 await Utils.msSleep(1000);
@@ -3966,14 +3966,8 @@ export default function DisplayTest():void {
         }
         catch (err) {
             hilog.error(0x0000, '[ANI]',msgStr + `Failed to on availableAreaChange. Code: ${err.code}, message: ${err.message}`);
-            if (!isSyscapSessionManagerSupported) {
-                expect(err.code).assertEqual(801);
-                hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
-                done();
-            } else {
-                expect().assertFail();
-                done();
-            }
+            expect().assertFail();
+            done();
         }
     });
 

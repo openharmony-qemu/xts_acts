@@ -23,10 +23,11 @@ const TAG = '[ImageCreator].dequeueImage';
 async function dequeueImagePromiseTest(done: () => void, testName: string,  size: image.Size): Promise<void> {
   const creator: image.ImageCreator = await image.createImageCreator(size, image.ImageFormat.JPEG, 8);
   await creator.dequeueImage().then((img: image.Image) => {
+    expect(img.size.width).assertEqual(size.width);
+    expect(img.size.height).assertEqual(size.height);
     creator.release();
     console.info(TAG, 'Succeeded in dequeuing the Image.');
   }).catch((error) => {
-    // let error1 = error as BusinessError
     console.error(TAG, `Failed to dequeue the Image.code ${error.code},message is ${error.message}`);
     expect().assertFail();
   })
@@ -40,6 +41,8 @@ async function dequeueImageCallbackTest(done: () => void, testName: string, size
       console.error(TAG, `Failed to dequeue the Image.code ${err.code},message is ${err.message}`);
       expect().assertFail();
     } else {
+      expect(img!.size.width).assertEqual(size.width);
+      expect(img!.size.height).assertEqual(size.height);
       console.info(TAG, 'Succeeded in dequeuing the Image.')
     }
     creator?.release((err: BusinessError | null) => {

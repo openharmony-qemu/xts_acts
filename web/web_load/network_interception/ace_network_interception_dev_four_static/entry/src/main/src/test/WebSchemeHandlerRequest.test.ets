@@ -17,12 +17,8 @@ import Utils from './Utils.test';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import inspector from '@ohos.arkui.inspector';
-import { BusinessError } from '@ohos.base'
+import { BusinessError } from '@ohos.base';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-
-
 let testAbilityContext:common.UIAbilityContext;
 
 export default function WebSchemeHandlerRequest() {

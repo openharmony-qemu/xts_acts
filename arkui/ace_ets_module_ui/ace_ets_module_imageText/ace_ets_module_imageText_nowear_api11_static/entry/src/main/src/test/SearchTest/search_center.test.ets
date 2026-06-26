@@ -24,7 +24,6 @@ import {
   Button,
   ButtonAttribute,
   ClickEvent,
-
   Image,
   ImageFit,
   Flex,
@@ -74,14 +73,11 @@ export default function search_center() {
           console.info("push search_center page 2");
         }
       } catch (err) {
+        expect(false).assertEqual(true);
         console.error("push search_center page error:" + err);
       }
       console.info("search_center beforeEach end");
     });
-
-
-    
-    
     
     /**
      * @tc.number   search_center_static_001
@@ -109,7 +105,6 @@ export default function search_center() {
         let search_02 = CommonFunc.getComponentRect('search_center_search_01');
         let y2 = search_02.top
         expect(y2).assertLess(y1);
-
       }
       done();
     });

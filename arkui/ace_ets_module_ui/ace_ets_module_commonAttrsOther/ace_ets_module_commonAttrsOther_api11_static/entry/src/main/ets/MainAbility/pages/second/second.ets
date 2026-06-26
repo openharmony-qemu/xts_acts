@@ -13,54 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import router from '@ohos.router';
-import {
-  Entry,
-  Column,
-  Component,
-  Flex,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  Text,
-  Button,
-  FontWeight,
-  ButtonType,
-  ClickEvent,
-  Margin,
-  FlexOptions,
-  ColumnOptions,
-  TextAlign,
-  Scroll,
-  Image,
-  $r,
-  $$,
-  SheetType,
-  BindOptions,
-  SheetOptions,
-  Alignment,
-  Color,
-  Row,
-  OverlayOffset,
-  OverlayOptions,
-  Padding,
-  Rect,
-  RectOptions,
-  BlurStyle,
-  ThemeColorMode,
-  AdaptiveColor,
-  Circle,
-  CircleOptions,
-  ColoringStrategy,
-  FontWeight,
-  ButtonType
-} from '@ohos.arkui.component'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
+import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight, ButtonType, ClickEvent, Margin, FlexOptions, ColumnOptions, TextAlign, Scroll, Image, $r, $$, SheetType, BindOptions, SheetOptions, Alignment, Color, Row, OverlayOffset, OverlayOptions, Padding, Rect, RectOptions, BlurStyle, ThemeColorMode, AdaptiveColor, Circle, CircleOptions, ColoringStrategy } from '@ohos.arkui.component';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage, Link, LocalStorage } from '@ohos.arkui.stateManagement';
+import { AppStorage, Link, LocalStorage, State } from '@ohos.arkui.stateManagement';
 import { Hypium } from '../../../../../hypium/index';
-import { State } from '@ohos.arkui.stateManagement'
-
 const router = new Router()
 
 @Entry

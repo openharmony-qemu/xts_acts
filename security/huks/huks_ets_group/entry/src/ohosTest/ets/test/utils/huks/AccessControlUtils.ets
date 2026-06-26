@@ -27,6 +27,17 @@ export function GetAccessControlOptions(): huks.HuksOptions {
   return huksOptions;
 }
 
+export function GetUserAuthOptions(): huks.HuksOptions {
+  let huksOptions: huks.HuksOptions = {
+    properties: new Array(
+      GenParam(huks.HuksTag.HUKS_TAG_USER_AUTH_TYPE, huks.HuksUserAuthType.HUKS_USER_AUTH_TYPE_PIN),
+      GenParam(huks.HuksTag.HUKS_TAG_CHALLENGE_TYPE, huks.HuksChallengeType.HUKS_CHALLENGE_TYPE_NORMAL),
+      GenParam(huks.HuksTag.HUKS_TAG_KEY_AUTH_ACCESS_TYPE, huks.HuksAuthAccessType.HUKS_AUTH_ACCESS_ALWAYS_VALID)
+    )
+  };
+  return huksOptions;
+}
+
 export function GetPinOptions(): huks.HuksOptions {
   let huksOptions: huks.HuksOptions = {
     properties: new Array(

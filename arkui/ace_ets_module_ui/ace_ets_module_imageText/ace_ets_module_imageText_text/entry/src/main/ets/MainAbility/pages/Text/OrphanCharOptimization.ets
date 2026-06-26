@@ -23,6 +23,23 @@ struct orphanCharOptimizationExample{
   build() {
     Column() {
       Row() {
+        Button('T')
+          .onClick(() => {
+            this.orphanCharOptimizationXTS = true;
+          })
+          .id('true')
+        Button('F')
+          .onClick(() => {
+            this.orphanCharOptimizationXTS = false;
+          })
+          .id('false')
+        Button('Un')
+          .onClick(() => {
+            this.orphanCharOptimizationXTS = undefined;
+          })
+          .id('undefined')
+      }.height('5%')
+      Row() {
         Text(this.message)
           .fontSize(20)
           .width('38%')
@@ -56,23 +73,7 @@ struct orphanCharOptimizationExample{
           .orphanCharOptimization(this.orphanCharOptimizationXTS)
       }
 
-      Row() {
-        Button('T')
-          .onClick(() => {
-            this.orphanCharOptimizationXTS = true;
-          })
-          .id('true')
-        Button('F')
-          .onClick(() => {
-            this.orphanCharOptimizationXTS = false;
-          })
-          .id('false')
-        Button('Un')
-          .onClick(() => {
-            this.orphanCharOptimizationXTS = undefined;
-          })
-          .id('undefined')
-      }
+
     }.height('100%').width('100%')
   }
 }

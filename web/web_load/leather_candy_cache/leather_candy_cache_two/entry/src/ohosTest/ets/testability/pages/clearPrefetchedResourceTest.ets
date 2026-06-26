@@ -183,7 +183,7 @@ struct clearPrefetchedResourceTest {
         })
       }
 
-      Web({ src: this.mServer.getAssetUrl('index.html'), controller: this.controller })
+      Web({ src: $rawfile('index.html'), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .javaScriptProxy({
           object: this.jsObj,

@@ -206,7 +206,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = "{}";
-      let typ: Type = Type.of(new Object());
+      let typ: Class = Class.from<Object>();
       const result: object = JSON.parse<object>(jsonStr, typ) as object;
       expect(JSON.stringify(result)).assertEqual(JSON.stringify({} as test001));
     });
@@ -221,7 +221,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = "true";
-      let typ: Type = Type.of(new Boolean());
+      let typ: Class = Class.from<Boolean>();
       const result: boolean = JSON.parse<boolean>(jsonStr, typ) as boolean;
       expect(result).assertEqual(true);
     });
@@ -236,7 +236,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '"typescript"';
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       const result: string = JSON.parse<string>(jsonStr, typ) as string;
       expect(result).assertEqual("typescript");
     });
@@ -251,7 +251,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = "null";
-      let typ: Type = Type.of(null);
+      let typ: Class = Class.of(null);
       const result: null = JSON.parse<null>(jsonStr, typ) as null;
       expect(result).assertEqual(null);
     });
@@ -266,7 +266,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '{"id": 1, "info": {"name": "Alice", "age": 25}}';
-      let typ: Type = Type.of(new NestedData006());
+      let typ: Class = Class.from<NestedData006>();
       const result: NestedData006 = JSON.parse<NestedData006>(jsonStr, typ) as NestedData006;
       expect(result.id).assertEqual(1);
     });
@@ -280,7 +280,7 @@ export default function Json1Test(): void {
      * @tc.level  LEVEL0
      */
     it('Json1Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      let typ: Type = Type.of(new NegNumData007());
+      let typ: Class = Class.from<NegNumData007>();
       const jsonStr: string = '{"negInt": -100, "negFloat": -15.7}';
       const result: NegNumData007 = JSON.parse<NegNumData007>(jsonStr, typ) as NegNumData007;
       expect(result.negInt).assertEqual(-100);
@@ -297,7 +297,7 @@ export default function Json1Test(): void {
     it('Json1Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '{"a":1, "b":{"c":2, "d":{"e":3}}}';
       const keys: string[] = [];
-      let typ: Type = Type.of(new test008());
+      let typ: Class = Class.from<test008>();
       JSON.parse<test008>(jsonStr, (key: string, v: Any) => {
         keys.push(key);
         return v;
@@ -316,7 +316,7 @@ export default function Json1Test(): void {
     it('Json1Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = "[1, 2, 3, ]";
       let isSyntaxError: boolean = false;
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       try {
         JSON.parse<string>(jsonStr, typ) as string;
       } catch (error) {
@@ -336,7 +336,7 @@ export default function Json1Test(): void {
     it('Json1Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '{"key": "value", }';
       let isSyntaxError: boolean = false;
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       try {
         JSON.parse<string>(jsonStr, typ) as string;
       } catch (error) {
@@ -355,7 +355,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '"line1\\nline2"';
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       const result: string = JSON.parse<string>(jsonStr, typ) as string;
       expect(result).assertEqual("line1\nline2");
     });
@@ -384,7 +384,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = "false";
-      let typ: Type = Type.of(new Boolean());
+      let typ: Class = Class.from<Boolean>();
       const result: boolean = JSON.parse<boolean>(jsonStr, typ) as boolean;
       expect(result).assertEqual(false);
     });
@@ -399,7 +399,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '{"title": "测试", "content": ""}';
-      let typ: Type = Type.of(new ChineseData014());
+      let typ: Class = Class.from<ChineseData014>();
       const result: ChineseData014 = JSON.parse<ChineseData014>(jsonStr, typ) as ChineseData014;
       expect(result.title).assertEqual("测试");
     });
@@ -414,7 +414,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = "123";
-      let typ: Type = Type.of(new Number());
+      let typ: Class = Class.from<Number>();
       const result: number = JSON.parse<number>(jsonStr, typ) as number;
       expect(result).assertEqual(123);
     });
@@ -429,7 +429,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '{"price": 99.99}';
-      let typ: Type = Type.of(new FloatData016());
+      let typ: Class = Class.from<FloatData016>();
       const result: FloatData016 = JSON.parse<FloatData016>(jsonStr, typ) as FloatData016;
       expect(result.price).assertEqual(99.99);
     });
@@ -445,7 +445,7 @@ export default function Json1Test(): void {
     it('Json1Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = "[1, 2, 3, ]";
       let isSyntaxError: boolean = false;
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       try {
         JSON.parse<string>(jsonStr, typ) as string;
       } catch (e) {
@@ -464,7 +464,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = "false";
-      let typ: Type = Type.of(new Boolean());
+      let typ: Class = Class.from<Boolean>();
       const result: boolean = JSON.parse<boolean>(jsonStr, typ) as boolean;
       expect(result).assertEqual(false);
     });
@@ -479,7 +479,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '{"value": 1.8e4}';
-      let typ: Type = Type.of(new SciData019());
+      let typ: Class = Class.from<SciData019>();
       const result: SciData019 = JSON.parse<SciData019>(jsonStr, typ) as SciData019;
       expect(result.value).assertEqual(18000);
     });
@@ -523,7 +523,7 @@ export default function Json1Test(): void {
     it('Json1Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '{key: "value"}';
       let isSyntaxError: boolean = false;
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       try {
         JSON.parse<string>(jsonStr, typ) as string;
       } catch (e) {
@@ -542,7 +542,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '"He said \\"JSON\\""';
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       const result: string = JSON.parse<string>(jsonStr, typ) as string;
       expect(result).assertEqual('He said "JSON"');
     });
@@ -558,7 +558,7 @@ export default function Json1Test(): void {
     it('Json1Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '[Infinity]';
       let isSyntaxError: boolean = false;
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       try {
         JSON.parse<string>(jsonStr, typ) as string;
       } catch (e) {
@@ -577,7 +577,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '{"num": 9007199254740991}';
-      let typ: Type = Type.of(new LongNum025());
+      let typ: Class = Class.from<LongNum025>();
       const result: LongNum025 = JSON.parse<LongNum025>(jsonStr, typ) as LongNum025;
       expect(result.num).assertEqual(9007199254740991);
     });
@@ -593,7 +593,7 @@ export default function Json1Test(): void {
     it('Json1Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '{"a": 1 "b": 2}';
       let isSyntaxError: boolean = false;
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       try {
         JSON.parse<string>(jsonStr, typ) as string;
       } catch (e) {
@@ -612,7 +612,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '{"x": 10, "y": 20}';
-      let typ: Type = Type.of(new NoReturn027());
+      let typ: Class = Class.from<NoReturn027>();
       const result: NoReturn027 =
         JSON.parse<NoReturn027>(jsonStr, (k: string, v: Any) => k === "x" ? undefined : v, typ) as NoReturn027;
       expect(result.x).assertEqual(undefined);
@@ -628,7 +628,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = "123";
-      let typ: Type = Type.of(new Number());
+      let typ: Class = Class.from<Number>();
       const result: number =
         JSON.parse<number>(jsonStr, (k: string, v: Any) => k === "" ? (v as number) + 77 : v, typ) as number;
       expect(result).assertEqual(200);
@@ -679,7 +679,7 @@ export default function Json1Test(): void {
     it('Json1Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = "{'key': 'value'}";
       let isSyntaxError: boolean = false;
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       try {
         JSON.parse<string>(jsonStr, typ) as string;
       } catch (e) {
@@ -713,7 +713,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '"C:\\\\Program Files"';
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       const result: string = JSON.parse<string>(jsonStr, typ) as string;
       expect(result).assertEqual("C:\\Program Files");
     });
@@ -728,7 +728,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '{"zero": 0, "negZero": -0}';
-      let typ: Type = Type.of(new ZeroVal035());
+      let typ: Class = Class.from<ZeroVal035>();
       const result: ZeroVal035 = JSON.parse<ZeroVal035>(jsonStr, typ) as ZeroVal035;
       expect(result.zero).assertEqual(0);
     });
@@ -743,7 +743,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '"col1\\tcol2\\tcol3"';
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       const result: string = JSON.parse<string>(jsonStr, typ) as string;
       expect(result).assertEqual("col1\tcol2\tcol3");
     });
@@ -758,7 +758,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '{"a": {"b": 1}}';
-      let typ: Type = Type.of(new test037());
+      let typ: Class = Class.from<test037>();
       let lastKey: string = "";
       JSON.parse<test037>(jsonStr, (k: string, v: Any) => {
         lastKey = k;
@@ -791,7 +791,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '{"success": 123}';
-      let typ: Type = Type.of(new BoolToNum039());
+      let typ: Class = Class.from<BoolToNum039>();
       const result: BoolToNum039 =
         JSON.parse<BoolToNum039>(jsonStr, (k: string, v: Any) => k === "success" ? (v ? 1 : 0).toDouble() : v,
           typ) as BoolToNum039;
@@ -808,7 +808,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '{"str": ""}';
-      let typ: Type = Type.of(new EmptyStr040());
+      let typ: Class = Class.from<EmptyStr040>();
       const result: EmptyStr040 = JSON.parse<EmptyStr040>(jsonStr, typ) as EmptyStr040;
       expect(result.str).assertEqual("");
     });
@@ -823,7 +823,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = "true";
-      let typ: Type = Type.of(new Boolean());
+      let typ: Class = Class.from<Boolean>();
       const result: boolean = JSON.parse<boolean>(jsonStr, typ) as boolean;
       expect(result).assertEqual(true);
     });
@@ -838,7 +838,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '{"level1": {"level2": {"level3": 5}}}';
-      let typ: Type = Type.of(new DeepNested042());
+      let typ: Class = Class.from<DeepNested042>();
       const result: DeepNested042 =
         JSON.parse<DeepNested042>(jsonStr, (k: string, v: Any) => k === "level3" ? (v as number) * 4 : v,
           typ) as DeepNested042;
@@ -855,7 +855,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '{"str": "Infinity"}';
-      let typ: Type = Type.of(new InfStr044());
+      let typ: Class = Class.from<InfStr044>();
       const result: InfStr044 = JSON.parse<InfStr044>(jsonStr, typ) as InfStr044;
       expect(result.str).assertEqual("Infinity");
     });
@@ -871,7 +871,7 @@ export default function Json1Test(): void {
     it('Json1Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '{"key": "value"';
       let isSyntaxError: boolean = false;
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       try {
         JSON.parse<string>(jsonStr, typ) as string;
       } catch (e) {
@@ -904,7 +904,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '"line1\\nline2\\nline3"';
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       const result: string = JSON.parse<string>(jsonStr, typ) as string;
       expect(result).assertEqual("line1\nline2\nline3");
     });
@@ -919,7 +919,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '{"code": "function() {}"}';
-      let typ: Type = Type.of(new FuncStr048());
+      let typ: Class = Class.from<FuncStr048>();
       const result: FuncStr048 = JSON.parse<FuncStr048>(jsonStr, typ) as FuncStr048;
       expect(result.code).assertEqual("function() {}");
     });
@@ -948,7 +948,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '{"data": null}';
-      let typ: Type = Type.of(new NullVal050());
+      let typ: Class = Class.from<NullVal050>();
       const result: NullVal050 = JSON.parse<NullVal050>(jsonStr, typ) as NullVal050;
       expect(result.data).assertEqual(null);
     });
@@ -964,7 +964,7 @@ export default function Json1Test(): void {
     it('Json1Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '{"a": 1, "b": 2, }';
       let isSyntaxError: boolean = false;
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       try {
         JSON.parse<string>(jsonStr, typ) as string;
       } catch (e) {
@@ -983,7 +983,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '"\\t\\n\\rtest"';
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       const result: string = JSON.parse<string>(jsonStr, typ) as string;
       expect(result).assertEqual("\t\n\rtest");
     });
@@ -999,7 +999,7 @@ export default function Json1Test(): void {
     it('Json1Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '{key: "value", num: 123}';
       let isSyntaxError: boolean = false;
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       try {
         JSON.parse<string>(jsonStr, typ) as string;
       } catch (e) {
@@ -1046,7 +1046,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '{"str": "NaN"}';
-      let typ: Type = Type.of(new NaNStr056());
+      let typ: Class = Class.from<NaNStr056>();
       const result: NaNStr056 = JSON.parse<NaNStr056>(jsonStr, typ) as NaNStr056;
       expect(result.str).assertEqual("NaN");
     });
@@ -1062,7 +1062,7 @@ export default function Json1Test(): void {
     it('Json1Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '[1, 2, 3';
       let isSyntaxError: boolean = false;
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       try {
         JSON.parse<string>(jsonStr, typ) as string;
       } catch (e) {
@@ -1095,7 +1095,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '"line1\\rline2"';
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       const result: string = JSON.parse<string>(jsonStr, typ) as string;
       expect(result).assertEqual("line1\rline2");
     });
@@ -1138,7 +1138,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '{"a": {"b": null}}';
-      let typ: Type = Type.of(new NestedNull063());
+      let typ: Class = Class.from<NestedNull063>();
       const result: NestedNull063 = JSON.parse<NestedNull063>(jsonStr, typ) as NestedNull063;
       expect(result.a.b).assertEqual(null);
     });
@@ -1173,7 +1173,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '"C:\\\\\\\\Users\\\\\\\\test"';
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       const result: string = JSON.parse<string>(jsonStr, typ) as string;
       expect(result).assertEqual(`C:\\\\Users\\\\test`);
     });
@@ -1188,7 +1188,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '{"pattern": "/^[a-z]+$/"}';
-      let typ: Type = Type.of(new RegexStr068());
+      let typ: Class = Class.from<RegexStr068>();
       const result: RegexStr068 = JSON.parse<RegexStr068>(jsonStr, typ) as RegexStr068;
       expect(result.pattern).assertEqual("/^[a-z]+$/");
     });
@@ -1237,7 +1237,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '{"amount": "1234.56"}';
-      let typ: Type = Type.of(new CurrencyStr073());
+      let typ: Class = Class.from<CurrencyStr073>();
       const result: CurrencyStr073 = JSON.parse<CurrencyStr073>(jsonStr, (k: string, v: Any) => {
         if (k === "amount") {
           return `$${Number(v as string).toFixed(2)}`;
@@ -1258,7 +1258,7 @@ export default function Json1Test(): void {
     it('Json1Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const longContent: string = "这是一段用于测试JSON解析的超长中文字符串，包含多个汉字和标点符号。";
       const jsonStr: string = `{"content": "${longContent}"}`;
-      let typ: Type = Type.of(new LongChineseStr074());
+      let typ: Class = Class.from<LongChineseStr074>();
       const result: LongChineseStr074 = JSON.parse<LongChineseStr074>(jsonStr, typ) as LongChineseStr074;
 
       expect(result.content).assertEqual(longContent);
@@ -1274,7 +1274,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '"He said: \'Hello!\'"';
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       const result: string = JSON.parse<string>(jsonStr, typ) as string;
       expect(result).assertEqual("He said: 'Hello!'");
     });
@@ -1290,7 +1290,7 @@ export default function Json1Test(): void {
     it('Json1Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '{user@id: "u123", price#tag: 99}';
       let isSyntaxError: boolean = false;
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       try {
         JSON.parse<string>(jsonStr, typ) as string;
       } catch (e) {
@@ -1379,7 +1379,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '"page1\\fpage2"';
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       const result: string = JSON.parse<string>(jsonStr, typ) as string;
       expect(result).assertEqual("page1\fpage2");
     });
@@ -1422,7 +1422,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '"He said: \\"\\\\test\\""';
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       const result: string = JSON.parse<string>(jsonStr, typ) as string;
       expect(result).assertEqual('He said: "\\test"');
     });
@@ -1437,7 +1437,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '"test"';
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       const result: string = JSON.parse<string>(jsonStr, typ) as string;
       expect(result).assertEqual("test");
     });
@@ -1452,7 +1452,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = "123";
-      let typ: Type = Type.of(new Number());
+      let typ: Class = Class.from<Number>();
       const result: number = JSON.parse<number>(jsonStr, typ) as number;
       expect(result).assertEqual(123);
     });
@@ -1467,7 +1467,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '"hello"';
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       const result: string =
         JSON.parse<string>(jsonStr, (k: string, v: Any) => k === "" ? (v as string).toUpperCase() : v, typ) as string;
       expect(result).assertEqual("HELLO");
@@ -1497,7 +1497,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = "3.14";
-      let typ: Type = Type.of(new Number());
+      let typ: Class = Class.from<Number>();
       const result: number = JSON.parse<number>(jsonStr, typ) as number;
       expect(result).assertEqual(3.14);
     });
@@ -1512,7 +1512,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = "3.14";
-      let typ: Type = Type.of(new Number());
+      let typ: Class = Class.from<Number>();
       const result: number =
         JSON.parse<number>(jsonStr, (k: string, v: Any) => k === "" ? Math.floor(v as number) : v, typ) as number;
       expect(result).assertEqual(3);
@@ -1528,7 +1528,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = "-7";
-      let typ: Type = Type.of(new Number());
+      let typ: Class = Class.from<Number>();
       const result: number = JSON.parse<number>(jsonStr, typ) as number;
       expect(result).assertEqual(-7);
     });
@@ -1543,7 +1543,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '"a\\nb"';
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       const result: string = JSON.parse<string>(jsonStr, typ) as string;
       expect(result).assertEqual("a\nb");
     });
@@ -1558,7 +1558,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '"a\\nb"';
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       const result: string =
         JSON.parse<string>(jsonStr, (k: string, v: Any) => k === "" ? (v as string).replace("\n", " ") : v,
           typ) as string;
@@ -1589,7 +1589,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = "1e3";
-      let typ: Type = Type.of(new Number());
+      let typ: Class = Class.from<Number>();
       const result: number = JSON.parse<number>(jsonStr, typ) as number;
       expect(result).assertEqual(1000);
     });
@@ -1604,7 +1604,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = "1e3";
-      let typ: Type = Type.of(new Number());
+      let typ: Class = Class.from<Number>();
       const result: number =
         JSON.parse<number>(jsonStr, (k: string, v: Any) => k === "" ? (v as number) + 500 : v, typ) as number;
       expect(result).assertEqual(1500);
@@ -1620,7 +1620,7 @@ export default function Json1Test(): void {
      */
     it('Json1Test100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '"中文"';
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       const result: string =
         JSON.parse<string>(jsonStr, (k: string, v: Any) => k === "" ? `pre-${v}` : v, typ) as string;
       expect(result).assertEqual("pre-中文");

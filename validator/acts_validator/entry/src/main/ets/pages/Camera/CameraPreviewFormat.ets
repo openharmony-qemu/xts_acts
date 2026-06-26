@@ -57,6 +57,7 @@ struct cameraFormat {
   @State formatVal: SelectOption[] = [];
   @State selectFn: string = 'Camera 0';
   @State last_rotation: number = 0;
+  @State isCameraChange: boolean = false;
 
   async aboutToAppear() {
     await FirstDialog.ChooseDialog(this.StepTips, this.name);
@@ -114,18 +115,36 @@ struct cameraFormat {
     Logger.info(this.tag, `takePicture end, assetUri`)
   }
 
-  nextClickFn() {
+  async nextClickFn() {
     // 切换next 次数增加 分辨率遍历 分辨率遍历完 切换摄像头 再次遍历分辨率 调取初始化相机进行改变
     this.clickFrequency++
-    if (this.clickFrequency === this.testingFrequency) {
-      this.Vue = true
-      this.nextEnabled = false
-      return
+    if (this.clickFrequency === this.testingFrequency || this.clickFrequency > this.testingFrequency) {
+      if (this.isCameraChange) {
+        this.Vue = true
+        this.nextEnabled = false
+        return
+      }
+      this.clickFrequency = 0;
+      if (this.cameraListLength > 1) {
+        this.cameraDeviceIndex = Number(!this.cameraDeviceIndex)
+        this.selectClickFn()
+        await this.cameraInit().then(() => {
+          this.isCameraChange = true
+        })
+      } else {
+        this.Vue = true
+        this.nextEnabled = false
+        return
+      }
     }
-    let newResolution = this.dealWithResolutionFn(this.resolution)
-    Logger.info(this.tag, `nextClickFn new Resolution: ${JSON.stringify(newResolution)}`)
-    this.cameraInit(newResolution[this.clickFrequency])
-    this.resolutionSelectVal = String(this.resolution[this.clickFrequency].value)
+    this.nextEnabled = true;
+    Logger.info(this.tag, `nextClickFn new Resolution: ${JSON.stringify(this.resolution)}`)
+    if (this.clickFrequency) {
+      let newResolution = this.dealWithResolutionFn(this.resolution)
+      Logger.info(this.tag, `nextClickFn new Resolution: ${JSON.stringify(newResolution)}`)
+      this.cameraInit(newResolution[this.clickFrequency])
+      this.resolutionSelectVal = String(this.resolution[this.clickFrequency].value)
+    }
   }
 
   // 对分辨率数据处理 获取到需要的格式
@@ -229,20 +248,11 @@ struct cameraFormat {
                   .selectedOptionFont({ size: 16, weight: 400 })
                   .optionFont({ size: 16, weight: 400 })
                   .onSelect((index: number, value) => {
-                    let indexOf = value.indexOf('x')
-                    let objW = Number(value.slice(0, indexOf))
-                    let objH = Number(value.slice(indexOf + 1))
-                    let obj: Obj = {
-                      format: 1003,
-                      size: {
-                        width: objW,
-                        height: objH
-                      }
-                    }
-                    CameraService.initCamera(this.surfaceId, this.cameraDeviceIndex, obj).then(() => {
-                      this.cameraListFn()
-                    })
-                    Logger.info(this.tag, `onSelect Rotation index: ${index}, value: ${value}, obj: ${obj}`)
+                    let newResolution = this.dealWithResolutionFn(this.resolution)
+                    this.clickFrequency = index
+                    Logger.info(this.tag, `SelectClickFn this.resolution: ${JSON.stringify(this.resolution)}`)
+                    this.cameraInit(newResolution[this.clickFrequency])
+                    Logger.info(this.tag, `onSelect Rotation index: ${index}, value: ${value}, newResolution[index]: ${newResolution[index]}`)
                   })
                   .backgroundColor(Color.Black)
                 Select(this.cameraList)

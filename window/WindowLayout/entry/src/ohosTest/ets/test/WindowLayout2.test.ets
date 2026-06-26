@@ -33,10 +33,10 @@ async function sleep(time: number) {
   clearTimeout(timeoutId)
 }
 
-async function startAbility(caseName: string, context: common.UIAbilityContext, options?: StartOptions,) {
+async function startAbility(caseName: string, context: common.UIAbilityContext, options?: StartOptions) {
   let want: Want = {
     bundleName: AppStorage.get('bundleName'),
-    abilityName: 'StartAbility'
+    abilityName: 'StartTestAbility'
   };
   if (options) {
     await context.startAbility(want, options).then(() => {
@@ -51,8 +51,8 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
       console.info(`${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
     });
   }
-  await sleep(100)
-  let windowStageStart = AppStorage.get('windowStageStart') as ohosWindow.WindowStage;
+  await sleep(1000)
+  let windowStageStart = AppStorage.get('windowStageStartTest') as window.WindowStage;
   return windowStageStart
 }
 
@@ -63,7 +63,7 @@ async function terminateAbility(caseName: string) {
   }).catch((err: BusinessError) => {
     console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
   });
-  await sleep(100)
+  await sleep(1000)
 }
 
 export default function windowLayoutTest2() {

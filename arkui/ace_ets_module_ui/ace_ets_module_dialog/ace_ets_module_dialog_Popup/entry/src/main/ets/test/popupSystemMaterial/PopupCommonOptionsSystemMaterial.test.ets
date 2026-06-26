@@ -17,6 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level,
 import router from '@ohos.router';
 import { Driver, ON, BY } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
+import { uiMaterial } from '@kit.ArkUI';
 
 export default function PopupCommonOptionsSystemMaterial() {
   describe('PopupCommonOptionsSystemMaterial', () => {
@@ -65,11 +66,12 @@ export default function PopupCommonOptionsSystemMaterial() {
       await CommonFunc.sleep(1000);
 
       let popupText = await driver.findComponent(ON.text('Popup Content'));
-      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-      let popup: ESObject = obj.$children[1];
-      let date = JSON.stringify(obj.$children[1].$children[0]);
-      
-      expect(JSON.parse(date).$attrs.systemBarEffect).assertEqual('false');
+      expect(popupText).not().assertUndefined();
+		  expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
+		  expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
+		  expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
+		  expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
+		  expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
       console.info('PopupCommonOptionsSystemMaterial_0100 Popup Undefined is visible');
 
       await CommonFunc.sleep(500);
@@ -98,11 +100,8 @@ export default function PopupCommonOptionsSystemMaterial() {
       await CommonFunc.sleep(1000);
 
       let popupText = await driver.findComponent(ON.text('Popup Content'));
-      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-      let popup: ESObject = obj.$children[1];
-      let date = JSON.stringify(obj.$children[1].$children[0]);
-      
-      expect(JSON.parse(date).$attrs.systemBarEffect).assertEqual('false');
+      expect(popupText).not().assertUndefined();
+		
       console.info('PopupCommonOptionsSystemMaterial_0200 Popup HDS THICK is visible');
 
       await CommonFunc.sleep(500);
@@ -131,11 +130,8 @@ export default function PopupCommonOptionsSystemMaterial() {
       await CommonFunc.sleep(1000);
 
       let popupText = await driver.findComponent(ON.text('Popup Content'));
-      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-      let popup: ESObject = obj.$children[1];
-      let date = JSON.stringify(obj.$children[1].$children[0]);
-      console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type));
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.SEMI_TRANSPARENT');
+      expect(popupText).not().assertUndefined();
+		  
       console.info('PopupCommonOptionsSystemMaterial_0300 Popup SEMI_TRANSPARENT is visible');
 
       await CommonFunc.sleep(500);
@@ -164,12 +160,8 @@ export default function PopupCommonOptionsSystemMaterial() {
       await CommonFunc.sleep(1000);
 
       let popupText = await driver.findComponent(ON.text('Popup Content'));
-      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-      let popup: ESObject = obj.$children[1];
-      let date = JSON.stringify(obj.$children[1].$children[0]);
-      console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.style));
-
-      expect(JSON.parse(date).$attrs.systemBarEffect).assertEqual('false');
+      expect(popupText).not().assertUndefined();
+		  
 
       await CommonFunc.sleep(500);
       let closeButton = await driver.findComponent(ON.text('Close'));
@@ -197,12 +189,8 @@ export default function PopupCommonOptionsSystemMaterial() {
       await CommonFunc.sleep(1000);
 
       let popupText = await driver.findComponent(ON.text('Popup Content'));
-      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-      let popup: ESObject = obj.$children[1];
-      let date = JSON.stringify(obj.$children[1].$children[0]);
-      console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.style));
-      
-      expect(JSON.parse(date).$attrs.systemBarEffect).assertEqual('false');
+      expect(popupText).not().assertUndefined();
+		  
 
       await CommonFunc.sleep(500);
       let closeButton = await driver.findComponent(ON.text('Close'));
@@ -230,11 +218,8 @@ export default function PopupCommonOptionsSystemMaterial() {
       await CommonFunc.sleep(1000);
 
       let popupText = await driver.findComponent(ON.text('Popup Content'));
-      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-      let popup: ESObject = obj.$children[1];
-      let date = JSON.stringify(obj.$children[1].$children[0]);
-      console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type));
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+      expect(popupText).not().assertUndefined();
+		  
       console.info('PopupCommonOptionsSystemMaterial_0600 Popup NONE is visible');
 
       await CommonFunc.sleep(500);

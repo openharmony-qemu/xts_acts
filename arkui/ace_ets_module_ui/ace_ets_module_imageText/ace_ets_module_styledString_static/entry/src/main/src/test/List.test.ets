@@ -4,6 +4,8 @@ import CustomSpanMeasureInfoTest from './StyledStringTest/CustomSpanMeasureInfo.
 import StyledStringFontVariationsTest from './StyledStringTest/StyledStringFontVariations.test';
 import LineHeightStyleTest from './StyledStringTest/LineHeightStyle.test';
 import LineSpacingStyleTest from './StyledStringTest/LineSpacingStyle.test';
+import StyledStringShaderStyleTest from './StyledString26Test/StyledStringShaderStyle.test';
+import StyledStringStrokeJoinStyleTest from './StyledString26Test/StyledStringStrokeJoinStyle.test';
 
 export default function testsuite() {
   StyledStringTest();
@@ -11,4 +13,6 @@ export default function testsuite() {
   StyledStringFontVariationsTest();
   LineHeightStyleTest();
   LineSpacingStyleTest();
+  StyledStringShaderStyleTest();
+  StyledStringStrokeJoinStyleTest();
 }

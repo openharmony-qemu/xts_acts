@@ -15,28 +15,8 @@
  */
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
-import { NodeController, BuilderNode, Size, FrameNode, RenderNode, FrameNode } from '@ohos.arkui.node';
-import {
-  Builder,
-  Entry,
-  Component,
-  Column,
-  WrappedBuilder,
-  Button,
-  Color,
-  Row,
-  ClickEvent,
-  NodeContainer,
-  TouchEvent,
-  Text,
-  Margin,
-  FontWeight
-} from "@ohos.arkui.component";
-
-import { State, AppStorage } from '@ohos.arkui.stateManagement';
-import { ClickEvent } from '@ohos.arkui.component';
-import { UIContext } from '@ohos.arkui.UIContext';
-
+import { NodeController, BuilderNode, Size, FrameNode, RenderNode } from '@ohos.arkui.node';
+import { Builder, Entry, Component, Column, WrappedBuilder, Button, Color, Row, ClickEvent, NodeContainer, TouchEvent, Text, Margin, FontWeight } from '@ohos.arkui.component';
 let renderNode = new RenderNode();
 renderNode.size = { width: 300, height: 300 };
 renderNode.backgroundColor = 0XFF00FF00.toInt();

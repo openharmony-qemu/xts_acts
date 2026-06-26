@@ -50,6 +50,7 @@ import PopupOptionsSystemMaterial from './popupSystemMaterial/PopupOptionsSystem
 import TipsOptionsSystemMaterial from './popupSystemMaterial/TipsOptionsSystemMaterial.test';
 import PopupColorMode from './popup/PopupColorMode.test';
 import PopupBackgroundEffectTest from './popup/PopupBackgroundEffect.test';
+import PopupLevelModeTest from './popup/PopupLevelModeTest.test';
 
 
 export default function testsuite() {
@@ -81,11 +82,12 @@ export default function testsuite() {
   // ImmersiveOptionsColorInvertTest();
   // ImmersiveOptionsApplyShadowTest();
   UIMaterialTest();
-  // SheetOptionsSystemMaterial();
-  // PopupCommonOptionsSystemMaterial();
-  // PopupOptionsSystemMaterial();
-  // CustomPopupOptionsSystemMaterial();
-  // TipsOptionsSystemMaterial();
+  SheetOptionsSystemMaterial();
+  PopupCommonOptionsSystemMaterial();
+  PopupOptionsSystemMaterial();
+  CustomPopupOptionsSystemMaterial();
+  TipsOptionsSystemMaterial();
   PopupColorMode();
   PopupBackgroundEffectTest();
+  PopupLevelModeTest();
 }

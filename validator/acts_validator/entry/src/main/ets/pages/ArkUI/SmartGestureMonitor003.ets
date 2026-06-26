@@ -41,8 +41,11 @@ struct SmartGestureMonitor003 {
     '2.滑动页面到节点操场,执行[敲一敲]手势\n' +
     '3.点击[clear]按钮\n' +
     '4.滑动页面到节点操场,执行[敲一敲]手势\n' +
-    '预期结果：\n' + '2.页面跳转到[Page1]' +
-    '4.页面依旧在[Page1]'
+    '5.关闭[toggle开关]\n' +
+    '6.再次重新点击[开启switch]按钮\n' +
+    '7.滑动页面到节点操场,执行[敲一敲]手势\n' +
+    '预期结果：\n' + '2.页面跳转到[Page1]\n' +
+    '4.页面依旧在[Page1]\n' + '7.页面依旧在[Page1]'
   @State isOk: boolean = false;
   @State intervalNum: number = 0;
   private readonly logger: SmartGestureLogStore = new SmartGestureLogStore();
@@ -310,6 +313,11 @@ struct SmartGestureMonitor003 {
       Scroll() {
         Column({ space: 8 }) {
           Column({ space: 6 }) {
+            Row() {
+              Text('启用 smart tap / slide').layoutWeight(1)
+              Toggle({ type: ToggleType.Switch, isOn: this.enable })
+                .onChange((isOn: boolean) => this.syncEnabled(isOn))
+            }
             Column({ space: 6 }) {
               Button(this.consumeSwitchOn ? '关闭 switch' : '开启 switch')
                 .width('100%')

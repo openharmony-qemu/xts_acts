@@ -13,12 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute,CopyOptions,
-  ClickEvent, Image,ImageFit,Color, TextAlign, CopyOptions, SearchController, Font, Search,ResourceColor } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
-import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
-import { AppStorage } from '@ohos.arkui.stateManagement'
+import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, CopyOptions, ClickEvent, Image, ImageFit, Color, TextAlign, SearchController, Font, Search, ResourceColor } from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { MessageManager, Callback, Message } from '../../common/MessageManager';
-import events_emitter from '@ohos.events.emitter'
+import events_emitter from '@ohos.events.emitter';
 import { RecordData } from '@ohos.base';
 @Entry
 @Component

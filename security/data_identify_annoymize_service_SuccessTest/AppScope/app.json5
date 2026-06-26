@@ -14,7 +14,7 @@
  */
 {
   "app": {
-    "bundleName": "com.edm.acts.normal",
+    "bundleName": "com.ohos.dlp_xts",
     "vendor": "example",
     "versionCode": 1000000,
     "versionName": "1.0.0",

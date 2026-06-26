@@ -1311,7 +1311,7 @@ export default function WindowEventStatic() {
           let windowNumber: int = 0;
           window.getWindowsByCoordinate(displayId, windowNumber, x + 10, y + 10).then((data: Array<window.Window>) => {
             hilog.info(domain, tag, msgStr + 'Succeeded in getting windows. Data: ' + JSON.stringify(data));
-            expect(data.length).assertEqual(0);
+            expect(data.length).assertEqual(1);
             done();
           }).catch((err: Error): PromiseLike<void> | undefined => {
             hilog.error(domain, tag, msgStr + 'Failed to get window from point. Cause code: ' + err.code + ', message: ' + err.message);
@@ -1324,7 +1324,6 @@ export default function WindowEventStatic() {
               done();
             }
           });
-          done();
         }else{
           let x: int = Math.floor(windowRect.width / 2).toInt();
           let y: int = Math.floor(windowRect.height / 2).toInt();
@@ -1344,7 +1343,6 @@ export default function WindowEventStatic() {
               done();
             }
           });
-          done();
         }
 
 

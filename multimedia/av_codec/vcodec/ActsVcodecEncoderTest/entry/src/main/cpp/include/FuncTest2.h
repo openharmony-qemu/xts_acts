@@ -81,7 +81,10 @@ int VideoEncodeHevcCapability2700Test();
 int VideoEncodeHevcCapability2800Test();
 int VideoEncodeHevcCapability2900Test();
 int VideoEncodeHevcCapability3000Test();
-
+int VideoEncodeSetMaxFrameDelayCount0100Test();
+int VideoEncodeSetMaxFrameDelayCount0200Test();
+int VideoEncodeSetMaxFrameDelayCount0300Test();
+int VideoEncodeSetMaxFrameDelayCount0400Test();
 void InitFuncTest2();
 void TestTearDownFunc2();
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 import { MessageManager, Callback, Message } from '../../../common/MessageManager';
-import {Entry,Component,Column,Text,Flex,FlexDirection,ForEach,ColumnOptions,BreakpointsReference,BreakpointsReference,Grid,Color,Button,ClickEvent,Scroll,Alignment,ItemAlign,Margin,TextAlign,TextOverflow,FontWeight,GridRow,FlexAlign,GridCol,GridRowDirection} from '@ohos.arkui.component'
-import {State,AppStorage} from '@ohos.arkui.stateManagement'
+import { Entry, Component, Column, Text, Flex, FlexDirection, ForEach, ColumnOptions, BreakpointsReference, Grid, Color, Button, ClickEvent, Scroll, Alignment, ItemAlign, Margin, TextAlign, TextOverflow, FontWeight, GridRow, FlexAlign, GridCol, GridRowDirection } from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct Grid_Col_Span_Default {

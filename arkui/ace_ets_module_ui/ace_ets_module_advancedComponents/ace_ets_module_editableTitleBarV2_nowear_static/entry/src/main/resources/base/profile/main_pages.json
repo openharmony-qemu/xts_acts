@@ -1,0 +1,9 @@
+{
+  "src": [
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/editableTitleBarV2/editableTitleBarV2Basic",
+    "MainAbility/pages/editableTitleBarV2/editableTitleBarV2Interaction",
+    "MainAbility/pages/editableTitleBarV2/editableTitleBarV2MenuButton",
+    "MainAbility/pages/editableTitleBarV2/editableTitleBarV2Style"
+  ]
+}

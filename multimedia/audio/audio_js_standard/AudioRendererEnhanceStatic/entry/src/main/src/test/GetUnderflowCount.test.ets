@@ -12,27 +12,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll, Hypium } from '../../../hypium/index';
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 import audio from '@ohos.multimedia.audio';
-import fs from '@ohos.file.fs';
+import fs, { ReadOptions } from '@ohos.file.fs';
 import { testConst } from './Const.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { ReadOptions } from '@ohos.file.fs';
-import { Driver } from '@ohos.UiTest';
-import { ON } from '@ohos.UiTest';
-import { MatchPattern } from '@ohos.UiTest';
-import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
-import { PermissionRequestResult } from '@ohos.abilityAccessCtrl';
-import { Permissions } from 'permissions';
 import abilityContext from '@ohos.app.ability.common';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import { Hypium } from '../../../hypium/index';
-import { AppStorage } from '@ohos.arkui.stateManagement'
+import common from '@ohos.app.ability.common';
+import { Driver, ON, MatchPattern } from '@ohos.UiTest';
+import abilityAccessCtrl, { PermissionRequestResult } from '@ohos.abilityAccessCtrl';
+import { Permissions } from 'permissions';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 let g_context: common.UIAbilityContext;
 
 export default function audioRendererTest() {

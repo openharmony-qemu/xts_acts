@@ -42,6 +42,7 @@ struct ContainerReaderComponent {
   @State heightBp: HeightBreakpoint|undefined|null = HeightBreakpoint.HEIGHT_SM;
   @State breakpointOptions:BreakpointOptions|null|undefined = { width: [100, 200, 400, 500], height: [0.8, 1.2] };
   @State breakpointOptions1:BreakpointOptions|null|undefined = { width: undefined, height: undefined };
+  @State breakpointOptions2:BreakpointOptions|null|undefined = { width: [], height: [] };
   @State containerReaderAttribute:ContainerReaderAttribute|undefined = undefined;
   @State modifier: MyContainerReaderModifier = new MyContainerReaderModifier(true)
 
@@ -63,6 +64,7 @@ struct ContainerReaderComponent {
             this.widthBp = WidthBreakpoint.WIDTH_MD
             this.heightBp = HeightBreakpoint.HEIGHT_LG
             this.modifier.isDark = !this.modifier.isDark
+            this.breakpointOptions = this.breakpointOptions2
           })
           .width(68)
           .height(15)

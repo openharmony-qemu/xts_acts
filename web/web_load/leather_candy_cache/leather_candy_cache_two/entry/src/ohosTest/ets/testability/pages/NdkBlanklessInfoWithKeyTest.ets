@@ -90,7 +90,7 @@ struct ndkBlanklessInfoWithKeyTest {
               let num2: number = -1;
               let num3: number = -1;
               this.isPageEnd = -1;
-              this.controller.loadUrl(this.mServer.getAssetUrl('indexPhoto.html'))
+              this.controller.loadUrl($rawfile('indexPhoto.html'))
               await waitForExist(() => this.isPageEnd, this.str, 0);
               console.log(msg, 'first loadUrl finish');
               num1 = testNapi.doblankless_Success(this.webTag);
@@ -98,7 +98,7 @@ struct ndkBlanklessInfoWithKeyTest {
               console.log(msg, 'testNapi.doblankless_SUCCESS:' + num1);
               if (num1 != 801) {
                 this.isPageEnd = -1;
-                this.controller.loadUrl(this.mServer.getAssetUrl('indexPhoto.html'))
+                this.controller.loadUrl($rawfile('indexPhoto.html'))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
                 console.log(msg, 'second loadUrl finish');
                 num2 = testNapi.doblankless_Success(this.webTag);
@@ -106,7 +106,7 @@ struct ndkBlanklessInfoWithKeyTest {
                 console.log(msg, 'testNapi.doblankless_SUCCESS:' + num2);
                 if (num2 != 801) {
                   this.isPageEnd = -1;
-                  this.controller.loadUrl(this.mServer.getAssetUrl('indexPhoto.html'))
+                  this.controller.loadUrl($rawfile('indexPhoto.html'))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
                   console.log(msg, 'third loadUrl finish');
                   num3 = testNapi.doblankless_Success(this.webTag);
@@ -490,7 +490,7 @@ struct ndkBlanklessInfoWithKeyTest {
         })
       }
 
-      Web({ src: this.mServer.getAssetUrl('indexPhoto.html'), controller: this.controller })
+      Web({ src: $rawfile('indexPhoto.html'), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .onLoadIntercept((event) => {
           this.isPageEnd = 0

@@ -14,40 +14,12 @@
  * limitations under the License.
  */
 import CommonFunc from '../../../MainAbility/common/Common';
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  Text,
-  Row,
-  Scroll,
-  ButtonType,
-  Flex,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  Alignment,
-  TextAlign,
-  TextOverflow,
-  FontWeight,
-  Profiler,
-  setAppBgColor,
-  FlexWrap,$r,Resource
-} from '@ohos.arkui.component'
-import {
-  State,
-  Link,
-  PropRef,Consume,Provide,UIUtils
-} from '@ohos.arkui.stateManagement'
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { Entry, Column, Component, Button, ClickEvent, Text, Row, Scroll, ButtonType, Flex, FlexDirection, ItemAlign, FlexAlign, Alignment, TextAlign, TextOverflow, FontWeight, Profiler, setAppBgColor, FlexWrap, $r, Resource } from '@ohos.arkui.component';
+import { State, Link, PropRef, Consume, Provide, UIUtils, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
-import CommonFunc from '../../../MainAbility/common/Common';
 import common from '@ohos.app.ability.common';
 import resourceManager from '@ohos.resourceManager';
-
 @Component
 struct Child_AI {
   // @Consume装饰的变量通过相同的属性名绑定其祖先组件Ancestors内的@Provide装饰的变量

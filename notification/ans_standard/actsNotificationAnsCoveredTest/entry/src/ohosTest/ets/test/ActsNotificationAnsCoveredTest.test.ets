@@ -1678,8 +1678,17 @@ export default function actsNotificationAnsCovered() {
               expect(false).assertTrue();
               done();
             } else {
-              console.info(`${TAG} getSlot AsyncCallback success`);
-              expect(NotificationSlot.notificationType).assertEqual(4)
+              console.info(`${TAG} getSlot AsyncCallback success ${JSON.stringify(NotificationSlot)}`);
+ 	            expect(NotificationSlot.notificationType).assertEqual(4);
+ 	            expect(NotificationSlot.badgeFlag).assertEqual(true);
+ 	            expect(NotificationSlot.bypassDnd).assertEqual(false);
+ 	            expect(NotificationSlot.vibrationEnabled).assertEqual(true);
+ 	            expect(NotificationSlot.lockscreenVisibility).assertEqual(2);
+ 	            expect(NotificationSlot.sound).assertEqual("file://system/etc/Light.ogg");
+ 	            expect(NotificationSlot.lightEnabled).assertEqual(false);
+ 	            expect(NotificationSlot.enabled).assertEqual(true);
+ 	            expect(NotificationSlot.vibrationValues).assertContain([200]);
+ 	            expect(NotificationSlot.lightColor).assertEqual(0);
               console.info(TAG + 'Acts_NotificationSlot_0100 END');
               done();
             }

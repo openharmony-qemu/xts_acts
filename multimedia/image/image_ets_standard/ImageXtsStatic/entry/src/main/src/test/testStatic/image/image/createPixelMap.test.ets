@@ -544,5 +544,49 @@ export default function createPixelMapTest(): void  {
         done();
       }
     })
+
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_createPixelMap_static_2600
+     * @tc.number SUB_MEDIA_IMAGE_createPixelMap_static_2600
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_createPixelMap_static_2600', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createPixelMap_static_2600';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      const opts: image.InitializationOptions =
+        { editable: true, pixelFormat: image.PixelMapFormat.RGBA_1010102, size: { height: 4, width: 6 } };
+      try {
+        await createPixelMapCallbackTest(done, testName, color, opts);
+      } catch (error) {
+        console.info(TAG, `failed; error: ${error},${error.code}`, testName);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_createPixelMap_static_2700
+     * @tc.number SUB_MEDIA_IMAGE_createPixelMap_static_2700
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_createPixelMap_static_2700', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createPixelMap_static_2700';
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      const opts: image.InitializationOptions =
+        { editable: true, pixelFormat: image.PixelMapFormat.RGBA_1010102, size: { height: 4, width: 6 } };
+      try {
+        await createPixelMapPromiseTest(done, testName, color, opts);
+      } catch (error) {
+        console.info(TAG, `failed; error: ${error},${error.code}`, testName);
+        expect().assertFail();
+        done();
+      }
+    })
   })
 }

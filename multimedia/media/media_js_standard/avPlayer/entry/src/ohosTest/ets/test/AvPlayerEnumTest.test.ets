@@ -302,6 +302,8 @@ export default function AvPlayerEnumTest() {
       expect(media.PlaybackMetricsKey.TOTAL_DOWNLOAD_SIZE).assertEqual('total_loading_bytes');
       expect(media.PlaybackMetricsKey.STALLING_COUNT).assertEqual('stalling_count');
       expect(media.PlaybackMetricsKey.TOTAL_STALLING_TIME).assertEqual('total_stalling_time');
+      expect(media.PlaybackMetricsKey.LIP_ASYNC_COUNT).assertEqual('lip_async_count');
+ 	    expect(media.PlaybackMetricsKey.TOTAL_LIP_ASYNC_TIME).assertEqual('total_lip_async_time');
       done();
     });
   })

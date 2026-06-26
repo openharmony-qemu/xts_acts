@@ -1029,7 +1029,7 @@ struct WebComponent {
                     }
                     case "emitWebViewNativeMediaPlayerHandleError": {
                         try {
-                            this.controller.loadUrl(this.mServer.getAssetUrl('nativeMediaError2.html'))
+                            this.controller.loadUrl($rawfile('nativeMediaError2.html'))
                             await Utils.sleep(1500)
                             Utils.emitEvent(true,300290)
                         } catch (error) {
@@ -1082,7 +1082,7 @@ struct WebComponent {
                             console.log('emitWebViewNativeVideoSetSeek==>')
                             this.checkResult = '';
 			    this.isPageEnd = -1;
-                            this.controller.loadUrl(this.mServer.getAssetUrl('nativeMediaSetSeek.html'))
+                            this.controller.loadUrl($rawfile('nativeMediaSetSeek.html'))
                             await waitForExist(()=>this.isPageEnd, this.emitKey + 'isPageEnd',0)
                             this.controller.runJavaScript("buttonPlay()", (error, result) => {
                                 this.checkResult = result;
@@ -1107,7 +1107,7 @@ struct WebComponent {
                             console.log('emitWebViewNativeMediaSetVolume==>')
                             this.checkResult = '';
                             this.isPageEnd = -1;
-                            this.controller.loadUrl(this.mServer.getAssetUrl('nativeMediaSetVolume.html'))
+                            this.controller.loadUrl($rawfile('nativeMediaSetVolume.html'))
                             await waitForExist(()=>this.isPageEnd, this.emitKey + 'isPageEnd',0)
                             this.controller.runJavaScript("buttonPlay()", (error, result) => {
                                 this.checkResult = result;
@@ -1131,7 +1131,7 @@ struct WebComponent {
                             console.log('emitWebViewNativeMediaMediaInfo==>')
                             this.checkResult = '';
                             this.isPageEnd = -1;
-                            this.controller.loadUrl(this.mServer.getAssetUrl('nativeMediaInfo.html'))
+                            this.controller.loadUrl($rawfile('nativeMediaInfo.html'))
                             await waitForExist(()=>this.isPageEnd, this.emitKey + 'IsPageEnd',0,1000);
                             this.controller.runJavaScript("buttonLoad()", (error, result) => {
                                 this.checkResult = '' + result;

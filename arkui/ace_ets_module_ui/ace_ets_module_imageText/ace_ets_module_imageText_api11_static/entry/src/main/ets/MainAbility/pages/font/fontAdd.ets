@@ -32,7 +32,6 @@ import {
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { Font } from '@ohos.arkui.UIContext'
 
-const Font = new Font();
 
 @Entry
 @Component

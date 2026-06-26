@@ -1,38 +1,11 @@
 'use static'
 
-import { TabContentAnimatedTransition, ListScroller, LengthConstrain, AttributeModifier, UIGridEvent, ScrollSource,
-  NodeContainer, ImageAttribute, ScrollAttribute, GridAttribute, ListAttribute,  ResourceColor,
-  ScrollBarMargin,  TabContentTransitionProxy, FocusWrapMode, TabContentAnimatedTransition, TabsController,
-  BarPosition, Divider, EdgeEffect, BarMode, AnimationMode, Position, LocalizedEdgeColors, OutlineStyle,
-  EdgeOutlineStyles, EdgeOutlineWidths, EdgeColors, OutlineRadiuses, Circle ,ExpectedFrameRateRange ,PlayMode,
-  OnAlphabetIndexerRequestPopupDataCallback, OnAlphabetIndexerPopupSelectCallback,AlphabetIndexerOptions,
-  OnAlphabetIndexerSelectCallback ,IndexerAlign,TextAlign ,AlphabetIndexer, ListItem, Stack ,Color ,ButtonType ,
-  HoverModeAreaType ,Length ,SheetSize ,SheetType ,EffectEdge ,FontWeight ,FontStyle ,Font ,PopupOptions ,
-  PopupMessageOptions ,Placement ,LocalizedBorderRadiuses ,BorderRadiuses, LengthMetrics ,TextInput ,Margin ,
-  $$ ,SheetKeyboardAvoidMode ,SheetOptions , SheetTitleOptions ,Orientation, ThemeColorMode ,BlurStyle,
-  BackgroundBlurStyleOptions ,MoreButtonOptions ,BlurOptions ,AdaptiveColor ,BackgroundEffectOptions ,
-  NavDestinationActiveReason ,$r,LengthMetrics,HorizontalAlign, ForEach, List,NavigationMode,Alignment,
-  Entry, Builder, PopInfo,NavBarPosition, Callback, Text, TextAttribute,BarStyle,Image,Color, Row, Column,
-  NavDestinationCommonTitle,Component, Button, ButtonAttribute, Scroll, ClickEvent, Curve, NavPathStack, Navigation,
-  LayoutSafeAreaEdge, LaunchMode, NavigationMenuItem, NavPathInfo, NavDestination, LayoutSafeAreaType, NavigationMode,
-  NavigationOptions, NavigationTitleMode, NavigationCommonTitle, ScrollSnapAnimationSpeed, ScrollSnapAlign,
-  NavDestinationMode, NavDestinationContext } from '@ohos.arkui.component'
-import { State,Consume } from '@ohos.arkui.stateManagement'
-import hilog from '@ohos.hilog'
-import { UIContext } from '@ohos.arkui.UIContext'
-import { $r,LengthMetrics, HorizontalAlign, ForEach, List,NavigationMode,Alignment, Entry, Builder, PopInfo,
-  NavBarPosition, Callback, Text, TextAttribute,BarStyle,Image,Color, Row, Column, NavDestinationCommonTitle,
-  Component, Button, ButtonAttribute, Scroll, ClickEvent, Curve, NavPathStack, Navigation, LayoutSafeAreaEdge,
-  LaunchMode, NavigationMenuItem, NavPathInfo, NavDestination, LayoutSafeAreaType, NavigationMode, NavigationOptions,
-  NavigationTitleMode, NavigationCommonTitle, NavDestinationMode, NavDestinationContext } from '@ohos.arkui.component'
-import { AppStorage,State,Consume,Observed} from '@ohos.arkui.stateManagement'
-import { Scroll,PinchGesture,GestureEvent,Visibility,ItemDragInfo,TextAlign,ScrollState,Scroller,LazyForEach,
-  Blank,GridDirection,BarState,GridItem,Grid,GridLayoutOptions,Component, Entry, Column, Row, Text, Navigation,
-  NavDestination, NavigationTitleMode, NavPathStack, Button, ClickEvent } from '@ohos.arkui.component'
-import { LengthUnit } from '@ohos.arkui.node';
-import {FrameNode, typeNode} from '@ohos.arkui.node'
+import { TabContentAnimatedTransition, ListScroller, LengthConstrain, AttributeModifier, UIGridEvent, ScrollSource, NodeContainer, ImageAttribute, ScrollAttribute, GridAttribute, ListAttribute, ResourceColor, ScrollBarMargin, TabContentTransitionProxy, FocusWrapMode, TabsController, BarPosition, Divider, EdgeEffect, BarMode, AnimationMode, Position, LocalizedEdgeColors, OutlineStyle, EdgeOutlineStyles, EdgeOutlineWidths, EdgeColors, OutlineRadiuses, Circle, ExpectedFrameRateRange, PlayMode, OnAlphabetIndexerRequestPopupDataCallback, OnAlphabetIndexerPopupSelectCallback, AlphabetIndexerOptions, OnAlphabetIndexerSelectCallback, IndexerAlign, TextAlign, AlphabetIndexer, ListItem, Stack, Color, ButtonType, HoverModeAreaType, Length, SheetSize, SheetType, EffectEdge, FontWeight, FontStyle, Font, PopupOptions, PopupMessageOptions, Placement, LocalizedBorderRadiuses, BorderRadiuses, LengthMetrics, TextInput, Margin, $$, SheetKeyboardAvoidMode, SheetOptions, SheetTitleOptions, Orientation, ThemeColorMode, BlurStyle, BackgroundBlurStyleOptions, MoreButtonOptions, BlurOptions, AdaptiveColor, BackgroundEffectOptions, NavDestinationActiveReason, $r, HorizontalAlign, ForEach, List, NavigationMode, Alignment, Entry, Builder, PopInfo, NavBarPosition, Callback, Text, TextAttribute, BarStyle, Image, Row, Column, NavDestinationCommonTitle, Component, Button, ButtonAttribute, Scroll, ClickEvent, Curve, NavPathStack, Navigation, LayoutSafeAreaEdge, LaunchMode, NavigationMenuItem, NavPathInfo, NavDestination, LayoutSafeAreaType, NavigationOptions, NavigationTitleMode, NavigationCommonTitle, ScrollSnapAnimationSpeed, ScrollSnapAlign, NavDestinationMode, NavDestinationContext, PinchGesture, GestureEvent, Visibility, ItemDragInfo, ScrollState, Scroller, LazyForEach, Blank, GridDirection, BarState, GridItem, Grid, GridLayoutOptions } from '@ohos.arkui.component';
+import { State, Consume, AppStorage, Observed } from '@ohos.arkui.stateManagement';
+import hilog from '@ohos.hilog';
+import { UIContext } from '@ohos.arkui.UIContext';
+import { LengthUnit, FrameNode, typeNode } from '@ohos.arkui.node';
 import { BusinessError } from '@kit.BasicServicesKit';
-
 // 定义不同的 FocusWrapMode Modifier 类
 export class ListFocusWrapModeDefaultModifier implements AttributeModifier<ListAttribute> {
   applyNormalAttribute(instance: ListAttribute): void {

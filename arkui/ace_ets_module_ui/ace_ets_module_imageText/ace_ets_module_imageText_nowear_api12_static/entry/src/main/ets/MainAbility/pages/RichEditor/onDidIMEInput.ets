@@ -13,12 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component,RichEditorController ,Column,RichEditorOptions,RichEditorRange,
-  Flex,TextRange,ColumnOptions,Text,RichEditor,Color
-
-} from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
-import { ClickEvent } from '@ohos.arkui.component';
+import { Entry, Column, Component, RichEditorController, RichEditorOptions, RichEditorRange, Flex, TextRange, ColumnOptions, Text, RichEditor, Color, ClickEvent } from '@ohos.arkui.component';
+import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct RichEditorOnDidIMEInput {

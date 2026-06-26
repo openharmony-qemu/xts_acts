@@ -13,58 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// import events_emitter from '@ohos.events.emitter';
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  ForEach,
-  Text,
-  Row,
-  Flex,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  Builder,
-  NavPathStack,
-  FontWeight,
-  Navigation,
-  NavDestination,
-  NavigationMode,
-  ButtonType,
-  Color,
-  DatePicker,
-  Divider,
-  Alignment,
-  TextAlign,
-  TextOverflow,
-} from '@ohos.arkui.component'
-import {
-  State,
-  Watch,
-  Link,
-  Provide,
-  PropRef,
-  ObjectLink,
-  Observed,
-  Consume,
-  StoragePropRef,
-  StorageLink,
-  LocalStorage,
-  LocalStoragePropRef,
-  LocalStorageLink,
-  Observed,
-  Environment,
-  ColorMode
-} from '@ohos.arkui.stateManagement'
+import { Entry, Column, Component, Button, ClickEvent, ForEach, Text, Row, Flex, FlexDirection, ItemAlign, FlexAlign, Builder, NavPathStack, FontWeight, Navigation, NavDestination, NavigationMode, ButtonType, Color, DatePicker, Divider, Alignment, TextAlign, TextOverflow } from '@ohos.arkui.component';
+import { State, Watch, Link, Provide, PropRef, ObjectLink, Observed, Consume, StoragePropRef, StorageLink, LocalStorage, LocalStoragePropRef, LocalStorageLink, Environment, ColorMode, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import hilog from "@ohos.hilog";
-import emitter from "@ohos.events.emitter";
+import hilog from '@ohos.hilog';
+import emitter from '@ohos.events.emitter';
 import { RecordData } from '@ohos.base';
-
 const TAG = 'ets_apiLack_add';
 
 // let storage1: LocalStorage = LocalStorage.GetShared() 原代码，已平替

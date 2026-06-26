@@ -37,11 +37,11 @@ export default function testsuite() {
   UIContextDragControllerTest();
   tapGestureAddInterfaceTest();
 
-  columnMonopolize();
   columnMonopolizeFalse();
   listMonopolize();
 
   gestureDefine6();
+  columnMonopolize();
   SwiperGestureHandlerTest();
   SwipeGestureExample03Test();
   SwipeGestureExample02Test();

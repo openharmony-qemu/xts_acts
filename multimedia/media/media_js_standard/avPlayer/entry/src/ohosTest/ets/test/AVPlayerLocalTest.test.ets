@@ -39,6 +39,8 @@ const STOPPED = 'stopped';
 const RELEASED = 'released';
 const ERROR = 'error';
 const PAGE_PATH = "testability/pages/Surface"
+const TRACK_ZORO = 0;
+const TRACK_ONE = 1;
 let fileDescriptor: media.AVFileDescriptor;
 let fileDescriptor_mkv: media.AVFileDescriptor;
 let fileDescriptor2: media.AVFileDescriptor;
@@ -2365,6 +2367,153 @@ function getCurrentPresentationTimestamp(avPlayer: media.AVPlayer | null, done: 
     }
   })
 }
+
+async function testGetCurrentTrack(src: string | media.AVFileDescriptor, done: Function){
+  media.createAVPlayer((err, video) => {
+    console.info(`case media err: ${err}`)
+    if (typeof (video) !== 'undefined') {
+      console.info('case createAVPlayer success');
+      avPlayer = video;
+      getCurrentTrack(avPlayer, done);
+      setSource(avPlayer, src);
+    }
+    if (err != null) {
+      console.error(`case createAVPlayer error, errMessage is ${err.message}`);
+      expect().assertFail();
+      done();
+    }
+  })
+}
+
+function getCurrentTrack(avPlayer: media.AVPlayer | null, done: Function) {
+  avPlayer?.on('stateChange', async (state, reason) =>{
+    switch (state) {
+      case INITIALIZED:
+        if (!avPlayer) {
+          console.info(`avPlayer is null`);
+          break;
+        }
+        console.info(`case INITIALIZED`);
+        expect(avPlayer.state).assertEqual(INITIALIZED);
+        avPlayer.audioRendererInfo = { 
+          usage: audio.StreamUsage.STREAM_USAGE_MOVIE, 
+          rendererFlags: 0
+        }
+        avPlayer.prepare((err) =>{
+          console.info('case prepare called' + err);
+          if (err != null) {
+            console.error(`case prepare error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          } else if (avPlayer) {
+            console.info('case avPlayer.duration: ' + avPlayer.duration);
+          }
+        });
+        break;
+      case PREPARED:
+        avPlayer?.getCurrentTrack(media.MediaType.MEDIA_TYPE_AUD).then((track) => {
+          expect(track).assertEqual(TRACK_ONE);
+        }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
+        avPlayer?.getCurrentTrack(media.MediaType.MEDIA_TYPE_VID).then((track) => {
+          expect(track).assertEqual(TRACK_ZORO);
+        }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
+        avPlayer?.play();
+        break;
+      case PLAYING:
+        avPlayer?.getCurrentTrack(media.MediaType.MEDIA_TYPE_AUD).then((track) => {
+          expect(track).assertEqual(TRACK_ONE);
+        }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
+        avPlayer?.getCurrentTrack(media.MediaType.MEDIA_TYPE_VID).then((track) => {
+          expect(track).assertEqual(TRACK_ZORO);
+        }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
+        avPlayer?.pause();
+        break;
+      case PAUSED:        
+        avPlayer?.release();
+        break;
+      case RELEASED:
+        avPlayer = null;
+        done();
+        break;
+      case ERROR:
+        expect().assertFail();
+        avPlayer?.release().then(() =>{
+        }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
+        avPlayer = null;
+        break;
+      default:
+        break;
+    }
+  })
+}
+
+async function testPrivacyType(src: string | media.AVFileDescriptor, done: Function, type: audio.AudioPrivacyType){
+  media.createAVPlayer((err, video) => {
+    console.info(`case media err: ${err}`)
+    if (typeof (video) !== 'undefined') {
+      console.info('case createAVPlayer success');
+      avPlayer = video;
+      privacyType(avPlayer, done, type);
+      setSource(avPlayer, src);
+    }
+    if (err != null) {
+      console.error(`case createAVPlayer error, errMessage is ${err.message}`);
+      expect().assertFail();
+      done();
+    }
+  })
+}
+
+function privacyType(avPlayer: media.AVPlayer | null, done: Function, type: audio.AudioPrivacyType) {
+  let surfaceID: string = globalThis.value;
+  avPlayer?.on('stateChange', async (state, reason) =>{
+    switch (state) {
+      case INITIALIZED:
+        if (!avPlayer) {
+          console.info(`avPlayer is null`);
+          break;
+        }
+        console.info(`case INITIALIZED`);
+        expect(avPlayer.state).assertEqual(INITIALIZED);
+        avPlayer.surfaceId = surfaceID;
+        avPlayer.privacyType = type;
+        avPlayer.audioRendererInfo = { 
+          usage: audio.StreamUsage.STREAM_USAGE_MOVIE, 
+          rendererFlags: 0
+        }
+        avPlayer.prepare((err) =>{
+          console.info('case prepare called' + err);
+          if (err != null) {
+            console.error(`case prepare error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          } else if (avPlayer) {
+            console.info('case avPlayer.duration: ' + avPlayer.duration);
+          }
+        });
+        break;
+      case PREPARED:
+        if(avPlayer){
+          expect(avPlayer.privacyType).assertEqual(type);
+        }
+        avPlayer?.release();
+        break;
+      case RELEASED:
+        avPlayer = null;
+        done();
+        break;
+      case ERROR:
+        expect().assertFail();
+        avPlayer?.release().then(() =>{
+        }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
+        avPlayer = null;
+        break;
+      default:
+        break;
+    }
+  })
+}
+
 export default function AVPlayerLocalTest() {
   describe('AVPlayerLocalTest', () => {
     beforeAll(async () => {
@@ -3658,6 +3807,66 @@ export default function AVPlayerLocalTest() {
       if (fileDescriptor) {
         let playbackStrategy: media.PlaybackStrategy = { keepDecodingOnMute: false }
         testSetPlaybackStrategy(fileDescriptor, avPlayer, done, playbackStrategy);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_GETCURRENTTRACK_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_GETCURRENTTRACK_0100
+     * @tc.desc   Local Video getCurrentTrack test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_VIDEO_GETCURRENTTRACK_0100', Level.LEVEL0,async (done: Function) => {
+      try {
+        if (fileDescriptor) {
+          testGetCurrentTrack(fileDescriptor, done);
+        }
+      } catch (error) {
+        console.error(`Test exception: ${JSON.stringify(error)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+ 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_PRIVACYTYPE_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_PRIVACYTYPE_0100
+     * @tc.desc   Test privacyType set to PRIVACY_TYPE_PUBLIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_PRIVACYTYPE_0100', Level.LEVEL0,async (done: Function) => {
+      try {
+        if (fileDescriptor) {
+          testPrivacyType(fileDescriptor, done, audio.AudioPrivacyType.PRIVACY_TYPE_PUBLIC);
+        }
+      } catch (error) {
+        console.error(`Test exception: ${JSON.stringify(error)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+ 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_PRIVACYTYPE_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_PRIVACYTYPE_0200
+     * @tc.desc   Test privacyType set to PRIVACY_TYPE_PRIVATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_PRIVACYTYPE_0200', Level.LEVEL0,async (done: Function) => {
+      try {
+        if (fileDescriptor) {
+          testPrivacyType(fileDescriptor, done, audio.AudioPrivacyType.PRIVACY_TYPE_PRIVATE);
+        }
+      } catch (error) {
+        console.error(`Test exception: ${JSON.stringify(error)}`);
+        expect().assertFail();
+        done();
       }
     });
   })

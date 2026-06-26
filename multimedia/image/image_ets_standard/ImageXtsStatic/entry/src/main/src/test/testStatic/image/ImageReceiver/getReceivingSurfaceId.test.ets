@@ -34,9 +34,9 @@ async function getReceivingSurfaceIdPromiseTest(done: () => void, testName: stri
   try {
     const receiver: image.ImageReceiver | undefined = await image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
     await receiver?.getReceivingSurfaceId().then((id: string) => {
+      expect(id.length > 0).assertTrue();
       console.info(TAG, 'Succeeded in getting the ReceivingSurfaceId.');
     }).catch((error) => {
-      // let error1 = error as BusinessError
       console.error(TAG, `Failed to get the ReceivingSurfaceId.code ${error.code},message is ${error.message}`);
       expect().assertFail();
     });
@@ -57,6 +57,7 @@ async function getReceivingSurfaceIdCallbackTest(done: () => void, testName: str
         console.error(TAG, `Failed to get the ReceivingSurfaceId.code ${err.code},message is ${err.message}`);
         expect().assertFail();
       } else {
+        expect(id!.length > 0).assertTrue();
         console.info(TAG, 'Succeeded in getting the ReceivingSurfaceId.');
       }
       receiver?.release((err: BusinessError | null) => {

@@ -21,7 +21,21 @@
 #include "hilog/log.h"
 
 static NDKCamera* ndkCamera_ = nullptr;
+const static int NUMBER_0 = 0;
+const static int NUMBER_1 = 1;
 const static int NUMBER_2 = 2;
+const static int NUMBER_3 = 3;
+const static int NUMBER_4 = 4;
+const static int NUMBER_5 = 5;
+const static int NUMBER_6 = 6;
+const static int NUMBER_7 = 7;
+const static int NUMBER_8 = 8;
+const static int NUMBER_9 = 9;
+const static int NUMBER_10 = 10;
+const static int NUMBER_11 = 11;
+const static int NUMBER_12 = 12;
+const static int NUMBER_13 = 13;
+const static int NUMBER_14 = 14;
 struct Capture_Setting {
     int32_t quality;
     int32_t rotation;
@@ -184,6 +198,55 @@ static napi_value GetCameraHostTypeInspection(napi_env env, napi_callback_info i
 
     napi_create_int32(env, ndkCamera_->GetCameraHostTypeInspection(), &jsValue);
 
+    return jsValue;
+}
+
+static napi_value GetAutomotiveCameraPosition(napi_env env, napi_callback_info info)
+{
+    ndkCamera_->GetAutomotiveCameraPosition();
+
+    napi_value jsValue = nullptr;
+
+    napi_create_int32(env, ndkCamera_->GetAutomotiveCameraPosition(), &jsValue);
+
+    return jsValue;
+}
+
+static napi_value GetAutomotiveCameraPositionErrorParameter(napi_env env, napi_callback_info info)
+{
+    ndkCamera_->GetAutomotiveCameraPositionErrorParameter();
+
+    napi_value jsValue = nullptr;
+
+    napi_create_int32(env, ndkCamera_->GetAutomotiveCameraPositionErrorParameter(), &jsValue);
+
+    return jsValue;
+}
+
+static napi_value EnumTestAutomotiveCameraPosition(napi_env env, napi_callback_info info)
+{
+    int32_t backCode = -1;
+    if (OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_EXTERIOR_OTHER == NUMBER_0
+        || OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_EXTERIOR_FRONT == NUMBER_1
+        || OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_EXTERIOR_REAR == NUMBER_2
+        || OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_EXTERIOR_LEFT == NUMBER_3
+        || OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_EXTERIOR_RIGHT == NUMBER_4
+        || OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_INTERIOR_OTHER == NUMBER_5
+        || OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_1_LEFT == NUMBER_6
+        || OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_1_CENTER == NUMBER_7
+        || OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_1_RIGHT == NUMBER_8
+        || OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_2_LEFT == NUMBER_9
+        || OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_2_CENTER == NUMBER_10
+        || OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_2_RIGHT == NUMBER_11
+        || OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_3_LEFT == NUMBER_12
+        || OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_3_CENTER == NUMBER_13
+        || OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_3_RIGHT == NUMBER_14
+    ) {
+        backCode = 0;
+    }
+
+    napi_value jsValue = nullptr;
+    napi_create_int32(env, backCode, &jsValue);
     return jsValue;
 }
 
@@ -4040,6 +4103,112 @@ static napi_value DestroyCameraNotificationInfo(napi_env env, napi_callback_info
     return result;
 }
 
+static napi_value CreatePhotoCaptureSettingExt(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+    napi_value result;
+    Camera_ErrorCode ret = ndkCamera_->CreatePhotoCaptureSettingExt(useCaseCode);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value DestroyPhotoCaptureSettingExt(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+    napi_value result;
+    Camera_ErrorCode ret = ndkCamera_->DestroyPhotoCaptureSettingExt(useCaseCode);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value SetCompressionQuality(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+
+    int32_t compressionQuality;
+    napi_get_value_int32(env, args[1], &compressionQuality);
+    napi_value result;
+    Camera_ErrorCode ret = ndkCamera_->SetCompressionQuality(useCaseCode, compressionQuality);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value SetImageRotation(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+
+    Camera_ImageRotation imageRotation;
+    int32_t rotation;
+    napi_get_value_int32(env, args[1], &rotation);
+    imageRotation = static_cast<Camera_ImageRotation>(rotation);
+    napi_value result;
+    Camera_ErrorCode ret = ndkCamera_->SetImageRotation(useCaseCode, imageRotation);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value SetMirror(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+
+    bool isMirror;
+    napi_get_value_bool(env, args[1], &isMirror);
+    napi_value result;
+    Camera_ErrorCode ret = ndkCamera_->SetMirror(useCaseCode, isMirror);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value SetLocation(napi_env env, napi_callback_info info)
+{
+    size_t argc = 4;
+    napi_value args[4] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+    Camera_Location location;
+    napi_get_value_double(env, args[1], &location.latitude);
+    napi_get_value_double(env, args[NUMBER_2], &location.longitude);
+    napi_get_value_double(env, args[NUMBER_3], &location.altitude);
+    napi_value result;
+    Camera_ErrorCode ret = ndkCamera_->SetLocation(useCaseCode, location);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value CaptureWithCaptureSettingExt(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+    napi_value result;
+    Camera_ErrorCode ret = ndkCamera_->CaptureWithCaptureSettingExt(useCaseCode);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -4223,6 +4392,26 @@ static napi_value Init(napi_env env, napi_value exports)
         { "createPreviewOutputByIndex", nullptr, createPreviewOutputByIndex, nullptr, nullptr, nullptr,
             napi_default, nullptr },
         { "createDeferredPreviewOutput", nullptr, CreateDeferredPreviewOutput, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "createPhotoCaptureSettingExt", nullptr, CreatePhotoCaptureSettingExt, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "destroyPhotoCaptureSettingExt", nullptr, DestroyPhotoCaptureSettingExt, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "setCompressionQuality", nullptr, SetCompressionQuality, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "setImageRotation", nullptr, SetImageRotation, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "setMirror", nullptr, SetMirror, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "setLocation", nullptr, SetLocation, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "captureWithCaptureSettingExt", nullptr, CaptureWithCaptureSettingExt, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "getAutomotiveCameraPosition", nullptr, GetAutomotiveCameraPosition, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "getAutomotiveCameraPositionErrorParameter", nullptr, GetAutomotiveCameraPositionErrorParameter, nullptr,
+            nullptr, nullptr, napi_default, nullptr },
+        { "enumTestAutomotiveCameraPosition", nullptr, EnumTestAutomotiveCameraPosition, nullptr, nullptr, nullptr,
             napi_default, nullptr },
     };
     napi_property_descriptor desc1[] = {

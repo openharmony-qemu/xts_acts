@@ -4679,7 +4679,7 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
           expect(count).assertLarger(0);
           windowClass.recover();
           displayClass.off('availableAreaChange', callback);
-        } else if (!isFreeWindowMode && isSupportRotate) {
+        } else if (!isFreeWindowMode && isSupportRotate && isSyscapSessionManagerSupported) {
           displayClass.on('availableAreaChange', callback);
           await sleep(2000);
           await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
@@ -4696,11 +4696,7 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
         done();
       } catch (err) {
         console.log(caseName + ': fail:' + err + ' ' + err.code);
-        if (!isSyscapSessionManagerSupported) {
-          expect(err.code).assertEqual(801)
-        } else {
-          expect(false).assertTrue();
-        }
+        expect(false).assertTrue();
         done();
       }
     });

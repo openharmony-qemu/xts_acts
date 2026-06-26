@@ -13,40 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Column,
-  Component,
-  Text,
-  List,
-  ForEach,
-  ListItem,
-  TextAlign,
-  Axis,
-  Button,
-  ScrollSource,
-  OffsetResult,
-  ScrollDirection,
-  EdgeEffect,
-  ColumnOptions,
-  ClickEvent,
-  Edge,
-  Stack,
-  Alignment,
-  ScrollState,
-  OffsetResult,
-  Margin,
-  BarState,
-  Color,
-  ScrollAlign,
-  ClickEvent,
-  Scroller,
-  Scroll,
-  ICurve
-} from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
-import Curves from '@ohos.curves'
-
+import { Entry, Column, Component, Text, List, ForEach, ListItem, TextAlign, Axis, Button, ScrollSource, OffsetResult, ScrollDirection, EdgeEffect, ColumnOptions, ClickEvent, Edge, Stack, Alignment, ScrollState, Margin, BarState, Color, ScrollAlign, Scroller, Scroll, ICurve } from '@ohos.arkui.component';
+import { State } from '@ohos.arkui.stateManagement';
+import Curves from '@ohos.curves';
 @Entry
 @Component
 struct ScrollSourceOtherExample {

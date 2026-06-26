@@ -13,36 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Button,
-  ButtonAttribute,
-  ClickEvent,
-  Color,
-  ColorMetrics,
-  Column,
-  ColumnOptions,
-  Component,
-  CustomBuilder,
-  DragItemInfo,
-  EdgeWidths,
-  Entry,
-  FlexAlign,
-  GestureEvent,
-  LongPressGesture,
-  Margin,
-  Row,
-  Scroll,
-  TapGesture,
-  Text,
-  TextAlign,
-  TouchEvent,
-  TouchType,
-  ColorSpace,
-  ColorMetrics
-} from '@ohos.arkui.component'
-import { AppStorage, LocalStorage, State } from '@ohos.arkui.stateManagement'
-
-
+import { Button, ButtonAttribute, ClickEvent, Color, ColorMetrics, Column, ColumnOptions, Component, CustomBuilder, DragItemInfo, EdgeWidths, Entry, FlexAlign, GestureEvent, LongPressGesture, Margin, Row, Scroll, TapGesture, Text, TextAlign, TouchEvent, TouchType, ColorSpace } from '@ohos.arkui.component';
+import { AppStorage, LocalStorage, State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct Index {

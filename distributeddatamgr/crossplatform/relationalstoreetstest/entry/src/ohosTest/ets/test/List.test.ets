@@ -27,6 +27,7 @@ import RelationalStore from './RelationalStore.test'
 import RdbStoreIgnore from './RdbStoreIgnoretest'
 import relationalStoreAssetResultSetTest from './AssetResultSet.test'
 import rdbstoreStoreExcuteSqlErrorTest from './RdbStoreExecuteSqlError.test'
+import rdbstoreStoreExcuteSqlErrorCallBackTest from './RdbStoreExecuteSqlErrorBack.test'
 
 export default function testsuite() {
   RdbPredicates()
@@ -44,5 +45,7 @@ export default function testsuite() {
   relationalStoreAssetResultSetTest()
 
   rdbstoreStoreExcuteSqlErrorTest()
+  rdbstoreStoreExcuteSqlErrorCallBackTest()
 
+  
 }
