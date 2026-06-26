@@ -40,6 +40,9 @@ import LazyVWaterFlowLayoutProperties from './LazyVWaterFlowLayout/LazyVWaterFlo
 import headerFooterStickyGrid from './LazyVGridLayout/headerFooterStickyGrid.test'
 import headerFooterStickyFlow from './LazyVWaterFlowLayout/headerFooterStickyFlow.test'
 import headerFooterStickyColumn from './LazyColumnLayout/headerFooterStickyColumn.test'
+import lazyColumnLayoutModifier from './LazyColumnLayout/lazyColumnLayoutModifier.test'
+import lazyVWaterFlowLayoutModifier from './LazyVWaterFlowLayout/lazyVWaterFlowLayoutModifier.test'
+import lazyVGridLayoutModifier from './LazyVGridLayout/lazyVGridLayoutModifier.test'
 
 export default function testsuite() {
   GridScrollBarWidthTest();
@@ -64,4 +67,5 @@ export default function testsuite() {
   listEnableEditMode();
   listEditModeChange();
   headerFooterStickyGrid();
+  lazyVGridLayoutModifier();
 }
