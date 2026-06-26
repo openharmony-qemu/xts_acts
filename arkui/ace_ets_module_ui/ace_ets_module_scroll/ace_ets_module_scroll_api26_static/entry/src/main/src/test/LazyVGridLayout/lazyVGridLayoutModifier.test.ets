@@ -72,11 +72,11 @@ export default function lazyVGridLayoutModifier() {
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('lazyVGridLayout_modifier');
       console.info("[lazyVGridLayoutModifier_static_0100] columnsTemplate: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('columnsTemplate')));
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('columnsTemplate')));
       console.info("[lazyVGridLayoutModifier_static_0100] rowsGap: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('rowsGap')));
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('rowsGap')));
       console.info("[lazyVGridLayoutModifier_static_0100] columnsGap: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('ColumnsGap')));
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('ColumnsGap')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('columnsTemplate'))
         .assertEqual("1fr 1fr");
       console.info('[lazyVGridLayoutModifier_static_0100] END');
