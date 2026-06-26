@@ -207,6 +207,19 @@ export default function getCurrentInputDevicesTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GETCURRENTINPUTDEVICES_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_CAPTURER_GETCURRENTINPUTDEVICES_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       let AudioStreamInfo: AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -256,6 +269,19 @@ export default function getCurrentInputDevicesTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GETCURRENTINPUTDEVICES_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_CAPTURER_GETCURRENTINPUTDEVICES_0200 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       let AudioStreamInfo: AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -310,6 +336,19 @@ export default function getCurrentInputDevicesTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GETCURRENTINPUTDEVICES_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_CAPTURER_GETCURRENTINPUTDEVICES_0300 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       let index: ESObject;
       let sourceType: ESObject = audio.SourceType;
       const keysArray = [...Object.keys(sourceType)];

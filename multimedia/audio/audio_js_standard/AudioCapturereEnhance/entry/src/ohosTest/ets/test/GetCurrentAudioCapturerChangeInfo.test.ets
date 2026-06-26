@@ -226,6 +226,19 @@ export default function audioCapturerEnhanceTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GETAUDIOCURRENTAUDIOCAPTURERCHANGEINFO_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_CAPTURER_GETAUDIOCURRENTAUDIOCAPTURERCHANGEINFO_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       let AudioStreamInfo: AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -283,6 +296,19 @@ export default function audioCapturerEnhanceTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GETAUDIOCURRENTAUDIOCAPTURERCHANGEINFO_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_CAPTURER_GETAUDIOCURRENTAUDIOCAPTURERCHANGEINFO_0200 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       let AudioStreamInfo: AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -363,6 +389,14 @@ export default function audioCapturerEnhanceTest() {
           done();
           return;
       }
+      const detecteDevice2 = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice2) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try {
         const isPlaybackCaptureAvailable = canIUse('SystemCapability.Multimedia.Audio.PlaybackCapture');
         console.info(`isPlaybackCaptureAvailable: ${isPlaybackCaptureAvailable}`)
@@ -410,6 +444,19 @@ export default function audioCapturerEnhanceTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GETAUDIOCURRENTAUDIOCAPTURERCHANGEINFO_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_CAPTURER_GETAUDIOCURRENTAUDIOCAPTURERCHANGEINFO_0400 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       let AudioStreamInfo: AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_2,
