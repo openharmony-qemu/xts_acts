@@ -15,7 +15,7 @@
  */
 
 import { MarqueeDynamicSyncScene,DynamicSyncScene } from '@ohos.arkui.UIContext'
-import { Entry, Flex, Text, TextAttribute, Column, Marquee,Margin,FontWeight, Component,Button, Padding, ButtonAttribute, ClickEvent, Image, ImageFit, FlexDirection, ItemAlign, FlexAlign, UIContext } from '@ohos.arkui.component'
+import { Entry, Flex, Text, TextAttribute, Column, Marquee,Margin,FontWeight, Component,Button, Padding, ButtonAttribute, ClickEvent, Image, ImageFit, FlexDirection, ItemAlign, FlexAlign } from '@ohos.arkui.component'
 import { State, AppStorage } from '@ohos.arkui.stateManagement'
 import { UIContext } from "@ohos.arkui.UIContext";
 

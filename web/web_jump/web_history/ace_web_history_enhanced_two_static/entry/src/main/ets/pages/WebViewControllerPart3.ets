@@ -21,7 +21,6 @@ import {
   Button,
   ClickEvent,
   Web,
-  UIContext,
   WebResourceResponse,
   Header
 } from '@ohos.arkui.component'
