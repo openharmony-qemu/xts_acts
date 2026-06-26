@@ -114,9 +114,9 @@ export default function testsuite(): void {
   AuxiliaryPictureGetAuxiliaryPictureInfoTest();
   CrateImageCreatorTest();
   MakerNoteHuaweiMetadataTest();
-  //ImageReceiverSupp();
+  ImageReceiverSupp();
   CrateImageSourceTest();
-  //ImageGetComponentSupp();
+  ImageGetComponentSupp();
   ImageMetadataTestStatic();
   createAuxiliaryPictureTest();
   ImageCreateImageCreatorTestSupp();
