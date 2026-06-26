@@ -219,19 +219,15 @@ void CreatePhotoSession()
 void ReleasePhotoSession()
 {
     if (cameraInput != nullptr) {
-        LOGI("yzh OH_CameraInput_Release is called");
         OH_CameraInput_Release(cameraInput);
     }
     if (previewOutput != nullptr) {
-        LOGI("yzh 2 OH_PreviewOutput_Release is called");
         OH_PreviewOutput_Release(previewOutput);
     }
     if (photoOutput != nullptr) {
-        LOGI("yzh 3 OH_PhotoOutput_Release is called");
         OH_PhotoOutput_Release(photoOutput);
     }
     if (captureSession != nullptr) {
-        LOGI("yzh 4 OH_CaptureSession_Release is called");
         OH_CaptureSession_Release(captureSession);
     }
 }
