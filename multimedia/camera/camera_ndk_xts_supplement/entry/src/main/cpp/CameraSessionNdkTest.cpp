@@ -867,6 +867,10 @@ napi_value TestGetPhysicalApertureSucc(napi_env env, napi_callback_info info)
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     char faceID[256];
     napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
+    CreateAndOpenCamera();
+    createPhotoOutput(faceID);
+    CreateCaptureSession();
+    OH_Camera_PhysicalAperture* apertures = nullptr;
     uint32_t size;
     OH_CaptureSession_GetSupportedPhysicalApertures(captureSession, &apertures, &size);
     OH_LOG_ERROR(LOG_APP, "apertures is %{public}d", apertures);
@@ -877,9 +881,11 @@ napi_value TestGetPhysicalApertureSucc(napi_env env, napi_callback_info info)
         napi_create_int32(env, CAMERA_OK, &result);
         return result;
     }
-    double setAperture = apertures[0].apertures[0];
+    double setAperture;
+    setAperture = apertures[0].apertures[0];
     OH_LOG_ERROR(LOG_APP, "setAperture is %{public}f", setAperture);
-    float zoom = apertures->zoomRange.maxZoom;
+    float zoom;
+    zoom = apertures->zoomRange.maxZoom;
     OH_LOG_ERROR(LOG_APP, "zoom is %{public}f", zoom);
     OH_CaptureSession_SetZoomRatio(captureSession, zoom);
     const int waitZoomSeconds = 1;
