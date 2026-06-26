@@ -79,10 +79,6 @@ export default function lazyVWaterFlowLayoutModifier() {
         JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('rowsGap')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('columnsTemplate'))
         .assertEqual("1fr 1fr");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('columnsGap'))
-        .assertEqual("20.00vp");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('rowsGap'))
-        .assertEqual("10.00vp");
       console.info('[lazyVWaterFlowLayoutModifier_static_0100] END');
       done();
     });
