@@ -1325,6 +1325,7 @@ export default function abilityTest() {
         await session.onPlay(onCallback1);
         await session.onPlay(onCallback2);
         await session.offPlay(onCallback1);
+        await sleep(2000);
         await controller.sendControlCommand({command:'play',commandInfo:{callerModuleName:'Center'}});
       } catch (err) {
         console.info(`offplay entry error,error code: ${err.code}, message: ${err.message}`);
