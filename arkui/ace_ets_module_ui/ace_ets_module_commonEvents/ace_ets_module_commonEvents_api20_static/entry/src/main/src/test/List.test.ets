@@ -16,8 +16,10 @@
 import getDisplayId from './DragTest/getDisplayId.test';
 import tapLocation from './TapGestureTest/tapLocation.test';
 import colorMetricsTest from './ColorTest/colorMetrics.test';
+import measureFromViewportTest from './measureFromViewport/measureFromViewport.test';
 export default function testsuite() {
   getDisplayId();//通用属性 onDragStart 失败用例1
   tapLocation();//交互框架 TapGesture 失败用例2
   colorMetricsTest();//通用属性 sweepGradient 失败用例2
+  measureFromViewportTest();
 }
