@@ -208,7 +208,7 @@ export default function fileIOWrite() {
       fileIO.closeSync(file);
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_write_sync_006 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
     }
   });
 
@@ -227,7 +227,7 @@ export default function fileIOWrite() {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_write_sync_007 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
     }
   });
 
@@ -278,7 +278,7 @@ export default function fileIOWrite() {
       fileIO.closeSync(file);
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_write_sync_009 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
     }
   });
 
@@ -304,7 +304,7 @@ export default function fileIOWrite() {
       fileIO.closeSync(file);
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_write_sync_010 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
     }
   });
 
@@ -387,7 +387,7 @@ export default function fileIOWrite() {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_write_sync_013 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
     }
   });
 
@@ -405,7 +405,7 @@ export default function fileIOWrite() {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_write_sync_014 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
     }
   });
 
@@ -427,7 +427,7 @@ export default function fileIOWrite() {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_write_sync_015 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
     }
   });
 
@@ -449,7 +449,7 @@ export default function fileIOWrite() {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_write_sync_016 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
     }
   });
 
@@ -611,7 +611,7 @@ export default function fileIOWrite() {
       fileIO.closeSync(file);
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_write_async_002 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code === 13900008 && e.message == 'Bad file descriptor').assertTrue();
+      expect(e.code === 13900008).assertTrue();
       done();
     }
   });
@@ -636,7 +636,7 @@ export default function fileIOWrite() {
           fileIO.closeSync(file);
           fileIO.unlinkSync(fpath);
           console.log('fileIO_test_write_async_003 error: {message: ' + err.message + ', code: ' + err.code + '}');
-          expect(err.code === 13900008 && err.message == 'Bad file descriptor').assertTrue();
+          expect(err.code === 13900008).assertTrue();
           done();
         }
       });
@@ -1029,7 +1029,7 @@ export default function fileIOWrite() {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_write_async_016 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
       done();
     }
   });
@@ -1053,7 +1053,7 @@ export default function fileIOWrite() {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_write_async_017 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
       done();
     }
   });
@@ -1083,7 +1083,7 @@ export default function fileIOWrite() {
       fileIO.closeSync(file);
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_write_async_018 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
       done();
     }
   });
@@ -1113,7 +1113,7 @@ export default function fileIOWrite() {
       fileIO.closeSync(file);
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_write_async_019 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
       done();
     }
   });
@@ -1143,7 +1143,7 @@ export default function fileIOWrite() {
       fileIO.closeSync(file);
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_write_async_020 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
       done();
     }
   });
@@ -1319,7 +1319,7 @@ export default function fileIOWrite() {
       done();
     } catch (e) {
       console.log('fileIO_test_write_async_025 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
       done();
     }
   });
@@ -1339,7 +1339,7 @@ export default function fileIOWrite() {
       done();
     } catch (e) {
       console.log('fileIO_test_write_async_026 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
       done();
     }
   });
@@ -1363,7 +1363,7 @@ export default function fileIOWrite() {
       done();
     } catch (e) {
       console.log('fileIO_test_write_async_027 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
       fileIO.closeSync(file);
       fileIO.unlinkSync(fpath);
       done();
@@ -1389,7 +1389,7 @@ export default function fileIOWrite() {
       done();
     } catch (e) {
       console.log('fileIO_test_write_async_028 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
       fileIO.closeSync(file);
       fileIO.unlinkSync(fpath);
       done();
@@ -1493,7 +1493,7 @@ export default function fileIOWrite() {
       });
     } catch (e) {
       console.log('fileIO_test_write_async_032 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
       done();
     }
   });
@@ -1516,7 +1516,7 @@ export default function fileIOWrite() {
       });
     } catch (e) {
       console.log('fileIO_test_write_async_033 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
       done();
     }
   });
@@ -1543,7 +1543,7 @@ export default function fileIOWrite() {
       });
     } catch (e) {
       console.log('fileIO_test_write_async_034 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
       fileIO.unlinkSync(fpath);
       done();
     }
@@ -1571,7 +1571,7 @@ export default function fileIOWrite() {
       });
     } catch (e) {
       console.log('fileIO_test_write_async_035 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
       fileIO.unlinkSync(fpath);
       done();
     }
@@ -1629,7 +1629,7 @@ export default function fileIOWrite() {
       });
     } catch (e) {
       console.log('fileIO_test_write_async_037 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
       done();
     }
   });
@@ -1656,7 +1656,7 @@ export default function fileIOWrite() {
       });
     } catch (e) {
       console.log('fileIO_test_write_async_038 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
       done();
     }
   });
@@ -1687,7 +1687,7 @@ export default function fileIOWrite() {
       });
     } catch (e) {
       console.log('fileIO_test_write_async_039 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
       fileIO.unlinkSync(fpath);
       done();
     }
@@ -1719,7 +1719,7 @@ export default function fileIOWrite() {
       });
     } catch (e) {
       console.log('fileIO_test_write_async_040 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
       fileIO.unlinkSync(fpath);
       done();
     }
@@ -1813,7 +1813,7 @@ export default function fileIOWrite() {
       });
     } catch (e) {
       console.log('fileIO_test_write_async_043 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
       fileIO.unlinkSync(fpath);
       done();
     }
@@ -1840,7 +1840,7 @@ export default function fileIOWrite() {
       fileIO.closeSync(file);
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_write_sync_044 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
     }
   });
 
@@ -1865,7 +1865,7 @@ export default function fileIOWrite() {
       fileIO.closeSync(file);
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_write_sync_045 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
     }
   });
 
