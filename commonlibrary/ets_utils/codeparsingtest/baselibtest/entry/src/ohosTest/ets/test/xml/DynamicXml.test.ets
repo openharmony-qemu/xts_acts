@@ -1,5 +1,4 @@
-import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { util, xml } from '@kit.ArkTS';
 
 function sleep(ms: number) {
@@ -54,18 +53,62 @@ export default function xmlDynamic1() {
      * @tc.level  LEVEL1
      */
     it('testDynamicXml0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      try {
-        let thatSer = new xml.XmlDynamicSerializer();
-        thatSer.startElement("note");
-        thatSer.setAttributes("importance", "\ud83d\ude0a");
-        thatSer.endElement();
-        let arrayBuffer = thatSer.getOutput();
-        let uint8 = new Uint8Array(arrayBuffer);
-        let result = util.TextDecoder.create().decodeToString(uint8);
-        let expectedXml = '<note importance="😊"/>';
-        expect(result).assertEqual(expectedXml);
-      } catch (err) {
-        expect().assertFail();
+      let thatSer = new xml.XmlDynamicSerializer();
+      thatSer.startElement("note");
+      thatSer.setAttributes("importance", "\ud83d\ude0a");
+      thatSer.endElement();
+      let arrayBuffer = thatSer.getOutput();
+      let uint8 = new Uint8Array(arrayBuffer);
+      let result = util.TextDecoder.create().decodeToString(uint8);
+      let expectedXml = '<note importance="😊"/>';
+      expect(result).assertEqual(expectedXml);
+      try{
+        thatSer.startElement(null);
+        expect().assertFail()
+      }catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try{
+        thatSer.startElement(undefined);
+        expect().assertFail()
+      }catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try{
+        thatSer.setAttributes('', "\ud83d\ude0a");
+        expect().assertFail()
+      }catch (err) {
+        expect(err.code).assertEqual(10200064);
+      }
+      try{
+        thatSer.setAttributes(null, "\ud83d\ude0a");
+        expect().assertFail()
+      }catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try{
+        thatSer.setAttributes(undefined, "\ud83d\ude0a");
+        expect().assertFail()
+      }catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try{
+        thatSer.setAttributes('add', "");
+        expect().assertFail()
+      }catch (err) {
+        expect(err.code).assertEqual(10200063);
+      }
+      try{
+        thatSer.setAttributes('add', null);
+        expect().assertFail()
+      }catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try{
+        thatSer.setAttributes('add', undefined);
+        expect().assertFail()
+      }catch (err) {
+        expect(err.code).assertEqual(401);
       }
     })
 
@@ -1329,6 +1372,24 @@ export default function xmlDynamic1() {
       let uint8 = new Uint8Array(arrayBuffer);
       let result = util.TextDecoder.create().decodeToString(uint8);
       expect(encodeURI(result)).assertEqual("%3C%08/%3E")
+      try{
+        that.addEmptyElement("")
+        expect().assertFail()
+      }catch (err) {
+        expect(err.code).assertEqual(10200064);
+      }
+      try{
+        that.addEmptyElement(null)
+        expect().assertFail()
+      }catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try{
+        that.addEmptyElement(undefined)
+        expect().assertFail()
+      }catch (err) {
+        expect(err.code).assertEqual(401);
+      }
     })
     /**
      * @tc.name   testDynamicXml0070
@@ -1507,6 +1568,42 @@ export default function xmlDynamic1() {
       let uint8 = new Uint8Array(arrayBuffer);
       let result = util.TextDecoder.create().decodeToString(uint8);
       expect(encodeURI(result)).assertEqual("%0D%0A%3C%08:note%20xmlns:%08=%22a%22/%3E")
+      try{
+        that.setNamespace('', "\ud83d\ude0a");
+        expect().assertFail()
+      }catch (err) {
+        expect(err.code).assertEqual(10200064);
+      }
+      try{
+        that.setNamespace(null, "\ud83d\ude0a");
+        expect().assertFail()
+      }catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try{
+        that.setNamespace(undefined, "\ud83d\ude0a");
+        expect().assertFail()
+      }catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try{
+        that.setNamespace('a','');
+        expect().assertFail()
+      }catch (err) {
+        expect(err.code).assertEqual(10200064);
+      }
+      try{
+        that.setNamespace('a', null);
+        expect().assertFail()
+      }catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try{
+        that.setNamespace('a', undefined);
+        expect().assertFail()
+      }catch (err) {
+        expect(err.code).assertEqual(401);
+      }
     })
     /**
      * @tc.name   testDynamicXml0081
@@ -1703,6 +1800,25 @@ export default function xmlDynamic1() {
       let uint8 = new Uint8Array(arrayBuffer);
       let result = util.TextDecoder.create().decodeToString(uint8);
       expect(encodeURI(result)).assertEqual("%3C!--%08--%3E");
+      try{
+        that.setComment('');
+        expect().assertFail()
+      }catch (err) {
+        expect(err.code).assertEqual(10200064);
+      }
+      try{
+        that.setComment(null);
+        expect().assertFail()
+      }catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try{
+        that.setComment(undefined);
+        expect().assertFail()
+      }catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+
     })
     /**
      * @tc.name   testDynamicXml0092
@@ -1879,6 +1995,24 @@ export default function xmlDynamic1() {
       let uint8 = new Uint8Array(arrayBuffer);
       let result = util.TextDecoder.create().decodeToString(uint8);
       expect(encodeURI(result)).assertEqual("%3C!%5BCDATA%5B%08%5D%5D%3E");
+      try{
+        that.setCdata("")
+        expect().assertFail()
+      }catch (err) {
+        expect(err.code).assertEqual(10200064);
+      }
+      try{
+        that.setCdata(null)
+        expect().assertFail()
+      }catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try{
+        that.setCdata(undefined)
+        expect().assertFail()
+      }catch (err) {
+        expect(err.code).assertEqual(401);
+      }
     })
     /**
      * @tc.name   testDynamicXml0103
@@ -2234,6 +2368,24 @@ export default function xmlDynamic1() {
       let uint8 = new Uint8Array(arrayBuffer);
       let result = util.TextDecoder.create().decodeToString(uint8);
       expect(encodeURI(result)).assertEqual("%3Cnote%3E%08%3C/note%3E");
+      try{
+        that.setText("")
+        expect().assertFail()
+      }catch (err) {
+        expect(err.code).assertEqual(10200064);
+      }
+      try{
+        that.setText(null)
+        expect().assertFail()
+      }catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try{
+        that.setText(undefined)
+        expect().assertFail()
+      }catch (err) {
+        expect(err.code).assertEqual(401);
+      }
     })
     /**
      * @tc.name   testDynamicXml0125
@@ -2730,14 +2882,32 @@ export default function xmlDynamic1() {
      * @tc.level  LEVEL1
      */
     it('testDynamicXml0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let MAX = 100001;
+      let longStr = new Array(MAX).join("a");
+      let thatSer = new xml.XmlDynamicSerializer();
       try {
-        let MAX = 100001;
-        let longStr = new Array(MAX).join("a");
-        let thatSer = new xml.XmlDynamicSerializer();
         thatSer.setDocType(longStr);
         expect().assertFail();
       } catch (err) {
         expect(err.code).assertEqual(10200062);
+      }
+      try{
+        thatSer.setDocType("")
+        expect().assertFail()
+      }catch (err) {
+        expect(err.code).assertEqual(10200064);
+      }
+      try{
+        thatSer.setDocType(null)
+        expect().assertFail()
+      }catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try{
+        thatSer.setDocType(undefined)
+        expect().assertFail()
+      }catch (err) {
+        expect(err.code).assertEqual(401);
       }
     })
     /**
@@ -2788,7 +2958,7 @@ export default function xmlDynamic1() {
       try {
         let thatSer = new xml.XmlDynamicSerializer();
         thatSer.setCdata("");
-      }catch (err){
+      } catch (err) {
         expect(err.code).assertEqual(10200064);
       }
     })
