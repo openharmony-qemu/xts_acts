@@ -13,26 +13,28 @@
  * limitations under the License.
  */
 
-import { Size } from '@kit.ArkUI';
+import {
+  BreakpointOptions,
+  ContainerReader,
+  ContainerReaderAttribute,
+  Size
+} from '@kit.ArkUI';
 
-interface BreakpointOptions {
-  width?: Array<number>;
-  height?: Array<number>;
-}
-
-export class MyContainerReaderModifier implements AttributeModifier<ColumnAttribute> {
+export class MyContainerReaderModifier implements AttributeModifier<ContainerReaderAttribute> {
   public isDark: boolean = false
   constructor(dark?: boolean) {
     this.isDark = dark ?? false
   }
 
-  applyNormalAttribute(instance: ColumnAttribute): void {
+  applyNormalAttribute(instance: ContainerReaderAttribute): void {
     if (this.isDark) {
       instance.backgroundColor('#707070')
+      instance.breakpointConfig({ width: [100, 200, 300, 400] })
     } else {
       instance.backgroundColor('#17A98D')
         .borderColor('#707070')
         .borderWidth(2)
+      instance.breakpointConfig({ width: undefined, height: [1, 3.2] })
     }
   }
 }
@@ -51,11 +53,11 @@ struct ContainerReaderComponent {
   @State modifier: MyContainerReaderModifier = new MyContainerReaderModifier(true)
 
   build() {
-    Column({space:3}) {
-      Row(){
+    Column({ space: 3 }) {
+      Row() {
         Button('change1')
           .id('ContainerReaderComponentChange1')
-          .onClick(()=>{
+          .onClick(() => {
             this.breakpointOptions = this.breakpointOptions1
             this.widthBp = WidthBreakpoint.WIDTH_SM
             this.heightBp = HeightBreakpoint.HEIGHT_MD
@@ -64,7 +66,7 @@ struct ContainerReaderComponent {
           .height(15)
         Button('change2')
           .id('ContainerReaderComponentChange2')
-          .onClick(()=>{
+          .onClick(() => {
             this.widthBp = WidthBreakpoint.WIDTH_MD
             this.heightBp = HeightBreakpoint.HEIGHT_LG
             this.modifier.isDark = !this.modifier.isDark
@@ -74,23 +76,23 @@ struct ContainerReaderComponent {
           .height(15)
         Button('change3')
           .id('ContainerReaderComponentChange3')
-          .onClick(()=>{
+          .onClick(() => {
             this.widthBp = WidthBreakpoint.WIDTH_LG
           })
           .width(68)
           .height(15)
       }
-      Row(){
+      Row() {
         Button('change4')
           .id('ContainerReaderComponentChange4')
-          .onClick(()=>{
+          .onClick(() => {
             this.widthBp = WidthBreakpoint.WIDTH_XL
           })
           .width(68)
           .height(15)
         Button('changeNull')
           .id('ContainerReaderComponentChangeNull')
-          .onClick(()=>{
+          .onClick(() => {
             this.containerSize = null
             this.widthBp = null
             this.heightBp = null
@@ -101,7 +103,7 @@ struct ContainerReaderComponent {
       }
       Button('changeUndefined')
         .id('ContainerReaderComponentChangeUndefined')
-        .onClick(()=>{
+        .onClick(() => {
           this.containerSize = undefined
           this.widthBp = undefined
           this.heightBp = undefined
@@ -109,9 +111,13 @@ struct ContainerReaderComponent {
         })
         .width(120)
         .height(15)
-      Column() {
+      ContainerReader({
+        size: this.containerSize,
+        widthBreakpoint: this.widthBp,
+        heightBreakpoint: this.heightBp
+      }) {
         if (this.widthBp === WidthBreakpoint.WIDTH_XS || this.widthBp === WidthBreakpoint.WIDTH_SM) {
-          Column({space: 2}) {
+          Column({ space: 2 }) {
             Text('竖向布局').height(20)
             Text(`Column`).height(20)
           }
@@ -120,7 +126,7 @@ struct ContainerReaderComponent {
           .backgroundColor('#D5D5D5')
           .justifyContent(FlexAlign.Center)
         } else {
-          Row({space: 2}) {
+          Row({ space: 2 }) {
             Text('横向布局').height(20)
             Text(`Row`).height(20)
           }
@@ -133,6 +139,7 @@ struct ContainerReaderComponent {
       .id('ContainerReaderComponent')
       .width(200)
       .height(130)
+      .breakpointConfig(this.breakpointOptions)
       .backgroundColor('#F0FAFF')
       .attributeModifier(this.modifier)
     }
