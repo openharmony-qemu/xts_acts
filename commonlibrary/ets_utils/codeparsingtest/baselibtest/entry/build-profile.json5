@@ -21,7 +21,7 @@
       ]
     },
     "externalNativeOptions": {
-      "path": "./src/main/cpp/CMakeLists.txt",
+      "path": "./src/ohosTest/cpp/CMakeLists.txt",
       "arguments": "",
       "cppFlags": "",
       "abiFilters": [

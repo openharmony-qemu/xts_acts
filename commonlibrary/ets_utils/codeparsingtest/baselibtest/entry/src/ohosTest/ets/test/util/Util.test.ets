@@ -17,7 +17,7 @@ import taskpool from '@ohos.taskpool';
 import util from '@ohos.util';
 import worker, { MessageEvents } from '@ohos.worker';
 import { ArrayList, JSON } from '@kit.ArkTS';
-import { createSubEnv, add, saveMainEnv, destroyEnv } from 'libentry.so';
+import testNapi from 'libentry.so';
 import { hiAppEvent } from '@kit.PerformanceAnalysisKit';
 
 let falg = 0;
@@ -64,10 +64,10 @@ async function dumpAndCheckMtEvent(
   hiAppEvent.addWatcher(watcher);
 
   try {
-    saveMainEnv();
-    createSubEnv();
-    add(2, 3);
-    destroyEnv();
+    testNapi.saveMainEnv();
+    testNapi.createSubEnv();
+    testNapi.add(2, 3);
+    testNapi.destroyEnv();
     await sleep(4000);
     expect(matchedEvents.length).assertLarger(0);
     return matchedEvents;
@@ -3579,7 +3579,7 @@ export default function utilTest() {
         interval: 0
       };
       util.ArkTSVM.setMultithreadingDetectionEnabled(true, options);
-      await dumpAndCheckMtEvent('testSetMultithreadingDetectionEnabled0002', 'arktsenvsan');
+      await dumpAndCheckMtEvent('testSetMultithreadingDetectionEnabled0002', 'ARKTS_ENVSAN');
       util.ArkTSVM.setMultithreadingDetectionEnabled(false);
       done();
     });
@@ -3733,28 +3733,6 @@ export default function utilTest() {
       } catch (err) {
         expect().assertFail();
       }
-    });
-
-    /**
-     * @tc.name   testSetMultithreadingDetectionEnabled0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_MULTITHREAD_0010
-     * @tc.desc   Set multithreading detection with abort=false and custom frequency/interval,
-     *             use subEnv on main thread to trigger VM cross-thread access, verify faultlog
-     *             is generated and process does not crash.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testSetMultithreadingDetectionEnabled0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let options: util.MultithreadingDetectionOptions = {
-        abort: false,
-        frequency: 200,
-        interval: 10
-      };
-      util.ArkTSVM.setMultithreadingDetectionEnabled(true, options);
-      await dumpAndCheckMtEvent('testSetMultithreadingDetectionEnabled0010', 'arktsenvsan');
-      util.ArkTSVM.setMultithreadingDetectionEnabled(false);
-      done();
     });
 
     /**

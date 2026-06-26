@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-export function createSubEnv(): boolean;
-export function add(value0: number, value1: number): number;
-export function saveMainEnv(): boolean;
-export function destroyEnv(): boolean;
+export const createSubEnv: ()=> boolean;
+export const add: (value0: number, value1: number)=> number;
+export const saveMainEnv: ()=> boolean;
+export const destroyEnv: ()=> boolean;
