@@ -617,7 +617,7 @@ export default function mathClz32Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_4500
      * @tc.name testMathClz32045
-     * @tc.desc Verify clz32 method with double positive Infinity for 32.0 return
+     * @tc.desc Verify clz32 method with double Double.POSITIVE_INFINITY for 32.0 return
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -630,7 +630,7 @@ export default function mathClz32Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_4600
      * @tc.name testMathClz32046
-     * @tc.desc Verify clz32 method with double negative Infinity for 32.0 return
+     * @tc.desc Verify clz32 method with double Double.NEGATIVE_INFINITY for 32.0 return
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -665,6 +665,541 @@ export default function mathClz32Test(): void {
       let input: int = Int.MIN_VALUE;
       let result: int = Math.clz32(input);
       expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_4900
+     * @tc.name testMathClz32049
+     * @tc.desc Verify clz32 method with widened byte zero input returns 32
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: byte = Int.toByte(0);
+      let result: int = Math.clz32(input);
+      expect(result).assertEqual(32);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_5000
+     * @tc.name testMathClz32050
+     * @tc.desc Verify clz32 method with widened byte normal input 12 returns 28
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: byte = Int.toByte(12);
+      let result: int = Math.clz32(input);
+      expect(result).assertEqual(28);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_5100
+     * @tc.name testMathClz32051
+     * @tc.desc Verify clz32 method with widened byte negative one input returns 0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: byte = Int.toByte(-1);
+      let result: int = Math.clz32(input);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_5200
+     * @tc.name testMathClz32052
+     * @tc.desc Verify clz32 method with widened byte maximum boundary 127 returns 25
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: byte = Int.toByte(127);
+      let result: int = Math.clz32(input);
+      expect(result).assertEqual(25);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_5300
+     * @tc.name testMathClz32053
+     * @tc.desc Verify clz32 method with widened byte minimum boundary -128 returns 0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: byte = Int.toByte(-128);
+      let result: int = Math.clz32(input);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_5400
+     * @tc.name testMathClz32054
+     * @tc.desc Verify clz32 method with byte overflow conversion input 128 follows wrapped byte value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: byte = Int.toByte(128);
+      let result: int = Math.clz32(input);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_5500
+     * @tc.name testMathClz32055
+     * @tc.desc Verify clz32 method with widened short zero input returns 32
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: short = Int.toShort(0);
+      let result: int = Math.clz32(input);
+      expect(result).assertEqual(32);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_5600
+     * @tc.name testMathClz32056
+     * @tc.desc Verify clz32 method with widened short normal input 2048 returns 20
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: short = Int.toShort(2048);
+      let result: int = Math.clz32(input);
+      expect(result).assertEqual(20);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_5700
+     * @tc.name testMathClz32057
+     * @tc.desc Verify clz32 method with widened short maximum boundary 32767 returns 17
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: short = Int.toShort(32767);
+      let result: int = Math.clz32(input);
+      expect(result).assertEqual(17);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_5800
+     * @tc.name testMathClz32058
+     * @tc.desc Verify clz32 method with widened short minimum boundary -32768 returns 0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: short = Int.toShort(-32768);
+      let result: int = Math.clz32(input);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_5900
+     * @tc.name testMathClz32059
+     * @tc.desc Verify clz32 method with short mapped value 65535 follows wrapped value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: short = Int.toShort(65535);
+      let result: int = Math.clz32(input);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_6000
+     * @tc.name testMathClz32060
+     * @tc.desc Verify clz32 method with short overflow conversion input 32768 follows wrapped value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: short = Int.toShort(32768);
+      let result: int = Math.clz32(input);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_6100
+     * @tc.name testMathClz32061
+     * @tc.desc Verify clz32 method with hexadecimal int input 0x1234 returns 19
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: int = 0x1234;
+      let result: int = Math.clz32(input);
+      expect(result).assertEqual(19);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_6200
+     * @tc.name testMathClz32062
+     * @tc.desc Verify clz32 method with binary int input 0b1010 returns 28
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: int = 0b1010;
+      let result: int = Math.clz32(input);
+      expect(result).assertEqual(28);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_6300
+     * @tc.name testMathClz32063
+     * @tc.desc Verify clz32 method with Int.MAX_VALUE minus one returns 1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: int = Int.MAX_VALUE - 1;
+      let result: int = Math.clz32(input);
+      expect(result).assertEqual(1);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_6400
+     * @tc.name testMathClz32064
+     * @tc.desc Verify clz32 method with int overflow from Int.MAX_VALUE plus one follows wrapped value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let maxValue: int = Int.MAX_VALUE;
+      let input: int = maxValue + 1;
+      let result: int = Math.clz32(input);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_6500
+     * @tc.name testMathClz32065
+     * @tc.desc Verify clz32 method with widened long positive value outside int range returns 1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: long = Long.toLong(10000000000);
+      let result: double = Math.clz32(input);
+      expect(result).assertEqual(1.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_6600
+     * @tc.name testMathClz32066
+     * @tc.desc Verify clz32 method with widened long zero input returns 32
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: long = Int.toLong(0);
+      let result: double = Math.clz32(input);
+      expect(result).assertEqual(32.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_6700
+     * @tc.name testMathClz32067
+     * @tc.desc Verify clz32 method with widened long negative value outside int range returns 0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: long = Long.toLong(-10000000000);
+      let result: double = Math.clz32(input);
+      expect(result).assertEqual(0.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_6800
+     * @tc.name testMathClz32068
+     * @tc.desc Verify clz32 method with widened Long.MAX_VALUE boundary returns 32
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: long = Long.MAX_VALUE;
+      let result: double = Math.clz32(input);
+      expect(result).assertEqual(32.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_6900
+     * @tc.name testMathClz32069
+     * @tc.desc Verify clz32 method with widened Long.MIN_VALUE boundary returns 32
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: long = Long.MIN_VALUE;
+      let result: double = Math.clz32(input);
+      expect(result).assertEqual(32.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_7000
+     * @tc.name testMathClz32070
+     * @tc.desc Verify clz32 method with long overflow from Long.MAX_VALUE plus one follows wrapped value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let maxValue: long = Long.MAX_VALUE;
+      let input: long = maxValue + Int.toLong(1);
+      let result: double = Math.clz32(input);
+      expect(result).assertEqual(32.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_7100
+     * @tc.name testMathClz32071
+     * @tc.desc Verify clz32 method with float normal input 3.14f returns 30
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: float = Double.toFloat(3.14);
+      let result: double = Math.clz32(input);
+      expect(result).assertEqual(30.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_7200
+     * @tc.name testMathClz32072
+     * @tc.desc Verify clz32 method with float negative finite input -99.99f returns 0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: float = Double.toFloat(-99.99);
+      let result: double = Math.clz32(input);
+      expect(result).assertEqual(0.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_7300
+     * @tc.name testMathClz32073
+     * @tc.desc Verify clz32 method with Float.MAX_VALUE boundary returns 32
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: float = Float.MAX_VALUE;
+      let result: double = Math.clz32(input);
+      expect(result).assertEqual(32.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_7400
+     * @tc.name testMathClz32074
+     * @tc.desc Verify clz32 method with Float.MIN_VALUE boundary returns 32
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: float = Float.MIN_VALUE;
+      let result: double = Math.clz32(input);
+      expect(result).assertEqual(32.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_7500
+     * @tc.name testMathClz32075
+     * @tc.desc Verify clz32 method with negative Float.MIN_VALUE boundary returns 32
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: float = -Float.MIN_VALUE;
+      let result: double = Math.clz32(input);
+      expect(result).assertEqual(32.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_7600
+     * @tc.name testMathClz32076
+     * @tc.desc Verify clz32 method with float positive zero input returns 32
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: float = Double.toFloat(0.0);
+      let result: double = Math.clz32(input);
+      expect(result).assertEqual(32.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_7700
+     * @tc.name testMathClz32077
+     * @tc.desc Verify clz32 method with Float.POSITIVE_INFINITY input returns 32
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: float = Float.POSITIVE_INFINITY;
+      let result: double = Math.clz32(input);
+      expect(result).assertEqual(32.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_7800
+     * @tc.name testMathClz32078
+     * @tc.desc Verify clz32 method with Float.NEGATIVE_INFINITY input returns 32
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: float = Float.NEGATIVE_INFINITY;
+      let result: double = Math.clz32(input);
+      expect(result).assertEqual(32.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_7900
+     * @tc.name testMathClz32079
+     * @tc.desc Verify clz32 method with Double.MAX_VALUE boundary returns 32
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: double = Double.MAX_VALUE;
+      let result: double = Math.clz32(input);
+      expect(result).assertEqual(32.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_8000
+     * @tc.name testMathClz32080
+     * @tc.desc Verify clz32 method with Double.MIN_VALUE boundary returns 32
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: double = Double.MIN_VALUE;
+      let result: double = Math.clz32(input);
+      expect(result).assertEqual(32.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_8100
+     * @tc.name testMathClz32081
+     * @tc.desc Verify clz32 method with negative Double.MIN_VALUE boundary returns 32
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: double = -Double.MIN_VALUE;
+      let result: double = Math.clz32(input);
+      expect(result).assertEqual(32.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_8200
+     * @tc.name testMathClz32082
+     * @tc.desc Verify clz32 method with double fractional input 1025.75 returns 21
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: double = 1025.75;
+      let result: double = Math.clz32(input);
+      expect(result).assertEqual(21.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_8300
+     * @tc.name testMathClz32083
+     * @tc.desc Verify clz32 method with double Int.MAX_VALUE boundary returns 1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: double = 2147483647.0;
+      let result: double = Math.clz32(input);
+      expect(result).assertEqual(1.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_8400
+     * @tc.name testMathClz32084
+     * @tc.desc Verify clz32 method with double sign bit boundary 2147483648.0 returns 0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: double = 2147483648.0;
+      let result: double = Math.clz32(input);
+      expect(result).assertEqual(0.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_8500
+     * @tc.name testMathClz32085
+     * @tc.desc Verify clz32 method with double fractional sign bit boundary 2147483648.5 returns 0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: double = 2147483648.5;
+      let result: double = Math.clz32(input);
+      expect(result).assertEqual(0.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_8600
+     * @tc.name testMathClz32086
+     * @tc.desc Verify clz32 method with double below signed int minimum wraps to Int.MAX_VALUE
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: double = -2147483649.0;
+      let result: double = Math.clz32(input);
+      expect(result).assertEqual(1.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_8700
+     * @tc.name testMathClz32087
+     * @tc.desc Verify clz32 method with double 2 power 32 plus one wraps to one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: double = 4294967297.0;
+      let result: double = Math.clz32(input);
+      expect(result).assertEqual(31.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_8800
+     * @tc.name testMathClz32088
+     * @tc.desc Verify clz32 method with double negative 2 power 32 wraps to zero
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: double = -4294967296.0;
+      let result: double = Math.clz32(input);
+      expect(result).assertEqual(32.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_8900
+     * @tc.name testMathClz32089
+     * @tc.desc Verify clz32 method with double fractional negative input -1.5 returns 0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: double = -1.5;
+      let result: double = Math.clz32(input);
+      expect(result).assertEqual(0.0);
     });
   });
 }
