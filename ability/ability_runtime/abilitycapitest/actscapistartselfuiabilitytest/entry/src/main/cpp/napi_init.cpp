@@ -27,6 +27,16 @@
 #include "hilog/log.h"
 #include "fcntl.h"
 #include "unistd.h"
+#include <AbilityKit/ability_runtime/modular_object_extension_manager.h>
+#include <AbilityKit/ability_runtime/modular_object_extension_context.h>
+#include <AbilityKit/ability_runtime/modular_object_extension_ability.h>
+#include <AbilityKit/ability_runtime/connect_options.h>
+
+extern int GetOnCreateCallbackCount();
+extern int GetOnDestroyCallbackCount();
+extern int GetOnConnectCallbackCount();
+extern int GetOnDisconnectCallbackCount();
+extern void ResetCallbackCounts();
 
 namespace {
 constexpr int32_t BUF_SIZE = 1024;
@@ -49,6 +59,769 @@ static void Throw(napi_env env, int32_t errCode, const char *errMsg)
 }
 
 typedef AbilityRuntime_ErrorCode (*AbilityRuntime_GetDirFunc)(char *, int32_t, int32_t *);
+
+
+static napi_value NdkGetModObjExtInfoLaunchMode_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetModObjExtInfoLaunchMode_0100 begins");
+    OH_AbilityRuntime_LaunchMode launchMode;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_GetModularObjectExtensionInfoLaunchMode(nullptr, &launchMode);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetModObjExtInfoLaunchMode_0100 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkGetModObjExtInfoLaunchMode_0200(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetModObjExtInfoLaunchMode_0200 begins");
+    OH_AbilityRuntime_ModObjExtensionInfoHandle extensionInfo = nullptr;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_GetModularObjectExtensionInfoLaunchMode(extensionInfo, nullptr);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetModObjExtInfoLaunchMode_0200 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkGetModObjExtInfoProcessMode_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetModObjExtInfoProcessMode_0100 begins");
+    OH_AbilityRuntime_ProcessMode processMode;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_GetModularObjectExtensionInfoProcessMode(nullptr, &processMode);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetModObjExtInfoProcessMode_0100 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkGetModObjExtInfoProcessMode_0200(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetModObjExtInfoProcessMode_0200 begins");
+    OH_AbilityRuntime_ModObjExtensionInfoHandle extensionInfo = nullptr;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_GetModularObjectExtensionInfoProcessMode(extensionInfo, nullptr);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetModObjExtInfoProcessMode_0200 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkGetModObjExtInfoThreadMode_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetModObjExtInfoThreadMode_0100 begins");
+    OH_AbilityRuntime_ThreadMode threadMode;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_GetModularObjectExtensionInfoThreadMode(nullptr, &threadMode);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetModObjExtInfoThreadMode_0100 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkGetModObjExtInfoThreadMode_0200(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetModObjExtInfoThreadMode_0200 begins");
+    OH_AbilityRuntime_ModObjExtensionInfoHandle extensionInfo = nullptr;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_GetModularObjectExtensionInfoThreadMode(extensionInfo, nullptr);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetModObjExtInfoThreadMode_0200 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkGetModObjExtInfoElementName_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetModObjExtInfoElementName_0100 begins");
+    AbilityBase_Element element;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_GetModularObjectExtensionInfoElementName(nullptr, &element);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetModObjExtInfoElementName_0100 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkGetModObjExtInfoElementName_0200(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetModObjExtInfoElementName_0200 begins");
+    OH_AbilityRuntime_ModObjExtensionInfoHandle extensionInfo = nullptr;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_GetModularObjectExtensionInfoElementName(extensionInfo, nullptr);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetModObjExtInfoElementName_0200 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkGetModObjExtInfoDisableState_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetModObjExtInfoDisableState_0100 begins");
+    bool isDisabled = false;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_GetModularObjectExtensionInfoDisableState(nullptr, &isDisabled);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetModObjExtInfoDisableState_0100 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkGetModObjExtInfoDisableState_0200(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetModObjExtInfoDisableState_0200 begins");
+    OH_AbilityRuntime_ModObjExtensionInfoHandle extensionInfo = nullptr;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_GetModularObjectExtensionInfoDisableState(extensionInfo, nullptr);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetModObjExtInfoDisableState_0200 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkAcquireSelfModObjExtInfos_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_AcquireSelfModObjExtInfos_0100 begins");
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_AcquireSelfModularObjectExtensionInfos(nullptr);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_AcquireSelfModObjExtInfos_0100 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkReleaseAllExtensionInfos_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ReleaseAllExtensionInfos_0100 begins");
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ReleaseAllExtensionInfos(nullptr);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ReleaseAllExtensionInfos_0100 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkGetCountFromAllModObjExtInfos_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetCountFromAllModObjExtInfos_0100 begins");
+    size_t count = 0;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_GetCountFromAllModObjExtensionInfos(nullptr, &count);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetCountFromAllModObjExtInfos_0100 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkGetCountFromAllModObjExtInfos_0200(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetCountFromAllModObjExtInfos_0200 begins");
+    OH_AbilityRuntime_AllModObjExtensionInfosHandle allExtensionInfos = nullptr;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_GetCountFromAllModObjExtensionInfos(allExtensionInfos, nullptr);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetCountFromAllModObjExtInfos_0200 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkGetModObjExtInfoByIndex_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetModObjExtInfoByIndex_0100 begins");
+    OH_AbilityRuntime_ModObjExtensionInfoHandle extensionInfo = nullptr;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_GetModObjExtensionInfoByIndex(nullptr, 0, &extensionInfo);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetModObjExtInfoByIndex_0100 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkGetModObjExtInfoByIndex_0200(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetModObjExtInfoByIndex_0200 begins");
+    OH_AbilityRuntime_AllModObjExtensionInfosHandle allExtensionInfos = nullptr;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_GetModObjExtensionInfoByIndex(allExtensionInfos, 0, nullptr);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetModObjExtInfoByIndex_0200 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkGetModObjExtInfoByIndex_0300(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetModObjExtInfoByIndex_0300 begins");
+    OH_AbilityRuntime_AllModObjExtensionInfosHandle allExtensionInfos = nullptr;
+    OH_AbilityRuntime_ModObjExtensionInfoHandle extensionInfo = nullptr;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_GetModObjExtensionInfoByIndex(allExtensionInfos, 100, &extensionInfo);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetModObjExtInfoByIndex_0300 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkModObjExtCtxGetBaseContext_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtCtxGetBaseContext_0100 begins");
+    AbilityRuntime_ContextHandle baseContext = nullptr;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ModObjExtensionContext_GetBaseContext(nullptr, &baseContext);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtCtxGetBaseContext_0100 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkModObjExtCtxGetBaseContext_0200(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtCtxGetBaseContext_0200 begins");
+    OH_AbilityRuntime_ModObjExtensionContextHandle modObjExtensionContext = nullptr;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ModObjExtensionContext_GetBaseContext(modObjExtensionContext, nullptr);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtCtxGetBaseContext_0200 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkModObjExtCtxStartSelfUIAbility_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtCtxStartSelfUIAbility_0100 begins");
+    AbilityBase_Element element;
+    element.abilityName = const_cast<char *>("EntryAbility");
+    element.bundleName = const_cast<char *>("com.example.startselfuiabilitytest");
+    element.moduleName = const_cast<char *>("entry");
+    AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ModObjExtensionContext_StartSelfUIAbility(nullptr, want);
+    OH_AbilityBase_DestroyWant(want);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtCtxStartSelfUIAbility_0100 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkModObjExtCtxStartSelfUIAbility_0200(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtCtxStartSelfUIAbility_0200 begins");
+    OH_AbilityRuntime_ModObjExtensionContextHandle context = nullptr;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ModObjExtensionContext_StartSelfUIAbility(context, nullptr);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtCtxStartSelfUIAbility_0200 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkModObjExtCtxStartSelfUIAbilityWithOptions_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtCtxStartSelfUIAbilityWithOptions_0100 begins");
+    AbilityBase_Element element;
+    element.abilityName = const_cast<char *>("EntryAbility");
+    element.bundleName = const_cast<char *>("com.example.startselfuiabilitytest");
+    element.moduleName = const_cast<char *>("entry");
+    AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
+    AbilityRuntime_StartOptions *options = OH_AbilityRuntime_CreateStartOptions();
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ModObjExtensionContext_StartSelfUIAbilityWithStartOptions(nullptr, want, options);
+    OH_AbilityBase_DestroyWant(want);
+    OH_AbilityRuntime_DestroyStartOptions(&options);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtCtxStartSelfUIAbilityWithOptions_0100 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkModObjExtCtxStartSelfUIAbilityWithOptions_0200(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtCtxStartSelfUIAbilityWithOptions_0200 begins");
+    OH_AbilityRuntime_ModObjExtensionContextHandle context = nullptr;
+    AbilityRuntime_StartOptions *options = OH_AbilityRuntime_CreateStartOptions();
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ModObjExtensionContext_StartSelfUIAbilityWithStartOptions(context, nullptr, options);
+    OH_AbilityRuntime_DestroyStartOptions(&options);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtCtxStartSelfUIAbilityWithOptions_0200 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkModObjExtCtxStartSelfUIAbilityWithOptions_0300(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtCtxStartSelfUIAbilityWithOptions_0300 begins");
+    AbilityBase_Element element;
+    element.abilityName = const_cast<char *>("EntryAbility");
+    element.bundleName = const_cast<char *>("com.example.startselfuiabilitytest");
+    element.moduleName = const_cast<char *>("entry");
+    AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
+    OH_AbilityRuntime_ModObjExtensionContextHandle context = nullptr;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ModObjExtensionContext_StartSelfUIAbilityWithStartOptions(context, want, nullptr);
+    OH_AbilityBase_DestroyWant(want);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtCtxStartSelfUIAbilityWithOptions_0300 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkModObjExtCtxTerminateSelf_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtCtxTerminateSelf_0100 begins");
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ModObjExtensionContext_TerminateSelf(nullptr);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtCtxTerminateSelf_0100 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkModObjExtAbilityRegisterOnCreate_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtAbilityRegisterOnCreate_0100 begins");
+    OH_AbilityRuntime_ModObjExtensionAbility_OnCreateFunc onCreateFunc = nullptr;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ModObjExtensionAbility_RegisterOnCreateFunc(nullptr, onCreateFunc);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtAbilityRegisterOnCreate_0100 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkModObjExtAbilityRegisterOnCreate_0200(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtAbilityRegisterOnCreate_0200 begins");
+    OH_AbilityRuntime_ModObjExtensionInstanceHandle instance = nullptr;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ModObjExtensionAbility_RegisterOnCreateFunc(instance, nullptr);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtAbilityRegisterOnCreate_0200 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkModObjExtAbilityRegisterOnDestroy_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtAbilityRegisterOnDestroy_0100 begins");
+    OH_AbilityRuntime_ModObjExtensionAbility_OnDestroyFunc onDestroyFunc = nullptr;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ModObjExtensionAbility_RegisterOnDestroyFunc(nullptr, onDestroyFunc);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtAbilityRegisterOnDestroy_0100 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkModObjExtAbilityRegisterOnDestroy_0200(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtAbilityRegisterOnDestroy_0200 begins");
+    OH_AbilityRuntime_ModObjExtensionInstanceHandle instance = nullptr;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ModObjExtensionAbility_RegisterOnDestroyFunc(instance, nullptr);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtAbilityRegisterOnDestroy_0200 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkModObjExtAbilityRegisterOnConnect_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtAbilityRegisterOnConnect_0100 begins");
+    OH_AbilityRuntime_ModObjExtensionAbility_OnConnectFunc onConnectFunc = nullptr;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ModObjExtensionAbility_RegisterOnConnectFunc(nullptr, onConnectFunc);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtAbilityRegisterOnConnect_0100 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkModObjExtAbilityRegisterOnConnect_0200(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtAbilityRegisterOnConnect_0200 begins");
+    OH_AbilityRuntime_ModObjExtensionInstanceHandle instance = nullptr;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ModObjExtensionAbility_RegisterOnConnectFunc(instance, nullptr);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtAbilityRegisterOnConnect_0200 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkModObjExtAbilityRegisterOnDisconnect_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtAbilityRegisterOnDisconnect_0100 begins");
+    OH_AbilityRuntime_ModObjExtensionAbility_OnDisconnectFunc onDisconnectFunc = nullptr;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ModObjExtensionAbility_RegisterOnDisconnectFunc(nullptr, onDisconnectFunc);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtAbilityRegisterOnDisconnect_0100 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkModObjExtAbilityRegisterOnDisconnect_0200(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtAbilityRegisterOnDisconnect_0200 begins");
+    OH_AbilityRuntime_ModObjExtensionInstanceHandle instance = nullptr;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ModObjExtensionAbility_RegisterOnDisconnectFunc(instance, nullptr);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtAbilityRegisterOnDisconnect_0200 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkModObjExtAbilityGetContext_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtAbilityGetContext_0100 begins");
+    OH_AbilityRuntime_ModObjExtensionContextHandle context = nullptr;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ModObjExtensionAbility_GetContextFromInstance(nullptr, &context);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtAbilityGetContext_0100 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkModObjExtAbilityGetContext_0200(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtAbilityGetContext_0200 begins");
+    OH_AbilityRuntime_ModObjExtensionInstanceHandle instance = nullptr;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ModObjExtensionAbility_GetContextFromInstance(instance, nullptr);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtAbilityGetContext_0200 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkModObjExtAbilityGetInstanceFromBase_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtAbilityGetInstanceFromBase_0100 begins");
+    OH_AbilityRuntime_ModObjExtensionInstanceHandle modObjExtensionInstance = nullptr;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ModObjExtensionAbility_GetInstanceFromBase(nullptr, &modObjExtensionInstance);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtAbilityGetInstanceFromBase_0100 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkModObjExtAbilityGetInstanceFromBase_0200(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtAbilityGetInstanceFromBase_0200 begins");
+    AbilityRuntime_ExtensionInstanceHandle baseExtensionInstance = nullptr;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ModObjExtensionAbility_GetInstanceFromBase(baseExtensionInstance, nullptr);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ModObjExtAbilityGetInstanceFromBase_0200 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkConnectModObjExtAbility_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectModObjExtAbility_0100 begins");
+    OH_AbilityRuntime_ConnectOptions *connectOptions = OH_AbilityRuntime_CreateConnectOptions();
+    int64_t connectionId = -1;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ConnectModularObjectExtensionAbility(nullptr, connectOptions, &connectionId);
+    OH_AbilityRuntime_DestroyConnectOptions(connectOptions);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectModObjExtAbility_0100 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkConnectModObjExtAbility_0200(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectModObjExtAbility_0200 begins");
+    AbilityBase_Element element;
+    element.abilityName = const_cast<char *>("EntryAbility");
+    element.bundleName = const_cast<char *>("com.example.startselfuiabilitytest");
+    element.moduleName = const_cast<char *>("entry");
+    AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
+    int64_t connectionId = -1;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ConnectModularObjectExtensionAbility(want, nullptr, &connectionId);
+    OH_AbilityBase_DestroyWant(want);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectModObjExtAbility_0200 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkConnectModObjExtAbility_0300(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectModObjExtAbility_0300 begins");
+    AbilityBase_Element element;
+    element.abilityName = const_cast<char *>("EntryAbility");
+    element.bundleName = const_cast<char *>("com.example.startselfuiabilitytest");
+    element.moduleName = const_cast<char *>("entry");
+    AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
+    OH_AbilityRuntime_ConnectOptions *connectOptions = OH_AbilityRuntime_CreateConnectOptions();
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ConnectModularObjectExtensionAbility(want, connectOptions, nullptr);
+    OH_AbilityBase_DestroyWant(want);
+    OH_AbilityRuntime_DestroyConnectOptions(connectOptions);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectModObjExtAbility_0300 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkDisconnectModObjExtAbility_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_DisconnectModObjExtAbility_0100 begins");
+    int64_t connectionId = -1;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_DisconnectModularObjectExtensionAbility(connectionId);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_DisconnectModObjExtAbility_0100 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkDisconnectModObjExtAbility_0200(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_DisconnectModObjExtAbility_0200 begins");
+    int64_t connectionId = 0;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_DisconnectModularObjectExtensionAbility(connectionId);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_DisconnectModObjExtAbility_0200 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkDestroyConnectOptions_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_DestroyConnectOptions_0100 begins");
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_DestroyConnectOptions(nullptr);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_DestroyConnectOptions_0100 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkConnectOptionsSetOnConnect_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnConnect_0100 begins");
+    OH_AbilityRuntime_ConnectOptions_OnConnectCallback onConnectCallback = nullptr;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ConnectOptions_SetOnConnectCallback(nullptr, onConnectCallback);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnConnect_0100 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkConnectOptionsSetOnConnect_0200(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnConnect_0200 begins");
+    OH_AbilityRuntime_ConnectOptions *connectOptions = OH_AbilityRuntime_CreateConnectOptions();
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ConnectOptions_SetOnConnectCallback(connectOptions, nullptr);
+    OH_AbilityRuntime_DestroyConnectOptions(connectOptions);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnConnect_0200 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkConnectOptionsSetOnDisconnect_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnDisconnect_0100 begins");
+    OH_AbilityRuntime_ConnectOptions_OnDisconnectCallback onDisconnectCallback = nullptr;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ConnectOptions_SetOnDisconnectCallback(nullptr, onDisconnectCallback);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnDisconnect_0100 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkConnectOptionsSetOnDisconnect_0200(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnDisconnect_0200 begins");
+    OH_AbilityRuntime_ConnectOptions *connectOptions = OH_AbilityRuntime_CreateConnectOptions();
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ConnectOptions_SetOnDisconnectCallback(connectOptions, nullptr);
+    OH_AbilityRuntime_DestroyConnectOptions(connectOptions);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnDisconnect_0200 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkConnectOptionsSetOnFailed_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnFailed_0100 begins");
+    OH_AbilityRuntime_ConnectOptions_OnFailedCallback onFailedCallback = nullptr;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ConnectOptions_SetOnFailedCallback(nullptr, onFailedCallback);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnFailed_0100 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkConnectOptionsSetOnFailed_0200(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnFailed_0200 begins");
+    OH_AbilityRuntime_ConnectOptions *connectOptions = OH_AbilityRuntime_CreateConnectOptions();
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ConnectOptions_SetOnFailedCallback(connectOptions, nullptr);
+    OH_AbilityRuntime_DestroyConnectOptions(connectOptions);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnFailed_0200 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkGetModObjExtCallbackCounts_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetModObjExtCallbackCounts_0100 begins");
+    int count = GetOnCreateCallbackCount();
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetModObjExtCallbackCounts_0100 onCreateCount=%{public}d", count);
+    napi_value result;
+    napi_create_int32(env, count, &result);
+    return result;
+}
+
+static napi_value NdkGetModObjExtCallbackCounts_0200(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetModObjExtCallbackCounts_0200 begins");
+    int count = GetOnDestroyCallbackCount();
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetModObjExtCallbackCounts_0200 onDestroyCount=%{public}d", count);
+    napi_value result;
+    napi_create_int32(env, count, &result);
+    return result;
+}
+
+static napi_value NdkGetModObjExtCallbackCounts_0300(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetModObjExtCallbackCounts_0300 begins");
+    int count = GetOnConnectCallbackCount();
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetModObjExtCallbackCounts_0300 onConnectCount=%{public}d", count);
+    napi_value result;
+    napi_create_int32(env, count, &result);
+    return result;
+}
+
+static napi_value NdkGetModObjExtCallbackCounts_0400(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetModObjExtCallbackCounts_0400 begins");
+    int count = GetOnDisconnectCallbackCount();
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_GetModObjExtCallbackCounts_0400 onDisconnectCount=%{public}d", count);
+    napi_value result;
+    napi_create_int32(env, count, &result);
+    return result;
+}
+
+static napi_value NdkResetModObjExtCallbackCounts_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ResetModObjExtCallbackCounts_0100 begins");
+    ResetCallbackCounts();
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ResetModObjExtCallbackCounts_0100 done");
+    napi_value result;
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+
+static int64_t g_connectionId = -1;
+
+static void OnConnectOptionsCallback(OH_AbilityRuntime_ConnectOptions *connectOptions, AbilityBase_Element *element, OHIPCRemoteProxy *proxy)
+{
+    OH_LOG_INFO(LOG_APP, "OnConnectOptionsCallback invoked");
+}
+
+static void OnDisconnectOptionsCallback(OH_AbilityRuntime_ConnectOptions *connectOptions, AbilityBase_Element *element)
+{
+    OH_LOG_INFO(LOG_APP, "OnDisconnectOptionsCallback invoked");
+}
+
+static void OnFailedOptionsCallback(OH_AbilityRuntime_ConnectOptions *connectOptions, AbilityRuntime_ErrorCode code)
+{
+    OH_LOG_INFO(LOG_APP, "OnFailedOptionsCallback invoked errCode=%{public}d", code);
+}
+
+static napi_value NdkConnectMoeExtension_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectMoeExtension_0100 begins");
+    ResetCallbackCounts();
+    
+    AbilityBase_Element element;
+    element.abilityName = const_cast<char *>("MoeExtensionAbility");
+    element.bundleName = const_cast<char *>("com.example.startselfuiabilitytest");
+    element.moduleName = const_cast<char *>("entry");
+    AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
+    
+    OH_AbilityRuntime_ConnectOptions *connectOptions = OH_AbilityRuntime_CreateConnectOptions();
+    OH_AbilityRuntime_ConnectOptions_SetOnConnectCallback(connectOptions, OnConnectOptionsCallback);
+    OH_AbilityRuntime_ConnectOptions_SetOnDisconnectCallback(connectOptions, OnDisconnectOptionsCallback);
+    OH_AbilityRuntime_ConnectOptions_SetOnFailedCallback(connectOptions, OnFailedOptionsCallback);
+    
+    g_connectionId = -1;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ConnectModularObjectExtensionAbility(want, connectOptions, &g_connectionId);
+    
+    OH_AbilityBase_DestroyWant(want);
+    OH_AbilityRuntime_DestroyConnectOptions(connectOptions);
+    
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectMoeExtension_0100 errCode=%{public}d connectionId=%{public}lld", errCode, g_connectionId);
+    napi_value result;
+    napi_create_int64(env, g_connectionId, &result);
+    return result;
+}
+
+static napi_value NdkDisconnectMoeExtension_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_DisconnectMoeExtension_0100 begins");
+    
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_DisconnectModularObjectExtensionAbility(g_connectionId);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_DisconnectMoeExtension_0100 errCode=%{public}d", errCode);
+    g_connectionId = -1;
+    
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkLaunchModeInProcess_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_LaunchModeInProcess_0100 begins");
+    int32_t launchMode = OH_ABILITY_RUNTIME_LAUNCH_MODE_IN_PROCESS;
+    OH_LOG_INFO(LOG_APP, "OH_ABILITY_RUNTIME_LAUNCH_MODE_IN_PROCESS=%{public}d", launchMode);
+    napi_value result;
+    napi_create_int32(env, launchMode, &result);
+    return result;
+}
+
+static napi_value NdkLaunchModeCrossProcess_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_LaunchModeCrossProcess_0100 begins");
+    int32_t launchMode = OH_ABILITY_RUNTIME_LAUNCH_MODE_CROSS_PROCESS;
+    OH_LOG_INFO(LOG_APP, "OH_ABILITY_RUNTIME_LAUNCH_MODE_CROSS_PROCESS=%{public}d", launchMode);
+    napi_value result;
+    napi_create_int32(env, launchMode, &result);
+    return result;
+}
+
+static napi_value NdkProcessModeBundle_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ProcessModeBundle_0100 begins");
+    int32_t processMode = OH_ABILITY_RUNTIME_PROCESS_MODE_BUNDLE;
+    OH_LOG_INFO(LOG_APP, "OH_ABILITY_RUNTIME_PROCESS_MODE_BUNDLE=%{public}d", processMode);
+    napi_value result;
+    napi_create_int32(env, processMode, &result);
+    return result;
+}
+
+static napi_value NdkProcessModeType_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ProcessModeType_0100 begins");
+    int32_t processMode = OH_ABILITY_RUNTIME_PROCESS_MODE_TYPE;
+    OH_LOG_INFO(LOG_APP, "OH_ABILITY_RUNTIME_PROCESS_MODE_TYPE=%{public}d", processMode);
+    napi_value result;
+    napi_create_int32(env, processMode, &result);
+    return result;
+}
+
+static napi_value NdkProcessModeInstance_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ProcessModeInstance_0100 begins");
+    int32_t processMode = OH_ABILITY_RUNTIME_PROCESS_MODE_INSTANCE;
+    OH_LOG_INFO(LOG_APP, "OH_ABILITY_RUNTIME_PROCESS_MODE_INSTANCE=%{public}d", processMode);
+    napi_value result;
+    napi_create_int32(env, processMode, &result);
+    return result;
+}
+
+static napi_value NdkThreadModeBundle_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ThreadModeBundle_0100 begins");
+    int32_t threadMode = OH_ABILITY_RUNTIME_THREAD_MODE_BUNDLE;
+    OH_LOG_INFO(LOG_APP, "OH_ABILITY_RUNTIME_THREAD_MODE_BUNDLE=%{public}d", threadMode);
+    napi_value result;
+    napi_create_int32(env, threadMode, &result);
+    return result;
+}
+
+static napi_value NdkThreadModeType_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ThreadModeType_0100 begins");
+    int32_t threadMode = OH_ABILITY_RUNTIME_THREAD_MODE_TYPE;
+    OH_LOG_INFO(LOG_APP, "OH_ABILITY_RUNTIME_THREAD_MODE_TYPE=%{public}d", threadMode);
+    napi_value result;
+    napi_create_int32(env, threadMode, &result);
+    return result;
+}
+
+static napi_value NdkThreadModeInstance_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ThreadModeInstance_0100 begins");
+    int32_t threadMode = OH_ABILITY_RUNTIME_THREAD_MODE_INSTANCE;
+    OH_LOG_INFO(LOG_APP, "OH_ABILITY_RUNTIME_THREAD_MODE_INSTANCE=%{public}d", threadMode);
+    napi_value result;
+    napi_create_int32(env, threadMode, &result);
+    return result;
+}
 
 static napi_value NdkStartAbility_0100(napi_env env, napi_callback_info info)
 {
@@ -2238,6 +3011,70 @@ static napi_value Init(napi_env env, napi_value exports)
         { "notifyPageChanged_0600", nullptr, NotifyPageChanged_0600, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "notifyPageChanged_0700", nullptr, NotifyPageChanged_0700, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "notifyPageChanged_0800", nullptr, NotifyPageChanged_0800, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkGetModObjExtInfoLaunchMode_0100", nullptr, NdkGetModObjExtInfoLaunchMode_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkGetModObjExtInfoLaunchMode_0200", nullptr, NdkGetModObjExtInfoLaunchMode_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkGetModObjExtInfoProcessMode_0100", nullptr, NdkGetModObjExtInfoProcessMode_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkGetModObjExtInfoProcessMode_0200", nullptr, NdkGetModObjExtInfoProcessMode_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkGetModObjExtInfoThreadMode_0100", nullptr, NdkGetModObjExtInfoThreadMode_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkGetModObjExtInfoThreadMode_0200", nullptr, NdkGetModObjExtInfoThreadMode_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkGetModObjExtInfoElementName_0100", nullptr, NdkGetModObjExtInfoElementName_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkGetModObjExtInfoElementName_0200", nullptr, NdkGetModObjExtInfoElementName_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkGetModObjExtInfoDisableState_0100", nullptr, NdkGetModObjExtInfoDisableState_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkGetModObjExtInfoDisableState_0200", nullptr, NdkGetModObjExtInfoDisableState_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkAcquireSelfModObjExtInfos_0100", nullptr, NdkAcquireSelfModObjExtInfos_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkReleaseAllExtensionInfos_0100", nullptr, NdkReleaseAllExtensionInfos_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkGetCountFromAllModObjExtInfos_0100", nullptr, NdkGetCountFromAllModObjExtInfos_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkGetCountFromAllModObjExtInfos_0200", nullptr, NdkGetCountFromAllModObjExtInfos_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkGetModObjExtInfoByIndex_0100", nullptr, NdkGetModObjExtInfoByIndex_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkGetModObjExtInfoByIndex_0200", nullptr, NdkGetModObjExtInfoByIndex_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkGetModObjExtInfoByIndex_0300", nullptr, NdkGetModObjExtInfoByIndex_0300, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkModObjExtCtxGetBaseContext_0100", nullptr, NdkModObjExtCtxGetBaseContext_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkModObjExtCtxGetBaseContext_0200", nullptr, NdkModObjExtCtxGetBaseContext_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkModObjExtCtxStartSelfUIAbility_0100", nullptr, NdkModObjExtCtxStartSelfUIAbility_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkModObjExtCtxStartSelfUIAbility_0200", nullptr, NdkModObjExtCtxStartSelfUIAbility_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkModObjExtCtxStartSelfUIAbilityWithOptions_0100", nullptr, NdkModObjExtCtxStartSelfUIAbilityWithOptions_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkModObjExtCtxStartSelfUIAbilityWithOptions_0200", nullptr, NdkModObjExtCtxStartSelfUIAbilityWithOptions_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkModObjExtCtxStartSelfUIAbilityWithOptions_0300", nullptr, NdkModObjExtCtxStartSelfUIAbilityWithOptions_0300, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkModObjExtCtxTerminateSelf_0100", nullptr, NdkModObjExtCtxTerminateSelf_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkModObjExtAbilityRegisterOnCreate_0100", nullptr, NdkModObjExtAbilityRegisterOnCreate_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkModObjExtAbilityRegisterOnCreate_0200", nullptr, NdkModObjExtAbilityRegisterOnCreate_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkModObjExtAbilityRegisterOnDestroy_0100", nullptr, NdkModObjExtAbilityRegisterOnDestroy_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkModObjExtAbilityRegisterOnDestroy_0200", nullptr, NdkModObjExtAbilityRegisterOnDestroy_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkModObjExtAbilityRegisterOnConnect_0100", nullptr, NdkModObjExtAbilityRegisterOnConnect_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkModObjExtAbilityRegisterOnConnect_0200", nullptr, NdkModObjExtAbilityRegisterOnConnect_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkModObjExtAbilityRegisterOnDisconnect_0100", nullptr, NdkModObjExtAbilityRegisterOnDisconnect_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkModObjExtAbilityRegisterOnDisconnect_0200", nullptr, NdkModObjExtAbilityRegisterOnDisconnect_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkModObjExtAbilityGetContext_0100", nullptr, NdkModObjExtAbilityGetContext_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkModObjExtAbilityGetContext_0200", nullptr, NdkModObjExtAbilityGetContext_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkModObjExtAbilityGetInstanceFromBase_0100", nullptr, NdkModObjExtAbilityGetInstanceFromBase_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkModObjExtAbilityGetInstanceFromBase_0200", nullptr, NdkModObjExtAbilityGetInstanceFromBase_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkConnectModObjExtAbility_0100", nullptr, NdkConnectModObjExtAbility_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkConnectModObjExtAbility_0200", nullptr, NdkConnectModObjExtAbility_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkConnectModObjExtAbility_0300", nullptr, NdkConnectModObjExtAbility_0300, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkDisconnectModObjExtAbility_0100", nullptr, NdkDisconnectModObjExtAbility_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkDisconnectModObjExtAbility_0200", nullptr, NdkDisconnectModObjExtAbility_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkDestroyConnectOptions_0100", nullptr, NdkDestroyConnectOptions_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkConnectOptionsSetOnConnect_0100", nullptr, NdkConnectOptionsSetOnConnect_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkConnectOptionsSetOnConnect_0200", nullptr, NdkConnectOptionsSetOnConnect_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkConnectOptionsSetOnDisconnect_0100", nullptr, NdkConnectOptionsSetOnDisconnect_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkConnectOptionsSetOnDisconnect_0200", nullptr, NdkConnectOptionsSetOnDisconnect_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkConnectOptionsSetOnFailed_0100", nullptr, NdkConnectOptionsSetOnFailed_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkConnectOptionsSetOnFailed_0200", nullptr, NdkConnectOptionsSetOnFailed_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkGetModObjExtCallbackCounts_0100", nullptr, NdkGetModObjExtCallbackCounts_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkGetModObjExtCallbackCounts_0200", nullptr, NdkGetModObjExtCallbackCounts_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkGetModObjExtCallbackCounts_0300", nullptr, NdkGetModObjExtCallbackCounts_0300, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkGetModObjExtCallbackCounts_0400", nullptr, NdkGetModObjExtCallbackCounts_0400, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkResetModObjExtCallbackCounts_0100", nullptr, NdkResetModObjExtCallbackCounts_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkConnectMoeExtension_0100", nullptr, NdkConnectMoeExtension_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkDisconnectMoeExtension_0100", nullptr, NdkDisconnectMoeExtension_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkLaunchModeInProcess_0100", nullptr, NdkLaunchModeInProcess_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkLaunchModeCrossProcess_0100", nullptr, NdkLaunchModeCrossProcess_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkProcessModeBundle_0100", nullptr, NdkProcessModeBundle_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkProcessModeType_0100", nullptr, NdkProcessModeType_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkProcessModeInstance_0100", nullptr, NdkProcessModeInstance_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkThreadModeBundle_0100", nullptr, NdkThreadModeBundle_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkThreadModeType_0100", nullptr, NdkThreadModeType_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkThreadModeInstance_0100", nullptr, NdkThreadModeInstance_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
