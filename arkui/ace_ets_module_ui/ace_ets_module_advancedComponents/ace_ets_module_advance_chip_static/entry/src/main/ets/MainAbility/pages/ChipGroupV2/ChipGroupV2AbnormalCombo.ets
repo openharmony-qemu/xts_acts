@@ -74,7 +74,12 @@ struct ChipGroupV2AbnormalCombo {
           ChipGroupV2({
             items: defaultChipGroupComboItems(),
             selectedIndexes: this.selectedIndex,
-            itemStyle: new ChipGroupV2ItemStyle({ backgroundColor: undefined, fontColor: undefined, selectedFontColor: undefined, selectedBackgroundColor: undefined }),
+            itemStyle: new ChipGroupV2ItemStyle({
+              backgroundColor: undefined,
+              fontColor: undefined,
+              selectedFontColor: undefined,
+              selectedBackgroundColor: undefined,
+            }),
           }).id('abn_cmbG1_u')
           ChipGroupV2({
             items: defaultChipGroupComboItems(),
@@ -87,7 +92,15 @@ struct ChipGroupV2AbnormalCombo {
             chipGroupSpace: new ChipGroupV2Space({ itemSpace: undefined, startSpace: undefined, endSpace: undefined }),
           }).id('abn_cmbG2_u')
           ChipGroupV2({ items: new ChipGroupV2Items([{ label: { text: 'cmbG3' } }]) }).id('abn_cmbG3_d')
-          ChipGroupV2({ items: new ChipGroupV2Items([{ label: { text: 'cmbG3' }, prefixIcon: undefined, suffixIcon: undefined, prefixSymbolIcon: undefined, suffixSymbolIcon: undefined }]) }).id('abn_cmbG3_u')
+          ChipGroupV2({
+            items: new ChipGroupV2Items([{
+              label: { text: 'cmbG3' },
+              prefixIcon: undefined,
+              suffixIcon: undefined,
+              prefixSymbolIcon: undefined,
+              suffixSymbolIcon: undefined,
+            }]),
+          }).id('abn_cmbG3_u')
           ChipGroupV2({ items: defaultChipGroupComboItems(), suffix: this.SfxG4D }).id('abn_cmbG4_d')
           ChipGroupV2({ items: defaultChipGroupComboItems(), suffix: this.SfxG4 }).id('abn_cmbG4_u')
           ChipGroupV2({
@@ -106,7 +119,10 @@ struct ChipGroupV2AbnormalCombo {
           ChipGroupV2({
             items: defaultChipGroupComboItems(),
             selectedIndexes: this.selectedIndex,
-            itemStyle: new ChipGroupV2ItemStyle({ backgroundSystemMaterial: undefined, selectedBackgroundSystemMaterial: undefined }),
+            itemStyle: new ChipGroupV2ItemStyle({
+              backgroundSystemMaterial: undefined,
+              selectedBackgroundSystemMaterial: undefined,
+            }),
           }).id('abn_cmbG6_u')
       }
       .width('100%')
