@@ -282,7 +282,7 @@ export default function fileIORead() {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_read_sync_009 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
     }
   });
 

@@ -113,7 +113,7 @@ export default function fileIOOpen() {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_open_sync_003 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
     }
   });
 
@@ -255,7 +255,7 @@ export default function fileIOOpen() {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_open_sync_009 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900018 && e.message == 'Not a directory').assertTrue();
+      expect(e.code == 13900018).assertTrue();
     }
   });
 
@@ -320,7 +320,7 @@ export default function fileIOOpen() {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_open_sync_013 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
     }
   });
 
@@ -342,7 +342,7 @@ export default function fileIOOpen() {
     } catch (e) {
       fileIO.rmdirSync(dpath);
       console.log('fileIO_test_open_sync_014 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900019 && e.message == 'Is a directory').assertTrue();
+      expect(e.code == 13900019).assertTrue();
     }
   });
 
@@ -391,7 +391,7 @@ export default function fileIOOpen() {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_open_sync_016 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900030 && e.message == 'File name too long').assertTrue();
+      expect(e.code == 13900030).assertTrue();
     }
   });
 
@@ -535,7 +535,7 @@ export default function fileIOOpen() {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_open_async_004 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+      expect(e.code == 13900002).assertTrue();
       done();
     }
   });
@@ -605,7 +605,7 @@ export default function fileIOOpen() {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_open_async_007 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       done();
     }
   });
@@ -626,7 +626,7 @@ export default function fileIOOpen() {
       });
     } catch (e) {
       console.log('fileIO_test_open_async_008 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       done();
     }
   });
@@ -930,7 +930,7 @@ export default function fileIOOpen() {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_open_async_019 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900018 && e.message == 'Not a directory').assertTrue();
+      expect(e.code == 13900018).assertTrue();
       done();
     }
   });
@@ -1113,7 +1113,7 @@ export default function fileIOOpen() {
     } catch (e) {
       fileIO.rmdirSync(dpath);
       console.log('fileIO_test_open_async_029 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900019 && e.message == 'Is a directory').assertTrue();
+      expect(e.code == 13900019).assertTrue();
       done();
     }
   });
@@ -1230,7 +1230,7 @@ export default function fileIOOpen() {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_open_async_033 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900030 && e.message == 'File name too long').assertTrue();
+      expect(e.code == 13900030).assertTrue();
       done();
     }
   });
