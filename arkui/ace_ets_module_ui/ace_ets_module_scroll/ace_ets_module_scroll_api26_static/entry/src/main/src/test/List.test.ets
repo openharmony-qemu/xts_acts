@@ -36,6 +36,14 @@ import gridEditModeChange from './Grid/gridEditModeChange.test'
 import gridEditModeOptions from './Grid/gridEditModeOptions.test'
 import listEnableEditMode from './List/listEnableEditMode.test'
 import listEditModeChange from './List/listEditModeChange.test'
+import LazyColumnLayoutProperties from './LazyColumnLayout/LazyColumnLayoutProperties.test'
+import LazyVWaterFlowLayoutProperties from './LazyVWaterFlowLayout/LazyVWaterFlowLayoutProperties.test'
+import headerFooterStickyGrid from './LazyVGridLayout/headerFooterStickyGrid.test'
+import headerFooterStickyFlow from './LazyVWaterFlowLayout/headerFooterStickyFlow.test'
+import headerFooterStickyColumn from './LazyColumnLayout/headerFooterStickyColumn.test'
+import lazyColumnLayoutModifier from './LazyColumnLayout/lazyColumnLayoutModifier.test'
+import lazyVWaterFlowLayoutModifier from './LazyVWaterFlowLayout/lazyVWaterFlowLayoutModifier.test'
+import lazyVGridLayoutModifier from './LazyVGridLayout/lazyVGridLayoutModifier.test'
 import ScrollScrollBarHeight from './Scroll/scrollScrollBarHeight.test'
 
 export default function testsuite() {
@@ -61,5 +69,7 @@ export default function testsuite() {
   gridEditModeOptions();
   listEnableEditMode();
   listEditModeChange();
+  headerFooterStickyGrid();
+  lazyVGridLayoutModifier();
   ScrollScrollBarHeight();
 }
