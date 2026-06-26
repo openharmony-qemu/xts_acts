@@ -1819,8 +1819,9 @@ export default function HasCard2PublicTest() {
         done();
       } else {
         try {
-          await call.makeCallWithToken("138xxxxxxxx");
+          let res = await call.makeCallWithToken("138xxxxxxxx");
           console.log("makeCallWithToken success");
+          expect(res != "" && res != undefined && res != null).assertTrue();
           done();
         } catch (err) {
           console.log("makeCallWithToken throw: err->" + JSON.stringify(err));
@@ -1851,8 +1852,9 @@ export default function HasCard2PublicTest() {
           let option: call.MakeCallOptions = {
             isCustomAccessibility : true
           }
-          await call.makeCallWithToken("138xxxxxxxx", option);
+          let res = await call.makeCallWithToken("138xxxxxxxx", option);
           console.log("makeCallWithToken success");
+          expect(res != "" && res != undefined && res != null).assertTrue();
           done();
         } catch (err) {
           console.log("makeCallWithToken throw: err->" + JSON.stringify(err));
@@ -1883,12 +1885,42 @@ export default function HasCard2PublicTest() {
           let option: call.MakeCallOptions = {
             isCustomAccessibility : false
           }
-          await call.makeCallWithToken("138xxxxxxxx", option);
+          let res = await call.makeCallWithToken("138xxxxxxxx", option);
           console.log("makeCallWithToken success");
+          expect(res != "" && res != undefined && res != null).assertTrue();
           done();
         } catch (err) {
           console.log("makeCallWithToken throw: err->" + JSON.stringify(err));
           expect(false).assertTrue();
+          done();
+        }
+      }
+      console.log(`==========> ${caseName} Test end ==========>`);
+    });
+
+    /**
+     * @tc.name   Telephony_Call_Call_MakeCallWithToken_0600
+     * @tc.number Telephony_Call_Call_MakeCallWithToken_0600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("Telephony_Call_Call_MakeCallWithToken_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName: string = "Telephony_Call_Call_MakeCallWithToken_0600";
+      console.log(`==========> ${caseName} Test start ==========>`);
+      if(!sim.hasSimCardSync(0)){
+        console.info(`${caseName} failed, NO SIM`);
+        console.info(`${caseName} test end`);
+        done();
+      } else {
+        try {
+          await call.makeCallWithToken(null);
+          expect(false).assertTrue();
+          done();
+        } catch (err) {
+          console.log("makeCallWithToken throw: err->" + JSON.stringify(err));
+          expect(err.code).assertEqual(401);
           done();
         }
       }
