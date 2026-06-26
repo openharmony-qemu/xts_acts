@@ -17,9 +17,11 @@ import webMediaOption from './WebMediaOption.test'
 import webJsunitTwo from './WebOnFullScreenEnter.test'
 import webMediaPlayGestureAccess from './WebMediaPlayGestureAccess.test'
 import WebKeyBoardAvoidModeTest from './WebKeyBoardAvoidMode.test'
+import webEnableFullscreenVideoOverlay from './WebEnableFullscreenVideoOverlay.test'
 export default function testsuite() {
     // webMediaOption();
     webJsunitTwo();
     webMediaPlayGestureAccess();
     WebKeyBoardAvoidModeTest();
+    webEnableFullscreenVideoOverlay();
 }
