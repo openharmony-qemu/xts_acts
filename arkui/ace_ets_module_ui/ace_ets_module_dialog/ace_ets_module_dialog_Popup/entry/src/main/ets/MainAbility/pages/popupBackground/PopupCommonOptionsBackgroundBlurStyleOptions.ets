@@ -82,7 +82,8 @@ struct PopupCommonOptionsBackgroundBlurStyleOptions {
           .onClick(async () => {
             let promptAction = this.getUIContext().getPromptAction();
             let popupParam: PopupParam = { closeFunc: undefined };
-            this.contentPolicyAlwaysActive = new ComponentContent(this.getUIContext(), wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
+            this.contentPolicyAlwaysActive = new ComponentContent(this.getUIContext(),
+             wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
             popupParam.closeFunc = () => {
               promptAction.closePopup(this.contentPolicyAlwaysActive!);
             };
@@ -103,7 +104,8 @@ struct PopupCommonOptionsBackgroundBlurStyleOptions {
           .onClick(async () => {
             let promptAction = this.getUIContext().getPromptAction();
             let popupParam: PopupParam = { closeFunc: undefined };
-            this.contentPolicyAlwaysInactive = new ComponentContent(this.getUIContext(), wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
+            this.contentPolicyAlwaysInactive = new ComponentContent(this.getUIContext(),
+             wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
             popupParam.closeFunc = () => {
               promptAction.closePopup(this.contentPolicyAlwaysInactive!);
             };
@@ -122,7 +124,8 @@ struct PopupCommonOptionsBackgroundBlurStyleOptions {
           .onClick(async () => {
             let promptAction = this.getUIContext().getPromptAction();
             let popupParam: PopupParam = { closeFunc: undefined };
-            this.contentInactiveColorRed = new ComponentContent(this.getUIContext(), wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
+            this.contentInactiveColorRed = new ComponentContent(this.getUIContext(),
+             wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
             popupParam.closeFunc = () => {
               promptAction.closePopup(this.contentInactiveColorRed!);
             };
@@ -144,7 +147,8 @@ struct PopupCommonOptionsBackgroundBlurStyleOptions {
           .onClick(async () => {
             let promptAction = this.getUIContext().getPromptAction();
             let popupParam: PopupParam = { closeFunc: undefined };
-            this.contentInactiveColorString = new ComponentContent(this.getUIContext(), wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
+            this.contentInactiveColorString = new ComponentContent(this.getUIContext(),
+             wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
             popupParam.closeFunc = () => {
               promptAction.closePopup(this.contentInactiveColorString!);
             };
@@ -164,7 +168,8 @@ struct PopupCommonOptionsBackgroundBlurStyleOptions {
           .onClick(async () => {
             let promptAction = this.getUIContext().getPromptAction();
             let popupParam: PopupParam = { closeFunc: undefined };
-            this.contentInactiveColorNumber = new ComponentContent(this.getUIContext(), wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
+            this.contentInactiveColorNumber = new ComponentContent(this.getUIContext(),
+             wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
             popupParam.closeFunc = () => {
               promptAction.closePopup(this.contentInactiveColorNumber!);
             };
@@ -186,7 +191,8 @@ struct PopupCommonOptionsBackgroundBlurStyleOptions {
           .onClick(async () => {
             let promptAction = this.getUIContext().getPromptAction();
             let popupParam: PopupParam = { closeFunc: undefined };
-            this.contentColorModeLight = new ComponentContent(this.getUIContext(), wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
+            this.contentColorModeLight = new ComponentContent(this.getUIContext(),
+             wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
             popupParam.closeFunc = () => {
               promptAction.closePopup(this.contentColorModeLight!);
             };
@@ -205,7 +211,8 @@ struct PopupCommonOptionsBackgroundBlurStyleOptions {
           .onClick(async () => {
             let promptAction = this.getUIContext().getPromptAction();
             let popupParam: PopupParam = { closeFunc: undefined };
-            this.contentColorModeDark = new ComponentContent(this.getUIContext(), wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
+            this.contentColorModeDark = new ComponentContent(this.getUIContext(),
+             wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
             popupParam.closeFunc = () => {
               promptAction.closePopup(this.contentColorModeDark!);
             };
@@ -226,7 +233,8 @@ struct PopupCommonOptionsBackgroundBlurStyleOptions {
           .onClick(async () => {
             let promptAction = this.getUIContext().getPromptAction();
             let popupParam: PopupParam = { closeFunc: undefined };
-            this.contentAdaptiveColorDefault = new ComponentContent(this.getUIContext(), wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
+            this.contentAdaptiveColorDefault = new ComponentContent(this.getUIContext(),
+             wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
             popupParam.closeFunc = () => {
               promptAction.closePopup(this.contentAdaptiveColorDefault!);
             };
@@ -245,7 +253,8 @@ struct PopupCommonOptionsBackgroundBlurStyleOptions {
           .onClick(async () => {
             let promptAction = this.getUIContext().getPromptAction();
             let popupParam: PopupParam = { closeFunc: undefined };
-            this.contentAdaptiveColorAverage = new ComponentContent(this.getUIContext(), wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
+            this.contentAdaptiveColorAverage = new ComponentContent(this.getUIContext(),
+             wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
             popupParam.closeFunc = () => {
               promptAction.closePopup(this.contentAdaptiveColorAverage!);
             };
@@ -266,7 +275,8 @@ struct PopupCommonOptionsBackgroundBlurStyleOptions {
           .onClick(async () => {
             let promptAction = this.getUIContext().getPromptAction();
             let popupParam: PopupParam = { closeFunc: undefined };
-            this.contentScale0 = new ComponentContent(this.getUIContext(), wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
+            this.contentScale0 = new ComponentContent(this.getUIContext(),
+             wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
             popupParam.closeFunc = () => {
               promptAction.closePopup(this.contentScale0!);
             };
@@ -285,7 +295,8 @@ struct PopupCommonOptionsBackgroundBlurStyleOptions {
           .onClick(async () => {
             let promptAction = this.getUIContext().getPromptAction();
             let popupParam: PopupParam = { closeFunc: undefined };
-            this.contentScale1 = new ComponentContent(this.getUIContext(), wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
+            this.contentScale1 = new ComponentContent(this.getUIContext(),
+             wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
             popupParam.closeFunc = () => {
               promptAction.closePopup(this.contentScale1!);
             };
@@ -306,7 +317,8 @@ struct PopupCommonOptionsBackgroundBlurStyleOptions {
           .onClick(async () => {
             let promptAction = this.getUIContext().getPromptAction();
             let popupParam: PopupParam = { closeFunc: undefined };
-            this.contentScale2 = new ComponentContent(this.getUIContext(), wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
+            this.contentScale2 = new ComponentContent(this.getUIContext(),
+             wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
             popupParam.closeFunc = () => {
               promptAction.closePopup(this.contentScale2!);
             };

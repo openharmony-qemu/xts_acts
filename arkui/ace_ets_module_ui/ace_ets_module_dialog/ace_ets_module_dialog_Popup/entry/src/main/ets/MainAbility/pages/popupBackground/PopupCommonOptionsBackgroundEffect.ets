@@ -65,7 +65,8 @@ struct PopupCommonOptionsBackgroundEffect {
           .onClick(async () => {
             let promptAction = this.getUIContext().getPromptAction();
             let popupParam: PopupParam = { closeFunc: undefined };
-            this.contentRadius0 = new ComponentContent(this.getUIContext(), wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
+            this.contentRadius0 = new ComponentContent(this.getUIContext(),
+             wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
             popupParam.closeFunc = () => { promptAction.closePopup(this.contentRadius0!); };
             await promptAction.openPopup(this.contentRadius0, { id: 'radius_0' }, {
               backgroundEffect: { radius: 0 }
@@ -79,7 +80,8 @@ struct PopupCommonOptionsBackgroundEffect {
           .onClick(async () => {
             let promptAction = this.getUIContext().getPromptAction();
             let popupParam: PopupParam = { closeFunc: undefined };
-            this.contentRadius20 = new ComponentContent(this.getUIContext(), wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
+            this.contentRadius20 = new ComponentContent(this.getUIContext(),
+             wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
             popupParam.closeFunc = () => { promptAction.closePopup(this.contentRadius20!); };
             await promptAction.openPopup(this.contentRadius20, { id: 'radius_20' }, {
               backgroundEffect: { radius: 20 }
@@ -95,7 +97,8 @@ struct PopupCommonOptionsBackgroundEffect {
           .onClick(async () => {
             let promptAction = this.getUIContext().getPromptAction();
             let popupParam: PopupParam = { closeFunc: undefined };
-            this.contentRadius60 = new ComponentContent(this.getUIContext(), wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
+            this.contentRadius60 = new ComponentContent(this.getUIContext(),
+             wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
             popupParam.closeFunc = () => { promptAction.closePopup(this.contentRadius60!); };
             await promptAction.openPopup(this.contentRadius60, { id: 'radius_60' }, {
               backgroundEffect: { radius: 60 }
@@ -109,7 +112,8 @@ struct PopupCommonOptionsBackgroundEffect {
           .onClick(async () => {
             let promptAction = this.getUIContext().getPromptAction();
             let popupParam: PopupParam = { closeFunc: undefined };
-            this.contentSaturation0 = new ComponentContent(this.getUIContext(), wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
+            this.contentSaturation0 = new ComponentContent(this.getUIContext(),
+             wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
             popupParam.closeFunc = () => { promptAction.closePopup(this.contentSaturation0!); };
             await promptAction.openPopup(this.contentSaturation0, { id: 'saturation_0' }, {
               backgroundEffect: { radius: 20, saturation: 0 }
@@ -125,7 +129,8 @@ struct PopupCommonOptionsBackgroundEffect {
           .onClick(async () => {
             let promptAction = this.getUIContext().getPromptAction();
             let popupParam: PopupParam = { closeFunc: undefined };
-            this.contentSaturation1 = new ComponentContent(this.getUIContext(), wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
+            this.contentSaturation1 = new ComponentContent(this.getUIContext(),
+             wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
             popupParam.closeFunc = () => { promptAction.closePopup(this.contentSaturation1!); };
             await promptAction.openPopup(this.contentSaturation1, { id: 'saturation_1' }, {
               backgroundEffect: { radius: 20, saturation: 1 }
@@ -139,7 +144,8 @@ struct PopupCommonOptionsBackgroundEffect {
           .onClick(async () => {
             let promptAction = this.getUIContext().getPromptAction();
             let popupParam: PopupParam = { closeFunc: undefined };
-            this.contentSaturation2 = new ComponentContent(this.getUIContext(), wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
+            this.contentSaturation2 = new ComponentContent(this.getUIContext(),
+             wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
             popupParam.closeFunc = () => { promptAction.closePopup(this.contentSaturation2!); };
             await promptAction.openPopup(this.contentSaturation2, { id: 'saturation_2' }, {
               backgroundEffect: { radius: 20, saturation: 2 }
@@ -155,7 +161,8 @@ struct PopupCommonOptionsBackgroundEffect {
           .onClick(async () => {
             let promptAction = this.getUIContext().getPromptAction();
             let popupParam: PopupParam = { closeFunc: undefined };
-            this.contentBrightness0 = new ComponentContent(this.getUIContext(), wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
+            this.contentBrightness0 = new ComponentContent(this.getUIContext(),
+             wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
             popupParam.closeFunc = () => { promptAction.closePopup(this.contentBrightness0!); };
             await promptAction.openPopup(this.contentBrightness0, { id: 'brightness_0' }, {
               backgroundEffect: { radius: 20, brightness: 0 }
@@ -169,7 +176,8 @@ struct PopupCommonOptionsBackgroundEffect {
           .onClick(async () => {
             let promptAction = this.getUIContext().getPromptAction();
             let popupParam: PopupParam = { closeFunc: undefined };
-            this.contentBrightness1 = new ComponentContent(this.getUIContext(), wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
+            this.contentBrightness1 = new ComponentContent(this.getUIContext(),
+             wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
             popupParam.closeFunc = () => { promptAction.closePopup(this.contentBrightness1!); };
             await promptAction.openPopup(this.contentBrightness1, { id: 'brightness_1' }, {
               backgroundEffect: { radius: 20, brightness: 1 }
@@ -185,7 +193,8 @@ struct PopupCommonOptionsBackgroundEffect {
           .onClick(async () => {
             let promptAction = this.getUIContext().getPromptAction();
             let popupParam: PopupParam = { closeFunc: undefined };
-            this.contentBrightness2 = new ComponentContent(this.getUIContext(), wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
+            this.contentBrightness2 = new ComponentContent(this.getUIContext(),
+             wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
             popupParam.closeFunc = () => { promptAction.closePopup(this.contentBrightness2!); };
             await promptAction.openPopup(this.contentBrightness2, { id: 'brightness_2' }, {
               backgroundEffect: { radius: 20, brightness: 2 }
@@ -199,7 +208,8 @@ struct PopupCommonOptionsBackgroundEffect {
           .onClick(async () => {
             let promptAction = this.getUIContext().getPromptAction();
             let popupParam: PopupParam = { closeFunc: undefined };
-            this.contentColorRed = new ComponentContent(this.getUIContext(), wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
+            this.contentColorRed = new ComponentContent(this.getUIContext(),
+             wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
             popupParam.closeFunc = () => { promptAction.closePopup(this.contentColorRed!); };
             await promptAction.openPopup(this.contentColorRed, { id: 'color_red' }, {
               backgroundEffect: { radius: 20, color: Color.Red }
@@ -215,7 +225,8 @@ struct PopupCommonOptionsBackgroundEffect {
           .onClick(async () => {
             let promptAction = this.getUIContext().getPromptAction();
             let popupParam: PopupParam = { closeFunc: undefined };
-            this.contentColorString = new ComponentContent(this.getUIContext(), wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
+            this.contentColorString = new ComponentContent(this.getUIContext(),
+             wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
             popupParam.closeFunc = () => { promptAction.closePopup(this.contentColorString!); };
             await promptAction.openPopup(this.contentColorString, { id: 'color_string' }, {
               backgroundEffect: { radius: 20, color: '#80FF0000' }
@@ -229,7 +240,8 @@ struct PopupCommonOptionsBackgroundEffect {
           .onClick(async () => {
             let promptAction = this.getUIContext().getPromptAction();
             let popupParam: PopupParam = { closeFunc: undefined };
-            this.contentAdaptiveColorDefault = new ComponentContent(this.getUIContext(), wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
+            this.contentAdaptiveColorDefault = new ComponentContent(this.getUIContext(),
+             wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
             popupParam.closeFunc = () => { promptAction.closePopup(this.contentAdaptiveColorDefault!); };
             await promptAction.openPopup(this.contentAdaptiveColorDefault, { id: 'adaptiveColor_DEFAULT' }, {
               backgroundEffect: { radius: 20, adaptiveColor: AdaptiveColor.DEFAULT }
@@ -245,7 +257,8 @@ struct PopupCommonOptionsBackgroundEffect {
           .onClick(async () => {
             let promptAction = this.getUIContext().getPromptAction();
             let popupParam: PopupParam = { closeFunc: undefined };
-            this.contentAdaptiveColorAverage = new ComponentContent(this.getUIContext(), wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
+            this.contentAdaptiveColorAverage = new ComponentContent(this.getUIContext(),
+             wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
             popupParam.closeFunc = () => { promptAction.closePopup(this.contentAdaptiveColorAverage!); };
             await promptAction.openPopup(this.contentAdaptiveColorAverage, { id: 'adaptiveColor_AVERAGE' }, {
               backgroundEffect: { radius: 60, color: '#80FF0000', adaptiveColor: AdaptiveColor.AVERAGE }
@@ -259,7 +272,8 @@ struct PopupCommonOptionsBackgroundEffect {
           .onClick(async () => {
             let promptAction = this.getUIContext().getPromptAction();
             let popupParam: PopupParam = { closeFunc: undefined };
-            this.contentPolicyAlwaysActive = new ComponentContent(this.getUIContext(), wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
+            this.contentPolicyAlwaysActive = new ComponentContent(this.getUIContext(),
+             wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
             popupParam.closeFunc = () => { promptAction.closePopup(this.contentPolicyAlwaysActive!); };
             await promptAction.openPopup(this.contentPolicyAlwaysActive, { id: 'policy_ALWAYS_ACTIVE' }, {
               backgroundEffect: { radius: 20, policy: BlurStyleActivePolicy.ALWAYS_ACTIVE }
@@ -275,10 +289,12 @@ struct PopupCommonOptionsBackgroundEffect {
           .onClick(async () => {
             let promptAction = this.getUIContext().getPromptAction();
             let popupParam: PopupParam = { closeFunc: undefined };
-            this.contentPolicyAlwaysInactiveInactiveColor = new ComponentContent(this.getUIContext(), wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
+            this.contentPolicyAlwaysInactiveInactiveColor = new ComponentContent(this.getUIContext(),
+             wrapBuilder<[PopupParam]>(buildPopupText), popupParam);
             popupParam.closeFunc = () => { promptAction.closePopup(this.contentPolicyAlwaysInactiveInactiveColor!); };
             await promptAction.openPopup(this.contentPolicyAlwaysInactiveInactiveColor, { id: 'policy_ALWAYS_INACTIVE_inactiveColor' }, {
-              backgroundEffect: { radius: 20, policy: BlurStyleActivePolicy.ALWAYS_INACTIVE, inactiveColor: Color.Orange }
+              backgroundEffect: { radius: 20, policy: BlurStyleActivePolicy.ALWAYS_INACTIVE,
+               inactiveColor: Color.Orange }
             });
           })
 
