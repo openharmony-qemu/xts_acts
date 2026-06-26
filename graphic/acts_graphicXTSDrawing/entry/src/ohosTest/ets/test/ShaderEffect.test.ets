@@ -294,7 +294,6 @@ export default function shadowEffectTest() {
         console.info(msg + ` create 2 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect(e.code).assertEqual(401);
       }
-//------需要跟开发确认--接口执行成功了
       try {
         let matrix = new drawing.Matrix();
         let shaderEffect = drawing.ShaderEffect.createLinearGradient({x : 100.1, y : 100.1}, {x : 300.1, y : 300.1},
