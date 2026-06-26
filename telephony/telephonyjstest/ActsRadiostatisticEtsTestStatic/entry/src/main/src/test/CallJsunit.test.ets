@@ -126,5 +126,129 @@ export default function callJsunit() {
       }
     });
 
+    /**
+     * @tc.name   Telephony_Call_Call_MakeCallWithToken_0100
+     * @tc.number Telephony_Call_Call_MakeCallWithToken_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("Telephony_Call_Call_MakeCallWithToken_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = "Telephony_Call_Call_MakeCallWithToken_0100";
+      if(!sim.hasSimCardSync(0)){
+        hilog.info(domain, tag, '%{public}s', caseName + ' No Card');
+        done();
+      }else{
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          let telNumber: string = "";
+          await.call.makeCallWithToken(telNumber)
+          expect(false).assertTrue();
+          done();
+        } catch (error) {
+          expect(error?.code == 8300001).assertTrue();
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', caseName + ' Test end');
+      }
+  });
+
+  /**
+   * @tc.name   Telephony_Call_Call_MakeCallWithToken_0200
+   * @tc.number Telephony_Call_Call_MakeCallWithToken_0200
+   * @tc.desc   Function test
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("Telephony_Call_Call_MakeCallWithToken_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = "Telephony_Call_Call_MakeCallWithToken_0200";
+      if(!sim.hasSimCardSync(0)){
+        hilog.info(domain, tag, '%{public}s', caseName + ' No Card');
+        done();
+      }else{
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          let telNumber: string = "138xxxxxxxx";
+          let res: string = await.call.makeCallWithToken(telNumber);
+          hilog.info(domain, tag, '%{public}s', caseName + 'makeCallWithToken success');
+           expect(res != "" && res != undefined && res != null).assertTrue();
+          done();
+        } catch (err) {
+          hilog.info(domain, tag, `${caseName} makeCallWithToken err: ${JSON.stringify(err)}`);
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', caseName + ' Test end');
+      }
+  });
+
+  /**
+   * @tc.name   Telephony_Call_Call_MakeCallWithToken_0300
+   * @tc.number Telephony_Call_Call_MakeCallWithToken_0300
+   * @tc.desc   Function test
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("Telephony_Call_Call_MakeCallWithToken_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = "Telephony_Call_Call_MakeCallWithToken_0300";
+      if(!sim.hasSimCardSync(0)){
+        hilog.info(domain, tag, '%{public}s', caseName + ' No Card');
+        done();
+      }else{
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          let option: call.MakeCallOptions = {
+             isCustomAccessibility : true
+           }
+          let telNumber: string = "138xxxxxxxx";
+          let res: string = await.call.makeCallWithToken(telNumber, option);
+          hilog.info(domain, tag, '%{public}s', caseName + 'makeCallWithToken success');
+           expect(res != "" && res != undefined && res != null).assertTrue();
+          done();
+        } catch (err) {
+          hilog.info(domain, tag, `${caseName} makeCallWithToken err: ${JSON.stringify(err)}`);
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', caseName + ' Test end');
+      }
+  });
+
+  /**
+   * @tc.name   Telephony_Call_Call_MakeCallWithToken_0400
+   * @tc.number Telephony_Call_Call_MakeCallWithToken_0400
+   * @tc.desc   Function test
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("Telephony_Call_Call_MakeCallWithToken_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = "Telephony_Call_Call_MakeCallWithToken_0400";
+      if(!sim.hasSimCardSync(0)){
+        hilog.info(domain, tag, '%{public}s', caseName + ' No Card');
+        done();
+      }else{
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          let option: call.MakeCallOptions = {
+             isCustomAccessibility : false
+           }
+          let telNumber: string = "138xxxxxxxx";
+          let res: string = await.call.makeCallWithToken(telNumber, option);
+          hilog.info(domain, tag, '%{public}s', caseName + 'makeCallWithToken success');
+           expect(res != "" && res != undefined && res != null).assertTrue();
+          done();
+        } catch (err) {
+          hilog.info(domain, tag, `${caseName} makeCallWithToken err: ${JSON.stringify(err)}`);
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', caseName + ' Test end');
+      }
+  });
+
   });
 }
