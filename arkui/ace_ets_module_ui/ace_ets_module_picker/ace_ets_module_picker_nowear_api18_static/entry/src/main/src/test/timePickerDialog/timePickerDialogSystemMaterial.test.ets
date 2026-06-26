@@ -22,6 +22,8 @@ import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
+import { uiMaterial } from '@kit.ArkUI';
+
 export default function TimePickerDialogSystemMaterialTest() {
   describe('TimePickerDialogSystemMaterialTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -67,7 +69,11 @@ it('TimePickerDialogSystemMaterialTest_static_001', Level.LEVEL0, async (done: (
       let dialog = tree.getArray('$children')[1];
       let column = dialog.getArray('$children')[0];
       let systemMaterial: string = column.getElement('$attrs').getString('systemMaterial');
-      expect(systemMaterial).assertEqual('ImmersiveStyle.UltraThick');
+      expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
+ 	 		expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
+ 	 		expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
+ 	 		expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
+ 	 		expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
       done();
@@ -88,7 +94,11 @@ it('TimePickerDialogSystemMaterialTest_static_002', Level.LEVEL0, async (done: (
       let dialog = tree.getArray('$children')[1];
       let column = dialog.getArray('$children')[0];
       let systemMaterial: string = column.getElement('$attrs').getString('systemMaterial');
-      expect(systemMaterial).assertEqual('ImmersiveStyle.UltraThin');
+      expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
+ 	 		expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
+ 	 		expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
+ 	 		expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
+ 	 		expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
       done();
@@ -109,7 +119,11 @@ it('TimePickerDialogSystemMaterialTest_static_003', Level.LEVEL0, async (done: (
       let dialog = tree.getArray('$children')[1];
       let column = dialog.getArray('$children')[0];
       let systemMaterial: string = column.getElement('$attrs').getString('systemMaterial');
-      expect(systemMaterial).assertEqual('ImmersiveStyle.UltraThick');
+      expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
+ 	 		expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
+ 	 		expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
+ 	 		expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
+ 	 		expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
       done();
@@ -130,7 +144,11 @@ it('TimePickerDialogSystemMaterialTest_static_004', Level.LEVEL0, async (done: (
       let dialog = tree.getArray('$children')[1];
       let column = dialog.getArray('$children')[0];
       let systemMaterial: string = column.getElement('$attrs').getString('systemMaterial');
-      expect(systemMaterial).assertEqual('ImmersiveStyle.UltraThick');
+      expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
+ 	 		expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
+ 	 		expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
+ 	 		expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
+ 	 		expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
       done();
@@ -151,7 +169,11 @@ it('TimePickerDialogSystemMaterialTest_static_005', Level.LEVEL0, async (done: (
       let dialog = tree.getArray('$children')[1];
       let column = dialog.getArray('$children')[0];
       let systemMaterial: string = column.getElement('$attrs').getString('systemMaterial');
-      expect(systemMaterial).assertEqual('ImmersiveStyle.UltraThick');
+      expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
+ 	 		expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
+ 	 		expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
+ 	 		expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
+ 	 		expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
       done();

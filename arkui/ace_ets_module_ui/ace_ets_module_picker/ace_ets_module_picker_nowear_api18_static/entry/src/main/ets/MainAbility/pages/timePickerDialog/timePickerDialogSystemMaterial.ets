@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Component, Button, ClickEvent, Flex, FlexWrap, TimePickerFormat } from '@ohos.arkui.component'
+import { Entry, Component, Button, ClickEvent, Flex, FlexWrap, TimePickerFormat, TimePickerDialogOptions } from '@ohos.arkui.component'
 import uiMaterial from '@ohos.arkui.uiMaterial'
 
 @Entry
@@ -27,15 +27,7 @@ struct TimePickerDialogSystemMaterial {
       format: TimePickerFormat.HOUR_MINUTE,
       useMilitaryTime: false,
       systemMaterial: materialValue,
-      onAccept: (value: TimePickerResult) => {
-        if (value.hour != undefined && value.minute != undefined) {
-          this.selectTime.setHours(value.hour, value.minute);
-        }
-      },
-      onCancel: () => {
-        console.info('TimePickerDialog:onCancel()');
-      }
-    });
+    } as TimePickerDialogOptions);
   }
 
   build() {
@@ -48,6 +40,34 @@ struct TimePickerDialogSystemMaterial {
           }))
         })
         .id('ULTRA_THICK_ID')
+
+      Button('THICK')
+        .onClick(() => {
+          this.showDialog(new uiMaterial.ImmersiveMaterial({
+            style: uiMaterial.ImmersiveStyle.THICK,
+            interactive: true,
+          }))
+        })
+        .id('THICK_ID')
+
+      Button('THIN')
+        .onClick(() => {
+          this.showDialog(new uiMaterial.ImmersiveMaterial({
+            style: uiMaterial.ImmersiveStyle.THIN,
+            interactive: true,
+          }))
+        })
+        .id('THIN_ID')
+
+      Button('REGULAR')
+        .onClick(() => {
+          this.showDialog(new uiMaterial.ImmersiveMaterial({
+            style: uiMaterial.ImmersiveStyle.REGULAR,
+            interactive: true,
+          }))
+        })
+        .id('REGULAR_ID')
+
       Button('ULTRA_THIN')
         .onClick(() => {
           this.showDialog(new uiMaterial.ImmersiveMaterial({
@@ -56,6 +76,7 @@ struct TimePickerDialogSystemMaterial {
           }))
         })
         .id('ULTRA_THIN_ID')
+
       Button('interactive_false')
         .onClick(() => {
           this.showDialog(new uiMaterial.ImmersiveMaterial({
@@ -64,26 +85,20 @@ struct TimePickerDialogSystemMaterial {
           }))
         })
         .id('interactive_false_ID')
+
       Button('undefined')
         .onClick(() => {
           this.showDialog(undefined)
         })
         .id('undefinedID')
+
       Button('default')
         .onClick(() => {
           this.getUIContext().showTimePickerDialog({
             selected: this.selectTime,
             format: TimePickerFormat.HOUR_MINUTE,
             useMilitaryTime: false,
-            onAccept: (value: TimePickerResult) => {
-              if (value.hour != undefined && value.minute != undefined) {
-                this.selectTime.setHours(value.hour, value.minute);
-              }
-            },
-            onCancel: () => {
-              console.info('TimePickerDialog:onCancel()');
-            }
-          });
+          } as TimePickerDialogOptions);
         })
         .id('defaultID')
     }.width('100%')
