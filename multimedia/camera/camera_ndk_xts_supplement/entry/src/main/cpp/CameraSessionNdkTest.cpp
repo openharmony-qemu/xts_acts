@@ -1286,7 +1286,8 @@ napi_value TestAddDeferredSurfaceWithEmptyStr(napi_env env, napi_callback_info i
     napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
     CreateAndOpenCamera();
     createPhotoOutput(faceID);
-    Camera_ErrorCode ret = OH_PreviewOutput_AddDeferredSurface(previewOutput, faceID);
+    const char* emptyStrFaceID = "";
+    Camera_ErrorCode ret = OH_PreviewOutput_AddDeferredSurface(previewOutput, emptyStrFaceID);
     if (ret != CAMERA_INVALID_ARGUMENT) {
         napi_create_int32(env, ret, &result);
         OH_PreviewOutput_Release(previewOutput);
