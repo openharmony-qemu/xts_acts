@@ -7,6 +7,7 @@
     "MainAbility/pages/navigationNavDestination/navigationNavDestination",
     "MainAbility/pages/toolBarItemDebugLine/toolBarItemDebugLine",
     "MainAbility/pages/Navigation/NavScrollEffectOptions",
+    "MainAbility/pages/Navigation/NavigationModeRatio",
     "MainAbility/pages/Navigation/navigationMaterial",
     "MainAbility/pages/navigationNavDestination/configurationNav"
   ]

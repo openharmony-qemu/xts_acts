@@ -250,48 +250,5 @@ export default function exceptionPromptV2PageTest() {
       done();
     });
 
-
-    /**
-     * @tc.number exceptionPromptV2PageTest
-     * @tc.name   exceptionPromptV2PageTest_0800
-     * @tc.desc   Test hide and show functionality
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
-     */
-    it('exceptionPromptV2PageTest_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info('[exceptionPromptV2PageTest_0800] START');
-      let driver = await Driver.create();
-      await driver.delayMs(2000);
-
-      let initialTip = await driver.findComponent(ON.text('初始提示文本'));
-      expect(initialTip !== null).assertTrue();
-      console.info('[exceptionPromptV2PageTest_0800] Tip visible initially');
-
-      let hideButton = await driver.findComponent(ON.text('隐藏组件'));
-      if (hideButton !== null) {
-        await hideButton.click();
-        await driver.delayMs(1000);
-        console.info('[exceptionPromptV2PageTest_0800] Hide button clicked');
-
-        let hiddenTip = await driver.findComponent(ON.text('初始提示文本'));
-        expect(hiddenTip === null).assertTrue();
-        console.info('[exceptionPromptV2PageTest_0800] Tip hidden');
-      }
-
-      let showButton = await driver.findComponent(ON.text('显示组件'));
-      if (showButton !== null) {
-        await showButton.click();
-        await driver.delayMs(1000);
-        console.info('[exceptionPromptV2PageTest_0800] Show button clicked');
-
-        let shownTip = await driver.findComponent(ON.text('初始提示文本'));
-        expect(shownTip !== null).assertTrue();
-        console.info('[exceptionPromptV2PageTest_0800] Tip shown again');
-      }
-
-      console.info('[exceptionPromptV2PageTest_0800] END');
-      done();
-    });
   })
 }

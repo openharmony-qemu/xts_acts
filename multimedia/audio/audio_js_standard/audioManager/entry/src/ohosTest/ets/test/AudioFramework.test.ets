@@ -5322,6 +5322,14 @@ export default function audioFramework() {
           return;
       }
       console.info(`${TagFrmwk}: this is a default device`)
+      const detecteDevice2 = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice2) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try {
         let flag: boolean | null = null;
         if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
@@ -5376,6 +5384,14 @@ export default function audioFramework() {
           return;
       }
       console.info(`${TagFrmwk}: this is a default device`)
+      const detecteDevice2 = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice2) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try {
         await audioManager.setDeviceActive(audio.ActiveDeviceType.SPEAKER, true);
         let value = await audioManager.isDeviceActive(2);
@@ -5415,6 +5431,14 @@ export default function audioFramework() {
           return;
       }
       console.info(`${TagFrmwk}: this is a default device`)
+      const detecteDevice2 = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice2) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
         flag = true;
       }
@@ -5469,6 +5493,14 @@ export default function audioFramework() {
           return;
       }
       console.info(`${TagFrmwk}: this is a default device`)
+      const detecteDevice2 = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice2) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       audioManager.setDeviceActive(audio.ActiveDeviceType.SPEAKER, true, (err) => {
         if (err) {
           console.error(`${TagFrmwk}: Device Test: Callback : setDeviceActive : SPEAKER: Active: Error: ${err.message}`);
@@ -9030,6 +9062,14 @@ export default function audioFramework() {
           return;
       }
       console.info(`${TagFrmwk}: this is a default device`)
+      const detecteDevice2 = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice2) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
         flag = true;
       }

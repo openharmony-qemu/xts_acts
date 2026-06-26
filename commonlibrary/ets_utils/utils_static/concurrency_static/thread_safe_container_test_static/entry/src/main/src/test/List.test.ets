@@ -1,3 +1,5 @@
+'use static'
+
 import ArrayBlockingQueuetest from './ArrayBlockingQueue.test';
 import LinkedBlockingQueuetest from './LinkedBlockingQueuetest.test';
 import ArrayBlockingQueueStressTest from './ArrayBlockingQueueStressTest.test';

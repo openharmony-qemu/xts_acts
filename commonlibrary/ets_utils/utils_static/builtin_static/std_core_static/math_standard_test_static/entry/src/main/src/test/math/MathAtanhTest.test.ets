@@ -680,7 +680,7 @@ export default function mathAtanhTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_4400
      * @tc.name testMathAtanh044
-     * @tc.desc Verify atanh method with out-of-domain double input 2.0 for NaN return without exception
+     * @tc.desc Verify atanh method with out-of-domain double input 2.0 for Double.NaN return without exception
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -694,7 +694,7 @@ export default function mathAtanhTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_4500
      * @tc.name testMathAtanh045
-     * @tc.desc Verify atanh method with out-of-domain double input -2.0 for NaN return without exception
+     * @tc.desc Verify atanh method with out-of-domain double input -2.0 for Double.NaN return without exception
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -708,7 +708,7 @@ export default function mathAtanhTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_4600
      * @tc.name testMathAtanh046
-     * @tc.desc Verify atanh method with out-of-domain double input 1.5 for NaN return without exception
+     * @tc.desc Verify atanh method with out-of-domain double input 1.5 for Double.NaN return without exception
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -722,7 +722,7 @@ export default function mathAtanhTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_4700
      * @tc.name testMathAtanh047
-     * @tc.desc Verify atanh method with out-of-domain double input -1.5 for NaN return without exception
+     * @tc.desc Verify atanh method with out-of-domain double input -1.5 for Double.NaN return without exception
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -736,7 +736,7 @@ export default function mathAtanhTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_4800
      * @tc.name testMathAtanh048
-     * @tc.desc Verify atanh method with out-of-domain double input 1.0000001 for NaN return without exception
+     * @tc.desc Verify atanh method with out-of-domain double input 1.0000001 for Double.NaN return without exception
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -750,7 +750,7 @@ export default function mathAtanhTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_4900
      * @tc.name testMathAtanh049
-     * @tc.desc Verify atanh method with out-of-domain double input -1.0000001 for NaN return without exception
+     * @tc.desc Verify atanh method with out-of-domain double input -1.0000001 for Double.NaN return without exception
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -764,7 +764,7 @@ export default function mathAtanhTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_5000
      * @tc.name testMathAtanh050
-     * @tc.desc Verify atanh method with out-of-domain double input 10.0 for NaN return without exception
+     * @tc.desc Verify atanh method with out-of-domain double input 10.0 for Double.NaN return without exception
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -778,7 +778,7 @@ export default function mathAtanhTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_5100
      * @tc.name testMathAtanh051
-     * @tc.desc Verify atanh method with out-of-domain double input -10.0 for NaN return without exception
+     * @tc.desc Verify atanh method with out-of-domain double input -10.0 for Double.NaN return without exception
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -792,7 +792,7 @@ export default function mathAtanhTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_5200
      * @tc.name testMathAtanh052
-     * @tc.desc Verify atanh method with out-of-domain float input 2.0 for NaN return without exception
+     * @tc.desc Verify atanh method with out-of-domain float input 2.0 for Float.NaN return without exception
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -806,7 +806,7 @@ export default function mathAtanhTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_5300
      * @tc.name testMathAtanh053
-     * @tc.desc Verify atanh method with out-of-domain float input -2.0 for NaN return without exception
+     * @tc.desc Verify atanh method with out-of-domain float input -2.0 for Float.NaN return without exception
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -820,7 +820,7 @@ export default function mathAtanhTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_5400
      * @tc.name testMathAtanh054
-     * @tc.desc Verify atanh method with out-of-domain float input 1.0001 for NaN return without exception
+     * @tc.desc Verify atanh method with out-of-domain float input 1.0001 for Float.NaN return without exception
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -834,7 +834,7 @@ export default function mathAtanhTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_5500
      * @tc.name testMathAtanh055
-     * @tc.desc Verify atanh method with out-of-domain float input -1.0001 for NaN return without exception
+     * @tc.desc Verify atanh method with out-of-domain float input -1.0001 for Float.NaN return without exception
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -938,7 +938,7 @@ export default function mathAtanhTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_6200
      * @tc.name testMathAtanh062
-     * @tc.desc Verify atanh method with double NaN input for NaN propagation semantic
+     * @tc.desc Verify atanh method with Double.NaN input for Double.NaN propagation semantic
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -952,7 +952,7 @@ export default function mathAtanhTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_6300
      * @tc.name testMathAtanh063
-     * @tc.desc Verify atanh method with float NaN input for NaN propagation semantic
+     * @tc.desc Verify atanh method with Float.NaN input for Float.NaN propagation semantic
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -967,7 +967,7 @@ export default function mathAtanhTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_6400
      * @tc.name testMathAtanh064
-     * @tc.desc Verify atanh method with double positive Infinity input for NaN return
+     * @tc.desc Verify atanh method with Double.POSITIVE_INFINITY input for Double.NaN return
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -981,7 +981,7 @@ export default function mathAtanhTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_6500
      * @tc.name testMathAtanh065
-     * @tc.desc Verify atanh method with double negative Infinity input for NaN return
+     * @tc.desc Verify atanh method with Double.NEGATIVE_INFINITY input for Double.NaN return
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -995,7 +995,7 @@ export default function mathAtanhTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_6600
      * @tc.name testMathAtanh066
-     * @tc.desc Verify atanh method with float positive Infinity input for NaN return
+     * @tc.desc Verify atanh method with Float.POSITIVE_INFINITY input for Float.NaN return
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -1011,7 +1011,7 @@ export default function mathAtanhTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_6700
      * @tc.name testMathAtanh067
-     * @tc.desc Verify atanh method with float negative Infinity input for NaN return
+     * @tc.desc Verify atanh method with Float.NEGATIVE_INFINITY input for Float.NaN return
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -1188,6 +1188,280 @@ export default function mathAtanhTest(): void {
       expect(result < 0.0).assertTrue();
       let isNaNResult: boolean = Utils.isNaNValue(result);
       expect(isNaNResult).assertFalse();
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_7900
+     * @tc.name testMathAtanh079
+     * @tc.desc Verify atanh method with widened byte zero input preserves exact zero on the double path
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathAtanh079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: byte = Int.toByte(0);
+      let result: double = Math.atanh(inputValue);
+      expect(result).assertEqual(0.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_8000
+     * @tc.name testMathAtanh080
+     * @tc.desc Verify atanh method with widened byte representative boundary value -1 returns Double.NEGATIVE_INFINITY
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathAtanh080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: byte = Int.toByte(-1);
+      let result: double = Math.atanh(inputValue);
+      expect(result).assertEqual(Double.NEGATIVE_INFINITY);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_8100
+     * @tc.name testMathAtanh081
+     * @tc.desc Verify atanh method with widened byte maximum boundary returns Double.NaN outside the valid domain
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathAtanh081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: byte = Int.toByte(127);
+      let result: double = Math.atanh(inputValue);
+      expect(Utils.isNaNValue(result)).assertTrue();
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_8200
+     * @tc.name testMathAtanh082
+     * @tc.desc Verify atanh method with widened short zero input preserves exact zero on the double path
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathAtanh082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: short = Int.toShort(0);
+      let result: double = Math.atanh(inputValue);
+      expect(result).assertEqual(0.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_8300
+     * @tc.name testMathAtanh083
+     * @tc.desc Verify atanh method with widened short maximum boundary returns Double.NaN outside the valid domain
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathAtanh083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: short = Int.toShort(32767);
+      let result: double = Math.atanh(inputValue);
+      expect(Utils.isNaNValue(result)).assertTrue();
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_8400
+     * @tc.name testMathAtanh084
+     * @tc.desc Verify atanh method with widened short minimum boundary returns Double.NaN outside the valid domain
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathAtanh084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: short = Int.toShort(-32768);
+      let result: double = Math.atanh(inputValue);
+      expect(Utils.isNaNValue(result)).assertTrue();
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_8500
+     * @tc.name testMathAtanh085
+     * @tc.desc Verify atanh method with widened int zero input preserves exact zero on the double path
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathAtanh085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: int = 0;
+      let result: double = Math.atanh(inputValue);
+      expect(result).assertEqual(0.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_8600
+     * @tc.name testMathAtanh086
+     * @tc.desc Verify atanh method with widened int maximum boundary returns Double.NaN outside the valid domain
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathAtanh086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: int = Int.MAX_VALUE;
+      let result: double = Math.atanh(inputValue);
+      expect(Utils.isNaNValue(result)).assertTrue();
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_8700
+     * @tc.name testMathAtanh087
+     * @tc.desc Verify atanh method with widened int minimum boundary returns Double.NaN outside the valid domain
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathAtanh087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: int = Int.MIN_VALUE;
+      let result: double = Math.atanh(inputValue);
+      expect(Utils.isNaNValue(result)).assertTrue();
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_8800
+     * @tc.name testMathAtanh088
+     * @tc.desc Verify atanh method with widened long zero input preserves exact zero on the double path
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathAtanh088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: long = Int.toLong(0);
+      let result: double = Math.atanh(inputValue);
+      expect(result).assertEqual(0.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_8900
+     * @tc.name testMathAtanh089
+     * @tc.desc Verify atanh method with widened Long.MAX_VALUE boundary returns Double.NaN outside the valid domain
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathAtanh089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: long = Long.MAX_VALUE;
+      let result: double = Math.atanh(inputValue);
+      expect(Utils.isNaNValue(result)).assertTrue();
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_9000
+     * @tc.name testMathAtanh090
+     * @tc.desc Verify atanh method with widened Long.MIN_VALUE boundary returns Double.NaN outside the valid domain
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathAtanh090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: long = Long.MIN_VALUE;
+      let result: double = Math.atanh(inputValue);
+      expect(Utils.isNaNValue(result)).assertTrue();
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_9100
+     * @tc.name testMathAtanh091
+     * @tc.desc Verify atanh method with exact double upper boundary 1.0 returns Double.POSITIVE_INFINITY
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathAtanh091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: double = 1.0;
+      let result: double = Math.atanh(inputValue);
+      expect(result).assertEqual(Double.POSITIVE_INFINITY);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_9200
+     * @tc.name testMathAtanh092
+     * @tc.desc Verify atanh method with exact double lower boundary -1.0 returns Double.NEGATIVE_INFINITY
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathAtanh092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: double = -1.0;
+      let result: double = Math.atanh(inputValue);
+      expect(result).assertEqual(Double.NEGATIVE_INFINITY);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_9300
+     * @tc.name testMathAtanh093
+     * @tc.desc Verify atanh method with exact float upper boundary 1.0f returns Float.POSITIVE_INFINITY
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathAtanh093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: float = Double.toFloat(1.0);
+      let result: float = Math.atanh(inputValue);
+      expect(result).assertEqual(Float.POSITIVE_INFINITY);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_9400
+     * @tc.name testMathAtanh094
+     * @tc.desc Verify atanh method with exact float lower boundary -1.0f returns Float.NEGATIVE_INFINITY
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathAtanh094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: float = Double.toFloat(-1.0);
+      let result: float = Math.atanh(inputValue);
+      expect(result).assertEqual(Float.NEGATIVE_INFINITY);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_9500
+     * @tc.name testMathAtanh095
+     * @tc.desc Verify atanh method with representative finite double value 999999.99 returns Double.NaN outside the valid domain
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathAtanh095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: double = 999999.99;
+      let result: double = Math.atanh(inputValue);
+      expect(Utils.isNaNValue(result)).assertTrue();
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_9600
+     * @tc.name testMathAtanh096
+     * @tc.desc Verify atanh method with representative finite float value 99.99f returns Float.NaN outside the valid domain
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathAtanh096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: float = Double.toFloat(99.99);
+      let result: float = Math.atanh(inputValue);
+      expect(Utils.isNaNFloat(result)).assertTrue();
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_9700
+     * @tc.name testMathAtanh097
+     * @tc.desc Verify atanh method with Double.MAX_VALUE boundary returns Double.NaN outside the valid domain
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathAtanh097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: double = Double.MAX_VALUE;
+      let result: double = Math.atanh(inputValue);
+      expect(Utils.isNaNValue(result)).assertTrue();
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_9800
+     * @tc.name testMathAtanh098
+     * @tc.desc Verify atanh method with Float.MAX_VALUE boundary returns Float.NaN outside the valid float domain
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathAtanh098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: float = Float.MAX_VALUE;
+      let result: float = Math.atanh(inputValue);
+      expect(Utils.isNaNFloat(result)).assertTrue();
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_9900
+     * @tc.name testMathAtanh099
+     * @tc.desc Verify atanh method with Float.MIN_VALUE boundary returns a finite positive float result
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathAtanh099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: float = Float.MIN_VALUE;
+      let result: float = Math.atanh(inputValue);
+      expect(result > 0.0).assertTrue();
+      expect(Utils.isFiniteFloat(result)).assertTrue();
     });
   });
 }

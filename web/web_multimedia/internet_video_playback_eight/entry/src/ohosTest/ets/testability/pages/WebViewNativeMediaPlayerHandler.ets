@@ -25,7 +25,6 @@ import JSON from '@ohos.util.json';
 import connection from '@ohos.net.connection';
 import router from '@ohos.router';
 import { waitForExist } from '../../test/WaitTest.test';
-import { XtsTestServer } from 'library';
 
 interface AVPlayerListener {
     onPlaying() : void
@@ -838,8 +837,7 @@ interface PageParams {
 struct WebComponent {
   controller: WebviewController = new webview.WebviewController();
   nativePlayer? : webview.NativeMediaPlayerBridge
-  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
-  page_url: string = this.mServer.getAssetUrl('nativeMediaPlayerHandler2.html')
+  page_url: Resource = $rawfile('nativeMediaPlayerHandler2.html')
   node_controller?: MyNodeController
   @State show_native_media_player: boolean = false;
   @State node_width : number = 30;
@@ -863,10 +861,6 @@ struct WebComponent {
           priority: events_emitter.EventPriority.LOW
       }
       events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
-  }
-
-  aboutToDisappear() {
-    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
   
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -1024,7 +1018,7 @@ struct WebComponent {
                     }
                     case "emitWebViewNativeMediaPlayerHandleError": {
                         try {
-                            this.controller.loadUrl(this.mServer.getAssetUrl('nativeMediaError2.html'))
+                            this.controller.loadUrl($rawfile("nativeMediaError2.html"))
                             await Utils.sleep(1500)
                             Utils.emitEvent(true,300290)
                         } catch (error) {
@@ -1077,7 +1071,7 @@ struct WebComponent {
                             console.log('emitWebViewNativeVideoSetSeek==>')
                             this.checkResult = '';
 			    this.isPageEnd = -1;
-                            this.controller.loadUrl(this.mServer.getAssetUrl('nativeMediaSetSeek.html'))
+                            this.controller.loadUrl($rawfile('nativeMediaSetSeek.html'))
                             await waitForExist(()=>this.isPageEnd, this.emitKey + 'isPageEnd',0)
                             this.controller.runJavaScript("buttonPlay()", (error, result) => {
                                 this.checkResult = result;
@@ -1102,7 +1096,7 @@ struct WebComponent {
                             console.log('emitWebViewNativeMediaSetVolume==>')
                             this.checkResult = '';
                             this.isPageEnd = -1;
-                            this.controller.loadUrl(this.mServer.getAssetUrl('nativeMediaSetVolume.html'))
+                            this.controller.loadUrl($rawfile('nativeMediaSetVolume.html'))
                             await waitForExist(()=>this.isPageEnd, this.emitKey + 'isPageEnd',0)
                             this.controller.runJavaScript("buttonPlay()", (error, result) => {
                                 this.checkResult = result;
@@ -1126,7 +1120,7 @@ struct WebComponent {
                             console.log('emitWebViewNativeMediaMediaInfo==>')
                             this.checkResult = '';
                             this.isPageEnd = -1;
-                            this.controller.loadUrl(this.mServer.getAssetUrl('nativeMediaInfo.html'))
+                            this.controller.loadUrl($rawfile('nativeMediaInfo.html'))
                             await waitForExist(()=>this.isPageEnd, this.emitKey + 'IsPageEnd',0,1000);
                             this.controller.runJavaScript("buttonLoad()", (error, result) => {
                                 this.checkResult = '' + result;

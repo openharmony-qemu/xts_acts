@@ -642,5 +642,54 @@ export default function photoExtraSuppTest() {
       }
     });
 
+    /**
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_REGISTER_CHANGE_CALLBACK_004
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_REGISTER_CHANGE_CALLBACK_004
+     * @tc.desc   PhotoAccessHelper.registerChange-属性type覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_REGISTER_CHANGE_CALLBACK_004', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_PHOTO_ACCESS_HELPER_REGISTER_CHANGE_CALLBACK_004';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOptions: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      try {
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
+          await phAccessHelper.getAssets(fetchOptions);
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        let isCallbackCalled = false;
+        let onCallback = (changeData: photoAccessHelper.ChangeData) => {
+          console.info(TAG, testName, 'onCallback success, changeData111: ' + JSON.stringify(changeData));
+          isCallbackCalled = true;
+          expect(changeData.type == 1).assertTrue();
+          expect(changeData.uris.length > 0).assertTrue();
+        }
+        phAccessHelper.registerChange(photoAsset.uri, false, onCallback);
+        let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
+          new photoAccessHelper.MediaAssetChangeRequest(photoAsset);
+        let newTitle: string = 'newTitle22';
+        assetChangeRequest.setTitle(newTitle);
+        await phAccessHelper.applyChanges(assetChangeRequest);
+        const startTime = Date.now();
+        const timeoutMs = 15000;
+        while (!isCallbackCalled && (Date.now() - startTime)<timeoutMs){
+          await sleep(100)
+        }
+        expect(isCallbackCalled).assertTrue();
+        phAccessHelper.unRegisterChange(photoAsset.uri, onCallback);
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `getAlbumsCallback failed with err: ${error.code}, ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
   })
 }

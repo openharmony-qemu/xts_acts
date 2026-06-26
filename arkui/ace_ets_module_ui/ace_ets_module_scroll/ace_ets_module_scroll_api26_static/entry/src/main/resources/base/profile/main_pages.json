@@ -20,7 +20,9 @@
     "MainAbility/pages/ArcSwiper/arcSwiperEffectMode",
     "MainAbility/pages/Grid/gridEnableEditMode",
     "MainAbility/pages/Grid/gridEditModeChange",
+    "MainAbility/pages/Grid/gridEditModeOptions",
     "MainAbility/pages/List/listEnableEditMode",
-    "MainAbility/pages/List/listEditModeChange"
+    "MainAbility/pages/List/listEditModeChange",
+    "MainAbility/pages/Scroll/scrollScrollBarHeight"
   ]
 }

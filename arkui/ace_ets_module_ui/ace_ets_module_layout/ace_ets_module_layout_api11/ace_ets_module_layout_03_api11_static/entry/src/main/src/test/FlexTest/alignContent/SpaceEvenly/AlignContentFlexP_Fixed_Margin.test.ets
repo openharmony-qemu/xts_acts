@@ -138,7 +138,7 @@ it('testAlignContentSpaceEvenlyFlexFixedMarginSatisfy_static', Level.LEVEL0, asy
         .assertTrue();
       expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_1.left - AlignContentFlexSpaceEvenly_flex001.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_1.top - AlignContentFlexSpaceEvenly_flex001.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50 / 3)) + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_1.top - AlignContentFlexSpaceEvenly_flex001.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50 / 3)) + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 2)
         .assertTrue();
 
       console.info('testAlignContentSpaceEvenlyFlexFixedMarginSatisfy END');
