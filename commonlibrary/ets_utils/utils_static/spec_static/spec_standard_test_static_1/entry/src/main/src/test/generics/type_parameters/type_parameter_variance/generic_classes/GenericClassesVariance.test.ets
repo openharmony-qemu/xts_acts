@@ -36,7 +36,7 @@ async function sleep(time: int): Promise<int> {
 
 class X1<in T1, out T2, T3> {
     readonly t2_obj: T2
-    t3_obj: T3
+    t3_obj: T3 = undefined as T3
     constructor(p: T2) {
         this.t2_obj = p
     }
