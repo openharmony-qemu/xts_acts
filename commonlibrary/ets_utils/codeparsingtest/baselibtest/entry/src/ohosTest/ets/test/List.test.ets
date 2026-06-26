@@ -37,7 +37,7 @@ import hashMapTest from './hashmap/HashMap.test';
 import arkListTest from './arklist/ArkList.test';
 import arrayListTest from './arraylist/ArrayList.test';
 import xmlTest from './xml/Xml.test';
-import dynamicXmlTest from './xml/DynamicXml';
+import dynamicXmlTest from './xml/DynamicXml.test';
 import convertXmlTest from './convertxml/ConvertXml.test';
 import ConvertXml2Test from './convertxml/ConvertXml2.test';
 import ConvertXml3Test from './convertxml/ConvertXml3.test';
