@@ -61,7 +61,8 @@ import AddMonitorWildcard2 from './AddMonitorTest/AddMonitorWildcard2.test';
 
 
 export default function testsuite() {
-  ArrayLikeStringTest(); 
+  ArrayLikeStringTest();
+  GlobalReusePool004Test();
   //RepeatCloseReuseTest0110(); 
   //RepeatLazyTest0150();  
   //repeatReusableFalse(); 
@@ -104,5 +105,4 @@ export default function testsuite() {
   GlobalReusePool002Test();
   GlobalReusePool003Test();
   GlobalReusePoolTest();
-  GlobalReusePool004Test();
 }
