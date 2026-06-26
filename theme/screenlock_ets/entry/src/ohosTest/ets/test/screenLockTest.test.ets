@@ -217,7 +217,7 @@ export default function screenLockJSUnit() {
           }
         });
         let data: boolean = await screenLock.isScreenLocked();
-        expect(data).assertEqual(false);
+        expect(data == result).assertTrue();
         done();
       } catch (err) {
         console.info("====>Sub_Theme_ScreenLock_DFX_0410 catch err: " + JSON.stringify(err));
