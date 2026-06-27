@@ -217,7 +217,7 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<boolean>(true);
+      const arr = Array.create<boolean>(1, true);
       arr.extendTo(3, false);
       expect(arr[1]).assertFalse();
       expect(arr[2]).assertFalse();
@@ -271,7 +271,7 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<ExtendPoint015>({ x: 1, y: 2 });
+      const arr = Array.create<ExtendPoint015>(1, { x: 1, y: 2 });
       arr.extendTo(3, { x: 0, y: 0 });
       expect(arr[1].x).assertEqual(0);
       expect(arr[2].y).assertEqual(0);
@@ -498,7 +498,7 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(1);
+      const arr = Array.create<int>(1, 1);
       for (let i = 0; i < 100; i++) {
         arr.extendTo(arr.length + 1, i);
       }
@@ -516,7 +516,7 @@ export default function ArrayExtendToTest(): void {
      */
     it('testArrayExtendTo028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const item = new ExtendItem014(100);
-      const arr = new Array<ExtendItem014>(new ExtendItem014(1));
+      const arr = Array.create<ExtendItem014>(1, new ExtendItem014(1));
       arr.extendTo(4, item);
       expect(arr[1] == arr[2]).assertTrue();
       expect(arr[2] == arr[3]).assertTrue();
@@ -599,7 +599,7 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<string>('x');
+      const arr = Array.create<string>(1, 'x');
       arr.extendTo(3, '');
       expect(arr[1]).assertEqual('');
       expect(arr[2]).assertEqual('');
@@ -690,7 +690,7 @@ export default function ArrayExtendToTest(): void {
      */
     it('testArrayExtendTo039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const payload = '<script>alert(1)</script>';
-      const arr = new Array<string>('safe');
+      const arr = Array.create<string>(1, 'safe');
       arr.extendTo(3, payload);
       expect(arr[1]).assertEqual(payload);
     });
@@ -704,7 +704,7 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<string>('a');
+      const arr = Array.create<string>(1, 'a');
       arr.extendTo(3, '\u4F60\u597D\u4E16\u754C');
       expect(arr[1]).assertEqual('\u4F60\u597D\u4E16\u754C');
       expect(arr[2]).assertEqual('\u4F60\u597D\u4E16\u754C');
@@ -719,7 +719,7 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<string>('visible');
+      const arr = Array.create<string>(1, 'visible');
       arr.extendTo(3, '\u200B');
       expect(arr[1]).assertEqual('\u200B');
       expect(arr[2]).assertEqual('\u200B');
@@ -734,7 +734,7 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(1);
+      const arr = Array.create<int>(1, 1);
       arr.extendTo(3, 10);
       arr.extendTo(5, 20);
       expect(arr[1]).assertEqual(10);
@@ -766,7 +766,7 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<ExtendItem014>(new ExtendItem014(1));
+      const arr = Array.create<ExtendItem014>(1, new ExtendItem014(1));
       arr.extendTo(3, new ExtendItem014(99));
       expect(arr[1].value).assertEqual(99);
       expect(arr[2].value).assertEqual(99);
@@ -781,7 +781,7 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<ExtendPoint015>({ x: 1, y: 1 });
+      const arr = Array.create<ExtendPoint015>(1, { x: 1, y: 1 });
       arr.extendTo(3, { x: 0, y: 0 });
       expect(arr[1].x).assertEqual(0);
       expect(arr[2].y).assertEqual(0);
@@ -866,7 +866,7 @@ export default function ArrayExtendToTest(): void {
     it('testArrayExtendTo050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const head = new ExtendItem014(1);
       const fill = new ExtendItem014(88);
-      const arr = new Array<ExtendItem014>(head);
+      const arr = Array.create<ExtendItem014>(1, head);
       arr.extendTo(4, fill);
       fill.value = 99;
       expect(arr[0].value).assertEqual(1);
@@ -957,7 +957,7 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int | string>(1);
+      const arr = Array.create<int | string>(1, 1);
       arr.extendTo(3, 'A');
       arr.extendTo(5, 'B');
       expect(arr[1]).assertEqual('A');
@@ -1062,7 +1062,7 @@ export default function ArrayExtendToTest(): void {
      */
     it('testArrayExtendTo061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const shared = new Array<int>();
-      const arr = new Array<Array<int>>(new Array<int>(1));
+      const arr = Array.create<Array<int>>(1, Array.create<int>(1, 1));
       arr.extendTo(3, shared);
       shared.pushOne(42);
       expect(arr[1].length).assertEqual(1);

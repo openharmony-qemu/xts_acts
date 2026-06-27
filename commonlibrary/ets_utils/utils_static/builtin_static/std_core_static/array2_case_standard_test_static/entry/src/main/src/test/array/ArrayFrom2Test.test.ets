@@ -125,7 +125,7 @@ export default function ArrayFrom2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFromTwo003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceArr = new Array<number>(42);
+      let sourceArr = Array.create<number>(1, 42);
       let arr = Array.from<number>(sourceArr);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(42);
@@ -241,7 +241,7 @@ export default function ArrayFrom2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFromTwo011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceArr = new Array<string>('<script>alert(1)</script>');
+      let sourceArr = Array.create<string>(1, '<script>alert(1)</script>');
       let arr = Array.from<string>(sourceArr);
       expect(arr[0]).assertEqual('<script>alert(1)</script>');
     });
@@ -362,7 +362,7 @@ export default function ArrayFrom2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFromTwo019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arrayLike: StringArrayLike020 = new Array<string>('single');
+      let arrayLike: StringArrayLike020 = Array.create<string>(1, 'single');
       let arr = Array.from<string>(arrayLike);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual('single');
@@ -821,7 +821,7 @@ export default function ArrayFrom2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFromTwo045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const source = new Array<number>(42);
+      const source = Array.create<number>(1, 42);
       const result = Array.from<number>(source);
       expect(result.toString()).assertEqual('42');
     });

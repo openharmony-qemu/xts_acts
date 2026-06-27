@@ -272,7 +272,7 @@ export default function ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testArrayJoin014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(42);
+      let arr = Array.create<number>(1, 42);
       let result = arr.join(',');
       expect(result).assertEqual('42');
     });
@@ -405,7 +405,7 @@ export default function ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testArrayJoin023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<Item022>(new Item022());
+      let arr = Array.create<Item022>(1, new Item022());
       let result = arr.join(',');
       expect(result).assertEqual('Item');
     });
@@ -591,7 +591,7 @@ export default function ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testArrayJoin036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let inner = new Array<string>('3');
+      let inner = Array.create<string>(1, '3');
       let middle = new Array<Object | string>('2', inner);
       let arr = new Array<Object | string>('1', middle);
       let result = arr.join(',');
@@ -1049,7 +1049,7 @@ export default function ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testArrayJoin068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(99);
+      const arr = Array.create<number>(1, 99);
       expect(arr.join('|')).assertEqual('99');
     });
 

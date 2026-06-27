@@ -296,7 +296,7 @@ export default function ArrayFill1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFill1016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1);
+      const arr = Array.create<number>(1, 1);
       arr[0] = 100;
       arr.fill(0);
       expect(arr[0]).assertEqual(0);

@@ -469,7 +469,7 @@ export default function ArrayToSpliced4Test(): void {
      * @tc.level Level 2
      */
     it('testArrayToSplicedFour027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(42);
+      const arr = Array.create<number>(1, 42);
       const result = arr.toSpliced(0);
       expect(result.length).assertEqual(0);
     });
@@ -483,7 +483,7 @@ export default function ArrayToSpliced4Test(): void {
      * @tc.level Level 2
      */
     it('testArrayToSplicedFour028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(42);
+      const arr = Array.create<number>(1, 42);
       const result = arr.toSpliced(1);
       expect(result.toString()).assertEqual('42');
     });
@@ -877,8 +877,8 @@ export default function ArrayToSpliced4Test(): void {
      * @tc.level Level 2
      */
     it('testArrayToSplicedFour051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const first = new Array<number>(9);
-      const second = new Array<number>(10);
+      const first = Array.create<number>(1, 9);
+      const second = Array.create<number>(1, 10);
       const arr = new Array<Array<number>>(first, second);
       const start: int = 1;
       const result = arr.toSpliced(start);
@@ -1564,7 +1564,7 @@ export default function ArrayToSpliced4Test(): void {
      * @tc.level Level 2
      */
     it('testArrayToSplicedFour093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(1, 5);
       const start: int = 1;
       const result = arr.toSpliced(start);
       expect(result.toString()).assertEqual('5');
@@ -1579,7 +1579,7 @@ export default function ArrayToSpliced4Test(): void {
      * @tc.level Level 2
      */
     it('testArrayToSplicedFour094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(1, 5);
       const start: int = 0;
       const result = arr.toSpliced(start);
       expect(result.length).assertEqual(0);
