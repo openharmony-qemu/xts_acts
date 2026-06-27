@@ -1644,7 +1644,6 @@ export default function TextPicker(): void {
           .catch((error: Error) => {
             console.info('PhotoViewPicker select error, uri: ' + JSON.stringify(error));
           })
-        await closePickerModel(driver);
       }
 
       console.info("testPicker24 finish");
