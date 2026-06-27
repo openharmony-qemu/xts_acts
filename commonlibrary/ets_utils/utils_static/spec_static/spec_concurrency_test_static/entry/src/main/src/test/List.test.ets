@@ -2,7 +2,6 @@
 import AsyncFunctionTest from "./AsyncFunction/AsyncFunction.test";
 import AwaitExpressionTest from "./AwaitExpression/AwaitExpression.test";
 import PromiseTest from "./Promise/Promise.test";
-import TaskPoolTest from "./TaskPool/TaskPool.test";
 import AsyncLockTest from "./AsyncLock/AsyncLock.test";
 import AtomicsTest from "./Atomics/Atomics.test";
 import SchedulingTest from "./Scheduling/Scheduling.test";
