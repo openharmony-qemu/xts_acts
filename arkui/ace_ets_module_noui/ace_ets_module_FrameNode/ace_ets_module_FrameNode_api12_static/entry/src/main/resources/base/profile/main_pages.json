@@ -8,6 +8,8 @@
     "MainAbility/pages/frameNode/GetFrameNodeByUniqueId",
     "MainAbility/pages/frameNode/createFrameNodesUIContextInt",
  	  "MainAbility/pages/frameNode/ComponentContentIsTransferred",
- 	  "MainAbility/pages/frameNode/ComponentContentIsDisposed"
+ 	  "MainAbility/pages/frameNode/ComponentContentIsDisposed",
+     "MainAbility/pages/frameNode/BuilderNodeAddBuilderProxyNode",
+     "MainAbility/pages/IfElse/IfElseExpression"
   ]
 }

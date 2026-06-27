@@ -25,6 +25,7 @@ import CommandsUndefinedModifierTest from './PathTest/commandsUndefinedModifier.
 import PointsUndefinedModifierTest from './PolylineTest/pointsUndefinedModifier.test';
 import VideoUndefinedTest from './VideoTest/videoUndefined.test';
 import VideoUndefinedModifierTest from './VideoTest/videoUndefinedModifier.test';
+import CircleFillStrokeTest from './Circle/CircleFillStrokeTest.test';
 
 export default function testsuite() {
   XComponentModifierUndefinedTest()
@@ -40,4 +41,5 @@ export default function testsuite() {
   PointsUndefinedModifierTest()
   VideoUndefinedTest()
   VideoUndefinedModifierTest()
+  CircleFillStrokeTest()
 }
