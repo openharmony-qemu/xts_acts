@@ -118,7 +118,7 @@
 //       })
 //
 //       Web({ src: 'www.baidu.com', controller: this.controller })
-//         .key('web2')
+//         .key('webapi9_web2')
 //         .webStandardFont("HarmonyOS-Sans-Condensed")
 //         // .webSeriFont("HarmonyOS-Sans-Condensed")  // TypeError2 Property 'webSeriFont' does not exist on type 'WebAttribute'
 //         // .webSanSeriFont("HarmonyOS-Sans-Condensed")

@@ -87,35 +87,35 @@ struct StorageLink1 {
         })
 
       Button(`string: ${this.string}`).width("100%").height('5%')
-        .key("button_son2")
+        .key("StorageLink1_button_son2")
         .onClick(() => {
           this.son2 = 'sss'
           this.string = AppStorage.get<string>('Prop2');
         })
 
       Button(`boolean: ${this.boolean}`).width("100%").height('5%')
-        .key("button_son3")
+        .key("StorageLink1_button_son3")
         .onClick(() => {
           this.son3 = true
           this.boolean = AppStorage.get<boolean>('Prop3');
         })
 
       Button(`enu: ${this.enu}`).width("100%").height('5%')
-        .key("button_son4")
+        .key("StorageLink1_button_son4")
         .onClick(() => {
           this.son4 = ABC.C
           this.enu = AppStorage.get<ABC>('Prop4');
         })
 
       Button(`class: ${this.class?.value}`).width("100%").height('5%')
-        .key("button_son5")
+        .key("StorageLink1_button_son5")
         .onClick(() => {
           this.son5 = new Model('Title:Hello C')
           this.class = AppStorage.get<Model>('Prop5');
         })
 
       Button(`obj: ${JSON.stringify(this.obj)}`).width("100%").height('5%')
-        .key("button_son6")
+        .key("StorageLink1_button_son6")
         .onClick(() => {
           this.son6 = {name:'ls',age:13} as ModelLink1Person
           this.obj = AppStorage.get<Object>('Prop6')

@@ -27,8 +27,8 @@ export default function CapsuleSegmentButtonV2Animation() {
         url: "MainAbility/pages/SegmentButtonV2/CapsuleSegmentButtonV2Animation",
       }
       try {
-        router.clear();
         let pages = router.getState();
+        router.clear();
         console.info("get current pages:" + JSON.stringify(pages));
         if (!("CapsuleSegmentButtonV2Animation" == pages.name)) {
           console.info("get CapsuleSegmentButtonV2Animation pages.name:" + JSON.stringify(pages.name));
@@ -57,7 +57,7 @@ export default function CapsuleSegmentButtonV2Animation() {
      */
     it('CapsuleSegmentButtonV2Animation_001', Level.LEVEL0, async (done: Function) => {
       console.log("[CapsuleSegmentButtonV2Animation_001] START");
-      const driver = Driver.create();
+      const driver = await Driver.create();
       const button = await driver.findComponent(ON.id('true'));
       await button.click();
       await driver.delayMs(1000);

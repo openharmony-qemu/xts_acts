@@ -35,7 +35,7 @@ struct LocalStorage39 {
       Text(`Keys：${this.keys1}`).key('keysText1').height('5%')
       Button('获取键值对的keys')
         .height('5%')
-        .key('button1')
+        .key('LocalStorage39_button1')
         .onClick(() => {
           this.keys1 = JSON.stringify(Object.keys(storage39)) + ""
         })
@@ -44,7 +44,7 @@ struct LocalStorage39 {
       //get获取LocalStorage中存在键值对的个数
       Button('get PropA')
         .height('5%')
-        .key('button2')
+        .key('LocalStorage39_button2')
         .onClick(() => {
           this.value1 = storage39.get("PropA")+""
         })
@@ -52,7 +52,7 @@ struct LocalStorage39 {
       Text(`get PropE：${this.value2}`).key('getText2').height('5%')
       Button('get PropE')
         .height('5%')
-        .key('button3')
+        .key('LocalStorage39_button3')
         .onClick(() => {
           this.value2 = storage39.get("PropE")+""
         })
@@ -61,7 +61,7 @@ struct LocalStorage39 {
       Text(`size是：${this.sizenum}`).key('sizeText').height('5%')
       Button('获取键值对的个数')
         .height('5%')
-        .key('button4')
+        .key('LocalStorage39_button4')
         .onClick(() => {
           this.sizenum = storage39.size()
         })

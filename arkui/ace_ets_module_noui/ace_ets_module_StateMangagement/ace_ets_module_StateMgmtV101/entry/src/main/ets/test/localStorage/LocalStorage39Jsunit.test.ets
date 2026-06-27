@@ -67,7 +67,7 @@ export default function LocalStorage39Jsunit() {
       //Size获取AppStorage中存在键值对的个数
       console.info('[LocalStorage39Jsunit_0200] START');
       let driver = await UiDriver.create()
-      let Storage12Button1 = await driver.findComponent(BY.key('button4'));
+      let Storage12Button1 = await driver.findComponent(BY.key('LocalStorage39' + '_button4'));
       await Storage12Button1.click();
       await CommonFunc.sleep(1000);
 
@@ -92,7 +92,7 @@ export default function LocalStorage39Jsunit() {
     it('LocalStorage39Jsunit_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[LocalStorage39Jsunit_0400] START');
       let driver = await UiDriver.create()
-      let Storage12Button1 = await driver.findComponent(BY.key('button1'));
+      let Storage12Button1 = await driver.findComponent(BY.key('LocalStorage39' + '_button1'));
       await Storage12Button1.click();
       await CommonFunc.sleep(1000);
       let strJson1 = getInspectorByKey('keysText1');
@@ -115,7 +115,7 @@ export default function LocalStorage39Jsunit() {
     it('LocalStorage39Jsunit_0600', Level.LEVEL0, async (done: Function) => {
       console.info('[LocalStorage39Jsunit_0600] START');
       let driver = await UiDriver.create()
-      let Storage12Button1 = await driver.findComponent(BY.key('button2'));
+      let Storage12Button1 = await driver.findComponent(BY.key('LocalStorage39' + '_button2'));
       await Storage12Button1.click();
       await CommonFunc.sleep(1000);
 
@@ -139,7 +139,7 @@ export default function LocalStorage39Jsunit() {
     it('LocalStorage39Jsunit_0800', Level.LEVEL0, async (done: Function) => {
       console.info('[LocalStorage39Jsunit_0800] START');
       let driver = await UiDriver.create()
-      let Storage12Button1 = await driver.findComponent(BY.key('button3'));
+      let Storage12Button1 = await driver.findComponent(BY.key('LocalStorage39' + '_button3'));
       await Storage12Button1.click();
       await CommonFunc.sleep(1000);
 

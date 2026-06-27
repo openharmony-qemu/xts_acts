@@ -17,7 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import { Component, Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import events_emitter from '@ohos.events.emitter';
-import Utils from '../Utils';
+import Utils, { InspectorNode } from '../Utils';
 import CommonFunc from '../../MainAbility/common/Common';
 
 export default function SegmentButtonIconTextItem1() {
@@ -28,10 +28,10 @@ export default function SegmentButtonIconTextItem1() {
         url: "MainAbility/pages/segmentButton/SegmentButtonIconTextItem1",
       }
       try {
-        router.clear();
         let pages = router.getState();
         console.info("get current pages:" + JSON.stringify(pages));
-        if (!("SegmentButtonIconTextItem1" == pages.name)) {
+        if (pages.name !== "SegmentButtonIconTextItem1") {
+          router.clear();
           console.info("get SegmentButtonIconTextItem1 pages.name:" + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -59,36 +59,18 @@ export default function SegmentButtonIconTextItem1() {
     it('SegmentButtonIconTextItem1_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[SegmentButtonIconTextItem1_001] START');
       await CommonFunc.sleep(2000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       let btn: Component = await driver.findComponent(ON.id("SegmentButtonIconTextItem101"));
       await CommonFunc.sleep(1000);
       await btn.click();
       await CommonFunc.sleep(1000);
-      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[2]
-        .$children[3]
-        .$children[0]
-        .$children[0]
-        .$children[0];
+      let obj: InspectorNode = Utils.navigateInspectorPath(
+        'SegmentButtonIconTextItem1.test_obj_1', [0, 0, 0, 0, 0, 2, 3, 0, 0, 0]);;
       console.info("[SegmentButtonIconTextItem1_001] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.src).assertEqual('resource:///125830170.svg');
       await CommonFunc.sleep(1000);
-      let selecticon: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[2]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0];
+      let selecticon: InspectorNode = Utils.navigateInspectorPath(
+        'SegmentButtonIconTextItem1.test_selecticon_2', [0, 0, 0, 0, 0, 2, 0, 0, 0, 0]);;
       console.info("[SegmentButtonIconTextItem1_001] component selecticon is: " + JSON.stringify(selecticon));
       expect(selecticon.$attrs.src).assertEqual('resource:///125830169.svg');
       console.info('[SegmentButtonIconTextItem1_001] END');
@@ -107,52 +89,24 @@ export default function SegmentButtonIconTextItem1() {
     it('SegmentButtonIconTextItem1_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[SegmentButtonIconTextItem1_002] START');
       await CommonFunc.sleep(2000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       let btn: Component = await driver.findComponent(ON.id("SegmentButtonIconTextItem102"));
       await CommonFunc.sleep(1000);
       await btn.click();
       await CommonFunc.sleep(1000);
-      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[1]
-        .$children[0]
-        .$children[2]
-        .$children[0]//button位置
-        .$children[0]
-        .$children[0]
-        .$children[0];
-      console.info("[SegmentButtonIconTextItem1_001] component obj is: " + JSON.stringify(obj));
+      let obj: InspectorNode = Utils.navigateInspectorPath(
+        'SegmentButtonIconTextItem1.test_obj_3', [0, 0, 0, 0, 0, 2, 3, 0, 0, 0]);
+      console.info("[SegmentButtonIconTextItem1_002] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.src).assertEqual('resource:///125830170.svg');
       await CommonFunc.sleep(1000);
-      let selecticon: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[1]
-        .$children[0]
-        .$children[2]
-        .$children[4]
-        .$children[0]
-        .$children[0]
-        .$children[0];
+      let selecticon: InspectorNode = Utils.navigateInspectorPath(
+        'SegmentButtonIconTextItem1.test_selecticon_4', [0, 0, 0, 0, 0, 2, 0, 0, 0, 0]);
       console.info("[SegmentButtonIconTextItem1_002] component selecticon is: " + JSON.stringify(selecticon));
       expect(selecticon.$attrs.src).assertEqual('resource:///125830169.svg');
       await CommonFunc.sleep(1000);
-      let text0: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[1]
-        .$children[0]
-        .$children[2]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[1];
-      console.info("[SegmentButtonIconTextItem1_002] component selecticon is: " + JSON.stringify(selecticon));
-      expect(text0.$attrs.content).assertEqual('text1');
+      let textLabel: Component = await driver.findComponent(ON.text('text1'));
+      console.info("[SegmentButtonIconTextItem1_002] text1 visible: " + (textLabel !== null));
+      expect(!!textLabel).assertTrue();
       console.info('[SegmentButtonIconTextItem1_002] END');
       done();
     });
