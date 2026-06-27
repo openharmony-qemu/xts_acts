@@ -36,7 +36,7 @@ import Want from '@ohos.app.ability.Want';
 import StartOptions from '@ohos.app.ability.StartOptions'
 import { ImageFit } from '@ohos.arkui.component'
 import { canIUse } from "@internal.full.global";
-import { ColorMetrics } from '@ohos.arkui.node';
+import { ColorMetrics } from "@ohos.arkui.node";
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -466,29 +466,28 @@ export default function WindowControlsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-it('testSetStartWindowBackgroundColorStatic_1300016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> =>{
-    let caseName: string = 'testSetStartWindowBackgroundColorStatic_1300016 ';
-    console.log(caseName + 'begin');
-    try {
-      let moduleName = 'entry_test'.repeat(21);
-      console.info(`${caseName} moduleName length: ${moduleName.length}`);
-      let abilityName = 'TestAbility';
-      window.setStartWindowBackgroundColor(moduleName, abilityName, ColorMetrics.numeric(0x112233)).then(async () => {
-        console.info(caseName + 'Succeeded in calling setStartWindowBackgroundColor.');
+    it('testSetStartWindowBackgroundColorStatic_1300016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> =>{
+      let caseName: string = 'testSetStartWindowBackgroundColorStatic_1300016 ';
+      console.log(caseName + 'begin');
+      try {
+        let moduleName = 'entry_test'.repeat(21);
+        console.info(`${caseName} moduleName length: ${moduleName.length}`);
+        let abilityName = 'TestAbility';
+        window.setStartWindowBackgroundColor(moduleName, abilityName, ColorMetrics.numeric(0x112233)).then(async () => {
+          console.info(caseName + 'Succeeded in calling setStartWindowBackgroundColor.');
+          expect().assertFail();
+          done();
+        }).catch((err: Error): PromiseLike<void> | undefined =>  {
+          console.error(caseName + 'Failed to call setStartWindowBackgroundColor. Cause: ' + err.code + 'message :' + err.message);
+          expect(err.code).assertEqual(1300016)
+          done();
+        });
+      } catch (err) {
+        console.error(caseName + 'Failed. Cause:' + err.code);
         expect().assertFail();
         done();
-      }).catch((err: Error): PromiseLike<void> | undefined =>  {
-        console.error(caseName + 'Failed to call setStartWindowBackgroundColor. Cause: ' + err.code + 'message :' + err.message);
-        expect(err.code).assertEqual(1300016)
-        done();
-      });
-    } catch (err) {
-      console.error(caseName + 'Failed. Cause:' + err.code);
-      expect().assertFail();
-      done();
-    }
-  });
-
+      }
+    });
 
     })
 
