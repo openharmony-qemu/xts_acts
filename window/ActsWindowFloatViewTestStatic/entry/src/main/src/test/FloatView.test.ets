@@ -3034,7 +3034,7 @@ export default function abilityTest():void {
         let floatViewController = await floatView.create(config);
         callDoneOnStopped(floatViewController, CaseName, done, true)
         console.info(CaseName + ' Succeeded in creating float view controller.');
-        await floatViewController.setUIContext("testability/pages/First/index");
+        await floatViewController.setUIContext("pages/Index");
         console.info(CaseName + ' Succeeded in setting UI context.');
         await floatViewController.start();
         console.info(CaseName + ' Succeeded in starting float view.');
@@ -3103,7 +3103,7 @@ export default function abilityTest():void {
         floatViewController.onStateChange(onStateChange);
         console.info(CaseName + ' Succeeded in registering stateChange callback.');
         console.info(CaseName + ' Succeeded in creating float view controller.');
-        await floatViewController.setUIContext("testability/pages/First/index");
+        await floatViewController.setUIContext("pages/Index");
         console.info(CaseName + ' Succeeded in setting UI context.');
         await floatViewController.start();
         console.info(CaseName + ' Succeeded in starting float view.');
