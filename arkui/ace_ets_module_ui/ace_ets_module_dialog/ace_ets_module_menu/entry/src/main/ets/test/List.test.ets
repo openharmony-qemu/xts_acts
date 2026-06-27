@@ -60,6 +60,8 @@ import maxHeightTest from './MenuTest/maxHeight.test.ets';
 import targetSpaceTest from './MenuTest/targetSpace.test.ets';
 import MenuSystemMaterialTest from './MenuSystemMaterial/MenuSystemMaterial.test.ets';
 import GridStyleTest from './GridStyle/GridStyle.test.ets';
+import bindContextMenuByResponseTypeTest from './bindMenuTest/bindContextMenuByResponseTypeTest.test';
+import subMenuBuilderTest from './Menu/subMenuBuilderTest.test';
 
 export default function testsuite() {
   openMenuNullUndefinedTest();
@@ -107,4 +109,6 @@ export default function testsuite() {
   targetSpaceTest();
   MenuSystemMaterialTest();
   GridStyleTest();
+  bindContextMenuByResponseTypeTest();
+  subMenuBuilderTest();
 }
