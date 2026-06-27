@@ -1635,12 +1635,13 @@ export default function TextPicker() {
       for (let index = 0; index < 3; index++) {
         photoSelectOptions.completeButtonText = textList[index];
         expect(photoSelectOptions.completeButtonText).assertEqual(textList[index]);
-        try {
-          const result = await photoPicker.select(photoSelectOptions);
-          console.info('PhotoViewPicker select success, uri: ' + JSON.stringify(result));
-        } catch (error) {
-          console.info('PhotoViewPicker select error, uri: ' + JSON.stringify(error));
-        }
+        photoPicker.select(photoSelectOptions)
+          .then((result: photoAccessHelper.PhotoSelectResult) => {
+            console.info('PhotoViewPicker select success, uri: ' + JSON.stringify(result));
+          })
+          .catch((error: Error) => {
+            console.info('PhotoViewPicker select error, uri: ' + JSON.stringify(error));
+          })
         await closePickerModel(driver);
       }
 
