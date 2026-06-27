@@ -84,9 +84,9 @@ it('testcheckBoxGroupPart0011_static', Level.LEVEL1, async (done: () => void): P
       console.info('checkBoxGroupPart testcheckBoxGroupPart0011 START');
       await Utils.sleep(2000);
       try {
-        console.info("testcheckBoxGroupPart_0011 click result is: " + JSON.stringify(inspector.sendEventByKey('CheckboxGroup', 10, "")));
+        console.info("testcheckBoxGroupPart_0011 click result is: " + JSON.stringify(inspector.sendEventByKey('checkBoxGroup' + '_CheckboxGroup', 10, "")));
         await Utils.sleep(2000);
-        let strJson: string = inspector.getInspectorByKey('Checkbox2');
+        let strJson: string = inspector.getInspectorByKey('checkBoxGroup' + '_Checkbox2');
         console.info("[testcheckBoxGroupPart0011] component select strJson:" + strJson);
         let obj = JSON.parseJsonElement(strJson);
         expect(obj.getElement('$type').asString()).assertEqual('Checkbox');
@@ -95,7 +95,7 @@ it('testcheckBoxGroupPart0011_static', Level.LEVEL1, async (done: () => void): P
         console.info("testcheckBoxGroupPart_0011 on click err : " + JSON.stringify(err));
       }
       console.info('testcheckBoxGroupPart0011 END');
-      console.info("testcheckBoxGroup0001 click result is: " + JSON.stringify(inspector.sendEventByKey('CheckboxGroup', 10, "")));
+      console.info("testcheckBoxGroup0001 click result is: " + JSON.stringify(inspector.sendEventByKey('checkBoxGroup' + '_CheckboxGroup', 10, "")));
       done();
     });
 
@@ -112,7 +112,7 @@ it('testcheckBoxGroup0001_static', Level.LEVEL1, async (done: () => void): Promi
       console.info('checkBoxGroup testcheckBoxGroup0001 START');
       await Utils.sleep(2000);
       try {
-        console.info("testcheckBoxGroup0001 click result is: " + JSON.stringify(inspector.sendEventByKey('CheckboxGroup', 10, "")));
+        console.info("testcheckBoxGroup0001 click result is: " + JSON.stringify(inspector.sendEventByKey('checkBoxGroup' + '_CheckboxGroup', 10, "")));
         await Utils.sleep(2000);
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 60301,

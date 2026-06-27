@@ -56,7 +56,7 @@ struct TextAreaPage {
     Row(){
       Button("change value").onClick((e: ClickEvent) => {
         (this.customModifier as CustomModifier).onChangeTextArea();
-      }).key("changeButton")
+      }).key("textArea_changeButton")
 
       TextArea({ text: this.text, controller: this.controller })
       .attributeModifier(this.customModifier as CustomModifier)

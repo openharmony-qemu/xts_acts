@@ -332,7 +332,7 @@ it('ArkUI_Stage_Select_optionFontColor_static_0100', Level.LEVEL0, async (done: 
 it('ArkUI_Stage_Select_change_static_0101', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUI_Stage_Select_change_0101 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('select' + '_changeButton'));
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000)
       let strJsonNew = inspector.getInspectorByKey('selectTest');

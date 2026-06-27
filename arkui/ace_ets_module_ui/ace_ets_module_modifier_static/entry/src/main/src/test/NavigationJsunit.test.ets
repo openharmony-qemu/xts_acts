@@ -311,7 +311,7 @@ it('NavigationJsunit_static_1011', Level.LEVEL0, async (done: () => void): Promi
 it('NavigationJsunit_static_1012', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[NavigationJsunit_static_1012] START');
       let driver = Driver.create();
-      let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button =  await (driver.findComponent(ON.id('navigation' + '_changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
 

@@ -29,7 +29,7 @@ struct TextPickerPage {
   build() {
     Column() {
       TextPicker({ range: this.fruits, selected:this.select, value: this.parameterValue })
-        .key('textPicker')
+        .key('TextPickerPage_textPicker')
         .id('textPicker')
         .width("100%")
         .height("80%")

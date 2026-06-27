@@ -102,7 +102,7 @@ it('testsliderMoving0011_static', Level.LEVEL1, async (done: () => void): Promis
           }
         }
         events_emitter.on(event, callback);
-        // console.info("testsliderMoving0011 click result is: " + JSON.stringify(inspector.sendEventByKey('Slider', 10, "")));
+        // console.info("testsliderMoving0011 click result is: " + JSON.stringify(inspector.sendEventByKey('slider2' + '_Slider', 10, "")));
         await Utils.sleep(3000);
       } catch (err) {
         console.info("testsliderMoving0011 on events_emitter err : " + JSON.stringify(err));

@@ -52,22 +52,22 @@ export default function videoApiNullUndefinedTest() {
      */
     it('videoApiNullUndefinedTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[videoApiNullUndefinedTest_0100] START');
-      let driver = await Driver.create()
+      let driver = await UiDriver.create()
       await CommonFunc.sleep(1000);
 
-      let button1 = await driver.findComponent(ON.id('videoStartVideo'));
+      let button1: UiComponent = await driver.findComponent(BY.key('videoStartVideo'));
       await button1.click();
       await Utils.sleep(1000)
-      
-      let button2 = await driver.findComponent(ON.id('videoSetCurrentTimeNull'));
+
+      let button2: UiComponent = await driver.findComponent(BY.key('videoSetCurrentTimeNull'));
       await button2.click();
       await Utils.sleep(1000)
-      
-      let button3 = await driver.findComponent(ON.id('videoSetCurrentTimeUndefined'));
+
+      let button3: UiComponent = await driver.findComponent(BY.key('videoSetCurrentTimeUndefined'));
       await button3.click();
       await Utils.sleep(1000)
-      
-      let button4 = await driver.findComponent(ON.id('videoRequestFullscreenFalse'));
+
+      let button4: UiComponent = await driver.findComponent(BY.key('videoRequestFullscreenFalse'));
       await button4.click();
       await Utils.sleep(1000)
 

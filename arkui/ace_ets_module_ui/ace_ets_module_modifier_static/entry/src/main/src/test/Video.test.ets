@@ -163,7 +163,7 @@ it('videoTest_static_0005', Level.LEVEL0, async (done: () => void): Promise<void
 it('videoTest_static_0006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('videoTest_static_0006 START');
       let driver = Driver.create();
-      let button = await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button = await (driver.findComponent(ON.id('video' + '_changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
       let strJsonNew = inspector.getInspectorByKey('video');

@@ -36,7 +36,7 @@ struct stepperAction004 {
           }
           .nextLabel('Next')
           .status(ItemState.Normal)
-          .key('StepperItem001')
+          .key('stepperAction004_StepperItem001')
 
           StepperItem() {
             Column(){

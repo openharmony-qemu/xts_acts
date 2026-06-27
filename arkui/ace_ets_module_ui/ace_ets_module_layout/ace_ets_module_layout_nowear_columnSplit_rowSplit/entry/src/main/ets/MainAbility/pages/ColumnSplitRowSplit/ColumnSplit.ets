@@ -63,7 +63,7 @@ struct columnSplit {
         }
       }
     }
-    .key('flex')
+    .key('ColumnSplit_flex')
     .width('100%')
     .height('100%')
   }

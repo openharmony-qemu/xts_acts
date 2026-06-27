@@ -122,7 +122,7 @@ struct TimePickerPage {
       .attributeModifier(this.modifier1 as TextPickerModifier)
       .margin(50)
       .id('TextPicker')
-      Text(this.onChangeOff.toString()).key('onChangeOff')
+      Text(this.onChangeOff.toString()).key('textPickerOnChangeModifier_onChangeOff')
       Text(this.onDateChangeOff.toString()).key('onScrollStopOff')
     }
   }

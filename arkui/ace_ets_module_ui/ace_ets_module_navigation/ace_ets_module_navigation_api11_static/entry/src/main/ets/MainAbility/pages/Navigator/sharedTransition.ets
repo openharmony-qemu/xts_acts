@@ -38,7 +38,7 @@ struct SharedTransitionExample {
             Image($rawfile('ic_health_heart.png')).width(50).height(50)
               .sharedTransition('sharedImage1', { duration: this.duration, delay: this.delay, type: this.type })
           }
-          .key('Navigator')
+          .key('sharedTransition_Navigator')
           .padding({ left: 10 } as Padding)
           .onClick(() => {
             this.active = true
