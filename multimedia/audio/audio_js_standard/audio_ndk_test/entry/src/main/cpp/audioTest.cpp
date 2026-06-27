@@ -9181,7 +9181,7 @@ static napi_value AudioCapturer_SetIndependentAudioSessionStrategy_enum_002(napi
     napi_value res;
     uint32_t DEFAULT_BEHAVIOR = 0x00000000;
     uint32_t MUTE_WHEN_INTERRUPTED = 0x00000002;
-    uint32_t PAUSE_WHEN_INTERRUPTED = 0x00000004;
+    uint32_t pauseWhenInterrupted = 0x00000004;
     int32_t AUDIO_SESSION_STATE_CHANGE_HINT_MUTE = 8;
     int32_t AUDIO_SESSION_STATE_CHANGE_HINT_UNMUTE = 9;
     if (DEFAULT_BEHAVIOR != OH_AudioSession_BehaviorFlags::DEFAULT_BEHAVIOR) {
@@ -9194,7 +9194,7 @@ static napi_value AudioCapturer_SetIndependentAudioSessionStrategy_enum_002(napi
         LOG("AUDIOSESSIONMANAGER_MUTE_WHEN_INTERRUPTED fail, result is: %{public}d",
             OH_AudioSession_BehaviorFlags::MUTE_WHEN_INTERRUPTED);
     }
-    if (PAUSE_WHEN_INTERRUPTED != OH_AudioSession_BehaviorFlags::PAUSE_WHEN_INTERRUPTED) {
+    if (pauseWhenInterrupted != OH_AudioSession_BehaviorFlags::PAUSE_WHEN_INTERRUPTED) {
         napi_create_int32(env, TEST_FAIL, &res);
         LOG("AUDIOSESSIONMANAGER_PAUSE_WHEN_INTERRUPTED fail, result is: %{public}d",
             OH_AudioSession_BehaviorFlags::PAUSE_WHEN_INTERRUPTED);
