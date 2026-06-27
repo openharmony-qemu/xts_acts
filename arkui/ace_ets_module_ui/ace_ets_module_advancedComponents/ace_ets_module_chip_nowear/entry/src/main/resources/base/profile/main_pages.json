@@ -43,6 +43,7 @@
     "MainAbility/pages/ChipGroupV2/ChipGroupV2ItemSpace",
     "MainAbility/pages/ChipGroupV2/ChipGroupV2StartSpace",
     "MainAbility/pages/ChipGroupV2/ChipGroupV2SymbolItemOptionsPage",
-    "MainAbility/pages/ChipGroupV2/ChipGroupV2IconItemOptionsPage2"
+    "MainAbility/pages/ChipGroupV2/ChipGroupV2IconItemOptionsPage2",
+    "MainAbility/pages/ChipGroup/ChipGroupSystemMaterial2"
   ]
 }

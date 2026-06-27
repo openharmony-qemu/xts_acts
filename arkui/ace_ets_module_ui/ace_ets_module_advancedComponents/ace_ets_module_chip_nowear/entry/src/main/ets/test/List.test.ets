@@ -35,6 +35,7 @@ import itemSpaceTest from './ChipGroupTest/itemSpaceTest.test'
 import localizedLabelMarginTest from './chip/localizedLabelMarginTest';
 import ChipGroupIconItemOptionsTest from './ChipGroupTest/ChipGroupIconItemOptionsTest.test';
 import ChipGroupSystemMaterialTest from './ChipGroupTest/ChipGroupSystemMaterialTest.test';
+import ChipGroupSystemMaterialTest2 from './ChipGroupTest/ChipGroupSystemMaterialTest2.test';
 import ChipGroupSymbolItemOptionsTest from './ChipGroupTest/ChipGroupSymbolItemOptionsTest.test';
 import accessibilitySelectedTypeTestV2 from './chipV2/accessibilitySelectedTypeTestV2.test';
 import ChipV2Action from './chipV2/ChipV2Action.test';
@@ -78,6 +79,7 @@ export default function testsuite() {
   ChipFontScale();
   ChipCloseOptions();
   ChipGroupSystemMaterialTest();
+  ChipGroupSystemMaterialTest2();
   ChipBackgroundSystemMaterialTest();
   accessibilitySelectedTypeTestV2();
   ChipV2Action();
