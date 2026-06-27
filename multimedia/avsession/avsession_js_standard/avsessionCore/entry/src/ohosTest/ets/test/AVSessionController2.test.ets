@@ -196,6 +196,32 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name SUB_MULTIMEDIA_AVSESSION_SET_SUPPORTED_PLAY_SPEEDS_PARAM_0500
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SET_SUPPORTED_PLAY_SPEEDS_PARAM_0500
+     * @tc.desc Test setSupportedPlaySpeeds with empty array.
+     *         测试点：验证设置空数组
+     *         测试输入：空数组 []
+     *         测试输出：Promise resolve，设置成功（空数组表示不支持任何速度）
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SET_SUPPORTED_PLAY_SPEEDS_PARAM_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG}: setSupportedPlaySpeedsEmptyArray005 start`);
+      let speeds: Array<number> = [];
+      try {
+        await session?.setSupportedPlaySpeeds();
+        console.info(`${TAG}: setSupportedPlaySpeeds with empty array success`);
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        console.info(`${TAG}: setSupportedPlaySpeeds error: ${e.code}`);
+        expect(error.code).assertEqual(401);
+      }
+      console.info(`${TAG}: setSupportedPlaySpeedsEmptyArray005 end`);
+      done();
+    });
+
+    /**
      * @tc.name SUB_MULTIMEDIA_AVSESSION_SET_SUPPORTED_PLAY_SPEEDS_ERROR_6600102_0100
      * @tc.number SUB_MULTIMEDIA_AVSESSION_SET_SUPPORTED_PLAY_SPEEDS_ERROR_6600102_0100
      * @tc.desc Test setSupportedPlaySpeeds when session is destroyed - error code 6600102.
@@ -335,6 +361,32 @@ export default function abilityTest() {
         expect().assertFail();
       }
       console.info(`${TAG}: setSupportedLoopModesEmptyArray004 end`);
+      done();
+    });
+
+    /**
+     * @tc.name SUB_MULTIMEDIA_AVSESSION_SET_SUPPORTED_LOOP_MODES_PARAM_0500
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SET_SUPPORTED_LOOP_MODES_PARAM_0500
+     * @tc.desc Test setSupportedLoopModes with empty array.
+     *         测试点：验证设置null
+     *         测试输入：null
+     *         测试输出：Promise resolve，设置成功
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SET_SUPPORTED_LOOP_MODES_PARAM_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG}: setSupportedLoopModesEmptyArray005 start`);
+      let loopModes: Array<avSession.LoopMode> = [];
+      try {
+        await session?.setSupportedLoopModes();
+        console.info(`${TAG}: setSupportedLoopModes with empty array success`);
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        console.info(`${TAG}: setSupportedLoopModes error: ${e.code}`);
+        expect(error.code).assertEqual(401);
+      }
+      console.info(`${TAG}: setSupportedLoopModesEmptyArray005 end`);
       done();
     });
 
@@ -480,6 +532,31 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name SUB_MULTIMEDIA_AVSESSION_SET_MEDIA_CENTER_CONTROL_TYPE_PARAM_0500
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_SET_MEDIA_CENTER_CONTROL_TYPE_PARAM_0500
+     * @tc.desc Test setMediaCenterControlType with empty array.
+     *         测试点：验证设置空数组
+     *         测试输入：空数组 []
+     *         测试输出：Promise resolve，设置成功
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_SET_MEDIA_CENTER_CONTROL_TYPE_PARAM_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG}: setMediaCenterControlTypeEmptyArray005 start`);
+      let controlTypes: Array<avSession.AVMediaCenterControlType> = [];
+      try {
+        await session?.setMediaCenterControlType();
+        console.info(`${TAG}: setMediaCenterControlType with empty array success`);
+      } catch (error) {
+        console.info(`${TAG}: setMediaCenterControlType error: ${error.code}`);
+        expect(error.code).assertEqual(401);
+      }
+      console.info(`${TAG}: setMediaCenterControlTypeEmptyArray005 end`);
+      done();
+    });
+
+    /**
      * @tc.name SUB_MULTIMEDIA_AVSESSION_SET_MEDIA_CENTER_CONTROL_TYPE_ERROR_6600102_0100
      * @tc.number SUB_MULTIMEDIA_AVSESSION_SET_MEDIA_CENTER_CONTROL_TYPE_ERROR_6600102_0100
      * @tc.desc Test setMediaCenterControlType when session is destroyed - error code 6600102.
@@ -561,6 +638,32 @@ export default function abilityTest() {
         expect().assertFail();
       }
       console.info(`${TAG}: getSupportedPlaySpeedsEmptyResult002 end`);
+      done();
+    });
+
+    /**
+     * @tc.name SUB_MULTIMEDIA_AVSESSION_GET_SUPPORTED_PLAY_SPEEDS_RETURN_0300
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_GET_SUPPORTED_PLAY_SPEEDS_RETURN_0300
+     * @tc.desc Test getSupportedPlaySpeeds returns empty array when not set.
+     *         测试点：验证未设置时返回空数组
+     *         测试输入：不设置任何 speeds，直接获取
+     *         测试输出：返回空数组或默认值
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_GET_SUPPORTED_PLAY_SPEEDS_RETURN_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG}: getSupportedPlaySpeedsEmptyResult003 start`);
+      try {
+        let result: Array<number> = await controller?.getSupportedPlaySpeeds();
+        console.info(`${TAG}: getSupportedPlaySpeeds result without setting: ${JSON.stringify(result)}`);
+        expect(result.length).assertEqual(0);
+        done();
+      } catch (error) {
+        console.info(`${TAG}: error: ${error.code}`);
+        expect().assertFail();
+      }
+      console.info(`${TAG}: getSupportedPlaySpeedsEmptyResult003 end`);
       done();
     });
 
@@ -648,6 +751,31 @@ export default function abilityTest() {
         expect().assertFail();
       }
       console.info(`${TAG}: getSupportedLoopModesEmptyResult002 end`);
+      done();
+    });
+
+    /**
+     * @tc.name SUB_MULTIMEDIA_AVSESSION_GET_SUPPORTED_LOOP_MODES_RETURN_0300
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_GET_SUPPORTED_LOOP_MODES_RETURN_0300
+     * @tc.desc Test getSupportedLoopModes returns empty array when not set.
+     *         测试点：验证未设置时返回空数组
+     *         测试输入：不设置任何 loopModes，直接获取
+     *         测试输出：返回空数组或默认值
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_GET_SUPPORTED_LOOP_MODES_RETURN_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG}: getSupportedLoopModesEmptyResult003 start`);
+      try {
+        let result: Array<avSession.LoopMode> = await controller?.getSupportedLoopModes();
+        console.info(`${TAG}: getSupportedLoopModes result without setting: ${JSON.stringify(result)}`);
+        expect(result.length).assertEqual(0);
+      } catch (error) {
+        console.info(`${TAG}: error: ${error.code}`);
+        expect().assertFail();
+      }
+      console.info(`${TAG}: getSupportedLoopModesEmptyResult003 end`);
       done();
     });
 
@@ -827,6 +955,71 @@ export default function abilityTest() {
       done();
     });
 
+
+    /**
+     * @tc.name SUB_MULTIMEDIA_AVSESSION_ON_MEDIA_CENTER_CONTROL_TYPE_CHANGED_EVENT_0300
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_MEDIA_CENTER_CONTROL_TYPE_CHANGED_EVENT_0300
+     * @tc.desc Test onMediaCenterControlTypeChanged register callback successfully.
+     *         测试点：验证注册媒体中心控制类型变化回调返回数组不为空
+     *         测试输入：有效的回调函数
+     *         测试输出：回调注册成功
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ON_MEDIA_CENTER_CONTROL_TYPE_CHANGED_EVENT_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG}: onMediaCenterControlTypeChangedRegister003 start`);
+      let callbackCalled = false;
+      let callback = (data: Array<avSession.AVMediaCenterControlType>) => {
+        console.info(`${TAG}: onMediaCenterControlTypeChanged callback triggered: ${JSON.stringify(data)}`);
+        callbackCalled = true;
+      };
+      try {
+        let controlltype: Array<avSession.AVMediaCenterControlType> = controller?.onMediaCenterControlTypeChanged(callback);
+        console.info(`${TAG}: onMediaCenterControlTypeChanged register success: ${JSON.stringify(controlltype)}`);
+        expect(controlltype).not().assertNull();
+        done();
+      } catch (error) {
+        console.info(`${TAG}: error: ${error.code}`);
+        expect().assertFail();
+      }
+      console.info(`${TAG}: onMediaCenterControlTypeChangedRegister001 end`);
+      done();
+    });
+
+    /**
+     * @tc.name SUB_MULTIMEDIA_AVSESSION_ON_MEDIA_CENTER_CONTROL_TYPE_CHANGED_EVENT_0400
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_MEDIA_CENTER_CONTROL_TYPE_CHANGED_EVENT_0400
+     * @tc.desc Test onMediaCenterControlTypeChanged register callback successfully.
+     *         测试点：验证注册媒体中心控制类型变化回调注册在销毁后返回数组为空
+     *         测试输入：有效的回调函数
+     *         测试输出：回调注册成功
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ON_MEDIA_CENTER_CONTROL_TYPE_CHANGED_EVENT_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG}: onMediaCenterControlTypeChangedRegister004 start`);
+      let callbackCalled = false;
+      let callback = (data: Array<avSession.AVMediaCenterControlType>) => {
+        console.info(`${TAG}: onMediaCenterControlTypeChanged callback triggered: ${JSON.stringify(data)}`);
+        callbackCalled = true;
+      };
+      try {
+        let controlltype : Array<avSession.AVMediaCenterControlType> = controller?.onMediaCenterControlTypeChanged(callback);
+        console.info(`${TAG}: onMediaCenterControlTypeChanged register success: ${JSON.stringify(controlltype)}`);
+        await controller?.offMediaCenterControlTypeChanged(callback);
+        expect(controlltype).not().assertNull();
+        done();
+      } catch (error) {
+        console.info(`${TAG}: error: ${error.code}`);
+        expect().assertFail();
+      }
+      console.info(`${TAG}: onMediaCenterControlTypeChangedRegister001 end`);
+      done();
+    });
+
+
     /**
      * @tc.name SUB_MULTIMEDIA_AVSESSION_ON_MEDIA_CENTER_CONTROL_TYPE_CHANGED_ERROR_6600103_0100
      * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_MEDIA_CENTER_CONTROL_TYPE_CHANGED_ERROR_6600103_0100
@@ -1002,6 +1195,59 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name SUB_MULTIMEDIA_AVSESSION_ON_SUPPORTED_PLAY_SPEEDS_CHANGE_EVENT_0300
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_SUPPORTED_PLAY_SPEEDS_CHANGE_EVENT_0300
+     * @tc.desc Test onSupportedPlaySpeedsChange register callback return not null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ON_SUPPORTED_PLAY_SPEEDS_CHANGE_EVENT_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG}: onSupportedPlaySpeedsChangeRegister003 start`);
+      let callback = (data: Array<number>) => {
+        console.info(`${TAG}: onSupportedPlaySpeedsChange callback: ${JSON.stringify(data)}`);
+      };
+      try {
+        let speednumber: Array<number> = controller?.onSupportedPlaySpeedsChange(callback);
+        console.info(`${TAG}: onSupportedPlaySpeedsChange register success: ${JSON.stringify(speednumber)}`);
+        expect(speednumber).not().assertNull();
+        done();
+      } catch (error) {
+        console.info(`${TAG}: error: ${error.code}`);
+        expect().assertFail();
+      }
+      console.info(`${TAG}: onSupportedPlaySpeedsChangeRegister003 end`);
+      done();
+    });
+
+        /**
+     * @tc.name SUB_MULTIMEDIA_AVSESSION_ON_SUPPORTED_PLAY_SPEEDS_CHANGE_EVENT_0400
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_SUPPORTED_PLAY_SPEEDS_CHANGE_EVENT_0400
+     * @tc.desc Test onSupportedPlaySpeedsChange register callback return null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ON_SUPPORTED_PLAY_SPEEDS_CHANGE_EVENT_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG}: onSupportedPlaySpeedsChangeRegister004 start`);
+      let callback = (data: Array<number>) => {
+        console.info(`${TAG}: onSupportedPlaySpeedsChange callback: ${JSON.stringify(data)}`);
+      };
+      try {
+        let speednumber:Array<number> = controller?.onSupportedPlaySpeedsChange(callback);
+        console.info(`${TAG}: onSupportedPlaySpeedsChange register success: ${JSON.stringify(speednumber)}`);
+        controller?.offSupportedPlaySpeedsChange(callback);
+        expect(speednumber).not().assertNull();
+        done();
+      } catch (error) {
+        console.info(`${TAG}: error: ${error.code}`);
+        expect().assertFail();
+      }
+      console.info(`${TAG}: onSupportedPlaySpeedsChangeRegister004 end`);
+      done();
+    });
+
+    /**
      * @tc.name SUB_MULTIMEDIA_AVSESSION_ON_SUPPORTED_PLAY_SPEEDS_CHANGE_ERROR_6600103_0100
      * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_SUPPORTED_PLAY_SPEEDS_CHANGE_ERROR_6600103_0100
      * @tc.desc Test onSupportedPlaySpeedsChange when controller is destroyed - error code 6600103.
@@ -1168,6 +1414,60 @@ export default function abilityTest() {
       done();
     });
 
+
+    /**
+     * @tc.name SUB_MULTIMEDIA_AVSESSION_ON_SUPPORTED_LOOP_MODES_CHANGE_EVENT_0300
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_SUPPORTED_LOOP_MODES_CHANGE_EVENT_0300
+     * @tc.desc Test onSupportedLoopModesChange register callback return not null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ON_SUPPORTED_LOOP_MODES_CHANGE_EVENT_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG}: onSupportedLoopModesChangeRegister003 start`);
+      let callback = (data: Array<avSession.LoopMode>) => {
+        console.info(`${TAG}: onSupportedLoopModesChange callback: ${JSON.stringify(data)}`);
+      };
+      try {
+        let loopmode: Array<avSession.LoopMode> = controller?.onSupportedLoopModesChange(callback);
+        console.info(`${TAG}: onSupportedLoopModesChange register success: ${JSON.stringify(loopmode)}`);
+        expect(loopmode).not().assertNull();
+        done();
+      } catch (error) {
+        console.info(`${TAG}: error: ${error.code}`);
+        expect().assertFail();
+      }
+      console.info(`${TAG}: onSupportedLoopModesChangeRegister003 end`);
+      done();
+    });
+
+
+        /**
+     * @tc.name SUB_MULTIMEDIA_AVSESSION_ON_SUPPORTED_LOOP_MODES_CHANGE_EVENT_0400
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_SUPPORTED_LOOP_MODES_CHANGE_EVENT_0400
+     * @tc.desc Test onSupportedLoopModesChange register callback return null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ON_SUPPORTED_LOOP_MODES_CHANGE_EVENT_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG}: onSupportedLoopModesChangeRegister001 start`);
+      let callback = (data: Array<avSession.LoopMode>) => {
+        console.info(`${TAG}: onSupportedLoopModesChange callback: ${JSON.stringify(data)}`);
+      };
+      try {
+        let loopmode: Array<avSession.LoopMode> = controller?.onSupportedLoopModesChange(callback);
+        console.info(`${TAG}: onSupportedLoopModesChange register success : ${JSON.stringify(loopmode)}`);
+        controller?.offSupportedLoopModesChange(callback);
+        expect(loopmode).not().assertNull();
+        done();
+      } catch (error) {
+        console.info(`${TAG}: error: ${error.code}`);
+        expect().assertFail();
+      }
+      console.info(`${TAG}: onSupportedLoopModesChangeRegister004 end`);
+      done();
+    });
     /**
      * @tc.name SUB_MULTIMEDIA_AVSESSION_ON_SUPPORTED_LOOP_MODES_CHANGE_ERROR_6600103_0100
      * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_SUPPORTED_LOOP_MODES_CHANGE_ERROR_6600103_0100
@@ -1346,7 +1646,6 @@ export default function abilityTest() {
       console.info(`${TAG}: offSupportedLoopModesChange ErrorControllerNotExist003 end`);
       done();
     });
-
 
   });
 }
