@@ -1951,9 +1951,9 @@ export default function drawingTsMatrixPart2Test() {
         expect(Math.abs(actualValues3[3] - 0.7071067690849304) < 0.01).assertEqual(true);
         expect(Math.abs(actualValues3[4] - 0.7071067690849304) < 0.01).assertEqual(true);
         expect(Math.abs(actualValues3[5] + 12.132030487060547) < 0.01).assertEqual(true);
-        expect(actualValues3[6] ==0).assertEqual(true);
-        expect(actualValues3[7] ==0).assertEqual(true);
-        expect(actualValues3[8] ==1).assertEqual(true);
+        expect(actualValues3[6] === 0).assertEqual(true);
+        expect(actualValues3[7] === 0).assertEqual(true);
+        expect(actualValues3[8] === 1).assertEqual(true);
       } catch (e) {
         console.info(msg + ` matrix getAll actualValues3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
@@ -2103,9 +2103,9 @@ export default function drawingTsMatrixPart2Test() {
         expect(Math.abs(actualValues3[3] - 0.7071067690849304) < 0.01).assertEqual(true);
         expect(Math.abs(actualValues3[4] - 0.7071067690849304) < 0.01).assertEqual(true);
         expect(Math.abs(actualValues3[5] + 12.132030487060547) < 0.01).assertEqual(true);
-        expect(actualValues3[6] == 0).assertEqual(true);
-        expect(actualValues3[7] == 0).assertEqual(true);
-        expect(actualValues3[8] == 1).assertEqual(true);
+        expect(actualValues3[6] === 0).assertEqual(true);
+        expect(actualValues3[7] === 0).assertEqual(true);
+        expect(actualValues3[8] === 1).assertEqual(true);
       } catch (e) {
         console.info(msg + ` matrix getAll actualValues3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
