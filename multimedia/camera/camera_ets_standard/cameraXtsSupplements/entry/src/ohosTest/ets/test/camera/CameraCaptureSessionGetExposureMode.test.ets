@@ -231,7 +231,7 @@ export default function cameraCaptureSessionTest() {
 
     afterEach(async () => {
       console.info('afterEach case');
-      await sleep(COMMON_WAIT_DURATION);
+      await sleep(2000);
     });
 
     afterAll(async () => {
