@@ -162,6 +162,61 @@
            done();
          }
        });
- 
+       
+    /**
+     * @tc.name   SUB_BMS_FRAMEWORK_getAlternateIcons_0100
+     * @tc.number SUB_BMS_FRAMEWORK_getAlternateIcons_0100
+     * @tc.desc   AlternateIconInfo of array is zero
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BMS_FRAMEWORK_getAlternateIcons_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    async (done: () => void): Promise<void> => {
+      console.info("SUB_BMS_FRAMEWORK_getAlternateIcons_0100 start");
+      try {
+        bundle.getAlternateIcons().then((data: Array<bundle.AlternateIconInfo>) => {
+          console.info('getInstalledBundleList2 successfully. Data: ' + JSON.stringify(data));
+          expect(data.length).assertEqual(0);
+          done();
+        }).catch((err: Error): void => {
+          let message = (err as BusinessError).message;
+          let code = (err as BusinessError).code;
+          console.info('getInstalledBundleList2 fail ==> ' + code + "==>" + message);
+          expect().assertFail()
+          done();
+        });
+      } catch (err) {
+        let message = (err as BusinessError).message;
+        let code = (err as BusinessError).code;
+        console.info('getInstalledBundleList2 failx ==> ' + code + "==>" + message);
+        expect().assertFail();
+        done();
+      }
+    });
+
+  /**
+   * @tc.name   SUB_BMS_FRAMEWORK_AbilityAction_0200
+   * @tc.number SUB_BMS_FRAMEWORK_AbilityAction_0200
+   * @tc.desc   test ability action
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('SUB_BMS_FRAMEWORK_AbilityAction_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    async (done: () => void): Promise<void> => {
+      console.info("SUB_BMS_FRAMEWORK_AbilityAction_0200 start");
+      try {
+        expect(wantConstant.Action.ACTION_SEND_TO_DATA).assertEqual("ohos.want.action.sendToData");
+        done();
+      } catch (err) {
+        let message = (err as BusinessError).message;
+        let code = (err as BusinessError).code;
+        console.info('SUB_BMS_FRAMEWORK_AbilityAction_0200 failx ==> ' + code + "==>" + message);
+        expect().assertFail();
+        done();
+      }
+    });
+
    })
  }
