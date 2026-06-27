@@ -561,6 +561,12 @@ static napi_value NdkDestroyConnectOptions_0100(napi_env env, napi_callback_info
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_DestroyConnectOptions_0100 begins");
     AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_DestroyConnectOptions(nullptr);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_DestroyConnectOptions_0100 errCode=%{public}d", errCode);
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
+      OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnConnect_0200 errCode=%{public}d", errCode);
+    }
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
+      OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnConnect_0200 errCode=%{public}d", errCode);
+    }
     napi_value result;
     napi_create_int32(env, errCode, &result);
     return result;
@@ -584,6 +590,12 @@ static napi_value NdkConnectOptionsSetOnConnect_0200(napi_env env, napi_callback
     AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ConnectOptions_SetOnConnectCallback(connectOptions, nullptr);
     OH_AbilityRuntime_DestroyConnectOptions(connectOptions);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnConnect_0200 errCode=%{public}d", errCode);
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
+      OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnConnect_0200 errCode=%{public}d", errCode);
+    }
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
+      OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnConnect_0200 errCode=%{public}d", errCode);
+    }
     napi_value result;
     napi_create_int32(env, errCode, &result);
     return result;
@@ -595,6 +607,12 @@ static napi_value NdkConnectOptionsSetOnDisconnect_0100(napi_env env, napi_callb
     OH_AbilityRuntime_ConnectOptions_OnDisconnectCallback onDisconnectCallback = nullptr;
     AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ConnectOptions_SetOnDisconnectCallback(nullptr, onDisconnectCallback);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnDisconnect_0100 errCode=%{public}d", errCode);
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
+      OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnConnect_0200 errCode=%{public}d", errCode);
+    }
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
+      OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnConnect_0200 errCode=%{public}d", errCode);
+    }
     napi_value result;
     napi_create_int32(env, errCode, &result);
     return result;
@@ -607,6 +625,12 @@ static napi_value NdkConnectOptionsSetOnDisconnect_0200(napi_env env, napi_callb
     AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ConnectOptions_SetOnDisconnectCallback(connectOptions, nullptr);
     OH_AbilityRuntime_DestroyConnectOptions(connectOptions);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnDisconnect_0200 errCode=%{public}d", errCode);
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
+      OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnConnect_0200 errCode=%{public}d", errCode);
+    }
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
+      OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnConnect_0200 errCode=%{public}d", errCode);
+    }
     napi_value result;
     napi_create_int32(env, errCode, &result);
     return result;
@@ -618,6 +642,12 @@ static napi_value NdkConnectOptionsSetOnFailed_0100(napi_env env, napi_callback_
     OH_AbilityRuntime_ConnectOptions_OnFailedCallback onFailedCallback = nullptr;
     AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ConnectOptions_SetOnFailedCallback(nullptr, onFailedCallback);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnFailed_0100 errCode=%{public}d", errCode);
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
+      OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnConnect_0200 errCode=%{public}d", errCode);
+    }
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
+      OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnConnect_0200 errCode=%{public}d", errCode);
+    }
     napi_value result;
     napi_create_int32(env, errCode, &result);
     return result;
@@ -630,6 +660,12 @@ static napi_value NdkConnectOptionsSetOnFailed_0200(napi_env env, napi_callback_
     AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ConnectOptions_SetOnFailedCallback(connectOptions, nullptr);
     OH_AbilityRuntime_DestroyConnectOptions(connectOptions);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnFailed_0200 errCode=%{public}d", errCode);
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
+      OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnConnect_0200 errCode=%{public}d", errCode);
+    }
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
+      OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnConnect_0200 errCode=%{public}d", errCode);
+    }
     napi_value result;
     napi_create_int32(env, errCode, &result);
     return result;
@@ -818,6 +854,26 @@ static napi_value NdkThreadModeInstance_0100(napi_env env, napi_callback_info in
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ThreadModeInstance_0100 begins");
     int32_t threadMode = OH_ABILITY_RUNTIME_THREAD_MODE_INSTANCE;
     OH_LOG_INFO(LOG_APP, "OH_ABILITY_RUNTIME_THREAD_MODE_INSTANCE=%{public}d", threadMode);
+    napi_value result;
+    napi_create_int32(env, threadMode, &result);
+    return result;
+}
+
+static napi_value NdkThreadLaunchMode_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ThreadModeInstance_0100 begins");
+    int32_t threadMode = OH_ABILITY_RUNTIME_LAUNCH_MODE_IN_PROCESS;
+    OH_LOG_INFO(LOG_APP, "OH_ABILITY_RUNTIME_LAUNCH_MODE_CROSS_PROCESS=%{public}d", threadMode);
+    napi_value result;
+    napi_create_int32(env, threadMode, &result);
+    return result;
+}
+
+static napi_value NdkThreadLaunchMode_0200(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ThreadModeInstance_0100 begins");
+    int32_t threadMode = OH_ABILITY_RUNTIME_LAUNCH_MODE_CROSS_PROCESS;
+    OH_LOG_INFO(LOG_APP, "OH_ABILITY_RUNTIME_LAUNCH_MODE_IN_PROCESS=%{public}d", threadMode);
     napi_value result;
     napi_create_int32(env, threadMode, &result);
     return result;
@@ -3075,6 +3131,8 @@ static napi_value Init(napi_env env, napi_value exports)
         { "ndkThreadModeBundle_0100", nullptr, NdkThreadModeBundle_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "ndkThreadModeType_0100", nullptr, NdkThreadModeType_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "ndkThreadModeInstance_0100", nullptr, NdkThreadModeInstance_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkThreadLaunchMode_0100", nullptr, NdkThreadLaunchMode_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkThreadLaunchMode_0100", nullptr, NdkThreadLaunchMode_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

@@ -207,3 +207,5 @@ export const ndkProcessModeInstance_0100: () => number;
 export const ndkThreadModeBundle_0100: () => number;
 export const ndkThreadModeType_0100: () => number;
 export const ndkThreadModeInstance_0100: () => number;
+export const ndkThreadLaunchMode_0100: () => number;
+export const ndkThreadLaunchMode_0200: () => number;

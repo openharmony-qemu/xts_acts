@@ -420,5 +420,40 @@ export default function ndkModularObjectExtensionManagerTest() {
       done();
     })
 
+    
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_LaunchMode_InProcess_0100
+     * @tc.number SUB_Ability_AbilityRuntime_LaunchMode_InProcess_0100
+     * @tc.desc   Test OH_ABILITY_RUNTIME_LAUNCH_MODE_IN_PROCESS enum value is 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityRuntime_LaunchMode_InProcess_0100', Level.LEVEL3, (done: Function) => {
+      const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_LaunchMode_InProcess_0100';
+      hilog.info(0x0000, TAG, '%{public}s', `begin of ${TEST_SUITE_NAME}`);
+      let result = testNapi.ndkThreadLaunchMode_0100();
+      expect(result).assertEqual(0);
+      hilog.info(0x0000, TAG, '%{public}s', `end of ${TEST_SUITE_NAME}`);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_LaunchMode_CrossProcess_0100
+     * @tc.number SUB_Ability_AbilityRuntime_LaunchMode_CrossProcess_0100
+     * @tc.desc   Test OH_ABILITY_RUNTIME_LAUNCH_MODE_CROSS_PROCESS enum value is 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityRuntime_LaunchMode_CrossProcess_0100', Level.LEVEL3, (done: Function) => {
+      const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_LaunchMode_CrossProcess_0100';
+      hilog.info(0x0000, TAG, '%{public}s', `begin of ${TEST_SUITE_NAME}`);
+      let result = testNapi.ndkThreadLaunchMode_0200();
+      expect(result).assertEqual(1);
+      hilog.info(0x0000, TAG, '%{public}s', `end of ${TEST_SUITE_NAME}`);
+      done();
+    })
+
   })
 }
