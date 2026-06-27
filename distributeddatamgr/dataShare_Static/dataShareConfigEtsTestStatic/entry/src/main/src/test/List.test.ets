@@ -17,6 +17,9 @@ import dataShareConfigGetTest from './DataShareConfigGetTest.test';
 import dataShareConfigPublishTest from './DataShareConfigPublishTest.test';
 import dataShareConfigSubscribeTest from './DataShareConfigSubscribeTest.test';
 import dataShareConfigUnSubscribeTest from './DataShareConfigUnSubscribeTest.test';
+import dataShareConfigPutValueTest from './DataShareConfigPutValueTest.test';
+import dataShareConfigRemoveValueTest from './DataShareConfigRemoveValueTest.test';
+import dataShareConfigGetValuesTest from './DataShareConfigGetValuesTest.test';
 
 export default function testsuite() {
   dataShareConfigDeleteTest();
@@ -24,4 +27,7 @@ export default function testsuite() {
   dataShareConfigPublishTest();
   dataShareConfigSubscribeTest();
   dataShareConfigUnSubscribeTest();
+  dataShareConfigPutValueTest();
+  dataShareConfigRemoveValueTest();
+  dataShareConfigGetValuesTest();
 }
