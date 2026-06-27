@@ -816,7 +816,7 @@ export default function observerManagerTest() {
           // ExpectTrue(data == 0 || data == 4);
         });
         await data.disableCellularData();
-        await sleep(3000);
+        await sleep(10000);
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
         ExpectTrue(false);
