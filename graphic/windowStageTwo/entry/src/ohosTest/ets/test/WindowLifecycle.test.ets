@@ -1854,7 +1854,7 @@ export default function WindowLifecycle() {
         console.log(msgStr + 'windowVisable1:' + windowVisable);
         expect(windowVisable).assertEqual(true);
         await subwindowClass.minimize();
-        await sleep(300);
+        await sleep(1000);
         console.log(msgStr + 'windowVisable2:' + windowVisable);
         expect(windowVisable).assertEqual(false);
         await subwindowClass.destroyWindow();
