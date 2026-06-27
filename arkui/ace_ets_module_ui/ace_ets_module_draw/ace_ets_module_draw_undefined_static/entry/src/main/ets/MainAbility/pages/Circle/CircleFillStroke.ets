@@ -83,11 +83,11 @@ struct CircleFillStroke {
         .height(20)
         .drawModifier(undefined)
       Circle({ width: 50, height: 50 })
-        .id('CircleFillStroke')
+        .id('CircleFillStroke1')
         .fill(Color.Green)
         .stroke(1)
       Circle({ width: 50, height: 50 })
-        .id('CircleFillStroke')
+        .id('CircleFillStroke2')
         .fill(undefined)
         .stroke(undefined)
     }

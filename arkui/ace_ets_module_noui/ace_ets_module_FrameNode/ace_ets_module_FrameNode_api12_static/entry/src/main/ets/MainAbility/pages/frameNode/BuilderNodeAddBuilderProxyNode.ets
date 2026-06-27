@@ -22,7 +22,7 @@ import { typeNode, FrameNode, NodeController, BuilderNode } from '@ohos.arkui.no
 import { UIContext, NodeContainer, wrapBuilder, NodeController, FrameNode, rememberVariable, MutableVariable } from '@kit.ArkUI';
 
 export class ParamsInt {
-  text: int = 0;
+  public text: int = 0;
 
   constructor(text: int) {
     this.text = text;
@@ -30,8 +30,8 @@ export class ParamsInt {
 }
 
 @Builder
-function buildGreenOnly_if_else(param: ParamsInt) {
-  console.log('buildGreenOnly_if_else param: ' + param.text.toString())
+function buildGreenOnlyIfElse(param: ParamsInt) {
+  console.log('buildGreenOnlyIfElse param: ' + param.text.toString())
   if (param.text <= 3) {
     Text(param.text + ' aaa').height(15).id('getTextString1')
   } else if (param.text <= 5) {
@@ -41,24 +41,24 @@ function buildGreenOnly_if_else(param: ParamsInt) {
   }
 }
 
-export class NodeController_if_else extends NodeController {
+export class NodeControllerIfElse extends NodeController {
   public node: BuilderNode<ParamsInt> | null = null;
 
   makeNode(uiContext: UIContext): FrameNode | null {
     this.node = new BuilderNode<ParamsInt>(uiContext,{enableMinimized:true});
-    this.node!.build(wrapBuilder(buildGreenOnly_if_else), new ParamsInt(-1))
+    this.node!.build(wrapBuilder(buildGreenOnlyIfElse), new ParamsInt(-1))
     console.log('hello' + this.node!.getFrameNode()!.isMinimized());
     return this.node!.getFrameNode();
   }
   makeNode1(uiContext: UIContext): FrameNode | null {
     this.node = new BuilderNode<ParamsInt>(uiContext,{enableMinimized:false});
-    this.node!.build(wrapBuilder(buildGreenOnly_if_else), new ParamsInt(-1))
+    this.node!.build(wrapBuilder(buildGreenOnlyIfElse), new ParamsInt(-1))
     console.log('hello' + this.node!.getFrameNode()!.isMinimized());
     return this.node!.getFrameNode();
   }
   makeNode2(uiContext: UIContext): FrameNode | null {
     this.node = new BuilderNode<ParamsInt>(uiContext,{enableMinimized:undefined});
-    this.node!.build(wrapBuilder(buildGreenOnly_if_else), new ParamsInt(-1))
+    this.node!.build(wrapBuilder(buildGreenOnlyIfElse), new ParamsInt(-1))
     console.log('hello' + this.node!.getFrameNode()!.isMinimized());
     return this.node!.getFrameNode();
   }
@@ -69,17 +69,17 @@ export class NodeController_if_else extends NodeController {
 struct BuilderNodeAddBuilderProxyNode {
   @State judgeInt: int = 0;
   @State flag: boolean = true;
-  private if_else_controller: NodeController_if_else = new NodeController_if_else();
+  private ifElseController: NodeControllerIfElse = new NodeControllerIfElse();
 
   build() {
     Column({space:5} as ColumnOptions) {
       Text('if/else NodeContainer').height(20)
-      NodeContainer(this.if_else_controller).height(50).backgroundColor('#2787D9').id('NodeContainerId')
+      NodeContainer(this.ifElseController).height(50).backgroundColor('#2787D9').id('NodeContainerId')
       Button('++')
         .onClick(() => {
           this.judgeInt++;
           this.flag = !this.flag;
-          this.if_else_controller.node?.update(new ParamsInt(this.judgeInt));
+          this.ifElseController.node?.update(new ParamsInt(this.judgeInt));
         })
         .id('BuilderNodeAdd')
         .width(60)
@@ -88,7 +88,7 @@ struct BuilderNodeAddBuilderProxyNode {
         .onClick(() => {
           this.judgeInt--;
           this.flag = !this.flag;
-          this.if_else_controller.node?.update(new ParamsInt(this.judgeInt));
+          this.ifElseController.node?.update(new ParamsInt(this.judgeInt));
         })
         .id('BuilderNodeReduce')
         .width(60)
