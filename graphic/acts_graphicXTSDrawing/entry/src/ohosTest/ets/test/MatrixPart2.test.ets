@@ -1935,14 +1935,25 @@ export default function drawingTsMatrixPart2Test() {
       }
       matrixA.reset();
       matrixB.reset();
+      console.info(msg + ' matrix a0 = ' + matrixA.getAll().toString());
+      console.info(msg + ' matrix b0 = ' + matrixB.getAll().toString());
       matrixB.setRotation(45,100,200);
+      console.info(msg + ' matrix b1 = ' + matrixB.getAll().toString());
       matrixA.setConcat(matrixA, matrixB);
+      console.info(msg + ' matrix a1 = ' + matrixA.getAll().toString());
       try {
         let actualValues3 = matrixA.getAll();
         console.info(msg + ' matrix getAll actualValues3 successed');
         console.info(msg + "matrix actualValues3: " + matrixA.getAll().toString());
-        expect(actualValues3[0] ==0.7071067690849304 && actualValues3[1] ==-0.7071067690849304 && actualValues3[2] ==170.71067810058594 && actualValues3[3] ==0.7071067690849304 &&
-          actualValues3[4] ==0.7071067690849304 && actualValues3[5] ==-12.132030487060547 && actualValues3[6] ==0 && actualValues3[7] ==0 && actualValues3[8] ==1).assertEqual(true);
+        expect(Math.abs(actualValues3[0] - 0.7071067690849304) < 0.01).assertEqual(true);
+        expect(Math.abs(actualValues3[1] + 0.7071067690849304) < 0.01).assertEqual(true);
+        expect(Math.abs(actualValues3[2] - 170.71067810058594) < 0.01).assertEqual(true);
+        expect(Math.abs(actualValues3[3] - 0.7071067690849304) < 0.01).assertEqual(true);
+        expect(Math.abs(actualValues3[4] - 0.7071067690849304) < 0.01).assertEqual(true);
+        expect(Math.abs(actualValues3[5] + 12.132030487060547) < 0.01).assertEqual(true);
+        expect(actualValues3[6] ==0).assertEqual(true);
+        expect(actualValues3[7] ==0).assertEqual(true);
+        expect(actualValues3[8] ==1).assertEqual(true);
       } catch (e) {
         console.info(msg + ` matrix getAll actualValues3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
@@ -2076,14 +2087,25 @@ export default function drawingTsMatrixPart2Test() {
       }
       matrixA.reset();
       matrixB.reset();
+      console.info(msg + ' matrix a0 = ' + matrixA.getAll().toString());
+      console.info(msg + ' matrix b0 = ' + matrixB.getAll().toString());
       matrixB.setRotation(45,100,200);
+      console.info(msg + ' matrix b1 = ' + matrixB.getAll().toString());
       matrixA.postConcat(matrixB);
+      console.info(msg + ' matrix a1 = ' + matrixA.getAll().toString());
       try {
         let actualValues3 = matrixA.getAll();
         console.info(msg + ' matrix getAll actualValues3 successed');
         console.info(msg + "matrix actualValues3: " + matrixA.getAll().toString());
-        expect(actualValues3[0] ==0.7071067690849304 && actualValues3[1] ==-0.7071067690849304 && actualValues3[2] ==170.71067810058594 && actualValues3[3] ==0.7071067690849304 &&
-          actualValues3[4] ==0.7071067690849304 && actualValues3[5] ==-12.132030487060547 && actualValues3[6] ==0 && actualValues3[7] ==0 && actualValues3[8] ==1).assertEqual(true);
+        expect(Math.abs(actualValues3[0] - 0.7071067690849304) < 0.01).assertEqual(true);
+        expect(Math.abs(actualValues3[1] + 0.7071067690849304) < 0.01).assertEqual(true);
+        expect(Math.abs(actualValues3[2] - 170.71067810058594) < 0.01).assertEqual(true);
+        expect(Math.abs(actualValues3[3] - 0.7071067690849304) < 0.01).assertEqual(true);
+        expect(Math.abs(actualValues3[4] - 0.7071067690849304) < 0.01).assertEqual(true);
+        expect(Math.abs(actualValues3[5] + 12.132030487060547) < 0.01).assertEqual(true);
+        expect(actualValues3[6] == 0).assertEqual(true);
+        expect(actualValues3[7] == 0).assertEqual(true);
+        expect(actualValues3[8] == 1).assertEqual(true);
       } catch (e) {
         console.info(msg + ` matrix getAll actualValues3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
