@@ -118,7 +118,7 @@ it('ToggleJsunit_static_0200', Level.LEVEL2, async (done: () => void): Promise<v
       let switchButton = await driver.findComponent(ON.id('toggleSwitch'));
       await (switchButton?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let textComponent = await driver.findComponent(ON.id('text'));
+      let textComponent = await driver.findComponent(ON.id('TogglePage' + '_text'));
       let switchText = await (textComponent?.getText() as Promise<string>);
       console.info("[ToggleJsunit_0200] switchText: " + JSON.stringify(switchText));
       expect(switchText).assertEqual('switch true');
@@ -127,7 +127,7 @@ it('ToggleJsunit_static_0200', Level.LEVEL2, async (done: () => void): Promise<v
       let switchButton1 = await driver1.findComponent(ON.id('toggleSwitch'));
       await (switchButton1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let textComponent1 = await driver1.findComponent(ON.id('text'));
+      let textComponent1 = await driver1.findComponent(ON.id('TogglePage' + '_text'));
       let switch1 = await (textComponent1?.getText() as Promise<string>);
       console.info("[ToggleJsunit_0200] switch1: " + JSON.stringify(switch1));
       expect(switch1).assertEqual('switch false');
@@ -150,7 +150,7 @@ it('ToggleJsunit_static_0300', Level.LEVEL2, async (done: () => void): Promise<v
       let checkboxButton = await driver.findComponent(ON.id('toggleCheckbox'));
       await (checkboxButton?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let textComponent = await driver.findComponent(ON.id('text'));
+      let textComponent = await driver.findComponent(ON.id('TogglePage' + '_text'));
       let checkbox = await (textComponent?.getText() as Promise<string>);
       console.info("[ToggleJsunit_0300] checkbox: " + JSON.stringify(checkbox));
       expect(checkbox).assertEqual('checkbox false');
@@ -178,7 +178,7 @@ it('ToggleJsunit_static_0400', Level.LEVEL2, async (done: () => void): Promise<v
       let buttonComponent = await driver.findComponent(ON.id('toggleButton'));
       await (buttonComponent?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let textComponent = await driver.findComponent(ON.id('text'));
+      let textComponent = await driver.findComponent(ON.id('TogglePage' + '_text'));
       let button = await (textComponent?.getText() as Promise<string>);
       console.info("[ToggleJsunit_0400] button: " + JSON.stringify(button));
       expect(button).assertEqual('button true');

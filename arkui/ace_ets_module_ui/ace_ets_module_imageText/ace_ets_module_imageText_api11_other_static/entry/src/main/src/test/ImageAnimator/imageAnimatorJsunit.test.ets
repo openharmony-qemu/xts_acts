@@ -254,7 +254,7 @@ it('imageAniamtorJsunit_static_0700', Level.LEVEL1, async (done: () => void): Pr
       // test the image event start and Finish
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
-      let btn = await driver.findComponent(ON.id('start'));
+      let btn = await driver.findComponent(ON.id('imageAnimator' + '_start'));
       await CommonFunc.sleep(1000);
       expect(btn != null).assertTrue();
       await (btn?.click() as Promise<void>);
@@ -293,7 +293,7 @@ it('imageAniamtorJsunit_static_0800', Level.LEVEL1, async (done: () => void): Pr
       await CommonFunc.sleep(1000);
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
-      let btn2 = await driver.findComponent(ON.id('start'));
+      let btn2 = await driver.findComponent(ON.id('imageAnimator' + '_start'));
       expect(btn2 != null).assertTrue();
       await (btn2?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -302,7 +302,7 @@ it('imageAniamtorJsunit_static_0800', Level.LEVEL1, async (done: () => void): Pr
       console.info('imageAnimatorJsunit_0800 component obj is: ' + obj.getElement('$attrs').getString('content'));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('onRepeat');
 
-      let btn3 = await driver.findComponent(ON.id('pause'));
+      let btn3 = await driver.findComponent(ON.id('imageAnimator' + '_pause'));
       expect(btn3 != null).assertTrue();
       await (btn3?.click() as Promise<void>);
       await CommonFunc.sleep(1000);

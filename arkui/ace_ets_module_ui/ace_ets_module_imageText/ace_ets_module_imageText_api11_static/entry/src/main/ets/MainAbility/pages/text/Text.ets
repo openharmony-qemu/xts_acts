@@ -13,7 +13,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Component, Flex, Text, Padding, Margin, TextAlign, TextOverflow, TextCase, Color, Length, Alignment, Direction, Position, ItemAlign, BorderStyle, ImageSize, Visibility, FontStyle, FontWeight, FlexDirection, FlexAlign, TextDecorationType } from '@ohos.arkui.component';
+import {
+  Entry,
+  Component,
+  Flex,
+  Text,
+  Padding,
+  Margin,
+  TextAlign,
+  TextOverflow,
+  TextCase,
+  Color,
+  Length,
+  Alignment,
+  Direction,
+  Position,
+  ItemAlign,
+  BorderStyle,
+  ImageSize,
+  Visibility,
+  FontStyle,
+  FontWeight,
+  FlexDirection,
+  FlexAlign,
+  TextDecorationType
+} from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 const router = AppStorage.get<Router>("router") as Router
@@ -142,7 +166,7 @@ struct text_textcase {
         .textOverflow({ overflow: TextOverflow.Clip })
         .maxLines(2)
         .textCase(TextCase.LowerCase)
-        .decoration({ "type": TextDecorationType.LineThrough, "color": Color.Red })
+        .decoration({ type: TextDecorationType.LineThrough, color: Color.Red })
         .fontColor(Color.White)
         .key('Text1')
       Text('Text Anto test,Text Anto test,Text Anto test,Text Anto test,Text Anto test,Text Anto test,Text Anto test,Text Anto test,Text Anto test')
@@ -159,7 +183,7 @@ struct text_textcase {
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
         .textCase(TextCase.UpperCase)
-        .decoration({ "type": TextDecorationType.None, "color": Color.Red })
+        .decoration({ type: TextDecorationType.None, color: Color.Red })
         .fontColor(Color.Blue)
         .key('Text2')
       Text('Text Anto test,Text Anto test,Text Anto test,Text Anto test')
@@ -209,7 +233,7 @@ struct text_textcase {
         .key('Text8')
 
     }
-    .key('flex')
+    .key('Text_flex')
     .width('100%')
     .height('100%')
   }

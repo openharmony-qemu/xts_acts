@@ -77,7 +77,7 @@ struct PatternLockPage {
 
   build() {
     Column() {
-      Text(this.message).textAlign(TextAlign.Center).fontSize(10).key('text').height('5%')
+      Text(this.message).textAlign(TextAlign.Center).fontSize(10).key('PatternLockPage_text').height('5%')
       PatternLock(this.patternLockController)
         .sideLength(this.sideLength)
         .circleRadius(this.circleRadius)

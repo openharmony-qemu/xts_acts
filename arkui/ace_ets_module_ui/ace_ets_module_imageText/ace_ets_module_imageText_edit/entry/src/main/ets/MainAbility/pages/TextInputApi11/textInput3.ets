@@ -80,7 +80,7 @@ struct TextAreaExample2 {
         .onChange((value: string) => {
           this.text = value
         })
-      Text(this.text).width('90%').key('text').height('5%')
+      Text(this.text).width('90%').key('textInput3_text').height('5%')
       Button('caretPosition')
         .onClick(() => {
           this.controller.caretPosition(4)

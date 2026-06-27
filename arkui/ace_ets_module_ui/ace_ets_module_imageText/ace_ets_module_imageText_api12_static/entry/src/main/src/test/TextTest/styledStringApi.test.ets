@@ -80,7 +80,7 @@ export default function styledStringApi() {
       let button2 = await (driver.findComponent(ON.id('styledStringBt3')) as Promise<Component>);
       await button2.click();
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('styledStringText');
+      let strJson = inspector.getInspectorByKey('styledStringApi' + '_styledStringText');
       await CommonFunc.sleep(200);
       let obj  = JSON.parseJsonElement(strJson);
       console.info("[styledStringApi_001] component obj is: " + JSON.stringify(obj));
@@ -109,7 +109,7 @@ export default function styledStringApi() {
       let button2 = await (driver.findComponent(ON.id('styledStringBt3')) as Promise<Component>);
       await button2.click();
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('styledStringText');
+      let strJson = inspector.getInspectorByKey('styledStringApi' + '_styledStringText');
       await CommonFunc.sleep(200);
       let obj  = JSON.parseJsonElement(strJson);
       console.info("[styledStringApi_002] component obj is: " + obj);

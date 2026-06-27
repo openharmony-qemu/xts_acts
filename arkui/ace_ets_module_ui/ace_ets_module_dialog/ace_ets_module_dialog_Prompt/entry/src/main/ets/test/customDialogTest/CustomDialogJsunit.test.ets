@@ -55,10 +55,10 @@ export default function CustomDialogJsunit() {
 
       console.info('CustomDialogJsunit_0100 START');
 	  let driver = await UiDriver.create()
-      let button = await driver.findComponent(BY.key('CustomDialog'));
+      let button = await driver.findComponent(BY.key('CustomDialogControllerOptions' + '_CustomDialog'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('CustomDialog');
+      let strJson = getInspectorByKey('CustomDialogControllerOptions' + '_CustomDialog');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[CustomDialogJsunit_0100] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.label).assertEqual("click me");

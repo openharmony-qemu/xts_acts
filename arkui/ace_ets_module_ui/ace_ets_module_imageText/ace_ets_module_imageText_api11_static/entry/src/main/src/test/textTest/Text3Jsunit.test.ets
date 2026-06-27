@@ -13,8 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { TextAlign, TextOverflow } from '@ohos.arkui.component';
-import { describe, beforeEach, afterEach, it, expect, Level, beforeAll } from '../../../../hypium/index';
+import { TextAlign, TextOverflow } from '@ohos.arkui.component'
+import { describe, beforeEach, afterEach, it, expect, Level, beforeAll } from "../../../../hypium/index";
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -22,12 +22,15 @@ import { MessageManagerBase, CallbackBase } from '../../../ets/MainAbility/commo
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
-import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
+import inspector from '@ohos.arkui.inspector'
+import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UtilsTest } from '../Util.test';
+
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
@@ -80,7 +83,7 @@ export default function text3Jsunit() {
      */
     it('testText_static_0100', Level.LEVEL2, async (done: () => void) => {
       console.info('testText_static_0100 START');
-      let strJson = inspector.getInspectorByKey('text');
+      let strJson = inspector.getInspectorByKey('text3' + '_text');
       console.info("testText_static_0100 component strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
@@ -124,7 +127,7 @@ export default function text3Jsunit() {
         console.log("testText_static_0300 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = inspector.getInspectorByKey('text');
+      let strJsonNew = inspector.getInspectorByKey('text3' + '_text');
 
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('fontSize')).assertEqual('10.00fp');
       console.info('testText_static_0300 END');
@@ -140,7 +143,7 @@ export default function text3Jsunit() {
      */
     it('testText_static_0400', Level.LEVEL2, async (done: () => void) => {
       console.info('testText_static_0400 START');
-      let strJson = inspector.getInspectorByKey('text');
+      let strJson = inspector.getInspectorByKey('text3' + '_text');
       let obj = JSON.parseJsonElement(strJson);
       console.info("testText_static_0400 component strJson:" + strJson);
       console.info("testText_static_0400 component JSON.parseJsonElement(strJson) is: " +
@@ -167,7 +170,7 @@ export default function text3Jsunit() {
         console.log("testText_static_0500 change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
-      let strJsonNew = inspector.getInspectorByKey('text');
+      let strJsonNew = inspector.getInspectorByKey('text3' + '_text');
 
       console.info("testText_static_0500 component JSON.parseJsonElement(strJsonNew) is: " +
       JSON.stringify(JSON.parseJsonElement(strJsonNew)));
@@ -185,7 +188,7 @@ export default function text3Jsunit() {
      */
     it('testText_static_0600', Level.LEVEL2, async (done: () => void) => {
       console.info('testText_static_0600 START');
-      let strJson = inspector.getInspectorByKey('text');
+      let strJson = inspector.getInspectorByKey('text3' + '_text');
       let obj = JSON.parseJsonElement(strJson);
       console.info("testText_static_0600 component strJson:" + strJson);
 
@@ -210,7 +213,7 @@ export default function text3Jsunit() {
         console.log("testText_static_0700 change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
-      let strJsonNew = inspector.getInspectorByKey('text');
+      let strJsonNew = inspector.getInspectorByKey('text3' + '_text');
       console.info("testText_static_0700 component JSON.parseJsonElement(strJsonNew) is: " +
       JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('textAlign'))
@@ -228,7 +231,7 @@ export default function text3Jsunit() {
      */
     it('testText_static_0800', Level.LEVEL2, async (done: () => void) => {
       console.info('testText_static_0800 START');
-      let strJson = inspector.getInspectorByKey('text');
+      let strJson = inspector.getInspectorByKey('text3' + '_text');
       console.info("testText_static_0800 component strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       console.info("testText_static_0800 component JSON.parseJsonElement(strJson) is: " +
@@ -254,7 +257,7 @@ export default function text3Jsunit() {
         console.log("testText_static_0900 change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
-      let strJsonNew = inspector.getInspectorByKey('text');
+      let strJsonNew = inspector.getInspectorByKey('text3' + '_text');
       console.info("testText_static_0900 component JSON.parseJsonElement(strJsonNew) is: " +
       JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('textOverflow'))
@@ -272,7 +275,7 @@ export default function text3Jsunit() {
      */
     it('testText_static_1000', Level.LEVEL2, async (done: () => void) => {
       console.info('testText_static_1000 START');
-      let strJson = inspector.getInspectorByKey('text');
+      let strJson = inspector.getInspectorByKey('text3' + '_text');
       console.info("testText_static_1000 component strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       console.info("testText_static_1000 component JSON.parseJsonElement(strJson) is: " + JSON.parseJsonElement(strJson)
@@ -301,7 +304,7 @@ export default function text3Jsunit() {
         console.log("testText_static_1200 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = inspector.getInspectorByKey('text');
+      let strJsonNew = inspector.getInspectorByKey('text3' + '_text');
 
       console.info("testText_static_1200 component JSON.parseJsonElement(strJsonNew) is: " +
       JSON.parseJsonElement(strJsonNew)
@@ -336,7 +339,7 @@ export default function text3Jsunit() {
     //     console.log("testText_static_1300 change component data error: " + err.message);
     //   }
     //   await CommonFunc.sleep(3000);
-    //   let strJsonNew = inspector.getInspectorByKey('text');
+    //   let strJsonNew = inspector.getInspectorByKey('text3' + '_text');
     //
     //   console.info("testText_static_1300 component JSON.parseJsonElement(strJsonNew) is: " +
     //   JSON.parseJsonElement(strJsonNew)
@@ -373,7 +376,7 @@ export default function text3Jsunit() {
     //     console.log("testText_static_1400 change component data error: " + err.message);
     //   }
     //   await CommonFunc.sleep(2000);
-    //   let strJsonNew = inspector.getInspectorByKey('text');
+    //   let strJsonNew = inspector.getInspectorByKey('text3' + '_text');
     //
     //   console.info("testText_static_1400 component JSON.parseJsonElement(strJsonNew) is: " +
     //   JSON.stringify(JSON.parseJsonElement(strJsonNew)

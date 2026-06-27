@@ -85,13 +85,13 @@ export default function onSelectionChange13() {
       let Select  = await (driver.findComponent(ON.text('全选')) as Promise<Component>)
       await Select .click()
       await CommonFunc.sleep(1000);
-      let text1_1 = inspector.getInspectorByKey('onSelectionChange13_text1');
+      let text1_1 = inspector.getInspectorByKey('onSelectionChange13' + '_text1');
       let Obj1_1 = JSON.parseJsonElement(text1_1);
       expect(Obj1_1.getElement('$attrs').getString('content')).assertEqual('2');
-      let text2_1 = inspector.getInspectorByKey('onSelectionChange13_text2');
+      let text2_1 = inspector.getInspectorByKey('onSelectionChange13' + '_text2');
       let Obj2_1 = JSON.parseJsonElement(text2_1);
       expect(Obj2_1.getElement('$attrs').getString('content')).assertEqual('0');
-      let text3_1 = inspector.getInspectorByKey('onSelectionChange13_text3');
+      let text3_1 = inspector.getInspectorByKey('onSelectionChange13' + '_text3');
       let Obj3_1 = JSON.parseJsonElement(text3_1);
       expect(Obj3_1.getElement('$attrs').getString('content')).assertEqual('12');
 

@@ -133,7 +133,7 @@ struct Index {
             this.ValueOne = value
             console.info('value:' + value + 'mode:' + mode.toString())
           })
-          .key('Slider')
+          .key('SliderTestSec_Slider')
         Slider({
           value: this.ValueTwo,
           min: 0,
