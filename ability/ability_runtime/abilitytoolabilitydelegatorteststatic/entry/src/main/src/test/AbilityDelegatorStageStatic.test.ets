@@ -726,6 +726,7 @@ export default function AbilityDelegatorStageStaticTest() {
 
             hilog.info(domain, tag, `${itName} doAbilityForeground`);
             try {
+              expect(ability.isDestroyed).assertFalse();
               await abilityDelegator.doAbilityForeground(ability);
               hilog.info(domain, tag, `${itName} doAbilityForeground success`);
 
