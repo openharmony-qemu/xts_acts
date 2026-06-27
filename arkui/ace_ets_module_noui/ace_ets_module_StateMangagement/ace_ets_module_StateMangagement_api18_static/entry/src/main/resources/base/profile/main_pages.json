@@ -43,6 +43,8 @@
     "MainAbility/pages/Dump/DumpObject",
     "MainAbility/pages/uiutils/GlobalReusePool",
     "MainAbility/pages/uiutils/GlobalReusePool002",
-    "MainAbility/pages/uiutils/GlobalReusePool003"
+    "MainAbility/pages/uiutils/GlobalReusePool003",
+    "MainAbility/pages/uiutils/GlobalReusePool004",
+    "MainAbility/pages/AddMonitor/AddMonitorWildcard2"
   ]
 }
