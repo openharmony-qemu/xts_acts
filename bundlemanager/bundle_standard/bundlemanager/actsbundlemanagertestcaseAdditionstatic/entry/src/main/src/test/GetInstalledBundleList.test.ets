@@ -15,6 +15,7 @@
 
  import bundle from '@ohos.bundle.bundleManager';
  import { BusinessError } from '@ohos.base';
+ import wantConstant from '@ohos.app.ability.wantConstant';
  import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
  
  export default function getInstalledBundleList(): void {
