@@ -2488,5 +2488,176 @@ export default function audioRoutingManager() {
       }
       done();
     });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_DECLAREDEVICETYPESCOMPATIBILITY_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_DECLAREDEVICETYPESCOMPATIBILITY_PARAM_0100
+     * @tc.desc   declareDeviceTypesCompatibility - valid API20+ device types array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_DECLAREDEVICETYPESCOMPATIBILITY_PARAM_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+          let deviceTypes: audio.DeviceTypeArray = [audio.DeviceType.HEARING_AID, audio.DeviceType.NEARLINK];
+          audioRoutingManager.declareDeviceTypesCompatibility(deviceTypes);
+          console.info('declareDeviceTypesCompatibility with valid device types succeed');
+        } catch (err) {
+          console.error(`Failed to declareDeviceTypesCompatibility PARAM_0100. Code: ${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_DECLAREDEVICETYPESCOMPATIBILITY_PARAM_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_DECLAREDEVICETYPESCOMPATIBILITY_PARAM_0200
+     * @tc.desc   declareDeviceTypesCompatibility - single API20+ device type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_DECLAREDEVICETYPESCOMPATIBILITY_PARAM_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+          let deviceTypes: audio.DeviceTypeArray = [audio.DeviceType.HEARING_AID];
+          audioRoutingManager.declareDeviceTypesCompatibility(deviceTypes);
+          console.info('declareDeviceTypesCompatibility with single device type succeed');
+        } catch (err) {
+          console.error(`Failed to declareDeviceTypesCompatibility PARAM_0200. Code: ${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      })
+    
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_DECLAREDEVICETYPESCOMPATIBILITY_PARAM_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_DECLAREDEVICETYPESCOMPATIBILITY_PARAM_0300
+     * @tc.desc   declareDeviceTypesCompatibility - single API20+ device type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_DECLAREDEVICETYPESCOMPATIBILITY_PARAM_0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+          let deviceTypes: audio.DeviceTypeArray = [audio.DeviceType.NEARLINK];
+          audioRoutingManager.declareDeviceTypesCompatibility(deviceTypes);
+          console.info('declareDeviceTypesCompatibility with single device type succeed');
+        } catch (err) {
+          console.error(`Failed to declareDeviceTypesCompatibility PARAM_0300. Code: ${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_DECLAREDEVICETYPESCOMPATIBILITY_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_DECLAREDEVICETYPESCOMPATIBILITY_ERROR_0100
+     * @tc.desc   declareDeviceTypesCompatibility - invalid device type enum value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_DECLAREDEVICETYPESCOMPATIBILITY_ERROR_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        try {
+          let deviceTypes: audio.DeviceTypeArray = [9999];
+          audioRoutingManager.declareDeviceTypesCompatibility(deviceTypes);
+          console.info('declareDeviceTypesCompatibility with invalid device type should fail');
+          expect(false).assertTrue();
+        } catch (err) {
+          console.info(`declareDeviceTypesCompatibility ERROR_0100 err.code: ${err.code}, err.message: ${err.message}`);
+          expect(err.code).assertEqual(6800101);
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_DECLAREDEVICETYPESCOMPATIBILITY_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_DECLAREDEVICETYPESCOMPATIBILITY_ERROR_0200
+     * @tc.desc   declareDeviceTypesCompatibility - legacy device types before API20.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_DECLAREDEVICETYPESCOMPATIBILITY_ERROR_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        try {
+          let deviceTypes: audio.DeviceTypeArray = [audio.DeviceType.SPEAKER, audio.DeviceType.WIRED_HEADSET];
+          audioRoutingManager.declareDeviceTypesCompatibility(deviceTypes);
+          console.info('declareDeviceTypesCompatibility with legacy device types should fail');
+          expect(false).assertTrue();
+        } catch (err) {
+          console.info(`declareDeviceTypesCompatibility ERROR_0200 err.code: ${err.code}, err.message: ${err.message}`);
+          expect(err.code).assertEqual(6800101);
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_DECLAREDEVICETYPESCOMPATIBILITY_ERROR_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_DECLAREDEVICETYPESCOMPATIBILITY_ERROR_0300
+     * @tc.desc   declareDeviceTypesCompatibility - null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_DECLAREDEVICETYPESCOMPATIBILITY_ERROR_0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        try {
+          audioRoutingManager.declareDeviceTypesCompatibility(null);
+          console.info('declareDeviceTypesCompatibility with null should fail');
+          expect(false).assertTrue();
+        } catch (err) {
+          console.info(`declareDeviceTypesCompatibility ERROR_0300 err.code: ${err.code}, err.message: ${err.message}`);
+          expect(err.code).assertEqual(401);
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_DECLAREDEVICETYPESCOMPATIBILITY_ERROR_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_DECLAREDEVICETYPESCOMPATIBILITY_ERROR_0500
+     * @tc.desc   declareDeviceTypesCompatibility - undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_DECLAREDEVICETYPESCOMPATIBILITY_ERROR_0500',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        try {
+          audioRoutingManager.declareDeviceTypesCompatibility(undefined);
+          console.info('declareDeviceTypesCompatibility with undefined should fail');
+          expect(false).assertTrue();
+        } catch (err) {
+          console.info(`declareDeviceTypesCompatibility ERROR_0500 err.code: ${err.code}, err.message: ${err.message}`);
+          expect(err.code).assertEqual(401);
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_DECLAREDEVICETYPESCOMPATIBILITY_ERROR_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_DECLAREDEVICETYPESCOMPATIBILITY_ERROR_0600
+     * @tc.desc   declareDeviceTypesCompatibility - array contains mixed invalid types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_DECLAREDEVICETYPESCOMPATIBILITY_ERROR_0600',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        try {
+          let deviceTypes: audio.DeviceTypeArray = [audio.DeviceType.HEARING_AID, 9999];
+          audioRoutingManager.declareDeviceTypesCompatibility(deviceTypes);
+          console.info('declareDeviceTypesCompatibility with mixed invalid types should fail');
+          expect(false).assertTrue();
+        } catch (err) {
+          console.info(`declareDeviceTypesCompatibility ERROR_0600 err.code: ${err.code}, err.message: ${err.message}`);
+          expect(err.code).assertEqual(6800101);
+        }
+        done();
+      })
   })
 }

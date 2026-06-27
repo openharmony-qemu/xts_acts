@@ -112,6 +112,7 @@ export const AudioSuiteEngine_setAudioFormat_003: () => number;
 export const AudioSuiteEngine_setAudioFormat_004: () => number;
 export const AudioSuiteEngine_setAudioFormat_005: () => number;
 export const AudioSuiteEngine_setAudioFormat_006: () => number;
+export const SUB_MULTIMEDIA_AUDIO_AUDIOSUITENGINE_SETAUDIOFORMAT_0700: () => number;
 export const AudioSuiteEngine_DestroyNode_001: () => number;
 export const AudioSuiteEngine_DestroyNode_002: () => number;
 export const AudioSuiteEngine_DestroyNode_003: () => number;

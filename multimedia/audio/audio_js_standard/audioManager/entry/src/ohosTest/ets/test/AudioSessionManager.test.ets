@@ -1720,6 +1720,28 @@ export default function audioSessionManagerTest() {
     })
 
     /**
+     * @tc.name   AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_0400 
+     * @tc.number AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_0400  
+     * @tc.desc   setAudioSessionBehavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.PAUSE_WHEN_INTERRUPTED;
+      expect(behavior).assertEqual(0x00000004);
+      try {
+        await sessionManager.setAudioSessionBehavior(behavior);
+        console.info(`AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_0400: setAudioSessionBehavior with PAUSE_WHEN_INTERRUPTED: PASS`);
+        done();
+      } catch (err) {
+        console.info(`AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_0400: setAudioSessionBehavior with PAUSE_WHEN_INTERRUPTED: FAIL :${err.message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
      * @tc.name    SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_SPEAKER_0100
      * @tc.number  SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_SPEAKER_0100
      * @tc.desc    AudioSessionManager setMediaOutputDevice SPEAKER test.
