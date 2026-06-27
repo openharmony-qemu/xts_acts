@@ -42,7 +42,6 @@ import { LengthMetrics } from '@ohos.arkui.node';
 import { LevelMode } from '@ohos.promptAction';
 import { Callback } from '@ohos.base';
 import promptAction from '@ohos.promptAction';
-let promptAction = new PromptAction()
 
 //@Preview
 @Component

@@ -990,7 +990,7 @@ export default function Json4Test(): void {
     it('Json4Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalStr: string = "Hello 😊 World 🌟";
       const jsonStr: string = JSON.stringify(originalStr);
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       const parsedStr: string = JSON.parse<string>(jsonStr, typ) as string;
 
       expect(parsedStr).assertEqual(originalStr);
@@ -1011,7 +1011,7 @@ export default function Json4Test(): void {
         container: { value: '123' }
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      let typ: Type = Type.of(new RootNestedReplaceObj());
+      let typ: Class = Class.from<RootNestedReplaceObj>();
       const parsedObj: RootNestedReplaceObj = JSON.parse<RootNestedReplaceObj>(jsonStr, (key: string, value: Any) => {
         if (key === "container") {
           return { value: "replaced" } as Test3_Obj1;
@@ -1034,7 +1034,7 @@ export default function Json4Test(): void {
     it('Json4Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const invalidJson: string = '{"num": 1e-}';
       let hasError: boolean = false;
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       try {
         JSON.parse<string>(invalidJson, typ) as string;
       } catch (error) {
@@ -1054,7 +1054,7 @@ export default function Json4Test(): void {
      */
     it('Json4Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '{"a": {"b": {"c": 1, "c": 2}}}';
-      let typ: Type = Type.of(new DeepKeyConflictObj());
+      let typ: Class = Class.from<DeepKeyConflictObj>();
       const parsedObj: DeepKeyConflictObj = JSON.parse<DeepKeyConflictObj>(jsonStr, typ) as DeepKeyConflictObj;
       expect(parsedObj.a.b.c).assertEqual(2);
     });
@@ -1070,7 +1070,7 @@ export default function Json4Test(): void {
     it('Json4Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const invalidJson: string = '{"valid": tru}';
       let hasError: boolean = false;
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       try {
         JSON.parse<string>(invalidJson, typ) as string;
       } catch (error) {
@@ -1090,7 +1090,7 @@ export default function Json4Test(): void {
     it('Json4Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalStr: string = "é (e\u0301)";
       const jsonStr: string = JSON.stringify(originalStr);
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       const parsedStr: string = JSON.parse<string>(jsonStr, typ) as string;
 
       expect(parsedStr).assertEqual(originalStr);
@@ -1114,7 +1114,7 @@ export default function Json4Test(): void {
         b: 0,
         sum: 0
       };
-      let typ: Type = Type.of(new Test14_Obj2());
+      let typ: Class = Class.from<Test14_Obj2>();
       const parsedObj: Test14_Obj2 = JSON.parse<Test14_Obj2>(jsonStr, (key: string, value: Any) => {
         if (key === "a") {
           values.a = value as number;
@@ -1143,7 +1143,7 @@ export default function Json4Test(): void {
     it('Json4Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const invalidJson: string = "[() => {}]";
       let hasError: boolean = false;
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       try {
         JSON.parse<string>(invalidJson, typ) as string;
       } catch (error) {
@@ -1169,7 +1169,7 @@ export default function Json4Test(): void {
         (key: string, value: Any) => typeof value === "string" && (value as string).length > 10 ?
           (value as string).slice(0, 10) : value
       );
-      let typ: Type = Type.of(new StrTruncateObj());
+      let typ: Class = Class.from<StrTruncateObj>();
       const parsedObj: StrTruncateObj = JSON.parse<StrTruncateObj>(jsonStr, typ) as StrTruncateObj;
 
       expect(parsedObj.shortTest).assertEqual("hello");
@@ -1188,7 +1188,7 @@ export default function Json4Test(): void {
     it('Json4Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const invalidJson: string = '{"num": ++123}';
       let hasError: boolean = false;
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       try {
         JSON.parse<string>(invalidJson, typ) as string;
       } catch (error) {
@@ -1211,7 +1211,7 @@ export default function Json4Test(): void {
         level1: { level2: "Line1\nLine2\nLine3" }
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      let typ: Type = Type.of(new NestedNewlineObj());
+      let typ: Class = Class.from<NestedNewlineObj>();
       const parsedObj: NestedNewlineObj = JSON.parse<NestedNewlineObj>(jsonStr, typ) as NestedNewlineObj;
 
       expect(parsedObj.level1.level2).assertEqual("Line1\nLine2\nLine3");
@@ -1237,7 +1237,7 @@ export default function Json4Test(): void {
         }
         return value;
       });
-      let typ: Type = Type.of(new RenamePropObj());
+      let typ: Class = Class.from<RenamePropObj>();
       const parsedObj: RenamePropObj = JSON.parse<RenamePropObj>(jsonStr, typ) as RenamePropObj;
 
       expect(parsedObj.newKey).assertEqual("value");
@@ -1274,7 +1274,7 @@ export default function Json4Test(): void {
     it('Json4Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
         const invalidJson: string = '{"a":1}}extra';
-        let typ: Type = Type.of(new String());
+        let typ: Class = Class.from<String>();
         JSON.parse<string>(invalidJson, typ) as string;
         expect().assertFail();
       } catch (error) {
@@ -1312,7 +1312,7 @@ export default function Json4Test(): void {
     it('Json4Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const invalidJson: string = '{"str": "test"string"}';
       let hasError: boolean = false;
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       try {
         JSON.parse<string>(invalidJson, typ) as string;
       } catch (error) {
@@ -1333,7 +1333,7 @@ export default function Json4Test(): void {
     it('Json4Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const invalidJson: string = "[1, undefined, 3]";
       let hasError: boolean = false;
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       try {
         JSON.parse<string>(invalidJson, typ) as string;
       } catch (error) {
@@ -1358,7 +1358,7 @@ export default function Json4Test(): void {
         ja: "こんにちは"
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      let typ: Type = Type.of(new MultiLangObj());
+      let typ: Class = Class.from<MultiLangObj>();
       const parsedObj: MultiLangObj = JSON.parse<MultiLangObj>(jsonStr, typ) as MultiLangObj;
 
       expect(parsedObj.en).assertEqual("Hello");
@@ -1424,7 +1424,7 @@ export default function Json4Test(): void {
      */
     it('Json4Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const invalidJson: string = '{"num": 123+}';
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       try {
         JSON.parse<string>(invalidJson, typ) as string;
         expect().assertFail();
@@ -1442,7 +1442,7 @@ export default function Json4Test(): void {
     it('Json4Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalStr: string = "a\u200Cb";
       const jsonStr: string = JSON.stringify(originalStr);
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       const parsedStr: string = JSON.parse<string>(jsonStr, typ) as string;
 
       expect(parsedStr).assertEqual(originalStr);
@@ -1478,7 +1478,7 @@ export default function Json4Test(): void {
      */
     it('Json4Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const invalidJson: string = "{key name: 1}";
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       try {
         JSON.parse<string>(invalidJson, typ) as string;
         expect().assertFail();
@@ -1525,7 +1525,7 @@ export default function Json4Test(): void {
      */
     it('Json4Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const invalidJson: string = '{"valid": TRUE}';
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       try {
         JSON.parse<string>(invalidJson, typ) as string;
         expect().assertFail();
@@ -1547,7 +1547,7 @@ export default function Json4Test(): void {
     it('Json4Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalStr: string = "👨‍👩‍👧‍👦 Family: 👨‍💻 Developer";
       const jsonStr: string = JSON.stringify(originalStr);
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       const parsedStr: string = JSON.parse<string>(jsonStr, typ) as string;
       expect(parsedStr).assertEqual(originalStr);
       expect(parsedStr.includes("👨‍👩‍👧‍👦")).assertEqual(true);
@@ -1568,14 +1568,14 @@ export default function Json4Test(): void {
       let validResult: ValidatedObj | null = null;
       let invalidError: boolean = false;
 
-      let typ: Type = Type.of(new ValidatedObj());
+      let typ: Class = Class.from<ValidatedObj>();
       validResult = JSON.parse<ValidatedObj | null>(validJson, (key: string, value: Any) => {
         if (key === "score" && (value as number) > 100) {
           throw new Error("Score cannot exceed 100");
         }
         return value;
       }, typ) as ValidatedObj | null;
-      let typ2: Type = Type.of(new String());
+      let typ2: Class = Class.from<String>();
       try {
         JSON.parse<string>(invalidJson, (key: string, value: Any) => {
           if (key === "score" && (value as number) > 100) {
@@ -1647,7 +1647,7 @@ export default function Json4Test(): void {
      */
     it('Json4Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const invalidJson: string = '{"num": a123}';
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       try {
         JSON.parse<string>(invalidJson, typ) as string;
         expect().assertFail();
@@ -1668,7 +1668,7 @@ export default function Json4Test(): void {
     it('Json4Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalStr: string = "Line1\r\nLine2\nLine3";
       const jsonStr: string = JSON.stringify(originalStr);
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       const parsedStr: string = JSON.parse<string>(jsonStr, typ) as string;
 
       expect(parsedStr).assertEqual(originalStr);
@@ -1691,7 +1691,7 @@ export default function Json4Test(): void {
       const jsonStr: string = JSON.stringify(originalObj,
         (key: string, value: Any) => key === "email" ? (value as string).split("").reverse().join("") : value
       );
-      let typ: Type = Type.of(new EncryptedObj());
+      let typ: Class = Class.from<EncryptedObj>();
       const parsedObj: EncryptedObj = JSON.parse<EncryptedObj>(jsonStr,
         (key: string, value: Any) => key === "email" ? (value as string).split("").reverse().join("") : value
         , typ) as EncryptedObj;
@@ -1716,7 +1716,7 @@ export default function Json4Test(): void {
         }
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      let typ: Type = Type.of(new DeepSpecialCharObj());
+      let typ: Class = Class.from<DeepSpecialCharObj>();
       const parsedObj: DeepSpecialCharObj = JSON.parse<DeepSpecialCharObj>(jsonStr, typ) as DeepSpecialCharObj;
 
       expect(parsedObj.level1.key401).assertEqual("value$1");
@@ -1761,7 +1761,7 @@ export default function Json4Test(): void {
         fr: "Bonjour! Comment allez-vous?"
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      let typ: Type = Type.of(new MultiPunctObj());
+      let typ: Class = Class.from<MultiPunctObj>();
       const parsedObj: MultiPunctObj = JSON.parse<MultiPunctObj>(jsonStr, typ) as MultiPunctObj;
 
       expect(parsedObj.en).assertEqual("Hello! How are you?");
@@ -1852,7 +1852,7 @@ export default function Json4Test(): void {
       const jsonStr: string = JSON.stringify(originalObj,
         (key: string, value: Any) => typeof value === "number" ? (value as NumToStringObj).toString() : value
       );
-      let typ: Type = Type.of(new NumToStringObj());
+      let typ: Class = Class.from<NumToStringObj>();
       const parsedObj: NumToStringObj = JSON.parse<NumToStringObj>(jsonStr, typ) as NumToStringObj;
 
       expect(parsedObj.a).assertEqual("10");
@@ -1871,7 +1871,7 @@ export default function Json4Test(): void {
     it('Json4Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalStr: string = "🇨🇳 China 🇺🇸 USA";
       const jsonStr: string = JSON.stringify(originalStr);
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       const parsedStr: string = JSON.parse<string>(jsonStr, typ) as string;
 
       expect(parsedStr).assertEqual(originalStr);
@@ -1901,7 +1901,7 @@ export default function Json4Test(): void {
         }
         return value;
       });
-      let typ: Type = Type.of(new MaskedObj());
+      let typ: Class = Class.from<MaskedObj>();
       const parsedObj: MaskedObj = JSON.parse<MaskedObj>(jsonStr, typ) as MaskedObj;
 
       expect(parsedObj.phone).assertEqual("138****8000");
@@ -1918,7 +1918,7 @@ export default function Json4Test(): void {
      */
     it('Json4Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '{"a": 1, "a": "2"}';
-      let typ: Type = Type.of(new MixedTypeKeyObj());
+      let typ: Class = Class.from<MixedTypeKeyObj>();
       const parsedObj: MixedTypeKeyObj = JSON.parse<MixedTypeKeyObj>(jsonStr, typ) as MixedTypeKeyObj;
 
       expect(parsedObj.a).assertEqual("2");
@@ -1936,7 +1936,7 @@ export default function Json4Test(): void {
     it('Json4Test080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalStr: string = "a\u200Db";
       const jsonStr: string = JSON.stringify(originalStr);
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       const parsedStr: string = JSON.parse<string>(jsonStr, typ) as string;
       expect(parsedStr).assertEqual(originalStr);
       expect(parsedStr.includes("\u200D")).assertEqual(true);
@@ -1958,7 +1958,7 @@ export default function Json4Test(): void {
         normal: 100
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      let typ: Type = Type.of(new SpecialNumFilterObj());
+      let typ: Class = Class.from<SpecialNumFilterObj>();
       const parsedObj: SpecialNumFilterObj = JSON.parse<SpecialNumFilterObj>(jsonStr, typ) as SpecialNumFilterObj;
 
       expect(parsedObj.nan).assertEqual(null);
@@ -1982,7 +1982,7 @@ export default function Json4Test(): void {
         }
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      let typ: Type = Type.of(new DeepSpecialNumObj());
+      let typ: Class = Class.from<DeepSpecialNumObj>();
       const parsedObj: DeepSpecialNumObj = JSON.parse<DeepSpecialNumObj>(jsonStr, typ) as DeepSpecialNumObj;
 
       expect(parsedObj.level1.nan).assertEqual(null);
@@ -2001,7 +2001,7 @@ export default function Json4Test(): void {
     it('Json4Test088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalStr: string = "👨🏿‍💻 Dark skin developer";
       const jsonStr: string = JSON.stringify(originalStr);
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       const parsedStr: string = JSON.parse<string>(jsonStr, typ) as string;
 
       expect(parsedStr).assertEqual(originalStr);
@@ -2024,7 +2024,7 @@ export default function Json4Test(): void {
         }
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      let typ: Type = Type.of(new MathSymbolObj());
+      let typ: Class = Class.from<MathSymbolObj>();
       const parsedObj: MathSymbolObj = JSON.parse<MathSymbolObj>(jsonStr, typ) as MathSymbolObj;
 
       expect(parsedObj.formulas.axToBb).assertEqual("sum");
@@ -2044,7 +2044,7 @@ export default function Json4Test(): void {
         text: "中文（括号）、英文()、日文（かっこ）"
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      let typ: Type = Type.of(new MultiBracketObj());
+      let typ: Class = Class.from<MultiBracketObj>();
       const parsedObj: MultiBracketObj = JSON.parse<MultiBracketObj>(jsonStr, typ) as MultiBracketObj;
       expect(parsedObj.text).assertEqual("中文（括号）、英文()、日文（かっこ）");
       expect(parsedObj.text.includes("（")).assertEqual(true);
@@ -2070,7 +2070,7 @@ export default function Json4Test(): void {
         }
         return value;
       });
-      let typ: Type = Type.of(new ValueClampObj());
+      let typ: Class = Class.from<ValueClampObj>();
       const parsedObj: ValueClampObj = JSON.parse<ValueClampObj>(jsonStr, typ) as ValueClampObj;
 
       expect(parsedObj.score).assertEqual(100);
@@ -2088,7 +2088,7 @@ export default function Json4Test(): void {
     it('Json4Test110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalStr: string = "🏴󠁧󠁢󠁥󠁮󠁧󠁿 UK 🇪🇸 Spain";
       const jsonStr: string = JSON.stringify(originalStr);
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       const parsedStr: string = JSON.parse<string>(jsonStr, typ) as string;
 
       expect(parsedStr).assertEqual(originalStr);
@@ -2115,7 +2115,7 @@ export default function Json4Test(): void {
         }
         return value;
       });
-      let typ: Type = Type.of(new PartialMaskObj());
+      let typ: Class = Class.from<PartialMaskObj>();
       const parsedObj: PartialMaskObj = JSON.parse<PartialMaskObj>(jsonStr, typ) as PartialMaskObj;
       expect(parsedObj.cardNumber).assertEqual("6222********0123");
       expect(parsedObj.phone).assertEqual("13800138000");
@@ -2134,7 +2134,7 @@ export default function Json4Test(): void {
         text: '中文“引号”、英文"引号"、日文「引用」'
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      let typ: Type = Type.of(new MultiQuoteObj());
+      let typ: Class = Class.from<MultiQuoteObj>();
       const parsedObj: MultiQuoteObj = JSON.parse<MultiQuoteObj>(jsonStr, typ) as MultiQuoteObj;
       expect(parsedObj.text).assertEqual('中文“引号”、英文"引号"、日文「引用」');
       expect(parsedObj.text.includes("“")).assertEqual(true);
@@ -2157,7 +2157,7 @@ export default function Json4Test(): void {
         }
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      let typ: Type = Type.of(new DeepZeroWidthObj());
+      let typ: Class = Class.from<DeepZeroWidthObj>();
       const parsedObj: DeepZeroWidthObj = JSON.parse<DeepZeroWidthObj>(jsonStr, typ) as DeepZeroWidthObj;
 
       expect(parsedObj.level1.keyy).assertEqual("value\u200C1");
@@ -2178,7 +2178,7 @@ export default function Json4Test(): void {
         data: { message: "success", timestamp: Date.now() }
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      let typ: Type = Type.of(new ApiResponse());
+      let typ: Class = Class.from<ApiResponse>();
       const parsedObj: ApiResponse = JSON.parse<ApiResponse>(jsonStr, (key: string, value: Any) => {
         if (key === "code" && typeof value !== "number") {
           throw new Error("code must be number");
@@ -2203,7 +2203,7 @@ export default function Json4Test(): void {
     it('Json4Test131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalStr: string = "🍕 Pizza 🍟 Fries 🍔 Burger";
       const jsonStr: string = JSON.stringify(originalStr);
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       const parsedStr: string = JSON.parse<string>(jsonStr, typ) as string;
 
       expect(parsedStr).assertEqual(originalStr);
@@ -2227,7 +2227,7 @@ export default function Json4Test(): void {
         }
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      let typ: Type = Type.of(new ChemicalSymbolObj());
+      let typ: Class = Class.from<ChemicalSymbolObj>();
       const parsedObj: ChemicalSymbolObj = JSON.parse<ChemicalSymbolObj>(jsonStr, typ) as ChemicalSymbolObj;
 
       expect(parsedObj.elements.H2O).assertEqual("Water");
@@ -2250,7 +2250,7 @@ export default function Json4Test(): void {
         }
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      let typ: Type = Type.of(new MusicSymbolObj());
+      let typ: Class = Class.from<MusicSymbolObj>();
       const parsedObj: MusicSymbolObj = JSON.parse<MusicSymbolObj>(jsonStr, typ) as MusicSymbolObj;
 
       expect(parsedObj.notes.Cx23).assertEqual("Middle C Sharp");
@@ -2268,7 +2268,7 @@ export default function Json4Test(): void {
     it('Json4Test144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalStr: string = "✈️ Travel 🏨 Hotel 🌍 World";
       const jsonStr: string = JSON.stringify(originalStr);
-      let typ: Type = Type.of(new String());
+      let typ: Class = Class.from<String>();
       const parsedStr: string = JSON.parse<string>(jsonStr, typ) as string;
 
       expect(parsedStr).assertEqual(originalStr);

@@ -489,7 +489,6 @@ export default function ImageSourceTest(): void {
         }
         done();
       })
-  
       /**
        * @tc.number    SUB_MEDIA_IMAGE_SOURCE_createPictureAtIndex_STATIC_0500
        * @tc.name      SUB_MEDIA_IMAGE_SOURCE_createPictureAtIndex_STATIC_0500
@@ -516,6 +515,242 @@ export default function ImageSourceTest(): void {
         }
         done();
       })
+    /**
+     * @tc.number    SUB_MEDIA_IMAGE_SOURCE_CreateThumbnailSync_STATIC_0100
+     * @tc.name      SUB_MEDIA_IMAGE_SOURCE_CreateThumbnailSync_STATIC_0100
+     * @tc.desc      createThumbnailSync cover generateThumbnailIfAbsent: true,
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CreateThumbnailSync_STATIC_0100', Level.LEVEL1, async (done: () => void) => {
+      const testName = "SUB_MEDIA_IMAGE_SOURCE_CreateThumbnailSync_STATIC_0100";
+      let filePath = await getFd("jpeg_exif_thumbnail.jpg");
+      const imageSourceObj: image.ImageSource | undefined = image.createImageSource(filePath);
+      console.info(TAG, testName, `imageSourceObj success`, imageSourceObj!);
+      try{
+        const imageInfo = await imageSourceObj!.getImageInfo();
+        const supportedMimeTypes = ['image/jpeg', 'image/heif', 'image/heic'];
+        if (!supportedMimeTypes.includes(imageInfo!.mimeType)) {
+          console.error(TAG, testName,`CreateThumbnailSync: Unsupported MIME type: ${imageInfo!.mimeType}`);
+          return undefined;
+        }
+        const decodingOptionsForThumbnail: image.DecodingOptionsForThumbnail = {
+          generateThumbnailIfAbsent: true,
+          maxGeneratedPixelDimension: 200,
+        };
+        const pixelmap = imageSourceObj!.createThumbnailSync(decodingOptionsForThumbnail);
+        console.info(TAG, testName,'Succeeded in creating thumbnail pixelMap object.',pixelmap);
+        expect(pixelmap!=undefined).assertTrue();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      await imageSourceObj!.release();
+      done();
+    })
+    /**
+     * @tc.number    SUB_MEDIA_IMAGE_SOURCE_CreateThumbnailSync_STATIC_0200
+     * @tc.name      SUB_MEDIA_IMAGE_SOURCE_CreateThumbnailSync_STATIC_0200
+     * @tc.desc      createThumbnailSync cover generateThumbnailIfAbsent: false,
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CreateThumbnailSync_STATIC_0200', Level.LEVEL1, async (done: () => void) => {
+      const testName = "SUB_MEDIA_IMAGE_SOURCE_CreateThumbnailSync_STATIC_0200";
+      let filePath = await getFd("jpeg_exif_thumbnail.jpg");
+      const imageSourceObj: image.ImageSource | undefined = image.createImageSource(filePath);
+      console.info(TAG, testName, `imageSourceObj success`, imageSourceObj!);
+      try{
+        const imageInfo = await imageSourceObj!.getImageInfo();
+        const supportedMimeTypes = ['image/jpeg', 'image/heif', 'image/heic'];
+        if (!supportedMimeTypes.includes(imageInfo!.mimeType)) {
+          console.error(TAG, testName,`CreateThumbnailSync: Unsupported MIME type: ${imageInfo!.mimeType}`);
+          return undefined;
+        }
+        const decodingOptionsForThumbnail: image.DecodingOptionsForThumbnail = {
+          generateThumbnailIfAbsent: false,
+          maxGeneratedPixelDimension: 200,
+        };
+        const pixelmap = imageSourceObj!.createThumbnailSync(decodingOptionsForThumbnail);
+        console.info(TAG, testName,'Succeeded in creating thumbnail pixelMap object.',pixelmap);
+        expect(pixelmap!=undefined).assertTrue();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      await imageSourceObj!.release();
+      done();
+    })
+
+    /**
+     * @tc.number    SUB_MEDIA_IMAGE_SOURCE_CreateThumbnailSync_STATIC_1300
+     * @tc.name      SUB_MEDIA_IMAGE_SOURCE_CreateThumbnailSync_STATIC_1300
+     * @tc.desc      createThumbnailSync cover no  generateThumbnailIfAbsent
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CreateThumbnailSync_STATIC_1300', Level.LEVEL1, async (done: () => void) => {
+      const testName = "SUB_MEDIA_IMAGE_SOURCE_CreateThumbnailSync_STATIC_1300";
+      let filePath = await getFd("jpeg_exif_thumbnail.jpg");
+      const imageSourceObj: image.ImageSource | undefined = image.createImageSource(filePath);
+      console.info(TAG, testName, `imageSourceObj success`, imageSourceObj!);
+      try{
+        const imageInfo = await imageSourceObj!.getImageInfo();
+        const supportedMimeTypes = ['image/jpeg', 'image/heif', 'image/heic'];
+        if (!supportedMimeTypes.includes(imageInfo!.mimeType)) {
+          console.error(TAG, testName,`CreateThumbnailSync: Unsupported MIME type: ${imageInfo!.mimeType}`);
+          return undefined;
+        }
+        const decodingOptionsForThumbnail: image.DecodingOptionsForThumbnail = {
+          maxGeneratedPixelDimension: 200,
+        };
+        const pixelmap = imageSourceObj!.createThumbnailSync(decodingOptionsForThumbnail);
+        console.info(TAG, testName,'Succeeded in creating thumbnail pixelMap object.',pixelmap);
+        expect(pixelmap!=undefined).assertTrue();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      await imageSourceObj!.release();
+      done();
+    })
+    /**
+     * @tc.number    SUB_MEDIA_IMAGE_SOURCE_CreateThumbnailSync_STATIC_2300
+     * @tc.name      SUB_MEDIA_IMAGE_SOURCE_CreateThumbnailSync_STATIC_2300
+     * @tc.desc      createThumbnailSync cover no maxGeneratedPixelDimension
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CreateThumbnailSync_STATIC_2300', Level.LEVEL1, async (done: () => void) => {
+      const testName = "SUB_MEDIA_IMAGE_SOURCE_CreateThumbnailSync_STATIC_2300";
+      let filePath = await getFd("jpeg_exif_thumbnail.jpg");
+      const imageSourceObj: image.ImageSource | undefined = image.createImageSource(filePath);
+      console.info(TAG, testName, `imageSourceObj success`, imageSourceObj!);
+      try{
+        const imageInfo = await imageSourceObj!.getImageInfo();
+        const supportedMimeTypes = ['image/jpeg', 'image/heif', 'image/heic'];
+        if (!supportedMimeTypes.includes(imageInfo!.mimeType)) {
+          console.error(TAG, testName,`CreateThumbnailSync: Unsupported MIME type: ${imageInfo!.mimeType}`);
+          return undefined;
+        }
+        const decodingOptionsForThumbnail: image.DecodingOptionsForThumbnail = {
+          generateThumbnailIfAbsent: false,
+        };
+        const pixelmap = imageSourceObj!.createThumbnailSync(decodingOptionsForThumbnail);
+        console.info(TAG, testName,'Succeeded in creating thumbnail pixelMap object.',pixelmap);
+        expect(pixelmap!=undefined).assertTrue();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      await imageSourceObj!.release();
+      done();
+    })
+    /**
+     * @tc.number    SUB_MEDIA_IMAGE_SOURCE_CreateThumbnailSync_STATIC_0400
+     * @tc.name      SUB_MEDIA_IMAGE_SOURCE_CreateThumbnailSync_STATIC_0400
+     * @tc.desc      createThumbnailSync cover errorSource:.gif,errorCode:7700102
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CreateThumbnailSync_STATIC_0400', Level.LEVEL1, async (done: () => void) => {
+      const testName = "SUB_MEDIA_IMAGE_SOURCE_CreateThumbnailSync_STATIC_0400";
+      let filePath = await getFd("moving_test_loop0.gif");
+      const imageSourceObj: image.ImageSource | undefined = image.createImageSource(filePath);
+      console.info(TAG, testName, `imageSourceObj success`, imageSourceObj!);
+      try{
+        const imageInfo = await imageSourceObj!.getImageInfo();
+        const supportedMimeTypes = ['image/jpeg', 'image/heif', 'image/heic'];
+        if (!supportedMimeTypes.includes(imageInfo!.mimeType)) {
+          console.error(TAG, testName,`CreateThumbnailSync: Unsupported MIME type: ${imageInfo!.mimeType}`);
+        }
+        const pixelmap = imageSourceObj!.createThumbnailSync();
+        console.info(TAG, testName,'Succeeded in creating thumbnail pixelMap object.',pixelmap);
+        expect().assertFail();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect(error.code).assertEqual(7700102);
+      }
+      await imageSourceObj!.release();
+      done();
+    })
+    /**
+     * @tc.number    SUB_MEDIA_IMAGE_SOURCE_CreateThumbnailSync_STATIC_0500
+     * @tc.name      SUB_MEDIA_IMAGE_SOURCE_CreateThumbnailSync_STATIC_0500
+     * @tc.desc      createThumbnailSync cover .heic,
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CreateThumbnailSync_STATIC_0500', Level.LEVEL1, async (done: () => void) => {
+      const testName = "SUB_MEDIA_IMAGE_SOURCE_CreateThumbnailSync_STATIC_0500";
+      let filePath = await getFd("test_exif_v4.heic");
+      const imageSourceObj: image.ImageSource | undefined = image.createImageSource(filePath);
+      console.info(TAG, testName, `imageSourceObj success`, imageSourceObj!);
+      try{
+        if (!image.createImagePacker().supportedFormats.includes("image/heic")) {
+          console.info(TAG,testName, "device is not support heif encode");
+          await imageSourceObj!.release();
+          done();
+        } else {
+        const imageInfo = await imageSourceObj!.getImageInfo();
+        const supportedMimeTypes = ['image/jpeg', 'image/heif', 'image/heic'];
+        if (!supportedMimeTypes.includes(imageInfo!.mimeType)) {
+          console.error(TAG, testName,`CreateThumbnailSync: Unsupported MIME type: ${imageInfo!.mimeType}`);
+          await imageSourceObj!.release();
+          done();
+          return;
+        }
+          const pixelmap = imageSourceObj!.createThumbnailSync();
+          console.info(TAG, testName, 'Succeeded in creating thumbnail pixelMap object.', pixelmap);
+          expect(pixelmap != undefined).assertTrue();
+        }
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      await imageSourceObj!.release();
+      done();
+    })
+    /**
+     * @tc.number    SUB_MEDIA_IMAGE_SOURCE_CreateThumbnailSync_STATIC_0600
+     * @tc.name      SUB_MEDIA_IMAGE_SOURCE_CreateThumbnailSync_STATIC_0600
+     * @tc.desc      createThumbnailSync cover generateThumbnailIfAbsent: false,
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CreateThumbnailSync_STATIC_0600', Level.LEVEL1, async (done: () => void) => {
+      const testName = "SUB_MEDIA_IMAGE_SOURCE_CreateThumbnailSync_STATIC_0600";
+      let filePath = await getFd("jpeg_exif_thumbnail.jpg");
+      const imageSourceObj: image.ImageSource | undefined = image.createImageSource(filePath);
+      console.info(TAG, testName, `imageSourceObj success`, imageSourceObj!);
+      try{
+        const imageInfo = await imageSourceObj!.getImageInfo();
+        const supportedMimeTypes = ['image/jpeg', 'image/heif', 'image/heic'];
+        if (!supportedMimeTypes.includes(imageInfo!.mimeType)) {
+          console.error(TAG, testName,`CreateThumbnailSync: Unsupported MIME type: ${imageInfo!.mimeType}`);
+          return undefined;
+        }
+        const decodingOptionsForThumbnail: image.DecodingOptionsForThumbnail = {
+          generateThumbnailIfAbsent: false,
+          maxGeneratedPixelDimension: 200,
+        };
+        const pixelmap = imageSourceObj!.createThumbnailSync(decodingOptionsForThumbnail);
+        console.info(TAG, testName,'Succeeded in creating thumbnail pixelMap object.',pixelmap);
+        expect(pixelmap!=undefined).assertTrue();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      await imageSourceObj!.release();
+      done();
+    })
 
   })
 }

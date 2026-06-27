@@ -14,34 +14,19 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
-import { AppStorage } from '@ohos.arkui.stateManagement'
-import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
+import inspector from '@ohos.arkui.inspector';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import {
-  Component,
-  Driver,
-  Component,
-  Driver,
-  UiWindow,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix
-} from '@ohos.UiTest';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { UtilsTest, startAbility, stopApplication } from '../../Util.test';
-
 export default function getChildTest() {
   describe('getChildTest', () => {
     beforeAll(async () => {
@@ -93,13 +78,13 @@ it('getChildTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<v
       console.info('getChildTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('getChild_0'));
+      let button = await driver.findComponent(ON.id('getChild' + '_0'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('getChild_2'));
+      let button1 = await driver.findComponent(ON.id('getChild' + '_2'));
       await (button1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('getChild_2_text');
+      let strJson = inspector.getInspectorByKey('getChild' + '_2_text');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[getChildTest_0100] component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('width:100');
@@ -119,13 +104,13 @@ it('getChildTest_static_0200', Level.LEVEL2, async (done: () => void): Promise<v
       console.info('getChildTest_0200 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('getChild_0'));
+      let button = await driver.findComponent(ON.id('getChild' + '_0'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('getChild_3'));
+      let button1 = await driver.findComponent(ON.id('getChild' + '_3'));
       await (button1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('getChild_3_text');
+      let strJson = inspector.getInspectorByKey('getChild' + '_3_text');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[getChildTest_0200] component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('width:100');
@@ -145,15 +130,15 @@ it('getChildTest_static_0300', Level.LEVEL2, async (done: () => void): Promise<v
       console.info('getChildTest_0300 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('getChild_0'));
+      let button = await driver.findComponent(ON.id('getChild' + '_0'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('getChild_4'));
+      let button1 = await driver.findComponent(ON.id('getChild' + '_4'));
       await (button1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('getChild_4_text');
+      let strJson = inspector.getInspectorByKey('getChild' + '_4_text');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[getChildTest_0300] component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('width:100');
@@ -173,18 +158,18 @@ it('getChildTest_static_0400', Level.LEVEL2, async (done: () => void): Promise<v
       console.info('getChildTest_0400 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('getChild_0'));
+      let button = await driver.findComponent(ON.id('getChild' + '_0'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('getChild_1'));
+      let button1 = await driver.findComponent(ON.id('getChild' + '_1'));
       await (button1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let button2 = await driver.findComponent(ON.id('getChild_5'));
+      let button2 = await driver.findComponent(ON.id('getChild' + '_5'));
       await (button2?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('getChild_5_text');
+      let strJson = inspector.getInspectorByKey('getChild' + '_5_text');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[getChildTest_0400] component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('width:100');

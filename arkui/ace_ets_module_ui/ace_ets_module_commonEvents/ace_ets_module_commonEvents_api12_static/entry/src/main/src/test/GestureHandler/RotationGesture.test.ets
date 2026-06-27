@@ -14,22 +14,19 @@
  * limitations under the License.
  */
 
-import {describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
-import {Component, Driver, ON } from '@ohos.UiTest';
-import { Driver, ON } from '@ohos.UiTest';
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+import { Component, Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import {UtilsTest} from '../Util.test'
+import { UtilsTest } from '../Util.test';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;

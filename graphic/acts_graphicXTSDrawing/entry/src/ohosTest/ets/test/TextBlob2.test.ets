@@ -15,33 +15,11 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestType, Size, Level } from '@ohos/hypium';
 import drawing from '@ohos.graphics.drawing';
-import { getEnumCount } from './utils';
 import common2D from '@ohos.graphics.common2D';
 
 
 export default function textBlob2Test() {
   describe('DrawingTsTextBlob2Test', () => {
-    const DEFAULT = 0;
-    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(async () => {
-
-    })
-    beforeEach(() => {
-      // Presets an action, which is performed before each unit test case starts.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: preset action function.
-    })
-    afterEach(() => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
-    })
-    afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
-    })
-
-
     /**
      * @tc.name   testTextBlobMakeFromPosTextNormal
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TEXTBLOB_0300
@@ -53,15 +31,27 @@ export default function textBlob2Test() {
     it('testTextBlobMakeFromPosTextNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testTextBlobMakeFromPosTextNormal';
       let font = new drawing.Font();
-
+      let points: common2D.Point[] = [];
       try {
-        let points: common2D.Point[] = [];
         drawing.TextBlob.makeFromPosText("drawing", points.length, points, font);
+        console.info(msg + ' makeFromString 1 succeeded for empty string');
+        expect().assertFail();
+      } catch (e) {
+        console.info(msg + ` makeFromString 1 failed for empty string, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
         points = [{
           x: 100, y: 100
         }];
         font.setSize(30);
         drawing.TextBlob.makeFromPosText("你好", points.length, points, font);
+        console.info(msg + ' makeFromString 2 succeeded for empty string');
+      } catch (e) {
+        console.info(msg + ` makeFromString 2 failed for empty string, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
         points = [{
           x: 100, y: 100
         }, {
@@ -70,15 +60,27 @@ export default function textBlob2Test() {
           x: 300, y: 300
         }];
         drawing.TextBlob.makeFromPosText("中文魑認識", points.length, points, font);
-        drawing.TextBlob.makeFromPosText("", points.length, points, font);
-        console.info(msg + ' makeFromString succeeded for empty string');
+        console.info(msg + ' makeFromString 3 succeeded for empty string');
       } catch (e) {
-        console.info(msg + ` makeFromString failed for empty string, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        console.info(msg + ` makeFromString 3 failed for empty string, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
       }
+      try {
+        points = [{
+          x: 100, y: 100
+        }, {
+          x: 200.1, y: 200.1
+        }, {
+          x: 300, y: 300
+        }];
+        drawing.TextBlob.makeFromPosText("", points.length, points, font);
+        console.info(msg + ' makeFromString 4 succeeded for empty string');
+        expect().assertFail();
+      } catch (e) {
+        console.info(msg + ` makeFromString 4 failed for empty string, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
     });
-
-
     /**
      * @tc.name   testTextBlobMakeFromPosTextNull
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TEXTBLOB_0301

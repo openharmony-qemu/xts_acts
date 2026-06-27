@@ -91,7 +91,7 @@ export default function search_bottom() {
         let text_01 = CommonFunc.getComponentRect('search_bottom_text_01');
         let text_02 = CommonFunc.getComponentRect('search_bottom_text_02');
         let text_03 = CommonFunc.getComponentRect('search_bottom_text_03');
-        let Column_1 = CommonFunc.getComponentRect('search_bottom_Column_1');
+        let Column_1 = CommonFunc.getComponentRect('search_bottom' + '_Column_1');
         let driver = Driver.create();
         await CommonFunc.sleep(500);
         await (driver.mouseScroll({
@@ -99,7 +99,7 @@ export default function search_bottom() {
         }, true, 30, 2072) as Promise<void>)
         await CommonFunc.sleep(1000);
         console.log('get swipe after Initial value')
-        let search_01 = CommonFunc.getComponentRect('search_bottom_search_01');
+        let search_01 = CommonFunc.getComponentRect('search_bottom' + '_search_01');
         console.log('assert click before position')
         let y1 = search_01.bottom
         await (driver.click(
@@ -108,7 +108,7 @@ export default function search_bottom() {
         ) as Promise<void>)
         await CommonFunc.sleep(1000);
         console.log('get click after Initial value')
-        let search_02 = CommonFunc.getComponentRect('search_bottom_search_01');
+        let search_02 = CommonFunc.getComponentRect('search_bottom' + '_search_01');
         let y2 = search_02.bottom
         expect(y1).assertEqual(y2);
       }

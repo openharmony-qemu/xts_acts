@@ -17,7 +17,6 @@ import ColumnSpaceResourceTest from './Column/ColumnSpaceResourceTest.test';
 import FlexSpaceResourceTest from './Flex/FlexSpaceResourceTest.test';
 import RowSpaceResourceTest from './Row/RowSpaceResourceTest.test';
 import CustomLayoutUniqueidTest from './CustomLayout/CustomLayoutUniqueidTest.test';
-import RowSpaceResourceTest from './Row/RowSpaceResourceTest.test';
 import LayoutPolicyFixAtIdealSizeTest from './LayoutPolicy/LayoutPolicyFixAtIdealSize.test';
 import LayoutPolicyWrapContentTest from './LayoutPolicy/LayoutPolicyWrapContent.test';
 import RenderNodeAttributeTest from './RenderNodeAttribute/RenderNodeAttribute.test';
@@ -39,7 +38,6 @@ import TypeNodeGetRadioAttribute from './TypeNode/TypeNodeGetRadioAttribute.test
 import TypeNodeGetSliderAttribute from './TypeNode/TypeNodeGetSliderAttribute.test';
 import TypeNodeGetToggleAttribute from './TypeNode/TypeNodeGetToggleAttribute.test';
 import StackSyncLoadStaticTest from './Stack/StackSyncLoadStaticTest.test';
-
 export default function testsuite() {
   ColumnSpaceResourceTest();
   FlexSpaceResourceTest();

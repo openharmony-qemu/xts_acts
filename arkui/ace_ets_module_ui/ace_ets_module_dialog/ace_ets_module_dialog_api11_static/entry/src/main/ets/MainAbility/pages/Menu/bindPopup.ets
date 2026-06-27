@@ -13,39 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import emitter from '@ohos.events.emitter'
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  Text,
-  Row,
-  Color,
-  $r,
-  Margin,
-  ColumnOptions,
-  Flex,
-  ResourceColor,
-  Builder,
-  Padding,
-  FlexDirection,
-  PopupOptions,
-  CustomPopupOptions,
-  Position,
-  RowOptions,
-  Image,
-  $rawfile,
-  Placement,
-  PopupOptions,
-  CustomPopupOptions,
-  PopupStateChangeParam,
-  PopupMaskType
-} from '@ohos.arkui.component';
+import emitter from '@ohos.events.emitter';
+import { Entry, Column, Component, Button, Text, Row, Color, $r, Margin, ColumnOptions, Flex, ResourceColor, Builder, Padding, FlexDirection, PopupOptions, CustomPopupOptions, Position, RowOptions, Image, $rawfile, Placement, PopupStateChangeParam, PopupMaskType, ClickEvent } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
-import { ClickEvent } from '@ohos.arkui.component';
 import { RecordData } from '@ohos.base';
-
 @Entry
 @Component
 struct PopupExample {
@@ -60,7 +31,7 @@ struct PopupExample {
   popupBuilder() {
     Row({ space: 2 } as RowOptions) {
       Image($rawfile('ic_health_heart.png')).width(24).height(24).margin({ left: -5 } as Margin).key('image')
-      Text('Custom Popup').fontSize(12).key('text')
+      Text('Custom Popup').fontSize(12).key('bindPopup_text')
     }.width(100).height(50).backgroundColor(Color.White)
   }
 
@@ -121,7 +92,7 @@ struct PopupExample {
         .position({ x: 100, y: 200 } as Position)
 
       Button('custom popup')
-        .key('button')
+        .key('bindPopup_button')
         .onClick((e: ClickEvent) => {
           this.customPopup = !this.customPopup
           try {

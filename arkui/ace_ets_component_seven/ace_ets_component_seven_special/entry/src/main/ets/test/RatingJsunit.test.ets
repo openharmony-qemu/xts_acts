@@ -34,7 +34,7 @@ export default function RatingJsunit() {
         }
       } catch (err) {
         console.error("push RatingJsunit page error: " + err);
-        expect().assertFail();
+        expect(false).assertEqual(true);
       }
       done();
     });

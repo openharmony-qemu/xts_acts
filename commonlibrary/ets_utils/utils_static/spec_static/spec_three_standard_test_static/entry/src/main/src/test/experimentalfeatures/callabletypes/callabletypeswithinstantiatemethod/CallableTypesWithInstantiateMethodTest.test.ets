@@ -297,7 +297,7 @@ class C30 {
 }
 
 class C31<T extends String | Number | undefined> {
-  fld: T
+  fld: T = undefined as T
   static $_instantiate(f: () => C31<String>, p: String): C31<String> {
     let x: C31<String> = f()
     x.fld = p

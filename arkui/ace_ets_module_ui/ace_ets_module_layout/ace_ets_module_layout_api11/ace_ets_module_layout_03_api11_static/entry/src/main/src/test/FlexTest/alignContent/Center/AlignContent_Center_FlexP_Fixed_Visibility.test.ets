@@ -15,21 +15,19 @@
  */
 
 import { Visibility } from '@ohos.arkui.component';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../../hypium/index';
 import router from '@ohos.router';
-import { Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import RectValue from '../../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
-import { UIContext } from "@ohos.arkui.UIContext";
 import inspector from '@ohos.arkui.inspector';
-import { GlobalContext } from '../../../../../ets/MainAbility/common/GlobalContext'
+import { GlobalContext } from '../../../../../ets/MainAbility/common/GlobalContext';
 import { MessageManager, Callback } from '../../../../../ets/MainAbility/common/MessageManager';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../../../Util.test';
 let domain: Int = 0x0000;
@@ -84,16 +82,16 @@ it('testAlignContentCenterFlexfixedVisibilityHidden_static', Level.LEVEL0, async
         name: 'visibility', value: Visibility.Hidden
       });
       await CommonFunc.sleep(3000);
-      let strJson = inspector.getInspectorByKey('AlignContent_Center_FlexP_Fixed_Visibility_flex001');
+      let strJson = inspector.getInspectorByKey('AlignContent_Center_FlexP_Fixed_Visibility' + '_flex001');
 
-      let textStrJson = inspector.getInspectorByKey('AlignContent_Center_FlexP_Fixed_Visibility_1');
+      let textStrJson = inspector.getInspectorByKey('AlignContent_Center_FlexP_Fixed_Visibility' + '_1');
       console.info('flex [getInspectorByKey] is:' + JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info('flex obj.$attrs.constructor is:' + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor')));
       console.info('Text1 textObj.$attrs is:' + JSON.stringify(JSON.parseJsonElement(textStrJson).getElement('$attrs')));
-      let AlignContentFlexCenter_flex001: RectValue = CommonFunc.getComponentRect('AlignContent_Center_FlexP_Fixed_Visibility_flex001');
-      let AlignContentFlexCenter_2: RectValue = CommonFunc.getComponentRect('AlignContent_Center_FlexP_Fixed_Visibility_2');
-      let AlignContentFlexCenter_3: RectValue = CommonFunc.getComponentRect('AlignContent_Center_FlexP_Fixed_Visibility_3');
-      let AlignContentFlexCenter_4: RectValue = CommonFunc.getComponentRect('AlignContent_Center_FlexP_Fixed_Visibility_4');
+      let AlignContentFlexCenter_flex001: RectValue = CommonFunc.getComponentRect('AlignContent_Center_FlexP_Fixed_Visibility' + '_flex001');
+      let AlignContentFlexCenter_2: RectValue = CommonFunc.getComponentRect('AlignContent_Center_FlexP_Fixed_Visibility' + '_2');
+      let AlignContentFlexCenter_3: RectValue = CommonFunc.getComponentRect('AlignContent_Center_FlexP_Fixed_Visibility' + '_3');
+      let AlignContentFlexCenter_4: RectValue = CommonFunc.getComponentRect('AlignContent_Center_FlexP_Fixed_Visibility' + '_4');
 
       console.log('AlignContent_Center_FlexP_Fixed_Visibility_flex001 rect_value is:' +
       JSON.stringify(AlignContentFlexCenter_flex001));
@@ -144,14 +142,14 @@ it('testAlignContentCenterFlexfixedVisibilityNone_static', Level.LEVEL0, async (
         name: 'visibility', value: Visibility.None
       });
       await CommonFunc.sleep(3000)
-      let strJson = inspector.getInspectorByKey('AlignContent_Center_FlexP_Fixed_Visibility_flex001');
+      let strJson = inspector.getInspectorByKey('AlignContent_Center_FlexP_Fixed_Visibility' + '_flex001');
 
-      let textStrJson = inspector.getInspectorByKey('AlignContent_Center_FlexP_Fixed_Visibility_1');
-      let AlignContentFlexCenter_flex002: RectValue = CommonFunc.getComponentRect('AlignContent_Center_FlexP_Fixed_Visibility_flex001');
+      let textStrJson = inspector.getInspectorByKey('AlignContent_Center_FlexP_Fixed_Visibility' + '_1');
+      let AlignContentFlexCenter_flex002: RectValue = CommonFunc.getComponentRect('AlignContent_Center_FlexP_Fixed_Visibility' + '_flex001');
 
-      let AlignContentFlexCenter_2: RectValue = CommonFunc.getComponentRect('AlignContent_Center_FlexP_Fixed_Visibility_2');
-      let AlignContentFlexCenter_3: RectValue = CommonFunc.getComponentRect('AlignContent_Center_FlexP_Fixed_Visibility_3');
-      let AlignContentFlexCenter_4: RectValue = CommonFunc.getComponentRect('AlignContent_Center_FlexP_Fixed_Visibility_4');
+      let AlignContentFlexCenter_2: RectValue = CommonFunc.getComponentRect('AlignContent_Center_FlexP_Fixed_Visibility' + '_2');
+      let AlignContentFlexCenter_3: RectValue = CommonFunc.getComponentRect('AlignContent_Center_FlexP_Fixed_Visibility' + '_3');
+      let AlignContentFlexCenter_4: RectValue = CommonFunc.getComponentRect('AlignContent_Center_FlexP_Fixed_Visibility' + '_4');
 
       console.log('AlignContent_Center_FlexP_Fixed_Visibility_flex002 rect_value is:' +
       JSON.stringify(AlignContentFlexCenter_flex002))

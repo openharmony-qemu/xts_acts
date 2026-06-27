@@ -70,7 +70,7 @@ export default function sliderMovingJsunit() {
           }
         }
         events_emitter.on(event, callback);
-        console.info("testsliderMoving0011 click result is: " + JSON.stringify(sendEventByKey('Slider', 10, "")));
+        console.info("testsliderMoving0011 click result is: " + JSON.stringify(sendEventByKey('slider2' + '_Slider', 10, "")));
         await Utils.sleep(3000);
       } catch (err) {
         console.info("testsliderMoving0011 on events_emitter err : " + JSON.stringify(err));

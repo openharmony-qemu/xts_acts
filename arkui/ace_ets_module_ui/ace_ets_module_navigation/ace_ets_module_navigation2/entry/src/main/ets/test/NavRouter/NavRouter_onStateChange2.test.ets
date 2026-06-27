@@ -79,7 +79,7 @@ export default function NavRouter_onStateChange2() {
 
       await driver.triggerKey(2);
       await CommonFunc.sleep(300);
-      let text1 = getInspectorByKey('NavRouter_onStateChange2_text1');
+      let text1 = getInspectorByKey('NavRouter_onStateChange2' + '_text1');
       expect(JSON.parse(text1).$attrs.content).assertEqual('false');
 
       console.info('[NavRouter_onStateChange2_0100] END');

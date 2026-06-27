@@ -17,7 +17,7 @@ import router from '@ohos.router';
 import Utils from '../../src/test/Utils.test';
 import { URL, URL2 } from '../../src/test/Config.test';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, Callback, RecordData } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import { Driver, ON } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
@@ -26,16 +26,12 @@ import web_webview from '@ohos.web.webview';
 import webView from '@ohos.web.webview';
 import { webview } from '@kit.ArkWeb';
 import events_emitter from '@ohos.events.emitter';
-import { BusinessError, Callback, RecordData } from '@ohos.base';
 import { State } from '@ohos.arkui.stateManagement';
 import { canIUse } from '@internal.full.global';
 import WebNativeMessagingExtensionAbility, { ConnectionInfo } from '@ohos.web.WebNativeMessagingExtensionAbility';
 import { Want, StartOptions } from '@kit.AbilityKit';
-import { Entry, Component, Column, MicrophoneCaptureState, MicrophoneCaptureStateChangeInfo, CameraCaptureState,
-  GestureFocusMode, CameraCaptureStateChangeInfo, Button, Web, $rawfile, MixedMode, CustomDialog,
-  CustomDialogController, NavigationPolicy, ClickEvent, OnDataResubmittedEvent } from '@ohos.arkui.component';
-import { UIContext, Router } from '@ohos.arkui.UIContext'
-
+import { Entry, Component, Column, MicrophoneCaptureState, MicrophoneCaptureStateChangeInfo, CameraCaptureState, GestureFocusMode, CameraCaptureStateChangeInfo, Button, Web, $rawfile, MixedMode, CustomDialog, CustomDialogController, NavigationPolicy, ClickEvent, OnDataResubmittedEvent } from '@ohos.arkui.component';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 @CustomDialog
 struct NewWebViewComp {
   controller?: CustomDialogController

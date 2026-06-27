@@ -159,7 +159,19 @@ export default function AudioDeviceEnhanceManagerTest() {
     it('SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_SELECTOUTPUTDEVICE_SUCCESS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_SELECTOUTPUTDEVICE_SUCCESS_0100 start`);
-
+        let audioManager = audio.getAudioManager();
+        let audioRoutingManager = audioManager.getRoutingManager();
+        let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+        console.info(`SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_SELECTOUTPUTDEVICE_SUCCESS_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+        console.info(`Determine if this is a default device`)
+        const detecteDevice = outputDeviceDescription.some(device =>
+          device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+        );
+        if (detecteDevice) {
+          console.info(`this device has external device`)
+          done();
+          return;
+        }
         try {
           const availableDevices: audio.AudioDeviceDescriptors = await audioRoutingManager.getAvailableDevices(
             audio.DeviceUsage.MEDIA_OUTPUT_DEVICES
@@ -309,7 +321,19 @@ export default function AudioDeviceEnhanceManagerTest() {
     it('SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_SELECTINPUTDEVICE_SUCCESS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_SELECTINPUTDEVICE_SUCCESS_0100 start`);
-
+        let audioManager = audio.getAudioManager();
+        let audioRoutingManager = audioManager.getRoutingManager();
+        let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+        console.info(`SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_SELECTINPUTDEVICE_SUCCESS_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+        console.info(`Determine if this is a default device`)
+        const detecteDevice = outputDeviceDescription.some(device =>
+          device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+        );
+        if (detecteDevice) {
+          console.info(`this device has external device`)
+          done();
+          return;
+        }
         try {
           const availableDevices: audio.AudioDeviceDescriptors = await audioRoutingManager.getAvailableDevices(
             audio.DeviceUsage.MEDIA_INPUT_DEVICES
@@ -459,7 +483,19 @@ export default function AudioDeviceEnhanceManagerTest() {
     it('SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_SELECTOUTPUTFORRENDERER_SUCCESS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_SELECTOUTPUTFORRENDERER_SUCCESS_0100 start`);
-
+        let audioManager = audio.getAudioManager();
+        let audioRoutingManager = audioManager.getRoutingManager();
+        let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+        console.info(`SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_SELECTOUTPUTFORRENDERER_SUCCESS_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+        console.info(`Determine if this is a default device`)
+        const detecteDevice = outputDeviceDescription.some(device =>
+          device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+        );
+        if (detecteDevice) {
+          console.info(`this device has external device`)
+          done();
+          return;
+        }
         try {
           const rendererInfo: audio.AudioRendererInfo = {
             usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
@@ -723,7 +759,19 @@ export default function AudioDeviceEnhanceManagerTest() {
     it('SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_SELECTINPUTFORCAPTURER_SUCCESS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_SELECTINPUTFORCAPTURER_SUCCESS_0100 start`);
-
+        let audioManager = audio.getAudioManager();
+        let audioRoutingManager = audioManager.getRoutingManager();
+        let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+        console.info(`SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_SELECTINPUTFORCAPTURER_SUCCESS_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+        console.info(`Determine if this is a default device`)
+        const detecteDevice = outputDeviceDescription.some(device =>
+          device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+        );
+        if (detecteDevice) {
+          console.info(`this device has external device`)
+          done();
+          return;
+        }
         try {
           const capturerInfo: audio.AudioCapturerInfo = {
             source: audio.SourceType.SOURCE_TYPE_MIC,

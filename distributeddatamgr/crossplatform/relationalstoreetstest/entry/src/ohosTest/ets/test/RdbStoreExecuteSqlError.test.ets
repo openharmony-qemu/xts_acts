@@ -123,7 +123,6 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
     afterAll(async () => {
       console.info(TAG + "afterAll");
     });
-
     /**
      * @tc.name   testRdbStoreExecuteSqlError001
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ExecuteSqlErrorAPITest_0100
@@ -3951,6 +3950,5 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
       await relationalStore.deleteRdbStore(context, STORE_CONFIG_MEMORY);
       console.log(TAG + "************* testRekeyExParam0300 end *************");
     });
-
   });
 }

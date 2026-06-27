@@ -38,6 +38,7 @@ export default function securityManagerTest() {
     testRemoveAllowedPermissionBundle();
     testGetAllowedPermissionBundles();
     testGetWatermarkImageApps();
+    testSetPasswordPolicy();
   })
 }
 
@@ -2623,6 +2624,87 @@ function testGetWatermarkImageApps() {
     try {
       let result = securityManager.getWatermarkImageApps(SELFWANT, 1);
       expect(Array.isArray(result)).assertTrue();
+    } catch (error) {
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+
+function testSetPasswordPolicy() {
+
+  /**
+   * @tc.name   test_setPasswordPolicy_0900
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_PASSWORD_POLICY_JS_0900
+   * @tc.desc   test setPasswordPolicy with passwordAlgs SCRYPT_HKDF_AES success
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_setPasswordPolicy_0900", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let policy: securityManager.PasswordPolicy = {
+        complexityRegex: '^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*])[a-zA-Z\\d!@#$%^&*]{8,}$',
+        passwordAlgs: securityManager.PasswordAlgs.SCRYPT_HKDF_AES
+      };
+      securityManager.setPasswordPolicy(SELFWANT, policy);
+      let result = securityManager.getPasswordPolicy(SELFWANT);
+      expect(result.passwordAlgs).assertEqual(securityManager.PasswordAlgs.SCRYPT_HKDF_AES);
+    } catch (error) {
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_setPasswordPolicy_1000
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_PASSWORD_POLICY_JS_1000
+   * @tc.desc   test setPasswordPolicy with passwordAlgs SCRYPT_HKDF_SM4 success
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_setPasswordPolicy_1000", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let policy: securityManager.PasswordPolicy = {
+        complexityRegex: '^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*])[a-zA-Z\\d!@#$%^&*]{8,}$',
+        passwordAlgs: securityManager.PasswordAlgs.SCRYPT_HKDF_SM4
+      };
+      securityManager.setPasswordPolicy(SELFWANT, policy);
+      let result = securityManager.getPasswordPolicy(SELFWANT);
+      expect(result.passwordAlgs).assertEqual(securityManager.PasswordAlgs.SCRYPT_HKDF_SM4);
+    } catch (error) {
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_setPasswordPolicy_1100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_PASSWORD_POLICY_JS_1100
+   * @tc.desc   test setPasswordPolicy without passwordAlgs success
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_setPasswordPolicy_1100", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let policy: securityManager.PasswordPolicy = {
+        complexityRegex: '^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*])[a-zA-Z\\d!@#$%^&*]{8,}$'
+      };
+      securityManager.setPasswordPolicy(SELFWANT, policy);
+      let result = securityManager.getPasswordPolicy(SELFWANT);
+      expect(result.complexityRegex).assertEqual('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*])[a-zA-Z\\d!@#$%^&*]{8,}$');
     } catch (error) {
       expect(false).assertTrue();
     } finally {

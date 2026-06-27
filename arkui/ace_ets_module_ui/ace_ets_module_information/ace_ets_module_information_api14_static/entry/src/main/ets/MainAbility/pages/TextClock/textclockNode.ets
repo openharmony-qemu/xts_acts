@@ -14,12 +14,8 @@
  * limitations under the License.
  */
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { BadgeParamWithNumber, BadgeParamWithString, Color, HorizontalAlign, $r, Entry, Component, Column, ColumnOptions, NodeContainer,
-  Text, Badge, Image, $r, Row, Button, QRCode, TextClockController, Scroll, FlexOptions, TextClock, Margin, ClickEvent, FlexDirection, ItemAlign, Flex ,FlexAlign,
-  TextClockOptions,
-} from '@ohos.arkui.component'
+import { BadgeParamWithNumber, BadgeParamWithString, Color, HorizontalAlign, $r, Entry, Component, Column, ColumnOptions, NodeContainer, Text, Badge, Image, Row, Button, QRCode, TextClockController, Scroll, FlexOptions, TextClock, Margin, ClickEvent, FlexDirection, ItemAlign, Flex, FlexAlign, TextClockOptions } from '@ohos.arkui.component';
 import { typeNode, NodeController, FrameNode } from '@ohos.arkui.node';
-
 let timeController = new TextClockController()
 let data: TextClockOptions = {
   timeZoneOffset: -8,

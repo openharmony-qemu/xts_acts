@@ -12,18 +12,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "../../../hypium/index";
-import hilog from '@ohos.hilog'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../hypium/index';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
 import buffer from '@ohos.buffer';
 import serialManager from '@ohos.usbManager.serial';
-
 let domain: int = 0x0000;
 const TAG: string = "[SerialTest]";
 let portIds: int[] = [];

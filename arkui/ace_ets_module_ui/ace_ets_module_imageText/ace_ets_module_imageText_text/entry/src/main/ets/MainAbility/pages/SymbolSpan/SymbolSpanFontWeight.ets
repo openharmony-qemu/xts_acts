@@ -1,3 +1,5 @@
+import { symbolSpanFontWeightModifier } from '../../common/SymbolSpanFontWeightCompat';
+
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,6 +26,7 @@ struct SymbolSpanFontWeight {
             .fontWeight(100)
             .fontSize(48)
             .id('symbolSpan_fontWeight_100')
+            .key('symbolSpan_fontWeight_100')
         }
 
 
@@ -32,6 +35,7 @@ struct SymbolSpanFontWeight {
             .fontWeight(400)
             .fontSize(48)
             .id('symbolSpan_fontWeight_400')
+            .key('symbolSpan_fontWeight_400')
         }
 
 
@@ -40,6 +44,7 @@ struct SymbolSpanFontWeight {
             .fontWeight(900)
             .fontSize(48)
             .id('symbolSpan_fontWeight_900')
+            .key('symbolSpan_fontWeight_900')
         }
 
 
@@ -48,6 +53,7 @@ struct SymbolSpanFontWeight {
             .fontWeight(700)
             .fontSize(48)
             .id('symbolSpan_fontWeight_700')
+            .key('symbolSpan_fontWeight_700')
         }
 
 
@@ -56,6 +62,7 @@ struct SymbolSpanFontWeight {
             .fontWeight(FontWeight.Lighter)
             .fontSize(48)
             .id('symbolSpan_fontWeight_Lighter')
+            .key('symbolSpan_fontWeight_Lighter')
         }
 
 
@@ -64,6 +71,7 @@ struct SymbolSpanFontWeight {
             .fontWeight(FontWeight.Normal)
             .fontSize(48)
             .id('symbolSpan_fontWeight_Normal')
+            .key('symbolSpan_fontWeight_Normal')
         }
 
 
@@ -72,6 +80,7 @@ struct SymbolSpanFontWeight {
             .fontWeight(FontWeight.Regular)
             .fontSize(48)
             .id('symbolSpan_fontWeight_Regular')
+            .key('symbolSpan_fontWeight_Regular')
         }
 
 
@@ -80,6 +89,7 @@ struct SymbolSpanFontWeight {
             .fontWeight(FontWeight.Medium)
             .fontSize(48)
             .id('symbolSpan_fontWeight_Medium')
+            .key('symbolSpan_fontWeight_Medium')
         }
 
 
@@ -88,6 +98,7 @@ struct SymbolSpanFontWeight {
             .fontWeight(FontWeight.Bold)
             .fontSize(48)
             .id('symbolSpan_fontWeight_Bold')
+            .key('symbolSpan_fontWeight_Bold')
         }
 
 
@@ -96,6 +107,7 @@ struct SymbolSpanFontWeight {
             .fontWeight(FontWeight.Bolder)
             .fontSize(48)
             .id('symbolSpan_fontWeight_Bolder')
+            .key('symbolSpan_fontWeight_Bolder')
         }
 
 
@@ -104,6 +116,7 @@ struct SymbolSpanFontWeight {
             .fontWeight('400')
             .fontSize(48)
             .id('symbolSpan_fontWeight_string_400')
+            .key('symbolSpan_fontWeight_string_400')
         }
 
 
@@ -112,6 +125,7 @@ struct SymbolSpanFontWeight {
             .fontWeight('bold')
             .fontSize(48)
             .id('symbolSpan_fontWeight_string_bold')
+            .key('symbolSpan_fontWeight_string_bold')
         }
 
 
@@ -120,6 +134,7 @@ struct SymbolSpanFontWeight {
             .fontWeight('bolder')
             .fontSize(48)
             .id('symbolSpan_fontWeight_string_bolder')
+            .key('symbolSpan_fontWeight_string_bolder')
         }
 
 
@@ -128,6 +143,7 @@ struct SymbolSpanFontWeight {
             .fontWeight('lighter')
             .fontSize(48)
             .id('symbolSpan_fontWeight_string_lighter')
+            .key('symbolSpan_fontWeight_string_lighter')
         }
 
 
@@ -136,6 +152,7 @@ struct SymbolSpanFontWeight {
             .fontWeight('regular')
             .fontSize(48)
             .id('symbolSpan_fontWeight_string_regular')
+            .key('symbolSpan_fontWeight_string_regular')
         }
 
 
@@ -144,6 +161,7 @@ struct SymbolSpanFontWeight {
             .fontWeight('medium')
             .fontSize(48)
             .id('symbolSpan_fontWeight_string_medium')
+            .key('symbolSpan_fontWeight_string_medium')
         }
 
 
@@ -152,6 +170,7 @@ struct SymbolSpanFontWeight {
             .fontWeight('')
             .fontSize(48)
             .id('symbolSpan_fontWeight_empty_string')
+            .key('symbolSpan_fontWeight_empty_string')
         }
 
 
@@ -159,69 +178,83 @@ struct SymbolSpanFontWeight {
           SymbolSpan($r('sys.symbol.ohos_trash'))
             .fontSize(48)
             .id('symbolSpan_fontWeight_default')
+            .key('symbolSpan_fontWeight_default')
         }
 
 
         Text() {
           SymbolSpan($r('sys.symbol.ohos_trash'))
-            .fontWeight(220, { enableVariableFontWeight: true })
+            .attributeModifier(symbolSpanFontWeightModifier(220, { enableVariableFontWeight: true }))
             .fontSize(48)
             .id('symbolSpan_fontWeight_variable_220')
+            .key('symbolSpan_fontWeight_variable_220')
         }
 
 
         Text() {
           SymbolSpan($r('sys.symbol.ohos_trash'))
-            .fontWeight(660, { enableVariableFontWeight: true })
+            .attributeModifier(symbolSpanFontWeightModifier(660, { enableVariableFontWeight: true }))
             .fontSize(48)
             .id('symbolSpan_fontWeight_variable_660')
+            .key('symbolSpan_fontWeight_variable_660')
         }
 
 
         Text() {
           SymbolSpan($r('sys.symbol.ohos_trash'))
-            .fontWeight(400, { enableVariableFontWeight: false })
+            .attributeModifier(symbolSpanFontWeightModifier(400, { enableVariableFontWeight: false }))
             .fontSize(48)
             .id('symbolSpan_fontWeight_variable_false')
+            .key('symbolSpan_fontWeight_variable_false')
         }
 
 
         Text() {
           SymbolSpan($r('sys.symbol.ohos_trash'))
-            .fontWeight(FontWeight.Normal, { enableDeviceFontWeightCategory: true })
+            .attributeModifier(symbolSpanFontWeightModifier(
+              FontWeight.Normal, { enableDeviceFontWeightCategory: true }))
             .fontSize(48)
             .id('symbolSpan_fontWeight_device_true')
+            .key('symbolSpan_fontWeight_device_true')
         }
 
 
         Text() {
           SymbolSpan($r('sys.symbol.ohos_trash'))
-            .fontWeight(FontWeight.Normal, { enableDeviceFontWeightCategory: false })
+            .attributeModifier(symbolSpanFontWeightModifier(
+              FontWeight.Normal, { enableDeviceFontWeightCategory: false }))
             .fontSize(48)
             .id('symbolSpan_fontWeight_device_false')
+            .key('symbolSpan_fontWeight_device_false')
         }
 
 
         Text() {
           SymbolSpan($r('sys.symbol.ohos_trash'))
-            .fontWeight(500, { enableVariableFontWeight: true, enableDeviceFontWeightCategory: true })
+            .attributeModifier(symbolSpanFontWeightModifier(500, {
+              enableVariableFontWeight: true,
+              enableDeviceFontWeightCategory: true
+            }))
             .fontSize(48)
             .id('symbolSpan_fontWeight_configs_both')
+            .key('symbolSpan_fontWeight_configs_both')
         }
 
 
         Text() {
           SymbolSpan($r('sys.symbol.ohos_trash'))
-            .fontWeight(300, undefined)
+            .attributeModifier(symbolSpanFontWeightModifier(300, undefined))
             .fontSize(48)
             .id('symbolSpan_fontWeight_configs_undefined')
+            .key('symbolSpan_fontWeight_configs_undefined')
         }
 
         Text() {
           SymbolSpan($r('sys.symbol.ohos_trash'))
-            .fontWeight(300, null)
+            .fontWeight(300)
             .fontSize(48)
             .id('symbolSpan_fontWeight_configs_null')
+            .key('symbolSpan_fontWeight_configs_null')
         }
 
 
@@ -230,6 +263,7 @@ struct SymbolSpanFontWeight {
             .fontWeight(500)
             .fontSize(48)
             .id('symbolSpan_fontWeight_configs_default')
+            .key('symbolSpan_fontWeight_configs_default')
         }
 
 
@@ -238,6 +272,7 @@ struct SymbolSpanFontWeight {
             .fontWeight(50)
             .fontSize(48)
             .id('symbolSpan_fontWeight_out_range_low')
+            .key('symbolSpan_fontWeight_out_range_low')
         }
 
 
@@ -246,6 +281,7 @@ struct SymbolSpanFontWeight {
             .fontWeight(1000)
             .fontSize(48)
             .id('symbolSpan_fontWeight_out_range_high')
+            .key('symbolSpan_fontWeight_out_range_high')
         }
 
 
@@ -254,6 +290,7 @@ struct SymbolSpanFontWeight {
             .fontWeight(-100)
             .fontSize(48)
             .id('symbolSpan_fontWeight_negative')
+            .key('symbolSpan_fontWeight_negative')
         }
 
       }

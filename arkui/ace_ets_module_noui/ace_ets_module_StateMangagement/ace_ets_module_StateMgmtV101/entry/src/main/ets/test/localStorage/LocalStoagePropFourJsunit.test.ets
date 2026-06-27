@@ -67,7 +67,7 @@ export default function LocalStoagePropFourJsunit() {
     it('LocalStoagePropFourJsunit_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('[LocalStoagePropFourJsunit_0200] START');
-      let strJson1 = getInspectorByKey('text_state');
+      let strJson1 = getInspectorByKey('LocalStoagePropFour_text_state');
       let obj1: ESObject = JSON.parse(strJson1);
       console.info("[LocalStoagePropFourJsunit_0200] obj1 is: " + JSON.stringify(obj1));
       expect(obj1.$attrs.content).assertEqual('State:1,Link:1,Prop:1,Provide:1');
@@ -93,7 +93,7 @@ export default function LocalStoagePropFourJsunit() {
       expect(obj1.$attrs.content).assertEqual('localstorage:1,storProp1:1');
 
       let driver = await UiDriver.create()
-      let button_changeInitialValue = await driver.findComponent(BY.key('button_changeInitialValue'));
+      let button_changeInitialValue = await driver.findComponent(BY.key('LocalStoagePropFour' + '_button_changeInitialValue'));
       await button_changeInitialValue.click();
       await CommonFunc.sleep(1000);
 
@@ -103,7 +103,7 @@ export default function LocalStoagePropFourJsunit() {
       expect(obj2.$attrs.content).assertEqual('localstorage:1,storProp1:11');
 
 
-      let button_changeLocalStorageValue = await driver.findComponent(BY.key('button_changeLocalStorageValue'));
+      let button_changeLocalStorageValue = await driver.findComponent(BY.key('LocalStoagePropFour' + '_button_changeLocalStorageValue'));
       await button_changeLocalStorageValue.click();
       await CommonFunc.sleep(1000);
 

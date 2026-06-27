@@ -69,7 +69,7 @@ export default function blankJsunit() {
 
       console.info('blankTest_0002 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('blank' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
 

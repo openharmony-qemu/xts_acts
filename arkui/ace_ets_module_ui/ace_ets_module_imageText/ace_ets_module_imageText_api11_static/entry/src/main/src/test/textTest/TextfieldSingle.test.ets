@@ -83,7 +83,7 @@ export default function TextfieldSingleTest() {
           expect(selectAll).assertEqual(true);
           console.info('ArkUX_Text_Visual_static_0040 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Text_Visual_static_0040 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -109,7 +109,7 @@ export default function TextfieldSingleTest() {
           expect(selectAll).assertEqual(false);
           console.info('ArkUX_Text_Visual_static_0050 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Text_Visual_static_0050 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -135,7 +135,7 @@ export default function TextfieldSingleTest() {
           expect(selectAll).assertEqual(false);
           console.info('ArkUX_Text_Visual_static_0060 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Text_Visual_static_0060 ERR  ' + JSON.stringify(err));
         }
         done();

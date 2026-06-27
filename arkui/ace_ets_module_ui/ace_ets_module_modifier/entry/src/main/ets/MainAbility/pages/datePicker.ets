@@ -39,7 +39,7 @@ struct DatePickerExample {
     Column() {
       Button("change value").onClick(() => {
         (this.customModifier as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("datePicker_changeButton")
 
       DatePicker({
         start: new Date('1970-1-1'),

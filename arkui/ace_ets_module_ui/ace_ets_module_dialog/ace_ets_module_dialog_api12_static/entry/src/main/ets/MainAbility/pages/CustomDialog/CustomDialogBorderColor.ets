@@ -13,32 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Component,
-  $r,
-  Column,
-  ColumnOptions,
-  Text,
-  Color,
-  Flex,
-  FlexDirection,
-  ItemAlign,
-  Row,
-  Button,
-  ClickEvent,
-  Week,
-  FontWeight,
-  Axis,
-  Margin,DismissReason,DialogAlignment,BorderStyle,CustomDialogControllerOptions,
-  PickerTextStyle, CalendarAlign, CalendarPicker,Builder,TextOverflow, TextHeightAdaptivePolicy,DismissDialogAction,
-  ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,CustomDialog,CustomDialogControllerOptions,CustomDialogController
-} from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  PropRef,
-} from '@ohos.arkui.stateManagement';
+import { Entry, Component, $r, Column, ColumnOptions, Text, Color, Flex, FlexDirection, ItemAlign, Row, Button, ClickEvent, Week, FontWeight, Axis, Margin, DismissReason, DialogAlignment, BorderStyle, CustomDialogControllerOptions, PickerTextStyle, CalendarAlign, CalendarPicker, Builder, TextOverflow, TextHeightAdaptivePolicy, DismissDialogAction, ArrowPosition, Select, BlurStyle, MenuAlignType, TextInputController, CustomDialog, CustomDialogController } from '@ohos.arkui.component';
+import { State, Link, PropRef } from '@ohos.arkui.stateManagement';
 @CustomDialog
 struct CustomDialogExample11 {
   controller?: CustomDialogController;

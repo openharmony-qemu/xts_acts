@@ -22,8 +22,11 @@ struct TextTimerShadowTestExample {
   build() {
     Column({ space: 8 }) {
       TextTimer().fontSize(20).textShadow(this.textShadows1).id('textTimer1ShadowTest')
+      .key('textTimer1ShadowTest')
       TextTimer().fontSize(20).textShadow(this.textShadows2).id('textTimer2ShadowTest')
+      .key('textTimer2ShadowTest')
       TextTimer().fontSize(20).textShadow(this.textShadows3).id('textTimer3ShadowTest')
+      .key('textTimer3ShadowTest')
     }
   }
 }

@@ -36,9 +36,12 @@ struct ChildConsumer0140 {
       Button('Click0')
         .id('btnChildConsumer0140')
         .height('5%')
+        .margin({ top: 20 })
         .onClick(() => {
           this.message = 'ArkUI'
         })
     }
+    .padding(20)
+    .margin(20)
   }
 }

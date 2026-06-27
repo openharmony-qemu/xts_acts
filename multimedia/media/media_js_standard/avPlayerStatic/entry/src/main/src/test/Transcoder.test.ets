@@ -22,16 +22,27 @@ import fs from '@ohos.file.fs';
 import { BusinessError } from '@ohos.base';
 import { globalThis } from './Util.test';
 import resourceManager from '@ohos.resourceManager';
+import image from '@ohos.multimedia.image';
 
 let avTranscoder: media.AVTranscoder | null = null;
 let fileDescriptor: media.AVFileDescriptor | undefined = undefined;
 let outputFdObject: FdObject | null = null;
+let imageFd: number = -1;
+let imageResource: image.ImageSource | undefined;
+let imagePixelmap: image.PixelMap | undefined;
 let inputName = '';
 let outputName = '';
 let pauseProgress = 101;
 let times = 0;
 let mediaTestBase = new MediaTestBase()
 const PAUSE_TIME = 1000;
+
+let waterMarkConfig: media.WatermarkConfiguration = {
+  top: 100,
+  left: 100,
+  width: 100,
+  height: 100,
+}
 
 const CREATEAVTRANSCODER_PROMISE_EVENT = 'createPromise';
 const PREPAREAVTRANSCODER_PROMISE_EVENT = 'preparePromise';
@@ -46,6 +57,12 @@ const END_EVENT = 'end';
 
 const SETONCALLBACK_EVENT = 'setAVTransCoderCallback';
 const SET_SRC_AND_DST = 'setSrcAndDst';
+const ADDWATERMARK_EVENT = 'handleWaterMark';
+const ADDWATERMARK_ERRSTATE_EVENT = 'handleWaterMarkErrorState';
+const ADDWATERMARK_OUTRANGE_EVENT = 'handleWaterMarkOutRange';
+const CREATEAVTRANSCODER_WATERMARK_EVENT = 'createWaterMark';
+const STARTAVTRANSCODER_WATERMARK_EVENT = 'startWaterMark'; 
+const SET_SRC_AND_DST_WATERMARK = 'setSrcAndDstWaterMark';
 
 let avTranscoderConfig: media.AVTranscoderConfig = {
   audioBitrate: 200000,
@@ -67,7 +84,7 @@ async function closeRawFd(fileName: string) {
     })
 }
 
-function toNextStep(avTranscoder: media.AVTranscoder | null, config: media.AVTranscoderConfig, pauseTime: int,
+async function toNextStep(avTranscoder: media.AVTranscoder | null, config: media.AVTranscoderConfig, pauseTime: int,
   steps: Array<string>, done: () => void) {
 
   if (steps[0] == END_EVENT) {
@@ -77,7 +94,7 @@ function toNextStep(avTranscoder: media.AVTranscoder | null, config: media.AVTra
   switch (steps[0]) {
     case CREATEAVTRANSCODER_PROMISE_EVENT:
       steps.shift();
-        media.createAVTranscoder().then((transcoder: media.AVTranscoder | undefined) => {
+        await media.createAVTranscoder().then((transcoder: media.AVTranscoder | undefined) => {
           if (transcoder != null) {
             avTranscoder = transcoder;
             console.info('Succeeded in creating AVTranscoder');
@@ -91,9 +108,40 @@ function toNextStep(avTranscoder: media.AVTranscoder | null, config: media.AVTra
           toNextStep(avTranscoder, config, pauseTime, steps, done);
         });
       break;
+    case CREATEAVTRANSCODER_WATERMARK_EVENT:
+      steps.shift();
+        await media.createAVTranscoder().then(async (transcoder: media.AVTranscoder | undefined) => {
+          if (transcoder != null) {
+            try {
+              avTranscoder = transcoder;
+              let rawFd : resourceManager.RawFileDescriptor = await globalThis.abilityContext!!.resourceManager.getRawFdSync('watermark.png');
+              imageFd = rawFd.fd;
+              imageResource = image.createImageSource(rawFd);
+              const decodingOptions: image.DecodingOptions = {
+                editable: true,
+                desiredPixelFormat: image.PixelMapFormat.RGBA_8888,
+              }
+              imagePixelmap = await imageResource!.createPixelMap(decodingOptions);
+              console.info('Succeeded in creating AVTranscoder');
+              toNextStep(avTranscoder, config, pauseTime, steps, done);
+            } catch (e) {
+              console.error('Failed during AVTranscoder setup, error message: ${e}');
+              expect(steps[0]).assertEqual(ERROR_EVENT);
+              toNextStep(avTranscoder, config, pauseTime, steps, done);
+            }
+          } else {
+            console.error('Failed to create AVTranscoder');
+            toNextStep(avTranscoder, config, pauseTime, steps, done);
+          }
+        }).catch((error: Error) => {
+          console.error(`Failed to create AVTranscoder, error message:${error}`);
+          expect(steps[0]).assertEqual(ERROR_EVENT);
+          toNextStep(avTranscoder, config, pauseTime, steps, done);
+        });
+      break;
     case PREPAREAVTRANSCODER_PROMISE_EVENT:
       steps.shift();
-        avTranscoder!.prepare(config).then(() => {
+        await avTranscoder!.prepare(config).then(() => {
           console.info('prepare success');
           setTimeout(() => {
             toNextStep(avTranscoder, config, pauseTime, steps, done);
@@ -107,8 +155,22 @@ function toNextStep(avTranscoder: media.AVTranscoder | null, config: media.AVTra
     case STARTAVTRANSCODER_PROMISE_EVENT:
       steps.shift();
         console.info('case STARTAVTRANSCODER_PROMISE_EVENT in');
-        avTranscoder?.start().then(() => {
+        await avTranscoder?.start().then(() => {
           console.info('start success');
+        }).catch((err: Error) => {
+          console.info('start failed and catch error is ' + err.message);
+          expect(steps[0]).assertEqual(ERROR_EVENT);
+          toNextStep(avTranscoder, config, pauseTime, steps, done);
+        });
+      break;
+    case STARTAVTRANSCODER_WATERMARK_EVENT:
+      steps.shift();
+        console.info('case STARTAVTRANSCODER_WATERMARK_EVENT in');
+        await avTranscoder?.start().then(() => {
+          console.info('start success');
+          setTimeout(() => {
+            toNextStep(avTranscoder, config, pauseTime, steps, done);
+          }, 3000)
         }).catch((err: Error) => {
           console.info('start failed and catch error is ' + err.message);
           expect(steps[0]).assertEqual(ERROR_EVENT);
@@ -117,7 +179,7 @@ function toNextStep(avTranscoder: media.AVTranscoder | null, config: media.AVTra
       break;
     case PAUSEAVTRANSCODER_PROMISE_EVENT:
       steps.shift();
-        avTranscoder?.pause().then(() => {
+        await avTranscoder?.pause().then(() => {
           console.info('pause AVTranscoder success');
           setTimeout(() => {
             console.info('PAUSEAVTRANSCODER_PROMISE_EVENT setTimeout success');
@@ -131,7 +193,7 @@ function toNextStep(avTranscoder: media.AVTranscoder | null, config: media.AVTra
       break;
     case RESUMEAVTRANSCODER_PROMISE_EVENT:
       steps.shift();
-        avTranscoder?.resume().then(() => {
+        await avTranscoder?.resume().then(() => {
           console.info('resume AVTranscoder success');
           toNextStep(avTranscoder, config, pauseTime, steps, done);
         }).catch((err: Error) => {
@@ -142,7 +204,7 @@ function toNextStep(avTranscoder: media.AVTranscoder | null, config: media.AVTra
       break;
     case CANCELAVTRANSCODER_PROMISE_EVENT:
       steps.shift();
-        avTranscoder?.cancel().then(() => {
+        await avTranscoder?.cancel().then(() => {
           console.info('cancel AVTranscoder success');
           toNextStep(avTranscoder, config, pauseTime, steps, done);
         }).catch((err: Error) => {
@@ -153,10 +215,10 @@ function toNextStep(avTranscoder: media.AVTranscoder | null, config: media.AVTra
       break;
     case RELEASEAVTRANSCODER_PROMISE_EVENT:
       steps.shift();
-      avTranscoder?.offComplete();
-      avTranscoder?.offError();
-      avTranscoder?.offProgressUpdate();
-        avTranscoder?.release().then(() => {
+      await avTranscoder?.offComplete();
+      await avTranscoder?.offError();
+      await avTranscoder?.offProgressUpdate();
+        await avTranscoder?.release().then(() => {
           console.info('release AVTranscoder success');
           toNextStep(avTranscoder, config, pauseTime, steps, done);
         }).catch((err: Error) => {
@@ -166,11 +228,11 @@ function toNextStep(avTranscoder: media.AVTranscoder | null, config: media.AVTra
       break;
     case RELEASEAVTRANSCODERWITHPARAM_PROMISE_EVENT:
       steps.shift();
-      avTranscoder?.offComplete(() => {
+      await avTranscoder?.offComplete(() => {
         console.info('avTranscoder complete');
         toNextStep(avTranscoder, config, pauseTime, steps, done);
       });
-      avTranscoder?.offError((err: BusinessError) => {
+      await avTranscoder?.offError((err: BusinessError) => {
         try {
           console.error('error ocConstantSourceNode, error message is ' + err);
           toNextStep(avTranscoder, config, pauseTime, steps, done);
@@ -179,7 +241,7 @@ function toNextStep(avTranscoder: media.AVTranscoder | null, config: media.AVTra
           console.error('when error on execute releaseRecorderPromise error message is ' + error);
         }
       });
-      avTranscoder?.offProgressUpdate((progress: int) => {
+      await avTranscoder?.offProgressUpdate((progress: int) => {
         console.info('avTranscoder progressUpdate = ' + progress);
         // to pause
         if (progress > 100) {
@@ -194,7 +256,7 @@ function toNextStep(avTranscoder: media.AVTranscoder | null, config: media.AVTra
           toNextStep(avTranscoder, config, pauseTime, steps, done);
         }
       })
-        avTranscoder?.release().then(() => {
+        await avTranscoder?.release().then(() => {
           console.info('release AVTranscoder with param success');
           toNextStep(avTranscoder, config, pauseTime, steps, done);
         }).catch((err: Error) => {
@@ -232,6 +294,60 @@ function toNextStep(avTranscoder: media.AVTranscoder | null, config: media.AVTra
           toNextStep(avTranscoder, config, pauseTime, steps, done);
       } catch (error) {
         console.info('SET_SRC_AND_DST failed and catch error is ' + JSON.stringify(error));
+      }
+      break;
+    case SET_SRC_AND_DST_WATERMARK:
+      steps.shift();
+      try {
+        console.info('case SET_SRC_AND_DST in');
+          if (fileDescriptor && avTranscoder) {
+            avTranscoder!!.fdSrc = fileDescriptor!!;
+          }
+          if (outputFdObject && outputFdObject!!.fdNumber && avTranscoder) {
+            avTranscoder!!.fdDst = outputFdObject!!.fdNumber!.toInt();
+          }
+          toNextStep(avTranscoder, config, pauseTime, steps, done);
+      } catch (error) {
+        console.info('SET_SRC_AND_DST_WATERMARK failed and catch error is ' + JSON.stringify(error));
+        expect(steps[0]).assertEqual(ERROR_EVENT);
+        toNextStep(avTranscoder, config, pauseTime, steps, done);
+      }
+      break;
+    case ADDWATERMARK_EVENT:
+      steps.shift();
+      await avTranscoder?.addWatermark(imagePixelmap!, waterMarkConfig).then((watermarkId) => {
+        console.info('addWatermark success, watermarkId: ' + watermarkId);
+        expect(watermarkId).assertEqual(1);
+        toNextStep(avTranscoder, config, pauseTime, steps, done);
+      }).catch((err: Error) => {
+        console.error('addWatermark failed and catch error is ' + err.message);
+        expect().assertFail();
+      });
+      break;
+    case ADDWATERMARK_ERRSTATE_EVENT:
+      steps.shift();
+      await avTranscoder?.addWatermark(imagePixelmap!, waterMarkConfig).then((watermarkId) => {
+        console.info('addWatermark success, watermarkId: ' + watermarkId);
+        expect().assertFail();
+      }).catch((err: Error) => {
+        console.error('addWatermark failed and catch error is ' + err.message + err.code);
+        expect(err.code).assertEqual(5400102);
+        toNextStep(avTranscoder, config, pauseTime, steps, done);
+      });
+      break;
+    case ADDWATERMARK_OUTRANGE_EVENT:
+      steps.shift();
+      try {
+        // 测试添加水印超过最大数量限制,循环调用 addWatermark 6次
+        for (let i = 0; i < 6; i++) {
+          const watermarkId: number = await avTranscoder!.addWatermark(imagePixelmap!, waterMarkConfig);
+          console.info(`addWatermark success, times: ${i + 1}, watermarkId: ${watermarkId}`);
+          expect(watermarkId).assertEqual(i + 1);
+        }
+      } catch (err) {
+        console.error('addWatermark failed and catch error is ' + err.message + err.code);
+        expect(err.code).assertEqual(5400108);
+        toNextStep(avTranscoder, config, pauseTime, steps, done);
       }
       break;
     default:
@@ -494,7 +610,7 @@ export default function AVTransCoderTest() {
       let avTranscoderConfig: media.AVTranscoderConfig = {
         audioBitrate: 200000,
         audioCodec: media.CodecMimeType.VIDEO_MPEG2,
-        fileFormat: media.ContainerFormatType.CFT_WAV,
+        fileFormat: media.ContainerFormatType.CFT_MPEG_4,
         videoBitrate: 3000000,
         videoCodec: media.CodecMimeType.VIDEO_MPEG4,
         videoFrameWidth: 720,
@@ -530,7 +646,7 @@ export default function AVTransCoderTest() {
       let avTranscoderConfig: media.AVTranscoderConfig = {
         audioBitrate: 200000,
         audioCodec: media.CodecMimeType.VIDEO_MPEG4,
-        fileFormat: media.ContainerFormatType.CFT_AMR,
+        fileFormat: media.ContainerFormatType.CFT_MPEG_4,
         videoBitrate: 3000000,
         videoCodec: media.CodecMimeType.VIDEO_VP8,
         videoFrameWidth: 720,
@@ -566,7 +682,7 @@ export default function AVTransCoderTest() {
       let avTranscoderConfig: media.AVTranscoderConfig = {
         audioBitrate: 200000,
         audioCodec: media.CodecMimeType.VIDEO_VP8,
-        fileFormat: media.ContainerFormatType.CFT_AAC,
+        fileFormat: media.ContainerFormatType.CFT_MPEG_4,
         videoBitrate: 3000000,
         videoCodec: media.CodecMimeType.VIDEO_HEVC,
         videoFrameWidth: 720,
@@ -946,7 +1062,7 @@ export default function AVTransCoderTest() {
       let avTranscoderConfig: media.AVTranscoderConfig = {
         audioBitrate: 200000,
         audioCodec: media.CodecMimeType.VIDEO_AVC,
-        fileFormat: media.ContainerFormatType.CFT_MP3,
+        fileFormat: media.ContainerFormatType.CFT_MPEG_4,
         videoBitrate: 3000000,
         videoCodec: media.CodecMimeType.VIDEO_MPEG2,
         videoFrameWidth: 720,
@@ -968,6 +1084,280 @@ export default function AVTransCoderTest() {
         END_EVENT);
       toNextStep(avTranscoder, avTranscoderConfig, PAUSE_TIME, mySteps, done)
       console.info('SUB_MULTIMEDIA_AVTANSCODER_static_1600 end');
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVTANSCODER_static_1700
+     * @tc.number SUB_MULTIMEDIA_AVTANSCODER_static_1700
+     * @tc.desc   Transcoder addWatermark
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVTANSCODER_static_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info('SUB_MULTIMEDIA_AVTANSCODER_static_1700 start');
+      let avTranscoderConfig: media.AVTranscoderConfig = {
+        audioBitrate: 200000,
+        audioCodec: media.CodecMimeType.AUDIO_AAC,
+        fileFormat: media.ContainerFormatType.CFT_MPEG_4,
+        videoBitrate: 3000000,
+        videoCodec: media.CodecMimeType.VIDEO_HEVC,
+        videoFrameWidth: 720,
+        videoFrameHeight: 480,
+      }
+      outputName = resourceName();
+      pauseProgress = 30;
+      inputName = "H264_AAC.mp4";
+      await getfdScrAndfdDst();
+      expect(outputFdObject).not().assertNull();
+      let mySteps = new Array<string>(
+        // create
+        CREATEAVTRANSCODER_WATERMARK_EVENT, SETONCALLBACK_EVENT, SET_SRC_AND_DST_WATERMARK,
+        // addWatermark
+        ADDWATERMARK_EVENT,
+        // prepare
+        PREPAREAVTRANSCODER_PROMISE_EVENT,
+        // start Transcoder
+        STARTAVTRANSCODER_WATERMARK_EVENT,
+        // pause Transcoder
+        PAUSEAVTRANSCODER_PROMISE_EVENT,
+        // resume Transcoder
+        RESUMEAVTRANSCODER_PROMISE_EVENT,
+        // cancel Transcoder
+        CANCELAVTRANSCODER_PROMISE_EVENT,
+        // release Transcoder
+        RELEASEAVTRANSCODER_PROMISE_EVENT,
+        // end
+        END_EVENT);
+      toNextStep(avTranscoder, avTranscoderConfig, PAUSE_TIME, mySteps, done)
+      console.info('SUB_MULTIMEDIA_AVTANSCODER_static_1700 end');
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVTANSCODER_static_1900
+     * @tc.number SUB_MULTIMEDIA_AVTANSCODER_static_1900
+     * @tc.desc   Transcoder addWatermark
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVTANSCODER_static_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info('SUB_MULTIMEDIA_AVTANSCODER_static_1900 start');
+      let avTranscoderConfig: media.AVTranscoderConfig = {
+        audioBitrate: 200000,
+        audioCodec: media.CodecMimeType.AUDIO_AAC,
+        fileFormat: media.ContainerFormatType.CFT_MPEG_4,
+        videoBitrate: 3000000,
+        videoCodec: media.CodecMimeType.VIDEO_HEVC,
+        videoFrameWidth: 720,
+        videoFrameHeight: 480,
+      }
+      outputName = resourceName();
+      pauseProgress = 30;
+      inputName = "H264_AAC.mp4";
+      await getfdScrAndfdDst();
+      expect(outputFdObject).not().assertNull();
+      let mySteps = new Array<string>(
+        // create
+        CREATEAVTRANSCODER_WATERMARK_EVENT, SETONCALLBACK_EVENT, SET_SRC_AND_DST_WATERMARK,
+        // addWatermark
+        ADDWATERMARK_OUTRANGE_EVENT,
+        // prepare
+        PREPAREAVTRANSCODER_PROMISE_EVENT,
+        // start Transcoder
+        STARTAVTRANSCODER_WATERMARK_EVENT,
+        // pause Transcoder
+        PAUSEAVTRANSCODER_PROMISE_EVENT,
+        // resume Transcoder
+        RESUMEAVTRANSCODER_PROMISE_EVENT,
+        // cancel Transcoder
+        CANCELAVTRANSCODER_PROMISE_EVENT,
+        // release Transcoder
+        RELEASEAVTRANSCODER_PROMISE_EVENT,
+        // end
+        END_EVENT);
+      toNextStep(avTranscoder, avTranscoderConfig, PAUSE_TIME, mySteps, done)
+      console.info('SUB_MULTIMEDIA_AVTANSCODER_static_1900 end');
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVTANSCODER_static_2000
+     * @tc.number SUB_MULTIMEDIA_AVTANSCODER_static_2000
+     * @tc.desc   Transcoder addWatermark
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVTANSCODER_static_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info('SUB_MULTIMEDIA_AVTANSCODER_static_2000 start');
+      let avTranscoderConfig: media.AVTranscoderConfig = {
+        audioBitrate: 200000,
+        audioCodecV2: media.CodecMimeType.AUDIO_MP3,
+        fileFormat: media.ContainerFormatType.CFT_MPEG_4,
+        videoBitrate: 3000000,
+        videoCodec: media.CodecMimeType.VIDEO_HEVC,
+        videoFrameWidth: 720,
+        videoFrameHeight: 480,
+      }
+      outputName = resourceName();
+      pauseProgress = 30;
+      inputName = "H264_AAC.mp4";
+      await getfdScrAndfdDst();
+      expect(outputFdObject).not().assertNull();
+      let mySteps = new Array<string>(
+        // create
+        CREATEAVTRANSCODER_PROMISE_EVENT, SETONCALLBACK_EVENT, SET_SRC_AND_DST,
+        // prepare
+        PREPAREAVTRANSCODER_PROMISE_EVENT,
+        // start Transcoder
+        STARTAVTRANSCODER_PROMISE_EVENT,
+        // pause Transcoder
+        PAUSEAVTRANSCODER_PROMISE_EVENT,
+        // resume Transcoder
+        RESUMEAVTRANSCODER_PROMISE_EVENT,
+        // cancel Transcoder
+        CANCELAVTRANSCODER_PROMISE_EVENT,
+        // release Transcoder
+        RELEASEAVTRANSCODERWITHPARAM_PROMISE_EVENT,
+        // end
+        END_EVENT);
+      toNextStep(avTranscoder, avTranscoderConfig, PAUSE_TIME, mySteps, done)
+      console.info('SUB_MULTIMEDIA_AVTANSCODER_static_2000 end');
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVTANSCODER_static_2100
+     * @tc.number SUB_MULTIMEDIA_AVTANSCODER_static_2100
+     * @tc.desc   Transcoder start-pause-resume-cancel-release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVTANSCODER_static_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info('SUB_MULTIMEDIA_AVTANSCODER_static_2100 start');
+      let avTranscoderConfig: media.AVTranscoderConfig = {
+        audioBitrate: 200000,
+        audioCodecV2: media.CodecMimeType.AUDIO_MP3,
+        fileFormat: media.ContainerFormatType.CFT_MP3,
+        videoBitrate: 3000000,
+        videoCodec: media.CodecMimeType.AUDIO_AAC,
+        videoFrameWidth: 720,
+        videoFrameHeight: 480,
+      }
+      outputName = resourceName();
+      pauseProgress = 30;
+      inputName = "01.mp3";
+      await getfdScrAndfdDst();
+      expect(outputFdObject).not().assertNull();
+      let mySteps = new Array<string>(
+        // create
+        CREATEAVTRANSCODER_PROMISE_EVENT, SETONCALLBACK_EVENT, SET_SRC_AND_DST,
+        // prepare
+        PREPAREAVTRANSCODER_PROMISE_EVENT,
+        // start Transcoder
+        STARTAVTRANSCODER_PROMISE_EVENT,
+        // pause Transcoder
+        PAUSEAVTRANSCODER_PROMISE_EVENT,
+        // resume Transcoder
+        RESUMEAVTRANSCODER_PROMISE_EVENT,
+        // cancel Transcoder
+        CANCELAVTRANSCODER_PROMISE_EVENT,
+        // release Transcoder
+        RELEASEAVTRANSCODER_PROMISE_EVENT,
+        // end
+        END_EVENT);
+      toNextStep(avTranscoder, avTranscoderConfig, PAUSE_TIME, mySteps, done)
+      console.info('SUB_MULTIMEDIA_AVTANSCODER_static_2100 end');
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVTANSCODER_static_2200
+     * @tc.number SUB_MULTIMEDIA_AVTANSCODER_static_2200
+     * @tc.desc   Transcoder start-pause-resume-cancel-release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVTANSCODER_static_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info('SUB_MULTIMEDIA_AVTANSCODER_static_2200 start');
+      let avTranscoderConfig: media.AVTranscoderConfig = {
+        audioBitrate: 200000,
+        audioCodecV2: media.CodecMimeType.AUDIO_AMR_NB,
+        fileFormat: media.ContainerFormatType.CFT_AMR,
+        videoBitrate: 3000000,
+        videoCodec: media.CodecMimeType.AUDIO_AAC,
+        videoFrameWidth: 720,
+        videoFrameHeight: 480,
+      }
+      outputName = resourceName();
+      pauseProgress = 30;
+      inputName = "01.mp3";
+      await getfdScrAndfdDst();
+      expect(outputFdObject).not().assertNull();
+      let mySteps = new Array<string>(
+        // create
+        CREATEAVTRANSCODER_PROMISE_EVENT, SETONCALLBACK_EVENT, SET_SRC_AND_DST,
+        // prepare
+        PREPAREAVTRANSCODER_PROMISE_EVENT,
+        // start Transcoder
+        STARTAVTRANSCODER_PROMISE_EVENT,
+        // pause Transcoder
+        PAUSEAVTRANSCODER_PROMISE_EVENT,
+        // resume Transcoder
+        RESUMEAVTRANSCODER_PROMISE_EVENT,
+        // cancel Transcoder
+        CANCELAVTRANSCODER_PROMISE_EVENT,
+        // release Transcoder
+        RELEASEAVTRANSCODER_PROMISE_EVENT,
+        // end
+        END_EVENT);
+      toNextStep(avTranscoder, avTranscoderConfig, PAUSE_TIME, mySteps, done)
+      console.info('SUB_MULTIMEDIA_AVTANSCODER_static_2200 end');
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVTANSCODER_static_2300
+     * @tc.number SUB_MULTIMEDIA_AVTANSCODER_static_2300
+     * @tc.desc   Transcoder start-pause-resume-cancel-release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVTANSCODER_static_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info('SUB_MULTIMEDIA_AVTANSCODER_static_2300 start');
+      let avTranscoderConfig: media.AVTranscoderConfig = {
+        audioBitrate: 200000,
+        audioCodecV2: media.CodecMimeType.AUDIO_AAC,
+        fileFormat: media.ContainerFormatType.CFT_AAC,
+        videoBitrate: 3000000,
+        videoCodec: media.CodecMimeType.AUDIO_AAC,
+        videoFrameWidth: 720,
+        videoFrameHeight: 480,
+      }
+      outputName = resourceName();
+      pauseProgress = 30;
+      inputName = "01.mp3";
+      await getfdScrAndfdDst();
+      expect(outputFdObject).not().assertNull();
+      let mySteps = new Array<string>(
+        // create
+        CREATEAVTRANSCODER_PROMISE_EVENT, SETONCALLBACK_EVENT, SET_SRC_AND_DST,
+        // prepare
+        PREPAREAVTRANSCODER_PROMISE_EVENT,
+        // start Transcoder
+        STARTAVTRANSCODER_PROMISE_EVENT,
+        // pause Transcoder
+        PAUSEAVTRANSCODER_PROMISE_EVENT,
+        // resume Transcoder
+        RESUMEAVTRANSCODER_PROMISE_EVENT,
+        // cancel Transcoder
+        CANCELAVTRANSCODER_PROMISE_EVENT,
+        // release Transcoder
+        RELEASEAVTRANSCODER_PROMISE_EVENT,
+        // end
+        END_EVENT);
+      toNextStep(avTranscoder, avTranscoderConfig, PAUSE_TIME, mySteps, done)
+      console.info('SUB_MULTIMEDIA_AVTANSCODER_static_2300 end');
     });
   })
 }

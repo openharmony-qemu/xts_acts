@@ -13,17 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  describe,
-  beforeEach,
-  it,
-  expect,
-  Level,
-  beforeAll,
-  Size,
-  TestType,
-  afterEach
-} from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -32,8 +22,6 @@ import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
-import Utils from '../../../ets/MainAbility/common/Utils'
-
 export default function cancelButtonStyleTest() {
   describe('cancelButtonStyleTest', () => {
     beforeAll(async (): Promise<void> => {

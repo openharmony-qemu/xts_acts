@@ -70,7 +70,7 @@ struct PromptShowDialog {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("showDialogText")
+        .key("prompt1_showDialogText")
         .onClick((e: ClickEvent) => {
           try {
             let backData: emitter.EventData = {
@@ -101,7 +101,7 @@ struct PromptShowDialog {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("showActionMenuText")
+        .key("prompt1_showActionMenuText")
         .onClick((e: ClickEvent) => {
           try {
             let backData1: emitter.EventData = {

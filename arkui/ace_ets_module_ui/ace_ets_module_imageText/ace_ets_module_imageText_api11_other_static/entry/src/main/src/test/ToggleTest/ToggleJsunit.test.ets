@@ -15,57 +15,22 @@
  */
 
 import router from '@ohos.router';
-import {
-  Component,
-  Driver,
-  UiWindow,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix
-} from '@ohos.UiTest';
-import router from '@ohos.router';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import window from '@ohos.window';
 import events_emitter from '@ohos.events.emitter';
-import {
-  describe,
-  beforeAll,
-  beforeEach,
-  afterEach,
-  afterAll,
-  it,
-  expect,
-  Level,
-  TestType,
-  Size
-} from "../../../../hypium/index"
-import {
-  Driver,
-  Component,
-  UiWindow,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix
-} from '@ohos.UiTest';
-import { AppStorage } from '@ohos.arkui.stateManagement'
-import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '../../../../hypium/index';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import inspector from '@ohos.arkui.inspector';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import { UtilsTest, startAbility, stopApplication } from "../Util.test"
+import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { ToggleType } from '@ohos.arkui.component';
-
-
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
@@ -153,7 +118,7 @@ it('ToggleJsunit_static_0200', Level.LEVEL2, async (done: () => void): Promise<v
       let switchButton = await driver.findComponent(ON.id('toggleSwitch'));
       await (switchButton?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let textComponent = await driver.findComponent(ON.id('text'));
+      let textComponent = await driver.findComponent(ON.id('TogglePage' + '_text'));
       let switchText = await (textComponent?.getText() as Promise<string>);
       console.info("[ToggleJsunit_0200] switchText: " + JSON.stringify(switchText));
       expect(switchText).assertEqual('switch true');
@@ -162,7 +127,7 @@ it('ToggleJsunit_static_0200', Level.LEVEL2, async (done: () => void): Promise<v
       let switchButton1 = await driver1.findComponent(ON.id('toggleSwitch'));
       await (switchButton1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let textComponent1 = await driver1.findComponent(ON.id('text'));
+      let textComponent1 = await driver1.findComponent(ON.id('TogglePage' + '_text'));
       let switch1 = await (textComponent1?.getText() as Promise<string>);
       console.info("[ToggleJsunit_0200] switch1: " + JSON.stringify(switch1));
       expect(switch1).assertEqual('switch false');
@@ -185,7 +150,7 @@ it('ToggleJsunit_static_0300', Level.LEVEL2, async (done: () => void): Promise<v
       let checkboxButton = await driver.findComponent(ON.id('toggleCheckbox'));
       await (checkboxButton?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let textComponent = await driver.findComponent(ON.id('text'));
+      let textComponent = await driver.findComponent(ON.id('TogglePage' + '_text'));
       let checkbox = await (textComponent?.getText() as Promise<string>);
       console.info("[ToggleJsunit_0300] checkbox: " + JSON.stringify(checkbox));
       expect(checkbox).assertEqual('checkbox false');
@@ -213,7 +178,7 @@ it('ToggleJsunit_static_0400', Level.LEVEL2, async (done: () => void): Promise<v
       let buttonComponent = await driver.findComponent(ON.id('toggleButton'));
       await (buttonComponent?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let textComponent = await driver.findComponent(ON.id('text'));
+      let textComponent = await driver.findComponent(ON.id('TogglePage' + '_text'));
       let button = await (textComponent?.getText() as Promise<string>);
       console.info("[ToggleJsunit_0400] button: " + JSON.stringify(button));
       expect(button).assertEqual('button true');

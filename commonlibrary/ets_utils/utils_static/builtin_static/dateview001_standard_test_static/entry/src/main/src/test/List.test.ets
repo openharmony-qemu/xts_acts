@@ -1,0 +1,47 @@
+import DataViewAttrTest from "./dateview/DataViewAttrTest.test";
+import DataViewConstructorTest from "./dateview/DataViewConstructorTest.test";
+import DataViewGetBigInt64Test from "./dateview/DataViewGetBigInt64Test.test";
+import DataViewGetBigUint64Test from "./dateview/DataViewGetBigUint64Test.test";
+import DataViewGetFloat64Test from "./dateview/DataViewGetFloat64Test.test";
+import DataViewGetFloat32Test from "./dateview/DataViewGetFloat32Test.test";
+import DataViewGetInt16Test from "./dateview/DataViewGetInt16Test.test";
+import DataViewGetInt32Test from "./dateview/DataViewGetInt32Test.test";
+import DataViewGetInt8Test from "./dateview/DataViewGetInt8Test.test";
+import DataViewGetUint16Test from "./dateview/DataViewGetUint16Test.test";
+import DataViewGetUint32Test from "./dateview/DataViewGetUint32Test.test";
+import DataViewGetUint8Test from "./dateview/DataViewGetUint8Test.test";
+import DataViewSetBigInt64Test from "./dateview/DataViewSetBigInt64Test.test";
+import DataViewSetBigUint64Test from "./dateview/DataViewSetBigUint64Test.test";
+import DataViewSetFloat32Test from "./dateview/DataViewSetFloat32Test.test";
+import DataViewSetFloat64Test from "./dateview/DataViewSetFloat64Test.test";
+import DataViewSetInt16Test from "./dateview/DataViewSetInt16Test.test";
+import DataViewSetInt32Test from "./dateview/DataViewSetInt32Test.test";
+import DataViewSetInt8Test from "./dateview/DataViewSetInt8Test.test";
+import DataViewSetUint16Test from "./dateview/DataViewSetUint16Test.test";
+import DataViewSetUint32Test from "./dateview/DataViewSetUint32Test.test";
+import DataViewSetUint8Test from "./dateview/DataViewSetUint8Test.test";
+
+export default function testsuite(): void {
+  DataViewAttrTest();
+  DataViewConstructorTest();
+  DataViewGetBigInt64Test();
+  DataViewGetBigUint64Test();
+  DataViewGetFloat64Test();
+  DataViewGetFloat32Test();
+  DataViewGetInt16Test();
+  DataViewGetInt32Test();
+  DataViewGetInt8Test();
+  DataViewGetUint16Test();
+  DataViewGetUint32Test();
+  DataViewGetUint8Test();
+  DataViewSetBigInt64Test();
+  DataViewSetBigUint64Test();
+  DataViewSetFloat32Test();
+  DataViewSetFloat64Test();
+  DataViewSetInt16Test();
+  DataViewSetInt32Test();
+  DataViewSetInt8Test();
+  DataViewSetUint16Test();
+  DataViewSetUint32Test();
+  DataViewSetUint8Test();
+}

@@ -28,7 +28,7 @@ struct VideoContentTransitionEffect {
 
   build() {
     Column() {
-      Text(this.str).height(20).id('VideoContentTransitionEffectStr')
+      Text(this.str).height(20).id('VideoContentTransitionEffectStr').key('VideoContentTransitionEffectStr')
       Button('ShowFirstFrame')
         .onClick(()=>{
           this.showFirstFrame = this.showFirstFrame ? false : true
@@ -36,7 +36,7 @@ struct VideoContentTransitionEffect {
         .height(40)
         .width(120)
       Button('ContentTransitionEffect')
-        .id('VideoContentTransitionEffect')
+        .id('VideoContentTransitionEffect').key('VideoContentTransitionEffect')
         .onClick(()=>{
           this.transitionIndex = (this.transitionIndex + 1) % 3
           if (this.transitionIndex == 0) {

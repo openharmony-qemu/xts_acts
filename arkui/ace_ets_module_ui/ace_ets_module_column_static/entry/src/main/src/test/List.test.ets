@@ -15,7 +15,9 @@
  */
 
 import ColumnBuilderTest from './ColumnTest/ColumnBuilder.test';
+import WithEnvDirectionTest from './ColumnTest/WithEnvDirectionTest.test';
 
 export default function testsuite() {
-    ColumnBuilderTest();
+  ColumnBuilderTest();
+  WithEnvDirectionTest();
 }

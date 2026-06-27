@@ -69,7 +69,7 @@ export default function playModeJsunit() {
       } catch (err) {
         console.info("playModeTest_0100 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("playModeTest_0100 click result is: " + JSON.stringify(sendEventByKey('button', 10, "")));
+      console.info("playModeTest_0100 click result is: " + JSON.stringify(sendEventByKey('playMode' + '_button', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('playModeTest_0100 END');
       done();

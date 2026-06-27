@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import { Entry, Component, Column,Button,ColumnOptions,Text,Flex,Direction,FlexDirection,FlexWrap,FlexAlign,ClickEvent,ItemAlign,FlexOptions,HorizontalAlign,Margin,FontWeight,ButtonType } from '@ohos.arkui.component';
-import { State,AppStorage } from '@ohos.arkui.stateManagement';
+import { AppStorage, State } from '@ohos.arkui.stateManagement';
+import { Entry, Component, Column, Button, ColumnOptions, Text, Flex, Direction, FlexDirection, FlexWrap, FlexAlign, ClickEvent, ItemAlign, FlexOptions, HorizontalAlign, Margin, FontWeight, ButtonType } from '@ohos.arkui.component';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Entry
 @Component

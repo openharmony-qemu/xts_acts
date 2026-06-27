@@ -13,22 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 import RectValue from '../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
-import { GlobalContext } from '../../../../ets/MainAbility/common/GlobalContext'
+import { GlobalContext } from '../../../../ets/MainAbility/common/GlobalContext';
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
-import { UIContext } from "@ohos.arkui.UIContext";
-import { Router } from '@ohos.arkui.UIContext';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -88,10 +85,10 @@ export default function flexBasis_Default() {
 //         name: 'addflexBasis', value: null
 //       });
 //       await CommonFunc.sleep(3000);
-//       let Column_flexBasis_011: RectValue = CommonFunc.getComponentRect('Column_flexBasis_011');
-//       let Column_flexBasis_012: RectValue = CommonFunc.getComponentRect('Column_flexBasis_012');
-//       let Column_flexBasis_013: RectValue = CommonFunc.getComponentRect('Column_flexBasis_013');
-//       let Column_flexBasis_01: RectValue = CommonFunc.getComponentRect('Column_flexBasis_01');
+//       let Column_flexBasis_011: RectValue = CommonFunc.getComponentRect('flexBasis_Default' + '_Column_flexBasis_011');
+//       let Column_flexBasis_012: RectValue = CommonFunc.getComponentRect('flexBasis_Default' + '_Column_flexBasis_012');
+//       let Column_flexBasis_013: RectValue = CommonFunc.getComponentRect('flexBasis_Default' + '_Column_flexBasis_013');
+//       let Column_flexBasis_01: RectValue = CommonFunc.getComponentRect('flexBasis_Default' + '_Column_flexBasis_01');
 //       console.log('assert position')
 //       expect(Math.abs((Column_flexBasis_011.left - Column_flexBasis_01.left) - (Column_flexBasis_01.right - Column_flexBasis_011.right)) <= 1)
 //         .assertTrue();
@@ -138,10 +135,10 @@ export default function flexBasis_Default() {
 //         name: 'addflexBasis', value: undefined
 //       });
 //       await CommonFunc.sleep(3000);
-//       let Column_flexBasis_011: RectValue = CommonFunc.getComponentRect('Column_flexBasis_011');
-//       let Column_flexBasis_012: RectValue = CommonFunc.getComponentRect('Column_flexBasis_012');
-//       let Column_flexBasis_013: RectValue = CommonFunc.getComponentRect('Column_flexBasis_013');
-//       let Column_flexBasis_01: RectValue = CommonFunc.getComponentRect('Column_flexBasis_01');
+//       let Column_flexBasis_011: RectValue = CommonFunc.getComponentRect('flexBasis_Default' + '_Column_flexBasis_011');
+//       let Column_flexBasis_012: RectValue = CommonFunc.getComponentRect('flexBasis_Default' + '_Column_flexBasis_012');
+//       let Column_flexBasis_013: RectValue = CommonFunc.getComponentRect('flexBasis_Default' + '_Column_flexBasis_013');
+//       let Column_flexBasis_01: RectValue = CommonFunc.getComponentRect('flexBasis_Default' + '_Column_flexBasis_01');
 //       console.log('assert position')
 //       expect(Math.abs((Column_flexBasis_011.left - Column_flexBasis_01.left) - (Column_flexBasis_01.right - Column_flexBasis_011.right)) <= 1)
 //         .assertTrue();
@@ -185,10 +182,10 @@ export default function flexBasis_Default() {
         name: 'addflexBasis', value: -5
       });
       await CommonFunc.sleep(3000);
-      let Column_flexBasis_011: RectValue = CommonFunc.getComponentRect('Column_flexBasis_011');
-      let Column_flexBasis_012: RectValue = CommonFunc.getComponentRect('Column_flexBasis_012');
-      let Column_flexBasis_013: RectValue = CommonFunc.getComponentRect('Column_flexBasis_013');
-      let Column_flexBasis_01: RectValue = CommonFunc.getComponentRect('Column_flexBasis_01');
+      let Column_flexBasis_011: RectValue = CommonFunc.getComponentRect('flexBasis_Default' + '_Column_flexBasis_011');
+      let Column_flexBasis_012: RectValue = CommonFunc.getComponentRect('flexBasis_Default' + '_Column_flexBasis_012');
+      let Column_flexBasis_013: RectValue = CommonFunc.getComponentRect('flexBasis_Default' + '_Column_flexBasis_013');
+      let Column_flexBasis_01: RectValue = CommonFunc.getComponentRect('flexBasis_Default' + '_Column_flexBasis_01');
       console.log('assert position')
       expect(Math.abs((Column_flexBasis_011.left - Column_flexBasis_01.left) - (Column_flexBasis_01.right - Column_flexBasis_011.right)) <= 1)
         .assertTrue();
@@ -233,10 +230,10 @@ export default function flexBasis_Default() {
       console.info('[SUB_ACE_flexBasis_Default_TEST_0400] START');
       const uiContext = AppStorage.get<UIContext>('uiContext');
       await CommonFunc.sleep(3000);
-      let Column_flexBasis_021: RectValue = CommonFunc.getComponentRect('Column_flexBasis_021');
-      let Column_flexBasis_022: RectValue = CommonFunc.getComponentRect('Column_flexBasis_022');
-      let Column_flexBasis_023: RectValue = CommonFunc.getComponentRect('Column_flexBasis_023');
-      let Column_flexBasis_02: RectValue = CommonFunc.getComponentRect('Column_flexBasis_02');
+      let Column_flexBasis_021: RectValue = CommonFunc.getComponentRect('flexBasis_Default' + '_Column_flexBasis_021');
+      let Column_flexBasis_022: RectValue = CommonFunc.getComponentRect('flexBasis_Default' + '_Column_flexBasis_022');
+      let Column_flexBasis_023: RectValue = CommonFunc.getComponentRect('flexBasis_Default' + '_Column_flexBasis_023');
+      let Column_flexBasis_02: RectValue = CommonFunc.getComponentRect('flexBasis_Default' + '_Column_flexBasis_02');
       console.log('assert position')
       expect(Math.abs((Column_flexBasis_021.left - Column_flexBasis_02.left) - (Column_flexBasis_02.right - Column_flexBasis_021.right)) <= 1)
         .assertTrue();

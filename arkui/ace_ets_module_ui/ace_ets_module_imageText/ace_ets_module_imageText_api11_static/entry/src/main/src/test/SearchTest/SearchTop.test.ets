@@ -93,8 +93,8 @@ export default function search_top() {
         let text_01 = CommonFunc.getComponentRect('search_top_text_01');
         let text_02 = CommonFunc.getComponentRect('search_top_text_02');
         let text_03 = CommonFunc.getComponentRect('search_top_text_03');
-        let search_01 = CommonFunc.getComponentRect('search_top_search_01');
-        let Column_1 = CommonFunc.getComponentRect('search_top_Column_1');
+        let search_01 = CommonFunc.getComponentRect('search_top' + '_search_01');
+        let Column_1 = CommonFunc.getComponentRect('search_top' + '_Column_1');
 
         console.log('assert position')
         expect(search_01.top).assertEqual(Column_1.top);

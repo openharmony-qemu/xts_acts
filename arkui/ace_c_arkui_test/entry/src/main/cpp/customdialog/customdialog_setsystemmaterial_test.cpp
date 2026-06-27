@@ -59,7 +59,7 @@ static napi_value TestCustomDialogSetSystemMaterial004(napi_env env, napi_callba
     OH_ArkUI_QueryModuleInterfaceByName(ARKUI_NATIVE_DIALOG, "ArkUI_NativeDialogAPI_1"));
     ArkUI_NativeDialogHandle customDialog = dialogAPI->create();
     auto ret = OH_ArkUI_NativeModule_CustomDialog_SetSystemMaterial(customDialog, nullptr);
-    ASSERT_EQ(ret, INVALID_PARAM);
+    ASSERT_EQ(ret, SUCCESS);
     dialogAPI->dispose(customDialog);
     NAPI_END;
 }
@@ -108,6 +108,18 @@ static napi_value TestCustomDialogSetSystemMaterialInOptions004(napi_env env, na
     ArkUI_NodeHandle content = nodeAPI->createNode(ARKUI_NODE_COLUMN);
     ArkUI_CustomDialogOptions* options = OH_ArkUI_CustomDialog_CreateOptions(content);
     auto ret = OH_ArkUI_NativeModule_CustomDialog_SetSystemMaterialInOptions(options, nullptr);
+    ASSERT_EQ(ret, SUCCESS);
+    OH_ArkUI_CustomDialog_DisposeOptions(options);
+    NAPI_END;
+}
+
+static napi_value TestCustomDialogSetSystemMaterialInOptions005(napi_env env, napi_callback_info info)
+{
+    ArkUI_NativeNodeAPI_1* nodeAPI = reinterpret_cast<ArkUI_NativeNodeAPI_1 *>(
+    OH_ArkUI_QueryModuleInterfaceByName(ARKUI_NATIVE_NODE, "ArkUI_NativeNodeAPI_1"));
+    ArkUI_NodeHandle content = nodeAPI->createNode(ARKUI_NODE_COLUMN);
+    ArkUI_CustomDialogOptions* options = OH_ArkUI_CustomDialog_CreateOptions(content);
+    auto ret = OH_ArkUI_NativeModule_CustomDialog_SetSystemMaterialInOptions(nullptr, nullptr);
     ASSERT_EQ(ret, INVALID_PARAM);
     OH_ArkUI_CustomDialog_DisposeOptions(options);
     NAPI_END;

@@ -86,9 +86,9 @@ it('testRowMarginPaddingSatisfy_static_01', Level.LEVEL0, async (done: () => voi
       await CommonFunc.sleep(3000);
       let Column: RectValue = await CommonFunc.getComponentRect('Column_Row_MarginPadding');
       let Row: RectValue = await CommonFunc.getComponentRect('Row_MarginPadding');
-      let Text1: RectValue = await CommonFunc.getComponentRect('Row_MarginPadding_Text1');
-      let Text2: RectValue = await CommonFunc.getComponentRect('Row_MarginPadding_Text2');
-      let Text3: RectValue = await CommonFunc.getComponentRect('Row_MarginPadding_Text3');
+      let Text1: RectValue = await CommonFunc.getComponentRect('Row_MarginPadding' + '_Text1');
+      let Text2: RectValue = await CommonFunc.getComponentRect('Row_MarginPadding' + '_Text2');
+      let Text3: RectValue = await CommonFunc.getComponentRect('Row_MarginPadding' + '_Text3');
 
       console.log('Column rect_value is:' + JSON.stringify(Column));
       console.log('Row rect_value is:' + JSON.stringify(Row));
@@ -139,9 +139,9 @@ it('testRowMarginPaddingNoSatisfy_static_02', Level.LEVEL0, async (done: () => v
       await CommonFunc.sleep(3000)
       let Column: RectValue = await CommonFunc.getComponentRect('Column_Row_MarginPadding');
       let Row: RectValue = await CommonFunc.getComponentRect('Row_MarginPadding');
-      let Text1: RectValue = await CommonFunc.getComponentRect('Row_MarginPadding_Text1');
-      let Text2: RectValue = await CommonFunc.getComponentRect('Row_MarginPadding_Text2');
-      let Text3: RectValue = await CommonFunc.getComponentRect('Row_MarginPadding_Text3');
+      let Text1: RectValue = await CommonFunc.getComponentRect('Row_MarginPadding' + '_Text1');
+      let Text2: RectValue = await CommonFunc.getComponentRect('Row_MarginPadding' + '_Text2');
+      let Text3: RectValue = await CommonFunc.getComponentRect('Row_MarginPadding' + '_Text3');
 
       console.log('Column rect_value is:' + JSON.stringify(Column));
 

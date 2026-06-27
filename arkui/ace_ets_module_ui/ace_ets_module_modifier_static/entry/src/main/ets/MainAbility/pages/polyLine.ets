@@ -40,7 +40,7 @@ class CustomModifier extends PolylineModifier {
     Column({ space: 10 } as ColumnOptions) {
       Button("change value").onClick((e: ClickEvent) => {
         (this.customModifier as CustomModifier).onChange();
-      }).key("changeButton")
+      }).key("polyLine_changeButton")
 
       Polyline({ width: 100, height: 100 })
         .attributeModifier(this.customModifier as CustomModifier)

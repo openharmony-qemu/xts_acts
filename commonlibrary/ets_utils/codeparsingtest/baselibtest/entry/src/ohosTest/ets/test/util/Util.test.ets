@@ -17,6 +17,8 @@ import taskpool from '@ohos.taskpool';
 import util from '@ohos.util';
 import worker, { MessageEvents } from '@ohos.worker';
 import { ArrayList, JSON } from '@kit.ArkTS';
+import { createSubEnv, add, saveMainEnv, destroyEnv } from 'libentry.so';
+import { hiAppEvent } from '@kit.PerformanceAnalysisKit';
 
 let falg = 0;
 
@@ -28,6 +30,50 @@ function blockSleep(duration: number) {
   duration = duration * 1000;
   const start = Date.now();
   while (Date.now() - start < duration) {}
+}
+
+async function dumpAndCheckMtEvent(
+  tag: string,
+  expectedSanitizerType: string
+): Promise<Array<hiAppEvent.AppEventInfo>> {
+  const matchedEvents: Array<hiAppEvent.AppEventInfo> = [];
+
+  const watcher: hiAppEvent.Watcher = {
+    name: 'ADDRESS_SANITIZER_WATCHER',
+    appEventFilters: [
+      {
+        domain: hiAppEvent.domain.OS,
+        names: [hiAppEvent.event.ADDRESS_SANITIZER]
+      }
+    ],
+    onReceive: (domain: string, appEventGroups: Array<hiAppEvent.AppEventGroup>) => {
+      console.info(`${tag} onReceive fired: domain=${domain}`);
+      for (const group of appEventGroups) {
+        console.info(`${tag} group name=${group.name}`);
+        for (const evInfo of group.appEventInfos) {
+          console.info(`${tag} received event: domain=${evInfo.domain} name=${evInfo.name}`);
+          const paramsObj = evInfo.params as Record<string, string>;
+          const typeInParams = paramsObj['type'] ?? '';
+          if (typeInParams === expectedSanitizerType) {
+            matchedEvents.push(evInfo);
+          }
+        }
+      }
+    }
+  };
+  hiAppEvent.addWatcher(watcher);
+
+  try {
+    saveMainEnv();
+    createSubEnv();
+    add(2, 3);
+    destroyEnv();
+    await sleep(4000);
+    expect(matchedEvents.length).assertLarger(0);
+    return matchedEvents;
+  } finally {
+    hiAppEvent.removeWatcher(watcher);
+  }
 }
 
 @Concurrent
@@ -3512,6 +3558,201 @@ export default function utilTest() {
       recursion(10);
       let stackTrace = await taskpool.execute(task);
       expect(stackTrace).assertEqual('');
+      util.ArkTSVM.setMultithreadingDetectionEnabled(false);
+      done();
+    });
+
+    /**
+     * @tc.name   testSetMultithreadingDetectionEnabled0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_MULTITHREAD_0002
+     * @tc.desc   Set multithreading detection with abort=false, use subEnv on main thread
+     *             to trigger VM cross-thread access, verify faultlog is generated and
+     *             process does not crash.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetMultithreadingDetectionEnabled0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let options: util.MultithreadingDetectionOptions = {
+        abort: false,
+        frequency: 150,
+        interval: 0
+      };
+      util.ArkTSVM.setMultithreadingDetectionEnabled(true, options);
+      await dumpAndCheckMtEvent('testSetMultithreadingDetectionEnabled0002', 'arktsenvsan');
+      util.ArkTSVM.setMultithreadingDetectionEnabled(false);
+      done();
+    });
+
+    /**
+     * @tc.name   testSetMultithreadingDetectionEnabled0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_MULTITHREAD_0003
+     * @tc.desc   Set multithreading detection with custom frequency and interval.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testSetMultithreadingDetectionEnabled0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      try {
+        let options: util.MultithreadingDetectionOptions = {
+          abort: true,
+          frequency: 200,
+          interval: 10
+        };
+        util.ArkTSVM.setMultithreadingDetectionEnabled(true, options);
+        util.ArkTSVM.setMultithreadingDetectionEnabled(false);
+        expect(true).assertTrue();
+      } catch (err) {
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   testSetMultithreadingDetectionEnabled0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_MULTITHREAD_0004
+     * @tc.desc   Set multithreading detection with no options (default values).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testSetMultithreadingDetectionEnabled0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      try {
+        util.ArkTSVM.setMultithreadingDetectionEnabled(true);
+        util.ArkTSVM.setMultithreadingDetectionEnabled(false);
+        expect(true).assertTrue();
+      } catch (err) {
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   testSetMultithreadingDetectionEnabled0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_MULTITHREAD_0005
+     * @tc.desc   Set multithreading detection with empty options object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testSetMultithreadingDetectionEnabled0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      try {
+        let options: util.MultithreadingDetectionOptions = {};
+        util.ArkTSVM.setMultithreadingDetectionEnabled(true, options);
+        util.ArkTSVM.setMultithreadingDetectionEnabled(false);
+        expect(true).assertTrue();
+      } catch (err) {
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   testSetMultithreadingDetectionEnabled0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_MULTITHREAD_0006
+     * @tc.desc   Set multithreading detection with boundary interval value 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testSetMultithreadingDetectionEnabled0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      try {
+        let options: util.MultithreadingDetectionOptions = {
+          interval: 0
+        };
+        util.ArkTSVM.setMultithreadingDetectionEnabled(true, options);
+        util.ArkTSVM.setMultithreadingDetectionEnabled(false);
+        expect(true).assertTrue();
+      } catch (err) {
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   testSetMultithreadingDetectionEnabled0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_MULTITHREAD_0007
+     * @tc.desc   Set multithreading detection with invalid frequency (below minimum 100),
+     *             invalid value is ignored and original config is preserved, no exception thrown.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testSetMultithreadingDetectionEnabled0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let options: util.MultithreadingDetectionOptions = {
+          abort: true,
+          frequency: 50,
+          interval: 5
+        };
+        util.ArkTSVM.setMultithreadingDetectionEnabled(true, options);
+        util.ArkTSVM.setMultithreadingDetectionEnabled(false);
+        expect(true).assertTrue();
+      } catch (err) {
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   testSetMultithreadingDetectionEnabled0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_MULTITHREAD_0008
+     * @tc.desc   Set multithreading detection with invalid interval (exceeds max 1440),
+     *             invalid value is ignored and original config is preserved, no exception thrown.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testSetMultithreadingDetectionEnabled0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let options: util.MultithreadingDetectionOptions = {
+          abort: true,
+          frequency: 100,
+          interval: 2000
+        };
+        util.ArkTSVM.setMultithreadingDetectionEnabled(true, options);
+        util.ArkTSVM.setMultithreadingDetectionEnabled(false);
+        expect(true).assertTrue();
+      } catch (err) {
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   testSetMultithreadingDetectionEnabled0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_MULTITHREAD_0009
+     * @tc.desc   Set multithreading detection enabled=false with options, options should not be applied.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testSetMultithreadingDetectionEnabled0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        let options: util.MultithreadingDetectionOptions = {
+          abort: false,
+          frequency: 200,
+          interval: 10
+        };
+        util.ArkTSVM.setMultithreadingDetectionEnabled(false, options);
+        expect(true).assertTrue();
+      } catch (err) {
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   testSetMultithreadingDetectionEnabled0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_MULTITHREAD_0010
+     * @tc.desc   Set multithreading detection with abort=false and custom frequency/interval,
+     *             use subEnv on main thread to trigger VM cross-thread access, verify faultlog
+     *             is generated and process does not crash.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testSetMultithreadingDetectionEnabled0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let options: util.MultithreadingDetectionOptions = {
+        abort: false,
+        frequency: 200,
+        interval: 10
+      };
+      util.ArkTSVM.setMultithreadingDetectionEnabled(true, options);
+      await dumpAndCheckMtEvent('testSetMultithreadingDetectionEnabled0010', 'arktsenvsan');
       util.ArkTSVM.setMultithreadingDetectionEnabled(false);
       done();
     });

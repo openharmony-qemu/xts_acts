@@ -377,7 +377,7 @@ it('swiperTest_static_017', Level.LEVEL0, async (done: () => void): Promise<void
 it('swiperTest_static_018', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('swiperTest_static_018 START');
       let driver = Driver.create();
-      let button = await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button = await (driver.findComponent(ON.id('swiper' + '_changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
       let strJsonNew = inspector.getInspectorByKey('swiper');

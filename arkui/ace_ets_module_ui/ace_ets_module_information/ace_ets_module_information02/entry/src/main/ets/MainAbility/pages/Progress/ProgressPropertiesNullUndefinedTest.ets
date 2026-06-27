@@ -32,12 +32,14 @@ struct ProgressPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Progress_value_default')
+              .key('Progress_value_default')
 
             // Null
             Progress({ value: 0, total: 100 })
               .width('30%')
               .height('5%')
               .id('Progress_value_null')
+              .key('Progress_value_null')
               .value(null)
 
             // Undefined
@@ -45,6 +47,7 @@ struct ProgressPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Progress_value_undefined')
+              .key('Progress_value_undefined')
               .value(undefined)
           }
           .width('100%')
@@ -61,12 +64,14 @@ struct ProgressPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Progress_color_default')
+              .key('Progress_color_default')
 
             // Null
             Progress({ value: 50, total: 100 })
               .width('30%')
               .height('5%')
               .id('Progress_color_null')
+              .key('Progress_color_null')
               .color(null)
 
             // Undefined
@@ -74,6 +79,7 @@ struct ProgressPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Progress_color_undefined')
+              .key('Progress_color_undefined')
               .color(undefined)
           }
           .width('100%')
@@ -90,12 +96,14 @@ struct ProgressPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Progress_style_default')
+              .key('Progress_style_default')
 
             // Null
             Progress({ value: 50, total: 100 })
               .width('30%')
               .height('5%')
               .id('Progress_style_null')
+              .key('Progress_style_null')
               .style(null)
 
             // Undefined
@@ -103,6 +111,7 @@ struct ProgressPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Progress_style_undefined')
+              .key('Progress_style_undefined')
               .style(undefined)
           }
           .width('100%')
@@ -119,12 +128,14 @@ struct ProgressPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Progress_contentModifier_default')
+              .key('Progress_contentModifier_default')
 
             // Null
             Progress({ value: 50, total: 100 })
               .width('30%')
               .height('5%')
               .id('Progress_contentModifier_null')
+              .key('Progress_contentModifier_null')
               .contentModifier(null)
 
             // Undefined
@@ -132,6 +143,7 @@ struct ProgressPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Progress_contentModifier_undefined')
+              .key('Progress_contentModifier_undefined')
               .contentModifier(undefined)
           }
           .width('100%')

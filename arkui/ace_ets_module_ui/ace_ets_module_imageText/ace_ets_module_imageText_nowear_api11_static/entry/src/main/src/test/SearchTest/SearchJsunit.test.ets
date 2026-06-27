@@ -183,7 +183,7 @@ it('SearchJsunit_static_0300', Level.LEVEL0, async (done: () => void) => {
         await (textComponent1.inputText("hello")  as Promise<void>)
         await driver.triggerKey(2047)
         await CommonFunc.sleep(1000);
-        let strJson = inspector.getInspectorByKey('change');
+        let strJson = inspector.getInspectorByKey('SearchPage' + '_change');
         let obj = JSON.parseJsonElement(strJson);
           expect(obj.getElement('$attrs').getString('content')).assertEqual('onChange:hello');
         await CommonFunc.sleep(1000);
@@ -197,7 +197,7 @@ it('SearchJsunit_static_0300', Level.LEVEL0, async (done: () => void) => {
   await textComponent2!.click();
   await CommonFunc.sleep(1000);
   console.info("[SearchJsunit_0300] CLICK_SEARCH succ ");
-  let strJson2 = inspector.getInspectorByKey('submit');
+  let strJson2 = inspector.getInspectorByKey('SearchPage' + '_submit');
   let obj2 = JSON.parseJsonElement(strJson2);
   expect(obj2.getElement('$attrs').getString('content')).assertEqual('onSubmit:hello');
 
@@ -217,7 +217,7 @@ it('SearchJsunit_static_0300', Level.LEVEL0, async (done: () => void) => {
   await textComponent4!.click()
   await CommonFunc.sleep(3000);
   console.info("[SearchJsunit_0300] click copy succ ");
-  let strJson3 = inspector.getInspectorByKey('copy');
+  let strJson3 = inspector.getInspectorByKey('SearchPage' + '_copy');
   let obj3 = JSON.parseJsonElement(strJson3);
   expect(obj3.getElement('$attrs').getString('content')).assertEqual('onCopy:hello');
 
@@ -234,7 +234,7 @@ it('SearchJsunit_static_0300', Level.LEVEL0, async (done: () => void) => {
   await textComponent6!.click()
   await CommonFunc.sleep(3000);
   console.info("[SearchJsunit_0300] click cut succ ");
-  let strJson4 = inspector.getInspectorByKey('cut');
+  let strJson4 = inspector.getInspectorByKey('SearchPage' + '_cut');
   let obj4 = JSON.parseJsonElement(strJson4);
   console.info("[SearchJsunit_0300] obj4: " + JSON.stringify(obj4));
   expect(obj4.getElement('$attrs').getString('content')).assertEqual('onCut:hello');
@@ -246,16 +246,16 @@ it('SearchJsunit_static_0300', Level.LEVEL0, async (done: () => void) => {
   await textComponent8!.click()
   await CommonFunc.sleep(3000);
   console.info("[SearchJsunit_0300] click paste succ ");
-  let strJson5 = inspector.getInspectorByKey('paste');
+  let strJson5 = inspector.getInspectorByKey('SearchPage' + '_paste');
   let obj5 = JSON.parseJsonElement(strJson5);
   expect(obj5.getElement('$attrs').getString('content')).assertEqual('onPaste:hello');
 
       // Verify the caretPosition function of the Search component
-      let textComponent7 = await (driver.findComponent(ON.id('button')) as Promise<Component>);
+      let textComponent7 = await (driver.findComponent(ON.id('SearchPage' + '_button')) as Promise<Component>);
   await textComponent7!.click();
   await CommonFunc.sleep(1000);
   console.info("[SearchJsunit_0300] click button succ ");
-  let strJson6 = inspector.getInspectorByKey('button');
+  let strJson6 = inspector.getInspectorByKey('SearchPage' + '_button');
   let obj6 = JSON.parseJsonElement(strJson6);
   expect(obj6.getElement('$attrs').getString('label')).assertEqual('Set caretPosition 2');
       console.info('[SearchJsunit_0300] END');

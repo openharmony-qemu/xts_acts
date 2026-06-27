@@ -81,8 +81,8 @@ export default function textArea_top() {
         console.log('get Initial value')
         let text_00 = CommonFunc.getComponentRect('textArea_top_text_00');
         let text_01 = CommonFunc.getComponentRect('textArea_top_text_01');
-        let textArea_01 = CommonFunc.getComponentRect('textArea_top_textArea_01');
-        let column_01 = CommonFunc.getComponentRect('textArea_top_column_01');
+        let textArea_01 = CommonFunc.getComponentRect('textArea_top' + '_textArea_01');
+        let column_01 = CommonFunc.getComponentRect('textArea_top' + '_column_01');
 
         console.log('assert position')
         expect(textArea_01.top).assertEqual(column_01.top);
@@ -119,8 +119,8 @@ export default function textArea_top() {
         console.log('get Initial value')
         let text_00 = CommonFunc.getComponentRect('textArea_top_text_00');
         let text_01 = CommonFunc.getComponentRect('textArea_top_text_01');
-        let textArea_01 = CommonFunc.getComponentRect('textArea_top_textArea_01');
-        let column_01 = CommonFunc.getComponentRect('textArea_top_column_01');
+        let textArea_01 = CommonFunc.getComponentRect('textArea_top' + '_textArea_01');
+        let column_01 = CommonFunc.getComponentRect('textArea_top' + '_column_01');
 
         console.log('assert position')
         expect(textArea_01.top).assertEqual(column_01.top);
@@ -158,8 +158,8 @@ export default function textArea_top() {
         console.log('get Initial value')
         let text_00 = CommonFunc.getComponentRect('textArea_top_text_00');
         let text_01 = CommonFunc.getComponentRect('textArea_top_text_01');
-        let textArea_01 = CommonFunc.getComponentRect('textArea_top_textArea_01');
-        let column_01 = CommonFunc.getComponentRect('textArea_top_column_01');
+        let textArea_01 = CommonFunc.getComponentRect('textArea_top' + '_textArea_01');
+        let column_01 = CommonFunc.getComponentRect('textArea_top' + '_column_01');
 
         console.log('assert position')
         expect(textArea_01.top).assertEqual(column_01.top);

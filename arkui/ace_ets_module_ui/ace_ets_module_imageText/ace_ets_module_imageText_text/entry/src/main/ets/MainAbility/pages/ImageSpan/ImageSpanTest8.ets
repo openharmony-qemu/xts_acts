@@ -25,11 +25,13 @@ struct TextImageSpan8 {
     Column({ space: 100 }) {
       Text('动态切换图片宽高大小')
       Text(this.flag).id('ImageSpan_onComplete_8')
+      .key('ImageSpan_onComplete_8')
         .onClick(()=>{
           this.numWidth = 100
           this.numHeight = 100
         })
       Text(this.count.toString()).id('ImageSpan_onComplete_82')
+      .key('ImageSpan_onComplete_82')
       Text(){
         ImageSpan($r('app.media.jpg'))
           .width(this.numWidth)

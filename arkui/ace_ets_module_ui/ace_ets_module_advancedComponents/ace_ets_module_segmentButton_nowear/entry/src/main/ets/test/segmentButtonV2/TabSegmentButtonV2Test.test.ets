@@ -25,8 +25,8 @@ export default function TabSegmentButtonV2Test() {
         url: 'MainAbility/pages/segmentButtonV2/TabSegmentButtonV2Example',
       };
       try {
-        router.clear();
         let pages = router.getState();
+        router.clear();
         console.info("get TabSegmentButtonV2Test state pages: " + JSON.stringify(pages));
         if (!('TabSegmentButtonV2Example' == pages.name)) {
           console.info("get TabSegmentButtonV2Test pages.name: " + JSON.stringify(pages.name));

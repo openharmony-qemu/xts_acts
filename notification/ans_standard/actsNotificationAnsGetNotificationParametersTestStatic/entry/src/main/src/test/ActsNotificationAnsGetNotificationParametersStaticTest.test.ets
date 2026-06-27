@@ -13,41 +13,25 @@
 * limitations under the License.
 */
 import Utils from './Util.test';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError, Callback } from '@ohos.base';
+import { BusinessError, Callback, RecordData } from '@ohos.base';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { notificationManager } from '@kit.NotificationKit';
+import { notificationManager, notificationSubscribe } from '@kit.NotificationKit';
 import { emitter } from '@kit.BasicServicesKit';
-import {
-  describe,
-  beforeAll,
-  beforeEach,
-  afterEach,
-  afterAll,
-  it,
-  expect,
-  Level,
-  Size,
-  TestType
-} from '../../../hypium/index'
-import { abilityAccessCtrl, bundleManager, bundleResourceManager, installer } from '@kit.AbilityKit';
-import { Driver, ON } from '@ohos.UiTest'
-import { AppStorage } from '@ohos.arkui.stateManagement'
-import commonEventManager from '@ohos.commonEventManager'
-import router from '@ohos.router'
-import { Router } from '@ohos.arkui.UIContext';
-import { UIContext } from '@ohos.arkui.UIContext'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../hypium/index';
+import { abilityAccessCtrl, bundleManager, bundleResourceManager, installer, wantAgent } from '@kit.AbilityKit';
+import { Driver, ON } from '@ohos.UiTest';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import commonEventManager from '@ohos.commonEventManager';
+import router from '@ohos.router';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import image from '@ohos.multimedia.image';
-import { BusinessError, RecordData } from '@ohos.base';
-import hilog from '@ohos.hilog';
 import WantAgent from '@ohos.app.ability.wantAgent';
 import Want from '@ohos.app.ability.Want';
-import bundleManager from '@ohos.bundle.bundleManager'
+import bundleManager from '@ohos.bundle.bundleManager';
 import notificationExtensionSubscription from '@ohos.notificationExtensionSubscription';
-import { notificationSubscribe } from '@kit.NotificationKit';
-import { wantAgent } from '@kit.AbilityKit';
 const TAG = 'NotificationActs';
 const TEST_SUITE_NAME = 'Notification';
 let DOMAIN_NUMBER: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识

@@ -99,7 +99,7 @@ export default function ImageAnimatorFillModeJsunit() {
       } catch (err) {
         console.info("ImageAnimatorFillModeTest_0200 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("ImageAnimatorFillModeTest_0200 click result is: " + JSON.stringify(sendEventByKey('button1', 10, "")));
+      console.info("ImageAnimatorFillModeTest_0200 click result is: " + JSON.stringify(sendEventByKey('fillMode' + '_button1', 10, "")));
       await CommonFunc.sleep(1000);
       console.info('ImageAnimatorFillModeTest_0200 END');
       done();
@@ -129,7 +129,7 @@ export default function ImageAnimatorFillModeJsunit() {
       } catch (err) {
         console.info("ImageAnimatorFillModeTest_0300 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("ImageAnimatorFillModeTest_0300 click result is: " + JSON.stringify(sendEventByKey('button2', 10, "")));
+      console.info("ImageAnimatorFillModeTest_0300 click result is: " + JSON.stringify(sendEventByKey('fillMode' + '_button2', 10, "")));
       await CommonFunc.sleep(1000);
       console.info('ImageAnimatorFillModeTest_0300 END');
       done();

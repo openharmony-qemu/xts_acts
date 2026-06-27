@@ -1,30 +1,8 @@
 'use static'
-import {
-  Entry,
-  Text,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  LengthMetrics,
-  WaterFlow,
-  LazyVGridLayout,
-  LazyForEach,
-  Color,
-  ForEach,
-  TextAlign,
-  Builder,
-  Row,
-  FlowItem,
-  LazyVGridLayout,
-  AttributeModifier,
-  LazyVGridLayoutAttribute,
-  Blank
-} from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
-import hilog from '@ohos.hilog'
-import { MyDataSource } from './MyDataSource'
-
+import { Entry, Text, Column, Component, Button, ClickEvent, LengthMetrics, WaterFlow, LazyVGridLayout, LazyForEach, Color, ForEach, TextAlign, Builder, Row, FlowItem, AttributeModifier, LazyVGridLayoutAttribute, Blank } from '@ohos.arkui.component';
+import { State } from '@ohos.arkui.stateManagement';
+import hilog from '@ohos.hilog';
+import { MyDataSource } from './MyDataSource';
 @Entry
 @Component
 struct LazyVGridLayoutSample1 {

@@ -14,22 +14,20 @@
  * limitations under the License.
  */
 
-import {describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
-import { Driver, ON ,Component,MouseButton} from '@ohos.UiTest';
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+import { Driver, ON, Component, MouseButton } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import RectValue from '../../../ets/MainAbility/common/Rect';
-import { Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import {UtilsTest} from '../Util.test'
+import { UtilsTest } from '../Util.test';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -160,16 +158,6 @@ it('LongPressGestureAllowedTypesTest_static_0010', Level.LEVEL0, async (done: ()
       let obj9 = JSON.parseJsonElement(text9);
       console.log('LongPressGestureAllowedTypesTest_static_0010 obj9 $attrs content',obj9.getElement('$attrs').getString('content'),obj9)
       expect(obj9.getElement('$attrs').getString('content')).assertEqual('allowed types default');
-
-      // trigger gesture again with finger // undefined/null
-      // await CommonFunc.sleep(1000);
-      // await ((driver.longClick(Math.round(areaObj.left + areaWidth/2).toInt(),Math.round(areaObj.top + areaHeight/2).toInt())) as Promise<void>);
-      // await CommonFunc.sleep(3000);
-      // let text10 = inspector.getInspectorByKey('LongPressGestureAllowedTypes_result');
-      // let obj10 = JSON.parseJsonElement(text10);
-      // console.log('LongPressGestureAllowedTypesTest_static_0010 obj10 $attrs content',obj10.getElement('$attrs').getString('content'),obj10)
-      // expect(obj10.getElement('$attrs').getString('content')).assertEqual('allowed types success');
-
       console.info('LongPressGestureAllowedTypesTest_static_0010 END');
       done();
     });

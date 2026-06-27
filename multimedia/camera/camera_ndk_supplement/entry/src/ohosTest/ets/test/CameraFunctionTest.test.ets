@@ -246,6 +246,34 @@ export default function CameraFunctionTest() {
     })
 
     /**
+     * @tc.name   SUB_MULTIMEIDA_OH_CAMERA_GETAUTOMOTIVECAMERAPOSITION_0100
+     * @tc.number SUB_MULTIMEIDA_OH_CAMERA_GETAUTOMOTIVECAMERAPOSITION_0100
+     * @tc.desc   Test OH_CameraDevice_GetAutomotiveCameraPosition return CAMERA_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_MULTIMEIDA_OH_CAMERA_GETAUTOMOTIVECAMERAPOSITION_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let ret = cameraObj.OHCameraFunctionHandle("OH_CameraDevice_GetAutomotiveCameraPosition", 0)
+        expect(ret).assertEqual(TEST_OK)
+        done()
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_CAMERA_GETAUTOMOTIVECAMERAPOSITION_0200
+     * @tc.number SUB_MULTIMEIDA_OH_CAMERA_GETAUTOMOTIVECAMERAPOSITION_0200
+     * @tc.desc   Test OH_CameraDevice_GetAutomotiveCameraPosition return CAMERA_SERVICE_FATAL_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_MULTIMEIDA_OH_CAMERA_GETAUTOMOTIVECAMERAPOSITION_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let ret = cameraObj.OHCameraFunctionHandle("OH_CameraDevice_GetAutomotiveCameraPosition", camera.CameraErrorCode.SERVICE_FATAL_ERROR)
+        expect(ret).assertEqual(TEST_OK)
+        done()
+    });
+
+    /**
      * @tc.name   testOH_Camera_RegisterCallback100
      * @tc.number SUB_MULTIMEIDA_OH_Camera_FUNCTION1100
      * @tc.desc   Test OH_CameraInput_RegisterCallback return INVALID_ARGUMENT

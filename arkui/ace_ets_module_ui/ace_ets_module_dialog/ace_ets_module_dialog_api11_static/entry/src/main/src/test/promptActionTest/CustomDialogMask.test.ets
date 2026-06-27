@@ -117,7 +117,7 @@ it('ArkUI_CustomDialog_Mask_static_0100', Level.LEVEL2, async (done: () => void)
       await driver.delayMs(waitUiReadyMs)
       inspector.sendEventByKey('CustomDialogMask_Button_Open_1', 10, "")
       await driver.delayMs(waitUiReadyMs)
-      let strObj: string = inspector.getInspectorByKey('CustomDialogMask_Button_Close_1');
+      let strObj: string = inspector.getInspectorByKey('CustomDialogMask' + '_Button_Close_1');
       expect(JSON.parseJsonElement(strObj).getElement('$attrs').getString("visibility"))
         .assertEqual("Visibility.Visible");
       inspector.sendEventByKey('CustomDialogMask_Button_Close_1', 10, "")
@@ -148,7 +148,7 @@ it('ArkUI_CustomDialog_static_Mask0200', Level.LEVEL2, async (done: () => void):
       await driver.delayMs(waitUiReadyMs)
       inspector.sendEventByKey('CustomDialogMask_Button_Open_2', 10, "")
       await driver.delayMs(waitUiReadyMs)
-      let strObj: string = inspector.getInspectorByKey('CustomDialogMask_Button_Close_1');
+      let strObj: string = inspector.getInspectorByKey('CustomDialogMask' + '_Button_Close_1');
       expect(JSON.parseJsonElement(strObj).getElement('$attrs').getString("visibility"))
         .assertEqual("Visibility.Visible");
       inspector.sendEventByKey('CustomDialogMask_Button_Close_1', 10, "")
@@ -178,7 +178,7 @@ it('ArkUI_CustomDialog_static_Mask0300', Level.LEVEL2, async (done: () => void):
       await driver.delayMs(waitUiReadyMs)
       inspector.sendEventByKey('CustomDialogMask_Button_Open_3', 10, "")
       await driver.delayMs(waitUiReadyMs)
-      let strObj: string = inspector.getInspectorByKey('CustomDialogMask_Button_Close_1');
+      let strObj: string = inspector.getInspectorByKey('CustomDialogMask' + '_Button_Close_1');
       expect(JSON.parseJsonElement(strObj).getElement('$attrs').getString("visibility"))
         .assertEqual("Visibility.Visible");
       inspector.sendEventByKey('CustomDialogMask_Button_Close_1', 10, "")
@@ -208,7 +208,7 @@ it('ArkUI_CustomDialog_static_Mask0400', Level.LEVEL2, async (done: () => void):
       await driver.delayMs(waitUiReadyMs)
       inspector.sendEventByKey('CustomDialogMask_Button_Open_4', 10, "")
       await driver.delayMs(waitUiReadyMs)
-      let strObj: string = inspector.getInspectorByKey('CustomDialogMask_Button_Close_1');
+      let strObj: string = inspector.getInspectorByKey('CustomDialogMask' + '_Button_Close_1');
       expect(JSON.parseJsonElement(strObj).getElement('$attrs').getString("visibility"))
         .assertEqual("Visibility.Visible");
       inspector.sendEventByKey('CustomDialogMask_Button_Close_1', 10, "")
@@ -238,7 +238,7 @@ it('ArkUI_CustomDialog_static_Mask0500', Level.LEVEL2, async (done: () => void):
       await driver.delayMs(waitUiReadyMs)
       inspector.sendEventByKey('CustomDialogMask_Button_Open_5', 10, "")
       await driver.delayMs(waitUiReadyMs)
-      let strObj: string = inspector.getInspectorByKey('CustomDialogMask_Button_Close_1');
+      let strObj: string = inspector.getInspectorByKey('CustomDialogMask' + '_Button_Close_1');
       expect(JSON.parseJsonElement(strObj).getElement('$attrs').getString("visibility"))
         .assertEqual("Visibility.Visible");
       inspector.sendEventByKey('CustomDialogMask_Button_Close_1', 10, "")

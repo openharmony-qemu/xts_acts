@@ -13,21 +13,19 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
-import hilog from '@ohos.hilog'
+import { describe, it, expect, TestType, Size, Level, beforeAll } from '../../../hypium/index';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
 import cert from '@ohos.security.cert';
 import util from '@ohos.util';
-import * as certChainFunc from "./utils/certchain/certChainFunc";
+import * as certChainFunc from './utils/certchain/certChainFunc';
 import { CERT_CHAIN_DATA_PEM_PARAMETERS, CERT_CHAIN_PEM_DATA0 } from './utils/common/commonParam';
 import { stringTouInt8Array } from './utils/common/commonFunction';
-
 export default function certFrameworkCertChainJsAPIFunctionTestUnit() {
   describe("certFrameworkCertChainJsAPIFunctionTestUnit", () => {
     let certChain0: cert.X509CertChain | undefined;

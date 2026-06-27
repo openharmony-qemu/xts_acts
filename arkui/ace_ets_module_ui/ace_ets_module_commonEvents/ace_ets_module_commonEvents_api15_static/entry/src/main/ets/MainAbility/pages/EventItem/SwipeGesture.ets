@@ -43,7 +43,7 @@ struct SwipeGestureEvent {
   build() {
     Column() {
       Column() {
-        Text(this.value).key('value')
+        Text(this.value).key('SwipeGesture_value')
       }
       .key('SwipeGesture1')
       .height(150)

@@ -54,31 +54,37 @@ struct TextTimerConfigurationStartTime {
       Column({ space: 20 }) {
         TextTimer({ isCountDown: false, controller: this.textTimerController1 })
           .id('textTimer_config_startTime_default')
+          .key('textTimer_config_startTime_default')
           .contentModifier(this.myTimerModifier)
           .fontSize(20)
 
         TextTimer({ isCountDown: false, controller: this.textTimerController2, startTime: 30000 })
           .id('textTimer_config_startTime_positive')
+          .key('textTimer_config_startTime_positive')
           .contentModifier(this.myTimerModifier)
           .fontSize(20)
 
         TextTimer({ isCountDown: false, controller: this.textTimerController3, startTime: 0 })
           .id('textTimer_config_startTime_zero')
+          .key('textTimer_config_startTime_zero')
           .contentModifier(this.myTimerModifier)
           .fontSize(20)
 
         TextTimer({ isCountDown: false, controller: this.textTimerController4, startTime: -10000 })
           .id('textTimer_config_startTime_negative')
+          .key('textTimer_config_startTime_negative')
           .contentModifier(this.myTimerModifier)
           .fontSize(20)
 
         TextTimer({ isCountDown: false, controller: this.textTimerController5, startTime: null })
           .id('textTimer_config_startTime_null')
+          .key('textTimer_config_startTime_null')
           .contentModifier(this.myTimerModifier)
           .fontSize(20)
 
         TextTimer({ isCountDown: false, controller: this.textTimerController6, startTime: undefined })
           .id('textTimer_config_startTime_undefined')
+          .key('textTimer_config_startTime_undefined')
           .contentModifier(this.myTimerModifier)
           .fontSize(20)
       }

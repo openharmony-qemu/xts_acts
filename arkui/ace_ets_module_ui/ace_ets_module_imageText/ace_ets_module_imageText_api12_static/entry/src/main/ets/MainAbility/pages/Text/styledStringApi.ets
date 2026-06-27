@@ -14,17 +14,10 @@
  * limitations under the License.
  */
 import drawing from '@ohos.graphics.drawing';
-import image from '@ohos.multimedia.image'
+import image from '@ohos.multimedia.image';
 import { LengthMetrics } from '@ohos.arkui.node';
-import {
-  Entry, Component, CustomSpan, CustomSpanMeasureInfo, CustomSpanMetrics, DrawContext, CustomSpanDrawInfo,
-  Column, Row, Text, ClickEvent,StyledString, ColumnOptions, $r , MutableStyledString, TextController, CopyOptions, Button,
-} from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
-import {
-  State,
-  AppStorage,
-} from '@ohos.arkui.stateManagement'
+import { Entry, Component, CustomSpan, CustomSpanMeasureInfo, CustomSpanMetrics, DrawContext, CustomSpanDrawInfo, Column, Row, Text, ClickEvent, StyledString, ColumnOptions, $r, MutableStyledString, TextController, CopyOptions, Button } from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 export class MyCustomSpan extends CustomSpan {
   constructor(word: string, width: number, height: number) {
@@ -105,7 +98,7 @@ struct styledStringApi {
           .copyOption(CopyOptions.InApp)
           .fontSize(30)
 
-        Text(this.text).key('styledStringText')
+        Text(this.text).key('styledStringApi_styledStringText')
         Text(undefined, { controller: this.controller1 })
         Button('appendStyledString').onClick((event: ClickEvent) => {
           this.mutableStyledString1.appendStyledString(

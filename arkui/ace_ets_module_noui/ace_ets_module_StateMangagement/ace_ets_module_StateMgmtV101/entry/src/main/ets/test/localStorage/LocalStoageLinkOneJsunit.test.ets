@@ -157,7 +157,7 @@ export default function LocalStoageLinkOneJsunit() {
       expect(obj1.$attrs.content).assertEqual('localstorage:2,storLink2:2');
 
       let driver = await UiDriver.create()
-      let button_changeInitialValue = await driver.findComponent(BY.key('button_changeInitialValue'));
+      let button_changeInitialValue = await driver.findComponent(BY.key('LocalStoageLinkOne' + '_button_changeInitialValue'));
       await button_changeInitialValue.click();
       await CommonFunc.sleep(1000);
 
@@ -166,7 +166,7 @@ export default function LocalStoageLinkOneJsunit() {
       console.info("[LocalStoageLinkOneJsunit_0400] obj2 is: " + JSON.stringify(obj2));
       expect(obj2.$attrs.content).assertEqual('localstorage:12,storLink2:12');
 
-      let button_changeLocalStorageValue = await driver.findComponent(BY.key('button_changeLocalStorageValue'));
+      let button_changeLocalStorageValue = await driver.findComponent(BY.key('LocalStoageLinkOne' + '_button_changeLocalStorageValue'));
       await button_changeLocalStorageValue.click();
       await CommonFunc.sleep(1000);
 

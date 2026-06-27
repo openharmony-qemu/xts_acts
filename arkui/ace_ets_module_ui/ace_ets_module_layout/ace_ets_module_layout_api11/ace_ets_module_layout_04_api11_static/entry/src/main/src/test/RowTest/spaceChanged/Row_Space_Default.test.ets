@@ -82,10 +82,10 @@ it('SUB_ACE_Row_Space_Default_TEST_static_0200', Level.LEVEL0, async (done: () =
       });
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_Space_Default_011: RectValue = await CommonFunc.getComponentRect('Row_Space_Default_011');
-      let Row_Space_Default_012: RectValue = await CommonFunc.getComponentRect('Row_Space_Default_012');
-      let Row_Space_Default_013: RectValue = await CommonFunc.getComponentRect('Row_Space_Default_013');
-      let Row_Space_Default_01: RectValue = await CommonFunc.getComponentRect('Row_Space_Default_01');
+      let Row_Space_Default_011: RectValue = await CommonFunc.getComponentRect('Row_Space_Default' + '_011');
+      let Row_Space_Default_012: RectValue = await CommonFunc.getComponentRect('Row_Space_Default' + '_012');
+      let Row_Space_Default_013: RectValue = await CommonFunc.getComponentRect('Row_Space_Default' + '_013');
+      let Row_Space_Default_01: RectValue = await CommonFunc.getComponentRect('Row_Space_Default' + '_01');
       console.log('assert position')
       expect(Math.abs(Math.round(Row_Space_Default_011.top - Row_Space_Default_01.top) - Math.round(Row_Space_Default_01.bottom - Row_Space_Default_011.bottom)) <= 1)
         .assertTrue();
@@ -137,10 +137,10 @@ it('SUB_ACE_Row_Space_Default_TEST_static_0300', Level.LEVEL0, async (done: () =
       });
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_Space_Default_011: RectValue = await CommonFunc.getComponentRect('Row_Space_Default_011');
-      let Row_Space_Default_012: RectValue = await CommonFunc.getComponentRect('Row_Space_Default_012');
-      let Row_Space_Default_013: RectValue = await CommonFunc.getComponentRect('Row_Space_Default_013');
-      let Row_Space_Default_01: RectValue = await CommonFunc.getComponentRect('Row_Space_Default_01');
+      let Row_Space_Default_011: RectValue = await CommonFunc.getComponentRect('Row_Space_Default' + '_011');
+      let Row_Space_Default_012: RectValue = await CommonFunc.getComponentRect('Row_Space_Default' + '_012');
+      let Row_Space_Default_013: RectValue = await CommonFunc.getComponentRect('Row_Space_Default' + '_013');
+      let Row_Space_Default_01: RectValue = await CommonFunc.getComponentRect('Row_Space_Default' + '_01');
       console.log('assert position')
       expect(Math.abs(Math.round(Row_Space_Default_011.top - Row_Space_Default_01.top) - Math.round(Row_Space_Default_01.bottom - Row_Space_Default_011.bottom)) <= 1)
         .assertTrue();
@@ -191,10 +191,10 @@ it('SUB_ACE_Row_Space_Default_TEST_static_0400', Level.LEVEL0, async (done: () =
       });
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_Space_Default_021: RectValue = await CommonFunc.getComponentRect('Row_Space_Default_021');
-      let Row_Space_Default_022: RectValue = await CommonFunc.getComponentRect('Row_Space_Default_022');
-      let Row_Space_Default_023: RectValue = await CommonFunc.getComponentRect('Row_Space_Default_023');
-      let Row_Space_Default_02: RectValue = await CommonFunc.getComponentRect('Row_Space_Default_02');
+      let Row_Space_Default_021: RectValue = await CommonFunc.getComponentRect('Row_Space_Default' + '_021');
+      let Row_Space_Default_022: RectValue = await CommonFunc.getComponentRect('Row_Space_Default' + '_022');
+      let Row_Space_Default_023: RectValue = await CommonFunc.getComponentRect('Row_Space_Default' + '_023');
+      let Row_Space_Default_02: RectValue = await CommonFunc.getComponentRect('Row_Space_Default' + '_02');
       console.log('assert position')
       expect(Math.abs(Math.round(Row_Space_Default_021.top - Row_Space_Default_02.top) - Math.round(Row_Space_Default_02.bottom - Row_Space_Default_021.bottom)) <= 1)
         .assertTrue();
@@ -246,10 +246,10 @@ it('SUB_ACE_Row_Space_Default_TEST_static_0500', Level.LEVEL0, async (done: () =
       });
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_Space_Default_021: RectValue = await CommonFunc.getComponentRect('Row_Space_Default_021');
-      let Row_Space_Default_022: RectValue = await CommonFunc.getComponentRect('Row_Space_Default_022');
-      let Row_Space_Default_023: RectValue = await CommonFunc.getComponentRect('Row_Space_Default_023');
-      let Row_Space_Default_02: RectValue = await CommonFunc.getComponentRect('Row_Space_Default_02');
+      let Row_Space_Default_021: RectValue = await CommonFunc.getComponentRect('Row_Space_Default' + '_021');
+      let Row_Space_Default_022: RectValue = await CommonFunc.getComponentRect('Row_Space_Default' + '_022');
+      let Row_Space_Default_023: RectValue = await CommonFunc.getComponentRect('Row_Space_Default' + '_023');
+      let Row_Space_Default_02: RectValue = await CommonFunc.getComponentRect('Row_Space_Default' + '_02');
       console.log('assert position')
       expect(Math.abs(Math.round(Row_Space_Default_021.top - Row_Space_Default_02.top) - Math.round(Row_Space_Default_02.bottom - Row_Space_Default_021.bottom)) <= 1)
         .assertTrue();
@@ -301,10 +301,10 @@ it('SUB_ACE_Row_Space_Default_TEST_static_0100', Level.LEVEL0, async (done: () =
       });
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_Space_Default_011: RectValue = await CommonFunc.getComponentRect('Row_Space_Default_011');
-      let Row_Space_Default_012: RectValue = await CommonFunc.getComponentRect('Row_Space_Default_012');
-      let Row_Space_Default_013: RectValue = await CommonFunc.getComponentRect('Row_Space_Default_013');
-      let Row_Space_Default_01: RectValue = await CommonFunc.getComponentRect('Row_Space_Default_01');
+      let Row_Space_Default_011: RectValue = await CommonFunc.getComponentRect('Row_Space_Default' + '_011');
+      let Row_Space_Default_012: RectValue = await CommonFunc.getComponentRect('Row_Space_Default' + '_012');
+      let Row_Space_Default_013: RectValue = await CommonFunc.getComponentRect('Row_Space_Default' + '_013');
+      let Row_Space_Default_01: RectValue = await CommonFunc.getComponentRect('Row_Space_Default' + '_01');
       console.log('assert position')
       expect(Math.abs(Math.round(Row_Space_Default_011.top - Row_Space_Default_01.top) - Math.round(Row_Space_Default_01.bottom - Row_Space_Default_011.bottom)) <= 1)
         .assertTrue();

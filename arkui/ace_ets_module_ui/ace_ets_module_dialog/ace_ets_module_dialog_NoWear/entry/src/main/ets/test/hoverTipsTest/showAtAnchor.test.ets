@@ -13,261 +13,166 @@
  * limitations under the License.
  */
 import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium';
-import { Driver, ON, Component, Point} from '@ohos.UiTest';
+import { Driver, ON, Component, Point } from '@ohos.UiTest';
 import router from '@ohos.router';
 import Utils from '../../MainAbility/common/Utils';
-import { Rect } from '@kit.ArkGraphics3D';
+import { PointValue } from '../../MainAbility/common/Rect';
 
 const SLEEP_TIME = 1500;
 const POSITION_X = 80;
-const X = 0;
-const Y = 0;
+const UI_EVENT_CLICK: number = 10;
+const ORI_BTN_KEY: string = 'showAtAnchor_oriBtn';
+const CYCLE_BTN_KEY: string = 'showAtAnchor_button';
+
+function assertPageComponents(): void {
+  console.info('[showAtAnchor] check keys on page');
+  expect(Utils.isKeyReadable(ORI_BTN_KEY)).assertTrue();
+  expect(Utils.isKeyReadable(CYCLE_BTN_KEY)).assertTrue();
+}
+
+function getOriBtnCenter(): PointValue {
+  return Utils.getRectCenter(ORI_BTN_KEY);
+}
+
+async function moveMouseAway(driver: Driver): Promise<void> {
+  await driver.mouseMoveTo({ x: 0, y: 0 });
+  await Utils.sleep(SLEEP_TIME);
+}
+
+async function hoverAt(driver: Driver, x: number, y: number): Promise<void> {
+  await driver.mouseMoveTo({ x: x, y: y });
+  await Utils.sleep(SLEEP_TIME);
+}
+
+async function readTipsCenter(driver: Driver): Promise<PointValue> {
+  const tips: Component = await driver.findComponent(
+    ON.type('Column').isAfter(ON.text('hover tips')));
+  expect(!!tips).assertTrue();
+  const center: Point = await tips.getBoundsCenter();
+  const pt: PointValue = new PointValue();
+  pt.x = center.x;
+  pt.y = center.y;
+  return pt;
+}
+
+async function clickCycleButton(): Promise<void> {
+  expect(sendEventByKey(CYCLE_BTN_KEY, UI_EVENT_CLICK, '')).assertTrue();
+  await Utils.sleep(SLEEP_TIME);
+}
+
+async function runAnchorCompare(
+  driver: Driver, expectSame: boolean, clickCycleBtn: boolean
+): Promise<void> {
+  assertPageComponents();
+  if (clickCycleBtn) {
+    await clickCycleButton();
+  }
+  let center1: PointValue = getOriBtnCenter();
+  console.info('[showAtAnchor] oriBtn center: ' + JSON.stringify(center1));
+  await hoverAt(driver, center1.x, center1.y);
+  let tipsPoint1: PointValue = await readTipsCenter(driver);
+  await moveMouseAway(driver);
+  await hoverAt(driver, center1.x + POSITION_X, center1.y);
+  let tipsPoint2: PointValue = await readTipsCenter(driver);
+  console.info('[showAtAnchor] tips1=' + JSON.stringify(tipsPoint1) +
+    ' tips2=' + JSON.stringify(tipsPoint2));
+  let same: boolean = tipsPoint1.x === tipsPoint2.x && tipsPoint1.y === tipsPoint2.y;
+  if (expectSame) {
+    expect(same).assertTrue();
+  } else {
+    expect(same).assertFalse();
+  }
+  await moveMouseAway(driver);
+}
 
 export default function showAtAnchorTest() {
   describe('showAtAnchorTest', () => {
     beforeEach(async (done: Function) => {
-      console.info("showAtAnchorTest beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/tips/showAtAnchor',
-      }
+      };
       router.clear();
       let pages = router.getState();
-      console.info("get showAtAnchorTest state pages: " + JSON.stringify(pages));
-      if (!("showAtAnchor" == pages.name)) {
-        console.info("get showAtAnchorTest state pages.name: " + JSON.stringify(pages.name));
-        let result = await router.push(options);
+      if (pages.name !== 'showAtAnchor') {
+        await router.pushUrl(options);
         await Utils.sleep(SLEEP_TIME);
-        console.info("push showAtAnchorTest success: " + JSON.stringify(result));
       }
-      done();
-    });
-
-
-    /**
-     * @tc.number: showAtAnchor_value_0001
-     * @tc.name  : showAtAnchor_value_0001
-     * @tc.desc  : set undefined,The center position of the two pop-up tips is the same,Perform a reset operation after the end of the case
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
-     */
-    it('showAtAnchor_value_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info('showAtAnchor_value_0001 START');
-      let driver: Driver = Driver.create();
-      let TipsButton = await driver.findComponent(ON.id('oriBtn'));
-      let center1: Point = await TipsButton.getBoundsCenter();
-      console.info('showAtAnchor_value_0001 component obj is: ' + JSON.stringify(center1));
-      await driver.mouseMoveTo(center1);
-      await Utils.sleep(SLEEP_TIME);
-      let tips1: Component = await driver.findComponent(ON.type('Column').isAfter(ON.text('hover tips')));
-      expect(!!tips1).assertTrue();
-      let tipsPoint1Center: Point = await tips1.getBoundsCenter();
-      await driver.mouseMoveTo({
-        x: X, y: Y
-      });
-      await Utils.sleep(SLEEP_TIME);
-      let center2_X: number = center1.x+POSITION_X;
-      let center2_Y: number = center1.y;
-      await driver.mouseMoveTo({x:center2_X,y:center2_Y});
-      await Utils.sleep(SLEEP_TIME);
-      let tips2: Component = await driver.findComponent(ON.type('Column').isAfter(ON.text('hover tips')));
-      expect(!!tips2).assertTrue();
-      let tipsPoint2Center: Point = await tips2.getBoundsCenter();
-      let tipsBol: boolean = false
-      if(JSON.stringify(tipsPoint1Center) === JSON.stringify(tipsPoint2Center)){
-        tipsBol = true;
-      }
-      expect(tipsBol).assertTrue();
-      await driver.mouseMoveTo({
-        x: X, y: Y
-      });
-      await Utils.sleep(SLEEP_TIME);
-      console.info('showAtAnchor_value_0001 END');
       done();
     });
 
     /**
-     * @tc.number: showAtAnchor_value_0002
-     * @tc.name  : showAtAnchor_value_0002
-     * @tc.desc  : set null,The center position of the two pop-up tips is the same,Perform a reset operation after the end of the case
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.number    SUB_ACE_Tips_showAtAnchor_0100
+     * @tc.name      showAtAnchor_value_0001
+     * @tc.desc      set undefined,The center position of the two pop-up tips is the same
+     * @tc.level     Level 3
+     * @tc.type      FUNCTION
+     * @tc.size      MEDIUMTEST
      */
-    it('showAtAnchor_value_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info('showAtAnchor_value_0002 START');
-      let driver: Driver = Driver.create();
-      let button = await driver.findComponent(ON.id('showAtAnchorBth'));
-      await button.click();
-      await Utils.sleep(SLEEP_TIME);
-      let TipsButton = await driver.findComponent(ON.id('oriBtn'));
-      let center1: Point = await TipsButton.getBoundsCenter();
-      console.info('showAtAnchor_value_0002 component obj is: ' + JSON.stringify(center1));
-      await driver.mouseMoveTo(center1);
-      await Utils.sleep(SLEEP_TIME);
-      let tips1: Component = await driver.findComponent(ON.type('Column').isAfter(ON.text('hover tips')));
-      expect(!!tips1).assertTrue();
-      let tipsPoint1Center: Point = await tips1.getBoundsCenter();
-      await driver.mouseMoveTo({
-        x: X, y: Y
-      });
-      await Utils.sleep(SLEEP_TIME);
-      let center2_X: number = center1.x+POSITION_X;
-      let center2_Y: number = center1.y;
-      await driver.mouseMoveTo({x:center2_X,y:center2_Y});
-      await Utils.sleep(SLEEP_TIME);
-      let tips2: Component = await driver.findComponent(ON.type('Column').isAfter(ON.text('hover tips')));
-      expect(!!tips2).assertTrue();
-      let tipsPoint2Center: Point = await tips2.getBoundsCenter();
-      let tipsBol: boolean = false
-      if(JSON.stringify(tipsPoint1Center) === JSON.stringify(tipsPoint2Center)){
-        tipsBol = true;
-      }
-      expect(tipsBol).assertTrue();
-      await driver.mouseMoveTo({
-        x: X, y: Y
-      });
-      await Utils.sleep(SLEEP_TIME);
-      console.info('showAtAnchor_value_0002 END');
+    it('showAtAnchor_value_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+      let driver: Driver = await Driver.create();
+      await runAnchorCompare(driver, true, false);
       done();
     });
 
     /**
-     * @tc.number: showAtAnchor_value_0003
-     * @tc.name  : showAtAnchor_value_0003
-     * @tc.desc  : set TARGET,The center position of the two pop-up tips is the same,Perform a reset operation after the end of the case
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.number    SUB_ACE_Tips_showAtAnchor_0200
+     * @tc.name      showAtAnchor_value_0002
+     * @tc.desc      set null,The center position of the two pop-up tips is the same
+     * @tc.level     Level 3
+     * @tc.type      FUNCTION
+     * @tc.size      MEDIUMTEST
      */
-    it('showAtAnchor_value_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info('showAtAnchor_value_0003 START');
-      let driver: Driver = Driver.create();
-      let button = await driver.findComponent(ON.id('showAtAnchorBth'));
-      await button.click();
-      await Utils.sleep(SLEEP_TIME);
-      let TipsButton = await driver.findComponent(ON.id('oriBtn'));
-      let center1: Point = await TipsButton.getBoundsCenter();
-      console.info('showAtAnchor_value_0003 component obj is: ' + JSON.stringify(center1));
-      await driver.mouseMoveTo(center1);
-      await Utils.sleep(SLEEP_TIME);
-      let tips1: Component = await driver.findComponent(ON.type('Column').isAfter(ON.text('hover tips')));
-      expect(!!tips1).assertTrue();
-      let tipsPoint1Center: Point = await tips1.getBoundsCenter();
-      await driver.mouseMoveTo({
-        x: X, y: Y
-      });
-      await Utils.sleep(SLEEP_TIME);
-      let center2_X: number = center1.x+POSITION_X;
-      let center2_Y: number = center1.y;
-      await driver.mouseMoveTo({x:center2_X,y:center2_Y});
-      await Utils.sleep(SLEEP_TIME);
-      let tips2: Component = await driver.findComponent(ON.type('Column').isAfter(ON.text('hover tips')));
-      expect(!!tips2).assertTrue();
-      let tipsPoint2Center: Point = await tips2.getBoundsCenter();
-      let tipsBol: boolean = false
-      if(JSON.stringify(tipsPoint1Center) === JSON.stringify(tipsPoint2Center)){
-        tipsBol = true;
-      }
-      expect(tipsBol).assertTrue();
-      await driver.mouseMoveTo({
-        x: X, y: Y
-      });
-      await Utils.sleep(SLEEP_TIME);
-      console.info('showAtAnchor_value_0003 END');
+    it('showAtAnchor_value_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+      let driver: Driver = await Driver.create();
+      await runAnchorCompare(driver, true, true);
       done();
     });
 
     /**
-     * @tc.number: showAtAnchor_value_0004
-     * @tc.name  : showAtAnchor_value_0004
-     * @tc.desc  : set CURSOR,The center position of the two pop-up tips is inconsistent,Perform a reset operation after the end of the case
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.number    SUB_ACE_Tips_showAtAnchor_0300
+     * @tc.name      showAtAnchor_value_0003
+     * @tc.desc      set TARGET,The center position of the two pop-up tips is the same
+     * @tc.level     Level 3
+     * @tc.type      FUNCTION
+     * @tc.size      MEDIUMTEST
      */
-    it('showAtAnchor_value_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info('showAtAnchor_value_0004 START');
-      let driver: Driver = Driver.create();
-      let button = await driver.findComponent(ON.id('showAtAnchorBth'));
-      await button.click();
-      await Utils.sleep(SLEEP_TIME);
-      let TipsButton = await driver.findComponent(ON.id('oriBtn'));
-      let center1: Point = await TipsButton.getBoundsCenter();
-      await driver.mouseMoveTo(center1);
-      await Utils.sleep(SLEEP_TIME);
-      let tips1: Component = await driver.findComponent(ON.type('Column').isAfter(ON.text('hover tips')));
-      expect(!!tips1).assertTrue();
-      let tipsPoint1Center: Point = await tips1.getBoundsCenter();
-      await driver.mouseMoveTo({
-        x: X, y: Y
-      });
-      await Utils.sleep(SLEEP_TIME);
-      let center2_X: number = center1.x+POSITION_X;
-      let center2_Y: number = center1.y;
-      await driver.mouseMoveTo({x:center2_X,y:center2_Y});
-      await Utils.sleep(SLEEP_TIME);
-      let tips2: Component = await driver.findComponent(ON.type('Column').isAfter(ON.text('hover tips')));
-      expect(!!tips2).assertTrue();
-      let tipsPoint2Center: Point = await tips2.getBoundsCenter();
-      let tipsBol: boolean = false;
-      if(JSON.stringify(tipsPoint1Center) === JSON.stringify(tipsPoint2Center)){
-        tipsBol = true;
-      }
-      expect(tipsBol).assertFalse();
-      await driver.mouseMoveTo({
-        x: X, y: Y
-      });
-      await Utils.sleep(SLEEP_TIME);
-      console.info('showAtAnchor_value_0004 END');
+    it('showAtAnchor_value_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+      let driver: Driver = await Driver.create();
+      await runAnchorCompare(driver, true, true);
       done();
     });
 
     /**
-     * @tc.number: showAtAnchor_value_0005
-     * @tc.name  : showAtAnchor_value_0005
-     * @tc.desc  : set -9,The center position of the two pop-up tips is the same,Perform a reset operation after the end of the case
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.number    SUB_ACE_Tips_showAtAnchor_0400
+     * @tc.name      showAtAnchor_value_0004
+     * @tc.desc      set CURSOR,The center position of the two pop-up tips is inconsistent
+     * @tc.level     Level 3
+     * @tc.type      FUNCTION
+     * @tc.size      MEDIUMTEST
      */
-    it('showAtAnchor_value_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info('showAtAnchor_value_0005 START');
-      let driver: Driver = Driver.create();
-      let button = await driver.findComponent(ON.id('showAtAnchorBth'));
-      await button.click();
-      await Utils.sleep(SLEEP_TIME);
-      let TipsButton = await driver.findComponent(ON.id('oriBtn'));
-      let center1: Point = await TipsButton.getBoundsCenter();
-      console.info('showAtAnchor_value_0005 component obj is: ' + JSON.stringify(center1));
-      await driver.mouseMoveTo(center1);
-      await Utils.sleep(SLEEP_TIME);
-      let tips1: Component = await driver.findComponent(ON.type('Column').isAfter(ON.text('hover tips')));
-      expect(!!tips1).assertTrue();
-      let tipsPoint1Center: Point = await tips1.getBoundsCenter();
-      await driver.mouseMoveTo({
-        x: X, y: Y
-      });
-      await Utils.sleep(SLEEP_TIME);
-      let center2_X: number = center1.x+POSITION_X;
-      let center2_Y: number = center1.y;
-      await driver.mouseMoveTo({x:center2_X,y:center2_Y});
-      await Utils.sleep(SLEEP_TIME);
-      let tips2: Component = await driver.findComponent(ON.type('Column').isAfter(ON.text('hover tips')));
-      expect(!!tips2).assertTrue();
-      let tipsPoint2Center: Point = await tips2.getBoundsCenter();
-      let tipsBol: boolean = false
-      if(JSON.stringify(tipsPoint1Center) === JSON.stringify(tipsPoint2Center)){
-        tipsBol = true;
-      }
-      expect(tipsBol).assertTrue();
-      await driver.mouseMoveTo({
-        x: X, y: Y
-      });
-      await Utils.sleep(SLEEP_TIME);
-      console.info('showAtAnchor_value_0005 END');
+    it('showAtAnchor_value_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+      let driver: Driver = await Driver.create();
+      await runAnchorCompare(driver, false, true);
       done();
     });
 
+    /**
+     * @tc.number    SUB_ACE_Tips_showAtAnchor_0500
+     * @tc.name      showAtAnchor_value_0005
+     * @tc.desc      set -9,The center position of the two pop-up tips is the same
+     * @tc.level     Level 3
+     * @tc.type      FUNCTION
+     * @tc.size      MEDIUMTEST
+     */
+    it('showAtAnchor_value_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+      let driver: Driver = await Driver.create();
+      await runAnchorCompare(driver, true, true);
+      done();
+    });
   })
 }

@@ -85,7 +85,7 @@ export default function textAreaJsunit3() {
     it('textAreaTest_static_01', Level.LEVEL1, async (done: () => void) => {
       console.info('[textAreaTest_static_01] START');
       await CommonFunc.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('textArea');
+      let strJson: string = inspector.getInspectorByKey('textArea3' + '_textArea');
       console.info("[textAreaTest_static_01] JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('TextArea');
@@ -119,7 +119,7 @@ export default function textAreaJsunit3() {
         console.log("[textAreaTest_static_02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('textArea');
+      let strJson: string = inspector.getInspectorByKey('textArea3' + '_textArea');
 
       console.info("[textAreaTest_static_02] JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
@@ -138,7 +138,7 @@ export default function textAreaJsunit3() {
     it('textAreaTest_static_03', Level.LEVEL1, async (done: () => void) => {
       console.info('[textAreaTest_static_03] START');
       await CommonFunc.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('textArea');
+      let strJson: string = inspector.getInspectorByKey('textArea3' + '_textArea');
 
       console.info("[textAreaTest_static_03] JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
@@ -173,7 +173,7 @@ export default function textAreaJsunit3() {
         console.log("[textAreaTest_static_04] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('textArea');
+      let strJson: string = inspector.getInspectorByKey('textArea3' + '_textArea');
 
       console.info("[textAreaTest_static_04] JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
@@ -192,7 +192,7 @@ export default function textAreaJsunit3() {
     it('textAreaTest_static_05', Level.LEVEL1, async (done: () => void) => {
       console.info('[testArea05] START');
       await CommonFunc.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('textArea');
+      let strJson: string = inspector.getInspectorByKey('textArea3' + '_textArea');
 
       console.info("[textAreaTest_static_05] JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
@@ -227,7 +227,7 @@ export default function textAreaJsunit3() {
         console.log("[textAreaTest_static_06] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('textArea');
+      let strJson: string = inspector.getInspectorByKey('textArea3' + '_textArea');
 
       console.info("[textAreaTest_static_06] JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
@@ -246,7 +246,7 @@ export default function textAreaJsunit3() {
     it('textAreaTest_static_07', Level.LEVEL1, async (done: () => void) => {
       console.info('[textAreaTest_static_07] START');
       await CommonFunc.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('textArea');
+      let strJson: string = inspector.getInspectorByKey('textArea3' + '_textArea');
 
       console.info("[textAreaTest_static_07] JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)
@@ -284,7 +284,7 @@ export default function textAreaJsunit3() {
         console.log("[textAreaTest_static_08] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('textArea');
+      let strJson: string = inspector.getInspectorByKey('textArea3' + '_textArea');
 
       console.info("[textAreaTest_static_08] JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)
@@ -306,7 +306,7 @@ export default function textAreaJsunit3() {
     it('textAreaTest_static_09', Level.LEVEL1, async (done: () => void) => {
       console.info('[textAreaTest_static_09] START');
       await CommonFunc.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('textArea');
+      let strJson: string = inspector.getInspectorByKey('textArea3' + '_textArea');
 
       console.info("[textAreaTest_static_09] JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
@@ -340,7 +340,7 @@ export default function textAreaJsunit3() {
         console.log("[textAreaTest_static_10] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('textArea');
+      let strJson: string = inspector.getInspectorByKey('textArea3' + '_textArea');
 
       console.info("[textAreaTest_static_10] JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));

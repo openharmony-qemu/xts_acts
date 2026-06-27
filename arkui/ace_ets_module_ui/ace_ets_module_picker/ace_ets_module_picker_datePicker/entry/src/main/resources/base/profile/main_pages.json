@@ -15,6 +15,16 @@
     "MainAbility/pages/datePickerNullUndefined/DatePickerDisappearTextStyleNullUndefined",
     "MainAbility/pages/datePickerNullUndefined/DatePickerLunarNullUndefined",
     "MainAbility/pages/datePickerNullUndefined/DatePickerSelectedTextStyleNullUndefined",
-    "MainAbility/pages/datePickerNullUndefined/DatePickerTextStyleNullUndefined"
+    "MainAbility/pages/datePickerNullUndefined/DatePickerTextStyleNullUndefined",
+    "MainAbility/pages/datePickerComponent/DatePickerComponentConstructor",
+    "MainAbility/pages/datePickerComponent/DatePickerComponentDisplayMode",
+    "MainAbility/pages/datePickerComponent/DatePickerComponentDateMode",
+    "MainAbility/pages/datePickerComponent/DatePickerComponentLunar",
+    "MainAbility/pages/datePickerComponent/DatePickerComponentLoop",
+    "MainAbility/pages/datePickerComponent/DatePickerComponentEnableHapticFeedback",
+    "MainAbility/pages/datePickerComponent/DatePickerComponentTimeFormat",
+    "MainAbility/pages/datePickerComponent/DatePickerComponentUseMilitaryTime",
+    "MainAbility/pages/datePickerComponent/DatePickerComponentOnChange",
+    "MainAbility/pages/datePickerComponent/DatePickerComponentOnScrollStop"
   ]
 }

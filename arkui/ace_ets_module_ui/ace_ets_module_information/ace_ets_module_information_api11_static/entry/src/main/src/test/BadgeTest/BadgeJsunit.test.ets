@@ -82,7 +82,7 @@ export default function badgeJsunit() {
      */
 it('testBadge_static_010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new Badge0 START');
-      let strJson = inspector.getInspectorByKey('badge');
+      let strJson = inspector.getInspectorByKey('Badge' + '_badge');
       let obj = JSON.parseJsonElement(strJson);
       let style = JSON.parseJsonElement(obj.getElement('$attrs').getString('style'));
       expect(obj.getString('$type')).assertEqual('Badge');
@@ -138,7 +138,7 @@ it('testBadge_static_020', Level.LEVEL0, async (done: () => void): Promise<void>
      */
 it('testBadge_static_030', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new Badge2 START');
-      let strJson = inspector.getInspectorByKey('badge2');
+      let strJson = inspector.getInspectorByKey('Badge' + '_badge2');
       let obj = JSON.parseJsonElement(strJson);
       console.info("component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('position')).assertEqual('BadgePosition.Left');

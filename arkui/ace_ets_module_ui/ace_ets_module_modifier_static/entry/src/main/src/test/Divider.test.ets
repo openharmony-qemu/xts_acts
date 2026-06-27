@@ -140,7 +140,7 @@ it('dividerTest_static_0005', Level.LEVEL0, async (done: () => void): Promise<vo
 
       console.info('dividerTest_static_0005 START');
       let driver = Driver.create();
-      let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button =  await (driver.findComponent(ON.id('divider' + '_changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
 

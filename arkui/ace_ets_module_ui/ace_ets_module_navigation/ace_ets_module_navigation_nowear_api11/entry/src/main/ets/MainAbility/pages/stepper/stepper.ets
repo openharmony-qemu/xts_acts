@@ -97,7 +97,7 @@ struct StepperExample {
       this.currentIndex = index
     })
     .align(Alignment.Center)
-    .key('stepper')
+    .key('stepper_stepper')
   }
 
   onPageShow() {

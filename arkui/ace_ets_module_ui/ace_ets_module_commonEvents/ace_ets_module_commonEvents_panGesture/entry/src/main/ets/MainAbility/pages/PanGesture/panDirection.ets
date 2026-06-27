@@ -24,7 +24,7 @@ struct PanGestureExample {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
       Text('PanGesture offset:\nX: ' + this.offsetX + '\n' + 'Y: ' + this.offsetY)
     }
-    .key('panDirection').height(100).width(200).padding(20).border({ width: 1 }).margin(80)
+    .key('panDirection_panDirection').height(100).width(200).padding(20).border({ width: 1 }).margin(80)
     .translate({ x: this.offsetX, y: this.offsetY, z: 5 })
     .gesture(
     PanGesture({direction:this.direction1})

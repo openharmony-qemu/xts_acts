@@ -58,7 +58,7 @@ export default function menuDividerTest() {
     it('ArkUX_Stage_Menu_menuItemDivider_0001', Level.LEVEL2, async (done: Function) => {
       console.info('[ArkUX_Stage_Menu_menuItemDivider_0001] START');
 
-      let myJson = getInspectorByKey('menuItemDividerText');
+      let myJson = getInspectorByKey('menuDivider' + '_menuItemDividerText');
       console.info(`[ArkUX_Stage_Menu_menuItemDivider_0001] component obj1 is:${JSON.stringify(myJson)}`);
       await sleep(200);
       let obj1: ESObject = JSON.parse(myJson);
@@ -82,7 +82,7 @@ export default function menuDividerTest() {
     it('ArkUX_Stage_Menu_menuItemDivider_0002', Level.LEVEL2, async (done: Function) => {
       console.info('[ArkUX_Stage_Menu_menuItemDivider_0200] START');
 
-      let strJson = getInspectorByKey('menuItemDividerText');
+      let strJson = getInspectorByKey('menuDivider' + '_menuItemDividerText');
       await sleep(200);
       let obj: ESObject = JSON.parse(strJson);
       console.info(`[ArkUX_Stage_Menu_menuItemDivider_0002] component obj is:${JSON.stringify(obj)}`);
@@ -105,7 +105,7 @@ export default function menuDividerTest() {
     it('ArkUX_Stage_Menu_menuItemDivider_0003', Level.LEVEL2, async (done: Function) => {
       console.info('[ArkUX_Stage_Menu_menuItemDivider_0003] START');
 
-      let strJson = getInspectorByKey('menuItemDividerText');
+      let strJson = getInspectorByKey('menuDivider' + '_menuItemDividerText');
       await sleep(200);
       let obj: ESObject = JSON.parse(strJson);
       console.info(`[ArkUX_Stage_Menu_menuItemDivider_0003] component obj is:${JSON.stringify(obj)}`);
@@ -127,7 +127,7 @@ export default function menuDividerTest() {
     it('ArkUX_Stage_Menu_menuItemDivider_0004', Level.LEVEL2, async (done: Function) => {
       console.info('[ArkUX_Stage_Menu_menuItemDivider_0004] START');
 
-      let strJson = getInspectorByKey('menuItemDividerText');
+      let strJson = getInspectorByKey('menuDivider' + '_menuItemDividerText');
       await sleep(200);
       let obj: ESObject = JSON.parse(strJson);
       console.info(`[ArkUX_Stage_Menu_menuItemDivider_0004] component obj is:${JSON.stringify(obj)}`);
@@ -357,7 +357,7 @@ export default function menuDividerTest() {
     it('ArkUX_Stage_Menu_menuItemGroupDivider_001', Level.LEVEL2, async (done: Function) => {
       console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_001] START');
 
-      let strJson = getInspectorByKey('menuItemGroupDividerText');
+      let strJson = getInspectorByKey('menuDivider' + '_menuItemGroupDividerText');
       await sleep(200);
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ArkUX_Stage_Menu_menuItemGroupDivider_001] component obj is: " + JSON.stringify(obj));
@@ -380,7 +380,7 @@ export default function menuDividerTest() {
     it('ArkUX_Stage_Menu_menuItemGroupDivider_0002', Level.LEVEL2, async (done: Function) => {
       console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_0002] START');
 
-      let strJson = getInspectorByKey('menuItemGroupDividerText');
+      let strJson = getInspectorByKey('menuDivider' + '_menuItemGroupDividerText');
       await sleep(200);
       let obj: ESObject = JSON.parse(strJson);
       console.info(`[ArkUX_Stage_Menu_menuItemGroupDivider_0002] component obj is:${JSON.stringify(obj)}`);
@@ -403,7 +403,7 @@ export default function menuDividerTest() {
     it('ArkUX_Stage_Menu_menuItemGroupDivider_0003', Level.LEVEL2, async (done: Function) => {
       console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_0003] START');
 
-      let strJson = getInspectorByKey('menuItemGroupDividerText');
+      let strJson = getInspectorByKey('menuDivider' + '_menuItemGroupDividerText');
       await sleep(200);
       let obj: ESObject = JSON.parse(strJson);
       console.info(`[ArkUX_Stage_Menu_menuItemGroupDivider_0003] component obj is:${JSON.stringify(obj)}`);
@@ -425,7 +425,7 @@ export default function menuDividerTest() {
     it('ArkUX_Stage_Menu_menuItemGroupDivider_0004', Level.LEVEL2, async (done: Function) => {
       console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_0004] START');
 
-      let strJson = getInspectorByKey('menuItemGroupDividerText');
+      let strJson = getInspectorByKey('menuDivider' + '_menuItemGroupDividerText');
       await sleep(200);
       let obj: ESObject = JSON.parse(strJson);
       console.info(`[ArkUX_Stage_Menu_menuItemGroupDivider_0004] component obj is:${JSON.stringify(obj)}`);
@@ -652,7 +652,7 @@ export default function menuDividerTest() {
     it('ArkUX_Stage_Menu_menuItemGroupDivider_0014', Level.LEVEL2, async (done: Function) => {
         console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_0014] START');
   
-        let strJson = getInspectorByKey('menuItemGroupDividerText');
+        let strJson = getInspectorByKey('menuDivider' + '_menuItemGroupDividerText');
         await sleep(200);
         let obj: ESObject = JSON.parse(strJson);
         console.info("[ArkUX_Stage_Menu_menuItemGroupDivider_0014] component obj is: " + JSON.stringify(obj));

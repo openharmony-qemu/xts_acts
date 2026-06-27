@@ -23,7 +23,7 @@ export let IV_DEFAULT: number[] = [
   0xa6, 0xa6, 0xa6, 0xa6, 0xa6, 0xa6, 0xa6, 0xa6,
 ];
 
-export function JsSetIv(iv: number[] = IV_DEFAULT) {
+export function JsSetIv(iv: number[] = IV_DEFAULT): cryptoFramework.IvParamsSpec {
   let ivParamsSpec: cryptoFramework.IvParamsSpec = {
     algName: "IvParamsSpec",
     iv: {data: new Uint8Array(iv)},

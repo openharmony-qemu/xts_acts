@@ -32,12 +32,14 @@ struct LoadingProgressPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('LoadingProgress_color_default')
+              .key('LoadingProgress_color_default')
 
             // Null
             LoadingProgress()
               .width('30%')
               .height('5%')
               .id('LoadingProgress_color_null')
+              .key('LoadingProgress_color_null')
               .color(null)
 
             // Undefined
@@ -45,6 +47,7 @@ struct LoadingProgressPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('LoadingProgress_color_undefined')
+              .key('LoadingProgress_color_undefined')
               .color(undefined)
           }
           .width('100%')
@@ -61,12 +64,14 @@ struct LoadingProgressPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('LoadingProgress_contentModifier_default')
+              .key('LoadingProgress_contentModifier_default')
 
             // Null
             LoadingProgress()
               .width('30%')
               .height('5%')
               .id('LoadingProgress_contentModifier_null')
+              .key('LoadingProgress_contentModifier_null')
               .contentModifier(null)
 
             // Undefined
@@ -74,6 +79,7 @@ struct LoadingProgressPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('LoadingProgress_contentModifier_undefined')
+              .key('LoadingProgress_contentModifier_undefined')
               .contentModifier(undefined)
           }
           .width('100%')

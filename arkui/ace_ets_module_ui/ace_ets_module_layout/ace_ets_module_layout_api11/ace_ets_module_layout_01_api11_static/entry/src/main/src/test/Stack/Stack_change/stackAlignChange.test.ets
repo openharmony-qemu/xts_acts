@@ -14,22 +14,20 @@
  * limitations under the License.
  */
 
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
-import {Alignment} from '@ohos.arkui.component'
-import events_emitter from '@ohos.events.emitter'
-import { UtilsTest,startAbility } from '../../Util.test'
+import { Alignment } from '@ohos.arkui.component';
+import events_emitter from '@ohos.events.emitter';
+import { UtilsTest, startAbility } from '../../Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import {  Router, UIContext } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import { BusinessError } from '@ohos.base';
-import {MessageManager} from '../../../../ets/MainAbility/common/MessageManager'
-import hilog from '@ohos.hilog'
+import { MessageManager } from '../../../../ets/MainAbility/common/MessageManager';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { UIContext } from '@ohos.arkui.UIContext';
-import inspector from '@ohos.arkui.inspector';
 import RectValue from '../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 let domain: Int = 0x0000;

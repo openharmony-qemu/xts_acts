@@ -13,33 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  ForEach,
-  Text,
-  Row,
-  List,
-  ListItem
-} from '@ohos.arkui.component'
-import {
-  State,
-  Watch,
-  Link,
-  StorageLink,
-  LocalStorage,
-  PropRef,
-  Consume,
-  StoragePropRef,
-  LocalStoragePropRef,
-  LocalStorageLink,
-  PropRef
-} from '@ohos.arkui.stateManagement'
+import { Entry, Column, Component, Button, ClickEvent, ForEach, Text, Row, List, ListItem } from '@ohos.arkui.component';
+import { State, Watch, Link, StorageLink, LocalStorage, PropRef, Consume, StoragePropRef, LocalStoragePropRef, LocalStorageLink, AppStorage, Provide } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage,Provide } from '@ohos.arkui.stateManagement';
 let stateUndefinedStorage0010 = new LocalStorage()
 stateUndefinedStorage0010.setOrCreate('localStorageProp0010', undefined)
 stateUndefinedStorage0010.setOrCreate('localStorageLink0010', undefined)

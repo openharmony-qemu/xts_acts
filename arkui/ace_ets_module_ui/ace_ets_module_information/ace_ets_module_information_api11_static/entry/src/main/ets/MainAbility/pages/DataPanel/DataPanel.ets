@@ -70,7 +70,7 @@ struct dataPanel_testcase {
         })
         .closeEffect(false)
     }
-    .key('flex')
+    .key('DataPanel_flex')
     .width('100%')
     .height('100%')
 

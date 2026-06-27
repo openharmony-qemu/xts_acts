@@ -13,34 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from "../../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import {
-  Component,
-  Driver,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix} from '@ohos.UiTest';
+import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import RectValue from '../../../ets/MainAbility/common/Rect';
-import {MessageManager,Callback,Message} from '../../../ets/MainAbility/common/MessageManager';
-import { Router } from '@ohos.arkui.UIContext';
+import { MessageManager, Callback, Message } from '../../../ets/MainAbility/common/MessageManager';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UIContext } from '@ohos.arkui.UIContext'
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import text from "@ohos.graphics.text";
-import {KeyCode} from '@ohos.multimodalInput.keyCode';
-import {UtilsTest,startAbility} from '../Util.test';
+import text from '@ohos.graphics.text';
+import { KeyCode } from '@ohos.multimodalInput.keyCode';
+import { UtilsTest, startAbility } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -95,13 +84,13 @@ export default function onSelectionChange2() {
 
       await driver.triggerKey(2017);
       await CommonFunc.sleep(1000);
-      let text1 = inspector.getInspectorByKey('onSelectionChange2_text1');
+      let text1 = inspector.getInspectorByKey('onSelectionChange2' + '_text1');
       let Obj1 = JSON.parseJsonElement(text1);
       expect(Obj1.getElement('$attrs').getString('content')).assertEqual('2');
 
-      let text2 = inspector.getInspectorByKey('onSelectionChange2_text2');
+      let text2 = inspector.getInspectorByKey('onSelectionChange2' + '_text2');
       let Obj2 = JSON.parseJsonElement(text2);
-      let text3 = inspector.getInspectorByKey('onSelectionChange2_text3');
+      let text3 = inspector.getInspectorByKey('onSelectionChange2' + '_text3');
       let Obj3 = JSON.parseJsonElement(text3);
 
       expect(Obj2.getElement('$attrs').getString('content')).assertEqual(Obj3.getElement('$attrs').getString('content'));

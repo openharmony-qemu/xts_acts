@@ -13,35 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll,beforeEach} from "../../../hypium/index";
-import hilog from '@ohos.hilog'
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach } from '../../../hypium/index';
+import hilog from '@ohos.hilog';
 import Utils from './Util.test';
-import pipWindow from "@ohos.PiPWindow"
-import { canIUse } from "@internal.full.global";
-import {
-    XComponent,
-    XComponentType,
-    XComponentOptions,
-    XComponentController
-} from '@ohos.arkui.component'
-import deviceInfo from '@ohos.deviceInfo'
-
+import pipWindow from '@ohos.PiPWindow';
+import { canIUse } from '@internal.full.global';
+import { XComponent, XComponentType, XComponentOptions, XComponentController } from '@ohos.arkui.component';
+import deviceInfo from '@ohos.deviceInfo';
 import display from '@ohos.display';
 import window from '@ohos.window';
 import settings from '@ohos.settings';
 import { UIContext } from '@ohos.arkui.UIContext';
-import { AppStorage , LocalStorage } from '@ohos.arkui.stateManagement';
-import type { AsyncCallback, Callback} from '@ohos.base'
+import { AppStorage, LocalStorage } from '@ohos.arkui.stateManagement';
+import type { AsyncCallback, Callback } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import Want from '@ohos.app.ability.Want';
 import bundleManager from '@ohos.bundle.bundleManager';
-import StartOptions from '@ohos.app.ability.StartOptions'
-import  { Driver } from '@ohos.UiTest';
-import  { ON } from '@ohos.UiTest';
-import { typeNode } from 'arkui.FrameNode'
-import Utils from './Util.test';
+import StartOptions from '@ohos.app.ability.StartOptions';
+import { Driver, ON } from '@ohos.UiTest';
+import { typeNode } from 'arkui.FrameNode';
 import { TextNodeController } from './CustomNode.test';
-
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
@@ -3014,6 +3005,8 @@ export default function PiPWindowTest() {
 
 
             await Utils.msSleep(1000);
+            await component!.click();
+            await Utils.msSleep(1000);
             let button3 = await driver.findComponent(ON.id('control_play'));
             console.log(`${msgStr} button3: ${JSON.stringify(button3)}`);
             await button3!.click();
@@ -3590,31 +3583,22 @@ export default function PiPWindowTest() {
           localStorage: undefined
         };
         try {
-          let promise = pipWindow.create(config);
-          promise.then((data: pipWindow.PiPController) => {
-            
-            if (!pipController!.isPiPSupported()) {
-  
-              done();
-            } else {
-              console.log(`${msgStr} Succeeded in creating pip controller, Data:${data}`)
-              pipController!.getPiPSettingSwitch().then((result: boolean) => {
-                console.log(`${msgStr} result: ${result}`)
-                expect(result).assertEqual(true);
-                done();
-              }).catch((err: Error) => {
-                console.error(`${msgStr} promise Failed getPiPSettingSwitch, Cause code ${err.code}, message ${err.message}`);
-                expect(err.code).assertEqual(801);
-                expect(err.message != null).assertTrue();
-                done();
-              });
-            }
-          }).catch((err: Error) => {
-            console.error(`${msgStr} promise Failed to create pipcontroller, Cause code ${err.code}, message ${err.message}`);
-            expect(err.code).assertEqual(801);
-            expect(err.message != null).assertTrue();
+          pipController = await pipWindow.create(config);
+          if (!pipController!.isPiPSupported()) {
             done();
-          });
+          } else {
+            console.log(`${msgStr} Succeeded in creating pip controller, Data:${pipController}`)
+            pipController!.getPiPSettingSwitch().then((result: boolean) => {
+              console.log(`${msgStr} result: ${result}`)
+              expect(result).assertEqual(true);
+              done();
+            }).catch((err: Error) => {
+              console.error(`${msgStr} promise Failed getPiPSettingSwitch, Cause code ${err.code}, message ${err.message}`);
+              expect(err.code).assertEqual(801);
+              expect(err.message != null).assertTrue();
+              done();
+            });
+          }
         } catch (err) {
           console.error(`${msgStr} Failed to test updateContentSize, Cause code ${err.code}, message ${err.message}`);
           expect().assertFail();
@@ -4338,6 +4322,7 @@ export default function PiPWindowTest() {
             expect(pipController != null).assertTrue();
             await pipController!.startPiP();
             pipController!.stopPiP();
+            await Utils.msSleep(500);
             let isPipActive = await pipController!.isPiPActive();
             console.log(msgStr + ' isPipActive: ' + isPipActive);
             expect(isPipActive).assertEqual(false);

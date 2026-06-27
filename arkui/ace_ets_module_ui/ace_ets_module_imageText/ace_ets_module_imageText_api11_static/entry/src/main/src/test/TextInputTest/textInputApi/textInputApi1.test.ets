@@ -89,7 +89,7 @@ export default function textInputApi1() {
       //回车点击
       await driver.triggerKey(2054);
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('textInputApi1_text');
+      let strJson = inspector.getInspectorByKey('textInputApi1' + '_text');
       await CommonFunc.sleep(200);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[textInputApi1_static_001] component obj is: " + JSON.stringify(obj));

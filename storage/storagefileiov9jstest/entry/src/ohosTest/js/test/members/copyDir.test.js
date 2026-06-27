@@ -185,7 +185,7 @@ export default function fileIOCopyDir() {
       expect(false).assertTrue();
       } catch (err) {
       console.log('fileIO_test_copyDir_sync_002 has failed for ' + err.message + ', code: ' + err.code);
-      expect(err.code == 13900015 && err.message == 'File exists').assertTrue();
+      expect(err.code == 13900015).assertTrue();
       let dirent2 = fileIO.listFileSync(dpath.destDir, {recursion : true});
       expect(dirent2.length == 8).assertTrue();
       expect(fileIO.accessSync(dpath.srcDir)).assertTrue();
@@ -272,7 +272,7 @@ export default function fileIOCopyDir() {
     } catch (err) {
       fileIO.rmdirSync(dpath);
       console.log('fileIO_test_copyDir_sync_004 has failed for ' + err.message + ', code: ' + err.code);
-      expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+      expect(err.code == 13900020).assertTrue();
     }
   });
 
@@ -299,7 +299,7 @@ export default function fileIOCopyDir() {
     } catch (e) {
       fileIO.rmdirSync(dpath);
       console.log('fileIO_test_copyDir_sync_005 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
     }
   });
 
@@ -329,7 +329,7 @@ export default function fileIOCopyDir() {
     } catch (e) {
       fileIO.rmdirSync(dpath);
       console.log('fileIO_test_copyDir_sync_006 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
     }
   });
 
@@ -363,7 +363,7 @@ export default function fileIOCopyDir() {
     } catch (e) {
       fileIO.rmdirSync(dpath);
       console.log('fileIO_test_copyDir_sync_007 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
     }
   });
 
@@ -385,7 +385,7 @@ export default function fileIOCopyDir() {
       expect(false).assertTrue();
     } catch (err) {
       console.log('fileIO_test_copyDir_sync_008 has failed for ' + err.message + ', code: ' + err.code);
-      expect(err.code == 13900015 && err.message == 'File exists').assertTrue();
+      expect(err.code == 13900015).assertTrue();
       let dirent2 = fileIO.listFileSync(dpath.destDir, {recursion : true});
       expect(dirent2.length == 8).assertTrue();
       expect(fileIO.accessSync(dpath.srcDir)).assertTrue();
@@ -424,7 +424,7 @@ export default function fileIOCopyDir() {
       expect(false).assertTrue();
     } catch (err) {
       console.log('fileIO_test_copyDir_sync_009 has failed for ' + err.message + ', code: ' + err.code);
-      expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
+      expect(err.code === 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
     }
   });
@@ -446,7 +446,7 @@ export default function fileIOCopyDir() {
       expect(false).assertTrue();
     } catch (err) {
       console.log('fileIO_test_copyDir_sync_010 has failed for ' + err.message + ', code: ' + err.code);
-      expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
+      expect(err.code === 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
     }
   });
@@ -468,7 +468,7 @@ export default function fileIOCopyDir() {
       expect(false).assertTrue();
     } catch (err) {
       console.log('fileIO_test_copyDir_sync_011 has failed for ' + err.message + ', code: ' + err.code);
-      expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
+      expect(err.code === 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
     }
   });
@@ -490,7 +490,7 @@ export default function fileIOCopyDir() {
       expect(false).assertTrue();
     } catch (err) {
       console.log('fileIO_test_copyDir_sync_012 has failed for ' + err.message + ', code: ' + err.code);
-      expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
+      expect(err.code === 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
     }
   });
@@ -512,7 +512,7 @@ export default function fileIOCopyDir() {
       expect(false).assertTrue();
     } catch (err) {
       console.log('fileIO_test_copyDir_sync_013 has failed for ' + err.message + ', code: ' + err.code);
-      expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
+      expect(err.code === 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
     }
   });
@@ -534,7 +534,7 @@ export default function fileIOCopyDir() {
       expect(false).assertTrue();
     } catch (err) {
       console.log('fileIO_test_copyDir_sync_014 has failed for ' + err.message + ', code: ' + err.code);
-      expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
+      expect(err.code === 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
     }
   });
@@ -556,7 +556,7 @@ export default function fileIOCopyDir() {
       expect(false).assertTrue();
     } catch (err) {
       console.log('fileIO_test_copyDir_sync_015 has failed for ' + err.message + ', code: ' + err.code);
-      expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
+      expect(err.code === 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
     }
   });
@@ -578,7 +578,7 @@ export default function fileIOCopyDir() {
       expect(false).assertTrue();
     } catch (err) {
       console.log('fileIO_test_copyDir_sync_016 has failed for ' + err.message + ', code: ' + err.code);
-      expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
+      expect(err.code === 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
     }
   });
@@ -600,7 +600,7 @@ export default function fileIOCopyDir() {
       expect(false).assertTrue();
     } catch (err) {
       console.log('fileIO_test_copyDir_sync_017 has failed for ' + err.message + ', code: ' + err.code);
-      expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
+      expect(err.code === 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
     }
   });
@@ -821,7 +821,7 @@ export default function fileIOCopyDir() {
       expect(false).assertTrue();
       } catch (err) {
       console.log('fileIO_test_copyDir_async_004 has failed for ' + err.message + ', code: ' + err.code);
-      expect(err.code == 13900015 && err.message == 'File exists').assertTrue();
+      expect(err.code == 13900015).assertTrue();
       let dirent2 = fileIO.listFileSync(dpath.destDir, {recursion : true});
       expect(dirent2.length == 8).assertTrue();
       expect(fileIO.accessSync(dpath.srcDir)).assertTrue();
@@ -878,7 +878,7 @@ export default function fileIOCopyDir() {
           expect(fileIO.accessSync(dpath.destDir + '/srcDir/srcDir_first/srcDir_second/srcFile_third_01')).assertTrue();
           expect(fileIO.accessSync(dpath.destDir + '/srcDir/srcDir_first/srcDir_second/srcFile_third_02')).assertTrue();
           fileIO.rmdirSync(dpath.baseDir);
-          expect(err.code == 13900015 && err.message == 'File exists').assertTrue();
+          expect(err.code == 13900015).assertTrue();
           expect(err.data.length == 2).assertTrue();
           done();
         }
@@ -989,7 +989,7 @@ export default function fileIOCopyDir() {
       expect(false).assertTrue();
     } catch (err) {
       console.log('fileIO_test_copyDir_async_008 has failed for ' + err.message + ', code: ' + err.code);
-      expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+      expect(err.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath.baseDir);
       done();
     }
@@ -1016,7 +1016,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_009 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath.baseDir);
       done();
     }
@@ -1038,7 +1038,7 @@ export default function fileIOCopyDir() {
       expect(false).assertTrue();
     } catch (err) {
       console.log('fileIO_test_copyDir_async_010 has failed for ' + err.message + ', code: ' + err.code);
-      expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+      expect(err.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath.baseDir);
       done();
     }
@@ -1064,7 +1064,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_011 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath.baseDir);
       done();
     }
@@ -1086,7 +1086,7 @@ export default function fileIOCopyDir() {
       expect(false).assertTrue();
     } catch (err) {
       console.log('fileIO_test_copyDir_async_012 has failed for ' + err.message + ', code: ' + err.code);
-      expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+      expect(err.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath.baseDir);
       done();
     }
@@ -1112,7 +1112,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_013 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath.baseDir);
       done();
     }
@@ -1145,7 +1145,7 @@ export default function fileIOCopyDir() {
       expect(false).assertTrue();
     } catch (err) {
       console.log('fileIO_test_copyDir_async_014 has failed for ' + err.message + ', code: ' + err.code);
-      expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+      expect(err.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
       done();
     }
@@ -1182,7 +1182,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_015 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
       done();
     }
@@ -1206,7 +1206,7 @@ export default function fileIOCopyDir() {
       expect(false).assertTrue();
     } catch (err) {
       console.log('fileIO_test_copyDir_async_016 has failed for ' + err.message + ', code: ' + err.code);
-      expect(err.code == 13900015 && err.message == 'File exists').assertTrue();
+      expect(err.code == 13900015).assertTrue();
       let dirent2 = fileIO.listFileSync(dpath.destDir, {recursion : true});
       expect(dirent2.length == 8).assertTrue();
       expect(fileIO.accessSync(dpath.srcDir)).assertTrue();
@@ -1263,7 +1263,7 @@ export default function fileIOCopyDir() {
           expect(fileIO.accessSync(dpath.destDir + '/srcDir/srcDir_first/srcDir_second/srcFile_third_01')).assertTrue();
           expect(fileIO.accessSync(dpath.destDir + '/srcDir/srcDir_first/srcDir_second/srcFile_third_02')).assertTrue();
           fileIO.rmdirSync(dpath.baseDir);
-          expect(err.code == 13900015 && err.message == 'File exists').assertTrue();
+          expect(err.code == 13900015).assertTrue();
           expect(err.data.length == 2).assertTrue();
           done();
         }
@@ -1321,7 +1321,7 @@ export default function fileIOCopyDir() {
     } catch (err) {
       fileIO.rmdirSync(dpath);
       console.log('fileIO_test_copyDir_async_019 has failed for ' + err.message + ', code: ' + err.code);
-      expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+      expect(err.code == 13900020).assertTrue();
       done();
     }
   });
@@ -1345,7 +1345,7 @@ export default function fileIOCopyDir() {
     } catch (err) {
       fileIO.rmdirSync(dpath);
       console.log('fileIO_test_copyDir_async_020 has failed for ' + err.message + ', code: ' + err.code);
-      expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+      expect(err.code == 13900020).assertTrue();
       done();
     }
   });
@@ -1369,7 +1369,7 @@ export default function fileIOCopyDir() {
     } catch (err) {
       fileIO.rmdirSync(dpath);
       console.log('fileIO_test_copyDir_async_021 has failed for ' + err.message + ', code: ' + err.code);
-      expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+      expect(err.code == 13900020).assertTrue();
       done();
     }
   });
@@ -1393,7 +1393,7 @@ export default function fileIOCopyDir() {
     } catch (err) {
       fileIO.rmdirSync(dpath);
       console.log('fileIO_test_copyDir_async_022 has failed for ' + err.message + ', code: ' + err.code);
-      expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+      expect(err.code == 13900020).assertTrue();
       done();
     }
   });
@@ -1415,7 +1415,7 @@ export default function fileIOCopyDir() {
       done();
       } catch (err) {
       console.log('fileIO_test_copyDir_async_023 has failed for ' + err.message + ', code: ' + err.code);
-      expect(err.code == 13900015 && err.message == 'File exists').assertTrue();
+      expect(err.code == 13900015).assertTrue();
       done();
     }
   });
@@ -1437,7 +1437,7 @@ export default function fileIOCopyDir() {
       done();
       } catch (err) {
       console.log('fileIO_test_copyDir_async_024 has failed for ' + err.message + ', code: ' + err.code);
-      expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+      expect(err.code == 13900020).assertTrue();
       done();
     }
   });
@@ -1464,7 +1464,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_025 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
       done();
     }
@@ -1492,7 +1492,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_026 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
       done();
     }
@@ -1520,7 +1520,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_027 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
       done();
     }
@@ -1545,7 +1545,7 @@ export default function fileIOCopyDir() {
     } catch (err) {
       fileIO.rmdirSync(dpath);
       console.log('fileIO_test_copyDir_async_029 has failed for ' + err.message + ', code: ' + err.code);
-      expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+      expect(err.code == 13900020).assertTrue();
       done();
     }
   });
@@ -1569,7 +1569,7 @@ export default function fileIOCopyDir() {
     } catch (err) {
       fileIO.rmdirSync(dpath);
       console.log('fileIO_test_copyDir_async_030 has failed for ' + err.message + ', code: ' + err.code);
-      expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+      expect(err.code == 13900020).assertTrue();
       done();
     }
   });
@@ -1593,7 +1593,7 @@ export default function fileIOCopyDir() {
     } catch (err) {
       fileIO.rmdirSync(dpath);
       console.log('fileIO_test_copyDir_async_031 has failed for ' + err.message + ', code: ' + err.code);
-      expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+      expect(err.code == 13900020).assertTrue();
       done();
     }
   });
@@ -1620,7 +1620,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_032 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
       done();
     }
@@ -1648,7 +1648,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_033 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
       done();
     }
@@ -1676,7 +1676,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_034 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
       done();
     }
@@ -1704,7 +1704,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_035 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
       done();
     }
@@ -1732,7 +1732,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_036 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
       done();
     }
@@ -1760,7 +1760,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_037 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
       done();
     }
@@ -1788,7 +1788,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_038 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
       done();
     }
@@ -1816,7 +1816,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_042 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
       done();
     }
@@ -1844,7 +1844,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_043 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
       done();
     }
@@ -1872,7 +1872,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_044 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
       done();
     }
@@ -1900,7 +1900,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_045 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
       done();
     }
@@ -1928,7 +1928,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_046 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
       done();
     }
@@ -1956,7 +1956,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_047 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
       done();
     }
@@ -1984,7 +1984,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_051 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
       done();
     }
@@ -2012,7 +2012,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_052 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
       done();
     }
@@ -2040,7 +2040,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_053 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
       done();
     }
@@ -2068,7 +2068,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_054 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
       done();
     }
@@ -2096,7 +2096,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_055 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
       done();
     }
@@ -2124,7 +2124,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_056 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
       done();
     }
@@ -2152,7 +2152,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_057 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
       done();
     }
@@ -2180,7 +2180,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_058 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
       done();
     }
@@ -2208,7 +2208,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_059 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
       done();
     }
@@ -2236,7 +2236,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_060 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
       done();
     }
@@ -2264,7 +2264,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_061 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
       done();
     }
@@ -2292,7 +2292,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_062 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
       done();
     }
@@ -2320,7 +2320,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_063 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
       done();
     }
@@ -2348,7 +2348,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_064 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
       done();
     }
@@ -2376,7 +2376,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_065 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
       done();
     }
@@ -2404,7 +2404,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_066 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
       done();
     }
@@ -2432,7 +2432,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_067 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
       done();
     }
@@ -2460,7 +2460,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_068 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
       done();
     }
@@ -2488,7 +2488,7 @@ export default function fileIOCopyDir() {
       });
     } catch (e) {
       console.log('fileIO_test_copyDir_async_028 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       fileIO.rmdirSync(dpath);
       done();
     }

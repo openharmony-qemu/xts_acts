@@ -67,10 +67,10 @@ export default function Row_Margin() {
       });
       await CommonFunc.sleep(3000);
       let Column: RectValue = CommonFunc.getComponentRect('Column_Row_Margin');
-      let Row: RectValue = CommonFunc.getComponentRect('Row_Margin_Row');
-      let Text1: RectValue = CommonFunc.getComponentRect('Row_Margin_Text1');
-      let Text2: RectValue = CommonFunc.getComponentRect('Row_Margin_Text2');
-      let Text3: RectValue = CommonFunc.getComponentRect('Row_Margin_Text3');
+      let Row: RectValue = CommonFunc.getComponentRect('Row_Margin' + '_Row');
+      let Text1: RectValue = CommonFunc.getComponentRect('Row_Margin' + '_Text1');
+      let Text2: RectValue = CommonFunc.getComponentRect('Row_Margin' + '_Text2');
+      let Text3: RectValue = CommonFunc.getComponentRect('Row_Margin' + '_Text3');
 
       console.log('Column rect_value is:' + JSON.stringify(Column));
       console.log('Row rect_value is:' + JSON.stringify(Row));

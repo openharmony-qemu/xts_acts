@@ -98,8 +98,8 @@ it('testGridRowColItemRowStartToZeroEndToThree_static_01', Level.LEVEL0, async (
       let eleventhGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemRowStartEnd11');
       let twelfthGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemRowStartEnd12');
       let thirteenthGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemRowStartEnd13');
-      let gridContainer: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemRowStartEnd_Container01');
-      let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_ItemRowStartEnd_Container01');
+      let gridContainer: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemRowStartEnd' + '_Container01');
+      let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_ItemRowStartEnd' + '_Container01');
 
      expect(JSON.parseJsonElement(gridContainerStrJson).getString('$type')).assertEqual('Grid');
 
@@ -211,8 +211,8 @@ it('testGridRowColItemRowStartToOneEndToThree_static_02', Level.LEVEL0, async (d
       let eleventhGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemRowStartEnd11');
       let twelfthGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemRowStartEnd12');
       let thirteenthGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemRowStartEnd13');
-      let gridContainer: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemRowStartEnd_Container01');
-      let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_ItemRowStartEnd_Container01');
+      let gridContainer: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemRowStartEnd' + '_Container01');
+      let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_ItemRowStartEnd' + '_Container01');
 
      expect(JSON.parseJsonElement(gridContainerStrJson).getString('$type')).assertEqual('Grid');
 

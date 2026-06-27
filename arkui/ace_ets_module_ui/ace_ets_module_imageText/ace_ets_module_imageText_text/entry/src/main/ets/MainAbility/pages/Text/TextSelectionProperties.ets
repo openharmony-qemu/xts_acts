@@ -29,12 +29,14 @@ struct TextSelectionProperties {
       Row() {
         Text('selection(null, null)')
           .id('text_selection_null')
+          .key('text_selection_null')
           .selection(null, null)
           .copyOption(CopyOptions.InApp)
           .height('3%')
 
         Text('selection(undefined, undefined)')
           .id('text_selection_undefined')
+          .key('text_selection_undefined')
           .selection(undefined, undefined)
           .copyOption(CopyOptions.InApp)
           .height('3%')
@@ -44,18 +46,21 @@ struct TextSelectionProperties {
       Row() {
         Text('caretColor with null')
           .id('text_caretcolor_null')
+          .key('text_caretcolor_null')
           .caretColor(null)
           .copyOption(CopyOptions.InApp)
           .height('3%')
 
         Text('caretColor with undefined')
           .id('text_caretcolor_undefined')
+          .key('text_caretcolor_undefined')
           .caretColor(undefined)
           .copyOption(CopyOptions.InApp)
           .height('3%')
 
         Text('caretColor with empty string')
           .id('text_caretcolor_empty')
+          .key('text_caretcolor_empty')
           .caretColor('')
           .copyOption(CopyOptions.InApp)
           .height('3%')
@@ -65,18 +70,21 @@ struct TextSelectionProperties {
       Row() {
         Text('selectedBackgroundColor with null')
           .id('text_selectedbackgroundcolor_null')
+          .key('text_selectedbackgroundcolor_null')
           .selectedBackgroundColor(null)
           .copyOption(CopyOptions.InApp)
           .height('3%')
 
         Text('selectedBackgroundColor with undefined')
           .id('text_selectedbackgroundcolor_undefined')
+          .key('text_selectedbackgroundcolor_undefined')
           .selectedBackgroundColor(undefined)
           .copyOption(CopyOptions.InApp)
           .height('3%')
 
         Text('selectedBackgroundColor with empty string')
           .id('text_selectedbackgroundcolor_empty')
+          .key('text_selectedbackgroundcolor_empty')
           .selectedBackgroundColor('')
           .copyOption(CopyOptions.InApp)
           .height('3%')
@@ -86,11 +94,13 @@ struct TextSelectionProperties {
       Row() {
         Text('shaderStyle with null')
           .id('text_shaderstyle_null')
+          .key('text_shaderstyle_null')
           .shaderStyle(null)
           .height('3%')
 
         Text('shaderStyle with undefined')
           .id('text_shaderstyle_undefined')
+          .key('text_shaderstyle_undefined')
           .shaderStyle(undefined)
           .height('3%')
       }
@@ -99,6 +109,7 @@ struct TextSelectionProperties {
       Row() {
         Text('This is a long text for ellipsisMode testing with null parameter that will be truncated')
           .id('text_ellipsismode_null')
+          .key('text_ellipsismode_null')
           .ellipsisMode(null)
           .textOverflow({ overflow: TextOverflow.Ellipsis })
           .maxLines(1)
@@ -106,6 +117,7 @@ struct TextSelectionProperties {
 
         Text('This is a long text for ellipsisMode testing with undefined parameter that will be truncated')
           .id('text_ellipsismode_undefined')
+          .key('text_ellipsismode_undefined')
           .ellipsisMode(undefined)
           .textOverflow({ overflow: TextOverflow.Ellipsis })
           .maxLines(1)
@@ -116,12 +128,14 @@ struct TextSelectionProperties {
       Row() {
         Text('enableDataDetector with null: Phone 13800138000')
           .id('text_enabledatadetector_null')
+          .key('text_enabledatadetector_null')
           .enableDataDetector(null)
           .copyOption(CopyOptions.InApp)
           .height('3%')
 
         Text('enableDataDetector with undefined: Phone 13800138000')
           .id('text_enabledatadetector_undefined')
+          .key('text_enabledatadetector_undefined')
           .enableDataDetector(undefined)
           .copyOption(CopyOptions.InApp)
           .height('3%')
@@ -131,11 +145,13 @@ struct TextSelectionProperties {
       Row() {
         Text('Default selection (for comparison)')
           .id('text_selection_default')
+          .key('text_selection_default')
           .copyOption(CopyOptions.InApp)
           .height('3%')
 
         Text('Default caretColor (for comparison)')
           .id('text_caretcolor_default')
+          .key('text_caretcolor_default')
           .copyOption(CopyOptions.InApp)
           .height('3%')
       }
@@ -143,23 +159,27 @@ struct TextSelectionProperties {
       Row() {
         Text('Default selectedBackgroundColor (for comparison)')
           .id('text_selectedbackgroundcolor_default')
+          .key('text_selectedbackgroundcolor_default')
           .copyOption(CopyOptions.InApp)
           .height('3%')
 
         Text('Default shaderStyle (for comparison)')
           .id('text_shaderstyle_default')
+          .key('text_shaderstyle_default')
           .height('3%')
       }
 
       Row() {
         Text('This is a long text for default ellipsisMode comparison that will be truncated')
           .id('text_ellipsismode_default')
+          .key('text_ellipsismode_default')
           .textOverflow({ overflow: TextOverflow.Ellipsis })
           .maxLines(1)
           .height('3%')
 
         Text('Default enableDataDetector (for comparison): Phone 13800138000')
           .id('text_enabledatadetector_default')
+          .key('text_enabledatadetector_default')
           .copyOption(CopyOptions.InApp)
           .height('3%')
       }

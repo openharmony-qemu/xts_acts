@@ -47,7 +47,6 @@ import curves from '@ohos.curves';
 import { BusinessError } from '@ohos.base';
 import { DragController } from '@ohos.arkui.UIContext';
 
-let dragController = new DragController()
 class tmp{
   event:DragEvent|undefined = undefined
   extraParams:string = ''

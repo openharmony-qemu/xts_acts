@@ -88,7 +88,7 @@ export default function stageFontTest() {
       console.info('Stage_Font_static_0100 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('button');
+          let strJson = inspector.getInspectorByKey('stageFont' + '_button');
           console.info('Stage_Font_static_0100 START  :' + JSON.stringify(strJson));
           
           console.info("Stage_Font_static_0100 JSON.parseJsonElement(strJson).getElement('$attrs').getString('')labelStyle is: " +
@@ -116,7 +116,7 @@ export default function stageFontTest() {
       console.info('Stage_Font_static_0200 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('text');
+          let strJson = inspector.getInspectorByKey('stageFont' + '_text');
           console.info('Stage_Font_static_0200 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("Stage_Font_static_0200 JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontFamily') is: " +
@@ -142,7 +142,7 @@ export default function stageFontTest() {
       console.info('Stage_Font_static_0300 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('textArea');
+          let strJson = inspector.getInspectorByKey('stageFont' + '_textArea');
           console.info('Stage_Font_static_0300 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           expect(obj.getElement('$attrs').getString('fontFamily')).assertEqual("fontCustom");

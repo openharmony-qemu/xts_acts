@@ -1,11 +1,7 @@
 'use static';
-import { Entry, Text, Column, Component, Button, ClickEvent, Flex,
-  FlexAlign, Padding, Margin, Row, Visibility, ColumnOptions, HorizontalAlign,
-  AttributeModifier, ButtonAttribute} from '@ohos.arkui.component'
-import { State, Observed} from '@ohos.arkui.stateManagement'
-import hilog from '@ohos.hilog'
-import { Color,ResourceColor,LoadingProgressAttribute,Scroll,Scroller,ContentModifier,FontWeight,Gauge,TextAlign,TextOverflow,ForEach,wrapBuilder,Circle,Builder,Row,LoadingProgress,List,Gauge,ListItem,WrappedBuilder,ContentModifier,LoadingProgressConfiguration,ResourceColor, Color, QRCode, Entry, Text, Column, Component, Button, ClickEvent } from '@ohos.arkui.component'
-
+import { Entry, Text, Column, Component, Button, ClickEvent, Flex, FlexAlign, Padding, Margin, Row, Visibility, ColumnOptions, HorizontalAlign, AttributeModifier, ButtonAttribute, Color, ResourceColor, LoadingProgressAttribute, Scroll, Scroller, ContentModifier, FontWeight, Gauge, TextAlign, TextOverflow, ForEach, wrapBuilder, Circle, Builder, LoadingProgress, List, ListItem, WrappedBuilder, LoadingProgressConfiguration, QRCode } from '@ohos.arkui.component';
+import { State, Observed } from '@ohos.arkui.stateManagement';
+import hilog from '@ohos.hilog';
 @Observed
 export class MyEnableModifier implements AttributeModifier<LoadingProgressAttribute> {
   public change: boolean | undefined = true;

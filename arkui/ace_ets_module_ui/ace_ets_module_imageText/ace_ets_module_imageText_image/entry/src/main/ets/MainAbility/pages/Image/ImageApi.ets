@@ -32,6 +32,7 @@ struct ImageApiPage {
         .width(100)
         .enableAnalyzer(true)
         .id('ImageApi_Image')
+        .key('ImageApi_Image')
 
       QRCode('hello')
         .width(100)

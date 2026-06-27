@@ -3985,6 +3985,1326 @@ function testSetDisallowedPolicy() {
     }
     done();
   });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_x_key_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYXKEY_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with x_key feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_x_key_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.X_KEY, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_packet_filtering_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYPACKETFILTERING_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with packet_filtering feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_packet_filtering_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.PACKET_FILTERING, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_traffic_redirection_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYTRAFFICREDIRECTION_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with traffic_redirection feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_traffic_redirection_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.TRAFFIC_REDIRECTION, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_rs232_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYRS232_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with rs232 feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_rs232_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.RS232, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_inactive_user_freeze_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYINACTIVEUSERFREEZE_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with inactive_user_freeze feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_inactive_user_freeze_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.INACTIVE_USER_FREEZE, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_maintenance_mode_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYMAINTENANCEMODE_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with maintenance_mode feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_maintenance_mode_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.MAINTENANCE_MODE, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_screen_shot_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSCREENSHOT_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with screen_shot feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_screen_shot_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.SCREEN_SHOT, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_screen_record_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSCREENRECORD_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with screen_record feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_screen_record_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.SCREEN_RECORD, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_developer_mode_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYDEVELOPERMODE_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with developer_mode feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_developer_mode_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.DEVELOPER_MODE, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_ota_update_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYOTAUPDATE_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with ota_update feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_ota_update_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.OTA_UPDATE, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_bluetooth_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYBLUETOOTH_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with bluetooth feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_bluetooth_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.BLUETOOTH, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_modify_date_time_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYMODIFYDATETIME_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with modify_date_time feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_modify_date_time_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.MODIFY_DATE_TIME, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_printer_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYPRINTER_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with printer feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_printer_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.PRINTER, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_hdc_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYHDC_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with hdc feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_hdc_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.HDC, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_microphone_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYMICROPHONE_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with microphone feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_microphone_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.MICROPHONE, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_fingerprint_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYFINGERPRINT_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with fingerprint feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_fingerprint_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.FINGERPRINT, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_usb_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYUSB_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with usb feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_usb_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.USB, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_wifi_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYWIFI_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with wifi feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_wifi_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.WIFI, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_tethering_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYTETHERING_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with tethering feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_tethering_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.TETHERING, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_camera_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYCAMERA_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with camera feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_camera_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.CAMERA, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_mtp_client_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYMTPCLIENT_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with mtp_client feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_mtp_client_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.MTP_CLIENT, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_mtp_server_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYMTPSERVER_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with mtp_server feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_mtp_server_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.MTP_SERVER, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_samba_client_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSAMBACLIENT_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with samba_client feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_samba_client_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.SAMBA_CLIENT, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_samba_server_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSAMBASERVER_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with samba_server feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_samba_server_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.SAMBA_SERVER, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_backup_and_restore_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYBACKUPANDRESTORE_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with backup_and_restore feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_backup_and_restore_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.BACKUP_AND_RESTORE, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_mms_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYMMS_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with mms feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_mms_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.MMS, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_sms_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSMS_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with sms feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_sms_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.SMS, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_mobile_data_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYMOBILEDATA_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with mobile_data feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_mobile_data_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.MOBILE_DATA, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_airplane_mode_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYAIRPLANEMODE_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with airplane_mode feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_airplane_mode_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.AIRPLANE_MODE, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_vpn_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYVPN_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with vpn feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_vpn_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.VPN, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_notification_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYNOTIFICATION_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with notification feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_notification_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.NOTIFICATION, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_nfc_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYNFC_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with nfc feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_nfc_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.NFC, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_private_space_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYPRIVATESPACE_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with private_space feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_private_space_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.PRIVATE_SPACE, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_telephone_call_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYTELEPHONECALL_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with telephone_call feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_telephone_call_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.TELEPHONE_CALL, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_app_clone_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYAPPCLONE_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with app_clone feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_app_clone_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.APP_CLONE, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_external_storage_card_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYEXTERNALSTORAGECARD_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with external_storage_card feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_external_storage_card_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.EXTERNAL_STORAGE_CARD, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_random_mac_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYRANDOMMAC_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with random_mac feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_random_mac_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.RANDOM_MAC, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_unmute_device_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYUNMUTEDEVICE_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with unmute_device feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_unmute_device_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.UNMUTE_DEVICE, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_hdc_remote_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYHDCREMOTE_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with hdc_remote feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_hdc_remote_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.HDC_REMOTE, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_virtual_service_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYVIRTUALSERVICE_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with virtual_service feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_virtual_service_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.VIRTUAL_SERVICE, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_usb_serial_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYUSBSERIAL_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with usb_serial feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_usb_serial_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.USB_SERIAL, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_disk_recovery_key_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYDISKRECOVERYKEY_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with disk_recovery_key feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_disk_recovery_key_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.DISK_RECOVERY_KEY, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_near_link_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYNEARLINK_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with near_link feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_near_link_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.NEAR_LINK, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_reset_factory_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYRESETFACTORY_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with reset_factory feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_reset_factory_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.RESET_FACTORY, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_remote_desk_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYREMOTEDESK_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with remote_desk feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_remote_desk_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.REMOTE_DESK, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_remote_diagnosis_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYREMOTEDIAGNOSIS_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with remote_diagnosis feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_remote_diagnosis_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.REMOTE_DIAGNOSIS, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_for_account_fingerprint_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYFORACCOUNTFINGERPRINT_0100
+     * @tc.desc   test restrictions setDisallowedPolicyForAccount with fingerprint feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_for_account_fingerprint_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicyForAccount(undefined, restrictions.FeatureForAccount.FINGERPRINT, false, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_for_account_print_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYFORACCOUNTPRINT_0100
+     * @tc.desc   test restrictions setDisallowedPolicyForAccount with print feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_for_account_print_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicyForAccount(undefined, restrictions.FeatureForAccount.PRINT, false, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_for_account_mtp_client_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYFORACCOUNTMTPCLIENT_0100
+     * @tc.desc   test restrictions setDisallowedPolicyForAccount with mtp_client feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_for_account_mtp_client_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicyForAccount(undefined, restrictions.FeatureForAccount.MTP_CLIENT, false, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_for_account_usb_storage_device_write_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYFORACCOUNTUSBSTORAGEDEVICEWRITE_0100
+     * @tc.desc   test restrictions setDisallowedPolicyForAccount with usb_storage_device_write feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_for_account_usb_storage_device_write_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicyForAccount(undefined, restrictions.FeatureForAccount.USB_STORAGE_DEVICE_WRITE, false, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_for_account_disk_recovery_key_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYFORACCOUNTDISKRECOVERYKEY_0100
+     * @tc.desc   test restrictions setDisallowedPolicyForAccount with disk_recovery_key feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_for_account_disk_recovery_key_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicyForAccount(undefined, restrictions.FeatureForAccount.DISK_RECOVERY_KEY, false, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_for_account_sudo_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYFORACCOUNTSUDO_0100
+     * @tc.desc   test restrictions setDisallowedPolicyForAccount with sudo feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_for_account_sudo_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicyForAccount(undefined, restrictions.FeatureForAccount.SUDO, false, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_for_account_distributed_transmission_outgoing_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYFORACCOUNTDISTRIBUTEDTRANSMISSIONOUTGOING_0100
+     * @tc.desc   test restrictions setDisallowedPolicyForAccount with distributed_transmission_outgoing feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_for_account_distributed_transmission_outgoing_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicyForAccount(undefined, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION_OUTGOING, false, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_for_account_open_file_boost_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYFORACCOUNTOPENFILEBOOST_0100
+     * @tc.desc   test restrictions setDisallowedPolicyForAccount with open_file_boost feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_disallowed_policy_for_account_open_file_boost_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicyForAccount(undefined, restrictions.FeatureForAccount.OPEN_FILE_BOOST, false, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_user_restriction_set_apn_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETUSERRESTRICTIONSETAPN_0100
+     * @tc.desc   test restrictions setUserRestriction with set_apn settings undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_user_restriction_set_apn_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setUserRestriction(undefined, restrictions.SettingsForDevice.SET_APN, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_user_restriction_power_long_press_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETUSERRESTRICTIONPOWERLONGPRESS_0100
+     * @tc.desc   test restrictions setUserRestriction with power_long_press settings undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_user_restriction_power_long_press_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setUserRestriction(undefined, restrictions.SettingsForDevice.POWER_LONG_PRESS, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_user_restriction_set_ethernet_ip_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETUSERRESTRICTIONSETETHERNETIP_0100
+     * @tc.desc   test restrictions setUserRestriction with set_ethernet_ip settings undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_user_restriction_set_ethernet_ip_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setUserRestriction(undefined, restrictions.SettingsForDevice.SET_ETHERNET_IP, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_user_restriction_set_device_name_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETUSERRESTRICTIONSETDEVICENAME_0100
+     * @tc.desc   test restrictions setUserRestriction with set_device_name settings undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_user_restriction_set_device_name_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setUserRestriction(undefined, restrictions.SettingsForDevice.SET_DEVICE_NAME, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_user_restriction_set_biometrics_and_screen_lock_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETUSERRESTRICTIONSETBIOMETRICSANDSCREENLOCK_0100
+     * @tc.desc   test restrictions setUserRestriction with set_biometrics_and_screen_lock settings undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_user_restriction_set_biometrics_and_screen_lock_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setUserRestriction(undefined, restrictions.SettingsForDevice.SET_BIOMETRICS_AND_SCREEN_LOCK, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_user_restriction_for_account_modify_wallpaper_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETUSERRESTRICTIONFORACCOUNTMODIFYWALLPAPER_0100
+     * @tc.desc   test restrictions setUserRestrictionForAccount with modify_wallpaper settings undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_set_user_restriction_for_account_modify_wallpaper_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setUserRestrictionForAccount(undefined, restrictions.SettingsForAccount.MODIFY_WALLPAPER, DEFAULT_USER_ID, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
 }
 
 function testGetDisallowedPolicy() {

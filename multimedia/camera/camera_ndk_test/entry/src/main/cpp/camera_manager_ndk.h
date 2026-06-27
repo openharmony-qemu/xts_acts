@@ -184,6 +184,8 @@ public:
     Camera_ErrorCode GetCameraHostNameInspection(void);
     Camera_ErrorCode GetCameraHostTypeInspection(void);
     Camera_ErrorCode GetCameraHostType(void);
+    Camera_ErrorCode GetAutomotiveCameraPosition(void);
+    Camera_ErrorCode GetAutomotiveCameraPositionErrorParameter(void);
     Camera_ErrorCode TestOHGetSensorPixelArraySizeWithoutCamera(void);
     Camera_ErrorCode TestOHGetSensorColorFilterArrangementWithoutCamera(void);
     Camera_ErrorCode GetSupportedOutputCapability(void);
@@ -488,7 +490,7 @@ public:
     Camera_ErrorCode GetColorTintRange();
     Camera_ErrorCode SetColorTint(int useCaseCode);
     Camera_ErrorCode GetColorTint(int useCaseCode);
-    Camera_ErrorCode GetZoomPointInfos(int useCaseCode);
+    int32_t GetZoomPointInfos(int useCaseCode);
     Camera_ErrorCode DeleteZoomPointInfo(int useCaseCode);
     // notification
     Camera_ErrorCode RegisterNotificationReceivedCallback(int useCaseCode);

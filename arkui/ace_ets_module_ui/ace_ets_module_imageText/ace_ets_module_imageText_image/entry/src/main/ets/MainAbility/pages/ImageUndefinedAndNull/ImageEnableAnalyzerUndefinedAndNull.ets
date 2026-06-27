@@ -22,6 +22,7 @@ struct imageEnableAnalyzerUndefinedAndNullTest {
         Column({ space: 5 }) {
           Image($r('app.media.tree'))
             .id('imageEnableAnalyzerUndefined')
+            .key('imageEnableAnalyzerUndefined')
             .enableAnalyzer(undefined)
             .border({ width:2, color: Color.Black })
             .width(150)
@@ -31,6 +32,7 @@ struct imageEnableAnalyzerUndefinedAndNullTest {
         Column({ space: 5 }) {
           Image($r('app.media.tree'))
             .id('imageEnableAnalyzerNull')
+            .key('imageEnableAnalyzerNull')
             .enableAnalyzer(null)
             .border({ width:2, color: Color.Black })
             .width(150)

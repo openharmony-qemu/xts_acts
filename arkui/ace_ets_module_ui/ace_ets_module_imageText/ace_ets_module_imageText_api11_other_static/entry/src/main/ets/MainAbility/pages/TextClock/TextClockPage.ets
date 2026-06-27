@@ -85,7 +85,7 @@ struct TextClockPage {
       // 以12小时制显示东八区的系统时间，精确到秒。
       TextClock({ timeZoneOffset: this.timeZoneOffset, controller: this.controller })
         .format(this.format)
-        .key('textClock')
+        .key('TextClockPage_textClock')
         .onDateChange((value: long) => {
           this.change = 'change'
           this.accumulateTime = value

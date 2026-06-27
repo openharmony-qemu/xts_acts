@@ -236,7 +236,7 @@ export default function sideBarContainerJsunit() {
     it('sideBarContainerTest_0012', Level.LEVEL0, async (done: Function) => {
       console.info('sideBarContainerTest_0012 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('sideBarContainer' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
       let strJsonNew = getInspectorByKey('sideBarContainer');

@@ -88,7 +88,7 @@ export default function search_maxLength2() {
       let button = await driver.findComponent(ON.id('SearchMaxLength9'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let setText = await driver.findComponent(ON.id('setText'));
+      let setText = await driver.findComponent(ON.id('search_maxLength2' + '_setText'));
       await (setText?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       console.info('SearchMaxLength2_static_001 click success');
@@ -115,7 +115,7 @@ export default function search_maxLength2() {
       let button = await driver.findComponent(ON.id('SearchMaxLength5'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let setText = await driver.findComponent(ON.id('setText'));
+      let setText = await driver.findComponent(ON.id('search_maxLength2' + '_setText'));
       await (setText?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       console.info('SearchMaxLength2_static_002 click success');

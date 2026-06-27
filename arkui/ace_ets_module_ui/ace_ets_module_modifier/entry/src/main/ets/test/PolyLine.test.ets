@@ -78,7 +78,7 @@ export default function polyLineJsunit() {
     it('testpolyLine_001', Level.LEVEL0, async (done: Function) => {
       console.info('testpolyLine_001 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('polyLine' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
 
@@ -90,7 +90,7 @@ export default function polyLineJsunit() {
 
       console.info("testpolyLine_001 objNew component  is: " + JSON.stringify(objNew.$attrs));
       console.info("testpolyLine_001 objNew2 component  is: " + JSON.stringify(objNew2.$attrs));
-      expect(JSON.stringify(objNew.$attrs.points)).assertEqual(JSON.stringify(objNew2.$attrs.points)); //
+      expect(JSON.stringify(objNew.$attrs.points)).assertEqual(JSON.stringify(objNew2.$attrs.points));
       console.info('testpolyLine_001 END');
       done();
     });

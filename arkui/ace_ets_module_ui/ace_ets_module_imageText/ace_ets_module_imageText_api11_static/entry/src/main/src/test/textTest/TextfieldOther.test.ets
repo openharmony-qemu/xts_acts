@@ -89,7 +89,7 @@ export default function TextfieldOtherTest() {
           expect(highlightBorder).assertEqual(true);
           console.info('ArkUX_Text_Visual_static_0070 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Text_Visual_static_0070 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -121,7 +121,7 @@ export default function TextfieldOtherTest() {
           expect(highlightBorder).assertEqual(false);
           console.info('ArkUX_Text_Visual_static_0080 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Text_Visual_static_0080 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -153,7 +153,7 @@ export default function TextfieldOtherTest() {
           expect(highlightBorder).assertEqual(false);
           console.info('ArkUX_Text_Visual_static_0090 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Text_Visual_static_0090 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -186,7 +186,7 @@ export default function TextfieldOtherTest() {
           expect(highlightBorder).assertEqual(true);
           console.info('ArkUX_Text_Visual_static_0010 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Text_Visual_static_0010 ERR  ' + JSON.stringify(err));
         }
         done();

@@ -505,7 +505,7 @@ export default function textInput() {
     it('textInputJsunit_0127', Level.LEVEL0, async (done: Function) => {
       console.info('textInputJsunit_0127 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('textInput' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
       let strJsonNew = getInspectorByKey('textInputKey1');

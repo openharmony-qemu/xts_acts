@@ -1,0 +1,7 @@
+{
+  "src": [
+    "MainAbility/pages/index/Index",
+    "MainAbility/pages/composeListItemV2/ComposeListItemV2Page",
+    "MainAbility/pages/composeListItemV2/ComposeListItemV2Page02"
+  ]
+}

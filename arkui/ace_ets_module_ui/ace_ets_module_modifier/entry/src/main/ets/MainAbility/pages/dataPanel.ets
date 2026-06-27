@@ -54,7 +54,7 @@ struct dataPanel_testcase {
           .fontSize(50)
         Button("change value").onClick(() => {
           (this.customModifier as CustomModifier).onChange1();
-        }).key("changeButton")
+        }).key("dataPanel_changeButton")
         DataPanel({ values: [20, 40, 20], max: 100, type: DataPanelType.Line })
           .width(this.myWidth)
           .height(this.myHeight)

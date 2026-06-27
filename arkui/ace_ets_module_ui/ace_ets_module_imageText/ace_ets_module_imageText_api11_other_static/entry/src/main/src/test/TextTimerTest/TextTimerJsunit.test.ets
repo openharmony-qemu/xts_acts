@@ -15,57 +15,22 @@
  */
 
 import router from '@ohos.router';
-import {
-  Component,
-  Driver,
-  UiWindow,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix
-} from '@ohos.UiTest';
-import router from '@ohos.router';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import window from '@ohos.window';
 import events_emitter from '@ohos.events.emitter';
-import {
-  describe,
-  beforeAll,
-  beforeEach,
-  afterEach,
-  afterAll,
-  it,
-  expect,
-  Level,
-  TestType,
-  Size
-} from "../../../../hypium/index"
-import {
-  Driver,
-  Component,
-  UiWindow,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix
-} from '@ohos.UiTest';
-import { AppStorage } from '@ohos.arkui.stateManagement'
-import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '../../../../hypium/index';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import inspector from '@ohos.arkui.inspector';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import { UtilsTest, startAbility, stopApplication } from "../Util.test"
+import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { TextTimerController } from '@ohos.arkui.component';
-
-
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
@@ -128,7 +93,7 @@ it('TextTimerJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promis
       expect(obj.getElement('$attrs').getString('format')).assertEqual('mm:ss.SS');
 
       // Get default attributes of TextTimer component
-      let strJson1 = inspector.getInspectorByKey('default');
+      let strJson1 = inspector.getInspectorByKey('TextTimerPage' + '_default');
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[TextTimerJsunit_0100] component obj1 is: " + JSON.stringify(obj1));
       console.info("[TextTimerJsunit_0100] isCountDown1: " + JSON.stringify(obj1.getElement('$attrs').getString('isCountDown')));
@@ -203,7 +168,7 @@ it('TextTimerJsunit_static_0300', Level.LEVEL2, async (done: () => void): Promis
       console.info("[TextTimerJsunit_0300] time: " + JSON.stringify(time));
       expect(Number(time) > 100).assertTrue();
 
-      let start = await driver.findComponent(ON.id('start'));
+      let start = await driver.findComponent(ON.id('TextTimerPage' + '_start'));
       let startText = await (start?.getText() as Promise<string>);
       console.info("[TextTimerJsunit_0300] startText: " + JSON.stringify(startText));
       expect(startText).assertEqual('start:succ');
@@ -251,7 +216,7 @@ it('TextTimerJsunit_static_0400', Level.LEVEL2, async (done: () => void): Promis
       console.info("[TextTimerJsunit_0400] utcText2: " + JSON.stringify(utcText2));
       expect(Number(utcText1) < Number(utcText2)).assertTrue();
 
-      let pause = await driver.findComponent(ON.id('pause'));
+      let pause = await driver.findComponent(ON.id('TextTimerPage' + '_pause'));
       let pauseText = await (pause?.getText() as Promise<string>);
       console.info("[TextTimerJsunit_0400] pauseText: " + JSON.stringify(pauseText));
       expect(pauseText).assertEqual('pause:succ');

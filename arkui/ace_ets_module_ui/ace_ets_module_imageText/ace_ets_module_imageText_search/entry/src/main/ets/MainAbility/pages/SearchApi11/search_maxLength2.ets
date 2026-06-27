@@ -42,7 +42,7 @@ struct SearchMaxLength2 {
           })
       }
       Row(){
-        Button('123456789').key('setText')
+        Button('123456789').key('search_maxLength2_setText')
           .onClick(() => {
             this.text = '123456789'
           })

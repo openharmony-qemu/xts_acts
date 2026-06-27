@@ -36,7 +36,7 @@ export default function text_drag() {
         }
       } catch (err) {
         console.error("push text_drag page error: " + err);
-        expect().assertFail();
+        expect(false).assertEqual(true);
       }
       done();
     });

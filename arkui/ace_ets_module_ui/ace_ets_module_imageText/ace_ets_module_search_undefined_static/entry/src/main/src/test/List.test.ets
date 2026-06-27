@@ -69,13 +69,11 @@ import SearchSelectedBackgroundColorModifier from './SearchTest/SearchSelectedBa
 import SearchTypeModifier from './SearchTest/SearchTypeModifier.test';
 import SearchTextAlignModifierTest from './SearchTest/searchTextAlignModifierTest.test';
 import SearchTextFontModifier from './SearchTest/SearchTextFontModifier.test';
-
 import searchHalfLeading from './SearchTest/searchHalfLeading.test';
 import searchHalfLeadingModifier from './SearchTest/searchHalfLeadingModifier.test';
 import searchEnablePreviewText from './SearchTest/searchEnablePreviewText.test';
 import searchEnablePreviewTextModifier from './SearchTest/searchEnablePreviewTextModifier.test';
 import searchFontFeature from './SearchTest/searchFontFeature.test';
-import searchFontFeatureModifier from './SearchTest/searchFontFeatureModifier.test';
 import searchFontFeatureModifier from './SearchTest/searchFontFeatureModifier.test';
 import searchOnWillChange from './SearchTest/searchOnWillChange.test';
 import searchOnWillChangeModifier from './SearchTest/searchOnWillChangeModifier.test';
@@ -93,7 +91,6 @@ import searchOnContentScroll from './SearchTest/searchOnContentScroll.test';
 import searchOnContentScrollModifier from './SearchTest/searchOnContentScrollModifier.test';
 import searchEnableHapticFeedBack from './SearchTest/SearchEnableHapticFeedBack.test';
 import searchEnableHapticFeedBackModifier from './SearchTest/SearchEnableHapticFeedBackModifier.test';
-
 export default function testsuite() {
   SearchOnWillInsert();
   SearchMaxFontSize();

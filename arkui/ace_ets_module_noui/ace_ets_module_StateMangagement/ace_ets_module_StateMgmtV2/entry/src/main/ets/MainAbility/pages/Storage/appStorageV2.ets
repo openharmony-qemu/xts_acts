@@ -77,5 +77,8 @@ struct AppStorageV2Page1 {
         .height('5%')
         .fontSize(9)
     }
+    .width('100%')
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
   }
 }

@@ -15,6 +15,17 @@
 
 import { ColorMetrics, LengthMetrics, SegmentButtonV2Items, TabSegmentButtonV2 } from '@kit.ArkUI';
 
+@Component
+struct TabSegmentButtonV2AnimationMirror {
+  @Prop mirrorEnabled: boolean = false
+
+  build() {
+    Text(this.mirrorEnabled ? '1' : '0')
+      .key('TabSegmentButtonV2Animation_mirror')
+      .fontSize(10)
+  }
+}
+
 @Entry
 @ComponentV2
 struct TabSegmentButtonV2Example {
@@ -78,7 +89,7 @@ struct TabSegmentButtonV2Example {
           itemSelectedFontWeight: this.itemSelectedFontWeight,
           itemBorderRadius: this.itemBorderRadius,
           itemSelectedBackgroundColor: this.itemSelectedBackgroundColor
-        }).key('TabSegmentButtonV2_01')
+        }).key('TabSegmentButtonV2Animation_TabSegmentButtonV2_01')
 
         TabSegmentButtonV2({
           items: this.hybridItems,
@@ -86,7 +97,7 @@ struct TabSegmentButtonV2Example {
           itemSymbolFontSize: this.itemSymbolFontSize,
           itemSymbolFontColor: this.itemSymbolFontColor,
           itemSelectedSymbolFontColor: this.itemSelectedSymbolFontColor
-        }).key('TabSegmentButtonV2_02')
+        }).key('TabSegmentButtonV2Animation_TabSegmentButtonV2_02')
 
         TabSegmentButtonV2({
           items: this.imageItems,
@@ -100,11 +111,11 @@ struct TabSegmentButtonV2Example {
           itemSelectedIconFillColor: this.itemSelectedIconFillColor,
           enableStateAnimation:this.enableStateAnimation
         }).key('TabSegmentButtonV2_03')
-        Button('true').key('true')
+        Button('true').key('TabSegmentButtonV2Animation_true')
         .onClick(() => {
         this.enableStateAnimation = !this.enableStateAnimation;
         })
-        Text('' + this.enableStateAnimation).key('text')
+        TabSegmentButtonV2AnimationMirror({ mirrorEnabled: this.enableStateAnimation })
       }
       .constraintSize({ minHeight: '100%' })
       .justifyContent(FlexAlign.Start)

@@ -13,28 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry, Component, Builder,NodeContainer,
-  Column,
-  Flex, FlexDirection, ItemAlign, FlexAlign,
-  Text, Button, FontWeight, ClickEvent, Margin, 
-  Color, Row, BorderStyle,Reusable,ComponentV2,
-  Scroller,List,Repeat,ListItem,ReusableV2
-} from '@ohos.arkui.component'
-import {
-  State,
-  Link,
-  PropRef,
-  AppStorage,
-  Local,
-  Param
-} from '@ohos.arkui.stateManagement';
+import { Entry, Component, Builder, NodeContainer, Column, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight, ClickEvent, Margin, Color, Row, BorderStyle, Reusable, ComponentV2, Scroller, List, Repeat, ListItem, ReusableV2 } from '@ohos.arkui.component';
+import { State, Link, PropRef, AppStorage, Local, Param } from '@ohos.arkui.stateManagement';
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { ComponentActive, ComponentInactive,ComponentAppear, 
-ComponentDisappear, Component, State, Text, Color, TextAlign,
- Color, IDataSource, DataChangeListener, Entry, Column, 
- SwiperController, Swiper, ForEach, Row, Button } from '@kit.ArkUI';
-
+import { ComponentActive, ComponentInactive, ComponentAppear, ComponentDisappear, Component, State, Text, Color, TextAlign, IDataSource, DataChangeListener, Entry, Column, SwiperController, Swiper, ForEach, Row, Button } from '@kit.ArkUI';
 @Entry
 @Component
 struct ComponentLifecycleDecorators {

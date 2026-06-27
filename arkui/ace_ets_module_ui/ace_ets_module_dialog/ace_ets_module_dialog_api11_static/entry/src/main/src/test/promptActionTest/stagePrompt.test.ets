@@ -166,7 +166,7 @@ it('testPromptActionShowToast002_static', Level.LEVEL2, async (done: () => void)
           console.info("testPromptActionShowToast002_static on emitter err : " + JSON.stringify(err));
         }
         console.info("onSelect_001 click result is: " +
-        JSON.stringify(inspector.sendEventByKey('showDialogText', 10, "")));
+        JSON.stringify(inspector.sendEventByKey('stagePrompt' + '_showDialogText', 10, "")));
         console.info('testPromptActionShowToast002_static END ');
       } catch (err) {
         expect().assertFail()
@@ -202,7 +202,7 @@ it('testPromptActionShowToast003_static', Level.LEVEL2, async (done: () => void)
           console.info("testPromptActionShowToast003_static on emitter err : " + JSON.stringify(err));
         }
         console.info("onSelect_001 click result is: " +
-        JSON.stringify(inspector.sendEventByKey('showDialogText', 10, "")));
+        JSON.stringify(inspector.sendEventByKey('stagePrompt' + '_showDialogText', 10, "")));
         console.info('testPromptActionShowToast003_static END ');
       } catch (err) {
         expect().assertFail()
@@ -238,7 +238,7 @@ it('testPromptActionShowToast004_static', Level.LEVEL2, async (done: () => void)
           console.info("testPromptActionShowToast004_static on emitter err : " + JSON.stringify(err));
         }
         console.info("onSelect_001 click result is: " +
-        JSON.stringify(inspector.sendEventByKey('showDialogText', 10, "")));
+        JSON.stringify(inspector.sendEventByKey('stagePrompt' + '_showDialogText', 10, "")));
         console.info('testPromptActionShowToast004_static END ');
       } catch (err) {
         expect().assertFail()
@@ -274,7 +274,7 @@ it('testPromptActionShowToast005_static', Level.LEVEL2, async (done: () => void)
           console.info("testPromptActionShowToast005_static on emitter err : " + JSON.stringify(err));
         }
         console.info("onSelect_001 click result is: " +
-        JSON.stringify(inspector.sendEventByKey('showDialogText', 10, "")));
+        JSON.stringify(inspector.sendEventByKey('stagePrompt' + '_showDialogText', 10, "")));
         console.info('testPromptActionShowToast005_static END ');
       } catch (err) {
         expect().assertFail()
