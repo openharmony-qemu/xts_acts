@@ -531,7 +531,7 @@ export default function linkerUnresolvedMethodErrorTest(): void {
         let err = new LinkerUnresolvedMethodError(mapMsg as Object as string);
         expect().assertFail();
       } catch (e) {
-        expect(isErr(e)).assertEqual(true);
+        expect(e.name).assertEqual('ClassCastError');
       }
     })
 
@@ -549,7 +549,7 @@ export default function linkerUnresolvedMethodErrorTest(): void {
         let err = new LinkerUnresolvedMethodError(setMsg as Object as string);
         expect().assertFail();
       } catch (e) {
-        expect(isErr(e)).assertEqual(true);
+        expect(e.name).assertEqual('ClassCastError');
       }
     })
 
@@ -567,7 +567,7 @@ export default function linkerUnresolvedMethodErrorTest(): void {
         let err = new LinkerUnresolvedMethodError(dateMsg as Object as string);
         expect().assertFail();
       } catch (e) {
-        expect(isErr(e)).assertEqual(true);
+        expect(e.name).assertEqual('ClassCastError');
       }
     })
 
@@ -585,7 +585,7 @@ export default function linkerUnresolvedMethodErrorTest(): void {
         let err = new LinkerUnresolvedMethodError(regMsg as Object as string);
         expect().assertFail();
       } catch (e) {
-        expect(isErr(e)).assertEqual(true);
+        expect(e.name).assertEqual('ClassCastError');
       }
     })
 
@@ -604,7 +604,7 @@ export default function linkerUnresolvedMethodErrorTest(): void {
         throw new LinkerUnresolvedMethodError('msg', { cause: fnCause as Object as Error } as ErrorOptions);
         expect().assertFail();
       } catch (e) {
-        expect(isErr(e)).assertEqual(true);
+        expect(e.name).assertEqual('ClassCastError');
       }
     })
 
@@ -772,6 +772,7 @@ export default function linkerUnresolvedMethodErrorTest(): void {
       let err = new LinkerUnresolvedMethodError('msg');
       let stack = err.stack as string;
       expect(stack.length > 0).assertTrue();
+      expect(stack.includes('LinkerUnresolvedMethodError')).assertTrue();
     })
 
     /**

@@ -91,7 +91,7 @@ export default function linkerErrorTest(): void {
         let err = new LinkerError(mapName as Object as String, 'msg', undefined);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertTrue();
+        expect(e.name).assertEqual('ClassCastError');
       }
     })
 
@@ -219,7 +219,7 @@ export default function linkerErrorTest(): void {
         let err = new LinkerError(fnName as Object as String, 'msg', undefined);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertTrue();
+        expect(e.name).assertEqual('ClassCastError');
       }
     })
 
@@ -410,7 +410,7 @@ export default function linkerErrorTest(): void {
         let err = new LinkerError(null as Object as String, 'msg', undefined);
         expect().assertFail();
       } catch (e) {
-        expect((e as Error).name).assertEqual('ClassCastError');
+        expect(e.name).assertEqual('ClassCastError');
       }
     })
 
@@ -1152,7 +1152,7 @@ export default function linkerErrorTest(): void {
         let err = new LinkerError(setName as Object as String, 'msg', undefined);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertTrue();
+        expect(e.name).assertEqual('ClassCastError');
       }
     })
 
@@ -1170,7 +1170,7 @@ export default function linkerErrorTest(): void {
         let err = new LinkerError(dateName as Object as String, 'msg', undefined);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertTrue();
+        expect(e.name).assertEqual('ClassCastError');
       }
     })
 
@@ -1188,7 +1188,7 @@ export default function linkerErrorTest(): void {
         let err = new LinkerError(regName as Object as String, 'msg', undefined);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertTrue();
+        expect(e.name).assertEqual('ClassCastError');
       }
     })
 
@@ -1276,7 +1276,7 @@ export default function linkerErrorTest(): void {
         let err = new LinkerError("MapMsg", mapMsg as Object as string, {} as ErrorOptions);
         expect().assertFail();
       } catch (e) {
-        expect(isErr(e as Object)).assertEqual(true);
+        expect(e.name).assertEqual('ClassCastError');
       }
     })
 
@@ -1294,7 +1294,7 @@ export default function linkerErrorTest(): void {
         let err = new LinkerError("SetMsg", setMsg as Object as string, {} as ErrorOptions);
         expect().assertFail();
       } catch (e) {
-        expect(isErr(e as Object)).assertEqual(true);
+        expect(e.name).assertEqual('ClassCastError');
       }
     })
 
@@ -1312,7 +1312,7 @@ export default function linkerErrorTest(): void {
         let err = new LinkerError("DateMsg", dateMsg as Object as string, {} as ErrorOptions);
         expect().assertFail();
       } catch (e) {
-        expect(isErr(e as Object)).assertEqual(true);
+        expect(e.name).assertEqual('ClassCastError');
       }
     })
 
@@ -1330,7 +1330,7 @@ export default function linkerErrorTest(): void {
         let err = new LinkerError("RegMsg", regMsg as Object as string, {} as ErrorOptions);
         expect().assertFail();
       } catch (e) {
-        expect(isErr(e as Object)).assertEqual(true);
+        expect(e.name).assertEqual('ClassCastError');
       }
     })
 
@@ -1388,7 +1388,7 @@ export default function linkerErrorTest(): void {
         let err = new LinkerError(true as Object as String, 'msg', undefined);
         expect().assertFail();
       } catch (e) {
-        expect((e as Error).name).assertEqual('ClassCastError');
+        expect(e.name).assertEqual('ClassCastError');
       }
     })
 
@@ -1461,7 +1461,7 @@ export default function linkerErrorTest(): void {
         let err = new LinkerError('NullMsg', null as Object as string, {} as ErrorOptions);
         expect().assertFail();
       } catch (e) {
-        expect((e as Error).name).assertEqual('ClassCastError');
+        expect(e.name).assertEqual('ClassCastError');
       }
     })
 
