@@ -34,11 +34,13 @@ struct SymbolSpanModifier1 {
       Text() {
         SymbolSpan($r('sys.symbol.ohos_wifi')).attributeModifier(this.modifier)
           .id('SymbolSpanModifier_get_fontSize')
+          .key('SymbolSpanModifier_get_fontSize')
           .height('20%')
       }
 
       TextArea({ text: this.value })
         .id('SymbolSpanModifier_get_type')
+        .key('SymbolSpanModifier_get_type')
         .height('10%')
     }
   }

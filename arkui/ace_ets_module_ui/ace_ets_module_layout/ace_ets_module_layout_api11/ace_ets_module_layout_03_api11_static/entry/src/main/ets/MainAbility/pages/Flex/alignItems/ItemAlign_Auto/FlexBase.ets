@@ -57,11 +57,11 @@ struct FlexBase_Auto {
           alignItems: ItemAlign.Auto,
           wrap: FlexWrap.NoWrap,
         }  as FlexOptions)  {
-          Text('1').width(150).height(50).backgroundColor(Color.Red).key('textFlex01');
-          Text('2').width(150).height(100).backgroundColor(Color.Red).key('textFlex02');
-          Text('3').width(150).height(150).backgroundColor(Color.Red).key('textFlex03');
+          Text('1').width(150).height(50).backgroundColor(Color.Red).key('FlexBase_textFlex01');
+          Text('2').width(150).height(100).backgroundColor(Color.Red).key('FlexBase_textFlex02');
+          Text('3').width(150).height(150).backgroundColor(Color.Red).key('FlexBase_textFlex03');
         }
-        .key('flex01')
+        .key('FlexBase_flex01')
         .height(this.testHeight)
         .width(this.testWidth)
         .backgroundColor(Color.Red)

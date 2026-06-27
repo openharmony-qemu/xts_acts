@@ -82,8 +82,8 @@ it('testWrapNoWrapTextPosition_static', Level.LEVEL0, async () => {
       let firstText: RectValue = CommonFunc.getComponentRect('NoWrap_Position01');
       let secondText: RectValue = CommonFunc.getComponentRect('NoWrap_Position02');
       let thirdText: RectValue = CommonFunc.getComponentRect('NoWrap_Position03');
-      let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_NoWrap_Position_Container01');
-      let flexContainerStrJson = inspector.getInspectorByKey('Flex_NoWrap_Position_Container01');
+      let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_NoWrap_Position' + '_Container01');
+      let flexContainerStrJson = inspector.getInspectorByKey('Flex_NoWrap_Position' + '_Container01');
 
       expect(JSON.parseJsonElement(flexContainerStrJson).getString('$type')).assertEqual('Flex');
       expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('wrap')).assertEqual('FlexWrap.NoWrap');

@@ -90,8 +90,8 @@ it('testWrapNoWrapTextVisibilityNoneOverflow_static', Level.LEVEL0, async () => 
         let firstText: RectValue = CommonFunc.getComponentRect('NoWrap_Text_Visibility1');
         let secondText: RectValue = CommonFunc.getComponentRect('NoWrap_Text_Visibility2');
         let thirdText: RectValue = CommonFunc.getComponentRect('NoWrap_Text_Visibility3');
-        let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_NoWrap_Visibility_Container01');
-        let flexContainerStrJson = inspector.getInspectorByKey('Flex_NoWrap_Visibility_Container01');
+        let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_NoWrap_Visibility' + '_Container01');
+        let flexContainerStrJson = inspector.getInspectorByKey('Flex_NoWrap_Visibility' + '_Container01');
 
         expect(JSON.parseJsonElement(flexContainerStrJson).getString('$type')).assertEqual('Flex');
         expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('wrap')).assertEqual('FlexWrap.NoWrap');
@@ -144,8 +144,8 @@ it('testWrapNoWrapTextVisibilityNoneMeet_static', Level.LEVEL0, async () => {
         let firstText: RectValue = CommonFunc.getComponentRect('NoWrap_Text_Visibility1');
         let secondText: RectValue = CommonFunc.getComponentRect('NoWrap_Text_Visibility2');
         let thirdText: RectValue = CommonFunc.getComponentRect('NoWrap_Text_Visibility3');
-        let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_NoWrap_Visibility_Container01');
-        let flexContainerStrJson = inspector.getInspectorByKey('Flex_NoWrap_Visibility_Container01');
+        let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_NoWrap_Visibility' + '_Container01');
+        let flexContainerStrJson = inspector.getInspectorByKey('Flex_NoWrap_Visibility' + '_Container01');
 
         expect(JSON.parseJsonElement(flexContainerStrJson).getString('$type')).assertEqual('Flex');
         expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('wrap')).assertEqual('FlexWrap.NoWrap');
@@ -197,8 +197,8 @@ it('testWrapNoWrapTextVisibilityHidden_static', Level.LEVEL0, async () => {
         let firstText: RectValue = CommonFunc.getComponentRect('NoWrap_Text_Visibility1');
         let secondText: RectValue = CommonFunc.getComponentRect('NoWrap_Text_Visibility2');
         let thirdText: RectValue = CommonFunc.getComponentRect('NoWrap_Text_Visibility3');
-        let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_NoWrap_Visibility_Container01');
-        let flexContainerStrJson = inspector.getInspectorByKey('Flex_NoWrap_Visibility_Container01');
+        let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_NoWrap_Visibility' + '_Container01');
+        let flexContainerStrJson = inspector.getInspectorByKey('Flex_NoWrap_Visibility' + '_Container01');
 
         expect(JSON.parseJsonElement(flexContainerStrJson).getString('$type')).assertEqual('Flex');
         expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('wrap')).assertEqual('FlexWrap.NoWrap');

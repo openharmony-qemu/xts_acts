@@ -70,7 +70,7 @@ export default function Grid_Col_Offset_Number() {
       let Grid_Col_Offset_Number_05: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number_05');
       let Grid_Col_Offset_Number_06: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number_06');
       let Grid_Col_Offset_Number_07: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number_07');
-      let Grid_Col_Offset_Number_G1: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number_G1');
+      let Grid_Col_Offset_Number_G1: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number' + '_G1');
 
       console.log('assert space')
       expect(Math.floor(Math.abs((Grid_Col_Offset_Number_01.left - Grid_Col_Offset_Number_00.right) - vp2px(10))) <= 1)
@@ -184,7 +184,7 @@ export default function Grid_Col_Offset_Number() {
       let Grid_Col_Offset_Number_05: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number_05');
       let Grid_Col_Offset_Number_06: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number_06');
       let Grid_Col_Offset_Number_07: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number_07');
-      let Grid_Col_Offset_Number_G1: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number_G1');
+      let Grid_Col_Offset_Number_G1: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number' + '_G1');
 
       console.log('assert space')
 

@@ -22,6 +22,7 @@ struct imageAutoResizeUndefinedAndNullTest {
         Column({ space: 5 }) {
           Image($r('app.media.tree'))
             .id('imageAutoResizeUndefined')
+            .key('imageAutoResizeUndefined')
             .autoResize(undefined)
             .border({ width:2, color: Color.Black })
             .width(150)
@@ -31,6 +32,7 @@ struct imageAutoResizeUndefinedAndNullTest {
         Column({ space: 5 }) {
           Image($r('app.media.tree'))
             .id('imageAutoResizeNull')
+            .key('imageAutoResizeNull')
             .autoResize(null)
             .border({ width:2, color: Color.Black })
             .width(150)

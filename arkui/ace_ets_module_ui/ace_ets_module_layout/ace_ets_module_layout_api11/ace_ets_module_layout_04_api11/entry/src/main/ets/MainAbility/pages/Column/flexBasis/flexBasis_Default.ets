@@ -38,15 +38,15 @@ struct flexBasis_Default {
   build() {
     Column(){
       Column({space:10}) {
-        Column(){Text('1')}.width(300).height(200).flexBasis(this.addflexBasis).backgroundColor(0xF5DEB3).key('Column_flexBasis_011')
-        Column(){Text('2')}.width(300).height(100).backgroundColor(0xD2B48C).key('Column_flexBasis_012')
-        Column(){Text('3')}.width(300).height(100).backgroundColor(0xF5DEB3).key('Column_flexBasis_013')
-      }.key('Column_flexBasis_01').width(350).height(470).backgroundColor(0xAFEEEE)
+        Column(){Text('1')}.width(300).height(200).flexBasis(this.addflexBasis).backgroundColor(0xF5DEB3).key('flexBasis_Default_Column_flexBasis_011')
+        Column(){Text('2')}.width(300).height(100).backgroundColor(0xD2B48C).key('flexBasis_Default_Column_flexBasis_012')
+        Column(){Text('3')}.width(300).height(100).backgroundColor(0xF5DEB3).key('flexBasis_Default_Column_flexBasis_013')
+      }.key('flexBasis_Default_Column_flexBasis_01').width(350).height(470).backgroundColor(0xAFEEEE)
       Column({space:10}) {
-        Column(){Text('1')}.width(300).height(200).backgroundColor(0xF5DEB3).key('Column_flexBasis_021')
-        Column(){Text('2')}.width(300).height(100).backgroundColor(0xD2B48C).key('Column_flexBasis_022')
-        Column(){Text('3')}.width(300).height(100).backgroundColor(0xF5DEB3).key('Column_flexBasis_023')
-      }.key('Column_flexBasis_02').width(350).height(470).backgroundColor(0xAFEEEE)
+        Column(){Text('1')}.width(300).height(200).backgroundColor(0xF5DEB3).key('flexBasis_Default_Column_flexBasis_021')
+        Column(){Text('2')}.width(300).height(100).backgroundColor(0xD2B48C).key('flexBasis_Default_Column_flexBasis_022')
+        Column(){Text('3')}.width(300).height(100).backgroundColor(0xF5DEB3).key('flexBasis_Default_Column_flexBasis_023')
+      }.key('flexBasis_Default_Column_flexBasis_02').width(350).height(470).backgroundColor(0xAFEEEE)
     }
   }
 }

@@ -25,9 +25,13 @@ struct ImageAttrPage {
       Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Auto }) {
         Text('').height('10%').textAlign(TextAlign.Center)
         Text('' + this.top).id('top_test').height('5%').textAlign(TextAlign.Center)
+        .key('top_test')
         Text('' + this.bottom).id('bottom_test').height('5%').textAlign(TextAlign.Center)
+        .key('bottom_test')
         Text('' + this.left).id('left_test').height('5%').textAlign(TextAlign.Center)
+        .key('left_test')
         Text('' + this.right).id('right_test').height('5%').textAlign(TextAlign.Center)
+        .key('right_test')
         Row() {
           // 加载png格式图片
           Image($r('app.media.icon'))

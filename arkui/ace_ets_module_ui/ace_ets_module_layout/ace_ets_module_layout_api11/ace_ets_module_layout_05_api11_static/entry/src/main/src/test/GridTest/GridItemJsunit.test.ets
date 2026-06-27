@@ -173,7 +173,7 @@ it('GridItemJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise
 it('GridItemJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       
       console.info('[GridItemJsunit_static_0400] START');
-      let grid1 = CommonFunc.getComponentRect('grid1');
+      let grid1 = CommonFunc.getComponentRect('GridItemPage' + '_grid1');
       let left_x = Math.round(grid1.left)
       let bottom_y = Math.round(grid1.bottom / 2)
       let driver = Driver.create()

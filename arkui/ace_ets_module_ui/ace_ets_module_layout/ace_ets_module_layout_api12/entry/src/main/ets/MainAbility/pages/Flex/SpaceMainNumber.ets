@@ -27,6 +27,7 @@ struct FlexSpaceMainNumber {
           Text('3').width('50%').height(50).backgroundColor(0xD2B48C)
         }
         .id("flex_main_number_1")
+        .key('flex_main_number_1')
         .width('90%')
         .padding(10)
         .backgroundColor(0xAFEEEE)
@@ -38,6 +39,7 @@ struct FlexSpaceMainNumber {
           Text('3').width('50%').height(50).backgroundColor(0xD2B48C)
         }
         .id("flex_main_number_2")
+        .key('flex_main_number_2')
         .width('90%')
         .padding(10)
         .backgroundColor(0xAFEEEE)
@@ -49,6 +51,7 @@ struct FlexSpaceMainNumber {
           Text('3').width('50%').height(50).backgroundColor(0xD2B48C)
         }
         .id("flex_main_number_3")
+        .key('flex_main_number_3')
         .width('90%')
         .padding(10)
         .backgroundColor(0xAFEEEE)
@@ -60,6 +63,7 @@ struct FlexSpaceMainNumber {
           Text('3').width('50%').height(50).backgroundColor(0xD2B48C)
         }
         .id("flex_main_number_4")
+        .key('flex_main_number_4')
         .width('90%')
         .padding(10)
         .backgroundColor(0xAFEEEE)
@@ -71,6 +75,7 @@ struct FlexSpaceMainNumber {
           Text('3').width('50%').height(50).backgroundColor(0xD2B48C)
         }
         .id("flex_main_number_5")
+        .key('flex_main_number_5')
         .width('90%')
         .padding(10)
         .backgroundColor(0xAFEEEE)

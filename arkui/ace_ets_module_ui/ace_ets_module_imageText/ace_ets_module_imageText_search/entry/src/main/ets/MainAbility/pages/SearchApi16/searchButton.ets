@@ -48,6 +48,7 @@ struct searchButtonDemo {
       Column() {
         Search({ value: this.changeValue, placeholder: 'Type to search...', controller: this.searchController })
           .id('searchButton1')
+          .key('searchButton1')
           .searchIcon(new SymbolGlyphModifier($r('sys.symbol.magnifyingglass')).fontColor([Color.Red]))
           .cancelButton({
             style: CancelButtonStyle.CONSTANT,
@@ -71,6 +72,7 @@ struct searchButtonDemo {
 
         Search({ value: this.changeValue, placeholder: 'Type to search...', controller: this.searchController })
           .id('search2')
+          .key('search2')
           .searchIcon(new SymbolGlyphModifier($r('sys.symbol.magnifyingglass')).fontColor([Color.Red]))
           .cancelButton({
             style: CancelButtonStyle.CONSTANT,
@@ -94,6 +96,7 @@ struct searchButtonDemo {
 
         Search({ value: this.changeValue, placeholder: 'Type to search...', controller: this.searchController })
           .id('search3')
+          .key('search3')
           .searchIcon(new SymbolGlyphModifier($r('sys.symbol.magnifyingglass')).fontColor([Color.Red]))
           .cancelButton({
             style: CancelButtonStyle.CONSTANT,

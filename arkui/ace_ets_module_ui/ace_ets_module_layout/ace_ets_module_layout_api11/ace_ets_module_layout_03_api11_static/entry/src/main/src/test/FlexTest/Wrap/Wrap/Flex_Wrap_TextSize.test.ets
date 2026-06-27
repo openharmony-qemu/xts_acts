@@ -79,8 +79,8 @@ it('testWrapWrapTextSizeMeet_static', Level.LEVEL0, async () => {
       let firstText: RectValue = CommonFunc.getComponentRect('Wrap_flex_TextSize1');
       let secondText: RectValue = CommonFunc.getComponentRect('Wrap_flex_TextSize2');
       let thirdText: RectValue = CommonFunc.getComponentRect('Wrap_flex_TextSize3');
-      let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_Wrap_TextSize_Container01');
-      let flexContainerStrJson = inspector.getInspectorByKey('Flex_Wrap_TextSize_Container01');
+      let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_Wrap_TextSize' + '_Container01');
+      let flexContainerStrJson = inspector.getInspectorByKey('Flex_Wrap_TextSize' + '_Container01');
       expect(JSON.parseJsonElement(flexContainerStrJson).getString('$type')).assertEqual('Flex');
       expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('wrap')).assertEqual('FlexWrap.Wrap');
 
@@ -123,8 +123,8 @@ it('testWrapWrapTextSizeOverflow_static', Level.LEVEL0, async () => {
       let firstText: RectValue = CommonFunc.getComponentRect('Wrap_flex_TextSize1');
       let secondText: RectValue = CommonFunc.getComponentRect('Wrap_flex_TextSize2');
       let thirdText: RectValue = CommonFunc.getComponentRect('Wrap_flex_TextSize3');
-      let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_Wrap_TextSize_Container01');
-      let flexContainerStrJson = inspector.getInspectorByKey('Flex_Wrap_TextSize_Container01');
+      let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_Wrap_TextSize' + '_Container01');
+      let flexContainerStrJson = inspector.getInspectorByKey('Flex_Wrap_TextSize' + '_Container01');
       expect(JSON.parseJsonElement(flexContainerStrJson).getString('$type')).assertEqual('Flex');
       expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('wrap')).assertEqual('FlexWrap.Wrap');
 

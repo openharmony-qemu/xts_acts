@@ -13,7 +13,12 @@
  * limitations under the License.
  */
 
-import { BreakpointOptions, ContainerReader, ContainerReaderAttribute, Size } from '@kit.ArkUI';
+import {
+  BreakpointOptions,
+  ContainerReader,
+  ContainerReaderAttribute,
+  Size
+} from '@kit.ArkUI';
 
 export class MyContainerReaderModifier implements AttributeModifier<ContainerReaderAttribute> {
   public isDark: boolean = false
@@ -24,12 +29,12 @@ export class MyContainerReaderModifier implements AttributeModifier<ContainerRea
   applyNormalAttribute(instance: ContainerReaderAttribute): void {
     if (this.isDark) {
       instance.backgroundColor('#707070')
-      instance.breakpointConfig({width:[100,200,300,400]})
+      instance.breakpointConfig({ width: [100, 200, 300, 400] })
     } else {
       instance.backgroundColor('#17A98D')
         .borderColor('#707070')
         .borderWidth(2)
-      instance.breakpointConfig({width:undefined,height:[1,3.2]})
+      instance.breakpointConfig({ width: undefined, height: [1, 3.2] })
     }
   }
 }
@@ -40,18 +45,19 @@ struct ContainerReaderComponent {
   @State containerSize: Size|null|undefined = { width: 10, height: 10 };
   @State widthBp: WidthBreakpoint|undefined|null = WidthBreakpoint.WIDTH_XS;
   @State heightBp: HeightBreakpoint|undefined|null = HeightBreakpoint.HEIGHT_SM;
-  @State breakpointOptions:BreakpointOptions|null|undefined = { width: [100, 200, 400, 500], height: [0.8, 1.2] };
-  @State breakpointOptions1:BreakpointOptions|null|undefined = { width: undefined, height: undefined };
-  @State breakpointOptions2:BreakpointOptions|null|undefined = { width: [], height: [] };
-  @State containerReaderAttribute:ContainerReaderAttribute|undefined = undefined;
+  @State breakpointOptions: BreakpointOptions|null|undefined =
+    { width: [100, 200, 400, 500], height: [0.8, 1.2] };
+  @State breakpointOptions1: BreakpointOptions|null|undefined = { width: undefined, height: undefined };
+  @State breakpointOptions2: BreakpointOptions|null|undefined = { width: [], height: [] };
+  @State containerReaderAttribute: ContainerReaderAttribute|undefined = undefined;
   @State modifier: MyContainerReaderModifier = new MyContainerReaderModifier(true)
 
   build() {
-    Column({space:3}) {
-      Row(){
+    Column({ space: 3 }) {
+      Row() {
         Button('change1')
           .id('ContainerReaderComponentChange1')
-          .onClick(()=>{
+          .onClick(() => {
             this.breakpointOptions = this.breakpointOptions1
             this.widthBp = WidthBreakpoint.WIDTH_SM
             this.heightBp = HeightBreakpoint.HEIGHT_MD
@@ -60,7 +66,7 @@ struct ContainerReaderComponent {
           .height(15)
         Button('change2')
           .id('ContainerReaderComponentChange2')
-          .onClick(()=>{
+          .onClick(() => {
             this.widthBp = WidthBreakpoint.WIDTH_MD
             this.heightBp = HeightBreakpoint.HEIGHT_LG
             this.modifier.isDark = !this.modifier.isDark
@@ -70,23 +76,23 @@ struct ContainerReaderComponent {
           .height(15)
         Button('change3')
           .id('ContainerReaderComponentChange3')
-          .onClick(()=>{
+          .onClick(() => {
             this.widthBp = WidthBreakpoint.WIDTH_LG
           })
           .width(68)
           .height(15)
       }
-      Row(){
+      Row() {
         Button('change4')
           .id('ContainerReaderComponentChange4')
-          .onClick(()=>{
+          .onClick(() => {
             this.widthBp = WidthBreakpoint.WIDTH_XL
           })
           .width(68)
           .height(15)
         Button('changeNull')
           .id('ContainerReaderComponentChangeNull')
-          .onClick(()=>{
+          .onClick(() => {
             this.containerSize = null
             this.widthBp = null
             this.heightBp = null
@@ -97,7 +103,7 @@ struct ContainerReaderComponent {
       }
       Button('changeUndefined')
         .id('ContainerReaderComponentChangeUndefined')
-        .onClick(()=>{
+        .onClick(() => {
           this.containerSize = undefined
           this.widthBp = undefined
           this.heightBp = undefined
@@ -108,10 +114,10 @@ struct ContainerReaderComponent {
       ContainerReader({
         size: this.containerSize,
         widthBreakpoint: this.widthBp,
-        heightBreakpoint:this.heightBp
+        heightBreakpoint: this.heightBp
       }) {
         if (this.widthBp === WidthBreakpoint.WIDTH_XS || this.widthBp === WidthBreakpoint.WIDTH_SM) {
-          Column({space: 2}) {
+          Column({ space: 2 }) {
             Text('竖向布局').height(20)
             Text(`Column`).height(20)
           }
@@ -120,7 +126,7 @@ struct ContainerReaderComponent {
           .backgroundColor('#D5D5D5')
           .justifyContent(FlexAlign.Center)
         } else {
-          Row({space: 2}) {
+          Row({ space: 2 }) {
             Text('横向布局').height(20)
             Text(`Row`).height(20)
           }

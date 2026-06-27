@@ -56,11 +56,11 @@ struct FlexBase_Start {
           alignItems: ItemAlign.Start,
           wrap: FlexWrap.NoWrap,
         }) {
-          Text('1').width(150).height(50).backgroundColor(0xF5DEB3).key('textFlex01')
-          Text('2').width(150).height(100).backgroundColor(0xD2B48C).key('textFlex02')
-          Text('3').width(150).height(150).backgroundColor(0xF5DEB3).key('textFlex03')
+          Text('1').width(150).height(50).backgroundColor(0xF5DEB3).key('FlexBase_textFlex01')
+          Text('2').width(150).height(100).backgroundColor(0xD2B48C).key('FlexBase_textFlex02')
+          Text('3').width(150).height(150).backgroundColor(0xF5DEB3).key('FlexBase_textFlex03')
         }
-        .key('flex01')
+        .key('FlexBase_flex01')
         .height(this.testHeight)
         .width(this.testWidth)
         .backgroundColor(0xAFEEEE)

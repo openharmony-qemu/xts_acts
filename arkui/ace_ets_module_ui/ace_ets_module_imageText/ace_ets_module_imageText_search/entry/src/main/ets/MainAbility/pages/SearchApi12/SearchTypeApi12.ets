@@ -22,6 +22,7 @@ struct SearchTypeApi12 {
         placeholder: 'input your word...',
       })
         .id('SearchTypeApi12_NUMBER_DECIMAL')
+        .key('SearchTypeApi12_NUMBER_DECIMAL')
         .type(SearchType.NUMBER_DECIMAL)
         .height('5%')
 
@@ -30,6 +31,7 @@ struct SearchTypeApi12 {
         placeholder: 'input your word...',
       })
         .id('SearchTypeApi12_URL')
+        .key('SearchTypeApi12_URL')
         .type(SearchType.URL)
         .height('5%')
 
@@ -38,6 +40,7 @@ struct SearchTypeApi12 {
         placeholder: 'input your word...',
       })
         .id('SearchTypeApi12_default')
+        .key('SearchTypeApi12_default')
         .height('5%')
 
       Search({
@@ -45,6 +48,7 @@ struct SearchTypeApi12 {
         placeholder: 'input your word...',
       })
         .id('SearchTypeApi12_undefined')
+        .key('SearchTypeApi12_undefined')
         .type(undefined)
         .height('5%')
     }.height('100%')

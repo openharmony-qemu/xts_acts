@@ -66,15 +66,15 @@ export default function AlignContent_End_FlexP_Fixed_Margin() {
         name: 'margin', value: 10
       })
       await CommonFunc.sleep(3000)
-      let strJson = getInspectorByKey('AlignContent_End_FlexP_Fixed_Margin_flex001');
+      let strJson = getInspectorByKey('AlignContent_End_FlexP_Fixed_Margin' + '_flex001');
 
       console.info('flex [getInspectorByKey] is:' + JSON.stringify(JSON.parse(strJson)));
       console.info('flex obj.$attrs.constructor is:' + JSON.stringify(JSON.parse(strJson).$attrs.constructor));
-      let AlignContentFlexEnd_flex001: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin_flex001');
-      let AlignContentFlexEnd_1: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin_1');
-      let AlignContentFlexEnd_2: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin_2');
-      let AlignContentFlexEnd_3: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin_3');
-      let AlignContentFlexEnd_4: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin_4');
+      let AlignContentFlexEnd_flex001: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin' + '_flex001');
+      let AlignContentFlexEnd_1: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin' + '_1');
+      let AlignContentFlexEnd_2: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin' + '_2');
+      let AlignContentFlexEnd_3: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin' + '_3');
+      let AlignContentFlexEnd_4: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin' + '_4');
 
       console.log('AlignContent_End_FlexP_Fixed_Margin_flex001 rect_value is:' +
       JSON.stringify(AlignContentFlexEnd_flex001));
@@ -125,13 +125,13 @@ export default function AlignContent_End_FlexP_Fixed_Margin() {
         name: 'margin', value: 100
       })
       await CommonFunc.sleep(3000)
-      let strJson = getInspectorByKey('AlignContent_End_FlexP_Fixed_Margin_flex001');
+      let strJson = getInspectorByKey('AlignContent_End_FlexP_Fixed_Margin' + '_flex001');
 
-      let AlignContentFlexEnd_flex002: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin_flex001');
-      let AlignContentFlexEnd_1: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin_1');
-      let AlignContentFlexEnd_2: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin_2');
-      let AlignContentFlexEnd_3: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin_3');
-      let AlignContentFlexEnd_4: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin_4');
+      let AlignContentFlexEnd_flex002: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin' + '_flex001');
+      let AlignContentFlexEnd_1: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin' + '_1');
+      let AlignContentFlexEnd_2: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin' + '_2');
+      let AlignContentFlexEnd_3: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin' + '_3');
+      let AlignContentFlexEnd_4: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin' + '_4');
 
       console.log('AlignContent_End_FlexP_Fixed_Margin_flex002 rect_value is:' +
       JSON.stringify(AlignContentFlexEnd_flex002))

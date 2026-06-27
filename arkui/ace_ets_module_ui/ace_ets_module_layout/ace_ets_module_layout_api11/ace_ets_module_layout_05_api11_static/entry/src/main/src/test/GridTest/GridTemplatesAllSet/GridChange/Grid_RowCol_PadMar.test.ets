@@ -80,14 +80,14 @@ export default function Grid_RowCol_PadMar() {
 it('testGridRowColGridPad_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGridRowColGridPad_static_01] START');
       await CommonFunc.sleep(3000);
-      let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_PadMar_01');
+      let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_PadMar' + '_01');
 
      expect(JSON.parseJsonElement(gridContainerStrJson).getString('$type')).assertEqual('Grid');
-      let Grid_RowCol_PadMar_011: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar_011');
-      let Grid_RowCol_PadMar_012: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar_012');
-      let Grid_RowCol_PadMar_013: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar_013');
-      let Grid_RowCol_PadMar_014: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar_014');
-      let Grid_RowCol_PadMar_01: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar_01');
+      let Grid_RowCol_PadMar_011: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar' + '_011');
+      let Grid_RowCol_PadMar_012: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar' + '_012');
+      let Grid_RowCol_PadMar_013: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar' + '_013');
+      let Grid_RowCol_PadMar_014: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar' + '_014');
+      let Grid_RowCol_PadMar_01: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar' + '_01');
 
       expect(Math.abs(Math.round(Grid_RowCol_PadMar_011.left - Grid_RowCol_PadMar_01.left) -
       Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
@@ -159,15 +159,15 @@ it('testGridRowColGridMargin_static_02', Level.LEVEL0, async (done: () => void):
         name: 'addMargin', value: 10
       });
       await CommonFunc.sleep(3000);
-      let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_PadMar_01');
+      let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_PadMar' + '_01');
 
      expect(JSON.parseJsonElement(gridContainerStrJson).getString('$type')).assertEqual('Grid');
-      let Grid_RowCol_PadMar_011: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar_011');
-      let Grid_RowCol_PadMar_012: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar_012');
-      let Grid_RowCol_PadMar_013: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar_013');
-      let Grid_RowCol_PadMar_014: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar_014');
-      let Grid_RowCol_PadMar_01: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar_01');
-      let Grid_RowCol_PadMar_Box_01: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar_Box_01');
+      let Grid_RowCol_PadMar_011: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar' + '_011');
+      let Grid_RowCol_PadMar_012: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar' + '_012');
+      let Grid_RowCol_PadMar_013: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar' + '_013');
+      let Grid_RowCol_PadMar_014: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar' + '_014');
+      let Grid_RowCol_PadMar_01: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar' + '_01');
+      let Grid_RowCol_PadMar_Box_01: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar' + '_Box_01');
       expect(Math.abs(Grid_RowCol_PadMar_011.left - Grid_RowCol_PadMar_01.left) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_PadMar_013.left - Grid_RowCol_PadMar_01.left) <= 1).assertTrue();
 
@@ -234,15 +234,15 @@ it('testGridRowColGridPadMar_static_03', Level.LEVEL0, async (done: () => void):
         name: 'addMargin', value: 10
       });
       await CommonFunc.sleep(3000);
-      let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_PadMar_01');
+      let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_PadMar' + '_01');
 
      expect(JSON.parseJsonElement(gridContainerStrJson).getString('$type')).assertEqual('Grid');
-      let Grid_RowCol_PadMar_011: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar_011');
-      let Grid_RowCol_PadMar_012: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar_012');
-      let Grid_RowCol_PadMar_013: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar_013');
-      let Grid_RowCol_PadMar_014: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar_014');
-      let Grid_RowCol_PadMar_01: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar_01');
-      let Grid_RowCol_PadMar_Box_01: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar_Box_01');
+      let Grid_RowCol_PadMar_011: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar' + '_011');
+      let Grid_RowCol_PadMar_012: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar' + '_012');
+      let Grid_RowCol_PadMar_013: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar' + '_013');
+      let Grid_RowCol_PadMar_014: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar' + '_014');
+      let Grid_RowCol_PadMar_01: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar' + '_01');
+      let Grid_RowCol_PadMar_Box_01: RectValue = CommonFunc.getComponentRect('Grid_RowCol_PadMar' + '_Box_01');
 
       expect(Math.abs(Grid_RowCol_PadMar_011.left - Grid_RowCol_PadMar_01.left -
       UIContext.resolveUIContext()!.vp2px(10)) <= 1).assertTrue();

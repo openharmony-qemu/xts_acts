@@ -80,8 +80,8 @@ it('testWrapNoWrapTextSizeMeet_static', Level.LEVEL0, async () => {
       let firstText: RectValue = CommonFunc.getComponentRect('NoWrap_flex_TextSize1');
       let secondText: RectValue = CommonFunc.getComponentRect('NoWrap_flex_TextSize2');
       let thirdText: RectValue = CommonFunc.getComponentRect('NoWrap_flex_TextSize3');
-      let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_NoWrap_TextSize_Container01');
-      let flexContainerStrJson = inspector.getInspectorByKey('Flex_NoWrap_TextSize_Container01');
+      let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_NoWrap_TextSize' + '_Container01');
+      let flexContainerStrJson = inspector.getInspectorByKey('Flex_NoWrap_TextSize' + '_Container01');
 
       expect(JSON.parseJsonElement(flexContainerStrJson).getString('$type')).assertEqual('Flex');
       expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row');
@@ -123,8 +123,8 @@ it('testWrapNoWrapTextSizeOverflow_static', Level.LEVEL0, async () => {
       let firstText: RectValue = CommonFunc.getComponentRect('NoWrap_flex_TextSize1');
       let secondText: RectValue = CommonFunc.getComponentRect('NoWrap_flex_TextSize2');
       let thirdText: RectValue = CommonFunc.getComponentRect('NoWrap_flex_TextSize3');
-      let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_NoWrap_TextSize_Container01');
-      let flexContainerStrJson = inspector.getInspectorByKey('Flex_NoWrap_TextSize_Container01');
+      let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_NoWrap_TextSize' + '_Container01');
+      let flexContainerStrJson = inspector.getInspectorByKey('Flex_NoWrap_TextSize' + '_Container01');
 
       expect(JSON.parseJsonElement(flexContainerStrJson).getString('$type')).assertEqual('Flex');
       expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row');

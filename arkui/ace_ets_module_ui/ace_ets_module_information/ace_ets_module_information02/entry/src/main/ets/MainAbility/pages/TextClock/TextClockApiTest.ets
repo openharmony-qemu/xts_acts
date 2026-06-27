@@ -34,10 +34,13 @@ function buildTextClock(config: TextClockConfiguration) {
         .margin(20)
       Text('' + config.started)
         .id('started')
+        .key('started')
       Text(config.timeValue + '')
         .id('TimeValue')
+        .key('TimeValue')
       Text(config.timeValue + '')
         .id('TimeValue2')
+        .key('TimeValue2')
       TimePicker({
         selected: (new Date(config.timeValue * 1000 + 
         ((config.contentModifier as MyTextClockStyle).currentTimeZoneOffset - config.timeZoneOffset) * 60 * 60 * 1000)),

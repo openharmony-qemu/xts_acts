@@ -67,8 +67,8 @@ export default function row_TextLayoutWeightTest() {
       let firstText: RectValue = CommonFunc.getComponentRect('Row_TextLayoutWeight1');
       let secondText: RectValue = CommonFunc.getComponentRect('Row_TextLayoutWeight2');
       let thirdText: RectValue = CommonFunc.getComponentRect('Row_TextLayoutWeight3');
-      let rowContainer: RectValue = CommonFunc.getComponentRect('Row_TextLayoutWeight_Container01');
-      let rowContainerStrJson = getInspectorByKey('Row_TextLayoutWeight_Container01');
+      let rowContainer: RectValue = CommonFunc.getComponentRect('Row_TextLayoutWeight' + '_Container01');
+      let rowContainerStrJson = getInspectorByKey('Row_TextLayoutWeight' + '_Container01');
 
       expect(JSON.parse(rowContainerStrJson).$type).assertEqual('Row');
 

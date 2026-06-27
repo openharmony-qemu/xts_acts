@@ -54,6 +54,7 @@ struct PixelMapDrawableDescriptorConstructorTest {
             .id('imgTest001')
           Text(this.testResult001)
             .id('txtTestResult001')
+            .key('txtTestResult001')
             .fontSize(14)
         }
 
@@ -71,6 +72,7 @@ struct PixelMapDrawableDescriptorConstructorTest {
             .id('imgTest002')
           Text(this.testResult002)
             .id('txtTestResult002')
+            .key('txtTestResult002')
             .fontSize(14)
         }
 
@@ -87,6 +89,7 @@ struct PixelMapDrawableDescriptorConstructorTest {
             .id('imgTest003')
           Text(this.testResult003)
             .id('txtTestResult003')
+            .key('txtTestResult003')
             .fontSize(14)
         }
 
@@ -104,6 +107,7 @@ struct PixelMapDrawableDescriptorConstructorTest {
             .id('imgTest006')
           Text(this.testResult006)
             .id('txtTestResult006')
+            .key('txtTestResult006')
             .fontSize(14)
         }
       }
@@ -141,7 +145,7 @@ struct PixelMapDrawableDescriptorConstructorTest {
 
   Test002() {
     try {
-      let drawable: DrawableDescriptor = new PixelMapDrawableDescriptor($r('app.media.tree'));
+      let drawable: DrawableDescriptor = new PixelMapDrawableDescriptor($r('app.media.tree') as ESObject);
       this.drawable002 = drawable;
 
       if (drawable && drawable instanceof PixelMapDrawableDescriptor) {
@@ -156,7 +160,8 @@ struct PixelMapDrawableDescriptorConstructorTest {
 
   Test003() {
     try {
-      let drawable: DrawableDescriptor = new PixelMapDrawableDescriptor($r('sys.media.ohos_ic_public_more'));
+      let drawable: DrawableDescriptor = new PixelMapDrawableDescriptor(
+        $r('sys.media.ohos_ic_public_more') as ESObject);
       this.drawable003 = drawable;
 
       if (drawable && drawable instanceof PixelMapDrawableDescriptor) {

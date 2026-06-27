@@ -88,15 +88,15 @@ export default function columnNesting_alignItems() {
       await CommonFunc.sleep(4000);
       const uiContext = AppStorage.get<UIContext>("uiContext")
       console.log('get Initial value')
-      let columnNesting_alignItems_011: RectValue = CommonFunc.getComponentRect('columnNesting_alignItems_011');
-      let columnNesting_alignItems_012: RectValue = CommonFunc.getComponentRect('columnNesting_alignItems_012');
-      let columnNesting_alignItems_013: RectValue = CommonFunc.getComponentRect('columnNesting_alignItems_013');
-      let columnNesting_alignItems_01: RectValue = CommonFunc.getComponentRect('columnNesting_alignItems_01');
-      let columnNesting_alignItems_021: RectValue = CommonFunc.getComponentRect('columnNesting_alignItems_021');
-      let columnNesting_alignItems_022: RectValue = CommonFunc.getComponentRect('columnNesting_alignItems_022');
-      let columnNesting_alignItems_023: RectValue = CommonFunc.getComponentRect('columnNesting_alignItems_023');
-      let columnNesting_alignItems_02: RectValue = CommonFunc.getComponentRect('columnNesting_alignItems_02');
-      let columnNesting_alignItems_1: RectValue = CommonFunc.getComponentRect('columnNesting_alignItems_1');
+      let columnNesting_alignItems_011: RectValue = CommonFunc.getComponentRect('columnNesting_alignItems' + '_011');
+      let columnNesting_alignItems_012: RectValue = CommonFunc.getComponentRect('columnNesting_alignItems' + '_012');
+      let columnNesting_alignItems_013: RectValue = CommonFunc.getComponentRect('columnNesting_alignItems' + '_013');
+      let columnNesting_alignItems_01: RectValue = CommonFunc.getComponentRect('columnNesting_alignItems' + '_01');
+      let columnNesting_alignItems_021: RectValue = CommonFunc.getComponentRect('columnNesting_alignItems' + '_021');
+      let columnNesting_alignItems_022: RectValue = CommonFunc.getComponentRect('columnNesting_alignItems' + '_022');
+      let columnNesting_alignItems_023: RectValue = CommonFunc.getComponentRect('columnNesting_alignItems' + '_023');
+      let columnNesting_alignItems_02: RectValue = CommonFunc.getComponentRect('columnNesting_alignItems' + '_02');
+      let columnNesting_alignItems_1: RectValue = CommonFunc.getComponentRect('columnNesting_alignItems' + '_1');
       console.log('assert position')
       expect(Math.floor(Math.abs((columnNesting_alignItems_011.left - columnNesting_alignItems_01.left))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((columnNesting_alignItems_012.left - columnNesting_alignItems_01.left))) <= 1).assertTrue();

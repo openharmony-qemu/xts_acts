@@ -123,7 +123,7 @@ export default function Span3JsunitTest() {
     it('testSpan004', Level.LEVEL1, async (done: Function) => {
       console.info('[testSpan004] START');
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('fontColor');
+      let strJson = getInspectorByKey('Span3Jsunit' + '_fontColor');
       console.info("[testSpan004] component strJson:" + strJson);
 
       console.info("[testSpan004] fontColor:" + JSON.parse(strJson).$attrs.fontColor);
@@ -156,7 +156,7 @@ export default function Span3JsunitTest() {
         console.log("[testSpan005] change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
-      let strJson = getInspectorByKey('fontColor');
+      let strJson = getInspectorByKey('Span3Jsunit' + '_fontColor');
       console.info("[testSpan005] component strJson:" + strJson);
 
       console.info("[testSpan005] fontColor:" + JSON.parse(strJson).$attrs.fontColor);

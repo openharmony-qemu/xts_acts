@@ -14,16 +14,17 @@
  */
 
 import { LengthMetrics } from '@kit.ArkUI';
+import { CompatStrokeJoinStyle, setSearchStrokeJoinStyle } from '../../common/SearchApi26Compat';
 
 class SearchStrokeJoinStyleModifier implements AttributeModifier<SearchAttribute> {
-  public strokeJoinStyleValue: StrokeJoinStyle | undefined;
+  public strokeJoinStyleValue: CompatStrokeJoinStyle | null | undefined;
 
-  constructor(value: StrokeJoinStyle | undefined) {
+  constructor(value: CompatStrokeJoinStyle | null | undefined) {
     this.strokeJoinStyleValue = value;
   }
 
-  applyNormalAttribute(instance: SearchAttribute):void {
-    instance.strokeJoinStyle(this.strokeJoinStyleValue);
+  applyNormalAttribute(instance: SearchAttribute): void {
+    setSearchStrokeJoinStyle(instance, this.strokeJoinStyleValue);
   }
 }
 
@@ -31,56 +32,64 @@ class SearchStrokeJoinStyleModifier implements AttributeModifier<SearchAttribute
 @Component
 struct SearchStrokeJoinStyle {
   modifierMiter: SearchStrokeJoinStyleModifier =
-    new SearchStrokeJoinStyleModifier(StrokeJoinStyle.MITER_JOIN);
+    new SearchStrokeJoinStyleModifier(CompatStrokeJoinStyle.MITER_JOIN);
   modifierRound: SearchStrokeJoinStyleModifier =
-    new SearchStrokeJoinStyleModifier(StrokeJoinStyle.ROUND_JOIN);
+    new SearchStrokeJoinStyleModifier(CompatStrokeJoinStyle.ROUND_JOIN);
   modifierBevel: SearchStrokeJoinStyleModifier =
-    new SearchStrokeJoinStyleModifier(StrokeJoinStyle.BEVEL_JOIN);
+    new SearchStrokeJoinStyleModifier(CompatStrokeJoinStyle.BEVEL_JOIN);
+  modifierNull: SearchStrokeJoinStyleModifier = new SearchStrokeJoinStyleModifier(null);
+  modifierUndefined: SearchStrokeJoinStyleModifier = new SearchStrokeJoinStyleModifier(undefined);
 
   build() {
     Column({ space: 5 }) {
       Search({ value: 'Search strokeJoinStyle MITER_JOIN' })
         .id('search_strokeJoinStyle_miter_join')
+        .key('search_strokeJoinStyle_miter_join')
         .height('5%')
         .width('100%')
         .strokeWidth(LengthMetrics.px(3.0))
         .strokeColor(Color.Red)
-        .strokeJoinStyle(StrokeJoinStyle.MITER_JOIN)
+        .attributeModifier(this.modifierMiter)
 
       Search({ value: 'Search strokeJoinStyle ROUND_JOIN' })
         .id('search_strokeJoinStyle_round_join')
+        .key('search_strokeJoinStyle_round_join')
         .height('5%')
         .width('100%')
         .strokeWidth(LengthMetrics.px(3.0))
         .strokeColor(Color.Red)
-        .strokeJoinStyle(StrokeJoinStyle.ROUND_JOIN)
+        .attributeModifier(this.modifierRound)
 
       Search({ value: 'Search strokeJoinStyle BEVEL_JOIN' })
         .id('search_strokeJoinStyle_bevel_join')
+        .key('search_strokeJoinStyle_bevel_join')
         .height('5%')
         .width('100%')
         .strokeWidth(LengthMetrics.px(3.0))
         .strokeColor(Color.Red)
-        .strokeJoinStyle(StrokeJoinStyle.BEVEL_JOIN)
+        .attributeModifier(this.modifierBevel)
 
       Search({ value: 'Search strokeJoinStyle null' })
         .id('search_strokeJoinStyle_null')
+        .key('search_strokeJoinStyle_null')
         .height('5%')
         .width('100%')
         .strokeWidth(LengthMetrics.px(3.0))
         .strokeColor(Color.Red)
-        .strokeJoinStyle(null)
+        .attributeModifier(this.modifierNull)
 
       Search({ value: 'Search strokeJoinStyle undefined' })
         .id('search_strokeJoinStyle_undefined')
+        .key('search_strokeJoinStyle_undefined')
         .height('5%')
         .width('100%')
         .strokeWidth(LengthMetrics.px(3.0))
         .strokeColor(Color.Red)
-        .strokeJoinStyle(undefined)
+        .attributeModifier(this.modifierUndefined)
 
       Search({ value: 'Search strokeJoinStyle default' })
         .id('search_strokeJoinStyle_default')
+        .key('search_strokeJoinStyle_default')
         .height('5%')
         .width('100%')
         .strokeWidth(LengthMetrics.px(3.0))
@@ -88,6 +97,7 @@ struct SearchStrokeJoinStyle {
 
       Search({ value: 'Search strokeJoinStyle modifier miter' })
         .id('search_strokeJoinStyle_modifier_miter')
+        .key('search_strokeJoinStyle_modifier_miter')
         .height('5%')
         .width('100%')
         .strokeWidth(LengthMetrics.px(3.0))
@@ -96,6 +106,7 @@ struct SearchStrokeJoinStyle {
 
       Search({ value: 'Search strokeJoinStyle modifier round' })
         .id('search_strokeJoinStyle_modifier_round')
+        .key('search_strokeJoinStyle_modifier_round')
         .height('5%')
         .width('100%')
         .strokeWidth(LengthMetrics.px(3.0))
@@ -104,6 +115,7 @@ struct SearchStrokeJoinStyle {
 
       Search({ value: 'Search strokeJoinStyle modifier bevel' })
         .id('search_strokeJoinStyle_modifier_bevel')
+        .key('search_strokeJoinStyle_modifier_bevel')
         .height('5%')
         .width('100%')
         .strokeWidth(LengthMetrics.px(3.0))

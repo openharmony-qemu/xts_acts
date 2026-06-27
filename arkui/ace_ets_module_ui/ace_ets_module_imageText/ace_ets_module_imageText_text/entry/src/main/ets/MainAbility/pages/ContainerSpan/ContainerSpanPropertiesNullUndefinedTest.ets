@@ -45,6 +45,7 @@ struct ContainerSpanPropertiesNullUndefinedTest {
               }
             }
             .id('ContainerSpan_textBackgroundStyle_default')
+            .key('ContainerSpan_textBackgroundStyle_default')
             .width('30%')
 
             // Null
@@ -55,6 +56,7 @@ struct ContainerSpanPropertiesNullUndefinedTest {
               .textBackgroundStyle(null)
             }
             .id('ContainerSpan_textBackgroundStyle_null')
+            .key('ContainerSpan_textBackgroundStyle_null')
             .width('30%')
 
             // Undefined
@@ -66,6 +68,7 @@ struct ContainerSpanPropertiesNullUndefinedTest {
               .textBackgroundStyle(undefined)
             }
             .id('ContainerSpan_textBackgroundStyle_undefined')
+            .key('ContainerSpan_textBackgroundStyle_undefined')
             .width('30%')
           }
           .width('100%')
@@ -94,6 +97,7 @@ struct ContainerSpanPropertiesNullUndefinedTest {
               .attributeModifier(null)
             }
             .id('ContainerSpan_attributeModifier_null')
+            .key('ContainerSpan_attributeModifier_null')
             .width('30%')
 
             // Undefined
@@ -104,6 +108,7 @@ struct ContainerSpanPropertiesNullUndefinedTest {
               .attributeModifier(undefined)
             }
             .id('ContainerSpan_attributeModifier_undefined')
+            .key('ContainerSpan_attributeModifier_undefined')
             .width('30%')
           }
           .width('100%')

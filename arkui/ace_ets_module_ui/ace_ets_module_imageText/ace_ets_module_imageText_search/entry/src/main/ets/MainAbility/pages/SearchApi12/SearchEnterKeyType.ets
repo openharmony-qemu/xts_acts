@@ -56,11 +56,13 @@ struct SearchEnterKeyType {
       Search({ value: 'Search EnterKeyType default.' })
         .height('5%')
         .id('key_search_enterkeytype_default')
+        .key('key_search_enterkeytype_default')
 
       Search({ value: 'Search EnterKeyType set.' })
         .border({ width: 1 }).padding(10).height('5%')
         .attributeModifier( this.SearchEnterKeyTypeModifier )
         .id('key_search_enterkeytype')
+        .key('key_search_enterkeytype')
     }
   }
 }

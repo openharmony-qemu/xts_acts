@@ -120,7 +120,7 @@ struct TextInputPage {
         })
       Text(this.text).fontSize(10).key('text').height('5%')
       Button('Set caretPosition 1')
-        .key('button')
+        .key('TextInputPage_button')
         .onClick((e:ClickEvent) => {
           // 将光标移动至第一个字符后
           this.controller.caretPosition(1)
@@ -141,11 +141,11 @@ struct TextInputPage {
         .height('5%')
         .borderRadius(0)
         .style(TextInputStyle.Inline)
-      Text('onSubmit:' + this.onSubmit).fontSize(10).margin(1).key('submit').height('5%')
+      Text('onSubmit:' + this.onSubmit).fontSize(10).margin(1).key('TextInputPage_submit').height('5%')
       Text('onEditChange:' + this.onEditChange).fontSize(10).margin(1).key('editChange').height('5%')
-      Text('onCopy:' + this.onCopy).fontSize(10).margin(1).key('copy').height('5%')
-      Text('onCut:' + this.onCut).fontSize(10).margin(1).key('cut').height('5%')
-      Text('onPaste:' + this.onPaste).fontSize(10).margin(1).key('paste').height('5%')
+      Text('onCopy:' + this.onCopy).fontSize(10).margin(1).key('TextInputPage_copy').height('5%')
+      Text('onCut:' + this.onCut).fontSize(10).margin(1).key('TextInputPage_cut').height('5%')
+      Text('onPaste:' + this.onPaste).fontSize(10).margin(1).key('TextInputPage_paste').height('5%')
     }.width('100%')
   }
 }

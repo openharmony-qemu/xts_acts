@@ -75,12 +75,12 @@ export default function AlignContent_End_FlexP_Fixed_Offset() {
      */
 it('testAlignContentEndFlexPfixedOffset_static', Level.LEVEL0, async () => {
       console.info('testAlignContentEndFlexPfixedOffset START');
-      let strJson = inspector.getInspectorByKey('AlignContent_End_FlexP_Fixed_Offset_flex001');
-      let AlignContentFlexEnd_flex001: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Offset_flex001');
-      let AlignContentFlexEnd_1: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Offset_1');
-      let AlignContentFlexEnd_2: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Offset_2');
-      let AlignContentFlexEnd_3: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Offset_3');
-      let AlignContentFlexEnd_4: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Offset_4');
+      let strJson = inspector.getInspectorByKey('AlignContent_End_FlexP_Fixed_Offset' + '_flex001');
+      let AlignContentFlexEnd_flex001: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Offset' + '_flex001');
+      let AlignContentFlexEnd_1: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Offset' + '_1');
+      let AlignContentFlexEnd_2: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Offset' + '_2');
+      let AlignContentFlexEnd_3: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Offset' + '_3');
+      let AlignContentFlexEnd_4: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Offset' + '_4');
 
       console.log('AlignContent_End_FlexP_Fixed_Offset_flex001 rect_value is:' +
       JSON.stringify(AlignContentFlexEnd_flex001));

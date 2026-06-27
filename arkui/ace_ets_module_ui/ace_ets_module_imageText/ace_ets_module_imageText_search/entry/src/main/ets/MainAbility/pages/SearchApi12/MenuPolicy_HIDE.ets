@@ -25,6 +25,7 @@ struct MenuPolicy_HIDE {
     Column({space: 10}) {
       Text(this.MenuPolicyStatus)
         .id('MenuPolicy_HIDE')
+        .key('MenuPolicy_HIDE')
       Search({ value: this.changeValue, placeholder: 'Type to search...', controller: this.controller })
         .searchButton('SEARCH')
         .width('95%')
