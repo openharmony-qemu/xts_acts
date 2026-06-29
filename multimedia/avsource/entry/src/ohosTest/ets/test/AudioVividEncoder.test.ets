@@ -525,5 +525,122 @@ export default function audiovividEncoderTest() {
       expect(audiovividencoder.DestroyBuilderNullCheck()).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.name   testCreateEmptyBuilderNullCheck
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AUDIOVIVID_ENCODER_INTERFACE_TEST_4000
+     * @tc.desc   test CreateEmptyBuilderNullCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testCreateEmptyBuilderNullCheck', Level.LEVEL2, async (done: Function) => {
+      expect(audiovividencoder.CreateEmptyBuilderNullCheck()).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testAddObjectBuilderNullCheck
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AUDIOVIVID_ENCODER_INTERFACE_TEST_4100
+     * @tc.desc   test AddObjectBuilderNullCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testAddObjectBuilderNullCheck', Level.LEVEL2, async (done: Function) => {
+      expect(audiovividencoder.AddObjectBuilderNullCheck()).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testAddObjectIndexNullCheck
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AUDIOVIVID_ENCODER_INTERFACE_TEST_4200
+     * @tc.desc   test AddObjectIndexNullCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testAddObjectIndexNullCheck', Level.LEVEL2, async (done: Function) => {
+      expect(audiovividencoder.AddObjectIndexNullCheck()).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testRemoveObjectBuilderNullCheck
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AUDIOVIVID_ENCODER_INTERFACE_TEST_4300
+     * @tc.desc   test RemoveObjectBuilderNullCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRemoveObjectBuilderNullCheck', Level.LEVEL2, async (done: Function) => {
+      expect(audiovividencoder.RemoveObjectBuilderNullCheck()).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testUpdateBaseMetaBuilderNullCheck
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AUDIOVIVID_ENCODER_INTERFACE_TEST_4400
+     * @tc.desc   test UpdateBaseMetaBuilderNullCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testUpdateBaseMetaBuilderNullCheck', Level.LEVEL2, async (done: Function) => {
+      expect(audiovividencoder.UpdateBaseMetaBuilderNullCheck()).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testUpdateBaseMetaBufferNullCheck
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AUDIOVIVID_ENCODER_INTERFACE_TEST_4500
+     * @tc.desc   test UpdateBaseMetaBufferNullCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testUpdateBaseMetaBufferNullCheck', Level.LEVEL2, async (done: Function) => {
+      expect(audiovividencoder.UpdateBaseMetaBufferNullCheck()).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testRemoveObjectIndexCheck
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AUDIOVIVID_ENCODER_INTERFACE_TEST_4600
+     * @tc.desc   test RemoveObjectIndexCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRemoveObjectIndexCheck', Level.LEVEL2, async (done: Function) => {
+      expect(audiovividencoder.RemoveObjectIndexCheck()).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testUpdateBaseMetaTooManyObject
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AUDIOVIVID_ENCODER_INTERFACE_TEST_4700
+     * @tc.desc   test UpdateBaseMetaTooManyObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testUpdateBaseMetaTooManyObject', Level.LEVEL2, async (done: Function) => {
+      expect(audiovividencoder.UpdateBaseMetaTooManyObject()).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testAudioVividMetaBuilderErrorUse
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AUDIOVIVID_ENCODER_INTERFACE_TEST_4800
+     * @tc.desc   test AudioVividMetaBuilderErrorUse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testAudioVividMetaBuilderErrorUse', Level.LEVEL2, async (done: Function) => {
+      expect(audiovividencoder.AudioVividMetaBuilderErrorUse()).assertEqual(0);
+      done();
+    });
   })
 }
