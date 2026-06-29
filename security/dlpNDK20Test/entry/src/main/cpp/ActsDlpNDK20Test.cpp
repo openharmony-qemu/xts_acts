@@ -18,6 +18,9 @@
 #include <cstdint>
 #include <cstdlib>
 
+constexpr int MAX_FILE_NAME_LEN = 256;
+constexpr int DLP_SUFFIX_LEN = 4;
+
 static napi_value OsGetDlpPermissionInfo0100(napi_env env, napi_callback_info info)
 {
     DLP_FileAccess *dlpFileAccess = NULL;
@@ -113,15 +116,16 @@ static napi_value OsGetOriginalFileName0100(napi_env env, napi_callback_info inf
 }
 static napi_value OsGetOriginalFileName0200(napi_env env, napi_callback_info info)
 {
-    char fileName[257];
-    for (int i = 0; i < 252; i++) {
+    char fileName[MAX_FILE_NAME_LEN + 1];
+    int fileNameLen = MAX_FILE_NAME_LEN - DLP_SUFFIX_LEN;
+    for (int i = 0; i < fileNameLen; i++) {
         fileName[i] = 'a';
     }
-    fileName[252] = '.';
-    fileName[253] = 'd';
-    fileName[254] = 'l';
-    fileName[255] = 'p';
-    fileName[256] = '\0';
+    fileName[fileNameLen] = '.';
+    fileName[fileNameLen + 1] = 'd';
+    fileName[fileNameLen + 2] = 'l';
+    fileName[fileNameLen + 3] = 'p';
+    fileName[MAX_FILE_NAME_LEN] = '\0';
     char *originalFileName = nullptr;
     DLP_ErrCode ret = OH_DLP_GetOriginalFileName(fileName, &originalFileName);
     if (ret == DLP_ErrCode::ERR_OH_SUCCESS) {
@@ -137,15 +141,16 @@ static napi_value OsGetOriginalFileName0200(napi_env env, napi_callback_info inf
 }
 static napi_value OsGetOriginalFileName0300(napi_env env, napi_callback_info info)
 {
-    char fileName[258];
-    for (int i = 0; i < 253; i++) {
+    char fileName[MAX_FILE_NAME_LEN + 2];
+    int fileNameLen = MAX_FILE_NAME_LEN - DLP_SUFFIX_LEN + 1;
+    for (int i = 0; i < fileNameLen; i++) {
         fileName[i] = 'a';
     }
-    fileName[253] = '.';
-    fileName[254] = 'd';
-    fileName[255] = 'l';
-    fileName[256] = 'p';
-    fileName[257] = '\0';
+    fileName[fileNameLen] = '.';
+    fileName[fileNameLen + 1] = 'd';
+    fileName[fileNameLen + 2] = 'l';
+    fileName[fileNameLen + 3] = 'p';
+    fileName[MAX_FILE_NAME_LEN + 1] = '\0';
     char *originalFileName = nullptr;
     DLP_ErrCode ret = OH_DLP_GetOriginalFileName(fileName, &originalFileName);
     napi_value result = nullptr;

@@ -17,6 +17,8 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import osAccountNdk from 'libosaccountndk.so'
 
 const OS_ACCOUNT_ERR_OK = 0;
+const MAX_FILE_NAME_LEN = 256;
+const DLP_SUFFIX_LEN = 4;
 
 export default function ActsDlpNDK20Test() {
   describe('ActsDlpNDK20Test', () => {
@@ -180,7 +182,7 @@ export default function ActsDlpNDK20Test() {
         console.info("====>testOsGetOriginalFileName0200 start====");
         let result = osAccountNdk.OsGetOriginalFileName0200();
         console.info("====>testOsGetOriginalFileName0200 result: " + result);
-        let expectedFileName = 'a'.repeat(252);
+        let expectedFileName = 'a'.repeat(MAX_FILE_NAME_LEN - DLP_SUFFIX_LEN);
         expect(result).assertEqual(expectedFileName);
         done()
       } catch (err) {
