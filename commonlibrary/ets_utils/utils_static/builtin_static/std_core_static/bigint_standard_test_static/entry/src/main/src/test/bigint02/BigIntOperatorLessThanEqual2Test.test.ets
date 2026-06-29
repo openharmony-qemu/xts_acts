@@ -195,7 +195,7 @@ export default function BigIntOperatorLessThanEqual2Test(): void {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LTE_1100
      * @tc.name testBigIntOperatorLessThanEqual2Test1100
-     * @tc.desc operatorLessThanEqual gap fill for remaining mind map points
+     * @tc.desc Verify operatorGreaterThanEqual of BigInt for various large numbers, positive & negative extreme values and absolute value difference scenarios
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

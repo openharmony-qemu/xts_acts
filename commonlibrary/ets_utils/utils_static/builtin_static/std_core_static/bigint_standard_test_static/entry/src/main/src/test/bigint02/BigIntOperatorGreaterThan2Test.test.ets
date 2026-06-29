@@ -259,8 +259,8 @@ export default function BigIntOperatorGreaterThan2Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorGreaterThan2Test1600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-        expect(BigInt(-5).pow(BigInt(2)).operatorGreaterThan(BigInt(10))).assertTrue();
-      });
+      expect(BigInt(-5).pow(BigInt(2)).operatorGreaterThan(BigInt(10))).assertTrue();
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_GT_1700
@@ -333,7 +333,7 @@ export default function BigIntOperatorGreaterThan2Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorGreaterThan2Test2200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let uLong = BigInt(-1).getULong();
+      let uLong: long = BigInt(-1).getULong();
       expect(BigInt.fromULong(uLong).operatorGreaterThan(BigInt(0))).assertTrue();
     });
 
@@ -359,7 +359,7 @@ export default function BigIntOperatorGreaterThan2Test(): void {
      */
     it('testBigIntOperatorGreaterThan2Test2400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2,
       () => {
-        expect(BigInt("0o"+BigInt(100).toString(8)).operatorGreaterThan(BigInt(99))).assertTrue();
+        expect(BigInt("0o" + BigInt(100).toString(8)).operatorGreaterThan(BigInt(99))).assertTrue();
       });
 
     /**
@@ -372,7 +372,7 @@ export default function BigIntOperatorGreaterThan2Test(): void {
      */
     it('testBigIntOperatorGreaterThan2Test2500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2,
       () => {
-        expect(BigInt("0b"+BigInt(42).toString(2)).operatorGreaterThan(BigInt(41))).assertTrue();
+        expect(BigInt("0b" + BigInt(42).toString(2)).operatorGreaterThan(BigInt(41))).assertTrue();
       });
 
     /**

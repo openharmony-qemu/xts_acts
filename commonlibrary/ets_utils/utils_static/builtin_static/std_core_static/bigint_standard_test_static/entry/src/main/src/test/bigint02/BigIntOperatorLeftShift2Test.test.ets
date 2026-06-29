@@ -266,7 +266,7 @@ export default function BigIntOperatorLeftShift2Test(): void {
     it('testBigIntOperatorLeftShift2Test1600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a = BigInt(100);
       const r = a.operatorLeftShift(BigInt(5));
-      expect(r!=a).assertTrue();
+      expect(r!==a).assertTrue();
     });
 
     /**

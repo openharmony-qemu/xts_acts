@@ -445,8 +445,7 @@ export default function BigIntOperatorGreaterThanEqual2Test(): void {
     it('testBigIntOperatorGreaterThanEqual2Test3400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2,
       () => {
         let overflowVal: byte = Int.toByte(128);
-        let byteVal: byte = overflowVal;
-        expect(BigInt(byteVal).operatorGreaterThanEqual(BigInt(-127 as byte))).assertFalse();
+        expect(BigInt(overflowVal).operatorGreaterThanEqual(BigInt(-127 as byte))).assertFalse();
       });
 
     /**
@@ -726,8 +725,7 @@ export default function BigIntOperatorGreaterThanEqual2Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorGreaterThanEqual2Test5700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2,
-      () => {
+    it('testBigIntOperatorGreaterThanEqual2Test5700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
         expect(BigInt.asIntN(32, BigInt(300)).operatorGreaterThanEqual(BigInt.asIntN(32, BigInt(200)))).assertTrue();
       });
     /**
@@ -909,7 +907,7 @@ export default function BigIntOperatorGreaterThanEqual2Test(): void {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_GTE_6800
      * @tc.name testBigIntOperatorGreaterThanEqual2Test6800
-     * @tc.desc operatorGreaterThanEqual gap fill for remaining mind map points
+     * @tc.desc Verify operatorGreaterThanEqual of BigInt for various large numbers, positive & negative extreme values and absolute value difference scenarios
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

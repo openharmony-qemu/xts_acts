@@ -28,8 +28,8 @@ export default function BigIntBoundaryValues2Test(): void {
      */
     it('testBigIntBoundaryValues2Test0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const zero = BigInt.fromULong(0);
-      const longMaxVal = BigInt.fromULong(9223372036854775807);
-      const halfMax = BigInt.fromULong(-9223372036854775808);
+      const longMaxVal = BigInt.fromULong(BigInt('9223372036854775807').getULong());
+      const halfMax = BigInt.fromULong(BigInt('9223372036854775808').getULong());
 
       expect(zero.equals(BigInt(0))).assertTrue();
       expect(longMaxVal.equals(BigInt('9223372036854775807'))).assertTrue();

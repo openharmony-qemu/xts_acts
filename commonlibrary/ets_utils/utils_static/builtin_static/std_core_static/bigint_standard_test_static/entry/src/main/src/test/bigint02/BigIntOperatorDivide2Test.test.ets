@@ -201,6 +201,7 @@ export default function BigIntOperatorDivide2Test(): void {
       const r = a.operatorDivide(b);
       expect(a.toString()).assertEqual('10');
       expect(b.toString()).assertEqual('3');
+      expect(r.toString()).assertEqual('3');
     });
 
     /**
@@ -687,7 +688,7 @@ export default function BigIntOperatorDivide2Test(): void {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_DIVIDE_4600
      * @tc.name testBigIntOperatorDivide2Test4600
-     * @tc.desc Divide signed min by unsigned: asIntN(64, -2^63)/fromULong(1024)=-9007199254740991
+     * @tc.desc Divide signed min by unsigned: asIntN(64, -2^63)/fromULong(1024)=-9007199254740992
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

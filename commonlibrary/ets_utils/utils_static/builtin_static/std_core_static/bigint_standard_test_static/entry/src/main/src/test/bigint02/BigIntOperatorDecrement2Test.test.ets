@@ -121,7 +121,7 @@ export default function BigIntOperatorDecrement2Test(): void {
     it('testBigIntOperatorDecrement2Test0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const src = BigInt(0);
       const res = src.operatorDecrement();
-      expect(res!=src).assertTrue();
+      expect(res!==src).assertTrue();
     });
 
     /**

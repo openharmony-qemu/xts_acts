@@ -22,7 +22,7 @@ export default function BigIntAsUintN2Test(): void {
     /**
      * @tc.number SUB_BIGINT_STD_ASUINTN_0100
      * @tc.name testBigIntAsUintN2Test0100
-     * @tc.desc Verify constructing num from non-numeric string via BigInt() throws
+     * @tc.desc Verify asUintN propagates BigInt construction error when non-numeric string is passed
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

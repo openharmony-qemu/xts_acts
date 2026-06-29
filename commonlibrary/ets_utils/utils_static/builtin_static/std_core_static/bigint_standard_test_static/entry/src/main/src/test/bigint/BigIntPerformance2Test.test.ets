@@ -615,7 +615,6 @@ export default function BigIntPerformance2Test(): void {
       const pos = BigInt(2).pow(BigInt(1024));
       const neg = pos.operatorMultiply(BigInt(-1));
       const xorResult = pos.operatorBitwiseXor(neg);
-      const notPos = pos.operatorBitwiseNot();
       expect(xorResult.operatorLessThan(BigInt(0))).assertTrue();
     });
 

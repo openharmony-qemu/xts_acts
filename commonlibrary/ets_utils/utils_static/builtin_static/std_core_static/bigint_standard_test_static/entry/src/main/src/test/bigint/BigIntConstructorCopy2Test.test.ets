@@ -269,7 +269,7 @@ export default function BigIntConstructorCopy2Test(): void {
      */
     it('testBigIntConstructorCopy2Test1600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect((): void => {
-        BigInt(undefined as BigInt);
+        BigInt(undefined as Object as BigInt);
       }).assertThrowError('ClassCastError');
     });
 

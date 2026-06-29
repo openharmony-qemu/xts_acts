@@ -186,6 +186,7 @@ export default function BigIntOperatorMultiply2Test(): void {
       const r = a.operatorMultiply(b);
       expect(a.toString()).assertEqual('5');
       expect(b.toString()).assertEqual('3');
+      expect(r.toString()).assertEqual('15');
     });
 
     /**
@@ -473,13 +474,13 @@ export default function BigIntOperatorMultiply2Test(): void {
         (undefined as Object as BigInt).operatorMultiply(BigInt(1));
       }).assertThrowError('ClassCastError');
       expect((): void => {
-        ('abc' as object as BigInt).operatorMultiply(BigInt(1));
+        ('abc' as Object as BigInt).operatorMultiply(BigInt(1));
       }).assertThrowError('ClassCastError');
       expect((): void => {
-        (123 as object as BigInt).operatorMultiply(BigInt(1));
+        (123 as Object as BigInt).operatorMultiply(BigInt(1));
       }).assertThrowError('ClassCastError');
       expect((): void => {
-        (true as object as BigInt).operatorMultiply(BigInt(1));
+        (true as Object as BigInt).operatorMultiply(BigInt(1));
       }).assertThrowError('ClassCastError');
     });
   });

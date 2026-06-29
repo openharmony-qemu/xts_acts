@@ -270,7 +270,7 @@ export default function BigIntOperatorRightShift2Test(): void {
     it('testBigIntOperatorRightShift2Test1600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a = BigInt(100);
       const r = a.operatorRightShift(BigInt(5));
-      expect(r.toString()!=a.toString()).assertTrue();
+      expect(r.toString()!==a.toString()).assertTrue();
       const r2 = BigInt(100).operatorRightShift(BigInt(2));
       expect(Class.of(r2 as Object)).assertEqual(Class.from<BigInt>());
     });
@@ -806,7 +806,7 @@ export default function BigIntOperatorRightShift2Test(): void {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_RSHIFT_6100
      * @tc.name testBigIntOperatorRightShift2Test6100
-     * @tc.desc operatorRightShift negative shift amount on positive/negative/zero
+     * @tc.desc operatorRightShift with negative shift count on positive/negative/zero value. Special behavior: passing negative shift amount to right shift equals left shift operation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

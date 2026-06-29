@@ -384,7 +384,7 @@ export default function BigIntPerformanceLargeInteger2Test(): void {
     /**
      * @tc.number SUB_BIGINT_STD_PERFORMANCE_LARGE_2300
      * @tc.name testBigIntPerformanceLargeInteger2Test2300
-     * @tc.desc Verify adding 64-bit value to 4096-bit value 5000 times preserves top bits
+     * @tc.desc Verify adding 64-bit value to 4096-bit value 1000 times preserves top bits
      * @tc.size LargeTest
      * @tc.type Performance
      * @tc.level Level 3

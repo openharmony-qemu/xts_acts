@@ -370,7 +370,7 @@ export default function BigIntOperatorLessThan2Test(): void {
     it('testBigIntOperatorLessThan2Test2300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(BigInt(100).doubleValue()).operatorLessThan(BigInt(100))).assertFalse();
       expect(BigInt(BigInt(100).getLong()).operatorLessThan(BigInt(100))).assertFalse();
-      let uLong = BigInt('18446744073709551615').getULong()
+      let uLong = BigInt('18446744073709551615').getULong();
       expect(BigInt.fromULong(uLong).operatorLessThan(BigInt('18446744073709551615')))
         .assertFalse();
       expect(BigInt(BigInt(12345).toString()).operatorLessThan(BigInt(12345))).assertFalse();
@@ -431,13 +431,13 @@ export default function BigIntOperatorLessThan2Test(): void {
         (undefined as Object as BigInt).operatorLessThan(BigInt(1));
       }).assertThrowError('ClassCastError');
       expect((): void => {
-        ('abc' as object as BigInt).operatorLessThan(BigInt(1));
+        ('abc' as Object as BigInt).operatorLessThan(BigInt(1));
       }).assertThrowError('ClassCastError');
       expect((): void => {
-        (123 as object as BigInt).operatorLessThan(BigInt(1));
+        (123 as Object as BigInt).operatorLessThan(BigInt(1));
       }).assertThrowError('ClassCastError');
       expect((): void => {
-        (true as object as BigInt).operatorLessThan(BigInt(1));
+        (true as Object as BigInt).operatorLessThan(BigInt(1));
       }).assertThrowError('ClassCastError');
     });
   });

@@ -54,7 +54,7 @@ export default function BigIntPerformanceBatchCompare2Test(): void {
     /**
      * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_0300
      * @tc.name testBigIntPerformanceBatchCompare2Test0300
-     * @tc.desc Verify repeated bitwise AND with alternating masks on 1024-bit base
+     * @tc.desc Verify repeated bitwise AND operations on a 1024-bit BigInt using one fixed mask for 256 cycles, check the final accumulated value is zero
      * @tc.size LargeTest
      * @tc.type Performance
      * @tc.level Level 3
@@ -362,7 +362,8 @@ export default function BigIntPerformanceBatchCompare2Test(): void {
      */
     it('testBigIntPerformanceBatchCompare2Test1900', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
       for (let i = 0; i < 64; i++) {
-        const bi = BigInt('12345678901234567890');
+        const str = '9'.repeat(i + 1);
+        const bi = BigInt(str);
         expect(bi.operatorGreaterThan(BigInt(0))).assertTrue();
       }
     });
@@ -460,7 +461,7 @@ export default function BigIntPerformanceBatchCompare2Test(): void {
     /**
      * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_2500
      * @tc.name testBigIntPerformanceBatchCompare2Test2500
-     * @tc.desc Verify modulo with negative divisor on positive base
+     * @tc.desc Verify modulo operation of positive base with positive divisor, check remainder is less than divisor
      * @tc.size LargeTest
      * @tc.type Performance
      * @tc.level Level 3
@@ -594,7 +595,7 @@ export default function BigIntPerformanceBatchCompare2Test(): void {
     /**
      * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_3200
      * @tc.name testBigIntPerformanceBatchCompare2Test3200
-     * @tc.desc Verify add-subtract round-trip with bitwise complement on 256-bit base
+     * @tc.desc Verify add-subtract round-trip on 256-bit base
      * @tc.size LargeTest
      * @tc.type Performance
      * @tc.level Level 3

@@ -264,7 +264,7 @@ export default function BigIntConstructorDouble2Test(): void {
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_DOUBLE_1900
      * @tc.name testBigIntConstructorDouble2Test1900
-     * @tc.desc TP4: Large negative non-integer -9007199254740991.5 truncated to -9007199254740991
+     * @tc.desc TP4: -9007199254740991.5 rounds to -9007199254740992 due to IEEE 754 round-to-nearest-even at 2^53 precision
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
