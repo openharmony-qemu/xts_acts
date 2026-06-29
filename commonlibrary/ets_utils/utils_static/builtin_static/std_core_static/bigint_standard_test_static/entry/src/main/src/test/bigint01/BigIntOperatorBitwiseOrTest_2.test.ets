@@ -475,7 +475,7 @@ export default function BigIntOperatorBitwiseOrTest_2(): void {
       expect(BigInt(1).operatorLeftShift(BigInt(8)).operatorBitwiseOr(BigInt(15)).toString()).assertEqual('271');
       expect(BigInt(1024).operatorRightShift(BigInt(5)).operatorBitwiseOr(BigInt(3)).toString()).assertEqual('35');
       expect(BigInt(1).operatorBitwiseOr(BigInt(2)).operatorBitwiseOr(BigInt(4)).operatorBitwiseOr(BigInt(8)).toString()).assertEqual('15');
-      let a = BigInt(15);
+      const a = BigInt(15);
       expect(a.operatorBitwiseOr(BigInt(240)).toString()).assertEqual('255');
       expect(getBigInt().operatorBitwiseOr(BigInt(255)).toString()).assertEqual('255');
       expect((true ? BigInt(0xFF) : BigInt(0x00)).operatorBitwiseOr(BigInt(0x0F)).toString()).assertEqual('255');

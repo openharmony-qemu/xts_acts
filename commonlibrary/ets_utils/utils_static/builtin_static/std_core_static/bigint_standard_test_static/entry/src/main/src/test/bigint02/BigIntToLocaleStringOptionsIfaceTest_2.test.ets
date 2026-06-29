@@ -16,7 +16,7 @@
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
-export default function BigIntToLocaleStringOptionsIfaceTest2(): void {
+export default function BigIntToLocaleStringOptionsIfaceTest_2(): void {
   describe('BigInt.toLocaleString with options ext (mindmap toLocaleString_options_iface)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_TOLOCALE_OPT_IFACE_0700

@@ -24,7 +24,7 @@ interface ToLocaleOptions {
   unit?: string;
 }
 
-export default function BigIntToLocaleString1Test2(): void {
+export default function BigIntToLocaleString1Test_2(): void {
   describe('BigInt.toLocaleString no-arg ext (mindmap toLocaleString_1)', (): void => {
     /**
      * @tc.number SUB_BIGINT_STD_TOLOCALE_1_0700

@@ -16,21 +16,8 @@
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
-export default function BigIntPositiveTest2(): void {
+export default function BigIntPositiveTest_2(): void {
   describe('BigInt.positive (mindmap positive)', () => {
-    const parseBigInt = (str: string, radix: number): BigInt => {
-      let s = str;
-      let isNegative = false;
-
-      if (s.indexOf('-') === 0) {
-        isNegative = true;
-        s = s.substring(1);
-      }
-
-      const result: BigInt = BigInt(s);
-      return isNegative ? result.negate() : result;
-    };
-
 
     /**
      * @tc.number SUB_BIGINT_STD_POSITIVE_0800

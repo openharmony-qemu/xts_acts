@@ -16,15 +16,9 @@
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
-export default function BigIntValueOfTest2(): void {
+export default function BigIntValueOfTest_2(): void {
   describe('BigInt.valueOf extension (mindmap valueOf)', () => {
 
-    const parseRadixStr = (str: string): BigInt => {
-      if (str.indexOf('-') === 0) {
-        return BigInt(str.substring(1)).negate();
-      }
-      return BigInt(str);
-    };
 
     /**
      * @tc.number SUB_BIGINT_STD_VALUEOF_0700

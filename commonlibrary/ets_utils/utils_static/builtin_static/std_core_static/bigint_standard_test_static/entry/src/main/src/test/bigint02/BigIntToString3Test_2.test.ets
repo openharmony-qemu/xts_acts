@@ -16,7 +16,7 @@
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
-export default function BigIntToString3Test2(): void {
+export default function BigIntToString3Test_2(): void {
   describe('BigInt.toString(radix double) ext (mindmap toString_3)', () => {
 
     /**

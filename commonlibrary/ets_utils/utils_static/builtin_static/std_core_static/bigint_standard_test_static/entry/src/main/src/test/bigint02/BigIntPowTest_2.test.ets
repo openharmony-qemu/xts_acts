@@ -16,26 +16,12 @@
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
-function getBigInt42(): BigInt {
+function getBigInt100(): BigInt {
   return new BigInt(100);
 }
 
-export default function BigIntPowTest2(): void {
+export default function BigIntPowTest_2(): void {
   describe('BigInt.pow extension (mindmap pow)', (): void => {
-
-    const parseBigInt = (str: string, radix: number): BigInt => {
-      let s = str;
-      let isNegative = false;
-
-      if (s.indexOf('-') === 0) {
-        isNegative = true;
-        s = s.substring(1);
-      }
-
-      const result: BigInt = BigInt(s);
-      return isNegative ? result.negate() : result;
-    };
-
 
     /**
      * @tc.number SUB_BIGINT_STD_POW_0900
@@ -134,7 +120,6 @@ export default function BigIntPowTest2(): void {
      * @tc.level Level 2
      */
     it('testBigIntPowHugeBase1500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      it('testBigIntPowHugeBase1500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
         const huge = '1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890';
 
         const expectedSquare =
@@ -147,7 +132,7 @@ export default function BigIntPowTest2(): void {
 
         expect(BigInt(huge).pow(BigInt(2)).toString()).assertEqual(expectedSquare);
         expect((-BigInt(huge)).pow(BigInt(2)).toString()).assertEqual(expectedSquare);
-      });
+
     });
 
     /**
@@ -658,7 +643,7 @@ export default function BigIntPowTest2(): void {
     it('testBigIntPowVariableAndFunction4200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let a = new BigInt(2);
       expect(a.pow(new BigInt(10)).toString()).assertEqual('1024');
-      let base42 = getBigInt42();
+      let base42 = getBigInt100();
       expect(base42.pow(new BigInt(2)).toString()).assertEqual('10000');
     });
 

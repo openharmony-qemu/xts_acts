@@ -347,7 +347,7 @@ export default function BigIntOperatorBitwiseAndTest_2(): void {
     it('testBigIntOperatorBitwiseAndChainedExpressions2500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(7).operatorBitwiseAnd(BigInt(3)).operatorBitwiseAnd(BigInt(1)).toString()).assertEqual('1');
       expect(BigInt(15).operatorBitwiseAnd(BigInt(7)).operatorBitwiseAnd(BigInt(3)).toString()).assertEqual('3');
-      let a = BigInt(255);
+      const a = BigInt(255);
       expect(a.operatorBitwiseAnd(BigInt(15)).toString()).assertEqual('15');
       expect(getBigInt().operatorBitwiseAnd(BigInt(255)).toString()).assertEqual('0');
       expect((true ? BigInt(0xFF) : BigInt(0x00)).operatorBitwiseAnd(BigInt(0x0F)).toString()).assertEqual('15');

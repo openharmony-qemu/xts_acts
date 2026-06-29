@@ -16,7 +16,7 @@
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
-export default function BigIntToString1Test2(): void {
+export default function BigIntToString1Test_2(): void {
   describe('BigInt.toString no-arg ext (mindmap toString_1)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_1_0700

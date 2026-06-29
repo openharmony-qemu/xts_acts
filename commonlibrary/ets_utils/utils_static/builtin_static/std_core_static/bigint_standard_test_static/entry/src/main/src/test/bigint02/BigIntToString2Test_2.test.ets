@@ -16,36 +16,8 @@
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
-export default function BigIntToString2Test2(): void {
+export default function BigIntToString2Test_2(): void {
   describe('BigInt.toString(radix int) ext (mindmap toString_2)', () => {
-
-    const parseBigInt = (str: string, radix: number): BigInt => {
-      let s = str;
-      let isNegative = false;
-
-      if (s.indexOf('-') === 0) {
-        isNegative = true;
-        s = s.substring(1);
-      }
-
-      if (radix === 16 && (s.indexOf('0x') === 0 || s.indexOf('0X') === 0)) {
-        s = s.substring(2);
-      } else if (radix === 8 && s.indexOf('0o') === 0) {
-        s = s.substring(2);
-      } else if (radix === 2 && s.indexOf('0b') === 0) {
-        s = s.substring(2);
-      }
-
-      const digitChars: string = '0123456789abcdefghijklmnopqrstuvwxyz';
-      let decimalStr: string = '0';
-      for (let i = 0; i < s.length; i++) {
-        const c: string = s[i].toLowerCase();
-        const digit: number = digitChars.indexOf(c);
-        decimalStr = (BigInt(decimalStr) * BigInt(radix) + BigInt(digit)).toString();
-      }
-      const result: BigInt = BigInt(decimalStr);
-      return isNegative ? result.negate() : result;
-    };
 
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_2_0800
@@ -248,8 +220,8 @@ export default function BigIntToString2Test2(): void {
      */
     it('testBigIntToString2RadixPowerOfTwo2400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt('1267650600228229401496703205376').toString()).assertEqual('1267650600228229401496703205376');
-      const bin100: string = '1' + '0'.repeat(100);
       expect(BigInt('1267650600228229401496703205376').toString(16)).assertEqual('10000000000000000000000000');
+    });
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_2_EXT_2600
      * @tc.name testBigIntToString2PowerTwoLargeRadix2600
@@ -414,5 +386,4 @@ export default function BigIntToString2Test2(): void {
       expect(v.toString()).assertEqual('255');
     });
   });
-});
 }

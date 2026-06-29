@@ -238,9 +238,6 @@ export default function BigIntOperatorAddTest_2(): void {
         expect(negResult.toString().length).assertLargerOrEqual(pairs[p][0].length);
       }
     });
-
-    /**
-
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1747
      * @tc.name testBigIntOperatorAddVerifyBatch

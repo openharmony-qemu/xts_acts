@@ -551,7 +551,7 @@ export default function BigIntOperatorBitwiseXorTest_2(): void {
       expect(BigInt(1024).operatorRightShift(BigInt(5)).operatorBitwiseXor(BigInt(15)).toString()).assertEqual('47');
       expect(BigInt(7).operatorBitwiseXor(BigInt(3)).operatorBitwiseXor(BigInt(4)).toString()).assertEqual('0');
       expect(BigInt(15).operatorBitwiseXor(BigInt(7)).operatorBitwiseXor(BigInt(8)).toString()).assertEqual('0');
-      let a = BigInt(255);
+      const a = BigInt(255);
       expect(a.operatorBitwiseXor(BigInt(15)).toString()).assertEqual('240');
 
       expect(getBigInt().operatorBitwiseXor(BigInt(255)).toString()).assertEqual('255');

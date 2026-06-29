@@ -22,10 +22,6 @@ class Y {
   value: int = 42;
 }
 
-class Base {}
-
-class Derived extends Base {}
-
 function getBigInt(v: int): BigInt {
   return BigInt(v);
 }
@@ -42,21 +38,13 @@ export default function BigIntEquals2Test_2(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_EQUALS_ANY_2700
-     * @tc.name testBigIntEqualsAnyByteTypes2700
-     * @tc.desc equals(Any) returns false for other as byte type values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    /**
-     * @tc.number SUB_BIGINT_STD_EQUALS_ANY_2700
-     * @tc.name testBigIntEqualsAnyPrimitiveTypeFalseBatch
+     * @tc.name testBigIntEqualsAnyPrimitiveTypeFalseBatch2700
      * @tc.desc equals(Any) returns false for byte/short/int/long
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsAnyPrimitiveTypeFalseBatch', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsAnyPrimitiveTypeFalseBatch2700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new BigInt(0).equals((0) as byte)).assertFalse();
       expect(new BigInt(1).equals((1) as byte)).assertFalse();
       expect(new BigInt(-1).equals((-1) as byte)).assertFalse();
@@ -147,25 +135,25 @@ export default function BigIntEquals2Test_2(): void {
      * @tc.level Level 2
      */
     it('testBigIntEqualsAnyAnyBigIntExtended3400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let bi0: Any = new BigInt(0);
+      const bi0: Any = new BigInt(0);
       expect(new BigInt(0).equals(bi0)).assertTrue();
-      let bi1: Any = new BigInt(1);
+      const bi1: Any = new BigInt(1);
       expect(new BigInt(1).equals(bi1)).assertTrue();
-      let biNeg1: Any = new BigInt(-1);
+      const biNeg1: Any = new BigInt(-1);
       expect(new BigInt(-1).equals(biNeg1)).assertTrue();
-      let bi127: Any = new BigInt(127);
+      const bi127: Any = new BigInt(127);
       expect(new BigInt(127).equals(bi127)).assertTrue();
-      let biNeg128: Any = new BigInt(-128);
+      const biNeg128: Any = new BigInt(-128);
       expect(new BigInt(-128).equals(biNeg128)).assertTrue();
-      let biMaxInt: Any = new BigInt(2147483647);
+      const biMaxInt: Any = new BigInt(2147483647);
       expect(new BigInt(2147483647).equals(biMaxInt)).assertTrue();
-      let biMinInt: Any = new BigInt(-2147483648);
+      const biMinInt: Any = new BigInt(-2147483648);
       expect(new BigInt(-2147483648).equals(biMinInt)).assertTrue();
-      let biBig: Any = new BigInt('9007199254740993');
+      const biBig: Any = new BigInt('9007199254740993');
       expect(new BigInt('9007199254740993').equals(biBig)).assertTrue();
-      let biLongMax: Any = new BigInt('9223372036854775807');
+      const biLongMax: Any = new BigInt('9223372036854775807');
       expect(new BigInt('9223372036854775807').equals(biLongMax)).assertTrue();
-      let biLongMin: Any = new BigInt('-9223372036854775808');
+      const biLongMin: Any = new BigInt('-9223372036854775808');
       expect(new BigInt('-9223372036854775808').equals(biLongMin)).assertTrue();
     });
 
@@ -178,15 +166,15 @@ export default function BigIntEquals2Test_2(): void {
      * @tc.level Level 2
      */
     it('testBigIntEqualsAnyAnyBigIntDiffValues3500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let bi0: Any = new BigInt(0);
+      const bi0: Any = new BigInt(0);
       expect(new BigInt(1).equals(bi0)).assertFalse();
-      let bi1: Any = new BigInt(1);
+      const bi1: Any = new BigInt(1);
       expect(new BigInt(-1).equals(bi1)).assertFalse();
-      let bi127: Any = new BigInt(127);
+      const bi127: Any = new BigInt(127);
       expect(new BigInt(-128).equals(bi127)).assertFalse();
-      let biMaxInt: Any = new BigInt(2147483647);
+      const biMaxInt: Any = new BigInt(2147483647);
       expect(new BigInt(-2147483648).equals(biMaxInt)).assertFalse();
-      let biLargePos: Any = new BigInt('12345678901234567890');
+      const biLargePos: Any = new BigInt('12345678901234567890');
       expect(new BigInt('-12345678901234567890').equals(biLargePos)).assertFalse();
     });
 
@@ -223,7 +211,7 @@ export default function BigIntEquals2Test_2(): void {
      * @tc.level Level 2
      */
     it('testBigIntEqualsAnyAnyReturnType3700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let bi: Any = new BigInt(55);
+      const bi: Any = new BigInt(55);
       const r1 = new BigInt(55).equals(bi);
       expect(typeof r1).assertEqual('boolean');
       const r2 = new BigInt(66).equals(bi);

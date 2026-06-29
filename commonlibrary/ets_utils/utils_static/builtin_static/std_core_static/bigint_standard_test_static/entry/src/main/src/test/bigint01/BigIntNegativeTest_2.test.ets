@@ -98,15 +98,6 @@ export default function BigIntNegativeTest_2(): void {
       expect(BigInt(4611686018427387903).negative()).assertFalse();
       expect(BigInt(-4611686018427387904).negative()).assertTrue();
     });
-
-    /**
-     * @tc.number SUB_BIGINT_STD_NEGATIVE_0870
-     * @tc.name testBigIntNegativeLargeDigits0870
-     * @tc.desc negative() with 40-digit and 50-digit magnitude values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
     /**
      * @tc.number SUB_BIGINT_STD_NEGATIVE_0870
      * @tc.name testBigIntNegativeLargeDigitsBatch
@@ -238,7 +229,7 @@ export default function BigIntNegativeTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntNegativeBitwiseAndOrXor0940', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {;
+    it('testBigIntNegativeBitwiseAndOrXor0940', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const bo1: BigInt = BigInt(-1).operatorBitwiseOr(BigInt(1));
       expect(bo1.negative()).assertTrue();
 
@@ -379,13 +370,13 @@ export default function BigIntNegativeTest_2(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_NEGATIVE_1010
-     * @tc.name testBigIntNegativeEvenOddPrimeBatch
+     * @tc.name testBigIntNegativeEvenOddPrimeBatch1010
      * @tc.desc negative() for even/odd/prime int and string constructors
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntNegativeEvenOddPrimeBatch', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntNegativeEvenOddPrimeBatch1010', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(100).negative()).assertFalse();
       expect(BigInt(-100).negative()).assertTrue();
       expect(BigInt(101).negative()).assertFalse();

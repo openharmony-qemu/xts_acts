@@ -1016,7 +1016,7 @@ export default function BigIntDoubleValueTest_2(): void {
 
       const negInf = BigInt("-" + maxDoubleStr).doubleValue();
       expect(negInf).assertEqual(-1.7976931348623157e+308);
-    });;
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_DOUBLEVALUE_7500

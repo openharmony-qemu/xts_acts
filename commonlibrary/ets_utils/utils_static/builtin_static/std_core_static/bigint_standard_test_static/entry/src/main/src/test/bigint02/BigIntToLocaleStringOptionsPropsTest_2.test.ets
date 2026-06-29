@@ -16,7 +16,7 @@
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
-export default function BigIntToLocaleStringOptionsPropsTest2(): void {
+export default function BigIntToLocaleStringOptionsPropsTest_2(): void {
   describe('BigIntToLocaleStringOptions properties ext (mindmap)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_TOLOCALE_OPT_PROPS_0700
@@ -27,7 +27,7 @@ export default function BigIntToLocaleStringOptionsPropsTest2(): void {
      * @tc.level Level 2
      */
     it('testBigIntToLocaleStringOptionsCurrencyReadWrite0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let options: BigIntToLocaleStringOptions = { currency: 'USD' };
+      const options: BigIntToLocaleStringOptions = { currency: 'USD' };
       expect(options.currency).assertEqual('USD');
       options.currency = 'EUR';
       expect(options.currency).assertEqual('EUR');
@@ -35,7 +35,7 @@ export default function BigIntToLocaleStringOptionsPropsTest2(): void {
       expect(options.currency).assertEqual('JPY');
       options.currency = 'CNY';
       expect(options.currency).assertEqual('CNY');
-      let options2: BigIntToLocaleStringOptions = { currencyDisplay: 'symbol' };
+      const options2: BigIntToLocaleStringOptions = { currencyDisplay: 'symbol' };
       expect(options2.currencyDisplay).assertEqual('symbol');
       options2.currencyDisplay = 'code';
       expect(options2.currencyDisplay).assertEqual('code');
@@ -52,7 +52,7 @@ export default function BigIntToLocaleStringOptionsPropsTest2(): void {
      * @tc.level Level 2
      */
     it('testBigIntToLocaleStringOptionsLocaleMatcherReadWrite0900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let options: BigIntToLocaleStringOptions = { localeMatcher: 'best fit' };
+      const options: BigIntToLocaleStringOptions = { localeMatcher: 'best fit' };
       expect(options.localeMatcher).assertEqual('best fit');
       options.localeMatcher = 'lookup';
       expect(options.localeMatcher).assertEqual('lookup');
@@ -67,13 +67,13 @@ export default function BigIntToLocaleStringOptionsPropsTest2(): void {
      * @tc.level Level 2
      */
     it('testBigIntToLocaleStringOptionsFractionDigitsReadWrite1000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let options: BigIntToLocaleStringOptions = { minimumFractionDigits: 0 };
+      const options: BigIntToLocaleStringOptions = { minimumFractionDigits: 0 };
       expect(options.minimumFractionDigits).assertEqual(0);
       options.minimumFractionDigits = 2;
       expect(options.minimumFractionDigits).assertEqual(2);
       options.minimumFractionDigits = 3;
       expect(options.minimumFractionDigits).assertEqual(3);
-      let options2: BigIntToLocaleStringOptions = { maximumFractionDigits: 0 };
+      const options2: BigIntToLocaleStringOptions = { maximumFractionDigits: 0 };
       expect(options2.maximumFractionDigits).assertEqual(0);
       options2.maximumFractionDigits = 3;
       expect(options2.maximumFractionDigits).assertEqual(3);
@@ -90,11 +90,11 @@ export default function BigIntToLocaleStringOptionsPropsTest2(): void {
      * @tc.level Level 2
      */
     it('testBigIntToLocaleStringOptionsSignificantDigitsReadWrite1100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let options: BigIntToLocaleStringOptions = { minimumSignificantDigits: 1 };
+      const options: BigIntToLocaleStringOptions = { minimumSignificantDigits: 1 };
       expect(options.minimumSignificantDigits).assertEqual(1);
       options.minimumSignificantDigits = 3;
       expect(options.minimumSignificantDigits).assertEqual(3);
-      let options2: BigIntToLocaleStringOptions = { maximumSignificantDigits: 3 };
+      const options2: BigIntToLocaleStringOptions = { maximumSignificantDigits: 3 };
       expect(options2.maximumSignificantDigits).assertEqual(3);
       options2.maximumSignificantDigits = 21;
       expect(options2.maximumSignificantDigits).assertEqual(21);
@@ -109,7 +109,7 @@ export default function BigIntToLocaleStringOptionsPropsTest2(): void {
      * @tc.level Level 2
      */
     it('testBigIntToLocaleStringOptionsMinIntegerDigitsReadWrite1200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let options: BigIntToLocaleStringOptions = { minimumIntegerDigits: 1 };
+      const options: BigIntToLocaleStringOptions = { minimumIntegerDigits: 1 };
       expect(options.minimumIntegerDigits).assertEqual(1);
       options.minimumIntegerDigits = 3;
       expect(options.minimumIntegerDigits).assertEqual(3);
@@ -126,7 +126,7 @@ export default function BigIntToLocaleStringOptionsPropsTest2(): void {
      * @tc.level Level 2
      */
     it('testBigIntToLocaleStringOptionsNumberingSystemReadWrite1300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let options: BigIntToLocaleStringOptions = { numberingSystem: 'arab' };
+      const options: BigIntToLocaleStringOptions = { numberingSystem: 'arab' };
       expect(options.numberingSystem).assertEqual('arab');
       options.numberingSystem = 'latn';
       expect(options.numberingSystem).assertEqual('latn');
@@ -143,7 +143,7 @@ export default function BigIntToLocaleStringOptionsPropsTest2(): void {
      * @tc.level Level 2
      */
     it('testBigIntToLocaleStringOptionsStyleReadWrite1400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let options: BigIntToLocaleStringOptions = { style: 'decimal' };
+      const options: BigIntToLocaleStringOptions = { style: 'decimal' };
       expect(options.style).assertEqual('decimal');
       options.style = 'currency';
       expect(options.style).assertEqual('currency');
@@ -160,13 +160,13 @@ export default function BigIntToLocaleStringOptionsPropsTest2(): void {
      * @tc.level Level 2
      */
     it('testBigIntToLocaleStringOptionsUnitReadWrite1500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let options: BigIntToLocaleStringOptions = { unit: 'kilogram' };
+      const options: BigIntToLocaleStringOptions = { unit: 'kilogram' };
       expect(options.unit).assertEqual('kilogram');
       options.unit = 'meter';
       expect(options.unit).assertEqual('meter');
       options.unit = 'celsius';
       expect(options.unit).assertEqual('celsius');
-      let options2: BigIntToLocaleStringOptions = { unitDisplay: 'short' };
+      const options2: BigIntToLocaleStringOptions = { unitDisplay: 'short' };
       expect(options2.unitDisplay).assertEqual('short');
       options2.unitDisplay = 'long';
       expect(options2.unitDisplay).assertEqual('long');
@@ -183,7 +183,7 @@ export default function BigIntToLocaleStringOptionsPropsTest2(): void {
      * @tc.level Level 2
      */
     it('testBigIntToLocaleStringOptionsUseGroupingReadWrite1600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let options: BigIntToLocaleStringOptions = { useGrouping: true };
+      const options: BigIntToLocaleStringOptions = { useGrouping: true };
       expect(options.useGrouping).assertTrue();
       options.useGrouping = false;
       expect(options.useGrouping).assertFalse();
@@ -198,7 +198,7 @@ export default function BigIntToLocaleStringOptionsPropsTest2(): void {
      * @tc.level Level 2
      */
     it('testBigIntToLocaleStringOptionsAllPropsCombined1700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let options: BigIntToLocaleStringOptions = {
+      const options: BigIntToLocaleStringOptions = {
         compactDisplay: 'short',
         currency: 'USD',
         currencyDisplay: 'symbol',
@@ -241,7 +241,7 @@ export default function BigIntToLocaleStringOptionsPropsTest2(): void {
      * @tc.level Level 2
      */
     it('testBigIntToLocaleStringOptionsNumericBoundaries1800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let options: BigIntToLocaleStringOptions = {};
+      const options: BigIntToLocaleStringOptions = {};
       options.minimumIntegerDigits = 1;
       expect(options.minimumIntegerDigits).assertEqual(1);
       options.minimumIntegerDigits = 21;
@@ -273,7 +273,7 @@ export default function BigIntToLocaleStringOptionsPropsTest2(): void {
      * @tc.level Level 2
      */
     it('testBigIntToLocaleStringOptionsOptionalUndefined1900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let options: BigIntToLocaleStringOptions = {};
+      const options: BigIntToLocaleStringOptions = {};
       expect(options.compactDisplay).assertUndefined();
       expect(options.currency).assertUndefined();
       expect(options.currencyDisplay).assertUndefined();
@@ -416,7 +416,7 @@ export default function BigIntToLocaleStringOptionsPropsTest2(): void {
      * @tc.level Level 2
      */
     it('testBigIntToLocaleStringOptionsNegativeFractionDigits2400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let options: BigIntToLocaleStringOptions = {};
+      const options: BigIntToLocaleStringOptions = {};
       options.minimumFractionDigits = -1;
       expect(options.minimumFractionDigits).assertEqual(-1);
       options.minimumFractionDigits = -2147483648;
@@ -435,7 +435,7 @@ export default function BigIntToLocaleStringOptionsPropsTest2(): void {
      * @tc.level Level 2
      */
     it('testBigIntToLocaleStringOptionsHexLiteralDigit2500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let options: BigIntToLocaleStringOptions = {};
+      const options: BigIntToLocaleStringOptions = {};
       options.maximumFractionDigits = 0x7FFFFFFF;
       expect(options.maximumFractionDigits).assertEqual(2147483647);
       options.minimumFractionDigits = 0x7FFFFFFF;
@@ -454,7 +454,7 @@ export default function BigIntToLocaleStringOptionsPropsTest2(): void {
      * @tc.level Level 2
      */
     it('testBigIntToLocaleStringOptionsCurrencyInvalidCode2600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let options: BigIntToLocaleStringOptions = {};
+      const options: BigIntToLocaleStringOptions = {};
       options.currency = 'US1';
       expect(options.currency).assertEqual('US1');
       options.currency = 'US';
