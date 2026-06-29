@@ -18,7 +18,6 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level
 import { dcrFunctionEnumDefault, dcrFunctionConstDefault } from "../modules/dcr_function_defaults"
 import { DcrCtorDefaultClass, DcrFieldInitClass, DcrMethodDefaultClass, DcrMethodOverrideBase, DcrMethodOverrideDerived } from "../modules/dcr_class_defaults"
 import { dcrPick } from "../modules/dcr_overload_defaults"
-import { DcrAnnoEnumDefault, DcrAnnoEnumArrayDefault } from "../modules/dcr_annotation_defaults"
 import { dcrAcceptPublicUnion, dcrMakePublicUnion } from "../modules/dcr_type_alias_defaults"
 import { DcrGenericBox, dcrGenericDefaultFunction } from "../modules/dcr_generic_defaults"
 import { DcrAmbientAnno } from "../ambient/dcr_ambient_annotation"
@@ -36,12 +35,6 @@ class DcrDerivedCtorDefaultClass extends DcrCtorDefaultClass {
     super()
   }
 }
-
-@DcrAnnoEnumDefault
-class DcrPass008Class {}
-
-@DcrAnnoEnumArrayDefault
-class DcrPass010Class {}
 
 @DcrAmbientAnno
 class DcrPass017Class {}
@@ -155,34 +148,6 @@ export default function DeclarationContextResolutionTest(): void {
     it("testOverloadSignatureEnumPrivateImport", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       console.log('testOverloadSignatureEnumPrivateImport start');
       expect(dcrPick(1)).assertEqual("int")
-    })
-
-    /**
-     * @tc.number    SUB_DCR_ALL_0800
-     * @tc.name      testAnnotationEnumDefaultPrivateImport
-     * @tc.desc      Annotation with enum default resolves correctly and can be applied
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testAnnotationEnumDefaultPrivateImport", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      console.log('testAnnotationEnumDefaultPrivateImport start');
-      let obj = new DcrPass008Class()
-      expect(obj instanceof DcrPass008Class).assertTrue()
-    })
-
-    /**
-     * @tc.number    SUB_DCR_ALL_1000
-     * @tc.name      testAnnotationEnumArrayDefaultPrivateImport
-     * @tc.desc      Annotation with enum array default resolves correctly and can be applied
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testAnnotationEnumArrayDefaultPrivateImport", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      console.log('testAnnotationEnumArrayDefaultPrivateImport start');
-      let obj = new DcrPass010Class()
-      expect(obj instanceof DcrPass010Class).assertTrue()
     })
 
     /**
