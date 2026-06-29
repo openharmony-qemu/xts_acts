@@ -82,6 +82,8 @@ export default function nfcTagTest() {
       expect(tag.MIFARE_ULTRALIGHT).assertEqual(9);
       console.info('[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0100 NFC_BARCODE is' + tag.NFC_BARCODE);
       expect(tag.NFC_BARCODE).assertEqual(10);
+      console.info('[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_0100 SKIP_NDEF is' + tag.SKIP_NDEF);
+      expect(tag.SKIP_NDEF).assertEqual(11);
       done();
     })
 
