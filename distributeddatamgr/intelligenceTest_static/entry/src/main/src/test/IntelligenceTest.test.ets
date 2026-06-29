@@ -1548,4 +1548,169 @@ export default function intelligenceTest(): void {
       }
     })
     })
+
+    /**
+     * @tc.name   intelligenceApiTest4300
+     * @tc.number SUB_DistributedDataManager_Intelligence_NetworkPolicy_PARAM_003
+     * @tc.desc   Test cloudModelInfo modelType and modelVersionCode is ''.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("intelligenceApiTest4300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info(TAG + "intelligenceApiTest4300 start");
+      let cloudModelInfo: intelligence.CloudModelInfo = {
+        modelType: '',
+        modelVersionCode: ''
+      };
+
+      let textConfigWithPolicy: intelligence.ModelConfig = {
+        version: intelligence.ModelVersion.BASIC_MODEL,
+        isNpuAvailable: false,
+        cachePath: "test",
+        modelInfo: cloudModelInfo,
+        networkPolicy: intelligence.NetworkPolicy.WIFI_ONLY
+      };
+      if (currentDeviceIsPc) {
+        intelligence.getTextEmbeddingModel(textConfigWithPolicy)
+          .then((data) => {
+            console.info(TAG + "getTextEmbeddingModel with WIFI_ONLY policy result: " + data);
+            let ret = false;
+            if (data != null) {
+              ret = true;
+            }
+            expect(ret).assertEqual(true);
+            done();
+          })
+          .catch((err) => {
+            console.info(TAG + "getTextEmbeddingModel failed: " + err.code);
+            expect().assertFail();
+            done();
+          })
+      } else if (currentDeviceIsPhoneOrTablet) {
+        intelligence.getTextEmbeddingModel(textConfigWithPolicy)
+          .then((data) => {
+            console.info(TAG + "get result: " + data);
+            let ret = false;
+            if (data != null) {
+              ret = true;
+            }
+            expect(ret).assertEqual(true);
+            done();
+          })
+          .catch((err) => {
+            console.info(TAG + "getTextEmbeddingModel failed: " + err.code);
+            expect().assertFail();
+            done();
+          })
+      } else {
+        intelligence.getTextEmbeddingModel(textConfigWithPolicy)
+          .then((data) => {
+            console.info(TAG + "get result: " + data);
+            expect().assertFail();
+            done();
+          })
+          .catch((err) => {
+            console.info(TAG + "get promise result: " + err.code);
+            expect(err.code).assertEqual(801);
+            done();
+          })
+      }
+    })
+
+    /**
+     * @tc.name   intelligenceApiTest4400
+     * @tc.number SUB_DistributedDataManager_Intelligence_NetworkPolicy_PARAM_004
+     * @tc.desc   Test cloudModelInfo modelType and modelVersionCode is ''，networkPolicy is WIFI_ONLY.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("intelligenceApiTest4400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info(TAG + "intelligenceApiTest4400 start");
+      let cloudModelInfo: intelligence.CloudModelInfo = {
+        modelType: '',
+        modelVersionCode: ''
+      };
+
+      let imageConfigWithPolicy: intelligence.ModelConfig = {
+        version: intelligence.ModelVersion.BASIC_MODEL,
+        isNpuAvailable: false,
+        cachePath: "test",
+        modelInfo: cloudModelInfo,
+        networkPolicy: intelligence.NetworkPolicy.WIFI_ONLY
+      };
+      if (currentDeviceIsPc) {
+        intelligence.getImageEmbeddingModel(imageConfigWithPolicy)
+          .then((data) => {
+            console.info(TAG + "get result:" + data);
+            let ret = false
+            if (data != null) {
+              ret = true;
+            }
+            expect(ret).assertEqual(true);
+            done();
+          })
+      } else {
+        intelligence.getImageEmbeddingModel(imageConfig)
+          .then((data) => {
+            console.info(TAG + "get result:" + data);
+            expect().assertFail();
+            done();
+          })
+          .catch((err) => {
+            console.info(TAG + "get promise result:" + err.code);
+            expect(err.code).assertEqual(801);
+            done();
+          })
+      }
+    })
+
+    /**
+     * @tc.name   intelligenceApiTest4500
+     * @tc.number SUB_DistributedDataManager_Intelligence_NetworkPolicy_PARAM_005
+     * @tc.desc   Test cloudModelInfo modelType and modelVersionCode is ''，networkPolicy is WIFI_AND_CELLULAR.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("intelligenceApiTest4500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info(TAG + "intelligenceApiTest4500 start");
+      let cloudModelInfo: intelligence.CloudModelInfo = {
+        modelType: '',
+        modelVersionCode: ''
+      };
+
+      let imageConfigWithPolicy: intelligence.ModelConfig = {
+        version: intelligence.ModelVersion.BASIC_MODEL,
+        isNpuAvailable: false,
+        cachePath: "test",
+        modelInfo: cloudModelInfo,
+        networkPolicy: intelligence.NetworkPolicy.WIFI_AND_CELLULAR
+      };
+      if (currentDeviceIsPc) {
+        intelligence.getImageEmbeddingModel(imageConfigWithPolicy)
+          .then((data) => {
+            console.info(TAG + "get result:" + data);
+            let ret = false
+            if (data != null) {
+              ret = true;
+            }
+            expect(ret).assertEqual(true);
+            done();
+          })
+      } else {
+        intelligence.getImageEmbeddingModel(imageConfig)
+          .then((data) => {
+            console.info(TAG + "get result:" + data);
+            expect().assertFail();
+            done();
+          })
+          .catch((err) => {
+            console.info(TAG + "get promise result:" + err.code);
+            expect(err.code).assertEqual(801);
+            done();
+          })
+      }
+    })
 }
