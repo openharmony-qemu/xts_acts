@@ -38,15 +38,15 @@ export default function uitestApi26ErrorTest() {
     })
 
     /**
-     * @tc.name   testDriverClickAtWithOptionsErrorConcurrentCallWithPressure
-     * @tc.number SUB_TESTFWK_UITEST_CLICKATWITHOPTIONS_ERROR_0100
-     * @tc.desc   Test clickAtWithOptions with concurrent call, expecting error 17000002
+     * @tc.name   testDriverClickAtErrorConcurrentCallWithPressure
+     * @tc.number SUB_testfwk_UITEST_CLICKAT_ERROR_0100
+     * @tc.desc   Test clickAt with concurrent call, expecting error 17000002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverClickAtWithOptionsErrorConcurrentCallWithPressure', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testDriverClickAtWithOptionsErrorConcurrentCallWithPressure start`);
+    it('testDriverClickAtErrorConcurrentCallWithPressure', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverClickAtErrorConcurrentCallWithPressure start`);
       const point: Point = { x: 100, y: 100 };
       const options: TouchOptions = { pressure: 0.5 };
       try {
@@ -55,63 +55,63 @@ export default function uitestApi26ErrorTest() {
         await driver.clickAtWithOptions(point, options);
         expect().assertFail();
       } catch (err) {
-        console.log(`${TestTag}, testDriverClickAtWithOptionsErrorConcurrentCallWithPressure error: ${JSON.stringify(err)}`);
+        console.log(`${TestTag}, testDriverClickAtErrorConcurrentCallWithPressure error: ${JSON.stringify(err)}`);
         expect((err as BusinessError).code).assertEqual(AsyncErrorCode);
       }
       await sleep(waitUiReadyMs * 8);
-      console.log(`${TestTag}, testDriverClickAtWithOptionsErrorConcurrentCallWithPressure end`);
+      console.log(`${TestTag}, testDriverClickAtErrorConcurrentCallWithPressure end`);
     });
 
     /**
-     * @tc.name   testDriverClickAtWithOptionsNullPoint
-     * @tc.number SUB_TESTFWK_UITEST_CLICKATWITHOPTIONS_ERROR_0200
-     * @tc.desc   Test clickAtWithOptions with null point (should throw 17000007)
+     * @tc.name   testDriverClickAtNullPoint
+     * @tc.number SUB_testfwk_UITEST_CLICKAT_ERROR_0200
+     * @tc.desc   Test clickAt with null point (should throw 17000007)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverClickAtWithOptionsNullPoint', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testDriverClickAtWithOptionsNullPoint start`);
+    it('testDriverClickAtNullPoint', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverClickAtNullPoint start`);
       try {
         await driver.clickAtWithOptions(null, {pressure: 0.5});
         expect().assertFail();
       } catch (err) {
-        console.log(`${TestTag}, testDriverClickAtWithOptionsNullPoint error is: ${JSON.stringify(err)}`);
+        console.log(`${TestTag}, testDriverClickAtNullPoint error is: ${JSON.stringify(err)}`);
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
       }
-      console.log(`${TestTag}, testDriverClickAtWithOptionsNullPoint end`);
+      console.log(`${TestTag}, testDriverClickAtNullPoint end`);
     });
 
     /**
-     * @tc.name   testDriverClickAtWithOptionsUndefinedPoint
-     * @tc.number SUB_TESTFWK_UITEST_CLICKATWITHOPTIONS_ERROR_0300
-     * @tc.desc   Test clickAtWithOptions with undefined point (should throw 17000007)
+     * @tc.name   testDriverClickAtUndefinedPoint
+     * @tc.number SUB_testfwk_UITEST_CLICKAT_ERROR_0300
+     * @tc.desc   Test clickAt with undefined point (should throw 17000007)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverClickAtWithOptionsUndefinedPoint', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testDriverClickAtWithOptionsUndefinedPoint start`);
+    it('testDriverClickAtUndefinedPoint', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverClickAtUndefinedPoint start`);
       try {
         await driver.clickAtWithOptions(undefined, {pressure: 0.5});
         expect().assertFail();
       } catch (err) {
-        console.log(`${TestTag}, testDriverClickAtWithOptionsUndefinedPoint error is: ${JSON.stringify(err)}`);
+        console.log(`${TestTag}, testDriverClickAtUndefinedPoint error is: ${JSON.stringify(err)}`);
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
       }
-      console.log(`${TestTag}, testDriverClickAtWithOptionsUndefinedPoint end`);
+      console.log(`${TestTag}, testDriverClickAtUndefinedPoint end`);
     });
 
-     /**
-       * @tc.name   testDriverClickAtWithOptionsErrorSpeedTooSmall
-       * @tc.number SUB_TESTFWK_UITEST_CLICKATWITHOPTIONS_ERROR_0400
-       * @tc.desc   Test clickAtWithOptions with speed=199 (less than minimum 200), should throw 17000007
-       * @tc.type   FUNCTION
-       * @tc.size   MEDIUMTEST
-       * @tc.level  LEVEL3
-       */
-    it('testDriverClickAtWithOptionsErrorSpeedTooSmall', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testDriverClickAtWithOptionsErrorSpeedTooSmall start`);
+    /**
+     * @tc.name   testDriverClickAtErrorSpeedTooSmall
+     * @tc.number SUB_testfwk_UITEST_CLICKAT_ERROR_0400
+     * @tc.desc   Test clickAt with speed=199 (less than minimum 200), should throw 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverClickAtErrorSpeedTooSmall', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverClickAtErrorSpeedTooSmall start`);
       const options: TouchOptions = { speed: 199 };
       try {
         await driver.clickAtWithOptions({x: 100, y: 100}, options)
@@ -119,19 +119,19 @@ export default function uitestApi26ErrorTest() {
       } catch (err) {
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode)
       }
-      console.log(`${TestTag}, testDriverClickAtWithOptionsErrorSpeedTooSmall end`);
+      console.log(`${TestTag}, testDriverClickAtErrorSpeedTooSmall end`);
     });
 
-     /**
-       * @tc.name   testDriverClickAtWithOptionsErrorSpeedTooLarge
-       * @tc.number SUB_testfwk_UITEST_clickAtWithOptions_ERROR_0500
-       * @tc.desc   Test clickAtWithOptions with speed=40001 (greater than maximum 40000), should throw 17000007
-       * @tc.type   FUNCTION
-       * @tc.size   MEDIUMTEST
-       * @tc.level  LEVEL3
-       */
-    it('testDriverClickAtWithOptionsErrorSpeedTooLarge', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testDriverClickAtWithOptionsErrorSpeedTooLarge start`);
+    /**
+     * @tc.name   testDriverClickAtErrorSpeedTooLarge
+     * @tc.number SUB_testfwk_UITEST_CLICKAT_ERROR_0500
+     * @tc.desc   Test clickAt with speed=40001 (greater than maximum 40000), should throw 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverClickAtErrorSpeedTooLarge', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverClickAtErrorSpeedTooLarge start`);
       const options: TouchOptions = { speed: 40001 };
       try {
         await driver.clickAtWithOptions({x: 100, y: 100}, options)
@@ -139,19 +139,19 @@ export default function uitestApi26ErrorTest() {
       } catch (err) {
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode)
       }
-      console.log(`${TestTag}, testDriverClickAtWithOptionsErrorSpeedTooLarge end`);
+      console.log(`${TestTag}, testDriverClickAtErrorSpeedTooLarge end`);
     });
 
-     /**
-      * @tc.name   testDriverClickAtWithOptionsErrorPressureTooSmall
-      * @tc.number SUB_TESTFWK_UITEST_CLICKATWITHOPTIONS_ERROR_0600
-      * @tc.desc   Test clickAtWithOptions with pressure=-0.1 (less than minimum 0), should throw 17000007
-      * @tc.type   FUNCTION
-      * @tc.size   MEDIUMTEST
-      * @tc.level  LEVEL3
-      */
-    it('testDriverClickAtWithOptionsErrorPressureTooSmall', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testDriverClickAtWithOptionsErrorPressureTooSmall start`);
+    /**
+     * @tc.name   testDriverClickAtErrorPressureTooSmall
+     * @tc.number SUB_testfwk_UITEST_CLICKAT_ERROR_0600
+     * @tc.desc   Test clickAt with pressure=-0.1 (less than minimum 0), should throw 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverClickAtErrorPressureTooSmall', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverClickAtErrorPressureTooSmall start`);
       const point: Point = { x: 100, y: 100 };
       const options: TouchOptions = { pressure: -0.1 };
       try {
@@ -160,41 +160,41 @@ export default function uitestApi26ErrorTest() {
       } catch (err) {
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode)
       }
-      console.log(`${TestTag}, testDriverClickAtWithOptionsErrorPressureTooSmall end`);
+      console.log(`${TestTag}, testDriverClickAtErrorPressureTooSmall end`);
     });
 
-     /**
-      * @tc.name   testDriverClickAtWithOptionsErrorPressureTooLarge
-      * @tc.number SUB_TESTFWK_UITEST_CLICKATWITHOPTIONS_ERROR_0700
-      * @tc.desc   Test clickAtWithOptions with pressure=1.5 (greater than maximum 1), should throw 17000007
-      * @tc.type   FUNCTION
-      * @tc.size   MEDIUMTEST
-      * @tc.level  LEVEL3
-      */
-    it('testDriverClickAtWithOptionsErrorPressureTooLarge', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testDriverClickAtWithOptionsErrorPressureTooLarge start`);
+    /**
+     * @tc.name   testDriverClickAtErrorPressureTooLarge
+     * @tc.number SUB_testfwk_UITEST_CLICKAT_ERROR_0700
+     * @tc.desc   Test clickAt with pressure=1.5 (greater than maximum 1), should throw 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverClickAtErrorPressureTooLarge', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverClickAtErrorPressureTooLarge start`);
       const point: Point = { x: 100, y: 100 };
       const options: TouchOptions = { pressure: 1.5 };
       try {
         await driver.clickAtWithOptions(point, options);
         expect().assertFail();
       } catch (err) {
-        console.log(`${TestTag}, testDriverClickAtWithOptionsErrorPressureTooLarge error is: ${JSON.stringify(err)}`);
+        console.log(`${TestTag}, testDriverClickAtErrorPressureTooLarge error is: ${JSON.stringify(err)}`);
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
       }
-      console.log(`${TestTag}, testDriverClickAtWithOptionsErrorPressureTooLarge end`);
+      console.log(`${TestTag}, testDriverClickAtErrorPressureTooLarge end`);
     });
 
-     /**
-      * @tc.name   testDriverClickAtWithOptionsUnsupportedDurationBelowMin
-      * @tc.number SUB_TESTFWK_UITEST_CLICKATWITHOPTIONS_ERROR_0800
-      * @tc.desc   Test clickAtWithOptions with duration=1000 (below minimum 1500, not supported), should throw 17000007
-      * @tc.type   FUNCTION
-      * @tc.size   MEDIUMTEST
-      * @tc.level  LEVEL3
-      */
-    it('testDriverClickAtWithOptionsUnsupportedDurationBelowMin', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testDriverClickAtWithOptionsUnsupportedDurationBelowMin start`);
+    /**
+     * @tc.name   testDriverClickAtUnsupportedDurationBelowMin
+     * @tc.number SUB_testfwk_UITEST_CLICKAT_ERROR_0800
+     * @tc.desc   Test clickAt with duration=1000 (below minimum 1500, not supported), should throw 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverClickAtUnsupportedDurationBelowMin', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverClickAtUnsupportedDurationBelowMin start`);
       const point: Point = { x: 100, y: 100 };
       const options: TouchOptions = { duration: 1000 };
       try {
@@ -203,19 +203,19 @@ export default function uitestApi26ErrorTest() {
       } catch (err) {
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode)
       }
-      console.log(`${TestTag}, testDriverClickAtWithOptionsUnsupportedDurationBelowMin end`);
+      console.log(`${TestTag}, testDriverClickAtUnsupportedDurationBelowMin end`);
     });
 
-     /**
-      * @tc.name   testDriverClickAtWithOptionsUnsupportedDurationZero
-      * @tc.number SUB_TESTFWK_UITEST_CLICKATWITHOPTIONS_ERROR_0900
-      * @tc.desc   Test clickAtWithOptions with duration=0 (zero value, not supported), should throw 17000007
-      * @tc.type   FUNCTION
-      * @tc.size   MEDIUMTEST
-      * @tc.level  LEVEL3
-      */
-    it('testDriverClickAtWithOptionsUnsupportedDurationZero', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testDriverClickAtWithOptionsUnsupportedDurationZero start`);
+    /**
+     * @tc.name   testDriverClickAtUnsupportedDurationZero
+     * @tc.number SUB_testfwk_UITEST_CLICKAT_ERROR_0900
+     * @tc.desc   Test clickAt with duration=0 (zero value, not supported), should throw 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverClickAtUnsupportedDurationZero', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverClickAtUnsupportedDurationZero start`);
       const point: Point = { x: 100, y: 100 };
       const options: TouchOptions = { duration: 0 };
       try {
@@ -224,19 +224,19 @@ export default function uitestApi26ErrorTest() {
       } catch (err) {
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode)
       }
-      console.log(`${TestTag}, testDriverClickAtWithOptionsUnsupportedDurationZero end`);
+      console.log(`${TestTag}, testDriverClickAtUnsupportedDurationZero end`);
     });
 
     /**
-     * @tc.name   testDriverLongClickAtWithOptionsErrorDurationTooSmall
-     * @tc.number SUB_TESTFWK_UITEST_LONGCLICKATWITHOPTIONS_ERROR_0100
-     * @tc.desc   Test longClickAtWithOptions with duration=1499 (less than minimum 1500), should throw 17000007
+     * @tc.name   testDriverLongClickAtErrorDurationTooSmall
+     * @tc.number SUB_testfwk_UITEST_LONGCLICKAT_ERROR_0100
+     * @tc.desc   Test longClickAt with duration=1499 (less than minimum 1500), should throw 17000007
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverLongClickAtWithOptionsErrorDurationTooSmall', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testDriverLongClickAtWithOptionsErrorDurationTooSmall start`);
+    it('testDriverLongClickAtErrorDurationTooSmall', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverLongClickAtErrorDurationTooSmall start`);
       const options: TouchOptions = { duration: 1499 };
       try {
         await driver.longClickAtWithOptions({x: 100, y: 100}, options)
@@ -244,19 +244,19 @@ export default function uitestApi26ErrorTest() {
       } catch (err) {
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode)
       }
-      console.log(`${TestTag}, testDriverLongClickAtWithOptionsErrorDurationTooSmall end`);
+      console.log(`${TestTag}, testDriverLongClickAtErrorDurationTooSmall end`);
     });
 
     /**
-     * @tc.name   testDriverLongClickAtWithOptionsErrorPressureTooSmall
-     * @tc.number SUB_TESTFWK_UITEST_LONGCLICKATWITHOPTIONS_ERROR_0200
-     * @tc.desc   Test longClickAtWithOptions with pressure=-0.1 (less than minimum 0), should throw 17000007
+     * @tc.name   testDriverLongClickAtErrorPressureTooSmall
+     * @tc.number SUB_testfwk_UITEST_LONGCLICKAT_ERROR_0200
+     * @tc.desc   Test longClickAt with pressure=-0.1 (less than minimum 0), should throw 17000007
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverLongClickAtWithOptionsErrorPressureTooSmall', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testDriverLongClickAtWithOptionsErrorPressureTooSmall start`);
+    it('testDriverLongClickAtErrorPressureTooSmall', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverLongClickAtErrorPressureTooSmall start`);
       const options: TouchOptions = { pressure: -0.1 };
       try {
         await driver.longClickAtWithOptions({x: 100, y: 100}, options)
@@ -264,19 +264,19 @@ export default function uitestApi26ErrorTest() {
       } catch (err) {
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode)
       }
-      console.log(`${TestTag}, testDriverLongClickAtWithOptionsErrorPressureTooSmall end`);
+      console.log(`${TestTag}, testDriverLongClickAtErrorPressureTooSmall end`);
     });
 
     /**
-     * @tc.name   testDriverLongClickAtWithOptionsErrorPressureTooLarge
-     * @tc.number SUB_TESTFWK_UITEST_LONGCLICKATWITHOPTIONS_ERROR_0300
-     * @tc.desc   Test longClickAtWithOptions with pressure=1.1 (greater than maximum 1), should throw 17000007
+     * @tc.name   testDriverLongClickAtErrorPressureTooLarge
+     * @tc.number SUB_testfwk_UITEST_LONGCLICKAT_ERROR_0300
+     * @tc.desc   Test longClickAt with pressure=1.1 (greater than maximum 1), should throw 17000007
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverLongClickAtWithOptionsErrorPressureTooLarge', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testDriverLongClickAtWithOptionsErrorPressureTooLarge start`);
+    it('testDriverLongClickAtErrorPressureTooLarge', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverLongClickAtErrorPressureTooLarge start`);
       const options: TouchOptions = { pressure: 1.1 };
       try {
         await driver.longClickAtWithOptions({x: 100, y: 100}, options)
@@ -284,19 +284,19 @@ export default function uitestApi26ErrorTest() {
       } catch (err) {
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode)
       }
-      console.log(`${TestTag}, testDriverLongClickAtWithOptionsErrorPressureTooLarge end`);
+      console.log(`${TestTag}, testDriverLongClickAtErrorPressureTooLarge end`);
     });
 
     /**
-     * @tc.name   testDriverLongClickAtWithOptionsErrorSpeedTooSmall
-     * @tc.number SUB_TESTFWK_UITEST_LONGCLICKATWITHOPTIONS_ERROR_0400
-     * @tc.desc   Test longClickAtWithOptions with speed=199 (less than minimum 200), should throw 17000007
+     * @tc.name   testDriverLongClickAtErrorSpeedTooSmall
+     * @tc.number SUB_testfwk_UITEST_LONGCLICKAT_ERROR_0400
+     * @tc.desc   Test longClickAt with speed=199 (less than minimum 200), should throw 17000007
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverLongClickAtWithOptionsErrorSpeedTooSmall', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testDriverLongClickAtWithOptionsErrorSpeedTooSmall start`);
+    it('testDriverLongClickAtErrorSpeedTooSmall', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverLongClickAtErrorSpeedTooSmall start`);
       const options: TouchOptions = { speed: 199 };
       try {
         await driver.longClickAtWithOptions({x: 100, y: 100}, options)
@@ -304,19 +304,19 @@ export default function uitestApi26ErrorTest() {
       } catch (err) {
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode)
       }
-      console.log(`${TestTag}, testDriverLongClickAtWithOptionsErrorSpeedTooSmall end`);
+      console.log(`${TestTag}, testDriverLongClickAtErrorSpeedTooSmall end`);
     });
 
     /**
-     * @tc.name   testDriverLongClickAtWithOptionsErrorSpeedTooLarge
-     * @tc.number SUB_TESTFWK_UITEST_LONGCLICKATWITHOPTIONS_ERROR_0500
-     * @tc.desc   Test longClickAtWithOptions with speed=40001 (greater than maximum 40000), should throw 17000007
+     * @tc.name   testDriverLongClickAtErrorSpeedTooLarge
+     * @tc.number SUB_testfwk_UITEST_LONGCLICKAT_ERROR_0500
+     * @tc.desc   Test longClickAt with speed=40001 (greater than maximum 40000), should throw 17000007
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverLongClickAtWithOptionsErrorSpeedTooLarge', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testDriverLongClickAtWithOptionsErrorSpeedTooLarge start`);
+    it('testDriverLongClickAtErrorSpeedTooLarge', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverLongClickAtErrorSpeedTooLarge start`);
       const options: TouchOptions = { speed: 40001 };
       try {
         await driver.longClickAtWithOptions({x: 100, y: 100}, options)
@@ -324,19 +324,19 @@ export default function uitestApi26ErrorTest() {
       } catch (err) {
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode)
       }
-      console.log(`${TestTag}, testDriverLongClickAtWithOptionsErrorSpeedTooLarge end`);
+      console.log(`${TestTag}, testDriverLongClickAtErrorSpeedTooLarge end`);
     });
 
     /**
-     * @tc.name   testDriverLongClickAtWithOptionsErrorSpeedNegative
-     * @tc.number SUB_TESTFWK_UITEST_LONGCLICKATWITHOPTIONS_ERROR_0600
-     * @tc.desc   Test longClickAtWithOptions with speed=-100 (negative), should throw 17000007
+     * @tc.name   testDriverLongClickAtErrorSpeedNegative
+     * @tc.number SUB_testfwk_UITEST_LONGCLICKAT_ERROR_0600
+     * @tc.desc   Test longClickAt with speed=-100 (negative), should throw 17000007
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverLongClickAtWithOptionsErrorSpeedNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testDriverLongClickAtWithOptionsErrorSpeedNegative start`);
+    it('testDriverLongClickAtErrorSpeedNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverLongClickAtErrorSpeedNegative start`);
       const options: TouchOptions = { speed: -100 };
       try {
         await driver.longClickAtWithOptions({x: 100, y: 100}, options)
@@ -344,57 +344,57 @@ export default function uitestApi26ErrorTest() {
       } catch (err) {
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode)
       }
-      console.log(`${TestTag}, testDriverLongClickAtWithOptionsErrorSpeedNegative end`);
+      console.log(`${TestTag}, testDriverLongClickAtErrorSpeedNegative end`);
     });
 
     /**
-     * @tc.name   testDriverLongClickAtWithOptionsPointNull
-     * @tc.number SUB_TESTFWK_UITEST_LONGCLICKATWITHOPTIONS_ERROR_0700
-     * @tc.desc   Test longClickAtWithOptions with point = null, should throw error 17000007
+     * @tc.name   testDriverLongClickAtPointNull
+     * @tc.number SUB_testfwk_UITEST_LONGCLICKAT_ERROR_0700
+     * @tc.desc   Test longClickAt with point = null, should throw error 17000007
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverLongClickAtWithOptionsPointNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testDriverLongClickAtWithOptionsPointNull start`);
+    it('testDriverLongClickAtPointNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverLongClickAtPointNull start`);
       try {
         await driver.longClickAtWithOptions(null, {speed: 500});
         expect().assertFail();
       } catch (err) {
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
       }
-      console.log(`${TestTag}, testDriverLongClickAtWithOptionsPointNull end`);
+      console.log(`${TestTag}, testDriverLongClickAtPointNull end`);
     });
 
     /**
-     * @tc.name   testDriverLongClickAtWithOptionsPointUndefined
-     * @tc.number SUB_TESTFWK_UITEST_LONGCLICKATWITHOPTIONS_ERROR_0800
-     * @tc.desc   Test longClickAtWithOptions with point = undefined, should throw error 17000007
+     * @tc.name   testDriverLongClickAtPointUndefined
+     * @tc.number SUB_testfwk_UITEST_LONGCLICKAT_ERROR_0800
+     * @tc.desc   Test longClickAt with point = undefined, should throw error 17000007
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverLongClickAtWithOptionsPointUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testDriverLongClickAtWithOptionsPointUndefined start`);
+    it('testDriverLongClickAtPointUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverLongClickAtPointUndefined start`);
       try {
         await driver.longClickAtWithOptions(undefined, {speed: 500});
         expect().assertFail();
       } catch (err) {
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
       }
-      console.log(`${TestTag}, testDriverLongClickAtWithOptionsPointUndefined end`);
+      console.log(`${TestTag}, testDriverLongClickAtPointUndefined end`);
     });
 
     /**
-     * @tc.name   testDriverLongClickAtWithOptionsConcurrentCallWithOptions
-     * @tc.number SUB_TESTFWK_UITEST_LONGCLICKATWITHOPTIONS_ERROR_0900
-     * @tc.desc   Test longClickAtWithOptions concurrent call with options parameter, should throw 17000002
+     * @tc.name   testDriverLongClickAtConcurrentCallWithOptions
+     * @tc.number SUB_testfwk_UITEST_LONGCLICKAT_ERROR_0900
+     * @tc.desc   Test longClickAt concurrent call with options parameter, should throw 17000002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverLongClickAtWithOptionsConcurrentCallWithOptions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testDriverLongClickAtWithOptionsConcurrentCallWithOptions start`);
+    it('testDriverLongClickAtConcurrentCallWithOptions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverLongClickAtConcurrentCallWithOptions start`);
       const point: Point = { x: 100, y: 100 };
       const options: TouchOptions = { pressure: 0.5 };
       try {
@@ -403,11 +403,11 @@ export default function uitestApi26ErrorTest() {
         await driver.longClickAtWithOptions(point, options);
         expect().assertFail();
       } catch (err) {
-        console.log(`${TestTag}, testDriverLongClickAtWithOptionsConcurrentCallWithOptions error is: ${JSON.stringify(err)}`);
+        console.log(`${TestTag}, testDriverLongClickAtConcurrentCallWithOptions error is: ${JSON.stringify(err)}`);
         expect((err as BusinessError).code).assertEqual(AsyncErrorCode);
       }
       await sleep(waitUiReadyMs * 8);
-      console.log(`${TestTag}, testDriverLongClickAtWithOptionsConcurrentCallWithOptions end`);
+      console.log(`${TestTag}, testDriverLongClickAtConcurrentCallWithOptions end`);
     });
 
     /**
@@ -671,14 +671,14 @@ export default function uitestApi26ErrorTest() {
       console.info(`${TestTag}, testDriverDragBetweenWithDurationLessThanMin end`);
     });
 
-     /**
-       * @tc.name   testDriverDragBetweenErrorSpeedTooLarge
-       * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_0700
-       * @tc.desc   Test dragBetween with speed greater than 40000, expecting error 17000007
-       * @tc.type   FUNCTION
-       * @tc.size   MEDIUMTEST
-       @tc.level  LEVEL3
-       */
+    /**
+     * @tc.name   testDriverDragBetweenErrorSpeedTooLarge
+     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_0700
+     * @tc.desc   Test dragBetween with speed greater than 40000, expecting error 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     @tc.level  LEVEL3
+     */
     it('testDriverDragBetweenErrorSpeedTooLarge', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, testDriverDragBetweenErrorSpeedTooLarge start`);
       const from: Point = { x: 500, y: 1000 };
@@ -693,14 +693,14 @@ export default function uitestApi26ErrorTest() {
       console.log(`${TestTag}, testDriverDragBetweenErrorSpeedTooLarge end`);
     });
 
-     /**
-       * @tc.name   testDriverDragBetweenErrorSpeedTooSmall
-       * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_0800
-       * @tc.desc   Test dragBetween with speed less than 200, expecting error 17000007
-       * @tc.type   FUNCTION
-       * @tc.size   MEDIUMTEST
-       * @tc.level  LEVEL3
-       */
+    /**
+     * @tc.name   testDriverDragBetweenErrorSpeedTooSmall
+     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_0800
+     * @tc.desc   Test dragBetween with speed less than 200, expecting error 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testDriverDragBetweenErrorSpeedTooSmall', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, testDriverDragBetweenErrorSpeedTooSmall start`);
       const from: Point = { x: 500, y: 1000 };
@@ -778,14 +778,14 @@ export default function uitestApi26ErrorTest() {
       console.info(`${TestTag}, testDriverDragBetweenDisplayIdDiff end`);
     });
 
-     /**
-       * @tc.name   testDriverDragBetweenApi26FromNull
-       * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_0900
-       * @tc.desc   Test dragBetween API 26.0 with from=null, expecting error 17000007
-       * @tc.type   FUNCTION
-       * @tc.size   MEDIUMTEST
-       * @tc.level  LEVEL3
-       */
+    /**
+     * @tc.name   testDriverDragBetweenApi26FromNull
+     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_0900
+     * @tc.desc   Test dragBetween API 26.0 with from=null, expecting error 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testDriverDragBetweenApi26FromNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.info(`${TestTag}, testDriverDragBetweenApi26FromNull start`);
       try {
@@ -798,14 +798,14 @@ export default function uitestApi26ErrorTest() {
       console.info(`${TestTag}, testDriverDragBetweenApi26FromNull end`);
     });
 
-     /**
-       * @tc.name   testDriverDragBetweenApi26FromUndefined
-       * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_1000
-       * @tc.desc   Test dragBetween API 26.0 with from=undefined, expecting error 17000007
-       * @tc.type   FUNCTION
-       * @tc.size   MEDIUMTEST
-       * @tc.level  LEVEL3
-       */
+    /**
+     * @tc.name   testDriverDragBetweenApi26FromUndefined
+     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_1000
+     * @tc.desc   Test dragBetween API 26.0 with from=undefined, expecting error 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testDriverDragBetweenApi26FromUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.info(`${TestTag}, testDriverDragBetweenApi26FromUndefined start`);
       try {
@@ -818,14 +818,14 @@ export default function uitestApi26ErrorTest() {
       console.info(`${TestTag}, testDriverDragBetweenApi26FromUndefined end`);
     });
 
-     /**
-       * @tc.name   testDriverDragBetweenApi26FromNullNoOptions
-       * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_1100
-       * @tc.desc   Test dragBetween API 26.0 with from=null and no options, expecting error 17000007
-       * @tc.type   FUNCTION
-       * @tc.size   MEDIUMTEST
-       @tc.level  LEVEL3
-       */
+    /**
+     * @tc.name   testDriverDragBetweenApi26FromNullNoOptions
+     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_1100
+     * @tc.desc   Test dragBetween API 26.0 with from=null and no options, expecting error 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     @tc.level  LEVEL3
+     */
     it('testDriverDragBetweenApi26FromNullNoOptions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.info(`${TestTag}, testDriverDragBetweenApi26FromNullNoOptions start`);
       try {
@@ -838,14 +838,14 @@ export default function uitestApi26ErrorTest() {
       console.info(`${TestTag}, testDriverDragBetweenApi26FromNullNoOptions end`);
     });
 
-     /**
-       * @tc.name   testDriverDragBetweenApi26FromUndefinedNoOptions
-       * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_1200
-       * @tc.desc   Test dragBetween API 26.0 with from=undefined and no options, expecting error 17000007
-       * @tc.type   FUNCTION
-       * @tc.size   MEDIUMTEST
-       * @tc.level  LEVEL3
-       */
+    /**
+     * @tc.name   testDriverDragBetweenApi26FromUndefinedNoOptions
+     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_1200
+     * @tc.desc   Test dragBetween API 26.0 with from=undefined and no options, expecting error 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testDriverDragBetweenApi26FromUndefinedNoOptions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.info(`${TestTag}, testDriverDragBetweenApi26FromUndefinedNoOptions start`);
       try {
@@ -858,14 +858,14 @@ export default function uitestApi26ErrorTest() {
       console.info(`${TestTag}, testDriverDragBetweenApi26FromUndefinedNoOptions end`);
     });
 
-     /**
-       * @tc.name   testDriverDragBetweenApi26ToNull
-       * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_1300
-       * @tc.desc   Test dragBetween API 26.0 with to=null, expecting error 17000007
-       * @tc.type   FUNCTION
-       * @tc.size   MEDIUMTEST
-       * @tc.level  LEVEL3
-       */
+    /**
+     * @tc.name   testDriverDragBetweenApi26ToNull
+     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_1300
+     * @tc.desc   Test dragBetween API 26.0 with to=null, expecting error 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testDriverDragBetweenApi26ToNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.info(`${TestTag}, testDriverDragBetweenApi26ToNull start`);
       try {
@@ -878,14 +878,14 @@ export default function uitestApi26ErrorTest() {
       console.info(`${TestTag}, testDriverDragBetweenApi26ToNull end`);
     });
 
-     /**
-       * @tc.name   testDriverDragBetweenApi26ToUndefined
-       * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_1400
-       * @tc.desc   Test dragBetween API 26.0 with to=undefined, expecting error 17000007
-       * @tc.type   FUNCTION
-       * @tc.size   MEDIUMTEST
-       @tc.level  LEVEL3
-       */
+    /**
+     * @tc.name   testDriverDragBetweenApi26ToUndefined
+     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_1400
+     * @tc.desc   Test dragBetween API 26.0 with to=undefined, expecting error 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     @tc.level  LEVEL3
+     */
     it('testDriverDragBetweenApi26ToUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.info(`${TestTag}, testDriverDragBetweenApi26ToUndefined start`);
       try {
@@ -898,14 +898,14 @@ export default function uitestApi26ErrorTest() {
       console.info(`${TestTag}, testDriverDragBetweenApi26ToUndefined end`);
     });
 
-     /**
-       * @tc.name   testDriverDragBetweenApi26FromNullToNull
-       * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_1500
-       * @tc.desc   Test dragBetween API 26.0 with from=null and to=null, expecting error 17000007
-       * @tc.type   FUNCTION
-       * @tc.size   MEDIUMTEST
-       * @tc.level  LEVEL3
-       */
+    /**
+     * @tc.name   testDriverDragBetweenApi26FromNullToNull
+     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_1500
+     * @tc.desc   Test dragBetween API 26.0 with from=null and to=null, expecting error 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testDriverDragBetweenApi26FromNullToNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.info(`${TestTag}, testDriverDragBetweenApi26FromNullToNull start`);
       try {
@@ -918,14 +918,14 @@ export default function uitestApi26ErrorTest() {
       console.info(`${TestTag}, testDriverDragBetweenApi26FromNullToNull end`);
     });
 
-     /**
-       * @tc.name   testDriverDragBetweenApi26FromUndefinedToUndefined
-       * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_1600
-       * @tc.desc   Test dragBetween API 26.0 with from=undefined and to=undefined, expecting error 17000007
-       * @tc.type   FUNCTION
-       * @tc.size   MEDIUMTEST
-       * @tc.level  LEVEL3
-       */
+    /**
+     * @tc.name   testDriverDragBetweenApi26FromUndefinedToUndefined
+     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_1600
+     * @tc.desc   Test dragBetween API 26.0 with from=undefined and to=undefined, expecting error 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testDriverDragBetweenApi26FromUndefinedToUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.info(`${TestTag}, testDriverDragBetweenApi26FromUndefinedToUndefined start`);
       try {
@@ -938,14 +938,14 @@ export default function uitestApi26ErrorTest() {
       console.info(`${TestTag}, testDriverDragBetweenApi26FromUndefinedToUndefined end`);
     });
 
-     /**
-      * @tc.name   testDriverDragBetweenApi26ToNullNoOptions
-      * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_1700
-      * @tc.desc   Test dragBetween API 26.0 with to=null and no options, expecting error 17000007
-      * @tc.type   FUNCTION
-      * @tc.size   MEDIUMTEST
-      * @tc.level  LEVEL3
-      */
+    /**
+     * @tc.name   testDriverDragBetweenApi26ToNullNoOptions
+     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_1700
+     * @tc.desc   Test dragBetween API 26.0 with to=null and no options, expecting error 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testDriverDragBetweenApi26ToNullNoOptions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.info(`${TestTag}, testDriverDragBetweenApi26ToNullNoOptions start`);
       try {
@@ -958,14 +958,14 @@ export default function uitestApi26ErrorTest() {
       console.info(`${TestTag}, testDriverDragBetweenApi26ToNullNoOptions end`);
     });
 
-     /**
-      * @tc.name   testDriverDragBetweenApi26ToUndefinedNoOptions
-      * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_1800
-      * @tc.desc   Test dragBetween API 26.0 with to=undefined and no options, expecting error 17000007
-      * @tc.type   FUNCTION
-      * @tc.size   MEDIUMTEST
-      * @tc.level  LEVEL3
-      */
+    /**
+     * @tc.name   testDriverDragBetweenApi26ToUndefinedNoOptions
+     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_1800
+     * @tc.desc   Test dragBetween API 26.0 with to=undefined and no options, expecting error 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testDriverDragBetweenApi26ToUndefinedNoOptions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.info(`${TestTag}, testDriverDragBetweenApi26ToUndefinedNoOptions start`);
       try {
@@ -978,14 +978,14 @@ export default function uitestApi26ErrorTest() {
       console.info(`${TestTag}, testDriverDragBetweenApi26ToUndefinedNoOptions end`);
     });
 
-     /**
-      * @tc.name   testDriverDragBetweenApi26FromNullToUndefined
-      * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_1900
-      * @tc.desc   Test dragBetween API 26.0 with from=null and to=undefined, expecting error 17000007
-      * @tc.type   FUNCTION
-      * @tc.size   MEDIUMTEST
-      * @tc.level  LEVEL3
-      */
+    /**
+     * @tc.name   testDriverDragBetweenApi26FromNullToUndefined
+     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_1900
+     * @tc.desc   Test dragBetween API 26.0 with from=null and to=undefined, expecting error 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testDriverDragBetweenApi26FromNullToUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.info(`${TestTag}, testDriverDragBetweenApi26FromNullToUndefined start`);
       try {
@@ -998,14 +998,14 @@ export default function uitestApi26ErrorTest() {
       console.info(`${TestTag}, testDriverDragBetweenApi26FromNullToUndefined end`);
     });
 
-     /**
-      * @tc.name   testDriverDragBetweenApi26FromUndefinedToNull
-      * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_2000
-      * @tc.desc   Test dragBetween API 26.0 with from=null and to=null and no options
-      * @tc.type   FUNCTION
-      * @tc.size   MEDIUMTEST
-      * @tc.level  LEVEL3
-      */
+    /**
+     * @tc.name   testDriverDragBetweenApi26FromUndefinedToNull
+     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_2000
+     * @tc.desc   Test dragBetween API 26.0 with from=null and to=null and no options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testDriverDragBetweenApi26FromUndefinedToNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.info(`${TestTag}, testDriverDragBetweenApi26FromUndefinedToNull start`);
       try {
@@ -1218,7 +1218,7 @@ export default function uitestApi26ErrorTest() {
     /**
      * @tc.name   testDriverMouseDragErrorSpeedNegative
      * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_ERROR_0200
-       @tc.desc   Test mouseDrag with negative speed, expecting error 17000002
+     @tc.desc   Test mouseDrag with negative speed, expecting error 17000002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
