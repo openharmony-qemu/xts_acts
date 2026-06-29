@@ -100,9 +100,10 @@ export default function IteratorForEachTest(): void {
       expect(collected[0]).assertEqual("a");
     });
 
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_0400
-     * @tc.name testIteratorForEach004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_0300
+     * @tc.name testIteratorForEach003
      * @tc.desc Verify iteratorForEach with object type iterator
      * @tc.size MediumTest
      * @tc.type Function
@@ -120,8 +121,8 @@ export default function IteratorForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_0500
-     * @tc.name testIteratorForEach005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_0400
+     * @tc.name testIteratorForEach004
      * @tc.desc Verify iteratorForEach with array type iterator
      * @tc.size MediumTest
      * @tc.type Function
@@ -136,8 +137,8 @@ export default function IteratorForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_0600
-     * @tc.name testIteratorForEach006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_0500
+     * @tc.name testIteratorForEach005
      * @tc.desc Verify iteratorForEach with empty iterator does not call callback
      * @tc.size MediumTest
      * @tc.type Function
@@ -152,8 +153,8 @@ export default function IteratorForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_0700
-     * @tc.name testIteratorForEach007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_0600
+     * @tc.name testIteratorForEach006
      * @tc.desc Verify iteratorForEach with single element iterator calls callback once
      * @tc.size MediumTest
      * @tc.type Function
@@ -168,8 +169,8 @@ export default function IteratorForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_0800
-     * @tc.name testIteratorForEach008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_0700
+     * @tc.name testIteratorForEach007
      * @tc.desc Verify iteratorForEach with multiple elements iterates all
      * @tc.size MediumTest
      * @tc.type Function
@@ -184,8 +185,8 @@ export default function IteratorForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_0900
-     * @tc.name testIteratorForEach009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_0800
+     * @tc.name testIteratorForEach008
      * @tc.desc Verify iteratorForEach accepts Iterator<number>
      * @tc.size MediumTest
      * @tc.type Function
@@ -201,8 +202,8 @@ export default function IteratorForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_1000
-     * @tc.name testIteratorForEach010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_0900
+     * @tc.name testIteratorForEach009
      * @tc.desc Verify iteratorForEach accepts Iterator<string>
      * @tc.size MediumTest
      * @tc.type Function
@@ -218,8 +219,8 @@ export default function IteratorForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_1100
-     * @tc.name testIteratorForEach011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_1000
+     * @tc.name testIteratorForEach010
      * @tc.desc Verify iteratorForEach with regular function callback
      * @tc.size MediumTest
      * @tc.type Function
@@ -234,8 +235,8 @@ export default function IteratorForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_1200
-     * @tc.name testIteratorForEach012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_1100
+     * @tc.name testIteratorForEach011
      * @tc.desc Verify callback modifies external variable
      * @tc.size MediumTest
      * @tc.type Function
@@ -250,8 +251,8 @@ export default function IteratorForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_1300
-     * @tc.name testIteratorForEach013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_1200
+     * @tc.name testIteratorForEach012
      * @tc.desc Verify iteratorForEach accepts a function callback for number values
      * @tc.size MediumTest
      * @tc.type Function
@@ -266,8 +267,8 @@ export default function IteratorForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_1400
-     * @tc.name testIteratorForEach014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_1300
+     * @tc.name testIteratorForEach013
      * @tc.desc Verify iteratorForEach accepts a function callback for string values
      * @tc.size MediumTest
      * @tc.type Function
@@ -282,8 +283,8 @@ export default function IteratorForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_1500
-     * @tc.name testIteratorForEach015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_1400
+     * @tc.name testIteratorForEach014
      * @tc.desc Verify iteratorForEach accepts a function callback for object values
      * @tc.size MediumTest
      * @tc.type Function
@@ -299,16 +300,35 @@ export default function IteratorForEachTest(): void {
       expect(ids[1]).assertEqual(2);
     });
 
-
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_1800
-     * @tc.name testIteratorForEach018
-     * @tc.desc Verify all elements are correctly visited by callback
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_1500
+     * @tc.name testIteratorForEach015
+     * @tc.desc Verify callback throwing Error propagates correctly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testIteratorForEach015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let caught: boolean = false;
+      try {
+        iteratorForEach(new ArrayIteratorHelper<number>([1, 2, 3]), (x: number): void => {
+          throw new Error("callback error");
+        });
+      } catch (e) {
+        caught = e.name === 'Error' && e.message === 'callback error';
+      }
+      expect(caught).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_1600
+     * @tc.name testIteratorForEach016
+     * @tc.desc Verify all elements are correctly visited by callback
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIteratorForEach016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let visited: number[] = [];
       iteratorForEach(new ArrayIteratorHelper<number>([10, 20, 30]), (x: number): void => {
         visited.push(x);
@@ -320,14 +340,14 @@ export default function IteratorForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_1900
-     * @tc.name testIteratorForEach019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_1700
+     * @tc.name testIteratorForEach017
      * @tc.desc Verify callback invocation order matches iterator next() order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIteratorForEach016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIteratorForEach017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let order: string[] = [];
       iteratorForEach(new ArrayIteratorHelper<string>(["first", "second", "third"]), (x: string): void => {
         order.push(x);
@@ -338,14 +358,14 @@ export default function IteratorForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_2000
-     * @tc.name testIteratorForEach020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_1800
+     * @tc.name testIteratorForEach018
      * @tc.desc Verify callback receives correct element values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIteratorForEach017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIteratorForEach018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let expected: number[] = [1, 2, 3];
       let actual: number[] = [];
       iteratorForEach(new ArrayIteratorHelper<number>(expected), (x: number): void => {
@@ -357,14 +377,14 @@ export default function IteratorForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_2200
-     * @tc.name testIteratorForEach022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_1900
+     * @tc.name testIteratorForEach019
      * @tc.desc Verify generic V type is correctly passed to callback
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIteratorForEach018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIteratorForEach019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const stringIter: Iterator<string> = new ArrayIteratorHelper<string>(["hello", "world"]);
       let collected: string[] = [];
       iteratorForEach(stringIter, (x: string): void => {
@@ -375,14 +395,14 @@ export default function IteratorForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_2300
-     * @tc.name testIteratorForEach023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_2000
+     * @tc.name testIteratorForEach020
      * @tc.desc Verify iteratorForEach with 10000 elements completes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIteratorForEach019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIteratorForEach020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let largeArr: number[] = [];
       for (let i: number = 0; i < 10000; i++) {
         largeArr.push(i);
@@ -395,14 +415,14 @@ export default function IteratorForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_2500
-     * @tc.name testIteratorForEach025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_2100
+     * @tc.name testIteratorForEach021
      * @tc.desc Verify iteratorForEach handles iterator next() throwing Error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIteratorForEach020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIteratorForEach021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let badIter: Iterator<number> = new BadIterator1();
       try {
         iteratorForEach(badIter, (x: number): void => {});
@@ -412,16 +432,38 @@ export default function IteratorForEachTest(): void {
       }
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_2200
+     * @tc.name testIteratorForEach022
+     * @tc.desc Verify callback throwing Error stops iteration and propagates
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIteratorForEach022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let visited: number = 0;
+      let caught: boolean = false;
+      try {
+        iteratorForEach(new ArrayIteratorHelper<number>([1, 2, 3, 4, 5]), (x: number): void => {
+          visited++;
+          if (x === 3) throw new Error("stop");
+        });
+      } catch (e) {
+        caught = e.name === "Error" && e.message === "stop";
+      }
+      expect(caught).assertEqual(true);
+      expect(visited).assertEqual(3);
+    });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_2700
-     * @tc.name testIteratorForEach027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_2300
+     * @tc.name testIteratorForEach023
      * @tc.desc Verify callback throwing inside iteratorForEach propagates and can be caught by try-catch
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIteratorForEach021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIteratorForEach023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let caught: boolean = false;
       try {
         iteratorForEach(new ArrayIteratorHelper<number>([1, 2]), (x: number): void => {
@@ -434,14 +476,14 @@ export default function IteratorForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_2800
-     * @tc.name testIteratorForEach028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_2400
+     * @tc.name testIteratorForEach024
      * @tc.desc Verify V=union type: callback receives string|number type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIteratorForEach022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIteratorForEach024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const mixedIter: Iterator<string | number> = new ArrayIteratorHelper<string | number>(["a", 1, "b", 2]);
       let collected: (string | number)[] = [];
       iteratorForEach(mixedIter, (x: string | number): void => {
@@ -453,14 +495,14 @@ export default function IteratorForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_2900
-     * @tc.name testIteratorForEach029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_2500
+     * @tc.name testIteratorForEach025
      * @tc.desc Verify iteratorForEach iterates a single-element iterator with Number.MAX_SAFE_INTEGER value (boundary)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIteratorForEach023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIteratorForEach025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let callCount: number = 0;
       let captured: number = 0;
       iteratorForEach(
