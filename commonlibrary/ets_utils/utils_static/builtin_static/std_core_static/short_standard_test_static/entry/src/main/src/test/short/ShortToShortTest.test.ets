@@ -35,18 +35,17 @@ function invokeShortToShortInFunction(inputValue: short): short {
 
 export default function shortToShortTest(): void {
   describe('ShortToShortTest', (): void => {
-    beforeAll((): void => {
+    beforeAll(() => {
     });
 
-    beforeEach(async (): Promise<void> => {
+    beforeEach(async () => {
       await Utils.msSleep(30);
     });
 
-    afterEach(async (): Promise<void> => {
-      await Utils.releaseAfterEachTest();
+    afterEach(() => {
     });
 
-    afterAll((): void => {
+    afterAll(() => {
     });
 
     /**

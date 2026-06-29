@@ -31,18 +31,17 @@ import Utils from './../Util.test';
 
 export default function shortConstructorTest(): void {
   describe('ShortConstructorTest', (): void => {
-    beforeAll((): void => {
+    beforeAll(() => {
     });
 
-    beforeEach(async (): Promise<void> => {
+    beforeEach(async () => {
       await Utils.msSleep(30);
     });
 
-    afterEach(async (): Promise<void> => {
-      await Utils.releaseAfterEachTest();
+    afterEach(() => {
     });
 
-    afterAll((): void => {
+    afterAll(() => {
     });
 
     /**
@@ -151,9 +150,9 @@ export default function shortConstructorTest(): void {
      */
     it('testShortConstructor006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let positiveValues: short[] = [
-      1 as short,
-      100 as short,
-      Short.MAX_VALUE
+        1 as short,
+        100 as short,
+        Short.MAX_VALUE
       ];
       let caseCount: int = 3;
       for (let i: int = 0; i < caseCount; i++) {
@@ -173,9 +172,9 @@ export default function shortConstructorTest(): void {
      */
     it('testShortConstructor007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let negativeValues: short[] = [
-      (-1) as short,
-      (-100) as short,
-      Short.MIN_VALUE
+        (-1) as short,
+        (-100) as short,
+        Short.MIN_VALUE
       ];
       let caseCount: int = 3;
       for (let i: int = 0; i < caseCount; i++) {
@@ -195,18 +194,18 @@ export default function shortConstructorTest(): void {
      */
     it('testShortConstructor008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputs: short[] = [
-      0 as short,
-      1 as short,
-      (-1) as short,
-      100 as short,
-      (-100) as short
+        0 as short,
+        1 as short,
+        (-1) as short,
+        100 as short,
+        (-100) as short
       ];
       let expectedInts: int[] = [
-      0,
-      1,
-      -1,
-      100,
-      -100
+        0,
+        1,
+        -1,
+        100,
+        -100
       ];
       let caseCount: int = 5;
       for (let i: int = 0; i < caseCount; i++) {

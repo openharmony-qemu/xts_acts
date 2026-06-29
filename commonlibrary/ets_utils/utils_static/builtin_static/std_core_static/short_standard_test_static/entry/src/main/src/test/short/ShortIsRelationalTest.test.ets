@@ -31,18 +31,17 @@ import Utils from './../Util.test';
 
 export default function shortIsRelationalTest(): void {
   describe('ShortIsRelationalTest', (): void => {
-    beforeAll((): void => {
+    beforeAll(() => {
     });
 
-    beforeEach(async (): Promise<void> => {
+    beforeEach(async () => {
       await Utils.msSleep(30);
     });
 
-    afterEach(async (): Promise<void> => {
-      await Utils.releaseAfterEachTest();
+    afterEach(() => {
     });
 
-    afterAll((): void => {
+    afterAll(() => {
     });
 
     /**

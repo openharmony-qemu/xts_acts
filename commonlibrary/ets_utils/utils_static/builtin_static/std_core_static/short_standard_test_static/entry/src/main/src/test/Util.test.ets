@@ -9,8 +9,4 @@ export default class Utils{
       }, count);
     });
   }
-
-  static async releaseAfterEachTest(): Promise<void> {
-    await Utils.msSleep(25);
-  }
 }

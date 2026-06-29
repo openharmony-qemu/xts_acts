@@ -40,18 +40,17 @@ function expectParseIntThrows(inputText: string, radix: int, expectedErrorName: 
 
 export default function shortParseIntTest(): void {
   describe('ShortParseIntTest', (): void => {
-    beforeAll((): void => {
+    beforeAll(() => {
     });
 
-    beforeEach(async (): Promise<void> => {
+    beforeEach(async () => {
       await Utils.msSleep(30);
     });
 
-    afterEach(async (): Promise<void> => {
-      await Utils.releaseAfterEachTest();
+    afterEach(() => {
     });
 
-    afterAll((): void => {
+    afterAll(() => {
     });
 
     /**
