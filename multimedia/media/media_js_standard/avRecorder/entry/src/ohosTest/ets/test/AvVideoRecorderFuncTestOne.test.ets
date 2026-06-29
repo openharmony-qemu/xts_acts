@@ -301,32 +301,21 @@ export function avVideoRecorderTestOne() {
       let cameras = cameraManager.getSupportedCameras();
       let cameraDevice = cameras[0];
       console.info('initCamera 006');
-      let cameraOutputCapability = cameraManager.getSupportedOutputCapability(cameraDevice);
-      if (cameraOutputCapability?.videoProfiles) {
+      let cameraOutputCapability = cameraManager.getSupportedOutputCapability(cameraDevice,
+        camera.SceneMode.NORMAL_VIDEO);
+      if (cameraOutputCapability?.videoProfiles?.length) {
         console.info('initCamera 007');
-        try {
-          let defaultDisplay: display.Display = display.getDefaultDisplaySync();
-          let availableVideoProfileList = [];
-          getVideoProfile(cameraOutputCapability.videoProfiles, defaultDisplay?.width, defaultDisplay?.height,
-            availableVideoProfileList, 0);
-          myProfile = availableVideoProfileList[0];
-          let configs =
-            [avConfig, avConfigMpeg, avConfigMpegAac, avConfigH264, avConfigH264Aac, avConfigH265, avConfigH265Aac]
-          for (let i = 0; i < configs.length; i++) {
-            checkDevice(configs[i])
-          }
-          avConfigH264.profile.videoBitrate = 280000;
-          avConfigH264Aac.profile.videoBitrate = 280000;
-
-        } catch (exception) {
-          console.error('Failed to obtain the default display object. Code: ' + JSON.stringify(exception));
+        myProfile = cameraOutputCapability.videoProfiles[0];
+        let configs =
+          [avConfig, avConfigMpeg, avConfigMpegAac, avConfigH264, avConfigH264Aac, avConfigH265, avConfigH265Aac]
+        for (let i = 0; i < configs.length; i++) {
+          checkDevice(configs[i])
         }
-        console.info('beforeAll out');
-
+        avConfigH264.profile.videoBitrate = 280000;
+        avConfigH264Aac.profile.videoBitrate = 280000;
       } else {
         isSupportCameraVideoProfiles = false;
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
-        console.info('beforeAll out');
       }
 
       console.info('beforeAll out');
@@ -363,25 +352,6 @@ export function avVideoRecorderTestOne() {
       let flag =
         screen[0].hdrFormats.length === 0 || screen[0].hdrFormats.includes(hdrCapability.HDRFormat.NONE) ? false : true
       return flag
-    }
-
-    let getVideoProfile =
-      (sizeList: Array<camera.VideoProfile>, width: number, height: number, toList: Array<ESObject>, index: number) => {
-        console.log('display width: ' + width + ', height: ' + height);
-        let aVvideoProfile: camera.VideoProfile | undefined;
-        for (let i = 0; i < sizeList.length; i++) {
-          const size = sizeList[i].size;
-          if (isCorrectSize(size, width, height)) {
-            if (!aVvideoProfile || size.width > aVvideoProfile.size.width) {
-              aVvideoProfile = sizeList[i];
-            }
-          }
-        }
-        toList[index] = aVvideoProfile;
-        console.log('choosen aVvideoProfile: ' + JSON.stringify(aVvideoProfile));
-      }
-    let isCorrectSize = (size: ESObject, standardWidth: number, standardHeight: number) => {
-      return (size.width <= standardWidth) && (size.height <= standardHeight);
     }
 
     let checkDevice = (avConfig: media.AVRecorderConfig) => {
