@@ -6,6 +6,7 @@ set(OPENHARMONY_ROOT_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../../../../../../../../..
 
 include_directories(
     ${NATIVERENDER_ROOT_PATH}
+    ${NATIVERENDER_ROOT_PATH}/common
     ${OPENHARMONY_ROOT_PATH}/third_party/bounds_checking_function/include
 )
 
@@ -20,3 +21,15 @@ target_link_libraries(napiData PUBLIC securec libace_napi.z.so libuv.so)
 
 add_library(napiString SHARED ./napi/napiString.cpp)
 target_link_libraries(napiString PUBLIC securec libace_napi.z.so libuv.so)
+
+# napi callback risk probe library
+add_library(napicallbackriskndktest SHARED
+    napicallbackrisk/callback_risk_init.cpp
+    napicallbackrisk/callback_risk_lifecycle.cpp
+    napicallbackrisk/callback_risk_finalizer.cpp
+    napicallbackrisk/callback_risk_async.cpp
+    napicallbackrisk/callback_risk_js_module.cpp
+    napicallbackrisk/callback_risk_native_binding.cpp
+    napicallbackrisk/callback_risk_common.h
+    common/native_common.h)
+target_link_libraries(napicallbackriskndktest PUBLIC libace_napi.z.so libhilog_ndk.z.so)

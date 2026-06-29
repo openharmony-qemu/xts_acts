@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,21 +12,55 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#ifndef FOUNDATION_ACE_NAPI_INTERFACES_KITS_NAPI_NATIVE_COMMON_H
-#define FOUNDATION_ACE_NAPI_INTERFACES_KITS_NAPI_NATIVE_COMMON_H
 
-#define DEPRECATED __attribute__((__deprecated__))
+/*
+ * ============================================================================
+ * NAPI辅助宏定义 - 参考xts_acts/arkui/ace_napi_test
+ * ============================================================================
+ * 
+ * 本文件定义了NAPI测试用例常用的辅助宏，用于：
+ * - 统一错误处理
+ * - 自动日志记录
+ * - 简化代码编写
+ * 
+ * 使用方式：
+ * 1. NAPI_CALL(env, napi_xxx(...)) - 包裹NAPI调用，失败时自动抛出异常
+ * 2. NAPI_ASSERT(env, condition, "message") - 断言验证，失败时抛出异常
+ * 3. NAPI_LOG_INFO/ERROR(...) - 日志输出
+ * ============================================================================
+ */
 
-#define NAPI_VERSION 8
+#ifndef NATIVE_COMMON_H
+#define NATIVE_COMMON_H
 
+#include "napi/native_api.h"
+#include "hilog/log.h"
+
+/* ============================================================================
+ * 日志宏定义
+ * ============================================================================
+ */
+#undef LOG_DOMAIN
+#undef LOG_TAG
+#define LOG_DOMAIN 0x0001  // 应用领域标识
+#define LOG_TAG "NapiCreateObjTest"  // 日志标签
+
+#define NAPI_LOG_INFO(fmt, ...) OH_LOG_INFO(LOG_APP, "{%{public}s} " fmt, __func__, ##__VA_ARGS__)
+#define NAPI_LOG_ERROR(fmt, ...) OH_LOG_ERROR(LOG_APP, "{%{public}s} " fmt, __func__, ##__VA_ARGS__)
+#define NAPI_LOG_DEBUG(fmt, ...) OH_LOG_DEBUG(LOG_APP, "{%{public}s} " fmt, __func__, ##__VA_ARGS__)
+
+/* ============================================================================
+ * 返回值定义
+ * ============================================================================
+ */
 #define NAPI_RETVAL_NOTHING
 
-#define ASSERT_EQ_RS(a, b, str)                                                     \
-    if ((a) != (b)) {                                                                   \
-        OH_LOG_ERROR(LOG_APP, "%{public}s failed status=%{pusblic}d", str, a);      \
-        return nullptr;                                                             \
-    }                                                                               \
-    
+/* ============================================================================
+ * 错误处理宏
+ * ============================================================================
+ */
+
+// 获取并抛出最后一个错误信息
 #define GET_AND_THROW_LAST_ERROR(env)                                                                   \
     do {                                                                                                \
         const napi_extended_error_info* errorInfo = nullptr;                                            \
@@ -36,88 +70,72 @@
         if (!isPending && errorInfo != nullptr) {                                                       \
             const char* errorMessage =                                                                  \
                 errorInfo->error_message != nullptr ? errorInfo->error_message : "empty error message"; \
+            NAPI_LOG_ERROR("NAPI error: %{public}s", errorMessage);                                     \
             napi_throw_error((env), nullptr, errorMessage);                                             \
         }                                                                                               \
     } while (0)
 
+// 基础断言宏
 #define NAPI_ASSERT_BASE(env, assertion, message, retVal)                                    \
     do {                                                                                     \
         if (!(assertion)) {                                                                  \
+            NAPI_LOG_ERROR("Assertion failed: %{public}s", message);                         \
             napi_throw_error((env), nullptr, "assertion (" #assertion ") failed: " message); \
             return retVal;                                                                   \
         }                                                                                    \
     } while (0)
 
 #define NAPI_ASSERT(env, assertion, message) NAPI_ASSERT_BASE(env, assertion, message, nullptr)
-
 #define NAPI_ASSERT_RETURN_VOID(env, assertion, message) NAPI_ASSERT_BASE(env, assertion, message, NAPI_RETVAL_NOTHING)
 
+// NAPI调用包裹宏 - 自动检查返回值并抛出异常
 #define NAPI_CALL_BASE(env, theCall, retVal) \
     do {                                     \
-        if ((theCall) != napi_ok) {          \
+        napi_status status = (theCall);      \
+        if (status != napi_ok) {             \
+            NAPI_LOG_ERROR("NAPI call failed: %{public}s, status=%{public}d", #theCall, status); \
             GET_AND_THROW_LAST_ERROR((env)); \
             return retVal;                   \
         }                                    \
     } while (0)
 
 #define NAPI_CALL(env, theCall) NAPI_CALL_BASE(env, theCall, nullptr)
-
 #define NAPI_CALL_RETURN_VOID(env, theCall) NAPI_CALL_BASE(env, theCall, NAPI_RETVAL_NOTHING)
 
-#define DECLARE_NAPI_PROPERTY(name, val)                                       \
-    {                                                                          \
-        (name), nullptr, nullptr, nullptr, nullptr, val, napi_default, nullptr \
-    }
+// 状态检查宏 - 用于测试验证
+#define NAPI_CHECK_STATUS(env, status, message) \
+    do {                                        \
+        if ((status) != napi_ok) {              \
+            NAPI_LOG_ERROR("Check failed: %{public}s, status=%{public}d", message, status); \
+            return Ret(env, 0);                 \
+        }                                       \
+    } while (0)
 
-#define DECLARE_NAPI_STATIC_PROPERTY(name, val)                               \
-    {                                                                         \
-        (name), nullptr, nullptr, nullptr, nullptr, val, napi_static, nullptr \
-    }
-
+/* ============================================================================
+ * 属性描述符宏
+ * ============================================================================
+ */
 #define DECLARE_NAPI_FUNCTION(name, func)                                         \
     {                                                                             \
         (name), nullptr, (func), nullptr, nullptr, nullptr, napi_default, nullptr \
     }
 
-#define DECLARE_NAPI_FUNCTION_WITH_DATA(name, func, data)                         \
-    {                                                                             \
-        (name), nullptr, (func), nullptr, nullptr, nullptr, napi_default, data    \
-    }
+/* ============================================================================
+ * 测试结果返回宏
+ * ============================================================================
+ */
+// 返回int32结果（成功返回1，失败返回0）
+static inline napi_value Ret(napi_env env, int32_t val)
+{
+    napi_value result = nullptr;
+    napi_create_int32(env, val, &result);
+    return result;
+}
 
-#define DECLARE_NAPI_STATIC_FUNCTION(name, func)                                 \
-    {                                                                            \
-        (name), nullptr, (func), nullptr, nullptr, nullptr, napi_static, nullptr \
-    }
+// 返回成功结果
+#define NAPI_RETURN_SUCCESS(env) Ret(env, 1)
 
-#define DECLARE_NAPI_GETTER(name, getter)                                           \
-    {                                                                               \
-        (name), nullptr, nullptr, (getter), nullptr, nullptr, napi_default, nullptr \
-    }
+// 返回失败结果
+#define NAPI_RETURN_FAIL(env) Ret(env, 0)
 
-#define DECLARE_NAPI_SETTER(name, setter)                                           \
-    {                                                                               \
-        (name), nullptr, nullptr, nullptr, (setter), nullptr, napi_default, nullptr \
-    }
-
-#define DECLARE_NAPI_GETTER_SETTER(name, getter, setter)                             \
-    {                                                                                \
-        (name), nullptr, nullptr, (getter), (setter), nullptr, napi_default, nullptr \
-    }
-
-#define DECLARE_NAPI_DEFAULT_PROPERTY(name, val)                                          \
-    {                                                                                     \
-        (name), nullptr, nullptr, nullptr, nullptr, val, napi_default_jsproperty, nullptr \
-    }
-
-#define NAPI_CHECK_GET_LAST_ERROR_INFO_BASE(env, assertion)                     \
-    do {                                                                                \
-        if (assertion) {                                                                \
-            const napi_extended_error_info *errorInfo;                                  \
-            napi_get_last_error_info(env, &errorInfo);                                  \
-            NAPI_ASSERT(env, errorInfo->error_message != nullptr, "Test Node-API last error "   \
-                         "info return errorInfo, error info is nullptr.");              \
-        }                                                                               \
-    } while (0)
-
-#define NAPI_CHECK_GET_LAST_ERROR_INFO(env, assertion) NAPI_CHECK_GET_LAST_ERROR_INFO_BASE(env, assertion)
-#endif /* FOUNDATION_ACE_NAPI_INTERFACES_KITS_NAPI_NATIVE_COMMON_H */
+#endif /* NATIVE_COMMON_H */
