@@ -182,10 +182,18 @@ class XtsBuild:
             shutil.rmtree(autogen_apiobjs_dir)
 
         return rc
+    
+    def update_hvigor_static(self):
+        print('start update hvigor and static')
+        cmd = "{}/test/xts/tools/hvigor_update/batch_update_hvigor.sh {}".format(self._code_root_dir,self._xts_root_dir)
+        ret = subprocess.run(cmd.split())
+        print('end update hvigor and static')
+        return ret.returncode
 
     def build(self):
         func_list = [
             self.parse_cmdline,
+            self.update_hvigor_static,
             self.standard_check,
             self.do_make
         ]
