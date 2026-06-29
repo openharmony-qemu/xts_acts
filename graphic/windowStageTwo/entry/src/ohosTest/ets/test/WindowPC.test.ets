@@ -579,46 +579,54 @@ export default function windowPCTest() {
     it('test_createSubWindowWithOptions_windowRect_801', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         const message = 'test_createSubWindowWithOptions_windowRect_801'
+        console.info(`${message} begin`);
+        let mainWindow = windowStage.getMainWindowSync();
+        let windowLimits: window.WindowLimits = mainWindow.getWindowLimits();
+        let minWidth = windowLimits.minWidth ?? 500;
+        let minHeight = windowLimits.minHeight ?? 500;
+        console.info(`${message} windowLimits is: ${JSON.stringify(windowLimits)}`);
+        console.info(`${message} minWidth is: ${minWidth}, minHeight is: ${minHeight}`);
         let options: window.SubWindowOptions = {
           title: 'subwindow0',
           decorEnabled: false,
           windowRect: {
             left: 100,
             top: 100,
-            width: 300,
-            height: 300
+            width: minWidth,
+            height: minHeight
           }
         };
         let promise = windowStage.createSubWindowWithOptions('subwindow0', options);
         await promise.then(async (data) => {
-          console.info('succeed in create the subwindow');
+          console.info(`${message} succeed in create the subwindow`);
           let subWindowClass = data;
           await subWindowClass.setUIContent('testability/pages/WindowTest/StartMoving');
           await subWindowClass.showWindow();
           await sleep(1000);
           let windowRealRect = subWindowClass.getWindowProperties().windowRect
-          console.info(`options.windowRect:${JSON.stringify(options.windowRect)},windowRealRect:${JSON.stringify(windowRealRect)}`)
+          console.info(`${message} options.windowRect: ${JSON.stringify(options.windowRect)}, windowRealRect: ${JSON.stringify(windowRealRect)}`);
           expect(options.windowRect?.left).assertEqual(windowRealRect.left);
           expect(options.windowRect?.top).assertEqual(windowRealRect.top);
           expect(options.windowRect?.width).assertEqual(windowRealRect.width);
           expect(options.windowRect?.height).assertEqual(windowRealRect.height);
+          await subWindowClass.destroyWindow();
           done();
         }).catch((err: BusinessError) => {
-          console.error(`${message} Failed to create the subwindow, promise cause code: ${err.code}, message: ${err.message} `)
+          console.error(`${message} Failed to create the subwindow, promise cause code: ${err.code}, message: ${err.message}`);
           if (err.code == 801 || err.code == 1300002) {
             expect(true).assertTrue();
-            console.error(`The device not support createSubWindowWithOptions`);
+            console.error(`${message} The device not support createSubWindowWithOptions`);
           } else {
             expect().assertFail();
           }
           done();
         });
       } catch (err) {
-        console.error(`Failed to create the subwindow, Cause code ${err.code}, message ${err.message} `);
-        expect().assertFail()
+        const message = 'test_createSubWindowWithOptions_windowRect_801';
+        console.error(`${message} Failed to create the subwindow, Cause code ${err.code}, message ${err.message}`);
+        expect().assertFail();
         done();
       }
-      ;
     });
 
     /**
