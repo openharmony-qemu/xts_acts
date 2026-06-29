@@ -97,58 +97,7 @@ struct EditableTitleBarV2Page {
             })
           })
 
-          Text('EditableTitleBarV2 Complete Example')
-            .fontSize(20)
-            .fontWeight(FontWeight.Bold)
-            .margin({ top: 20 })
-
-          EditableTitleBarV2({
-            title: new EditableTitleV2({
-              mainTitle: 'Complete',
-              subTitle: 'All Features'
-            }),
-            leftIcon: new EditableLeftIconV2({
-              iconType: EditableLeftIconTypeV2.Cancel,
-              onAction: () => {
-                console.info('Cancel clicked');
-              }
-            }),
-            menuItems: [
-              new EditableTitleBarMenuItemV2({
-                value: $r('sys.symbol.share'),
-                action: () => {
-                  console.info('Share clicked');
-                }
-              })
-            ],
-            saveButton: new EditableSaveButtonV2({
-              isRequired: true,
-              defaultFocus: true,
-              onAction: () => {
-                console.info('Save clicked');
-              }
-            }),
-            options: new EditableTitleBarStyleV2({
-              backgroundColor: Color.White
-            })
-          })
-
-          Text('EditableTitleBarV2 With Custom Style')
-            .fontSize(20)
-            .fontWeight(FontWeight.Bold)
-            .margin({ top: 20 })
-
-          EditableTitleBarV2({
-            title: 'Custom Style',
-            options: new EditableTitleBarStyleV2({
-              backgroundColor: $r('sys.color.background_primary'),
-              backgroundBlurStyle: BlurStyle.COMPONENT_THICK,
-              safeAreaTypes: [SafeAreaType.CUTOUT],
-              safeAreaEdges: [SafeAreaEdge.END],
-              contentMargin: { start: LengthMetrics.vp(100), end: LengthMetrics.vp(10)}
-            })
-          })
-
+          
         }
         .alignItems(HorizontalAlign.Center)
         .width('100%')
