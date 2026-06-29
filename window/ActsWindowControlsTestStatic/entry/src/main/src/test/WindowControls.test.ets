@@ -31,7 +31,7 @@ import { ImageFit } from '@ohos.arkui.component'
 import { canIUse } from "@internal.full.global";
 import { ColorMetrics } from "@ohos.arkui.node";
 import StartOptions from '@ohos.app.ability.StartOptions';
->>>>>>> master
+
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
@@ -452,7 +452,11 @@ export default function WindowControlsTest(): void {
             }
         })
 
-/**
+
+
+
+
+        /**
      * @tc.name   testSetStartWindowBackgroundColorStatic_1300016
      * @tc.number SUB_BASIC_WMS_SETSTARTWINDOWBACKGROUNDCOLOR_1300016
      * @tc.desc   testSetStartWindowBackgroundColorStatic_1300016
