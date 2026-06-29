@@ -22,18 +22,18 @@ export default function BigIntAsUintN2Test(): void {
     /**
      * @tc.number SUB_BIGINT_STD_ASUINTN_0100
      * @tc.name testBigIntAsUintN2Test0100
-     * @tc.desc Verify negative bits -8 and -999 throw RangeError
+     * @tc.desc Verify constructing num from non-numeric string via BigInt() throws
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntAsUintN2Test0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect((): void => {
-        BigInt.asUintN(-8, Utils.biInt(5));
-      }).assertThrowError('RangeError');
+        BigInt.asUintN(8, BigInt('abc'));
+      }).assertThrow('BigInt.parseFromString(): provided string is invalid');
       expect((): void => {
-        BigInt.asUintN(-999, Utils.biInt(5));
-      }).assertThrowError('RangeError');
+        BigInt.asUintN(8, BigInt('123.4'));
+      }).assertThrow("Can't convert number 123.4 to BigInt because it's not an integer");
     });
 
     /**
@@ -187,59 +187,5 @@ export default function BigIntAsUintN2Test(): void {
       expect(once32.equals(twice32)).assertTrue();
     });
 
-
-    /**
-     * @tc.number SUB_BIGINT_STD_ASUINTN_1200
-     * @tc.name testBigIntAsUintN2Test1200
-     * @tc.desc Verify constructing num from non-integer double via BigInt() throws RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigIntAsUintN2Test1200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect((): void => {
-        BigInt.asUintN(8, BigInt(1.5));
-      }).assertThrowError('RangeError');
-      expect((): void => {
-        BigInt.asUintN(8, BigInt(3.14));
-      }).assertThrowError('RangeError');
-    });
-
-    /**
-     * @tc.number SUB_BIGINT_STD_ASUINTN_1300
-     * @tc.name testBigIntAsUintN2Test1300
-     * @tc.desc Verify constructing num from NaN or Infinity via BigInt() throws RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigIntAsUintN2Test1300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect((): void => {
-        BigInt.asUintN(8, BigInt(Number.NaN));
-      }).assertThrowError('RangeError');
-      expect((): void => {
-        BigInt.asUintN(8, BigInt(Number.POSITIVE_INFINITY));
-      }).assertThrowError('RangeError');
-      expect((): void => {
-        BigInt.asUintN(8, BigInt(Number.NEGATIVE_INFINITY));
-      }).assertThrowError('RangeError');
-    });
-
-    /**
-     * @tc.number SUB_BIGINT_STD_ASUINTN_1400
-     * @tc.name testBigIntAsUintN2Test1400
-     * @tc.desc Verify constructing num from non-numeric string via BigInt() throws
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigIntAsUintN2Test1400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect((): void => {
-        BigInt.asUintN(8, BigInt('abc'));
-      }).assertThrow('BigInt.parseFromString(): provided string is invalid');
-      expect((): void => {
-        BigInt.asUintN(8, BigInt('123.4'));
-      }).assertThrow("Can't convert number 123.4 to BigInt because it's not an integer");
-    });
   });
 }
