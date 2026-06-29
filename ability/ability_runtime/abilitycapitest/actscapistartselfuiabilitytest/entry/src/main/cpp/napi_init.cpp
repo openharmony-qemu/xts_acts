@@ -561,10 +561,10 @@ static napi_value NdkDestroyConnectOptions_0100(napi_env env, napi_callback_info
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_DestroyConnectOptions_0100 begins");
     AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_DestroyConnectOptions(nullptr);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_DestroyConnectOptions_0100 errCode=%{public}d", errCode);
-    if (ret == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
       OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnConnect_0200 errCode=%{public}d", errCode);
     }
-    if (ret == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
       OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnConnect_0200 errCode=%{public}d", errCode);
     }
     napi_value result;
@@ -590,10 +590,10 @@ static napi_value NdkConnectOptionsSetOnConnect_0200(napi_env env, napi_callback
     AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ConnectOptions_SetOnConnectCallback(connectOptions, nullptr);
     OH_AbilityRuntime_DestroyConnectOptions(connectOptions);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnConnect_0200 errCode=%{public}d", errCode);
-    if (ret == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
       OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnConnect_0200 errCode=%{public}d", errCode);
     }
-    if (ret == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
       OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnConnect_0200 errCode=%{public}d", errCode);
     }
     napi_value result;
@@ -607,10 +607,10 @@ static napi_value NdkConnectOptionsSetOnDisconnect_0100(napi_env env, napi_callb
     OH_AbilityRuntime_ConnectOptions_OnDisconnectCallback onDisconnectCallback = nullptr;
     AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ConnectOptions_SetOnDisconnectCallback(nullptr, onDisconnectCallback);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnDisconnect_0100 errCode=%{public}d", errCode);
-    if (ret == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
       OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnConnect_0200 errCode=%{public}d", errCode);
     }
-    if (ret == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
       OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnConnect_0200 errCode=%{public}d", errCode);
     }
     napi_value result;
@@ -625,10 +625,10 @@ static napi_value NdkConnectOptionsSetOnDisconnect_0200(napi_env env, napi_callb
     AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ConnectOptions_SetOnDisconnectCallback(connectOptions, nullptr);
     OH_AbilityRuntime_DestroyConnectOptions(connectOptions);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnDisconnect_0200 errCode=%{public}d", errCode);
-    if (ret == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
       OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnConnect_0200 errCode=%{public}d", errCode);
     }
-    if (ret == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
       OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnConnect_0200 errCode=%{public}d", errCode);
     }
     napi_value result;
@@ -642,10 +642,10 @@ static napi_value NdkConnectOptionsSetOnFailed_0100(napi_env env, napi_callback_
     OH_AbilityRuntime_ConnectOptions_OnFailedCallback onFailedCallback = nullptr;
     AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ConnectOptions_SetOnFailedCallback(nullptr, onFailedCallback);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnFailed_0100 errCode=%{public}d", errCode);
-    if (ret == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
       OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnConnect_0200 errCode=%{public}d", errCode);
     }
-    if (ret == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
       OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnConnect_0200 errCode=%{public}d", errCode);
     }
     napi_value result;
@@ -660,10 +660,10 @@ static napi_value NdkConnectOptionsSetOnFailed_0200(napi_env env, napi_callback_
     AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ConnectOptions_SetOnFailedCallback(connectOptions, nullptr);
     OH_AbilityRuntime_DestroyConnectOptions(connectOptions);
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnFailed_0200 errCode=%{public}d", errCode);
-    if (ret == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
       OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnConnect_0200 errCode=%{public}d", errCode);
     }
-    if (ret == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
       OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_ConnectOptionsSetOnConnect_0200 errCode=%{public}d", errCode);
     }
     napi_value result;
