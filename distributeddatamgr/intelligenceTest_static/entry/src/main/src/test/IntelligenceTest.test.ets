@@ -1651,7 +1651,7 @@ export default function intelligenceTest(): void {
             done();
           })
       } else {
-        intelligence.getImageEmbeddingModel(imageConfig)
+        intelligence.getImageEmbeddingModel(imageConfigWithPolicy)
           .then((data) => {
             console.info(TAG + "get result:" + data);
             expect().assertFail();
@@ -1699,7 +1699,7 @@ export default function intelligenceTest(): void {
             done();
           })
       } else {
-        intelligence.getImageEmbeddingModel(imageConfig)
+        intelligence.getImageEmbeddingModel(imageConfigWithPolicy)
           .then((data) => {
             console.info(TAG + "get result:" + data);
             expect().assertFail();
@@ -1712,6 +1712,6 @@ export default function intelligenceTest(): void {
           })
       }
     })
-    
+
     })
 }
