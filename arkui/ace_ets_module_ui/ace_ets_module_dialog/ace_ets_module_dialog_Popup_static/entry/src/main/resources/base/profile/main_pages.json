@@ -28,6 +28,7 @@
     "MainAbility/pages/popup/CustomPopupOptionsColorMode",
     "MainAbility/pages/popup/PopupOptionsLevelMode",
     "MainAbility/pages/popup/PopupCommonOptionsLevelMode",
-    "MainAbility/pages/popup/CustomPopupOptionsLevelMode"
+    "MainAbility/pages/popup/CustomPopupOptionsLevelMode",
+    "MainAbility/pages/dialogSystemMaterial/BaseDialogOptionsDisplayModeInSubWindow"
   ]
 }
