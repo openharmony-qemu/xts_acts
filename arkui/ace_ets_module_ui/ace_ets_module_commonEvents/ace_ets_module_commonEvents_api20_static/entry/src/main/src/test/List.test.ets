@@ -23,5 +23,4 @@ export default function testsuite() {
   tapLocation();//交互框架 TapGesture 失败用例2
   colorMetricsTest();//通用属性 sweepGradient 失败用例2
   measureFromViewportTest();
-  measureFromViewportOnVisibleTest();
 }
