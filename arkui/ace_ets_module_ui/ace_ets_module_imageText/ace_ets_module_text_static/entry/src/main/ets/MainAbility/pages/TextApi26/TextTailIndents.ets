@@ -14,16 +14,9 @@
  * limitations under the License.
  */
 import {
-  LengthMetrics,
-  AttributeModifier,
-  TextAttribute,
-  Entry,
-  Component,
-  State,
-  Scroll,
-  Column,
-  Text,
-  Observed,
+  LengthMetrics,AttributeModifier,
+  TextAttribute,Entry,Component,
+  State,Scroll,Column,Text,Observed,
 } from '@kit.ArkUI';
 
 @Observed

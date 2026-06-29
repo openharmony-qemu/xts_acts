@@ -15,14 +15,8 @@
  */
 
 import {
-  AttributeModifier,
-  TextAttribute,
-  Entry,
-  Component,
-  Row,
-  Column,
-  Text,
-  IncrementalUpdatePolicy
+  AttributeModifier,TextAttribute,Entry,
+  Component,Row,Column,Text,IncrementalUpdatePolicy
 } from '@kit.ArkUI';
 
 class TextIncrementalUpdatePolicyModifier implements AttributeModifier<TextAttribute> {

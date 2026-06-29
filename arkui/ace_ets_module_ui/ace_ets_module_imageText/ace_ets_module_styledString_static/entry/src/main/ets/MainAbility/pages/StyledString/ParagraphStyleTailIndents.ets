@@ -15,19 +15,9 @@
  */
 
 import {
-  LengthMetrics,
-  Entry,
-  Component,
-  ParagraphStyle,
-  StyledString,
-  StyledStringKey,
-  TextController,
-  Row,
-  Column,
-  Text,
-  CopyOptions,
-  AppStorage,
-  ColumnOptions,
+  LengthMetrics,Entry,Component,ParagraphStyle,
+  StyledString,StyledStringKey,TextController,Row,
+  Column,Text,CopyOptions,AppStorage,ColumnOptions,
 } from '@kit.ArkUI';
 
 @Entry

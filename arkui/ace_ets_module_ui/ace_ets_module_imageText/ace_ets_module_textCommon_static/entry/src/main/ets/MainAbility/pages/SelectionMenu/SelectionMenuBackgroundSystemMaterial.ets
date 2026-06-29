@@ -13,19 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { SelectionMenu, EditorMenuOptions, ExpandedMenuOptions, EditorEventInfo, SelectionMenuOptions } from '@ohos.arkui.advanced.SelectionMenu';
+import { 
+    SelectionMenu, EditorMenuOptions, ExpandedMenuOptions, 
+    EditorEventInfo, SelectionMenuOptions 
+} from '@ohos.arkui.advanced.SelectionMenu';
 import {
-  Entry,
-  Component,
-  RichEditorController,
-  Color,
-  Builder,
-  Column,
-  Scroll,
-  RichEditor,
-  RichEditorSpanType,
-  RichEditorResponseType,
-  ColumnOptions,
+  Entry,Component,RichEditorController,Color,Builder,Column,
+  Scroll,RichEditor,RichEditorSpanType,RichEditorResponseType,ColumnOptions,
 } from '@kit.ArkUI';
 import { uiMaterial } from '@kit.ArkUI';
 

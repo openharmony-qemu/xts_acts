@@ -25,11 +25,7 @@ import { UtilsTest } from '../Util.test';
 import { LengthMetrics } from '@kit.ArkUI';
 import { Driver, ON } from '@kit.TestKit';
 import {
-  ParagraphStyle,
-  StyledString,
-  StyledStringKey,
-  CopyOptions,
-  SpanStyle
+  ParagraphStyle,StyledString,StyledStringKey,CopyOptions,SpanStyle
 } from '@ohos.arkui.component';
 
 export default function ParagraphStyleTailIndentsTest() {

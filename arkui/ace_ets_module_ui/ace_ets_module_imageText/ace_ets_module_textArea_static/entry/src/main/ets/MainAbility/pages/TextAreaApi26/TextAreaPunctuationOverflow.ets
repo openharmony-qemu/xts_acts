@@ -15,13 +15,8 @@
  */
 
 import {
-  AttributeModifier,
-  TextAreaAttribute,
-  Entry,
-  Component,
-  Row,
-  Column,
-  TextArea,
+  AttributeModifier,TextAreaAttribute,
+  Entry,Component,Row,Column,TextArea,
 } from '@kit.ArkUI';
 
 class TextAreaPunctuationOverflowModifier implements AttributeModifier<TextAreaAttribute> {
