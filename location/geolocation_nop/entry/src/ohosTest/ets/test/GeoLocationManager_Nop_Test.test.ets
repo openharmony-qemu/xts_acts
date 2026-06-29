@@ -732,7 +732,6 @@ export default function geoLocationManager_nop_test() {
             expect(result).assertFalse();
           }
           done();
-        }
         }).catch((error: BusinessError) => {
           console.info('---geolocation_isLocationEnabled_nop_test_013 catch end---' + error.code);
           expect(error.code).assertEqual(106);
