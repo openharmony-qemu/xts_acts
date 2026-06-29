@@ -34,7 +34,7 @@ import events_emitter from '@ohos.events.emitter'
 import { BusinessError } from '@ohos.base';
 import Utils from '../../../ets/MainAbility/common/Utils';
 
-export default function maskTest() {
+export default function maskTest(): void {
   describe('maskTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("maskTest beforeAll start");

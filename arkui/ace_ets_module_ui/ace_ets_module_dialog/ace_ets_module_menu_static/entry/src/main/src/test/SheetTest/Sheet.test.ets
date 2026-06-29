@@ -42,7 +42,7 @@ function logLongString(tag: string, longStr: string): void {
   }
 }
 
-export default function SheetTest() {
+export default function SheetTest(): void {
   describe('SheetTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("SheetTest beforeAll start");
