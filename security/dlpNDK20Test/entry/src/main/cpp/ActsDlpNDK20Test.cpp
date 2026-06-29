@@ -123,7 +123,7 @@ static napi_value OsGetOriginalFileName0200(napi_env env, napi_callback_info inf
         fileName[i] = 'a';
     }
     fileName[fileNameLen] = '\0';
-    strcat(fileName, ".dlp");
+    snprintf(fileName + fileNameLen, DLP_SUFFIX_LEN + 1, ".dlp");
     char *originalFileName = nullptr;
     DLP_ErrCode ret = OH_DLP_GetOriginalFileName(fileName, &originalFileName);
     if (ret == DLP_ErrCode::ERR_OH_SUCCESS) {
@@ -145,7 +145,7 @@ static napi_value OsGetOriginalFileName0300(napi_env env, napi_callback_info inf
         fileName[i] = 'a';
     }
     fileName[fileNameLen] = '\0';
-    strcat(fileName, ".dlp");
+    snprintf(fileName + fileNameLen, DLP_SUFFIX_LEN + 1, ".dlp");
     char *originalFileName = nullptr;
     DLP_ErrCode ret = OH_DLP_GetOriginalFileName(fileName, &originalFileName);
     napi_value result = nullptr;
