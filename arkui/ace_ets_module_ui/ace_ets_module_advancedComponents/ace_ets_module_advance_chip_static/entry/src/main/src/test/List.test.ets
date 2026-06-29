@@ -68,6 +68,18 @@ import ChipGroupAbnormalSystemMaterialTest from './ChipGroupTest/ChipGroupAbnorm
 import ChipOptionsBackgroundSystemMaterialTest from './ChipTest/ChipOptionsBackgroundSystemMaterialTest.test';
 import ChipAbnormalBackgroundSystemMaterialTest from './ChipTest/ChipAbnormalBackgroundSystemMaterialTest.test';
 import ChipV2SizeTest from './ChipV2Test/ChipV2SizeTest.test';
+import ChipV2AbnormalOptionsTest from './ChipV2Test/ChipV2AbnormalOptions.test';
+import ChipV2AbnormalLabelTest from './ChipV2Test/ChipV2AbnormalLabelTest.test';
+import ChipV2AbnormalPrefixIconTest from './ChipV2Test/ChipV2AbnormalPrefixIconTest.test';
+import ChipV2AbnormalSuffixIconTest from './ChipV2Test/ChipV2AbnormalSuffixIconTest.test';
+import ChipV2AbnormalCloseIconTest from './ChipV2Test/ChipV2AbnormalCloseIconTest.test';
+import ChipV2AbnormalComboTest from './ChipV2Test/ChipV2AbnormalComboTest.test';
+import ChipGroupV2AbnormalRootTest from './ChipGroupV2Test/ChipGroupV2AbnormalRoot.test';
+import ChipGroupV2AbnormalItemTest from './ChipGroupV2Test/ChipGroupV2AbnormalItemTest.test';
+import ChipGroupV2AbnormalItemStyleTest from './ChipGroupV2Test/ChipGroupV2AbnormalItemStyleTest.test';
+import ChipGroupV2AbnormalSpacePaddingTest from './ChipGroupV2Test/ChipGroupV2AbnormalSpacePaddingTest.test';
+import ChipGroupV2AbnormalSuffixTest from './ChipGroupV2Test/ChipGroupV2AbnormalSuffixTest.test';
+import ChipGroupV2AbnormalComboTest from './ChipGroupV2Test/ChipGroupV2AbnormalComboTest.test';
 
 export default function testsuite(): void {
   ChipGroupItemOptionsPage2Test();
@@ -124,4 +136,16 @@ export default function testsuite(): void {
   ChipGroupAbnormalSystemMaterialTest();
   ChipOptionsBackgroundSystemMaterialTest();
   ChipAbnormalBackgroundSystemMaterialTest();
+  ChipV2AbnormalOptionsTest();
+  ChipV2AbnormalLabelTest();
+  ChipV2AbnormalPrefixIconTest();
+  ChipV2AbnormalSuffixIconTest();
+  ChipV2AbnormalCloseIconTest();
+  ChipV2AbnormalComboTest();
+  ChipGroupV2AbnormalRootTest();
+  ChipGroupV2AbnormalItemTest();
+  ChipGroupV2AbnormalItemStyleTest();
+  ChipGroupV2AbnormalSpacePaddingTest();
+  ChipGroupV2AbnormalSuffixTest();
+  ChipGroupV2AbnormalComboTest();
 }
