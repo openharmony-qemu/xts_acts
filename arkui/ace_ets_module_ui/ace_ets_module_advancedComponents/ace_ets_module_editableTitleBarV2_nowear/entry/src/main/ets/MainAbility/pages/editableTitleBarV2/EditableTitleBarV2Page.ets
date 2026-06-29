@@ -117,9 +117,9 @@ struct EditableTitleBarV2Page {
                 action: () => {
                   console.info('Menu item 1 clicked');
                 },
-                accessibilityDescription: "accessibility description text",
-                accessibilityLevel: "auto",
-                accessibilityText: "accessibility text",
+                accessibilityDescription: 'accessibility description text',
+                accessibilityLevel: 'auto',
+                accessibilityText: 'accessibility text',
                 defaultFocus: false,
                 isEnabled: true,
                 label: 'label'
