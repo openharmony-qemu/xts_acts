@@ -108,7 +108,7 @@ export default function IteratorForEachTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIteratorForEach004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIteratorForEach003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let item1: Record<string, number> = { "a": 1 } as Record<string, number>;
       let item2: Record<string, number> = { "a": 2 } as Record<string, number>;
       let items: Record<string, number>[] = [item1, item2];
@@ -127,7 +127,7 @@ export default function IteratorForEachTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIteratorForEach005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIteratorForEach004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let collected: number[][] = [];
       iteratorForEach(new ArrayIteratorHelper<number[]>([[1, 2], [3, 4]]), (x: number[]): void => {
         collected.push(x);
@@ -143,7 +143,7 @@ export default function IteratorForEachTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIteratorForEach006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIteratorForEach005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let called: boolean = false;
       iteratorForEach(new ArrayIteratorHelper<number>([]), (x: number): void => {
         called = true;
@@ -159,7 +159,7 @@ export default function IteratorForEachTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIteratorForEach007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIteratorForEach006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let callCount: number = 0;
       iteratorForEach(new ArrayIteratorHelper<number>([42]), (x: number): void => {
         callCount++;
@@ -175,7 +175,7 @@ export default function IteratorForEachTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIteratorForEach008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIteratorForEach007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let collected: number[] = [];
       iteratorForEach(new ArrayIteratorHelper<number>([1, 2, 3, 4, 5]), (x: number): void => {
         collected.push(x);
@@ -191,7 +191,7 @@ export default function IteratorForEachTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIteratorForEach009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIteratorForEach008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let iter: Iterator<number> = new ArrayIteratorHelper<number>([10]);
       let value: number = 0;
       iteratorForEach(iter, (x: number): void => {
@@ -208,7 +208,7 @@ export default function IteratorForEachTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIteratorForEach010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIteratorForEach09', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let iter: Iterator<string> = new ArrayIteratorHelper<string>(["text"]);
       let value: string = "";
       iteratorForEach(iter, (x: string): void => {
@@ -225,7 +225,7 @@ export default function IteratorForEachTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIteratorForEach011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIteratorForEach010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let collected: number[] = [];
       iteratorForEach(new ArrayIteratorHelper<number>([1, 2]), (x: number): void => {
         myFn(x, collected);
@@ -241,7 +241,7 @@ export default function IteratorForEachTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIteratorForEach012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIteratorForEach011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let count: number = 0;
       iteratorForEach(new ArrayIteratorHelper<number>([1, 2, 3]), (x: number): void => {
         count++;
@@ -257,7 +257,7 @@ export default function IteratorForEachTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIteratorForEach013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIteratorForEach012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sum: number = 0;
       iteratorForEach(new ArrayIteratorHelper<number>([2, 3]), (x: number): void => {
         sum += x;
@@ -273,7 +273,7 @@ export default function IteratorForEachTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIteratorForEach014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIteratorForEach013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let text: string = "";
       iteratorForEach(new ArrayIteratorHelper<string>(["a", "b"]), (x: string): void => {
         text += x;
@@ -289,7 +289,7 @@ export default function IteratorForEachTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIteratorForEach015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIteratorForEach014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let items: IdRecord[] = [{ id: 1 } as IdRecord, { id: 2 } as IdRecord];
       let ids: number[] = [];
       iteratorForEach(new ArrayIteratorHelper<IdRecord>(items), (x: IdRecord): void => {
@@ -299,24 +299,6 @@ export default function IteratorForEachTest(): void {
       expect(ids[1]).assertEqual(2);
     });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_1600
-     * @tc.name testIteratorForEach016
-     * @tc.desc Verify callback throwing Error propagates correctly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testIteratorForEach016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let caught: boolean = false;
-      try {
-        iteratorForEach(new ArrayIteratorHelper<number>([1, 2, 3]), (x: number): void => {
-          throw new Error("callback error");
-        });
-      } catch (e) {
-        caught = e.name === 'Error' && e.message === 'callback error'
-      }
-    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_1800
@@ -326,7 +308,7 @@ export default function IteratorForEachTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIteratorForEach018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIteratorForEach015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let visited: number[] = [];
       iteratorForEach(new ArrayIteratorHelper<number>([10, 20, 30]), (x: number): void => {
         visited.push(x);
@@ -345,7 +327,7 @@ export default function IteratorForEachTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIteratorForEach019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIteratorForEach016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let order: string[] = [];
       iteratorForEach(new ArrayIteratorHelper<string>(["first", "second", "third"]), (x: string): void => {
         order.push(x);
@@ -363,7 +345,7 @@ export default function IteratorForEachTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIteratorForEach020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIteratorForEach017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let expected: number[] = [1, 2, 3];
       let actual: number[] = [];
       iteratorForEach(new ArrayIteratorHelper<number>(expected), (x: number): void => {
@@ -382,7 +364,7 @@ export default function IteratorForEachTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIteratorForEach022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIteratorForEach018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const stringIter: Iterator<string> = new ArrayIteratorHelper<string>(["hello", "world"]);
       let collected: string[] = [];
       iteratorForEach(stringIter, (x: string): void => {
@@ -400,7 +382,7 @@ export default function IteratorForEachTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIteratorForEach023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIteratorForEach019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let largeArr: number[] = [];
       for (let i: number = 0; i < 10000; i++) {
         largeArr.push(i);
@@ -420,7 +402,7 @@ export default function IteratorForEachTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIteratorForEach025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIteratorForEach020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let badIter: Iterator<number> = new BadIterator1();
       try {
         iteratorForEach(badIter, (x: number): void => {});
@@ -430,26 +412,6 @@ export default function IteratorForEachTest(): void {
       }
     });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_2600
-     * @tc.name testIteratorForEach026
-     * @tc.desc Verify callback throwing Error stops iteration and propagates
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testIteratorForEach026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let visited: number = 0;
-      let caught: boolean = false;
-      try {
-        iteratorForEach(new ArrayIteratorHelper<number>([1, 2, 3, 4, 5]), (x: number): void => {
-          visited++;
-          if (x === 3) throw new Error("stop");
-        });
-      } catch (e) {
-        caught = e.name === "Error" && e.message ==="stop"
-      }
-    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ITERATOR_FOR_EACH_2700
@@ -459,7 +421,7 @@ export default function IteratorForEachTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIteratorForEach027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIteratorForEach021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let caught: boolean = false;
       try {
         iteratorForEach(new ArrayIteratorHelper<number>([1, 2]), (x: number): void => {
@@ -479,7 +441,7 @@ export default function IteratorForEachTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIteratorForEach028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIteratorForEach022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const mixedIter: Iterator<string | number> = new ArrayIteratorHelper<string | number>(["a", 1, "b", 2]);
       let collected: (string | number)[] = [];
       iteratorForEach(mixedIter, (x: string | number): void => {
@@ -498,7 +460,7 @@ export default function IteratorForEachTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIteratorForEach029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIteratorForEach023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let callCount: number = 0;
       let captured: number = 0;
       iteratorForEach(

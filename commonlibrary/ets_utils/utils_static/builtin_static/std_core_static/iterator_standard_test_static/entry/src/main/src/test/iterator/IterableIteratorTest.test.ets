@@ -683,10 +683,15 @@ export default function IterableIteratorTest(): void {
     it('testIterableIterator033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let dogIter: IterableIterator<Dog1> = new ArrayIterableIterator<Dog1>([new Dog1()]);
       let animalIter: IterableIterator<Animal1> = dogIter;
+      let count: number = 0;
+      let lastName: string = "";
       for (let item of animalIter) {
         let a: Animal1 = item;
-        expect(a.name).assertEqual("animal");
+        lastName = a.name;
+        count++;
       }
+      expect(count).assertEqual(1);
+      expect(lastName).assertEqual("animal");
     });
 
     /**
