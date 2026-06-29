@@ -894,5 +894,77 @@ export default function HidebugTest() {
       }
       console.info("HidebugTest_0038 end");
     });
+
+    /**
+     * @tc.name   HidebugTest_0039
+     * @tc.number HidebugTest_0039
+     * @tc.desc   验证hidebug.setAppResourceLimit(type, value, enableDebugLog);传入false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('HidebugTest_0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.info("====> HidebugTest_0039 start");
+      try {
+        let type: string = 'js_heap';
+        let value: number = 85;
+        let enableDebugLog: boolean = false;
+        hidebug.setAppResourceLimit(type, value, enableDebugLog);
+        done();
+      } catch (error) {
+        let code = (error as BusinessError).code;
+        let message = (error as BusinessError).message;
+        console.error('HidebugTest_0039', `error: ${code}, ${message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+    /**
+     * @tc.name   HidebugTest_0040
+     * @tc.number HidebugTest_0040
+     * @tc.desc   验证errorManager.off('freeze', undefined);
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('HidebugTest_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      try {
+        console.info("====> HidebugTest_0040 globalErrorOccurred start");
+        errorManager.off('freeze', undefined);
+        console.info(" ====> HidebugTest_0040 globalErrorOccurred end 01");
+        done();
+      } catch (err) {
+        console.error(`====>HidebugTest_0040 globalErrorOccurred catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number HidebugTest_0041
+     * @tc.name HidebugTest_0041
+     * @tc.desc hidebug.getRssInfo();增加返回类型判断
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level3
+     */
+    it('HidebugTest_0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
+      try {
+        const info =  hidebug.getRssInfo();
+        console.info(`HidebugTest_0041 success and info.rss is ${info.rss}`)
+        console.info(`HidebugTest_0041 success and info.rss type is ${typeof(info.rss)}`)
+        console.info(`HidebugTest_0041 success and info.rss is ${info.swapRss}`)
+        console.info(`HidebugTest_0041 success and info.rss type is ${typeof(info.swapRss)}`)
+        expect(typeof(info.rss)).assertEqual('bigint')
+        expect(typeof(info.swapRss)).assertEqual('bigint')
+        done();
+      } catch (err) {
+        console.error(`====>HidebugTest_0041 catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+
   })
 }
