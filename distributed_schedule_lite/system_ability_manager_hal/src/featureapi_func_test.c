@@ -16,98 +16,30 @@
 #include "cmsis_os.h"
 #include "hctest.h"
 #include "samgr_lite.h"
+#include "samgr_maintenance.h"
+
 
 #define PRESSURE_BASE (1024 * 10)
 
-typedef struct DemoApi {
-    INHERIT_IUNKNOWN;
-} DemoApi;
-
-typedef struct DemoFeature {
-    INHERIT_FEATURE;
-    INHERIT_IUNKNOWNENTRY(DemoApi);
-    Identity identity;
-} DemoFeature;
-
-static const char *GetName(Service *service)
-{
-    (void)service;
-    return "serviceName401";
-}
-
-typedef struct ExampleService {
-    INHERIT_SERVICE;
-    Identity identity;
-} ExampleService;
-
-static BOOL Initialize(Service *service, Identity identity)
-{
-    ExampleService *example = (ExampleService *)service;
-    example->identity = identity;
-    return TRUE;
-}
-
-static BOOL MessageHandle(Service *service, Request *msg)
-{
-    (void)service;
-    (void)msg;
-    return FALSE;
-}
-
-static TaskConfig GetTaskConfig(Service *service)
-{
-    (void)service;
-    TaskConfig config = {
-        LEVEL_HIGH, 
-        PRI_ABOVE_NORMAL,
-        0x800, 
-        20, 
-        SHARED_TASK
-        };
-    return config;
-}
-
-static ExampleService g_service = {
-    .GetName = GetName,
-    .Initialize = Initialize,
-    .MessageHandle = MessageHandle,
-    .GetTaskConfig = GetTaskConfig,
+static SamgrTestService g_service = {
+    .GetName = SamgrTestGetName,
+    .Initialize = SamgrTestInitialize,
+    .MessageHandle = SamgrTestMessageHandle,
+    .GetTaskConfig = SamgrTestGetTaskConfig,
+    .name = "serviceName401",
     .identity = {-1, -1, NULL},
 };
 
-static const char *FEATURE_GetName(Feature *feature)
-{
-    (void)feature;
-    return "featureName401";
-}
-static void FEATURE_OnInitialize(Feature *feature, Service *parent, Identity identity)
-{
-    (void)parent;
-    DemoFeature *demoFeature = (DemoFeature *)feature;
-    demoFeature->identity = identity;
-}
-static void FEATURE_OnStop(Feature *feature, Identity identity)
-{
-    (void)feature;
-    (void)identity;
-}
-
-static BOOL FEATURE_OnMessage(Feature *feature, Request *request)
-{
-    (void)feature;
-    (void)request;
-    return TRUE;
-}
-
-static DemoFeature g_feature = {
-    .GetName = FEATURE_GetName,
-    .OnInitialize = FEATURE_OnInitialize,
-    .OnStop = FEATURE_OnStop,
-    .OnMessage = FEATURE_OnMessage,
+static SamgrTestFeature g_feature = {
+    .GetName = SamgrTestFeatureGetName,
+    .OnInitialize = SamgrTestFeatureOnInitialize,
+    .OnStop = SamgrTestFeatureOnStop,
+    .OnMessage = SamgrTestFeatureOnMessage,
     .ref = 1,
     .iUnknown = {
         DEFAULT_IUNKNOWN_IMPL,
     },
+    .name = "featureName401",
     .identity = {-1, -1, NULL},
 };
 
@@ -124,14 +56,14 @@ static BOOL FeatureApiTestSuiteTearDown(void)
 }
 
 /**
- * @tc.name   testRegisterFeatureApi0010
- * @tc.number DMSLite_SAMGR_RegisterFeatureApi_0010
- * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.name   testRegisterFeatureApiLifecycle0010
+ * @tc.number DMSLite_SAMGR_RegisterFeatureApi_Lifecycle_0010
+ * @tc.desc   Register feature api and duplicate registration lifecycle.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-LITE_TEST_CASE(FeatureApiTestSuite, testRegisterFeatureApi0010, Function | MediumTest | Level2)
+LITE_TEST_CASE(FeatureApiTestSuite, testRegisterFeatureApiLifecycle0010, Function | MediumTest | Level2)
 {
     SAMGR_GetInstance()->RegisterService((Service *)&g_service);
     SAMGR_GetInstance()->RegisterFeature("serviceName401", (Feature *)&g_feature);
@@ -140,69 +72,46 @@ LITE_TEST_CASE(FeatureApiTestSuite, testRegisterFeatureApi0010, Function | Mediu
                                                           GET_IUNKNOWN(g_feature));
     TEST_ASSERT_EQUAL_INT(result, TRUE);
 
-    SAMGR_GetInstance()->UnregisterFeatureApi("serviceName401", "featureName401");
+    result = SAMGR_GetInstance()->RegisterFeatureApi("serviceName401", "featureName401",
+                                                     GET_IUNKNOWN(g_feature));
+    TEST_ASSERT_EQUAL_INT(result, FALSE);
+
+    IUnknown *resultIUnknown = SAMGR_GetInstance()->UnregisterFeatureApi("serviceName401", "featureName401");
+    TEST_ASSERT_EQUAL_INT(resultIUnknown != NULL, TRUE);
+
     SAMGR_GetInstance()->UnregisterFeature("serviceName401", "featureName401");
     SAMGR_GetInstance()->UnregisterService("serviceName401");
 }
 
 /**
- * @tc.name   testRegisterFeatureApi0020
+ * @tc.name   testRegisterFeatureApiInvalidParams0020
  * @tc.number DMSLite_SAMGR_RegisterFeatureApi_0020
- * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.desc   Merged invalid-param cases (was 0020/0030/0040/0060/0070)
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-LITE_TEST_CASE(FeatureApiTestSuite, testRegisterFeatureApi0020, Function | MediumTest | Level2)
+LITE_TEST_CASE(FeatureApiTestSuite, testRegisterFeatureApiInvalidParams0020, Function | MediumTest | Level2)
 {
     SAMGR_GetInstance()->RegisterService((Service *)&g_service);
     SAMGR_GetInstance()->RegisterFeature("serviceName401", (Feature *)&g_feature);
 
-    BOOL result = SAMGR_GetInstance()->RegisterFeatureApi(NULL, "featureName401", GET_IUNKNOWN(g_feature));
-    TEST_ASSERT_EQUAL_INT(result, FALSE);
-
-    result = SAMGR_GetInstance()->RegisterFeatureApi("", "featureName401", GET_IUNKNOWN(g_feature));
-    TEST_ASSERT_EQUAL_INT(result, FALSE);
-
-    SAMGR_GetInstance()->UnregisterFeature("serviceName401", "featureName401");
-    SAMGR_GetInstance()->UnregisterService("serviceName401");
-}
-
-/**
- * @tc.name   testRegisterFeatureApi0030
- * @tc.number DMSLite_SAMGR_RegisterFeatureApi_0030
- * @tc.desc   [C- SOFTWARE -0200]
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
-LITE_TEST_CASE(FeatureApiTestSuite, testRegisterFeatureApi0030, Function | MediumTest | Level2)
-{
-    SAMGR_GetInstance()->RegisterService((Service *)&g_service);
-    SAMGR_GetInstance()->RegisterFeature("serviceName401", (Feature *)&g_feature);
-
-    BOOL result = SAMGR_GetInstance()->RegisterFeatureApi("serviceName401", "", GET_IUNKNOWN(g_feature));
-    TEST_ASSERT_EQUAL_INT(result, FALSE);
-
-    SAMGR_GetInstance()->UnregisterFeature("serviceName401", "featureName401");
-    SAMGR_GetInstance()->UnregisterService("serviceName401");
-}
-
-/**
- * @tc.name   testRegisterFeatureApi0040
- * @tc.number DMSLite_SAMGR_RegisterFeatureApi_0040
- * @tc.desc   [C- SOFTWARE -0200]
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
-LITE_TEST_CASE(FeatureApiTestSuite, testRegisterFeatureApi0040, Function | MediumTest | Level2)
-{
-    SAMGR_GetInstance()->RegisterService((Service *)&g_service);
-    SAMGR_GetInstance()->RegisterFeature("serviceName401", (Feature *)&g_feature);
-
-    BOOL result = SAMGR_GetInstance()->RegisterFeatureApi("serviceName401", "featureName401", NULL);
-    TEST_ASSERT_EQUAL_INT(result, FALSE);
+    struct {
+        const char *svc;
+        const char *feat;
+        IUnknown *api;
+    } cases[] = {
+        {NULL, "featureName401", GET_IUNKNOWN(g_feature)},
+        {"", "featureName401", GET_IUNKNOWN(g_feature)},
+        {"serviceName401", "", GET_IUNKNOWN(g_feature)},
+        {"serviceName401", "featureName401", NULL},
+        {"noExistService", "featureName401", GET_IUNKNOWN(g_feature)},
+        {"serviceName401", "noExistFeature", GET_IUNKNOWN(g_feature)},
+    };
+    for (size_t i = 0; i < sizeof(cases) / sizeof(cases[0]); i++) {
+        BOOL result = SAMGR_GetInstance()->RegisterFeatureApi(cases[i].svc, cases[i].feat, cases[i].api);
+        TEST_ASSERT_EQUAL_INT(result, FALSE);
+    }
 
     SAMGR_GetInstance()->UnregisterFeature("serviceName401", "featureName401");
     SAMGR_GetInstance()->UnregisterService("serviceName401");
@@ -211,7 +120,7 @@ LITE_TEST_CASE(FeatureApiTestSuite, testRegisterFeatureApi0040, Function | Mediu
 /**
  * @tc.name   testRegisterFeatureApi0050
  * @tc.number DMSLite_SAMGR_RegisterFeatureApi_0050
- * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.desc   feature is null, handle as default feature api
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
@@ -221,7 +130,6 @@ LITE_TEST_CASE(FeatureApiTestSuite, testRegisterFeatureApi0050, Function | Mediu
     SAMGR_GetInstance()->RegisterService((Service *)&g_service);
     SAMGR_GetInstance()->RegisterFeature("serviceName401", (Feature *)&g_feature);
 
-    // feature is null, handle as default feature api
     BOOL result = SAMGR_GetInstance()->RegisterFeatureApi("serviceName401", NULL, GET_IUNKNOWN(g_feature));
     TEST_ASSERT_EQUAL_INT(result, TRUE);
 
@@ -233,195 +141,21 @@ LITE_TEST_CASE(FeatureApiTestSuite, testRegisterFeatureApi0050, Function | Mediu
 }
 
 /**
- * @tc.name   testRegisterFeatureApi0060
- * @tc.number DMSLite_SAMGR_RegisterFeatureApi_0060
- * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.name   testGetFeatureApiLifecycle0010
+ * @tc.number DMSLite_SAMGR_GetFeatureApi_Lifecycle
+ * @tc.desc   Get feature api and verify repeated get returns the same instance.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-LITE_TEST_CASE(FeatureApiTestSuite, testRegisterFeatureApi0060, Function | MediumTest | Level2)
-{
-    SAMGR_GetInstance()->RegisterService((Service *)&g_service);
-    SAMGR_GetInstance()->RegisterFeature("serviceName401", (Feature *)&g_feature);
-
-    BOOL result = SAMGR_GetInstance()->RegisterFeatureApi("noExistService", "featureName401", GET_IUNKNOWN(g_feature));
-    TEST_ASSERT_EQUAL_INT(result, FALSE);
-
-    SAMGR_GetInstance()->UnregisterFeature("serviceName401", "featureName401");
-    SAMGR_GetInstance()->UnregisterService("serviceName401");
-}
-
-/**
- * @tc.name   testRegisterFeatureApi0070
- * @tc.number DMSLite_SAMGR_RegisterFeatureApi_0070
- * @tc.desc   [C- SOFTWARE -0200]
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
-LITE_TEST_CASE(FeatureApiTestSuite, testRegisterFeatureApi0070, Function | MediumTest | Level2)
-{
-    SAMGR_GetInstance()->RegisterService((Service *)&g_service);
-    SAMGR_GetInstance()->RegisterFeature("serviceName401", (Feature *)&g_feature);
-
-    BOOL result = SAMGR_GetInstance()->RegisterFeatureApi("serviceName401", "noExistFeature", GET_IUNKNOWN(g_feature));
-    TEST_ASSERT_EQUAL_INT(result, FALSE);
-
-    SAMGR_GetInstance()->UnregisterFeature("serviceName401", "featureName401");
-    SAMGR_GetInstance()->UnregisterService("serviceName401");
-}
-
-/**
- * @tc.name   testRegisterFeatureApi0080
- * @tc.number DMSLite_SAMGR_RegisterFeatureApi_0080
- * @tc.desc   [C- SOFTWARE -0200]
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
-LITE_TEST_CASE(FeatureApiTestSuite, testRegisterFeatureApi0080, Function | MediumTest | Level2)
-{
-    SAMGR_GetInstance()->RegisterService((Service *)&g_service);
-    SAMGR_GetInstance()->RegisterFeature("serviceName401", (Feature *)&g_feature);
-    SAMGR_GetInstance()->RegisterFeatureApi("serviceName401", "featureName401", GET_IUNKNOWN(g_feature));
-
-    BOOL result = SAMGR_GetInstance()->RegisterFeatureApi("serviceName401", "featureName401",
-                                                          GET_IUNKNOWN(g_feature));
-    TEST_ASSERT_EQUAL_INT(FALSE, result);
-
-    SAMGR_GetInstance()->UnregisterFeatureApi("serviceName401", "featureName401");
-    SAMGR_GetInstance()->UnregisterFeature("serviceName401", "featureName401");
-    SAMGR_GetInstance()->UnregisterService("serviceName401");
-}
-
-/**
- * @tc.name   testGetFeatureApi0010
- * @tc.number DMSLite_SAMGR_GetFeatureApi_0010
- * @tc.desc   [C- SOFTWARE -0200]
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
-LITE_TEST_CASE(FeatureApiTestSuite, testGetFeatureApi0010, Function | MediumTest | Level2)
-{
-    SAMGR_GetInstance()->RegisterService((Service *)&g_service);
-    SAMGR_GetInstance()->RegisterFeature("serviceName401", (Feature *)&g_feature);
-    SAMGR_GetInstance()->RegisterFeatureApi("serviceName401", "featureName401", GET_IUNKNOWN(g_feature));
-
-    IUnknown *resultIUnknown = SAMGR_GetInstance()->GetFeatureApi("serviceName401", "featureName401");
-    TEST_ASSERT_EQUAL_INT(resultIUnknown != NULL, TRUE);
-
-    SAMGR_GetInstance()->UnregisterFeatureApi("serviceName401", "featureName401");
-    SAMGR_GetInstance()->UnregisterFeature("serviceName401", "featureName401");
-    SAMGR_GetInstance()->UnregisterService("serviceName401");
-}
-
-/**
- * @tc.name   testGetFeatureApi0020
- * @tc.number DMSLite_SAMGR_GetFeatureApi_0020
- * @tc.desc   [C- SOFTWARE -0200]
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
-LITE_TEST_CASE(FeatureApiTestSuite, testGetFeatureApi0020, Function | MediumTest | Level2)
-{
-    SAMGR_GetInstance()->RegisterService((Service *)&g_service);
-    SAMGR_GetInstance()->RegisterFeature("serviceName401", (Feature *)&g_feature);
-    SAMGR_GetInstance()->RegisterFeatureApi("serviceName401", "featureName401", GET_IUNKNOWN(g_feature));
-
-    IUnknown *resultIUnknown = SAMGR_GetInstance()->GetFeatureApi(NULL, "featureName401");
-    TEST_ASSERT_EQUAL_INT(resultIUnknown == NULL, TRUE);
-    resultIUnknown = SAMGR_GetInstance()->GetFeatureApi("", "featureName401");
-    TEST_ASSERT_EQUAL_INT(resultIUnknown == NULL, TRUE);
-
-    SAMGR_GetInstance()->UnregisterFeatureApi("serviceName401", "featureName401");
-    SAMGR_GetInstance()->UnregisterFeature("serviceName401", "featureName401");
-    SAMGR_GetInstance()->UnregisterService("serviceName401");
-}
-
-/**
- * @tc.name   testGetFeatureApi0030
- * @tc.number DMSLite_SAMGR_GetFeatureApi_0030
- * @tc.desc   [C- SOFTWARE -0200]
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
-LITE_TEST_CASE(FeatureApiTestSuite, testGetFeatureApi0030, Function | MediumTest | Level2)
-{
-    SAMGR_GetInstance()->RegisterService((Service *)&g_service);
-    SAMGR_GetInstance()->RegisterFeature("serviceName401", (Feature *)&g_feature);
-    SAMGR_GetInstance()->RegisterFeatureApi("serviceName401", "featureName401", GET_IUNKNOWN(g_feature));
-
-    IUnknown *resultIUnknown = SAMGR_GetInstance()->GetFeatureApi("serviceName401", NULL);
-    TEST_ASSERT_EQUAL_INT(resultIUnknown == NULL, TRUE);
-    resultIUnknown = SAMGR_GetInstance()->GetFeatureApi("serviceName401", "");
-    TEST_ASSERT_EQUAL_INT(resultIUnknown == NULL, TRUE);
-
-    SAMGR_GetInstance()->UnregisterFeatureApi("serviceName401", "featureName401");
-    SAMGR_GetInstance()->UnregisterFeature("serviceName401", "featureName401");
-    SAMGR_GetInstance()->UnregisterService("serviceName401");
-}
-
-/**
- * @tc.name   testGetFeatureApi0040
- * @tc.number DMSLite_SAMGR_GetFeatureApi_0040
- * @tc.desc   [C- SOFTWARE -0200]
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
-LITE_TEST_CASE(FeatureApiTestSuite, testGetFeatureApi0040, Function | MediumTest | Level2)
-{
-    SAMGR_GetInstance()->RegisterService((Service *)&g_service);
-    SAMGR_GetInstance()->RegisterFeature("serviceName401", (Feature *)&g_feature);
-    
-    IUnknown *resultIUnknown = SAMGR_GetInstance()->GetFeatureApi("noExistService", "featureName401");
-    TEST_ASSERT_EQUAL_INT(resultIUnknown == NULL, TRUE);
-    resultIUnknown = SAMGR_GetInstance()->GetFeatureApi("serviceName401", "noExistFeature");
-    TEST_ASSERT_EQUAL_INT(resultIUnknown == NULL, TRUE);
-    
-    SAMGR_GetInstance()->UnregisterFeature("serviceName401", "featureName401");
-    SAMGR_GetInstance()->UnregisterService("serviceName401");
-}
-
-/**
- * @tc.name   testGetFeatureApi0050
- * @tc.number DMSLite_SAMGR_GetFeatureApi_0050
- * @tc.desc   [C- SOFTWARE -0200]
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
-LITE_TEST_CASE(FeatureApiTestSuite, testGetFeatureApi0050, Function | MediumTest | Level2)
-{
-    SAMGR_GetInstance()->RegisterService((Service *)&g_service);
-    SAMGR_GetInstance()->RegisterFeature("serviceName401", (Feature *)&g_feature);
-    
-    IUnknown *resultIUnknown = SAMGR_GetInstance()->GetFeatureApi("serviceName401", "featureName401");
-    TEST_ASSERT_EQUAL_INT(resultIUnknown == NULL, TRUE);
-
-    SAMGR_GetInstance()->UnregisterFeature("serviceName401", "featureName401");
-    SAMGR_GetInstance()->UnregisterService("serviceName401");
-}
-
-/**
- * @tc.name   testGetFeatureApi0060
- * @tc.number DMSLite_SAMGR_GetFeatureApi_0060
- * @tc.desc   [C- SOFTWARE -0200]
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
-LITE_TEST_CASE(FeatureApiTestSuite, testGetFeatureApi0060, Function | MediumTest | Level2)
+LITE_TEST_CASE(FeatureApiTestSuite, testGetFeatureApiLifecycle0010, Function | MediumTest | Level2)
 {
     SAMGR_GetInstance()->RegisterService((Service *)&g_service);
     SAMGR_GetInstance()->RegisterFeature("serviceName401", (Feature *)&g_feature);
     SAMGR_GetInstance()->RegisterFeatureApi("serviceName401", "featureName401", GET_IUNKNOWN(g_feature));
 
     IUnknown *resultIUnknown1 = SAMGR_GetInstance()->GetFeatureApi("serviceName401", "featureName401");
+    TEST_ASSERT_EQUAL_INT(resultIUnknown1 != NULL, TRUE);
     IUnknown *resultIUnknown2 = SAMGR_GetInstance()->GetFeatureApi("serviceName401", "featureName401");
     TEST_ASSERT_EQUAL_INT(resultIUnknown1 == resultIUnknown2, TRUE);
 
@@ -431,110 +165,72 @@ LITE_TEST_CASE(FeatureApiTestSuite, testGetFeatureApi0060, Function | MediumTest
 }
 
 /**
- * @tc.name   testUnregisterFeatureApi0010
- * @tc.number DMSLite_SAMGR_UnregisterFeatureApi_0010
- * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.name   testGetFeatureApiNotFound0020
+ * @tc.number DMSLite_SAMGR_GetFeatureApi_0020
+ * @tc.desc   Merged invalid/not-found cases (was 0020/0030/0040/0050)
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-LITE_TEST_CASE(FeatureApiTestSuite, testUnregisterFeatureApi0010, Function | MediumTest | Level2)
+LITE_TEST_CASE(FeatureApiTestSuite, testGetFeatureApiNotFound0020, Function | MediumTest | Level2)
 {
     SAMGR_GetInstance()->RegisterService((Service *)&g_service);
     SAMGR_GetInstance()->RegisterFeature("serviceName401", (Feature *)&g_feature);
     SAMGR_GetInstance()->RegisterFeatureApi("serviceName401", "featureName401", GET_IUNKNOWN(g_feature));
 
-    IUnknown *resultIUnknown = SAMGR_GetInstance()->UnregisterFeatureApi("serviceName401", "featureName401");
-    TEST_ASSERT_EQUAL_INT(resultIUnknown != NULL, TRUE);
+    struct {
+        const char *svc;
+        const char *feat;
+    } cases[] = {
+        {NULL, "featureName401"},
+        {"", "featureName401"},
+        {"serviceName401", NULL},
+        {"serviceName401", ""},
+        {"noExistService", "featureName401"},
+        {"serviceName401", "noExistFeature"},
+    };
+    for (size_t i = 0; i < sizeof(cases) / sizeof(cases[0]); i++) {
+        IUnknown *resultIUnknown = SAMGR_GetInstance()->GetFeatureApi(cases[i].svc, cases[i].feat);
+        TEST_ASSERT_EQUAL_INT(resultIUnknown == NULL, TRUE);
+    }
+
+    SAMGR_GetInstance()->UnregisterFeatureApi("serviceName401", "featureName401");
+
+    IUnknown *resultIUnknown = SAMGR_GetInstance()->GetFeatureApi("serviceName401", "featureName401");
+    TEST_ASSERT_EQUAL_INT(resultIUnknown == NULL, TRUE);
 
     SAMGR_GetInstance()->UnregisterFeature("serviceName401", "featureName401");
     SAMGR_GetInstance()->UnregisterService("serviceName401");
 }
 
 /**
- * @tc.name   testUnregisterFeatureApi0020
+ * @tc.name   testUnregisterFeatureApiInvalidParams0020
  * @tc.number DMSLite_SAMGR_UnregisterFeatureApi_0020
- * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.desc   Merged invalid-param cases (was 0020/0030/0040/0050)
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-LITE_TEST_CASE(FeatureApiTestSuite, testUnregisterFeatureApi0020, Function | MediumTest | Level2)
+LITE_TEST_CASE(FeatureApiTestSuite, testUnregisterFeatureApiInvalidParams0020, Function | MediumTest | Level2)
 {
     SAMGR_GetInstance()->RegisterService((Service *)&g_service);
     SAMGR_GetInstance()->RegisterFeature("serviceName401", (Feature *)&g_feature);
     SAMGR_GetInstance()->RegisterFeatureApi("serviceName401", "featureName401", GET_IUNKNOWN(g_feature));
 
-    IUnknown *resultIUnknown = SAMGR_GetInstance()->UnregisterFeatureApi(NULL, "featureName401");
-    TEST_ASSERT_EQUAL_INT(resultIUnknown == NULL, TRUE);
-    resultIUnknown = SAMGR_GetInstance()->UnregisterFeatureApi("", "featureName401");
-    TEST_ASSERT_EQUAL_INT(resultIUnknown == NULL, TRUE);
-
-    SAMGR_GetInstance()->UnregisterFeatureApi("serviceName401", "featureName401");
-    SAMGR_GetInstance()->UnregisterFeature("serviceName401", "featureName401");
-    SAMGR_GetInstance()->UnregisterService("serviceName401");
-}
-
-/**
- * @tc.name   testUnregisterFeatureApi0030
- * @tc.number DMSLite_SAMGR_UnregisterFeatureApi_0030
- * @tc.desc   [C- SOFTWARE -0200]
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
-LITE_TEST_CASE(FeatureApiTestSuite, testUnregisterFeatureApi0030, Function | MediumTest | Level2)
-{
-    SAMGR_GetInstance()->RegisterService((Service *)&g_service);
-    SAMGR_GetInstance()->RegisterFeature("serviceName401", (Feature *)&g_feature);
-    SAMGR_GetInstance()->RegisterFeatureApi("serviceName401", "featureName401", GET_IUNKNOWN(g_feature));
-
-    IUnknown *resultIUnknown = SAMGR_GetInstance()->UnregisterFeatureApi("serviceName401", "");
-    TEST_ASSERT_EQUAL_INT(resultIUnknown == NULL, TRUE);
-
-    SAMGR_GetInstance()->UnregisterFeatureApi("serviceName401", "featureName401");
-    SAMGR_GetInstance()->UnregisterFeature("serviceName401", "featureName401");
-    SAMGR_GetInstance()->UnregisterService("serviceName401");
-}
-
-/**
- * @tc.name   testUnregisterFeatureApi0040
- * @tc.number DMSLite_SAMGR_UnregisterFeatureApi_0040
- * @tc.desc   [C- SOFTWARE -0200]
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
-LITE_TEST_CASE(FeatureApiTestSuite, testUnregisterFeatureApi0040, Function | MediumTest | Level2)
-{
-    SAMGR_GetInstance()->RegisterService((Service *)&g_service);
-    SAMGR_GetInstance()->RegisterFeature("serviceName401", (Feature *)&g_feature);
-    SAMGR_GetInstance()->RegisterFeatureApi("serviceName401", "featureName401", GET_IUNKNOWN(g_feature));
-
-    IUnknown *resultIUnknown = SAMGR_GetInstance()->UnregisterFeatureApi("noExistService", "featureName401");
-    TEST_ASSERT_EQUAL_INT(resultIUnknown == NULL, TRUE);
-
-    SAMGR_GetInstance()->UnregisterFeatureApi("serviceName401", "featureName401");
-    SAMGR_GetInstance()->UnregisterFeature("serviceName401", "featureName401");
-    SAMGR_GetInstance()->UnregisterService("serviceName401");
-}
-
-/**
- * @tc.name   testUnregisterFeatureApi0050
- * @tc.number DMSLite_SAMGR_UnregisterFeatureApi_0050
- * @tc.desc   [C- SOFTWARE -0200]
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
-LITE_TEST_CASE(FeatureApiTestSuite, testUnregisterFeatureApi0050, Function | MediumTest | Level2)
-{
-    SAMGR_GetInstance()->RegisterService((Service *)&g_service);
-    SAMGR_GetInstance()->RegisterFeature("serviceName401", (Feature *)&g_feature);
-    SAMGR_GetInstance()->RegisterFeatureApi("serviceName401", "featureName401", GET_IUNKNOWN(g_feature));
-    
-    IUnknown *resultIUnknown = SAMGR_GetInstance()->UnregisterFeatureApi("serviceName401", "noExistFeature");
-    TEST_ASSERT_EQUAL_INT(resultIUnknown == NULL, TRUE);
+    struct {
+        const char *svc;
+        const char *feat;
+    } cases[] = {
+        {NULL, "featureName401"},
+        {"", "featureName401"},
+        {"serviceName401", ""},
+        {"noExistService", "featureName401"},
+        {"serviceName401", "noExistFeature"},
+    };
+    for (size_t i = 0; i < sizeof(cases) / sizeof(cases[0]); i++) {
+        IUnknown *resultIUnknown = SAMGR_GetInstance()->UnregisterFeatureApi(cases[i].svc, cases[i].feat);
+        TEST_ASSERT_EQUAL_INT(resultIUnknown == NULL, TRUE);
+    }
 
     SAMGR_GetInstance()->UnregisterFeatureApi("serviceName401", "featureName401");
     SAMGR_GetInstance()->UnregisterFeature("serviceName401", "featureName401");
@@ -544,14 +240,13 @@ LITE_TEST_CASE(FeatureApiTestSuite, testUnregisterFeatureApi0050, Function | Med
 /**
  * @tc.name   testUnregisterFeatureApi0060
  * @tc.number DMSLite_SAMGR_UnregisterFeatureApi_0060
- * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.desc   pressure test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(FeatureApiTestSuite, testUnregisterFeatureApi0060, Function | MediumTest | Level2)
 {
-    // RegisterService and unregister feature api over and over again, if there is memory leak samgr will crash
     for (int i = 0; i < PRESSURE_BASE; i++) {
         BOOL result = SAMGR_GetInstance()->RegisterService((Service *)&g_service);
         TEST_ASSERT_EQUAL_INT(result, TRUE);

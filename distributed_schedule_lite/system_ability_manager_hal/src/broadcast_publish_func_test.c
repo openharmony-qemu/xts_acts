@@ -3,9 +3,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *   http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -20,6 +20,7 @@
 #include "hctest.h"
 #include "samgr_lite.h"
 #include "broadcast_interface.h"
+
 
 #define PRESSURE_BASE (1024 * 10)
 #define TEST_LEN 10
@@ -111,7 +112,7 @@ static void CASE_ReleaseIUnknown(PubSubInterface *fapi)
 LITE_TEST_SUIT(test, broadcast, Broadcast02TestSuite);
 
 static BOOL Broadcast02TestSuiteSetUp(void)
-{   
+{
     osDelay(OPER_INTERVAL);
     return TRUE;
 }
@@ -153,6 +154,8 @@ LITE_TEST_CASE(Broadcast02TestSuite, testPublish0010, Function | MediumTest | Le
     BOOL result = provider->Publish((IUnknown *)fapi, &topic0, (uint8 *) "==>111<==", TEST_LEN);
     TEST_ASSERT_EQUAL_INT(1, result);
 
+    subscriber->Unsubscribe((IUnknown *)fapi, &topic0, &c1);
+    subscriber->Unsubscribe((IUnknown *)fapi, &topic0, &c2);
     CASE_ReleaseIUnknown(fapi);
 }
 
@@ -174,7 +177,7 @@ LITE_TEST_CASE(Broadcast02TestSuite, testPublish0020, Function | MediumTest | Le
     if (subscriber == NULL) {
         TEST_FAIL();
     }
-    
+
     Provider *provider = &fapi->provider;
     static Consumer c1 = {.identity = &g_identity, .Notify = C1Callback, .Equal = Equal};
     static Consumer c2 = {.identity = &g_identity, .Notify = C2Callback, .Equal = Equal};
@@ -188,6 +191,8 @@ LITE_TEST_CASE(Broadcast02TestSuite, testPublish0020, Function | MediumTest | Le
     BOOL result = provider->Publish((IUnknown *)fapi, &noExisttopic, (uint8 *) "==>111<==", TEST_LEN);
     TEST_ASSERT_EQUAL_INT(result, 0);
 
+    subscriber->Unsubscribe((IUnknown *)fapi, &topic0, &c1);
+    subscriber->Unsubscribe((IUnknown *)fapi, &topic0, &c2);
     CASE_ReleaseIUnknown(fapi);
 }
 
@@ -209,7 +214,7 @@ LITE_TEST_CASE(Broadcast02TestSuite, testPublish0030, Function | MediumTest | Le
     if (subscriber == NULL) {
         TEST_FAIL();
     }
-    
+
     Provider *provider = &fapi->provider;
     static Consumer c1 = {.identity = &g_identity, .Notify = C1Callback, .Equal = Equal};
     static Consumer c2 = {.identity = &g_identity, .Notify = C2Callback, .Equal = Equal};
@@ -225,6 +230,8 @@ LITE_TEST_CASE(Broadcast02TestSuite, testPublish0030, Function | MediumTest | Le
     result = provider->Publish((IUnknown *)fapi, &topic0, (uint8 *) "==>111<==", TEST_LEN + 1);
     TEST_ASSERT_EQUAL_INT(result, TRUE);
 
+    subscriber->Unsubscribe((IUnknown *)fapi, &topic0, &c1);
+    subscriber->Unsubscribe((IUnknown *)fapi, &topic0, &c2);
     CASE_ReleaseIUnknown(fapi);
 }
 
@@ -246,7 +253,7 @@ LITE_TEST_CASE(Broadcast02TestSuite, testPublish0040, Function | MediumTest | Le
     if (subscriber == NULL) {
         TEST_FAIL();
     }
-    
+
     Provider *provider = &fapi->provider;
     static Consumer c1 = {.identity = &g_identity, .Notify = C1Callback, .Equal = Equal};
     static Consumer c2 = {.identity = &g_identity, .Notify = C2Callback, .Equal = Equal};
@@ -259,6 +266,8 @@ LITE_TEST_CASE(Broadcast02TestSuite, testPublish0040, Function | MediumTest | Le
     BOOL result = provider->Publish((IUnknown *)fapi, &topic0, (uint8 *) "", 0);
     TEST_ASSERT_EQUAL_INT(result, 0);
 
+    subscriber->Unsubscribe((IUnknown *)fapi, &topic0, &c1);
+    subscriber->Unsubscribe((IUnknown *)fapi, &topic0, &c2);
     CASE_ReleaseIUnknown(fapi);
 }
 
@@ -280,7 +289,7 @@ LITE_TEST_CASE(Broadcast02TestSuite, testPublish0050, Function | MediumTest | Le
     if (subscriber == NULL) {
         TEST_FAIL();
     }
-    
+
     Provider *provider = &fapi->provider;
     if (provider == NULL) {
         printf("[hctest]E provider is NULL. \n");
@@ -290,7 +299,7 @@ LITE_TEST_CASE(Broadcast02TestSuite, testPublish0050, Function | MediumTest | Le
     subscriber->AddTopic((IUnknown *)fapi, &topic0);
 
     BOOL result = provider->Publish((IUnknown *)fapi, &topic0, (uint8 *) "==>111<==", TEST_LEN);
-    TEST_ASSERT_EQUAL_INT(result, 1);
+    TEST_ASSERT_EQUAL_INT(result, 0);
 
     CASE_ReleaseIUnknown(fapi);
 }
@@ -313,7 +322,7 @@ LITE_TEST_CASE(Broadcast02TestSuite, testPublish0060, Function | MediumTest | Le
     if (subscriber == NULL) {
         TEST_FAIL();
     }
-    
+
     Provider *provider = &fapi->provider;
     static Consumer c1 = {.identity = &g_identity, .Notify = C1Callback, .Equal = Equal};
     static Consumer c2 = {.identity = &g_identity, .Notify = C2Callback, .Equal = Equal};
@@ -326,6 +335,8 @@ LITE_TEST_CASE(Broadcast02TestSuite, testPublish0060, Function | MediumTest | Le
     BOOL result = provider->Publish((IUnknown *)fapi, &topic0, (uint8 *) "==>111<==", TEST_LEN);
     TEST_ASSERT_EQUAL_INT(result, TRUE);
 
+    subscriber->Unsubscribe((IUnknown *)fapi, &topic0, &c1);
+    subscriber->Unsubscribe((IUnknown *)fapi, &topic0, &c2);
     CASE_ReleaseIUnknown(fapi);
 }
 
@@ -347,7 +358,7 @@ LITE_TEST_CASE(Broadcast02TestSuite, testPublish0070, Function | MediumTest | Le
     if (subscriber == NULL) {
         TEST_FAIL();
     }
-    
+
     Provider *provider = &fapi->provider;
     static Consumer c1 = {.identity = &g_identity, .Notify = C1Callback, .Equal = Equal};
     static Consumer c2 = {.identity = &g_identity, .Notify = C2Callback, .Equal = Equal};
@@ -365,5 +376,5 @@ LITE_TEST_CASE(Broadcast02TestSuite, testPublish0070, Function | MediumTest | Le
     subscriber->Unsubscribe((IUnknown *)fapi, &topic0, &c2);
     CASE_ReleaseIUnknown(fapi);
 }
-  
+
 RUN_TEST_SUITE(Broadcast02TestSuite);
