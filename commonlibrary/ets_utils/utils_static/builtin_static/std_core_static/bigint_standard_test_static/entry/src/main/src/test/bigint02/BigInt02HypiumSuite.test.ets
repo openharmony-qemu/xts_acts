@@ -50,6 +50,9 @@ import BigIntOperatorLeftShift2Test from './BigIntOperatorLeftShift2Test.test';
 import BigIntOperatorLessThan2Test from './BigIntOperatorLessThan2Test.test';
 import BigIntOperatorLessThanEqual2Test from './BigIntOperatorLessThanEqual2Test.test';
 import BigIntOperatorModule2Test from './BigIntOperatorModule2Test.test';
+import BigIntOperatorMultiply2Test from './BigIntOperatorMultiply2Test.test';
+import BigIntOperatorRightShift2Test from './BigIntOperatorRightShift2Test.test';
+import BigIntOperatorSubtract2Test from './BigIntOperatorSubtract2Test.test';
 
 
 export default function runBigInt02HypiumTests(): void {
@@ -86,6 +89,9 @@ export default function runBigInt02HypiumTests(): void {
   BigIntOperatorLessThan2Test();
   BigIntOperatorLessThanEqual2Test();
   BigIntOperatorModule2Test();
+  BigIntOperatorMultiply2Test();
+  BigIntOperatorRightShift2Test();
+  BigIntOperatorSubtract2Test();
 
 
 }
