@@ -18,6 +18,7 @@ import getThumbnailStaticTest from "./PhotoAsset/getThumbnail.test";
 import MediaAssetRequestImageSuppStatic from "./MediaAssetManager/requestImage.test";
 import AddResourceChangeRequestUrlSuppTest from "./AddResource/AddResourceUrl.test";
 import CommitModifySuppTest from "./AddResource/CommitModifyTest.test";
+import singlePhotoAlbumChangeTest from "./photoAccessHelper/PhotoSinglePhotoAlbumChange.test";
 import MediaAlbumChangeRequestSetAlbumNameStatic from "./MediaAssetChangeRequest/setAlbumName.test";
 import getTest from "./PhotoAsset/get.test";
 
@@ -37,11 +38,12 @@ export default function testsuite(): void {
   getThumbnailStaticTest();
   MediaAssetRequestImageSuppStatic();
   createPhotoAssetTest();
-  getAssetsByPredicatesTest();
   createAssetTest();
   getAlbumsStaticTest();
   getAssetsStaticTest();
   AddResourceChangeRequestUrlSuppTest();
   CommitModifySuppTest();
   MediaAlbumChangeRequestSetAlbumNameStatic();
+  getAssetsByPredicatesTest();
+  singlePhotoAlbumChangeTest();
 }
