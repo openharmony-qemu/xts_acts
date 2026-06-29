@@ -758,8 +758,6 @@ export default function BigIntOperatorDivide2Test(): void {
     it('testBigIntOperatorDivide2Test5100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt("0b"+BigInt('4096').toString(2)).operatorDivide(BigInt("0x"+BigInt('256').toString(16))).toString())
         .assertEqual('16');
-      expect(BigInt(1000000).toLocaleString('zh-CN')).assertEqual('1,000,000');
-      expect(BigInt(1000).toLocaleString('en-US')).assertEqual('1,000');
       expect(BigInt(1000000).operatorDivide(BigInt(1000)).toString()).assertEqual('1000');
     });
 

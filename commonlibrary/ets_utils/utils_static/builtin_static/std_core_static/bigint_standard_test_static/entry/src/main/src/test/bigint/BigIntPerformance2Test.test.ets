@@ -463,7 +463,7 @@ export default function BigIntPerformance2Test(): void {
     /**
      * @tc.number SUB_BIGINT_STD_PERFORMANCE_2700
      * @tc.name testBigIntPerformance2Test2700
-     * @tc.desc Verify toString(8) on 2048-bit value produces expected octal length (684)
+     * @tc.desc Verify toString(8) on 2048-bit value produces expected octal length (683)
      * @tc.size LargeTest
      * @tc.type Performance
      * @tc.level Level 3

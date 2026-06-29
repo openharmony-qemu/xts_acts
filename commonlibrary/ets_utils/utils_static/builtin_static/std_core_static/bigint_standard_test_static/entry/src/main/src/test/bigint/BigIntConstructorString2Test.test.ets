@@ -144,7 +144,7 @@ export default function BigIntConstructorString2Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigintConstructorStringHexLeadingZeros0900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntConstructorString2Test0900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt('0x00FF').toString()).assertEqual('255');
       expect(BigInt('0x0000001A').toString()).assertEqual('26');
     });

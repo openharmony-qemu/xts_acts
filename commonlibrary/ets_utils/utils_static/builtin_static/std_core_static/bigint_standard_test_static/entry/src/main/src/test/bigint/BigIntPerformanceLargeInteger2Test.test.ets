@@ -67,7 +67,7 @@ export default function BigIntPerformanceLargeInteger2Test(): void {
       const p3len = p3.toString().length;
       const p2len = p2.toString().length;
       expect(p3.operatorGreaterThan(p2)).assertTrue();
-      expect(p3len>p2len).assertTrue();
+      expect(p3len > p2len).assertTrue();
     });
 
     /**
@@ -260,7 +260,7 @@ export default function BigIntPerformanceLargeInteger2Test(): void {
       const p4096 = BigInt(2).pow(BigInt(4096));
       const oct = p4096.toString(8);
       const decimalLen = p4096.toString().length;
-      expect(oct.length>decimalLen).assertTrue();
+      expect(oct.length > decimalLen).assertTrue();
     });
 
     /**
@@ -614,7 +614,7 @@ export default function BigIntPerformanceLargeInteger2Test(): void {
       const pow5_1024 = BigInt(5).pow(BigInt(1024));
       const xored = pow3_2048.operatorBitwiseXor(pow5_1024);
       const doubleXor = xored.operatorBitwiseXor(pow5_1024);
-      expect(doubleXor.equals(pow3_2048)).assertTrue()
+      expect(doubleXor.equals(pow3_2048)).assertTrue();
     });
 
     /**

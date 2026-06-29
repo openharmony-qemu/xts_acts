@@ -370,11 +370,11 @@ export default function BigIntOperatorLessThan2Test(): void {
     it('testBigIntOperatorLessThan2Test2300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(BigInt(100).doubleValue()).operatorLessThan(BigInt(100))).assertFalse();
       expect(BigInt(BigInt(100).getLong()).operatorLessThan(BigInt(100))).assertFalse();
-      let uLong=BigInt('18446744073709551615').getULong()
+      let uLong = BigInt('18446744073709551615').getULong()
       expect(BigInt.fromULong(uLong).operatorLessThan(BigInt('18446744073709551615')))
         .assertFalse();
       expect(BigInt(BigInt(12345).toString()).operatorLessThan(BigInt(12345))).assertFalse();
-      expect(BigInt("0x"+BigInt(255).toString(16)).operatorLessThan(BigInt(255))).assertFalse();
+      expect(BigInt("0x" + BigInt(255).toString(16)).operatorLessThan(BigInt(255))).assertFalse();
     });
 
     /**

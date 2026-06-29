@@ -278,14 +278,14 @@ export default function BigIntConstructorIntegral2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_INTEGRAL_
-     * @tc.name testBigIntConstructorIntegral2Test
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_INTEGRAL_1700
+     * @tc.name testBigIntConstructorIntegral2Test1700
      * @tc.desc int bitwise OR/XOR with boundary values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorIntegral2Test', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntConstructorIntegral2Test1700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a: int = 0xFF00;
       const b: int = 0x0FF0;
 

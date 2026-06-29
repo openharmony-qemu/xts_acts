@@ -17,16 +17,16 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntOperatorLeftShift2Test(): void {
-  describe('BigInt.operatorLeftShift2 (gap coverage)', () => {
+  describe('testBigIntOperatorLeftShift2Test', () => {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_0100
-     * @tc.name testBigIntOperatorLeftShift0100
+     * @tc.name testBigIntOperatorLeftShift2Test0100
      * @tc.desc operatorLeftShift shift 0-8 bits on base 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(2).operatorLeftShift(BigInt(0)).toString()).assertEqual('2');
       expect(BigInt(2).operatorLeftShift(BigInt(1)).toString()).assertEqual('4');
       expect(BigInt(2).operatorLeftShift(BigInt(2)).toString()).assertEqual('8');
@@ -40,13 +40,13 @@ export default function BigIntOperatorLeftShift2Test(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_0200
-     * @tc.name testBigIntOperatorLeftShift0200
+     * @tc.name testBigIntOperatorLeftShift2Test0200
      * @tc.desc operatorLeftShift shift boundary 32/64/128/256 bits
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(1).operatorLeftShift(BigInt(32)).toString()).assertEqual('4294967296');
       expect(BigInt(1).operatorLeftShift(BigInt(64)).toString()).assertEqual('18446744073709551616');
       expect(BigInt(1).operatorLeftShift(BigInt(100)).toString()).assertEqual('1267650600228229401496703205376');
@@ -56,13 +56,13 @@ export default function BigIntOperatorLeftShift2Test(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_0300
-     * @tc.name testBigIntOperatorLeftShift0300
+     * @tc.name testBigIntOperatorLeftShift2Test0300
      * @tc.desc operatorLeftShift on negative values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(-1).operatorLeftShift(BigInt(1)).toString()).assertEqual('-2');
       expect(BigInt(-1).operatorLeftShift(BigInt(2)).toString()).assertEqual('-4');
       expect(BigInt(-1).operatorLeftShift(BigInt(3)).toString()).assertEqual('-8');
@@ -74,13 +74,13 @@ export default function BigIntOperatorLeftShift2Test(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_0400
-     * @tc.name testBigIntOperatorLeftShift0400
+     * @tc.name testBigIntOperatorLeftShift2Test0400
      * @tc.desc operatorLeftShift on large magnitude values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(1000000000).operatorLeftShift(BigInt(10)).toString()).assertEqual('1024000000000');
       expect(BigInt('1000000000000000000').operatorLeftShift(BigInt(5)).toString()).assertEqual('32000000000000000000');
       expect(BigInt('123456789012345678901234567890').operatorLeftShift(BigInt(10)).toString()).assertEqual('126419751948641975194864197519360');
@@ -89,13 +89,13 @@ export default function BigIntOperatorLeftShift2Test(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_0500
-     * @tc.name testBigIntOperatorLeftShift0500
+     * @tc.name testBigIntOperatorLeftShift2Test0500
      * @tc.desc operatorLeftShift overflow behavior
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(1).operatorLeftShift(BigInt(63)).toString()).assertEqual('9223372036854775808');
       expect(BigInt(1).operatorLeftShift(BigInt(500)).toString().length).assertEqual(151);
       expect(BigInt(1).operatorLeftShift(BigInt(1000)).toString().length).assertEqual(302);
@@ -103,13 +103,13 @@ export default function BigIntOperatorLeftShift2Test(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_0600
-     * @tc.name testBigIntOperatorLeftShift0600
+     * @tc.name testBigIntOperatorLeftShift2Test0600
      * @tc.desc operatorLeftShift immutability test
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a = BigInt(100);
       const origA = a.toString();
       a.operatorLeftShift(BigInt(5));
@@ -125,13 +125,13 @@ export default function BigIntOperatorLeftShift2Test(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_0700
-     * @tc.name testBigIntOperatorLeftShift0700
+     * @tc.name testBigIntOperatorLeftShift2Test0700
      * @tc.desc operatorLeftShift zero shifted by any amount is zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(0).operatorLeftShift(BigInt(0)).toString()).assertEqual('0');
       expect(BigInt(0).operatorLeftShift(BigInt(1)).toString()).assertEqual('0');
       expect(BigInt(0).operatorLeftShift(BigInt(100)).toString()).assertEqual('0');
@@ -140,13 +140,13 @@ export default function BigIntOperatorLeftShift2Test(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_0800
-     * @tc.name testBigIntOperatorLeftShift0800
+     * @tc.name testBigIntOperatorLeftShift2Test0800
      * @tc.desc operatorLeftShift 1<<n verifies powers of two
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift0800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test0800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(1).operatorLeftShift(BigInt(0)).toString()).assertEqual('1');
       expect(BigInt(1).operatorLeftShift(BigInt(1)).toString()).assertEqual('2');
       expect(BigInt(1).operatorLeftShift(BigInt(2)).toString()).assertEqual('4');
@@ -160,13 +160,13 @@ export default function BigIntOperatorLeftShift2Test(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_0900
-     * @tc.name testBigIntOperatorLeftShift0900
+     * @tc.name testBigIntOperatorLeftShift2Test0900
      * @tc.desc operatorLeftShift various constructor source combinations
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift0900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test0900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(5.0).operatorLeftShift(BigInt(3)).toString()).assertEqual('40');
       expect(BigInt('10').operatorLeftShift(BigInt('4')).toString()).assertEqual('160');
       expect(BigInt(false).operatorLeftShift(BigInt(100)).toString()).assertEqual('0');
@@ -179,51 +179,51 @@ export default function BigIntOperatorLeftShift2Test(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_1000
-     * @tc.name testBigIntOperatorLeftShift1000
+     * @tc.name testBigIntOperatorLeftShift2Test1000
      * @tc.desc operatorLeftShift value correctness via equals
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift1000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test1000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(3).operatorLeftShift(BigInt(2)).equals(BigInt(12))).assertTrue();
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_1100
-     * @tc.name testBigIntOperatorLeftShift1100
+     * @tc.name testBigIntOperatorLeftShift2Test1100
      * @tc.desc operatorLeftShift return type via doubleValue and getLong
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift1100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test1100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(2).operatorLeftShift(BigInt(10)).doubleValue()).assertEqual(2048.0);
       expect(BigInt(1).operatorLeftShift(BigInt(10)).getLong()).assertEqual(1024);
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_1200
-     * @tc.name testBigIntOperatorLeftShift1200
+     * @tc.name testBigIntOperatorLeftShift2Test1200
      * @tc.desc operatorLeftShift chained calls
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift1200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test1200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const chain = BigInt(1).operatorLeftShift(BigInt(2)).operatorLeftShift(BigInt(3));
       expect(chain.toString()).assertEqual('32');
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_1300
-     * @tc.name testBigIntOperatorLeftShift1300
+     * @tc.name testBigIntOperatorLeftShift2Test1300
      * @tc.desc operatorLeftShift cross-operator equivalence with multiply
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift1300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test1300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const shifted = BigInt(7).operatorLeftShift(BigInt(3));
       const multiplied = BigInt(7).operatorMultiply(BigInt(8));
       expect(shifted.toString()).assertEqual(multiplied.toString());
@@ -231,13 +231,13 @@ export default function BigIntOperatorLeftShift2Test(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_1400
-     * @tc.name testBigIntOperatorLeftShift1400
+     * @tc.name testBigIntOperatorLeftShift2Test1400
      * @tc.desc operatorLeftShift 1<<16, 1<<24, 1<<50 boundary
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift1400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test1400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(1).operatorLeftShift(BigInt(16)).toString()).assertEqual('65536');
       expect(BigInt(1).operatorLeftShift(BigInt(24)).toString()).assertEqual('16777216');
       expect(BigInt(1).operatorLeftShift(BigInt(50)).toString()).assertEqual('1125899906842624');
@@ -245,25 +245,25 @@ export default function BigIntOperatorLeftShift2Test(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_1500
-     * @tc.name testBigIntOperatorLeftShift1500
+     * @tc.name testBigIntOperatorLeftShift2Test1500
      * @tc.desc operatorLeftShift longMin negative shift
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift1500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test1500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt('-9223372036854775808').operatorLeftShift(BigInt(1)).toString()).assertEqual('-18446744073709551616');
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_1600
-     * @tc.name testBigIntOperatorLeftShift1600
+     * @tc.name testBigIntOperatorLeftShift2Test1600
      * @tc.desc operatorLeftShift returns new reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift1600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test1600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a = BigInt(100);
       const r = a.operatorLeftShift(BigInt(5));
       expect(r!=a).assertTrue();
@@ -271,205 +271,205 @@ export default function BigIntOperatorLeftShift2Test(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_1700
-     * @tc.name testBigIntOperatorLeftShift1700
+     * @tc.name testBigIntOperatorLeftShift2Test1700
      * @tc.desc operatorLeftShift on addition result as left operand (10+5=15)<<1=30
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift1700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test1700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(10).operatorAdd(BigInt(5)).operatorLeftShift(BigInt(1)).toString()).assertEqual('30');
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_1800
-     * @tc.name testBigIntOperatorLeftShift1800
+     * @tc.name testBigIntOperatorLeftShift2Test1800
      * @tc.desc operatorLeftShift on subtraction result as left operand (20-7=13)<<2=52
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift1800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test1800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(20).operatorSubtract(BigInt(7)).operatorLeftShift(BigInt(2)).toString()).assertEqual('52');
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_1900
-     * @tc.name testBigIntOperatorLeftShift1900
+     * @tc.name testBigIntOperatorLeftShift2Test1900
      * @tc.desc operatorLeftShift on bitwiseOr result as left operand (10|3=11)<<1=22
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift1900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test1900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(10).operatorBitwiseOr(BigInt(3)).operatorLeftShift(BigInt(1)).toString()).assertEqual('22');
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_2000
-     * @tc.name testBigIntOperatorLeftShift2000
+     * @tc.name testBigIntOperatorLeftShift2Test2000
      * @tc.desc operatorLeftShift on asIntN 8-bit truncated value (asIntN(8,100)<<1=200)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift2000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test2000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.asIntN(8, BigInt(100)).operatorLeftShift(BigInt(1)).toString()).assertEqual('200');
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_2100
-     * @tc.name testBigIntOperatorLeftShift2100
+     * @tc.name testBigIntOperatorLeftShift2Test2100
      * @tc.desc operatorLeftShift on asUintN 8-bit truncated value (asUintN(8,200)<<1=400)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift2100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test2100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.asUintN(8, BigInt(200)).operatorLeftShift(BigInt(1)).toString()).assertEqual('400');
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_2200
-     * @tc.name testBigIntOperatorLeftShift2200
+     * @tc.name testBigIntOperatorLeftShift2Test2200
      * @tc.desc operatorLeftShift with byte constructor for right operand (10<<byte(1)=20)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift2200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test2200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(10).operatorLeftShift(BigInt(1 as byte)).toString()).assertEqual('20');
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_2300
-     * @tc.name testBigIntOperatorLeftShift2300
+     * @tc.name testBigIntOperatorLeftShift2Test2300
      * @tc.desc operatorLeftShift with long constructor for right operand (10<<long(3)=80)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift2300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test2300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(10).operatorLeftShift(BigInt(3 as long)).toString()).assertEqual('80');
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_2400
-     * @tc.name testBigIntOperatorLeftShift2400
+     * @tc.name testBigIntOperatorLeftShift2Test2400
      * @tc.desc operatorLeftShift with double constructor for right operand (10<<4.0=160)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift2400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test2400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(10).operatorLeftShift(BigInt(4.0)).toString()).assertEqual('160');
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_2500
-     * @tc.name testBigIntOperatorLeftShift2500
+     * @tc.name testBigIntOperatorLeftShift2Test2500
      * @tc.desc operatorLeftShift with string constructor for right operand (10<<'5'=320)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift2500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test2500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(10).operatorLeftShift(BigInt('5')).toString()).assertEqual('320');
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_2600
-     * @tc.name testBigIntOperatorLeftShift2600
+     * @tc.name testBigIntOperatorLeftShift2Test2600
      * @tc.desc operatorLeftShift -1 by 16 bits (-1<<16=-65536)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift2600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test2600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(-1).operatorLeftShift(BigInt(16)).toString()).assertEqual('-65536');
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_2700
-     * @tc.name testBigIntOperatorLeftShift2700
+     * @tc.name testBigIntOperatorLeftShift2Test2700
      * @tc.desc operatorLeftShift -1 by 64 bits (-1<<64=-18446744073709551616)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift2700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test2700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(-1).operatorLeftShift(BigInt(64)).toString()).assertEqual('-18446744073709551616');
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_2800
-     * @tc.name testBigIntOperatorLeftShift2800
+     * @tc.name testBigIntOperatorLeftShift2Test2800
      * @tc.desc operatorLeftShift 255 by 16 bits (255<<16=16711680)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift2800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test2800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(255).operatorLeftShift(BigInt(16)).toString()).assertEqual('16711680');
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_2900
-     * @tc.name testBigIntOperatorLeftShift2900
+     * @tc.name testBigIntOperatorLeftShift2Test2900
      * @tc.desc operatorLeftShift -255 by 16 bits (-255<<16=-16711680)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift2900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test2900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(-255).operatorLeftShift(BigInt(16)).toString()).assertEqual('-16711680');
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_3000
-     * @tc.name testBigIntOperatorLeftShift3000
+     * @tc.name testBigIntOperatorLeftShift2Test3000
      * @tc.desc operatorLeftShift fromULong(65535) by 8 bits (fromULong(65535)<<8=16776960)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift3000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test3000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.fromULong(65535).operatorLeftShift(BigInt(8)).toString()).assertEqual('16776960');
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_3100
-     * @tc.name testBigIntOperatorLeftShift3100
+     * @tc.name testBigIntOperatorLeftShift2Test3100
      * @tc.desc operatorLeftShift on value beyond JS safe integer (9007199254740993<<1=18014398509481986)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift3100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test3100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt('9007199254740993').operatorLeftShift(BigInt(1)).toString()).assertEqual('18014398509481986');
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_3200
-     * @tc.name testBigIntOperatorLeftShift3200
+     * @tc.name testBigIntOperatorLeftShift2Test3200
      * @tc.desc operatorLeftShift on 100-digit all-ones (100-digit 1's<<1=100-digit 2's)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift3200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test3200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt('1'.repeat(100)).operatorLeftShift(BigInt(1)).toString()).assertEqual('2'.repeat(100));
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_3300
-     * @tc.name testBigIntOperatorLeftShift3300
+     * @tc.name testBigIntOperatorLeftShift2Test3300
      * @tc.desc operatorLeftShift on getULong round-tripped value (BigInt(-1).getULong()<<1=36893488147419103230)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift3300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test3300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
 
       const ulongVal: long = BigInt(-1).getULong();
       expect(BigInt(BigInt.fromULong(ulongVal)).operatorLeftShift(BigInt(1)).toString()).assertEqual('36893488147419103230');
@@ -477,13 +477,13 @@ export default function BigIntOperatorLeftShift2Test(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_3400
-     * @tc.name testBigIntOperatorLeftShift3400
+     * @tc.name testBigIntOperatorLeftShift2Test3400
      * @tc.desc operatorLeftShift on asIntN 64-bit truncated value (asIntN(64, Long.MAX)<<1=-2)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift3400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test3400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const longMax = BigInt('9223372036854775807');
       const shiftedVal = longMax.operatorLeftShift(BigInt(1));
       expect(BigInt.asIntN(64, shiftedVal).toString()).assertEqual('-2');
@@ -491,49 +491,49 @@ export default function BigIntOperatorLeftShift2Test(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_3500
-     * @tc.name testBigIntOperatorLeftShift3500
+     * @tc.name testBigIntOperatorLeftShift2Test3500
      * @tc.desc operatorLeftShift on asUintN 64-bit truncated value (asUintN(64, Long.MAX)<<1=18446744073709551614)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift3500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test3500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.asUintN(64, BigInt('9223372036854775807')).operatorLeftShift(BigInt(1)).toString()).assertEqual('18446744073709551614');
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_3600
-     * @tc.name testBigIntOperatorLeftShift3600
+     * @tc.name testBigIntOperatorLeftShift2Test3600
      * @tc.desc operatorLeftShift byte minimum -128 by 1 bit (-128<<1=-256)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift3600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test3600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(-128 as byte).operatorLeftShift(BigInt(1)).toString()).assertEqual('-256');
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_3700
-     * @tc.name testBigIntOperatorLeftShift3700
+     * @tc.name testBigIntOperatorLeftShift2Test3700
      * @tc.desc operatorLeftShift copy constructed negative value (BigInt(BigInt(-1))<<10=-1024)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift3700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test3700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(BigInt(-1)).operatorLeftShift(BigInt(10)).toString()).assertEqual('-1024');
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_3800
-     * @tc.name testBigIntOperatorLeftShift3800
+     * @tc.name testBigIntOperatorLeftShift2Test3800
      * @tc.desc operatorLeftShift 2^64 by 1 bit (2^64<<1=36893488147419103232)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShift3800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShift2Test3800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt('18446744073709551616').operatorLeftShift(BigInt(1)).toString()).assertEqual('36893488147419103232');
     });
   });
