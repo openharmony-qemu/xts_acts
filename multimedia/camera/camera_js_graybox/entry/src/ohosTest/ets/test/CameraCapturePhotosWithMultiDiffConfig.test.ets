@@ -103,7 +103,7 @@ async function cameraCapturePhotosTest(testNum: string, testCameraId: number,
           if (zoomRatioRange != undefined && zoomRatioRange.length == 3) {
             findZoomRatioRange = true
             zoomRatio = zoomRatioRange[testZoomRatioRange];
-            setZoomRatioRange(session, zoomRatioRange!, zoomRatio);
+            setZoomRatioRange(session, zoomRatioRange!, zoomRatio, testCameraId);
           } else {
             findZoomRatioRange = false
             zoomRatio = 1
@@ -116,18 +116,19 @@ async function cameraCapturePhotosTest(testNum: string, testCameraId: number,
           await cameraCaptureRelyOnNum(photoOutput, capturePhotoNum, newTitle);
           capturePhotoTotalNum++;
           console.info(`${testNum} capturePhotoNum is ${capturePhotoTotalNum}`);
-          await sleep(2000);
+          await sleep(3000);
           offPhotoOutputPhotoAssetAvailable(photoOutput);
           
           //恢复过程
           offCaptureReady(photoOutput);
           offPreviewOutputFrameStart(previewOutPut!);
           await stopSession(session);
+          console.info(`${testNum} stopSession is finish`);
           await releaseInPutStream(cameraInput);
           await releaseOutPutStream(previewOutPut)
           await releaseOutPutStream(photoOutput)
           await releaseSession(session)
-          await sleep(200);
+          await sleep(500);
         } catch (error) {
           if (previewOutPut != undefined) {
             offPreviewOutputFrameStart(previewOutPut!);
@@ -140,7 +141,7 @@ async function cameraCapturePhotosTest(testNum: string, testCameraId: number,
           await releaseOutPutStream(previewOutPut)
           await releaseOutPutStream(photoOutput)
           await releaseSession(session)
-          console.error(`${testNum} error is ${error}`)
+          console.error(`${testNum} error is ${JSON.stringify(error)}`)
           expect().assertFail();
         }
       }
@@ -154,7 +155,7 @@ async function cameraCapturePhotosTest(testNum: string, testCameraId: number,
     await helperInstance.release();
     return true;
   } catch (error) {
-    console.error(`${testNum} error is ${error}`)
+    console.error(`${testNum} error is ${JSON.stringify(error)}`)
     expect().assertFail();
     return false;
   }
