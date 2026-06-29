@@ -54,7 +54,7 @@ export default function APIremoveGestureByTag() {
     it('APIremoveGestureByTag_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('APIremoveGestureByTag_0100 START');
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('APIremoveGestureByTag_Text01');
+      let strJson = getInspectorByKey('APIremoveGestureByTag' + '_Text01');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[APIremoveGestureByTag_0100] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.content).assertEqual('init');

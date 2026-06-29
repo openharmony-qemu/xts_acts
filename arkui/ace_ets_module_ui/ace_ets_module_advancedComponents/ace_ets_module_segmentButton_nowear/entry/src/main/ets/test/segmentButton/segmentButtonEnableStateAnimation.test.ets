@@ -15,9 +15,10 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
-import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation,
-  ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
+import Utils from '../Utils';
+
+const UI_EVENT_CLICK: number = 10;
 
 export default function segmentButtonEnableStateAnimation() {
   describe('segmentButtonEnableStateAnimation', () => {
@@ -27,10 +28,10 @@ export default function segmentButtonEnableStateAnimation() {
         url: "MainAbility/pages/segmentButton/segmentButtonEnableStateAnimation",
       }
       try {
-        router.clear();
         let pages = router.getState();
         console.info("get current pages:" + JSON.stringify(pages));
-        if (!("segmentButtonEnableStateAnimation" == pages.name)) {
+        if (pages.name !== "segmentButtonEnableStateAnimation") {
+          router.clear();
           console.info("get segmentButtonEnableStateAnimation pages.name:" + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -57,15 +58,15 @@ export default function segmentButtonEnableStateAnimation() {
      */
     it('segmentButtonEnableStateAnimation_001', Level.LEVEL0, async (done: Function) => {
       console.log("[segmentButtonEnableStateAnimationt_001] START");
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('true'));
-      await button.click();
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
+      expect(sendEventByKey('segmentButtonEnableStateAnimation_true', UI_EVENT_CLICK, '')).assertTrue();
+      await CommonFunc.sleep(1500);
 
-      let textJ = getInspectorByKey('text1');
-      let text: ESObject = JSON.parse(textJ);
-
-      expect(text.$attrs.content).assertEqual('true');
+      let enabled: boolean | undefined = Utils.resolveEnableStateAnimationAttr(
+        'segmentButtonEnableStateAnimation_target', 'text1', 'segmentButtonEnableStateAnimation_001'
+      );
+      expect(enabled !== undefined).assertTrue();
+      expect(enabled).assertEqual(true);
       console.log("[segmentButtonEnableStateAnimationt_001] END");
       done();
     })

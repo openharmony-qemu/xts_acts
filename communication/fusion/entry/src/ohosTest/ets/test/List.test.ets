@@ -14,7 +14,9 @@
  */
 
 import fusionAgentTest from './FusionpartnerAgent.test';
+import RangingTest from './FusionRanging.test';
 
 export default function testsuite() {
  	fusionAgentTest();
+	RangingTest();
 }

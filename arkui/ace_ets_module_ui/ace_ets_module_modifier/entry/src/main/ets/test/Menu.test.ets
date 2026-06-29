@@ -125,7 +125,7 @@ export default function MenuJsunit() {
 
       console.info('ArkUX_Stage_Menu_attrs_0103 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('menu' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
 

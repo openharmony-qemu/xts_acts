@@ -58,10 +58,13 @@ import DumpObject from './DumpObjectTest/DumpObject.test';
 import GlobalReusePoolTest from './uiutilsTest/GlobalReusePool.test';
 import GlobalReusePool002Test from './uiutilsTest/GlobalReusePool002.test';
 import GlobalReusePool003Test from './uiutilsTest/GlobalReusePool003.test';
+import GlobalReusePool004Test from './uiutilsTest/GlobalReusePool004.test';
+import AddMonitorWildcard2 from './AddMonitorTest/AddMonitorWildcard2.test';
 
 
 export default function testsuite(): void {
   ArrayLikeStringTest(); 
+  GlobalReusePool004Test();
   //RepeatCloseReuseTest0110(); 
   //RepeatLazyTest0150();  
   //repeatReusableFalse(); 
@@ -91,6 +94,7 @@ export default function testsuite(): void {
   PersistenceV2AbnormalDefaultSubCreatorsTest();
   PersistenceV2NotifyOnErrorTest();
   AddMonitorWildcard();
+  AddMonitorWildcard2();
   MonitorWildcards();
   AddMonitorWildcardUnerfined();
   componentLifecycleDecoratorsTest();

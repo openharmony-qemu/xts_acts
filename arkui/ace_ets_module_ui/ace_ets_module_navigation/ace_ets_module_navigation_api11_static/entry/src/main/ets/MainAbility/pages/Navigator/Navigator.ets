@@ -29,19 +29,19 @@ struct navigator_testcase {
       Navigation({}) {
         Text('Navigator test  go to Navigator， back called')
       }
-      .key('navigator')
+      .key('Navigator_Navigator_navigator')
 
 
       Navigation({}) {
         Text('Navigator test  go to Navigator, router called')
       }
-      .key('navigator2')
+      .key('Navigator_Navigator_navigator2')
 
 
       Navigation({}) {
         Text('Navigator test  go to Navigator，changed called')
       }
-      .key('navigator3')
+      .key('Navigator_Navigator_navigator3')
 
     }.width(300)
     .height(300)

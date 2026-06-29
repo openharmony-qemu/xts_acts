@@ -3397,18 +3397,19 @@ export default function AVPlayerLocalTest() {
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_STOP_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG,'SUB_MULTIMEDIA_MEDIA_AVPLAYER_STOP_static_0100 begin');
       avPlayer = await media.createAVPlayer();
-      let currentState = avPlayer!.state;
-      console.info(TAG, 'Initial state: ' + currentState);
-      expect(currentState).assertEqual(IDLE);
-      await avPlayer!.stop().then(() => {
-        console.info(TAG, 'stop() should not succeed in IDLE state');
-        expect().assertFail();
-      }).catch((err: Error) => {
-        console.info(TAG, 'stop() failed with error code: ' + err.code);
-        expect(err.code).assertEqual(5400102);
-      });
-      console.info(TAG,'SUB_MULTIMEDIA_MEDIA_AVPLAYER_STOP_static_0100 end');
-      done();
+      try {
+        let currentState = avPlayer!.state;
+        console.info(TAG, 'Initial state: ' + currentState);
+        expect(currentState).assertEqual(IDLE);
+        await avPlayer!.stop().then(() => {
+          console.info(TAG, 'stop() should not succeed in IDLE state');
+          expect().assertFail();
+        });
+      } catch (error) {
+        console.info(TAG, 'stop() failed with error code: ' + error.code + error.message);
+        expect(error.code).assertEqual(5400102);
+        done();
+      }
     });
 
     /**
@@ -3450,17 +3451,17 @@ export default function AVPlayerLocalTest() {
             });
             break;
           case RELEASED:
-            console.info('case PREPARED');
-            avPlayer!.reset().then(() => {
-              console.info(TAG, testName + 'Reset Succeeded')
-              expect().assertFail();
+            console.info('case RELEASED');
+            try {
+              avPlayer!.reset().then(() => {
+                console.info(TAG, testName + 'Reset Succeeded')
+                expect().assertFail();
+              });
+            } catch (error) {
+              console.info(TAG, 'stop() failed with error code: ' + error.code + error.message);
+              expect(error.code).assertEqual(5400102);
               done();
-            }).catch((err: Error) => {
-              let businessError = err as BusinessError;
-              console.error(TAG, testName + 'Reset failed, error code: ' + businessError.message);
-              expect(businessError.code).assertEqual(5400102);
-              done();
-            });
+            }
             break;
         }
       });

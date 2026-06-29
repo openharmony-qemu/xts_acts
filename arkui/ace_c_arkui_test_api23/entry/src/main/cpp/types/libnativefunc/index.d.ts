@@ -165,3 +165,15 @@ export const WaterFlowEmptyTest_001: () => number;
 export const WaterFlowEmptyTest_002: () => number;
 export const WaterFlowEmptyTest_003: () => number;
 export const WaterFlowEmptyTest_004: () => number;
+
+export const TestContainerPickerDisplayedItemCount001: () => number;
+export const TestContainerPickerDisplayedItemCount002: () => number;
+export const TestContainerPickerDisplayedItemCount003: () => number;
+export const TestContainerPickerDisplayedItemCount004: () => number;
+export const TestContainerPickerDisplayedItemCount005: () => number;
+
+export const TestContainerPickerItemHeight001: () => number;
+export const TestContainerPickerItemHeight002: () => number;
+export const TestContainerPickerItemHeight003: () => number;
+export const TestContainerPickerItemHeight004: () => number;
+export const TestContainerPickerItemHeight005: () => number;

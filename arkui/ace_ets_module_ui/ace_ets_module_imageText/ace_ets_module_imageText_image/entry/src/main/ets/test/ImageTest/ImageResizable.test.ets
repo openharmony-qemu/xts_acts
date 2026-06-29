@@ -54,7 +54,7 @@ export default function ImageResizableTest() {
     it('ImageResizableTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('[ImageResizableTest_001] START');
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('ImageResizable_Image1');
+      let strJson = getInspectorByKey('ImageResizable' + '_Image1');
       await CommonFunc.sleep(200);
       let obj: ESObject = JSON.parse(strJson);
       console.info('[ImageResizableTest_001] component obj is: ' + JSON.stringify(obj));

@@ -32,6 +32,7 @@ struct imageAnimator16 {
         .width(400)
         .height(400)
         .id('imageAnimator16')
+        .key('imageAnimator16')
     }
     .backgroundColor(Color.Black)
   }

@@ -55,7 +55,7 @@ struct TextTimerExample {
     Column() {
       Button("change value").onClick((e: ClickEvent) => {
         (this.customModifier as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("textTimer_changeButton")
       Button('Log Json Data')
         .onClick((e: ClickEvent) => {
           console.log(inspector.getInspectorByKey('TextTimerKey1'))

@@ -64,8 +64,8 @@ export default function grid_RowCol_ItemPositionTest() {
       let secondGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPosition02');
       let thirdGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPosition03');
       let fourthGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPosition04');
-      let gridContainer: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPosition_Container01');
-      let gridContainerStrJson = getInspectorByKey('Grid_RowCol_ItemPosition_Container01');
+      let gridContainer: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPosition' + '_Container01');
+      let gridContainerStrJson = getInspectorByKey('Grid_RowCol_ItemPosition' + '_Container01');
 
       expect(JSON.parse(gridContainerStrJson).$type).assertEqual('Grid');
 

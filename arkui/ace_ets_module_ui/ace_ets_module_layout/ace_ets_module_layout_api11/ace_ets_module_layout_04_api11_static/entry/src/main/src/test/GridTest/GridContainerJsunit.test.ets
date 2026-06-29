@@ -70,7 +70,7 @@ export default function gridContainerJsunit() {
      */
 it('testGridContainer010_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testGridContainer010_static_01 START');
-      let strJson = inspector.getInspectorByKey('gridContainer');
+      let strJson = inspector.getInspectorByKey('GridContainer' + '_gridContainer');
      let obj = JSON.parseJsonElement(strJson);
      console.info("component obj is: " + JSON.stringify(obj));
      expect(obj.getString('$type')).assertEqual('GridCol');

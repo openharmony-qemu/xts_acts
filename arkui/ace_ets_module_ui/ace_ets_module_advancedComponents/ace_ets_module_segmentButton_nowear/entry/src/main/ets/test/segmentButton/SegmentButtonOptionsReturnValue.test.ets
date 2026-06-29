@@ -33,8 +33,8 @@ export default function SegmentButtonOptionsReturnValue() {
         url: "MainAbility/pages/segmentButton/SegmentButtonOptionsReturnValue",
       }
       try {
-        router.clear();
         let pages = router.getState();
+        router.clear();
         console.info("get current pages:" + JSON.stringify(pages));
         if (!("SegmentButtonOptionsReturnValue" == pages.name)) {
           console.info("get SegmentButtonOptionsReturnValue pages.name:" + JSON.stringify(pages.name));
@@ -64,7 +64,7 @@ export default function SegmentButtonOptionsReturnValue() {
     it('SegmentButtonOptionsReturnValue_001',  Level.LEVEL0, async (done: Function) => {
       console.info('[SegmentButtonOptionsReturnValue_001] START');
       await CommonFunc.sleep(2000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       let btn: Component = await driver.findComponent(ON.id("SBOShift"));
       await CommonFunc.sleep(1000);
       await btn.click();
@@ -89,7 +89,7 @@ export default function SegmentButtonOptionsReturnValue() {
     it('SegmentButtonOptionsReturnValue_002', Level.LEVEL0, async (done: Function) => {
       console.info('[SegmentButtonOptionsReturnValue_002] START');
       await CommonFunc.sleep(2000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       let btn: Component = await driver.findComponent(ON.id("SBOPop"));
       await CommonFunc.sleep(1000);
       await btn.click();
@@ -113,7 +113,7 @@ export default function SegmentButtonOptionsReturnValue() {
     it('SegmentButtonOptionsReturnValue_003', Level.LEVEL0, async (done: Function) => {
       console.info('[SegmentButtonOptionsReturnValue_003] START');
       await CommonFunc.sleep(2000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       let btn: Component = await driver.findComponent(ON.id("SBOSplice"));
       await CommonFunc.sleep(1000);
       await btn.click();

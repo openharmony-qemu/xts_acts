@@ -22,6 +22,7 @@ struct imageSourceSizeUndefinedAndNullTest {
         Column({ space: 5 }) {
           Image($r('app.media.tree'))
             .id('imageSourceSizeUndefined')
+            .key('imageSourceSizeUndefined')
             .sourceSize(undefined)
             .border({ width:2, color: Color.Black })
             .width(150)
@@ -31,6 +32,7 @@ struct imageSourceSizeUndefinedAndNullTest {
         Column({ space: 5 }) {
           Image($r('app.media.tree'))
             .id('imageSourceSizeNull')
+            .key('imageSourceSizeNull')
             .sourceSize(null)
             .border({ width:2, color: Color.Black })
             .width(150)

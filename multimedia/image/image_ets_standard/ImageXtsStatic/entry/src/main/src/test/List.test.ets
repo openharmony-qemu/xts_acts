@@ -103,6 +103,7 @@ import pixelMapRotateTest from './testStatic/image/pixelMap/rotate.test';
 import pixelMapScaleTest from './testStatic/image/pixelMap/scale.test';
 import pixelMapTranslateTest from './testStatic/image/pixelMap/translate.test';
 import pixelMapWritePixelsTest from './testStatic/image/pixelMap/writePixels.test';
+import ImagePictureAuxiliaryPicture from './testStatic/image/image/ImagePictureAuxiliaryPicture.test';
 import ImagePropertyKeyArrayTest from  "./testStatic/image/imageSource/ImagePropertyKeyArrayTest.test";
 
 export default function testsuite(): void {
@@ -113,9 +114,9 @@ export default function testsuite(): void {
   AuxiliaryPictureGetAuxiliaryPictureInfoTest();
   CrateImageCreatorTest();
   MakerNoteHuaweiMetadataTest();
-  //ImageReceiverSupp();
+  ImageReceiverSupp();
   CrateImageSourceTest();
-  //ImageGetComponentSupp();
+  ImageGetComponentSupp();
   ImageMetadataTestStatic();
   createAuxiliaryPictureTest();
   ImageCreateImageCreatorTestSupp();
@@ -204,6 +205,7 @@ export default function testsuite(): void {
   pixelMapScaleTest();
   pixelMapTranslateTest();
   pixelMapWritePixelsTest();
+  ImagePictureAuxiliaryPicture();
   ImagePropertyKeyArrayTest();
 }
 

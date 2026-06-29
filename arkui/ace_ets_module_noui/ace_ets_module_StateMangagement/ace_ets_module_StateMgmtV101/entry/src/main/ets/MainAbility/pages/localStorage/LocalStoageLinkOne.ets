@@ -47,12 +47,12 @@ struct LocalStoageLinkOne {
       Button(`点击动态更改本地初始值`).onClick(()=>{
         this.storLink2 += 10
         this.vae = storage224.get('PropB')
-      }).key('button_changeInitialValue').height('5%')
+      }).key('LocalStoageLinkOne_button_changeInitialValue').height('5%')
       
       Button(`点击更改localstorage值`).onClick(()=>{
         storage224.set('PropB', 666)
         this.vae = storage224.get('PropB')
-      }).key('button_changeLocalStorageValue').height('5%')
+      }).key('LocalStoageLinkOne_button_changeLocalStorageValue').height('5%')
       
       
       

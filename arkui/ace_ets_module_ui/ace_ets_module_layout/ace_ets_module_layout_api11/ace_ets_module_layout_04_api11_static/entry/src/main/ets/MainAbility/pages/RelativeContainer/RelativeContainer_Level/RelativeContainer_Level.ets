@@ -47,7 +47,7 @@ struct RelativeContainer_Level {
           .alignRules({
             middle: { anchor: "__container__", align: HorizontalAlign.Center }
           } as AlignRuleOption)
-          .key("RelativeContainer_Level_bt1")
+          .key("RelativeContainer_Level_RelativeContainer_Level_bt1_01")
           .id("RelativeContainer_Level_bt1")
           .borderWidth(5)
           .borderColor(Color.Black)
@@ -60,7 +60,7 @@ struct RelativeContainer_Level {
             top: { anchor: "RelativeContainer_Level_bt1", align: VerticalAlign.Bottom } ,
             right: { anchor: "RelativeContainer_Level_bt1", align: this.addalign }
           } as AlignRuleOption)
-          .key("RelativeContainer_Level_bt1")
+          .key("RelativeContainer_Level_RelativeContainer_Level_bt1_02")
           .id("RelativeContainer_Level_tx2")
           .borderWidth(2)
           .borderColor(Color.Green)

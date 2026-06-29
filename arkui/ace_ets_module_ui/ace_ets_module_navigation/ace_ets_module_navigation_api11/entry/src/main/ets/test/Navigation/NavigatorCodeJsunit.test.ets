@@ -121,7 +121,7 @@ export default function navigatorCodeJsunit() {
       } catch (err) {
         console.info("[test_NavigatorClick_003] on events_emitter err : " + JSON.stringify(err));
       }
-      console.info('[test_NavigatorClick_003] sendEventByKey ' + JSON.stringify(sendEventByKey('button', 10, "")));
+      console.info('[test_NavigatorClick_003] sendEventByKey ' + JSON.stringify(sendEventByKey('NavigatorCode' + '_button', 10, "")));
       await Utils.sleep(1000)
       console.info('[test_NavigatorClick_003] testSendTouchEvent END');
       done();

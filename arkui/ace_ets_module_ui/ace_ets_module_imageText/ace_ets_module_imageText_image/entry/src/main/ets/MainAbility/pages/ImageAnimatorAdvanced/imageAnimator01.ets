@@ -64,6 +64,7 @@ struct imageAnimator01 {
           console.info('imageAnimator01 Finish')
         })
         .id('imageAnimator01')
+        .key('imageAnimator01')
     }
     .backgroundColor(Color.Black)
   }

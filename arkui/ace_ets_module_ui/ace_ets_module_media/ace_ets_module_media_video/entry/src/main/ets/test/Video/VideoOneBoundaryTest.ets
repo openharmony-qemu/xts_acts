@@ -52,19 +52,19 @@ export default function VideoOneBoundaryTest() {
      */
     it('VideoOneBoundaryTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[VideoOneBoundaryTest_0100] START');
-      let driver = await Driver.create()
+      let driver = await UiDriver.create()
       await CommonFunc.sleep(1000);
 
-      let button = await driver.findComponent(ON.id('VideoOneBoundaryStart'));
+      let button = await driver.findComponent(BY.key('VideoOneBoundaryStart'));
       await button.click();
       await Utils.sleep(2000)
 
-      let button1 = await driver.findComponent(ON.id('setCurrentTime_0'));
+      let button1 = await driver.findComponent(BY.key('setCurrentTime_0'));
       await button1.click();
       await Utils.sleep(1000)
       let strJson1 = getInspectorByKey('VideoOneBoundaryText');
 
-      let button2 = await driver.findComponent(ON.id('setCurrentTime_-1'));
+      let button2 = await driver.findComponent(BY.key('setCurrentTime_-1'));
       await button2.click();
       await Utils.sleep(1000)
       let strJson2 = getInspectorByKey('VideoOneBoundaryText');

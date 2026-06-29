@@ -29,6 +29,10 @@ import {
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
+function expectAsinReference(actual: double, expected: double, tolerance: double): void {
+  let difference: double = Utils.getAbsDiff(actual, expected);
+  expect(difference < tolerance).assertTrue();
+}
 
 export default function mathAsinTest(): void {
   describe('MathAsinTest', (): void => {
@@ -116,32 +120,28 @@ export default function mathAsinTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_0600
      * @tc.name testMathAsin006
-     * @tc.desc Verify asin method with double near-upper-bound 0.9999 for result approaching PI/2
+     * @tc.desc Verify asin method with double near-upper-bound 0.9999 returns the reference value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathAsin006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: double = 0.9999;
-      let halfPi: double = Math.PI / 2.0;
       let result: double = Math.asin(inputValue);
-      expect(result > 0.0).assertTrue();
-      expect(result < halfPi).assertTrue();
+      expectAsinReference(result, 1.5566540733173846, 1.0e-12);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_0700
      * @tc.name testMathAsin007
-     * @tc.desc Verify asin method with double near-lower-bound -0.9999 for result approaching negative PI/2
+     * @tc.desc Verify asin method with double near-lower-bound -0.9999 returns the reference value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathAsin007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: double = -0.9999;
-      let halfPi: double = Math.PI / 2.0;
       let result: double = Math.asin(inputValue);
-      expect(result < 0.0).assertTrue();
-      expect(result > -halfPi).assertTrue();
+      expectAsinReference(result, -1.5566540733173846, 1.0e-12);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_0800
@@ -160,55 +160,46 @@ export default function mathAsinTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_0900
      * @tc.name testMathAsin009
-     * @tc.desc Verify asin method with float positive value 0.5 for result within expected range
+     * @tc.desc Verify asin method with float positive value 0.5 returns the float-rounded reference value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathAsin009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: float = Double.toFloat(0.5);
-      let lowerBound: float = Double.toFloat(0.5);
-      let upperBound: float = Double.toFloat(0.55);
       let result: float = Math.asin(inputValue);
-      expect(result > lowerBound).assertTrue();
-      expect(result < upperBound).assertTrue();
+      expectAsinReference(result, 0.5235987901687622, 1.0e-6);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_1000
      * @tc.name testMathAsin010
-     * @tc.desc Verify asin method with float upper bound 1.0f for result within expected PI/2 range
+     * @tc.desc Verify asin method with float upper bound 1.0f returns the float-rounded PI/2 value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathAsin010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: float = Double.toFloat(1.0);
-      let lowerBound: float = Double.toFloat(1.5);
-      let upperBound: float = Double.toFloat(1.6);
       let result: float = Math.asin(inputValue);
-      expect(result > lowerBound).assertTrue();
-      expect(result < upperBound).assertTrue();
+      expectAsinReference(result, 1.5707963705062866, 1.0e-6);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_1100
      * @tc.name testMathAsin011
-     * @tc.desc Verify asin method with float lower bound -1.0f for result within expected negative PI/2 range
+     * @tc.desc Verify asin method with float lower bound -1.0f returns the float-rounded negative PI/2 value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathAsin011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: float = -Double.toFloat(1.0);
-      let lowerBound: float = -Double.toFloat(1.6);
-      let upperBound: float = -Double.toFloat(1.5);
       let result: float = Math.asin(inputValue);
-      expect(result > lowerBound).assertTrue();
-      expect(result < upperBound).assertTrue();
+      expectAsinReference(result, -1.5707963705062866, 1.0e-6);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_1200
      * @tc.name testMathAsin012
-     * @tc.desc Verify asin method with float out-of-domain lower bound -2.0f for NaN return
+     * @tc.desc Verify asin method with float out-of-domain lower bound -2.0f for Float.NaN return
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -222,7 +213,7 @@ export default function mathAsinTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_1300
      * @tc.name testMathAsin013
-     * @tc.desc Verify asin method with double input for finite double return value
+     * @tc.desc Verify asin method with double input 0.5 returns the PI/6 reference value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -230,13 +221,12 @@ export default function mathAsinTest(): void {
     it('testMathAsin013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: double = 0.5;
       let result: double = Math.asin(inputValue);
-      let isFinite: boolean = Utils.isFiniteValue(result);
-      expect(isFinite).assertTrue();
+      expectAsinReference(result, Math.PI / 6.0, 1.0e-15);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_1400
      * @tc.name testMathAsin014
-     * @tc.desc Verify asin method with float input for valid float return value within range
+     * @tc.desc Verify asin method with float input 0.5 returns the float-rounded reference value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -244,17 +234,16 @@ export default function mathAsinTest(): void {
     it('testMathAsin014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: float = Double.toFloat(0.5);
       let result: float = Math.asin(inputValue);
-      expect(result > Double.toFloat(0.0)).assertTrue();
-      expect(result < Double.toFloat(1.0)).assertTrue();
+      expectAsinReference(result, 0.5235987901687622, 1.0e-6);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_1500
      * @tc.name testMathAsin015
-     * @tc.desc Verify asin method with boundary inputs for all results within [-PI/2, PI/2] range
+     * @tc.desc Verify asin method with boundary inputs returns exact PI/2, negative PI/2, and zero
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-    */
+     */
     it('testMathAsin015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let upperBoundaryInput: double = 1.0;
       let lowerBoundaryInput: double = -1.0;
@@ -263,12 +252,9 @@ export default function mathAsinTest(): void {
       let upperBoundaryResult: double = Math.asin(upperBoundaryInput);
       let lowerBoundaryResult: double = Math.asin(lowerBoundaryInput);
       let zeroResult: double = Math.asin(zeroInput);
-      expect(upperBoundaryResult <= halfPi).assertTrue();
-      expect(upperBoundaryResult >= -halfPi).assertTrue();
-      expect(lowerBoundaryResult <= halfPi).assertTrue();
-      expect(lowerBoundaryResult >= -halfPi).assertTrue();
-      expect(zeroResult <= halfPi).assertTrue();
-      expect(zeroResult >= -halfPi).assertTrue();
+      expect(upperBoundaryResult).assertEqual(halfPi);
+      expect(lowerBoundaryResult).assertEqual(-halfPi);
+      expect(zeroResult).assertEqual(0.0);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_1600
@@ -287,11 +273,11 @@ export default function mathAsinTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_1700
      * @tc.name testMathAsin017
-     * @tc.desc Verify asin method with distinct double inputs for distinct output values
+     * @tc.desc Verify asin method with distinct double inputs returns ordered reference values
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-    */
+     */
     it('testMathAsin017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let zeroInput: double = 0.0;
       let middleDomainInput: double = 0.5;
@@ -299,18 +285,18 @@ export default function mathAsinTest(): void {
       let zeroInputResult: double = Math.asin(zeroInput);
       let middleDomainResult: double = Math.asin(middleDomainInput);
       let upperBoundaryResult: double = Math.asin(upperBoundaryInput);
-      expect(zeroInputResult != middleDomainResult).assertTrue();
-      expect(middleDomainResult != upperBoundaryResult).assertTrue();
-      expect(zeroInputResult != upperBoundaryResult).assertTrue();
+      expect(zeroInputResult).assertEqual(0.0);
+      expectAsinReference(middleDomainResult, Math.PI / 6.0, 1.0e-15);
+      expect(upperBoundaryResult).assertEqual(Math.PI / 2.0);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_1800
      * @tc.name testMathAsin018
-     * @tc.desc Verify asin method with double out-of-domain upper values for NaN return
+     * @tc.desc Verify asin method with double out-of-domain upper values for Double.NaN return
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-    */
+     */
     it('testMathAsin018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let slightlyAboveDomainInput: double = 1.5;
       let farAboveDomainInput: double = 100.0;
@@ -322,11 +308,11 @@ export default function mathAsinTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_1900
      * @tc.name testMathAsin019
-     * @tc.desc Verify asin method with double out-of-domain lower values for NaN return
+     * @tc.desc Verify asin method with double out-of-domain lower values for Double.NaN return
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-    */
+     */
     it('testMathAsin019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let slightlyBelowDomainInput: double = -1.5;
       let farBelowDomainInput: double = -100.0;
@@ -338,7 +324,7 @@ export default function mathAsinTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_2000
      * @tc.name testMathAsin020
-     * @tc.desc Verify asin method with double special values NaN Infinity and -Infinity for NaN return
+     * @tc.desc Verify asin method with special values Double.NaN, Double.POSITIVE_INFINITY, and Double.NEGATIVE_INFINITY for Double.NaN return
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -357,7 +343,7 @@ export default function mathAsinTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_2100
      * @tc.name testMathAsin021
-     * @tc.desc Verify asin method with float out-of-domain value for NaN return
+     * @tc.desc Verify asin method with float out-of-domain value for Float.NaN return
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -386,7 +372,7 @@ export default function mathAsinTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_2300
      * @tc.name testMathAsin023
-     * @tc.desc Verify asin method with float typed variable invokes float overload
+     * @tc.desc Verify asin method with float typed variable invokes float overload reference value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -394,7 +380,7 @@ export default function mathAsinTest(): void {
     it('testMathAsin023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: float = Double.toFloat(0.5);
       let result: float = Math.asin(inputValue);
-      expect(result > Double.toFloat(0.0)).assertTrue();
+      expectAsinReference(result, 0.5235987901687622, 1.0e-6);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_2400
@@ -405,34 +391,27 @@ export default function mathAsinTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathAsin024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let dInput: double = 0.5;
       let fInput: float = Double.toFloat(0.5);
-      let dLowerBound: double = 0.52;
-      let dUpperBound: double = 0.53;
-      let fLowerBound: float = Double.toFloat(0.5);
-      let fUpperBound: float = Double.toFloat(0.55);
-      let resultDouble: double = Math.asin(0.5);
+      let resultDouble: double = Math.asin(dInput);
       let resultFloat: float = Math.asin(fInput);
-      expect(resultDouble > dLowerBound).assertTrue();
-      expect(resultDouble < dUpperBound).assertTrue();
-      expect(resultFloat > fLowerBound).assertTrue();
-      expect(resultFloat < fUpperBound).assertTrue();
+      let precisionDifference: double = Utils.getAbsDiff(resultDouble, resultFloat);
+      expectAsinReference(resultDouble, 0.5235987755982989, 1.0e-15);
+      expectAsinReference(resultFloat, 0.5235987901687622, 1.0e-6);
+      expect(precisionDifference > 0.0).assertTrue();
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_2500
      * @tc.name testMathAsin025
-     * @tc.desc Verify asin method with double domain-in value for finite result within range
+     * @tc.desc Verify asin method with double domain-in value 0.3 returns the reference value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathAsin025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: double = 0.3;
-      let halfPi: double = Math.PI / 2.0;
       let result: double = Math.asin(inputValue);
-      let isFinite: boolean = Utils.isFiniteValue(result);
-      expect(isFinite).assertTrue();
-      expect(result > -halfPi).assertTrue();
-      expect(result < halfPi).assertTrue();
+      expectAsinReference(result, 0.3046926540153975, 1.0e-12);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_2600
@@ -454,7 +433,7 @@ export default function mathAsinTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-    */
+     */
     it('testMathAsin027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.5;
       let firstCallResult: double = Math.asin(x);
@@ -470,7 +449,7 @@ export default function mathAsinTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-    */
+     */
     it('testMathAsin028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = Double.toFloat(0.5);
       let firstCallResult: float = Math.asin(x);
@@ -482,11 +461,11 @@ export default function mathAsinTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_2900
      * @tc.name testMathAsin029
-     * @tc.desc Verify asin method with double out-of-domain repeated calls consistently return NaN
+     * @tc.desc Verify asin method with double out-of-domain repeated calls consistently return Double.NaN
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-    */
+     */
     it('testMathAsin029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 2.0;
       let firstCallResult: double = Math.asin(x);
@@ -514,7 +493,7 @@ export default function mathAsinTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_3100
      * @tc.name testMathAsin031
-     * @tc.desc Verify asin method with double slightly above upper bound by machine epsilon for NaN return
+     * @tc.desc Verify asin method with double slightly above upper bound by machine epsilon for Double.NaN return
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -527,7 +506,7 @@ export default function mathAsinTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_3200
      * @tc.name testMathAsin032
-     * @tc.desc Verify asin method with double slightly below lower bound by machine epsilon for NaN return
+     * @tc.desc Verify asin method with double slightly below lower bound by machine epsilon for Double.NaN return
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -540,7 +519,7 @@ export default function mathAsinTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_3300
      * @tc.name testMathAsin033
-     * @tc.desc Verify asin method with double tiny positive value near zero for approximate linearity
+     * @tc.desc Verify asin method with double tiny positive value near zero returns the reference value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -548,13 +527,12 @@ export default function mathAsinTest(): void {
     it('testMathAsin033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let tinyPos: double = 1.0e-10;
       let result: double = Math.asin(tinyPos);
-      expect(result > 0.0).assertTrue();
-      expect(result < 1.0e-9).assertTrue();
+      expectAsinReference(result, 1.0e-10, 1.0e-20);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_3400
      * @tc.name testMathAsin034
-     * @tc.desc Verify asin method with double tiny negative value near zero for approximate linearity
+     * @tc.desc Verify asin method with double tiny negative value near zero returns the reference value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -562,8 +540,7 @@ export default function mathAsinTest(): void {
     it('testMathAsin034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let tinyNeg: double = -1.0e-10;
       let result: double = Math.asin(tinyNeg);
-      expect(result < 0.0).assertTrue();
-      expect(result > -1.0e-9).assertTrue();
+      expectAsinReference(result, -1.0e-10, 1.0e-20);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_3500
@@ -572,7 +549,7 @@ export default function mathAsinTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-    */
+     */
     it('testMathAsin035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let zeroInput: double = 0.0;
       let positiveHalfInput: double = 0.5;
@@ -635,7 +612,7 @@ export default function mathAsinTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-    */
+     */
     it('testMathAsin038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let zeroInput: double = 0.0;
       let lowPositiveInput: double = 0.3;
@@ -1452,7 +1429,7 @@ export default function mathAsinTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_9000
      * @tc.name testMathAsin090
-     * @tc.desc Verify asin method with double out-of-domain input 2.0 for NaN return
+     * @tc.desc Verify asin method with double out-of-domain input 2.0 for Double.NaN return
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -1465,7 +1442,7 @@ export default function mathAsinTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_9100
      * @tc.name testMathAsin091
-     * @tc.desc Verify asin method with double out-of-domain input 1.0001 for NaN return
+     * @tc.desc Verify asin method with double out-of-domain input 1.0001 for Double.NaN return
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -1478,7 +1455,7 @@ export default function mathAsinTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_9200
      * @tc.name testMathAsin092
-     * @tc.desc Verify asin method with double out-of-domain input -2.0 for NaN return
+     * @tc.desc Verify asin method with double out-of-domain input -2.0 for Double.NaN return
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -1491,7 +1468,7 @@ export default function mathAsinTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_9300
      * @tc.name testMathAsin093
-     * @tc.desc Verify asin method with double out-of-domain input -1.0001 for NaN return
+     * @tc.desc Verify asin method with double out-of-domain input -1.0001 for Double.NaN return
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -1504,7 +1481,7 @@ export default function mathAsinTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_9400
      * @tc.name testMathAsin094
-     * @tc.desc Verify asin method with double NaN input for NaN propagation semantic
+     * @tc.desc Verify asin method with Double.NaN input for Double.NaN propagation semantic
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -1528,6 +1505,60 @@ export default function mathAsinTest(): void {
       let expected: double = 0.7853981633974484;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-12).assertTrue();
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_9600
+     * @tc.name testMathAsin096
+     * @tc.desc Verify asin method widened byte one input approximates the upper-bound arcsine result within tolerance
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathAsin096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: byte = Int.toByte(1);
+      let expectedValue: double = Math.PI / 2.0;
+      let result: double = Math.asin(inputValue);
+      let diff: double = Utils.getAbsDiff(result, expectedValue);
+      expect(diff < 1.0e-6).assertTrue();
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_9700
+     * @tc.name testMathAsin097
+     * @tc.desc Verify asin method widened byte negative one input approximates the lower-bound arcsine result within tolerance
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathAsin097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: byte = Int.toByte(-1);
+      let expectedValue: double = -Math.PI / 2.0;
+      let result: double = Math.asin(inputValue);
+      let diff: double = Utils.getAbsDiff(result, expectedValue);
+      expect(diff < 1.0e-6).assertTrue();
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_9800
+     * @tc.name testMathAsin098
+     * @tc.desc Verify asin method widened int maximum value returns Double.NaN outside the valid domain
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathAsin098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: int = Int.MAX_VALUE;
+      expect(Utils.isNaNValue(Math.asin(inputValue))).assertTrue();
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_9900
+     * @tc.name testMathAsin099
+     * @tc.desc Verify asin method widened Long.MIN_VALUE value returns Double.NaN outside the valid domain
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathAsin099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: long = Long.MIN_VALUE;
+      expect(Utils.isNaNValue(Math.asin(inputValue))).assertTrue();
     });
   });
 }

@@ -55,6 +55,7 @@
     "MainAbility/pages/ChipGroupV2/abnormal/ChipGroupV2AbnormalSpacePadding",
     "MainAbility/pages/ChipGroupV2/abnormal/ChipGroupV2AbnormalSuffix",
     "MainAbility/pages/chipV2/abnormal/ChipV2AbnormalCombo",
-    "MainAbility/pages/ChipGroupV2/abnormal/ChipGroupV2AbnormalCombo"
+    "MainAbility/pages/ChipGroupV2/abnormal/ChipGroupV2AbnormalCombo",
+    "MainAbility/pages/ChipGroup/ChipGroupSystemMaterial2"
   ]
 }

@@ -59,15 +59,15 @@ export default function columnNesting_Space() {
       console.info('[SUB_ACE_columnNesting_Space_TEST_0100] START');
       await CommonFunc.sleep(4000);
       console.log('get Initial value')
-      let columnNesting_Space_011: RectValue = CommonFunc.getComponentRect('columnNesting_Space_011');
-      let columnNesting_Space_012: RectValue = CommonFunc.getComponentRect('columnNesting_Space_012');
-      let columnNesting_Space_013: RectValue = CommonFunc.getComponentRect('columnNesting_Space_013');
-      let columnNesting_Space_01: RectValue = CommonFunc.getComponentRect('columnNesting_Space_01');
-      let columnNesting_Space_021: RectValue = CommonFunc.getComponentRect('columnNesting_Space_021');
-      let columnNesting_Space_022: RectValue = CommonFunc.getComponentRect('columnNesting_Space_022');
-      let columnNesting_Space_023: RectValue = CommonFunc.getComponentRect('columnNesting_Space_023');
-      let columnNesting_Space_02: RectValue = CommonFunc.getComponentRect('columnNesting_Space_02');
-      let columnNesting_Space_1: RectValue = CommonFunc.getComponentRect('columnNesting_Space_1');
+      let columnNesting_Space_011: RectValue = CommonFunc.getComponentRect('columnNesting_Space' + '_011');
+      let columnNesting_Space_012: RectValue = CommonFunc.getComponentRect('columnNesting_Space' + '_012');
+      let columnNesting_Space_013: RectValue = CommonFunc.getComponentRect('columnNesting_Space' + '_013');
+      let columnNesting_Space_01: RectValue = CommonFunc.getComponentRect('columnNesting_Space' + '_01');
+      let columnNesting_Space_021: RectValue = CommonFunc.getComponentRect('columnNesting_Space' + '_021');
+      let columnNesting_Space_022: RectValue = CommonFunc.getComponentRect('columnNesting_Space' + '_022');
+      let columnNesting_Space_023: RectValue = CommonFunc.getComponentRect('columnNesting_Space' + '_023');
+      let columnNesting_Space_02: RectValue = CommonFunc.getComponentRect('columnNesting_Space' + '_02');
+      let columnNesting_Space_1: RectValue = CommonFunc.getComponentRect('columnNesting_Space' + '_1');
       console.log('assert position')
       expect(Math.floor(Math.abs((columnNesting_Space_011.left - columnNesting_Space_01.left) - (columnNesting_Space_01.right - columnNesting_Space_011.right))) <= 1)
         .assertTrue();

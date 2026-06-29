@@ -107,7 +107,7 @@ struct TogglePage {
           console.info('Component status:' + isOn)
         })
       }
-      Text(this.text).fontSize(20).margin(10).key('text')
+      Text(this.text).fontSize(20).margin(10).key('TogglePage_text')
     }.width('100%').padding(24)
   }
 }

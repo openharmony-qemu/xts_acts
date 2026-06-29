@@ -227,7 +227,7 @@ it('TextInputPageJsunit_static_0400', Level.LEVEL1, async (done: ()=>void) => {
       console.info("[TextInputPageJsunit_0400] inputText hello succ !");
 
       // Verify submit function of TextInput component
-      let textComponent1 = await driver.findComponent(ON.id('submit'));
+      let textComponent1 = await driver.findComponent(ON.id('TextInputPage' + '_submit'));
       let text1 = await (textComponent1?.getText()  as Promise<string>);
       expect(text1).assertEqual('onSubmit:');
       console.info("[TextInputPageJsunit_0400] Verify submit succ !");
@@ -259,7 +259,7 @@ it('TextInputPageJsunit_static_0400', Level.LEVEL1, async (done: ()=>void) => {
       await (textComponent4?.click() as Promise<void>)
       await (textComponent?.click() as Promise<void>)
       await CommonFunc.sleep(3000);
-      let strJson = inspector.getInspectorByKey('copy');
+      let strJson = inspector.getInspectorByKey('TextInputPage' + '_copy');
       await CommonFunc.sleep(3000);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[TextInputPageJsunit_0400] component obj is: " + JSON.stringify(obj));
@@ -279,7 +279,7 @@ it('TextInputPageJsunit_static_0400', Level.LEVEL1, async (done: ()=>void) => {
       let textComponent6 = await driver.findComponent(ON.text('剪切'));
       await (textComponent6?.click() as Promise<void>)
       await CommonFunc.sleep(3000);
-      let strJson1 = inspector.getInspectorByKey('cut');
+      let strJson1 = inspector.getInspectorByKey('TextInputPage' + '_cut');
 
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[TextInputPageJsunit_0400] component obj1 is: " + JSON.stringify(obj1));
@@ -292,7 +292,7 @@ it('TextInputPageJsunit_static_0400', Level.LEVEL1, async (done: ()=>void) => {
       let textComponent7 = await driver.findComponent(ON.text('粘贴'));
       await (textComponent7?.click() as Promise<void>)
       await CommonFunc.sleep(3000);
-      let strJson2 = inspector.getInspectorByKey('paste');
+      let strJson2 = inspector.getInspectorByKey('TextInputPage' + '_paste');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[TextInputPageJsunit_0400] component obj2 is: " + JSON.stringify(obj2));
       expect(obj2.getElement('$attrs').getString('content')).assertEqual('onPaste:hello');

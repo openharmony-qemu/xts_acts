@@ -97,10 +97,10 @@ struct TextAreaExample2 {
         })
       Text(this.text)
         .width('90%')
-        .key('text')
+        .key('textArea3_text')
 
       TextArea({ placeholder: 'input your word', text: this.text2, controller: this.controller })
-        .key('textArea2')
+        .key('textArea3_textArea2')
         .placeholderColor("rgb(0,0,225)")
         .placeholderFont({ size: 30, weight: 100, family: 'cursive', style: FontStyle.Italic })
         .textAlign(this.textAlign)

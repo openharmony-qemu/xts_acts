@@ -20,8 +20,7 @@ import {
   Row,
   Button,
   ClickEvent,
-  Web,
-  UIContext
+  Web
 } from '@ohos.arkui.component'
 import webview from '@ohos.web.webview'
 import emitter from '@ohos.events.emitter';

@@ -50,7 +50,7 @@ struct RectNe {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key('neText')
+        .key('rectNew_neText')
 
       Rect({ width: '90%', height: "50px" }).radiusHeight(20).radiusWidth(20)
         .key('Rect3')

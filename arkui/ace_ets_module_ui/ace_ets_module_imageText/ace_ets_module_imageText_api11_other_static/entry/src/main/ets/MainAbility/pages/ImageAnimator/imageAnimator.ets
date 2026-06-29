@@ -134,10 +134,10 @@ struct ImageAnimatorExample {
       Row() {
         Button('start').width('30%').onClick((e: ClickEvent) => {
           this.state = AnimationStatus.Running
-        }).key('start').id('start')
+        }).key('imageAnimator_start').id('start')
         Button('pause').width('30%').onClick((e: ClickEvent) => {
           this.state = AnimationStatus.Paused // 显示当前帧图片
-        }).key('pause').id('pause')
+        }).key('imageAnimator_pause').id('pause')
         Button('stop').width('30%').onClick((e: ClickEvent) => {
           this.state = AnimationStatus.Stopped // 显示动画的起始帧图片
         })

@@ -21,6 +21,7 @@ struct ImageAnimatorIterationsUndefinedAndNullTest {
     Column({ space: 10 }) {
       ImageAnimator()
         .id('iterationsUndefined')
+        .key('iterationsUndefined')
         .images([
           {
             src: $r('app.media.tree')
@@ -33,6 +34,7 @@ struct ImageAnimatorIterationsUndefinedAndNullTest {
 
       ImageAnimator()
         .id('iterationsNull')
+        .key('iterationsNull')
         .images([
           {
             src: $r('app.media.tree')

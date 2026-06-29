@@ -103,7 +103,7 @@ it('textAreaBC1Jsunit_static_0200', Level.LEVEL3, async (done: ()=>void) => {
       let text = await driver.findComponent(ON.id('textArea1'));
       await (text?.inputText('123') as Promise<void>);
       await CommonFunc.sleep(2000);
-      let strJson1 = inspector.getInspectorByKey('change');
+      let strJson1 = inspector.getInspectorByKey('textAreaBC1' + '_change');
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info('textAreaBC1Jsunit_0200 obj1 is: ' + obj1.getElement('$attrs').getString('content'));
       expect(obj1.getElement('$attrs').getString('content')).assertEqual('123');
@@ -114,7 +114,7 @@ it('textAreaBC1Jsunit_static_0200', Level.LEVEL3, async (done: ()=>void) => {
       await CommonFunc.sleep(2000);
       await (text?.inputText('123456') as Promise<void>);
       await CommonFunc.sleep(2000);
-      let strJson2 = inspector.getInspectorByKey('change');
+      let strJson2 = inspector.getInspectorByKey('textAreaBC1' + '_change');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info('textAreaBC1Jsunit_0200 obj2 is: ' + obj2.getElement('$attrs').getString('content'));
       expect(obj2.getElement('$attrs').getString('content')).assertEqual('123456');
@@ -138,7 +138,7 @@ it('textAreaBC1Jsunit_static_0300', Level.LEVEL3, async (done: ()=>void) => {
       let text = await driver.findComponent(ON.id('textArea1'));
       await (text?.inputText('444') as Promise<void>);
       await CommonFunc.sleep(2000);
-      let strJson1 = inspector.getInspectorByKey('change');
+      let strJson1 = inspector.getInspectorByKey('textAreaBC1' + '_change');
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info('textAreaBC1Jsunit_0300 obj1 is: ' + obj1.getElement('$attrs').getString('content'));
       expect(obj1.getElement('$attrs').getString('content')).assertEqual('444');
@@ -195,7 +195,7 @@ it('textAreaBC1Jsunit_static_0400', Level.LEVEL3, async (done: ()=>void) => {
       await (text?.inputText('rrr') as Promise<void>);
 	  await driver.triggerKey(2047)
       await CommonFunc.sleep(2000);
-      let strJson1 = inspector.getInspectorByKey('change');
+      let strJson1 = inspector.getInspectorByKey('textAreaBC1' + '_change');
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info('textAreaBC1Jsunit_0400 obj1 is: ' + obj1.getElement('$attrs').getString('content'));
       expect(obj1.getElement('$attrs').getString('content')).assertEqual('rrr');
@@ -273,7 +273,7 @@ it('textAreaBC1Jsunit_static_0600', Level.LEVEL3, async (done: ()=>void) => {
         await copy.click();
         await CommonFunc.sleep(1000);
       }
-      let textIn = await driver.findComponent(ON.id('copy'));
+      let textIn = await driver.findComponent(ON.id('textAreaBC1' + '_copy'));
       await CommonFunc.sleep(1000);
       let txt = await (textIn?.getText() as Promise<string>);
       await CommonFunc.sleep(1000);
@@ -286,7 +286,7 @@ it('textAreaBC1Jsunit_static_0600', Level.LEVEL3, async (done: ()=>void) => {
         await paste.click();
         await CommonFunc.sleep(1000);
       }
-      let textPaste = await driver.findComponent(ON.id('paste'));
+      let textPaste = await driver.findComponent(ON.id('textAreaBC1' + '_paste'));
       let text1 = await (textPaste?.getText() as Promise<string>);
       console.info('textAreaJsunit_0900 text1: ' + text1);
 
@@ -333,7 +333,7 @@ it('textAreaBC1Jsunit_static_0700', Level.LEVEL3, async (done: ()=>void) => {
         await cutComponent.click();
         await CommonFunc.sleep(1000);
       }
-      let textCut = await driver.findComponent(ON.id('cut'));
+      let textCut = await driver.findComponent(ON.id('textAreaBC1' + '_cut'));
       let text = await (textCut?.getText() as Promise<string>);
       console.info('textAreaBC1Jsunit_0700 component obj is: ' + text);
 
@@ -358,7 +358,7 @@ it('textAreaBC1Jsunit_static_0800', Level.LEVEL2, async (done: ()=>void) => {
       await (text?.inputText('ee') as Promise<void>);
 	  await driver.triggerKey(2047)
       await CommonFunc.sleep(2000);
-      let strJson1 = inspector.getInspectorByKey('change');
+      let strJson1 = inspector.getInspectorByKey('textAreaBC1' + '_change');
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info('textAreaBC1Jsunit_0800 obj1 is: ' + obj1.getElement('$attrs').getString('content'));
 

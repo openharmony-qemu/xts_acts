@@ -116,7 +116,7 @@ it('ArkUX_Stage_loadingProgress_attrs_static_0101', Level.LEVEL0, async (done: (
 it('ArkUX_Stage_loadingProgress_attrs_static_0102', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_loadingProgress_attrs_static_0102 START');
       let driver = Driver.create();
-      let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button =  await (driver.findComponent(ON.id('loadingProgress' + '_changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
 

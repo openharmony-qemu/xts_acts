@@ -473,7 +473,7 @@ it('textTest_static_0022', Level.LEVEL0, async (done: () => void): Promise<void>
 it('textTest_static_0023', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textTest_static_0023 START');
       let driver = Driver.create();
-      let button = await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button = await (driver.findComponent(ON.id('text' + '_changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
       let strJsonNew = inspector.getInspectorByKey('text1');

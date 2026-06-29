@@ -52,7 +52,7 @@ export default function MenuItemNullTest() {
       let tagName = 'Menuunll';
       let driver = await Driver.create()
       await Utils.sleep(1000);
-      let null1 = await driver.findComponent(ON.id('null'))
+      let null1 = await driver.findComponent(ON.text('menu_null'))
       await null1.click()
       await Utils.sleep(1000);
       let resource = getInspectorByKey('Menunull');

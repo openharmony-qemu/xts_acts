@@ -3401,6 +3401,7 @@ export default function AVSession() {
                         expect(false).assertTrue();
                     }
                 });
+            await sleep(2000);
             } catch (err) {
                 console.info(`Get device information unknownError: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -3417,7 +3418,7 @@ export default function AVSession() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_CALLBACK_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            let TAG = "[SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_CALLBACK_0100]";
+            let TAG = "[SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_CALLBACK_0200]";
             try {
                 session.getOutputDevice((err, value) => {
                     if (err) {
@@ -3436,6 +3437,7 @@ export default function AVSession() {
                     }
                     done();
                 });
+            await sleep(2000);
             } catch (err) {
                 console.info(`Get device information unknownError: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();

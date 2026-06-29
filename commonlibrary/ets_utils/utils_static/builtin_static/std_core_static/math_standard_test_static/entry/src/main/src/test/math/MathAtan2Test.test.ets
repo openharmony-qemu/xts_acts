@@ -920,7 +920,7 @@ export default function mathAtan2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_5600
      * @tc.name testMathAtan2056
-     * @tc.desc Verify atan2 method with double NaN y and normal x for NaN propagation
+     * @tc.desc Verify atan2 method with Double.NaN y and normal x for Double.NaN propagation
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -935,7 +935,7 @@ export default function mathAtan2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_5700
      * @tc.name testMathAtan2057
-     * @tc.desc Verify atan2 method with normal y and double NaN x for NaN propagation
+     * @tc.desc Verify atan2 method with normal y and Double.NaN x for Double.NaN propagation
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -950,7 +950,7 @@ export default function mathAtan2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_5800
      * @tc.name testMathAtan2058
-     * @tc.desc Verify atan2 method with double NaN y and NaN x for NaN propagation
+     * @tc.desc Verify atan2 method with Double.NaN y and Double.NaN x for Double.NaN propagation
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -965,7 +965,7 @@ export default function mathAtan2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_5900
      * @tc.name testMathAtan2059
-     * @tc.desc Verify atan2 method with float NaN y for NaN propagation
+     * @tc.desc Verify atan2 method with Float.NaN y for Float.NaN propagation
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -981,7 +981,7 @@ export default function mathAtan2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_6000
      * @tc.name testMathAtan2060
-     * @tc.desc Verify atan2 method with double positive Infinity y and normal x for PI/2 return
+     * @tc.desc Verify atan2 method with Double.POSITIVE_INFINITY y and normal x for PI/2 return
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -996,7 +996,7 @@ export default function mathAtan2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_6100
      * @tc.name testMathAtan2061
-     * @tc.desc Verify atan2 method with double negative Infinity y and normal x for -PI/2 return
+     * @tc.desc Verify atan2 method with Double.NEGATIVE_INFINITY y and normal x for -PI/2 return
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -1011,7 +1011,7 @@ export default function mathAtan2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_6200
      * @tc.name testMathAtan2062
-     * @tc.desc Verify atan2 method with normal y and double positive Infinity x for zero return
+     * @tc.desc Verify atan2 method with normal y and Double.POSITIVE_INFINITY x for zero return
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -1025,7 +1025,7 @@ export default function mathAtan2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_6300
      * @tc.name testMathAtan2063
-     * @tc.desc Verify atan2 method with normal y and double negative Infinity x for PI return
+     * @tc.desc Verify atan2 method with normal y and Double.NEGATIVE_INFINITY x for PI return
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -1103,7 +1103,7 @@ export default function mathAtan2Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-    */
+     */
     it('testMathAtan2068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let yCoordinate: double = 1.0;
       let rightHalfPlaneAngle: double = Math.atan2(yCoordinate, 2.0);
@@ -1119,7 +1119,7 @@ export default function mathAtan2Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-    */
+     */
     it('testMathAtan2069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let pointX: double = 3.0;
       let pointY: double = 4.0;
@@ -1135,7 +1135,7 @@ export default function mathAtan2Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-    */
+     */
     it('testMathAtan2070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let zeroDegreeAngle: double = Math.atan2(0.0, 1.0);
       let ninetyDegreeAngle: double = Math.atan2(1.0, 0.0);
@@ -1198,7 +1198,7 @@ export default function mathAtan2Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-    */
+     */
     it('testMathAtan2074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let firstCallResult: double = Math.atan2(2.0, 2.0);
       let secondCallResult: double = Math.atan2(2.0, 2.0);
@@ -1213,7 +1213,7 @@ export default function mathAtan2Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-    */
+     */
     it('testMathAtan2075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let firstCallResult: float = Math.atan2(Double.toFloat(2.0), Double.toFloat(2.0));
       let secondCallResult: float = Math.atan2(Double.toFloat(2.0), Double.toFloat(2.0));
@@ -1251,6 +1251,136 @@ export default function mathAtan2Test(): void {
       let expected: double = Math.PI / 2.0;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-6).assertTrue();
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_7800
+     * @tc.name testMathAtan2078
+     * @tc.desc Verify atan2 method with widened byte normal coordinates y=12 x=5 for first quadrant angle
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathAtan2078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let yCoordinate: byte = Int.toByte(12);
+      let xCoordinate: byte = Int.toByte(5);
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
+      let expected: double = 1.1760052070951352;
+      let diff: double = Utils.getAbsDiff(result, expected);
+      expect(diff < 1.0e-6).assertTrue();
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_7900
+     * @tc.name testMathAtan2079
+     * @tc.desc Verify atan2 method with widened byte representative coordinates y=-1 x=1 for fourth quadrant angle
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathAtan2079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let yCoordinate: byte = Int.toByte(-1);
+      let xCoordinate: byte = Int.toByte(1);
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
+      let expected: double = -Math.PI / 4.0;
+      let diff: double = Utils.getAbsDiff(result, expected);
+      expect(diff < 1.0e-6).assertTrue();
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_8000
+     * @tc.name testMathAtan2080
+     * @tc.desc Verify atan2 method with widened short maximum y and unit x approaches positive PI/2
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathAtan2080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let yCoordinate: short = Int.toShort(32767);
+      let xCoordinate: short = Int.toShort(1);
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
+      let expected: double = 1.57076580828543;
+      let diff: double = Utils.getAbsDiff(result, expected);
+      expect(diff < 1.0e-6).assertTrue();
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_8100
+     * @tc.name testMathAtan2081
+     * @tc.desc Verify atan2 method with widened int maximum y and unit x approaches positive PI/2
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathAtan2081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let yCoordinate: int = Int.MAX_VALUE;
+      let xCoordinate: int = 1;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
+      let expected: double = 1.5707963263292353;
+      let diff: double = Utils.getAbsDiff(result, expected);
+      expect(diff < 1.0e-6).assertTrue();
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_8200
+     * @tc.name testMathAtan2082
+     * @tc.desc Verify atan2 method with widened unit y and int minimum x approaches positive PI
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathAtan2082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let yCoordinate: int = 1;
+      let xCoordinate: int = Int.MIN_VALUE;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
+      let expected: double = 3.141592653124132;
+      let diff: double = Utils.getAbsDiff(result, expected);
+      expect(diff < 1.0e-6).assertTrue();
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_8300
+     * @tc.name testMathAtan2083
+     * @tc.desc Verify atan2 method with widened Long.MIN_VALUE y and unit x approaches negative PI/2
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathAtan2083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let yCoordinate: long = Long.MIN_VALUE;
+      let xCoordinate: long = Int.toLong(1);
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
+      let expected: double = -Math.PI / 2.0;
+      let diff: double = Utils.getAbsDiff(result, expected);
+      expect(diff < 1.0e-6).assertTrue();
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_8400
+     * @tc.name testMathAtan2084
+     * @tc.desc Verify atan2 method with representative finite float y=99.99f and unit x returns finite positive angle
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathAtan2084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let yCoordinate: float = 99.99f;
+      let xCoordinate: float = 1.0f;
+      let result: float = Math.atan2(yCoordinate, xCoordinate);
+      let expected: float = Double.toFloat(1.5607956601082313);
+      let diff: double = Utils.getAbsDiff(result, expected);
+      expect(Utils.isFiniteFloat(result)).assertTrue();
+      expect(diff < 1.0e-6).assertTrue();
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_8500
+     * @tc.name testMathAtan2085
+     * @tc.desc Verify atan2 method with representative finite double coordinates y=999999.99 x=1000000.0 returns near PI/4
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathAtan2085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let yCoordinate: double = 999999.99;
+      let xCoordinate: double = 1000000.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
+      let expected: double = 0.7853981583974483;
+      let diff: double = Utils.getAbsDiff(result, expected);
+      expect(Utils.isFiniteValue(result)).assertTrue();
+      expect(diff < 1.0e-12).assertTrue();
     });
   });
 }

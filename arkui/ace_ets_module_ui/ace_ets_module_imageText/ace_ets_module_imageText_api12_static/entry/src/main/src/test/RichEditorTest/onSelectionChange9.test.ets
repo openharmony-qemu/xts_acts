@@ -82,13 +82,13 @@ export default function onSelectionChange9() {
       await richEditor.click();
       await CommonFunc.sleep(1000);
 
-      let text0 = inspector.getInspectorByKey('onSelectionChange9_text1');
+      let text0 = inspector.getInspectorByKey('onSelectionChange9' + '_text1');
       let Obj0 = JSON.parseJsonElement(text0);
       expect(Obj0.getElement('$attrs').getString('content')).assertEqual('1');
 
       await driver.triggerKey(2049);
       await CommonFunc.sleep(1000);
-      let text1 = inspector.getInspectorByKey('onSelectionChange9_text1');
+      let text1 = inspector.getInspectorByKey('onSelectionChange9' + '_text1');
       let Obj1 = JSON.parseJsonElement(text1);
       expect(Obj1.getElement('$attrs').getString('content')).assertEqual('1');
 

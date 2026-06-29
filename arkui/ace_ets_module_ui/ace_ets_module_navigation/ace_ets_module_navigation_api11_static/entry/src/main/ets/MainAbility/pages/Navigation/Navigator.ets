@@ -42,19 +42,19 @@ struct navigator_testcase {
       Navigation({}) {
         Text('Navigation test  in Navigation，back')
       }
-      .key('navigator')
+      .key('Navigator_Navigator_navigator')
 
 
       Navigation({}) {
         Text('Navigation test  in Navigation，push')
       }
-      .key('navigator2')
+      .key('Navigator_Navigator_navigator2')
 
 
       Navigation({}) {
         Text('Navigation test  in Navigation，replace')
       }
-      .key('navigator3')
+      .key('Navigator_Navigator_navigator3')
 
     }.width(300)
     .height(300)

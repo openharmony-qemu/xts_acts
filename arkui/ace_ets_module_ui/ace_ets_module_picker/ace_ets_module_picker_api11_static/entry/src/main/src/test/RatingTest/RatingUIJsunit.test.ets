@@ -84,7 +84,7 @@ export default function RatingUIJsunit() {
 it('RatingUIJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       // Get the information of the Rating component
       console.info('[RatingUIJsunit_static_0100] START');
-      let strJson = inspector.getInspectorByKey('rating1');
+      let strJson = inspector.getInspectorByKey('RatingPage' + '_rating1');
       let obj = JSON.parseJsonElement(strJson)
       console.info("[RatingUIJsunit_static_0100] component obj is: " + JSON.stringify(obj));
       await CommonFunc.sleep(1000);
@@ -112,7 +112,7 @@ it('RatingUIJsunit_static_0200', Level.LEVEL1, async (done: () => void): Promise
   AppStorage.setOrCreate<number>('rating',1)
       await CommonFunc.sleep(2000);
       // Get the rating value of the Rating component
-      let strJson = inspector.getInspectorByKey('rating1');
+      let strJson = inspector.getInspectorByKey('RatingPage' + '_rating1');
       let obj = JSON.parseJsonElement(strJson)
       console.info("[RatingUIJsunit_static_0200] component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('rating')).assertEqual('1.000000');
@@ -175,7 +175,7 @@ it('RatingUIJsunit_static_0400', Level.LEVEL1, async (done: () => void): Promise
   AppStorage.setOrCreate<int>('stars',7)
       await CommonFunc.sleep(2000);
       // Get the stars value of the Rating component
-      let strJson = inspector.getInspectorByKey('rating1');
+      let strJson = inspector.getInspectorByKey('RatingPage' + '_rating1');
       let obj = JSON.parseJsonElement(strJson)
       console.info("[RatingUIJsunit_static_0400] component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('stars')).assertEqual('7');
@@ -198,7 +198,7 @@ it('RatingUIJsunit_static_0500', Level.LEVEL1, async (done: () => void): Promise
   AppStorage.setOrCreate<number>('stepSize',1)
       await CommonFunc.sleep(2000);
       // Get the stepSize value of the Rating component
-      let strJson = inspector.getInspectorByKey('rating1');
+      let strJson = inspector.getInspectorByKey('RatingPage' + '_rating1');
       let obj = JSON.parseJsonElement(strJson)
       console.info("[RatingUIJsunit_static_0500] component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('stepSize')).assertEqual('1.000000');
@@ -225,27 +225,27 @@ it('RatingUIJsunit_static_0600', Level.LEVEL1, async (done: () => void): Promise
       await CommonFunc.sleep(2000);
 
       let driver = Driver.create()
-      let textComponent1 = await driver.findComponent(ON.id('text'));
+      let textComponent1 = await driver.findComponent(ON.id('RatingPage' + '_text'));
       let text1 = await (textComponent1?.getText() as Promise<string>);
       console.info("[RatingUIJsunit_static_0600] text1: " + JSON.stringify(text1));
       // Get the rating value of the Rating component
-      let strJson1 = inspector.getInspectorByKey('rating1');
+      let strJson1 = inspector.getInspectorByKey('RatingPage' + '_rating1');
       let obj = JSON.parseJsonElement(strJson1);
       console.info("[RatingUIJsunit_static_0600] component obj is: " + JSON.stringify(obj));
       let rating1 = obj.getElement('$attrs').getString('rating')
       console.info("[RatingUIJsunit_static_0600] rating1: " + rating1);
 
       // Get the component Rating and click
-      let textComponent = await driver.findComponent(ON.id('rating1'));
+      let textComponent = await driver.findComponent(ON.id('RatingPage' + '_rating1'));
       await (textComponent?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let strJson2 = inspector.getInspectorByKey('rating1');
+      let strJson2 = inspector.getInspectorByKey('RatingPage' + '_rating1');
       let obj2 = JSON.parseJsonElement(strJson2);
       let rating2 = obj2.getElement('$attrs').getString('rating')
       console.info("[RatingUIJsunit_static_0600] rating2: " + rating2);
       expect(rating1 == rating2).assertFalse();
 
-      let textComponent2 = await driver.findComponent(ON.id('text'));
+      let textComponent2 = await driver.findComponent(ON.id('RatingPage' + '_text'));
       let text2 = await (textComponent2?.getText() as Promise<string>);
       console.info("[RatingUIJsunit_static_0600] text2: " + JSON.stringify(text2));
       expect(text2).assertEqual('change succ');

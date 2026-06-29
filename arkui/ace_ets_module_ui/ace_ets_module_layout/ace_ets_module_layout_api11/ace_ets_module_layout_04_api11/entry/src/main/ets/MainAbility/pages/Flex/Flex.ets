@@ -41,7 +41,7 @@ struct flex {
           Text('2').width('100%').height(20).backgroundColor(0xD2B48C)
           Text('3').width('100%').height(20).backgroundColor(0xF5DEB3)
         }
-        .key('flex')
+        .key('Flex_flex')
         .height(70)
         .width('90%')
         .padding(10)

@@ -66,7 +66,7 @@ export default function navigatorJsunit() {
     it('navigatorTest001',  Level.LEVEL0, async () => {
       console.info('++++++++++++++++ Navigator TestCase 1 START ++++++++++++++++');
       await sleep(1)
-      let strJson: string = getInspectorByKey('navigator');
+      let strJson: string = getInspectorByKey('Navigator' + '_navigator');
       let obj: Record<string, Object> = JSON.parse(strJson);
       console.info("get inspector value is: " + JSON.stringify(obj));
       console.log(JSON.stringify(obj.$type))
@@ -95,7 +95,7 @@ export default function navigatorJsunit() {
     it('navigatorTest002',  Level.LEVEL0, async () => {
       console.info('++++++++++++++++ Navigator TestCase 2 START ++++++++++++++++');
       await sleep(1)
-      let strJson: string = getInspectorByKey('navigator2');
+      let strJson: string = getInspectorByKey('Navigator' + '_navigator2');
       let obj: Record<string, Object> = JSON.parse(strJson);
       console.info("get inspector value is: " + JSON.stringify(obj));
       console.log(JSON.stringify(obj.$type))
@@ -116,7 +116,7 @@ export default function navigatorJsunit() {
     it('navigatorTest003',  Level.LEVEL0, async () => {
       console.info('++++++++++++++++ Navigator TestCase 3 START ++++++++++++++++');
       await sleep(1)
-      let strJson: string = getInspectorByKey('navigator3');
+      let strJson: string = getInspectorByKey('Navigator' + '_navigator3');
       let obj: Record<string, Object> = JSON.parse(strJson);
       console.info("get inspector value is: " + JSON.stringify(obj));
       console.log(JSON.stringify(obj.$type))

@@ -78,14 +78,14 @@ export default function Grid_RowCol_maxCount() {
 it('testGridRowColGridMaxCount_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGridRowColGridMaxCount_static_01] START');
       await CommonFunc.sleep(3000);
-      let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_maxCount_01');
+      let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_maxCount' + '_01');
 
      expect(JSON.parseJsonElement(gridContainerStrJson).getString('$type')).assertEqual('Grid');
-      let Grid_RowCol_maxCount_011: RectValue = CommonFunc.getComponentRect('Grid_RowCol_maxCount_011');
-      let Grid_RowCol_maxCount_012: RectValue = CommonFunc.getComponentRect('Grid_RowCol_maxCount_012');
-      let Grid_RowCol_maxCount_013: RectValue = CommonFunc.getComponentRect('Grid_RowCol_maxCount_013');
-      let Grid_RowCol_maxCount_014: RectValue = CommonFunc.getComponentRect('Grid_RowCol_maxCount_014');
-      let Grid_RowCol_maxCount_01: RectValue = CommonFunc.getComponentRect('Grid_RowCol_maxCount_01');
+      let Grid_RowCol_maxCount_011: RectValue = CommonFunc.getComponentRect('Grid_RowCol_maxCount' + '_011');
+      let Grid_RowCol_maxCount_012: RectValue = CommonFunc.getComponentRect('Grid_RowCol_maxCount' + '_012');
+      let Grid_RowCol_maxCount_013: RectValue = CommonFunc.getComponentRect('Grid_RowCol_maxCount' + '_013');
+      let Grid_RowCol_maxCount_014: RectValue = CommonFunc.getComponentRect('Grid_RowCol_maxCount' + '_014');
+      let Grid_RowCol_maxCount_01: RectValue = CommonFunc.getComponentRect('Grid_RowCol_maxCount' + '_01');
       expect(Math.abs(Grid_RowCol_maxCount_011.left - Grid_RowCol_maxCount_01.left) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_maxCount_013.left - Grid_RowCol_maxCount_01.left) <= 1).assertTrue();
 

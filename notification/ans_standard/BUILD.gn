@@ -51,8 +51,6 @@ group("ans_standard") {
       "actsNotificationSlotTestStatic:ActsNotificationSlotStaticTest",
       "actsNotificationSystemAPITest:ActsNotificationSystemAPITest",
       "actsNotificationSystemAPITestStatic:ActsNotificationSystemAPIStaticTest",
-      "actsNotificationSystemLiveViewTest:ActsNotificationSystemLiveViewTest",
-      "actsNotificationSystemLiveViewTestStatic:ActsNotificationSystemLiveViewStaticTest",
       "actsNotificationThirdPartyWatchTestStatic:actsNotificationThirdPartyWatchStaticTest",
       "actsNotificationVibrationSoundTest:ActsNotificationVibrationSoundTest",
       "actsNotificationVibrationSoundTestStatic:ActsNotificationVibrationSoundStaticTest",

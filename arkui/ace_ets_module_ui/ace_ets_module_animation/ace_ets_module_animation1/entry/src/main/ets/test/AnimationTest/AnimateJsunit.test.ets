@@ -71,7 +71,7 @@ export default function animateJsunit() {
       } catch (err) {
         console.info("animateTest_0100 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_0100 click result is: " + JSON.stringify(sendEventByKey('button1', 10, "")));
+      console.info("animateTest_0100 click result is: " + JSON.stringify(sendEventByKey('animate_button1', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_0100 END');
       done();
@@ -101,7 +101,7 @@ export default function animateJsunit() {
       } catch (err) {
         console.info("animateTest_0200 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_0200 click result is: " + JSON.stringify(sendEventByKey('button2', 10, "")));
+      console.info("animateTest_0200 click result is: " + JSON.stringify(sendEventByKey('animate_button2', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_0200 END');
       done();
@@ -135,7 +135,7 @@ export default function animateJsunit() {
       } catch (err) {
         console.info("animateTest_0300 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_0300 click result is: " + JSON.stringify(sendEventByKey('button3', 10, "")));
+      console.info("animateTest_0300 click result is: " + JSON.stringify(sendEventByKey('animate_button3', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_0300 END');
       done();
@@ -165,7 +165,7 @@ export default function animateJsunit() {
       } catch (err) {
         console.info("animateTest_0400 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_0400 click result is: " + JSON.stringify(sendEventByKey('button4', 10, "")));
+      console.info("animateTest_0400 click result is: " + JSON.stringify(sendEventByKey('animate_button4', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_0400 END');
       done();
@@ -195,7 +195,7 @@ export default function animateJsunit() {
       } catch (err) {
         console.info("animateTest_0500 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_0500 click result is: " + JSON.stringify(sendEventByKey('button5', 10, "")));
+      console.info("animateTest_0500 click result is: " + JSON.stringify(sendEventByKey('animate_button5', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_0500 END');
       done();
@@ -232,7 +232,7 @@ export default function animateJsunit() {
       } catch (err) {
         console.info("animateTest_0600 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_0600 click result is: " + JSON.stringify(sendEventByKey('button11', 10, "")));
+      console.info("animateTest_0600 click result is: " + JSON.stringify(sendEventByKey('animate_button11', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_0600 END');
       done();
@@ -269,7 +269,7 @@ export default function animateJsunit() {
       } catch (err) {
         console.info("animateTest_0700 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_0700 click result is: " + JSON.stringify(sendEventByKey('button12', 10, "")));
+      console.info("animateTest_0700 click result is: " + JSON.stringify(sendEventByKey('animate_button12', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_0700 END');
       done();
@@ -306,7 +306,7 @@ export default function animateJsunit() {
       } catch (err) {
         console.info("animateTest_0800 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_0800 click result is: " + JSON.stringify(sendEventByKey('button13', 10, "")));
+      console.info("animateTest_0800 click result is: " + JSON.stringify(sendEventByKey('animate_button13', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_0800 END');
       done();
@@ -343,7 +343,7 @@ export default function animateJsunit() {
       } catch (err) {
         console.info("animateTest_0900 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_0900 click result is: " + JSON.stringify(sendEventByKey('button14', 10, "")));
+      console.info("animateTest_0900 click result is: " + JSON.stringify(sendEventByKey('animate_button14', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_0900 END');
       done();
@@ -380,7 +380,7 @@ export default function animateJsunit() {
       } catch (err) {
         console.info("animateTest_1000 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_1000 click result is: " + JSON.stringify(sendEventByKey('button15', 10, "")));
+      console.info("animateTest_1000 click result is: " + JSON.stringify(sendEventByKey('animate_button15', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_1000 END');
       done();
@@ -417,7 +417,7 @@ export default function animateJsunit() {
       } catch (err) {
         console.info("animateTest_1100 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_1100 click result is: " + JSON.stringify(sendEventByKey('button6', 10, "")));
+      console.info("animateTest_1100 click result is: " + JSON.stringify(sendEventByKey('animate_button6', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_1100 END');
       done();
@@ -454,7 +454,7 @@ export default function animateJsunit() {
       } catch (err) {
         console.info("animateTest_1200 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_1200 click result is: " + JSON.stringify(sendEventByKey('button7', 10, "")));
+      console.info("animateTest_1200 click result is: " + JSON.stringify(sendEventByKey('animate_button7', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_1200 END');
       done();
@@ -491,7 +491,7 @@ export default function animateJsunit() {
       } catch (err) {
         console.info("animateTest_1300 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_1300 click result is: " + JSON.stringify(sendEventByKey('button8', 10, "")));
+      console.info("animateTest_1300 click result is: " + JSON.stringify(sendEventByKey('animate_button8', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_1300 END');
       done();
@@ -528,7 +528,7 @@ export default function animateJsunit() {
       } catch (err) {
         console.info("animateTest_1400 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_1400 click result is: " + JSON.stringify(sendEventByKey('button9', 10, "")));
+      console.info("animateTest_1400 click result is: " + JSON.stringify(sendEventByKey('animate_button9', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_1400 END');
       done();
@@ -565,7 +565,7 @@ export default function animateJsunit() {
       } catch (err) {
         console.info("animateTest_1500 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_1500 click result is: " + JSON.stringify(sendEventByKey('button10', 10, "")));
+      console.info("animateTest_1500 click result is: " + JSON.stringify(sendEventByKey('animate_button10', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_1500 END');
       done();
@@ -602,7 +602,7 @@ export default function animateJsunit() {
       } catch (err) {
         console.info("animateTest_1600 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_1600 click result is: " + JSON.stringify(sendEventByKey('button111', 10, "")));
+      console.info("animateTest_1600 click result is: " + JSON.stringify(sendEventByKey('animate_button111', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_1600 END');
       done();
@@ -639,7 +639,7 @@ export default function animateJsunit() {
       } catch (err) {
         console.info("animateTest_1700 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_1700 click result is: " + JSON.stringify(sendEventByKey('button121', 10, "")));
+      console.info("animateTest_1700 click result is: " + JSON.stringify(sendEventByKey('animate_button121', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_1700 END');
       done();
@@ -676,7 +676,7 @@ export default function animateJsunit() {
       } catch (err) {
         console.info("animateTest_1800 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_1800 click result is: " + JSON.stringify(sendEventByKey('button131', 10, "")));
+      console.info("animateTest_1800 click result is: " + JSON.stringify(sendEventByKey('animate_button131', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_1800 END');
       done();
@@ -713,7 +713,7 @@ export default function animateJsunit() {
       } catch (err) {
         console.info("animateTest_1900 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_1900 click result is: " + JSON.stringify(sendEventByKey('button141', 10, "")));
+      console.info("animateTest_1900 click result is: " + JSON.stringify(sendEventByKey('animate_button141', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_1900 END');
       done();
@@ -750,7 +750,7 @@ export default function animateJsunit() {
       } catch (err) {
         console.info("animateTest_2000 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_2000 click result is: " + JSON.stringify(sendEventByKey('button151', 10, "")));
+      console.info("animateTest_2000 click result is: " + JSON.stringify(sendEventByKey('animate_button151', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('animateTest_2000 END');
       done();

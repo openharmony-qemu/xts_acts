@@ -33,12 +33,14 @@ struct SearchPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Search_fontColor_default')
+              .key('Search_fontColor_default')
 
             // Null
             Search({ placeholder: 'fontColor null' })
               .width('30%')
               .height('5%')
               .id('Search_fontColor_null')
+              .key('Search_fontColor_null')
               .fontColor(null)
 
             // Undefined
@@ -46,6 +48,7 @@ struct SearchPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Search_fontColor_undefined')
+              .key('Search_fontColor_undefined')
               .fontColor(undefined)
 
             // Empty String
@@ -53,6 +56,7 @@ struct SearchPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Search_fontColor_empty')
+              .key('Search_fontColor_empty')
               .fontColor('')
           }
           .width('100%')
@@ -69,12 +73,14 @@ struct SearchPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Search_searchIcon_default')
+              .key('Search_searchIcon_default')
 
             // Null
             Search({ placeholder: 'searchIcon null' })
               .width('30%')
               .height('5%')
               .id('Search_searchIcon_null')
+              .key('Search_searchIcon_null')
               .searchIcon(null)
 
             // Undefined
@@ -82,6 +88,7 @@ struct SearchPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Search_searchIcon_undefined')
+              .key('Search_searchIcon_undefined')
               .searchIcon(undefined)
           }
           .width('100%')
@@ -98,12 +105,14 @@ struct SearchPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Search_cancelButton_default')
+              .key('Search_cancelButton_default')
 
             // Null
             Search({ placeholder: 'cancelButton null' })
               .width('30%')
               .height('5%')
               .id('Search_cancelButton_null')
+              .key('Search_cancelButton_null')
               .cancelButton(null)
 
             // Undefined
@@ -111,6 +120,7 @@ struct SearchPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Search_cancelButton_undefined')
+              .key('Search_cancelButton_undefined')
               .cancelButton(undefined)
           }
           .width('100%')
@@ -127,12 +137,14 @@ struct SearchPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Search_enableSelectedDataDetector_default')
+              .key('Search_enableSelectedDataDetector_default')
 
             // Null
             Search({ placeholder: 'enableSelectedDataDetector null' })
               .width('30%')
               .height('5%')
               .id('Search_enableSelectedDataDetector_null')
+              .key('Search_enableSelectedDataDetector_null')
               .enableSelectedDataDetector(null)
 
             // Undefined
@@ -140,6 +152,7 @@ struct SearchPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Search_enableSelectedDataDetector_undefined')
+              .key('Search_enableSelectedDataDetector_undefined')
               .enableSelectedDataDetector(undefined)
           }
           .width('100%')
@@ -156,12 +169,14 @@ struct SearchPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Search_textIndent_default')
+              .key('Search_textIndent_default')
 
             // Null
             Search({ placeholder: 'textIndent null' })
               .width('30%')
               .height('5%')
               .id('Search_textIndent_null')
+              .key('Search_textIndent_null')
               .textIndent(null)
 
             // Undefined
@@ -169,6 +184,7 @@ struct SearchPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Search_textIndent_undefined')
+              .key('Search_textIndent_undefined')
               .textIndent(undefined)
           }
           .width('100%')
@@ -185,12 +201,14 @@ struct SearchPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Search_inputFilter_default')
+              .key('Search_inputFilter_default')
 
             // Null
             Search({ placeholder: 'inputFilter null' })
               .width('30%')
               .height('5%')
               .id('Search_inputFilter_null')
+              .key('Search_inputFilter_null')
               .inputFilter(null)
 
             // Undefined
@@ -198,6 +216,7 @@ struct SearchPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Search_inputFilter_undefined')
+              .key('Search_inputFilter_undefined')
               .inputFilter(undefined)
           }
           .width('100%')
@@ -214,12 +233,14 @@ struct SearchPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Search_selectedBackgroundColor_default')
+              .key('Search_selectedBackgroundColor_default')
 
             // Null
             Search({ placeholder: 'selectedBackgroundColor null' })
               .width('30%')
               .height('5%')
               .id('Search_selectedBackgroundColor_null')
+              .key('Search_selectedBackgroundColor_null')
               .selectedBackgroundColor(null)
 
             // Undefined
@@ -227,6 +248,7 @@ struct SearchPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Search_selectedBackgroundColor_undefined')
+              .key('Search_selectedBackgroundColor_undefined')
               .selectedBackgroundColor(undefined)
           }
           .width('100%')
@@ -243,12 +265,14 @@ struct SearchPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Search_caretStyle_default')
+              .key('Search_caretStyle_default')
 
             // Null
             Search({ placeholder: 'caretStyle null' })
               .width('30%')
               .height('5%')
               .id('Search_caretStyle_null')
+              .key('Search_caretStyle_null')
               .caretStyle(null)
 
             // Undefined
@@ -256,6 +280,7 @@ struct SearchPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Search_caretStyle_undefined')
+              .key('Search_caretStyle_undefined')
               .caretStyle(undefined)
           }
           .width('100%')
@@ -272,12 +297,14 @@ struct SearchPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Search_placeholderColor_default')
+              .key('Search_placeholderColor_default')
 
             // Null
             Search({ placeholder: 'placeholderColor null' })
               .width('30%')
               .height('5%')
               .id('Search_placeholderColor_null')
+              .key('Search_placeholderColor_null')
               .placeholderColor(null)
 
             // Undefined
@@ -285,6 +312,7 @@ struct SearchPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Search_placeholderColor_undefined')
+              .key('Search_placeholderColor_undefined')
               .placeholderColor(undefined)
           }
           .width('100%')
@@ -301,12 +329,14 @@ struct SearchPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Search_placeholderFont_default')
+              .key('Search_placeholderFont_default')
 
             // Null
             Search({ placeholder: 'placeholderFont null' })
               .width('30%')
               .height('5%')
               .id('Search_placeholderFont_null')
+              .key('Search_placeholderFont_null')
               .placeholderFont(null)
 
             // Undefined
@@ -314,6 +344,7 @@ struct SearchPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Search_placeholderFont_undefined')
+              .key('Search_placeholderFont_undefined')
               .placeholderFont(undefined)
           }
           .width('100%')
@@ -330,12 +361,14 @@ struct SearchPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Search_textFont_default')
+              .key('Search_textFont_default')
 
             // Null
             Search({ placeholder: 'textFont null' })
               .width('30%')
               .height('5%')
               .id('Search_textFont_null')
+              .key('Search_textFont_null')
               .textFont(null)
 
             // Undefined
@@ -343,6 +376,7 @@ struct SearchPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Search_textFont_undefined')
+              .key('Search_textFont_undefined')
               .textFont(undefined)
           }
           .width('100%')
@@ -359,12 +393,14 @@ struct SearchPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Search_enterKeyType_default')
+              .key('Search_enterKeyType_default')
 
             // Null
             Search({ placeholder: 'enterKeyType null' })
               .width('30%')
               .height('5%')
               .id('Search_enterKeyType_null')
+              .key('Search_enterKeyType_null')
               .enterKeyType(null)
 
             // Undefined
@@ -372,6 +408,7 @@ struct SearchPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Search_enterKeyType_undefined')
+              .key('Search_enterKeyType_undefined')
               .enterKeyType(undefined)
           }
           .width('100%')
@@ -388,12 +425,14 @@ struct SearchPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Search_copyOption_default')
+              .key('Search_copyOption_default')
 
             // Null
             Search({ placeholder: 'copyOption null' })
               .width('30%')
               .height('5%')
               .id('Search_copyOption_null')
+              .key('Search_copyOption_null')
               .copyOption(null)
 
             // Undefined
@@ -401,6 +440,7 @@ struct SearchPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Search_copyOption_undefined')
+              .key('Search_copyOption_undefined')
               .copyOption(undefined)
           }
           .width('100%')
@@ -417,12 +457,14 @@ struct SearchPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Search_maxLength_default')
+              .key('Search_maxLength_default')
 
             // Null
             Search({ placeholder: 'maxLength null' })
               .width('30%')
               .height('5%')
               .id('Search_maxLength_null')
+              .key('Search_maxLength_null')
               .maxLength(null)
 
             // Undefined
@@ -430,6 +472,7 @@ struct SearchPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Search_maxLength_undefined')
+              .key('Search_maxLength_undefined')
               .maxLength(undefined)
           }
           .width('100%')
@@ -446,12 +489,14 @@ struct SearchPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Search_textAlign_default')
+              .key('Search_textAlign_default')
 
             // Null
             Search({ placeholder: 'textAlign null' })
               .width('30%')
               .height('5%')
               .id('Search_textAlign_null')
+              .key('Search_textAlign_null')
               .textAlign(null)
 
             // Undefined
@@ -459,6 +504,7 @@ struct SearchPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Search_textAlign_undefined')
+              .key('Search_textAlign_undefined')
               .textAlign(undefined)
           }
           .width('100%')
@@ -475,12 +521,14 @@ struct SearchPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Search_minFontSize_default')
+              .key('Search_minFontSize_default')
 
             // Null
             Search({ placeholder: 'minFontSize null' })
               .width('30%')
               .height('5%')
               .id('Search_minFontSize_null')
+              .key('Search_minFontSize_null')
               .minFontSize(null)
 
             // Undefined
@@ -488,6 +536,7 @@ struct SearchPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Search_minFontSize_undefined')
+              .key('Search_minFontSize_undefined')
               .minFontSize(undefined)
 
             // Empty String
@@ -495,6 +544,7 @@ struct SearchPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Search_minFontSize_empty')
+              .key('Search_minFontSize_empty')
               .minFontSize('')
           }
           .width('100%')
@@ -511,12 +561,14 @@ struct SearchPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Search_maxFontSize_default')
+              .key('Search_maxFontSize_default')
 
             // Null
             Search({ placeholder: 'maxFontSize null' })
               .width('30%')
               .height('5%')
               .id('Search_maxFontSize_null')
+              .key('Search_maxFontSize_null')
               .maxFontSize(null)
 
             // Undefined
@@ -524,6 +576,7 @@ struct SearchPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Search_maxFontSize_undefined')
+              .key('Search_maxFontSize_undefined')
               .maxFontSize(undefined)
 
             // Empty String
@@ -531,6 +584,7 @@ struct SearchPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('Search_maxFontSize_empty')
+              .key('Search_maxFontSize_empty')
               .maxFontSize('')
           }
           .width('100%')

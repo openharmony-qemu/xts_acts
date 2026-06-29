@@ -97,7 +97,7 @@ struct AlertDialogParam1 {
               }
             } as AlertDialogParamWithButtons
           )
-        }).key('AlertDialog2')
+        }).key('AlertDialogParam_AlertDialog2')
         .backgroundColor(0x317aff)
     }.width('100%').margin({ top: 5 } as Margin)
   }

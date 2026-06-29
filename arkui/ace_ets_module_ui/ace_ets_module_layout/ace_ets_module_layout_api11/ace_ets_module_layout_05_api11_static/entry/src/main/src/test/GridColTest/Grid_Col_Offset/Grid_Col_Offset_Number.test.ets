@@ -92,7 +92,7 @@ it('SUB_ACE_Grid_Col_Offset_Number_TEST_static_0100', Level.LEVEL0, async (done:
       let Grid_Col_Offset_Number_05: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number_05');
       let Grid_Col_Offset_Number_06: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number_06');
       let Grid_Col_Offset_Number_07: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number_07');
-      let Grid_Col_Offset_Number_G1: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number_G1');
+      let Grid_Col_Offset_Number_G1: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number' + '_G1');
       console.log('assert space')
       expect(Math.abs((Grid_Col_Offset_Number_01.left - Grid_Col_Offset_Number_00.right) -
       UIContext.resolveUIContext()!.vp2px(10)) <= 1)
@@ -228,7 +228,7 @@ it('SUB_ACE_Grid_Col_Offset_Number_TEST_static_0300', Level.LEVEL0, async (done:
       let Grid_Col_Offset_Number_05: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number_05');
       let Grid_Col_Offset_Number_06: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number_06');
       let Grid_Col_Offset_Number_07: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number_07');
-      let Grid_Col_Offset_Number_G1: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number_G1');
+      let Grid_Col_Offset_Number_G1: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number' + '_G1');
 
       console.log('assert space')
       expect(Math.abs((Grid_Col_Offset_Number_02.top - Grid_Col_Offset_Number_00.bottom) -

@@ -21,6 +21,7 @@ struct ImageAnimatorImagesUndefinedAndNullTest {
     Column({ space: 10 }) {
       ImageAnimator()
         .id('imagesUndefined')
+        .key('imagesUndefined')
         .images(undefined)
         .border({ width:2, color: Color.Black })
         .width(100)
@@ -28,6 +29,7 @@ struct ImageAnimatorImagesUndefinedAndNullTest {
 
       ImageAnimator()
         .id('imagesNull')
+        .key('imagesNull')
         .images(null)
         .border({ width:2, color: Color.Black })
         .width(100)
@@ -35,6 +37,7 @@ struct ImageAnimatorImagesUndefinedAndNullTest {
 
       ImageAnimator()
         .id('imagesEmptyArr')
+        .key('imagesEmptyArr')
         .images([])
         .border({ width:2, color: Color.Black })
         .width(100)

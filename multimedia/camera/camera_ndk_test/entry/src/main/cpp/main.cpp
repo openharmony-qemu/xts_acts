@@ -3959,7 +3959,7 @@ static napi_value GetZoomPointInfos(napi_env env, napi_callback_info info)
     napi_get_value_int32(env, args[0], &useCaseCode);
     // 调用C++函数
     napi_value result;
-    Camera_ErrorCode ret = ndkCamera_->GetZoomPointInfos(useCaseCode);
+    int32_t ret = ndkCamera_->GetZoomPointInfos(useCaseCode);
     napi_create_int32(env, ret, &result);
     return result;
 }

@@ -27,12 +27,14 @@ struct TextFontNull {
         // Test 1: font(Font) with null parameter
         Text('font(Font) with null')
           .id('text_font_null')
+          .key('text_font_null')
           .font(null)
           .height('5%')
 
         // Test 2: font(Font) with undefined parameter
         Text('font(Font) with undefined')
           .id('text_font_undefined')
+          .key('text_font_undefined')
           .font(undefined)
           .height('5%')
       }
@@ -41,18 +43,21 @@ struct TextFontNull {
         // Test 3: font(Font, options?) with null fontValue
         Text('font(Font, options?) with null fontValue')
           .id('text_font_withoptions_null')
+          .key('text_font_withoptions_null')
           .font(null, null)
           .height('5%')
 
         // Test 4: font(Font, options?) with undefined fontValue
         Text('font(Font, options?) with undefined fontValue')
           .id('text_font_withoptions_undefined')
+          .key('text_font_withoptions_undefined')
           .font(undefined, undefined)
           .height('5%')
 
         // Test 5: Default font for comparison
         Text('Default font (for comparison)')
           .id('text_font_default')
+          .key('text_font_default')
           .height('5%')
       }
     }

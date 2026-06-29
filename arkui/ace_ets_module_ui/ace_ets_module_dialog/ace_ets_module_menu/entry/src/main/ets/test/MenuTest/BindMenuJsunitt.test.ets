@@ -56,7 +56,7 @@ export default function bindMenuTesttt() {
     it('bindMenuTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('bindMenuTest_0100 START');
       await CommonFunc.sleep(1000);
-      console.info("bindMenuTest_0100 text click result is: " + JSON.stringify(sendEventByKey('text',10,"")));
+      console.info("bindMenuTest_0100 text click result is: " + JSON.stringify(sendEventByKey('bindMenuu' + '_text',10,"")));
       await CommonFunc.sleep(1500);
       let callback = (indexEvent: events_emitter.EventData) => {
         console.info("bindMenuTest_0100 get state result is: " + JSON.stringify(indexEvent));
@@ -72,7 +72,7 @@ export default function bindMenuTesttt() {
       } catch (err) {
         console.info("bindMenuTest_0100 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("bindMenuTest_0100 button click result is: " + JSON.stringify(sendEventByKey('button',10,"")));
+      console.info("bindMenuTest_0100 button click result is: " + JSON.stringify(sendEventByKey('bindMenuu' + '_button',10,"")));
       await CommonFunc.sleep(1000);
       console.info('bindMenuTest_0100 END');
       done();

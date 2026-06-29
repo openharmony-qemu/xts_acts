@@ -68,6 +68,17 @@ export default function audioRoutingManager() {
       }
 
       let audioRoutingManager = audio.getAudioManager().getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try {
         await audioRoutingManager.getPreferredInputDeviceForCapturerInfo(capturerInfo)
           .then((AudioDeviceDescriptors) => {
@@ -104,6 +115,17 @@ export default function audioRoutingManager() {
       }
 
       let audioRoutingManager = audio.getAudioManager().getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_0200 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try {
         await audioRoutingManager.getPreferredInputDeviceForCapturerInfo(capturerInfo)
           .then((AudioDeviceDescriptors) => {
@@ -177,6 +199,17 @@ export default function audioRoutingManager() {
       }
 
       let audioRoutingManager = audio.getAudioManager().getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_0400 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try {
         await audioRoutingManager.getPreferredInputDeviceForCapturerInfo(capturerInfo)
           .then((AudioDeviceDescriptors) => {
@@ -249,6 +282,17 @@ export default function audioRoutingManager() {
       }
 
       let audioRoutingManager = audio.getAudioManager().getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_0002 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try {
         await audioRoutingManager.getPreferredInputDeviceForCapturerInfo(capturerInfo)
           .then((AudioDeviceDescriptors) => {
@@ -284,6 +328,17 @@ export default function audioRoutingManager() {
       }
 
       let audioRoutingManager = audio.getAudioManager().getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_0003 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try {
         await audioRoutingManager.getPreferredInputDeviceForCapturerInfo(capturerInfo)
           .then((AudioDeviceDescriptors) => {
@@ -319,6 +374,17 @@ export default function audioRoutingManager() {
       }
 
       let audioRoutingManager = audio.getAudioManager().getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_0004 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try {
         await audioRoutingManager.getPreferredInputDeviceForCapturerInfo(capturerInfo)
           .then((AudioDeviceDescriptors) => {
@@ -354,6 +420,17 @@ export default function audioRoutingManager() {
       }
 
       let audioRoutingManager = audio.getAudioManager().getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_0005 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try {
         await audioRoutingManager.getPreferredInputDeviceForCapturerInfo(capturerInfo)
           .then((AudioDeviceDescriptors) => {
@@ -391,6 +468,17 @@ export default function audioRoutingManager() {
       }
 
       let audioRoutingManager = audio.getAudioManager().getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_0500 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try {
         await audioRoutingManager.getPreferredInputDeviceForCapturerInfo(capturerInfo,
           (err, AudioDeviceDescriptors) => {
@@ -429,6 +517,17 @@ export default function audioRoutingManager() {
       }
 
       let audioRoutingManager = audio.getAudioManager().getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_0600 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try {
         await audioRoutingManager.getPreferredInputDeviceForCapturerInfo(capturerInfo,
           (err, AudioDeviceDescriptors) => {
@@ -505,6 +604,17 @@ export default function audioRoutingManager() {
       }
 
       let audioRoutingManager = audio.getAudioManager().getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_0800 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try {
         await audioRoutingManager.getPreferredInputDeviceForCapturerInfo(capturerInfo,
           (err, AudioDeviceDescriptors) => {
@@ -635,6 +745,17 @@ export default function audioRoutingManager() {
       }
 
       let audioRoutingManager = audio.getAudioManager().getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_1200 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try {
         await audioRoutingManager.getPreferredInputDeviceForCapturerInfo(capturerInfo,
           (err, AudioDeviceDescriptors) => {
@@ -674,6 +795,17 @@ export default function audioRoutingManager() {
       }
 
       let audioRoutingManager = audio.getAudioManager().getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_1300 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try {
         await audioRoutingManager.getPreferredInputDeviceForCapturerInfo(capturerInfo,
           (err, AudioDeviceDescriptors) => {
@@ -711,6 +843,17 @@ export default function audioRoutingManager() {
       }
 
       let audioRoutingManager = audio.getAudioManager().getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_1400 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try {
         await audioRoutingManager.getPreferredInputDeviceForCapturerInfo(capturerInfo,
           (err, AudioDeviceDescriptors) => {
@@ -748,6 +891,17 @@ export default function audioRoutingManager() {
       }
 
       let audioRoutingManager = audio.getAudioManager().getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_1500 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try {
         await audioRoutingManager.getPreferredInputDeviceForCapturerInfo(capturerInfo,
           (err, AudioDeviceDescriptors) => {
@@ -785,6 +939,17 @@ export default function audioRoutingManager() {
       }
 
       let audioRoutingManager = audio.getAudioManager().getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_1600 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try {
         await audioRoutingManager.getPreferredInputDeviceForCapturerInfo(capturerInfo,
           (err, AudioDeviceDescriptors) => {
@@ -1340,6 +1505,17 @@ export default function audioRoutingManager() {
         capturerFlags: 0
       }
       let audioRoutingManager = audio.getAudioManager().getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOSYNC_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try {
         let AudioDeviceDescriptors = audioRoutingManager.getPreferredInputDeviceForCapturerInfoSync(capturerInfo)
         console.log(`get device descriptor success: ` + JSON.stringify(AudioDeviceDescriptors));
@@ -1400,6 +1576,17 @@ export default function audioRoutingManager() {
         capturerFlags: 0
       }
       let audioRoutingManager = audio.getAudioManager().getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOSYNC_0002 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try {
         let AudioDeviceDescriptors = audioRoutingManager.getPreferredInputDeviceForCapturerInfoSync(capturerInfo)
         console.log(`get device descriptor success: ` + JSON.stringify(AudioDeviceDescriptors));
@@ -1430,6 +1617,17 @@ export default function audioRoutingManager() {
         capturerFlags: 0
       }
       let audioRoutingManager = audio.getAudioManager().getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOSYNC_0003 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try {
         let AudioDeviceDescriptors = audioRoutingManager.getPreferredInputDeviceForCapturerInfoSync(capturerInfo)
         console.log(`get device descriptor success: ` + JSON.stringify(AudioDeviceDescriptors));
@@ -1460,6 +1658,17 @@ export default function audioRoutingManager() {
         capturerFlags: 0
       }
       let audioRoutingManager = audio.getAudioManager().getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOSYNC_0004 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try {
         let AudioDeviceDescriptors = audioRoutingManager.getPreferredInputDeviceForCapturerInfoSync(capturerInfo)
         console.log(`get device descriptor success: ` + JSON.stringify(AudioDeviceDescriptors));
@@ -1490,6 +1699,17 @@ export default function audioRoutingManager() {
         capturerFlags: 0
       }
       let audioRoutingManager = audio.getAudioManager().getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOSYNC_0005 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try {
         let AudioDeviceDescriptors = audioRoutingManager.getPreferredInputDeviceForCapturerInfoSync(capturerInfo)
         console.log(`get device descriptor success: ` + JSON.stringify(AudioDeviceDescriptors));
@@ -1520,6 +1740,17 @@ export default function audioRoutingManager() {
         capturerFlags: 0
       }
       let audioRoutingManager = audio.getAudioManager().getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOSYNC_0006 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try {
         let AudioDeviceDescriptors = audioRoutingManager.getPreferredInputDeviceForCapturerInfoSync(capturerInfo)
         console.log(`get device descriptor success: ` + JSON.stringify(AudioDeviceDescriptors));
@@ -1550,6 +1781,17 @@ export default function audioRoutingManager() {
         capturerFlags: 0
       }
       let audioRoutingManager = audio.getAudioManager().getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOSYNC_0007 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try {
         let AudioDeviceDescriptors = audioRoutingManager.getPreferredInputDeviceForCapturerInfoSync(capturerInfo)
         console.log(`get device descriptor success: ` + JSON.stringify(AudioDeviceDescriptors));
@@ -1580,6 +1822,17 @@ export default function audioRoutingManager() {
         capturerFlags: 0
       }
       let audioRoutingManager = audio.getAudioManager().getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOSYNC_0008 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try {
         let AudioDeviceDescriptors = audioRoutingManager.getPreferredInputDeviceForCapturerInfoSync(capturerInfo)
         console.log(`get device descriptor success: ` + JSON.stringify(AudioDeviceDescriptors));

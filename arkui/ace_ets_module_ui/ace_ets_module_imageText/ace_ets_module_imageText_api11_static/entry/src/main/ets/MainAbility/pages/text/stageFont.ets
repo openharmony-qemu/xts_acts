@@ -56,11 +56,11 @@ struct StageFont {
         .labelStyle({
           font: { family: 'fontCustom' } as Font
         } )
-        .key("button")
+        .key("stageFont_button")
       Text('文本Text字体')
         .fontSize(24)
         .fontFamily('fontCustom')
-        .key("text")
+        .key("stageFont_text")
       TextArea({
         text: this.text,
         placeholder: 'TextArea字体',
@@ -72,7 +72,7 @@ struct StageFont {
         .onChange((value: string) : void => {
           this.text = value
         })
-        .key('textArea')
+        .key('stageFont_textArea')
       TextInput({ placeholder: 'TextInput字体' })
         .fontFamily('fontCustom')
         .fontSize(24)

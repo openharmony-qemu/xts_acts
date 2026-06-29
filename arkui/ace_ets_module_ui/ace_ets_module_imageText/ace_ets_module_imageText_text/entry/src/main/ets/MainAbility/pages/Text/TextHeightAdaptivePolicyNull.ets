@@ -28,18 +28,21 @@ struct TextHeightAdaptivePolicyNull {
       // Test 1: heightAdaptivePolicy with null parameter
       Text('heightAdaptivePolicy with null')
         .id('text_heightAdaptivePolicy_null')
+        .key('text_heightAdaptivePolicy_null')
         .heightAdaptivePolicy(null)
         .height('5%')
 
       // Test 2: heightAdaptivePolicy with undefined parameter
       Text('heightAdaptivePolicy with undefined')
         .id('text_heightAdaptivePolicy_undefined')
+        .key('text_heightAdaptivePolicy_undefined')
         .heightAdaptivePolicy(undefined)
         .height('5%')
 
       // Test 3: Default heightAdaptivePolicy for comparison
       Text('Default heightAdaptivePolicy (for comparison)')
         .id('text_heightAdaptivePolicy_default')
+        .key('text_heightAdaptivePolicy_default')
         .height('5%')
     }
     .width('100%')

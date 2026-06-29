@@ -22,6 +22,7 @@ struct SearchTypeApi11 {
         placeholder: 'input your word...',
       })
         .id('SearchTypeApi11_NORMAL')
+        .key('SearchTypeApi11_NORMAL')
         .type(SearchType.NORMAL)
         .height('5%')
 
@@ -30,6 +31,7 @@ struct SearchTypeApi11 {
         placeholder: 'input your word...',
       })
         .id('SearchTypeApi11_NUMBER')
+        .key('SearchTypeApi11_NUMBER')
         .type(SearchType.NUMBER)
         .height('5%')
 

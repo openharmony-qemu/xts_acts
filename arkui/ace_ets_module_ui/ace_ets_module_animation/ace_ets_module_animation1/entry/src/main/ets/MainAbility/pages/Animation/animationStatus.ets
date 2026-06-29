@@ -87,7 +87,7 @@ struct ImageAnimatorExampleu {
         })
 
         Button('pause')
-          .key('button2')
+          .key('animationStatus_button2')
           .width(100)
           .padding(5)
           .onClick(() => {
@@ -110,7 +110,7 @@ struct ImageAnimatorExampleu {
         })
 
         Button('stop')
-          .key('button3')
+          .key('animationStatus_button3')
           .width(100)
           .padding(5)
           .onClick(() => {

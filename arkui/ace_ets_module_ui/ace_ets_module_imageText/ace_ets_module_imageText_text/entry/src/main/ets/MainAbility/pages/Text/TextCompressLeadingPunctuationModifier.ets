@@ -36,6 +36,7 @@ struct TextCompressLeadingPunctuationModifier {
       Row({ space: 5 }) {
         Text(this.text)
           .id('textCompressLeadingPunctuationModifier')
+          .key('textCompressLeadingPunctuationModifier')
           .height('25%')
           .fontSize(12)
           .borderWidth(1)
@@ -44,6 +45,7 @@ struct TextCompressLeadingPunctuationModifier {
           Span(this.text).fontSize(12)
         }
         .id('textSpanModifier')
+        .key('textSpanModifier')
         .height('25%')
         .fontSize(12)
         .borderWidth(1)

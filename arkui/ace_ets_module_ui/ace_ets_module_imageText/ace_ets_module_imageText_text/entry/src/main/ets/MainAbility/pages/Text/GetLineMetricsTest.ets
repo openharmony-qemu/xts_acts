@@ -64,6 +64,7 @@ struct getLineMetricsText {
             });
           }).height('5%')
         Text(this.startIndex).id('lineMetrics_mess')
+        .key('lineMetrics_mess')
       }
       .height('100%')
     }

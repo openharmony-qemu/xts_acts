@@ -172,7 +172,7 @@ export default function GridItemJsunit() {
     it('GridItemJsunit_0400',  Level.LEVEL0, async (done: Function) => {
       // Verify the function of onSelect of GridItem component 
       console.info('[GridItemJsunit_0400] START');
-      let grid1 = CommonFunc.getComponentRectOnScreen('grid1');
+      let grid1 = CommonFunc.getComponentRectOnScreen('GridItemPage' + '_grid1');
       let left_x = Math.round(grid1.left)
       let bottom_y = Math.round(grid1.top + (grid1.bottom - grid1.top) / 2)
       let driver = await UiDriver.create()

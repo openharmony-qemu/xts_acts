@@ -68,7 +68,7 @@ struct ListExample {
     Column() {
       Button("change value").onClick((e: ClickEvent) => {
         (this.customModifier as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("list_changeButton")
 
       Button('Log Json Data')
         .onClick((e: ClickEvent) => {

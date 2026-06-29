@@ -73,7 +73,7 @@ it('dividerUIJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promis
        console.info('dividerUIJsunit_static_0100 START');
        await CommonFunc.sleep(1000);
 
-       let strJson = inspector.getInspectorByKey('divider');
+       let strJson = inspector.getInspectorByKey('dividerUI' + '_divider');
       let obj = JSON.parseJsonElement(strJson);
       console.info("dividerUIJsunit_static_0100'] component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('vertical')).assertEqual('false');
@@ -100,7 +100,7 @@ it('dividerUIJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promis
       AppStorage.setOrCreate<string>("color",'#FFFFFF')
       await CommonFunc.sleep(200);
 
-      let strJson = inspector.getInspectorByKey('divider');
+      let strJson = inspector.getInspectorByKey('dividerUI' + '_divider');
      let obj = JSON.parseJsonElement(strJson);
      console.info("[dividerUIJsunit_static_0200'] component obj is: " + JSON.stringify(obj.getElement('$attrs').getString('lineCap')));
      expect(obj.getElement('$attrs').getString('strokeWidth')).assertEqual('30.00vp');
@@ -121,7 +121,7 @@ it('dividerUIJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promis
       AppStorage.setOrCreate<LineCapStyle>("lineCapStyle",LineCapStyle.Square)
       await CommonFunc.sleep(2000);
 
-     let strJson = inspector.getInspectorByKey('divider');
+     let strJson = inspector.getInspectorByKey('dividerUI' + '_divider');
      let obj = JSON.parseJsonElement(strJson);
      console.info("[dividerUIJsunit_static_0300'] component obj is: " + obj.getElement('$attrs').getString('lineCap'));
      expect(obj.getElement('$attrs').getString('lineCap')).assertEqual('SQUARE');
@@ -142,7 +142,7 @@ it('dividerUIJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promis
       await CommonFunc.sleep(200);
       await CommonFunc.sleep(200);
 
-      let strJson = inspector.getInspectorByKey('divider');
+      let strJson = inspector.getInspectorByKey('dividerUI' + '_divider');
      let obj = JSON.parseJsonElement(strJson);
      expect(obj.getElement('$attrs').getString('strokeWidth')).assertEqual('-30.00vp');
       done();
@@ -160,7 +160,7 @@ it('dividerUIJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promis
       AppStorage.setOrCreate<Length>("widthK",'1.0')
       await CommonFunc.sleep(2000);
       
-      let strJson = inspector.getInspectorByKey('divider');
+      let strJson = inspector.getInspectorByKey('dividerUI' + '_divider');
      let obj = JSON.parseJsonElement(strJson);
      console.info("[dividerUIJsunit_static_0500'] component obj is: " + JSON.stringify(obj));
      expect(obj.getElement('$attrs').getString('width')).assertEqual('1.00vp')
@@ -179,7 +179,7 @@ it('dividerUIJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promis
       AppStorage.setOrCreate<boolean>("vertical",true)
       await CommonFunc.sleep(2000);
 
-      let strJson = inspector.getInspectorByKey('divider');
+      let strJson = inspector.getInspectorByKey('dividerUI' + '_divider');
      let obj = JSON.parseJsonElement(strJson);
      console.info("[dividerUIJsunit_static_0600'] component obj is: " + JSON.stringify(obj.getElement('$attrs').getString('vertical')));
      expect(obj.getElement('$attrs').getString('vertical')).assertEqual('true');

@@ -87,6 +87,16 @@ export default function AVSessionEnum() {
             expect(avSession.DeviceType.DEVICE_TYPE_SMART_SPEAKER).assertEqual(3);
             console.info(`DeviceType DEVICE_TYPE_BLUETOOTH is ${avSession.DeviceType.DEVICE_TYPE_BLUETOOTH}`);
             expect(avSession.DeviceType.DEVICE_TYPE_BLUETOOTH).assertEqual(10);
+            console.info(`DeviceType DEVICE_TYPE_2IN1 is ${avSession.DeviceType.DEVICE_TYPE_2IN1}`);
+            expect(avSession.DeviceType.DEVICE_TYPE_2IN1).assertEqual(8);
+            console.info(`DeviceType DEVICE_TYPE_CAR is ${avSession.DeviceType.DEVICE_TYPE_CAR}`);
+            expect(avSession.DeviceType.DEVICE_TYPE_CAR).assertEqual(4);
+            console.info(`DeviceType DEVICE_TYPE_DEFAULT_CAST_PLUS_STREAM is ${avSession.DeviceType.DEVICE_TYPE_DEFAULT_CAST_PLUS_STREAM}`);
+            expect(avSession.DeviceType.DEVICE_TYPE_DEFAULT_CAST_PLUS_STREAM).assertEqual(7);
+            console.info(`DeviceType DEVICE_TYPE_HIPLAY is ${avSession.DeviceType.DEVICE_TYPE_HIPLAY}`);
+            expect(avSession.DeviceType.DEVICE_TYPE_HIPLAY).assertEqual(15);
+            console.info(`DeviceType DEVICE_TYPE_PAD is ${avSession.DeviceType.DEVICE_TYPE_PAD}`);
+            expect(avSession.DeviceType.DEVICE_TYPE_PAD).assertEqual(6);
             done();
         })
 

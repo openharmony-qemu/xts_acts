@@ -84,7 +84,7 @@ it('rowSplitTest_static_0001', Level.LEVEL0, async (done: () => void): Promise<v
 it('rowSplitTest_static_0002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('rowSplitTest_0002 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('rowSplit' + '_changeButton'));
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000)
       let strJsonNew = inspector.getInspectorByKey('rowSplit');

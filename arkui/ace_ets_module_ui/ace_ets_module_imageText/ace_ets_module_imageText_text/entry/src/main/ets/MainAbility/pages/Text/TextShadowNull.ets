@@ -28,18 +28,21 @@ struct TextShadowNull {
       // Test 1: textShadow with null parameter
       Text('textShadow with null')
         .id('text_textShadow_null')
+        .key('text_textShadow_null')
         .textShadow(null)
         .height('5%')
 
       // Test 2: textShadow with undefined parameter
       Text('textShadow with undefined')
         .id('text_textShadow_undefined')
+        .key('text_textShadow_undefined')
         .textShadow(undefined)
         .height('5%')
 
       // Test 3: Default textShadow for comparison
       Text('Default textShadow (for comparison)')
         .id('text_textShadow_default')
+        .key('text_textShadow_default')
         .height('5%')
     }
     .width('100%')

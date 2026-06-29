@@ -82,7 +82,7 @@ it('imageTwoJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise
       console.info('imageTwoJsunit_0100 START');
       await CommonFunc.sleep(1000);
       // get the image component and test attribute
-      let strJson = inspector.getInspectorByKey('image1');
+      let strJson = inspector.getInspectorByKey('imageTwo' + '_image1');
       let obj = JSON.parseJsonElement(strJson);
       console.info('imageTwoJsunit_0100 component obj is: ' + obj.getElement('$attrs').getString("renderMode") + "--" + obj.getElement('$attrs').getString("interpolation") +
         "--" + obj.getElement('$attrs').getString('fillColor') + "---" +
@@ -114,7 +114,7 @@ it('imageTwoJsunit_static_0200', Level.LEVEL1, async (done: () => void): Promise
       // modify the image rendermode
       AppStorage.get<MessageManager<ImageRenderMode | number | ImageInterpolation | Color | CopyOptions | boolean>>("messageManager")!.notify({ name: 'renderMode', value: ImageRenderMode.Template })
       await CommonFunc.sleep(200);
-      let strJson = inspector.getInspectorByKey('image1');
+      let strJson = inspector.getInspectorByKey('imageTwo' + '_image1');
       let obj = JSON.parseJsonElement(strJson);
       console.info('imageTwoJsunit_0200 component obj is: ' + obj.getElement('$attrs').getString("renderMode"));
       expect(obj.getElement('$attrs').getString("renderMode")).assertEqual('ImageRenderMode.Template');
@@ -135,7 +135,7 @@ it('imageTwoJsunit_static_0300', Level.LEVEL1, async (done: () => void): Promise
       // modify the image rendermode
       AppStorage.get<MessageManager<ImageRenderMode | number | ImageInterpolation | Color | CopyOptions | boolean | undefined>>("messageManager")!.notify({ name: 'renderMode', value: undefined })
       await CommonFunc.sleep(200);
-      let strJson = inspector.getInspectorByKey('image1');
+      let strJson = inspector.getInspectorByKey('imageTwo' + '_image1');
       let obj = JSON.parseJsonElement(strJson);
       console.info('imageTwoJsunit_0300 component obj is: ' + obj.getElement('$attrs').getString("renderMode"));
       expect(obj.getElement('$attrs').getString("renderMode")).assertEqual('ImageRenderMode.Original');
@@ -157,7 +157,7 @@ it('imageTwoJsunit_static_0400', Level.LEVEL1, async (done: () => void): Promise
       AppStorage.get<MessageManager<ImageRenderMode | number | ImageInterpolation | Color | CopyOptions | boolean>>("messageManager")!.notify({ name: 'interpolation', value: ImageInterpolation.Low })
       console.log('ImageInterpolation==============结束传值')
       await CommonFunc.sleep(300);
-      let strJson = inspector.getInspectorByKey('image1');
+      let strJson = inspector.getInspectorByKey('imageTwo' + '_image1');
       let obj = JSON.parseJsonElement(strJson);
       console.info('imageTwoJsunit_0300  component obj is: ' + obj.getElement('$attrs').getString("interpolation"));
       console.log('ImageInterpolation==============开始断言')
@@ -167,7 +167,7 @@ it('imageTwoJsunit_static_0400', Level.LEVEL1, async (done: () => void): Promise
       AppStorage.get<MessageManager<ImageRenderMode | number | ImageInterpolation | Color | CopyOptions | boolean>>("messageManager")!.notify({ name: 'interpolation', value: ImageInterpolation.Medium })
       console.log('ImageInterpolation==============结束传值')
       await CommonFunc.sleep(300);
-      let strJson2 = inspector.getInspectorByKey('image1');
+      let strJson2 = inspector.getInspectorByKey('imageTwo' + '_image1');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info('imageTwoJsunit_0400  component obj2 is: ' + obj2.getElement('$attrs').getString("interpolation"));
       console.log('ImageInterpolation==============开始断言')
@@ -177,7 +177,7 @@ it('imageTwoJsunit_static_0400', Level.LEVEL1, async (done: () => void): Promise
       AppStorage.get<MessageManager<ImageRenderMode | number | ImageInterpolation | Color | CopyOptions | boolean>>("messageManager")!.notify({ name: 'interpolation', value: ImageInterpolation.High })
       console.log('ImageInterpolation==============结束传值')
       await CommonFunc.sleep(300);
-      let strJson3 = inspector.getInspectorByKey('image1');
+      let strJson3 = inspector.getInspectorByKey('imageTwo' + '_image1');
       let obj3 = JSON.parseJsonElement(strJson3);
       console.info('imageTwoJsunit_0400  component obj3 is: ' + obj3.getElement('$attrs').getString("interpolation"));
       console.log('ImageInterpolation==============开始断言')
@@ -199,7 +199,7 @@ it('imageTwoJsunit_static_0500', Level.LEVEL1, async (done: () => void): Promise
       // test the enum of interpolation
       AppStorage.get<MessageManager<ImageRenderMode | number | ImageInterpolation | Color | CopyOptions | boolean | undefined>>("messageManager")!.notify({ name: 'interpolation', value: undefined })
       await CommonFunc.sleep(200);
-      let strJson = inspector.getInspectorByKey('image1');
+      let strJson = inspector.getInspectorByKey('imageTwo' + '_image1');
       let obj = JSON.parseJsonElement(strJson);
       console.info('imageTwoJsunit_0500  component obj is: ' + obj.getElement('$attrs').getString("interpolation"));
       expect(obj.getElement('$attrs').getString("interpolation")).assertEqual('ImageInterpolation.None');
@@ -218,21 +218,21 @@ it('imageTwoJsunit_static_0600', Level.LEVEL1, async (done: () => void): Promise
       await CommonFunc.sleep(1000);
       AppStorage.get<MessageManager<ResourceColor>>("messageManagerResourceColor")!.notify({ name: 'fillColor', value: "#FFEEAA" })
       await CommonFunc.sleep(200);
-      let strJson = inspector.getInspectorByKey('image1');
+      let strJson = inspector.getInspectorByKey('imageTwo' + '_image1');
       let obj = JSON.parseJsonElement(strJson);
       console.info('imageOneJsunit_0600 component obj is: ' + obj.getElement('$attrs').getString('fillColor'));
       expect(obj.getElement('$attrs').getString('fillColor')).assertEqual('#FFFFEEAA');
 
       AppStorage.get<MessageManager<ResourceColor>>("messageManagerResourceColor")!.notify({ name: 'fillColor', value: "rgb(238, 130, 238)" })
       await CommonFunc.sleep(2000);
-      let strJson2 = inspector.getInspectorByKey('image1');
+      let strJson2 = inspector.getInspectorByKey('imageTwo' + '_image1');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info('imageTwoJsunit_0600  component obj2 is: ' + obj2.getElement('$attrs').getString('fillColor'));
       expect(obj2.getElement('$attrs').getString('fillColor')).assertEqual('#FFEE82EE');
 
       AppStorage.get<MessageManager<ResourceColor>>("messageManagerResourceColor")!.notify({ name: 'fillColor', value: Color.Green })
       await CommonFunc.sleep(2000);
-      let strJson3 = inspector.getInspectorByKey('image1');
+      let strJson3 = inspector.getInspectorByKey('imageTwo' + '_image1');
       let obj3 = JSON.parseJsonElement(strJson3);
       console.info('imageTwoJsunit_0600  component obj3 is: ' + obj3.getElement('$attrs').getString('fillColor'));
       expect(obj3.getElement('$attrs').getString('fillColor')).assertEqual('#FF008000');

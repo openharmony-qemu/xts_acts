@@ -58,7 +58,7 @@ export default function circleNewJsunit() {
     it('testcircleNew001', Level.LEVEL0, async () => {
       console.info('circleNew testcircleNew0011 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('circle');
+      let strJson = getInspectorByKey('circle' + '_circle');
       console.info("[testcircleNew001] component textAlign strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(JSON.parse(strJson).$type).assertEqual('Circle');
@@ -78,7 +78,7 @@ export default function circleNewJsunit() {
     it('testcircleNew002', Level.LEVEL0, async () => {
       console.info('circleNew testcircleNew002 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('circle');
+      let strJson = getInspectorByKey('circle' + '_circle');
       console.info("[testcircleNew002] component textAlign strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(JSON.parse(strJson).$type).assertEqual('Circle');

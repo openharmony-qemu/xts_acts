@@ -58,11 +58,11 @@ export default function DrawOverlayTest() {
       console.info('DrawOverlayTest_0100 START');
       let driver = await Driver.create()
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('DrawModifierDrawOverlay'));
+      let button = await driver.findComponent(ON.id('DrawOverlayTest_DrawModifierDrawOverlay_02'));
       await button.click();
       await Utils.sleep(1000);
 
-      let strJson: string = getInspectorByKey('DrawModifierDrawOverlay');
+      let strJson: string = getInspectorByKey('DrawOverlayTest' + '_DrawModifierDrawOverlay_01');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[DrawOverlayTest_0100] component obj is: " + JSON.stringify(obj));
       console.info("[DrawOverlayTest_0100] content obj is: " + JSON.stringify(obj.$attrs.content));

@@ -79,13 +79,13 @@ export default function Grid_RowCol_GridSize() {
 it('testGridRowColGridSize01_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGridRowColGridSize01_static_01] START');
       await CommonFunc.sleep(3000);
-      let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_GridSize_01');
+      let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_GridSize' + '_01');
      expect(JSON.parseJsonElement(gridContainerStrJson).getString('$type')).assertEqual('Grid');
-      let Grid_RowCol_GridSize_011: RectValue = CommonFunc.getComponentRect('Grid_RowCol_GridSize_011');
-      let Grid_RowCol_GridSize_012: RectValue = CommonFunc.getComponentRect('Grid_RowCol_GridSize_012');
-      let Grid_RowCol_GridSize_013: RectValue = CommonFunc.getComponentRect('Grid_RowCol_GridSize_013');
-      let Grid_RowCol_GridSize_014: RectValue = CommonFunc.getComponentRect('Grid_RowCol_GridSize_014');
-      let Grid_RowCol_GridSize_01: RectValue = CommonFunc.getComponentRect('Grid_RowCol_GridSize_01');
+      let Grid_RowCol_GridSize_011: RectValue = CommonFunc.getComponentRect('Grid_RowCol_GridSize' + '_011');
+      let Grid_RowCol_GridSize_012: RectValue = CommonFunc.getComponentRect('Grid_RowCol_GridSize' + '_012');
+      let Grid_RowCol_GridSize_013: RectValue = CommonFunc.getComponentRect('Grid_RowCol_GridSize' + '_013');
+      let Grid_RowCol_GridSize_014: RectValue = CommonFunc.getComponentRect('Grid_RowCol_GridSize' + '_014');
+      let Grid_RowCol_GridSize_01: RectValue = CommonFunc.getComponentRect('Grid_RowCol_GridSize' + '_01');
       expect(Math.abs(Grid_RowCol_GridSize_011.left - Grid_RowCol_GridSize_01.left) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_GridSize_013.left - Grid_RowCol_GridSize_01.left) <= 1).assertTrue();
 
@@ -141,13 +141,13 @@ it('testGridRowColGridSize02_static_02', Level.LEVEL0, async (done: () => void):
         name: 'changeHeight', value: 300.0
       });
       await CommonFunc.sleep(3000);
-      let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_GridSize_01');
+      let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_GridSize' + '_01');
      expect(JSON.parseJsonElement(gridContainerStrJson).getString('$type')).assertEqual('Grid');
-      let Grid_RowCol_GridSize_011: RectValue = CommonFunc.getComponentRect('Grid_RowCol_GridSize_011');
-      let Grid_RowCol_GridSize_012: RectValue = CommonFunc.getComponentRect('Grid_RowCol_GridSize_012');
-      let Grid_RowCol_GridSize_013: RectValue = CommonFunc.getComponentRect('Grid_RowCol_GridSize_013');
-      let Grid_RowCol_GridSize_014: RectValue = CommonFunc.getComponentRect('Grid_RowCol_GridSize_014');
-      let Grid_RowCol_GridSize_01: RectValue = CommonFunc.getComponentRect('Grid_RowCol_GridSize_01');
+      let Grid_RowCol_GridSize_011: RectValue = CommonFunc.getComponentRect('Grid_RowCol_GridSize' + '_011');
+      let Grid_RowCol_GridSize_012: RectValue = CommonFunc.getComponentRect('Grid_RowCol_GridSize' + '_012');
+      let Grid_RowCol_GridSize_013: RectValue = CommonFunc.getComponentRect('Grid_RowCol_GridSize' + '_013');
+      let Grid_RowCol_GridSize_014: RectValue = CommonFunc.getComponentRect('Grid_RowCol_GridSize' + '_014');
+      let Grid_RowCol_GridSize_01: RectValue = CommonFunc.getComponentRect('Grid_RowCol_GridSize' + '_01');
       expect(Math.abs(Grid_RowCol_GridSize_011.left - Grid_RowCol_GridSize_01.left) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_GridSize_013.left - Grid_RowCol_GridSize_01.left) <= 1).assertTrue();
 

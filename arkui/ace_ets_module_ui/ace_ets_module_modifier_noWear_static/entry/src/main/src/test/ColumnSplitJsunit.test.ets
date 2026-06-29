@@ -110,7 +110,7 @@ it('columnSplitTest_static_0003', Level.LEVEL0, async (done: () => void): Promis
 
       console.info('columnSplitTest_0003 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('columnSplit' + '_changeButton'));
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000)
 
