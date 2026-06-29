@@ -32,6 +32,9 @@ import BigIntBoundaryValues2Test from './BigIntBoundaryValues2Test.test';
 import BigIntConstructorCopy2Test from './BigIntConstructorCopy2Test.test';
 import BigIntConstructorBoolean2Test from './BigIntConstructorBoolean2Test.test';
 import BigIntConstructorDouble2Test from './BigIntConstructorDouble2Test.test';
+import BigIntConstructorIntegral2Test from './BigIntConstructorIntegral2Test.test';
+import BigIntConstructorNoArg2Test from './BigIntConstructorNoArg2Test.test';
+
 
 
 export default function runBigIntHypiumTests(): void {
@@ -54,5 +57,8 @@ export default function runBigIntHypiumTests(): void {
   BigIntConstructorBoolean2Test();
   BigIntConstructorCopy2Test();
   BigIntConstructorDouble2Test();
+  BigIntConstructorIntegral2Test();
+  BigIntConstructorNoArg2Test();
+
 
 }
