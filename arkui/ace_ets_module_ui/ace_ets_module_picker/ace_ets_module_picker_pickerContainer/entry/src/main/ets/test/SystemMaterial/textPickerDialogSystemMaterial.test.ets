@@ -25,7 +25,7 @@ export default function TextPickerDialogSystemMaterialTest() {
     beforeAll(async () => {
       console.info('TextPickerDialogSystemMaterialTest beforeAll start');
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/textPickerDialog/textPickerDialogSystemMaterial',
+        url: 'MainAbility/pages/SystemMaterial/textPickerDialogSystemMaterial',
       }
       try {
         router.clear();
@@ -67,10 +67,10 @@ export default function TextPickerDialogSystemMaterialTest() {
       console.info('TextPickerDialogSystemMaterialTest_001 retValue: ' + retValue);
 
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
-	  expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
-	  expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
-	  expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
-	  expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
+	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
+	    expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
+	    expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
+	    expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
       let btn1 = await driver.findComponent(ON.text('确定'));
       await btn1?.click();
       done();
@@ -99,10 +99,10 @@ export default function TextPickerDialogSystemMaterialTest() {
       console.info('TextPickerDialogSystemMaterialTest_002 retValue: ' + retValue);
 
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
-	  expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
-	  expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
-	  expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
-	  expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
+	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
+	    expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
+	    expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
+	    expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
       let btn1 = await driver.findComponent(ON.text('确定'));
       await btn1?.click();
       done();
@@ -131,10 +131,10 @@ export default function TextPickerDialogSystemMaterialTest() {
       console.info('TextPickerDialogSystemMaterialTest_003 retValue: ' + retValue);
 
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
-	  expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
-	  expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
-	  expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
-	  expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
+	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
+	    expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
+	    expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
+	    expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
       let btn1 = await driver.findComponent(ON.text('确定'));
       await btn1?.click();
       done();
@@ -163,10 +163,10 @@ export default function TextPickerDialogSystemMaterialTest() {
       console.info('TextPickerDialogSystemMaterialTest_004 retValue: ' + retValue);
 
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
-	  expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
-	  expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
-	  expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
-	  expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
+	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
+	    expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
+	    expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
+	    expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
       let btn1 = await driver.findComponent(ON.text('确定'));
       await btn1?.click();
       done();
@@ -195,10 +195,10 @@ export default function TextPickerDialogSystemMaterialTest() {
       console.info('TextPickerDialogSystemMaterialTest_005 retValue: ' + retValue);
 
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
-	  expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
-	  expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
-	  expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
-	  expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
+	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
+	    expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
+	    expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
+	    expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
       let btn1 = await driver.findComponent(ON.text('确定'));
       await btn1?.click();
       done();

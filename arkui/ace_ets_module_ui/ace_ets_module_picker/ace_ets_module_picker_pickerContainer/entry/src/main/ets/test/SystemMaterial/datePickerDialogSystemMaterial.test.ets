@@ -10,7 +10,7 @@ export default function DatePickerDialogSystemMaterialTest() {
     beforeAll(async () => {
       console.info('DatePickerDialogSystemMaterialTest beforeAll start');
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/datePickerDialog/datePickerDialogSystemMaterial',
+        url: 'MainAbility/pages/SystemMaterial/datePickerDialogSystemMaterial',
       }
       try {
         router.clear();
@@ -50,14 +50,14 @@ export default function DatePickerDialogSystemMaterialTest() {
       let systemMaterial: ESObject = column.$attrs.systemMaterial;
       console.info('DatePickerDialogSystemMaterialTest_001 systemMaterial: ' + JSON.stringify(systemMaterial));
 
-      let retValue: ESObject = column.$attrs.systemMaterial.material.immersiveOptions.style;
-      console.info('DatePickerDialogSystemMaterialTest_001 retValue: ' + JSON.stringify(retValue));
+      let retValue: string = column.$attrs.systemMaterial.material.immersiveOptions.style;
+      console.info('DatePickerDialogSystemMaterialTest_001 retValue: ' + retValue);
 
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
-	  expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
-	  expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
-	  expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
-	  expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
+	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
+	    expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
+	    expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
+	    expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
       let btn1 = await driver.findComponent(ON.text('确定'));
       await btn1?.click();
       console.info('DatePickerDialogSystemMaterialTest_001 END');
@@ -85,14 +85,14 @@ export default function DatePickerDialogSystemMaterialTest() {
       let systemMaterial: ESObject = column.$attrs.systemMaterial;
       console.info('DatePickerDialogSystemMaterialTest_002 systemMaterial: ' + JSON.stringify(systemMaterial));
 
-      let retValue: ESObject = column.$attrs.systemMaterial.material.immersiveOptions.style;
-      console.info('DatePickerDialogSystemMaterialTest_002 retValue: ' + JSON.stringify(retValue));
+      let retValue: string = column.$attrs.systemMaterial.material.immersiveOptions.style;
+      console.info('DatePickerDialogSystemMaterialTest_002 retValue: ' + retValue);
 
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
-	  expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
-	  expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
-	  expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
-	  expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
+	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
+	    expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
+	    expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
+	    expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
       let btn1 = await driver.findComponent(ON.text('确定'));
       await btn1?.click();
       console.info('DatePickerDialogSystemMaterialTest_002 END');
@@ -120,14 +120,14 @@ export default function DatePickerDialogSystemMaterialTest() {
       let systemMaterial: ESObject = column.$attrs.systemMaterial;
       console.info('DatePickerDialogSystemMaterialTest_003 systemMaterial: ' + JSON.stringify(systemMaterial));
 
-      let retValue: ESObject = column.$attrs.systemMaterial.material.immersiveOptions.style;
-      console.info('DatePickerDialogSystemMaterialTest_003 retValue: ' + JSON.stringify(retValue));
+      let retValue: string = column.$attrs.systemMaterial.material.immersiveOptions.style;
+      console.info('DatePickerDialogSystemMaterialTest_003 retValue: ' + retValue);
 
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
-	  expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
-	  expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
-	  expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
-	  expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
+	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
+	    expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
+	    expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
+	    expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
       let btn1 = await driver.findComponent(ON.text('确定'));
       await btn1?.click();
       console.info('DatePickerDialogSystemMaterialTest_003 END');
@@ -155,14 +155,14 @@ export default function DatePickerDialogSystemMaterialTest() {
       let systemMaterial: ESObject = column.$attrs.systemMaterial;
       console.info('DatePickerDialogSystemMaterialTest_004 systemMaterial: ' + JSON.stringify(systemMaterial));
 
-      let retValue: ESObject = column.$attrs.systemMaterial.material.immersiveOptions.style;
-      console.info('DatePickerDialogSystemMaterialTest_004 retValue: ' + JSON.stringify(retValue));
+      let retValue: string = column.$attrs.systemMaterial.material.immersiveOptions.style;
+      console.info('DatePickerDialogSystemMaterialTest_004 retValue: ' + retValue);
 
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
-	  expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
-	  expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
-	  expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
-	  expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
+	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
+	    expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
+	    expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
+	    expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
       let btn1 = await driver.findComponent(ON.text('确定'));
       await btn1?.click();
       console.info('DatePickerDialogSystemMaterialTest_004 END');

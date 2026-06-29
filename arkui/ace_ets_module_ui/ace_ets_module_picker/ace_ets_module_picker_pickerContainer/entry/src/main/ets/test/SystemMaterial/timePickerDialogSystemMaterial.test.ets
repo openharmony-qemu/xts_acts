@@ -24,7 +24,7 @@ export default function TimePickerDialogSystemMaterialTest() {
     beforeAll(async () => {
       console.info('TimePickerDialogSystemMaterialTest beforeAll start');
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/timePickerDialog/timePickerDialogSystemMaterial',
+        url: 'MainAbility/pages/SystemMaterial/timePickerDialogSystemMaterial',
       }
       try {
         router.clear();
@@ -66,10 +66,10 @@ export default function TimePickerDialogSystemMaterialTest() {
       console.info('TimePickerDialogSystemMaterialTest_001 retValue: ' + retValue);
 
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
-	  expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
-	  expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
-	  expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
-	  expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
+	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
+	    expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
+	    expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
+	    expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
       let btn1 = await driver.findComponent(ON.text('确定'));
       await btn1?.click();
       done();
@@ -84,7 +84,7 @@ export default function TimePickerDialogSystemMaterialTest() {
      */
     it('TimePickerDialogSystemMaterialTest_002', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('ImmersiveStyleThinID'));
+      const button = await driver.findComponent(ON.id('ImmersiveStyleUltraThinID'));
       await button.click();
       await CommonFunc.sleep(1000);
       let tree: ESObject = await getInspectorTree();
@@ -98,10 +98,10 @@ export default function TimePickerDialogSystemMaterialTest() {
       console.info('TimePickerDialogSystemMaterialTest_002 retValue: ' + retValue);
 
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
-	  expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
-	  expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
-	  expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
-	  expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
+	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
+	    expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
+	    expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
+	    expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
       let btn1 = await driver.findComponent(ON.text('确定'));
       await btn1?.click();
       done();
@@ -130,10 +130,10 @@ export default function TimePickerDialogSystemMaterialTest() {
       console.info('TimePickerDialogSystemMaterialTest_003 retValue: ' + retValue);
 
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
-	  expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
-	  expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
-	  expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
-	  expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
+	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
+	    expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
+	    expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
+	    expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
       let btn1 = await driver.findComponent(ON.text('确定'));
       await btn1?.click();
       done();

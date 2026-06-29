@@ -75,7 +75,7 @@ struct TimePickerDialogSystemMaterial {
             }),
           })
         })
-        .id('ImmersiveStyleUltraThickID')
+        .id('ImmersiveStyleThinID')
 
       Button('REGULAR')
         .onClick(() => {

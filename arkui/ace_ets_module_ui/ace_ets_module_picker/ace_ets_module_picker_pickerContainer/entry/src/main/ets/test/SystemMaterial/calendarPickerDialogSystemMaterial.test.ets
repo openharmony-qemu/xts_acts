@@ -23,7 +23,7 @@ export default function CalendarPickerDialogSystemMaterialTest() {
     beforeEach(async (done: Function) => {
       console.info('CalendarPickerDialogSystemMaterialTest beforeEach start');
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/calendarPickerDialog/calendarPickerDialogSystemMaterial',
+        url: 'MainAbility/pages/SystemMaterial/calendarPickerDialogSystemMaterial',
       }
       router.clear();
       let pages = router.getState();
@@ -66,14 +66,14 @@ export default function CalendarPickerDialogSystemMaterialTest() {
       let systemMaterial: ESObject = JSON.parse(columnStr).$attrs.systemMaterial;
       console.info('[' + tagName + '] systemMaterial: ' + JSON.stringify(systemMaterial));
 
-      let retValue: ESObject = JSON.parse(columnStr).$attrs.systemMaterial.material.immersiveOptions.style;
+      let retValue: string = JSON.parse(columnStr).$attrs.systemMaterial.material.immersiveOptions.style;
       console.info('[' + tagName + '] retValue: ' + JSON.stringify(retValue));
 
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
-	  expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
-	  expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
-	  expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
-	  expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
+	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
+	    expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
+	    expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
+	    expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
       let btn1: Component = await driver.findComponent(ON.text('确定'));
       await btn1?.click();
       await Utils.sleep(1000);
@@ -108,14 +108,14 @@ export default function CalendarPickerDialogSystemMaterialTest() {
       let systemMaterial: ESObject = JSON.parse(columnStr).$attrs.systemMaterial;
       console.info('[' + tagName + '] systemMaterial: ' + JSON.stringify(systemMaterial));
 
-      let retValue: ESObject = JSON.parse(columnStr).$attrs.systemMaterial.material.immersiveOptions.style;
+      let retValue: string = JSON.parse(columnStr).$attrs.systemMaterial.material.immersiveOptions.style;
       console.info('[' + tagName + '] retValue: ' + JSON.stringify(retValue));
 
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
-	  expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
-	  expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
-	  expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
-	  expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
+	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
+	    expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
+	    expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
+	    expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
       let btn1: Component = await driver.findComponent(ON.text('确定'));
       await btn1?.click();
       await Utils.sleep(1000);
@@ -150,14 +150,14 @@ export default function CalendarPickerDialogSystemMaterialTest() {
       let systemMaterial: ESObject = JSON.parse(columnStr).$attrs.systemMaterial;
       console.info('[' + tagName + '] systemMaterial: ' + JSON.stringify(systemMaterial));
 
-      let retValue: ESObject = JSON.parse(columnStr).$attrs.systemMaterial.material.immersiveOptions.style;
+      let retValue: string = JSON.parse(columnStr).$attrs.systemMaterial.material.immersiveOptions.style;
       console.info('[' + tagName + '] retValue: ' + JSON.stringify(retValue));
 
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
-	  expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
-	  expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
-	  expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
-	  expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
+	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
+	    expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
+	    expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
+	    expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
       let btn1: Component = await driver.findComponent(ON.text('确定'));
       await btn1?.click();
       await Utils.sleep(1000);
@@ -192,14 +192,14 @@ export default function CalendarPickerDialogSystemMaterialTest() {
       let systemMaterial: ESObject = JSON.parse(columnStr).$attrs.systemMaterial;
       console.info('[' + tagName + '] systemMaterial: ' + JSON.stringify(systemMaterial));
 
-      let retValue: ESObject = JSON.parse(columnStr).$attrs.systemMaterial.material.immersiveOptions.style;
+      let retValue: string = JSON.parse(columnStr).$attrs.systemMaterial.material.immersiveOptions.style;
       console.info('[' + tagName + '] retValue: ' + JSON.stringify(retValue));
 
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
-	  expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
-	  expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
-	  expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
-	  expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
+	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
+	    expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
+	    expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
+	    expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
       let btn1: Component = await driver.findComponent(ON.text('确定'));
       await btn1?.click();
       await Utils.sleep(1000);
@@ -234,14 +234,14 @@ export default function CalendarPickerDialogSystemMaterialTest() {
       let systemMaterial: ESObject = JSON.parse(columnStr).$attrs.systemMaterial;
       console.info('[' + tagName + '] systemMaterial: ' + JSON.stringify(systemMaterial));
 
-      let retValue: ESObject = JSON.parse(columnStr).$attrs.systemMaterial.material.immersiveOptions.style;
+      let retValue: string = JSON.parse(columnStr).$attrs.systemMaterial.material.immersiveOptions.style;
       console.info('[' + tagName + '] retValue: ' + JSON.stringify(retValue));
 
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
-	  expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
-	  expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
-	  expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
-	  expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
+	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
+	    expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
+	    expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
+	    expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
       let btn1: Component = await driver.findComponent(ON.text('确定'));
       await btn1?.click();
       await Utils.sleep(1000);
@@ -276,14 +276,14 @@ export default function CalendarPickerDialogSystemMaterialTest() {
       let systemMaterial: ESObject = JSON.parse(columnStr).$attrs.systemMaterial;
       console.info('[' + tagName + '] systemMaterial: ' + JSON.stringify(systemMaterial));
 
-      let retValue: ESObject = JSON.parse(columnStr).$attrs.systemMaterial.material.immersiveOptions.style;
+      let retValue: string = JSON.parse(columnStr).$attrs.systemMaterial.material.immersiveOptions.style;
       console.info('[' + tagName + '] retValue: ' + JSON.stringify(retValue));
 
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
-	  expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
-	  expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
-	  expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
-	  expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
+	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
+	    expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
+	    expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
+	    expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
       let btn1: Component = await driver.findComponent(ON.text('确定'));
       await btn1?.click();
       await Utils.sleep(1000);
