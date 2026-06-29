@@ -55,6 +55,19 @@ import BigIntOperatorRightShift2Test from './BigIntOperatorRightShift2Test.test'
 import BigIntOperatorSubtract2Test from './BigIntOperatorSubtract2Test.test';
 
 
+import BigIntPowTest_2 from './BigIntPowTest_2.test';
+import BigIntPositiveTest_2 from './BigIntPositiveTest_2.test';
+import BigIntValueOfTest_2 from './BigIntValueOfTest_2.test';
+import BigIntToString1Test_2 from './BigIntToString1Test_2.test';
+import BigIntToString2Test_2 from './BigIntToString2Test_2.test';
+import BigIntToString3Test_2 from './BigIntToString3Test_2.test';
+import BigIntToLocaleString1Test_2 from './BigIntToLocaleString1Test_2.test';
+import BigIntToLocaleString2Test_2 from './BigIntToLocaleString2Test_2.test';
+import BigIntToLocaleStringOptionsPropsTest_2 from './BigIntToLocaleStringOptionsPropsTest_2.test';
+import BigIntToLocaleStringOptionsIfaceTest_2 from './BigIntToLocaleStringOptionsIfaceTest_2.test';
+
+import BigIntTypeAliasTest_2 from'./BigIntTypeAliasTest_2.test';
+
 export default function runBigInt02HypiumTests(): void {
   BigIntOperatorMultiplyTest();
   BigIntOperatorSubtractTest();
@@ -93,5 +106,15 @@ export default function runBigInt02HypiumTests(): void {
   BigIntOperatorRightShift2Test();
   BigIntOperatorSubtract2Test();
 
-
+  BigIntTypeAliasTest_2();
+  BigIntPowTest_2();
+  BigIntPositiveTest_2();
+  BigIntValueOfTest_2();
+  BigIntToString1Test_2();
+  BigIntToString2Test_2();
+  BigIntToString3Test_2();
+  BigIntToLocaleString1Test_2();
+  BigIntToLocaleString2Test_2();
+  BigIntToLocaleStringOptionsPropsTest_2();
+  BigIntToLocaleStringOptionsIfaceTest_2();
 }
