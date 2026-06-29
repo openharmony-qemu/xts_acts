@@ -28,6 +28,7 @@
 #include "include/NoCopyable.h"
 #include <unordered_map>
 #include <multimedia/player_framework/native_avcodec_videoencoder.h>
+#include <multimedia/player_framework/native_avcodec_videobase.h>
 #include <multimedia/player_framework/native_avformat.h>
 #include <multimedia/player_framework/native_avbuffer.h>
 #include <native_window/external_window.h>
@@ -127,6 +128,8 @@ public:
     void StopOutloop();
     int32_t ReadMultiFilesFunc();
     int32_t GetBframes(OH_AVFormat *format);
+    int32_t CompleteRoiWorkflow(const char *externalRoiString);
+    OH_AVErrCode RebuildAndSetRoiToEncoder(OH_AVFormat **roiFormats, uint32_t count);
     int32_t InitBuffer(OHNativeWindowBuffer *&ohNativeWindowBuffer, OH_NativeBuffer *&nativeBuffer, uint8_t *&dst);
     struct EncoderConfig {
         uint32_t width = 0;             // 视频宽度（默认值）
