@@ -157,6 +157,27 @@ export default function windowNdk() {
     })
 
     /**
+     * @tc.name   test_OH_NativeWindowManager_UnregisterKeyEventFilter_1300002
+     * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_0201
+     * @tc.desc   test_OH_NativeWindowManager_UnregisterKeyEventFilter_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_OH_NativeWindowManager_UnregisterKeyEventFilter_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = "test_OH_NativeWindowManager_UnregisterKeyEventFilter_1300002";
+      let result = windowNdkTest.unFilterKeyCode(-1);
+      console.info(`${caseName}: unFilterKeyCode result: ${result}`);
+      if (result == 1000 || result == 2000) {
+        console.info(`${caseName}: unFilterKeyCode success`);
+        done();
+      } else {
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
      * @tc.name   test_OH_WindowManager_ShowWindow
      * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_0300
      * @tc.desc   test_OH_WindowManager_ShowWindow
