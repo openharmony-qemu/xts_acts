@@ -134,7 +134,7 @@ export default function BigIntToString3Test_2(): void {
      * @tc.level Level 2
      */
     it('testBigIntToString3NanDoubleRadix2700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const radixNaN: double = NaN;
+      const radixNaN: double = Double.NaN;
       expect((): void => {
         BigInt(10).toString(Double.toInt(radixNaN));
       }).assertThrowError('RangeError');
@@ -149,8 +149,8 @@ export default function BigIntToString3Test_2(): void {
      * @tc.level Level 2
      */
     it('testBigIntToString3InfinityDoubleRadix2800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const radixInf: double = Infinity;
-      const radixNegInf: double = -Infinity;
+      const radixInf: double = Double.POSITIVE_INFINITY;
+      const radixNegInf: double = Double.NEGATIVE_INFINITY;
       expect((): void => {
         BigInt(10).toString(Double.toInt(radixInf));
       }).assertThrowError('RangeError');
