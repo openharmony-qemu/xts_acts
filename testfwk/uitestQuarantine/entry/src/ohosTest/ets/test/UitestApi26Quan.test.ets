@@ -65,14 +65,14 @@ export default function UiTest() {
       console.info(`${TestTag}, testDriverDragBetweenDefault end`);
     });
 
-    /**
-     * @tc.name   testDriverDragBetweenNullOptions
-     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_PARAM_0200
-     * @tc.desc   Test dragBetween with null options (default TouchOptions)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
+     /**
+      * @tc.name   testDriverDragBetweenNullOptions
+      * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_PARAM_0200
+      * @tc.desc   Test dragBetween with null options (default TouchOptions)
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
     it('testDriverDragBetweenNullOptions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.info(`${TestTag}, testDriverDragBetweenNullOptions start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -91,14 +91,14 @@ export default function UiTest() {
       await stopApplication('com.uitestScene.acts')
       console.info(`${TestTag}, testDriverDragBetweenNullOptions end`);
     });
-    /**
-     * @tc.name   testDriverDragBetweenUndefinedOptions
-     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_PARAM_0300
-     * @tc.desc   Test dragBetween with undefined options (default TouchOptions)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
+     /**
+      * @tc.name   testDriverDragBetweenUndefinedOptions
+      * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_PARAM_0300
+      * @tc.desc   Test dragBetween with undefined options (default TouchOptions)
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
     it('testDriverDragBetweenUndefinedOptions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.info(`${TestTag}, testDriverDragBetweenUndefinedOptions start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -118,14 +118,14 @@ export default function UiTest() {
       console.info(`${TestTag}, testDriverDragBetweenUndefinedOptions end`);
     });
 
-    /**
-     * @tc.name   testDriverDragBetweenWithEmptyObjectOptions
-     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_PARAM_0400
-     * @tc.desc   Test dragBetween with empty object options {}
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
+     /**
+      * @tc.name   testDriverDragBetweenWithEmptyObjectOptions
+      * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_PARAM_0400
+      * @tc.desc   Test dragBetween with empty object options {}
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
     it('testDriverDragBetweenWithEmptyObjectOptions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.info(`${TestTag}, testDriverDragBetweenWithEmptyObjectOptions start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -146,14 +146,14 @@ export default function UiTest() {
       console.info(`${TestTag}, testDriverDragBetweenWithEmptyObjectOptions end`);
     });
 
-    /**
-     * @tc.name   testDriverDragBetweenWithSpeed
-     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_PARAM_0500
-     * @tc.desc   Test dragBetween with speed option
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
+     /**
+      * @tc.name   testDriverDragBetweenWithSpeed
+      * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_PARAM_0500
+      * @tc.desc   Test dragBetween with speed option
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
     it('testDriverDragBetweenWithSpeed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.info(`${TestTag}, testDriverDragBetweenWithSpeed start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -174,14 +174,14 @@ export default function UiTest() {
       console.info(`${TestTag}, testDriverDragBetweenWithSpeed end`);
     });
 
-    /**
-     * @tc.name   testDriverDragBetweenWithDuration
-     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_PARAM_0600
-     * @tc.desc   Test dragBetween with duration option
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
+     /**
+      * @tc.name   testDriverDragBetweenWithDuration
+      * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_PARAM_0600
+      * @tc.desc   Test dragBetween with duration option
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
     it('testDriverDragBetweenWithDuration', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.info(`${TestTag}, testDriverDragBetweenWithDuration start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -202,14 +202,14 @@ export default function UiTest() {
       console.info(`${TestTag}, testDriverDragBetweenWithDuration end`);
     });
 
-    /**
-     * @tc.name   testDriverDragBetweenWithPressure
-     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_PARAM_0700
-     * @tc.desc   Test dragBetween with pressure option
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
+     /**
+      * @tc.name   testDriverDragBetweenWithPressure
+      * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_PARAM_0700
+      * @tc.desc   Test dragBetween with pressure option
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
     it('testDriverDragBetweenWithPressure', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.info(`${TestTag}, testDriverDragBetweenWithPressure start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -230,14 +230,14 @@ export default function UiTest() {
       console.info(`${TestTag}, testDriverDragBetweenWithPressure end`);
     });
 
-    /**
-     * @tc.name   testDriverDragBetweenWithAllOptions
-     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_PARAM_0800
-     * @tc.desc   Test dragBetween with all TouchOptions properties (speed, pressure, duration)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
+     /**
+      * @tc.name   testDriverDragBetweenWithAllOptions
+      * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_PARAM_0800
+      * @tc.desc   Test dragBetween with all TouchOptions properties (speed, pressure, duration)
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
     it('testDriverDragBetweenWithAllOptions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.info(`${TestTag}, testDriverDragBetweenWithAllOptions start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -258,14 +258,14 @@ export default function UiTest() {
       console.info(`${TestTag}, testDriverDragBetweenWithAllOptions end`);
     });
 
-    /**
-     * @tc.name   testDriverDragBetweenSpeedMinBoundary
-     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_BOUNDARY_0900
-     * @tc.desc   Test dragBetween with speed at minimum boundary (200)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
+     /**
+      * @tc.name   testDriverDragBetweenSpeedMinBoundary
+      * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_BOUNDARY_0900
+      * @tc.desc   Test dragBetween with speed at minimum boundary (200)
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
     it('testDriverDragBetweenSpeedMinBoundary', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.info(`${TestTag}, testDriverDragBetweenSpeedMinBoundary start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -286,14 +286,14 @@ export default function UiTest() {
       console.info(`${TestTag}, testDriverDragBetweenSpeedMinBoundary end`);
     });
 
-    /**
-     * @tc.name   testDriverDragBetweenSpeedMaxBoundary
-     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_BOUNDARY_0200
-     * @tc.desc   Test dragBetween with speed at maximum boundary (40000)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
+     /**
+      * @tc.name   testDriverDragBetweenSpeedMaxBoundary
+      * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_BOUNDARY_0200
+      * @tc.desc   Test dragBetween with speed at maximum boundary (40000)
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
     it('testDriverDragBetweenSpeedMaxBoundary', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.info(`${TestTag}, testDriverDragBetweenSpeedMaxBoundary start`);
       try {
@@ -309,14 +309,14 @@ export default function UiTest() {
       console.info(`${TestTag}, testDriverDragBetweenSpeedMaxBoundary end`);
     });
 
-    /**
-     * @tc.name   testDriverDragBetweenDurationMinBoundary
-     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_BOUNDARY_0300
-     * @tc.desc   Test dragBetween with duration at minimum boundary (1500)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
+     /**
+      * @tc.name   testDriverDragBetweenDurationMinBoundary
+      * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_BOUNDARY_0300
+      * @tc.desc   Test dragBetween with duration at minimum boundary (1500)
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
     it('testDriverDragBetweenDurationMinBoundary', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.info(`${TestTag}, testDriverDragBetweenDurationMinBoundary start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -365,14 +365,14 @@ export default function UiTest() {
       console.info(`${TestTag}, testDriverDragBetweenPressureMinBoundary end`);
     });
 
-    /**
-     * @tc.name   testDriverDragBetweenPressureMaxBoundary
-     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_BOUNDARY_1300
-     * @tc.desc   Test dragBetween with pressure at maximum boundary (1)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
+     /**
+      * @tc.name   testDriverDragBetweenPressureMaxBoundary
+      * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_BOUNDARY_1300
+      * @tc.desc   Test dragBetween with pressure at maximum boundary (1)
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
     it('testDriverDragBetweenPressureMaxBoundary', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.info(`${TestTag}, testDriverDragBetweenPressureMaxBoundary start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
