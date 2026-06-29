@@ -22,7 +22,7 @@ let simState: sim.SimState = sim.getSimStateSync(0);
 
 export default function testsuite() {
     EmptyTest();
-    if (sim.getMaxSimCount() != 0 && canIUse("SystemCapability.Telephony.CellularData") && simState != sim.SimState.SIM_STATE_UNKNOWN){
+    if (sim.getMaxSimCount() != 0 && simState != sim.SimState.SIM_STATE_UNKNOWN){
         if(sim.hasSimCardSync(0)){
             let isEnabled: boolean = data.isCellularDataRoamingEnabledSync(0);
             let isOpen: boolean = data.isCellularDataEnabledSync()
