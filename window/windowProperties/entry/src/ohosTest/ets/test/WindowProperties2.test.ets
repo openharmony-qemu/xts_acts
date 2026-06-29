@@ -1599,6 +1599,7 @@ export default function windowPropertiesTest2() {
         expect().assertFail();
         done()
       }
+      await sleep(500);
       try {
         windowClass!.snapshotIgnorePrivacy().then(async (pixelMap: image.PixelMap) => {
           console.info(msgStr + 'Succeeded in calling snapshotIgnorePrivacy.');
