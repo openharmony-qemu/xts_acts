@@ -27,14 +27,16 @@ import { UtilsTest } from '../Util.test';
 
 const SLEEP_TIME = 1000;
 
-export default function ActionMenuOptionsSystemMaterialTest() {
+export default function ActionMenuOptionsSystemMaterialTest(): void {
   describe('ActionMenuOptionsSystemMaterialTest', () => {
-    beforeAll(async (): Promise<void> => {
+    beforeAll(async () => {
+
       console.info("ActionMenuOptionsSystemMaterialTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.popup.static", "EntryAbility");
     });
 
-    beforeEach(async (): Promise<void> => {
+    beforeEach(async () => {
+
       console.info("ActionMenuOptionsSystemMaterialTest beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/dialogSystemMaterial/ActionMenuOptionsSystemMaterial',
@@ -69,12 +71,13 @@ export default function ActionMenuOptionsSystemMaterialTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ActionMenuOptionsSystemMaterial_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('ActionMenuOptionsSystemMaterial_0100', Level.LEVEL2, async () => {
+
 		console.info('ActionMenuOptionsSystemMaterial_0100 START');
 		let driver: Driver = Driver.create();
 		await CommonFunc.sleep(1000);
 		let button = await driver.findComponent(ON.id('undefined'));
-		await (button?.click() as Promise<void>);
+		await ((await driver.findComponent(ON.id('PLACEHOLDER'))) as Component).click();
 		await CommonFunc.sleep(1000);
 		let titleText = await driver.findComponent(ON.text('ActionMenu Undefined'));
 	    let aaa = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
@@ -92,10 +95,9 @@ export default function ActionMenuOptionsSystemMaterialTest() {
 
 		await CommonFunc.sleep(500);
 		let closeButton = await driver.findComponent(ON.text('Button1'));
-		await (closeButton?.click() as Promise<void>);
+		await ((await driver.findComponent(ON.id('PLACEHOLDER'))) as Component).click();
 		await CommonFunc.sleep(1000);
 		console.info('ActionMenuOptionsSystemMaterial_0100 END');
-		done();
     });
   });
 }

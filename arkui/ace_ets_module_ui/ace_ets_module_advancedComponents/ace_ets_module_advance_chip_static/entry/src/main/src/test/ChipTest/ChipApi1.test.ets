@@ -24,7 +24,7 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { Color, FontWeight, $r, Resource } from '@ohos.arkui.component'
 
-export default function ChipApi1() {
+export default function ChipApi1(): void {
   describe('ChipApi1', () => {
     beforeAll(async (): Promise<void> => {
       console.info("ChipApi1 beforeEach start");

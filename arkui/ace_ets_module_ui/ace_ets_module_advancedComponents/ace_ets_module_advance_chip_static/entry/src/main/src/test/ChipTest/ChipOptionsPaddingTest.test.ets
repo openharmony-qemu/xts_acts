@@ -27,7 +27,7 @@ import {
   $r,
 } from '@ohos.arkui.component';
 
-export default function ChipOptionsPaddingTest() {
+export default function ChipOptionsPaddingTest(): void {
   describe('ChipOptionsPaddingTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("ChipOptionsPaddingTest beforeEach start");

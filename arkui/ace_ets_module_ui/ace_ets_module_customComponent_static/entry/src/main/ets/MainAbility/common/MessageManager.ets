@@ -46,7 +46,7 @@ export class MessageManager {
 
   }
 
-  registerCallback(callback: Callback, type?: string) {
+  registerCallback(callback: Callback, type?: string): void {
     if (type == undefined) {
       console.error('registerCallback callback set')
       this.callback = callback
@@ -55,7 +55,7 @@ export class MessageManager {
     this.callbacks.set(type, callback)
   }
 
-  notify(message: Message, type?: string) {
+  notify(message: Message, type?: string): void {
     if (type == undefined) {
       if (this.callback !== undefined) {
         this.callback!(message)
@@ -71,7 +71,7 @@ export class MessageManager {
     tmpCallback(message)
   }
 
-  clear() {
+  clear(): void {
     this.callbacks.clear()
     this.callback = undefined
   }

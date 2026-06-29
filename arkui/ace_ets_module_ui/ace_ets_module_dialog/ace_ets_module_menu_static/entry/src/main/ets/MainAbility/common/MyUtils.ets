@@ -34,13 +34,13 @@ export default class Utils {
     })
   }
 
-  static sendEvent(message: string, eventId: number) {
+  static sendEvent(message: string, eventId: number): void {
 
 
   }
 
 
-  static getComponentRect(key: string) {
+  static getComponentRect(key: string): RectValue {
     let strJson: string = inspector.getInspectorByKey(key);
     let obj: Record<String,undefined|null|Object> =
       JSON.parse<Object>(strJson, Class.from<String>()) as Record<String,undefined|null|Object>;

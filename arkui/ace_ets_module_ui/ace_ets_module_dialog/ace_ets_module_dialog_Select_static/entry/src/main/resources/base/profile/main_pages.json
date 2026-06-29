@@ -1,6 +1,8 @@
 {
   "src": [
     "MainAbility/pages/index/index",
-    "MainAbility/pages/Select/Select"
+    "MainAbility/pages/Select/Select",
+    "MainAbility/pages/Select/SelectMenuBackgroundBlurStyleOptions",
+    "MainAbility/pages/Select/SelectMenuBackgroundEffect"
   ]
 }

@@ -27,7 +27,7 @@ import {
   $r,
 } from '@ohos.arkui.component';
 
-export default function ChipV2OptionsBorderRadiusTest() {
+export default function ChipV2OptionsBorderRadiusTest(): void {
   describe('ChipV2OptionsBorderRadiusTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("ChipV2OptionsBorderRadiusTest beforeEach start");

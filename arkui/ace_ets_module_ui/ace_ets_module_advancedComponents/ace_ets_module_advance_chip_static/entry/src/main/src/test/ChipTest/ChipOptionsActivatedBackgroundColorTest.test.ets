@@ -27,7 +27,7 @@ import {
   $r,
 } from '@ohos.arkui.component';
 
-export default function ChipOptionsActivatedBackgroundColorTest() {
+export default function ChipOptionsActivatedBackgroundColorTest(): void {
   describe('ChipOptionsActivatedBackgroundColorTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("ChipOptionsActivatedBackgroundColorTest beforeEach start");

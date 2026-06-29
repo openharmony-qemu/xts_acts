@@ -31,7 +31,7 @@ export class ArrayInfo{
     }
     this.arrayMonitor = UIUtils.addMonitor(callbackArray, this.onArrayChange, { path: ['Array1','Array2','Array3','Array4','Array5'] });
   }
-  onArrayChange(m: IMonitor) {
+  onArrayChange(m: IMonitor): void {
     m.dirty.forEach((path: string) => {
       console.log(`[addMonitorTest] ${path} value has changed from ${m.value<int>(path)?.before} to ${m.value<int>(path)?.now}`);
       this.text = `[addMonitorTest] ${path} value has changed from ${m.value<int>(path)?.before} to ${m.value<int>(path)?.now}`

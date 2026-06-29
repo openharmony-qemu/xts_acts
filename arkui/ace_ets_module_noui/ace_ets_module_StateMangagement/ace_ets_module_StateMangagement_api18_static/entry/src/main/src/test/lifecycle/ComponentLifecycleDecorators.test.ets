@@ -22,7 +22,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import {UtilsTest,startAbility} from '../Util.test';
 import hilog from '@ohos.hilog'
-export default function componentLifecycleDecoratorsTest() {
+export default function componentLifecycleDecoratorsTest(): void {
   describe('ComponentLifecycleDecorators', () => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api18.static", "EntryAbility");

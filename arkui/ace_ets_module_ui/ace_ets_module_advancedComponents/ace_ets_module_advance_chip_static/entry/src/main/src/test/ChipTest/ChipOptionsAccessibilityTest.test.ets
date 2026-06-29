@@ -27,7 +27,7 @@ import {
   $r,
 } from '@ohos.arkui.component';
 
-export default function ChipOptionsAccessibilityTest() {
+export default function ChipOptionsAccessibilityTest(): void {
   describe('ChipOptionsAccessibilityTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("ChipOptionsAccessibilityTest beforeEach start");

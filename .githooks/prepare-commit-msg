@@ -1,0 +1,11 @@
+#!/bin/sh
+# Auto-append Signed-off-by when missing (enable: git config core.hooksPath .githooks)
+name=$(git config user.name)
+email=$(git config user.email)
+if test -z "$name" || test -z "$email"; then
+  exit 0
+fi
+signoff="Signed-off-by: $name <$email>"
+if ! grep -q "^Signed-off-by:" "$1" 2>/dev/null; then
+  printf '\n%s\n' "$signoff" >> "$1"
+fi

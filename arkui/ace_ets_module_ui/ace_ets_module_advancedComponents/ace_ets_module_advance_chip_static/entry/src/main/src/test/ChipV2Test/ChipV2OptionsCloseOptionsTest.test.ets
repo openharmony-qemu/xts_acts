@@ -24,7 +24,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 
-export default function ChipV2OptionsCloseOptionsTest() {
+export default function ChipV2OptionsCloseOptionsTest(): void {
   describe('ChipV2OptionsCloseOptionsTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("ChipV2OptionsCloseOptionsTest beforeEach start");

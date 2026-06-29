@@ -18,7 +18,7 @@
 import { describe, it, expect, Level } from '../../../../hypium/index';
 import { MenuKeyboardAvoidMode } from '@ohos.arkui.component';
 
-export default function MenuKeyboardAvoidModeTest() {
+export default function MenuKeyboardAvoidModeTest(): void {
   describe('MenuKeyboardAvoidModeTest', () => {
     /**
      * @tc.number MenuKeyboardAvoidModeTest_001
