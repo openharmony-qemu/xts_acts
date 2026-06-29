@@ -1777,7 +1777,7 @@ export default function intelligenceTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("intelligenceApiTest4400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it("intelligenceApiTest4400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + "intelligenceApiTest4400 start");
       let cloudModelInfo: intelligence.CloudModelInfo = {
         modelType: '',
@@ -1791,29 +1791,12 @@ export default function intelligenceTest() {
         modelInfo: cloudModelInfo,
         networkPolicy: intelligence.NetworkPolicy.WIFI_ONLY
       };
-      if (currentDeviceIsPc) {
-        intelligence.getImageEmbeddingModel(imageConfigWithPolicy)
-          .then((data) => {
-            console.info(TAG + "get result:" + data);
-            let ret = false
-            if (data != null) {
-              ret = true;
-            }
-            expect(ret).assertEqual(true);
-            done();
-          })
-      } else {
-        intelligence.getImageEmbeddingModel(imageConfigWithPolicy)
-          .then((data) => {
-            console.info(TAG + "get result:" + data);
-            expect().assertFail();
-            done();
-          })
-          .catch((err: BusinessError) => {
-            console.info(TAG + "get promise result:" + err.code);
-            expect(err.code).assertEqual(801);
-            done();
-          })
+      try {
+        await intelligence.getImageEmbeddingModel(imageConfigWithPolicy);
+        expect().assertFail();
+      } catch (err) {
+        console.info(TAG + "get getImageEmbeddingModel fail: " + err.code + ', message: ' + err.message);
+        expect(err.code).assertEqual(401);
       }
     })
 
@@ -1825,7 +1808,7 @@ export default function intelligenceTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("intelligenceApiTest4500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it("intelligenceApiTest4500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + "intelligenceApiTest4500 start");
       let cloudModelInfo: intelligence.CloudModelInfo = {
         modelType: '',
@@ -1839,29 +1822,12 @@ export default function intelligenceTest() {
         modelInfo: cloudModelInfo,
         networkPolicy: intelligence.NetworkPolicy.WIFI_AND_CELLULAR
       };
-      if (currentDeviceIsPc) {
-        intelligence.getImageEmbeddingModel(imageConfigWithPolicy)
-          .then((data) => {
-            console.info(TAG + "get result:" + data);
-            let ret = false
-            if (data != null) {
-              ret = true;
-            }
-            expect(ret).assertEqual(true);
-            done();
-          })
-      } else {
-        intelligence.getImageEmbeddingModel(imageConfigWithPolicy)
-          .then((data) => {
-            console.info(TAG + "get result:" + data);
-            expect().assertFail();
-            done();
-          })
-          .catch((err: BusinessError) => {
-            console.info(TAG + "get promise result:" + err.code);
-            expect(err.code).assertEqual(801);
-            done();
-          })
+      try {
+        await intelligence.getImageEmbeddingModel(imageConfigWithPolicy);
+        expect().assertFail();
+      } catch (err) {
+        console.info(TAG + "get getImageEmbeddingModel fail: " + err.code + ', message: ' + err.message);
+        expect(err.code).assertEqual(401);
       }
     })
   })
