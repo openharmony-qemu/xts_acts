@@ -677,7 +677,7 @@ export default function ArrayKeysTest(): void {
      * @tc.level Level 2
      */
     it('testArrayKeys034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<int>(100);
+      let arr = Array.create<int>(1, 100);
       let keys = collectKeys(arr.keys());
       expect(keys.length).assertEqual(1);
       expect(keys[0]).assertEqual(0);
@@ -1061,7 +1061,7 @@ export default function ArrayKeysTest(): void {
      * @tc.level Level 2
      */
     it('testArrayKeys056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1);
+      const arr = Array.create<number>(1, 1);
       const iterator = arr.keys();
       expect(iterator.next().value).assertEqual(0);
       const done1 = iterator.next();
@@ -1110,7 +1110,7 @@ export default function ArrayKeysTest(): void {
      * @tc.level Level 2
      */
     it('testArrayKeys059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(99);
+      const arr = Array.create<number>(1, 99);
       const iterator = arr.keys();
       expect(iterator.next().value).assertEqual(0);
       expect(iterator.next().done).assertTrue();
@@ -1468,7 +1468,7 @@ export default function ArrayKeysTest(): void {
      * @tc.level Level 2
      */
     it('testArrayKeys082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1, 2).concat(new Array<number>(3), new Array<number>(4, 5));
+      const arr = new Array<number>(1, 2).concat(Array.create<number>(1, 3), new Array<number>(4, 5));
       const keys = collectKeys(arr.keys());
       expect(keys.toString()).assertEqual('0,1,2,3,4');
     });
@@ -1519,7 +1519,7 @@ export default function ArrayKeysTest(): void {
       let arr = new Array<number>(1, 2, 3);
       const original = arr;
       const iterator = arr.keys();
-      arr = new Array<number>(9);
+      arr = Array.create<number>(1, 9);
       expect(iterator.next().value).assertEqual(0);
       expect(iterator.next().value).assertEqual(1);
       expect(original.length).assertEqual(3);

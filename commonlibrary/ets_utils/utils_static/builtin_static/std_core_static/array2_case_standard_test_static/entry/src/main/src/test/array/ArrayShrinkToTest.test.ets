@@ -925,9 +925,9 @@ export default function ArrayShrinkToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayShrinkTo049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const first = new Array<number>(1);
+      const first = Array.create<number>(1, 1);
       const second = new Array<number>(2, 3);
-      const third = new Array<number>(4);
+      const third = Array.create<number>(1, 4);
       const arr = new Array<Array<number>>(first, second, third);
       arr.shrinkTo(2);
       expect(arr[0] === first).assertTrue();

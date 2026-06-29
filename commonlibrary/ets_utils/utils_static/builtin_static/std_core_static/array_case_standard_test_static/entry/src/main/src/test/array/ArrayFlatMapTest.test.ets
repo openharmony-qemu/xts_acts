@@ -103,7 +103,7 @@ export default function ArrayFlatMapTest(): void {
     it('testArrayFlatMap003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4);
       const result = arr.flatMap<number>((v: number): Array<number> => {
-        return v % 2 == 0 ? new Array<number>(v) : new Array<number>();
+        return v % 2 == 0 ? Array.create<number>(1, v) : new Array<number>();
       });
       expect(result.length).assertEqual(2);
       expect(result[0]).assertEqual(2);
@@ -120,7 +120,7 @@ export default function ArrayFlatMapTest(): void {
      */
     it('testArrayFlatMap004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>();
-      const result = arr.flatMap<number>((v: number): Array<number> => new Array<number>(v));
+      const result = arr.flatMap<number>((v: number): Array<number> => Array.create<number>(1, v));
       expect(result.length).assertEqual(0);
     });
 
@@ -134,7 +134,7 @@ export default function ArrayFlatMapTest(): void {
      */
     it('testArrayFlatMap005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2);
-      const result = arr.flatMap<string>((v: number): Array<string> => new Array<string>(v.toString()));
+      const result = arr.flatMap<string>((v: number): Array<string> => Array.create<string>(1, v.toString()));
       const valueType = Class.of(result[0]).getName().split('.');
       expect(result.length).assertEqual(2);
       expect(valueType[valueType.length - 1]).assertEqual('String');
@@ -175,7 +175,7 @@ export default function ArrayFlatMapTest(): void {
       child2.name = 'child2';
       parent.children.pushOne(child1);
       parent.children.pushOne(child2);
-      const arr = new Array<FlatMapPerson008>(parent);
+      const arr = Array.create<FlatMapPerson008>(1, parent);
       const result = arr.flatMap<FlatMapPerson008>(
         (person: FlatMapPerson008): Array<FlatMapPerson008> => person.children
       );
@@ -235,7 +235,7 @@ export default function ArrayFlatMapTest(): void {
      */
     it('testArrayFlatMap010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(10, 20, 30);
-      const result = arr.flatMap<number>((v: number, i: int): Array<number> => new Array<number>(v + i));
+      const result = arr.flatMap<number>((v: number, i: int): Array<number> => Array.create<number>(1, v + i));
       expect(result.length).assertEqual(3);
       expect(result[0]).assertEqual(10);
       expect(result[1]).assertEqual(21);
@@ -277,7 +277,7 @@ export default function ArrayFlatMapTest(): void {
       item.id = 1;
       item.tags.pushOne('tag1');
       item.tags.pushOne('tag2');
-      const arr = new Array<FlatMapItem012>(item);
+      const arr = Array.create<FlatMapItem012>(1, item);
       const result = arr.flatMap<string>(
         (entry: FlatMapItem012): Array<string> => entry.tags
       );
@@ -564,7 +564,7 @@ export default function ArrayFlatMapTest(): void {
     it('testArrayFlatMap028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Array<number> = [1, 2, 3, 4, 5, 6];
       const result1: Array<number> = arr.flatMap<number>((v: number): Array<number> => {
-        return v % 2 == 0 ? new Array<number>(v * 2) : new Array<number>();
+        return v % 2 == 0 ? Array.create<number>(1, v * 2) : new Array<number>();
       });
       const result2: Array<number> = arr.filter((v: number): boolean => v % 2 == 0).map((v: number): number => v * 2);
       expect(result1.toString()).assertEqual(result2.toString());
@@ -617,7 +617,7 @@ export default function ArrayFlatMapTest(): void {
     it('testArrayFlatMap031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Array<number> = [1, 2, 3, 4, 5];
       const result: Array<number> = arr.flatMap<number>((v: number): Array<number> => {
-        return v > 2 ? new Array<number>(v * 2) : new Array<number>();
+        return v > 2 ? Array.create<number>(1, v * 2) : new Array<number>();
       });
       expect(result.length).assertEqual(3);
       expect(result[0]).assertEqual(6);
@@ -754,7 +754,7 @@ export default function ArrayFlatMapTest(): void {
      */
     it('testArrayFlatMap038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Array<number> = [1, 2, 3];
-      const result: Array<number> = arr.flatMap<number>((v: number): Array<number> => new Array<number>(v * 2));
+      const result: Array<number> = arr.flatMap<number>((v: number): Array<number> => Array.create<number>(1, v * 2));
       expect(result.length).assertEqual(3);
       expect(result[0]).assertEqual(2);
       expect(result[2]).assertEqual(6);

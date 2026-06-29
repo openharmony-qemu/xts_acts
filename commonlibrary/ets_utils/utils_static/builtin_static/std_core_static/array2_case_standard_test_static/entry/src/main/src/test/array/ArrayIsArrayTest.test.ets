@@ -585,7 +585,7 @@ export default function ArrayIsArrayTest(): void {
      */
     it('testArrayIsArray031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr1 = new Array<number>();
-      let arr2 = new Array<number>(10);
+      let arr2 = Array.create<number>(1, 10);
       let arr3 = new Array<number>(1, 2, 3);
       expect(Array.isArray(arr1)).assertTrue();
       expect(Array.isArray(arr2)).assertTrue();
@@ -731,7 +731,7 @@ export default function ArrayIsArrayTest(): void {
      * @tc.level Level 2
      */
     it('testArrayIsArray040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(0);
+      let arr = Array.create<number>(1, 0);
       expect(arr.length).assertEqual(1);
       expect(Array.isArray(arr)).assertTrue();
     });
@@ -745,7 +745,7 @@ export default function ArrayIsArrayTest(): void {
      * @tc.level Level 2
      */
     it('testArrayIsArray041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(10000);
+      let arr = Array.create<number>(1, 10000);
       expect(Array.isArray(arr)).assertTrue();
     });
 
@@ -776,7 +776,7 @@ export default function ArrayIsArrayTest(): void {
     it('testArrayIsArray043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Array.isArray(new Array<number>())).assertTrue();
       expect(isNonEmptyArray(new Array<number>())).assertFalse();
-      expect(isNonEmptyArray(new Array<number>(1))).assertTrue();
+      expect(isNonEmptyArray(Array.create<number>(1, 1))).assertTrue();
     });
 
     /**
@@ -1298,7 +1298,7 @@ export default function ArrayIsArrayTest(): void {
      * @tc.level Level 2
      */
     it('testArrayIsArray081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value = new Map<number, number>(new Array<[number, number]>([1, 2]));
+      const value = new Map<number, number>(Array.create<[number, number]>(1, [1, 2]));
       expect(Array.isArray(value)).assertFalse();
     });
 
@@ -1501,7 +1501,7 @@ export default function ArrayIsArrayTest(): void {
      * @tc.level Level 2
      */
     it('testArrayIsArray095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<Array<number>>(new Array<number>(1), new Array<number>(2));
+      const arr = new Array<Array<number>>(Array.create<number>(1, 1), Array.create<number>(1, 2));
       expect(Array.isArray(arr)).assertTrue();
     });
 
@@ -1661,7 +1661,7 @@ export default function ArrayIsArrayTest(): void {
      */
     it('testArrayIsArray106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = new Array<number>(1, 2)
-        .concat(new Array<number>(3))
+        .concat(Array.create<number>(1, 3))
         .concat(new Array<number>(4, 5));
       expect(Array.isArray(result)).assertTrue();
       expect(result.toString()).assertEqual('1,2,3,4,5');
