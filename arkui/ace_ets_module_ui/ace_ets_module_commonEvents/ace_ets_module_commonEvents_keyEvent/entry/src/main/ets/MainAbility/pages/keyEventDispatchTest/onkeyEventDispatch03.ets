@@ -63,7 +63,7 @@ struct onKeyEventExample3 {
   build() {
     Column() {
       Row() {
-        Text(this.modifierStatePress).key('modifierStatePress')
+        Text(this.modifierStatePress).key('onkeyEventDispatch03_modifierStatePress')
       }
       Button('KeyEvent')
         .onKeyEventDispatch(this.childEventHandler)

@@ -117,7 +117,7 @@ it('fillModeTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<v
       } catch (err) {
         console.info("fillModeTest_static_0100 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("fillModeTest_static_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('button', 10, "")));
+      console.info("fillModeTest_static_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('fillMode' + '_button', 10, "")));
       await CommonFunc.sleep(1000);
       console.info('fillModeTest_static_0100 END');
       done();
@@ -146,7 +146,7 @@ it('fillModeTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<v
       } catch (err) {
         console.info("fillModeTest_static_0200 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("fillModeTest_static_0200 click result is: " + JSON.stringify(inspector.sendEventByKey('button1', 10, "")));
+      console.info("fillModeTest_static_0200 click result is: " + JSON.stringify(inspector.sendEventByKey('fillMode' + '_button1', 10, "")));
       await CommonFunc.sleep(1000);
       console.info('fillModeTest_static_0200 END');
       done();
@@ -175,7 +175,7 @@ it('fillModeTest_static_0300', Level.LEVEL1, async (done: () => void): Promise<v
       } catch (err) {
         console.info("fillModeTest_static_0300 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("fillModeTest_static_0300 click result is: " + JSON.stringify(inspector.sendEventByKey('button2', 10, "")));
+      console.info("fillModeTest_static_0300 click result is: " + JSON.stringify(inspector.sendEventByKey('fillMode' + '_button2', 10, "")));
       await CommonFunc.sleep(1000);
       console.info('fillModeTest_static_0300 END');
       done();

@@ -63,7 +63,7 @@ export default function ImageBasicAttributesTest() {
      */
     it('ImageBasicAttributesTest_010', Level.LEVEL1, async (done: Function) => {
       console.info('ImageBasicAttributesTest_010 START');
-      let strJson = getInspectorByKey('image1');
+      let strJson = getInspectorByKey('ImageBasicAttributes' + '_image1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("component obj is: " + JSON.stringify(obj));
       console.log("image1 matchTextDirection" + JSON.stringify(obj.$attrs.matchTextDirection));
@@ -98,7 +98,7 @@ export default function ImageBasicAttributesTest() {
      */
     it('ImageBasicAttributesTest_020', Level.LEVEL1, async (done: Function) => {
       console.info('ImageBasicAttributesTest_020 START');
-      let strJson = getInspectorByKey('image2');
+      let strJson = getInspectorByKey('ImageBasicAttributes' + '_image2');
       let obj: ESObject = JSON.parse(strJson);
       console.info("component obj is: " + JSON.stringify(obj));
       console.log("image2 objectFit" + JSON.stringify(obj.$attrs.objectFit));

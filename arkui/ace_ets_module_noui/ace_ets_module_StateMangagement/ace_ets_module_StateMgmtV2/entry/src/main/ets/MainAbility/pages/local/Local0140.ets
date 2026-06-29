@@ -32,5 +32,8 @@ struct Local0140 {
     Column() {
       ChildLocal0140({message: this.message})
     }
+    .width('100%')
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
   }
 }

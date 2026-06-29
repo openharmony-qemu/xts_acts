@@ -14,35 +14,10 @@
  * limitations under the License.
  */
 import emitter from '@ohos.events.emitter';
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  Text,
-  Row,
-  Color,
-  $r,
-  Margin,
-  ColumnOptions,
-  Flex,
-  FlexDirection,
-  FlexAlign,
-  ItemAlign,
-  TextAlign,
-  TextOverflow,
-  Alignment,
-  Divider,
-  AlertDialogParamWithConfirm,
-  ActionSheetOptions,
-  DialogAlignment,
-  ActionSheetOptions
-} from '@ohos.arkui.component';
+import { Entry, Column, Component, Button, Text, Row, Color, $r, Margin, ColumnOptions, Flex, FlexDirection, FlexAlign, ItemAlign, TextAlign, TextOverflow, Alignment, Divider, AlertDialogParamWithConfirm, ActionSheetOptions, DialogAlignment, ClickEvent } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
-import { ClickEvent } from '@ohos.arkui.component';
 import { UIContext } from '@ohos.arkui.UIContext';
 import { RecordData } from '@ohos.base';
-
 @Entry
 @Component
 struct stageActionSheet {

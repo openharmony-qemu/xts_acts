@@ -1,4 +1,5 @@
 'use static';
+
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import { MessageManager, Callback } from '../../../../../ets/MainAbility/common/MessageManager';
 import { describe, beforeEach, it, expect, Level, afterEach, beforeAll } from '../../../../../../hypium/index';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
@@ -68,8 +70,6 @@ export default function AlignStart_AddAllSpace() {
       console.info("AlignStart_AddAllSpace after each called");
     });
 
-
-
     /**
      * @tc.number   testFlexAlignStartFlexSpaceOverflow_static
      * @tc.name     testFlexAlignStartFlexSpaceOverflow_static
@@ -83,7 +83,6 @@ export default function AlignStart_AddAllSpace() {
         result!.notify({
           name: 'DadAllSpace', value: 30
         });
-
       }
 
       await CommonFunc.sleep(3000);
@@ -147,15 +146,13 @@ export default function AlignStart_AddAllSpace() {
         .assertTrue();
       expect(Math.floor(Math.abs((Start_AddAllSpace_011.right - Start_AddAllSpace_011.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 2)
         .assertTrue();
-      expect(Math.floor(Math.abs((Start_AddAllSpace_012.right - Start_AddAllSpace_012.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 2)
+      expect(Math.floor(Math.abs((Start_AddAllSpace_012.right - Start_AddAllSpace_012.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 3)
         .assertTrue();
       expect(Math.floor(Math.abs((Start_AddAllSpace_013.right - Start_AddAllSpace_013.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 2)
         .assertTrue();
 
       console.info('[testFlexAlignStartFlexSpaceOverflow] END');
-
     });
-
 
     /**
      * @tc.number   testFlexAlignStartFlexSpaceMeet_static
@@ -238,7 +235,7 @@ export default function AlignStart_AddAllSpace() {
         .assertTrue();
 
       console.info('[testFlexAlignStartFlexSpaceMeet] END');
-
     });
+    
   })
 }

@@ -14,12 +14,10 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../hypium/index';
 import update from '@ohos.update';
 import hilog from '@ohos.hilog';
-// import { BusinessError } from '@ohos.base';
 import { BusinessError, AsyncCallback } from '@ohos.base';
-
 // let sleep = (ms: number): Promise<void> => {
 //   return new Promise<void>((resolve) => setTimeout(resolve, ms));
 // };

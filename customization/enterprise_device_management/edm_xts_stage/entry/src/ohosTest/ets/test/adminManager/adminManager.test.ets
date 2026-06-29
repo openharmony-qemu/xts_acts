@@ -131,6 +131,27 @@ export default function adminManagerTest() {
     })
 
     /**
+     * @tc.name   test_subscribeManagedEventSync_0600
+     * @tc.number SUB_CUSTOMIZATION_EDM_SUBSCRIBEMANAGEDEVENTSYNC_0600
+     * @tc.desc   test subscribeManagedEventSync method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_subscribeManagedEventSync_0600", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+        adminManager.subscribeManagedEventSync(SELFWANT, SUBSCRIBE_EVENTS);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 9200002).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
      * @tc.name   test_unsubscribeManagedEventSync_001
      * @tc.number SUB_CUSTOMIZATION_EDM_UNSUBSCRIBEMANAGEDEVENTSYNC_001
      * @tc.desc   test unsubscribeManagedEventSync method with unActive admin

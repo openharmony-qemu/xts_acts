@@ -94,7 +94,7 @@ export default function imageThreeJsunit() {
       await CommonFunc.sleep(1000);
       // test the image click event
       let driver = UiDriver.create();
-      let btn = await driver.findComponent(BY.key('image2'));
+      let btn = await driver.findComponent(BY.key('imageThree' + '_image2'));
       await btn.click();
       await CommonFunc.sleep(100);
       let strJson = getInspectorByKey('click');

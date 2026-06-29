@@ -73,9 +73,9 @@ it('RelativeContainerApi_static_0100', Level.LEVEL0, async (done: () => void): P
       console.info('RelativeContainerApi_static_0100 START');
       await CommonFunc.sleep(1000);
 
-      let row1 = CommonFunc.getComponentRect('row1')
-      let row2 = CommonFunc.getComponentRect('row2')
-      let row3 = CommonFunc.getComponentRect('row3')
+      let row1 = CommonFunc.getComponentRect('RelativeContainerApi' + '_row1')
+      let row2 = CommonFunc.getComponentRect('RelativeContainerApi' + '_row2')
+      let row3 = CommonFunc.getComponentRect('RelativeContainerApi' + '_row3')
 
       expect(Math.abs(row3.left - row2.right) <= 1).assertTrue();
       expect(Math.abs(row3.top - row1.top) <= 1).assertTrue();

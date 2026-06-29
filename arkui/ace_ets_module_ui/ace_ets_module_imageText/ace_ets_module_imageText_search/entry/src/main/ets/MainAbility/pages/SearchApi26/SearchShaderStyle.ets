@@ -13,15 +13,17 @@
  * limitations under the License.
  */
 
-class SearchShaderStyleModifier implements AttributeModifier<SearchAttribute> {
-  public shaderStyleValue: ShaderStyle | undefined;
+import { setSearchShaderStyle } from '../../common/SearchApi26Compat';
 
-  constructor(value: ShaderStyle | undefined) {
+class SearchShaderStyleModifier implements AttributeModifier<SearchAttribute> {
+  public shaderStyleValue: ESObject | null | undefined;
+
+  constructor(value: ESObject | null | undefined) {
     this.shaderStyleValue = value;
   }
 
   applyNormalAttribute(instance: SearchAttribute): void {
-    instance.shaderStyle(this.shaderStyleValue);
+    setSearchShaderStyle(instance, this.shaderStyleValue);
   }
 }
 
@@ -49,58 +51,75 @@ struct SearchShaderStyle {
     new SearchShaderStyleModifier(new RadialGradientStyle(this.radialGradientOptions));
   modifierColorShader: SearchShaderStyleModifier =
     new SearchShaderStyleModifier(new ColorShaderStyle(Color.Blue));
+  modifierLinearOptions: SearchShaderStyleModifier =
+    new SearchShaderStyleModifier(this.linearGradientOptions as ESObject);
+  modifierRadialOptions: SearchShaderStyleModifier =
+    new SearchShaderStyleModifier(this.radialGradientOptions as ESObject);
+  modifierColorOptions: SearchShaderStyleModifier =
+    new SearchShaderStyleModifier(this.colorShaderStyle as ESObject);
+  modifierNull: SearchShaderStyleModifier = new SearchShaderStyleModifier(null);
+  modifierUndefined: SearchShaderStyleModifier = new SearchShaderStyleModifier(undefined);
 
   build() {
     Column({ space: 5 }) {
       Search({ value: 'Search shaderStyle LinearGradient' })
         .id('search_shaderStyle_linear_gradient')
+        .key('search_shaderStyle_linear_gradient')
         .height('5%')
         .width('100%')
-        .shaderStyle(this.linearGradientOptions)
+        .attributeModifier(this.modifierLinearOptions)
 
       Search({ value: 'Search shaderStyle RadialGradient' })
         .id('search_shaderStyle_radial_gradient')
+        .key('search_shaderStyle_radial_gradient')
         .height('5%')
         .width('100%')
-        .shaderStyle(this.radialGradientOptions)
+        .attributeModifier(this.modifierRadialOptions)
 
       Search({ value: 'Search shaderStyle ColorShader' })
         .id('search_shaderStyle_color_shader')
+        .key('search_shaderStyle_color_shader')
         .height('5%')
         .width('100%')
-        .shaderStyle(this.colorShaderStyle)
+        .attributeModifier(this.modifierColorOptions)
 
       Search({ value: 'Search shaderStyle null' })
         .id('search_shaderStyle_null')
+        .key('search_shaderStyle_null')
         .height('5%')
         .width('100%')
-        .shaderStyle(null)
+        .attributeModifier(this.modifierNull)
 
       Search({ value: 'Search shaderStyle undefined' })
         .id('search_shaderStyle_undefined')
+        .key('search_shaderStyle_undefined')
         .height('5%')
         .width('100%')
-        .shaderStyle(undefined)
+        .attributeModifier(this.modifierUndefined)
 
       Search({ value: 'Search shaderStyle default' })
         .id('search_shaderStyle_default')
+        .key('search_shaderStyle_default')
         .height('5%')
         .width('100%')
 
       Search({ value: 'Search shaderStyle modifier LinearGradient' })
         .id('search_shaderStyle_modifier_linear_gradient')
+        .key('search_shaderStyle_modifier_linear_gradient')
         .height('5%')
         .width('100%')
         .attributeModifier(this.modifierLinearGradient)
 
       Search({ value: 'Search shaderStyle modifier RadialGradient' })
         .id('search_shaderStyle_modifier_radial_gradient')
+        .key('search_shaderStyle_modifier_radial_gradient')
         .height('5%')
         .width('100%')
         .attributeModifier(this.modifierRadialGradient)
 
       Search({ value: 'Search shaderStyle modifier ColorShader' })
         .id('search_shaderStyle_modifier_color_shader')
+        .key('search_shaderStyle_modifier_color_shader')
         .height('5%')
         .width('100%')
         .attributeModifier(this.modifierColorShader)

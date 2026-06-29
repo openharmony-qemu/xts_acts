@@ -55,7 +55,7 @@ export default function ellipseNeJsunit() {
     it('testellipseNe0001', Level.LEVEL0, async () => {
       console.info('ellipseNe testellipseNe0001 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('ellipse');
+      let strJson = getInspectorByKey('ellipse1' + '_ellipse');
       console.info("[testellipseNe0001] component width strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(JSON.parse(strJson).$type).assertEqual('Ellipse');
@@ -75,7 +75,7 @@ export default function ellipseNeJsunit() {
     it('testellipseNe0002', Level.LEVEL0, async () => {
       console.info('ellipseNe testellipseNe0002 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('ellipse');
+      let strJson = getInspectorByKey('ellipse1' + '_ellipse');
       console.info("[testellipseNe0002] component height strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(JSON.parse(strJson).$type).assertEqual('Ellipse');

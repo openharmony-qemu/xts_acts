@@ -68,7 +68,7 @@ struct CheckboxExample {
     Row() {
       Checkbox({ name: 'checkbox1', group: 'checkboxGroup' })
         .select(true)
-        .key('Checkbox1')
+        .key('checkbox_Checkbox1')
 
         .selectedColor('0xed6f21')
         .onChange((value: boolean):void => {
@@ -76,7 +76,7 @@ struct CheckboxExample {
         })
       Checkbox({ name: 'checkbox2', group: 'checkboxGroup' })
         .select(false)
-        .key('Checkbox2')
+        .key('checkbox_Checkbox2')
         .selectedColor(0x39a2db)
         .onChange((value: boolean):void => {
           console.info('Checkbox2 change is' + value)

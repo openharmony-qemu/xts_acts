@@ -15,20 +15,15 @@
  */
 
 import promptAction from '@ohos.promptAction';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage,State} from '@ohos.arkui.stateManagement';
-import inspector from '@ohos.arkui.inspector'
-import { ResourceColor, Entry, Component,RichEditorController,RichEditorOptions,Column,RichEditor,FlexAlign,BarState,Row,Button,ClickEvent,TextInput,TextArea,
-  Search,Text,TextStyle,MutableStyledString,TextController,TextController,UrlStyle,TextController,StyledStringKey,Color,TextOptions,ColumnOptions,CopyOptions,
-  FontStyle,Margin,StyleOptions,DragEvent,DragItemInfo,Builder,CustomBuilder,DragEvent
-} from '@ohos.arkui.component';
-
-
+import { AppStorage, State } from '@ohos.arkui.stateManagement';
+import inspector from '@ohos.arkui.inspector';
+import { ResourceColor, Entry, Component, RichEditorController, RichEditorOptions, Column, RichEditor, FlexAlign, BarState, Row, Button, ClickEvent, TextInput, TextArea, Search, Text, TextStyle, MutableStyledString, TextController, UrlStyle, StyledStringKey, Color, TextOptions, ColumnOptions, CopyOptions, FontStyle, Margin, StyleOptions, DragEvent, DragItemInfo, Builder, CustomBuilder } from '@ohos.arkui.component';
 @Entry
 @Component
 struct TextAreaInputTestExample {

@@ -14,22 +14,11 @@
  * limitations under the License.
  */
 import { RouterParams } from '../../common/Utils';
-import router from '@ohos.router'
-import {
-  MenuItemGroup,MenuItemGroupOptions,ImageFit,FlowItem,TabContent,ListItemGroup,ListItem,SliderStyle,BadgeParamWithNumber,Blank,Entry,Component,$r,
-  AlignRuleOption,Row,Button,Margin,IDataSource,DataChangeListener,SwiperController,Column,ColumnOptions,ClickEvent,RowOptions,LazyForEach,
-  Text,FlexAlign,TextCase,TextDecorationType,Resource,VerticalAlign,HorizontalAlign,RelativeContainer,CommonMethod,applyStyles,Builder,
-  Color,Scroller,Menu,ScrollBar,TextTimer,ColumnSplit,RowSplit,Refresh,Shape,Rect,Path,Polygon,Polyline,Line,Ellipse,
-  Circle,WaterFlow,Tabs,Swiper,Stack,SideBarContainer,Scroll,List,GridRow,Grid,Flex,Counter,Badge,Toggle,TimePicker,TextPicker,TextInput,TextClock,TextArea,Slider,
-  Search,Rating,QRCode,Progress,AlphabetIndexer,ImageAnimator,Image,Navigation,Marquee,LoadingProgress,Gauge,Divider,DatePicker,DataPanel,CheckboxGroup,Checkbox,
-  Select,Radio,MenuItem,ProgressType,ToggleType,ForEach,GridRowDirection,BarState,SideBarContainerType,TextAlign,GridItem,BadgeStyle,BadgeParamWithString,
-  GutterOption,BreakPoints,BreakpointsReference,GridCol,GridColOptions,GridColColumnOption,ColumnOptions,NavPathStack,
-  MenuItemOptions,CheckboxGroupOptions,DataPanelOptions,DatePickerOptions,ProgressOptions,RadioOptions,SliderOptions
-} from '@ohos.arkui.component';
+import router from '@ohos.router';
+import { MenuItemGroup, MenuItemGroupOptions, ImageFit, FlowItem, TabContent, ListItemGroup, ListItem, SliderStyle, BadgeParamWithNumber, Blank, Entry, Component, $r, AlignRuleOption, Row, Button, Margin, IDataSource, DataChangeListener, SwiperController, Column, ColumnOptions, ClickEvent, RowOptions, LazyForEach, Text, FlexAlign, TextCase, TextDecorationType, Resource, VerticalAlign, HorizontalAlign, RelativeContainer, CommonMethod, applyStyles, Builder, Color, Scroller, Menu, ScrollBar, TextTimer, ColumnSplit, RowSplit, Refresh, Shape, Rect, Path, Polygon, Polyline, Line, Ellipse, Circle, WaterFlow, Tabs, Swiper, Stack, SideBarContainer, Scroll, List, GridRow, Grid, Flex, Counter, Badge, Toggle, TimePicker, TextPicker, TextInput, TextClock, TextArea, Slider, Search, Rating, QRCode, Progress, AlphabetIndexer, ImageAnimator, Image, Navigation, Marquee, LoadingProgress, Gauge, Divider, DatePicker, DataPanel, CheckboxGroup, Checkbox, Select, Radio, MenuItem, ProgressType, ToggleType, ForEach, GridRowDirection, BarState, SideBarContainerType, TextAlign, GridItem, BadgeStyle, BadgeParamWithString, GutterOption, BreakPoints, BreakpointsReference, GridCol, GridColOptions, GridColColumnOption, NavPathStack, MenuItemOptions, CheckboxGroupOptions, DataPanelOptions, DatePickerOptions, ProgressOptions, RadioOptions, SliderOptions } from '@ohos.arkui.component';
 import { MessageManager, Callback } from '../../common/MessageManager';
-import { AppStorage, State,StoragePropRef } from '@ohos.arkui.stateManagement';
+import { AppStorage, State, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-
 /**
  * Test page of common attribute:alignRules
  */

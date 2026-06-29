@@ -166,7 +166,7 @@ export default function textpickerJsunit() {
     it('ArkUI_textpicker_011', Level.LEVEL0, async (done: Function) => {
       console.info('[ArkUI_textpicker_011] START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('textPicker' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
       let strJson = getInspectorByKey('textPicker');

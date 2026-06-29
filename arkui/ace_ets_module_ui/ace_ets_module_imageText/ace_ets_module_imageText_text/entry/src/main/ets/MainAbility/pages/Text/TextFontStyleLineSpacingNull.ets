@@ -33,18 +33,21 @@ struct TextFontStyleLineSpacingNull {
         // Test 1: fontStyle with null parameter
         Text('fontStyle with null')
           .id('text_fontStyle_null')
+          .key('text_fontStyle_null')
           .fontStyle(null)
           .height('5%')
 
         // Test 2: fontStyle with undefined parameter
         Text('fontStyle with undefined')
           .id('text_fontStyle_undefined')
+          .key('text_fontStyle_undefined')
           .fontStyle(undefined)
           .height('5%')
 
         // Test 3: Default fontStyle for comparison
         Text('Default fontStyle (for comparison)')
           .id('text_fontStyle_default')
+          .key('text_fontStyle_default')
           .height('5%')
       }
 
@@ -58,18 +61,21 @@ struct TextFontStyleLineSpacingNull {
         // Test 4: lineSpacing with null parameter
         Text('lineSpacing with null\nThis is a multiline text\nto test line spacing effect')
           .id('text_lineSpacing_null')
+          .key('text_lineSpacing_null')
           .lineSpacing(null)
           .height('5%')
 
         // Test 5: lineSpacing with undefined parameter
         Text('lineSpacing with undefined\nThis is a multiline text\nto test line spacing effect')
           .id('text_lineSpacing_undefined')
+          .key('text_lineSpacing_undefined')
           .lineSpacing(undefined)
           .height('5%')
 
         // Test 6: Default lineSpacing for comparison
         Text('Default lineSpacing (for comparison)\nThis is a multiline text\nto test line spacing effect')
           .id('text_lineSpacing_default')
+          .key('text_lineSpacing_default')
           .height('5%')
       }
     }

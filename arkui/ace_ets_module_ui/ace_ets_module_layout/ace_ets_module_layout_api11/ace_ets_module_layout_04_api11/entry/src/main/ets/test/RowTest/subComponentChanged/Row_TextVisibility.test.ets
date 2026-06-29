@@ -62,8 +62,8 @@ export default function row_TextVisibilityTest() {
         let firstText: RectValue = CommonFunc.getComponentRect('Row_TextVisibility1');
         let secondText: RectValue = CommonFunc.getComponentRect('Row_TextVisibility2');
         let thirdText: RectValue = CommonFunc.getComponentRect('Row_TextVisibility3');
-        let rowContainer: RectValue = CommonFunc.getComponentRect('Row_TextVisibility_Container01');
-        let rowContainerStrJson = getInspectorByKey('Row_TextVisibility_Container01');
+        let rowContainer: RectValue = CommonFunc.getComponentRect('Row_TextVisibility' + '_Container01');
+        let rowContainerStrJson = getInspectorByKey('Row_TextVisibility' + '_Container01');
 
         expect(JSON.parse(rowContainerStrJson).$type).assertEqual('Row');
 
@@ -112,8 +112,8 @@ export default function row_TextVisibilityTest() {
         let firstText: RectValue = CommonFunc.getComponentRect('Row_TextVisibility1');
         let secondText: RectValue = CommonFunc.getComponentRect('Row_TextVisibility2');
         let thirdText: RectValue = CommonFunc.getComponentRect('Row_TextVisibility3');
-        let rowContainer: RectValue = CommonFunc.getComponentRect('Row_TextVisibility_Container01');
-        let rowContainerStrJson = getInspectorByKey('Row_TextVisibility_Container01');
+        let rowContainer: RectValue = CommonFunc.getComponentRect('Row_TextVisibility' + '_Container01');
+        let rowContainerStrJson = getInspectorByKey('Row_TextVisibility' + '_Container01');
 
         expect(JSON.parse(rowContainerStrJson).$type).assertEqual('Row');
         let secondTextStrJson = getInspectorByKey('Row_TextVisibility2');
@@ -160,8 +160,8 @@ export default function row_TextVisibilityTest() {
         let firstText: RectValue = CommonFunc.getComponentRect('Row_TextVisibility1');
         let secondText: RectValue = CommonFunc.getComponentRect('Row_TextVisibility2');
         let thirdText: RectValue = CommonFunc.getComponentRect('Row_TextVisibility3');
-        let rowContainer: RectValue = CommonFunc.getComponentRect('Row_TextVisibility_Container01');
-        let rowContainerStrJson = getInspectorByKey('Row_TextVisibility_Container01');
+        let rowContainer: RectValue = CommonFunc.getComponentRect('Row_TextVisibility' + '_Container01');
+        let rowContainerStrJson = getInspectorByKey('Row_TextVisibility' + '_Container01');
 
         expect(JSON.parse(rowContainerStrJson).$type).assertEqual('Row');
 

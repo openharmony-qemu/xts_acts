@@ -37,7 +37,7 @@ struct gridContainer {
               Text('3')
                 .height(50).backgroundColor(Color.Green).textAlign(TextAlign.Center)
             }
-          }.key('gridContainer')
+          }.key('GridContainer_gridContainer')
           .width('90%')
           Text('Click Simulate to change the device width').fontSize(9).width('90%').fontColor(Color.Red)
           Row() {
@@ -110,7 +110,7 @@ struct gridContainer {
         }.width('100%').margin({ top: 5 } as Margin)
       }
     }
-    .key('flex')
+    .key('GridContainer_flex')
     .width('100%')
     .height('100%')
   }

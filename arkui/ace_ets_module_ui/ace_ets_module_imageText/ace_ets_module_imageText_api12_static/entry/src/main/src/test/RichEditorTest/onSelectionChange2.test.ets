@@ -84,13 +84,13 @@ export default function onSelectionChange2() {
 
       await driver.triggerKey(2017);
       await CommonFunc.sleep(1000);
-      let text1 = inspector.getInspectorByKey('onSelectionChange2_text1');
+      let text1 = inspector.getInspectorByKey('onSelectionChange2' + '_text1');
       let Obj1 = JSON.parseJsonElement(text1);
       expect(Obj1.getElement('$attrs').getString('content')).assertEqual('2');
 
-      let text2 = inspector.getInspectorByKey('onSelectionChange2_text2');
+      let text2 = inspector.getInspectorByKey('onSelectionChange2' + '_text2');
       let Obj2 = JSON.parseJsonElement(text2);
-      let text3 = inspector.getInspectorByKey('onSelectionChange2_text3');
+      let text3 = inspector.getInspectorByKey('onSelectionChange2' + '_text3');
       let Obj3 = JSON.parseJsonElement(text3);
 
       expect(Obj2.getElement('$attrs').getString('content')).assertEqual(Obj3.getElement('$attrs').getString('content'));

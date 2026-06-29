@@ -2,7 +2,6 @@ import { describe, it, expect, TestType, Size, Level } from "../../../hypium/ind
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import { BusinessError } from '@ohos.base';
-import Rect from '@ohos.application.AccessibilityExtensionAbility';
 import accessibility from '@ohos.accessibility'
 import { Resource } from 'global.resource';
 

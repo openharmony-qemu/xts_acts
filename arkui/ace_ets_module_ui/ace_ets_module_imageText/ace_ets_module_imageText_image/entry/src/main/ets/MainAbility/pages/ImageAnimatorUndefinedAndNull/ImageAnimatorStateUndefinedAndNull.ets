@@ -21,6 +21,7 @@ struct ImageAnimatorStateUndefinedAndNullTest {
     Column({ space: 10 }) {
       ImageAnimator()
         .id('stateUndefined')
+        .key('stateUndefined')
         .images([
           {
             src: $r('app.media.tree')
@@ -33,6 +34,7 @@ struct ImageAnimatorStateUndefinedAndNullTest {
 
       ImageAnimator()
         .id('stateNull')
+        .key('stateNull')
         .images([
           {
             src: $r('app.media.tree')

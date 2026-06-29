@@ -128,7 +128,7 @@ struct ViewB {
         Row() {
 
           Column() {
-            Button('compare').key('compareBtn')
+            Button('compare').key('ObjectLink2_compareBtn')
             Row(){
               Column(){
                 Text("父type-->undefined").height('5%')

@@ -46,7 +46,7 @@ struct BlankExample {
     Column({ space: 5 } as ColumnOptions) {
       Button("change value").onClick((e: ClickEvent) => {
         (this.customModifier as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("blank_changeButton")
 
       Column() {
         Blank("160")

@@ -69,7 +69,7 @@ export default function stackJsunit() {
     it('stackTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('stackTest_001 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('stack' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
       let strJsonNew = getInspectorByKey('stack');

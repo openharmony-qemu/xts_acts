@@ -1,9 +1,6 @@
 export class Colors {
   public static readonly colors: Map<string, string> = new Map<string, string>([
     ['brand', 'sys.color.brand'],
-    ['primary', 'sys.color.primary'],
-    ['onPrimary', 'sys.color.on_primary'],
-    ['container', 'sys.color.container'],
     ['warning', 'sys.color.warning'],
     ['alert', 'sys.color.alert'],
     ['confirm', 'sys.color.confirm'],

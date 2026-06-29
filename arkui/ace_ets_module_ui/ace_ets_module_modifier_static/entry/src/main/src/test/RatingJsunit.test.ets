@@ -126,7 +126,7 @@ it('RatingJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<v
 it('RatingJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[RatingJsunit_static_0400] START');
       let driver = Driver.create();
-      let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button =  await (driver.findComponent(ON.id('rating' + '_changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
       let strJson = inspector.getInspectorByKey('rating1');

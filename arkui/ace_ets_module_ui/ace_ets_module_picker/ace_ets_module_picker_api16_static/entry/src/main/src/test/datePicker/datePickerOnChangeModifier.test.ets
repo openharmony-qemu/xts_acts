@@ -98,7 +98,7 @@ it('DatePicker_OnChange_Modifier_static_001', Level.LEVEL1, async (done: () => v
       let left =datePicker.left
       await driver.swipe(Math.round((right-left)/2+left).toInt(), Math.round(middle).toInt(), Math.round((right-left)/2+left).toInt(), Math.round(0).toInt());
       await Utils.sleep(5000);
-      let strJsonNew:string = inspector.getInspectorByKey('datePickerOnChangeModifier' + '_onChangeOff');
+      let strJsonNew:string = inspector.getInspectorByKey('datePickerOnChangeModifier_onChangeOff');
       console.info("DatePicker_OnChange_Modifier_static_001 component  is: " + JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content'));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('true');
       console.info('DatePicker_OnChange_Modifier_static_001 END');

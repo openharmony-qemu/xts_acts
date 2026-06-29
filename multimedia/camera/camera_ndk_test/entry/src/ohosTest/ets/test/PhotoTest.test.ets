@@ -3477,7 +3477,7 @@ export default function PhotoTest() {
         //--------------------------------------------测试过程------------------------------------------------------
         let ret = cameraObj.getZoomPointInfos(0)
         console.info(`getZoomPointInfos, ret: ${ret}`)
-        if (ret === 7400102) {
+        if (ret === -1) {
           console.info(`${caseName} does not support get zoom point`);
           done();
           return
@@ -3647,7 +3647,7 @@ export default function PhotoTest() {
         sessionCommitConfig();
         let ret = cameraObj.getZoomPointInfos(Parameter_Setting.ALL_PARAMETER_OK)
         console.info(`getZoomPointInfos, ret: ${ret}`)
-        if (ret === 7400102) {
+        if (ret === -1) {
           console.info(`${caseName} does not support get zoom point`);
           done();
           return
@@ -3688,7 +3688,7 @@ export default function PhotoTest() {
         sessionCommitConfig();
         let ret = cameraObj.getZoomPointInfos(Parameter_Setting.ALL_PARAMETER_OK)
         console.info(`getZoomPointInfos, ret: ${ret}`)
-        if (ret === 7400102) {
+        if (ret === -1) {
           console.info(`${caseName} does not support get zoom point`);
           done();
           return

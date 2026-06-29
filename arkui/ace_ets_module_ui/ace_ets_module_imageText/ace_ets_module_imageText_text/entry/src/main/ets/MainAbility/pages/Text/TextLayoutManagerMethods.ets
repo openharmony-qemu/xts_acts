@@ -236,66 +236,82 @@ struct TextLayoutManagerMethods {
 
       Text('getCharacterPositionAtCoordinate null X: ' + this.resultGetCharacterPositionAtCoordinateNullX)
         .id('text_getCharacterPositionAtCoordinate_null_x')
+        .key('text_getCharacterPositionAtCoordinate_null_x')
         .height('3%')
 
       Text('getCharacterPositionAtCoordinate undefined X: ' + this.resultGetCharacterPositionAtCoordinateUndefinedX)
         .id('text_getCharacterPositionAtCoordinate_undefined_x')
+        .key('text_getCharacterPositionAtCoordinate_undefined_x')
         .height('3%')
 
       Text('getCharacterPositionAtCoordinate null Y: ' + this.resultGetCharacterPositionAtCoordinateNullY)
         .id('text_getCharacterPositionAtCoordinate_null_y')
+        .key('text_getCharacterPositionAtCoordinate_null_y')
         .height('3%')
 
       Text('getCharacterPositionAtCoordinate undefined Y: ' + this.resultGetCharacterPositionAtCoordinateUndefinedY)
         .id('text_getCharacterPositionAtCoordinate_undefined_y')
+        .key('text_getCharacterPositionAtCoordinate_undefined_y')
         .height('3%')
 
       Text('getCharacterPositionAtCoordinate unbound: ' + this.resultGetCharacterPositionAtCoordinateUndefinedReturn)
         .id('text_getCharacterPositionAtCoordinate_unbound')
+        .key('text_getCharacterPositionAtCoordinate_unbound')
         .height('3%')
 
       Text('getCharacterPositionAtCoordinate normal: ' + this.resultGetCharacterPositionAtCoordinateNormalReturn)
         .id('text_getCharacterPositionAtCoordinate_normal')
+        .key('text_getCharacterPositionAtCoordinate_normal')
         .height('3%')
 
       Text('getGlyphRangeForCharacterRange null: ' + this.resultGetGlyphRangeForCharacterRangeNull)
         .id('text_getGlyphRangeForCharacterRange_null')
+        .key('text_getGlyphRangeForCharacterRange_null')
         .height('3%')
 
       Text('getGlyphRangeForCharacterRange undefined: ' + this.resultGetGlyphRangeForCharacterRangeUndefined)
         .id('text_getGlyphRangeForCharacterRange_undefined')
+        .key('text_getGlyphRangeForCharacterRange_undefined')
         .height('3%')
 
       Text('getGlyphRangeForCharacterRange empty: ' + this.resultGetGlyphRangeForCharacterRangeEmpty)
         .id('text_getGlyphRangeForCharacterRange_empty')
+        .key('text_getGlyphRangeForCharacterRange_empty')
         .height('3%')
 
       Text('getGlyphRangeForCharacterRange normal: ' + this.resultGetGlyphRangeForCharacterRangeNormal)
         .id('text_getGlyphRangeForCharacterRange_normal')
+        .key('text_getGlyphRangeForCharacterRange_normal')
         .height('3%')
 
       Text('getGlyphRangeForCharacterRange unbound: ' + this.resultGetGlyphRangeForCharacterRangeUndefinedReturn)
         .id('text_getGlyphRangeForCharacterRange_unbound')
+        .key('text_getGlyphRangeForCharacterRange_unbound')
         .height('3%')
 
       Text('getCharacterRangeForGlyphRange null: ' + this.resultGetCharacterRangeForGlyphRangeNull)
         .id('text_getCharacterRangeForGlyphRange_null')
+        .key('text_getCharacterRangeForGlyphRange_null')
         .height('3%')
 
       Text('getCharacterRangeForGlyphRange undefined: ' + this.resultGetCharacterRangeForGlyphRangeUndefined)
         .id('text_getCharacterRangeForGlyphRange_undefined')
+        .key('text_getCharacterRangeForGlyphRange_undefined')
         .height('3%')
 
       Text('getCharacterRangeForGlyphRange empty: ' + this.resultGetCharacterRangeForGlyphRangeEmpty)
         .id('text_getCharacterRangeForGlyphRange_empty')
+        .key('text_getCharacterRangeForGlyphRange_empty')
         .height('3%')
 
       Text('getCharacterRangeForGlyphRange normal: ' + this.resultGetCharacterRangeForGlyphRangeNormal)
         .id('text_getCharacterRangeForGlyphRange_normal')
+        .key('text_getCharacterRangeForGlyphRange_normal')
         .height('3%')
 
       Text('getCharacterRangeForGlyphRange unbound: ' + this.resultGetCharacterRangeForGlyphRangeUndefinedReturn)
         .id('text_getCharacterRangeForGlyphRange_unbound')
+        .key('text_getCharacterRangeForGlyphRange_unbound')
         .height('3%')
     }
     .width('100%')

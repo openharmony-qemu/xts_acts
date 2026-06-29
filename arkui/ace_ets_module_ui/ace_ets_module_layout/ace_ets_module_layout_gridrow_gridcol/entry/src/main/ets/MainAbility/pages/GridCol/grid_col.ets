@@ -67,7 +67,7 @@ struct Grid_colSpan {
         .backgroundColor(0x308014)
         .backgroundColor(0xf1f3f5)
         .margin({ top: 10 })
-        .key('gridContainer')
+        .key('grid_col_gridContainer')
       }
     }.width("100%").height("100%")
   }

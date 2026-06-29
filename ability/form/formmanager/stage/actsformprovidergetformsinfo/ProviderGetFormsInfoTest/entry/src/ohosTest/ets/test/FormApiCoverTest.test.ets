@@ -26,8 +26,8 @@ import hilog from '@ohos.hilog';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@kit.BasicServicesKit';
 
-const COMMON_TAG = 'FormApiCover';
-const DOMAIN = 0xF811;
+const COMMON_TAG: string = 'FormApiCover';
+const DOMAIN: number = 0xF811;
 
 const INTERVAL_TIME = 2500;
 

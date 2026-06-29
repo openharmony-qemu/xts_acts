@@ -65,7 +65,7 @@ export default function badge3Jsunit() {
     it('testBadge01', Level.LEVEL0, async (done: Function) => {
       console.info('[testBadge01] START');
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('badge');
+      let strJson = getInspectorByKey('badge3' + '_badge');
 
       console.info("[testBadge01] component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)
         .$attrs
@@ -102,7 +102,7 @@ export default function badge3Jsunit() {
         console.log("[testBadge03] change component data error: " + (err as BusinessError).message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = getInspectorByKey('badge');
+      let strJsonNew = getInspectorByKey('badge3' + '_badge');
       console.info("[testBadge03] component objNew is: " + JSON.parse(JSON.parse(strJsonNew)
         .$attrs
         .style) + "--" + JSON.parse(strJsonNew).$attrs.style);
@@ -137,7 +137,7 @@ export default function badge3Jsunit() {
         console.log("[testBadge02] change component data error: " + (err as BusinessError).message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = getInspectorByKey('badge');
+      let strJsonNew = getInspectorByKey('badge3' + '_badge');
       console.info("[testBadge02] component objNew is: " + JSON.stringify(JSON.parse(strJsonNew)));
       expect(JSON.parse(JSON.parse(strJsonNew).$attrs.style).fontSize).assertEqual('30.00fp');
       done();
@@ -171,7 +171,7 @@ export default function badge3Jsunit() {
         console.log("[testBadge04] change component data error: " + (err as BusinessError).message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = getInspectorByKey('badge');
+      let strJsonNew = getInspectorByKey('badge3' + '_badge');
       console.info("[testBadge04] component objNew is: " + JSON.stringify(JSON.parse(strJsonNew)));
       expect(JSON.parse(JSON.parse(strJsonNew).$attrs.style).fontSize).assertEqual('121212121.00fp');
       done();
@@ -204,7 +204,7 @@ export default function badge3Jsunit() {
         console.log("[testBadge05] change component data error: " + (err as BusinessError).message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = getInspectorByKey('badge');
+      let strJsonNew = getInspectorByKey('badge3' + '_badge');
       console.info("[testBadge05] component objNew is: " + JSON.stringify(JSON.parse(strJsonNew)));
       console.info("[testBadge05] component style is: " + JSON.stringify(JSON.parse(JSON.parse(strJsonNew)
         .$attrs
@@ -224,7 +224,7 @@ export default function badge3Jsunit() {
     it('testBadge06', Level.LEVEL0, async (done: Function) => {
       console.info('[testBadge06] START');
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('badge2');
+      let strJson = getInspectorByKey('badge3' + '_badge2');
 
       console.info("[testBadge06] component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$type).assertEqual('Badge');
@@ -243,7 +243,7 @@ export default function badge3Jsunit() {
     it('testBadge07', Level.LEVEL0, async (done: Function) => {
       console.info('[testBadge07] START');
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('badge2');
+      let strJson = getInspectorByKey('badge3' + '_badge2');
 
       console.info("[testBadge07] component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$type).assertEqual('Badge');
@@ -278,7 +278,7 @@ export default function badge3Jsunit() {
         console.log("[testBadge08] change component data error: " + (err as BusinessError).message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = getInspectorByKey('badge2');
+      let strJsonNew = getInspectorByKey('badge3' + '_badge2');
       console.info("[testBadge08] component objNew is: " + JSON.stringify(JSON.parse(strJsonNew)));
       expect(JSON.parse(JSON.parse(strJsonNew).$attrs.style).color).assertEqual('#FF0000FF');
       done();
@@ -311,7 +311,7 @@ export default function badge3Jsunit() {
         console.log("[testBadge09] change component data error: " + (err as BusinessError).message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = getInspectorByKey('badge2');
+      let strJsonNew = getInspectorByKey('badge3' + '_badge2');
       console.info("[testBadge09] component objNew is: " + JSON.stringify(JSON.parse(strJsonNew)));
       expect(JSON.parse(strJsonNew).$attrs.value).assertEqual('test');
       done();
@@ -344,7 +344,7 @@ export default function badge3Jsunit() {
         console.log("[testBadge10] change component data error: " + (err as BusinessError).message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = getInspectorByKey('badge2');
+      let strJsonNew = getInspectorByKey('badge3' + '_badge2');
       console.info("[testBadge10] component objNew is: " + JSON.stringify(JSON.parse(strJsonNew)));
       expect(JSON.parse(JSON.parse(strJsonNew).$attrs.style).color).assertEqual('#FF0000FF');
       done();
@@ -377,7 +377,7 @@ export default function badge3Jsunit() {
         console.log("[testBadge11] change component data error: " + (err as BusinessError).message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = getInspectorByKey('badge2');
+      let strJsonNew = getInspectorByKey('badge3' + '_badge2');
       console.info("[testBadge11] component objNew is: " + JSON.stringify(JSON.parse(strJsonNew)));
       expect(JSON.parse(JSON.parse(strJsonNew).$attrs.style).color).assertEqual('#FFFFFED4');
       done();

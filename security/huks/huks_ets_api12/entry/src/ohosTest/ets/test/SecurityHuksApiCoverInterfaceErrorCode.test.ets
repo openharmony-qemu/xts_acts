@@ -1645,7 +1645,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
 
       let generateKeyOptions = GetMlKemGenerateOptions(768);
       let encapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
-      let sharedKeyParams = MergeOptions(GetCtrNoPaddingOptions(16), GetAccessGroupOptions("group_not_exist"));
+      let sharedKeyParams = MergeOptions(GetAesGenerateOptions(256), GetAccessGroupOptions("group_not_exist"));
 
       await huks.generateKeyItem(genKeyAlias, generateKeyOptions);
 
@@ -1861,7 +1861,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
 
       let generateKeyOptions = GetMlKemGenerateOptions(768);
       let decapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
-      let sharedKeyParams = MergeOptions(GetCtrNoPaddingOptions(16), GetAccessGroupOptions("group_not_exist"));
+      let sharedKeyParams = MergeOptions(GetAesGenerateOptions(256), GetAccessGroupOptions("group_not_exist"));
 
       await huks.generateKeyItem(genKeyAlias, generateKeyOptions);
 

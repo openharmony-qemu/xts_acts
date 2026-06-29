@@ -29,6 +29,7 @@ struct attributeDemo3 {
       Column() {
         Text('Initialize')
           .id('textAttributeUpdater')
+          .key('textAttributeUpdater')
           .attributeModifier(this.modifier)
           .fontSize(14).border({ width: 1 }).textAlign(TextAlign.Center).lineHeight(20)
           .width(200).height(50)

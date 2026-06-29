@@ -67,7 +67,7 @@ export default function rowSplitJsunit() {
     it('rowSplitTest_0002', Level.LEVEL0, async (done: Function) => {
       console.info('rowSplitTest_0002 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('rowSplit' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
       let strJsonNew = getInspectorByKey('rowSplit');

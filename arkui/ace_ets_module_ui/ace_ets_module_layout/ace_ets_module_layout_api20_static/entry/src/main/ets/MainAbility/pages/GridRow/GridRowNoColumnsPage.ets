@@ -13,27 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Column,
-  Component,
-  Text,
-  Color,
-  ForEach,
-  Row,
-  Button,
-  GridRow,
-  GridRowDirection,
-  ForEach,
-  GridCol,
-  BreakPoints,
-  ClickEvent,
-  GridRowOptions,
-  BreakpointsReference
-} from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { Entry, Column, Component, Text, Color, ForEach, Row, Button, GridRow, GridRowDirection, GridCol, BreakPoints, ClickEvent, GridRowOptions, BreakpointsReference } from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-
 @Entry
 @Component
 struct GridRowNoColumnsPage {

@@ -200,7 +200,7 @@ int VideoEncodeRepeat0100Test()
 
 int VideoEncodePreProcess0100Test()
 {
-    if (cap != nullptr && !access("/system/lib64/ndk/libfast_image.so", 0)) {
+    if (cap != nullptr && OH_AVCapability_IsFeatureSupported(cap, VIDEO_ENCODER_PREPROC_DOWNSAMPLING)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->runDualEncoder = true;
         vEncSample->INP_DIR = INP_DIR_720;
@@ -241,7 +241,7 @@ int VideoEncodePreProcess0100Test()
 
 int VideoEncodePreProcess0200Test()
 {
-    if (cap_hevc != nullptr && !access("/system/lib64/ndk/libfast_image.so", 0)) {
+    if (cap_hevc != nullptr && OH_AVCapability_IsFeatureSupported(cap_hevc, VIDEO_ENCODER_PREPROC_CROP)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->runDualEncoder = true;
         vEncSample->INP_DIR = INP_DIR_720;

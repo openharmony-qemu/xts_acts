@@ -28,7 +28,7 @@ struct UIContextAnimateToImmediately {
 
   build() {
     Column() {
-      Text(this.text).key('animateToTest')
+      Text(this.text).key('UIContextAnimateToImmediately_animateToTest')
       Column()
         .width(this.widthSize)
         .height(this.heightSize)

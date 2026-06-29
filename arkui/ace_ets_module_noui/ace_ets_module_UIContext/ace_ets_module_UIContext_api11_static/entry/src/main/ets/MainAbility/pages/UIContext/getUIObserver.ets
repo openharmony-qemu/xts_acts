@@ -121,7 +121,7 @@ struct PageOne {
           Text(this.showFlag.toString())
             .fontSize(30)
             .padding({ left: 35 } as Padding)
-            .key('showFlag_id')
+            .key('getUIObserver_showFlag_id')
         }
       }.hideTitleBar(false).backgroundColor('#0c182431')
     }

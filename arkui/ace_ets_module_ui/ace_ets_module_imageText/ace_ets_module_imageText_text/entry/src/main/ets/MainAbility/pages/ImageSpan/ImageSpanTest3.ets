@@ -21,6 +21,7 @@ struct TextImageSpan3 {
   build() {
     Column({ space: 100 }) {
       Text(this.flag).id('ImageSpan_onComplete_3')
+      .key('ImageSpan_onComplete_3')
       Text(){
         ImageSpan($r('app.media.jpg'))
           .onError(()=>{

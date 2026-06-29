@@ -24,8 +24,8 @@ export default function localizedButtonPaddingTest() {
         url: "MainAbility/pages/segmentButton/localizedButtonPadding",
       }
       try {
-        router.clear();
         let pages = router.getState();
+        router.clear();
         console.info("get localizedButtonPaddingTest state pages: " + JSON.stringify(pages));
         if (!("localizedButtonPadding" == pages.name)) {
           console.info("get localizedButtonPaddingTest state pages.name: " + JSON.stringify(pages.name));
@@ -52,13 +52,14 @@ export default function localizedButtonPaddingTest() {
       async (done: Function) => {
       console.info('localizedButtonPaddingTest_0100 START');
       await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       let btn: Component = await driver.findComponent(ON.id('localizedButtonPadding_start'));
       await btn.click();
       await CommonFunc.sleep(1000);
       let mBtn = getInspectorByKey('localizedButtonPadding_start');
       console.info("[localizedButtonPaddingTest_0100] attrs is: " + JSON.stringify(JSON.parse(mBtn).$attrs));
-      expect(JSON.parse(mBtn).$attrs.label).assertEqual('start:{"unit":1,"value":20}');
+      expect(JSON.parse(mBtn).$attrs.label).assertEqual(
+        'start:{"unit":1,"value":20}');
       console.info('[localizedButtonPaddingTest_0100] END');
       done();
     });
@@ -74,13 +75,14 @@ export default function localizedButtonPaddingTest() {
       async (done: Function) => {
       console.info('localizedButtonPaddingTest_0200 START');
       await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       let btn: Component = await driver.findComponent(ON.id('localizedButtonPadding_end'));
       await btn.click();
       await CommonFunc.sleep(1000);
       let mBtn2 = getInspectorByKey('localizedButtonPadding_end');
       console.info("[localizedButtonPaddingTest_0200] attrs is: " + JSON.stringify(JSON.parse(mBtn2).$attrs));
-      expect(JSON.parse(mBtn2).$attrs.label).assertEqual('end:{"unit":1,"value":10}');
+      expect(JSON.parse(mBtn2).$attrs.label).assertEqual(
+        'end:{"unit":1,"value":10}');
       console.info('[localizedButtonPaddingTest_0200] END');
       done();
     });

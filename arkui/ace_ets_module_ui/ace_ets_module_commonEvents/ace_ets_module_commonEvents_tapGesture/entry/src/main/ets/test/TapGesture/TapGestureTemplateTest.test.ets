@@ -57,12 +57,12 @@ export default function TapGestureTemplateTest() {
     it('TapGestureTemplateTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('TapGestureTemplateTest_0010 START');
       await CommonFunc.sleep(1000);
-      let FatherObj = CommonFunc.getComponentRectOnScreen('TapGestureTemplate_Father');
+      let FatherObj = CommonFunc.getComponentRectOnScreen('TapGestureTemplate' + '_Father');
       let FatherObjHeight = FatherObj.bottom - FatherObj.top
       let FatherObjWidth = FatherObj.right - FatherObj.left
       console.log('TapGestureTemplateTest_0010 FatherObj',FatherObj.left,FatherObj.top,FatherObj.right,FatherObj.bottom)
       await CommonFunc.sleep(1000);
-      let areaObj = CommonFunc.getComponentRectOnScreen('TapGestureTemplate_Click');
+      let areaObj = CommonFunc.getComponentRectOnScreen('TapGestureTemplate' + '_Click');
       let areaHeight = areaObj.bottom - areaObj.top
       let areaWidth = areaObj.right - areaObj.left
       console.log('TapGestureTemplateTest_0010 areaObj',areaObj.left,areaObj.top,areaObj.right,areaObj.bottom)
@@ -76,11 +76,11 @@ export default function TapGestureTemplateTest() {
       await driver.click(Math.round(areaObj.left + areaWidth/2),Math.round(areaObj.top + areaHeight/2));
       let timeAfter:number = Date.now();
       await CommonFunc.sleep(3000);
-      let text1 = getInspectorByKey('TapGestureTemplate_Text01');
+      let text1 = getInspectorByKey('TapGestureTemplate' + '_Text01');
       let obj1: ESObject = JSON.parse(text1);
       let time1: number = Number(obj1.$attrs.content)
       console.log('TapGestureTemplateTest_0010 obj1 $attrs content',obj1.$attrs.content,time1)
-      let text2 = getInspectorByKey('TapGestureTemplate_Text02');
+      let text2 = getInspectorByKey('TapGestureTemplate' + '_Text02');
       let obj2: ESObject = JSON.parse(text2);
       let time2: number = Number(obj2.$attrs.content);
       console.log('TapGestureTemplateTest_0010 obj2 time $attrs content',time1,time2);

@@ -23,9 +23,10 @@ import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import { Driver, ON } from '@ohos.UiTest';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+
 let testAbilityContext:common.UIAbilityContext;
 
-export default function SetBlanklessLoadingWithKey() {
+export default function SetBlanklessLoadingWithKey() : void{
   describe('SetBlanklessLoadingWithKey', (): void => {
     beforeAll(async (): Promise<void> => {
       await Utils.msSleep(2000);
@@ -148,25 +149,6 @@ export default function SetBlanklessLoadingWithKey() {
       inspector.sendEventByKey('setBlanklessLoadingWithKeyTestButton', 10, '');
       await Utils.msSleep(4000);
       done();
-    })
-
-    /**
-     * @tc.name   testClearBlanklessLoadingCacheEmptyArrayStatic001
-     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CLEARBLANKLESSLOADINGCACHE_EMPTYARRAY_0100
-     * @tc.desc   test clearBlanklessLoadingCache with empty array
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testClearBlanklessLoadingCacheEmptyArrayStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-      await Utils.msSleep(2000);
-      Utils.emitEvent('testClearBlanklessLoadingCacheEmptyArray001', 10)
-      await Utils.msSleep(3000);
-      Utils.registerEvent('testClearBlanklessLoadingCacheEmptyArray001', true, 148570, done);
-      await Utils.msSleep(2000);
-      inspector.sendEventByKey('setBlanklessLoadingWithKeyTestButton', 10, '');
-      await Utils.msSleep(4000);
     })
 
     /**

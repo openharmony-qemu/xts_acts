@@ -63,7 +63,7 @@ export default function flexJsunit() {
      */
     it('testFlex010',  Level.LEVEL0, async (done: Function) => {
       console.info('new Flex0 START');
-      let strJson = getInspectorByKey('flex');
+      let strJson = getInspectorByKey('Flex' + '_flex');
       let obj: ESObject = JSON.parse(strJson);
       console.info("component obj is: " + JSON.stringify(obj));
       expect(obj.$type).assertEqual('Flex');

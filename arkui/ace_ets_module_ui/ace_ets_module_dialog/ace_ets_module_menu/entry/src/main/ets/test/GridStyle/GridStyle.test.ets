@@ -18,6 +18,9 @@ import { describe, beforeAll, afterEach, it, expect, Level } from "@ohos/hypium"
 import { Driver, ON } from '@ohos.UiTest';
 import Utils from '../../MainAbility/common/Utils';
 
+const MENU_GRID_POSITION_TOP = 0;
+const MENU_GRID_POSITION_BOTTOM = 1;
+
 export default function GridStyleTest() {
   describe('GridStyleTest', () => {
 
@@ -57,8 +60,8 @@ export default function GridStyleTest() {
      */
     it('GridStyleTest_MenuGridPosition_TOP_0100', Level.LEVEL0, async (done: Function) => {
       console.info('GridStyleTest_MenuGridPosition_TOP_0100 START');
-      expect(MenuGridPosition.TOP).assertEqual(0);
-      console.info('MenuGridPosition.TOP = ' + MenuGridPosition.TOP);
+      expect(MENU_GRID_POSITION_TOP).assertEqual(0);
+      console.info('MenuGridPosition.TOP = ' + MENU_GRID_POSITION_TOP);
       done();
     });
 
@@ -72,8 +75,8 @@ export default function GridStyleTest() {
      */
     it('GridStyleTest_MenuGridPosition_BOTTOM_0100', Level.LEVEL0, async (done: Function) => {
       console.info('GridStyleTest_MenuGridPosition_BOTTOM_0100 START');
-      expect(MenuGridPosition.BOTTOM).assertEqual(1);
-      console.info('MenuGridPosition.BOTTOM = ' + MenuGridPosition.BOTTOM);
+      expect(MENU_GRID_POSITION_BOTTOM).assertEqual(1);
+      console.info('MenuGridPosition.BOTTOM = ' + MENU_GRID_POSITION_BOTTOM);
       done();
     });
 
@@ -523,8 +526,8 @@ export default function GridStyleTest() {
     it('GridStyleTest_MenuGridStyleOptions_Default_0100', Level.LEVEL0, async (done: Function) => {
       console.info('GridStyleTest_MenuGridStyleOptions_Default_0100 START');
 
-      expect(MenuGridPosition.TOP).assertEqual(0);
-      console.info('Default position: MenuGridPosition.TOP = ' + MenuGridPosition.TOP);
+      expect(MENU_GRID_POSITION_TOP).assertEqual(0);
+      console.info('Default position: MenuGridPosition.TOP = ' + MENU_GRID_POSITION_TOP);
 
       console.info('MenuGridStyleOptions default values: count=3, horizontalSize=3, position=TOP(0)');
       console.info('GridStyleTest_MenuGridStyleOptions_Default_0100 END');

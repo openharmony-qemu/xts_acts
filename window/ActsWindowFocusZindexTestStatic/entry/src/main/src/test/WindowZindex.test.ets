@@ -1953,6 +1953,93 @@ export default function WindowZindexTest() {
   
       })
 
+/**
+     * @tc.number     SUB_WINDOW_RaiseToAppTop_Promise_ErrCode_1300004_static_0100
+     * @tc.name       SUB_WINDOW_RaiseToAppTop_Promise_ErrCode_1300004_static_0100
+     * @tc.desc       SUB_WINDOW_RaiseToAppTop_Promise_ErrCode_1300004_static_0100
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 3
+     */
+it('SUB_WINDOW_RaiseToAppTop_Promise_ErrCode_1300004_static_0100', Level.LEVEL3,
+async (done: () => void): Promise<void> => {
+  let caseName: string = "SUB_WINDOW_RaiseToAppTop_Promise_ErrCode_1300004_static_0100";
+  let msgStr: string = 'jsunittest ' + caseName + ' ';
+  hilog.info(domain, tag, msgStr + 'begin.');
+  let config: window.Configuration = {
+    name: "RaiseToAppTop_Promise_ErrCode_1300004_static_0100",
+    windowType: window.WindowType.TYPE_DIALOG,
+    ctx: context!
+  };
+  let dialogWindow: window.Window = await window.createWindow(config);
+  try {
+    dialogWindow.raiseToAppTop().then(async () => {
+      hilog.info(domain, tag, msgStr + 'Succeeded in calling raiseToAppTop.');
+      await dialogWindow.destroyWindow()
+      expect(false).assertTrue();
+      done()
+    }).catch(async (err: Error) => {
+      hilog.error(domain, tag, msgStr + 'Failed. Cause:' + JSON.stringify(err.code) + ` message:${err.message}`);
+      await dialogWindow.destroyWindow()
+      expect(err.code).assertEqual(1300004);
+      expect(err.message !== null).assertTrue();
+      done()
+    });
+  } catch (exception) {
+    hilog.error(domain, tag, msgStr + 'Failed to set the call raiseToAppTop. Cause:' + JSON.stringify(exception));
+    await dialogWindow.destroyWindow()
+    expect(false).assertTrue();
+    done()
+  }
+})
+
+/**
+* @tc.number    SUB_WINDOW_RaiseToAppTop_CallBack_ErrCode_1300004_static_0100
+* @tc.name      SUB_WINDOW_RaiseToAppTop_CallBack_ErrCode_1300004_static_0100
+* @tc.desc      SUB_WINDOW_RaiseToAppTop_CallBack_ErrCode_1300004_static_0100
+* @tc.size      MediumTest
+* @tc.type      Function
+* @tc.level     Level 3
+*/
+it('SUB_WINDOW_RaiseToAppTop_CallBack_ErrCode_1300004_static_0100',
+TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+  let caseName: string = 'SUB_WINDOW_RaiseToAppTop_CallBack_ErrCode_1300004_static_0100';
+  let msgStr: string = 'jsUnittest ' + caseName + ' ';
+  hilog.info(domain, tag, msgStr + 'begin');
+  let config: window.Configuration = {
+    name: "RaiseToAppTop_CallBack_ErrCode_1300004_static_0100",
+    windowType: window.WindowType.TYPE_DIALOG,
+    ctx: context!
+  };
+  let dialogWindow: window.Window = await window.createWindow(config);
+  try {
+    dialogWindow.raiseToAppTop((err: BusinessError<void> | null): void => {
+        (async () => {
+            const errCode: number = err!.code;
+            if (errCode) {
+              hilog.error(domain, tag,
+                msgStr + ` Failed to raise the window to app top. Cause code: ${err!.code}, message: ${err!.message}`);
+              await dialogWindow.destroyWindow()
+              expect(err!.code).assertEqual(1300004);
+              expect(err!.message !== null).assertTrue();
+              done();
+            } else {
+              hilog.info(domain, tag, msgStr + 'Succeeded in raising the window to app top.');
+              await dialogWindow.destroyWindow()
+              expect(false).assertTrue();
+              done();
+            }
+            })().awaitSync()
+    });
+  } catch (exception) {
+    hilog.error(domain, tag,
+      msgStr + 'Failed to check whether the window is showing. Cause: ' + JSON.stringify(exception));
+    await dialogWindow.destroyWindow()
+    expect(false).assertTrue();
+    done();
+  }
+});      
+
     })
 
 }

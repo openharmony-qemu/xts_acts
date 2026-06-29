@@ -137,7 +137,7 @@ export default function span3Jsunit() {
     it('testSpan_static_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testSpan004] START');
       await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('fontColor');
+      let strJson = inspector.getInspectorByKey('span3' + '_fontColor');
       console.info("[testSpan004] component strJson:" + strJson);
 
       console.info("[testSpan004] fontColor:" +
@@ -161,7 +161,7 @@ export default function span3Jsunit() {
         console.log("[testSpan005] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('fontColor');
+      let strJson = inspector.getInspectorByKey('span3' + '_fontColor');
       console.info("[testSpan005] component strJson:" + strJson);
 
       console.info("[testSpan005] fontColor:" +

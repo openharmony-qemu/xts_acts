@@ -73,7 +73,7 @@ it('PinchGestureAllowedTypesTest_static_0010', Level.LEVEL0, async (done: () => 
       let windowOffsetY:number = AppStorage.get<number>("winTop") as number
 
       console.log('PinchGestureAllowedTypesTest_static_0010 windowOffsetX and windowOffsetY',windowOffsetX, windowOffsetY)
-      let areaObj1 = CommonFunc.getComponentRectOnScreen('PinchGestureAllowedTypes_Text');
+      let areaObj1 = CommonFunc.getComponentRectOnScreen('PinchGestureAllowedTypes' + '_Text');
       let areaHeight1 = areaObj1.bottom - areaObj1.top
       let areaWidth1 = areaObj1.right - areaObj1.left
       console.log('PinchGestureAllowedTypesTest_static_0010 areaObj1 start',areaObj1.left,areaObj1.top,areaObj1.right,areaObj1.bottom)
@@ -92,7 +92,7 @@ it('PinchGestureAllowedTypesTest_static_0010', Level.LEVEL0, async (done: () => 
       pointers.setPoint(1,1,{x: Math.round(areaObj1.right - areaWidth1 * 0.3).toInt(),y: Math.round(areaObj1.top + areaHeight1 * 0.5).toInt() } as Point);
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(4000);
-      let text1 = inspector.getInspectorByKey('PinchGestureAllowedTypes_result');
+      let text1 = inspector.getInspectorByKey('PinchGestureAllowedTypes' + '_result');
       let obj1 = JSON.parseJsonElement(text1);
       console.log('PinchGestureAllowedTypesTest_static_0010 obj1 $attrs content',obj1.getElement('$attrs').getString('content'),obj1)
       expect(obj1.getElement('$attrs').getString('content')).assertEqual('allowed types success');
@@ -101,7 +101,7 @@ it('PinchGestureAllowedTypesTest_static_0010', Level.LEVEL0, async (done: () => 
       let button1 = await (driver.findComponent(ON.id('Mouse_Type')) as Promise<Component>);
       await button1.click();
       await CommonFunc.sleep(3000);
-      let text2 = inspector.getInspectorByKey('PinchGestureAllowedTypes_result');
+      let text2 = inspector.getInspectorByKey('PinchGestureAllowedTypes' + '_result');
       let obj2 = JSON.parseJsonElement(text2);
       console.log('PinchGestureAllowedTypesTest_static_0010 obj2 $attrs content',obj2.getElement('$attrs').getString('content'),obj2)
       expect(obj2.getElement('$attrs').getString('content')).assertEqual('allowed types default');
@@ -110,7 +110,7 @@ it('PinchGestureAllowedTypesTest_static_0010', Level.LEVEL0, async (done: () => 
       await CommonFunc.sleep(1000);
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(4000);
-      let text3 = inspector.getInspectorByKey('PinchGestureAllowedTypes_result');
+      let text3 = inspector.getInspectorByKey('PinchGestureAllowedTypes' + '_result');
       let obj3 = JSON.parseJsonElement(text3);
       console.log('PinchGestureAllowedTypesTest_static_0010 obj3 $attrs content',obj3.getElement('$attrs').getString('content'),obj3)
       expect(obj3.getElement('$attrs').getString('content')).assertEqual('allowed types default');
@@ -120,21 +120,12 @@ it('PinchGestureAllowedTypesTest_static_0010', Level.LEVEL0, async (done: () => 
       let button3 = await (driver.findComponent(ON.id('Invalid_type')) as Promise<Component>);
       await button3.click();
       await CommonFunc.sleep(3000);
-      let text9 = inspector.getInspectorByKey('PinchGestureAllowedTypes_result');
+      let text9 = inspector.getInspectorByKey('PinchGestureAllowedTypes' + '_result');
       let obj9 = JSON.parseJsonElement(text9);
       console.log('PinchGestureAllowedTypesTest_static_0010 obj9 $attrs content',obj9.getElement('$attrs').getString('content'),obj9)
       expect(obj9.getElement('$attrs').getString('content')).assertEqual('allowed types default');
 
-      // trigger gesture again with finger // undefined/null
-      // await CommonFunc.sleep(1000);
-      // await driver.injectMultiPointerAction(pointers);
-      // await CommonFunc.sleep(4000);
-      // let text10 = inspector.getInspectorByKey('PinchGestureAllowedTypes_result');
-      // let obj10 = JSON.parseJsonElement(text10);
-      // console.log('PinchGestureAllowedTypesTest_static_0010 obj10 $attrs content',obj10.getElement('$attrs').getString('content'),obj10)
-      // expect(obj10.getElement('$attrs').getString('content')).assertEqual('allowed types success');
-      //
-      // console.info('PinchGestureAllowedTypesTest_static_0010 END');
+      console.info('PinchGestureAllowedTypesTest_static_0010 END');
       done();
     });
   })

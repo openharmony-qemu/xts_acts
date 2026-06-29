@@ -21,7 +21,9 @@ struct ProgressExample {
   build() {
     Column({ space: 15 }) {
       Text(JSON.stringify(this.progress1)).fontSize(20).id('ProgressMaskImage')
+      .key('ProgressMaskImage')
       Text(this.enableValue).fontSize(20).id('ProgressMaskText')
+      .key('ProgressMaskText')
       Image($r('app.media.icon'))
         .width(80)
         .height(80)

@@ -15,23 +15,27 @@ struct TextLetterSpacing {
       // 测试1: 默认值（未设置letterSpacing）
       Text('Default letterSpacing text content for testing default behavior when no letterSpacing is set.')
         .id('text_letterspacing_default')
+        .key('text_letterspacing_default')
         .height('5%')
 
       // 测试2: null 参数
       Text('LetterSpacing with null parameter text content for testing null behavior.')
         .id('text_letterspacing_null')
+        .key('text_letterspacing_null')
         .letterSpacing(null)
         .height('5%')
 
       // 测试3: undefined 参数
       Text('LetterSpacing with undefined parameter text content for testing undefined behavior.')
         .id('text_letterspacing_undefined')
+        .key('text_letterspacing_undefined')
         .letterSpacing(undefined)
         .height('5%')
 
       // 测试4: 空字符串参数
       Text('LetterSpacing with empty string parameter text content for testing empty string behavior.')
         .id('text_letterspacing_empty')
+        .key('text_letterspacing_empty')
         .letterSpacing('')
         .height('5%')
     }

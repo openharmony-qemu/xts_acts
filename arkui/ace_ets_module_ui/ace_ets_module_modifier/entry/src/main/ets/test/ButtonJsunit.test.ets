@@ -64,7 +64,7 @@ export default function buttonJsunit() {
      */
     it('testButton1601', Level.LEVEL0, async (done: Function) => {
       console.info('[testButton1601] START');
-      let strJsonNew = getInspectorByKey('button');
+      let strJsonNew = getInspectorByKey('button' + '_button');
 
       console.info("[testButton1601] component testButton1601 is: " + JSON.stringify(JSON.parse(strJsonNew).$attrs));
       expect(JSON.parse(strJsonNew).$attrs.type).assertEqual('ButtonType.Circle');
@@ -81,7 +81,7 @@ export default function buttonJsunit() {
      */
     it('testButton1602', Level.LEVEL0, async (done: Function) => {
       console.info('[testButton1602] START');
-      let strJsonNew = getInspectorByKey('button');
+      let strJsonNew = getInspectorByKey('button' + '_button');
 
       console.info("[testButton1602] component testButton1602 is: " + JSON.stringify(JSON.parse(strJsonNew).$attrs));
       expect(JSON.parse(strJsonNew).$attrs.stateEffect).assertEqual('true');
@@ -98,7 +98,7 @@ export default function buttonJsunit() {
      */
     it('testButton1603', Level.LEVEL0, async (done: Function) => {
       console.info('[testButton1603] START');
-      let strJsonNew = getInspectorByKey('button');
+      let strJsonNew = getInspectorByKey('button' + '_button');
 
       console.info("[testButton1603] component testButton1603 is: " + JSON.stringify(JSON.parse(strJsonNew).$attrs));
       expect(JSON.parse(strJsonNew).$attrs.fontColor).assertEqual('#FFCCCCCC');
@@ -115,7 +115,7 @@ export default function buttonJsunit() {
      */
     it('testButton1604', Level.LEVEL0, async (done: Function) => {
       console.info('[testButton1604] START');
-      let strJsonNew = getInspectorByKey('button');
+      let strJsonNew = getInspectorByKey('button' + '_button');
 
       console.info("[testButton1604] component testButton1604 is: " + JSON.stringify(JSON.parse(strJsonNew).$attrs));
       expect(JSON.parse(strJsonNew).$attrs.fontSize).assertEqual('12.00fp');
@@ -132,7 +132,7 @@ export default function buttonJsunit() {
      */
     it('testButton1605', Level.LEVEL0, async (done: Function) => {
       console.info('[testButton1605] START');
-      let strJsonNew = getInspectorByKey('button');
+      let strJsonNew = getInspectorByKey('button' + '_button');
 
       console.info("[testButton1605] component testButton1605 is: " + JSON.stringify(JSON.parse(strJsonNew).$attrs));
       expect(JSON.parse(strJsonNew).$attrs.fontWeight).assertEqual('FontWeight.Normal');
@@ -149,7 +149,7 @@ export default function buttonJsunit() {
      */
     it('testButton1606', Level.LEVEL0, async (done: Function) => {
       console.info('[testButton1606] START');
-      let strJsonNew = getInspectorByKey('button');
+      let strJsonNew = getInspectorByKey('button' + '_button');
 
       console.info("[testButton1606] component testButton1606 is: " + JSON.stringify(JSON.parse(strJsonNew).$attrs));
       expect(JSON.parse(strJsonNew).$attrs.fontFamily).assertEqual('cursive');
@@ -166,7 +166,7 @@ export default function buttonJsunit() {
      */
     it('testButton1607', Level.LEVEL0, async (done: Function) => {
       console.info('[testButton1607] START');
-      let strJsonNew = getInspectorByKey('button');
+      let strJsonNew = getInspectorByKey('button' + '_button');
 
       console.info("[testButton1607] component testButton1607 is: " + JSON.stringify(JSON.parse(strJsonNew).$attrs));
       expect(JSON.parse(strJsonNew).$attrs.fontStyle).assertEqual('FontStyle.Normal');
@@ -201,11 +201,11 @@ export default function buttonJsunit() {
     it('testButton1609', Level.LEVEL0, async (done: Function) => {
       console.info('testButton1609 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('button' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
 
-      let strJsonNew = getInspectorByKey('button'); //测试组件的key名称
+      let strJsonNew = getInspectorByKey('button' + '_button'); //测试组件的key名称
 
 
       console.info("testButton1609 component  is: " + JSON.stringify(JSON.parse(strJsonNew).$attrs));

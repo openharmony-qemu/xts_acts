@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { ToolType } from '@ohos.multimodalInput.mouseEvent'
-import Intl from '@ohos.intl';
+import intl from '@ohos.intl';
 import { Entry, Column, Component, Row, RowOptions, ClickEvent, Toggle, Text, TimePickerFormat, TimePicker,
   TextPicker, Color, Button, FontWeight, TimePickerResult, DateTimeOptions } from '@ohos.arkui.component'
 import { State, UIUtils } from '@ohos.arkui.stateManagement';
@@ -31,7 +31,7 @@ struct dateTimeOptionsExample {
   TimePickerFormat.HOUR_MINUTE,
   TimePickerFormat.HOUR_MINUTE_SECOND
   ]
-  @State opt: Array<Intl.DateTimeOptions > = new Array<Intl.DateTimeOptions >(
+  @State opt: Array<intl.DateTimeOptions > = new Array<intl.DateTimeOptions >(
     {hour: 'numeric', minute: 'numeric', second: 'numeric' }, //Case 1
     {hour: 'numeric', minute: '2-digit', second: 'numeric' }, //Case 2
     {hour: 'numeric', minute: 'numeric', second: '2-digit' }, //Case 3

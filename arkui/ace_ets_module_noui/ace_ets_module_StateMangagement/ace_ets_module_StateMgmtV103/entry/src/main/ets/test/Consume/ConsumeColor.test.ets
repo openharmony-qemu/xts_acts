@@ -65,10 +65,10 @@ export default function ConsumeColor() {
       console.info('ConsumeColor_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state1'));
+      let button = await driver.findComponent(ON.id('ConsumeColor_state1'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('state1');
+      let strJson = getInspectorByKey('ConsumeColor_state1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ConsumeColor_0100] component obj is: " + JSON.stringify(obj));
       console.info("[ConsumeColor_0100] title: " + JSON.stringify(obj.$attrs.backgroundColor));
@@ -88,10 +88,10 @@ export default function ConsumeColor() {
       console.info('ConsumeColor_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state2'));
+      let button = await driver.findComponent(ON.id('ConsumeColor_state2'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('state2');
+      let strJson = getInspectorByKey('ConsumeColor_state2');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ConsumeColor_0100] component obj is: " + JSON.stringify(obj));
       console.info("[ConsumeColor_0100] title: " + JSON.stringify(obj.$attrs.backgroundColor));
@@ -111,7 +111,7 @@ export default function ConsumeColor() {
       console.info('ConsumeColor_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state3'));
+      let button = await driver.findComponent(ON.id('ConsumeColor_state3'));
       await button.click();
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('ConsumeColor');
@@ -134,10 +134,10 @@ export default function ConsumeColor() {
       console.info('ConsumeColor_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state4'));
+      let button = await driver.findComponent(ON.id('ConsumeColor_state4'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('state4');
+      let strJson = getInspectorByKey('ConsumeColor_state4');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ConsumeColor_0100] component obj is: " + JSON.stringify(obj));
       console.info("[ConsumeColor_0100] title: " + JSON.stringify(obj.$attrs.backgroundColor));
@@ -157,7 +157,7 @@ export default function ConsumeColor() {
       console.info('ConsumeColor_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state5'));
+      let button = await driver.findComponent(ON.id('ConsumeColor_state5'));
       await button.click();
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('ConsumeColor');
@@ -180,10 +180,10 @@ export default function ConsumeColor() {
       console.info('ConsumeColor_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state6'));
+      let button = await driver.findComponent(ON.id('ConsumeColor_state6'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('state6');
+      let strJson = getInspectorByKey('ConsumeColor_state6');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ConsumeColor_0100] component obj is: " + JSON.stringify(obj));
       console.info("[ConsumeColor_0100] title: " + JSON.stringify(obj.$attrs.backgroundColor));

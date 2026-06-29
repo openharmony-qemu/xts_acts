@@ -29,12 +29,14 @@ struct TextTextOverflow {
       // 测试1: 默认值（未设置textOverflow）
       Text('This is default textOverflow content for testing default behavior when no textOverflow is set.')
         .id('text_textoverflow_default')
+        .key('text_textoverflow_default')
         .maxLines(2)
         .height('5%')
 
       // 测试2: null 参数
       Text('This is textOverflow with null parameter content for testing null behavior.')
         .id('text_textoverflow_null')
+        .key('text_textoverflow_null')
         .maxLines(2)
         .textOverflow(null)
         .height('5%')
@@ -42,6 +44,7 @@ struct TextTextOverflow {
       // 测试3: undefined 参数
       Text('This is textOverflow with undefined parameter content for testing undefined behavior.')
         .id('text_textoverflow_undefined')
+        .key('text_textoverflow_undefined')
         .maxLines(2)
         .textOverflow(undefined)
         .height('5%')

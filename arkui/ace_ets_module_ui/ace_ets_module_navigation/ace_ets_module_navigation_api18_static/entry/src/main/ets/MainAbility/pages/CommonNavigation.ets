@@ -13,21 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,Curve,PopInfo,HorizontalAlign,AnimateParam,NavDestinationTransition,Search,TextAlign,NavBarPosition,FlexAlign,NavPathInfo,NavDestinationContext,
-  NavigationTitleMode,Image,NavigationMode,Column,NavDestinationActiveReason,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,NavigationOperation,PanGesture,
-  Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,GestureEvent,
-  FontWeight,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
-,NavPathStack,NavDestinationContext} from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  PropRef,Provide,Consume
-} from '@ohos.arkui.stateManagement';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { Entry, Component, $r, Scroll, Builder, List, ListItem, Resource, Curve, PopInfo, HorizontalAlign, AnimateParam, NavDestinationTransition, Search, TextAlign, NavBarPosition, FlexAlign, NavPathInfo, NavDestinationContext, NavigationTitleMode, Image, NavigationMode, Column, NavDestinationActiveReason, Navigation, ButtonType, NavDestination, Stack, ColumnOptions, TextInput, SearchController, NavigationOperation, PanGesture, Position, EffectType, EffectComponent, Text, Color, Flex, FlexDirection, ItemAlign, Row, Button, ClickEvent, NavDestinationMode, Dimension, TextOverflow, GestureEvent, FontWeight, Margin, Swiper, ForEach, PickerTextStyle, CalendarAlign, Visibility, NavigationCommonTitle, NavDestinationCommonTitle, Alignment, BarStyle, LaunchMode, NavPathStack } from '@ohos.arkui.component';
+import { State, Link, PropRef, Provide, Consume, AppStorage } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
-import events_emitter from '@ohos.events.emitter'
-
+import events_emitter from '@ohos.events.emitter';
 @Component
 struct PageOne {
   @State tag:Object|null|undefined = ""

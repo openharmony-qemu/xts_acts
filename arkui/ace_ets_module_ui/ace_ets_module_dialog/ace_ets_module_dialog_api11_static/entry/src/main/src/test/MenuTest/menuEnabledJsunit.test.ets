@@ -140,7 +140,7 @@ it('menuEnabledJsunit_static_0200', Level.LEVEL2, async (done: () => void): Prom
       let change = await driver.findComponent(ON.id('change'));
       await (change?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('text');
+      let strJson = inspector.getInspectorByKey('menuEnabled' + '_text');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[menuEnabledJsunit_static_0200] component obj is: " + JSON.stringify(obj));
       console.info("[menuEnabledJsunit_static_0200] enabled: " +

@@ -5,6 +5,8 @@
     "MainAbility/pages/richTextSpanSymbolBatch/richTextSpanSymbolBatch",
     "MainAbility/pages/RichEditor/RichEditorHorizontalScrolling",
     "MainAbility/pages/RichEditor26/RichEditorShaderStyle",
-    "MainAbility/pages/RichEditor26/RichEditorStrokeJoinStyle"
+    "MainAbility/pages/RichEditor26/RichEditorStrokeJoinStyle",
+    "MainAbility/pages/RichEditor26/RichEditorPunctuationOverflow",
+    "MainAbility/pages/RichEditor26/RichEditorScrollToVisible"
   ]
 }

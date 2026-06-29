@@ -108,7 +108,7 @@ export default function RatingJsunit() {
     it('RatingJsunit_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[RatingJsunit_0400] START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('rating' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
       let strJson = getInspectorByKey('rating1');

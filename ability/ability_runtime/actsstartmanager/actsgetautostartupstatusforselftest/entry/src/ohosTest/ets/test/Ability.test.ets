@@ -151,8 +151,20 @@ export default function abilityTest() {
     it('SUB_Ability_AbilityRuntime_IsAutoStartupSupported_0100', Level.LEVEL0, async (done: Function) => {
       let autoStartupEnabled: string = 'false';
       try {
-        autoStartupEnabled = systemParameterEnhance.getSync('const.product.appboot.setting.enabled');
+        autoStartupEnabled = systemParameterEnhance.getSync('const.edm.is_enterprise_device');
       } catch {
+      }
+      if (autoStartupEnabled === 'false') {
+        try {
+          autoStartupEnabled = systemParameterEnhance.getSync('persist.edm.edm_enable');
+        } catch {
+        }
+      }
+      if (autoStartupEnabled === 'false') {
+        try {
+          autoStartupEnabled = systemParameterEnhance.getSync('const.abilityms.enable_auto_startup');
+        } catch {
+        }
       }
       let isSupported: boolean = autoStartupManager.isAutoStartupSupported();
       if (autoStartupEnabled === 'true') {

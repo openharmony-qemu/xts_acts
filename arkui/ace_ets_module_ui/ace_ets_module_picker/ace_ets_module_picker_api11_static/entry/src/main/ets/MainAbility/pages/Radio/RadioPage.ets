@@ -106,7 +106,7 @@ struct RadioPage {
             console.log('Radio3 status is ' + isChecked)
           })
       }
-      Text(this.text).fontSize(20).margin(10).key('text')
+      Text(this.text).fontSize(20).margin(10).key('RadioPage_text')
     }
     .width('100%')
     .height('100%')

@@ -116,7 +116,7 @@ struct CustomDialogUserB {
 
   build() {
     Column() {
-      Button(this.inputValue).key('CustomDialog')
+      Button(this.inputValue).key('CustomDialogControllerOptions_CustomDialog')
         .onClick(() => {
           if (this.dialogController != undefined) {
             this.dialogController.open()

@@ -490,7 +490,7 @@ public:
     Camera_ErrorCode GetColorTintRange();
     Camera_ErrorCode SetColorTint(int useCaseCode);
     Camera_ErrorCode GetColorTint(int useCaseCode);
-    Camera_ErrorCode GetZoomPointInfos(int useCaseCode);
+    int32_t GetZoomPointInfos(int useCaseCode);
     Camera_ErrorCode DeleteZoomPointInfo(int useCaseCode);
     // notification
     Camera_ErrorCode RegisterNotificationReceivedCallback(int useCaseCode);

@@ -26,11 +26,10 @@ export default function selectApiTest1() {
         url: 'MainAbility/pages/select/selectApi1',
       }
       try {
-        router.clear();
         let pages = router.getState();
         console.info("get selectApi1 state pages:" + JSON.stringify(pages));
-        if (!("selectApi1" == pages.name)) {
-          console.info("get selectApi1 pages.name:" + JSON.stringify(pages.name));
+        if (pages.name !== 'selectApi1') {
+          router.clear();
           let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
           console.info("push selectApi1 page result:" + JSON.stringify(result));

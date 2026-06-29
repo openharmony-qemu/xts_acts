@@ -66,13 +66,13 @@ export default function setCursorTest() {
       console.info('setCursorTest_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('setCursor_2'));
+      let button = await driver.findComponent(ON.id('setCursor' + '_2'));
       await button.click();
-      await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('setCursor_1'));
+      await CommonFunc.sleep(2000);
+      let button1 = await driver.findComponent(ON.id('setCursor' + '_1'));
       await button1.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('setCursor_1');
+      let strJson = getInspectorByKey('setCursor' + '_1');
       console.info("[setCursorTest_0100] component obj is: " + JSON.stringify(JSON.parse(strJson)));
       console.info("[setCursorTest_0100] component obj.$attrs is: " + JSON.stringify(JSON.parse(strJson).$attrs));
       console.info("[setCursorTest_0100] text: " + JSON.stringify(JSON.parse(strJson).$attrs.label));
@@ -92,13 +92,13 @@ export default function setCursorTest() {
       console.info('setCursorTest_0200 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('setCursor_3'));
+      let button = await driver.findComponent(ON.id('setCursor' + '_3'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('setCursor_1'));
+      let button1 = await driver.findComponent(ON.id('setCursor' + '_1'));
       await button1.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('setCursor_1');
+      let strJson = getInspectorByKey('setCursor' + '_1');
       console.info("[setCursorTest_0200] component obj is: " + JSON.stringify(JSON.parse(strJson)));
       console.info("[setCursorTest_0200] component obj.$attrs is: " + JSON.stringify(JSON.parse(strJson).$attrs));
       console.info("[setCursorTest_0200] text: " + JSON.stringify(JSON.parse(strJson).$attrs.label));

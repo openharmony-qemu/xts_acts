@@ -70,8 +70,8 @@ export default function row_TextSizeTest() {
       let firstText: RectValue = CommonFunc.getComponentRect('Row_TextSize1');
       secondText = CommonFunc.getComponentRect('Row_TextSize2');
       let thirdText: RectValue = CommonFunc.getComponentRect('Row_TextSize3');
-      let rowContainer: RectValue = CommonFunc.getComponentRect('Row_TextSize_Container01');
-      let rowContainerStrJson = getInspectorByKey('Row_TextSize_Container01');
+      let rowContainer: RectValue = CommonFunc.getComponentRect('Row_TextSize' + '_Container01');
+      let rowContainerStrJson = getInspectorByKey('Row_TextSize' + '_Container01');
 
       expect(JSON.parse(rowContainerStrJson).$type).assertEqual('Row');
 
@@ -120,8 +120,8 @@ export default function row_TextSizeTest() {
       let firstText: RectValue = CommonFunc.getComponentRect('Row_TextSize1');
       secondText = CommonFunc.getComponentRect('Row_TextSize2');
       let thirdText: RectValue = CommonFunc.getComponentRect('Row_TextSize3');
-      let rowContainer: RectValue = CommonFunc.getComponentRect('Row_TextSize_Container01');
-      let rowContainerStrJson = getInspectorByKey('Row_TextSize_Container01');
+      let rowContainer: RectValue = CommonFunc.getComponentRect('Row_TextSize' + '_Container01');
+      let rowContainerStrJson = getInspectorByKey('Row_TextSize' + '_Container01');
 
       expect(JSON.parse(rowContainerStrJson).$type).assertEqual('Row');
 

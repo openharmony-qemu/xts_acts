@@ -60,7 +60,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor(0x317aff)
         .margin({ bottom: 20 })
-        .key('button1')
+        .key('animate_button1')
         .onClick(() => {
           try {
             let backData: events_emitter.EventData = {
@@ -89,7 +89,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor(0x317aff)
         .margin({ bottom: 20 })
-        .key('button11')
+        .key('animate_button11')
         .onClick(() => {
           try {
             let backData: events_emitter.EventData = {
@@ -118,7 +118,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor(0x317aff)
         .margin({ bottom: 20 })
-        .key('button12')
+        .key('animate_button12')
         .onClick(() => {
           try {
             let backData: events_emitter.EventData = {
@@ -146,7 +146,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor(0x317aff)
         .margin({ bottom: 20 })
-        .key('button2')
+        .key('animate_button2')
         .onClick(() => {
           try {
             let backDataOne: events_emitter.EventData = {
@@ -174,7 +174,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor(0x317aff)
         .margin({ bottom: 20 })
-        .key('button3')
+        .key('animate_button3')
         .onClick(() => {
           try {
             let backDataTwo: events_emitter.EventData = {
@@ -202,7 +202,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor(0x317aff)
         .margin({ bottom: 20 })
-        .key('button13')
+        .key('animate_button13')
         .onClick(() => {
           try {
             let backDataTwo: events_emitter.EventData = {
@@ -230,7 +230,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor(0x317aff)
         .margin({ bottom: 20 })
-        .key('button4')
+        .key('animate_button4')
         .onClick(() => {
           try {
             let backDataThree: events_emitter.EventData = {
@@ -258,7 +258,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor(0x317aff)
         .margin({ bottom: 20 })
-        .key('button14')
+        .key('animate_button14')
         .onClick(() => {
           try {
             let backDataThree: events_emitter.EventData = {
@@ -286,7 +286,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor(0x317aff)
         .margin({ bottom: 20 })
-        .key('button5')
+        .key('animate_button5')
         .onClick(() => {
           try {
             let backDataFour: events_emitter.EventData = {
@@ -314,7 +314,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor(0x317aff)
         .margin({ bottom: 20 })
-        .key('button15')
+        .key('animate_button15')
         .onClick(() => {
           try {
             let backDataFour: events_emitter.EventData = {
@@ -342,7 +342,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor(0x317aff)
         .margin({ bottom: 20 })
-        .key('button6')
+        .key('animate_button6')
         .onClick(() => {
           try {
             let backData: events_emitter.EventData = {
@@ -370,7 +370,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor(0x317aff)
         .margin({ bottom: 20 })
-        .key('button7')
+        .key('animate_button7')
         .onClick(() => {
           try {
             let backData: events_emitter.EventData = {
@@ -398,7 +398,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor(0x317aff)
         .margin({ bottom: 20 })
-        .key('button8')
+        .key('animate_button8')
         .onClick(() => {
           try {
             let backData: events_emitter.EventData = {
@@ -426,7 +426,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor(0x317aff)
         .margin({ bottom: 20 })
-        .key('button9')
+        .key('animate_button9')
         .onClick(() => {
           try {
             let backData: events_emitter.EventData = {
@@ -454,7 +454,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor(0x317aff)
         .margin({ bottom: 20 })
-        .key('button10')
+        .key('animate_button10')
         .onClick(() => {
           try {
             let backData: events_emitter.EventData = {
@@ -482,7 +482,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor(0x317aff)
         .margin({ bottom: 20 })
-        .key('button111')
+        .key('animate_button111')
         .onClick(() => {
           try {
             let backData: events_emitter.EventData = {
@@ -510,7 +510,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor(0x317aff)
         .margin({ bottom: 20 })
-        .key('button121')
+        .key('animate_button121')
         .onClick(() => {
           try {
             let backData: events_emitter.EventData = {
@@ -538,7 +538,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor(0x317aff)
         .margin({ bottom: 20 })
-        .key('button131')
+        .key('animate_button131')
         .onClick(() => {
           try {
             let backData: events_emitter.EventData = {
@@ -566,7 +566,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor(0x317aff)
         .margin({ bottom: 20 })
-        .key('button141')
+        .key('animate_button141')
         .onClick(() => {
           try {
             let backData: events_emitter.EventData = {
@@ -594,7 +594,7 @@ struct Animation3Example {
         .height(30)
         .backgroundColor(0x317aff)
         .margin({ bottom: 20 })
-        .key('button151')
+        .key('animate_button151')
         .onClick(() => {
           try {
             let backData: events_emitter.EventData = {

@@ -26,12 +26,14 @@ struct TextMinFontScaleMaxFontScale {
         // 测试1: minFontScale 默认值（作为基准）
         Text('Text with minFontScale default')
           .id('text_minfontscale_default')
+          .key('text_minfontscale_default')
           .fontSize(16)
           .height('5%')
 
         // 测试2: minFontScale null 参数
         Text('Text with minFontScale null')
           .id('text_minfontscale_null')
+          .key('text_minfontscale_null')
           .fontSize(16)
           .minFontScale(null)
           .height('5%')
@@ -41,6 +43,7 @@ struct TextMinFontScaleMaxFontScale {
         // 测试3: minFontScale undefined 参数
         Text('Text with minFontScale undefined')
           .id('text_minfontscale_undefined')
+          .key('text_minfontscale_undefined')
           .fontSize(16)
           .minFontScale(undefined)
           .height('5%')
@@ -48,12 +51,14 @@ struct TextMinFontScaleMaxFontScale {
         // 测试4: maxFontScale 默认值（作为基准）
         Text('Text with maxFontScale default')
           .id('text_maxfontscale_default')
+          .key('text_maxfontscale_default')
           .fontSize(16)
           .height('5%')
 
         // 测试5: maxFontScale null 参数
         Text('Text with maxFontScale null')
           .id('text_maxfontscale_null')
+          .key('text_maxfontscale_null')
           .fontSize(16)
           .maxFontScale(null)
           .height('5%')
@@ -62,6 +67,7 @@ struct TextMinFontScaleMaxFontScale {
       // 测试6: maxFontScale undefined 参数
       Text('Text with maxFontScale undefined')
         .id('text_maxfontscale_undefined')
+        .key('text_maxfontscale_undefined')
         .fontSize(16)
         .maxFontScale(undefined)
         .height('5%')

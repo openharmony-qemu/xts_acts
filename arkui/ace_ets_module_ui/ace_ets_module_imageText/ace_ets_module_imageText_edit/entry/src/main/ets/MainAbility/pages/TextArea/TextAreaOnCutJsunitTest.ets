@@ -77,7 +77,7 @@ struct TextAreaOnCut {
          * CrossDevice = 2,Share cross device.
          */
         .copyOption(0)
-        .key('textAreaCopyOptionText')
+        .key('TextAreaOnCutJsunitTest_textAreaCopyOptionText')
 
     }.width('100%').height('100%')
   }

@@ -84,8 +84,8 @@ it('testRowTextPosition_static_01', Level.LEVEL0, async (done: () => void): Prom
       let firstText: RectValue = await CommonFunc.getComponentRect('Row_TextPosition1');
       let secondText: RectValue = await CommonFunc.getComponentRect('Row_TextPosition2');
       let thirdText: RectValue = await CommonFunc.getComponentRect('Row_TextPosition3');
-      let rowContainer: RectValue = await CommonFunc.getComponentRect('Row_TextPosition_Container01');
-      let rowContainerStrJson = inspector.getInspectorByKey('Row_TextPosition_Container01');
+      let rowContainer: RectValue = await CommonFunc.getComponentRect('Row_TextPosition' + '_Container01');
+      let rowContainerStrJson = inspector.getInspectorByKey('Row_TextPosition' + '_Container01');
 
   let obj = JSON.parseJsonElement(rowContainerStrJson);
   expect(obj.getString('$type')).assertEqual('Row');

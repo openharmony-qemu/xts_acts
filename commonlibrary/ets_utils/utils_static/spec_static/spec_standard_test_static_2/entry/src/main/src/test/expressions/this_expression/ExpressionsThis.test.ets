@@ -151,7 +151,7 @@ class StringContainer_this_generic_interface implements Container_this_generic_i
 }
 
 class Builder_this_generic_method_chain<T> {
-  private value: T
+  private value: T = undefined as T
   public setValue(val: T): Builder_this_generic_method_chain<T> {
     this.value = val
     return this

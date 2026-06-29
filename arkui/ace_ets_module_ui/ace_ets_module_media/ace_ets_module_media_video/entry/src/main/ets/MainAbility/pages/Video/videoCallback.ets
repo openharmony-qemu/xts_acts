@@ -92,10 +92,10 @@ struct videoCallbackTest {
         })
 
       Row() {
-        Button('start').key('start').onClick(() => {
+        Button('start').key('videoCallback_start').onClick(() => {
           this.controller.start() // 开始播放
         }).margin(5)
-        Button('pause').key('pause').onClick(() => {
+        Button('pause').key('videoCallback_pause').onClick(() => {
           this.controller.pause() // 暂停播放
         }).margin(5)
         Button('stop').key('stop').onClick(() => {

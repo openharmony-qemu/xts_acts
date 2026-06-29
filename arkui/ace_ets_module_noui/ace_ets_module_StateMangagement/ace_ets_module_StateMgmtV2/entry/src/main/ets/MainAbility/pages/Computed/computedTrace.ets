@@ -42,5 +42,8 @@ struct ComputedTrace {
         .id('computedTraceButton')
       Text(`Computed call count ${this.name1.testNumber.toString()}`).id('computedTraceText3')
     }
+    .width('100%')
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
   }
 }

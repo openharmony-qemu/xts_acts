@@ -58,26 +58,26 @@ export default function OrphanCharOptimizationnullTest() {
     it('SUB_ACE_ARKUI_OPTIMIZATIONNULL_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[SUB_ACE_ARKUI_OPTIMIZATIONNULL_0100] START');
       let driver1: Driver = Driver.create();
-      let buttonFalse = await driver1.findComponent(ON.id('null'));
+      let buttonFalse = await driver1.findComponent(ON.id('OrphanCharOptimization_null_null'));
       await buttonFalse.click();
       await CommonFunc.sleep(1000);
 
-      let textFalse = getInspectorByKey('jsText_null');
+      let textFalse = getInspectorByKey('OrphanCharOptimization_null_jsText');
       let ObjTextFalse: ESObject = JSON.parse(textFalse);
       expect(ObjTextFalse.$attrs.orphanCharOptimization).assertEqual('false');
 
       await CommonFunc.sleep(1000);
-      let textAreaFalse = getInspectorByKey('jsTextArea_null');
+      let textAreaFalse = getInspectorByKey('OrphanCharOptimization_null_jsTextArea');
       let ObjTextAreaFalse: ESObject = JSON.parse(textAreaFalse);
       expect(ObjTextAreaFalse.$attrs.orphanCharOptimization).assertEqual('false');
 
       await CommonFunc.sleep(1000);
-      let textInputFalse = getInspectorByKey('jsTextInput_null');
+      let textInputFalse = getInspectorByKey('OrphanCharOptimization_null_jsTextInput');
       let ObjTextInputFalse: ESObject = JSON.parse(textInputFalse);
       expect(ObjTextInputFalse.$attrs.orphanCharOptimization).assertEqual('false');
 
       await CommonFunc.sleep(1000);
-      let richEditorFalse = getInspectorByKey('jsRichEditor_null');
+      let richEditorFalse = getInspectorByKey('OrphanCharOptimization_null_jsRichEditor');
       let ObjRichEditorFalse: ESObject = JSON.parse(richEditorFalse);
       expect(ObjRichEditorFalse.$attrs.orphanCharOptimization).assertEqual('false');
       console.info('[SUB_ACE_ARKUI_OPTIMIZATIONNULL_0100] END');

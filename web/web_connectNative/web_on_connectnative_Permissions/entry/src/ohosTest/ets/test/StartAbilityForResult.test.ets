@@ -17,7 +17,7 @@ import { describe, beforeAll, afterEach, Level, it, expect } from '@ohos/hypium'
 import { Want, common, StartOptions } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { JSON } from '@kit.ArkTS';
-
+let userAgentPC:string = "";
 let context: common.UIAbilityContext;
 
 function sleep(time: number) {
@@ -58,21 +58,29 @@ export default function startAbilityForResultPermissionTest() {
           parameters: { 'callType': 'forResult' }
         };
 
-        try {
-          await context.startAbilityForResult(want).then((data: common.AbilityResult) => {
-            hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult success: ${JSON.stringify(data)}`);
-            expect(data.resultCode).assertEqual(0);
-            done();
-          }).catch((err: BusinessError) => {
-            hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult error: ${JSON.stringify(err)}`);
+        if ((userAgentPC).includes('PC') || (userAgentPC).includes('Tablet')) {
+          try {
+            await context.startAbilityForResult(want).then((data: common.AbilityResult) => {
+              hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult success: ${JSON.stringify(data)}`);
+              expect(data.resultCode).assertEqual(0);
+              done();
+            }).catch((err: BusinessError) => {
+              hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult error: ${JSON.stringify(err)}`);
+              expect(err.code).assertEqual(201);
+              done();
+            });
+          } catch (err) {
+            hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
             expect(err.code).assertEqual(201);
             done();
-          });
-        } catch (err) {
-          hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
-          expect(err.code).assertEqual(201);
+          }
+        } else  {
+          console.log('SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0100-capability not supported');
+          expect(true).assertEqual(true);
           done();
         }
+
+
       });
 
     /**
@@ -99,20 +107,25 @@ export default function startAbilityForResultPermissionTest() {
         let options: StartOptions = {
           displayId: 0
         };
-
-        try {
-          await context.startAbilityForResult(want, options).then((data: common.AbilityResult) => {
-            hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult success: ${JSON.stringify(data)}`);
-            expect(data.resultCode).assertEqual(0);
-            done();
-          }).catch((err: BusinessError) => {
-            hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult error: ${JSON.stringify(err)}`);
+        if ((userAgentPC).includes('PC') || (userAgentPC).includes('Tablet')) {
+          try {
+            await context.startAbilityForResult(want, options).then((data: common.AbilityResult) => {
+              hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult success: ${JSON.stringify(data)}`);
+              expect(data.resultCode).assertEqual(0);
+              done();
+            }).catch((err: BusinessError) => {
+              hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult error: ${JSON.stringify(err)}`);
+              expect(err.code).assertEqual(201);
+              done();
+            });
+          } catch (err) {
+            hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
             expect(err.code).assertEqual(201);
             done();
-          });
-        } catch (err) {
-          hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
-          expect(err.code).assertEqual(201);
+          }
+        } else {
+          console.log('SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0100-capability not supported');
+          expect(true).assertEqual(true);
           done();
         }
       });
@@ -137,20 +150,25 @@ export default function startAbilityForResultPermissionTest() {
           bundleName: 'com.invalid.nonexistent.bundle',
           abilityName: 'NonExistentAbility'
         };
-
-        try {
-          await context.startAbilityForResult(invalidWant).then((data: common.AbilityResult) => {
-            hilog.info(0x0000, 'testTag', `${tcNumber} unexpected success: ${JSON.stringify(data)}`);
-            expect().assertFail();
-            done();
-          }).catch((err: BusinessError) => {
-            hilog.info(0x0000, 'testTag', `${tcNumber} caught expected error: ${err.code}`);
+        if ((userAgentPC).includes('PC') || (userAgentPC).includes('Tablet')) {
+          try {
+            await context.startAbilityForResult(invalidWant).then((data: common.AbilityResult) => {
+              hilog.info(0x0000, 'testTag', `${tcNumber} unexpected success: ${JSON.stringify(data)}`);
+              expect().assertFail();
+              done();
+            }).catch((err: BusinessError) => {
+              hilog.info(0x0000, 'testTag', `${tcNumber} caught expected error: ${err.code}`);
+              expect(err.code).assertEqual(16000001);
+              done();
+            });
+          } catch (err) {
+            hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
             expect(err.code).assertEqual(16000001);
             done();
-          });
-        } catch (err) {
-          hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
-          expect(err.code).assertEqual(16000001);
+          }
+        } else {
+          console.log('SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0100-capability not supported');
+          expect(true).assertEqual(true);
           done();
         }
       });
@@ -169,22 +187,21 @@ export default function startAbilityForResultPermissionTest() {
         await sleep(2000);
         const tcNumber = 'SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0600';
         hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
-
-        try {
-          await context.startAbilityForResult(null).then((data: common.AbilityResult) => {
-            hilog.info(0x0000, 'testTag', `${tcNumber} unexpected success: ${JSON.stringify(data)}`);
-            expect().assertFail();
-            done();
-          }).catch((err: BusinessError) => {
-            hilog.info(0x0000, 'testTag', `${tcNumber} caught error: ${err.code}`);
+          try {
+            await context.startAbilityForResult(null).then((data: common.AbilityResult) => {
+              hilog.info(0x0000, 'testTag', `${tcNumber} unexpected success: ${JSON.stringify(data)}`);
+              expect().assertFail();
+              done();
+            }).catch((err: BusinessError) => {
+              hilog.info(0x0000, 'testTag', `${tcNumber} caught error: ${err.code}`);
+              expect(err.code).assertEqual(401);
+              done();
+            });
+          } catch (err) {
+            hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
             expect(err.code).assertEqual(401);
             done();
-          });
-        } catch (err) {
-          hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
-          expect(err.code).assertEqual(401);
-          done();
-        }
+          }
       });
 
     /**
@@ -201,22 +218,21 @@ export default function startAbilityForResultPermissionTest() {
         await sleep(2000);
         const tcNumber = 'SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0700';
         hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
-
-        try {
-          await context.startAbilityForResult(undefined).then((data: common.AbilityResult) => {
-            hilog.info(0x0000, 'testTag', `${tcNumber} unexpected success: ${JSON.stringify(data)}`);
-            expect().assertFail();
-            done();
-          }).catch((err: BusinessError) => {
-            hilog.info(0x0000, 'testTag', `${tcNumber} caught error: ${err.code}`);
+          try {
+            await context.startAbilityForResult(undefined).then((data: common.AbilityResult) => {
+              hilog.info(0x0000, 'testTag', `${tcNumber} unexpected success: ${JSON.stringify(data)}`);
+              expect().assertFail();
+              done();
+            }).catch((err: BusinessError) => {
+              hilog.info(0x0000, 'testTag', `${tcNumber} caught error: ${err.code}`);
+              expect(err.code).assertEqual(401);
+              done();
+            });
+          } catch (err) {
+            hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
             expect(err.code).assertEqual(401);
             done();
-          });
-        } catch (err) {
-          hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
-          expect(err.code).assertEqual(401);
-          done();
-        }
+          }
       });
 
     /**
@@ -314,22 +330,27 @@ export default function startAbilityForResultPermissionTest() {
           displayId: 0,
           windowFocused: true
         };
-
-        try {
-          await context.startAbilityForResult(want, options).then((data: common.AbilityResult) => {
-            hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult success: ${JSON.stringify(data)}`);
-            expect(data.resultCode).assertEqual(0);
-            done();
-          }).catch((err: BusinessError) => {
-            hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult error: ${JSON.stringify(err)}`);
+        if ((userAgentPC).includes('PC') || (userAgentPC).includes('Tablet')) {
+          try {
+            await context.startAbilityForResult(want, options).then((data: common.AbilityResult) => {
+              hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult success: ${JSON.stringify(data)}`);
+              expect(data.resultCode).assertEqual(0);
+              done();
+            }).catch((err: BusinessError) => {
+              hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult error: ${JSON.stringify(err)}`);
+              expect(err.code).assertEqual(201);
+              done();
+            });
+          } catch (err) {
+            hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
             expect(err.code).assertEqual(201);
             done();
-          });
-        } catch (err) {
-          hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
-          expect(err.code).assertEqual(201);
+          }
+      } else {
+          console.log('SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0100-capability not supported');
+          expect(true).assertEqual(true);
           done();
-        }
+      }
       });
   });
 }

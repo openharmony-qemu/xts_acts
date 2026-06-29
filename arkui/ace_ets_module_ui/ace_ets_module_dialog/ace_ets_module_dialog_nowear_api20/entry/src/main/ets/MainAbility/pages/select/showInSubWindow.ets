@@ -39,7 +39,7 @@ struct SelectExample {
           { value: 'bbb', icon: $r('app.media.app_icon') },
           { value: 'ccc', icon: $r('app.media.app_icon') },
           { value: 'ddd', icon: $r('app.media.app_icon') }])
-          .key('select')
+          .key('showInSubWindow_select')
           .showInSubWindow(this.countList[this.countIndex])
       }
     }.width('100%')

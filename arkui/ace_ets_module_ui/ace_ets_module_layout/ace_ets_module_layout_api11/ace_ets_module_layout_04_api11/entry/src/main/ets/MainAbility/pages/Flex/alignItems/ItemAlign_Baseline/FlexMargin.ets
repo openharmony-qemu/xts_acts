@@ -35,11 +35,11 @@ struct FlexMargin_Baseline {
           alignItems: ItemAlign.Baseline,
           wrap: FlexWrap.NoWrap,
         }) {
-          Text('1').width(150).height(50).backgroundColor(0xF5DEB3).key('textFlexMargin01')
-          Text('2').width(150).height(100).backgroundColor(0xD2B48C).key('textFlexMargin02')
-          Text('3').width(150).height(150).backgroundColor(0xF5DEB3).key('textFlexMargin03')
+          Text('1').width(150).height(50).backgroundColor(0xF5DEB3).key('FlexMargin_textFlexMargin01')
+          Text('2').width(150).height(100).backgroundColor(0xD2B48C).key('FlexMargin_textFlexMargin02')
+          Text('3').width(150).height(150).backgroundColor(0xF5DEB3).key('FlexMargin_textFlexMargin03')
         }
-        .key('flexMargin')
+        .key('FlexMargin_flexMargin')
         .height(200)
         .width(500)
         .margin(10)

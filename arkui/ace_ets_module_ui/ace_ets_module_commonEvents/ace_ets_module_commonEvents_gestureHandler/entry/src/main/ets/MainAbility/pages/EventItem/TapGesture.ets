@@ -19,7 +19,7 @@ struct TapGestureEvent {
   build() {
     Column(){
       Column() {
-        Text(this.value).key('value')
+        Text(this.value).key('TapGesture_value')
       }
       .key('TapGesture1')
       .height(150)

@@ -1,3 +1,4 @@
+'use static';
 /*
 * Copyright (c) 2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,10 +14,11 @@
 * limitations under the License.
 */
 import Utils from './Util.test';
+import hilog from '@ohos.hilog'
 import common from '@ohos.app.ability.common';
 import emitter from '@ohos.events.emitter'
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { Callback } from '@ohos.base';
+import { BusinessError, Callback } from '@ohos.base';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import notificationManager from '@ohos.notificationManager';
 import {
@@ -38,8 +40,7 @@ import router from '@ohos.router'
 import { Router } from '@ohos.arkui.UIContext';
 import { UIContext } from '@ohos.arkui.UIContext'
 import image from '@ohos.multimedia.image';
-import { BusinessError, RecordData } from '@ohos.base';
-import hilog from '@ohos.hilog';
+import { RecordData } from '@ohos.base';
 import WantAgent from '@ohos.app.ability.wantAgent';
 import wantagent from '@ohos.app.ability.wantAgent';
 import Want from '@ohos.app.ability.Want';
@@ -105,6 +106,7 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
       let bundle: notificationManager.BundleOption = {
         bundle: bundleName,
       };
+      let content : int =0
       let driver = Driver.create();
       let buttonName:string[]=['桌面角标','允许通知','确定']
       let testContext: common.UIAbilityContext= AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
@@ -138,9 +140,13 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
           console.info(`${testNum} null button`);
           expect(buttonOne).assertContain('允许通知')
         }
-        await Utils.msSleep(1500)
+        await Utils.msSleep(3000)
+        let scrollBar = await driver.findComponent(ON.type('Scroll').isAfter(ON.text('通知管理')))
+        console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
+        await scrollBar?.scrollToBottom()
+        await Utils.msSleep(1000)
         let buttonTwo = await driver.findComponent(ON.text('桌面角标'));
-        console.info(`${testNum} button is ${JSON.stringify(buttonTwo)}`);
+        console.info(`${testNum} buttonTwo is ${JSON.stringify(buttonTwo)}`);
         if (buttonTwo !== null) {
           await Utils.msSleep(1500)
           await buttonTwo.click();
@@ -149,6 +155,9 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
           console.info(`${testNum} null button`);
           expect(buttonTwo).assertContain('桌面角标')
         }
+        let scrollBar1 = await driver.findComponent(ON.type('Scroll').isAfter(ON.text('通知管理')))
+        console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar1)} `);
+        await scrollBar1?.scrollToTop()
         await Utils.msSleep(1500)
         let buttonZero = await driver.findComponent(ON.type('Toggle').isAfter(ON.text("允许通知")));
         console.info(`${testNum} buttonZero is ${JSON.stringify(buttonZero)}`);
@@ -249,6 +258,10 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
           expect(buttonOne).assertContain('允许通知')
         }
         await Utils.msSleep(1500)
+        let scrollBar = await driver.findComponent(ON.type('Scroll').isAfter(ON.text('通知管理')))
+        console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
+        await scrollBar?.scrollToBottom()
+        await Utils.msSleep(500)
         let buttonTwo = await driver.findComponent(ON.text('桌面角标'));
         console.info(`${testNum} button is ${JSON.stringify(buttonTwo)}`);
         if (buttonTwo !== null) {

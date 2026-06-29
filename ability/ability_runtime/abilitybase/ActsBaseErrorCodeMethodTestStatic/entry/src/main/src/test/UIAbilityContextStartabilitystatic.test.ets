@@ -13,19 +13,18 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
+import { describe, beforeAll, it, expect, TestType, Size, Level } from '../../../hypium/index';
 import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { AppStorage } from '@ohos.arkui.stateManagement'
+import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 import { BusinessError, RecordData } from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
-import StartOptions from '@ohos.app.ability.StartOptions'
+import StartOptions from '@ohos.app.ability.StartOptions';
 import contextConstant from '@ohos.app.ability.contextConstant';
 import { CompletionHandlerForAbilityStartCallback, AbilityStartFailureCode } from '@ohos.app.ability.CompletionHandlerForAbilityStartCallback';
 import { Driver, ON } from '@ohos.UiTest';
-
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let context: common.UIAbilityContext | undefined;

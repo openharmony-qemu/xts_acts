@@ -213,7 +213,7 @@ export default function gaugeJsunit() {
     it('testGauge0129', Level.LEVEL0, async (done: Function) => {
       console.info('testGauge0129 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('gauge' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
 

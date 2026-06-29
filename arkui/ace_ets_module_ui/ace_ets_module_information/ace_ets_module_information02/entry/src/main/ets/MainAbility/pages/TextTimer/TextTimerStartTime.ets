@@ -28,31 +28,37 @@ struct TextTimerStartTime {
       Column() {
         TextTimer({ isCountDown: false, controller: this.textTimerController1 })
           .id('textTimer_startTime_default')
+          .key('textTimer_startTime_default')
           .format('mm:ss.SS')
           .fontSize(30)
 
         TextTimer({ isCountDown: false, controller: this.textTimerController2, startTime: 30000 })
           .id('textTimer_startTime_positive')
+          .key('textTimer_startTime_positive')
           .format('mm:ss.SS')
           .fontSize(30)
 
         TextTimer({ isCountDown: false, controller: this.textTimerController3, startTime: 0 })
           .id('textTimer_startTime_zero')
+          .key('textTimer_startTime_zero')
           .format('mm:ss.SS')
           .fontSize(30)
 
         TextTimer({ isCountDown: false, controller: this.textTimerController4, startTime: -10000 })
           .id('textTimer_startTime_negative')
+          .key('textTimer_startTime_negative')
           .format('mm:ss.SS')
           .fontSize(30)
 
         TextTimer({ isCountDown: false, controller: this.textTimerController5, startTime: null })
           .id('textTimer_startTime_null')
+          .key('textTimer_startTime_null')
           .format('mm:ss.SS')
           .fontSize(30)
 
         TextTimer({ isCountDown: false, controller: this.textTimerController6, startTime: undefined })
           .id('textTimer_startTime_undefined')
+          .key('textTimer_startTime_undefined')
           .format('mm:ss.SS')
           .fontSize(30)
       }

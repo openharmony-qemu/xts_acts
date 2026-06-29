@@ -13,30 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Component,
-  List,
-  ColumnOptions,
-  ListItem,
-  Text,
-  Column,
-  Button,
-  Margin,
-  ForEach,
-  ClickEvent,
-  Color,
-  Axis,
-  BarState,
-  Builder,
-  ColumnOptions,
-  Padding,
-  ListItemGroup,
-  StickyStyle,
-  VisibleListContentInfo,
-  ScrollState,
-  ListItemGroupArea
-} from '@ohos.arkui.component'
+import { Entry, Component, List, ColumnOptions, ListItem, Text, Column, Button, Margin, ForEach, ClickEvent, Color, Axis, BarState, Builder, Padding, ListItemGroup, StickyStyle, VisibleListContentInfo, ScrollState, ListItemGroupArea } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
