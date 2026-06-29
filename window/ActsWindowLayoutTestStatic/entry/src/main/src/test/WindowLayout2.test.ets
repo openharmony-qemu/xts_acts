@@ -492,13 +492,13 @@ export default function WindowLayoutTest2() {
       };
     });
 
-**
-     * @tc.name SUB_WINDOW_WINDOWSTAGE_SetSupportedWindowModes_After_TerminateAbility_Static_0100
+    /**
+     * @tc.name   SUB_WINDOW_WINDOWSTAGE_SetSupportedWindowModes_After_TerminateAbility_Static_0100
      * @tc.number SUB_WINDOW_WINDOWSTAGE_SetSupportedWindowModes_After_TerminateAbility_Static_0100
-     * @tc.desc SUB_WINDOW_WINDOWSTAGE_SetSupportedWindowModes_After_TerminateAbility_Static_0100
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL0
+     * @tc.desc   SUB_WINDOW_WINDOWSTAGE_SetSupportedWindowModes_After_TerminateAbility_Static_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_WINDOW_WINDOWSTAGE_SetSupportedWindowModes_After_TerminateAbility_Static_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -588,7 +588,7 @@ export default function WindowLayoutTest2() {
             await terminateAbility(caseName);
             expect(false).assertTrue();
             done();
-          }).catch(async (err: Error): PromiseLike<void> | undefined => {
+          }).catch(async (err: Error) => {
             await terminateAbility(caseName);
             if (!isFreeWindowMode) {
               hilog.info(domain, tag,
