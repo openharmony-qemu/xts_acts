@@ -21,7 +21,7 @@ export default function BigIntGetLongTest_2(): void {
     /**
      * @tc.number SUB_BIGINT_STD_GETLONG_0900
      * @tc.name testBigIntGetLongBoundaryBatch
-     * @tc.desc getLong with byte/short/int boundary values, cross-constructor (合并 #0900 #1300)
+     * @tc.desc getLong with byte/short/int boundary values, cross-constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
