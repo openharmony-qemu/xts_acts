@@ -41,7 +41,7 @@ function logLongString(tag: string, longStr: string): void {
   }
 }
 
-export default function SelectTest() {
+export default function SelectTest(): void {
   describe('SelectTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("SelectTest beforeAll start");
