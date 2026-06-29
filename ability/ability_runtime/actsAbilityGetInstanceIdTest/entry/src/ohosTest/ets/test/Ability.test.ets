@@ -72,5 +72,49 @@ export default function ActsGetInstanceIdTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetUIAbilityByInstanceId_0500
+     * @tc.number SUB_Ability_AbilityRuntime_GetUIAbilityByInstanceId_0500
+     * @tc.desc   Testing GetUIAbilityByInstanceId null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_GetUIAbilityByInstanceId_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      hilog.info(0x0000, 'testTag', '%{public}s', 'it begin');
+      try {
+        let appContext = application.getApplicationContext();
+        let ability = appContext.getUIAbilityByInstanceId(null);
+        expect().assertFail();
+        done();
+      } catch (err){
+        hilog.info(DOMAIN, 'testTag', 'SUB_Ability_AbilityRuntime_GetUIAbilityByInstanceId_0500 getUIAbilityByInstanceId err: ' + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetUIAbilityByInstanceId_0600
+     * @tc.number SUB_Ability_AbilityRuntime_GetUIAbilityByInstanceId_0600
+     * @tc.desc   Testing GetUIAbilityByInstanceId undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_GetUIAbilityByInstanceId_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      hilog.info(0x0000, 'testTag', '%{public}s', 'it begin');
+      try {
+        let appContext = application.getApplicationContext();
+        let ability = appContext.getUIAbilityByInstanceId(undefined);
+        expect().assertFail();
+        done();
+      } catch (err){
+        hilog.info(DOMAIN, 'testTag', 'SUB_Ability_AbilityRuntime_GetUIAbilityByInstanceId_0600 getUIAbilityByInstanceId err: ' + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    })
   })
 }
