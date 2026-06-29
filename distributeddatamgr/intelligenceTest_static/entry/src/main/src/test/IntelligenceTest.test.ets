@@ -1547,7 +1547,6 @@ export default function intelligenceTest(): void {
           })
       }
     })
-    })
 
     /**
      * @tc.name   intelligenceApiTest4300
@@ -1712,5 +1711,7 @@ export default function intelligenceTest(): void {
             done();
           })
       }
+    })
+    
     })
 }
