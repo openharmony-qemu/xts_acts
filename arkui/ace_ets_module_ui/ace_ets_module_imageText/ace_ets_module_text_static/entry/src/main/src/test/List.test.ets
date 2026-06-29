@@ -17,10 +17,16 @@ import TextAttributeTest from './TextTest/TextAttribute.test';
 import TextDirectionTest from './TextTest/TextDirection.test';
 import TextOnWillCopyTest from './TextApi26Test/TextOnWillCopy.test';
 import TextFontVariationsTest from './TextApi26Test/TextFontVariations.test';
+import TextIncrementalUpdatePolicyTest from './TextApi26Test/TextIncrementalUpdatePolicy.test';
+import TextPunctuationOverflowTest from './TextApi26Test/TextPunctuationOverflow.test';
+import TextTailIndentsTest from './TextApi26Test/TextTailIndents.test';
 
 export default function testsuite() {
   TextAttributeTest();
   TextDirectionTest();
   TextOnWillCopyTest();
   TextFontVariationsTest();
+  TextIncrementalUpdatePolicyTest();
+  TextPunctuationOverflowTest();
+  TextTailIndentsTest();
 }
