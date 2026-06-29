@@ -157,6 +157,86 @@ export default function windowPropertiesTest() {
         })
 
       /**
+       * @tc.name   test_GETWINDOWPROPERTIES_WINDOWRECT_0100
+       * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_WINDOWRECT_0100
+       * @tc.desc   无标题栏子窗可绘制区域等于窗口区域
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
+      it('test_GETWINDOWPROPERTIES_WINDOWRECT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: Function) => {
+        let msgStr = 'test_GETWINDOWPROPERTIES_WINDOWRECT_0100';
+        console.info(`${msgStr} begin`);
+        let windowClass: window.Window = windowStage.getMainWindowSync();
+        let subWindowClass: window.Window | undefined;
+        try {
+          let options: ohosWindow.SubWindowOptions = {
+            title: 'title',
+            decorEnabled: false
+          };
+          let promise = windowStage.createSubWindowWithOptions('test_GETWINDOWPROPERTIES_WINDOWRECT_0100', options);
+          promise.then(async (data) => {
+            subWindowClass = data;
+            console.info(`${msgStr} Succeeded in creating the subwindow. Data: ${JSON.stringify(subWindowClass)}`);
+            let windowLimits = subWindowClass.getWindowLimits();
+            let minWidth = windowLimits.minWidth ?? 500;
+            let minHeight = windowLimits.minHeight ?? 500;
+            console.info(`${msgStr} windowLimits is: ${JSON.stringify(windowLimits)}`);
+            console.info(`${msgStr} minWidth is: ${minWidth}, minHeight is: ${minHeight}`);
+            await subWindowClass.resize(minWidth, minHeight);
+            await sleep(200);
+            await subWindowClass.moveWindowTo(100, 100);
+            await sleep(200);
+            await subWindowClass.setUIContent('testability/pages/First/index2');
+            await sleep(200);
+            await subWindowClass.showWindow();
+            await sleep(200);
+            let windowProperties = subWindowClass.getWindowProperties();
+            console.info(`${msgStr} windowProperties: ${JSON.stringify(windowProperties)}`);
+            let windowRect = windowProperties.windowRect;
+            console.info(`${msgStr} windowRect: ${JSON.stringify(windowRect)}`);
+            expect(Math.abs(windowRect.width - minWidth)).assertLessOrEqual(1);
+            expect(Math.abs(windowRect.height - minHeight)).assertLessOrEqual(1);
+            expect(Math.abs(windowRect.left - 100)).assertLessOrEqual(1);
+            expect(Math.abs(windowRect.top - 100)).assertLessOrEqual(1);
+            let drawableRect = windowProperties.drawableRect;
+            console.info(`${msgStr} drawableRect: ${JSON.stringify(drawableRect)}`);
+            expect(drawableRect.left).assertEqual(0);
+            expect(drawableRect.top).assertEqual(0);
+            expect(Math.abs(drawableRect.width - windowRect.width)).assertLessOrEqual(1);
+            expect(Math.abs(drawableRect.height - windowRect.height)).assertLessOrEqual(1);
+            await subWindowClass.destroyWindow();
+            done();
+          }).catch(async (error: BusinessError) => {
+            console.error(`${msgStr} Failed to create the subwindow. Cause: code ${error.code}, message ${error.message}`);
+            if (subWindowClass !== undefined) {
+              await subWindowClass.destroyWindow();
+            }
+            if (error.code == 1300002) {
+              expect(error.message != null).assertTrue();
+              expect(true).assertTrue();
+              done();
+            } else {
+              expect().assertFail();
+              done();
+            }
+          });
+        } catch (error) {
+          console.error(`${msgStr} Failed to create the subwindow. Cause: code ${error.code}, message ${error.message}`);
+          if (subWindowClass !== undefined) {
+            await subWindowClass.destroyWindow();
+          }
+          if (error.code == 1300002) {
+            expect(error.message != null).assertTrue();
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        }
+      })
+
+      /**
        * @tc.name   testSetWatermarkImageForAppWindowswithSizeExceedsScreenSize
        * @tc.number SUB_BASIC_WMS_SET_WATERMARKIMAGE_FOR_APPWINDOWS_0100
        * @tc.desc   验证设置进程水印入参pixelmap大小超过屏幕大小时抛出错误码1300016
@@ -265,13 +345,14 @@ export default function windowPropertiesTest() {
        */
       it('testSetWatermarkImageForAppWindowswithMainWindowandSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         let caseName = 'testSetWatermarkImageForAppWindowswithMainWindowandSubWindow';
-        let subWindowClass = await windowStage.createSubWindow('testSetWatermarkImageForAppWindowswithMainWindowandSubWindow');
+        let subWindowClass: window.Window | undefined;
         let driver: Driver = Driver.create();
         await sleep(200)
         try {
+          subWindowClass = await windowStage.createSubWindow('testSetWatermarkImageForAppWindowswithMainWindowandSubWindow');
           let windowLimits = subWindowClass.getWindowLimits();
           console.log(caseName + ' windowLimits:' + JSON.stringify(windowLimits));
-          await subWindowClass.resize(windowLimits.minWidth as number+200, windowLimits.minHeight as number+200)
+          await subWindowClass.resize(windowLimits.minWidth, windowLimits.minHeight)
           subWindowClass.moveWindowToAsync(100,150);
           await sleep(200);
           await subWindowClass.setUIContent('testability/pages/First/index4');
@@ -302,12 +383,13 @@ export default function windowPropertiesTest() {
           done();
         } catch (err) {
           console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
-          if (err.code == 801) {
+          if (subWindowClass) {
             await subWindowClass.destroyWindow();
+          }
+          if (err.code == 801) {
             done();
           } else {
             expect().assertFail()
-            await subWindowClass.destroyWindow();
             done();
           }
         }
@@ -332,47 +414,49 @@ export default function windowPropertiesTest() {
           ctx: context
         };
         try {
-          window.createWindow(config).then(async (data) => {
-            subWindowClass = data;
-            await subWindowClass.setUIContent('testability/pages/First/index4');
-            await subWindowClass.showWindow();
-            let btn = await driver.findComponent(ON.id('SubWinTestId'));
-            await sleep(2000);
-            await btn.click();
-            await sleep(1000);
-            let errCode = await driver.findComponent(ON.id('errCode'));
-            await sleep(1000);
-            let errMessage = await driver.findComponent(ON.id('errMessage'));
-            await sleep(1000);
-            let errCodeText = await errCode.getText();
-            let errMessageText = await errMessage.getText();
-            await sleep(200);
-            if (errCodeText == '801') {
-              expect(true).assertTrue()
-            } else if (errMessageText == 'success') {
-              expect(true).assertTrue()
-            } else {
-              console.error(`${caseName} Failed. Cause: ${JSON.stringify(errMessageText)}`);
-              expect().assertFail()
-            }
-            await subWindowClass.destroyWindow();
-            done();
-          }).catch(async (err: BusinessError) => {
-            console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
-            if (err.code === 1300002) {
-              await subWindowClass?.destroyWindow();
-              done()
-            } else {
-              expect().assertFail();
-              await subWindowClass?.destroyWindow();
-              done()
-            }
-          });
-        } catch (err) {
-          console.error(`${caseName} Failed2. Cause code: ${err.code}, message: ${err.message}`);
-          expect().assertFail()
-          await subWindowClass?.destroyWindow();
+          subWindowClass = await window.createWindow(config);
+          let windowLimits = subWindowClass.getWindowLimits();
+          console.log(caseName + ' windowLimits:' + JSON.stringify(windowLimits));
+          await subWindowClass.resize(windowLimits.minWidth, windowLimits.minHeight);
+          subWindowClass.moveWindowToAsync(100, 150);
+          await sleep(200);
+          await subWindowClass.setUIContent('testability/pages/First/index4');
+          await subWindowClass.showWindow();
+          await sleep(1000);
+          let btn = await driver.findComponent(ON.id('SubWinTestId'));
+          await sleep(1000);
+          await btn.click();
+          await sleep(1000);
+          let errCode = await driver.findComponent(ON.id('errCode'));
+          await sleep(1000);
+          let errMessage = await driver.findComponent(ON.id('errMessage'));
+          await sleep(1000);
+          let errCodeText = await errCode.getText();
+          let errMessageText = await errMessage.getText();
+          await sleep(200);
+          if (errCodeText == '801') {
+            expect(true).assertTrue()
+          } else if (errMessageText == 'success') {
+            expect(true).assertTrue()
+          } else {
+            console.error(`${caseName} Failed. Cause: ${JSON.stringify(errMessageText)}`);
+            expect().assertFail()
+          }
+          await subWindowClass.destroyWindow();
           done();
+        } catch (err) {
+            console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
+          if (subWindowClass) {
+            await subWindowClass.destroyWindow();
+          }
+            if (err.code === 1300002) {
+            done()
+          } else if (err.code == 801) {
+              done()
+            } else {
+            expect().assertFail()
+              done()
+            }
         }
       })
 
@@ -400,7 +484,7 @@ export default function windowPropertiesTest() {
             subWindowClass = await windowStage.createSubWindow('testSetWatermarkImageForAppWindowsBeforeLoadContent');
             let windowLimits = subWindowClass.getWindowLimits();
             console.log(caseName + ' windowLimits: ' + JSON.stringify(windowLimits));
-            await subWindowClass.resize(windowLimits.minWidth as number, windowLimits.minHeight as number);
+            await subWindowClass.resize(windowLimits.minWidth, windowLimits.minHeight);
 
             let promise = window.setWatermarkImageForAppWindows(pixelMap);
             promise.then(async () => {
@@ -408,11 +492,12 @@ export default function windowPropertiesTest() {
               await window.setWatermarkImageForAppWindows(undefined);
               await subWindowClass?.showWindow();
               await subWindowClass?.destroyWindow()
-              expect(true).assertTrue();
               done();
             }).catch(async (err: BusinessError) => {
               console.error(`${caseName} Failed to set watermark image. Cause code: ${err.code}, message: ${err.message}`);
-              await subWindowClass?.destroyWindow()
+              if (subWindowClass) {
+                await subWindowClass.destroyWindow();
+              }
               if (err.code == 801) {
                 done()
               } else {
@@ -422,18 +507,21 @@ export default function windowPropertiesTest() {
             });
           } catch (exception) {
             console.error(`${caseName} Failed to set watermark image. Exception code: ${exception.code}, message: ${exception.message}`);
+            if (subWindowClass) {
+              await subWindowClass.destroyWindow();
+            }
             if (exception.code == 801) {
-              await subWindowClass?.destroyWindow()
               done();
             } else {
-              await subWindowClass?.destroyWindow()
               expect().assertFail();
               done();
             }
           }
         }).catch(async (err: BusinessError) => {
           console.error(`${caseName} Failed to create PixelMap. Cause code: ${err.code}, message: ${err.message}`);
-          await subWindowClass?.destroyWindow()
+          if (subWindowClass) {
+            await subWindowClass.destroyWindow();
+          }
           expect().assertFail();
           done();
         });
@@ -1549,24 +1637,32 @@ export default function windowPropertiesTest() {
          * @tc.level  LEVEL3
          */
         it("testOnRectChangeOptionsResizeSubWindow", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            let caseName = "TestOnRectChangeOptionsResizeSubWindow";
+            let caseName = "testOnRectChangeOptionsResizeSubWindow";
+            console.info(`${caseName} begin`);
             try {
                 let subWindowClass = await windowStage.createSubWindow("subwindow");
                 console.info(`${caseName} Succeeded in creating the sub window.`);
+                let windowLimits: window.WindowLimits = subWindowClass.getWindowLimits();
+                let minWidth = windowLimits.minWidth ?? 500;
+                let minHeight = windowLimits.minHeight ?? 500;
+                console.info(`${caseName} windowLimits is: ${JSON.stringify(windowLimits)}`);
+                console.info(`${caseName} minWidth is: ${minWidth}, minHeight is: ${minHeight}`);
+                await subWindowClass.setUIContent('testability/pages/WindowTest/StartMoving');
+                console.info(`${caseName} Succeeded in setting UI content.`);
                 await subWindowClass.showWindow();
                 await sleep(1000);
                 subWindowClass.on('windowSizeChange', async (data) => {
                     console.info(`${caseName} Succeeded window rect changes. Data: ${JSON.stringify(data)}`);
-                    expect(data.width).assertEqual(500);
-                    expect(data.height).assertEqual(500);
+                    expect(data.width).assertEqual(minWidth);
+                    expect(data.height).assertEqual(minHeight);
                     subWindowClass.off('windowSizeChange');
                     await subWindowClass.destroyWindow();
                     done();
                 });
-                await subWindowClass.resize(500, 500);
+                await subWindowClass.resize(minWidth, minHeight);
                 console.info(`${caseName} Succeeded in changing the sub window size.`);
             } catch (error) {
-                console.error(`${caseName}: Error: ${JSON.stringify(error)}`);
+                console.error(`${caseName} Error: code ${error.code}, message ${error.message}`);
                 expect().assertFail();
                 done();
             }
@@ -4850,83 +4946,6 @@ export default function windowPropertiesTest() {
       }
     })
 
-      /**
-       * @tc.name   test_GETWINDOWPROPERTIES_WINDOWRECT_0100
-       * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_WINDOWRECT_0100
-       * @tc.desc   无标题栏子窗可绘制区域等于窗口区域
-       * @tc.type   FUNCTION
-       * @tc.size   MEDIUMTEST
-       * @tc.level  LEVEL0
-       */
-      it('test_GETWINDOWPROPERTIES_WINDOWRECT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: Function) => {
-        let msgStr = ' test_GETWINDOWPROPERTIES_WINDOWRECT_0100 ';
-        console.info(msgStr + ' begin ');
-        let windowClass: window.Window = windowStage.getMainWindowSync()
-        let subWindowClass: window.Window | undefined;
-        try {
-          let options: ohosWindow.SubWindowOptions = {
-            title: 'title',
-            decorEnabled: false
-          };
-          let promise = windowStage.createSubWindowWithOptions('test_GETWINDOWPROPERTIES_WINDOWRECT_0100', options);
-          promise.then(async (data) => {
-            subWindowClass = data;
-            await subWindowClass.setUIContent('testability/pages/First/index2');
-            await sleep(200);
-            await subWindowClass.showWindow();
-            await sleep(200);
-            console.info(msgStr + 'Succeeded in creating the subwindow. Data: ' + JSON.stringify(subWindowClass));
-            let windowLimits = await windowClass.getWindowLimits();
-            console.info(msgStr + ' Succeeded in get the window limits. Cause: ' + JSON.stringify(windowLimits));
-            await subWindowClass.resetSize(windowLimits.minWidth as number, windowLimits.minHeight as number);
-            await sleep(200);
-            await subWindowClass.moveWindowTo(100, 100);
-            await sleep(200);
-            let windowProperties = subWindowClass.getWindowProperties()
-            console.info(`${msgStr} windowProperties: ${JSON.stringify(windowProperties)}`);
-            let windowRect = windowProperties.windowRect;
-            console.info(`${msgStr} windowRect: ${JSON.stringify(windowRect)}`);
-            expect(Math.abs(windowRect.width-(windowLimits.minWidth as number))).assertLessOrEqual(1);
-            expect(Math.abs(windowRect.height-(windowLimits.minHeight as number))).assertLessOrEqual(1);
-            expect(Math.abs(windowRect.left-100)).assertLessOrEqual(1);
-            expect(Math.abs(windowRect.top-100)).assertLessOrEqual(1);
-            let drawableRect  = windowProperties.drawableRect;
-            console.info(`${msgStr} drawableRect: ${JSON.stringify(drawableRect)}`);
-            expect(drawableRect.left).assertEqual(0);
-            expect(drawableRect.top ).assertEqual(0);
-            expect(Math.abs(drawableRect.width - windowRect.width)).assertLessOrEqual(1);
-            expect(Math.abs(drawableRect.height - windowRect.height)).assertLessOrEqual(1);
-            await subWindowClass.destroyWindow();
-            done();
-          }).catch(async (error: BusinessError) => {
-            console.error(msgStr + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error.code)+'error.message:'+ error.message);
-            if (subWindowClass !== undefined) {
-              await subWindowClass.destroyWindow();
-            }
-            if (error.code == 1300002) {
-              expect(error.message!=null).assertTrue();
-              expect(true).assertTrue();
-              done();
-            } else {
-              expect().assertFail();
-              done();
-            }
-          });
-        } catch (error) {
-          console.error(msgStr + ' Failed2 to create the subwindow. Cause: ' + JSON.stringify(error.code)+'error.message:'+ error.message);
-          if (subWindowClass !== undefined) {
-            await subWindowClass.destroyWindow();
-          }
-          if (error.code == 1300002) {
-            expect(error.message!=null).assertTrue();
-            expect().assertTrue();
-            done();
-          } else {
-            expect().assertFail();
-            done();
-          }
-        }
-      })
 
       /**
        * @tc.name   test_GETWINDOWPROPERTIES_WINDOWRECT_0200
@@ -7770,38 +7789,58 @@ export default function windowPropertiesTest() {
             callbackIndex2++;
           }
           windowClass.on('frameMetricsMeasured', callback1);
-          let windowProperties = windowClass.getWindowProperties();
-          console.log(`${caseName} windowProperties: ${JSON.stringify(windowProperties)}`);
-          let driver: Driver = Driver.create();
-          let dragFromX = Math.round(windowProperties.windowRect.width/4 +windowProperties.windowRect.left);
-          console.log(`${caseName} dragFromX: ${JSON.stringify(dragFromX)}`);
-          let dragToX = Math.round(windowProperties.windowRect.width/2 +windowProperties.windowRect.left);
-          console.log(`${caseName} dragToX: ${JSON.stringify(dragToX)}`);
-          let dragFromY = Math.round(windowProperties.windowRect.height/4 +windowProperties.windowRect.top);
-          console.log(`${caseName} dragFromY: ${JSON.stringify(dragFromY)}`);
-          let dragToY = Math.round(windowProperties.windowRect.height/2 +windowProperties.windowRect.top);
-          console.log(`${caseName} dragToY: ${JSON.stringify(dragToY)}`);
-          await driver.drag(dragFromX, dragFromY, dragToX, dragToY);
-          await sleep(3000);
+          let densityInfo = windowClass.getWindowDensityInfo();
+          console.log(`${caseName} densityInfo: ${JSON.stringify(densityInfo)}`);
+          let currentDensity = densityInfo.customDensity;
+          let newDensity: number;
+          if (currentDensity >= 2) {
+            newDensity = Math.max(0.5, currentDensity - 1);
+          } else {
+            newDensity = Math.min(4, currentDensity + 1);
+          }
+          console.log(`${caseName} currentDensity: ${currentDensity}, newDensity: ${newDensity}`);
+          windowStage.setCustomDensity(newDensity);
+          await sleep(1000);
           expect(callbackIndex1).assertLarger(0)
           callbackIndex1 = 0;
           windowClass.on('frameMetricsMeasured', callback2);
-          await driver.drag(dragFromX, dragFromY, dragToX, dragToY);
-          await sleep(3000);
+          let secondDensity: number;
+          if (newDensity >= 2) {
+            secondDensity = Math.max(0.5, newDensity - 1);
+          } else {
+            secondDensity = Math.min(4, newDensity + 1);
+          }
+          console.log(`${caseName} secondDensity: ${secondDensity}`);
+          windowStage.setCustomDensity(secondDensity);
+          await sleep(1000);
           expect(callbackIndex1).assertLarger(0);
           expect(callbackIndex2).assertLarger(0);
           windowClass.off('frameMetricsMeasured', callback1);
           callbackIndex1 = 0;
           callbackIndex2 = 0;
-          await driver.drag(dragFromX, dragFromY, dragToX, dragToY);
-          await sleep(3000);
+          let thirdDensity: number;
+          if (secondDensity >= 2) {
+            thirdDensity = Math.max(0.5, secondDensity - 1);
+          } else {
+            thirdDensity = Math.min(4, secondDensity + 1);
+          }
+          console.log(`${caseName} thirdDensity: ${thirdDensity}`);
+          windowStage.setCustomDensity(thirdDensity);
+          await sleep(1000);
           expect(callbackIndex1).assertEqual(0);
           expect(callbackIndex2).assertLarger(0);
           callbackIndex1 = 0;
           callbackIndex2 = 0;
           windowClass.off('frameMetricsMeasured');
-          await driver.drag(dragFromX, dragFromY, dragToX, dragToY);
-          await sleep(3000);
+          let fourthDensity: number;
+          if (thirdDensity >= 2) {
+            fourthDensity = Math.max(0.5, thirdDensity - 1);
+          } else {
+            fourthDensity = Math.min(4, thirdDensity + 1);
+          }
+          console.log(`${caseName} fourthDensity: ${fourthDensity}`);
+          windowStage.setCustomDensity(fourthDensity);
+          await sleep(1000);
           expect(callbackIndex1).assertEqual(0);
           expect(callbackIndex2).assertEqual(0);
           done();
@@ -7841,27 +7880,31 @@ export default function windowPropertiesTest() {
             expect(res.vsyncTimestamp).assertLarger(0);
             expect(res.inputHandlingDuration).assertLarger(0);
             expect(res.layoutMeasureDuration).assertLarger(0);
-            windowClass?.off('frameMetricsMeasured');
-            await windowClass?.destroyWindow()
-            done();
           }
           windowClass.on('frameMetricsMeasured', callback1);
-          let windowProperties = windowClass.getWindowProperties();
-          console.log(`${caseName} windowProperties: ${JSON.stringify(windowProperties)}`);
-          let driver: Driver = Driver.create();
-          let dragFromX = Math.round(windowProperties.windowRect.width/4 +windowProperties.windowRect.left);
-          console.log(`${caseName} dragFromX: ${JSON.stringify(dragFromX)}`);
-          let dragToX = Math.round(windowProperties.windowRect.width/2 +windowProperties.windowRect.left);
-          console.log(`${caseName} dragToX: ${JSON.stringify(dragToX)}`);
-          let dragFromY = Math.round(windowProperties.windowRect.height/4 +windowProperties.windowRect.top);
-          console.log(`${caseName} dragFromY: ${JSON.stringify(dragFromY)}`);
-          let dragToY = Math.round(windowProperties.windowRect.height/2 +windowProperties.windowRect.top);
-          console.log(`${caseName} dragToY: ${JSON.stringify(dragToY)}`);
-          await driver.drag(dragFromX, dragFromY, dragToX, dragToY);
-          await sleep(3000)
+          let densityInfo = windowClass.getWindowDensityInfo();
+          console.log(`${caseName} densityInfo: ${JSON.stringify(densityInfo)}`);
+          let currentDensity = densityInfo.customDensity;
+          let newDensity: number;
+          if (currentDensity >= 2) {
+            newDensity = Math.max(0.5, currentDensity - 1);
+          } else {
+            newDensity = Math.min(4, currentDensity + 1);
+          }
+          console.log(`${caseName} currentDensity: ${currentDensity}, newDensity: ${newDensity}`);
+          windowStage.setCustomDensity(newDensity);
+          let windowLimits = windowClass.getWindowLimits();
+          console.log(`${caseName} windowLimits: ${JSON.stringify(windowLimits)}`);
+          await windowClass.resize(windowLimits.minWidth as number, windowLimits.minHeight as number);
+          await sleep(1000)
+          windowClass?.off('frameMetricsMeasured');
+          await windowClass?.destroyWindow()
+          done();
         } catch (exception) {
           console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
-          await windowClass?.destroyWindow()
+          if (windowClass) {
+            await windowClass.destroyWindow();
+          }
           if(!canIUseRes){
             expect(exception.code).assertEqual(801)
           }else {
