@@ -22,6 +22,12 @@
     "MainAbility/pages/popupSystemMaterial/CustomPopupOptionsSystemMaterial",
     "MainAbility/pages/popupSystemMaterial/PopupCommonOptionsSystemMaterial",
     "MainAbility/pages/popupSystemMaterial/SheetOptionsSystemMaterial",
-    "MainAbility/pages/popupSystemMaterial/TipsOptionsSystemMaterial"
+    "MainAbility/pages/popupSystemMaterial/TipsOptionsSystemMaterial",
+    "MainAbility/pages/popup/PopupOptionsColorMode",
+    "MainAbility/pages/popup/PopupCommonOptionsColorMode",
+    "MainAbility/pages/popup/CustomPopupOptionsColorMode",
+    "MainAbility/pages/popup/PopupOptionsLevelMode",
+    "MainAbility/pages/popup/PopupCommonOptionsLevelMode",
+    "MainAbility/pages/popup/CustomPopupOptionsLevelMode"
   ]
 }

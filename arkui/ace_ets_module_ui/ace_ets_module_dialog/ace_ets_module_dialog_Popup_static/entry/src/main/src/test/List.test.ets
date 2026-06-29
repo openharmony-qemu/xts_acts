@@ -19,6 +19,12 @@ import CustomPopupOptionsSystemMaterialTest from './popupSystemMaterial/CustomPo
 import PopupCommonOptionsSystemMaterialTest from './popupSystemMaterial/PopupCommonOptionsSystemMaterial.test';
 import SheetOptionsSystemMaterialTest from './popupSystemMaterial/SheetOptionsSystemMaterial.test';
 import TipsOptionsSystemMaterialTest from './popupSystemMaterial/TipsOptionsSystemMaterial.test';
+import PopupOptionsColorModeTest from './popupColorMode/PopupOptionsColorModeTest.test';
+import PopupCommonOptionsColorModeTest from './popupColorMode/PopupCommonOptionsColorModeTest.test';
+import CustomPopupOptionsColorModeTest from './popupColorMode/CustomPopupOptionsColorModeTest.test';
+import PopupOptionsLevelModeTest from './popupLevelMode/PopupOptionsLevelModeTest.test';
+import PopupCommonOptionsLevelModeTest from './popupLevelMode/PopupCommonOptionsLevelModeTest.test';
+import CustomPopupOptionsLevelModeTest from './popupLevelMode/CustomPopupOptionsLevelModeTest.test';
 
 export default function testsuite(): void {
   PopupOptionsSystemMaterialTest();
@@ -26,4 +32,10 @@ export default function testsuite(): void {
   PopupCommonOptionsSystemMaterialTest();
   SheetOptionsSystemMaterialTest();
   TipsOptionsSystemMaterialTest();
+  PopupOptionsColorModeTest();
+  PopupCommonOptionsColorModeTest();
+  CustomPopupOptionsColorModeTest();
+  PopupOptionsLevelModeTest();
+  PopupCommonOptionsLevelModeTest();
+  CustomPopupOptionsLevelModeTest();
 }
