@@ -25,7 +25,7 @@ export default function testsuite() {
   bufferTest();
   dataTest();
   stringTest();
-  
+
   napiCallbackRiskLifecycleTest();
   napiCallbackRiskFinalizerTest();
   napiCallbackRiskAsyncTest();
