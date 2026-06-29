@@ -22,7 +22,7 @@ export default function BigIntGetULongTest_2(): void {
     /**
      * @tc.number SUB_BIGINT_STD_GETULONG_0900
      * @tc.name testBigIntGetULongBoundaryBatch
-     * @tc.desc getULong byte/short/int boundary + cross-format consistency (合并 #0900 #1300)
+     * @tc.desc getULong byte/short/int boundary + cross-format consistency
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -103,7 +103,7 @@ export default function BigIntGetULongTest_2(): void {
     /**
      * @tc.number SUB_BIGINT_STD_GETULONG_1500
      * @tc.name testBigIntGetULongNegativeUnsignedBatch
-     * @tc.desc getULong negative values as unsigned (合并 #1500 #2200 #3200)
+     * @tc.desc getULong negative values as unsigned
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -191,7 +191,7 @@ export default function BigIntGetULongTest_2(): void {
     /**
      * @tc.number SUB_BIGINT_STD_GETULONG_2000
      * @tc.name testBigIntGetULongStringBatch
-     * @tc.desc getULong for positive and negative string values (合并 #2000 #2100)
+     * @tc.desc getULong for positive and negative string values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -308,7 +308,6 @@ export default function BigIntGetULongTest_2(): void {
       expect(BigInt(1024).getULong()).assertEqual(1024);
       expect(BigInt(65536).getULong()).assertEqual(65536);
       expect(BigInt(131072).getULong()).assertEqual(131072);
-      // 合并自2900: 大幂次值
       expect(Utils.ulongRoundTrip(BigInt('1099511627776'))).assertEqual('1099511627776');
       expect(Utils.ulongRoundTrip(BigInt('1125899906842624'))).assertEqual('1125899906842624');
       expect(Utils.ulongRoundTrip(BigInt('1152921504606846976'))).assertEqual('1152921504606846976');
@@ -453,7 +452,6 @@ export default function BigIntGetULongTest_2(): void {
       expect(restored).not().assertNull();
       expect(restored.toString()).assertEqual(BigInt('430646668853801415').toString());
 
-      // getULong 只返回低 64 位，fromULong 只能重建截断后的值
       const r2 = BigInt('1234567890123456789012345678901234567890').getULong();
       const restored2 = BigInt.fromULong(r2);
       expect(restored2).not().assertNull();

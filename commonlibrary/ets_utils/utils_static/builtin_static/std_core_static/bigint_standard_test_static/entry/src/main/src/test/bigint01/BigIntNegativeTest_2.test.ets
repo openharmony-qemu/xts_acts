@@ -48,9 +48,9 @@ export default function BigIntNegativeTest_2(): void {
      * @tc.level Level 2
      */
     it('testBigIntNegativeOctStr0810', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(63).negative()).assertFalse();  // 0o77 = 63
+      expect(BigInt(63).negative()).assertFalse();
       expect(BigInt(-63).negative()).assertTrue();
-      expect(BigInt(8589934591).negative()).assertFalse();  // 0o77777777777 = 8589934591
+      expect(BigInt(8589934591).negative()).assertFalse();
       expect(BigInt(-8589934591).negative()).assertTrue();
       expect(BigInt(0).negative()).assertFalse();
       expect(BigInt(-1).negative()).assertTrue();
@@ -65,7 +65,7 @@ export default function BigIntNegativeTest_2(): void {
      * @tc.level Level 2
      */
     it('testBigIntNegativeBinStr0820', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(255).negative()).assertFalse();  // 0b11111111 = 255
+      expect(BigInt(255).negative()).assertFalse();
       expect(BigInt(-255).negative()).assertTrue();
       expect(BigInt(1).negative()).assertFalse();
       expect(BigInt(-1).negative()).assertTrue();
@@ -76,7 +76,7 @@ export default function BigIntNegativeTest_2(): void {
     /**
      * @tc.number SUB_BIGINT_STD_NEGATIVE_0830
      * @tc.name testBigIntNegativeTypeBoundaryBatch
-     * @tc.desc negative() across byte/short/int/long/unsigned type boundaries (合并 #0830 #0840 #0850 #0860 #1030)
+     * @tc.desc negative() across byte/short/int/long/unsigned type boundaries
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -95,7 +95,6 @@ export default function BigIntNegativeTest_2(): void {
       for (let i = 0; i < negatives.length; i++) {
         expect(negatives[i].negative()).assertTrue();
       }
-      // 合并自1060: long半边界
       expect(BigInt(4611686018427387903).negative()).assertFalse();
       expect(BigInt(-4611686018427387904).negative()).assertTrue();
     });
@@ -111,7 +110,7 @@ export default function BigIntNegativeTest_2(): void {
     /**
      * @tc.number SUB_BIGINT_STD_NEGATIVE_0870
      * @tc.name testBigIntNegativeLargeDigitsBatch
-     * @tc.desc negative() for 40/50/100/200-digit values (合并 #0870 #0880)
+     * @tc.desc negative() for 40/50/100/200-digit values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -246,7 +245,6 @@ export default function BigIntNegativeTest_2(): void {
       const bx1: BigInt = BigInt(-1).operatorBitwiseXor(BigInt(1));
       expect(bx1.negative()).assertTrue();
 
-      // 255 & -256 = 0（非负）
       const ba2: BigInt = BigInt(255).operatorBitwiseAnd(BigInt(-256));
       expect(ba2.negative()).assertFalse();
       expect(ba2.equals(BigInt(0))).assertTrue();
@@ -289,7 +287,6 @@ export default function BigIntNegativeTest_2(): void {
      * @tc.level Level 2
      */
     it('testBigIntNegativeCrossFormatConsistency0960', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      // BigInt(string) 不支持 0x/0o/0b 前缀，仅保留十进制字符串比较
       expect(BigInt(255).negative()).assertEqual(BigInt('255').negative());
       expect(BigInt(-255).negative()).assertEqual(BigInt('-255').negative());
     });
@@ -383,7 +380,7 @@ export default function BigIntNegativeTest_2(): void {
     /**
      * @tc.number SUB_BIGINT_STD_NEGATIVE_1010
      * @tc.name testBigIntNegativeEvenOddPrimeBatch
-     * @tc.desc negative() for even/odd/prime int and string constructors (合并 #1010 #1020)
+     * @tc.desc negative() for even/odd/prime int and string constructors
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

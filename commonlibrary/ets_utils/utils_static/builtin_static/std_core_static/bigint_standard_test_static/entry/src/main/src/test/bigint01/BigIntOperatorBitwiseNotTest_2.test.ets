@@ -22,7 +22,6 @@ function getBigInt(): BigInt {
 
 export default function BigIntOperatorBitwiseNotTest_2(): void {
   describe('BigInt.operatorBitwiseNot - expanded param dimensions', () => {
-    /* ========== 原有9个测试 ========== */
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_BITWISE_NOT_0700
@@ -184,12 +183,12 @@ export default function BigIntOperatorBitwiseNotTest_2(): void {
       expect(BigInt('1431655765').operatorBitwiseNot().operatorBitwiseNot().toString()).assertEqual('1431655765');
     });
 
-    /* ========== 扩展维度1: 数值边界NOT - 合并 EXT018~EXT020 ========== */
+    
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_BITWISE_NOT_EXT_018
      * @tc.name testBigIntOperatorBitwiseNotTypeZoneBatch
-     * @tc.desc byte/short/int zone values NOT double-inverse (合并 EXT018 EXT019 EXT020)
+     * @tc.desc byte/short/int zone values NOT double-inverse
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -203,7 +202,7 @@ export default function BigIntOperatorBitwiseNotTest_2(): void {
         expect(vals[i].operatorBitwiseNot().operatorBitwiseNot().toString()).assertEqual(vals[i].toString());
       }
     });
-    /* ========== 扩展维度2: 超大数NOT双射（保留3个代表：40位、150位、500位）========== */
+    
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_BITWISE_NOT_EXT_021
@@ -221,7 +220,7 @@ export default function BigIntOperatorBitwiseNotTest_2(): void {
       const s500 = '99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999';
       expect(BigInt(s500).operatorBitwiseNot().operatorBitwiseNot().toString()).assertEqual(s500);
     });
-    /* ========== 扩展维度3: 跨构造器NOT一致性（合并为1个批量测试）========== */
+    
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_BITWISE_NOT_EXT_041
@@ -239,7 +238,7 @@ export default function BigIntOperatorBitwiseNotTest_2(): void {
       expect(BigInt(false).operatorBitwiseNot().toString()).assertEqual(BigInt(0).operatorBitwiseNot().toString());
       expect(BigInt.fromULong(42).operatorBitwiseNot().toString()).assertEqual(BigInt(42).operatorBitwiseNot().toString());
     });
-    /* ========== 扩展维度4: NOT与XOR(-1)等价（合并为1个批量测试）========== */
+    
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_BITWISE_NOT_EXT_061
@@ -255,7 +254,7 @@ export default function BigIntOperatorBitwiseNotTest_2(): void {
         expect(pts[i].operatorBitwiseNot().toString()).assertEqual(pts[i].operatorBitwiseXor(BigInt(-1)).toString());
       }
     });
-    /* ========== 扩展维度5: NOT与±1关系（合并为1个批量测试）========== */
+    
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_BITWISE_NOT_EXT_081
@@ -271,7 +270,7 @@ export default function BigIntOperatorBitwiseNotTest_2(): void {
         expect(pts[i].operatorBitwiseNot().toString()).assertEqual(pts[i].operatorAdd(BigInt(1)).negate().toString());
       }
     });
-    /* ========== 扩展维度6: 链式NOT（合并为1个批量测试）========== */
+    
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_BITWISE_NOT_EXT_101
@@ -288,7 +287,7 @@ export default function BigIntOperatorBitwiseNotTest_2(): void {
         expect(pts[i].operatorBitwiseNot().operatorBitwiseNot().operatorBitwiseNot().operatorBitwiseNot().toString()).assertEqual(pts[i].toString());
       }
     });
-    /* ========== 扩展维度7: NOT→add/sub组合（合并为2个代表测试）========== */
+    
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_BITWISE_NOT_EXT_121
@@ -304,7 +303,7 @@ export default function BigIntOperatorBitwiseNotTest_2(): void {
         expect(pts[i].operatorBitwiseNot().operatorAdd(BigInt(1)).toString()).assertEqual(pts[i].negate().toString());
       }
     });
-    /* ========== 扩展维度8: 零/全1/交替位NOT（保留2个补充测试 + 1个batch）========== */
+    
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_BITWISE_NOT_EXT_141
@@ -322,7 +321,7 @@ export default function BigIntOperatorBitwiseNotTest_2(): void {
       expect(BigInt('4294967295').operatorBitwiseNot().toString()).assertEqual('-4294967296');
       expect(BigInt('18446744073709551615').operatorBitwiseNot().toString()).assertEqual('-18446744073709551616');
     });
-    /* ========== 扩展维度9: 正负对称性NOT（合并为1个batch测试）========== */
+    
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_BITWISE_NOT_EXT_161
@@ -339,7 +338,7 @@ export default function BigIntOperatorBitwiseNotTest_2(): void {
         expect(pts[i][1].operatorBitwiseNot().operatorBitwiseNot().toString()).assertEqual(pts[i][1].toString());
       }
     });
-    /* ========== 扩展维度10: 超大负数NOT（合并为1个batch测试）========== */
+    
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_BITWISE_NOT_EXT_181
@@ -359,12 +358,12 @@ export default function BigIntOperatorBitwiseNotTest_2(): void {
       const neg500 = BigInt('-' + '9'.repeat(500));
       expect(neg500.operatorBitwiseNot().operatorBitwiseNot().equals(neg500)).assertTrue();
     });
-  /* ========== 扩展维度11: 运算结果取反（合并 EXT201~EXT210 为2个batch）========== */
+  
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_BITWISE_NOT_EXT_201
      * @tc.name testBigIntOpBitwiseNotOpArithBatch
-     * @tc.desc arithmetic result NOT: add/sub/mul/div/mod (合并 EXT201~EXT205)
+     * @tc.desc arithmetic result NOT: add/sub/mul/div/mod
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -380,7 +379,7 @@ export default function BigIntOperatorBitwiseNotTest_2(): void {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_BITWISE_NOT_EXT_206
      * @tc.name testBigIntOpBitwiseNotOpBitwiseBatch
-     * @tc.desc bitwise result NOT: shiftL/shiftR/and/or/xor (合并 EXT206~EXT210)
+     * @tc.desc bitwise result NOT: shiftL/shiftR/and/or/xor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -393,7 +392,7 @@ export default function BigIntOperatorBitwiseNotTest_2(): void {
       expect(BigInt(255).operatorBitwiseXor(BigInt(15)).operatorBitwiseNot().toString()).assertEqual('-241');
     });
 
-    /* ========== 扩展维度12: 位模式取反（测试点文档§四未覆盖位模式，7用例）========== */
+    
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_BITWISE_NOT_EXT_211
@@ -479,7 +478,7 @@ export default function BigIntOperatorBitwiseNotTest_2(): void {
       expect(BigInt(0b11001100).operatorBitwiseNot().toString()).assertEqual('-205');
     });
 
-    /* ========== 扩展维度13: 函数返回值/条件表达式取反（测试点文档§八 TC119-TC120，2用例）========== */
+    
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_BITWISE_NOT_EXT_218
@@ -506,12 +505,12 @@ export default function BigIntOperatorBitwiseNotTest_2(): void {
       expect((false ? BigInt(10) : BigInt(20)).operatorBitwiseNot().toString()).assertEqual('-21');
     });
 
-    /* ========== 扩展维度14: 幂次取反（合并 EXT220~EXT223）========== */
+    
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_BITWISE_NOT_EXT_220
      * @tc.name testBigIntOpBitwiseNotPow2Batch
-     * @tc.desc 2^100 and 2^200 positive/negative NOT (合并 EXT220~EXT223)
+     * @tc.desc 2^100 and 2^200 positive/negative NOT
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -529,7 +528,7 @@ export default function BigIntOperatorBitwiseNotTest_2(): void {
       }
     });
 
-    /* ========== 扩展维度15: 不变性深度测试（mindmap§不变性，4用例）========== */
+    
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_BITWISE_NOT_EXT_224
@@ -591,7 +590,7 @@ export default function BigIntOperatorBitwiseNotTest_2(): void {
       expect(original.toString()).assertEqual('7');
     });
 
-    /* ========== 扩展维度16: 边界值补充（测试点文档§二补充缺失，3用例）========== */
+    
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_BITWISE_NOT_EXT_228
@@ -629,7 +628,7 @@ export default function BigIntOperatorBitwiseNotTest_2(): void {
       expect(BigInt('4294967296').operatorBitwiseNot().toString()).assertEqual('-4294967297');
     });
 
-    /* ========== 扩展维度17: 基础功能补充（测试点文档§一补充缺失，3用例）========== */
+    
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_BITWISE_NOT_EXT_231
@@ -667,12 +666,12 @@ export default function BigIntOperatorBitwiseNotTest_2(): void {
       expect(BigInt(1000).operatorBitwiseNot().toString()).assertEqual('-1001');
     });
 
-    /* ========== 扩展维度18: 大数10^n 取反补充（合并 EXT234~EXT239）========== */
+    
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_BITWISE_NOT_EXT_234
      * @tc.name testBigIntOpBitwiseNotPow10Batch
-     * @tc.desc 10^12/10^15/10^18 positive and negative NOT (合并 EXT234~EXT239)
+     * @tc.desc 10^12/10^15/10^18 positive and negative NOT
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -691,7 +690,7 @@ export default function BigIntOperatorBitwiseNotTest_2(): void {
       }
     });
 
-    /* ========== 扩展维度19: 负数取反补充（测试点文档§五补充缺失，4用例）========== */
+    
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_BITWISE_NOT_EXT_240
@@ -741,7 +740,7 @@ export default function BigIntOperatorBitwiseNotTest_2(): void {
       expect(BigInt('-2147483647').operatorBitwiseNot().toString()).assertEqual('2147483646');
     });
 
-    /* ========== 扩展维度20: 大负数取反补充（测试点文档§五补充，3用例）========== */
+    
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_BITWISE_NOT_EXT_244
@@ -779,7 +778,7 @@ export default function BigIntOperatorBitwiseNotTest_2(): void {
       expect(BigInt('-4294967296').operatorBitwiseNot().toString()).assertEqual('4294967295');
     });
 
-    /* ========== 扩展维度21: 性能与压力测试（测试点文档§九 TC121-TC125，5用例）========== */
+    
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_BITWISE_NOT_EXT_247

@@ -51,7 +51,7 @@ export default function BigIntEquals2Test_2(): void {
     /**
      * @tc.number SUB_BIGINT_STD_EQUALS_ANY_2700
      * @tc.name testBigIntEqualsAnyPrimitiveTypeFalseBatch
-     * @tc.desc equals(Any) returns false for byte/short/int/long (合并 #2700 #2800 #2900 #3000)
+     * @tc.desc equals(Any) returns false for byte/short/int/long
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -111,7 +111,7 @@ export default function BigIntEquals2Test_2(): void {
     /**
      * @tc.number SUB_BIGINT_STD_EQUALS_ANY_3200
      * @tc.name testBigIntEqualsAnyNonBigIntTypeFalseBatch
-     * @tc.desc equals(Any) returns false for array/object/container/RegExp/function (合并 #3200 #3300 #4200 #4300 #5200)
+     * @tc.desc equals(Any) returns false for array/object/container/RegExp/function
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

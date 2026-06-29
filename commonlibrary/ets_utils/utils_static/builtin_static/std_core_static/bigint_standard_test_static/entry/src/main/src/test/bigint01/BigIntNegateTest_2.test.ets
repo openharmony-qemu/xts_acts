@@ -29,7 +29,7 @@ export default function BigIntNegateTest_2(): void {
     /**
      * @tc.number SUB_BIGINT_STD_NEGATE_EXT_0012
      * @tc.name testBigIntNegateTypeBoundaryBatch0012
-     * @tc.desc Verify BigInt.negate on byte/short/int type boundaries (合并 #012 #013 #014)
+     * @tc.desc Verify BigInt.negate on byte/short/int type boundaries
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -77,7 +77,7 @@ export default function BigIntNegateTest_2(): void {
     /**
      * @tc.number SUB_BIGINT_STD_NEGATE_EXT_0017
      * @tc.name testBigIntNegateCrossTypeBoundaryBatch0017
-     * @tc.desc Verify BigInt.negate on values crossing byte/short/int boundaries (合并 #017 #018 #019)
+     * @tc.desc Verify BigInt.negate on values crossing byte/short/int boundaries
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -300,7 +300,7 @@ export default function BigIntNegateTest_2(): void {
     /**
      * @tc.number SUB_BIGINT_STD_NEGATE_EXT_0052
      * @tc.name testBigIntNegateFromULongBatch0052
-     * @tc.desc Verify BigInt.negate on fromULong values: basic, boundaries, int range (合并 #052 #053 #054)
+     * @tc.desc Verify BigInt.negate on fromULong values: basic, boundaries, int range
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

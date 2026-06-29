@@ -228,7 +228,7 @@ export default function BigIntOperatorBitwiseAndTest_2(): void {
     /**
      * @tc.number SUB_BIGINT_STD_BITWISE_AND_2000
      * @tc.name testBigIntOperatorBitwiseAndHexPatternBatch2000
-     * @tc.desc operatorBitwiseAnd with hex and 16-bit bit patterns (合并 #2000 #3800)
+     * @tc.desc operatorBitwiseAnd with hex and 16-bit bit patterns
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

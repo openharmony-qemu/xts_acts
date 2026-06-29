@@ -169,7 +169,7 @@ export default function BigIntFromULongTest_2(): void {
       expect(BigInt.fromULong(1000000000).toString()).assertEqual('1000000000');
       expect(BigInt.fromULong(10000000000).toString()).assertEqual('10000000000');
       expect(BigInt.fromULong(100000000000).toString()).assertEqual('100000000000');
-      // 合并自2200: 10^12 ~ 10^17
+
       expect(BigInt.fromULong(1000000000000).toString()).assertEqual('1000000000000');
       expect(BigInt.fromULong(10000000000000).toString()).assertEqual('10000000000000');
       expect(BigInt.fromULong(100000000000000).toString()).assertEqual('100000000000000');

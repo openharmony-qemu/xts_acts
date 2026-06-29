@@ -144,13 +144,10 @@ export default function BigIntOperatorAddTest_2(): void {
       const big100_2 = '9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999998';
       const negBig100 = '-' + big100;
 
-      // big100 = 10^100-1, big100+1 = 10^100 = 1 followed by 100 zeros (101 digits)
       expect((BigInt(big100) + BigInt('1')).toString()).assertEqual('10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000');
       expect((BigInt(big100) + BigInt(negBig100)).toString()).assertEqual('0');
-      // big100 = 10^100-1, big100_2 = 10^100-2, sum = 2*10^100-3 = 1999...997
       const sumBig = BigInt(big100) + BigInt(big100_2);
       expect(sumBig.toString()).assertEqual('19999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999997');
-      // negBig100 = -(10^100-1), negBig100+(-1) = -10^100 = -1 followed by 100 zeros
       expect((BigInt(negBig100) + BigInt('-1')).toString()).assertEqual('-10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000');
     });
 
@@ -278,7 +275,7 @@ export default function BigIntOperatorAddTest_2(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorAddDistribBatch', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      // 正确分配律: (a + b) * c == a*c + b*c
+
       expect(((BigInt(3) + BigInt(4)) * BigInt(5)).toString()).assertEqual((BigInt(3) * BigInt(5) + BigInt(4) * BigInt(5)).toString());
       expect((BigInt(5) * (BigInt(3) + BigInt(4))).toString()).assertEqual((BigInt(5) * BigInt(3) + BigInt(5) * BigInt(4)).toString());
 
@@ -333,7 +330,7 @@ export default function BigIntOperatorAddTest_2(): void {
       expect((BigInt('999999999999999999999999999999') + BigInt(0)).toString()).assertEqual('999999999999999999999999999999');
       expect((BigInt(42) + BigInt(-42)).toString()).assertEqual('0');
       expect((BigInt(-42) + BigInt(42)).toString()).assertEqual('0');
-      // 合并自1912: 零加类型边界值
+
       expect(BigInt(0).operatorAdd(BigInt(127)).toString()).assertEqual('127');
       expect(BigInt(0).operatorAdd(BigInt(-128)).toString()).assertEqual('-128');
       expect(BigInt(0).operatorAdd(BigInt(32767)).toString()).assertEqual('32767');
@@ -342,7 +339,7 @@ export default function BigIntOperatorAddTest_2(): void {
       expect(BigInt(0).operatorAdd(BigInt(-2147483648)).toString()).assertEqual('-2147483648');
       expect(BigInt(0).operatorAdd(BigInt('9223372036854775807')).toString()).assertEqual('9223372036854775807');
       expect(BigInt(0).operatorAdd(BigInt('-9223372036854775808')).toString()).assertEqual('-9223372036854775808');
-      // 合并自1913: 零加布尔值
+
       expect(BigInt(0).operatorAdd(BigInt(true)).toString()).assertEqual('1');
       expect(BigInt(0).operatorAdd(BigInt(false)).toString()).assertEqual('0');
       expect(BigInt(false).operatorAdd(BigInt(0)).toString()).assertEqual('0');
@@ -415,7 +412,6 @@ export default function BigIntOperatorAddTest_2(): void {
       expect(largeSum.toString()).assertEqual('100000000000000000000');
       const a = BigInt(10), b = BigInt(20), c = BigInt(30);
       expect(((a + b) + c).toString()).assertEqual(((c + b) + a).toString());
-      // 合并自1862: 1~30累加
       let sum30 = BigInt(0);
       for (let i = 1; i <= 30; i++) { sum30 = sum30 + BigInt(i); }
       expect(sum30.toString()).assertEqual('465');
@@ -577,7 +573,7 @@ export default function BigIntOperatorAddTest_2(): void {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1902
      * @tc.name testBigIntOperatorAddPowerBatch
-     * @tc.desc operatorAdd with power-of-2 and power-of-10 addition (合并 #1902 #1904)
+     * @tc.desc operatorAdd with power-of-2 and power-of-10 addition
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -590,9 +586,6 @@ export default function BigIntOperatorAddTest_2(): void {
       expect((BigInt(10) ** BigInt(50) + BigInt(10) ** BigInt(50)).toString()).assertEqual((BigInt(2) * BigInt(10) ** BigInt(50)).toString());
       expect((BigInt(10) ** BigInt(100) + BigInt(10) ** BigInt(100)).toString()).assertEqual((BigInt(2) * BigInt(10) ** BigInt(100)).toString());
     });
-
-    /* #1904 testBigIntOperatorAddPowTenLarge1904 已合并到 #1902 PowerBatch */
-
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1905
      * @tc.name testBigIntOperatorAddLargePowNeg1905
