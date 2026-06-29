@@ -34,6 +34,9 @@ import BigIntConstructorBoolean2Test from './BigIntConstructorBoolean2Test.test'
 import BigIntConstructorDouble2Test from './BigIntConstructorDouble2Test.test';
 import BigIntConstructorIntegral2Test from './BigIntConstructorIntegral2Test.test';
 import BigIntConstructorNoArg2Test from './BigIntConstructorNoArg2Test.test';
+import BigIntConstructorString2Test from './BigIntConstructorString2Test.test';
+import BigIntPerformance2Test from './BigIntPerformance2Test.test';
+import BigIntPerformanceBatchCompare2Test from './BigIntPerformanceBatchCompare2Test.test';
 
 
 
@@ -59,6 +62,9 @@ export default function runBigIntHypiumTests(): void {
   BigIntConstructorDouble2Test();
   BigIntConstructorIntegral2Test();
   BigIntConstructorNoArg2Test();
+  BigIntConstructorString2Test();
+  BigIntPerformance2Test();
+  BigIntPerformanceBatchCompare2Test();
 
 
 }
