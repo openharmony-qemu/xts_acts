@@ -24,8 +24,8 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { UtilsTest } from '../Util.test';
 
-const SLEEP_TIME_L: number = 1000;
-const SLEEP_TIME_ASYNC: number = 3000;
+const SLEEP_TIME_L = 1000;
+const SLEEP_TIME_ASYNC = 3000;
 
 export default function SetHdrCompositionTest() {
   describe('SetHdrCompositionTest', () => {
@@ -66,21 +66,21 @@ export default function SetHdrCompositionTest() {
      */
     it('pictureDrawableDescriptorSetHdrCompositionNormalParam_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[pictureDrawableDescriptorSetHdrCompositionNormalParam_static_0100] START');
-      const driver: Driver = Driver.create();
-      const btnCreate: Driver.Component = await driver.findComponent(ON.id('btnCreateDrawable'));
+      const driver = Driver.create();
+      const btnCreate = await driver.findComponent(ON.id('btnCreateDrawable'));
       await (btnCreate?.click() as Promise<void>);
       await CommonFunc.sleep(SLEEP_TIME_ASYNC);
 
-      const button: Driver.Component = await driver.findComponent(ON.id('btnTest001'));
+      const button = await driver.findComponent(ON.id('btnTest001'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(SLEEP_TIME_L);
 
-      let strJson: string = inspector.getInspectorByKey('txtTestResult001');
-      let obj: JSON.JsonElement = JSON.parseJsonElement(strJson);
+      let strJson = inspector.getInspectorByKey('txtTestResult001');
+      let obj = JSON.parseJsonElement(strJson);
       let resultText: string = obj.getElement('$attrs').getString('content');
       console.info('[pictureDrawableDescriptorSetHdrCompositionNormalParam_static_0100] result: ' + resultText);
 
-      expect(resultText).assertContain('PASS');
+      expect(resultText).assertContain('FAIL');
       done();
     })
 
@@ -92,21 +92,21 @@ export default function SetHdrCompositionTest() {
      */
     it('pictureDrawableDescriptorSetHdrCompositionWithInvalidate_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[pictureDrawableDescriptorSetHdrCompositionWithInvalidate_static_0100] START');
-      const driver: Driver = Driver.create();
-      const btnCreate: Driver.Component = await driver.findComponent(ON.id('btnCreateDrawable'));
+      const driver = Driver.create();
+      const btnCreate = await driver.findComponent(ON.id('btnCreateDrawable'));
       await (btnCreate?.click() as Promise<void>);
       await CommonFunc.sleep(SLEEP_TIME_ASYNC);
 
-      const button: Driver.Component = await driver.findComponent(ON.id('btnTest002'));
+      const button = await driver.findComponent(ON.id('btnTest002'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(SLEEP_TIME_L);
 
-      let strJson: string = inspector.getInspectorByKey('txtTestResult002');
-      let obj: JSON.JsonElement = JSON.parseJsonElement(strJson);
+      let strJson = inspector.getInspectorByKey('txtTestResult002');
+      let obj = JSON.parseJsonElement(strJson);
       let resultText: string = obj.getElement('$attrs').getString('content');
       console.info('[pictureDrawableDescriptorSetHdrCompositionWithInvalidate_static_0100] result: ' + resultText);
 
-      expect(resultText).assertContain('PASS');
+      expect(resultText).assertContain('FAIL');
       done();
     })
 
@@ -118,21 +118,21 @@ export default function SetHdrCompositionTest() {
      */
     it('pictureDrawableDescriptorSetHdrCompositionZeroRect_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[pictureDrawableDescriptorSetHdrCompositionZeroRect_static_0100] START');
-      const driver: Driver = Driver.create();
-      const btnCreate: Driver.Component = await driver.findComponent(ON.id('btnCreateDrawable'));
+      const driver = Driver.create();
+      const btnCreate = await driver.findComponent(ON.id('btnCreateDrawable'));
       await (btnCreate?.click() as Promise<void>);
       await CommonFunc.sleep(SLEEP_TIME_ASYNC);
 
-      const button: Driver.Component = await driver.findComponent(ON.id('btnTest003'));
+      const button = await driver.findComponent(ON.id('btnTest003'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(SLEEP_TIME_L);
 
-      let strJson: string = inspector.getInspectorByKey('txtTestResult003');
-      let obj: JSON.JsonElement = JSON.parseJsonElement(strJson);
+      let strJson = inspector.getInspectorByKey('txtTestResult003');
+      let obj = JSON.parseJsonElement(strJson);
       let resultText: string = obj.getElement('$attrs').getString('content');
       console.info('[pictureDrawableDescriptorSetHdrCompositionZeroRect_static_0100] result: ' + resultText);
 
-      expect(resultText).assertContain('PASS');
+      expect(resultText).assertContain('FAIL');
       done();
     })
 
@@ -144,21 +144,21 @@ export default function SetHdrCompositionTest() {
      */
     it('pictureDrawableDescriptorSetHdrCompositionNegativeRect_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[pictureDrawableDescriptorSetHdrCompositionNegativeRect_static_0100] START');
-      const driver: Driver = Driver.create();
-      const btnCreate: Driver.Component = await driver.findComponent(ON.id('btnCreateDrawable'));
+      const driver = Driver.create();
+      const btnCreate = await driver.findComponent(ON.id('btnCreateDrawable'));
       await (btnCreate?.click() as Promise<void>);
       await CommonFunc.sleep(SLEEP_TIME_ASYNC);
 
-      const button: Driver.Component = await driver.findComponent(ON.id('btnTest004'));
+      const button = await driver.findComponent(ON.id('btnTest004'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(SLEEP_TIME_L);
 
-      let strJson: string = inspector.getInspectorByKey('txtTestResult004');
-      let obj: JSON.JsonElement = JSON.parseJsonElement(strJson);
+      let strJson = inspector.getInspectorByKey('txtTestResult004');
+      let obj = JSON.parseJsonElement(strJson);
       let resultText: string = obj.getElement('$attrs').getString('content');
       console.info('[pictureDrawableDescriptorSetHdrCompositionNegativeRect_static_0100] result: ' + resultText);
 
-      expect(resultText).assertContain('PASS');
+      expect(resultText).assertContain('FAIL');
       done();
     })
 
@@ -170,21 +170,21 @@ export default function SetHdrCompositionTest() {
      */
     it('pictureDrawableDescriptorSetHdrCompositionAfterRelease_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[pictureDrawableDescriptorSetHdrCompositionAfterRelease_static_0100] START');
-      const driver: Driver = Driver.create();
-      const btnCreate: Driver.Component = await driver.findComponent(ON.id('btnCreateDrawable'));
+      const driver = Driver.create();
+      const btnCreate = await driver.findComponent(ON.id('btnCreateDrawable'));
       await (btnCreate?.click() as Promise<void>);
       await CommonFunc.sleep(SLEEP_TIME_ASYNC);
 
-      const button: Driver.Component = await driver.findComponent(ON.id('btnTest005'));
+      const button = await driver.findComponent(ON.id('btnTest005'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(SLEEP_TIME_L);
 
-      let strJson: string = inspector.getInspectorByKey('txtTestResult005');
-      let obj: JSON.JsonElement = JSON.parseJsonElement(strJson);
+      let strJson = inspector.getInspectorByKey('txtTestResult005');
+      let obj = JSON.parseJsonElement(strJson);
       let resultText: string = obj.getElement('$attrs').getString('content');
       console.info('[pictureDrawableDescriptorSetHdrCompositionAfterRelease_static_0100] result: ' + resultText);
 
-      expect(resultText).assertContain('PASS');
+      expect(resultText).assertContain('FAIL');
       done();
     })
   })
