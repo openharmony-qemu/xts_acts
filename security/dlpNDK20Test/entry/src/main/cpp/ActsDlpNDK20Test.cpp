@@ -21,6 +21,7 @@
 
 constexpr int MAX_FILE_NAME_LEN = 256;
 constexpr int DLP_SUFFIX_LEN = 4;
+const char DLP_SUFFIX[] = ".dlp";
 
 static napi_value OsGetDlpPermissionInfo0100(napi_env env, napi_callback_info info)
 {
@@ -122,8 +123,12 @@ static napi_value OsGetOriginalFileName0200(napi_env env, napi_callback_info inf
     for (int i = 0; i < fileNameLen; i++) {
         fileName[i] = 'a';
     }
-    fileName[fileNameLen] = '\0';
-    snprintf(fileName + fileNameLen, DLP_SUFFIX_LEN + 1, ".dlp");
+    errno_t memcpyRet = memcpy_s(fileName + fileNameLen, DLP_SUFFIX_LEN + 1, DLP_SUFFIX, DLP_SUFFIX_LEN + 1);
+    if (memcpyRet != 0) {
+        napi_value result = nullptr;
+        napi_create_int32(env, DLP_ErrCode::ERR_OH_INVALID_PARAMETER, &result);
+        return result;
+    }
     char *originalFileName = nullptr;
     DLP_ErrCode ret = OH_DLP_GetOriginalFileName(fileName, &originalFileName);
     if (ret == DLP_ErrCode::ERR_OH_SUCCESS) {
@@ -144,8 +149,12 @@ static napi_value OsGetOriginalFileName0300(napi_env env, napi_callback_info inf
     for (int i = 0; i < fileNameLen; i++) {
         fileName[i] = 'a';
     }
-    fileName[fileNameLen] = '\0';
-    snprintf(fileName + fileNameLen, DLP_SUFFIX_LEN + 1, ".dlp");
+    errno_t memcpyRet = memcpy_s(fileName + fileNameLen, DLP_SUFFIX_LEN + 1, DLP_SUFFIX, DLP_SUFFIX_LEN + 1);
+    if (memcpyRet != 0) {
+        napi_value result = nullptr;
+        napi_create_int32(env, DLP_ErrCode::ERR_OH_INVALID_PARAMETER, &result);
+        return result;
+    }
     char *originalFileName = nullptr;
     DLP_ErrCode ret = OH_DLP_GetOriginalFileName(fileName, &originalFileName);
     napi_value result = nullptr;
