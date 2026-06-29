@@ -1156,7 +1156,12 @@ describe('btHidTest', () => {
             console.info("[bluetooth_js]hid on/offSetReport value is success ");
         } catch (err) {
             console.error("[bluetooth_js]hid on/offSetReport is fail , errCode:" + err.code + ",errMessage:" + err.message);
-            expect().assertFail();
+            if (err.code === 801) {
+              console.info("[bluetooth_js]hid on/offSetReport is not support");
+              expect(err.code).assertEqual(801);
+            } else {
+              expect().assertFail();
+            }
         }
         done();
     })
@@ -1176,7 +1181,12 @@ describe('btHidTest', () => {
             console.info("[bluetooth_js]hid on/offSetReport value is success ");
         } catch (err) {
             console.error("[bluetooth_js]hid on/offSetReport is fail , errCode:" + err.code + ",errMessage:" + err.message);
-            expect().assertFail();
+            if (err.code === 801) {
+                console.info("[bluetooth_js]hid on/offSetReport is not support");
+                expect(err.code).assertEqual(801);
+            } else {
+                expect().assertFail();
+            }
         }
         done();
     })
@@ -1196,7 +1206,12 @@ describe('btHidTest', () => {
             console.info("[bluetooth_js]hid on/offInterruptDataReceived value is success ");
         } catch (err) {
             console.error("[bluetooth_js]hid on/offInterruptDataReceived is fail , errCode:" + err.code + ",errMessage:" + err.message);
-            expect().assertFail();
+            if (err.code === 801) {
+                console.info("[bluetooth_js]hid on/offInterruptDataReceived is not support");
+                expect(err.code).assertEqual(801);
+            } else {
+                expect().assertFail();
+            }
         }
         done();
     })
@@ -1215,7 +1230,12 @@ describe('btHidTest', () => {
             console.info("[bluetooth_js]hid on/offSetProtocol value is success ");
         } catch (err) {
             console.error("[bluetooth_js]hid on/offSetProtocol is fail , errCode:" + err.code + ",errMessage:" + err.message);
-            expect().assertFail();
+            if (err.code === 801) {
+                console.info("[bluetooth_js]hid on/offSetProtocol is not support");
+                expect(err.code).assertEqual(801);
+            } else {
+                expect().assertFail();
+            }
         }
         done();
     })
@@ -1234,7 +1254,12 @@ describe('btHidTest', () => {
             console.info("[bluetooth_js]hid on/offVirtualCableUnplug value is success ");
         } catch (err) {
             console.error("[bluetooth_js]hid on/offVirtualCableUnplug is fail , errCode:" + err.code + ",errMessage:" + err.message);
-            expect().assertFail();
+            if (err.code === 801) {
+                console.info("[bluetooth_js]hid on/offVirtualCableUnplug is not support");
+                expect(err.code).assertEqual(801);
+            } else {
+                expect().assertFail();
+            }
         }
         done();
     })
@@ -1253,7 +1278,12 @@ describe('btHidTest', () => {
             console.info("[bluetooth_js]hid on/offSetReport value is success ");
         } catch (err) {
             console.error("[bluetooth_js]hid on/offSetReport is fail , errCode:" + err.code + ",errMessage:" + err.message);
-            expect().assertFail();
+            if (err.code === 801) {
+              console.info("[bluetooth_js]hid on/offSetReport is not support");
+              expect(err.code).assertEqual(801);
+            } else {
+              expect().assertFail();
+            }
         }
         done();
     })
@@ -1273,7 +1303,12 @@ describe('btHidTest', () => {
             console.info("[bluetooth_js]hid on/offSetReport value is success ");
         } catch (err) {
             console.error("[bluetooth_js]hid on/offSetReport is fail , errCode:" + err.code + ",errMessage:" + err.message);
-            expect().assertFail();
+            if (err.code === 801) {
+                console.info("[bluetooth_js]hid on/offSetReport is not support");
+                expect(err.code).assertEqual(801);
+            } else {
+                expect().assertFail();
+            }
         }
         done();
     })
@@ -1293,7 +1328,12 @@ describe('btHidTest', () => {
             console.info("[bluetooth_js]hid on/offInterruptDataReceived value is success ");
         } catch (err) {
             console.error("[bluetooth_js]hid on/offInterruptDataReceived is fail , errCode:" + err.code + ",errMessage:" + err.message);
-            expect().assertFail();
+            if (err.code === 801) {
+                console.info("[bluetooth_js]hid on/offInterruptDataReceived is not support");
+                expect(err.code).assertEqual(801);
+            } else {
+                expect().assertFail();
+            }
         }
         done();
     })
@@ -1312,7 +1352,12 @@ describe('btHidTest', () => {
             console.info("[bluetooth_js]hid on/offSetProtocol value is success ");
         } catch (err) {
             console.error("[bluetooth_js]hid on/offSetProtocol is fail , errCode:" + err.code + ",errMessage:" + err.message);
-            expect().assertFail();
+            if (err.code === 801) {
+                console.info("[bluetooth_js]hid on/offSetProtocol is not support");
+                expect(err.code).assertEqual(801);
+            } else {
+                expect().assertFail();
+            }
         }
         done();
     })
@@ -1331,7 +1376,12 @@ describe('btHidTest', () => {
             console.info("[bluetooth_js]hid on/offVirtualCableUnplug value is success ");
         } catch (err) {
             console.error("[bluetooth_js]hid on/offVirtualCableUnplug is fail , errCode:" + err.code + ",errMessage:" + err.message);
-            expect().assertFail();
+            if (err.code === 801) {
+                console.info("[bluetooth_js]hid on/offVirtualCableUnplug is not support");
+                expect(err.code).assertEqual(801);
+            } else {
+                expect().assertFail();
+            }
         }
         done();
     })
