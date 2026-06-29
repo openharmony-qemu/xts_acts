@@ -3132,7 +3132,7 @@ static napi_value Init(napi_env env, napi_value exports)
         { "ndkThreadModeType_0100", nullptr, NdkThreadModeType_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "ndkThreadModeInstance_0100", nullptr, NdkThreadModeInstance_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "ndkThreadLaunchMode_0100", nullptr, NdkThreadLaunchMode_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "ndkThreadLaunchMode_0100", nullptr, NdkThreadLaunchMode_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkThreadLaunchMode_0200", nullptr, NdkThreadLaunchMode_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
