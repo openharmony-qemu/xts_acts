@@ -2524,6 +2524,83 @@ async (done: () => void): Promise<void> => {
     done();
   }
 });
+/**
+     * @tc.name   testNetworkWebSocketServerOffWebSocketServerClose_static_0200
+     * @tc.number SUB_NetworkMgr_WebSocket_OffWebSocketServerClose_0200
+     * @tc.desc   WebSocketServer send a massage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+it('testNetworkWebSocketServerOffWebSocketServerClose_static_0200',
+TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+async (done: () => void): Promise<void> => {
+  let caseName: string = 'testNetworkWebSocketServerOffWebSocketServerClose_static_0200';
+  hilog.info(domain, tag, '%{public}s', caseName + 'test start!');
+  try {
+    let server: webSocket.WebSocketServer = webSocket.createWebSocketServer();
+    let serverConfig: webSocket.WebSocketServerConfig = {
+      serverIP: "0.0.0.0",
+      serverPort: 8077,
+      maxConcurrentClientsNumber: 10,
+      maxConnectionsForOneClient: 4,
+    }
+    server.start(serverConfig).then((value: boolean | undefined) => {
+      if (value) {
+        hilog.info(domain, tag, '%{public}s', caseName + 'server start!');
+      } else {
+        hilog.info(domain, tag, '%{public}s', caseName + 'test end!');
+        done();
+      }
+    })
+
+    let closeCallback = (clientConnection: webSocket.WebSocketConnection, closeReason: webSocket.CloseResult) => {
+      hilog.info(domain, tag, '%{public}s', caseName + 'clientConnection is ' + JSON.stringify(clientConnection));
+      ExpectTrue(clientConnection !== null);
+      done();
+      hilog.info(domain, tag, '%{public}s', caseName + 'test end!');
+    }
+
+    server.offWebSocketServerClose();
+    server.onWebSocketServerClose(closeCallback);
+
+
+    let client: webSocket.WebSocket = webSocket.createWebSocket();
+    client.connect('ws://127.0.0.1:8077', (err: BusinessError<void> | null, value: boolean | undefined) => {
+      if (value) {
+        hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
+        done();
+      } else {
+        ExpectFail();
+        done()
+      }
+    });
+
+    let connections = server.listAllConnections()
+    if (connections == null) {
+      ExpectFail();
+      server.stop();
+      hilog.info(domain, tag, '%{public}s', caseName + 'test end!');
+      done();
+    } else {
+      let connection: webSocket.WebSocketConnection = {
+        clientIP: '0.0.0.0',
+        clientPort: 8077
+      }
+      server.send("hi", connection).then((value: boolean | undefined) => {
+        if (value) {
+          hilog.info(domain, tag, '%{public}s', caseName + 'send success!');
+        } else {
+          hilog.info(domain, tag, '%{public}s', caseName + 'send fail!');
+        }
+      })
+    }
+  }
+  catch (err) {
+    hilog.info(domain, tag, '%{public}s', caseName + 'err code is ' + err.code);
+    done();
+  }
+});
 
 /**
 * @tc.name   testNetworkWebSocketServerOffWebSocketServerClose_static_0100
@@ -2602,6 +2679,5 @@ async (done: () => void): Promise<void> => {
     done();
   }
     });
-
   })
 }
