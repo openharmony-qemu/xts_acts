@@ -129,12 +129,12 @@ export default function BigIntAsUintN2Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntAsUintN2Test0800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const cycle: BigInt = BigInt('18446744073709551616');
-      const base: BigInt = Utils.biInt(42);
-      const result: BigInt = BigInt.asUintN(64, base.operatorAdd(cycle));
+      const cycle = BigInt('18446744073709551616');
+      const base = Utils.biInt(42);
+      const result = BigInt.asUintN(64, base.operatorAdd(cycle));
       expect(result.toString()).assertEqual('42');
-      const baseNeg: BigInt = Utils.biInt(-42);
-      const resultNeg: BigInt = BigInt.asUintN(64, baseNeg.operatorSubtract(cycle));
+      const baseNeg = Utils.biInt(-42);
+      const resultNeg = BigInt.asUintN(64, baseNeg.operatorSubtract(cycle));
       expect(resultNeg.toString()).assertEqual('18446744073709551574');
     });
 
@@ -179,11 +179,11 @@ export default function BigIntAsUintN2Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntAsUintN2Test1100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const once16: BigInt = BigInt.asUintN(16, Utils.biInt(12345));
-      const twice16: BigInt = BigInt.asUintN(16, once16);
+      const once16 = BigInt.asUintN(16, Utils.biInt(12345));
+      const twice16 = BigInt.asUintN(16, once16);
       expect(once16.equals(twice16)).assertTrue();
-      const once32: BigInt = BigInt.asUintN(32, Utils.biStr('4294967295'));
-      const twice32: BigInt = BigInt.asUintN(32, once32);
+      const once32 = BigInt.asUintN(32, Utils.biStr('4294967295'));
+      const twice32 = BigInt.asUintN(32, once32);
       expect(once32.equals(twice32)).assertTrue();
     });
 

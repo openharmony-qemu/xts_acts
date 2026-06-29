@@ -614,7 +614,7 @@ export default function BigIntPerformanceLargeInteger2Test(): void {
       const pow5_1024 = BigInt(5).pow(BigInt(1024));
       const xored = pow3_2048.operatorBitwiseXor(pow5_1024);
       const doubleXor = xored.operatorBitwiseXor(pow5_1024);
-      expect(doubleXor).assertEqual(pow3_2048);
+      expect(doubleXor.equals(pow3_2048)).assertTrue()
     });
 
     /**

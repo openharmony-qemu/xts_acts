@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntOperatorSubtract2Test(): void {
-  describe('BigInt.operatorSubtract (mindmap operatorSubtract 2)', () => {
+  describe('testBigIntOperatorSubtract2Test', () => {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_SUBTRACT_0100
      * @tc.name testBigIntOperatorSubtract2Test0100
@@ -239,7 +239,7 @@ export default function BigIntOperatorSubtract2Test(): void {
      */
     it('testBigIntOperatorSubtract2Test1400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const ulongMax = BigInt.fromULong(Long.MAX_VALUE);
-      expect(ulongMax.operatorSubtract(BigInt(1)).toString()).assertEqual((BigInt.fromULong(Long.MAX_VALUE).operatorSubtract(BigInt(1))).toString());
+      expect(ulongMax.operatorSubtract(BigInt(1)).toString()).assertEqual('9223372036854775806');
     });
 
     /**

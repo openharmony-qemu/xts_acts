@@ -98,8 +98,8 @@ export default function BigIntConstructorDouble2Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntConstructorDouble2Test0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const src: BigInt = BigInt(9007199254740992.0);
-      const copy: BigInt = BigInt(src);
+      const src = BigInt(9007199254740992.0);
+      const copy = BigInt(src);
       expect(copy.equals(src)).assertTrue();
       expect(copy.toString()).assertEqual('9007199254740992');
     });
@@ -113,7 +113,7 @@ export default function BigIntConstructorDouble2Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntConstructorDouble2Test0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const bi: BigInt = BigInt(123456789.0);
+      const bi = BigInt(123456789.0);
       expect(bi.valueOf().equals(BigInt(bi))).assertTrue();
       expect(bi.getLong()).assertEqual(123456789);
     });
@@ -355,7 +355,7 @@ export default function BigIntConstructorDouble2Test(): void {
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_DOUBLE_2600
      * @tc.name testBigIntConstructorDouble2Test2600
-     * @tc.desc TP7: BigInt constructed from double returns BigInt type
+     * @tc.desc TP7 constructed from double returns BigInt type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -405,28 +405,28 @@ export default function BigIntConstructorDouble2Test(): void {
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_DOUBLE_3000
      * @tc.name testBigIntConstructorDouble2Test3000
-     * @tc.desc TP10: Small safe int round-trip: BigInt → Number → BigInt preserves value
+     * @tc.desc TP10: Small safe int round-trip → Number → BigInt preserves value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntConstructorDouble2Test3000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const original: BigInt = BigInt(42);
-      const viaDouble: BigInt = BigInt(Number(original.valueOf()));
+      const original = BigInt(42);
+      const viaDouble = BigInt(Number(original.valueOf()));
       expect(viaDouble.equals(original)).assertTrue();
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_DOUBLE_3100
      * @tc.name testBigIntConstructorDouble2Test3100
-     * @tc.desc TP10: MAX_SAFE_INTEGER round-trip: BigInt → Number → BigInt preserves value
+     * @tc.desc TP10: MAX_SAFE_INTEGER round-trip → Number → BigInt preserves value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntConstructorDouble2Test3100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const original: BigInt = BigInt(Number.MAX_SAFE_INTEGER);
-      const viaDouble: BigInt = BigInt(Number(original.valueOf()));
+      const original = BigInt(Number.MAX_SAFE_INTEGER);
+      const viaDouble = BigInt(Number(original.valueOf()));
       expect(viaDouble.equals(original)).assertTrue();
     });
 

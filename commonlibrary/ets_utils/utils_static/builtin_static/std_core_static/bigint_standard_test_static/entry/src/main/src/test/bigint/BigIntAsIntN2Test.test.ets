@@ -124,11 +124,11 @@ export default function BigIntAsIntN2Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntAsIntN2Test0800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const once8: BigInt = BigInt.asIntN(8, Utils.biInt(200));
-      const twice8: BigInt = BigInt.asIntN(8, once8);
+      const once8 = BigInt.asIntN(8, Utils.biInt(200));
+      const twice8 = BigInt.asIntN(8, once8);
       expect(once8.equals(twice8)).assertTrue();
-      const once32: BigInt = BigInt.asIntN(32, Utils.biStr('4294967295'));
-      const twice32: BigInt = BigInt.asIntN(32, once32);
+      const once32 = BigInt.asIntN(32, Utils.biStr('4294967295'));
+      const twice32 = BigInt.asIntN(32, once32);
       expect(once32.equals(twice32)).assertTrue();
     });
 
@@ -141,8 +141,8 @@ export default function BigIntAsIntN2Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntAsIntN2Test0900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const pos: BigInt = BigInt.asIntN(8, Utils.biInt(100));
-      const neg: BigInt = BigInt.asIntN(8, Utils.biInt(-100));
+      const pos = BigInt.asIntN(8, Utils.biInt(100));
+      const neg = BigInt.asIntN(8, Utils.biInt(-100));
       expect(pos.negate().equals(neg)).assertTrue();
     });
 
@@ -186,16 +186,16 @@ export default function BigIntAsIntN2Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntAsIntN2Test1200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const uintVal: BigInt = BigInt.asUintN(8, Utils.biInt(200));
-      const intVal: BigInt = BigInt.asIntN(8, Utils.biInt(200));
-      const diff: BigInt = uintVal.operatorSubtract(BigInt(256));
+      const uintVal = BigInt.asUintN(8, Utils.biInt(200));
+      const intVal = BigInt.asIntN(8, Utils.biInt(200));
+      const diff = uintVal.operatorSubtract(BigInt(256));
       expect(intVal.equals(diff)).assertTrue();
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_ASINTN_1300
      * @tc.name testBigIntAsIntN2Test1300
-     * @tc.desc Verify non-integer Number/NaN/Infinity throws RangeError for BigInt.asIntN
+     * @tc.desc Verify non-integer Number/NaN/Infinity throws ClassCastError for BigInt.asIntN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

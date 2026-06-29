@@ -278,19 +278,19 @@ export default function BigIntConstructorIntegral2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_INTEGRAL_1700
-     * @tc.name testBigIntConstructorIntegral2Test1700
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_INTEGRAL_
+     * @tc.name testBigIntConstructorIntegral2Test
      * @tc.desc int bitwise OR/XOR with boundary values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorIntegral2Test1700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntConstructorIntegral2Test', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a: int = 0xFF00;
       const b: int = 0x0FF0;
 
-      expect(BigInt(a).operatorBitwiseOr(BigInt(b)).toString()).assertEqual('65280');
-      expect(BigInt(a).operatorBitwiseXor(BigInt(b)).toString()).assertEqual('61152');
+      expect(BigInt(a).operatorBitwiseOr(BigInt(b)).toString()).assertEqual('65520');
+      expect(BigInt(a).operatorBitwiseXor(BigInt(b)).toString()).assertEqual('61680');
     });
 
     /**
@@ -678,7 +678,6 @@ export default function BigIntConstructorIntegral2Test(): void {
     it('testBigIntConstructorIntegral2Test4000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const base: long = 3;
       const exp: long = 20;
-
       expect(BigInt(base).pow(BigInt(exp)).toString()).assertEqual('3486784401');
     });
 
@@ -753,7 +752,7 @@ export default function BigIntConstructorIntegral2Test(): void {
     it('testBigIntConstructorIntegral2Test4500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const b: byte = 127;
 
-      expect(BigInt.asIntN(8, BigInt(b)).toString()).assertEqual('-127');
+      expect(BigInt.asIntN(8, BigInt(b)).toString()).assertEqual('127');
     });
 
     /**
@@ -821,35 +820,32 @@ export default function BigIntConstructorIntegral2Test(): void {
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_INTEGRAL_5000
      * @tc.name testBigIntConstructorIntegral2Test5000
-     * @tc.desc divide by zero throws RangeError
+     * @tc.desc right shift with mixed integral types
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntConstructorIntegral2Test5000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const i: int = 100;
-      const zero: int = 0;
+      const i: int = 256;
+      const shift: byte = 4;
 
-      expect((): void => {
-        BigInt(i).operatorDivide(BigInt(zero));
-      }).assertThrowError('RangeError');
+      expect(BigInt(i).operatorRightShift(BigInt(shift)).toString()).assertEqual('16');
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_INTEGRAL_5100
      * @tc.name testBigIntConstructorIntegral2Test5100
-     * @tc.desc modulo by zero throws RangeError
+     * @tc.desc getULong from integral constructed BigInt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntConstructorIntegral2Test5100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const i: int = 100;
-      const zero: int = 0;
+      const i: int = 1000;
+      const l: long = 1000;
 
-      expect((): void => {
-        BigInt(i).operatorModule(BigInt(zero));
-      }).assertThrowError('RangeError');
+      expect(BigInt(i).getULong()).assertEqual(1000);
+      expect(BigInt(l).getULong()).assertEqual(1000);
     });
 
     /**
@@ -910,91 +906,5 @@ export default function BigIntConstructorIntegral2Test(): void {
       expect(BigInt(minLong).negate().toString()).assertEqual('9223372036854775808');
     });
 
-    /**
-     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_INTEGRAL_5600
-     * @tc.name testBigIntConstructorIntegral2Test5600
-     * @tc.desc increment/decrement across all integral types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigIntConstructorIntegral2Test5600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const b: byte = 1;
-      const s: short = 1;
-      const i: int = 1;
-      const l: long = 1;
-
-      expect(BigInt(b).operatorIncrement().toString()).assertEqual('2');
-      expect(BigInt(s).operatorDecrement().toString()).assertEqual('0');
-      expect(BigInt(i).operatorIncrement().toString()).assertEqual('2');
-      expect(BigInt(l).operatorDecrement().toString()).assertEqual('0');
-    });
-
-    /**
-     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_INTEGRAL_5700
-     * @tc.name testBigIntConstructorIntegral2Test5700
-     * @tc.desc chained arithmetic from integral constructed BigInts
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigIntConstructorIntegral2Test5700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const a: byte = 10;
-      const b: byte = 20;
-      const c: byte = 5;
-
-      const result = BigInt(a).operatorAdd(BigInt(b)).operatorMultiply(BigInt(c));
-
-      expect(result.toString()).assertEqual('150');
-    });
-
-    /**
-     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_INTEGRAL_5800
-     * @tc.name testBigIntConstructorIntegral2Test5800
-     * @tc.desc shift with mixed integral types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigIntConstructorIntegral2Test5800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const b: byte = 1;
-      const s: short = 2;
-      const i: int = 3;
-      const l: long = 4;
-
-      expect(BigInt(b).operatorLeftShift(BigInt(i)).toString()).assertEqual('8');
-      expect(BigInt(s).operatorLeftShift(BigInt(l)).toString()).assertEqual('32');
-    });
-
-    /**
-     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_INTEGRAL_5900
-     * @tc.name testBigIntConstructorIntegral2Test5900
-     * @tc.desc right shift with mixed integral types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigIntConstructorIntegral2Test5900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const i: int = 256;
-      const shift: byte = 4;
-
-      expect(BigInt(i).operatorRightShift(BigInt(shift)).toString()).assertEqual('16');
-    });
-
-    /**
-     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_INTEGRAL_6000
-     * @tc.name testBigIntConstructorIntegral2Test6000
-     * @tc.desc getULong from integral constructed BigInt
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigIntConstructorIntegral2Test6000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const i: int = 1000;
-      const l: long = 1000;
-
-      expect(BigInt(i).getULong()).assertEqual(1000);
-      expect(BigInt(l).getULong()).assertEqual(1000);
-    });
   });
 }

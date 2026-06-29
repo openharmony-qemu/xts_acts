@@ -333,7 +333,7 @@ export default function BigIntOperatorGreaterThan2Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorGreaterThan2Test2200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let uLong = BigInt(-1).getULong()
+      let uLong = BigInt(-1).getULong();
       expect(BigInt.fromULong(uLong).operatorGreaterThan(BigInt(0))).assertTrue();
     });
 

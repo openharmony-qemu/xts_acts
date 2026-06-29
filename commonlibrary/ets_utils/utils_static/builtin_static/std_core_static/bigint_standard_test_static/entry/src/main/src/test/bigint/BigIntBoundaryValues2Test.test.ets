@@ -27,9 +27,9 @@ export default function BigIntBoundaryValues2Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntBoundaryValues2Test0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const zero: BigInt = BigInt.fromULong(0);
-      const longMaxVal: BigInt = BigInt.fromULong(9223372036854775807);
-      const halfMax: BigInt = BigInt.fromULong(-9223372036854775808);
+      const zero = BigInt.fromULong(0);
+      const longMaxVal = BigInt.fromULong(9223372036854775807);
+      const halfMax = BigInt.fromULong(-9223372036854775808);
 
       expect(zero.equals(BigInt(0))).assertTrue();
       expect(longMaxVal.equals(BigInt('9223372036854775807'))).assertTrue();
@@ -75,9 +75,9 @@ export default function BigIntBoundaryValues2Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntBoundaryValues2Test0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const two: BigInt = BigInt(2);
-      const pow63: BigInt = two.pow(BigInt(63));
-      const pow64: BigInt = two.pow(BigInt(64));
+      const two = BigInt(2);
+      const pow63 = two.pow(BigInt(63));
+      const pow64 = two.pow(BigInt(64));
 
       expect(pow63.operatorSubtract(BigInt(1)).equals(BigInt('9223372036854775807'))).assertTrue();
       expect(pow64.operatorSubtract(BigInt(1)).equals(BigInt('18446744073709551615'))).assertTrue();
@@ -93,9 +93,9 @@ export default function BigIntBoundaryValues2Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntBoundaryValues2Test0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const negOne: BigInt = BigInt(-1);
-      const ulongMaxVal: BigInt = BigInt('18446744073709551615');
-      const longMin: BigInt = BigInt('-9223372036854775808');
+      const negOne = BigInt(-1);
+      const ulongMaxVal = BigInt('18446744073709551615');
+      const longMin = BigInt('-9223372036854775808');
 
       expect(BigInt.asIntN(64, BigInt.asUintN(64, negOne)).equals(negOne)).assertTrue();
       expect(BigInt.asIntN(64, BigInt.asUintN(64, ulongMaxVal)).equals(negOne)).assertTrue();
@@ -112,8 +112,8 @@ export default function BigIntBoundaryValues2Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntBoundaryValues2Test0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const longMax: BigInt = BigInt('9223372036854775807');
-      const ulongMaxVal: BigInt = BigInt('18446744073709551615');
+      const longMax = BigInt('9223372036854775807');
+      const ulongMaxVal = BigInt('18446744073709551615');
 
       const hexLongMax: string = '0x' + longMax.toString(16);
       const hexUlongMax: string = '0x' + ulongMaxVal.toString(16);
@@ -133,10 +133,10 @@ export default function BigIntBoundaryValues2Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntBoundaryValues2Test0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const longMax: BigInt = BigInt('9223372036854775807');
-      const longMin: BigInt = BigInt('-9223372036854775808');
+      const longMax = BigInt('9223372036854775807');
+      const longMin = BigInt('-9223372036854775808');
 
-      let accPos: BigInt = longMax;
+      let accPos = longMax;
       for (let i: int = 0; i < 1000; i++) {
         accPos = accPos.operatorIncrement();
       }
@@ -145,7 +145,7 @@ export default function BigIntBoundaryValues2Test(): void {
       }
       expect(accPos.equals(longMax)).assertTrue();
 
-      let accNeg: BigInt = longMin;
+      let accNeg = longMin;
       for (let i: int = 0; i < 1000; i++) {
         accNeg = accNeg.operatorDecrement();
       }
@@ -164,9 +164,9 @@ export default function BigIntBoundaryValues2Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntBoundaryValues2Test0800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const ulongMaxVal: BigInt = BigInt('18446744073709551615');
-      const two: BigInt = BigInt(2);
-      const twoPow64: BigInt = two.pow(BigInt(64));
+      const ulongMaxVal = BigInt('18446744073709551615');
+      const two = BigInt(2);
+      const twoPow64 = two.pow(BigInt(64));
 
       expect(ulongMaxVal.operatorAdd(BigInt(1)).equals(twoPow64)).assertTrue();
       expect(two.pow(BigInt(127)).operatorSubtract(BigInt(1)).operatorAdd(BigInt(1))
@@ -183,11 +183,11 @@ export default function BigIntBoundaryValues2Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntBoundaryValues2Test0900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const ulongMaxVal: BigInt = BigInt('18446744073709551615');
-      const longMin: BigInt = BigInt('-9223372036854775808');
-      const two: BigInt = BigInt(2);
+      const ulongMaxVal = BigInt('18446744073709551615');
+      const longMin = BigInt('-9223372036854775808');
+      const two = BigInt(2);
 
-      const prod: BigInt = ulongMaxVal.operatorMultiply(ulongMaxVal);
+      const prod = ulongMaxVal.operatorMultiply(ulongMaxVal);
       expect(longMin.operatorMultiply(longMin).equals(two.pow(BigInt(126)))).assertTrue();
       expect(prod.operatorRightShift(BigInt(127)).equals(BigInt(1))).assertTrue();
     });
@@ -221,9 +221,9 @@ export default function BigIntBoundaryValues2Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntBoundaryValues2Test1100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const zero: BigInt = BigInt(0);
-      const longMax: BigInt = BigInt('9223372036854775807');
-      const ulongMaxVal: BigInt = BigInt('18446744073709551615');
+      const zero = BigInt(0);
+      const longMax = BigInt('9223372036854775807');
+      const ulongMaxVal = BigInt('18446744073709551615');
 
       expect(BigInt.fromULong(zero.getULong()).equals(zero)).assertTrue();
       expect(BigInt.fromULong(longMax.getULong()).equals(longMax)).assertTrue();

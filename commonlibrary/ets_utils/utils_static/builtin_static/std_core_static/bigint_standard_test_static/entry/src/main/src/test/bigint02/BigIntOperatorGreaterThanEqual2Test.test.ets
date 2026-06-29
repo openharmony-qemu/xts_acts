@@ -445,7 +445,7 @@ export default function BigIntOperatorGreaterThanEqual2Test(): void {
     it('testBigIntOperatorGreaterThanEqual2Test3400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2,
       () => {
         let overflowVal: byte = Int.toByte(128);
-        let byteVal: byte = overflowVal as byte;
+        let byteVal: byte = overflowVal;
         expect(BigInt(byteVal).operatorGreaterThanEqual(BigInt(-127 as byte))).assertFalse();
       });
 

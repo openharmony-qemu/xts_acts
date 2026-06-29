@@ -56,8 +56,8 @@ export default function BigIntConstructorBoolean2Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntConstructorBoolean2Test0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const t: BigInt = BigInt(true);
-      const f: BigInt = BigInt(false);
+      const t = BigInt(true);
+      const f = BigInt(false);
 
       expect(t.operatorBitwiseAnd(f).toString()).assertEqual('0');
       expect(t.operatorBitwiseOr(f).toString()).assertEqual('1');
@@ -109,8 +109,8 @@ export default function BigIntConstructorBoolean2Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntConstructorBoolean2Test0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const longMax: BigInt = BigInt('9223372036854775807');
-      const longMin: BigInt = BigInt('-9223372036854775808');
+      const longMax = BigInt('9223372036854775807');
+      const longMin = BigInt('-9223372036854775808');
 
       expect(longMax.operatorAdd(BigInt(true)).toString()).assertEqual('9223372036854775808');
       expect(longMin.operatorSubtract(BigInt(true)).toString()).assertEqual('-9223372036854775809');

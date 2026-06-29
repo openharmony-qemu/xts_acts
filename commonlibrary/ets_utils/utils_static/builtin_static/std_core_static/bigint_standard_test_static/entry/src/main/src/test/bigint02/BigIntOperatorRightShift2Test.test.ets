@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntOperatorRightShift2Test(): void {
-  describe('BigInt.operatorRightShift2 (gap coverage)', () => {
+  describe('testBigIntOperatorRightShift2Test', () => {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_RSHIFT_0100
      * @tc.name testBigIntOperatorRightShift0100

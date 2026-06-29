@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntOperatorLessThanEqual2Test(): void {
-  describe('BigInt.operatorLessThanEqual2 (gap coverage)', () => {
+  describe('testBigIntOperatorLessThanEqual2Test', () => {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LTE_0100
      * @tc.name testBigIntOperatorLessThanEqual2Test0100
