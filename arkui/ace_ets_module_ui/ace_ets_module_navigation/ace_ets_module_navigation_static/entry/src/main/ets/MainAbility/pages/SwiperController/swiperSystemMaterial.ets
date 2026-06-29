@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,18 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-'use static'
-
-import uiMaterial from '@ohos.arkui.uiMaterial'
 import {
-  Entry, Text, Column, Component, Swiper, Scroll, Color, DotIndicator, ForEach, 
-  IndicatorComponent, IndicatorComponentController, SwiperController
-} from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
+  $r,Button,ClickEvent,Color,Column,ColumnOptions,Component,Counter,Curve,Entry,IDataSource,
+  LazyForEach,ForEach,Margin,ResourceStr,Row,Scroll,Scroller,Swiper,SwiperController,Text,TextAlign,DotIndicator,IndicatorIconInfo,
+  IndicatorComponent,IndicatorComponentController
+} from '@ohos.arkui.component';
+import { AppStorage, State } from '@ohos.arkui.stateManagement';
+import { ComponentUtils, Router, UIContext } from '@ohos.arkui.UIContext';
+import { SymbolGlyphModifier } from '@kit.ArkUI';
+import inspector from '@ohos.arkui.inspector'
+import { uiMaterial } from '@kit.ArkUI';
 
 @Entry
 @Component
-struct SwiperSystemMaterialPage {
+struct SwiperSystemMaterial {
   private indicatorController1: IndicatorComponentController = new IndicatorComponentController();
   private indicatorController2: IndicatorComponentController = new IndicatorComponentController();
   private indicatorController3: IndicatorComponentController = new IndicatorComponentController();
@@ -31,7 +34,7 @@ struct SwiperSystemMaterialPage {
   private indicatorController5: IndicatorComponentController = new IndicatorComponentController();
   private indicatorController6: IndicatorComponentController = new IndicatorComponentController();
   private indicatorController7: IndicatorComponentController = new IndicatorComponentController();
-  private indicatorController8: IndicatorComponentController = new IndicatorComponentController();
+
   private swiperController1: SwiperController = new SwiperController();
   private swiperController2: SwiperController = new SwiperController();
   private swiperController3: SwiperController = new SwiperController();
@@ -39,362 +42,243 @@ struct SwiperSystemMaterialPage {
   private swiperController5: SwiperController = new SwiperController();
   private swiperController6: SwiperController = new SwiperController();
   private swiperController7: SwiperController = new SwiperController();
-  private swiperController8: SwiperController = new SwiperController();
-  @State list: number[] = [];
+
+  private arr: int[] = [];
 
   aboutToAppear(): void {
-    for (let i = 1; i <= 3; i++) {
-      this.list.push(i);
+    for (let i = 1; i <= 6; i++) {
+      this.arr.push(i);
     }
   }
 
   build() {
-    Scroll() {
+    Column() {
+      Text('systemMaterial ULTRA_THIN').fontSize(10)
       Column() {
-        Text('Swiper IndicatorComponent systemMaterial test')
-        Text('systemMaterial ULTRA_THIN')
-          .fontSize(10)
-        Column() {
-          Swiper(this.swiperController1) {
-            ForEach(this.list, (item: number) => {
-              Text(item.toString())
-                .width('100%')
-                .height(160)
-                .backgroundColor(0xAFEEEE)
-                .textAlign(TextAlign.Center)
-                .fontSize(30)
-            })
-          }
-          .cachedCount(2)
-          .index(0)
-          .indicator(this.indicatorController1)
-          .loop(true)
-          .vertical(false)
-          .itemSpace(5)
-
-          IndicatorComponent(this.indicatorController1)
-            .initialIndex(0)
-            .id('swiper_systemMaterial_ultra_thin')
-            .style(
-              DotIndicator()
-                .itemWidth(15)
-                .itemHeight(15)
-                .selectedItemWidth(15)
-                .selectedItemHeight(15)
-                .color(Color.Gray)
-                .selectedColor(Color.Blue)
-            )
-            .loop(true)
-            .count(3)
-            .vertical(false)
-            .systemMaterial(new uiMaterial.ImmersiveMaterial({
-              style: uiMaterial.ImmersiveStyle.ULTRA_THIN,
-              materialColor: Color.Transparent,
-              colorInvert: true,
-              applyShadow: true,
-              interactive: true,
-              lightEffect: { color: Color.White }
-            } as uiMaterial.ImmersiveOptions))
+        Swiper(this.swiperController1) {
+          ForEach(this.arr, (item: int) => {
+            Text(item.toString())
+              .width('100%')
+              .height('100%')
+              .backgroundColor(0xAFEEEE)
+              .textAlign(TextAlign.Center)
+              .fontSize(30)
+          }, (item: int) => item.toString())
         }
+        .cachedCount(2)
+        .index(0)
+        .id('swiper_ultra_thin')
+        .indicator(this.indicatorController1)
+        .loop(true)
+        .vertical(false)
+        .itemSpace(5)
+        .height('60%')
 
-        Text('systemMaterial THIN')
-          .fontSize(10)
-        Column() {
-          Swiper(this.swiperController2) {
-            ForEach(this.list, (item: number) => {
-              Text(item.toString())
-                .width('100%')
-                .height(160)
-                .backgroundColor(0xAFEEEE)
-                .textAlign(TextAlign.Center)
-                .fontSize(30)
-            })
-          }
-          .cachedCount(2)
-          .index(0)
-          .indicator(this.indicatorController2)
+        IndicatorComponent(this.indicatorController1)
+          .initialIndex(0)
+          .id('indicator_ultra_thin')
+          .style(
+            new DotIndicator()
+              .itemWidth(15)
+              .itemHeight(15)
+              .selectedItemWidth(15)
+              .selectedItemHeight(15)
+              .color(Color.Gray)
+              .selectedColor(Color.Blue)
+          )
           .loop(true)
+          .count(6)
           .vertical(false)
-          .itemSpace(5)
-
-          IndicatorComponent(this.indicatorController2)
-            .initialIndex(0)
-            .id('swiper_systemMaterial_thin')
-            .style(
-              DotIndicator()
-                .itemWidth(15)
-                .itemHeight(15)
-                .selectedItemWidth(15)
-                .selectedItemHeight(15)
-                .color(Color.Gray)
-                .selectedColor(Color.Blue)
-            )
-            .loop(true)
-            .count(3)
-            .vertical(false)
-            .systemMaterial(new uiMaterial.ImmersiveMaterial({
-              style: uiMaterial.ImmersiveStyle.THIN,
-              materialColor: '#80FF0000',
-              colorInvert: false,
-              applyShadow: false,
-              interactive: false,
-              lightEffect: { color: Color.White }
-            } as uiMaterial.ImmersiveOptions))
-        }
-
-        Text('systemMaterial REGULAR')
-          .fontSize(10)
-        Column() {
-          Swiper(this.swiperController3) {
-            ForEach(this.list, (item: number) => {
-              Text(item.toString())
-                .width('100%')
-                .height(160)
-                .backgroundColor(0xAFEEEE)
-                .textAlign(TextAlign.Center)
-                .fontSize(30)
-            })
-          }
-          .cachedCount(2)
-          .index(0)
-          .indicator(this.indicatorController3)
-          .loop(true)
-          .vertical(false)
-          .itemSpace(5)
-
-          IndicatorComponent(this.indicatorController3)
-            .initialIndex(0)
-            .id('swiper_systemMaterial_regular')
-            .style(
-              DotIndicator()
-                .itemWidth(15)
-                .itemHeight(15)
-                .selectedItemWidth(15)
-                .selectedItemHeight(15)
-                .color(Color.Gray)
-                .selectedColor(Color.Blue)
-            )
-            .loop(true)
-            .count(3)
-            .vertical(false)
-            .systemMaterial(new uiMaterial.ImmersiveMaterial({
-              style: uiMaterial.ImmersiveStyle.REGULAR,
-              materialColor: undefined,
-              colorInvert: undefined,
-              applyShadow: undefined,
-              interactive: undefined,
-              lightEffect: undefined
-            } as uiMaterial.ImmersiveOptions))
-        }
-
-        Text('systemMaterial THICK')
-          .fontSize(10)
-        Column() {
-          Swiper(this.swiperController4) {
-            ForEach(this.list, (item: number) => {
-              Text(item.toString())
-                .width('100%')
-                .height(160)
-                .backgroundColor(0xAFEEEE)
-                .textAlign(TextAlign.Center)
-                .fontSize(30)
-            })
-          }
-          .cachedCount(2)
-          .index(0)
-          .indicator(this.indicatorController4)
-          .loop(true)
-          .vertical(false)
-          .itemSpace(5)
-
-          IndicatorComponent(this.indicatorController4)
-            .initialIndex(0)
-            .id('swiper_systemMaterial_thick')
-            .style(
-              DotIndicator()
-                .itemWidth(15)
-                .itemHeight(15)
-                .selectedItemWidth(15)
-                .selectedItemHeight(15)
-                .color(Color.Gray)
-                .selectedColor(Color.Blue)
-            )
-            .loop(true)
-            .count(3)
-            .vertical(false)
-            .systemMaterial(new uiMaterial.ImmersiveMaterial({
-              style: uiMaterial.ImmersiveStyle.THICK,
-              materialColor: Color.Blue,
-              colorInvert: true,
-              applyShadow: true,
-              interactive: true,
-              lightEffect: { color: Color.White }
-            } as uiMaterial.ImmersiveOptions))
-        }
-
-        Text('systemMaterial ULTRA_THICK')
-          .fontSize(10)
-        Column() {
-          Swiper(this.swiperController5) {
-            ForEach(this.list, (item: number) => {
-              Text(item.toString())
-                .width('100%')
-                .height(160)
-                .backgroundColor(0xAFEEEE)
-                .textAlign(TextAlign.Center)
-                .fontSize(30)
-            })
-          }
-          .cachedCount(2)
-          .index(0)
-          .indicator(this.indicatorController5)
-          .loop(true)
-          .vertical(false)
-          .itemSpace(5)
-
-          IndicatorComponent(this.indicatorController5)
-            .initialIndex(0)
-            .id('swiper_systemMaterial_ultra_thick')
-            .style(
-              DotIndicator()
-                .itemWidth(15)
-                .itemHeight(15)
-                .selectedItemWidth(15)
-                .selectedItemHeight(15)
-                .color(Color.Gray)
-                .selectedColor(Color.Blue)
-            )
-            .loop(true)
-            .count(3)
-            .vertical(false)
-            .systemMaterial(new uiMaterial.ImmersiveMaterial({
-              style: uiMaterial.ImmersiveStyle.ULTRA_THICK,
-              materialColor: null,
-              colorInvert: null,
-              applyShadow: null,
-              interactive: null,
-              lightEffect: null
-            } as uiMaterial.ImmersiveOptions))
-        }
-
-        Text('systemMaterial with undefined')
-          .fontSize(10)
-        Column() {
-          Swiper(this.swiperController6) {
-            ForEach(this.list, (item: number) => {
-              Text(item.toString())
-                .width('100%')
-                .height(160)
-                .backgroundColor(0xAFEEEE)
-                .textAlign(TextAlign.Center)
-                .fontSize(30)
-            })
-          }
-          .cachedCount(2)
-          .index(0)
-          .indicator(this.indicatorController6)
-          .loop(true)
-          .vertical(false)
-          .itemSpace(5)
-
-          IndicatorComponent(this.indicatorController6)
-            .initialIndex(0)
-            .id('swiper_systemMaterial_undefined')
-            .style(
-              DotIndicator()
-                .itemWidth(15)
-                .itemHeight(15)
-                .selectedItemWidth(15)
-                .selectedItemHeight(15)
-                .color(Color.Gray)
-                .selectedColor(Color.Blue)
-            )
-            .loop(true)
-            .count(3)
-            .vertical(false)
-            .systemMaterial(undefined)
-        }
-
-        Text('systemMaterial with null')
-          .fontSize(10)
-        Column() {
-          Swiper(this.swiperController7) {
-            ForEach(this.list, (item: number) => {
-              Text(item.toString())
-                .width('100%')
-                .height(160)
-                .backgroundColor(0xAFEEEE)
-                .textAlign(TextAlign.Center)
-                .fontSize(30)
-            })
-          }
-          .cachedCount(2)
-          .index(0)
-          .indicator(this.indicatorController7)
-          .loop(true)
-          .vertical(false)
-          .itemSpace(5)
-
-          IndicatorComponent(this.indicatorController7)
-            .initialIndex(0)
-            .id('swiper_systemMaterial_null')
-            .style(
-              DotIndicator()
-                .itemWidth(15)
-                .itemHeight(15)
-                .selectedItemWidth(15)
-                .selectedItemHeight(15)
-                .color(Color.Gray)
-                .selectedColor(Color.Blue)
-            )
-            .loop(true)
-            .count(3)
-            .vertical(false)
-            .systemMaterial(null)
-        }
-
-        Text('IndicatorComponent without systemMaterial')
-          .fontSize(10)
-        Column() {
-          Swiper(this.swiperController8) {
-            ForEach(this.list, (item: number) => {
-              Text(item.toString())
-                .width('100%')
-                .height(160)
-                .backgroundColor(0xAFEEEE)
-                .textAlign(TextAlign.Center)
-                .fontSize(30)
-            })
-          }
-          .cachedCount(2)
-          .index(0)
-          .indicator(this.indicatorController8)
-          .loop(true)
-          .vertical(false)
-          .itemSpace(5)
-
-          IndicatorComponent(this.indicatorController8)
-            .initialIndex(0)
-            .id('swiper_indicator_default')
-            .style(
-              DotIndicator()
-                .itemWidth(15)
-                .itemHeight(15)
-                .selectedItemWidth(15)
-                .selectedItemHeight(15)
-                .color(Color.Gray)
-                .selectedColor(Color.Blue)
-            )
-            .loop(true)
-            .count(3)
-            .vertical(false)
-        }
+          .systemMaterial(new uiMaterial.ImmersiveMaterial({
+            style: uiMaterial.ImmersiveStyle.ULTRA_THIN,
+            materialColor: '#6000FFFF',
+            colorInvert: true,
+            applyShadow: true,
+            interactive: true,
+            lightEffect: {}
+          }))
       }
       .width('100%')
-      .padding(5)
-      .backgroundColor('#F5F5F5')
+      .height('15%')
+
+      Text('systemMaterial THIN').fontSize(10)
+      Column() {
+        Swiper(this.swiperController2) {
+          ForEach(this.arr, (item: int) => {
+            Text(item.toString())
+              .width('100%')
+              .height('100%')
+              .backgroundColor(0xAFEEEE)
+              .textAlign(TextAlign.Center)
+              .fontSize(30)
+          }, (item: int) => item.toString())
+        }
+        .cachedCount(2)
+        .index(0)
+        .id('swiper_thin_colorInvert')
+        .indicator(this.indicatorController2)
+        .loop(true)
+        .vertical(false)
+        .itemSpace(5)
+        .height('60%')
+
+        IndicatorComponent(this.indicatorController2)
+          .initialIndex(0)
+          .id('indicator_thin_colorInvert')
+          .style(
+            new DotIndicator()
+              .itemWidth(15)
+              .itemHeight(15)
+              .selectedItemWidth(15)
+              .selectedItemHeight(15)
+              .color(Color.Gray)
+              .selectedColor(Color.Blue)
+          )
+          .loop(true)
+          .count(6)
+          .vertical(false)
+          .systemMaterial(new uiMaterial.ImmersiveMaterial({
+            style: uiMaterial.ImmersiveStyle.THIN,
+            materialColor: '#80FF0000',
+            colorInvert: false,
+            applyShadow: false,
+            interactive: false,
+            lightEffect: { color: Color.White }
+          }))
+      }
+      .width('100%')
+      .height('15%')
+
+      Text('systemMaterial REGULAR').fontSize(10)
+      Column() {
+        Swiper(this.swiperController3) {
+          ForEach(this.arr, (item: int) => {
+            Text(item.toString())
+              .width('100%')
+              .height('100%')
+              .backgroundColor(0xAFEEEE)
+              .textAlign(TextAlign.Center)
+              .fontSize(30)
+          }, (item: int) => item.toString())
+        }
+        .cachedCount(2)
+        .index(0)
+        .id('swiper_regular_applyShadow')
+        .indicator(this.indicatorController3)
+        .loop(true)
+        .vertical(false)
+        .itemSpace(5)
+        .height('60%')
+
+        IndicatorComponent(this.indicatorController3)
+          .initialIndex(0)
+          .id('indicator_regular_applyShadow')
+          .style(
+            new DotIndicator()
+              .itemWidth(15)
+              .itemHeight(15)
+              .selectedItemWidth(15)
+              .selectedItemHeight(15)
+              .color(Color.Gray)
+              .selectedColor(Color.Blue)
+          )
+          .loop(true)
+          .count(6)
+          .vertical(false)
+          .systemMaterial(new uiMaterial.ImmersiveMaterial({
+            style: uiMaterial.ImmersiveStyle.REGULAR,
+            materialColor: undefined,
+            colorInvert: undefined,
+            applyShadow: undefined,
+            interactive: undefined,
+            lightEffect: undefined
+          }))
+      }
+      .width('100%')
+      .height('15%')
+
+      Text('systemMaterial undefined').fontSize(10)
+      Column() {
+        Swiper(this.swiperController6) {
+          ForEach(this.arr, (item: int) => {
+            Text(item.toString())
+              .width('100%')
+              .height('100%')
+              .backgroundColor(0xAFEEEE)
+              .textAlign(TextAlign.Center)
+              .fontSize(30)
+          }, (item: int) => item.toString())
+        }
+        .cachedCount(2)
+        .index(0)
+        .id('swiper_undefined')
+        .indicator(this.indicatorController6)
+        .loop(true)
+        .vertical(false)
+        .itemSpace(5)
+        .height('60%')
+
+        IndicatorComponent(this.indicatorController6)
+          .initialIndex(0)
+          .id('indicator_undefined')
+          .style(
+            new DotIndicator()
+              .itemWidth(15)
+              .itemHeight(15)
+              .selectedItemWidth(15)
+              .selectedItemHeight(15)
+              .color(Color.Gray)
+              .selectedColor(Color.Blue)
+          )
+          .loop(true)
+          .count(6)
+          .vertical(false)
+          .systemMaterial(undefined)
+      }
+      .width('100%')
+      .height('15%')
+
+      Text('systemMaterial default (not set)').fontSize(10)
+      Column() {
+        Swiper(this.swiperController7) {
+          ForEach(this.arr, (item: int) => {
+            Text(item.toString())
+              .width('100%')
+              .height('100%')
+              .backgroundColor(0xAFEEEE)
+              .textAlign(TextAlign.Center)
+              .fontSize(30)
+          }, (item: int) => item.toString())
+        }
+        .cachedCount(2)
+        .index(0)
+        .id('swiper_default')
+        .indicator(this.indicatorController7)
+        .loop(true)
+        .vertical(false)
+        .itemSpace(5)
+        .height('60%')
+
+        IndicatorComponent(this.indicatorController7)
+          .initialIndex(0)
+          .id('indicator_default')
+          .style(
+            new DotIndicator()
+              .itemWidth(15)
+              .itemHeight(15)
+              .selectedItemWidth(15)
+              .selectedItemHeight(15)
+              .color(Color.Gray)
+              .selectedColor(Color.Blue)
+          )
+          .loop(true)
+          .count(6)
+          .vertical(false)
+      }
+      .width('100%')
+      .height('15%')
     }
-    .height('100%')
     .width('100%')
+    .height('100%')
   }
 }

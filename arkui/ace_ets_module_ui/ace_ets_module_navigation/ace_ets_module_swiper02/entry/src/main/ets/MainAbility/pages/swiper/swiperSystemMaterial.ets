@@ -12,7 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import { uiMaterial } from '@kit.ArkUI';
 
 @Entry
@@ -25,8 +24,6 @@ struct SwiperSystemMaterial {
   private indicatorController5: IndicatorComponentController = new IndicatorComponentController();
   private indicatorController6: IndicatorComponentController = new IndicatorComponentController();
   private indicatorController7: IndicatorComponentController = new IndicatorComponentController();
-  private indicatorController8: IndicatorComponentController = new IndicatorComponentController();
-  private indicatorController9: IndicatorComponentController = new IndicatorComponentController();
 
   private swiperController1: SwiperController = new SwiperController();
   private swiperController2: SwiperController = new SwiperController();
@@ -35,14 +32,12 @@ struct SwiperSystemMaterial {
   private swiperController5: SwiperController = new SwiperController();
   private swiperController6: SwiperController = new SwiperController();
   private swiperController7: SwiperController = new SwiperController();
-  private swiperController8: SwiperController = new SwiperController();
-  private swiperController9: SwiperController = new SwiperController();
 
-  @State list: number[] = [];
+  @State arr: number[] = [];
 
   aboutToAppear(): void {
     for (let i = 1; i <= 6; i++) {
-      this.list.push(i);
+      this.arr.push(i);
     }
   }
 
@@ -51,10 +46,10 @@ struct SwiperSystemMaterial {
       Text('systemMaterial ULTRA_THIN').fontSize(10)
       Column() {
         Swiper(this.swiperController1) {
-          ForEach(this.list, (item: number) => {
+          ForEach(this.arr, (item: number) => {
             Text(item.toString())
               .width('100%')
-              .height(160)
+              .height('100%')
               .backgroundColor(0xAFEEEE)
               .textAlign(TextAlign.Center)
               .fontSize(30)
@@ -67,6 +62,7 @@ struct SwiperSystemMaterial {
         .loop(true)
         .vertical(false)
         .itemSpace(5)
+        .height('60%')
 
         IndicatorComponent(this.indicatorController1)
           .initialIndex(0)
@@ -85,21 +81,23 @@ struct SwiperSystemMaterial {
           .vertical(false)
           .systemMaterial(new uiMaterial.ImmersiveMaterial({
             style: uiMaterial.ImmersiveStyle.ULTRA_THIN,
+            materialColor: '#6000FFFF',
             colorInvert: true,
+            applyShadow: true,
             interactive: true,
             lightEffect: {}
           }))
       }
       .width('100%')
-      .height('30%')
+      .height('10%')
 
       Text('systemMaterial THIN').fontSize(10)
       Column() {
         Swiper(this.swiperController2) {
-          ForEach(this.list, (item: number) => {
+          ForEach(this.arr, (item: number) => {
             Text(item.toString())
               .width('100%')
-              .height(160)
+              .height('100%')
               .backgroundColor(0xAFEEEE)
               .textAlign(TextAlign.Center)
               .fontSize(30)
@@ -112,6 +110,7 @@ struct SwiperSystemMaterial {
         .loop(true)
         .vertical(false)
         .itemSpace(5)
+        .height('60%')
 
         IndicatorComponent(this.indicatorController2)
           .initialIndex(0)
@@ -138,15 +137,15 @@ struct SwiperSystemMaterial {
           }))
       }
       .width('100%')
-      .height('20%')
+      .height('10%')
 
       Text('systemMaterial REGULAR').fontSize(10)
       Column() {
         Swiper(this.swiperController3) {
-          ForEach(this.list, (item: number) => {
+          ForEach(this.arr, (item: number) => {
             Text(item.toString())
               .width('100%')
-              .height(160)
+              .height('100%')
               .backgroundColor(0xAFEEEE)
               .textAlign(TextAlign.Center)
               .fontSize(30)
@@ -159,6 +158,7 @@ struct SwiperSystemMaterial {
         .loop(true)
         .vertical(false)
         .itemSpace(5)
+        .height('60%')
 
         IndicatorComponent(this.indicatorController3)
           .initialIndex(0)
@@ -185,15 +185,15 @@ struct SwiperSystemMaterial {
           }))
       }
       .width('100%')
-      .height('20%')
+      .height('10%')
 
       Text('systemMaterial ULTRA_THICK').fontSize(10)
       Column() {
         Swiper(this.swiperController4) {
-          ForEach(this.list, (item: number) => {
+          ForEach(this.arr, (item: number) => {
             Text(item.toString())
               .width('100%')
-              .height(160)
+              .height('100%')
               .backgroundColor(0xAFEEEE)
               .textAlign(TextAlign.Center)
               .fontSize(30)
@@ -206,6 +206,7 @@ struct SwiperSystemMaterial {
         .loop(true)
         .vertical(false)
         .itemSpace(5)
+        .height('60%')
 
         IndicatorComponent(this.indicatorController4)
           .initialIndex(0)
@@ -232,15 +233,15 @@ struct SwiperSystemMaterial {
           }))
       }
       .width('100%')
-      .height('20%')
+      .height('10%')
 
       Text('systemMaterial null').fontSize(10)
       Column() {
         Swiper(this.swiperController5) {
-          ForEach(this.list, (item: number) => {
+          ForEach(this.arr, (item: number) => {
             Text(item.toString())
               .width('100%')
-              .height(160)
+              .height('100%')
               .backgroundColor(0xAFEEEE)
               .textAlign(TextAlign.Center)
               .fontSize(30)
@@ -253,6 +254,7 @@ struct SwiperSystemMaterial {
         .loop(true)
         .vertical(false)
         .itemSpace(5)
+        .height('60%')
 
         IndicatorComponent(this.indicatorController5)
           .initialIndex(0)
@@ -272,15 +274,15 @@ struct SwiperSystemMaterial {
           .systemMaterial(null)
       }
       .width('100%')
-      .height('20%')
+      .height('10%')
 
       Text('systemMaterial undefined').fontSize(10)
       Column() {
         Swiper(this.swiperController6) {
-          ForEach(this.list, (item: number) => {
+          ForEach(this.arr, (item: number) => {
             Text(item.toString())
               .width('100%')
-              .height(160)
+              .height('100%')
               .backgroundColor(0xAFEEEE)
               .textAlign(TextAlign.Center)
               .fontSize(30)
@@ -293,6 +295,7 @@ struct SwiperSystemMaterial {
         .loop(true)
         .vertical(false)
         .itemSpace(5)
+        .height('60%')
 
         IndicatorComponent(this.indicatorController6)
           .initialIndex(0)
@@ -312,15 +315,15 @@ struct SwiperSystemMaterial {
           .systemMaterial(undefined)
       }
       .width('100%')
-      .height('20%')
+      .height('10%')
 
       Text('systemMaterial default (not set)').fontSize(10)
       Column() {
         Swiper(this.swiperController7) {
-          ForEach(this.list, (item: number) => {
+          ForEach(this.arr, (item: number) => {
             Text(item.toString())
               .width('100%')
-              .height(160)
+              .height('100%')
               .backgroundColor(0xAFEEEE)
               .textAlign(TextAlign.Center)
               .fontSize(30)
@@ -333,6 +336,7 @@ struct SwiperSystemMaterial {
         .loop(true)
         .vertical(false)
         .itemSpace(5)
+        .height('60%')
 
         IndicatorComponent(this.indicatorController7)
           .initialIndex(0)
@@ -351,7 +355,7 @@ struct SwiperSystemMaterial {
           .vertical(false)
       }
       .width('100%')
-      .height('20%')
+      .height('10%')
     }
     .width('100%')
     .height('100%')

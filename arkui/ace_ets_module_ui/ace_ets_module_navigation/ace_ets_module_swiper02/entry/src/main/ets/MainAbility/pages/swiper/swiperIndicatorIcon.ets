@@ -18,13 +18,17 @@ import { SymbolGlyphModifier } from '@kit.ArkUI';
 @Entry
 @Component
 struct SwiperIndicatorIcon {
+  @State arr: string[] = ['0', '1', '2', '3'];
   private symbolModifier: SymbolGlyphModifier = new SymbolGlyphModifier($r('sys.symbol.ohos_wifi'));
-  @State arr: string[] = ['0', '1'];
+  @State iconDiff: Array<IndicatorIconInfo> = [{index:0, icon: $r('app.media.background')},
+    {index:1, icon: $r('app.media.background')},
+    {index:2, icon: new SymbolGlyphModifier($r('sys.symbol.trash')).fontColor([Color.Red])},
+    {index:3, icon: new SymbolGlyphModifier($r('sys.symbol.cake')).fontColor([Color.Black])}]
 
   build() {
     Scroll() {
       Column() {
-        // Test 1: indicatorIcon with ResourceStr type (using $r)
+        Text('indicatorIcon ResourceStr').fontSize(10)
         Swiper() {
           ForEach(this.arr, (item: string) => {
             Text(item)
@@ -39,16 +43,18 @@ struct SwiperIndicatorIcon {
         .id('swiper_indicator_icon_resourceStr')
         .indicator(
           new DotIndicator()
-            .itemWidth(20)
-            .itemHeight(20)
-            .selectedItemWidth(20)
-            .selectedItemHeight(20)
+            .itemWidth(8)
+            .itemHeight(8)
+            .selectedItemWidth(16)
+            .selectedItemHeight(16)
+            .color(Color.Gray)
+            .selectedColor(Color.Blue)
             .indicatorIcon([
               { index: 0, icon: $r('sys.media.ohos_ic_public_albums') },
               { index: 1, icon: $r('sys.media.ohos_ic_public_albums') }
             ]))
 
-        // Test 2: indicatorIcon with SymbolGlyphModifier type
+        Text('indicatorIcon SymbolGlyphModifier').fontSize(10)
         Swiper() {
           ForEach(this.arr, (item: string) => {
             Text(item)
@@ -63,16 +69,18 @@ struct SwiperIndicatorIcon {
         .id('swiper_indicator_icon_symbolGlyph')
         .indicator(
           new DotIndicator()
-            .itemWidth(20)
-            .itemHeight(20)
-            .selectedItemWidth(20)
-            .selectedItemHeight(20)
+            .itemWidth(8)
+            .itemHeight(8)
+            .selectedItemWidth(16)
+            .selectedItemHeight(16)
+            .color(Color.Gray)
+            .selectedColor(Color.Blue)
             .indicatorIcon([
               { index: 0, icon: this.symbolModifier },
               { index: 1, icon: this.symbolModifier }
             ]))
 
-        // Test 3: indicatorIcon with null parameter
+        Text('indicatorIcon null').fontSize(10)
         Swiper() {
           ForEach(this.arr, (item: string) => {
             Text(item)
@@ -87,13 +95,15 @@ struct SwiperIndicatorIcon {
         .id('swiper_indicator_icon_null')
         .indicator(
           new DotIndicator()
-            .itemWidth(20)
-            .itemHeight(20)
-            .selectedItemWidth(20)
-            .selectedItemHeight(20)
+            .itemWidth(8)
+            .itemHeight(8)
+            .selectedItemWidth(16)
+            .selectedItemHeight(16)
+            .color(Color.Gray)
+            .selectedColor(Color.Blue)
             .indicatorIcon(null))
 
-        // Test 4: indicatorIcon with undefined parameter
+        Text('indicatorIcon undefined').fontSize(10)
         Swiper() {
           ForEach(this.arr, (item: string) => {
             Text(item)
@@ -108,13 +118,15 @@ struct SwiperIndicatorIcon {
         .id('swiper_indicator_icon_undefined')
         .indicator(
           new DotIndicator()
-            .itemWidth(20)
-            .itemHeight(20)
-            .selectedItemWidth(20)
-            .selectedItemHeight(20)
+            .itemWidth(8)
+            .itemHeight(8)
+            .selectedItemWidth(16)
+            .selectedItemHeight(16)
+            .color(Color.Gray)
+            .selectedColor(Color.Blue)
             .indicatorIcon(undefined))
 
-        // Test 5: indicatorIcon with empty array
+        Text('indicatorIcon empty').fontSize(10)
         Swiper() {
           ForEach(this.arr, (item: string) => {
             Text(item)
@@ -129,13 +141,15 @@ struct SwiperIndicatorIcon {
         .id('swiper_indicator_icon_empty_array')
         .indicator(
           new DotIndicator()
-            .itemWidth(20)
-            .itemHeight(20)
-            .selectedItemWidth(20)
-            .selectedItemHeight(20)
+            .itemWidth(8)
+            .itemHeight(8)
+            .selectedItemWidth(16)
+            .selectedItemHeight(16)
+            .color(Color.Gray)
+            .selectedColor(Color.Blue)
             .indicatorIcon([]))
 
-        // Test 6: indicatorIcon with index out of range
+        Text('indicatorIcon index all diff').fontSize(10)
         Swiper() {
           ForEach(this.arr, (item: string) => {
             Text(item)
@@ -147,18 +161,18 @@ struct SwiperIndicatorIcon {
         }
         .width('90%')
         .height('10%')
-        .id('swiper_indicator_icon_index_out_of_range')
+        .id('swiper_indicator_icon_index')
         .indicator(
           new DotIndicator()
-            .itemWidth(20)
-            .itemHeight(20)
-            .selectedItemWidth(20)
-            .selectedItemHeight(20)
-            .indicatorIcon([
-              { index: 999, icon: $r('sys.media.ohos_ic_public_albums') }
-            ]))
+            .itemWidth(8)
+            .itemHeight(8)
+            .selectedItemWidth(16)
+            .selectedItemHeight(16)
+            .color(Color.Gray)
+            .selectedColor(Color.Blue)
+            .indicatorIcon(this.iconDiff))
 
-        // Test 7: indicatorIcon with invalid icon (show default dot indicator)
+        Text('indicatorIcon invalid icon').fontSize(10)
         Swiper() {
           ForEach(this.arr, (item: string) => {
             Text(item)
@@ -173,15 +187,17 @@ struct SwiperIndicatorIcon {
         .id('swiper_indicator_icon_invalid_icon')
         .indicator(
           new DotIndicator()
-            .itemWidth(20)
-            .itemHeight(20)
-            .selectedItemWidth(20)
-            .selectedItemHeight(20)
+            .itemWidth(8)
+            .itemHeight(8)
+            .selectedItemWidth(16)
+            .selectedItemHeight(16)
+            .color(Color.Gray)
+            .selectedColor(Color.Blue)
             .indicatorIcon([
               { index: 0, icon: '' }
             ]))
 
-        // Test 8: default indicator without indicatorIcon
+        Text('indicatorIcon without').fontSize(10)
         Swiper() {
           ForEach(this.arr, (item: string) => {
             Text(item)
@@ -196,10 +212,12 @@ struct SwiperIndicatorIcon {
         .id('swiper_indicator_default')
         .indicator(
           new DotIndicator()
-            .itemWidth(20)
-            .itemHeight(20)
-            .selectedItemWidth(20)
-            .selectedItemHeight(20))
+            .itemWidth(8)
+            .itemHeight(8)
+            .selectedItemWidth(16)
+            .selectedItemHeight(16)
+            .color(Color.Gray)
+            .selectedColor(Color.Blue))
       }
       .width('100%')
       .padding(5)

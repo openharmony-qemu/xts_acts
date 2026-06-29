@@ -1,20 +1,18 @@
 'use static';
-
 /**
- * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
+ * distributed under the License is distributed on an 'AS IS' BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -24,37 +22,33 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 
-const SLEEP_TIME = 1000;
+export default function swiperSystemMaterial() {
 
-export default function SwiperControllerTest() {
-
-  describe('SwiperControllerTest', () => {
+  describe('swiperSystemMaterial', () => {
     beforeAll(async (): Promise<void> => {
-      console.info('SwiperControllerTest beforeAll start');
+      console.info('swiperSystemMaterial beforeAll start');
       await UtilsTest.startAbility('com.arkui.ace.navigation.static', 'EntryAbility');
     });
 
-    beforeEach((): void => {
-      console.info('SwiperControllerTest beforeEach start');
+    beforeEach(async (): Promise<void> => {
+      console.info('swiperSystemMaterial beforeEach start');
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/SwiperController/SwiperController',
+        url: 'MainAbility/pages/SwiperController/swiperSystemMaterial',
       };
       try {
         const routerInstance = AppStorage.get<Router>('router') as Router;
         routerInstance.clear();
         let pages = routerInstance.getState();
-        console.info('SwiperControllerTest state pages: ' + JSON.stringify(pages));
-        if (pages.name !== 'SwiperController') {
-          routerInstance.replaceUrl(options);
+        console.info('swiperSystemMaterial state pages: ' + JSON.stringify(pages));
+        if (!('swiperSystemMaterial' == pages.name)) {
+          console.info('get swiperSystemMaterial pages.name:' + JSON.stringify(pages.name));
+          routerInstance.pushUrl(options);
+          await CommonFunc.sleep(2500);
         }
       } catch (err) {
-        console.error('SwiperControllerTest replaceUrl error: ' + err);
+        console.error('swiperSystemMaterial replaceUrl error: ' + err);
         expect().assertFail();
       }
-    });
-
-    afterEach((): void => {
-      console.info('SwiperControllerTest after each called');
     });
 
     /**
@@ -66,15 +60,34 @@ export default function SwiperControllerTest() {
      * @tc.level  LEVEL0
      */
     it('swiperSystemMaterial_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let driver = Driver.create();
+      console.info('[swiperSystemMaterial_static_0100] START');
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('swiper_systemMaterial_ultra_thin');
-      let obj = JSON.parseJsonElement(strJson);
-      let systemMaterial = obj.getElement('$attrs').getElement('systemMaterial');
-      console.log('[swiperSystemMaterial_static_0100] systemMaterial: ' + JSON.stringify(systemMaterial))
-      expect(obj.getElement('$attrs').getString('id')).assertEqual('swiper_systemMaterial_ultra_thin');
-      expect(systemMaterial).not().assertEqual(undefined);
-      expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
+      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+        .getArray('$children')[0]
+        .getArray("$children")[1]
+        .getArray("$children")[1]
+      console.info("[swiperSystemMaterial_static_0100] tree systemMaterial is: " +
+        JSON.stringify(tree.getElement('$attrs').getElement('systemMaterial')));
+      console.info("[swiperSystemMaterial_static_0100] material style is: " +
+        JSON.stringify(tree.getElement('$attrs').getElement('systemMaterial').getElement('material')
+          .getElement('immersiveOptions').getString('style')));
+      console.info("[swiperSystemMaterial_static_0100] material materialColor is: " +
+        JSON.stringify(tree.getElement('$attrs').getElement('systemMaterial').getElement('material')
+          .getElement('immersiveOptions').getString('materialColor')));
+      console.info("[swiperSystemMaterial_static_0100] material colorInvert is: " +
+        JSON.stringify(tree.getElement('$attrs').getElement('systemMaterial').getElement('material')
+          .getElement('immersiveOptions').getString('colorInvert')));
+      console.info("[swiperSystemMaterial_static_0100] material applyShadow is: " +
+        JSON.stringify(tree.getElement('$attrs').getElement('systemMaterial').getElement('material')
+          .getElement('immersiveOptions').getString('applyShadow')));
+      expect(tree.getElement('$attrs').getElement('systemMaterial').getElement('material')
+        .getElement('immersiveOptions').getString('style')).assertEqual("ImmersiveStyle.ULTRA_THIN");
+      expect(tree.getElement('$attrs').getElement('systemMaterial').getElement('material')
+        .getElement('immersiveOptions').getString('materialColor')).assertEqual("#6000FFFF");
+      expect(tree.getElement('$attrs').getElement('systemMaterial').getElement('material')
+        .getElement('immersiveOptions').getString('colorInvert')).assertEqual("true");
+      expect(tree.getElement('$attrs').getElement('systemMaterial').getElement('material')
+        .getElement('immersiveOptions').getString('applyShadow')).assertEqual("true");
       done();
     });
 
@@ -87,15 +100,34 @@ export default function SwiperControllerTest() {
      * @tc.level  LEVEL0
      */
     it('swiperSystemMaterial_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let driver = Driver.create();
+      console.info('[swiperSystemMaterial_static_0200] START');
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('swiper_systemMaterial_thin');
-      let obj = JSON.parseJsonElement(strJson);
-      let systemMaterial = obj.getElement('$attrs').getElement('systemMaterial');
-      console.log('[swiperSystemMaterial_static_0200] systemMaterial: ' + JSON.stringify(systemMaterial))
-      expect(obj.getElement('$attrs').getString('id')).assertEqual('swiper_systemMaterial_thin');
-      expect(systemMaterial).not().assertEqual(undefined);
-      expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
+      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+        .getArray('$children')[0]
+        .getArray("$children")[3]
+        .getArray("$children")[1]
+      console.info("[swiperSystemMaterial_static_0200] tree systemMaterial is: " +
+        JSON.stringify(tree.getElement('$attrs').getElement('systemMaterial')));
+      console.info("[swiperSystemMaterial_static_0200] material style is: " +
+        JSON.stringify(tree.getElement('$attrs').getElement('systemMaterial').getElement('material')
+          .getElement('immersiveOptions').getString('style')));
+      console.info("[swiperSystemMaterial_static_0200] material materialColor is: " +
+        JSON.stringify(tree.getElement('$attrs').getElement('systemMaterial').getElement('material')
+          .getElement('immersiveOptions').getString('materialColor')));
+      console.info("[swiperSystemMaterial_static_0200] material colorInvert is: " +
+        JSON.stringify(tree.getElement('$attrs').getElement('systemMaterial').getElement('material')
+          .getElement('immersiveOptions').getString('colorInvert')));
+      console.info("[swiperSystemMaterial_static_0200] material applyShadow is: " +
+        JSON.stringify(tree.getElement('$attrs').getElement('systemMaterial').getElement('material')
+          .getElement('immersiveOptions').getString('applyShadow')));
+      expect(tree.getElement('$attrs').getElement('systemMaterial').getElement('material')
+        .getElement('immersiveOptions').getString('style')).assertEqual("ImmersiveStyle.THIN");
+      expect(tree.getElement('$attrs').getElement('systemMaterial').getElement('material')
+        .getElement('immersiveOptions').getString('materialColor')).assertEqual("#80FF0000");
+      expect(tree.getElement('$attrs').getElement('systemMaterial').getElement('material')
+        .getElement('immersiveOptions').getString('colorInvert')).assertEqual("false");
+      expect(tree.getElement('$attrs').getElement('systemMaterial').getElement('material')
+        .getElement('immersiveOptions').getString('applyShadow')).assertEqual("false");
       done();
     });
 
@@ -108,125 +140,32 @@ export default function SwiperControllerTest() {
      * @tc.level  LEVEL0
      */
     it('swiperSystemMaterial_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let driver = Driver.create();
+      console.info('[swiperSystemMaterial_static_0300] START');
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('swiper_systemMaterial_regular');
-      let obj = JSON.parseJsonElement(strJson);
-      let systemMaterial = obj.getElement('$attrs').getElement('systemMaterial');
-      console.log('[swiperSystemMaterial_static_0300] systemMaterial: ' + JSON.stringify(systemMaterial))
-      expect(obj.getElement('$attrs').getString('id')).assertEqual('swiper_systemMaterial_regular');
-      expect(systemMaterial).not().assertEqual(undefined);
-      expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
-      done();
-    });
-
-    /**
-     * @tc.name   swiperSystemMaterial_static_0400
-     * @tc.number SUB_ARKUI_SWIPER_SYSTEMMATERIAL_STATIC_0400
-     * @tc.desc   Test Swiper IndicatorComponent systemMaterial property with THICK style
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
-     */
-    it('swiperSystemMaterial_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('swiper_systemMaterial_thick');
-      let obj = JSON.parseJsonElement(strJson);
-      let systemMaterial = obj.getElement('$attrs').getElement('systemMaterial');
-      console.log('[swiperSystemMaterial_static_0400] systemMaterial: ' + JSON.stringify(systemMaterial))
-      expect(obj.getElement('$attrs').getString('id')).assertEqual('swiper_systemMaterial_thick');
-      expect(systemMaterial).not().assertEqual(undefined);
-      expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
-      done();
-    });
-
-    /**
-     * @tc.name   swiperSystemMaterial_static_0500
-     * @tc.number SUB_ARKUI_SWIPER_SYSTEMMATERIAL_STATIC_0500
-     * @tc.desc   Test Swiper IndicatorComponent systemMaterial property with ULTRA_THICK style
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
-     */
-    it('swiperSystemMaterial_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('swiper_systemMaterial_ultra_thick');
-      let obj = JSON.parseJsonElement(strJson);
-      let systemMaterial = obj.getElement('$attrs').getElement('systemMaterial');
-      console.log('[swiperSystemMaterial_static_0500] systemMaterial: ' + JSON.stringify(systemMaterial))
-      expect(obj.getElement('$attrs').getString('id')).assertEqual('swiper_systemMaterial_ultra_thick');
-      expect(systemMaterial).not().assertEqual(undefined);
-      expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
-      done();
-    });
-
-    /**
-     * @tc.name   swiperSystemMaterial_static_0600
-     * @tc.number SUB_ARKUI_SWIPER_SYSTEMMATERIAL_STATIC_0600
-     * @tc.desc   Test Swiper IndicatorComponent systemMaterial property with undefined parameter
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
-     */
-    it('swiperSystemMaterial_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let strJsonCompare = inspector.getInspectorByKey('swiper_indicator_default');
-      let objCompare = JSON.parseJsonElement(strJsonCompare);
-      let strJson = inspector.getInspectorByKey('swiper_systemMaterial_undefined');
-      let obj = JSON.parseJsonElement(strJson);
-      let systemMaterialCompare = objCompare.getElement('$attrs').getElement('systemMaterial');
-      let systemMaterial = obj.getElement('$attrs').getElement('systemMaterial');
-      console.log('[swiperSystemMaterial_static_0600] default systemMaterial: ' + JSON.stringify(systemMaterialCompare))
-      console.log('[swiperSystemMaterial_static_0600] undefined systemMaterial: ' + JSON.stringify(systemMaterial))
-      expect(obj.getElement('$attrs').getString('id')).assertEqual('swiper_systemMaterial_undefined');
-      expect(systemMaterial).not().assertEqual(undefined);
-      done();
-    });
-
-    /**
-     * @tc.name   swiperSystemMaterial_static_0700
-     * @tc.number SUB_ARKUI_SWIPER_SYSTEMMATERIAL_STATIC_0700
-     * @tc.desc   Test Swiper IndicatorComponent systemMaterial property with null parameter
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
-     */
-    it('swiperSystemMaterial_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let strJsonCompare = inspector.getInspectorByKey('swiper_indicator_default');
-      let objCompare = JSON.parseJsonElement(strJsonCompare);
-      let strJson = inspector.getInspectorByKey('swiper_systemMaterial_null');
-      let obj = JSON.parseJsonElement(strJson);
-      let systemMaterialCompare = objCompare.getElement('$attrs').getElement('systemMaterial');
-      let systemMaterial = obj.getElement('$attrs').getElement('systemMaterial');
-      console.log('[swiperSystemMaterial_static_0700] default systemMaterial: ' + JSON.stringify(systemMaterialCompare))
-      console.log('[swiperSystemMaterial_static_0700] null systemMaterial: ' + JSON.stringify(systemMaterial))
-      expect(obj.getElement('$attrs').getString('id')).assertEqual('swiper_systemMaterial_null');
-      expect(systemMaterial).not().assertEqual(undefined);
-      done();
-    });
-
-    /**
-     * @tc.name   swiperSystemMaterial_static_0800
-     * @tc.number SUB_ARKUI_SWIPER_SYSTEMMATERIAL_STATIC_0800
-     * @tc.desc   Test Swiper IndicatorComponent without systemMaterial property
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
-     */
-    it('swiperSystemMaterial_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('swiper_indicator_default');
-      let obj = JSON.parseJsonElement(strJson);
-      let systemMaterial = obj.getElement('$attrs').getElement('systemMaterial');
-      console.log('[swiperSystemMaterial_static_0800] systemMaterial: ' + JSON.stringify(systemMaterial))
-      expect(obj.getElement('$attrs').getString('id')).assertEqual('swiper_indicator_default');
-      expect(systemMaterial).not().assertEqual(undefined);
+      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+        .getArray('$children')[0]
+        .getArray("$children")[5]
+        .getArray("$children")[1]
+      console.info("[swiperSystemMaterial_static_0300] tree systemMaterial is: " +
+        JSON.stringify(tree.getElement('$attrs').getElement('systemMaterial')));
+      console.info("[swiperSystemMaterial_static_0300] material style is: " +
+        JSON.stringify(tree.getElement('$attrs').getElement('systemMaterial').getElement('material')
+          .getElement('immersiveOptions').getString('style')));
+      console.info("[swiperSystemMaterial_static_0300] material materialColor is: " +
+        JSON.stringify(tree.getElement('$attrs').getElement('systemMaterial').getElement('material')
+          .getElement('immersiveOptions').getString('materialColor')));
+      console.info("[swiperSystemMaterial_static_0300] material colorInvert is: " +
+        JSON.stringify(tree.getElement('$attrs').getElement('systemMaterial').getElement('material')
+          .getElement('immersiveOptions').getString('colorInvert')));
+      console.info("[swiperSystemMaterial_static_0300] material applyShadow is: " +
+        JSON.stringify(tree.getElement('$attrs').getElement('systemMaterial').getElement('material')
+          .getElement('immersiveOptions').getString('applyShadow')));
+      expect(tree.getElement('$attrs').getElement('systemMaterial').getElement('material')
+        .getElement('immersiveOptions').getString('style')).assertEqual("ImmersiveStyle.REGULAR");
+      expect(tree.getElement('$attrs').getElement('systemMaterial').getElement('material')
+        .getElement('immersiveOptions').getString('colorInvert')).assertEqual("false");
+      expect(tree.getElement('$attrs').getElement('systemMaterial').getElement('material')
+        .getElement('immersiveOptions').getString('applyShadow')).assertEqual("true");
       done();
     });
   })

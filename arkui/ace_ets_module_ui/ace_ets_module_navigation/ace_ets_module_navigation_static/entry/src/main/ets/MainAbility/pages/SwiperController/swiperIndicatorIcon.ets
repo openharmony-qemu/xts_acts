@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,19 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-'use static'
-
-import { SymbolGlyphModifier } from '@kit.ArkUI'
 import {
-  Entry, Text, Column, Component, Swiper, Scroll, Color, DotIndicator, ForEach
-} from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
+  $r,Button,ClickEvent,Color,Column,ColumnOptions,Component,Counter,Curve,DataChangeListener,Entry,IDataSource,
+  LazyForEach,ForEach,Margin,ResourceStr,Row,Scroll,Scroller,Swiper,SwiperController,Text,TextAlign,DotIndicator,IndicatorIconInfo
+} from '@ohos.arkui.component';
+import { AppStorage, State } from '@ohos.arkui.stateManagement';
+import { ComponentUtils, Router, UIContext } from '@ohos.arkui.UIContext';
+import { SymbolGlyphModifier } from '@kit.ArkUI';
+import inspector from '@ohos.arkui.inspector'
 
 @Entry
 @Component
 struct SwiperIndicatorIconPage {
+  @State arr: string[] = ['0', '1', '2', '3'];
   private symbolModifier: SymbolGlyphModifier = new SymbolGlyphModifier($r('sys.symbol.ohos_wifi'));
-  @State arr: string[] = ['0', '1'];
+  @State iconDiff: IndicatorIconInfo[] = [{index:0, icon: $r('app.media.background')} as IndicatorIconInfo,
+    {index:1, icon: $r('app.media.background')} as IndicatorIconInfo,
+    {index:2, icon: new SymbolGlyphModifier($r('sys.symbol.trash')).fontColor([Color.Red])} as IndicatorIconInfo,
+    {index:3, icon: new SymbolGlyphModifier($r('sys.symbol.cake')).fontColor([Color.Black])} as IndicatorIconInfo]
 
   build() {
     Scroll() {
@@ -45,11 +51,13 @@ struct SwiperIndicatorIconPage {
         .width('90%')
         .height('10%')
         .indicator(
-          DotIndicator()
-            .itemWidth(20)
-            .itemHeight(20)
-            .selectedItemWidth(20)
-            .selectedItemHeight(20)
+          new DotIndicator()
+            .itemWidth(8)
+            .itemHeight(8)
+            .selectedItemWidth(16)
+            .selectedItemHeight(16)
+            .color(Color.Gray)
+            .selectedColor(Color.Blue)
             .indicatorIcon([
               { index: 0, icon: $r('sys.media.ohos_ic_public_albums') },
               { index: 1, icon: $r('sys.media.ohos_ic_public_albums') }
@@ -70,37 +78,17 @@ struct SwiperIndicatorIconPage {
         .width('90%')
         .height('10%')
         .indicator(
-          DotIndicator()
-            .itemWidth(20)
-            .itemHeight(20)
-            .selectedItemWidth(20)
-            .selectedItemHeight(20)
+          new DotIndicator()
+            .itemWidth(8)
+            .itemHeight(8)
+            .selectedItemWidth(16)
+            .selectedItemHeight(16)
+            .color(Color.Gray)
+            .selectedColor(Color.Blue)
             .indicatorIcon([
               { index: 0, icon: this.symbolModifier },
               { index: 1, icon: this.symbolModifier }
             ]))
-
-        Text('indicatorIcon with null parameter')
-          .fontSize(10)
-        Swiper() {
-          ForEach(this.arr, (item: string) => {
-            Text(item)
-              .textAlign(TextAlign.Center)
-              .width('100%')
-              .height('50%')
-              .backgroundColor(0xAFEEEE)
-          })
-        }
-        .id('swiper_indicator_icon_null')
-        .width('90%')
-        .height('10%')
-        .indicator(
-          DotIndicator()
-            .itemWidth(20)
-            .itemHeight(20)
-            .selectedItemWidth(20)
-            .selectedItemHeight(20)
-            .indicatorIcon(null))
 
         Text('indicatorIcon with undefined parameter')
           .fontSize(10)
@@ -117,11 +105,13 @@ struct SwiperIndicatorIconPage {
         .width('90%')
         .height('10%')
         .indicator(
-          DotIndicator()
-            .itemWidth(20)
-            .itemHeight(20)
-            .selectedItemWidth(20)
-            .selectedItemHeight(20)
+          new DotIndicator()
+            .itemWidth(8)
+            .itemHeight(8)
+            .selectedItemWidth(16)
+            .selectedItemHeight(16)
+            .color(Color.Gray)
+            .selectedColor(Color.Blue)
             .indicatorIcon(undefined))
 
         Text('indicatorIcon with empty array')
@@ -139,14 +129,16 @@ struct SwiperIndicatorIconPage {
         .width('90%')
         .height('10%')
         .indicator(
-          DotIndicator()
-            .itemWidth(20)
-            .itemHeight(20)
-            .selectedItemWidth(20)
-            .selectedItemHeight(20)
+          new DotIndicator()
+            .itemWidth(8)
+            .itemHeight(8)
+            .selectedItemWidth(16)
+            .selectedItemHeight(16)
+            .color(Color.Gray)
+            .selectedColor(Color.Blue)
             .indicatorIcon([]))
 
-        Text('indicatorIcon with index out of range')
+        Text('indicatorIcon index all diff').fontSize(10)
           .fontSize(10)
         Swiper() {
           ForEach(this.arr, (item: string) => {
@@ -157,18 +149,18 @@ struct SwiperIndicatorIconPage {
               .backgroundColor(0xAFEEEE)
           })
         }
-        .id('swiper_indicator_icon_index_out_of_range')
+        .id('swiper_indicator_icon_index')
         .width('90%')
         .height('10%')
         .indicator(
-          DotIndicator()
-            .itemWidth(20)
-            .itemHeight(20)
-            .selectedItemWidth(20)
-            .selectedItemHeight(20)
-            .indicatorIcon([
-              { index: 999, icon: $r('sys.media.ohos_ic_public_albums') }
-            ]))
+          new DotIndicator()
+            .itemWidth(8)
+            .itemHeight(8)
+            .selectedItemWidth(16)
+            .selectedItemHeight(16)
+            .color(Color.Gray)
+            .selectedColor(Color.Blue)
+            .indicatorIcon(this.iconDiff))
 
         Text('indicatorIcon with invalid icon')
           .fontSize(10)
@@ -185,11 +177,13 @@ struct SwiperIndicatorIconPage {
         .width('90%')
         .height('10%')
         .indicator(
-          DotIndicator()
-            .itemWidth(20)
-            .itemHeight(20)
-            .selectedItemWidth(20)
-            .selectedItemHeight(20)
+          new DotIndicator()
+            .itemWidth(8)
+            .itemHeight(8)
+            .selectedItemWidth(16)
+            .selectedItemHeight(16)
+            .color(Color.Gray)
+            .selectedColor(Color.Blue)
             .indicatorIcon([
               { index: 0, icon: '' }
             ]))
@@ -209,11 +203,13 @@ struct SwiperIndicatorIconPage {
         .width('90%')
         .height('10%')
         .indicator(
-          DotIndicator()
-            .itemWidth(20)
-            .itemHeight(20)
-            .selectedItemWidth(20)
-            .selectedItemHeight(20))
+          new DotIndicator()
+            .itemWidth(8)
+            .itemHeight(8)
+            .selectedItemWidth(16)
+            .selectedItemHeight(16)
+            .color(Color.Gray)
+            .selectedColor(Color.Blue))
       }
       .width('100%')
       .padding(5)
