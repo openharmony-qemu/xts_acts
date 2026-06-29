@@ -1237,12 +1237,9 @@ export default function linkerErrorTest(): void {
     it('testLinkerError075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err = new LinkerError("StackName1", "msg", { cause: new Error("root") } as ErrorOptions);
       let stack = err.stack as string;
-      expect(stack.length > 0).assertTrue();
       expect(stack.includes('LinkerError')).assertTrue();
-
       let errShort = new LinkerError("A", "b", {});
       let stackShort = errShort.stack as string;
-      expect(stackShort.length > 0).assertTrue();
       expect(stackShort.includes('LinkerError')).assertTrue();
     })
 

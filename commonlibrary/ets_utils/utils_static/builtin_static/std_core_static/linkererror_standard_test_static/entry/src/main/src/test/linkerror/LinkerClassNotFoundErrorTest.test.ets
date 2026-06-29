@@ -771,7 +771,6 @@ export default function linkerClassNotFoundErrorTest(): void {
     it('testLinkerClassNotFoundError049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err = new LinkerClassNotFoundError('msg');
       let stack = err.stack as string;
-      expect(stack.length > 0).assertTrue();
       expect(stack.includes('LinkerClassNotFoundError')).assertTrue();
     })
 

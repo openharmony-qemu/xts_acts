@@ -771,7 +771,6 @@ export default function linkerBadSupertypeErrorTest(): void {
     it('testLinkerBadSupertypeError049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let err = new LinkerBadSupertypeError('msg');
       let stack = err.stack as string;
-      expect(stack.length > 0).assertTrue();
       expect(stack.includes('LinkerBadSupertypeError')).assertTrue();
     })
 
