@@ -11,7 +11,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
-         */
+ */
 
 import { describe, it, expect, TestType, Level, Size, beforeAll, beforeEach, afterAll, afterEach } from '@ohos/hypium'
 import { Driver, ON, PenKey, PenKeyOperation, PenMode, TouchOptions, } from '@kit.TestKit'
@@ -46,15 +46,15 @@ export default function uitestApi26Test() {
     })
 
     /**
-     * @tc.name   testDriverClickAtWithOptionsDefault
-     * @tc.number SUB_testfwk_UITEST_DRIVER_CLICKATWITHOPTIONS_PARAM_0100
-     * @tc.desc   Test clickAtWithOptions with point parameter (no options)
+     * @tc.name   testDriverClickAtDefault
+     * @tc.number SUB_testfwk_UITEST_DRIVER_CLICKAT_PARAM_0100
+     * @tc.desc   Test clickAt with point parameter (no options)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverClickAtWithOptionsDefault', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(TestTag, 'testDriverClickAtWithOptionsDefault start');
+    it('testDriverClickAtDefault', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(TestTag, 'testDriverClickAtDefault start');
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
       let button = await driver.findComponent(ON.text('next page'))
@@ -65,20 +65,20 @@ export default function uitestApi26Test() {
       let text = await newButton.getText()
       expect(text).assertEqual('back to index');
       await newButton.click()
-      console.log(TestTag, 'testDriverClickAtWithOptionsDefault over');
+      console.log(TestTag, 'testDriverClickAtDefault over');
       await stopApplication('com.uitestScene.acts');
     });
 
     /**
-     * @tc.name   testDriverClickAtWithOptionsEmptyOptions
-     * @tc.number SUB_testfwk_UITEST_DRIVER_CLICKATWITHOPTIONS_PARAM_0200
+     * @tc.name   testDriverClickAtEmptyOptions
+     * @tc.number SUB_testfwk_UITEST_DRIVER_CLICKAT_PARAM_0200
      * @tc.desc   Test clickAt with options={} (empty object)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverClickAtWithOptionsEmptyOptions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testDriverClickAtWithOptionsEmptyOptions start`);
+    it('testDriverClickAtEmptyOptions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverClickAtEmptyOptions start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
       let button = await driver.findComponent(ON.text('next page'))
@@ -91,19 +91,19 @@ export default function uitestApi26Test() {
       expect(text).assertEqual('back to index')
       await newButton.click()
       await stopApplication('com.uitestScene.acts')
-      console.log(`${TestTag}, testDriverClickAtWithOptionsEmptyOptions end`);
+      console.log(`${TestTag}, testDriverClickAtEmptyOptions end`);
     });
 
     /**
-     * @tc.name   testDriverClickAtWithOptionsBoundaryPressureMin
+     * @tc.name   testDriverClickAtBoundaryPressureMin
      * @tc.number SUB_testfwk_UITEST_DRIVER_CLICKAT_BOUNDARY_0300
-     * @tc.desc   Test clickAtWithOptions with pressure=0 (minimum boundary value)
+     * @tc.desc   Test clickAt with pressure=0 (minimum boundary value)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverClickAtWithOptionsBoundaryPressureMin', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testDriverClickAtWithOptionsBoundaryPressureMin start`);
+    it('testDriverClickAtBoundaryPressureMin', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverClickAtBoundaryPressureMin start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
       let button = await driver.findComponent(ON.text('next page'))
@@ -116,20 +116,20 @@ export default function uitestApi26Test() {
       expect(text).assertEqual('back to index')
       await newButton.click()
       await stopApplication('com.uitestScene.acts')
-      console.log(`${TestTag}, testDriverClickAtWithOptionsBoundaryPressureMin end`);
+      console.log(`${TestTag}, testDriverClickAtBoundaryPressureMin end`);
     });
 
 
     /**
-     * @tc.name   testDriverClickAtWithOptionsPressureMax
-     * @tc.number SUB_testfwk_UITEST_DRIVER_CLICKATWITHOPTIONS_PARAM_0400
-     * @tc.desc   Test clickAtWithOptions with point and pressure parameter (pressure = 1.0, maximum value)
+     * @tc.name   testDriverClickAtPressureMax
+     * @tc.number SUB_testfwk_UITEST_DRIVER_CLICKAT_PARAM_0400
+     * @tc.desc   Test clickAt with point and pressure parameter (pressure = 1.0, maximum value)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverClickAtWithOptionsPressureMax', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(TestTag, 'testDriverClickAtWithOptionsPressureMax start');
+    it('testDriverClickAtPressureMax', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(TestTag, 'testDriverClickAtPressureMax start');
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
       let button = await driver.findComponent(ON.text('next page'))
@@ -141,20 +141,20 @@ export default function uitestApi26Test() {
       let text = await newButton.getText()
       expect(text).assertEqual('back to index')
       await newButton.click()
-      console.log(TestTag, 'testDriverClickAtWithOptionsPressureMax over');
+      console.log(TestTag, 'testDriverClickAtPressureMax over');
       await stopApplication('com.uitestScene.acts');
     });
 
     /**
-     * @tc.name   testDriverClickAtWithOptionsPressure
-     * @tc.number SUB_testfwk_UITEST_DRIVER_CLICKATWITHOPTIONS_PARAM_0500
-     * @tc.desc   Test clickAtWithOptions with point and pressure parameter (pressure = 0.5)
+     * @tc.name   testDriverClickAtPressure
+     * @tc.number SUB_testfwk_UITEST_DRIVER_CLICKAT_PARAM_0500
+     * @tc.desc   Test clickAt with point and pressure parameter (pressure = 0.5)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverClickAtWithOptionsPressure', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(TestTag, 'testDriverClickAtWithOptionsPressure start');
+    it('testDriverClickAtPressure', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(TestTag, 'testDriverClickAtPressure start');
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
       let button = await driver.findComponent(ON.text('next page'))
@@ -166,20 +166,20 @@ export default function uitestApi26Test() {
       let text = await newButton.getText()
       expect(text).assertEqual('back to index')
       await newButton.click()
-      console.log(TestTag, 'testDriverClickAtWithOptionsPressure over');
+      console.log(TestTag, 'testDriverClickAtPressure over');
       await stopApplication('com.uitestScene.acts');
     });
 
     /**
-     * @tc.name   testDriverClickAtWithOptionsPressureMin
-     * @tc.number SUB_testfwk_UITEST_DRIVER_CLICKATWITHOPTIONS_PARAM_0600
-     * @tc.desc   Test clickAtWithOptions with point and pressure parameter (pressure = 0.0, minimum value)
+     * @tc.name   testDriverClickAtPressureMin
+     * @tc.number SUB_testfwk_UITEST_DRIVER_CLICKAT_PARAM_0600
+     * @tc.desc   Test clickAt with point and pressure parameter (pressure = 0.0, minimum value)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverClickAtWithOptionsPressureMin', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(TestTag, 'testDriverClickAtWithOptionsPressureMin start');
+    it('testDriverClickAtPressureMin', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(TestTag, 'testDriverClickAtPressureMin start');
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
       let button = await driver.findComponent(ON.text('next page'))
@@ -191,20 +191,20 @@ export default function uitestApi26Test() {
       let text = await newButton.getText()
       expect(text).assertEqual('back to index')
       await newButton.click()
-      console.log(TestTag, 'testDriverClickAtWithOptionsPressureMin over');
+      console.log(TestTag, 'testDriverClickAtPressureMin over');
       await stopApplication('com.uitestScene.acts');
     });
 
     /**
-     * @tc.name   testDriverClickAtWithOptionsNullOptions
-     * @tc.number SUB_testfwk_UITEST_DRIVER_CLICKATWITHOPTIONS_PARAM_0700
-     * @tc.desc   Test clickAtWithOptions with point parameter (options = null)
+     * @tc.name   testDriverClickAtNullOptions
+     * @tc.number SUB_testfwk_UITEST_DRIVER_CLICKAT_PARAM_0700
+     * @tc.desc   Test clickAt with point parameter (options = null)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverClickAtWithOptionsNullOptions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(TestTag, 'testDriverClickAtWithOptionsNullOptions start');
+    it('testDriverClickAtNullOptions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(TestTag, 'testDriverClickAtNullOptions start');
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
       let button = await driver.findComponent(ON.text('next page'))
@@ -215,20 +215,20 @@ export default function uitestApi26Test() {
       let text = await newButton.getText()
       expect(text).assertEqual('back to index')
       await newButton.click()
-      console.log(TestTag, 'testDriverClickAtWithOptionsNullOptions over');
+      console.log(TestTag, 'testDriverClickAtNullOptions over');
       await stopApplication('com.uitestScene.acts');
     });
 
     /**
-     * @tc.name   testDriverClickAtWithOptionsUndefinedOptions
-     * @tc.number SUB_testfwk_UITEST_DRIVER_cLICKATWITHOPTIONS_PARAM_0800
-     * @tc.desc   Test clickAtWithOptions with point parameter (options = undefined)
+     * @tc.name   testDriverClickAtUndefinedOptions
+     * @tc.number SUB_testfwk_UITEST_DRIVER_CLICKAT_PARAM_0800
+     * @tc.desc   Test clickAt with point parameter (options = undefined)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverClickAtWithOptionsUndefinedOptions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(TestTag, 'testDriverClickAtWithOptionsUndefinedOptions start');
+    it('testDriverClickAtUndefinedOptions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(TestTag, 'testDriverClickAtUndefinedOptions start');
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
       let button = await driver.findComponent(ON.text('next page'))
@@ -239,19 +239,19 @@ export default function uitestApi26Test() {
       let text = await newButton.getText()
       expect(text).assertEqual('back to index')
       await newButton.click()
-      console.log(TestTag, 'testDriverClickAtWithOptionsUndefinedOptions over');
+      console.log(TestTag, 'testDriverClickAtUndefinedOptions over');
     });
 
     /**
-     * @tc.name   testDriverLongClickAtWithOptionsDefault
-     * @tc.number SUB_testfwk_UITEST_DRIVER_LONGCLICKATWITHOPTIONS_PARAM_0900
-     * @tc.desc   Test longClickAtWithOptions with default parameters (no options)
+     * @tc.name   testDriverLongClickAtDefault
+     * @tc.number SUB_testfwk_UITEST_DRIVER_LONGCLICKAT_PARAM_0900
+     * @tc.desc   Test longClickAt with default parameters (no options)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverLongClickAtWithOptionsDefault', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testDriverLongClickAtWithOptionsDefault start`);
+    it('testDriverLongClickAtDefault', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverLongClickAtDefault start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
       let button = await driver.findComponent(ON.text('next page'))
@@ -263,19 +263,19 @@ export default function uitestApi26Test() {
       expect(text).assertEqual('longClick')
       await newButton.click()
       await stopApplication('com.uitestScene.acts')
-      console.log(`${TestTag}, testDriverLongClickAtWithOptionsDefault end`);
+      console.log(`${TestTag}, testDriverLongClickAtDefault end`);
     });
 
     /**
-     * @tc.name   testDriverLongClickAtWithOptionsEmptyOptions
-     * @tc.number SUB_testfwk_UITEST_DRIVER_LONGCLICKATWITHOPTIONS_PARAM_1000
-     * @tc.desc   Test longClickAtWithOptions with empty TouchOptions object
+     * @tc.name   testDriverLongClickAtEmptyOptions
+     * @tc.number SUB_testfwk_UITEST_DRIVER_LONGCLICKAT_PARAM_1000
+     * @tc.desc   Test longClickAt with empty TouchOptions object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverLongClickAtWithOptionsEmptyOptions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testDriverLongClickAtWithOptionsEmptyOptions start`);
+    it('testDriverLongClickAtEmptyOptions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverLongClickAtEmptyOptions start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
       let button = await driver.findComponent(ON.text('next page'))
@@ -288,13 +288,13 @@ export default function uitestApi26Test() {
       expect(text).assertEqual('longClick')
       await newButton.click()
       await stopApplication('com.uitestScene.acts')
-      console.log(`${TestTag}, testDriverLongClickAtWithOptionsEmptyOptions end`);
+      console.log(`${TestTag}, testDriverLongClickAtEmptyOptions end`);
     });
 
     /**
      * @tc.name   testDriverLongClickAtDurationMin
-     * @tc.number SUB_TESTFWK_UITEST_DRIVER_LONGCLICKATWITHOPTIONS_PARAM_1100
-     * @tc.desc   Test longClickAtWithOptions with duration=1500 (minimum value)
+     * @tc.number SUB_testfwk_UITEST_DRIVER_LONGCLICKAT_PARAM_1100
+     * @tc.desc   Test longClickAt with duration=1500 (minimum value)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -317,15 +317,15 @@ export default function uitestApi26Test() {
     });
 
     /**
-     * @tc.name   testDriverLongClickAtWithOptionsPressure
-     * @tc.number SUB_TESTFWK_UITEST_DRIVER_LONGCLICKATWITHOPTIONS_PARAM_1200
-     * @tc.desc   Test longClickAtWithOptions with pressure=0.5
+     * @tc.name   testDriverLongClickAtPressure
+     * @tc.number SUB_testfwk_UITEST_DRIVER_LONGCLICKAT_PARAM_1200
+     * @tc.desc   Test longClickAt with pressure=0.5
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverLongClickAtWithOptionsPressure', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testDriverLongClickAtWithOptionsPressure start`);
+    it('testDriverLongClickAtPressure', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverLongClickAtPressure start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
       let button = await driver.findComponent(ON.text('next page'))
@@ -338,19 +338,19 @@ export default function uitestApi26Test() {
       expect(text).assertEqual('longClick')
       await newButton.click()
       await stopApplication('com.uitestScene.acts')
-      console.log(`${TestTag}, testDriverLongClickAtWithOptionsPressure end`);
+      console.log(`${TestTag}, testDriverLongClickAtPressure end`);
     });
 
     /**
-     * @tc.name   testDriverLongClickAtWithOptionsDurationAndPressure
-     * @tc.number SUB_TESTFWK_UITEST_DRIVER_LONGCLICKATWITHOPTIONS_PARAM_1300
-     * @tc.desc   Test longClickAtWithOptions with duration=3000 and pressure=0.5
+     * @tc.name   testDriverLongClickAtDurationAndPressure
+     * @tc.number SUB_testfwk_UITEST_DRIVER_LONGCLICKAT_PARAM_1300
+     * @tc.desc   Test longClickAt with duration=3000 and pressure=0.5
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverLongClickAtWithOptionsDurationAndPressure', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testDriverLongClickAtWithOptionsDurationAndPressure start`);
+    it('testDriverLongClickAtDurationAndPressure', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverLongClickAtDurationAndPressure start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
       let button = await driver.findComponent(ON.text('next page'))
@@ -363,19 +363,19 @@ export default function uitestApi26Test() {
       expect(text).assertEqual('longClick')
       await newButton.click()
       await stopApplication('com.uitestScene.acts')
-      console.log(`${TestTag}, testDriverLongClickAtWithOptionsDurationAndPressure end`);
+      console.log(`${TestTag}, testDriverLongClickAtDurationAndPressure end`);
     });
 
     /**
-     * @tc.name   testDriverLongClickAtWithOptionsBoundaryPressureMin
-     * @tc.number SUB_TESTFWK_UITEST_DRIVER_LONGCLICKATWITHOPTIONS_BOUNDARY_1400
-     * @tc.desc   Test longClickAtWithOptions with pressure=0 (minimum boundary value)
+     * @tc.name   testDriverLongClickAtBoundaryPressureMin
+     * @tc.number SUB_testfwk_UITEST_DRIVER_LONGCLICKAT_BOUNDARY_1400
+     * @tc.desc   Test longClickAt with pressure=0 (minimum boundary value)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverLongClickAtWithOptionsBoundaryPressureMin', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testDriverLongClickAtWithOptionsBoundaryPressureMin start`);
+    it('testDriverLongClickAtBoundaryPressureMin', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverLongClickAtBoundaryPressureMin start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
       let button = await driver.findComponent(ON.text('next page'))
@@ -388,19 +388,19 @@ export default function uitestApi26Test() {
       expect(text).assertEqual('longClick')
       await newButton.click()
       await stopApplication('com.uitestScene.acts')
-      console.log(`${TestTag}, testDriverLongClickAtWithOptionsBoundaryPressureMin end`);
+      console.log(`${TestTag}, testDriverLongClickAtBoundaryPressureMin end`);
     });
 
     /**
-     * @tc.name   testDriverLongClickAtWithOptionsBoundaryPressureMax
-     * @tc.number SUB_TESTFWK_UITEST_DRIVER_LONGCLICKATWITHOPTIONS_BOUNDARY_1500
-     * @tc.desc   Test longClickAtWithOptions with pressure=1 (maximum boundary value)
+     * @tc.name   testDriverLongClickAtBoundaryPressureMax
+     * @tc.number SUB_testfwk_UITEST_DRIVER_LONGCLICKAT_BOUNDARY_1500
+     * @tc.desc   Test longClickAt with pressure=1 (maximum boundary value)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverLongClickAtWithOptionsBoundaryPressureMax', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testDriverLongClickAtWithOptionsBoundaryPressureMax start`);
+    it('testDriverLongClickAtBoundaryPressureMax', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverLongClickAtBoundaryPressureMax start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
       let button = await driver.findComponent(ON.text('next page'))
@@ -413,19 +413,19 @@ export default function uitestApi26Test() {
       expect(text).assertEqual('longClick')
       await newButton.click()
       await stopApplication('com.uitestScene.acts')
-      console.log(`${TestTag}, testDriverLongClickAtWithOptionsBoundaryPressureMax end`);
+      console.log(`${TestTag}, testDriverLongClickAtBoundaryPressureMax end`);
     });
 
     /**
-     * @tc.name   testDriverLongClickAtWithOptionsNullOptions
-     * @tc.number SUB_TESTFWK_UITEST_DRIVER_LONGCLICKATWITHOPTIONS_PARAM_1600
-     * @tc.desc   Test longClickAtWithOptions with options=null (undefined)
+     * @tc.name   testDriverLongClickAtNullOptions
+     * @tc.number SUB_testfwk_UITEST_DRIVER_LONGCLICKAT_PARAM_1600
+     * @tc.desc   Test longClickAt with options=null (undefined)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverLongClickAtWithOptionsNullOptions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testDriverLongClickAtWithOptionsNullOptions start`);
+    it('testDriverLongClickAtNullOptions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverLongClickAtNullOptions start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
       let button = await driver.findComponent(ON.text('next page'))
@@ -437,19 +437,19 @@ export default function uitestApi26Test() {
       expect(text).assertEqual('longClick')
       await newButton.click()
       await stopApplication('com.uitestScene.acts')
-      console.log(`${TestTag}, testDriverLongClickAtWithOptionsNullOptions end`);
+      console.log(`${TestTag}, testDriverLongClickAtNullOptions end`);
     });
 
     /**
-     * @tc.name   testDriverLongClickAtWithOptionsWithOptionsUndefinedOptions
-     * @tc.number SUB_TESTFWK_UITEST_DRIVER_LONGCLICKATWITHOPTIONS_PARAM_1700
-     * @tc.desc   Test longClickAtWithOptions with options=undefined (undefined)
+     * @tc.name   testDriverLongClickAtUndefinedOptions
+     * @tc.number SUB_testfwk_UITEST_DRIVER_LONGCLICKAT_PARAM_1700
+     * @tc.desc   Test longClickAt with options=undefined (undefined)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverLongClickAtWithOptionsWithOptionsUndefinedOptions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testDriverLongClickAtWithOptionsWithOptionsUndefinedOptions start`);
+    it('testDriverLongClickAtUndefinedOptions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverLongClickAtUndefinedOptions start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
       let button = await driver.findComponent(ON.text('next page'))
@@ -461,19 +461,19 @@ export default function uitestApi26Test() {
       expect(text).assertEqual('longClick')
       await newButton.click()
       await stopApplication('com.uitestScene.acts')
-      console.log(`${TestTag}, testDriverLongClickAtWithOptionsWithOptionsUndefinedOptions end`);
+      console.log(`${TestTag}, testDriverLongClickAtUndefinedOptions end`);
     });
 
     /**
-     * @tc.name   testDriverSwipeBetweenWithOptionsDefault
-     * @tc.number SUB_TESTFWK_UITEST_DRIVER_SWIPEBETWEENWITHOPTIONS_PARAM_1800
-     * @tc.desc   Test swipeBetweenWithOptions with default parameters (no options)
+     * @tc.name   testDriverSwipeBetweenDefault
+     * @tc.number SUB_testfwk_UITEST_DRIVER_SWIPEBETWEEN_PARAM_1800
+     * @tc.desc   Test swipeBetween with default parameters (no options)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverSwipeBetweenWithOptionsDefault', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsDefault start`);
+    it('testDriverSwipeBetweenDefault', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.info(`${TestTag}, testDriverSwipeBetweenDefault start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
       let disPlay = await display.getDefaultDisplay();
@@ -490,23 +490,23 @@ export default function uitestApi26Test() {
       let text = await driver.findComponent(ON.text('toast'))
       expect(text).assertNull();
       await stopApplication('com.uitestScene.acts')
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsDefault end`);
+      console.info(`${TestTag}, testDriverSwipeBetweenDefault end`);
     });
 
     /**
-     * @tc.name   testDriverSwipeBetweenWithOptionsWithSpeed
-     * @tc.number SUB_TESTFWK_UITEST_DRIVER_SWIPEBETWEENWITHOPTIONS_PARAM_1900
-     * @tc.desc   Test swipeBetweenWithOptions with speed option
+     * @tc.name   testDriverSwipeBetweenWithSpeed
+     * @tc.number SUB_testfwk_UITEST_DRIVER_SWIPEBETWEEN_PARAM_1900
+     * @tc.desc   Test swipeBetween with speed option
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverSwipeBetweenWithOptionsWithSpeed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsWithSpeed start`);
+    it('testDriverSwipeBetweenWithSpeed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.info(`${TestTag}, testDriverSwipeBetweenWithSpeed start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
       let disPlay = await display.getDefaultDisplay();
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsWithSpeed disPlay is: ${JSON.stringify(disPlay)}`);
+      console.info(`${TestTag}, testDriverSwipeBetweenWithSpeed disPlay is: ${JSON.stringify(disPlay)}`);
       let scoll = await driver.findComponent(ON.type('Scroll'))
       let rect = await scoll.getBounds()
       let center = await scoll.getBoundsCenter()
@@ -520,24 +520,24 @@ export default function uitestApi26Test() {
       let text = await driver.findComponent(ON.text('toast'))
       expect(text).assertNull();
       await stopApplication('com.uitestScene.acts')
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsWithSpeed end`);
+      console.info(`${TestTag}, testDriverSwipeBetweenWithSpeed end`);
     });
 
 
     /**
-     * @tc.name   testDriverSwipeBetweenWithOptionsWithPressure
-     * @tc.number SUB_TESTFWK_UITEST_DRIVER_SWIPEBETWEENWITHOPTIONS_PARAM_2000
-     * @tc.desc   Test swipeBetweenWithOptions with pressure option
+     * @tc.name   testDriverSwipeBetweenWithPressure
+     * @tc.number SUB_testfwk_UITEST_DRIVER_SWIPEBETWEEN_PARAM_2000
+     * @tc.desc   Test swipeBetween with pressure option
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverSwipeBetweenWithOptionsWithPressure', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsWithPressure start`);
+    it('testDriverSwipeBetweenWithPressure', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.info(`${TestTag}, testDriverSwipeBetweenWithPressure start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
       let disPlay = await display.getDefaultDisplay();
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsWithPressure disPlay is: ${JSON.stringify(disPlay)}`);
+      console.info(`${TestTag}, testDriverSwipeBetweenWithPressure disPlay is: ${JSON.stringify(disPlay)}`);
       let scoll = await driver.findComponent(ON.type('Scroll'))
       let rect = await scoll.getBounds()
       let center = await scoll.getBoundsCenter()
@@ -551,23 +551,23 @@ export default function uitestApi26Test() {
       let text = await driver.findComponent(ON.text('toast'))
       expect(text).assertNull();
       await stopApplication('com.uitestScene.acts')
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsWithPressure end`);
+      console.info(`${TestTag}, testDriverSwipeBetweenWithPressure end`);
     });
 
     /**
-     * @tc.name   testDriverSwipeBetweenWithOptionsWithSpeedAndPressure
-     * @tc.number SUB_TESTFWK_UITEST_DRIVER_SWIPEBETWEENWITHOPTIONS_PARAM_2100
-     * @tc.desc   Test swipeBetweenWithOptions with both speed and pressure options
+     * @tc.name   testDriverSwipeBetweenWithSpeedAndPressure
+     * @tc.number SUB_testfwk_UITEST_DRIVER_SWIPEBETWEEN_PARAM_2100
+     * @tc.desc   Test swipeBetween with both speed and pressure options
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverSwipeBetweenWithOptionsWithSpeedAndPressure', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsWithSpeedAndPressure start`);
+    it('testDriverSwipeBetweenWithSpeedAndPressure', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.info(`${TestTag}, testDriverSwipeBetweenWithSpeedAndPressure start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
       let disPlay = await display.getDefaultDisplay();
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsWithSpeedAndPressure disPlay is: ${JSON.stringify(disPlay)}`);
+      console.info(`${TestTag}, testDriverSwipeBetweenWithSpeedAndPressure disPlay is: ${JSON.stringify(disPlay)}`);
       let scoll = await driver.findComponent(ON.type('Scroll'))
       let rect = await scoll.getBounds()
       let center = await scoll.getBoundsCenter()
@@ -581,23 +581,23 @@ export default function uitestApi26Test() {
       let text = await driver.findComponent(ON.text('toast'))
       expect(text).assertNull();
       await stopApplication('com.uitestScene.acts')
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsWithSpeedAndPressure end`);
+      console.info(`${TestTag}, testDriverSwipeBetweenWithSpeedAndPressure end`);
     });
 
     /**
-     * @tc.name   testDriverSwipeBetweenWithOptionsNullOptions
-     * @tc.number SUB_TESTFWK_UITEST_DRIVER_SWIPEBETWEENWITHOPTIONS_PARAM_2300
-     * @tc.desc   Test swipeBetweenWithOptions with null options (default TouchOptions)
+     * @tc.name   testDriverSwipeBetweenNullOptions
+     * @tc.number SUB_testfwk_UITEST_DRIVER_SWIPEBETWEEN_PARAM_2300
+     * @tc.desc   Test swipeBetween with null options (default TouchOptions)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverSwipeBetweenWithOptionsNullOptions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsNullOptions start`);
+    it('testDriverSwipeBetweenNullOptions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.info(`${TestTag}, testDriverSwipeBetweenNullOptions start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
       let disPlay = await display.getDefaultDisplay();
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsNullOptions disPlay is: ${JSON.stringify(disPlay)}`);
+      console.info(`${TestTag}, testDriverSwipeBetweenNullOptions disPlay is: ${JSON.stringify(disPlay)}`);
       let scoll = await driver.findComponent(ON.type('Scroll'))
       let rect = await scoll.getBounds()
       let center = await scoll.getBoundsCenter()
@@ -610,23 +610,23 @@ export default function uitestApi26Test() {
       let text = await driver.findComponent(ON.text('toast'))
       expect(text).assertNull();
       await stopApplication('com.uitestScene.acts')
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsNullOptions end`);
+      console.info(`${TestTag}, testDriverSwipeBetweenNullOptions end`);
     });
 
     /**
-     * @tc.name   testDriverSwipeBetweenWithOptionsUndefinedOptions
-     * @tc.number SUB_TESTFWK_UITEST_DRIVER_SWIPEBETWEENWITHOPTIONS_PARAM_2400
-     * @tc.desc   Test swipeBetweenWithOptions with undefined options (default TouchOptions)
+     * @tc.name   testDriverSwipeBetweenUndefinedOptions
+     * @tc.number SUB_testfwk_UITEST_DRIVER_SWIPEBETWEEN_PARAM_2400
+     * @tc.desc   Test swipeBetween with undefined options (default TouchOptions)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverSwipeBetweenWithOptionsUndefinedOptions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsUndefinedOptions start`);
+    it('testDriverSwipeBetweenUndefinedOptions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.info(`${TestTag}, testDriverSwipeBetweenUndefinedOptions start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
       let disPlay = await display.getDefaultDisplay();
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsUndefinedOptions disPlay is: ${JSON.stringify(disPlay)}`);
+      console.info(`${TestTag}, testDriverSwipeBetweenUndefinedOptions disPlay is: ${JSON.stringify(disPlay)}`);
       let scoll = await driver.findComponent(ON.type('Scroll'))
       let rect = await scoll.getBounds()
       let center = await scoll.getBoundsCenter()
@@ -639,23 +639,23 @@ export default function uitestApi26Test() {
       let text = await driver.findComponent(ON.text('toast'))
       expect(text).assertNull();
       await stopApplication('com.uitestScene.acts')
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsUndefinedOptions end`);
+      console.info(`${TestTag}, testDriverSwipeBetweenUndefinedOptions end`);
     });
 
     /**
-     * @tc.name   testDriverSwipeBetweenWithOptionsWithEmptyObjectOptions
-     * @tc.number SUB_TESTFWK_UITEST_DRIVER_SWIPEBETWEENWITHOPTIONS_PARAM_2500
-     * @tc.desc   Test swipeBetweenWithOptions with empty object options {}
+     * @tc.name   testDriverSwipeBetweenWithEmptyObjectOptions
+     * @tc.number SUB_testfwk_UITEST_DRIVER_SWIPEBETWEEN_PARAM_2500
+     * @tc.desc   Test swipeBetween with empty object options {}
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverSwipeBetweenWithOptionsWithEmptyObjectOptions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsWithEmptyObjectOptions start`);
+    it('testDriverSwipeBetweenWithEmptyObjectOptions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.info(`${TestTag}, testDriverSwipeBetweenWithEmptyObjectOptions start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
       let disPlay = await display.getDefaultDisplay();
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsWithEmptyObjectOptions disPlay is: ${JSON.stringify(disPlay)}`);
+      console.info(`${TestTag}, testDriverSwipeBetweenWithEmptyObjectOptions disPlay is: ${JSON.stringify(disPlay)}`);
       let scoll = await driver.findComponent(ON.type('Scroll'))
       let rect = await scoll.getBounds()
       let center = await scoll.getBoundsCenter()
@@ -669,23 +669,23 @@ export default function uitestApi26Test() {
       let text = await driver.findComponent(ON.text('toast'))
       expect(text).assertNull();
       await stopApplication('com.uitestScene.acts')
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsWithEmptyObjectOptions end`);
+      console.info(`${TestTag}, testDriverSwipeBetweenWithEmptyObjectOptions end`);
     });
 
     /**
-     * @tc.name   testDriverSwipeBetweenWithOptionsSpeedMinBoundary
-     * @tc.number SUB_TESTFWK_UITEST_DRIVER_SWIPEBETWEENWITHOPTIONS_BOUNDARY_2600
-     * @tc.desc   Test swipeBetweenWithOptions with speed at minimum boundary (200)
+     * @tc.name   testDriverSwipeBetweenSpeedMinBoundary
+     * @tc.number SUB_testfwk_UITEST_DRIVER_SWIPEBETWEEN_BOUNDARY_2600
+     * @tc.desc   Test swipeBetween with speed at minimum boundary (200)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverSwipeBetweenWithOptionsSpeedMinBoundary', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsSpeedMinBoundary start`);
+    it('testDriverSwipeBetweenSpeedMinBoundary', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.info(`${TestTag}, testDriverSwipeBetweenSpeedMinBoundary start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
       let disPlay = await display.getDefaultDisplay();
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsSpeedMinBoundary disPlay is: ${JSON.stringify(disPlay)}`);
+      console.info(`${TestTag}, testDriverSwipeBetweenSpeedMinBoundary disPlay is: ${JSON.stringify(disPlay)}`);
       let scoll = await driver.findComponent(ON.type('Scroll'))
       let rect = await scoll.getBounds()
       let center = await scoll.getBoundsCenter()
@@ -699,23 +699,23 @@ export default function uitestApi26Test() {
       let text = await driver.findComponent(ON.text('toast'))
       expect(text).assertNull();
       await stopApplication('com.uitestScene.acts')
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsSpeedMinBoundary end`);
+      console.info(`${TestTag}, testDriverSwipeBetweenSpeedMinBoundary end`);
     });
 
     /**
-     * @tc.name   testDriverSwipeBetweenWithOptionsSpeedMaxBoundary
-     * @tc.number SUB_TESTFWK_UITEST_DRIVER_SWIPEBETWEENWITHOPTIONS_BOUNDARY_2700
-     * @tc.desc   Test swipeBetweenWithOptions with speed at maximum boundary (40000)
+     * @tc.name   testDriverSwipeBetweenSpeedMaxBoundary
+     * @tc.number SUB_testfwk_UITEST_DRIVER_SWIPEBETWEEN_BOUNDARY_2700
+     * @tc.desc   Test swipeBetween with speed at maximum boundary (40000)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverSwipeBetweenWithOptionsSpeedMaxBoundary', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsSpeedMaxBoundary start`);
+    it('testDriverSwipeBetweenSpeedMaxBoundary', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.info(`${TestTag}, testDriverSwipeBetweenSpeedMaxBoundary start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
       let disPlay = await display.getDefaultDisplay();
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsSpeedMaxBoundary disPlay is: ${JSON.stringify(disPlay)}`);
+      console.info(`${TestTag}, testDriverSwipeBetweenSpeedMaxBoundary disPlay is: ${JSON.stringify(disPlay)}`);
       let scoll = await driver.findComponent(ON.type('Scroll'))
       let rect = await scoll.getBounds()
       let center = await scoll.getBoundsCenter()
@@ -729,23 +729,23 @@ export default function uitestApi26Test() {
       let text = await driver.findComponent(ON.text('toast'))
       expect(text).assertNull();
       await stopApplication('com.uitestScene.acts')
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsSpeedMaxBoundary end`);
+      console.info(`${TestTag}, testDriverSwipeBetweenSpeedMaxBoundary end`);
     });
 
     /**
-     * @tc.name   testDriverSwipeBetweenWithOptionsPressureMinBoundary
-     * @tc.number SUB_TESTFWK_UITEST_DRIVER_SWIPEBETWEENWITHOPTIONS_BOUNDARY_2800
-     * @tc.desc   Test swipeBetweenWithOptions with pressure at minimum boundary (0)
+     * @tc.name   testDriverSwipeBetweenPressureMinBoundary
+     * @tc.number SUB_testfwk_UITEST_DRIVER_SWIPEBETWEEN_BOUNDARY_2800
+     * @tc.desc   Test swipeBetween with pressure at minimum boundary (0)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverSwipeBetweenWithOptionsPressureMinBoundary', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsPressureMinBoundary start`);
+    it('testDriverSwipeBetweenPressureMinBoundary', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.info(`${TestTag}, testDriverSwipeBetweenPressureMinBoundary start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
       let disPlay = await display.getDefaultDisplay();
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsPressureMinBoundary disPlay is: ${JSON.stringify(disPlay)}`);
+      console.info(`${TestTag}, testDriverSwipeBetweenPressureMinBoundary disPlay is: ${JSON.stringify(disPlay)}`);
       let scoll = await driver.findComponent(ON.type('Scroll'))
       let rect = await scoll.getBounds()
       let center = await scoll.getBoundsCenter()
@@ -759,23 +759,23 @@ export default function uitestApi26Test() {
       let text = await driver.findComponent(ON.text('toast'))
       expect(text).assertNull();
       await stopApplication('com.uitestScene.acts')
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsPressureMinBoundary end`);
+      console.info(`${TestTag}, testDriverSwipeBetweenPressureMinBoundary end`);
     });
 
     /**
      * @tc.name   testDriverSwipeBetweenPressureMaxBoundary
-     * @tc.number SUB_TESTFWK_UITEST_DRIVER_SWIPEBETWEENWITHOPTIONS_BOUNDARY_2900
-     * @tc.desc   Test swipeBetweenWithOptions with pressure at maximum boundary (1)
+     * @tc.number SUB_testfwk_UITEST_DRIVER_SWIPEBETWEEN_BOUNDARY_2900
+     * @tc.desc   Test swipeBetween with pressure at maximum boundary (1)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverSwipeBetweenWithOptionsPressureMaxBoundary', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsPressureMaxBoundary start`);
+    it('testDriverSwipeBetweenPressureMaxBoundary', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.info(`${TestTag}, testDriverSwipeBetweenPressureMaxBoundary start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
       let disPlay = await display.getDefaultDisplay();
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsPressureMaxBoundary disPlay is: ${JSON.stringify(disPlay)}`);
+      console.info(`${TestTag}, testDriverSwipeBetweenPressureMaxBoundary disPlay is: ${JSON.stringify(disPlay)}`);
       let scoll = await driver.findComponent(ON.type('Scroll'))
       let rect = await scoll.getBounds()
       let center = await scoll.getBoundsCenter()
@@ -789,24 +789,24 @@ export default function uitestApi26Test() {
       let text = await driver.findComponent(ON.text('toast'))
       expect(text).assertNull();
       await stopApplication('com.uitestScene.acts')
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsPressureMaxBoundary end`);
+      console.info(`${TestTag}, testDriverSwipeBetweenPressureMaxBoundary end`);
     });
 
 
     /**
-     * @tc.name   testDriverSwipeBetweenWithOptionsWithAllBoundaryValues
-     * @tc.number SUB_TESTFWK_UITEST_DRIVER_SWIPEBETWEENWITHOPTIONS_BOUNDARY_3000
-     * @tc.desc   Test swipeBetweenWithOptions with all properties at boundary values
+     * @tc.name   testDriverSwipeBetweenWithAllBoundaryValues
+     * @tc.number SUB_testfwk_UITEST_DRIVER_SWIPEBETWEEN_BOUNDARY_3000
+     * @tc.desc   Test swipeBetween with all properties at boundary values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverSwipeBetweenWithOptionsWithAllBoundaryValues', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsWithAllBoundaryValues start`);
+    it('testDriverSwipeBetweenWithAllBoundaryValues', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.info(`${TestTag}, testDriverSwipeBetweenWithAllBoundaryValues start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
       let disPlay = await display.getDefaultDisplay();
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsWithAllBoundaryValues disPlay is: ${JSON.stringify(disPlay)}`);
+      console.info(`${TestTag}, testDriverSwipeBetweenWithAllBoundaryValues disPlay is: ${JSON.stringify(disPlay)}`);
       let scoll = await driver.findComponent(ON.type('Scroll'))
       let rect = await scoll.getBounds()
       let center = await scoll.getBoundsCenter()
@@ -820,23 +820,23 @@ export default function uitestApi26Test() {
       let text = await driver.findComponent(ON.text('toast'))
       expect(text).assertNull();
       await stopApplication('com.uitestScene.acts')
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsWithAllBoundaryValues end`);
+      console.info(`${TestTag}, testDriverSwipeBetweenWithAllBoundaryValues end`);
     });
 
     /**
-     * @tc.name   testDriverSwipeBetweenWithOptionsSpeedOutOfRangeLow
-     * @tc.number SUB_TESTFWK_UITEST_SWIPEBETWEENWITHOPTIONS_BOUNDARY_3100
-     * @tc.desc   Test swipeBetweenWithOptions with speed at min boundary (199)
+     * @tc.name   testDriverSwipeBetweenSpeedOutOfRangeLow
+     * @tc.number SUB_testfwk_UITEST_SWIPEBETWEEN_BOUNDARY_3100
+     * @tc.desc   Test swipeBetween with speed at min boundary (199)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverSwipeBetweenWithOptionsSpeedOutOfRangeLow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsSpeedOutOfRangeLow start`);
+    it('testDriverSwipeBetweenSpeedOutOfRangeLow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.info(`${TestTag}, testDriverSwipeBetweenSpeedOutOfRangeLow start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
       let disPlay = await display.getDefaultDisplay();
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsSpeedOutOfRangeLow disPlay is: ${JSON.stringify(disPlay)}`);
+      console.info(`${TestTag}, testDriverSwipeBetweenSpeedOutOfRangeLow disPlay is: ${JSON.stringify(disPlay)}`);
       let scroll = await driver.findComponent(ON.type('Scroll'))
       let rect = await scroll.getBounds()
       let center = await scroll.getBoundsCenter()
@@ -850,23 +850,23 @@ export default function uitestApi26Test() {
       let text = await driver.findComponent(ON.text('toast'))
       expect(text).assertNull();
       await stopApplication('com.uitestScene.acts')
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsSpeedOutOfRangeLow end`);
+      console.info(`${TestTag}, testDriverSwipeBetweenSpeedOutOfRangeLow end`);
     });
 
     /**
      * @tc.name   testDriverSwipeBetweenSpeedOutOfRangeHigh
-     * @tc.number SUB_TESTFWK_UITEST_SWIPEBETWEENWITHOPTIONS_ERROR_0500
-     * @tc.desc   Test swipeBetweenWithOptions with speed at maximum boundary (400001)
+     * @tc.number SUB_testfwk_UITEST_SWIPEBETWEEN_ERROR_0500
+     * @tc.desc   Test swipeBetween with speed at maximum boundary (400001)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverSwipeBetweenWithOptionsSpeedOutOfRangeHigh', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsSpeedOutOfRangeHigh start`);
+    it('testDriverSwipeBetweenSpeedOutOfRangeHigh', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.info(`${TestTag}, testDriverSwipeBetweenSpeedOutOfRangeHigh start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
       let disPlay = await display.getDefaultDisplay();
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsSpeedOutOfRangeHigh disPlay is: ${JSON.stringify(disPlay)}`);
+      console.info(`${TestTag}, testDriverSwipeBetweenSpeedOutOfRangeHigh disPlay is: ${JSON.stringify(disPlay)}`);
       let scroll = await driver.findComponent(ON.type('Scroll'))
       let rect = await scroll.getBounds()
       let center = await scroll.getBoundsCenter()
@@ -880,7 +880,7 @@ export default function uitestApi26Test() {
       let text = await driver.findComponent(ON.text('toast'))
       expect(text).assertNull();
       await stopApplication('com.uitestScene.acts')
-      console.info(`${TestTag}, testDriverSwipeBetweenWithOptionsSpeedOutOfRangeHigh end`);
+      console.info(`${TestTag}, testDriverSwipeBetweenSpeedOutOfRangeHigh end`);
     });
 
     /**

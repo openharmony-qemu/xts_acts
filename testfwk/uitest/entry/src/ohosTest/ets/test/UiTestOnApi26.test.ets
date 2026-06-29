@@ -1,4 +1,4 @@
-        /**
+/**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -11,7 +11,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
-         */
+ */
 
 import { describe, it, expect, TestType, Level, Size, beforeAll, beforeEach, afterAll } from '@ohos/hypium'
 import { Driver, ON, Component } from '@kit.TestKit'
@@ -38,15 +38,15 @@ export default function uitestOnApi26Test() {
     })
 
     /**
-     * @tc.name   testOnBeforeComponentValid
-     * @tc.number SUB_testfwk_UITEST_ON_BEFORECOMPONENT_COMPONENT_PARAM_0100
-     * @tc.desc   Test On.beforeComponent(com: Component) with valid Component parameter
+     * @tc.name   testOnIsBeforeComponentValid
+     * @tc.number SUB_testfwk_UITEST_ON_ISBEFORE_COMPONENT_PARAM_0100
+     * @tc.desc   Test On.isBefore(com: Component) with valid Component parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testOnBeforeComponentValid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.info(TestTag + 'testOnBeforeComponentValid start');
+    it('testOnIsBeforeComponentValid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.info(TestTag + 'testOnIsBeforeComponentValid start');
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
       await driver.delayMs(waitUiReadyMs);
       let text2 = await driver.findComponent(ON.text('dialog'));
@@ -56,19 +56,19 @@ export default function uitestOnApi26Test() {
       let text3 = await driver.findComponent(ON.text('toastNot').beforeComponent(text2));
       expect(text3).assertNull();
       await stopApplication('com.uitestScene.acts');
-      console.info(TestTag + 'testOnBeforeComponentValid over');
+      console.info(TestTag + 'testOnIsBeforeComponentValid over');
     });
 
     /**
-     * @tc.name   testOnBeforeComponentInvalid
-     * @tc.number SUB_testfwk_UITEST_ON_BEFORECOMPONENT_COMPONENT_PARAM_0200
-     * @tc.desc   Test On.beforeComponent(com: Component) with invalid Component parameter
+     * @tc.name   testOnIsBeforeComponentInvalid
+     * @tc.number SUB_testfwk_UITEST_ON_ISBEFORE_COMPONENT_PARAM_0200
+     * @tc.desc   Test On.isBefore(com: Component) with invalid Component parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testOnBeforeComponentInvalid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.info(`testOnBeforeComponentInvalid start`);
+    it('testOnIsBeforeComponentInvalid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.info(`testOnIsBeforeComponentInvalid start`);
       try {
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver.delayMs(waitUiReadyMs);
@@ -78,22 +78,22 @@ export default function uitestOnApi26Test() {
         ON.beforeComponent(text2);
         expect().assertFail();
       } catch (error) {
-        console.info(`testOnBeforeComponentInvalid,error.code, ${JSON.stringify(error)}`);
+        console.info(`testOnIsBeforeComponentInvalid,error.code, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ParameterErrorCode);
       }
-      console.info(`testOnBeforeComponentInvalid over`);
+      console.info(`testOnIsBeforeComponentValid over`);
     });
 
     /**
-     * @tc.name   testOnAfterComponentValid
-     * @tc.number SUB_testfwk_UITEST_ON_AFTERCOMPONENT_COMPONENT_PARAM_0300
-     * @tc.desc   Test On.afterComponent(com: Component) with valid Component parameter
+     * @tc.name   testOnIsAfterComponentValid
+     * @tc.number SUB_testfwk_UITEST_ON_ISBEFORE_COMPONENT_PARAM_0300
+     * @tc.desc   Test On.isAfter(com: Component) with valid Component parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testOnAfterComponentValid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.info(TestTag + 'testOnAfterComponentValid start');
+    it('testOnIsAfterComponentValid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.info(TestTag + 'testOnIsAfterComponentValid start');
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
       await driver.delayMs(waitUiReadyMs);
       let text2 = await driver.findComponent(ON.text('toast'));
@@ -103,19 +103,19 @@ export default function uitestOnApi26Test() {
       let text3 = await driver.findComponent(ON.text('dialogNot').afterComponent(text2));
       expect(text3).assertNull();
       await stopApplication('com.uitestScene.acts');
-      console.info(TestTag + 'testOnAfterComponentValid over');
+      console.info(TestTag + 'testOnIsAfterComponentValid over');
     });
 
     /**
-     * @tc.name   testOnAfterComponentInvalid
-     * @tc.number SUB_testfwk_UITEST_ON_AFTERCOMPONENT_COMPONENT_PARAM_0400
-     * @tc.desc   Test On.afterComponent(com: Component) with invalid Component parameter
+     * @tc.name   testOnIsAfterComponentInvalid
+     * @tc.number SUB_testfwk_UITEST_ON_ISBEFORE_COMPONENT_PARAM_0400
+     * @tc.desc   Test On.isAfter(com: Component) with invalid Component parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testOnAfterComponentInvalid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.info(`testOnAfterComponentInvalid start`);
+    it('testOnIsAfterComponentInvalid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.info(`testOnIsAfterComponentInvalid start`);
       try {
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver.delayMs(waitUiReadyMs);
@@ -126,16 +126,16 @@ export default function uitestOnApi26Test() {
         ON.afterComponent(text2);
         expect().assertFail();
       } catch (error) {
-        console.info(`testOnAfterComponentInvalid,error.code, ${JSON.stringify(error)}`);
+        console.info(`testOnIsAfterComponentInvalid,error.code, ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(ParameterErrorCode);
       }
-      console.info(`testOnAfterComponentInvalid over`);
+      console.info(`testOnIsAfterComponentInvalid over`);
     });
 
     /**
      * @tc.name   testOnWithinComponentValid
-     * @tc.number SUB_testfwk_UITEST_ON_WITHINCOMPONENT_PARAM_0500
-     * @tc.desc   Test On.withinComponent(com: Component) with valid Component parameter
+     * @tc.number SUB_testfwk_UITEST_ON_ISBEFORE_COMPONENT_PARAM_0500
+     * @tc.desc   Test On.within(com: Component) with valid Component parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -156,8 +156,8 @@ export default function uitestOnApi26Test() {
 
     /**
      * @tc.name   testOnWithinComponentInvalid
-     * @tc.number SUB_testfwk_UITEST_ON_WITHINCOMPONENT_PARAM_0600
-     * @tc.desc   Test On.withinComponent(com: Component) with invalid Component parameter
+     * @tc.number SUB_testfwk_UITEST_ON_ISBEFORE_COMPONENT_PARAM_0600
+     * @tc.desc   Test On.isAfter(com: Component) with invalid Component parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3

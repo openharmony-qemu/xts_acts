@@ -1160,7 +1160,7 @@ export default function uitestApi26ErrorTest() {
       console.log(`${TestTag}, testDriverMouseDragPressureMinimum start`);
       try {
         const touchOptions: TouchOptions = { pressure: 0 };
-        await driver.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, touchOptions);
+        await driver.mouseDragWithOptions({x: 100, y: 100}, {x: 100, y: 100}, touchOptions);
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testDriverMouseDragPressureMinimum error is: ${JSON.stringify(error)}`);
@@ -1181,7 +1181,7 @@ export default function uitestApi26ErrorTest() {
       console.log(`${TestTag}, testDriverMouseDragPressureMaximum start`);
       const touchOptions: TouchOptions = { pressure: 1 };
       try {
-        await driver.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, touchOptions);
+        await driver.mouseDragWithOptions({x: 100, y: 100}, {x: 100, y: 100}, touchOptions);
         expect().assertFail();
       } catch (error) {
         console.log(`${TestTag}, testDriverMouseDragPressureMinimum error is: ${JSON.stringify(error)}`);
@@ -1205,7 +1205,7 @@ export default function uitestApi26ErrorTest() {
       try {
         driver.delayMs(waitUiReadyMs * 3);
         await sleep(100);
-        await driver.mouseDrag(from, to, {speed: 600}, {key1: 0});
+        await driver.mouseDragWithOptions(from, to, {speed: 600}, {key1: 0});
         expect().assertFail();
       } catch (err) {
         console.log(`${TestTag}, testDriverMouseDragErrorConcurrentCall error is: ${JSON.stringify(err)}`);
@@ -1229,7 +1229,7 @@ export default function uitestApi26ErrorTest() {
       const to: Point = { x: 500, y: 800 };
       const touchOptions: TouchOptions = { speed: -100 };
       try {
-        await driver.mouseDrag(from, to, touchOptions);
+        await driver.mouseDragWithOptions(from, to, touchOptions);
         expect().assertFail();
       } catch (err) {
         console.log(`${TestTag}, testDriverMouseDragErrorSpeedNegative error is: ${JSON.stringify(err)}`);
@@ -1252,7 +1252,7 @@ export default function uitestApi26ErrorTest() {
       const to: Point = { x: 500, y: 800 };
       const touchOptions: TouchOptions = { duration: 1499 };
       try {
-        await driver.mouseDrag(from, to, touchOptions);
+        await driver.mouseDragWithOptions(from, to, touchOptions);
         expect().assertFail();
       } catch (err) {
         console.log(`${TestTag}, testDriverMouseDragErrorDurationTooSmall error is: ${JSON.stringify(err)}`);
@@ -1275,7 +1275,7 @@ export default function uitestApi26ErrorTest() {
       const to: Point = { x: 500, y: 800 };
       const touchOptions: TouchOptions = { pressure: -0.1 };
       try {
-        await driver.mouseDrag(from, to, touchOptions);
+        await driver.mouseDragWithOptions(from, to, touchOptions);
         expect().assertFail();
       } catch (err) {
         console.log(`${TestTag}, testDriverMouseDragErrorPressureTooSmall error is: ${JSON.stringify(err)}`);
@@ -1298,7 +1298,7 @@ export default function uitestApi26ErrorTest() {
       const to: Point = { x: 500, y: 800 };
       const touchOptions: TouchOptions = { pressure: 1.1 };
       try {
-        await driver.mouseDrag(from, to, touchOptions);
+        await driver.mouseDragWithOptions(from, to, touchOptions);
         expect().assertFail();
       } catch (err) {
         console.log(`${TestTag}, testDriverMouseDragErrorPressureTooLarge error is: ${JSON.stringify(err)}`);
@@ -1321,7 +1321,7 @@ export default function uitestApi26ErrorTest() {
       const to: Point = { x: 500, y: 800, displayId: 1 };
       const touchOptions: TouchOptions = { pressure: 1.0 };
       try {
-        await driver.mouseDrag(from, to, touchOptions);
+        await driver.mouseDragWithOptions(from, to, touchOptions);
         expect().assertFail();
       } catch (err) {
         console.log(`${TestTag}, testDriverMouseDragErrorDisplayIdDiff error is: ${JSON.stringify(err)}`);
@@ -1343,7 +1343,7 @@ export default function uitestApi26ErrorTest() {
       const from: ESObject = null;
       const to: Point = { x: 500, y: 800 };
       try {
-        await driver.mouseDrag(from as Point, to, {speed: 600}, {key1: 0});
+        await driver.mouseDragWithOptions(from as Point, to, {speed: 600}, {key1: 0});
         expect().assertFail();
       } catch (err) {
         console.log(`${TestTag}, testDriverMouseDragErrorNullFromPoint error is: ${JSON.stringify(err)}`);
@@ -1365,7 +1365,7 @@ export default function uitestApi26ErrorTest() {
       const from: ESObject = undefined;
       const to: Point = { x: 500, y: 800 };
       try {
-        await driver.mouseDrag(from as Point, to, {speed: 600}, {key1: 0});
+        await driver.mouseDragWithOptions(from as Point, to, {speed: 600}, {key1: 0});
         expect().assertFail();
       } catch (err) {
         console.log(`${TestTag}, testDriverMouseDragErrorUndefinedFromPoint error is: ${JSON.stringify(err)}`);
@@ -1387,7 +1387,7 @@ export default function uitestApi26ErrorTest() {
       const from: Point = { x: 500, y: 1000 };
       const to: ESObject = null;
       try {
-        await driver.mouseDrag(from, to as Point, {speed: 600}, {key1: 0});
+        await driver.mouseDragWithOptions(from, to as Point, {speed: 600}, {key1: 0});
         expect().assertFail();
       } catch (err) {
         console.log(`${TestTag}, testDriverMouseDragErrorNullToPoint error is: ${JSON.stringify(err)}`);
@@ -1409,7 +1409,7 @@ export default function uitestApi26ErrorTest() {
       const from: Point = { x: 500, y: 1000 };
       const to: ESObject = undefined;
       try {
-        await driver.mouseDrag(from, to as Point, {speed: 600}, {key1: 0});
+        await driver.mouseDragWithOptions(from, to as Point, {speed: 600}, {key1: 0});
         expect().assertFail();
       } catch (err) {
         console.log(`${TestTag}, testDriverMouseDragErrorUndefinedToPoint error is: ${JSON.stringify(err)}`);
