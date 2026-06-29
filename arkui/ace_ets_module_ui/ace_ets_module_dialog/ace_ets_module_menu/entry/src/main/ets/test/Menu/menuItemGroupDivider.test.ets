@@ -55,7 +55,7 @@ export default function menuItemGroupDivider() {
       console.info('[menuItemGroupDivider_001] START');
 
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('menuItemGroupDividerText');
+      let strJson = getInspectorByKey('menuItemGroupDivider' + '_menuItemGroupDividerText');
       await CommonFunc.sleep(200);
       let obj: ESObject = JSON.parse(strJson);
       console.info("[menuItemGroupDivider_001] component obj is: " + JSON.stringify(obj));
@@ -79,7 +79,7 @@ export default function menuItemGroupDivider() {
       console.info('[menuItemGroupDivider_002] START');
 
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('menuItemGroupDividerText');
+      let strJson = getInspectorByKey('menuItemGroupDivider' + '_menuItemGroupDividerText');
       await CommonFunc.sleep(200);
       let obj: ESObject = JSON.parse(strJson);
       console.info("[menuItemGroupDivider_002] component obj is: " + JSON.stringify(obj));

@@ -32,6 +32,7 @@ export default function signNormalNotAccessBiometricEnumExecute() {
       expect(2).assertEqual(userAuth.UserAuthType.FACE);
       expect(4).assertEqual(userAuth.UserAuthType.FINGERPRINT);
       expect(16).assertEqual(userAuth.UserAuthType.PRIVATE_PIN);
+      expect(64).assertEqual(userAuth.UserAuthType.COMPANION_DEVICE  );
       console.info('Security_IAM_userAuthType_Kit_Func_0084 end');
       done();
     })

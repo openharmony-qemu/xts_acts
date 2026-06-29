@@ -32,7 +32,7 @@ import router from '@ohos.router';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 
-export default function AddMonitorWildcardUnerfined() {
+export default function AddMonitorWildcardUnerfined(): void {
   describe('AddMonitorWildcardUnerfined', () => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api18.static", "EntryAbility");

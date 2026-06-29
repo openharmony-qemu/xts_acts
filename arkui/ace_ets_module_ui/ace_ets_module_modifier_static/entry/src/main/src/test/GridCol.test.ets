@@ -125,7 +125,7 @@ it('gridColTest_static_0004', Level.LEVEL0, async (done: () => void): Promise<vo
 
       console.info('gridColTest_static_0004 START');
       let driver = Driver.create();
-      let button = await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button = await (driver.findComponent(ON.id('gridCol' + '_changeButton')) as Promise<Component>);
       await button.click();
       await UtilsTest.msSleep(2000)
 

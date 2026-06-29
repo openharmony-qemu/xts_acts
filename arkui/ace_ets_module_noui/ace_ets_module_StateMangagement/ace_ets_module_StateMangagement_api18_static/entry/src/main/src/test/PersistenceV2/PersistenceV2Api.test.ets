@@ -32,7 +32,7 @@ import router from '@ohos.router';
 import { AppStorage, PersistenceV2 } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
  
-export default function PersistenceV2Api() {
+export default function PersistenceV2Api(): void {
   describe('PersistenceV2Api', () => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api18.static", "EntryAbility");

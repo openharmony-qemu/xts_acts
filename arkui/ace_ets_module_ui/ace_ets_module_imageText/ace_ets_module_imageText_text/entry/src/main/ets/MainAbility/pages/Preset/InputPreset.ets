@@ -37,6 +37,7 @@ struct InputPresetExample {
 
         TextArea({ placeholder: this.text })
           .id('InputPresetTextArea2')
+          .key('InputPresetTextArea2')
           .width(336)
           .height(56)
           .margin(20)

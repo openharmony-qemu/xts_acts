@@ -35,7 +35,7 @@ let flexGrow = 3;
 let compareFlexGrow = 1;
 const uiContext = new UIContext();
 
-export default function LazyForEachReleaseStrategyTest() {
+export default function LazyForEachReleaseStrategyTest(): void {
   describe('LazyForEachReleaseStrategyTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("LazyForEachReleaseStrategyTest beforeEach start");

@@ -1002,6 +1002,19 @@ export default function ApiCoverTest() {
       done();
     })
 
+      /**
+     * @tc.name   SUB_Ability_AbilityBase_ExtensionAbilityType_0300
+     * @tc.number SUB_Ability_AbilityBase_ExtensionAbilityType_0300
+     * @tc.desc   Test bundleManager ExtensionAbilityType.MODULAR_OBJECT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_ExtensionAbilityType_0300', Level.LEVEL0, async (done: Function) => {
+      expect(39).assertEqual(bundleManager.ExtensionAbilityType.MODULAR_OBJECT);
+      done();
+    })
+
     /**
      * @tc.name   SUB_Ability_AbilityBase_LinkParamCategory_0100
      * @tc.number SUB_Ability_AbilityBase_LinkParamCategory_0100

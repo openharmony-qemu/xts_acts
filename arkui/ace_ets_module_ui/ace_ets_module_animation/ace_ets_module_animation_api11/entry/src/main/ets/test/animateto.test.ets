@@ -72,7 +72,7 @@ export default function animateToTest() {
       } catch (err) {
         console.info("animateTest_0100 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_0100 click result is: " + JSON.stringify(sendEventByKey('button1', 10, "")));
+      console.info("animateTest_0100 click result is: " + JSON.stringify(sendEventByKey('animateto_button1', 10, "")));
     });
 
     /**
@@ -100,7 +100,7 @@ export default function animateToTest() {
       } catch (err) {
         console.info("animateTest_0200 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_0200 click result is: " + JSON.stringify(sendEventByKey('button2', 10, "")));
+      console.info("animateTest_0200 click result is: " + JSON.stringify(sendEventByKey('animateto_button2', 10, "")));
     });
     /**
      * @tc.name   animateTest_0300
@@ -131,7 +131,7 @@ export default function animateToTest() {
       } catch (err) {
         console.info("animateTest_0300 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_0300 click result is: " + JSON.stringify(sendEventByKey('button3', 10, "")));
+      console.info("animateTest_0300 click result is: " + JSON.stringify(sendEventByKey('animateto_button3', 10, "")));
     });
     /**
      * @tc.name   animateTest_0400
@@ -158,7 +158,7 @@ export default function animateToTest() {
       } catch (err) {
         console.info("animateTest_0400 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_0400 click result is: " + JSON.stringify(sendEventByKey('button4', 10, "")));
+      console.info("animateTest_0400 click result is: " + JSON.stringify(sendEventByKey('animateto_button4', 10, "")));
     });
     /**
      * @tc.name   animateTest_0500
@@ -185,7 +185,7 @@ export default function animateToTest() {
       } catch (err) {
         console.info("animateTest_0500 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_0500 click result is: " + JSON.stringify(sendEventByKey('button5', 10, "")));
+      console.info("animateTest_0500 click result is: " + JSON.stringify(sendEventByKey('animateto_button5', 10, "")));
     });
     /**
      * @tc.name   animateTest_0600
@@ -220,7 +220,7 @@ export default function animateToTest() {
       } catch (err) {
         console.info("animateTest_0600 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_0600 click result is: " + JSON.stringify(sendEventByKey('button11', 10, "")));
+      console.info("animateTest_0600 click result is: " + JSON.stringify(sendEventByKey('animateto_button11', 10, "")));
     });
     /**
      * @tc.name   animateTest_0700
@@ -255,7 +255,7 @@ export default function animateToTest() {
       } catch (err) {
         console.info("animateTest_0700 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_0700 click result is: " + JSON.stringify(sendEventByKey('button12', 10, "")));
+      console.info("animateTest_0700 click result is: " + JSON.stringify(sendEventByKey('animateto_button12', 10, "")));
     });
     /**
      * @tc.name   animateTest_0800
@@ -290,7 +290,7 @@ export default function animateToTest() {
       } catch (err) {
         console.info("animateTest_0800 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_0800 click result is: " + JSON.stringify(sendEventByKey('button13', 10, "")));
+      console.info("animateTest_0800 click result is: " + JSON.stringify(sendEventByKey('animateto_button13', 10, "")));
     });
     /**
      * @tc.name   animateTest_0900
@@ -325,7 +325,7 @@ export default function animateToTest() {
       } catch (err) {
         console.info("animateTest_0900 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_0900 click result is: " + JSON.stringify(sendEventByKey('button14', 10, "")));
+      console.info("animateTest_0900 click result is: " + JSON.stringify(sendEventByKey('animateto_button14', 10, "")));
     });
     /**
      * @tc.name   animateTest_1000
@@ -360,7 +360,7 @@ export default function animateToTest() {
       } catch (err) {
         console.info("animateTest_1000 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_1000 click result is: " + JSON.stringify(sendEventByKey('button15', 10, "")));
+      console.info("animateTest_1000 click result is: " + JSON.stringify(sendEventByKey('animateto_button15', 10, "")));
     });
     /**
      * @tc.name   animateTest_1100
@@ -395,7 +395,7 @@ export default function animateToTest() {
       } catch (err) {
         console.info("animateTest_1100 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_1100 click result is: " + JSON.stringify(sendEventByKey('button6', 10, "")));
+      console.info("animateTest_1100 click result is: " + JSON.stringify(sendEventByKey('animateto_button6', 10, "")));
     });
     /**
      * @tc.name   animateTest_1200
@@ -430,7 +430,7 @@ export default function animateToTest() {
       } catch (err) {
         console.info("animateTest_1200 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_1200 click result is: " + JSON.stringify(sendEventByKey('button7', 10, "")));
+      console.info("animateTest_1200 click result is: " + JSON.stringify(sendEventByKey('animateto_button7', 10, "")));
     });
     /**
      * @tc.name   animateTest_1300
@@ -465,7 +465,7 @@ export default function animateToTest() {
       } catch (err) {
         console.info("animateTest_1300 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_1300 click result is: " + JSON.stringify(sendEventByKey('button8', 10, "")));
+      console.info("animateTest_1300 click result is: " + JSON.stringify(sendEventByKey('animateto_button8', 10, "")));
     });
     /**
      * @tc.name   animateTest_1400
@@ -500,7 +500,7 @@ export default function animateToTest() {
       } catch (err) {
         console.info("animateTest_1400 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_1400 click result is: " + JSON.stringify(sendEventByKey('button9', 10, "")));
+      console.info("animateTest_1400 click result is: " + JSON.stringify(sendEventByKey('animateto_button9', 10, "")));
     });
     /**
      * @tc.name   animateTest_1500
@@ -535,7 +535,7 @@ export default function animateToTest() {
       } catch (err) {
         console.info("animateTest_1500 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_1500 click result is: " + JSON.stringify(sendEventByKey('button10', 10, "")));
+      console.info("animateTest_1500 click result is: " + JSON.stringify(sendEventByKey('animateto_button10', 10, "")));
     });
     /**
      * @tc.name   animateTest_1600
@@ -570,7 +570,7 @@ export default function animateToTest() {
       } catch (err) {
         console.info("animateTest_1600 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_1600 click result is: " + JSON.stringify(sendEventByKey('button111', 10, "")));
+      console.info("animateTest_1600 click result is: " + JSON.stringify(sendEventByKey('animateto_button111', 10, "")));
     });
     /**
      * @tc.name   animateTest_1700
@@ -605,7 +605,7 @@ export default function animateToTest() {
       } catch (err) {
         console.info("animateTest_1700 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_1700 click result is: " + JSON.stringify(sendEventByKey('button121', 10, "")));
+      console.info("animateTest_1700 click result is: " + JSON.stringify(sendEventByKey('animateto_button121', 10, "")));
     });
     /**
      * @tc.name   animateTest_1800
@@ -640,7 +640,7 @@ export default function animateToTest() {
       } catch (err) {
         console.info("animateTest_1800 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_1800 click result is: " + JSON.stringify(sendEventByKey('button131', 10, "")));
+      console.info("animateTest_1800 click result is: " + JSON.stringify(sendEventByKey('animateto_button131', 10, "")));
     });
     /**
      * @tc.name   animateTest_1900
@@ -675,7 +675,7 @@ export default function animateToTest() {
       } catch (err) {
         console.info("animateTest_1900 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_1900 click result is: " + JSON.stringify(sendEventByKey('button141', 10, "")));
+      console.info("animateTest_1900 click result is: " + JSON.stringify(sendEventByKey('animateto_button141', 10, "")));
     });
     /**
      * @tc.name   animateTest_2000
@@ -710,7 +710,7 @@ export default function animateToTest() {
       } catch (err) {
         console.info("animateTest_2000 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateTest_2000 click result is: " + JSON.stringify(sendEventByKey('button151', 10, "")));
+      console.info("animateTest_2000 click result is: " + JSON.stringify(sendEventByKey('animateto_button151', 10, "")));
     });
     /**
      * @tc.name   animateTest_2100

@@ -44,11 +44,11 @@ struct FlexAlignSelf_Auto {
             .height(50)
             .backgroundColor(Color.Red)
             .alignSelf(ItemAlign.End)
-            .key('textAlignSelf01');
-          Text('2').width(150).height(100).backgroundColor(Color.Red).key('textAlignSelf02');
-          Text('3').width(150).height(150).backgroundColor(Color.Red).key('textAlignSelf03');
+            .key('FlexAlignSelf_textAlignSelf01');
+          Text('2').width(150).height(100).backgroundColor(Color.Red).key('FlexAlignSelf_textAlignSelf02');
+          Text('3').width(150).height(150).backgroundColor(Color.Red).key('FlexAlignSelf_textAlignSelf03');
         }
-        .key('flexAlignSelf')
+        .key('FlexAlignSelf_flexAlignSelf')
         .height(150)
         .width(500)
         .backgroundColor(Color.Red)

@@ -22,6 +22,7 @@ struct SpanFontVariations {
         Text('Span fontVariations default') {
           Span('Span default')
             .id('span_fontVariations_default')
+            .key('span_fontVariations_default')
         }
         .width('100%')
         .height('5%')
@@ -31,6 +32,7 @@ struct SpanFontVariations {
           Span('Span with array')
             .fontVariations([{ axis: 'weight', value: 900 }])
             .id('span_fontVariations_array')
+            .key('span_fontVariations_array')
         }
         .width('100%')
         .height('5%')
@@ -40,6 +42,7 @@ struct SpanFontVariations {
           Span('Span with multi axes')
             .fontVariations([{ axis: 'weight', value: 700 }, { axis: 'ital', value: 1 }])
             .id('span_fontVariations_multi')
+            .key('span_fontVariations_multi')
         }
         .width('100%')
         .height('5%')
@@ -49,6 +52,7 @@ struct SpanFontVariations {
           Span('Span with null')
             .fontVariations(null)
             .id('span_fontVariations_null')
+            .key('span_fontVariations_null')
         }
         .width('100%')
         .height('5%')
@@ -58,6 +62,7 @@ struct SpanFontVariations {
           Span('Span with undefined')
             .fontVariations(undefined)
             .id('span_fontVariations_undefined')
+            .key('span_fontVariations_undefined')
         }
         .width('100%')
         .height('5%')
@@ -67,6 +72,7 @@ struct SpanFontVariations {
           Span('Span with empty array')
             .fontVariations([])
             .id('span_fontVariations_empty')
+            .key('span_fontVariations_empty')
         }
         .width('100%')
         .height('5%')

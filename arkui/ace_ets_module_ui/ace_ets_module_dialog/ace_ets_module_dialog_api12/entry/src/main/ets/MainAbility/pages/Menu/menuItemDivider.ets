@@ -67,7 +67,7 @@ struct menuItemDividerTest {
         strokeWidth: { value: 1.5, unit: LengthUnit.VP},
         color: Color.Pink,
         startMargin: { value: 2, unit: LengthUnit.VP},
-        endMargin: { value: 2, unit: LengthUnit.VP}}).key('menuItemDividerText')
+        endMargin: { value: 2, unit: LengthUnit.VP}}).key('menuItemDivider_menuItemDividerText')
     }
     .width('100%')
   }

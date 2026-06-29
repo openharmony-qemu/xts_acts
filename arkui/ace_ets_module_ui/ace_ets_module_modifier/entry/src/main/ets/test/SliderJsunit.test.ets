@@ -288,7 +288,7 @@ export default function sliderTest() {
     it('ArkUX_Stage_Slider_0110', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_Slider_0110 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('slider' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
       let strJsonNew = getInspectorByKey('slider');

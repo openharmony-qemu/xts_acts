@@ -137,7 +137,7 @@ it('RelativeGuideLine6_static_002', Level.LEVEL3, async (done: () => void): Prom
       console.info('[RelativeGuideLine6_002] START');
 
       await CommonFunc.sleep(1000);
-      let rel = CommonFunc.getComponentRect('RelativeGuideLine6_2');
+      let rel = CommonFunc.getComponentRect('RelativeGuideLine6' + '_2');
       let bt1 = CommonFunc.getComponentRect('RelButton6_4');
       let bt2 = CommonFunc.getComponentRect('RelButton6_5');
       let bt3 = CommonFunc.getComponentRect('RelButton6_6');

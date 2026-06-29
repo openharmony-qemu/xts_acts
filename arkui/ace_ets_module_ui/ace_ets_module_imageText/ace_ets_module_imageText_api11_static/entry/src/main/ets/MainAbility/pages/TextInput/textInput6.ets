@@ -76,7 +76,7 @@ struct TextInputOnEditChange {
         .onCut(() :void=> {
           console.log("onCut method is triggered")
         })
-        .key("onCutText")
+        .key("textInput6_onCutText")
 
       TextInput({ placeholder: "textInput-OnPaste" })
         .width(100)
@@ -91,7 +91,7 @@ struct TextInputOnEditChange {
         .onPaste(() :void=> {
           console.log("onPaste method is triggered")
         })
-        .key("onPasteText")
+        .key("textInput6_onPasteText")
 
       TextInput({ placeholder: "textInput-CopyOption" })
         .width(100)

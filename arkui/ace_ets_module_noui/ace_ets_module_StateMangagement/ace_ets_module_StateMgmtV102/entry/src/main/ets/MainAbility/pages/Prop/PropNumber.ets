@@ -36,7 +36,7 @@ struct Child_AO {
         .onClick(() => {
           this.count = 10;
         })
-        .key('state1')
+        .key('PropNumber_state1')
         .height('5%')
 
       Text("切换变量赋值Object").height('5%')
@@ -44,7 +44,7 @@ struct Child_AO {
         .onClick(() => {
           this.count = new Num3(20);
         })
-        .key('state2')
+        .key('PropNumber_state2')
         .height('5%')
 
       Text("切换变量赋值string").height('5%')
@@ -52,7 +52,7 @@ struct Child_AO {
         .onClick(() => {
           this.count = { number: '30' } as PropNumNum;
         })
-        .key('state3')
+        .key('PropNumber_state3')
         .height('5%')
 
       Text("切换变量赋值Date").height('5%')
@@ -60,7 +60,7 @@ struct Child_AO {
         .onClick(() => {
           this.count = new Date('2021-08-08');
         })
-        .key('state4')
+        .key('PropNumber_state4')
         .height('5%')
 
       Text("切换变量赋值Boolean").height('5%')
@@ -68,7 +68,7 @@ struct Child_AO {
         .onClick(() => {
           this.count = true;
         })
-        .key('state5')
+        .key('PropNumber_state5')
         .height('5%')
 
 

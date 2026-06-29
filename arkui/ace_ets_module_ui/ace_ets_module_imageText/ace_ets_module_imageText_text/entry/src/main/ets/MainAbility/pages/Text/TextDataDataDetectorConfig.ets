@@ -27,6 +27,7 @@ struct TextExample7 {
   build() {
       Column() {
         Text(this.text1).fontSize(20).id('dataDetectorConfigText')
+        .key('dataDetectorConfigText')
         .height('10%')
         Text(
           '电话号码：' + this.phoneNumber + '\n' +

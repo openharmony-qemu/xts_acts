@@ -69,7 +69,7 @@ struct subMenuExpandingModeTest {
     }.menuItemDivider({ strokeWidth: LengthMetrics.vp(2),
       color: Color.Orange,
       startMargin: LengthMetrics.vp(3),
-      endMargin: LengthMetrics.vp(3)}).key('menuItemDividerText')
+      endMargin: LengthMetrics.vp(3)}).key('subMenuExpandingMode_menuItemDividerText')
     .subMenuExpandingMode(SubMenuExpandingMode.SIDE_EXPAND)
   }
 }

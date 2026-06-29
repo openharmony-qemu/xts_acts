@@ -81,5 +81,23 @@ export default function CounterV2Direction() {
       console.log("[SUB_ARKUI_API_CounterV2Direction_0100] END");
       done();
     });
+
+    it('SUB_ARKUI_API_CounterV2Direction_0200', Level.LEVEL0, async (done: Function) => {
+      console.log("[SUB_ARKUI_API_CounterV2Direction_0200] START");
+      const driver = await Driver.create();
+      let buttonLtr = await driver.findComponent(ON.id('Ltr'));
+      await buttonLtr.click();
+      await driver.delayMs(1000);
+      let label = await driver.findComponent(ON.text('价格'));
+      const rectLtr = await label.getBounds();
+      let buttonRtl = await driver.findComponent(ON.id('Rtl'));
+      await buttonRtl.click();
+      await driver.delayMs(1000);
+      let label2 = await driver.findComponent(ON.text('价格'));
+      const rectRtl = await label2.getBounds();
+      expect(rectLtr.left == rectRtl.left).assertFalse();
+      console.log("[SUB_ARKUI_API_CounterV2Direction_0200] END");
+      done();
+    });
   })
 }

@@ -59,10 +59,10 @@ export default function RelativeContainer_AnchorPoint_Id_Null() {
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let RelativeContainer_AnchorPoint_Id_Null_row1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Id_Null_row1');
-      //      let RelativeContainer_AnchorPoint_Id_Null_row2:RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Id_Null_row2');
+      let RelativeContainer_AnchorPoint_Id_Null_row1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Id_Null' + '_row1');
+      //      let RelativeContainer_AnchorPoint_Id_Null_row2:RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Id_Null' + '_row2');
 
-      let RelativeContainer_AnchorPoint_Id_Null_r1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Id_Null_r1');
+      let RelativeContainer_AnchorPoint_Id_Null_r1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Id_Null' + '_r1');
 
       console.log('assert position')
 

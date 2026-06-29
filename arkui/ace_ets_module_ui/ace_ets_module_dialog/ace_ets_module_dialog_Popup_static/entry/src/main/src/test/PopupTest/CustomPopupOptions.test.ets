@@ -16,7 +16,7 @@
 'use static';
 
 import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { abilityDelegatorRegistry, Driver, ON, MatchPattern } from '@kit.TestKit';
+import { abilityDelegatorRegistry, Driver, ON, MatchPattern, Component } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -41,14 +41,16 @@ function logLongString(tag: string, longStr: string): void {
   }
 }
 
-export default function CustomPopupOptionsTest() {
+export default function CustomPopupOptionsTest(): void {
   describe('CustomPopupOptionsTest', () => {
-    beforeAll(async (): Promise<void> => {
+    beforeAll(async () => {
+
       console.info("CustomPopupOptionsTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.popup.static", "EntryAbility");
     });
 
-    beforeEach(async (): Promise<void> => {
+    beforeEach(async () => {
+
       console.info("CustomPopupOptionsTest beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/popup/CustomPopupOptions',
@@ -81,7 +83,8 @@ export default function CustomPopupOptionsTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('customPopupOptionsAvoidTarget', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('customPopupOptionsAvoidTarget', Level.LEVEL1, async () => {
+
       console.info('CustomPopupOptionsTest execute: customPopupOptionsAvoidTarget START');
       try {
         await CommonFunc.sleep(SLEEP_TIME);
@@ -90,18 +93,16 @@ export default function CustomPopupOptionsTest() {
         expect(!!openPopupButton).assertEqual(true);
         let buttonNode = JSON.parseJsonElement(inspector.getInspectorByKey('btnOpenCustomPopupNew'));
         logLongString('CustomPopupOptionsTest: btnOpenCustomPopupNew node =', JSON.stringifyJsonElement(buttonNode));
-        await (openPopupButton?.click() as Promise<void>);
+        await ((await driver.findComponent(ON.id('PLACEHOLDER'))) as Component).click();
         await Utils.sleep(500);
         const popupContent = await driver.findComponent(ON.id('customPopupContentNew'));
         expect(!!popupContent).assertEqual(true);
         await driver.pressBack();
         await Utils.sleep(200);
         console.info('CustomPopupOptionsTest execute: customPopupOptionsAvoidTarget END');
-        done();
       } catch (error) {
         console.error('CustomPopupOptionsTest execute: customPopupOptionsAvoidTarget error:' + error);
         expect().assertFail();
-        done();
       }
     });
 
@@ -113,7 +114,8 @@ export default function CustomPopupOptionsTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('customPopupOptionsOutlineWidth', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('customPopupOptionsOutlineWidth', Level.LEVEL1, async () => {
+
       console.info('CustomPopupOptionsTest execute: customPopupOptionsOutlineWidth START');
       try {
         await CommonFunc.sleep(SLEEP_TIME);
@@ -122,18 +124,16 @@ export default function CustomPopupOptionsTest() {
         expect(!!openPopupButton).assertEqual(true);
         let buttonNode = JSON.parseJsonElement(inspector.getInspectorByKey('btnOpenCustomPopupNew'));
         logLongString('CustomPopupOptionsTest: btnOpenCustomPopupNew node =', JSON.stringifyJsonElement(buttonNode));
-        await (openPopupButton?.click() as Promise<void>);
+        await ((await driver.findComponent(ON.id('PLACEHOLDER'))) as Component).click();
         await Utils.sleep(500);
         const popupContent = await driver.findComponent(ON.id('customPopupContentNew'));
         expect(!!popupContent).assertEqual(true);
         await driver.pressBack();
         await Utils.sleep(200);
         console.info('CustomPopupOptionsTest execute: customPopupOptionsOutlineWidth END');
-        done();
       } catch (error) {
         console.error('CustomPopupOptionsTest execute: customPopupOptionsOutlineWidth error:' + error);
         expect().assertFail();
-        done();
       }
     });
 
@@ -145,7 +145,8 @@ export default function CustomPopupOptionsTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('customPopupOptionsBorderWidth', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('customPopupOptionsBorderWidth', Level.LEVEL1, async () => {
+
       console.info('CustomPopupOptionsTest execute: customPopupOptionsBorderWidth START');
       try {
         await CommonFunc.sleep(SLEEP_TIME);
@@ -154,18 +155,16 @@ export default function CustomPopupOptionsTest() {
         expect(!!openPopupButton).assertEqual(true);
         let buttonNode = JSON.parseJsonElement(inspector.getInspectorByKey('btnOpenCustomPopupNew'));
         logLongString('CustomPopupOptionsTest: btnOpenCustomPopupNew node =', JSON.stringifyJsonElement(buttonNode));
-        await (openPopupButton?.click() as Promise<void>);
+        await ((await driver.findComponent(ON.id('PLACEHOLDER'))) as Component).click();
         await Utils.sleep(500);
         const popupContent = await driver.findComponent(ON.id('customPopupContentNew'));
         expect(!!popupContent).assertEqual(true);
         await driver.pressBack();
         await Utils.sleep(200);
         console.info('CustomPopupOptionsTest execute: customPopupOptionsBorderWidth END');
-        done();
       } catch (error) {
         console.error('CustomPopupOptionsTest execute: customPopupOptionsBorderWidth error:' + error);
         expect().assertFail();
-        done();
       }
     });
 
@@ -177,7 +176,8 @@ export default function CustomPopupOptionsTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('customPopupOptionsOutlineLinearGradient', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('customPopupOptionsOutlineLinearGradient', Level.LEVEL1, async () => {
+
       console.info('CustomPopupOptionsTest execute: customPopupOptionsOutlineLinearGradient START');
       try {
         await CommonFunc.sleep(SLEEP_TIME);
@@ -186,18 +186,16 @@ export default function CustomPopupOptionsTest() {
         expect(!!openPopupButton).assertEqual(true);
         let buttonNode = JSON.parseJsonElement(inspector.getInspectorByKey('btnOpenCustomPopupNew'));
         logLongString('CustomPopupOptionsTest: btnOpenCustomPopupNew node =', JSON.stringifyJsonElement(buttonNode));
-        await (openPopupButton?.click() as Promise<void>);
+        await ((await driver.findComponent(ON.id('PLACEHOLDER'))) as Component).click();
         await Utils.sleep(500);
         const popupContent = await driver.findComponent(ON.id('customPopupContentNew'));
         expect(!!popupContent).assertEqual(true);
         await driver.pressBack();
         await Utils.sleep(200);
         console.info('CustomPopupOptionsTest execute: customPopupOptionsOutlineLinearGradient END');
-        done();
       } catch (error) {
         console.error('CustomPopupOptionsTest execute: customPopupOptionsOutlineLinearGradient error:' + error);
         expect().assertFail();
-        done();
       }
     });
 
@@ -209,7 +207,8 @@ export default function CustomPopupOptionsTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('customPopupOptionsBorderLinearGradient', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('customPopupOptionsBorderLinearGradient', Level.LEVEL1, async () => {
+
       console.info('CustomPopupOptionsTest execute: customPopupOptionsBorderLinearGradient START');
       try {
         await CommonFunc.sleep(SLEEP_TIME);
@@ -218,18 +217,16 @@ export default function CustomPopupOptionsTest() {
         expect(!!openPopupButton).assertEqual(true);
         let buttonNode = JSON.parseJsonElement(inspector.getInspectorByKey('btnOpenCustomPopupNew'));
         logLongString('CustomPopupOptionsTest: btnOpenCustomPopupNew node =', JSON.stringifyJsonElement(buttonNode));
-        await (openPopupButton?.click() as Promise<void>);
+        await ((await driver.findComponent(ON.id('PLACEHOLDER'))) as Component).click();
         await Utils.sleep(500);
         const popupContent = await driver.findComponent(ON.id('customPopupContentNew'));
         expect(!!popupContent).assertEqual(true);
         await driver.pressBack();
         await Utils.sleep(200);
         console.info('CustomPopupOptionsTest execute: customPopupOptionsBorderLinearGradient END');
-        done();
       } catch (error) {
         console.error('CustomPopupOptionsTest execute: customPopupOptionsBorderLinearGradient error:' + error);
         expect().assertFail();
-        done();
       }
     });
   });

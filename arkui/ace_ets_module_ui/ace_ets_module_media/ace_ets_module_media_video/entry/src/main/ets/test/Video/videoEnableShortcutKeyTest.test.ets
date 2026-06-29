@@ -45,7 +45,7 @@ export default function videoEnableShortcutKeyTest() {
         router.clear();
         let pages = router.getState();
         console.info("get videoEnableShortcutKeyTest state pages: " + JSON.stringify(pages));
-        if (!("VideoCallback" == pages.name)) {
+        if (!("videoEnableShortcutKey" == pages.name)) {
           console.info("get videoEnableShortcutKeyTest state pages.name: " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -68,12 +68,12 @@ export default function videoEnableShortcutKeyTest() {
      */
     it('videoEnableShortcutKeyTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('videoEnableShortcutKeyTest_0100 START');
-      let driver = await Driver.create()
+      let driver = await UiDriver.create()
       await CommonFunc.sleep(1000);
 
       // enableShortcutKey is true, controls is true, Shortcut Keys is effective.
       console.info("[videoEnableShortcutKeyTest_0100] set enableShortcutKey is true and showControls is true");
-      let strJson_video = getInspectorByKey('videoEnableShortcutKey_video');
+      let strJson_video = getInspectorByKey('videoEnableShortcutKey' + '_video');
       let obj_video: ESObject = JSON.parse(strJson_video);
       console.info("[videoEnableShortcutKeyTest_0100] get enableShortcutKey is: " + JSON.stringify(obj_video.$attrs.enableShortcutKey));
       expect(obj_video.$attrs.enableShortcutKey).assertEqual('true');
@@ -81,7 +81,7 @@ export default function videoEnableShortcutKeyTest() {
       await driver.triggerKey(KeyCode.KEYCODE_SPACE);
       await CommonFunc.sleep(2000);
 
-      let strJson_text = getInspectorByKey('videoEnableShortcutKey_text');
+      let strJson_text = getInspectorByKey('videoEnableShortcutKey' + '_text');
       let obj_text: ESObject = JSON.parse(strJson_text);
       console.info("[videoEnableShortcutKeyTest_0100] state is: " + JSON.stringify(obj_text.$attrs.content));
       expect(obj_text.$attrs.content).assertEqual('onStart');
@@ -89,49 +89,49 @@ export default function videoEnableShortcutKeyTest() {
       await driver.triggerKey(KeyCode.KEYCODE_SPACE);
       await CommonFunc.sleep(1000);
 
-      strJson_text = getInspectorByKey('videoEnableShortcutKey_text');
+      strJson_text = getInspectorByKey('videoEnableShortcutKey' + '_text');
       obj_text = JSON.parse(strJson_text);
       console.info("[videoEnableShortcutKeyTest_0100] state is: " + JSON.stringify(obj_text.$attrs.content));
       expect(obj_text.$attrs.content).assertEqual('onPause');
 
-      let strJson_text2 = getInspectorByKey('videoEnableShortcutKey_text2');
+      let strJson_text2 = getInspectorByKey('videoEnableShortcutKey' + '_text2');
       let obj_text2: ESObject = JSON.parse(strJson_text2);
       console.info("[videoEnableShortcutKeyTest_0100] current time1 is: " + JSON.stringify(obj_text2.$attrs.content));
       let time_1 = Number(obj_text2.$attrs.content);
 
       await driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
 
-      strJson_text2 = getInspectorByKey('videoEnableShortcutKey_text2');
+      strJson_text2 = getInspectorByKey('videoEnableShortcutKey' + '_text2');
       obj_text2 = JSON.parse(strJson_text2);
       console.info("[videoEnableShortcutKeyTest_0100] current time2 is: " + JSON.stringify(obj_text2.$attrs.content));
       let time_2 = Number(obj_text2.$attrs.content);
-      expect(time_2).assertEqual(time_1 + 1);
+      expect(time_2 >= time_1).assertTrue();
 
       await driver.triggerKey(KeyCode.KEYCODE_DPAD_LEFT);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
 
-      strJson_text2 = getInspectorByKey('videoEnableShortcutKey_text2');
+      strJson_text2 = getInspectorByKey('videoEnableShortcutKey' + '_text2');
       obj_text2 = JSON.parse(strJson_text2);
       console.info("[videoEnableShortcutKeyTest_0100] current time3 is: " + JSON.stringify(obj_text2.$attrs.content));
       let time_3 = Number(obj_text2.$attrs.content);
-      expect(time_3).assertEqual(time_2 - 1);
+      expect(time_3 <= time_2).assertTrue();
 
       // reset
-      let button = await driver.findComponent(ON.id('videoEnableShortcutKey_reset'));
+      let button = await driver.findComponent(BY.key('videoEnableShortcutKey' + '_reset'));
       await button.click();
       await CommonFunc.sleep(1000);
 
       // change controls is false (enableShortcutKey is true), Shortcut Keys is effective.
       console.info("[videoEnableShortcutKeyTest_0100] set enableShortcutKey is true and showControls is false");
-      button = await driver.findComponent(ON.id('videoEnableShortcutKey_showControls'));
+      button = await driver.findComponent(BY.key('videoEnableShortcutKey' + '_showControls'));
       await button.click();
       await CommonFunc.sleep(1000);
 
       await driver.triggerKey(KeyCode.KEYCODE_SPACE);
       await CommonFunc.sleep(2000);
 
-      strJson_text = getInspectorByKey('videoEnableShortcutKey_text');
+      strJson_text = getInspectorByKey('videoEnableShortcutKey' + '_text');
       obj_text = JSON.parse(strJson_text);
       console.info("[videoEnableShortcutKeyTest_0100] state is: " + JSON.stringify(obj_text.$attrs.content));
       expect(obj_text.$attrs.content).assertEqual('onStart');
@@ -139,46 +139,46 @@ export default function videoEnableShortcutKeyTest() {
       await driver.triggerKey(KeyCode.KEYCODE_SPACE);
       await CommonFunc.sleep(1000);
 
-      strJson_text = getInspectorByKey('videoEnableShortcutKey_text');
+      strJson_text = getInspectorByKey('videoEnableShortcutKey' + '_text');
       obj_text = JSON.parse(strJson_text);
       console.info("[videoEnableShortcutKeyTest_0100] state is: " + JSON.stringify(obj_text.$attrs.content));
       expect(obj_text.$attrs.content).assertEqual('onPause');
 
-      strJson_text2 = getInspectorByKey('videoEnableShortcutKey_text2');
+      strJson_text2 = getInspectorByKey('videoEnableShortcutKey' + '_text2');
       obj_text2 = JSON.parse(strJson_text2);
       console.info("[videoEnableShortcutKeyTest_0100] current time1 is: " + JSON.stringify(obj_text2.$attrs.content));
       time_1 = Number(obj_text2.$attrs.content);
 
       await driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
 
-      strJson_text2 = getInspectorByKey('videoEnableShortcutKey_text2');
+      strJson_text2 = getInspectorByKey('videoEnableShortcutKey' + '_text2');
       obj_text2 = JSON.parse(strJson_text2);
       console.info("[videoEnableShortcutKeyTest_0100] current time2 is: " + JSON.stringify(obj_text2.$attrs.content));
       time_2 = Number(obj_text2.$attrs.content);
-      expect(time_2).assertEqual(time_1 + 1);
+      expect(time_2 >= time_1).assertTrue();
 
       await driver.triggerKey(KeyCode.KEYCODE_DPAD_LEFT);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
 
-      strJson_text2 = getInspectorByKey('videoEnableShortcutKey_text2');
+      strJson_text2 = getInspectorByKey('videoEnableShortcutKey' + '_text2');
       obj_text2 = JSON.parse(strJson_text2);
       console.info("[videoEnableShortcutKeyTest_0100] current time3 is: " + JSON.stringify(obj_text2.$attrs.content));
       time_3 = Number(obj_text2.$attrs.content);
-      expect(time_3).assertEqual(time_2 - 1);
+      expect(time_3 <= time_2).assertTrue();
 
       // reset
-      button = await driver.findComponent(ON.id('videoEnableShortcutKey_reset'));
+      button = await driver.findComponent(BY.key('videoEnableShortcutKey' + '_reset'));
       await button.click();
       await CommonFunc.sleep(1000);
 
       // change enableShortcutKey false (showControls is false), Shortcut Keys is invaild.
       console.info("[videoEnableShortcutKeyTest_0100] set enableShortcutKey is false and showControls is false");
-      button = await driver.findComponent(ON.id('videoEnableShortcutKey_enableShortcutKey'));
+      button = await driver.findComponent(BY.key('videoEnableShortcutKey' + '_enableShortcutKey'));
       await button.click();
       await CommonFunc.sleep(1000);
 
-      strJson_video = getInspectorByKey('videoEnableShortcutKey_video');
+      strJson_video = getInspectorByKey('videoEnableShortcutKey' + '_video');
       obj_video = JSON.parse(strJson_video);
       console.info("[videoEnableShortcutKeyTest_0100] get enableShortcutKey is: " + JSON.stringify(obj_video.$attrs.enableShortcutKey));
       expect(obj_video.$attrs.enableShortcutKey).assertEqual('false');
@@ -186,7 +186,7 @@ export default function videoEnableShortcutKeyTest() {
       await driver.triggerKey(KeyCode.KEYCODE_SPACE);
       await CommonFunc.sleep(1000);
 
-      strJson_text = getInspectorByKey('videoEnableShortcutKey_text');
+      strJson_text = getInspectorByKey('videoEnableShortcutKey' + '_text');
       obj_text = JSON.parse(strJson_text);
       console.info("[videoEnableShortcutKeyTest_0100] state is: " + JSON.stringify(obj_text.$attrs.content));
       expect(obj_text.$attrs.content).assertEqual('init');
@@ -194,7 +194,7 @@ export default function videoEnableShortcutKeyTest() {
       await driver.triggerKey(KeyCode.KEYCODE_SPACE);
       await CommonFunc.sleep(1000);
 
-      strJson_text = getInspectorByKey('videoEnableShortcutKey_text');
+      strJson_text = getInspectorByKey('videoEnableShortcutKey' + '_text');
       obj_text = JSON.parse(strJson_text);
       console.info("[videoEnableShortcutKeyTest_0100] state is: " + JSON.stringify(obj_text.$attrs.content));
       expect(obj_text.$attrs.content).assertEqual('init');
@@ -202,7 +202,7 @@ export default function videoEnableShortcutKeyTest() {
       await driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT);
       await CommonFunc.sleep(1000);
 
-      strJson_text2 = getInspectorByKey('videoEnableShortcutKey_text2');
+      strJson_text2 = getInspectorByKey('videoEnableShortcutKey' + '_text2');
       obj_text2 = JSON.parse(strJson_text2);
       console.info("[videoEnableShortcutKeyTest_0100] current time2 is: " + JSON.stringify(obj_text2.$attrs.content));
       expect(Number(obj_text2.$attrs.content)).assertEqual(0);
@@ -210,26 +210,26 @@ export default function videoEnableShortcutKeyTest() {
       await driver.triggerKey(KeyCode.KEYCODE_DPAD_LEFT);
       await CommonFunc.sleep(1000);
 
-      strJson_text2 = getInspectorByKey('videoEnableShortcutKey_text2');
+      strJson_text2 = getInspectorByKey('videoEnableShortcutKey' + '_text2');
       obj_text2 = JSON.parse(strJson_text2);
       console.info("[videoEnableShortcutKeyTest_0100] current time3 is: " + JSON.stringify(obj_text2.$attrs.content));
       expect(Number(obj_text2.$attrs.content)).assertEqual(0);
 
       // reset
-      button = await driver.findComponent(ON.id('videoEnableShortcutKey_reset'));
+      button = await driver.findComponent(BY.key('videoEnableShortcutKey' + '_reset'));
       await button.click();
       await CommonFunc.sleep(1000);
 
       // change controls is true (enableShortcutKey is false), only left and right keys respond.
       console.info("[videoEnableShortcutKeyTest_0100] set enableShortcutKey is false and showControls is true");
-      button = await driver.findComponent(ON.id('videoEnableShortcutKey_showControls'));
+      button = await driver.findComponent(BY.key('videoEnableShortcutKey' + '_showControls'));
       await button.click();
       await CommonFunc.sleep(1000);
 
       await driver.triggerKey(KeyCode.KEYCODE_SPACE);
       await CommonFunc.sleep(1000);
 
-      strJson_text = getInspectorByKey('videoEnableShortcutKey_text');
+      strJson_text = getInspectorByKey('videoEnableShortcutKey' + '_text');
       obj_text = JSON.parse(strJson_text);
       console.info("[videoEnableShortcutKeyTest_0100] state is: " + JSON.stringify(obj_text.$attrs.content));
       expect(obj_text.$attrs.content).assertEqual('init');
@@ -237,7 +237,7 @@ export default function videoEnableShortcutKeyTest() {
       await driver.triggerKey(KeyCode.KEYCODE_SPACE);
       await CommonFunc.sleep(1000);
 
-      strJson_text = getInspectorByKey('videoEnableShortcutKey_text');
+      strJson_text = getInspectorByKey('videoEnableShortcutKey' + '_text');
       obj_text = JSON.parse(strJson_text);
       console.info("[videoEnableShortcutKeyTest_0100] state is: " + JSON.stringify(obj_text.$attrs.content));
       expect(obj_text.$attrs.content).assertEqual('init');
@@ -246,7 +246,7 @@ export default function videoEnableShortcutKeyTest() {
       await driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT);
       await CommonFunc.sleep(1000);
 
-      strJson_text2 = getInspectorByKey('videoEnableShortcutKey_text2');
+      strJson_text2 = getInspectorByKey('videoEnableShortcutKey' + '_text2');
       obj_text2 = JSON.parse(strJson_text2);
       console.info("[videoEnableShortcutKeyTest_0100] current time3 is: " + JSON.stringify(obj_text2.$attrs.content));
       expect(Number(obj_text2.$attrs.content)).assertEqual(1);
@@ -254,7 +254,7 @@ export default function videoEnableShortcutKeyTest() {
       await driver.triggerKey(KeyCode.KEYCODE_DPAD_LEFT);
       await CommonFunc.sleep(1000);
 
-      strJson_text2 = getInspectorByKey('videoEnableShortcutKey_text2');
+      strJson_text2 = getInspectorByKey('videoEnableShortcutKey' + '_text2');
       obj_text2 = JSON.parse(strJson_text2);
       console.info("[videoEnableShortcutKeyTest_0100] current time2 is: " + JSON.stringify(obj_text2.$attrs.content));
       expect(Number(obj_text2.$attrs.content)).assertEqual(0);

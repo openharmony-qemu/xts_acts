@@ -53,7 +53,7 @@ struct badge {
           }
           .width(100)
           .height(50)
-          .key('badge')
+          .key('Badge_badge')
 
           Text("BadgePosition.RightTop").fontSize(16)
           Badge({
@@ -87,11 +87,11 @@ struct badge {
           }
           .width(100)
           .height(50)
-          .key('badge2')
+          .key('Badge_badge2')
         }
       }
     }
-    .key('flex')
+    .key('Badge_flex')
     .width('100%')
     .height('100%')
   }

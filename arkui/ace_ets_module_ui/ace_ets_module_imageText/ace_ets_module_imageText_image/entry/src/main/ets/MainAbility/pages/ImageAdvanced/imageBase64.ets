@@ -25,6 +25,7 @@ struct ImageAdvancedImageBase64 {
           .fontSize(50)
           .fontWeight(FontWeight.Bold)
           .id('loadingResultBase64')
+          .key('loadingResultBase64')
 
         Image('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAAApCAYAAACoYAD2AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFn'+
           'ZVJlYWR5ccllPAAAAyVpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6'+

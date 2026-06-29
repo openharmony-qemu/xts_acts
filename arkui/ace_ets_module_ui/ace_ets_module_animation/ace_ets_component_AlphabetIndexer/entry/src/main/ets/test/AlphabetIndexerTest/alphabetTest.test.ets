@@ -52,7 +52,7 @@ export default function AlphabetTest() {
       console.info('alphabetTest_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('alphabet_1');
+      let strJson = getInspectorByKey('alphabet_alphabet_1');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[alphabetTest_0100] component obj is: ' + JSON.stringify(obj));
       console.info('[alphabetTest_0100] component obj.$attrs is: ' + JSON.stringify(obj.$attrs));

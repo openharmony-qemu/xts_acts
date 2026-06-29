@@ -50,12 +50,12 @@ struct ImageExample {
     Column({ space: 5 } as ColumnOptions) {
       Button("change value").onClick((e: ClickEvent) => {
         (this.customModifier as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("image_changeButton")
 
       Column() {
         Image($r('app.media.blr_2'))
           .attributeModifier(this.customModifier as CustomModifier)
-          .key('image')
+          .key('image_image')
       }
     }
     .margin({ top: 5 } as Margin)

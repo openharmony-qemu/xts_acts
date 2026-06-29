@@ -23,10 +23,12 @@ struct TextImageSpan6 {
   build() {
     Column({ space: 100 }) {
       Text(this.flag).id('ImageSpan_onComplete_6')
+      .key('ImageSpan_onComplete_6')
         .onClick(()=>{
           this.padding1 += 10
         })
       Text(this.count.toString()).id('ImageSpan_onComplete_62')
+      .key('ImageSpan_onComplete_62')
       Text(){
         ImageSpan('resources/base/media/jpg.jpg')
           .padding(this.padding1)

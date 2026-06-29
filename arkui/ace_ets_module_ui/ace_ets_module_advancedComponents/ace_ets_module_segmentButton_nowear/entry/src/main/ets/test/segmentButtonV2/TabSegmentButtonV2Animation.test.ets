@@ -15,9 +15,10 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
-import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation,
-  ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
+import Utils from '../Utils';
+
+const UI_EVENT_CLICK: number = 10;
 
 export default function TabSegmentButtonV2Animation() {
   describe('TabSegmentButtonV2Animation', () => {
@@ -27,10 +28,10 @@ export default function TabSegmentButtonV2Animation() {
         url: "MainAbility/pages/segmentButtonV2/TabSegmentButtonV2Animation",
       }
       try {
-        router.clear();
         let pages = router.getState();
         console.info("get current pages:" + JSON.stringify(pages));
-        if (!("TabSegmentButtonV2Animation" == pages.name)) {
+        if (pages.name !== "TabSegmentButtonV2Animation") {
+          router.clear();
           console.info("get TabSegmentButtonV2Animation pages.name:" + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -57,15 +58,15 @@ export default function TabSegmentButtonV2Animation() {
      */
     it('TabSegmentButtonV2Animation_001', Level.LEVEL0, async (done: Function) => {
       console.log("[TabSegmentButtonV2Animation_001] START");
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('true'));
-      await button.click();
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
+      expect(sendEventByKey('TabSegmentButtonV2Animation_true', UI_EVENT_CLICK, '')).assertTrue();
+      await CommonFunc.sleep(1500);
 
-      let textJ = getInspectorByKey('text');
-      let text: ESObject = JSON.parse(textJ);
-
-      expect(text.$attrs.content).assertEqual('true');
+      let enabled: boolean | undefined = Utils.resolveEnableStateAnimationAttr(
+        'TabSegmentButtonV2_03', 'TabSegmentButtonV2Animation_mirror', 'TabSegmentButtonV2Animation_001'
+      );
+      expect(enabled !== undefined).assertTrue();
+      expect(enabled).assertEqual(true);
       console.log("[TabSegmentButtonV2Animation_001] END");
       done();
     })

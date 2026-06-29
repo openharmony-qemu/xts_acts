@@ -106,7 +106,7 @@ it('ToggleJsunitStatic002', Level.LEVEL0, async (done: () => void): Promise<void
 it('ToggleJsunitStatic003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ToggleJsunitStatic003 START');
       let driver = Driver.create();
-      let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button =  await (driver.findComponent(ON.id('toggle' + '_changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
       let strJsonNew = inspector.getInspectorByKey('toggleCheckbox'); //测试组件的key名称

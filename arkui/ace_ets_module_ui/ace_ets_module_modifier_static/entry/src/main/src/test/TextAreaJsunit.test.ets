@@ -378,7 +378,7 @@ it('textAreaTest_static_017', Level.LEVEL0, async (done: () => void): Promise<vo
 it('textAreaTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textAreaTest_static_001 START');
       let driver = Driver.create();
-      let button = await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button = await (driver.findComponent(ON.id('textArea' + '_changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
 

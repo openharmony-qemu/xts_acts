@@ -467,6 +467,36 @@ export default function DlpEnterpriseServiceTest() {
       done();
     })
     /**
+     * @tc.name   SUB_SECURITY_DLP_setControlledAppLists_1500
+     * @tc.number Test_setControlledAppLists_015
+     * @tc.desc   setControlledAppLists with userId is unreal , return 801 or 19100023
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_SECURITY_DLP_setControlledAppLists_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let curTag = TAG + "Test_setControlledAppLists_015";
+      console.info(curTag, "start");
+      let appLists = ["0","1"];
+      let userId = 99;
+      try {
+        await dlpPermission.setControlledAppLists(appLists, userId);
+        expect(null).assertFail();
+      } catch (err) {
+        if (err.code === 801) {
+          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
+          expect(err.code).assertEqual(801);
+        } else if (err.code === 19100023) {
+          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
+          expect(err.code).assertEqual(19100023);
+        } else {
+          console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
+          expect(err.code).assertEqual(19100001);
+        }
+      }
+      done();
+    })
+    /**
      * @tc.name   SUB_SECURITY_DLP_getControlledAppLists_0100
      * @tc.number Test_getControlledAppLists_001
      * @tc.desc   getControlledAppLists with permission, return 201 or 801.

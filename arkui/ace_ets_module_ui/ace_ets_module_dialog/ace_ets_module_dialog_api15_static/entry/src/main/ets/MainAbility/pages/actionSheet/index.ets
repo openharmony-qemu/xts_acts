@@ -42,7 +42,6 @@ import { ImmersiveMode } from '@ohos.promptAction';
 import { LengthMetrics } from '@ohos.arkui.node';
 import { Callback } from '@ohos.base';
 import promptAction from '@ohos.promptAction';
-let promptAction = new PromptAction()
 
 export interface ListCategories {
   title: string,

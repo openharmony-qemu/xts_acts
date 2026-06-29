@@ -39,6 +39,7 @@ struct fillColorMetricsDemo {
         .width(110).height(110).margin(15)
         .fillColor(this.sRGBBlue)
         .id('fillColorMetrics')
+        .key('fillColorMetrics')
     }
   }
 }

@@ -16,7 +16,7 @@
 import router from '@ohos.router';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium"
 import CommonFunc from '../../MainAbility/common/Common';
-import { Driver, ON } from '@ohos.UiTest';
+import {Driver, ON, UiDriver, BY} from '@ohos.UiTest';
 
 
 export default function VideoReset7() {
@@ -59,15 +59,15 @@ export default function VideoReset7() {
       console.info('[VideoReset7_0100] START');
       await CommonFunc.sleep(3000);
 
-      let driver = Driver.create();
+      let driver = await UiDriver.create();
       await CommonFunc.sleep(1000);
 
-      let btn1 = await driver.findComponent(ON.id('VideoReset7_start'));
+      let btn1 = await driver.findComponent(BY.key('VideoReset7_start'));
       await btn1.click()
       console.info("[VideoReset7_0100] btnStart");
       await CommonFunc.sleep(3000);
 
-      let btn2 = await driver.findComponent(ON.id('VideoReset7_reset'));
+      let btn2 = await driver.findComponent(BY.key('VideoReset7_reset'));
       await btn2.click()
       console.info("[VideoReset7_0100] btnReset");
       await CommonFunc.sleep(3000);
@@ -88,7 +88,7 @@ export default function VideoReset7() {
       console.info("[VideoReset7_0100] JSON.parse(strJson2) is: " + JSON.stringify(JSON.parse(strJson2)));
       expect(JSON.parse(strJson2).$attrs.content).assertEqual('onStart2');
 
-      let btnAutoPlay = await driver.findComponent(ON.id('VideoReset7_autoPlay'));
+      let btnAutoPlay = await driver.findComponent(BY.key('VideoReset7_autoPlay'));
       await btnAutoPlay.click()
       console.info("[VideoReset7_0100] btnAutoPlay");
       await CommonFunc.sleep(3000);

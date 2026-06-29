@@ -28,6 +28,7 @@ struct TextMarqueeOptionsTest {
           start:true,
         })
         .id('TextMarqueeOptionsTest1')
+        .key('TextMarqueeOptionsTest1')
         .height('10%')
       Text(this.valueText)
         .maxLines(1)
@@ -38,6 +39,7 @@ struct TextMarqueeOptionsTest {
           marqueeUpdatePolicy:null
         })
         .id('TextMarqueeOptionsTest2')
+        .key('TextMarqueeOptionsTest2')
         .height('10%')
       Text(this.valueText)
         .maxLines(1)
@@ -48,6 +50,7 @@ struct TextMarqueeOptionsTest {
           marqueeUpdatePolicy:undefined
         })
         .id('TextMarqueeOptionsTest3')
+        .key('TextMarqueeOptionsTest3')
         .height('10%')
       Text(this.valueText)
         .maxLines(1)
@@ -57,6 +60,7 @@ struct TextMarqueeOptionsTest {
           spacing:LengthMetrics.vp(10),
           marqueeUpdatePolicy:MarqueeUpdatePolicy.DEFAULT
         }).id('TextMarqueeOptionsTest4')
+        .key('TextMarqueeOptionsTest4')
         .height('10%')
       Text(this.valueText)
         .maxLines(1)
@@ -66,6 +70,7 @@ struct TextMarqueeOptionsTest {
           spacing:LengthMetrics.px(10),
           marqueeUpdatePolicy:MarqueeUpdatePolicy.PRESERVE_POSITION
         }).id('TextMarqueeOptionsTest5')
+        .key('TextMarqueeOptionsTest5')
         .height('10%')
     }
     .height('100%')

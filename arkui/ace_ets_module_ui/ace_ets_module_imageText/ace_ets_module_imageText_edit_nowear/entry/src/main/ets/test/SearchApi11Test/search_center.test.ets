@@ -58,7 +58,7 @@ export default function search_center() {
 
       if (globalThis.winLeft == 0) {
         console.log('get click before Initial value')
-        let search_01 = CommonFunc.getComponentRect('search_center_search_01');
+        let search_01 = CommonFunc.getComponentRect('search_center' + '_search_01');
         let y1 = search_01.top
 
         let driver = await Driver.create();
@@ -68,7 +68,7 @@ export default function search_center() {
         );
         await CommonFunc.sleep(1000);
 
-        let search_02 = CommonFunc.getComponentRect('search_center_search_01');
+        let search_02 = CommonFunc.getComponentRect('search_center' + '_search_01');
         let y2 = search_02.top
 
         expect(y2).assertLess(y1);

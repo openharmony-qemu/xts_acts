@@ -26,6 +26,7 @@ import getObjectsIndexSetTestStatic from "./photoAccessHelper/getObjectsIndexSet
 import getRangeObjectsTestStatic from "./photoAccessHelper/getRangeObjects.test";
 import PhotoAccessHelperAssetsTestStatic from "./photoAccessHelper/PhotoAccessHelperAssets.test";
 import PhotoAccessHelperEnumAlbumKeysStatic from "./photoAccessHelper/PhotoAccessHelperEnumAlbumKeys.test";
+import singlePhotoAlbumChangeTest from "./photoAccessHelper/PhotoSinglePhotoAlbumChange.test";
 import MediaAlbumChangeRequestSetAlbumNameStatic from "./MediaAssetChangeRequest/setAlbumName.test";
 import getTest from "./PhotoAsset/get.test";
 
@@ -45,7 +46,6 @@ export default function testsuite(): void {
   getThumbnailStaticTest();
   MediaAssetRequestImageSuppStatic();
   createPhotoAssetTest();
-  getAssetsByPredicatesTest();
   createAssetTest();
   getAlbumsStaticTest();
   getAssetsStaticTest();
@@ -60,4 +60,6 @@ export default function testsuite(): void {
   PhotoAccessHelperEnumAlbumKeysStatic();
   photoAccessHelperEnumImageFileTypeStatic();
   MediaAlbumChangeRequestSetAlbumNameStatic();
+  getAssetsByPredicatesTest();
+  singlePhotoAlbumChangeTest();
 }

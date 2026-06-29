@@ -164,7 +164,7 @@ it('RadioJsunit_static_0400', Level.LEVEL1, async (done: () => void): Promise<vo
       await (radio3?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
-      let textComponent = await driver.findComponent(ON.id('text'));
+      let textComponent = await driver.findComponent(ON.id('RadioPage' + '_text'));
       let text = await (textComponent?.getText() as Promise<string>);
       console.info("[RadioJsunit_0400] text: " + JSON.stringify(text));
       expect(text).assertEqual('change succ');

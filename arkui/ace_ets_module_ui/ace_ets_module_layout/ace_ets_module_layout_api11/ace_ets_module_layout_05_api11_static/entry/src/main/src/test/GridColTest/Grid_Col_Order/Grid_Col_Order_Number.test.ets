@@ -84,10 +84,10 @@ it('SUB_ACE_Grid_Col_Order_Number_TEST_static_0100', Level.LEVEL0, async (done: 
       await CommonFunc.sleep(3000);
 
       console.log('get Initial value')
-      let Grid_Col_Order_Number_01: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number_01');
-      let Grid_Col_Order_Number_02: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number_02');
-      let Grid_Col_Order_Number_03: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number_03');
-      let Grid_Col_Order_Number_04: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number_04');
+      let Grid_Col_Order_Number_01: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number' + '_01');
+      let Grid_Col_Order_Number_02: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number' + '_02');
+      let Grid_Col_Order_Number_03: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number' + '_03');
+      let Grid_Col_Order_Number_04: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number' + '_04');
 
 
       console.log('assert space')
@@ -119,10 +119,10 @@ it('SUB_ACE_Grid_Col_Order_Number_TEST_static_0200', Level.LEVEL0, async (done: 
       });
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Grid_Col_Order_Number_01: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number_01');
-      let Grid_Col_Order_Number_02: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number_02');
-      let Grid_Col_Order_Number_03: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number_03');
-      let Grid_Col_Order_Number_04: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number_04');
+      let Grid_Col_Order_Number_01: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number' + '_01');
+      let Grid_Col_Order_Number_02: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number' + '_02');
+      let Grid_Col_Order_Number_03: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number' + '_03');
+      let Grid_Col_Order_Number_04: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number' + '_04');
       console.log('assert space')
       expect(Math.abs((Grid_Col_Order_Number_02.top - Grid_Col_Order_Number_01.bottom) -
       UIContext.resolveUIContext()!.vp2px(10)) <= 1).assertTrue();
@@ -153,10 +153,10 @@ it('SUB_ACE_Grid_Col_Order_Number_TEST_static_0300', Level.LEVEL0, async (done: 
       });
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Grid_Col_Order_Number_01: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number_01');
-      let Grid_Col_Order_Number_02: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number_02');
-      let Grid_Col_Order_Number_03: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number_03');
-      let Grid_Col_Order_Number_04: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number_04');
+      let Grid_Col_Order_Number_01: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number' + '_01');
+      let Grid_Col_Order_Number_02: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number' + '_02');
+      let Grid_Col_Order_Number_03: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number' + '_03');
+      let Grid_Col_Order_Number_04: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_Number' + '_04');
       console.log('assert space')
       expect(Math.abs((Grid_Col_Order_Number_03.top - Grid_Col_Order_Number_02.bottom) -
       UIContext.resolveUIContext()!.vp2px(10)) <= 1).assertTrue();

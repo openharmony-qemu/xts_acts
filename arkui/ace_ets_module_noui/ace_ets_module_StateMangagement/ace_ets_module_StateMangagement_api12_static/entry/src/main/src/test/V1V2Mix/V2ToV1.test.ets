@@ -174,7 +174,7 @@ it('v2Tov1_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> =
      */
 //it('v2Tov1_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
     //   console.info('[v2Tov1_static_0700] START');
-    //   let Json = inspector.getInspectorByKey('func_value2');
+    //   let Json = inspector.getInspectorByKey('V2ToV1_func_value2');
     //   let Obj = JSON.parseJsonElement(Json);
     //   await CommonFunc.sleep(1000);
     //   console.log('[v2Tov1_static_0700] Obj ' + JSON.stringify(Obj.getElement('$attrs').getString('content')));

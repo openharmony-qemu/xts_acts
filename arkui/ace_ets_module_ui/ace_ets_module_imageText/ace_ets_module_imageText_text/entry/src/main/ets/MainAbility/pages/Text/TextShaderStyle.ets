@@ -36,6 +36,7 @@ struct TextShaderStyle {
       Text('direction为LeftTop的线性渐变').fontSize(18).width('90%').height('5%')
       Text(this.message)
         .id('Text_linearGradientStyle')
+        .key('Text_linearGradientStyle')
         .fontSize(20)
         .linearGradient({
           angle: 45,
@@ -49,6 +50,7 @@ struct TextShaderStyle {
       Text('径向渐变').fontSize(18).width('90%').height('5%')
       Text(this.message)
         .id('Text_radialGradientStyle')
+        .key('Text_radialGradientStyle')
         .fontSize(20)
         .radialGradient({
           center: [50, 50],

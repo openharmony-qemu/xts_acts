@@ -26,6 +26,7 @@ struct ImageContentTransitionEffectPage {
         .height('40%')// 启用淡入淡出过渡效果。
         .contentTransition(this.imageContentTransitionEffect)
         .id('image')
+        .key('image')
 
       Flex({ wrap: FlexWrap.Wrap }) {
         Button('OPACITY').height('6%')

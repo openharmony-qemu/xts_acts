@@ -55,7 +55,7 @@ export default function GridJsunit() {
     it('GridJsunit_0100',  Level.LEVEL0, async (done: Function) => {
       // Get the information of the Grid component
       console.info('[GridJsunit_0100] START');
-      let strJson1 = getInspectorByKey('grid1');
+      let strJson1 = getInspectorByKey('GridPage' + '_grid1');
       let obj: ESObject = JSON.parse(strJson1);
       console.info("[GridJsunit_0100] component obj is: " + JSON.stringify(obj));
       await CommonFunc.sleep(1000);
@@ -65,7 +65,7 @@ export default function GridJsunit() {
       expect(obj.$attrs.multiSelectable).assertEqual('false');
       expect(obj.$attrs.supportAnimation).assertEqual('false');
       await CommonFunc.sleep(1000);
-      let strJson2 = getInspectorByKey('grid2');
+      let strJson2 = getInspectorByKey('GridPage' + '_grid2');
       let obj2: ESObject = JSON.parse(strJson2);
       console.info("[GridJsunit_0100] component obj2 is: " + JSON.stringify(obj2));
       expect(obj2.$attrs.scrollBar).assertEqual('BarState.Off');
@@ -113,14 +113,14 @@ export default function GridJsunit() {
       await CommonFunc.sleep(2000);
 
       // Get the propoties value of the Grid component
-      let strJson = getInspectorByKey('grid1');
+      let strJson = getInspectorByKey('GridPage' + '_grid1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[GridJsunit_0200] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.columnsGap).assertEqual('15.00vp');
       expect(obj.$attrs.rowsGap).assertEqual('20.00vp');
       expect(obj.$attrs.cachedCount).assertEqual(2);
       await CommonFunc.sleep(1000);
-      let strJson2 = getInspectorByKey('grid2');
+      let strJson2 = getInspectorByKey('GridPage' + '_grid2');
       let obj2: ESObject = JSON.parse(strJson2);
       console.info("[GridJsunit_0200] component obj2 is: " + JSON.stringify(obj2));
       expect(obj2.$attrs.scrollBarColor).assertEqual(obj.$attrs.scrollBarColor);
@@ -167,14 +167,14 @@ export default function GridJsunit() {
       await CommonFunc.sleep(200);
 
       // Get the propoties value of the Grid component
-      let strJson = getInspectorByKey('grid1');
+      let strJson = getInspectorByKey('GridPage' + '_grid1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[GridJsunit_0300] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.columnsGap).assertEqual('0.00vp');
       expect(obj.$attrs.rowsGap).assertEqual('0.00vp');
       expect(obj.$attrs.cachedCount).assertEqual(1);
       await CommonFunc.sleep(1000);
-      let strJson2 = getInspectorByKey('grid2');
+      let strJson2 = getInspectorByKey('GridPage' + '_grid2');
       let obj2: ESObject = JSON.parse(strJson2);
       console.info("[GridJsunit_0300] component obj2 is: " + JSON.stringify(obj2));
       expect(obj2.$attrs.scrollBar).assertEqual('BarState.Auto');
@@ -198,7 +198,7 @@ export default function GridJsunit() {
       await CommonFunc.sleep(1000);
 
       // Verify onScrollIndex event
-      let grid2 = CommonFunc.getComponentRect('grid2');
+      let grid2 = CommonFunc.getComponentRect('GridPage' + '_grid2');
       let top = grid2.top
       let bottom = grid2.bottom
       let left = grid2.left
@@ -206,22 +206,22 @@ export default function GridJsunit() {
       let driver = await UiDriver.create()
       await driver.swipe(Math.round((right - left) / 2), Math.round(bottom - vp2px(10)), Math.round((right - left) / 2), Math.round(top + vp2px(10)));
       await driver.swipe(Math.round((right - left) / 2), Math.round(bottom - vp2px(10)), Math.round((right - left) / 2), Math.round(top + vp2px(10)));
-      let onScrollIndex1 = await driver.findComponent(BY.key('onScrollIndex'));
+      let onScrollIndex1 = await driver.findComponent(BY.key('GridPage' + '_onScrollIndex'));
       let text1 = await onScrollIndex1.getText();
       expect(text1).assertEqual('onScrollIndex:2');
       await CommonFunc.sleep(1000);
 
       await driver.swipe(Math.round((right - left) / 2), Math.round(bottom - vp2px(10)), Math.round((right - left) / 2), Math.round(top + vp2px(10)));
       await driver.swipe(Math.round((right - left) / 2), Math.round(bottom - vp2px(10)), Math.round((right - left) / 2), Math.round(top + vp2px(10)));
-      let onScrollIndex2 = await driver.findComponent(BY.key('onScrollIndex'));
+      let onScrollIndex2 = await driver.findComponent(BY.key('GridPage' + '_onScrollIndex'));
       let text2 = await onScrollIndex2.getText();
       expect(text2).assertEqual('onScrollIndex:2');
 
       // Verify common attribute click event
-      let button = await driver.findComponent(BY.key('button'));
+      let button = await driver.findComponent(BY.key('GridPage' + '_button'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('button');
+      let strJson = getInspectorByKey('GridPage' + '_button');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[GridJsunit_0400] component obj is: ' + obj.$attrs.content);
       expect(obj.$attrs.label).assertEqual('clicked');
@@ -241,7 +241,7 @@ export default function GridJsunit() {
       // Get the default attribute value of the Grid component
       console.info('[GridJsunit_0500] START');
       await CommonFunc.sleep(1000);
-      let strJson1 = getInspectorByKey('grid_default');
+      let strJson1 = getInspectorByKey('GridPage' + '_grid_default');
       let obj: ESObject = JSON.parse(strJson1);
       console.info("[GridJsunit_0500] component obj is: " + JSON.stringify(obj));
       console.info("[GridJsunit_0500] columnsGap: " + JSON.stringify(obj.$attrs.columnsGap));
@@ -285,7 +285,7 @@ export default function GridJsunit() {
 
       // Verify grid componentcan cannot scroll
       let driver = await UiDriver.create()
-      let grid_1 = await driver.findComponent(BY.key('grid1'));
+      let grid_1 = await driver.findComponent(BY.key('GridPage' + '_grid1'));
       let result = await grid_1.isScrollable()
       expect(result).assertFalse();
       console.info('[GridJsunit_0600] END');
@@ -370,7 +370,7 @@ export default function GridJsunit() {
       await CommonFunc.sleep(1000);
       // Verify grid componentcan cannot scroll
       let driver = await UiDriver.create()
-      let grid_1 = await driver.findComponent(BY.key('grid1'));
+      let grid_1 = await driver.findComponent(BY.key('GridPage' + '_grid1'));
       let result = await grid_1.isScrollable()
       expect(result).assertFalse();
       console.info('[GridJsunit_0900] END');

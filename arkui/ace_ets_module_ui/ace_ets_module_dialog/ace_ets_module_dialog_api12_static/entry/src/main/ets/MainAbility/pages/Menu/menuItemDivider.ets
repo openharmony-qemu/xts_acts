@@ -77,7 +77,7 @@ struct menuItemDividerTest {
         startMargin: new LengthMetrics(1.5, LengthUnit.VP),
         endMargin: new LengthMetrics(1.5, LengthUnit.VP)
       })
-      .key('menuItemDividerText')
+      .key('menuItemDivider_menuItemDividerText')
     }
     .width('100%')
   }

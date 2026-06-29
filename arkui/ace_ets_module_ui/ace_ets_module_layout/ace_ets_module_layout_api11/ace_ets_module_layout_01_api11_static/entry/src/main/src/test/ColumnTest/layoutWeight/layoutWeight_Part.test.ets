@@ -90,10 +90,10 @@ export default function layoutWeight_Part() {
       });
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Column_layoutWeight_021: RectValue = CommonFunc.getComponentRect('Column_layoutWeight_021');
-      let Column_layoutWeight_022: RectValue = CommonFunc.getComponentRect('Column_layoutWeight_022');
-      let Column_layoutWeight_023: RectValue = CommonFunc.getComponentRect('Column_layoutWeight_023');
-      let Column_layoutWeight_02: RectValue = CommonFunc.getComponentRect('Column_layoutWeight_02');
+      let Column_layoutWeight_021: RectValue = CommonFunc.getComponentRect('layoutWeight_Part' + '_Column_layoutWeight_021');
+      let Column_layoutWeight_022: RectValue = CommonFunc.getComponentRect('layoutWeight_Part' + '_Column_layoutWeight_022');
+      let Column_layoutWeight_023: RectValue = CommonFunc.getComponentRect('layoutWeight_Part' + '_Column_layoutWeight_023');
+      let Column_layoutWeight_02: RectValue = CommonFunc.getComponentRect('layoutWeight_Part' + '_Column_layoutWeight_02');
       console.log('assert position')
       expect(Math.abs((Math.round(Column_layoutWeight_021.left - Column_layoutWeight_02.left)) - (Math.round(Column_layoutWeight_02.right - Column_layoutWeight_021.right))) <= 1)
         .assertTrue();
@@ -151,10 +151,10 @@ export default function layoutWeight_Part() {
       });
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Column_layoutWeight_021: RectValue = CommonFunc.getComponentRect('Column_layoutWeight_021');
-      let Column_layoutWeight_022: RectValue = CommonFunc.getComponentRect('Column_layoutWeight_022');
-      let Column_layoutWeight_023: RectValue = CommonFunc.getComponentRect('Column_layoutWeight_023');
-      let Column_layoutWeight_02: RectValue = CommonFunc.getComponentRect('Column_layoutWeight_02');
+      let Column_layoutWeight_021: RectValue = CommonFunc.getComponentRect('layoutWeight_Part' + '_Column_layoutWeight_021');
+      let Column_layoutWeight_022: RectValue = CommonFunc.getComponentRect('layoutWeight_Part' + '_Column_layoutWeight_022');
+      let Column_layoutWeight_023: RectValue = CommonFunc.getComponentRect('layoutWeight_Part' + '_Column_layoutWeight_023');
+      let Column_layoutWeight_02: RectValue = CommonFunc.getComponentRect('layoutWeight_Part' + '_Column_layoutWeight_02');
       console.log('assert position')
       expect(Math.abs((Math.round(Column_layoutWeight_021.left - Column_layoutWeight_02.left)) - (Math.round(Column_layoutWeight_02.right - Column_layoutWeight_021.right))) <= 1)
         .assertTrue();
@@ -212,10 +212,10 @@ export default function layoutWeight_Part() {
       });
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Column_layoutWeight_021: RectValue = CommonFunc.getComponentRect('Column_layoutWeight_021');
-      let Column_layoutWeight_022: RectValue = CommonFunc.getComponentRect('Column_layoutWeight_022');
-      let Column_layoutWeight_023: RectValue = CommonFunc.getComponentRect('Column_layoutWeight_023');
-      let Column_layoutWeight_02: RectValue = CommonFunc.getComponentRect('Column_layoutWeight_02');
+      let Column_layoutWeight_021: RectValue = CommonFunc.getComponentRect('layoutWeight_Part' + '_Column_layoutWeight_021');
+      let Column_layoutWeight_022: RectValue = CommonFunc.getComponentRect('layoutWeight_Part' + '_Column_layoutWeight_022');
+      let Column_layoutWeight_023: RectValue = CommonFunc.getComponentRect('layoutWeight_Part' + '_Column_layoutWeight_023');
+      let Column_layoutWeight_02: RectValue = CommonFunc.getComponentRect('layoutWeight_Part' + '_Column_layoutWeight_02');
       console.log('assert position')
       expect(Math.abs((Math.round(Column_layoutWeight_021.left - Column_layoutWeight_02.left)) - (Math.round(Column_layoutWeight_02.right - Column_layoutWeight_021.right))) <= 1)
         .assertTrue();

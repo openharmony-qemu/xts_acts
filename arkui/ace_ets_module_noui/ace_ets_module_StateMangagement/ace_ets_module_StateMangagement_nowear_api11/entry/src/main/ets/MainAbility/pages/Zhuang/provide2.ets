@@ -86,7 +86,7 @@ struct provide2 {
       Scroll() {
         Row() {
           Column() {
-            Button('compare').key('compareBtn')
+            Button('compare').key('provide2_compareBtn')
             Row(){
               Column(){
                 Text("type-->undefined").height('5%')

@@ -81,7 +81,7 @@ export default function onSelectionChange3() {
       let richEditor = await (driver.findComponent(ON.id('onSelectionChange3_RichEditor')) as Promise<Component>);
       await richEditor.longClick();
       await CommonFunc.sleep(1000);
-      let text1_1 = inspector.getInspectorByKey('onSelectionChange3_text1');
+      let text1_1 = inspector.getInspectorByKey('onSelectionChange3' + '_text1');
       let Obj1_1 = JSON.parseJsonElement(text1_1);
       expect(Obj1_1.getElement('$attrs').getString('content')).assertEqual('1');
 
@@ -93,7 +93,7 @@ export default function onSelectionChange3() {
       }
       await copy.click()
       await CommonFunc.sleep(1000);
-      let text1_2 = inspector.getInspectorByKey('onSelectionChange3_text1');
+      let text1_2 = inspector.getInspectorByKey('onSelectionChange3' + '_text1');
       let Obj1_2 = JSON.parseJsonElement(text1_2);
       expect(Obj1_2.getElement('$attrs').getString('content')).assertEqual('1');
       await CommonFunc.sleep(2500);
@@ -108,7 +108,7 @@ export default function onSelectionChange3() {
       }
       await paste.click()
       await CommonFunc.sleep(1000);
-      let text1_3 = inspector.getInspectorByKey('onSelectionChange3_text1');
+      let text1_3 = inspector.getInspectorByKey('onSelectionChange3' + '_text1');
       let Obj1_3 = JSON.parseJsonElement(text1_3);
       expect(Obj1_3.getElement('$attrs').getString('content')).assertEqual('2');
 

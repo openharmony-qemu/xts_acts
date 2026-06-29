@@ -95,7 +95,7 @@ it('richEditorApi1_static_0100', Level.LEVEL2, async (done: () => void) => {
       await (button2?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
 
-      let text1 = inspector.getInspectorByKey('richEditorApi1_text1');
+      let text1 = inspector.getInspectorByKey('richEditorApi1' + '_text1');
       let Obj1 = JSON.parseJsonElement(text1);
       expect(Obj1.getElement('$attrs').getString("content")).assertEqual('222');
       console.info('[testRichEditor_0100] END');

@@ -25,7 +25,7 @@ function sleep(time: number): Promise<number> {
 }
 
 export default function textAreaAutoFillTest() {
-  describe('textAreaAutoFillTest', async () => {
+  describe('textAreaAutoFillTest', () => {
     beforeEach(async (done: Function) => {
       console.info('textAreaAutoFill beforeEach start');
       let options: router.RouterOptions = {

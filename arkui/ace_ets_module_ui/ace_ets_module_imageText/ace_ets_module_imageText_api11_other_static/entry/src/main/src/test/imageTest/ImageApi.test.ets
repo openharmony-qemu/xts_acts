@@ -100,7 +100,7 @@ export default function ImageApi() {
 it('ImageApi_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[ImageApi_001] START');
       await CommonFunc.sleep(2000);
-      let strJson: string = inspector.getInspectorByKey('ImageApi_Image');
+      let strJson: string = inspector.getInspectorByKey('ImageApi' + '_Image');
       await CommonFunc.sleep(1000);
       console.info("[ImageApi_001] obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement("$type").asString()).assertEqual('Image');

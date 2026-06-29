@@ -83,7 +83,7 @@ export default function datePickerJsunit() {
      */
 it('datePickerTest_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('datePickerText_0100 START');
-      let strJson = inspector.getInspectorByKey('datePicker');
+      let strJson = inspector.getInspectorByKey('datePickerneww' + '_datePicker');
       console.info("datePickerText_0100 component strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       console.info("datePickerText_0100 component obj is: " + JSON.stringify(obj));
@@ -131,7 +131,7 @@ it('datePickerTest_static_0300', Level.LEVEL1, async (done: () => void): Promise
       } catch (err) {
         console.info("datePickerTest_0300 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("datePickerTest_0300 click result is: " + JSON.stringify(inspector.sendEventByKey('datePicker',10,"")));
+      console.info("datePickerTest_0300 click result is: " + JSON.stringify(inspector.sendEventByKey('datePickerneww' + '_datePicker',10,"")));
       await Utils.sleep(2000);
       console.info('datePickerTest_0300 END');
       done();

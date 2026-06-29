@@ -24,7 +24,7 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { Color, FontWeight, $r, Resource } from '@ohos.arkui.component'
 
-export default function ChipV2SizeTest() {
+export default function ChipV2SizeTest(): void {
   describe('ChipV2SizeTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("ChipV2SizeTest beforeEach start");

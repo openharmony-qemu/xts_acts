@@ -76,10 +76,10 @@ it('SUB_ACE_rowNesting_justifyContent_TEST_static_0100', Level.LEVEL0, async (do
       console.info('[SUB_ACE_rowNesting_justifyContent_TEST_static_0100] START');
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let rowNesting_justifyContent_011: RectValue = await CommonFunc.getComponentRect('rowNesting_justifyContent_011');
-      let rowNesting_justifyContent_012: RectValue = await CommonFunc.getComponentRect('rowNesting_justifyContent_012');
-      let rowNesting_justifyContent_013: RectValue = await CommonFunc.getComponentRect('rowNesting_justifyContent_013');
-      let rowNesting_justifyContent_01: RectValue = await CommonFunc.getComponentRect('rowNesting_justifyContent_01');
+      let rowNesting_justifyContent_011: RectValue = await CommonFunc.getComponentRect('rowNesting_justifyContent' + '_011');
+      let rowNesting_justifyContent_012: RectValue = await CommonFunc.getComponentRect('rowNesting_justifyContent' + '_012');
+      let rowNesting_justifyContent_013: RectValue = await CommonFunc.getComponentRect('rowNesting_justifyContent' + '_013');
+      let rowNesting_justifyContent_01: RectValue = await CommonFunc.getComponentRect('rowNesting_justifyContent' + '_01');
 
       console.log('assert position')
       expect(Math.abs(Math.round(rowNesting_justifyContent_011.top - rowNesting_justifyContent_01.top) - Math.round(rowNesting_justifyContent_01.bottom - rowNesting_justifyContent_011.bottom)) <= 1)

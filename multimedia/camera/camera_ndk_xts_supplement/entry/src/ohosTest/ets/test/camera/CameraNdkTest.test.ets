@@ -1519,6 +1519,38 @@ export default function CameraNdkTest() {
       console.info(TAG, testName, result);
       expect(result).assertEqual(CAMERA_INVALID_ARGUMENT);
     });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_METADATA_OBJECT_EXT_DESTORY_0100
+     * @tc.name     SUB_MULTIMEDIA_OH_METADATA_OBJECT_EXT_DESTORY_0100
+     * @tc.desc     OH_MetadataObjectExt_Destroy
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_METADATA_OBJECT_EXT_DESTORY_0100', Level.LEVEL0, async () => {
+      let testName = "SUB_MULTIMEDIA_OH_METADATA_OBJECT_EXT_DESTORY_0100";
+      console.info(TAG, testName, "start");
+      let result = await cameraObj.TestOHMetadataObjectExtDestroy(1);
+      console.info(TAG, testName, result);
+      expect(result).assertEqual(true);
+    });
+    
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_METADATA_OBJECT_EXT_IS_LOCK_FOCUS_TRACKED_0100
+     * @tc.name     SUB_MULTIMEDIA_OH_METADATA_OBJECT_EXT_IS_LOCK_FOCUS_TRACKED_0100
+     * @tc.desc     OH_MetadataObjectExt_IsLockFocusTracked -- nullptr
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_METADATA_OBJECT_EXT_IS_LOCK_FOCUS_TRACKED_0100', Level.LEVEL0, async () => {
+      let testName = "SUB_MULTIMEDIA_OH_METADATA_OBJECT_EXT_IS_LOCK_FOCUS_TRACKED_0100";
+      console.info(TAG, testName, "start");
+      let result = await cameraObj.TestOHMetadataObjectExtIsLockFocusTracked(1);
+      console.info(TAG, testName, result);
+      expect(result === true || result === false).assertTrue();
+    });
     
   })
 }

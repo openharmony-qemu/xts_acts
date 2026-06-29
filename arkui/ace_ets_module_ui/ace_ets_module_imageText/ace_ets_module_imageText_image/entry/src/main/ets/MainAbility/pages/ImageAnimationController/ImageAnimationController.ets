@@ -312,6 +312,7 @@ struct AnimationControllerPage {
       }
 
       Text(this.statusText).id('statusText')
+      .key('statusText')
     }
     .height('100%')
     .width('100%')

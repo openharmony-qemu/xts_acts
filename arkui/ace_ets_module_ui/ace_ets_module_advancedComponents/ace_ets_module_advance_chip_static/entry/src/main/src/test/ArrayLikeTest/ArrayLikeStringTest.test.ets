@@ -27,7 +27,7 @@ import common from '@ohos.app.ability.common';
 import deviceInfo from '@ohos.deviceInfo';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-export default function ArrayLikeStringTest() {
+export default function ArrayLikeStringTest(): void {
   describe('ArrayLikeStringTest', () => {
     beforeAll(async (): Promise<void> => {
 

@@ -143,56 +143,56 @@ struct GridCallbackPage {
           this.scroller.scrollTo({ xOffset: 0, yOffset: 2000 })
         })
       Button(this.buttonName)
-        .key('button')
+        .key('GridCallbackPage_button')
         .height('5%')
         .onClick((e: ClickEvent) => {
           this.buttonName = 'clicked'
           this.scroller.scrollPage({ next: true })
         })
       Row() {
-        Text('onScrollIndex:' + this.onScrollIndex).key('onScrollIndex')
+        Text('onScrollIndex:' + this.onScrollIndex).key('GridCallbackPage_onScrollIndex')
           .fontSize(10).margin({ right: 5 } as Margin)
-        Text(this.onItemDragStart).key('onItemDragStart')
+        Text(this.onItemDragStart).key('GridCallbackPage_onItemDragStart')
           .fontSize(10)
       }
 
       Row() {
-        Text(this.onItemDragEnter).key('onItemDragEnter')
+        Text(this.onItemDragEnter).key('GridCallbackPage_onItemDragEnter')
           .fontSize(10).margin({ right: 5 } as Margin)
-        Text(this.onItemDragMove).key('onItemDragMove')
+        Text(this.onItemDragMove).key('GridCallbackPage_onItemDragMove')
           .fontSize(10)
       }
 
       Row() {
-        Text(this.onItemDragLeave).key('onItemDragLeave')
+        Text(this.onItemDragLeave).key('GridCallbackPage_onItemDragLeave')
           .fontSize(10).margin({ right: 5 } as Margin)
-        Text(this.onItemDrop).key('onItemDrop')
+        Text(this.onItemDrop).key('GridCallbackPage_onItemDrop')
           .fontSize(10)
       }
 
       Row() {
-        Text(this.onScrollText).key('onScrollText')
+        Text(this.onScrollText).key('GridCallbackPage_onScrollText')
           .fontSize(10).margin({ right: 5 } as Margin)
-        Text(this.onReachStartText).key('onReachStartText')
+        Text(this.onReachStartText).key('GridCallbackPage_onReachStartText')
           .fontSize(10)
       }
 
       Row() {
-        Text(this.onReachEndText).key('onReachEndText')
+        Text(this.onReachEndText).key('GridCallbackPage_onReachEndText')
           .fontSize(10).margin({ right: 5 } as Margin)
-        Text(this.onScrollStartText).key('onScrollStartText')
+        Text(this.onScrollStartText).key('GridCallbackPage_onScrollStartText')
           .fontSize(10)
       }
 
       Row() {
-        Text(this.onScrollIndexText).key('onScrollIndexText')
+        Text(this.onScrollIndexText).key('GridCallbackPage_onScrollIndexText')
           .fontSize(10).margin({ right: 5 } as Margin)
-        Text(this.onScrollStopText).key('onScrollStopText')
+        Text(this.onScrollStopText).key('GridCallbackPage_onScrollStopText')
           .fontSize(10)
       }
 
       Row() {
-        Text(this.onScrollFrameBeginText).key('onScrollFrameBeginText')
+        Text(this.onScrollFrameBeginText).key('GridCallbackPage_onScrollFrameBeginText')
           .fontSize(10).margin({ right: 5 } as Margin)
         Text(this.onScrollBarUpdateText).key('onScrollBarUpdateText')
           .fontSize(10)
@@ -211,7 +211,7 @@ struct GridCallbackPage {
       }.columnsTemplate('1fr')
       .rowsTemplate('1fr')
       .height('5%')
-      .key('grid_default')
+      .key('GridCallbackPage_grid_default')
 
       Grid() {
         ForEach(this.numAry, (day: string) => {
@@ -242,7 +242,7 @@ struct GridCallbackPage {
       .multiSelectable(this.multiSelectable)
       .supportAnimation(this.supportAnimation)
       .width('90%')
-      .key('grid1')
+      .key('GridCallbackPage_grid1')
       .backgroundColor(0xFAEEE0)
       .height('7%')
       .edgeEffect(EdgeEffect.Spring)
@@ -289,7 +289,7 @@ struct GridCallbackPage {
       .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
       .columnsGap(10)
       .rowsGap(10)
-      .key('grid2')
+      .key('GridCallbackPage_grid2')
       .scrollBar(this.scrollBar)
       .scrollBarColor(this.scrollBarColor)
       .scrollBarWidth(this.scrollBarWidth)

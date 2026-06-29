@@ -30,7 +30,7 @@ let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-export default function AddMonitorTwoDimensionalArray() {
+export default function AddMonitorTwoDimensionalArray(): void {
   describe('AddMonitorTwoDimensionalArray', () => {
     beforeAll(async (): Promise<void> => {
       console.info("AddMonitorTwoDimensionalArray beforeEach start");

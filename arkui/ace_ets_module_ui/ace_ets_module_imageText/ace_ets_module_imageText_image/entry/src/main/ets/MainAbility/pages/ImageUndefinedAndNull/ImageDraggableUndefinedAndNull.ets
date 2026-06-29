@@ -22,6 +22,7 @@ struct imageDraggableUndefinedAndNullTest {
         Column({ space: 5 }) {
           Image($r('app.media.tree'))
             .id('imageDraggableUndefined')
+            .key('imageDraggableUndefined')
             .draggable(undefined)
             .border({ width:2, color: Color.Black })
             .width(150)
@@ -31,6 +32,7 @@ struct imageDraggableUndefinedAndNullTest {
         Column({ space: 5 }) {
           Image($r('app.media.tree'))
             .id('imageDraggableNull')
+            .key('imageDraggableNull')
             .draggable(null)
             .border({ width:2, color: Color.Black })
             .width(150)

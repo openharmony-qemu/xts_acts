@@ -49,7 +49,7 @@ struct TextClockPage {
     Column({ space: 5 } as ColumnOptions) {
     Button("change value").onClick((e: ClickEvent) => {
       (this.customModifier as CustomModifier).onChange1();
-    }).key("changeButton")
+    }).key("textClockPage_changeButton")
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
       Text('Current milliseconds is ' + this.accumulateTime)
         .fontSize(20)

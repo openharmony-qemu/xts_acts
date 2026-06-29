@@ -64,8 +64,8 @@ export default function row_TextFlexShrinkTest() {
       let firstText: RectValue = CommonFunc.getComponentRect('Row_TextFlexShrink1');
       let secondText: RectValue = CommonFunc.getComponentRect('Row_TextFlexShrink2');
       let thirdText: RectValue = CommonFunc.getComponentRect('Row_TextFlexShrink3');
-      let rowContainer: RectValue = CommonFunc.getComponentRect('Row_TextFlexShrink_Container01');
-      let rowContainerStrJson = getInspectorByKey('Row_TextFlexShrink_Container01');
+      let rowContainer: RectValue = CommonFunc.getComponentRect('Row_TextFlexShrink' + '_Container01');
+      let rowContainerStrJson = getInspectorByKey('Row_TextFlexShrink' + '_Container01');
 
       expect(JSON.parse(rowContainerStrJson).$type).assertEqual('Row');
 

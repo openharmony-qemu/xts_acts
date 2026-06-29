@@ -26,8 +26,8 @@ export default function SegmentButtonTextItem001() {
         url: "MainAbility/pages/segmentButton/SegmentButtonTextItem001",
       }
       try {
-        router.clear();
         let pages = router.getState();
+        router.clear();
         console.info("get current pages:" + JSON.stringify(pages));
         if (!("SegmentButtonTextItem001" == pages.name)) {
           console.info("get SegmentButtonTextItemTest pages.name:" + JSON.stringify(pages.name));

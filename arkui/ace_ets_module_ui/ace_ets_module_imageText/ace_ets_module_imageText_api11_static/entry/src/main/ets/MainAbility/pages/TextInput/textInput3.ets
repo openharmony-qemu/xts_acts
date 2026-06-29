@@ -72,7 +72,7 @@ struct TextAreaExample2 {
         .onChange((value: string) :void=> {
           this.text = value
         })
-      Text(this.text).width('90%').key('text')
+      Text(this.text).width('90%').key('textInput3_text')
       Button('caretPosition')
         .onClick((e:ClickEvent) => {
           this.controller.caretPosition(4)

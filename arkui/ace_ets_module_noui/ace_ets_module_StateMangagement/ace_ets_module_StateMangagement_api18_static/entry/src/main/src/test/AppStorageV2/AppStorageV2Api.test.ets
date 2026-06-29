@@ -25,7 +25,7 @@ import {UtilsTest,startAbility} from '../Util.test';
 import { AppStorageV2 } from '@kit.ArkUI';
 import {Message1,Message2} from "../../../../main/ets/MainAbility/pages/AppStorageV2/AppStorageV2Api"
 
-export default function AppStorageV2Api() {
+export default function AppStorageV2Api(): void {
   describe('AppStorageV2ApiTest', () => {
     beforeAll(async (): Promise<void> => {
 

@@ -22,6 +22,7 @@ struct imageColorFilterUndefinedAndNullTest {
         Column({ space: 5 }) {
           Image($r('app.media.tree'))
             .id('imageColorFilterUndefined')
+            .key('imageColorFilterUndefined')
             .colorFilter(undefined)
             .border({ width:2, color: Color.Black })
             .width(150)
@@ -31,6 +32,7 @@ struct imageColorFilterUndefinedAndNullTest {
         Column({ space: 5 }) {
           Image($r('app.media.tree'))
             .id('imageColorFilterNull')
+            .key('imageColorFilterNull')
             .colorFilter(null)
             .border({ width:2, color: Color.Black })
             .width(150)

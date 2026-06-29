@@ -123,7 +123,7 @@ it('PatternLockJsunit_0100', Level.LEVEL2, async (done: () => void): Promise<voi
 it('PatternLockJsunit_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       // Verify the content of the message
       let driver1 = Driver.create()
-      let textComponent1 = await driver1.findComponent(ON.id('text'));
+      let textComponent1 = await driver1.findComponent(ON.id('PatternLockPage' + '_text'));
       let text1 = await (textComponent1?.getText() as Promise<string>);
       expect(text1).assertEqual('please input password!');
       console.info('[PatternLockJsunit_0200] END');
@@ -147,7 +147,7 @@ it('PatternLockJsunit_0300', Level.LEVEL2, async (done: () => void): Promise<voi
       await CommonFunc.sleep(2000);
       // Verify the content of the message
       let driver1 = Driver.create()
-      let curtextrentBp = await driver1.findComponent(ON.id('text'));
+      let curtextrentBp = await driver1.findComponent(ON.id('PatternLockPage' + '_text'));
       let text = await (curtextrentBp?.getText() as Promise<string>);
       expect(text).assertEqual('Please input password');
       console.info('[PatternLockJsunit_0300] END');
@@ -170,7 +170,7 @@ it('PatternLockJsunit_0400', Level.LEVEL2, async (done: () => void): Promise<voi
       await CommonFunc.sleep(1000);
       // Verify the content of the message
       let driver = Driver.create()
-      let textComponent = await driver.findComponent(ON.id('text'));
+      let textComponent = await driver.findComponent(ON.id('PatternLockPage' + '_text'));
       let text = await (textComponent?.getText() as Promise<string>);
       expect(text).assertEqual('hello world');
       console.info('[PatternLockJsunit_0400] END');
@@ -364,7 +364,7 @@ it('PatternLockJsunit_1200', Level.LEVEL2, async (done: () => void): Promise<voi
      */
 it('PatternLockJsunit_1300', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[PatternLockJsunit_1300] START');
-      let strJson = inspector.getInspectorByKey('default');
+      let strJson = inspector.getInspectorByKey('PatternLockPage' + '_default');
       let obj = JSON.parseJsonElement(strJson);
       let newStrJson = inspector.getInspectorByKey('PatternLock');
       let newObj = JSON.parseJsonElement(newStrJson);

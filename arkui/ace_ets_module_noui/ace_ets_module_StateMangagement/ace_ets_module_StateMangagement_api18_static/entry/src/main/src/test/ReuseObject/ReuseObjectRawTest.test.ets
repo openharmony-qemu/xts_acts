@@ -23,7 +23,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest, startAbility } from '../Util.test';
 import { RecordData } from '@ohos.base'
 
-export default function ReuseObjectRawTest() {
+export default function ReuseObjectRawTest(): void {
   describe('ReuseObjectRawTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("ReuseObjectRawTest beforeAll start");

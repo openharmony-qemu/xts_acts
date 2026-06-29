@@ -65,7 +65,7 @@ struct SidebarIcons {
           }
         }.width('100%')
       }
-      .key("SideBarContainer")
+      .key("sidebar2_SideBarContainer")
       .sideBarWidth(240)
       .minSideBarWidth(210)
       .maxSideBarWidth(260)

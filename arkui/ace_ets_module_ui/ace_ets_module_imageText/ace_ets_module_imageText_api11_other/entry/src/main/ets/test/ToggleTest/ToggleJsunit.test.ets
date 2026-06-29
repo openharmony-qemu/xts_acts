@@ -93,7 +93,7 @@ export default function ToggleJsunit() {
       let switchButton = await driver.findComponent(BY.key('toggleSwitch'));
       await switchButton.click();
       await CommonFunc.sleep(1000);
-      let textComponent = await driver.findComponent(BY.key('text'));
+      let textComponent = await driver.findComponent(BY.key('TogglePage' + '_text'));
       let switchText = await textComponent.getText();
       console.info("[ToggleJsunit_0200] switchText: " + JSON.stringify(switchText));
       expect(switchText).assertEqual('switch true');
@@ -102,7 +102,7 @@ export default function ToggleJsunit() {
       let switchButton1 = await driver1.findComponent(BY.key('toggleSwitch'));
       await switchButton1.click();
       await CommonFunc.sleep(1000);
-      let textComponent1 = await driver1.findComponent(BY.key('text'));
+      let textComponent1 = await driver1.findComponent(BY.key('TogglePage' + '_text'));
       let switch1 = await textComponent1.getText();
       console.info("[ToggleJsunit_0200] switch1: " + JSON.stringify(switch1));
       expect(switch1).assertEqual('switch false');
@@ -126,7 +126,7 @@ export default function ToggleJsunit() {
       let checkboxButton = await driver.findComponent(BY.key('toggleCheckbox'));
       await checkboxButton.click();
       await CommonFunc.sleep(1000);
-      let textComponent = await driver.findComponent(BY.key('text'));
+      let textComponent = await driver.findComponent(BY.key('TogglePage' + '_text'));
       let checkbox = await textComponent.getText();
       console.info("[ToggleJsunit_0300] checkbox: " + JSON.stringify(checkbox));
       expect(checkbox).assertEqual('checkbox false');
@@ -155,7 +155,7 @@ export default function ToggleJsunit() {
       let buttonComponent = await driver.findComponent(BY.key('toggleButton'));
       await buttonComponent.click();
       await CommonFunc.sleep(1000);
-      let textComponent = await driver.findComponent(BY.key('text'));
+      let textComponent = await driver.findComponent(BY.key('TogglePage' + '_text'));
       let button = await textComponent.getText();
       console.info("[ToggleJsunit_0400] button: " + JSON.stringify(button));
       expect(button).assertEqual('button true');

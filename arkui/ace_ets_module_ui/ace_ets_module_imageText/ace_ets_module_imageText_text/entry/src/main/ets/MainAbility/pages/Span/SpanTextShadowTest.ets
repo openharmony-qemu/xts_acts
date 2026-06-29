@@ -24,16 +24,19 @@ struct SpanTextShadowTest {
         Span(this.text)
           .textShadow(this.shadowOptions1)
           .id('spanTextShadow1')
+          .key('spanTextShadow1')
       }.height('10%')
       Text(){
         Span(this.text)
           .textShadow(this.shadowOptions2)
           .id('spanTextShadow2')
+          .key('spanTextShadow2')
       }.height('10%')
       Text(){
         Span(this.text)
           .textShadow([this.shadowOptions1,this.shadowOptions2])
           .id('spanTextShadow3')
+          .key('spanTextShadow3')
       }.height('10%')
     }.width('100%').height('100%')
   }

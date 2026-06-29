@@ -255,7 +255,7 @@ it('sideBarContainerTest_0011', Level.LEVEL0, async (done: () => void): Promise<
 it('sideBarContainerTest_static_0012', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('sideBarContainerTest_0012 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('sideBarContainer' + '_changeButton'));
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000)
       let strJsonNew = inspector.getInspectorByKey('sideBarContainer');

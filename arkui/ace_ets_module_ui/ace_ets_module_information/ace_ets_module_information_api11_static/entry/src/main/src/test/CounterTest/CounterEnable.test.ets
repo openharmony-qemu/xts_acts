@@ -71,7 +71,7 @@ it('ArkUI_Counter_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       console.info(`${SUITE} ${CASE} START`);
 
       inspector.sendEventByKey('CounterEnable_Button_1', 10, "")
-      let strJson: string = inspector.getInspectorByKey('CounterEnable_Counter_1');
+      let strJson: string = inspector.getInspectorByKey('CounterEnable' + '_Counter_1');
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Counter");
 
       console.info(`${SUITE} ${CASE} END`);
@@ -88,7 +88,7 @@ it('ArkUI_Counter_static_0200', Level.LEVEL0, async (done: () => void): Promise<
       let CASE: string = 'ArkUI_Counter_0200'
       console.info(`${SUITE} ${CASE} START`);
       inspector.sendEventByKey('CounterEnable_Button_2', 10, "")
-      let strJson = inspector.getInspectorByKey('CounterEnable_Counter_1');
+      let strJson = inspector.getInspectorByKey('CounterEnable' + '_Counter_1');
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Counter");
       console.info(`${SUITE} ${CASE} END`);
       done()

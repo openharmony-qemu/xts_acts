@@ -215,7 +215,7 @@ it('waterFlowViewJsunit_static_0900', Level.LEVEL0, async (done: () => void): Pr
 it('waterFlowViewJsunit_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('waterFlowViewJsunit_1000 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('waterFlowView' + '_changeButton'));
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000)
       let strJsonNew = inspector.getInspectorByKey('WaterFlowKey1');

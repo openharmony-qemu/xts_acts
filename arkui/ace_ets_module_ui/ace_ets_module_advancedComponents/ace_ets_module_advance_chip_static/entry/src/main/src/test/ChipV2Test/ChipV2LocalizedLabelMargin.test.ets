@@ -24,7 +24,7 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { Color, FontWeight, $r, Resource } from '@ohos.arkui.component'
 
-export default function ChipV2LocalizedLabelMargin() {
+export default function ChipV2LocalizedLabelMargin(): void {
   describe('ChipV2LocalizedLabelMargin', () => {
     beforeAll(async (): Promise<void> => {
       console.info("ChipV2LocalizedLabelMargin beforeEach start");

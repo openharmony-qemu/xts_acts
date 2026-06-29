@@ -78,14 +78,14 @@ export default function Grid_RowCol_LayoutDirection() {
 it('testGridRowColGridLayoutDirection_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGridRowColGridLayoutDirection_static_01] START');
       await CommonFunc.sleep(3000);
-      let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_LayoutDirection_01');
+      let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_LayoutDirection' + '_01');
 
      expect(JSON.parseJsonElement(gridContainerStrJson).getString('$type')).assertEqual('Grid');
-      let Grid_RowCol_LayoutDirection_011: RectValue = CommonFunc.getComponentRect('Grid_RowCol_LayoutDirection_011');
-      let Grid_RowCol_LayoutDirection_012: RectValue = CommonFunc.getComponentRect('Grid_RowCol_LayoutDirection_012');
-      let Grid_RowCol_LayoutDirection_013: RectValue = CommonFunc.getComponentRect('Grid_RowCol_LayoutDirection_013');
-      let Grid_RowCol_LayoutDirection_014: RectValue = CommonFunc.getComponentRect('Grid_RowCol_LayoutDirection_014');
-      let Grid_RowCol_LayoutDirection_01: RectValue = CommonFunc.getComponentRect('Grid_RowCol_LayoutDirection_01');
+      let Grid_RowCol_LayoutDirection_011: RectValue = CommonFunc.getComponentRect('Grid_RowCol_LayoutDirection' + '_011');
+      let Grid_RowCol_LayoutDirection_012: RectValue = CommonFunc.getComponentRect('Grid_RowCol_LayoutDirection' + '_012');
+      let Grid_RowCol_LayoutDirection_013: RectValue = CommonFunc.getComponentRect('Grid_RowCol_LayoutDirection' + '_013');
+      let Grid_RowCol_LayoutDirection_014: RectValue = CommonFunc.getComponentRect('Grid_RowCol_LayoutDirection' + '_014');
+      let Grid_RowCol_LayoutDirection_01: RectValue = CommonFunc.getComponentRect('Grid_RowCol_LayoutDirection' + '_01');
       expect(Math.abs(Grid_RowCol_LayoutDirection_011.left - Grid_RowCol_LayoutDirection_01.left) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_LayoutDirection_013.left - Grid_RowCol_LayoutDirection_01.left) <= 1).assertTrue();
 

@@ -24,7 +24,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 
-export default function chipTest0010() {
+export default function chipTest0010(): void {
   describe('ChipTest0010', () => {
     beforeAll(async (): Promise<void> => {
       console.info("ChipTest0010 beforeEach start");

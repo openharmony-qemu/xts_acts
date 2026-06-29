@@ -37,7 +37,7 @@ struct GridColExample {
     Column({ space: 5 }) {
       Button("change value").onClick(() => {
         (this.customModifier as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("gridCol_changeButton")
 
       Column() {
         GridRow({

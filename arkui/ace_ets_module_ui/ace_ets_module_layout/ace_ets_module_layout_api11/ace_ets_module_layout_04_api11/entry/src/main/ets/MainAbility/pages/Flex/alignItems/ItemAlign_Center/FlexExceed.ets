@@ -56,11 +56,11 @@ struct FlexExceed_Center {
           alignItems: ItemAlign.Center,
           wrap: FlexWrap.NoWrap,
         }) {
-          Text('1').width(150).height(50).backgroundColor(0xF5DEB3).key('textExceed01')
-          Text('2').width(150).height(100).backgroundColor(0xD2B48C).key('textExceed02')
-          Text('3').width(150).height(150).backgroundColor(0xF5DEB3).key('textExceed03')
+          Text('1').width(150).height(50).backgroundColor(0xF5DEB3).key('FlexExceed_textExceed01')
+          Text('2').width(150).height(100).backgroundColor(0xD2B48C).key('FlexExceed_textExceed02')
+          Text('3').width(150).height(150).backgroundColor(0xF5DEB3).key('FlexExceed_textExceed03')
         }
-        .key('flexExceed01')
+        .key('FlexExceed_flexExceed01')
         .height(200)
         .width(500)
         .margin(this.testMargin)

@@ -26,8 +26,8 @@ export default function maxFontScaleTest() {
         url: 'MainAbility/pages/segmentButton/maxFontScaleTest',
       }
       try {
-        router.clear();
         let pages = router.getState();
+        router.clear();
         console.info('get maxFontScaleTest state pages:' + JSON.stringify(pages));
         if (!('maxFontScaleTest' == pages.name)) {
           console.info('get maxFontScaleTest pages.name:' + JSON.stringify(pages.name));
@@ -55,7 +55,7 @@ export default function maxFontScaleTest() {
     it('maxFontScaleTest_0100', Level.LEVEL3, async (done: Function) => {
      console.info('[maxFontScaleTest_0100] START');
       await CommonFunc.sleep(1000);
-      let driver = Driver.create();
+      let driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let text = getInspectorByKey('text');
       console.info("[maxFontScaleTest_0100] JSON.parse(text) is: " + JSON.stringify(JSON.parse(text)));

@@ -37,12 +37,14 @@ struct ImageSpanModifier1 {
         ImageSpan($r('app.media.icon'))
           .attributeModifier(this.modifier)
           .id('ImageSpanModifier_get_Size_width')
+          .key('ImageSpanModifier_get_Size_width')
           .alt(this.imageAlt)
           .height('20%')
       }
 
       TextArea({ text: this.value })
         .id('ImageSpanModifier_get_type')
+        .key('ImageSpanModifier_get_type')
         .height('10%')
     }
   }

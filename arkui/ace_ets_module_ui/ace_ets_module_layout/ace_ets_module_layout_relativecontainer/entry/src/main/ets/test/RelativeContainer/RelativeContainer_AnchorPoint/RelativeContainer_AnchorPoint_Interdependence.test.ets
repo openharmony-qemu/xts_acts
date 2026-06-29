@@ -59,9 +59,9 @@ export default function RelativeContainer_AnchorPoint_Interdependence() {
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let RelativeContainer_AnchorPoint_Interdependence_row3: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Interdependence_row3');
+      let RelativeContainer_AnchorPoint_Interdependence_row3: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Interdependence' + '_row3');
 
-      let RelativeContainer_AnchorPoint_Interdependence_re1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Interdependence_re1');
+      let RelativeContainer_AnchorPoint_Interdependence_re1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Interdependence' + '_re1');
 
       console.log('assert position')
 

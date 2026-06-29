@@ -16,7 +16,7 @@
 
 import router from '@ohos.router';
 import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { abilityDelegatorRegistry, Driver, ON, MatchPattern } from '@kit.TestKit';
+import { abilityDelegatorRegistry, Driver, ON, Component, MatchPattern } from '@kit.TestKit';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -25,13 +25,15 @@ import inspector from '@ohos.arkui.inspector';
 import { uiMaterial } from '@kit.ArkUI';
 import { UtilsTest } from '../Util.test';
 
-export default function ImmersiveOptionsMaterialColorTest() {
+export default function ImmersiveOptionsMaterialColorTest(): void {
   describe('ImmersiveOptionsMaterialColorTest', () => {
-    beforeAll(async (): Promise<void> => {
+    beforeAll(async () => {
+
       console.info("ImmersiveOptionsMaterialColorTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.popup.static", "EntryAbility");
     });
-    beforeEach(async (): Promise<void> => {
+    beforeEach(async () => {
+
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/uimaterial/ImmersiveOptionsMaterialColor',
       }
@@ -61,7 +63,8 @@ export default function ImmersiveOptionsMaterialColorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ImmersiveOptionsMaterialColorTest_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('ImmersiveOptionsMaterialColorTest_0100', Level.LEVEL2, async () => {
+
       console.info('ImmersiveOptionsMaterialColorTest_0100 START');
     
       let strJson = JSON.parseJsonElement(inspector.getInspectorByKey('undefined'));
@@ -70,7 +73,6 @@ export default function ImmersiveOptionsMaterialColorTest() {
         .assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveOptionsMaterialColorTest_0100 END');
-      done();
     });
 
     /**
@@ -81,7 +83,8 @@ export default function ImmersiveOptionsMaterialColorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ImmersiveOptionsMaterialColorTest_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('ImmersiveOptionsMaterialColorTest_0200', Level.LEVEL2, async () => {
+
       console.info('ImmersiveOptionsMaterialColorTest_0200 START');
       
       let strJson = JSON.parseJsonElement(inspector.getInspectorByKey('transparent'));
@@ -90,7 +93,6 @@ export default function ImmersiveOptionsMaterialColorTest() {
         .assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveOptionsMaterialColorTest_0200 END');
-      done();
     });
 
     /**
@@ -101,7 +103,8 @@ export default function ImmersiveOptionsMaterialColorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ImmersiveOptionsMaterialColorTest_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('ImmersiveOptionsMaterialColorTest_0300', Level.LEVEL2, async () => {
+
       console.info('ImmersiveOptionsMaterialColorTest_0300 START');
      
       let strJson = JSON.parseJsonElement(inspector.getInspectorByKey('string_red'));
@@ -110,7 +113,6 @@ export default function ImmersiveOptionsMaterialColorTest() {
         .assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveOptionsMaterialColorTest_0300 END');
-      done();
     });
 
     /**
@@ -121,7 +123,8 @@ export default function ImmersiveOptionsMaterialColorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ImmersiveOptionsMaterialColorTest_0400', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('ImmersiveOptionsMaterialColorTest_0400', Level.LEVEL2, async () => {
+
       console.info('ImmersiveOptionsMaterialColorTest_0400 START');
       
       let strJson = JSON.parseJsonElement(inspector.getInspectorByKey('string_rgba'));
@@ -130,7 +133,6 @@ export default function ImmersiveOptionsMaterialColorTest() {
         .assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveOptionsMaterialColorTest_0400 END');
-      done();
     });
 
     /**
@@ -141,7 +143,8 @@ export default function ImmersiveOptionsMaterialColorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ImmersiveOptionsMaterialColorTest_0500', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('ImmersiveOptionsMaterialColorTest_0500', Level.LEVEL2, async () => {
+
       console.info('ImmersiveOptionsMaterialColorTest_0500 START');
       let strJson = JSON.parseJsonElement(inspector.getInspectorByKey('number_color'));
       console.info('ImmersiveOptionsMaterialColorTest_0500 strJson: ' + strJson);
@@ -149,7 +152,6 @@ export default function ImmersiveOptionsMaterialColorTest() {
         .assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveOptionsMaterialColorTest_0500 END');
-      done();
     });
 
     /**
@@ -160,7 +162,8 @@ export default function ImmersiveOptionsMaterialColorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ImmersiveOptionsMaterialColorTest_0600', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('ImmersiveOptionsMaterialColorTest_0600', Level.LEVEL2, async () => {
+
       console.info('ImmersiveOptionsMaterialColorTest_0600 START');
       
       let strJson = JSON.parseJsonElement(inspector.getInspectorByKey('color_enum'));
@@ -169,7 +172,6 @@ export default function ImmersiveOptionsMaterialColorTest() {
         .assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveOptionsMaterialColorTest_0600 END');
-      done();
     });
 
     /**
@@ -180,7 +182,8 @@ export default function ImmersiveOptionsMaterialColorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ImmersiveOptionsMaterialColorTest_0700', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('ImmersiveOptionsMaterialColorTest_0700', Level.LEVEL2, async () => {
+
       console.info('ImmersiveOptionsMaterialColorTest_0700 START');
 
       let strJson = JSON.parseJsonElement(inspector.getInspectorByKey('color_white'));
@@ -189,7 +192,6 @@ export default function ImmersiveOptionsMaterialColorTest() {
         .assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveOptionsMaterialColorTest_0700 END');
-      done();
     });
 
     /**
@@ -200,7 +202,8 @@ export default function ImmersiveOptionsMaterialColorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ImmersiveOptionsMaterialColorTest_0800', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('ImmersiveOptionsMaterialColorTest_0800', Level.LEVEL2, async () => {
+
       console.info('ImmersiveOptionsMaterialColorTest_0800 START');
       
       let strJson = JSON.parseJsonElement(inspector.getInspectorByKey('default_info'));
@@ -209,7 +212,6 @@ export default function ImmersiveOptionsMaterialColorTest() {
         .assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveOptionsMaterialColorTest_0800 END');
-      done();
     });
   })
 }
