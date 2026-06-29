@@ -14,8 +14,9 @@
  * limitations under the License.
  */
 import {
-  $r,Button,ClickEvent,Color,Column,ColumnOptions,Component,Counter,Curve,DataChangeListener,Entry,IDataSource,
-  LazyForEach,ForEach,Margin,ResourceStr,Row,Scroll,Scroller,Swiper,SwiperController,Text,TextAlign,DotIndicator,IndicatorIconInfo
+  $r,Button,ClickEvent,Color,Column,ColumnOptions,Component,Counter,Curve,Entry,IDataSource,
+  LazyForEach,ForEach,Margin,ResourceStr,Row,Scroll,Scroller,Swiper,SwiperController,
+  Text,TextAlign,DotIndicator,IndicatorIconInfo
 } from '@ohos.arkui.component';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { ComponentUtils, Router, UIContext } from '@ohos.arkui.UIContext';

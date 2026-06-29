@@ -15,7 +15,8 @@
  */
 import {
   $r,Button,ClickEvent,Color,Column,ColumnOptions,Component,Counter,Curve,Entry,IDataSource,
-  LazyForEach,ForEach,Margin,ResourceStr,Row,Scroll,Scroller,Swiper,SwiperController,Text,TextAlign,DotIndicator,IndicatorIconInfo,
+  LazyForEach,ForEach,Margin,ResourceStr,Row,Scroll,Scroller,Swiper,SwiperController,
+  Text,TextAlign,DotIndicator,IndicatorIconInfo,
   IndicatorComponent,IndicatorComponentController
 } from '@ohos.arkui.component';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
