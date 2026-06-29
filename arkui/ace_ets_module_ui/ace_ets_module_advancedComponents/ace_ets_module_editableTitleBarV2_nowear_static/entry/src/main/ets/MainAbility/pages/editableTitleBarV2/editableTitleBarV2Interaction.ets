@@ -153,9 +153,9 @@ struct EditableTitleBarV2Interaction {
             new EditableTitleBarMenuItemV2({
               value: $r('sys.media.ohos_ic_public_more'),
               symbolStyle: new SymbolGlyphModifier($r('sys.symbol.bell')).fontColor([Color.Red]),
-              accessibilityDescription: 'accessibility description test',
+              accessibilityDescription: '描述',
               accessibilityLevel: 'yes',
-              accessibilityText: 'accessibility text test',
+              accessibilityText: '文本',
               defaultFocus: false,
               isEnabled: true,
               label: 'label text',
