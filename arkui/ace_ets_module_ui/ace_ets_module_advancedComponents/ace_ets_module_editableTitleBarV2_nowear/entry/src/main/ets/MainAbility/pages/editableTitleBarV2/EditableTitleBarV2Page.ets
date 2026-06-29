@@ -32,7 +32,7 @@ struct EditableTitleBarV2Page {
     value: $r('sys.media.ohos_app_icon'),
     symbolStyle: new SymbolGlyphModifier($r('sys.symbol.bell')).fontColor([Color.Red]),
     isEnabled: true,
-    label:"label",
+    label: 'label',
     defaultFocus: true,
     action: () => {
       console.info('Menu item 1 clicked');
@@ -46,7 +46,7 @@ struct EditableTitleBarV2Page {
     value: $r('sys.media.ohos_app_icon'),
     symbolStyle: undefined,
     isEnabled: false,
-    label:"label",
+    label: '',
     defaultFocus: false,
     action: () => {
       console.info('Menu item 2 clicked');
@@ -122,7 +122,7 @@ struct EditableTitleBarV2Page {
                 accessibilityText: "accessibility text",
                 defaultFocus: false,
                 isEnabled: true,
-                label:'label'
+                label: 'label'
               }),
               new EditableTitleBarMenuItemV2({
                 value: $r('sys.symbol.trash'),
@@ -131,9 +131,9 @@ struct EditableTitleBarV2Page {
                   console.info('Menu item 2 clicked');
                 },
                 defaultFocus: true,
-                accessibilityDescription: "",
-                accessibilityLevel: "",
-                accessibilityText: "",
+                accessibilityDescription: '',
+                accessibilityLevel: '',
+                accessibilityText: '',
                 isEnabled: false,
                 label:''
               })
