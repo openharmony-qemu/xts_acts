@@ -17,6 +17,7 @@
 #include "napi/native_api.h"
 #include <cstdint>
 #include <cstdlib>
+#include <cstring>
 
 constexpr int MAX_FILE_NAME_LEN = 256;
 constexpr int DLP_SUFFIX_LEN = 4;
@@ -121,11 +122,8 @@ static napi_value OsGetOriginalFileName0200(napi_env env, napi_callback_info inf
     for (int i = 0; i < fileNameLen; i++) {
         fileName[i] = 'a';
     }
-    fileName[fileNameLen] = '.';
-    fileName[fileNameLen + 1] = 'd';
-    fileName[fileNameLen + 2] = 'l';
-    fileName[fileNameLen + 3] = 'p';
-    fileName[MAX_FILE_NAME_LEN] = '\0';
+    fileName[fileNameLen] = '\0';
+    strcat(fileName, ".dlp");
     char *originalFileName = nullptr;
     DLP_ErrCode ret = OH_DLP_GetOriginalFileName(fileName, &originalFileName);
     if (ret == DLP_ErrCode::ERR_OH_SUCCESS) {
@@ -146,11 +144,8 @@ static napi_value OsGetOriginalFileName0300(napi_env env, napi_callback_info inf
     for (int i = 0; i < fileNameLen; i++) {
         fileName[i] = 'a';
     }
-    fileName[fileNameLen] = '.';
-    fileName[fileNameLen + 1] = 'd';
-    fileName[fileNameLen + 2] = 'l';
-    fileName[fileNameLen + 3] = 'p';
-    fileName[MAX_FILE_NAME_LEN + 1] = '\0';
+    fileName[fileNameLen] = '\0';
+    strcat(fileName, ".dlp");
     char *originalFileName = nullptr;
     DLP_ErrCode ret = OH_DLP_GetOriginalFileName(fileName, &originalFileName);
     napi_value result = nullptr;
