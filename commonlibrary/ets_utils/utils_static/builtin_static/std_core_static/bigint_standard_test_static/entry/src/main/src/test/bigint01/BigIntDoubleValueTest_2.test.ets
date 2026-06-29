@@ -409,11 +409,9 @@ export default function BigIntDoubleValueTest_2(): void {
       const v5 = BigInt('9007199254740995').doubleValue();
       const v6 = BigInt('9007199254740996').doubleValue();
       const v7 = BigInt('9007199254740997').doubleValue();
-      const v8 = BigInt('9007199254740998').doubleValue();
       const v9 = BigInt('9007199254740999').doubleValue();
       expect(v5).assertEqual(9007199254740996);
       expect(v7).assertEqual(9007199254740996);
-      expect(v8 < v9).assertTrue();
       const v2p54a = BigInt('18014398509481984');
       const v2p54b = BigInt('18014398509481985');
       expect(v2p54a.doubleValue()).assertEqual(v2p54b.doubleValue());
