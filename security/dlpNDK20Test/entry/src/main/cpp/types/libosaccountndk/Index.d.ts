@@ -19,4 +19,6 @@ export const OsGetDlpPermissionInfo0103: () => number;
 export const OsGetDlpPermissionInfo0104: () => number;
 export const OsGetDlpPermissionInfo0105: () => number;
 export const OsGetOriginalFileName0100: () => number;
+export const OsGetOriginalFileName0200: () => number;
+export const OsGetOriginalFileName0300: () => number;
 export const OsSetSandboxAppConfig0100: () => number;

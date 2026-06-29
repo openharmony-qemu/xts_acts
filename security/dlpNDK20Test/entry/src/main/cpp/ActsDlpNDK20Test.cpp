@@ -104,17 +104,52 @@ static napi_value OsGetDlpPermissionInfo0105(napi_env env, napi_callback_info in
 }
 static napi_value OsGetOriginalFileName0100(napi_env env, napi_callback_info info)
 {
-    const char *fileName = "test.txt";
+    const char *fileName = ".dlp";
+    char *originalFileName = nullptr;
+    DLP_ErrCode ret = OH_DLP_GetOriginalFileName(fileName, &originalFileName);
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+static napi_value OsGetOriginalFileName0200(napi_env env, napi_callback_info info)
+{
+    char fileName[257];
+    for (int i = 0; i < 252; i++) {
+        fileName[i] = 'a';
+    }
+    fileName[252] = '.';
+    fileName[253] = 'd';
+    fileName[254] = 'l';
+    fileName[255] = 'p';
+    fileName[256] = '\0';
     char *originalFileName = nullptr;
     DLP_ErrCode ret = OH_DLP_GetOriginalFileName(fileName, &originalFileName);
     if (ret == DLP_ErrCode::ERR_OH_SUCCESS) {
         napi_value result = nullptr;
         napi_create_string_utf8(env, originalFileName, NAPI_AUTO_LENGTH, &result);
+        free(originalFileName);
         return result;
     }
     napi_value result = nullptr;
     napi_create_int32(env, ret, &result);
     free(originalFileName);
+    return result;
+}
+static napi_value OsGetOriginalFileName0300(napi_env env, napi_callback_info info)
+{
+    char fileName[258];
+    for (int i = 0; i < 253; i++) {
+        fileName[i] = 'a';
+    }
+    fileName[253] = '.';
+    fileName[254] = 'd';
+    fileName[255] = 'l';
+    fileName[256] = 'p';
+    fileName[257] = '\0';
+    char *originalFileName = nullptr;
+    DLP_ErrCode ret = OH_DLP_GetOriginalFileName(fileName, &originalFileName);
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
     return result;
 }
 static napi_value OsSetSandboxAppConfig0100(napi_env env, napi_callback_info info)
@@ -147,6 +182,10 @@ static napi_value Init(napi_env env, napi_value exports)
         {"OsGetDlpPermissionInfo0105", nullptr, OsGetDlpPermissionInfo0105, nullptr, nullptr, nullptr, napi_default,
          nullptr},
         {"OsGetOriginalFileName0100", nullptr, OsGetOriginalFileName0100, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+        {"OsGetOriginalFileName0200", nullptr, OsGetOriginalFileName0200, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+        {"OsGetOriginalFileName0300", nullptr, OsGetOriginalFileName0300, nullptr, nullptr, nullptr, napi_default,
          nullptr},
         {"OsSetSandboxAppConfig0100", nullptr, OsSetSandboxAppConfig0100, nullptr, nullptr, nullptr, napi_default,
          nullptr},
