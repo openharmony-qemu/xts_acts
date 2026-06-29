@@ -20,6 +20,7 @@
 #include "hctest.h"
 #include "common.h"
 
+
 #define OPER_INTERVAL 200    // 200 ms
 #define RUN_TIMES 10
 
