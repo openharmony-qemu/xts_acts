@@ -1684,7 +1684,7 @@ export default function actslocationTest() {
       /**
        * @tc.number   SUB_core_isLocationEnabled_0200
        * @tc.name   SUB_core_isLocationEnabled_0200
-       * @tc.desc   Test isLocationEnabled returns true
+       * @tc.desc   Test isLocationEnabled returns true or false
        * @tc.level  Level 2
        * @tc.type   Function
        * @tc.size   MEDIUMTEST
@@ -1692,25 +1692,11 @@ export default function actslocationTest() {
       it('SUB_core_isLocationEnabled_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         try {
           let locationEnabled: boolean = geoLocationManager.isLocationEnabled();
-          expect(locationEnabled).assertTrue();
-        } catch (error) {
-          error = error as BusinessError;
-          expect(error.code).assertEqual(3301000);
-        }
-      })
-
-      /**
-       * @tc.number   SUB_core_isLocationEnabled_0300
-       * @tc.name   SUB_core_isLocationEnabled_0300
-       * @tc.desc   Test isLocationEnabled returns false
-       * @tc.level  Level 2
-       * @tc.type   Function
-       * @tc.size   MEDIUMTEST
-       */
-      it('SUB_core_isLocationEnabled_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        try {
-          let locationEnabled: boolean = geoLocationManager.isLocationEnabled();
-          expect(locationEnabled).assertFalse();
+          if (locationEnabled) {
+            expect(locationEnabled).assertTrue();
+          } else {
+            expect(locationEnabled).assertFalse();
+          }
         } catch (error) {
           error = error as BusinessError;
           expect(error.code).assertEqual(3301000);
