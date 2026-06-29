@@ -93,3 +93,5 @@ export const TestOHMetadataObjectExtGetRightEyeBoundingBox: (a:number) => number
 export const TestOHMetadataObjectExtGetRollAngle: (a:number) => number;
 export const TestOHMetadataObjectExtGetTimestamp: (a:number) => number;
 export const TestOHMetadataObjectExtGetYawAngle: (a:number) => number;
+export const TestOHMetadataObjectExtDestroy: (a:number) => boolean;
+export const TestOHMetadataObjectExtIsLockFocusTracked: (a:number) => boolean;
