@@ -16,6 +16,8 @@
 #include "napi/native_api.h"
 #include "hitrace/trace.h"
 #include "hilog/log.h"
+#include <string.h>
+#include <stdio.h>
 #undef LOG_TAG
 #define LOG_TAG "traceTest"
 
