@@ -86,3 +86,21 @@ export const TestHiDebugUnregisterMemDumpListener3: () => number;
 export const TestHiDebugUnregisterMemDumpListener4: () => number;
 export const TestHiDebugUnregisterMemDumpListener5: () => number;
 export const TestHiDebugUnregisterMemDumpListener6: () => number;
+export const add: (a: number, b: number) => number;
+export const testAcquireAsyncContext: () => number;
+export const testAcquireAsyncContextMultiple: () => {
+  ctx0: number,
+  ctx1: number,
+  ctx2: number
+};
+export const testPushAsyncContext: (ctx: number) => number;
+export const testPopAsyncContext: (ctx: number) => number;
+export const testReleaseAsyncContext: (ctx: number) => number;
+export const testAcquireAndRelease: () => number;
+export const testPushPopSequence: () => number;
+export const testMultipleContextsPushPop: () => number;
+export const testContextStress: () => number;
+export const testPushWithoutPop: () => number;
+export const testInvalidContext: () => number;
+export const testZeroContext: () => number;
+export const testNestedPushPop: () => number;

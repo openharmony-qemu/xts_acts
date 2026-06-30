@@ -1258,6 +1258,276 @@ napi_value TestHiDebugUnregisterMemDumpListener6(napi_env env, napi_callback_inf
     return result;
 }
 
+static napi_value TestAcquireAsyncContext(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag OH_HiDebug_AcquireAsyncContext start");
+    uint64_t ctx = OH_HiDebug_AcquireAsyncContext();
+    OH_LOG_INFO(LOG_APP, "testTag OH_HiDebug_AcquireAsyncContext result: %{public}llu", ctx);
+    
+    napi_value result;
+    napi_create_bigint_uint64(env, ctx, &result);
+    return result;
+}
+static napi_value TestAcquireAsyncContextMultiple(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag TestAcquireAsyncContextMultiple start");
+    
+    std::vector<uint64_t> contexts;
+    for (int i = 0; i < 3; i++) {
+        uint64_t ctx = OH_HiDebug_AcquireAsyncContext();
+        contexts.push_back(ctx);
+        OH_LOG_INFO(LOG_APP, "testTag Acquire context %{public}d: %{public}llu", i, ctx);
+    }
+    
+    napi_value resultObj;
+    napi_create_object(env, &resultObj);
+    
+    for (size_t i = 0; i < contexts.size(); i++) {
+        napi_value ctxValue;
+        napi_create_bigint_uint64(env, contexts[i], &ctxValue);
+        std::string key = "ctx" + std::to_string(i);
+        napi_set_named_property(env, resultObj, key.c_str(), ctxValue);
+    }
+    
+    return resultObj;
+}
+static napi_value TestPushAsyncContext(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    
+    if (argc < 1) {
+        napi_throw_error(env, nullptr, "需要1个参数: context");
+        return nullptr;
+    }
+    
+    uint64_t ctx = 0;
+    bool lossless = false;
+    napi_get_value_bigint_uint64(env, args[0], &ctx, &lossless);
+    
+    OH_LOG_INFO(LOG_APP, "testTag OH_HiDebug_PushAsyncContext with ctx: %{public}llu", ctx);
+    OH_HiDebug_PushAsyncContext(ctx);
+    
+    napi_value result;
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+static napi_value TestPopAsyncContext(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    
+    if (argc < 1) {
+        napi_throw_error(env, nullptr, "需要1个参数: context");
+        return nullptr;
+    }
+    
+    uint64_t ctx = 0;
+    bool lossless = false;
+    napi_get_value_bigint_uint64(env, args[0], &ctx, &lossless);
+    
+    OH_LOG_INFO(LOG_APP, "testTag OH_HiDebug_PopAsyncContext with ctx: %{public}llu", ctx);
+    OH_HiDebug_PopAsyncContext(ctx);
+    
+    napi_value result;
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+static napi_value TestReleaseAsyncContext(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    
+    if (argc < 1) {
+        napi_throw_error(env, nullptr, "需要1个参数: context");
+        return nullptr;
+    }
+    
+    uint64_t ctx = 0;
+    bool lossless = false;
+    napi_get_value_bigint_uint64(env, args[0], &ctx, &lossless);
+    
+    OH_LOG_INFO(LOG_APP, "testTag OH_HiDebug_ReleaseAsyncContext with ctx: %{public}llu", ctx);
+    OH_HiDebug_ReleaseAsyncContext(ctx);
+    
+    napi_value result;
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+static napi_value TestAcquireAndRelease(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag TestAcquireAndRelease start");
+    
+    uint64_t ctx = OH_HiDebug_AcquireAsyncContext();
+    OH_LOG_INFO(LOG_APP, "testTag Acquired context: %{public}llu", ctx);
+    
+    if (ctx != 0) {
+        OH_HiDebug_ReleaseAsyncContext(ctx);
+        OH_LOG_INFO(LOG_APP, "testTag Released context: %{public}llu", ctx);
+    }
+    
+    napi_value result;
+    napi_create_int32(env, (ctx != 0) ? 1 : 0, &result);
+    return result;
+}
+static napi_value TestPushPopSequence(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag TestPushPopSequence start");
+    
+    uint64_t ctx = OH_HiDebug_AcquireAsyncContext();
+    if (ctx == 0) {
+        napi_value result;
+        napi_create_int32(env, 0, &result);  // 返回0表示失败
+        return result;
+    }
+    
+    OH_HiDebug_PushAsyncContext(ctx);
+    OH_HiDebug_PopAsyncContext(ctx);
+    OH_HiDebug_ReleaseAsyncContext(ctx);
+    
+    napi_value result;
+    napi_create_int32(env, 1, &result);
+    return result;
+}
+static napi_value TestMultipleContextsPushPop(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag TestMultipleContextsPushPop start");
+    
+    uint64_t ctx1 = OH_HiDebug_AcquireAsyncContext();
+    uint64_t ctx2 = OH_HiDebug_AcquireAsyncContext();
+    
+    if (ctx1 == 0 || ctx2 == 0) {
+        if (ctx1 != 0) OH_HiDebug_ReleaseAsyncContext(ctx1);
+        if (ctx2 != 0) OH_HiDebug_ReleaseAsyncContext(ctx2);
+        OH_LOG_ERROR(LOG_APP, "testTag Failed to acquire async contexts");
+        napi_value result;
+        napi_create_int32(env, 0, &result);
+        return result;
+    }
+    
+    OH_HiDebug_PushAsyncContext(ctx1);
+    OH_HiDebug_PushAsyncContext(ctx2);
+    
+    OH_HiDebug_PopAsyncContext(ctx2);
+    OH_HiDebug_PopAsyncContext(ctx1);
+    
+    OH_HiDebug_ReleaseAsyncContext(ctx1);
+    OH_HiDebug_ReleaseAsyncContext(ctx2);
+    
+    napi_value result;
+    napi_create_int32(env, 1, &result);
+    return result;
+}
+static napi_value TestContextStress(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag TestContextStress start");
+    
+    int successCount = 0;
+    for (int i = 0; i < 100; i++) {
+        uint64_t ctx = OH_HiDebug_AcquireAsyncContext();
+        if (ctx != 0) {
+            OH_HiDebug_ReleaseAsyncContext(ctx);
+            successCount++;
+        }
+    }
+    
+    OH_LOG_INFO(LOG_APP, "testTag Stress test completed: %{public}d/%{public}d", successCount, 100);
+    napi_value result;
+    napi_create_int32(env, successCount, &result);
+    return result;
+}
+static napi_value TestPushWithoutPop(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag TestPushWithoutPop start");
+    
+    uint64_t ctx1 = OH_HiDebug_AcquireAsyncContext();
+    uint64_t ctx2 = OH_HiDebug_AcquireAsyncContext();
+    
+    if (ctx1 == 0 || ctx2 == 0) {
+        if (ctx1 != 0) OH_HiDebug_ReleaseAsyncContext(ctx1);
+        if (ctx2 != 0) OH_HiDebug_ReleaseAsyncContext(ctx2);
+        OH_LOG_ERROR(LOG_APP, "testTag Failed to acquire async contexts");
+        napi_value result;
+        napi_create_int32(env, 0, &result);
+        return result;
+    }
+    
+    OH_HiDebug_PushAsyncContext(ctx1);
+    OH_HiDebug_PushAsyncContext(ctx2);
+    
+    OH_HiDebug_ReleaseAsyncContext(ctx1);
+    OH_HiDebug_ReleaseAsyncContext(ctx2);
+    
+    napi_value result;
+    napi_create_int32(env, 1, &result);
+    return result;
+}
+static napi_value TestInvalidContext(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag TestInvalidContext start");
+    
+    uint64_t invalidCtx = 0xFFFFFFFFFFFFFFFFULL;
+    
+    OH_HiDebug_PushAsyncContext(invalidCtx);
+    OH_HiDebug_PopAsyncContext(invalidCtx);
+    OH_HiDebug_ReleaseAsyncContext(invalidCtx);
+    
+    napi_value result;
+    napi_create_int32(env, 1, &result);
+    return result;
+}
+static napi_value TestZeroContext(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag TestZeroContext start");
+    
+    uint64_t zeroCtx = 0;
+    
+    OH_HiDebug_PushAsyncContext(zeroCtx);
+    OH_HiDebug_PopAsyncContext(zeroCtx);
+    OH_HiDebug_ReleaseAsyncContext(zeroCtx);
+    
+    napi_value result;
+    napi_create_int32(env, 1, &result);
+    return result;
+}
+static napi_value TestNestedPushPop(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag TestNestedPushPop start");
+    
+    uint64_t ctx1 = OH_HiDebug_AcquireAsyncContext();
+    uint64_t ctx2 = OH_HiDebug_AcquireAsyncContext();
+    uint64_t ctx3 = OH_HiDebug_AcquireAsyncContext();
+    
+    if (ctx1 == 0 || ctx2 == 0 || ctx3 == 0) {
+        if (ctx1 != 0) OH_HiDebug_ReleaseAsyncContext(ctx1);
+        if (ctx2 != 0) OH_HiDebug_ReleaseAsyncContext(ctx2);
+        if (ctx3 != 0) OH_HiDebug_ReleaseAsyncContext(ctx3);
+        OH_LOG_ERROR(LOG_APP, "testTag Failed to acquire async contexts");
+        napi_value result;
+        napi_create_int32(env, 0, &result);
+        return result;
+    }
+    
+    OH_HiDebug_PushAsyncContext(ctx1);
+    OH_HiDebug_PushAsyncContext(ctx2);
+    OH_HiDebug_PushAsyncContext(ctx3);
+    
+    OH_HiDebug_PopAsyncContext(ctx3);
+    OH_HiDebug_PopAsyncContext(ctx2);
+    OH_HiDebug_PopAsyncContext(ctx1);
+    
+    OH_HiDebug_ReleaseAsyncContext(ctx1);
+    OH_HiDebug_ReleaseAsyncContext(ctx2);
+    OH_HiDebug_ReleaseAsyncContext(ctx3);
+    
+    napi_value result;
+    napi_create_int32(env, 1, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -1289,7 +1559,7 @@ static napi_value Init(napi_env env, napi_value exports)
         { "startProfiler", nullptr, HiDebugStartProfiler, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "startProfilerNull", nullptr, HiDebugStartProfilerNull, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "stopProfiler", nullptr, HiDebugStopProfiler, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "TestRequestTrace", nullptr, TestRequestTrace, nullptr, nullptr, nullptr, napi_default, nullptr },
+		{ "TestRequestTrace", nullptr, TestRequestTrace, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "TestRequestTraceIdentifier1", nullptr, TestRequestTraceIdentifier1, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "TestRequestTraceIdentifier2", nullptr, TestRequestTraceIdentifier2, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "TestRequestTraceIdentifier3", nullptr, TestRequestTraceIdentifier3, nullptr, nullptr, nullptr, napi_default, nullptr },
@@ -1362,7 +1632,19 @@ static napi_value Init(napi_env env, napi_value exports)
         nullptr, napi_default, nullptr },
         { "TestHiDebugUnregisterMemDumpListener6", nullptr, TestHiDebugUnregisterMemDumpListener6, nullptr, nullptr,
         nullptr, napi_default, nullptr },
-        
+        {"testAcquireAsyncContext", nullptr, TestAcquireAsyncContext, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testAcquireAsyncContextMultiple", nullptr, TestAcquireAsyncContextMultiple, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testPushAsyncContext", nullptr, TestPushAsyncContext, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testPopAsyncContext", nullptr, TestPopAsyncContext, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testReleaseAsyncContext", nullptr, TestReleaseAsyncContext, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testAcquireAndRelease", nullptr, TestAcquireAndRelease, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testPushPopSequence", nullptr, TestPushPopSequence, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testMultipleContextsPushPop", nullptr, TestMultipleContextsPushPop, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testContextStress", nullptr, TestContextStress, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testPushWithoutPop", nullptr, TestPushWithoutPop, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testInvalidContext", nullptr, TestInvalidContext, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testZeroContext", nullptr, TestZeroContext, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testNestedPushPop", nullptr, TestNestedPushPop, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
