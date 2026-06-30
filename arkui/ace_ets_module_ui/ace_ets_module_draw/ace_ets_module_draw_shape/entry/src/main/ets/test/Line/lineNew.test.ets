@@ -95,7 +95,7 @@ export default function lineNewTest() {
     it('testLineNew0005', Level.LEVEL0, async () => {
       console.info('lineNe testlineNe0005 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('line2');
+      let strJson = getInspectorByKey('lineNew' + '_line2');
       console.info("[testlineNe0005] component width strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Line');
@@ -115,7 +115,7 @@ export default function lineNewTest() {
     it('testLineNew0006', Level.LEVEL0, async () => {
       console.info('lineNe testlineNe0006 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('line2');
+      let strJson = getInspectorByKey('lineNew' + '_line2');
       console.info("[testlineNe0006] component height strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Line');

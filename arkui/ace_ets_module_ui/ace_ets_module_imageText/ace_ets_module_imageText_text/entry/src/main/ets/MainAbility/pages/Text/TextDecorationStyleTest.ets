@@ -25,6 +25,7 @@ struct TextDecorationStyleTest {
           style:TextDecorationStyle.DOTTED
         })
         .id('TextDecorationStyleTextDOTTED')
+        .key('TextDecorationStyleTextDOTTED')
         .textAlign(TextAlign.Center)
         .height('5%')
       Text(this.testText)
@@ -34,6 +35,7 @@ struct TextDecorationStyleTest {
         })
         .height('5%')
         .id('TextDecorationStyleTextDASHED')
+        .key('TextDecorationStyleTextDASHED')
         .textAlign(TextAlign.Center)
       Search({value:this.testText})
         .decoration({
@@ -42,6 +44,7 @@ struct TextDecorationStyleTest {
         })
         .height('5%')
         .id('TextDecorationStyleSearchDOTTED')
+        .key('TextDecorationStyleSearchDOTTED')
         .textAlign(TextAlign.Center)
       Search({value:this.testText})
         .decoration({
@@ -50,6 +53,7 @@ struct TextDecorationStyleTest {
         })
         .height('5%')
         .id('TextDecorationStyleSearchDASHED')
+        .key('TextDecorationStyleSearchDASHED')
         .textAlign(TextAlign.Center)
       TextArea({text:this.testText})
         .decoration({
@@ -58,6 +62,7 @@ struct TextDecorationStyleTest {
         })
         .height('5%')
         .id('TextDecorationStyleTextAreaDOTTED')
+        .key('TextDecorationStyleTextAreaDOTTED')
         .textAlign(TextAlign.Center)
       TextArea({text:this.testText})
         .decoration({
@@ -66,6 +71,7 @@ struct TextDecorationStyleTest {
         })
         .height('5%')
         .id('TextDecorationStyleTextAreaDASHED')
+        .key('TextDecorationStyleTextAreaDASHED')
         .textAlign(TextAlign.Center)
       TextInput({text:this.testText})
         .decoration({
@@ -74,6 +80,7 @@ struct TextDecorationStyleTest {
         })
         .height('5%')
         .id('TextDecorationStyleTextInputDOTTED')
+        .key('TextDecorationStyleTextInputDOTTED')
         .textAlign(TextAlign.Center)
       TextInput({text:this.testText})
         .decoration({
@@ -82,6 +89,7 @@ struct TextDecorationStyleTest {
         })
         .height('5%')
         .id('TextDecorationStyleTextInputDASHED')
+        .key('TextDecorationStyleTextInputDASHED')
         .textAlign(TextAlign.Center)
     }.width('100%')
   }

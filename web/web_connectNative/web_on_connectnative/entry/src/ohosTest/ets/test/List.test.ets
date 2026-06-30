@@ -12,6 +12,7 @@ import webExtensionConnectionCallbackOnDisconnectParameterTest from './WebExtens
 import webExtensionConnectionCallbackOnFailedParameterTest from './WebExtensionConnectionCallbackOnFailedParameter.test'
 import connectNativeNullUndefinedParameterTest from './ConnectNativeNullUndefinedParameter.test'
 import disconnectNativeNullUndefinedParameterTest from './DisconnectNativeNullUndefinedParameter.test'
+import connectionInfoFdParameterTest from './ConnectionInfoFdParameter.test'
 
 export default function testsuite() {
   abilityTest();
@@ -28,4 +29,5 @@ export default function testsuite() {
   webExtensionConnectionCallbackOnFailedParameterTest()
   connectNativeNullUndefinedParameterTest()
   disconnectNativeNullUndefinedParameterTest()
+  connectionInfoFdParameterTest()
 }

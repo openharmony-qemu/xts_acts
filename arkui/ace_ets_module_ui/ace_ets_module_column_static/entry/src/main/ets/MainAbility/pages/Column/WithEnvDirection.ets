@@ -32,14 +32,17 @@ import {
 import { State, } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { WithEnv,WithEnvAttribute } from '@ohos.arkui.WithEnv'
-import { Env, SystemEnvKey, WritableEnvKey, Direction } from '@kit.ArkUI';
+import { Env, SystemEnvKey, WritableEnvKey, Direction, CustomEnv, CustomEnvKey } from '@kit.ArkUI';
 import i18n from '@ohos.i18n'
+
+const ckString: CustomEnvKey<string> = CustomEnvKey.create<string>();
 
 @Entry
 @Component
 struct WithEnvDirection {
   @State dirProvider:Direction = Direction.Auto
   @State languageValue: string = ''
+  @State varString: string = 'parent value';
 
   aboutToAppear() {
     this.languageValue = i18n.System.getAppPreferredLanguage()
@@ -91,13 +94,23 @@ struct WithEnvDirection {
 
       WithEnv(){
         Row({space:3} as RowOptions){
-          Text('01').width(60).backgroundColor(0xF5DEB3).id('WithEnvDirectionText1')
-          Text('02').width(60).backgroundColor(0xD2B48C).id('WithEnvDirectionText2')
+          Text('01').width(60).backgroundColor(0xF5DEB3).id('WithEnvDirectionText1').height(15)
+          Text('02').width(60).backgroundColor(0xD2B48C).id('WithEnvDirectionText2').height(15)
         }
         .padding(5)
         .backgroundColor('#77000000')
       }
       .env(WritableEnvKey.DIRECTION,this.dirProvider)
+      WithEnv(){
+        Row({space:3} as RowOptions){
+          Text('01').width(60).backgroundColor(0xF5DEB3).id('WithEnvDirectionText3').height(15)
+          Text('02').width(60).backgroundColor(0xD2B48C).id('WithEnvDirectionText4').height(15)
+        }
+        .padding(5)
+        .backgroundColor('#77000000')
+      }
+      .customEnv(ckString, this.varString)
+
     }
     .height('100%')
     .width('100%')

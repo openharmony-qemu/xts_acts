@@ -71,8 +71,8 @@ export default function flex_Wrap_VisibilityTest() {
         await CommonFunc.sleep(3000);
         let secondText: RectValue = CommonFunc.getComponentRect('Wrap_Text_Visibility2');
         let thirdText: RectValue = CommonFunc.getComponentRect('Wrap_Text_Visibility3');
-        let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_Wrap_Visibility_Container01');
-        let flexContainerStrJson = getInspectorByKey('Flex_Wrap_Visibility_Container01');
+        let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_Wrap_Visibility' + '_Container01');
+        let flexContainerStrJson = getInspectorByKey('Flex_Wrap_Visibility' + '_Container01');
 
         expect(JSON.parse(flexContainerStrJson).$type).assertEqual('Flex');
         expect(JSON.parse(flexContainerStrJson).$attrs.constructor.wrap).assertEqual('FlexWrap.Wrap');
@@ -124,8 +124,8 @@ export default function flex_Wrap_VisibilityTest() {
         await CommonFunc.sleep(3000);
         let secondText: RectValue = CommonFunc.getComponentRect('Wrap_Text_Visibility2');
         let thirdText: RectValue = CommonFunc.getComponentRect('Wrap_Text_Visibility3');
-        let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_Wrap_Visibility_Container01');
-        let flexContainerStrJson = getInspectorByKey('Flex_Wrap_Visibility_Container01');
+        let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_Wrap_Visibility' + '_Container01');
+        let flexContainerStrJson = getInspectorByKey('Flex_Wrap_Visibility' + '_Container01');
 
         expect(JSON.parse(flexContainerStrJson).$type).assertEqual('Flex');
         expect(JSON.parse(flexContainerStrJson).$attrs.constructor.wrap).assertEqual('FlexWrap.Wrap');
@@ -177,8 +177,8 @@ export default function flex_Wrap_VisibilityTest() {
         await CommonFunc.sleep(3000);
         let secondText: RectValue = CommonFunc.getComponentRect('Wrap_Text_Visibility2');
         let thirdText: RectValue = CommonFunc.getComponentRect('Wrap_Text_Visibility3');
-        let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_Wrap_Visibility_Container01');
-        let flexContainerStrJson = getInspectorByKey('Flex_Wrap_Visibility_Container01');
+        let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_Wrap_Visibility' + '_Container01');
+        let flexContainerStrJson = getInspectorByKey('Flex_Wrap_Visibility' + '_Container01');
 
         expect(JSON.parse(flexContainerStrJson).$type).assertEqual('Flex');
         expect(JSON.parse(flexContainerStrJson).$attrs.constructor.wrap).assertEqual('FlexWrap.Wrap');

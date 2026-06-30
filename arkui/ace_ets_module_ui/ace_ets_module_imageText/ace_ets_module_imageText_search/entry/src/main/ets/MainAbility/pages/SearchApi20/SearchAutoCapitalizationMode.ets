@@ -23,6 +23,7 @@ struct SearchAutoCapitalizationMode {
         value: 'AutoCapitalizationMode.NONE',
       })
         .id('Search_AutoCapitalizationMode_NONE')
+        .key('Search_AutoCapitalizationMode_NONE')
         .autoCapitalizationMode(AutoCapitalizationMode.NONE)
         .height('5%')
 
@@ -30,6 +31,7 @@ struct SearchAutoCapitalizationMode {
         value: 'AutoCapitalizationMode.WORDS',
       })
         .id('Search_AutoCapitalizationMode_WORDS')
+        .key('Search_AutoCapitalizationMode_WORDS')
         .autoCapitalizationMode(AutoCapitalizationMode.WORDS)
         .height('5%')
 
@@ -37,6 +39,7 @@ struct SearchAutoCapitalizationMode {
         value: 'AutoCapitalizationMode.SENTENCES',
       })
         .id('Search_AutoCapitalizationMode_SENTENCES')
+        .key('Search_AutoCapitalizationMode_SENTENCES')
         .autoCapitalizationMode(AutoCapitalizationMode.SENTENCES)
         .height('5%')
 
@@ -44,6 +47,7 @@ struct SearchAutoCapitalizationMode {
         value: 'AutoCapitalizationMode.ALL_CHARACTERS',
       })
         .id('Search_AutoCapitalizationMode_ALL_CHARACTERS')
+        .key('Search_AutoCapitalizationMode_ALL_CHARACTERS')
         .autoCapitalizationMode(AutoCapitalizationMode.ALL_CHARACTERS)
         .height('5%')
 
@@ -51,12 +55,14 @@ struct SearchAutoCapitalizationMode {
         value: 'AutoCapitalizationMode: default',
       })
         .id('Search_AutoCapitalizationMode_default')
+        .key('Search_AutoCapitalizationMode_default')
         .height('5%')
 
       Search({
         value: 'AutoCapitalizationMode: undefined',
       })
         .id('Search_AutoCapitalizationMode_undefined')
+        .key('Search_AutoCapitalizationMode_undefined')
         .autoCapitalizationMode(undefined)
         .height('5%')
 
@@ -64,6 +70,7 @@ struct SearchAutoCapitalizationMode {
         value:'AutoCapitalizationMode: 0',
       })
         .id('Search_AutoCapitalizationMode_0')
+        .key('Search_AutoCapitalizationMode_0')
         .height('5%')
         .autoCapitalizationMode(0)
     }.height('100%')

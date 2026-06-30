@@ -56,7 +56,7 @@ export default function sharedTransitionJsunit() {
      */
     it('sharedTransitionTest_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('sharedTransitionTest_0100 START');
-      let strJson: string = getInspectorByKey('Navigator');
+      let strJson: string = getInspectorByKey('sharedTransition' + '_Navigator');
 
       console.info("sharedTransitionTest_0100 component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$type).assertEqual('Navigator')
@@ -74,7 +74,7 @@ export default function sharedTransitionJsunit() {
      */
     it('sharedTransitionTest_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('sharedTransitionTest_0200 START');
-      let strJson: string = getInspectorByKey('Navigator');
+      let strJson: string = getInspectorByKey('sharedTransition' + '_Navigator');
 
       console.info("sharedTransitionTest_0200 component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$type).assertEqual('Navigator')
@@ -93,7 +93,7 @@ export default function sharedTransitionJsunit() {
      */
     it('sharedTransitionTest_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('sharedTransitionTest_0300 START');
-      let strJson: string = getInspectorByKey('Navigator');
+      let strJson: string = getInspectorByKey('sharedTransition' + '_Navigator');
 
       console.info("sharedTransitionTest_0300 component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$type).assertEqual('Navigator')
@@ -149,7 +149,7 @@ export default function sharedTransitionJsunit() {
       } catch (err) {
         console.info("sharedTransitionTest_0400 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("sharedTransitionTest_0400 click result is: " + JSON.stringify(sendEventByKey('Navigator', 10, "")));
+      console.info("sharedTransitionTest_0400 click result is: " + JSON.stringify(sendEventByKey('sharedTransition' + '_Navigator', 10, "")));
       await Utils.sleep(2000);
       console.info('sharedTransitionTest_0400 END');
       done();

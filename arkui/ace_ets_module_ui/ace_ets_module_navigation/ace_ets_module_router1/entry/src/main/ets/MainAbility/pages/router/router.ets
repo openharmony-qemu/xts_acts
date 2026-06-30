@@ -74,7 +74,7 @@ struct RouterEnableAlertBeforeBackPage {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key('disableAlertBeforeBackPageText')
+        .key('router_disableAlertBeforeBackPageText_01')
         .onClick(() => {
           router1.disableAlertBeforeBackPage()
         })
@@ -108,7 +108,7 @@ struct RouterEnableAlertBeforeBackPage {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key('disableAlertBeforeBackPageText')
+        .key('router_disableAlertBeforeBackPageText_02')
         .onClick(() => {
           router2.disableAlertBeforeBackPage()
         })

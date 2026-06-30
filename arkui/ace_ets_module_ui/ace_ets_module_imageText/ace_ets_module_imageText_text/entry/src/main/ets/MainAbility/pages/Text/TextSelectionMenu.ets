@@ -29,6 +29,7 @@ struct Demo {
       Column() {
 
         Text(this.text1).id('textApi_text1_test').height('10%').textAlign(TextAlign.Center)
+        .key('textApi_text1_test')
         Text(undefined, this.options1) {
           Span('Hello World')
         }
@@ -48,6 +49,7 @@ struct Demo {
         .height('20%').textAlign(TextAlign.Center)
 
         Text('' + this.text2).id('textApi_text2').height('10%').textAlign(TextAlign.Center)
+        .key('textApi_text2')
         Text(undefined, this.options2) {
           Span('Hello World')
         }

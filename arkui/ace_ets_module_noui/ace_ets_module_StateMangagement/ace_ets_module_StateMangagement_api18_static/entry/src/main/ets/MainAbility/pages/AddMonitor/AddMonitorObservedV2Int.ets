@@ -27,7 +27,7 @@ export class User {
     this.ageMonitor = UIUtils.addMonitor(() => this.age, this.ageChange, { path: ['age'] });
   }
 
-  ageChange(m: IMonitor) {
+  ageChange(m: IMonitor): void {
     m.dirty.forEach((path: string) => {
       console.log(`[addMonitorTest] ${path} has changed from ${m.value<int>(path)?.before} to ${m.value<int>(path)?.now}`);
       this.text = `[addMonitorTest] ${path} has changed from ${m.value<int>(path)?.before} to ${m.value<int>(path)?.now}`

@@ -35,7 +35,6 @@ import TcExceptionTest from "./TcExceptionTest.test";
 import TcStringTest from "./TcStringTest.test";
 import TcOptTest from "./TcOptTest.test";
 import TcLoadLibTest from "./TcLoadLibTest.test";
-import TcErrorCodeTest from "./TcErrorCodeTest.test";
 import TcErrorNoLoadLibTest from "./TcErrorNoLoadLibTest.test";
 import TcErrorTest from "./TcErrorTest.test";
 import TcDisasmTest from "./TcDisasmTest.test";

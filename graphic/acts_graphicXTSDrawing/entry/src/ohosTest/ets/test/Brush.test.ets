@@ -418,6 +418,7 @@ export default function brushTest() {
       try {
         brush.setColorFilter(undefined);
         console.info(msg + ' setColorFilter successed');
+        expect().assertFail();
       } catch (e) {
         console.info(msg + ` setColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
@@ -428,7 +429,7 @@ export default function brushTest() {
         console.info(msg + ' setColorFilter successed');
       } catch (e) {
         console.info(msg + ` setColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
-        expect(e.code).assertEqual(401);
+        expect().assertFail();
       }
     });
 
@@ -484,14 +485,21 @@ export default function brushTest() {
      */
     it('testBrushSetMaskFilterNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testBrushSetMaskFilterNull';
+      const brush = new drawing.Brush();
       try {
-        const brush = new drawing.Brush();
         brush.setMaskFilter(undefined);
+        console.info(msg + ' setMaskFilter successed');
+        expect().assertFail();
+      } catch (e) {
+        console.info(msg + ` setMaskFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
         brush.setMaskFilter(null);
         console.info(msg + ' setMaskFilter successed');
       } catch (e) {
         console.info(msg + ` setMaskFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
-        expect(e.code).assertEqual(401);
+        expect().assertFail();
       }
     });
 
@@ -946,6 +954,7 @@ export default function brushTest() {
       try {
         brush.setImageFilter(undefined);
         console.info(msg + ' setImageFilter(undefined) succeeded');
+        expect().assertFail();
       } catch( e ) {
         console.info(msg + ` setImageFilter(undefined) errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect(e.code).assertEqual(401);
@@ -1327,7 +1336,7 @@ export default function brushTest() {
         console.info(msg + ' setShaderEffect successed');
       } catch( e ) {
         console.info(msg + ` setShaderEffect errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
-        expect(e.code).assertEqual(401);
+        expect().assertFail();
       }
     });
 
@@ -1346,6 +1355,7 @@ export default function brushTest() {
       try {
         brush.setShaderEffect(undefined);
         console.info(msg + ' setShaderEffect(undefined) succeeded');
+        expect().assertFail();
       } catch( e ) {
         console.info(msg + ` setShaderEffect(undefined) errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect(e.code).assertEqual(401);

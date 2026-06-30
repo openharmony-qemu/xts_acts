@@ -119,7 +119,7 @@ it('imageThreeJsunit_static_0300', Level.LEVEL1, async (done: () => void): Promi
       await CommonFunc.sleep(1000);
       // test the image click event
       let driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('image2'));
+      let btn = await driver.findComponent(ON.id('imageThree' + '_image2'));
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(100);
       let strJson = inspector.getInspectorByKey('click');

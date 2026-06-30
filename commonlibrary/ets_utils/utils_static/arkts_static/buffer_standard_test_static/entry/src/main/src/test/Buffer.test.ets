@@ -4477,7 +4477,7 @@ export default function BufferTest(): void {
      * @tc.level  LEVEL1
      */
     it("testBlobSize0761", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let blob = new buffer.Blob([]);
+      let blob = new buffer.Blob([] as Array<ArrayBuffer>);
       let size = blob.size;
       expect(String(size)).assertEqual('0');
     });

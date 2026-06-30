@@ -22,6 +22,7 @@ struct Page {
         Column(){
           Text('This is a long long long long long long text')
             .id('text')
+            .key('text')
             .fontSize(20).textAlign(TextAlign.Center)
             .shaderStyle({
               direction: GradientDirection.Right,

@@ -184,6 +184,19 @@ struct DoubleSidedNullAndUndefined {
             }
             .width('20%')
             .height('100%')
+
+            Column() {
+              Text('Chain')
+                .id('null')
+                .width('100%')
+                .height('100%')
+                .backgroundColor('#FF0000FF')
+                .textAlign(TextAlign.Center)
+                .fontSize(9)
+                .doubleSided(null)
+            }
+            .width('20%')
+            .height('100%')
           }
           .width('100%')
           .height('20%')

@@ -68,9 +68,9 @@ export default function Row_MarginPadding() {
       await CommonFunc.sleep(3000);
       let Column: RectValue = CommonFunc.getComponentRect('Column_Row_MarginPadding');
       let Row: RectValue = CommonFunc.getComponentRect('Row_MarginPadding');
-      let Text1: RectValue = CommonFunc.getComponentRect('Row_MarginPadding_Text1');
-      let Text2: RectValue = CommonFunc.getComponentRect('Row_MarginPadding_Text2');
-      let Text3: RectValue = CommonFunc.getComponentRect('Row_MarginPadding_Text3');
+      let Text1: RectValue = CommonFunc.getComponentRect('Row_MarginPadding' + '_Text1');
+      let Text2: RectValue = CommonFunc.getComponentRect('Row_MarginPadding' + '_Text2');
+      let Text3: RectValue = CommonFunc.getComponentRect('Row_MarginPadding' + '_Text3');
 
       console.log('Column rect_value is:' + JSON.stringify(Column));
       console.log('Row rect_value is:' + JSON.stringify(Row));
@@ -119,9 +119,9 @@ export default function Row_MarginPadding() {
       await CommonFunc.sleep(3000)
       let Column: RectValue = CommonFunc.getComponentRect('Column_Row_MarginPadding');
       let Row: RectValue = CommonFunc.getComponentRect('Row_MarginPadding');
-      let Text1: RectValue = CommonFunc.getComponentRect('Row_MarginPadding_Text1');
-      let Text2: RectValue = CommonFunc.getComponentRect('Row_MarginPadding_Text2');
-      let Text3: RectValue = CommonFunc.getComponentRect('Row_MarginPadding_Text3');
+      let Text1: RectValue = CommonFunc.getComponentRect('Row_MarginPadding' + '_Text1');
+      let Text2: RectValue = CommonFunc.getComponentRect('Row_MarginPadding' + '_Text2');
+      let Text3: RectValue = CommonFunc.getComponentRect('Row_MarginPadding' + '_Text3');
 
       console.log('Column rect_value is:' + JSON.stringify(Column));
 

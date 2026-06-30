@@ -69,7 +69,7 @@ struct stagePrompt {
           .padding(10)
           .textAlign(TextAlign.Center)
           .textOverflow({ overflow: TextOverflow.None })
-          .key("showDialogText")
+          .key("stagePrompt_showDialogText")
           .onClick(() => {
             try {
               globalThis.uiContent.getPromptAction()
@@ -122,7 +122,7 @@ struct stagePrompt {
           .padding(10)
           .textAlign(TextAlign.Center)
           .textOverflow({ overflow: TextOverflow.None })
-          .key("showActionMenuText")
+          .key("stagePrompt_showActionMenuText")
           .onClick(() => {
             try {
               globalThis.uiContent.getPromptAction()

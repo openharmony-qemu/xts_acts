@@ -14,35 +14,9 @@
  * limitations under the License.
  */
 
-import {
-  Entry,
-  Column,
-  Component,
-  Text,
-  List,
-  ForEach,
-  ListItem,
-  TextAlign,
-  Axis,
-  Button,
-  ScrollDirection,
-  EdgeEffect,
-  ColumnOptions,
-  ClickEvent,
-  Edge,
-  Padding,
-  Margin,
-  ColumnOptions,
-  BarState,
-  Color,
-  ScrollAlign,
-  ClickEvent,
-  Scroller,
-  Scroll
-} from '@ohos.arkui.component'
-import events_emitter from '@ohos.events.emitter'
-import { State } from '@ohos.arkui.stateManagement'
-
+import { Entry, Column, Component, Text, List, ForEach, ListItem, TextAlign, Axis, Button, ScrollDirection, EdgeEffect, ColumnOptions, ClickEvent, Edge, Padding, Margin, BarState, Color, ScrollAlign, Scroller, Scroll } from '@ohos.arkui.component';
+import events_emitter from '@ohos.events.emitter';
+import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct ScrollScrollEdgeCallback {

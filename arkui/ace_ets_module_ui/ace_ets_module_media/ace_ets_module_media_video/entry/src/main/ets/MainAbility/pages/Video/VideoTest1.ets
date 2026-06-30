@@ -26,7 +26,7 @@ struct VideoTest1 {
 
   build() {
     Column({space:5}) {
-      Text(this.text).id('VideoTest1_text')
+      Text(this.text).id('VideoTest1_text').key('VideoTest1_text')
 
       Video({
         src: this.videoSrc,
@@ -49,14 +49,14 @@ struct VideoTest1 {
         })
           .height(25)
           .margin(5)
-          .id('VideoTest1_start')
+          .id('VideoTest1_start').key('VideoTest1_start')
 
         Button('stop').onClick(() => {
           this.controller.stop()
         })
           .height(25)
           .margin(5)
-          .id('VideoTest1_stop')
+          .id('VideoTest1_stop').key('VideoTest1_stop')
       }
     }
     .height('100%')

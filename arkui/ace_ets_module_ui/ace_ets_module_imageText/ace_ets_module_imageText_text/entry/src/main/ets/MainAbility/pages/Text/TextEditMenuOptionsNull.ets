@@ -22,6 +22,7 @@ struct TextEditMenuOptionsNull {
       // EditMenuOptions onCreateMenu null test
       Text('EditMenuOptions onCreateMenu null')
         .id('text_editMenuOptions_onCreateMenu_null')
+        .key('text_editMenuOptions_onCreateMenu_null')
         .height('5%')
         .copyOption(CopyOptions.InApp)
         .editMenuOptions({
@@ -31,6 +32,7 @@ struct TextEditMenuOptionsNull {
       // EditMenuOptions onCreateMenu undefined test
       Text('EditMenuOptions onCreateMenu undefined')
         .id('text_editMenuOptions_onCreateMenu_undefined')
+        .key('text_editMenuOptions_onCreateMenu_undefined')
         .height('5%')
         .copyOption(CopyOptions.InApp)
         .editMenuOptions({
@@ -40,6 +42,7 @@ struct TextEditMenuOptionsNull {
       // IMEClient setExtraConfig null test
       TextInput({ text: 'IMEClient setExtraConfig null'})
         .id('TextInput_imeClient_setExtraConfig_null')
+        .key('TextInput_imeClient_setExtraConfig_null')
         .height('5%')
         .onWillAttachIME((client: IMEClient) => {
           client.setExtraConfig(null)
@@ -48,6 +51,7 @@ struct TextEditMenuOptionsNull {
       // IMEClient setExtraConfig undefined test
       TextInput({ text: 'IMEClient setExtraConfig undefined'})
         .id('TextInput_imeClient_setExtraConfig_undefined')
+        .key('TextInput_imeClient_setExtraConfig_undefined')
         .height('5%')
         .onWillAttachIME((client: IMEClient) => {
           client.setExtraConfig(undefined)

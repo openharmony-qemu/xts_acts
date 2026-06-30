@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+
 import { hilog } from '@kit.PerformanceAnalysisKit';
 
 const TAG = '[MonitorWildcardTest]';
@@ -103,8 +103,7 @@ struct MonitorWildcardTest {
       Text(`Callback Count: ${this.monitorTest.monitorCallbackCount}`)
         .id('callback_count_text')
         .height('3%')
-      
-      Divider().margin({ top: 10, bottom: 10 })
+
 
       Text('Array Wildcard Test')
         .height('3%')
@@ -130,8 +129,6 @@ struct MonitorWildcardTest {
           })
       }
 
-      Divider().margin({ top: 10, bottom: 10 })
-
       Text('Map Wildcard Test')
         .height('3%')
         .fontWeight(FontWeight.Medium)
@@ -156,7 +153,6 @@ struct MonitorWildcardTest {
           })
       }
 
-      Divider().margin({ top: 10, bottom: 10 })
 
       Text('Set Wildcard Test')
         .height('3%')
@@ -182,7 +178,6 @@ struct MonitorWildcardTest {
           })
       }
 
-      Divider().margin({ top: 10, bottom: 10 })
 
       Text('Date Wildcard Test')
         .height('3%')
@@ -208,7 +203,6 @@ struct MonitorWildcardTest {
           })
       }
 
-      Divider().margin({ top: 10, bottom: 10 })
 
       Text('Person Wildcard Test')
         .height('3%')
@@ -236,6 +230,8 @@ struct MonitorWildcardTest {
     }
     .width('100%')
     .height('100%')
-    .padding(20)
+    .padding(5)
+    .margin(5)
+    .justifyContent(FlexAlign.Center)
   }
 }

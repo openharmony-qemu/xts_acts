@@ -44,7 +44,7 @@ struct ShapeNe {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("neText")
+        .key("shape_neText")
 
       Shape() {
         Path().width(300).height(10).commands('M0 0 L900 0')

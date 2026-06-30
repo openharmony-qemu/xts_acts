@@ -79,7 +79,7 @@ struct imageAddApi3 {
         .height(100)
         .width(100)
         .objectFit(ImageFit.TOP_START)
-        .key('imageAddApi3')
+        .key('imageAddApi3_imageAddApi3')
       Image($r('app.media.icon'))
         .height(100)
         .width(100)

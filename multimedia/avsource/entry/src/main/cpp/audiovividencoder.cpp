@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 #include "napi/native_api.h"
+#include "native_common.h"
+#include "audio_common.h"
 #include <condition_variable>
 #include <js_native_api_types.h>
 #include <multimedia/player_framework/native_avcapability.h>
@@ -24,47 +26,6 @@
 #include <queue>
 #include <fstream>
 #include <iostream>
-
-#define FAIL (-1)
-#define SUCCESS (0)
-#define NO_SOUNDBED_LAYOUT (-1)
-#define SAMPLERATE_32000 (32000)
-#define SAMPLERATE_44100 (44100)
-#define SAMPLERATE_48000 (48000)
-#define SAMPLERATE_INVALID (0)
-#define BITRATE_ZERO (0)
-#define BITRATE_32KBPS (32000)
-#define BITRATE_44KBPS (44000)
-#define BITRATE_96KBPS (96000)
-#define BITRATE_152KBPS (152000)
-#define BITRATE_192KBPS (192000)
-#define BITRATE_256KBPS (256000)
-#define BITRATE_320KBPS (320000)
-#define BITRATE_400KBPS (400000)
-#define BITRATE_832KBPS (832000)
-#define BITRATE_900KBPS (900000)
-#define OBJECT_ZERO (0)
-#define OBJECT_NUM_2 (2)
-#define OBJECT_NUM_10 (10)
-#define OBJECT_NUM_11 (11)
-#define OBJECT_INVALID (-1)
-#define CARTESIAN_ZERO (0.0f)
-#define CARTESIAN_MIN (-1.0f)
-#define CARTESIAN_MIN_INVALID (-1.1f)
-#define CARTESIAN_MAX (1.0f)
-#define CARTESIAN_MAX_INVALID (1.1f)
-#define AZIMUTH_MIN (-180.0f)
-#define AZIMUTH_MIN_INVALID (-180.1f)
-#define AZIMUTH_MAX (180.0f)
-#define AZIMUTH_MAX_INVALID (180.1f)
-#define ELEVATION_MIN (-90.0f)
-#define ELEVATION_MIN_INVALID (-90.1f)
-#define ELEVATION_MAX (90.0f)
-#define ELEVATION_MAX_INVALID (90.1f)
-#define DISTANCE_MIN (0.0f)
-#define DISTANCE_MIN_INVALID (-0.1f)
-#define DISTANCE_MAX (1.0f)
-#define DISTANCE_MAX_INVALID (1.1f)
 
 using namespace std;
 
@@ -1774,88 +1735,378 @@ static napi_value DestroyBuilderNullCheck(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value CreateEmptyBuilderNullCheck(napi_env env, napi_callback_info info)
+{
+    int backParam = FAIL;
+    OH_AudioVividMetaBuilder *builder = nullptr;
+    OH_AVErrCode ret;
+    if (IsSupportAudioVivid()) {
+        ret = OH_AudioVividMetaBuilder_CreateEmptyBuilder(nullptr);
+        if (ret == AV_ERR_INVALID_VAL) {
+            backParam = SUCCESS;
+        }
+    } else {
+        ret = OH_AudioVividMetaBuilder_CreateEmptyBuilder(&builder);
+        if (ret == AV_ERR_UNSUPPORT && builder == nullptr) {
+            backParam = SUCCESS;
+        }
+    }
+    napi_value result = nullptr;
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value AddObjectBuilderNullCheck(napi_env env, napi_callback_info info)
+{
+    int backParam = FAIL;
+    OH_AudioVividMetaBuilder *builder = nullptr;
+    OH_AVErrCode ret;
+    if (IsSupportAudioVivid()) {
+        OH_AudioVividMetaBuilder_CreateEmptyBuilder(&builder);
+        int32_t objectIndex = -1;
+        ret = OH_AudioVividMetaBuilder_AddObject(nullptr, &objectIndex);
+        if (ret == AV_ERR_INVALID_VAL) {
+            backParam = SUCCESS;
+        }
+        OH_AudioVividMetaBuilder_Destroy(builder);
+        builder = nullptr;
+    } else {
+        ret = OH_AudioVividMetaBuilder_CreateEmptyBuilder(&builder);
+        if (ret == AV_ERR_UNSUPPORT && builder == nullptr) {
+            backParam = SUCCESS;
+        }
+    }
+    napi_value result = nullptr;
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value AddObjectIndexNullCheck(napi_env env, napi_callback_info info)
+{
+    int backParam = FAIL;
+    OH_AudioVividMetaBuilder *builder = nullptr;
+    OH_AVErrCode ret;
+    if (IsSupportAudioVivid()) {
+        OH_AudioVividMetaBuilder_CreateEmptyBuilder(&builder);
+        ret = OH_AudioVividMetaBuilder_AddObject(builder, nullptr);
+        if (ret == AV_ERR_INVALID_VAL) {
+            backParam = SUCCESS;
+        }
+        OH_AudioVividMetaBuilder_Destroy(builder);
+        builder = nullptr;
+    } else {
+        ret = OH_AudioVividMetaBuilder_CreateEmptyBuilder(&builder);
+        if (ret == AV_ERR_UNSUPPORT && builder == nullptr) {
+            backParam = SUCCESS;
+        }
+    }
+    napi_value result = nullptr;
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value RemoveObjectBuilderNullCheck(napi_env env, napi_callback_info info)
+{
+    int backParam = FAIL;
+    OH_AudioVividMetaBuilder *builder = nullptr;
+    OH_AVErrCode ret;
+    if (IsSupportAudioVivid()) {
+        OH_AudioVividMetaBuilder_CreateEmptyBuilder(&builder);
+        int32_t objectIndex = -1;
+        ret = OH_AudioVividMetaBuilder_AddObject(builder, &objectIndex);
+        if (ret == AV_ERR_OK && objectIndex >= 0) {
+            ret = OH_AudioVividMetaBuilder_RemoveObject(nullptr, objectIndex);
+            if (ret == AV_ERR_INVALID_VAL) {
+                backParam = SUCCESS;
+            }
+        }
+        OH_AudioVividMetaBuilder_Destroy(builder);
+        builder = nullptr;
+    } else {
+        ret = OH_AudioVividMetaBuilder_CreateEmptyBuilder(&builder);
+        if (ret == AV_ERR_UNSUPPORT && builder == nullptr) {
+            backParam = SUCCESS;
+        }
+    }
+    napi_value result = nullptr;
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value UpdateBaseMetaBuilderNullCheck(napi_env env, napi_callback_info info)
+{
+    int backParam = FAIL;
+    g_format = OH_AVFormat_Create();
+    OH_AudioVividMetaBuilder *builder = nullptr;
+    OH_AVErrCode ret;
+    Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MIX, true);
+    SetAudioVividFormat();
+    if (IsSupportAudioVivid()) {
+        int32_t len;
+        OH_AudioVividMetaBuilder_Create(&builder, g_format);
+        ret = OH_AudioVividMetaBuilder_GetMetaLen(builder, true, &len);
+        std::vector<uint8_t> metaData;
+        metaData.resize(len);
+        ret = OH_AudioVividMetaBuilder_GetMeta(builder, true, metaData.data(), len);
+        if (ret == AV_ERR_OK) {
+            OH_AudioVividMetaBuilder *newbuilder = nullptr;
+            int32_t objectIndex = -1;
+            OH_AudioVividMetaBuilder_CreateEmptyBuilder(&newbuilder);
+            OH_AudioVividMetaBuilder_AddObject(newbuilder, &objectIndex);
+            ret = OH_AudioVividMetaBuilder_UpdateBaseMeta(nullptr, metaData.data(), len);
+            if (ret == AV_ERR_INVALID_VAL) {
+                backParam = SUCCESS;
+            }
+            OH_AudioVividMetaBuilder_Destroy(newbuilder);
+            newbuilder = nullptr;
+        }
+        OH_AudioVividMetaBuilder_Destroy(builder);
+        builder = nullptr;
+    } else {
+        ret = OH_AudioVividMetaBuilder_CreateEmptyBuilder(&builder);
+        if (ret == AV_ERR_UNSUPPORT && builder == nullptr) {
+            backParam = SUCCESS;
+        }
+    }
+    OH_AVFormat_Destroy(g_format);
+    napi_value result = nullptr;
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value UpdateBaseMetaBufferNullCheck(napi_env env, napi_callback_info info)
+{
+    int backParam = FAIL;
+    g_format = OH_AVFormat_Create();
+    OH_AudioVividMetaBuilder *builder = nullptr;
+    OH_AVErrCode ret;
+    Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MIX, true);
+    SetAudioVividFormat();
+    if (IsSupportAudioVivid()) {
+        int32_t len;
+        OH_AudioVividMetaBuilder_Create(&builder, g_format);
+        ret = OH_AudioVividMetaBuilder_GetMetaLen(builder, true, &len);
+        if (ret == AV_ERR_OK && len > 0) {
+            OH_AudioVividMetaBuilder *newbuilder = nullptr;
+            OH_AudioVividMetaBuilder_CreateEmptyBuilder(&newbuilder);
+            int32_t objectIndex = -1;
+            OH_AudioVividMetaBuilder_AddObject(newbuilder, &objectIndex);
+            ret = OH_AudioVividMetaBuilder_UpdateBaseMeta(newbuilder, nullptr, len);
+            if (ret == AV_ERR_INVALID_VAL) {
+                backParam = SUCCESS;
+            }
+            OH_AudioVividMetaBuilder_Destroy(newbuilder);
+            newbuilder = nullptr;
+        }
+        OH_AudioVividMetaBuilder_Destroy(builder);
+        builder = nullptr;
+    } else {
+        ret = OH_AudioVividMetaBuilder_CreateEmptyBuilder(&builder);
+        if (ret == AV_ERR_UNSUPPORT && builder == nullptr) {
+            backParam = SUCCESS;
+        }
+    }
+    OH_AVFormat_Destroy(g_format);
+    napi_value result = nullptr;
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value RemoveObjectIndexCheck(napi_env env, napi_callback_info info)
+{
+    int backParam = FAIL;
+    OH_AudioVividMetaBuilder *builder = nullptr;
+    OH_AVErrCode ret;
+    if (IsSupportAudioVivid()) {
+        OH_AudioVividMetaBuilder_CreateEmptyBuilder(&builder);
+        int32_t objectIndex = -1;
+        ret = OH_AudioVividMetaBuilder_AddObject(builder, &objectIndex);
+        if (ret == AV_ERR_OK && objectIndex >= 0) {
+            int32_t errNum = 0;
+            ret = OH_AudioVividMetaBuilder_RemoveObject(builder, OBJECT_INVALID);
+            if (ret != AV_ERR_INVALID_VAL) {
+                errNum++;
+            }
+            ret = OH_AudioVividMetaBuilder_RemoveObject(builder, objectIndex);
+            if (ret != AV_ERR_OK) {
+                errNum++;
+            }
+            ret = OH_AudioVividMetaBuilder_RemoveObject(builder, objectIndex);
+            if (ret != AV_ERR_INVALID_VAL) {
+                errNum++;
+            }
+            if (errNum == 0) {
+                backParam = SUCCESS;
+            }
+        }
+        OH_AudioVividMetaBuilder_Destroy(builder);
+        builder = nullptr;
+    } else {
+        ret = OH_AudioVividMetaBuilder_CreateEmptyBuilder(&builder);
+        if (ret == AV_ERR_UNSUPPORT && builder == nullptr) {
+            backParam = SUCCESS;
+        }
+    }
+    napi_value result = nullptr;
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value UpdateBaseMetaTooManyObject(napi_env env, napi_callback_info info)
+{
+    int backParam = FAIL;
+    g_format = OH_AVFormat_Create();
+    OH_AudioVividMetaBuilder *builder = nullptr;
+    OH_AVErrCode ret;
+    Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MIX, true);
+    SetAudioVividFormat();
+    if (IsSupportAudioVivid()) {
+        int32_t len;
+        OH_AudioVividMetaBuilder_Create(&builder, g_format);
+        OH_AudioVividMetaBuilder_GetMetaLen(builder, true, &len);
+        std::vector<uint8_t> metaData;
+        metaData.resize(len);
+        OH_AudioVividMetaBuilder_GetMeta(builder, true, metaData.data(), len);
+        OH_AudioVividMetaBuilder *newbuilder = nullptr;
+        OH_AudioVividMetaBuilder_CreateEmptyBuilder(&newbuilder);
+        int32_t objectIndex = -1;
+        int32_t errNum = 0;
+        for (int32_t i = 0; i < OBJECT_NUM_10; i++) {
+            ret = OH_AudioVividMetaBuilder_AddObject(newbuilder, &objectIndex);
+            if (ret != AV_ERR_OK || objectIndex < 0) {
+                errNum++;
+            }
+        }
+            
+        ret = OH_AudioVividMetaBuilder_UpdateBaseMeta(newbuilder, metaData.data(), LENGTH_INVALID);
+        if (ret != AV_ERR_INVALID_VAL) {
+            errNum++;
+        }
+
+        ret = OH_AudioVividMetaBuilder_UpdateBaseMeta(newbuilder, metaData.data(), len);
+        if (ret != AV_ERR_INVALID_VAL) {
+            errNum++;
+        }
+
+        if (errNum == 0) {
+            backParam = SUCCESS;
+        }
+        OH_AudioVividMetaBuilder_Destroy(newbuilder);
+        newbuilder = nullptr;
+        OH_AudioVividMetaBuilder_Destroy(builder);
+        builder = nullptr;
+    } else {
+        ret = OH_AudioVividMetaBuilder_CreateEmptyBuilder(&builder);
+        if (ret == AV_ERR_UNSUPPORT && builder == nullptr) {
+            backParam = SUCCESS;
+        }
+    }
+    OH_AVFormat_Destroy(g_format);
+    napi_value result = nullptr;
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value AudioVividMetaBuilderErrorUse(napi_env env, napi_callback_info info)
+{
+    int backParam = FAIL;
+    g_format = OH_AVFormat_Create();
+    OH_AudioVividMetaBuilder *builder = nullptr;
+    OH_AVErrCode ret;
+    Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MIX, true);
+    SetAudioVividFormat();
+    if (IsSupportAudioVivid()) {
+        int32_t errNum = 0;
+        int32_t len;
+        OH_AudioVividMetaBuilder_Create(&builder, g_format);
+        OH_AudioVividMetaBuilder_GetMetaLen(builder, true, &len);
+        std::vector<uint8_t> metaData;
+        metaData.resize(len);
+        OH_AudioVividMetaBuilder_GetMeta(builder, true, metaData.data(), len);
+
+        int32_t objectIndex = -1;
+        ret = OH_AudioVividMetaBuilder_AddObject(builder, &objectIndex);
+        if (ret != AV_ERR_UNKNOWN) {
+            errNum++;
+        }
+
+        ret = OH_AudioVividMetaBuilder_RemoveObject(builder, objectIndex);
+        if (ret != AV_ERR_INVALID_VAL) {
+            errNum++;
+        }
+
+        ret = OH_AudioVividMetaBuilder_UpdateBaseMeta(builder, metaData.data(), len);
+        if (ret != AV_ERR_INVALID_VAL) {
+            errNum++;
+        }
+
+        if (errNum == 0) {
+            backParam = SUCCESS;
+        }
+    } else {
+        ret = OH_AudioVividMetaBuilder_CreateEmptyBuilder(&builder);
+        if (ret == AV_ERR_UNSUPPORT && builder == nullptr) {
+            backParam = SUCCESS;
+        }
+    }
+    OH_AVFormat_Destroy(g_format);
+    napi_value result = nullptr;
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {"MonoModeSampleRateCheck", nullptr, MonoModeSampleRateCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"MonoModeSampleFormatCheck", nullptr, MonoModeSampleFormatCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"MonoModeBitrateCheck", nullptr, MonoModeBitrateCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"StereoModeSampleRateCheck", nullptr, StereoModeSampleRateCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"StereoModeSampleFormatCheck", nullptr, StereoModeSampleFormatCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"StereoModeBitrateCheck", nullptr, StereoModeBitrateCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"MCModeSampleRateCheck", nullptr, MCModeSampleRateCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"MCModeSampleFormatCheck", nullptr, MCModeSampleFormatCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"MCModeChannelLayoutCheck", nullptr, MCModeChannelLayoutCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"MCModeBitrateCheck", nullptr, MCModeBitrateCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"MixModeSampleRateCheck", nullptr, MixModeSampleRateCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"MixModeSampleFormatCheck", nullptr, MixModeSampleFormatCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"MixModeChannelLayoutCheck", nullptr, MixModeChannelLayoutCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"MixModeBitrateCheck", nullptr, MixModeBitrateCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"MixModeObjNumCheck", nullptr, MixModeObjNumCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"MixModeObjBitrateCheck", nullptr, MixModeObjBitrateCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"CreateMonoMode", nullptr, CreateMonoMode, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"CreateStereoMode", nullptr, CreateStereoMode, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"CreateMCMode", nullptr, CreateMCMode, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"CreateMixMode", nullptr, CreateMixMode, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"CreateObjNumCheck", nullptr, CreateObjNumCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"UpdateObjectPosIndexCheck", nullptr, UpdateObjectPosIndexCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"UpdateObjectPosXCheck", nullptr, UpdateObjectPosXCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"UpdateObjectPosYCheck", nullptr, UpdateObjectPosYCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"UpdateObjectPosZCheck", nullptr, UpdateObjectPosZCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"UpdateObjectPosAzimuthCheck", nullptr, UpdateObjectPosAzimuthCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"UpdateObjectPosElevationCheck", nullptr, UpdateObjectPosElevationCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"UpdateObjectPosDistanceCheck", nullptr, UpdateObjectPosDistanceCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"UpdateObjectGainIndexCheck", nullptr, UpdateObjectGainIndexCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"UpdateObjectGainGainCheck", nullptr, UpdateObjectGainGainCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"CreateBuilderNullCheck", nullptr, CreateBuilderNullCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"CreateFormatNullCheck", nullptr, CreateFormatNullCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"UpdateObjectPosBuilderNullCheck", nullptr, UpdateObjectPosBuilderNullCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"UpdateObjectGainBuilderNullCheck", nullptr, UpdateObjectGainBuilderNullCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"GetMetaLenBuilderNullCheck", nullptr, GetMetaLenBuilderNullCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"GetMetaLenLenNullCheck", nullptr, GetMetaLenLenNullCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"GetMetaBuilderNullCheck", nullptr, GetMetaBuilderNullCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"GetMetaBufferNullCheck", nullptr, GetMetaBufferNullCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"DestroyBuilderNullCheck", nullptr, DestroyBuilderNullCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
+        DECLARE_NAPI_FUNCTION("MonoModeSampleRateCheck", MonoModeSampleRateCheck),
+        DECLARE_NAPI_FUNCTION("MonoModeSampleFormatCheck", MonoModeSampleFormatCheck),
+        DECLARE_NAPI_FUNCTION("MonoModeBitrateCheck", MonoModeBitrateCheck),
+        DECLARE_NAPI_FUNCTION("StereoModeSampleRateCheck", StereoModeSampleRateCheck),
+        DECLARE_NAPI_FUNCTION("StereoModeSampleFormatCheck", StereoModeSampleFormatCheck),
+        DECLARE_NAPI_FUNCTION("StereoModeBitrateCheck", StereoModeBitrateCheck),
+        DECLARE_NAPI_FUNCTION("MCModeSampleRateCheck", MCModeSampleRateCheck),
+        DECLARE_NAPI_FUNCTION("MCModeSampleFormatCheck", MCModeSampleFormatCheck),
+        DECLARE_NAPI_FUNCTION("MCModeChannelLayoutCheck", MCModeChannelLayoutCheck),
+        DECLARE_NAPI_FUNCTION("MCModeBitrateCheck", MCModeBitrateCheck),
+        DECLARE_NAPI_FUNCTION("MixModeSampleRateCheck", MixModeSampleRateCheck),
+        DECLARE_NAPI_FUNCTION("MixModeSampleFormatCheck", MixModeSampleFormatCheck),
+        DECLARE_NAPI_FUNCTION("MixModeChannelLayoutCheck", MixModeChannelLayoutCheck),
+        DECLARE_NAPI_FUNCTION("MixModeBitrateCheck", MixModeBitrateCheck),
+        DECLARE_NAPI_FUNCTION("MixModeObjNumCheck", MixModeObjNumCheck),
+        DECLARE_NAPI_FUNCTION("MixModeObjBitrateCheck", MixModeObjBitrateCheck),
+        DECLARE_NAPI_FUNCTION("CreateMonoMode", CreateMonoMode),
+        DECLARE_NAPI_FUNCTION("CreateStereoMode", CreateStereoMode),
+        DECLARE_NAPI_FUNCTION("CreateMCMode", CreateMCMode),
+        DECLARE_NAPI_FUNCTION("CreateMixMode", CreateMixMode),
+        DECLARE_NAPI_FUNCTION("CreateObjNumCheck", CreateObjNumCheck),
+        DECLARE_NAPI_FUNCTION("UpdateObjectPosIndexCheck", UpdateObjectPosIndexCheck),
+        DECLARE_NAPI_FUNCTION("UpdateObjectPosXCheck", UpdateObjectPosXCheck),
+        DECLARE_NAPI_FUNCTION("UpdateObjectPosYCheck", UpdateObjectPosYCheck),
+        DECLARE_NAPI_FUNCTION("UpdateObjectPosZCheck", UpdateObjectPosZCheck),
+        DECLARE_NAPI_FUNCTION("UpdateObjectPosAzimuthCheck", UpdateObjectPosAzimuthCheck),
+        DECLARE_NAPI_FUNCTION("UpdateObjectPosElevationCheck", UpdateObjectPosElevationCheck),
+        DECLARE_NAPI_FUNCTION("UpdateObjectPosDistanceCheck", UpdateObjectPosDistanceCheck),
+        DECLARE_NAPI_FUNCTION("UpdateObjectGainIndexCheck", UpdateObjectGainIndexCheck),
+        DECLARE_NAPI_FUNCTION("UpdateObjectGainGainCheck", UpdateObjectGainGainCheck),
+        DECLARE_NAPI_FUNCTION("CreateBuilderNullCheck", CreateBuilderNullCheck),
+        DECLARE_NAPI_FUNCTION("CreateFormatNullCheck", CreateFormatNullCheck),
+        DECLARE_NAPI_FUNCTION("UpdateObjectPosBuilderNullCheck", UpdateObjectPosBuilderNullCheck),
+        DECLARE_NAPI_FUNCTION("UpdateObjectGainBuilderNullCheck", UpdateObjectGainBuilderNullCheck),
+        DECLARE_NAPI_FUNCTION("GetMetaLenBuilderNullCheck", GetMetaLenBuilderNullCheck),
+        DECLARE_NAPI_FUNCTION("GetMetaLenLenNullCheck", GetMetaLenLenNullCheck),
+        DECLARE_NAPI_FUNCTION("GetMetaBuilderNullCheck", GetMetaBuilderNullCheck),
+        DECLARE_NAPI_FUNCTION("GetMetaBufferNullCheck", GetMetaBufferNullCheck),
+        DECLARE_NAPI_FUNCTION("DestroyBuilderNullCheck", DestroyBuilderNullCheck),
+        DECLARE_NAPI_FUNCTION("CreateEmptyBuilderNullCheck", CreateEmptyBuilderNullCheck),
+        DECLARE_NAPI_FUNCTION("AddObjectBuilderNullCheck", AddObjectBuilderNullCheck),
+        DECLARE_NAPI_FUNCTION("AddObjectIndexNullCheck", AddObjectIndexNullCheck),
+        DECLARE_NAPI_FUNCTION("RemoveObjectBuilderNullCheck", RemoveObjectBuilderNullCheck),
+        DECLARE_NAPI_FUNCTION("UpdateBaseMetaBuilderNullCheck", UpdateBaseMetaBuilderNullCheck),
+        DECLARE_NAPI_FUNCTION("UpdateBaseMetaBufferNullCheck", UpdateBaseMetaBufferNullCheck),
+        DECLARE_NAPI_FUNCTION("RemoveObjectIndexCheck", RemoveObjectIndexCheck),
+        DECLARE_NAPI_FUNCTION("UpdateBaseMetaTooManyObject", UpdateBaseMetaTooManyObject),
+        DECLARE_NAPI_FUNCTION("AudioVividMetaBuilderErrorUse", AudioVividMetaBuilderErrorUse),
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

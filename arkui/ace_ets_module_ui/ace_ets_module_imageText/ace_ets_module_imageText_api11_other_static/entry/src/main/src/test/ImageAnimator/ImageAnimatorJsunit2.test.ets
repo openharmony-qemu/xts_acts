@@ -152,7 +152,7 @@ it('imageAnimatorTest_static_0200', Level.LEVEL1, async (done: () => void): Prom
       } catch (err) {
         console.info("imageAnimatorTest_static_0200 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("imageAnimatorTest_static_0200 click result is: " + JSON.stringify(inspector.sendEventByKey('button1', 10, "")));
+      console.info("imageAnimatorTest_static_0200 click result is: " + JSON.stringify(inspector.sendEventByKey('imageAnimator2' + '_button1', 10, "")));
       await CommonFunc.sleep(1000);
       console.info('imageAnimatorTest_static_0200 END');
       done();
@@ -183,7 +183,7 @@ it('imageAnimatorTest_static_0300', Level.LEVEL1, async (done: () => void): Prom
       } catch (err) {
         console.info("imageAnimatorTest_static_0300 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("imageAnimatorTest_static_0300 click result is: " + JSON.stringify(inspector.sendEventByKey('button2', 10, "")));
+      console.info("imageAnimatorTest_static_0300 click result is: " + JSON.stringify(inspector.sendEventByKey('imageAnimator2' + '_button2', 10, "")));
       await CommonFunc.sleep(1000);
       console.info('imageAnimatorTest_static_0300 END');
       done();
@@ -213,7 +213,7 @@ it('imageAnimatorTest_static_0400', Level.LEVEL1, async (done: () => void): Prom
       } catch (err) {
         console.info("imageAnimatorTest_static_0400 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("imageAnimatorTest_static_0400 click result is: " + JSON.stringify(inspector.sendEventByKey('button3', 10, "")));
+      console.info("imageAnimatorTest_static_0400 click result is: " + JSON.stringify(inspector.sendEventByKey('imageAnimator2' + '_button3', 10, "")));
       await CommonFunc.sleep(1000);
       console.info('imageAnimatorTest_static_0400 END');
       done();
@@ -243,7 +243,7 @@ it('imageAnimatorTest_static_0500', Level.LEVEL1, async (done: () => void): Prom
       } catch (err) {
         console.info("imageAnimatorTest_static_0500 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("imageAnimatorTest_static_0500 click result is: " + JSON.stringify(inspector.sendEventByKey('button4', 10, "")));
+      console.info("imageAnimatorTest_static_0500 click result is: " + JSON.stringify(inspector.sendEventByKey('imageAnimator2' + '_button4', 10, "")));
       await CommonFunc.sleep(1000);
       console.info('imageAnimatorTest_static_0500 END');
       done();
@@ -317,7 +317,7 @@ it('imageAnimatorTest_static_0700', Level.LEVEL1, async (done: () => void): Prom
       } catch (err) {
         console.info("imageAnimatorTest_static_0700 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("imageAnimatorTest_static_0700 click result is: " + JSON.stringify(inspector.sendEventByKey('button5', 10, "")));
+      console.info("imageAnimatorTest_static_0700 click result is: " + JSON.stringify(inspector.sendEventByKey('imageAnimator2' + '_button5', 10, "")));
       await CommonFunc.sleep(1000);
       console.info('imageAnimatorTest_static_0700 END');
       done();

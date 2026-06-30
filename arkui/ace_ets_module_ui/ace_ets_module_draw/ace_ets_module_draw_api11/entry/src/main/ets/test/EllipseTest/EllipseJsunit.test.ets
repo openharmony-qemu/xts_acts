@@ -56,7 +56,7 @@ export default function ellipseJsunit() {
     it('testEllipse01', Level.LEVEL0, async (done: Function) => {
       console.info('[testEllipse01] START');
       await Utils.sleep(1000);
-      let strJson: string = getInspectorByKey('ellipse');
+      let strJson: string = getInspectorByKey('ellipse' + '_ellipse');
       console.info("[testEllipse02] obj is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$attrs.height).assertEqual('200.00px');
       expect(JSON.parse(strJson).$attrs.width).assertEqual('200.00px');
@@ -90,7 +90,7 @@ export default function ellipseJsunit() {
         console.log("[testEllipse02] change component data error: " + err.message);
       }
       await Utils.sleep(1000);
-      let strJson: string = getInspectorByKey('ellipse');
+      let strJson: string = getInspectorByKey('ellipse' + '_ellipse');
       console.info("[testEllipse02] obj is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$attrs.width).assertEqual('100.00px');
       console.info('testEllipse02 END');
@@ -123,7 +123,7 @@ export default function ellipseJsunit() {
         console.log("[testEllipse03] change component data error: " + err.message);
       }
       await Utils.sleep(1000);
-      let strJson: string = getInspectorByKey('ellipse');
+      let strJson: string = getInspectorByKey('ellipse' + '_ellipse');
       console.info("[testEllipse03] obj is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$attrs.height).assertEqual('500.00px');
       console.info('testEllipse03 END');
@@ -156,7 +156,7 @@ export default function ellipseJsunit() {
         console.log("[testEllipse04] change component data error: " + err.message);
       }
       await Utils.sleep(1000);
-      let strJson: string = getInspectorByKey('ellipse');
+      let strJson: string = getInspectorByKey('ellipse' + '_ellipse');
       console.info("[testEllipse04] obj is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$attrs.width).assertEqual('1111111111111.00px');
       console.info('testEllipse04 END');
@@ -189,7 +189,7 @@ export default function ellipseJsunit() {
         console.log("[testEllipse05] change component data error: " + err.message);
       }
       await Utils.sleep(1000);
-      let strJson: string = getInspectorByKey('ellipse');
+      let strJson: string = getInspectorByKey('ellipse' + '_ellipse');
       console.info("[testEllipse05] obj is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$attrs.height).assertEqual('12111111111111.00px');
       console.info('testEllipse05 END');
@@ -222,7 +222,7 @@ export default function ellipseJsunit() {
         console.log("[testEllipse06] change component data error: " + err.message);
       }
       await Utils.sleep(1000);
-      let strJson: string = getInspectorByKey('ellipse');
+      let strJson: string = getInspectorByKey('ellipse' + '_ellipse');
       console.info("[testEllipse06] obj is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$attrs.height).assertEqual('0.00px');
       console.info('testEllipse06 END');
@@ -255,7 +255,7 @@ export default function ellipseJsunit() {
         console.log("[testEllipse07] change component data error: " + err.message);
       }
       await Utils.sleep(1000);
-      let strJson: string = getInspectorByKey('ellipse');
+      let strJson: string = getInspectorByKey('ellipse' + '_ellipse');
       console.info("[testEllipse07] obj is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$attrs.width).assertEqual('0.00px');
       console.info('testEllipse07 END');

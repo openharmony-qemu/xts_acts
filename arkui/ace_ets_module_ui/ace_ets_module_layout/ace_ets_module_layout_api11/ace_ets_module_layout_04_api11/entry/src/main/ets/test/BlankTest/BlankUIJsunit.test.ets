@@ -170,7 +170,7 @@ export default function blankUIJsunit() {
       let strJson = getInspectorByKey('blankUIJsunit_blank');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[blankJsunit_0600'] component obj is: " + JSON.stringify(obj));
-      let text_rect = CommonFunc.getComponentRect('text');
+      let text_rect = CommonFunc.getComponentRect('blankParentWidth' + '_text');
       let toggle_rect = CommonFunc.getComponentRect('toggle');
       console.info("[blankJsunit_0600'] text_rect is " + JSON.stringify(text_rect) + "toggle_rect is " + JSON.stringify(toggle_rect));
       // 判断blank平分显示

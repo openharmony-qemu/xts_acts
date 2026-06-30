@@ -563,7 +563,7 @@ export default function CameraFunctionTest() {
      * @tc.level    Level 0
      */
     it('SUB_MULTIMEDIA_OH_CAMERA_GET_PHYSICAL_APERTRUE_0100', Level.LEVEL0, async () => {
-      let result = cameraObj.TestGetPhysicalApertureSucc();
+      let result = cameraObj.TestGetPhysicalApertureSucc(indexSurfaceId);
       console.info(TAG, result);
       expect(result).assertEqual(0);
     });
@@ -605,7 +605,7 @@ export default function CameraFunctionTest() {
      * @tc.level    Level 0
      */
     it('SUB_MULTIMEDIA_OH_CAMERA_SET_PHYSICAL_APERTURE_0100', Level.LEVEL0, async () => {
-      let result = cameraObj.TestSetPhysicalApertureSucc();
+      let result = cameraObj.TestSetPhysicalApertureSucc(indexSurfaceId);
       console.info(TAG, result);
       expect(result).assertEqual(0);
     });
@@ -633,7 +633,7 @@ export default function CameraFunctionTest() {
      * @tc.level    Level 0
      */
     it('SUB_MULTIMEDIA_OH_CAMERA_SET_PHYSICAL_APERTURE_0300', Level.LEVEL0, async () => {
-      let result = cameraObj.TestSetPhysicalApertureWithUnconfiguredStream();
+      let result = cameraObj.TestSetPhysicalApertureWithUnconfiguredStream(indexSurfaceId);
       console.info(TAG, result);
       expect(result).assertEqual(7400103);
     });
@@ -647,7 +647,7 @@ export default function CameraFunctionTest() {
      * @tc.level    Level 0
      */
     it('SUB_MULTIMEDIA_OH_CAMERA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0100', Level.LEVEL0, async () => {
-      let result = cameraObj.TestGetSupportedExposureDurationRangeSucc();
+      let result = cameraObj.TestGetSupportedExposureDurationRangeSucc(indexSurfaceId);
       console.info(TAG, result);
       expect(result).assertEqual(0);
     });
@@ -689,7 +689,7 @@ export default function CameraFunctionTest() {
      * @tc.level    Level 0
      */
     it('SUB_MULTIMEDIA_OH_CAMERA_SET_EXPOSURE_DURATION_0100', Level.LEVEL0, async () => {
-      let result = cameraObj.TestSetExposureDurationSucc();
+      let result = cameraObj.TestSetExposureDurationSucc(indexSurfaceId);
       console.info(TAG, result);
       expect(result).assertEqual(0);
     });
@@ -731,7 +731,7 @@ export default function CameraFunctionTest() {
      * @tc.level    Level 0
      */
     it('SUB_MULTIMEDIA_OH_CAMERA_GET_EXPOSURE_DURATION_0100', Level.LEVEL0, async () => {
-      let result = cameraObj.TestGetExposureDurationSucc();
+      let result = cameraObj.TestGetExposureDurationSucc(indexSurfaceId);
       console.info(TAG, result);
       expect(result).assertEqual(0);
     });
@@ -759,7 +759,7 @@ export default function CameraFunctionTest() {
      * @tc.level    Level 0
      */
     it('SUB_MULTIMEDIA_OH_CAMERA_ADD_DEFERRED_SURFACE_0300', Level.LEVEL0, async () => {
-      let result = cameraObj.TestAddDeferredSurfaceWithEmptyStr("");
+      let result = cameraObj.TestAddDeferredSurfaceWithEmptyStr(indexSurfaceId);
       console.info(TAG, result);
       expect(result).assertEqual(7400101);
     });

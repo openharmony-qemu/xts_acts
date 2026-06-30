@@ -13,32 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
-import { Callback } from '@ohos.base'
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
+import { Callback } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
-import {
-  TapGesture,
-  LongPressGesture,
-  Color,
-  HorizontalAlign,
-  Padding,
-  GestureEvent,
-  UIGestureEvent,
-  GestureModifier,
-  LongPressGestureHandler,
-  ColumnOptions,
-  Entry,
-  Column,
-  Text,
-  Button,
-  ClickEvent,
-  Component,
-  Margin,
-  SourceTool,
-  Padding
-} from '@ohos.arkui.component'
-
+import { TapGesture, LongPressGesture, Color, HorizontalAlign, Padding, GestureEvent, UIGestureEvent, GestureModifier, LongPressGestureHandler, ColumnOptions, Entry, Column, Text, Button, ClickEvent, Component, Margin, SourceTool } from '@ohos.arkui.component';
 export class LongPressGestureHandlerAllowedTypesModifier implements GestureModifier {
   toolTypes: Array<SourceTool> = [];
   listener: Callback<string> = (data: string) => {

@@ -14,6 +14,7 @@ include_directories(${NATIVERENDER_ROOT_PATH}
 add_library(entry SHARED
     napi_init.cpp
     native_child_demo.cpp
+    modular_object_extension_demo.cpp
 )
 target_link_libraries(entry PUBLIC libace_napi.z.so)
 target_link_libraries(entry PUBLIC libability_runtime.so)

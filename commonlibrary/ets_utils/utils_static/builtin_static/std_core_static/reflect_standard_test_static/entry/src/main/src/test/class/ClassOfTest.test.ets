@@ -58,8 +58,8 @@ class ChildClass025 extends ParentClass025 {}
 class ParentClass025 {}
 
 class GenericClass037<T, U> {
-  public first: T;
-  public second: U;
+  public first: T = undefined as T;
+  public second: U = undefined as U;
 }
 
 interface GenericInterface038<T> {

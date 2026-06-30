@@ -14,10 +14,8 @@
  * limitations under the License.
  */
 
-import { Entry, Column, Component, Flex, ClickEvent, Scroller, Color,OnScrollFrameBeginHandlerResult,
-  Image, TextAlign, Scroll, ScrollState, ForEach, EdgeEffect,
-  Text, Button, ClickEvent} from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
+import { Entry, Column, Component, Flex, ClickEvent, Scroller, Color, OnScrollFrameBeginHandlerResult, Image, TextAlign, Scroll, ScrollState, ForEach, EdgeEffect, Text, Button } from '@ohos.arkui.component';
+import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct offsetRemainScroll {

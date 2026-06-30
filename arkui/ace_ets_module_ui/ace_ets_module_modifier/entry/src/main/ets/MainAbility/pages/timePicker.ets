@@ -38,7 +38,7 @@ class CustomModifier extends TimePickerModifier {
       Column() {
         Button("change value").onClick(() => {
           (this.customModifier as CustomModifier).onChange1();
-        }).key("changeButton")
+        }).key("timePicker_changeButton")
 
         Column() {
           TimePicker({ selected: this.selectedTime })

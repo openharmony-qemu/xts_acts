@@ -15,7 +15,12 @@
  */
 
 import SelectTest from './SelectTest/Select.test';
+import SelectMenuBackgroundBlurStyleOptionsTest from
+  './SelectTest/SelectMenuBackgroundBlurStyleOptions.test';
+import SelectMenuBackgroundEffectTest from './SelectTest/SelectMenuBackgroundEffect.test';
 
-export default function testsuite() {
+export default function testsuite(): void {
   SelectTest();
+  SelectMenuBackgroundBlurStyleOptionsTest();
+  SelectMenuBackgroundEffectTest();
 }

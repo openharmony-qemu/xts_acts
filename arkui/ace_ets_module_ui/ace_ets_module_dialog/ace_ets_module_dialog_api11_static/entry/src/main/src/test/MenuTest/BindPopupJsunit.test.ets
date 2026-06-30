@@ -124,7 +124,7 @@ it('bindPopupTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<
         console.info("bindPopupTest_static_0100 on emitter err : " + JSON.stringify(err));
       }
       console.info("bindPopupTest_static_0100 click result is: " +
-      JSON.stringify(inspector.sendEventByKey('button', 10, "")));
+      JSON.stringify(inspector.sendEventByKey('bindPopup' + '_button', 10, "")));
       await CommonFunc.sleep(1000);
       console.info("bindPopupTest_static_0100 click Two result is: " +
       JSON.stringify(inspector.sendEventByKey('image', 10, "")));

@@ -13,27 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  ForEach,
-  Text,
-  Row,
-  List,
-  ListItem,
-  Color,BuilderParam,Builder,
-  FlexAlign,ComponentV2,TabsController,Tabs
-} from '@ohos.arkui.component'
-import {
-  State,
-  Watch,Param,
-  Link,Monitor,Trace,ObservedV2,Event,Consumer,Observed,ObservedV2,
-  StorageLink,IMonitor,IMonitorValue,Local,Provider,PropRef,Provide,PropRef
-} from '@ohos.arkui.stateManagement'
-
+import { Entry, Column, Component, Button, ClickEvent, ForEach, Text, Row, List, ListItem, Color, BuilderParam, Builder, FlexAlign, ComponentV2, TabsController, Tabs } from '@ohos.arkui.component';
+import { State, Watch, Param, Link, Monitor, Trace, ObservedV2, Event, Consumer, Observed, StorageLink, IMonitor, IMonitorValue, Local, Provider, PropRef, Provide } from '@ohos.arkui.stateManagement';
 export enum MemberType {
   first = 1,
   second = 2
@@ -149,7 +130,6 @@ struct V2ToV1ComponentCorrect_TestV1child1 {
       Text(`v1 boolValue1: ${this.boolValue1}`).key('bool_value1')
       Text(`v1 undefinedValue1: ${this.undefinedValue1}`).key('undefined_value1')
       Text(`v1 nullValue1: ${this.nullValue1}`).key('null_value1')
-      // // Text(`v1 funcValue2: ${this.funcValue2()}`).key('func_value2')
       Text(`v1 setValue: ${Array.from(this.setValue).toString()}`).key('set_value')
       Text(`v1 mapValue: ${Array.from(this.mapValue).toString()}`).key('map_value')
       Text(`v1 dateValue: ${this.dateValue}`).key('date_value')

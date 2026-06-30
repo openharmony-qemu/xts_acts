@@ -27,7 +27,7 @@ export class User {
     this.isActiveMonitor = UIUtils.addMonitor(() => this.isActive, this.isActiveChange, { path: ['isActive'], isSynchronous: false });
   }
 
-  isActiveChange(m: IMonitor) {
+  isActiveChange(m: IMonitor): void {
     m.dirty.forEach((path: string) => {
       console.log(`[addMonitorTest] ${path} has changed from ${m.value<boolean>(path)?.before} to ${m.value<boolean>(path)?.now}`);
       this.text = `[addMonitorTest] ${path} has changed from ${m.value<boolean>(path)?.before} to ${m.value<boolean>(path)?.now}`

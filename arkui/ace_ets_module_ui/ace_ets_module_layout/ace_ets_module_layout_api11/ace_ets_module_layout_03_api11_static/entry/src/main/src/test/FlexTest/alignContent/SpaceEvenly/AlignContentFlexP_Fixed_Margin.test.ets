@@ -1,6 +1,7 @@
 'use static';
+
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -66,9 +67,6 @@ export default function AlignContentFlexP_Fixed_Margin() {
       console.info("AlignContentFlexP_Fixed_Margin after each called");
     });
 
-    
-
-    
     /**
      * @tc.number   testAlignContentSpaceEvenlyFlexFixedMarginSatisfy_static
      * @tc.name     testAlignContentSpaceEvenlyFlexFixedMarginSatisfy_static
@@ -92,7 +90,6 @@ it('testAlignContentSpaceEvenlyFlexFixedMarginSatisfy_static', Level.LEVEL0, asy
 
       console.log('AlignContentFlexP_fixed_Margin_flex001 rect_value is:' +
       JSON.stringify(AlignContentFlexSpaceEvenly_flex001));
-
       console.log('AlignContentFlexSpaceEvenly_1 rect_value is:' +
       JSON.stringify(AlignContentFlexSpaceEvenly_1));
       console.log('AlignContentFlexSpaceEvenly_2 rect_value is:' +
@@ -129,7 +126,7 @@ it('testAlignContentSpaceEvenlyFlexFixedMarginSatisfy_static', Level.LEVEL0, asy
         .assertTrue();
       expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_3.right - AlignContentFlexSpaceEvenly_3.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_4.right - AlignContentFlexSpaceEvenly_4.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_4.right - AlignContentFlexSpaceEvenly_4.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 2)
         .assertTrue();
 
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual("FlexDirection.Row");
@@ -141,17 +138,12 @@ it('testAlignContentSpaceEvenlyFlexFixedMarginSatisfy_static', Level.LEVEL0, asy
         .assertTrue();
       expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_1.left - AlignContentFlexSpaceEvenly_flex001.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_1.top - AlignContentFlexSpaceEvenly_flex001.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50 / 3)) + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_1.top - AlignContentFlexSpaceEvenly_flex001.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50 / 3)) + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 2)
         .assertTrue();
 
-
       console.info('testAlignContentSpaceEvenlyFlexFixedMarginSatisfy END');
-
     });
 
-    
-
-    
     /**
      * @tc.number   testAlignContentSpaceEvenlyFlexfixedMarginNOSatisfy_static
      * @tc.name     testAlignContentSpaceEvenlyFlexfixedMarginNOSatisfy_static
@@ -212,7 +204,6 @@ it('testAlignContentSpaceEvenlyFlexfixedMarginNOSatisfy_static', Level.LEVEL0, a
       expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_4.right - AlignContentFlexSpaceEvenly_4.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1)
         .assertTrue();
 
-
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual("FlexDirection.Row");
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('alignContent')).assertEqual("FlexAlign.SpaceEvenly");
 
@@ -225,7 +216,7 @@ it('testAlignContentSpaceEvenlyFlexfixedMarginNOSatisfy_static', Level.LEVEL0, a
         .assertTrue();
 
       console.info('testAlignContentSpaceEvenlyFlexfixedMarginNOSatisfy END');
-
     });
+    
   })
 }

@@ -26,6 +26,7 @@ struct TextNumberTransitionTest {
         .fontSize(40)
         .contentTransition(this.numberTransitionArr[this.numberTransitionIndex])
         .id('TextNumberTransition')
+        .key('TextNumberTransition')
       Button('chang number')
         .onClick(() => {
           this.number++

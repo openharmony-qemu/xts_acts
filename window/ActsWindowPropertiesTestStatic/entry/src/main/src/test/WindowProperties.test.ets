@@ -30,6 +30,7 @@ import bundleManager from '@ohos.bundle.bundleManager';
 import StartOptions from '@ohos.app.ability.StartOptions'
 import { image } from '@kit.ImageKit';
 import settings from '@ohos.settings';
+import { canIUse } from '@internal.full.global'
 // import  { LocalStorage }  from '@ohos.LocalStorage';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -3661,10 +3662,11 @@ export default function WindowPropertiesTest() {
             let win: window.Window  = await windowStage!.createSubWindow('testWindowOffScreenshot_RepeatOff_static');
             console.log(msgStr + 'windowStage!.createSubWindow success');
             expect(!!win).assertTrue();
+            let callback = () => {
+             console.log(`${caseName} screenshot happened`);
+            }
             try {
-                (win as window.Window).onScreenshot(() => {
-                    console.info(msgStr + 'screenshot happened.');
-                });
+                (win as window.Window).onScreenshot(callback);
             } catch (exception) {
                 console.error(msgStr + 'Failed to register callback. Cause: ' + JSON.stringify(exception));
                 await (win as window.Window).destroyWindow();
@@ -3672,7 +3674,7 @@ export default function WindowPropertiesTest() {
                 done();
             }
             try {
-                (win as window.Window).offScreenshot();
+                (win as window.Window).offScreenshot(callback);
             } catch (exception) {
                 console.error(msgStr + 'Failed to register callback. Cause: ' + JSON.stringify(exception));
                 await (win as window.Window).destroyWindow();
@@ -5889,6 +5891,98 @@ export default function WindowPropertiesTest() {
           done();
         }
       })
+
+        /**
+         * @tc.number      SUB_WINDOW_ENV_SYSTEM_DENSITY_static_0100
+         * @tc.name        testEnvSystemDensity_static
+         * @tc.desc        验证@Env(ReadonlyEnvKey.WINDOW_SYSTEM_DENSITY)获取的SystemDensity与getWindowDensityInfo查询结果一致
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level0
+         */
+        it('testEnvSystemDensity_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testEnvSystemDensity_static';
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag, msgStr + 'begin');
+            
+            try {
+                let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+                hilog.info(domain, tag, msgStr + 'canIUse SystemCapability.Window.SessionManager: ' + canIUseRes);
+                
+                let envSystemDensity = AppStorage.get<double>('SystemDensity') as double;
+                hilog.info(domain, tag, msgStr + 'envSystemDensity from page: ' + envSystemDensity);
+                
+                let windowClass: window.Window = windowStage!.getMainWindowSync();
+                let densityInfo = windowClass.getWindowDensityInfo();
+                hilog.info(domain, tag, msgStr + 'densityInfo: ' + JSON.stringify(densityInfo));
+                let systemDensityFromApi = densityInfo.systemDensity;
+                hilog.info(domain, tag, msgStr + 'systemDensity from getWindowDensityInfo: ' + systemDensityFromApi);
+                
+                expect(envSystemDensity).assertEqual(systemDensityFromApi);
+                hilog.info(domain, tag, msgStr + 'Succeeded. envSystemDensity equals systemDensity from API.');
+                
+                done();
+            } catch (exception) {
+                exception = exception as BusinessError;
+                hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+                let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+                if (exception.code === 801) {
+                    if (!canIUseRes) {
+                        hilog.info(domain, tag, msgStr + 'Capability not supported and canIUse is false.');
+                        expect(exception.code).assertEqual(801);
+                        done();
+                    } else {
+                        hilog.info(domain, tag, msgStr + 'Capability not supported but canIUse is true.');
+                        expect(false).assertTrue();
+                        done();
+                    }
+                } else {
+                    expect(false).assertTrue();
+                    done();
+                }
+            }
+        })
+
+        /**
+         * @tc.number      SUB_WINDOW_ENV_DISPLAY_ID_static_0100
+         * @tc.name        testEnvDisplayId_static
+         * @tc.desc        验证@Env(ReadonlyEnvKey.WINDOW_DISPLAY_ID)获取的DisplayId与getDefaultDisplaySync查询结果一致
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level0
+         */
+        it('testEnvDisplayId_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testEnvDisplayId_static';
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag, msgStr + 'begin');
+            
+            try {
+                let windowClass: window.Window = windowStage!.getMainWindowSync();
+                await windowClass.setUIContent('pages/Index');
+                await Utils.msSleep(500);
+                
+                let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+                hilog.info(domain, tag, msgStr + 'canIUse SystemCapability.Window.SessionManager: ' + canIUseRes);
+                
+                let envDisplayId = AppStorage.get<long>('DisplayId') as long;
+                hilog.info(domain, tag, msgStr + 'envDisplayId from page: ' + envDisplayId);
+                
+                let displayInfo = display.getDefaultDisplaySync();
+                hilog.info(domain, tag, msgStr + 'displayInfo: ' + JSON.stringify(displayInfo));
+                let displayIdFromApi = displayInfo.id;
+                hilog.info(domain, tag, msgStr + 'displayId from getDefaultDisplaySync: ' + displayIdFromApi);
+                
+                expect(envDisplayId).assertEqual(displayIdFromApi);
+                hilog.info(domain, tag, msgStr + 'Succeeded. envDisplayId equals displayId from API.');
+                
+                done();
+            } catch (exception) {
+                exception = exception as BusinessError;
+                hilog.error(domain, tag, msgStr + 'Exception. Cause: ' + exception.code + ', ' + exception.message);
+                expect(false).assertTrue();
+                done();
+            }
+        })
 
     })
 

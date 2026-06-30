@@ -18,10 +18,15 @@ struct TextTimerFontWeight {
   build() {
     Column({ space: 8 }) {
       TextTimer().format('mm:ss').fontWeight($r('app.string.lighter')).id('TextTimerFontWeight')
+      .key('TextTimerFontWeight')
       TextTimer().format('mm:ss').fontWeight(undefined).id('TextTimer1FontWeight')
+      .key('TextTimer1FontWeight')
       TextTimer().format('mm:ss').fontWeight(null).id('TextTimer2FontWeight')
+      .key('TextTimer2FontWeight')
       TextTimer().format('mm:ss').fontWeight(FontWeight.Lighter).id('TextTimer3FontWeight')
+      .key('TextTimer3FontWeight')
       TextTimer().format('mm:ss').id('TextTimer_base')
+      .key('TextTimer_base')
     }
   }
 }

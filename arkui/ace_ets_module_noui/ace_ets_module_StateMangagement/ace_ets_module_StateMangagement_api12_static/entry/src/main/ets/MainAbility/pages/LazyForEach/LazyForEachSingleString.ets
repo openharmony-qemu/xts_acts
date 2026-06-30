@@ -14,23 +14,8 @@
  * limitations under the License.
  */
 
-import {
-  Entry,
-  Column,DataOperationType,
-  Component,DataChangeOperation,DataMoveOperation,DataExchangeOperation,DataReloadOperation,
-  Button,BarState,DataAddOperation,DataDeleteOperation,
-  ClickEvent,List,Alignment,Color,ListItem,LazyForEach,
-  ForEach,FlexWrap,FlexDirection,MoveIndex,ComponentV2,
-  Text,DataOperation,TextAlign,Reusable,Repeat,RepeatItem,FlexAlign,
-  IDataSource,DataChangeListener,Scroller,Flex,Row,IDataSource
-} from '@ohos.arkui.component'
-import {
-  State,
-  Watch,Param,
-  Link,Monitor,Trace,ObservedV2,Event,
-  StorageLink,IMonitor,IMonitorValue,Local,AppStorage
-} from '@ohos.arkui.stateManagement'
-
+import { Entry, Column, DataOperationType, Component, DataChangeOperation, DataMoveOperation, DataExchangeOperation, DataReloadOperation, Button, BarState, DataAddOperation, DataDeleteOperation, ClickEvent, List, Alignment, Color, ListItem, LazyForEach, ForEach, FlexWrap, FlexDirection, MoveIndex, ComponentV2, Text, DataOperation, TextAlign, Reusable, Repeat, RepeatItem, FlexAlign, IDataSource, DataChangeListener, Scroller, Flex, Row } from '@ohos.arkui.component';
+import { State, Watch, Param, Link, Monitor, Trace, ObservedV2, Event, StorageLink, IMonitor, IMonitorValue, Local, AppStorage } from '@ohos.arkui.stateManagement';
 export class BasicDataSource implements IDataSource<string> {
   private listeners: DataChangeListener[] = [];
   private originDataArray: string[] = [];

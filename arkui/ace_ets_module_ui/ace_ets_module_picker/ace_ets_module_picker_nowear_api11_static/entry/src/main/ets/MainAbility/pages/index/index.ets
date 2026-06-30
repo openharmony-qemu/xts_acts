@@ -15,31 +15,9 @@
  */
 
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import {
-  Entry,
-  Text,
-  TextAttribute,
-  Column,
-  Component,
-  Button,
-  ButtonAttribute,
-  ClickEvent,
-  Image,
-  ImageFit,
-  Scroller,
-  Flex,
-  Margin,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  FontWeight,
-  ButtonType,
-  ClickEvent,
-  Margin
-} from '@ohos.arkui.component';
+import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, Image, ImageFit, Scroller, Flex, Margin, FlexDirection, ItemAlign, FlexAlign, FontWeight, ButtonType } from '@ohos.arkui.component';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
-
 @Entry
 @Component
 struct Index {

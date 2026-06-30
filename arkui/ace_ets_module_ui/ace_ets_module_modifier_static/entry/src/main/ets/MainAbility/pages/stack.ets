@@ -13,16 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Component,$r,Builder,Search,Scroll,Span,StackAttribute, RichEditor,Stack,ModifierKey,SearchController,ButtonAttribute,SharedTransitionEffectType,List,NavPathStack, Position,ListItem,Ellipse,LineCapStyle,LineJoinStyle,NavDestination,Shape,Path,RichEditorController,Polyline,Progress,RowOptions,Navigation,Polygon,ProgressType,Path,HorizontalAlign,Menu,MenuItemOptions,FontStyle,MenuItem,Font,Dimension,BorderRadiuses,ListItemGroup,LoadingProgress,Padding,Column,StickyStyle,ImageAnimator,ImageSpan,Alignment,Hyperlink,BreakpointsReference,GridRowDirection,TextOverflow,GridCol,ColumnOptions,Grid,GridItem,Gauge,FormComponent,Visibility,FormDimension,Divider,Counter,DataPanel,DatePicker,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,GridRow,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  PropRef,
-} from '@ohos.arkui.stateManagement';
+import { Entry, Component, $r, Builder, Search, Scroll, Span, StackAttribute, RichEditor, Stack, ModifierKey, SearchController, ButtonAttribute, SharedTransitionEffectType, List, NavPathStack, Position, ListItem, Ellipse, LineCapStyle, LineJoinStyle, NavDestination, Shape, Path, RichEditorController, Polyline, Progress, RowOptions, Navigation, Polygon, ProgressType, HorizontalAlign, Menu, MenuItemOptions, FontStyle, MenuItem, Font, Dimension, BorderRadiuses, ListItemGroup, LoadingProgress, Padding, Column, StickyStyle, ImageAnimator, ImageSpan, Alignment, Hyperlink, BreakpointsReference, GridRowDirection, TextOverflow, GridCol, ColumnOptions, Grid, GridItem, Gauge, FormComponent, Visibility, FormDimension, Divider, Counter, DataPanel, DatePicker, BorderImageOption, BorderOptions, AdaptiveColor, BackgroundEffectOptions, BorderStyle, RepeatMode, GradientDirection, Image, Checkbox, Blank, MarkStyle, ResourceColor, CheckboxGroup, Text, Toggle, ToggleType, FlexAlign, Color, Flex, ButtonType, FlexDirection, ItemAlign, Row, Button, ClickEvent, Week, GridRow, FontWeight, Axis, Margin, Swiper, ForEach, PickerTextStyle, CalendarAlign, CalendarPicker, EdgeEffect, Curve, SwiperDisplayMode, ArrowPosition, Select, BlurStyle, MenuAlignType, TextInputController, TextAlign, AlphabetIndexer } from '@ohos.arkui.component';
+import { State, Link, PropRef } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { StackModifier } from "@ohos.arkui.modifier";
-
- class CustomModifier extends StackModifier {
+import { StackModifier } from '@ohos.arkui.modifier';
+class CustomModifier extends StackModifier {
   applyNormalAttribute(instance: StackAttribute): void {
     // super.applyNormalAttribute?.(instance);
   }
@@ -42,7 +37,7 @@ struct RichEditorPage {
     Row(){
       Button("change value").onClick((e: ClickEvent) => {
         (this.customModifier as CustomModifier).onChange();
-      }).key("changeButton")
+      }).key("stack_changeButton")
 
       Stack(){
         Text('First child, show in bottom').width('90%').height('100%').backgroundColor(0xd2cab3).align(Alignment.Top)

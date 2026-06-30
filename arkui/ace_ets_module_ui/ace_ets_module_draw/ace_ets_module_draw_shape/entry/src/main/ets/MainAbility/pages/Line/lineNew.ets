@@ -44,14 +44,14 @@ struct LineNe {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key('neText')
+        .key('lineNew_neText')
       Line({ width: 50, height: 100 }).startPoint([0, 0]).endPoint([50, 100]).key('line3')
       Line()
         .width(200)
         .height(200)
         .startPoint([50, 50])
         .endPoint([150, 400])
-        .key('line2')
+        .key('lineNew_line2')
     }.width('100%').height('100%')
   }
 }

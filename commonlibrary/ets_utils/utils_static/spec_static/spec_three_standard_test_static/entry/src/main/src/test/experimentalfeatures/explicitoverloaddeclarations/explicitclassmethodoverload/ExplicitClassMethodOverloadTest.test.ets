@@ -1,4 +1,4 @@
-﻿'use static'
+'use static'
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -970,6 +970,16 @@ class G5 {
 }
 
 class G6 extends G5 {
+  static greetI(factory: () => G6, i: int): G6 {
+    let g = factory();
+    g.greeting = 'Hi ' + i + '!';
+    return g;
+  }
+  static greetS(factory: () => G6, s: string): G6 {
+    let g = factory();
+    g.greeting = 'Hey ' + s + '!';
+    return g;
+  }
   static greetB(factory: () => G6, b: boolean): G6 {
     let g = factory();
     g.greeting = b ? 'Hi!' : 'Bye!';
@@ -998,6 +1008,16 @@ class G7 {
 }
 
 class G8 extends G7 {
+  static greetI(factory: () => G8, i: int): G8 {
+    let g = factory();
+    g.greeting = 'Hi ' + i + '!';
+    return g;
+  }
+  static greetS(factory: () => G8, s: string): G8 {
+    let g = factory();
+    g.greeting = 'Hey ' + s + '!';
+    return g;
+  }
   static greetB(factory: () => G8, b: boolean): G8 {
     let g = factory();
     g.greeting = b ? 'Hi!' : 'Bye!';
@@ -1092,6 +1112,8 @@ class G17 {
 }
 
 class G18 extends G17 {
+  static greetI(i: int): string { return 'Hi ' + i + '!' }
+  static greetS(s: string): string { return 'Hey ' + s + '!' }
   static greetB(b: boolean): string { return b ? 'Hi!' : 'Bye!' }
   static overload $_invoke { greetI, greetS, greetB }
 }
@@ -1103,6 +1125,8 @@ class G19 {
 }
 
 class G20 extends G19 {
+  static greetI(i: int): string { return 'Hi ' + i + '!' }
+  static greetS(s: string): string { return 'Hey ' + s + '!' }
   static greetB(b: boolean): string { return b ? 'Hi!' : 'Bye!' }
   static overload $_invoke { greetI, greetS, greetB }
 }

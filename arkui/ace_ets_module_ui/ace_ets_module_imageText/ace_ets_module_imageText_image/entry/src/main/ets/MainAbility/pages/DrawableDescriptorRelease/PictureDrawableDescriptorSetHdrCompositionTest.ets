@@ -29,71 +29,60 @@ struct PictureDrawableDescriptorSetHdrCompositionTest {
 
   build() {
     Scroll() {
-      Column({ space: 10 }) {
-        Text('PictureDrawableDescriptor setHdrComposition')
-          .fontSize(18)
-          .fontWeight(FontWeight.Bold)
-          .fontColor(0x333333)
-
+      Column({ space: 5 }) {
+        // PictureDrawableDescriptor setHdrComposition
         Image(this.drawable)
-          .width(150)
-          .height(100)
+          .width('50%')
+          .height('10%')
           .borderColor(Color.Red)
           .borderWidth(1)
           .id('imgDrawable')
 
         Button('创建PictureDrawableDescriptor对象')
+          .height('5%')
           .id('btnCreateDrawable')
           .onClick(async () => await this.createPictureDrawableDescriptor())
 
-        this.BuildSectionTitle('1. 正常参数测试')
-
+        // 1. 正常参数测试
         Button('setHdrComposition正常rect')
+          .height('5%')
           .id('btnTest001')
           .onClick(() => this.Test001())
         Text(this.testResult001)
           .id('txtTestResult001')
-          .fontSize(14)
+          .fontSize(12)
 
         Button('setHdrComposition + invalidate触发重建')
+          .height('5%')
           .id('btnTest002')
           .onClick(() => this.Test002())
         Text(this.testResult002)
           .id('txtTestResult002')
-          .fontSize(14)
+          .fontSize(12)
 
-        this.BuildSectionTitle('2. 边界值测试')
-
+        // 2. 边界值测试
         Button('setHdrComposition rect为0')
+          .height('5%')
           .id('btnTest003')
           .onClick(() => this.Test003())
         Text(this.testResult003)
           .id('txtTestResult003')
-          .fontSize(14)
+          .fontSize(12)
 
-        this.BuildSectionTitle('3. 异常参数测试')
-
+        // 3. 异常参数测试
         Button('setHdrComposition rect负数')
+          .height('5%')
           .id('btnTest004')
           .onClick(() => this.Test004())
         Text(this.testResult004)
           .id('txtTestResult004')
-          .fontSize(14)
+          .fontSize(12)
       }
       .width('80%')
     }
     .width('100%')
     .height('100%')
     .backgroundColor(0xF5F5F5)
-  }
-
-  @Builder
-  BuildSectionTitle(title: string) {
-    Text(title)
-      .fontSize(16)
-      .fontWeight(FontWeight.Medium)
-      .fontColor(Color.Black)
-      .width('100%')
   }
 
   async createPictureDrawableDescriptor() {

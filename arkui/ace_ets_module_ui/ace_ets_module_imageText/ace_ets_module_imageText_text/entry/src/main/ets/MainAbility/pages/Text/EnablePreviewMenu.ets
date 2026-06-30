@@ -79,6 +79,7 @@ struct TextEnablePreviewMenu {
         .borderWidth(1)
         .height('15%')
         .id('enablePreviewMenu_default')
+        .key('enablePreviewMenu_default')
 
       Text(
         '电话号码：' + this.phoneNumber + '\n' +
@@ -98,6 +99,7 @@ struct TextEnablePreviewMenu {
         .borderWidth(1)
         .height('15%')
         .id('enablePreviewMenu_set')
+        .key('enablePreviewMenu_set')
 
       Text(
         '电话号码：' + this.phoneNumber + '\n' +
@@ -114,6 +116,7 @@ struct TextEnablePreviewMenu {
         .borderWidth(1)
         .height('15%')
         .id('Modifier_enablePreviewMenu_true')
+        .key('Modifier_enablePreviewMenu_true')
 
       Text(
         '电话号码：' + this.phoneNumber + '\n' +
@@ -130,6 +133,7 @@ struct TextEnablePreviewMenu {
         .borderWidth(1)
         .height('15%')
         .id('Modifier_enablePreviewMenu_false')
+        .key('Modifier_enablePreviewMenu_false')
 
       Text(
         '电话号码：' + this.phoneNumber + '\n' +
@@ -146,6 +150,7 @@ struct TextEnablePreviewMenu {
         .borderWidth(1)
         .height('15%')
         .id('Modifier_enablePreviewMenu_undefined')
+        .key('Modifier_enablePreviewMenu_undefined')
     }
   }
 }

@@ -334,9 +334,6 @@ async function testOriginHeader(
     expectTrue(requestText.includes('GET / HTTP/1.1'), `${caseName} request line`);
 
   } finally {
-    if (wsConnected) {
-      await safeClose(ws);
-    }
     if (secure) {
       if (tlsConnection && tlsConnectionErrorHandler) {
         tlsConnection.off('error', tlsConnectionErrorHandler);

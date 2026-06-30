@@ -58,7 +58,7 @@ export default function textArea_center() {
 
       if (globalThis.winLeft == 0) {
         console.log('get click before  Initial value')
-        let textArea_01 = CommonFunc.getComponentRect('textArea_center_textArea_01');
+        let textArea_01 = CommonFunc.getComponentRect('textArea_center' + '_textArea_01');
 
         console.log('assert position')
         let y1 = textArea_01.top
@@ -71,7 +71,7 @@ export default function textArea_center() {
         await CommonFunc.sleep(1000);
 
         console.log('get click after Initial value')
-        let textArea_02 = CommonFunc.getComponentRect('textArea_center_textArea_01');
+        let textArea_02 = CommonFunc.getComponentRect('textArea_center' + '_textArea_01');
         let y2 = textArea_02.top
         expect(y1).assertEqual(y2);
 
@@ -97,7 +97,7 @@ export default function textArea_center() {
       await CommonFunc.sleep(1000);
       if (globalThis.winLeft == 0) {
         console.log('get click before  Initial value')
-        let textArea_01 = CommonFunc.getComponentRect('textArea_center_textArea_01');
+        let textArea_01 = CommonFunc.getComponentRect('textArea_center' + '_textArea_01');
 
         console.log('assert position')
         let y1 = textArea_01.top
@@ -110,7 +110,7 @@ export default function textArea_center() {
         await CommonFunc.sleep(1000);
 
         console.log('get click after Initial value')
-        let textArea_02 = CommonFunc.getComponentRect('textArea_center_textArea_01');
+        let textArea_02 = CommonFunc.getComponentRect('textArea_center' + '_textArea_01');
         let y2 = textArea_02.top
         expect(y2).assertLess(y1);
 
@@ -142,7 +142,7 @@ export default function textArea_center() {
         await CommonFunc.sleep(1000);
 
         console.log('get click before  Initial value')
-        let textArea_01 = CommonFunc.getComponentRect('textArea_center_textArea_01');
+        let textArea_01 = CommonFunc.getComponentRect('textArea_center' + '_textArea_01');
 
         console.log('assert position')
         let y5 = textArea_01.bottom
@@ -154,7 +154,7 @@ export default function textArea_center() {
         await CommonFunc.sleep(1000);
 
         console.log('get click after Initial value')
-        let textArea_02 = CommonFunc.getComponentRect('textArea_center_textArea_01');
+        let textArea_02 = CommonFunc.getComponentRect('textArea_center' + '_textArea_01');
         let y6 = textArea_02.bottom
         expect(y6).assertLess(y5);
       }

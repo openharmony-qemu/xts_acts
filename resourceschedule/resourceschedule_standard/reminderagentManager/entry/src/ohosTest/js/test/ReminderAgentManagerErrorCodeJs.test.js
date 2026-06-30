@@ -297,16 +297,22 @@ export default function ReminderAgentManagerErrorCodeTest() {
                 titleResourceId: 123
             }
             try {
-                for (let i = 0; i < 35; i++) {
+                let flag = false;
+                for (let i = 0; i < 65; i++) {
                     reminderAgent.publishReminder(ReminderRequest).then((reminderId) => {
                         console.log("reminderErrorCode_0700 promise, reminderId = " + reminderId);
                       }).catch((err) => {
                         console.error("reminderErrorCode_0700 promise err code:" + err.code + " message:" + err.message);
                         if(err.code == 1700002){
                             console.info('reminderErrorCode_0700 1700002 ');
-                            done();
+                            expect(err.code == 1700002).assertTrue();
+                            flag = true;
+                            done();               
                         }
-                      });
+                    });
+                    if(flag){
+                        break;
+                    }                           
                 }               
             } catch (error) {
                 console.log("reminderErrorCode_0700 publishReminder error.code:" + error.code);

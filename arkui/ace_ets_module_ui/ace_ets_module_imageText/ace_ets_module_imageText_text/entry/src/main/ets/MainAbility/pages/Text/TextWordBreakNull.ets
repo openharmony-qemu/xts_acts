@@ -28,18 +28,21 @@ struct TextWordBreakNull {
       // Test 1: wordBreak with null parameter
       Text('wordBreak with null')
         .id('text_wordBreak_null')
+        .key('text_wordBreak_null')
         .wordBreak(null)
         .height('5%')
 
       // Test 2: wordBreak with undefined parameter
       Text('wordBreak with undefined')
         .id('text_wordBreak_undefined')
+        .key('text_wordBreak_undefined')
         .wordBreak(undefined)
         .height('5%')
 
       // Test 3: Default wordBreak for comparison
       Text('Default wordBreak (for comparison)')
         .id('text_wordBreak_default')
+        .key('text_wordBreak_default')
         .height('5%')
     }
     .width('100%')

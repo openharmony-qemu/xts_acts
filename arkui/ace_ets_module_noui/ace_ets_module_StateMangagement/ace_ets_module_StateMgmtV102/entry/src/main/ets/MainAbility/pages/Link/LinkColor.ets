@@ -27,7 +27,7 @@ struct Child_AAs {
         .onClick(() => {
           this.color = Color.Orange;
         })
-        .key('state1')
+        .key('LinkColor_state1')
         .height('5%')
 
       Text("设置变量number类型Orange-->008000").height('5%')
@@ -36,7 +36,7 @@ struct Child_AAs {
         .onClick(() => {
           this.color = 0x0000ff;
         })
-        .key('state2')
+        .key('LinkColor_state2')
         .height('5%')
 
       Text("设置变量undefined类型pink-->undefined").height('5%')
@@ -45,7 +45,7 @@ struct Child_AAs {
         .onClick(() => {
           this.color = undefined;
         })
-        .key('state3')
+        .key('LinkColor_state3')
         .height('5%')
 
       Text("设置变量string类型pink-->'008000'").height('5%')
@@ -54,7 +54,7 @@ struct Child_AAs {
         .onClick(() => {
           this.color = '#FFA52A2A';
         })
-        .key('state4')
+        .key('LinkColor_state4')
         .height('5%')
 
       Text("设置变量string类型pink-->null").height('5%')
@@ -63,7 +63,7 @@ struct Child_AAs {
         .onClick(() => {
           this.color = null;
         })
-        .key('state5')
+        .key('LinkColor_state5')
         .height('5%')
 
       Text("设置变量Resource类型pink-->Resource").height('5%')
@@ -72,7 +72,7 @@ struct Child_AAs {
         .onClick(() => {
           this.color = $r('app.string.color');
         })
-        .key('state6')
+        .key('LinkColor_state6')
         .height('5%')
 
     }.width('100%')

@@ -13,12 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute,CopyOptions,
-  ClickEvent, Image,ImageFit,Color, TextAlign, CopyOptions, SearchController, Font, Search,ResourceColor } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
-import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
-import { AppStorage } from '@ohos.arkui.stateManagement'
+import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, CopyOptions, ClickEvent, Image, ImageFit, Color, TextAlign, SearchController, Font, Search, ResourceColor } from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { MessageManager, Callback, Message } from '../../common/MessageManager';
-import events_emitter from '@ohos.events.emitter'
+import events_emitter from '@ohos.events.emitter';
 import { RecordData } from '@ohos.base';
 @Entry
 @Component
@@ -90,11 +88,11 @@ struct SearchPage {
 
   build() {
     Column() {
-      Text('onSubmit:' + this.submitValue).fontSize(10).key('submit').height('5%').textAlign(TextAlign.Center)
-      Text('onChange:' + this.changeValue).fontSize(10).key('change').height('5%').textAlign(TextAlign.Center)
-      Text('onCopy:' + this.copyValue).fontSize(10).key('copy').height('5%').textAlign(TextAlign.Center)
-      Text('onCut:' + this.cutValue).fontSize(10).key('cut').height('5%').textAlign(TextAlign.Center)
-      Text('onPaste:' + this.pasteValue).fontSize(10).key('paste').height('5%').textAlign(TextAlign.Center)
+      Text('onSubmit:' + this.submitValue).fontSize(10).key('SearchPage_submit').height('5%').textAlign(TextAlign.Center)
+      Text('onChange:' + this.changeValue).fontSize(10).key('SearchPage_change').height('5%').textAlign(TextAlign.Center)
+      Text('onCopy:' + this.copyValue).fontSize(10).key('SearchPage_copy').height('5%').textAlign(TextAlign.Center)
+      Text('onCut:' + this.cutValue).fontSize(10).key('SearchPage_cut').height('5%').textAlign(TextAlign.Center)
+      Text('onPaste:' + this.pasteValue).fontSize(10).key('SearchPage_paste').height('5%').textAlign(TextAlign.Center)
       Search({ value: this.changeValue, placeholder: this.placeholder, icon: this.searchIcon, controller: this.controller })
         .searchButton(this.searchButton, {fontSize: 10}).id("searchButton")
         .width('80%')
@@ -126,7 +124,7 @@ struct SearchPage {
         .onClick((): void => {
           // 设置光标位置到输入的第一个字符后
           this.controller.caretPosition(this.positionValue)
-        }).key('button').height('5%')
+        }).key('SearchPage_button').height('5%')
     }.width('100%')
   }
 }

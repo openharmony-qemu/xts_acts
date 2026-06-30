@@ -109,7 +109,7 @@ it('bindMenuTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<v
       console.info('bindMenuTest_static_0100 START');
       await CommonFunc.sleep(1000);
       console.info("bindMenuTest_static_0100 text click result is: " +
-      JSON.stringify(inspector.sendEventByKey('text', 10, "")));
+      JSON.stringify(inspector.sendEventByKey('bindMenuu' + '_text', 10, "")));
       await CommonFunc.sleep(1500);
       let callback = (indexEvent: emitter.EventData) => {
         console.info("bindMenuTest_static_0100 get state result is: " + JSON.stringify(indexEvent));
@@ -126,7 +126,7 @@ it('bindMenuTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<v
         console.info("bindMenuTest_static_0100 on emitter err : " + JSON.stringify(err));
       }
       console.info("bindMenuTest_static_0100 button click result is: " +
-      JSON.stringify(inspector.sendEventByKey('button', 10, "")));
+      JSON.stringify(inspector.sendEventByKey('bindMenuu' + '_button', 10, "")));
       await CommonFunc.sleep(1000);
       console.info('bindMenuTest_static_0100 END');
       done();

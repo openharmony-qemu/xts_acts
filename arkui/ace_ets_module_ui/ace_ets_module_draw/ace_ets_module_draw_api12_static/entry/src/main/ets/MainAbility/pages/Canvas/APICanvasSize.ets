@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Component, DrawingRenderingContext, ClickEvent, Flex, FlexDirection, ItemAlign, FlexAlign, Canvas, Row, Button, ClickEvent, VoidCallback, Text } from '@ohos.arkui.component';
+import { Entry, Component, DrawingRenderingContext, ClickEvent, Flex, FlexDirection, ItemAlign, FlexAlign, Canvas, Row, Button, VoidCallback, Text } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component

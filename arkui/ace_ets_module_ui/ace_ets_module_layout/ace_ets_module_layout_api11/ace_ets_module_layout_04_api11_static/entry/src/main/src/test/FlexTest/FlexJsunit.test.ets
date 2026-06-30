@@ -74,7 +74,7 @@ export default function flexJsunit() {
      */
 it('testFlex010_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testFlex010_static_01 START');
-      let strJson = inspector.getInspectorByKey('flex');
+      let strJson = inspector.getInspectorByKey('Flex' + '_flex');
      let obj = JSON.parseJsonElement(strJson);
      console.info("component obj is: " + JSON.stringify(obj));
      expect(obj.getString('$type')).assertEqual('Flex');

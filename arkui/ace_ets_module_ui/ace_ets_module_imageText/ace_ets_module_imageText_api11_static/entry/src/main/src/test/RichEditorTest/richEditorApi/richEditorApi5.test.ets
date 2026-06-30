@@ -96,7 +96,7 @@ export default function richEditorApi5() {
       await (btn2?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
-      let text1 = inspector.getInspectorByKey('richEditorApi5_text1');
+      let text1 = inspector.getInspectorByKey('richEditorApi5' + '_text1');
       let Obj1 = JSON.parseJsonElement(text1);
 
       expect(Obj1.getElement('$attrs').getString('content')).assertEqual('[6,6]');

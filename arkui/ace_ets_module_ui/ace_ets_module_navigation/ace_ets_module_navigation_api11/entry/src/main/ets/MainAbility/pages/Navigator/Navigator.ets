@@ -24,7 +24,7 @@ struct navigator_testcase {
       Navigator({ target: "pages/index", type: NavigationType.Back }) {
         Text('Navigator test  go to Navigator， back called')
       }.active(this.active)
-      .key('navigator')
+      .key('Navigator_Navigator_navigator')
       .params({
         data: 24
       })
@@ -32,7 +32,7 @@ struct navigator_testcase {
       Navigator({ target: "pages/index", type: NavigationType.Push }) {
         Text('Navigator test  go to Navigator, router called')
       }.active(this.active)
-      .key('navigator2')
+      .key('Navigator_Navigator_navigator2')
       .params({
         data: 24
       })
@@ -40,7 +40,7 @@ struct navigator_testcase {
       Navigator({ target: "pages/index", type: NavigationType.Replace }) {
         Text('Navigator test  go to Navigator，changed called')
       }.active(this.active)
-      .key('navigator3')
+      .key('Navigator_Navigator_navigator3')
       .params({
         data: 24
       })

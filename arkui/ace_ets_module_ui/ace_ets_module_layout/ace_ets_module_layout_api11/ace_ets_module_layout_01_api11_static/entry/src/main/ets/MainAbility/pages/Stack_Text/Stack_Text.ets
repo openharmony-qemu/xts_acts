@@ -13,27 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Component,
-  Color,
-  SubmitEvent,
-  TextDataDetectorType,
-  Column,
-  Text,
-  TextInput,
-  Row,
-  Button,
-  InputType,
-  ControlSize,
-  ButtonStyleMode,
-  SubmitEvent,
-  EnterKeyType,
-  ClickEvent,
-  OnSubmitCallback
-} from '@ohos.arkui.component';
+import { Entry, Component, Color, SubmitEvent, TextDataDetectorType, Column, Text, TextInput, Row, Button, InputType, ControlSize, ButtonStyleMode, EnterKeyType, ClickEvent, OnSubmitCallback } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
-
 @Entry
 @Component
 struct Stack_Text {

@@ -339,7 +339,7 @@ it('ArkUI_AlphabetIndexer_static_0118', Level.LEVEL0, async (done: () => void): 
 
       console.info('ArkUI_AlphabetIndexer_static_0118 START');
       let driver = Driver.create();
-      let button = await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button = await (driver.findComponent(ON.id('alphabetIndexer' + '_changeButton')) as Promise<Component>);
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(2000)
       let strJsonNew = inspector.getInspectorByKey('alphabetIndexerTest2');

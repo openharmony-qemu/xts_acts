@@ -13,16 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Builder,Component,Scroller,Scroll,List,ColorFilter,CopyOptions,ImageInterpolation,ImageRenderMode,ImageFit,ImageRepeat,Video,ImageAttribute,Image,BarPosition,ButtonAttribute,Resource,$r,FlexAlign,Divider,Tabs,TabContent,TabsController,TextPicker,TextAreaController,PlaybackSpeed,$rawfile,Column,Margin,ColumnOptions,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  PropRef
-} from '@ohos.arkui.stateManagement';
-import { ImageModifier } from "@ohos.arkui.modifier";
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { Entry, Builder, Component, Scroller, Scroll, List, ColorFilter, CopyOptions, ImageInterpolation, ImageRenderMode, ImageFit, ImageRepeat, Video, ImageAttribute, Image, BarPosition, ButtonAttribute, Resource, $r, FlexAlign, Divider, Tabs, TabContent, TabsController, TextPicker, TextAreaController, PlaybackSpeed, $rawfile, Column, Margin, ColumnOptions, Text, Color, Flex, FlexDirection, ItemAlign, Row, Button, ClickEvent, Week, FontWeight, Axis, Swiper, ForEach, PickerTextStyle, CalendarAlign, CalendarPicker, EdgeEffect, Curve, SwiperDisplayMode, ArrowPosition, Select, BlurStyle, MenuAlignType, TextInputController, TextAlign, AlphabetIndexer } from '@ohos.arkui.component';
+import { State, Link, PropRef, AppStorage } from '@ohos.arkui.stateManagement';
+import { ImageModifier } from '@ohos.arkui.modifier';
 import { UIContext } from '@ohos.arkui.UIContext';
-
 class CustomModifier extends ImageModifier {
   applyImageAttribute(instance: ImageAttribute): void {
     // super.applyNormalAttribute?.(instance);
@@ -56,12 +50,12 @@ struct ImageExample {
     Column({ space: 5 } as ColumnOptions) {
       Button("change value").onClick((e: ClickEvent) => {
         (this.customModifier as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("image_changeButton")
 
       Column() {
         Image($r('app.media.blr_2'))
           .attributeModifier(this.customModifier as CustomModifier)
-          .key('image')
+          .key('image_image')
       }
     }
     .margin({ top: 5 } as Margin)

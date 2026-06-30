@@ -161,7 +161,7 @@ export default function SearchJsunit() {
       let textComponent1 = await driver.findComponent(BY.key('search'));
       await textComponent1.inputText("hello")
       await CommonFunc.sleep(1000);
-      let strJson1 = getInspectorByKey('change');
+      let strJson1 = getInspectorByKey('SearchPage' + '_change');
       let obj1: ESObject = JSON.parse(strJson1);
       console.info("[SearchJsunit_0300] obj1: " + JSON.stringify(obj1));
       expect(obj1.$attrs.content).assertEqual('onChange:hello');
@@ -175,7 +175,7 @@ export default function SearchJsunit() {
       await textComponent2.click()
       await CommonFunc.sleep(1000);
       console.info("[SearchJsunit_0300] CLICK_SEARCH succ ");
-      let strJson2 = getInspectorByKey('submit');
+      let strJson2 = getInspectorByKey('SearchPage' + '_submit');
       let obj2: ESObject = JSON.parse(strJson2);
       console.info("[SearchJsunit_0300] obj2: " + JSON.stringify(obj2));
       expect(obj2.$attrs.content).assertEqual('onSubmit:hello');
@@ -199,7 +199,7 @@ export default function SearchJsunit() {
       await textComponent4.click()
       await CommonFunc.sleep(3000);
       console.info("[SearchJsunit_0300] click copy succ ");
-      let strJson3 = getInspectorByKey('copy');
+      let strJson3 = getInspectorByKey('SearchPage' + '_copy');
       let obj3: ESObject = JSON.parse(strJson3);
       console.info("[SearchJsunit_0300] obj3: " + JSON.stringify(obj3));
       expect(obj3.$attrs.content).assertEqual('onCopy:hello');
@@ -234,17 +234,17 @@ export default function SearchJsunit() {
       await textComponent8.click()
       await CommonFunc.sleep(3000);
       console.info("[SearchJsunit_0300] click paste succ ");
-      let strJson5 = getInspectorByKey('paste');
+      let strJson5 = getInspectorByKey('SearchPage' + '_paste');
       let obj5: ESObject = JSON.parse(strJson5);
       console.info("[SearchJsunit_0300] obj5: " + JSON.stringify(obj5));
       expect(obj5.$attrs.content).assertEqual('onPaste:hello');
 
       // Verify the caretPosition function of the Search component
-      let textComponent7 = await driver.findComponent(BY.key('button'));
+      let textComponent7 = await driver.findComponent(BY.key('SearchPage' + '_button'));
       await textComponent7.click();
       await CommonFunc.sleep(1000);
       console.info("[SearchJsunit_0300] click button succ ");
-      let strJson6 = getInspectorByKey('button');
+      let strJson6 = getInspectorByKey('SearchPage' + '_button');
       let obj6: ESObject = JSON.parse(strJson6);
       console.info("[SearchJsunit_0300] obj6: " + JSON.stringify(obj6));
       expect(obj6.$attrs.label).assertEqual('Set caretPosition 2');

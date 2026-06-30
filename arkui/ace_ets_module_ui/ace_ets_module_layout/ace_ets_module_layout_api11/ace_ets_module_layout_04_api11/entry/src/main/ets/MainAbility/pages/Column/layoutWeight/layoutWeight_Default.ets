@@ -43,15 +43,15 @@ struct layoutWeight_Default {
   build() {
     Column(){
       Column({space:10}) {
-        Column(){Text('1')}.width(300).height(100).layoutWeight(this.layoutWeight1).backgroundColor(0xF5DEB3).key('Column_layoutWeight_011')
-        Column(){Text('2')}.width(300).height(100).backgroundColor(0xD2B48C).key('Column_layoutWeight_012')
-        Column(){Text('3')}.width(300).height(100).backgroundColor(0xF5DEB3).key('Column_layoutWeight_013')
-      }.key('Column_layoutWeight_01').width(350).height(450).backgroundColor(0xAFEEEE)
+        Column(){Text('1')}.width(300).height(100).layoutWeight(this.layoutWeight1).backgroundColor(0xF5DEB3).key('layoutWeight_Default_Column_layoutWeight_011')
+        Column(){Text('2')}.width(300).height(100).backgroundColor(0xD2B48C).key('layoutWeight_Default_Column_layoutWeight_012')
+        Column(){Text('3')}.width(300).height(100).backgroundColor(0xF5DEB3).key('layoutWeight_Default_Column_layoutWeight_013')
+      }.key('layoutWeight_Default_Column_layoutWeight_01').width(350).height(450).backgroundColor(0xAFEEEE)
       Column({space:10}) {
-        Column(){Text('1')}.width(300).height(100).layoutWeight(this.layoutWeight2).backgroundColor(0xF5DEB3).key('Column_layoutWeight_021')
-        Column(){Text('2')}.width(300).height(100).backgroundColor(0xD2B48C).key('Column_layoutWeight_022')
-        Column(){Text('3')}.width(300).height(100).backgroundColor(0xF5DEB3).key('Column_layoutWeight_023')
-      }.key('Column_layoutWeight_02').width(350).height(450).backgroundColor(0xAFEEEE)
+        Column(){Text('1')}.width(300).height(100).layoutWeight(this.layoutWeight2).backgroundColor(0xF5DEB3).key('layoutWeight_Default_Column_layoutWeight_021')
+        Column(){Text('2')}.width(300).height(100).backgroundColor(0xD2B48C).key('layoutWeight_Default_Column_layoutWeight_022')
+        Column(){Text('3')}.width(300).height(100).backgroundColor(0xF5DEB3).key('layoutWeight_Default_Column_layoutWeight_023')
+      }.key('layoutWeight_Default_Column_layoutWeight_02').width(350).height(450).backgroundColor(0xAFEEEE)
     }
   }
 }

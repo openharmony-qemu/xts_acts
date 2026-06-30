@@ -89,7 +89,7 @@ export default function ellipseNeJsunit() {
 it('testellipseNe0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('ellipseNe testellipseNe0001_static START');
       await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('ellipse');
+      let strJson = inspector.getInspectorByKey('ellipse1' + '_ellipse');
       console.info("[testellipseNe0001_static] component width strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Ellipse');
@@ -110,7 +110,7 @@ it('testellipseNe0001', Level.LEVEL0, async (): Promise<void> => {
 it('testellipseNe0002', Level.LEVEL0, async (): Promise<void> => {
       console.info('ellipseNe testellipseNe0002_static START');
       await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('ellipse');
+      let strJson = inspector.getInspectorByKey('ellipse1' + '_ellipse');
       console.info("[testellipseNe0002_static] component height strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Ellipse');

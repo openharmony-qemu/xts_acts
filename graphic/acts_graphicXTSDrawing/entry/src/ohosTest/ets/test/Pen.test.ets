@@ -144,6 +144,7 @@ export default function penTest() {
           alpha: -1, red: 255, green: 0, blue: 255
         });
         console.info(msg + ' setColor successed');
+        expect().assertFail();
       } catch (e) {
         console.info(msg + ` setColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
@@ -154,6 +155,7 @@ export default function penTest() {
           alpha: 256, red: 255, green: 0, blue: 255
         });
         console.info(msg + ' setColor successed');
+        expect().assertFail();
       } catch (e) {
         console.info(msg + ` setColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
@@ -164,6 +166,7 @@ export default function penTest() {
           alpha: 255, red: -2, green: 0, blue: 255
         });
         console.info(msg + ' setColor successed');
+        expect().assertFail();
       } catch (e) {
         console.info(msg + ` setColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
@@ -174,6 +177,7 @@ export default function penTest() {
           alpha: 255, red: 256, green: 0, blue: 255
         });
         console.info(msg + ' setColor successed');
+        expect().assertFail();
       } catch (e) {
         console.info(msg + ` setColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
@@ -184,6 +188,7 @@ export default function penTest() {
           alpha: 255, red: 255, green: 256, blue: 255
         });
         console.info(msg + ' setColor successed');
+        expect().assertFail();
       } catch (e) {
         console.info(msg + ` setColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
@@ -194,6 +199,7 @@ export default function penTest() {
           alpha: 255, red: 255, green: -1, blue: 255
         });
         console.info(msg + ' setColor successed');
+        expect().assertFail();
       } catch (e) {
         console.info(msg + ` setColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
@@ -204,6 +210,7 @@ export default function penTest() {
           alpha: 255, red: 255, green: 0, blue: -1
         });
         console.info(msg + ' setColor successed');
+        expect().assertFail();
       } catch (e) {
         console.info(msg + ` setColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
@@ -214,6 +221,7 @@ export default function penTest() {
           alpha: 255, red: 255, green: 0, blue: 256
         });
         console.info(msg + ' setColor successed');
+        expect().assertFail();
       } catch (e) {
         console.info(msg + ` setColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
@@ -599,6 +607,7 @@ export default function penTest() {
       try {
         pen.setMaskFilter(undefined);
         console.info(msg + ' setMaskFilter(undefined) succeeded');
+        expect().assertFail();
       } catch (e) {
         console.info(msg + ` setMaskFilter(undefined) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
@@ -609,7 +618,7 @@ export default function penTest() {
         console.info(msg + ' setMaskFilter(null) succeeded');
       } catch (e) {
         console.info(msg + ` setMaskFilter(null) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
-        expect(e.code).assertEqual(401);
+        expect().assertFail();
       }
     });
 
@@ -675,6 +684,7 @@ export default function penTest() {
       try {
         pen.setShadowLayer(undefined);
         console.info(msg + ' setShadowLayer(undefined) succeeded');
+        expect().assertFail();
       } catch (e) {
         console.info(msg + ` setShadowLayer(undefined) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
@@ -685,7 +695,7 @@ export default function penTest() {
         console.info(msg + ' setShadowLayer(null) succeeded');
       } catch (e) {
         console.info(msg + ` setShadowLayer(null) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
-        expect(e.code).assertEqual(401);
+        expect().assertFail();
       }
     });
 
@@ -1198,6 +1208,7 @@ export default function penTest() {
         // Step 1: Set the path effect to undefined
         pen.setPathEffect(undefined);
         console.info(msg + ' setPathEffect(undefined) succeeded');
+        expect().assertFail();
       } catch (e) {
         console.info(msg + ` setPathEffect(undefined) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
@@ -1209,7 +1220,7 @@ export default function penTest() {
         console.info(msg + ' setPathEffect(null) succeeded');
       } catch (e) {
         console.info(msg + ` setPathEffect(null) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
-        expect(e.code).assertEqual(401);
+        expect().assertFail();
       }
     });
 

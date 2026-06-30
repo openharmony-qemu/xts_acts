@@ -1,5 +1,17 @@
 'use static';
-import { Column, Component, CounterComponent, CounterType, DateData, Direction, Entry, FlexAlign, HorizontalAlign, Margin, State } from '@kit.ArkUI';
+import {
+  Column,
+  Component,
+  CounterComponent,
+  CounterType,
+  DateData,
+  Direction,
+  Entry,
+  FlexAlign,
+  HorizontalAlign,
+  Margin,
+  State,
+} from '@kit.ArkUI';
 
 @Entry
 @Component

@@ -16,8 +16,10 @@
 import taskpoolTest from './Taskpool.test'
 import taskpoolTestState from './TaskpoolTestState.test'
 import taskpoolTestTask from './TaskpoolTestTask.test'
+import taskpoolTestContainer from './TaskpoolTestContainer.test'
 
 export default function testsuite() {
+  taskpoolTestContainer();
   taskpoolTestState();
   taskpoolTestTask();
   taskpoolTest();

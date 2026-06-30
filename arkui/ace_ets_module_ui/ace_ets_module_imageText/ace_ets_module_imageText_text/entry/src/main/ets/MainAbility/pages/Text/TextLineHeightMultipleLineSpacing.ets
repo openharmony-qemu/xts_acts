@@ -34,18 +34,21 @@ struct TextLineHeightMultipleLineSpacing {
         // Test 1: lineHeightMultiple with null parameter
         Text('lineHeightMultiple with null\nThis is a multiline text\nto test lineHeightMultiple effect')
           .id('text_lineHeightMultiple_null')
+          .key('text_lineHeightMultiple_null')
           .lineHeightMultiple(null)
           .height('5%')
 
         // Test 2: lineHeightMultiple with undefined parameter
         Text('lineHeightMultiple with undefined\nThis is a multiline text\nto test lineHeightMultiple effect')
           .id('text_lineHeightMultiple_undefined')
+          .key('text_lineHeightMultiple_undefined')
           .lineHeightMultiple(undefined)
           .height('5%')
 
         // Test 3: Default lineHeightMultiple for comparison
         Text('Default lineHeightMultiple (for comparison)\nThis is a multiline text\nto test lineHeightMultiple effect')
           .id('text_lineHeightMultiple_default')
+          .key('text_lineHeightMultiple_default')
           .height('5%')
       }
 
@@ -59,18 +62,21 @@ struct TextLineHeightMultipleLineSpacing {
         // Test 4: lineSpacing(value) with null value
         Text('lineSpacing(null) with null value\nThis is a multiline text\nto test lineSpacing effect')
           .id('text_lineSpacing_value_null')
+          .key('text_lineSpacing_value_null')
           .lineSpacing(null)
           .height('5%')
 
         // Test 5: lineSpacing(value) with undefined value
         Text('lineSpacing(undefined) with undefined value\nThis is a multiline text\nto test lineSpacing effect')
           .id('text_lineSpacing_value_undefined')
+          .key('text_lineSpacing_value_undefined')
           .lineSpacing(undefined)
           .height('5%')
 
         // Test 6: lineSpacing(value, options?) with null value and empty options
         Text('lineSpacing(null, {}) with null value and empty options\nThis is a multiline text\nto test lineSpacing effect')
           .id('text_lineSpacing_value_null_options_empty')
+          .key('text_lineSpacing_value_null_options_empty')
           .lineSpacing(null, {})
           .height('5%')
       }
@@ -79,18 +85,21 @@ struct TextLineHeightMultipleLineSpacing {
         // Test 7: lineSpacing(value, options?) with undefined value and empty options
         Text('lineSpacing(undefined, {}) with undefined value and empty options\nThis is a multiline text\nto test lineSpacing effect')
           .id('text_lineSpacing_value_undefined_options_empty')
+          .key('text_lineSpacing_value_undefined_options_empty')
           .lineSpacing(undefined, {})
           .height('5%')
 
         // Test 8: lineSpacing(value, options?) with null value and null options
         Text('lineSpacing(null, null) with null value and null options\nThis is a multiline text\nto test lineSpacing effect')
           .id('text_lineSpacing_value_null_options_null')
+          .key('text_lineSpacing_value_null_options_null')
           .lineSpacing(null, null)
           .height('5%')
 
         // Test 9: lineSpacing(value, options?) with undefined value and undefined options
         Text('lineSpacing(undefined, undefined) with undefined value and undefined options\nThis is a multiline text\nto test lineSpacing effect')
           .id('text_lineSpacing_value_undefined_options_undefined')
+          .key('text_lineSpacing_value_undefined_options_undefined')
           .lineSpacing(undefined, undefined)
           .height('5%')
       }
@@ -98,6 +107,7 @@ struct TextLineHeightMultipleLineSpacing {
       // Test 10: Default lineSpacing for comparison
       Text('Default lineSpacing (for comparison)\nThis is a multiline text\nto test lineSpacing effect')
         .id('text_lineSpacing_default')
+        .key('text_lineSpacing_default')
         .height('5%')
     }
     .width('100%')

@@ -59,10 +59,10 @@ export default function RelativeContainer_AnchorPoint_Margin() {
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let RelativeContainer_AnchorPoint_Margin_bt1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Margin_bt1');
-      let RelativeContainer_AnchorPoint_Margin_tx2: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Margin_tx2');
-      let RelativeContainer_AnchorPoint_Margin_r1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Margin_r1');
-      let RelativeContainer_AnchorPoint_Margin_row1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Margin_row1');
+      let RelativeContainer_AnchorPoint_Margin_bt1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Margin' + '_bt1');
+      let RelativeContainer_AnchorPoint_Margin_tx2: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Margin' + '_tx2');
+      let RelativeContainer_AnchorPoint_Margin_r1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Margin' + '_r1');
+      let RelativeContainer_AnchorPoint_Margin_row1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Margin' + '_row1');
       let RelativeContainer_AnchorPoint_Margin_row2: RectValue = CommonFunc.getComponentRect('row_marginTest');
 
       console.log('assert position')

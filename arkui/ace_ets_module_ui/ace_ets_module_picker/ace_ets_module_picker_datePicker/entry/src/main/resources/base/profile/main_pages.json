@@ -15,6 +15,7 @@
     "MainAbility/pages/datePickerNullUndefined/DatePickerDisappearTextStyleNullUndefined",
     "MainAbility/pages/datePickerNullUndefined/DatePickerLunarNullUndefined",
     "MainAbility/pages/datePickerNullUndefined/DatePickerSelectedTextStyleNullUndefined",
+    "MainAbility/pages/datePickerNullUndefined/DatePickerTextStyleNullUndefined",
     "MainAbility/pages/datePickerComponent/DatePickerComponentConstructor",
     "MainAbility/pages/datePickerComponent/DatePickerComponentDisplayMode",
     "MainAbility/pages/datePickerComponent/DatePickerComponentDateMode",

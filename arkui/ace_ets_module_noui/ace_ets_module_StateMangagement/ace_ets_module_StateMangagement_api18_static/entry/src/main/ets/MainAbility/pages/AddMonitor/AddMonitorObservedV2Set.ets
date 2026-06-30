@@ -27,7 +27,7 @@ export class User{
     this.memberSetMonitor = UIUtils.addMonitor(() => this.memberSet, this.memberSetChange, { path: ['set'] });
   }
 
-  memberSetChange(m: IMonitor) {
+  memberSetChange(m: IMonitor): void {
     m.dirty.forEach((path: string) => {
       console.log(`[addMonitorTest] ${path} has changed from ${m.value<Set<number>>(path)?.before} to ${m.value<Set<number>>(path)?.now}`);
       this.text = `[addMonitorTest] ${path} has changed from ${m.value<Set<number>>(path)?.before} to ${m.value<Set<number>>(path)?.now}`

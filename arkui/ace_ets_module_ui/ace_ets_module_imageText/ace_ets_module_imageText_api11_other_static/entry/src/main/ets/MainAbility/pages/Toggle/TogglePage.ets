@@ -143,7 +143,7 @@ struct TogglePage {
         })
       }
 
-      Text(this.text).fontSize(20).margin(10).key('text').id('text')
+      Text(this.text).fontSize(20).margin(10).key('TogglePage_text').id('text')
     }.width('100%').padding(24)
   }
 }

@@ -3,7 +3,6 @@ import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import accessibility from '@ohos.accessibility'
 import { BusinessError } from '@ohos.base';
-import Rect from '@ohos.application.AccessibilityExtensionAbility';
 import { Resource } from 'global.resource';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -865,6 +864,7 @@ export default function abilityTest() {
  	         let status = accessibility.getTouchModeSync();
  	         console.info(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_3500 result: ${status}`);
  	         expect(typeof (status)).assertEqual('string');
+           expect(status).assertEqual('none');
  	         done();
  	       } catch (exception) {
  	           console.error('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_3500 failed to getTouchModeSync because ' + JSON.stringify(exception));
@@ -907,6 +907,7 @@ export default function abilityTest() {
  	       accessibility.isAnimationReduceEnabled().then((result) => {
  	         console.info(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_3700 result: ${result}`);
  	         expect(typeof (result)).assertEqual('boolean');
+           expect(result).assertEqual(false);
  	         done();
  	       }).catch((err: Error) => {
  	         console.error(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_3700 has error: ${err.code},msg: ${err.message}`);
@@ -952,6 +953,7 @@ export default function abilityTest() {
  	       accessibility.isFlashReminderEnabled().then((result) => {
  	         console.info(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_3900 result: ${result}`);
  	         expect(typeof (result)).assertEqual('boolean');
+           expect(result).assertEqual(false);
  	         done();
  	       }).catch((err: Error) => {
  	         console.error(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_3900 has error: ${err.code},msg: ${err.message}`);
@@ -997,6 +999,7 @@ export default function abilityTest() {
  	       accessibility.isAudioMonoEnabled().then((result) => {
  	         console.info(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_4100 result: ${result}`);
  	         expect(typeof (result)).assertEqual('boolean');
+           expect(result).assertEqual(false);
  	         done();
  	       }).catch((err: Error) => {
  	         console.error(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_4100 has error: ${err.code},msg: ${err.message}`);

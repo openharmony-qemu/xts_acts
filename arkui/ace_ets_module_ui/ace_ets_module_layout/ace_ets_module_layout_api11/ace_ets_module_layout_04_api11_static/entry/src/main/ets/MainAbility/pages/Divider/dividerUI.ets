@@ -47,7 +47,7 @@ struct DividerExample {
               .width(this.widthK)
               .margin({ left: 8, right: 8 } as Margin)
               .strokeWidth(this.strokeWidth)
-              .lineCap(this.lineCapStyle).key("divider")
+              .lineCap(this.lineCapStyle).key("dividerUI_divider")
             Button('Button')
               .width(136)
               .height(22)

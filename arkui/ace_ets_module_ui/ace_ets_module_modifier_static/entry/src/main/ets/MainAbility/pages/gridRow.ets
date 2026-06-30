@@ -108,7 +108,7 @@ struct GridRowExample {
     Column({ space: 5 } as ColumnOptions) {
       Button("change value").onClick((e: ClickEvent) => {
         (this.customModifier as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("gridRow_changeButton")
 
       GridRow({
         columns: 3,
@@ -132,7 +132,7 @@ struct GridRowExample {
           Row() {
             Text("t")
           }.width("100%").height("20vp")
-        }.borderColor(Color.Brown).borderWidth(2).backgroundColor(Color.Brown).key("gridRow")
+        }.borderColor(Color.Brown).borderWidth(2).backgroundColor(Color.Brown).key("gridRow_gridRow_01")
 
         ForEach(this.bgColors, (color: Color) => {
           GridCol({
@@ -152,7 +152,7 @@ struct GridRowExample {
         })
       }.width("100%").height("100%")
       .attributeModifier(this.customModifier as CustomModifier)
-      // .key('gridRow') // 1.1 注释
+      // .key('gridRow_gridRow_02') // 1.1 注释
     }
     .margin({ top: 5 } as Margin)
   }

@@ -43,6 +43,7 @@ struct TextExample2 {
         .padding(10)
         .width('100%')
         .id('TypeNode_TextDecorationStyleTest')
+        .key('TypeNode_TextDecorationStyleTest')
     }.height(700).width(350).padding({ left: 35, right: 35, top: 35 })
   }
 }

@@ -77,7 +77,7 @@ export default function polygonJsunit() {
     it('testpolygon_002', Level.LEVEL0, async (done: Function) => {
       console.info('testpolygon_002 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('polygon_changeButton'));
       await button.click();
       await Utils.sleep(2000)
       let strJsonNew = getInspectorByKey('polygon1');

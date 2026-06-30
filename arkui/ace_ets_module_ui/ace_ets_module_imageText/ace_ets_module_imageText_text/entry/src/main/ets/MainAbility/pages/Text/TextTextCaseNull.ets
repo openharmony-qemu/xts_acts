@@ -29,35 +29,41 @@ struct TextTextCase {
       // 测试1: 默认值（未设置 textCase）
       Text('Default TextCase')
         .id('text_textcase_default')
+        .key('text_textcase_default')
         .height('5%')
 
       // 测试2: TextCase.Normal
       Text('TextCase.Normal')
         .id('text_textcase_normal')
+        .key('text_textcase_normal')
         .textCase(TextCase.Normal)
         .height('5%')
 
       // 测试3: TextCase.UpperCase
       Text('TextCase.UpperCase')
         .id('text_textcase_uppercase')
+        .key('text_textcase_uppercase')
         .textCase(TextCase.UpperCase)
         .height('5%')
 
       // 测试4: TextCase.LowerCase
       Text('TextCase.LowerCase')
         .id('text_textcase_lowercase')
+        .key('text_textcase_lowercase')
         .textCase(TextCase.LowerCase)
         .height('5%')
 
       // 测试5: null 参数
       Text('TextCase with null')
         .id('text_textcase_null')
+        .key('text_textcase_null')
         .textCase(null)
         .height('5%')
 
       // 测试6: undefined 参数
       Text('TextCase with undefined')
         .id('text_textcase_undefined')
+        .key('text_textcase_undefined')
         .textCase(undefined)
         .height('5%')
     }

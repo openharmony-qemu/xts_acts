@@ -88,7 +88,7 @@ it('testPathNeStatic0004', Level.LEVEL0, async (done: () => void): Promise<void>
 it('testPathNeStatic0005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testPathNeStatic0005 START');
       let driver = Driver.create();
-      let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button =  await (driver.findComponent(ON.id('path' + '_changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
 

@@ -56,6 +56,7 @@ export default function VideoOnErrorTest() {
      */
     it('VideoOnErrorTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[VideoOnErrorTest_0100] START');
+      await CommonFunc.sleep(3000);
 
       let strJson = getInspectorByKey('VideoErrorCodeContent');
       let obj: ESObject = JSON.parse(strJson);

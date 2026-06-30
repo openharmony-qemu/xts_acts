@@ -33,18 +33,21 @@ struct TextMinMaxLineHeight {
         // Test 1: minLineHeight with null parameter
         Text('minLineHeight with null\nThis is a multiline text\nto test minLineHeight effect')
           .id('text_minLineHeight_null')
+          .key('text_minLineHeight_null')
           .minLineHeight(null)
           .height('5%')
 
         // Test 2: minLineHeight with undefined parameter
         Text('minLineHeight with undefined\nThis is a multiline text\nto test minLineHeight effect')
           .id('text_minLineHeight_undefined')
+          .key('text_minLineHeight_undefined')
           .minLineHeight(undefined)
           .height('5%')
 
         // Test 3: Default minLineHeight for comparison
         Text('Default minLineHeight\nThis is a multiline text\nto test minLineHeight effect')
           .id('text_minLineHeight_default')
+          .key('text_minLineHeight_default')
           .height('5%')
       }
 
@@ -58,18 +61,21 @@ struct TextMinMaxLineHeight {
         // Test 4: maxLineHeight with null parameter
         Text('maxLineHeight with null\nThis is a multiline text\nto test maxLineHeight effect')
           .id('text_maxLineHeight_null')
+          .key('text_maxLineHeight_null')
           .maxLineHeight(null)
           .height('5%')
 
         // Test 5: maxLineHeight with undefined parameter
         Text('maxLineHeight with undefined\nThis is a multiline text\nto test maxLineHeight effect')
           .id('text_maxLineHeight_undefined')
+          .key('text_maxLineHeight_undefined')
           .maxLineHeight(undefined)
           .height('5%')
 
         // Test 6: Default maxLineHeight for comparison
         Text('Default maxLineHeight\nThis is a multiline text\nto test maxLineHeight effect')
           .id('text_maxLineHeight_default')
+          .key('text_maxLineHeight_default')
           .height('5%')
       }
     }

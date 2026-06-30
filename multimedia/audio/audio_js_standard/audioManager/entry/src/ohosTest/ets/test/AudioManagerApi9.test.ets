@@ -1698,6 +1698,14 @@ export default function audioManagerApi9() {
           done();
           return;
       }
+      const detecteDevice2 = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice2) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try {
         if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
           flag = true;
@@ -1821,6 +1829,14 @@ export default function audioManagerApi9() {
           done();
           return;
       }
+      const detecteDevice2 = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice2) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try {
         if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
           flag = true;
@@ -1877,6 +1893,14 @@ export default function audioManagerApi9() {
           console.info(`${TagFrmwk}: this device has external device`)
           done();
           return;
+      }
+      const detecteDevice2 = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice2) {
+        console.info(`this device has external device`)
+        done();
+        return;
       }
       try {
         if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
@@ -1935,6 +1959,14 @@ export default function audioManagerApi9() {
           console.info(`${TagFrmwk}: this device has external device`)
           done();
           return;
+      }
+      const detecteDevice2 = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice2) {
+        console.info(`this device has external device`)
+        done();
+        return;
       }
       if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
         flag = true;
@@ -1996,13 +2028,6 @@ export default function audioManagerApi9() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRender:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
-      console.info(`${TagFrmwk},createAudioRenderer SUCCESS`);
-      await audioRender.start().then(() =>{
-        console.info(`startAudioRenderer SUCCESS`);
-      }).catch(()=>{
-        console.info(`startAudioRenderer ERROR`);
-      });
       let flag: boolean | null = null;
       let AudioRoutingManager = audioManager.getRoutingManager();
       let outputDeviceDescription = await AudioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
@@ -2017,6 +2042,21 @@ export default function audioManagerApi9() {
         done();
         return;
       }
+      const detecteDevice2 = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice2) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      let audioRender:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      console.info(`${TagFrmwk},createAudioRenderer SUCCESS`);
+      await audioRender.start().then(() =>{
+        console.info(`startAudioRenderer SUCCESS`);
+      }).catch(()=>{
+        console.info(`startAudioRenderer ERROR`);
+      });
       try {
         if (outputDeviceDescription.length == 2 && outputDeviceDescription[0].deviceType == audio.DeviceType.EARPIECE &&
           outputDeviceDescription[1].deviceType == audio.DeviceType.SPEAKER) {
@@ -2092,13 +2132,6 @@ export default function audioManagerApi9() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRender:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
-      console.info(`${TagFrmwk},createAudioRenderer SUCCESS`);
-      await audioRender.start().then(() =>{
-        console.info(`startAudioRenderer SUCCESS`);
-      }).catch(()=>{
-        console.info(`startAudioRenderer ERROR`);
-      });
       let flag: boolean | null = null;
       let AudioRoutingManager = audioManager.getRoutingManager();
       let outputDeviceDescription = await AudioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
@@ -2113,6 +2146,21 @@ export default function audioManagerApi9() {
         done();
         return;
       }
+      const detecteDevice2 = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice2) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      let audioRender:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      console.info(`${TagFrmwk},createAudioRenderer SUCCESS`);
+      await audioRender.start().then(() =>{
+        console.info(`startAudioRenderer SUCCESS`);
+      }).catch(()=>{
+        console.info(`startAudioRenderer ERROR`);
+      });
       try {
         if (outputDeviceDescription.length == 2 && outputDeviceDescription[0].deviceType == audio.DeviceType.EARPIECE &&
           outputDeviceDescription[1].deviceType == audio.DeviceType.SPEAKER) {
@@ -2183,13 +2231,6 @@ export default function audioManagerApi9() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRender:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
-      console.info(`${TagFrmwk},createAudioRenderer SUCCESS`);
-      await audioRender.start().then(() =>{
-        console.info(`startAudioRenderer SUCCESS`);
-      }).catch(()=>{
-        console.info(`startAudioRenderer ERROR`);
-      });
       let flag: boolean | null = null;
       let AudioRoutingManager = audioManager.getRoutingManager();
       let outputDeviceDescription = await AudioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
@@ -2204,6 +2245,21 @@ export default function audioManagerApi9() {
         done();
         return;
       }
+      const detecteDevice2 = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice2) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      let audioRender:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      console.info(`${TagFrmwk},createAudioRenderer SUCCESS`);
+      await audioRender.start().then(() =>{
+        console.info(`startAudioRenderer SUCCESS`);
+      }).catch(()=>{
+        console.info(`startAudioRenderer ERROR`);
+      });
       try {
         if (outputDeviceDescription.length == 2 && outputDeviceDescription[0].deviceType == audio.DeviceType.EARPIECE &&
           outputDeviceDescription[1].deviceType == audio.DeviceType.SPEAKER) {
@@ -2275,13 +2331,6 @@ export default function audioManagerApi9() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRender:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
-      console.info(`${TagFrmwk},createAudioRenderer SUCCESS`);
-      await audioRender.start().then(() =>{
-        console.info(`startAudioRenderer SUCCESS`);
-      }).catch(()=>{
-        console.info(`startAudioRenderer ERROR`);
-      });
       let flag: boolean | null = null;
       let AudioRoutingManager = audioManager.getRoutingManager();
       let outputDeviceDescription = await AudioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
@@ -2296,6 +2345,21 @@ export default function audioManagerApi9() {
         done();
         return;
       }
+      const detecteDevice2 = outputDeviceDescription.some(device =>
+        device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
+      );
+      if (detecteDevice2) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      let audioRender:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      console.info(`${TagFrmwk},createAudioRenderer SUCCESS`);
+      await audioRender.start().then(() =>{
+        console.info(`startAudioRenderer SUCCESS`);
+      }).catch(()=>{
+        console.info(`startAudioRenderer ERROR`);
+      });
       try {
         if (outputDeviceDescription.length == 2 && outputDeviceDescription[0].deviceType == audio.DeviceType.EARPIECE &&
           outputDeviceDescription[1].deviceType == audio.DeviceType.SPEAKER) {

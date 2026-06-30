@@ -13,15 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Component,Video,Resource,$r,ShadowType,CopyOptions,TextCase,TextDecorationType,TextOverflow,FontStyle,TextPicker,ShadowOptions,WordBreak,TextAttribute,TextHeightAdaptivePolicy,TextAreaController,PlaybackSpeed,$rawfile,Column,Margin,ColumnOptions,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  PropRef,
-} from '@ohos.arkui.stateManagement';
+import { Entry, Component, Video, Resource, $r, ShadowType, CopyOptions, TextCase, TextDecorationType, TextOverflow, FontStyle, TextPicker, ShadowOptions, WordBreak, TextAttribute, TextHeightAdaptivePolicy, TextAreaController, PlaybackSpeed, $rawfile, Column, Margin, ColumnOptions, Text, Color, Flex, FlexDirection, ItemAlign, Row, Button, ClickEvent, Week, FontWeight, Axis, Swiper, ForEach, PickerTextStyle, CalendarAlign, CalendarPicker, EdgeEffect, Curve, SwiperDisplayMode, ArrowPosition, Select, BlurStyle, MenuAlignType, TextInputController, TextAlign, AlphabetIndexer } from '@ohos.arkui.component';
+import { State, Link, PropRef } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { TextModifier } from "@ohos.arkui.modifier";
-
+import { TextModifier } from '@ohos.arkui.modifier';
 class CustomModifier extends TextModifier {
   applyNormalAttribute(instance: TextAttribute): void {
     // super.applyNormalAttribute?.(instance);
@@ -74,7 +69,7 @@ struct TextExample {
     Column({ space: 5 } as ColumnOptions) {
       Button("change value").onClick((e: ClickEvent) => {
         (this.CustomModifier1 as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("text_changeButton")
 
       Text('This is the text content with textAlign set to Center.')
         .attributeModifier(this.CustomModifier1 as CustomModifier)

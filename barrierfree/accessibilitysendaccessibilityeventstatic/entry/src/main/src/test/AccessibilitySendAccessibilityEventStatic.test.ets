@@ -157,12 +157,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_9400 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_9400 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -182,12 +183,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_0200 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_0200 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -239,12 +241,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_0400 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_0400 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -296,12 +299,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_0600 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_0600 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -353,12 +357,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_0800 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_0800 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -410,12 +415,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_1000 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_1000 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -467,12 +473,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_1200 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_1200 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -524,12 +531,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_1400 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_1400 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -581,12 +589,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_1600 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_1600 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -638,12 +647,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_1800 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_1800 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -695,12 +705,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_2000 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_2000 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -752,12 +763,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_2200 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_2200 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -779,12 +791,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_2300 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_2300 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -806,12 +819,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_2400 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_2400 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -833,12 +847,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_2500 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_2500 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -860,12 +875,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_2600 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_2600 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -887,12 +903,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_2700 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_2700 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -914,12 +931,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_2800 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_2800 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -941,12 +959,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_2900 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_2900 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -968,12 +987,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_3000 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_3000 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -995,12 +1015,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_3100 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_3100 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -1052,12 +1073,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_3400 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_3400 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -1109,12 +1131,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_3600 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_3600 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -1166,12 +1189,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_3800 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_3800 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -1223,12 +1247,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_4000 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_4000 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -1280,12 +1305,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_4200 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_4200 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -1337,12 +1363,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_4400 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_4400 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -1394,12 +1421,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_4600 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_4600 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -1451,12 +1479,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_4800 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_4800 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -1508,12 +1537,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_5000 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_5000 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -1565,12 +1595,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_5200 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_5200 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -1622,12 +1653,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_5400 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_5400 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -1679,12 +1711,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_5600 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_5600 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -1736,12 +1769,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_5800 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_5800 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -1793,12 +1827,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_6000 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_6000 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -1850,12 +1885,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_6200 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_6200 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -1907,12 +1943,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_6400 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_6400 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -1934,12 +1971,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_6500 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_6500 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -1991,12 +2029,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_6700 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_6700 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -2048,12 +2087,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_6900 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_6900 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -2105,12 +2145,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_7100 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_7100 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -2132,12 +2173,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_7200 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_7200 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
 
@@ -2160,12 +2202,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_7400 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_7400 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -2187,12 +2230,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_7500 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_7500 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -2214,12 +2258,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_7600 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_7600 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -2241,12 +2286,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_8100 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_8100 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -2296,12 +2342,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_8800 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_8800 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -2352,12 +2399,13 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_9000 has successed`);
-        done();
+        result = true;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_9000 has error`);
-        expect(null).assertFail();
-        done();
+        result = false;
       };
+      expect(result).assertEqual(true);
+      done();
     })
 
     /**
@@ -2384,6 +2432,7 @@ export default function abilityTest() {
       try {
         await accessibility.sendAccessibilityEvent(event);
         hilog.info(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_9500 has successed`);
+        result = false;
       } catch (error) {
         hilog.error(domain, tag, `AccessibilitySendAccessibilityEvent: SUB_BASIC_BARRIERFREE_API_AccessibilitySendAccessibilityEvent_static_9500 has error`);
         result = true;

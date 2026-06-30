@@ -27,7 +27,7 @@ export class DateInfo {
   constructor(){
     this.selectedDateMonitor = UIUtils.addMonitor(() => this.selectedDate, this.selectedDateChange, { path: ['Date'] });
   }
-  selectedDateChange(m: IMonitor) {
+  selectedDateChange(m: IMonitor): void {
     m.dirty.forEach((path: string) => {
       console.log(`[addMonitorTest] ${path} has changed to ${this.selectedDate}`);
       this.text = `[addMonitorTest] ${path} has changed to ${this.selectedDate}`

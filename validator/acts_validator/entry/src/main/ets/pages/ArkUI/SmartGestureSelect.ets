@@ -30,9 +30,12 @@ struct SmartGestureSelect {
     '翻腕: 手腕自然上扬、表盘朝向面部，快速翻转 30–90°\n' +
     '操作步骤:\n' + '1.点击[request]按钮\n' +
     '2.执行[敲一敲]手势\n' + '3.点击[clear]按钮\n' +
+    '4.点击[null]按钮\n' +
+    '5.点击[undefined]按钮\n' +
     '预期结果：\n' + '1.在[可选可点]文本框上有选中框\n' +
     '2.下滑到日志区域内只显示一次[passThrough ->]相关日志\n' +
-    '3.选中框消失'
+    '3.选中框消失\n' + '4.点击后不会选中文本框\n' +
+    '5.点击后不会选中文本框'
   @State isOk: boolean = false;
   @State intervalNum: number = 0;
   private readonly logger: SmartGestureLogStore = new SmartGestureLogStore();
@@ -78,6 +81,14 @@ struct SmartGestureSelect {
 
   private requestSelected(id: string): void {
     this.controller().requestSelected(id);
+  }
+
+    private requestSelected1(): void {
+    this.controller().requestSelected(null);
+  }
+
+  private requestSelected2(): void {
+    this.controller().requestSelected(undefined);
   }
 
   private clearSelected(): void {
@@ -235,6 +246,10 @@ struct SmartGestureSelect {
                 .smartGestureShortcut({ action: GestureShortcut.PRIMARY, enabled: true, selectable: true })
                 .onClick(() => this.handleClick('text_select_click'));
               this.buildRequestButton('request', 'text_select_click')
+              Row() {
+                Button('null').width('50%').height(40).fontSize(12).onClick(() => {this.requestSelected1()})
+                Button('undefined').width('50%').height(40).fontSize(12).onClick(() => {this.requestSelected2()})
+              }
             }.backgroundColor('#ff161111');
           }
           .width('100%')

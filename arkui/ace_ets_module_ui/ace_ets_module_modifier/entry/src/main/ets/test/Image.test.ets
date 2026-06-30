@@ -49,7 +49,7 @@ export default function imageJsunit() {
      */
     it('imageTest_0001', Level.LEVEL0, async (done: Function) => {
       console.info('imageTest_0001 START');
-      let strJsonNew = getInspectorByKey('image');
+      let strJsonNew = getInspectorByKey('image' + '_image');
       
       console.info("imageTest_0001 component  is: " + JSON.stringify(JSON.parse(strJsonNew).$attrs));
 
@@ -68,7 +68,7 @@ export default function imageJsunit() {
      */
     it('imageTest_0002', Level.LEVEL0, async (done: Function) => {
       console.info('imageTest_0002 START');
-      let strJsonNew = getInspectorByKey('image');
+      let strJsonNew = getInspectorByKey('image' + '_image');
       
       console.info("imageTest_0002 component  is: " + JSON.stringify(JSON.parse(strJsonNew).$attrs));
 
@@ -88,7 +88,7 @@ export default function imageJsunit() {
      */
     it('imageTest_0003', Level.LEVEL0, async (done: Function) => {
       console.info('imageTest_0003 START');
-      let strJsonNew = getInspectorByKey('image');
+      let strJsonNew = getInspectorByKey('image' + '_image');
       
       console.info("imageTest_0003 component  is: " + JSON.stringify(JSON.parse(strJsonNew).$attrs));
 
@@ -107,7 +107,7 @@ export default function imageJsunit() {
      */
     it('imageTest_0004', Level.LEVEL0, async (done: Function) => {
       console.info('imageTest_0004 START');
-      let strJsonNew = getInspectorByKey('image');
+      let strJsonNew = getInspectorByKey('image' + '_image');
       
       console.info("imageTest_0004 component  is: " + JSON.stringify(JSON.parse(strJsonNew).$attrs));
 
@@ -126,7 +126,7 @@ export default function imageJsunit() {
      */
     it('imageTest_0005', Level.LEVEL0, async (done: Function) => {
       console.info('imageTest_0005 START');
-      let strJsonNew = getInspectorByKey('image');
+      let strJsonNew = getInspectorByKey('image' + '_image');
       
       console.info("imageTest_0005 component  is: " + JSON.stringify(JSON.parse(strJsonNew).$attrs));
 
@@ -145,7 +145,7 @@ export default function imageJsunit() {
      */
     it('imageTest_0006', Level.LEVEL0, async (done: Function) => {
       console.info('imageTest_0006 START');
-      let strJsonNew = getInspectorByKey('image');
+      let strJsonNew = getInspectorByKey('image' + '_image');
       
       console.info("imageTest_0006 component  is: " + JSON.stringify(JSON.parse(strJsonNew).$attrs));
 
@@ -164,7 +164,7 @@ export default function imageJsunit() {
      */
     it('imageTest_0007', Level.LEVEL0, async (done: Function) => {
       console.info('imageTest_0007 START');
-      let strJsonNew = getInspectorByKey('image');
+      let strJsonNew = getInspectorByKey('image' + '_image');
       
       console.info("imageTest_0007 component  is: " + JSON.stringify(JSON.parse(strJsonNew).$attrs));
 
@@ -183,7 +183,7 @@ export default function imageJsunit() {
      */
     it('imageTest_0008', Level.LEVEL0, async (done: Function) => {
       console.info('imageTest_0008 START');
-      let strJsonNew = getInspectorByKey('image');
+      let strJsonNew = getInspectorByKey('image' + '_image');
       
       console.info("imageTest_0008 component  is: " + JSON.stringify(JSON.parse(strJsonNew).$attrs));
 
@@ -202,7 +202,7 @@ export default function imageJsunit() {
      */
     it('imageTest_0009', Level.LEVEL0, async (done: Function) => {
       console.info('imageTest_0009 START');
-      let strJsonNew = getInspectorByKey('image');
+      let strJsonNew = getInspectorByKey('image' + '_image');
       
       console.info("imageTest_0009 component  is: " + JSON.stringify(JSON.parse(strJsonNew).$attrs));
 
@@ -221,7 +221,7 @@ export default function imageJsunit() {
      */
     it('imageTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('imageTest_0010 START');
-      let strJsonNew = getInspectorByKey('image');
+      let strJsonNew = getInspectorByKey('image' + '_image');
       
       console.info("imageTest_0010 component  is: " + JSON.stringify(JSON.parse(strJsonNew).$attrs));
 
@@ -240,7 +240,7 @@ export default function imageJsunit() {
      */
     it('imageTest_0011', Level.LEVEL0, async (done: Function) => {
       console.info('imageTest_0011 START');
-      let strJsonNew = getInspectorByKey('image');
+      let strJsonNew = getInspectorByKey('image' + '_image');
       
       console.info("imageTest_0011 component  is: " + JSON.stringify(JSON.parse(strJsonNew).$attrs));
 
@@ -259,7 +259,7 @@ export default function imageJsunit() {
      */
     it('imageTest_0012', Level.LEVEL0, async (done: Function) => {
       console.info('imageTest_0012 START');
-      let strJsonNew = getInspectorByKey('image');
+      let strJsonNew = getInspectorByKey('image' + '_image');
       
       console.info("imageTest_0012 component  is: " + JSON.stringify(JSON.parse(strJsonNew).$attrs));
 
@@ -278,7 +278,7 @@ export default function imageJsunit() {
      */
     it('imageTest_0013', Level.LEVEL0, async (done: Function) => {
       console.info('imageTest_0013 START');
-      let strJsonNew = getInspectorByKey('image');
+      let strJsonNew = getInspectorByKey('image' + '_image');
       
       console.info("imageTest_0013 component  is: " + JSON.stringify(JSON.parse(strJsonNew).$attrs));
 
@@ -297,7 +297,7 @@ export default function imageJsunit() {
      */
     it('imageTest_0014', Level.LEVEL0, async (done: Function) => {
       console.info('imageTest_0014 START');
-      let strJsonNew = getInspectorByKey('image');
+      let strJsonNew = getInspectorByKey('image' + '_image');
       
       console.info("imageTest_0014 component  is: " + JSON.stringify(JSON.parse(strJsonNew).$attrs));
 
@@ -318,11 +318,11 @@ export default function imageJsunit() {
 
       console.info('imageTest_0015 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('image' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
 
-      let strJsonNew = getInspectorByKey('image');
+      let strJsonNew = getInspectorByKey('image' + '_image');
       
       console.info("imageTest_0015 component  is: " + JSON.stringify(JSON.parse(strJsonNew).$attrs));
 

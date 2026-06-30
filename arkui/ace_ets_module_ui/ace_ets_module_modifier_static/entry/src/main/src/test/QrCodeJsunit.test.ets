@@ -124,7 +124,7 @@ it('test_qrCode_static_003', Level.LEVEL0, async (done: () => void): Promise<voi
 it('test_qrCode_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('test_qrCode_static_004 START');
       let driver = Driver.create();
-      let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button =  await (driver.findComponent(ON.id('qrCode' + '_changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
 

@@ -817,7 +817,7 @@ export default function ArrayCreateTest(): void {
      */
     it('testArrayCreate049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = Array.create<int>(10, 42);
-      const arr2 = new Array<int>(10);
+      const arr2 = Array.create<int>(1, 10);
       expect(arr2.length).assertEqual(1);
       expect(arr2[0]).assertEqual(10);
       for (let i = 0; i < arr2.length; i++) {
@@ -836,7 +836,7 @@ export default function ArrayCreateTest(): void {
      */
     it('testArrayCreate050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = Array.create<int>(10, 100);
-      const arr2 = new Array<int>(10);
+      const arr2 = Array.create<int>(1, 10);
       expect(arr2.length).assertEqual(1);
       expect(arr2[0]).assertEqual(10);
       arr2.fill(100);

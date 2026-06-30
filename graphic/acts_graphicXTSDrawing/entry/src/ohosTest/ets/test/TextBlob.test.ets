@@ -228,13 +228,12 @@ export default function textBlobTest() {
           left: 200, right: 100, top: 200, bottom: 100
         },
       ];
-
       try {
         drawing.TextBlob.makeFromRunBuffer(runBuffer, font, null);
-        console.info(`${msg} makeFromRunBuffer succeeded for bounds ${JSON.stringify(null)}`);
+        console.info(`${msg} makeFromRunBuffer succeeded for null bounds ${JSON.stringify(null)}`);
       } catch (e) {
-        console.info(`${msg} makeFromRunBuffer failed for bounds ${JSON.stringify(null)}, errorCode is: ${e.code}, errorMessage is: ${e.message}`);
-        expect(e.code).assertEqual(401);
+        console.info(`${msg} makeFromRunBuffer failed for null bounds ${JSON.stringify(null)}, errorCode is: ${e.code}, errorMessage is: ${e.message}`);
+        expect().assertFail();
       }
 
       for (let bounds of boundsList) {
@@ -260,24 +259,22 @@ export default function textBlobTest() {
           expect().assertFail();
         }
       }
-
       try {
         drawing.TextBlob.makeFromRunBuffer(runBuffer, font, undefined);
-        console.info(`${msg} makeFromRunBuffer succeeded for bounds ${JSON.stringify(undefined)}`);
+        console.info(`${msg} makeFromRunBuffer succeeded undefined for bounds ${JSON.stringify(undefined)}`);
+        expect().assertFail();
       } catch (e) {
-        console.info(`${msg} makeFromRunBuffer failed for bounds ${JSON.stringify(undefined)}, errorCode is: ${e.code}, errorMessage is: ${e.message}`);
+        console.info(`${msg} makeFromRunBuffer failed for undefined bounds ${JSON.stringify(undefined)}, errorCode is: ${e.code}, errorMessage is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
-
       try {
         // Make a TextBlob from an empty run buffer using the Font object
         drawing.TextBlob.makeFromRunBuffer([], font);
-        console.info(msg + ' makeFromRunBuffer succeeded for empty run buffer');
+        console.info(msg + ' makeFromRunBuffer succeeded [] for empty run buffer');
       } catch (e) {
-        console.info(msg + ` makeFromRunBuffer failed for empty run buffer, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + ` makeFromRunBuffer failed for [] empty run buffer, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect().assertFail();
       }
-
     });
 
     /**

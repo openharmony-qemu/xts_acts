@@ -78,7 +78,7 @@ struct TextAreaExample {
         .onChange((value: string) :void=> {
           this.text2 = value
         })
-        .key('textArea2')
+        .key('TextArea_textArea2')
 
       Text(this.text3).width('90%').height(60).fontSize(40)
       TextArea({ placeholder: 'Please entry keywords', text: this.text })

@@ -103,7 +103,7 @@ struct TextTimerPage {
     Column() {
       TextTimer({ controller: this.textTimerController })
         .fontColor(Color.Black)
-        .key('default')
+        .key('TextTimerPage_default')
         .fontSize(40)
         .onTimer((utc: long, elapsedTime: long) => {
           console.info('textTimer notCountDown utc is：' + utc + ', elapsedTime: ' + elapsedTime)
@@ -121,8 +121,8 @@ struct TextTimerPage {
         })
         .height('20%')
       Row() {
-        Text('start:' + this.start).fontSize(20).key('start').id('start').width('45%')
-        Text('pause:' + this.pause).fontSize(20).key('pause').id('pause').width('45%')
+        Text('start:' + this.start).fontSize(20).key('TextTimerPage_start').id('start').width('45%')
+        Text('pause:' + this.pause).fontSize(20).key('TextTimerPage_pause').id('pause').width('45%')
       }.height('10%')
 
       Row() {

@@ -81,16 +81,16 @@ it('testAlignContentStartFlexHeightSatisfy_static', Level.LEVEL0, async () => {
         name: 'height', value: 360
       })
       await CommonFunc.sleep(3000)
-      let strJson = inspector.getInspectorByKey('AlignContentFlex_Start_flex001');
+      let strJson = inspector.getInspectorByKey('AlignContentFlex_Start' + '_flex001');
 
 
   console.info('flex [getInspectorByKey] is:' + JSON.stringify(JSON.parseJsonElement(strJson)));
   console.info('flex obj.$attrs.constructor is:' + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor')));
-      let AlignContentFlexStart_flex001: RectValue = CommonFunc.getComponentRect('AlignContentFlex_Start_flex001');
-      let AlignContentFlexStart_1: RectValue = CommonFunc.getComponentRect('AlignContentFlex_Start_flex001_1');
-      let AlignContentFlexStart_2: RectValue = CommonFunc.getComponentRect('AlignContentFlex_Start_flex001_2');
-      let AlignContentFlexStart_3: RectValue = CommonFunc.getComponentRect('AlignContentFlex_Start_flex001_3');
-      let AlignContentFlexStart_4: RectValue = CommonFunc.getComponentRect('AlignContentFlex_Start_flex001_4');
+      let AlignContentFlexStart_flex001: RectValue = CommonFunc.getComponentRect('AlignContentFlex_Start' + '_flex001');
+      let AlignContentFlexStart_1: RectValue = CommonFunc.getComponentRect('AlignContentFlex_Start' + '_flex001_1');
+      let AlignContentFlexStart_2: RectValue = CommonFunc.getComponentRect('AlignContentFlex_Start' + '_flex001_2');
+      let AlignContentFlexStart_3: RectValue = CommonFunc.getComponentRect('AlignContentFlex_Start' + '_flex001_3');
+      let AlignContentFlexStart_4: RectValue = CommonFunc.getComponentRect('AlignContentFlex_Start' + '_flex001_4');
 
       console.log('AlignContentFlex_Start_flex001 rect_value is:' +
       JSON.stringify(AlignContentFlexStart_flex001));
@@ -138,13 +138,13 @@ it('testAlignContentStartFlexHeightNoSatisfy_static', Level.LEVEL0, async () => 
         name: 'height', value: 250
       })
       await CommonFunc.sleep(3000)
-      let strJson = inspector.getInspectorByKey('AlignContentFlex_Start_flex001');
+      let strJson = inspector.getInspectorByKey('AlignContentFlex_Start' + '_flex001');
 
-      let AlignContentFlexStart_flex002: RectValue = CommonFunc.getComponentRect('AlignContentFlex_Start_flex001');
-      let AlignContentFlexStart_1: RectValue = CommonFunc.getComponentRect('AlignContentFlex_Start_flex001_1');
-      let AlignContentFlexStart_2: RectValue = CommonFunc.getComponentRect('AlignContentFlex_Start_flex001_2');
-      let AlignContentFlexStart_3: RectValue = CommonFunc.getComponentRect('AlignContentFlex_Start_flex001_3');
-      let AlignContentFlexStart_4: RectValue = CommonFunc.getComponentRect('AlignContentFlex_Start_flex001_4');
+      let AlignContentFlexStart_flex002: RectValue = CommonFunc.getComponentRect('AlignContentFlex_Start' + '_flex001');
+      let AlignContentFlexStart_1: RectValue = CommonFunc.getComponentRect('AlignContentFlex_Start' + '_flex001_1');
+      let AlignContentFlexStart_2: RectValue = CommonFunc.getComponentRect('AlignContentFlex_Start' + '_flex001_2');
+      let AlignContentFlexStart_3: RectValue = CommonFunc.getComponentRect('AlignContentFlex_Start' + '_flex001_3');
+      let AlignContentFlexStart_4: RectValue = CommonFunc.getComponentRect('AlignContentFlex_Start' + '_flex001_4');
 
       console.log('AlignContentFlexStart_flex002 rect_value is:' +
       JSON.stringify(AlignContentFlexStart_flex002))

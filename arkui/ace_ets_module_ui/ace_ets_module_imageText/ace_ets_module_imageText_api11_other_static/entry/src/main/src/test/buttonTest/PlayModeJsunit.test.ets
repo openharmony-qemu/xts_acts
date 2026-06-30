@@ -119,7 +119,7 @@ it('playModeTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<v
       } catch (err) {
         console.info("playModeTest_0100 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("playModeTest_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('button', 10, "")));
+      console.info("playModeTest_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('playMode' + '_button', 10, "")));
       await CommonFunc.sleep(2000);
       console.info('playModeTest_0100 END');
       done();

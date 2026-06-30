@@ -349,7 +349,7 @@ export default function ArrayAt1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayAt016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(1);
+      const arr = Array.create<int>(1, 1);
       arr[0] = 100;
       const firstValue = arr.at(0);
       const lastValue = arr.at(-1);

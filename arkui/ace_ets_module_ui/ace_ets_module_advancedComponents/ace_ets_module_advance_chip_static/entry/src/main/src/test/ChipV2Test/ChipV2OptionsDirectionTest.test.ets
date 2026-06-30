@@ -27,7 +27,7 @@ import {
   $r,
 } from '@ohos.arkui.component';
 
-export default function ChipV2OptionsDirectionTest() {
+export default function ChipV2OptionsDirectionTest(): void {
   describe('ChipV2OptionsDirectionTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("ChipV2OptionsDirectionTest beforeEach start");

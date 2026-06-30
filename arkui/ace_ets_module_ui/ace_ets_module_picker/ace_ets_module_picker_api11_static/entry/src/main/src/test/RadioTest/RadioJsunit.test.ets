@@ -13,22 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
+import inspector from '@ohos.arkui.inspector';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-import Utils  from "../../../ets/MainAbility/common/Utils";
-
-
+import Utils from '../../../ets/MainAbility/common/Utils';
 export default function RadioJsunit() {
   describe('RadioJsunit', () => {
     beforeAll(async (): Promise<void> => {
@@ -166,7 +164,7 @@ it('RadioJsunit_static_0400', Level.LEVEL1, async (done: () => void): Promise<vo
       await (radio3?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
-      let textComponent = await driver.findComponent(ON.id('text'));
+      let textComponent = await driver.findComponent(ON.id('RadioPage' + '_text'));
       let text = await (textComponent?.getText() as Promise<string>);
       console.info("[RadioJsunit_0400] text: " + JSON.stringify(text));
       expect(text).assertEqual('change succ');

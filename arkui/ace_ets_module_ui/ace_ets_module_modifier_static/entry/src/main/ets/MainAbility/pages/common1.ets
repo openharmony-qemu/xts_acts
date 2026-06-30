@@ -13,25 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Builder,Component,Scroller,GridRow,Scroll,ButtonType,CommonAttribute,OutlineRadiuses,
-  BreakpointsReference,GridRowDirection,GridCol,GridItem,Grid,List,Video,Image,BarPosition,
-  ButtonAttribute,Resource,$r,FlexAlign,Divider,Tabs,TabContent,TabsController,TextPicker,TextAreaController,
-  PlaybackSpeed,$rawfile,Column,Margin,ColumnOptions,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,
-  ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign,
-  CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,Alignment,AlignRuleOption,RenderFit,
-  Direction,OutlineStyle,ShadowOptions,Position,Rect,ClickEffectLevel,DragPreviewMode,VerticalAlign,HorizontalAlign,
-  AdaptiveColor, HoverEffect, ThemeColorMode, SafeAreaType,SafeAreaEdge,GradientDirection,EdgeOutlineStyles,
-  EdgeOutlineWidths,EdgeColors,EdgeOutlineWidths,ObscuredReasons,ProgressMask,
-  BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  PropRef,
-} from '@ohos.arkui.stateManagement';
-import { CommonModifier } from "@ohos.arkui.modifier";
-import matrix4 from '@ohos.matrix4'
+import { Entry, Builder, Component, Scroller, GridRow, Scroll, ButtonType, CommonAttribute, OutlineRadiuses, BreakpointsReference, GridRowDirection, GridCol, GridItem, Grid, List, Video, Image, BarPosition, ButtonAttribute, Resource, $r, FlexAlign, Divider, Tabs, TabContent, TabsController, TextPicker, TextAreaController, PlaybackSpeed, $rawfile, Column, Margin, ColumnOptions, Text, Color, Flex, FlexDirection, ItemAlign, Row, Button, ClickEvent, Week, FontWeight, Axis, Swiper, ForEach, PickerTextStyle, CalendarAlign, CalendarPicker, EdgeEffect, Curve, SwiperDisplayMode, ArrowPosition, Select, Alignment, AlignRuleOption, RenderFit, Direction, OutlineStyle, ShadowOptions, Position, Rect, ClickEffectLevel, DragPreviewMode, VerticalAlign, HorizontalAlign, AdaptiveColor, HoverEffect, ThemeColorMode, SafeAreaType, SafeAreaEdge, GradientDirection, EdgeOutlineStyles, EdgeOutlineWidths, EdgeColors, ObscuredReasons, ProgressMask, BlurStyle, MenuAlignType, TextInputController, TextAlign, AlphabetIndexer } from '@ohos.arkui.component';
+import { State, Link, PropRef } from '@ohos.arkui.stateManagement';
+import { CommonModifier } from '@ohos.arkui.modifier';
+import matrix4 from '@ohos.matrix4';
 import UTD from '@ohos.data.uniformTypeDescriptor';
-
 export class CustomModifier extends CommonModifier {
   applyNormalAttribute(instance: CommonAttribute): void {
     // super.applyNormalAttribute(instance);
@@ -155,7 +141,7 @@ struct Common1Example {
     Column(){
       Button("change value").onClick((e: ClickEvent) => {
         (this.customModifier as CustomModifier).onChange();
-      }).key("changeButton")
+      }).key("common1_changeButton")
 
       Text("Modifier自定义")
         .attributeModifier(this.customModifier as CustomModifier)

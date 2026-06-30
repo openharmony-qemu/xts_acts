@@ -95,7 +95,7 @@ export default function web9Jsunit() {
     it('setWebControllerTest003', Level.LEVEL0, async () => {
       emitKey = "emitHitTestValue";
       Utils.registerContainEvent("HitTestValue", true, 1103);
-      sendEventByKey('web2', 10, '');
+      sendEventByKey('web_api_9_web2', 10, '');
     })
   })
 }

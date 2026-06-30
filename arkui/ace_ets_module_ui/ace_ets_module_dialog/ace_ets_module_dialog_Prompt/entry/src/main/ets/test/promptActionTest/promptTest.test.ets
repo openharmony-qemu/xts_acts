@@ -53,17 +53,17 @@ export default function promptTest() {
       console.info('promptTest_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('prompt_3'));
+      let button = await driver.findComponent(ON.id('prompt' + '_3'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson1 = getInspectorByKey('prompt_2');
+      let strJson1 = getInspectorByKey('prompt' + '_2');
       let obj1: ESObject = JSON.parse(strJson1);
       expect(obj1.$attrs.label).assertEqual('确认');
       await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('prompt_2'));
+      let button1 = await driver.findComponent(ON.id('prompt' + '_2'));
       await button1.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('prompt_3');
+      let strJson = getInspectorByKey('prompt' + '_3');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[promptTest_0100] component obj is: " + JSON.stringify(obj));
       console.info("[promptTest_0100] component obj.$attrs is: " + JSON.stringify(obj.$attrs));

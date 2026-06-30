@@ -61,7 +61,7 @@ export default function NavigationParamTest() {
 it('ArkUI_Navigation_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let CASE = 'ArkUI_Navigation_static_0100'
       console.info(`${SUITE} ${CASE} START`)
-      let strJson = inspector.getInspectorByKey('NavigationParam_Navigation1')
+      let strJson = inspector.getInspectorByKey('NavigationParam' + '_Navigation1')
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Navigation')
       console.info(`${SUITE} ${CASE} END`)
       done()
@@ -78,7 +78,7 @@ it('ArkUI_Navigation_static_0100', Level.LEVEL0, async (done: () => void): Promi
 it('ArkUI_Navigation_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let CASE = 'ArkUI_Navigation_static_0200'
       console.info(`${SUITE} ${CASE} START`)
-      let strJson = inspector.getInspectorByKey('NavigationParam_Navigation2')
+      let strJson = inspector.getInspectorByKey('NavigationParam' + '_Navigation2')
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('title')).assertEqual('test_string_title')
       console.info(`${SUITE} ${CASE} END`)
       done()

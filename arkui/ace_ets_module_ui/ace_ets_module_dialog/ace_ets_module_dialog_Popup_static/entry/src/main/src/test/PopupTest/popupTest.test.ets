@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { abilityDelegatorRegistry, Driver, ON } from '@kit.TestKit';
+import { abilityDelegatorRegistry, Driver, ON, Component } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -24,13 +24,15 @@ import inspector from '@ohos.arkui.inspector';
 import { UtilsTest } from '../Util.test';
 const SLEEP_TIME = 1000;
 
-export default function popupTest() {
+export default function popupTest(): void {
   describe('popupTest', () => {
-    beforeAll(async (): Promise<void> => {
+    beforeAll(async () => {
+
       console.info("popupTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.popup.static", "EntryAbility")
     });
-    beforeEach(async (): Promise<void> => {
+    beforeEach(async () => {
+
       console.info("popupTest beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/popup/popup',
@@ -60,12 +62,13 @@ export default function popupTest() {
      * @tc.desc     call and override the native component/API
      * @tc.level    Level.LEVEL0
      */
-    it('Popup_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('Popup_static_001', Level.LEVEL0, async () => {
+
       console.info('Popup_static_001 START');
       try {
         const driver = Driver.create();
         const button = await driver.findComponent(ON.id('btn'));
-        await (button?.click() as Promise<void>);
+        await ((await driver.findComponent(ON.id('PLACEHOLDER'))) as Component).click();
         await Utils.sleep(SLEEP_TIME);
         let message = inspector.getInspectorByKey('message');
         let obj = JSON.parseJsonElement(message);
@@ -76,11 +79,9 @@ export default function popupTest() {
         //验证高级组件Popup的组成组件Image非空，表示高级组件Popup成功被调用
         expect(!!image).assertEqual(true);
         console.info('popupTest001 END');
-        done();
       }catch(error){
         console.info('popupTest001 END');
         expect().assertFail();
-        done();
       }
     });
   })

@@ -62,7 +62,7 @@ struct DismissSheetActionExample {
             SpringBackAction.springBack();
           }),
         })
-        Text(this.str).key('DismissReason')
+        Text(this.str).key('dismissSheetAction_DismissReason')
     }
     .justifyContent(FlexAlign.Center)
     .width('100%')

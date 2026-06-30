@@ -85,10 +85,10 @@ struct CheckBoxGroupPart {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("groupText")
+        .key("checkBoxGroup_groupText")
 
       CheckboxGroup({ group: 'checkboxGroup' })
-        .key('CheckboxGroup')
+        .key('checkBoxGroup_CheckboxGroup')
         .selectedColor('0xed6f21')
         .onChange((itemName: CheckboxGroupResult):void => {
           console.info("TextPicker::dialogResult is" + JSON.stringify(itemName))
@@ -115,14 +115,14 @@ struct CheckBoxGroupPart {
         })
       Text('select all').fontSize(20)
       Checkbox({ name: 'checkbox1', group: 'checkboxGroup' })
-        .key('Checkbox1')
+        .key('checkBoxGroup_Checkbox1')
         .select(true)
         .selectedColor('0xed6f21')
         .onChange((value: boolean):void => {
           console.info('Checkbox1 change is' + value)
         })
       Checkbox({ name: 'checkbox2', group: 'checkboxGroup' })
-        .key('Checkbox2')
+        .key('checkBoxGroup_Checkbox2')
         .select(false)
         .selectedColor(0x39a2db)
         .onChange((value: boolean):void => {

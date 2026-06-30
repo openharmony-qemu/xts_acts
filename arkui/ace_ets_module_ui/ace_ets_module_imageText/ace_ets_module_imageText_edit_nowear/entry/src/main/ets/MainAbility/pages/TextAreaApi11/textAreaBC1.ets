@@ -140,12 +140,12 @@ struct TextAreaExampleBC1 {
           }
         })
       Row(){
-        Text(this.message1).key('change').width('45%')
-        Text(this.message2).key('copy').width('45%')
+        Text(this.message1).key('textAreaBC1_change').width('45%')
+        Text(this.message2).key('textAreaBC1_copy').width('45%')
       }.height('5%')
       Row(){
         Text(this.message3).key('cut_textAreaBC1').width('45%')
-        Text(this.message4).key('paste').width('45%')
+        Text(this.message4).key('textAreaBC1_paste').width('45%')
       }.height('5%')
       Text(this.message5).key('isEdit').height('5%')
       Row(){

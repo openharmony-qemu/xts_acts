@@ -40,7 +40,7 @@ struct menuItemPage {
       Column() {
         Button("change value").onClick(() => {
           (this.customModifier as CustomModifier).onChange1();
-        }).key("changeButton")
+        }).key("menuItem_changeButton")
         Menu() {
           MenuItem({
             content: "content1",

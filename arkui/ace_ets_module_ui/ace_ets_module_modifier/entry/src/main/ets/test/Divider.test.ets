@@ -123,7 +123,7 @@ export default function dividerJsunit() {
 
       console.info('dividerTest_0005 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('divider' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
 

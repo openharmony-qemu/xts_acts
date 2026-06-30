@@ -47,6 +47,7 @@ struct SearchEnableAutoSpacing {
         value:'Search：enableAutoSpacing(true)',
       })
         .id('Search_enableAutoSpacing_true')
+        .key('Search_enableAutoSpacing_true')
         .enableAutoSpacing(true)
         .height('5%')
 
@@ -54,6 +55,7 @@ struct SearchEnableAutoSpacing {
         value:'Search：enableAutoSpacing(false)',
       })
         .id('Search_enableAutoSpacing_false')
+        .key('Search_enableAutoSpacing_false')
         .enableAutoSpacing(false)
         .height('5%')
 
@@ -61,12 +63,14 @@ struct SearchEnableAutoSpacing {
         value:'Search：enableAutoSpacing(default)',
       })
         .id('Search_enableAutoSpacing_default')
+        .key('Search_enableAutoSpacing_default')
         .height('5%')
 
       Search({
         value:'Search：enableAutoSpacing(undefined)',
       })
         .id('Search_enableAutoSpacing_undefined')
+        .key('Search_enableAutoSpacing_undefined')
         .enableAutoSpacing(undefined)
         .height('5%')
 
@@ -75,6 +79,7 @@ struct SearchEnableAutoSpacing {
       })
         .attributeModifier(this.searchModifier11)
         .id('SearchModifier_enableAutoSpacing_true')
+        .key('SearchModifier_enableAutoSpacing_true')
         .height('5%')
         .borderWidth(1)
 
@@ -83,6 +88,7 @@ struct SearchEnableAutoSpacing {
       })
         .attributeModifier(this.searchModifier12)
         .id('SearchModifier_enableAutoSpacing_false')
+        .key('SearchModifier_enableAutoSpacing_false')
         .height('5%')
         .borderWidth(1)
 
@@ -91,6 +97,7 @@ struct SearchEnableAutoSpacing {
       })
         .attributeModifier(this.searchModifier13)
         .id('SearchModifier_enableAutoSpacing_undefined')
+        .key('SearchModifier_enableAutoSpacing_undefined')
         .height('5%')
         .borderWidth(1)
     }.height('100%')

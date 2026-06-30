@@ -15,7 +15,7 @@
  */
 import { Entry, Scroll, Column, Component, Button, $r, Row,Color,
   Text, ClickEvent,TextAlign,FlexAlign, PickerIndicatorType,
-  Resource, UIPickerComponent, ForEach, UIPickerComponentOptions, LengthMetrics,
+  Resource, UIPickerComponent, ForEach, UIPickerComponentOptions,
   UIPickerComponentAttribute, AttributeModifier, Optional} from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement'
 import { LengthUnit ,LengthMetrics} from 'arkui.Graphics'

@@ -58,8 +58,8 @@ export default function RelativeContainer_AnchorPoint_TwoDirection() {
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let RelativeContainer_AnchorPoint_TwoDirection_row1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_TwoDirection_row1');
-      let RelativeContainer_AnchorPoint_TwoDirection_r1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_TwoDirection_r1');
+      let RelativeContainer_AnchorPoint_TwoDirection_row1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_TwoDirection' + '_row1');
+      let RelativeContainer_AnchorPoint_TwoDirection_r1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_TwoDirection' + '_r1');
 
 
       console.log('assert position')

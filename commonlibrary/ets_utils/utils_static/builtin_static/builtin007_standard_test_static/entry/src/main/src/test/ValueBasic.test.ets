@@ -1801,7 +1801,7 @@ export default function valueBasicTest(): void {
         
         console.log(domain, tag, '%{public}s', 'test003 start');
         let testValues: FixedArray<string> = ["hello", "world", "test", "array"];
-        let instance = ArrayValue.of(testValues);
+        let instance = reflect.Value.of(testValues);
         let arrayValue = instance as ArrayValue;
         expect(arrayValue.getLength()).assertEqual(4);
         done();
@@ -1841,7 +1841,7 @@ export default function valueBasicTest(): void {
         
         console.log(domain, tag, '%{public}s', 'test005 start');
         let testValues: FixedArray<number> = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-        let instance = ArrayValue.of(testValues);
+        let instance = reflect.Value.of(testValues);
         let arrayValue = instance as ArrayValue;
         expect(arrayValue.getLength()).assertEqual(10);
         done();
@@ -1861,7 +1861,7 @@ export default function valueBasicTest(): void {
         
         console.log(domain, tag, '%{public}s', 'test006 start');
         let testValues: FixedArray<number | null> = [null, 2, null, 4];
-        let instance = ArrayValue.of(testValues);
+        let instance = reflect.Value.of(testValues);
         let arrayValue = instance as ArrayValue;
         expect(arrayValue.getLength()).assertEqual(4);
         done();
@@ -1881,7 +1881,7 @@ export default function valueBasicTest(): void {
         
         console.log(domain, tag, '%{public}s', 'test007 start');
         let testValues: FixedArray<FixedArray<number>> = [[1, 2], [3, 4, 5], [6]];
-        let instance = ArrayValue.of(testValues);
+        let instance = reflect.Value.of(testValues);
         let arrayValue = instance as ArrayValue;
         expect(arrayValue.getLength()).assertEqual(3);
         done();
@@ -1941,7 +1941,7 @@ export default function valueBasicTest(): void {
         
         console.log(domain, tag, '%{public}s', 'test010 start');
         let testValues: FixedArray<number | string> = [123, "abc", 456, "def"];
-        let instance = ArrayValue.of(testValues);
+        let instance = reflect.Value.of(testValues);
         let arrayValue = instance as ArrayValue;
         expect(arrayValue.getLength()).assertEqual(4);
         done();
@@ -1963,7 +1963,7 @@ export default function valueBasicTest(): void {
         let testValues1: FixedArray<number> = [123, 456, 789];
         let testValues2: FixedArray<string> = ["apple", "banana", "cherry"];
         let instance1 = ArrayValue.of(testValues1);
-        let instance2 = ArrayValue.of(testValues2);
+        let instance2 = reflect.Value.of(testValues2);
         let arrayValue1 = instance1 as ArrayValue;
         let arrayValue2 = instance2 as ArrayValue;
         expect(arrayValue1.getLength()).assertEqual(3);
@@ -2025,7 +2025,7 @@ export default function valueBasicTest(): void {
         
         console.log(domain, tag, '%{public}s', 'test015 start');
         let testValues: FixedArray<number | null> = [null, 200, null, 400, null];
-        let instance = ArrayValue.of(testValues);
+        let instance = reflect.Value.of(testValues);
         let arrayValue = instance as ArrayValue;
         expect(arrayValue.getLength()).assertEqual(5);
         done();
@@ -2045,7 +2045,7 @@ export default function valueBasicTest(): void {
         
         console.log(domain, tag, '%{public}s', 'test016 start');
         let testValues: FixedArray<string> = ["onlyElement"];
-        let instance = ArrayValue.of(testValues);
+        let instance = reflect.Value.of(testValues);
         let arrayValue = instance as ArrayValue;
         expect(arrayValue.getLength()).assertEqual(1);
         done();
@@ -2065,7 +2065,7 @@ export default function valueBasicTest(): void {
         
         console.log(domain, tag, '%{public}s', 'test017 start');
         let testValues: FixedArray<FixedArray<FixedArray<number>>> = [[[1]], [[2, 3]], [[4, 5, 6]], [[7]]];
-        let instance = ArrayValue.of(testValues);
+        let instance = reflect.Value.of(testValues);
         let arrayValue = instance as ArrayValue;
         expect(arrayValue.getLength()).assertEqual(4);
         done();

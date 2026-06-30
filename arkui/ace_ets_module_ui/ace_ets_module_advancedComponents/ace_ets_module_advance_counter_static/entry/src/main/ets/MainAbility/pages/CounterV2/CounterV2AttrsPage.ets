@@ -25,7 +25,7 @@ import {
   Margin,
   State,
   CounterV2Options,
-  CounterV2DateData
+  CounterV2DateData,
 } from '@kit.ArkUI';
 
 @Entry

@@ -2390,6 +2390,11 @@ export default function AssetBatchUpdateTest() {
         let result: asset.BatchResult = await asset.batchUpdate(sourceArray, destArray);
         expect(result.failedCount).assertEqual(1);
         expect(result.failedErrorInfos.length).assertEqual(1);
+        let errInfo: asset.BatchErrInfo = result.failedErrorInfos[0];
+        expect(errInfo.index).assertEqual(0);
+        expect(errInfo.errCode).assertEqual(24000002);
+        expect(typeof errInfo.message).assertEqual('string');
+        expect(errInfo.message.length > 0).assertTrue();
       } catch (err) {
         Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();

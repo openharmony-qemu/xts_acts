@@ -13,7 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Button, Color, Row,ClickEvent,Column, ComponentV2, CounterV2Component, CounterV2Type, DateData, Direction, Entry, FlexAlign, HorizontalAlign, Margin, State,Local } from '@kit.ArkUI';
+import {
+  Button,
+  Color,
+  Row,
+  ClickEvent,
+  Column,
+  ComponentV2,
+  CounterV2Component,
+  CounterV2Type,
+  DateData,
+  Direction,
+  Entry,
+  FlexAlign,
+  HorizontalAlign,
+  Margin,
+  State,
+  Local,
+} from '@kit.ArkUI';
 
 @Entry
 @ComponentV2

@@ -89,11 +89,11 @@ it('testGridRowColItemMargin_static_01', Level.LEVEL0, async (done: () => void):
       await CommonFunc.sleep(3000);
       let firstGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPadMar01');
       let secondGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPadMar02');
-      let secondText: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPadMar_Text02');
+      let secondText: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPadMar' + '_Text02');
       let thirdGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPadMar03');
       let fourthGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPadMar04');
-      let gridContainer: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPadMar_Container01');
-      let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_ItemPadMar_Container01');
+      let gridContainer: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPadMar' + '_Container01');
+      let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_ItemPadMar' + '_Container01');
 
      expect(JSON.parseJsonElement(gridContainerStrJson).getString('$type')).assertEqual('Grid');
 
@@ -165,11 +165,11 @@ it('testGridRowColItemPadding_static_02', Level.LEVEL0, async (done: () => void)
       await CommonFunc.sleep(3000);
       let firstGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPadMar01');
       let secondGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPadMar02');
-      let secondText: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPadMar_Text02');
+      let secondText: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPadMar' + '_Text02');
       let thirdGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPadMar03');
       let fourthGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPadMar04');
-      let gridContainer: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPadMar_Container01');
-      let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_ItemPadMar_Container01');
+      let gridContainer: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPadMar' + '_Container01');
+      let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_ItemPadMar' + '_Container01');
 
       expect(JSON.parseJsonElement(gridContainerStrJson).getString('$type')).assertEqual('Grid');
       expect(Math.abs(secondText.left - secondGridItem.left - UIContext.resolveUIContext()!.vp2px(10)) <= 1)
@@ -233,11 +233,11 @@ it('testGridRowColItemMarPad_static_03', Level.LEVEL0, async (done: () => void):
       await CommonFunc.sleep(3000);
       let firstGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPadMar01');
       let secondGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPadMar02');
-      let secondText: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPadMar_Text02');
+      let secondText: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPadMar' + '_Text02');
       let thirdGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPadMar03');
       let fourthGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPadMar04');
-      let gridContainer: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPadMar_Container01');
-      let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_ItemPadMar_Container01');
+      let gridContainer: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPadMar' + '_Container01');
+      let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_ItemPadMar' + '_Container01');
 
      expect(JSON.parseJsonElement(gridContainerStrJson).getString('$type')).assertEqual('Grid');
 

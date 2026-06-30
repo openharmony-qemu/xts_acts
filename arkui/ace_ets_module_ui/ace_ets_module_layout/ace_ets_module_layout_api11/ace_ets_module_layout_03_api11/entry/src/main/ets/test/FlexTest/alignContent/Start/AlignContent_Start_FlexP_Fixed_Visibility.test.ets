@@ -65,17 +65,17 @@ export default function AlignContent_Start_FlexP_Fixed_Visibility() {
         name: 'visibility', value: Visibility.Hidden
       })
       await CommonFunc.sleep(3000)
-      let strJson = getInspectorByKey('AlignContent_Start_FlexP_Fixed_Visibility_flex001');
+      let strJson = getInspectorByKey('AlignContent_Start_FlexP_Fixed_Visibility' + '_flex001');
 
-      let textStrJson = getInspectorByKey('AlignContent_Start_FlexP_Fixed_Visibility_1');
+      let textStrJson = getInspectorByKey('AlignContent_Start_FlexP_Fixed_Visibility' + '_1');
 
       console.info('flex [getInspectorByKey] is:' + JSON.stringify(JSON.parse(strJson)));
       console.info('flex obj.$attrs.constructor is:' + JSON.stringify(JSON.parse(strJson).$attrs.constructor));
       let AlignContentFlexStart_flex001: RectValue =
-      CommonFunc.getComponentRect('AlignContent_Start_FlexP_Fixed_Visibility_flex001');
-      let AlignContentFlexStart_2: RectValue = CommonFunc.getComponentRect('AlignContent_Start_FlexP_Fixed_Visibility_2');
-      let AlignContentFlexStart_3: RectValue = CommonFunc.getComponentRect('AlignContent_Start_FlexP_Fixed_Visibility_3');
-      let AlignContentFlexStart_4: RectValue = CommonFunc.getComponentRect('AlignContent_Start_FlexP_Fixed_Visibility_4');
+      CommonFunc.getComponentRect('AlignContent_Start_FlexP_Fixed_Visibility' + '_flex001');
+      let AlignContentFlexStart_2: RectValue = CommonFunc.getComponentRect('AlignContent_Start_FlexP_Fixed_Visibility' + '_2');
+      let AlignContentFlexStart_3: RectValue = CommonFunc.getComponentRect('AlignContent_Start_FlexP_Fixed_Visibility' + '_3');
+      let AlignContentFlexStart_4: RectValue = CommonFunc.getComponentRect('AlignContent_Start_FlexP_Fixed_Visibility' + '_4');
 
       console.log('AlignContent_Start_FlexP_Fixed_Visibility_flex001 rect_value is:' +
       JSON.stringify(AlignContentFlexStart_flex001));
@@ -127,15 +127,15 @@ export default function AlignContent_Start_FlexP_Fixed_Visibility() {
         name: 'visibility', value: Visibility.None
       })
       await CommonFunc.sleep(3000)
-      let strJson = getInspectorByKey('AlignContent_Start_FlexP_Fixed_Visibility_flex001');
+      let strJson = getInspectorByKey('AlignContent_Start_FlexP_Fixed_Visibility' + '_flex001');
 
-      let textStrJson = getInspectorByKey('AlignContent_Start_FlexP_Fixed_Visibility_1');
+      let textStrJson = getInspectorByKey('AlignContent_Start_FlexP_Fixed_Visibility' + '_1');
 
       let AlignContentFlexStart_flex002: RectValue =
-      CommonFunc.getComponentRect('AlignContent_Start_FlexP_Fixed_Visibility_flex001');
-      let AlignContentFlexStart_2: RectValue = CommonFunc.getComponentRect('AlignContent_Start_FlexP_Fixed_Visibility_2');
-      let AlignContentFlexStart_3: RectValue = CommonFunc.getComponentRect('AlignContent_Start_FlexP_Fixed_Visibility_3');
-      let AlignContentFlexStart_4: RectValue = CommonFunc.getComponentRect('AlignContent_Start_FlexP_Fixed_Visibility_4');
+      CommonFunc.getComponentRect('AlignContent_Start_FlexP_Fixed_Visibility' + '_flex001');
+      let AlignContentFlexStart_2: RectValue = CommonFunc.getComponentRect('AlignContent_Start_FlexP_Fixed_Visibility' + '_2');
+      let AlignContentFlexStart_3: RectValue = CommonFunc.getComponentRect('AlignContent_Start_FlexP_Fixed_Visibility' + '_3');
+      let AlignContentFlexStart_4: RectValue = CommonFunc.getComponentRect('AlignContent_Start_FlexP_Fixed_Visibility' + '_4');
 
       console.log('AlignContent_Start_FlexP_Fixed_Visibility_flex001 rect_value is:' +
       JSON.stringify(AlignContentFlexStart_flex002))

@@ -34,7 +34,7 @@ import events_emitter from '@ohos.events.emitter'
 import { BusinessError } from '@ohos.base';
 import Utils from '../../../ets/MainAbility/common/Utils';
 
-export default function bindContextMenuTest() {
+export default function bindContextMenuTest(): void {
   describe('bindContextMenuTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("bindContextMenuTest beforeAll start");

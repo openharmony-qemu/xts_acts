@@ -13,31 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Component,
-  Column,
-  Text,
-  Margin,
-  ColumnOptions,
-  ContentSlot,
-  IDataSource,
-  DataChangeListener,
-  DataOperation,
-  Visibility,
-  Scroll,
-  List,
-  LazyForEach,
-  Row,
-  ListItem,
-  Margin,
-  Color
-} from '@ohos.arkui.component'
+import { Entry, Component, Column, Text, Margin, ColumnOptions, ContentSlot, IDataSource, DataChangeListener, DataOperation, Visibility, Scroll, List, LazyForEach, Row, ListItem, Color } from '@ohos.arkui.component';
 import { CommonView } from '../componet/CommonView';
 import { Content, NodeContent } from '@ohos.arkui.node';
 import { State } from '@ohos.arkui.stateManagement';
-import {LibUtil} from '../LibUtil'
-
+import { LibUtil } from '../LibUtil';
 export class BasicDataSource implements IDataSource<string> {
   private listeners: DataChangeListener[] = [];
   private originDataArray: string[] = [];

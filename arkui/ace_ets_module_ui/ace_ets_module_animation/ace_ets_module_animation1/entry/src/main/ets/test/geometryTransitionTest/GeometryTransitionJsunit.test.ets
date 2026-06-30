@@ -66,7 +66,7 @@ export default function geometryTransitionJsunit() {
       } catch (err) {
         console.info("geometryTransitionTest_0100 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("geometryTransitionTest_0100 click result is: " + JSON.stringify(sendEventByKey('button', 10, "")));
+      console.info("geometryTransitionTest_0100 click result is: " + JSON.stringify(sendEventByKey('geometryTransition2_button', 10, "")));
       await Utils.sleep(1000);
       console.info('geometryTransitionTest_0100 END');
       done();

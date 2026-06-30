@@ -65,17 +65,17 @@ export default function AlignContentFlexP_Fixed_Visibility() {
         name: 'visibility', value: Visibility.Hidden
       })
       await CommonFunc.sleep(3000)
-      let strJson = getInspectorByKey('AlignContentFlexP_Fixed_Visibility_flex');
+      let strJson = getInspectorByKey('AlignContentFlexP_Fixed_Visibility' + '_flex');
 
-      let textStrJson = getInspectorByKey('AlignContentFlexP_Fixed_Visibility_1');
+      let textStrJson = getInspectorByKey('AlignContentFlexP_Fixed_Visibility' + '_1');
 
       console.info('flex [getInspectorByKey] is:' + JSON.stringify(JSON.parse(strJson)));
       console.info('flex obj.$attrs.constructor is:' + JSON.stringify(JSON.parse(strJson).$attrs.constructor));
       console.info('text1 textObj.$attrs.constructor is:' + JSON.stringify(JSON.parse(textStrJson).$attrs.constructor));
-      let AlignContentFlexSpaceEvenly_flex001: RectValue = CommonFunc.getComponentRect('AlignContentFlexP_Fixed_Visibility_flex');
-      let AlignContentFlexSpaceEvenly_2: RectValue = CommonFunc.getComponentRect('AlignContentFlexP_Fixed_Visibility_2');
-      let AlignContentFlexSpaceEvenly_3: RectValue = CommonFunc.getComponentRect('AlignContentFlexP_Fixed_Visibility_3');
-      let AlignContentFlexSpaceEvenly_4: RectValue = CommonFunc.getComponentRect('AlignContentFlexP_Fixed_Visibility_4');
+      let AlignContentFlexSpaceEvenly_flex001: RectValue = CommonFunc.getComponentRect('AlignContentFlexP_Fixed_Visibility' + '_flex');
+      let AlignContentFlexSpaceEvenly_2: RectValue = CommonFunc.getComponentRect('AlignContentFlexP_Fixed_Visibility' + '_2');
+      let AlignContentFlexSpaceEvenly_3: RectValue = CommonFunc.getComponentRect('AlignContentFlexP_Fixed_Visibility' + '_3');
+      let AlignContentFlexSpaceEvenly_4: RectValue = CommonFunc.getComponentRect('AlignContentFlexP_Fixed_Visibility' + '_4');
 
       console.log('AlignContentFlexP_Fixed_Visibility_flex001 rect_value is:' +
       JSON.stringify(AlignContentFlexSpaceEvenly_flex001));
@@ -129,15 +129,15 @@ export default function AlignContentFlexP_Fixed_Visibility() {
         name: 'visibility', value: Visibility.None
       })
       await CommonFunc.sleep(3000)
-      let strJson = getInspectorByKey('AlignContentFlexP_Fixed_Visibility_flex');
+      let strJson = getInspectorByKey('AlignContentFlexP_Fixed_Visibility' + '_flex');
 
-      let textStrJson = getInspectorByKey('AlignContentFlexP_Fixed_Visibility_1');
+      let textStrJson = getInspectorByKey('AlignContentFlexP_Fixed_Visibility' + '_1');
 
       console.info('text1 textObj.$attrs.constructor is:' + JSON.stringify(JSON.parse(textStrJson).$attrs.constructor));
-      let AlignContentFlexSpaceEvenly_flex002: RectValue = CommonFunc.getComponentRect('AlignContentFlexP_Fixed_Visibility_flex');
-      let AlignContentFlexSpaceEvenly_2: RectValue = CommonFunc.getComponentRect('AlignContentFlexP_Fixed_Visibility_2');
-      let AlignContentFlexSpaceEvenly_3: RectValue = CommonFunc.getComponentRect('AlignContentFlexP_Fixed_Visibility_3');
-      let AlignContentFlexSpaceEvenly_4: RectValue = CommonFunc.getComponentRect('AlignContentFlexP_Fixed_Visibility_4');
+      let AlignContentFlexSpaceEvenly_flex002: RectValue = CommonFunc.getComponentRect('AlignContentFlexP_Fixed_Visibility' + '_flex');
+      let AlignContentFlexSpaceEvenly_2: RectValue = CommonFunc.getComponentRect('AlignContentFlexP_Fixed_Visibility' + '_2');
+      let AlignContentFlexSpaceEvenly_3: RectValue = CommonFunc.getComponentRect('AlignContentFlexP_Fixed_Visibility' + '_3');
+      let AlignContentFlexSpaceEvenly_4: RectValue = CommonFunc.getComponentRect('AlignContentFlexP_Fixed_Visibility' + '_4');
 
       console.log('AlignContentFlexP_Fixed_Visibility_flex002 rect_value is:' +
       JSON.stringify(AlignContentFlexSpaceEvenly_flex002))

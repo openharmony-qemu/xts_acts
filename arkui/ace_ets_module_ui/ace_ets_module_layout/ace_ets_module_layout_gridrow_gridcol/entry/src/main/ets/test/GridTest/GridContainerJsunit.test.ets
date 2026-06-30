@@ -64,7 +64,7 @@ export default function gridContainerJsunit() {
      */
     it('testGridContainer010',  Level.LEVEL0, async (done: Function) => {
       console.info('new GridContainer0 START');
-      let strJson = getInspectorByKey('gridContainer');
+      let strJson = getInspectorByKey('GridContainer' + '_gridContainer');
       let obj: ESObject = JSON.parse(strJson);
       console.info("component obj is: " + JSON.stringify(obj));
       expect(obj.$type).assertEqual('GridContainer');

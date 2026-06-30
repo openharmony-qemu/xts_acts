@@ -567,7 +567,7 @@ export default function ArrayConstructor2Test(): void {
      */
     it('testArrayConstructor2027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const emptyArr = new Array<number>();
-      const sizedArr = new Array<number>(100);
+      const sizedArr = Array.create<number>(1, 100);
       expect(sizedArr.length).assertEqual(1);
       expect(sizedArr[0]).assertEqual(100);
       for (let i = 0; i < sizedArr.length; i++) {
@@ -612,7 +612,7 @@ export default function ArrayConstructor2Test(): void {
         dynamicArr.pushOne(i);
       }
 
-      const fixedArr = new Array<number>(100);
+      const fixedArr = Array.create<number>(1, 100);
       expect(fixedArr.length).assertEqual(1);
       expect(fixedArr[0]).assertEqual(100);
       for (let i = 0; i < fixedArr.length; i++) {

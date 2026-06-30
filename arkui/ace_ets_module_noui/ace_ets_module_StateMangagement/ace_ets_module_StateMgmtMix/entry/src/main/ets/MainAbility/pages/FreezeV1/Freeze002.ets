@@ -99,6 +99,7 @@ struct LForEachTest02 {
   @Provide count: number = 0;
   private scroller: ListScroller = new ListScroller();
   @Provide freezeChangeCount: number = 0
+  @Provide handledCountMap: Record<string, number> = {}
 
   aboutToAppear() {
     for (let i = 0; i < 8; i++) {
@@ -125,14 +126,14 @@ struct LForEachTest02 {
             .width('30%')
             .height('5%')
             .onClick(() => {
-              this.scroller.scrollEdge(Edge.Bottom, { velocity: 2000 })
+              this.scroller.scrollToIndex(7, true, ScrollAlign.END)
             })
           Button('ScrollerToTop')
             .id('btnToTop')
             .width('30%')
             .height('5%')
             .onClick(() => {
-              this.scroller.scrollEdge(Edge.Top, { velocity: 2000 })
+              this.scroller.scrollToIndex(0, true, ScrollAlign.START)
             })
         }
       }
@@ -147,8 +148,9 @@ struct LForEachTest02 {
           .height('20%')
         }, (item: string) => item)
       }
+      .id('freezeList')
       .layoutWeight(1)
-      .cachedCount(5)
+      .cachedCount(0)
 
       Blank().height('5%')
     }
@@ -160,10 +162,19 @@ struct LForEachTest02 {
 struct FreezeChild02 {
   @Consume @Watch('onMessageUpdated02') count: number;
   @Consume freezeChangeCount: number
+  @Consume handledCountMap: Record<string, number>
   private item: string = '';
 
+  aboutToAppear() {
+    this.onMessageUpdated02();
+  }
+
   onMessageUpdated02() {
-    // 用于计数触发了几次解冻回调
+    let last = this.handledCountMap[this.item] ?? 0;
+    if (this.count === last) {
+      return;
+    }
+    this.handledCountMap[this.item] = this.count;
     this.freezeChangeCount++
     console.info(`${this.count}${this.item}`)
   }

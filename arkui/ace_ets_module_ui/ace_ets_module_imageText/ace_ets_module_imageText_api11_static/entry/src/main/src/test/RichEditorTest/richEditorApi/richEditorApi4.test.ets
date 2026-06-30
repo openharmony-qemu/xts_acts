@@ -96,7 +96,7 @@ export default function richEditorApi4() {
       await (btn2?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
-      let text1 = inspector.getInspectorByKey('richEditorApi4_text1');
+      let text1 = inspector.getInspectorByKey('richEditorApi4' + '_text1');
       let obj1 = JSON.parseJsonElement(text1);
 
       let content  = JSON.parseJsonElement(obj1.getElement('$attrs').getString('content'));

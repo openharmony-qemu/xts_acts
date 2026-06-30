@@ -1,4 +1,4 @@
-﻿'use static';
+'use static';
 import StyledStringTest from './StyledStringTest/StyledString.test';
 import CustomSpanMeasureInfoTest from './StyledStringTest/CustomSpanMeasureInfo.test';
 import StyledStringFontVariationsTest from './StyledStringTest/StyledStringFontVariations.test';
@@ -6,6 +6,7 @@ import LineHeightStyleTest from './StyledStringTest/LineHeightStyle.test';
 import LineSpacingStyleTest from './StyledStringTest/LineSpacingStyle.test';
 import StyledStringShaderStyleTest from './StyledString26Test/StyledStringShaderStyle.test';
 import StyledStringStrokeJoinStyleTest from './StyledString26Test/StyledStringStrokeJoinStyle.test';
+import ParagraphStyleTailIndentsTest from './StyledString26Test/ParagraphStyleTailIndents.test';
 
 export default function testsuite() {
   StyledStringTest();
@@ -15,4 +16,5 @@ export default function testsuite() {
   LineSpacingStyleTest();
   StyledStringShaderStyleTest();
   StyledStringStrokeJoinStyleTest();
+  ParagraphStyleTailIndentsTest();
 }

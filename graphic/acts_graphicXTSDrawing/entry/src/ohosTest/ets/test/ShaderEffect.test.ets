@@ -277,9 +277,10 @@ export default function shadowEffectTest() {
         let matrix = new drawing.Matrix();
         let shaderEffect = drawing.ShaderEffect.createLinearGradient(null, {x : 300.1, y : 300.1},
           [ 0xFF00FF00, 0xFFFF0000 ], drawing.TileMode.REPEAT, [0.1,0.9], matrix);
-        console.info(msg + ` createLinearGradient create successed,shaderEffect:` + JSON.stringify(shaderEffect));
+        console.info(msg + ` createLinearGradient 1 create successed,shaderEffect:` + JSON.stringify(shaderEffect));
+        expect().assertFail();
       } catch( e ) {
-        console.info(msg + ` createLinearGradient errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        console.info(msg + ` createLinearGradient 1 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect(e.code).assertEqual(401);
       }
 
@@ -287,27 +288,28 @@ export default function shadowEffectTest() {
         let matrix = new drawing.Matrix();
         let shaderEffect = drawing.ShaderEffect.createLinearGradient({x : 100.1, y : 100.1}, null,
           [ 0xFF00FF00, 0xFFFF0000 ], drawing.TileMode.REPEAT, [0.1,0.9], matrix);
-        console.info(msg + ` createLinearGradient create successed,shaderEffect:` + JSON.stringify(shaderEffect));
+        console.info(msg + ` createLinearGradient 2 create successed,shaderEffect:` + JSON.stringify(shaderEffect));
+        expect().assertFail();
       } catch( e ) {
-        console.info(msg + ` create errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        console.info(msg + ` create 2 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect(e.code).assertEqual(401);
       }
-
       try {
         let matrix = new drawing.Matrix();
         let shaderEffect = drawing.ShaderEffect.createLinearGradient({x : 100.1, y : 100.1}, {x : 300.1, y : 300.1},
           null, drawing.TileMode.REPEAT, [0.1,0.9], matrix);
-        console.info(msg + ` createLinearGradient create successed,shaderEffect:` + JSON.stringify(shaderEffect));
+        console.info(msg + ` createLinearGradient 3 create successed,shaderEffect:` + JSON.stringify(shaderEffect));
       } catch( e ) {
-        console.info(msg + ` create errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + ` create 3 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect().assertFail();
       }
       try {
         let shaderEffect = drawing.ShaderEffect.createLinearGradient({x : 100.1, y : 100.1}, {x : 300.1, y : 300.1},
           [ 0xFF00FF00, 0xFFFF0000 ], null, null, null);
-        console.info(msg + ` createLinearGradient create successed,shaderEffect:` + JSON.stringify(shaderEffect));
+        console.info(msg + ` createLinearGradient create 4 successed,shaderEffect:` + JSON.stringify(shaderEffect));
+        expect().assertFail();
       } catch( e ) {
-        console.info(msg + ` create errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        console.info(msg + ` create 4 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect(e.code).assertEqual(401);
       }
 
@@ -315,9 +317,10 @@ export default function shadowEffectTest() {
         let matrix = new drawing.Matrix();
         let shaderEffect = drawing.ShaderEffect.createLinearGradient(undefined, {x: 300.1, y: 300.1},
           [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT,[0.1,0.9], matrix);
-        console.info(msg + ` createLinearGradient create successed,shaderEffect:` + JSON.stringify(shaderEffect));
+        console.info(msg + ` createLinearGradient create 5 successed,shaderEffect:` + JSON.stringify(shaderEffect));
+        expect().assertFail();
       } catch( e ) {
-        console.info(msg + ` create errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        console.info(msg + ` create 5 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect(e.code).assertEqual(401);
       }
 
@@ -325,9 +328,10 @@ export default function shadowEffectTest() {
         let matrix = new drawing.Matrix();
         let shaderEffect = drawing.ShaderEffect.createLinearGradient({x: 100.1, y: 100.1}, undefined,
           [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT,[0.1,0.9], matrix);
-        console.info(msg + ` createLinearGradient create successed,shaderEffect:` + JSON.stringify(shaderEffect));
+        console.info(msg + ` createLinearGradient create 6 successed,shaderEffect:` + JSON.stringify(shaderEffect));
+        expect().assertFail();
       } catch( e ) {
-        console.info(msg + ` create errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        console.info(msg + ` create 6 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect(e.code).assertEqual(401);
       }
 
@@ -335,37 +339,40 @@ export default function shadowEffectTest() {
         let matrix = new drawing.Matrix();
         let shaderEffect = drawing.ShaderEffect.createLinearGradient({x: 100.1, y: 100.1}, {x: 300.1, y: 300.1},
           undefined, drawing.TileMode.REPEAT,[0.1,0.9], matrix);
-        console.info(msg + ` createLinearGradient create successed,shaderEffect:` + JSON.stringify(shaderEffect));
+        console.info(msg + ` createLinearGradient create 7 successed,shaderEffect:` + JSON.stringify(shaderEffect));
       } catch( e ) {
-        console.info(msg + ` create errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + ` create 7 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect().assertFail();
       }
 
       try {
         let shaderEffect = drawing.ShaderEffect.createLinearGradient({x: 100.1, y: 100.1}, {x: 300.1, y: 300.1},
           [0xFF00FF00, 0xFFFF0000], undefined,null, null);
-        console.info(msg + ` createLinearGradient create successed,shaderEffect:` + JSON.stringify(shaderEffect));
+        console.info(msg + ` createLinearGradient create 8 successed,shaderEffect:` + JSON.stringify(shaderEffect));
+        expect().assertFail();
       } catch( e ) {
-        console.info(msg + ` create errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        console.info(msg + ` create 8 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect(e.code).assertEqual(401);
       }
 
       try {
         let matrix = new drawing.Matrix();
         let shaderEffect = drawing.ShaderEffect.createLinearGradient({x: 100.1, y: 100.1}, {x: 300.1, y: 300.1},
-        [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT,undefined, matrix);
-        console.info(msg + ` createLinearGradient create successed,shaderEffect:` + JSON.stringify(shaderEffect));
+          [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT,undefined, matrix);
+        console.info(msg + ` createLinearGradient 9 create successed,shaderEffect:` + JSON.stringify(shaderEffect));
+        expect().assertFail();
       } catch( e ) {
-        console.info(msg + ` create errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        console.info(msg + ` create 9 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect(e.code).assertEqual(401);
       }
 
       try {
         let shaderEffect = drawing.ShaderEffect.createLinearGradient({x: 100.1, y: 100.1}, {x: 300.1, y: 300.1},
           [0xFF00FF00, 0xFFFF0000], drawing.TileMode.REPEAT,[0.1,0.9], undefined);
-        console.info(msg + ` createLinearGradient create successed,shaderEffect:` + JSON.stringify(shaderEffect));
+        console.info(msg + ` createLinearGradient 10 create successed,shaderEffect:` + JSON.stringify(shaderEffect));
+        expect().assertFail();
       } catch( e ) {
-        console.info(msg + ` create errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        console.info(msg + ` create 10 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect(e.code).assertEqual(401);
       }
     });
@@ -383,26 +390,28 @@ export default function shadowEffectTest() {
 
       try {
         drawing.ShaderEffect.createLinearGradient({x : 100, y : 100}, {x : 300, y : 300}, [ 0xFF00FF00, 0xFFFF0000 ], 10);
-        console.info(msg + ' createLinearGradient successed');
+        console.info(msg + ' createLinearGradient 1 successed');
+        expect().assertFail();
       } catch( e ) {
-        console.info(msg + ` createLinearGradient errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        console.info(msg + ` createLinearGradient 1 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect(e.code).assertEqual(401);
       }
 
+      //------需要跟开发确认--接口执行成功了
       try {
         drawing.ShaderEffect.createLinearGradient({x : 100, y : 100}, {x : 300, y : 300}, [ 0xFFFFFFFF + 1, 0xFFFF0000 ], drawing.TileMode.REPEAT);
-        console.info(msg + ' createLinearGradient successed');
+        console.info(msg + ' createLinearGradient 2 successed');
       } catch( e ) {
-        console.info(msg + ` createLinearGradient errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + ` createLinearGradient 2 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect().assertFail();
       }
 
       try {
         drawing.ShaderEffect.createLinearGradient({x : 100, y : 100}, {x : 300, y : 300}, [ - 1, 0xFFFF0000 ], drawing.TileMode.REPEAT);
-        console.info(msg + ' createLinearGradient successed');
+        console.info(msg + ' createLinearGradient 3 successed');
       } catch( e ) {
-        console.info(msg + ` createLinearGradient errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + ` createLinearGradient 3 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect().assertFail();
       }
     });
 

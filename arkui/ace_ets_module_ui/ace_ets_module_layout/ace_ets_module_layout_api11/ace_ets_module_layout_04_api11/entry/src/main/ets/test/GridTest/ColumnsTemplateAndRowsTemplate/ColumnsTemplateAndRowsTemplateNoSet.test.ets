@@ -60,8 +60,8 @@ export default function ColumnsTemplateAndRowsTemplateNoSet() {
       await CommonFunc.sleep(2000);
 
       console.log('get Initial value')
-      let GridItem_01: RectValue = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplateNoSet_GridItem_01');
-      let Grid_1: RectValue = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplateNoSet_Grid_1');
+      let GridItem_01: RectValue = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplateNoSet' + '_GridItem_01');
+      let Grid_1: RectValue = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplateNoSet' + '_Grid_1');
 
       console.log('assert position')
       expect(GridItem_01.left).assertEqual(Grid_1.left);

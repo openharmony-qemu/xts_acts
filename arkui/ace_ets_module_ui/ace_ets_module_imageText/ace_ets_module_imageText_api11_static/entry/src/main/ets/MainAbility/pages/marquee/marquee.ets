@@ -54,7 +54,7 @@ struct MarqueeExample {
         fromStart: this.fromStart,
         src: this.src
       })
-        .key('marquee')
+        .key('marquee_marquee')
         .fontColor(this.fontColor)
         .colorBlend(Color.Green)
         .fontSize(this.fontSize)
@@ -121,7 +121,7 @@ struct MarqueeExample {
           }
         })
       Button('start')
-        .key('button')
+        .key('marquee_button')
         .onClick((e: ClickEvent) => {
           this.start = true
           try {

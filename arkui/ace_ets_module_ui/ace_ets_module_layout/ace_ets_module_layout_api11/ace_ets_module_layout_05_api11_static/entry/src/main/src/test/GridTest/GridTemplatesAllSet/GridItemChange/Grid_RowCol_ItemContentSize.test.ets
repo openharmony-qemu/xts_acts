@@ -87,11 +87,11 @@ it('testGridRowColItemContentSize_static_01', Level.LEVEL0, async (done: () => v
       await CommonFunc.sleep(3000);
       let firstGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemContentSize01');
       let secondGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemContentSize02');
-      let secondGridItemText: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemContentSize_Text02');
+      let secondGridItemText: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemContentSize' + '_Text02');
       let thirdGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemContentSize03');
       let fourthGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemContentSize04');
-      let gridContainer: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemContentSize_Container01');
-      let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_ItemContentSize_Container01');
+      let gridContainer: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemContentSize' + '_Container01');
+      let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_ItemContentSize' + '_Container01');
 
      expect(JSON.parseJsonElement(gridContainerStrJson).getString('$type')).assertEqual('Grid');
 

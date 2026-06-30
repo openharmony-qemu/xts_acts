@@ -26,7 +26,7 @@ import { UtilsTest } from '../Util.test';
 
 const SLEEP_TIME = 1000;
 
-export default function GetStateTest() {
+export default function GetStateTest(): void {
   describe('GetStateTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("GetStateTest beforeAll start");

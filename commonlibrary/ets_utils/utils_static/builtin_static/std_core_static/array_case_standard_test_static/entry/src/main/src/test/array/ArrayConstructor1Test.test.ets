@@ -65,7 +65,7 @@ export default function ArrayConstructor1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayConstructor1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(5);
+      const arr = Array.create<int>(1, 5);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(5);
       expect(JSON.stringify(arr)).assertEqual('[5]');
@@ -80,7 +80,7 @@ export default function ArrayConstructor1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayConstructor1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(0);
+      const arr = Array.create<int>(1, 0);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(0);
     });
@@ -94,7 +94,7 @@ export default function ArrayConstructor1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayConstructor1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(1);
+      const arr = Array.create<int>(1, 1);
       expect(arr.length).assertEqual(1);
     });
 
@@ -107,7 +107,7 @@ export default function ArrayConstructor1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayConstructor1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(2147483647);
+      const arr = Array.create<int>(1, 2147483647);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(2147483647);
     });
@@ -121,7 +121,7 @@ export default function ArrayConstructor1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayConstructor1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>((1e1).toInt());
+      const arr = Array.create<int>(1, (1e1).toInt());
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(10);
     });
@@ -135,7 +135,7 @@ export default function ArrayConstructor1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayConstructor1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(0o12);
+      const arr = Array.create<int>(1, 0o12);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(10);
     });
@@ -149,7 +149,7 @@ export default function ArrayConstructor1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayConstructor1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(5);
+      const arr = Array.create<int>(1, 5);
       expect(arr instanceof Array).assertTrue();
     });
 
@@ -179,7 +179,7 @@ export default function ArrayConstructor1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayConstructor1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(10);
+      const arr = Array.create<int>(1, 10);
       expect(arr instanceof Array).assertTrue();
     });
 
@@ -192,7 +192,7 @@ export default function ArrayConstructor1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayConstructor1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(5);
+      const arr = Array.create<int>(1, 5);
       arr[0] = 10;
       const val: int = arr[0];
       expect(val).assertEqual(10);
@@ -207,7 +207,7 @@ export default function ArrayConstructor1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayConstructor1011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(3);
+      const arr = Array.create<int>(1, 3);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(3);
       arr[0] = 10;
@@ -223,7 +223,7 @@ export default function ArrayConstructor1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayConstructor1012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(100);
+      const arr = Array.create<int>(1, 100);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(100);
       for (let i = 0; i < arr.length; i++) {
@@ -241,7 +241,7 @@ export default function ArrayConstructor1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayConstructor1013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(5);
+      const arr = Array.create<int>(1, 5);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(5);
       for (let i = 0; i < arr.length; i++) {
@@ -338,7 +338,7 @@ export default function ArrayConstructor1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayConstructor1019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(10000);
+      const arr = Array.create<int>(1, 10000);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(10000);
       for (let i = 0; i < arr.length; i++) {
@@ -356,7 +356,7 @@ export default function ArrayConstructor1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayConstructor1020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(10000000);
+      const arr = Array.create<int>(1, 10000000);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(10000000);
     });
@@ -370,13 +370,13 @@ export default function ArrayConstructor1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayConstructor1021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr1 = new Array<int>(3);
+      const arr1 = Array.create<int>(1, 3);
       expect(arr1.length).assertEqual(1);
       expect(arr1[0]).assertEqual(3);
-      const arr2 = new Array<int>(5);
+      const arr2 = Array.create<int>(1, 5);
       expect(arr2.length).assertEqual(1);
       expect(arr2[0]).assertEqual(5);
-      const arr3 = new Array<int>(7);
+      const arr3 = Array.create<int>(1, 7);
       expect(arr3.length).assertEqual(1);
       expect(arr3[0]).assertEqual(7);
 
@@ -401,7 +401,7 @@ export default function ArrayConstructor1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayConstructor1022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(1);
+      const arr = Array.create<int>(1, 1);
       expect(arr.length).assertEqual(1);
       arr[0] = 42;
       expect(arr[0]).assertEqual(42);
@@ -416,7 +416,7 @@ export default function ArrayConstructor1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayConstructor1023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(100);
+      const arr = Array.create<int>(1, 100);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(100);
       for (let i = 0; i < arr.length; i++) {
@@ -436,7 +436,7 @@ export default function ArrayConstructor1Test(): void {
      */
     it('testArrayConstructor1024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const size = 1000;
-      const arr = new Array<int>(size);
+      const arr = Array.create<int>(1, size);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(size);
 
@@ -460,7 +460,7 @@ export default function ArrayConstructor1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayConstructor1025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(-10);
+      const arr = Array.create<int>(1, -10);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(-10);
     });
@@ -474,7 +474,7 @@ export default function ArrayConstructor1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayConstructor1026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(5);
+      const arr = Array.create<int>(1, 5);
       for (let i = 0; i < arr.length; i++) {
         arr[i] = 0;
       }
@@ -490,7 +490,7 @@ export default function ArrayConstructor1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayConstructor1027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr1 = new Array<int>(5);
+      const arr1 = Array.create<int>(1, 5);
       expect(arr1.length).assertEqual(1);
       expect(arr1[0]).assertEqual(5);
 
@@ -510,7 +510,7 @@ export default function ArrayConstructor1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayConstructor1028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(NaN);
+      const arr = Array.create<number>(1, NaN);
       expect(arr.length).assertEqual(1);
       expect(arr[0] != arr[0]).assertTrue();
     });
@@ -524,7 +524,7 @@ export default function ArrayConstructor1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayConstructor1029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(Infinity);
+      const arr = Array.create<number>(1, Infinity);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(Infinity);
     });
@@ -538,7 +538,7 @@ export default function ArrayConstructor1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayConstructor1030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(-Infinity);
+      const arr = Array.create<number>(1, -Infinity);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(-Infinity);
     });
@@ -552,7 +552,7 @@ export default function ArrayConstructor1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayConstructor1031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(-0);
+      const arr = Array.create<number>(1, -0);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(0);
       expect(1 / arr[0]).assertEqual(-Infinity);
@@ -568,7 +568,7 @@ export default function ArrayConstructor1Test(): void {
      */
     it('testArrayConstructor1032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = Number.MAX_SAFE_INTEGER;
-      const arr = new Array<number>(value);
+      const arr = Array.create<number>(1, value);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(value);
     });
@@ -583,7 +583,7 @@ export default function ArrayConstructor1Test(): void {
      */
     it('testArrayConstructor1033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = Number.MIN_SAFE_INTEGER;
-      const arr = new Array<number>(value);
+      const arr = Array.create<number>(1, value);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(value);
     });
@@ -598,7 +598,7 @@ export default function ArrayConstructor1Test(): void {
      */
     it('testArrayConstructor1034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = Number.MIN_VALUE;
-      const arr = new Array<number>(value);
+      const arr = Array.create<number>(1, value);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(value);
     });
@@ -613,7 +613,7 @@ export default function ArrayConstructor1Test(): void {
      */
     it('testArrayConstructor1035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = Number.EPSILON;
-      const arr = new Array<number>(value);
+      const arr = Array.create<number>(1, value);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(value);
     });

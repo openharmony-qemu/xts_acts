@@ -21,6 +21,8 @@ import isDefaultApplicationTest from './IsDefaultApplication.test.ets';
 import PublicApiEightTest from './PublicApiEightTest.test.ets';
 import PublicApiNineTest from './PublicApiNineTest.test.ets';
 import getApplicationLabel from './GetApplicationLabel.test.ets';
+import addAITestCaseTest from './addAItestcase.test.ets';
+
 
 export default function testsuite() {
   getProfileByAbility();
@@ -31,4 +33,5 @@ export default function testsuite() {
   PublicApiEightTest();
   PublicApiNineTest();
   getApplicationLabel();
+  addAITestCaseTest();
 }

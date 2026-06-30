@@ -118,7 +118,7 @@ export default function rectJsunit() {
     it('testrect__001', Level.LEVEL0, async (done: Function) => {
       console.info('testrect__001 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('rect' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
 

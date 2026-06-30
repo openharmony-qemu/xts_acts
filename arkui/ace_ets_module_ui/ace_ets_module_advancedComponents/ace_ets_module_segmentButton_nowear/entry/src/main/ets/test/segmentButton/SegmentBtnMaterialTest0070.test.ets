@@ -27,6 +27,7 @@ import {
   WindowMode,
   PointerMatrix
 } from '@ohos.UiTest';
+import Utils, { InspectorNode } from '../Utils';
 import CommonFunc from '../../MainAbility/common/Common';
 
 export default function SegmentBtnMaterialTest0070() {
@@ -37,10 +38,10 @@ export default function SegmentBtnMaterialTest0070() {
         url: "MainAbility/pages/segmentButton/SegmentBtnMaterial0070",
       }
       try {
-        router.clear();
         let pages = router.getState();
         console.info("get current pages:" + JSON.stringify(pages));
-        if (!("RepeatCloseReuse0110" == pages.name)) {
+        router.clear();
+        if (!("SegmentBtnMaterial0070" == pages.name)) {
           console.info("get SegmentBtnMaterialTest0070 pages.name:" + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -68,61 +69,42 @@ export default function SegmentBtnMaterialTest0070() {
     it('SegmentBtnMaterialTest0070_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[SegmentBtnMaterialTest0070_001] START');
       await CommonFunc.sleep(1000);
-      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree())).$children[0]
+      let root: InspectorNode = Utils.parseInspectorRoot();
+      let obj: InspectorNode = root.$children?.[0] as InspectorNode;
       await CommonFunc.sleep(1000);
-      let obj1: ESObject = JSON.parse(JSON.stringify(obj))
-        .$children[1]
-        .$children[0]
-        .$children[0]
+      let obj1: InspectorNode = Utils.navigateFromNode('SegmentBtnMaterialTest0070.test_obj1_1', obj, [1, 0, 0]);
       console.info("[SegmentBtnMaterialTest0070_001] component obj1 is: " + JSON.stringify(obj));
       expect(obj1.$attrs.systemMaterial == null).assertTrue()
-      let obj2: ESObject = JSON.parse(JSON.stringify(obj))
-        .$children[2]
-        .$children[0]
-        .$children[0]
+      let obj2: InspectorNode = Utils.navigateFromNode('SegmentBtnMaterialTest0070.test_obj2_2', obj, [2, 0, 0]);
       console.info("[SegmentBtnMaterialTest0070_001] component obj2 is: " + JSON.stringify(obj2));
       expect(obj2.$attrs.systemMaterial == null).assertTrue()
-      let obj3: ESObject = JSON.parse(JSON.stringify(obj))
-        .$children[3]
-        .$children[0]
+      let obj3: InspectorNode = Utils.navigateFromNode('SegmentBtnMaterialTest0070.test_obj3_3', obj, [3, 0]);
       console.info("[SegmentBtnMaterialTest0070_001] component obj3 is: " + JSON.stringify(obj3));
       expect(obj3.$attrs.systemMaterial == null).assertTrue()
-      let obj4: ESObject = JSON.parse(JSON.stringify(obj))
-        .$children[3]
-        .$children[1]
+      let obj4: InspectorNode = Utils.navigateFromNode('SegmentBtnMaterialTest0070.test_obj4_4', obj, [3, 1]);
       console.info("[SegmentBtnMaterialTest0070_001] component obj4 is: " + JSON.stringify(obj4));
       expect(obj4.$attrs.systemMaterial == null).assertTrue()
-      const driver = Driver.create();
+      const driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn: Component = await driver.findComponent(ON.id("btnMaterial0070"));
       await btn.click();
       console.info("[SegmentBtnMaterialTest0070_001] btn click");
       await CommonFunc.sleep(1000);
-      let obj5: ESObject = JSON.parse(JSON.stringify(getInspectorTree())).$children[0]
+      let obj5: InspectorNode = Utils.parseInspectorRoot().$children?.[0] as InspectorNode;
       await CommonFunc.sleep(1000);
-      let obj6: ESObject = JSON.parse(JSON.stringify(obj5))
-        .$children[1]
-        .$children[0]
-        .$children[0]
+      let obj6: InspectorNode = Utils.navigateFromNode('SegmentBtnMaterialTest0070.test_obj6_5', obj5, [1, 0, 0]);
       console.info("[SegmentBtnMaterialTest0070_001] component obj6 is: " + JSON.stringify(obj6));
       expect(JSON.stringify(obj6.$attrs.systemMaterial))
         .assertEqual('{"material":{"type":"MaterialType.SEMI_TRANSPARENT"}}');
-      let obj7: ESObject = JSON.parse(JSON.stringify(obj5))
-        .$children[2]
-        .$children[0]
-        .$children[0]
+      let obj7: InspectorNode = Utils.navigateFromNode('SegmentBtnMaterialTest0070.test_obj7_6', obj5, [2, 0, 0]);
       console.info("[SegmentBtnMaterialTest0070_001] component obj7 is: " + JSON.stringify(obj7));
       expect(JSON.stringify(obj7.$attrs.systemMaterial))
         .assertEqual('{"material":{"type":"MaterialType.SEMI_TRANSPARENT"}}');
-      let obj8: ESObject = JSON.parse(JSON.stringify(obj5))
-        .$children[3]
-        .$children[0]
+      let obj8: InspectorNode = Utils.navigateFromNode('SegmentBtnMaterialTest0070.test_obj8_7', obj5, [3, 0]);
       console.info("[SegmentBtnMaterialTest0070_001] component obj8 is: " + JSON.stringify(obj8));
       expect(JSON.stringify(obj8.$attrs.systemMaterial))
         .assertEqual('{"material":{"type":"MaterialType.SEMI_TRANSPARENT"}}');
-      let obj9: ESObject = JSON.parse(JSON.stringify(obj5))
-        .$children[3]
-        .$children[1]
+      let obj9: InspectorNode = Utils.navigateFromNode('SegmentBtnMaterialTest0070.test_obj9_8', obj5, [3, 1]);
       console.info("[SegmentBtnMaterialTest0070_001] component obj9 is: " + JSON.stringify(obj9));
       expect(JSON.stringify(obj9.$attrs.systemMaterial))
         .assertEqual('{"material":{"type":"MaterialType.SEMI_TRANSPARENT"}}');
@@ -130,28 +112,18 @@ export default function SegmentBtnMaterialTest0070() {
       await btn.click();
       console.info("[SegmentBtnMaterialTest0070_001] btn click");
       await CommonFunc.sleep(1000);
-      let obj10: ESObject = JSON.parse(JSON.stringify(getInspectorTree())).$children[0]
+      let obj10: InspectorNode = Utils.parseInspectorRoot().$children?.[0] as InspectorNode;
       await CommonFunc.sleep(1000);
-      let obj11: ESObject = JSON.parse(JSON.stringify(obj10))
-        .$children[1]
-        .$children[0]
-        .$children[0]
+      let obj11: InspectorNode = Utils.navigateFromNode('SegmentBtnMaterialTest0070.test_obj11_9', obj10, [1, 0, 0]);
       console.info("[SegmentBtnMaterialTest0070_001] component obj11 is: " + JSON.stringify(obj11));
       expect(obj11.$attrs.systemMaterial == null).assertTrue()
-      let obj12: ESObject = JSON.parse(JSON.stringify(obj10))
-        .$children[2]
-        .$children[0]
-        .$children[0]
+      let obj12: InspectorNode = Utils.navigateFromNode('SegmentBtnMaterialTest0070.test_obj12_10', obj10, [2, 0, 0]);
       console.info("[SegmentBtnMaterialTest0070_001] component obj12 is: " + JSON.stringify(obj12));
       expect(obj12.$attrs.systemMaterial == null).assertTrue()
-      let obj13: ESObject = JSON.parse(JSON.stringify(obj10))
-        .$children[3]
-        .$children[0]
+      let obj13: InspectorNode = Utils.navigateFromNode('SegmentBtnMaterialTest0070.test_obj13_11', obj10, [3, 0]);
       console.info("[SegmentBtnMaterialTest0070_001] component obj13 is: " + JSON.stringify(obj13));
       expect(obj13.$attrs.systemMaterial == null).assertTrue()
-      let obj14: ESObject = JSON.parse(JSON.stringify(obj10))
-        .$children[3]
-        .$children[1]
+      let obj14: InspectorNode = Utils.navigateFromNode('SegmentBtnMaterialTest0070.test_obj14_12', obj10, [3, 1]);
       console.info("[SegmentBtnMaterialTest0070_001] component obj14 is: " + JSON.stringify(obj14));
       expect(obj14.$attrs.systemMaterial == null).assertTrue()
       console.info('[SegmentBtnMaterialTest0070_001] END');

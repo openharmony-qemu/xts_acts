@@ -62,10 +62,10 @@ export default function Row_layoutWeight_flexShrink() {
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_layoutWeight_flexShrink_011: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_flexShrink_011');
-      let Row_layoutWeight_flexShrink_012: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_flexShrink_012');
-      let Row_layoutWeight_flexShrink_013: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_flexShrink_013');
-      let Row_layoutWeight_flexShrink_01: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_flexShrink_01');
+      let Row_layoutWeight_flexShrink_011: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_flexShrink' + '_011');
+      let Row_layoutWeight_flexShrink_012: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_flexShrink' + '_012');
+      let Row_layoutWeight_flexShrink_013: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_flexShrink' + '_013');
+      let Row_layoutWeight_flexShrink_01: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_flexShrink' + '_01');
 
       console.log('assert position')
       expect(Math.abs(Math.round(Row_layoutWeight_flexShrink_011.top - Row_layoutWeight_flexShrink_01.top) - Math.round(Row_layoutWeight_flexShrink_01.bottom - Row_layoutWeight_flexShrink_011.bottom)) <= 1)
@@ -118,10 +118,10 @@ export default function Row_layoutWeight_flexShrink() {
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_layoutWeight_flexShrink_011: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_flexShrink_011');
-      let Row_layoutWeight_flexShrink_012: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_flexShrink_012');
-      let Row_layoutWeight_flexShrink_013: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_flexShrink_013');
-      let Row_layoutWeight_flexShrink_01: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_flexShrink_01');
+      let Row_layoutWeight_flexShrink_011: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_flexShrink' + '_011');
+      let Row_layoutWeight_flexShrink_012: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_flexShrink' + '_012');
+      let Row_layoutWeight_flexShrink_013: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_flexShrink' + '_013');
+      let Row_layoutWeight_flexShrink_01: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_flexShrink' + '_01');
 
       console.log('assert position')
       expect(Math.abs(Math.round(Row_layoutWeight_flexShrink_011.top - Row_layoutWeight_flexShrink_01.top) - Math.round(Row_layoutWeight_flexShrink_01.bottom - Row_layoutWeight_flexShrink_011.bottom)) <= 1)
@@ -174,10 +174,10 @@ export default function Row_layoutWeight_flexShrink() {
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_layoutWeight_flexShrink_011: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_flexShrink_011');
-      let Row_layoutWeight_flexShrink_012: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_flexShrink_012');
-      let Row_layoutWeight_flexShrink_013: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_flexShrink_013');
-      let Row_layoutWeight_flexShrink_01: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_flexShrink_01');
+      let Row_layoutWeight_flexShrink_011: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_flexShrink' + '_011');
+      let Row_layoutWeight_flexShrink_012: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_flexShrink' + '_012');
+      let Row_layoutWeight_flexShrink_013: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_flexShrink' + '_013');
+      let Row_layoutWeight_flexShrink_01: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_flexShrink' + '_01');
 
       console.log('assert position')
       expect(Math.abs(Math.round(Row_layoutWeight_flexShrink_011.top - Row_layoutWeight_flexShrink_01.top) - Math.round(Row_layoutWeight_flexShrink_01.bottom - Row_layoutWeight_flexShrink_011.bottom)) <= 1)

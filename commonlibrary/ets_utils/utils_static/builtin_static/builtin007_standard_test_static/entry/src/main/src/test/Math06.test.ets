@@ -2263,7 +2263,7 @@ export default function math06Test(): void {
       async (done: () => void): Promise<void> => {
         
         console.log(domain, tag, '%{public}s', 'testBooleanString061 start');
-        const testValue = BooleanValue.of("true");
+        const testValue = reflect.Value.of("true");
         expect(testValue.toString()).assertEqual("true");
         done();
         console.log(domain, tag, '%{public}s', 'testBooleanString061 end');
@@ -2482,7 +2482,7 @@ export default function math06Test(): void {
       async (done: () => void): Promise<void> => {
         
         console.log(domain, tag, '%{public}s', 'test_array_value_of_0073 start');
-        const testValue = ArrayValue.of(new Uint8Array([0x01]));
+        const testValue = reflect.Value.of(new Uint8Array([0x01]));
         expect(testValue).not().assertNull();
         expect(testValue).not().assertUndefined();
         done();
@@ -2501,7 +2501,7 @@ export default function math06Test(): void {
       async (done: () => void): Promise<void> => {
         
         console.log(domain, tag, '%{public}s', 'test_array_value_of_0074 start');
-        const testValue = ArrayValue.of(new Uint8Array(0));
+        const testValue = reflect.Value.of(new Uint8Array(0));
         expect(testValue).not().assertNull();
         done();
         console.log(domain, tag, '%{public}s', 'test_array_value_of_0074 end');
@@ -2519,7 +2519,7 @@ export default function math06Test(): void {
       async (done: () => void): Promise<void> => {
         
         console.log(domain, tag, '%{public}s', 'test_array_value_of_0075 start');
-        const testValue = ArrayValue.of(new Uint8Array([0x01, 0x02, 0x03]));
+        const testValue = reflect.Value.of(new Uint8Array([0x01, 0x02, 0x03]));
         expect(testValue).not().assertNull();
         done();
         console.log(domain, tag, '%{public}s', 'test_array_value_of_0075 end');
@@ -2537,7 +2537,7 @@ export default function math06Test(): void {
       async (done: () => void): Promise<void> => {
         
         console.log(domain, tag, '%{public}s', 'test_array_value_of_0076 start');
-        const testValue = ArrayValue.of(new Uint8Array([0xFF]));
+        const testValue = reflect.Value.of(new Uint8Array([0xFF]));
         expect(testValue).not().assertNull();
         done();
         console.log(domain, tag, '%{public}s', 'test_array_value_of_0076 end');
@@ -2555,7 +2555,7 @@ export default function math06Test(): void {
       async (done: () => void): Promise<void> => {
         
         console.log(domain, tag, '%{public}s', 'test_char_value_of_0077 start');
-        const testValue = CharValue.of('a');
+        const testValue = reflect.Value.of('a');
         expect(testValue).not().assertNull();
         expect(testValue).not().assertUndefined();
         done();
@@ -2574,8 +2574,8 @@ export default function math06Test(): void {
       async (done: () => void): Promise<void> => {
         
         console.log(domain, tag, '%{public}s', 'test_char_value_of_0078 start');
-        const value1 = CharValue.of('x');
-        const value2 = CharValue.of('y');
+        const value1 = reflect.Value.of('x');
+        const value2 = reflect.Value.of('y');
         expect(value1 === value2).assertFalse();
         done();
         console.log(domain, tag, '%{public}s', 'test_char_value_of_0078 end');
@@ -2593,7 +2593,7 @@ export default function math06Test(): void {
       async (done: () => void): Promise<void> => {
         
         console.log(domain, tag, '%{public}s', 'test_char_value_of_0079 start');
-        const testValue = CharValue.of(' ');
+        const testValue = reflect.Value.of(' ');
         expect(testValue).not().assertNull();
         done();
         console.log(domain, tag, '%{public}s', 'test_char_value_of_0079 end');
@@ -2611,8 +2611,8 @@ export default function math06Test(): void {
       async (done: () => void): Promise<void> => {
         
         console.log(domain, tag, '%{public}s', 'test_char_value_of_0080 start');
-        const value1 = CharValue.of('z');
-        const value2 = CharValue.of('z');
+        const value1 = reflect.Value.of('z');
+        const value2 = reflect.Value.of('z');
         expect(value1).not().assertNull();
         expect(value2).not().assertNull();
         done();
@@ -2797,7 +2797,7 @@ export default function math06Test(): void {
       async (done: () => void): Promise<void> => {
         
         console.log(domain, tag, '%{public}s', 'test_float_value_of_0090 start');
-        const testValue = FloatValue.of(3.14);
+        const testValue = reflect.Value.of(3.14);
         expect(testValue).not().assertNull();
         expect(testValue).not().assertUndefined();
         done();
@@ -2816,7 +2816,7 @@ export default function math06Test(): void {
       async (done: () => void): Promise<void> => {
         
         console.log(domain, tag, '%{public}s', 'test_float_value_of_0091 start');
-        const zeroValue = FloatValue.of(0.0);
+        const zeroValue = reflect.Value.of(0.0);
         expect(zeroValue).not().assertNull();
         done();
         console.log(domain, tag, '%{public}s', 'test_float_value_of_0091 end');
@@ -2834,7 +2834,7 @@ export default function math06Test(): void {
       async (done: () => void): Promise<void> => {
         
         console.log(domain, tag, '%{public}s', 'test_float_value_of_0092 start');
-        const negativeValue = FloatValue.of(-5.67);
+        const negativeValue = reflect.Value.of(-5.67);
         expect(negativeValue).not().assertNull();
         done();
         console.log(domain, tag, '%{public}s', 'test_float_value_of_0092 end');
@@ -2852,7 +2852,7 @@ export default function math06Test(): void {
       async (done: () => void): Promise<void> => {
         
         console.log(domain, tag, '%{public}s', 'test_float_value_of_0093 start');
-        const nanValue = FloatValue.of(NaN);
+        const nanValue = reflect.Value.of(NaN);
         expect(nanValue).not().assertNull();
         done();
         console.log(domain, tag, '%{public}s', 'test_float_value_of_0093 end');
@@ -2870,7 +2870,7 @@ export default function math06Test(): void {
       async (done: () => void): Promise<void> => {
         
         console.log(domain, tag, '%{public}s', 'test_float_value_of_0094 start');
-        const infinityValue = FloatValue.of(Infinity);
+        const infinityValue = reflect.Value.of(Infinity);
         expect(infinityValue).not().assertNull();
         done();
         console.log(domain, tag, '%{public}s', 'test_float_value_of_0094 end');

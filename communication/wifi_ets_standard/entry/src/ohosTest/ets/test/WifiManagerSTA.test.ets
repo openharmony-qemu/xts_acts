@@ -27,12 +27,32 @@ function sleep(delay:number): Promise<void> {
 
 async function tryToEnableWifi(){
   if(!wifiMg.isWifiActive()){
-    console.info("wifi_test/enable wifi:" + wifiMg.enableWifi());
-    await sleep(5000);
+    console.info("wifi_test enable wifi:" + wifiMg.enableWifi());
+    for (let i = 0; i <= 200; i++) {
+      if (wifiMg.isWifiActive()) {
+        console.info("WiFi已成功开启");
+        break;
+      }
+      console.info("等待WiFi开启中...");
+      await sleep(100);
+    }
   }
   console.info("wifi_test/wifi status:" + wifiMg.isWifiActive());
 }
-
+async function tryToDisableWifi(){
+  if(wifiMg.isWifiActive()){
+    console.info("wifi_test disable wifi:" + wifiMg.disableWifi());
+    for (let i = 0; i <= 200; i++) {
+      if (!wifiMg.isWifiActive()) {
+        console.info("WiFi已成功关闭");
+        break;
+      }
+      console.info("等待WiFi关闭中...");
+      await sleep(100);
+    }
+  }
+  console.info("wifi_test/wifi status:" + wifiMg.isWifiActive());
+}
 async function tryToDisConnWifi(){
   if(wifiMg.isConnected()){
     console.info("wifi_test/ wifi is connect status :" + wifiMg.isConnected());
@@ -110,8 +130,7 @@ export default function wifiSta() {
         console.info("isWifiActive result:" + status);
         if(!status) {
           console.info("enableWifi start.");
-          wifiMg.enableWifi();
-          await sleep(1500);
+          await tryToEnableWifi();
           let state = wifiMg.isWifiActive();
           console.info("isWifiActive result:" + state);
           expect(state).assertTrue();
@@ -340,23 +359,20 @@ export default function wifiSta() {
         console.info("isWifiActive result:" + status);
         if(!status) {
           console.info("wifi is close,enableWifi start.");
-          wifiMg.enableWifi();
-          await sleep(2000);
+          await tryToEnableWifi();
           let state1 = wifiMg.isWifiActive();
           console.info("isWifiActive result:" + state1);
           expect(state1).assertTrue();
           console.info("enableWifi success.");
         }
         console.info("wifi is open,disableWifi start.");
-        wifiMg.disableWifi();
-        await sleep(2000);
+        await tryToDisableWifi();
         let state2 = wifiMg.isWifiActive();
         console.info("isWifiActive result:" + state2);
         expect(state2).assertFalse();
         console.info("disableWifi success.");
         console.info("wifi is close,enableWifi start.");
-        wifiMg.enableWifi();
-        await sleep(2000);
+        await tryToEnableWifi();
         let state3 = wifiMg.isWifiActive();
         console.info("isWifiActive result:" + state3);
         expect(state3).assertTrue();
@@ -423,23 +439,20 @@ export default function wifiSta() {
         console.info("isWifiActive result:" + status);
         if(!status) {
           console.info("wifi is close,enableWifi start.");
-          wifiMg.enableWifi();
-          await sleep(2000);
+          await tryToEnableWifi();
           let state1 = wifi.isWifiActive();
           console.info("isWifiActive result:" + state1);
           expect(state1).assertTrue();
           console.info("enableWifi success.");
         }
         console.info("wifi is open,disableWifi start.");
-        wifiMg.disableWifi();
-        await sleep(2000);
+        await tryToDisableWifi();
         let state2 = wifi.isWifiActive();
         console.info("isWifiActive result:" + state2);
         expect(state2).assertFalse();
         console.info("disableWifi success.");
         console.info("wifi is close,enableWifi start.");
-        wifiMg.enableWifi();
-        await sleep(2000);
+        await tryToEnableWifi();
         let state3 = wifi.isWifiActive();
         console.info("isWifiActive result:" + state3);
         expect(state3).assertTrue();
