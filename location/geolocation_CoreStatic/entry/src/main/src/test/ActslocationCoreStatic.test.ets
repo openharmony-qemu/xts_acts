@@ -1681,8 +1681,27 @@ export default function actslocationTest() {
         done();
       })
 
-        
-
+      /**
+       * @tc.number   SUB_core_isLocationEnabled_0200
+       * @tc.name   SUB_core_isLocationEnabled_0200
+       * @tc.desc   Test isLocationEnabled returns true or false
+       * @tc.level  Level 2
+       * @tc.type   Function
+       * @tc.size   MEDIUMTEST
+       */
+      it('SUB_core_isLocationEnabled_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        try {
+          let locationEnabled: boolean = geoLocationManager.isLocationEnabled();
+          if (locationEnabled) {
+            expect(locationEnabled).assertTrue();
+          } else {
+            expect(locationEnabled).assertFalse();
+          }
+        } catch (error) {
+          error = error as BusinessError;
+          expect(error.code).assertEqual(3301000);
+        }
+      })
 
 
 
