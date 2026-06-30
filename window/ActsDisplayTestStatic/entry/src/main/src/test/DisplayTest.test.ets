@@ -146,6 +146,7 @@ export default function DisplayTest():void {
         let context: common.UIAbilityContext | undefined;
         let isSupportRotate = false;
         let curWindowBrightness = 0.0;
+        let isDeskTop: boolean = false;
         beforeAll(async (): Promise<void> => {
             isSyscapSessionManagerSupported = canIUse('SystemCapability.Window.SessionManager');
  	        console.info(`beforeAll isSyscapSessionManagerSupported: ` + isSyscapSessionManagerSupported);
@@ -196,6 +197,13 @@ export default function DisplayTest():void {
                 hilog.info(domain, tag, 'jsUnittest beforeAll =' + data);
                 foldType = Double.toLong(parseInt(capabilityData.getString('foldScreenType')[0]))
                 hilog.info(domain, tag, 'jsUnittest beforeAll foldType =' + foldType);
+                let result = capabilityData.getInteger('buildin_screen');
+                hilog.info(domain, tag, 'jsUnittest beforeAll buildin_screen =' + result);
+                if (!display.isFoldable()) {
+                    if (!result) {
+                        isDeskTop = true;
+                    }
+                }
                 // let capabilityData = JSON.parse(data);
                 // hilog.info(domain, tag, 'jsUnittest beforeAll deviceMessage =' + JSON.stringify(capabilityData));
                 // for(const capability of capabilityData!.capability){
@@ -2745,7 +2753,7 @@ export default function DisplayTest():void {
         try {
             let brightnessInfo = display.getBrightnessInfo(0);
             console.log(`${caseName} brightnessInfo: ${JSON.stringify(brightnessInfo)}`);
-            if (deviceType !== 'tv') {
+            if (deviceType !== 'tv' && !isDeskTop) {
                 expect(brightnessInfo.sdrNits).assertLarger(0);
                 expect(brightnessInfo.currentHeadroom).assertLarger(0);
                 expect(brightnessInfo.maxHeadroom).assertLarger(0);
@@ -2835,7 +2843,7 @@ export default function DisplayTest():void {
             let callback1Triggered:boolean = false;
             let callback2Triggered:boolean = false;
 
-            if (deviceType !== 'tv') {
+            if (deviceType !== 'tv' && !isDeskTop) {
                 const callback1 = (displayId: Long, brightnessInfo: display.BrightnessInfo) => {
                     console.info(caseName + ' Callback1 triggered');
                     console.info(`${caseName} DisplayId: ${displayId}, BrightnessInfo: ${JSON.stringify(brightnessInfo)}`);
@@ -3765,7 +3773,7 @@ export default function DisplayTest():void {
             await Utils.msSleep(100);
             let brightnessChangeCount1:number = 0;
             let callback1Triggered:boolean = false;
-            if (deviceType !== 'tv') {
+            if (deviceType !== 'tv' && !isDeskTop) {
                 const callback1 = (displayId: Long, brightnessInfo: display.BrightnessInfo) => {
                     console.info(caseName + ' Callback1 triggered');
                     console.info(`${caseName} DisplayId: ${displayId}, BrightnessInfo: ${JSON.stringify(brightnessInfo)}`);
