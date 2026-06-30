@@ -18,7 +18,6 @@
 #include <cstdint>
 #include <cstdlib>
 #include <cstring>
-#include "securec.h"
 
 constexpr int MAX_FILE_NAME_LEN = 256;
 constexpr int DLP_SUFFIX_LEN = 4;
@@ -124,11 +123,8 @@ static napi_value OsGetOriginalFileName0200(napi_env env, napi_callback_info inf
     for (int i = 0; i < fileNameLen; i++) {
         fileName[i] = 'a';
     }
-    int memcpyRet = memcpy_s(fileName + fileNameLen, DLP_SUFFIX_LEN + 1, DLP_SUFFIX, DLP_SUFFIX_LEN + 1);
-    if (memcpyRet != 0) {
-        napi_value result = nullptr;
-        napi_create_int32(env, DLP_ErrCode::ERR_OH_INVALID_PARAMETER, &result);
-        return result;
+    for (int i = 0; i < DLP_SUFFIX_LEN + 1; i++) {
+        fileName[fileNameLen + i] = DLP_SUFFIX[i];
     }
     char *originalFileName = nullptr;
     DLP_ErrCode ret = OH_DLP_GetOriginalFileName(fileName, &originalFileName);
@@ -150,11 +146,8 @@ static napi_value OsGetOriginalFileName0300(napi_env env, napi_callback_info inf
     for (int i = 0; i < fileNameLen; i++) {
         fileName[i] = 'a';
     }
-    int memcpyRet = memcpy_s(fileName + fileNameLen, DLP_SUFFIX_LEN + 1, DLP_SUFFIX, DLP_SUFFIX_LEN + 1);
-    if (memcpyRet != 0) {
-        napi_value result = nullptr;
-        napi_create_int32(env, DLP_ErrCode::ERR_OH_INVALID_PARAMETER, &result);
-        return result;
+    for (int i = 0; i < DLP_SUFFIX_LEN + 1; i++) {
+        fileName[fileNameLen + i] = DLP_SUFFIX[i];
     }
     char *originalFileName = nullptr;
     DLP_ErrCode ret = OH_DLP_GetOriginalFileName(fileName, &originalFileName);
