@@ -36,8 +36,8 @@ const ExpectFail = () => {
 export default function SimGetSimAccountInfo () {
   describe('SimGetSimAccountInfo ', () => {
 
-    let TRUE_SLOT_ID_0: int = 0;
-    let simAmount: int = 0;
+    let TRUE_SLOT_ID_0= 0;
+    let simAmount= 0;
     beforeAll(async() => {
       let result0: boolean = true;
       try {
@@ -63,13 +63,7 @@ export default function SimGetSimAccountInfo () {
     it('testTelephonyDualSimGetSimAccountInfoAsync0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testTelephonyDualSimGetSimAccountInfoAsync0600';
       console.info(`${caseName} test start`);
-      const recursive = async (n: int) => {
-        if (n <= 0) {
-          console.info(`${caseName} test finish`);
-          done();
-          return;
-        }
-      }
+      
       sim.getSimAccountInfo(0, (err: BusinessError, data: sim.IccAccountInfo) => {
         if (data) {
           console.info(`${caseName} getSimAccountInfo nopermission test success, data: ${JSON.stringify(data)}`);
@@ -82,7 +76,6 @@ export default function SimGetSimAccountInfo () {
           return;
         }
       });
-      recursive(simAmount);
     });
 
     /**
@@ -96,13 +89,6 @@ export default function SimGetSimAccountInfo () {
     it('testTelephonyDualSimGetSimAccountInfoPromise0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testTelephonyDualSimGetSimAccountInfoPromise0600';
       console.info(`${caseName} test start`);
-      const recursive = async (n: int) => {
-        if (n <= 0) {
-          console.info(`${caseName} test finish`);
-          done();
-          return;
-        }
-      }
       sim.getSimAccountInfo(0).then((data: sim.IccAccountInfo) => {
         console.info(`${caseName} getSimAccountInfo nopermission value, data: ${JSON.stringify(data)}`);
         ExpectTrue((data?.iccId === ""));
@@ -112,7 +98,6 @@ export default function SimGetSimAccountInfo () {
         ExpectFail();
         done();
       });
-      recursive(simAmount);
     });
   });
 }
