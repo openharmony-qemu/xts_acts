@@ -38,7 +38,7 @@ function expectFail(info: string = ''): void {
 }
 
 export default function WebsocketServerStaticTest() {
-  describe('WebsocketServerStaticTest', ()=> {
+  describe("WebSocketTest", (): void => {
     /**
      * @tc.name   testNetworkMgrWebSocketWebSocketServerStartStatic0100
      * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerStartStatic_0100
@@ -65,7 +65,7 @@ export default function WebsocketServerStaticTest() {
           protocol: "my-protocol",
           serverCert: serverCert,
         }
-        server.start(serverConfig).then((success: boolean) => {
+        server.start(serverConfig).then(async (success: boolean) => {
           if (success){
             hilog.info(domain, tag, '%{public}s', `${caseName} webSocketServer start success`)
             expectFail(`${caseName} webSocketServer start success`);
@@ -77,9 +77,10 @@ export default function WebsocketServerStaticTest() {
             done()
             hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
           }
-        }).catch((error: BusinessError) => {
+        }).catch((error: Error) => {
+          let err = error as BusinessError;
           hilog.info(domain, tag, '%{public}s', `${caseName}  error ${JSON.stringify(error)}`);
-          ExpectTrue(error.code === 2302002, `${caseName} test result error ${JSON.stringify(error)}`)
+          ExpectTrue(err.code === 2302002, `${caseName} test result error ${JSON.stringify(error)}`)
           done()
           hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
         })
@@ -113,7 +114,7 @@ export default function WebsocketServerStaticTest() {
           protocol: "my-protocol",
         };
 
-        await server.start(serverConfig).then((success: boolean) => {
+        await server.start(serverConfig).then(async (success: boolean) => {
           if (success) {
             hilog.info(domain, tag, '%{public}s', `${caseName} webSocketServer start success`)
             expectFail(`${caseName} webSocketServer start`);
@@ -125,9 +126,10 @@ export default function WebsocketServerStaticTest() {
             done();
             hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
           }
-        }).catch((error: BusinessError) => {
+        }).catch((error: Error) => {
+          let err = error as BusinessError;
           hilog.info(domain, tag, '%{public}s', `${caseName}  error ${JSON.stringify(error)}`);
-          ExpectTrue(error.code === 2302005, `${caseName} test result error ${JSON.stringify(error)}`);
+          ExpectTrue(err.code === 2302005, `${caseName} test result error ${JSON.stringify(error)}`);
           done();
           hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
         });
@@ -160,7 +162,7 @@ export default function WebsocketServerStaticTest() {
           maxConnectionsForOneClient: 4,
         };
 
-        server.start(serverConfig).then((success: boolean) => {
+        server.start(serverConfig).then(async (success: boolean) => {
           if (success) {
             hilog.info(domain, tag, '%{public}s', `${caseName} webSocketServer start success`);
             expectFail(`${caseName} webSocketServer start`);
@@ -172,9 +174,10 @@ export default function WebsocketServerStaticTest() {
             done();
             hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
           }
-        }).catch((error: BusinessError) => {
+        }).catch((error: Error) => {
+          let err = error as BusinessError;
           hilog.info(domain, tag, '%{public}s', `${caseName}  error ${JSON.stringify(error)}`);
-          ExpectTrue(error.code === 2302004, `${caseName} test result error ${JSON.stringify(error)}`);
+          ExpectTrue(err.code === 2302004, `${caseName} test result error ${JSON.stringify(error)}`);
           done();
           hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
         });
@@ -207,7 +210,7 @@ export default function WebsocketServerStaticTest() {
           maxConnectionsForOneClient: 11,
         };
 
-        server.start(serverConfig).then((success: boolean) => {
+        server.start(serverConfig).then(async (success: boolean) => {
           if (success) {
             hilog.info(domain, tag, '%{public}s', `${caseName} webSocketServer start success`);
             expectFail(`${caseName} webSocketServer start`);
@@ -219,9 +222,10 @@ export default function WebsocketServerStaticTest() {
             done();
             hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
           }
-        }).catch((error: BusinessError) => {
+        }).catch((error: Error) => {
+          let err = error as BusinessError;
           hilog.info(domain, tag, '%{public}s', `${caseName}  error ${JSON.stringify(error)}`);
-          ExpectTrue(error.code === 2302999, `${caseName} test result error ${JSON.stringify(error)}`);
+          ExpectTrue(err.code === 2302999, `${caseName} test result error ${JSON.stringify(error)}`);
           done();
           hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
         });
@@ -251,7 +255,7 @@ export default function WebsocketServerStaticTest() {
           maxConcurrentClientsNumber: 10,
           maxConnectionsForOneClient: 4,
         };
-        firstServer.start(firstServerConfig).then((success: boolean) => {
+        firstServer.start(firstServerConfig).then(async (success: boolean) => {
           if (success) {
             hilog.info(domain, tag, '%{public}s', `${caseName} First server started successfully on port 8058`);
             let secondServer: webSocket.WebSocketServer = webSocket.createWebSocketServer();
@@ -261,10 +265,10 @@ export default function WebsocketServerStaticTest() {
               maxConcurrentClientsNumber: 10,
               maxConnectionsForOneClient: 4,
             };
-            secondServer.start(secondServerConfig).catch((error: BusinessError) => {
+            secondServer.start(secondServerConfig).catch((error: Error) => {
               hilog.info(domain, tag, '%{public}s', `${caseName}  error ${JSON.stringify(error)}`);
-              ExpectTrue(error.code === 2302007, `${caseName} test result error ${JSON.stringify(error)}`);
-              // 停止第一个服务器
+              let err = error as BusinessError;
+              ExpectTrue(err.code === 2302007, `${caseName} test result error ${JSON.stringify(error)}`);
               firstServer.stop();
               done();
               hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
@@ -274,7 +278,7 @@ export default function WebsocketServerStaticTest() {
             done();
             hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
           }
-        }).catch((error: BusinessError) => {
+        }).catch((error: Error) => {
           hilog.info(domain, tag, '%{public}s', `${caseName} First server error ${JSON.stringify(error)}`);
           expectFail(`${caseName} First server error`);
           done();
