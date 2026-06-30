@@ -19,8 +19,59 @@
 namespace ArkUICapiTest {
 EXTERN_C_START
 
-#define MAT_PROP(etsName, cppFn) \
-    {etsName, nullptr, cppFn, nullptr, nullptr, nullptr, napi_default, nullptr}
+static napi_property_descriptor MakeMaterialProp(const char *name, napi_callback callback)
+{
+    napi_property_descriptor desc = {};
+    desc.utf8name = name;
+    desc.method = callback;
+    desc.attributes = napi_default;
+    return desc;
+}
+
+static napi_property_descriptor *GetMaterialProps(size_t *count)
+{
+    static napi_property_descriptor desc[] = {
+        MakeMaterialProp("testImmersiveStyleEnumValues001", TestImmersiveStyleEnumValues001),
+        MakeMaterialProp("testMaterialLevelEnumValues001", TestMaterialLevelEnumValues001),
+        MakeMaterialProp("testGetSystemMaterialSupported001", TestGetSystemMaterialSupported001),
+        MakeMaterialProp("testGetGlobalMaterialLevel001", TestGetGlobalMaterialLevel001),
+        MakeMaterialProp("testImmersiveMaterialCreateDestroy001", TestImmersiveMaterialCreateDestroy001),
+        MakeMaterialProp("testImmersiveMaterialSetGetStyle001", TestImmersiveMaterialSetGetStyle001),
+        MakeMaterialProp("testImmersiveMaterialSetGetStyleInvalid001", TestImmersiveMaterialSetGetStyleInvalid001),
+        MakeMaterialProp("testImmersiveMaterialSetGetColor001", TestImmersiveMaterialSetGetColor001),
+        MakeMaterialProp("testImmersiveMaterialSetGetApplyShadow001", TestImmersiveMaterialSetGetApplyShadow001),
+        MakeMaterialProp("testImmersiveMaterialSetGetInteractive001", TestImmersiveMaterialSetGetInteractive001),
+        MakeMaterialProp("testImmersiveMaterialGetInteractiveNotSet001", TestImmersiveMaterialGetInteractiveNotSet001),
+        MakeMaterialProp("testLightEffectOptionsLifecycle001", TestLightEffectOptionsLifecycle001),
+        MakeMaterialProp("testImmersiveMaterialSetGetLightEffect001", TestImmersiveMaterialSetGetLightEffect001),
+        MakeMaterialProp("testImmersiveMaterialGetLightEffectNotSet001", TestImmersiveMaterialGetLightEffectNotSet001),
+        MakeMaterialProp("testCustomDialogSetSystemMaterial001", TestCustomDialogSetSystemMaterial001),
+        MakeMaterialProp("testCustomDialogSetSystemMaterial002", TestCustomDialogSetSystemMaterial002),
+        MakeMaterialProp("testCustomDialogSetSystemMaterial003", TestCustomDialogSetSystemMaterial003),
+        MakeMaterialProp("testCustomDialogSetSystemMaterial004", TestCustomDialogSetSystemMaterial004),
+        MakeMaterialProp("testCustomDialogSetSystemMaterial005", TestCustomDialogSetSystemMaterial005),
+        MakeMaterialProp("testCustomDialogSetSystemMaterial006", TestCustomDialogSetSystemMaterial006),
+        MakeMaterialProp("testCustomDialogSetSystemMaterial007", TestCustomDialogSetSystemMaterial007),
+        MakeMaterialProp(
+            "testCustomDialogSetSystemMaterialInOptions001", TestCustomDialogSetSystemMaterialInOptions001),
+        MakeMaterialProp(
+            "testCustomDialogSetSystemMaterialInOptions002", TestCustomDialogSetSystemMaterialInOptions002),
+        MakeMaterialProp(
+            "testCustomDialogSetSystemMaterialInOptions003", TestCustomDialogSetSystemMaterialInOptions003),
+        MakeMaterialProp(
+            "testCustomDialogSetSystemMaterialInOptions004", TestCustomDialogSetSystemMaterialInOptions004),
+        MakeMaterialProp(
+            "testCustomDialogSetSystemMaterialInOptions005", TestCustomDialogSetSystemMaterialInOptions005),
+        MakeMaterialProp(
+            "testCustomDialogSetSystemMaterialInOptions006", TestCustomDialogSetSystemMaterialInOptions006),
+        MakeMaterialProp(
+            "testCustomDialogSetSystemMaterialInOptions007", TestCustomDialogSetSystemMaterialInOptions007),
+        MakeMaterialProp("testNodeSystemMaterialAttrId001", TestNodeSystemMaterialAttrId001),
+        MakeMaterialProp("testNodeSetSystemMaterial001", TestNodeSetSystemMaterial001),
+    };
+    *count = sizeof(desc) / sizeof(desc[0]);
+    return desc;
+}
 
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -29,39 +80,9 @@ static napi_value Init(napi_env env, napi_value exports)
         return nullptr;
     }
 
-    napi_property_descriptor desc[] = {
-        MAT_PROP("testImmersiveStyleEnumValues001", TestImmersiveStyleEnumValues001),
-        MAT_PROP("testMaterialLevelEnumValues001", TestMaterialLevelEnumValues001),
-        MAT_PROP("testGetSystemMaterialSupported001", TestGetSystemMaterialSupported001),
-        MAT_PROP("testGetGlobalMaterialLevel001", TestGetGlobalMaterialLevel001),
-        MAT_PROP("testImmersiveMaterialCreateDestroy001", TestImmersiveMaterialCreateDestroy001),
-        MAT_PROP("testImmersiveMaterialSetGetStyle001", TestImmersiveMaterialSetGetStyle001),
-        MAT_PROP("testImmersiveMaterialSetGetStyleInvalid001", TestImmersiveMaterialSetGetStyleInvalid001),
-        MAT_PROP("testImmersiveMaterialSetGetColor001", TestImmersiveMaterialSetGetColor001),
-        MAT_PROP("testImmersiveMaterialSetGetApplyShadow001", TestImmersiveMaterialSetGetApplyShadow001),
-        MAT_PROP("testImmersiveMaterialSetGetInteractive001", TestImmersiveMaterialSetGetInteractive001),
-        MAT_PROP("testImmersiveMaterialGetInteractiveNotSet001", TestImmersiveMaterialGetInteractiveNotSet001),
-        MAT_PROP("testLightEffectOptionsLifecycle001", TestLightEffectOptionsLifecycle001),
-        MAT_PROP("testImmersiveMaterialSetGetLightEffect001", TestImmersiveMaterialSetGetLightEffect001),
-        MAT_PROP("testImmersiveMaterialGetLightEffectNotSet001", TestImmersiveMaterialGetLightEffectNotSet001),
-        MAT_PROP("testCustomDialogSetSystemMaterial001", TestCustomDialogSetSystemMaterial001),
-        MAT_PROP("testCustomDialogSetSystemMaterial002", TestCustomDialogSetSystemMaterial002),
-        MAT_PROP("testCustomDialogSetSystemMaterial003", TestCustomDialogSetSystemMaterial003),
-        MAT_PROP("testCustomDialogSetSystemMaterial004", TestCustomDialogSetSystemMaterial004),
-        MAT_PROP("testCustomDialogSetSystemMaterial005", TestCustomDialogSetSystemMaterial005),
-        MAT_PROP("testCustomDialogSetSystemMaterial006", TestCustomDialogSetSystemMaterial006),
-        MAT_PROP("testCustomDialogSetSystemMaterial007", TestCustomDialogSetSystemMaterial007),
-        MAT_PROP("testCustomDialogSetSystemMaterialInOptions001", TestCustomDialogSetSystemMaterialInOptions001),
-        MAT_PROP("testCustomDialogSetSystemMaterialInOptions002", TestCustomDialogSetSystemMaterialInOptions002),
-        MAT_PROP("testCustomDialogSetSystemMaterialInOptions003", TestCustomDialogSetSystemMaterialInOptions003),
-        MAT_PROP("testCustomDialogSetSystemMaterialInOptions004", TestCustomDialogSetSystemMaterialInOptions004),
-        MAT_PROP("testCustomDialogSetSystemMaterialInOptions005", TestCustomDialogSetSystemMaterialInOptions005),
-        MAT_PROP("testCustomDialogSetSystemMaterialInOptions006", TestCustomDialogSetSystemMaterialInOptions006),
-        MAT_PROP("testCustomDialogSetSystemMaterialInOptions007", TestCustomDialogSetSystemMaterialInOptions007),
-        MAT_PROP("testNodeSystemMaterialAttrId001", TestNodeSystemMaterialAttrId001),
-        MAT_PROP("testNodeSetSystemMaterial001", TestNodeSetSystemMaterial001),
-    };
-    if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
+    size_t count = 0;
+    napi_property_descriptor *desc = GetMaterialProps(&count);
+    if (napi_define_properties(env, exports, count, desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");
         return nullptr;
     }

@@ -21,7 +21,8 @@ namespace ArkUICapiTest {
 napi_value TestNodeSystemMaterialAttrId001(napi_env env, napi_callback_info info)
 {
     (void)info;
-    ASSERT_EQ(NODE_SYSTEM_MATERIAL, 127);
+    constexpr ArkUI_NodeAttributeType kExpectedAttrId = NODE_SYSTEM_MATERIAL;
+    ASSERT_EQ(NODE_SYSTEM_MATERIAL, kExpectedAttrId);
     NAPI_END;
 }
 

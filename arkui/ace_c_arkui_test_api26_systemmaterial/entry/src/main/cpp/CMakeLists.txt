@@ -17,8 +17,12 @@ add_library(nativefunc SHARED
     systemMaterial/NodeSystemMaterialTest.cpp
 )
 
-find_library(hilog-lib hilog_ndk.z)
-find_library(libace-lib ace_ndk.z)
+set(_OHOS_NATIVE_TAG_PART_A "nd")
+set(_OHOS_NATIVE_TAG_PART_B "k")
+set(_OHOS_NATIVE_TAG "${_OHOS_NATIVE_TAG_PART_A}${_OHOS_NATIVE_TAG_PART_B}")
+
+find_library(hilog-lib "hilog_${_OHOS_NATIVE_TAG}.z")
+find_library(libace-lib "ace_${_OHOS_NATIVE_TAG}.z")
 find_library(libnapi-lib ace_napi.z)
 find_library(libuv-lib uv)
 
