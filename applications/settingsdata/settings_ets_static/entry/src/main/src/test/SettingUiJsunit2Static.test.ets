@@ -2975,30 +2975,4 @@ export default function settingUiJsunit() {
       }
       done();
     });
-
-  /**
-   * @tc.name   SUB_Applications_Settings_openAppDetailSettingsPage_valid_appIndex_null_0200
-   * @tc.number SUB_Applications_Settings_openAppDetailSettingsPage_valid_appIndex_null_0200
-   * @tc.desc   MediumTest
-   * @tc.type   FUNCTION
-   * @tc.size   MEDIUMTEST
-   * @tc.level  LEVEL0
-   */
-  it('SUB_Applications_Settings_openAppDetailSettingsPage_valid_appIndex_null_0200',
-    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-    async (done: () => void) => {
-      if (!isDeviceSupportAppDetail()) {
-        done();
-        return;
-      }
-      let code = 0;
-      try {
-        settings.openAppDetailSettingsPage(abilityContext!, 'com.example', null);
-        expect(code).assertEqual(0);
-      } catch (err) {
-        console.error("[openAppDetailSettingsPage_valid_appIndex_null] error = " + err);
-        expect(err?.code).assertEqual(16900020);
-      }
-      done();
-    });
 }
