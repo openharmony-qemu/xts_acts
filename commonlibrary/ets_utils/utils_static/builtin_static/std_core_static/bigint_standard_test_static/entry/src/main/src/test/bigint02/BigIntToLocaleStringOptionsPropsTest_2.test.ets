@@ -321,7 +321,7 @@ export default function BigIntToLocaleStringOptionsPropsTest_2(): void {
           caughtCount++;
         }
       }
-      expect(caughtCount >= 5).assertTrue();
+      expect(caughtCount).assertEqual(testCases.length);
     });
 
     /**
@@ -348,7 +348,7 @@ export default function BigIntToLocaleStringOptionsPropsTest_2(): void {
           caughtCount++;
         }
       }
-      expect(caughtCount >= 3).assertTrue();
+      expect(caughtCount).assertEqual(testCases.length);
     });
 
     /**

@@ -114,7 +114,7 @@ export default function BigIntToLocaleString2Test_2(): void {
       try { BigInt(1).toLocaleString('xxxxxxxx'); } catch (e) { caughtCount++; }
       try { BigInt(1).toLocaleString('-'); } catch (e) { caughtCount++; }
       try { BigInt(1).toLocaleString('en_US'); } catch (e) { caughtCount++; }
-      expect(caughtCount >= 1).assertTrue();
+      expect(caughtCount).assertEqual(4);
     });
 
     /**
@@ -225,19 +225,29 @@ export default function BigIntToLocaleString2Test_2(): void {
       const v = BigInt(1000);
       
       const optsUSD: BigIntToLocaleStringOptions = { style: 'currency', currency: 'USD' };
-      expect(v.toLocaleString('en-US', optsUSD).length).assertLarger(0);
+      const usdResult = v.toLocaleString('en-US', optsUSD);
+      expect(usdResult.length).assertLarger(0);
+      expect(usdResult.includes('$')).assertTrue();
       
       const optsEUR: BigIntToLocaleStringOptions = { style: 'currency', currency: 'EUR' };
-      expect(v.toLocaleString('de-DE', optsEUR).length).assertLarger(0);
+      const eurResult = v.toLocaleString('de-DE', optsEUR);
+      expect(eurResult.length).assertLarger(0);
+      expect(eurResult.includes('€')).assertTrue();
       
       const optsCNY: BigIntToLocaleStringOptions = { style: 'currency', currency: 'CNY' };
-      expect(v.toLocaleString('zh-CN', optsCNY).length).assertLarger(0);
+      const cnyResult = v.toLocaleString('zh-CN', optsCNY);
+      expect(cnyResult.length).assertLarger(0);
+      expect(cnyResult.includes('¥')).assertTrue();
       
       const optsJPY: BigIntToLocaleStringOptions = { style: 'currency', currency: 'JPY' };
-      expect(v.toLocaleString('ja-JP', optsJPY).length).assertLarger(0);
+      const jpyResult = v.toLocaleString('ja-JP', optsJPY);
+      expect(jpyResult.length).assertLarger(0);
+      expect(jpyResult.includes('￥')).assertTrue();
       
       const optsGBP: BigIntToLocaleStringOptions = { style: 'currency', currency: 'GBP' };
-      expect(v.toLocaleString('en-GB', optsGBP).length).assertLarger(0);
+      const gbpResult = v.toLocaleString('en-GB', optsGBP);
+      expect(gbpResult.length).assertLarger(0);
+      expect(gbpResult.includes('£')).assertTrue();
     });
 
     /**

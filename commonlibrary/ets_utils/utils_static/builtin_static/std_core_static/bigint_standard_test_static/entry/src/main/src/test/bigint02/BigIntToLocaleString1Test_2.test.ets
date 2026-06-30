@@ -226,7 +226,7 @@ export default function BigIntToLocaleString1Test_2(): void {
       const r1 = v100.toLocaleString('en-US', { useGrouping: false });
       const r2 = v100.toLocaleString('en-US', { useGrouping: true });
       expect(r1).assertEqual('1267650600228229401496703205376');
-      expect(r2.includes('1')).assertTrue();
+      expect(r2).assertEqual('1,267,650,600,228,229,401,496,703,205,376');
       expect(r2.length).assertLarger(r1.length);
 
       const v50 = BigInt('10000000000000000000000000000000000000000000000000');
