@@ -1864,6 +1864,50 @@ export default function deviceSettingsTest() {
     })
 
     /**
+     * @tc.name   setValueForAccount_test_008
+     * @tc.number setValueForAccount_test_008
+     * @tc.desc   setValueForAccount with null parameter settingsItem
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setValueForAccount_test_008", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setValueForAccount_test_008  -------- START --------');
+      try {
+        deviceSettings.setValueForAccount(SELFWANT, null, DEFAULT_USER_ID, 'deviceName');
+        console.info(' --- setValueForAccount_test_008 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setValueForAccount_test_008 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setValueForAccount_test_008  -------- END --------');
+    })
+
+    /**
+     * @tc.name   setValueForAccount_test_009
+     * @tc.number setValueForAccount_test_009
+     * @tc.desc   setValueForAccount with undefined parameter settingsItem
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setValueForAccount_test_009", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setValueForAccount_test_009  -------- START --------');
+      try {
+        deviceSettings.setValueForAccount(SELFWANT, undefined, DEFAULT_USER_ID, 'deviceName');
+        console.info(' --- setValueForAccount_test_009 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setValueForAccount_test_009 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setValueForAccount_test_009  -------- END --------');
+    })
+
+    /**
      * @tc.name   getValueForAccount_test_001
      * @tc.number getValueForAccount_test_001
      * @tc.desc   getValueForAccount with null parameter admin
@@ -1952,6 +1996,50 @@ export default function deviceSettingsTest() {
       }
       done();
       console.info(' --- getValueForAccount_test_004  -------- END --------');
+    })
+
+    /**
+     * @tc.name   getValueForAccount_test_005
+     * @tc.number getValueForAccount_test_005
+     * @tc.desc   getValueForAccount with null parameter settingsItem
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getValueForAccount_test_005", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getValueForAccount_test_005  -------- START --------');
+      try {
+        deviceSettings.getValueForAccount(SELFWANT, null, DEFAULT_USER_ID);
+        console.info(' --- getValueForAccount_test_005 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getValueForAccount_test_005 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getValueForAccount_test_005  -------- END --------');
+    })
+
+    /**
+     * @tc.name   getValueForAccount_test_006
+     * @tc.number getValueForAccount_test_006
+     * @tc.desc   getValueForAccount with undefined parameter settingsItem
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getValueForAccount_test_006", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getValueForAccount_test_006  -------- START --------');
+      try {
+        deviceSettings.getValueForAccount(SELFWANT, undefined, DEFAULT_USER_ID);
+        console.info(' --- getValueForAccount_test_006 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getValueForAccount_test_006 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getValueForAccount_test_006  -------- END --------');
     })
 
     /**
