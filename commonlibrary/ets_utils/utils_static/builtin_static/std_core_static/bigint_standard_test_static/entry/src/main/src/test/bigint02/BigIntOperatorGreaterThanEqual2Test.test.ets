@@ -18,6 +18,11 @@ import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntOperatorGreaterThanEqual2Test(): void {
   describe('testBigIntOperatorGreaterThanEqual2Test', () => {
+    afterEach(() => {
+      await Utils.msSleep(50);
+    });
+    afterAll(() => {
+    });
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_GTE_0100
      * @tc.name testBigIntOperatorGreaterThanEqual2Test0100
