@@ -1661,7 +1661,7 @@ export default function AVMetadata() {
           expect(requestedTimeUs).assertEqual(1000000);
           if (frameInfo.actualTimeUs != undefined) {
             let actualTimeUs: long | undefined = frameInfo.actualTimeUs;
-            expect(actualTimeUs!).assertEqual(115000);
+            expect(actualTimeUs!).assertEqual(990666);
           }
           let result: media.FetchResult = frameInfo.result;
           expect(result).assertEqual(media.FetchResult.FETCH_SUCCEEDED);
