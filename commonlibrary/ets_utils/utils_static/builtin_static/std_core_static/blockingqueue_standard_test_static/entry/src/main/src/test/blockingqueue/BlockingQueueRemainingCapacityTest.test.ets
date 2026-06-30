@@ -240,33 +240,12 @@ export default function BlockingQueueRemainingCapacityTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_1200
      * @tc.name testBlockingQueueRemainingCapacity012
-     * @tc.desc Verify LinkedBlockingQueue with capacity=5: formula remainingCapacity() = capacity - size
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBlockingQueueRemainingCapacity012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const CAPACITY: int = 5;
-      const PUSH_VALUE: int = 10;
-      const PUSH_VALUE_2: int = 20;
-      const PUSH_VALUE_3: int = 30;
-      let queue: containers.BlockingQueue<int> = new containers.LinkedBlockingQueue<int>(CAPACITY);
-      queue.push(PUSH_VALUE);
-      queue.push(PUSH_VALUE_2);
-      expect(queue.remainingCapacity()).assertEqual((queue.capacity - queue.size));
-      queue.push(PUSH_VALUE_3);
-      expect(queue.remainingCapacity()).assertEqual((queue.capacity - queue.size));
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_1300
-     * @tc.name testBlockingQueueRemainingCapacity013
      * @tc.desc Verify LinkedBlockingQueue with 3-element array iterable: remainingCapacity() = Int.MAX_VALUE - 3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const EXPECTED_REMAINING_CAPACITY: int = 2147483644;
       let arr: int[] = [10, 20, 30];
       let queue: containers.BlockingQueue<int> = new containers.LinkedBlockingQueue<int>(arr);
@@ -274,14 +253,14 @@ export default function BlockingQueueRemainingCapacityTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_1400
-     * @tc.name testBlockingQueueRemainingCapacity014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_1300
+     * @tc.name testBlockingQueueRemainingCapacity013
      * @tc.desc Verify LinkedBlockingQueue with 3-element iterable: push 2 more, remainingCapacity() decreases accordingly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const PUSH_VALUE: int = 40;
       const PUSH_VALUE_2: int = 50;
       const EXPECTED_REMAINING_CAPACITY: int = 2147483642;
@@ -293,14 +272,14 @@ export default function BlockingQueueRemainingCapacityTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_1500
-     * @tc.name testBlockingQueueRemainingCapacity015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_1400
+     * @tc.name testBlockingQueueRemainingCapacity014
      * @tc.desc Verify LinkedBlockingQueue capacity=5 with 8-element iterable: overflows, remainingCapacity() = 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const CAPACITY: int = 5;
       const EXPECTED_REMAINING_CAPACITY: int = 0;
       let arr: int[] = [];
@@ -312,14 +291,14 @@ export default function BlockingQueueRemainingCapacityTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_1600
-     * @tc.name testBlockingQueueRemainingCapacity016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_1500
+     * @tc.name testBlockingQueueRemainingCapacity015
      * @tc.desc Verify LinkedBlockingQueue capacity=5 with 2-element iterable: remainingCapacity() = 3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const CAPACITY: int = 5;
       const EXPECTED_REMAINING_CAPACITY: int = 3;
       let arr: int[] = [10, 20];
@@ -328,14 +307,14 @@ export default function BlockingQueueRemainingCapacityTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_1700
-     * @tc.name testBlockingQueueRemainingCapacity017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_1600
+     * @tc.name testBlockingQueueRemainingCapacity016
      * @tc.desc Verify ArrayBlockingQueue lifecycle: initial=10, push 5->5, push 5->0, pop 3->3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const CAPACITY: int = 10;
       const EXPECTED_REMAINING_CAPACITY: int = 10;
       const EXPECTED_REMAINING_CAPACITY_2: int = 5;
@@ -359,39 +338,14 @@ export default function BlockingQueueRemainingCapacityTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_1800
-     * @tc.name testBlockingQueueRemainingCapacity018
-     * @tc.desc Verify ArrayBlockingQueue formula: remainingCapacity() = capacity - size
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBlockingQueueRemainingCapacity018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const CAPACITY: int = 10;
-      const PUSH_VALUE: int = 1;
-      const PUSH_VALUE_2: int = 2;
-      const PUSH_VALUE_3: int = 3;
-      const PUSH_VALUE_4: int = 4;
-      const EXPECTED_REMAINING_CAPACITY: int = 6;
-      let queue: containers.BlockingQueue<int> = new containers.ArrayBlockingQueue<int>(CAPACITY);
-      expect(queue.remainingCapacity()).assertEqual((queue.capacity - queue.size));
-      queue.push(PUSH_VALUE);
-      queue.push(PUSH_VALUE_2);
-      queue.push(PUSH_VALUE_3);
-      queue.push(PUSH_VALUE_4);
-      expect(queue.remainingCapacity()).assertEqual(EXPECTED_REMAINING_CAPACITY);
-      expect(queue.remainingCapacity()).assertEqual((queue.capacity - queue.size));
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_1900
-     * @tc.name testBlockingQueueRemainingCapacity019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_1700
+     * @tc.name testBlockingQueueRemainingCapacity017
      * @tc.desc Verify ArrayBlockingQueue capacity=5 with 3-element iterable: remainingCapacity() = 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const CAPACITY: int = 5;
       const EXPECTED_REMAINING_CAPACITY: int = 2;
       let arr: int[] = [10, 20, 30];
@@ -400,52 +354,14 @@ export default function BlockingQueueRemainingCapacityTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_2000
-     * @tc.name testBlockingQueueRemainingCapacity020
-     * @tc.desc Verify LinkedBlockingQueue default constructor: remainingCapacity() = 2147483647, formula holds
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBlockingQueueRemainingCapacity020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const EXPECTED_REMAINING_CAPACITY: int = 2147483647;
-      let queue: containers.BlockingQueue<int> = new containers.LinkedBlockingQueue<int>();
-      expect(queue.remainingCapacity()).assertEqual(EXPECTED_REMAINING_CAPACITY);
-      expect(queue.remainingCapacity()).assertEqual((queue.capacity - queue.size));
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_2100
-     * @tc.name testBlockingQueueRemainingCapacity021
-     * @tc.desc Verify LinkedBlockingQueue: push 50 elements, pop 30, remainingCapacity recalculates correctly from capacity-size
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBlockingQueueRemainingCapacity021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const EXPECTED_REMAINING_CAPACITY: int = 2147483597;
-      const EXPECTED_REMAINING_CAPACITY_2: int = 2147483627;
-      let queue: containers.BlockingQueue<int> = new containers.LinkedBlockingQueue<int>();
-      for (let i = 0; i < 50; i++) {
-        queue.push(i);
-      }
-      expect(queue.remainingCapacity()).assertEqual(EXPECTED_REMAINING_CAPACITY);
-      for (let i = 0; i < 30; i++) {
-        queue.pop();
-      }
-      expect(queue.remainingCapacity()).assertEqual(EXPECTED_REMAINING_CAPACITY_2);
-      expect(queue.remainingCapacity()).assertEqual((queue.capacity - queue.size));
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_2200
-     * @tc.name testBlockingQueueRemainingCapacity022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_1800
+     * @tc.name testBlockingQueueRemainingCapacity018
      * @tc.desc Verify LinkedBlockingQueue(1): remainingCapacity=1 initially, =0 after push, =1 after pop
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const CAPACITY: int = 1;
       const EXPECTED_REMAINING_CAPACITY: int = 1;
       const PUSH_VALUE: int = 42;
@@ -459,14 +375,14 @@ export default function BlockingQueueRemainingCapacityTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_2300
-     * @tc.name testBlockingQueueRemainingCapacity023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_1900
+     * @tc.name testBlockingQueueRemainingCapacity019
      * @tc.desc Verify LinkedBlockingQueue(3): add success decrements capacity, add failure leaves capacity unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const CAPACITY: int = 3;
       const ADD_VALUE: int = 1;
       const EXPECTED_REMAINING_CAPACITY: int = 2;
@@ -487,53 +403,14 @@ export default function BlockingQueueRemainingCapacityTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_2400
-     * @tc.name testBlockingQueueRemainingCapacity024
-     * @tc.desc Verify LinkedBlockingQueue pre-filled with 3-element iterable: remainingCapacity is Int.MAX_VALUE-3
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBlockingQueueRemainingCapacity024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const EXPECTED_REMAINING_CAPACITY: int = 2147483644;
-      let arr: int[] = [1, 2, 3];
-      let queue: containers.BlockingQueue<int> = new containers.LinkedBlockingQueue<int>(arr);
-      expect(queue.remainingCapacity()).assertEqual(EXPECTED_REMAINING_CAPACITY);
-      expect(queue.remainingCapacity()).assertEqual((queue.capacity - queue.size));
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_2500
-     * @tc.name testBlockingQueueRemainingCapacity025
-     * @tc.desc Verify LinkedBlockingQueue(5, 2-element iterable): remainingCapacity=3 initially, formula holds through operations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBlockingQueueRemainingCapacity025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const CAPACITY: int = 5;
-      const EXPECTED_REMAINING_CAPACITY: int = 3;
-      const PUSH_VALUE: int = 30;
-      const EXPECTED_REMAINING_CAPACITY_2: int = 2;
-      let arr: int[] = [10, 20];
-      let queue: containers.BlockingQueue<int> = new containers.LinkedBlockingQueue<int>(CAPACITY, arr);
-      expect(queue.remainingCapacity()).assertEqual(EXPECTED_REMAINING_CAPACITY);
-      queue.push(PUSH_VALUE);
-      expect(queue.remainingCapacity()).assertEqual(EXPECTED_REMAINING_CAPACITY_2);
-      queue.pop();
-      expect(queue.remainingCapacity()).assertEqual(EXPECTED_REMAINING_CAPACITY);
-      expect(queue.remainingCapacity()).assertEqual((queue.capacity - queue.size));
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_2600
-     * @tc.name testBlockingQueueRemainingCapacity026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_2000
+     * @tc.name testBlockingQueueRemainingCapacity020
      * @tc.desc Verify LinkedBlockingQueue boolean type: remainingCapacity decrements and recovers correctly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const CAPACITY: int = 3;
       const EXPECTED_REMAINING_CAPACITY: int = 3;
       const PUSH_FLAG: boolean = true;
@@ -550,213 +427,186 @@ export default function BlockingQueueRemainingCapacityTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_2700
-     * @tc.name testBlockingQueueRemainingCapacity027
-     * @tc.desc Verify ArrayBlockingQueue string type: remainingCapacity decrements with push, recovers with pop
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBlockingQueueRemainingCapacity027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const CAPACITY: int = 4;
-      const EXPECTED_REMAINING_CAPACITY: int = 4;
-      const PUSH_TEXT: string = "a";
-      const PUSH_TEXT_2: string = "b";
-      const PUSH_TEXT_3: string = "c";
-      const EXPECTED_REMAINING_CAPACITY_2: int = 1;
-      const EXPECTED_REMAINING_CAPACITY_3: int = 2;
-      let queue: containers.BlockingQueue<string> = new containers.ArrayBlockingQueue<string>(CAPACITY);
-      expect(queue.remainingCapacity()).assertEqual(EXPECTED_REMAINING_CAPACITY);
-      queue.push(PUSH_TEXT);
-      queue.push(PUSH_TEXT_2);
-      queue.push(PUSH_TEXT_3);
-      expect(queue.remainingCapacity()).assertEqual(EXPECTED_REMAINING_CAPACITY_2);
-      queue.pop();
-      expect(queue.remainingCapacity()).assertEqual(EXPECTED_REMAINING_CAPACITY_3);
-      expect(queue.remainingCapacity()).assertEqual((queue.capacity - queue.size));
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_2800
-     * @tc.name testBlockingQueueRemainingCapacity028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_2100
+     * @tc.name testBlockingQueueRemainingCapacity021
      * @tc.desc Verify LinkedBlockingQueue remainingCapacity() returns capacity for an empty queue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10);
       let r = q.remainingCapacity();
       expect(r).assertEqual(10);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_2900
-     * @tc.name testBlockingQueueRemainingCapacity029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_2200
+     * @tc.name testBlockingQueueRemainingCapacity022
      * @tc.desc Verify ArrayBlockingQueue remainingCapacity() returns capacity for an empty queue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(10);
       let r = q.remainingCapacity();
       expect(r).assertEqual(10);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_3000
-     * @tc.name testBlockingQueueRemainingCapacity030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_2300
+     * @tc.name testBlockingQueueRemainingCapacity023
      * @tc.desc Verify empty ArrayBlockingQueue with capacity 5 remainingCapacity() returns 5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5);
       expect(q.remainingCapacity()).assertEqual(5);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_3100
-     * @tc.name testBlockingQueueRemainingCapacity031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_2400
+     * @tc.name testBlockingQueueRemainingCapacity024
      * @tc.desc Verify empty ArrayBlockingQueue with capacity 1 remainingCapacity() returns 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(1);
       expect(q.remainingCapacity()).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_3200
-     * @tc.name testBlockingQueueRemainingCapacity032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_2500
+     * @tc.name testBlockingQueueRemainingCapacity025
      * @tc.desc Verify empty LinkedBlockingQueue with capacity 2 remainingCapacity() returns 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(2);
       expect(q.remainingCapacity()).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_3300
-     * @tc.name testBlockingQueueRemainingCapacity033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_2600
+     * @tc.name testBlockingQueueRemainingCapacity026
      * @tc.desc Verify empty ArrayBlockingQueue with capacity 200 remainingCapacity() returns 200
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(200);
       expect(q.remainingCapacity()).assertEqual(200);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_3400
-     * @tc.name testBlockingQueueRemainingCapacity034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_2700
+     * @tc.name testBlockingQueueRemainingCapacity027
      * @tc.desc Verify empty LinkedBlockingQueue with capacity 1000 remainingCapacity() returns 1000
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(1000);
       expect(q.remainingCapacity()).assertEqual(1000);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_3500
-     * @tc.name testBlockingQueueRemainingCapacity035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_2800
+     * @tc.name testBlockingQueueRemainingCapacity028
      * @tc.desc Verify empty ArrayBlockingQueue with capacity 65536 remainingCapacity() returns 65536
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(65536);
       expect(q.remainingCapacity()).assertEqual(65536);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_3600
-     * @tc.name testBlockingQueueRemainingCapacity036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_2900
+     * @tc.name testBlockingQueueRemainingCapacity029
      * @tc.desc Verify LinkedBlockingQueue hexadecimal capacity literal 0x10 yields remainingCapacity() 16
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(0x10);
       expect(q.remainingCapacity()).assertEqual(16);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_3700
-     * @tc.name testBlockingQueueRemainingCapacity037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_3000
+     * @tc.name testBlockingQueueRemainingCapacity030
      * @tc.desc Verify LinkedBlockingQueue octal capacity literal 0o17 yields remainingCapacity() 15
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(0o17);
       expect(q.remainingCapacity()).assertEqual(15);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_3800
-     * @tc.name testBlockingQueueRemainingCapacity038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_3100
+     * @tc.name testBlockingQueueRemainingCapacity031
      * @tc.desc Verify LinkedBlockingQueue binary capacity literal 0b1000 yields remainingCapacity() 8
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(0b1000);
       expect(q.remainingCapacity()).assertEqual(8);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_3900
-     * @tc.name testBlockingQueueRemainingCapacity039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_3200
+     * @tc.name testBlockingQueueRemainingCapacity032
      * @tc.desc Verify ArrayBlockingQueue hexadecimal capacity literal 0x100 yields remainingCapacity() 256
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(0x100);
       expect(q.remainingCapacity()).assertEqual(256);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_4000
-     * @tc.name testBlockingQueueRemainingCapacity040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_3300
+     * @tc.name testBlockingQueueRemainingCapacity033
      * @tc.desc Verify ArrayBlockingQueue capacity 1 filled with 1 element remainingCapacity() returns 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(1);
       q.add(0);
       expect(q.remainingCapacity()).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_4100
-     * @tc.name testBlockingQueueRemainingCapacity041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_3400
+     * @tc.name testBlockingQueueRemainingCapacity034
      * @tc.desc Verify ArrayBlockingQueue poll 1 element increases remainingCapacity() by 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(10);
       q.add(0);
       q.add(1);
@@ -766,28 +616,28 @@ export default function BlockingQueueRemainingCapacityTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_4200
-     * @tc.name testBlockingQueueRemainingCapacity042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_3500
+     * @tc.name testBlockingQueueRemainingCapacity035
      * @tc.desc Verify empty ArrayBlockingQueue poll returns undefined and remainingCapacity() stays at capacity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5);
       q.poll();
       expect(q.remainingCapacity()).assertEqual(5);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_4300
-     * @tc.name testBlockingQueueRemainingCapacity043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_3600
+     * @tc.name testBlockingQueueRemainingCapacity036
      * @tc.desc Verify ArrayBlockingQueue poll all elements restores remainingCapacity() to capacity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(3);
       q.add(0);
       q.add(1);
@@ -799,27 +649,27 @@ export default function BlockingQueueRemainingCapacityTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_4400
-     * @tc.name testBlockingQueueRemainingCapacity044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_3700
+     * @tc.name testBlockingQueueRemainingCapacity037
      * @tc.desc Verify ArrayBlockingQueue arithmetic expression capacity 5 * 2 yields remainingCapacity() 10
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5 * 2);
       expect(q.remainingCapacity()).assertEqual(10);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_4500
-     * @tc.name testBlockingQueueRemainingCapacity045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_3800
+     * @tc.name testBlockingQueueRemainingCapacity038
      * @tc.desc Verify ArrayBlockingQueue constructed with capacity 0 throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(0);
         expect().assertFail();
@@ -829,14 +679,14 @@ export default function BlockingQueueRemainingCapacityTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_4600
-     * @tc.name testBlockingQueueRemainingCapacity046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_3900
+     * @tc.name testBlockingQueueRemainingCapacity039
      * @tc.desc Verify ArrayBlockingQueue constructed with capacity -1 throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(-1);
         expect().assertFail();
@@ -846,14 +696,14 @@ export default function BlockingQueueRemainingCapacityTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_4700
-     * @tc.name testBlockingQueueRemainingCapacity047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_4000
+     * @tc.name testBlockingQueueRemainingCapacity040
      * @tc.desc Verify LinkedBlockingQueue constructed with capacity 0 throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(0);
         expect().assertFail();
@@ -863,14 +713,14 @@ export default function BlockingQueueRemainingCapacityTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_4800
-     * @tc.name testBlockingQueueRemainingCapacity048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_4100
+     * @tc.name testBlockingQueueRemainingCapacity041
      * @tc.desc Verify LinkedBlockingQueue constructed with negative capacity throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(-100);
         expect().assertFail();
@@ -880,14 +730,14 @@ export default function BlockingQueueRemainingCapacityTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_4900
-     * @tc.name testBlockingQueueRemainingCapacity049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_4200
+     * @tc.name testBlockingQueueRemainingCapacity042
      * @tc.desc Verify ArrayBlockingQueue constructed from Set decreases remainingCapacity() by set size
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: Set<int> = new Set<int>();
       s.add(1);
       s.add(2);
@@ -896,56 +746,56 @@ export default function BlockingQueueRemainingCapacityTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_5000
-     * @tc.name testBlockingQueueRemainingCapacity050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_4300
+     * @tc.name testBlockingQueueRemainingCapacity043
      * @tc.desc Verify ArrayBlockingQueue with number(float) type element push decreases remainingCapacity() by 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<number> = new containers.ArrayBlockingQueue<number>(10);
       q.push(3.14);
       expect(q.remainingCapacity()).assertEqual(9);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_5100
-     * @tc.name testBlockingQueueRemainingCapacity051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_4400
+     * @tc.name testBlockingQueueRemainingCapacity044
      * @tc.desc Verify LinkedBlockingQueue push max int boundary value decreases remainingCapacity() by 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(5);
       q.push(2147483647);
       expect(q.remainingCapacity()).assertEqual(4);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_5200
-     * @tc.name testBlockingQueueRemainingCapacity052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_4500
+     * @tc.name testBlockingQueueRemainingCapacity045
      * @tc.desc Verify LinkedBlockingQueue push min int boundary value decreases remainingCapacity() by 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(5);
       q.push(-2147483648);
       expect(q.remainingCapacity()).assertEqual(4);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_5300
-     * @tc.name testBlockingQueueRemainingCapacity053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_4600
+     * @tc.name testBlockingQueueRemainingCapacity046
      * @tc.desc Verify ArrayBlockingQueue getFirst does not change remainingCapacity()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(10);
       q.add(0);
       q.add(1);
@@ -955,14 +805,14 @@ export default function BlockingQueueRemainingCapacityTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_5400
-     * @tc.name testBlockingQueueRemainingCapacity054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_4700
+     * @tc.name testBlockingQueueRemainingCapacity047
      * @tc.desc Verify ArrayBlockingQueue getEnd does not change remainingCapacity()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(10);
       q.add(0);
       q.add(1);
@@ -972,27 +822,27 @@ export default function BlockingQueueRemainingCapacityTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_5500
-     * @tc.name testBlockingQueueRemainingCapacity055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_4800
+     * @tc.name testBlockingQueueRemainingCapacity048
      * @tc.desc Verify LinkedBlockingQueue constructed with capacity 2147483647 returns remainingCapacity() 2147483647
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(2147483647);
       expect(q.remainingCapacity()).assertEqual(2147483647);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_5600
-     * @tc.name testBlockingQueueRemainingCapacity056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_4900
+     * @tc.name testBlockingQueueRemainingCapacity049
      * @tc.desc Verify ArrayBlockingQueue remainingCapacity() call does not change size
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(10);
       q.add(0);
       q.add(1);
@@ -1001,18 +851,19 @@ export default function BlockingQueueRemainingCapacityTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_5700
-     * @tc.name testBlockingQueueRemainingCapacity057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_REMAININGCAPACITY_5000
+     * @tc.name testBlockingQueueRemainingCapacity050
      * @tc.desc Verify ArrayBlockingQueue remainingCapacity() call leaves queue content intact for subsequent poll
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueRemainingCapacity057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueRemainingCapacity050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 42;
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(10);
-      q.add(42);
+      q.add(TEST_VALUE);
       q.remainingCapacity();
-      expect(q.poll()).assertEqual(42);
+      expect(q.poll()).assertEqual(TEST_VALUE);
     });
   });
 }
