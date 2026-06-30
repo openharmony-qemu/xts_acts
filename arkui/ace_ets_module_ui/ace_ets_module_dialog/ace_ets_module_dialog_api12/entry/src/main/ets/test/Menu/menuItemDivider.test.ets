@@ -56,7 +56,7 @@ export default function menuItemDivider() {
       console.info('[menuItemDivider_0100] START');
 
       await CommonFunc.sleep(1000);
-      let myJson = getInspectorByKey('menuItemDividerText');
+      let myJson = getInspectorByKey('menuItemDivider' + '_menuItemDividerText');
       console.info(`[menuItemDivider_0100] component obj1 is:${JSON.stringify(myJson)}`);
       await CommonFunc.sleep(200);
       let obj1: ESObject = JSON.parse(myJson);
@@ -81,7 +81,7 @@ export default function menuItemDivider() {
       console.info('[menuItemDivider_0200] START');
 
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('menuItemDividerText');
+      let strJson = getInspectorByKey('menuItemDivider' + '_menuItemDividerText');
       await CommonFunc.sleep(200);
       let obj: ESObject = JSON.parse(strJson);
       console.info(`[menuItemDivider_0200] component obj is:${JSON.stringify(obj)}`);
@@ -105,7 +105,7 @@ export default function menuItemDivider() {
       console.info('[menuItemDivider_0300] START');
 
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('menuItemDividerText');
+      let strJson = getInspectorByKey('menuItemDivider' + '_menuItemDividerText');
       await CommonFunc.sleep(200);
       let obj: ESObject = JSON.parse(strJson);
       console.info(`[menuItemDivider_0300] component obj is:${JSON.stringify(obj)}`);
@@ -129,7 +129,7 @@ export default function menuItemDivider() {
       console.info('[menuItemDivider_0400] START');
 
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('menuItemDividerText');
+      let strJson = getInspectorByKey('menuItemDivider' + '_menuItemDividerText');
       await CommonFunc.sleep(200);
       let obj: ESObject = JSON.parse(strJson);
       console.info(`[menuItemDivider_0400] component obj is:${JSON.stringify(obj)}`);

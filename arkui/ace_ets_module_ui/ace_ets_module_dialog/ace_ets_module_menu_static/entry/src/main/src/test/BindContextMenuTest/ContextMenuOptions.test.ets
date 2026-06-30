@@ -41,7 +41,7 @@ function logLongString(tag: string, longStr: string): void {
   }
 }
 
-export default function ContextMenuOptionsTest() {
+export default function ContextMenuOptionsTest(): void {
   describe('ContextMenuOptionsTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("ContextMenuOptionsTest beforeAll start");

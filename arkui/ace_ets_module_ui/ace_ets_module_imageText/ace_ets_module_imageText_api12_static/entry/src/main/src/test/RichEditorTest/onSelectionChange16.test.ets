@@ -83,7 +83,7 @@ export default function onSelectionChange16() {
       await richEditor.click();
       await CommonFunc.sleep(1000);
 
-      let text0 = inspector.getInspectorByKey('onSelectionChange16_text1');
+      let text0 = inspector.getInspectorByKey('onSelectionChange16' + '_text1');
       let Obj0 = JSON.parseJsonElement(text0);
       expect(Obj0.getElement('$attrs').getString('content')).assertEqual('1');
 
@@ -91,13 +91,13 @@ export default function onSelectionChange16() {
       await driver.triggerKey(2055);
       await driver.triggerKey(2055);
       await CommonFunc.sleep(1000);
-      let text1_1 = inspector.getInspectorByKey('onSelectionChange16_text1');
+      let text1_1 = inspector.getInspectorByKey('onSelectionChange16' + '_text1');
       let Obj1_1 = JSON.parseJsonElement(text1_1);
       expect(Obj1_1.getElement('$attrs').getString('content')).assertEqual('4');
-      let text2_1 = inspector.getInspectorByKey('onSelectionChange16_text2');
+      let text2_1 = inspector.getInspectorByKey('onSelectionChange16' + '_text2');
       let Obj2_1 = JSON.parseJsonElement(text2_1);
       expect(Obj2_1.getElement('$attrs').getString('content')).assertEqual('0');
-      let text3_1 = inspector.getInspectorByKey('onSelectionChange16_text3');
+      let text3_1 = inspector.getInspectorByKey('onSelectionChange16' + '_text3');
       let Obj3_1 = JSON.parseJsonElement(text3_1);
       expect(Obj3_1.getElement('$attrs').getString('content')).assertEqual('0');
 

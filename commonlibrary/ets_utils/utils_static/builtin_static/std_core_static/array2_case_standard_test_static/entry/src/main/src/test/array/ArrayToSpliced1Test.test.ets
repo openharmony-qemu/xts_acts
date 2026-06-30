@@ -1499,7 +1499,7 @@ export default function ArrayToSpliced1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayToSplicedOne092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(1, 5);
       const result = arr.toSpliced(0, 1);
       expect(result.length).assertEqual(0);
     });
@@ -1513,7 +1513,7 @@ export default function ArrayToSpliced1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayToSplicedOne093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(1, 5);
       const result = arr.toSpliced(0, 0);
       expect(result.toString()).assertEqual('5');
     });

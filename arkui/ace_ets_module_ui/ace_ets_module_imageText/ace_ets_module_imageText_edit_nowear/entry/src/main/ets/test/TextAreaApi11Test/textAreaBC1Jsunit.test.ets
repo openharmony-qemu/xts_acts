@@ -85,7 +85,7 @@ export default function textAreaBC1Jsunit() {
       let text = await driver.findComponent(BY.key('textArea1'));
       await text.inputText('123');
       await CommonFunc.sleep(2000);
-      let strJson1 = getInspectorByKey('change');
+      let strJson1 = getInspectorByKey('textAreaBC1' + '_change');
       let obj1: ESObject = JSON.parse(strJson1);
       console.info('textAreaBC1Jsunit_0200 obj1 is: ' + obj1.$attrs.content);
       expect(obj1.$attrs.content).assertEqual('123');
@@ -96,7 +96,7 @@ export default function textAreaBC1Jsunit() {
       await CommonFunc.sleep(2000);
       await text.inputText('123456');
       await CommonFunc.sleep(2000);
-      let strJson2 = getInspectorByKey('change');
+      let strJson2 = getInspectorByKey('textAreaBC1' + '_change');
       let obj2: ESObject = JSON.parse(strJson2);
       console.info('textAreaBC1Jsunit_0200 obj2 is: ' + obj2.$attrs.content);
       expect(obj2.$attrs.content).assertEqual('123456');
@@ -122,7 +122,7 @@ export default function textAreaBC1Jsunit() {
       let text = await driver.findComponent(BY.key('textArea1'));
       await text.inputText('444');
       await CommonFunc.sleep(2000);
-      let strJson1 = getInspectorByKey('change');
+      let strJson1 = getInspectorByKey('textAreaBC1' + '_change');
       let obj1: ESObject = JSON.parse(strJson1);
       console.info('textAreaBC1Jsunit_0300 obj1 is: ' + obj1.$attrs.content);
       expect(obj1.$attrs.content).assertEqual('444');
@@ -169,7 +169,7 @@ export default function textAreaBC1Jsunit() {
       await CommonFunc.sleep(1000);
       await driver.triggerKey(2047)
       await CommonFunc.sleep(1000);
-      let strJson1 = getInspectorByKey('change');
+      let strJson1 = getInspectorByKey('textAreaBC1' + '_change');
       let obj1: ESObject = JSON.parse(strJson1);
       console.info('textAreaBC1Jsunit_0400 obj1 is: ' + obj1.$attrs.content);
       expect(obj1.$attrs.content).assertEqual('rrr');
@@ -241,7 +241,7 @@ export default function textAreaBC1Jsunit() {
         await copy.click();
         await CommonFunc.sleep(1000);
       }
-      let textIn = await driver.findComponent(BY.key('copy'));
+      let textIn = await driver.findComponent(BY.key('textAreaBC1' + '_copy'));
       await CommonFunc.sleep(1000);
       let txt = await textIn.getText();
       await CommonFunc.sleep(1000);
@@ -254,7 +254,7 @@ export default function textAreaBC1Jsunit() {
         await paste.click();
         await CommonFunc.sleep(1000);
       }
-      let textPaste = await driver.findComponent(BY.key('paste'));
+      let textPaste = await driver.findComponent(BY.key('textAreaBC1' + '_paste'));
       let text1 = await textPaste.getText();
       console.info('textAreaJsunit_0900 text1: ' + text1);
       expect(text1).assertEqual('paste');
@@ -317,7 +317,7 @@ export default function textAreaBC1Jsunit() {
       await CommonFunc.sleep(1000);
       await driver.triggerKey(2047)
       await CommonFunc.sleep(1000);
-      let strJson1 = getInspectorByKey('change');
+      let strJson1 = getInspectorByKey('textAreaBC1' + '_change');
       let obj1: ESObject = JSON.parse(strJson1);
       console.info('textAreaBC1Jsunit_0800 obj1 is: ' + obj1.$attrs.content);
       expect(obj1.$attrs.content).assertEqual('ee');

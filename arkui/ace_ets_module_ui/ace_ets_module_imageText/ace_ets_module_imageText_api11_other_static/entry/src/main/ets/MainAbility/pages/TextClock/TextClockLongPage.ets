@@ -82,7 +82,7 @@ struct TextClockLongPage {
               .onDateChange((value: long) => {
                 this.accumulateTime = value
               })
-              .key('textClock')
+              .key('TextClockLongPage_textClock')
               .id('textClock')
               .visibility(this.visible)
               .fontSize(20)

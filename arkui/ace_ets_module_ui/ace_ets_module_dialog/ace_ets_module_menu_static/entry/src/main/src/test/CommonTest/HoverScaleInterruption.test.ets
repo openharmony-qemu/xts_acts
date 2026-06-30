@@ -41,7 +41,7 @@ function logLongString(tag: string, longStr: string): void {
   }
 }
 
-export default function HoverScaleInterruptionTest() {
+export default function HoverScaleInterruptionTest(): void {
   describe('HoverScaleInterruptionTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("HoverScaleInterruptionTest beforeAll start");

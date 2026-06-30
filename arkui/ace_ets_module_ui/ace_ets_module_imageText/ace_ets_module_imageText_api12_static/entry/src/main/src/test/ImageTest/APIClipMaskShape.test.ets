@@ -73,7 +73,7 @@ export default function APIClipMaskShape() {
     it('APIClipMaskShape_static_001',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[APIClipMaskShape_001] START');
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('APIClipMaskShape_Image1');
+      let strJson = inspector.getInspectorByKey('APIClipMaskShape' + '_Image1');
       await CommonFunc.sleep(200);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[APIClipMaskShape_001] component obj is: " + JSON.stringify(obj));
@@ -97,7 +97,7 @@ export default function APIClipMaskShape() {
     it('APIClipMaskShape_static_002',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[APIClipMaskShape_002] START');
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('APIClipMaskShape_Image2');
+      let strJson = inspector.getInspectorByKey('APIClipMaskShape' + '_Image2');
       await CommonFunc.sleep(200);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[APIClipMaskShape_002] component obj is: " + JSON.stringify(obj));

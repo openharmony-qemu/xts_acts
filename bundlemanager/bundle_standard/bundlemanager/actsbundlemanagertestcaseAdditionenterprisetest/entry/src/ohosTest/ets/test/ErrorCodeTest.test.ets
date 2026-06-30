@@ -18,7 +18,7 @@
  import image from '@ohos.multimedia.image';
  import bundleManager from '@ohos.bundle.bundleManager';
  import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium";
- import { defaultAppManager } from '@kit.AbilityKit';
+ import { defaultAppManager,launcherBundleManager  } from '@kit.AbilityKit';
  
  import Utils from './Utils';
  const BUNDLE_NAME = "ohos.acts.bundlemanagererrcode.test";
@@ -332,6 +332,35 @@
      });
  
      /**
+       * @tc.name   SUB_BMS_FRAMEWORK_getBundleNameByUid_100
+       * @tc.number SUB_BMS_FRAMEWORK_getBundleNameByUid_100
+       * @tc.desc   test getBundleNameByUid callback when uid is null test.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
+      it('SUB_BMS_FRAMEWORK_getBundleNameByUid_100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
+        console.info(TAG +"SUB_BMS_FRAMEWORK_getBundleNameByUid_100 start");
+        try {
+          bundleManager.getBundleNameByUid(null, (err:BusinessError,data:String) => {
+            if (err) {
+              console.info(TAG + 'SUB_BMS_FRAMEWORK_getBundleNameByUid_100 failed: ' + err.message);
+              expect().assertFail();
+              done();
+            } else {
+              console.info(TAG + 'SUB_BMS_FRAMEWORK_getBundleNameByUid_100 successfully: ' + JSON.stringify(data));
+              expect().assertFail();
+              done();
+            }
+          })
+        } catch (exception) {
+          console.error(`Failed to SUB_BMS_FRAMEWORK_getBundleNameByUid_100 catch. Cause code: ${exception.code}, message: ${exception.message}`);
+          expect(exception.code).assertEqual(401);
+          done();
+        }
+      });
+
+     /**
       * @tc.name   getBundleNameByUidPromise401
       * @tc.number Sub_Bms_getBundleNameByUid_401
       * @tc.desc   test errCode 401 when call getBundleNameByUid
@@ -387,28 +416,50 @@
  
      });
  
-     /**
-      * @tc.name   getBundleNameByUidSync401
-      * @tc.number Sub_Bms_getBundleNameByUid_401
-      * @tc.desc   test errCode 401 when call getBundleNameByUidSync
-      * @tc.type   FUNCTION
-      * @tc.size   MEDIUMTEST
-      * @tc.level  LEVEL3
-      */
-     it('getBundleNameByUidSync401', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
-       console.info(TAG +"getBundleNameByUidSync401 start");
-       try {
-         let data = bundleManager.getBundleNameByUidSync(undefined);
-         console.info(TAG + 'getBundleNameByUidSync401 successfully: ' + JSON.stringify(data));
-         console.info(TAG + 'getBundleNameByUidSync401 successfully: ' + JSON.stringify(data));
-         expect().assertFail();
-         done();
-       } catch (exception) {
-         console.error(`Failed to getBundleNameByUidSync401 catch. Cause code: ${exception.code}, message: ${exception.message}`);
-         expect(exception.code).assertEqual(401);
-         done();
-       }
-     });
+/**
+       * @tc.name   SUB_BMS_FRAMEWORK_getBundleNameByUidSync_100
+       * @tc.number SUB_BMS_FRAMEWORK_getBundleNameByUidSync_100
+       * @tc.desc   test getBundleNameByUidSync when uid is null test.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
+      it('SUB_BMS_FRAMEWORK_getBundleNameByUidSync_100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
+        console.info(TAG +"SUB_BMS_FRAMEWORK_getBundleNameByUidSync_100 start");
+        try {
+          let data = bundleManager.getBundleNameByUidSync(null);
+          console.info(TAG + 'SUB_BMS_FRAMEWORK_getBundleNameByUidSync_100 successfully: ' + JSON.stringify(data));
+          expect().assertFail();
+          done();
+        } catch (exception) {
+          console.error(`Failed to SUB_BMS_FRAMEWORK_getBundleNameByUidSync_100 catch. Cause code: ${exception.code}, message: ${exception.message}`);
+          expect(exception.code).assertEqual(401);
+          done();
+        }
+      });
+
+      /**
+       * @tc.name   getBundleNameByUidSync401
+       * @tc.number Sub_Bms_getBundleNameByUid_401
+       * @tc.desc   test errCode 401 when call getBundleNameByUidSync
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
+      it('getBundleNameByUidSync401', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
+        console.info(TAG +"getBundleNameByUidSync401 start");
+        try {
+          let data = bundleManager.getBundleNameByUidSync(undefined);
+          console.info(TAG + 'getBundleNameByUidSync401 successfully: ' + JSON.stringify(data));
+          console.info(TAG + 'getBundleNameByUidSync401 successfully: ' + JSON.stringify(data));
+          expect().assertFail();
+          done();
+        } catch (exception) {
+          console.error(`Failed to getBundleNameByUidSync401 catch. Cause code: ${exception.code}, message: ${exception.message}`);
+          expect(exception.code).assertEqual(401);
+          done();
+        }
+      });
  
      /**
       * @tc.name   getBundleNameByUidSync17700021
@@ -615,7 +666,35 @@
          done();
        }
      });
- 
+     /**
+       * @tc.name   SUB_BMS_FRAMEWORK_getAppCloneIdentity_1100
+       * @tc.number SUB_BMS_FRAMEWORK_getAppCloneIdentity_1100
+       * @tc.desc   test getAppCloneIdentity when uid is null
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
+      it('SUB_BMS_FRAMEWORK_getAppCloneIdentity_1100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
+        console.info(TAG + "SUB_BMS_FRAMEWORK_getAppCloneIdentity_1100 start");
+        try {
+          await bundleManager.getAppCloneIdentity(null).then((res) => {
+            console.info(TAG + 'SUB_BMS_FRAMEWORK_getAppCloneIdentity_1100 successfully: ' + JSON.stringify(res));
+            expect().assertFail();
+            done();
+          }).catch((err: BusinessError) => {
+            let message = (err as BusinessError).message;
+            console.info(TAG +'SUB_BMS_FRAMEWORK_getAppCloneIdentity_1100 catch failed: ' + message);
+            expect().assertFail();
+            done();
+          });
+        } catch (err) {
+          let message = (err as BusinessError).message;
+          console.info(TAG +'SUB_BMS_FRAMEWORK_getAppCloneIdentity_1100 catch failed: ' + message);
+          expect(err.code).assertEqual(401);
+          done();
+        }
+      });
+
      /**
       * @tc.name   getBundleInfoCallBackNull
       * @tc.number Sub_Bms_getBundleInfoCallBackNull_1001
@@ -889,7 +968,117 @@
      });
  
      
-   })
- }
+     /**
+       * @tc.name   SUB_BMS_FRAMEWORK_getLauncherAbilityInfoSync_0100
+       * @tc.number SUB_BMS_FRAMEWORK_getLauncherAbilityInfoSync_0100
+       * @tc.desc   test getLauncherAbilityInfoSync bundleName empty and userId null test.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('SUB_BMS_FRAMEWORK_getLauncherAbilityInfoSync_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) =>  {
+        console.info(TAG + "SUB_BMS_FRAMEWORK_getLauncherAbilityInfoSync_0100 start");
+        try {
+          let data = launcherBundleManager.getLauncherAbilityInfoSync("", 100);
+          console.info(TAG + 'SUB_BMS_FRAMEWORK_getLauncherAbilityInfoSync_0100 successfully: ' + JSON.stringify(data));
+          expect().assertFail();
+          done();
+        } catch (exception) {
+          console.error(`Failed to SUB_BMS_FRAMEWORK_getLauncherAbilityInfoSync_0100 catch. Cause code: ${exception.code}, message: ${exception.message}`);
+          expect(exception.code).assertEqual(17700001);
+          done();
+        }
+      });
+
+      /**
+       * @tc.name   SUB_BMS_FRAMEWORK_getLauncherAbilityInfoSync_0200
+       * @tc.number SUB_BMS_FRAMEWORK_getLauncherAbilityInfoSync_0200
+       * @tc.desc   test getLauncherAbilityInfoSync bundleName null and userId null test.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('SUB_BMS_FRAMEWORK_getLauncherAbilityInfoSync_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) =>  {
+        console.info(TAG + "SUB_BMS_FRAMEWORK_getLauncherAbilityInfoSync_0200 start");
+        try {
+          let data = launcherBundleManager.getLauncherAbilityInfoSync(null, 100);
+          console.info(TAG + 'SUB_BMS_FRAMEWORK_getLauncherAbilityInfoSync_0200 successfully: ' + JSON.stringify(data));
+          expect().assertFail();
+          done();
+        } catch (exception) {
+          console.error(`Failed to SUB_BMS_FRAMEWORK_getLauncherAbilityInfoSync_0200 catch. Cause code: ${exception.code}, message: ${exception.message}`);
+          expect(exception.code).assertEqual(401);
+          done();
+        }
+      });
+
+      /**
+       * @tc.name   SUB_BMS_FRAMEWORK_getLauncherAbilityInfoSync_0300
+       * @tc.number SUB_BMS_FRAMEWORK_getLauncherAbilityInfoSync_0300
+       * @tc.desc   test getLauncherAbilityInfoSync bundleName undefined and userId null test.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('SUB_BMS_FRAMEWORK_getLauncherAbilityInfoSync_0300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) =>  {
+        console.info(TAG + "SUB_BMS_FRAMEWORK_getLauncherAbilityInfoSync_0300 start");
+        try {
+          let data = launcherBundleManager.getLauncherAbilityInfoSync("ohos.acts.bundlemanagererrcode.test.enterprise", null);
+          console.info(TAG + 'SUB_BMS_FRAMEWORK_getLauncherAbilityInfoSync_0300 successfully: ' + JSON.stringify(data));
+          expect().assertFail();
+          done();
+        } catch (exception) {
+          console.error(`Failed to SUB_BMS_FRAMEWORK_getLauncherAbilityInfoSync_0300 catch. Cause code: ${exception.code}, message: ${exception.message}`);
+          expect(exception.code).assertEqual(401);
+          done();
+        }
+      });
+
+      /**
+       * @tc.name   SUB_BMS_FRAMEWORK_getLauncherAbilityInfoSync_0400
+       * @tc.number SUB_BMS_FRAMEWORK_getLauncherAbilityInfoSync_0400
+       * @tc.desc   test getLauncherAbilityInfoSync bundleName empty and userId undefined test.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('SUB_BMS_FRAMEWORK_getLauncherAbilityInfoSync_0400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) =>  {
+        console.info(TAG + "SUB_BMS_FRAMEWORK_getLauncherAbilityInfoSync_0400 start");
+        try {
+          let data = launcherBundleManager.getLauncherAbilityInfoSync("ohos.acts.bundlemanagererrcode.test.enterpris", undefined);
+          console.info(TAG + 'SUB_BMS_FRAMEWORK_getLauncherAbilityInfoSync_0400 successfully: ' + JSON.stringify(data));
+          expect().assertFail();
+          done();
+        } catch (exception) {
+          console.error(`Failed to SUB_BMS_FRAMEWORK_getLauncherAbilityInfoSync_0400 catch. Cause code: ${exception.code}, message: ${exception.message}`);
+          expect(exception.code).assertEqual(401);
+          done();
+        }
+      });
+
+      /**
+       * @tc.name   SUB_BMS_FRAMEWORK_getLauncherAbilityInfoSync_0600
+       * @tc.number SUB_BMS_FRAMEWORK_getLauncherAbilityInfoSync_0600
+       * @tc.desc   test getLauncherAbilityInfoSync bundleName undefined and userId undefined test.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('SUB_BMS_FRAMEWORK_getLauncherAbilityInfoSync_0600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) =>  {
+        console.info(TAG + "SUB_BMS_FRAMEWORK_getLauncherAbilityInfoSync_0600 start");
+        try {
+          let data = launcherBundleManager.getLauncherAbilityInfoSync(undefined, 100);
+          console.info(TAG + 'SUB_BMS_FRAMEWORK_getLauncherAbilityInfoSync_0600 successfully: ' + JSON.stringify(data));
+          expect().assertFail();
+          done();
+        } catch (exception) {
+          console.error(`Failed to SUB_BMS_FRAMEWORK_getLauncherAbilityInfoSync_0600 catch. Cause code: ${exception.code}, message: ${exception.message}`);
+          expect(exception.code).assertEqual(401);
+          done();
+        }
+      });
+      
+    })
+  }
  
  

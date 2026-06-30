@@ -325,6 +325,7 @@ export default function fontPart3Test() {
 
       try {
         let bounds : common2D.Rect[] = font.getBounds([]);
+        expect().assertFail();
       } catch( e ) {
         console.info(msg + ` getBounds errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect(e.code).assertEqual(401);

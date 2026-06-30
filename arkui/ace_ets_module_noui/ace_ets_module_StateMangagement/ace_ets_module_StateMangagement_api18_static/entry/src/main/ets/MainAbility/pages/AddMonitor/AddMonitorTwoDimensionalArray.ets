@@ -33,19 +33,19 @@ export class MatrixData {
     this.data1Monitor = UIUtils.addMonitor(() => this.data[0], this.data1Change, { path: ['二维数组下的数组'] });
     this.data2Monitor = UIUtils.addMonitor(() => this.data[1][1], this.data2Change,  { path: ['二维数组下的元素'] });
   }
-  dataChange(m: IMonitor) {
+  dataChange(m: IMonitor): void {
     m.dirty.forEach((path: string) => {
       console.log(`[addMonitorTest] ${path} value has changed from ${m.value<int[][]>(path)?.before} to ${m.value<int[][]>(path)?.now}`);
       this.text = `[addMonitorTest] ${path} value has changed from ${m.value<int[][]>(path)?.before} to ${m.value<int[][]>(path)?.now}`
     })
   }
-  data1Change(m: IMonitor) {
+  data1Change(m: IMonitor): void {
     m.dirty.forEach((path: string) => {
       console.log(`[addMonitorTest] ${path} value has changed from ${m.value<int[]>(path)?.before} to ${m.value<int[]>(path)?.now}`);
       this.text1 = `[addMonitorTest] ${path} value has changed from ${m.value<int[]>(path)?.before} to ${m.value<int[]>(path)?.now}`
     })
   }
-  data2Change(m: IMonitor) {
+  data2Change(m: IMonitor): void {
     m.dirty.forEach((path: string) => {
       console.log(`[addMonitorTest] ${path} value has changed from ${m.value<int>(path)?.before} to ${m.value<int>(path)?.now}`);
       this.text2 = `[addMonitorTest] ${path} value has changed from ${m.value<int>(path)?.before} to ${m.value<int>(path)?.now}`

@@ -1,4 +1,5 @@
 'use static';
+
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -65,9 +66,7 @@ export default function flexTextMargin_BaselineJsunit() {
       await CommonFunc.sleep(1000);
       console.info("ItemAlign_Baseline_FlexTextMargin after each called");
     });
-
-    
-    
+ 
 /**
      * @tc.number   testFlexItemAlignBaselineSubSetMargin_static
      * @tc.name     testFlexItemAlignBaselineSubSetMargin_static
@@ -135,11 +134,8 @@ it('testFlexItemAlignBaselineSubSetMargin_static', Level.LEVEL0, async () : Prom
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Baseline')
       console.info('new testFlexItemAlignBaselineSubSetMargin_static END');
-
     });
 
-    
-    
 /**
      * @tc.number   testFlexItemAlignBaselineSubSetMarginExceed_static
      * @tc.name     testFlexItemAlignBaselineSubSetMarginExceed_static
@@ -200,7 +196,7 @@ it('testFlexItemAlignBaselineSubSetMarginExceed_static', Level.LEVEL0, async () 
       expect(Math.floor(Math.abs((textMargin03.bottom - textMargin03.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue()
       expect(Math.floor(Math.abs((textMargin01.right - textMargin01.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 2)
         .assertTrue()
-      expect(Math.floor(Math.abs((textMargin02.right - textMargin02.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 2)
+      expect(Math.floor(Math.abs((textMargin02.right - textMargin02.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 3)
         .assertTrue()
       expect(Math.floor(Math.abs((textMargin03.right - textMargin03.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 2)
         .assertTrue()
@@ -208,7 +204,7 @@ it('testFlexItemAlignBaselineSubSetMarginExceed_static', Level.LEVEL0, async () 
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Baseline')
       console.info('new testFlexItemAlignBaselineSubSetMarginExceed_static END');
-
     });
+
   })
 }

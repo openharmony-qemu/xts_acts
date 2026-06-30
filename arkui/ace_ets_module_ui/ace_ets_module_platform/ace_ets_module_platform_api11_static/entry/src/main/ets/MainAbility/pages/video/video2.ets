@@ -68,7 +68,7 @@ struct VideoCreateComponent {
         currentProgressRate: this.currentProgressRates,
         controller: this.myVideoController
       })
-        .key("video")
+        .key("video2_video")
         .width(700)
         .height(500)
         .autoPlay(this.autoPlays)

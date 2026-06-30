@@ -579,7 +579,7 @@ export default function ArrayLikeGetTest02(): void {
      * @tc.level Level 2
      */
     it('testArrayLikeGet088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const values = new Array<int>(42)
+      const values = Array.create<int>(1, 42)
       const list: ArrayLike<int> = values
       let idx: int = list.length / 2
       expect(idx).assertEqual(0)
@@ -760,7 +760,7 @@ export default function ArrayLikeGetTest02(): void {
      */
     it('testArrayLikeGet099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const hundredChars = "0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789"
-      const values = new Array<string>(hundredChars)
+      const values = Array.create<string>(1, hundredChars)
       const list: ArrayLike<string> = values
       expect(list.$_get(0).length).assertEqual(100)
       expect(list.$_get(0)).assertEqual(hundredChars)
@@ -948,7 +948,7 @@ export default function ArrayLikeGetTest02(): void {
      */
     it('testArrayLikeGet108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const idCard = "310101199001011234"
-      const list: ArrayLike<string> = new Array<string>(idCard)
+      const list: ArrayLike<string> = Array.create<string>(1, idCard)
       expect(list.$_get(0)).assertEqual(idCard)
     });
 
@@ -962,7 +962,7 @@ export default function ArrayLikeGetTest02(): void {
      */
     it('testArrayLikeGet109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const xss = "<script>alert(1)</script>"
-      const list: ArrayLike<string> = new Array<string>(xss)
+      const list: ArrayLike<string> = Array.create<string>(1, xss)
       expect(list.$_get(0)).assertEqual(xss)
     });
 
@@ -975,7 +975,7 @@ export default function ArrayLikeGetTest02(): void {
      * @tc.level Level 2
      */
     it('testArrayLikeGet110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const list: ArrayLike<double> = new Array<double>(123.456)
+      const list: ArrayLike<double> = Array.create<double>(1, 123.456)
       expect(list.$_get(0)).assertEqual(123.456)
     });
 

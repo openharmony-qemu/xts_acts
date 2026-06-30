@@ -12,55 +12,67 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { CounterV2Component, CounterV2Type } from '@kit.ArkUI';
+import { CounterV2Component, CounterV2Type, CounterV2DateData } from '@kit.ArkUI';
 
 @Entry
 @ComponentV2
 struct CounterV2Direction {
-  @Local currentDirection?: Direction = Direction.Auto
+  @Local currentDirection: Direction = Direction.Auto
 
   build() {
-    Column() {
-      Row() {
-        Button('Auto').id('Auto').onClick(() => {
-          this.currentDirection = Direction.Auto
-        }).backgroundColor(this.currentDirection == Direction.Auto ? Color.Red : Color.Blue)
-        Button('Rtl').id('Rtl').onClick(() => {
-          this.currentDirection = Direction.Rtl
-        }).backgroundColor(this.currentDirection == Direction.Rtl ? Color.Red : Color.Blue)
-        Button('Ltr').id('Ltr').onClick(() => {
-          this.currentDirection = Direction.Ltr
-        }).backgroundColor(this.currentDirection == Direction.Ltr ? Color.Red : Color.Blue)
+    Scroll() {
+      Column({ space: 12 }) {
+        Row({ space: 8 }) {
+          Button('Auto').id('Auto').onClick(() => {
+            this.currentDirection = Direction.Auto;
+          })
+          Button('Rtl').id('Rtl').onClick(() => {
+            this.currentDirection = Direction.Rtl;
+          })
+          Button('Ltr').id('Ltr').onClick(() => {
+            this.currentDirection = Direction.Ltr;
+          })
+        }
+
+        CounterV2Component({
+          options: {
+            direction: this.currentDirection,
+            type: CounterV2Type.LIST,
+            numberOptions: { label: '价格', min: 0, value: 5, max: 10 },
+          },
+        }).id('cv2_dir_list')
+
+        CounterV2Component({
+          options: {
+            direction: this.currentDirection,
+            type: CounterV2Type.COMPACT,
+            numberOptions: { label: '数量', value: 10, min: 0, max: 100, step: 10 },
+          },
+        }).id('cv2_dir_compact')
+
+        CounterV2Component({
+          options: {
+            direction: this.currentDirection,
+            type: CounterV2Type.INLINE,
+            inlineOptions: { value: 100, min: 10, step: 2, max: 1000, textWidth: 80 },
+          },
+        }).id('cv2_dir_inline')
+
+        CounterV2Component({
+          options: {
+            direction: this.currentDirection,
+            type: CounterV2Type.INLINE_DATE,
+            dateOptions: {
+              year: 2024,
+              onDateChange: (date: CounterV2DateData) => {
+                console.info('[ARKUI_DYN] dir date: ' + date.toString());
+              },
+            },
+          },
+        }).id('cv2_dir_date')
       }
-
-      CounterV2Component({
-        options: {
-          direction: this.currentDirection,
-          type: CounterV2Type.LIST,
-          numberOptions: {
-            label: '价格',
-            min: 0,
-            value: 5,
-            max: 10,
-          }
-        }
-      })
-
-      CounterV2Component({
-        options: {
-          direction: this.currentDirection,
-          type: CounterV2Type.COMPACT,
-          numberOptions: {
-            label: '数量',
-            value: 10,
-            min: 0,
-            max: 100,
-            step: 10
-          }
-        }
-      })
-
-
+      .width('100%')
+      .padding(12)
     }
     .width('100%')
     .height('100%')

@@ -41,7 +41,7 @@ function logLongString(tag: string, longStr: string): void {
   }
 }
 
-export default function MenuTest() {
+export default function MenuTest(): void {
   describe('MenuTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("MenuTest beforeAll start");

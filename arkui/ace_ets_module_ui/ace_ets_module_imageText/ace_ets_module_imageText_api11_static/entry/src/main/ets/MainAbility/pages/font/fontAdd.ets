@@ -32,7 +32,6 @@ import {
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { Font } from '@ohos.arkui.UIContext'
 
-const Font = new Font();
 
 @Entry
 @Component
@@ -49,7 +48,7 @@ struct FontExample {
   build() {
     Column() {
       Text(this.value).key('fontList').key('fontlist')
-      Text(this.value1).key('fontName').key('fontName')
+      Text(this.value1).key('fontAdd_fontName_01').key('fontAdd_fontName_02')
       
       Button("getSystemFontList")
         .width('60%')

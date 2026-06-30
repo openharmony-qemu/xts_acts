@@ -31,7 +31,7 @@ let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-export default function RepeatCloseReuseTest0110() {
+export default function RepeatCloseReuseTest0110(): void {
   describe('RepeatCloseReuseTest0110', () => {
     beforeAll(async (): Promise<void> => {
 

@@ -27,6 +27,7 @@ struct SpaceMain5JustifyContent {
           Text('3').width('50%').height(50).backgroundColor(0xD2B48C)
         }
         .id("SpaceMain5NoWrap_1")
+        .key('SpaceMain5NoWrap_1')
         .width('90%')
         .padding(10)
         .backgroundColor(0xAFEEEE)
@@ -38,6 +39,7 @@ struct SpaceMain5JustifyContent {
           Text('3').width('50%').height(50).backgroundColor(0xD2B48C)
         }
         .id("SpaceMain5JustifyContent_Start")
+        .key('SpaceMain5JustifyContent_Start')
         .width('90%')
         .padding(10)
         .backgroundColor(0xAFEEEE)
@@ -49,6 +51,7 @@ struct SpaceMain5JustifyContent {
           Text('3').width('50%').height(50).backgroundColor(0xD2B48C)
         }
         .id("SpaceMain5JustifyContent_Center")
+        .key('SpaceMain5JustifyContent_Center')
         .width('90%')
         .padding(10)
         .backgroundColor(0xAFEEEE)
@@ -60,6 +63,7 @@ struct SpaceMain5JustifyContent {
           Text('3').width('50%').height(50).backgroundColor(0xD2B48C)
         }
         .id("SpaceMain5JustifyContent_End")
+        .key('SpaceMain5JustifyContent_End')
         .width('90%')
         .padding(10)
         .backgroundColor(0xAFEEEE)
@@ -71,6 +75,7 @@ struct SpaceMain5JustifyContent {
           Text('3').width('50%').height(50).backgroundColor(0xD2B48C)
         }
         .id("SpaceMain5JustifyContent_SpaceBetween")
+        .key('SpaceMain5JustifyContent_SpaceBetween')
         .width('90%')
         .padding(10)
         .backgroundColor(0xAFEEEE)
@@ -82,6 +87,7 @@ struct SpaceMain5JustifyContent {
           Text('3').width('50%').height(50).backgroundColor(0xD2B48C)
         }
         .id("SpaceMain5JustifyContent_SpaceAround")
+        .key('SpaceMain5JustifyContent_SpaceAround')
         .width('90%')
         .padding(10)
         .backgroundColor(0xAFEEEE)
@@ -93,6 +99,7 @@ struct SpaceMain5JustifyContent {
           Text('3').width('50%').height(50).backgroundColor(0xD2B48C)
         }
         .id("SpaceMain5JustifyContent_SpaceEvenly")
+        .key('SpaceMain5JustifyContent_SpaceEvenly')
         .width('90%')
         .padding(10)
         .backgroundColor(0xAFEEEE)

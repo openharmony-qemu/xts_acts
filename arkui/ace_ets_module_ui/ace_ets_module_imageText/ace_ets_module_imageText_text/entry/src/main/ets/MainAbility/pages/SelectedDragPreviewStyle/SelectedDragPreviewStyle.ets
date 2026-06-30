@@ -31,6 +31,7 @@ struct selectedDragPreviewStyleTest {
             .selectedDragPreviewStyle({ color: '#008000' })
             .copyOption(CopyOptions.InApp)
             .id('text_test')
+            .key('text_test')
 
           TextArea({ text: 'TextAreaTest' })
             .draggable(true)
@@ -39,6 +40,7 @@ struct selectedDragPreviewStyleTest {
             .margin(5)
             .selectedDragPreviewStyle({ color: Color.Transparent })
             .id('textArea_test')
+            .key('textArea_test')
 
           TextInput({ text: 'TextInputTest' })
             .draggable(true)
@@ -47,6 +49,7 @@ struct selectedDragPreviewStyleTest {
             .margin(5)
             .selectedDragPreviewStyle(undefined)
             .id('textInput_test')
+            .key('textInput_test')
 
           Search({ value: 'SearchTest' })
             .draggable(true)
@@ -56,6 +59,7 @@ struct selectedDragPreviewStyleTest {
             .draggable(true)
             .selectedDragPreviewStyle({ color: '999test' })
             .id('search_test')
+            .key('search_test')
         }
         .width('100%')
       }

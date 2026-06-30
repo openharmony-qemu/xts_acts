@@ -84,7 +84,7 @@ export default function Tabs_barPosition() {
 it('TabsBarPositionStartWithVerticalFalse_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TabsBarPositionStartWithVerticalFalse_static_01] START');
       await CommonFunc.sleep(3000);
-      let strJson = inspector.getInspectorByKey('Tabs_barPosition_01');
+      let strJson = inspector.getInspectorByKey('Tabs_barPosition' + '_01');
       let uiContext = AppStorage.get<UIContext>('uiContext')!;
       console.info("[TabsBarPositionStartWithVerticalFalse_static_01] type: " +
       JSON.stringify(JSON.parseJsonElement(strJson).getString('$type')));
@@ -115,8 +115,8 @@ it('TabsBarPositionStartWithVerticalFalse_static_01', Level.LEVEL0, async (done:
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('vertical')).assertEqual("false");
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
-      let Tabs_barPosition_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_001');
-      let Tabs_barPosition_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_011');
+      let Tabs_barPosition_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_001');
+      let Tabs_barPosition_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_011');
       let driver = Driver.create();
       await driver.swipe((Math.round(Tabs_barPosition_011.right -
         ((Tabs_barPosition_011.right - Tabs_barPosition_011.left) / 6))).toInt(),
@@ -126,8 +126,8 @@ it('TabsBarPositionStartWithVerticalFalse_static_01', Level.LEVEL0, async (done:
         (Math.round(Tabs_barPosition_011.top +
           ((Tabs_barPosition_011.bottom - Tabs_barPosition_011.top) / 2))).toInt());
       await CommonFunc.sleep(1000);
-      let Tabs_barPosition_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_002');
-      let Tabs_barPosition_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_012');
+      let Tabs_barPosition_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_002');
+      let Tabs_barPosition_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_012');
       await driver.swipe((Math.round(Tabs_barPosition_012.right -
         ((Tabs_barPosition_012.right - Tabs_barPosition_012.left) / 6))).toInt(),
         (Math.round(Tabs_barPosition_012.top + ((Tabs_barPosition_012.bottom - Tabs_barPosition_012.top) / 2))).toInt(),
@@ -136,9 +136,9 @@ it('TabsBarPositionStartWithVerticalFalse_static_01', Level.LEVEL0, async (done:
         (Math.round(Tabs_barPosition_012.top +
           ((Tabs_barPosition_012.bottom - Tabs_barPosition_012.top) / 2))).toInt());
       await CommonFunc.sleep(1000);
-      let Tabs_barPosition_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_003');
-      let Tabs_barPosition_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_013');
-      let Tabs_barPosition_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_01');
+      let Tabs_barPosition_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_003');
+      let Tabs_barPosition_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_013');
+      let Tabs_barPosition_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_01');
       let subGreen: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_green');
       let subBlue: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_blue');
       let subYellow: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_yellow');
@@ -226,7 +226,7 @@ it('TabsBarPositionEndWithVerticalFalse_static_02', Level.LEVEL0, async (done: (
         name: 'changeBarPosition', value: BarPosition.End
       });
       await CommonFunc.sleep(3000);
-      let strJson = inspector.getInspectorByKey('Tabs_barPosition_01');
+      let strJson = inspector.getInspectorByKey('Tabs_barPosition' + '_01');
       let uiContext = AppStorage.get<UIContext>('uiContext')!;
       console.info(`[TabsBarPositionEndWithVerticalFalse_static_02] type: ${JSON.stringify(JSON.parseJsonElement(strJson)
         .getString('$type'))}`);
@@ -255,8 +255,8 @@ it('TabsBarPositionEndWithVerticalFalse_static_02', Level.LEVEL0, async (done: (
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('vertical')).assertEqual("false");
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
-      let Tabs_barPosition_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_001');
-      let Tabs_barPosition_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_011');
+      let Tabs_barPosition_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_001');
+      let Tabs_barPosition_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_011');
       let driver = Driver.create();
       await driver.swipe((Math.round(Tabs_barPosition_011.right -
         ((Tabs_barPosition_011.right - Tabs_barPosition_011.left) / 6))).toInt(),
@@ -266,8 +266,8 @@ it('TabsBarPositionEndWithVerticalFalse_static_02', Level.LEVEL0, async (done: (
         (Math.round(Tabs_barPosition_011.top +
           ((Tabs_barPosition_011.bottom - Tabs_barPosition_011.top) / 2))).toInt());
       await CommonFunc.sleep(1000);
-      let Tabs_barPosition_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_002');
-      let Tabs_barPosition_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_012');
+      let Tabs_barPosition_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_002');
+      let Tabs_barPosition_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_012');
       await driver.swipe((Math.round(Tabs_barPosition_012.right -
         ((Tabs_barPosition_012.right - Tabs_barPosition_012.left) / 6))).toInt(),
         (Math.round(Tabs_barPosition_012.top + ((Tabs_barPosition_012.bottom - Tabs_barPosition_012.top) / 2))).toInt(),
@@ -276,9 +276,9 @@ it('TabsBarPositionEndWithVerticalFalse_static_02', Level.LEVEL0, async (done: (
         (Math.round(Tabs_barPosition_012.top +
           ((Tabs_barPosition_012.bottom - Tabs_barPosition_012.top) / 2))).toInt());
       await CommonFunc.sleep(1000);
-      let Tabs_barPosition_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_003');
-      let Tabs_barPosition_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_013');
-      let Tabs_barPosition_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_01');
+      let Tabs_barPosition_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_003');
+      let Tabs_barPosition_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_013');
+      let Tabs_barPosition_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_01');
       let subGreen: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_green');
       let subBlue: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_blue');
       let subYellow: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_yellow');
@@ -374,7 +374,7 @@ it('TabsBarPositionStartWithVerticalTrue_static_03', Level.LEVEL0, async (done: 
         name: 'changeBarPosition', value: BarPosition.Start
       });
       await CommonFunc.sleep(3000);
-      let strJson = inspector.getInspectorByKey('Tabs_barPosition_01');
+      let strJson = inspector.getInspectorByKey('Tabs_barPosition' + '_01');
       let uiContext = AppStorage.get<UIContext>('uiContext')!;
       console.info("[TabsBarPositionStartWithVerticalTrue_static_03] type: " +
       JSON.stringify(JSON.parseJsonElement(strJson).getString('$type')));
@@ -403,8 +403,8 @@ it('TabsBarPositionStartWithVerticalTrue_static_03', Level.LEVEL0, async (done: 
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('vertical')).assertEqual("true");
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
-      let Tabs_barPosition_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_001');
-      let Tabs_barPosition_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_011');
+      let Tabs_barPosition_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_001');
+      let Tabs_barPosition_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_011');
       let driver = Driver.create();
       await driver.swipe((Math.round(Tabs_barPosition_011.left +
         ((Tabs_barPosition_011.right - Tabs_barPosition_011.left) / 2))).toInt(),
@@ -415,8 +415,8 @@ it('TabsBarPositionStartWithVerticalTrue_static_03', Level.LEVEL0, async (done: 
         (Math.round(Tabs_barPosition_011.top +
           ((Tabs_barPosition_011.bottom - Tabs_barPosition_011.top) / 6))).toInt());
       await CommonFunc.sleep(1000);
-      let Tabs_barPosition_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_002');
-      let Tabs_barPosition_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_012');
+      let Tabs_barPosition_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_002');
+      let Tabs_barPosition_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_012');
       await driver.swipe((Math.round(Tabs_barPosition_012.left +
         ((Tabs_barPosition_012.right - Tabs_barPosition_012.left) / 2))).toInt(),
         (Math.round(Tabs_barPosition_012.bottom -
@@ -426,9 +426,9 @@ it('TabsBarPositionStartWithVerticalTrue_static_03', Level.LEVEL0, async (done: 
         (Math.round(Tabs_barPosition_012.top +
           ((Tabs_barPosition_012.bottom - Tabs_barPosition_012.top) / 6))).toInt());
       await CommonFunc.sleep(1000);
-      let Tabs_barPosition_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_003');
-      let Tabs_barPosition_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_013');
-      let Tabs_barPosition_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_01');
+      let Tabs_barPosition_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_003');
+      let Tabs_barPosition_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_013');
+      let Tabs_barPosition_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_01');
       let subGreen: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_green');
       let subBlue: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_blue');
       let subYellow: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_yellow');
@@ -530,7 +530,7 @@ it('TabsBarPositionEndWithVerticalTrue_static_04', Level.LEVEL0, async (done: ()
         name: 'changeBarPosition', value: BarPosition.End
       });
       await CommonFunc.sleep(3000);
-      let strJson = inspector.getInspectorByKey('Tabs_barPosition_01');
+      let strJson = inspector.getInspectorByKey('Tabs_barPosition' + '_01');
       let uiContext = AppStorage.get<UIContext>('uiContext')!;
       console.info("[TabsBarPositionEndWithVerticalTrue_static_04] type: " +
       JSON.stringify(JSON.parseJsonElement(strJson).getString('$type')));
@@ -559,8 +559,8 @@ it('TabsBarPositionEndWithVerticalTrue_static_04', Level.LEVEL0, async (done: ()
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('vertical')).assertEqual("true");
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
-      let Tabs_barPosition_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_001');
-      let Tabs_barPosition_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_011');
+      let Tabs_barPosition_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_001');
+      let Tabs_barPosition_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_011');
       let driver = Driver.create();
       await driver.swipe((Math.round(Tabs_barPosition_011.left +
         ((Tabs_barPosition_011.right - Tabs_barPosition_011.left) / 2))).toInt(),
@@ -571,8 +571,8 @@ it('TabsBarPositionEndWithVerticalTrue_static_04', Level.LEVEL0, async (done: ()
         (Math.round(Tabs_barPosition_011.top +
           ((Tabs_barPosition_011.bottom - Tabs_barPosition_011.top) / 6))).toInt());
       await CommonFunc.sleep(1000);
-      let Tabs_barPosition_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_002');
-      let Tabs_barPosition_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_012');
+      let Tabs_barPosition_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_002');
+      let Tabs_barPosition_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_012');
       await driver.swipe((Math.round(Tabs_barPosition_012.left +
         ((Tabs_barPosition_012.right - Tabs_barPosition_012.left) / 2))).toInt(),
         (Math.round(Tabs_barPosition_012.bottom -
@@ -582,9 +582,9 @@ it('TabsBarPositionEndWithVerticalTrue_static_04', Level.LEVEL0, async (done: ()
         (Math.round(Tabs_barPosition_012.top +
           ((Tabs_barPosition_012.bottom - Tabs_barPosition_012.top) / 6))).toInt());
       await CommonFunc.sleep(1000);
-      let Tabs_barPosition_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_003');
-      let Tabs_barPosition_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_013');
-      let Tabs_barPosition_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_01');
+      let Tabs_barPosition_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_003');
+      let Tabs_barPosition_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_013');
+      let Tabs_barPosition_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_01');
       let subGreen: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_green');
       let subBlue: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_blue');
       let subYellow: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition_yellow');

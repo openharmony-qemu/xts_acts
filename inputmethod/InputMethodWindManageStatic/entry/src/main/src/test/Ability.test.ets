@@ -103,25 +103,25 @@ export default function inputMethodEngineStatic() {
         beforeAll(async (done: ()=> void) => {
             try {
               let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-              await Utils.msSleep(2000);
+              await Utils.msSleep(1000);
               let cmd = 'aa start -a EntryAbility -b com.acts.inputmethodwidmanage.test.static';
               let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
               if(user !== undefined){
                   cmd += ' -u ' + user;
               }
               abilityDelegator.executeShellCommand(cmd);
-              await Utils.msSleep(2000);
+              await Utils.msSleep(1000);
               await abilityDelegator.executeShellCommand('ime -e com.acts.inputmethodwidmanage.test.static -f');
               await abilityDelegator.executeShellCommand('ime -s com.acts.inputmethodwidmanage.test.static');
               console.info('====>beforeAll inputMethod_enable success');
-              await Utils.msSleep(1000);
+              await Utils.msSleep(500);
               textArea = await driver.findComponent(ON.type('TextArea'));
               console.info('====>beforeAll inputMethodSwitch window textArea:' + JSON.stringify(textArea));
               rectInfo = await textArea!.getBounds();
               console.info('====>beforeAll inputMethodSwitch textArea rectInfo:' + JSON.stringify(rectInfo));
-              await Utils.msSleep(1000);
+              await Utils.msSleep(500);
               await runCmd(rectInfo);
-              await Utils.msSleep(1000);
+              await Utils.msSleep(500);
               done();
             } catch (err) {
               console.info('====>beforeAll throw err:' + JSON.stringify(err.message));

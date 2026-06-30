@@ -57,6 +57,7 @@ struct textMinLinesTest {
             .backgroundColor(Color.Pink)
             .minLines(this.minLines)
             .id('text1')
+            .key('text1')
         }
       }
       .width('98%').margin({ top: 50 })

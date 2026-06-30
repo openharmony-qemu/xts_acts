@@ -478,7 +478,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<number>(1).some((value: number): boolean => Boolean(value));
+      const result = Array.create<number>(1, 1).some((value: number): boolean => Boolean(value));
       expect(result).assertTrue();
     });
 
@@ -491,7 +491,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<number>(0).some((value: number): boolean => Boolean(value));
+      const result = Array.create<number>(1, 0).some((value: number): boolean => Boolean(value));
       expect(result).assertFalse();
     });
 
@@ -504,7 +504,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<number | null>(null).some((value: number | null): boolean => Boolean(value));
+      const result = Array.create<number | null>(1, null).some((value: number | null): boolean => Boolean(value));
       expect(result).assertFalse();
     });
 
@@ -518,7 +518,7 @@ export default function ArraySomeTest(): void {
      */
     it('testArraySome025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result =
-        new Array<number | undefined>(undefined).some((value: number | undefined): boolean => Boolean(value));
+        Array.create<number | undefined>(1, undefined).some((value: number | undefined): boolean => Boolean(value));
       expect(result).assertFalse();
     });
 
@@ -531,7 +531,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<string>('').some((value: string): boolean => Boolean(value));
+      const result = Array.create<string>(1, '').some((value: string): boolean => Boolean(value));
       expect(result).assertFalse();
     });
 
@@ -544,7 +544,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<string>('a').some((value: string): boolean => Boolean(value));
+      const result = Array.create<string>(1, 'a').some((value: string): boolean => Boolean(value));
       expect(result).assertTrue();
     });
 
@@ -557,7 +557,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<SomeBoxA>(new SomeBoxA()).some((value: SomeBoxA): boolean => value instanceof SomeBoxA);
+      const result = Array.create<SomeBoxA>(1, new SomeBoxA()).some((value: SomeBoxA): boolean => value instanceof SomeBoxA);
       expect(result).assertTrue();
     });
 
@@ -571,7 +571,7 @@ export default function ArraySomeTest(): void {
      */
     it('testArraySome029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result =
-        new Array<Array<number>>(new Array<number>()).some((value: Array<number>): boolean => value.length === 0);
+        Array.create<Array<number>>(1, new Array<number>()).some((value: Array<number>): boolean => value.length === 0);
       expect(result).assertTrue();
     });
 
@@ -584,7 +584,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<boolean>(false).some((value: boolean): boolean => value);
+      const result = Array.create<boolean>(1, false).some((value: boolean): boolean => value);
       expect(result).assertFalse();
     });
 
@@ -597,7 +597,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<boolean>(true).some((value: boolean): boolean => value);
+      const result = Array.create<boolean>(1, true).some((value: boolean): boolean => value);
       expect(result).assertTrue();
     });
 
@@ -610,7 +610,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<number>(1).some((value: number): boolean => !Boolean(value));
+      const result = Array.create<number>(1, 1).some((value: number): boolean => !Boolean(value));
       expect(result).assertFalse();
     });
 
@@ -623,7 +623,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<number>(1).some((value: number): boolean => !!value);
+      const result = Array.create<number>(1, 1).some((value: number): boolean => !!value);
       expect(result).assertTrue();
     });
 
@@ -636,7 +636,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<number>(1).some((value: number): boolean => value > 0);
+      const result = Array.create<number>(1, 1).some((value: number): boolean => value > 0);
       expect(result).assertTrue();
     });
 
@@ -649,7 +649,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<number>(1).some((value: number): boolean => value < 0);
+      const result = Array.create<number>(1, 1).some((value: number): boolean => value < 0);
       expect(result).assertFalse();
     });
 
@@ -688,7 +688,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<number>(NaN).some((value: number): boolean => Boolean(value));
+      const result = Array.create<number>(1, NaN).some((value: number): boolean => Boolean(value));
       expect(result).assertFalse();
     });
 
@@ -784,7 +784,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<number>(1).some((_value: number, index: int): boolean => index === 0);
+      const result = Array.create<number>(1, 1).some((_value: number, index: int): boolean => index === 0);
       expect(result).assertTrue();
     });
 
@@ -866,7 +866,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<number>(NaN).some((value: number): boolean => Number.isNaN(value));
+      const result = Array.create<number>(1, NaN).some((value: number): boolean => Number.isNaN(value));
       expect(result).assertTrue();
     });
 
@@ -879,7 +879,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<number>(0).some((value: number): boolean => value === 0);
+      const result = Array.create<number>(1, 0).some((value: number): boolean => value === 0);
       expect(result).assertTrue();
     });
 
@@ -957,7 +957,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<number>(1).some((value: number): boolean => value >= 1);
+      const result = Array.create<number>(1, 1).some((value: number): boolean => value >= 1);
       expect(result).assertTrue();
     });
 
@@ -970,7 +970,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<number>(1).some((value: number): boolean => value <= 1);
+      const result = Array.create<number>(1, 1).some((value: number): boolean => value <= 1);
       expect(result).assertTrue();
     });
 
@@ -1126,7 +1126,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<number>(1).some((value: number): boolean => typeof value === 'number');
+      const result = Array.create<number>(1, 1).some((value: number): boolean => typeof value === 'number');
       expect(result).assertTrue();
     });
 
@@ -1139,7 +1139,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<string>('1').some((value: string): boolean => typeof value === 'string');
+      const result = Array.create<string>(1, '1').some((value: string): boolean => typeof value === 'string');
       expect(result).assertTrue();
     });
 
@@ -1153,7 +1153,7 @@ export default function ArraySomeTest(): void {
      */
     it('testArraySome072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result =
-        new Array<Array<number>>(new Array<number>(1)).some((value: Array<number>): boolean => Array.isArray(value));
+        Array.create<Array<number>>(1, Array.create<number>(1, 1)).some((value: Array<number>): boolean => Array.isArray(value));
       expect(result).assertTrue();
     });
 
@@ -1194,7 +1194,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<number>(1).some((value: number): boolean => value * 2 === 2);
+      const result = Array.create<number>(1, 1).some((value: number): boolean => value * 2 === 2);
       expect(result).assertTrue();
     });
 
@@ -1207,7 +1207,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<number>(1).some((value: number): boolean => value + 1 === 2);
+      const result = Array.create<number>(1, 1).some((value: number): boolean => value + 1 === 2);
       expect(result).assertTrue();
     });
 
@@ -1220,7 +1220,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<number>(1).some((value: number): boolean => value - 1 === 0);
+      const result = Array.create<number>(1, 1).some((value: number): boolean => value - 1 === 0);
       expect(result).assertTrue();
     });
 
@@ -1233,7 +1233,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<number>(1).some((value: number): boolean => value / 1 === 1);
+      const result = Array.create<number>(1, 1).some((value: number): boolean => value / 1 === 1);
       expect(result).assertTrue();
     });
 
@@ -1246,7 +1246,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<number>(1).some((value: number): boolean => Math.abs(value) === 1);
+      const result = Array.create<number>(1, 1).some((value: number): boolean => Math.abs(value) === 1);
       expect(result).assertTrue();
     });
 
@@ -1259,7 +1259,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<number>(1).some((value: number): boolean => Math.pow(value, 2) === 1);
+      const result = Array.create<number>(1, 1).some((value: number): boolean => Math.pow(value, 2) === 1);
       expect(result).assertTrue();
     });
 
@@ -1272,7 +1272,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<number>(1).some((value: number): boolean => Math.sqrt(value) === 1);
+      const result = Array.create<number>(1, 1).some((value: number): boolean => Math.sqrt(value) === 1);
       expect(result).assertTrue();
     });
 
@@ -1285,7 +1285,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<number>(1).some((value: number): boolean => value.toString() === '1');
+      const result = Array.create<number>(1, 1).some((value: number): boolean => value.toString() === '1');
       expect(result).assertTrue();
     });
 
@@ -1298,7 +1298,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<number>(1).some((value: number): boolean => Boolean(value) === true);
+      const result = Array.create<number>(1, 1).some((value: number): boolean => Boolean(value) === true);
       expect(result).assertTrue();
     });
 
@@ -1311,7 +1311,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<number>(0).some((value: number): boolean => Boolean(value) === false);
+      const result = Array.create<number>(1, 0).some((value: number): boolean => Boolean(value) === false);
       expect(result).assertTrue();
     });
 
@@ -1324,7 +1324,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<number>(1).some((value: number): boolean => Number(value) === 1);
+      const result = Array.create<number>(1, 1).some((value: number): boolean => Number(value) === 1);
       expect(result).assertTrue();
     });
 
@@ -1337,7 +1337,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<string>('1').some((value: string): boolean => Number(value) === 1);
+      const result = Array.create<string>(1, '1').some((value: string): boolean => Number(value) === 1);
       expect(result).assertTrue();
     });
 
@@ -1350,7 +1350,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<number>(1).some((value: number): boolean => parseInt(value.toString()) === 1);
+      const result = Array.create<number>(1, 1).some((value: number): boolean => parseInt(value.toString()) === 1);
       expect(result).assertTrue();
     });
 
@@ -1363,7 +1363,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<number>(1).some((value: number): boolean => parseFloat(value.toString()) === 1);
+      const result = Array.create<number>(1, 1).some((value: number): boolean => parseFloat(value.toString()) === 1);
       expect(result).assertTrue();
     });
 
@@ -1376,7 +1376,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<number>(1).some((value: number): boolean => value.toFixed(0) === '1');
+      const result = Array.create<number>(1, 1).some((value: number): boolean => value.toFixed(0) === '1');
       expect(result).assertTrue();
     });
 
@@ -1389,7 +1389,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<number>(1).some((value: number): boolean => value.toPrecision(1) === '1');
+      const result = Array.create<number>(1, 1).some((value: number): boolean => value.toPrecision(1) === '1');
       expect(result).assertTrue();
     });
 
@@ -1402,7 +1402,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<number>(1).some((value: number): boolean => value.toExponential(0) === '1e+0');
+      const result = Array.create<number>(1, 1).some((value: number): boolean => value.toExponential(0) === '1e+0');
       expect(result).assertTrue();
     });
 
@@ -1415,7 +1415,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<number>(1).some((value: number): boolean => value.toLocaleString() === '1');
+      const result = Array.create<number>(1, 1).some((value: number): boolean => value.toLocaleString() === '1');
       expect(result).assertTrue();
     });
 
@@ -1428,7 +1428,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<number>(1).some((value: number): boolean => value.valueOf() === 1);
+      const result = Array.create<number>(1, 1).some((value: number): boolean => value.valueOf() === 1);
       expect(result).assertTrue();
     });
 
@@ -1441,7 +1441,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<number>(1).some((value: number): boolean => value === 1 && value === 1);
+      const result = Array.create<number>(1, 1).some((value: number): boolean => value === 1 && value === 1);
       expect(result).assertTrue();
     });
 
@@ -1454,7 +1454,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<number>(1).some((value: number): boolean => value === 1 || value === 2);
+      const result = Array.create<number>(1, 1).some((value: number): boolean => value === 1 || value === 2);
       expect(result).assertTrue();
     });
 
@@ -1467,7 +1467,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Array<number>(1).some((value: number): boolean => value === 2 || value === 1);
+      const result = Array.create<number>(1, 1).some((value: number): boolean => value === 2 || value === 1);
       expect(result).assertTrue();
     });
 
@@ -1480,7 +1480,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1);
+      const arr = Array.create<number>(1, 1);
       const result = arr.some((value: number, _index: int, array: Array<number>): boolean => {
         array.pushOne(2);
         return value === 2;

@@ -29,12 +29,14 @@ struct TextMaxLines {
       // 测试1: 默认值（未设置maxLines）
       Text('This is default maxLines text content for testing default behavior when no maxLines is set. This text should wrap normally without line limit.')
         .id('text_maxlines_default')
+        .key('text_maxlines_default')
         .width('300vp')
         .height('5%')
 
       // 测试2: null 参数
       Text('This is maxLines with null parameter text content for testing null behavior. This text should wrap normally when maxLines is null.')
         .id('text_maxlines_null')
+        .key('text_maxlines_null')
         .maxLines(null)
         .width('300vp')
         .height('5%')
@@ -42,6 +44,7 @@ struct TextMaxLines {
       // 测试3: undefined 参数
       Text('This is maxLines with undefined parameter text content for testing undefined behavior. This text should wrap normally when maxLines is undefined.')
         .id('text_maxlines_undefined')
+        .key('text_maxlines_undefined')
         .maxLines(undefined)
         .width('300vp')
         .height('5%')

@@ -1232,10 +1232,12 @@ export default function windowLayoutTest() {
           await subWindowClass.setUIContent('testability/pages/WindowTest/StartMoving');
           await subWindowClass.showWindow();
           let displayId = subWindowClass.getWindowProperties().displayId;
+          console.info(`${message} displayWidth = ${JSON.stringify(displayWidth)},displayHeight = ${JSON.stringify(displayHeight)}`)
+          await subWindowClass.resize(Number(displayWidth*0.5),Number(displayHeight*0.5));
           let moveConfiguration: window.MoveConfiguration = {
             displayId: displayId
           }
-          let promise = subWindowClass.moveWindowToGlobal(300, 300, moveConfiguration);
+          let promise = subWindowClass.moveWindowToGlobal(Number(displayWidth*0.3),Number(displayHeight*0.3), moveConfiguration);
           promise.then(async () => {
             console.info(`${message} succeed in moveWindowToGlobal`);
           }).catch((err: BusinessError) => {
@@ -1251,8 +1253,8 @@ export default function windowLayoutTest() {
           await sleep(1000);
           let rect = subWindowClass.getWindowProperties().windowRect;
           console.info(`${message} after moving windowRect:${JSON.stringify(rect)}`);
-          expect(rect.left).assertEqual(300);
-          expect(rect.top).assertEqual(300);
+          expect(rect.left).assertEqual(Math.floor(displayWidth*0.3));
+          expect(rect.top).assertEqual(Math.floor(displayWidth*0.3));
           done();
         }).catch((err: BusinessError) => {
           console.error(`${message} promise Failed to test MoveConfiguration, Cause code ${err.code}, message ${err.message} `);
@@ -6276,18 +6278,12 @@ export default function windowLayoutTest() {
         console.info(`${caseName} point = ${JSON.stringify(point)}`);
         await driver.drag(point.x, point.y, point.x + 50, point.y + 50, 200);
         await sleep(1000);
-        let text = await driver.findComponent(ON.id('startMovingText'));
-        await sleep(1000)
-        console.info(`${caseName} text = ${JSON.stringify(text)}`);
-        let textDragged = await text.getText();
-        await sleep(5000)
-        console.info(`${caseName} textDragged = ${JSON.stringify(textDragged)}`);
-        if (textDragged == 'startMoving success') {
-          expect().assertFail();
-        } else if (textDragged == 'startMoving 801') {
-           console.info(`${caseName} textDragged1 = ${JSON.stringify(textDragged)}`);
-        } else if (textDragged == 'startMoving 1300001') {
-           console.info(`${caseName} textDragged2 = ${JSON.stringify(textDragged)}`);
+        let num = AppStorage.get('num') as number;
+        console.info(`${caseName} num = ${JSON.stringify(num)}`);
+        if (num == 801) {
+          console.info(`${caseName} startMoving 801`);
+        } else if (num == 1300001) {
+            console.info(`${caseName} startMoving 1300001`);
         } else {
           console.error(`${caseName} Error.`);
           expect(true).assertFalse()
@@ -7804,6 +7800,7 @@ export default function windowLayoutTest() {
         done();
       }
     });
+    
 
   })
 }

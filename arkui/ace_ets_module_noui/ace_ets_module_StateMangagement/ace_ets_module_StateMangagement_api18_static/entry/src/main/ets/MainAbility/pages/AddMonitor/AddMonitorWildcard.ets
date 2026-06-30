@@ -34,7 +34,7 @@ struct AddMonitorWildcard {
   @Local cls: AddMonitorClass = new AddMonitorClass(100, 100);
   @Local public num: int = 0;
   monitorHandle: IMonitorDecoratedVariable | undefined = undefined;
-  onClsChanged(m: IMonitor) {
+  onClsChanged(m: IMonitor): void {
     this.num++
   }
 

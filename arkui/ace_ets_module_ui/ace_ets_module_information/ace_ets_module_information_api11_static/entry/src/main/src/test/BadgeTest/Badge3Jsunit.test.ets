@@ -76,7 +76,7 @@ export default function badge3Jsunit() {
 it('testBadge_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testBadge01] START');
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('badge');
+      let strJson = inspector.getInspectorByKey('badge3' + '_badge');
 
       console.info("[testBadge01] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)
         .getElement('$attrs').getString('style')) + "---" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('style'));
@@ -100,7 +100,7 @@ it('testBadge_static_03', Level.LEVEL0, async (done: () => void): Promise<void> 
         console.log("[testBadge03] change component data error: " + (err as BusinessError).message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = inspector.getInspectorByKey('badge');
+      let strJsonNew = inspector.getInspectorByKey('badge3' + '_badge');
       console.info("[testBadge03] component objNew is: " + JSON.parseJsonElement(JSON.parseJsonElement(strJsonNew)
         .getElement('$attrs').getString('style')) + "--" + JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('style'));
       expect(JSON.parseJsonElement(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('style')).getString('fontSize')).assertEqual('10.00vp');
@@ -122,7 +122,7 @@ it('testBadge_static_02', Level.LEVEL0, async (done: () => void): Promise<void> 
         console.log("[testBadge02] change component data error: " + (err as BusinessError).message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = inspector.getInspectorByKey('badge');
+      let strJsonNew = inspector.getInspectorByKey('badge3' + '_badge');
       console.info("[testBadge02] component objNew is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       expect(JSON.parseJsonElement(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('style')).getString('fontSize')).assertEqual('30.00fp');
       done();
@@ -145,7 +145,7 @@ it('testBadge_static_04', Level.LEVEL0, async (done: () => void): Promise<void> 
         console.log("[testBadge04] change component data error: " + (err as BusinessError).message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = inspector.getInspectorByKey('badge');
+      let strJsonNew = inspector.getInspectorByKey('badge3' + '_badge');
       console.info("[testBadge04] component objNew is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       expect(JSON.parseJsonElement(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('style')).getString('fontSize')).assertEqual('121212121.00fp');
       done();
@@ -166,7 +166,7 @@ it('testBadge_static_05', Level.LEVEL0, async (done: () => void): Promise<void> 
         console.log("[testBadge05] change component data error: " + (err as BusinessError).message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = inspector.getInspectorByKey('badge');
+      let strJsonNew = inspector.getInspectorByKey('badge3' + '_badge');
       console.info("[testBadge05] component objNew is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       console.info("[testBadge05] component style is: " + JSON.stringify(JSON.parseJsonElement(JSON.parseJsonElement(strJsonNew)
         .getElement('$attrs').getString('style'))));
@@ -183,7 +183,7 @@ it('testBadge_static_05', Level.LEVEL0, async (done: () => void): Promise<void> 
 it('testBadge_static_06', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testBadge06] START');
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('badge2');
+      let strJson = inspector.getInspectorByKey('badge3' + '_badge2');
       console.info("[testBadge06] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Badge');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('value')).assertEqual('new');
@@ -199,7 +199,7 @@ it('testBadge_static_06', Level.LEVEL0, async (done: () => void): Promise<void> 
 it('testBadge_static_07', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testBadge07] START');
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('badge2');
+      let strJson = inspector.getInspectorByKey('badge3' + '_badge2');
       console.info("[testBadge07] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Badge');
       expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('style')).getString('color')).assertEqual('#FFFF0000');
@@ -222,7 +222,7 @@ it('testBadge_static_08', Level.LEVEL0, async (done: () => void): Promise<void> 
         console.log("[testBadge08] change component data error: " + (err as BusinessError).message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = inspector.getInspectorByKey('badge2');
+      let strJsonNew = inspector.getInspectorByKey('badge3' + '_badge2');
       console.info("[testBadge08] component objNew is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       expect(JSON.parseJsonElement(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('style')).getString('color')).assertEqual('#FF0000FF');
       done();
@@ -243,7 +243,7 @@ it('testBadge_static_09', Level.LEVEL0, async (done: () => void): Promise<void> 
         console.log("[testBadge09] change component data error: " + (err as BusinessError).message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = inspector.getInspectorByKey('badge2');
+      let strJsonNew = inspector.getInspectorByKey('badge3' + '_badge2');
       console.info("[testBadge09] component objNew is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('value')).assertEqual('test');
       done();
@@ -265,7 +265,7 @@ it('testBadge_static_10', Level.LEVEL0, async (done: () => void): Promise<void> 
         console.log("[testBadge10] change component data error: " + (err as BusinessError).message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = inspector.getInspectorByKey('badge2');
+      let strJsonNew = inspector.getInspectorByKey('badge3' + '_badge2');
       console.info("[testBadge10] component objNew is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       expect(JSON.parseJsonElement(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('style')).getString('color')).assertEqual('#FFFFFFFF');
       done();
@@ -287,7 +287,7 @@ it('testBadge_static_11', Level.LEVEL0, async (done: () => void): Promise<void> 
         console.log("[testBadge11] change component data error: " + (err as BusinessError).message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = inspector.getInspectorByKey('badge2');
+      let strJsonNew = inspector.getInspectorByKey('badge3' + '_badge2');
       console.info("[testBadge11] component objNew is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       expect(JSON.parseJsonElement(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('style')).getString('color')).assertEqual('#FFFFFED4');
       done();

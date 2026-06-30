@@ -374,7 +374,7 @@ it('ListJsunit_static_0117', Level.LEVEL0, async (done: () => void): Promise<voi
 it('ListJsunit_static_0118', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ListJsunit_static_0118 START');
       let driver = Driver.create();
-      let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button =  await (driver.findComponent(ON.id('list' + '_changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
 

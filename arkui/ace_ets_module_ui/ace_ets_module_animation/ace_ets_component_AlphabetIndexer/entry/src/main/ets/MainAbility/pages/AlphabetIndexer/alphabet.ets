@@ -27,7 +27,7 @@ struct AlphabetIndexerSample {
     Stack({ alignContent: Alignment.Start }) {
       Row() {
         AlphabetIndexer({ arrayValue: this.value, selected: 0 })
-          .key('alphabet_1')
+          .key('alphabet_alphabet_1')
           .autoCollapse(false)
           .selectedColor(0xFFFFFF)
           .popupColor(0xFFFAF0)

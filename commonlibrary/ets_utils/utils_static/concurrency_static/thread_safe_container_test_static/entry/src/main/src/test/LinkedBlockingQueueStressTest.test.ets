@@ -1,3 +1,5 @@
+'use static'
+
 import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
 
 export default function LinkedBlockingQueueStressTest(): void {

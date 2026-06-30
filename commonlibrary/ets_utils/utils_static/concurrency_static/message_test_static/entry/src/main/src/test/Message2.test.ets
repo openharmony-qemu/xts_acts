@@ -850,11 +850,13 @@ export default function MessageTest2(): void {
       async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageScenarioTest005';
         let flag: boolean = false;
+        let firstStarted: boolean = false;
         console.info(`${TAG} test start`);
         let eaw = new EAWorker();
         try {
           eaw.start();
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
+            firstStarted = true;
             (async () => {
               await Sleep(1000);
               flag = true;
@@ -863,6 +865,9 @@ export default function MessageTest2(): void {
           let messageObj = new concurrency.Message(1, "messageObj", handler);
           let message1 = new concurrency.Message(1, handler);
           handler.sendMessage(messageObj);
+          while (!firstStarted) {
+            await Utils.msSleep(10);
+          }
           handler.sendMessage(message1);
           expect(handler.hasMessages(1)).assertTrue();
           expect(handler.hasMessages(0)).assertFalse();

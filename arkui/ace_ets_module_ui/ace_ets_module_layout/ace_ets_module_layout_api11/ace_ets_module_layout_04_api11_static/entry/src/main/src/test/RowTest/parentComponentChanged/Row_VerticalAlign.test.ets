@@ -86,13 +86,13 @@ it('testRowAlignItemsVerticalAlignTop_static_01', Level.LEVEL0, async (done: () 
         name: 'alignItems', value: VerticalAlign.Top
       });
       await CommonFunc.sleep(3000);
-      let strJson = inspector.getInspectorByKey('Row_VerticalAlign_Row');
+      let strJson = inspector.getInspectorByKey('Row_VerticalAlign' + '_Row');
 
      console.info('Row obj.$attrs is:' + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      let Row: RectValue = await CommonFunc.getComponentRect('Row_VerticalAlign_Row');
-      let Text1: RectValue = await CommonFunc.getComponentRect('Row_VerticalAlign_Text1');
-      let Text2: RectValue = await CommonFunc.getComponentRect('Row_VerticalAlign_Text2');
-      let Text3: RectValue = await CommonFunc.getComponentRect('Row_VerticalAlign_Text3');
+      let Row: RectValue = await CommonFunc.getComponentRect('Row_VerticalAlign' + '_Row');
+      let Text1: RectValue = await CommonFunc.getComponentRect('Row_VerticalAlign' + '_Text1');
+      let Text2: RectValue = await CommonFunc.getComponentRect('Row_VerticalAlign' + '_Text2');
+      let Text3: RectValue = await CommonFunc.getComponentRect('Row_VerticalAlign' + '_Text3');
 
       console.log('Row rect_value is:' + JSON.stringify(Row));
       console.log('Text1 rect_value is:' + JSON.stringify(Text1));
@@ -137,13 +137,13 @@ it('testRowAlignItemsVerticalAlignBottom_static_02', Level.LEVEL0, async (done: 
         name: 'alignItems', value: VerticalAlign.Bottom
       });
       await CommonFunc.sleep(3000);
-      let strJson = inspector.getInspectorByKey('Row_VerticalAlign_Row');
+      let strJson = inspector.getInspectorByKey('Row_VerticalAlign' + '_Row');
 
      console.info('Row obj.$attrs is:' + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      let Row: RectValue = await CommonFunc.getComponentRect('Row_VerticalAlign_Row');
-      let Text1: RectValue = await CommonFunc.getComponentRect('Row_VerticalAlign_Text1');
-      let Text2: RectValue = await CommonFunc.getComponentRect('Row_VerticalAlign_Text2');
-      let Text3: RectValue = await CommonFunc.getComponentRect('Row_VerticalAlign_Text3');
+      let Row: RectValue = await CommonFunc.getComponentRect('Row_VerticalAlign' + '_Row');
+      let Text1: RectValue = await CommonFunc.getComponentRect('Row_VerticalAlign' + '_Text1');
+      let Text2: RectValue = await CommonFunc.getComponentRect('Row_VerticalAlign' + '_Text2');
+      let Text3: RectValue = await CommonFunc.getComponentRect('Row_VerticalAlign' + '_Text3');
 
       console.log('Row rect_value is:' + JSON.stringify(Row));
 

@@ -56,7 +56,7 @@ struct imageAddApi {
         .height(100)
         .width(100)
         .dynamicRangeMode(DynamicRangeMode.CONSTRAINT)
-        .key('imageAddApi3')
+        .key('imageAddApi_imageAddApi3')
     }.height(320).width(360).padding({ right: 10, top: 10 } as Padding)
   }
 }

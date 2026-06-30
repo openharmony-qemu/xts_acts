@@ -98,7 +98,7 @@ struct V1ToV2ComponentCorrect_TestV2Child {
       Text(JSON.stringify(this.consumeNullValue)).key('consume_null_value')
       Text(`${this.storageLinkUndefinedValue}`).key('storage_link_undefined_value')
       Text(this.storagePropStringValue).key('storage_prop_string_value')
-      Text(`${this.funcValue2()}`).key('func_value2')
+      Text(`${this.funcValue2()}`).key('V1ToV2_func_value2')
       Text(`${this.linkBooleanValue}`).key('link_boolean_value')
 
 

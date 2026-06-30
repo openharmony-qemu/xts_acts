@@ -58,7 +58,6 @@ interface FileOptions {
 
 export async function getPermission(name?: Permissions): Promise<void> {
   try {
-
     console.info(TAG, 'getPermission start', name);
     let context = Hypium.get('Context') as Context;
     hilog.info(domain, tag, '%{public}s', '  beforeAll get Context');
@@ -76,16 +75,24 @@ export async function getPermission(name?: Permissions): Promise<void> {
       (err: BusinessError | null, data: PermissionRequestResult | undefined) => {
         hilog.info(0x0000, 'testTag', '  requestPermissionsFromUser end');
       });
-    await Utils.msSleep(5000);
+    await Utils.msSleep(3000);
     hilog.info(domain, tag, '%{public}s', '  beforeAll waitForComponent');
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 10; i++) {
       let dr = Driver.create();
-      let power1 = await dr.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500);
-      let power2 = await dr.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), 500);
-      await power1?.click();
-      await power2?.click();
+      try {
+        let power = await dr.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 1000);
+        if (power != null) {
+          await power.click();
+          await Utils.msSleep(500);
+        } else {
+          break;
+        }
+      } catch (e) {
+        hilog.info(domain, tag, 'waitForComponent no more buttons, break');
+        break;
+      }
     }
-    await Utils.msSleep(2000);
+    await Utils.msSleep(1000);
     console.info('  abilityTest beforeAll end');
   } catch (err) {
     hilog.error(0x0000, 'testTag', '  beforeAll failed, err: ' + err);

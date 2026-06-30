@@ -34,7 +34,7 @@ import events_emitter from '@ohos.events.emitter'
 import { BusinessError } from '@ohos.base';
 import Utils from '../../../ets/MainAbility/common/Utils';
 
-export default function maskBackgroundBlurStyleTest() {
+export default function maskBackgroundBlurStyleTest(): void {
   describe('maskBackgroundBlurStyleTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("maskBackgroundBlurStyleTest beforeAll start");

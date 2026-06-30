@@ -678,7 +678,7 @@ export default function ArrayIncludesTest(): void {
      * @tc.level Level 2
      */
     it('testArrayIncludes042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(42);
+      let arr = Array.create<number>(1, 42);
       expect(arr.includes(42)).assertTrue();
       expect(arr.includes(1)).assertFalse();
     });
@@ -875,7 +875,7 @@ export default function ArrayIncludesTest(): void {
      * @tc.level Level 2
      */
     it('testArrayIncludes055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(1, 5);
       const result = arr.includes(5, 0);
       expect(result).assertEqual(true);
       expect(arr.length).assertEqual(1);
@@ -890,7 +890,7 @@ export default function ArrayIncludesTest(): void {
      * @tc.level Level 2
      */
     it('testArrayIncludes056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(1, 5);
       const result = arr.includes(1, 0);
       expect(result).assertEqual(false);
       expect(arr.length).assertEqual(1);
@@ -1233,7 +1233,7 @@ export default function ArrayIncludesTest(): void {
      * @tc.level Level 2
      */
     it('testArrayIncludes080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(77);
+      const arr = Array.create<number>(1, 77);
       const result = arr.includes(77, 0);
       expect(result).assertEqual(true);
     });
@@ -1247,7 +1247,7 @@ export default function ArrayIncludesTest(): void {
      * @tc.level Level 2
      */
     it('testArrayIncludes081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(77);
+      const arr = Array.create<number>(1, 77);
       const result = arr.includes(78, 0);
       expect(result).assertEqual(false);
     });
@@ -1435,9 +1435,9 @@ export default function ArrayIncludesTest(): void {
       const numberObj = new Number(1);
       const stringObj = new String('a');
       const booleanObj = new Boolean(true);
-      const numberArr = new Array<Number>(numberObj);
-      const stringArr = new Array<String>(stringObj);
-      const booleanArr = new Array<Boolean>(booleanObj);
+      const numberArr = Array.create<Number>(1, numberObj);
+      const stringArr = Array.create<String>(1, stringObj);
+      const booleanArr = Array.create<Boolean>(1, booleanObj);
       expect(numberArr.includes(numberObj)).assertTrue();
       expect(stringArr.includes(stringObj)).assertTrue();
       expect(booleanArr.includes(booleanObj)).assertTrue();
@@ -1456,7 +1456,7 @@ export default function ArrayIncludesTest(): void {
       first.value = 1;
       const second = new Item028();
       second.value = 1;
-      const arr = new Array<Item028>(first);
+      const arr = Array.create<Item028>(1, first);
       expect(arr.includes(first)).assertTrue();
       expect(arr.includes(second)).assertFalse();
     });
@@ -1474,7 +1474,7 @@ export default function ArrayIncludesTest(): void {
       first.value = 2;
       const second = new Item028();
       second.value = 2;
-      const arr = new Array<Item028>(first);
+      const arr = Array.create<Item028>(1, first);
       second.value = 3;
       expect(arr.includes(first)).assertTrue();
       expect(arr.includes(second)).assertFalse();
@@ -1491,7 +1491,7 @@ export default function ArrayIncludesTest(): void {
     it('testArrayIncludes096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const first = new Item028();
       const second = new Item028();
-      const arr = new Array<Item028>(first);
+      const arr = Array.create<Item028>(1, first);
       expect(arr.includes(first)).assertTrue();
       expect(arr.includes(second)).assertFalse();
     });
@@ -1570,7 +1570,7 @@ export default function ArrayIncludesTest(): void {
       first.value = 7;
       const second = new Item028();
       second.value = 7;
-      const arr = new Array<Item028>(first);
+      const arr = Array.create<Item028>(1, first);
       expect(arr.includes(first)).assertTrue();
       expect(arr.includes(second)).assertFalse();
     });
@@ -1586,7 +1586,7 @@ export default function ArrayIncludesTest(): void {
     it('testArrayIncludes102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const first = (): number => 1;
       const second = (): number => 1;
-      const arr = new Array<() => number>(first);
+      const arr = Array.create<() => number>(1, first);
       expect(arr.includes(first)).assertTrue();
       expect(arr.includes(second)).assertFalse();
     });

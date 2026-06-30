@@ -24,7 +24,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 
-export default function ChipOptionsSuffixSymbolTest() {
+export default function ChipOptionsSuffixSymbolTest(): void {
   describe('ChipOptionsSuffixSymbolTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("ChipOptionsSuffixSymbolTest beforeEach start");

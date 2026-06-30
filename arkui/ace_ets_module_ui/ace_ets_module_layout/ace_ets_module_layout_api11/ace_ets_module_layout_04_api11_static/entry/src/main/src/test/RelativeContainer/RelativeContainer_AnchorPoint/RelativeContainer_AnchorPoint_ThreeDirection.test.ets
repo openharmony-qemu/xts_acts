@@ -82,9 +82,9 @@ it('SUB_ACE_RelativeContainer_AnchorPoint_ThreeDirection_TEST_static_0100', Leve
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let RelativeContainer_AnchorPoint_ThreeDirection_bt1: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_ThreeDirection_bt1');
-      let RelativeContainer_AnchorPoint_ThreeDirection_tx2: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_ThreeDirection_tx2');
-      let RelativeContainer_AnchorPoint_ThreeDirection_r1: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_ThreeDirection_r1');
+      let RelativeContainer_AnchorPoint_ThreeDirection_bt1: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_ThreeDirection' + '_bt1');
+      let RelativeContainer_AnchorPoint_ThreeDirection_tx2: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_ThreeDirection' + '_tx2');
+      let RelativeContainer_AnchorPoint_ThreeDirection_r1: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_ThreeDirection' + '_r1');
       console.log('assert position')
       expect(Math.abs(RelativeContainer_AnchorPoint_ThreeDirection_tx2.top - RelativeContainer_AnchorPoint_ThreeDirection_r1.top) <= 1)
         .assertTrue();

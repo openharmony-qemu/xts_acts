@@ -377,7 +377,7 @@ export default function list() {
     it('ListJsunit_0118', Level.LEVEL0, async (done: Function) => {
       console.info('ListJsunit_0118 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('list' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
 

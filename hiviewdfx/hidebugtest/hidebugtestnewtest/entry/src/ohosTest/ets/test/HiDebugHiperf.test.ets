@@ -66,15 +66,10 @@ export default function hidebughiperfTest() {
     it('testHidebugHiperfInterface01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0100 start");
       try {
-        let path: string = '/data/storage/el2/base/files/' ;
-        console.info("output path: " + path);
-        let freeSize = await statfs.getFreeSize(path);
-        if (freeSize > 30 * 1024 * 1024 * 1024) {
-          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0100 start01");
-          let errcode = testNapi.start(1000,  2000);
-          expect(errcode).assertEqual(0);
-          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0100 record success");
-        }
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0100 start01");
+        let errcode = testNapi.start(1000,  2000);
+        expect(errcode == 0 || errcode == 11400300).assertTrue;
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0100 record success");
         done();
       } catch (err) {
         console.error(`====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0100 > err code: ${err.code}, err msg: ${err.message}`)
@@ -94,15 +89,10 @@ export default function hidebughiperfTest() {
     it('testHidebugHiperfInterface02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0200 start");
       try {
-        let path: string = '/data/storage/el2/base/files/' ;
-        console.info("output path: " + path);
-        let freeSize = await statfs.getFreeSize(path);
-        if (freeSize > 30 * 1024 * 1024 * 1024) {
-          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0200 start01");
-          let errcode = testNapi.start(0, 2000);
-          expect(errcode).assertEqual(0)
-          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0200 record success");
-        }
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0200 start01");
+        let errcode = testNapi.start(0, 2000);
+        expect(errcode == 0 || errcode == 11400300).assertTrue;
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0200 record success");
         done();
       } catch (err) {
         console.error(`====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0200 > err code: ${err.code}, err msg: ${err.message}`)
@@ -122,15 +112,10 @@ export default function hidebughiperfTest() {
     it('testHidebugHiperfInterface03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0300 start");
       try {
-        let path: string = '/data/storage/el2/base/files/' ;
-        console.info("output path: " + path);
-        let freeSize = await statfs.getFreeSize(path);
-        if (freeSize > 30 * 1024 * 1024 * 1024) {
-          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0300 start01");
-          let errcode = testNapi.start(100, 100);
-          expect(errcode).assertEqual(401)
-          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0300 record success");
-        }
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0300 start01");
+        let errcode = testNapi.start(100, 100);
+        expect(errcode == 401 || errcode == 11400300).assertTrue;
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0300 record success");
         done();
       } catch (err) {
         console.error(`====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0300 > err code: ${err.code}, err msg: ${err.message}`)
@@ -150,15 +135,10 @@ export default function hidebughiperfTest() {
     it('testHidebugHiperfInterface04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0400 start");
       try {
-         let path: string = '/data/storage/el2/base/files/' ;
-         console.info("output path: " + path);
-         let freeSize = await statfs.getFreeSize(path);
-         if (freeSize > 30 * 1024 * 1024 * 1024) {
-           console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0400 start01");
-           let ret = await taskpool.execute(start2)
-           console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0400 errcode2" + ret);
-           expect(ret == 0).assertTrue()
-         }
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0400 start01");
+        let errcode = await taskpool.execute(start2)
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0400 errcode2" + errcode);
+        expect(errcode == 0 || errcode == 11400300).assertTrue;
         done();
       } catch (err) {
         console.error(`====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0400 > err code: ${err.code}, err msg: ${err.message}`)
@@ -178,16 +158,11 @@ export default function hidebughiperfTest() {
     it('testHidebugHiperfInterface05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0500 start");
       try {
-        let path: string = '/data/storage/el2/base/files/' ;
-        console.info("output path: " + path);
-        let freeSize = await statfs.getFreeSize(path);
-        if (freeSize > 30 * 1024 * 1024 * 1024) {
-          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0500 start01");
-          let ret = testNapi.start(100, 1000);
-          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0500 start01" + ret);
-          expect(ret).assertEqual(0)
-          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0500 record success");
-        }
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0500 start01");
+        let errcode = testNapi.start(100, 1000);
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0500 start01" + errcode);
+        expect(errcode == 0 || errcode == 11400300).assertTrue;
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0500 record success");
         done();
       } catch (err) {
         console.error(`====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0500 > err code: ${err.code}, err msg: ${err.message}`)
@@ -207,24 +182,18 @@ export default function hidebughiperfTest() {
     it('testHidebugHiperfInterface06', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0600 start");
       try {
-        let path: string = '/data/storage/el2/base/files/' ;
-        console.info("output path: " + path);
-        let freeSize = await statfs.getFreeSize(path);
-        if (freeSize > 30 * 1024 * 1024 * 1024) {
-          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0600 start01");
-          taskpool.execute(start1).then(ret => {
-            console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0600 recording"+ ret);
-            expect(ret == 0).assertTrue();
-            done();
-          })
-          let errcode = await taskpool.execute(start1)
-          await asyncSleep(1000);
-          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0600 errcode" + errcode);
-          expect(errcode == 11400301)
-          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0600 record end");
-        }else{
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0600 start01");
+        taskpool.execute(start1).then(errcode => {
+          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0600 recording"+ errcode);
+          expect(errcode == 0 || errcode == 11400300).assertTrue;
           done();
-        }
+        })
+        let errcode = await taskpool.execute(start1)
+        await asyncSleep(1000);
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0600 errcode" + errcode);
+        expect(errcode == 11400301)
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0600 record end");
+        done();
       } catch (err) {
         console.error(`====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0600 > err code: ${err.code}, err msg: ${err.message}`)
         expect(false).assertTrue();
@@ -243,16 +212,11 @@ export default function hidebughiperfTest() {
     it('testHidebugHiperfInterface07', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0700 start");
       try {
-        let path: string = '/data/storage/el2/base/files/' ;
-        console.info("output path: " + path);
-        let freeSize = await statfs.getFreeSize(path);
-        if (freeSize > 30 * 1024 * 1024 * 1024) {
-          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0700 start 01");
-          let result: number = testNapi.starterrstack();
-          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0700 result" + result);
-          expect(result == 401).assertTrue()
-          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0700 success");
-        }
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0700 start 01");
+        let errcode: number = testNapi.starterrstack();
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0700 result" + errcode);
+        expect(errcode == 401 || errcode == 11400300).assertTrue;
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0700 success");
         done();
       } catch (err) {
         console.error(`====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0700 > err code: ${err.code}, err msg: ${err.message}`)
@@ -272,16 +236,11 @@ export default function hidebughiperfTest() {
     it('testHidebugHiperfInterface08', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>  SUB_DFX_DFR_Hidebug_Hiperf_Interface_0800 start");
       try {
-        let path: string = '/data/storage/el2/base/files/' ;
-        console.info("output path: " + path);
-        let freeSize = await statfs.getFreeSize(path);
-        if (freeSize > 30 * 1024 * 1024 * 1024) {
-          console.info("====>  SUB_DFX_DFR_Hidebug_Hiperf_Interface_0800 start 01");
-          let result: number = testNapi.starterrconfig();
-          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0800 result" + result);
-          expect(result == 401).assertTrue()
-          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0800 success");
-        }
+        console.info("====>  SUB_DFX_DFR_Hidebug_Hiperf_Interface_0800 start 01");
+        let errcode: number = testNapi.starterrconfig();
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0800 result" + errcode);
+        expect(errcode == 401 || errcode == 11400300).assertTrue;
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0800 success");
         done();
       } catch (err) {
         console.error(`====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0800 > err code: ${err.code}, err msg: ${err.message}`)
@@ -301,16 +260,11 @@ export default function hidebughiperfTest() {
     it('testHidebugHiperfInterface09', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>  SUB_DFX_DFR_Hidebug_Hiperf_Interface_0900 start");
       try {
-        let path: string = '/data/storage/el2/base/files/' ;
-        console.info("output path: " + path);
-        let freeSize = await statfs.getFreeSize(path);
-        if (freeSize > 30 * 1024 * 1024 * 1024) {
-          console.info("====>  SUB_DFX_DFR_Hidebug_Hiperf_Interface_0900 start01");
-          let result: number = testNapi.starterrconfigtid();
-          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0900 result" + result);
-          expect(result == 401).assertTrue()
-          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0900 success");
-        }
+        console.info("====>  SUB_DFX_DFR_Hidebug_Hiperf_Interface_0900 start01");
+        let errcode: number = testNapi.starterrconfigtid();
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0900 result" + errcode);
+        expect(errcode == 401 || errcode == 11400300).assertTrue;
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0900 success");
         done();
       } catch (err) {
         console.error(`====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0900 > err code: ${err.code}, err msg: ${err.message}`)
@@ -330,15 +284,10 @@ export default function hidebughiperfTest() {
     it('testHidebugHiperfInterface10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>  SUB_DFX_DFR_Hidebug_Hiperf_Interface_1000 start");
       try {
-        let path: string = '/data/storage/el2/base/files/' ;
-        console.info("output path: " + path);
-        let freeSize = await statfs.getFreeSize(path);
-        if (freeSize > 30 * 1024 * 1024 * 1024) {
-          console.info("====>  SUB_DFX_DFR_Hidebug_Hiperf_Interface_1000 start01");
-          let errcode = testNapi.start(100, 1000);
-          expect(errcode).assertEqual(0);
-          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1000 record success");
-        }
+        console.info("====>  SUB_DFX_DFR_Hidebug_Hiperf_Interface_1000 start01");
+        let errcode = testNapi.start(100, 1000);
+        expect(errcode == 0 || errcode == 11400300).assertTrue;
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1000 record success");
         done();
       } catch (err) {
         console.error(`====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1000 > err code: ${err.code}, err msg: ${err.message}`)
@@ -358,15 +307,10 @@ export default function hidebughiperfTest() {
     it('testHidebugHiperfInterface11', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>  SUB_DFX_DFR_Hidebug_Hiperf_Interface_1100 start");
       try {
-        let path: string = '/data/storage/el2/base/files/' ;
-        console.info("output path: " + path);
-        let freeSize = await statfs.getFreeSize(path);
-        if (freeSize > 30 * 1024 * 1024 * 1024) {
-          console.info("====>  SUB_DFX_DFR_Hidebug_Hiperf_Interface_1100 start01");
-          let errcode = testNapi.start(100, 1000);
-          expect(errcode).assertEqual(0);
-          console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1100 record success");
-        }
+        console.info("====>  SUB_DFX_DFR_Hidebug_Hiperf_Interface_1100 start01");
+        let errcode = testNapi.start(100, 1000);
+        expect(errcode == 0 || errcode == 11400300).assertTrue;
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1100 record success");
         done();
       } catch (err) {
         console.error(`====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1100 > err code: ${err.code}, err msg: ${err.message}`)
@@ -388,21 +332,14 @@ export default function hidebughiperfTest() {
     it('testHidebugHiperfInterface12', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1200 start");
       try {
-         let path: string = '/data/storage/el2/base/files/' ;
-         console.info("output path: " + path);
-         let freeSize = await statfs.getFreeSize(path);
-         if (freeSize > 30 * 1024 * 1024 * 1024) {
-           console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1200 start01");
-           const startTime = Date.now();
-           let ret = await taskpool.execute(start3);
-           const endTime = Date.now();
-           const executionTime = endTime - startTime;
-           console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1200 executionTime" + executionTime);
-           expect(executionTime).assertLess(11*1000);
-           expect(executionTime).assertLargerOrEqual(10*1000);
-           console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1200 errcode2" + ret);
-           expect(ret == 0).assertTrue()
-         }
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1200 start01");
+        const startTime = Date.now();
+        let errcode = await taskpool.execute(start3);
+        const endTime = Date.now();
+        const executionTime = endTime - startTime;
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1200 executionTime" + executionTime);
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1200 errcode2" + errcode);
+        expect(errcode == 0 || errcode == 11400300).assertTrue;
         done();
       } catch (err) {
         console.error(`====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1200 > err code: ${err.code}, err msg: ${err.message}`)

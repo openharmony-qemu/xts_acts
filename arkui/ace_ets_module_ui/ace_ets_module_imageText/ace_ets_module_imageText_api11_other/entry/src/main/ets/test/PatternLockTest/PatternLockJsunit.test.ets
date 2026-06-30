@@ -82,7 +82,7 @@ export default function PatternLockJsunit() {
     it('PatternLockJsunit_0200', Level.LEVEL2, async (done: Function) => {
       // Verify the content of the message
       let driver1 = await UiDriver.create()
-      let textComponent1 = await driver1.findComponent(BY.key('text'));
+      let textComponent1 = await driver1.findComponent(BY.key('PatternLockPage' + '_text'));
       let text1 = await textComponent1.getText();
       expect(text1).assertEqual('please input password!');
       console.info('[PatternLockJsunit_0200] END');
@@ -107,7 +107,7 @@ export default function PatternLockJsunit() {
       await CommonFunc.sleep(2000);
       // Verify the content of the message
       let driver1 = await UiDriver.create()
-      let curtextrentBp = await driver1.findComponent(BY.key('text'));
+      let curtextrentBp = await driver1.findComponent(BY.key('PatternLockPage' + '_text'));
       let text = await curtextrentBp.getText();
       expect(text).assertEqual('Please input password');
       console.info('[PatternLockJsunit_0300] END');
@@ -130,7 +130,7 @@ export default function PatternLockJsunit() {
       await CommonFunc.sleep(1000);
       // Verify the content of the message
       let driver = await UiDriver.create()
-      let textComponent = await driver.findComponent(BY.key('text'));
+      let textComponent = await driver.findComponent(BY.key('PatternLockPage' + '_text'));
       let text = await textComponent.getText();
       expect(text).assertEqual('hello world');
       console.info('[PatternLockJsunit_0400] END');

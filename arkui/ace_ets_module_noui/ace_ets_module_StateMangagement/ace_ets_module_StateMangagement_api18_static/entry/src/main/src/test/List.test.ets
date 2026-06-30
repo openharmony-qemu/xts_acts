@@ -40,6 +40,8 @@ import LazyForEachCustomComponentFreezeModeStaticTest from './LazyForeach/LazyFo
 import SyncMonitorNotWildcardsTest from './SyncMonitor/SyncMonitorNotWildcards.test';
 import PersistentStorageApiTest from './PersistentStorage/PersistentStorageApi.test';
 import PersistenceV2ApiTest from './PersistenceV2/PersistenceV2Api.test';
+import PersistenceV2DefaultSubCreatorsTest from './PersistenceV2/PersistenceV2DefaultSubCreators.test';
+import PersistenceV2AbnormalDefaultSubCreatorsTest from './PersistenceV2/PersistenceV2AbnormalDefaultSubCreators.test';
 import AddMonitorWildcard from './AddMonitorTest/AddMonitorWildcard.test';
 import AddMonitorWildcardUnerfined from './AddMonitorTest/AddMonitorWildcardUnerfined.test';
 import MonitorWildcards from './Monitor/MonitorWildcards.test';
@@ -53,9 +55,16 @@ import SVDeepListenObservedAndObjectlinkTest from './stateVariableDeepListen/SVD
 import SVDeepListenObservedBuiltInTest from './stateVariableDeepListen/SVDeepListenObservedBuiltInTest.test';
 import AppStorageV2Api from './AppStorageV2/AppStorageV2Api.test';
 import DumpObject from './DumpObjectTest/DumpObject.test';
+import GlobalReusePoolTest from './uiutilsTest/GlobalReusePool.test';
+import GlobalReusePool002Test from './uiutilsTest/GlobalReusePool002.test';
+import GlobalReusePool003Test from './uiutilsTest/GlobalReusePool003.test';
+import GlobalReusePool004Test from './uiutilsTest/GlobalReusePool004.test';
+import AddMonitorWildcard2 from './AddMonitorTest/AddMonitorWildcard2.test';
 
-export default function testsuite() {
+
+export default function testsuite(): void {
   ArrayLikeStringTest(); 
+  GlobalReusePool004Test();
   //RepeatCloseReuseTest0110(); 
   //RepeatLazyTest0150();  
   //repeatReusableFalse(); 
@@ -81,8 +90,11 @@ export default function testsuite() {
   SyncMonitorNotWildcardsTest();
   PersistentStorageApiTest();
   PersistenceV2ApiTest();
+  PersistenceV2DefaultSubCreatorsTest();
+  PersistenceV2AbnormalDefaultSubCreatorsTest();
   PersistenceV2NotifyOnErrorTest();
   AddMonitorWildcard();
+  AddMonitorWildcard2();
   MonitorWildcards();
   AddMonitorWildcardUnerfined();
   componentLifecycleDecoratorsTest();
@@ -94,4 +106,7 @@ export default function testsuite() {
   SVDeepListenObservedBuiltInTest();
   AppStorageV2Api();
   DumpObject();
+  GlobalReusePool002Test();
+  GlobalReusePool003Test();
+  GlobalReusePoolTest();
 }

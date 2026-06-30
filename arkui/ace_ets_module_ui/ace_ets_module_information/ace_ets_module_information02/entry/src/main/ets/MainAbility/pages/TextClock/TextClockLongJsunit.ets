@@ -40,7 +40,7 @@ struct TextClockLongPage {
               .onDateChange((value: number) => {
                 this.accumulateTime = value
               })
-              .key('textClock')
+              .key('TextClockLongJsunit_textClock')
               .visibility(this.visible)
               .fontSize(20)
           }
@@ -66,7 +66,7 @@ struct TextClockLongPage {
             Button('start')
               .onClick(() => {
                 // 启动文本时钟
-                let strJson = getInspectorByKey('textClock');
+                let strJson = getInspectorByKey('TextClockLongJsunit_textClock');
                 this.textShadow = JSON.parse(strJson).$attrs.textShadow.slice(0,5)
                 this.fontFeature = JSON.parse(strJson).$attrs.fontFeature
                 this.controller.start()

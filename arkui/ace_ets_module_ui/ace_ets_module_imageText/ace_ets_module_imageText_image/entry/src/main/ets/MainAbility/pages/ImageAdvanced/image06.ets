@@ -43,7 +43,9 @@ struct ImageAdvancedImage06 {
         Text('' + this.loadingStatus).id('loadingStatus06')
         Text('' + this.contentWidth).id('contentWidth06')
         Text('' + this.contentHeight).id('contentHeight06')
+        .key('contentHeight06')
         Text('' + this.contentOffsetX).id('contentOffsetX06')
+        .key('contentOffsetX06')
         Text('' + this.contentOffsetY).id('contentOffsetY06')
 
         Image(this.src)

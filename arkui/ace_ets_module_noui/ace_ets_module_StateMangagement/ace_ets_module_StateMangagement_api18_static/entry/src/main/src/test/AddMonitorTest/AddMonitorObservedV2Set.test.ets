@@ -30,7 +30,7 @@ let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-export default function AddMonitorObservedV2Set() {
+export default function AddMonitorObservedV2Set(): void {
   describe('AddMonitorObservedV2Set', () => {
     beforeAll(async (): Promise<void> => {
       console.info("AddMonitorObservedV2Set beforeEach start");

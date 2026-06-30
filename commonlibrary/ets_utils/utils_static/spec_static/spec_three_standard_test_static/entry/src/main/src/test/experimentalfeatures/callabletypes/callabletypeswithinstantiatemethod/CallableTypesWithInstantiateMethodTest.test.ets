@@ -129,6 +129,7 @@ class B_12 {
   static $_instantiate(f: () => B_12, p: number): number { return p + p }
 }
 class C_12 extends B_12 {
+  static $_instantiate(f: () => C_12, p: number): number { return p + p }
   static $_instantiate(f: () => C_12, p: string): string { return p + p }
 }
 
@@ -139,9 +140,13 @@ class B_13 {
   $_instantiate(f: () => B_13, p: number): number { return p + p }
 }
 class C_13 extends B_13 {
+  static $_instantiate(f: () => C_13, p: number): number {
+    return f().$_instantiate(f, p)
+  }
   static $_instantiate(f: () => C_13, p: string): string {
     return f().$_instantiate(f, p)
   }
+  $_instantiate(f: () => C_13, p: number): number { return p + p }
   $_instantiate(f: () => C_13, p: string): string { return '1' + p }
 }
 
@@ -238,7 +243,11 @@ class B_23 {
   }
 }
 class C_23 extends B_23 {
-  public static $_instantiate(f: () => C_23, p: number): B_23 { return C_23('' + p) }
+  public static $_instantiate(f: () => C_23, p: number): B_23 {
+    let x = f()
+    x.fld = '' + p
+    return x
+  }
 }
 
 class B_24 {
@@ -250,6 +259,11 @@ class B_24 {
   }
 }
 class C_24 extends B_24 {
+  static $_instantiate(f: () => C_24, p: string): B_24 {
+    let x = f()
+    x.fld = p
+    return x
+  }
   meth(p: number): B_24 {
     return C_24('' + p)
   }
@@ -297,7 +311,7 @@ class C30 {
 }
 
 class C31<T extends String | Number | undefined> {
-  fld: T
+  fld: T = undefined as T
   static $_instantiate(f: () => C31<String>, p: String): C31<String> {
     let x: C31<String> = f()
     x.fld = p

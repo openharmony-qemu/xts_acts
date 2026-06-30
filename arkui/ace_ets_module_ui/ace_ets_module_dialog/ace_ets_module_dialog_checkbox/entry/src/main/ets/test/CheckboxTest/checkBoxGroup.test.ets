@@ -58,7 +58,7 @@ export default function checkBoxGroupPartJsunit() {
       console.info('checkBoxGroupPart testcheckBoxGroupPart0011 START');
       await Utils.sleep(2000);
       try {
-        console.info("testcheckBoxGroupPart_0011 click result is: " + JSON.stringify(sendEventByKey('CheckboxGroup', 10, "")));
+        console.info("testcheckBoxGroupPart_0011 click result is: " + JSON.stringify(sendEventByKey('checkBoxGroup' + '_CheckboxGroup', 10, "")));
         await Utils.sleep(2000);
         let strJson: string = getInspectorByKey('Checkbox2');
         console.info("[testcheckBoxGroupPart0011] component select strJson:" + strJson);
@@ -69,7 +69,7 @@ export default function checkBoxGroupPartJsunit() {
         console.info("testcheckBoxGroupPart_0011 on click err : " + JSON.stringify(err));
       }
       console.info('testcheckBoxGroupPart0011 END');
-      console.info("testcheckBoxGroup0001 click result is: " + JSON.stringify(sendEventByKey('CheckboxGroup', 10, "")));
+      console.info("testcheckBoxGroup0001 click result is: " + JSON.stringify(sendEventByKey('checkBoxGroup' + '_CheckboxGroup', 10, "")));
       done();
     });
 
@@ -85,7 +85,7 @@ export default function checkBoxGroupPartJsunit() {
       console.info('checkBoxGroup testcheckBoxGroup0001 START');
       await Utils.sleep(2000);
       try {
-        console.info("testcheckBoxGroup0001 click result is: " + JSON.stringify(sendEventByKey('CheckboxGroup', 10, "")));
+        console.info("testcheckBoxGroup0001 click result is: " + JSON.stringify(sendEventByKey('checkBoxGroup' + '_CheckboxGroup', 10, "")));
         await Utils.sleep(2000);
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 60301,

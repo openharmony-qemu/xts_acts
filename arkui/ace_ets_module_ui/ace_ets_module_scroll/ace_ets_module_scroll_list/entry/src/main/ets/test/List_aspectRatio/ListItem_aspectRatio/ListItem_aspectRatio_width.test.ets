@@ -77,7 +77,7 @@ export default function ListItem_aspectRatio_width() {
         name: 'aspectRatio1', value: '0'
       });
       await CommonFunc.sleep(1000);
-      let ListItem01 = CommonFunc.getComponentRect('ListItem_aspectRatio_width_01');
+      let ListItem01 = CommonFunc.getComponentRect('ListItem_aspectRatio_width' + '_01');
 
       expect(Math.abs(Math.round(ListItem01.right - ListItem01.left) - Math.round(vp2px(160))) <= 1).assertTrue();
       expect(Math.abs(Math.round(ListItem01.bottom - ListItem01.top) - Math.round(vp2px(20))) <= 1).assertTrue();
@@ -100,7 +100,7 @@ export default function ListItem_aspectRatio_width() {
         name: 'aspectRatio1', value: '0.5'
       });
       await CommonFunc.sleep(1000);
-      let ListItem01 = CommonFunc.getComponentRect('ListItem_aspectRatio_width_01');
+      let ListItem01 = CommonFunc.getComponentRect('ListItem_aspectRatio_width' + '_01');
       console.info('[vp2px]' + Math.round(vp2px(10)));
       console.info('[SUB_ACE_ListItem_aspectRatio_width_0200_1]' + Math.round(ListItem01.right - ListItem01.left));
       console.info('[SUB_ACE_ListItem_aspectRatio_width_0200_2]' + Math.round(ListItem01.bottom - ListItem01.top));
@@ -126,7 +126,7 @@ export default function ListItem_aspectRatio_width() {
         name: 'aspectRatio1', value: '2'
       });
       await CommonFunc.sleep(1000);
-      let ListItem01 = CommonFunc.getComponentRect('ListItem_aspectRatio_width_01');
+      let ListItem01 = CommonFunc.getComponentRect('ListItem_aspectRatio_width' + '_01');
       console.info('[SUB_ACE_ListItem_aspectRatio_width_0300_1]' + Math.round(ListItem01.right - ListItem01.left));
       console.info('[SUB_ACE_ListItem_aspectRatio_width_0300_2]' + Math.round(ListItem01.bottom - ListItem01.top));
 
@@ -151,7 +151,7 @@ export default function ListItem_aspectRatio_width() {
         name: 'aspectRatio1', value: '-1'
       });
       await CommonFunc.sleep(1000);
-      let ListItem01 = CommonFunc.getComponentRect('ListItem_aspectRatio_width_01');
+      let ListItem01 = CommonFunc.getComponentRect('ListItem_aspectRatio_width' + '_01');
 
       expect(Math.abs(Math.round(ListItem01.right - ListItem01.left) - Math.round(vp2px(160))) <= 1).assertTrue();
       expect(Math.abs(Math.round(ListItem01.bottom - ListItem01.top) - Math.round(vp2px(20))) <= 1).assertTrue();

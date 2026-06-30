@@ -833,7 +833,7 @@ export default function common1Jsunit() {
     it('Common1046', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1046] START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('common1' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
       let strJsonNew = getInspectorByKey('common1');

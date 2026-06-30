@@ -25,7 +25,7 @@ struct ComposeListItemV2Page {
   build() {
     Column() {
       Scroll() {
-        Column({ space: 20 }) {
+        Column({ space: 12 }) {
           Text('ComposeListItemV2 Basic Test')
             .fontSize(20)
             .fontWeight(FontWeight.Bold)

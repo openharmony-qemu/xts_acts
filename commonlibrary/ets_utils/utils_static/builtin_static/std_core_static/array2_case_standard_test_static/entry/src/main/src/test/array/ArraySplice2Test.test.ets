@@ -462,7 +462,7 @@ export default function ArraySplice2Test(): void {
      * @tc.level Level 2
      */
     it('testArraySpliceTwo025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(100);
+      const arr = Array.create<number>(1, 100);
       const result = arr.splice(0);
       expect(arr.length).assertEqual(0);
       expect(result.length).assertEqual(1);
@@ -478,7 +478,7 @@ export default function ArraySplice2Test(): void {
      * @tc.level Level 2
      */
     it('testArraySpliceTwo026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(100);
+      const arr = Array.create<number>(1, 100);
       const result = arr.splice(1);
       expect(arr.length).assertEqual(1);
       expect(result.length).assertEqual(0);

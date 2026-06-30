@@ -213,7 +213,7 @@ export default function ArrayToSorted1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayToSortedOne008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(42);
+      const arr = Array.create<number>(1, 42);
       const result = arr.toSorted();
       expect(result.length).assertEqual(1);
       expect(result[0]).assertEqual(42);
@@ -1007,7 +1007,7 @@ export default function ArrayToSorted1Test(): void {
      */
     it('testArrayToSortedOne058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pair = new Array<number>(2, 1);
-      const single = new Array<number>(1);
+      const single = Array.create<number>(1, 1);
       const arr = new Array<Array<number>>(pair, single);
       const result = arr.toSorted();
       expect(result[0] === single).assertTrue();

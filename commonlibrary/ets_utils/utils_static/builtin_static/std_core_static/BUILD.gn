@@ -53,6 +53,18 @@ group("std_core_static") {
       "map_standard_test_static:ActsMapCaseStaticTest",
       "blockingqueue_standard_test_static:ActsBlockingqueueCaseStaticTest",
       "box_test_static:ActsBoxStaticTest",
+      "bigint64array_standard_test_static:ActsBigint64arrayCaseStaticTest",
+      "float32array_standard_test_static:ActsFloat32arrayCaseStaticTest",
+      "float64array_standard_test_static:ActsFloat64arrayCaseStaticTest",
+      "int8array_standard_test_static:ActsInt8arrayCaseStaticTest",
+      "int16array_standard_test_static:ActsInt16arrayCaseStaticTest",
+      "int32array_standard_test_static:ActsInt32arrayCaseStaticTest",
+      "uarrays_standard_test_static:ActsUarraysCaseStaticTest",
+      "biguint64array_standard_test_static:ActsBiguint64arrayCaseStaticTest",
+      "uint8array_standard_test_static:ActsUint8arrayCaseStaticTest",
+      "uint8clampedarray_standard_test_static:ActsUint8clampedarrayCaseStaticTest",
+      "uint16array_standard_test_static:ActsUint16arrayCaseStaticTest",
+      "uint32array_standard_test_static:ActsUint32arrayCaseStaticTest",
     ]
   }
 }

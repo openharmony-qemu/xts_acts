@@ -77,7 +77,7 @@ export default function TextPickerJsunit() {
     it('TextPickerJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       // Get the information of TextPicker component
       console.info('[TextPickerJsunit_static_0100] START');
-      let strJson = inspector.getInspectorByKey('textPicker');
+      let strJson = inspector.getInspectorByKey('TextPickerPage' + '_textPicker');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[TextPickerJsunit_static_0100] component obj is: " + JSON.stringify(obj));
       console.info("[TextPickerJsunit_static_0100] range: " + JSON.stringify(obj.getElement('$attrs').getString('range')));
@@ -119,7 +119,7 @@ export default function TextPickerJsunit() {
       await CommonFunc.sleep(2000);
 
       // Get the attribute of TextPicker component
-      let strJson = inspector.getInspectorByKey('textPicker');
+      let strJson = inspector.getInspectorByKey('TextPickerPage' + '_textPicker');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[TextPickerJsunit_static_0200] component obj is: " + JSON.stringify(obj));
       console.info("[TextPickerJsunit_static_0200] range: " + JSON.stringify(obj.getElement('$attrs').getString('range')));
@@ -146,7 +146,7 @@ export default function TextPickerJsunit() {
       await CommonFunc.sleep(500);
       console.info('[TextPickerJsunit_static_0300] START');
       let driver = Driver.create()
-      let textPicker = await driver.findComponent(ON.id('textPicker'));
+      let textPicker = await driver.findComponent(ON.id('TextPickerPage' + '_textPicker'));
       let rect = await (textPicker?.getBounds() as Promise<Rect>);
       let left = rect.left
       let top = rect.top
@@ -179,7 +179,7 @@ export default function TextPickerJsunit() {
       await CommonFunc.sleep(1000);
 
       // Get the attribute of TextPicker component
-      let strJson = inspector.getInspectorByKey('textPicker');
+      let strJson = inspector.getInspectorByKey('TextPickerPage' + '_textPicker');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[TextPickerJsunit_static_0400] component obj is: " + JSON.stringify(obj));
       console.info("[TextPickerJsunit_static_0400] range: " + JSON.stringify(obj.getElement('$attrs').getString('range')));

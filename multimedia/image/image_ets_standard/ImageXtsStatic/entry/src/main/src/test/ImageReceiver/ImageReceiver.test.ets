@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Hypium } from "../../../../hypium";
 import { BusinessError } from '@ohos.base';
 import { camera } from '@kit.CameraKit';
 import { image } from "@kit.ImageKit";
-import { AppStorage, Context } from "@kit.ArkUI";
+import { Context } from "@ohos.arkui.UIContext";
 import { getPermission, sleep } from "../ImageCommon.test";
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, Hypium, it, Level } from '../../../../hypium';
+
 
 const TAG = 'ImageXts.ImageReceiverTestSupp'
 let mCameraManager: camera.CameraManager | undefined;
@@ -145,14 +145,10 @@ export default function ImageReceiverSupp(): void {
     beforeAll(async (): Promise<void> => {
       console.info('beforeAll case');
       await getPermission();
+      await sleep(500);
       getCameraManager();
       getSupportedCameraDeviceArray();
       getCameraInput();
-
-      const size: image.Size = { height: 480, width: 480 };
-      mImageReceiver = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
-      mReceiverSurfaceId =await mImageReceiver?.getReceivingSurfaceId();
-      console.info(TAG, 'mReceiverSurfaceId:', mReceiverSurfaceId);
     })
     beforeEach(async (): Promise<void> => {
       await sleep(500);
@@ -181,10 +177,14 @@ export default function ImageReceiverSupp(): void {
         height: 480,
         width: 480
       }
+      let isCallbackCalled: boolean = false;
       let receiver: image.ImageReceiver | undefined = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
+      mReceiverSurfaceId = await receiver!.getReceivingSurfaceId();
+      console.info(TAG, 'mReceiverSurfaceId:', mReceiverSurfaceId);
       receiver!.onImageArrival(() => {
         try {
           receiver!.readNextImage((err: BusinessError | null, img: image.Image | undefined) => {
+            isCallbackCalled = true;
             if (err) {
               console.error(TAG, testName,
                 `Failed to read the next Image.code ${err.code},message is ${err.message}`);
@@ -207,7 +207,14 @@ export default function ImageReceiverSupp(): void {
       createPhotoOutput();
       await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
       mPhotoSession!.start();
-      await sleep(1000);
+      const startTime = Date.now();
+      const timeoutMs = 15000;
+      while (!isCallbackCalled && (Date.now() - startTime) < timeoutMs) {
+        await sleep(100);
+      }
+      expect(isCallbackCalled).assertTrue();
+      receiver!.offImageArrival();
+      await receiver!.release();
       await releasePhotoSession();
       done();
     })
@@ -226,10 +233,14 @@ export default function ImageReceiverSupp(): void {
         height: 480,
         width: 480
       }
+      let isCallbackCalled: boolean = false;
       let receiver: image.ImageReceiver | undefined = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
+      mReceiverSurfaceId = await receiver!.getReceivingSurfaceId();
+      console.info(TAG, 'mReceiverSurfaceId:', mReceiverSurfaceId);
       receiver!.onImageArrival(() => {
         try {
           receiver!.readNextImage((err: BusinessError | null, img: image.Image | undefined) => {
+            isCallbackCalled = true;
             if (err) {
               console.error(TAG, testName,
                 `Failed to read the next Image.code ${err.code},message is ${err.message}`);
@@ -247,7 +258,14 @@ export default function ImageReceiverSupp(): void {
       createPhotoOutput();
       await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
       mPhotoSession!.start();
-      await sleep(1000);
+      const startTime = Date.now();
+      const timeoutMs = 15000;
+      while (!isCallbackCalled && (Date.now() - startTime) < timeoutMs) {
+        await sleep(100);
+      }
+      expect(isCallbackCalled).assertTrue();
+      receiver!.offImageArrival();
+      await receiver!.release();
       await releasePhotoSession();
       done();
     })
@@ -266,11 +284,15 @@ export default function ImageReceiverSupp(): void {
         height: 480,
         width: 480
       }
+      let isCallbackCalled: boolean = false;
       let receiver: image.ImageReceiver | undefined = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
+      mReceiverSurfaceId = await receiver!.getReceivingSurfaceId();
+      console.info(TAG, 'mReceiverSurfaceId:', mReceiverSurfaceId);
       try {
         receiver!.onImageArrival(() => {
           console.info(TAG, testName, ' receiver.on begin');
           receiver!.readNextImage().then((img: image.Image) => {
+            isCallbackCalled = true;
             console.info(TAG, testName, 'receiver.readNextImage succeeded.', img);
             console.info(TAG, testName, 'receiver.readNextImage succeeded.', img.format);
             expect(img.format > 0).assertTrue();
@@ -287,7 +309,14 @@ export default function ImageReceiverSupp(): void {
       createPhotoOutput();
       await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
       mPhotoSession!.start();
-      await sleep(1000);
+      const startTime = Date.now();
+      const timeoutMs = 15000;
+      while (!isCallbackCalled && (Date.now() - startTime) < timeoutMs) {
+        await sleep(100);
+      }
+      expect(isCallbackCalled).assertTrue();
+      receiver!.offImageArrival();
+      await receiver!.release();
       await releasePhotoSession();
       done();
     })
@@ -306,11 +335,15 @@ export default function ImageReceiverSupp(): void {
         height: 480,
         width: 480
       }
+      let isCallbackCalled: boolean = false;
       let receiver: image.ImageReceiver | undefined = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
+      mReceiverSurfaceId = await receiver!.getReceivingSurfaceId();
+      console.info(TAG, 'mReceiverSurfaceId:', mReceiverSurfaceId);
       try {
         receiver!.onImageArrival(() => {
           console.info(TAG, testName, ' receiver.on begin');
           receiver!.readNextImage().then((img: image.Image) => {
+            isCallbackCalled = true;
             console.info(TAG, testName, 'receiver.readNextImage succeeded.', JSON.stringify(img.clipRect));
             expect(img.clipRect.x).assertEqual(0);
             expect(img.clipRect.y).assertEqual(0);
@@ -323,7 +356,14 @@ export default function ImageReceiverSupp(): void {
       createPhotoOutput();
       await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
       mPhotoSession!.start();
-      await sleep(1000);
+      const startTime = Date.now();
+      const timeoutMs = 15000;
+      while (!isCallbackCalled && (Date.now() - startTime) < timeoutMs) {
+        await sleep(100);
+      }
+      expect(isCallbackCalled).assertTrue();
+      receiver!.offImageArrival();
+      await receiver!.release();
       await releasePhotoSession();
       done();
     })
@@ -336,17 +376,21 @@ export default function ImageReceiverSupp(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it('SUB_MEDIA_IMAGE_readLatestImage_promise_static_0100', Level.LEVEL0, async (done: () => void): Promise<void>  => {
+    it('SUB_MEDIA_IMAGE_readLatestImage_promise_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testName = 'SUB_MEDIA_IMAGE_readLatestImage_promise_static_0100';
       let size: image.Size = {
         height: 480,
         width: 480
       }
+      let isCallbackCalled: boolean = false;
       let receiver: image.ImageReceiver | undefined = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
+      mReceiverSurfaceId = await receiver!.getReceivingSurfaceId();
+      console.info(TAG, 'mReceiverSurfaceId:', mReceiverSurfaceId);
       receiver!.onImageArrival(() => {
         try {
           console.info(TAG, testName, ' receiver.on begin');
           receiver!.readLatestImage().then((img: image.Image) => {
+            isCallbackCalled = true;
             console.info(TAG, testName, 'receiver.readNextImage succeeded.', img.size);
             expect(img.size.height > 0 && img.size.width > 0).assertTrue();
             console.info(TAG, testName, 'receiver.readNextImage succeeded.', img.clipRect.x);
@@ -366,7 +410,14 @@ export default function ImageReceiverSupp(): void {
       createPhotoOutput();
       await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
       mPhotoSession!.start();
-      await sleep(1000);
+      const startTime = Date.now();
+      const timeoutMs = 15000;
+      while (!isCallbackCalled && (Date.now() - startTime) < timeoutMs) {
+        await sleep(100);
+      }
+      expect(isCallbackCalled).assertTrue();
+      receiver!.offImageArrival();
+      await receiver!.release();
       await releasePhotoSession();
       done();
     })
@@ -379,16 +430,20 @@ export default function ImageReceiverSupp(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it('SUB_MEDIA_IMAGE_readLatestImage_promise_static_0200', Level.LEVEL0, async (done: () => void): Promise<void>  => {
+    it('SUB_MEDIA_IMAGE_readLatestImage_promise_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testName = 'SUB_MEDIA_IMAGE_readLatestImage_promise_static_0200';
       let size: image.Size = {
         height: 480,
         width: 480
       }
+      let isCallbackCalled: boolean = false;
       let receiver: image.ImageReceiver | undefined = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
+      mReceiverSurfaceId = await receiver!.getReceivingSurfaceId();
+      console.info(TAG, 'mReceiverSurfaceId:', mReceiverSurfaceId);
       receiver!.onImageArrival(() => {
         try {
           receiver!.readLatestImage((err: BusinessError | null, img: image.Image | undefined) => {
+            isCallbackCalled = true;
             if (err) {
               console.error(TAG, testName,
                 `Failed to read the latest Image.code ${err.code},message is ${err.message}`);
@@ -414,7 +469,14 @@ export default function ImageReceiverSupp(): void {
       createPhotoOutput();
       await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
       mPhotoSession!.start();
-      await sleep(1000);
+      const startTime = Date.now();
+      const timeoutMs = 15000;
+      while (!isCallbackCalled && (Date.now() - startTime) < timeoutMs) {
+        await sleep(100);
+      }
+      expect(isCallbackCalled).assertTrue();
+      receiver!.offImageArrival();
+      await receiver!.release();
       await releasePhotoSession();
       done();
     })
@@ -427,7 +489,7 @@ export default function ImageReceiverSupp(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it('SUB_MEDIA_IMAGE_createImageReceiver_static_0100', Level.LEVEL0, async (done: () => void)=> {
+    it('SUB_MEDIA_IMAGE_createImageReceiver_static_0100', Level.LEVEL0, async (done: () => void) => {
       const testName = 'SUB_MEDIA_IMAGE_createImageReceiver_static_0100';
       try {
         let size: image.Size = {
@@ -437,11 +499,146 @@ export default function ImageReceiverSupp(): void {
         let receiver: image.ImageReceiver | undefined = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
         console.info(TAG, testName, 'Succeed', receiver?.capacity);
         expect(receiver?.capacity).assertEqual(8);
+        await receiver!.release();
       } catch (err) {
         console.info(TAG, testName, err.message, err.code);
         expect().assertFail();
       }
       done();
     })
+
+
+
+    // /**
+    //  * @tc.name   SUB_MEDIA_IMAGE_getMetadata_static_0100
+    //  * @tc.number SUB_MEDIA_IMAGE_getMetadata_static_0100
+    //  * @tc.desc   getMetadata image.HdrMetadataKey.HDR_GAINMAP_METADATA
+    //  * @tc.type   FUNCTION
+    //  * @tc.size   MEDIUMTEST
+    //  * @tc.level  LEVEL0
+    //  */
+    // it('SUB_MEDIA_IMAGE_getMetadata_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    //   const testName = 'SUB_MEDIA_IMAGE_getMetadata_static_0100';
+    //   let size: image.Size = {
+    //     height: 480,
+    //     width: 480
+    //   }
+    //   let receiveCount = 0;
+    //   let isCallbackCalled: boolean = false;
+    //   let receiver: image.ImageReceiver | undefined = image.createImageReceiver(size, image.ImageFormat.JPEG, 2);
+    //   try {
+    //     if (isEmpty01(mCameraDeviceArray)) {
+    //       console.info(TAG, testName, ' mCameraDeviceArray is null.');
+    //       done();
+    //     } else {
+    //       mReceiverSurfaceId = await receiver!.getReceivingSurfaceId();
+    //       console.info(TAG, testName, "get receiver SurfaceId success", mReceiverSurfaceId);
+    //       receiver!.onImageArrival(() => {
+    //         receiveCount++;
+    //         if (receiveCount > 1) {
+    //           return;
+    //         }
+    //         receiver!.readNextImage().then((img: image.Image) => {
+    //           isCallbackCalled = true;
+    //           console.info(TAG, testName, 'receiver.readNextImage succeeded.', img);
+    //           try {
+    //             console.info(TAG, testName, "get receiver SurfaceId success");
+    //             let value = img.getMetadata(image.HdrMetadataKey.HDR_GAINMAP_METADATA);
+    //             console.info(TAG, testName, 'img.getMetadata succeeded.', value);
+    //             expect(value).assertFail();
+    //           } catch (error) {
+    //             console.error(TAG, testName, 'getMetadata', error.message, error.code);
+    //             expect(Number(error.code)).assertEqual(7600302)
+    //           }
+    //           img.release();
+    //         })
+    //       })
+    //       createPhotoOutput();
+    //       await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+    //       mPhotoSession!.start();
+    //       const startTime = Date.now();
+    //       const timeoutMs = 15000;
+    //       while (!isCallbackCalled && (Date.now() - startTime) < timeoutMs) {
+    //         await sleep(100);
+    //       }
+    //       expect(isCallbackCalled).assertTrue();
+    //       receiver!.offImageArrival();
+    //       await receiver!.release();
+    //       await releasePhotoSession();
+    //       done();
+    //     }
+    //   } catch (error) {
+    //     console.error(TAG, testName, error.message, error.code);
+    //     expect().assertFail();
+    //     done();
+    //   }
+    // })
+
+    // /**
+    //  * @tc.name   SUB_MEDIA_IMAGE_getBufferData_static_0400
+    //  * @tc.number SUB_MEDIA_IMAGE_getBufferData_static_0400
+    //  * @tc.desc   getBufferData  返回值属性
+    //  * @tc.type   FUNCTION
+    //  * @tc.size   MEDIUMTEST
+    //  * @tc.level  LEVEL0
+    //  */
+    // it('SUB_MEDIA_IMAGE_getBufferData_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    //   const testName = 'SUB_MEDIA_IMAGE_getBufferData_static_0400';
+    //   let size: image.Size = {
+    //     height: 480,
+    //     width: 480
+    //   }
+    //   let receiveCount = 0;
+    //   let isCallbackCalled: boolean = false;
+    //   let receiver: image.ImageReceiver | undefined = image.createImageReceiver(size, image.ImageFormat.JPEG, 2);
+    //   try {
+    //     if (isEmpty01(mCameraDeviceArray)) {
+    //       console.info(TAG, testName, ' mCameraDeviceArray is null.');
+    //       done();
+    //     } else {
+    //       mReceiverSurfaceId = await receiver!.getReceivingSurfaceId();
+    //       console.info(TAG, testName, "get receiver SurfaceId success", mReceiverSurfaceId);
+    //       receiver!.onImageArrival(() => {
+    //         receiveCount++;
+    //         if (receiveCount > 1) {
+    //           return;
+    //         }
+    //         receiver!.readNextImage().then((img: image.Image) => {
+    //           isCallbackCalled = true;
+    //           console.info(TAG, testName, 'receiver.readNextImage succeeded.', img);
+    //           try {
+    //             console.info(TAG, testName, "get receiver SurfaceId success");
+    //             let value = img.getBufferData()
+    //             console.info(TAG, testName, 'img.getBufferData succeeded.', value);
+    //             expect(value!.rowStride).not().assertUndefined()
+    //             expect(value!.pixelStride).not().assertUndefined()
+    //             expect(value!.byteBuffer).not().assertUndefined()
+    //           } catch (error) {
+    //             console.error(TAG, testName, 'getBufferData', error.message, error.code);
+    //             expect().assertFail();
+    //           }
+    //           img.release();
+    //         })
+    //       })
+    //       createPhotoOutput();
+    //       await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+    //       mPhotoSession!.start();
+    //       const startTime = Date.now();
+    //       const timeoutMs = 15000;
+    //       while (!isCallbackCalled && (Date.now() - startTime) < timeoutMs) {
+    //         await sleep(100);
+    //       }
+    //       expect(isCallbackCalled).assertTrue();
+    //       receiver!.offImageArrival();
+    //       await receiver!.release();
+    //       await releasePhotoSession();
+    //       done();
+    //     }
+    //   } catch (error) {
+    //     console.error(TAG, testName, error.message, error.code);
+    //     expect().assertFail();
+    //     done();
+    //   }
+    // })
   })
 }

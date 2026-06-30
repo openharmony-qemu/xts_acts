@@ -56,7 +56,7 @@ struct ListOriExampleModifier {
           this.speedValue = a?.$attrs?.scrollSnapAnimationSpeed
         })
         .id('getKeyBtn')
-      Text(this.speedValue).fontColor(Color.Blue).key('speedValue')
+      Text(this.speedValue).fontColor(Color.Blue).key('scrollSnapAnimationSpeedModifier_speedValue')
       List() {
         ForEach(this.arr, (item: number, index?: number) => {
           ListItem() {

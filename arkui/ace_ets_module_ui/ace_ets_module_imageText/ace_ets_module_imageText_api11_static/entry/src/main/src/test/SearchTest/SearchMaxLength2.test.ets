@@ -17,16 +17,27 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
 import router from '@ohos.router';
-import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import {
+  Component,
+  Driver,
+  UiWindow,
+  ON,
+  MatchPattern,
+  DisplayRotation,
+  ResizeDirection,
+  WindowMode,
+  PointerMatrix
+} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import hilog from '@ohos.hilog';
+import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UtilsTest } from '../Util.test';
 import { UtilsTest } from '../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -60,7 +71,7 @@ export default function search_maxLength2() {
         }
       } catch (err) {
         console.error("push search_maxLength2 page error: " + err);
-        
+        expect().assertFail();
       }
     });
 
@@ -77,7 +88,7 @@ export default function search_maxLength2() {
       let button = await driver.findComponent(ON.id('SearchMaxLength9'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let setText = await driver.findComponent(ON.id('setText'));
+      let setText = await driver.findComponent(ON.id('search_maxLength2' + '_setText'));
       await (setText?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       console.info('SearchMaxLength2_static_001 click success');
@@ -104,7 +115,7 @@ export default function search_maxLength2() {
       let button = await driver.findComponent(ON.id('SearchMaxLength5'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let setText = await driver.findComponent(ON.id('setText'));
+      let setText = await driver.findComponent(ON.id('search_maxLength2' + '_setText'));
       await (setText?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       console.info('SearchMaxLength2_static_002 click success');

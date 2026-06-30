@@ -113,7 +113,7 @@ export default function ArrayLastIndexOf1Test(): void {
       let arr2 = new Array<string>('a', 'b', 'c');
       let item = new Item004();
       item.value = 100;
-      let arr3 = new Array<Item004>(item);
+      let arr3 = Array.create<Item004>(1, item);
       expect(arr1.lastIndexOf(2)).assertEqual(1);
       expect(arr2.lastIndexOf('b')).assertEqual(1);
       expect(arr3.lastIndexOf(item)).assertEqual(0);
@@ -501,7 +501,7 @@ export default function ArrayLastIndexOf1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayLastIndexOfOne031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(42);
+      let arr = Array.create<number>(1, 42);
       let result = arr.lastIndexOf(42);
       expect(result).assertEqual(0);
     });
@@ -515,7 +515,7 @@ export default function ArrayLastIndexOf1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayLastIndexOfOne032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(1);
+      let arr = Array.create<number>(1, 1);
       let result = arr.lastIndexOf(99);
       expect(result).assertEqual(-1);
     });
@@ -797,7 +797,7 @@ export default function ArrayLastIndexOf1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayLastIndexOfOne052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(77);
+      const arr = Array.create<number>(1, 77);
       const result = arr.lastIndexOf(77, 0);
       expect(result).assertEqual(0);
     });
@@ -811,7 +811,7 @@ export default function ArrayLastIndexOf1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayLastIndexOfOne053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(77);
+      const arr = Array.create<number>(1, 77);
       const result = arr.lastIndexOf(78, 0);
       expect(result).assertEqual(-1);
     });
@@ -949,7 +949,7 @@ export default function ArrayLastIndexOf1Test(): void {
     it('testArrayLastIndexOfOne061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const item = new Item004();
       item.value = 1;
-      const arr = new Array<Item004 | number>(item);
+      const arr = Array.create<Item004 | number>(1, item);
       const result = arr.lastIndexOf(1);
       expect(result).assertEqual(-1);
     });
@@ -965,7 +965,7 @@ export default function ArrayLastIndexOf1Test(): void {
     it('testArrayLastIndexOfOne062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const item = new Item004();
       item.value = 1;
-      const arr = new Array<Item004 | number>(1);
+      const arr = Array.create<Item004 | number>(1, 1);
       const result = arr.lastIndexOf(item);
       expect(result).assertEqual(-1);
     });
@@ -983,7 +983,7 @@ export default function ArrayLastIndexOf1Test(): void {
       first.value = 1;
       const second = new Item004();
       second.value = 1;
-      const arr = new Array<Item004>(first);
+      const arr = Array.create<Item004>(1, first);
       const result = arr.lastIndexOf(second);
       expect(result).assertEqual(-1);
     });
@@ -998,7 +998,7 @@ export default function ArrayLastIndexOf1Test(): void {
      */
     it('testArrayLastIndexOfOne064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const item = new Item004();
-      const arr = new Array<Item004 | string>(item);
+      const arr = Array.create<Item004 | string>(1, item);
       const result = arr.lastIndexOf('a');
       expect(result).assertEqual(-1);
     });
@@ -1013,7 +1013,7 @@ export default function ArrayLastIndexOf1Test(): void {
      */
     it('testArrayLastIndexOfOne065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const item = new Item004();
-      const arr = new Array<Item004 | boolean>(item);
+      const arr = Array.create<Item004 | boolean>(1, item);
       const result = arr.lastIndexOf(true);
       expect(result).assertEqual(-1);
     });

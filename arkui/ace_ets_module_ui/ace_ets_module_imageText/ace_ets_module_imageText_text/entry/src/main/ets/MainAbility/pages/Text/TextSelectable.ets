@@ -20,6 +20,7 @@ struct textSelectableExample {
   build() {
     Column() {
       Text(this.message).id('textSelectable_mess')
+      .key('textSelectable_mess')
         .width(300)
         .height(100)
         .maxLines(5)

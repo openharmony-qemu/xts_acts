@@ -70,10 +70,10 @@ export default function AlignContentFlexP_fixed() {
       console.info('flex [getInspectorByKey] is:' + JSON.stringify(JSON.parse(strJson)));
       console.info('flex obj.$attrs.constructor is:' + JSON.stringify(JSON.parse(strJson).$attrs.constructor));
       let AlignContentFlexSpaceEvenly_flex001: RectValue = CommonFunc.getComponentRect('AlignContentFlexSpaceEvenlyP_fixed_flex');
-      let AlignContentFlexSpaceEvenly_1: RectValue = CommonFunc.getComponentRect('AlignContentFlexP_fixed_1');
-      let AlignContentFlexSpaceEvenly_2: RectValue = CommonFunc.getComponentRect('AlignContentFlexP_fixed_2');
-      let AlignContentFlexSpaceEvenly_3: RectValue = CommonFunc.getComponentRect('AlignContentFlexP_fixed_3');
-      let AlignContentFlexSpaceEvenly_4: RectValue = CommonFunc.getComponentRect('AlignContentFlexP_fixed_4');
+      let AlignContentFlexSpaceEvenly_1: RectValue = CommonFunc.getComponentRect('AlignContentFlexP_fixed' + '_1');
+      let AlignContentFlexSpaceEvenly_2: RectValue = CommonFunc.getComponentRect('AlignContentFlexP_fixed' + '_2');
+      let AlignContentFlexSpaceEvenly_3: RectValue = CommonFunc.getComponentRect('AlignContentFlexP_fixed' + '_3');
+      let AlignContentFlexSpaceEvenly_4: RectValue = CommonFunc.getComponentRect('AlignContentFlexP_fixed' + '_4');
 
       console.log('AlignContentFlexSpaceEvenly_flex001 rect_value is:' +
       JSON.stringify(AlignContentFlexSpaceEvenly_flex001));
@@ -135,10 +135,10 @@ export default function AlignContentFlexP_fixed() {
       let strJson = getInspectorByKey('AlignContentFlexSpaceEvenlyP_fixed_flex');
 
       let AlignContentFlexSpaceEvenly_flex002: RectValue = CommonFunc.getComponentRect('AlignContentFlexSpaceEvenlyP_fixed_flex');
-      let AlignContentFlexSpaceEvenly_1: RectValue = CommonFunc.getComponentRect('AlignContentFlexP_fixed_1');
-      let AlignContentFlexSpaceEvenly_2: RectValue = CommonFunc.getComponentRect('AlignContentFlexP_fixed_2');
-      let AlignContentFlexSpaceEvenly_3: RectValue = CommonFunc.getComponentRect('AlignContentFlexP_fixed_3');
-      let AlignContentFlexSpaceEvenly_4: RectValue = CommonFunc.getComponentRect('AlignContentFlexP_fixed_4');
+      let AlignContentFlexSpaceEvenly_1: RectValue = CommonFunc.getComponentRect('AlignContentFlexP_fixed' + '_1');
+      let AlignContentFlexSpaceEvenly_2: RectValue = CommonFunc.getComponentRect('AlignContentFlexP_fixed' + '_2');
+      let AlignContentFlexSpaceEvenly_3: RectValue = CommonFunc.getComponentRect('AlignContentFlexP_fixed' + '_3');
+      let AlignContentFlexSpaceEvenly_4: RectValue = CommonFunc.getComponentRect('AlignContentFlexP_fixed' + '_4');
 
       console.log('AlignContentFlexSpaceEvenly_flex002 rect_value is:' +
       JSON.stringify(AlignContentFlexSpaceEvenly_flex002))

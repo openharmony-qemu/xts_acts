@@ -24,10 +24,15 @@ struct Index {
   build(){
     Column(){
       Text('' + this.loadingStatus).id('DloadingStatus')
+      .key('DloadingStatus')
       Text('' + this.contentWidth).id('DcontentWidth')
+      .key('DcontentWidth')
       Text('' + this.contentHeight).id('DcontentHeight')
+      .key('DcontentHeight')
       Text('' + this.contentOffsetX).id('DcontentOffsetX')
+      .key('DcontentOffsetX')
       Text('' + this.contentOffsetY).id('DcontentOffsetY')
+      .key('DcontentOffsetY')
       Text(){
         ImageSpan(this.src).objectFit(ImageFit.Fill)
           .width(100).height(100)

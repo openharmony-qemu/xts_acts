@@ -26,7 +26,7 @@ export class User{
   constructor() {
     this.nameMonitor = UIUtils.addMonitor(() => this.name, this.nameChange, { path: ['name'] });
   }
-  nameChange(m: IMonitor) {
+  nameChange(m: IMonitor): void {
     m.dirty.forEach((path: string) => {
       console.log(`[addMonitorTest] ${path} has changed from ${m.value<string>(path)?.before} to ${m.value<string>(path)?.now}`);
       this.text = `[addMonitorTest] ${path} has changed from ${m.value<string>(path)?.before} to ${m.value<string>(path)?.now}`

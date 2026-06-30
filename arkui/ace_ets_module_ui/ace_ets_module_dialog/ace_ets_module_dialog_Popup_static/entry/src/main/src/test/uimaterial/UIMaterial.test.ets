@@ -25,13 +25,15 @@ import inspector from '@ohos.arkui.inspector';
 import { uiMaterial } from '@kit.ArkUI';
 import { UtilsTest } from '../Util.test';
 
-export default function UIMaterialTest() {
+export default function UIMaterialTest(): void {
   describe('UIMaterialTest', () => {
-    beforeAll(async (): Promise<void> => {
+    beforeAll(async () => {
+
       console.info("UIMaterialTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.popup.static", "EntryAbility");
     });
-    beforeEach(async (): Promise<void> => {
+    beforeEach(async () => {
+
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/uimaterial/UIMaterialTestPage',
       }
@@ -60,12 +62,12 @@ export default function UIMaterialTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MaterialTypeTest_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('MaterialTypeTest_0100', Level.LEVEL2, async () => {
+
       console.info('MaterialTypeTest_0100 START');
       expect(uiMaterial.MaterialType.IMMERSIVE).assertEqual(2);
       console.info('MaterialTypeTest_0100 MaterialType.IMMERSIVE = ' + uiMaterial.MaterialType.IMMERSIVE);
       console.info('MaterialTypeTest_0100 END');
-      done();
     });
 
     /**
@@ -76,12 +78,12 @@ export default function UIMaterialTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MaterialStateTest_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('MaterialStateTest_0100', Level.LEVEL2, async () => {
+
       console.info('MaterialStateTest_0100 START');
       expect(uiMaterial.MaterialState.DEFAULT).assertEqual(0);
       console.info('MaterialStateTest_0100 MaterialState.DEFAULT = ' + uiMaterial.MaterialState.DEFAULT);
       console.info('MaterialStateTest_0100 END');
-      done();
     });
 
     /**
@@ -92,12 +94,12 @@ export default function UIMaterialTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MaterialStateTest_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('MaterialStateTest_0200', Level.LEVEL2, async () => {
+
       console.info('MaterialStateTest_0200 START');
       expect(uiMaterial.MaterialState.ENABLE).assertEqual(1);
       console.info('MaterialStateTest_0200 MaterialState.ENABLE = ' + uiMaterial.MaterialState.ENABLE);
       console.info('MaterialStateTest_0200 END');
-      done();
     });
 
     /**
@@ -108,12 +110,12 @@ export default function UIMaterialTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MaterialStateTest_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('MaterialStateTest_0300', Level.LEVEL2, async () => {
+
       console.info('MaterialStateTest_0300 START');
       expect(uiMaterial.MaterialState.DISABLE).assertEqual(2);
       console.info('MaterialStateTest_0300 MaterialState.DISABLE = ' + uiMaterial.MaterialState.DISABLE);
       console.info('MaterialStateTest_0300 END');
-      done();
     });
 
     /**
@@ -124,7 +126,8 @@ export default function UIMaterialTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('getMaterialInfoTest_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('getMaterialInfoTest_0100', Level.LEVEL2, async () => {
+
       console.info('getMaterialInfoTest_0100 START');
       let materialInfo: uiMaterial.MaterialInfo = uiMaterial.getMaterialInfo();
       console.info('getMaterialInfoTest_0100 materialInfo.state = ' + materialInfo.state);
@@ -133,7 +136,6 @@ export default function UIMaterialTest() {
       expect(materialInfo.state).assertLessOrEqual(2);
       expect(materialInfo.type).assertLargerOrEqual(0);
       console.info('getMaterialInfoTest_0100 END');
-      done();
     });
 
     /**
@@ -144,7 +146,8 @@ export default function UIMaterialTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MaterialInfoStateTest_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('MaterialInfoStateTest_0100', Level.LEVEL2, async () => {
+
       console.info('MaterialInfoStateTest_0100 START');
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
@@ -155,7 +158,6 @@ export default function UIMaterialTest() {
       expect(stateText.indexOf('MaterialInfo.state')).assertLarger(-1);
 
       console.info('MaterialInfoStateTest_0100 END');
-      done();
     });
 
     /**
@@ -166,7 +168,8 @@ export default function UIMaterialTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MaterialInfoTypeTest_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('MaterialInfoTypeTest_0100', Level.LEVEL2, async () => {
+
       console.info('MaterialInfoTypeTest_0100 START');
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
@@ -177,7 +180,6 @@ export default function UIMaterialTest() {
       expect(typeText.indexOf('MaterialInfo.type')).assertLarger(-1);
 
       console.info('MaterialInfoTypeTest_0100 END');
-      done();
     });
 
     /**
@@ -188,7 +190,8 @@ export default function UIMaterialTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MaterialEmptyTest_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('MaterialEmptyTest_0100', Level.LEVEL2, async () => {
+
       console.info('MaterialEmptyTest_0100 START');
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
@@ -197,7 +200,6 @@ export default function UIMaterialTest() {
       console.info('MaterialEmptyTest_0100 Material.empty: ' + JSON.stringify(emptyMaterial));
       expect(emptyMaterial).not().assertUndefined();
       console.info('MaterialEmptyTest_0100 END');
-      done();
     });
 
     /**
@@ -208,7 +210,8 @@ export default function UIMaterialTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MaterialTypeDisplayTest_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('MaterialTypeDisplayTest_0100', Level.LEVEL2, async () => {
+
       console.info('MaterialTypeDisplayTest_0100 START');
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
@@ -219,7 +222,6 @@ export default function UIMaterialTest() {
       expect(immersiveText).assertEqual('MaterialType.IMMERSIVE = 2');
 
       console.info('MaterialTypeDisplayTest_0100 END');
-      done();
     });
 
     /**
@@ -230,7 +232,8 @@ export default function UIMaterialTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MaterialStateDisplayTest_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('MaterialStateDisplayTest_0100', Level.LEVEL2, async () => {
+
       console.info('MaterialStateDisplayTest_0100 START');
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
@@ -251,7 +254,6 @@ export default function UIMaterialTest() {
       expect(disableText).assertEqual('MaterialState.DISABLE = 2');
 
       console.info('MaterialStateDisplayTest_0100 END');
-      done();
     });
   })
 }

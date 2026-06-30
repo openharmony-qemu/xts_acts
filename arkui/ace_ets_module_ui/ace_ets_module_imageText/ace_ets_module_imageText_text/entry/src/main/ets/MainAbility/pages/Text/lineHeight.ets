@@ -34,11 +34,13 @@ struct TextLineHeightTest {
       Row() {
         Text(this.message1)
           .id('textLineHeightMultiple')
+          .key('textLineHeightMultiple')
           .lineHeight(1)
           .backgroundColor(Color.Blue)
           .lineHeightMultiple(this.isLineHeightMultiple[this.isLineHeightMultipleIndex])
         Text(this.message2)
           .id('textLineHeight')
+          .key('textLineHeight')
           .backgroundColor(Color.Blue)
           .maxLineHeight(this.isLineHeight[this.isLineHeightIndex])
           .minLineHeight(this.isLineHeight[this.isLineHeightIndex])

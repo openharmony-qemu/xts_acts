@@ -83,9 +83,9 @@ it('SUB_ACE_RelativeContainer_AnchorPoint_Interdependence_TEST_static_0100', Lev
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let RelativeContainer_AnchorPoint_Interdependence_row3: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Interdependence_row3');
+      let RelativeContainer_AnchorPoint_Interdependence_row3: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Interdependence' + '_row3');
 
-      let RelativeContainer_AnchorPoint_Interdependence_re1: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Interdependence_re1');
+      let RelativeContainer_AnchorPoint_Interdependence_re1: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Interdependence' + '_re1');
 
       console.log('assert position')
 

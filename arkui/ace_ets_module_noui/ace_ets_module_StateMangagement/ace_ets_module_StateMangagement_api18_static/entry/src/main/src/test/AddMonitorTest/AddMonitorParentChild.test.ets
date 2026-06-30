@@ -30,7 +30,7 @@ let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-export default function AddMonitorParentChild() {
+export default function AddMonitorParentChild(): void {
   describe('AddMonitorParentChild', () => {
     beforeAll(async (): Promise<void> => {
       console.info("AddMonitorParentChild beforeEach start");

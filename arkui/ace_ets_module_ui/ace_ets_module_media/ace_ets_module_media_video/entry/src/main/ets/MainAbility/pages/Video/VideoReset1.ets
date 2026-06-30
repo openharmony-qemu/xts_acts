@@ -42,21 +42,21 @@ struct VideoReset1 {
         })
 
       Row({space:2}) {
-        Text(this.text1).id('VideoReset1_text1')
-        Text(this.text2).id('VideoReset1_text2')
+        Text(this.text1).id('VideoReset1_text1').key('VideoReset1_text1')
+        Text(this.text2).id('VideoReset1_text2').key('VideoReset1_text2')
       }
 
       Row({space:2}) {
         Button('start').onClick(() => {
           this.controller.start()
         })
-          .id('VideoReset1_start')
+          .id('VideoReset1_start').key('VideoReset1_start')
 
         Button('reset').onClick(() => {
           this.controller.reset()
           console.log('testTag:' + 'reset' )
         })
-          .id('VideoReset1_reset')
+          .id('VideoReset1_reset').key('VideoReset1_reset')
       }
     }.width('100%')
   }

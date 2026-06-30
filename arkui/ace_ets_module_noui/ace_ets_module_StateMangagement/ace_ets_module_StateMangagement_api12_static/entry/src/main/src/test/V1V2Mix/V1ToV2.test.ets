@@ -178,7 +178,7 @@ it('v1Tov2_static_006', Level.LEVEL0, async (done: () => void): Promise<void> =>
      */
 it('v1Tov2_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[v1Tov2_static_007] START');
-      let obj = JSON.parseJsonElement(inspector.getInspectorByKey('func_value2'));
+      let obj = JSON.parseJsonElement(inspector.getInspectorByKey('V1ToV2_func_value2'));
       await CommonFunc.sleep(1000);
       console.info("[v1Tov2_static_007] component obj is: " + obj.getElement('$attrs').getString('content'));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('hello v1,1,1,null,hello v1,undefined');

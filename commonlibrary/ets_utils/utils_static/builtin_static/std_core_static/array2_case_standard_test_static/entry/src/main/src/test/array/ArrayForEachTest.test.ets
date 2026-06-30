@@ -928,7 +928,7 @@ export default function ArrayForEachTest(): void {
      * @tc.level Level 2
      */
     it('testArrayForEach044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(9);
+      const arr = Array.create<number>(1, 9);
       let calls = 0;
       arr.forEach((value: number): void => {
         calls++;
@@ -1514,7 +1514,7 @@ export default function ArrayForEachTest(): void {
      * @tc.level Level 2
      */
     it('testArrayForEach074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(99);
+      const arr = Array.create<number>(1, 99);
       let captured = '';
       arr.forEach((value: number, index: int): void => {
         captured = value.toString() + ':' + index.toString();

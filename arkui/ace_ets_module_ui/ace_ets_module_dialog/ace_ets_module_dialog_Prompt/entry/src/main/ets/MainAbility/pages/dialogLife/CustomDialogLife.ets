@@ -24,7 +24,7 @@ struct CustomDialogExampleA3 {
     Column() {
       Text('Change text').fontSize(20).margin({ top: 10, bottom: 10 })
       Flex({ justifyContent: FlexAlign.SpaceAround }) {
-        Button('button').key('CustomDialog')
+        Button('button').key('CustomDialogLife_CustomDialog_01')
           .onClick(() => {
             if (this.controller != undefined) {
               this.controller.close()
@@ -70,7 +70,7 @@ struct CustomDialogUserA1 {
   })
   build() {
     Column() {
-      Button(this.inputValue).key('CustomDialog')
+      Button(this.inputValue).id('customDialogLifeOpen').key('CustomDialogLife_CustomDialog_02')
         .onClick(() => {
           this.dialogController?.open()
         }).backgroundColor(0x317aff)

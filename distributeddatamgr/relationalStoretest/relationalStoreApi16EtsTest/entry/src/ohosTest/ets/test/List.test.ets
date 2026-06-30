@@ -22,7 +22,8 @@ import rdbResultSetSJsTest from './resultsetJsunit.test';
 import relationalStoreTransactionErrTest from './RelationalStoreTransactionErr.test';
 import rdbStoreSyncExTest from './RelationalStoreSyncEx.test';
 import queryByStepTest from './RelationalStoreQueryByStepTest.test';
-import RdbQueryByStep from './RdbQueryByStep.test'
+import RdbQueryByStep from './RdbQueryByStep.test';
+import RelationalStoreCoverageRateTestAddTest from './RelationalStoreCoverageRateTestAdd.test';
 
 export default function testsuite() {
   relationalStoreEtsTest();
@@ -36,4 +37,5 @@ export default function testsuite() {
   rdbStoreSyncExTest();
   queryByStepTest();
   RdbQueryByStep();
+  RelationalStoreCoverageRateTestAddTest();
 }

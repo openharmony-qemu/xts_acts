@@ -18,6 +18,7 @@ import TextInputOnWillCopyTest from './TextInputApi26Test/TextInputOnWillCopy.te
 import TextInputOnWillCutTest from './TextInputApi26Test/TextInputOnWillCut.test';
 import TextInputShaderStyleTest from './TextInputApi26Test/TextInputShaderStyle.test';
 import TextInputStrokeJoinStyleTest from './TextInputApi26Test/TextInputStrokeJoinStyle.test';
+import TextInputPunctuationOverflowTest from './TextInputApi26Test/TextInputPunctuationOverflow.test';
 
 export default function testsuite() {
   TextInputAttributeTest();
@@ -25,4 +26,5 @@ export default function testsuite() {
   TextInputOnWillCutTest();
   TextInputShaderStyleTest();
   TextInputStrokeJoinStyleTest();
+  TextInputPunctuationOverflowTest();
 }

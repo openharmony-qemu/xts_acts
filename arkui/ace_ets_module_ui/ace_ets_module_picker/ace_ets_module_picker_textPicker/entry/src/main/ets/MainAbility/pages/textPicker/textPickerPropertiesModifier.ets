@@ -37,7 +37,7 @@ struct TextPickerPropertiesModifierPage {
     Column() {
       TextPicker({ range: ['peach1', 'peach2', 'peach3', 'peach4'] })
         .attributeModifier(this.textPickerPropertiesModifier)
-        .key('textPickerDefault')
+        .key('textPickerPropertiesModifier_textPickerDefault')
 
       TextPicker({ range: ['peach1', 'peach2', 'peach3', 'peach4'] })
         .selectedIndex(2)

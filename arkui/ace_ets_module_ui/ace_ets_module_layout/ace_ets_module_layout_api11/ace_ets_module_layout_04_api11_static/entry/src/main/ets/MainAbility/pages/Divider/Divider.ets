@@ -45,7 +45,7 @@ struct divider_textcase {
         .color(this.color)
         .vertical(this.vertical)
         .height(150)
-        .key('divider')
+        .key('Divider_divider')
         .onClick((e: ClickEvent) => {
           (new Router()).back()
         })
@@ -64,7 +64,7 @@ struct divider_textcase {
         .height(150)
         .key('divider2')
     }
-    .key('flex')
+    .key('Divider_flex')
     .width('100%')
     .height('100%')
   }

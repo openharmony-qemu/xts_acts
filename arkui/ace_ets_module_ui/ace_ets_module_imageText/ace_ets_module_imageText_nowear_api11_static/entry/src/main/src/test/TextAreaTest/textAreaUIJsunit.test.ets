@@ -311,7 +311,7 @@ it('textAreaUIJsunit_static_0800', Level.LEVEL0, async (done: ()=>void) => {
       let text = await driver.findComponent(ON.id('textArea'));
       await (text?.inputText('123') as Promise<void>);
       await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('change');
+      let strJson = inspector.getInspectorByKey('textAreaUI' + '_change');
      let obj = JSON.parseJsonElement(strJson);
      console.info('textAreaUIJsunit_0800 component obj is: ' + obj.getElement('$attrs').getString('content'));
        expect(obj.getElement('$attrs').getString('content')).assertEqual('123');
@@ -350,7 +350,7 @@ it('textAreaUIJsunit_static_0900', Level.LEVEL0, async (done: ()=>void) => {
         await CommonFunc.sleep(1000);
       }
       await CommonFunc.sleep(2000);
-      let textIn = await (driver.findComponent(ON.id('copy')) as Promise<Component>);
+      let textIn = await (driver.findComponent(ON.id('textAreaUI' + '_copy')) as Promise<Component>);
       let txt = await (textIn?.getText() as Promise<string>);
       console.info('textAreaUIJsunit_0900 component obj is: ' + txt);
 
@@ -364,7 +364,7 @@ it('textAreaUIJsunit_static_0900', Level.LEVEL0, async (done: ()=>void) => {
         await CommonFunc.sleep(1000);
       }
       await CommonFunc.sleep(2000);
-      let textPaste = await driver.findComponent(ON.id('paste'));
+      let textPaste = await driver.findComponent(ON.id('textAreaUI' + '_paste'));
       let text1 = await (textPaste?.getText() as Promise<string>);
       console.info('textAreaUIJsunit_0900 text1: ' + text1);
         expect(txt).assertEqual('copy');
@@ -407,7 +407,7 @@ it('textAreaUIJsunit_static_1000', Level.LEVEL0, async (done: ()=>void) => {
         await CommonFunc.sleep(1000);
       }
       await CommonFunc.sleep(2000);
-      let textCut = await driver.findComponent(ON.id('cut'));
+      let textCut = await driver.findComponent(ON.id('textAreaUI' + '_cut'));
       let text = await (textCut?.getText() as Promise<string>);
       console.info('textAreaUIJsunit_1000 component obj is: ' + text);
 

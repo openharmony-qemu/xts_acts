@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -243,16 +243,16 @@ export default function OverflowApiCoverTest() {
           }
         }
         let feeAbility:FormEditExtensionAbility = new FormEditExtensionAbility();
-        feeAbility.context.startSecondPage(module1Want).then((result: common.AbilityResult) => {
+        feeAbility.formEditContext.startSecondPage(module1Want).then((result: common.AbilityResult) => {
           console.info(`${name} startSecondPage success ${JSON.stringify(result)}`);
         });
         console.info(`${name} startSecondPage end`);
-        feeAbility.context.startUIAbility(module1Want).then(() => {
+        feeAbility.formEditContext.startUIAbility(module1Want).then(() => {
           console.info(`${name} startUIAbility success`);
         });
         console.info(`${name} startUIAbility end`);
         let liveFormAbility:LiveFormExtensionAbility = new LiveFormExtensionAbility();
-        liveFormAbility.context.startAbilityByLiveForm(module1Want).then(() => {
+        liveFormAbility.liveFormContext.startAbilityByLiveForm(module1Want).then(() => {
           console.info(`${name} startAbilityByLiveForm success`);
         });
         console.info(`${name} startAbilityByLiveForm end`);

@@ -2266,6 +2266,90 @@ export default function windowZindexTest() {
       }
     });
 
+     /**
+     * @tc.name   SUB_WINDOW_RaiseToAppTop_Promise_ErrCode_1300004_0100
+     * @tc.number SUB_WINDOW_RaiseToAppTop_Promise_ErrCode_1300004_0100
+     * @tc.desc   SUB_WINDOW_RaiseToAppTop_Promise_ErrCode_1300004_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('SUB_WINDOW_RaiseToAppTop_Promise_ErrCode_1300004_0100', Level.LEVEL3, async (done: Function) => {
+      let caseName = "SUB_WINDOW_RaiseToAppTop_Promise_ErrCode_1300004_0100";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let config: window.Configuration = {
+        name: "RaiseToAppTop_Promise_ErrCode_1300004",
+        windowType: window.WindowType.TYPE_DIALOG,
+        ctx: context,
+        decorEnabled: true,
+        title: 'dialog Window'
+      };
+      let subWindow = await window.createWindow(config);
+      try {
+        subWindow.raiseToAppTop().then(async () => {
+          console.info(msgStr + 'Succeeded in calling raiseToAppTop.');
+          await subWindow.destroyWindow()
+          expect(true).assertFalse();
+          done()
+        }).catch(async (err: BusinessError) => {
+          console.error(msgStr + 'Failed. Cause:' + JSON.stringify(err.code) + ` message:${err.message}`);
+          await subWindow.destroyWindow()
+          expect(err.code).assertEqual(1300004);
+          expect(err.message !== null).assertTrue();
+          done()
+        });
+      } catch (exception) {
+        console.error(msgStr + 'Failed to set the call raiseToAppTop. Cause:' + JSON.stringify(exception));
+        await subWindow.destroyWindow()
+        expect(true).assertFalse();
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_WINDOW_RaiseToAppTop_CallBack_ErrCode_1300004_0100
+     * @tc.number SUB_WINDOW_RaiseToAppTop_CallBack_ErrCode_1300004_0100
+     * @tc.desc   SUB_WINDOW_RaiseToAppTop_CallBack_ErrCode_1300004_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_WINDOW_RaiseToAppTop_CallBack_ErrCode_1300004_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let caseName: string = 'SUB_WINDOW_RaiseToAppTop_CallBack_ErrCode_1300004_0100';
+        let msgStr: string = 'jsUnittest ' + caseName + ' ';
+        console.log(msgStr + 'begin');
+        let config: window.Configuration = {
+          name: "RaiseToAppTop_CallBack_ErrCode_1300004_0100",
+          windowType: window.WindowType.TYPE_DIALOG,
+          ctx: context
+        };
+        let subWindow = await window.createWindow(config);
+        try {
+          subWindow.raiseToAppTop(async (err: BusinessError) => {
+            const errCode: number = err.code;
+            if (errCode) {
+              console.error(msgStr +
+                ` Failed to raise the window to app top. Cause code: ${err.code}, message: ${err.message}`);
+              await subWindow.destroyWindow()
+              expect(err.code).assertEqual(1300004);
+              expect(err.message !== null).assertTrue();
+              done();
+            } else {
+              console.info(msgStr + 'Succeeded in raising the window to app top.');
+              await subWindow.destroyWindow()
+              expect(false).assertTrue();
+              done();
+            }
+          });
+        } catch (exception) {
+          console.error(msgStr + 'Failed to check whether the window is showing. Cause: ' + JSON.stringify(exception));
+          await subWindow.destroyWindow()
+          expect(false).assertTrue();
+          done();
+        }
+      });
 
   })
 }

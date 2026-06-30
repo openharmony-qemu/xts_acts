@@ -65,8 +65,8 @@ export default function row_TextDisplayPriorityTest() {
       });
       await CommonFunc.sleep(3000);
       let thirdText: RectValue = CommonFunc.getComponentRect('Row_TextDisplayPriority3');
-      let rowContainer: RectValue = CommonFunc.getComponentRect('Row_TextDisplayPriority_Container01');
-      let rowContainerStrJson = getInspectorByKey('Row_TextDisplayPriority_Container01');
+      let rowContainer: RectValue = CommonFunc.getComponentRect('Row_TextDisplayPriority' + '_Container01');
+      let rowContainerStrJson = getInspectorByKey('Row_TextDisplayPriority' + '_Container01');
 
       expect(JSON.parse(rowContainerStrJson).$type).assertEqual('Row');
 
@@ -104,8 +104,8 @@ export default function row_TextDisplayPriorityTest() {
       let firstText: RectValue = CommonFunc.getComponentRect('Row_TextDisplayPriority1');
       let secondText: RectValue = CommonFunc.getComponentRect('Row_TextDisplayPriority2');
       let thirdText: RectValue = CommonFunc.getComponentRect('Row_TextDisplayPriority3');
-      let rowContainer: RectValue = CommonFunc.getComponentRect('Row_TextDisplayPriority_Container01');
-      let rowContainerStrJson = getInspectorByKey('Row_TextDisplayPriority_Container01');
+      let rowContainer: RectValue = CommonFunc.getComponentRect('Row_TextDisplayPriority' + '_Container01');
+      let rowContainerStrJson = getInspectorByKey('Row_TextDisplayPriority' + '_Container01');
 
       expect(JSON.parse(rowContainerStrJson).$type).assertEqual('Row');
 

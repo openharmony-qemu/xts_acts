@@ -22,12 +22,14 @@ struct TextLayoutOptionsNull {
         // Test 1: enableHapticFeedback with null parameter
         Text('enableHapticFeedback with null')
           .id('text_enableHapticFeedback_null')
+          .key('text_enableHapticFeedback_null')
           .enableHapticFeedback(null)
           .height('5%')
 
         // Test 2: enableHapticFeedback with undefined parameter
         Text('enableHapticFeedback with undefined')
           .id('text_enableHapticFeedback_undefined')
+          .key('text_enableHapticFeedback_undefined')
           .enableHapticFeedback(undefined)
           .height('5%')
       }
@@ -36,12 +38,14 @@ struct TextLayoutOptionsNull {
         // Test 3: optimizeTrailingSpace with null parameter
         Text('optimizeTrailingSpace with null')
           .id('text_optimizeTrailingSpace_null')
+          .key('text_optimizeTrailingSpace_null')
           .optimizeTrailingSpace(null)
           .height('5%')
 
         // Test 4: optimizeTrailingSpace with undefined parameter
         Text('optimizeTrailingSpace with undefined')
           .id('text_optimizeTrailingSpace_undefined')
+          .key('text_optimizeTrailingSpace_undefined')
           .optimizeTrailingSpace(undefined)
           .height('5%')
       }
@@ -50,12 +54,14 @@ struct TextLayoutOptionsNull {
         // Test 5: enableAutoSpacing with null parameter
         Text('enableAutoSpacing with null')
           .id('text_enableAutoSpacing_null')
+          .key('text_enableAutoSpacing_null')
           .enableAutoSpacing(null)
           .height('5%')
 
         // Test 6: enableAutoSpacing with undefined parameter
         Text('enableAutoSpacing with undefined')
           .id('text_enableAutoSpacing_undefined')
+          .key('text_enableAutoSpacing_undefined')
           .enableAutoSpacing(undefined)
           .height('5%')
       }
@@ -64,12 +70,14 @@ struct TextLayoutOptionsNull {
         // Test 7: contentTransition with null parameter
         Text('contentTransition with null')
           .id('text_contentTransition_null')
+          .key('text_contentTransition_null')
           .contentTransition(null)
           .height('5%')
 
         // Test 8: contentTransition with undefined parameter
         Text('contentTransition with undefined')
           .id('text_contentTransition_undefined')
+          .key('text_contentTransition_undefined')
           .contentTransition(undefined)
           .height('5%')
       }
@@ -78,12 +86,14 @@ struct TextLayoutOptionsNull {
         // Test 9: includeFontPadding with null parameter
         Text('includeFontPadding with null')
           .id('text_includeFontPadding_null')
+          .key('text_includeFontPadding_null')
           .includeFontPadding(null)
           .height('5%')
 
         // Test 10: includeFontPadding with undefined parameter
         Text('includeFontPadding with undefined')
           .id('text_includeFontPadding_undefined')
+          .key('text_includeFontPadding_undefined')
           .includeFontPadding(undefined)
           .height('5%')
       }
@@ -91,6 +101,7 @@ struct TextLayoutOptionsNull {
       // Test 11: Default values for comparison
       Text('Default (for comparison)')
         .id('text_layoutOptions_default')
+        .key('text_layoutOptions_default')
         .height('5%')
     }
     .width('100%')

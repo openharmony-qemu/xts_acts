@@ -17,104 +17,36 @@
 #include <ohos_errno.h>
 #include "hctest.h"
 #include "samgr_lite.h"
+#include "samgr_maintenance.h"
+
 
 #define SERVICE_NAME "S_iunknown"
 #define FEATURE_NAME "F_iunknown"
 
-typedef struct DemoApi {
-    INHERIT_IUNKNOWN;
-} DemoApi;
-
-typedef struct DemoFeature {
-    INHERIT_FEATURE;
-    INHERIT_IUNKNOWNENTRY(DemoApi);
-    Identity identity;
-} DemoFeature;
-
-static const char *GetName(Service *service)
-{
-    (void)service;
-    return SERVICE_NAME;
-}
-
-typedef struct ExampleService {
-    INHERIT_SERVICE;
-    Identity identity;
-} ExampleService;
-
-static BOOL Initialize(Service *service, Identity identity)
-{
-    ExampleService *example = (ExampleService *)service;
-    example->identity = identity;
-    return TRUE;
-}
-
-static BOOL MessageHandle(Service *service, Request *msg)
-{
-    (void)service;
-    (void)msg;
-    return FALSE;
-}
-
-static TaskConfig GetTaskConfig(Service *service)
-{
-    (void)service;
-    TaskConfig config = {
-        LEVEL_HIGH,
-        PRI_ABOVE_NORMAL,
-        0x800,
-        20,
-        SHARED_TASK
-        };
-    return config;
-}
-
-static ExampleService g_service = {
-    .GetName = GetName,
-    .Initialize = Initialize,
-    .MessageHandle = MessageHandle,
-    .GetTaskConfig = GetTaskConfig,
+static SamgrTestService g_service = {
+    .GetName = SamgrTestGetName,
+    .Initialize = SamgrTestInitialize,
+    .MessageHandle = SamgrTestMessageHandle,
+    .GetTaskConfig = SamgrTestGetTaskConfig,
+    .name = SERVICE_NAME,
     .identity = {-1, -1, NULL},
 };
 
-static const char *FEATURE_GetName(Feature *feature)
-{
-    (void)feature;
-    return FEATURE_NAME;
-}
-static void FEATURE_OnInitialize(Feature *feature, Service *parent, Identity identity)
-{
-    (void)parent;
-    DemoFeature *demoFeature = (DemoFeature *)feature;
-    demoFeature->identity = identity;
-}
-static void FEATURE_OnStop(Feature *feature, Identity identity)
-{
-    (void)feature;
-    (void)identity;
-}
-
-static BOOL FEATURE_OnMessage(Feature *feature, Request *request)
-{
-    (void)feature;
-    (void)request;
-    return TRUE;
-}
-
-static DemoFeature g_feature = {
-    .GetName = FEATURE_GetName,
-    .OnInitialize = FEATURE_OnInitialize,
-    .OnStop = FEATURE_OnStop,
-    .OnMessage = FEATURE_OnMessage,
+static SamgrTestFeature g_feature = {
+    .GetName = SamgrTestFeatureGetName,
+    .OnInitialize = SamgrTestFeatureOnInitialize,
+    .OnStop = SamgrTestFeatureOnStop,
+    .OnMessage = SamgrTestFeatureOnMessage,
     .ver = DEFAULT_VERSION,
     .ref = 1,
     .iUnknown = {
         DEFAULT_IUNKNOWN_IMPL,
     },
+    .name = FEATURE_NAME,
     .identity = {-1, -1, NULL},
 };
 
-static DemoApi g_api = {
+static SamgrTestApi g_api = {
     .AddRef = IUNKNOWN_AddRef,
     .QueryInterface = IUNKNOWN_QueryInterface,
     .Release = IUNKNOWN_Release,
@@ -187,7 +119,7 @@ LITE_TEST_CASE(IUnknownTestSuite, testQueryInterface0010, Function | MediumTest 
     SAMGR_GetInstance()->RegisterFeatureApi(SERVICE_NAME, FEATURE_NAME, GET_IUNKNOWN(g_feature));
 
     IUnknown *iUnknown = SAMGR_GetInstance()->GetFeatureApi(SERVICE_NAME, FEATURE_NAME);
-    DemoApi *demoApi = NULL;
+    SamgrTestApi *demoApi = NULL;
     int resultQuery = iUnknown->QueryInterface(iUnknown, DEFAULT_VERSION, (void **)&demoApi);
     TEST_ASSERT_EQUAL_INT(EC_SUCCESS, resultQuery);
     TEST_ASSERT_EQUAL_INT(TRUE, demoApi != NULL);
@@ -209,7 +141,7 @@ LITE_TEST_CASE(IUnknownTestSuite, testQueryInterface0020, Function | MediumTest 
     SAMGR_GetInstance()->RegisterFeatureApi(SERVICE_NAME, FEATURE_NAME, GET_IUNKNOWN(g_feature));
 
     IUnknown *iUnknown = SAMGR_GetInstance()->GetFeatureApi(SERVICE_NAME, FEATURE_NAME);
-    DemoApi *demoApi = NULL;
+    SamgrTestApi *demoApi = NULL;
     int resultQuery = iUnknown->QueryInterface(iUnknown, 0x30, (void **)&demoApi);
     TEST_ASSERT_EQUAL_INT(EC_INVALID, resultQuery);
 
@@ -228,10 +160,11 @@ LITE_TEST_CASE(IUnknownTestSuite, testQueryInterface0030, Function | MediumTest 
 {
     SAMGR_GetInstance()->RegisterFeatureApi(SERVICE_NAME, FEATURE_NAME, (IUnknown *)&g_api);
     IUnknown *iUnknown = SAMGR_GetInstance()->GetFeatureApi(SERVICE_NAME, FEATURE_NAME);
-    DemoApi *demoApi = NULL;
+    SamgrTestApi *demoApi = NULL;
     int resultQuery = iUnknown->QueryInterface(iUnknown, 0, (void **)&demoApi);
     TEST_ASSERT_EQUAL_INT(EC_SUCCESS, resultQuery);
     TEST_ASSERT_EQUAL_INT(TRUE, demoApi != NULL);
+    demoApi->Release((IUnknown *)demoApi);
 
     SAMGR_GetInstance()->UnregisterFeatureApi(SERVICE_NAME, FEATURE_NAME);
 }

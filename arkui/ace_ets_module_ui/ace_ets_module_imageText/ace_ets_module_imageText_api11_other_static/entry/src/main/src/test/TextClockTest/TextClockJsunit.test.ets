@@ -79,7 +79,7 @@ export default function TextClockJsunit() {
 it('TextClock_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       // Get the information of TextClock component
       console.info('[TextClock_0100] START');
-      let strJson = inspector.getInspectorByKey('textClock');
+      let strJson = inspector.getInspectorByKey('TextClockPage' + '_textClock');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[TextClock_0100] component obj is: " + JSON.stringify(obj));
       await CommonFunc.sleep(1000);
@@ -113,7 +113,7 @@ it('TextClock_static_0200', Level.LEVEL2, async (done: () => void): Promise<void
       AppStorage.get<MessageManager<int | string | long | number>>("messageManager")!.notify({ name: 'format', value: 'yyyyMMddHms' })
       await CommonFunc.sleep(1000);
       // Get the attribute of TextClock component
-      let strJson = inspector.getInspectorByKey('textClock');
+      let strJson = inspector.getInspectorByKey('TextClockPage' + '_textClock');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[TextClock_0200] component obj is: " + JSON.stringify(obj));
       await CommonFunc.sleep(1000);

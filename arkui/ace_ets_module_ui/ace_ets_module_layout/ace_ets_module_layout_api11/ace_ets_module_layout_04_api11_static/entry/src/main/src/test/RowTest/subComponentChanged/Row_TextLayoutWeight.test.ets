@@ -87,8 +87,8 @@ it('testRowTextLayoutWeight_static_01', Level.LEVEL0, async (done: () => void): 
       let firstText: RectValue = await CommonFunc.getComponentRect('Row_TextLayoutWeight1');
       let secondText: RectValue = await CommonFunc.getComponentRect('Row_TextLayoutWeight2');
       let thirdText: RectValue = await CommonFunc.getComponentRect('Row_TextLayoutWeight3');
-      let rowContainer: RectValue = await CommonFunc.getComponentRect('Row_TextLayoutWeight_Container01');
-      let rowContainerStrJson = inspector.getInspectorByKey('Row_TextLayoutWeight_Container01');
+      let rowContainer: RectValue = await CommonFunc.getComponentRect('Row_TextLayoutWeight' + '_Container01');
+      let rowContainerStrJson = inspector.getInspectorByKey('Row_TextLayoutWeight' + '_Container01');
 
   let obj = JSON.parseJsonElement(rowContainerStrJson);
   expect(obj.getString('$type')).assertEqual('Row');

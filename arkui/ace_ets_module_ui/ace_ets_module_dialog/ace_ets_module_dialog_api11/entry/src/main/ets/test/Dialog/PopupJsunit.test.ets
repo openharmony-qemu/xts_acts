@@ -55,10 +55,10 @@ export default function PopupAJsunit() {
 
       console.info('PopupAJsunit_0100 START');
       let driver = await UiDriver.create()
-      let button = await driver.findComponent(BY.key('Popup_dialog_A'));
+      let button = await driver.findComponent(BY.key('Popup' + '_dialog_A'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('Popup_dialog_A');
+      let strJson = getInspectorByKey('Popup' + '_dialog_A');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[PopupAJsunit_0100] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.label).assertEqual("Popup按esc逐层退出");

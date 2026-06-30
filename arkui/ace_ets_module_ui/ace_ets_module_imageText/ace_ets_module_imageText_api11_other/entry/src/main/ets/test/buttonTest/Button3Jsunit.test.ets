@@ -61,7 +61,7 @@ export default function button3Jsunit() {
     it('testButton01', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton01] START');
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('button');
+      let strJson = getInspectorByKey('button3' + '_button');
       console.info("[testButton01] component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$type).assertEqual('Button');
       expect(JSON.parse(strJson).$attrs.type).assertEqual('ButtonType.Normal');
@@ -79,7 +79,7 @@ export default function button3Jsunit() {
     it('testButton02', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton02] START');
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('button1');
+      let strJson = getInspectorByKey('button3' + '_button1');
       console.info("[testButton02] component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$type).assertEqual('Button');
       expect(JSON.parse(strJson).$attrs.type).assertEqual('ButtonType.Normal');
@@ -97,7 +97,7 @@ export default function button3Jsunit() {
     it('testButton03', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton03] START');
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('button2');
+      let strJson = getInspectorByKey('button3' + '_button2');
       console.info("[testButton03] component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$attrs.fontSize).assertEqual('20.00px');
       done();
@@ -114,7 +114,7 @@ export default function button3Jsunit() {
     it('testButton04', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton04] START');
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('button3');
+      let strJson = getInspectorByKey('button3' + '_button3');
       console.info("[testButton04] component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$attrs.borderColor).assertContain('#');   
       done();
@@ -147,7 +147,7 @@ export default function button3Jsunit() {
         console.log("[testButton05] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = getInspectorByKey('button');
+      let strJsonNew = getInspectorByKey('button3' + '_button');
 
       console.info("[testButton05] component JSON.parse(strJsonNew) is: " + JSON.stringify(JSON.parse(strJsonNew)));
       expect(JSON.parse(strJsonNew).$attrs.type).assertEqual('ButtonType.ROUNDED_RECTANGLE');
@@ -181,7 +181,7 @@ export default function button3Jsunit() {
         console.log("[testButton06] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = getInspectorByKey('button2');
+      let strJsonNew = getInspectorByKey('button3' + '_button2');
 
       console.info("[testButton05] component JSON.parse(strJsonNew) is: " + JSON.stringify(JSON.parse(strJsonNew)));
       expect(JSON.parse(strJsonNew).$attrs.fontSize).assertEqual('30.00px');
@@ -215,7 +215,7 @@ export default function button3Jsunit() {
         console.log("[testButton07] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = getInspectorByKey('button2');
+      let strJsonNew = getInspectorByKey('button3' + '_button2');
 
       let resourceSize = getContext().resourceManager.getNumber($r('sys.float.ohos_id_text_size_body1').id)
 	    console.info("[TextInputPageJsunit_0200] size: " +px2fp(resourceSize));
@@ -251,7 +251,7 @@ export default function button3Jsunit() {
         console.log("[testButton08] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = getInspectorByKey('button2');
+      let strJsonNew = getInspectorByKey('button3' + '_button2');
 
       console.info("[testButton08] component JSON.parse(strJsonNew) is: " + JSON.stringify(JSON.parse(strJsonNew)));
       expect(JSON.parse(strJsonNew).$attrs.fontSize).assertEqual('121212121.00px');
@@ -285,7 +285,7 @@ export default function button3Jsunit() {
         console.log("[testButton09] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = getInspectorByKey('button2');
+      let strJsonNew = getInspectorByKey('button3' + '_button2');
 
       console.info("[testButton09] component JSON.parse(strJsonNew) is: " + JSON.stringify(JSON.parse(strJsonNew)));
       expect(JSON.parse(strJsonNew).$attrs.fontSize).assertEqual('121212121.00px');
@@ -332,7 +332,7 @@ export default function button3Jsunit() {
       } catch (err) {
         console.info("testButton10 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("testButton10 click result is: " + JSON.stringify(sendEventByKey('button3', 10, "")));
+      console.info("testButton10 click result is: " + JSON.stringify(sendEventByKey('button3_button3', 10, "")));
       await CommonFunc.sleep(1000);
       console.info('[testButton10] END');
     });
@@ -377,7 +377,7 @@ export default function button3Jsunit() {
       } catch (err) {
         console.info("testButton11 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("testButton11 click result is: " + JSON.stringify(sendEventByKey('button2', 10, "")));
+      console.info("testButton11 click result is: " + JSON.stringify(sendEventByKey('button3_button2', 10, "")));
       await CommonFunc.sleep(1000);
       console.info('[testButton11] END');
     });
@@ -465,7 +465,7 @@ export default function button3Jsunit() {
         console.log("[testButton13] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = getInspectorByKey('button');
+      let strJsonNew = getInspectorByKey('button3' + '_button');
 
       console.info("[testButton13] component JSON.parse(strJsonNew) is: " + JSON.stringify(JSON.parse(strJsonNew)
         .$attrs
@@ -501,7 +501,7 @@ export default function button3Jsunit() {
         console.log("[testButton14] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = getInspectorByKey('button');
+      let strJsonNew = getInspectorByKey('button3' + '_button');
 
       console.info("[testButton14] component JSON.parse(strJsonNew) is: " + JSON.stringify(JSON.parse(strJsonNew)
         .$attrs
@@ -552,7 +552,7 @@ export default function button3Jsunit() {
       } catch (err) {
         console.info("testButton15 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("testButton15 click result is: " + JSON.stringify(sendEventByKey('button4', 10, "")));
+      console.info("testButton15 click result is: " + JSON.stringify(sendEventByKey('button3_button4', 10, "")));
     });
   })
 }

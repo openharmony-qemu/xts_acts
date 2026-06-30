@@ -23,11 +23,13 @@ struct OptimizeTrailingSpaceTest {
         .optimizeTrailingSpace(true)
         .textAlign(TextAlign.Center)
         .id('optimizeTrailingSpace_text1')
+        .key('optimizeTrailingSpace_text1')
       Text('Trimmed space enabled     ')
         .fontWeight(FontWeight.Bold)
         .optimizeTrailingSpace(false)
         .textAlign(TextAlign.Center)
         .id('optimizeTrailingSpace_text2')
+        .key('optimizeTrailingSpace_text2')
     }
     .width('100%')
   }

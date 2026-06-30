@@ -23,7 +23,7 @@ import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-export default function IDataSourcePrefetchingMethods() {
+export default function IDataSourcePrefetchingMethods(): void {
   describe('IDataSourcePrefetchingMethods', () => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api18.static", "EntryAbility");

@@ -1033,7 +1033,7 @@ export default function ArrayPushTest(): void {
      * @tc.level Level 2
      */
     it('testArrayPush060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const anyArr = new Array<Any>(1);
+      const anyArr = Array.create<Any>(1, 1);
       const length = anyArr.push('two', true);
       expect(length).assertEqual(3);
       expect(anyArr.toString()).assertEqual('1,two,true');

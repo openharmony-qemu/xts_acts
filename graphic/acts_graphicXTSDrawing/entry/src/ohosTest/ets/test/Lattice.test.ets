@@ -199,6 +199,7 @@ export default function latticeTest() {
       try {
         drawing.Lattice.createImageLattice([ 10, 50, 90, 110, 150, 180 ], [ 10, 50, 90, 110, 150, 180 ], 6, 6, null, null, null);
         console.info(msg + ' createImageLattice(null) succeeded');
+        expect().assertFail();
       } catch( e ) {
         console.info(msg + ` createImageLattice(null) errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect(e.code).assertEqual(401);
@@ -207,6 +208,7 @@ export default function latticeTest() {
       try {
         drawing.Lattice.createImageLattice([ 0, 100, 200 ], [ 0, 100, 200 ], 2, 3, null, null, null);
         console.info(msg + ' createImageLattice(null) succeeded');
+        expect().assertFail();
       } catch( e ) {
         console.info(msg + ` createImageLattice(null) errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect(e.code).assertEqual(401);
@@ -215,6 +217,7 @@ export default function latticeTest() {
       try {
         drawing.Lattice.createImageLattice([ 10, 80, 150 ], [ 10, 80, 150 ], 3, 4, null, null, null);
         console.info(msg + ' createImageLattice(null) succeeded');
+        expect().assertFail();
       } catch( e ) {
         console.info(msg + ` createImageLattice(null) errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect(e.code).assertEqual(401);
@@ -223,6 +226,7 @@ export default function latticeTest() {
       try {
         drawing.Lattice.createImageLattice([], [], - 1, - 1, null, null, null);
         console.info(msg + ' createImageLattice(null) succeeded');
+        expect().assertFail();
       } catch( e ) {
         console.info(msg + ` createImageLattice(null) errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect(e.code).assertEqual(401);
@@ -232,7 +236,7 @@ export default function latticeTest() {
         drawing.Lattice.createImageLattice([ 200, 400 ], [ 200, 400 ], 2, 2, {
           left : 2000, top : 2000, right : 2000, bottom : 2000
         }, null, null);
-        console.info(msg + ' createImageLattice successed');
+        console.info(msg + ' createImageLattice 1 successed');
       } catch( e ) {
         console.info(msg + ` createImageLattice errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect().assertFail();
@@ -242,7 +246,7 @@ export default function latticeTest() {
         drawing.Lattice.createImageLattice([ 200, 400 ], [ 200, 400 ], 2, 2, {
           left : 400.2, top : 400.4, right : 400.2, bottom : 400.4
         }, null, null);
-        console.info(msg + ' createImageLattice successed');
+        console.info(msg + ' createImageLattice 2 successed');
       } catch( e ) {
         console.info(msg + ` createImageLattice errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect().assertFail();
@@ -252,7 +256,7 @@ export default function latticeTest() {
         drawing.Lattice.createImageLattice([ 200, 400 ], [ 200, 400 ], 2, 2, {
           left : 200.5, top : 400.5, right : 200.5, bottom : 400.5
         }, null, null);
-        console.info(msg + ' createImageLattice successed');
+        console.info(msg + ' createImageLattice 3 successed');
       } catch( e ) {
         console.info(msg + ` createImageLattice errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect().assertFail();
@@ -267,6 +271,7 @@ export default function latticeTest() {
         }
         drawing.Lattice.createImageLattice([ 200, 400 ], [ 200, 400 ], 2, 2, null, [ 5 ], [ color ]);
         console.info(msg + ' createImageLattice(null) succeeded');
+        expect().assertFail();
       } catch( e ) {
         console.info(msg + ` createImageLattice(null) errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect(e.code).assertEqual(401);
@@ -280,6 +285,7 @@ export default function latticeTest() {
         ]
         drawing.Lattice.createImageLattice([ 200, 400 ], [ 200, 400 ], 2, 2, null, fRect1, null);
         console.info(msg + ' createImageLattice(null) succeeded');
+        expect().assertFail();
       } catch( e ) {
         console.info(msg + ` createImageLattice(null) errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect(e.code).assertEqual(401);
@@ -293,6 +299,7 @@ export default function latticeTest() {
         ]
         drawing.Lattice.createImageLattice([ 200, 400 ], [ 200, 400 ], 2, 2, null, fRect2, null);
         console.info(msg + ' createImageLattice(null) succeeded');
+        expect().assertFail();
       } catch( e ) {
         console.info(msg + ` createImageLattice(null) errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect(e.code).assertEqual(401);
@@ -307,6 +314,7 @@ export default function latticeTest() {
         ]
         drawing.Lattice.createImageLattice([ 200, 400 ], [ 200, 400 ], 2, 2, null, fRect3, null);
         console.info(msg + ' createImageLattice(null) succeeded');
+        expect().assertFail();
       } catch( e ) {
         console.info(msg + ` createImageLattice(null) errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect(e.code).assertEqual(401);
@@ -321,6 +329,7 @@ export default function latticeTest() {
         ]
         drawing.Lattice.createImageLattice([ 200, 400 ], [ 200, 400 ], 2, 2, null, fRect4, null);
         console.info(msg + ' createImageLattice(null) succeeded');
+        expect().assertFail();
       } catch( e ) {
         console.info(msg + ` createImageLattice(null) errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect(e.code).assertEqual(401);
@@ -335,6 +344,7 @@ export default function latticeTest() {
         }
         drawing.Lattice.createImageLattice([ 200, 400 ], [ 200, 400 ], 2, 2, null, [ drawing.RectType.FIXEDCOLOR ], null);
         console.info(msg + ' createImageLattice(null) succeeded');
+        expect().assertFail();
       } catch( e ) {
         console.info(msg + ` createImageLattice(null) errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect(e.code).assertEqual(401);

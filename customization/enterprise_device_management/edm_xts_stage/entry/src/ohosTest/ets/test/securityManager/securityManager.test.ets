@@ -2187,6 +2187,24 @@ function testGetClipboardPolicyByBundleName() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_get_clipboard_policy_by_bundle_name_0900
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_CLIPBOARD_POLICY_BY_BUNDLE_NAME_JS_0900
+   * @tc.desc   test securityManager getAppClipboardPolicy with empty string bundleName
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_clipboard_policy_by_bundle_name_0900", Level.LEVEL2, async (done: Function) => {
+    try {
+      securityManager.getAppClipboardPolicy(SELFWANT, '', CURRENT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 9200001).assertTrue();
+    }
+    done();
+  });
 }
 
 function testSetScreenLockDisabledForAccount() {

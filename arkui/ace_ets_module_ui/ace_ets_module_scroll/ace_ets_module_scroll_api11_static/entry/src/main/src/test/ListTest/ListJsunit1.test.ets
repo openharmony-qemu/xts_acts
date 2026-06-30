@@ -101,7 +101,7 @@ export default function listJsunit1() {
 it('listTest_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('++++++++++++++++ List TestCase 1 START ++++++++++++++++');
       await sleep(1)
-      let strJson = inspector.getInspectorByKey('list');
+      let strJson = inspector.getInspectorByKey('List1' + '_list');
       let obj = JSON.parseJsonElement(strJson);
       console.info("get inspector value is: " + JSON.stringifyJsonElement(obj));
       console.log(JSON.stringifyJsonElement(obj.getElement('$type')))

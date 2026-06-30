@@ -1550,6 +1550,35 @@ export default function applicationManagerTest() {
       }
       done();
     })
+
+    /**
+     * @tc.name   test_getFreezeExemptedApps_0600
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETFREEZEEXEMPTEDAPPS_0600
+     * @tc.desc   test getFreezeExemptedApps method with super admin, return non-empty result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getFreezeExemptedApps_0600", Level.LEVEL2, async (done: Function) => {
+      try {
+        let freezeExemptedApps: Array<common.ApplicationInstance> = [
+          {
+            appIdentifier:"1230215522310701824",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          }
+        ];
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.addFreezeExemptedApps(SELFWANT, freezeExemptedApps);
+        let res = applicationManager.getFreezeExemptedApps(SELFWANT);
+        expect(res.length > 0).assertTrue();
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
     
     /**
      * @tc.name   test_addUserNonStopApps_001

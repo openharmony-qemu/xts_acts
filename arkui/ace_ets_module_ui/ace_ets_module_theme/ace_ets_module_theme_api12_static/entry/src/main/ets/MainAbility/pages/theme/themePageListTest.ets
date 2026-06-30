@@ -70,7 +70,7 @@ struct themePageList {
         Button(`切换theme配色：${this.themeNames[this.themeIndex.toInt()]}`).height('5%')
           .onClick((e:ClickEvent) => {
             this.themeIndex = (this.themeIndex + 1) % themePageList.themeCount;
-          }).key('themeClick')
+          }).key('themePageListTest_themeClick')
 
         // 系统默认按钮配色
         List({ space: 20, initialIndex: 0 }) {
@@ -94,7 +94,7 @@ struct themePageList {
 
       WithTheme({ theme: this.themeArray[this.themeIndex.toInt()] }) { // WithTheme作用域
         Column({ space: '8vp' } as ColumnOptions) {
-          Text(`使用WithTheme`).key('themeText')
+          Text(`使用WithTheme`).key('themePageListTest_themeText')
           List({ space: 20, initialIndex: 0 }) {
             ForEach(this.arr, (item: number) => {
               ListItem() {

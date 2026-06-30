@@ -20,9 +20,13 @@ struct TextClockFormatTest {
         TextClock()
           .format($r('app.string.textClock1'))
           .id('TextClockFormat')
+          .key('TextClockFormat')
           TextClock().format(undefined).id('TextClockFormat1')
+          .key('TextClockFormat1')
           TextClock().format(null).id('TextClockFormat2')
+          .key('TextClockFormat2')
           TextClock().format('yyyy年M月d日').id('TextClockFormat3')
+          .key('TextClockFormat3')
     }
     .alignItems(HorizontalAlign.Start)
   }

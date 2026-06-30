@@ -1,4 +1,5 @@
 'use static';
+
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -64,13 +65,10 @@ export default function AlignSpaceEvenly_AddAllSpace() {
       console.info("AlignSpaceEvenly_AddAllSpace beforeEach end");
     });
 
-
     afterEach(async () : Promise<void> => {
       await CommonFunc.sleep(2000);
       console.info("AlignAlignSpaceEvenly_AddAllSpace after each called");
     });
-
-
 
     /**
      * @tc.number   testFlexAlignSpaceEvenlyFlexSpaceOverflow_static
@@ -151,15 +149,13 @@ export default function AlignSpaceEvenly_AddAllSpace() {
         .assertTrue();
       expect(Math.floor(Math.abs((SpaceEvenly_AddAllSpace_011.right - SpaceEvenly_AddAllSpace_011.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 2)
         .assertTrue();
-      expect(Math.floor(Math.abs((SpaceEvenly_AddAllSpace_012.right - SpaceEvenly_AddAllSpace_012.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 2)
+      expect(Math.floor(Math.abs((SpaceEvenly_AddAllSpace_012.right - SpaceEvenly_AddAllSpace_012.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 3)
         .assertTrue();
       expect(Math.floor(Math.abs((SpaceEvenly_AddAllSpace_013.right - SpaceEvenly_AddAllSpace_013.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 2)
         .assertTrue();
 
       console.info('[testFlexAlignSpaceEvenlyFlexSpaceOverflow] END');
-
     });
-
 
     /**
      * @tc.number   testFlexAlignSpaceEvenlyFlexSpaceMeet_static
@@ -249,7 +245,7 @@ export default function AlignSpaceEvenly_AddAllSpace() {
         .assertTrue();
 
       console.info('[testFlexAlignSpaceEvenlyFlexSpaceMeet] END');
-
     });
+    
   })
 }

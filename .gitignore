@@ -9,6 +9,10 @@
 **/.idea
 **/.history
 
+# --- advancedComponents 本地开发 tools（整目录不进仓；脚本放 xts_acts_local_tools/）---
+arkui/ace_ets_module_ui/ace_ets_module_advancedComponents/tools/
+arkui/ace_ets_module_ui/ace_ets_module_advancedComponents/ace_ets_module_*/tools/
+
 # Claude Config Manager Extension - Security Rules
 # Prevents accidental commit of private conversation data
 .claude/.chats/

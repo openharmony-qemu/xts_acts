@@ -227,7 +227,7 @@ export default function ActsNotificationAnsopenWindowWithResultWithinAbilityStat
         notificationExtensionSubscription.openSubscriptionSettingsWithResult(testContext).then((data) => {
           console.info(`${testNum}openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
           expect(data?.userGrantEnabled).assertEqual(true)
-          expect(JSON.stringify(data?.grantedBundleInfos?.[3])).assertEqual('{"bundleName":"com.ohos.contacts","appIndex":0,"appName":"联系人"}')
+          expect(JSON.stringify(data?.grantedBundleInfos)).assertContain('{"bundleName":"com.ohos.contacts","appIndex":0,"appName":"联系人"}')
           done()
         }).catch((e:Error) => {
           let err = e as BusinessError

@@ -67,7 +67,7 @@ struct SearchPage {
     Row(){
       Button("change value").onClick((e: ClickEvent) => {
         (this.customModifier as CustomModifier).onChangeSearch();
-      }).key("changeButton")
+      }).key("search_changeButton")
 
     Search({ value: this.changeValue, placeholder: 'Type to search...', controller: this.controller })
       .width('95%')

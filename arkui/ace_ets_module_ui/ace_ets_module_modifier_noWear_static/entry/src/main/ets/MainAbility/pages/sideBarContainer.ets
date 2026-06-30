@@ -54,7 +54,7 @@ struct SideBarContainerExample {
     Column({ space: 5 } as ColumnOptions) {
       Button("change value").onClick((e: ClickEvent) => {
         (this.customModifier as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("sideBarContainer_changeButton")
 
       SideBarContainer(SideBarContainerType.Embed) {
         Column() {

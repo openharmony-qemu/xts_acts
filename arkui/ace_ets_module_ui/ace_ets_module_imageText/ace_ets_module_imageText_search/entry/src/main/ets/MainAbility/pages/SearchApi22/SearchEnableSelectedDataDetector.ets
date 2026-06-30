@@ -20,24 +20,29 @@ struct SearchEnableSelectedDataDetectorTest {
     Column() {
       Search({ value: 'Search_enableSelectedDataDetector_true_LocalDevice'})
         .id('Search_enableSelectedDataDetector_true_LocalDevice')
+        .key('Search_enableSelectedDataDetector_true_LocalDevice')
         .enableSelectedDataDetector(true)
         .copyOption(CopyOptions.LocalDevice)
 
       Search({ value: 'Search_enableSelectedDataDetector_true_CROSS_DEVICE'})
         .id('Search_enableSelectedDataDetector_true_CROSS_DEVICE')
+        .key('Search_enableSelectedDataDetector_true_CROSS_DEVICE')
         .enableSelectedDataDetector(true)
         .copyOption(CopyOptions.CROSS_DEVICE)
 
       Search({ value: 'Search_enableSelectedDataDetector_false'})
         .id('Search_enableSelectedDataDetector_false')
+        .key('Search_enableSelectedDataDetector_false')
         .enableSelectedDataDetector(false)
 
       Search({ value: 'Search_enableSelectedDataDetector_undefined'})
         .id('Search_enableSelectedDataDetector_undefined')
+        .key('Search_enableSelectedDataDetector_undefined')
         .enableSelectedDataDetector(undefined)
 
       Search({ value: 'Search_enableSelectedDataDetector_default'})
         .id('Search_enableSelectedDataDetector_default')
+        .key('Search_enableSelectedDataDetector_default')
     }
     .width('100%')
     .height('100%')

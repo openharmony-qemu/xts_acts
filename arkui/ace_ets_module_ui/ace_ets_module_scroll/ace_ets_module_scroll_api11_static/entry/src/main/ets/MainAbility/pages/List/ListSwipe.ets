@@ -146,7 +146,7 @@ struct ListSwipe {
       }
       .margin({ top: 5 } as Margin)
       .listDirection(Axis.Vertical)
-      .key('MyList1')
+      .key('ListSwipe_MyList1')
       .width('90%')
 
       List({ space: 20, initialIndex: 0, scroller: this.listScroller }) {
@@ -243,7 +243,7 @@ struct ListSwipe {
       })
       .margin({ top: 5 } as Margin)
       .listDirection(Axis.Vertical)
-      .key('MyList2')
+      .key('ListSwipe_MyList2')
       .width('90%')
 
       Button("Collapse All")

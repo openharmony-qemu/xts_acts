@@ -104,7 +104,7 @@ export default function ArrayInvoke3Test(): void {
       const arr1 = new Array<int>();
       expect(arr1.length).assertEqual(0);
 
-      const arr2 = new Array<string>('single');
+      const arr2 = Array.create<string>(1, 'single');
       expect(arr2.length).assertEqual(1);
 
       const arr3 = new Array<int>(1, 2, 3);
@@ -365,7 +365,7 @@ export default function ArrayInvoke3Test(): void {
      */
     it('testArrayInvoke3018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const longStr = 'a'.repeat(10000);
-      const arr = new Array<string>(longStr);
+      const arr = Array.create<string>(1, longStr);
       expect(arr[0].length).assertEqual(10000);
     });
 
@@ -394,7 +394,7 @@ export default function ArrayInvoke3Test(): void {
      * @tc.level Level 2
      */
     it('testArrayInvoke3020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr1 = new Array<string>('one');
+      const arr1 = Array.create<string>(1, 'one');
       expect(arr1.length).assertEqual(1);
 
       const arr2 = new Array<int>(1, 2);
@@ -431,11 +431,11 @@ export default function ArrayInvoke3Test(): void {
      * @tc.level Level 2
      */
     it('testArrayInvoke3022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const strArr = new Array<string>('single');
+      const strArr = Array.create<string>(1, 'single');
       expect(strArr.length).assertEqual(1);
       expect(strArr[0]).assertEqual('single');
 
-      const numArr = new Array<int>(42);
+      const numArr = Array.create<int>(1, 42);
       expect(numArr.length).assertEqual(1);
       expect(numArr[0]).assertEqual(42);
     });
@@ -653,7 +653,7 @@ export default function ArrayInvoke3Test(): void {
       const arr0 = new Array<int>();
       expect(arr0.length).assertEqual(0);
 
-      const arr1 = new Array<string>('one');
+      const arr1 = Array.create<string>(1, 'one');
       expect(arr1.length).assertEqual(1);
 
       const arr2 = new Array<int>(1, 2);
@@ -771,7 +771,7 @@ export default function ArrayInvoke3Test(): void {
       const arr0 = new Array<string>();
       expect(arr0.length).assertEqual(0);
 
-      const arr1 = new Array<int>(5);
+      const arr1 = Array.create<int>(1, 5);
       expect(arr1.length).assertEqual(1);
       expect(arr1[0]).assertEqual(5);
 
@@ -789,11 +789,11 @@ export default function ArrayInvoke3Test(): void {
      * @tc.level Level 2
      */
     it('testArrayInvoke3041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const strArr = new Array<string>('hello');
+      const strArr = Array.create<string>(1, 'hello');
       expect(strArr.length).assertEqual(1);
       expect(strArr[0]).assertEqual('hello');
 
-      const boolArr = new Array<boolean>(true);
+      const boolArr = Array.create<boolean>(1, true);
       expect(boolArr.length).assertEqual(1);
       expect(boolArr[0]).assertTrue();
     });
@@ -827,11 +827,11 @@ export default function ArrayInvoke3Test(): void {
      * @tc.level Level 2
      */
     it('testArrayInvoke3043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const numArr = new Array<int>(5);
+      const numArr = Array.create<int>(1, 5);
       expect(numArr.length).assertEqual(1);
       expect(numArr[0]).assertEqual(5);
 
-      const strArr = new Array<string>('hello');
+      const strArr = Array.create<string>(1, 'hello');
       expect(strArr.length).assertEqual(1);
       expect(strArr[0]).assertEqual('hello');
 

@@ -86,7 +86,7 @@ export default function rowJsunit() {
     it('rowTest_0003', Level.LEVEL0, async (done: Function) => {
       console.info('rowTest_0003 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('row' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
       let strJsonNew = getInspectorByKey('row');

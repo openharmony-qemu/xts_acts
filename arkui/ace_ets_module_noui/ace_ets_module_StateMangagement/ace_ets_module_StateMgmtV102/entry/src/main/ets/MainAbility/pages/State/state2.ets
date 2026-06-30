@@ -22,7 +22,7 @@ struct state2 {
 
   build() {
     Column() {
-      Button('compare').key('compareBtn')
+      Button('compare').key('state2_compareBtn')
       Text('State:type-->undefined').height('5%')
       Button('button').height('5%')
         .type(this.type1)

@@ -73,7 +73,7 @@ struct SheetTypeExample {
             SpringBackAction.springBack();
           }),
         })
-         Text(this.str).key('DismissReason')
+         Text(this.str).key('sheetTypeSide_DismissReason')
     }
     .id('col')
     .justifyContent(FlexAlign.Center)

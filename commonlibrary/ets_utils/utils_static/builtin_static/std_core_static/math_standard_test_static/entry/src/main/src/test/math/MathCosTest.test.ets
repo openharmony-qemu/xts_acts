@@ -29,6 +29,10 @@ import {
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
+function expectCosReference(actual: double, expected: double, tolerance: double): void {
+  let difference: double = Utils.getAbsDiff(actual, expected);
+  expect(difference < tolerance).assertTrue();
+}
 
 export default function mathCosTest(): void {
   describe('MathCosTest', (): void => {
@@ -118,7 +122,7 @@ export default function mathCosTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_0600
      * @tc.name testMathCos006
-     * @tc.desc Verify cos method with positive decimal radian 0.5 for valid finite return in [-1,1]
+     * @tc.desc Verify cos method with positive decimal radian 0.5 returns the reference value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -126,10 +130,7 @@ export default function mathCosTest(): void {
     it('testMathCos006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = 0.5;
       let result: double = Math.cos(input);
-      expect(result >= -1.0).assertTrue();
-      expect(result <= 1.0).assertTrue();
-      let isFinite: boolean = Utils.isFiniteValue(result);
-      expect(isFinite).assertTrue();
+      expectCosReference(result, 0.8775825618903728, 1.0e-12);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_0700
@@ -179,7 +180,7 @@ export default function mathCosTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_1000
      * @tc.name testMathCos010
-     * @tc.desc Verify cos method with PI/6 radian input for result within [-1,1] range
+     * @tc.desc Verify cos method with PI/6 radian input returns the standard angle reference value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -187,8 +188,7 @@ export default function mathCosTest(): void {
     it('testMathCos010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = Math.PI / 6.0;
       let result: double = Math.cos(input);
-      expect(result >= -1.0).assertTrue();
-      expect(result <= 1.0).assertTrue();
+      expectCosReference(result, 0.8660254037844386, 1.0e-12);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_1100
@@ -197,7 +197,7 @@ export default function mathCosTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-    */
+     */
     it('testMathCos011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let eps: double = 1.0e-14;
       let zeroAngleResult: double = Math.cos(0.0);
@@ -214,7 +214,7 @@ export default function mathCosTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-    */
+     */
     it('testMathCos012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.5;
       let positiveInputResult: double = Math.cos(x);
@@ -224,7 +224,7 @@ export default function mathCosTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_1300
      * @tc.name testMathCos013
-     * @tc.desc Verify cos method with double NaN input for NaN propagation semantic
+     * @tc.desc Verify cos method with Double.NaN input for Double.NaN propagation semantic
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -237,7 +237,7 @@ export default function mathCosTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_1400
      * @tc.name testMathCos014
-     * @tc.desc Verify cos method with double positive Infinity input for NaN return
+     * @tc.desc Verify cos method with Double.POSITIVE_INFINITY input for Double.NaN return
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -250,7 +250,7 @@ export default function mathCosTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_1500
      * @tc.name testMathCos015
-     * @tc.desc Verify cos method with double negative Infinity input for NaN return
+     * @tc.desc Verify cos method with Double.NEGATIVE_INFINITY input for Double.NaN return
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -263,7 +263,7 @@ export default function mathCosTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_1600
      * @tc.name testMathCos016
-     * @tc.desc Verify cos method with large positive radian input for bounded result in [-1,1]
+     * @tc.desc Verify cos method with large positive radian input returns the reduced-angle reference value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -271,8 +271,7 @@ export default function mathCosTest(): void {
     it('testMathCos016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = 1.0e16;
       let result: double = Math.cos(input);
-      expect(result >= -1.0).assertTrue();
-      expect(result <= 1.0).assertTrue();
+      expectCosReference(result, -0.6261681981330862, 1.0e-12);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_1700
@@ -293,15 +292,14 @@ export default function mathCosTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-    */
+     */
     it('testMathCos018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let zeroInputResult: double = Math.cos(0.0);
       let halfRadianResult: double = Math.cos(0.5);
       let oneRadianResult: double = Math.cos(1.0);
-      let isFinite: boolean = Utils.isFiniteValue(zeroInputResult)
-        && Utils.isFiniteValue(halfRadianResult)
-        && Utils.isFiniteValue(oneRadianResult);
-      expect(isFinite).assertTrue();
+      expect(zeroInputResult).assertEqual(1.0);
+      expectCosReference(halfRadianResult, 0.8775825618903728, 1.0e-12);
+      expectCosReference(oneRadianResult, 0.5403023058681398, 1.0e-12);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_1900
@@ -310,7 +308,7 @@ export default function mathCosTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-    */
+     */
     it('testMathCos019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let firstInputResult: double = Math.cos(0.3);
       let secondInputResult: double = Math.cos(1.2);
@@ -325,7 +323,7 @@ export default function mathCosTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-    */
+     */
     it('testMathCos020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.7;
       let twoPi: double = 2.0 * Math.PI;
@@ -341,7 +339,7 @@ export default function mathCosTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-    */
+     */
     it('testMathCos021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.5;
       let firstCallResult: double = Math.cos(x);
@@ -357,7 +355,7 @@ export default function mathCosTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-    */
+     */
     it('testMathCos022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let smallerAngleInput: double = 0.3;
       let largerAngleInput: double = 1.1;
@@ -375,7 +373,7 @@ export default function mathCosTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-    */
+     */
     it('testMathCos023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.4;
       let beforeInterleavedCallResult: double = Math.cos(x);
@@ -394,7 +392,7 @@ export default function mathCosTest(): void {
     it('testMathCos024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let tiny: double = 5.0e-324;
       let result: double = Math.cos(tiny);
-      expect(Utils.isFiniteValue(result)).assertTrue();
+      expect(result).assertEqual(1.0);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_2500
@@ -403,7 +401,7 @@ export default function mathCosTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-    */
+     */
     it('testMathCos025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let eps: double = 0.01;
       let halfPi: double = Math.PI / 2.0;
@@ -419,7 +417,7 @@ export default function mathCosTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-    */
+     */
     it('testMathCos026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let eps: double = 1.0e-14;
       let zeroAngleResult: double = Math.cos(0.0);
@@ -444,7 +442,7 @@ export default function mathCosTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_2800
      * @tc.name testMathCos028
-     * @tc.desc Verify cos method with huge positive radian for bounded result
+     * @tc.desc Verify cos method with huge positive radian returns the reduced-angle reference value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -452,13 +450,12 @@ export default function mathCosTest(): void {
     it('testMathCos028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = 1.0e8;
       let result: double = Math.cos(input);
-      expect(result >= -1.0).assertTrue();
-      expect(result <= 1.0).assertTrue();
+      expectCosReference(result, -0.3633850893556906, 1.0e-12);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_2900
      * @tc.name testMathCos029
-     * @tc.desc Verify cos method with huge negative radian for bounded result
+     * @tc.desc Verify cos method with huge negative radian returns the even-function reference value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -466,8 +463,7 @@ export default function mathCosTest(): void {
     it('testMathCos029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = -1.0e8;
       let result: double = Math.cos(input);
-      expect(result >= -1.0).assertTrue();
-      expect(result <= 1.0).assertTrue();
+      expectCosReference(result, -0.3633850893556906, 1.0e-12);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_3000
@@ -489,17 +485,17 @@ export default function mathCosTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-    */
+     */
     it('testMathCos031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let step: double = Math.PI / 4.0;
       let zeroAngleResult: double = Math.cos(0.0);
       let quarterPiResult: double = Math.cos(step);
       let halfPiResult: double = Math.cos(step * 2.0);
       let threeQuarterPiResult: double = Math.cos(step * 3.0);
-      expect(zeroAngleResult >= -1.0 && zeroAngleResult <= 1.0).assertTrue();
-      expect(quarterPiResult >= -1.0 && quarterPiResult <= 1.0).assertTrue();
-      expect(halfPiResult >= -1.0 && halfPiResult <= 1.0).assertTrue();
-      expect(threeQuarterPiResult >= -1.0 && threeQuarterPiResult <= 1.0).assertTrue();
+      expect(zeroAngleResult).assertEqual(1.0);
+      expectCosReference(quarterPiResult, Math.SQRT1_2, 1.0e-12);
+      expectCosReference(halfPiResult, 0.0, 1.0e-12);
+      expectCosReference(threeQuarterPiResult, -Math.SQRT1_2, 1.0e-12);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_3200
@@ -508,7 +504,7 @@ export default function mathCosTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-    */
+     */
     it('testMathCos032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.7;
       let sineResult: double = Math.sin(x);
@@ -539,7 +535,7 @@ export default function mathCosTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-    */
+     */
     it('testMathCos034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.4;
       let lhs: double = Math.cos(2.0 * x);
@@ -555,7 +551,7 @@ export default function mathCosTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-    */
+     */
     it('testMathCos035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let firstAngle: double = 0.3;
       let secondAngle: double = 0.2;
@@ -576,11 +572,9 @@ export default function mathCosTest(): void {
       let inputValue: float = Double.toFloat(0.5);
       let dResult: double = Math.cos(inputValue);
       let result: float = Double.toFloat(dResult);
-      expect(Utils.isNaNFloat(result)).assertFalse();
-      let lower: float = Double.toFloat(-1.0);
-      let upper: float = Double.toFloat(1.0);
-      expect(result >= lower).assertTrue();
-      expect(result <= upper).assertTrue();
+      let expected: float = Double.toFloat(0.8775825618903728);
+      let diff: double = Utils.getAbsDiff(result, expected);
+      expect(diff < 1.0e-6).assertTrue();
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_3700
@@ -941,6 +935,527 @@ export default function mathCosTest(): void {
       let expected: double = 0.960170286650366;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-12).assertTrue();
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_6100
+     * @tc.name testMathCos061
+     * @tc.desc Verify cos method with widened byte zero input returns exact one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: byte = Int.toByte(0);
+      let result: double = Math.cos(inputValue);
+      expect(result).assertEqual(1.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_6200
+     * @tc.name testMathCos062
+     * @tc.desc Verify cos method with widened byte maximum minus one boundary returns the reference value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: byte = Int.toByte(126);
+      let result: double = Math.cos(inputValue);
+      expectCosReference(result, 0.9439841391523142, 1.0e-12);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_6300
+     * @tc.name testMathCos063
+     * @tc.desc Verify cos method with widened byte minimum plus one boundary returns the reference value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: byte = Int.toByte(-127);
+      let result: double = Math.cos(inputValue);
+      expectCosReference(result, 0.23235910202965793, 1.0e-12);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_6400
+     * @tc.name testMathCos064
+     * @tc.desc Verify cos method with widened byte maximum boundary 127 returns the reference value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: byte = Int.toByte(127);
+      let result: double = Math.cos(inputValue);
+      expectCosReference(result, 0.23235910202965793, 1.0e-12);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_6500
+     * @tc.name testMathCos065
+     * @tc.desc Verify cos method with widened byte minimum boundary -128 returns the reference value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: byte = Int.toByte(-128);
+      let result: double = Math.cos(inputValue);
+      expectCosReference(result, -0.6928958219201651, 1.0e-12);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_6600
+     * @tc.name testMathCos066
+     * @tc.desc Verify cos method with byte overflow conversion input 128 follows the wrapped byte value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: byte = Int.toByte(128);
+      let result: double = Math.cos(inputValue);
+      expect(inputValue).assertEqual(Int.toByte(-128));
+      expectCosReference(result, -0.6928958219201651, 1.0e-12);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_6700
+     * @tc.name testMathCos067
+     * @tc.desc Verify cos method with widened short zero input returns exact one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: short = Int.toShort(0);
+      let result: double = Math.cos(inputValue);
+      expect(result).assertEqual(1.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_6800
+     * @tc.name testMathCos068
+     * @tc.desc Verify cos method with widened short maximum minus one boundary returns the reference value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: short = Int.toShort(32766);
+      let result: double = Math.cos(inputValue);
+      expectCosReference(result, 0.6885004785337068, 1.0e-12);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_6900
+     * @tc.name testMathCos069
+     * @tc.desc Verify cos method with widened short maximum boundary 32767 returns the reference value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: short = Int.toShort(32767);
+      let result: double = Math.cos(inputValue);
+      expectCosReference(result, 0.9822633517692823, 1.0e-12);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_7000
+     * @tc.name testMathCos070
+     * @tc.desc Verify cos method with widened short minimum boundary -32768 returns the reference value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: short = Int.toShort(-32768);
+      let result: double = Math.cos(inputValue);
+      expectCosReference(result, 0.37293782932771496, 1.0e-12);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_7100
+     * @tc.name testMathCos071
+     * @tc.desc Verify cos method with short mapped value 65535 follows the wrapped short value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: short = Int.toShort(65535);
+      let result: double = Math.cos(inputValue);
+      expect(inputValue).assertEqual(Int.toShort(-1));
+      expectCosReference(result, 0.5403023058681398, 1.0e-12);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_7200
+     * @tc.name testMathCos072
+     * @tc.desc Verify cos method with short overflow conversion input 32768 follows the wrapped short value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: short = Int.toShort(32768);
+      let result: double = Math.cos(inputValue);
+      expect(inputValue).assertEqual(Int.toShort(-32768));
+      expectCosReference(result, 0.37293782932771496, 1.0e-12);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_7300
+     * @tc.name testMathCos073
+     * @tc.desc Verify cos method with widened Int.MAX_VALUE boundary returns the reference value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: int = Int.MAX_VALUE;
+      let result: double = Math.cos(inputValue);
+      expectCosReference(result, -0.6888366918779438, 1.0e-12);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_7400
+     * @tc.name testMathCos074
+     * @tc.desc Verify cos method with widened Int.MIN_VALUE boundary returns the reference value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: int = Int.MIN_VALUE;
+      let result: double = Math.cos(inputValue);
+      expectCosReference(result, 0.23781619457280337, 1.0e-12);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_7500
+     * @tc.name testMathCos075
+     * @tc.desc Verify cos method with Int.MIN_VALUE plus one boundary returns the reference value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: int = Int.MIN_VALUE + 1;
+      let result: double = Math.cos(inputValue);
+      expectCosReference(result, -0.6888366918779438, 1.0e-12);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_7600
+     * @tc.name testMathCos076
+     * @tc.desc Verify cos method with Int.MAX_VALUE minus one returns the reference value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: int = Int.MAX_VALUE - 1;
+      let result: double = Math.cos(inputValue);
+      expectCosReference(result, -0.982176300549272, 1.0e-12);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_7700
+     * @tc.name testMathCos077
+     * @tc.desc Verify cos method with int overflow from Int.MAX_VALUE plus one follows the wrapped minimum value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let maxValue: int = Int.MAX_VALUE;
+      let inputValue: int = maxValue + 1;
+      let result: double = Math.cos(inputValue);
+      expect(inputValue).assertEqual(Int.MIN_VALUE);
+      expectCosReference(result, 0.23781619457280337, 1.0e-12);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_7800
+     * @tc.name testMathCos078
+     * @tc.desc Verify cos method with long maximum minus one boundary returns the rounded reference value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: long = Long.MAX_VALUE - Int.toLong(1);
+      let result: double = Math.cos(inputValue);
+      expectCosReference(result, 0.011800076512800236, 1.0e-12);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_7900
+     * @tc.name testMathCos079
+     * @tc.desc Verify cos method with widened long zero input returns exact one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: long = Int.toLong(0);
+      let result: double = Math.cos(inputValue);
+      expect(result).assertEqual(1.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_8000
+     * @tc.name testMathCos080
+     * @tc.desc Verify cos method with long minimum plus one boundary returns the rounded reference value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: long = Long.MIN_VALUE + Int.toLong(1);
+      let result: double = Math.cos(inputValue);
+      expectCosReference(result, 0.011800076512800236, 1.0e-12);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_8100
+     * @tc.name testMathCos081
+     * @tc.desc Verify cos method with widened long maximum boundary returns the rounded reference value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: long = Long.MAX_VALUE;
+      let result: double = Math.cos(inputValue);
+      expectCosReference(result, 0.011800076512800236, 1.0e-12);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_8200
+     * @tc.name testMathCos082
+     * @tc.desc Verify cos method with widened Long.MIN_VALUE boundary returns the rounded reference value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: long = Long.MIN_VALUE;
+      let result: double = Math.cos(inputValue);
+      expectCosReference(result, 0.011800076512800236, 1.0e-12);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_8300
+     * @tc.name testMathCos083
+     * @tc.desc Verify cos method with long overflow from maximum plus one follows the wrapped minimum value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let maxValue: long = Long.MAX_VALUE;
+      let inputValue: long = maxValue + Int.toLong(1);
+      let result: double = Math.cos(inputValue);
+      expect(inputValue).assertEqual(Long.MIN_VALUE);
+      expectCosReference(result, 0.011800076512800236, 1.0e-12);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_8400
+     * @tc.name testMathCos084
+     * @tc.desc Verify cos method with float normal input 3.14f returns the float-rounded reference value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: float = Double.toFloat(3.14);
+      let result: double = Math.cos(inputValue);
+      expectCosReference(result, -0.99999873189461, 1.0e-12);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_8500
+     * @tc.name testMathCos085
+     * @tc.desc Verify cos method with negative Float.MAX_VALUE boundary returns the reference value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: float = -Float.MAX_VALUE;
+      let result: double = Math.cos(inputValue);
+      expectCosReference(result, 0.8530210398303042, 1.0e-12);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_8600
+     * @tc.name testMathCos086
+     * @tc.desc Verify cos method with negative float underflow source returns exact one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: float = Double.toFloat(-Float.MIN_VALUE / 10.0);
+      let result: double = Math.cos(inputValue);
+      expect(Utils.isNegativeZero(inputValue)).assertTrue();
+      expect(result).assertEqual(1.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_8700
+     * @tc.name testMathCos087
+     * @tc.desc Verify cos method with Float.MAX_VALUE boundary returns the reference value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: float = Float.MAX_VALUE;
+      let result: double = Math.cos(inputValue);
+      expectCosReference(result, 0.8530210398303042, 1.0e-12);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_8800
+     * @tc.name testMathCos088
+     * @tc.desc Verify cos method with Float.MIN_VALUE boundary returns exact one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: float = Float.MIN_VALUE;
+      let result: double = Math.cos(inputValue);
+      expect(result).assertEqual(1.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_8900
+     * @tc.name testMathCos089
+     * @tc.desc Verify cos method with negative Float.MIN_VALUE boundary returns exact one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: float = -Float.MIN_VALUE;
+      let result: double = Math.cos(inputValue);
+      expect(result).assertEqual(1.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_9000
+     * @tc.name testMathCos090
+     * @tc.desc Verify cos method with float overflow source returns Double.NaN
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: float = Double.toFloat(Float.MAX_VALUE * 10.0);
+      let result: double = Math.cos(inputValue);
+      expect(inputValue).assertEqual(Float.POSITIVE_INFINITY);
+      expect(Utils.isNaNValue(result)).assertTrue();
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_9100
+     * @tc.name testMathCos091
+     * @tc.desc Verify cos method with float underflow source returns exact one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: float = Double.toFloat(Float.MIN_VALUE / 10.0);
+      let result: double = Math.cos(inputValue);
+      expect(inputValue).assertEqual(Double.toFloat(0.0));
+      expect(Utils.isPositiveZero(inputValue)).assertTrue();
+      expect(result).assertEqual(1.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_9200
+     * @tc.name testMathCos092
+     * @tc.desc Verify cos method with direct Float.NaN input propagates Double.NaN
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: float = Float.NaN;
+      let result: double = Math.cos(inputValue);
+      expect(Utils.isNaNValue(result)).assertTrue();
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_9300
+     * @tc.name testMathCos093
+     * @tc.desc Verify cos method with Float.NEGATIVE_INFINITY input returns Double.NaN
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: float = Float.NEGATIVE_INFINITY;
+      let result: double = Math.cos(inputValue);
+      expect(Utils.isNaNValue(result)).assertTrue();
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_9400
+     * @tc.name testMathCos094
+     * @tc.desc Verify cos method with negative Double.MAX_VALUE boundary returns the reference value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: double = -Double.MAX_VALUE;
+      let result: double = Math.cos(inputValue);
+      expectCosReference(result, -0.9999876894265599, 1.0e-12);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_9500
+     * @tc.name testMathCos095
+     * @tc.desc Verify cos method with negative Double.MIN_VALUE boundary returns exact one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: double = -Double.MIN_VALUE;
+      let result: double = Math.cos(inputValue);
+      expect(result).assertEqual(1.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_9600
+     * @tc.name testMathCos096
+     * @tc.desc Verify cos method with Double.MAX_VALUE boundary returns the reference value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: double = Double.MAX_VALUE;
+      let result: double = Math.cos(inputValue);
+      expectCosReference(result, -0.9999876894265599, 1.0e-12);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_9700
+     * @tc.name testMathCos097
+     * @tc.desc Verify cos method with Double.MIN_VALUE boundary returns exact one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: double = Double.MIN_VALUE;
+      let result: double = Math.cos(inputValue);
+      expect(result).assertEqual(1.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_9800
+     * @tc.name testMathCos098
+     * @tc.desc Verify cos method with double overflow source returns Double.NaN
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: double = Double.MAX_VALUE * 10.0;
+      let result: double = Math.cos(inputValue);
+      expect(inputValue).assertEqual(Double.POSITIVE_INFINITY);
+      expect(Utils.isNaNValue(result)).assertTrue();
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_9900
+     * @tc.name testMathCos099
+     * @tc.desc Verify cos method with double underflow source returns exact one
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathCos099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inputValue: double = Double.MIN_VALUE / 10.0;
+      let result: double = Math.cos(inputValue);
+      expect(inputValue).assertEqual(0.0);
+      expect(Utils.isPositiveZero(inputValue)).assertTrue();
+      expect(result).assertEqual(1.0);
     });
   });
 }

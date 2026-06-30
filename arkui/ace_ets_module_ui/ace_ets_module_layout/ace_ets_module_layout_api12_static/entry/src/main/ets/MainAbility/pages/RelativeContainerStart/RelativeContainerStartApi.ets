@@ -39,7 +39,7 @@ struct RelativeContainerStartApi {
       RelativeContainer() {
         Row().width(100).height(100)
           .backgroundColor('#FF3333')
-          .key('row1')
+          .key('RelativeContainerStartApi_row1')
 
         Row()
           .width(100)
@@ -49,7 +49,7 @@ struct RelativeContainerStartApi {
             start: { anchor: 'row1', align: HorizontalAlign.End },
             top: { anchor: 'row1', align: VerticalAlign.Bottom }
           } as LocalizedAlignRuleOptions)
-          .key('row2')
+          .key('RelativeContainerStartApi_row2')
 
         Row()
           .width(100)
@@ -59,7 +59,7 @@ struct RelativeContainerStartApi {
             start: { anchor: 'barrier1', align: HorizontalAlign.End },
             top: { anchor: 'row1', align: VerticalAlign.Top }
           } as LocalizedAlignRuleOptions)
-          .key('row3')
+          .key('RelativeContainerStartApi_row3')
 
       }
       .width(300).height(300)

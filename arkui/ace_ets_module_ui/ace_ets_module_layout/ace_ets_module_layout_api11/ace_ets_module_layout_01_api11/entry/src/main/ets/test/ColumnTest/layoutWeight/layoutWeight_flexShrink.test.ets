@@ -59,10 +59,10 @@ export default function layoutWeight_flexShrink() {
         name: 'addLayoutWeight', value: 1
       });
       await CommonFunc.sleep(3000);
-      let Column_layoutWeight_011: RectValue = CommonFunc.getComponentRect('Column_layoutWeight_011');
-      let Column_layoutWeight_012: RectValue = CommonFunc.getComponentRect('Column_layoutWeight_012');
-      let Column_layoutWeight_013: RectValue = CommonFunc.getComponentRect('Column_layoutWeight_013');
-      let Column_layoutWeight_01: RectValue = CommonFunc.getComponentRect('Column_layoutWeight_01');
+      let Column_layoutWeight_011: RectValue = CommonFunc.getComponentRect('layoutWeight_flexShrink' + '_Column_layoutWeight_011');
+      let Column_layoutWeight_012: RectValue = CommonFunc.getComponentRect('layoutWeight_flexShrink' + '_Column_layoutWeight_012');
+      let Column_layoutWeight_013: RectValue = CommonFunc.getComponentRect('layoutWeight_flexShrink' + '_Column_layoutWeight_013');
+      let Column_layoutWeight_01: RectValue = CommonFunc.getComponentRect('layoutWeight_flexShrink' + '_Column_layoutWeight_01');
       console.log('assert position')
       expect(Math.abs((Math.round(Column_layoutWeight_011.left - Column_layoutWeight_01.left)) - (Math.round(Column_layoutWeight_01.right - Column_layoutWeight_011.right))) <= 1)
         .assertTrue();
@@ -114,10 +114,10 @@ export default function layoutWeight_flexShrink() {
         name: 'addLayoutWeight', value: 2
       });
       await CommonFunc.sleep(3000);
-      let Column_layoutWeight_011: RectValue = CommonFunc.getComponentRect('Column_layoutWeight_011');
-      let Column_layoutWeight_012: RectValue = CommonFunc.getComponentRect('Column_layoutWeight_012');
-      let Column_layoutWeight_013: RectValue = CommonFunc.getComponentRect('Column_layoutWeight_013');
-      let Column_layoutWeight_01: RectValue = CommonFunc.getComponentRect('Column_layoutWeight_01');
+      let Column_layoutWeight_011: RectValue = CommonFunc.getComponentRect('layoutWeight_flexShrink' + '_Column_layoutWeight_011');
+      let Column_layoutWeight_012: RectValue = CommonFunc.getComponentRect('layoutWeight_flexShrink' + '_Column_layoutWeight_012');
+      let Column_layoutWeight_013: RectValue = CommonFunc.getComponentRect('layoutWeight_flexShrink' + '_Column_layoutWeight_013');
+      let Column_layoutWeight_01: RectValue = CommonFunc.getComponentRect('layoutWeight_flexShrink' + '_Column_layoutWeight_01');
       console.log('assert position')
       expect(Math.abs((Math.round(Column_layoutWeight_011.left - Column_layoutWeight_01.left)) - (Math.round(Column_layoutWeight_01.right - Column_layoutWeight_011.right))) <= 1)
         .assertTrue();
@@ -169,10 +169,10 @@ export default function layoutWeight_flexShrink() {
         name: 'addLayoutWeight', value: 3
       });
       await CommonFunc.sleep(3000);
-      let Column_layoutWeight_011: RectValue = CommonFunc.getComponentRect('Column_layoutWeight_011');
-      let Column_layoutWeight_012: RectValue = CommonFunc.getComponentRect('Column_layoutWeight_012');
-      let Column_layoutWeight_013: RectValue = CommonFunc.getComponentRect('Column_layoutWeight_013');
-      let Column_layoutWeight_01: RectValue = CommonFunc.getComponentRect('Column_layoutWeight_01');
+      let Column_layoutWeight_011: RectValue = CommonFunc.getComponentRect('layoutWeight_flexShrink' + '_Column_layoutWeight_011');
+      let Column_layoutWeight_012: RectValue = CommonFunc.getComponentRect('layoutWeight_flexShrink' + '_Column_layoutWeight_012');
+      let Column_layoutWeight_013: RectValue = CommonFunc.getComponentRect('layoutWeight_flexShrink' + '_Column_layoutWeight_013');
+      let Column_layoutWeight_01: RectValue = CommonFunc.getComponentRect('layoutWeight_flexShrink' + '_Column_layoutWeight_01');
       console.log('assert position')
       expect(Math.abs((Math.round(Column_layoutWeight_011.left - Column_layoutWeight_01.left)) - (Math.round(Column_layoutWeight_01.right - Column_layoutWeight_011.right))) <= 1)
         .assertTrue();

@@ -58,26 +58,26 @@ export default function GridRowFixAtIdealSizeTest() {
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
-      let strJson = getInspectorByKey('GridRowFixAtIdealSizePage_GridRow');
+      let strJson = getInspectorByKey('GridRowFixAtIdealSizePage' + '_GridRow');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[GridRowFixAtIdealSizeTest_0100] obj.$attrs.height is: " + obj.$attrs.height);
 
-      let column: RectValue = CommonFunc.getComponentRect('GridRowFixAtIdealSizePage_GridRow');
+      let column: RectValue = CommonFunc.getComponentRect('GridRowFixAtIdealSizePage' + '_GridRow');
       let column_height = column.bottom - column.top;
       console.info("[GridRowFixAtIdealSizeTest_0100] column_height is: " + column_height);
 
       expect(Math.floor(Math.abs(column_height - vp2px(50))) <= 1).assertTrue();
 
-      let button = await driver.findComponent(ON.id('GridRowFixAtIdealSizePage_Btn'));
+      let button = await driver.findComponent(ON.id('GridRowFixAtIdealSizePage' + '_Btn'));
       await button.click();
       console.info("[GridRowFixAtIdealSizeTest_0100] change height=120");
       await Utils.sleep(1000)
 
-      strJson = getInspectorByKey('GridRowFixAtIdealSizePage_GridRow');
+      strJson = getInspectorByKey('GridRowFixAtIdealSizePage' + '_GridRow');
       obj = JSON.parse(strJson);
       console.info("[GridRowFixAtIdealSizeTest_0100] obj.$attrs.height is: " + obj.$attrs.height);
 
-      column = CommonFunc.getComponentRect('GridRowFixAtIdealSizePage_GridRow');
+      column = CommonFunc.getComponentRect('GridRowFixAtIdealSizePage' + '_GridRow');
       column_height = column.bottom - column.top;
       console.info("[GridRowFixAtIdealSizeTest_0100] column_height is: " + column_height);
 

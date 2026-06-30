@@ -46,7 +46,7 @@ struct TransitionTest7Example {
         .height(30)
         .backgroundColor(0x317aff)
         .margin({ bottom: 50 } as Margin)
-        .key('button')
+        .key('transition_button')
         .onClick((e: ClickEvent) => {
           this.onActionCalled = true;
           try {
@@ -75,10 +75,10 @@ struct TransitionTest7Example {
         })
       if (this.btn1) {
         Button('') {
-          Image($r('app.media.icon')).width("80%").height(300).key('image')
+          Image($r('app.media.icon')).width("80%").height(300).key('transition_image')
         }
         .attributeModifier(this.transitionMod as ButtonModifier)
-          .key('button1')
+          .key('transition_button1')
       }
     }.height(400).width("100%").padding({ top: 100 } as Padding)
   }

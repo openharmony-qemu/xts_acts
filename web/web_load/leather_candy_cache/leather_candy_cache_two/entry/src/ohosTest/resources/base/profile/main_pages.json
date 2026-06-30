@@ -8,6 +8,7 @@
     "testability/pages/BlankLessInfoWithKeyTest",
     "testability/pages/NdkBlanklessInfoWithKeyTest",
     "testability/pages/SetBlanklessLoadingCacheCapacityTest",
-    "testability/pages/SetBlanklessLoadingWithParamsTest"
+    "testability/pages/SetBlanklessLoadingWithParamsTest",
+    "testability/pages/ExecuteAIPageCommandTest"
   ]
 }

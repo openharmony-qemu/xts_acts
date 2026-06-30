@@ -34,7 +34,7 @@ struct EditableTitleBarV2Basic {
           options: new EditableTitleBarStyleV2(),
           leftIcon: new EditableLeftIconV2({ iconType: EditableLeftIconTypeV2.Back })
         })
-        
+
         EditableTitleBarV2({
           title: 'Test Title with Cancel',
           options: new EditableTitleBarStyleV2(),
@@ -42,7 +42,10 @@ struct EditableTitleBarV2Basic {
         })
 
         EditableTitleBarV2({
-          title: new EditableTitleV2({ mainTitle: 'Main Title Object', subTitle: 'Sub Title' }),
+          title: new EditableTitleV2({
+            mainTitle: 'Main Title Object',
+            subTitle: 'Sub Title'
+          }),
           options: new EditableTitleBarStyleV2()
         })
 

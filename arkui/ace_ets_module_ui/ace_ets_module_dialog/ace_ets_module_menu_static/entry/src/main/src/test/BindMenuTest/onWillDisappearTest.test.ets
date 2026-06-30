@@ -34,7 +34,7 @@ import events_emitter from '@ohos.events.emitter'
 import { BusinessError } from '@ohos.base';
 import Utils from '../../../ets/MainAbility/common/Utils';
 
-export default function onWillDisappearTest() {
+export default function onWillDisappearTest(): void {
   describe('onWillDisappearTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("onWillDisappearTest beforeAll start");

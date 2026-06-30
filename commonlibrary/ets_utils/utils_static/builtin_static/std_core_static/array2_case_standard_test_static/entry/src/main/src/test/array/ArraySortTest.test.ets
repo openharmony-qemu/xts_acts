@@ -291,7 +291,7 @@ export default function ArraySortTest(): void {
      * @tc.level Level 2
      */
     it('testArraySort008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(42);
+      const arr = Array.create<number>(1, 42);
       arr.sort();
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(42);
@@ -981,7 +981,7 @@ export default function ArraySortTest(): void {
      * @tc.level Level 2
      */
     it('testArraySort046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<SortStudent045>({ name: 'Solo', score: 42 });
+      const arr = Array.create<SortStudent045>(1, { name: 'Solo', score: 42 });
       let calls: int = 0;
       arr.sort((_left: SortStudent045, _right: SortStudent045): int => {
         calls++;

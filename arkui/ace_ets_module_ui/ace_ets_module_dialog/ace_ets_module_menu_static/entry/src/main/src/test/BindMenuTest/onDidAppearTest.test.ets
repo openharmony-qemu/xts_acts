@@ -34,7 +34,7 @@ import events_emitter from '@ohos.events.emitter'
 import { BusinessError } from '@ohos.base';
 import Utils from '../../../ets/MainAbility/common/Utils';
 
-export default function onDidAppearTest() {
+export default function onDidAppearTest(): void {
   describe('onDidAppearTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("onDidAppearTest beforeAll start");

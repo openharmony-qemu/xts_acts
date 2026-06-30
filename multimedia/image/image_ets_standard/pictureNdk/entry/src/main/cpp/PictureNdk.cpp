@@ -95,6 +95,8 @@ static std::string exifPropertyKeyList[MAX_EXIF_KEY_SIZE] = {};
 static std::string fragmentPropertyKeyList[] = {
     "XInOriginal", "YInOriginal", "FragmentImageWidth", "FragmentImageHeight"};
 static const char *IMAGE_MIMETYPE_HEIF = "image/heif";
+static const uint32_t TEST_ERRCODE = -1;
+static const uint32_t TEST_SUCCESS = 1;
 
 struct PictureTestContext {
     OH_PictureNative *picture = nullptr;
@@ -2786,35 +2788,35 @@ static napi_value PictureMetadataGetPropertyWithNull(napi_env env, napi_callback
     napi_value result = nullptr;
     napi_value argValue[NUM_2] = {0};
     size_t argCount = NUM_2;
-
+ 
     napi_get_undefined(env, &result);
     if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_2) {
         LOGE("PictureMetadataGetPropertyWithNull: failed to get input arguments!");
         return result;
     }
-
+ 
     int32_t type = 0;
     napi_get_value_int32(env, argValue[NUM_0], &type);
     Image_MetadataType metadataType = static_cast<Image_MetadataType>(type);
-
+ 
     char key[MAX_STRING_SIZE] = {0};
     size_t keySize = 0;
     napi_get_value_string_utf8(env, argValue[NUM_1], key, MAX_STRING_SIZE, &keySize);
-
+ 
     IMG_NAPI_CHECK_NULL_PTR(g_ctx.picture, result);
     OH_PictureMetadata *metadata = nullptr;
     if (OH_PictureNative_GetMetadata(g_ctx.picture, metadataType, &metadata) != IMAGE_SUCCESS) {
         napi_throw_error(env, nullptr, "PictureMetadataGetPropertyWithNull get metadata failed");
         return result;
     }
-
+ 
     Image_String imageKey = {key, keySize};
     Image_String imageValue = {nullptr, 1024};
     if (OH_PictureMetadata_GetPropertyWithNull(metadata, &imageKey, &imageValue) != IMAGE_SUCCESS) {
         napi_throw_error(env, nullptr, "PictureMetadataGetPropertyWithNull get property failed");
         return result;
     }
-
+ 
     napi_create_string_utf8(env, (const char *)imageValue.data, imageValue.size, &result);
     IMG_NAPI_RELEASE_PTR(metadata, OH_PictureMetadata_Release(metadata));
     return result;
@@ -3581,6 +3583,1131 @@ static napi_value GetHdrComposedPixelmapAndPixelMapTest(napi_env env, napi_callb
     return result;
 }
 
+static napi_value GetBlobMetaData(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        return result;
+    }
+    int32_t fd;
+    napi_get_value_int32(env, argValue[0], &fd);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    OH_DecodingOptions *ops = nullptr;
+    OH_PictureNative *nativePicture = nullptr;
+    OH_DecodingOptions_Create(&ops);
+    OH_PixelmapNative *pixelMap = nullptr;
+    OH_ImageSourceNative_CreatePixelmap(imageSource, ops, &pixelMap);
+    OH_PictureNative_CreatePicture(pixelMap, &nativePicture);
+    OH_PictureMetadata *metadata = nullptr;
+    errCode = OH_PictureMetadata_Create(EXIF_METADATA, &metadata);
+    uint32_t blobSize = 0;
+    Image_ErrorCode getCode = OH_PictureMetadata_GetBlobDataSize(metadata, &blobSize);
+    uint32_t storeBlobSize = 1024;
+    uint8_t *blob = (uint8_t *)malloc(storeBlobSize);
+    errCode = OH_PictureMetadata_GetBlobData(metadata, blob, blobSize);
+    if (errCode == IMAGE_SUCCESS && getCode == IMAGE_SUCCESS) {
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+    OH_PictureNative_Release(nativePicture);
+    OH_PixelmapNative_Release(pixelMap);
+    OH_ImageSourceNative_Release(imageSource);
+    OH_DecodingOptions_Release(ops);
+    OH_PictureMetadata_Release(metadata);
+    free(blob);
+    return result;
+}
+
+static napi_value GetBlobDataSizeMDNull(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    uint32_t blobSize = 0;
+    Image_ErrorCode errCode = OH_PictureMetadata_GetBlobDataSize(nullptr, &blobSize);
+    if (errCode == IMAGE_INVALID_PARAMETER) {
+        napi_create_int32(env, TEST_SUCCESS, &result);
+        return result;
+    }
+    return result;
+}
+
+static napi_value GetBlobDataSizeBSNull(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        return result;
+    }
+    int32_t fd;
+    napi_get_value_int32(env, argValue[0], &fd);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    OH_DecodingOptions *ops = nullptr;
+    OH_PictureNative *nativePicture = nullptr;
+    OH_DecodingOptions_Create(&ops);
+    OH_PixelmapNative *pixelMap = nullptr;
+    OH_ImageSourceNative_CreatePixelmap(imageSource, ops, &pixelMap);
+    OH_PictureNative_CreatePicture(pixelMap, &nativePicture);
+    OH_PictureMetadata *metadata = nullptr;
+    OH_PictureMetadata_Create(EXIF_METADATA, &metadata);
+    errCode = OH_PictureMetadata_GetBlobDataSize(metadata, nullptr);
+    if (errCode == IMAGE_INVALID_PARAMETER) {
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+    OH_PictureNative_Release(nativePicture);
+    OH_PixelmapNative_Release(pixelMap);
+    OH_ImageSourceNative_Release(imageSource);
+    OH_DecodingOptions_Release(ops);
+    OH_PictureMetadata_Release(metadata);
+    return result;
+}
+
+static napi_value GetBlobDataSizeUsMType(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        return result;
+    }
+    int32_t fd;
+    napi_get_value_int32(env, argValue[0], &fd);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    OH_DecodingOptions *ops = nullptr;
+    OH_PictureNative *nativePicture = nullptr;
+    OH_DecodingOptions_Create(&ops);
+    OH_PixelmapNative *pixelMap = nullptr;
+    OH_ImageSourceNative_CreatePixelmap(imageSource, ops, &pixelMap);
+    OH_PictureNative_CreatePicture(pixelMap, &nativePicture);
+    OH_PictureMetadata *metadata = nullptr;
+    OH_PictureMetadata_Create(FRAGMENT_METADATA, &metadata);
+    OH_PictureNative_SetMetadata(nativePicture, FRAGMENT_METADATA, metadata);
+    uint32_t blobSize = 0;
+    errCode = OH_PictureMetadata_GetBlobDataSize(metadata, &blobSize);
+    if (errCode == IMAGE_UNSUPPORTED_METADATA) {
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+    OH_PictureNative_Release(nativePicture);
+    OH_PixelmapNative_Release(pixelMap);
+    OH_ImageSourceNative_Release(imageSource);
+    OH_DecodingOptions_Release(ops);
+    OH_PictureMetadata_Release(metadata);
+    return result;
+}
+
+static napi_value GetBlobMetaDataMDNull(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    uint32_t blobSize = 1;
+    uint8_t *blob = (uint8_t *)malloc(blobSize);
+    if (blob == nullptr) {
+        return result;
+    }
+    Image_ErrorCode errCode = OH_PictureMetadata_GetBlobData(nullptr, blob, blobSize);
+    if (errCode == IMAGE_INVALID_PARAMETER) {
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+    free(blob);
+    return result;
+}
+
+static napi_value GetBlobMetaDataBlobNull(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        return result;
+    }
+    int32_t fd;
+    napi_get_value_int32(env, argValue[0], &fd);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    OH_DecodingOptions *ops = nullptr;
+    OH_PictureNative *nativePicture = nullptr;
+    OH_DecodingOptions_Create(&ops);
+    OH_PixelmapNative *pixelMap = nullptr;
+    OH_ImageSourceNative_CreatePixelmap(imageSource, ops, &pixelMap);
+    OH_PictureNative_CreatePicture(pixelMap, &nativePicture);
+    OH_PictureMetadata *metadata = nullptr;
+    errCode = OH_PictureMetadata_Create(EXIF_METADATA, &metadata);
+    uint32_t blobSize = 0;
+    OH_PictureMetadata_GetBlobDataSize(metadata, &blobSize);
+    errCode = OH_PictureMetadata_GetBlobData(metadata, nullptr, blobSize);
+    if (errCode == IMAGE_INVALID_PARAMETER) {
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+    OH_PictureNative_Release(nativePicture);
+    OH_PixelmapNative_Release(pixelMap);
+    OH_ImageSourceNative_Release(imageSource);
+    OH_DecodingOptions_Release(ops);
+    OH_PictureMetadata_Release(metadata);
+    return result;
+}
+
+static napi_value GetBlobMetaDataBSZero(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        return result;
+    }
+    int32_t fd;
+    napi_get_value_int32(env, argValue[0], &fd);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    OH_DecodingOptions *ops = nullptr;
+    OH_PictureNative *nativePicture = nullptr;
+    OH_DecodingOptions_Create(&ops);
+    OH_PixelmapNative *pixelMap = nullptr;
+    OH_ImageSourceNative_CreatePixelmap(imageSource, ops, &pixelMap);
+    OH_PictureNative_CreatePicture(pixelMap, &nativePicture);
+    OH_PictureMetadata *metadata = nullptr;
+    OH_PictureMetadata_Create(EXIF_METADATA, &metadata);
+    uint32_t blobSize = 0;
+    uint8_t *blob = (uint8_t *)malloc(1024);
+    errCode = OH_PictureMetadata_GetBlobData(metadata, blob, blobSize);
+    if (errCode == IMAGE_INVALID_PARAMETER) {
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+    OH_PictureNative_Release(nativePicture);
+    OH_PixelmapNative_Release(pixelMap);
+    OH_ImageSourceNative_Release(imageSource);
+    OH_DecodingOptions_Release(ops);
+    OH_PictureMetadata_Release(metadata);
+    free(blob);
+    return result;
+}
+
+static napi_value GetBlobMetaDataBSLess(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        return result;
+    }
+
+    int32_t fd;
+    napi_get_value_int32(env, argValue[0], &fd);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+
+    OH_DecodingOptions *ops = nullptr;
+    OH_PictureNative *nativePicture = nullptr;
+    OH_DecodingOptions_Create(&ops);
+    OH_PixelmapNative *pixelMap = nullptr;
+    OH_ImageSourceNative_CreatePixelmap(imageSource, ops, &pixelMap);
+    OH_PictureNative_CreatePicture(pixelMap, &nativePicture);
+
+    OH_PictureMetadata *metadata = nullptr;
+    OH_PictureMetadata_Create(EXIF_METADATA, &metadata);
+    uint32_t blobSize = 0;
+    errCode = OH_PictureMetadata_GetBlobDataSize(metadata, &blobSize);
+    uint8_t *blob = (uint8_t *)malloc(1024);
+    errCode = OH_PictureMetadata_GetBlobData(metadata, blob, --blobSize);
+    if (errCode == IMAGE_INVALID_PARAMETER) {
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+    OH_PictureNative_Release(nativePicture);
+    OH_PixelmapNative_Release(pixelMap);
+    OH_ImageSourceNative_Release(imageSource);
+    OH_DecodingOptions_Release(ops);
+    OH_PictureMetadata_Release(metadata);
+    free(blob);
+    return result;
+}
+
+static napi_value SetBlobMetaData(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        return result;
+    }
+    int32_t fd;
+    napi_get_value_int32(env, argValue[0], &fd);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    OH_DecodingOptions *ops = nullptr;
+    OH_PictureNative *nativePicture = nullptr;
+    OH_DecodingOptions_Create(&ops);
+    OH_PixelmapNative *pixelMap = nullptr;
+    OH_ImageSourceNative_CreatePixelmap(imageSource, ops, &pixelMap);
+    OH_PictureNative_CreatePicture(pixelMap, &nativePicture);
+    OH_PictureMetadata *metadata = nullptr;
+    errCode = OH_PictureMetadata_Create(EXIF_METADATA, &metadata);
+    uint32_t blobSize = 10;
+    uint8_t *blob = (uint8_t *)malloc(blobSize);
+    if (blob == nullptr) {
+        return result;
+    }
+    for (uint32_t i = 0; i < blobSize; i++) {
+        blob[i] = i + 1;
+    }
+    Image_ErrorCode setCode = OH_PictureMetadata_SetBlobData(metadata, blob, blobSize);
+    uint32_t blobSizeGet = 0;
+    OH_PictureMetadata_GetBlobDataSize(metadata, &blobSizeGet);
+    uint8_t *blobGet = (uint8_t *)malloc(1024);
+    errCode = OH_PictureMetadata_GetBlobData(metadata, blobGet, blobSizeGet);
+    if (errCode == IMAGE_SUCCESS && setCode == IMAGE_SUCCESS && blobGet != nullptr) {
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+    OH_PictureNative_Release(nativePicture);
+    OH_PixelmapNative_Release(pixelMap);
+    OH_ImageSourceNative_Release(imageSource);
+    OH_DecodingOptions_Release(ops);
+    OH_PictureMetadata_Release(metadata);
+    free(blob);
+    free(blobGet);
+    return result;
+}
+
+static napi_value SetBlobMetaDataMetaDataNull(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    uint32_t blobSize = 10;
+    uint8_t *blob = (uint8_t *)malloc(blobSize);
+    if (blob == nullptr) {
+        return result;
+    }
+    for (uint32_t i = 0; i < blobSize; i++) {
+        blob[i] = i + 1;
+    }
+    Image_ErrorCode errCode = OH_PictureMetadata_SetBlobData(nullptr, blob, blobSize);
+    if (errCode == IMAGE_INVALID_PARAMETER) {
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+    free(blob);
+    return result;
+}
+
+static napi_value SetBlobMetaDataBlobNull(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        return result;
+    }
+    int32_t fd;
+    napi_get_value_int32(env, argValue[0], &fd);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    OH_DecodingOptions *ops = nullptr;
+    OH_PictureNative *nativePicture = nullptr;
+    OH_DecodingOptions_Create(&ops);
+    OH_PixelmapNative *pixelMap = nullptr;
+    OH_ImageSourceNative_CreatePixelmap(imageSource, ops, &pixelMap);
+    OH_PictureNative_CreatePicture(pixelMap, &nativePicture);
+    OH_PictureMetadata *metadata = nullptr;
+    errCode = OH_PictureMetadata_Create(EXIF_METADATA, &metadata);
+    uint32_t blobSize = 10;
+    uint8_t *blob = nullptr;
+    errCode = OH_PictureMetadata_SetBlobData(metadata, blob, blobSize);
+    if (errCode == IMAGE_INVALID_PARAMETER) {
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+    OH_PictureNative_Release(nativePicture);
+    OH_PixelmapNative_Release(pixelMap);
+    OH_ImageSourceNative_Release(imageSource);
+    OH_DecodingOptions_Release(ops);
+    OH_PictureMetadata_Release(metadata);
+    return result;
+}
+
+static napi_value SetBlobMetaDataBlobSizeZero(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        return result;
+    }
+    int32_t fd;
+    napi_get_value_int32(env, argValue[0], &fd);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    OH_DecodingOptions *ops = nullptr;
+    OH_PictureNative *nativePicture = nullptr;
+    OH_DecodingOptions_Create(&ops);
+    OH_PixelmapNative *pixelMap = nullptr;
+    OH_ImageSourceNative_CreatePixelmap(imageSource, ops, &pixelMap);
+    OH_PictureNative_CreatePicture(pixelMap, &nativePicture);
+    OH_PictureMetadata *metadata = nullptr;
+    errCode = OH_PictureMetadata_Create(EXIF_METADATA, &metadata);
+    uint32_t blobSize = 0;
+    uint32_t storeBlobSize = 2;
+    uint8_t *blob = (uint8_t *)malloc(storeBlobSize);
+    errCode = OH_PictureMetadata_SetBlobData(metadata, blob, blobSize);
+    if (errCode == IMAGE_INVALID_PARAMETER) {
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+    OH_PictureNative_Release(nativePicture);
+    OH_PixelmapNative_Release(pixelMap);
+    OH_ImageSourceNative_Release(imageSource);
+    OH_DecodingOptions_Release(ops);
+    OH_PictureMetadata_Release(metadata);
+    free(blob);
+    return result;
+}
+
+static napi_value GetAuxiliaryPictureCount(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        return result;
+    }
+    int32_t fd;
+    napi_get_value_int32(env, argValue[0], &fd);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    OH_DecodingOptionsForPicture *decodingOptions = nullptr;
+    OH_DecodingOptionsForPicture_Create(&decodingOptions);
+    OH_PictureNative *nativePicture = nullptr;
+    OH_ImageSourceNative_CreatePicture(imageSource, decodingOptions, &nativePicture);
+    uint32_t count = 0;
+    errCode = OH_PictureNative_GetAuxiliaryPictureCount(nativePicture, &count);
+    if (errCode == IMAGE_SUCCESS) {
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+    OH_PictureNative_Release(nativePicture);
+    OH_ImageSourceNative_Release(imageSource);
+    OH_DecodingOptionsForPicture_Release(decodingOptions);
+    return result;
+}
+
+static napi_value GetAuxiliaryPictureCountPicNull(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    uint32_t count = 0;
+    Image_ErrorCode errCode = OH_PictureNative_GetAuxiliaryPictureCount(nullptr, &count);
+    if (errCode == IMAGE_INVALID_PARAMETER) {
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+    return result;
+}
+
+static napi_value GetAuxiliaryPictureCountCountNull(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        return result;
+    }
+
+    int32_t fd;
+    napi_get_value_int32(env, argValue[0], &fd);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    OH_DecodingOptionsForPicture *decodingOptions = nullptr;
+    OH_DecodingOptionsForPicture_Create(&decodingOptions);
+    OH_PictureNative *nativePicture = nullptr;
+    OH_ImageSourceNative_CreatePicture(imageSource, decodingOptions, &nativePicture);
+    errCode = OH_PictureNative_GetAuxiliaryPictureCount(nativePicture, nullptr);
+    if (errCode == IMAGE_INVALID_PARAMETER) {
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+    OH_PictureNative_Release(nativePicture);
+    OH_ImageSourceNative_Release(imageSource);
+    OH_DecodingOptionsForPicture_Release(decodingOptions);
+    return result;
+}
+
+static napi_value GetAuxiliaryPictureTypes(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        return result;
+    }
+
+    int32_t fd;
+    napi_get_value_int32(env, argValue[0], &fd);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    OH_DecodingOptionsForPicture *decodingOptions = nullptr;
+    OH_DecodingOptionsForPicture_Create(&decodingOptions);
+    OH_PictureNative *nativePicture = nullptr;
+    OH_ImageSourceNative_CreatePicture(imageSource, decodingOptions, &nativePicture);
+    uint32_t count = 9;
+    Image_AuxiliaryPictureType auxiliaryPictureTypes[9] = {
+        AUXILIARY_PICTURE_TYPE_GAINMAP,      AUXILIARY_PICTURE_TYPE_DEPTH_MAP,    AUXILIARY_PICTURE_TYPE_UNREFOCUS_MAP,
+        AUXILIARY_PICTURE_TYPE_LINEAR_MAP,   AUXILIARY_PICTURE_TYPE_FRAGMENT_MAP, AUXILIARY_PICTURE_TYPE_SNAP_MAP,
+        AUXILIARY_PICTURE_TYPE_SNAP_GAINMAP, AUXILIARY_PICTURE_TYPE_PAN_MAP,      AUXILIARY_PICTURE_TYPE_PAN_GAINMAP};
+
+    errCode = OH_PictureNative_GetAuxiliaryPictureTypes(nativePicture, auxiliaryPictureTypes, &count);
+    for (uint32_t i = 0; i < count; i++) {
+        OH_LOG_INFO(LOG_APP, "GetAuxiliaryPictureTypes Auxiliary Picture Type [%{public}u]: %{public}d", i,
+                    auxiliaryPictureTypes[i]);
+    }
+    if (errCode == IMAGE_SUCCESS) {
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+    OH_PictureNative_Release(nativePicture);
+    OH_ImageSourceNative_Release(imageSource);
+    OH_DecodingOptionsForPicture_Release(decodingOptions);
+    return result;
+}
+
+
+static napi_value GetAuxiliaryPictureTypesPicNull(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    uint32_t count = 0;
+    Image_AuxiliaryPictureType *auxiliaryPictureTypes = nullptr;
+    Image_ErrorCode errCode = OH_PictureNative_GetAuxiliaryPictureTypes(nullptr, auxiliaryPictureTypes, &count);
+    if (errCode == IMAGE_INVALID_PARAMETER) {
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+    return result;
+}
+
+static napi_value GetAuxiliaryPictureTypesAuxPicNull(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        return result;
+    }
+    int32_t fd;
+    napi_get_value_int32(env, argValue[0], &fd);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    OH_DecodingOptions *ops = nullptr;
+    OH_PictureNative *nativePicture = nullptr;
+    OH_PixelmapNative *pixelMap = nullptr;
+    OH_DecodingOptions_Create(&ops);
+    OH_ImageSourceNative_CreatePixelmap(imageSource, ops, &pixelMap);
+    OH_PictureNative_CreatePicture(pixelMap, &nativePicture);
+    uint32_t count = 0;
+    errCode = OH_PictureNative_GetAuxiliaryPictureTypes(nativePicture, nullptr, &count);
+    if (errCode == IMAGE_INVALID_PARAMETER) {
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+    OH_PictureNative_Release(nativePicture);
+    OH_PixelmapNative_Release(pixelMap);
+    OH_ImageSourceNative_Release(imageSource);
+    OH_DecodingOptions_Release(ops);
+    return result;
+}
+
+static napi_value GetAuxiliaryPictureTypesCountNull(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        return result;
+    }
+    int32_t fd;
+    napi_get_value_int32(env, argValue[0], &fd);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    OH_DecodingOptions *ops = nullptr;
+    OH_PictureNative *nativePicture = nullptr;
+    OH_PixelmapNative *pixelMap = nullptr;
+    OH_DecodingOptions_Create(&ops);
+    OH_ImageSourceNative_CreatePixelmap(imageSource, ops, &pixelMap);
+    OH_PictureNative_CreatePicture(pixelMap, &nativePicture);
+    uint32_t count = 0;
+    Image_AuxiliaryPictureType *auxiliaryPictureTypes = nullptr;
+    errCode = OH_PictureNative_GetAuxiliaryPictureTypes(nativePicture, auxiliaryPictureTypes, nullptr);
+    if (errCode == IMAGE_INVALID_PARAMETER) {
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+    OH_PictureNative_Release(nativePicture);
+    OH_PixelmapNative_Release(pixelMap);
+    OH_ImageSourceNative_Release(imageSource);
+    OH_DecodingOptions_Release(ops);
+    return result;
+}
+
+static napi_value GetAuxiliaryPictureTypesCountError(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        return result;
+    }
+    int32_t fd;
+    napi_get_value_int32(env, argValue[0], &fd);
+    int32_t type = 0;
+    napi_get_value_int32(env, argValue[NUM_0], &type);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    OH_DecodingOptions *ops = nullptr;
+    OH_PictureNative *nativePicture = nullptr;
+    OH_PixelmapNative *pixelMap = nullptr;
+    OH_DecodingOptions_Create(&ops);
+    OH_ImageSourceNative_CreatePixelmap(imageSource, ops, &pixelMap);
+    OH_PictureNative_CreatePicture(pixelMap, &nativePicture);
+    uint32_t count = 0;
+    Image_AuxiliaryPictureType *auxiliaryPictureTypes = nullptr;
+    errCode = OH_PictureNative_GetAuxiliaryPictureTypes(nativePicture, auxiliaryPictureTypes, &count);
+    if (errCode == IMAGE_INVALID_PARAMETER) {
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+    OH_PictureNative_Release(nativePicture);
+    OH_PixelmapNative_Release(pixelMap);
+    OH_ImageSourceNative_Release(imageSource);
+    OH_DecodingOptions_Release(ops);
+    return result;
+}
+
+static napi_value GetMetadataCount(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        return result;
+    }
+    int32_t fd;
+    napi_get_value_int32(env, argValue[0], &fd);
+    int32_t type = 0;
+    napi_get_value_int32(env, argValue[NUM_0], &type);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    OH_DecodingOptions *ops = nullptr;
+    OH_PictureNative *nativePicture = nullptr;
+    OH_PixelmapNative *pixelMap = nullptr;
+    OH_DecodingOptions_Create(&ops);
+    OH_ImageSourceNative_CreatePixelmap(imageSource, ops, &pixelMap);
+    OH_PictureNative_CreatePicture(pixelMap, &nativePicture);
+    uint32_t count = 0;
+    errCode = OH_PictureNative_GetMetadataCount(nativePicture, &count);
+    if (errCode == IMAGE_SUCCESS && count != 0) {
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+    return result;
+}
+
+static napi_value GetMetadataCountPicNull(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    uint32_t count = 0;
+    Image_ErrorCode errCode = OH_PictureNative_GetMetadataCount(nullptr, &count);
+    if (errCode == IMAGE_INVALID_PARAMETER) {
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+    return result;
+}
+
+static napi_value GetMetadataCountCountNull(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        return result;
+    }
+    int32_t fd;
+    napi_get_value_int32(env, argValue[0], &fd);
+    int32_t type = 0;
+    napi_get_value_int32(env, argValue[NUM_0], &type);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    OH_DecodingOptions *ops = nullptr;
+    OH_PictureNative *nativePicture = nullptr;
+    OH_PixelmapNative *pixelMap = nullptr;
+    OH_DecodingOptions_Create(&ops);
+    OH_ImageSourceNative_CreatePixelmap(imageSource, ops, &pixelMap);
+    OH_PictureNative_CreatePicture(pixelMap, &nativePicture);
+    errCode = OH_PictureNative_GetMetadataCount(nativePicture, nullptr);
+    if (errCode == IMAGE_INVALID_PARAMETER) {
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+    OH_PictureNative_Release(nativePicture);
+    OH_PixelmapNative_Release(pixelMap);
+    OH_ImageSourceNative_Release(imageSource);
+    OH_DecodingOptions_Release(ops);
+    return result;
+}
+
+static napi_value GetMetadataTypes(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        return result;
+    }
+    int32_t fd;
+    napi_get_value_int32(env, argValue[0], &fd);
+    int32_t type = 0;
+    napi_get_value_int32(env, argValue[NUM_0], &type);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    OH_DecodingOptions *ops = nullptr;
+    OH_PictureNative *nativePicture = nullptr;
+    OH_PixelmapNative *pixelMap = nullptr;
+    OH_DecodingOptions_Create(&ops);
+    OH_ImageSourceNative_CreatePixelmap(imageSource, ops, &pixelMap);
+    OH_PictureNative_CreatePicture(pixelMap, &nativePicture);
+    uint32_t count = 11;
+    Image_MetadataType metadataTypes[11] = {EXIF_METADATA,    FRAGMENT_METADATA, XTSTYLE_METADATA, RFDATAB_METADATA,
+                                            GIF_METADATA,     XDRAW_4K_METADATA, PRIVATE_METADATA, RFDATAN_METADATA,
+                                            RFDATAS_METADATA, HDRSNAP_METADATA,  DFXDATA_METADATA
+
+    };
+    errCode = OH_PictureNative_GetMetadataTypes(nativePicture, metadataTypes, &count);
+    for (uint32_t i = 0; i < count; i++) {
+        OH_LOG_INFO(LOG_APP, "MetaDataTypes Picture Type [%{public}u]: %{public}d", i, metadataTypes[i]);
+    }
+    if (errCode == IMAGE_SUCCESS && count != 0 && metadataTypes != nullptr) {
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+    OH_PictureNative_Release(nativePicture);
+    OH_PixelmapNative_Release(pixelMap);
+    OH_ImageSourceNative_Release(imageSource);
+    OH_DecodingOptions_Release(ops);
+    return result;
+}
+
+static napi_value GetMetadataTypesPicNull(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    uint32_t count = 0;
+    Image_MetadataType *metadataTypes;
+    Image_ErrorCode errCode = OH_PictureNative_GetMetadataTypes(nullptr, metadataTypes, &count);
+    if (errCode == IMAGE_INVALID_PARAMETER) {
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+    return result;
+}
+
+static napi_value GetMetadataTypesMetadataTypesNull(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        return result;
+    }
+    // get fd
+    int32_t fd;
+    napi_get_value_int32(env, argValue[0], &fd);
+    int32_t type = 0;
+    napi_get_value_int32(env, argValue[NUM_0], &type);
+    // 创建ImageSource对象
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    OH_DecodingOptions *ops = nullptr;
+    OH_PictureNative *nativePicture = nullptr;
+    OH_PixelmapNative *pixelMap = nullptr;
+    OH_DecodingOptions_Create(&ops);
+    OH_ImageSourceNative_CreatePixelmap(imageSource, ops, &pixelMap);
+    OH_PictureNative_CreatePicture(pixelMap, &nativePicture);
+    uint32_t count = 0;
+    errCode = OH_PictureNative_GetMetadataTypes(nativePicture, nullptr, &count);
+    if (errCode == IMAGE_INVALID_PARAMETER) {
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+    OH_PictureNative_Release(nativePicture);
+    OH_PixelmapNative_Release(pixelMap);
+    OH_ImageSourceNative_Release(imageSource);
+    OH_DecodingOptions_Release(ops);
+    return result;
+}
+
+static napi_value GetMetadataTypesCountNull(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        return result;
+    }
+    int32_t fd;
+    napi_get_value_int32(env, argValue[0], &fd);
+    int32_t type = 0;
+    napi_get_value_int32(env, argValue[NUM_0], &type);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    OH_DecodingOptions *ops = nullptr;
+    OH_PictureNative *nativePicture = nullptr;
+    OH_PixelmapNative *pixelMap = nullptr;
+    OH_DecodingOptions_Create(&ops);
+    OH_ImageSourceNative_CreatePixelmap(imageSource, ops, &pixelMap);
+    OH_PictureNative_CreatePicture(pixelMap, &nativePicture);
+    Image_MetadataType *metadataTypes;
+    errCode = OH_PictureNative_GetMetadataTypes(nativePicture, metadataTypes, nullptr);
+    if (errCode == IMAGE_INVALID_PARAMETER) {
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+    OH_PictureNative_Release(nativePicture);
+    OH_PixelmapNative_Release(pixelMap);
+    OH_ImageSourceNative_Release(imageSource);
+    OH_DecodingOptions_Release(ops);
+    return result;
+}
+
+static napi_value GetMetadataTypesCountError(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        return result;
+    }
+
+    int32_t fd;
+    napi_get_value_int32(env, argValue[0], &fd);
+    int32_t type = 0;
+    napi_get_value_int32(env, argValue[NUM_0], &type);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    OH_DecodingOptions *ops = nullptr;
+    OH_PictureNative *nativePicture = nullptr;
+    OH_PixelmapNative *pixelMap = nullptr;
+    OH_DecodingOptions_Create(&ops);
+    OH_ImageSourceNative_CreatePixelmap(imageSource, ops, &pixelMap);
+    OH_PictureNative_CreatePicture(pixelMap, &nativePicture);
+    uint32_t count = 0;
+    Image_MetadataType *metadataTypes;
+    errCode = OH_PictureNative_GetMetadataTypes(nativePicture, metadataTypes, &count);
+    if (errCode == IMAGE_INVALID_PARAMETER) {
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+    OH_PictureNative_Release(nativePicture);
+    OH_PixelmapNative_Release(pixelMap);
+    OH_ImageSourceNative_Release(imageSource);
+    OH_DecodingOptions_Release(ops);
+    return result;
+}
+
+static napi_value RemoveAuxiliaryPicture(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        return result;
+    }
+    int32_t fd;
+    napi_get_value_int32(env, argValue[0], &fd);
+    int32_t type = 0;
+    napi_get_value_int32(env, argValue[NUM_0], &type);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    OH_DecodingOptionsForPicture *decodingOptions = nullptr;
+    OH_DecodingOptionsForPicture_Create(&decodingOptions);
+    OH_PictureNative *nativePicture = nullptr;
+    OH_ImageSourceNative_CreatePicture(imageSource, decodingOptions, &nativePicture);
+    errCode = OH_PictureNative_RemoveAuxiliaryPicture(nativePicture, AUXILIARY_PICTURE_TYPE_DEPTH_MAP);
+    if (errCode == IMAGE_SUCCESS) {
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+    OH_PictureNative_Release(nativePicture);
+    OH_ImageSourceNative_Release(imageSource);
+    OH_DecodingOptionsForPicture_Release(decodingOptions);
+    return result;
+}
+
+static napi_value RemoveAuxiliaryPicturePicNull(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    Image_ErrorCode errCode = OH_PictureNative_RemoveAuxiliaryPicture(nullptr, AUXILIARY_PICTURE_TYPE_PAN_GAINMAP);
+    if (errCode == IMAGE_INVALID_PARAMETER) {
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+    return result;
+}
+
+static napi_value RemoveAuxiliaryPictureAuxTypeUnsup(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        return result;
+    }
+    int32_t fd;
+    napi_get_value_int32(env, argValue[0], &fd);
+    int32_t type = 0;
+    napi_get_value_int32(env, argValue[NUM_0], &type);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    OH_DecodingOptions *ops = nullptr;
+    OH_PictureNative *nativePicture = nullptr;
+    OH_PixelmapNative *pixelMap = nullptr;
+    OH_DecodingOptions_Create(&ops);
+    OH_ImageSourceNative_CreatePixelmap(imageSource, ops, &pixelMap);
+    OH_PictureNative_CreatePicture(pixelMap, &nativePicture);
+    int32_t auxType = 0;
+    Image_AuxiliaryPictureType auxPicType = static_cast<Image_AuxiliaryPictureType>(auxType);
+    errCode = OH_PictureNative_RemoveAuxiliaryPicture(nativePicture, auxPicType);
+    if (errCode == IMAGE_INVALID_PARAMETER) {
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+
+    OH_PictureNative_Release(nativePicture);
+    OH_PixelmapNative_Release(pixelMap);
+    OH_ImageSourceNative_Release(imageSource);
+    OH_DecodingOptions_Release(ops);
+    return result;
+}
+
+static napi_value RemoveMetadata(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        return result;
+    }
+    int32_t fd;
+    napi_get_value_int32(env, argValue[0], &fd);
+    int32_t type = 0;
+    napi_get_value_int32(env, argValue[NUM_0], &type);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    OH_DecodingOptions *ops = nullptr;
+    OH_PictureNative *nativePicture = nullptr;
+    OH_PixelmapNative *pixelMap = nullptr;
+    OH_DecodingOptions_Create(&ops);
+    OH_ImageSourceNative_CreatePixelmap(imageSource, ops, &pixelMap);
+    OH_PictureNative_CreatePicture(pixelMap, &nativePicture);
+    uint32_t count = 11;
+    Image_MetadataType metadataTypes[11] = {EXIF_METADATA,    FRAGMENT_METADATA, XTSTYLE_METADATA, RFDATAB_METADATA,
+                                            GIF_METADATA,     XDRAW_4K_METADATA, PRIVATE_METADATA, RFDATAN_METADATA,
+                                            RFDATAS_METADATA, HDRSNAP_METADATA,  DFXDATA_METADATA};
+    OH_PictureNative_GetMetadataTypes(nativePicture, metadataTypes, &count);
+    errCode = OH_PictureNative_RemoveMetadata(nativePicture, metadataTypes[0]);
+    if (errCode == IMAGE_SUCCESS) {
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+    OH_PictureNative_Release(nativePicture);
+    OH_PixelmapNative_Release(pixelMap);
+    OH_ImageSourceNative_Release(imageSource);
+    OH_DecodingOptions_Release(ops);
+    return result;
+}
+
+static napi_value RemoveMetadataPicNull(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    Image_ErrorCode errCode = OH_PictureNative_RemoveMetadata(nullptr, DFXDATA_METADATA);
+    if (errCode == IMAGE_INVALID_PARAMETER) {
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+    return result;
+}
+
+static napi_value RemoveMetadataMetaDataTypeUnsup(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        return result;
+    }
+    int32_t fd;
+    napi_get_value_int32(env, argValue[0], &fd);
+    int32_t type = 0;
+    napi_get_value_int32(env, argValue[NUM_0], &type);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    OH_DecodingOptions *ops = nullptr;
+    OH_PictureNative *nativePicture = nullptr;
+    OH_PixelmapNative *pixelMap = nullptr;
+    OH_DecodingOptions_Create(&ops);
+    OH_ImageSourceNative_CreatePixelmap(imageSource, ops, &pixelMap);
+    OH_PictureNative_CreatePicture(pixelMap, &nativePicture);
+    uint32_t count = 0;
+    int32_t metaDataType = 0;
+    Image_MetadataType metadataType = static_cast<Image_MetadataType>(metaDataType);
+    errCode = OH_PictureNative_RemoveMetadata(nativePicture, metadataType);
+    if (errCode == IMAGE_UNSUPPORTED_METADATA) {
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+    OH_PictureNative_Release(nativePicture);
+    OH_PixelmapNative_Release(pixelMap);
+    OH_ImageSourceNative_Release(imageSource);
+    OH_DecodingOptions_Release(ops);
+    return result;
+}
+
+static napi_value PictureNativeDeepCopy(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    Image_ErrorCode ret = IMAGE_SUCCESS;
+    uint8_t pixelData[] = {0xFF, 0xFF, 0xFF, 0xFF};
+    uint8_t auxData[] = {0x00, 0x00, 0xFF, 0xFF};
+    OH_Pixelmap_InitializationOptions *createOpts = nullptr;
+    OH_PixelmapNative *mainPixelmap = nullptr;
+    OH_PictureNative *srcPicture = nullptr;
+    OH_PictureNative *dstPicture = nullptr;
+    OH_PixelmapInitializationOptions_Create(&createOpts);
+    OH_PixelmapInitializationOptions_SetWidth(createOpts, 1);
+    OH_PixelmapInitializationOptions_SetHeight(createOpts, 1);
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOpts, PIXEL_FORMAT_RGBA_8888);
+    OH_PixelmapNative_CreatePixelmap(pixelData, sizeof(pixelData), createOpts, &mainPixelmap);
+    OH_PixelmapInitializationOptions_Release(createOpts);
+    OH_PictureNative_CreatePicture(mainPixelmap, &srcPicture);
+    OH_AuxiliaryPictureNative *pAuxPicture = nullptr;
+    Image_Size auxSize = {1, 1};
+    OH_AuxiliaryPictureNative_Create(auxData, sizeof(auxData), &auxSize, AUXILIARY_PICTURE_TYPE_GAINMAP,
+                                           &pAuxPicture);
+    ret = OH_PictureNative_SetAuxiliaryPicture(srcPicture, AUXILIARY_PICTURE_TYPE_GAINMAP, pAuxPicture);
+    OH_PictureMetadata *metadata;
+    OH_PictureMetadata_Create(EXIF_METADATA, &metadata);
+    ret = OH_PictureNative_SetMetadata(srcPicture, EXIF_METADATA, metadata);
+    OH_PictureNative_AuxiliaryPictureCopyItem auxItems[] = {
+        {AUXILIARY_PICTURE_TYPE_GAINMAP, AUXILIARY_PICTURE_TYPE_GAINMAP},
+    };
+    OH_PictureNative_MetadataCopyItem metadataCopyItem = {EXIF_METADATA, EXIF_METADATA};
+    uint32_t auxCount = sizeof(auxItems) / sizeof(auxItems[0]);
+    ret =
+        OH_PictureNative_DeepCopyWithItems(srcPicture, auxItems, auxCount, &metadataCopyItem, 1, nullptr, &dstPicture);
+    if (ret == IMAGE_SUCCESS && dstPicture != nullptr) {
+        OH_PictureNative_Release(dstPicture);
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+    delete metadata;
+    OH_AuxiliaryPictureNative_Release(pAuxPicture);
+    OH_PictureNative_Release(srcPicture);
+    OH_PixelmapNative_Release(mainPixelmap);
+    return result;
+}
+
+static napi_value PictureNativeDeepCopyError(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    Image_ErrorCode ret = OH_PictureNative_DeepCopyWithItems(nullptr, nullptr, 0, nullptr, 0, nullptr, nullptr);
+    if (ret == IMAGE_INVALID_PARAMETER) {
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+    return result;
+}
+
+static napi_value AcquirePixelmap(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    Image_ErrorCode ret = IMAGE_SUCCESS;
+    uint8_t pixelData[] = {0xFF, 0xFF, 0xFF, 0xFF};
+    uint8_t auxData[] = {0x00, 0x00, 0xFF, 0xFF};
+    OH_Pixelmap_InitializationOptions *createOpts = nullptr;
+    OH_PixelmapNative *mainPixelmap = nullptr;
+    OH_PictureNative *srcPicture = nullptr;
+    OH_PictureNative *dstPicture = nullptr;
+    OH_PixelmapInitializationOptions_Create(&createOpts);
+    OH_PixelmapInitializationOptions_SetWidth(createOpts, 1);
+    OH_PixelmapInitializationOptions_SetHeight(createOpts, 1);
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOpts, PIXEL_FORMAT_RGBA_8888);
+    ret = OH_PixelmapNative_CreatePixelmap(pixelData, sizeof(pixelData), createOpts, &mainPixelmap);
+    OH_PixelmapInitializationOptions_Release(createOpts);
+    OH_PictureNative_CreatePicture(mainPixelmap, &srcPicture);
+    OH_AuxiliaryPictureNative *pAuxPicture = nullptr;
+    Image_Size auxSize = {1, 1};
+    OH_AuxiliaryPictureNative_Create(auxData, sizeof(auxData), &auxSize, AUXILIARY_PICTURE_TYPE_GAINMAP,
+                                           &pAuxPicture);
+    OH_PictureNative_SetAuxiliaryPicture(srcPicture, AUXILIARY_PICTURE_TYPE_GAINMAP, pAuxPicture);
+    OH_PixelmapNative *pPixelmap = nullptr;
+    Image_ErrorCode errCode = OH_AuxiliaryPictureNative_AcquirePixelmap(pAuxPicture, &pPixelmap);
+    if (errCode == IMAGE_SUCCESS && pPixelmap != nullptr) {
+        OH_PixelmapNative_Release(pPixelmap);
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+    OH_AuxiliaryPictureNative_Release(pAuxPicture);
+    OH_PictureNative_Release(srcPicture);
+    OH_PixelmapNative_Release(mainPixelmap);
+    return result;
+}
+
+static napi_value AcquirePixelmapAuxPicNull(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    OH_PixelmapNative *pPixelmap = nullptr;
+    Image_ErrorCode errCode = OH_AuxiliaryPictureNative_AcquirePixelmap(nullptr, &pPixelmap);
+    if (errCode == IMAGE_INVALID_PARAMETER) {
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+    return result;
+}
+
+static napi_value AcquirePixelmapPMNull(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_create_int32(env, TEST_ERRCODE, &result);
+    uint8_t pixelData[] = {0xFF, 0xFF, 0xFF, 0xFF};
+    uint8_t auxData[] = {0x00, 0x00, 0xFF, 0xFF};
+    OH_Pixelmap_InitializationOptions *createOpts = nullptr;
+    OH_PixelmapNative *mainPixelmap = nullptr;
+    OH_PictureNative *srcPicture = nullptr;
+    OH_PictureNative *dstPicture = nullptr;
+    OH_PixelmapInitializationOptions_Create(&createOpts);
+    OH_PixelmapInitializationOptions_SetWidth(createOpts, 1);
+    OH_PixelmapInitializationOptions_SetHeight(createOpts, 1);
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOpts, PIXEL_FORMAT_RGBA_8888);
+    OH_PixelmapNative_CreatePixelmap(pixelData, sizeof(pixelData), createOpts, &mainPixelmap);
+    OH_PixelmapInitializationOptions_Release(createOpts);
+    OH_PictureNative_CreatePicture(mainPixelmap, &srcPicture);
+    OH_AuxiliaryPictureNative *pAuxPicture = nullptr;
+    Image_Size auxSize = {1, 1};
+    OH_AuxiliaryPictureNative_Create(auxData, sizeof(auxData), &auxSize, AUXILIARY_PICTURE_TYPE_GAINMAP,
+                                           &pAuxPicture);
+    OH_PictureNative_SetAuxiliaryPicture(srcPicture, AUXILIARY_PICTURE_TYPE_GAINMAP, pAuxPicture);
+    Image_ErrorCode errCode = OH_AuxiliaryPictureNative_AcquirePixelmap(pAuxPicture, nullptr);
+    if (errCode == IMAGE_INVALID_PARAMETER) {
+        napi_create_int32(env, TEST_SUCCESS, &result);
+    }
+    OH_AuxiliaryPictureNative_Release(pAuxPicture);
+    OH_PictureNative_Release(srcPicture);
+    OH_PixelmapNative_Release(mainPixelmap);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -3588,176 +4715,236 @@ static napi_value Init(napi_env env, napi_value exports)
         {"releaseTestContext", nullptr, ReleaseTestContext, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"createTestImagePacker", nullptr, CreateTestImagePacker, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"createTestPackingOptions", nullptr, CreateTestPackingOptions, nullptr, nullptr, nullptr, napi_default,
-            nullptr},
+         nullptr},
         {"setMimeTypeToTestPackingOptions", nullptr, SetMimeTypeToTestPackingOptions, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"setDynamicRangeToTestPackingOptions", nullptr, SetDynamicRangeToTestPackingOptions, nullptr, nullptr,
-            nullptr, napi_default, nullptr},
+         napi_default, nullptr},
+        {"setDynamicRangeToTestPackingOptions", nullptr, SetDynamicRangeToTestPackingOptions, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
         {"createTestImageSource", nullptr, CreateTestImageSource, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"createTestPixelmapByImageSource", nullptr, CreateTestPixelmapByImageSource, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
+         napi_default, nullptr},
         {"MetadataCreate", nullptr, MetadataCreate, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"MetadataGetProperty", nullptr, MetadataGetProperty, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"MetadataSetProperty", nullptr, MetadataSetProperty, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"MetadataRelease", nullptr, MetadataRelease, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"MetadataClone", nullptr, MetadataClone, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"clonedMetadataGetProperty", nullptr, ClonedMetadataGetProperty, nullptr, nullptr, nullptr, napi_default,
-            nullptr},
+         nullptr},
         {"clonedMetadataRelease", nullptr, ClonedMetadataRelease, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"pictureMetadataGetProperty", nullptr, PictureMetadataGetProperty, nullptr, nullptr, nullptr, napi_default,
-            nullptr},
-        {"auxiliaryMetadataGetProperty", nullptr, AuxiliaryMetadataGetProperty, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
+         nullptr},
+        {"auxiliaryMetadataGetProperty", nullptr, AuxiliaryMetadataGetProperty, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
         {"PackToDataFromPicture", nullptr, PackToDataFromPicture, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"PackToFileFromPicture", nullptr, PackToFileFromPicture, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"CreatePictureByImageSource", nullptr, CreatePictureByImageSource, nullptr, nullptr, nullptr, napi_default,
-            nullptr},
-        {"CreatePictureDecodingOptions", nullptr, CreatePictureDecodingOptions, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
+         nullptr},
+        {"CreatePictureDecodingOptions", nullptr, CreatePictureDecodingOptions, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
         {"GetDesiredAuxiliaryPictures", nullptr, GetDesiredAuxiliaryPictures, nullptr, nullptr, nullptr, napi_default,
-            nullptr},
+         nullptr},
         {"SetDesiredAuxiliaryPictures", nullptr, SetDesiredAuxiliaryPictures, nullptr, nullptr, nullptr, napi_default,
-            nullptr},
+         nullptr},
         {"ReleasePictureDecodingOptions", nullptr, ReleasePictureDecodingOptions, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"CreatePictureByPixelmap", nullptr, CreatePictureByPixelmap, nullptr, nullptr, nullptr, napi_default,
-            nullptr},
+         napi_default, nullptr},
+        {"CreatePictureByPixelmap", nullptr, CreatePictureByPixelmap, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetMainPixelmap", nullptr, GetMainPixelmap, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetHdrComposedPixelmap", nullptr, GetHdrComposedPixelmap, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetGainmapPixelmap", nullptr, GetGainmapPixelmap, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"SetAuxiliaryPicture", nullptr, SetAuxiliaryPicture, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetAuxiliaryPicture", nullptr, GetAuxiliaryPicture, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"GetAuxiliaryPictureErrorCode", nullptr, GetAuxiliaryPictureErrorCode, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
+        {"GetAuxiliaryPictureErrorCode", nullptr, GetAuxiliaryPictureErrorCode, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
         {"PictureGetMetadata", nullptr, PictureGetMetadata, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"PictureSetMetadata", nullptr, PictureSetMetadata, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"ReleasePicture", nullptr, ReleasePicture, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"CreateAuxiliaryPicture", nullptr, CreateAuxiliaryPicture, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"AuxiliaryPictureWritePixels", nullptr, AuxiliaryPictureWritePixels, nullptr, nullptr, nullptr, napi_default,
-            nullptr},
+         nullptr},
         {"AuxiliaryPictureWritePixelsErrorCode", nullptr, AuxiliaryPictureWritePixelsErrorCode, nullptr, nullptr,
-            nullptr, napi_default, nullptr},
+         nullptr, napi_default, nullptr},
         {"AuxiliaryPictureReadPixels", nullptr, AuxiliaryPictureReadPixels, nullptr, nullptr, nullptr, napi_default,
-            nullptr},
-        {"AuxiliaryPictureGetType", nullptr, AuxiliaryPictureGetType, nullptr, nullptr, nullptr, napi_default,
-            nullptr},
-        {"AuxiliaryPictureGetInfo", nullptr, AuxiliaryPictureGetInfo, nullptr, nullptr, nullptr, napi_default,
-            nullptr},
-        {"AuxiliaryPictureSetInfo", nullptr, AuxiliaryPictureSetInfo, nullptr, nullptr, nullptr, napi_default,
-            nullptr},
+         nullptr},
+        {"AuxiliaryPictureGetType", nullptr, AuxiliaryPictureGetType, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"AuxiliaryPictureGetInfo", nullptr, AuxiliaryPictureGetInfo, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"AuxiliaryPictureSetInfo", nullptr, AuxiliaryPictureSetInfo, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"AuxiliaryPictureGetMetadata", nullptr, AuxiliaryPictureGetMetadata, nullptr, nullptr, nullptr, napi_default,
-            nullptr},
+         nullptr},
         {"AuxiliaryPictureSetMetadata", nullptr, AuxiliaryPictureSetMetadata, nullptr, nullptr, nullptr, napi_default,
-            nullptr},
-        {"ReleaseAuxiliaryPicture", nullptr, ReleaseAuxiliaryPicture, nullptr, nullptr, nullptr, napi_default,
-            nullptr},
+         nullptr},
+        {"ReleaseAuxiliaryPicture", nullptr, ReleaseAuxiliaryPicture, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"CreateAuxiliaryPictureInfo", nullptr, CreateAuxiliaryPictureInfo, nullptr, nullptr, nullptr, napi_default,
-            nullptr},
+         nullptr},
         {"AuxiliaryPictureInfoGetType", nullptr, AuxiliaryPictureInfoGetType, nullptr, nullptr, nullptr, napi_default,
-            nullptr},
+         nullptr},
         {"AuxiliaryPictureInfoSetType", nullptr, AuxiliaryPictureInfoSetType, nullptr, nullptr, nullptr, napi_default,
-            nullptr},
+         nullptr},
         {"AuxiliaryPictureInfoGetSize", nullptr, AuxiliaryPictureInfoGetSize, nullptr, nullptr, nullptr, napi_default,
-            nullptr},
+         nullptr},
         {"AuxiliaryPictureInfoSetSize", nullptr, AuxiliaryPictureInfoSetSize, nullptr, nullptr, nullptr, napi_default,
-            nullptr},
+         nullptr},
         {"AuxiliaryPictureInfoGetRowStride", nullptr, AuxiliaryPictureInfoGetRowStride, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
+         napi_default, nullptr},
         {"AuxiliaryPictureInfoSetRowStride", nullptr, AuxiliaryPictureInfoSetRowStride, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
+         napi_default, nullptr},
         {"AuxiliaryPictureInfoGetPixelFormat", nullptr, AuxiliaryPictureInfoGetPixelFormat, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
+         napi_default, nullptr},
         {"AuxiliaryPictureInfoSetPixelFormat", nullptr, AuxiliaryPictureInfoSetPixelFormat, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
+         napi_default, nullptr},
         {"ReleaseAuxiliaryPictureInfo", nullptr, ReleaseAuxiliaryPictureInfo, nullptr, nullptr, nullptr, napi_default,
-            nullptr},
+         nullptr},
         {"CreateSinglePictureByImageSource", nullptr, CreateSinglePictureByImageSource, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
+         napi_default, nullptr},
         {"GetHdrPixelmapInfo", nullptr, GetHdrPixelmapInfo, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"AuxiliarySinglePictureSetInfo", nullptr, AuxiliarySinglePictureSetInfo, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
+         napi_default, nullptr},
         {"SetAuxiliarySinglePicture", nullptr, SetAuxiliarySinglePicture, nullptr, nullptr, nullptr, napi_default,
-            nullptr},
+         nullptr},
         {"PixelMapGetInfo", nullptr, PixelMapGetInfo, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetSingleMainPixelmapInfo", nullptr, GetSingleMainPixelmapInfo, nullptr, nullptr, nullptr, napi_default,
-            nullptr},
+         nullptr},
         {"GetMainPixelmapInfo", nullptr, GetMainPixelmapInfo, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"AuxiliaryPictureInfoSetTypeErrorCode", nullptr, AuxiliaryPictureInfoSetTypeErrorCode, nullptr, nullptr,
-            nullptr, napi_default, nullptr},
+         nullptr, napi_default, nullptr},
         {"GetGainmapPixelmapInfo", nullptr, GetGainmapPixelmapInfo, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"CreateAuxiliaryPictureErrorCode", nullptr, CreateAuxiliaryPictureErrorCode, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
+         napi_default, nullptr},
         {"AuxiliaryPictureGetMetadataErrorCode", nullptr, AuxiliaryPictureGetMetadataErrorCode, nullptr, nullptr,
-            nullptr, napi_default, nullptr},
+         nullptr, napi_default, nullptr},
         {"PackToDataFromPictureErrorCode", nullptr, PackToDataFromPictureErrorCode, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"AuxiliaryPictureReadPixelsErrorCode", nullptr, AuxiliaryPictureReadPixelsErrorCode, nullptr, nullptr,
-            nullptr, napi_default, nullptr},
+         napi_default, nullptr},
+        {"AuxiliaryPictureReadPixelsErrorCode", nullptr, AuxiliaryPictureReadPixelsErrorCode, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
         {"SetAuxiliaryPictureErrorCode", nullptr, SetAuxiliaryPictureErrorCode, nullptr, nullptr, nullptr, napi_default,
-            nullptr},
+         nullptr},
         {"MetadataSetPropertyErrorCode", nullptr, MetadataSetPropertyErrorCode, nullptr, nullptr, nullptr, napi_default,
-            nullptr},
+         nullptr},
         {"PictureSetMetadataErrorCode", nullptr, PictureSetMetadataErrorCode, nullptr, nullptr, nullptr, napi_default,
-            nullptr},
+         nullptr},
         {"PictureGetMetadataErrorCode", nullptr, PictureGetMetadataErrorCode, nullptr, nullptr, nullptr, napi_default,
-            nullptr},
+         nullptr},
         {"MetadataGetPropertyErrorCode", nullptr, MetadataGetPropertyErrorCode, nullptr, nullptr, nullptr, napi_default,
-            nullptr},
-        {"GetPixelmapBuffer", nullptr, GetPixelmapBuffer, nullptr, nullptr, nullptr, napi_default,
-            nullptr},
+         nullptr},
+        {"GetPixelmapBuffer", nullptr, GetPixelmapBuffer, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"AuxiliaryPictureSetInfoToCtx", nullptr, AuxiliaryPictureSetInfoToCtx, nullptr, nullptr, nullptr, napi_default,
-            nullptr},
+         nullptr},
         {"setNeedsPackPropertiesToTestPackingOptions", nullptr, SetNeedsPackPropertiesToTestPackingOptions, nullptr,
-            nullptr, nullptr, napi_default, nullptr},
+         nullptr, nullptr, napi_default, nullptr},
         {"GetImageSourceInfoSize", nullptr, GetImageSourceInfoSize, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"compareArrayBuffer", nullptr, CompareArrayBuffer, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"getTempAuxiliaryPicture", nullptr, getTempAuxiliaryPicture, nullptr, nullptr, nullptr, napi_default,
-            nullptr},
+        {"getTempAuxiliaryPicture", nullptr, getTempAuxiliaryPicture, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"CreateImageSourceFromFd", nullptr, CreateFromFd, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"CreateImageSourceFromData", nullptr, CreateFromData, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"GetImageSourceDynamicRange", nullptr, GetImageSourceDynamicRange, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
+        {"GetImageSourceDynamicRange", nullptr, GetImageSourceDynamicRange, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
         {"GetHdrComposedPixelmapErrorCode", nullptr, GetHdrComposedPixelmapErrorCode, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
+         napi_default, nullptr},
         {"CreatePictureByImageSourceWithDecodingOptionIsNull", nullptr,
-            CreatePictureByImageSourceWithDecodingOptionIsNull, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"CreatePictureByImageSourceErrorCode", nullptr, CreatePictureByImageSourceErrorCode,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
+         CreatePictureByImageSourceWithDecodingOptionIsNull, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CreatePictureByImageSourceErrorCode", nullptr, CreatePictureByImageSourceErrorCode, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
         {"testPackPictureToFile", nullptr, TestPackPictureToFile, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testPackPictureToData", nullptr, TestPackPictureToData, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"setAllExifKey", nullptr, setAllExifKey, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"PictureMetadataGetPropertyWithNull", nullptr, PictureMetadataGetPropertyWithNull, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
+         napi_default, nullptr},
         {"CreateFromUri", nullptr, GifTestFunction::CreateFromUri, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetImageInfo", nullptr, GifTestFunction::GetImageInfo, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"CreatePictureAtIndexByImageSource", nullptr, GifTestFunction::CreatePictureAtIndexByImageSource, nullptr,
-            nullptr, nullptr, napi_default, nullptr},
+         nullptr, nullptr, napi_default, nullptr},
         {"GetAllFrameCount", nullptr, GifTestFunction::GetAllFrameCount, nullptr, nullptr, nullptr, napi_default,
-            nullptr},
+         nullptr},
         {"GifMetadataGetProperty", nullptr, GifTestFunction::MetadataGetProperty, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
+         napi_default, nullptr},
         {"GifMetadataSetProperty", nullptr, GifTestFunction::MetadataSetProperty, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
+         napi_default, nullptr},
         {"HeifsMetadataGetMimetype", nullptr, GifTestFunction::HeifsMetadataGetMimetype, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
+         napi_default, nullptr},
         {"testCreatePixelMapGetImageInfo", nullptr, GifTestFunction::testCreatePixelMapGetImageInfo, nullptr, nullptr,
-            nullptr, napi_default, nullptr},
+         nullptr, napi_default, nullptr},
         {"GifGetMainPixelmapInfo", nullptr, GifTestFunction::GetMainPixelmapInfo, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
+         napi_default, nullptr},
         {"CreatePictureAtIndexByImageSourceError", nullptr, GifTestFunction::CreatePictureAtIndexByImageSourceError,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
+         nullptr, nullptr, nullptr, napi_default, nullptr},
         {"ImageSourceRelease", nullptr, GifTestFunction::ImageSourceRelease, nullptr, nullptr, nullptr, napi_default,
-            nullptr},
+         nullptr},
         {"PictureRelease", nullptr, GifTestFunction::PictureRelease, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"CreatePictureByImageSourceWithOptions", nullptr, CreatePictureByImageSourceWithOptions, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
+        {"CreatePictureByImageSourceWithOptions", nullptr, CreatePictureByImageSourceWithOptions, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
         {"GetHdrComposedPixelmapWithOptions", nullptr, GetHdrComposedPixelmapWithOptions, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"GetHdrComposedPixelmapWithOptionsError", nullptr, GetHdrComposedPixelmapWithOptionsError, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"GetHdrComposedPixelmapAndPixelMapTest", nullptr, GetHdrComposedPixelmapAndPixelMapTest,
-            nullptr, nullptr, nullptr, napi_default, nullptr}
-        };
+         napi_default, nullptr},
+        {"GetHdrComposedPixelmapWithOptionsError", nullptr, GetHdrComposedPixelmapWithOptionsError, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"GetHdrComposedPixelmapAndPixelMapTest", nullptr, GetHdrComposedPixelmapAndPixelMapTest, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"GetHdrComposedPixelmapAndPixelMapTest", nullptr, GetHdrComposedPixelmapAndPixelMapTest, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"GetBlobMetaData", nullptr, GetBlobMetaData, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"SetBlobMetaData", nullptr, SetBlobMetaData, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetBlobDataSizeMDNull", nullptr, GetBlobDataSizeMDNull, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+        {"GetBlobDataSizeBSNull", nullptr, GetBlobDataSizeBSNull, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+        {"GetBlobDataSizeUsMType", nullptr, GetBlobDataSizeUsMType, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"GetBlobMetaDataMDNull", nullptr, GetBlobMetaDataMDNull, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+        {"GetBlobMetaDataBlobNull", nullptr, GetBlobMetaDataBlobNull, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetBlobMetaDataBSZero", nullptr, GetBlobMetaDataBSZero, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+        {"GetBlobMetaDataBSLess", nullptr, GetBlobMetaDataBSLess, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+        {"SetBlobMetaDataMetaDataNull", nullptr, SetBlobMetaDataMetaDataNull, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+        {"SetBlobMetaDataBlobNull", nullptr, SetBlobMetaDataBlobNull, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"SetBlobMetaDataBlobSizeZero", nullptr, SetBlobMetaDataBlobSizeZero, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+        {"GetAuxiliaryPictureCount", nullptr, GetAuxiliaryPictureCount, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+        {"GetAuxiliaryPictureCountPicNull", nullptr, GetAuxiliaryPictureCountPicNull, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"GetAuxiliaryPictureCountCountNull", nullptr, GetAuxiliaryPictureCountCountNull, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"GetAuxiliaryPictureTypes", nullptr, GetAuxiliaryPictureTypes, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+        {"GetAuxiliaryPictureTypesPicNull", nullptr, GetAuxiliaryPictureTypesPicNull, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"GetAuxiliaryPictureTypesAuxPicNull", nullptr, GetAuxiliaryPictureTypesAuxPicNull, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"GetAuxiliaryPictureTypesCountNull", nullptr, GetAuxiliaryPictureTypesCountNull, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"GetAuxiliaryPictureTypesCountError", nullptr, GetAuxiliaryPictureTypesCountError, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"GetMetadataCount", nullptr, GetMetadataCount, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetMetadataCountPicNull", nullptr, GetMetadataCountPicNull, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetMetadataCountCountNull", nullptr, GetMetadataCountCountNull, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+        {"GetMetadataTypes", nullptr, GetMetadataTypes, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetMetadataTypesPicNull", nullptr, GetMetadataTypesPicNull, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetMetadataTypesMetadataTypesNull", nullptr, GetMetadataTypesMetadataTypesNull, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"GetMetadataTypesCountNull", nullptr, GetMetadataTypesCountNull, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+        {"GetMetadataTypesCountError", nullptr, GetMetadataTypesCountError, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+        {"RemoveAuxiliaryPicture", nullptr, RemoveAuxiliaryPicture, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RemoveAuxiliaryPicturePicNull", nullptr, RemoveAuxiliaryPicturePicNull, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"RemoveAuxiliaryPictureAuxTypeUnsup", nullptr, RemoveAuxiliaryPictureAuxTypeUnsup, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"RemoveMetadata", nullptr, RemoveMetadata, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RemoveMetadataPicNull", nullptr, RemoveMetadataPicNull, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RemoveMetadataMetaDataTypeUnsup", nullptr, RemoveMetadataMetaDataTypeUnsup, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"PictureNativeDeepCopy", nullptr, PictureNativeDeepCopy, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"PictureNativeDeepCopyError", nullptr, PictureNativeDeepCopyError, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"AcquirePixelmap", nullptr, AcquirePixelmap, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"AcquirePixelmapAuxPicNull", nullptr, AcquirePixelmapAuxPicNull, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+        {"AcquirePixelmapPMNull", nullptr, AcquirePixelmapPMNull, nullptr, nullptr, nullptr, napi_default,
+         nullptr}};
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
 }

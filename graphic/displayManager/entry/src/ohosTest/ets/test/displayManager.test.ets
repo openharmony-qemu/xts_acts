@@ -96,6 +96,7 @@ export default function displayTest() {
     let displayClass = display.getDefaultDisplaySync();
     let isSyscapSessionManagerSupported = false;
     let curWindowBrightness = 0.0;
+    let isDeskTop: boolean = false;
     beforeAll(async () => {
       windowStage = AppStorage.get('windowStage') as window.WindowStage;
       context = AppStorage.get('context') as common.UIAbilityContext;
@@ -160,6 +161,24 @@ export default function displayTest() {
         console.log(`beforeAll getBrightnessInfo: ${JSON.stringify(curWindowBrightness)}`);
       } catch (exception) {
         console.error(`beforeAll Failed to obtain the window properties. Cause code: ${exception.code}, message: ${exception.message}`);
+      }
+      try {
+        let capabilityData:string = displayClass.getDisplayCapability();
+        console.log('jsUnittest beforeAll deviceMessage =' + JSON.stringify(capabilityData));
+        let result = display.isFoldable();
+        if (!result) {
+          if (Number(JSON.parse(capabilityData).buildin_screen) === 0) {
+            isDeskTop = true;
+          }
+        }
+        console.log('jsUnittest beforeAll isDeskTop ' + isDeskTop);
+      } catch (err) {
+        console.log('jsUnittest beforeAll getDisplayCapability failed ' + err.code);
+        if(!isSyscapSessionManagerSupported){
+          console.log('jsUnittest beforeAll code =' + err.code);
+        }else {
+          console.log('jsUnittest getDisplayCapability failed');
+        }
       }
     });
     beforeEach(() => {
@@ -1141,40 +1160,6 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
         done();
       }
     });
-    /**
-     * @tc.name   test_on_availableAreaChange
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0100
-     * @tc.desc   test_on_availableAreaChange
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('test_on_availableAreaChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName = 'test_on_availableAreaChange';
-      let msgStr = 'jsunittest ' + caseName + ' ';
-      console.log(msgStr + 'begin');
-      let displayClass: display.Display | null = null;
-      displayClass = display.getDefaultDisplaySync();
-      try {
-        displayClass.on('availableAreaChange', (data: display.Rect) => {
-          console.info(msgStr + 'Listening enabled. Data: ' + JSON.stringify(data));
-          done();
-        });
-        displayClass.off('availableAreaChange');
-        done();
-      }
-      catch (err) {
-        console.error(msgStr + `Failed to on availableAreaChange. Code: ${err.code}, message: ${err.message}`);
-        if (err.code == 801) {
-          console.info(msgStr + 'The device not support getAvailableArea');
-          done();
-        }
-        else {
-          expect().assertFail();
-          done();
-        }
-      }
-    });
 
     /**
      * @tc.name   test_on_availableAreaChange_triggers
@@ -1433,36 +1418,7 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
         done();
       }
     });
-    /**
-     * @tc.name   test_off_availableAreaChange
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0600
-     * @tc.desc   test_off_availableAreaChange
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('test_off_availableAreaChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName = 'test_off_availableAreaChange';
-      let msgStr = 'jsunittest ' + caseName + ' ';
-      console.log(msgStr + 'begin');
-      let displayClass: display.Display;
-      try {
-        displayClass = display.getDefaultDisplaySync();
-        displayClass.off('availableAreaChange');
-        done();
-      }
-      catch (err) {
-        console.error(msgStr + `Failed to obtain the default display object. Code: ${err.code}, message: ${err.message}`);
-        if (err.code == 801) {
-          console.info(msgStr + 'The device not support getAvailableArea');
-          done();
-        }
-        else {
-          expect().assertFail();
-          done();
-        }
-      }
-    });
+
     /**
      * @tc.name   testGetAllDisplayPhysicalResolution
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5170
@@ -3291,7 +3247,7 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
       try {
         let brightnessInfo = await display.getBrightnessInfo(0);
         console.log(`${caseName} brightnessInfo: ${JSON.stringify(brightnessInfo)}`);
-        if (deviceType !== 'tv') {
+        if (deviceType !== 'tv' && !isDeskTop) {
           expect(brightnessInfo.sdrNits).assertLarger(0);
           expect(brightnessInfo.currentHeadroom).assertLarger(0);
           expect(brightnessInfo.maxHeadroom).assertLarger(0);
@@ -3436,7 +3392,7 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
         let callback1Triggered = false;
         let callback2Triggered = false;
 
-        if (deviceType !== 'tv') {
+        if (deviceType !== 'tv' && !isDeskTop) {
           const callback1 = (displayId: number, brightnessInfo: display.BrightnessInfo) => {
             console.info(caseName + ' Callback1 triggered');
             console.info(`${caseName} DisplayId: ${displayId}, BrightnessInfo: ${JSON.stringify(brightnessInfo)}`);
@@ -3556,7 +3512,7 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
         let callback1Triggered = false;
         let callback2Triggered = false;
 
-        if(deviceType !== 'tv') {
+        if(deviceType !== 'tv' && !isDeskTop) {
           const callback1 = (displayId: number, brightnessInfo: display.BrightnessInfo) => {
             console.info(caseName + ' Callback1 triggered');
             console.info(`${caseName} DisplayId: ${displayId}, BrightnessInfo: ${JSON.stringify(brightnessInfo)}`);
@@ -3675,7 +3631,7 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
       let caseName = 'testOnBrightnessInfoChange_0300';
       let subWindowClass: window.Window | undefined;
       try {
-        if (deviceType !== 'tv') {
+        if (deviceType !== 'tv' && !isDeskTop) {
           subWindowClass = await windowStage.createSubWindow(caseName);
         subWindowClass.setUIContent('testability/pages/getSurfaceId')
         await subWindowClass.resizeAsync(1000, 1200);

@@ -38,6 +38,7 @@ struct ProgressPrivacySensitive {
           })
           .privacySensitive(this.isSensitive)
           .id('progressPrivacySensitive')
+          .key('progressPrivacySensitive')
 
         Row() {
           Button('TRUE').id('trueFlag').width('20%').fontSize(8).onClick(() => {

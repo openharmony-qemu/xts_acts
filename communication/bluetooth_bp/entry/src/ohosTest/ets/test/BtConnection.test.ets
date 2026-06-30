@@ -4249,7 +4249,12 @@ describe('btConnectionTest', () => {
             console.info("[bluetooth_js]connection on/offScanModeChange  is success ");
         } catch (err) {
             console.error("[bluetooth_js]connection on/offScanModeChange is fail , errCode:" + err.code + ",errMessage:" + err.message);
-            expect().assertFail();
+            if (err.code === 801) {
+                console.info("[bluetooth_js]connection on/offScanModeChange is not support");
+                expect(err.code).assertEqual(801);
+            } else {
+                expect().assertFail();
+            }
         }
         done();
     })
@@ -4268,7 +4273,12 @@ describe('btConnectionTest', () => {
             console.info("[bluetooth_js]connection on/offScanModeChange  is success ");
         } catch (err) {
             console.error("[bluetooth_js]connection on/offScanModeChange is fail , errCode:" + err.code + ",errMessage:" + err.message);
-            expect().assertFail();
+            if (err.code === 801) {
+                console.info("[bluetooth_js]connection on/offScanModeChange is not support");
+                expect(err.code).assertEqual(801);
+            } else {
+                expect().assertFail();
+            }
         }
         done();
     })

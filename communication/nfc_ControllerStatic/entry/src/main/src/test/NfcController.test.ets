@@ -232,6 +232,32 @@ export default function nfcControllerTest() {
             done();
         })
 
+        /**
+         * @tc.number SUB_COMMUNICATION_NFC_Cont_static_1000
+         * @tc.name SUB_COMMUNICATION_NFC_Cont_static_1000
+         * @tc.desc Check whether the NFC function is enabled.
+         * @tc.size since 7
+         * @tc.type Function
+         * @tc.level Level 1
+         */
+        it('SUB_COMMUNICATION_NFC_Cont_static_1000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            try {
+                let isNfcSupported: boolean = controller.isNfcSupported();
+                hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_1000 isNfcSupported success');
+                if (isNfcSupported == true) {
+                    hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_1000 Nfc isNfcSupported is ->' + isNfcSupported);
+                    expect(isNfcSupported).assertTrue();
+                } else if (isNfcSupported == false){
+                    hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_1000 Nfc isNfcSupported is ->' + isNfcSupported);
+                    expect(isNfcSupported).assertFalse();
+                }
+            } catch(err) {
+                hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_1000 nfc state receive state err  ->' + err.message);
+                expect().assertFail();
+            }
+            done();
+        })
+
         console.info("*************[nfc_test] start nfc js unit test end*************");
     })
 }

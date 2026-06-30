@@ -41,7 +41,7 @@ struct blank_testcase {
         .key('BlankTest_blank')
       Text('on/off').fontSize(18).height(60)
     }
-    .key('flex')
+    .key('Blank_flex')
     .width('100%')
     .height('100%')
 
