@@ -863,6 +863,23 @@ export default function ActsCommonEventManagerSupportTest() {
         .assertEqual('usual.event.VOLUME_ENCRYPTION_POLICY_SET')
       console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4800 END`)
     })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4900
+     * @tc.number SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4900
+     * @tc.desc   sandbox bundle added/removed common event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4900', Level.LEVEL0, async function () {
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4900 START`)
+      expect(commonEventManager.Support.COMMON_EVENT_SANDBOX_BUNDLE_ADDED)
+        .assertEqual('usual.event.SANDBOX_BUNDLE_ADDED')
+      expect(commonEventManager.Support.COMMON_EVENT_SANDBOX_BUNDLE_REMOVED)
+        .assertEqual('usual.event.SANDBOX_BUNDLE_REMOVED')
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4900 END`)
+    })
     console.info(`${TAG} SUB_NOTIFICATION_CES_SUPPORT_ENUM_TEST END`)
   })
 }
