@@ -2,8 +2,8 @@
 #include "napi/native_api.h"
 #include "native_common.h"
 #include "hilog/log.h"
-#include "oh_archive.h"
-#include "oh_archive_errcode.h"
+#include <filemanagement/archive/oh_archive.h>
+#include <filemanagement/archive/oh_archive_errcode.h>
 #include <cstdint>
 #include <cstdio>
 #include <cstdlib>
