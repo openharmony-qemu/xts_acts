@@ -32,7 +32,7 @@ export default function TupleIteratorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_0100
      * @tc.name testTupleIterator001
-     * @tc.desc Verify TupleIterator scenario 2
+     * @tc.desc Verify Tuple0 iterator next returns done immediately
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -47,7 +47,7 @@ export default function TupleIteratorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_0200
      * @tc.name testTupleIterator002
-     * @tc.desc Verify TupleIterator scenario 3
+     * @tc.desc Verify Tuple1 iterator yields single value then done
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -65,7 +65,7 @@ export default function TupleIteratorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_0300
      * @tc.name testTupleIterator003
-     * @tc.desc Verify TupleIterator scenario 4
+     * @tc.desc Verify Tuple2 iterator yields both values in order then done
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -86,7 +86,7 @@ export default function TupleIteratorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_0400
      * @tc.name testTupleIterator004
-     * @tc.desc Verify TupleIterator scenario 5
+     * @tc.desc Verify Tuple3 iterator yields three mixed-type values in order then done
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -107,7 +107,7 @@ export default function TupleIteratorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_0500
      * @tc.name testTupleIterator005
-     * @tc.desc Verify TupleIterator scenario 6
+     * @tc.desc Verify Tuple10 iterator yields all ten int values 1 through 10 summing to 55
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -136,7 +136,7 @@ export default function TupleIteratorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_0600
      * @tc.name testTupleIterator006
-     * @tc.desc Verify TupleIterator scenario 7
+     * @tc.desc Verify Tuple0 for-of yields zero iterations
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -153,7 +153,7 @@ export default function TupleIteratorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_0700
      * @tc.name testTupleIterator007
-     * @tc.desc Verify TupleIterator scenario 8
+     * @tc.desc Verify Tuple4 iterator collects all four mixed-type values into array in order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -177,7 +177,7 @@ export default function TupleIteratorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_0800
      * @tc.name testTupleIterator008
-     * @tc.desc Verify TupleIterator scenario 10
+     * @tc.desc Verify Tuple1 iterator yields char value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -192,7 +192,7 @@ export default function TupleIteratorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_0900
      * @tc.name testTupleIterator009
-     * @tc.desc Verify TupleIterator scenario 11
+     * @tc.desc Verify Tuple3 iterator yields three double values in order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -211,7 +211,7 @@ export default function TupleIteratorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_1000
      * @tc.name testTupleIterator010
-     * @tc.desc Verify TupleIterator scenario 12
+     * @tc.desc Verify Tuple3 iterator yields int zero min and max boundary values in order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -230,7 +230,7 @@ export default function TupleIteratorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_1100
      * @tc.name testTupleIterator011
-     * @tc.desc Verify TupleIterator scenario 13
+     * @tc.desc Verify Tuple2 iterator yields empty and non-empty string values in order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -247,7 +247,7 @@ export default function TupleIteratorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_1200
      * @tc.name testTupleIterator012
-     * @tc.desc Verify TupleIterator scenario 14
+     * @tc.desc Verify Tuple2 iterator yields true then false boolean values in order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -264,7 +264,7 @@ export default function TupleIteratorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_1300
      * @tc.name testTupleIterator013
-     * @tc.desc Verify TupleIterator scenario 15
+     * @tc.desc Verify Tuple2 iterator works via IterableIterator typed variable
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -283,7 +283,7 @@ export default function TupleIteratorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_1400
      * @tc.name testTupleIterator014
-     * @tc.desc Verify TupleIterator scenario 18
+     * @tc.desc Verify Tuple4 iterator yields four mixed-type values via chained next calls
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -300,7 +300,7 @@ export default function TupleIteratorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_1500
      * @tc.name testTupleIterator015
-     * @tc.desc Verify TupleIterator scenario 19
+     * @tc.desc Verify Tuple1 iterator yields single string then done state
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -318,7 +318,7 @@ export default function TupleIteratorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_1600
      * @tc.name testTupleIterator016
-     * @tc.desc Verify TupleIterator scenario 20
+     * @tc.desc Verify Tuple1 iterator yields nested Tuple2 element preserving inner values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -330,7 +330,7 @@ export default function TupleIteratorTest(): void {
       const result = iterator.next();
       expect(result.done).assertFalse();
       const nested: Tuple2<int, string> = result.value as Tuple2<int, string>;
-      expect(nested === inner).assertTrue();
+      expect(nested).assertEqual(inner);
       expect(nested.$0).assertEqual(1);
       expect(nested.$1).assertEqual("inner");
     });
@@ -338,7 +338,7 @@ export default function TupleIteratorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_1700
      * @tc.name testTupleIterator017
-     * @tc.desc Verify TupleIterator scenario 25
+     * @tc.desc Verify two independent iterators on same Tuple2 have independent state
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -361,7 +361,7 @@ export default function TupleIteratorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_1800
      * @tc.name testTupleIterator018
-     * @tc.desc Verify TupleIterator scenario 26
+     * @tc.desc Verify two iterators on same Tuple3 advance independently at different paces
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -381,7 +381,7 @@ export default function TupleIteratorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_1900
      * @tc.name testTupleIterator019
-     * @tc.desc Verify TupleIterator scenario 27
+     * @tc.desc Verify exhausted iterator done state and fresh iterator restart independently
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -401,7 +401,7 @@ export default function TupleIteratorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_2000
      * @tc.name testTupleIterator020
-     * @tc.desc Verify TupleIterator scenario 28
+     * @tc.desc Verify two independent iterators on Tuple2 yield identical values in parallel
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -425,7 +425,7 @@ export default function TupleIteratorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_2100
      * @tc.name testTupleIterator021
-     * @tc.desc Verify TupleIterator scenario 30
+     * @tc.desc Verify Tuple3 iterator works through Iterable interface
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -823,8 +823,8 @@ export default function TupleIteratorTest(): void {
       const iter2 = tuple.$_iterator();
       const v1 = iter1.next().value as Object;
       const v2 = iter2.next().value as Object;
-      expect(v1 === v2).assertTrue();
-      expect(v1 === obj).assertTrue();
+      expect(v1).assertEqual(v2);
+      expect(v1).assertEqual(obj);
     });
 
     /**
@@ -950,9 +950,9 @@ export default function TupleIteratorTest(): void {
       const r1 = iterator.next().value as Tuple2<int, int>;
       const r2 = iterator.next().value as Tuple2<int, int>;
       const r3 = iterator.next().value as Tuple2<int, int>;
-      expect(r1 === a).assertTrue();
-      expect(r2 === b).assertTrue();
-      expect(r3 === c).assertTrue();
+      expect(r1).assertEqual(a);
+      expect(r2).assertEqual(b);
+      expect(r3).assertEqual(c);
     });
 
     /**
