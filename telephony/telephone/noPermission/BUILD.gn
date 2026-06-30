@@ -17,5 +17,7 @@ group("noPermission") {
     "contacttest:ActsTelephonyContactNoPermissionTest",
     "esimtest:ActsTelephonyEsimNoPermissionTest",
     "radiotest:ActsTelephonyRadioNoPermissionTest",
+    "simtest:ActsTelephonySimNoPermissionTest"
+
   ]
 }
