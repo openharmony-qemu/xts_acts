@@ -1262,7 +1262,6 @@ static napi_value TestAcquireAsyncContext(napi_env env, napi_callback_info info)
 {
     OH_LOG_INFO(LOG_APP, "testTag OH_HiDebug_AcquireAsyncContext start");
     uint64_t ctx = OH_HiDebug_AcquireAsyncContext();
-    OH_LOG_INFO(LOG_APP, "testTag OH_HiDebug_AcquireAsyncContext result: %{public}llu", ctx);
     napi_value result;
     napi_create_bigint_uint64(env, ctx, &result);
     return result;
@@ -1270,12 +1269,11 @@ static napi_value TestAcquireAsyncContext(napi_env env, napi_callback_info info)
 static napi_value TestAcquireAsyncContextMultiple(napi_env env, napi_callback_info info)
 {
     OH_LOG_INFO(LOG_APP, "testTag TestAcquireAsyncContextMultiple start");
-    private static final int LOOP_COUNT = 3;
+    int LOOP_COUNT = 3;
     std::vector<uint64_t> contexts;
     for (int i = 0; i < LOOP_COUNT; i++) {
         uint64_t ctx = OH_HiDebug_AcquireAsyncContext();
         contexts.push_back(ctx);
-        OH_LOG_INFO(LOG_APP, "testTag Acquire context %{public}d: %{public}llu", i, ctx);
     }
     napi_value resultObj;
     napi_create_object(env, &resultObj);
@@ -1299,7 +1297,6 @@ static napi_value TestPushAsyncContext(napi_env env, napi_callback_info info)
     uint64_t ctx = 0;
     bool lossless = false;
     napi_get_value_bigint_uint64(env, args[0], &ctx, &lossless);
-    OH_LOG_INFO(LOG_APP, "testTag OH_HiDebug_PushAsyncContext with ctx: %{public}llu", ctx);
     OH_HiDebug_PushAsyncContext(ctx);
     napi_value result;
     napi_create_int32(env, 0, &result);
@@ -1317,7 +1314,6 @@ static napi_value TestPopAsyncContext(napi_env env, napi_callback_info info)
     uint64_t ctx = 0;
     bool lossless = false;
     napi_get_value_bigint_uint64(env, args[0], &ctx, &lossless);
-    OH_LOG_INFO(LOG_APP, "testTag OH_HiDebug_PopAsyncContext with ctx: %{public}llu", ctx);
     OH_HiDebug_PopAsyncContext(ctx);
     napi_value result;
     napi_create_int32(env, 0, &result);
@@ -1335,7 +1331,6 @@ static napi_value TestReleaseAsyncContext(napi_env env, napi_callback_info info)
     uint64_t ctx = 0;
     bool lossless = false;
     napi_get_value_bigint_uint64(env, args[0], &ctx, &lossless);
-    OH_LOG_INFO(LOG_APP, "testTag OH_HiDebug_ReleaseAsyncContext with ctx: %{public}llu", ctx);
     OH_HiDebug_ReleaseAsyncContext(ctx);
     napi_value result;
     napi_create_int32(env, 0, &result);
@@ -1345,10 +1340,8 @@ static napi_value TestAcquireAndRelease(napi_env env, napi_callback_info info)
 {
     OH_LOG_INFO(LOG_APP, "testTag TestAcquireAndRelease start");
     uint64_t ctx = OH_HiDebug_AcquireAsyncContext();
-    OH_LOG_INFO(LOG_APP, "testTag Acquired context: %{public}llu", ctx);
     if (ctx != 0) {
         OH_HiDebug_ReleaseAsyncContext(ctx);
-        OH_LOG_INFO(LOG_APP, "testTag Released context: %{public}llu", ctx);
     }
     napi_value result;
     napi_create_int32(env, (ctx != 0) ? 1 : 0, &result);
@@ -1401,7 +1394,7 @@ static napi_value TestMultipleContextsPushPop(napi_env env, napi_callback_info i
 static napi_value TestContextStress(napi_env env, napi_callback_info info)
 {
     OH_LOG_INFO(LOG_APP, "testTag TestContextStress start");
-    private static final int LOOP_COUNT = 100;
+    int LOOP_COUNT = 100;
     int successCount = 0;
     for (int i = 0; i < LOOP_COUNT; i++) {
         uint64_t ctx = OH_HiDebug_AcquireAsyncContext();
