@@ -71,7 +71,7 @@ export default function swiperIndicatorIcon() {
         indicatorJson.getArray('indicatorIcon')[0].getDouble('index'));
       console.info("[xgf] [swiperIndicatorIcon_0100] indicatorIcon[0] sourceType: " +
         indicatorJson.getArray('indicatorIcon')[0].getString('sourceType'));
-      expect(indicator).not().assertEqual(undefined);
+      expect(indicatorJson).not().assertEqual(undefined);
       expect(indicatorJson.getArray('indicatorIcon')[0].getDouble('index')).assertEqual(0);
       expect(indicatorJson.getArray('indicatorIcon')[0].getString('sourceType')).assertEqual("MEDIA");
       done();
