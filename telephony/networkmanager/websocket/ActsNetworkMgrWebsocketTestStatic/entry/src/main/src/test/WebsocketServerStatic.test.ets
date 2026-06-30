@@ -38,7 +38,7 @@ function expectFail(info: string = ''): void {
 }
 
 export default function WebsocketServerStaticTest() {
-  describe("WebSocketTest", (): void => {
+  describe("WebsocketServerStaticTest", (): void => {
     /**
      * @tc.name   testNetworkMgrWebSocketWebSocketServerStartStatic0100
      * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerStartStatic_0100
