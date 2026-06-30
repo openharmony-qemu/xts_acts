@@ -177,7 +177,7 @@ let textLineRunExpectData: Array<Array<TextRunData>> = [
         "width": 275.14
       },
       "imageBounds": {
-        "left": 220.86,
+        "left": 222.86,
         "top": 8,
         "right": 470.03,
         "bottom": 41
