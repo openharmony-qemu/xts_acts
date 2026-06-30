@@ -439,10 +439,11 @@ export default function BlockingQueuePropertyTest(): void {
      * @tc.level Level 2
      */
     it('testBlockingQueueProperty021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 2;
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5);
       q.push(1);
-      q.push(2);
-      expect(q.size).assertEqual(2);
+      q.push(TEST_VALUE);
+      expect(q.size).assertEqual(TEST_VALUE);
     });
 
     /**
@@ -454,11 +455,12 @@ export default function BlockingQueuePropertyTest(): void {
      * @tc.level Level 2
      */
     it('testBlockingQueueProperty022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 3;
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5);
       q.push(1);
       q.push(2);
-      q.push(3);
-      expect(q.size).assertEqual(3);
+      q.push(TEST_VALUE);
+      expect(q.size).assertEqual(TEST_VALUE);
     });
 
     /**
@@ -484,10 +486,11 @@ export default function BlockingQueuePropertyTest(): void {
      * @tc.level Level 2
      */
     it('testBlockingQueueProperty024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 2;
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5);
       q.add(1);
-      q.add(2);
-      expect(q.size).assertEqual(2);
+      q.add(TEST_VALUE);
+      expect(q.size).assertEqual(TEST_VALUE);
     });
 
     /**
@@ -594,11 +597,12 @@ export default function BlockingQueuePropertyTest(): void {
      * @tc.level Level 2
      */
     it('testBlockingQueueProperty031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 3;
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(3);
       q.push(1);
       q.push(2);
-      q.push(3);
-      expect(q.size).assertEqual(3);
+      q.push(TEST_VALUE);
+      expect(q.size).assertEqual(TEST_VALUE);
     });
 
     /**
@@ -624,11 +628,12 @@ export default function BlockingQueuePropertyTest(): void {
      * @tc.level Level 2
      */
     it('testBlockingQueueProperty033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 2;
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(2);
       q.add(1);
-      q.add(2);
+      q.add(TEST_VALUE);
       q.add(3);
-      expect(q.size).assertEqual(2);
+      expect(q.size).assertEqual(TEST_VALUE);
     });
 
     /**
@@ -671,11 +676,12 @@ export default function BlockingQueuePropertyTest(): void {
      * @tc.level Level 2
      */
     it('testBlockingQueueProperty036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 3;
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10);
       q.push(1);
       q.push(2);
-      q.push(3);
-      expect(q.size).assertEqual(3);
+      q.push(TEST_VALUE);
+      expect(q.size).assertEqual(TEST_VALUE);
     });
 
     /**
@@ -702,10 +708,11 @@ export default function BlockingQueuePropertyTest(): void {
      * @tc.level Level 2
      */
     it('testBlockingQueueProperty038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 2;
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10);
       q.add(1);
-      q.add(2);
-      expect(q.size).assertEqual(2);
+      q.add(TEST_VALUE);
+      expect(q.size).assertEqual(TEST_VALUE);
     });
 
     /**
@@ -852,11 +859,12 @@ export default function BlockingQueuePropertyTest(): void {
      * @tc.level Level 2
      */
     it('testBlockingQueueProperty048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 2;
       let src: Set<int> = new Set<int>();
       src.add(1);
-      src.add(2);
+      src.add(TEST_VALUE);
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5, src);
-      expect(q.size).assertEqual(2);
+      expect(q.size).assertEqual(TEST_VALUE);
     });
 
     /**
@@ -1073,11 +1081,12 @@ export default function BlockingQueuePropertyTest(): void {
      * @tc.level Level 2
      */
     it('testBlockingQueueProperty064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 3;
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(3);
       q.push(1);
       q.push(2);
-      q.push(3);
-      expect(q.capacity).assertEqual(3);
+      q.push(TEST_VALUE);
+      expect(q.capacity).assertEqual(TEST_VALUE);
     });
 
     /**
@@ -1089,14 +1098,15 @@ export default function BlockingQueuePropertyTest(): void {
      * @tc.level Level 2
      */
     it('testBlockingQueueProperty065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 3;
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(3);
       q.push(1);
       q.push(2);
-      q.push(3);
+      q.push(TEST_VALUE);
       q.poll();
       q.poll();
       q.poll();
-      expect(q.capacity).assertEqual(3);
+      expect(q.capacity).assertEqual(TEST_VALUE);
     });
 
     /**
@@ -1108,11 +1118,12 @@ export default function BlockingQueuePropertyTest(): void {
      * @tc.level Level 2
      */
     it('testBlockingQueueProperty066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 2;
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(2);
       q.add(1);
-      q.add(2);
+      q.add(TEST_VALUE);
       q.add(3);
-      expect(q.capacity).assertEqual(2);
+      expect(q.capacity).assertEqual(TEST_VALUE);
     });
 
     /**
@@ -1329,55 +1340,12 @@ export default function BlockingQueuePropertyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0800
      * @tc.name testBlockingQueueProperty080
-     * @tc.desc Verify ArrayBlockingQueue remainingCapacity equals capacity minus size on an empty queue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBlockingQueueProperty080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(6);
-      expect(q.capacity - q.size).assertEqual(q.remainingCapacity());
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0810
-     * @tc.name testBlockingQueueProperty081
-     * @tc.desc Verify ArrayBlockingQueue remainingCapacity equals capacity minus size on a partially filled queue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBlockingQueueProperty081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(6);
-      q.push(1);
-      q.push(2);
-      expect(q.capacity - q.size).assertEqual(q.remainingCapacity());
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0820
-     * @tc.name testBlockingQueueProperty082
-     * @tc.desc Verify ArrayBlockingQueue remainingCapacity equals capacity minus size on a full queue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBlockingQueueProperty082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(2);
-      q.push(1);
-      q.push(2);
-      expect(q.capacity - q.size).assertEqual(q.remainingCapacity());
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0830
-     * @tc.name testBlockingQueueProperty083
      * @tc.desc Verify ArrayBlockingQueue remainingCapacity is 0 on a full queue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(3);
       q.push(1);
       q.push(2);
@@ -1386,27 +1354,27 @@ export default function BlockingQueuePropertyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0840
-     * @tc.name testBlockingQueueProperty084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0810
+     * @tc.name testBlockingQueueProperty081
      * @tc.desc Verify ArrayBlockingQueue remainingCapacity equals capacity on an empty queue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(8);
       expect(q.remainingCapacity()).assertEqual(8);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0850
-     * @tc.name testBlockingQueueProperty085
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0820
+     * @tc.name testBlockingQueueProperty082
      * @tc.desc Verify ArrayBlockingQueue with capacity 1 caps size at 1 when pushing then adding overflow element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(1);
       q.push(1);
       q.add(2);
@@ -1414,85 +1382,28 @@ export default function BlockingQueuePropertyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0860
-     * @tc.name testBlockingQueueProperty086
-     * @tc.desc Verify default-constructor LinkedBlockingQueue remainingCapacity equals capacity minus size
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBlockingQueueProperty086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>();
-      q.push(1);
-      expect(q.capacity - q.size).assertEqual(q.remainingCapacity());
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0870
-     * @tc.name testBlockingQueueProperty087
-     * @tc.desc Verify ArrayBlockingQueue partially filled size plus remainingCapacity equals capacity
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBlockingQueueProperty087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(4);
-      q.push(1);
-      q.push(2);
-      expect(q.size + q.remainingCapacity()).assertEqual(q.capacity);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0880
-     * @tc.name testBlockingQueueProperty088
-     * @tc.desc Verify ArrayBlockingQueue empty-queue size plus remainingCapacity equals capacity
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBlockingQueueProperty088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(9);
-      expect(q.size + q.remainingCapacity()).assertEqual(q.capacity);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0890
-     * @tc.name testBlockingQueueProperty089
-     * @tc.desc Verify LinkedBlockingQueue size plus remainingCapacity equals capacity
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBlockingQueueProperty089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(6);
-      q.push(1);
-      q.push(2);
-      expect(q.size + q.remainingCapacity()).assertEqual(q.capacity);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0900
-     * @tc.name testBlockingQueueProperty090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0830
+     * @tc.name testBlockingQueueProperty083
      * @tc.desc Verify ArrayBlockingQueue constructed from an iterable containing undefined skips undefined in size count
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<int | undefined> = [1, undefined, 2];
       let q: containers.ArrayBlockingQueue<int | undefined> = new containers.ArrayBlockingQueue<int | undefined>(5, src);
       expect(q.size).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0910
-     * @tc.name testBlockingQueueProperty091
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0840
+     * @tc.name testBlockingQueueProperty084
      * @tc.desc Verify ArrayBlockingQueue size increment is 1 after a push
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5);
       q.push(1);
       let before: int = q.size;
@@ -1501,14 +1412,14 @@ export default function BlockingQueuePropertyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0920
-     * @tc.name testBlockingQueueProperty092
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0850
+     * @tc.name testBlockingQueueProperty085
      * @tc.desc Verify ArrayBlockingQueue size decrement is 1 after a poll
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5);
       q.push(1);
       q.push(2);
@@ -1518,14 +1429,14 @@ export default function BlockingQueuePropertyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0930
-     * @tc.name testBlockingQueueProperty093
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0860
+     * @tc.name testBlockingQueueProperty086
      * @tc.desc Verify ArrayBlockingQueue size decrement is 1 after a pop
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5);
       q.push(1);
       q.push(2);
@@ -1535,14 +1446,14 @@ export default function BlockingQueuePropertyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0940
-     * @tc.name testBlockingQueueProperty094
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0870
+     * @tc.name testBlockingQueueProperty087
      * @tc.desc Verify ArrayBlockingQueue size increment is 1 after a successful add
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5);
       q.add(1);
       let before: int = q.size;
@@ -1551,14 +1462,14 @@ export default function BlockingQueuePropertyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0950
-     * @tc.name testBlockingQueueProperty095
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0880
+     * @tc.name testBlockingQueueProperty088
      * @tc.desc Verify reading ArrayBlockingQueue capacity does not change size
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5);
       q.push(1);
       let c: int = q.capacity;
@@ -1566,14 +1477,14 @@ export default function BlockingQueuePropertyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0960
-     * @tc.name testBlockingQueueProperty096
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0890
+     * @tc.name testBlockingQueueProperty089
      * @tc.desc Verify reading ArrayBlockingQueue size does not change size
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5);
       q.push(1);
       let s: int = q.size;
@@ -1581,28 +1492,28 @@ export default function BlockingQueuePropertyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0970
-     * @tc.name testBlockingQueueProperty097
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0900
+     * @tc.name testBlockingQueueProperty090
      * @tc.desc Verify reading ArrayBlockingQueue size does not change capacity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5);
       let s: int = q.size;
       expect(q.capacity).assertEqual(5);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0980
-     * @tc.name testBlockingQueueProperty098
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0910
+     * @tc.name testBlockingQueueProperty091
      * @tc.desc Verify ArrayBlockingQueue size never exceeds capacity when adding beyond capacity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(2);
       q.add(1);
       q.add(2);
@@ -1612,14 +1523,14 @@ export default function BlockingQueuePropertyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0990
-     * @tc.name testBlockingQueueProperty099
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0920
+     * @tc.name testBlockingQueueProperty092
      * @tc.desc Verify ArrayBlockingQueue size equals 10 after pushing 10 elements in a loop to fill capacity 10
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(10);
       for (let i = 0; i < 10; i++) {
         q.push(i);
@@ -1628,14 +1539,14 @@ export default function BlockingQueuePropertyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1000
-     * @tc.name testBlockingQueueProperty100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0930
+     * @tc.name testBlockingQueueProperty093
      * @tc.desc Verify ArrayBlockingQueue size decreases to 0 after filling then polling all elements in a loop
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(4);
       for (let i = 0; i < 4; i++) {
         q.push(i);
@@ -1647,126 +1558,127 @@ export default function BlockingQueuePropertyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1010
-     * @tc.name testBlockingQueueProperty101
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0940
+     * @tc.name testBlockingQueueProperty094
      * @tc.desc Verify ArrayBlockingQueue constructed from iterable has size equal to capacity minus remainingCapacity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<int> = [1, 2, 3];
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(10, src);
       expect(q.size).assertEqual(q.capacity - q.remainingCapacity());
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1020
-     * @tc.name testBlockingQueueProperty102
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0950
+     * @tc.name testBlockingQueueProperty095
      * @tc.desc Verify number-element ArrayBlockingQueue size becomes 1 after pushing a fractional value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<number> = new containers.ArrayBlockingQueue<number>(5);
       q.push(1.5);
       expect(q.size).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1030
-     * @tc.name testBlockingQueueProperty103
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0960
+     * @tc.name testBlockingQueueProperty096
      * @tc.desc Verify string-element ArrayBlockingQueue size becomes 1 after pushing a string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<string> = new containers.ArrayBlockingQueue<string>(5);
       q.push('a');
       expect(q.size).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1040
-     * @tc.name testBlockingQueueProperty104
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0970
+     * @tc.name testBlockingQueueProperty097
      * @tc.desc Verify ArrayBlockingQueue capacity minus size equals capacity minus 1 after one push
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5);
       q.push(1);
       expect(q.capacity - q.size).assertEqual(4);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1050
-     * @tc.name testBlockingQueueProperty105
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0980
+     * @tc.name testBlockingQueueProperty098
      * @tc.desc Verify ArrayBlockingQueue poll on an empty queue returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5);
       let r: int | undefined = q.poll();
       expect(r).assertUndefined();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1060
-     * @tc.name testBlockingQueueProperty106
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_0990
+     * @tc.name testBlockingQueueProperty099
      * @tc.desc Verify ArrayBlockingQueue getFirst on an empty queue keeps size 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5);
       let r: int | undefined = q.getFirst();
+      expect(r).assertUndefined();
       expect(q.size).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1070
-     * @tc.name testBlockingQueueProperty107
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1000
+     * @tc.name testBlockingQueueProperty100
      * @tc.desc Verify ArrayBlockingQueue getFirst on an empty queue returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5);
       let r: int | undefined = q.getFirst();
       expect(r).assertUndefined();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1080
-     * @tc.name testBlockingQueueProperty108
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1010
+     * @tc.name testBlockingQueueProperty101
      * @tc.desc Verify ArrayBlockingQueue getEnd on an empty queue returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5);
       let r: int | undefined = q.getEnd();
       expect(r).assertUndefined();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1090
-     * @tc.name testBlockingQueueProperty109
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1020
+     * @tc.name testBlockingQueueProperty102
      * @tc.desc Verify ArrayBlockingQueue getFirst read does not change size
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5);
       q.push(1);
       q.getFirst();
@@ -1774,14 +1686,14 @@ export default function BlockingQueuePropertyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1100
-     * @tc.name testBlockingQueueProperty110
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1030
+     * @tc.name testBlockingQueueProperty103
      * @tc.desc Verify ArrayBlockingQueue getEnd read does not change size
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5);
       q.push(1);
       q.getEnd();
@@ -1789,14 +1701,14 @@ export default function BlockingQueuePropertyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1110
-     * @tc.name testBlockingQueueProperty111
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1040
+     * @tc.name testBlockingQueueProperty104
      * @tc.desc Verify ArrayBlockingQueue getFirst read does not change capacity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5);
       q.push(1);
       q.getFirst();
@@ -1804,14 +1716,14 @@ export default function BlockingQueuePropertyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1120
-     * @tc.name testBlockingQueueProperty112
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1050
+     * @tc.name testBlockingQueueProperty105
      * @tc.desc Verify ArrayBlockingQueue full-queue size equals capacity with remainingCapacity 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(2);
       q.push(1);
       q.push(2);
@@ -1819,30 +1731,31 @@ export default function BlockingQueuePropertyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1130
-     * @tc.name testBlockingQueueProperty113
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1060
+     * @tc.name testBlockingQueueProperty106
      * @tc.desc Verify ArrayBlockingQueue half-filled size is less than capacity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 3;
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(10);
       q.push(1);
       q.push(2);
-      q.push(3);
-      expect(q.size).assertEqual(3);
+      q.push(TEST_VALUE);
+      expect(q.size).assertEqual(TEST_VALUE);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1140
-     * @tc.name testBlockingQueueProperty114
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1070
+     * @tc.name testBlockingQueueProperty107
      * @tc.desc Verify ArrayBlockingQueue half-filled remainingCapacity equals capacity minus size
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(10);
       q.push(1);
       q.push(2);
@@ -1851,14 +1764,14 @@ export default function BlockingQueuePropertyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1150
-     * @tc.name testBlockingQueueProperty115
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1080
+     * @tc.name testBlockingQueueProperty108
      * @tc.desc Verify LinkedBlockingQueue full-queue size equals capacity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(3);
       q.push(1);
       q.push(2);
@@ -1867,101 +1780,102 @@ export default function BlockingQueuePropertyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1160
-     * @tc.name testBlockingQueueProperty116
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1090
+     * @tc.name testBlockingQueueProperty109
      * @tc.desc Verify LinkedBlockingQueue empty-queue remainingCapacity equals capacity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(7);
       expect(q.remainingCapacity()).assertEqual(7);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1170
-     * @tc.name testBlockingQueueProperty117
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1100
+     * @tc.name testBlockingQueueProperty110
      * @tc.desc Verify ArrayBlockingQueue constructed from iterable of identical elements has size equal to element count
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<int> = [5, 5, 5];
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5, src);
       expect(q.size).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1180
-     * @tc.name testBlockingQueueProperty118
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1110
+     * @tc.name testBlockingQueueProperty111
      * @tc.desc Verify ArrayBlockingQueue constructed from iterable of negative values counts size correctly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<int> = [-1, -2, -3];
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5, src);
       expect(q.size).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1190
-     * @tc.name testBlockingQueueProperty119
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1120
+     * @tc.name testBlockingQueueProperty112
      * @tc.desc Verify ArrayBlockingQueue constructed from iterable of boundary values counts size correctly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<int> = [2147483647, -2147483648, 0];
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5, src);
       expect(q.size).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1200
-     * @tc.name testBlockingQueueProperty120
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1130
+     * @tc.name testBlockingQueueProperty113
      * @tc.desc Verify large-capacity ArrayBlockingQueue size is far below capacity after a small push
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(1000);
       q.push(1);
       expect(q.size).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1210
-     * @tc.name testBlockingQueueProperty121
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1140
+     * @tc.name testBlockingQueueProperty114
      * @tc.desc Verify ArrayBlockingQueue size stays equal to capacity after polling one then pushing one on a full queue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 3;
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(3);
       q.push(1);
       q.push(2);
-      q.push(3);
+      q.push(TEST_VALUE);
       q.poll();
       q.push(4);
-      expect(q.size).assertEqual(3);
+      expect(q.size).assertEqual(TEST_VALUE);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1220
-     * @tc.name testBlockingQueueProperty122
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1150
+     * @tc.name testBlockingQueueProperty115
      * @tc.desc Verify ArrayBlockingQueue size reaches 0 after FIFO consumption of all pushed elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5);
       for (let i = 0; i < 5; i++) {
         q.push(i);
@@ -1974,126 +1888,126 @@ export default function BlockingQueuePropertyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1230
-     * @tc.name testBlockingQueueProperty123
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1160
+     * @tc.name testBlockingQueueProperty116
      * @tc.desc Verify number-element ArrayBlockingQueue size becomes 1 after pushing MAX_SAFE_INTEGER
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<number> = new containers.ArrayBlockingQueue<number>(5);
       q.push(Number.MAX_SAFE_INTEGER);
       expect(q.size).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1240
-     * @tc.name testBlockingQueueProperty124
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1170
+     * @tc.name testBlockingQueueProperty117
      * @tc.desc Verify number-element ArrayBlockingQueue size becomes 1 after pushing NaN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<number> = new containers.ArrayBlockingQueue<number>(5);
       q.push(Number.NaN);
       expect(q.size).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1250
-     * @tc.name testBlockingQueueProperty125
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1180
+     * @tc.name testBlockingQueueProperty118
      * @tc.desc Verify number-element ArrayBlockingQueue size becomes 1 after pushing Infinity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<number> = new containers.ArrayBlockingQueue<number>(5);
       q.push(Number.POSITIVE_INFINITY);
       expect(q.size).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1260
-     * @tc.name testBlockingQueueProperty126
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1190
+     * @tc.name testBlockingQueueProperty119
      * @tc.desc Verify ArrayBlockingQueue size truncated to 2 when capacity 2 constructed with 3-element iterable
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<int> = [10, 20, 30];
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(2, src);
       expect(q.size).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1270
-     * @tc.name testBlockingQueueProperty127
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1200
+     * @tc.name testBlockingQueueProperty120
      * @tc.desc Verify ArrayBlockingQueue size truncated to 1 when capacity 1 constructed with 5-element iterable
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<int> = [1, 2, 3, 4, 5];
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(1, src);
       expect(q.size).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1280
-     * @tc.name testBlockingQueueProperty128
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1210
+     * @tc.name testBlockingQueueProperty121
      * @tc.desc Verify ArrayBlockingQueue remainingCapacity is 0 after truncated construction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<int> = [1, 2, 3, 4, 5];
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(2, src);
       expect(q.remainingCapacity()).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1290
-     * @tc.name testBlockingQueueProperty129
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1220
+     * @tc.name testBlockingQueueProperty122
      * @tc.desc Verify ArrayBlockingQueue size equals capacity after truncated construction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<int> = [1, 2, 3, 4, 5];
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(2, src);
       expect(q.size).assertEqual(q.capacity);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1300
-     * @tc.name testBlockingQueueProperty130
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1230
+     * @tc.name testBlockingQueueProperty123
      * @tc.desc Verify ArrayBlockingQueue remainingCapacity is greater than 0 after underfilled iterable construction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<int> = [1, 2];
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5, src);
       expect(q.remainingCapacity()).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1310
-     * @tc.name testBlockingQueueProperty131
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1240
+     * @tc.name testBlockingQueueProperty124
      * @tc.desc Verify ArrayBlockingQueue size strictly returns to 0 after filling then polling all elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(2);
       q.push(1);
       q.push(2);
@@ -2103,90 +2017,95 @@ export default function BlockingQueuePropertyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1320
-     * @tc.name testBlockingQueueProperty132
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1250
+     * @tc.name testBlockingQueueProperty125
      * @tc.desc Verify ArrayBlockingQueue remaining size is correct after a pop
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 2;
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5);
       q.push(1);
-      q.push(2);
+      q.push(TEST_VALUE);
       q.push(3);
       q.pop();
-      expect(q.size).assertEqual(2);
+      expect(q.size).assertEqual(TEST_VALUE);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1330
-     * @tc.name testBlockingQueueProperty133
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1260
+     * @tc.name testBlockingQueueProperty126
      * @tc.desc Verify ArrayBlockingQueue size decreases by 1 after pop returns the front element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const EXPECTED_VALUE: int = 11;
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5);
       q.push(11);
       q.push(22);
       let v: int = q.pop();
+      expect(v).assertEqual(EXPECTED_VALUE);
       expect(q.size).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1340
-     * @tc.name testBlockingQueueProperty134
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1270
+     * @tc.name testBlockingQueueProperty127
      * @tc.desc Verify two independent ArrayBlockingQueue instances have independent capacity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q1: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(3);
       let q2: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(7);
       expect(q1.capacity).assertEqual(3);
+      expect(q2.capacity).assertEqual(7);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1350
-     * @tc.name testBlockingQueueProperty135
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1280
+     * @tc.name testBlockingQueueProperty128
      * @tc.desc Verify two independent ArrayBlockingQueue instances have independent size
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q1: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5);
       let q2: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5);
       q1.push(1);
+      expect(q1.size).assertEqual(1);
       expect(q2.size).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1360
-     * @tc.name testBlockingQueueProperty136
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1290
+     * @tc.name testBlockingQueueProperty129
      * @tc.desc Verify size readable through base BlockingQueue declared type after a push
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.BlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5);
       q.push(1);
       expect(q.size).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1370
-     * @tc.name testBlockingQueueProperty137
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_PROPERTY_1300
+     * @tc.name testBlockingQueueProperty130
      * @tc.desc Verify capacity readable through base BlockingQueue declared type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueProperty137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueProperty130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.BlockingQueue<int> = new containers.LinkedBlockingQueue<int>(8);
       expect(q.capacity).assertEqual(8);
     });

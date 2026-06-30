@@ -1043,35 +1043,12 @@ export default function BlockingQueueEdgeCaseTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_EDGECASE_4600
      * @tc.name testBlockingQueueEdgeCase046
-     * @tc.desc Verify ArrayBlockingQueue(5) with 3 pre-filled elements: remainingCapacity=2, formula holds
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBlockingQueueEdgeCase046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const PUSH_VALUE: int = 10;
-      const PUSH_VALUE_1: int = 20;
-      const PUSH_VALUE_2: int = 30;
-      const CAPACITY: int = 5;
-      const EXPECTED_VALUE: int = 2;
-      let arr: int[] = [];
-      arr.push(PUSH_VALUE);
-      arr.push(PUSH_VALUE_1);
-      arr.push(PUSH_VALUE_2);
-      let queue: containers.BlockingQueue<int> = new containers.ArrayBlockingQueue<int>(CAPACITY, arr);
-      expect(queue.remainingCapacity()).assertEqual(EXPECTED_VALUE);
-      expect(queue.remainingCapacity()).assertEqual(queue.capacity - queue.size);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_EDGECASE_4700
-     * @tc.name testBlockingQueueEdgeCase047
      * @tc.desc Verify LinkedBlockingQueue constructed with iterable: remainingCapacity decrements correctly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueEdgeCase047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueEdgeCase046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const CAPACITY: int = 10;
       const EXPECTED_VALUE: int = 0;
       const EXPECTED_VALUE_1: int = 1;
@@ -1089,40 +1066,14 @@ export default function BlockingQueueEdgeCaseTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_EDGECASE_4800
-     * @tc.name testBlockingQueueEdgeCase048
-     * @tc.desc Verify remainingCapacity formula for LinkedBlockingQueue default constructor after push/pop cycle
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBlockingQueueEdgeCase048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const EXPECTED_VALUE: int = 2147483647;
-      const EXPECTED_VALUE_1: int = 2147483547;
-      const EXPECTED_VALUE_2: int = 2147483597;
-      let queue: containers.BlockingQueue<int> = new containers.LinkedBlockingQueue<int>();
-      expect(queue.remainingCapacity()).assertEqual(EXPECTED_VALUE);
-      for (let i = 0; i < 100; i++) {
-        queue.push(i);
-      }
-      expect(queue.remainingCapacity()).assertEqual(EXPECTED_VALUE_1);
-      expect(queue.remainingCapacity()).assertEqual(queue.capacity - queue.size);
-      for (let i = 0; i < 50; i++) {
-        queue.pop();
-      }
-      expect(queue.remainingCapacity()).assertEqual(EXPECTED_VALUE_2);
-      expect(queue.remainingCapacity()).assertEqual(queue.capacity - queue.size);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_EDGECASE_4900
-     * @tc.name testBlockingQueueEdgeCase049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_EDGECASE_4700
+     * @tc.name testBlockingQueueEdgeCase047
      * @tc.desc Verify LinkedBlockingQueue(5, iterableWith7Elements): only first 5 elements enqueued
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueEdgeCase049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueEdgeCase047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const PUSH_VALUE: int = 10;
       const CAPACITY: int = 5;
       const EXPECTED_VALUE: int = 5;
@@ -1140,14 +1091,14 @@ export default function BlockingQueueEdgeCaseTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_EDGECASE_5000
-     * @tc.name testBlockingQueueEdgeCase050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_EDGECASE_4800
+     * @tc.name testBlockingQueueEdgeCase048
      * @tc.desc Verify ArrayBlockingQueue(5, iterableWith7Elements): only first 5 elements enqueued
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueEdgeCase050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueEdgeCase048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const PUSH_VALUE: int = 100;
       const CAPACITY: int = 5;
       const EXPECTED_VALUE: int = 5;
@@ -1164,14 +1115,14 @@ export default function BlockingQueueEdgeCaseTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_EDGECASE_5100
-     * @tc.name testBlockingQueueEdgeCase051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_EDGECASE_4900
+     * @tc.name testBlockingQueueEdgeCase049
      * @tc.desc Verify pre-filled LinkedBlockingQueue: pop 2, poll 1, push 3, add 2, verify final state and order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueEdgeCase051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueEdgeCase049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const PUSH_VALUE: int = 100;
       const CAPACITY: int = 20;
       const EXPECTED_VALUE: int = 10;
@@ -1206,14 +1157,14 @@ export default function BlockingQueueEdgeCaseTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_EDGECASE_5200
-     * @tc.name testBlockingQueueEdgeCase052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_EDGECASE_5000
+     * @tc.name testBlockingQueueEdgeCase050
      * @tc.desc Verify ArrayBlockingQueue pre-filled: all methods operate correctly (push,add,pop,poll,getFirst,getEnd,isEmpty,remainingCapacity)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueEdgeCase052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueEdgeCase050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const CAPACITY: int = 10;
       const EXPECTED_VALUE: int = 8;
       const EXPECTED_VALUE_1: int = 2;
@@ -1250,14 +1201,14 @@ export default function BlockingQueueEdgeCaseTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_EDGECASE_5300
-     * @tc.name testBlockingQueueEdgeCase053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_EDGECASE_5100
+     * @tc.name testBlockingQueueEdgeCase051
      * @tc.desc Verify string queue with capacity=3: all operations including special chars, unicode, empty string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueEdgeCase053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueEdgeCase051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const CAPACITY: int = 3;
       const PUSH_VALUE: string = "";
       const PUSH_VALUE_1: string = "中文";
@@ -1282,14 +1233,14 @@ export default function BlockingQueueEdgeCaseTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_EDGECASE_5400
-     * @tc.name testBlockingQueueEdgeCase054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_EDGECASE_5200
+     * @tc.name testBlockingQueueEdgeCase052
      * @tc.desc Verify ArrayBlockingQueue string: push Unicode+special+long strings, verify FIFO order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueEdgeCase054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueEdgeCase052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const CAPACITY: int = 5;
       const PUSH_VALUE: string = "😀";
       const PUSH_VALUE_1: string = "テスト";

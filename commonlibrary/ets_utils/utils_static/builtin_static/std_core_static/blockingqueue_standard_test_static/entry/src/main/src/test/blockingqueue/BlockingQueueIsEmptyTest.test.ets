@@ -1313,11 +1313,12 @@ export default function BlockingQueueIsEmptyTest(): void {
      * @tc.level Level 2
      */
     it('testBlockingQueueIsEmpty079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 42;
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10);
-      q.push(42);
+      q.push(TEST_VALUE);
       q.isEmpty();
       let v: int | undefined = q.getFirst();
-      expect(v).assertEqual(42);
+      expect(v).assertEqual(TEST_VALUE);
     });
 
     /**
@@ -1329,11 +1330,12 @@ export default function BlockingQueueIsEmptyTest(): void {
      * @tc.level Level 2
      */
     it('testBlockingQueueIsEmpty080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 42;
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(10);
-      q.push(42);
+      q.push(TEST_VALUE);
       q.isEmpty();
       let v: int | undefined = q.getFirst();
-      expect(v).assertEqual(42);
+      expect(v).assertEqual(TEST_VALUE);
     });
 
     /**
