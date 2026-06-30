@@ -23,7 +23,6 @@
 #define SUCCESS 1
 #define FAIL (-1)
 
-#define ARCHIVE_OK 0
 
 #define OH_ARCHIVE_COMPRESS_LEVEL_SIX 6
 
@@ -65,31 +64,31 @@ static napi_value Archive_Compress(napi_env env, napi_callback_info info)
     NAPI_ASSERT(env, arc != nullptr, "OH_Archive_Writer_OpenFile failed");
     
     ret = OH_Archive_Writer_SetCompressMethod(arc, OH_ARCHIVE_COMPRESS_DEFLATE, OH_ARCHIVE_COMPRESS_LEVEL_SIX);
-    NAPI_ASSERT(env, ret == ARCHIVE_OK, "Writer_SetCompressMethod failed");
+    NAPI_ASSERT(env, ret == OH_ARCHIVE_OK, "Writer_SetCompressMethod failed");
     
     OH_Archive_ProgressHandlerWithData progressHandlerFunc = progressHandler;
     ret = OH_Archive_Writer_SetProgressHandlerWithData(arc, progressHandlerFunc, nullptr);
-    NAPI_ASSERT(env, ret == ARCHIVE_OK, "Writer_SetProgressHandlerWithDat failed");
+    NAPI_ASSERT(env, ret == OH_ARCHIVE_OK, "Writer_SetProgressHandlerWithDat failed");
     
     ret = OH_Archive_Writer_Add(arc, src.data(), 1);
-    NAPI_ASSERT(env, ret == ARCHIVE_OK, "OH_Archive_Writer_Add failed");
+    NAPI_ASSERT(env, ret == OH_ARCHIVE_OK, "OH_Archive_Writer_Add failed");
     
     ret = OH_Archive_Writer_Close(arc);
-    NAPI_ASSERT(env, ret == ARCHIVE_OK, "Writer_Close failed");
+    NAPI_ASSERT(env, ret == OH_ARCHIVE_OK, "Writer_Close failed");
 
     OH_Archive_Reader_Ctx ctx = OH_Archive_Reader_OpenFile(zipfile.c_str());
     NAPI_ASSERT(env, ctx != nullptr, "OH_Archive_Reader_OpenFile failed ");
 
     int userData[2] = {0};
     ret = OH_Archive_Reader_SetProgressHandlerWithData(ctx, progressHandlerFunc, (void *)userData);
-    NAPI_ASSERT(env, ret == ARCHIVE_OK, "Reader_SetProgressHandlerWithData failed");
+    NAPI_ASSERT(env, ret == OH_ARCHIVE_OK, "Reader_SetProgressHandlerWithData failed");
 
     const char *outDir = "/data/storage/el2/base/files";
     ret = OH_Archive_Reader_ExtractAllFile(ctx, outDir);
-    NAPI_ASSERT(env, ret == ARCHIVE_OK, "OH_Archive_Reader_ExtractAllFile failed");
+    NAPI_ASSERT(env, ret == OH_ARCHIVE_OK, "OH_Archive_Reader_ExtractAllFile failed");
 
     ret = OH_Archive_Reader_Close(ctx);
-    NAPI_ASSERT(env, ret == ARCHIVE_OK, "OH_Archive_Reader_Close failed");
+    NAPI_ASSERT(env, ret == OH_ARCHIVE_OK, "OH_Archive_Reader_Close failed");
 
     napi_value result = nullptr;
     napi_create_int32(env, SUCCESS, &result);
@@ -123,31 +122,31 @@ static napi_value Archive_Compress_Muti_File(napi_env env, napi_callback_info in
     NAPI_ASSERT(env, arc != nullptr, "Writer_OpenFile failed");
     
     ret = OH_Archive_Writer_SetCompressMethod(arc, OH_ARCHIVE_NO_COMPRESSION, int32_t(8)); // 压缩等级为8
-    NAPI_ASSERT(env, ret == ARCHIVE_OK, "Writer_SetCompressMethod failed");
+    NAPI_ASSERT(env, ret == OH_ARCHIVE_OK, "Writer_SetCompressMethod failed");
     
     OH_Archive_ProgressHandlerWithData progressHandlerFunc = progressHandler;
     ret = OH_Archive_Writer_SetProgressHandlerWithData(arc, progressHandlerFunc, nullptr);
-    NAPI_ASSERT(env, ret == ARCHIVE_OK, "Writer_SetProgressHandlerWithDat failed");
+    NAPI_ASSERT(env, ret == OH_ARCHIVE_OK, "Writer_SetProgressHandlerWithDat failed");
     
     ret = OH_Archive_Writer_Add(arc, src_muti.data(), fileNum);
-    NAPI_ASSERT(env, ret == ARCHIVE_OK, "OH_Archive_Writer_Add failed");
+    NAPI_ASSERT(env, ret == OH_ARCHIVE_OK, "OH_Archive_Writer_Add failed");
     
     ret = OH_Archive_Writer_Close(arc);
-    NAPI_ASSERT(env, ret == ARCHIVE_OK, "Writer_Close failed");
+    NAPI_ASSERT(env, ret == OH_ARCHIVE_OK, "Writer_Close failed");
 
     OH_Archive_Reader_Ctx ctx = OH_Archive_Reader_OpenFile(zip_muti.c_str());
     NAPI_ASSERT(env, ctx != nullptr, "OH_Archive_Reader_OpenFile failed ");
 
     int userData[2] = {0};
     ret = OH_Archive_Reader_SetProgressHandlerWithData(ctx, progressHandlerFunc, (void *)userData);
-    NAPI_ASSERT(env, ret == ARCHIVE_OK, "Reader_SetProgressHandlerWithData failed");
+    NAPI_ASSERT(env, ret == OH_ARCHIVE_OK, "Reader_SetProgressHandlerWithData failed");
 
     const char *outDir = "/data/storage/el2/base/files";
     ret = OH_Archive_Reader_ExtractAllFile(ctx, outDir);
-    NAPI_ASSERT(env, ret == ARCHIVE_OK, "OH_Archive_Reader_ExtractAllFile failed");
+    NAPI_ASSERT(env, ret == OH_ARCHIVE_OK, "OH_Archive_Reader_ExtractAllFile failed");
 
     ret = OH_Archive_Reader_Close(ctx);
-    NAPI_ASSERT(env, ret == ARCHIVE_OK, "OH_Archive_Reader_Close failed");
+    NAPI_ASSERT(env, ret == OH_ARCHIVE_OK, "OH_Archive_Reader_Close failed");
 
     napi_value result = nullptr;
     napi_create_int32(env, SUCCESS, &result);
@@ -174,17 +173,17 @@ static napi_value Archive_Compress_Cancel(napi_env env, napi_callback_info info)
     NAPI_ASSERT(env, arc != nullptr, "Writer_OpenFile failed");
     
     ret = OH_Archive_Writer_SetCompressMethod(arc, OH_ARCHIVE_COMPRESS_DEFLATE, OH_ARCHIVE_COMPRESS_LEVEL_SIX);
-    NAPI_ASSERT(env, ret == ARCHIVE_OK, "Writer_SetCompressMethod failed");
+    NAPI_ASSERT(env, ret == OH_ARCHIVE_OK, "Writer_SetCompressMethod failed");
     
     OH_Archive_ProgressHandlerWithData progressHandlerFunc = progressHandlerWithCancel;
     ret = OH_Archive_Writer_SetProgressHandlerWithData(arc, progressHandlerFunc, nullptr);
-    NAPI_ASSERT(env, ret == ARCHIVE_OK, "Writer_SetProgressHandlerWithDat failed");
+    NAPI_ASSERT(env, ret == OH_ARCHIVE_OK, "Writer_SetProgressHandlerWithDat failed");
     
     ret = OH_Archive_Writer_Add(arc, src3.data(), 1);
     NAPI_ASSERT(env, ret == OH_ARCHIVE_CANCEL_ERROR, "OH_Archive_Writer_Add failed");
     
     ret = OH_Archive_Writer_Close(arc);
-    NAPI_ASSERT(env, ret == ARCHIVE_OK, "Writer_Close failed");
+    NAPI_ASSERT(env, ret == OH_ARCHIVE_OK, "Writer_Close failed");
 
     napi_value result = nullptr;
     napi_create_int32(env, SUCCESS, &result);
@@ -214,17 +213,17 @@ static napi_value Archive_Decompress_Cancel(napi_env env, napi_callback_info inf
     NAPI_ASSERT(env, arc != nullptr, "Writer_OpenFile failed");
     
     ret = OH_Archive_Writer_SetCompressMethod(arc, OH_ARCHIVE_COMPRESS_DEFLATE, OH_ARCHIVE_COMPRESS_LEVEL_SIX);
-    NAPI_ASSERT(env, ret == ARCHIVE_OK, "Writer_SetCompressMethod failed");
+    NAPI_ASSERT(env, ret == OH_ARCHIVE_OK, "Writer_SetCompressMethod failed");
     
     OH_Archive_ProgressHandlerWithData progressHandlerFunc = progressHandler;
     ret = OH_Archive_Writer_SetProgressHandlerWithData(arc, progressHandlerFunc, nullptr);
-    NAPI_ASSERT(env, ret == ARCHIVE_OK, "Writer_SetProgressHandlerWithDat failed");
+    NAPI_ASSERT(env, ret == OH_ARCHIVE_OK, "Writer_SetProgressHandlerWithDat failed");
     
     ret = OH_Archive_Writer_Add(arc, src_de.data(), 1);
-    NAPI_ASSERT(env, ret == ARCHIVE_OK, "004 OH_Archive_Writer_Add failed");
+    NAPI_ASSERT(env, ret == OH_ARCHIVE_OK, "004 OH_Archive_Writer_Add failed");
     
     ret = OH_Archive_Writer_Close(arc);
-    NAPI_ASSERT(env, ret == ARCHIVE_OK, "Writer_Close failed");
+    NAPI_ASSERT(env, ret == OH_ARCHIVE_OK, "Writer_Close failed");
 
     OH_Archive_Reader_Ctx ctx = OH_Archive_Reader_OpenFile(unz_cancel.c_str());
     NAPI_ASSERT(env, ctx != nullptr, "OH_Archive_Reader_OpenFile failed ");
@@ -232,14 +231,14 @@ static napi_value Archive_Decompress_Cancel(napi_env env, napi_callback_info inf
     OH_Archive_ProgressHandlerWithData progressHandlercancel = progressHandlerWithCancel;
     int userData[2] = {0};
     ret = OH_Archive_Reader_SetProgressHandlerWithData(ctx, progressHandlercancel, (void *)userData);
-    NAPI_ASSERT(env, ret == ARCHIVE_OK, "Reader_SetProgressHandlerWithData failed");
+    NAPI_ASSERT(env, ret == OH_ARCHIVE_OK, "Reader_SetProgressHandlerWithData failed");
 
     const char *outDir = "/data/storage/el2/base/files";
     ret = OH_Archive_Reader_ExtractAllFile(ctx, outDir);
     NAPI_ASSERT(env, ret == OH_ARCHIVE_CANCEL_ERROR, "OH_Archive_Reader_ExtractAllFile failed");
 
     ret = OH_Archive_Reader_Close(ctx);
-    NAPI_ASSERT(env, ret == ARCHIVE_OK, "OH_Archive_Reader_Close failed");
+    NAPI_ASSERT(env, ret == OH_ARCHIVE_OK, "OH_Archive_Reader_Close failed");
 
     napi_value result = nullptr;
     napi_create_int32(env, SUCCESS, &result);
@@ -281,7 +280,7 @@ static napi_value Archive_Compress_Abnormal(napi_env env, napi_callback_info inf
     NAPI_ASSERT(env, ret == OH_ARCHIVE_PARAM_ERROR, "Writer_SetCompressMethod abnormal params failed3");
 
     ret = OH_Archive_Writer_SetCompressMethod(arc, OH_ARCHIVE_COMPRESS_DEFLATE, OH_ARCHIVE_COMPRESS_LEVEL_SIX);
-    NAPI_ASSERT(env, ret == ARCHIVE_OK, "Writer_SetCompressMethod failed");
+    NAPI_ASSERT(env, ret == OH_ARCHIVE_OK, "Writer_SetCompressMethod failed");
 
     OH_Archive_ProgressHandlerWithData progressHandlerFunc = progressHandler;
     int userData[2] = {0};
@@ -318,16 +317,16 @@ static napi_value Archive_Compress_Abnormal(napi_env env, napi_callback_info inf
     NAPI_ASSERT(env, ret == OH_ARCHIVE_NAME_TOO_LONG_ERROR, "OH_Archive_Writer_Add failed5");
     
     ret = OH_Archive_Writer_Add(arc, src5.data(), 1);
-    NAPI_ASSERT(env, ret == ARCHIVE_OK, "OH_Archive_Writer_Add failed6");
+    NAPI_ASSERT(env, ret == OH_ARCHIVE_OK, "OH_Archive_Writer_Add failed6");
 
     ret = OH_Archive_Writer_Close(NULL);
     NAPI_ASSERT(env, ret == OH_ARCHIVE_PARAM_ERROR, "Writer_Close failed");
     ret = OH_Archive_Writer_Close(arc);
-    NAPI_ASSERT(env, ret == ARCHIVE_OK, "Writer_Close failed");
+    NAPI_ASSERT(env, ret == OH_ARCHIVE_OK, "Writer_Close failed");
     ret = OH_Archive_Writer_Close(arc2);
-    NAPI_ASSERT(env, ret == ARCHIVE_OK, "Writer_Close failed");
+    NAPI_ASSERT(env, ret == OH_ARCHIVE_OK, "Writer_Close failed");
     ret = OH_Archive_Writer_Close(arc3);
-    NAPI_ASSERT(env, ret == ARCHIVE_OK, "Writer_Close failed");
+    NAPI_ASSERT(env, ret == OH_ARCHIVE_OK, "Writer_Close failed");
 
     OH_Archive_Reader_Ctx ctx = nullptr;
     ctx = OH_Archive_Reader_OpenFile(nullptr);
@@ -342,7 +341,7 @@ static napi_value Archive_Compress_Abnormal(napi_env env, napi_callback_info inf
     ret = OH_Archive_Reader_SetProgressHandlerWithData(ctx, progressHandlerFunc, nullptr);
     NAPI_ASSERT(env, ret == OH_ARCHIVE_PARAM_ERROR, "Reader_SetProgressHandlerWithData failed3");
     ret = OH_Archive_Reader_SetProgressHandlerWithData(ctx, progressHandlerFunc, (void *)userData);
-    NAPI_ASSERT(env, ret == ARCHIVE_OK, "Reader_SetProgressHandlerWithData failed");
+    NAPI_ASSERT(env, ret == OH_ARCHIVE_OK, "Reader_SetProgressHandlerWithData failed");
     
     const char *failDir = "/test/el2/base/files";
     const char *outDir = "/data/storage/el2/base/files";
@@ -352,12 +351,12 @@ static napi_value Archive_Compress_Abnormal(napi_env env, napi_callback_info inf
     NAPI_ASSERT(env, ret == OH_ARCHIVE_PARAM_ERROR, "OH_Archive_Reader_ExtractAllFile failed2");
 
     ret = OH_Archive_Reader_ExtractAllFile(ctx, outDir);
-    NAPI_ASSERT(env, ret == ARCHIVE_OK, "OH_Archive_Reader_ExtractAllFile failed3");
+    NAPI_ASSERT(env, ret == OH_ARCHIVE_OK, "OH_Archive_Reader_ExtractAllFile failed3");
 
     ret = OH_Archive_Reader_Close(NULL);
     NAPI_ASSERT(env, ret == OH_ARCHIVE_PARAM_ERROR, "Writer_Close failed");
     ret = OH_Archive_Reader_Close(ctx);
-    NAPI_ASSERT(env, ret == ARCHIVE_OK, "OH_Archive_Reader_Close failed");
+    NAPI_ASSERT(env, ret == OH_ARCHIVE_OK, "OH_Archive_Reader_Close failed");
 
     napi_value result = nullptr;
     napi_create_int32(env, SUCCESS, &result);
