@@ -46,6 +46,9 @@ struct SelectionContainerEditMenuOptionsTest {
         },
         onMenuItemClick: (menuItem: TextMenuItem, value: string) => {
           return true;
+        },
+        onPrepareMenu:(menuItems: Array<TextMenuItem>)=>{
+          return menuItems
         }
       })
       .width('100%')
@@ -85,6 +88,46 @@ struct SelectionContainerEditMenuOptionsTest {
       .width('100%')
       .border({ width: 1, color: '#DCDCDC' })
       .padding(12)
+
+      SelectionContainer() {
+        Column() {
+          Text('First text for editMenuOptions')
+            .fontSize(18)
+            .copyOption(CopyOptions.InApp)
+          Text('Second text for editMenuOptions')
+            .fontSize(18)
+            .copyOption(CopyOptions.InApp)
+        }
+      }
+      .id('selectioncontainer_editmenuoptions_all_null')
+      .copyOption(CopyOptions.InApp)
+      .editMenuOptions({
+        onCreateMenu: null,
+        onMenuItemClick: null,
+        onPrepareMenu:null
+      })
+      .width('100%')
+      .border({ width: 1, color: '#DCDCDC' })
+
+      SelectionContainer() {
+        Column() {
+          Text('First text for editMenuOptions')
+            .fontSize(18)
+            .copyOption(CopyOptions.InApp)
+          Text('Second text for editMenuOptions')
+            .fontSize(18)
+            .copyOption(CopyOptions.InApp)
+        }
+      }
+      .id('selectioncontainer_editmenuoptions_all_undefined')
+      .copyOption(CopyOptions.InApp)
+      .editMenuOptions({
+        onCreateMenu: undefined,
+        onMenuItemClick: undefined,
+        onPrepareMenu:undefined
+      })
+      .width('100%')
+      .border({ width: 1, color: '#DCDCDC' })
     }
     .width('100%')
     .height('100%')

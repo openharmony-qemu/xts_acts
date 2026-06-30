@@ -21,13 +21,10 @@ interface OptionsObj {
   uri: string
 }
 
-let driver: Driver;
-
 export default function SelectionContainerBindSelectionMenuTest() {
   describe('SelectionContainerBindSelectionMenuTest', () => {
     beforeAll(async () => {
       console.info('[SelectionContainerBindSelectionMenuTest] beforeAll called');
-      driver = Driver.create();
     });
 
     beforeEach(async (done: Function) => {
@@ -49,47 +46,89 @@ export default function SelectionContainerBindSelectionMenuTest() {
       done();
     });
 
-    afterEach(async () => {
-      console.info('[SelectionContainerBindSelectionMenuTest] afterEach called');
-      await Utils.sleep(1000);
-    });
-
-    afterAll(async () => {
-      console.info('[SelectionContainerBindSelectionMenuTest] afterAll called');
-      router.clear();
-    });
-
     /**
      * @tc.name   selectionContainerBindSelectionMenu_0100
      * @tc.number SUB_ARKUI_SELECTIONCONTAINER_BINDSELECTIONMENU_0100
-     * @tc.desc   Test SelectionContainer bindSelectionMenu, verify component exists
+     * @tc.desc   Test SelectionContainer bindSelectionMenu selectionContainerMenuOptions, null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('selectionContainerBindSelectionMenu_0100', Level.LEVEL0, async () => {
+    it('selectionContainerBindSelectionMenu_0100', Level.LEVEL2, async () => {
       console.info('[selectionContainerBindSelectionMenu_0100] START');
-      let strJson: string = getInspectorByKey('selectioncontainer_bindselectionmenu');
-      let obj: Record<string, ESObject> = JSON.parse(strJson);
-      console.info('[selectionContainerBindSelectionMenu_0100] obj is: ' + JSON.stringify(obj.$attrs));
-      expect(obj.$type).assertEqual('SelectionContainer');
+      let driver = Driver.create();
+      await Utils.sleep(300);
+      let component = await driver.findComponent(ON.id('selectioncontainer_selectionContainerMenuOptions_null'));
+      expect(component).not().assertUndefined();
+      await component.longClick();
+      let onAppearstrJson: string = getInspectorByKey('selectioncontainer_onAppearText');
+      let onDisappearstrJson: string = getInspectorByKey('selectioncontainer_onDisappearText');
+      let onMenuShowstrJson: string = getInspectorByKey('selectioncontainer_onMenuShowText');
+      let onMenuHidestrJson: string = getInspectorByKey('selectioncontainer_onMenuHideText');
+      let onAppearobj: Record<string, ESObject> = JSON.parse(onAppearstrJson);
+      let onDisappearobj: Record<string, ESObject> = JSON.parse(onDisappearstrJson);
+      let onMenuShowobj: Record<string, ESObject> = JSON.parse(onMenuShowstrJson);
+      let onMenuHideobj: Record<string, ESObject> = JSON.parse(onMenuHidestrJson);
+      console.info('[selectionContainerBindSelectionMenu_0100] obj is: ' + JSON.stringify(onAppearobj.$attrs.content));
+      console.info('[selectionContainerBindSelectionMenu_0100] obj is: ' + JSON.stringify(onDisappearobj.$attrs.content));
+      console.info('[selectionContainerBindSelectionMenu_0100] obj is: ' + JSON.stringify(onMenuShowobj.$attrs.content));
+      console.info('[selectionContainerBindSelectionMenu_0100] obj is: ' + JSON.stringify(onMenuHideobj.$attrs.content));
+      expect(onAppearobj.$attrs.content).assertEqual('');
+      expect(onDisappearobj.$attrs.content).assertEqual('');
+      expect(onMenuShowobj.$attrs.content).assertEqual('');
+      expect(onMenuHideobj.$attrs.content).assertEqual('');
       console.info('[selectionContainerBindSelectionMenu_0100] END');
     });
 
     /**
-     * @tc.name   selectionContainerBindSelectionMenuLongPress_0200
+     * @tc.name   selectionContainerBindSelectionMenu_0200
      * @tc.number SUB_ARKUI_SELECTIONCONTAINER_BINDSELECTIONMENU_0200
-     * @tc.desc   Test SelectionContainer bindSelectionMenu, long press to trigger custom menu
+     * @tc.desc   Test SelectionContainer bindSelectionMenu selectionContainerMenuOptions, undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL2
      */
-    it('selectionContainerBindSelectionMenuLongPress_0200', Level.LEVEL1, async () => {
-      console.info('[selectionContainerBindSelectionMenuLongPress_0200] START');
+    it('selectionContainerBindSelectionMenu_0200', Level.LEVEL2, async () => {
+      console.info('[selectionContainerBindSelectionMenu_0200] START');
+      let driver = Driver.create();
+      await Utils.sleep(300);
+      let component = await driver.findComponent(ON.id('selectioncontainer_selectionContainerMenuOptions_undefined'));
+      expect(component).not().assertUndefined();
+      await component.longClick();
+      let onAppearstrJson: string = getInspectorByKey('selectioncontainer_onAppearText');
+      let onDisappearstrJson: string = getInspectorByKey('selectioncontainer_onDisappearText');
+      let onMenuShowstrJson: string = getInspectorByKey('selectioncontainer_onMenuShowText');
+      let onMenuHidestrJson: string = getInspectorByKey('selectioncontainer_onMenuHideText');
+      let onAppearobj: Record<string, ESObject> = JSON.parse(onAppearstrJson);
+      let onDisappearobj: Record<string, ESObject> = JSON.parse(onDisappearstrJson);
+      let onMenuShowobj: Record<string, ESObject> = JSON.parse(onMenuShowstrJson);
+      let onMenuHideobj: Record<string, ESObject> = JSON.parse(onMenuHidestrJson);
+      console.info('[selectionContainerBindSelectionMenu_0200] obj is: ' + JSON.stringify(onAppearobj.$attrs.content));
+      console.info('[selectionContainerBindSelectionMenu_0200] obj is: ' + JSON.stringify(onDisappearobj.$attrs.content));
+      console.info('[selectionContainerBindSelectionMenu_0200] obj is: ' + JSON.stringify(onMenuShowobj.$attrs.content));
+      console.info('[selectionContainerBindSelectionMenu_0200] obj is: ' + JSON.stringify(onMenuHideobj.$attrs.content));
+      expect(onAppearobj.$attrs.content).assertEqual('');
+      expect(onDisappearobj.$attrs.content).assertEqual('');
+      expect(onMenuShowobj.$attrs.content).assertEqual('');
+      expect(onMenuHideobj.$attrs.content).assertEqual('');
+      console.info('[selectionContainerBindSelectionMenu_0200] END');
+    });
+
+    /**
+     * @tc.name   selectionContainerBindSelectionMenu_0300
+     * @tc.number SUB_ARKUI_SELECTIONCONTAINER_BINDSELECTIONMENU_0300
+     * @tc.desc   Test SelectionContainer bindSelectionMenu selectionContainerMenuOptions, callback true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('selectionContainerBindSelectionMenu_0300', Level.LEVEL2, async () => {
+      console.info('[selectionContainerBindSelectionMenu_0300] START');
+      let driver = Driver.create();
+      await Utils.sleep(300);
       let component = await driver.findComponent(ON.id('selectioncontainer_bindselectionmenu'));
       expect(component).not().assertUndefined();
       await component.longClick();
-      await Utils.sleep(600);
       try {
         let menuText = await driver.findComponent(ON.text('Custom Selection Menu'));
         expect(menuText).not().assertUndefined();
@@ -98,7 +137,61 @@ export default function SelectionContainerBindSelectionMenuTest() {
         console.error('[selectionContainerBindSelectionMenuLongPress_0200] menu not found: ' + JSON.stringify(e));
         expect(true).assertFalse();
       }
-      console.info('[selectionContainerBindSelectionMenuLongPress_0200] END');
+      await Utils.sleep(300);
+      let outSideText = await driver.findComponent(ON.id('selectioncontainer_outside_area'));
+      await outSideText.longClick();
+      await Utils.sleep(300);
+      let onAppearstrJson: string = getInspectorByKey('selectioncontainer_onAppearText');
+      let onDisappearstrJson: string = getInspectorByKey('selectioncontainer_onDisappearText');
+      let onMenuShowstrJson: string = getInspectorByKey('selectioncontainer_onMenuShowText');
+      let onMenuHidestrJson: string = getInspectorByKey('selectioncontainer_onMenuHideText');
+      let onAppearobj: Record<string, ESObject> = JSON.parse(onAppearstrJson);
+      let onDisappearobj: Record<string, ESObject> = JSON.parse(onDisappearstrJson);
+      let onMenuShowobj: Record<string, ESObject> = JSON.parse(onMenuShowstrJson);
+      let onMenuHideobj: Record<string, ESObject> = JSON.parse(onMenuHidestrJson);
+      console.info('[selectionContainerBindSelectionMenu_0300] obj is: ' + JSON.stringify(onAppearobj.$attrs.content));
+      console.info('[selectionContainerBindSelectionMenu_0300] obj is: ' + JSON.stringify(onDisappearobj.$attrs.content));
+      console.info('[selectionContainerBindSelectionMenu_0300] obj is: ' + JSON.stringify(onMenuShowobj.$attrs.content));
+      console.info('[selectionContainerBindSelectionMenu_0300] obj is: ' + JSON.stringify(onMenuHideobj.$attrs.content));
+      expect(onAppearobj.$attrs.content).assertEqual('true');
+      expect(onDisappearobj.$attrs.content).assertEqual('true');
+      expect(onMenuShowobj.$attrs.content).assertEqual('true');
+      expect(onMenuHideobj.$attrs.content).assertEqual('true');
+      console.info('[selectionContainerBindSelectionMenu_0300] END');
+    });
+
+    /**
+     * @tc.name   selectionContainerBindSelectionMenu_0400
+     * @tc.number SUB_ARKUI_SELECTIONCONTAINER_BINDSELECTIONMENU_0400
+     * @tc.desc   Test SelectionContainer bindSelectionMenu, all null
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('selectionContainerBindSelectionMenu_0400', Level.LEVEL2, async () => {
+      console.info('[selectionContainerBindSelectionMenu_0400] START');
+      let strJson: string = getInspectorByKey('selectioncontainer_bindselectionmenu_null');
+ 	    let obj: Record<string, ESObject> = JSON.parse(strJson);
+ 	    console.info('[selectionContainerBindSelectionMenu_0100] obj is: ' + JSON.stringify(obj.$attrs));
+ 	    expect(obj.$type).assertEqual('SelectionContainer');
+      console.info('[selectionContainerBindSelectionMenu_0400] END');
+    });
+
+    /**
+     * @tc.name   selectionContainerBindSelectionMenu_0500
+     * @tc.number SUB_ARKUI_SELECTIONCONTAINER_BINDSELECTIONMENU_0500
+     * @tc.desc   Test SelectionContainer bindSelectionMenu, all undefined
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('selectionContainerBindSelectionMenu_0500', Level.LEVEL2, async () => {
+      console.info('[selectionContainerBindSelectionMenu_0500] START');
+      let strJson: string = getInspectorByKey('selectioncontainer_bindselectionmenu_undefined');
+ 	    let obj: Record<string, ESObject> = JSON.parse(strJson);
+ 	    console.info('[selectionContainerBindSelectionMenu_0500] obj is: ' + JSON.stringify(obj.$attrs));
+ 	    expect(obj.$type).assertEqual('SelectionContainer');
+      console.info('[selectionContainerBindSelectionMenu_0500] END');
     });
   });
 }
