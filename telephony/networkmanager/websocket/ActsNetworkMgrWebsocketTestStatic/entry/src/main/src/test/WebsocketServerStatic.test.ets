@@ -108,7 +108,7 @@ export default function WebsocketServerStaticTest() {
         hilog.info(domain, tag, '%{public}s', `${caseName} --> ${server}`);
         let serverConfig: webSocket.WebSocketServerConfig = {
           serverIP: "0.0.0.0",
-          serverPort: 12345678,
+          serverPort: 88889999,
           maxConcurrentClientsNumber: 10,
           maxConnectionsForOneClient: 4,
           protocol: "my-protocol",
