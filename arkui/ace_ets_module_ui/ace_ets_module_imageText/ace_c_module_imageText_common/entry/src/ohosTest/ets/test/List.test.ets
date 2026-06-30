@@ -24,6 +24,8 @@ import TextInputPunctuationOverflowTest from "./TextInputTest/TextInputPunctuati
 import TextAreaPunctuationOverflowTest from "./TextAreaTest/TextAreaPunctuationOverflow.test"
 import TextTailIndentsTest from "./TextCommonTest/TextTailIndents.test"
 import ParagraphStyleTailIndentsTest from "./TextCommonTest/ParagraphStyleTailIndents.test"
+import LinearGradientTest from "./StyledStringTest/LinearGradient.test"
+import RadialGradientTest from "./StyledStringTest/RadialGradient.test"
 
 export default function testsuite() {
   TextEnumTest();
@@ -38,4 +40,6 @@ export default function testsuite() {
   TextAreaPunctuationOverflowTest();
   TextTailIndentsTest();
   ParagraphStyleTailIndentsTest();
+  LinearGradientTest();
+  RadialGradientTest();
 }

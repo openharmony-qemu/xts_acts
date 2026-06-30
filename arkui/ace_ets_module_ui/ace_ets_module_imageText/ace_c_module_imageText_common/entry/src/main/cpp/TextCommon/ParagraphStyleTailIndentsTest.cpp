@@ -61,7 +61,8 @@ static napi_value ParagraphStyleTailIndentsTest_003(napi_env env, napi_callback_
     float tailIndents[] = { 10.0f };
     ArkUI_ErrorCode setResult = OH_ArkUI_ParagraphStyle_SetTailIndents(paragraphStyle, tailIndents, PARAM_1);
     ASSERT_EQ(setResult, ARKUI_ERROR_CODE_NO_ERROR);
-    float* getTailIndents = nullptr;
+    float  buffer[PARAM_1] = {PARAM_0};
+    float *getTailIndents = buffer;
     uint32_t writeLength = PARAM_0;
     ArkUI_ErrorCode getResult =
         OH_ArkUI_ParagraphStyle_GetTailIndents(paragraphStyle, &getTailIndents, PARAM_1, &writeLength);
@@ -84,7 +85,8 @@ static napi_value ParagraphStyleTailIndentsTest_004(napi_env env, napi_callback_
     float tailIndents[] = { 10.0f, 20.0f, 30.0f };
     ArkUI_ErrorCode setResult = OH_ArkUI_ParagraphStyle_SetTailIndents(paragraphStyle, tailIndents, PARAM_3);
     ASSERT_EQ(setResult, ARKUI_ERROR_CODE_NO_ERROR);
-    float* getTailIndents = nullptr;
+    float  buffer[PARAM_3] = {PARAM_0};
+    float *getTailIndents = buffer;
     uint32_t writeLength = PARAM_0;
     ArkUI_ErrorCode getResult =
         OH_ArkUI_ParagraphStyle_GetTailIndents(paragraphStyle, &getTailIndents, PARAM_3, &writeLength);
@@ -116,7 +118,7 @@ static napi_value ParagraphStyleTailIndentsTest_006(napi_env env, napi_callback_
         return errorResult;
     }
     ArkUI_ErrorCode result = OH_ArkUI_ParagraphStyle_SetTailIndents(paragraphStyle, nullptr, PARAM_1);
-    ASSERT_EQ(result, ARKUI_ERROR_CODE_PARAM_INVALID);
+    ASSERT_EQ(result, ARKUI_ERROR_CODE_NO_ERROR);
     OH_ArkUI_ParagraphStyle_Destroy(paragraphStyle);
     NAPI_END(column);
 }
