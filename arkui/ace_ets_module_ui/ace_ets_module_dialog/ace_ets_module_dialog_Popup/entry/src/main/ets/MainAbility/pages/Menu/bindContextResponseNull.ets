@@ -200,6 +200,32 @@ struct bindContextMenuWithResponseNullUndefined {
           mask: { backgroundBlurStyle: BlurStyle.COMPONENT_ULTRA_THICK }
         })
 
+      // 新增 colorMode and gridStyle position
+
+      Text('colorMode and gridStyle position').height('10%')
+        .bindContextMenuWithResponse(this.MenuBuilderWithParam, {
+          colorMode:AnchoredColorMode.FOLLOW_SYSTEM,
+          gridStyle:{ count: 4, position: MenuGridPosition.TOP },
+        })
+
+      Text('colorMode and gridStyle position').height('10%')
+        .bindContextMenuWithResponse(this.MenuBuilderWithParam, {
+          colorMode:AnchoredColorMode.FOLLOW_TARGET,
+          gridStyle:{ count: 4, position: MenuGridPosition.BOTTOM },
+        })
+
+      Text('enum13').height('10%')
+        .bindContextMenuWithResponse(this.MenuBuilderWithParam, {
+          colorMode: null,
+          gridStyle:{ count: 4, position: null },
+        })
+
+      Text('enum13').height('10%')
+        .bindContextMenuWithResponse(this.MenuBuilderWithParam, {
+          colorMode: undefined,
+          gridStyle:{ count: 4, position: undefined },
+        })
+
     }.width('100%')
     .height('100%')
   }
