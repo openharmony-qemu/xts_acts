@@ -21,7 +21,7 @@ function getBigInt100(): BigInt {
 }
 
 export default function BigIntPowTest_2(): void {
-  describe('BigInt.pow extension (mindmap pow)', (): void => {
+  describe('BigInt.pow extension ext (mindmap pow)', (): void => {
 
     /**
      * @tc.number SUB_BIGINT_STD_POW_0900
