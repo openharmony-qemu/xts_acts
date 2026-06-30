@@ -86,7 +86,6 @@ export const TestHiDebugUnregisterMemDumpListener3: () => number;
 export const TestHiDebugUnregisterMemDumpListener4: () => number;
 export const TestHiDebugUnregisterMemDumpListener5: () => number;
 export const TestHiDebugUnregisterMemDumpListener6: () => number;
-export const add: (a: number, b: number) => number;
 export const testAcquireAsyncContext: () => number;
 export const testAcquireAsyncContextMultiple: () => {
   ctx0: number,
