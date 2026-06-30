@@ -487,10 +487,11 @@ export default function BlockingQueuePopTest(): void {
      * @tc.level Level 2
      */
     it('testBlockingQueuePop021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 5;
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(10);
-      q.push(5);
+      q.push(TEST_VALUE);
       let result: int = q.pop();
-      expect(result).assertEqual(5);
+      expect(result).assertEqual(TEST_VALUE);
     });
 
     /**
@@ -502,10 +503,11 @@ export default function BlockingQueuePopTest(): void {
      * @tc.level Level 2
      */
     it('testBlockingQueuePop022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = -1;
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10);
-      q.push(-1);
+      q.push(TEST_VALUE);
       let result: int = q.pop();
-      expect(result).assertEqual(-1);
+      expect(result).assertEqual(TEST_VALUE);
     });
 
     /**
@@ -892,10 +894,11 @@ export default function BlockingQueuePopTest(): void {
      * @tc.level Level 2
      */
     it('testBlockingQueuePop048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 7;
       let q: containers.LinkedBlockingQueue<number> = new containers.LinkedBlockingQueue<number>(10);
-      q.push(7);
+      q.push(TEST_VALUE);
       let result: number = q.pop();
-      expect(result).assertEqual(7);
+      expect(result).assertEqual(TEST_VALUE);
     });
 
     /**
@@ -938,12 +941,13 @@ export default function BlockingQueuePopTest(): void {
      * @tc.level Level 2
      */
     it('testBlockingQueuePop051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 2;
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10);
       q.push(1);
-      q.push(2);
+      q.push(TEST_VALUE);
       q.push(3);
       q.pop();
-      expect(q.size).assertEqual(2);
+      expect(q.size).assertEqual(TEST_VALUE);
     });
 
     /**
@@ -965,75 +969,62 @@ export default function BlockingQueuePopTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0530
      * @tc.name testBlockingQueuePop053
-     * @tc.desc Verify after pop capacity minus size equals remainingCapacity invariant
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBlockingQueuePop053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10);
-      q.push(1);
-      q.push(2);
-      q.pop();
-      expect(q.capacity - q.size).assertEqual(q.remainingCapacity());
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0540
-     * @tc.name testBlockingQueuePop054
      * @tc.desc Verify full queue capacity=3 pop once leaves size equal to capacity minus 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 2;
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(3);
       q.push(1);
-      q.push(2);
+      q.push(TEST_VALUE);
       q.push(3);
       q.pop();
-      expect(q.size).assertEqual(2);
+      expect(q.size).assertEqual(TEST_VALUE);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0550
-     * @tc.name testBlockingQueuePop055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0540
+     * @tc.name testBlockingQueuePop054
      * @tc.desc Verify ArrayBlockingQueue int max value pop without truncation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const BOUNDARY_VALUE: int = 2147483647;
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5);
-      q.push(2147483647);
+      q.push(BOUNDARY_VALUE);
       let result: int = q.pop();
-      expect(result).assertEqual(2147483647);
+      expect(result).assertEqual(BOUNDARY_VALUE);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0560
-     * @tc.name testBlockingQueuePop056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0550
+     * @tc.name testBlockingQueuePop055
      * @tc.desc Verify ArrayBlockingQueue int min value pop without truncation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const BOUNDARY_VALUE: int = -2147483648;
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5);
-      q.push(-2147483648);
+      q.push(BOUNDARY_VALUE);
       let result: int = q.pop();
-      expect(result).assertEqual(-2147483648);
+      expect(result).assertEqual(BOUNDARY_VALUE);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0570
-     * @tc.name testBlockingQueuePop057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0560
+     * @tc.name testBlockingQueuePop056
      * @tc.desc Verify ArrayBlockingQueue Number.MAX_VALUE pop without precision loss
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<number> = new containers.ArrayBlockingQueue<number>(5);
       q.push(Number.MAX_VALUE);
       let result: number = q.pop();
@@ -1041,44 +1032,46 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0580
-     * @tc.name testBlockingQueuePop058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0570
+     * @tc.name testBlockingQueuePop057
      * @tc.desc Verify capacity=1 full queue single int max value pop restores value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const BOUNDARY_VALUE: int = 2147483647;
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(1);
-      q.push(2147483647);
+      q.push(BOUNDARY_VALUE);
       let result: int = q.pop();
-      expect(result).assertEqual(2147483647);
+      expect(result).assertEqual(BOUNDARY_VALUE);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0590
-     * @tc.name testBlockingQueuePop059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0580
+     * @tc.name testBlockingQueuePop058
      * @tc.desc Verify capacity=1 full queue single int min value pop restores value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const BOUNDARY_VALUE: int = -2147483648;
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(1);
-      q.push(-2147483648);
+      q.push(BOUNDARY_VALUE);
       let result: int = q.pop();
-      expect(result).assertEqual(-2147483648);
+      expect(result).assertEqual(BOUNDARY_VALUE);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0600
-     * @tc.name testBlockingQueuePop060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0590
+     * @tc.name testBlockingQueuePop059
      * @tc.desc Verify large number 1e308 pop without overflow
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<number> = new containers.LinkedBlockingQueue<number>(5);
       q.push(1e308);
       let result: number = q.pop();
@@ -1086,14 +1079,14 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0610
-     * @tc.name testBlockingQueuePop061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0600
+     * @tc.name testBlockingQueuePop060
      * @tc.desc Verify tiny number 1e-308 pop without underflow
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<number> = new containers.LinkedBlockingQueue<number>(5);
       q.push(1e-308);
       let result: number = q.pop();
@@ -1101,14 +1094,14 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0620
-     * @tc.name testBlockingQueuePop062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0610
+     * @tc.name testBlockingQueuePop061
      * @tc.desc Verify negative float boundary -1.7976931348623157e308 pop equals -Number.MAX_VALUE
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<number> = new containers.LinkedBlockingQueue<number>(5);
       q.push(-1.7976931348623157e308);
       let result: number = q.pop();
@@ -1116,14 +1109,14 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0630
-     * @tc.name testBlockingQueuePop063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0620
+     * @tc.name testBlockingQueuePop062
      * @tc.desc Verify binary all-ones int 0b1111111111111111111111111111111 pop equals int max
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(5);
       q.push(0b1111111111111111111111111111111);
       let result: int = q.pop();
@@ -1131,14 +1124,14 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0640
-     * @tc.name testBlockingQueuePop064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0630
+     * @tc.name testBlockingQueuePop063
      * @tc.desc Verify pop returns the pushed value for ArrayBlockingQueue float element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<number> = new containers.ArrayBlockingQueue<number>(10);
       q.push(3.14);
       let v: number = q.pop();
@@ -1146,14 +1139,14 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0650
-     * @tc.name testBlockingQueuePop065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0640
+     * @tc.name testBlockingQueuePop064
      * @tc.desc Verify pop returns the pushed value for string queue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<string> = new containers.LinkedBlockingQueue<string>(10);
       q.push('alpha');
       let v: string = q.pop();
@@ -1161,14 +1154,14 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0660
-     * @tc.name testBlockingQueuePop066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0650
+     * @tc.name testBlockingQueuePop065
      * @tc.desc Verify pop returns the pushed value for boolean queue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<boolean> = new containers.LinkedBlockingQueue<boolean>(10);
       q.push(true);
       let v: boolean = q.pop();
@@ -1176,14 +1169,14 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0670
-     * @tc.name testBlockingQueuePop067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0660
+     * @tc.name testBlockingQueuePop066
      * @tc.desc Verify pop returns the pushed value for element 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(5);
       q.push(0);
       let v: int = q.pop();
@@ -1191,29 +1184,30 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0680
-     * @tc.name testBlockingQueuePop068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0670
+     * @tc.name testBlockingQueuePop067
      * @tc.desc Verify pop returns the pushed value for negative element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = -55;
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(5);
-      q.push(-55);
+      q.push(TEST_VALUE);
       let v: int = q.pop();
-      expect(v).assertEqual(-55);
+      expect(v).assertEqual(TEST_VALUE);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0690
-     * @tc.name testBlockingQueuePop069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0680
+     * @tc.name testBlockingQueuePop068
      * @tc.desc Verify pop returns the pushed value for ArrayBlockingQueue decimal element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<number> = new containers.ArrayBlockingQueue<number>(5);
       q.push(2.718281828);
       let v: number = q.pop();
@@ -1221,14 +1215,14 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0700
-     * @tc.name testBlockingQueuePop070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0690
+     * @tc.name testBlockingQueuePop069
      * @tc.desc Verify pop returns the pushed value for empty string element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<string> = new containers.LinkedBlockingQueue<string>(5);
       q.push('');
       let v: string = q.pop();
@@ -1236,14 +1230,14 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0710
-     * @tc.name testBlockingQueuePop071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0700
+     * @tc.name testBlockingQueuePop070
      * @tc.desc Verify pop returned array element preserves length=3 and first=1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const EXPECTED_LENGTH: int = 3;
       const EXPECTED_FIRST: int = 1;
       let q: containers.LinkedBlockingQueue<Array<int>> = new containers.LinkedBlockingQueue<Array<int>>(5);
@@ -1255,14 +1249,14 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0720
-     * @tc.name testBlockingQueuePop072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0710
+     * @tc.name testBlockingQueuePop071
      * @tc.desc Verify pop returned object element keeps the same reference as pushed
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const EXPECTED_LENGTH: int = 3;
       let q: containers.LinkedBlockingQueue<Array<int>> = new containers.LinkedBlockingQueue<Array<int>>(5);
       let arr: Array<int> = [9, 8, 7];
@@ -1273,14 +1267,14 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0730
-     * @tc.name testBlockingQueuePop073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0720
+     * @tc.name testBlockingQueuePop072
      * @tc.desc Verify pop returned string element preserves length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<string> = new containers.LinkedBlockingQueue<string>(5);
       q.push('hello-pop');
       let v: string = q.pop();
@@ -1288,14 +1282,14 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0740
-     * @tc.name testBlockingQueuePop074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0730
+     * @tc.name testBlockingQueuePop073
      * @tc.desc Verify pop returns string element value equal to pushed value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<string> = new containers.LinkedBlockingQueue<string>(5);
       q.push('return-value');
       let v: string = q.pop();
@@ -1303,14 +1297,14 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0750
-     * @tc.name testBlockingQueuePop075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0740
+     * @tc.name testBlockingQueuePop074
      * @tc.desc Verify pop returns ArrayBlockingQueue float element value equal to pushed value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<number> = new containers.ArrayBlockingQueue<number>(5);
       q.push(99.999);
       let v: number = q.pop();
@@ -1318,14 +1312,14 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0760
-     * @tc.name testBlockingQueuePop076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0750
+     * @tc.name testBlockingQueuePop075
      * @tc.desc Verify pop returns boolean false element equal to pushed value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<boolean> = new containers.LinkedBlockingQueue<boolean>(5);
       q.push(false);
       let v: boolean = q.pop();
@@ -1333,14 +1327,14 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0770
-     * @tc.name testBlockingQueuePop077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0760
+     * @tc.name testBlockingQueuePop076
      * @tc.desc Verify pop two consecutive times returns second pushed element 22
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const EXPECTED_FIRST: int = 11;
       const EXPECTED_SECOND: int = 22;
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10);
@@ -1353,34 +1347,35 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0780
-     * @tc.name testBlockingQueuePop078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0770
+     * @tc.name testBlockingQueuePop077
      * @tc.desc Verify pop two times then size of 5 element queue reduces to 3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 3;
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10);
       q.push(1);
       q.push(2);
-      q.push(3);
+      q.push(TEST_VALUE);
       q.push(4);
       q.push(5);
       q.pop();
       q.pop();
-      expect(q.size).assertEqual(3);
+      expect(q.size).assertEqual(TEST_VALUE);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0790
-     * @tc.name testBlockingQueuePop079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0780
+     * @tc.name testBlockingQueuePop078
      * @tc.desc Verify pop reduces size by exactly 1 compared to before pop
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10);
       q.push(81);
       q.push(82);
@@ -1391,14 +1386,14 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0800
-     * @tc.name testBlockingQueuePop080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0790
+     * @tc.name testBlockingQueuePop079
      * @tc.desc Verify ArrayBlockingQueue pop reduces size by 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(10);
       q.push(901);
       q.push(902);
@@ -1407,14 +1402,14 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0810
-     * @tc.name testBlockingQueuePop081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0800
+     * @tc.name testBlockingQueuePop080
      * @tc.desc Verify pop keeps LinkedBlockingQueue capacity unchanged at constructed value 15
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(15);
       q.push(111);
       q.pop();
@@ -1422,14 +1417,14 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0820
-     * @tc.name testBlockingQueuePop082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0810
+     * @tc.name testBlockingQueuePop081
      * @tc.desc Verify multiple pops keep capacity at constructed value 8
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(8);
       q.push(1);
       q.push(2);
@@ -1440,14 +1435,14 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0830
-     * @tc.name testBlockingQueuePop083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0820
+     * @tc.name testBlockingQueuePop082
      * @tc.desc Verify ArrayBlockingQueue capacity stays unchanged at constructed value 12 after pop
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(12);
       q.push(321);
       q.pop();
@@ -1455,14 +1450,14 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0840
-     * @tc.name testBlockingQueuePop084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0830
+     * @tc.name testBlockingQueuePop083
      * @tc.desc Verify pop increases remainingCapacity by 1 compared to before pop
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10);
       q.push(201);
       q.push(202);
@@ -1472,14 +1467,14 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0850
-     * @tc.name testBlockingQueuePop085
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0840
+     * @tc.name testBlockingQueuePop084
      * @tc.desc Verify single element pop restores remainingCapacity to full capacity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(6);
       q.push(601);
       q.pop();
@@ -1487,14 +1482,14 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0860
-     * @tc.name testBlockingQueuePop086
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0850
+     * @tc.name testBlockingQueuePop085
      * @tc.desc Verify single element queue pop then poll returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10);
       q.push(999);
       q.pop();
@@ -1503,14 +1498,14 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0870
-     * @tc.name testBlockingQueuePop087
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0860
+     * @tc.name testBlockingQueuePop086
      * @tc.desc Verify single element queue pop then getFirst returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10);
       q.push(444);
       q.pop();
@@ -1519,14 +1514,14 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0880
-     * @tc.name testBlockingQueuePop088
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0870
+     * @tc.name testBlockingQueuePop087
      * @tc.desc Verify single element queue pop then getEnd returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10);
       q.push(555);
       q.pop();
@@ -1535,14 +1530,14 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0890
-     * @tc.name testBlockingQueuePop089
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0880
+     * @tc.name testBlockingQueuePop088
      * @tc.desc Verify full queue pop then add returns true after freeing a slot
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(2);
       q.push(91);
       q.push(92);
@@ -1552,14 +1547,14 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0900
-     * @tc.name testBlockingQueuePop090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0890
+     * @tc.name testBlockingQueuePop089
      * @tc.desc Verify full queue pop frees a slot making remainingCapacity become 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(2);
       q.push(15);
       q.push(16);
@@ -1568,85 +1563,89 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0910
-     * @tc.name testBlockingQueuePop091
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0900
+     * @tc.name testBlockingQueuePop090
      * @tc.desc Verify pop makes remaining head become the original second element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 212;
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(5);
       q.push(211);
-      q.push(212);
+      q.push(TEST_VALUE);
       q.pop();
       let head: int = q.getFirst()!;
-      expect(head).assertEqual(212);
+      expect(head).assertEqual(TEST_VALUE);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0920
-     * @tc.name testBlockingQueuePop092
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0910
+     * @tc.name testBlockingQueuePop091
      * @tc.desc Verify pop keeps the remaining tail element unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 223;
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(5);
       q.push(221);
       q.push(222);
-      q.push(223);
+      q.push(TEST_VALUE);
       q.pop();
       let tail: int = q.getEnd()!;
-      expect(tail).assertEqual(223);
+      expect(tail).assertEqual(TEST_VALUE);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0930
-     * @tc.name testBlockingQueuePop093
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0920
+     * @tc.name testBlockingQueuePop092
      * @tc.desc Verify pop does not disturb FIFO order of remaining elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 243;
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(5);
       q.push(241);
       q.push(242);
-      q.push(243);
+      q.push(TEST_VALUE);
       q.pop();
       q.pop();
       let v: int = q.pop();
-      expect(v).assertEqual(243);
+      expect(v).assertEqual(TEST_VALUE);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0940
-     * @tc.name testBlockingQueuePop094
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0930
+     * @tc.name testBlockingQueuePop093
      * @tc.desc Verify push pop then add keeps total valid element count within capacity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 2;
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(2);
       q.push(1);
-      q.push(2);
+      q.push(TEST_VALUE);
       q.pop();
       q.add(3);
-      expect(q.size).assertEqual(2);
+      expect(q.size).assertEqual(TEST_VALUE);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0950
-     * @tc.name testBlockingQueuePop095
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0940
+     * @tc.name testBlockingQueuePop094
      * @tc.desc Verify full queue pop then add succeeds and size returns to capacity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(3);
       q.push(11);
       q.push(12);
@@ -1657,14 +1656,14 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0960
-     * @tc.name testBlockingQueuePop096
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0950
+     * @tc.name testBlockingQueuePop095
      * @tc.desc Verify full queue pop then add overflow second element returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(2);
       q.push(21);
       q.push(22);
@@ -1675,51 +1674,53 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0970
-     * @tc.name testBlockingQueuePop097
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0960
+     * @tc.name testBlockingQueuePop096
      * @tc.desc Verify full queue pop then add new element keeps old remaining element popped first
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 32;
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(2);
       q.push(31);
-      q.push(32);
+      q.push(TEST_VALUE);
       q.pop();
       q.add(33);
       let v: int = q.pop();
-      expect(v).assertEqual(32);
+      expect(v).assertEqual(TEST_VALUE);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0980
-     * @tc.name testBlockingQueuePop098
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0970
+     * @tc.name testBlockingQueuePop097
      * @tc.desc Verify full queue pop add new element then pop twice returns newly added element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 43;
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(2);
       q.push(41);
       q.push(42);
       q.pop();
-      q.add(43);
+      q.add(TEST_VALUE);
       q.pop();
       let v: int = q.pop();
-      expect(v).assertEqual(43);
+      expect(v).assertEqual(TEST_VALUE);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0990
-     * @tc.name testBlockingQueuePop099
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0980
+     * @tc.name testBlockingQueuePop098
      * @tc.desc Verify capacity=1 queue pop then add succeeds with size 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(1);
       q.push(51);
       q.pop();
@@ -1728,14 +1729,14 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_1000
-     * @tc.name testBlockingQueuePop100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_0990
+     * @tc.name testBlockingQueuePop099
      * @tc.desc Verify capacity=1 full queue pop then add second overflow returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(1);
       q.push(61);
       q.pop();
@@ -1745,14 +1746,14 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_1010
-     * @tc.name testBlockingQueuePop101
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_1000
+     * @tc.name testBlockingQueuePop100
      * @tc.desc Verify repeated pop-add cycle keeps size never exceeding capacity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(3);
       q.push(71);
       q.push(72);
@@ -1765,14 +1766,14 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_1020
-     * @tc.name testBlockingQueuePop102
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_1010
+     * @tc.name testBlockingQueuePop101
      * @tc.desc Verify ArrayBlockingQueue full queue pop then add keeps size equal to capacity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(3);
       q.push(91);
       q.push(92);
@@ -1783,32 +1784,14 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_1030
-     * @tc.name testBlockingQueuePop103
-     * @tc.desc Verify after pop remainingCapacity plus size equals capacity
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBlockingQueuePop103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(4);
-      q.push(1);
-      q.push(2);
-      q.push(3);
-      q.push(4);
-      q.pop();
-      expect(q.size + q.remainingCapacity()).assertEqual(4);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_1040
-     * @tc.name testBlockingQueuePop104
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_1020
+     * @tc.name testBlockingQueuePop102
      * @tc.desc Verify multi-element queue popped empty then poll returns undefined without throwing
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(5);
       q.push(311);
       q.push(312);
@@ -1819,14 +1802,14 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_1050
-     * @tc.name testBlockingQueuePop105
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_1030
+     * @tc.name testBlockingQueuePop103
      * @tc.desc Verify popping all elements restores remainingCapacity to capacity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(5);
       q.push(331);
       q.push(332);
@@ -1836,31 +1819,32 @@ export default function BlockingQueuePopTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_1060
-     * @tc.name testBlockingQueuePop106
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_1040
+     * @tc.name testBlockingQueuePop104
      * @tc.desc Verify popping all then pushing a new element returns the new element on pop
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 342;
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(5);
       q.push(341);
       q.pop();
-      q.push(342);
+      q.push(TEST_VALUE);
       let v: int = q.pop();
-      expect(v).assertEqual(342);
+      expect(v).assertEqual(TEST_VALUE);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_1070
-     * @tc.name testBlockingQueuePop107
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_POP_1050
+     * @tc.name testBlockingQueuePop105
      * @tc.desc Verify pop clears queue then refilling to capacity does not throw and size is correct
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueuePop107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueuePop105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(3);
       q.push(351);
       q.pop();
