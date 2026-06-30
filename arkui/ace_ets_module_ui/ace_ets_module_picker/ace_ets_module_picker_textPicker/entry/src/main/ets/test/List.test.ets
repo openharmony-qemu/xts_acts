@@ -30,6 +30,7 @@ import textPickerSecTest from './textPicker/textPickerSec.test';
 import textPickerSelectedAreaTest from './textPicker/textPickerSelectedArea.test';
 import textPickerTextStyleThreeTest from './textPicker/textPickerTextStyleThree.test';
 import textPickerValueTest from './textPicker/textPickerValue.test';
+import TextPickerDigitalCrownSensitivityTest from './textPicker/textPickerDigitalCrownSensitivity.test';
 
 import TextPickerDefaultPickerItemHeightNullUndefinedTest from './textPickerUndefinedNullTest/TextPickerDefaultPickerItemHeightNullUndefined.test';
 import TextPickerDisappearTextStyleNullUndefinedTest from './textPickerUndefinedNullTest/TextPickerDisappearTextStyleNullUndefined.test';
@@ -61,6 +62,7 @@ export default function testsuite() {
     textPickerSelectedAreaTest();
     textPickerTextStyleThreeTest();
     textPickerValueTest();
+    TextPickerDigitalCrownSensitivityTest();
     TextPickerDefaultPickerItemHeightNullUndefinedTest();
     TextPickerDisappearTextStyleNullUndefinedTest();
     TextPickerGradientHeightNullUndefinedTest();
