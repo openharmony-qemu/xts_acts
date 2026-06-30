@@ -123,7 +123,7 @@ static napi_value OsGetOriginalFileName0200(napi_env env, napi_callback_info inf
     for (int i = 0; i < fileNameLen; i++) {
         fileName[i] = 'a';
     }
-    errno_t memcpyRet = memcpy_s(fileName + fileNameLen, DLP_SUFFIX_LEN + 1, DLP_SUFFIX, DLP_SUFFIX_LEN + 1);
+    int memcpyRet = memcpy_s(fileName + fileNameLen, DLP_SUFFIX_LEN + 1, DLP_SUFFIX, DLP_SUFFIX_LEN + 1);
     if (memcpyRet != 0) {
         napi_value result = nullptr;
         napi_create_int32(env, DLP_ErrCode::ERR_OH_INVALID_PARAMETER, &result);
@@ -149,7 +149,7 @@ static napi_value OsGetOriginalFileName0300(napi_env env, napi_callback_info inf
     for (int i = 0; i < fileNameLen; i++) {
         fileName[i] = 'a';
     }
-    errno_t memcpyRet = memcpy_s(fileName + fileNameLen, DLP_SUFFIX_LEN + 1, DLP_SUFFIX, DLP_SUFFIX_LEN + 1);
+    int memcpyRet = memcpy_s(fileName + fileNameLen, DLP_SUFFIX_LEN + 1, DLP_SUFFIX, DLP_SUFFIX_LEN + 1);
     if (memcpyRet != 0) {
         napi_value result = nullptr;
         napi_create_int32(env, DLP_ErrCode::ERR_OH_INVALID_PARAMETER, &result);
