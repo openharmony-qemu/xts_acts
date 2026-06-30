@@ -2785,7 +2785,7 @@ export default function settingUiJsunit() {
       }
       let code = 0;
       try {
-        settings.openMobileNetworkSettingsPage(abilityContext.getApplicationContext());
+        settings.openMobileNetworkSettingsPage(abilityContext!.getApplicationContext());
         expect().assertFail();
       } catch (err) {
         console.error("[openMobileNetworkSettingsPage_valid_param] error = " + err);
@@ -2811,7 +2811,7 @@ export default function settingUiJsunit() {
       }
       let code = 0;
       try {
-        settings.openDisplaySettingsPage(abilityContext.getApplicationContext());
+        settings.openDisplaySettingsPage(abilityContext!.getApplicationContext());
         expect().assertFail();
       } catch (err) {
         console.error("[openDisplaySettingsPage_error_context] error = " + err);
@@ -2837,7 +2837,7 @@ export default function settingUiJsunit() {
       }
       let code = 0;
       try {
-        settings.openScreenRefreshRateSettingsPage(abilityContext.getApplicationContext());
+        settings.openScreenRefreshRateSettingsPage(abilityContext!.getApplicationContext());
         expect().assertFail();
       } catch (err) {
         console.error("[openScreenRefreshRateSettingsPage_error_contex] error = " + err);
@@ -2863,7 +2863,7 @@ export default function settingUiJsunit() {
       }
       let code = 0;
       try {
-        settings.openSoundSettingsPage(abilityContext.getApplicationContext());
+        settings.openSoundSettingsPage(abilityContext!.getApplicationContext());
         expect().assertFail();
       } catch (err) {
         console.error("[openSoundSettingsPage_error_context] error = " + err);
@@ -2889,7 +2889,7 @@ export default function settingUiJsunit() {
       }
       let code = 0;
       try {
-        settings.openBiometricsSettingsPage(abilityContext.getApplicationContext());
+        settings.openBiometricsSettingsPage(abilityContext!.getApplicationContext());
         expect().assertFail();
       } catch (err) {
         console.error("[openBiometricsSettingsPage_error_context] error = " + err);
@@ -2915,7 +2915,7 @@ export default function settingUiJsunit() {
       }
       let code = 0;
       try {
-        settings.openAboutDeviceSettingsPage(abilityContext.getApplicationContext());
+        settings.openAboutDeviceSettingsPage(abilityContext!.getApplicationContext());
         expect().assertFail();
       } catch (err) {
         console.error("[openAboutDeviceSettingsPage_error_context] error = " + err);
@@ -2941,7 +2941,7 @@ export default function settingUiJsunit() {
       }
       let code = 0;
       try {
-        settings.openNfcSettingsPage(abilityContext.getApplicationContext());
+        settings.openNfcSettingsPage(abilityContext!.getApplicationContext());
         expect().assertFail();
       } catch (err) {
         console.error("[openNfcSettingsPage_error_context] error = " + err);
@@ -2967,7 +2967,7 @@ export default function settingUiJsunit() {
       }
       let code = 0;
       try {
-        settings.openAppDetailSettingsPage(abilityContext.getApplicationContext());
+        settings.openAppDetailSettingsPage(abilityContext!.getApplicationContext(), 'com.example', 0);
         expect().assertFail();
       } catch (err) {
         console.error("[openAppDetailSettingsPage_error_context] error = " + err);
