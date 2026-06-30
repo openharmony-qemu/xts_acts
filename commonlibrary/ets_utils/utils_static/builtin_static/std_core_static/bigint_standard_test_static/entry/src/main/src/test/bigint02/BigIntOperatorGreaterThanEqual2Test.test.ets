@@ -13,13 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect } from '../../../../hypium/index';
+import { describe, it, expect,afterEach,afterAll } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntOperatorGreaterThanEqual2Test(): void {
   describe('testBigIntOperatorGreaterThanEqual2Test', () => {
-    afterEach(() => {
-      await Utils.msSleep(50);
+    afterEach(async (): Promise<void> => {
+      await new Promise<void>((resolve)=>{
+        setTimeout(()=>{
+          resolve(undefined);
+        },50)
+      })
     });
     afterAll(() => {
     });
