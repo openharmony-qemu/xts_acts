@@ -1271,9 +1271,9 @@ static napi_value TestAcquireAsyncContext(napi_env env, napi_callback_info info)
 static napi_value TestAcquireAsyncContextMultiple(napi_env env, napi_callback_info info)
 {
     OH_LOG_INFO(LOG_APP, "testTag TestAcquireAsyncContextMultiple start");
-    
+    private static final int LOOP_COUNT = 3;
     std::vector<uint64_t> contexts;
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < LOOP_COUNT; i++) {
         uint64_t ctx = OH_HiDebug_AcquireAsyncContext();
         contexts.push_back(ctx);
         OH_LOG_INFO(LOG_APP, "testTag Acquire context %{public}d: %{public}llu", i, ctx);
@@ -1424,9 +1424,9 @@ static napi_value TestMultipleContextsPushPop(napi_env env, napi_callback_info i
 static napi_value TestContextStress(napi_env env, napi_callback_info info)
 {
     OH_LOG_INFO(LOG_APP, "testTag TestContextStress start");
-    
+    private static final int LOOP_COUNT = 100;
     int successCount = 0;
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < LOOP_COUNT; i++) {
         uint64_t ctx = OH_HiDebug_AcquireAsyncContext();
         if (ctx != 0) {
             OH_HiDebug_ReleaseAsyncContext(ctx);
@@ -1434,7 +1434,7 @@ static napi_value TestContextStress(napi_env env, napi_callback_info info)
         }
     }
     
-    OH_LOG_INFO(LOG_APP, "testTag Stress test completed: %{public}d/%{public}d", successCount, 100);
+    OH_LOG_INFO(LOG_APP, "testTag Stress test completed: %{public}d/%{public}d", successCount, LOOP_COUNT);
     napi_value result;
     napi_create_int32(env, successCount, &result);
     return result;
