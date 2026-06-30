@@ -760,7 +760,7 @@ static napi_value Archive_Stream_Test_Abnormal(napi_env env, napi_callback_info 
     OH_Archive_Stream_Config config2 = {0};
     config2.blockSize = 64 * 1024; // 配置块大小为64kB
     config2.threadNum = 8; // 配置流式并行压缩线程数为8
-    config2.checksum = (OH_Archive_StreamChecksum)-1;
+    config2.checksum = (OH_Archive_StreamChecksumAlg)-1;
     config2.method = OH_ARCHIVE_COMPRESS_DEFLATE;
     OH_Archive_StreamWrite_Ctx writeCtx2 = OH_Archive_StreamWrite_Create(config2);
     NAPI_ASSERT(env, writeCtx2 == nullptr, "OH_Archive_StreamWrite_Create config2 failed");
