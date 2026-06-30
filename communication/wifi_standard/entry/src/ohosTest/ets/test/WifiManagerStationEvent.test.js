@@ -507,7 +507,7 @@ export default function actsWifiManagerEventTest() {
             console.info('SUB_Communication_WiFi_SysCaps_Test_0015 end');
             done();
         })
-                /**
+        /**
          * @tc.name   SUB_Communication_WiFi_SysCaps_Test_0016
          * @tc.number SUB_Communication_WiFi_SysCaps_Test_0016
          * @tc.desc   Test setPowerMode api.
