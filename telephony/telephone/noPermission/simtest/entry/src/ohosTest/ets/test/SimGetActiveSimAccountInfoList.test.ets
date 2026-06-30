@@ -35,8 +35,8 @@ const ExpectTrue = (n: boolean) => {
 export default function SimGetActiveSimAccountInfoList() {
     describe('SimGetActiveSimAccountInfoList',  () => {
 
-        let TRUE_SLOT_ID_0: int = 0;
-        let simAmount: int = 0;
+        let TRUE_SLOT_ID_0 = 0;
+        let simAmount= 0;
         beforeAll(async() => {
             let result0: boolean = true;
             try {
@@ -63,13 +63,7 @@ export default function SimGetActiveSimAccountInfoList() {
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: Function) => {
             const caseName: string = 'testTelephonyDualSimGetActiveSimAccountInfoListAsync0500';
             console.info(`${caseName} test start`);
-            const recursive = async (n: int) => {
-                if (n <= 0) {
-                    console.info(`${caseName} test finish`);
-                    done();
-                    return;
-                }
-            }
+           
             sim.getActiveSimAccountInfoList((err: BusinessError, data: Array<sim.IccAccountInfo>) => {
                 if (data) {
                     console.info(`${caseName} getActiveSimAccountInfoList nopermission test success, data: ${JSON.stringify(data)}`);
@@ -83,7 +77,6 @@ export default function SimGetActiveSimAccountInfoList() {
                     return;
                 }
             });
-            recursive(simAmount);
         });
 
         /**
@@ -98,13 +91,7 @@ export default function SimGetActiveSimAccountInfoList() {
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             let caseName: string = 'testTelephonyDualSimGetActiveSimAccountInfoListPromise0500';
             console.info(`${caseName} test start`);
-            const recursive = async (n: int) => {
-                if (n <= 0) {
-                    console.info(`${caseName} test finish`);
-                    done();
-                    return;
-                }
-            }
+            
             sim.getActiveSimAccountInfoList().then((data: Array<sim.IccAccountInfo>) => {
                 console.info(`${caseName}  000000, data: ${JSON.stringify(data)}`);
                 ExpectTrue((data as Array<sim.IccAccountInfo>).some(item => item?.iccId === ""));
@@ -115,7 +102,6 @@ export default function SimGetActiveSimAccountInfoList() {
                 done();
                 return;
             });
-            recursive(simAmount);
         });
     });
 }
