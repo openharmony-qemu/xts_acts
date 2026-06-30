@@ -3388,7 +3388,7 @@ export default function actsWifiManagerFunctionsTest() {
     /**
      * @tc.number SUB_Communication_WiFi_wifiManager_isWlanSupported_0001
      * @tc.name SUB_Communication_WiFi_wifiManager_isWlanSupported_0001
-     * @tc.desc Test connectToCandidateConfig with ConnectSettings - networkId is negative
+     * @tc.desc Test isWlanSupported 
      * @tc.size MEDIUMTEST
      * @tc.type Function
      * @tc.level LEVEL0
