@@ -457,7 +457,6 @@ export default function actsWifiManagerEventTest() {
          */
         it('SUB_Communication_WiFi_SysCaps_Test_0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info('SUB_Communication_WiFi_SysCaps_Test_0014 start');
-            let ret = false;
             try {
                 var isAccessToken = canIUse("SystemCapability.Communication.wifiMg.AP.Extension");
                 console.info("SUB_Communication_WiFi_SysCaps_Test_0014 test.syscap.param.001 : " + isAccessToken);
@@ -487,7 +486,6 @@ export default function actsWifiManagerEventTest() {
          */
         it('SUB_Communication_WiFi_SysCaps_Test_0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info('SUB_Communication_WiFi_SysCaps_Test_0015 start');
-            let ret = false;
             try {
                 var isAccessToken = canIUse("SystemCapability.Communication.wifiMg.AP.Extension");
                 console.info("SUB_Communication_WiFi_SysCaps_Test_0015 test.syscap.param.001 : " + isAccessToken);
@@ -517,7 +515,6 @@ export default function actsWifiManagerEventTest() {
          */
         it('SUB_Communication_WiFi_SysCaps_Test_0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info('SUB_Communication_WiFi_SysCaps_Test_0016 start');
-            let ret = false;
             try {
                 var isAccessToken = canIUse("SystemCapability.Communication.wifiMg.AP.Extension");
                 console.info("SUB_Communication_WiFi_SysCaps_Test_0016 test.syscap.param.001 : " + isAccessToken);
