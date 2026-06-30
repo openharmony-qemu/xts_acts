@@ -3385,6 +3385,27 @@ export default function actsWifiManagerFunctionsTest() {
       hilog.info(domain, tag, `${caseName} test end`);
       done();
     });
-
+    /**
+     * @tc.number SUB_Communication_WiFi_wifiManager_isWlanSupported_0001
+     * @tc.name SUB_Communication_WiFi_wifiManager_isWlanSupported_0001
+     * @tc.desc Test connectToCandidateConfig with ConnectSettings - networkId is negative
+     * @tc.size MEDIUMTEST
+     * @tc.type Function
+     * @tc.level LEVEL0
+     */
+    it('SUB_Communication_WiFi_wifiManager_isWlanSupported_0001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName = 'LOG_SUB_Communication_WiFi_wifiManager_isWlanSupported_0001';
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        let iswifisupport: boolean = wifiManager.isWlanSupported();
+        hilog.error(domain, tag, `${caseName} isWlanSupported success`);
+        expect(iswifisupport === true || iswifisupport === false).assertTrue();
+      } catch (err) {
+        console.info(`${caseName} error code: ${err.code},error message: ${err.message}`);
+        expect().assertFail();
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
   })
 }
