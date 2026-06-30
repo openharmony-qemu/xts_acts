@@ -535,8 +535,6 @@ int VideoEncodeApi0500Test()
         ASSERT_EQ(AV_ERR_OK, OH_VideoEncoder_Reset(venc_));
         ASSERT_EQ(AV_ERR_OK, OH_VideoEncoder_Reset(venc_));
         return 0;
-    } else {
-        return -1;
     }
     return 0;
 }
