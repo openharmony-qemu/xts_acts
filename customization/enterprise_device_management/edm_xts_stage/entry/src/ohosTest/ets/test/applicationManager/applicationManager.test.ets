@@ -6677,47 +6677,47 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.name   removeKeepAliveApps_test_007
-     * @tc.number removeKeepAliveApps_test_007
+     * @tc.name   removeKeepAliveApps_test_0700
+     * @tc.number removeKeepAliveApps_test_0700
      * @tc.desc   removeKeepAliveApps with invalid want parameter admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("removeKeepAliveApps_test_007", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- removeKeepAliveApps_test_007  -------- START --------');
+    it("removeKeepAliveApps_test_0700", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeKeepAliveApps_test_0700  -------- START --------');
       try {
         applicationManager.removeKeepAliveApps(INVALID_WANT, [TEST_BUNDLENAME], DEFAULT_USER_ID);
-        console.info(' --- removeKeepAliveApps_test_007 error is expected, but it done.');
+        console.info(' --- removeKeepAliveApps_test_0700 error is expected, but it done.');
         expect(false).assertTrue();
       } catch (error) {
-        console.info(' --- removeKeepAliveApps_test_007 error 401 is expected, actually catch: ' + error.code);
+        console.info(' --- removeKeepAliveApps_test_0700 error 401 is expected, actually catch: ' + error.code);
         expect(Number(error.code) === 401).assertTrue();
       }
       done();
-      console.info(' --- removeKeepAliveApps_test_007  -------- END --------');
+      console.info(' --- removeKeepAliveApps_test_0700  -------- END --------');
     })
 
     /**
-     * @tc.name   removeKeepAliveApps_test_008
-     * @tc.number removeKeepAliveApps_test_008
+     * @tc.name   removeKeepAliveApps_test_0800
+     * @tc.number removeKeepAliveApps_test_0800
      * @tc.desc   removeKeepAliveApps with empty array parameter bundleNames
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("removeKeepAliveApps_test_008", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- removeKeepAliveApps_test_008  -------- START --------');
+    it("removeKeepAliveApps_test_0800", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeKeepAliveApps_test_0800  -------- START --------');
       try {
         applicationManager.removeKeepAliveApps(SELFWANT, [], DEFAULT_USER_ID);
-        console.info(' --- removeKeepAliveApps_test_008 error is expected, but it done.');
+        console.info(' --- removeKeepAliveApps_test_0800 error is expected, but it done.');
         expect(false).assertTrue();
       } catch (error) {
-        console.info(' --- removeKeepAliveApps_test_008 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        console.info(' --- removeKeepAliveApps_test_0800 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 9200001).assertTrue();
       }
       done();
-      console.info(' --- removeKeepAliveApps_test_008  -------- END --------');
+      console.info(' --- removeKeepAliveApps_test_0800  -------- END --------');
     })
 
     /**
@@ -8483,53 +8483,53 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.name   setAbilityDisabled_test_0011
-     * @tc.number setAbilityDisabled_test_0011
+     * @tc.name   setAbilityDisabled_test_1100
+     * @tc.number setAbilityDisabled_test_1100
      * @tc.desc   setAbilityDisabled with null parameter disabled
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("setAbilityDisabled_test_0011", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- setAbilityDisabled_test_0011  -------- START --------');
+    it("setAbilityDisabled_test_1100", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setAbilityDisabled_test_1100  -------- START --------');
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         applicationManager.setAbilityDisabled(SELFWANT, 'com.example.helloworld', DEFAULT_USER_ID, 'EntryAbility', null);
-        console.info(' --- setAbilityDisabled_test_0011 error is expected, but it done.');
+        console.info(' --- setAbilityDisabled_test_1100 error is expected, but it done.');
         expect(false).assertTrue();
       } catch (error) {
-        console.info(' --- setAbilityDisabled_test_0011 error 401 is expected, actually catch: ' + error.code);
+        console.info(' --- setAbilityDisabled_test_1100 error 401 is expected, actually catch: ' + error.code);
         expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
       done();
-      console.info(' --- setAbilityDisabled_test_0011  -------- END --------');
+      console.info(' --- setAbilityDisabled_test_1100  -------- END --------');
     })
 
     /**
-     * @tc.name   setAbilityDisabled_test_0012
-     * @tc.number setAbilityDisabled_test_0012
+     * @tc.name   setAbilityDisabled_test_1200
+     * @tc.number setAbilityDisabled_test_1200
      * @tc.desc   setAbilityDisabled with undefined parameter disabled
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("setAbilityDisabled_test_0012", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- setAbilityDisabled_test_0012  -------- START --------');
+    it("setAbilityDisabled_test_1200", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setAbilityDisabled_test_1200  -------- START --------');
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         applicationManager.setAbilityDisabled(SELFWANT, 'com.example.helloworld', DEFAULT_USER_ID, 'EntryAbility', undefined);
-        console.info(' --- setAbilityDisabled_test_0012 error is expected, but it done.');
+        console.info(' --- setAbilityDisabled_test_1200 error is expected, but it done.');
         expect(false).assertTrue();
       } catch (error) {
-        console.info(' --- setAbilityDisabled_test_0012 error 401 is expected, actually catch: ' + error.code);
+        console.info(' --- setAbilityDisabled_test_1200 error 401 is expected, actually catch: ' + error.code);
         expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
       done();
-      console.info(' --- setAbilityDisabled_test_0012  -------- END --------');
+      console.info(' --- setAbilityDisabled_test_1200  -------- END --------');
     })
 
     /**
