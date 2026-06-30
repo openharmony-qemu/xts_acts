@@ -105,7 +105,7 @@ export default function CalendarPickerDialogSystemMaterialTest() {
       console.info('[' + tagName + '] column attrs: ' + JSON.stringify(column.$attrs));
       console.info('[' + tagName + '] systemMaterial: ' + JSON.stringify(systemMaterial));
 
-      let retvalue: string = systemMaterial.material.immersiveOptions.style;
+      let retValue: string = systemMaterial.material.immersiveOptions.style;
       console.info('[' + tagName + '] retValue: ' + JSON.stringify(retValue));
 
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
@@ -146,7 +146,7 @@ export default function CalendarPickerDialogSystemMaterialTest() {
       console.info('[' + tagName + '] column attrs: ' + JSON.stringify(column.$attrs));
       console.info('[' + tagName + '] systemMaterial: ' + JSON.stringify(systemMaterial));
 
-      let retvalue: string = systemMaterial.material.immersiveOptions.style;
+      let retValue: string = systemMaterial.material.immersiveOptions.style;
       console.info('[' + tagName + '] retValue: ' + JSON.stringify(retValue));
 
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
@@ -187,7 +187,7 @@ export default function CalendarPickerDialogSystemMaterialTest() {
       console.info('[' + tagName + '] column attrs: ' + JSON.stringify(column.$attrs));
       console.info('[' + tagName + '] systemMaterial: ' + JSON.stringify(systemMaterial));
 
-      let retvalue: string = systemMaterial.material.immersiveOptions.style;
+      let retValue: string = systemMaterial.material.immersiveOptions.style;
       console.info('[' + tagName + '] retValue: ' + JSON.stringify(retValue));
 
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
@@ -228,7 +228,7 @@ export default function CalendarPickerDialogSystemMaterialTest() {
       console.info('[' + tagName + '] column attrs: ' + JSON.stringify(column.$attrs));
       console.info('[' + tagName + '] systemMaterial: ' + JSON.stringify(systemMaterial));
 
-      let retvalue: string = systemMaterial.material.immersiveOptions.style;
+      let retValue: string = systemMaterial.material.immersiveOptions.style;
       console.info('[' + tagName + '] retValue: ' + JSON.stringify(retValue));
 
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
@@ -269,7 +269,7 @@ export default function CalendarPickerDialogSystemMaterialTest() {
       console.info('[' + tagName + '] column attrs: ' + JSON.stringify(column.$attrs));
       console.info('[' + tagName + '] systemMaterial: ' + JSON.stringify(systemMaterial));
 
-      let retvalue: string = systemMaterial.material.immersiveOptions.style;
+      let retValue: string = systemMaterial.material.immersiveOptions.style;
       console.info('[' + tagName + '] retValue: ' + JSON.stringify(retValue));
 
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
