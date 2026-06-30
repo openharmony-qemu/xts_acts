@@ -83,6 +83,13 @@ struct WebComponent {
               Utils.emitEvent("success", 20251212)
               break;
             }
+            case 'SwitchNextPageStatic' : {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/WebEnableFullscreenVideoOverlay' })
+              console.log('push URL success')
+              break;
+            }
           }
         })
       }
