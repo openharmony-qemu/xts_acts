@@ -522,7 +522,6 @@ int VideoEncodeApi0500Test()
     if (cap) {
         venc_ = OH_VideoEncoder_CreateByName(g_codecName);
         ASSERT_NE(nullptr, venc_);
-
         format = OH_AVFormat_Create();
         ASSERT_NE(nullptr, format);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
