@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -743,14 +744,14 @@ export default function hiTraceChainJsTest() {
     })
 
     /**
-     * @tc.name   SUB_DFX_DFT_Hitrace_JS_Static_2900
+     * @tc.name   testHitraceApiStatic029
      * @tc.number SUB_DFX_DFT_Hitrace_JS_Static_2900
      * @tc.desc   接口测试-hiTraceChain接口参数枚举值覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_DFX_DFT_Hitrace_JS_Static_2900', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testHitraceApiStatic029', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'testTag', 'testHitraceApiStatic029 start');
       try{
         let traceId = hiTraceChain.begin("business", hiTraceChain.HiTraceFlag.INCLUDE_ASYNC);
@@ -809,6 +810,33 @@ export default function hiTraceChainJsTest() {
       }
       console.info('testHitraceApiStatic029 end');
       hilog.info(0x0000, 'testTag', 'testHitraceApiStatic029 end');
+      done();
+    })
+
+    /**
+     * @tc.name   testHitraceApiStatic030
+     * @tc.number SUB_DFX_DFT_Hitrace_JS_Static_3000
+     * @tc.desc   接口测试-hiTraceChain接口参数枚举值覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testHitraceApiStatic030', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      hilog.info(0x0000, 'testTag', 'testHitraceApiStatic030 start');
+      try{
+        let traceId = hiTraceChain.begin("business", hiTraceChain.HiTraceFlag.INCLUDE_ASYNC);
+        let enabledDoNotCreateSpanFlag = hiTraceChain.isFlagEnabled(traceId, hiTraceChain.HiTraceFlag.INCLUDE_ASYNC);
+        hiTraceChain.enableFlag(traceId, hiTraceChain.HiTraceFlag.INCLUDE_ASYNC);
+        enabledDoNotCreateSpanFlag = hiTraceChain.isFlagEnabled(traceId, hiTraceChain.HiTraceFlag.INCLUDE_ASYNC);
+        expect(enabledDoNotCreateSpanFlag === true).assertTrue();
+        hiTraceChain.end(traceId);
+      } catch (err){
+        hilog.info(0x0000, 'testTag', 'testHitraceApiStatic030 got an error:' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+      console.info('testHitraceApiStatic030 end');
+      hilog.info(0x0000, 'testTag', 'testHitraceApiStatic030 end');
       done();
     })
 
