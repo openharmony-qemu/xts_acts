@@ -13,7 +13,11 @@
  * limitations under the License.
  */
 
-import { EditableTitleBarV2, EditableLeftIconV2, EditableTitleV2, EditableTitleBarMenuItemV2, EditableSaveButtonV2, EditableTitleBarStyleV2, EditableLeftIconTypeV2 } from '@ohos.arkui.advanced.EditableTitleBarV2';
+import {
+  EditableTitleBarV2, EditableLeftIconV2, EditableTitleV2, EditableTitleBarMenuItemV2, EditableSaveButtonV2,
+  EditableTitleBarStyleV2, EditableLeftIconTypeV2
+} from '@ohos.arkui.advanced.EditableTitleBarV2';
+import { SymbolGlyphModifier, LengthMetrics } from '@kit.ArkUI'
 
 @Entry
 @ComponentV2
@@ -92,6 +96,8 @@ struct EditableTitleBarV2Page {
               safeAreaEdges: [SafeAreaEdge.TOP]
             })
           })
+
+          
         }
         .alignItems(HorizontalAlign.Center)
         .width('100%')

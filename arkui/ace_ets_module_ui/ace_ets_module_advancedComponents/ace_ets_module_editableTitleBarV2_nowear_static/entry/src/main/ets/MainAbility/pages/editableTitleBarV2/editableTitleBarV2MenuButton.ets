@@ -55,9 +55,9 @@ struct EditableTitleBarV2MenuButton {
           title: 'Disabled Menu Item',
           options: new EditableTitleBarStyleV2(),
           menuItems: [
-            new EditableTitleBarMenuItemV2({ 
-              value: $r('sys.media.ohos_ic_public_more'), 
-              isEnabled: false 
+            new EditableTitleBarMenuItemV2({
+              value: $r('sys.media.ohos_ic_public_more'),
+              isEnabled: false
             })
           ]
         })
@@ -66,7 +66,7 @@ struct EditableTitleBarV2MenuButton {
           title: 'Ac Menu',
           options: new EditableTitleBarStyleV2(),
           menuItems: [
-            new EditableTitleBarMenuItemV2({ 
+            new EditableTitleBarMenuItemV2({
               value: $r('sys.media.ohos_ic_public_more'),
               accessibilityLevel: 'yes',
               accessibilityText: 'More options'
