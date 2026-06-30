@@ -41,7 +41,8 @@ export default function abilityTest() {
         await imageSourceApi.createPixelMap(decodingOptions).then(async (pixelMap) => {
           globalPixelMap = pixelMap;
           let csm: colorSpaceManager.ColorSpaceManager = pixelMap.getColorSpace();
-          await pixelMap.getImageInfo().then((imageInfo) => {
+                    try {
+            let imageInfo = await pixelMap.getImageInfo();
             hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' imageInfo:' + JSON.stringify(imageInfo));
             let isHDR = imageInfo.isHdr;
             let pixelmapFormat = imageInfo.pixelFormat;
@@ -49,9 +50,9 @@ export default function abilityTest() {
             hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' colorSpace value: ' + JSON.stringify(csm.getColorSpaceName()));
             hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' pixelmapFormat value: ' + JSON.stringify(pixelmapFormat));
             result = true;
-          }).catch((err: BusinessError) => {
+          } catch (err: BusinessError) {
             hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' getImageInfo err ' + JSON.stringify(err));
-          }).catch((err: BusinessError) => {
+          }.catch((err: BusinessError) => {
             hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' createPixelMap err ' + JSON.stringify(err));
           })
         })

@@ -185,29 +185,29 @@ export default function imageDecodeOptionsYuvTest() {
 
     const promiseCreate = async (TAG: string, imageSourceApi: image.ImageSource,
                                          decodingOptions: image.DecodingOptions) => {
-      await imageSourceApi.createPixelMap(decodingOptions)
-        .then(async (pixelMap) => {
-          globalPixelMap = pixelMap;
-          await pixelMap.getImageInfo().then((imageInfo) => {
-            g_callbackResult = true;
-            hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' imageInfo:' + JSON.stringify(imageInfo));
-            hilog.info(0x0000, 'testTag', '%{public}s', TAG + ` decodingOptions:${JSON.stringify(decodingOptions)};`);
-            let colorSpaceManager = decodingOptions.desiredColorSpace as colorSpaceManager.ColorSpaceManager
-            let desiredPixelFormat = decodingOptions.desiredPixelFormat
-            let desiredSize = decodingOptions.desiredSize as Size
-            let fitDensity = decodingOptions.fitDensity
-            if (imageInfo.pixelFormat === desiredPixelFormat &&
-              imageInfo.size.width === desiredSize.width &&
-              imageInfo.size.height === desiredSize.height &&
-              imageInfo.density === fitDensity &&
-              pixelMap.getColorSpace().getColorSpaceName() === colorSpaceManager.getColorSpaceName()) {
-              result = true
-            }
-            imageSourceApi?.release();
-          })
-        }).catch((err: BusinessError) => {
-          hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' getImageInfo err ' + JSON.stringify(err));
+            try {
+        let pixelMap = await imageSourceApi.createPixelMap(decodingOptions);
+        globalPixelMap = pixelMap;
+        await pixelMap.getImageInfo().then((imageInfo) => {
+        g_callbackResult = true;
+        hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' imageInfo:' + JSON.stringify(imageInfo));
+        hilog.info(0x0000, 'testTag', '%{public}s', TAG + ` decodingOptions:${JSON.stringify(decodingOptions)};`);
+        let colorSpaceManager = decodingOptions.desiredColorSpace as colorSpaceManager.ColorSpaceManager
+        let desiredPixelFormat = decodingOptions.desiredPixelFormat
+        let desiredSize = decodingOptions.desiredSize as Size
+        let fitDensity = decodingOptions.fitDensity
+        if (imageInfo.pixelFormat === desiredPixelFormat &&
+        imageInfo.size.width === desiredSize.width &&
+        imageInfo.size.height === desiredSize.height &&
+        imageInfo.density === fitDensity &&
+        pixelMap.getColorSpace().getColorSpaceName() === colorSpaceManager.getColorSpaceName()) {
+        result = true
+        }
+        imageSourceApi?.release();
         })
+      } catch (err: BusinessError) {
+        hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' getImageInfo err ' + JSON.stringify(err));
+      }
     }
 
     const callBackCreate = async (TAG: string, imageSourceApi: image.ImageSource,

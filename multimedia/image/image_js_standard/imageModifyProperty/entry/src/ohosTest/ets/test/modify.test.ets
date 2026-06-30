@@ -563,18 +563,19 @@ async function testGetMakerNoteImagePropertyErr(done :Function, testNum: string,
         expect(false).assertTrue();
         done();
       }
-      await imageSource.getImageProperty(image.PropertyKey.MAKER_NOTE).then((data: string) => {
+            try {
+        let data: string = await imageSource.getImageProperty(image.PropertyKey.MAKER_NOTE);
         console.info(`${testNum} getImageProperty data: ` + data);
         expect(false).assertTrue();
-      }).catch((error: BusinessError) => {
+      } catch (error: BusinessError) {
         if (error.code == ERROR_CODE4) {
-          console.info(`${testNum} getImageProperty data error: ` + error);
-          expect(error.code == ERROR_CODE4).assertTrue();
+        console.info(`${testNum} getImageProperty data error: ` + error);
+        expect(error.code == ERROR_CODE4).assertTrue();
         } else if (error.code == ERROR_CODE5) {
-          console.info(`${testNum} getImageProperty not supported image error: ` + error);
-          expect(error.code == ERROR_CODE5).assertTrue();
+        console.info(`${testNum} getImageProperty not supported image error: ` + error);
+        expect(error.code == ERROR_CODE5).assertTrue();
         }
-      });
+      };
       if (fd != undefined) {
         fs.closeSync(fd);
       }
@@ -4165,14 +4166,15 @@ export default function imageModifyProperty() {
         let imageSourceApi: image.ImageSource = image.createImageSource(file.fd);
         globalImagesource= imageSourceApi;
         fs.closeSync(file.fd!!);
-        await imageSourceApi.getImageProperty(image.PropertyKey.MAKER_NOTE).then((MakerNote: string) => {
+                try {
+          let MakerNote: string = await imageSourceApi.getImageProperty(image.PropertyKey.MAKER_NOTE);
           console.error(`SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_0700 getImageProperty MakerNote: ` + MakerNote);
           done();
-        }).catch((error: BusinessError) => {
+        } catch (error: BusinessError) {
           console.error(`SUB_MULTIMEDIA_IMAGE_SOURCENDK_GET_MAKERNOTE_PROPERTY_0700 getImageProperty error: ` + error);
           expect(false).assertTrue();
           done();
-        });
+        };
     });
 
     /**

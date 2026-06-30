@@ -55,18 +55,19 @@ export default function imagePicturePack() {
         image.createImageSource(filesDir + '/' + "test.jpg").supportedFormats.includes("image/heic");
       isSupportHEICEncode = 
         image.createImagePacker().supportedFormats.includes("image/heic");
-      isSupportHdr = await fs.access('/system/lib64/ndk/libvideo_processing_capi_impl.so').then((res: boolean) => {
-        if (res) {
-          console.info("file exists");
-          return true;
-        } else {
-          console.info("file not exists");
-          return false;
-        }
-      }).catch((err: BusinessError) => {
-        console.error("access failed with error message: " + err.message + ", error code: " + err.code);
-        return false;
-      });
+      isSupportHdr =       isSupportHdr = try {
+                       let res: boolean = await fs.access('/system/lib64/ndk/libvideo_processing_capi_impl.so');
+                       if (res) {
+                       console.info("file exists");
+                       return true;
+                       } else {
+                       console.info("file not exists");
+                       return false;
+                       }
+      isSupportHdr = } catch (err: BusinessError) {
+                       console.error("access failed with error message: " + err.message + ", error code: " + err.code);
+                       return false;
+      isSupportHdr = };
     })
 
     afterEach(async () => {
@@ -314,22 +315,24 @@ export default function imagePicturePack() {
 
         const imagePackerApi: image.ImagePacker = image.createImagePacker();
         if (packType === "packing") {
-          await imagePackerApi.packing(picture, packOpts).then(async (data: ArrayBuffer) => {
+                    try {
+            let data: ArrayBuffer = await imagePackerApi.packing(picture, packOpts);
             let imageSource = image.createImageSource(data);
             let ret = await checkPackResult(logger, imageSource, flag, packOpts, properties, type);
             expect(ret).assertTrue();
             picture.release();
             await sleep(5000);
             done();
-          }).catch(async (error: BusinessError) => {
+          } catch (error: BusinessError) {
             logger.log(`packing picture to buffer failed: ${error}, error code: ${JSON.stringify(error.code)}`);
             expect(false).assertTrue();
             picture.release();
             await sleep(5000);
             done();
-          })
+          }
         } else {
-          await imagePackerApi.packToFile(picture, fdNum!!, packOpts).then(async () => {
+                    try {
+            await imagePackerApi.packToFile(picture, fdNum!!, packOpts);
             let imageSource = image.createImageSource(fdNum!!);
             let ret = await checkPackResult(logger, imageSource, flag, packOpts, properties, type);
             await fs.close(fdNum!!);
@@ -337,13 +340,13 @@ export default function imagePicturePack() {
             picture.release();
             await sleep(5000);
             done();
-          }).catch(async (error: BusinessError) => {
+          } catch (error: BusinessError) {
             logger.log(`packToFile picture failed: ${error}, error code: ${JSON.stringify(error.code)}`);
             expect(false).assertTrue();
             picture.release();
             await sleep(5000);
             done();
-          });
+          };
         }
       }
     }

@@ -35,12 +35,13 @@ async function packingPromiseTest(done: Function, testName: string, path: string
     const imagePackerApi: image.ImagePacker = await image.createImagePacker();
     let funcName = "Packing";
     if (imagePackerApi != null) {
-      await imagePackerApi.packing(pictureObj, opts).then((data: ArrayBuffer) => {
+            try {
+        let data: ArrayBuffer = await imagePackerApi.packing(pictureObj, opts);
         console.info(TAG, funcName, 'Succeeded in packing the image.' + data);
-      }).catch((error: BusinessError) => {
+      } catch (error: BusinessError) {
         console.error(TAG, funcName, `Failed to pack the image.code ${error.code},message is ${error.message}`);
         expect().assertFail();
-      });
+      };
       await imagePackerApi.release();
       done();
     }

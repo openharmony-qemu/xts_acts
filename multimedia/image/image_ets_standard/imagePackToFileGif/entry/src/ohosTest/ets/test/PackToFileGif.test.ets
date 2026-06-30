@@ -229,30 +229,31 @@ export default function imagePackToFileGif() {
                 expect(false).assertTrue();
                 done();
             }
-            await globalPacker.packToFileFromPixelmapSequence(pixelMapList, writeFd, packingOptions).then(async () => {
-                try {
-                    fileio.closeSync(writeFd)
-                    console.log(`${testNum} testPackToFileForSequence success`);
-                    let imgSource = image.createImageSource(fpath);
-                    if (imgSource == undefined) {
-                        console.log(`${testNum} create pack file imageSource failed.`);
-                        expect(false).assertTrue();
-                        done();
-                    } else {
-                        await checkPackToFileForSequenceResult(imgSource, packingOptions, testFile);
-                        await imgSource.release();
-                        done();
-                    }
-                } catch (e1) {
-                    console.log("testPackToFileForSequence e1: " + e1);
-                    expect().assertFail();
-                    done();
-                }
-            }).catch((error: BusinessError) => {
-                console.log(`${testNum} error: ` + JSON.stringify(error));
-                expect().assertFail();
-                done();
-            });
+                        try {
+              await globalPacker.packToFileFromPixelmapSequence(pixelMapList, writeFd, packingOptions);
+              try {
+              fileio.closeSync(writeFd)
+              console.log(`${testNum} testPackToFileForSequence success`);
+              let imgSource = image.createImageSource(fpath);
+              if (imgSource == undefined) {
+              console.log(`${testNum} create pack file imageSource failed.`);
+              expect(false).assertTrue();
+              done();
+              } else {
+              await checkPackToFileForSequenceResult(imgSource, packingOptions, testFile);
+              await imgSource.release();
+              done();
+              }
+              } catch (e1) {
+              console.log("testPackToFileForSequence e1: " + e1);
+              expect().assertFail();
+              done();
+              }
+            } catch (error: BusinessError) {
+              console.log(`${testNum} error: ` + JSON.stringify(error));
+              expect().assertFail();
+              done();
+            };
         }
 
         const testPackToFileForSequenceError = async (done: Function, testNum: string,
@@ -272,16 +273,17 @@ export default function imagePackToFileGif() {
                 expect(false).assertTrue();
                 done();
             }
-            await globalPacker.packToFileFromPixelmapSequence(pixelMapList, writeFd, packingOptions).then(async () => {
-                console.log(`${testNum} packToFileFromPixelmapSequence success`);
-                expect(false).assertTrue();
-                done();
-            }).catch((error: BusinessError) => {
-                console.log(`${testNum} packToFileFromPixelmapSequence error: ` + JSON.stringify(error));
-                console.log(`${testNum} packToFileFromPixelmapSequence error.code: ` + error.code);
-                expect(error.code == ERROR_CODE1).assertTrue();
-                done();
-            });
+                        try {
+              await globalPacker.packToFileFromPixelmapSequence(pixelMapList, writeFd, packingOptions);
+              console.log(`${testNum} packToFileFromPixelmapSequence success`);
+              expect(false).assertTrue();
+              done();
+            } catch (error: BusinessError) {
+              console.log(`${testNum} packToFileFromPixelmapSequence error: ` + JSON.stringify(error));
+              console.log(`${testNum} packToFileFromPixelmapSequence error.code: ` + error.code);
+              expect(error.code == ERROR_CODE1).assertTrue();
+              done();
+            };
         }
 
         const checkPackToFileResult = async (filepath: string, testFilePack: TestFilePack) => {

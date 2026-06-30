@@ -924,30 +924,32 @@ export default function pictureNdkTest() {
       console.info('imageSource is ' + imageSource);
       isSupportHEIFDecode = imageSource.supportedFormats.includes('image/heic');
       console.info('isSupportHEIFDecode is ' + isSupportHEIFDecode);
-      isSupportVPE = await fs.access("/sys_prod/lib64/VideoProcessingEngine/libaihdr_engine.so").then((res: boolean) => {
-        if (res) {
-          console.info("file exists");
-          return true;
-        } else {
-          console.info("file not exists");
-          return false;
-        }
-      }).catch((err: BusinessError) => {
-        console.error("access failed with error message: " + err.message + ", error code: " + err.code);
-        return false;
-      });
-      isSupportHdr = await fs.access('/system/lib64/ndk/libvideo_processing_capi_impl.so').then((res: boolean) => {
-        if (res) {
-          console.info("file exists");
-          return true;
-        } else {
-          console.info("file not exists");
-          return false;
-        }
-      }).catch((err: BusinessError) => {
-        console.error("access failed with error message: " + err.message + ", error code: " + err.code);
-        return false;
-      });
+      isSupportVPE =       isSupportVPE = try {
+                       let res: boolean = await fs.access("/sys_prod/lib64/VideoProcessingEngine/libaihdr_engine.so");
+                       if (res) {
+                       console.info("file exists");
+                       return true;
+                       } else {
+                       console.info("file not exists");
+                       return false;
+                       }
+      isSupportVPE = } catch (err: BusinessError) {
+                       console.error("access failed with error message: " + err.message + ", error code: " + err.code);
+                       return false;
+      isSupportVPE = };
+      isSupportHdr =       isSupportHdr = try {
+                       let res: boolean = await fs.access('/system/lib64/ndk/libvideo_processing_capi_impl.so');
+                       if (res) {
+                       console.info("file exists");
+                       return true;
+                       } else {
+                       console.info("file not exists");
+                       return false;
+                       }
+      isSupportHdr = } catch (err: BusinessError) {
+                       console.error("access failed with error message: " + err.message + ", error code: " + err.code);
+                       return false;
+      isSupportHdr = };
     })
 
     afterEach(() => {

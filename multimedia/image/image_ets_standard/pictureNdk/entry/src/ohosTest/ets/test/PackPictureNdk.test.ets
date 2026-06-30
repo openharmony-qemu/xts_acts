@@ -178,18 +178,19 @@ export default function packPictureNdkTest() {
     let isSupportHdr: boolean = false;
     let isSupportHeicEncode: boolean = false;
     beforeAll(async () => {
-      isSupportHdr = await fs.access('/system/lib64/ndk/libvideo_processing_capi_impl.so').then((res: boolean) => {
-        if (res) {
-          console.info("file exists");
-          return true;
-        } else {
-          console.info("file not exists");
-          return false;
-        }
-      }).catch((err: BusinessError) => {
-        console.error("access failed with error message: " + err.message + ", error code: " + err.code);
-        return false;
-      });
+      isSupportHdr =       isSupportHdr = try {
+                       let res: boolean = await fs.access('/system/lib64/ndk/libvideo_processing_capi_impl.so');
+                       if (res) {
+                       console.info("file exists");
+                       return true;
+                       } else {
+                       console.info("file not exists");
+                       return false;
+                       }
+      isSupportHdr = } catch (err: BusinessError) {
+                       console.error("access failed with error message: " + err.message + ", error code: " + err.code);
+                       return false;
+      isSupportHdr = };
       isSupportHeicEncode = image.createImagePacker().supportedFormats.includes("image/heic");
       let propertyKeys: Array<string> = Object.values(image.PropertyKey).filter(item =>
         item != "JPEGInterchangeFormat" && item != "JPEGInterchangeFormatLength");

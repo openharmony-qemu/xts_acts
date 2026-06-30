@@ -222,12 +222,13 @@ async function packToFilePicturePromiseTest(done: Function, testName: string, pa
     let commodityPixelMap: image.PixelMap = await imageSource.createPixelMap();
     let pictureObj: image.Picture = image.createPicture(commodityPixelMap);
     let funcName = "PackToFile";
-    await imagePackerApi.packToFile(pictureObj, file.fd, packOpts).then(() => {
+        try {
+      await imagePackerApi.packToFile(pictureObj, file.fd, packOpts);
       console.info(TAG, funcName, 'Succeeded in packing the image to file.');
-    }).catch((error: BusinessError) => {
+    } catch (error: BusinessError) {
       console.error(TAG, funcName, `Failed to pack the image to file.code ${error.code},message is ${error.message}`);
       expect().assertFail();
-    });
+    };
     done();
   } catch (error) {
     console.info(TAG, `failed; error: ${error},${error.code}`, testName);

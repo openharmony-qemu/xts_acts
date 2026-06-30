@@ -23,12 +23,13 @@ const TAG = LOG_TAG + 'readNextImage';
 async function readNextImagePromiseTest(done: Function, testName: string, size: image.Size) {
   try {
     const receiver: image.ImageReceiver = await image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
-    await receiver.getReceivingSurfaceId().then((id: string) => {
+        try {
+      let id: string = await receiver.getReceivingSurfaceId();
       console.info(TAG, 'Succeeded in getting the readNextImage.');
-    }).catch((error: BusinessError) => {
+    } catch (error: BusinessError) {
       console.error(TAG, `Failed to get the readNextImage.code ${error.code},message is ${error.message}`);
       expect().assertFail();
-    })
+    }
     done();
   } catch (error) {
     console.info(TAG, `failed; error: ${error},${error.code}`, testName);

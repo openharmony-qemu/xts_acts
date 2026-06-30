@@ -67,16 +67,17 @@ export default function ImageSourceMetadataSupp() {
       const imageSourceObj = await getImageSource('test.jpg');
       try {
         let propertyKeys = ["ImageWidth", "HwMnoteIsXmageSupported"];
-        await imageSourceObj.readImageMetadata(propertyKeys).then((metaData: image.ImageMetadata) => {
+                try {
+          let metaData: image.ImageMetadata = await imageSourceObj.readImageMetadata(propertyKeys);
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-            metaData.makerNoteHuaweiMetadata != undefined) {
-            console.info(TAG,testName,"ImageWidth: " + metaData.exifMetadata.imageWidth +
-              " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.isXmageSupported);
+          metaData.makerNoteHuaweiMetadata != undefined) {
+          console.info(TAG,testName,"ImageWidth: " + metaData.exifMetadata.imageWidth +
+          " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.isXmageSupported);
           }
-        }).catch((error: BusinessError) => {
+        } catch (error: BusinessError) {
           console.error(TAG,testName,`ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect(error.code).assertUndefined();
-        })
+        }
       } catch (error) {
         console.error(TAG,testName, `failed; error: ${error},${error.code}`);
         expect().assertFail();
@@ -97,16 +98,17 @@ export default function ImageSourceMetadataSupp() {
       const imageSourceObj = await getImageSource('test_exif_v2.jpg');
       try {
         let propertyKeys = ["ImageWidth", "HwMnoteIsXmageSupported"];
-        await imageSourceObj.readImageMetadata(propertyKeys).then((metaData: image.ImageMetadata) => {
+                try {
+          let metaData: image.ImageMetadata = await imageSourceObj.readImageMetadata(propertyKeys);
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-            metaData.makerNoteHuaweiMetadata != undefined) {
-            console.info(TAG,testName,"ImageWidth: " + metaData.exifMetadata.imageWidth +
-              " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.isXmageSupported);
+          metaData.makerNoteHuaweiMetadata != undefined) {
+          console.info(TAG,testName,"ImageWidth: " + metaData.exifMetadata.imageWidth +
+          " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.isXmageSupported);
           }
-        }).catch((error: BusinessError) => {
+        } catch (error: BusinessError) {
           console.error(TAG,testName,`ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        })
+        }
       } catch (error) {
         console.error(TAG,testName, `failed; error: ${error},${error.code}`);
         expect().assertFail();
@@ -127,16 +129,17 @@ export default function ImageSourceMetadataSupp() {
       const imageSourceObj = await getImageSource('test_exif_v3.webp');
       try {
         let propertyKeys = ["ImageWidth", "HwMnoteIsXmageSupported"];
-        await imageSourceObj.readImageMetadata(propertyKeys).then((metaData: image.ImageMetadata) => {
+                try {
+          let metaData: image.ImageMetadata = await imageSourceObj.readImageMetadata(propertyKeys);
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-            metaData.makerNoteHuaweiMetadata != undefined) {
-            console.info(TAG,testName,"ImageWidth: " + metaData.exifMetadata.imageWidth +
-              " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.isXmageSupported);
+          metaData.makerNoteHuaweiMetadata != undefined) {
+          console.info(TAG,testName,"ImageWidth: " + metaData.exifMetadata.imageWidth +
+          " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.isXmageSupported);
           }
-        }).catch((error: BusinessError) => {
+        } catch (error: BusinessError) {
           console.error(TAG,testName,`ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect(error.code).assertUndefined();
-        })
+        }
       } catch (error) {
         console.error(TAG,testName, `failed; error: ${error},${error.code}`);
         expect().assertFail();
@@ -157,16 +160,17 @@ export default function ImageSourceMetadataSupp() {
       const imageSourceObj = await getImageSource('test_exif_v3.webp');
       try {
         let propertyKeys = ["photoMode", "HwMnoteIsXmageSupported"];
-        await imageSourceObj.readImageMetadata(propertyKeys).then((metaData: image.ImageMetadata) => {
+                try {
+          let metaData: image.ImageMetadata = await imageSourceObj.readImageMetadata(propertyKeys);
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-            metaData.makerNoteHuaweiMetadata != undefined) {
-            console.info(TAG,testName,"ImageWidth: " + metaData.exifMetadata.photoMode +
-              " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.isXmageSupported);
+          metaData.makerNoteHuaweiMetadata != undefined) {
+          console.info(TAG,testName,"ImageWidth: " + metaData.exifMetadata.photoMode +
+          " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.isXmageSupported);
           }
-        }).catch((error: BusinessError) => {
+        } catch (error: BusinessError) {
           console.error(TAG,testName,`ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect(error.code).assertUndefined();
-        })
+        }
       } catch (error) {
         console.error(TAG,testName, `failed; error: ${error},${error.code}`);
         expect().assertFail();
@@ -187,16 +191,17 @@ export default function ImageSourceMetadataSupp() {
       const imageSourceObj = await getImageSource('moving_test_loop0.gif');
       try {
         let propertyKeys = ["ImageWidth", "HwMnoteIsXmageSupported"];
-        await imageSourceObj.readImageMetadata(propertyKeys).then((metaData: image.ImageMetadata) => {
+                try {
+          let metaData: image.ImageMetadata = await imageSourceObj.readImageMetadata(propertyKeys);
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-            metaData.makerNoteHuaweiMetadata != undefined) {
-            console.info(TAG,testName,"ImageWidth: " + metaData.exifMetadata.imageWidth +
-              " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.isXmageSupported);
+          metaData.makerNoteHuaweiMetadata != undefined) {
+          console.info(TAG,testName,"ImageWidth: " + metaData.exifMetadata.imageWidth +
+          " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.isXmageSupported);
           }
-        }).catch((error: BusinessError) => {
+        } catch (error: BusinessError) {
           console.error(TAG,testName,`ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect(error.code).assertUndefined();
-        })
+        }
       } catch (error) {
         console.error(TAG,testName, `failed; error: ${error},${error.code}`);
         expect().assertFail();
@@ -217,16 +222,17 @@ export default function ImageSourceMetadataSupp() {
       const imageSourceObj = await getImageSource('test_exif_v2.jpg');
       try {
         let propertyKeys = ["photoMode", "HwMnoteIsXmageSupported"];
-        await imageSourceObj.readImageMetadata(propertyKeys).then((metaData: image.ImageMetadata) => {
+                try {
+          let metaData: image.ImageMetadata = await imageSourceObj.readImageMetadata(propertyKeys);
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-            metaData.makerNoteHuaweiMetadata != undefined) {
-            console.info(TAG,testName,"ImageWidth: " + metaData.exifMetadata.photoMode +
-              " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.isXmageSupported);
+          metaData.makerNoteHuaweiMetadata != undefined) {
+          console.info(TAG,testName,"ImageWidth: " + metaData.exifMetadata.photoMode +
+          " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.isXmageSupported);
           }
-        }).catch((error: BusinessError) => {
+        } catch (error: BusinessError) {
           console.error(TAG,testName,`ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect(error.code).assertUndefined();
-        })
+        }
       } catch (error) {
         console.error(TAG,testName, `failed; error: ${error},${error.code}`);
         expect().assertFail();
@@ -247,16 +253,17 @@ export default function ImageSourceMetadataSupp() {
       const imageSourceObj = await getImageSource('test_exif_v2.png');
       try {
         let propertyKeys = ["ImageWidth", "HwMnoteIsXmageSupported"];
-        await imageSourceObj.readImageMetadata(propertyKeys).then((metaData: image.ImageMetadata) => {
+                try {
+          let metaData: image.ImageMetadata = await imageSourceObj.readImageMetadata(propertyKeys);
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-            metaData.makerNoteHuaweiMetadata != undefined) {
-            console.info(TAG,testName,"ImageWidth: " + metaData.exifMetadata.imageWidth +
-              " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.isXmageSupported);
+          metaData.makerNoteHuaweiMetadata != undefined) {
+          console.info(TAG,testName,"ImageWidth: " + metaData.exifMetadata.imageWidth +
+          " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.isXmageSupported);
           }
-        }).catch((error: BusinessError) => {
+        } catch (error: BusinessError) {
           console.error(TAG,testName,`ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        })
+        }
       } catch (error) {
         console.error(TAG,testName, `failed; error: ${error},${error.code}`);
         expect().assertFail();
@@ -277,16 +284,17 @@ export default function ImageSourceMetadataSupp() {
       const imageSourceObj = await getImageSource('test61.gif');
       try {
         let propertyKeys = ["ImageWidth", "HwMnoteIsXmageSupported"];
-        await imageSourceObj.readImageMetadata(propertyKeys).then((metaData: image.ImageMetadata) => {
+                try {
+          let metaData: image.ImageMetadata = await imageSourceObj.readImageMetadata(propertyKeys);
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-            metaData.makerNoteHuaweiMetadata != undefined) {
-            console.info(TAG,testName,"ImageWidth: " + metaData.exifMetadata.photoMode +
-              " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.isXmageSupported);
+          metaData.makerNoteHuaweiMetadata != undefined) {
+          console.info(TAG,testName,"ImageWidth: " + metaData.exifMetadata.photoMode +
+          " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.isXmageSupported);
           }
-        }).catch((error: BusinessError) => {
+        } catch (error: BusinessError) {
           console.error(TAG,testName,`ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message},`,JSON.stringify(error));
           expect(error.code).assertUndefined();
-        })
+        }
       } catch (error) {
         console.error(TAG,testName, `failed; error: ${error},${error.code}`);
         expect().assertFail();
@@ -308,15 +316,16 @@ export default function ImageSourceMetadataSupp() {
       let propertyKeys = ["ImageWidth", "FlashpixVersion"];
       try {
         console.log(TAG,testName,"input ImageWidth", "FlashpixVersion");
-        await imageSourceObj.readImageMetadata(propertyKeys).then((metaData: image.ImageMetadata) => {
+                try {
+          let metaData: image.ImageMetadata = await imageSourceObj.readImageMetadata(propertyKeys);
           if (metaData != undefined && metaData.exifMetadata != undefined ) {
-            console.info(TAG,testName,"ImageWidth: " + metaData.exifMetadata.imageWidth+
-            " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata?.isXmageSupported);
+          console.info(TAG,testName,"ImageWidth: " + metaData.exifMetadata.imageWidth+
+          " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata?.isXmageSupported);
           }
-        }).catch((error: BusinessError) => {
+        } catch (error: BusinessError) {
           console.error(TAG,testName,`ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        })
+        }
       } catch (error) {
         console.error(TAG,testName, `failed; error: ${error},${error.code}`);
         expect().assertFail();
@@ -337,16 +346,17 @@ export default function ImageSourceMetadataSupp() {
       const imageSourceObj = await getImageSource('test_exif_v2.jpg');
       try {
         let propertyKeys = ["ImageWidth", "FlashpixVersion"];
-        await imageSourceObj.readImageMetadata(propertyKeys).then((metaData: image.ImageMetadata) => {
+                try {
+          let metaData: image.ImageMetadata = await imageSourceObj.readImageMetadata(propertyKeys);
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-            metaData.makerNoteHuaweiMetadata != undefined) {
-            console.info(TAG,testName,"ImageWidth: " + metaData.exifMetadata.photoMode +
-              " HwMnoteIsXmageSupported: " + metaData.exifMetadata.flash);
+          metaData.makerNoteHuaweiMetadata != undefined) {
+          console.info(TAG,testName,"ImageWidth: " + metaData.exifMetadata.photoMode +
+          " HwMnoteIsXmageSupported: " + metaData.exifMetadata.flash);
           }
-        }).catch((error: BusinessError) => {
+        } catch (error: BusinessError) {
           console.error(TAG,testName,`ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect(error.code).assertUndefined();
-        })
+        }
       } catch (error) {
         console.error(TAG,testName, `failed; error: ${error},${error.code}`);
         expect().assertFail();
@@ -718,12 +728,13 @@ export default function ImageSourceMetadataSupp() {
         if (metaData != undefined && metaData.exifMetadata != undefined) {
           metaData.exifMetadata.imageLength = 3072;
         }
-        await imageSourceObj.writeImageMetadata(metaData).then(() => {
+                try {
+          await imageSourceObj.writeImageMetadata(metaData);
           console.info(TAG,testName,`write image metadata success.`);
-        }).catch((error: BusinessError) => {
+        } catch (error: BusinessError) {
           console.error(TAG,testName,`writeImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        });
+        };
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect().assertFail();
