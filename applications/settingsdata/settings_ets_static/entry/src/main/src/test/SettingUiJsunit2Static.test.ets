@@ -2767,4 +2767,238 @@ export default function settingUiJsunit() {
       done();
     });
   })
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openMobileNetworkSettingsPage_error_context_0100
+   * @tc.number SUB_Applications_Settings_openMobileNetworkSettingsPage_error_context_0100
+   * @tc.desc   MediumTest
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openMobileNetworkSettingsPage_error_context_0100',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void) => {
+      if (!isDeviceSupportInputMethod()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openMobileNetworkSettingsPage(abilityContext.getApplicationContext());
+        expect().assertFail();
+      } catch (err) {
+        console.error("[openMobileNetworkSettingsPage_valid_param] error = " + err);
+        expect(err?.code).assertEqual(16900010);
+      }
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openDisplaySettingsPage_error_context_0100
+   * @tc.number SUB_Applications_Settings_openDisplaySettingsPage_error_context_0100
+   * @tc.desc   MediumTest
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openDisplaySettingsPage_error_context_0100',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void) => {
+      if (!isDeviceSupportInputMethod()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openDisplaySettingsPage(abilityContext.getApplicationContext());
+        expect().assertFail();
+      } catch (err) {
+        console.error("[openDisplaySettingsPage_error_context] error = " + err);
+        expect(err?.code).assertEqual(16900010);
+      }
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openScreenRefreshRateSettingsPage_error_context_0100
+   * @tc.number SUB_Applications_Settings_openScreenRefreshRateSettingsPage_error_context_0100
+   * @tc.desc   MediumTest
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openScreenRefreshRateSettingsPage_error_context_0100',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void) => {
+      if (!isDeviceSupportInputMethod()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openScreenRefreshRateSettingsPage(abilityContext.getApplicationContext());
+        expect().assertFail();
+      } catch (err) {
+        console.error("[openScreenRefreshRateSettingsPage_error_contex] error = " + err);
+        expect(err?.code).assertEqual(16900010);
+      }
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openSoundSettingsPage_error_context_0100
+   * @tc.number SUB_Applications_Settings_openSoundSettingsPage_error_context_0100
+   * @tc.desc   MediumTest
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openSoundSettingsPage_error_context_0100',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void) => {
+      if (!isDeviceSupportInputMethod()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openSoundSettingsPage(abilityContext.getApplicationContext());
+        expect().assertFail();
+      } catch (err) {
+        console.error("[openSoundSettingsPage_error_context] error = " + err);
+        expect(err?.code).assertEqual(16900010);
+      }
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openBiometricsSettingsPage_error_context_0100
+   * @tc.number SUB_Applications_Settings_openBiometricsSettingsPage_error_context_0100
+   * @tc.desc   MediumTest
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openBiometricsSettingsPage_error_context_0100',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void) => {
+      if (!isDeviceSupportInputMethod()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openBiometricsSettingsPage(abilityContext.getApplicationContext());
+        expect().assertFail();
+      } catch (err) {
+        console.error("[openBiometricsSettingsPage_error_context] error = " + err);
+        expect(err?.code).assertEqual(16900010);
+      }
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openAboutDeviceSettingsPage_error_context_0100
+   * @tc.number SUB_Applications_Settings_openAboutDeviceSettingsPage_error_context_0100
+   * @tc.desc   MediumTest
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openAboutDeviceSettingsPage_error_context_0100',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void) => {
+      if (!isDeviceSupportInputMethod()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openAboutDeviceSettingsPage(abilityContext.getApplicationContext());
+        expect().assertFail();
+      } catch (err) {
+        console.error("[openAboutDeviceSettingsPage_error_context] error = " + err);
+        expect(err?.code).assertEqual(16900010);
+      }
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openAboutDeviceSettingsPage_error_context_0100
+   * @tc.number SUB_Applications_Settings_openAboutDeviceSettingsPage_error_context_0100
+   * @tc.desc   MediumTest
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openNfcSettingsPage_error_context_0100',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void) => {
+      if (!isDeviceSupportInputMethod()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openNfcSettingsPage(abilityContext.getApplicationContext());
+        expect().assertFail();
+      } catch (err) {
+        console.error("[openNfcSettingsPage_error_context] error = " + err);
+        expect(err?.code).assertEqual(16900010);
+      }
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openAppDetailSettingsPage_error_context_0100
+   * @tc.number SUB_Applications_Settings_openAppDetailSettingsPage_error_context_0100
+   * @tc.desc   MediumTest
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openAppDetailSettingsPage_error_context_0100',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void) => {
+      if (!isDeviceSupportInputMethod()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openAppDetailSettingsPage(abilityContext.getApplicationContext());
+        expect().assertFail();
+      } catch (err) {
+        console.error("[openAppDetailSettingsPage_error_context] error = " + err);
+        expect(err?.code).assertEqual(16900010);
+      }
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openAppDetailSettingsPage_valid_appIndex_null_0200
+   * @tc.number SUB_Applications_Settings_openAppDetailSettingsPage_valid_appIndex_null_0200
+   * @tc.desc   MediumTest
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openAppDetailSettingsPage_valid_appIndex_null_0200',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void) => {
+      if (!isDeviceSupportAppDetail()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openAppDetailSettingsPage(abilityContext!, 'com.example', null);
+        expect(code).assertEqual(0);
+      } catch (err) {
+        console.error("[openAppDetailSettingsPage_valid_appIndex_null] error = " + err);
+        expect(err?.code).assertEqual(16900020);
+      }
+      done();
+    });
 }
