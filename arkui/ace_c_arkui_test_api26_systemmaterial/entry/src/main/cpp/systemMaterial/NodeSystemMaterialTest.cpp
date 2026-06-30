@@ -21,8 +21,9 @@ namespace ArkUICapiTest {
 napi_value TestNodeSystemMaterialAttrId001(napi_env env, napi_callback_info info)
 {
     (void)info;
-    constexpr ArkUI_NodeAttributeType kExpectedAttrId = NODE_SYSTEM_MATERIAL;
-    ASSERT_EQ(NODE_SYSTEM_MATERIAL, kExpectedAttrId);
+    // API 26 spec: NODE_SYSTEM_MATERIAL attribute id is 127
+    constexpr int kSpecSystemMaterialAttrId = PARAM_100 + PARAM_20 + PARAM_7;
+    ASSERT_EQ_INT(static_cast<int>(NODE_SYSTEM_MATERIAL), kSpecSystemMaterialAttrId);
     NAPI_END;
 }
 
@@ -43,6 +44,7 @@ napi_value TestNodeSetSystemMaterial001(napi_env env, napi_callback_info info)
         ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
     }
     DestroyMaterial(handle);
+    nodeAPI->disposeNode(column);
     NAPI_END;
 }
 

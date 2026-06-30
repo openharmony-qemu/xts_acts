@@ -71,7 +71,7 @@ export default function customDialogSystemMaterialTest() {
     /**
      * @tc.name   SUB_ARKUI_CAPI_SYSTEMMATERIAL_2000
      * @tc.number SUB_ARKUI_CAPI_SYSTEMMATERIAL_2000
-     * @tc.desc   Set null system material on custom dialog succeeds
+     * @tc.desc   Set system material with null material handle on valid dialog returns SUCCESS
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1

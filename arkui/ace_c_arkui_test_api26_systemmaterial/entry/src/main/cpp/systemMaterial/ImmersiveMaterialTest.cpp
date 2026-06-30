@@ -41,20 +41,19 @@ napi_value TestMaterialLevelEnumValues001(napi_env env, napi_callback_info info)
 napi_value TestGetSystemMaterialSupported001(napi_env env, napi_callback_info info)
 {
     (void)info;
-    (void)OH_ArkUI_NativeModule_GetSystemMaterialSupported();
+    const bool supported = OH_ArkUI_NativeModule_GetSystemMaterialSupported();
+    ASSERT_EQ(supported, true);
     NAPI_END;
 }
 
 napi_value TestGetGlobalMaterialLevel001(napi_env env, napi_callback_info info)
 {
     (void)info;
-    auto level = OH_ArkUI_NativeModule_GetGlobalMaterialLevel();
-    if (level < ARKUI_MATERIAL_LEVEL_EXQUISITE || level > ARKUI_MATERIAL_LEVEL_SMOOTH) {
-        napi_throw_error(env, nullptr, "global material level out of range");
-        napi_value errorResult = nullptr;
-        napi_create_int32(env, PARAM_NEGATIVE_1, &errorResult);
-        return errorResult;
-    }
+    const auto level = OH_ArkUI_NativeModule_GetGlobalMaterialLevel();
+    const bool isValidLevel = level == ARKUI_MATERIAL_LEVEL_EXQUISITE ||
+                              level == ARKUI_MATERIAL_LEVEL_GENTLE ||
+                              level == ARKUI_MATERIAL_LEVEL_SMOOTH;
+    ASSERT_EQ(isValidLevel, true);
     NAPI_END;
 }
 

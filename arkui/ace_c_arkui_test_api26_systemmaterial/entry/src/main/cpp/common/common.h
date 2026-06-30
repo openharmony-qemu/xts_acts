@@ -249,11 +249,13 @@ const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
         }                                                                                                              \
     } while (0)
 
-#define ASSERT_EQ_INT(result, expect)                                                                                      \
+#define ASSERT_EQ_INT(result, expect)                                                                                  \
     do {                                                                                                               \
-        if ((result) != (expect)) {                                                                                    \
-            std::string assertStr = "assert equal failed, expect is " + std::to_string(reinterpret_cast<uintptr_t>(expect)) + \
-                                    " and result is " + std::to_string(reinterpret_cast<uintptr_t>(result));            \
+        const int _assertEqIntResult = static_cast<int>(result);                                                       \
+        const int _assertEqIntExpect = static_cast<int>(expect);                                                       \
+        if (_assertEqIntResult != _assertEqIntExpect) {                                                               \
+            std::string assertStr = "assert equal failed, expect is " + std::to_string(_assertEqIntExpect) +           \
+                                    " and result is " + std::to_string(_assertEqIntResult);                            \
             char assertChars[assertStr.size() + PARAM_1];                                                              \
             strcpy(assertChars, assertStr.c_str());                                                                    \
             napi_throw_error((env), nullptr, assertChars);                                                             \
