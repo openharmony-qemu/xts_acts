@@ -1,4 +1,4 @@
-        /**
+/**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,10 +50,10 @@ export default function uitestOnApi26Test() {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
       await driver.delayMs(waitUiReadyMs);
       let text2 = await driver.findComponent(ON.text('dialog'));
-      let text = await driver.findComponent(ON.text('toast').isBefore(text2));
+      let text = await driver.findComponent(ON.text('toast').beforeComponent(text2));
       let msg = await text.getText();
       expect(msg).assertEqual('toast')
-      let text3 = await driver.findComponent(ON.text('toastNot').isBefore(text2));
+      let text3 = await driver.findComponent(ON.text('toastNot').beforeComponent(text2));
       expect(text3).assertNull();
       await stopApplication('com.uitestScene.acts');
       console.info(TestTag + 'testOnIsBeforeComponentValid over');
@@ -75,7 +75,7 @@ export default function uitestOnApi26Test() {
         let text2 = await driver.findComponent(ON.text('dialog'));
         await stopApplication('com.uitestScene.acts');
         await driver.delayMs(waitUiReadyMs);
-        ON.isBefore(text2);
+        ON.beforeComponent(text2);
         expect().assertFail();
       } catch (error) {
         console.info(`testOnIsBeforeComponentInvalid,error.code, ${JSON.stringify(error)}`);
@@ -97,10 +97,10 @@ export default function uitestOnApi26Test() {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
       await driver.delayMs(waitUiReadyMs);
       let text2 = await driver.findComponent(ON.text('toast'));
-      let text = await driver.findComponent(ON.text('dialog').isAfter(text2));
+      let text = await driver.findComponent(ON.text('dialog').afterComponent(text2));
       let msg = await text.getText();
       expect(msg).assertEqual('dialog')
-      let text3 = await driver.findComponent(ON.text('dialogNot').isBefore(text2));
+      let text3 = await driver.findComponent(ON.text('dialogNot').afterComponent(text2));
       expect(text3).assertNull();
       await stopApplication('com.uitestScene.acts');
       console.info(TestTag + 'testOnIsAfterComponentValid over');
@@ -123,7 +123,7 @@ export default function uitestOnApi26Test() {
         await driver.delayMs(waitUiReadyMs);
         await stopApplication('com.uitestScene.acts');
         await driver.delayMs(waitUiReadyMs);
-        ON.isAfter(text2);
+        ON.afterComponent(text2);
         expect().assertFail();
       } catch (error) {
         console.info(`testOnIsAfterComponentInvalid,error.code, ${JSON.stringify(error)}`);
@@ -145,10 +145,10 @@ export default function uitestOnApi26Test() {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
       await driver.delayMs(waitUiReadyMs);
       let scroller = await driver.findComponent(ON.type('Scroll'));
-      let text = await driver.findComponent(ON.within(scroller).text('next page'));
+      let text = await driver.findComponent(ON.withinComponent(scroller).text('next page'));
       let msg = await text.getText();
       expect(msg).assertEqual('next page')
-      let text3 = await driver.findComponent(ON.within(scroller).text('next pageNot'));
+      let text3 = await driver.findComponent(ON.withinComponent(scroller).text('next pageNot'));
       expect(text3).assertNull();
       await stopApplication('com.uitestScene.acts');
       console.info(TestTag + 'testOnWithinComponentValid over');
@@ -171,7 +171,7 @@ export default function uitestOnApi26Test() {
         await driver.delayMs(waitUiReadyMs);
         await stopApplication('com.uitestScene.acts');
         await driver.delayMs(waitUiReadyMs);
-        ON.within(scroller)
+        ON.withinComponent(scroller)
         expect().assertFail();
       } catch (error) {
         console.info(`testOnWithinComponentInvalid,error.code, ${JSON.stringify(error)}`);

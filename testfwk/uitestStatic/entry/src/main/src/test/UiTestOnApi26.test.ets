@@ -51,13 +51,13 @@ export default function uitestOnApi26Test(): void {
       let text2 = await driver.findComponent(ON.text('dialog'));
       expect(text2 != null).assertTrue();
       if (text2 != null) {
-        let text = await driver.findComponent(ON.text('toast').isBefore(text2));
+        let text = await driver.findComponent(ON.text('toast').beforeComponent(text2));
         expect(text != null).assertTrue();
         if (text != null) {
           let msg = await text.getText();
           expect(msg).assertEqual('toast');
         }
-        let text3 = await driver.findComponent(ON.text('toastNot').isBefore(text2));
+        let text3 = await driver.findComponent(ON.text('toastNot').beforeComponent(text2));
         expect(text3).assertNull();
       }
       await stopApplication('com.uitestScene.acts');
@@ -82,7 +82,7 @@ export default function uitestOnApi26Test(): void {
         await stopApplication('com.uitestScene.acts');
         await driver.delayMs(waitUiReadyMs);
         if (text2 != null) {
-          ON.isBefore(text2);
+          ON.beforeComponent(text2);
         }
         expect().assertFail();
       } catch (error) {
@@ -108,13 +108,13 @@ export default function uitestOnApi26Test(): void {
       let text2 = await driver.findComponent(ON.text('toast'));
       expect(text2 != null).assertTrue();
       if (text2 != null) {
-        let text = await driver.findComponent(ON.text('dialog').isAfter(text2));
+        let text = await driver.findComponent(ON.text('dialog').afterComponent(text2));
         expect(text != null).assertTrue();
         if (text != null) {
           let msg = await text.getText();
           expect(msg).assertEqual('dialog');
         }
-        let text3 = await driver.findComponent(ON.text('dialogNot').isBefore(text2));
+        let text3 = await driver.findComponent(ON.text('dialogNot').afterComponent(text2));
         expect(text3).assertNull();
       }
       await stopApplication('com.uitestScene.acts');
@@ -140,7 +140,7 @@ export default function uitestOnApi26Test(): void {
         await stopApplication('com.uitestScene.acts');
         await driver.delayMs(waitUiReadyMs);
         if (text2 != null) {
-          ON.isAfter(text2);
+          ON.afterComponent(text2);
         }
         expect().assertFail();
       } catch (error) {
@@ -166,13 +166,13 @@ export default function uitestOnApi26Test(): void {
       let scroller = await driver.findComponent(ON.type('Scroll'));
       expect(scroller != null).assertTrue();
       if (scroller != null) {
-        let text = await driver.findComponent(ON.within(scroller).text('next page'));
+        let text = await driver.findComponent(ON.withinComponent(scroller).text('next page'));
         expect(text != null).assertTrue();
         if (text != null) {
           let msg = await text.getText();
           expect(msg).assertEqual('next page');
         }
-        let text3 = await driver.findComponent(ON.within(scroller).text('next pageNot'));
+        let text3 = await driver.findComponent(ON.withinComponent(scroller).text('next pageNot'));
         expect(text3).assertNull();
       }
       await stopApplication('com.uitestScene.acts');
@@ -199,7 +199,7 @@ export default function uitestOnApi26Test(): void {
         await stopApplication('com.uitestScene.acts');
         await driver.delayMs(waitUiReadyMs);
         if (scroller != null) {
-          ON.within(scroller)
+          ON.withinComponent(scroller)
         }
         expect().assertFail();
       } catch (error) {
