@@ -18,6 +18,7 @@
 #include <cstdint>
 #include <cstdlib>
 #include <cstring>
+#include "securec.h"
 
 constexpr int MAX_FILE_NAME_LEN = 256;
 constexpr int DLP_SUFFIX_LEN = 4;
