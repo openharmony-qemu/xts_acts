@@ -21,12 +21,6 @@ import { LengthMetrics } from '@kit.ArkUI';
 
 export default function ParagraphStyleTailIndentsTest() {
   describe('ParagraphStyleTailIndentsPageTest', () => {
-    let driver: Driver;
-
-    beforeAll(async () => {
-      driver = Driver.create();
-    });
-
     beforeEach(async (done: Function) => {
       console.info('ParagraphStyleTailIndentsPageTest beforeEach start');
       let options: router.RouterOptions = {
@@ -74,6 +68,8 @@ export default function ParagraphStyleTailIndentsTest() {
      */
     it('paragraphStyleTailIndents_page_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[paragraphStyleTailIndents_page_0100] START');
+      let driver = Driver.create();
+      await CommonFunc.sleep(500);
       let get = await driver.findComponent(ON.id('textParagraphStyleTailIndentsTest'))
       await CommonFunc.sleep(500);
       await get.click();
