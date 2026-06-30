@@ -18,6 +18,7 @@ import hidebug from '@ohos.hidebug'
 import featureAbility from '@ohos.ability.featureAbility';
 import fileIo from '@ohos.file.fs';
 import fs from '@ohos.file.fs';
+import { errorManager } from '@kit.AbilityKit';
 @Concurrent
 export function asyncSleep(time: number): Promise<Object> {
   return new Promise(resolve => setTimeout(resolve, time));
