@@ -831,9 +831,8 @@ export default function WindowAnimationTest() {
             let transitionAnimationResult = mainWin.getWindowTransitionAnimation(window.WindowTransitionType.DESTROY);
             console.error(msgStr + `success obtain the window transition animation.`+JSON.stringify(transitionAnimationResult));
             expect(!!transitionAnimationResult).assertTrue();
-            expect(transitionAnimationResult!.opacity).assertLargerOrEqual(0);
+            expect(transitionAnimationResult!.opacity).assertEqual(0.5);
             expect(transitionAnimationResult!.config.curve).assertEqual(window.WindowAnimationCurve.INTERPOLATION_SPRING);
-            expect(transitionAnimationResult!.config.duration).assertLargerOrEqual(0);
             done();
           } catch (err) {
             if (isFreeWindowMode) {
@@ -902,9 +901,9 @@ export default function WindowAnimationTest() {
             let transitionAnimationResult = mainWin.getWindowTransitionAnimation(window.WindowTransitionType.DESTROY);
             console.error(msgStr + `success obtain the window transition animation.`+JSON.stringify(transitionAnimationResult));
             expect(!!transitionAnimationResult).assertTrue();
-            expect(transitionAnimationResult!.opacity).assertLargerOrEqual(0);
+            expect(transitionAnimationResult!.opacity).assertLargerOrEqual(0.5);
             expect(transitionAnimationResult!.config.curve).assertEqual(window.WindowAnimationCurve.CUBIC_BEZIER);
-            expect(transitionAnimationResult!.config.duration).assertLargerOrEqual(0);
+            expect(transitionAnimationResult!.config.duration).assertEqual(1000);
             done();
           } catch (err) {
             if (isFreeWindowMode) {
