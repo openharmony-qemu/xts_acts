@@ -6480,9 +6480,10 @@ export default function audioCapturer() {
             audioCapturer.read(bufferSize, false, (err: BusinessError, buffer: ArrayBuffer) => {
               if (err) {
                 console.error(`${Tag}: Failed to read. Code: ${err.code}, message: ${err.message}`);
+              } else {
+                console.info('Succeeded in doing read.');
+                expect(false).assertTrue();
               }
-              expect(false).assertTrue();
-              console.info('Succeeded in doing read.');
             });
           }
         });
