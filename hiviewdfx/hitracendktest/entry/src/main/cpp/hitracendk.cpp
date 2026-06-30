@@ -161,30 +161,6 @@ static napi_value BeginSpan(napi_env env, napi_callback_info info)
     napi_create_int32(env, returnValue, &result);
     return result;
 }
-napi_value OH_HiTrace_StartTraceEx_FullName(napi_env env, napi_callback_info info)
-{
-  int64_t count = PARAM_0;
-  char traceName[1000]; // 512字符 + 1个终止符
-  memset(traceName, 'A', 999);
-  traceName[999] = '\0';
-  OH_HiTrace_StartTraceEx(HITRACE_LEVEL_COMMERCIAL, traceName, "key=value");
-  count++;
-  OH_HiTrace_CountTraceEx(HITRACE_LEVEL_CRITICAL, traceName, count);
-  count++;
-  OH_HiTrace_FinishTraceEx(HITRACE_LEVEL_COMMERCIAL);
-  count++;
-  OH_HiTrace_StartAsyncTraceEx(HITRACE_LEVEL_CRITICAL, traceName, TASK_ID_FOUR, "categoryTest", "key=value");
-  count++;
-  OH_HiTrace_FinishAsyncTraceEx(HITRACE_LEVEL_MAX, traceName, TASK_ID_THREE);
-  count++;
-  int returnValue = FAIL;
-  if (count == PARAM_5) {
-    returnValue = SUCCESS;
-  }
-  napi_value result = nullptr;
-  napi_create_int32(env, returnValue, &result);
-  return result;
-}
 
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
@@ -197,7 +173,6 @@ static napi_value Init(napi_env env, napi_value exports)
         {"begin", nullptr, Begin, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"beginflag", nullptr, Beginflag, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"beginSpan", nullptr, BeginSpan, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"OH_HiTrace_StartTraceEx_FullName", nullptr, OH_HiTrace_StartTraceEx_FullName, nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
