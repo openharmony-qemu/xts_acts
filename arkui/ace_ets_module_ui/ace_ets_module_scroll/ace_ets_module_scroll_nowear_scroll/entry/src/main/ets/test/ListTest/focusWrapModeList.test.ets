@@ -127,19 +127,19 @@ export default function focusWrapModeList() {
       let uiDriver: UiDriver = UiDriver.create();
       let driver: Driver = Driver.create();
 
-      let text3IsFocused: boolean = await (await driver.findComponent(ON.id('text3'))).isFocused();
+      let text3IsFocused: boolean = await (await driver.findComponent(ON.id('focusWrapModeList' + '_text3'))).isFocused();
       expect(text3IsFocused).assertEqual(false);
       console.info('[focusWrapModeList_0500] value:' + text3IsFocused);
 
       await uiDriver.triggerKey(KeyCode.KEYCODE_TAB);
       await CommonFunc.sleep(2000);
-      let text3IsFocused2: boolean = await (await driver.findComponent(ON.id('text3'))).isFocused();
+      let text3IsFocused2: boolean = await (await driver.findComponent(ON.id('focusWrapModeList' + '_text3'))).isFocused();
       expect(text3IsFocused2).assertEqual(false);
       console.info('[focusWrapModeList_0500] value:' + text3IsFocused2);
 
       await uiDriver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT);
       await CommonFunc.sleep(2000);
-      let text3IsFocused3: boolean = await (await driver.findComponent(ON.id('text3'))).isFocused();
+      let text3IsFocused3: boolean = await (await driver.findComponent(ON.id('focusWrapModeList' + '_text3'))).isFocused();
       expect(text3IsFocused3).assertEqual(true);
       console.info('[focusWrapModeList_0500] value: ' + text3IsFocused3);
       console.info('[focusWrapModeList_0500] END');

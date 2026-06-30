@@ -112,7 +112,7 @@ export default function textPickerTextStyleTest() {
      * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_textPicker_disappearTextStyle_0100', Level.LEVEL1, async (done: Function) => {
-      let strJson = getInspectorByKey('textPicker');
+      let strJson = getInspectorByKey('textPickerTextStyleThree' + '_textPicker');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ArkUI_Stage_textPicker_disappearTextStyle_0100] disappearColor:" + obj.$attrs.disappearTextStyle.color);
       expect(obj.$attrs.disappearTextStyle.color).assertEqual('#FF000000');
@@ -151,7 +151,7 @@ export default function textPickerTextStyleTest() {
         console.log("[ArkUI_Stage_textPicker_disappearTextStyle_0200] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(3000);
-      let strJson = getInspectorByKey('textPicker');
+      let strJson = getInspectorByKey('textPickerTextStyleThree' + '_textPicker');
       let obj: ESObject = JSON.parse(strJson);
       console.error("[ArkUI_Stage_textPicker_disappearTextStyle_0200] disappearColor:" + obj.$attrs.disappearTextStyle.color);
       expect(obj.$attrs.disappearTextStyle.color).assertEqual('#FF000000');
@@ -190,7 +190,7 @@ export default function textPickerTextStyleTest() {
         console.log("[ArkUI_Stage_textPicker_disappearTextStyle_0300] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('textPicker');
+      let strJson = getInspectorByKey('textPickerTextStyleThree' + '_textPicker');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ArkUI_Stage_textPicker_disappearTextStyle_0300] disappearColor:" + obj.$attrs.disappearTextStyle.color);
       expect(obj.$attrs.disappearTextStyle.color).assertEqual('#FF808080');
@@ -229,7 +229,7 @@ export default function textPickerTextStyleTest() {
         console.log("[ArkUI_Stage_textPicker_disappearTextStyle_0400] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('textPicker');
+      let strJson = getInspectorByKey('textPickerTextStyleThree' + '_textPicker');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ArkUI_Stage_textPicker_disappearTextStyle_0400] disappearColor:" + obj.$attrs.disappearTextStyle.color);
       expect(obj.$attrs.disappearTextStyle.color).assertEqual('#FFFF0000');
@@ -268,7 +268,7 @@ export default function textPickerTextStyleTest() {
         console.log("[ArkUI_Stage_textPicker_disappearTextStyle_0500] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('textPicker');
+      let strJson = getInspectorByKey('textPickerTextStyleThree' + '_textPicker');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ArkUI_Stage_textPicker_disappearTextStyle_0500] disappearColor:" + obj.$attrs.disappearTextStyle.color);
       expect(obj.$attrs.disappearTextStyle.color).assertEqual('#FF008000');
@@ -307,10 +307,10 @@ export default function textPickerTextStyleTest() {
         console.log("[ArkUI_Stage_textPicker_disappearTextStyle_0600] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('textPicker');
+      let strJson = getInspectorByKey('textPickerTextStyleThree' + '_textPicker');
       let obj: ESObject = JSON.parse(strJson);
 
-      let strJsonDefault = getInspectorByKey('textPickerDefault');
+      let strJsonDefault = getInspectorByKey('textPickerTextStyleThree' + '_textPickerDefault');
       let objDefault: ESObject = JSON.parse(strJsonDefault);
 
       console.info("[ArkUI_Stage_textPicker_disappearTextStyle_0600] disappearTextStyle color:" + obj.$attrs.disappearTextStyle.color);
@@ -357,10 +357,10 @@ export default function textPickerTextStyleTest() {
         console.log("[ArkUI_Stage_textPicker_disappearTextStyle_0700] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('textPicker');
+      let strJson = getInspectorByKey('textPickerTextStyleThree' + '_textPicker');
       let obj: ESObject = JSON.parse(strJson);
 
-      let strJsonDefault = getInspectorByKey('textPickerDefault');
+      let strJsonDefault = getInspectorByKey('textPickerTextStyleThree' + '_textPickerDefault');
       let objDefault: ESObject = JSON.parse(strJsonDefault);
 
       console.info("[ArkUI_Stage_textPicker_disappearTextStyle_0700] disappearTextStyle color:" + obj.$attrs.disappearTextStyle.color);
@@ -407,7 +407,7 @@ export default function textPickerTextStyleTest() {
         console.log("[ArkUI_Stage_textPicker_disappearTextStyle_0800] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(3000);
-      let strJson = getInspectorByKey('textPicker');
+      let strJson = getInspectorByKey('textPickerTextStyleThree' + '_textPicker');
       let obj: ESObject = JSON.parse(strJson);
       expect(obj.$attrs.disappearTextStyle.color).assertEqual('#FF8A2BE2');
       expect(obj.$attrs.disappearTextStyle.font.size).assertEqual('20.00vp');
@@ -445,7 +445,7 @@ export default function textPickerTextStyleTest() {
         console.log("[ArkUI_Stage_textPicker_disappearTextStyle_0900] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(3000);
-      let strJson = getInspectorByKey('textPicker');
+      let strJson = getInspectorByKey('textPickerTextStyleThree' + '_textPicker');
       let obj: ESObject = JSON.parse(strJson);
       expect(obj.$attrs.disappearTextStyle.color).assertEqual('#FF8A2BE2');
       expect(obj.$attrs.disappearTextStyle.font.size).assertEqual('15.00lpx');
@@ -462,7 +462,7 @@ export default function textPickerTextStyleTest() {
      * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_textPicker_textStyle_0100', Level.LEVEL1, async (done: Function) => {
-      let strJson = getInspectorByKey('textPicker');
+      let strJson = getInspectorByKey('textPickerTextStyleThree' + '_textPicker');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ArkUI_Stage_textPicker_textStyle_0100] disappearColor:" + obj.$attrs.textStyle.color);
       expect(obj.$attrs.textStyle.color).assertEqual('#FFFF0000');
@@ -501,7 +501,7 @@ export default function textPickerTextStyleTest() {
         console.log("[ArkUI_Stage_textPicker_textStyle_0200] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(3000);
-      let strJson = getInspectorByKey('textPicker');
+      let strJson = getInspectorByKey('textPickerTextStyleThree' + '_textPicker');
       let obj: ESObject = JSON.parse(strJson);
       console.error("[ArkUI_Stage_textPicker_textStyle_0200] disappearColor:" + obj.$attrs.textStyle.color);
       expect(obj.$attrs.textStyle.color).assertEqual('#FFFF0000');
@@ -540,7 +540,7 @@ export default function textPickerTextStyleTest() {
         console.log("[ArkUI_Stage_textPicker_textStyle_0300] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('textPicker');
+      let strJson = getInspectorByKey('textPickerTextStyleThree' + '_textPicker');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ArkUI_Stage_textPicker_textStyle_0300] disappearColor:" + obj.$attrs.textStyle.color);
       expect(obj.$attrs.textStyle.color).assertEqual('#FF808080');
@@ -579,7 +579,7 @@ export default function textPickerTextStyleTest() {
         console.log("[ArkUI_Stage_textPicker_textStyle_0400] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('textPicker');
+      let strJson = getInspectorByKey('textPickerTextStyleThree' + '_textPicker');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ArkUI_Stage_textPicker_textStyle_0400] disappearColor:" + obj.$attrs.textStyle.color);
       expect(obj.$attrs.textStyle.color).assertEqual('#FF00FF00');
@@ -618,7 +618,7 @@ export default function textPickerTextStyleTest() {
         console.log("[ArkUI_Stage_textPicker_textStyle_0500] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('textPicker');
+      let strJson = getInspectorByKey('textPickerTextStyleThree' + '_textPicker');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ArkUI_Stage_textPicker_textStyle_0500] disappearColor:" + obj.$attrs.textStyle.color);
       expect(obj.$attrs.textStyle.color).assertEqual('#FF008000');
@@ -657,10 +657,10 @@ export default function textPickerTextStyleTest() {
         console.log("[ArkUI_Stage_textPicker_textStyle_0600] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('textPicker');
+      let strJson = getInspectorByKey('textPickerTextStyleThree' + '_textPicker');
       let obj: ESObject = JSON.parse(strJson);
 
-      let strJsonDefault = getInspectorByKey('textPickerDefault');
+      let strJsonDefault = getInspectorByKey('textPickerTextStyleThree' + '_textPickerDefault');
       let objDefault: Record<string, ESObject> = JSON.parse(strJsonDefault);
 
       console.info("[ArkUI_Stage_textPicker_textStyle_0600] textStyle color:" + obj.$attrs.textStyle.color);
@@ -706,10 +706,10 @@ export default function textPickerTextStyleTest() {
         console.log("[ArkUI_Stage_textPicker_textStyle_0700] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('textPicker');
+      let strJson = getInspectorByKey('textPickerTextStyleThree' + '_textPicker');
       let obj: ESObject = JSON.parse(strJson);
 
-      let strJsonDefault = getInspectorByKey('textPickerDefault');
+      let strJsonDefault = getInspectorByKey('textPickerTextStyleThree' + '_textPickerDefault');
       let objDefault: ESObject = JSON.parse(strJsonDefault);
 
       console.info("[ArkUI_Stage_textPicker_textStyle_0700] textStyle color:" + obj.$attrs.textStyle.color);
@@ -756,7 +756,7 @@ export default function textPickerTextStyleTest() {
         console.log("[ArkUI_Stage_textPicker_textStyle_0800] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(3000);
-      let strJson = getInspectorByKey('textPicker');
+      let strJson = getInspectorByKey('textPickerTextStyleThree' + '_textPicker');
       let obj: ESObject = JSON.parse(strJson);
       expect(obj.$attrs.textStyle.color).assertEqual('#FF8A2BE2');
       expect(obj.$attrs.textStyle.font.size).assertEqual('20.00vp');
@@ -794,7 +794,7 @@ export default function textPickerTextStyleTest() {
         console.log("[ArkUI_Stage_textPicker_textStyle_0900] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(3000);
-      let strJson = getInspectorByKey('textPicker');
+      let strJson = getInspectorByKey('textPickerTextStyleThree' + '_textPicker');
       let obj: ESObject = JSON.parse(strJson);
       expect(obj.$attrs.textStyle.color).assertEqual('#FF8A2BE2');
       expect(obj.$attrs.textStyle.font.size).assertEqual('15.00lpx');
@@ -811,7 +811,7 @@ export default function textPickerTextStyleTest() {
      * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_textPicker_selectedTextStyle_0100', Level.LEVEL1, async (done: Function) => {
-      let strJson = getInspectorByKey('textPicker');
+      let strJson = getInspectorByKey('textPickerTextStyleThree' + '_textPicker');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ArkUI_Stage_textPicker_selectedTextStyle_0100] disappearColor:" + obj.$attrs.selectedTextStyle.color);
       expect(obj.$attrs.selectedTextStyle.color).assertEqual('#FF0000FF');
@@ -850,7 +850,7 @@ export default function textPickerTextStyleTest() {
         console.log("[ArkUI_Stage_textPicker_selectedTextStyle_0200] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(3000);
-      let strJson = getInspectorByKey('textPicker');
+      let strJson = getInspectorByKey('textPickerTextStyleThree' + '_textPicker');
       let obj: ESObject = JSON.parse(strJson);
       console.error("[ArkUI_Stage_textPicker_selectedTextStyle_0200] disappearColor:" + obj.$attrs.selectedTextStyle.color);
       expect(obj.$attrs.selectedTextStyle.color).assertEqual('#FF0000FF');
@@ -889,7 +889,7 @@ export default function textPickerTextStyleTest() {
         console.log("[ArkUI_Stage_textPicker_selectedTextStyle_0300] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('textPicker');
+      let strJson = getInspectorByKey('textPickerTextStyleThree' + '_textPicker');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ArkUI_Stage_textPicker_selectedTextStyle_0300] disappearColor:" + obj.$attrs.selectedTextStyle.color);
       expect(obj.$attrs.selectedTextStyle.color).assertEqual('#FF808080');
@@ -928,7 +928,7 @@ export default function textPickerTextStyleTest() {
         console.log("[ArkUI_Stage_textPicker_selectedTextStyle_0400] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('textPicker');
+      let strJson = getInspectorByKey('textPickerTextStyleThree' + '_textPicker');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ArkUI_Stage_textPicker_selectedTextStyle_0400] disappearColor:" + obj.$attrs.selectedTextStyle.color);
       expect(obj.$attrs.selectedTextStyle.color).assertEqual('#FF00FF00');
@@ -967,7 +967,7 @@ export default function textPickerTextStyleTest() {
         console.log("[ArkUI_Stage_textPicker_selectedTextStyle_0500] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('textPicker');
+      let strJson = getInspectorByKey('textPickerTextStyleThree' + '_textPicker');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ArkUI_Stage_textPicker_selectedTextStyle_0500] disappearColor:" + obj.$attrs.selectedTextStyle.color);
       expect(obj.$attrs.selectedTextStyle.color).assertEqual('#FF008000');
@@ -1006,10 +1006,10 @@ export default function textPickerTextStyleTest() {
         console.log("[ArkUI_Stage_textPicker_selectedTextStyle_0600] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('textPicker');
+      let strJson = getInspectorByKey('textPickerTextStyleThree' + '_textPicker');
       let obj: ESObject = JSON.parse(strJson);
 
-      let strJsonDefault = getInspectorByKey('textPickerDefault');
+      let strJsonDefault = getInspectorByKey('textPickerTextStyleThree' + '_textPickerDefault');
       let objDefault: ESObject = JSON.parse(strJsonDefault);
 
       console.info("[ArkUI_Stage_textPicker_selectedTextStyle_0600] selectedTextStyle color:" + obj.$attrs.selectedTextStyle.color);
@@ -1056,10 +1056,10 @@ export default function textPickerTextStyleTest() {
         console.log("[ArkUI_Stage_textPicker_selectedTextStyle_0700] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('textPicker');
+      let strJson = getInspectorByKey('textPickerTextStyleThree' + '_textPicker');
       let obj: ESObject = JSON.parse(strJson);
 
-      let strJsonDefault = getInspectorByKey('textPickerDefault');
+      let strJsonDefault = getInspectorByKey('textPickerTextStyleThree' + '_textPickerDefault');
       let objDefault: ESObject = JSON.parse(strJsonDefault);
 
       console.info("[ArkUI_Stage_textPicker_selectedTextStyle_0700] selectedTextStyle color:" + obj.$attrs.selectedTextStyle.color);
@@ -1106,7 +1106,7 @@ export default function textPickerTextStyleTest() {
         console.log("[ArkUI_Stage_textPicker_selectedTextStyle_0800] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(3000);
-      let strJson = getInspectorByKey('textPicker');
+      let strJson = getInspectorByKey('textPickerTextStyleThree' + '_textPicker');
       let obj: ESObject = JSON.parse(strJson);
       expect(obj.$attrs.selectedTextStyle.color).assertEqual('#FF8A2BE2');
       expect(obj.$attrs.selectedTextStyle.font.size).assertEqual('20.00vp');
@@ -1144,7 +1144,7 @@ export default function textPickerTextStyleTest() {
         console.log("[ArkUI_Stage_textPicker_selectedTextStyle_0900] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(3000);
-      let strJson = getInspectorByKey('textPicker');
+      let strJson = getInspectorByKey('textPickerTextStyleThree' + '_textPicker');
       let obj: ESObject = JSON.parse(strJson);
       expect(obj.$attrs.selectedTextStyle.color).assertEqual('#FF8A2BE2');
       expect(obj.$attrs.selectedTextStyle.font.size).assertEqual('15.00lpx');

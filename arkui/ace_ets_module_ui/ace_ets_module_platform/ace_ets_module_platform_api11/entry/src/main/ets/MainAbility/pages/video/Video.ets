@@ -39,7 +39,7 @@ struct VideoCreateComponent {
         .controls(this.controlsss)
         .loop(true)
         .objectFit(ImageFit.Cover)
-        .key('video')
+        .key('Video_video')
         .onStart(() => {
           console.info("onStart");
         })

@@ -50,7 +50,7 @@ export default function textPickerPropertiesModifierTest() {
      */
     it('ArkUI_textPickerPropertiesModifierTest_001', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUI_textPickerPropertiesModifierTest_001] START');
-      let strJson = getInspectorByKey('textPickerDefault');
+      let strJson = getInspectorByKey('textPickerPropertiesModifier' + '_textPickerDefault');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ArkUI_textPickerPropertiesModifierTest_001] obj:" + JSON.stringify(obj.$attrs));
 
@@ -72,7 +72,7 @@ export default function textPickerPropertiesModifierTest() {
      */
     it('ArkUI_textPickerPropertiesModifierTest_002', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUI_textPickerPropertiesModifierTest_002] START');
-      let strJson = getInspectorByKey('textPickerDefault');
+      let strJson = getInspectorByKey('textPickerPropertiesModifier' + '_textPickerDefault');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ArkUI_textPickerPropertiesModifierTest_002] obj:" + JSON.stringify(obj.$attrs));
       let textStyle: ESObject = obj.$attrs.textStyle;
@@ -92,7 +92,7 @@ export default function textPickerPropertiesModifierTest() {
      */
     it('ArkUI_textPickerPropertiesModifierTest_003', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUI_textPickerPropertiesModifierTest_003] START');
-      let strJson = getInspectorByKey('textPickerDefault');
+      let strJson = getInspectorByKey('textPickerPropertiesModifier' + '_textPickerDefault');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ArkUI_textPickerPropertiesModifierTest_003] obj:" + JSON.stringify(obj.$attrs));
       let selectedTextStyle: ESObject = obj.$attrs.selectedTextStyle;
@@ -112,7 +112,7 @@ export default function textPickerPropertiesModifierTest() {
      */
     it('ArkUI_textPickerPropertiesModifierTest_004', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUI_textPickerPropertiesModifierTest_004] START');
-      let strJson = getInspectorByKey('textPickerDefault');
+      let strJson = getInspectorByKey('textPickerPropertiesModifier' + '_textPickerDefault');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ArkUI_textPickerPropertiesModifierTest_004] obj:" + JSON.stringify(obj.$attrs));
       let disappearTextStyle: ESObject = obj.$attrs.disappearTextStyle;
@@ -132,7 +132,7 @@ export default function textPickerPropertiesModifierTest() {
      */
     it('ArkUI_textPickerPropertiesModifierTest_005', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUI_textPickerPropertiesModifierTest_005] START');
-      let strJson = getInspectorByKey('textPickerDefault');
+      let strJson = getInspectorByKey('textPickerPropertiesModifier' + '_textPickerDefault');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ArkUI_textPickerPropertiesModifierTest_005] obj:" + JSON.stringify(obj.$attrs));
       expect(obj.$attrs.canLoop).assertEqual("false");
@@ -149,7 +149,7 @@ export default function textPickerPropertiesModifierTest() {
      */
     it('ArkUI_textPickerPropertiesModifierTest_006', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUI_textPickerPropertiesModifierTest_006] START');
-      let strJson = getInspectorByKey('textPickerDefault');
+      let strJson = getInspectorByKey('textPickerPropertiesModifier' + '_textPickerDefault');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ArkUI_textPickerPropertiesModifierTest_006] obj:" + JSON.stringify(obj.$attrs));
       expect(obj.$attrs.defaultPickerItemHeight).assertEqual('60.00px');

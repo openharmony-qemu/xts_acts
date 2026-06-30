@@ -202,7 +202,7 @@ struct GridOnWillStartDraggingDemoModifier {
       Text(this.statusText)
         .fontSize(16)
         .fontColor(Color.Blue)
-        .key('onWillStartDragging')
+        .key('GridModifier_onWillStartDragging_onWillStartDragging')
 
       Text(`回调触发次数: ${this.triggerCount}`)
         .fontSize(14)
@@ -228,7 +228,7 @@ struct GridOnWillStartDraggingDemoModifier {
       .width('100%')
       .height(400)
       .backgroundColor(0xF5F5F5)
-      .key('grid_dragging')
+      .key('GridModifier_onWillStartDragging_grid_dragging')
 
       // 操作区域
       Button('重置计数')

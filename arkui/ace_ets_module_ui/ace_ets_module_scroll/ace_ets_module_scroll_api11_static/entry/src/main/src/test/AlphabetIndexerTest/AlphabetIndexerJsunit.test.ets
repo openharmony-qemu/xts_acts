@@ -86,7 +86,7 @@ export default function alphabetIndexerJsunit() {
 it('alphabetIndexerTest001_static_01', Level.LEVEL0, async () => {
       console.info('AlphabetIndexerTest001_static_01 START');
       await sleep(1)
-      let strJson = inspector.getInspectorByKey('alphabetIndexer');
+      let strJson = inspector.getInspectorByKey('AlphabetIndexer' + '_alphabetIndexer');
       let obj = JSON.parseJsonElement(strJson);
       console.info("component obj is: " + JSON.stringify(obj));
       expect(obj.getString('$type')).assertEqual('AlphabetIndexer');

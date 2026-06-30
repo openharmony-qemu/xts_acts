@@ -218,7 +218,7 @@ struct bindListController {
           .textAlign(TextAlign.Center)
           .borderRadius(10)
           .backgroundColor(0xFFFFFF)
-          .key('str')
+          .key('bindListController_str')
         Text(this.str1)
           .width('22%')
           .fontSize(16)
@@ -226,7 +226,7 @@ struct bindListController {
           .textAlign(TextAlign.Center)
           .borderRadius(10)
           .backgroundColor(0xFFFFFF)
-          .key('str1')
+          .key('bindListController_str1')
         Text(this.str7)
           .width('22%')
           .fontSize(16)
@@ -234,7 +234,7 @@ struct bindListController {
           .textAlign(TextAlign.Center)
           .borderRadius(10)
           .backgroundColor(0xFFFFFF)
-          .key('str7')
+          .key('bindListController_str7')
       }.height('6%')
 
       Row() {
@@ -245,7 +245,7 @@ struct bindListController {
           .textAlign(TextAlign.Center)
           .borderRadius(10)
           .backgroundColor(0xFFFFFF)
-          .key('str4')
+          .key('bindListController_str4')
         Text(this.str6)
           .width('22%')
           .fontSize(16)
@@ -253,7 +253,7 @@ struct bindListController {
           .textAlign(TextAlign.Center)
           .borderRadius(10)
           .backgroundColor(0xFFFFFF)
-          .key('str6')
+          .key('bindListController_str6')
       }.height('6%')
 
       Stack() {

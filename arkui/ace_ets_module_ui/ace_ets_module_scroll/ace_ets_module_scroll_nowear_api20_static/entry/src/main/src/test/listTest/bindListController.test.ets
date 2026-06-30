@@ -65,23 +65,23 @@ export default function bindListControllerSetOnTest() {
       let oriBtn3 = await driver.findComponent(ON.id('scrollBy0'));
       await (oriBtn3?.click() as Promise<void>);
       await CommonFunc.sleep(200);
-      expect(JSON.parseJsonElement(inspector.getInspectorByKey('str6'))
+      expect(JSON.parseJsonElement(inspector.getInspectorByKey('bindListController' + '_str6'))
         .getElement('$attrs')
         .getString('content'))
         .assertEqual('OnWillScroll start');
-      expect(JSON.parseJsonElement(inspector.getInspectorByKey('str'))
+      expect(JSON.parseJsonElement(inspector.getInspectorByKey('bindListController' + '_str'))
         .getElement('$attrs')
         .getString('content'))
         .assertEqual('OnDidScroll start');
-      expect(JSON.parseJsonElement(inspector.getInspectorByKey('str4'))
+      expect(JSON.parseJsonElement(inspector.getInspectorByKey('bindListController' + '_str4'))
         .getElement('$attrs')
         .getString('content'))
         .assertEqual('onScrollIndex start');
-      expect(JSON.parseJsonElement(inspector.getInspectorByKey('str1'))
+      expect(JSON.parseJsonElement(inspector.getInspectorByKey('bindListController' + '_str1'))
         .getElement('$attrs')
         .getString('content'))
         .assertEqual('OnReachEnd start');
-      expect(JSON.parseJsonElement(inspector.getInspectorByKey('str7'))
+      expect(JSON.parseJsonElement(inspector.getInspectorByKey('bindListController' + '_str7'))
         .getElement('$attrs')
         .getString('content'))
         .assertEqual('OnReachStart start');

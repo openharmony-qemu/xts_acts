@@ -74,7 +74,7 @@ it('alphabetTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
       console.info('alphabetTest_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('alphabet_1');
+      let strJson = inspector.getInspectorByKey('alphabet' + '_1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[alphabetTest_static_0100] component obj is: " + JSON.stringify(obj));
       console.info("[alphabetTest_static_0100] component obj.$attrs is: " + JSON.stringify(obj.getElement('$attrs')));

@@ -78,7 +78,7 @@ it('videoAppInfoStaticTest001', Level.LEVEL1, async () => {
       console.info('videoAppInfoTest001 START');
       await sleep(1)
      try{
-       let strJson = inspector.getInspectorByKey('video');
+       let strJson = inspector.getInspectorByKey('Video' + '_video');
        let obj = JSON.parseJsonElement(strJson);
        console.info("cd video component obj is: " + strJson);
        console.log("cd video $type" + obj.getString('$type'));

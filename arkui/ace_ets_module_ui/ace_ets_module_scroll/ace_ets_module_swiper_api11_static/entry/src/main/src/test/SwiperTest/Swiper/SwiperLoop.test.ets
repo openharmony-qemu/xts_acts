@@ -269,7 +269,7 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0480', Level.LEVEL0, async (don
 
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      let button_Bottom = await driver.findComponent(ON.id('swiperLoopButton4'));
+      let button_Bottom = await driver.findComponent(ON.id('SwiperLoop' + '_swiperLoopButton4_01'));
       await (button_Bottom?.click() as Promise<void>);
       await CommonFunc.sleep(4000);
 

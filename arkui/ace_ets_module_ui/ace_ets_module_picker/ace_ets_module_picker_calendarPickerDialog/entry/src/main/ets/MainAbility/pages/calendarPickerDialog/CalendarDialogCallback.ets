@@ -20,7 +20,7 @@ struct CalendarDialogCallbackPage {
   private selectedDate: Date = new Date()
   build() {
     Column() {
-      Button('CalendarPickerDialog按esc弹窗逐层退出').key('Calendar_dialog_A')
+      Button('CalendarPickerDialog按esc弹窗逐层退出').key('CalendarDialogCallback_Calendar_dialog_A')
         .margin(20)
         .onClick(() => {
           console.info('CalendarDialog.show')

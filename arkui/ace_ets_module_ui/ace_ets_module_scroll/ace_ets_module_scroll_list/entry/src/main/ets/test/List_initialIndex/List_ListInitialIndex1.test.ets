@@ -82,8 +82,8 @@ export default function list_ListInitialIndex1Test() {
       let tenthListItem = CommonFunc.getComponentRect('List_ListInitialIndex1_10');
       let eleventhListItem = CommonFunc.getComponentRect('List_ListInitialIndex1_11');
       let twelfthListItem = CommonFunc.getComponentRect('List_ListInitialIndex1_12');
-      let listContainer = CommonFunc.getComponentRect('List_ListInitialIndex1_Container01');
-      let listContainerStrJson = getInspectorByKey('List_ListInitialIndex1_Container01');
+      let listContainer = CommonFunc.getComponentRect('List_ListInitialIndex1' + '_Container01');
+      let listContainerStrJson = getInspectorByKey('List_ListInitialIndex1' + '_Container01');
       expect(JSON.parse(listContainerStrJson).$type).assertEqual('List');
 
       expect(Math.abs(Math.floor(firstListItem.right - firstListItem.left) - vp2px(0)) <= 1).assertTrue();
@@ -139,7 +139,7 @@ export default function list_ListInitialIndex1Test() {
       await CommonFunc.sleep(2000);
       firstListItem = CommonFunc.getComponentRect('List_ListInitialIndex1_1');
       secondListItem = CommonFunc.getComponentRect('List_ListInitialIndex1_2');
-      listContainer = CommonFunc.getComponentRect('List_ListInitialIndex1_Container01');
+      listContainer = CommonFunc.getComponentRect('List_ListInitialIndex1' + '_Container01');
       expect(Math.abs(firstListItem.top - listContainer.top) <= 1).assertTrue();
       expect(Math.abs(firstListItem.left - listContainer.left) <= 1).assertTrue();
       expect(Math.abs(Math.round(firstListItem.right - firstListItem.left) - Math.round(vp2px(100))) <= 1).assertTrue();
