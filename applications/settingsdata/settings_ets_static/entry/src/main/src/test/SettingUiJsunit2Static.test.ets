@@ -57,6 +57,10 @@ function isDeviceSupportBiometrics(): boolean {
   return isDevicePhone() || isDeviceTablet() || isDevicePC();
 }
 
+function isDeviceSupportPhoneOrPad(): boolean {
+  return isDevicePhone() || isDeviceTablet();
+}
+
 function getBoolSystemParam(key: string, def: boolean): boolean {
   let defStr = def ? 'true' : 'false';
   try {
@@ -2771,7 +2775,7 @@ export default function settingUiJsunit() {
   /**
    * @tc.name   SUB_Applications_Settings_openMobileNetworkSettingsPage_error_context_0100
    * @tc.number SUB_Applications_Settings_openMobileNetworkSettingsPage_error_context_0100
-   * @tc.desc   MediumTest
+   * @tc.desc   openMobileNetworkSettingsPage_error_context
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL0
@@ -2779,16 +2783,15 @@ export default function settingUiJsunit() {
   it('SUB_Applications_Settings_openMobileNetworkSettingsPage_error_context_0100',
     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
     async (done: () => void) => {
-      if (!isDeviceSupportInputMethod()) {
+      if (!isDeviceSupportPhoneOrPad()) {
         done();
         return;
       }
-      let code = 0;
       try {
         settings.openMobileNetworkSettingsPage(abilityContext!.getApplicationContext());
         expect().assertFail();
       } catch (err) {
-        console.error("[openMobileNetworkSettingsPage_valid_param] error = " + err);
+        console.error("[openMobileNetworkSettingsPage_error_context] error = " + err);
         expect(err?.code).assertEqual(16900010);
       }
       done();
@@ -2797,7 +2800,7 @@ export default function settingUiJsunit() {
   /**
    * @tc.name   SUB_Applications_Settings_openDisplaySettingsPage_error_context_0100
    * @tc.number SUB_Applications_Settings_openDisplaySettingsPage_error_context_0100
-   * @tc.desc   MediumTest
+   * @tc.desc   Settings_openDisplaySettingsPage_error_context
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL0
@@ -2805,11 +2808,10 @@ export default function settingUiJsunit() {
   it('SUB_Applications_Settings_openDisplaySettingsPage_error_context_0100',
     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
     async (done: () => void) => {
-      if (!isDeviceSupportInputMethod()) {
+      if (!isDeviceSupportPhoneOrPad()) {
         done();
         return;
       }
-      let code = 0;
       try {
         settings.openDisplaySettingsPage(abilityContext!.getApplicationContext());
         expect().assertFail();
@@ -2823,7 +2825,7 @@ export default function settingUiJsunit() {
   /**
    * @tc.name   SUB_Applications_Settings_openScreenRefreshRateSettingsPage_error_context_0100
    * @tc.number SUB_Applications_Settings_openScreenRefreshRateSettingsPage_error_context_0100
-   * @tc.desc   MediumTest
+   * @tc.desc   openScreenRefreshRateSettingsPage_error_context
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL0
@@ -2831,16 +2833,15 @@ export default function settingUiJsunit() {
   it('SUB_Applications_Settings_openScreenRefreshRateSettingsPage_error_context_0100',
     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
     async (done: () => void) => {
-      if (!isDeviceSupportInputMethod()) {
+      if (!isDeviceSupportPhoneOrPad()) {
         done();
         return;
       }
-      let code = 0;
       try {
         settings.openScreenRefreshRateSettingsPage(abilityContext!.getApplicationContext());
         expect().assertFail();
       } catch (err) {
-        console.error("[openScreenRefreshRateSettingsPage_error_contex] error = " + err);
+        console.error("[openScreenRefreshRateSettingsPage_error_context] error = " + err);
         expect(err?.code).assertEqual(16900010);
       }
       done();
@@ -2849,7 +2850,7 @@ export default function settingUiJsunit() {
   /**
    * @tc.name   SUB_Applications_Settings_openSoundSettingsPage_error_context_0100
    * @tc.number SUB_Applications_Settings_openSoundSettingsPage_error_context_0100
-   * @tc.desc   MediumTest
+   * @tc.desc   Settings_openSoundSettingsPage_error_context
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL0
@@ -2857,11 +2858,10 @@ export default function settingUiJsunit() {
   it('SUB_Applications_Settings_openSoundSettingsPage_error_context_0100',
     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
     async (done: () => void) => {
-      if (!isDeviceSupportInputMethod()) {
+      if (!isDeviceSupportPhoneOrPad()) {
         done();
         return;
       }
-      let code = 0;
       try {
         settings.openSoundSettingsPage(abilityContext!.getApplicationContext());
         expect().assertFail();
@@ -2875,7 +2875,7 @@ export default function settingUiJsunit() {
   /**
    * @tc.name   SUB_Applications_Settings_openBiometricsSettingsPage_error_context_0100
    * @tc.number SUB_Applications_Settings_openBiometricsSettingsPage_error_context_0100
-   * @tc.desc   MediumTest
+   * @tc.desc   Settings_openBiometricsSettingsPage_error_context
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL0
@@ -2883,11 +2883,10 @@ export default function settingUiJsunit() {
   it('SUB_Applications_Settings_openBiometricsSettingsPage_error_context_0100',
     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
     async (done: () => void) => {
-      if (!isDeviceSupportInputMethod()) {
+      if (!isDeviceSupportPhoneOrPad()) {
         done();
         return;
       }
-      let code = 0;
       try {
         settings.openBiometricsSettingsPage(abilityContext!.getApplicationContext());
         expect().assertFail();
@@ -2901,7 +2900,7 @@ export default function settingUiJsunit() {
   /**
    * @tc.name   SUB_Applications_Settings_openAboutDeviceSettingsPage_error_context_0100
    * @tc.number SUB_Applications_Settings_openAboutDeviceSettingsPage_error_context_0100
-   * @tc.desc   MediumTest
+   * @tc.desc   Settings_openAboutDeviceSettingsPage_error_context
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL0
@@ -2909,11 +2908,10 @@ export default function settingUiJsunit() {
   it('SUB_Applications_Settings_openAboutDeviceSettingsPage_error_context_0100',
     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
     async (done: () => void) => {
-      if (!isDeviceSupportInputMethod()) {
+      if (!isDeviceSupportPhoneOrPad()) {
         done();
         return;
       }
-      let code = 0;
       try {
         settings.openAboutDeviceSettingsPage(abilityContext!.getApplicationContext());
         expect().assertFail();
@@ -2925,9 +2923,9 @@ export default function settingUiJsunit() {
     });
 
   /**
-   * @tc.name   SUB_Applications_Settings_openAboutDeviceSettingsPage_error_context_0100
-   * @tc.number SUB_Applications_Settings_openAboutDeviceSettingsPage_error_context_0100
-   * @tc.desc   MediumTest
+   * @tc.name   SUB_Applications_Settings_openNfcSettingsPage_error_context_0100
+   * @tc.number SUB_Applications_Settings_openNfcSettingsPage_error_context_0100
+   * @tc.desc   Settings_openNfcSettingsPage_error_context
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL0
@@ -2935,11 +2933,10 @@ export default function settingUiJsunit() {
   it('SUB_Applications_Settings_openNfcSettingsPage_error_context_0100',
     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
     async (done: () => void) => {
-      if (!isDeviceSupportInputMethod()) {
+      if (!isDeviceSupportPhoneOrPad()) {
         done();
         return;
       }
-      let code = 0;
       try {
         settings.openNfcSettingsPage(abilityContext!.getApplicationContext());
         expect().assertFail();
@@ -2953,7 +2950,7 @@ export default function settingUiJsunit() {
   /**
    * @tc.name   SUB_Applications_Settings_openAppDetailSettingsPage_error_context_0100
    * @tc.number SUB_Applications_Settings_openAppDetailSettingsPage_error_context_0100
-   * @tc.desc   MediumTest
+   * @tc.desc   Settings_openAppDetailSettingsPage_error_context
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL0
@@ -2961,11 +2958,10 @@ export default function settingUiJsunit() {
   it('SUB_Applications_Settings_openAppDetailSettingsPage_error_context_0100',
     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
     async (done: () => void) => {
-      if (!isDeviceSupportInputMethod()) {
+      if (!isDeviceSupportPhoneOrPad()) {
         done();
         return;
       }
-      let code = 0;
       try {
         settings.openAppDetailSettingsPage(abilityContext!.getApplicationContext(), 'com.example', 0);
         expect().assertFail();
