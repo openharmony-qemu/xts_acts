@@ -17,6 +17,11 @@
 #include "napi/native_api.h"
 #include <cstdint>
 #include <cstdlib>
+#include <cstring>
+
+constexpr int MAX_FILE_NAME_LEN = 256;
+constexpr int DLP_SUFFIX_LEN = 4;
+const char DLP_SUFFIX[] = ".dlp";
 
 static napi_value OsGetDlpPermissionInfo0100(napi_env env, napi_callback_info info)
 {
@@ -110,11 +115,59 @@ static napi_value OsGetOriginalFileName0100(napi_env env, napi_callback_info inf
     if (ret == DLP_ErrCode::ERR_OH_SUCCESS) {
         napi_value result = nullptr;
         napi_create_string_utf8(env, originalFileName, NAPI_AUTO_LENGTH, &result);
+        free(originalFileName);
+        return result;
+    }
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+static napi_value OsGetOriginalFileName0200(napi_env env, napi_callback_info info)
+{
+    const char *fileName = ".dlp";
+    char *originalFileName = nullptr;
+    DLP_ErrCode ret = OH_DLP_GetOriginalFileName(fileName, &originalFileName);
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+static napi_value OsGetOriginalFileName0300(napi_env env, napi_callback_info info)
+{
+    char fileName[MAX_FILE_NAME_LEN + 1];
+    int fileNameLen = MAX_FILE_NAME_LEN - DLP_SUFFIX_LEN;
+    for (int i = 0; i < fileNameLen; i++) {
+        fileName[i] = 'a';
+    }
+    for (int i = 0; i < DLP_SUFFIX_LEN + 1; i++) {
+        fileName[fileNameLen + i] = DLP_SUFFIX[i];
+    }
+    char *originalFileName = nullptr;
+    DLP_ErrCode ret = OH_DLP_GetOriginalFileName(fileName, &originalFileName);
+    if (ret == DLP_ErrCode::ERR_OH_SUCCESS) {
+        napi_value result = nullptr;
+        napi_create_string_utf8(env, originalFileName, NAPI_AUTO_LENGTH, &result);
+        free(originalFileName);
         return result;
     }
     napi_value result = nullptr;
     napi_create_int32(env, ret, &result);
     free(originalFileName);
+    return result;
+}
+static napi_value OsGetOriginalFileName0400(napi_env env, napi_callback_info info)
+{
+    char fileName[MAX_FILE_NAME_LEN + 2];
+    int fileNameLen = MAX_FILE_NAME_LEN - DLP_SUFFIX_LEN + 1;
+    for (int i = 0; i < fileNameLen; i++) {
+        fileName[i] = 'a';
+    }
+    for (int i = 0; i < DLP_SUFFIX_LEN + 1; i++) {
+        fileName[fileNameLen + i] = DLP_SUFFIX[i];
+    }
+    char *originalFileName = nullptr;
+    DLP_ErrCode ret = OH_DLP_GetOriginalFileName(fileName, &originalFileName);
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
     return result;
 }
 static napi_value OsSetSandboxAppConfig0100(napi_env env, napi_callback_info info)
@@ -147,6 +200,12 @@ static napi_value Init(napi_env env, napi_value exports)
         {"OsGetDlpPermissionInfo0105", nullptr, OsGetDlpPermissionInfo0105, nullptr, nullptr, nullptr, napi_default,
          nullptr},
         {"OsGetOriginalFileName0100", nullptr, OsGetOriginalFileName0100, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+        {"OsGetOriginalFileName0200", nullptr, OsGetOriginalFileName0200, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+        {"OsGetOriginalFileName0300", nullptr, OsGetOriginalFileName0300, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+        {"OsGetOriginalFileName0400", nullptr, OsGetOriginalFileName0400, nullptr, nullptr, nullptr, napi_default,
          nullptr},
         {"OsSetSandboxAppConfig0100", nullptr, OsSetSandboxAppConfig0100, nullptr, nullptr, nullptr, napi_default,
          nullptr},
