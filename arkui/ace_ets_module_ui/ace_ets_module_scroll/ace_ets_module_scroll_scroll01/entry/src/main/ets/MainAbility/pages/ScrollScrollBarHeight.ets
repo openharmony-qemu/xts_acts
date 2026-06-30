@@ -76,6 +76,29 @@ struct ScrollScrollBarHeightExample {
       .friction(0.6)
       .edgeEffect(EdgeEffect.None)
       .height('30%')
+
+      Text('scrollBarHeight null').fontSize(14)
+      Scroll(this.scroller) {
+        Column() {
+          ForEach(this.arr, (item: number) => {
+            Text(item.toString())
+              .width('90%')
+              .height('30%')
+              .backgroundColor(0xFFFFFF)
+              .borderRadius(15)
+              .fontSize(16)
+              .textAlign(TextAlign.Center)
+              .margin({ top: 10 })
+          }, (item: number) => item.toString())
+        }.width('100%')
+      }
+      .id('scroll_scrollBarHeight_null')
+      .scrollable(ScrollDirection.Vertical)
+      .scrollBar(BarState.On)
+      .scrollBarHeight(null)
+      .friction(0.6)
+      .edgeEffect(EdgeEffect.None)
+      .height('30%')
     }
     .width('100%')
     .height('100%')

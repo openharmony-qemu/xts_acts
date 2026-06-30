@@ -20,8 +20,8 @@ import { SymbolGlyphModifier } from '@kit.ArkUI';
 struct SwiperIndicatorIcon {
   @State arr: string[] = ['0', '1', '2', '3'];
   private symbolModifier: SymbolGlyphModifier = new SymbolGlyphModifier($r('sys.symbol.ohos_wifi'));
-  @State iconDiff: Array<IndicatorIconInfo> = [{index:0, icon: $r('app.media.background')},
-    {index:1, icon: $r('app.media.background')},
+  @State iconDiff: Array<IndicatorIconInfo> = [{index:0, icon: $r('app.media.icon')},
+    {index:1, icon: $r('sys.media.ohos_ic_public_clock')},
     {index:2, icon: new SymbolGlyphModifier($r('sys.symbol.trash')).fontColor([Color.Red])},
     {index:3, icon: new SymbolGlyphModifier($r('sys.symbol.cake')).fontColor([Color.Black])}]
 

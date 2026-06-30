@@ -142,6 +142,24 @@ export default function LazyVWaterFlowLayoutProperties() {
     });
 
     /**
+     * @tc.name   lazyVWaterFlowColumnsTemplate_0600
+     * @tc.number SUB_ARKUI_LAZYVWATERFLOWLAYOUT_COLUMNSTEMPLATE_PARAM_0600
+     * @tc.desc   Test LazyVWaterFlowLayout columnsTemplate property with empty string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('lazyVWaterFlowColumnsTemplate_0600', Level.LEVEL0, async (done: Function) => {
+      console.info('[lazyVWaterFlowColumnsTemplate_0600] START');
+      let strJson: string = getInspectorByKey('lazyVWaterFlow_columnsTemplate_emptyString');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+      console.info("[lazyVWaterFlowColumnsTemplate_0600] columnsTemplate: " + JSON.stringify(obj.$attrs.columnsTemplate));
+      expect(obj.$attrs.columnsTemplate).assertEqual("1fr");
+      console.info('[lazyVWaterFlowColumnsTemplate_0600] END');
+      done();
+    });
+
+    /**
      * @tc.name   lazyVWaterFlowColumnsGap_0100
      * @tc.number SUB_ARKUI_LAZYVWATERFLOWLAYOUT_COLUMNSGAP_PARAM_0100
      * @tc.desc   Test LazyVWaterFlowLayout columnsGap property with default value (not set)

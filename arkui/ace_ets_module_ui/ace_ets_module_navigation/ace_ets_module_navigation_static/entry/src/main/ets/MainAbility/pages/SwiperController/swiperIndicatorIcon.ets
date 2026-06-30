@@ -28,8 +28,8 @@ import inspector from '@ohos.arkui.inspector'
 struct SwiperIndicatorIconPage {
   @State arr: string[] = ['0', '1', '2', '3'];
   private symbolModifier: SymbolGlyphModifier = new SymbolGlyphModifier($r('sys.symbol.ohos_wifi'));
-  @State iconDiff: IndicatorIconInfo[] = [{index:0, icon: $r('app.media.background')} as IndicatorIconInfo,
-    {index:1, icon: $r('app.media.background')} as IndicatorIconInfo,
+  @State iconDiff: IndicatorIconInfo[] = [{index:0, icon: $r('app.media.icon')} as IndicatorIconInfo,
+    {index:1, icon: $r('sys.media.ohos_ic_public_clock')} as IndicatorIconInfo,
     {index:2, icon: new SymbolGlyphModifier($r('sys.symbol.trash')).fontColor([Color.Red])} as IndicatorIconInfo,
     {index:3, icon: new SymbolGlyphModifier($r('sys.symbol.cake')).fontColor([Color.Black])} as IndicatorIconInfo]
 

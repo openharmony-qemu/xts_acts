@@ -60,7 +60,6 @@ export default function swiperIndicatorIcon() {
      * @tc.level  LEVEL0
      */
     it('swiperIndicatorIcon_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('swiper_indicator_icon_resourceStr');
       let obj = JSON.parseJsonElement(strJson);
@@ -87,7 +86,6 @@ export default function swiperIndicatorIcon() {
      * @tc.level  LEVEL0
      */
     it('swiperIndicatorIcon_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('swiper_indicator_icon_resourceStr');
       let obj = JSON.parseJsonElement(strJson);
@@ -114,7 +112,6 @@ export default function swiperIndicatorIcon() {
      * @tc.level  LEVEL0
      */
     it('swiperIndicatorIcon_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let strJsonCompare = inspector.getInspectorByKey('swiper_indicator_default');
       let objCompare = JSON.parseJsonElement(strJsonCompare);
@@ -123,7 +120,7 @@ export default function swiperIndicatorIcon() {
       let indicatorCompare = objCompare.getElement('$attrs').getElement('indicator');
       let indicatorJson = obj.getElement('$attrs').getElement('indicator');
       console.info('[swiperIndicatorIcon_static_0300] default indicator: ' + JSON.stringify(indicatorCompare))
-      console.info('[swiperIndicatorIcon_static_0300] undefined indicator: ' + JSON.stringify(indicator))
+      console.info('[swiperIndicatorIcon_static_0300] undefined indicator: ' + JSON.stringify(indicatorJson))
       console.info("[swiperIndicatorIcon_static_0300] indicatorIcon[0] indicatorJson: " +
         indicatorJson.getArray('indicatorIcon')[0]);
       console.info("[swiperIndicatorIcon_static_0300] indicatorIcon[0] indicatorCompare: " +
