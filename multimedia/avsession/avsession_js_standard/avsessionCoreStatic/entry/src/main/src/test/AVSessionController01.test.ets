@@ -220,7 +220,7 @@ export default function abilityTest() {
         avSession.LoopMode.LOOP_MODE_SHUFFLE
       ];
       try {
-        await session!.setSupportedLoopModes(loopModes);
+        await controller!.setSupportedLoopModes(loopModes);
         let result: Array<avSession.LoopMode> = await controller!.getSupportedLoopModes();
         console.info(`${TAG}: getSupportedLoopModes result: ${JSON.stringify(result)}`);
         expect(result.length).assertEqual(2);
