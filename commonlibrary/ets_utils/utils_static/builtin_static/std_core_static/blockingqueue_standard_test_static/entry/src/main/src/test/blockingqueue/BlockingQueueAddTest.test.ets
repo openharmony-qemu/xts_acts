@@ -923,11 +923,12 @@ export default function BlockingQueueAddTest(): void {
      * @tc.level Level 2
      */
     it('testBlockingQueueAdd049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 7;
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(1);
-      q.add(7);
+      q.add(TEST_VALUE);
       q.add(8);
       let v: int | undefined = q.poll();
-      expect(v).assertEqual(7);
+      expect(v).assertEqual(TEST_VALUE);
     });
 
     /**
@@ -956,11 +957,12 @@ export default function BlockingQueueAddTest(): void {
      * @tc.level Level 2
      */
     it('testBlockingQueueAdd051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 5;
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(1);
-      q.add(5);
+      q.add(TEST_VALUE);
       q.add(6);
       let v: int | undefined = q.poll();
-      expect(v).assertEqual(5);
+      expect(v).assertEqual(TEST_VALUE);
     });
 
     /**
@@ -1084,64 +1086,68 @@ export default function BlockingQueueAddTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ADD_6000
      * @tc.name testBlockingQueueAdd060
-     * @tc.desc Verify ArrayBlockingQueue add success keeps invariant capacity minus size equals remainingCapacity
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBlockingQueueAdd060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(10);
-      q.add(1);
-      q.add(2);
-      expect(q.capacity - q.size).assertEqual(q.remainingCapacity());
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ADD_6100
-     * @tc.name testBlockingQueueAdd061
      * @tc.desc Verify ArrayBlockingQueue add success element readable via getFirst
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueAdd061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueAdd060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 55;
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5);
-      q.add(55);
-      expect(q.getFirst()).assertEqual(55);
+      q.add(TEST_VALUE);
+      expect(q.getFirst()).assertEqual(TEST_VALUE);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ADD_6100
+     * @tc.name testBlockingQueueAdd061
+     * @tc.desc Verify ArrayBlockingQueue add success element readable via getEnd
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBlockingQueueAdd061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 66;
+      let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5);
+      q.add(TEST_VALUE);
+      expect(q.getEnd()).assertEqual(TEST_VALUE);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ADD_6200
      * @tc.name testBlockingQueueAdd062
-     * @tc.desc Verify ArrayBlockingQueue add success element readable via getEnd
+     * @tc.desc Verify ArrayBlockingQueue single element getFirst equals getEnd
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBlockingQueueAdd062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5);
-      q.add(66);
-      expect(q.getEnd()).assertEqual(66);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ADD_6300
-     * @tc.name testBlockingQueueAdd063
-     * @tc.desc Verify ArrayBlockingQueue single element getFirst equals getEnd
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBlockingQueueAdd063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5);
       q.add(77);
       expect(q.getFirst()).assertEqual(q.getEnd());
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ADD_6300
+     * @tc.name testBlockingQueueAdd063
+     * @tc.desc Verify ArrayBlockingQueue multiple adds then getEnd returns last inserted element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBlockingQueueAdd063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 3;
+      let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5);
+      q.add(1);
+      q.add(2);
+      q.add(TEST_VALUE);
+      expect(q.getEnd()).assertEqual(TEST_VALUE);
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ADD_6400
      * @tc.name testBlockingQueueAdd064
-     * @tc.desc Verify ArrayBlockingQueue multiple adds then getEnd returns last inserted element
+     * @tc.desc Verify ArrayBlockingQueue multiple adds then getFirst returns first inserted element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1151,43 +1157,44 @@ export default function BlockingQueueAddTest(): void {
       q.add(1);
       q.add(2);
       q.add(3);
-      expect(q.getEnd()).assertEqual(3);
+      expect(q.getFirst()).assertEqual(1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ADD_6500
      * @tc.name testBlockingQueueAdd065
-     * @tc.desc Verify ArrayBlockingQueue multiple adds then getFirst returns first inserted element
+     * @tc.desc Verify ArrayBlockingQueue add success then pop returns the element value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBlockingQueueAdd065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 88;
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5);
-      q.add(1);
-      q.add(2);
-      q.add(3);
-      expect(q.getFirst()).assertEqual(1);
+      q.add(TEST_VALUE);
+      expect(q.pop()).assertEqual(TEST_VALUE);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ADD_6600
      * @tc.name testBlockingQueueAdd066
-     * @tc.desc Verify ArrayBlockingQueue add success then pop returns the element value
+     * @tc.desc Verify ArrayBlockingQueue tail insert 0..4 then first pop returns 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBlockingQueueAdd066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5);
-      q.add(88);
-      expect(q.pop()).assertEqual(88);
+      for (let i = 0; i < 5; i++) {
+        q.add(i);
+      }
+      expect(q.pop()).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ADD_6700
      * @tc.name testBlockingQueueAdd067
-     * @tc.desc Verify ArrayBlockingQueue tail insert 0..4 then first pop returns 0
+     * @tc.desc Verify ArrayBlockingQueue tail insert 0..4 then second pop returns 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1197,35 +1204,19 @@ export default function BlockingQueueAddTest(): void {
       for (let i = 0; i < 5; i++) {
         q.add(i);
       }
-      expect(q.pop()).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ADD_6800
-     * @tc.name testBlockingQueueAdd068
-     * @tc.desc Verify ArrayBlockingQueue tail insert 0..4 then second pop returns 1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBlockingQueueAdd068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(5);
-      for (let i = 0; i < 5; i++) {
-        q.add(i);
-      }
       q.pop();
       expect(q.pop()).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ADD_6900
-     * @tc.name testBlockingQueueAdd069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ADD_6800
+     * @tc.name testBlockingQueueAdd068
      * @tc.desc Verify ArrayBlockingQueue tail insert then all poll empties queue and size becomes 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueAdd069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueAdd068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(3);
       q.add(1);
       q.add(2);
@@ -1237,14 +1228,14 @@ export default function BlockingQueueAddTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ADD_7000
-     * @tc.name testBlockingQueueAdd070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ADD_6900
+     * @tc.name testBlockingQueueAdd069
      * @tc.desc Verify ArrayBlockingQueue full add false then head element still earliest element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueAdd070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueAdd069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(2);
       q.add(1);
       q.add(2);
@@ -1253,25 +1244,44 @@ export default function BlockingQueueAddTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ADD_7100
-     * @tc.name testBlockingQueueAdd071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ADD_7000
+     * @tc.name testBlockingQueueAdd070
      * @tc.desc Verify ArrayBlockingQueue full add false then tail element unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueAdd071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueAdd070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 2;
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(2);
       q.add(1);
-      q.add(2);
+      q.add(TEST_VALUE);
       q.add(3);
-      expect(q.getEnd()).assertEqual(2);
+      expect(q.getEnd()).assertEqual(TEST_VALUE);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ADD_7100
+     * @tc.name testBlockingQueueAdd071
+     * @tc.desc Verify ArrayBlockingQueue rejected overflow element not retrievable by pop
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBlockingQueueAdd071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 2;
+      let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(2);
+      q.add(1);
+      q.add(TEST_VALUE);
+      q.add(99);
+      q.pop();
+      expect(q.pop()).assertEqual(TEST_VALUE);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ADD_7200
      * @tc.name testBlockingQueueAdd072
-     * @tc.desc Verify ArrayBlockingQueue rejected overflow element not retrievable by pop
+     * @tc.desc Verify ArrayBlockingQueue overflow then remainingCapacity stays 0 not negative
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1280,53 +1290,37 @@ export default function BlockingQueueAddTest(): void {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(2);
       q.add(1);
       q.add(2);
-      q.add(99);
-      q.pop();
-      expect(q.pop()).assertEqual(2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ADD_7300
-     * @tc.name testBlockingQueueAdd073
-     * @tc.desc Verify ArrayBlockingQueue overflow then remainingCapacity stays 0 not negative
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBlockingQueueAdd073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(2);
-      q.add(1);
-      q.add(2);
       q.add(3);
       expect(q.remainingCapacity()).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ADD_7400
-     * @tc.name testBlockingQueueAdd074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ADD_7300
+     * @tc.name testBlockingQueueAdd073
      * @tc.desc Verify ArrayBlockingQueue overflow then capacity property unaffected
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueAdd074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueAdd073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 3;
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(3);
       q.add(1);
       q.add(2);
-      q.add(3);
+      q.add(TEST_VALUE);
       q.add(4);
-      expect(q.capacity).assertEqual(3);
+      expect(q.capacity).assertEqual(TEST_VALUE);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ADD_7500
-     * @tc.name testBlockingQueueAdd075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ADD_7400
+     * @tc.name testBlockingQueueAdd074
      * @tc.desc Verify ArrayBlockingQueue overflow then pop one and add new element returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueAdd075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueAdd074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(2);
       q.add(1);
       q.add(2);
@@ -1336,50 +1330,52 @@ export default function BlockingQueueAddTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ADD_7600
-     * @tc.name testBlockingQueueAdd076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ADD_7500
+     * @tc.name testBlockingQueueAdd075
      * @tc.desc Verify ArrayBlockingQueue overflow then pop one and add returns size back to capacity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueAdd076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueAdd075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 2;
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(2);
       q.add(1);
-      q.add(2);
+      q.add(TEST_VALUE);
       q.add(3);
       q.pop();
       q.add(4);
-      expect(q.size).assertEqual(2);
+      expect(q.size).assertEqual(TEST_VALUE);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ADD_7700
-     * @tc.name testBlockingQueueAdd077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ADD_7600
+     * @tc.name testBlockingQueueAdd076
      * @tc.desc Verify ArrayBlockingQueue rejected element then pop and add new becomes tail
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueAdd077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueAdd076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 5;
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(2);
       q.add(1);
       q.add(2);
       q.add(99);
       q.pop();
-      q.add(5);
-      expect(q.getEnd()).assertEqual(5);
+      q.add(TEST_VALUE);
+      expect(q.getEnd()).assertEqual(TEST_VALUE);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ADD_7800
-     * @tc.name testBlockingQueueAdd078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ADD_7700
+     * @tc.name testBlockingQueueAdd077
      * @tc.desc Verify ArrayBlockingQueue all-same element fill then overflow add returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueAdd078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueAdd077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(3);
       q.add(7);
       q.add(7);
@@ -1388,43 +1384,29 @@ export default function BlockingQueueAddTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ADD_7900
-     * @tc.name testBlockingQueueAdd079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ADD_7800
+     * @tc.name testBlockingQueueAdd078
      * @tc.desc Verify LinkedBlockingQueue bounded capacity success then getEnd returns inserted element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueAdd079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueAdd078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TEST_VALUE: int = 33;
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(5);
-      q.add(33);
-      expect(q.getEnd()).assertEqual(33);
+      q.add(TEST_VALUE);
+      expect(q.getEnd()).assertEqual(TEST_VALUE);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ADD_8000
-     * @tc.name testBlockingQueueAdd080
-     * @tc.desc Verify LinkedBlockingQueue bounded capacity success keeps invariant capacity minus size equals remainingCapacity
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBlockingQueueAdd080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10);
-      q.add(1);
-      q.add(2);
-      expect(q.capacity - q.size).assertEqual(q.remainingCapacity());
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ADD_8100
-     * @tc.name testBlockingQueueAdd081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ADD_7900
+     * @tc.name testBlockingQueueAdd079
      * @tc.desc Verify LinkedBlockingQueue tail insert FIFO first pop returns 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueAdd081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueAdd079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(4);
       for (let i = 0; i < 4; i++) {
         q.add(i);
@@ -1433,14 +1415,14 @@ export default function BlockingQueueAddTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ADD_8200
-     * @tc.name testBlockingQueueAdd082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ADD_8000
+     * @tc.name testBlockingQueueAdd080
      * @tc.desc Verify LinkedBlockingQueue add success keeps capacity property unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueAdd082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueAdd080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(8);
       q.add(1);
       expect(q.capacity).assertEqual(8);
