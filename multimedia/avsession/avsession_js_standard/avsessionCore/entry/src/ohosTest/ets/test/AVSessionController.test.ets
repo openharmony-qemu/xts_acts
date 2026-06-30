@@ -1663,6 +1663,27 @@ export default function abilityTest() {
         done();
       });
 
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AVSESSION_DESTROY_TRANSFER_0100
+    * @tc.number SUB_MULTIMEDIA_AVSESSION_DESTROY_TRANSFER_0100
+    * @tc.desc   SUB_MULTIMEDIA_AVSESSION_DESTROY_TRANSFER_0100
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AVSESSION_DESTROY_TRANSFER_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      await controller.destroy();
+      controller.destroy((err: BusinessError) => {
+        if (err) {
+          console.error(`Failed to destroy controller, code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(6600103);
+          return;
+        } 
+        console.info('Succeeded in destroying.');
+        done();
+      });
+      done();
+    })
   })
 }
 

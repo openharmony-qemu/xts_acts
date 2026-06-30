@@ -1925,6 +1925,25 @@ export default function AVSessionControllerErrorCode() {
         })
 
         /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFVALIDCOMMANDCHANGE_CALLBACK_0300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFVALIDCOMMANDCHANGE_CALLBACK_0300
+         * @tc.desc   test off('validCommandChange') errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("SUB_MULTIMEDIA_AVSESSION_OFFVALIDCOMMANDCHANGE_CALLBACK_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            try {
+                controller.off('validCommandChange');
+                done();
+            } catch (err) {
+                expect().assertFail();
+                expect(err.code).assertEqual(401);
+            }
+            done();
+        })
+
+        /**
          * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFMETADATACHANGE_CALLBACK_0100
          * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFMETADATACHANGE_CALLBACK_0100
          * @tc.desc   test off('metadataChange') errcode 401
@@ -1961,6 +1980,24 @@ export default function AVSessionControllerErrorCode() {
             done();
         })
 
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFMETADATACHANGE_CALLBACK_0300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFMETADATACHANGE_CALLBACK_0300
+         * @tc.desc   test off('metadataChange') errcode 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("SUB_MULTIMEDIA_AVSESSION_OFFMETADATACHANGE_CALLBACK_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            try {
+                controller.off('metadataChange');
+                done();
+            } catch (err) {
+                expect().assertFail();
+                expect(err.code).assertEqual(401);
+            }
+            done();
+        })
         /* *
          * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONACTIVESTATECHANGE_0101
          * @tc.name      : ONACTIVESTATECHANGE_0100
