@@ -62,6 +62,42 @@ export default function dataShareConfigGetValuesTest() {
     })
 
     /**
+     * @tc.name   dataShareConfigGetValuesTest001
+     * @tc.number SUB_DistributedData_DataShare_SDK_GetValues_0010
+     * @tc.desc   single uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigGetValuesTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        await g_handle!.getValues(undefined, undefined);
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] publishProxyDataTest001 failed,code =" + err.code + ",message=" + err.message);
+        let result = err.code;
+        expect(result).assertEqual(401);
+      }
+    });
+
+    /** 
+     * @tc.name   dataShareConfigGetValuesTest002
+     * @tc.number SUB_DistributedData_DataShare_SDK_GetValues_0020
+     * @tc.desc   single uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigGetValuesTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        await g_handle!.getValues(null, null);
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] publishProxyDataTest002 failed,code =" + err.code + ",message=" + err.message);
+        let result = err.code;
+        expect(result).assertEqual(401);
+      }
+    });
+
+    /**
      * @tc.name   dataShareConfigGetValuesTest003
      * @tc.number SUB_DistributedData_DataShare_SDK_GetValues_0030
      * @tc.desc   single uri
@@ -103,6 +139,26 @@ export default function dataShareConfigGetValuesTest() {
       } catch (err) {
         console.error(TAG + "[DataShareProvider] dataShareConfigGetValuesTest004 failed,code =" + err.code + ",message=" + err.message);
         expect(err.code).assertEqual(15700014);
+      }
+    });
+    
+    /**
+     * @tc.name   dataShareConfigGetValuesTest005
+     * @tc.number SUB_DistributedData_DataShare_SDK_GetValues_0050
+     * @tc.desc   call removeValue when uri length exceeds 256 bytes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigGetValuesTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let overLengthUri = "datashareproxy://com.example.myapplication/" + 'X'.repeat(214);
+        await g_handle!.getValues(overLengthUri, g_config_100K);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] dataShareConfigGetValuesTest005 failed,code =" + err.code + ",message=" + err.message);
+        let result = err.code;
+        expect(result).assertEqual(15700014);
       }
     });
     
