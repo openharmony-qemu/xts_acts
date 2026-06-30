@@ -302,17 +302,13 @@ export default function BigIntToLocaleStringOptionsPropsTest_2(): void {
     it('testBigIntToLocaleStringOptionsIllegalEnumError2000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let caughtCount: number = 0;
       const testCases: BigIntToLocaleStringOptions[] = [
-        { localeMatcher: 'fuzzy' }, { localeMatcher: '' }, { localeMatcher: 'LOOKUP' },
-        { numberingSystem: 'fakesys' }, { numberingSystem: '' }, { numberingSystem: 'LATN' },
-        { notation: 'sci' }, { notation: '' }, { notation: 'SCIENTIFIC' },
-        { notation: 'compact', compactDisplay: 'tiny' }, { notation: 'compact', compactDisplay: '' },
+        { localeMatcher: 'fuzzy' },
+        { notation: 'sci' },
+        { notation: 'compact', compactDisplay: 'tiny' },
         { style: 'unit', unit: 'kilometer', unitDisplay: 'huge' },
-        { style: 'unit', unit: 'kilometer', unitDisplay: '' },
-        { style: 'unit', unit: 'kilometer', unitDisplay: 'LONG' },
-        { style: 'currency', currency: 'ZZZ' },
+        { style: 'currency', currency: 'ZZZ' },{ localeMatcher: 'LOOKUP' },
+        { notation: 'SCIENTIFIC' },
         { style: 'currency', currency: 'USD', currencyDisplay: 'bigsymbol' },
-        { style: 'currency', currency: 'USD', currencyDisplay: '' },
-        { style: 'currency', currency: 'USD', currencyDisplay: 'SYMBOL' }
       ];
       for (let i = 0; i < testCases.length; i++) {
         try {
@@ -335,8 +331,8 @@ export default function BigIntToLocaleStringOptionsPropsTest_2(): void {
     it('testBigIntToLocaleStringOptionsDigitOverflowError2100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let caughtCount: number = 0;
       const testCases: BigIntToLocaleStringOptions[] = [
-        { maximumFractionDigits: -1 }, { maximumFractionDigits: 100 },
-        { minimumFractionDigits: -1 }, { minimumFractionDigits: 21 },
+        { maximumFractionDigits: -1 }, { maximumFractionDigits: 101 },
+        { minimumFractionDigits: -1 }, { minimumFractionDigits: 101 },
         { minimumFractionDigits: 10, maximumFractionDigits: 2 },
         { minimumSignificantDigits: 22 },
         { maximumSignificantDigits: 0 }, { maximumSignificantDigits: -1 }

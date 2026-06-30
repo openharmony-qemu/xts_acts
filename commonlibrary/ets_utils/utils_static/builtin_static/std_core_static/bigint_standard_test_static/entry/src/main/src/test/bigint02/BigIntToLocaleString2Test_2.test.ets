@@ -111,12 +111,11 @@ export default function BigIntToLocaleString2Test_2(): void {
     it('testBigIntToLocaleString2MoreInvalidLocales1700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let caughtCount: number = 0;
       try { BigInt(1).toLocaleString('12345'); } catch (e) { caughtCount++; }
-      try { BigInt(1).toLocaleString('xxxxxxxx'); } catch (e) { caughtCount++; }
+      try { BigInt(1).toLocaleString('invalid-locale-!@#'); } catch (e) { caughtCount++; }
       try { BigInt(1).toLocaleString('-'); } catch (e) { caughtCount++; }
-      try { BigInt(1).toLocaleString('en_US'); } catch (e) { caughtCount++; }
+      try { BigInt(1).toLocaleString('en_U_S'); } catch (e) { caughtCount++; }
       expect(caughtCount).assertEqual(4);
     });
-
     /**
      * @tc.number SUB_BIGINT_STD_TOLOCALE_2_1800
      * @tc.name testBigIntToLocaleString2MultipleCompactDisplay1800

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect } from '../../../../hypium/index';
+import { describe, it, expect,afterEach } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 function getBigInt(): BigInt {
@@ -21,8 +21,14 @@ function getBigInt(): BigInt {
 }
 
 export default function BigIntOperatorBitwiseNotTest_2(): void {
-  describe('BigInt.operatorBitwiseNot - expanded param dimensions', () => {
-
+  describe('BigInt.operatorBitwiseNot - expanded param dimensions', (): void => {
+    afterEach(async (): Promise<void> => {
+      await new Promise<void>((resolve)=>{
+        setTimeout(()=>{
+          resolve(undefined);
+        },50)
+      })
+    });
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_BITWISE_NOT_0700
      * @tc.name testBigIntOperatorBitwiseNotByteShortBoundary0700
