@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-import SimNoCardPublic from './SimGetActiveSimAccountInfoList.test.ets';
-import SimNoCardPublic1 from './SimGetSimAccountInfo.test.ets';
+import SimGetActiveSimAccountInfoList from './SimGetActiveSimAccountInfoList.test.ets';
+import SimGetSimAccountInfo from './SimGetSimAccountInfo.test.ets';
 import EmptyTest from './Empty.test';
 import sim from '@ohos.telephony.sim';
 
