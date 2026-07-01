@@ -35,7 +35,7 @@ export default function DatePickerTest() {
     beforeEach(async (): Promise<void> => {
       console.info('DatePickerTest beforeEach start');
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/DatePicker/DatePicker',
+        url: 'MainAbility/pages/datePicker/DatePicker',
       };
       try {
         const routerInstance = AppStorage.get<Router>('router') as Router;
