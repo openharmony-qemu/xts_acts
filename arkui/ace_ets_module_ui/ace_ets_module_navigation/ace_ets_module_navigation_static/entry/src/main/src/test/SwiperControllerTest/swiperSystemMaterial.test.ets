@@ -88,6 +88,7 @@ export default function swiperSystemMaterial() {
         .getElement('immersiveOptions').getString('colorInvert')).assertEqual("true");
       expect(tree.getElement('$attrs').getElement('systemMaterial').getElement('material')
         .getElement('immersiveOptions').getString('applyShadow')).assertEqual("true");
+      console.info('[swiperSystemMaterial_static_0100] END');
       done();
     });
 
@@ -128,6 +129,7 @@ export default function swiperSystemMaterial() {
         .getElement('immersiveOptions').getString('colorInvert')).assertEqual("false");
       expect(tree.getElement('$attrs').getElement('systemMaterial').getElement('material')
         .getElement('immersiveOptions').getString('applyShadow')).assertEqual("false");
+      console.info('[swiperSystemMaterial_static_0200] END');
       done();
     });
 
@@ -166,6 +168,7 @@ export default function swiperSystemMaterial() {
         .getElement('immersiveOptions').getString('colorInvert')).assertEqual("false");
       expect(tree.getElement('$attrs').getElement('systemMaterial').getElement('material')
         .getElement('immersiveOptions').getString('applyShadow')).assertEqual("true");
+      console.info('[swiperSystemMaterial_static_0300] END');
       done();
     });
   })

@@ -65,15 +65,16 @@ export default function swiperIndicatorIcon() {
       let obj = JSON.parseJsonElement(strJson);
       let indicatorJson = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
       console.info('[swiperIndicatorIcon_static_0100] indicator: ' + JSON.stringify(indicatorJson))
-      console.info("[xgf] [swiperIndicatorIcon_0100] indicatorIcon[0] : " +
+      console.info("[swiperIndicatorIcon_static_0100] indicatorIcon[0] : " +
         indicatorJson.getArray('indicatorIcon')[0]);
-      console.info("[xgf] [swiperIndicatorIcon_0100] indicatorIcon[0] index: " +
+      console.info("[swiperIndicatorIcon_static_0100] indicatorIcon[0] index: " +
         indicatorJson.getArray('indicatorIcon')[0].getDouble('index'));
-      console.info("[xgf] [swiperIndicatorIcon_0100] indicatorIcon[0] sourceType: " +
+      console.info("[swiperIndicatorIcon_static_0100] indicatorIcon[0] sourceType: " +
         indicatorJson.getArray('indicatorIcon')[0].getString('sourceType'));
       expect(indicatorJson).not().assertEqual(undefined);
       expect(indicatorJson.getArray('indicatorIcon')[0].getDouble('index')).assertEqual(0);
       expect(indicatorJson.getArray('indicatorIcon')[0].getString('sourceType')).assertEqual("MEDIA");
+      console.info('[swiperIndicatorIcon_static_0100] END');
       done();
     });
 
@@ -87,7 +88,7 @@ export default function swiperIndicatorIcon() {
      */
     it('swiperIndicatorIcon_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('swiper_indicator_icon_resourceStr');
+      let strJson = inspector.getInspectorByKey('swiper_indicator_icon_symbolGlyph');
       let obj = JSON.parseJsonElement(strJson);
       let indicatorJson = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
       console.info('[swiperIndicatorIcon_static_0200] indicator: ' + JSON.stringify(indicatorJson))
@@ -100,6 +101,7 @@ export default function swiperIndicatorIcon() {
       expect(indicatorJson).not().assertEqual(undefined);
       expect(indicatorJson.getArray('indicatorIcon')[0].getDouble('index')).assertEqual(0);
       expect(indicatorJson.getArray('indicatorIcon')[0].getString('sourceType')).assertEqual("SYMBOL");
+      console.info('[swiperIndicatorIcon_static_0200] END');
       done();
     });
 
@@ -117,8 +119,8 @@ export default function swiperIndicatorIcon() {
       let objCompare = JSON.parseJsonElement(strJsonCompare);
       let strJson = inspector.getInspectorByKey('swiper_indicator_icon_undefined');
       let obj = JSON.parseJsonElement(strJson);
-      let indicatorCompare = objCompare.getElement('$attrs').getElement('indicator');
-      let indicatorJson = obj.getElement('$attrs').getElement('indicator');
+      let indicatorCompare = JSON.parseJsonElement(objCompare.getElement('$attrs').getElement('indicator'));
+      let indicatorJson = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
       console.info('[swiperIndicatorIcon_static_0300] default indicator: ' + JSON.stringify(indicatorCompare))
       console.info('[swiperIndicatorIcon_static_0300] undefined indicator: ' + JSON.stringify(indicatorJson))
       console.info("[swiperIndicatorIcon_static_0300] indicatorIcon[0] indicatorJson: " +
@@ -126,6 +128,7 @@ export default function swiperIndicatorIcon() {
       console.info("[swiperIndicatorIcon_static_0300] indicatorIcon[0] indicatorCompare: " +
         indicatorCompare.getArray('indicatorIcon')[0]);
       expect(indicatorJson.getArray('indicatorIcon')[0]).assertEqual(indicatorCompare.getArray('indicatorIcon')[0]);
+      console.info('[swiperIndicatorIcon_static_0300] END');
       done();
     });
   })
