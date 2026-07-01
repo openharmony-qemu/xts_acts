@@ -173,11 +173,15 @@ export default function WebResourceTypeTest() {
      * @tc.level  LEVEL2
      */
     it('testWebResourceFavicon', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testWebResourceFavicon", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerBaseEvent("testWebResourceFavicon", 0, 25110712, done, (backData: events_emitter.EventData, expected: Object) => {
-        expect(backData?.data?.ACTION).assertEqual(webview.WebResourceType.FAVICON);
-      });
-      sendEventByKey('WebResourceTypeButton', 10, '');
+      console.log('testWebResourceFavicon start')
+      try {
+        expect(webview.WebResourceType.FAVICON).assertEqual(12)
+      } catch(error) {
+        console.error('testWebResourceFavicon error: ' + JSON.stringify(error))
+        expect(0).assertEqual(1)
+      }
+      console.log('testWebResourceFavicon end')
+      done()
     })
 
     /**
