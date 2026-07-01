@@ -50,9 +50,6 @@ export default function DatePickerDialogSystemMaterialTest() {
       let systemMaterial: ESObject = column.$attrs.systemMaterial;
       console.info('DatePickerDialogSystemMaterialTest_001 systemMaterial: ' + JSON.stringify(systemMaterial));
 
-      let retValue: string = column.$attrs.systemMaterial.material.immersiveOptions.style;
-      console.info('DatePickerDialogSystemMaterialTest_001 retValue: ' + retValue);
-
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
 	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
 	    expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
@@ -84,9 +81,6 @@ export default function DatePickerDialogSystemMaterialTest() {
 
       let systemMaterial: ESObject = column.$attrs.systemMaterial;
       console.info('DatePickerDialogSystemMaterialTest_002 systemMaterial: ' + JSON.stringify(systemMaterial));
-
-      let retValue: string = column.$attrs.systemMaterial.material.immersiveOptions.style;
-      console.info('DatePickerDialogSystemMaterialTest_002 retValue: ' + retValue);
 
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
 	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
@@ -120,9 +114,6 @@ export default function DatePickerDialogSystemMaterialTest() {
       let systemMaterial: ESObject = column.$attrs.systemMaterial;
       console.info('DatePickerDialogSystemMaterialTest_003 systemMaterial: ' + JSON.stringify(systemMaterial));
 
-      let retValue: string = column.$attrs.systemMaterial.material.immersiveOptions.style;
-      console.info('DatePickerDialogSystemMaterialTest_003 retValue: ' + retValue);
-
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
 	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
 	    expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
@@ -154,9 +145,6 @@ export default function DatePickerDialogSystemMaterialTest() {
 
       let systemMaterial: ESObject = column.$attrs.systemMaterial;
       console.info('DatePickerDialogSystemMaterialTest_004 systemMaterial: ' + JSON.stringify(systemMaterial));
-
-      let retValue: string = column.$attrs.systemMaterial.material.immersiveOptions.style;
-      console.info('DatePickerDialogSystemMaterialTest_004 retValue: ' + retValue);
 
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
 	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);

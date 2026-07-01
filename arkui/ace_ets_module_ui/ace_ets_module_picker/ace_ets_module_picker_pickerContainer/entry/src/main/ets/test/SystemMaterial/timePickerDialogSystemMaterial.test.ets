@@ -62,9 +62,6 @@ export default function TimePickerDialogSystemMaterialTest() {
       let systemMaterial: ESObject = column.$attrs.systemMaterial;
       console.info('TimePickerDialogSystemMaterialTest_001 systemMaterial: ' + JSON.stringify(systemMaterial));
 
-      let retValue: string = column.$attrs.systemMaterial.material.immersiveOptions.style;
-      console.info('TimePickerDialogSystemMaterialTest_001 retValue: ' + retValue);
-
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
 	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
 	    expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
@@ -94,9 +91,6 @@ export default function TimePickerDialogSystemMaterialTest() {
       let systemMaterial: ESObject = column.$attrs.systemMaterial;
       console.info('TimePickerDialogSystemMaterialTest_002 systemMaterial: ' + JSON.stringify(systemMaterial));
 
-      let retValue: string = column.$attrs.systemMaterial.material.immersiveOptions.style;
-      console.info('TimePickerDialogSystemMaterialTest_002 retValue: ' + retValue);
-
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
 	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
 	    expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
@@ -125,9 +119,6 @@ export default function TimePickerDialogSystemMaterialTest() {
       
       let systemMaterial: ESObject = column.$attrs.systemMaterial;
       console.info('TimePickerDialogSystemMaterialTest_003 systemMaterial: ' + JSON.stringify(systemMaterial));
-
-      let retValue: string = column.$attrs.systemMaterial.material.immersiveOptions.style;
-      console.info('TimePickerDialogSystemMaterialTest_003 retValue: ' + retValue);
 
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
 	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
