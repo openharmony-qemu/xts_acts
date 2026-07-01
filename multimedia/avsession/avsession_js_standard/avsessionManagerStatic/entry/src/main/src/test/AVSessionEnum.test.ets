@@ -207,6 +207,28 @@ export default function abilityTest() {
             expect(AVCastPickerColorMode.LIGHT).assertEqual(AVCastPickerColorMode.fromValue(2));
             done();
         })
-
+        
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_DESCRIPTOR_TYPE_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_DESCRIPTOR_TYPE_STATIC_0100
+         * @tc.desc   compare all type in ConnectionState to number value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_DESCRIPTOR_TYPE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+            async (done: () => void): Promise<void> => {
+            avSession.onSessionCreate((descriptor: avSession.AVSessionDescriptor) => {
+              expect(descriptor.sessionId).not().assertNull();
+              expect(descriptor.type).not().assertNull();
+              expect(descriptor.sessionTag).not().assertNull();
+              expect(descriptor.elementName).not().assertNull();
+              expect(descriptor.isActive).not().assertNull();
+              expect(descriptor.isTopSession).not().assertNull();
+              expect(descriptor.outputDevice).not().assertNull();
+                done();
+            });
+            done();
+        }); 
     })
 }
