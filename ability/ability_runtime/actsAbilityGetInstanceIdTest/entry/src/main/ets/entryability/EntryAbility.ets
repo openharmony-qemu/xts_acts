@@ -17,68 +17,275 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
 import testNapi from 'libentry.so'
 import { JSON } from '@kit.ArkTS';
+import CommonEventManager from '@ohos.commonEventManager';
+import { BusinessError } from '@ohos.base';
 
 const DOMAIN = 0x0000;
+const TAG = 'testTag';
 
-function onPostAbility(instanceId: string) {
-  hilog.info(DOMAIN, 'testTag', 'onPostAbility: ' + instanceId);
+const EVENT_START_TEST = 'START_ENTRY_ABILITY_TEST';
+const EVENT_TEST_RESULT = 'ENTRY_ABILITY_TEST_RESULT';
+type EventParameterType = string | number | boolean | object;
+
+async function publishEvent(eventName: string, parameters: Record<string, EventParameterType>) {
+  let commonEventPublishData: CommonEventManager.CommonEventPublishData = {
+    parameters: parameters as Record<string, Object>
+  };
+  CommonEventManager.publish(eventName, commonEventPublishData, (err: BusinessError) => {
+    if (err) {
+      hilog.error(DOMAIN, TAG, 'publishEvent failed: %{public}s', JSON.stringify(err));
+    }
+  });
+}
+
+async function executeTestLogic(flag?: string): Promise<void> {
+  hilog.info(DOMAIN, TAG, 'executeTestLogic begin, flag: %{public}s', flag ?? 'undefined');
+
   try {
+    switch (flag) {
+      case 'case10':
+        await executeCase10();
+        return;
+      case 'case11':
+        await executeCase11();
+        return;
+      case 'case12':
+        await executeCase12();
+        return;
+      case 'case13':
+        await executeCase13();
+        return;
+      case 'case14':
+        await executeCase14();
+        return;
+      case 'case15':
+        await executeCase15();
+        return;
+      case 'case16':
+        await executeCase16();
+        return;
+    }
+
+    let instanceId = testNapi.getInstanceId();
+    let abilityName = testNapi.getAbilityName();
+    let envResult = testNapi.getEnv();
+    AppStorage.setOrCreate('EntryAbilityInstanceId_Native', instanceId);
+    if (!instanceId || instanceId.length === 0) {
+      hilog.error(DOMAIN, TAG, 'instanceId is empty');
+      await publishEvent(EVENT_TEST_RESULT, {
+        'testSuccess': false,
+        'errorCode': 'INSTANCE_ID_EMPTY'
+      });
+      return;
+    }
     let appContext = application.getApplicationContext();
     let ability = appContext.getUIAbilityByInstanceId(instanceId);
 
     if (!ability) {
-      hilog.info(DOMAIN, 'testTag', 'onPostAbility null');
-      return ;
+      hilog.error(DOMAIN, TAG, 'getUIAbilityByInstanceId failed');
+      await publishEvent(EVENT_TEST_RESULT, {
+        'testSuccess': false,
+        'errorCode': 'ABILITY_NULL',
+        'instanceId': instanceId
+      });
+      return;
     }
-  } catch (e) {
-    hilog.info(DOMAIN, 'testTag', 'onPostAbility error: ' + JSON.stringify(e));
+
+    hilog.info(DOMAIN, TAG, 'executeTestLogic success');
+    await publishEvent(EVENT_TEST_RESULT, {
+      'testSuccess': true,
+      'instanceId': instanceId,
+      'abilityName': abilityName,
+      'envResult': envResult,
+      'abilityNotNull': true,
+      'hasContext': ability.context !== null && ability.context !== undefined
+    });
+  } catch (err) {
+    hilog.error(DOMAIN, TAG, 'executeTestLogic error: %{public}s', JSON.stringify(err));
+    await publishEvent(EVENT_TEST_RESULT, {
+      'testSuccess': false,
+      'errorCode': 'EXCEPTION',
+      'errorMessage': JSON.stringify(err)
+    });
   }
 }
 
-testNapi.registerCallback(onPostAbility);
+async function executeCase10(): Promise<void> {
+  try {
+    let errorCodeStr = testNapi.getInstanceIdError1();
+    hilog.info(DOMAIN, TAG, 'executeCase10 errorCodeStr: %{public}s', errorCodeStr);
+    let testSuccess = (errorCodeStr === '401');
+    await publishEvent(EVENT_TEST_RESULT, {
+      'testSuccess': testSuccess,
+      'errorCode': errorCodeStr
+    });
+  } catch (err) {
+    hilog.error(DOMAIN, TAG, 'executeCase10 error: %{public}s', JSON.stringify(err));
+    await publishEvent(EVENT_TEST_RESULT, {
+      'testSuccess': false,
+      'errorCode': 'EXCEPTION',
+      'errorMessage': JSON.stringify(err)
+    });
+  }
+}
+
+async function executeCase11(): Promise<void> {
+  try {
+    let errorCodeStr = testNapi.getAbilityNameError1();
+    hilog.info(DOMAIN, TAG, 'executeCase11 errorCodeStr: %{public}s', errorCodeStr);
+    let testSuccess = (errorCodeStr === '401');
+    await publishEvent(EVENT_TEST_RESULT, {
+      'testSuccess': testSuccess,
+      'errorCode': errorCodeStr
+    });
+  } catch (err) {
+    hilog.error(DOMAIN, TAG, 'executeCase11 error: %{public}s', JSON.stringify(err));
+    await publishEvent(EVENT_TEST_RESULT, {
+      'testSuccess': false,
+      'errorCode': 'EXCEPTION',
+      'errorMessage': JSON.stringify(err)
+    });
+  }
+}
+
+async function executeCase12(): Promise<void> {
+  try {
+    let errorCodeStr = testNapi.getAbilityNameError2();
+    hilog.info(DOMAIN, TAG, 'executeCase12 errorCodeStr: %{public}s', errorCodeStr);
+    let testSuccess = (errorCodeStr === '401');
+    await publishEvent(EVENT_TEST_RESULT, {
+      'testSuccess': testSuccess,
+      'errorCode': errorCodeStr
+    });
+  } catch (err) {
+    hilog.error(DOMAIN, TAG, 'executeCase12 error: %{public}s', JSON.stringify(err));
+    await publishEvent(EVENT_TEST_RESULT, {
+      'testSuccess': false,
+      'errorCode': 'EXCEPTION',
+      'errorMessage': JSON.stringify(err)
+    });
+  }
+}
+
+async function executeCase13(): Promise<void> {
+  try {
+    let errorCodeStr = testNapi.getAbilityNameError3();
+    hilog.info(DOMAIN, TAG, 'executeCase13 errorCodeStr: %{public}s', errorCodeStr);
+    let testSuccess = (errorCodeStr === '16000177');
+    await publishEvent(EVENT_TEST_RESULT, {
+      'testSuccess': testSuccess,
+      'errorCode': errorCodeStr
+    });
+  } catch (err) {
+    hilog.error(DOMAIN, TAG, 'executeCase13 error: %{public}s', JSON.stringify(err));
+    await publishEvent(EVENT_TEST_RESULT, {
+      'testSuccess': false,
+      'errorCode': 'EXCEPTION',
+      'errorMessage': JSON.stringify(err)
+    });
+  }
+}
+
+async function executeCase14(): Promise<void> {
+  try {
+    let errorCodeStr = testNapi.getEnvError1();
+    hilog.info(DOMAIN, TAG, 'executeCase14 errorCodeStr: %{public}s', errorCodeStr);
+    let testSuccess = (errorCodeStr === '401');
+    await publishEvent(EVENT_TEST_RESULT, {
+      'testSuccess': testSuccess,
+      'errorCode': errorCodeStr
+    });
+  } catch (err) {
+    hilog.error(DOMAIN, TAG, 'executeCase14 error: %{public}s', JSON.stringify(err));
+    await publishEvent(EVENT_TEST_RESULT, {
+      'testSuccess': false,
+      'errorCode': 'EXCEPTION',
+      'errorMessage': JSON.stringify(err)
+    });
+  }
+}
+
+async function executeCase15(): Promise<void> {
+  try {
+    let errorCodeStr = testNapi.getEnvError2();
+    hilog.info(DOMAIN, TAG, 'executeCase15 errorCodeStr: %{public}s', errorCodeStr);
+    let testSuccess = (errorCodeStr === '401');
+    await publishEvent(EVENT_TEST_RESULT, {
+      'testSuccess': testSuccess,
+      'errorCode': errorCodeStr
+    });
+  } catch (err) {
+    hilog.error(DOMAIN, TAG, 'executeCase15 error: %{public}s', JSON.stringify(err));
+    await publishEvent(EVENT_TEST_RESULT, {
+      'testSuccess': false,
+      'errorCode': 'EXCEPTION',
+      'errorMessage': JSON.stringify(err)
+    });
+  }
+}
+
+async function executeCase16(): Promise<void> {
+  try {
+    let errorCodeStr = testNapi.getEnvError3();
+    hilog.info(DOMAIN, TAG, 'executeCase16 errorCodeStr: %{public}s', errorCodeStr);
+    let testSuccess = (errorCodeStr === '16000177');
+    await publishEvent(EVENT_TEST_RESULT, {
+      'testSuccess': testSuccess,
+      'errorCode': errorCodeStr
+    });
+  } catch (err) {
+    hilog.error(DOMAIN, TAG, 'executeCase16 error: %{public}s', JSON.stringify(err));
+    await publishEvent(EVENT_TEST_RESULT, {
+      'testSuccess': false,
+      'errorCode': 'EXCEPTION',
+      'errorMessage': JSON.stringify(err)
+    });
+  }
+}
 
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onCreate');
-
+    hilog.info(DOMAIN, TAG, 'Ability onCreate');
+    let flag = want.parameters?.['flag'] as string | undefined;
+    hilog.info(DOMAIN, TAG, 'onCreate flag: %{public}s', flag ?? 'undefined');
     setTimeout(async () => {
-      try {
-        await this.context.startSelf();
-        hilog.info(DOMAIN, 'testTag', 'try startSelf.');
-      } catch (err) {
-        hilog.error(DOMAIN, 'testTag', 'Failed to startSelf. Cause: %{public}s', JSON.stringify(err));
-      }
-    }, 100);
+      await executeTestLogic(flag);
+    }, 500);
   }
 
   onDestroy(): void {
-    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onDestroy');
+    hilog.info(DOMAIN, TAG, 'onDestroy');
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
-    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
+    hilog.info(DOMAIN, TAG, '%{public}s', 'Ability onWindowStageCreate');
     windowStage.loadContent('pages/Index', (err) => {
       if (err.code) {
-        hilog.error(DOMAIN, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err));
+        hilog.error(DOMAIN, TAG, 'Failed to load the content. Cause: %{public}s', JSON.stringify(err));
         return;
       }
-      hilog.info(DOMAIN, 'testTag', 'Succeeded in loading the content.');
+      hilog.info(DOMAIN, TAG, 'Succeeded in loading the content.');
     });
   }
 
   onWindowStageDestroy(): void {
-    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
+    hilog.info(DOMAIN, TAG, '%{public}s', 'Ability onWindowStageDestroy');
   }
 
   onForeground(): void {
-    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onForeground');
+    hilog.info(DOMAIN, TAG, 'Ability onForeground');
   }
 
   onBackground(): void {
-    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onBackground');
+    hilog.info(DOMAIN, TAG, 'Ability onBackground');
   }
 
   onNewWant(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onNewWant: ' + JSON.stringify(want));
+    hilog.info(DOMAIN, TAG, '%{public}s', 'Ability onNewWant: ' + JSON.stringify(want));
+    let flag = want.parameters?.['flag'] as string | undefined;
+    hilog.info(DOMAIN, TAG, 'onNewWant flag: %{public}s', flag ?? 'undefined');
+    setTimeout(async () => {
+      await executeTestLogic(flag);
+    }, 500);
   }
 }

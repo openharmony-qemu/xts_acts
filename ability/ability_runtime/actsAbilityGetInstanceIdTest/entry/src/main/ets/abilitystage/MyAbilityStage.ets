@@ -31,6 +31,9 @@ export default class MyAbilityStage extends AbilityStage {
     if (want.parameters?.flag == 'none') {
       return '';
     }
+    if (want.parameters?.flag) {
+      return want.parameters?.flag as string;
+    }
     return '222';
   }
 
