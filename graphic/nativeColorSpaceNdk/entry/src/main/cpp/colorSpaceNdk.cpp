@@ -179,6 +179,46 @@ static napi_value OHGetGamma001(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value OHCreateColorSpaceFromNameBt2020LogFull0100(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_NativeColorSpaceManager *nativeColorSpace = nullptr;
+    ColorSpaceName colorSpaceName = ColorSpaceName::BT2020_LOG_FULL;
+    nativeColorSpace = OH_NativeColorSpaceManager_CreateFromName(colorSpaceName);
+    if (nativeColorSpace != nullptr) {
+        colorSpaceName = static_cast<ColorSpaceName>(OH_NativeColorSpaceManager_GetColorSpaceName(nativeColorSpace));
+        if (colorSpaceName == ColorSpaceName::BT2020_LOG_FULL) {
+            napi_create_int32(env, SUCCESS, &result);
+        } else {
+            napi_create_int32(env, FAIL, &result);
+        }
+    } else {
+        napi_create_int32(env, FAIL, &result);
+    }
+    OH_NativeColorSpaceManager_Destroy(nativeColorSpace);
+    return result;
+}
+
+static napi_value OHCreateColorSpaceFromNameBt2020LogLimit0100(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_NativeColorSpaceManager *nativeColorSpace = nullptr;
+    ColorSpaceName colorSpaceName = ColorSpaceName::BT2020_LOG_LIMIT;
+    nativeColorSpace = OH_NativeColorSpaceManager_CreateFromName(colorSpaceName);
+    if (nativeColorSpace != nullptr) {
+        colorSpaceName = static_cast<ColorSpaceName>(OH_NativeColorSpaceManager_GetColorSpaceName(nativeColorSpace));
+        if (colorSpaceName == ColorSpaceName::BT2020_LOG_LIMIT) {
+            napi_create_int32(env, SUCCESS, &result);
+        } else {
+            napi_create_int32(env, FAIL, &result);
+        }
+    } else {
+        napi_create_int32(env, FAIL, &result);
+    }
+    OH_NativeColorSpaceManager_Destroy(nativeColorSpace);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -201,6 +241,10 @@ static napi_value Init(napi_env env, napi_value exports)
          napi_default, nullptr},
         {"oHGetGamma001", nullptr, OHGetGamma001, nullptr, nullptr, nullptr,
          napi_default, nullptr},
+        {"oHCreateColorSpaceFromNameBt2020LogFull0100", nullptr, OHCreateColorSpaceFromNameBt2020LogFull0100,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHCreateColorSpaceFromNameBt2020LogLimit0100", nullptr, OHCreateColorSpaceFromNameBt2020LogLimit0100,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
