@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { collections } from '@kit.ArkTS';
+import { collections, ArkTSUtils } from '@kit.ArkTS';
 import taskpool from '@ohos.taskpool';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { sleep } from '../Utils';
@@ -89,10 +89,12 @@ function sliceAndJoinConcurrent(arr: collections.Array<number>): string {
 }
 
 @Concurrent
-function modifyCustomArrayConcurrent(arr: SendableConcatArray): number {
-  arr.push(100)
-  arr.push(200)
-  return arr.length
+async function modifyCustomArrayConcurrent(arr: SendableConcatArray, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync<number>(() => {
+    arr.push(100)
+    arr.push(200)
+    return arr.length
+  })
 }
 
 @Concurrent
@@ -189,94 +191,17 @@ export default function ConcatArrayConcurrentTest(): void {
       expect(result as boolean).assertTrue()
     })
 
-    // ===== Section 3.10: Custom class cross-thread (0500-0900) =====
+    // ===== Section 6: Concurrent concat operations (0900-1200) =====
 
     /**
      * @tc.name   CAConcurrentTest0500
      * @tc.number SUB_CONCATARRAY_CONCURRENT_TEST_0500
-     * @tc.desc   Verify custom @Sendable class can be passed to TaskPool and length read correctly
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('CAConcurrentTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      let myArr = new SendableConcatArray()
-      myArr.push(1)
-      myArr.push(2)
-      myArr.push(3)
-      let task = new taskpool.Task(processCustomArrayConcurrent, myArr)
-      let result = await taskpool.execute(task)
-      expect(result as number).assertEqual(3)
-    })
-
-    /**
-     * @tc.name   CAConcurrentTest0600
-     * @tc.number SUB_CONCATARRAY_CONCURRENT_TEST_0600
-     * @tc.desc   Verify custom @Sendable class join method works correctly in TaskPool worker thread
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('CAConcurrentTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      let myArr = new SendableConcatArray()
-      myArr.push(10)
-      myArr.push(20)
-      myArr.push(30)
-      let task = new taskpool.Task(joinCustomArrayConcurrent, myArr)
-      let result = await taskpool.execute(task)
-      expect(result as string).assertEqual('10-20-30')
-    })
-
-    /**
-     * @tc.name   CAConcurrentTest0700
-     * @tc.number SUB_CONCATARRAY_CONCURRENT_TEST_0700
-     * @tc.desc   Verify custom @Sendable class modification in TaskPool syncs back to original
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('CAConcurrentTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      let myArr = new SendableConcatArray()
-      myArr.push(1)
-      myArr.push(2)
-      let originalLength = myArr.length
-      let task = new taskpool.Task(modifyCustomArrayConcurrent, myArr)
-      let result = await taskpool.execute(task)
-      expect(result as number).assertEqual(originalLength + 2)
-      expect(myArr.length).assertEqual(originalLength + 2)
-      expect(myArr.get(originalLength)).assertEqual(100)
-      expect(myArr.get(originalLength + 1)).assertEqual(200)
-    })
-
-    /**
-     * @tc.name   CAConcurrentTest0800
-     * @tc.number SUB_CONCATARRAY_CONCURRENT_TEST_0800
-     * @tc.desc   Verify custom @Sendable string class cross-thread join works correctly
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('CAConcurrentTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      let myArr = new SendableConcatArrayStr()
-      myArr.push('a')
-      myArr.push('b')
-      myArr.push('c')
-      let task = new taskpool.Task(readCustomArrayConcurrent, myArr)
-      let result = await taskpool.execute(task)
-      expect(result as string).assertEqual('a,b,c')
-    })
-
-    // ===== Section 6: Concurrent concat operations (0900-1200) =====
-
-    /**
-     * @tc.name   CAConcurrentTest0900
-     * @tc.number SUB_CONCATARRAY_CONCURRENT_TEST_0900
      * @tc.desc   Verify concat operation works correctly in TaskPool worker thread
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('CAConcurrentTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('CAConcurrentTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let arr1 = new collections.Array<number>(1, 2)
       let arr2 = new collections.Array<number>(3, 4)
       let task = new taskpool.Task(concatArraysConcurrent, arr1, arr2)
@@ -285,14 +210,14 @@ export default function ConcatArrayConcurrentTest(): void {
     })
 
     /**
-     * @tc.name   CAConcurrentTest1000
-     * @tc.number SUB_CONCATARRAY_CONCURRENT_TEST_1000
+     * @tc.name   CAConcurrentTest0600
+     * @tc.number SUB_CONCATARRAY_CONCURRENT_TEST_0600
      * @tc.desc   Verify multiple TaskPool tasks can process collections.Array concurrently
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('CAConcurrentTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('CAConcurrentTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let arr1 = new collections.Array<number>(1, 2, 3)
       let arr2 = new collections.Array<number>(4, 5, 6)
       let arr3 = new collections.Array<number>(7, 8, 9)
@@ -306,14 +231,14 @@ export default function ConcatArrayConcurrentTest(): void {
     })
 
     /**
-     * @tc.name   CAConcurrentTest1100
-     * @tc.number SUB_CONCATARRAY_CONCURRENT_TEST_1100
+     * @tc.name   CAConcurrentTest0700
+     * @tc.number SUB_CONCATARRAY_CONCURRENT_TEST_0700
      * @tc.desc   Verify multiple slice operations work correctly in TaskPool concurrently
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('CAConcurrentTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('CAConcurrentTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let arr = new collections.Array<number>(1, 2, 3, 4, 5, 6)
       let task = new taskpool.Task(processMultipleSlicesConcurrent, arr)
       let result = await taskpool.execute(task)

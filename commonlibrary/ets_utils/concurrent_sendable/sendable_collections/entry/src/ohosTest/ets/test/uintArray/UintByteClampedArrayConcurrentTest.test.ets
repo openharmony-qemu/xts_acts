@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { collections } from '@kit.ArkTS';
+import { collections, ArkTSUtils } from '@kit.ArkTS';
 import taskpool from '@ohos.taskpool';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { sleep } from '../Utils';
@@ -24,8 +24,10 @@ function processClampedArrayFunc(arr: collections.Uint8ClampedArray): number {
 }
 
 @Concurrent
-function modifyClampedArrayFunc(arr: collections.Uint8ClampedArray): void {
-  arr[0] = 200
+async function modifyClampedArrayFunc(arr: collections.Uint8ClampedArray, lock: ArkTSUtils.locks.AsyncLock): Promise<void> {
+  await lock.lockAsync<void>(() => {
+    arr[0] = 200
+  })
 }
 
 @Concurrent
@@ -125,7 +127,8 @@ export default function UintByteClampedArrayConcurrentTest(): void {
     it('UintByteClampedArrayConcurrentTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let src: number[] = [1, 2, 3]
       let arr = new collections.Uint8ClampedArray(src)
-      let task = new taskpool.Task(modifyClampedArrayFunc, arr)
+      let lock = new ArkTSUtils.locks.AsyncLock()
+      let task = new taskpool.Task(modifyClampedArrayFunc, arr, lock)
       await taskpool.execute(task)
       expect(arr[0]).assertEqual(200)
     })
@@ -247,7 +250,8 @@ export default function UintByteClampedArrayConcurrentTest(): void {
     it('UintByteClampedArrayConcurrentTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let src: number[] = [0, 0, 0, 0, 0]
       let arr = new collections.Uint8ClampedArray(src)
-      let task1 = new taskpool.Task(modifyClampedArrayFunc, arr)
+      let lock = new ArkTSUtils.locks.AsyncLock()
+      let task1 = new taskpool.Task(modifyClampedArrayFunc, arr, lock)
       await taskpool.execute(task1)
       expect(arr[0]).assertEqual(200)
     })

@@ -160,15 +160,19 @@ function checkSendableFunc(arr: BasicArray): boolean {
 }
 
 @Concurrent
-function processSumFunc(arr: SumArrayExt): number {
-  arr.push(100)
-  return arr.customSum()
+async function processSumFunc(arr: SumArrayExt, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync<number>(() => {
+    arr.push(100)
+    return arr.customSum()
+  })
 }
 
 @Concurrent
-function modifySendableFunc(arr: BasicArray): void {
-  arr.push(100)
-  arr.push(200)
+async function modifySendableFunc(arr: BasicArray, lock: ArkTSUtils.locks.AsyncLock): Promise<void> {
+  await lock.lockAsync<void>(() => {
+    arr.push(100)
+    arr.push(200)
+  })
 }
 
 @Concurrent
@@ -195,9 +199,11 @@ function processLargeFunc(arr: BasicArray): number {
 }
 
 @Concurrent
-function doubleAllFunc(arr: DoubleArray): number {
-  arr.doubleAll()
-  return arr.length
+async function doubleAllFunc(arr: DoubleArray, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync<number>(() => {
+    arr.doubleAll()
+    return arr.length
+  })
 }
 
 export default function ArrayInheritanceTest(): void {
@@ -525,7 +531,8 @@ export default function ArrayInheritanceTest(): void {
      */
     it('ArrayInheritanceTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let myArr = new SumArrayExt(1, 2, 3)
-      let task = new taskpool.Task(processSumFunc, myArr)
+      let lock = new ArkTSUtils.locks.AsyncLock()
+      let task = new taskpool.Task(processSumFunc, myArr, lock)
       let result = await taskpool.execute(task)
       expect(result as number).assertEqual(106)
       expect(myArr.length).assertEqual(4)
@@ -543,7 +550,8 @@ export default function ArrayInheritanceTest(): void {
     it('ArrayInheritanceTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let myArr = new BasicArray(1, 2, 3)
       let originalLength = myArr.length
-      let task = new taskpool.Task(modifySendableFunc, myArr)
+      let lock = new ArkTSUtils.locks.AsyncLock()
+      let task = new taskpool.Task(modifySendableFunc, myArr, lock)
       await taskpool.execute(task)
       expect(myArr.length).assertEqual(originalLength + 2)
       expect(myArr[3]).assertEqual(100)
@@ -981,7 +989,8 @@ export default function ArrayInheritanceTest(): void {
      */
     it('ArrayInheritanceTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let myArr = new DoubleArray(1, 2, 3)
-      let task = new taskpool.Task(doubleAllFunc, myArr)
+      let lock = new ArkTSUtils.locks.AsyncLock()
+      let task = new taskpool.Task(doubleAllFunc, myArr, lock)
       await taskpool.execute(task)
       expect(myArr[0]).assertEqual(2)
       expect(myArr[1]).assertEqual(4)
