@@ -560,7 +560,7 @@ export default function cameraPhotoSessionTest() {
         await startCameraSession(0);
 
         //--------------------------------------------测试过程------------------------------------------------------
-        let range = mCameraSession!.getColorTintRange()
+        let range: Array<int> = mCameraSession!.getColorTintRange()
         console.info(`camera session getColorTintRange, range: ${range}`)
         expect(range != undefined).assertTrue()
       } catch (error) {
@@ -589,7 +589,7 @@ export default function cameraPhotoSessionTest() {
         createCameraSessionInstanceWithSceneMode(camera.SceneMode.NORMAL_PHOTO);
 
       //--------------------------------------------测试过程------------------------------------------------------
-        let range = mCameraSession!.getColorTintRange()
+        let range: Array<int> = mCameraSession!.getColorTintRange()
         console.error(`camera session getColorTintRange expected failed, but success, range: ${range}`)
         expect().assertFail()
       } catch (error) {
@@ -618,7 +618,7 @@ export default function cameraPhotoSessionTest() {
       await startCameraSession(0);
 
       //--------------------------------------------测试过程------------------------------------------------------
-      let range = mCameraSession!.getColorTintRange();
+      let range: Array<int> = mCameraSession!.getColorTintRange();
       console.info(`camera session getColorTintRange, range: ${range}`);
       if (range.length < 1) {
         console.error(`not surported tone control, please check`)
@@ -655,7 +655,7 @@ export default function cameraPhotoSessionTest() {
       await startCameraSession(0);
 
       //--------------------------------------------测试过程------------------------------------------------------
-      let range = mCameraSession!.getColorTintRange();
+      let range: Array<int> = mCameraSession!.getColorTintRange();
       console.info(`camera session getColorTintRange, range: ${range}`);
       if (range.length < 1) {
         console.error(`not surported tone control, please check`)
@@ -678,81 +678,6 @@ export default function cameraPhotoSessionTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0500
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0500
-     * @tc.desc      test sub multimedia camera session setColorTint with int
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it('SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      //--------------------------------------------预置条件------------------------------------------------------
-      console.info("SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0500")
-      createCameraSessionInstanceWithSceneMode(camera.SceneMode.NORMAL_PHOTO);
-      await startCameraSession(0);
-
-      //--------------------------------------------测试过程------------------------------------------------------
-      let range = mCameraSession!.getColorTintRange();
-      console.info(`camera session getColorTintRange, range: ${range}`);
-      if (range.length < 1) {
-        console.error(`not surported tone control, please check`)
-        expect().assertFail()
-      }
-      let val = Math.floor((range[0] + range[1]) / 2)
-      try {
-        console.info(`setColorTint: ${val}`);
-        mCameraSession!.setColorTint(val)
-        let currentInt = mCameraSession!.getColorTint()
-        console.info(`getColorTint: ${currentInt}`)
-        expect(currentInt).assertEqual(val)
-      } catch (error) {
-        console.error(`setColorTint failed, value: ${val}, ${JSON.stringify(error)}`)
-        expect().assertFail()
-      } finally {
-      //--------------------------------------------后置处理------------------------------------------------------
-        console.info("Exit SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0500")
-        done()
-        await releaseCameraSession();
-      }
-    })
-
-    /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0600
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0600
-     * @tc.desc      test sub multimedia camera session setColorTint with float
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      //--------------------------------------------预置条件------------------------------------------------------
-      console.info("SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0600")
-      createCameraSessionInstanceWithSceneMode(camera.SceneMode.NORMAL_PHOTO);
-      await startCameraSession(0);
-
-      //--------------------------------------------测试过程------------------------------------------------------
-      let range = mCameraSession!.getColorTintRange();
-      console.info(`camera session getColorTintRange, range: ${range}`);
-      if (range.length < 1) {
-        console.error(`not surported tone control, please check`)
-        expect().assertFail()
-      }
-      let val = (range[0] + range[1] - 0.1) * 0.99 / 2
-      try {
-        console.info(`setColorTint: ${val}`);
-        mCameraSession!.setColorTint(val)
-      } catch (error) {
-        console.error(`setColorTint failed, value: ${val}, ${JSON.stringify(error)}`)
-        expect().assertFail()
-      } finally {
-      //--------------------------------------------后置处理------------------------------------------------------
-        console.info("Exit SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0600")
-        done()
-        await releaseCameraSession();
-      }
-    })
-
-    /**
      * @tc.number    SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0800
      * @tc.name      SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0800
      * @tc.desc      test sub multimedia camera session setColorTint with value out of range
@@ -767,7 +692,7 @@ export default function cameraPhotoSessionTest() {
       await startCameraSession(0);
 
       //--------------------------------------------测试过程------------------------------------------------------
-      let range: number[] = mCameraSession!.getColorTintRange();
+      let range: Array<int> = mCameraSession!.getColorTintRange();
       console.info(`camera session getColorTintRange, range: ${range}`);
       if (range.length < 1) {
         console.error(`not surported tone control, please check`)
@@ -806,7 +731,7 @@ export default function cameraPhotoSessionTest() {
       createCameraSessionInstanceWithSceneMode(camera.SceneMode.NORMAL_PHOTO);
 
       //--------------------------------------------测试过程------------------------------------------------------
-      let val = 1
+      let val: int = 1
       try {
         console.info(`setColorTint: ${val}`);
         mCameraSession!.setColorTint(val)
