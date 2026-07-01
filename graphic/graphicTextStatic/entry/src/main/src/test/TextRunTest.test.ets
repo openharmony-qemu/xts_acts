@@ -59,7 +59,7 @@ let textLineRunExpectData: Array<Array<TextRunData>> = [
       "imageBounds": {
         "left": 5,
         "top": 8,
-        "right": 440.22,
+        "right": 472.11,
         "bottom": 41
       },
     }
@@ -84,7 +84,7 @@ let textLineRunExpectData: Array<Array<TextRunData>> = [
       "imageBounds": {
         "left": 2,
         "top": 1,
-        "right": 445.68,
+        "right": 471.78,
         "bottom": 27
       },
     }
@@ -109,7 +109,7 @@ let textLineRunExpectData: Array<Array<TextRunData>> = [
       "imageBounds": {
         "left": -7,
         "top": 8,
-        "right": 443.74,
+        "right": 469.18,
         "bottom": 41
       },
     }
@@ -134,7 +134,7 @@ let textLineRunExpectData: Array<Array<TextRunData>> = [
       "imageBounds": {
         "left": 2,
         "top": 1,
-        "right": 439.26,
+        "right": 470.54,
         "bottom": 27
       },
     }
@@ -177,9 +177,9 @@ let textLineRunExpectData: Array<Array<TextRunData>> = [
         "width": 275.14
       },
       "imageBounds": {
-        "left": 290.50,
+        "left": 222.86,
         "top": 8,
-        "right": 471.82,
+        "right": 470.03,
         "bottom": 41
       },
     }
