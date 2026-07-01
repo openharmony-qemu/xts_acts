@@ -119,7 +119,7 @@ export default function swiperIndicatorIcon() {
       let objCompare = JSON.parseJsonElement(strJsonCompare);
       let strJson = inspector.getInspectorByKey('swiper_indicator_icon_undefined');
       let obj = JSON.parseJsonElement(strJson);
-      let indicatorCompare = JSON.parseJsonElement(objCompare.getElement('$attrs').getElement('indicator'));
+      let indicatorCompare = JSON.parseJsonElement(objCompare.getElement('$attrs').getString('indicator'));
       let indicatorJson = JSON.parseJsonElement(obj.getElement('$attrs').getString('indicator'));
       console.info('[swiperIndicatorIcon_static_0300] default indicator: ' + JSON.stringify(indicatorCompare))
       console.info('[swiperIndicatorIcon_static_0300] undefined indicator: ' + JSON.stringify(indicatorJson))
