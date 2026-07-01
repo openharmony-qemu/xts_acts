@@ -10,6 +10,7 @@
         "MainAbility/pages/selectioncontainer/SelectionContainerBindSelectionMenu",
         "MainAbility/pages/selectioncontainer/SelectionContainerEditMenuOptions",
         "MainAbility/pages/selectioncontainer/SelectionContainerEvents",
-        "MainAbility/pages/selectioncontainer/SelectionContainerModifier"
+        "MainAbility/pages/selectioncontainer/SelectionContainerModifier",
+        "MainAbility/pages/selectioncontainer/SelectionContainerController"
     ]
 }
