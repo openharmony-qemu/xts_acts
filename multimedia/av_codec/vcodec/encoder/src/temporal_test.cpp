@@ -124,7 +124,7 @@ HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_API_0020, TestSize.Level2)
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_ENABLE_TEMPORAL_SCALABILITY, 1);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_TEMPORAL_GOP_REFERENCE_MODE, 3);
         ret = OH_VideoEncoder_Configure(venc_, format);
-        if (!access("/system/lib64/media/", 0)) {
+        if (!OH_AVCapability_IsFeatureSupported(cap, VIDEO_ENCODER_TEMPORAL_SCALABILITY)) {
             ASSERT_EQ(ret, AV_ERR_INVALID_VAL);
         } else {
             ASSERT_EQ(ret, AV_ERR_OK);
@@ -161,7 +161,7 @@ HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_API_0030, TestSize.Level2)
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_ENABLE_TEMPORAL_SCALABILITY, 1);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_TEMPORAL_GOP_SIZE, 30);
         ret = OH_VideoEncoder_Configure(venc_, format);
-        if (!access("/system/lib64/media/", 0)) {
+        if (!OH_AVCapability_IsFeatureSupported(cap, VIDEO_ENCODER_TEMPORAL_SCALABILITY)) {
             ASSERT_EQ(ret, AV_ERR_INVALID_VAL);
         } else {
             ASSERT_EQ(ret, AV_ERR_OK);
