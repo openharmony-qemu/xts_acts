@@ -251,7 +251,7 @@ export default function WebsocketServerStaticTest() {
         let server1: webSocket.WebSocketServer = webSocket.createWebSocketServer();
         let server2: webSocket.WebSocketServer = webSocket.createWebSocketServer();
         hilog.info(domain, tag, '%{public}s', `${caseName} --> server1: ${server1}, server2: ${server2}`);
-        
+
         let serverConfig: webSocket.WebSocketServerConfig = {
           serverIP: "0.0.0.0",
           serverPort: 9057,
@@ -262,7 +262,7 @@ export default function WebsocketServerStaticTest() {
         await server1.start(serverConfig).then(async (success: boolean) => {
           if (success) {
             hilog.info(domain, tag, '%{public}s', `${caseName} server1 start success, port occupied`);
-
+            await new Promise<void>((resolve) => setTimeout(() => resolve(), 500));
             server2.start(serverConfig).then(async (success2: boolean) => {
               if (success2) {
                 hilog.info(domain, tag, '%{public}s', `${caseName} server2 start success`);
