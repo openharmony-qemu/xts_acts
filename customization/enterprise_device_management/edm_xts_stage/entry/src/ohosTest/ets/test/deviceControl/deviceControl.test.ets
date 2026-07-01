@@ -113,6 +113,69 @@ function testOperateDevice() {
   });
 
   /**
+   * @tc.name   test_operate_device_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_OPERATE_DEVICE_JS_0100
+   * @tc.desc   test deviceControl operateDevice(2 params) with undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_operate_device_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      deviceControl.operateDevice(undefined, LOCK_SCREEN);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_operate_device_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_OPERATE_DEVICE_JS_0200
+   * @tc.desc   test deviceControl operateDevice(2 params) with null item
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_operate_device_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      deviceControl.operateDevice(SELFWANT, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_operate_device_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_OPERATE_DEVICE_JS_0300
+   * @tc.desc   test deviceControl operateDevice(2 params) with undefined item
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_operate_device_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      deviceControl.operateDevice(SELFWANT, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
    * @tc.name   test_operate_device_0005
    * @tc.number SUB_CUSTOMIZATION_EDM_OPERATE_DEVICE_JS_0005
    * @tc.desc   test deviceControl operateDevice without admin
