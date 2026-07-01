@@ -9,6 +9,8 @@
     "MainAbility/pages/passThrough/PassThroughTest",
     "MainAbility/pages/getSizeLimitation/GetSizeLimitationTest",
     "MainAbility/pages/shouldRecognizerParallelWith/shouldRecognizerParallelWith",
-    "MainAbility/pages/arcList/ArcListEventCallbackTest"
+    "MainAbility/pages/arcList/ArcListEventCallbackTest",
+    "MainAbility/pages/arcSwiper/ArcSwiperEventCallbackTest",
+    "MainAbility/pages/arcAlphabetIndexer/ArcAlphabetIndexerEventCallbackTest"
   ]
 }
