@@ -1,3 +1,4 @@
+'use static';
 import ByteAddTest07 from "./Byte/ByteAdd.test";
 import Byte_MIN_VALUE_Property_Test from "./Byte/ByteAttribute.test";
 import ByteByteValueTest from "./Byte/ByteByteValue.test";

@@ -1,3 +1,4 @@
+'use static';
 import { Level, Size, TestType, beforeAll, describe, it, beforeEach } from '../../../hypium/index'
 import Utils from './Util.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';

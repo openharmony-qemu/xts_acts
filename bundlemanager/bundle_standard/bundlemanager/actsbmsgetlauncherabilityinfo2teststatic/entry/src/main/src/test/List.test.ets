@@ -1,3 +1,4 @@
+'use static';
 import actsGetLauncherAbilityInfo2Test from './GetLauncherAbilityInfo.test'
 import getApplicationLabel from './GetApplicationLabel.test'
 import GetInstalledBundleList from './GetInstalledBundleList.test'

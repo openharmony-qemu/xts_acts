@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 import { Entry, Row, Column, Component, Button, ClickEvent, Text, TextArea, TextInput, Search, ResourceStr, $r, LineBreakStrategy, CancelButtonOptions, CancelButtonSymbolOptions, CancelButtonStyle, IconOptions, Length, AttributeModifier, TextAreaAttribute, TextInputAttribute, Color, CopyOptions, EnterKeyType, Scroll } from '@ohos.arkui.component';
 import { State, AppStorage, Observed, Track } from '@ohos.arkui.stateManagement';

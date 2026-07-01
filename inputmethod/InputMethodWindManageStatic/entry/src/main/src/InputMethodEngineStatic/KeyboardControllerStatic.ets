@@ -1,4 +1,4 @@
- 'use static'
+'use static';
 
 import { inputMethodEngine, InputMethodExtensionContext, InputMethodSubtype } from '@kit.IMEKit';
 import display from '@ohos.display';

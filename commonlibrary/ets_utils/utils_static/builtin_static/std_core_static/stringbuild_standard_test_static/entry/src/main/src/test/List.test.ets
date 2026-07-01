@@ -1,3 +1,4 @@
+'use static';
 import StringBuilderAppendTest from "./stringbuild/StringBuilderAppendTest.test";
 import StringBuilderStringLengthTest from "./stringbuild/StringBuilderStringLengthTest.test";
 import StringBuilderConstructorOneTest from "./stringbuild/StringBuilderConstructorOneTest.test";

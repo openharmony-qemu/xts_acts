@@ -1,3 +1,4 @@
+'use static';
 import runtimeLinkerFindAndLoadClassTest from "./runtimelinker/RuntimeLinkerFindAndLoadClassTest.test";
 import getBootRuntimeLinkerTest from "./runtimelinker/GetBootRuntimeLinkerTest.test";
 import runtimeLinkerInstanceTest from "./runtimelinker/RuntimeLinkerInstanceTest.test";

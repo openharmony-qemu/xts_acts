@@ -1,3 +1,4 @@
+'use static';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import notificationManager from '@ohos.notificationManager';
 import notificationSubscribe from '@ohos.notificationSubscribe';

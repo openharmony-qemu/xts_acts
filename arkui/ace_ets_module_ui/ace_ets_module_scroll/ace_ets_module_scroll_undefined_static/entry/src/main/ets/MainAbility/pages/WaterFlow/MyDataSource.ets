@@ -1,4 +1,4 @@
-'use static'
+'use static';
 import { IDataSource, DataChangeListener, DataOperation } from '@ohos.arkui.component'
 export class BasicDataSource<T> implements IDataSource<T> {
   private listeners: DataChangeListener[] = [];

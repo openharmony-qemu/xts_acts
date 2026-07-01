@@ -1,3 +1,4 @@
+'use static';
 import IntlFormatterInterfaceTest from "./INTL/IntlFormatterInterfaceTest.test"
 import IntlIntlBestFitLocalesTest from "./INTL/IntlIntlBestFitLocalesTest.test"
 import IntlIntlBestFitLocaleTest from "./INTL/IntlIntlBestFitLocaleTest.test"

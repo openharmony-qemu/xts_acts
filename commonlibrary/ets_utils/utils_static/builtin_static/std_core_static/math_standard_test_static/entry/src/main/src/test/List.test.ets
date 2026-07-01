@@ -1,3 +1,4 @@
+'use static';
 import mathAbsTest from './math/MathAbsTest.test';
 import mathAcosTest from './math/MathAcosTest.test';
 import mathAcoshTest from './math/MathAcoshTest.test';
