@@ -6,7 +6,7 @@
       {
         "name": "default",
         "signingConfig": "default",
-        "compatibleSdkVersion": "26",
+        "compatibleSdkVersion": "23",
         "compileSdkVersion": "26",
         "arkTSVersion": "1.2",
         "runtimeOS": "OpenHarmony",
