@@ -25,3 +25,4 @@ export const oHHiTraceIsFlagEnabled: () => boolean;
 export const oHHiTraceIsTraceEnabled: () => boolean;
 export const oHHiTraceIsTraceEnabl2: () => boolean;
 export const OHHiTraceCountTraceNull:()=> number;
+export const OH_HiTrace_StartTraceEx_FullName: () => number;
