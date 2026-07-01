@@ -250,5 +250,23 @@ export default function dataShareConfigGetValuesTest() {
       }
     });
 
+    /** 
+     * @tc.name   dataShareConfigGetValuesTest009
+     * @tc.number SUB_DistributedData_DataShare_SDK_GetValues_0090
+     * @tc.desc   single uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigGetValuesTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let testUri = "";
+        await g_handle!.getValues(testUri, g_config_4K);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] dataShareConfigGetValuesTest009 failed,code =" + err.code + ",message=" + err.message);
+        expect(err.code).assertEqual(15700011);
+      }
+    });
   })
 }

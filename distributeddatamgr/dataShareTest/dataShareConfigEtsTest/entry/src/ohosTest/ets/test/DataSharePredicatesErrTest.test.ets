@@ -1093,5 +1093,175 @@ export default function DataSharePredicatesErrTest() {
       }
     })
 
+    /**
+     * @tc.name   SUB_DataShare_In0006
+     * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesErrtest_0520
+     * @tc.desc   SUB_DataShare_In0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_DataShare_In0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let predicates = new data_dataSharePredicates.DataSharePredicates();
+        predicates.in("age", []);
+        expect(predicates).assertInstanceOf("Object");
+      } catch (e) {
+        console.info(TAG + "SUB_DataShare_In0005 fail err.code is " + e.code + "err.message is " + e.message);
+        expect().assertFail();
+      }
+    })
+    
+    /**
+     * @tc.name   SUB_DataShare_Limit0001
+     * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesErrtest_0530
+     * @tc.desc   SUB_DataShare_Limit0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_DataShare_Limit0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let predicates = new data_dataSharePredicates.DataSharePredicates();
+        predicates.limit(undefined, undefined);
+        expect(predicates).assertInstanceOf("Object");
+      } catch (e) {
+        console.info(TAG + "SUB_DataShare_Limit0001 fail err.code is " + e.code + "err.message is " + e.message);
+        expect().assertFail();
+      }
+    })
+    
+    /**
+     * @tc.name   SUB_DataShare_Limit0002
+     * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesErrtest_0540
+     * @tc.desc   SUB_DataShare_Limit0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_DataShare_Limit0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let predicates = new data_dataSharePredicates.DataSharePredicates();
+        predicates.limit(null, null);
+        expect(predicates).assertInstanceOf("Object");
+      } catch (e) {
+        console.info(TAG + "SUB_DataShare_Limit0002 fail err.code is " + e.code + "err.message is " + e.message);
+        expect().assertFail();
+      }
+    })
+    
+    /**
+     * @tc.name   SUB_DataShare_OrderByAsc0002
+     * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesErrtest_0550
+     * @tc.desc   SUB_DataShare_OrderByAsc0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_DataShare_OrderByAsc0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let predicates = new data_dataSharePredicates.DataSharePredicates();
+        predicates.orderByAsc(undefined);
+        expect(predicates).assertInstanceOf("Object");
+      } catch (e) {
+        console.info(TAG + "SUB_DataShare_OrderByAsc0002 fail err.code is " + e.code + "err.message is " + e.message);
+        expect().assertFail();
+      }
+    })
+    
+    /**
+     * @tc.name   SUB_DataShare_OrderByAsc0003
+     * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesErrtest_0560
+     * @tc.desc   SUB_DataShare_OrderByAsc0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_DataShare_OrderByAsc0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let predicates = new data_dataSharePredicates.DataSharePredicates();
+        predicates.orderByAsc(null);
+        expect(predicates).assertInstanceOf("Object");
+      } catch (e) {
+        console.info(TAG + "SUB_DataShare_OrderByAsc0003 fail err.code is " + e.code + "err.message is " + e.message);
+        expect().assertFail();
+      }
+    })
+    
+    /**
+     * @tc.name   SUB_DataShare_OrderByAsc0004
+     * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesErrtest_0570
+     * @tc.desc   SUB_DataShare_OrderByAsc0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_DataShare_OrderByAsc0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let predicates = new data_dataSharePredicates.DataSharePredicates();
+        predicates.orderByAsc("");
+        expect(predicates).assertInstanceOf("Object");
+      } catch (e) {
+        console.info(TAG + "SUB_DataShare_OrderByAsc0004 fail err.code is " + e.code + "err.message is " + e.message);
+        expect().assertFail();
+      }
+    })
+    
+    /**
+     * @tc.name   SUB_DataShare_OrderByDesc0002
+     * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesErrtest_0580
+     * @tc.desc   SUB_DataShare_OrderByDesc0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_DataShare_OrderByDesc0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let predicates = new data_dataSharePredicates.DataSharePredicates();
+        predicates.orderByDesc(null);
+        expect(predicates).assertInstanceOf("Object");
+      } catch (e) {
+        console.info(TAG + "SUB_DataShare_OrderByDesc0002 fail err.code is " + e.code + "err.message is " + e.message);
+        expect().assertFail();
+      }
+    })
+    
+    /**
+     * @tc.name   SUB_DataShare_OrderByDesc0003
+     * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesErrtest_0590
+     * @tc.desc   SUB_DataShare_OrderByDesc0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_DataShare_OrderByDesc0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let predicates = new data_dataSharePredicates.DataSharePredicates();
+        predicates.orderByDesc(undefined);
+        expect(predicates).assertInstanceOf("Object");
+      } catch (e) {
+        console.info(TAG + "SUB_DataShare_OrderByDesc0003 fail err.code is " + e.code + "err.message is " + e.message);
+        expect().assertFail();
+      }
+    })
+    
+    /**
+     * @tc.name   SUB_DataShare_OrderByDesc0004
+     * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesErrtest_0600
+     * @tc.desc   SUB_DataShare_OrderByDesc0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_DataShare_OrderByDesc0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let predicates = new data_dataSharePredicates.DataSharePredicates();
+        predicates.orderByDesc("");
+        expect(predicates).assertInstanceOf("Object");
+      } catch (e) {
+        console.info(TAG + "SUB_DataShare_OrderByDesc0004 fail err.code is " + e.code + "err.message is " + e.message);
+        expect().assertFail();
+      }
+    })
   })
 }

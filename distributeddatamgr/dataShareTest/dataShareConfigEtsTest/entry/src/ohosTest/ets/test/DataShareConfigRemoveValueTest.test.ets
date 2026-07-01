@@ -247,5 +247,23 @@ export default function dataShareConfigRemoveValuesTest() {
       }
     });
 
+    /**
+     * @tc.name   dataShareConfigRemoveValuesTest090
+     * @tc.number SUB_DistributedData_DataShare_SDK_RemoveValues_0090
+     * @tc.desc   call removeValue when uri length exceeds 256 bytes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigRemoveValuesTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let testUri = "";
+        await g_handle!.removeValue(testUri, 1, g_config_4K);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] dataShareConfigRemoveValuesTest009 failed,code =" + err.code + ",message=" + err.message);
+        expect(err.code).assertEqual(15700011);
+      }
+    });
   })
 }

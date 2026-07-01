@@ -174,6 +174,7 @@ export default function dataShareConfigPutValueTest() {
         await g_handle!.putValue(testUri, 1, "PutValueTest006", g_config_4K);
         let values = await g_handle!.getValues(testUri, g_config_4K);
         expect(values.length).assertEqual(2);
+        expect(values[0]).assertEqual("PutValueTest006");
       } catch (err) {
         console.error(TAG + "[DataShareProvider] dataShareConfigPutValueTest006 failed,code =" + err.code + ",message=" + err.message);
         expect().assertFail();
@@ -203,6 +204,7 @@ export default function dataShareConfigPutValueTest() {
         await g_handle!.putValue(testUri, 1, "PutValueTest007", g_config_4K);
         let values = await g_handle!.getValues(testUri, g_config_4K);
         expect(values.length).assertEqual(2);
+        expect(values[0]).assertEqual("PutValueTest007");
       } catch (err) {
         console.error(TAG + "[DataShareProvider] dataShareConfigPutValueTest007 failed,code =" + err.code + ",message=" + err.message);
         expect().assertFail();
@@ -484,6 +486,25 @@ export default function dataShareConfigPutValueTest() {
       } catch (err) {
         console.error(TAG + "[DataShareProvider] dataShareConfigPutValueTest018 failed,code =" + err.code + ",message=" + err.message);
         expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   dataShareConfigPutValueTest0019
+     * @tc.number SUB_DistributedData_DataShare_SDK_PutValue_0190
+     * @tc.desc   call putValue when uri is not exist
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigPutValueTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let testUri = ""
+        await g_handle!.putValue(testUri, 1, "", g_config);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] dataShareConfigPutValueTest019 failed,code =" + err.code + ",message=" + err.message);
+        expect(err.code).assertEqual(15700011);
       }
     });
   })
