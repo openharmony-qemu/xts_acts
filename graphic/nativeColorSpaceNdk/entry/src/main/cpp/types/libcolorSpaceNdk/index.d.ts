@@ -22,3 +22,5 @@ export const oHGetWhitePoint: () => number;
 export const oHGetWhitePoint001: () => number;
 export const oHGetGamma: () => number;
 export const oHGetGamma001: () => number;
+export const oHCreateColorSpaceFromNameBt2020LogFull0100: () => number;
+export const oHCreateColorSpaceFromNameBt2020LogLimit0100: () => number;

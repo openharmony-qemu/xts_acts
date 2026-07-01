@@ -1341,5 +1341,37 @@ export default function nativeBufferTest() {
         expect(result).assertEqual(0);
         done();
       });
+
+    /**
+     * @tc.name   testNativeBufferSetColorSpaceBt2020LogFull0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_BUFFER_OH_NativeBuffer_SetColorSpaceBt2020LogFull_0100
+     * @tc.desc   test OH_NativeBuffer_SetColorSpace OH_COLORSPACE_BT2020_LOG_FULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeBufferSetColorSpaceBt2020LogFull0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativebuffer.oHNativeBufferSetColorSpaceBt2020LogFull();
+      console.info("testNativeBufferSetColorSpaceBt2020LogFull0100 result: " + result);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testNativeBufferSetColorSpaceBt2020LogLimit0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_BUFFER_OH_NativeBuffer_SetColorSpaceBt2020LogLimit_0100
+     * @tc.desc   test OH_NativeBuffer_SetColorSpace OH_COLORSPACE_BT2020_LOG_LIMIT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeBufferSetColorSpaceBt2020LogLimit0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativebuffer.oHNativeBufferSetColorSpaceBt2020LogLimit();
+      console.info("testNativeBufferSetColorSpaceBt2020LogLimit0100 result: " + result);
+      expect(result).assertEqual(0);
+      done();
+    });
   });
 }
