@@ -272,19 +272,13 @@ export default function VideoOutputBackTest() {
               }
               isStartCallback = true;
             });
-            const maxRetry = 50;
-            const interval = 200;
-            for (let i = 0; i < maxRetry; i++) {
-              await sleep(interval);
+            for (let i = 0; i < 10; i++) {
+              await sleep(200);
               if (isStartCallback) {
-                console.info(TAG, testName + ' start callback executed.');
                 break;
               }
-              if (i === maxRetry - 1) {
-                console.error(TAG, testName + ' start callback timeout.');
-                expect().assertFail();
-              }
             }
+            expect(isStartCallback).assertTrue();
             console.info(TAG, testName + ' start end.');
             await releaseVideoSession();
           }
@@ -385,19 +379,13 @@ export default function VideoOutputBackTest() {
               }
               isStopCallback = true;
             });
-            const maxRetry = 50;
-            const interval = 200;
-            for (let i = 0; i < maxRetry; i++) {
-              await sleep(interval);
+            for (let i = 0; i < 10; i++) {
+              await sleep(200);
               if (isStopCallback) {
-                console.info(TAG, testName + ' stop callback executed.');
                 break;
               }
-              if (i === maxRetry - 1) {
-                console.error(TAG, testName + ' stop callback timeout.');
-                expect().assertFail();
-              }
             }
+            expect(isStopCallback).assertTrue();
             console.info(TAG, testName + ' stop end.');
             await releaseVideoSession();
           }
@@ -665,19 +653,13 @@ export default function VideoOutputBackTest() {
               }
               isReleaseCallback = true;
             });
-            const maxRetry = 50;
-            const interval = 200;
-            for (let i = 0; i < maxRetry; i++) {
-              await sleep(interval);
+            for (let i = 0; i < 10; i++) {
+              await sleep(200);
               if (isReleaseCallback) {
-                console.info(TAG, testName + ' release callback executed.');
                 break;
               }
-              if (i === maxRetry - 1) {
-                console.error(TAG, testName + ' release callback timeout.');
-                expect().assertFail();
-              }
             }
+            expect(isReleaseCallback).assertTrue();
             await mPreviewOutput.release();
             await mVideoSession.release();
             console.info(TAG, testName + ' end.');

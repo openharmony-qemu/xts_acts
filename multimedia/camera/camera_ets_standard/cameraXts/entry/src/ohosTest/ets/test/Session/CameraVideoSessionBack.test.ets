@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -263,14 +263,13 @@ async function commitPreconfigCallback(done: Function, testName: string, type: c
         }
         callbackDone = true;
       });
-      let startTime = Date.now();
-      while (!callbackDone) {
-        await sleep(100);
-        if (Date.now() - startTime > 5000) {
-          expect().assertFail();
+      for (let i = 0; i < 10; i++) {
+        await sleep(200);
+        if (callbackDone) {
           break;
         }
       }
+      expect(callbackDone).assertTrue();
       await releaseVideoSession();
     }
     done();
@@ -320,14 +319,13 @@ async function commitPreconfigCallbackAbnormal(done: Function, testName: string,
         }
         callbackDone = true;
       });
-      let startTime = Date.now();
-      while (!callbackDone) {
-        await sleep(100);
-        if (Date.now() - startTime > 5000) {
-          expect().assertFail();
+      for (let i = 0; i < 10; i++) {
+        await sleep(200);
+        if (callbackDone) {
           break;
         }
       }
+      expect(callbackDone).assertTrue();
       await releaseVideoSession();
     }
     done();
@@ -695,14 +693,13 @@ let callbackDone = false;
                }
                callbackDone = true;
              });
-             let startTime = Date.now();
-             while (!callbackDone) {
-               await sleep(100);
-               if (Date.now() - startTime > 5000) {
-                 expect().assertFail();
+             for (let i = 0; i < 10; i++) {
+               await sleep(200);
+               if (callbackDone) {
                  break;
                }
              }
+             expect(callbackDone).assertTrue();
              await mVideoSession.release();
            }
          }
@@ -995,14 +992,13 @@ let callbackDone = false;
              }
              callbackDone = true;
            });
-           let startTime = Date.now();
-           while (!callbackDone) {
-             await sleep(100);
-             if (Date.now() - startTime > 5000) {
-               expect().assertFail();
+           for (let i = 0; i < 10; i++) {
+             await sleep(200);
+             if (callbackDone) {
                break;
              }
            }
+           expect(callbackDone).assertTrue();
            await mVideoSession.stop();
             console.info(TAG, testName + ' session stop passed.');
             await mVideoSession.release();
@@ -1103,14 +1099,13 @@ let callbackDone = false;
              }
              callbackDone = true;
            });
-           let startTime = Date.now();
-           while (!callbackDone) {
-             await sleep(100);
-             if (Date.now() - startTime > 5000) {
-               expect().assertFail();
+           for (let i = 0; i < 10; i++) {
+             await sleep(200);
+             if (callbackDone) {
                break;
              }
            }
+           expect(callbackDone).assertTrue();
            mVideoSession.beginConfig();
           console.info(TAG, testName + ' beginConfig passed.');
           expect(true).assertTrue();
@@ -1202,14 +1197,13 @@ let callbackDone = false;
             }
             callbackDone = true;
           });
-          let startTime = Date.now();
-          while (!callbackDone) {
-            await sleep(100);
-            if (Date.now() - startTime > 5000) {
-              expect().assertFail();
+          for (let i = 0; i < 10; i++) {
+            await sleep(200);
+            if (callbackDone) {
               break;
             }
           }
+          expect(callbackDone).assertTrue();
           await mVideoSession.release();
           }
         }
@@ -1308,14 +1302,13 @@ let callbackDone = false;
             }
             callbackDone = true;
           });
-          let startTime = Date.now();
-          while (!callbackDone) {
-            await sleep(100);
-            if (Date.now() - startTime > 5000) {
-              expect().assertFail();
+          for (let i = 0; i < 10; i++) {
+            await sleep(200);
+            if (callbackDone) {
               break;
             }
           }
+          expect(callbackDone).assertTrue();
           mVideoSession.beginConfig();
           console.info(TAG, testName + ' beginConfig passed.');
           expect(true).assertTrue();
@@ -1410,14 +1403,13 @@ let callbackDone = false;
             }
             callbackDone = true;
           })
-          let startTime = Date.now();
-          while (!callbackDone) {
-            await sleep(100);
-            if (Date.now() - startTime > 5000) {
-              expect().assertFail();
+          for (let i = 0; i < 10; i++) {
+            await sleep(200);
+            if (callbackDone) {
               break;
             }
           }
+          expect(callbackDone).assertTrue();
           done();
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
@@ -1612,14 +1604,13 @@ let callbackDone = false;
              }
              callbackDone = true;
            });
-           let startTime = Date.now();
-           while (!callbackDone) {
-             await sleep(100);
-             if (Date.now() - startTime > 5000) {
-               expect().assertFail();
+           for (let i = 0; i < 10; i++) {
+             await sleep(200);
+             if (callbackDone) {
                break;
              }
            }
+           expect(callbackDone).assertTrue();
            await mVideoSession.release();
          }
          done();
@@ -1671,14 +1662,13 @@ let callbackDone = false;
                }
                callbackDone = true;
              });
-             let startTime = Date.now();
-             while (!callbackDone) {
-               await sleep(100);
-               if (Date.now() - startTime > 5000) {
-                 expect().assertFail();
+             for (let i = 0; i < 10; i++) {
+               await sleep(200);
+               if (callbackDone) {
                  break;
                }
              }
+             expect(callbackDone).assertTrue();
              await mVideoSession.release();
            }
          }

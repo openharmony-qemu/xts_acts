@@ -382,19 +382,13 @@ async function captureWithSettingsCallback(done: () => void, testName: string,
         }
         isCaptureCallback = true;
       });
-      const maxRetry = 50;
-      const interval = 200;
-      for (let i = 0; i < maxRetry; i++) {
-        await Utils.msSleep(interval);
+      for (let i = 0; i < 10; i++) {
+        await Utils.msSleep(200);
         if (isCaptureCallback) {
-          console.info(TAG, testName + ' capture callback executed.');
           break;
         }
-        if (i === maxRetry - 1) {
-          console.error(TAG, testName + ' capture callback timeout.');
-          expect().assertFail();
-        }
       }
+      expect(isCaptureCallback).assertTrue();
       console.info(TAG, testName + ' capture end.');
       await releasePhotoSession();
     }

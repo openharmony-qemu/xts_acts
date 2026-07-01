@@ -634,9 +634,13 @@ export function stopVideoOutput(videoOutput: camera.VideoOutput) {
 export async function startAvRecoder(avRecorder: media.AVRecorder) {
   try {
     //等待预览帧开始
-    while (!isFrameStart) {
-      await sleep(20);
+    for (let i = 0; i < 10; i++) {
+      await sleep(200);
+      if (isFrameStart) {
+        break;
+      }
     }
+    expect(isFrameStart).assertTrue();
     await avRecorder.start();
   } catch (error) {
     let err = error as BusinessError;
@@ -1065,9 +1069,13 @@ cameraCaptureRelyOnNum(photoOutput: ESObject, captureNumber: number, photoName: 
   }
 
   //等待预览帧开始
-  while (!isFrameStart) {
-    await sleep(20);
+  for (let i = 0; i < 10; i++) {
+    await sleep(200);
+    if (isFrameStart) {
+      break;
+    }
   }
+  expect(isFrameStart).assertTrue();
 
   console.info('captureNumber is ' + captureNumber);
   //使用当前拍照设置进行拍照。

@@ -155,19 +155,13 @@ async function captureWithSettingsCallback(done: Function, testName: string,
         }
         isCaptureCallback = true;
       });
-      const maxRetry = 50;
-      const interval = 200;
-      for (let i = 0; i < maxRetry; i++) {
-        await sleep(interval);
+      for (let i = 0; i < 10; i++) {
+        await sleep(200);
         if (isCaptureCallback) {
-          console.info(TAG, testName + ' capture callback executed.');
           break;
         }
-        if (i === maxRetry - 1) {
-          console.error(TAG, testName + ' capture callback timeout.');
-          expect().assertFail();
-        }
       }
+      expect(isCaptureCallback).assertTrue();
       console.info(TAG, testName + ' capture end.');
       await releasePhotoSession();
     }
@@ -267,19 +261,13 @@ export default function PhotoOutputTest() {
             }
             isCaptureCallback = true;
           });
-          const maxRetry = 50;
-          const interval = 200;
-          for (let i = 0; i < maxRetry; i++) {
-            await sleep(interval);
+          for (let i = 0; i < 10; i++) {
+            await sleep(200);
             if (isCaptureCallback) {
-              console.info(TAG, testName + ' capture callback executed.');
               break;
             }
-            if (i === maxRetry - 1) {
-              console.error(TAG, testName + ' capture callback timeout.');
-              expect().assertFail();
-            }
           }
+          expect(isCaptureCallback).assertTrue();
           console.info(TAG, testName + ' capture end.');
           await releasePhotoSession();
           console.info(TAG, testName + ' release session.');
@@ -665,20 +653,13 @@ export default function PhotoOutputTest() {
             }
           });
           mPhotoOutput.capture();
-          // 设置超时循环检查
-          const maxRetry = 50; // 最大重试次数
-          const interval = 200; // 检查间隔200ms
-          for (let i = 0; i < maxRetry; i++) {
-            await sleep(interval);
+          for (let i = 0; i < 10; i++) {
+            await sleep(200);
             if (isCapture) {
-              console.info(TAG, `${testName} succeed to listen photoAvailable on.`);
               break;
             }
-            if (i === maxRetry - 1) { // 最后一次循环
-              console.error(TAG, `${testName} failed to listen photoAvailable on.`);
-              expect().assertFail();
-            }
           }
+          expect(isCapture).assertTrue();
           await releasePhotoSession();
         }
         done();
@@ -723,20 +704,13 @@ export default function PhotoOutputTest() {
             }
           });
           mPhotoOutput.capture();
-          // 设置超时循环检查
-          const maxRetry = 50; // 最大重试次数
-          const interval = 200; // 检查间隔200ms
-          for (let i = 0; i < maxRetry; i++) {
-            await sleep(interval);
+          for (let i = 0; i < 10; i++) {
+            await sleep(200);
             if (isCapture) {
-              console.info(TAG, `${testName} succeed to listen photoAvailable on.`);
               break;
             }
-            if (i === maxRetry - 1) { // 最后一次循环
-              console.error(TAG, `${testName} failed to listen photoAvailable on.`);
-              expect().assertFail();
-            }
           }
+          expect(isCapture).assertTrue();
           mPhotoOutput.off('photoAvailable', (error, photo) => {
             if (error !== undefined && error.code !== 0) {
               console.error(TAG,
@@ -1137,19 +1111,13 @@ export default function PhotoOutputTest() {
             }
             isCaptureCallback = true;
           });
-          const maxRetry = 50;
-          const interval = 200;
-          for (let i = 0; i < maxRetry; i++) {
-            await sleep(interval);
+          for (let i = 0; i < 10; i++) {
+            await sleep(200);
             if (isCaptureCallback) {
-              console.info(TAG, testName + ' capture callback executed.');
               break;
             }
-            if (i === maxRetry - 1) {
-              console.error(TAG, testName + ' capture callback timeout.');
-              expect().assertFail();
-            }
           }
+          expect(isCaptureCallback).assertTrue();
           console.info(TAG, testName + ' capture end.');
           await mPhotoOutput.release();
           console.info(TAG, testName + ' release photoOutput.');
@@ -1234,19 +1202,13 @@ export default function PhotoOutputTest() {
             }
             isCaptureCallback = true;
           });
-          const maxRetry = 50;
-          const interval = 200;
-          for (let i = 0; i < maxRetry; i++) {
-            await sleep(interval);
+          for (let i = 0; i < 10; i++) {
+            await sleep(200);
             if (isCaptureCallback) {
-              console.info(TAG, testName + ' capture callback executed.');
               break;
             }
-            if (i === maxRetry - 1) {
-              console.error(TAG, testName + ' capture callback timeout.');
-              expect().assertFail();
-            }
           }
+          expect(isCaptureCallback).assertTrue();
           console.info(TAG, testName + ' capture end.');
           await mPhotoOutput.release();
           console.info(TAG, testName + ' release photoOutput.');

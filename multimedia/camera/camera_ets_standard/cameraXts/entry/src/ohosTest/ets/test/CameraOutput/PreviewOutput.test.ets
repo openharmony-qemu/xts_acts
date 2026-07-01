@@ -239,19 +239,13 @@ export default function PreviewOutputTest() {
             }
             isReleaseCallback = true;
           });
-          const maxRetry = 50;
-          const interval = 200;
-          for (let i = 0; i < maxRetry; i++) {
-            await sleep(interval);
+          for (let i = 0; i < 10; i++) {
+            await sleep(200);
             if (isReleaseCallback) {
-              console.info(TAG, testName + ' release callback executed.');
               break;
             }
-            if (i === maxRetry - 1) {
-              console.error(TAG, testName + ' release callback timeout.');
-              expect().assertFail();
-            }
           }
+          expect(isReleaseCallback).assertTrue();
           await photoOutput.release();
           await mPhotoSession.release();
           console.info(TAG, testName + ' end.');
