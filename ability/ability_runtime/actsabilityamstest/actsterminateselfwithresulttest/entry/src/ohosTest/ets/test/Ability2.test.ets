@@ -57,9 +57,9 @@ export default function abilityTest2() {
       done();
     });
     beforeEach(async () => {
-      await delegator.executeShellCommand(cmdBeforeEach);
       await delegator.executeShellCommand(cmdBeforeEach2);
       await delegator.executeShellCommand(cmdBeforeEach3);
+      await delegator.executeShellCommand(cmdBeforeEach);
       await sleep(1000);
     });
 
