@@ -421,10 +421,6 @@ export default function shortToPrimitiveValueTest(): void {
       expect(longResult).assertEqual(Long.toLong(42));
       expect(floatResult).assertEqual(42.0f);
       expect(doubleResult).assertEqual(42.0);
-      expect(intResult).assertEqual(42);
-      expect(longResult).assertEqual(Long.toLong(intResult));
-      expect(floatResult).assertEqual(42.0f);
-      expect(doubleResult).assertEqual(42.0);
     });
 
     /**

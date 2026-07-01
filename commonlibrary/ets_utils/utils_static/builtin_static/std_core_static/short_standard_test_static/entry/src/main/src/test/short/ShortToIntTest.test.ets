@@ -192,13 +192,9 @@ export default function shortToIntTest(): void {
         16384,
         32767
       ];
-      let intMinValue: int = -2147483647 - 1;
-      let intMaxValue: int = 2147483647;
       let caseCount: int = 5;
       for (let caseIndex: int = 0; caseIndex < caseCount; caseIndex++) {
         let actualResult: int = Short.toInt(testValues[caseIndex]);
-        expect(actualResult >= intMinValue).assertTrue();
-        expect(actualResult <= intMaxValue).assertTrue();
         expect(actualResult).assertEqual(expectedValues[caseIndex]);
       }
     });
