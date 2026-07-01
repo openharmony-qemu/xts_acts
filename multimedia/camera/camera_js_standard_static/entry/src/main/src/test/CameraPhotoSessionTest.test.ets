@@ -626,7 +626,7 @@ export default function cameraPhotoSessionTest() {
       }
       try {
         mCameraSession!.setColorTint(range[0])
-        let currentInt = mCameraSession!.getColorTint()
+        let currentInt: int = mCameraSession!.getColorTint()
         console.info(`getColorTint: ${currentInt}`)
         expect(currentInt).assertEqual(range[0])
       } catch (error) {
@@ -663,7 +663,7 @@ export default function cameraPhotoSessionTest() {
       }
       try {
         mCameraSession!.setColorTint(range[1])
-        let currentInt = mCameraSession!.getColorTint()
+        let currentInt: int = mCameraSession!.getColorTint()
         console.info(`getColorTint: ${currentInt}`)
         expect(currentInt).assertEqual(range[1])
       } catch (error) {
@@ -698,7 +698,7 @@ export default function cameraPhotoSessionTest() {
         console.error(`not surported tone control, please check`)
         expect().assertFail()
       }
-      let testRange = [range[0]-1, range[1]+1]
+      let testRange: Array<int> = [range[0]-1, range[1]+1]
       for (let val of testRange) {
         try {
           console.info(`setColorTint: ${val}`);
@@ -763,7 +763,7 @@ export default function cameraPhotoSessionTest() {
 
       //--------------------------------------------测试过程------------------------------------------------------
       try {
-        let currentInt = mCameraSession!.getColorTint()
+        let currentInt: int = mCameraSession!.getColorTint()
         console.error(`getColorTint expected failed, but success, value: ${currentInt}`)
         expect().assertFail()
       } catch (error) {
