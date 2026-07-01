@@ -38,11 +38,7 @@ import { AppStorage, State } from '@ohos.arkui.stateManagement';
 struct BaseDialogOptionsDisplayModeInSubWindow {
   @State dialogId: int = -1;
   @State showInSubWindowValue: boolean = true;
-  promptAction: PromptAction = this.getUIContext().getPromptAction();
-  private modeArray: DialogDisplayMode[] = [
-    DialogDisplayMode.SCREEN_BASED,
-    DialogDisplayMode.WINDOW_BASED,
-  ];
+  uiPromptAction: PromptAction = this.getUIContext().getPromptAction();
 
   aboutToAppear(): void {
     try {
@@ -53,19 +49,19 @@ struct BaseDialogOptionsDisplayModeInSubWindow {
   }
 
   @Builder
-  customDialogBuilder(): void {
+  customDialogBuilder() {
     Column() {
       Text('弹窗').fontSize(30)
       Row({ space: 50 } as RowOptions) {
         Button('确认').onClick(() => {
           if (this.dialogId > 0) {
-            this.promptAction.closeCustomDialog(this.dialogId);
+            this.uiPromptAction.closeCustomDialog(this.dialogId);
             this.dialogId = -1;
           }
         })
         Button('取消').onClick(() => {
           if (this.dialogId > 0) {
-            this.promptAction.closeCustomDialog(this.dialogId);
+            this.uiPromptAction.closeCustomDialog(this.dialogId);
             this.dialogId = -1;
           }
         })
@@ -76,49 +72,61 @@ struct BaseDialogOptionsDisplayModeInSubWindow {
     .justifyContent(FlexAlign.SpaceBetween)
   }
 
-  openDialog(mode: DialogDisplayMode): void {
-    this.promptAction.openCustomDialog({
-      showInSubWindow: this.showInSubWindowValue,
-      displayModeInSubWindow: mode,
-      builder: () => {
-        this.customDialogBuilder();
-      },
-      onWillDismiss: (dismissDialogAction: DismissDialogAction): void => {
-        if (dismissDialogAction.reason === DismissReason.PRESS_BACK) {
-          dismissDialogAction.dismiss();
-        }
-        if (dismissDialogAction.reason === DismissReason.TOUCH_OUTSIDE) {
-          dismissDialogAction.dismiss();
-        }
-      },
-    } as promptAction.CustomDialogOptions).then((dialogId: int): void => {
-      this.dialogId = dialogId;
-    });
-  }
-
-  build(): void {
+  build() {
     Column({ space: 20 } as ColumnOptions) {
       Button('showInSubWindowValue is true')
         .id('trueBtn')
-        .onClick((): void => {
+        .onClick(() => {
           this.showInSubWindowValue = true;
         })
       Button('showInSubWindowValue is false')
         .id('falseBtn')
-        .onClick((): void => {
+        .onClick(() => {
           this.showInSubWindowValue = false;
         })
       Text('弹窗SCREEN_BASED')
         .id('dialogScreenBased')
         .fontSize(30)
-        .onClick((): void => {
-          this.openDialog(this.modeArray[0]);
+        .onClick(() => {
+          this.uiPromptAction.openCustomDialog({
+            showInSubWindow: this.showInSubWindowValue,
+            displayModeInSubWindow: DialogDisplayMode.SCREEN_BASED,
+            builder: () => {
+              this.customDialogBuilder()
+            },
+            onWillDismiss: (dismissDialogAction: DismissDialogAction) => {
+              if (dismissDialogAction.reason === DismissReason.PRESS_BACK) {
+                dismissDialogAction.dismiss();
+              }
+              if (dismissDialogAction.reason === DismissReason.TOUCH_OUTSIDE) {
+                dismissDialogAction.dismiss();
+              }
+            },
+          } as promptAction.CustomDialogOptions).then((dialogId: int) => {
+            this.dialogId = dialogId;
+          });
         })
       Text('弹窗WINDOW_BASED')
         .id('dialogWindowBased')
         .fontSize(30)
-        .onClick((): void => {
-          this.openDialog(this.modeArray[1]);
+        .onClick(() => {
+          this.uiPromptAction.openCustomDialog({
+            showInSubWindow: this.showInSubWindowValue,
+            displayModeInSubWindow: DialogDisplayMode.WINDOW_BASED,
+            builder: () => {
+              this.customDialogBuilder()
+            },
+            onWillDismiss: (dismissDialogAction: DismissDialogAction) => {
+              if (dismissDialogAction.reason === DismissReason.PRESS_BACK) {
+                dismissDialogAction.dismiss();
+              }
+              if (dismissDialogAction.reason === DismissReason.TOUCH_OUTSIDE) {
+                dismissDialogAction.dismiss();
+              }
+            },
+          } as promptAction.CustomDialogOptions).then((dialogId: int) => {
+            this.dialogId = dialogId;
+          });
         })
     }
     .width('100%')
