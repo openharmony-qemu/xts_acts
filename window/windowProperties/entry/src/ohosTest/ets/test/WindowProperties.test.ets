@@ -415,11 +415,6 @@ export default function windowPropertiesTest() {
         };
         try {
           subWindowClass = await window.createWindow(config);
-          let windowLimits = subWindowClass.getWindowLimits();
-          console.log(caseName + ' windowLimits:' + JSON.stringify(windowLimits));
-          await subWindowClass.resize(windowLimits.minWidth, windowLimits.minHeight);
-          subWindowClass.moveWindowToAsync(100, 150);
-          await sleep(200);
           await subWindowClass.setUIContent('testability/pages/First/index4');
           await subWindowClass.showWindow();
           await sleep(1000);
@@ -1647,7 +1642,7 @@ export default function windowPropertiesTest() {
                 let minHeight = windowLimits.minHeight ?? 500;
                 console.info(`${caseName} windowLimits is: ${JSON.stringify(windowLimits)}`);
                 console.info(`${caseName} minWidth is: ${minWidth}, minHeight is: ${minHeight}`);
-                await subWindowClass.setUIContent('testability/pages/WindowTest/StartMoving');
+                await subWindowClass.setUIContent('testability/pages/Index1');
                 console.info(`${caseName} Succeeded in setting UI content.`);
                 await subWindowClass.showWindow();
                 await sleep(1000);
