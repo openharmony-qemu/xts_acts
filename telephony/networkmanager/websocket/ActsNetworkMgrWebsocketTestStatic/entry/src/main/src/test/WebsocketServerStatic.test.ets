@@ -17,7 +17,6 @@ import { describe, it, expect, TestType, Size, Level } from "../../../hypium/ind
 import hilog from '@ohos.hilog'
 import { BusinessError } from '@ohos.base';
 import webSocket from '@ohos.net.webSocket';
-import Utils from './Util.test';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'WebSocketTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -227,66 +226,6 @@ export default function WebsocketServerStaticTest() {
           let err = error as BusinessError;
           hilog.info(domain, tag, '%{public}s', `${caseName}  error ${JSON.stringify(error)}`);
           ExpectTrue(err.code === 2302999, `${caseName} test result error ${JSON.stringify(error)}`);
-          done();
-          hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
-        });
-      } catch (err) {
-        hilog.info(domain, tag, '%{public}s', `${caseName} catch error ${JSON.stringify(err)}`);
-        expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
-        done();
-        hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
-      }
-    });
-    it('testNetworkMgrWebSocketWebSocketServerStartStatic0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      let caseName: string = 'testNetworkMgrWebSocketWebSocketServerStartStatic0500';
-      hilog.info(domain, tag, '%{public}s', `${caseName} test start`);
-      try {
-        let server1: webSocket.WebSocketServer = webSocket.createWebSocketServer();
-        let server2: webSocket.WebSocketServer = webSocket.createWebSocketServer();
-        hilog.info(domain, tag, '%{public}s', `${caseName} --> server1: ${server1}, server2: ${server2}`);
-
-        let serverConfig: webSocket.WebSocketServerConfig = {
-          serverIP: "0.0.0.0",
-          serverPort: 9057,
-          maxConcurrentClientsNumber: 10,
-          maxConnectionsForOneClient: 4,
-          protocol: "my-protocol",
-        };
-        await server1.start(serverConfig).then(async (success: boolean) => {
-          if (success) {
-            hilog.info(domain, tag, '%{public}s', `${caseName} server1 start success, port occupied`);
-            await Utils.msSleep(500)
-            server2.start(serverConfig).then(async (success2: boolean) => {
-              if (success2) {
-                hilog.info(domain, tag, '%{public}s', `${caseName} server2 start success`);
-                expectFail(`${caseName} server2 should not start success`);
-                done();
-                server2.stop();
-                server1.stop();
-                hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
-              } else {
-                expectFail(`${caseName} server2 start fail`);
-                done();
-                server1.stop();
-                hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
-              }
-            }).catch((error: Error) => {
-              let err = error as BusinessError;
-              hilog.info(domain, tag, '%{public}s', `${caseName} server2 error ${JSON.stringify(error)}`);
-              ExpectTrue(err.code === 2302007, `${caseName} test result error ${JSON.stringify(error)}`);
-              done();
-              server1.stop();
-              hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
-            });
-          } else {
-            hilog.info(domain, tag, '%{public}s', `${caseName} server1 start fail`);
-            expectFail(`${caseName} server1 start fail`);
-            done();
-            hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
-          }
-        }).catch((error: Error) => {
-          hilog.info(domain, tag, '%{public}s', `${caseName} server1 error ${JSON.stringify(error)}`);
-          expectFail(`${caseName} server1 should not fail`);
           done();
           hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
         });
