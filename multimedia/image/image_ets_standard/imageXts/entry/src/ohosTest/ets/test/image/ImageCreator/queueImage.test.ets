@@ -34,13 +34,12 @@ async function queueImagePromiseTest(done: Function, testName: string, size: ima
           bufferArr[i + 3] = 255; //A
         }
       })
-            try {
-        await creator.queueImage(img);
+      await creator.queueImage(img).then(() => {
         console.info('Succeeded in queuing the Image.');
-      } catch (error: BusinessError) {
+      }).catch((error: BusinessError) => {
         console.error(`Failed to queue the Image.code ${error.code},message is ${error.message}`);
         expect().assertFail();
-      }
+      })
       done();
     })
   } catch (error) {

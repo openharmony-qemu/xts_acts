@@ -25,20 +25,19 @@ const surfaceId = '123131';
 
 async function createPixelMapFromSurfaceAbnormalPromiseTest(done: Function, testName: string) {
   let region: image.Region = { x: 0, y: 0, size: { height: 100, width: 100 } };
-    try {
-    await sendableImage.createPixelMapFromSurface(surfaceId, region);
+  await sendableImage.createPixelMapFromSurface(surfaceId, region).then(() => {
     console.info('Succeeded in creating pixelmap from Surface');
     done();
-  } catch (error: ESObject) {
+  }).catch((error: ESObject) => {
     console.error(TAG,
-    `Failed to create pixelmap. error is ${error} , code is ${error.code}, message is ${error.message}`, testName);
+      `Failed to create pixelmap. error is ${error} , code is ${error.code}, message is ${error.message}`, testName);
     if (error && error.code) {
-    expect(error.code == ErrorCode.Failed_To_Create_PixelMap).assertTrue();
+      expect(error.code == ErrorCode.Failed_To_Create_PixelMap).assertTrue();
     } else {
-    expect(error == ErrorCode.Failed_To_Create_PixelMap).assertTrue();
+      expect(error == ErrorCode.Failed_To_Create_PixelMap).assertTrue();
     }
     done();
-  };
+  });
 }
 
 export default function sendableCreatePixelMapFromSurfaceTest() {

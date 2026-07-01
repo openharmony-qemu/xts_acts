@@ -32,16 +32,15 @@ async function writeBufferToPixelsPromiseTest(done: Function, testName: string, 
       bufferArr[i] = i + 1;
     }
     if (sendablePixelMap != undefined) {
-            try {
-        await sendablePixelMap.writeBufferToPixels(color);
+      await sendablePixelMap.writeBufferToPixels(color).then(() => {
         console.info(TAG, "Succeeded in writing data from a buffer to a PixelMap.");
         done();
-      } catch (error: BusinessError) {
+      }).catch((error: BusinessError) => {
         console.error(TAG,
-        `Failed to write data from a buffer to a PixelMap. code is ${error.code}, message is ${error.message}`);
+          `Failed to write data from a buffer to a PixelMap. code is ${error.code}, message is ${error.message}`);
         expect().assertFail();
         done();
-      }
+      })
     }
   } catch (error) {
     console.info(TAG, `failed; error: ${error},${error.code}`, testName);

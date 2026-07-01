@@ -83,17 +83,16 @@ export default function imageReadImageMetadataTestSupp() {
           exifMetadata: makerNoteHuaweiMetadata
         };
         await imageSourceApi.writeImageMetadata(imageMetadata);
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata();
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.isXmageSupported);
-          expect(metaData.makerNoteHuaweiMetadata.isXmageSupported).assertTrue();
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.isXmageSupported);
+            expect(metaData.makerNoteHuaweiMetadata.isXmageSupported).assertTrue();
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect().assertFail();
@@ -121,17 +120,16 @@ export default function imageReadImageMetadataTestSupp() {
           exifMetadata: makerNoteHuaweiMetadata
         };
         await imageSourceApi.writeImageMetadata(imageMetadata);
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata();
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.isXmageSupported);
-          expect(metaData.makerNoteHuaweiMetadata.isXmageSupported).assertFalse();
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.isXmageSupported);
+            expect(metaData.makerNoteHuaweiMetadata.isXmageSupported).assertFalse();
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect().assertFail();
@@ -158,17 +156,16 @@ export default function imageReadImageMetadataTestSupp() {
           exifMetadata: makerNoteHuaweiMetadata
         };
         await imageSourceApi.writeImageMetadata(imageMetadata);
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata();
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.xmageWatermarkMode);
-          expect(Number(metaData.makerNoteHuaweiMetadata.xmageWatermarkMode)).assertEqual(8);
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.xmageWatermarkMode);
+            expect(Number(metaData.makerNoteHuaweiMetadata.xmageWatermarkMode)).assertEqual(8);
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect().assertFail();
@@ -194,17 +191,16 @@ export default function imageReadImageMetadataTestSupp() {
           exifMetadata: makerNoteHuaweiMetadata
         };
         await imageSourceApi.writeImageMetadata(imageMetadata);
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata();
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.xmageLeft);
-          expect(Number(metaData.makerNoteHuaweiMetadata.xmageLeft)).assertEqual(8);
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.xmageLeft);
+            expect(Number(metaData.makerNoteHuaweiMetadata.xmageLeft)).assertEqual(8);
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect().assertFail();
@@ -231,17 +227,16 @@ export default function imageReadImageMetadataTestSupp() {
           exifMetadata: makerNoteHuaweiMetadata
         };
         await imageSourceApi.writeImageMetadata(imageMetadata);
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata();
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.xmageTop);
-          expect(Number(metaData.makerNoteHuaweiMetadata.xmageTop)).assertEqual(8);
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.xmageTop);
+            expect(Number(metaData.makerNoteHuaweiMetadata.xmageTop)).assertEqual(8);
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect().assertFail();
@@ -267,17 +262,16 @@ export default function imageReadImageMetadataTestSupp() {
           exifMetadata: makerNoteHuaweiMetadata
         };
         await imageSourceApi.writeImageMetadata(imageMetadata);
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata();
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.xmageRight);
-          expect(Number(metaData.makerNoteHuaweiMetadata.xmageRight)).assertEqual(8);
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.xmageRight);
+            expect(Number(metaData.makerNoteHuaweiMetadata.xmageRight)).assertEqual(8);
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect().assertFail();
@@ -303,17 +297,16 @@ export default function imageReadImageMetadataTestSupp() {
           exifMetadata: makerNoteHuaweiMetadata
         };
         await imageSourceApi.writeImageMetadata(imageMetadata);
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata();
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.xmageBottom);
-          expect(Number(metaData.makerNoteHuaweiMetadata.xmageBottom)).assertEqual(8);
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.xmageBottom);
+            expect(Number(metaData.makerNoteHuaweiMetadata.xmageBottom)).assertEqual(8);
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect().assertFail();
@@ -339,17 +332,16 @@ export default function imageReadImageMetadataTestSupp() {
           exifMetadata: makerNoteHuaweiMetadata
         };
         await imageSourceApi.writeImageMetadata(imageMetadata);
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata();
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.isCloudEnhanced);
-          expect(Number(metaData.makerNoteHuaweiMetadata.isCloudEnhanced)).assertEqual(1);
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.isCloudEnhanced);
+            expect(Number(metaData.makerNoteHuaweiMetadata.isCloudEnhanced)).assertEqual(1);
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect().assertFail();
@@ -375,17 +367,16 @@ export default function imageReadImageMetadataTestSupp() {
           exifMetadata: makerNoteHuaweiMetadata
         };
         await imageSourceApi.writeImageMetadata(imageMetadata);
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata();
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.isCloudEnhanced);
-          expect(Number(metaData.makerNoteHuaweiMetadata.isCloudEnhanced)).assertEqual(0);
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.isCloudEnhanced);
+            expect(Number(metaData.makerNoteHuaweiMetadata.isCloudEnhanced)).assertEqual(0);
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect().assertFail();
@@ -411,17 +402,16 @@ export default function imageReadImageMetadataTestSupp() {
           exifMetadata: makerNoteHuaweiMetadata
         };
         await imageSourceApi.writeImageMetadata(imageMetadata);
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata();
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.cloudLabel);
-          expect().assertFail();
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.cloudLabel);
+            expect().assertFail();
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect(Number(err.code)).assertEqual(7700202);
@@ -447,17 +437,16 @@ export default function imageReadImageMetadataTestSupp() {
           exifMetadata: makerNoteHuaweiMetadata
         };
         await imageSourceApi.writeImageMetadata(imageMetadata);
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata();
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.isWindSnapshot);
-          expect().assertFail();
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.isWindSnapshot);
+            expect().assertFail();
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect(Number(err.code)).assertEqual(7700202);
@@ -484,17 +473,16 @@ export default function imageReadImageMetadataTestSupp() {
           exifMetadata: makerNoteHuaweiMetadata
         };
         await imageSourceApi.writeImageMetadata(imageMetadata);
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata();
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.isWindSnapshot);
-          expect().assertFail();
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.isWindSnapshot);
+            expect().assertFail();
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect(Number(err.code)).assertEqual(7700202);
@@ -522,17 +510,16 @@ export default function imageReadImageMetadataTestSupp() {
         };
         await imageSourceApi.writeImageMetadata(imageMetadata);
         console.info(TAG, testName, " writeImageMetadata success ");
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata();
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.sceneVersion);
-          expect().assertFail();
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.sceneVersion);
+            expect().assertFail();
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect(Number(err.code)).assertEqual(7700202);
@@ -559,17 +546,16 @@ export default function imageReadImageMetadataTestSupp() {
         };
         await imageSourceApi.writeImageMetadata(imageMetadata);
         console.info(TAG, testName, " writeImageMetadata success ");
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata();
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.sceneFoodConfidence);
-          expect().assertFail();
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.sceneFoodConfidence);
+            expect().assertFail();
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect(Number(err.code)).assertEqual(7700202);
@@ -596,17 +582,16 @@ export default function imageReadImageMetadataTestSupp() {
         };
         await imageSourceApi.writeImageMetadata(imageMetadata);
         console.info(TAG, testName, " writeImageMetadata success ");
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata();
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.sceneBeachConfidence);
-          expect().assertFail();
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.sceneBeachConfidence);
+            expect().assertFail();
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect(Number(err.code)).assertEqual(7700202);
@@ -633,17 +618,16 @@ export default function imageReadImageMetadataTestSupp() {
         };
         await imageSourceApi.writeImageMetadata(imageMetadata);
         console.info(TAG, testName, " writeImageMetadata success ");
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata();
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.sceneBlueSkyConfidence);
-          expect().assertFail();
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.sceneBlueSkyConfidence);
+            expect().assertFail();
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect(Number(err.code)).assertEqual(7700202);
@@ -670,17 +654,16 @@ export default function imageReadImageMetadataTestSupp() {
         };
         await imageSourceApi.writeImageMetadata(imageMetadata);
         console.info(TAG, testName, " writeImageMetadata success ");
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata();
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.sceneStageConfidence);
-          expect().assertFail();
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.sceneStageConfidence);
+            expect().assertFail();
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect(Number(err.code)).assertEqual(7700202);
@@ -707,17 +690,16 @@ export default function imageReadImageMetadataTestSupp() {
         };
         await imageSourceApi.writeImageMetadata(imageMetadata);
         console.info(TAG, testName, " writeImageMetadata success ");
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata();
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.sceneGreenPlantConfidence);
-          expect().assertFail();
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.sceneGreenPlantConfidence);
+            expect().assertFail();
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect(Number(err.code)).assertEqual(7700202);
@@ -744,17 +726,16 @@ export default function imageReadImageMetadataTestSupp() {
         };
         await imageSourceApi.writeImageMetadata(imageMetadata);
         console.info(TAG, testName, " writeImageMetadata success ");
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata();
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.sceneSnowConfidence);
-          expect().assertFail();
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.sceneSnowConfidence);
+            expect().assertFail();
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect(Number(err.code)).assertEqual(7700202);
@@ -781,17 +762,16 @@ export default function imageReadImageMetadataTestSupp() {
         };
         await imageSourceApi.writeImageMetadata(imageMetadata);
         console.info(TAG, testName, " writeImageMetadata success ");
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata();
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.sceneSunsetConfidence);
-          expect().assertFail();
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.sceneSunsetConfidence);
+            expect().assertFail();
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect(Number(err.code)).assertEqual(7700202);
@@ -818,17 +798,16 @@ export default function imageReadImageMetadataTestSupp() {
         };
         await imageSourceApi.writeImageMetadata(imageMetadata);
         console.info(TAG, testName, " writeImageMetadata success ");
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata();
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.sceneFlowersConfidence);
-          expect().assertFail();
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.sceneFlowersConfidence);
+            expect().assertFail();
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect(Number(err.code)).assertEqual(7700202);
@@ -855,17 +834,16 @@ export default function imageReadImageMetadataTestSupp() {
         };
         await imageSourceApi.writeImageMetadata(imageMetadata);
         console.info(TAG, testName, " writeImageMetadata success ");
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata();
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.sceneNightConfidence);
-          expect().assertFail();
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.sceneNightConfidence);
+            expect().assertFail();
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect(Number(err.code)).assertEqual(7700202);
@@ -892,17 +870,16 @@ export default function imageReadImageMetadataTestSupp() {
         };
         await imageSourceApi.writeImageMetadata(imageMetadata);
         console.info(TAG, testName, " writeImageMetadata success ");
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata();
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.sceneTextConfidence);
-          expect().assertFail();
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.sceneTextConfidence);
+            expect().assertFail();
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect(Number(err.code)).assertEqual(7700202);
@@ -929,17 +906,16 @@ export default function imageReadImageMetadataTestSupp() {
         };
         await imageSourceApi.writeImageMetadata(imageMetadata);
         console.info(TAG, testName, " writeImageMetadata success ");
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata();
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.faceCount);
-          expect().assertFail();
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.faceCount);
+            expect().assertFail();
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect(Number(err.code)).assertEqual(7700202);
@@ -966,17 +942,16 @@ export default function imageReadImageMetadataTestSupp() {
         };
         await imageSourceApi.writeImageMetadata(imageMetadata);
         console.info(TAG, testName, " writeImageMetadata success ");
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata();
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.faceConfidences);
-          expect().assertFail();
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.faceConfidences);
+            expect().assertFail();
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect(Number(err.code)).assertEqual(7700202);
@@ -1003,17 +978,16 @@ export default function imageReadImageMetadataTestSupp() {
         };
         await imageSourceApi.writeImageMetadata(imageMetadata);
         console.info(TAG, testName, " writeImageMetadata success ");
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata();
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.faceSmileScores);
-          expect().assertFail();
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.faceSmileScores);
+            expect().assertFail();
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect(Number(err.code)).assertEqual(7700202);
@@ -1040,17 +1014,16 @@ export default function imageReadImageMetadataTestSupp() {
         };
         await imageSourceApi.writeImageMetadata(imageMetadata);
         console.info(TAG, testName, " writeImageMetadata success ");
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata();
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.burstNumber);
-          expect().assertFail();
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.burstNumber);
+            expect().assertFail();
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect(Number(err.code)).assertEqual(7700202);
@@ -1078,17 +1051,16 @@ export default function imageReadImageMetadataTestSupp() {
         };
         await imageSourceApi.writeImageMetadata(imageMetadata);
         console.info(TAG, testName, " writeImageMetadata success ");
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata();
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.isFrontCamera);
-          expect().assertFail();
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.isFrontCamera);
+            expect().assertFail();
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect(Number(err.code)).assertEqual(7700202);
@@ -1116,17 +1088,16 @@ export default function imageReadImageMetadataTestSupp() {
         };
         await imageSourceApi.writeImageMetadata(imageMetadata);
         console.info(TAG, testName, " writeImageMetadata success ");
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata();
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.rollAngle);
-          expect().assertFail();
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.rollAngle);
+            expect().assertFail();
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect(Number(err.code)).assertEqual(7700202);
@@ -1153,17 +1124,16 @@ export default function imageReadImageMetadataTestSupp() {
         };
         await imageSourceApi.writeImageMetadata(imageMetadata);
         console.info(TAG, testName, " writeImageMetadata success ");
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata();
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.pitchAngle);
-          expect().assertFail();
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.pitchAngle);
+            expect().assertFail();
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect(Number(err.code)).assertEqual(7700202);
@@ -1183,17 +1153,16 @@ export default function imageReadImageMetadataTestSupp() {
       const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_052';
       const imageSourceApi = await getImageSource('test_exif_readWrite_jpg_v2.jpg');
       try {
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata();
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.physicalAperture);
-          expect(Number(metaData.makerNoteHuaweiMetadata.physicalAperture)).assertEqual(6);
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.physicalAperture);
+            expect(Number(metaData.makerNoteHuaweiMetadata.physicalAperture)).assertEqual(6);
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect().assertFail();
@@ -1213,17 +1182,16 @@ export default function imageReadImageMetadataTestSupp() {
       const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_053';
       const imageSourceApi = await getImageSource('test_exif_readWrite_jpg_v2.jpg');
       try {
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata();
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.focusMode);
-          expect(Number(metaData.makerNoteHuaweiMetadata.focusMode)).assertEqual(7);
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.focusMode);
+            expect(Number(metaData.makerNoteHuaweiMetadata.focusMode)).assertEqual(7);
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect().assertFail();
@@ -1244,17 +1212,16 @@ export default function imageReadImageMetadataTestSupp() {
       const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_054';
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
       try {
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata();
+        await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.info(TAG, testName, " SUCCEED " ,metaData.heifsMetadata?.heifsDelayTime);
-          expect(metaData.heifsMetadata?.heifsDelayTime).assertUndefined();
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.info(TAG, testName, " SUCCEED " ,metaData.heifsMetadata?.heifsDelayTime);
+            expect(metaData.heifsMetadata?.heifsDelayTime).assertUndefined();
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect().assertFail();
@@ -1275,17 +1242,16 @@ export default function imageReadImageMetadataTestSupp() {
       const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_055';
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
       try {
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata(null,0);
+        await imageSourceApi.readImageMetadata(null,0).then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.error(TAG, testName, "Expected to fail but succeeded with metaData:", metaData);
-          expect(metaData != null).assertTrue();
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.error(TAG, testName, "Expected to fail but succeeded with metaData:", metaData);
+            expect(metaData != null).assertTrue();
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed: ${JSON.stringify(error)}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object: ${JSON.stringify(err)}`);
         expect().assertFail();
@@ -1306,17 +1272,16 @@ export default function imageReadImageMetadataTestSupp() {
       const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_056';
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
       try {
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata(undefined,0);
+        await imageSourceApi.readImageMetadata(undefined,0).then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.error(TAG, testName, "Expected to fail but succeeded with metaData:", metaData);
-          expect(metaData != null).assertTrue();
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.error(TAG, testName, "Expected to fail but succeeded with metaData:", metaData);
+            expect(metaData != null).assertTrue();
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed: ${JSON.stringify(error)}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object: ${JSON.stringify(err)}`);
         expect().assertFail();
@@ -1338,17 +1303,16 @@ export default function imageReadImageMetadataTestSupp() {
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
       try {
         let propertyKeys = ["ImageWidth", "HwMnoteIsXmageSupported"];
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata(propertyKeys,null);
+        await imageSourceApi.readImageMetadata(propertyKeys,null).then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.error(TAG, testName, "Expected to fail but succeeded with metaData:", metaData);
-          expect(metaData != null).assertTrue();
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.error(TAG, testName, "Expected to fail but succeeded with metaData:", metaData);
+            expect(metaData != null).assertTrue();
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed: ${JSON.stringify(error)}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object: ${JSON.stringify(err)}`);
         expect().assertFail();
@@ -1370,17 +1334,16 @@ export default function imageReadImageMetadataTestSupp() {
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
       try {
         let propertyKeys = ["ImageWidth", "HwMnoteIsXmageSupported"];
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata(propertyKeys,undefined);
+        await imageSourceApi.readImageMetadata(propertyKeys,undefined).then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.error(TAG, testName, "Expected to fail but succeeded with metaData:", metaData);
-          expect(metaData != null).assertTrue();
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.error(TAG, testName, "Expected to fail but succeeded with metaData:", metaData);
+            expect(metaData != null).assertTrue();
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed: ${JSON.stringify(error)}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object: ${JSON.stringify(err)}`);
         expect().assertFail();
@@ -1401,17 +1364,16 @@ export default function imageReadImageMetadataTestSupp() {
       const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_059';
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
       try {
-                try {
-          let metaData: image.ImageMetadata = await imageSourceApi.readImageMetadata([],0);
+        await imageSourceApi.readImageMetadata([],0).then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
-          metaData.makerNoteHuaweiMetadata != undefined) {
-          console.error(TAG, testName, "Expected to fail but succeeded with metaData:", metaData);
-          expect(metaData != null).assertTrue();
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.error(TAG, testName, "Expected to fail but succeeded with metaData:", metaData);
+            expect(metaData != null).assertTrue();
           }
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed: ${JSON.stringify(error)}`);
           expect().assertFail();
-        }
+        })
       }catch (err) {
         console.error(TAG,testName,`Failed to create object: ${JSON.stringify(err)}`);
         expect().assertFail();

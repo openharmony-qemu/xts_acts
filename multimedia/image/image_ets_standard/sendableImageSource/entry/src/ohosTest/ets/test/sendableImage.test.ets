@@ -586,19 +586,18 @@ export default function sendableImageSource() {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_CREATE_PIXEL_MAP_0100"
       let fileName = 'test.webp'
       let imageSourceApi = await getImageSource(fileName, "uri")
-      try {
-        let pixelMap: sendableImage.PixelMap = await imageSourceApi.createPixelMap();
+      await imageSourceApi.createPixelMap().then((pixelMap: sendableImage.PixelMap) => {
         console.info(`0x0000 ${tag} success pixelMap`);
         expect(pixelMap.isEditable).assertInstanceOf('Boolean')
         if (pixelMap != undefined) {
           pixelMap.release();
         }
         done()
-      } catch (error: BusinessError) {
+      }).catch((error: BusinessError) => {
         console.error(`0x0000 ${tag} failed ${error}`);
         expect().assertFail()
         done()
-      }
+      })
     })
 
     /**
@@ -633,22 +632,21 @@ export default function sendableImageSource() {
           y: 0
         }
       }
-            try {
-        let pixelMap: sendableImage.PixelMap = await imageSourceApi.createPixelMap(opt);
+      await imageSourceApi.createPixelMap(opt).then(async (pixelMap: sendableImage.PixelMap) => {
         console.info(`0x0000 ${tag} success pixelMap`);
         let info = await pixelMap.getImageInfo()
         console.info(`0x0000 ${tag} pixelMap size is ${info.size.height} ${info.size.width}`);
         expect(opt.desiredSize?.height).assertEqual(info.size.height)
         expect(opt.desiredSize?.width).assertEqual(info.size.width)
         if (pixelMap != undefined) {
-        pixelMap.release();
+          pixelMap.release();
         }
         done()
-      } catch (error: BusinessError) {
+      }).catch((error: BusinessError) => {
         console.error(`0x0000 ${tag} failed ${error}`);
         expect().assertFail()
         done()
-      }
+      })
     })
 
 
@@ -672,16 +670,15 @@ export default function sendableImageSource() {
       let opt: image.DecodingOptions = {
         sampleSize: 0
       }
-            try {
-        let pixelMap: sendableImage.PixelMap = await imageSourceApi.createPixelMap(opt);
+      await imageSourceApi.createPixelMap(opt).then((pixelMap: sendableImage.PixelMap) => {
         console.info(`0x0000 ${tag} success pixelMap`);
         expect(isEmpty(pixelMap)).assertTrue()
         done()
-      } catch (error: BusinessError) {
+      }).catch((error: BusinessError) => {
         console.error(`0x0000 ${tag} failed ${error}`);
         expect(true).assertEqual(JSON.stringify(error) != null);
         done()
-      }
+      })
     })
 
 
@@ -716,19 +713,18 @@ export default function sendableImageSource() {
         desiredDynamicRange:image.DecodingDynamicRange.AUTO,
         desiredColorSpace:colorSpace
       }
-            try {
-        let pixelMap: sendableImage.PixelMap = await imageSourceApi.createPixelMap(opt);
+      await imageSourceApi.createPixelMap(opt).then((pixelMap: sendableImage.PixelMap) => {
         console.info(`0x0000 ${tag} success pixelMap`);
         expect(pixelMap.isEditable).assertInstanceOf('Boolean')
         if (pixelMap != undefined) {
-        pixelMap.release();
+          pixelMap.release();
         }
         done()
-      } catch (error: BusinessError) {
+      }).catch((error: BusinessError) => {
         console.error(`0x0000 ${tag} failed ${error}`);
         expect().assertFail()
         done()
-      }
+      })
     })
 
 
@@ -749,16 +745,15 @@ export default function sendableImageSource() {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_RELEASE_0100"
       let fileName = 'test.jpg'
       let imageSourceApi = await getImageSource(fileName, "uri")
-            try {
-        await imageSourceApi.release();
+      await imageSourceApi.release().then(() => {
         console.info(`0x0000 ${tag} release success ${JSON.stringify(imageSourceApi.createPixelMap())}`);
         expect(isEmpty(imageSourceApi.createPixelMap())).assertTrue()
         done()
-      } catch (error: BusinessError) {
+      }).catch((error: BusinessError) => {
         console.error(`0x0000 ${tag} failed ${error}`);
         expect().assertFail()
         done()
-      }
+      })
     })
 
     /**
@@ -778,20 +773,19 @@ export default function sendableImageSource() {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_RELEASE_0200"
       let fileName = 'test.jpg'
       let imageSourceApi = await getImageSource(fileName, 'uri')
-            try {
-        await imageSourceApi.release();
+      await imageSourceApi.release().then(() => {
         imageSourceApi.createPixelMap().then((pixelMap: sendableImage.PixelMap) => {
-        console.info(`0x0000 ${tag} success ${pixelMap}`)
+          console.info(`0x0000 ${tag} success ${pixelMap}`)
         }).catch((error: BusinessError) => {
-        console.error(`0x0000 ${tag} failed ${error}`);
-        expect(true).assertEqual(JSON.stringify(error) != null);
-        done()
+          console.error(`0x0000 ${tag} failed ${error}`);
+          expect(true).assertEqual(JSON.stringify(error) != null);
+          done()
         })
-      } catch (error: BusinessError) {
+      }).catch((error: BusinessError) => {
         console.error(`0x0000 ${tag} failed ${error}`);
         expect(true).assertEqual(JSON.stringify(error) != null);
         done()
-      }
+      })
     })
 
     /**
@@ -940,16 +934,15 @@ export default function sendableImageSource() {
       }
       const tag: string = "SUB_MULTIMEDIA_GET_RECEIVING_SURFACES_0100"
       let receiver = await getImageReceiver(1)
-            try {
-        let id: string = await receiver.getReceivingSurfaceId();
+      await receiver.getReceivingSurfaceId().then((id: string) => {
         console.info(`0x0000 ${tag} success ${receiver} ${id}`)
         expect(isEmpty(id)).assertFalse()
         done()
-      } catch (error: BusinessError) {
+      }).catch((error: BusinessError) => {
         console.error(`0x0000 ${tag} failed ${error}`)
         expect().assertFail()
         done()
-      }
+      })
     })
 
 
@@ -1449,25 +1442,24 @@ export default function sendableImageSource() {
       const readBuffer: ArrayBuffer = new ArrayBuffer(96);
       let fileName = 'test.webp'
       let imageSourceApi = await getImageSource(fileName, "uri")
-            try {
-        let pixelMap: sendableImage.PixelMap = await imageSourceApi.createPixelMap();
+      await imageSourceApi.createPixelMap().then((pixelMap: sendableImage.PixelMap) => {
         console.info(`0x0000 ${tag} success pixelMap`);
         expect(pixelMap.isEditable).assertInstanceOf('Boolean')
         if (pixelMap != undefined) {
-        pixelMap.readPixelsToBuffer(readBuffer).then(() => {
-        console.info(tag + ' Succeeded in reading image pixel data.');
-        }).catch((error: BusinessError) => {
-        console.error(tag + ` Failed to read image pixel data. errer is ${error}`);
-        expect(error).assertEqual(62980115);
-        pixelMap.release();
-        done();
-        })
+          pixelMap.readPixelsToBuffer(readBuffer).then(() => {
+            console.info(tag + ' Succeeded in reading image pixel data.');
+          }).catch((error: BusinessError) => {
+            console.error(tag + ` Failed to read image pixel data. errer is ${error}`);
+            expect(error).assertEqual(62980115);
+            pixelMap.release();
+            done();
+          })
         }
-      } catch (error: BusinessError) {
+      }).catch((error: BusinessError) => {
         console.error(`0x0000 ${tag} failed ${error}`);
         expect().assertFail();
         done();
-      }
+      })
     })
 
     /**
@@ -1879,16 +1871,15 @@ export default function sendableImageSource() {
         size: {height: 4,width: 6}
       };
       let pixelMap = await sendableImage.createPixelMap(color, opts);
-            try {
-        await pixelMap.opacity(rate);
+      await pixelMap.opacity(rate).then(() => {
         console.info(tag + ' Succeeded in setting the transparent ratio.');
         pixelMap.release();
         done();
-      } catch (e: BusinessError) {
+      }).catch((e: BusinessError) => {
         console.info(tag + ` Failed to set the transparent ratio. error is ` + e);
         expect().assertFail();
         done();
-      }
+      })
     })
 
     /**
@@ -1909,16 +1900,15 @@ export default function sendableImageSource() {
         size: {height: 4,width: 6}
       };
       let pixelMap = await sendableImage.createPixelMap(color, opts);
-            try {
-        await pixelMap.opacity(rate);
+      await pixelMap.opacity(rate).then(() => {
         console.info(tag + ' Succeeded in setting the transparent ratio.')
         pixelMap.release();
         done();
-      } catch (e: BusinessError) {
+      }).catch((e: BusinessError) => {
         console.error(tag + ` Failed to set the transparent ratio. error is ` + e);
         expect(e).assertEqual(62980115);
         done();
-      }
+      })
     })
 
     /**
@@ -1939,16 +1929,15 @@ export default function sendableImageSource() {
         size: {height: 4,width: 6}
       };
       let pixelMap = await sendableImage.createPixelMap(color, opts);
-            try {
-        await pixelMap.opacity(rate);
+      await pixelMap.opacity(rate).then(() => {
         console.info(tag + ' Succeeded in setting the transparent ratio.')
         pixelMap.release();
         done();
-      } catch (e: BusinessError) {
+      }).catch((e: BusinessError) => {
         console.error(tag + ` Failed to set the transparent ratio. error is ` + e);
         expect(e).assertEqual(62980115);
         done();
-      }
+      })
     })
 
     /**
@@ -2260,16 +2249,15 @@ export default function sendableImageSource() {
       let fileName = 'test.webp'
       let imageSourceApi = await getImageSource(fileName, "uri")
       let pixelMap = await imageSourceApi.createPixelMap();
-            try {
-        await pixelMap.applyColorSpace(targetColorSpace);
+      await pixelMap.applyColorSpace(targetColorSpace).then(() => {
         console.info(tag + ' Succeeded in applying color space for pixelmap object.');
         pixelMap.release();
         done();
-      } catch (error: BusinessError) {
-        console.error(tag + ` Failed to apply color space for pixelmap object. code is ${error.code}, message is ${error.message}`);
+      }).catch((error: BusinessError) => {
+        console.error(tag + ` Failed to apply color space for pixelmap object. code is ${error.code}, message is ${error.message}`); 
         expect().assertFail();
         done();
-      }
+        })
     })
 
     /**
@@ -2287,16 +2275,15 @@ export default function sendableImageSource() {
       let fileName = 'test.webp'
       let imageSourceApi = await getImageSource(fileName, "uri")
       let pixelMap = await imageSourceApi.createPixelMap();
-            try {
-        await pixelMap.applyColorSpace(null!);
+      await pixelMap.applyColorSpace(null!).then(() => {
         console.info(tag + ' Succeeded in applying color space for pixelmap object.');
         done();
-      } catch (error: BusinessError) {
-        console.error(tag + ` Failed to apply color space for pixelmap object. error is ${error}`);
+      }).catch((error: BusinessError) => {
+        console.error(tag + ` Failed to apply color space for pixelmap object. error is ${error}`); 
         expect(error).assertEqual(62980115);
         pixelMap.release();
         done();
-      }
+        })
     })
 
     /**
@@ -2436,27 +2423,26 @@ export default function sendableImageSource() {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_IS_STRIDE_ALIGNMENT_0100"
       let fileName = 'test.webp'
       let imageSourceApi = await getImageSource(fileName);
-            try {
-        let pixelMap: sendableImage.PixelMap = await imageSourceApi.createPixelMap();
+      await imageSourceApi.createPixelMap().then((pixelMap: sendableImage.PixelMap) => {
         console.info(`0x0000 ${tag} success pixelMap`);
         expect(pixelMap.isEditable).assertInstanceOf('Boolean');
         let ret = pixelMap.isStrideAlignment
         if (ret == undefined) {
-        console.info("pixelMap.isStrideAlignment is undefined");
+          console.info("pixelMap.isStrideAlignment is undefined");
         } else {
-        if (ret == false) {
-        console.info("pixelMap.isStrideAlignment is false");
-        } else {
-        console.info("pixelMap.isStrideAlignment is true");
-        }
+          if (ret == false) {
+            console.info("pixelMap.isStrideAlignment is false");
+          } else {
+            console.info("pixelMap.isStrideAlignment is true");
+          }
         }
         pixelMap.release();
         done();
-      } catch (error: BusinessError) {
+      }).catch((error: BusinessError) => {
         console.error(tag + ` create imageSource failed. error is ${error}`);
         expect().assertFail();
         done();
-      }
+      })
     })
 
     /**
@@ -2472,15 +2458,14 @@ export default function sendableImageSource() {
       const color: ArrayBuffer = new ArrayBuffer(96);
       let opts: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 4, width: 6 } }
       let pixelMap = await sendableImage.createPixelMap(color, opts);
-            try {
-        await pixelMap.release();
+      await pixelMap.release().then(() => {
         console.info(tag + ' Succeeded in releasing pixelmap object.');
         done();
-      } catch (error: BusinessError) {
+      }).catch((error: BusinessError) => {
         console.error(tag + `Failed to release pixelmap object. error is ${error}`);
         expect().assertFail();
         done();
-      }
+        })
     })
 
     /**
@@ -2564,15 +2549,14 @@ export default function sendableImageSource() {
         width: 8
       }
       let receiver: sendableImage.ImageReceiver = sendableImage.createImageReceiver(size, image.ImageFormat.JPEG, 8);
-            try {
-        let img: sendableImage.Image = await receiver.readLatestImage();
-        console.info(tag + ' readLatestImage succeeded.');
-        done();
-      } catch (error: BusinessError) {
+      await receiver.readLatestImage().then((img: sendableImage.Image) => {
+          console.info(tag + ' readLatestImage succeeded.');
+          done();
+      }).catch((error: BusinessError) => {
         console.error(tag + ` readLatestImage failed. error is  ${error}`);
         expect(error).assertUndefined();
         done();
-      }
+      })
     })
  
     /**
@@ -2590,15 +2574,14 @@ export default function sendableImageSource() {
         width: 8
       }
       let receiver: sendableImage.ImageReceiver = sendableImage.createImageReceiver(size, image.ImageFormat.JPEG, 8);
-            try {
-        let img: sendableImage.Image = await receiver.readNextImage();
-        console.info(tag + ' readNextImage  succeeded.');
-        done();
-      } catch (error: BusinessError) {
+      await receiver.readNextImage().then((img: sendableImage.Image) => {
+          console.info(tag + ' readNextImage  succeeded.');
+          done();
+      }).catch((error: BusinessError) => {
         console.error(tag + ` readNextImage  failed. error is  ${error}`);
         expect(error).assertUndefined();
         done();
-      }
+      })
     })
 
     /**
@@ -2616,23 +2599,22 @@ export default function sendableImageSource() {
       let fileName = 'dog.astc'
       let imageSourceApi = await getImageSource(fileName, "uri")
       let pixelMap = await imageSourceApi.createPixelMap();
-            try {
-        await pixelMap.applyColorSpace(targetColorSpace);
+      await pixelMap.applyColorSpace(targetColorSpace).then(() => {
         console.info(tag + ' Succeeded in applying color space for pixelmap object.');
         done();
-      } catch (error: BusinessError) {
-        console.error(tag + ` Failed to apply color space for pixelmap object. error is ${error}`);
+      }).catch((error: BusinessError) => {
+        console.error(tag + ` Failed to apply color space for pixelmap object. error is ${error}`); 
         if (Number(error) == 62980108) {
-        expect(Number(error) == 62980108).assertTrue();
-        pixelMap.release();
-        console.info('Failed to apply color space. Error is 62980108. Check your device.')
-        done();
+          expect(Number(error) == 62980108).assertTrue();
+          pixelMap.release();
+          console.info('Failed to apply color space. Error is 62980108. Check your device.')
+          done();
         } else {
-        console.info('Error is not 62980108. Error is ' + error)
-        expect().assertFail();
-        done();
+          console.info('Error is not 62980108. Error is ' + error)
+          expect().assertFail();
+          done();
         }
-      }
+      })
     })
 
   })

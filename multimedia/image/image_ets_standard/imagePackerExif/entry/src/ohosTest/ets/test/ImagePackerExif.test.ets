@@ -113,16 +113,15 @@ export default function imagePackerExifTest() {
     const propertyCompFalse = async (tag: string, key: image.PropertyKey, newImageSource: image.ImageSource,
                                      fileName: string) => {
       let result: boolean = true
-            try {
-        let data = await newImageSource.getImageProperty(key);
+      await newImageSource.getImageProperty(key).then((data) => {
         hilog.info(0x0000, tag, `propertyCompFalse failed ${fileName} ${key} imagePropertyNew: ${data}`);
         result = false
-      } catch (error: BusinessError) {
+      }).catch((error: BusinessError) => {
         if (error.code != 62980123) {
-        result = false
-        hilog.info(0x0000, tag, `propertyCompFalse failed ${fileName} ${key} errorCode: ${error.code} errorMessage: ${error.message}`);
+          result = false
+          hilog.info(0x0000, tag, `propertyCompFalse failed ${fileName} ${key} errorCode: ${error.code} errorMessage: ${error.message}`);
         }
-      }
+      })
       return result
     }
 

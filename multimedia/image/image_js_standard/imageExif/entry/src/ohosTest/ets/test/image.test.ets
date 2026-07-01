@@ -52,12 +52,11 @@ export default function imageExif() {
       if (globalpixelmap != undefined) {
         await globalpixelmap.release();
       }
-            try {
-        await fileio.close(fdNumber);
+      await fileio.close(fdNumber).then(() => {
         console.info("close file succeed");
-      } catch (err: BusinessError) {
+      }).catch((err: BusinessError) => {
         console.info("close file failed with error:" + err);
-      };
+      });
       console.info('afterEach case');
     })
 

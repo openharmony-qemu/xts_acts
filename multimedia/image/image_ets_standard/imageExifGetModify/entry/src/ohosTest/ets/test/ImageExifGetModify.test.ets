@@ -6363,13 +6363,12 @@ export default function imageExifGetModifyTest() {
         for(let i=0; i<values.length; i++) {
           const imageSourceApi = await getImageSource(values[i].fileName, 'rawfile')
           let checkResult: boolean = true
-                    try {
-            await imageSourceApi.modifyImageProperty(key, modifyData);
+          await imageSourceApi.modifyImageProperty(key, modifyData).then(() => {
             checkResult = false
-          } catch (error: BusinessError) {
+          }).catch(async (error: BusinessError) => {
             hilog.info(0x0000, testTag, `${testTag} modifyImageProperty  BitsPerSample error ${JSON.stringify(error)}`);
             checkResult = await testGetPromise(testTag, key, values[i].value, values[i].fileName, 'rawfile');
-          }
+          })
           if (imageSourceApi != undefined) {
             imageSourceApi.release();
           }
@@ -18522,17 +18521,16 @@ export default function imageExifGetModifyTest() {
               expect().assertFail();
               done();
             } else {
-                            try {
-                await imageSourceApi.modifyImageProperty(key, 'abc');
-                hilog.info(0x0000, testTag, `modifyImageProperty promise success %{public}s %{public}s %{public}s`, key,testType);
-                checkResult = true
-                done();
-              } catch (err: BusinessError) {
-                hilog.info(0x0000, testTag, `modifyImageProperty promise failed %{public}s %{public}s %{public}s`, key, err.code, '62980146',testType);
-                checkResult = false
-                expect(false).assertTrue();
-                done();
-              }
+              await imageSourceApi.modifyImageProperty(key, 'abc').then(() => {
+              hilog.info(0x0000, testTag, `modifyImageProperty promise success %{public}s %{public}s %{public}s`, key,testType);
+              checkResult = true
+              done();
+            }).catch(async (err: BusinessError) => {
+              hilog.info(0x0000, testTag, `modifyImageProperty promise failed %{public}s %{public}s %{public}s`, key, err.code, '62980146',testType);
+              checkResult = false
+              expect(false).assertTrue();
+              done();
+            })
             if (imageSourceApi != undefined) {
               imageSourceApi.release();
             }

@@ -593,13 +593,12 @@ export default function imagepixelMapSupportYuv() {
       let checkResult = false
       if(testInterface === "packing"){
         if (type == 'promise') {
-                    try {
-            let data:ArrayBuffer = await imagePackerApi.packing(pixelMap, packOpts);
+          await imagePackerApi.packing(pixelMap, packOpts).then((data:ArrayBuffer)=>{
             checkResult = true
-          } catch (error:BusinessError) {
+          }).catch((error:BusinessError)=>{
             hilog.info(0x0000, '${testNum}', '%{public}s', `${testNum}:${JSON.stringify(error)}`);
             checkResult = false
-          }
+          })
         }else{
           imagePackerApi.packing(pixelMap, packOpts, async (error:BusinessError, data: ArrayBuffer) => {
             if (error) {
@@ -615,13 +614,12 @@ export default function imagepixelMapSupportYuv() {
         const uri: string = testContext.cacheDir + "/" + `${testNum}` + "jpg"
         const file: fileIo.File = fs.openSync(uri, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
         if(type === "promise"){
-                    try {
-            await imagePackerApi.packToFile(pixelMap, file.fd,packOpts);
+          await imagePackerApi.packToFile(pixelMap, file.fd,packOpts).then(()=>{
             checkResult = true
-          } catch (error:BusinessError) {
+          }).catch((error:BusinessError)=>{
             hilog.info(0x0000, '${testNum}', '%{public}s', `${testNum}:${JSON.stringify(error)}`);
             checkResult = false
-          }
+          })
         }else{
           imagePackerApi.packToFile(pixelMap, file.fd, packOpts, async(err: BusinessError) => {
             if (err) {

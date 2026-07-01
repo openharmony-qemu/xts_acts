@@ -28,13 +28,12 @@ async function readLatestImagePromiseTest(done: Function, testName: string, size
     };
     receiver.on('imageArrival', callbackFunc);
     receiver.off('imageArrival', callbackFunc);
-        try {
-      let id: string = await receiver.getReceivingSurfaceId();
+    await receiver.getReceivingSurfaceId().then((id: string) => {
       console.info(TAG, 'Succeeded in getting the readLatestImage.');
-    } catch (error: BusinessError) {
+    }).catch((error: BusinessError) => {
       console.error(TAG, `Failed to get the readLatestImage.code ${error.code},message is ${error.message}`);
       expect().assertFail();
-    }
+    })
     done();
   } catch (error) {
     console.info(TAG, `failed; error: ${error},${error.code}`, testName);

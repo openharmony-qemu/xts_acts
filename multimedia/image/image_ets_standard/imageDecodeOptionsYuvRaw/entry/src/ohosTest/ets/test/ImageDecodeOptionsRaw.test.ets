@@ -99,22 +99,22 @@ export default function imageDecodeOptionsRawTest() {
     const decodingOptionsCreate = async (TAG: string, imageSourceApi:  image.ImageSource,
                                          decodingOptions: image.DecodingOptions, desiredPixelFormat: number) => {
       result = false;
-            try {
-        let pixelMap = await imageSourceApi.createPixelMap(decodingOptions);
-        globalPixelMap = pixelMap;
-        await pixelMap.getImageInfo().then((imageInfo: image.ImageInfo) => {
-        let imageInfoStr = JSON.stringify(imageInfo);
-        let zheImageInfo: newImageInfo = JSON.parse(imageInfoStr) as newImageInfo;
-        let pixelFormat = zheImageInfo?.pixelFormat
-        hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' decodingOptionsCreate pixelFormat:' + pixelFormat);
-        hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' imageInfo:' + JSON.stringify(imageInfo));
-        pixelFormat === desiredPixelFormat && (result = true);
-        pixelMap.release();
-        imageSourceApi.release();
-        })
-      } catch (err: BusinessError) {
-        hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' getImageInfo err ' + JSON.stringify(err));
-      }    
+      await imageSourceApi.createPixelMap(decodingOptions)
+        .then(async (pixelMap) => {
+          globalPixelMap = pixelMap;
+          await pixelMap.getImageInfo().then((imageInfo: image.ImageInfo) => {
+            let imageInfoStr = JSON.stringify(imageInfo);
+            let zheImageInfo: newImageInfo = JSON.parse(imageInfoStr) as newImageInfo;
+            let pixelFormat = zheImageInfo?.pixelFormat
+            hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' decodingOptionsCreate pixelFormat:' + pixelFormat);
+            hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' imageInfo:' + JSON.stringify(imageInfo));
+            pixelFormat === desiredPixelFormat && (result = true);
+            pixelMap.release();
+            imageSourceApi.release();
+          })
+        }).catch((err: BusinessError) => {
+          hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' getImageInfo err ' + JSON.stringify(err));
+        })    
     }
 
     const callBackCreate = async (TAG: string, imageSourceApi: image.ImageSource,
@@ -174,22 +174,22 @@ export default function imageDecodeOptionsRawTest() {
     const decodingOptionsCreate_F16 = async (TAG: string, imageSourceApi: image.ImageSource,
                                          decodingOptions: image.DecodingOptions, desiredPixelFormat: number) => {
       result = false;
-            try {
-        let pixelMap = await imageSourceApi.createPixelMap(decodingOptions);
-        globalPixelMap = pixelMap;
-        await pixelMap.getImageInfo().then((imageInfo: image.ImageInfo) => {
-        let imageInfoStr = JSON.stringify(imageInfo);
-        let zheImageInfo: newImageInfo = JSON.parse(imageInfoStr) as newImageInfo;
-        let pixelFormat = zheImageInfo?.pixelFormat
-        hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' decodingOptionsCreate pixelFormat:' + pixelFormat);
-        hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' imageInfo:' + JSON.stringify(imageInfo));
-        pixelFormat === 3 && (result = true);
-        pixelMap.release();
-        imageSourceApi.release();
+      await imageSourceApi.createPixelMap(decodingOptions)
+        .then(async (pixelMap) => {
+          globalPixelMap = pixelMap;
+          await pixelMap.getImageInfo().then((imageInfo: image.ImageInfo) => {
+            let imageInfoStr = JSON.stringify(imageInfo);
+            let zheImageInfo: newImageInfo = JSON.parse(imageInfoStr) as newImageInfo;
+            let pixelFormat = zheImageInfo?.pixelFormat
+            hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' decodingOptionsCreate pixelFormat:' + pixelFormat);
+            hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' imageInfo:' + JSON.stringify(imageInfo));
+            pixelFormat === 3 && (result = true);
+            pixelMap.release();
+            imageSourceApi.release();
+          })
+        }).catch((err: BusinessError) => {
+          hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' getImageInfo err ' + JSON.stringify(err));
         })
-      } catch (err: BusinessError) {
-        hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' getImageInfo err ' + JSON.stringify(err));
-      }
     }
 
     const callBackCreate_F16 = async (TAG: string, imageSourceApi: image.ImageSource,

@@ -269,15 +269,14 @@ export default function MetaDataSetBlobTest() {
       let testExifMetadata = image.ExifMetadata.createInstance();
       testExifMetadata.imageWidth = 0;
       try {
-                try {
-          let data = await testExifMetadata.getProperties(null);
+        await testExifMetadata.getProperties(null).then((data) => {
           console.info(TAG, testName, 'Get properties ', JSON.stringify(data));
           expect().assertFail();
-        } catch (error: BusinessError) {
+        }).catch((error: BusinessError) => {
           console.error(TAG, testName,
-          `Get properties failed error.code is ${error.code}, error.message is ${error.message}`);
+            `Get properties failed error.code is ${error.code}, error.message is ${error.message}`);
           expect().assertFail();
-        };
+        });
       } catch (error) {
         console.error(TAG, testName, 'exifMetadata getProperties error', error.message, error.code);
         expect(Number(error.code)).assertEqual(401);
@@ -308,15 +307,14 @@ export default function MetaDataSetBlobTest() {
         await imageSourceApi.writeImageMetadata(imageMetadata);
         let metaData = await imageSourceApi.readImageMetadata();
         if (metaData != undefined && metaData.exifMetadata != undefined) {
-                    try {
-            let data = await metaData.exifMetadata.getProperties(undefined);
+          await metaData.exifMetadata.getProperties(undefined).then((data) => {
             console.info(TAG, testName, 'Get properties ', JSON.stringify(data));
             expect().assertFail();
-          } catch (error: BusinessError) {
+          }).catch((error: BusinessError) => {
             console.error(TAG, testName,
-            `Get properties failed error.code is ${error.code}, error.message is ${error.message}`);
+              `Get properties failed error.code is ${error.code}, error.message is ${error.message}`);
             expect().assertFail();
-          };
+          });
         } else {
           console.error(TAG, testName, 'Metadata is null.');
           expect().assertFail();
@@ -351,15 +349,14 @@ export default function MetaDataSetBlobTest() {
         await imageSourceApi.writeImageMetadata(imageMetadata);
         let metaData = await imageSourceApi.readImageMetadata();
         if (metaData != undefined && metaData.exifMetadata != undefined) {
-                    try {
-            let data = await metaData.exifMetadata.setProperties(null);
+          await metaData.exifMetadata.setProperties(null).then((data) => {
             console.info(TAG, testName, 'Get properties ', JSON.stringify(data));
             expect().assertFail();
-          } catch (error: BusinessError) {
+          }).catch((error: BusinessError) => {
             console.error(TAG, testName,
-            `Get properties failed error.code is ${error.code}, error.message is ${error.message}`);
+              `Get properties failed error.code is ${error.code}, error.message is ${error.message}`);
             expect().assertFail();
-          };
+          });
         } else {
           console.error(TAG, testName, 'Metadata is null.');
           expect().assertFail();
@@ -394,15 +391,14 @@ export default function MetaDataSetBlobTest() {
         await imageSourceApi.writeImageMetadata(imageMetadata);
         let metaData = await imageSourceApi.readImageMetadata();
         if (metaData != undefined && metaData.exifMetadata != undefined) {
-                    try {
-            let data = await metaData.exifMetadata.setProperties(undefined);
+          await metaData.exifMetadata.setProperties(undefined).then((data) => {
             console.info(TAG, testName, 'Get properties ', JSON.stringify(data));
             expect().assertFail();
-          } catch (error: BusinessError) {
+          }).catch((error: BusinessError) => {
             console.error(TAG, testName,
-            `Get properties failed error.code is ${error.code}, error.message is ${error.message}`);
+              `Get properties failed error.code is ${error.code}, error.message is ${error.message}`);
             expect().assertFail();
-          };
+          });
         } else {
           console.error(TAG, testName, 'Metadata is null.');
           expect().assertFail();
@@ -727,15 +723,14 @@ export default function MetaDataSetBlobTest() {
         await imageSourceApi.writeImageMetadata(imageMetadata);
         let metaData = await imageSourceApi.readImageMetadata();
         if (metaData != undefined && metaData.makerNoteHuaweiMetadata != undefined) {
-                    try {
-            await metaData.makerNoteHuaweiMetadata.setProperties(null);
+          await metaData.makerNoteHuaweiMetadata.setProperties(null).then(async () => {
             console.info(TAG, testName, 'Set properties success.');
             expect().assertFail();
-          } catch (error: BusinessError) {
+          }).catch((error: BusinessError) => {
             console.error(TAG, testName,
-            `Failed to set metadata Properties. code is ${error.code}, message is ${error.message}`);
+              `Failed to set metadata Properties. code is ${error.code}, message is ${error.message}`);
             expect().assertFail();
-          }
+          })
         } else {
           console.error(TAG, testName, 'metadata is null. ');
           expect().assertFail();

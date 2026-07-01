@@ -560,12 +560,12 @@ export default function imagePackerPackToFileFromPixelmapSequenceTest() {
         let outputPath = `${testContext.filesDir}/${outputPathUri}`;
         let file = fs.openSync(outputPath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
         let Packer = image.createImagePacker();
-                try {
-          await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, opsPack);
-          console.info(TAG,testName,'Succeeded in packToFileMultiFrames.');
-        } catch (error: BusinessError) {
+        await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, opsPack)
+          .then(() => {
+            console.info(TAG,testName,'Succeeded in packToFileMultiFrames.');
+          }).catch((error: BusinessError) => {
           console.error(TAG,testName,'Failed to packToFileMultiFrames.');
-        }
+        })
         await Packer.release();
         done();
       } catch (error) {
@@ -602,12 +602,12 @@ export default function imagePackerPackToFileFromPixelmapSequenceTest() {
         let outputPath = `${testContext.filesDir}/${outputPathUri}`;
         let file = fs.openSync(outputPath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
         let Packer = image.createImagePacker();
-                try {
-          await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, opsPack);
-          console.info(TAG,testName,'Succeeded in packToFileMultiFrames.');
-        } catch (error: BusinessError) {
-          console.error(TAG,testName,'Failed to packToFileMultiFrames.');
-        }
+        await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, opsPack)
+          .then(() => {
+            console.info(TAG,testName,'Succeeded in packToFileMultiFrames.');
+          }).catch((error: BusinessError) => {
+            console.error(TAG,testName,'Failed to packToFileMultiFrames.');
+          })
         await Packer.release();
         done();
       } catch (error) {
@@ -644,12 +644,12 @@ export default function imagePackerPackToFileFromPixelmapSequenceTest() {
         let outputPath = `${testContext.filesDir}/${outputPathUri}`;
         let file = fs.openSync(outputPath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
         let Packer = image.createImagePacker();
-                try {
-          await Packer.packToFileFromPixelmapSequence(pixelMapList, null, opsPack);
-          console.info(TAG,testName,'Succeeded in packToFileMultiFrames.');
-        } catch (error: BusinessError) {
-          console.error(TAG,testName,'Failed to packToFileMultiFrames.');
-        }
+        await Packer.packToFileFromPixelmapSequence(pixelMapList, null, opsPack)
+          .then(() => {
+            console.info(TAG,testName,'Succeeded in packToFileMultiFrames.');
+          }).catch((error: BusinessError) => {
+            console.error(TAG,testName,'Failed to packToFileMultiFrames.');
+          })
         await Packer.release();
         done();
       } catch (error) {
@@ -686,12 +686,12 @@ export default function imagePackerPackToFileFromPixelmapSequenceTest() {
         let outputPath = `file://${testContext.filesDir}/${outputPathUri}`;
         let file = fs.openSync(outputPath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
         let Packer = image.createImagePacker();
-                try {
-          await Packer.packToFileFromPixelmapSequence(pixelMapList, undefined, opsPack);
-          console.info(TAG,testName,'Succeeded in packToFileMultiFrames.');
-        } catch (error: BusinessError) {
-          console.error(TAG,testName,'Failed to packToFileMultiFrames.');
-        }
+        await Packer.packToFileFromPixelmapSequence(pixelMapList, undefined, opsPack)
+          .then(() => {
+            console.info(TAG,testName,'Succeeded in packToFileMultiFrames.');
+          }).catch((error: BusinessError) => {
+            console.error(TAG,testName,'Failed to packToFileMultiFrames.');
+          })
         await Packer.release();
         done();
       } catch (error) {
@@ -722,12 +722,12 @@ export default function imagePackerPackToFileFromPixelmapSequenceTest() {
         let outputPath = `file://${testContext.filesDir}/${outputPathUri}`;
         let file = fs.openSync(outputPath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
         let Packer = image.createImagePacker();
-                try {
-          await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, undefined);
-          console.info(TAG,testName,'Succeeded in packToFileMultiFrames.');
-        } catch (error: BusinessError) {
-          console.error(TAG,testName,'Failed to packToFileMultiFrames.');
-        }
+        await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, undefined)
+          .then(() => {
+            console.info(TAG,testName,'Succeeded in packToFileMultiFrames.');
+          }).catch((error: BusinessError) => {
+            console.error(TAG,testName,'Failed to packToFileMultiFrames.');
+          })
         await Packer.release();
         done();
       } catch (error) {
@@ -759,12 +759,12 @@ export default function imagePackerPackToFileFromPixelmapSequenceTest() {
         let outputPath = `file://${testContext.filesDir}/${outputPathUri}`;
         let file = fs.openSync(outputPath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
         let Packer = image.createImagePacker();
-                try {
-          await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, null);
-          console.info(TAG,testName,'Succeeded in packToFileMultiFrames.');
-        } catch (error: BusinessError) {
-          console.error(TAG,testName,'Failed to packToFileMultiFrames.');
-        }
+        await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, null)
+          .then(() => {
+            console.info(TAG,testName,'Succeeded in packToFileMultiFrames.');
+          }).catch((error: BusinessError) => {
+            console.error(TAG,testName,'Failed to packToFileMultiFrames.');
+          })
         await Packer.release();
         done();
       } catch (error) {

@@ -121,12 +121,11 @@ async function getVideoSurfaceId() {
   mAVRecorder = await media.createAVRecorder();
   expect(isEmpty(mAVRecorder)).assertFalse();
   console.info(TAG, 'createAVRecorder passed. state: ' + mAVRecorder.state);
-    try {
-    await mAVRecorder.prepare(videoConfig);
+  await mAVRecorder.prepare(videoConfig).then(() => {
     console.info('prepare success');
-  } catch (error: BusinessError) {
+  }).catch((error: BusinessError) => {
     console.error(TAG, 'failed to prepare, err: ' + error.code + ', msg: ' + error.message);
-  };
+  });
   console.info(TAG, 'AVRecorder state: ' + mAVRecorder.state);
   mVideoSurfaceId = await mAVRecorder.getInputSurface();
   console.info(TAG, 'mVideoSurfaceId: ' + mVideoSurfaceId);

@@ -39,19 +39,18 @@ export default function image10bitPixelMapFetchFrame() {
 
   describe('image10bitPixelMapFetchFrame', () => {
     beforeAll(async () => {
-      isSupportHdr =       isSupportHdr = try {
-                       let res: boolean = await fs.access('/system/lib64/ndk/libvideo_processing_capi_impl.so');
-                       if (res) {
-                       console.info("file exists");
-                       return true;
-                       } else {
-                       console.info("file not exists");
-                       return false;
-                       }
-      isSupportHdr = } catch (err: BusinessError) {
-                       console.error("access failed with error message: " + err.message + ", error code: " + err.code);
-                       return false;
-      isSupportHdr = }
+      isSupportHdr = await fs.access('/system/lib64/ndk/libvideo_processing_capi_impl.so').then((res: boolean) => {
+        if (res) {
+          console.info("file exists");
+          return true;
+        } else {
+          console.info("file not exists");
+          return false;
+        }
+      }).catch((err: BusinessError) => {
+        console.error("access failed with error message: " + err.message + ", error code: " + err.code);
+        return false;
+      })
     })
 
     afterEach(() => {

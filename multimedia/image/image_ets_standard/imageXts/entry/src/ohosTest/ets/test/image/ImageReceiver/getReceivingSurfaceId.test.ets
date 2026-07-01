@@ -23,13 +23,12 @@ const TAG = LOG_TAG + 'getReceivingSurfaceId';
 async function getReceivingSurfaceIdPromiseTest(done: Function, testName: string, size: image.Size) {
   try {
     const receiver: image.ImageReceiver = await image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
-        try {
-      let id: string = await receiver.getReceivingSurfaceId();
+    await receiver.getReceivingSurfaceId().then((id: string) => {
       console.info(TAG, 'Succeeded in getting the ReceivingSurfaceId.');
-    } catch (error: BusinessError) {
+    }).catch((error: BusinessError) => {
       console.error(TAG, `Failed to get the ReceivingSurfaceId.code ${error.code},message is ${error.message}`);
       expect().assertFail();
-    };
+    });
     receiver.release();
     done();
   } catch (error) {
