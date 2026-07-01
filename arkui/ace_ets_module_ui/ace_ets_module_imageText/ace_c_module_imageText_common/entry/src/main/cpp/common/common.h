@@ -53,6 +53,7 @@ namespace ArkUICapiTest {
 #define PARAM_18 18
 #define PARAM_19 19
 #define PARAM_20 20
+#define PARAM_30 30
 #define PARAM_80 80
 #define PARAM_90 90
 #define PARAM_100 100
