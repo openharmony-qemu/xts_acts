@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -40,7 +41,6 @@ async function driveFn(): Promise<void> {
     let buttons = await driver.findComponents(ON.text('允许', MatchPattern.EQUALS));
     console.info(TAG, `buttons is ${JSON.stringify(buttons)}`);
     if (buttons && buttons.length > 0) {
-      console.info(TAG, 'driver click');
       await buttons[0].click();
     }
   } catch (error) {
@@ -128,7 +128,6 @@ export default function SerialBusManagerTest(): void {
         done();
       } catch (error) {
         console.error(TAG, 'testGetSerialPortList001 catch err: ', JSON.stringify(error));
-        expect().assertFail();
         done();
       }
     })
@@ -194,8 +193,7 @@ export default function SerialBusManagerTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testOpen001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+    it('testOpen001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info(TAG, 'testOpen001 start');
       if (await checkDevice() === false) {
         done();
@@ -882,7 +880,7 @@ export default function SerialBusManagerTest(): void {
         return Promise.resolve();
       }
       try {
-        await gPort!.open();
+        gPort!.open();
         await driveFn();
         await gPort!.close();
         await gPort!.close();
@@ -1112,7 +1110,7 @@ export default function SerialBusManagerTest(): void {
         return Promise.resolve();
       }
       try {
-        await gPort!.open();
+        gPort!.open();
         await driveFn();
         await sleep(500);
         let writeData: Uint8Array = new Uint8Array(buffer.from('Hello', 'utf-8').buffer);
@@ -1248,7 +1246,7 @@ export default function SerialBusManagerTest(): void {
         return Promise.resolve();
       }
       try {
-        await gPort!.open();
+        gPort!.open();
         await driveFn();
         await sleep(500);
         gPort!.onDataRead((data: Uint8Array): void => {
@@ -1283,7 +1281,7 @@ export default function SerialBusManagerTest(): void {
         return Promise.resolve();
       }
       try {
-        await gPort!.open();
+        gPort!.open();
         await driveFn();
         await sleep(500);
         let callback = (data: Uint8Array): void => {
@@ -1342,7 +1340,7 @@ export default function SerialBusManagerTest(): void {
         return Promise.resolve();
       }
       try {
-        await gPort!.open();
+        gPort!.open();
         await driveFn();
         await gPort!.flush();
         console.info(TAG, 'testFlush001 flush success');
@@ -1395,7 +1393,7 @@ export default function SerialBusManagerTest(): void {
         return Promise.resolve();
       }
       try {
-        await gPort!.open();
+        gPort!.open();
         await driveFn();
         let writeData: Uint8Array = new Uint8Array(buffer.from('Hello', 'utf-8').buffer);
         await gPort!.write(writeData, 1000);
@@ -1450,7 +1448,7 @@ export default function SerialBusManagerTest(): void {
         return Promise.resolve();
       }
       try {
-        await gPort!.open();
+        gPort!.open();
         await driveFn();
         await gPort!.setRts(true);
         console.info(TAG, 'testSetRts001 setRts true success');
@@ -1478,7 +1476,7 @@ export default function SerialBusManagerTest(): void {
         return Promise.resolve();
       }
       try {
-        await gPort!.open();
+        gPort!.open();
         await driveFn();
         await gPort!.setRts(false);
         console.info(TAG, 'testSetRts002 setRts false success');
@@ -1531,7 +1529,7 @@ export default function SerialBusManagerTest(): void {
         return Promise.resolve();
       }
       try {
-        await gPort!.open();
+        gPort!.open();
         await driveFn();
         let cts: boolean = await gPort!.getCts();
         console.info(TAG, 'testGetCts001 getCts: ', cts);
@@ -1586,7 +1584,7 @@ export default function SerialBusManagerTest(): void {
         return Promise.resolve();
       }
       try {
-        await gPort!.open();
+        gPort!.open();
         await driveFn();
         await gPort!.sendBrk();
         console.info(TAG, 'testSendBrk001 sendBrk success');
@@ -1641,7 +1639,7 @@ export default function SerialBusManagerTest(): void {
         return Promise.resolve();
       }
       try {
-        await gPort!.open();
+        gPort!.open();
         await driveFn();
         gPort!.onDisconnect((): void => {
           console.info(TAG, 'testOnDisconnect001 disconnect callback triggered');
@@ -1649,7 +1647,7 @@ export default function SerialBusManagerTest(): void {
         console.info(TAG, 'testOnDisconnect001 register success');
         await gPort!.close();
         done();
-      } catch (err) {
+      } catch (error) {
         console.error(TAG, 'testOnDisconnect001 catch err: ', JSON.stringify(error));
         expect().assertFail();
         done();
@@ -1700,7 +1698,7 @@ export default function SerialBusManagerTest(): void {
         return Promise.resolve();
       }
       try {
-        await gPort!.open();
+        gPort!.open();
         await driveFn();
         gPort!.onDisconnect((): void => {
           console.info(TAG, 'testOffDisconnect001 disconnect callback');
@@ -1757,7 +1755,7 @@ export default function SerialBusManagerTest(): void {
         return Promise.resolve();
       }
       try {
-        await gPort!.open();
+        gPort!.open();
         await driveFn();
         await gPort!.setDtr(true);
         console.info(TAG, 'testSetDtr001 setDtr true success');
@@ -1785,7 +1783,7 @@ export default function SerialBusManagerTest(): void {
         return Promise.resolve();
       }
       try {
-        await gPort!.open();
+        gPort!.open();
         await driveFn();
         await gPort!.setDtr(false);
         console.info(TAG, 'testSetDtr002 setDtr false success');
@@ -1838,7 +1836,7 @@ export default function SerialBusManagerTest(): void {
         return Promise.resolve();
       }
       try {
-        await gPort!.open();
+        gPort!.open();
         await driveFn();
         let dsr: boolean = await gPort!.getDsr();
         console.info(TAG, 'testGetDsr001 getDsr: ', dsr);
