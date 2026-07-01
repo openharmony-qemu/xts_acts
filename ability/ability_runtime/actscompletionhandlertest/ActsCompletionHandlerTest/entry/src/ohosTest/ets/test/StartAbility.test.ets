@@ -64,7 +64,7 @@ let openDialog = async (dialogKey: string, text: string) => {
         hilog.info(DOMAIN, LOG_TAG, 'button %{public}s not found', text);
       }
     } else {
-      allowed = await driver.waitForComponent(ON.text(dialogKey, MatchPattern.CONTAINS), DELAY_TIME);
+      allowed = await driver.waitForComponent(ON.text('使用以下方式打开', MatchPattern.CONTAINS), DELAY_TIME);
       hilog.info(DOMAIN, LOG_TAG, 'needAllow: %{public}s', JSON.stringify(allowed));
       if (allowed) {
         hilog.info(DOMAIN, LOG_TAG, 'findComponents: start');
