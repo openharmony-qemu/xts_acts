@@ -17,12 +17,28 @@
 struct onSelectionChange3 {
   controller: RichEditorController = new RichEditorController();
   options: RichEditorOptions = { controller: this.controller };
+  controller2: RichEditorController = new RichEditorController();
+  options2: RichEditorOptions = { controller: this.controller2 };
   @State text1: number = 0
   @State text2: string = ''
   @State text3: string = ''
 
   build() {
     Column() {
+      RichEditor(this.options2)
+        .onReady(() => {
+          this.controller2.addTextSpan('012345123455464521437888555123123123',
+            {
+              style:
+              {
+                fontColor: Color.Red,
+                fontSize: 10
+              }
+            })
+        })
+        .id('onSelectionChange3_RichEditor2')
+        .width('100%')
+        .height('10%')
       RichEditor(this.options)
         .onReady(() => {
           this.controller.addTextSpan('012345123455464521437888555123123123',
