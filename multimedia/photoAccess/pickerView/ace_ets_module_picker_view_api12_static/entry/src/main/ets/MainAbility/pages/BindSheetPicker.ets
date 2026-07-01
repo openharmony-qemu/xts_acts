@@ -15,7 +15,7 @@
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import { BusinessError } from '@ohos.base';
-import { Entry, Component, Column, Button, Margin, ClickEvent } from '@ohos.arkui.component';
+import { Entry, Component, Column, Button, Margin, Padding, ClickEvent } from '@ohos.arkui.component';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import Context from 'application.Context';
 import { RouterSelectOptionsParams, EventType } from '../common/Common';
@@ -99,6 +99,6 @@ struct BindSheetPicker {
             console.error('PhotoViewPicker.select failed with err: ' + JSON.stringify(err));
           });
         })
-    }.padding(20)
+    }.padding({ top: 20, right: 20, bottom: 20, left: 20 } as Padding)
   }
 }
