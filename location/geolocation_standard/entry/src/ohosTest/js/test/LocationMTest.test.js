@@ -3450,6 +3450,28 @@ export default function geolocationTest_geo7() {
         done();
     })
 
+    /**
+      * @tc.number SUB_HSS_LocationSystem_LocSwitch_0900
+      * @tc.name   SUB_HSS_LocationSystem_LocSwitch_0900
+      * @tc.desc   When the suitch is disabled,any locating process will return 3301100.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  Level 1
+      */
+    it('SUB_HSS_LocationSystem_LocSwitch_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+        try {
+            geolocationm.disableLocation();
+        } catch (error) {
+            console.info("[lbs_js] disableLocation error." + JSON.stringify(error));
+        }
+        try {
+            let mac = geolocationm.getCurrentWifiBssidForLocating();
+        } catch(error) {
+            expect(error.code).assertEqual(3301100);
+        }
+        done();
+    })
+
     })
 }
 
