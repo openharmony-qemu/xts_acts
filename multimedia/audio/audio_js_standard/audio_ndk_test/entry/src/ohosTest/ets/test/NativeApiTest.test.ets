@@ -5361,6 +5361,66 @@ export default function audioNDK() {
     })
 
     /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100
+    * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+    
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200
+    * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300
+    * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400
+    * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_CAPTURER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
     * @tc.name   AudioRenderer_SetIndependentAudioSessionStrategy_001
     * @tc.number AudioRenderer_SetIndependentAudioSessionStrategy_001
     * @tc.desc   SetIndependentAudioSessionStrategy
@@ -5526,6 +5586,66 @@ export default function audioNDK() {
     })
 
     /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0200 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0300 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_RENDERER_SETINDEPENDENTAUDIOSESSIONSTRATEGY_0400 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
     * @tc.name   AudioSessionManager_SetBehavior_001
     * @tc.number AudioSessionManager_SetBehavior_001
     * @tc.desc   SetIndependentAudioSessionStrategy
@@ -5584,6 +5704,22 @@ export default function audioNDK() {
       expect(result).assertEqual(TEST_PASS);
       done();
     })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_SETBEHAVIOR_0100
+    * @tc.number SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_SETBEHAVIOR_0100
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_SETBEHAVIOR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_SETBEHAVIOR_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_SETBEHAVIOR_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
     /**
     * @tc.name   AudioStreamManagerIsMultichannelPlaybackSupported_001
     * @tc.number AudioStreamManagerIsMultichannelPlaybackSupported_001

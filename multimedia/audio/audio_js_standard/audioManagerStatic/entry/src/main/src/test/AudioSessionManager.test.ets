@@ -351,6 +351,28 @@ export default function audioSessionManagerTest() {
       }
       done();
     })
+
+    /**
+     * @tc.name   AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATIC_0300 
+     * @tc.number AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATIC_0300  
+     * @tc.desc   setAudioSessionBehavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.PAUSE_WHEN_INTERRUPTED;
+      expect(behavior).assertEqual(0x00000004);
+      try {
+        sessionManager!.setAudioSessionBehavior(behavior);
+        console.info(`AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATIC_0300: setAudioSessionBehavior with PAUSE_WHEN_INTERRUPTED: PASS`);
+        done();
+      } catch (err) {
+        console.info(`AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_STATIC_0300: setAudioSessionBehavior with PAUSE_WHEN_INTERRUPTED: FAIL :${err.message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
     
     /**
      * @tc.name    SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_SPEAKER_STATIC_0100

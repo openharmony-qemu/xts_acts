@@ -3152,6 +3152,45 @@ static napi_value AudioSuiteEngine_setAudioFormat_006(napi_env env, napi_callbac
     return res;
 }
 
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOSUITENGINE_SETAUDIOFORMAT_0700(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioNodeBuilder *builder = nullptr;
+    OH_AudioNode *audioNode = nullptr;
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+    OH_AudioSuiteNodeBuilder_Create(&builder);
+    OH_AudioSuiteNodeBuilder_SetNodeType(builder, static_cast
+        <OH_AudioNode_Type>(AudioNodeTypeTest::INPUT_NODE_TYPE_DEFAULT_TEST));
+    OH_AudioSuiteNodeBuilder_SetFormat(builder, audioFormatInput);
+    OH_AudioSuiteNodeBuilder_SetRequestDataCallback(builder, MyOnWriteData, g_userData);
+    OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
+    
+    OH_AudioFormat audioFormatError;
+    audioFormatError.samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_32000;
+    audioFormatError.channelLayout = OH_AudioChannelLayout::CH_LAYOUT_AMB_ORDER1_ACN_N3D;
+    audioFormatError.channelCount = 4;
+    audioFormatError.encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW;
+    audioFormatError.sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S32LE;
+
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetAudioFormat(audioNode, &audioFormatError);
+    OH_AudioSuiteNodeBuilder_Destroy(builder);
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+    if (result == AUDIOSUITE_ERROR_UNSUPPORTED_FORMAT) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioSuiteEngine_setAudioFormat_007 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioSuiteEngine_setAudioFormat_007 fail, result is: %{public}d", result);
+    return res;
+}
+
 static napi_value AudioSuiteEngine_DestroyNode_001(napi_env env, napi_callback_info info)
 {
     napi_value res;
@@ -9771,6 +9810,8 @@ static napi_value Init(napi_env env, napi_value exports)
           nullptr, nullptr, nullptr, napi_default, nullptr },
         { "AudioSuiteEngine_setAudioFormat_006", nullptr, AudioSuiteEngine_setAudioFormat_006,
           nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SUB_MULTIMEDIA_AUDIO_AUDIOSUITENGINE_SETAUDIOFORMAT_0700", nullptr,
+          SUB_MULTIMEDIA_AUDIO_AUDIOSUITENGINE_SETAUDIOFORMAT_0700, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "AudioSuiteEngine_DestroyNode_001", nullptr, AudioSuiteEngine_DestroyNode_001,
           nullptr, nullptr, nullptr, napi_default, nullptr },
         { "AudioSuiteEngine_DestroyNode_002", nullptr, AudioSuiteEngine_DestroyNode_002,
