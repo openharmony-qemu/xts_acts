@@ -248,39 +248,52 @@ export default function WebsocketServerStaticTest() {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerStartStatic0500';
       hilog.info(domain, tag, '%{public}s', `${caseName} test start`);
       try {
-        let firstServer: webSocket.WebSocketServer = webSocket.createWebSocketServer();
-        let firstServerConfig: webSocket.WebSocketServerConfig = {
+        let server1: webSocket.WebSocketServer = webSocket.createWebSocketServer();
+        let server2: webSocket.WebSocketServer = webSocket.createWebSocketServer();
+        hilog.info(domain, tag, '%{public}s', `${caseName} --> server1: ${server1}, server2: ${server2}`);
+        
+        let serverConfig: webSocket.WebSocketServerConfig = {
           serverIP: "0.0.0.0",
-          serverPort: 9058,
+          serverPort: 9057,
           maxConcurrentClientsNumber: 10,
           maxConnectionsForOneClient: 4,
+          protocol: "my-protocol",
         };
-        firstServer.start(firstServerConfig).then(async (success: boolean) => {
+        await server1.start(serverConfig).then(async (success: boolean) => {
           if (success) {
-            hilog.info(domain, tag, '%{public}s', `${caseName} First server started successfully on port 8058`);
-            let secondServer: webSocket.WebSocketServer = webSocket.createWebSocketServer();
-            let secondServerConfig: webSocket.WebSocketServerConfig = {
-              serverIP: "0.0.0.0",
-              serverPort: 9058,
-              maxConcurrentClientsNumber: 10,
-              maxConnectionsForOneClient: 4,
-            };
-            secondServer.start(secondServerConfig).catch((error: Error) => {
-              hilog.info(domain, tag, '%{public}s', `${caseName}  error ${JSON.stringify(error)}`);
+            hilog.info(domain, tag, '%{public}s', `${caseName} server1 start success, port occupied`);
+
+            server2.start(serverConfig).then(async (success2: boolean) => {
+              if (success2) {
+                hilog.info(domain, tag, '%{public}s', `${caseName} server2 start success`);
+                expectFail(`${caseName} server2 should not start success`);
+                done();
+                server2.stop();
+                server1.stop();
+                hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
+              } else {
+                expectFail(`${caseName} server2 start fail`);
+                done();
+                server1.stop();
+                hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
+              }
+            }).catch((error: Error) => {
               let err = error as BusinessError;
+              hilog.info(domain, tag, '%{public}s', `${caseName} server2 error ${JSON.stringify(error)}`);
               ExpectTrue(err.code === 2302007, `${caseName} test result error ${JSON.stringify(error)}`);
-              firstServer.stop();
               done();
+              server1.stop();
               hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
             });
           } else {
-            expectFail(`${caseName} First server start fail`);
+            hilog.info(domain, tag, '%{public}s', `${caseName} server1 start fail`);
+            expectFail(`${caseName} server1 start fail`);
             done();
             hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
           }
         }).catch((error: Error) => {
-          hilog.info(domain, tag, '%{public}s', `${caseName} First server error ${JSON.stringify(error)}`);
-          expectFail(`${caseName} First server error`);
+          hilog.info(domain, tag, '%{public}s', `${caseName} server1 error ${JSON.stringify(error)}`);
+          expectFail(`${caseName} server1 should not fail`);
           done();
           hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
         });
