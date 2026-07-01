@@ -2450,7 +2450,7 @@ export default function CameraPhotoSessionTest() {
       }
       // 先设置为最小值
       mCameraSession.setColorTint(range[0]);
-      let currentVal = mCameraSession.getColorTint()
+      let currentVal: int = mCameraSession.getColorTint()
       console.info(`getColorTint value: ${currentVal}`)
       // 再设置null、undefined
       for (let val of [null, undefined]) {
@@ -2493,7 +2493,7 @@ export default function CameraPhotoSessionTest() {
         done();
         return;
       }
-      let testRange = [range[0]-1, range[1]+1]
+      let testRange: Array<int> = [range[0]-1, range[1]+1]
       for (let val of testRange) {
         try {
           console.info(`setColorTint: ${val}`);
