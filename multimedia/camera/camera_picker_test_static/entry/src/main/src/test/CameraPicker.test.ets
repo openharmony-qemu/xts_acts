@@ -236,17 +236,17 @@ export function cameraPicker() {
         cameraPosition: cameraObj.CameraPosition.CAMERA_POSITION_BACK
       };
       await Utils.msSleep(2000);
-      picker.pick(appContext!, [picker.PickerMediaType.PHOTO, picker.PickerMediaType.VIDEO], photoProfile)
-        .then((data: picker.PickerResult) => {
-          hilog.info(domain, TAG, "SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0100 get pick result " + JSON.stringify(data));
-          expect(data.resultCode == 0).assertTrue();
-          expect(data.mediaType == picker.PickerMediaType.PHOTO).assertTrue();
-          done();
-        })
-        .catch((err:Error)=>{
-          console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0100 get pick error " + err);
-          expect(true).assertFalse();
-        });
+      try {
+        let data = await picker.pick(appContext!, [picker.PickerMediaType.PHOTO, picker.PickerMediaType.VIDEO], photoProfile);
+        hilog.info(domain, TAG, "SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0100 get pick result " + JSON.stringify(data));
+        expect(data.resultCode == 0).assertTrue();
+        expect(data.mediaType == picker.PickerMediaType.PHOTO).assertTrue();
+        done();
+      } catch (err) {
+        console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0100 get pick error " + err);
+        expect(true).assertFalse();
+        done();
+      }
       await Utils.msSleep(1000);
       await driveAllowFn();
       await driveSafeFn();
@@ -268,17 +268,17 @@ export function cameraPicker() {
         cameraPosition: cameraObj.CameraPosition.CAMERA_POSITION_FRONT
       };
       await Utils.msSleep(2000);
-      picker.pick(appContext!, [picker.PickerMediaType.PHOTO, picker.PickerMediaType.VIDEO], photoProfile)
-        .then((data: picker.PickerResult) => {
-          hilog.info(domain, TAG, "SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0101 get pick result " + JSON.stringify(data));
-          expect(data.resultCode == 0).assertTrue();
-          expect(data.mediaType == picker.PickerMediaType.PHOTO).assertTrue();
-          done();
-        })
-        .catch((err:Error)=>{
-          console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0101 get pick error " + err);
-          expect(true).assertFalse();
-        });
+      try {
+        let data = await picker.pick(appContext!, [picker.PickerMediaType.PHOTO, picker.PickerMediaType.VIDEO], photoProfile);
+        hilog.info(domain, TAG, "SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0101 get pick result " + JSON.stringify(data));
+        expect(data.resultCode == 0).assertTrue();
+        expect(data.mediaType == picker.PickerMediaType.PHOTO).assertTrue();
+        done();
+      } catch (err) {
+        console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0101 get pick error " + err);
+        expect(true).assertFalse();
+        done();
+      }
       await Utils.msSleep(1000);
       await driveAllowFn();
       await driveSafeFn();
@@ -307,18 +307,18 @@ export function cameraPicker() {
         saveUri: uri
       };
       await Utils.msSleep(2000);
-      picker.pick(appContext!, [picker.PickerMediaType.PHOTO, picker.PickerMediaType.VIDEO], photoProfile)
-        .then((data: picker.PickerResult) => {
-          hilog.info(domain, TAG, "SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0102 get pick result " + JSON.stringify(data));
-          expect(data.resultCode == 0).assertTrue();
-          expect(data.resultUri != null && data.resultUri !== "").assertTrue();
-          expect(data.mediaType == picker.PickerMediaType.PHOTO).assertTrue();
-          done();
-        })
-        .catch((err:Error)=>{
-          console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0102 get pick error " + err);
-          expect(true).assertFalse();
-        });
+      try {
+        let data = await picker.pick(appContext!, [picker.PickerMediaType.PHOTO, picker.PickerMediaType.VIDEO], photoProfile);
+        hilog.info(domain, TAG, "SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0102 get pick result " + JSON.stringify(data));
+        expect(data.resultCode == 0).assertTrue();
+        expect(data.resultUri != null && data.resultUri !== "").assertTrue();
+        expect(data.mediaType == picker.PickerMediaType.PHOTO).assertTrue();
+        done();
+      } catch (err) {
+        console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_STATIC_0102 get pick error " + err);
+        expect(true).assertFalse();
+        done();
+      }
       await Utils.msSleep(1000);
       await driveAllowFn();
       await driveSafeFn();
@@ -383,17 +383,17 @@ export function cameraPicker() {
         videoDuration: videoDuration
       };
       await Utils.msSleep(2000);
-      picker.pick(appContext!, [picker.PickerMediaType.VIDEO], videoProfile)
-        .then((data: picker.PickerResult) => {
-          hilog.info(domain, TAG, "SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECORDVIDEO_STATIC_0100 get pick result " + JSON.stringify(data));
-          expect(data.resultCode == 0).assertTrue();
-          expect(data.mediaType == picker.PickerMediaType.VIDEO).assertTrue();
-          done();
-        })
-        .catch((err:Error)=>{
-          console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECORDVIDEO_STATIC_0100 get pick error " + err);
-          expect(true).assertFalse();
-        });
+      try {
+        let data = await picker.pick(appContext!, [picker.PickerMediaType.VIDEO], videoProfile);
+        hilog.info(domain, TAG, "SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECORDVIDEO_STATIC_0100 get pick result " + JSON.stringify(data));
+        expect(data.resultCode == 0).assertTrue();
+        expect(data.mediaType == picker.PickerMediaType.VIDEO).assertTrue();
+        done();
+      } catch (err) {
+        console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECORDVIDEO_STATIC_0100 get pick error " + err);
+        expect(true).assertFalse();
+        done();
+      }
       await Utils.msSleep(1000);
       await driveAllowFn();
       await driveSafeFn();
@@ -415,17 +415,17 @@ export function cameraPicker() {
         cameraPosition: cameraObj.CameraPosition.CAMERA_POSITION_BACK,
       };
       await Utils.msSleep(2000);
-      picker.pick(appContext!, [picker.PickerMediaType.VIDEO], videoProfile)
-        .then((data: picker.PickerResult) => {
-          hilog.info(domain, TAG, "SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECORDVIDEO_STATIC_0101 get pick result " + JSON.stringify(data));
-          expect(data.resultCode == 0).assertTrue();
-          expect(data.mediaType == picker.PickerMediaType.VIDEO).assertTrue();
-          done();
-        })
-        .catch((err:Error)=>{
-          console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECORDVIDEO_STATIC_0101 get pick error " + err);
-          expect(true).assertFalse();
-        });
+      try {
+        let data = await picker.pick(appContext!, [picker.PickerMediaType.VIDEO], videoProfile);
+        hilog.info(domain, TAG, "SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECORDVIDEO_STATIC_0101 get pick result " + JSON.stringify(data));
+        expect(data.resultCode == 0).assertTrue();
+        expect(data.mediaType == picker.PickerMediaType.VIDEO).assertTrue();
+        done();
+      } catch (err) {
+        console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECORDVIDEO_STATIC_0101 get pick error " + err);
+        expect(true).assertFalse();
+        done();
+      }
       await Utils.msSleep(1000);
       await driveAllowFn();
       await driveSafeFn();
@@ -449,17 +449,17 @@ export function cameraPicker() {
         videoDuration: videoDuration
       };
       await Utils.msSleep(2000);
-      picker.pick(appContext!, [picker.PickerMediaType.VIDEO], videoProfile)
-        .then((data: picker.PickerResult) => {
-          hilog.info(domain, TAG, "SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECORDVIDEO_STATIC_0102 get pick result " + JSON.stringify(data));
-          expect(data.resultCode == 0).assertTrue();
-          expect(data.mediaType == picker.PickerMediaType.VIDEO).assertTrue();
-          done();
-        })
-        .catch((err:Error)=>{
-          console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECORDVIDEO_STATIC_0102 get pick error " + err);
-          expect(true).assertFalse();
-        });
+      try {
+        let data = await picker.pick(appContext!, [picker.PickerMediaType.VIDEO], videoProfile);
+        hilog.info(domain, TAG, "SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECORDVIDEO_STATIC_0102 get pick result " + JSON.stringify(data));
+        expect(data.resultCode == 0).assertTrue();
+        expect(data.mediaType == picker.PickerMediaType.VIDEO).assertTrue();
+        done();
+      } catch (err) {
+        console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECORDVIDEO_STATIC_0102 get pick error " + err);
+        expect(true).assertFalse();
+        done();
+      }
       await Utils.msSleep(1000);
       await driveAllowFn();
       await driveSafeFn();

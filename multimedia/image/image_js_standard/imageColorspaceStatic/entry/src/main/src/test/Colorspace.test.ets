@@ -84,6 +84,10 @@ export default function imageColorSpace() {
             console.info('afterAll case');
         })
 
+    const sleep = (ms?: number | undefined): Promise<void> => {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
     const getBuffer = (fileName: string) => {
         const filePath = filesDir + '/' + fileName;
         let file = fs.openSync(filePath);
@@ -211,6 +215,7 @@ export default function imageColorSpace() {
          */
         it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_DECODE_CALLBACK_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
             let logger = new Logger('SUB_MULTIMEDIA_IMAGE_COLORSPACE_DECODE_CALLBACK_STATIC_0100');
+            let createPixelMapDone = false;
             try {
                 let imageSource = genPicSource();
                 logger.log("ImageSource " + (imageSource != undefined));
@@ -221,8 +226,12 @@ export default function imageColorSpace() {
                         logger.log("PixelMap " + pixelMap);
                         logger.log("PixelMap " + (pixelMap != undefined));
                         expect(pixelMap != undefined).assertTrue();
-                        done();
+                        createPixelMapDone = true;
                     })
+                    while (!createPixelMapDone) {
+                        await sleep(100);
+                    }
+                    done();
                 }
             } catch (error) {
                 logger.log('failed ' + error);

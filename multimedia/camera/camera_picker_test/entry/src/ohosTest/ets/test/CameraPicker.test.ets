@@ -305,17 +305,17 @@ export function cameraPicker() {
         cameraPosition: camera.CameraPosition.CAMERA_POSITION_BACK
       };
       await sleep(2000);
-      picker.pick(getContext(), [picker.PickerMediaType.PHOTO, picker.PickerMediaType.VIDEO], photoProfile)
-        .then(data => {
-          console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0100 get pick result " + JSON.stringify(data));
-          expect(data.resultCode).assertEqual(0);
-          expect(data.mediaType).assertEqual(picker.PickerMediaType.PHOTO);
-          done();
-        })
-        .catch((err:BusinessError)=>{
-          console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0100 get pick error " + JSON.stringify(err));
-          expect(true).assertFalse();
-        });
+      try {
+        let data = await picker.pick(getContext(), [picker.PickerMediaType.PHOTO, picker.PickerMediaType.VIDEO], photoProfile);
+        console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0100 get pick result " + JSON.stringify(data));
+        expect(data.resultCode).assertEqual(0);
+        expect(data.mediaType).assertEqual(picker.PickerMediaType.PHOTO);
+        done();
+      } catch (err) {
+        console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0100 get pick error " + JSON.stringify(err));
+        expect(true).assertFalse();
+        done();
+      }
       await sleep(1000);
       await driveAllowFn();
       await driveSafeFn();
@@ -337,17 +337,17 @@ export function cameraPicker() {
         cameraPosition: camera.CameraPosition.CAMERA_POSITION_FRONT
       };
       await sleep(2000);
-      picker.pick(getContext(), [picker.PickerMediaType.PHOTO, picker.PickerMediaType.VIDEO], photoProfile)
-        .then(data => {
-          console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0101 get pick result " + JSON.stringify(data));
-          expect(data.resultCode).assertEqual(0);
-          expect(data.mediaType).assertEqual(picker.PickerMediaType.PHOTO);
-          done();
-        })
-        .catch((err:BusinessError)=>{
-          console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0101 get pick error " + JSON.stringify(err));
-          expect(true).assertFalse();
-        });
+      try {
+        let data = await picker.pick(getContext(), [picker.PickerMediaType.PHOTO, picker.PickerMediaType.VIDEO], photoProfile);
+        console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0101 get pick result " + JSON.stringify(data));
+        expect(data.resultCode).assertEqual(0);
+        expect(data.mediaType).assertEqual(picker.PickerMediaType.PHOTO);
+        done();
+      } catch (err) {
+        console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0101 get pick error " + JSON.stringify(err));
+        expect(true).assertFalse();
+        done();
+      }
       await sleep(1000);
       await driveAllowFn();
       await driveSafeFn();
@@ -375,18 +375,18 @@ export function cameraPicker() {
         saveUri: uri
       };
       await sleep(2000);
-      picker.pick(getContext(), [picker.PickerMediaType.PHOTO, picker.PickerMediaType.VIDEO], photoProfile)
-        .then(data => {
-          console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0102 get pick result " + JSON.stringify(data));
-          expect(data.resultCode).assertEqual(0);
-          expect(data.resultUri).assertEqual(uri);
-          expect(data.mediaType).assertEqual(picker.PickerMediaType.PHOTO);
-          done();
-        })
-        .catch((err:BusinessError)=>{
-          console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0102 get pick error " + JSON.stringify(err));
-          expect(true).assertFalse();
-        });
+      try {
+        let data = await picker.pick(getContext(), [picker.PickerMediaType.PHOTO, picker.PickerMediaType.VIDEO], photoProfile);
+        console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0102 get pick result " + JSON.stringify(data));
+        expect(data.resultCode).assertEqual(0);
+        expect(data.resultUri).assertEqual(uri);
+        expect(data.mediaType).assertEqual(picker.PickerMediaType.PHOTO);
+        done();
+      } catch (err) {
+        console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0102 get pick error " + JSON.stringify(err));
+        expect(true).assertFalse();
+        done();
+      }
       await sleep(1000);
       await driveAllowFn();
       await driveSafeFn();
@@ -408,17 +408,17 @@ export function cameraPicker() {
         cameraPosition: camera.CameraPosition.CAMERA_POSITION_FRONT
       };
       await sleep(2000);
-      picker.pick(getContext(), [picker.PickerMediaType.PHOTO, picker.PickerMediaType.VIDEO], photoProfile)
-        .then(data => {
-          console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0103 get pick result " + JSON.stringify(data));
-          expect(data.resultCode).assertEqual(0);
-          expect(data.mediaType).assertEqual(picker.PickerMediaType.PHOTO);
-          done();
-        })
-        .catch((err:BusinessError)=>{
-          console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0103 get pick error " + JSON.stringify(err));
-          expect(true).assertFalse();
-        });
+      try {
+        let data = await picker.pick(getContext(), [picker.PickerMediaType.PHOTO, picker.PickerMediaType.VIDEO], photoProfile);
+        console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0103 get pick result " + JSON.stringify(data));
+        expect(data.resultCode).assertEqual(0);
+        expect(data.mediaType).assertEqual(picker.PickerMediaType.PHOTO);
+        done();
+      } catch (err) {
+        console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0103 get pick error " + JSON.stringify(err));
+        expect(true).assertFalse();
+        done();
+      }
       await sleep(1000);
       await driveAllowFn();
       await driveSafeFn();

@@ -161,6 +161,7 @@ async function captureWithSettingsCallback(done: Function, testName: string,
       mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCap.photoProfiles[0]);
       mPreviewOutput = mCameraManager.createPreviewOutput(mCameraOutputCap.previewProfiles[0], indexSurfaceId);
       await getPhotoSession(testName, mPreviewOutput, mPhotoOutput);
+      let isCaptureCallback = false;
       mPhotoOutput.capture(settings as camera.PhotoCaptureSetting, (error) => {
         if (error !== undefined && error.code !== 0) {
           console.error(TAG, testName + ' failed to capture, err: ' + error.code + ', msg: ' + error.message);
@@ -169,7 +170,21 @@ async function captureWithSettingsCallback(done: Function, testName: string,
           console.info(TAG, testName + ' capture passed.');
           expect(true).assertTrue();
         }
+        isCaptureCallback = true;
       });
+      const maxRetry = 50;
+      const interval = 200;
+      for (let i = 0; i < maxRetry; i++) {
+        await sleep(interval);
+        if (isCaptureCallback) {
+          console.info(TAG, testName + ' capture callback executed.');
+          break;
+        }
+        if (i === maxRetry - 1) {
+          console.error(TAG, testName + ' capture callback timeout.');
+          expect().assertFail();
+        }
+      }
       console.info(TAG, testName + ' capture end.');
       await releasePhotoSession();
     }
@@ -268,6 +283,7 @@ export default function PhotoOutputBackTest() {
           mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCap.photoProfiles[0]);
           mPreviewOutput = mCameraManager.createPreviewOutput(mCameraOutputCap.previewProfiles[0], indexSurfaceId);
           await getPhotoSession(testName, mPreviewOutput, mPhotoOutput);
+          let isCaptureCallback = false;
           mPhotoOutput.capture((error) => {
             if (error !== undefined && error.code !== 0) {
               console.error(TAG, testName + ' failed to capture, err: ' + error.code + ', msg: ' + error.message);
@@ -276,7 +292,21 @@ export default function PhotoOutputBackTest() {
               console.info(TAG, testName + ' capture passed.');
               expect(true).assertTrue();
             }
+            isCaptureCallback = true;
           });
+          const maxRetry = 50;
+          const interval = 200;
+          for (let i = 0; i < maxRetry; i++) {
+            await sleep(interval);
+            if (isCaptureCallback) {
+              console.info(TAG, testName + ' capture callback executed.');
+              break;
+            }
+            if (i === maxRetry - 1) {
+              console.error(TAG, testName + ' capture callback timeout.');
+              expect().assertFail();
+            }
+          }
           console.info(TAG, testName + ' capture end.');
           await releasePhotoSession();
         }

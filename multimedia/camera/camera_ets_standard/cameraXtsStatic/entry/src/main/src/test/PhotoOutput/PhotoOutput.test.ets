@@ -371,6 +371,7 @@ async function captureWithSettingsCallback(done: () => void, testName: string,
     } else {
       createPhotoOutput();
       await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+      let isCaptureCallback = false;
       mPhotoOutput!.capture(settings as camera.PhotoCaptureSetting, (error) => {
         if (error !== undefined && error!.code !== 0) {
           console.error(TAG, testName + ' failed to capture, err: ' + error!.code + ', msg: ' + error!.message);
@@ -379,7 +380,21 @@ async function captureWithSettingsCallback(done: () => void, testName: string,
           console.info(TAG, testName + ' capture passed.');
           expect(mPhotoOutput).assertTrue();
         }
+        isCaptureCallback = true;
       });
+      const maxRetry = 50;
+      const interval = 200;
+      for (let i = 0; i < maxRetry; i++) {
+        await Utils.msSleep(interval);
+        if (isCaptureCallback) {
+          console.info(TAG, testName + ' capture callback executed.');
+          break;
+        }
+        if (i === maxRetry - 1) {
+          console.error(TAG, testName + ' capture callback timeout.');
+          expect().assertFail();
+        }
+      }
       console.info(TAG, testName + ' capture end.');
       await releasePhotoSession();
     }

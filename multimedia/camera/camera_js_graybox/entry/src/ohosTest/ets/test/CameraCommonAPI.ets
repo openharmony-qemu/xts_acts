@@ -1207,11 +1207,13 @@ export async function photoAssetAvailableCallback(err: BusinessError, photoAsset
 
   //修改资产名字，方便问题后续定位
   assetChangeRequest.setTitle(curPhotoName)
-  photoHelper.applyChanges(assetChangeRequest).then(() => {
+  try {
+    await photoHelper.applyChanges(assetChangeRequest);
     console.info('apply setTitle successfully, name is ' + curPhotoName);
-  }).catch((err: BusinessError) => {
-    console.error(`apply setTitle fail with error: ${err.code}, ${err.message}`);
-  });
+  } catch (err) {
+    let error = err as BusinessError;
+    console.error(`apply setTitle fail with error: ${error.code}, ${error.message}`);
+  }
 }
 
 /**
@@ -1697,12 +1699,14 @@ function getDateStringWithTimeStamp(timestamp: number): string {
  * @param { photoAccessHelper.PhotoAsset } asset 媒体库资产对象
  * @param { string } 新名称
  */
-export function renameAsset(asset: photoAccessHelper.PhotoAsset, newTitle: string) {
+export async function renameAsset(asset: photoAccessHelper.PhotoAsset, newTitle: string) {
   let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest = new photoAccessHelper.MediaAssetChangeRequest(asset!);
   assetChangeRequest.setTitle(newTitle)
-  photoHelper.applyChanges(assetChangeRequest).then(() => {
+  try {
+    await photoHelper.applyChanges(assetChangeRequest);
     console.info('apply setTitle successfully');
-  }).catch((err: BusinessError) => {
-    console.error(`apply setTitle failed with error: ${err.code}, ${err.message}`);
-  });;
+  } catch (err) {
+    let error = err as BusinessError;
+    console.error(`apply setTitle failed with error: ${error.code}, ${error.message}`);
+  }
 }

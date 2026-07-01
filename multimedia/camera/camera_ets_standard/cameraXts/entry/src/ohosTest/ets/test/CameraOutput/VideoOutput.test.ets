@@ -243,6 +243,7 @@ export default function VideoOutputTest() {
             mVideoOutput = mCameraManager.createVideoOutput(mVideoProfile, mVideoSurfaceId);
             mPreviewOutput = mCameraManager.createPreviewOutput(mPreviewProfile, indexSurfaceId);
             await getVideoSession(testName, mPreviewOutput, mVideoOutput);
+            let isStartCallback = false;
             mVideoOutput.start((error) => {
               if (error !== undefined && error.code !== 0) {
                 console.error(TAG, testName + ' failed to start, err: ' + error.code + ', msg: ' + error.message);
@@ -251,7 +252,21 @@ export default function VideoOutputTest() {
                 console.info(TAG, testName + ' start passed.');
                 expect(true).assertTrue();
               }
+              isStartCallback = true;
             });
+            const maxRetry = 50;
+            const interval = 200;
+            for (let i = 0; i < maxRetry; i++) {
+              await sleep(interval);
+              if (isStartCallback) {
+                console.info(TAG, testName + ' start callback executed.');
+                break;
+              }
+              if (i === maxRetry - 1) {
+                console.error(TAG, testName + ' start callback timeout.');
+                expect().assertFail();
+              }
+            }
             console.info(TAG, testName + ' start end.');
             await releaseVideoSession();
           }
@@ -331,6 +346,7 @@ export default function VideoOutputTest() {
             mVideoOutput = mCameraManager.createVideoOutput(mVideoProfile, mVideoSurfaceId);
             mPreviewOutput = mCameraManager.createPreviewOutput(mPreviewProfile, indexSurfaceId);
             await getVideoSession(testName, mPreviewOutput, mVideoOutput);
+            let isStopCallback = false;
             mVideoOutput.stop((error) => {
               if (error !== undefined && error.code !== 0) {
                 console.error(TAG, testName + ' failed to stop, err: ' + error.code + ', msg: ' + error.message);
@@ -339,7 +355,21 @@ export default function VideoOutputTest() {
                 console.info(TAG, testName + ' stop passed.');
                 expect(true).assertTrue();
               }
+              isStopCallback = true;
             });
+            const maxRetry = 50;
+            const interval = 200;
+            for (let i = 0; i < maxRetry; i++) {
+              await sleep(interval);
+              if (isStopCallback) {
+                console.info(TAG, testName + ' stop callback executed.');
+                break;
+              }
+              if (i === maxRetry - 1) {
+                console.error(TAG, testName + ' stop callback timeout.');
+                expect().assertFail();
+              }
+            }
             console.info(TAG, testName + ' stop end.');
             await releaseVideoSession();
           }
@@ -571,6 +601,7 @@ export default function VideoOutputTest() {
             mPreviewOutput = mCameraManager.createPreviewOutput(mPreviewProfile, indexSurfaceId);
             await getVideoSession(testName, mPreviewOutput, mVideoOutput);
             console.info(TAG, testName + ' getPhotoSession passed.');
+            let isReleaseCallback = false;
             mVideoOutput.release((error) => {
               if (error !== undefined && error.code !== 0) {
                 console.error(TAG,
@@ -580,7 +611,21 @@ export default function VideoOutputTest() {
                 console.info(TAG, testName + ' release passed.');
                 expect(true).assertTrue();
               }
+              isReleaseCallback = true;
             });
+            const maxRetry = 50;
+            const interval = 200;
+            for (let i = 0; i < maxRetry; i++) {
+              await sleep(interval);
+              if (isReleaseCallback) {
+                console.info(TAG, testName + ' release callback executed.');
+                break;
+              }
+              if (i === maxRetry - 1) {
+                console.error(TAG, testName + ' release callback timeout.');
+                expect().assertFail();
+              }
+            }
             await mPreviewOutput.release();
             await mVideoSession.release();
             console.info(TAG, testName + ' end.');

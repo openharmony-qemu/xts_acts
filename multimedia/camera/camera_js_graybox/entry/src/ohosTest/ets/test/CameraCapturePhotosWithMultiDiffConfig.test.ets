@@ -185,9 +185,15 @@ export default function CameraCapturePhotosWithMultiDiffConfig() {
      */
     it('SUB_MULTIMEDIA_CAMERA_CAPTURE_DYNAMIC_PHOTO_MULTI_CONFIG_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let testNum = 'SUB_MULTIMEDIA_CAMERA_CAPTURE_DYNAMIC_PHOTO_MULTI_CONFIG_0100'
-      let ret = await cameraCapturePhotosTest(testNum, 0, 0);
-      expect(ret).assertTrue();
-      done();
+      try {
+        let ret = await cameraCapturePhotosTest(testNum, 0, 0);
+        expect(ret).assertTrue();
+        done();
+      } catch (error) {
+        console.error(`${testNum} error is ${JSON.stringify(error)}`);
+        expect().assertFail();
+        done();
+      }
     })
 
     /**
@@ -200,9 +206,15 @@ export default function CameraCapturePhotosWithMultiDiffConfig() {
      */
     it('SUB_MULTIMEDIA_CAMERA_CAPTURE_DYNAMIC_PHOTO_MULTI_CONFIG_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let testNum = 'SUB_MULTIMEDIA_CAMERA_CAPTURE_DYNAMIC_PHOTO_MULTI_CONFIG_0200'
-      let ret = await cameraCapturePhotosTest(testNum, 0, 1);
-      expect(ret).assertTrue();
-      done();
+      try {
+        let ret = await cameraCapturePhotosTest(testNum, 0, 1);
+        expect(ret).assertTrue();
+        done();
+      } catch (error) {
+        console.error(`${testNum} error is ${JSON.stringify(error)}`);
+        expect().assertFail();
+        done();
+      }
     })
 
     /**
@@ -215,9 +227,15 @@ export default function CameraCapturePhotosWithMultiDiffConfig() {
      */
     it('SUB_MULTIMEDIA_CAMERA_CAPTURE_DYNAMIC_PHOTO_MULTI_CONFIG_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let testNum = 'SUB_MULTIMEDIA_CAMERA_CAPTURE_DYNAMIC_PHOTO_MULTI_CONFIG_0300'
-      let ret = await cameraCapturePhotosTest(testNum, 0, 2);
-      expect(ret).assertTrue();
-      done();
+      try {
+        let ret = await cameraCapturePhotosTest(testNum, 0, 2);
+        expect(ret).assertTrue();
+        done();
+      } catch (error) {
+        console.error(`${testNum} error is ${JSON.stringify(error)}`);
+        expect().assertFail();
+        done();
+      }
     })
 
     /**
@@ -230,9 +248,15 @@ export default function CameraCapturePhotosWithMultiDiffConfig() {
      */
     it('SUB_MULTIMEDIA_CAMERA_CAPTURE_DYNAMIC_PHOTO_MULTI_CONFIG_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let testNum = 'SUB_MULTIMEDIA_CAMERA_CAPTURE_DYNAMIC_PHOTO_MULTI_CONFIG_0400'
-      let ret = await cameraCapturePhotosTest(testNum, 1, 0);
-      expect(ret).assertTrue();
-      done();
+      try {
+        let ret = await cameraCapturePhotosTest(testNum, 1, 0);
+        expect(ret).assertTrue();
+        done();
+      } catch (error) {
+        console.error(`${testNum} error is ${JSON.stringify(error)}`);
+        expect().assertFail();
+        done();
+      }
     })
 
 /**
@@ -245,9 +269,15 @@ export default function CameraCapturePhotosWithMultiDiffConfig() {
      */
     it('SUB_MULTIMEDIA_CAMERA_CAPTURE_DYNAMIC_PHOTO_MULTI_CONFIG_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let testNum = 'SUB_MULTIMEDIA_CAMERA_CAPTURE_DYNAMIC_PHOTO_MULTI_CONFIG_0500'
-      let ret = await cameraCapturePhotosTest(testNum, 1, 1);
-      expect(ret).assertTrue();
-      done();
+      try {
+        let ret = await cameraCapturePhotosTest(testNum, 1, 1);
+        expect(ret).assertTrue();
+        done();
+      } catch (error) {
+        console.error(`${testNum} error is ${JSON.stringify(error)}`);
+        expect().assertFail();
+        done();
+      }
     })
 
     /**
@@ -260,9 +290,15 @@ export default function CameraCapturePhotosWithMultiDiffConfig() {
      */
     it('SUB_MULTIMEDIA_CAMERA_CAPTURE_DYNAMIC_PHOTO_MULTI_CONFIG_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let testNum = 'SUB_MULTIMEDIA_CAMERA_CAPTURE_DYNAMIC_PHOTO_MULTI_CONFIG_0600'
-      let ret = await cameraCapturePhotosTest(testNum, 1, 2);
-      expect(ret).assertTrue();
-      done();
+      try {
+        let ret = await cameraCapturePhotosTest(testNum, 1, 2);
+        expect(ret).assertTrue();
+        done();
+      } catch (error) {
+        console.error(`${testNum} error is ${JSON.stringify(error)}`);
+        expect().assertFail();
+        done();
+      }
     })
   })
 }
