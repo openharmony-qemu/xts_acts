@@ -17,6 +17,7 @@ import { describe, it, expect, TestType, Size, Level } from "../../../hypium/ind
 import hilog from '@ohos.hilog'
 import { BusinessError } from '@ohos.base';
 import webSocket from '@ohos.net.webSocket';
+import Utils from './Util.test';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'WebSocketTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -236,14 +237,6 @@ export default function WebsocketServerStaticTest() {
         hilog.info(domain, tag, '%{public}s', `${caseName} test end`);
       }
     });
-    /**
-     * @tc.name   testNetworkMgrWebSocketWebSocketServerStartStatic0500
-     * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerStartStatic_0500
-     * @tc.desc   Start a WebSocketServer on an already occupied port (errorCode:2302007)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
     it('testNetworkMgrWebSocketWebSocketServerStartStatic0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerStartStatic0500';
       hilog.info(domain, tag, '%{public}s', `${caseName} test start`);
@@ -262,11 +255,7 @@ export default function WebsocketServerStaticTest() {
         await server1.start(serverConfig).then(async (success: boolean) => {
           if (success) {
             hilog.info(domain, tag, '%{public}s', `${caseName} server1 start success, port occupied`);
-            await new Promise<void>((resolve: (value: void) => void): void => {
-              setTimeout((): void => {
-                resolve();
-              }, 500);
-            });
+            await Utils.msSleep(500)
             server2.start(serverConfig).then(async (success2: boolean) => {
               if (success2) {
                 hilog.info(domain, tag, '%{public}s', `${caseName} server2 start success`);
