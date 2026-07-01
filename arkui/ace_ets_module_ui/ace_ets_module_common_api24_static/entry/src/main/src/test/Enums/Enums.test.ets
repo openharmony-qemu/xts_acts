@@ -25,7 +25,7 @@ import { UtilsTest } from '../Util.test';
 
 const ROUTE = 'MainAbility/pages/Enums/Enums';
 const PFX = 'Enums';
-const SLEEP = 400;
+const SLEEP = 1000;
 const KEYS: string[] = [`${PFX}_enum_MULTILINE_START`, `${PFX}_enum_MULTILINE_CENTER`];
 
 function logNav(msg: string): void {
@@ -120,6 +120,7 @@ export default function EnumsTest() {
      */
     it('SUB_ArkUI_Enums_Ellipsis_Mode_MULTILINE_START_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
+      await Utils.sleep(SLEEP);
       await (await driver.findComponent(ON.id(`${PFX}_btn_MULTILINE_START`)))?.click();
       await Utils.sleep(SLEEP);
       expect(AppStorage.get<string>(`${PFX}_enum_MULTILINE_START`)).assertEqual('true');
@@ -136,6 +137,7 @@ export default function EnumsTest() {
      */
     it('SUB_ArkUI_Enums_Ellipsis_Mode_MULTILINE_CENTER_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
+      await Utils.sleep(SLEEP);
       await (await driver.findComponent(ON.id(`${PFX}_btn_MULTILINE_CENTER`)))?.click();
       await Utils.sleep(SLEEP);
       expect(AppStorage.get<string>(`${PFX}_enum_MULTILINE_CENTER`)).assertEqual('true');
