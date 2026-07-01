@@ -262,7 +262,11 @@ export default function WebsocketServerStaticTest() {
         await server1.start(serverConfig).then(async (success: boolean) => {
           if (success) {
             hilog.info(domain, tag, '%{public}s', `${caseName} server1 start success, port occupied`);
-            await new Promise<void>((resolve: Function) => setTimeout(resolve, 500));
+            await new Promise<void>((resolve: (value: void) => void): void => {
+              setTimeout((): void => {
+                resolve();
+              }, 500);
+            });
             server2.start(serverConfig).then(async (success2: boolean) => {
               if (success2) {
                 hilog.info(domain, tag, '%{public}s', `${caseName} server2 start success`);
