@@ -555,5 +555,24 @@ export default function dataShareConfigPutValueTest() {
         expect().assertFail();
       }
     });
+
+    /**
+     * @tc.name   dataShareConfigPutValueTest0019
+     * @tc.number SUB_DistributedData_DataShare_SDK_PutValue_0190
+     * @tc.desc   call putValue when uri is not exist
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigPutValueTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let testUri = ""
+        await g_handle!.putValue(testUri, 1, "", g_config);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] dataShareConfigPutValueTest019 failed,code =" + err.code + ",message=" + err.message);
+        expect(err.code).assertEqual(15700011);
+      }
+    });
   })
 }

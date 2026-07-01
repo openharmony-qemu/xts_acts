@@ -155,6 +155,34 @@ export default function dataShareConfigRemoveValuesTest() {
     });
 
     /**
+     * @tc.name   dataShareConfigRemoveValuesTest007
+     * @tc.number SUB_DistributedData_DataShare_SDK_RemoveValues_0070
+     * @tc.desc   call removeValue when only has one key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigRemoveValuesTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let testUri = "datashareproxy://com.acts.dataShare.config.static/test"
+        let proxyData: dataShare.ProxyData[] = [{
+          uri: testUri,
+          values: { 1: "test1" },
+          isMultiValues: true,
+          allowList: [],
+          trustProviders: []
+        }];
+        await g_handle!.publish(proxyData, g_config);
+        await g_handle!.removeValue(testUri, 1, g_config_100K);
+        let values = await g_handle!.getValues(testUri, g_config_4K);
+        expect(values.length).assertEqual(0);
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] dataShareConfigRemoveValuesTest007 failed,code =" + err.code + ",message=" + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
      * @tc.name   dataShareConfigRemoveValuesTest008
      * @tc.number SUB_DistributedData_DataShare_SDK_RemoveValues_0080
      * @tc.desc   call removeValue when only has one key
@@ -180,6 +208,25 @@ export default function dataShareConfigRemoveValuesTest() {
       } catch (err) {
         console.error(TAG + "[DataShareProvider] dataShareConfigRemoveValuesTest008 failed,code =" + err.code + ",message=" + err.message);
         expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   dataShareConfigRemoveValuesTest090
+     * @tc.number SUB_DistributedData_DataShare_SDK_RemoveValues_0090
+     * @tc.desc   call removeValue when uri length exceeds 256 bytes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigRemoveValuesTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let testUri = "";
+        await g_handle!.removeValue(testUri, 1, g_config_4K);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] dataShareConfigRemoveValuesTest009 failed,code =" + err.code + ",message=" + err.message);
+        expect(err.code).assertEqual(15700011);
       }
     });
   })

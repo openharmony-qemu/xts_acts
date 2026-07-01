@@ -106,6 +106,25 @@ export default function dataShareConfigGetValuesTest() {
         expect(err.code).assertEqual(15700014);
       }
     });
+
+    /**
+     * @tc.name   dataShareConfigGetValuesTest005
+     * @tc.number SUB_DistributedData_DataShare_SDK_GetValues_0050
+     * @tc.desc   call removeValue when uri length exceeds 256 bytes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigGetValuesTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let overLengthUri = "datashareproxy://com.example.myapplication/" + 'X'.repeat(214);
+        await g_handle!.getValues(overLengthUri, g_config_100K);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] dataShareConfigGetValuesTest005 failed,code =" + err.code + ",message=" + err.message);
+        expect(err.code).assertEqual(15700014);
+      }
+    });
     
     /**
      * @tc.name   dataShareConfigGetValuesTest006
@@ -120,7 +139,7 @@ export default function dataShareConfigGetValuesTest() {
         let testUri = "datashareproxy://com.acts.dataShare.config.static/valuesTest"
         let proxyData: dataShare.ProxyData[] = [{
           uri: testUri,
-          values: { 1: "test1"},
+          values: { 1: "test1", 2: "test2"},
           isMultiValues: true,
           allowList: [],
           trustProviders: []
@@ -130,8 +149,9 @@ export default function dataShareConfigGetValuesTest() {
         values.forEach((value) => {
           console.log('[ttt] [DataProxyServiceTest] GetValuesTest006 value : ' + JSON.stringify(value));
         })
-        expect(values.length).assertEqual(1);
+        expect(values.length).assertEqual(2);
         expect(values[0]).assertEqual("test1");
+        expect(values[1]).assertEqual("test2");
       } catch (err) {
         console.error(TAG + "[DataShareProvider] dataShareConfigGetValuesTest006 failed,code =" + err.code + ",message=" + err.message);
         expect().assertFail();
@@ -151,12 +171,12 @@ export default function dataShareConfigGetValuesTest() {
         let testUri = "datashareproxy://com.acts.dataShare.config.static/valuesTest"
         let proxyData: dataShare.ProxyData[] = [{
           uri: testUri,
+          values: { 1: "test1"},
           isMultiValues: true,
           allowList: [],
           trustProviders: []
         }];
         await g_handle!.publish(proxyData, g_config_4K);
-        await g_handle!.putValue(testUri, 1, "GetValuesTest008", g_config_4K);
         await g_handle!.removeValue(testUri, 1, g_config_4K);
         let values = await g_handle!.getValues(testUri, g_config_4K);
         values.forEach((value) => {
@@ -166,6 +186,25 @@ export default function dataShareConfigGetValuesTest() {
       } catch (err) {
         console.error(TAG + "[DataShareProvider] dataShareConfigGetValuesTest008 failed,code =" + err.code + ",message=" + err.message);
         expect().assertFail();
+      }
+    });
+
+    /** 
+     * @tc.name   dataShareConfigGetValuesTest009
+     * @tc.number SUB_DistributedData_DataShare_SDK_GetValues_0090
+     * @tc.desc   single uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigGetValuesTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let testUri = "";
+        await g_handle!.getValues(testUri, g_config_4K);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] dataShareConfigGetValuesTest009 failed,code =" + err.code + ",message=" + err.message);
+        expect(err.code).assertEqual(15700011);
       }
     });
   })

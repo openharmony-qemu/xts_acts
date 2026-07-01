@@ -22,7 +22,6 @@ let g_config: dataShare.DataProxyConfig = {
 }
 let testUri1 = "datashareproxy://com.acts.dataShare.config/test1";
 let testUri2 = "datashareproxy://com.acts.dataShare.config/test2";
-let testUri3 = "datashareproxy://com.acts.dataShare.config/test3";
 let TAG = "ttt ";
 
 export default function dataShareConfigSubscribeTest() {
@@ -60,8 +59,7 @@ export default function dataShareConfigSubscribeTest() {
       console.info(TAG + "afterEach---------------------------------");
       let uris = [
         testUri1,
-        testUri2,
-        testUri3
+        testUri2
       ]
       try {
         await g_handle!.delete(uris, g_config).then((results: dataShare.DataProxyResult[]) => {
@@ -1068,6 +1066,7 @@ export default function dataShareConfigSubscribeTest() {
         expect(values.length).assertEqual(2);
         expect(values[0]).assertEqual("test1");
         expect(values[1]).assertEqual("test2");
+        await g_handle!.delete(uris, g_config)
       } catch (err) {
         console.error(TAG + "[DataShareProvider] dataShareConfigSubscribeTest029 publish failed,code =" + err.code + ",message=" + err.message);
         expect().assertFail();
