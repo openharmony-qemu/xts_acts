@@ -426,6 +426,7 @@ export default function ActsCommonEventManagerSupportTest() {
       expect(commonEventManager.Support.COMMON_EVENT_VOLUME_EJECT).assertEqual('usual.event.data.VOLUME_EJECT')
       expect(commonEventManager.Support.COMMON_EVENT_VISIBLE_ACCOUNTS_UPDATED).assertEqual('usual.event.data.VISIBLE_ACCOUNTS_UPDATED')
       expect(commonEventManager.Support.COMMON_EVENT_ACCOUNT_DELETED).assertEqual('usual.event.data.ACCOUNT_DELETED')
+      expect(commonEventManager.Support.COMMON_EVENT_DISK_VOLUME_STATE_CHANGE).assertEqual('usual.event.data.DISK_VOLUME_STATE_CHANGE')
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_1900 END`)
     })
 
@@ -879,21 +880,6 @@ export default function ActsCommonEventManagerSupportTest() {
       expect(commonEventManager.Support.COMMON_EVENT_SANDBOX_BUNDLE_REMOVED)
         .assertEqual('usual.event.SANDBOX_BUNDLE_REMOVED')
       console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4900 END`)
-    })
-
-    /**
-     * @tc.name   SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_5000
-     * @tc.number SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_5000
-     * @tc.desc   system data disk volume state changed common event
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_5000', Level.LEVEL0, async function () {
-      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_5000 START`)
-      expect(commonEventManager.Support.COMMON_EVENT_DISK_VOLUME_STATE_CHANGE)
-        .assertEqual('usual.event.data.DISK_VOLUME_STATE_CHANGE')
-      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_5000 END`)
     })
     console.info(`${TAG} SUB_NOTIFICATION_CES_SUPPORT_ENUM_TEST END`)
   })
