@@ -288,6 +288,9 @@ HWTEST_F(BroadcastPublishTest, testPublish0050, Function | MediumTest | Level2)
     Topic topic0 = 0;
     subscriber->AddTopic((IUnknown *)fapi, &topic0);
 
+    static Consumer c1 = {.identity = &g_identity, .Notify = C1Callback, .Equal = Equal};
+    subscriber->Subscribe((IUnknown *)fapi, &topic0, &c1);
+
     BOOL result = provider->Publish((IUnknown *)fapi, &topic0, (uint8_t *) "==>111<==", TEST_LEN);
     ASSERT_EQ(result, 1);
 
