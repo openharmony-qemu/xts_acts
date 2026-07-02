@@ -818,8 +818,7 @@ export default function observerManagerTest() {
         });
         await sleep(1000);
         let httpRequest = http.createHttp();
-        httpRequest.request("https://www.baidu.com",(err:BusinessError,data:http.HttpResponse)
-        => {
+        httpRequest.request("https://www.baidu.com",(err:BusinessError,data:http.HttpResponse) => {
             console.info(`${caseName} baidu to activate DataFlowType change `);
         });
         await sleep(1000);
