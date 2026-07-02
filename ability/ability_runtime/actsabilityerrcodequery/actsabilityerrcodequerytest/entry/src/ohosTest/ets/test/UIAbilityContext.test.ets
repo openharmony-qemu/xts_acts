@@ -1375,14 +1375,16 @@ export default function UIAbilityContext() {
           );
         })
         await sleep(2000);
-        globalThis.context.openAtomicService('12314564456')
+        await globalThis.context.openAtomicService('12314564456')
         .then(() => {
           console.info('openAtomicService succeed');
+          expect().assertFail();
         })
         .catch((err: BusinessError) => {
           console.error(`openAtomicService failed, code is ${err.code}, message is ${err.message}`);
           expect(err.code).assertEqual(16000053);
         });
+        done();
       }else if(mpEnable === 'false') {
         console.info(`${tag} error, current device not support MoveAbilityToBackground,please check: ${JSON.stringify(mpEnable)}`);
         done();
