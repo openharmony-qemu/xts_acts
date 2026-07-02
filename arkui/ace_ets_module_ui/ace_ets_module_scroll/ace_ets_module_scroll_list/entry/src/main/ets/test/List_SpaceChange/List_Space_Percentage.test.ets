@@ -76,11 +76,11 @@ export default function List_Space_Percentage() {
         name: 'space', value: '10%'
       });
       await CommonFunc.sleep(1000);
-      let List01 = CommonFunc.getComponentRect('List_Space_Percentage_01');
-      let ListItem01 = CommonFunc.getComponentRect('List_Space_Percentage_ListItem_01');
-      let ListItem02 = CommonFunc.getComponentRect('List_Space_Percentage_ListItem_02');
-      let ListItem03 = CommonFunc.getComponentRect('List_Space_Percentage_ListItem_03');
-      let ListItem04 = CommonFunc.getComponentRect('List_Space_Percentage_ListItem_04');
+      let List01 = CommonFunc.getComponentRect('List_Space_Percentage' + '_01');
+      let ListItem01 = CommonFunc.getComponentRect('List_Space_Percentage' + '_ListItem_01');
+      let ListItem02 = CommonFunc.getComponentRect('List_Space_Percentage' + '_ListItem_02');
+      let ListItem03 = CommonFunc.getComponentRect('List_Space_Percentage' + '_ListItem_03');
+      let ListItem04 = CommonFunc.getComponentRect('List_Space_Percentage' + '_ListItem_04');
 
       expect(Math.abs(Math.round(ListItem01.right - ListItem01.left) - vp2px(300)) <= 1).assertTrue();
       expect(Math.abs(Math.round(ListItem01.bottom - ListItem01.top) - Math.round(vp2px(50))) <= 1).assertTrue();
@@ -115,11 +115,11 @@ export default function List_Space_Percentage() {
         name: 'space', value: '50%'
       });
       await CommonFunc.sleep(1000);
-      let List01 = CommonFunc.getComponentRect('List_Space_Percentage_01');
-      let ListItem01 = CommonFunc.getComponentRect('List_Space_Percentage_ListItem_01');
-      let ListItem02 = CommonFunc.getComponentRect('List_Space_Percentage_ListItem_02');
-      let ListItem03 = CommonFunc.getComponentRect('List_Space_Percentage_ListItem_03');
-      let ListItem04 = CommonFunc.getComponentRect('List_Space_Percentage_ListItem_04');
+      let List01 = CommonFunc.getComponentRect('List_Space_Percentage' + '_01');
+      let ListItem01 = CommonFunc.getComponentRect('List_Space_Percentage' + '_ListItem_01');
+      let ListItem02 = CommonFunc.getComponentRect('List_Space_Percentage' + '_ListItem_02');
+      let ListItem03 = CommonFunc.getComponentRect('List_Space_Percentage' + '_ListItem_03');
+      let ListItem04 = CommonFunc.getComponentRect('List_Space_Percentage' + '_ListItem_04');
 
       expect(Math.abs(Math.round(ListItem01.right - ListItem01.left) - vp2px(300)) <= 1).assertTrue();
       expect(Math.abs(Math.round(ListItem01.bottom - ListItem01.top) - Math.round(vp2px(50))) <= 1).assertTrue();
@@ -146,11 +146,11 @@ export default function List_Space_Percentage() {
         name: 'space', value: '100%'
       });
       await CommonFunc.sleep(1000);
-      let List01 = CommonFunc.getComponentRect('List_Space_Percentage_01');
-      let ListItem01 = CommonFunc.getComponentRect('List_Space_Percentage_ListItem_01');
-      let ListItem02 = CommonFunc.getComponentRect('List_Space_Percentage_ListItem_02');
-      let ListItem03 = CommonFunc.getComponentRect('List_Space_Percentage_ListItem_03');
-      let ListItem04 = CommonFunc.getComponentRect('List_Space_Percentage_ListItem_04');
+      let List01 = CommonFunc.getComponentRect('List_Space_Percentage' + '_01');
+      let ListItem01 = CommonFunc.getComponentRect('List_Space_Percentage' + '_ListItem_01');
+      let ListItem02 = CommonFunc.getComponentRect('List_Space_Percentage' + '_ListItem_02');
+      let ListItem03 = CommonFunc.getComponentRect('List_Space_Percentage' + '_ListItem_03');
+      let ListItem04 = CommonFunc.getComponentRect('List_Space_Percentage' + '_ListItem_04');
 
       expect(Math.abs(Math.round(ListItem01.right - ListItem01.left) - vp2px(300)) <= 1).assertTrue();
       expect(Math.abs(Math.round(ListItem01.bottom - ListItem01.top) - Math.round(vp2px(50))) <= 1).assertTrue();

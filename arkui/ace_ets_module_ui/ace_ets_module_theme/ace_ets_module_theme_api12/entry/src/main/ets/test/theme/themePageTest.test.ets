@@ -65,7 +65,7 @@ export default function themePageTest() {
       let driver = await Driver.create()
       await Utils.sleep(1000);
       // click to change the skin
-      let button = await driver.findComponent(ON.id('themeClick'));
+      let button = await driver.findComponent(ON.id('themePageTest' + '_themeClick'));
       await button.click();
       await Utils.sleep(2000);
       // test the color whether change

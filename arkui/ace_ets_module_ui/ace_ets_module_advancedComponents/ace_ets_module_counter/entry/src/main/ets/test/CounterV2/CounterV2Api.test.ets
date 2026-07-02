@@ -132,7 +132,7 @@ export default function CounterV2Api() {
       // press tab
       let driver = await Driver.create();
       await Utils.sleep(1000);
-      await await driver.triggerKey(2049);
+      await driver.triggerKey(2049);
       await Utils.sleep(1000);
       let strJson2 = getInspectorByKey('CounterV2ApiText1');
       await Utils.sleep(1000);

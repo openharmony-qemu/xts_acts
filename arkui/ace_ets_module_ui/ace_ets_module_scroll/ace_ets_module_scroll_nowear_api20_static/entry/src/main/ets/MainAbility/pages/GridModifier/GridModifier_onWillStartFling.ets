@@ -1,4 +1,4 @@
-'use static'
+'use static';
 import {
   TabContentAnimatedTransition,
   ListScroller,
@@ -201,7 +201,7 @@ struct GridOnWillStartFlingDemoModifier {
       Text(this.statusText)
         .fontSize(16)
         .fontColor(Color.Blue)
-        .key('onWillStartFling')
+        .key('GridModifier_onWillStartFling_onWillStartFling')
 
       Text(`回调触发次数: ${this.triggerCount}`)
         .fontSize(14)
@@ -226,7 +226,7 @@ struct GridOnWillStartFlingDemoModifier {
       .width('100%')
       .height(400)
       .backgroundColor(0xF5F5F5)
-      .key('grid_dragging_fling')
+      .key('GridModifier_onWillStartFling_grid_dragging_fling')
 
       // 操作区域
       Button('重置计数')

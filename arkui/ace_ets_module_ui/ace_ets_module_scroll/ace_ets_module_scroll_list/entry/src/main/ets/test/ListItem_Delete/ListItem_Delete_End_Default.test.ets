@@ -81,7 +81,7 @@ export default function ListItem_Delete_End_Default() {
       console.log('slide ')
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      let swipeBar = CommonFunc.getComponentRect('ListItem_Delete_End_Default_1');
+      let swipeBar = CommonFunc.getComponentRect('ListItem_Delete_End_Default' + '_1');
       let top = swipeBar.top;
       let right = swipeBar.right;
       let left = swipeBar.left;
@@ -94,13 +94,13 @@ export default function ListItem_Delete_End_Default() {
       );
       await CommonFunc.sleep(2000);
 
-      let text_011 = getInspectorByKey('ListItem_Delete_End_Default_text_01');
+      let text_011 = getInspectorByKey('ListItem_Delete_End_Default' + '_text_01');
       expect(JSON.parse(text_011).$attrs.content).assertEqual('enterEndDeleteArea');
 
-      let text_022 = getInspectorByKey('ListItem_Delete_End_Default_text_02');
+      let text_022 = getInspectorByKey('ListItem_Delete_End_Default' + '_text_02');
       expect(JSON.parse(text_022).$attrs.content).assertEqual('not exitEndDeleteArea');
 
-      let text_033 = getInspectorByKey('ListItem_Delete_End_Default_text_03');
+      let text_033 = getInspectorByKey('ListItem_Delete_End_Default' + '_text_03');
       expect(JSON.parse(text_033).$attrs.content).assertEqual('4');
       console.info('[SUB_ACE_ListItem_Delete_End_Default_0200] END');
       done();
@@ -134,13 +134,13 @@ export default function ListItem_Delete_End_Default() {
       );
       await CommonFunc.sleep(2000);
 
-      let text_011 = getInspectorByKey('ListItem_Delete_End_Default_text_01');
+      let text_011 = getInspectorByKey('ListItem_Delete_End_Default' + '_text_01');
       expect(JSON.parse(text_011).$attrs.content).assertEqual('not enterEndDeleteArea');
 
-      let text_022 = getInspectorByKey('ListItem_Delete_End_Default_text_02');
+      let text_022 = getInspectorByKey('ListItem_Delete_End_Default' + '_text_02');
       expect(JSON.parse(text_022).$attrs.content).assertEqual('not exitEndDeleteArea');
 
-      let text_033 = getInspectorByKey('ListItem_Delete_End_Default_text_03');
+      let text_033 = getInspectorByKey('ListItem_Delete_End_Default' + '_text_03');
       expect(JSON.parse(text_033).$attrs.content).assertEqual('5');
       console.info('[SUB_ACE_ListItem_Delete_End_Default_0300] END');
       done();

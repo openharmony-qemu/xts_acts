@@ -1,3 +1,4 @@
+'use static';
 import builtinsStringBuilderTestToString from './stringBuilder/BuiltinsStringBuilderTestToString.test';
 import builtinsStringBuilderTestAppend from './stringBuilder/BuiltinsStringBuilderTestAppend.test';
 import builtinsStringBuilderTestConstructor from './stringBuilder/BuiltinsStringBuilderTestConstructor.test';

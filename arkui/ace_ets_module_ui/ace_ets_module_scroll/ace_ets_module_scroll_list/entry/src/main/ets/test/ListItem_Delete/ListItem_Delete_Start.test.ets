@@ -80,15 +80,15 @@ export default function ListItem_Delete_Start() {
       );
       await CommonFunc.sleep(2000);
 
-      let text_011 = getInspectorByKey('ListItem_Delete_Start_text_01');
+      let text_011 = getInspectorByKey('ListItem_Delete_Start' + '_text_01');
 
       expect(JSON.parse(text_011).$attrs.content).assertEqual('enterEndDeleteArea');
 
-      let text_022 = getInspectorByKey('ListItem_Delete_Start_text_02');
+      let text_022 = getInspectorByKey('ListItem_Delete_Start' + '_text_02');
 
       expect(JSON.parse(text_022).$attrs.content).assertEqual('not exitEndDeleteArea');
 
-      let text_033 = getInspectorByKey('ListItem_Delete_Start_text_03');
+      let text_033 = getInspectorByKey('ListItem_Delete_Start' + '_text_03');
 
       expect(JSON.parse(text_033).$attrs.content).assertEqual('4');
 
@@ -130,15 +130,15 @@ export default function ListItem_Delete_Start() {
       );
       await CommonFunc.sleep(2000);
 
-      let text_011 = getInspectorByKey('ListItem_Delete_Start_text_01');
+      let text_011 = getInspectorByKey('ListItem_Delete_Start' + '_text_01');
 
       expect(JSON.parse(text_011).$attrs.content).assertEqual('not enterEndDeleteArea');
 
-      let text_022 = getInspectorByKey('ListItem_Delete_Start_text_02');
+      let text_022 = getInspectorByKey('ListItem_Delete_Start' + '_text_02');
 
       expect(JSON.parse(text_022).$attrs.content).assertEqual('not exitEndDeleteArea');
 
-      let text_033 = getInspectorByKey('ListItem_Delete_Start_text_03');
+      let text_033 = getInspectorByKey('ListItem_Delete_Start' + '_text_03');
 
       expect(JSON.parse(text_033).$attrs.content).assertEqual('5');
 
@@ -180,15 +180,15 @@ export default function ListItem_Delete_Start() {
       );
       await CommonFunc.sleep(2000);
 
-      let text_011 = getInspectorByKey('ListItem_Delete_Start_text_01');
+      let text_011 = getInspectorByKey('ListItem_Delete_Start' + '_text_01');
 
       expect(JSON.parse(text_011).$attrs.content).assertEqual('not enterEndDeleteArea');
 
-      let text_022 = getInspectorByKey('ListItem_Delete_Start_text_02');
+      let text_022 = getInspectorByKey('ListItem_Delete_Start' + '_text_02');
 
       expect(JSON.parse(text_022).$attrs.content).assertEqual('not exitEndDeleteArea');
 
-      let text_033 = getInspectorByKey('ListItem_Delete_Start_text_03');
+      let text_033 = getInspectorByKey('ListItem_Delete_Start' + '_text_03');
 
       expect(JSON.parse(text_033).$attrs.content).assertEqual('5');
 
@@ -231,15 +231,15 @@ export default function ListItem_Delete_Start() {
       );
       await CommonFunc.sleep(2000);
 
-      let text_011 = getInspectorByKey('ListItem_Delete_Start_text_01');
+      let text_011 = getInspectorByKey('ListItem_Delete_Start' + '_text_01');
 
       expect(JSON.parse(text_011).$attrs.content).assertEqual('not enterEndDeleteArea');
 
-      let text_022 = getInspectorByKey('ListItem_Delete_Start_text_02');
+      let text_022 = getInspectorByKey('ListItem_Delete_Start' + '_text_02');
 
       expect(JSON.parse(text_022).$attrs.content).assertEqual('not exitEndDeleteArea');
 
-      let text_033 = getInspectorByKey('ListItem_Delete_Start_text_03');
+      let text_033 = getInspectorByKey('ListItem_Delete_Start' + '_text_03');
 
       expect(JSON.parse(text_033).$attrs.content).assertEqual('5');
 

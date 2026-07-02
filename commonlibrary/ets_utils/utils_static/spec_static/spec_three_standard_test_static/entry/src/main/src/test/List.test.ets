@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -181,6 +181,7 @@ import SingleParamsTest from './semanticrules/compatibilitycallargs/SingleParams
 import SpecExamples2Test from './semanticrules/compatibilitycallargs/SpecExamples2Test.test'
 import SpecExamplesTest from './semanticrules/compatibilitycallargs/SpecExamplesTest.test'
 import TupleRestParamsTest from './semanticrules/compatibilitycallargs/TupleRestParamsTest.test'
+import DeclarationContextResolutionTest from "./modulesandnamespaces/declarationcontextresolution/DeclarationContextResolutionTest.test";
 
 export default function testsuite(): void {
 
@@ -347,4 +348,5 @@ export default function testsuite(): void {
   SpecExamples2Test();
   SpecExamplesTest();
   TupleRestParamsTest();
+  DeclarationContextResolutionTest();
 }

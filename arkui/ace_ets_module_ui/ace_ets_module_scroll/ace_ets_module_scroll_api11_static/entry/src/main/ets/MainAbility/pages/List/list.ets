@@ -83,7 +83,7 @@ struct ListExample {
             }
           }, (item: number) => item.toString())
         }
-        .key('list')
+        .key('list_list')
         .listDirection(this.listDirection)
         .divider({
           strokeWidth: this.strokeWidth,

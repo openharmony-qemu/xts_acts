@@ -1,4 +1,4 @@
-'use static'
+'use static';
 import metaDataStaticTest from "./image/Metadata.test";
 import ImageGetComponentSupp from "./image/getComponent/GetComponent.test";
 import AuxiliaryPictureGetAuxiliaryPictureInfoTest from "./Picture/Picture.test";

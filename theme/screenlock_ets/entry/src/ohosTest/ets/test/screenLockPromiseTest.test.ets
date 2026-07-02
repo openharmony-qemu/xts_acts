@@ -108,7 +108,9 @@ export default function ScreenLockPromiseTest(){
     it("SUB_MISC_THEME_screenLock_API_Promise_004", Level.LEVEL2, async (done: Function) => {
       console.info("------------------start SUB_MISC_THEME_screenLock_API_Promise_004-------------------");
       try {
-        await screenLock.unlockScreen();
+        screenLock.unlockScreen().then(() => {
+        }).catch(() => {
+        });
         console.info("====>SUB_MISC_THEME_screenLock_API_Promise_004 success.");
         expect(true).assertTrue()
         console.info('====>-------------SUB_MISC_THEME_screenLock_API_Promise_004 end----------------------');

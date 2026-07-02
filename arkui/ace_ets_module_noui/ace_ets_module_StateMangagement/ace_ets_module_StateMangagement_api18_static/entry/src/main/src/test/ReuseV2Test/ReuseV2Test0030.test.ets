@@ -27,7 +27,7 @@ import common from '@ohos.app.ability.common';
 import deviceInfo from '@ohos.deviceInfo';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-export default function ReuseV2Test0030() {
+export default function ReuseV2Test0030(): void {
   describe('ReuseV2Test0030', () => {
     beforeAll(async (): Promise<void> => {
 

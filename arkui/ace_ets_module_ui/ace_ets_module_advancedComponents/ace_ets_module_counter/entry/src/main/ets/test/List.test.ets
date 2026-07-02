@@ -25,6 +25,11 @@ import ActsAceCounterV2ComponentTest from './CounterV2/ActsAceCounterV2Component
 import CounterV2Api from './CounterV2/CounterV2Api.test';
 import CounterV2ComponentTest from './CounterV2/CounterV2ComponentTest.test';
 import CounterV2Direction from './CounterV2/CounterV2Direction.test';
+import CounterV2AttrsTest from './CounterV2/CounterV2Attrs.test';
+import CounterV2AbnormalOptionsTest from './CounterV2/CounterV2AbnormalOptionsTest.test';
+import CounterV2AbnormalNumberTest from './CounterV2/CounterV2AbnormalNumberTest.test';
+import CounterV2AbnormalInlineTest from './CounterV2/CounterV2AbnormalInlineTest.test';
+import CounterV2AbnormalDateTest from './CounterV2/CounterV2AbnormalDateTest.test';
 
 export default function testsuite() {
   counterDirectionTest();
@@ -38,4 +43,9 @@ export default function testsuite() {
     CounterV2Api()
     CounterV2ComponentTest()
     CounterV2Direction()
+    CounterV2AttrsTest()
+    CounterV2AbnormalOptionsTest()
+    CounterV2AbnormalNumberTest()
+    CounterV2AbnormalInlineTest()
+    CounterV2AbnormalDateTest()
 }

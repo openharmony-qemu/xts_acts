@@ -1,3 +1,4 @@
+'use static';
 import notificationManager from '@ohos.notificationManager'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '../../../hypium/index'
 import {BusinessError} from '@ohos.base';

@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -337,7 +337,7 @@ export default function ArrayIndexOf1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayIndexOfOne020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(42);
+      let arr = Array.create<number>(1, 42);
       expect(arr.indexOf(42)).assertEqual(0);
       expect(arr.indexOf(1)).assertEqual(-1);
     });
@@ -1004,7 +1004,7 @@ export default function ArrayIndexOf1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayIndexOfOne065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(1, 5);
       const result = arr.indexOf(5, 0);
       expect(result).assertEqual(0);
       expect(arr.length).assertEqual(1);
@@ -1019,7 +1019,7 @@ export default function ArrayIndexOf1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayIndexOfOne066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(1, 5);
       const result = arr.indexOf(1, 0);
       expect(result).assertEqual(-1);
       expect(arr.length).assertEqual(1);
@@ -1376,7 +1376,7 @@ export default function ArrayIndexOf1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayIndexOfOne091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1);
+      const arr = Array.create<number>(1, 1);
       const result = arr.indexOf(1, -1);
       expect(result).assertEqual(0);
     });
@@ -1390,7 +1390,7 @@ export default function ArrayIndexOf1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayIndexOfOne092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1);
+      const arr = Array.create<number>(1, 1);
       const result = arr.indexOf(1, -2);
       expect(result).assertEqual(0);
     });

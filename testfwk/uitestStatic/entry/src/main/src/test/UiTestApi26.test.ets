@@ -65,7 +65,7 @@ export default function uitestApi26Test(): void {
       expect(button != null).assertTrue();
       if (button != null) {
         let center = await button.getBoundsCenter()
-        await driver!.clickAt(center)
+        await driver!.clickAtWithOptions(center)
         await driver!.delayMs(waitUiReadyMs)
         let newButton = await driver!.findComponent(ON.text('back to index'))
         expect(newButton != null).assertTrue();
@@ -96,7 +96,7 @@ export default function uitestApi26Test(): void {
       if (button != null) {
         let center = await button.getBoundsCenter()
         let options: TouchOptions = {}
-        await driver!.clickAt(center, options)
+        await driver!.clickAtWithOptions(center, options)
         await driver!.delayMs(waitUiReadyMs)
         let newButton = await driver!.findComponent(ON.text('back to index'))
         expect(newButton != null).assertTrue();
@@ -127,7 +127,7 @@ export default function uitestApi26Test(): void {
       if (button != null) {
         let center = await button.getBoundsCenter()
         let options: TouchOptions = { pressure: 0 };
-        await driver!.clickAt(center, options)
+        await driver!.clickAtWithOptions(center, options)
         await driver!.delayMs(waitUiReadyMs)
         let newButton = await driver!.findComponent(ON.text('back to index'))
         expect(newButton != null).assertTrue();
@@ -158,7 +158,7 @@ export default function uitestApi26Test(): void {
       if (button != null) {
         let center = await button.getBoundsCenter()
         let options: TouchOptions = { pressure: 1.0 };
-        await driver!.clickAt(center, options)
+        await driver!.clickAtWithOptions(center, options)
         await driver!.delayMs(waitUiReadyMs)
         let newButton = await driver!.findComponent(ON.text('back to index'))
         expect(newButton != null).assertTrue();
@@ -189,7 +189,7 @@ export default function uitestApi26Test(): void {
       if (button != null) {
         let center = await button.getBoundsCenter()
         let options: TouchOptions = { pressure: 0.5 };
-        await driver!.clickAt(center, options)
+        await driver!.clickAtWithOptions(center, options)
         await driver!.delayMs(waitUiReadyMs)
         let newButton = await driver!.findComponent(ON.text('back to index'))
         expect(newButton != null).assertTrue();
@@ -220,7 +220,7 @@ export default function uitestApi26Test(): void {
       if (button != null) {
         let center = await button.getBoundsCenter()
         let options: TouchOptions = { pressure: 0.0 };
-        await driver!.clickAt(center, options)
+        await driver!.clickAtWithOptions(center, options)
         await driver!.delayMs(waitUiReadyMs)
         let newButton = await driver!.findComponent(ON.text('back to index'))
         expect(newButton != null).assertTrue();
@@ -250,7 +250,7 @@ export default function uitestApi26Test(): void {
       expect(button != null).assertTrue();
       if (button != null) {
         let center = await button.getBoundsCenter()
-        await driver!.clickAt(center, undefined)
+        await driver!.clickAtWithOptions(center, undefined)
         await driver!.delayMs(waitUiReadyMs)
         let newButton = await driver!.findComponent(ON.text('back to index'))
         expect(newButton != null).assertTrue();
@@ -279,7 +279,7 @@ export default function uitestApi26Test(): void {
       expect(button != null).assertTrue();
       if (button != null) {
         let center = await button.getBoundsCenter()
-        await driver!.longClickAt(center)
+        await driver!.longClickAtWithOptions(center)
         await driver!.delayMs(waitUiReadyMs)
         let newButton = await driver!.findComponent(ON.text('longClick'))
         expect(newButton != null).assertTrue();
@@ -310,7 +310,7 @@ export default function uitestApi26Test(): void {
       if (button != null) {
         let center = await button.getBoundsCenter()
         let options: TouchOptions = {}
-        await driver!.longClickAt(center, options)
+        await driver!.longClickAtWithOptions(center, options)
         await driver!.delayMs(waitUiReadyMs)
         let newButton = await driver!.findComponent(ON.text('longClick'))
         expect(newButton != null).assertTrue();
@@ -341,7 +341,7 @@ export default function uitestApi26Test(): void {
       if (button != null) {
         let center = await button.getBoundsCenter()
         let options: TouchOptions = { duration: 1500 };
-        await driver!.longClickAt(center, options)
+        await driver!.longClickAtWithOptions(center, options)
         await driver!.delayMs(waitUiReadyMs)
         let newButton = await driver!.findComponent(ON.text('longClick'))
         expect(newButton != null).assertTrue();
@@ -372,7 +372,7 @@ export default function uitestApi26Test(): void {
       if (button != null) {
         let center = await button.getBoundsCenter()
         let options: TouchOptions = { pressure: 0.5 };
-        await driver!.longClickAt(center, options)
+        await driver!.longClickAtWithOptions(center, options)
         await driver!.delayMs(waitUiReadyMs)
         let newButton = await driver!.findComponent(ON.text('longClick'))
         expect(newButton != null).assertTrue();
@@ -403,7 +403,7 @@ export default function uitestApi26Test(): void {
       if (button != null) {
         let center = await button.getBoundsCenter()
         let options: TouchOptions = { duration: 3000, pressure: 0.5 };
-        await driver!.longClickAt(center, options)
+        await driver!.longClickAtWithOptions(center, options)
         await driver!.delayMs(waitUiReadyMs)
         let newButton = await driver!.findComponent(ON.text('longClick'))
         expect(newButton != null).assertTrue();
@@ -434,7 +434,7 @@ export default function uitestApi26Test(): void {
       if (button != null) {
         let center = await button.getBoundsCenter()
         let options: TouchOptions = { pressure: 0 };
-        await driver!.longClickAt(center, options)
+        await driver!.longClickAtWithOptions(center, options)
         await driver!.delayMs(waitUiReadyMs)
         let newButton = await driver!.findComponent(ON.text('longClick'))
         expect(newButton != null).assertTrue();
@@ -465,7 +465,7 @@ export default function uitestApi26Test(): void {
       if (button != null) {
         let center = await button.getBoundsCenter()
         let options: TouchOptions = { pressure: 1 };
-        await driver!.longClickAt(center, options)
+        await driver!.longClickAtWithOptions(center, options)
         await driver!.delayMs(waitUiReadyMs)
         let newButton = await driver!.findComponent(ON.text('longClick'))
         expect(newButton != null).assertTrue();
@@ -495,7 +495,7 @@ export default function uitestApi26Test(): void {
       expect(button != null).assertTrue();
       if (button != null) {
         let center = await button.getBoundsCenter()
-        await driver!.longClickAt(center, undefined)
+        await driver!.longClickAtWithOptions(center, undefined)
         await driver!.delayMs(waitUiReadyMs)
         let newButton = await driver!.findComponent(ON.text('longClick'))
         expect(newButton != null).assertTrue();
@@ -528,7 +528,7 @@ export default function uitestApi26Test(): void {
       if (scoll != null) {
         let rect = await scoll.getBounds()
         let center = await scoll.getBoundsCenter()
-        await driver!.swipeBetween({
+        await driver!.swipeBetweenWithOptions({
           x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()
         , displayId: disPlay.id.toInt()
         },
@@ -561,7 +561,7 @@ export default function uitestApi26Test(): void {
         let rect = await scoll.getBounds()
         let center = await scoll.getBoundsCenter()
         let options: TouchOptions = { speed: 2000 }
-        await driver!.swipeBetween({
+        await driver!.swipeBetweenWithOptions({
           x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()
         , displayId: disPlay.id.toInt()
         },
@@ -594,7 +594,7 @@ export default function uitestApi26Test(): void {
         let rect = await scoll.getBounds()
         let center = await scoll.getBoundsCenter()
         let options: TouchOptions = { pressure: 0.5 }
-        await driver!.swipeBetween({
+        await driver!.swipeBetweenWithOptions({
           x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()
         , displayId: disPlay.id.toInt()
         },
@@ -627,7 +627,7 @@ export default function uitestApi26Test(): void {
         let rect = await scoll.getBounds()
         let center = await scoll.getBoundsCenter()
         let options: TouchOptions = { speed: 2000, pressure: 0.5 }
-        await driver!.swipeBetween({
+        await driver!.swipeBetweenWithOptions({
           x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()
         , displayId: disPlay.id.toInt()
         },
@@ -659,7 +659,7 @@ export default function uitestApi26Test(): void {
       if (scoll != null) {
         let rect = await scoll.getBounds()
         let center = await scoll.getBoundsCenter()
-        await driver!.swipeBetween({
+        await driver!.swipeBetweenWithOptions({
           x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()
         , displayId: disPlay.id.toInt()
         },
@@ -692,7 +692,7 @@ export default function uitestApi26Test(): void {
         let rect = await scoll.getBounds()
         let center = await scoll.getBoundsCenter()
         let options: TouchOptions = {}
-        await driver!.swipeBetween({
+        await driver!.swipeBetweenWithOptions({
           x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()
         , displayId: disPlay.id.toInt()
         },
@@ -725,7 +725,7 @@ export default function uitestApi26Test(): void {
         let rect = await scoll.getBounds()
         let center = await scoll.getBoundsCenter()
         let options: TouchOptions = { speed: 200 }
-        await driver!.swipeBetween({
+        await driver!.swipeBetweenWithOptions({
           x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()
         , displayId: disPlay.id.toInt()
         },
@@ -758,7 +758,7 @@ export default function uitestApi26Test(): void {
         let rect = await scoll.getBounds()
         let center = await scoll.getBoundsCenter()
         let options: TouchOptions = { speed: 40000 }
-        await driver!.swipeBetween({
+        await driver!.swipeBetweenWithOptions({
           x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()
         , displayId: disPlay.id.toInt()
         },
@@ -791,7 +791,7 @@ export default function uitestApi26Test(): void {
         let rect = await scoll.getBounds()
         let center = await scoll.getBoundsCenter()
         let options: TouchOptions = { pressure: 0 }
-        await driver!.swipeBetween({
+        await driver!.swipeBetweenWithOptions({
           x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()
         , displayId: disPlay.id.toInt()
         },
@@ -824,7 +824,7 @@ export default function uitestApi26Test(): void {
         let rect = await scoll.getBounds()
         let center = await scoll.getBoundsCenter()
         let options: TouchOptions = { pressure: 1 }
-        await driver!.swipeBetween({
+        await driver!.swipeBetweenWithOptions({
           x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()
         , displayId: disPlay.id.toInt()
         },
@@ -857,7 +857,7 @@ export default function uitestApi26Test(): void {
         let rect = await scoll.getBounds()
         let center = await scoll.getBoundsCenter()
         let options: TouchOptions = { speed: 200, pressure: 1 }
-        await driver!.swipeBetween({
+        await driver!.swipeBetweenWithOptions({
           x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()
         , displayId: disPlay.id.toInt()
         },
@@ -890,7 +890,7 @@ export default function uitestApi26Test(): void {
         let rect = await scroll.getBounds()
         let center = await scroll.getBoundsCenter()
         let options: TouchOptions = { speed: 199 };
-        await driver!.swipeBetween({
+        await driver!.swipeBetweenWithOptions({
           x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()
         , displayId: disPlay.id.toInt()
         },
@@ -923,7 +923,7 @@ export default function uitestApi26Test(): void {
         let rect = await scroll.getBounds()
         let center = await scroll.getBoundsCenter()
         let options: TouchOptions = { speed: 40001 };
-        await driver!.swipeBetween({
+        await driver!.swipeBetweenWithOptions({
           x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()
         , displayId: disPlay.id.toInt()
         },

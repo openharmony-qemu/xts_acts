@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -382,7 +382,7 @@ export default function ArrayLikeGetLenTest(): void {
      * @tc.level Level 2
      */
     it('testArrayLikeGetLength021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const source: ArrayLike<int> = new Array<int>(88)
+      const source: ArrayLike<int> = Array.create<int>(1, 88)
       let idx: int = source.length / 2
       expect(source.length).assertEqual(1)
       expect(idx).assertEqual(0)

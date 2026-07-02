@@ -1,3 +1,4 @@
+'use static';
 import { describe, it, TestType, Size,Level,expect } from "../../../hypium/index";
 import {hilog}from "@kit.PerformanceAnalysisKit"
 import Utils from './Util.test';

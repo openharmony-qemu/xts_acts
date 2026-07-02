@@ -1,4 +1,4 @@
-'use static'
+'use static';
 // 1. 字面量本身
 
 export function testFloatLiteral() {

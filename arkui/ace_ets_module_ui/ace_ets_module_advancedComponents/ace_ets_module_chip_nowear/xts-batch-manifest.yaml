@@ -1,0 +1,41 @@
+sdk:
+  variant: normal
+  api_level: 26
+  linux_path: "/root/aiSkill/ohos-sdk-for-hap-normal/linux"
+docs:
+  - title: ChipV2
+    path: "/root/aiSkill/docs/zh-cn/application-dev/reference/apis-arkui/arkui-ts/ohos-arkui-advanced-ChipV2.md"
+    url: "https://gitcode.com/openharmony/docs/blob/main/zh-cn/application-dev/reference/apis-arkui/arkui-ts/ohos-arkui-advanced-ChipV2.md"
+  - title: ChipGroupV2
+    path: "/root/aiSkill/docs/zh-cn/application-dev/reference/apis-arkui/arkui-ts/ohos-arkui-advanced-ChipGroupV2.md"
+    url: "https://gitcode.com/openharmony/docs/blob/main/zh-cn/application-dev/reference/apis-arkui/arkui-ts/ohos-arkui-advanced-ChipGroupV2.md"
+project:
+  repo: "/root/aiSkill/develop/xts_acts_0622"
+  module: "arkui/ace_ets_module_ui/ace_ets_module_advancedComponents/ace_ets_module_chip_nowear"
+skills:
+  generator: "/root/aiSkill/_compare_upload/arkUISkill-gitcode/arkui-dynamic-xts-generator"
+  workflow: "/root/aiSkill/.claude/skills/ohxtsdynamic"
+signing:
+  materials: "signing-materials"
+  env_OHOS_HAPSIGNER_RESULT: "/root/aiSkill/develop/static/ace_ets_module_dialog_button_static/signing-materials"
+hdc:
+  binary: "/root/aiSkill/hdc"
+  path_hint: "export PATH=/root/aiSkill:$PATH"
+  network:
+    port: 8710
+    # 历史 IP（bash_history）；以设备实际 IP 为准
+    candidates:
+      - "192.168.12.220:8710"
+      - "192.168.10.110:8710"
+      - "192.168.12.124:8710"
+      - "192.168.11.172:8710"
+    connect_script: "tools/hdc_connect.sh"
+    device_prerequisite: "设备端先 hdc tmode port 8710（需 USB/已连接），见 HOWTOSKILLS.md §5"
+env_setup: |
+  source /root/aiSkill/use-ohos-sdk.sh normal
+  unset OHOS_USE_HVIGOR_STATIC
+  export HOS_CLT_PATH=/root/aiSkill/command-line-tools
+  export OHOS_BASE_SDK_HOME=/root/aiSkill/command-line-tools/sdk/default/openharmony/normal
+  export OHOS_HAPSIGNER_RESULT=/root/aiSkill/develop/static/ace_ets_module_dialog_button_static/signing-materials
+  export PATH=/root/aiSkill:$PATH
+cases: []

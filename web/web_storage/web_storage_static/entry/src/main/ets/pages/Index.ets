@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 iSoftStone Information Technology (Group) Co.,Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");

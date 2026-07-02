@@ -54,7 +54,7 @@ export default function TextPickerJsunitTest() {
     it('TextPickerJsunit_0100', Level.LEVEL1, async (done: Function) => {
       // Get the information of TextPicker component
       console.info('[TextPickerJsunit_0100] START');
-      let strJson = getInspectorByKey('textPicker');
+      let strJson = getInspectorByKey('textPickerJsunit' + '_textPicker');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[TextPickerJsunit_0100] component obj is: " + JSON.stringify(obj));
       console.info("[TextPickerJsunit_0100] range: " + JSON.stringify(obj.$attrs.range));
@@ -107,7 +107,7 @@ export default function TextPickerJsunitTest() {
       await CommonFunc.sleep(2000);
 
       // Get the attribute of TextPicker component
-      let strJson = getInspectorByKey('textPicker');
+      let strJson = getInspectorByKey('textPickerJsunit' + '_textPicker');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[TextPickerJsunit_0200] component obj is: " + JSON.stringify(obj));
       console.info("[TextPickerJsunit_0200] range: " + JSON.stringify(obj.$attrs.range));
@@ -138,7 +138,7 @@ export default function TextPickerJsunitTest() {
       await CommonFunc.sleep(500);
       let driver = await Driver.create()
 
-      let textPicker = await driver.findComponent(ON.id('textPicker'));
+      let textPicker = await driver.findComponent(ON.id('textPickerJsunit' + '_textPicker'));
       let rect = await textPicker.getBounds();
       let left = rect.left
       let top = rect.top
@@ -192,7 +192,7 @@ export default function TextPickerJsunitTest() {
       await CommonFunc.sleep(1000);
 
       // Get the attribute of TextPicker component
-      let strJson = getInspectorByKey('textPicker');
+      let strJson = getInspectorByKey('textPickerJsunit' + '_textPicker');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[TextPickerJsunit_0400] component obj is: " + JSON.stringify(obj));
       console.info("[TextPickerJsunit_0400] range: " + JSON.stringify(obj.$attrs.range));

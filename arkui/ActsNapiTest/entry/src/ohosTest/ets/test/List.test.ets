@@ -15,8 +15,20 @@
 import bufferTest from './NapiBuffer.test';
 import dataTest from './NapiData.test';
 import stringTest from './NapiString.test';
+import napiCallbackRiskLifecycleTest from './NapiCallbackRisk/NapiCallbackRiskLifecycle.test';
+import napiCallbackRiskFinalizerTest from './NapiCallbackRisk/NapiCallbackRiskFinalizer.test';
+import napiCallbackRiskAsyncTest from './NapiCallbackRisk/NapiCallbackRiskAsync.test';
+import napiCallbackRiskJsModuleTest from './NapiCallbackRisk/NapiCallbackRiskJsModule.test';
+import napiCallbackRiskNativeBindingTest from './NapiCallbackRisk/NapiCallbackRiskNativeBinding.test';
+
 export default function testsuite() {
   bufferTest();
   dataTest();
   stringTest();
+
+  napiCallbackRiskLifecycleTest();
+  napiCallbackRiskFinalizerTest();
+  napiCallbackRiskAsyncTest();
+  napiCallbackRiskJsModuleTest();
+  napiCallbackRiskNativeBindingTest();
 }

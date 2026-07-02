@@ -67,7 +67,7 @@ struct DatePickerExample {
                 .disappearTextStyle(this.disappearTextStyle)
                 .textStyle(this.textStyle)
                 .selectedTextStyle(this.selectedTextStyle)
-                .key('datePicker')
+                .key('DatePickerIndex_datePicker')
                 .onChange((date: DatePickerResult) => {
                      console.info( 'select current date is: ' + JSON.stringify(date))
                 })

@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
@@ -63,7 +63,7 @@ export default function onWillStartDraggingModifierTest() {
       let width = right - left;
       await driver.swipe(Math.round(left + width/2).toInt(), Math.round(top + height*0.8).toInt(), Math.round(left + width/2).toInt(),Math.round(top + height*0.2).toInt(), 1000);
       await CommonFunc.sleep(2000);
-      expect(JSON.parseJsonElement(inspector.getInspectorByKey('onWillStartDragging'))
+      expect(JSON.parseJsonElement(inspector.getInspectorByKey('Grid_onWillStartDragging' + '_onWillStartDragging'))
         .getElement('$attrs')
         .getString('content'))
         .assertEqual('第1次拖拽开始');

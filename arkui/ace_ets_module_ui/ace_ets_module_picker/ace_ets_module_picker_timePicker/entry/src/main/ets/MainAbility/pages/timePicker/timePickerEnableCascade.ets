@@ -122,7 +122,7 @@ struct TimePickerEnableCascadePage {
       TimePicker({
         selected: this.selectedTime,
       })
-        .key('timePicker')
+        .key('timePickerEnableCascade_timePicker')
         .width('100%')
         .height('50%')
         .enableCascade(this.enableCascade)
@@ -133,8 +133,8 @@ struct TimePickerEnableCascadePage {
           this.selectedTime.setHours(value.hour, value.minute)
           console.info('select current date is: ' + JSON.stringify(value))
         })
-      Text('hour:' + this.hour).fontSize(20).margin(10).key('hour')
-      Text('minute:' + this.minute).fontSize(20).margin(10).key('minute')
+      Text('hour:' + this.hour).fontSize(20).margin(10).key('timePickerEnableCascade_hour')
+      Text('minute:' + this.minute).fontSize(20).margin(10).key('timePickerEnableCascade_minute')
       Text('24hour:false')
     }
     .width('100%')

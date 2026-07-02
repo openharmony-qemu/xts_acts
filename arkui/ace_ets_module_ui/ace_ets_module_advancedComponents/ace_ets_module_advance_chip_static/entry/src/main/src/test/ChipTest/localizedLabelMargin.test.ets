@@ -24,7 +24,7 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { Color, FontWeight, $r, Resource } from '@ohos.arkui.component'
 
-export default function localizedLabelMargin() {
+export default function localizedLabelMargin(): void {
   describe('localizedLabelMargin', () => {
     beforeAll(async (): Promise<void> => {
       console.info("localizedLabelMargin beforeEach start");

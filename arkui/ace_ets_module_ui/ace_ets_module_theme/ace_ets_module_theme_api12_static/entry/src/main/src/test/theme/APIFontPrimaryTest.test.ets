@@ -72,12 +72,12 @@ it('APIFontPrimaryTest_static_0100', Level.LEVEL0, async (done: () => void): Pro
       console.info('c');
       let driver = Driver.create()
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+      let button = await driver.findComponent(ON.id('APIFontPrimary' + '_Button'));
       await Utils.sleep(1000);
       console.log("++++++++++++++APIFontPrimaryTest_static_0100button " + button);
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('APIFontPrimary_Text02');
+      let strJson = inspector.getInspectorByKey('APIFontPrimary' + '_Text02');
       
       console.info("[APIFontPrimaryTest_static_0100] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[APIFontPrimaryTest_static_0100] component JSON.parseJsonElement(strJson) is: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'));
@@ -99,11 +99,11 @@ it('APIFontPrimaryTest_static_0200', Level.LEVEL0, async (done: () => void): Pro
       console.info('APIFontPrimaryTest_static_0200 START');
       let driver = Driver.create()
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+      let button = await driver.findComponent(ON.id('APIFontPrimary' + '_Button'));
       await Utils.sleep(1000);
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('APIFontPrimary_Text03');
+      let strJson = inspector.getInspectorByKey('APIFontPrimary' + '_Text03');
       
       console.info("[APIFontPrimaryTest_static_0200] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[APIFontPrimaryTest_static_0200] component JSON.parseJsonElement(strJson) is: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'));
@@ -125,11 +125,11 @@ it('APIFontPrimaryTest_static_0300', Level.LEVEL0, async (done: () => void): Pro
       console.info('APIFontPrimaryTest_static_0300 START');
       let driver = Driver.create()
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+      let button = await driver.findComponent(ON.id('APIFontPrimary' + '_Button'));
   await Utils.sleep(1000);
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('APIFontPrimary_Text04');
+      let strJson = inspector.getInspectorByKey('APIFontPrimary' + '_Text04');
       
       console.info("[APIFontPrimaryTest_static_0300] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[APIFontPrimaryTest_static_0300] component JSON.parseJsonElement(strJson) is: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'));
@@ -151,11 +151,11 @@ it('APIFontPrimaryTest_static_0400', Level.LEVEL0, async (done: () => void): Pro
       console.info('APIFontPrimaryTest_static_0400 START');
       let driver = Driver.create()
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+      let button = await driver.findComponent(ON.id('APIFontPrimary' + '_Button'));
   await Utils.sleep(1000);
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('APIFontPrimary_Text05');
+      let strJson = inspector.getInspectorByKey('APIFontPrimary' + '_Text05');
       
       console.info("[APIFontPrimaryTest_static_0400] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[APIFontPrimaryTest_static_0400] component JSON.parseJsonElement(strJson) is: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'));
@@ -177,11 +177,11 @@ it('APIFontPrimaryTest_static_0500', Level.LEVEL0, async (done: () => void): Pro
       console.info('APIFontPrimaryTest_static_0500 START');
       let driver = Driver.create()
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+      let button = await driver.findComponent(ON.id('APIFontPrimary' + '_Button'));
   await Utils.sleep(1000);
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('APIFontPrimary_Text06');
+      let strJson = inspector.getInspectorByKey('APIFontPrimary' + '_Text06');
       
       console.info("[APIFontPrimaryTest_static_0500] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[APIFontPrimaryTest_static_0500] component JSON.parseJsonElement(strJson) is: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'));
@@ -203,11 +203,11 @@ it('APIFontPrimaryTest_static_0600', Level.LEVEL0, async (done: () => void): Pro
       console.info('APIFontPrimaryTest_static_0600 START');
       let driver = Driver.create()
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+      let button = await driver.findComponent(ON.id('APIFontPrimary' + '_Button'));
       await Utils.sleep(1000);
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('APIFontPrimary_Text07');
+      let strJson = inspector.getInspectorByKey('APIFontPrimary' + '_Text07');
       
       console.info("[APIFontPrimaryTest_static_0600] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[APIFontPrimaryTest_static_0600] component JSON.parseJsonElement(strJson) is: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'));
@@ -229,11 +229,11 @@ it('APIFontPrimaryTest_static_0700', Level.LEVEL0, async (done: () => void): Pro
       console.info('APIFontPrimaryTest_static_0700 START');
       let driver = Driver.create()
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+      let button = await driver.findComponent(ON.id('APIFontPrimary' + '_Button'));
   await Utils.sleep(1000);
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('APIFontPrimary_Text08');
+      let strJson = inspector.getInspectorByKey('APIFontPrimary' + '_Text08');
       
       console.info("[APIFontPrimaryTest_static_0700] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[APIFontPrimaryTest_static_0700] component JSON.parseJsonElement(strJson) is: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'));
@@ -255,11 +255,11 @@ it('APIFontPrimaryTest_static_0800', Level.LEVEL0, async (done: () => void): Pro
       console.info('APIFontPrimaryTest_static_0800 START');
       let driver = Driver.create()
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+      let button = await driver.findComponent(ON.id('APIFontPrimary' + '_Button'));
   await Utils.sleep(1000);
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('APIFontPrimary_Text09');
+      let strJson = inspector.getInspectorByKey('APIFontPrimary' + '_Text09');
       
       console.info("[APIFontPrimaryTest_static_0800] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[APIFontPrimaryTest_static_0800] component JSON.parseJsonElement(strJson) is: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'));
@@ -281,11 +281,11 @@ it('APIFontPrimaryTest_static_0900', Level.LEVEL0, async (done: () => void): Pro
       console.info('APIFontPrimaryTest_static_0900 START');
       let driver = Driver.create()
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+      let button = await driver.findComponent(ON.id('APIFontPrimary' + '_Button'));
   await Utils.sleep(1000);
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('APIFontPrimary_Text10');
+      let strJson = inspector.getInspectorByKey('APIFontPrimary' + '_Text10');
       
       console.info("[APIFontPrimaryTest_static_0900] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[APIFontPrimaryTest_static_0900] component JSON.parseJsonElement(strJson) is: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'));
@@ -307,11 +307,11 @@ it('APIFontPrimaryTest_static_1000', Level.LEVEL0, async (done: () => void): Pro
       console.info('APIFontPrimaryTest_static_1000 START');
       let driver = Driver.create()
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+      let button = await driver.findComponent(ON.id('APIFontPrimary' + '_Button'));
       await Utils.sleep(1000);
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('APIFontPrimary_Text11');
+      let strJson = inspector.getInspectorByKey('APIFontPrimary' + '_Text11');
       
       console.info("[APIFontPrimaryTest_static_1000] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[APIFontPrimaryTest_static_1000] component JSON.parseJsonElement(strJson) is: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'));
@@ -333,11 +333,11 @@ it('APIFontPrimaryTest_static_1100', Level.LEVEL0, async (done: () => void): Pro
       console.info('APIFontPrimaryTest_static_1100 START');
       let driver = Driver.create()
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+      let button = await driver.findComponent(ON.id('APIFontPrimary' + '_Button'));
   await Utils.sleep(1000);
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('APIFontPrimary_Text12');
+      let strJson = inspector.getInspectorByKey('APIFontPrimary' + '_Text12');
       
       console.info("[APIFontPrimaryTest_static_1100] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[APIFontPrimaryTest_static_1100] component JSON.parseJsonElement(strJson) is: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'));
@@ -359,11 +359,11 @@ it('APIFontPrimaryTest_static_1200', Level.LEVEL0, async (done: () => void): Pro
       console.info('APIFontPrimaryTest_static_1200 START');
       let driver = Driver.create()
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+      let button = await driver.findComponent(ON.id('APIFontPrimary' + '_Button'));
   await Utils.sleep(1000);
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('APIFontPrimary_Text13');
+      let strJson = inspector.getInspectorByKey('APIFontPrimary' + '_Text13');
       
       console.info("[APIFontPrimaryTest_static_1200] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[APIFontPrimaryTest_static_1200] component JSON.parseJsonElement(strJson) is: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'));
@@ -385,11 +385,11 @@ it('APIFontPrimaryTest_static_1300', Level.LEVEL0, async (done: () => void): Pro
       console.info('APIFontPrimaryTest_static_1300 START');
       let driver = Driver.create()
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+      let button = await driver.findComponent(ON.id('APIFontPrimary' + '_Button'));
   await Utils.sleep(1000);
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('APIFontPrimary_Text14');
+      let strJson = inspector.getInspectorByKey('APIFontPrimary' + '_Text14');
       
       console.info("[APIFontPrimaryTest_static_1300] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[APIFontPrimaryTest_static_1300] component JSON.parseJsonElement(strJson) is: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'));
@@ -411,11 +411,11 @@ it('APIFontPrimaryTest_static_1400', Level.LEVEL0, async (done: () => void): Pro
       console.info('APIFontPrimaryTest_static_1400 START');
       let driver = Driver.create()
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+      let button = await driver.findComponent(ON.id('APIFontPrimary' + '_Button'));
   await Utils.sleep(1000);
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('APIFontPrimary_Text15');
+      let strJson = inspector.getInspectorByKey('APIFontPrimary' + '_Text15');
       
       console.info("[APIFontPrimaryTest_static_1400] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[APIFontPrimaryTest_static_1400] component JSON.parseJsonElement(strJson) is: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'));
@@ -437,11 +437,11 @@ it('APIFontPrimaryTest_static_1500', Level.LEVEL0, async (done: () => void): Pro
       console.info('APIFontPrimaryTest_static_1500 START');
       let driver = Driver.create()
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+      let button = await driver.findComponent(ON.id('APIFontPrimary' + '_Button'));
   await Utils.sleep(1000);
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('APIFontPrimary_Text16');
+      let strJson = inspector.getInspectorByKey('APIFontPrimary' + '_Text16');
       
       console.info("[APIFontPrimaryTest_static_1500] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[APIFontPrimaryTest_static_1500] component JSON.parseJsonElement(strJson) is: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'));

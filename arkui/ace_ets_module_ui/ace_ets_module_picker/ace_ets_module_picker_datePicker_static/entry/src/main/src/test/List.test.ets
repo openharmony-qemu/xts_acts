@@ -16,7 +16,7 @@
 
 import DataPickerCanLoopTest from './datePickerTest/DataPickerCanLoop.test'
 import DataPickerCanLoopModifierTest from './datePickerTest/DataPickerCanLoopModifier.test'
-import DatePickerTest from './datePickerTest/DataPickerCanLoopModifier.test'
+import DatePickerTest from './datePickerTest/DatePicker.test'
 import DataPanelTest from './DataPanelTest/DataPanel.test'
 import DatePickerComponentConstructorTest from './datePickerComponentTest/DatePickerComponentConstructor.test'
 import DatePickerComponentDisplayModeTest from './datePickerComponentTest/DatePickerComponentDisplayMode.test'

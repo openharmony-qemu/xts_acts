@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -155,7 +155,7 @@ export default function ArrayUnshiftTest(): void {
      * @tc.level Level 2
      */
     it('testArrayUnshift006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<boolean>(false);
+      const arr = Array.create<boolean>(1, false);
       arr.unshift(true);
       expect(arr[0]).assertTrue();
     });
@@ -231,7 +231,7 @@ export default function ArrayUnshiftTest(): void {
      * @tc.level Level 2
      */
     it('testArrayUnshift011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(10);
+      const arr = Array.create<number>(1, 10);
       const toAdd = new Array<number>(1, 2, 3);
       arr.unshift(...toAdd);
       expect(arr.length).assertEqual(4);
@@ -247,7 +247,7 @@ export default function ArrayUnshiftTest(): void {
      * @tc.level Level 2
      */
     it('testArrayUnshift012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(20);
+      const arr = Array.create<number>(1, 20);
       const part1 = new Array<number>(1, 2);
       arr.unshift(...part1, 3, 4);
       expect(arr.length).assertEqual(5);
@@ -502,7 +502,7 @@ export default function ArrayUnshiftTest(): void {
      * @tc.level Level 2
      */
     it('testArrayUnshift029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(100);
+      const arr = Array.create<number>(1, 100);
       arr.unshift(50);
       expect(arr.length).assertEqual(2);
       expect(arr[0]).assertEqual(50);
@@ -553,12 +553,12 @@ export default function ArrayUnshiftTest(): void {
      * @tc.level Level 2
      */
     it('testArrayUnshift032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr1 = new Array<number>(2);
+      const arr1 = Array.create<number>(1, 2);
       arr1.unshift(1);
       expect(arr1[0]).assertEqual(1);
       expect(arr1[1]).assertEqual(2);
 
-      const arr2 = new Array<number>(1);
+      const arr2 = Array.create<number>(1, 1);
       arr2.push(2);
       expect(arr2[0]).assertEqual(1);
       expect(arr2[1]).assertEqual(2);
@@ -864,7 +864,7 @@ export default function ArrayUnshiftTest(): void {
       arr1.unshift(1);
       expect(arr1.length).assertEqual(3);
 
-      const prefix = new Array<number>(1);
+      const prefix = Array.create<number>(1, 1);
       const arr2 = new Array<number>(2, 3);
       const arr3 = prefix.concat(arr2);
       expect(arr2.length).assertEqual(2);
@@ -917,7 +917,7 @@ export default function ArrayUnshiftTest(): void {
      * @tc.level Level 2
      */
     it('testArrayUnshift054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(1, 5);
       arr.unshift(1);
       arr.push(10);
       arr.unshift(0);
@@ -989,7 +989,7 @@ export default function ArrayUnshiftTest(): void {
      * @tc.level Level 2
      */
     it('testArrayUnshift058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1);
+      const arr = Array.create<number>(1, 1);
       const empty = new Array<number>();
       const result = arr.unshift(...empty);
       expect(result).assertEqual(1);
@@ -1006,7 +1006,7 @@ export default function ArrayUnshiftTest(): void {
      * @tc.level Level 2
      */
     it('testArrayUnshift059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<Object>(1);
+      const arr = Array.create<Object>(1, 1);
       const result = arr.unshift(arr);
       expect(result).assertEqual(2);
       expect(arr[0] === arr).assertTrue();
@@ -1025,7 +1025,7 @@ export default function ArrayUnshiftTest(): void {
     it('testArrayUnshift060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const item = new UnshiftItem034();
       item.value = 6;
-      const arr = new Array<UnshiftItem034>(item);
+      const arr = Array.create<UnshiftItem034>(1, item);
       const head = new UnshiftItem034();
       head.value = 1;
       const result = arr.unshift(head);
@@ -1044,7 +1044,7 @@ export default function ArrayUnshiftTest(): void {
      * @tc.level Level 2
      */
     it('testArrayUnshift061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(4);
+      const arr = Array.create<number>(1, 4);
       const prefix = new Array<number>(1, 2, 3);
       const values = Array.from<number>(prefix.values());
       const length = arr.unshift(...values);
@@ -1117,7 +1117,7 @@ export default function ArrayUnshiftTest(): void {
       second.name = 'b';
       const third = new UnshiftPerson009();
       third.name = 'c';
-      const arr = new Array<UnshiftPerson009>(third);
+      const arr = Array.create<UnshiftPerson009>(1, third);
       const result = arr.unshift(first, second);
       expect(result).assertEqual(3);
       expect(arr[0].name).assertEqual('a');
@@ -1135,7 +1135,7 @@ export default function ArrayUnshiftTest(): void {
       const prefix = new Array<number>(1, 2, 3);
       const iterator = prefix.values();
       expect(iterator.next().value).assertEqual(1);
-      const arr = new Array<number>(4);
+      const arr = Array.create<number>(1, 4);
       const remaining = Array.from<number>(iterator);
       const result = arr.unshift(...remaining);
       expect(result).assertEqual(3);
@@ -1252,7 +1252,7 @@ export default function ArrayUnshiftTest(): void {
      * @tc.level Level 2
      */
     it('testArrayUnshift073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(4);
+      const arr = Array.create<number>(1, 4);
       const middle = new Array<number>(2, 3);
       const result = arr.unshift(1, ...middle);
       expect(result).assertEqual(4);
@@ -1268,7 +1268,7 @@ export default function ArrayUnshiftTest(): void {
      * @tc.level Level 2
      */
     it('testArrayUnshift074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1);
+      const arr = Array.create<number>(1, 1);
       const result = arr.unshift(...arr);
       expect(result).assertEqual(2);
       expect(arr.toString()).assertEqual('1,1');
@@ -1283,7 +1283,7 @@ export default function ArrayUnshiftTest(): void {
      * @tc.level Level 2
      */
     it('testArrayUnshift075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1);
+      const arr = Array.create<number>(1, 1);
       const result = arr.unshift(arr.unshift(2));
       expect(result).assertEqual(3);
       expect(arr.toString()).assertEqual('2,2,1');
@@ -1298,7 +1298,7 @@ export default function ArrayUnshiftTest(): void {
      * @tc.level Level 2
      */
     it('testArrayUnshift076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1);
+      const arr = Array.create<number>(1, 1);
       const first = arr.unshift(2);
       const composed = new Array<number>(first, ...arr);
       expect(composed.toString()).assertEqual('2,2,1');
@@ -1315,7 +1315,7 @@ export default function ArrayUnshiftTest(): void {
      */
     it('testArrayUnshift077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = 'A\u0000B';
-      const arr = new Array<string>('tail');
+      const arr = Array.create<string>(1, 'tail');
       const result = arr.unshift(text);
       expect(result).assertEqual(2);
       expect(arr[0]).assertEqual(text);
@@ -1332,7 +1332,7 @@ export default function ArrayUnshiftTest(): void {
      */
     it('testArrayUnshift078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = '\uD842\uDFB7';
-      const arr = new Array<string>('tail');
+      const arr = Array.create<string>(1, 'tail');
       const result = arr.unshift(text);
       expect(result).assertEqual(2);
       expect(arr[0]).assertEqual(text);
@@ -1347,9 +1347,9 @@ export default function ArrayUnshiftTest(): void {
      * @tc.level Level 2
      */
     it('testArrayUnshift079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const oldHead = new Array<number>(1);
-      const newHead = new Array<number>(2);
-      const arr = new Array<Array<number>>(oldHead);
+      const oldHead = Array.create<number>(1, 1);
+      const newHead = Array.create<number>(1, 2);
+      const arr = Array.create<Array<number>>(1, oldHead);
       const result = arr.unshift(newHead);
       expect(result).assertEqual(2);
       expect(arr[0] === newHead).assertTrue();
@@ -1367,7 +1367,7 @@ export default function ArrayUnshiftTest(): void {
     it('testArrayUnshift080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const item = new UnshiftItem034();
       item.value = 1;
-      const arr = new Array<UnshiftItem034>(item);
+      const arr = Array.create<UnshiftItem034>(1, item);
       arr.unshift(new UnshiftItem034());
       const result = arr.unshift(new UnshiftItem034());
       expect(result).assertEqual(3);
@@ -1489,7 +1489,7 @@ export default function ArrayUnshiftTest(): void {
      */
     it('testArrayUnshift087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values = Array.from<number>(new Set<number>(new Array<number>(1, 1, 2)));
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(1, 3);
       const result = arr.unshift(...values);
       expect(result).assertEqual(3);
       expect(arr.toString()).assertEqual('1,2,3');
@@ -1521,7 +1521,7 @@ export default function ArrayUnshiftTest(): void {
      * @tc.level Level 2
      */
     it('testArrayUnshift089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number | string | boolean>(1);
+      const arr = Array.create<number | string | boolean>(1, 1);
       const result = arr.unshift('', 'a', true);
       expect(result).assertEqual(4);
       expect(arr[0]).assertEqual('');
@@ -1553,7 +1553,7 @@ export default function ArrayUnshiftTest(): void {
      * @tc.level Level 2
      */
     it('testArrayUnshift091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<bigint>(3n);
+      const arr = Array.create<bigint>(1, 3n);
       const result = arr.unshift(1n, 2n);
       expect(result).assertEqual(3);
       expect(arr[0]).assertEqual(1n);
@@ -1570,7 +1570,7 @@ export default function ArrayUnshiftTest(): void {
      * @tc.level Level 2
      */
     it('testArrayUnshift092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<char>(c'C');
+      const arr = Array.create<char>(1, c'C');
       const result = arr.unshift(c'A', c'B');
       expect(result).assertEqual(3);
       expect(arr[0]).assertEqual(c'A');
@@ -1642,7 +1642,7 @@ export default function ArrayUnshiftTest(): void {
     it('testArrayUnshift096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const item = new UnshiftItem034();
       item.value = 1;
-      const arr = new Array<number | UnshiftItem034>(2);
+      const arr = Array.create<number | UnshiftItem034>(1, 2);
       const result = arr.unshift(item);
       expect(result).assertEqual(2);
       expect(arr[0] === item).assertTrue();

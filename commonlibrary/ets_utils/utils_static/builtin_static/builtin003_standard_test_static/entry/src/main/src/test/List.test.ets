@@ -1,3 +1,4 @@
+'use static';
 import ArrayToLocaleStringTest from "./ArrayToLocaleStringTest.test";
 import ArrayToLocaleStringSecondTest from "./ArrayToLocaleStringSecondTest.test";
 import ArrayToReversedTest from "./ArrayToReversedTest.test";

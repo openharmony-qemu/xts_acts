@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -282,7 +282,7 @@ export default function ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testArrayMap013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(42);
+      let arr = Array.create<number>(1, 42);
       let result = arr.map((v: number): number => v * 2);
       expect(result.length).assertEqual(1);
       expect(result[0]).assertEqual(84);
@@ -1148,7 +1148,7 @@ export default function ArrayMapTest(): void {
      */
     it('testArrayMap064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2);
-      const result = arr.map((value: number): Array<number> => new Array<number>(value));
+      const result = arr.map((value: number): Array<number> => Array.create<number>(1, value));
       expect(result.length).assertEqual(2);
       expect(result[0][0]).assertEqual(1);
       expect(result[1][0]).assertEqual(2);
@@ -1250,7 +1250,7 @@ export default function ArrayMapTest(): void {
     it('testArrayMap070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const item = new Item020();
       item.value = 7;
-      const arr = new Array<Item020>(item);
+      const arr = Array.create<Item020>(1, item);
       const result = arr.map((value: Item020): Item020 => value);
       expect(result[0] === item).assertTrue();
     });
@@ -1266,7 +1266,7 @@ export default function ArrayMapTest(): void {
     it('testArrayMap071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const item = new Item020();
       item.value = 1;
-      const arr = new Array<Item020>(item);
+      const arr = Array.create<Item020>(1, item);
       const result = arr.map((value: Item020): Item020 => {
         let mapped = new Item020();
         mapped.value = value.value;
@@ -1303,7 +1303,7 @@ export default function ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testArrayMap073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1);
+      const arr = Array.create<number>(1, 1);
       const result = arr.map((_: number): number => Number.NaN);
       expect(Number.isNaN(result[0])).assertTrue();
     });
@@ -1317,7 +1317,7 @@ export default function ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testArrayMap074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(-0);
+      const arr = Array.create<number>(1, -0);
       const result = arr.map((value: number): number => value);
       expect(1 / result[0]).assertEqual(Number.NEGATIVE_INFINITY);
     });
@@ -1331,7 +1331,7 @@ export default function ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testArrayMap075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<Array<number>>(new Array<number>(1), new Array<number>(2));
+      const arr = new Array<Array<number>>(Array.create<number>(1, 1), Array.create<number>(1, 2));
       const result = arr.map((item: Array<number>): Array<number> => item.map((value: number): number => value * 2));
       expect(result.length).assertEqual(2);
       expect(result[0][0]).assertEqual(2);
@@ -1378,7 +1378,7 @@ export default function ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testArrayMap078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<string>('Symbol(a)');
+      const arr = Array.create<string>(1, 'Symbol(a)');
       const result = arr.map((value: string): string => value);
       expect(result[0]).assertEqual('Symbol(a)');
     });
@@ -1517,7 +1517,7 @@ export default function ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testArrayMap087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1);
+      const arr = Array.create<number>(1, 1);
       const result = arr.map((value: number): number => value);
       expect(result.toString()).assertEqual('1');
     });

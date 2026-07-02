@@ -1185,7 +1185,7 @@ export default function ArrayReduceRight1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayReduceRightOne063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(9);
+      const arr = Array.create<number>(1, 9);
       let calls = 0;
       const result = arr.reduceRight((acc: number, cur: number): number => { calls++; return acc + cur; }, 1);
       expect(result).assertEqual(10);

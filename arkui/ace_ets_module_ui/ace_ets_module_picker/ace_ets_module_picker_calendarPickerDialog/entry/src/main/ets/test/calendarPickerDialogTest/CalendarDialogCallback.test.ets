@@ -63,7 +63,7 @@ export default function CalendarDialogCallback() {
       }
       events_emitter.on(event, callback);
       console.info('CalendarPickerDialogCallback_0100 START');
-      let button = await driver1.findComponent(ON.id('Calendar_dialog_A'));
+      let button = await driver1.findComponent(ON.id('CalendarDialogCallback' + '_Calendar_dialog_A'));
       await button.click();
       await CommonFunc.sleep(3000);
 

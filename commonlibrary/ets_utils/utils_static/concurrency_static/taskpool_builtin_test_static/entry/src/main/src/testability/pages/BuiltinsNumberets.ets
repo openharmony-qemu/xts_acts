@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 export function builtinsNumberConstructorTest0200() {
   let TAG='builtinsNumberConstructorTest0200'

@@ -1,3 +1,4 @@
+'use static';
 import atomicReferenceTest from './AtomicReference.test';
 import atomicIntTest from './AtomicInt.test';
 import atomicLongTest from './AtomicLong.test';

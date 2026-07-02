@@ -115,35 +115,35 @@ struct GridEventPage {
   build() {
     Column({ space: 5 }) {
       Row(){
-        Text(this.onItemDragStart).fontSize(10).margin({right:10}).key('onItemDragStart')
-        Text(this.onItemDragEnter).fontSize(10).key('onItemDragEnter')
+        Text(this.onItemDragStart).fontSize(10).margin({right:10}).key('GridPage_onItemDragStart')
+        Text(this.onItemDragEnter).fontSize(10).key('GridPage_onItemDragEnter')
       }
       Row(){
-        Text(this.onItemDragMove).fontSize(10).margin({right:5}).key('onItemDragMove')
-        Text(this.onItemDragLeave).fontSize(10).margin({right:5}).key('onItemDragLeave')
-        Text(this.onItemDrop).fontSize(10).key('onItemDrop')
+        Text(this.onItemDragMove).fontSize(10).margin({right:5}).key('GridPage_onItemDragMove')
+        Text(this.onItemDragLeave).fontSize(10).margin({right:5}).key('GridPage_onItemDragLeave')
+        Text(this.onItemDrop).fontSize(10).key('GridPage_onItemDrop')
       }
       Row(){
-        Text('onScrollIndex:' + this.onScrollIndex).fontSize(10).margin({right:10}).key('onScrollIndex')
-        Text(this.onScrollFrameBeginText).fontSize(10).key('onScrollFrameBeginText')
+        Text('onScrollIndex:' + this.onScrollIndex).fontSize(10).margin({right:10}).key('GridPage_onScrollIndex')
+        Text(this.onScrollFrameBeginText).fontSize(10).key('GridPage_onScrollFrameBeginText')
       }
       Row()
       {
-        Text(this.onScrollText).fontSize(10).margin({right:10}).key('onScrollText')
-        Text(this.onReachStartText).fontSize(10).key('onReachStartText')
+        Text(this.onScrollText).fontSize(10).margin({right:10}).key('GridPage_onScrollText')
+        Text(this.onReachStartText).fontSize(10).key('GridPage_onReachStartText')
       }
       Row()
       {
-        Text(this.onReachEndText).fontSize(10).margin({right:10}).key('onReachEndText')
-        Text(this.onScrollStartText).fontSize(10).key('onScrollStartText')
+        Text(this.onReachEndText).fontSize(10).margin({right:10}).key('GridPage_onReachEndText')
+        Text(this.onScrollStartText).fontSize(10).key('GridPage_onScrollStartText')
       }
       Row()
       {
-        Text(this.onScrollIndexText).fontSize(10).margin({right:10}).key('onScrollIndexText')
-        Text(this.onScrollStopText).fontSize(10).key('onScrollStopText')
+        Text(this.onScrollIndexText).fontSize(10).margin({right:10}).key('GridPage_onScrollIndexText')
+        Text(this.onScrollStopText).fontSize(10).key('GridPage_onScrollStopText')
       }
       Button(this.buttonName)
-        .key('button')
+        .key('GridPage_button')
         .height('8%')
         .onClick(() => { // 点击后滑到下一页
           this.buttonName = 'clicked'
@@ -159,7 +159,7 @@ struct GridEventPage {
       }.columnsTemplate('1fr')
       .rowsTemplate('1fr')
       .height('5%')
-      .key('grid_default')
+      .key('GridPage_grid_default')
 
       Grid() {
         ForEach(this.number, (day: string) => {
@@ -190,7 +190,7 @@ struct GridEventPage {
       .multiSelectable(this.multiSelectable)
       .supportAnimation(this.supportAnimation)
       .width('90%')
-      .key('grid1')
+      .key('GridPage_grid1')
       .backgroundColor(0xFAEEE0)
       .height(150)
       .edgeEffect(EdgeEffect.Spring)
@@ -236,7 +236,7 @@ struct GridEventPage {
       .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
       .columnsGap(10)
       .rowsGap(10)
-      .key('grid2')
+      .key('GridPage_grid2')
       .scrollBar(this.scrollBar)
       .scrollBarColor(this.scrollBarColor)
       .scrollBarWidth(this.scrollBarWidth)

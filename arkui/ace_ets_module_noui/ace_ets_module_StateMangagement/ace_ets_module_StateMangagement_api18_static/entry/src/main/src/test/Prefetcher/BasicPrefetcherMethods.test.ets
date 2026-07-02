@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,7 +23,7 @@ import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-export default function BasicPrefetcherMethods() {
+export default function BasicPrefetcherMethods(): void {
   describe('BasicPrefetcherMethods', () => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api18.static", "EntryAbility");

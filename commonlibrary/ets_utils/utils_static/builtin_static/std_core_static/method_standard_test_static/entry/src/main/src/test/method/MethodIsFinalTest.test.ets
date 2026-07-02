@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -763,7 +763,6 @@ export default function MethodIsFinalTest(): void {
         /**
          * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_IS_FINAL_3200
          * @tc.name testMethodIsFinal032
-         * @tc.desc Verify inherited static method is not final because static final is not valid ArkTS
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 2

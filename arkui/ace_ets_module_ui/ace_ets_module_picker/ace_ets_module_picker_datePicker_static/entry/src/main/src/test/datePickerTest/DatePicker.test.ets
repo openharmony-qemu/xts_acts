@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,6 @@
  * limitations under the License.
  */
 
-'use static'
 
 import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import router from '@ohos.router';
@@ -35,7 +35,7 @@ export default function DatePickerTest() {
     beforeEach(async (): Promise<void> => {
       console.info('DatePickerTest beforeEach start');
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/DatePicker/DatePicker',
+        url: 'MainAbility/pages/datePicker/DatePicker',
       };
       try {
         const routerInstance = AppStorage.get<Router>('router') as Router;

@@ -1,3 +1,4 @@
+'use static';
 import MethodEqualsTest from "./method/MethodEqualsTest.test";
 import MethodGetAccessModifierTest from "./method/MethodGetAccessModifierTest.test";
 import MethodGetAttributesTest from "./method/MethodGetAttributesTest.test";

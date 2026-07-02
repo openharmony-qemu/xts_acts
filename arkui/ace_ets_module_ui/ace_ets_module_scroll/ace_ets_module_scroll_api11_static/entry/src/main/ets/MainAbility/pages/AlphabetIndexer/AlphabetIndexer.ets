@@ -54,7 +54,7 @@ struct alphabetIndexer {
       AlphabetIndexer({ arrayValue: this.value, selected: 0 })
         .color('#FF00DDDD')
         .selectedColor(0xffffff)
-        .key('alphabetIndexer')
+        .key('AlphabetIndexer_alphabetIndexer')
         .popupColor('#FF737373')
         .selectedBackgroundColor('#FF0000E6')
         .popupBackground('#FF00DDDD')

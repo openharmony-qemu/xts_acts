@@ -27,7 +27,7 @@ import {
   $r,
 } from '@ohos.arkui.component';
 
-export default function ChipV2OptionsMethodTest() {
+export default function ChipV2OptionsMethodTest(): void {
   describe('ChipV2OptionsMethodTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("ChipV2OptionsMethodTest beforeEach start");

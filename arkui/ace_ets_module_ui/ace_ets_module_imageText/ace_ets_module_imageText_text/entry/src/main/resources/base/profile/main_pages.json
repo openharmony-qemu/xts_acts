@@ -141,6 +141,7 @@
         "MainAbility/pages/Text/OrphanCharOptimization_null",
         "MainAbility/pages/Text/TextFontVariations",
         "MainAbility/pages/Text/TextPunctuationOverflow",
-        "MainAbility/pages/Text/TextIncrementalUpdatePolicy"
+        "MainAbility/pages/Text/TextIncrementalUpdatePolicy",
+        "MainAbility/pages/Text/TextTailIndents"
     ]
 }

@@ -82,7 +82,7 @@ export default function Tabs_barMode() {
      */
 it('testTabsBarModeFixed_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testTabsBarModeFixed_static_01] START');
-      let strJson = inspector.getInspectorByKey('Tabs_barMode_01');
+      let strJson = inspector.getInspectorByKey('Tabs_barMode' + '_01');
       let uiContext = AppStorage.get<UIContext>('uiContext')!;
       console.info(`[testTabsBarModeFixed_static_01] type: ${JSON.stringify(JSON.parseJsonElement(strJson)
         .getString('$type'))}`);
@@ -101,8 +101,8 @@ it('testTabsBarModeFixed_static_01', Level.LEVEL0, async (done: () => void): Pro
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('vertical')).assertEqual("false");
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
-      let Tabs_barMode_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode_001');
-      let Tabs_barMode_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode_011');
+      let Tabs_barMode_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode' + '_001');
+      let Tabs_barMode_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode' + '_011');
       let driver = Driver.create();
       await driver.swipe((Math.round(Tabs_barMode_011.right -
         ((Tabs_barMode_011.right - Tabs_barMode_011.left) / 6))).toInt(),
@@ -110,17 +110,17 @@ it('testTabsBarModeFixed_static_01', Level.LEVEL0, async (done: () => void): Pro
         (Math.round(Tabs_barMode_011.left + ((Tabs_barMode_011.right - Tabs_barMode_011.left) / 6))).toInt(),
         (Math.round(Tabs_barMode_011.top + ((Tabs_barMode_011.bottom - Tabs_barMode_011.top) / 2))).toInt());
       await CommonFunc.sleep(1000);
-      let Tabs_barMode_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode_002');
-      let Tabs_barMode_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode_012');
+      let Tabs_barMode_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode' + '_002');
+      let Tabs_barMode_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode' + '_012');
       await driver.swipe((Math.round(Tabs_barMode_012.right -
         ((Tabs_barMode_012.right - Tabs_barMode_012.left) / 6))).toInt(),
         (Math.round(Tabs_barMode_012.top + ((Tabs_barMode_012.bottom - Tabs_barMode_012.top) / 2))).toInt(),
         (Math.round(Tabs_barMode_012.left + ((Tabs_barMode_012.right - Tabs_barMode_012.left) / 6))).toInt(),
         (Math.round(Tabs_barMode_012.top + ((Tabs_barMode_012.bottom - Tabs_barMode_012.top) / 2))).toInt());
       await CommonFunc.sleep(1000);
-      let Tabs_barMode_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode_003');
-      let Tabs_barMode_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode_013');
-      let Tabs_barMode_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode_01');
+      let Tabs_barMode_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode' + '_003');
+      let Tabs_barMode_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode' + '_013');
+      let Tabs_barMode_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode' + '_01');
       let subGreen: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode_green');
       let subBlue: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode_blue');
       let subYellow: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode_yellow');
@@ -199,7 +199,7 @@ it('testTabsBarModeFixed_static_01', Level.LEVEL0, async (done: () => void): Pro
     //        console.info('[testTabsBarModeScrollable] START');
     //        AppStorage.get<MessageManager<number>>('messageManager')?.notify({name:'changeBarMode', value:BarMode.getBoolean('scrollable')});
     //        await CommonFunc.sleep(3000);
-    //        let strJson = inspector.getInspectorByKey('Tabs_barMode_01');
+    //        let strJson = inspector.getInspectorByKey('Tabs_barMode' + '_01');
     //
     //        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Tabs');
     //        console.info(`[testTabsBarModeScrollable] type: ${JSON.stringify(JSON.parseJsonElement(strJson).getString('$type'))}`);
@@ -212,8 +212,8 @@ it('testTabsBarModeFixed_static_01', Level.LEVEL0, async (done: () => void): Pro
     //        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
     //        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('vertical')).assertEqual("false");
     //        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.getBoolean('scrollable')');
-    //        let Tabs_barMode_001:RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode_001');
-    //        let Tabs_barMode_011:RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode_011');
+    //        let Tabs_barMode_001:RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode' + '_001');
+    //        let Tabs_barMode_011:RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode' + '_011');
     //        let subGreen:RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode_green');
     //        let driver = Driver.create();
     //        await driver.swipe(600,80,120,80);
@@ -221,17 +221,17 @@ it('testTabsBarModeFixed_static_01', Level.LEVEL0, async (done: () => void): Pro
     //        let btn1 = await driver.findComponent(ON.text('blue'));
     //        await btn1.click()
     //        await CommonFunc.sleep(1000);
-    //        let Tabs_barMode_002:RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode_002');
-    //        let Tabs_barMode_012:RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode_012');
+    //        let Tabs_barMode_002:RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode' + '_002');
+    //        let Tabs_barMode_012:RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode' + '_012');
     //        let subBlue:RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode_blue');
     //        await driver.swipe(600,80,120,80);
     //        await CommonFunc.sleep(1000);
     //        let btn2 = await driver.findComponent(ON.text('yellow'));
     //        await btn2.click()
     //        await CommonFunc.sleep(1000);
-    //        let Tabs_barMode_003:RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode_003');
-    //        let Tabs_barMode_013:RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode_013');
-    //        let Tabs_barMode_01:RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode_01');
+    //        let Tabs_barMode_003:RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode' + '_003');
+    //        let Tabs_barMode_013:RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode' + '_013');
+    //        let Tabs_barMode_01:RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode' + '_01');
     //        let subYellow:RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode_yellow');
     //
     //        console.info(`[testTabsBarModeScrollable]Tabs_barMode_011.left equal Tabs_barMode_001.left

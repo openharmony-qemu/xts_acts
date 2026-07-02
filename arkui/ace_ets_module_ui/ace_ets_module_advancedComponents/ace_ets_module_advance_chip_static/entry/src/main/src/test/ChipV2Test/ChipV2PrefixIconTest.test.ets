@@ -24,7 +24,7 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { Color, FontWeight, $r, Resource } from '@ohos.arkui.component'
 
-export default function ChipV2PrefixIconTest() {
+export default function ChipV2PrefixIconTest(): void {
   describe('ChipV2PrefixIconTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("ChipV2PrefixIconTest beforeEach start");

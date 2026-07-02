@@ -71,7 +71,7 @@ export default function OnlyRowsTemplate3() {
       await CommonFunc.sleep(2000);
 
       console.log('get Initial value')
-      let GridItem_011 = CommonFunc.getComponentRect('OnlyRowsTemplate1_GridItem_01');
+      let GridItem_011 = CommonFunc.getComponentRect('OnlyRowsTemplate1' + '_GridItem_01');
 
       console.log('assert size')
       console.log('GGridItem_01.right - GridItem_01.left' + (GridItem_011.right - GridItem_011.left))
@@ -82,10 +82,10 @@ export default function OnlyRowsTemplate3() {
       await CommonFunc.sleep(2000);
       let driver = Driver.create();
       await CommonFunc.sleep(300);
-      let button = await driver.findComponent(ON.id('OnlyRowsTemplate1_button'));
+      let button = await driver.findComponent(ON.id('OnlyRowsTemplate1' + '_button'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let GridItem_01 = CommonFunc.getComponentRect('OnlyRowsTemplate1_GridItem_01');
+      let GridItem_01 = CommonFunc.getComponentRect('OnlyRowsTemplate1' + '_GridItem_01');
       await CommonFunc.sleep(1000);
       console.info('[SUB_ACE_GRID_OnlyRowsTemplate3_0300] END');
       done();

@@ -3945,7 +3945,7 @@ export default function audioRendererChange() {
         flag = true;
       } catch(error){
         console.log(`SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_1400 error : ${error.message}, Code:${error.code}`);
-        expect(false).assertTrue();
+        expect(error.code).assertEqual(6800101);
       }
       expect(flag).assertTrue();
       done();
@@ -3993,7 +3993,7 @@ export default function audioRendererChange() {
         flag = true;
       } catch(error){
         console.log(`SUB_AUDIO_AUDIORENDERE_ON_OFF_EVENT_1500 error : ${error.message}, Code:${error.code}`);
-        expect(false).assertTrue();
+        expect(error.code).assertEqual(6800101);
       }
       expect(flag).assertTrue();
       done();

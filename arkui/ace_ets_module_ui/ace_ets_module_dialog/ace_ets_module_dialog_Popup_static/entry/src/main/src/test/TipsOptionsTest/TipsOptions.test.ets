@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,6 @@
  * limitations under the License.
  */
 
-'use static';
 
 import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import { abilityDelegatorRegistry, Driver, ON, MatchPattern } from '@kit.TestKit';
@@ -41,14 +41,16 @@ function logLongString(tag: string, longStr: string): void {
   }
 }
 
-export default function TipsOptionsTest() {
+export default function TipsOptionsTest(): void {
   describe('TipsOptionsTest', () => {
-    beforeAll(async (): Promise<void> => {
+    beforeAll(async () => {
+
       console.info("TipsOptionsTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.popup.static", "EntryAbility");
     });
 
-    beforeEach(async (): Promise<void> => {
+    beforeEach(async () => {
+
       console.info("TipsOptionsTest beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/TipsOptions/TipsOptions',
@@ -83,7 +85,8 @@ export default function TipsOptionsTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('tipsOptionsShowAtAnchor1', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('tipsOptionsShowAtAnchor1', Level.LEVEL1, async () => {
+
       console.info('TipsOptionsTest execute: tipsOptionsShowAtAnchor1 START');
       try {
         await CommonFunc.sleep(SLEEP_TIME);
@@ -99,11 +102,9 @@ export default function TipsOptionsTest() {
         expect(node != null).assertTrue();
         
         console.info('TipsOptionsTest execute: tipsOptionsShowAtAnchor1 END');
-        done();
       } catch (error) {
         console.error('TipsOptionsTest execute: tipsOptionsShowAtAnchor1 error:' + error);
         expect().assertFail();
-        done();
       }
     });
 
@@ -115,7 +116,8 @@ export default function TipsOptionsTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('tipsOptionsShowAtAnchor2', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('tipsOptionsShowAtAnchor2', Level.LEVEL1, async () => {
+
       console.info('TipsOptionsTest execute: tipsOptionsShowAtAnchor2 START');
       try {
         await CommonFunc.sleep(SLEEP_TIME);
@@ -131,11 +133,9 @@ export default function TipsOptionsTest() {
         expect(node != null).assertTrue();
         
         console.info('TipsOptionsTest execute: tipsOptionsShowAtAnchor2 END');
-        done();
       } catch (error) {
         console.error('TipsOptionsTest execute: tipsOptionsShowAtAnchor2 error:' + error);
         expect().assertFail();
-        done();
       }
     });
   });

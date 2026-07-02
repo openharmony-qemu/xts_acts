@@ -1,3 +1,4 @@
+'use static';
 import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
@@ -41,6 +42,7 @@ export default function abilityTest() {
         let status = accessibility.isOpenTouchGuideSync();
         hilog.info(domain, tag, `AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_0600 result: ${status}`);
         expect(typeof (status)).assertEqual('boolean');
+        expect(status).assertEqual(false);
         done();
       } catch (error) {
         hilog.error(domain, tag,'SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_0600 failed to isOpenTouchGuideSync because ');

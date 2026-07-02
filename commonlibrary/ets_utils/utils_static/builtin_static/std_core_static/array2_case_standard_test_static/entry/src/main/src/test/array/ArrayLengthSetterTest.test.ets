@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -532,7 +532,7 @@ export default function ArrayLengthSetterTest(): void {
      * @tc.level Level 2
      */
     it('testArrayLengthSetter029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(42);
+      let arr = Array.create<number>(1, 42);
       arr.length = 0;
       expect(arr.length).assertEqual(0);
     });

@@ -41,7 +41,6 @@ import GridStyleTest from './GridStyleTest/GridStyleTest.test'
 import BindMenuWithResponseTest from './BindContextMenuTest/BindMenuWithResponse.test'
 import BindContextMenuResponseTypeTest from './BindContextMenuTest/BindContextMenuResponseType.test'
 import SubMenuBuilderTest from './OpenMenuTest/SubMenuBuilderTest.test'
-
 import BindContextMenuByIsShowOptionsTest from './BindContextMenuByIsShowTest/BindContextMenuByIsShowOptions.test'
 import BindContextMenuByIsShowBlurMaskBgTest from './BindContextMenuByIsShowTest/BindContextMenuByIsShowBlurMaskBg.test'
 import BindContextMenuByIsShowBlurMaskMaskTest from './BindContextMenuByIsShowTest/BindContextMenuByIsShowBlurMaskMask.test'

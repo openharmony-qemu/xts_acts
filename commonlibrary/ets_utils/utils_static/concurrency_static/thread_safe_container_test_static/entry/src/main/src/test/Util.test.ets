@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (C) 2025 HiHope Open Source Organization.

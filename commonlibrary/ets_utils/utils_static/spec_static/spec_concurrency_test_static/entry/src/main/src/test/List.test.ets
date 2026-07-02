@@ -1,4 +1,4 @@
-'use static'
+'use static';
 import AsyncFunctionTest from "./AsyncFunction/AsyncFunction.test";
 import AwaitExpressionTest from "./AwaitExpression/AwaitExpression.test";
 import PromiseTest from "./Promise/Promise.test";

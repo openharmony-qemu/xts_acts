@@ -99,7 +99,7 @@ struct ListDelete {
       })
       .width('90%')
       .height('15%')
-      .key('MyList1')
+      .key('ListDelete_MyList1')
 
       List({ space: 2, initialIndex: 0 }) {
         ForEach(this.arr, (item: number, index: int) => {
@@ -125,7 +125,7 @@ struct ListDelete {
       })
       .width('90%')
       .height('15%')
-      .key('MyList2')
+      .key('ListDelete_MyList2')
 
       List({ space: 2, initialIndex: 0 }) {
         ForEach(this.arr, (item: number, index: int) => {

@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +18,8 @@ import hilog from '@ohos.hilog';
 import { BusinessError } from '@ohos.base';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect ,TestType ,Size ,Level } from "../../../hypium/index";
 import pluginBundleManager from '@ohos.bundle.pluginBundleManager';
+import resourceManager from '@ohos.resourceManager';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 
 const DOMAIN: int = 0x0000;
 const TAG: string = 'testTag';
@@ -79,6 +81,41 @@ export default function abilityTest(): void {
         expect(err?.code).assertEqual(17700092);
         done();
       })
+    })
+    /**
+     * @tc.name   SUB_BMS_PC_Self_Dist_Plugin_Static_0300
+     * @tc.number SUB_BMS_PC_Self_Dist_Plugin_Static_0300
+     * @tc.desc   Test pluginBundleManager.getAllLocalPluginInfoForSelf is normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BMS_PC_Self_Dist_Plugin_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const itName = 'SUB_BMS_PC_Self_Dist_Plugin_Static_0300';
+      hilog.info(DOMAIN, TAG, `${itName} start.`);
+      try {
+        pluginBundleManager.getAllLocalPluginInfoForSelf().then((data: Array<pluginBundleManager.PluginBundleInfo>) => {
+          hilog.info(DOMAIN, TAG, `${itName} getAllLocalPluginInfoForSelf success.data:${JSON.stringify(data)}`);
+          expect(data.length).assertEqual(0)
+          done();
+          hilog.info(DOMAIN, TAG, `${itName} end.`);
+        }).catch((e: Error) => {
+          const err = e as BusinessError;
+          hilog.info(DOMAIN, TAG, `${itName} getAllLocalPluginInfoForSelf fail. code: ${err?.code}, msg: ${err?.message}`);
+          if (err?.code == 201) {
+              expect(err?.code).assertEqual(201);
+              done();
+              hilog.info(DOMAIN, TAG, `${itName} end.`);
+            }else{
+              expect().assertFail();
+              done();
+            }
+        })
+      } catch (err){
+        hilog.info(DOMAIN, TAG, `${itName} getAllLocalPluginInfoForSelf fail. code: ${err?.code}, msg: ${err?.message}`);
+        expect().assertFail();
+        done();
+      }
     })
   })
 }

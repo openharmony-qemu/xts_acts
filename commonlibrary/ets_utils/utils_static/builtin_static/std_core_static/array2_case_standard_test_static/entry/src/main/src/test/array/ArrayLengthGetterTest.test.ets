@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -75,7 +75,7 @@ export default function ArrayLengthGetterTest(): void {
      * @tc.level Level 2
      */
     it('testArrayLengthGetter001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(10);
+      let arr = Array.create<number>(1, 10);
       let len = arr.length;
       expect(len).assertEqual(1);
     });
@@ -89,7 +89,7 @@ export default function ArrayLengthGetterTest(): void {
      * @tc.level Level 2
      */
     it('testArrayLengthGetter002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(5);
+      let arr = Array.create<number>(1, 5);
       expect(arr.length).assertEqual(1);
     });
 
@@ -102,8 +102,8 @@ export default function ArrayLengthGetterTest(): void {
      * @tc.level Level 2
      */
     it('testArrayLengthGetter003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr1 = new Array<number>(0);
-      let arr2 = new Array<number>(100);
+      let arr1 = Array.create<number>(1, 0);
+      let arr2 = Array.create<number>(1, 100);
       expect(arr1.length).assertEqual(1);
       expect(arr2.length).assertEqual(1);
     });
@@ -130,7 +130,7 @@ export default function ArrayLengthGetterTest(): void {
      * @tc.level Level 2
      */
     it('testArrayLengthGetter005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(5);
+      let arr = Array.create<number>(1, 5);
       let len: int = arr.length;
       expect(len).assertEqual(1);
     });
@@ -144,7 +144,7 @@ export default function ArrayLengthGetterTest(): void {
      * @tc.level Level 2
      */
     it('testArrayLengthGetter006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(10);
+      let arr = Array.create<number>(1, 10);
       let len = arr.length;
       expect(len >= 0).assertTrue();
       expect(Number.isInteger(len)).assertTrue();
@@ -333,7 +333,7 @@ export default function ArrayLengthGetterTest(): void {
      * @tc.level Level 2
      */
     it('testArrayLengthGetter019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(256);
+      let arr = Array.create<number>(1, 256);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(256);
       try {
@@ -1105,7 +1105,7 @@ export default function ArrayLengthGetterTest(): void {
      * @tc.level Level 2
      */
     it('testArrayLengthGetter064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1);
+      const arr = Array.create<number>(1, 1);
       expect(arr.length).assertEqual(1);
     });
 
@@ -1133,7 +1133,7 @@ export default function ArrayLengthGetterTest(): void {
      * @tc.level Level 2
      */
     it('testArrayLengthGetter066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1);
+      const arr = Array.create<number>(1, 1);
       arr.push(2, 3);
       expect(arr.length).assertEqual(3);
     });

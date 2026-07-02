@@ -912,13 +912,13 @@ export function isSupportedZoomRatio(zoomRatioRange: Array<number>, zoomRatio: n
  * @param { Array<number> } zoomRatioRange 焦距比范围
  * @param { number } zoomRatio 需要设置的焦距比，默认为1
  */
-export function setZoomRatioRange(photoSession: ESObject, zoomRatioRange: Array<number>, zoomRatio: number = 1) {
+export function setZoomRatioRange(photoSession: ESObject, zoomRatioRange: Array<number>, zoomRatio: number = 1, testCameraId:number = 0) {
   console.info('zoomRatio is ' + zoomRatio);
   if (!isSupportedZoomRatio(zoomRatioRange, zoomRatio)) {
     console.error('device is not support zoomRatio ' + zoomRatio);
   } else {
     try {
-      photoSession.setZoomRatio(zoomRatioRange[0]);
+      photoSession.setZoomRatio(zoomRatioRange[testCameraId]);
     } catch (error) {
       let err = error as BusinessError;
       console.error('Failed to set the zoom ratio value. errorCode = ' + err.code);

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -4899,6 +4900,167 @@ export default function audioCapturer() {
       await audioCapturer!.release();
       done();
     })
+
+    /**
+     * @tc.name   AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1100 
+     * @tc.number AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1100 
+     * @tc.desc   setIndependentAudioSessionStrategy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo
+      }      
+      let audioCapturer: audio.AudioCapturer | null = await audio.createAudioCapturer(AudioCapturerOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_MIX_WITH_OTHERS
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.PAUSE_WHEN_INTERRUPTED;
+      try {
+        audioCapturer!.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1100 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1100 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioCapturer!.release();
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1200 
+    * @tc.number AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1200 
+    * @tc.desc   setIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo
+      }
+      let audioCapturer: audio.AudioCapturer | null = await audio.createAudioCapturer(AudioCapturerOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DUCK_OTHERS
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.PAUSE_WHEN_INTERRUPTED;
+      try {
+        audioCapturer!.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1200 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1200 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioCapturer!.release();
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1300 
+    * @tc.number AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1300 
+    * @tc.desc   setIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo
+      }
+      let audioCapturer: audio.AudioCapturer | null = await audio.createAudioCapturer(AudioCapturerOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_PAUSE_OTHERS
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.PAUSE_WHEN_INTERRUPTED;
+      try {
+        audioCapturer!.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1300 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1300 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioCapturer!.release();
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1400 
+    * @tc.number AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1400 
+    * @tc.desc   setIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo
+      }
+      let audioCapturer: audio.AudioCapturer | null = await audio.createAudioCapturer(AudioCapturerOptions);
+
+      let strategy: audio.AudioSessionStrategy = {
+        concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DEFAULT
+      };
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.PAUSE_WHEN_INTERRUPTED;
+      try {
+        audioCapturer!.setIndependentAudioSessionStrategy(strategy, behavior);
+        console.log('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1400 ' + strategy + 'and ' + behavior);
+      } catch (Error) {
+        console.log('AUDIO_AUDIOCAPTURE_SETINDEPENDENTAUDIOSESSIONSTRATEGY_STATIC_1400 Error:' + Error + Error.code);
+        expect(false).assertTrue();
+      }
+      await audioCapturer!.release();
+      done();
+    })
+
     /**
  	    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_STATIC_1000 
  	    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_STATIC_1000 

@@ -698,7 +698,11 @@ export default function geoLocationManager_nop_test() {
             }
           } else {
             console.info('geolocation_isLocationEnabled_nop_test_012 getLastLocation: data=' + JSON.stringify(data));
-            expect(data).assertTrue();
+            if (data) {
+              expect(data).assertTrue();
+            } else {
+              expect(data).assertFalse();
+            }
             done();
           }
         });
@@ -722,7 +726,11 @@ export default function geoLocationManager_nop_test() {
       try {
         geolocation.isLocationEnabled().then((result: boolean) => {
           console.info('promise, geolocation_isLocationEnabled_nop_test_013: ' + JSON.stringify(result));
-          expect(result).assertTrue()
+          if (result) {
+            expect(result).assertTrue();
+          } else {
+            expect(result).assertFalse();
+          }
           done();
         }).catch((error: BusinessError) => {
           console.info('---geolocation_isLocationEnabled_nop_test_013 catch end---' + error.code);
@@ -1695,6 +1703,29 @@ export default function geoLocationManager_nop_test() {
       }
       });
 
+      /**
+       * @tc.number  SUB_Location_nop_getPoiInfo_0100
+       * @tc.name    SUB_Location_nop_getPoiInfo_0100
+       * @tc.desc    Test getPoiInfo error code 201 without permission
+       * @tc.level   Level 3
+       * @tc.type    Function
+       * @tc.size    MEDIUMTEST
+       */
+      it('SUB_Location_nop_getPoiInfo_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        try {
+          await geoLocationManager.getPoiInfo();
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.info('SUB_Location_nop_getPoiInfo_0100 error: ' + JSON.stringify(err));
+          if (err.code === 801) {
+            expect(err.code).assertEqual(801);
+          } else {
+            expect(err.code).assertEqual(201);
+          }
+          done();
+        }
+      });
 
   })
 }

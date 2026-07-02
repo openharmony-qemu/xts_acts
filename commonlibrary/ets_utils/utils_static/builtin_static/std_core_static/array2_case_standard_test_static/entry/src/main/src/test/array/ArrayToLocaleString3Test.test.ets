@@ -261,7 +261,7 @@ export default function ArrayToLocaleString3Test(): void {
      * @tc.level Level 2
      */
     it('testArrayToLocaleStringThree006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(42);
+      const arr = Array.create<number>(1, 42);
       const result = arr.toLocaleString();
       expect(result).assertEqual('42');
     });
@@ -458,7 +458,7 @@ export default function ArrayToLocaleString3Test(): void {
      * @tc.level Level 2
      */
     it('testArrayToLocaleStringThree020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const level2 = new Array<number>(3);
+      const level2 = Array.create<number>(1, 3);
       const level1 = new Array<number | Array<number>>(2, level2);
       const arr = new Array<number | Array<number | Array<number>>>(1, level1);
       const result = arr.toLocaleString();
@@ -611,7 +611,7 @@ export default function ArrayToLocaleString3Test(): void {
      * @tc.level Level 2
      */
     it('testArrayToLocaleStringThree030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(100);
+      const arr = Array.create<number>(1, 100);
       const result = arr.toLocaleString();
       expect(result.substring(0, 1).length > 0).assertTrue();
     });
@@ -714,7 +714,7 @@ export default function ArrayToLocaleString3Test(): void {
     it('testArrayToLocaleStringThree037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const item = new LocaleItem038();
       item.value = 42;
-      const arr = new Array<LocaleItem038>(item);
+      const arr = Array.create<LocaleItem038>(1, item);
       const result = arr.toLocaleString();
       expect(result).assertEqual('Item[42]');
     });
@@ -759,7 +759,7 @@ export default function ArrayToLocaleString3Test(): void {
      * @tc.level Level 2
      */
     it('testArrayToLocaleStringThree040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(999);
+      const arr = Array.create<number>(1, 999);
       expect(arr.toLocaleString()).assertEqual('999');
     });
 
@@ -1175,7 +1175,7 @@ export default function ArrayToLocaleString3Test(): void {
      * @tc.level Level 2
      */
     it('testArrayToLocaleStringThree063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(1, 5);
       expect(arr.toLocaleString()).assertEqual('5');
     });
 
@@ -1325,7 +1325,7 @@ export default function ArrayToLocaleString3Test(): void {
     it('testArrayToLocaleStringThree073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const item = new LocaleStringItem();
       item.value = 'B';
-      const arr = new Array<LocaleStringItem>(item);
+      const arr = Array.create<LocaleStringItem>(1, item);
       const result = arr.toLocaleString();
       expect(result).assertEqual('B');
     });
@@ -1341,7 +1341,7 @@ export default function ArrayToLocaleString3Test(): void {
     it('testArrayToLocaleStringThree074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const item = new LocaleStringItem();
       item.value = 'X';
-      const arr = new Array<LocaleStringItem>(item);
+      const arr = Array.create<LocaleStringItem>(1, item);
       expect(arr.toLocaleString()).assertEqual('X');
       item.value = 'Y';
       expect(arr.toLocaleString()).assertEqual('Y');

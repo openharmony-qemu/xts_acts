@@ -22,8 +22,8 @@ let domain: int = 0x0000;
 let tag: string = 'ActsAceEtsModuleImageTextNowearApi18StaticTest';
 
 class UtilsTest{
-  static isloadAndSetUpUiTest = false;
-  static isStartedAbility = false;
+  static isloadAndSetUpUiTest: boolean = false;
+  static isStartedAbility: boolean = false;
 
   static async loadAndSetUpUiTest() : Promise<boolean> {
     return new Promise<boolean>((resolve, reject) => {

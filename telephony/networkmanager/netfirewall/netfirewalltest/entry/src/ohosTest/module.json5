@@ -30,7 +30,19 @@
       },
       {
         "name": "ohos.permission.MANAGE_NET_FIREWALL"
-      }
+      },
+      {
+        "name": "ohos.permission.INTERNET"
+      },
+      {
+        "name": "ohos.permission.GET_NETWORK_INFO"
+      },
+      {
+        "name": "ohos.permission.kernel.TRAFFIC_FILTER"
+      },
+      {
+         "name":"ohos.permission.GET_IP_MAC_INFO"
+       }
     ],
     "abilities": [
       {

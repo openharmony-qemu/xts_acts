@@ -71,7 +71,7 @@ it('themeListInterfaceTest_static_0100', Level.LEVEL0, async (done: () => void):
       let driver = Driver.create()
       await Utils.sleep(1000);
       
-      let button = await driver.findComponent(ON.id('themeClick'));
+      let button = await driver.findComponent(ON.id('themePageListTest' + '_themeClick'));
   await Utils.sleep(1000);
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000);

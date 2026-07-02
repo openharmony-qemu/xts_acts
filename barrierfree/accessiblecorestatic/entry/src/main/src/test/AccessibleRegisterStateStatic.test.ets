@@ -1,3 +1,4 @@
+'use static';
 import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
@@ -864,6 +865,7 @@ export default function abilityTest() {
  	         let status = accessibility.getTouchModeSync();
  	         console.info(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_3500 result: ${status}`);
  	         expect(typeof (status)).assertEqual('string');
+           expect(status).assertEqual('none');
  	         done();
  	       } catch (exception) {
  	           console.error('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_3500 failed to getTouchModeSync because ' + JSON.stringify(exception));
@@ -906,6 +908,7 @@ export default function abilityTest() {
  	       accessibility.isAnimationReduceEnabled().then((result) => {
  	         console.info(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_3700 result: ${result}`);
  	         expect(typeof (result)).assertEqual('boolean');
+           expect(result).assertEqual(false);
  	         done();
  	       }).catch((err: Error) => {
  	         console.error(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_3700 has error: ${err.code},msg: ${err.message}`);
@@ -951,6 +954,7 @@ export default function abilityTest() {
  	       accessibility.isFlashReminderEnabled().then((result) => {
  	         console.info(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_3900 result: ${result}`);
  	         expect(typeof (result)).assertEqual('boolean');
+           expect(result).assertEqual(false);
  	         done();
  	       }).catch((err: Error) => {
  	         console.error(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_3900 has error: ${err.code},msg: ${err.message}`);
@@ -996,6 +1000,7 @@ export default function abilityTest() {
  	       accessibility.isAudioMonoEnabled().then((result) => {
  	         console.info(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_4100 result: ${result}`);
  	         expect(typeof (result)).assertEqual('boolean');
+           expect(result).assertEqual(false);
  	         done();
  	       }).catch((err: Error) => {
  	         console.error(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_4100 has error: ${err.code},msg: ${err.message}`);

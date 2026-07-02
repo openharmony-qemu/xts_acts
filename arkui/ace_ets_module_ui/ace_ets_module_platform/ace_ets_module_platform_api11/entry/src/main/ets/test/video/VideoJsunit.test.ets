@@ -67,7 +67,7 @@ export default function videoJsunit() {
     it('videoAppInfoTest001', Level.LEVEL1, async () => {
       console.info('videoAppInfoTest001 START');
       await sleep(1)
-      let strJson = getInspectorByKey('video');
+      let strJson = getInspectorByKey('Video' + '_video');
       let obj: Record<string, Object> = JSON.parse(strJson);
       console.info("cd video component obj is: " + JSON.stringify(obj));
       console.log("cd video type" + JSON.stringify(obj.$type));

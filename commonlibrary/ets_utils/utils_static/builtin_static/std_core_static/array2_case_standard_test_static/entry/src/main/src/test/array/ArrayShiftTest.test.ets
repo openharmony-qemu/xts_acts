@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -297,7 +297,7 @@ export default function ArrayShiftTest(): void {
      * @tc.level Level 2
      */
     it('testArrayShift014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(42);
+      let arr = Array.create<number>(1, 42);
       let result = arr.shift();
       expect(result).assertEqual(42);
       expect(arr.length).assertEqual(0);
@@ -710,7 +710,7 @@ export default function ArrayShiftTest(): void {
      */
     it('testArrayShift039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const first = new Array<number>(1, 2);
-      const second = new Array<number>(3);
+      const second = Array.create<number>(1, 3);
       const arr = new Array<Array<number>>(first, second);
       const value = arr.shift();
       if (value === undefined) {
@@ -922,8 +922,8 @@ export default function ArrayShiftTest(): void {
      * @tc.level Level 2
      */
     it('testArrayShift050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const left = new Array<Array<number>>(new Array<number>(1));
-      const right = new Array<Array<number>>(new Array<number>(2, 3));
+      const left = Array.create<Array<number>>(1, Array.create<number>(1, 1));
+      const right = Array.create<Array<number>>(1, new Array<number>(2, 3));
       const merged = left.concat(right);
       const value = merged.shift();
       if (value === undefined) {
@@ -1129,7 +1129,7 @@ export default function ArrayShiftTest(): void {
      * @tc.level Level 2
      */
     it('testArrayShift062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(99);
+      const arr = Array.create<number>(1, 99);
       expect(arr.shift()).assertEqual(99);
       expect(arr.length).assertEqual(0);
     });

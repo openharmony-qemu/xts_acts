@@ -43,6 +43,7 @@
         "MainAbility/pages/StyledString/StyledStringMethodsNull",
         "MainAbility/pages/StyledString/MutableStyledStringMethodsNull",
         "MainAbility/pages/StyledString/MutableStyledStringMethodsNull2",
-        "MainAbility/pages/StyledString/StyledStringFontWeightConfigsTest"
+        "MainAbility/pages/StyledString/StyledStringFontWeightConfigsTest",
+        "MainAbility/pages/StyledString/ParagraphStyleTailIndents"
     ]
 }

@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -204,7 +204,7 @@ export default function ArrayValuesTest(): void {
      * @tc.level Level 2
      */
     it('testArrayValues008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(42);
+      const arr = Array.create<number>(1, 42);
       const iterator = arr.values();
       expect(iterator.next().value).assertEqual(42);
       expect(iterator.next().done).assertTrue();
@@ -809,7 +809,7 @@ export default function ArrayValuesTest(): void {
      * @tc.level Level 2
      */
     it('testArrayValues043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1);
+      const arr = Array.create<number>(1, 1);
       const iterator = arr.values();
       const result = iterator.next();
       expect(result.value).assertEqual(1);
@@ -859,7 +859,7 @@ export default function ArrayValuesTest(): void {
      * @tc.level Level 2
      */
     it('testArrayValues046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1);
+      const arr = Array.create<number>(1, 1);
       const iterator = arr.values();
       iterator.next();
       const completed = iterator.next();
@@ -1102,7 +1102,7 @@ export default function ArrayValuesTest(): void {
      */
     it('testArrayValues060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const nested1 = new Array<number>(14, 15);
-      const nested2 = new Array<number>(16);
+      const nested2 = Array.create<number>(1, 16);
       const arr = new Array<Array<number>>(nested1, nested2);
       const iterator = arr.values();
       expect(iterator.next().value === nested1).assertTrue();
@@ -1200,7 +1200,7 @@ export default function ArrayValuesTest(): void {
      * @tc.level Level 2
      */
     it('testArrayValues066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(99);
+      const arr = Array.create<number>(1, 99);
       const iterator = arr.values();
       expect(iterator.next().value).assertEqual(99);
       const completed = iterator.next();
@@ -1386,7 +1386,7 @@ export default function ArrayValuesTest(): void {
       const fn = (): string => {
         return 'x';
       };
-      const arr = new Array<() => string>(fn);
+      const arr = Array.create<() => string>(1, fn);
       const current = arr.values().next().value;
       expect(current === fn).assertTrue();
       if (current != undefined) {
@@ -1856,7 +1856,7 @@ export default function ArrayValuesTest(): void {
      * @tc.level Level 2
      */
     it('testArrayValues100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1);
+      const arr = Array.create<number>(1, 1);
       const iterator = arr.values();
       expect(iterator.next().value).assertEqual(1);
       expect(iterator.next().done).assertTrue();

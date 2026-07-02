@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 interface GeneratedObjectLiteralInterface_1 {
   theme: string;

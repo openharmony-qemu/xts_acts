@@ -59,8 +59,8 @@ export default function OnlyColumnsTemplate1() {
       await CommonFunc.sleep(2000);
 
       console.log('get Initial value')
-      let GridItem_01 = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_01');
-      let GridItem_02 = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_02');
+      let GridItem_01 = CommonFunc.getComponentRect('OnlyColumnsTemplate1' + '_GridItem_01');
+      let GridItem_02 = CommonFunc.getComponentRect('OnlyColumnsTemplate1' + '_GridItem_02');
 
       console.log('assert position')
       expect(GridItem_01.left).assertEqual(GridItem_02.left);
@@ -75,7 +75,7 @@ export default function OnlyColumnsTemplate1() {
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       await CommonFunc.sleep(300);
-      let button = await driver.findComponent(ON.id('OnlyColumnsTemplate1_button'));
+      let button = await driver.findComponent(ON.id('OnlyColumnsTemplate1' + '_button'));
       await button.click();
       await CommonFunc.sleep(1000);
       console.info('[SUB_ACE_GRID_OnlyColumnsTemplate1_0100] END');
@@ -106,8 +106,8 @@ export default function OnlyColumnsTemplate1() {
       await CommonFunc.sleep(2000);
 
       console.log('get Initial value')
-      let GridItem_01 = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_01');
-      let GridItem_02 = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_02');
+      let GridItem_01 = CommonFunc.getComponentRect('OnlyColumnsTemplate1' + '_GridItem_01');
+      let GridItem_02 = CommonFunc.getComponentRect('OnlyColumnsTemplate1' + '_GridItem_02');
 
       console.log('assert size')
       expect(Math.abs(Math.round(GridItem_01.right - GridItem_01.left) - Math.round(vp2px(114))) <= 1).assertTrue();
@@ -118,7 +118,7 @@ export default function OnlyColumnsTemplate1() {
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       await CommonFunc.sleep(300);
-      let button = await driver.findComponent(ON.id('OnlyColumnsTemplate1_button'));
+      let button = await driver.findComponent(ON.id('OnlyColumnsTemplate1' + '_button'));
       await button.click();
       await CommonFunc.sleep(1000);
       console.info('[SUB_ACE_GRID_OnlyColumnsTemplate1_0200] END');

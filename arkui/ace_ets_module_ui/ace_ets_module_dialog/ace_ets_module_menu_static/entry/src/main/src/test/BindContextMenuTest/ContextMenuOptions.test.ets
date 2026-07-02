@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,6 @@
  * limitations under the License.
  */
 
-'use static';
 
 import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import { abilityDelegatorRegistry, Driver, ON, MatchPattern } from '@kit.TestKit';
@@ -41,7 +41,7 @@ function logLongString(tag: string, longStr: string): void {
   }
 }
 
-export default function ContextMenuOptionsTest() {
+export default function ContextMenuOptionsTest(): void {
   describe('ContextMenuOptionsTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("ContextMenuOptionsTest beforeAll start");

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -146,7 +147,107 @@ export default function abilityTest() {
       done();
     })
 
+    /**
+     * @tc.name SUB_MULTIMEDIA_AVSESSION_OFF_SUPPORTED_LOOP_MODES_CHANGE_EVENT_STATIC_0101
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFF_SUPPORTED_LOOP_MODES_CHANGE_EVENT_STATIC_0101
+     * @tc.desc Test offSupportedLoopModesChange unregister all callbacks.
+     *         测试点：验证注销所有回调
+     *         测试输入：注销所有已注册的回调
+     *         测试输出：注销成功，回调不再触发
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_OFF_SUPPORTED_LOOP_MODES_CHANGE_EVENT_STATIC_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+      async (done: () => void): Promise<void> => {
+      console.info(`${TAG}: offSupportedLoopModesChangeUnregister001 start`);
+      let callbackTriggered = false;
+      let callback = (data: Array<avSession.LoopMode> | undefined) => {
+        console.info(`${TAG}: callback triggered`);
+        callbackTriggered = true;
+      };
+      try {
+        controller!.onSupportedLoopModesChange(callback);
+        controller!.offSupportedLoopModesChange();
+        await Utils.msSleep(500);
+        expect(callbackTriggered).assertFalse();
+      } catch (error) {
+        console.info(`${TAG}: error: ${error.code}`);
+        expect(error.code).assertEqual(6600103);
+        done();
+      }
+      console.info(`${TAG}: offSupportedLoopModesChangeUnregister001 end`);
+      done();
+    });
 
+    /**
+     * @tc.name SUB_MULTIMEDIA_AVSESSION_OFF_SUPPORTED_LOOP_MODES_CHANGE_EVENT_STATIC_0201
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFF_SUPPORTED_LOOP_MODES_CHANGE_EVENT_STATIC_0201
+     * @tc.desc Test offSupportedLoopModesChange unregister specific callback.
+     *         测试点：验证注销指定回调
+     *         测试输入：注销指定的回调函数
+     *         测试输出：指定回调被注销
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_OFF_SUPPORTED_LOOP_MODES_CHANGE_EVENT_STATIC_0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+      async (done: () => void): Promise<void> => {
+      console.info(`${TAG}: offSupportedLoopModesChangeUnregisterSpecific002 start`);
+      let callback1Triggered = false;
+      let callback2Triggered = false;
+      let callback1 = (data: Array<avSession.LoopMode>  | undefined) => {
+        callback1Triggered = true;
+      };
+      let callback2 = (data: Array<avSession.LoopMode>) => {
+        callback2Triggered = true;
+      };
+      try {
+        controller!.onSupportedLoopModesChange(callback1);
+        controller!.onSupportedLoopModesChange(callback2);
+        controller!.offSupportedLoopModesChange(callback1);
+        await Utils.msSleep(500);
+        done();
+      } catch (error) {
+        console.info(`${TAG}: error: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(6600103);
+        done();
+      }
+      console.info(`${TAG}: offSupportedLoopModesChangeUnregisterSpecific002 end`);
+      done();
+    });
 
+    /**
+     * @tc.name SUB_MULTIMEDIA_AVSESSION_ON_SUPPORTED_LOOP_MODES_CHANGE_EVENT_STATIC_0201
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_SUPPORTED_LOOP_MODES_CHANGE_EVENT_STATIC_0201
+     * @tc.desc Test onSupportedLoopModesChange callback is triggered when modes change.
+     *         测试点：验证循环模式变化时回调触发
+     *         测试输入：注册回调后设置新的循环模式
+     *         测试输出：回调被触发，收到新的循环模式数据
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_ON_SUPPORTED_LOOP_MODES_CHANGE_EVENT_STATIC_0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+      async (done: () => void): Promise<void> => {
+      console.info(`${TAG}: onSupportedLoopModesChangeTrigger002 start`);
+      let receivedData: Array<avSession.LoopMode> = [];
+      let callback = (data: Array<avSession.LoopMode>) => {
+        console.info(`${TAG}: callback received modes: ${JSON.stringify(data)}`);
+        receivedData = data;
+      };
+      try {
+        controller!.onSupportedLoopModesChange(callback);
+        controller!.offSupportedLoopModesChange(callback);
+        await Utils.msSleep(500);
+        done();
+      } catch (error) {
+        console.info(`${TAG}: error: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(6600103);
+        done();
+      }
+      console.info(`${TAG}: onSupportedLoopModesChangeTrigger002 end`);
+      done();
+    });
   })
 }

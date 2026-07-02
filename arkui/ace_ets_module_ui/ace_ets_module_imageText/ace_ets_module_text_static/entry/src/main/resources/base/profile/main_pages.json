@@ -4,6 +4,9 @@
     "MainAbility/pages/Text/TextAttributeIndex",
     "MainAbility/pages/Text/TextDirectionIndex",
     "MainAbility/pages/TextApi26/TextOnWillCopy",
-    "MainAbility/pages/TextApi26/TextFontVariations"
+    "MainAbility/pages/TextApi26/TextFontVariations",
+    "MainAbility/pages/TextApi26/TextIncrementalUpdatePolicy",
+    "MainAbility/pages/TextApi26/TextPunctuationOverflow",
+    "MainAbility/pages/TextApi26/TextTailIndents"
   ]
 }

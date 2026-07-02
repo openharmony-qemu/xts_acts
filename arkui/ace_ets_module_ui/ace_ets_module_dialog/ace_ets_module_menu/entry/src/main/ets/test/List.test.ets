@@ -63,6 +63,8 @@ import GridStyleTest from './GridStyle/GridStyle.test.ets';
 import BindContextMenuByIsShowOptionsTest from './bindContextMenuByIsShow/BindContextMenuByIsShowOptions.test.ets';
 import BindContextMenuByIsShowBlurMaskTest from './bindContextMenuByIsShow/BindContextMenuByIsShowBlurMask.test.ets';
 import BindContextMenuByIsShowNullUndefinedTest from './bindContextMenuByIsShow/BindContextMenuByIsShowNullUndefined.test.ets';
+import bindContextMenuByResponseTypeTest from './bindContextMenuTest/bindContextMenuByResponseTypeTest.test';
+import subMenuBuilderTest from './Menu/subMenuBuilderTest.test';
 
 export default function testsuite() {
   openMenuNullUndefinedTest();
@@ -110,6 +112,8 @@ export default function testsuite() {
   targetSpaceTest();
   MenuSystemMaterialTest();
   GridStyleTest();
+  bindContextMenuByResponseTypeTest();
+  subMenuBuilderTest();
   BindContextMenuByIsShowOptionsTest();
   BindContextMenuByIsShowBlurMaskTest();
   BindContextMenuByIsShowNullUndefinedTest();

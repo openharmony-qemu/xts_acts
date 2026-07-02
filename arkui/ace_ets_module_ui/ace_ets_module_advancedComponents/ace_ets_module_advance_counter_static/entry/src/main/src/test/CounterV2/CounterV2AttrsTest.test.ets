@@ -24,11 +24,11 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 
-export default function CounterV2AttrsTest() {
+export default function CounterV2AttrsTest(): void {
   describe('CounterV2AttrsTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("CounterV2AttrsTest beforeEach start");
-      await UtilsTest.startAbility("com.arkui.ace.animation20.static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.advance.counter.static", "EntryAbility")
 
     });
 

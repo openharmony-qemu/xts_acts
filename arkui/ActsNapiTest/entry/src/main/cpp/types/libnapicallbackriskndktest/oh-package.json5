@@ -1,0 +1,6 @@
+﻿{
+  "name": "libnapicallbackriskndktest.so",
+  "types": "./Index.d.ts",
+  "version": "1.0.0",
+  "description": "NAPI callback risk XTS native library"
+}

@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -186,7 +186,7 @@ export default function ArrayLikeLengthTest(): void {
      * @tc.level Level 2
      */
     it('testArrayLikeLength009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const values = new Array<int>(99)
+      const values = Array.create<int>(1, 99)
       const list: ArrayLike<int> = values
       expect(list.length).assertEqual(1)
       expect(list.$_get(0)).assertEqual(99)
@@ -680,7 +680,7 @@ export default function ArrayLikeLengthTest(): void {
      * @tc.level Level 2
      */
     it('testArrayLikeLength033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const values = new Array<int>(7)
+      const values = Array.create<int>(1, 7)
       const list: ArrayLike<int> = values
       expect(list.length).assertEqual(1)
       expect(list.length / 2).assertEqual(0)
@@ -783,7 +783,7 @@ export default function ArrayLikeLengthTest(): void {
      */
     it('testArrayLikeLength038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const hundredChars = "0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789"
-      const list: ArrayLike<string> = new Array<string>(hundredChars)
+      const list: ArrayLike<string> = Array.create<string>(1, hundredChars)
       expect(list.length).assertEqual(1)
     });
 
