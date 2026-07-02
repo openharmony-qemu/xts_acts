@@ -41,11 +41,7 @@ function sendDataProgressTask(): number {
 }
 
 @Concurrent
-function sendDataComplexTask(): number {
-  let data: ComplexData = new ComplexData()
-  data.id = 1
-  data.name = 'test'
-  data.values.push(10, 20, 30)
+function sendDataComplexTask(data: ComplexData): number {
   taskpool.Task.sendData(data)
   return 999
 }
@@ -205,10 +201,14 @@ export default function TaskpoolCommunicationTest(): void {
      */
     it('TaskpoolCommunicationTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let receivedObj = new collections.Array<ComplexData>()
-      let task: taskpool.Task = new taskpool.Task(sendDataComplexTask)
+      let data: ComplexData = new ComplexData()
+      data.id = 1
+      data.name = 'test'
+      data.valueCount = 3
+      let task: taskpool.Task = new taskpool.Task(sendDataComplexTask, data)
       let dataPromise: Promise<void> = new Promise<void>((resolve: Function) => {
-        task.onReceiveData((data: Object): void => {
-          receivedObj.push(data as ComplexData)
+        task.onReceiveData((d: Object): void => {
+          receivedObj.push(d as ComplexData)
           resolve()
         })
       })
@@ -218,7 +218,7 @@ export default function TaskpoolCommunicationTest(): void {
       expect(receivedObj.length).assertLargerOrEqual(1)
       expect(receivedObj[0].id).assertEqual(1)
       expect(receivedObj[0].name).assertEqual('test')
-      expect(receivedObj[0].values.length).assertEqual(3)
+      expect(receivedObj[0].valueCount).assertEqual(3)
     })
 
     /**

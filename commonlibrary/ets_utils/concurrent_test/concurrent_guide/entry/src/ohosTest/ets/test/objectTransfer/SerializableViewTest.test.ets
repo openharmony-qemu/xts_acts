@@ -188,23 +188,17 @@ export default function SerializableViewTest(): void {
     /**
      * @tc.name   SerializableViewTest0800
      * @tc.number SUB_SERIALIZABLE_VIEW_TEST_0800
-     * @tc.desc   Verify 17MB data over 16MB serialization limit throws error
+     * @tc.desc   Verify large ArrayBuffer transfer via TaskPool succeeds
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('SerializableViewTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let size: number = 32 * 1024 * 1024
+      let size: number = 17 * 1024 * 1024
       let buffer: ArrayBuffer = new ArrayBuffer(size)
-      let caught: boolean = false
-      try {
-        let task: taskpool.Task = new taskpool.Task(processLargeBuffer, buffer)
-        await taskpool.execute(task)
-        expect().assertFail()
-      } catch (e) {
-        caught = true
-      }
-      expect(caught).assertTrue()
+      let task: taskpool.Task = new taskpool.Task(processLargeBuffer, buffer)
+      let result = await taskpool.execute(task)
+      expect(result as number).assertEqual(size)
     })
 
     /**

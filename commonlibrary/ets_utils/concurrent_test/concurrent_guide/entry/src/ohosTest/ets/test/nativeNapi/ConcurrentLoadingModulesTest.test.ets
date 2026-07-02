@@ -14,39 +14,39 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
-import { taskpool, collections } from '@kit.ArkTS';
+import { taskpool } from '@kit.ArkTS';
 
 @Sendable
 class Calculator {
   result: number = 0
-  history: collections.Array<string> = new collections.Array<string>()
+  historyCount: number = 0
 
   init(): void {
     this.result = 0
-    this.history.push('initialized')
+    this.historyCount++
   }
 
   add(a: number, b: number): number {
     this.result = a + b
-    this.history.push('add(' + a.toString() + ',' + b.toString() + ')=' + this.result.toString())
+    this.historyCount++
     return this.result
   }
 
   sub(a: number, b: number): number {
     this.result = a - b
-    this.history.push('sub(' + a.toString() + ',' + b.toString() + ')=' + this.result.toString())
+    this.historyCount++
     return this.result
   }
 
   mul(a: number, b: number): number {
     this.result = a * b
-    this.history.push('mul(' + a.toString() + ',' + b.toString() + ')=' + this.result.toString())
+    this.historyCount++
     return this.result
   }
 
   div(a: number, b: number): number {
     this.result = a / b
-    this.history.push('div(' + a.toString() + ',' + b.toString() + ')=' + this.result.toString())
+    this.historyCount++
     return this.result
   }
 
@@ -55,7 +55,7 @@ class Calculator {
   }
 
   getHistoryLength(): number {
-    return this.history.length
+    return this.historyCount
   }
 }
 

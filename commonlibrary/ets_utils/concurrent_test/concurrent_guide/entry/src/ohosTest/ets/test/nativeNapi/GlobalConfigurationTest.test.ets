@@ -21,7 +21,6 @@ class GlobalConfig {
   isLogin: boolean = false
   user: string = ''
   wifiOn: boolean = true
-  lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
 
   login(username: string): void {
     this.isLogin = true
@@ -147,8 +146,8 @@ export default function GlobalConfigurationTest(): void {
      * @tc.level  LEVEL0
      */
     it('GlobalConfigurationTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      let config: GlobalConfig = new GlobalConfig()
-      expect(config.lock !== undefined).assertTrue()
+      let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
+      expect(lock !== undefined).assertTrue()
     })
 
     /**
@@ -161,7 +160,8 @@ export default function GlobalConfigurationTest(): void {
      */
     it('GlobalConfigurationTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let config: GlobalConfig = new GlobalConfig()
-      await config.lock.lockAsync(() => {
+      let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
+      await lock.lockAsync(() => {
         config.login('admin')
       })
       expect(config.getIsLogin()).assertTrue()
@@ -178,11 +178,12 @@ export default function GlobalConfigurationTest(): void {
      */
     it('GlobalConfigurationTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let config: GlobalConfig = new GlobalConfig()
+      let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
       config.login('reader')
-      let loginStatus: boolean = await config.lock.lockAsync(() => {
+      let loginStatus: boolean = await lock.lockAsync(() => {
         return config.getIsLogin()
       })
-      let username: string = await config.lock.lockAsync(() => {
+      let username: string = await lock.lockAsync(() => {
         return config.getUser()
       })
       expect(loginStatus).assertTrue()

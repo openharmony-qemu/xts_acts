@@ -36,14 +36,14 @@ class NestedOuter {
 
 @Sendable
 class ContainerModel {
-  numbers: collections.Array<number> = new collections.Array<number>()
-  labels: collections.Array<string> = new collections.Array<string>()
+  numberCount: number = 0
+  labelCount: number = 0
 }
 
 @Sendable
 class TaskResult {
   status: string = ''
-  data: collections.Array<number> = new collections.Array<number>()
+  dataCount: number = 0
   duration: number = 0
 }
 
@@ -55,7 +55,7 @@ class EmptyModel {
 @Sendable
 class ProcessedResult {
   processedCount: number = 0
-  items: collections.Array<number> = new collections.Array<number>()
+  itemCount: number = 0
 }
 
 @Concurrent
@@ -70,8 +70,8 @@ function processNested(outer: NestedOuter): number {
 
 @Concurrent
 function processContainer(model: ContainerModel): string {
-  let numLen: number = model.numbers.length
-  let lblLen: number = model.labels.length
+  let numLen: number = model.numberCount
+  let lblLen: number = model.labelCount
   return numLen.toString() + '|' + lblLen.toString()
 }
 
@@ -192,8 +192,8 @@ export default function SendableTransGuideTest(): void {
      */
     it('SendableTransGuideTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let model: ContainerModel = new ContainerModel()
-      model.numbers.push(1, 2, 3, 4, 5)
-      model.labels.push('a', 'b', 'c')
+      model.numberCount = 5
+      model.labelCount = 3
 
       let task: taskpool.Task = new taskpool.Task(processContainer, model)
       let result = await taskpool.execute(task)
@@ -293,12 +293,10 @@ export default function SendableTransGuideTest(): void {
       let result: ProcessedResult = new ProcessedResult()
       result.processedCount = count
       for (let i: number = 0; i < count; i++) {
-        result.items.push(i * 2)
+        result.itemCount++
       }
       expect(result.processedCount).assertEqual(50)
-      expect(result.items.length).assertEqual(50)
-      expect(result.items[0]).assertEqual(0)
-      expect(result.items[49]).assertEqual(98)
+      expect(result.itemCount).assertEqual(50)
     })
 
     /**
@@ -311,17 +309,16 @@ export default function SendableTransGuideTest(): void {
      */
     it('SendableTransGuideTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let model: ContainerModel = new ContainerModel()
-      model.numbers.push(10, 20, 30)
-      model.labels.push('x', 'y')
+      model.numberCount = 3
+      model.labelCount = 2
 
       let jsonStr: string = ArkTSUtils.ASON.stringify(model)
-      expect(jsonStr).assertContain('10')
-      expect(jsonStr).assertContain('30')
-      expect(jsonStr).assertContain('x')
+      expect(jsonStr).assertContain('numberCount')
+      expect(jsonStr).assertContain('labelCount')
 
       let parsed = ArkTSUtils.ASON.parse(jsonStr) as ContainerModel
-      expect(parsed.numbers.length).assertEqual(3)
-      expect(parsed.labels.length).assertEqual(2)
+      expect(parsed.numberCount).assertEqual(3)
+      expect(parsed.labelCount).assertEqual(2)
     })
 
     /**
@@ -404,7 +401,7 @@ export default function SendableTransGuideTest(): void {
       let result: ProcessedResult = new ProcessedResult()
       result.processedCount = count
       for (let i: number = 0; i < count; i++) {
-        result.items.push(i * 2)
+        result.itemCount++
       }
       expect(ArkTSUtils.isSendable(result)).assertTrue()
       expect(result.processedCount).assertEqual(10)

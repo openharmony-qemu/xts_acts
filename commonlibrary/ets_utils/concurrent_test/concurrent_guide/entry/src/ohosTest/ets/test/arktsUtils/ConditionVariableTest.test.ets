@@ -199,8 +199,8 @@ export default function ConditionVariableTest(): void {
       let task: taskpool.Task = new taskpool.Task(waitInTask, cv, result)
       let execPromise: Promise<Object> = taskpool.execute(task)
 
-      // Confirm task is pending without timer wait
-      await Promise.race([execPromise, Promise.resolve()])
+      // Give task time to start and reach cv.wait()
+      await new Promise<void>(resolve => setTimeout(resolve, 500))
       cv.notifyOne()
       await execPromise
       expect(result.value).assertEqual('task awakened')
@@ -275,8 +275,8 @@ export default function ConditionVariableTest(): void {
       let task: taskpool.Task = new taskpool.Task(waitAndIncrement, cv, counter)
       let execPromise: Promise<Object> = taskpool.execute(task)
 
-      // Confirm task is pending without timer wait
-      await Promise.race([execPromise, Promise.resolve()])
+      // Give task time to start and reach cv.wait()
+      await new Promise<void>(resolve => setTimeout(resolve, 500))
       cv.notifyOne()
       await execPromise
       expect(counter.done).assertTrue()

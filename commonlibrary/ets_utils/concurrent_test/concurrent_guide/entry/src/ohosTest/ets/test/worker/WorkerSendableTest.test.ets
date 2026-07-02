@@ -247,7 +247,7 @@ export default function WorkerSendableTest(): void {
       let worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
       let worker2: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
       let worker3: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
-      let results: string[] = []
+      let results: collections.Array<string> = new collections.Array<string>()
       await new Promise<void>((resolve: () => void) => {
         let count: number = 0
         worker1.onmessage = (e: MessageEvents): void => {

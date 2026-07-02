@@ -421,9 +421,9 @@ export default function BatchDatabaseOpsTest(): void {
      * @tc.level  LEVEL1
      */
     it('BatchDatabaseOpsTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let names: string[] = []
-      let ages: number[] = []
-      let salaries: number[] = []
+      let names: collections.Array<string> = new collections.Array<string>()
+      let ages: collections.Array<number> = new collections.Array<number>()
+      let salaries: collections.Array<number> = new collections.Array<number>()
       for (let i: number = 0; i < 50; i++) {
         names.push('user' + i.toString())
         ages.push(20 + i)
@@ -481,9 +481,9 @@ export default function BatchDatabaseOpsTest(): void {
      * @tc.level  LEVEL1
      */
     it('BatchDatabaseOpsTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let names: string[] = []
-      let ages: number[] = []
-      let salaries: number[] = []
+      let names: collections.Array<string> = new collections.Array<string>()
+      let ages: collections.Array<number> = new collections.Array<number>()
+      let salaries: collections.Array<number> = new collections.Array<number>()
       try {
         let insertResult = await taskpool.execute(new taskpool.Task(insertInTaskPool, context, DB_NAME, TABLE_NAME, names, ages, salaries))
         expect((insertResult as number) >= 0).assertTrue()
@@ -501,9 +501,9 @@ export default function BatchDatabaseOpsTest(): void {
      * @tc.level  LEVEL2
      */
     it('BatchDatabaseOpsTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      let names: string[] = []
-      let ages: number[] = []
-      let salaries: number[] = []
+      let names: collections.Array<string> = new collections.Array<string>()
+      let ages: collections.Array<number> = new collections.Array<number>()
+      let salaries: collections.Array<number> = new collections.Array<number>()
       for (let i: number = 0; i < 100; i++) {
         names.push('Bulk' + i.toString())
         ages.push(20 + (i % 50))

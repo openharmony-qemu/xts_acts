@@ -54,12 +54,12 @@ function testContainerOperations(items: number[], testValue: number): string {
 }
 
 @Concurrent
-function iterateContainerValues(items: number[]): number[] {
+function iterateContainerValues(items: number[]): collections.Array<number> {
   let container: Set<number> = new Set<number>()
   for (let i: number = 0; i < items.length; i++) {
     container.add(items[i])
   }
-  let result: number[] = []
+  let result: collections.Array<number> = new collections.Array<number>()
   container.forEach((value: number) => {
     result.push(value)
   })

@@ -13,27 +13,20 @@
  * limitations under the License.
  */
 
-import { collections, ArkTSUtils } from '@kit.ArkTS';
+import { ArkTSUtils } from '@kit.ArkTS';
 
 "use shared"
 
 @Sendable
 export class SharedDataStore {
-  items: collections.Array<string> = new collections.Array<string>()
-  lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
+  itemCount: number = 0
 
-  async addItem(item: string): Promise<void> {
-    await this.lock.lockAsync(() => {
-      this.items.push(item)
-    })
+  addItem(item: string): void {
+    this.itemCount++
   }
 
   getItemCount(): number {
-    return this.items.length
-  }
-
-  getItem(index: number): string {
-    return this.items[index]
+    return this.itemCount
   }
 }
 

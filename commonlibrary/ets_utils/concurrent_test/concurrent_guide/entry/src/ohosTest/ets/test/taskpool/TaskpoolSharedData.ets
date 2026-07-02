@@ -26,7 +26,7 @@ export class DataItem {
 export class ComplexData {
   id: number = 0
   name: string = ''
-  values: collections.Array<number> = new collections.Array<number>()
+  valueCount: number = 0
 }
 
 @Sendable

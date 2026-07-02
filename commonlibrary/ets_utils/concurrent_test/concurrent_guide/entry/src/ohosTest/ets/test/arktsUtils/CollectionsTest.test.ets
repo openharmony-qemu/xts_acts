@@ -16,17 +16,12 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { collections, taskpool, ArkTSUtils } from '@kit.ArkTS';
 
-@Sendable
-class SharedArrayContainer {
-  arr: collections.Array<number> = new collections.Array<number>()
-}
-
 @Concurrent
 async function safePush(lock: ArkTSUtils.locks.AsyncLock,
-  container: SharedArrayContainer, value: number): Promise<number> {
+  arr: collections.Array<number>, value: number): Promise<number> {
   let result: number = await lock.lockAsync(() => {
-    container.arr.push(value)
-    return container.arr.length
+    arr.push(value)
+    return arr.length
   })
   return result
 }
@@ -219,13 +214,13 @@ export default function CollectionsTest(): void {
      */
     it('CollectionsTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
-      let container: SharedArrayContainer = new SharedArrayContainer()
+      let arr: collections.Array<number> = new collections.Array<number>()
       let promises: Promise<Object>[] = []
       for (let i: number = 0; i < 10; i++) {
-        promises.push(taskpool.execute(new taskpool.Task(safePush, lock, container, i)))
+        promises.push(taskpool.execute(new taskpool.Task(safePush, lock, arr, i)))
       }
       await Promise.all(promises)
-      expect(container.arr.length).assertEqual(10)
+      expect(arr.length).assertEqual(10)
     })
 
     // ======================== Map Tests ========================

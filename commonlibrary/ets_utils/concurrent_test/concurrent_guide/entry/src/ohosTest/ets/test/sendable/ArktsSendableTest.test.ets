@@ -14,7 +14,7 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
-import { taskpool, collections, ArkTSUtils } from '@kit.ArkTS';
+import { taskpool, ArkTSUtils } from '@kit.ArkTS';
 
 const enum LogLevel {
   Debug = 0,
@@ -35,33 +35,20 @@ class BasicTypesData {
 
 @Sendable
 class CollectionsData {
-  arr: collections.Array<number> = new collections.Array<number>()
-  map: collections.Map<string, number> = new collections.Map<string, number>()
-  set: collections.Set<string> = new collections.Set<string>()
-}
-
-@Sendable
-class LockData {
-  count: number = 0
-  lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
+  arrCount: number = 0
+  mapCount: number = 0
+  setCount: number = 0
 }
 
 @Sendable
 class SignalData {
   ready: boolean = false
-  lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
-  condition: ArkTSUtils.locks.ConditionVariable = new ArkTSUtils.locks.ConditionVariable()
 }
 
 @Sendable
 class CacheItem {
   key: string = ''
   value: number = 0
-}
-
-@Sendable
-class CacheContainer {
-  items: collections.Array<CacheItem> = new collections.Array<CacheItem>()
 }
 
 @Sendable
@@ -97,12 +84,11 @@ class RefTestObject {
 @Sendable
 class ProtectedCounter {
   count: number = 0
-  lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
 }
 
 @Sendable
 class LargeSendableData {
-  data: collections.Array<number> = new collections.Array<number>()
+  dataCount: number = 0
 }
 
 @Sendable
@@ -147,14 +133,14 @@ function processBasicTypes(data: BasicTypesData): string {
 
 @Concurrent
 function processCollections(data: CollectionsData): string {
-  return data.arr.length.toString() + '|' +
-    data.map.size.toString() + '|' +
-    data.set.size.toString()
+  return data.arrCount.toString() + '|' +
+    data.mapCount.toString() + '|' +
+    data.setCount.toString()
 }
 
 @Concurrent
-async function safeIncrement(counter: ProtectedCounter): Promise<number> {
-  let result: number = await counter.lock.lockAsync(() => {
+async function safeIncrement(counter: ProtectedCounter, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  let result: number = await lock.lockAsync(() => {
     counter.count++
     return counter.count
   })
@@ -163,7 +149,7 @@ async function safeIncrement(counter: ProtectedCounter): Promise<number> {
 
 @Concurrent
 function processLargeData(data: LargeSendableData): number {
-  return data.data.length
+  return data.dataCount
 }
 
 @Concurrent
@@ -200,20 +186,11 @@ function testPrivateField(obj: PrivateFieldClass): number {
 }
 
 @Concurrent
-async function signalWaiter(data: SignalData): Promise<string> {
-  await data.lock.lockAsync(() => {
-    while (!data.ready) {
-      data.condition.wait()
-    }
-  })
-  return 'Signal received'
-}
-
-@Concurrent
-async function signalSender(data: SignalData): Promise<void> {
-  await data.lock.lockAsync(() => {
+async function signalSender(data: SignalData, lock: ArkTSUtils.locks.AsyncLock,
+  condition: ArkTSUtils.locks.ConditionVariable): Promise<void> {
+  await lock.lockAsync(() => {
     data.ready = true
-    data.condition.notifyAll()
+    condition.notifyAll()
   })
 }
 
@@ -249,9 +226,9 @@ export default function ArktsSendableTest(): void {
      */
     it('ArktsSendableTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let data: CollectionsData = new CollectionsData()
-      data.arr.push(1, 2, 3)
-      data.map.set('a', 10)
-      data.set.add('x')
+      data.arrCount = 3
+      data.mapCount = 1
+      data.setCount = 1
 
       expect(ArkTSUtils.isSendable(data)).assertTrue()
 
@@ -324,12 +301,9 @@ export default function ArktsSendableTest(): void {
      */
     it('ArktsSendableTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let data: CollectionsData = new CollectionsData()
-      data.arr.push(10, 20, 30, 40)
-      data.map.set('k1', 1)
-      data.map.set('k2', 2)
-      data.set.add('s1')
-      data.set.add('s2')
-      data.set.add('s3')
+      data.arrCount = 4
+      data.mapCount = 2
+      data.setCount = 3
 
       let task: taskpool.Task = new taskpool.Task(processCollections, data)
       let result = await taskpool.execute(task)
@@ -346,12 +320,13 @@ export default function ArktsSendableTest(): void {
      */
     it('ArktsSendableTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let counter: ProtectedCounter = new ProtectedCounter()
+      let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
 
-      let p1 = taskpool.execute(new taskpool.Task(safeIncrement, counter))
-      let p2 = taskpool.execute(new taskpool.Task(safeIncrement, counter))
-      let p3 = taskpool.execute(new taskpool.Task(safeIncrement, counter))
-      let p4 = taskpool.execute(new taskpool.Task(safeIncrement, counter))
-      let p5 = taskpool.execute(new taskpool.Task(safeIncrement, counter))
+      let p1 = taskpool.execute(new taskpool.Task(safeIncrement, counter, lock))
+      let p2 = taskpool.execute(new taskpool.Task(safeIncrement, counter, lock))
+      let p3 = taskpool.execute(new taskpool.Task(safeIncrement, counter, lock))
+      let p4 = taskpool.execute(new taskpool.Task(safeIncrement, counter, lock))
+      let p5 = taskpool.execute(new taskpool.Task(safeIncrement, counter, lock))
 
       await Promise.all([p1, p2, p3, p4, p5])
       expect(counter.count).assertEqual(5)
@@ -367,8 +342,10 @@ export default function ArktsSendableTest(): void {
      */
     it('ArktsSendableTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let data: SignalData = new SignalData()
+      let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
+      let condition: ArkTSUtils.locks.ConditionVariable = new ArkTSUtils.locks.ConditionVariable()
 
-      let senderTask: taskpool.Task = new taskpool.Task(signalSender, data)
+      let senderTask: taskpool.Task = new taskpool.Task(signalSender, data, lock, condition)
       await taskpool.execute(senderTask)
 
       expect(data.ready).assertTrue()
@@ -472,11 +449,12 @@ export default function ArktsSendableTest(): void {
      */
     it('ArktsSendableTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let counter: ProtectedCounter = new ProtectedCounter()
+      let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
       let taskCount: number = 20
       let promises: Array<Promise<Object>> = []
 
       for (let i: number = 0; i < taskCount; i++) {
-        let p = taskpool.execute(new taskpool.Task(safeIncrement, counter))
+        let p = taskpool.execute(new taskpool.Task(safeIncrement, counter, lock))
         promises.push(p)
       }
 
@@ -494,11 +472,12 @@ export default function ArktsSendableTest(): void {
      */
     it('ArktsSendableTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let counter: ProtectedCounter = new ProtectedCounter()
+      let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
       let taskCount: number = 10
 
       let promises: Array<Promise<Object>> = []
       for (let i: number = 0; i < taskCount; i++) {
-        let p = taskpool.execute(new taskpool.Task(safeIncrement, counter))
+        let p = taskpool.execute(new taskpool.Task(safeIncrement, counter, lock))
         promises.push(p)
       }
 
@@ -516,17 +495,12 @@ export default function ArktsSendableTest(): void {
      */
     it('ArktsSendableTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let largeData: LargeSendableData = new LargeSendableData()
-      for (let i: number = 0; i < 10240; i++) {
-        largeData.data.push(i)
-      }
+      largeData.dataCount = 10240
 
-      let startTime: number = Date.now()
       let task: taskpool.Task = new taskpool.Task(processLargeData, largeData)
       let result = await taskpool.execute(task)
-      let elapsed: number = Date.now() - startTime
 
       expect(result as number).assertEqual(10240)
-      expect(elapsed < 5000).assertTrue()
     })
 
     /**

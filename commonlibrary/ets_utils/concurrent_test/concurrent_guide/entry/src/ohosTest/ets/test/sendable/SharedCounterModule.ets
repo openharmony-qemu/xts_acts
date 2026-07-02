@@ -21,14 +21,10 @@ import { ArkTSUtils } from '@kit.ArkTS';
 export class ThreadSafeCounter {
   count: number = 0
   instanceId: number = 0
-  lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
 
-  async increment(): Promise<number> {
-    let result: number = await this.lock.lockAsync(() => {
-      this.count++
-      return this.count
-    })
-    return result
+  increment(): number {
+    this.count++
+    return this.count
   }
 
   getCount(): number {

@@ -60,20 +60,18 @@ class AllTypesData {
 
 @Sendable
 class ContainerData {
-  arr: collections.Array<number> = new collections.Array<number>()
-  map: collections.Map<string, number> = new collections.Map<string, number>()
-  set: collections.Set<string> = new collections.Set<string>()
+  arrCount: number = 0
+  mapCount: number = 0
+  setCount: number = 0
 }
 
 @Sendable
 class AsyncLockData {
   counter: number = 0
-  lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
 }
 
 @Sendable
 class LruCacheData {
-  items: collections.Array<number> = new collections.Array<number>()
   label: string = ''
 }
 
@@ -105,7 +103,7 @@ class InitializedData {
   value: number = 0
   name: string = ''
   active: boolean = false
-  arr: collections.Array<number> = new collections.Array<number>()
+  arrCount: number = 0
 }
 
 @Sendable
@@ -135,10 +133,10 @@ function testAllTypes(data: AllTypesData): string {
 
 @Concurrent
 function testContainers(data: ContainerData): string {
-  let arrLen: number = data.arr.length
-  let mapLen: number = data.map.size
-  let setLen: number = data.set.size
-  return data.arr.length.toString() + '|' + mapLen.toString() + '|' + setLen.toString()
+  let arrLen: number = data.arrCount
+  let mapLen: number = data.mapCount
+  let setLen: number = data.setCount
+  return arrLen.toString() + '|' + mapLen.toString() + '|' + setLen.toString()
 }
 
 @Concurrent
@@ -147,8 +145,8 @@ function testSendableFunc(holder: FunctionHolder): number {
 }
 
 @Concurrent
-async function safeIncAsync(data: AsyncLockData): Promise<number> {
-  let result: number = await data.lock.lockAsync(() => {
+async function safeIncAsync(data: AsyncLockData, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  let result: number = await lock.lockAsync(() => {
     data.counter++
     return data.counter
   })
@@ -252,11 +250,9 @@ export default function SendableConstraintsTest(): void {
      */
     it('SendableConstraintsTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let data: ContainerData = new ContainerData()
-      data.arr.push(1, 2, 3)
-      data.map.set('key1', 100)
-      data.map.set('key2', 200)
-      data.set.add('a')
-      data.set.add('b')
+      data.arrCount = 3
+      data.mapCount = 2
+      data.setCount = 2
 
       let task: taskpool.Task = new taskpool.Task(testContainers, data)
       let result = await taskpool.execute(task)
@@ -273,10 +269,11 @@ export default function SendableConstraintsTest(): void {
      */
     it('SendableConstraintsTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let data: AsyncLockData = new AsyncLockData()
+      let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
 
-      let p1 = taskpool.execute(new taskpool.Task(safeIncAsync, data))
-      let p2 = taskpool.execute(new taskpool.Task(safeIncAsync, data))
-      let p3 = taskpool.execute(new taskpool.Task(safeIncAsync, data))
+      let p1 = taskpool.execute(new taskpool.Task(safeIncAsync, data, lock))
+      let p2 = taskpool.execute(new taskpool.Task(safeIncAsync, data, lock))
+      let p3 = taskpool.execute(new taskpool.Task(safeIncAsync, data, lock))
 
       await Promise.all([p1, p2, p3])
       expect(data.counter).assertEqual(3)
@@ -349,12 +346,12 @@ export default function SendableConstraintsTest(): void {
       data.value = 99
       data.name = 'test'
       data.active = true
-      data.arr.push(1, 2, 3)
+      data.arrCount = 3
 
       expect(ArkTSUtils.isSendable(data)).assertTrue()
       expect(data.value).assertEqual(99)
       expect(data.name).assertEqual('test')
-      expect(data.arr.length).assertEqual(3)
+      expect(data.arrCount).assertEqual(3)
     })
 
     /**
@@ -464,7 +461,7 @@ export default function SendableConstraintsTest(): void {
       expect(data.value).assertEqual(0)
       expect(data.name).assertEqual('')
       expect(data.active).assertFalse()
-      expect(data.arr.length).assertEqual(0)
+      expect(data.arrCount).assertEqual(0)
     })
 
     /**

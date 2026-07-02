@@ -14,7 +14,7 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
-import { taskpool, collections } from '@kit.ArkTS';
+import { taskpool } from '@kit.ArkTS';
 
 @Sendable
 class SharedData {
@@ -55,18 +55,16 @@ class SharedData {
 
 @Sendable
 class LargeData {
-  items: collections.Array<number> = new collections.Array<number>()
+  itemCount: number = 0
   label: string = ''
 
   constructor(count: number, label: string) {
     this.label = label
-    for (let i: number = 0; i < count; i++) {
-      this.items.push(i)
-    }
+    this.itemCount = count
   }
 
   getLength(): number {
-    return this.items.length
+    return this.itemCount
   }
 
   getLabel(): string {

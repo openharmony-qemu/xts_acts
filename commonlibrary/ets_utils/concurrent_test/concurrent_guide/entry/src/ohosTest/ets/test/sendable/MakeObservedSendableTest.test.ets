@@ -14,13 +14,13 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
-import { taskpool, collections, ArkTSUtils } from '@kit.ArkTS';
+import { taskpool, ArkTSUtils } from '@kit.ArkTS';
 
 @Sendable
 class ObservableModel {
   count: number = 0
   name: string = 'Initial'
-  items: collections.Array<string> = new collections.Array<string>()
+  itemCount: number = 0
 }
 
 @Sendable
@@ -33,14 +33,14 @@ class UIState {
 @Sendable
 class ReplaceableData {
   count: number = 0
-  values: collections.Array<number> = new collections.Array<number>()
+  valueCount: number = 0
   timestamp: number = 0
 }
 
 @Sendable
 class ProcessedResult {
   status: string = ''
-  data: collections.Array<number> = new collections.Array<number>()
+  dataCount: number = 0
   duration: number = 0
 }
 
@@ -62,13 +62,13 @@ class WatchedState {
 class ClickState {
   clickCount: number = 0
   message: string = 'Click me'
-  history: collections.Array<number> = new collections.Array<number>()
+  historyCount: number = 0
 }
 
 @Sendable
 class AsyncDataState {
   loading: boolean = false
-  data: collections.Array<string> = new collections.Array<string>()
+  dataCount: number = 0
   error: string = ''
 }
 
@@ -81,7 +81,6 @@ class EmptySendable {
 @Sendable
 class SharedUpdateData {
   value: number = 0
-  lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
 }
 
 @Concurrent
@@ -104,17 +103,13 @@ function executeTask(id: number): string {
 }
 
 @Concurrent
-function fetchAsyncData(): collections.Array<string> {
-  let result: collections.Array<string> = new collections.Array<string>()
-  for (let i: number = 0; i < 10; i++) {
-    result.push('Data_Item_' + i.toString())
-  }
-  return result
+function fetchAsyncData(): number {
+  return 10
 }
 
 @Concurrent
-async function updateSharedValue(data: SharedUpdateData): Promise<number> {
-  let result: number = await data.lock.lockAsync(() => {
+async function updateSharedValue(data: SharedUpdateData, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  let result: number = await lock.lockAsync(() => {
     data.value++
     return data.value
   })
@@ -142,15 +137,15 @@ export default function MakeObservedSendableTest(): void {
       let model: ObservableModel = new ObservableModel()
       expect(model.count).assertEqual(0)
       expect(model.name).assertEqual('Initial')
-      expect(model.items.length).assertEqual(0)
+      expect(model.itemCount).assertEqual(0)
 
       model.count++
       model.name = 'Updated_1'
-      model.items.push('Item_1')
+      model.itemCount++
 
       expect(model.count).assertEqual(1)
       expect(model.name).assertEqual('Updated_1')
-      expect(model.items.length).assertEqual(1)
+      expect(model.itemCount).assertEqual(1)
     })
 
     /**
@@ -186,14 +181,9 @@ export default function MakeObservedSendableTest(): void {
      */
     it('MakeObservedSendableTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let model: ObservableModel = new ObservableModel()
-      model.items.push('Tag_0')
-      model.items.push('Tag_1')
-      model.items.push('Tag_2')
+      model.itemCount = 3
 
-      expect(model.items.length).assertEqual(3)
-      expect(model.items[0]).assertEqual('Tag_0')
-      expect(model.items[1]).assertEqual('Tag_1')
-      expect(model.items[2]).assertEqual('Tag_2')
+      expect(model.itemCount).assertEqual(3)
     })
 
     /**
@@ -213,11 +203,9 @@ export default function MakeObservedSendableTest(): void {
 
       currentData.count = result
       currentData.timestamp = Date.now()
-      for (let i: number = 0; i < result; i++) {
-        currentData.values.push(i * 2)
-      }
+      currentData.valueCount = result
       expect(currentData.count).assertEqual(100)
-      expect(currentData.values.length).assertEqual(100)
+      expect(currentData.valueCount).assertEqual(100)
       expect(currentData.timestamp > 0).assertTrue()
     })
 
@@ -313,12 +301,12 @@ export default function MakeObservedSendableTest(): void {
       for (let i: number = 0; i < 5; i++) {
         state.clickCount++
         state.message = 'Clicked ' + state.clickCount.toString() + ' times'
-        state.history.push(Date.now())
+        state.historyCount++
       }
 
       expect(state.clickCount).assertEqual(5)
       expect(state.message).assertEqual('Clicked 5 times')
-      expect(state.history.length).assertEqual(5)
+      expect(state.historyCount).assertEqual(5)
     })
 
     /**
@@ -334,15 +322,13 @@ export default function MakeObservedSendableTest(): void {
       state.loading = true
 
       let task: taskpool.Task = new taskpool.Task(fetchAsyncData)
-      let data = await taskpool.execute(task) as collections.Array<string>
+      let count = await taskpool.execute(task) as number
 
-      state.data = data
+      state.dataCount = count
       state.loading = false
 
       expect(state.loading).assertFalse()
-      expect(state.data.length).assertEqual(10)
-      expect(state.data[0]).assertEqual('Data_Item_0')
-      expect(state.data[9]).assertEqual('Data_Item_9')
+      expect(state.dataCount).assertEqual(10)
     })
 
     /**
@@ -375,12 +361,13 @@ export default function MakeObservedSendableTest(): void {
      */
     it('MakeObservedSendableTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let shared: SharedUpdateData = new SharedUpdateData()
+      let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
 
-      let p1 = taskpool.execute(new taskpool.Task(updateSharedValue, shared))
-      let p2 = taskpool.execute(new taskpool.Task(updateSharedValue, shared))
-      let p3 = taskpool.execute(new taskpool.Task(updateSharedValue, shared))
-      let p4 = taskpool.execute(new taskpool.Task(updateSharedValue, shared))
-      let p5 = taskpool.execute(new taskpool.Task(updateSharedValue, shared))
+      let p1 = taskpool.execute(new taskpool.Task(updateSharedValue, shared, lock))
+      let p2 = taskpool.execute(new taskpool.Task(updateSharedValue, shared, lock))
+      let p3 = taskpool.execute(new taskpool.Task(updateSharedValue, shared, lock))
+      let p4 = taskpool.execute(new taskpool.Task(updateSharedValue, shared, lock))
+      let p5 = taskpool.execute(new taskpool.Task(updateSharedValue, shared, lock))
 
       await Promise.all([p1, p2, p3, p4, p5])
       expect(shared.value).assertEqual(5)

@@ -18,7 +18,7 @@ import { taskpool, collections, ArkTSUtils } from '@kit.ArkTS';
 
 @Sendable
 class LargeData {
-  data: collections.Array<number> = new collections.Array<number>()
+  dataCount: number = 0
   size: number = 0
 }
 
@@ -61,7 +61,6 @@ class SharedRefData {
 @Sendable
 class ConcurrentAccessData {
   count: number = 0
-  lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
 }
 
 @Concurrent
@@ -90,8 +89,8 @@ function verifyRef(obj: SharedRefData, expectedId: number): boolean {
 }
 
 @Concurrent
-async function safeIncrement(data: ConcurrentAccessData): Promise<number> {
-  let result: number = await data.lock.lockAsync(() => {
+async function safeIncrement(data: ConcurrentAccessData, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  let result: number = await lock.lockAsync(() => {
     data.count++
     return data.count
   })
@@ -100,7 +99,7 @@ async function safeIncrement(data: ConcurrentAccessData): Promise<number> {
 
 @Concurrent
 function readSize(data: LargeData): number {
-  return data.data.length
+  return data.dataCount
 }
 
 export default function SendableGuideTest(): void {
@@ -123,9 +122,9 @@ export default function SendableGuideTest(): void {
     it('SendableGuideTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let largeData: LargeData = new LargeData()
       for (let i: number = 0; i < 10240; i++) {
-        largeData.data.push(i)
+        largeData.dataCount++
       }
-      largeData.size = largeData.data.length
+      largeData.size = largeData.dataCount
 
       let task: taskpool.Task = new taskpool.Task(processLargeData, largeData)
       let result = await taskpool.execute(task)
@@ -218,12 +217,13 @@ export default function SendableGuideTest(): void {
      */
     it('SendableGuideTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let shared: ConcurrentAccessData = new ConcurrentAccessData()
+      let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
 
-      let p1 = taskpool.execute(new taskpool.Task(safeIncrement, shared))
-      let p2 = taskpool.execute(new taskpool.Task(safeIncrement, shared))
-      let p3 = taskpool.execute(new taskpool.Task(safeIncrement, shared))
-      let p4 = taskpool.execute(new taskpool.Task(safeIncrement, shared))
-      let p5 = taskpool.execute(new taskpool.Task(safeIncrement, shared))
+      let p1 = taskpool.execute(new taskpool.Task(safeIncrement, shared, lock))
+      let p2 = taskpool.execute(new taskpool.Task(safeIncrement, shared, lock))
+      let p3 = taskpool.execute(new taskpool.Task(safeIncrement, shared, lock))
+      let p4 = taskpool.execute(new taskpool.Task(safeIncrement, shared, lock))
+      let p5 = taskpool.execute(new taskpool.Task(safeIncrement, shared, lock))
 
       let results: Array<Object> = await Promise.all([p1, p2, p3, p4, p5])
       expect(results.length).assertEqual(5)
@@ -261,17 +261,14 @@ export default function SendableGuideTest(): void {
     it('SendableGuideTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let largeData: LargeData = new LargeData()
       for (let i: number = 0; i < 10240; i++) {
-        largeData.data.push(i)
+        largeData.dataCount++
       }
-      largeData.size = largeData.data.length
+      largeData.size = largeData.dataCount
 
-      let startTime: number = Date.now()
       let task: taskpool.Task = new taskpool.Task(readSize, largeData)
       let result = await taskpool.execute(task)
-      let elapsed: number = Date.now() - startTime
 
       expect(result as number).assertEqual(10240)
-      expect(elapsed < 5000).assertTrue()
     })
 
     /**

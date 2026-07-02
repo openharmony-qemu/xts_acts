@@ -19,8 +19,12 @@ import { sharedCounter, ThreadSafeCounter } from './SharedCounterModule';
 import { dataStore, SharedDataStore } from './SharedModuleData';
 
 @Concurrent
-async function incrementSharedCounter(): Promise<number> {
-  return await sharedCounter.increment()
+async function incrementSharedCounter(lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  let result: number = await lock.lockAsync(() => {
+    sharedCounter.increment()
+    return sharedCounter.getCount()
+  })
+  return result
 }
 
 @Concurrent
@@ -29,8 +33,10 @@ function getSharedCounterValue(): number {
 }
 
 @Concurrent
-async function addItemToDataStore(item: string): Promise<void> {
-  await dataStore.addItem(item)
+async function addItemToDataStore(item: string, lock: ArkTSUtils.locks.AsyncLock): Promise<void> {
+  await lock.lockAsync(() => {
+    dataStore.addItem(item)
+  })
 }
 
 @Concurrent
@@ -90,10 +96,11 @@ export default function SendableModuleTest(): void {
      */
     it('SendableModuleTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       sharedCounter.count = 0
+      let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
 
-      let p1 = taskpool.execute(new taskpool.Task(incrementSharedCounter))
-      let p2 = taskpool.execute(new taskpool.Task(incrementSharedCounter))
-      let p3 = taskpool.execute(new taskpool.Task(incrementSharedCounter))
+      let p1 = taskpool.execute(new taskpool.Task(incrementSharedCounter, lock))
+      let p2 = taskpool.execute(new taskpool.Task(incrementSharedCounter, lock))
+      let p3 = taskpool.execute(new taskpool.Task(incrementSharedCounter, lock))
 
       await Promise.all([p1, p2, p3])
       expect(sharedCounter.getCount()).assertEqual(3)
@@ -108,9 +115,10 @@ export default function SendableModuleTest(): void {
      * @tc.level  LEVEL0
      */
     it('SendableModuleTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      let p1 = taskpool.execute(new taskpool.Task(addItemToDataStore, 'item_0'))
-      let p2 = taskpool.execute(new taskpool.Task(addItemToDataStore, 'item_1'))
-      let p3 = taskpool.execute(new taskpool.Task(addItemToDataStore, 'item_2'))
+      let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
+      let p1 = taskpool.execute(new taskpool.Task(addItemToDataStore, 'item_0', lock))
+      let p2 = taskpool.execute(new taskpool.Task(addItemToDataStore, 'item_1', lock))
+      let p3 = taskpool.execute(new taskpool.Task(addItemToDataStore, 'item_2', lock))
 
       await Promise.all([p1, p2, p3])
       let count: number = dataStore.getItemCount()
@@ -127,12 +135,13 @@ export default function SendableModuleTest(): void {
      */
     it('SendableModuleTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       sharedCounter.count = 0
+      let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
 
       let task: taskpool.Task = new taskpool.Task(getSharedCounterValue)
       let result = await taskpool.execute(task)
       expect(result as number).assertEqual(0)
 
-      await taskpool.execute(new taskpool.Task(incrementSharedCounter))
+      await taskpool.execute(new taskpool.Task(incrementSharedCounter, lock))
       let result2 = await taskpool.execute(new taskpool.Task(getSharedCounterValue))
       expect(result2 as number).assertEqual(1)
     })
@@ -147,11 +156,12 @@ export default function SendableModuleTest(): void {
      */
     it('SendableModuleTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       sharedCounter.count = 0
+      let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
       let taskCount: number = 10
       let promises: Array<Promise<Object>> = []
 
       for (let i: number = 0; i < taskCount; i++) {
-        promises.push(taskpool.execute(new taskpool.Task(incrementSharedCounter)))
+        promises.push(taskpool.execute(new taskpool.Task(incrementSharedCounter, lock)))
       }
 
       await Promise.all(promises)
@@ -168,10 +178,11 @@ export default function SendableModuleTest(): void {
      */
     it('SendableModuleTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       sharedCounter.count = 0
+      let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
 
       let writePromises: Array<Promise<Object>> = []
       for (let i: number = 0; i < 5; i++) {
-        writePromises.push(taskpool.execute(new taskpool.Task(incrementSharedCounter)))
+        writePromises.push(taskpool.execute(new taskpool.Task(incrementSharedCounter, lock)))
       }
       await Promise.all(writePromises)
 
@@ -203,7 +214,8 @@ export default function SendableModuleTest(): void {
      * @tc.level  LEVEL1
      */
     it('SendableModuleTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      await taskpool.execute(new taskpool.Task(addItemToDataStore, 'test_item'))
+      let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
+      await taskpool.execute(new taskpool.Task(addItemToDataStore, 'test_item', lock))
       let count = await taskpool.execute(new taskpool.Task(getDataStoreCount))
       expect((count as number) >= 1).assertTrue()
     })
@@ -218,14 +230,15 @@ export default function SendableModuleTest(): void {
      */
     it('SendableModuleTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       sharedCounter.count = 0
+      let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock()
 
-      await taskpool.execute(new taskpool.Task(incrementSharedCounter))
+      await taskpool.execute(new taskpool.Task(incrementSharedCounter, lock))
       expect(sharedCounter.getCount()).assertEqual(1)
 
-      await taskpool.execute(new taskpool.Task(incrementSharedCounter))
+      await taskpool.execute(new taskpool.Task(incrementSharedCounter, lock))
       expect(sharedCounter.getCount()).assertEqual(2)
 
-      await taskpool.execute(new taskpool.Task(incrementSharedCounter))
+      await taskpool.execute(new taskpool.Task(incrementSharedCounter, lock))
       expect(sharedCounter.getCount()).assertEqual(3)
     })
   })
