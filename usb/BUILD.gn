@@ -23,6 +23,7 @@ group("usb") {
       "usb_standard_ets_static:ActsUsbETSApiStaticTest",
       "usb_standard_serial:ActsUsbSerialApiTest",
       "usb_busmanager_serial:ActsUsbBusManagerSerialApiTest",
+      "usb_busmanager_serial_static:ActsBusManagerSerialStaticTest",
     ]
   }
 }
