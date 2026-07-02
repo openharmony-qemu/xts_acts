@@ -12,7 +12,7 @@ import hilog from '@ohos.hilog'
 
 @Observed
 export class ModifierMenuOutline implements AttributeModifier<SelectAttribute> {
-  @State public isUndefined: boolean = false;
+  @State isUndefined: boolean = false;
 
   applyNormalAttribute(instance: SelectAttribute): void {
     instance

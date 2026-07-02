@@ -13,7 +13,7 @@ import hilog from '@ohos.hilog'
 
 @Observed
 export class ModifierMenuOutline implements AttributeModifier<SelectAttribute> {
-  @State public isUndefined: boolean = false;
+  @State isUndefined: boolean = false;
 
   private myFont: Font =  {
     size: 20,
@@ -44,7 +44,7 @@ export class ModifierMenuOutline implements AttributeModifier<SelectAttribute> {
 
 @Observed
 export class ModifierSpace implements AttributeModifier<SelectAttribute> {
-  @State public isUndefined: boolean = false;
+  @State isUndefined: boolean = false;
 
   private myDividerStyleOptions: DividerStyleOptions = {
     mode: DividerMode.FLOATING_ABOVE_MENU,
