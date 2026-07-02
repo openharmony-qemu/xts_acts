@@ -20,6 +20,7 @@ import sim from '@ohos.telephony.sim';
 import call from '@ohos.telephony.call';
 import radio from '@ohos.telephony.radio';
 import { BusinessError } from '@ohos.base';
+import http from '@ohos.net.http';
 
 const ExpectTrue: (n: boolean) => void = (n: boolean) => {
   try {
@@ -815,8 +816,15 @@ export default function observerManagerTest() {
           console.info(`${caseName} data ${JSON.stringify(data)}`);
           // ExpectTrue(data == 0 || data == 4);
         });
+        await sleep(1000);
+        let httpRequest = http.createHttp();
+        httpRequest.request("https://www.baidu.com",(err:BusinessError,data:http.HttpResponse)
+        => {
+            console.info(`${caseName} baidu to activate DataFlowType change `);
+        });
+        await sleep(1000);
         await data.disableCellularData();
-        await sleep(10000);
+        await sleep(3000);
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
         ExpectTrue(false);
