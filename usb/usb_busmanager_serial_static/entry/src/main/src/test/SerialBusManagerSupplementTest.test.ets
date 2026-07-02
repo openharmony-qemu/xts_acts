@@ -93,7 +93,7 @@ export default function SerialBusManagerSupplementTest(): void {
       console.info(TAG, 'afterAll');
       if (gPort != null) {
         try {
-          await gPort?.close();
+          gPort?.close();
           done()
         } catch (err) {
           console.error(TAG, 'afterAll close error: ', JSON.stringify(err));
@@ -114,31 +114,31 @@ export default function SerialBusManagerSupplementTest(): void {
      */
     it('testSerialPortInfoVendorId001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      console.info(TAG, 'testSerialPortInfoVendorId001 start');
-      if (await checkDevice() === false) {
-        done();
-        return Promise.resolve();
-      }
-      try {
-        const portList: serial.SerialPort[] = await serial.getSerialPortList();
-        if (portList.length > 0) {
-          const portInfo: serial.SerialPortInfo = portList[0].portInfo;
-          const vendorId: int | undefined = portInfo.vendorId;
-          console.info(TAG, 'testSerialPortInfoVendorId001 vendorId: ', vendorId);
-          if (vendorId !== undefined) {
-            expect(typeof vendorId === 'number').assertTrue();
-          } else {
-            console.info(TAG, 'testSerialPortInfoVendorId001 vendorId is undefined (optional attribute)');
-          }
-          expect(vendorId === undefined || typeof vendorId === 'number').assertTrue();
+        console.info(TAG, 'testSerialPortInfoVendorId001 start');
+        if (await checkDevice() === false) {
+          done();
+          return Promise.resolve();
         }
-        done();
-      } catch (error) {
-        console.error(TAG, 'testSerialPortInfoVendorId001 catch err: ', JSON.stringify(error));
-        expect().assertFail();
-        done();
-      }
-    })
+        try {
+          const portList: serial.SerialPort[] = await serial.getSerialPortList();
+          if (portList.length > 0) {
+            const portInfo: serial.SerialPortInfo = portList[0].portInfo;
+            const vendorId: int | undefined = portInfo.vendorId;
+            console.info(TAG, 'testSerialPortInfoVendorId001 vendorId: ', vendorId);
+            if (vendorId !== undefined) {
+              expect(typeof vendorId === 'int').assertTrue();
+            } else {
+              console.info(TAG, 'testSerialPortInfoVendorId001 vendorId is undefined (optional attribute)');
+            }
+            expect(vendorId === undefined || typeof vendorId === 'int').assertTrue();
+          }
+          done();
+        } catch (error) {
+          console.error(TAG, 'testSerialPortInfoVendorId001 catch err: ', JSON.stringify(error));
+          expect().assertFail();
+          done();
+        }
+      })
 
     /**
      * @tc.name   testSerialPortInfoProductId001
@@ -150,31 +150,31 @@ export default function SerialBusManagerSupplementTest(): void {
      */
     it('testSerialPortInfoProductId001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      console.info(TAG, 'testSerialPortInfoProductId001 start');
-      if (await checkDevice() === false) {
-        done();
-        return Promise.resolve();
-      }
-      try {
-        const portList: serial.SerialPort[] = await serial.getSerialPortList();
-        if (portList.length > 0) {
-          const portInfo: serial.SerialPortInfo = portList[0].portInfo;
-          const productId: int | undefined = portInfo.productId;
-          console.info(TAG, 'testSerialPortInfoProductId001 productId: ', productId);
-          if (productId !== undefined) {
-            expect(typeof productId === 'number').assertTrue();
-          } else {
-            console.info(TAG, 'testSerialPortInfoProductId001 productId is undefined (optional attribute)');
-          }
-          expect(productId === undefined || typeof productId === 'number').assertTrue();
+        console.info(TAG, 'testSerialPortInfoProductId001 start');
+        if (await checkDevice() === false) {
+          done();
+          return Promise.resolve();
         }
-        done();
-      } catch (error) {
-        console.error(TAG, 'testSerialPortInfoProductId001 catch err: ', JSON.stringify(error));
-        expect().assertFail();
-        done();
-      }
-    })
+        try {
+          const portList: serial.SerialPort[] = await serial.getSerialPortList();
+          if (portList.length > 0) {
+            const portInfo: serial.SerialPortInfo = portList[0].portInfo;
+            const productId: int | undefined = portInfo.productId;
+            console.info(TAG, 'testSerialPortInfoProductId001 productId: ', productId);
+            if (productId !== undefined) {
+              expect(typeof productId === 'int').assertTrue();
+            } else {
+              console.info(TAG, 'testSerialPortInfoProductId001 productId is undefined (optional attribute)');
+            }
+            expect(productId === undefined || typeof productId === 'int').assertTrue();
+          }
+          done();
+        } catch (error) {
+          console.error(TAG, 'testSerialPortInfoProductId001 catch err: ', JSON.stringify(error));
+          expect().assertFail();
+          done();
+        }
+      })
 
     /**
      * @tc.name   testSerialPortInfoManufacturer001
@@ -186,30 +186,30 @@ export default function SerialBusManagerSupplementTest(): void {
      */
     it('testSerialPortInfoManufacturer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      console.info(TAG, 'testSerialPortInfoManufacturer001 start');
-      if (await checkDevice() === false) {
-        done();
-        return Promise.resolve();
-      }
-      try {
-        const portList: serial.SerialPort[] = await serial.getSerialPortList();
-        if (portList.length > 0) {
-          const portInfo: serial.SerialPortInfo = portList[0].portInfo;
-          const manufacturer: string | undefined = portInfo.manufacturer;
-          console.info(TAG, 'testSerialPortInfoManufacturer001 manufacturer: ', manufacturer);
-          if (manufacturer !== undefined) {
-            expect(manufacturer.length >= 0).assertTrue();
-          } else {
-            console.info(TAG, 'testSerialPortInfoManufacturer001 manufacturer is undefined (optional attribute)');
-          }
-          expect(manufacturer === undefined || typeof manufacturer === 'string').assertTrue();
+        console.info(TAG, 'testSerialPortInfoManufacturer001 start');
+        if (await checkDevice() === false) {
+          done();
+          return Promise.resolve();
         }
-        done();
-      } catch (error) {
-        console.error(TAG, 'testSerialPortInfoManufacturer001 catch err: ', JSON.stringify(error));
-        expect().assertFail();
-        done();
-      }
-    })
+        try {
+          const portList: serial.SerialPort[] = await serial.getSerialPortList();
+          if (portList.length > 0) {
+            const portInfo: serial.SerialPortInfo = portList[0].portInfo;
+            const manufacturer: string | undefined = portInfo.manufacturer;
+            console.info(TAG, 'testSerialPortInfoManufacturer001 manufacturer: ', manufacturer);
+            if (manufacturer !== undefined) {
+              expect(manufacturer.length >= 0).assertTrue();
+            } else {
+              console.info(TAG, 'testSerialPortInfoManufacturer001 manufacturer is undefined (optional attribute)');
+            }
+            expect(manufacturer === undefined || typeof manufacturer === 'string').assertTrue();
+          }
+          done();
+        } catch (error) {
+          console.error(TAG, 'testSerialPortInfoManufacturer001 catch err: ', JSON.stringify(error));
+          expect().assertFail();
+          done();
+        }
+      })
   })
 }
