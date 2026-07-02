@@ -350,6 +350,9 @@ static napi_value Archive_Compress_Abnormal(napi_env env, napi_callback_info inf
     ret = OH_Archive_Reader_ExtractAllFile(ctx, failDir);
     NAPI_ASSERT(env, ret == OH_ARCHIVE_PARAM_ERROR, "OH_Archive_Reader_ExtractAllFile failed2");
 
+    ret = OH_Archive_Reader_ExtractAllFile(ctx, nullptr);
+    NAPI_ASSERT(env, ret == OH_ARCHIVE_PARAM_ERROR, "OH_Archive_Reader_ExtractAllFile failed3");
+
     ret = OH_Archive_Reader_ExtractAllFile(ctx, outDir);
     NAPI_ASSERT(env, ret == OH_ARCHIVE_OK, "OH_Archive_Reader_ExtractAllFile failed3");
 
