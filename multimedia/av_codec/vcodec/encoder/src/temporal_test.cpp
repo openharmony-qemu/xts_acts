@@ -30,12 +30,6 @@ constexpr uint32_t CODEC_NAME_SIZE = 128;
 char g_codecName[CODEC_NAME_SIZE] = {};
 char g_codecNameHEVC[CODEC_NAME_SIZE] = {};
 OH_AVFormat *format = nullptr;
-constexpr uint32_t DEFAULT_WIDTH = 1280;
-constexpr uint32_t DEFAULT_HEIGHT = 720;
-constexpr uint32_t DEFAULT_KEY_FRAME_INTERVAL = 1000;
-constexpr uint32_t DEFAULT_BITRATE = 10000000;
-constexpr double DEFAULT_FRAME_RATE = 30.0;
-OH_AVPixelFormat DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
 const char *INP_DIR_720 = "/data/test/media/1280_720_nv.yuv";
 } // namespace
 namespace OHOS {
