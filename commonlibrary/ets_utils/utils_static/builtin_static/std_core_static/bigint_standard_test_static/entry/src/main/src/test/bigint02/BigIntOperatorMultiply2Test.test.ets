@@ -17,16 +17,16 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntOperatorMultiply2Test(): void {
-  describe('testBigIntOperatorMultiply2Test', (): void => {
+  describe('testBigIntOperatorMultiply2Test', () => {
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_MULTIPLY_0800
-     * @tc.name testBigIntOperatorMultiply2Test008
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_0100
+     * @tc.name testBigIntOperatorMultiply2Test0100
      * @tc.desc Mindmap input: zero multiplied by zero, one, negative one, and type boundaries
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorMultiply2Test008', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntOperatorMultiply2Test0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(0).operatorMultiply(BigInt(0)).toString()).assertEqual('0');
       expect(BigInt(0).operatorMultiply(BigInt(1)).toString()).assertEqual('0');
       expect(BigInt(0).operatorMultiply(BigInt(-1)).toString()).assertEqual('0');
@@ -41,14 +41,14 @@ export default function BigIntOperatorMultiply2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_MULTIPLY_0900
-     * @tc.name testBigIntOperatorMultiply2Test009
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_0200
+     * @tc.name testBigIntOperatorMultiply2Test0200
      * @tc.desc Mindmap input: identity 1 multiplier with boundaries
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorMultiply2Test009', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntOperatorMultiply2Test0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(1).operatorMultiply(BigInt(0)).toString()).assertEqual('0');
       expect(BigInt(1).operatorMultiply(BigInt(1)).toString()).assertEqual('1');
       expect(BigInt(1).operatorMultiply(BigInt(-1)).toString()).assertEqual('-1');
@@ -60,14 +60,14 @@ export default function BigIntOperatorMultiply2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_MULTIPLY_1000
-     * @tc.name testBigIntOperatorMultiply2Test010
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_0300
+     * @tc.name testBigIntOperatorMultiply2Test0300
      * @tc.desc Mindmap input: identity -1 multiplier with boundaries
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorMultiply2Test010', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntOperatorMultiply2Test0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(-1).operatorMultiply(BigInt(0)).toString()).assertEqual('0');
       expect(BigInt(-1).operatorMultiply(BigInt(1)).toString()).assertEqual('-1');
       expect(BigInt(-1).operatorMultiply(BigInt(-1)).toString()).assertEqual('1');
@@ -81,14 +81,14 @@ export default function BigIntOperatorMultiply2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_MULTIPLY_1100
-     * @tc.name testBigIntOperatorMultiply2Test011
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_0400
+     * @tc.name testBigIntOperatorMultiply2Test0400
      * @tc.desc Mindmap input: sign combinations positive, negative mixed
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorMultiply2Test011', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntOperatorMultiply2Test0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(2).operatorMultiply(BigInt(3)).toString()).assertEqual('6');
       expect(BigInt(-2).operatorMultiply(BigInt(3)).toString()).assertEqual('-6');
       expect(BigInt(2).operatorMultiply(BigInt(-3)).toString()).assertEqual('-6');
@@ -99,14 +99,14 @@ export default function BigIntOperatorMultiply2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_MULTIPLY_1200
-     * @tc.name testBigIntOperatorMultiply2Test012
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_0500
+     * @tc.name testBigIntOperatorMultiply2Test0500
      * @tc.desc Mindmap input: byte, short, int, long boundaries multiplied by 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorMultiply2Test012', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntOperatorMultiply2Test0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(127).operatorMultiply(BigInt(2)).toString()).assertEqual('254');
       expect(BigInt(-128).operatorMultiply(BigInt(2)).toString()).assertEqual('-256');
       expect(BigInt(32767).operatorMultiply(BigInt(2)).toString()).assertEqual('65534');
@@ -118,14 +118,14 @@ export default function BigIntOperatorMultiply2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_MULTIPLY_1300
-     * @tc.name testBigIntOperatorMultiply2Test013
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_0600
+     * @tc.name testBigIntOperatorMultiply2Test0600
      * @tc.desc Mindmap input: Boolean true/false as multiplier
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorMultiply2Test013', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntOperatorMultiply2Test0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(127).operatorMultiply(BigInt(true)).toString()).assertEqual('127');
       expect(BigInt(127).operatorMultiply(BigInt(false)).toString()).assertEqual('0');
       expect(BigInt(-128).operatorMultiply(BigInt(true)).toString()).assertEqual('-128');
@@ -133,14 +133,14 @@ export default function BigIntOperatorMultiply2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_MULTIPLY_1400
-     * @tc.name testBigIntOperatorMultiply2Test014
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_0700
+     * @tc.name testBigIntOperatorMultiply2Test0700
      * @tc.desc Mindmap input: string-constructed BigInt multiplication
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorMultiply2Test014', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntOperatorMultiply2Test0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt('123').operatorMultiply(BigInt('456')).toString()).assertEqual('56088');
       expect(BigInt('-123').operatorMultiply(BigInt('456')).toString()).assertEqual('-56088');
       expect(BigInt('-123').operatorMultiply(BigInt('-456')).toString()).assertEqual('56088');
@@ -148,39 +148,39 @@ export default function BigIntOperatorMultiply2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_MULTIPLY_1500
-     * @tc.name testBigIntOperatorMultiply2Test015
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_0800
+     * @tc.name testBigIntOperatorMultiply2Test0800
      * @tc.desc Mindmap input: large precision and overflow safety
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorMultiply2Test015', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntOperatorMultiply2Test0800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt('9999999999999999999').operatorMultiply(BigInt('9999999999999999999')).toString()).assertEqual('99999999999999999980000000000000000001');
       expect(BigInt('1000000000000000000000000000000').operatorMultiply(BigInt('1000000000000000000000000000000')).toString()).assertEqual('1000000000000000000000000000000000000000000000000000000000000');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_MULTIPLY_1600
-     * @tc.name testBigIntOperatorMultiply2Test016
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_0900
+     * @tc.name testBigIntOperatorMultiply2Test0900
      * @tc.desc Mindmap return value: chained call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorMultiply2Test016', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntOperatorMultiply2Test0900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(2).operatorMultiply(BigInt(3)).operatorMultiply(BigInt(4)).toString()).assertEqual('24');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_MULTIPLY_1700
-     * @tc.name testBigIntOperatorMultiply2Test017
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_1000
+     * @tc.name testBigIntOperatorMultiply2Test1000
      * @tc.desc Mindmap return value: operand immutability
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorMultiply2Test017', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntOperatorMultiply2Test1000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a = BigInt(5);
       const b = BigInt(3);
       const r = a.operatorMultiply(b);
@@ -190,14 +190,14 @@ export default function BigIntOperatorMultiply2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_MULTIPLY_1800
-     * @tc.name testBigIntOperatorMultiply2Test018
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_1100
+     * @tc.name testBigIntOperatorMultiply2Test1100
      * @tc.desc Mindmap return value: commutativity and nested BigInt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorMultiply2Test018', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntOperatorMultiply2Test1100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a = BigInt(123);
       const b = BigInt(456);
       const r1 = a.operatorMultiply(b);
@@ -207,266 +207,266 @@ export default function BigIntOperatorMultiply2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_MULTIPLY_1900
-     * @tc.name testBigIntOperatorMultiply2Test019
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_1200
+     * @tc.name testBigIntOperatorMultiply2Test1200
      * @tc.desc Mindmap input: double-constructed BigInt as multiplier
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorMultiply2Test019', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntOperatorMultiply2Test1200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(15).operatorMultiply(BigInt(3.0)).toString()).assertEqual('45');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_MULTIPLY_2000
-     * @tc.name testBigIntOperatorMultiply2Test020
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_1300
+     * @tc.name testBigIntOperatorMultiply2Test1300
      * @tc.desc Mindmap input: negative int multiplied by double-constructed positive
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorMultiply2Test020', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntOperatorMultiply2Test1300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(-15).operatorMultiply(BigInt(3.0)).toString()).assertEqual('-45');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_MULTIPLY_2100
-     * @tc.name testBigIntOperatorMultiply2Test021
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_1400
+     * @tc.name testBigIntOperatorMultiply2Test1400
      * @tc.desc Mindmap input: fromULong-constructed BigInt as multiplier
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorMultiply2Test021', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntOperatorMultiply2Test1400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(3).operatorMultiply(BigInt.fromULong(100)).toString()).assertEqual('300');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_MULTIPLY_2200
-     * @tc.name testBigIntOperatorMultiply2Test022
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_1500
+     * @tc.name testBigIntOperatorMultiply2Test1500
      * @tc.desc Mindmap input: negative int multiplied by fromULong positive
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorMultiply2Test022', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntOperatorMultiply2Test1500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(-5).operatorMultiply(BigInt.fromULong(200)).toString()).assertEqual('-1000');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_MULTIPLY_2300
-     * @tc.name testBigIntOperatorMultiply2Test023
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_1600
+     * @tc.name testBigIntOperatorMultiply2Test1600
      * @tc.desc Mindmap input: copy-constructed BigInt as multiplier
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorMultiply2Test023', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntOperatorMultiply2Test1600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(6).operatorMultiply(BigInt(BigInt(7))).toString()).assertEqual('42');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_MULTIPLY_2400
-     * @tc.name testBigIntOperatorMultiply2Test024
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_1700
+     * @tc.name testBigIntOperatorMultiply2Test1700
      * @tc.desc Mindmap input: positive int multiplied by copy-constructed negative
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorMultiply2Test024', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntOperatorMultiply2Test1700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(8).operatorMultiply(BigInt(BigInt(-9))).toString()).assertEqual('-72');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_MULTIPLY_2500
-     * @tc.name testBigIntOperatorMultiply2Test025
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_1800
+     * @tc.name testBigIntOperatorMultiply2Test1800
      * @tc.desc Mindmap input: add result as multiplicand in chained multiply
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorMultiply2Test025', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntOperatorMultiply2Test1800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(10).operatorAdd(BigInt(5)).operatorMultiply(BigInt(4)).toString()).assertEqual('60');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_MULTIPLY_2600
-     * @tc.name testBigIntOperatorMultiply2Test026
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_1900
+     * @tc.name testBigIntOperatorMultiply2Test1900
      * @tc.desc Mindmap input: subtract result as multiplicand in chained multiply
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorMultiply2Test026', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntOperatorMultiply2Test1900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(20).operatorSubtract(BigInt(7)).operatorMultiply(BigInt(5)).toString()).assertEqual('65');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_MULTIPLY_2700
-     * @tc.name testBigIntOperatorMultiply2Test027
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_2000
+     * @tc.name testBigIntOperatorMultiply2Test2000
      * @tc.desc Mindmap input: divide result as multiplicand in chained multiply
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorMultiply2Test027', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntOperatorMultiply2Test2000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(30).operatorDivide(BigInt(5)).operatorMultiply(BigInt(7)).toString()).assertEqual('42');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_MULTIPLY_2800
-     * @tc.name testBigIntOperatorMultiply2Test028
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_2100
+     * @tc.name testBigIntOperatorMultiply2Test2100
      * @tc.desc Mindmap input: modulo result as multiplicand in chained multiply
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorMultiply2Test028', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntOperatorMultiply2Test2100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(11).operatorModule(BigInt(3)).operatorMultiply(BigInt(10)).toString()).assertEqual('20');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_MULTIPLY_2900
-     * @tc.name testBigIntOperatorMultiply2Test029
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_2200
+     * @tc.name testBigIntOperatorMultiply2Test2200
      * @tc.desc Mindmap input: negate result as multiplicand in chained multiply
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorMultiply2Test029', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntOperatorMultiply2Test2200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(10).negate().operatorMultiply(BigInt(3)).toString()).assertEqual('-30');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_MULTIPLY_3000
-     * @tc.name testBigIntOperatorMultiply2Test030
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_2300
+     * @tc.name testBigIntOperatorMultiply2Test2300
      * @tc.desc Mindmap input: increment result as multiplicand in chained multiply
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorMultiply2Test030', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntOperatorMultiply2Test2300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(5).operatorIncrement().operatorMultiply(BigInt(4)).toString()).assertEqual('24');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_MULTIPLY_3100
-     * @tc.name testBigIntOperatorMultiply2Test031
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_2400
+     * @tc.name testBigIntOperatorMultiply2Test2400
      * @tc.desc Mindmap input: decrement result as multiplicand in chained multiply
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorMultiply2Test031', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntOperatorMultiply2Test2400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(10).operatorDecrement().operatorMultiply(BigInt(7)).toString()).assertEqual('63');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_MULTIPLY_3200
-     * @tc.name testBigIntOperatorMultiply2Test032
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_2500
+     * @tc.name testBigIntOperatorMultiply2Test2500
      * @tc.desc Mindmap input: asIntN truncation result as multiplicand
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorMultiply2Test032', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntOperatorMultiply2Test2500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.asIntN(8, BigInt(100)).operatorMultiply(BigInt(2)).toString()).assertEqual('200');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_MULTIPLY_3300
-     * @tc.name testBigIntOperatorMultiply2Test033
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_2600
+     * @tc.name testBigIntOperatorMultiply2Test2600
      * @tc.desc Mindmap input: asUintN truncation result as multiplicand
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorMultiply2Test033', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntOperatorMultiply2Test2600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.asUintN(8, BigInt(200)).operatorMultiply(BigInt(2)).toString()).assertEqual('400');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_MULTIPLY_3400
-     * @tc.name testBigIntOperatorMultiply2Test034
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_2700
+     * @tc.name testBigIntOperatorMultiply2Test2700
      * @tc.desc Mindmap input: add result as multiplier in chained multiply
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorMultiply2Test034', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntOperatorMultiply2Test2700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(100).operatorMultiply(BigInt(3).operatorAdd(BigInt(4))).toString()).assertEqual('700');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_MULTIPLY_3500
-     * @tc.name testBigIntOperatorMultiply2Test035
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_2800
+     * @tc.name testBigIntOperatorMultiply2Test2800
      * @tc.desc Mindmap input: multiply result as multiplier in nested multiply
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorMultiply2Test035', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntOperatorMultiply2Test2800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(200).operatorMultiply(BigInt(2).operatorMultiply(BigInt(3))).toString()).assertEqual('1200');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_MULTIPLY_3600
-     * @tc.name testBigIntOperatorMultiply2Test036
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_2900
+     * @tc.name testBigIntOperatorMultiply2Test2900
      * @tc.desc Mindmap input: doubleValue converted result as multiplicand
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorMultiply2Test036', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntOperatorMultiply2Test2900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(BigInt(75).doubleValue()).operatorMultiply(BigInt(10)).toString()).assertEqual('750');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_MULTIPLY_3700
-     * @tc.name testBigIntOperatorMultiply2Test037
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_3000
+     * @tc.name testBigIntOperatorMultiply2Test3000
      * @tc.desc Mindmap input: getLong converted result as multiplicand
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorMultiply2Test037', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntOperatorMultiply2Test3000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(BigInt(12345).getLong()).operatorMultiply(BigInt(2)).toString()).assertEqual('24690');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_MULTIPLY_3800
-     * @tc.name testBigIntOperatorMultiply2Test038
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_3100
+     * @tc.name testBigIntOperatorMultiply2Test3100
      * @tc.desc Mindmap input: string-constructed negative BigInt as multiplier
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorMultiply2Test038', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntOperatorMultiply2Test3100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(50).operatorMultiply(BigInt('-100')).toString()).assertEqual('-5000');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_MULTIPLY_3900
-     * @tc.name testBigIntOperatorMultiply2Test039
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_3200
+     * @tc.name testBigIntOperatorMultiply2Test3200
      * @tc.desc Mindmap input: bitwise not result as multiplicand
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorMultiply2Test039', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntOperatorMultiply2Test3200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(5).operatorBitwiseNot().operatorMultiply(BigInt(2)).toString()).assertEqual('-12');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_MULTIPLY_4000
-     * @tc.name testBigIntOperatorMultiply2Test040
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_3300
+     * @tc.name testBigIntOperatorMultiply2Test3300
      * @tc.desc operatorMultiply on null/undefined/string receiver throws ClassCastError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorMultiply2Test040', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntOperatorMultiply2Test3300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect((): void => {
         (null as Object as BigInt).operatorMultiply(BigInt(1));
       }).assertThrowError('ClassCastError');
