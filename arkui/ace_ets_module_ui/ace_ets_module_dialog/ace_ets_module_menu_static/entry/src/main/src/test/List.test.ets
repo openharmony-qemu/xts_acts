@@ -37,8 +37,18 @@ import scrollBarTest from './scrollBarTest/scrollBarTest.test';
 import maxHeightTest from './maxHeightTest/maxHeightTest.test';
 import targetSpaceTest from './targetSpaceTest/targetSpaceTest.test';
 import ContextMenuMaxHeightTest from './BindContextMenuTest/ContextMenuMaxHeightTest.test'
+import GridStyleTest from './GridStyleTest/GridStyleTest.test'
+import BindMenuWithResponseTest from './BindContextMenuTest/BindMenuWithResponse.test'
+import BindContextMenuResponseTypeTest from './BindContextMenuTest/BindContextMenuResponseType.test'
+import SubMenuBuilderTest from './OpenMenuTest/SubMenuBuilderTest.test'
 
-export default function testsuite() {
+import BindContextMenuByIsShowOptionsTest from './BindContextMenuByIsShowTest/BindContextMenuByIsShowOptions.test'
+import BindContextMenuByIsShowBlurMaskBgTest from './BindContextMenuByIsShowTest/BindContextMenuByIsShowBlurMaskBg.test'
+import BindContextMenuByIsShowBlurMaskMaskTest from './BindContextMenuByIsShowTest/BindContextMenuByIsShowBlurMaskMask.test'
+import BindContextMenuByIsShowBlurMaskTest from './BindContextMenuByIsShowTest/BindContextMenuByIsShowBlurMask.test'
+import BindContextMenuByIsShowNullUndefinedTest from './BindContextMenuByIsShowTest/BindContextMenuByIsShowNullUndefined.test'
+
+export default function testsuite(): void {
   maskTest();
   maskColorTest();
   maskBackgroundBlurStyleTest();
@@ -63,4 +73,13 @@ export default function testsuite() {
   maxHeightTest();
   targetSpaceTest();
   ContextMenuMaxHeightTest();
+  GridStyleTest();
+  BindMenuWithResponseTest();
+  BindContextMenuResponseTypeTest();
+  SubMenuBuilderTest();
+  BindContextMenuByIsShowOptionsTest();
+  BindContextMenuByIsShowBlurMaskBgTest();
+  BindContextMenuByIsShowBlurMaskMaskTest();
+  BindContextMenuByIsShowBlurMaskTest();
+  BindContextMenuByIsShowNullUndefinedTest();
 }
