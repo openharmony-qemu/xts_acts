@@ -262,7 +262,6 @@ export default function ImageCreator() {
           if (err && err.code) {
             console.log('SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_STATIC_0200 dequeueImage error:' + err);
             expect(false).assertTrue();
-            done();
             return;
           }
           dequeueDone = true;
@@ -271,7 +270,6 @@ export default function ImageCreator() {
             if (err && err.code) {
               expect(false).assertTrue();
               console.log('SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_STATIC_0200 getComponent error:' + err);
-              done();
               return;
             }
             getComponentDone = true;
@@ -283,7 +281,6 @@ export default function ImageCreator() {
               if (err && err.code) {
                 console.info('SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_STATIC_0200 queueImage err: ' + err);
                 expect(false).assertTrue();
-                done();
                 return;
               }
               queueImageDone = true;
@@ -291,9 +288,13 @@ export default function ImageCreator() {
             })
           })
         })
-        while (!dequeueDone || !getComponentDone || !queueImageDone) {
-          await sleep(100);
+        for (let i = 0; i < 10; i++) {
+          await sleep(200);
+          if (dequeueDone && getComponentDone && queueImageDone) {
+            break;
+          }
         }
+        expect(dequeueDone && getComponentDone && queueImageDone).assertTrue();
         done();
       } else {
         expect(false).assertTrue();

@@ -228,9 +228,13 @@ export default function imageColorSpace() {
                         expect(pixelMap != undefined).assertTrue();
                         createPixelMapDone = true;
                     })
-                    while (!createPixelMapDone) {
+                    for (let i = 0; i < 10; i++) {
                         await sleep(100);
+                        if (createPixelMapDone) {
+                            break;
+                        }
                     }
+                    expect(createPixelMapDone).assertTrue();
                     done();
                 }
             } catch (error) {
