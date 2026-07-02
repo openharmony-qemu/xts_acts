@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 import { Entry, Text, Column, Component, Button, ClickEvent, Flex,
   FlexAlign,ItemAlign, Select, Color, Row, Font, SymbolEffectStrategy,

@@ -1,3 +1,4 @@
+'use static';
 import IteratorForEachTest from "./iterator/IteratorForEachTest.test";
 import IterableTest from "./iterator/IterableTest.test";
 import IterableIteratorTest from "./iterator/IterableIteratorTest.test";

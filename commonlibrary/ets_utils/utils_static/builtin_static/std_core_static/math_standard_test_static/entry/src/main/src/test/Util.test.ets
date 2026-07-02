@@ -1,3 +1,4 @@
+'use static';
 export default class Utils {
   static getAbsDiff(a: double, b: double): double {
     let diff: double = a - b;

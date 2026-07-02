@@ -1,3 +1,4 @@
+'use static';
 import abilityTest from "./Ability.test";
 import FieldEqualsTest from "./feild/FieldEqualsTest.test";
 import FieldGetAccessModifierTest from "./feild/FieldGetAccessModifierTest.test";

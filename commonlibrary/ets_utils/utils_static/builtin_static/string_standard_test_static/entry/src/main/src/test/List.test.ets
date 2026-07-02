@@ -1,3 +1,4 @@
+'use static';
 import StringLastIndexOfBasicTest from "./StringLastIndexOfBasic.test";
 import StringLocaleCompareBasicTest from "./StringLocaleCompareBasic.test";
 import StringMatchBasicTest from "./StringMatchBasic.test";

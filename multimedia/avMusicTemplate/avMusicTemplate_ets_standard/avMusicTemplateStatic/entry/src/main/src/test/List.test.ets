@@ -1,3 +1,4 @@
+'use static';
 import avMusicTemplateManagerTest from './case/AVMusicTemplateManager.test';
 import avMusicTemplateTest from './case/AVMusicTemplate.test';
 import avMusicTemplateControllerTest from './case/AVMusicTemplateController.test';

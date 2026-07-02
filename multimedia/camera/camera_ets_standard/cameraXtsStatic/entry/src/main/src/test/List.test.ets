@@ -1,3 +1,4 @@
+'use static';
 import cameraNoPermissionStaticTest from "./CameraNoPermissionStaticTest.test";
 import CameraManagerTest from "./Manager/CameraManagerTest.test";
 import CameraVideoSessionErrorTest from "./cameraVideoSession/CameraVideoSessionErrorTest.test";

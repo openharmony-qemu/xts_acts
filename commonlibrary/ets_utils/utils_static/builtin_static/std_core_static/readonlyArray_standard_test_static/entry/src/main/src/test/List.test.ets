@@ -1,3 +1,4 @@
+'use static';
 import abilityTest from "./Ability.test";
 import ReadonlyArrayConcatTest from './readonlyArray/ReadonlyArrayConcatTest.test';
 import ReadonlyArrayConcatTest002 from './readonlyArray/ReadonlyArrayConcatTest002.test';

@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -66,7 +66,7 @@ export default function pixelMapTranslateTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_TRANSLATE_static_0100', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_TRANSLATE_static_0100";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let translateX: number = 50.0;
       let translateY: number = 10.0;
@@ -98,7 +98,7 @@ export default function pixelMapTranslateTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_TRANSLATE_static_0200', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_TRANSLATE_static_0200";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let translateX: int = 0;
       let translateY: int = 0;
@@ -130,7 +130,7 @@ export default function pixelMapTranslateTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_TRANSLATE_static_0300', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_TRANSLATE_static_0300";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let translateX: int = -10;
       let translateY: int = -10;
@@ -162,7 +162,7 @@ export default function pixelMapTranslateTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_TRANSLATE_static_0400', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_TRANSLATE_static_0400";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let translateX: int = 999;
       let translateY: int = 999;
@@ -194,7 +194,7 @@ export default function pixelMapTranslateTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_TRANSLATE_static_0500', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_TRANSLATE_static_0500";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let translateX: number = 50.0;
       let translateY: number = 10.0;
@@ -220,7 +220,7 @@ export default function pixelMapTranslateTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_TRANSLATE_static_0600', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_TRANSLATE_static_0600";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let translateX: int = 0;
       let translateY: int = 0;
@@ -246,7 +246,7 @@ export default function pixelMapTranslateTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_TRANSLATE_static_0700', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_TRANSLATE_static_0700";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let translateX: int = -10;
       let translateY: int = -10;
@@ -272,7 +272,7 @@ export default function pixelMapTranslateTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_TRANSLATE_static_0800', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_TRANSLATE_static_0800";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let translateX: int = 999;
       let translateY: int = 999;
@@ -298,7 +298,7 @@ export default function pixelMapTranslateTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_TRANSLATE_static_0900', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_TRANSLATE_static_0900";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let translateX: number = 50.0;
       let translateY: number = 10.0;
@@ -324,7 +324,7 @@ export default function pixelMapTranslateTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_TRANSLATE_static_1000', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_TRANSLATE_static_1000";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let translateX: int = 0;
       let translateY: int = 0;
@@ -350,7 +350,7 @@ export default function pixelMapTranslateTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_TRANSLATE_static_1100', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_TRANSLATE_static_1100";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let translateX: int = -10;
       let translateY: int = -10;
@@ -376,7 +376,7 @@ export default function pixelMapTranslateTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_TRANSLATE_static_1200', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_TRANSLATE_static_1200";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let translateX: int = 999;
       let translateY: int = 999;

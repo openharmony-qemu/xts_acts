@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';

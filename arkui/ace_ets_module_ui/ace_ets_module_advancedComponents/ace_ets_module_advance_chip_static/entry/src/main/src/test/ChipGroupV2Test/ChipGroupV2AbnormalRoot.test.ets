@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +15,6 @@
  */
 
 
-'use static';
 import { describe, beforeAll, beforeEach, afterEach, it, Level } from '../../../../hypium';
 import router from '@ohos.router';
 import { UtilsTest } from '../Util.test';

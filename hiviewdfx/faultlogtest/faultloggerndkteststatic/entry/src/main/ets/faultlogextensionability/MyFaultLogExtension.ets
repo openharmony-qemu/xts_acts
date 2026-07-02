@@ -1,3 +1,4 @@
+'use static';
 import hilog from '@ohos.hilog'
 import FaultLogExtensionAbility from '@ohos.hiviewdfx.FaultLogExtensionAbility';
 import hiAppEvent from '@ohos.hiviewdfx.hiAppEvent';

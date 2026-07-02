@@ -1,4 +1,4 @@
-'use static'
+'use static';
 import { BusinessError } from '@ohos.base';
 import { expect } from '../../../hypium/index';
 

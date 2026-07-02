@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 
 export function testRegExpToString1() {
