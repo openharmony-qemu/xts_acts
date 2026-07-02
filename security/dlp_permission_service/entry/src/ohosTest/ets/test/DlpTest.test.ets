@@ -3291,7 +3291,7 @@ export default function dlpTest() {
     /**
      * @tc.name   testSetSandboxAppConfig0400
      * @tc.number SUB_SECURITY_DLP_setSandboxAppConfig_0400
-     * @tc.desc   test setSandboxAppConfig failed with empty string parameter, error code 401.
+     * @tc.desc   test setSandboxAppConfig failed with empty string parameter, error code 19100001.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -3306,7 +3306,7 @@ export default function dlpTest() {
         expect(false).assertTrue();
       } catch (err) {
         console.info(curTag, "setSandboxAppConfig failed as expected", err.code, err.message);
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+        expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
       }
       console.info(curTag, "end");
     })
