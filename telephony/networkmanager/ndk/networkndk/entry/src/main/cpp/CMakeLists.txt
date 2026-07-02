@@ -17,3 +17,6 @@ target_link_libraries(testNetStackNdk PUBLIC libace_napi.z.so libhilog_ndk.z.so 
 
 add_library(testNetConnectNdk SHARED net_connection_ndk_test.cpp)
 target_link_libraries(testNetConnectNdk PUBLIC libace_napi.z.so libhilog_ndk.z.so libnet_connection.so libnet_http.so libnet_ssl.so)
+ 
+add_library(testNetExtNdk SHARED net_ethernet_ndk_test.cpp)
+target_link_libraries(testNetExtNdk PUBLIC libace_napi.z.so libhilog_ndk.z.so libnet_ethernet.so)
