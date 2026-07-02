@@ -19,6 +19,7 @@ import UIAbility from '@ohos.app.ability.UIAbility'
 import backgroundTaskManager from '@ohos.resourceschedule.backgroundTaskManager'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import { BusinessError } from "@ohos.base"
+import Utils from './Util.test';
 
 let DOMAIN: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let TAG: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -37,6 +38,18 @@ export default function ActsShortTimeTaskManagerStaticTest() {
     it("SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_001 begin---');
+
+        let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_001 requestSuspendDelay delegator success.');
+
+        let cmd = "aa start -a EntryAbility -b com.acts.actsshorttimetasktest.static";
+        let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
+        delegator.executeShellCommand(cmd)
+
+      await Utils.msSleep(3500);
 
         try {
           let myReason = 'test requestSuspendDelay';
