@@ -111,7 +111,6 @@ export default function BlockingQueueGetEndTest(): void {
       queue.push(PUSH_VALUE_2);
       queue.push(PUSH_VALUE_3);
       let first: int | undefined = queue.getEnd();
-      let second: int | undefined = queue.getEnd();
       expect(first).assertEqual(EXPECTED_VALUE);
     });
 
