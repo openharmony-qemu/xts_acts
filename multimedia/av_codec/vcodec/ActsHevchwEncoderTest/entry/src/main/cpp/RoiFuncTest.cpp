@@ -543,8 +543,8 @@ int VIDEO_HW_ENCODE_ROI_API_019()
 
 int VIDEO_HW_ENCODE_ROI_API_020()
 {
-    char **roiString = "0,0-100,100=-8;100,100-200,200=dqp:-6,slb:1";
-    OH_AVErrCode ret = OH_VideoMetadata_AppendRoiString(roiString, nullptr);
+    char *roiString = "0,0-100,100=-8;100,100-200,200=dqp:-6,slb:1";
+    OH_AVErrCode ret = OH_VideoMetadata_AppendRoiString(&roiString, nullptr);
     EXPECT_NE(AV_ERR_OK, ret);
     return 0;
 }
