@@ -18,29 +18,29 @@ import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 
 export default function BigIntConstructorBoolean2Test(): void {
-  describe('testBigIntConstructorBoolean2Test', (): void => {
+  describe('testBigIntConstructorBoolean2Test', () => {
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_CONSTRUCTOR_BOOLEAN_1100
-     * @tc.name testBigIntConstructorBoolean2Test011
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_BOOLEAN_0100
+     * @tc.name testBigIntConstructorBoolean2Test0100
      * @tc.desc Verify BigInt from ternary conditional expression boolean result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorBoolean2Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntConstructorBoolean2Test0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(1 > 0 ? true : false).toString()).assertEqual('1');
       expect(BigInt(1 < 0 ? true : false).toString()).assertEqual('0');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_CONSTRUCTOR_BOOLEAN_1200
-     * @tc.name testBigIntConstructorBoolean2Test012
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_BOOLEAN_0200
+     * @tc.name testBigIntConstructorBoolean2Test0200
      * @tc.desc Verify BigInt from compound comparison and property expressions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorBoolean2Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntConstructorBoolean2Test0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt('a'.length === 1).toString()).assertEqual('1');
       expect(BigInt(42 > 0).toString()).assertEqual('1');
       expect(BigInt(NaN === NaN).toString()).assertEqual('0');
@@ -48,14 +48,14 @@ export default function BigIntConstructorBoolean2Test(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_CONSTRUCTOR_BOOLEAN_1300
-     * @tc.name testBigIntConstructorBoolean2Test013
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_BOOLEAN_0300
+     * @tc.name testBigIntConstructorBoolean2Test0300
      * @tc.desc Verify bitwise operations on boolean-constructed BigInt values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorBoolean2Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntConstructorBoolean2Test0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const t = BigInt(true);
       const f = BigInt(false);
 
@@ -68,14 +68,14 @@ export default function BigIntConstructorBoolean2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_CONSTRUCTOR_BOOLEAN_1400
-     * @tc.name testBigIntConstructorBoolean2Test014
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_BOOLEAN_0400
+     * @tc.name testBigIntConstructorBoolean2Test0400
      * @tc.desc Verify boolean-constructed values equal those from number, string, and fromULong
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorBoolean2Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntConstructorBoolean2Test0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(true).equals(BigInt(1))).assertTrue();
       expect(BigInt(true).equals(BigInt('1'))).assertTrue();
       expect(BigInt(false).equals(BigInt(0))).assertTrue();
@@ -85,14 +85,14 @@ export default function BigIntConstructorBoolean2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_CONSTRUCTOR_BOOLEAN_1500
-     * @tc.name testBigIntConstructorBoolean2Test015
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_BOOLEAN_0500
+     * @tc.name testBigIntConstructorBoolean2Test0500
      * @tc.desc Verify boolean-constructed BigInt survives toString serialization round-trip
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorBoolean2Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntConstructorBoolean2Test0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(BigInt(true).toString()).equals(BigInt(true))).assertTrue();
       expect(BigInt(BigInt(false).toString()).equals(BigInt(false))).assertTrue();
       expect(BigInt('0x' + BigInt(true).toString(16)).equals(BigInt(true))).assertTrue();
@@ -101,14 +101,14 @@ export default function BigIntConstructorBoolean2Test(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_CONSTRUCTOR_BOOLEAN_1600
-     * @tc.name testBigIntConstructorBoolean2Test016
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_BOOLEAN_0600
+     * @tc.name testBigIntConstructorBoolean2Test0600
      * @tc.desc Verify boolean-constructed values in large number arithmetic at long extrema
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorBoolean2Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntConstructorBoolean2Test0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const longMax = BigInt('9223372036854775807');
       const longMin = BigInt('-9223372036854775808');
 
@@ -117,17 +117,18 @@ export default function BigIntConstructorBoolean2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_CONSTRUCTOR_BOOLEAN_1700
-     * @tc.name testBigIntConstructorBoolean2Test017
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_BOOLEAN_0700
+     * @tc.name testBigIntConstructorBoolean2Test0700
      * @tc.desc Verify boolean→BigInt→boolean→BigInt idempotency
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorBoolean2Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntConstructorBoolean2Test0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(BigInt(true).equals(BigInt(1))).toString()).assertEqual('1');
       expect(BigInt(BigInt(false).equals(BigInt(0))).toString()).assertEqual('1');
       expect(BigInt(BigInt(true).equals(BigInt(0))).toString()).assertEqual('0');
     });
+
   });
 }

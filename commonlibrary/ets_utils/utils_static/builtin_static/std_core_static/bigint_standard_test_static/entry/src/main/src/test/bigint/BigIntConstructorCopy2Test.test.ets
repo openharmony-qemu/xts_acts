@@ -21,18 +21,18 @@ function assertCopyPreserves(source: BigInt): void {
 }
 
 export default function BigIntConstructorCopy2Test(): void {
-  describe('testBigIntConstructorCopy2Test', (): void => {
+  describe('testBigIntConstructorCopy2Test', () => {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_CONSTRUCTOR_COPY_1200
-     * @tc.name testBigIntConstructorCopy2Test012
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_0100
+     * @tc.name testBigIntConstructorCopy2Test0100
      * @tc.desc Copy hex-constructed longMax BigInt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorCopy2Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntConstructorCopy2Test0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const src = BigInt('0x7FFFFFFFFFFFFFFF');
       assertCopyPreserves(src);
       expect(BigInt(src).equals(BigInt('9223372036854775807'))).assertTrue();
@@ -40,56 +40,56 @@ export default function BigIntConstructorCopy2Test(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_CONSTRUCTOR_COPY_1300
-     * @tc.name testBigIntConstructorCopy2Test013
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_0200
+     * @tc.name testBigIntConstructorCopy2Test0200
      * @tc.desc Copy binary-constructed ulongMax BigInt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorCopy2Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntConstructorCopy2Test0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const src = BigInt('0b1111111111111111111111111111111111111111111111111111111111111111');
       assertCopyPreserves(src);
       expect(BigInt(src).equals(BigInt('18446744073709551615'))).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_CONSTRUCTOR_COPY_1400
-     * @tc.name testBigIntConstructorCopy2Test014
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_0300
+     * @tc.name testBigIntConstructorCopy2Test0300
      * @tc.desc Copy fromULong(0) factory-constructed BigInt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorCopy2Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntConstructorCopy2Test0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const src = BigInt.fromULong(0);
       assertCopyPreserves(src);
       expect(BigInt(src).equals(BigInt(0))).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_CONSTRUCTOR_COPY_1500
-     * @tc.name testBigIntConstructorCopy2Test015
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_0400
+     * @tc.name testBigIntConstructorCopy2Test0400
      * @tc.desc Copy fromULong(-1) yields ulongMax, copy preserves it
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorCopy2Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntConstructorCopy2Test0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const src = BigInt.fromULong(-1);
       assertCopyPreserves(src);
       expect(BigInt(src).equals(BigInt('18446744073709551615'))).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_CONSTRUCTOR_COPY_1600
-     * @tc.name testBigIntConstructorCopy2Test016
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_0500
+     * @tc.name testBigIntConstructorCopy2Test0500
      * @tc.desc Copy BigInt(true) constructed from boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorCopy2Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntConstructorCopy2Test0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const src = BigInt(true);
       assertCopyPreserves(src);
       expect(BigInt(src).equals(BigInt(1))).assertTrue();
@@ -97,14 +97,14 @@ export default function BigIntConstructorCopy2Test(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_CONSTRUCTOR_COPY_1700
-     * @tc.name testBigIntConstructorCopy2Test017
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_0600
+     * @tc.name testBigIntConstructorCopy2Test0600
      * @tc.desc Copy asIntN(8, 255) truncation result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorCopy2Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntConstructorCopy2Test0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const src = BigInt.asIntN(8, BigInt(255));
       assertCopyPreserves(src);
       expect(BigInt(src).toString()).assertEqual('-1');
@@ -112,84 +112,84 @@ export default function BigIntConstructorCopy2Test(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_CONSTRUCTOR_COPY_1800
-     * @tc.name testBigIntConstructorCopy2Test018
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_0700
+     * @tc.name testBigIntConstructorCopy2Test0700
      * @tc.desc Copy bitwise AND result BigInt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorCopy2Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntConstructorCopy2Test0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const src = BigInt(255).operatorBitwiseAnd(BigInt(15));
       assertCopyPreserves(src);
       expect(BigInt(src).toString()).assertEqual('15');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_CONSTRUCTOR_COPY_1900
-     * @tc.name testBigIntConstructorCopy2Test019
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_0800
+     * @tc.name testBigIntConstructorCopy2Test0800
      * @tc.desc Copy bitwise NOT of zero result BigInt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorCopy2Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntConstructorCopy2Test0800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const src = BigInt(0).operatorBitwiseNot();
       assertCopyPreserves(src);
       expect(BigInt(src).toString()).assertEqual('-1');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_CONSTRUCTOR_COPY_2000
-     * @tc.name testBigIntConstructorCopy2Test020
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_0900
+     * @tc.name testBigIntConstructorCopy2Test0900
      * @tc.desc Copy cross-boundary addition result BigInt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorCopy2Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntConstructorCopy2Test0900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const src = BigInt('9223372036854775807').operatorAdd(BigInt('9223372036854775807'));
       assertCopyPreserves(src);
       expect(BigInt(src).toString()).assertEqual('18446744073709551614');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_CONSTRUCTOR_COPY_2100
-     * @tc.name testBigIntConstructorCopy2Test021
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_1000
+     * @tc.name testBigIntConstructorCopy2Test1000
      * @tc.desc Copy power result BigInt (2^100)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorCopy2Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntConstructorCopy2Test1000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const src = BigInt(2).pow(BigInt(100));
       assertCopyPreserves(src);
       expect(BigInt(src).operatorRightShift(BigInt(99)).equals(BigInt(2))).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_CONSTRUCTOR_COPY_2200
-     * @tc.name testBigIntConstructorCopy2Test022
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_1100
+     * @tc.name testBigIntConstructorCopy2Test1100
      * @tc.desc Copy.negate() equals original.negate()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorCopy2Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntConstructorCopy2Test1100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const src = BigInt(42);
       const cpy = BigInt(src);
       expect(cpy.negate().equals(src.negate())).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_CONSTRUCTOR_COPY_2300
-     * @tc.name testBigIntConstructorCopy2Test023
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_1200
+     * @tc.name testBigIntConstructorCopy2Test1200
      * @tc.desc Copy.positive() and Copy.negative() match original
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorCopy2Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntConstructorCopy2Test1200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const posSrc = BigInt(5);
       const negSrc = BigInt(-5);
       const zeroSrc = BigInt(0);
@@ -207,14 +207,14 @@ export default function BigIntConstructorCopy2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_CONSTRUCTOR_COPY_2400
-     * @tc.name testBigIntConstructorCopy2Test024
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_1300
+     * @tc.name testBigIntConstructorCopy2Test1300
      * @tc.desc Copy.valueOf() and Copy.getLong() match original
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorCopy2Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntConstructorCopy2Test1300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const src = BigInt(12345);
       const cpy = BigInt(src);
       expect(cpy.valueOf().toString()).assertEqual(src.valueOf().toString());
@@ -222,14 +222,14 @@ export default function BigIntConstructorCopy2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_CONSTRUCTOR_COPY_2500
-     * @tc.name testBigIntConstructorCopy2Test025
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_1400
+     * @tc.name testBigIntConstructorCopy2Test1400
      * @tc.desc Copy.toString(16) and toString(2) match original
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorCopy2Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntConstructorCopy2Test1400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const src = BigInt('18446744073709551615');
       const cpy = BigInt(src);
       expect(cpy.toString(16)).assertEqual(src.toString(16));
@@ -237,14 +237,14 @@ export default function BigIntConstructorCopy2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_CONSTRUCTOR_COPY_2600
-     * @tc.name testBigIntConstructorCopy2Test026
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_1500
+     * @tc.name testBigIntConstructorCopy2Test1500
      * @tc.desc Multiple copies of same source are all equal and independent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorCopy2Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntConstructorCopy2Test1500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const src = BigInt(999);
       const a = BigInt(src);
       const b = BigInt(src);
@@ -260,28 +260,28 @@ export default function BigIntConstructorCopy2Test(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_CONSTRUCTOR_COPY_2700
-     * @tc.name testBigIntConstructorCopy2Test027
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_1600
+     * @tc.name testBigIntConstructorCopy2Test1600
      * @tc.desc undefined cast to BigInt throws ClassCastError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorCopy2Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntConstructorCopy2Test1600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect((): void => {
         BigInt(undefined as Object as BigInt);
       }).assertThrowError('ClassCastError');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_CONSTRUCTOR_COPY_2800
-     * @tc.name testBigIntConstructorCopy2Test028
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_1700
+     * @tc.name testBigIntConstructorCopy2Test1700
      * @tc.desc Non-BigInt types cast to BigInt throw ClassCastError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorCopy2Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntConstructorCopy2Test1700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect((): void => {
         BigInt('abc' as Object as BigInt);
       }).assertThrowError('ClassCastError');
@@ -294,14 +294,14 @@ export default function BigIntConstructorCopy2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_CONSTRUCTOR_COPY_2900
-     * @tc.name testBigIntConstructorCopy2Test029
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_1800
+     * @tc.name testBigIntConstructorCopy2Test1800
      * @tc.desc Valid copy succeeds after invalid copy input
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorCopy2Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntConstructorCopy2Test1800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect((): void => {
         BigInt(null as BigInt);
       }).assertThrowError('ClassCastError');
@@ -310,14 +310,14 @@ export default function BigIntConstructorCopy2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_CONSTRUCTOR_COPY_3000
-     * @tc.name testBigIntConstructorCopy2Test030
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_1900
+     * @tc.name testBigIntConstructorCopy2Test1900
      * @tc.desc Copy BigInt(0), BigInt('0'), BigInt(false) all yield equal zero copies
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorCopy2Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntConstructorCopy2Test1900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const z1 = BigInt(BigInt(0));
       const z2 = BigInt(BigInt('0'));
       const z3 = BigInt(BigInt(false));
@@ -330,14 +330,14 @@ export default function BigIntConstructorCopy2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_CONSTRUCTOR_COPY_3100
-     * @tc.name testBigIntConstructorCopy2Test031
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_2000
+     * @tc.name testBigIntConstructorCopy2Test2000
      * @tc.desc Copy result of a multi-step bitwise + arithmetic expression
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorCopy2Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntConstructorCopy2Test2000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const base = BigInt(42);
       const masked = BigInt.asUintN(8, base.operatorAdd(BigInt(200)));
       const shifted = masked.operatorRightShift(BigInt(1));

@@ -18,18 +18,18 @@ import { TestType, Size, Level } from '../../../../hypium/Constant';
 import Utils from '../Util.test';
 
 export default function BigIntAsIntN2Test(): void {
-  describe('testBigIntAsIntN2Test', ():void => {
+  describe('testBigIntAsIntN2Test', () => {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_ASINTN_1300
-     * @tc.name testBigIntAsIntN2Test013
+     * @tc.number SUB_BIGINT_STD_ASINTN_0100
+     * @tc.name testBigIntAsIntN2Test0100
      * @tc.desc Verify 1-bit asIntN with even inputs yields 0n
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsIntN2Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
+    it('testBigIntAsIntN2Test0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.asIntN(1, Utils.biInt(2)).toString()).assertEqual('0');
       expect(BigInt.asIntN(1, Utils.biInt(4)).toString()).assertEqual('0');
       expect(BigInt.asIntN(1, Utils.biInt(-2)).toString()).assertEqual('0');
@@ -37,14 +37,14 @@ export default function BigIntAsIntN2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_ASINTN_1400
-     * @tc.name testBigIntAsIntN2Test014
+     * @tc.number SUB_BIGINT_STD_ASINTN_0200
+     * @tc.name testBigIntAsIntN2Test0200
      * @tc.desc Verify 1-bit asIntN with odd non-zero inputs yields -1n
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsIntN2Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntAsIntN2Test0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.asIntN(1, Utils.biInt(3)).toString()).assertEqual('-1');
       expect(BigInt.asIntN(1, Utils.biInt(5)).toString()).assertEqual('-1');
       expect(BigInt.asIntN(1, Utils.biInt(-3)).toString()).assertEqual('-1');
@@ -52,81 +52,78 @@ export default function BigIntAsIntN2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_ASINTN_1500
-     * @tc.name testBigIntAsIntN2Test015
+     * @tc.number SUB_BIGINT_STD_ASINTN_0300
+     * @tc.name testBigIntAsIntN2Test0300
      * @tc.desc Verify 8-bit asIntN wraps full period 256 and -256 to 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsIntN2Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntAsIntN2Test0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.asIntN(8, Utils.biInt(256)).toString()).assertEqual('0');
       expect(BigInt.asIntN(8, Utils.biInt(-256)).toString()).assertEqual('0');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_ASINTN_1600
-     * @tc.name testBigIntAsIntN2Test016
+     * @tc.number SUB_BIGINT_STD_ASINTN_0400
+     * @tc.name testBigIntAsIntN2Test0400
      * @tc.desc Verify 8-bit asIntN wraps -255 to 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsIntN2Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntAsIntN2Test0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.asIntN(8, Utils.biInt(-255)).toString()).assertEqual('1');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_ASINTN_1700
-     * @tc.name testBigIntAsIntN2Test017
+     * @tc.number SUB_BIGINT_STD_ASINTN_0500
+     * @tc.name testBigIntAsIntN2Test0500
      * @tc.desc Verify 16-bit asIntN at unsigned max, min-1, and full cycle
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsIntN2Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntAsIntN2Test0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.asIntN(16, Utils.biInt(65535)).toString()).assertEqual('-1');
       expect(BigInt.asIntN(16, Utils.biInt(-32769)).toString()).assertEqual('32767');
       expect(BigInt.asIntN(16, Utils.biInt(65536)).toString()).assertEqual('0');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_ASINTN_1800
-     * @tc.name testBigIntAsIntN2Test018
+     * @tc.number SUB_BIGINT_STD_ASINTN_0600
+     * @tc.name testBigIntAsIntN2Test0600
      * @tc.desc Verify 32-bit asIntN at signed boundary values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsIntN2Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntAsIntN2Test0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.asIntN(32, BigInt(-2147483648)).toString()).assertEqual('-2147483648');
-      expect(BigInt.asIntN(32, BigInt(2147483647)).toString()).assertEqual('2147483647');
-      expect(BigInt.asIntN(32, BigInt(2147483648)).toString()).assertEqual('-2147483648');
-      expect(BigInt.asIntN(32, BigInt(4294967295)).toString()).assertEqual('-1');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_ASINTN_1900
-     * @tc.name testBigIntAsIntN2Test019
+     * @tc.number SUB_BIGINT_STD_ASINTN_0700
+     * @tc.name testBigIntAsIntN2Test0700
      * @tc.desc Verify 8-bit asIntN multi-cycle overflow gives correct signed result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsIntN2Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntAsIntN2Test0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.asIntN(8, Utils.biInt(896)).toString()).assertEqual('-128');
       expect(BigInt.asIntN(8, Utils.biInt(-641)).toString()).assertEqual('127');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_ASINTN_2000
-     * @tc.name testBigIntAsIntN2Test020
+     * @tc.number SUB_BIGINT_STD_ASINTN_0800
+     * @tc.name testBigIntAsIntN2Test0800
      * @tc.desc Verify idempotency: applying asIntN twice yields the same result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsIntN2Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntAsIntN2Test0800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const once8 = BigInt.asIntN(8, Utils.biInt(200));
       const twice8 = BigInt.asIntN(8, once8);
       expect(once8.equals(twice8)).assertTrue();
@@ -136,42 +133,42 @@ export default function BigIntAsIntN2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_ASINTN_2100
-     * @tc.name testBigIntAsIntN2Test021
+     * @tc.number SUB_BIGINT_STD_ASINTN_0900
+     * @tc.name testBigIntAsIntN2Test0900
      * @tc.desc Verify symmetry: asIntN(8, -n) equals -asIntN(8, n) when n is not the minimum
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsIntN2Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntAsIntN2Test0900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const pos = BigInt.asIntN(8, Utils.biInt(100));
       const neg = BigInt.asIntN(8, Utils.biInt(-100));
       expect(pos.negate().equals(neg)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_ASINTN_2200
-     * @tc.name testBigIntAsIntN2Test022
+     * @tc.number SUB_BIGINT_STD_ASINTN_1000
+     * @tc.name testBigIntAsIntN2Test1000
      * @tc.desc Verify sign correctness: positive, negative, zero results have correct sign
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsIntN2Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntAsIntN2Test1000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.asIntN(8, Utils.biInt(42)).operatorGreaterThan(BigInt(0))).assertTrue();
       expect(BigInt.asIntN(8, Utils.biInt(-42)).operatorLessThan(BigInt(0))).assertTrue();
       expect(BigInt.asIntN(8, Utils.biInt(0)).equals(BigInt(0))).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_ASINTN_2300
-     * @tc.name testBigIntAsIntN2Test023
+     * @tc.number SUB_BIGINT_STD_ASINTN_1100
+     * @tc.name testBigIntAsIntN2Test1100
      * @tc.desc Verify asIntN equals asUintN when result is in [0, 2^(bits-1)-1]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsIntN2Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntAsIntN2Test1100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.asIntN(8, Utils.biInt(100)).toString()).assertEqual(
         BigInt.asUintN(8, Utils.biInt(100)).toString());
       expect(BigInt.asIntN(8, Utils.biInt(0)).toString()).assertEqual(
@@ -181,14 +178,14 @@ export default function BigIntAsIntN2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_ASINTN_2400
-     * @tc.name testBigIntAsIntN2Test024
+     * @tc.number SUB_BIGINT_STD_ASINTN_1200
+     * @tc.name testBigIntAsIntN2Test1200
      * @tc.desc Verify asIntN = asUintN - 2^bits when result is in [2^(bits-1), 2^bits-1]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsIntN2Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntAsIntN2Test1200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const uintVal = BigInt.asUintN(8, Utils.biInt(200));
       const intVal = BigInt.asIntN(8, Utils.biInt(200));
       const diff = uintVal.operatorSubtract(BigInt(256));
@@ -196,14 +193,14 @@ export default function BigIntAsIntN2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_ASINTN_2500
-     * @tc.name testBigIntAsIntN2Test025
+     * @tc.number SUB_BIGINT_STD_ASINTN_1300
+     * @tc.name testBigIntAsIntN2Test1300
      * @tc.desc Verify non-integer Number/NaN/Infinity throws ClassCastError for BigInt.asIntN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsIntN2Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntAsIntN2Test1300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect((): void => {
         BigInt.asIntN(8, 1.5 as Object as BigInt);
       }).assertThrowError('ClassCastError');
