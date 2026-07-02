@@ -193,7 +193,7 @@ class XtsBuild:
     def build(self):
         func_list = [
             self.parse_cmdline,
-            self.update_hvigor_static,
+            # self.update_hvigor_static,
             self.standard_check,
             self.do_make
         ]
