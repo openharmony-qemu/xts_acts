@@ -182,23 +182,23 @@ async function getPhotoSession(testName: string, sceneMode: camera.SceneMode, pr
 
 async function getVideoSession(testName: string, sceneMode: camera.SceneMode, previewOutput: camera.PreviewOutput, videoOutput: camera.VideoOutput, metadataOutput: camera.MetadataOutput) {
   console.info(TAG, 'getVideoSession.');
-  mPhotoSession = mCameraManager.createSession(sceneMode);
+  mVideoSession = mCameraManager.createSession(sceneMode);
   console.info(TAG, testName + ' createSession passed.');
-  mPhotoSession.beginConfig();
+  mVideoSession.beginConfig();
   console.info(TAG, testName + ' beginConfig passed.');
-  mPhotoSession.addInput(mCameraInput);
+  mVideoSession.addInput(mCameraInput);
   console.info(TAG, testName + ' addInput passed.');
   await mCameraInput.open();
   console.info(TAG, testName + ' open passed.');
-  mPhotoSession.addOutput(previewOutput);
+  mVideoSession.addOutput(previewOutput);
   console.info(TAG, testName + ' addOutput previewOutput passed.');
-  mPhotoSession.addOutput(videoOutput);
+  mVideoSession.addOutput(videoOutput);
   console.info(TAG, testName + ' addOutput videoOutput passed.');
-  mPhotoSession.addOutput(metadataOutput);
+  mVideoSession.addOutput(metadataOutput);
   console.info(TAG, testName + ' addOutput metadataOutput passed.');
-  await mPhotoSession.commitConfig();
+  await mVideoSession.commitConfig();
   console.info(TAG, testName + ' commitConfig passed.');
-  await mPhotoSession.start();
+  await mVideoSession.start();
   console.info(TAG, testName + ' start passed.');
 }
 
