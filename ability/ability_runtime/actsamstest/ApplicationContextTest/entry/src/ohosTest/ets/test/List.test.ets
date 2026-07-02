@@ -13,7 +13,9 @@
  * limitations under the License.
  */
 import applicationContext  from './ApplicationContext.test';
+import delayedProcessExitTest from './DelayedProcessExit.test';
 
 export default function testsuite() {
   applicationContext();
+  delayedProcessExitTest();
 }

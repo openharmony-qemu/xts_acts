@@ -384,6 +384,14 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
 
     if (testCaseName === (TEST_CASE_NAME + '_1600')) {
       hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} UIExtensionContentSession test case start`);
+      let abilityResult: common.AbilityResult = {
+        resultCode: 111,
+        want: {
+          bundleName: 'com.acts.startabilityforresulttest2.static',
+          moduleName: 'entry',
+          abilityName: 'EntryAbility1'
+        },
+      };
       try {
         // Test UIExtensionContext disconnectUIServiceExtensionAbility 401 801
         const uiServiceProxy = new CustomUIServiceProxy();
@@ -398,7 +406,12 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
           } as commonEventManager.CommonEventPublishData;
           commonEventManager.publish(testCaseName + '_event', commonEventData, (result) => {
             hilog.info(DOMAIN, TAG, `${JSON.stringify(testCaseName)} result: ${JSON.stringify(result)}`);
-            uiExtContext.terminateSelf()
+            session.terminateSelfWithResult(abilityResult).then(() => {
+              hilog.info(0x0000, 'testTag', '%{public}s', 'secondAbility terminateSelf sucess');
+            }).catch((err: Error): void => {
+              hilog.info(0x0000, 'testTag', '%{public}s', 'secondAbility terminateSelf errCode:' + JSON.stringify(err.code) +
+                'errMessage:' + JSON.stringify(err.message));
+            })
           });
         });
       } catch (err) {
@@ -410,7 +423,12 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
         } as commonEventManager.CommonEventPublishData;
         commonEventManager.publish(testCaseName + '_event', commonEventData, (result) => {
           hilog.info(DOMAIN, TAG, `${JSON.stringify(testCaseName)} result: ${JSON.stringify(result)}`);
-          uiExtContext.terminateSelf()
+          session.terminateSelfWithResult(abilityResult).then(() => {
+            hilog.info(0x0000, 'testTag', '%{public}s', 'secondAbility terminateSelf sucess');
+          }).catch((err: Error): void => {
+            hilog.info(0x0000, 'testTag', '%{public}s', 'secondAbility terminateSelf errCode:' + JSON.stringify(err.code) +
+              'errMessage:' + JSON.stringify(err.message));
+          })
         });
       }
       hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${testCaseName} EmbeddedUIExtensionAbility test case end`);

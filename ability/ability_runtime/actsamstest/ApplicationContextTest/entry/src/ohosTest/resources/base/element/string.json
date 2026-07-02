@@ -11,6 +11,14 @@
     {
       "name": "TestAbility_label",
       "value": "test label"
+    },
+    {
+      "name": "TwoAbility_desc",
+      "value": "TwoAbility description"
+    },
+    {
+      "name": "TwoAbility_label",
+      "value": "TwoAbility label"
     }
   ]
 }

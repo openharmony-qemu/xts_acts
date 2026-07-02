@@ -39,6 +39,16 @@
           },
         ]
       },
+     {
+        name: "TwoAbility",
+        srcEntry: "./ets/testability/TwoAbility.ets",
+        description: "$string:TwoAbility_desc",
+        icon: "$media:icon",
+        label: "$string:TwoAbility_label",
+        exported: true,
+        startWindowIcon: "$media:icon",
+        startWindowBackground: "$color:start_window_background"
+      }
     ]
   },
 }

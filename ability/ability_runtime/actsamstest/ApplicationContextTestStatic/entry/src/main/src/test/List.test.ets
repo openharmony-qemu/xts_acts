@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 import abilityTest from "./ActsAbility.test";
+import delayedProcessExitTest from "./DelayedProcessExit.test";
 export default function testsuite() {
     abilityTest();
+    delayedProcessExitTest();
 }
