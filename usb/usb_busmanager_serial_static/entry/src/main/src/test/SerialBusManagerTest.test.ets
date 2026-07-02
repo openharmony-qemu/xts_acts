@@ -48,6 +48,23 @@ async function driveFn(): Promise<void> {
   }
 }
 
+async function driveFnReject(): Promise<void> {
+  console.info(TAG, '**************driveFnReject**************');
+  try {
+    let driver: Driver = Driver.create();
+    await driver.delayMs(1000);
+    console.info(TAG, `driver is ${JSON.stringify(driver)}`);
+    let buttons = await driver.findComponents(ON.text('不允许', MatchPattern.EQUALS));
+    console.info(TAG, `buttons is ${JSON.stringify(buttons)}`);
+    if (buttons && buttons.length > 0) {
+      await buttons[0].click();
+    }
+  } catch (error) {
+    console.info(TAG, 'driveFnReject error: ' + error);
+  }
+}
+
+
 async function checkDevice(): Promise<boolean> {
   try {
     let portList: serial.SerialPort[] = await serial.getSerialPortList();
@@ -112,6 +129,32 @@ export default function SerialBusManagerTest(): void {
           done()
         }
       }
+    })
+
+    /**
+    * @tc.name   testOpen022
+    * @tc.number SUB_BusManager_Serial_Static_open_ErrCode_2100
+    * @tc.desc   open rejected by user clicking 不允许 - 35700007.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('testOpen022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info(TAG, 'testOpen022 start');
+      if (await checkDevice() === false) {
+        done();
+        return Promise.resolve();
+      }
+      gPort!.open().then(async () => {
+        await driveFnReject();
+        expect().assertFail();
+        done();
+      }).catch((error) => {
+        console.error(TAG, 'testOpen022 catch err code: ', error.code, ', message: ', error.message);
+        expect(error.code).assertEqual(35700007);
+        done();
+      })
+      await driveFnReject();
     })
 
     /**
