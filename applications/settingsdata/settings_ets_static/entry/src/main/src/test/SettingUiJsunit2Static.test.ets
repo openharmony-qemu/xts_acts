@@ -2712,8 +2712,7 @@ export default function settingUiJsunit() {
         expect(code).assertEqual(0);
       } catch (err) {
         console.error("[openAppDetailSettingsPage_valid_appIndex_undefined] error = " + err);
-        code = err?.code;
-        expect(code).assertEqual(16900020);
+        expect(err?.code).assertEqual(16900020);
       }
       done();
     });
@@ -2739,8 +2738,7 @@ export default function settingUiJsunit() {
         expect(code).assertEqual(0);
       } catch (err) {
         console.error("[openAppDetailSettingsPage_valid_param] error = " + err);
-        code = err?.code;
-        expect(code).assertEqual(16900020);
+        expect(err?.code).assertEqual(16900020);
       }
       done();
     });
@@ -2766,8 +2764,7 @@ export default function settingUiJsunit() {
         expect(code).assertEqual(0);
       } catch (err) {
         console.error("[openAppDetailSettingsPage_valid_param] error = " + err);
-        code = err?.code;
-        expect(code).assertEqual(16900020);
+        expect(err?.code).assertEqual(16900020);
       }
       done();
     });
