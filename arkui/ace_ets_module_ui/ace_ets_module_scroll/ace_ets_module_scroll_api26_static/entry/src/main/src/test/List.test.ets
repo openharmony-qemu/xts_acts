@@ -45,6 +45,7 @@ import lazyColumnLayoutModifier from './LazyColumnLayout/lazyColumnLayoutModifie
 import lazyVWaterFlowLayoutModifier from './LazyVWaterFlowLayout/lazyVWaterFlowLayoutModifier.test'
 import lazyVGridLayoutModifier from './LazyVGridLayout/lazyVGridLayoutModifier.test'
 import ScrollScrollBarHeight from './Scroll/scrollScrollBarHeight.test'
+import customListLayoutTest from './LazyDynamicLayout/customListLayoutTest.test';
 
 export default function testsuite() {
   GridScrollBarWidthTest();
@@ -72,4 +73,5 @@ export default function testsuite() {
   headerFooterStickyGrid();
   lazyVGridLayoutModifier();
   ScrollScrollBarHeight();
+  customListLayoutTest();
 }
