@@ -292,10 +292,10 @@ int VideoEncodeFunction0800Test()
     if (cap) {
         ASSERT_EQ(AV_ERR_OK, OH_AVCapability_GetVideoSupportedPixelFormats(cap, &pixelFormat, &pixelFormatNum));
         if (pixelFormatNum > 0) {
-            TestIFrameIntervalConfig(OH_AVCODEC_MIMETYPE_VIDEO_AVC, pixelFormat[0], SECOND);
-            TestIFrameIntervalConfig(OH_AVCODEC_MIMETYPE_VIDEO_AVC, pixelFormat[0], -1);
-            TestIFrameIntervalConfig(OH_AVCODEC_MIMETYPE_VIDEO_AVC, pixelFormat[0], 0);
-            TestIFrameIntervalConfig(OH_AVCODEC_MIMETYPE_VIDEO_AVC, pixelFormat[0], INT_MAX);
+            TestIFrameIntervalConfig(OH_AVCODEC_MIMETYPE_VIDEO_AVC, SECOND);
+            TestIFrameIntervalConfig(OH_AVCODEC_MIMETYPE_VIDEO_AVC, -1);
+            TestIFrameIntervalConfig(OH_AVCODEC_MIMETYPE_VIDEO_AVC, 0);
+            TestIFrameIntervalConfig(OH_AVCODEC_MIMETYPE_VIDEO_AVC, INT_MAX);
             return 0;
         }
         return 0;
