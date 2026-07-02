@@ -1085,339 +1085,6 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
         done();
       }
     });
-    /**
-     * @tc.name   test_getAvailableArea_ststus_bar_hide
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GET_AVAILABLEAREA_0400
-     * @tc.desc   test_getAvailableArea_ststus_bar_hide
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('test_getAvailableArea_ststus_bar_hide', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let caseName = 'test_getAvailableArea_ststus_bar_hide';
-      let msgStr = 'jsunittest ' + caseName + ' ';
-      console.log(msgStr + 'begin');
-      let displayClass: display.Display;
-      try {
-        let mainWindowClass = await windowStage.getMainWindow();
-        displayClass = display.getDefaultDisplaySync();
-        let promise1 = displayClass.getAvailableArea();
-        promise1.then(async (data) => {
-          let AvailableArea = data;
-          console.info(msgStr + 'Succeeded get the available area in this display. AvailableArea: ' + JSON.stringify(AvailableArea));
-          await mainWindowClass.setWindowLayoutFullScreen(true).then(async () => {
-            console.info(msgStr + ' setWindowLayoutFullScreen success');
-            await sleep(1000);
-            let displayClass1 = display.getDefaultDisplaySync();
-            let promise = displayClass1.getAvailableArea();
-            promise.then((data1) => {
-              console.info(msgStr + 'Succeeded get the available area in this display. data1: ' + JSON.stringify(data1));
-              if (AvailableArea.top == 0) {
-                mainWindowClass.setWindowLayoutFullScreen(false);
-                done();
-              }
-              else if (AvailableArea.top != 0) {
-                expect(data1.top).assertEqual(0);
-                mainWindowClass.setWindowLayoutFullScreen(false);
-                done();
-              }
-              else {
-                expect(false).assertTrue();
-                done();
-              }
-            }).catch((err: BusinessError) => {
-              console.error(msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
-              if (err.code == 801) {
-                console.info(msgStr + 'The device not support getAvailableArea');
-                done();
-              }
-              else {
-                expect().assertFail();
-                done();
-              }
-            });
-          }).catch((err: BusinessError) => {
-            console.error(msgStr + `Failed to set setWindowLayoutFullScreen. Code: ${err.code}, message: ${err.message}`);
-            expect().assertFail();
-            done();
-          })
-
-        }).catch((err: BusinessError) => {
-          console.error(msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
-          if (err.code == 801) {
-            console.info(msgStr + 'The device not support getAvailableArea');
-            done();
-          }
-          else {
-            expect().assertFail();
-            done();
-          }
-        });
-      }
-      catch (exception) {
-        console.error(msgStr + `Failed to obtain the default display object. Code: ${exception.code}, message: ${exception.message}`);
-        expect().assertFail();
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   test_on_availableAreaChange_triggers
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0200
-     * @tc.desc   test_on_availableAreaChange_triggers
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('test_on_availableAreaChange_triggers', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let caseName = 'test_on_availableAreaChange_triggers';
-      let msgStr = 'jsunittest ' + caseName + ' ';
-      console.log(msgStr + 'begin');
-      let displayClass: display.Display;
-      try {
-        let mainWindowClass = await windowStage.getMainWindow();
-        displayClass = display.getDefaultDisplaySync();
-        let promise1 = displayClass.getAvailableArea();
-        promise1.then(async (data) => {
-          let AvailableArea = data;
-          console.info(msgStr + 'Succeeded get the available area in this display. AvailableArea: ' + JSON.stringify(AvailableArea));
-          if (AvailableArea.top == 0) {
-            done();
-          }
-          else if (AvailableArea.top != 0) {
-            displayClass.on('availableAreaChange', (data: display.Rect) => {
-              console.info(msgStr + 'Listening enabled. Data: ' + JSON.stringify(data));
-              sleep(500);
-              expect(data.height).assertLarger(AvailableArea.height);
-              expect(data.left).assertLargerOrEqual(0);
-              expect(data.top).assertLargerOrEqual(0);
-              expect(data.width).assertLargerOrEqual(0);
-              displayClass.off('availableAreaChange');
-              mainWindowClass.recover();
-              done();
-            });
-            await mainWindowClass.setWindowLayoutFullScreen(true);
-            console.info(msgStr + ' setWindowLayoutFullScreen success');
-            await sleep(500);
-          }
-          else {
-            expect(false).assertTrue();
-            done();
-          }
-        }).catch((err: BusinessError) => {
-          console.error(msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
-          if (err.code == 801) {
-            console.info(msgStr + 'The device not support getAvailableArea');
-            done();
-          }
-          else {
-            expect().assertFail();
-            done();
-          }
-        });
-      }
-      catch (exception) {
-        console.error(msgStr + `Failed to obtain the default display object. Code: ${exception.code}, message: ${exception.message}`);
-        expect().assertFail();
-        done();
-      }
-    });
-    /**
-     * @tc.name   test_on_availableAreaChange_Two_callback
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0300
-     * @tc.desc   test_on_availableAreaChange_Two_callback
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('test_on_availableAreaChange_Two_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let caseName = 'test_on_availableAreaChange_Two_callback';
-      let msgStr = 'jsunittest ' + caseName + ' ';
-      console.log(msgStr + 'begin');
-      let displayClass: display.Display;
-      let num = 0;
-      let callback1: Callback<display.Rect> = (data: display.Rect) => {
-        num++;
-        console.info('Listening callback1 enabled. Data: ' + JSON.stringify(data) + ' , num:' + num);
-      };
-      let callback2: Callback<display.Rect> = (data: display.Rect) => {
-        num++;
-        console.info('Listening callback2 enabled. Data: ' + JSON.stringify(data) + ' , num:' + num);
-      };
-      try {
-        let mainWindowClass = await windowStage.getMainWindow();
-        displayClass = display.getDefaultDisplaySync();
-        let promise1 = displayClass.getAvailableArea();
-        promise1.then(async (data) => {
-          let AvailableArea = data;
-          console.info(msgStr + 'Succeeded get the available area in this display. AvailableArea: ' + JSON.stringify(AvailableArea));
-          if (AvailableArea.top == 0) {
-            done();
-          }
-          else if (AvailableArea.top != 0) {
-            displayClass.on('availableAreaChange', callback1);
-            displayClass.on('availableAreaChange', callback2);
-            await mainWindowClass.setWindowLayoutFullScreen(true);
-            console.info(msgStr + ' setWindowLayoutFullScreen success');
-            await sleep(1000);
-            expect(num).assertEqual(4);
-            displayClass.off('availableAreaChange');
-            mainWindowClass.recover();
-            done();
-          }
-          else {
-            expect(false).assertTrue();
-            done();
-          }
-        }).catch((err: BusinessError) => {
-          console.error(msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
-          if (err.code == 801) {
-            console.info(msgStr + 'The device not support getAvailableArea');
-            done();
-          }
-          else {
-            expect().assertFail();
-            done();
-          }
-        });
-      }
-      catch (exception) {
-        console.error(msgStr + `Failed to obtain the default display object. Code: ${exception.code}, message: ${exception.message}`);
-        expect().assertFail();
-        done();
-      }
-    });
-    /**
-     * @tc.name   test_on_availableAreaChange_off_callback1
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0400
-     * @tc.desc   test_on_availableAreaChange_off_callback1
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('test_on_availableAreaChange_off_callback1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let caseName = 'test_on_availableAreaChange_off_callback1';
-      let msgStr = 'jsunittest ' + caseName + ' ';
-      console.log(msgStr + 'begin');
-      let displayClass: display.Display;
-      let num = 0;
-      let callback1: Callback<display.Rect> = (data: display.Rect) => {
-        num--;
-        console.info('Listening callback1 enabled. Data: ' + JSON.stringify(data) + ' , num:' + num);
-      };
-      let callback2: Callback<display.Rect> = (data: display.Rect) => {
-        num++;
-        console.info('Listening callback2 enabled. Data: ' + JSON.stringify(data) + ' , num:' + num);
-      };
-      try {
-        let mainWindowClass = await windowStage.getMainWindow();
-        displayClass = display.getDefaultDisplaySync();
-        let promise1 = displayClass.getAvailableArea();
-        promise1.then(async (data) => {
-          let AvailableArea = data;
-          console.info(msgStr + 'Succeeded get the available area in this display. AvailableArea: ' + JSON.stringify(AvailableArea));
-          if (AvailableArea.top == 0) {
-            done();
-          }
-          else if (AvailableArea.top != 0) {
-            displayClass.on('availableAreaChange', callback1);
-            displayClass.on('availableAreaChange', callback2);
-            displayClass.off('availableAreaChange', callback2);
-            await mainWindowClass.setWindowLayoutFullScreen(true);
-            console.info(msgStr + ' setWindowLayoutFullScreen success');
-            await sleep(1000);
-            expect(num).assertEqual(2);
-            displayClass.off('availableAreaChange');
-            mainWindowClass.recover();
-            done();
-          }
-          else {
-            expect(false).assertTrue();
-            done();
-          }
-        }).catch((err: BusinessError) => {
-          console.error(msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
-          if (err.code == 801) {
-            console.info(msgStr + 'The device not support getAvailableArea');
-            done();
-          }
-          else {
-            expect().assertFail();
-            done();
-          }
-        });
-      }
-      catch (exception) {
-        console.error(msgStr + `Failed to obtain the default display object. Code: ${exception.code}, message: ${exception.message}`);
-        expect().assertFail();
-        done();
-      }
-    });
-    /**
-     * @tc.name   test_on_availableAreaChange_off_callback_all
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0500
-     * @tc.desc   test_on_availableAreaChange_off_callback_all
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('test_on_availableAreaChange_off_callback_all', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let caseName = 'test_on_availableAreaChange_off_callback_all';
-      let msgStr = 'jsunittest ' + caseName + ' ';
-      console.log(msgStr + 'begin');
-      let displayClass: display.Display;
-      let num = 0;
-      let callback1: Callback<display.Rect> = (data: display.Rect) => {
-        num++;
-        console.info('Listening callback1 enabled. Data: ' + JSON.stringify(data) + ' , num:' + num);
-      };
-      let callback2: Callback<display.Rect> = (data: display.Rect) => {
-        num++;
-        console.info('Listening callback2 enabled. Data: ' + JSON.stringify(data) + ' , num:' + num);
-      };
-      try {
-        let mainWindowClass = await windowStage.getMainWindow();
-        displayClass = display.getDefaultDisplaySync();
-        let promise1 = displayClass.getAvailableArea();
-        promise1.then(async (data) => {
-          let AvailableArea = data;
-          console.info(msgStr + 'Succeeded get the available area in this display. AvailableArea: ' + JSON.stringify(AvailableArea));
-          if (AvailableArea.top == 0) {
-            done();
-          }
-          else if (AvailableArea.top != 0) {
-            displayClass.on('availableAreaChange', callback1);
-            displayClass.on('availableAreaChange', callback2);
-            displayClass.off('availableAreaChange');
-            await mainWindowClass.setWindowLayoutFullScreen(true);
-            console.info(msgStr + ' setWindowLayoutFullScreen success');
-            await sleep(1000);
-            expect(num).assertEqual(0);
-            mainWindowClass.recover();
-            done();
-          }
-          else {
-            expect(false).assertTrue();
-            done();
-          }
-        }).catch((err: BusinessError) => {
-          console.error(msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
-          if (err.code == 801) {
-            console.info(msgStr + 'The device not support getAvailableArea');
-            done();
-          }
-          else {
-            expect().assertFail();
-            done();
-          }
-        });
-      }
-      catch (exception) {
-        console.error(msgStr + `Failed to obtain the default display object. Code: ${exception.code}, message: ${exception.message}`);
-        expect().assertFail();
-        done();
-      }
-    });
 
     /**
      * @tc.name   testGetAllDisplayPhysicalResolution
@@ -4648,6 +4315,95 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
           displayClass.off('availableAreaChange', callback);
         } else {
           expect(count).assertEqual(0);
+        }
+        done();
+      } catch (err) {
+        console.log(caseName + ': fail:' + err + ' ' + err.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+    * @tc.name   test_on_availableAreaChange_registerListener2
+    * @tc.number SUB_BASIC_WMS_on_availableAreaChange_registerListener_0700
+    * @tc.desc   test_on_availableAreaChange register listener
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('test_on_availableAreaChange_registerListener2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'test_on_availableAreaChange_registerListener2';
+      console.log(caseName + ' begin');
+      try {
+        let displayClass: display.Display = display.getDefaultDisplaySync();
+        let windowClass = windowStage.getMainWindowSync();
+        let count1: number = 0;
+        let count2: number = 0;
+        let callback1: Callback<display.Rect> = (data: display.Rect) => {
+            console.info(caseName + ' Listening enabled. Data: ' + JSON.stringify(data));
+            count1++;
+        };
+        let callback2: Callback<display.Rect> = (data: display.Rect) => {
+          console.info(caseName + ' Listening enabled. Data: ' + JSON.stringify(data));
+          count2++;
+      };
+        if (isFreeWindowMode) {
+          let cap: string = displayClass.getDisplayCapability();
+          let curFoldStatus: display.FoldStatus = display.getFoldStatus();
+          console.info(caseName + ` Succeeded in obtaining fold status. Data: ${curFoldStatus}`);
+          if (JSON.parse(cap).foldScreenType.split(',').map(Number)[0] === 5 && curFoldStatus === 3) {
+            displayClass = display.getDisplayByIdSync(999);
+            displayClass.on('availableAreaChange', callback1);
+            displayClass.on('availableAreaChange', callback2);
+            displayClass.off('availableAreaChange', callback2);
+            await sleep(2000);
+            try {
+              let moveConfiguration: window.MoveConfiguration = {
+                displayId: 999
+              };
+              let promise2 = windowClass.moveWindowToAsync(300, 300, moveConfiguration);
+              promise2.then(() => {
+                console.info(caseName + ' Succeeded in moving the window2.');
+                let rect = windowClass?.getWindowProperties().windowRect;
+                console.info(caseName + ` Get window rect: ` + JSON.stringify(rect));
+              }).catch((err: BusinessError) => {
+                console.error(caseName + ` Failed to move the window. Cause code: ${err.code}, message: ${err.message}`);
+              });
+            } catch (exception) {
+              console.error(caseName + ` Failed to move the window. Cause code: ${exception.code}, message: ${exception.message}`);
+            }
+          } else {
+            displayClass.on('availableAreaChange', callback1);
+            displayClass.on('availableAreaChange', callback2);
+            displayClass.off('availableAreaChange', callback2);
+            await sleep(2000);
+          }
+          await sleep(1000);
+          windowClass.maximize(window.MaximizePresentation.ENTER_IMMERSIVE);
+          windowClass.setTitleAndDockHoverShown(false, false);
+          await sleep(1000);
+          expect(count1).assertLarger(0);
+          expect(count2).assertEqual(0);
+          windowClass.recover();
+          displayClass.off('availableAreaChange');
+        } else if (!isFreeWindowMode && isSupportRotate && isSyscapSessionManagerSupported) {
+          displayClass.on('availableAreaChange', callback1);
+          displayClass.on('availableAreaChange', callback2);
+          displayClass.off('availableAreaChange', callback2);
+          await sleep(2000);
+          await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+          await sleep(1000);
+          await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
+          await sleep(1000);
+          expect(count1).assertLarger(0);
+          expect(count2).assertEqual(0);
+          await sleep(1000);
+          await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+          displayClass.off('availableAreaChange');
+        } else {
+          expect(count2).assertEqual(0);
+          expect(count2).assertEqual(0);
         }
         done();
       } catch (err) {
