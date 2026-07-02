@@ -5206,7 +5206,7 @@ export default function TextPicker() {
       done();
     });
 
-        /**
+    /**
      * @tc.name   SUB_PHOTO_PICKER_TEST_0700
      * @tc.number SUB_PHOTO_PICKER_TEST_0700
      * @tc.desc   Testing PhotoBrowser Zoom In (PinchOut) Fallback
