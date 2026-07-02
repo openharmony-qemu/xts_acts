@@ -17,16 +17,16 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntPerformanceBatchCompare2Test(): void {
-  describe('testBigIntPerformanceBatchCompare2Test', () => {
+  describe('testBigIntPerformanceBatchCompare2Test', (): void => {
     /**
-     * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_0100
-     * @tc.name testBigIntPerformanceBatchCompare2Test0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_BATCH_0800
+     * @tc.name testBigIntPerformanceBatchCompare2Test008
      * @tc.desc Verify repeated right shift (512 steps) on 2^512 yields 1
      * @tc.size LargeTest
-     * @tc.type Performance
+     * @tc.type Function
      * @tc.level Level 3
      */
-    it('testBigIntPerformanceBatchCompare2Test0100', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
+    it('testBigIntPerformanceBatchCompare2Test008', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       let acc = BigInt(2).pow(BigInt(512));
       const one = BigInt(1);
       for (let i = 0; i < 512; i++) {
@@ -36,14 +36,14 @@ export default function BigIntPerformanceBatchCompare2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_0200
-     * @tc.name testBigIntPerformanceBatchCompare2Test0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_BATCH_0900
+     * @tc.name testBigIntPerformanceBatchCompare2Test009
      * @tc.desc Verify left-shift-then-right-shift round-trip on 1024-bit value
      * @tc.size LargeTest
-     * @tc.type Performance
+     * @tc.type Function
      * @tc.level Level 3
      */
-    it('testBigIntPerformanceBatchCompare2Test0200', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
+    it('testBigIntPerformanceBatchCompare2Test009', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       const base = BigInt(2).pow(BigInt(1024));
       const eight = BigInt(8);
       const shifted = base.operatorLeftShift(eight);
@@ -52,32 +52,33 @@ export default function BigIntPerformanceBatchCompare2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_0300
-     * @tc.name testBigIntPerformanceBatchCompare2Test0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_BATCH_1000
+     * @tc.name testBigIntPerformanceBatchCompare2Test010
      * @tc.desc Verify repeated bitwise AND operations on a 1024-bit BigInt using one fixed mask for 256 cycles, check the final accumulated value is zero
      * @tc.size LargeTest
-     * @tc.type Performance
+     * @tc.type Function
      * @tc.level Level 3
      */
-    it('testBigIntPerformanceBatchCompare2Test0300', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
-      const base = BigInt(2).pow(BigInt(1024));
-      const mask = base.operatorSubtract(BigInt(1));
-      let acc = base;
+    it('testBigIntPerformanceBatchCompare2Test010', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, ():void => {
+      const full = BigInt(2).pow(BigInt(1024)).operatorSubtract(BigInt(1));
+      let acc = full;
       for (let i = 0; i < 256; i++) {
+        const mask = BigInt(2).pow(BigInt(1023 - i)).operatorSubtract(BigInt(1));
         acc = acc.operatorBitwiseAnd(mask);
       }
-      expect(acc.equals(BigInt(0))).assertTrue();
+      const expected = BigInt(2).pow(BigInt(768)).operatorSubtract(BigInt(1));
+      expect(acc.equals(expected)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_0400
-     * @tc.name testBigIntPerformanceBatchCompare2Test0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_BATCH_1100
+     * @tc.name testBigIntPerformanceBatchCompare2Test011
      * @tc.desc Verify repeated bitwise OR accumulates all bits on 1024-bit base
      * @tc.size LargeTest
-     * @tc.type Performance
+     * @tc.type Function
      * @tc.level Level 3
      */
-    it('testBigIntPerformanceBatchCompare2Test0400', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
+    it('testBigIntPerformanceBatchCompare2Test011', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       let acc = BigInt(0);
       const step = BigInt(1);
       for (let i = 0; i < 256; i++) {
@@ -88,14 +89,14 @@ export default function BigIntPerformanceBatchCompare2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_0500
-     * @tc.name testBigIntPerformanceBatchCompare2Test0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_BATCH_1200
+     * @tc.name testBigIntPerformanceBatchCompare2Test012
      * @tc.desc Verify repeated XOR toggles bits and toggling twice restores original
      * @tc.size LargeTest
-     * @tc.type Performance
+     * @tc.type Function
      * @tc.level Level 3
      */
-    it('testBigIntPerformanceBatchCompare2Test0500', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
+    it('testBigIntPerformanceBatchCompare2Test012', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       const base = BigInt(2).pow(BigInt(1024));
       const mask = BigInt(2).pow(BigInt(512)).operatorSubtract(BigInt(1));
       let acc1 = base;
@@ -108,14 +109,14 @@ export default function BigIntPerformanceBatchCompare2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_0600
-     * @tc.name testBigIntPerformanceBatchCompare2Test0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_BATCH_1300
+     * @tc.name testBigIntPerformanceBatchCompare2Test013
      * @tc.desc Verify bitwise OR on non-overlapping bits yields same result as addition
      * @tc.size LargeTest
-     * @tc.type Performance
+     * @tc.type Function
      * @tc.level Level 3
      */
-    it('testBigIntPerformanceBatchCompare2Test0600', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
+    it('testBigIntPerformanceBatchCompare2Test013', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       const a = BigInt(2).pow(BigInt(1024));
       const b = BigInt(2).pow(BigInt(768));
       const c = BigInt(2).pow(BigInt(512));
@@ -125,14 +126,14 @@ export default function BigIntPerformanceBatchCompare2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_0700
-     * @tc.name testBigIntPerformanceBatchCompare2Test0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_BATCH_1400
+     * @tc.name testBigIntPerformanceBatchCompare2Test014
      * @tc.desc Verify repeated divide-by-2 batch (128 steps) on 2^128 yields 1
      * @tc.size LargeTest
-     * @tc.type Performance
+     * @tc.type Function
      * @tc.level Level 3
      */
-    it('testBigIntPerformanceBatchCompare2Test0700', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
+    it('testBigIntPerformanceBatchCompare2Test014', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       let acc = BigInt(2).pow(BigInt(128));
       const two = BigInt(2);
       for (let i = 0; i < 128; i++) {
@@ -142,52 +143,54 @@ export default function BigIntPerformanceBatchCompare2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_0800
-     * @tc.name testBigIntPerformanceBatchCompare2Test0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_BATCH_1500
+     * @tc.name testBigIntPerformanceBatchCompare2Test015
      * @tc.desc Verify repeated modulo with small divisor on 1024-bit value yields stable pattern
      * @tc.size LargeTest
-     * @tc.type Performance
+     * @tc.type Function
      * @tc.level Level 3
      */
-    it('testBigIntPerformanceBatchCompare2Test0800', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
-      const base = BigInt(2).pow(BigInt(1024));
-      const ten = BigInt(10);
-      let acc = base;
+    it('testBigIntPerformanceBatchCompare2Test015', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, ():void => {
+      const mod = BigInt(2).pow(BigInt(512)).operatorSubtract(BigInt(1));
+      let acc = BigInt(2).pow(BigInt(1024)).operatorModule(mod);
       for (let i = 0; i < 128; i++) {
-        acc = acc.operatorModule(ten);
+        acc = acc.operatorMultiply(BigInt(2)).operatorModule(mod);
       }
-      const expected = BigInt(2).pow(BigInt(1024)).operatorModule(BigInt(10));
+      const expected = BigInt(2).pow(BigInt(1152)).operatorModule(mod);
       expect(acc.equals(expected)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_0900
-     * @tc.name testBigIntPerformanceBatchCompare2Test0900
-     * @tc.desc Verify multiply-by-N then divide-by-N round-trip (128 steps) on small base
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_BATCH_1600
+     * @tc.name testBigIntPerformanceBatchCompare2Test016
+     * @tc.desc Verify alternating multiply by 3 and 5 (128 steps) accumulates as 3^64 * 5^64
      * @tc.size LargeTest
-     * @tc.type Performance
+     * @tc.type Function
      * @tc.level Level 3
      */
-    it('testBigIntPerformanceBatchCompare2Test0900', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
+    it('testBigIntPerformanceBatchCompare2Test016', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       let acc = BigInt(1);
-      const three = BigInt(3);
       for (let i = 0; i < 128; i++) {
-        acc = acc.operatorMultiply(three);
-        acc = acc.operatorDivide(three);
+        if ((i & 1) === 0) {
+          acc = acc.operatorMultiply(BigInt(3));
+        } else {
+          acc = acc.operatorMultiply(BigInt(5));
+        }
       }
-      expect(acc.equals(BigInt(1))).assertTrue();
+      const expected = BigInt(3).pow(BigInt(64)).operatorMultiply(BigInt(5).pow(BigInt(64)));
+      expect(acc.equals(expected)).assertTrue();
     });
 
 
     /**
-     * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_1000
-     * @tc.name testBigIntPerformanceBatchCompare2Test1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_BATCH_1700
+     * @tc.name testBigIntPerformanceBatchCompare2Test017
      * @tc.desc Verify modulo result equals dividend minus divisor times quotient
      * @tc.size LargeTest
-     * @tc.type Performance
+     * @tc.type Function
      * @tc.level Level 3
      */
-    it('testBigIntPerformanceBatchCompare2Test1000', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
+    it('testBigIntPerformanceBatchCompare2Test017', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       const a = BigInt(2).pow(BigInt(1024));
       const b = BigInt(7);
       const quotient = a.operatorDivide(b);
@@ -199,14 +202,14 @@ export default function BigIntPerformanceBatchCompare2Test(): void {
 
 
     /**
-     * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_1100
-     * @tc.name testBigIntPerformanceBatchCompare2Test1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_BATCH_1800
+     * @tc.name testBigIntPerformanceBatchCompare2Test018
      * @tc.desc Verify batch add with negative BigInt on 512-bit positive base
      * @tc.size LargeTest
-     * @tc.type Performance
+     * @tc.type Function
      * @tc.level Level 3
      */
-    it('testBigIntPerformanceBatchCompare2Test1100', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
+    it('testBigIntPerformanceBatchCompare2Test018', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       const base = BigInt(2).pow(BigInt(512));
       const negOne = BigInt(-1);
       let acc = base;
@@ -218,14 +221,14 @@ export default function BigIntPerformanceBatchCompare2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_1200
-     * @tc.name testBigIntPerformanceBatchCompare2Test1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_BATCH_1900
+     * @tc.name testBigIntPerformanceBatchCompare2Test019
      * @tc.desc Verify batch multiply with negative BigInt alternates sign
      * @tc.size LargeTest
-     * @tc.type Performance
+     * @tc.type Function
      * @tc.level Level 3
      */
-    it('testBigIntPerformanceBatchCompare2Test1200', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
+    it('testBigIntPerformanceBatchCompare2Test019', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       const base = BigInt(2).pow(BigInt(128));
       const negOne = BigInt(-1);
       let acc = base;
@@ -238,14 +241,14 @@ export default function BigIntPerformanceBatchCompare2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_1300
-     * @tc.name testBigIntPerformanceBatchCompare2Test1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_BATCH_2000
+     * @tc.name testBigIntPerformanceBatchCompare2Test020
      * @tc.desc Verify mixed positive and negative BigInt addition batch
      * @tc.size LargeTest
-     * @tc.type Performance
+     * @tc.type Function
      * @tc.level Level 3
      */
-    it('testBigIntPerformanceBatchCompare2Test1300', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
+    it('testBigIntPerformanceBatchCompare2Test020', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       const pos = BigInt(2).pow(BigInt(512));
       const neg = BigInt(-1).operatorMultiply(BigInt(2).pow(BigInt(256)));
       let acc = pos;
@@ -257,14 +260,14 @@ export default function BigIntPerformanceBatchCompare2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_1400
-     * @tc.name testBigIntPerformanceBatchCompare2Test1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_BATCH_2100
+     * @tc.name testBigIntPerformanceBatchCompare2Test021
      * @tc.desc Verify left shift on negative BigInt preserves sign
      * @tc.size LargeTest
-     * @tc.type Performance
+     * @tc.type Function
      * @tc.level Level 3
      */
-    it('testBigIntPerformanceBatchCompare2Test1400', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
+    it('testBigIntPerformanceBatchCompare2Test021', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       const neg = BigInt(0).operatorSubtract(BigInt(2).pow(BigInt(256)));
       const shifted = neg.operatorLeftShift(BigInt(8));
       const expected = neg.operatorMultiply(BigInt(256));
@@ -273,14 +276,14 @@ export default function BigIntPerformanceBatchCompare2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_1500
-     * @tc.name testBigIntPerformanceBatchCompare2Test1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_BATCH_2200
+     * @tc.name testBigIntPerformanceBatchCompare2Test022
      * @tc.desc Verify arithmetic right shift on negative BigInt rounds toward negative infinity
      * @tc.size LargeTest
-     * @tc.type Performance
+     * @tc.type Function
      * @tc.level Level 3
      */
-    it('testBigIntPerformanceBatchCompare2Test1500', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
+    it('testBigIntPerformanceBatchCompare2Test022', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       const neg = BigInt(0).operatorSubtract(BigInt(2).pow(BigInt(256)));
       const shifted = neg.operatorRightShift(BigInt(8));
       // Right shift on negative should follow floor semantics
@@ -288,58 +291,59 @@ export default function BigIntPerformanceBatchCompare2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_1600
-     * @tc.name testBigIntPerformanceBatchCompare2Test1600
-     * @tc.desc Verify complex mixed batch (add, subtract, multiply, divide) on 1024-bit base
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_BATCH_2300
+     * @tc.name testBigIntPerformanceBatchCompare2Test023
+     * @tc.desc Verify repeated add-1 and multiply-2 (32 steps) on 1024-bit base accumulates as base*2^32 + 2^33 - 2
      * @tc.size LargeTest
-     * @tc.type Performance
+     * @tc.type Function
      * @tc.level Level 3
      */
-    it('testBigIntPerformanceBatchCompare2Test1600', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
+    it('testBigIntPerformanceBatchCompare2Test023', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       const base = BigInt(2).pow(BigInt(1024));
       const one = BigInt(1);
       const two = BigInt(2);
-      const three = BigInt(3);
       let acc = base;
       for (let i = 0; i < 32; i++) {
         acc = acc.operatorAdd(one);
-        acc = acc.operatorSubtract(one);
         acc = acc.operatorMultiply(two);
-        acc = acc.operatorDivide(two);
       }
-      expect(acc.equals(base)).assertTrue();
+      const expected = base.operatorMultiply(two.pow(BigInt(32)))
+        .operatorAdd(two.pow(BigInt(33)))
+        .operatorSubtract(BigInt(2));
+      expect(acc.equals(expected)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_1700
-     * @tc.name testBigIntPerformanceBatchCompare2Test1700
-     * @tc.desc Verify complex mixed batch (add, shift, bitwise OR, divide) on 512-bit base
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_BATCH_2400
+     * @tc.name testBigIntPerformanceBatchCompare2Test024
+     * @tc.desc Verify repeated multiply-2 and add-1 (16 steps) on 512-bit base accumulates as 2^528 + 2^16 - 1
      * @tc.size LargeTest
-     * @tc.type Performance
+     * @tc.type Function
      * @tc.level Level 3
      */
-    it('testBigIntPerformanceBatchCompare2Test1700', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
+    it('testBigIntPerformanceBatchCompare2Test024', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       let acc = BigInt(2).pow(BigInt(512));
       const two = BigInt(2);
       const one = BigInt(1);
       for (let i = 0; i < 16; i++) {
-        acc = acc.operatorAdd(one);
         acc = acc.operatorMultiply(two);
-        acc = acc.operatorRightShift(one);
-        acc = acc.operatorSubtract(one);
+        acc = acc.operatorAdd(one);
       }
-      expect(acc.equals(BigInt(2).pow(BigInt(512)))).assertTrue();
+      const expected = BigInt(2).pow(BigInt(528))
+        .operatorAdd(BigInt(2).pow(BigInt(16)))
+        .operatorSubtract(BigInt(1));
+      expect(acc.equals(expected)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_1800
-     * @tc.name testBigIntPerformanceBatchCompare2Test1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_BATCH_2500
+     * @tc.name testBigIntPerformanceBatchCompare2Test025
      * @tc.desc Verify complex mixed batch (add, subtract, XOR, OR) on 256-bit base
      * @tc.size LargeTest
-     * @tc.type Performance
+     * @tc.type Function
      * @tc.level Level 3
      */
-    it('testBigIntPerformanceBatchCompare2Test1800', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
+    it('testBigIntPerformanceBatchCompare2Test025', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       let acc = BigInt(2).pow(BigInt(256));
       const one = BigInt(1);
       const mask = BigInt(2).pow(BigInt(128)).operatorSubtract(BigInt(1));
@@ -353,14 +357,14 @@ export default function BigIntPerformanceBatchCompare2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_1900
-     * @tc.name testBigIntPerformanceBatchCompare2Test1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_BATCH_2600
+     * @tc.name testBigIntPerformanceBatchCompare2Test026
      * @tc.desc Verify batch construction from decimal strings of varying sizes
      * @tc.size LargeTest
-     * @tc.type Performance
+     * @tc.type Function
      * @tc.level Level 3
      */
-    it('testBigIntPerformanceBatchCompare2Test1900', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
+    it('testBigIntPerformanceBatchCompare2Test026', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       for (let i = 0; i < 64; i++) {
         const str = '9'.repeat(i + 1);
         const bi = BigInt(str);
@@ -369,14 +373,14 @@ export default function BigIntPerformanceBatchCompare2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_2000
-     * @tc.name testBigIntPerformanceBatchCompare2Test2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_BATCH_2700
+     * @tc.name testBigIntPerformanceBatchCompare2Test027
      * @tc.desc Verify batch construction from number values (0 to 255)
      * @tc.size LargeTest
-     * @tc.type Performance
+     * @tc.type Function
      * @tc.level Level 3
      */
-    it('testBigIntPerformanceBatchCompare2Test2000', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
+    it('testBigIntPerformanceBatchCompare2Test027', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       let sum = BigInt(0);
       for (let i = 0; i < 256; i++) {
         const bi = BigInt(i);
@@ -386,14 +390,14 @@ export default function BigIntPerformanceBatchCompare2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_2100
-     * @tc.name testBigIntPerformanceBatchCompare2Test2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_BATCH_2800
+     * @tc.name testBigIntPerformanceBatchCompare2Test028
      * @tc.desc Verify batch construction from hex strings of varying lengths
      * @tc.size LargeTest
-     * @tc.type Performance
+     * @tc.type Function
      * @tc.level Level 3
      */
-    it('testBigIntPerformanceBatchCompare2Test2100', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
+    it('testBigIntPerformanceBatchCompare2Test028', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       let sum = BigInt(0);
       for (let i = 0; i < 32; i++) {
         const bi = BigInt('0x' + i.toString(16));
@@ -403,14 +407,14 @@ export default function BigIntPerformanceBatchCompare2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_2200
-     * @tc.name testBigIntPerformanceBatchCompare2Test2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_BATCH_2900
+     * @tc.name testBigIntPerformanceBatchCompare2Test029
      * @tc.desc Verify batch toString with different radices (2, 8, 10, 16)
      * @tc.size LargeTest
-     * @tc.type Performance
+     * @tc.type Function
      * @tc.level Level 3
      */
-    it('testBigIntPerformanceBatchCompare2Test2200', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
+    it('testBigIntPerformanceBatchCompare2Test029', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       const base = BigInt(2).pow(BigInt(1024));
       let totalLen = 0;
       for (let i = 0; i < 16; i++) {
@@ -419,18 +423,18 @@ export default function BigIntPerformanceBatchCompare2Test(): void {
         const decStr = base.toString(10);
         totalLen += binStr.length + hexStr.length + decStr.length;
       }
-      expect(totalLen > 0).assertTrue();
+      expect(totalLen).assertEqual(25456);
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_2300
-     * @tc.name testBigIntPerformanceBatchCompare2Test2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_BATCH_3000
+     * @tc.name testBigIntPerformanceBatchCompare2Test030
      * @tc.desc Verify batch construction from octal string representations
      * @tc.size LargeTest
-     * @tc.type Performance
+     * @tc.type Function
      * @tc.level Level 3
      */
-    it('testBigIntPerformanceBatchCompare2Test2300', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
+    it('testBigIntPerformanceBatchCompare2Test030', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       let sum = BigInt(0);
       for (let i = 0; i < 32; i++) {
         const bi = BigInt('0o' + i.toString(8));
@@ -440,14 +444,14 @@ export default function BigIntPerformanceBatchCompare2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_2400
-     * @tc.name testBigIntPerformanceBatchCompare2Test2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_BATCH_3100
+     * @tc.name testBigIntPerformanceBatchCompare2Test031
      * @tc.desc Verify operatorGreaterThan, operatorLessThan, operatorEquals batch on negative values
      * @tc.size LargeTest
-     * @tc.type Performance
+     * @tc.type Function
      * @tc.level Level 3
      */
-    it('testBigIntPerformanceBatchCompare2Test2400', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
+    it('testBigIntPerformanceBatchCompare2Test031', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       const pos = BigInt(2).pow(BigInt(256));
       const neg = BigInt(0).operatorSubtract(pos);
       // Negative < 0 < positive
@@ -459,14 +463,14 @@ export default function BigIntPerformanceBatchCompare2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_2500
-     * @tc.name testBigIntPerformanceBatchCompare2Test2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_BATCH_3200
+     * @tc.name testBigIntPerformanceBatchCompare2Test032
      * @tc.desc Verify modulo operation of positive base with positive divisor, check remainder is less than divisor
      * @tc.size LargeTest
-     * @tc.type Performance
+     * @tc.type Function
      * @tc.level Level 3
      */
-    it('testBigIntPerformanceBatchCompare2Test2500', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
+    it('testBigIntPerformanceBatchCompare2Test032', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       const base = BigInt(2).pow(BigInt(256));
       const big = BigInt(2).pow(BigInt(128)).operatorSubtract(BigInt(1));
       const mod1 = base.operatorModule(big);
@@ -475,14 +479,14 @@ export default function BigIntPerformanceBatchCompare2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_2600
-     * @tc.name testBigIntPerformanceBatchCompare2Test2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_BATCH_3300
+     * @tc.name testBigIntPerformanceBatchCompare2Test033
      * @tc.desc Verify repeated increment on negative BigInt approaches zero
      * @tc.size LargeTest
-     * @tc.type Performance
+     * @tc.type Function
      * @tc.level Level 3
      */
-    it('testBigIntPerformanceBatchCompare2Test2600', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
+    it('testBigIntPerformanceBatchCompare2Test033', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       let acc = BigInt(0).operatorSubtract(BigInt(2).pow(BigInt(256)));
       const one = BigInt(1);
       for (let i = 0; i < 256; i++) {
@@ -493,14 +497,14 @@ export default function BigIntPerformanceBatchCompare2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_2700
-     * @tc.name testBigIntPerformanceBatchCompare2Test2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_BATCH_3400
+     * @tc.name testBigIntPerformanceBatchCompare2Test034
      * @tc.desc Verify repeated decrement on negative BigInt becomes more negative
      * @tc.size LargeTest
-     * @tc.type Performance
+     * @tc.type Function
      * @tc.level Level 3
      */
-    it('testBigIntPerformanceBatchCompare2Test2700', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
+    it('testBigIntPerformanceBatchCompare2Test034', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       let acc = BigInt(-100);
       const one = BigInt(1);
       for (let i = 0; i < 100; i++) {
@@ -510,14 +514,14 @@ export default function BigIntPerformanceBatchCompare2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_2800
-     * @tc.name testBigIntPerformanceBatchCompare2Test2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_BATCH_3500
+     * @tc.name testBigIntPerformanceBatchCompare2Test035
      * @tc.desc Verify complex mixed (left shift, right shift, add, XOR) batch on 256-bit base
      * @tc.size LargeTest
-     * @tc.type Performance
+     * @tc.type Function
      * @tc.level Level 3
      */
-    it('testBigIntPerformanceBatchCompare2Test2800', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
+    it('testBigIntPerformanceBatchCompare2Test035', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       let acc = BigInt(1);
       const one = BigInt(1);
       const two = BigInt(2);
@@ -534,33 +538,34 @@ export default function BigIntPerformanceBatchCompare2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_2900
-     * @tc.name testBigIntPerformanceBatchCompare2Test2900
-     * @tc.desc Verify right shift by 1 equals divide by 2 on positive value
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_BATCH_3600
+     * @tc.name testBigIntPerformanceBatchCompare2Test036
+     * @tc.desc Verify right shift by 1 equals divide by 2 across 32 descending BigInt values
      * @tc.size LargeTest
-     * @tc.type Performance
+     * @tc.type Function
      * @tc.level Level 3
      */
-    it('testBigIntPerformanceBatchCompare2Test2900', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
-      const base = BigInt(2).pow(BigInt(1024));
+    it('testBigIntPerformanceBatchCompare2Test036', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
+      let acc = BigInt(2).pow(BigInt(1024));
       const one = BigInt(1);
       const two = BigInt(2);
       for (let i = 0; i < 32; i++) {
-        const shifted = base.operatorRightShift(one);
-        const divided = base.operatorDivide(two);
+        const shifted = acc.operatorRightShift(one);
+        const divided = acc.operatorDivide(two);
         expect(shifted.equals(divided)).assertTrue();
+        acc = shifted;
       }
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_3000
-     * @tc.name testBigIntPerformanceBatchCompare2Test3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_BATCH_3700
+     * @tc.name testBigIntPerformanceBatchCompare2Test037
      * @tc.desc Verify batch divide and modulo using operator on same operands (divisor 3, 7, 13)
      * @tc.size LargeTest
-     * @tc.type Performance
+     * @tc.type Function
      * @tc.level Level 3
      */
-    it('testBigIntPerformanceBatchCompare2Test3000', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
+    it('testBigIntPerformanceBatchCompare2Test037', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       const base = BigInt(2).pow(BigInt(1024));
       const divisors: BigInt[] = [BigInt(3), BigInt(7), BigInt(13)];
       for (let j = 0; j < divisors.length; j++) {
@@ -574,53 +579,53 @@ export default function BigIntPerformanceBatchCompare2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_3100
-     * @tc.name testBigIntPerformanceBatchCompare2Test3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_BATCH_3800
+     * @tc.name testBigIntPerformanceBatchCompare2Test038
      * @tc.desc Verify bitwise AND after shift operations produces expected masking
      * @tc.size LargeTest
-     * @tc.type Performance
+     * @tc.type Function
      * @tc.level Level 3
      */
-    it('testBigIntPerformanceBatchCompare2Test3100', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
+    it('testBigIntPerformanceBatchCompare2Test038', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       const base = BigInt(2).pow(BigInt(1024));
       const mask = BigInt(255);
       let acc = base;
       for (let i = 0; i < 64; i++) {
         acc = acc.operatorRightShift(BigInt(8));
         const masked = acc.operatorBitwiseAnd(mask);
-        expect(masked.operatorLessThan(BigInt(256))).assertTrue();
+        expect(masked.equals(BigInt(0))).assertTrue();
       }
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_3200
-     * @tc.name testBigIntPerformanceBatchCompare2Test3200
-     * @tc.desc Verify add-subtract round-trip on 256-bit base
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_BATCH_3900
+     * @tc.name testBigIntPerformanceBatchCompare2Test039
+     * @tc.desc Verify repeated add by offset (64 steps) on 256-bit base accumulates to base + 64*offset
      * @tc.size LargeTest
-     * @tc.type Performance
+     * @tc.type Function
      * @tc.level Level 3
      */
-    it('testBigIntPerformanceBatchCompare2Test3200', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
+    it('testBigIntPerformanceBatchCompare2Test039', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       const base = BigInt(2).pow(BigInt(256));
       const offset = BigInt(2).pow(BigInt(128));
       let acc = base;
       for (let i = 0; i < 64; i++) {
         acc = acc.operatorAdd(offset);
-        acc = acc.operatorSubtract(offset);
       }
-      expect(acc.equals(base)).assertTrue();
+      const expected = base.operatorAdd(offset.operatorMultiply(BigInt(64)));
+      expect(acc.equals(expected)).assertTrue();
     });
 
 
     /**
-     * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_3300
-     * @tc.name testBigIntPerformanceBatchCompare2Test3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_BATCH_4000
+     * @tc.name testBigIntPerformanceBatchCompare2Test040
      * @tc.desc Verify batch construction from binary string representation
      * @tc.size LargeTest
-     * @tc.type Performance
+     * @tc.type Function
      * @tc.level Level 3
      */
-    it('testBigIntPerformanceBatchCompare2Test3300', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
+    it('testBigIntPerformanceBatchCompare2Test040', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       for (let i = 1; i <= 64; i++) {
         let s: string = '0b';
         for (let j = 0; j < i; j++) {
@@ -634,14 +639,14 @@ export default function BigIntPerformanceBatchCompare2Test(): void {
 
 
     /**
-     * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_3400
-     * @tc.name testBigIntPerformanceBatchCompare2Test3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_BATCH_4100
+     * @tc.name testBigIntPerformanceBatchCompare2Test041
      * @tc.desc Verify batch negation of positive BigInt via multiplication by -1
      * @tc.size LargeTest
-     * @tc.type Performance
+     * @tc.type Function
      * @tc.level Level 3
      */
-    it('testBigIntPerformanceBatchCompare2Test3400', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
+    it('testBigIntPerformanceBatchCompare2Test041', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       const pos = BigInt(2).pow(BigInt(256));
       const negOne = BigInt(-1);
       const negated = pos.operatorMultiply(negOne);
@@ -651,14 +656,14 @@ export default function BigIntPerformanceBatchCompare2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_PERFORMANCE_BATCH_3500
-     * @tc.name testBigIntPerformanceBatchCompare2Test3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_BATCH_4200
+     * @tc.name testBigIntPerformanceBatchCompare2Test042
      * @tc.desc Verify batch shift, XOR, and add on mixed sign operands
      * @tc.size LargeTest
-     * @tc.type Performance
+     * @tc.type Function
      * @tc.level Level 3
      */
-    it('testBigIntPerformanceBatchCompare2Test3500', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
+    it('testBigIntPerformanceBatchCompare2Test042', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       const pos = BigInt(2).pow(BigInt(256));
       const neg = BigInt(0).operatorSubtract(pos);
       const shiftAmount = BigInt(4);
