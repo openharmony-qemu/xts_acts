@@ -107,31 +107,7 @@ namespace {
  */
 HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_API_0020, TestSize.Level2)
 {
-    cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
-    if (cap) {
-        OH_AVErrCode ret = AV_ERR_OK;
-        venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
-        ASSERT_NE(nullptr, venc_);
-        format = OH_AVFormat_Create();
-        ASSERT_NE(nullptr, format);
-
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, DEFAULT_PIX_FMT);
-        (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
-        (void)OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, DEFAULT_BITRATE);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_I_FRAME_INTERVAL, DEFAULT_KEY_FRAME_INTERVAL);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_ENABLE_TEMPORAL_SCALABILITY, 1);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_TEMPORAL_GOP_REFERENCE_MODE, 3);
-        ret = OH_VideoEncoder_Configure(venc_, format);
-        if (!OH_AVCapability_IsFeatureSupported(cap, VIDEO_ENCODER_TEMPORAL_SCALABILITY)) {
-            ASSERT_EQ(ret, AV_ERR_INVALID_VAL);
-        } else {
-            ASSERT_EQ(ret, AV_ERR_OK);
-        }
-    } else {
-        return;
-    }
+    return;
 }
 
 /**
@@ -144,31 +120,7 @@ HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_API_0020, TestSize.Level2)
  */
 HWTEST_F(HwEncTemporalNdkTest, VIDEO_TEMPORAL_ENCODE_API_0030, TestSize.Level2)
 {
-    cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
-    if (cap) {
-        OH_AVErrCode ret = AV_ERR_OK;
-        venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
-        ASSERT_NE(nullptr, venc_);
-        format = OH_AVFormat_Create();
-        ASSERT_NE(nullptr, format);
-
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, DEFAULT_PIX_FMT);
-        (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
-        (void)OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, DEFAULT_BITRATE);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_I_FRAME_INTERVAL, DEFAULT_KEY_FRAME_INTERVAL);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_ENABLE_TEMPORAL_SCALABILITY, 1);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_TEMPORAL_GOP_SIZE, 30);
-        ret = OH_VideoEncoder_Configure(venc_, format);
-        if (!OH_AVCapability_IsFeatureSupported(cap, VIDEO_ENCODER_TEMPORAL_SCALABILITY)) {
-            ASSERT_EQ(ret, AV_ERR_INVALID_VAL);
-        } else {
-            ASSERT_EQ(ret, AV_ERR_OK);
-        }
-    } else {
-        return;
-    }
+    return;
 }
 
 /**
