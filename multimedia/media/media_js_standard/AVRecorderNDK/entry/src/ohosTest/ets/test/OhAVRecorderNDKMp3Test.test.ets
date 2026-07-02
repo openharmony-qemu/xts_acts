@@ -57,13 +57,13 @@ export default function OhAVRecorderNDKMp3Test() { // L2
 
       //audioSampleRate随机数MP3编码支持采样率范围[8000, 11025, 12000, 16000, 22050, 24000, 32000, 44100, 48000]
       let audioSampleRateList: Array<number> = [8000, 11025, 12000, 16000]
-      let audioSampleRateIndex: number = Math.floor(Math.random() * audioSampleRateList.length)
+      let audioSampleRateIndex: number = 1
       audioSampleRate = audioSampleRateList[audioSampleRateIndex]
 
       //audioBitrate随机数MP3编码格式支持范围[8000, 16000, 32000, 40000, 48000, 56000, 64000, 80000,
       // 96000, 112000, 128000, 160000, 192000, 224000, 256000, 320000]
       let audioBitrateList: Array<number> = [8000, 16000, 32000, 40000, 48000, 56000, 64000]
-      let audioBitrateIndex: number = Math.floor(Math.random() * audioBitrateList.length)
+      let audioBitrateIndex: number = 1
       audioBitrate = audioBitrateList[audioBitrateIndex]
 
     });
