@@ -137,35 +137,41 @@ struct BindContextMenuByIsShowBlurMaskIndex {
   }
 
   private setBgShow(idx: number, val: boolean): void {
-    if (idx === 0) { this.bgShow0 = val; }
-    else if (idx === 1) { this.bgShow1 = val; }
-    else if (idx === 2) { this.bgShow2 = val; }
-    else if (idx === 3) { this.bgShow3 = val; }
-    else if (idx === 4) { this.bgShow4 = val; }
-    else if (idx === 5) { this.bgShow5 = val; }
-    else if (idx === 6) { this.bgShow6 = val; }
-    else if (idx === 7) { this.bgShow7 = val; }
-    else if (idx === 8) { this.bgShow8 = val; }
-    else if (idx === 9) { this.bgShow9 = val; }
-    else if (idx === 10) { this.bgShow10 = val; }
-    else if (idx === 11) { this.bgShow11 = val; }
-    else if (idx === 12) { this.bgShow12 = val; }
+    switch (idx) {
+      case 0: this.bgShow0 = val; break;
+      case 1: this.bgShow1 = val; break;
+      case 2: this.bgShow2 = val; break;
+      case 3: this.bgShow3 = val; break;
+      case 4: this.bgShow4 = val; break;
+      case 5: this.bgShow5 = val; break;
+      case 6: this.bgShow6 = val; break;
+      case 7: this.bgShow7 = val; break;
+      case 8: this.bgShow8 = val; break;
+      case 9: this.bgShow9 = val; break;
+      case 10: this.bgShow10 = val; break;
+      case 11: this.bgShow11 = val; break;
+      case 12: this.bgShow12 = val; break;
+      default: break;
+    }
   }
 
   private setBgTxt(idx: number, val: string): void {
-    if (idx === 0) { this.bgTxt0 = val; }
-    else if (idx === 1) { this.bgTxt1 = val; }
-    else if (idx === 2) { this.bgTxt2 = val; }
-    else if (idx === 3) { this.bgTxt3 = val; }
-    else if (idx === 4) { this.bgTxt4 = val; }
-    else if (idx === 5) { this.bgTxt5 = val; }
-    else if (idx === 6) { this.bgTxt6 = val; }
-    else if (idx === 7) { this.bgTxt7 = val; }
-    else if (idx === 8) { this.bgTxt8 = val; }
-    else if (idx === 9) { this.bgTxt9 = val; }
-    else if (idx === 10) { this.bgTxt10 = val; }
-    else if (idx === 11) { this.bgTxt11 = val; }
-    else if (idx === 12) { this.bgTxt12 = val; }
+    switch (idx) {
+      case 0: this.bgTxt0 = val; break;
+      case 1: this.bgTxt1 = val; break;
+      case 2: this.bgTxt2 = val; break;
+      case 3: this.bgTxt3 = val; break;
+      case 4: this.bgTxt4 = val; break;
+      case 5: this.bgTxt5 = val; break;
+      case 6: this.bgTxt6 = val; break;
+      case 7: this.bgTxt7 = val; break;
+      case 8: this.bgTxt8 = val; break;
+      case 9: this.bgTxt9 = val; break;
+      case 10: this.bgTxt10 = val; break;
+      case 11: this.bgTxt11 = val; break;
+      case 12: this.bgTxt12 = val; break;
+      default: break;
+    }
   }
 
   private getBgShow(idx: number): boolean {
@@ -201,35 +207,41 @@ struct BindContextMenuByIsShowBlurMaskIndex {
   }
 
   private setMaskShow(idx: number, val: boolean): void {
-    if (idx === 0) { this.maskShow0 = val; }
-    else if (idx === 1) { this.maskShow1 = val; }
-    else if (idx === 2) { this.maskShow2 = val; }
-    else if (idx === 3) { this.maskShow3 = val; }
-    else if (idx === 4) { this.maskShow4 = val; }
-    else if (idx === 5) { this.maskShow5 = val; }
-    else if (idx === 6) { this.maskShow6 = val; }
-    else if (idx === 7) { this.maskShow7 = val; }
-    else if (idx === 8) { this.maskShow8 = val; }
-    else if (idx === 9) { this.maskShow9 = val; }
-    else if (idx === 10) { this.maskShow10 = val; }
-    else if (idx === 11) { this.maskShow11 = val; }
-    else if (idx === 12) { this.maskShow12 = val; }
+    switch (idx) {
+      case 0: this.maskShow0 = val; break;
+      case 1: this.maskShow1 = val; break;
+      case 2: this.maskShow2 = val; break;
+      case 3: this.maskShow3 = val; break;
+      case 4: this.maskShow4 = val; break;
+      case 5: this.maskShow5 = val; break;
+      case 6: this.maskShow6 = val; break;
+      case 7: this.maskShow7 = val; break;
+      case 8: this.maskShow8 = val; break;
+      case 9: this.maskShow9 = val; break;
+      case 10: this.maskShow10 = val; break;
+      case 11: this.maskShow11 = val; break;
+      case 12: this.maskShow12 = val; break;
+      default: break;
+    }
   }
 
   private setMaskTxt(idx: number, val: string): void {
-    if (idx === 0) { this.maskTxt0 = val; }
-    else if (idx === 1) { this.maskTxt1 = val; }
-    else if (idx === 2) { this.maskTxt2 = val; }
-    else if (idx === 3) { this.maskTxt3 = val; }
-    else if (idx === 4) { this.maskTxt4 = val; }
-    else if (idx === 5) { this.maskTxt5 = val; }
-    else if (idx === 6) { this.maskTxt6 = val; }
-    else if (idx === 7) { this.maskTxt7 = val; }
-    else if (idx === 8) { this.maskTxt8 = val; }
-    else if (idx === 9) { this.maskTxt9 = val; }
-    else if (idx === 10) { this.maskTxt10 = val; }
-    else if (idx === 11) { this.maskTxt11 = val; }
-    else if (idx === 12) { this.maskTxt12 = val; }
+    switch (idx) {
+      case 0: this.maskTxt0 = val; break;
+      case 1: this.maskTxt1 = val; break;
+      case 2: this.maskTxt2 = val; break;
+      case 3: this.maskTxt3 = val; break;
+      case 4: this.maskTxt4 = val; break;
+      case 5: this.maskTxt5 = val; break;
+      case 6: this.maskTxt6 = val; break;
+      case 7: this.maskTxt7 = val; break;
+      case 8: this.maskTxt8 = val; break;
+      case 9: this.maskTxt9 = val; break;
+      case 10: this.maskTxt10 = val; break;
+      case 11: this.maskTxt11 = val; break;
+      case 12: this.maskTxt12 = val; break;
+      default: break;
+    }
   }
 
   private getMaskShow(idx: number): boolean {
