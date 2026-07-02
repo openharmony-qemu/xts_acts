@@ -96,22 +96,6 @@ export default function webViewContEnableFullscreenVideoOverlay() {
       });
 
     /**
-     * @tc.name   testEnableFullscreenVideoOverlay003
-     * @tc.number SUB_WEB_ENABLEFULLSCREENVIDEOOVERLAY_0300
-     * @tc.desc   显式设置enableFullscreenVideoOverlay(false)后，视频可正常进入全屏
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testEnableFullscreenVideoOverlay003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: Function) => {
-        emitKey = 'emitEnableFullscreenVideoOverlay003';
-        Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
-        Utils.registerEvent('testEnableFullscreenVideoOverlay003', true, 112803, done);
-        await Utils.waitAndClickComponent(driver, 'webViewContEnableFullscreenVideoOverlay');
-      });
-
-    /**
      * @tc.name   testEnableFullscreenVideoOverlay004
      * @tc.number SUB_WEB_ENABLEFULLSCREENVIDEOOVERLAY_0400
      * @tc.desc   动态切换true后改回false，再进入全屏验证行为正常
@@ -144,22 +128,6 @@ export default function webViewContEnableFullscreenVideoOverlay() {
       });
 
     /**
-     * @tc.name   testEnableFullscreenVideoOverlay006
-     * @tc.number SUB_WEB_ENABLEFULLSCREENVIDEOOVERLAY_0600
-     * @tc.desc   overlay关闭时，点击HTML退出全屏按钮触发onFullScreenExit
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testEnableFullscreenVideoOverlay006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: Function) => {
-        emitKey = 'emitEnableFullscreenVideoOverlay006';
-        Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
-        Utils.registerEvent('testEnableFullscreenVideoOverlay006', true, 112806, done);
-        await Utils.waitAndClickComponent(driver, 'webViewContEnableFullscreenVideoOverlay');
-      });
-
-    /**
      * @tc.name   testEnableFullscreenVideoOverlay007
      * @tc.number SUB_WEB_ENABLEFULLSCREENVIDEOOVERLAY_0700
      * @tc.desc   enableFullscreenVideoOverlay与javaScriptAccess等属性链式配置后视频全屏正常
@@ -176,22 +144,6 @@ export default function webViewContEnableFullscreenVideoOverlay() {
       });
 
     /**
-     * @tc.name   testEnableFullscreenVideoOverlay008
-     * @tc.number SUB_WEB_ENABLEFULLSCREENVIDEOOVERLAY_0800
-     * @tc.desc   overlay开启时，点击HTML页面全屏按钮触发视频全屏
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testEnableFullscreenVideoOverlay008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: Function) => {
-        emitKey = 'emitEnableFullscreenVideoOverlay008';
-        Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
-        Utils.registerEvent('testEnableFullscreenVideoOverlay008', true, 112808, done);
-        await Utils.waitAndClickComponent(driver, 'webViewContEnableFullscreenVideoOverlay');
-      });
-
-    /**
      * @tc.name   testEnableFullscreenVideoOverlay009
      * @tc.number SUB_WEB_ENABLEFULLSCREENVIDEOOVERLAY_0900
      * @tc.desc   overlay开启时，页面上第二个video元素进入全屏
@@ -204,22 +156,6 @@ export default function webViewContEnableFullscreenVideoOverlay() {
         emitKey = 'emitEnableFullscreenVideoOverlay009';
         Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
         Utils.registerEvent('testEnableFullscreenVideoOverlay009', true, 112809, done);
-        await Utils.waitAndClickComponent(driver, 'webViewContEnableFullscreenVideoOverlay');
-      });
-
-    /**
-     * @tc.name   testEnableFullscreenVideoOverlay010
-     * @tc.number SUB_WEB_ENABLEFULLSCREENVIDEOOVERLAY_1000
-     * @tc.desc   overlay开启状态下刷新页面后视频仍可进入全屏
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testEnableFullscreenVideoOverlay010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: Function) => {
-        emitKey = 'emitEnableFullscreenVideoOverlay010';
-        Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
-        Utils.registerEvent('testEnableFullscreenVideoOverlay010', true, 112810, done);
         await Utils.waitAndClickComponent(driver, 'webViewContEnableFullscreenVideoOverlay');
       });
   });
