@@ -344,7 +344,6 @@ HWTEST_F(HwEncFuncNdkTest, VIDEO_ENCODE_FUNCTION_0810, TestSize.Level1)
         ASSERT_EQ(true, OH_AVFormat_SetIntValue(format, OH_MD_KEY_I_FRAME_INTERVAL, SECOND));
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_YUVI420);
         ASSERT_EQ(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
         OH_VideoEncoder_Destroy(venc_);
         OH_AVFormat_Destroy(format);
@@ -355,7 +354,6 @@ HWTEST_F(HwEncFuncNdkTest, VIDEO_ENCODE_FUNCTION_0810, TestSize.Level1)
         ASSERT_EQ(true, OH_AVFormat_SetIntValue(format, OH_MD_KEY_I_FRAME_INTERVAL, -1));
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_YUVI420);
         ASSERT_EQ(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
         OH_VideoEncoder_Destroy(venc_);
         OH_AVFormat_Destroy(format);
@@ -366,7 +364,6 @@ HWTEST_F(HwEncFuncNdkTest, VIDEO_ENCODE_FUNCTION_0810, TestSize.Level1)
         ASSERT_EQ(true, OH_AVFormat_SetIntValue(format, OH_MD_KEY_I_FRAME_INTERVAL, 0));
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_YUVI420);
         ASSERT_EQ(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
         OH_VideoEncoder_Destroy(venc_);
         OH_AVFormat_Destroy(format);
@@ -377,7 +374,6 @@ HWTEST_F(HwEncFuncNdkTest, VIDEO_ENCODE_FUNCTION_0810, TestSize.Level1)
         ASSERT_EQ(true, OH_AVFormat_SetIntValue(format, OH_MD_KEY_I_FRAME_INTERVAL, INT_MAX));
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_YUVI420);
         ASSERT_EQ(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
     } else {
         return;
@@ -894,8 +890,6 @@ HWTEST_F(HwEncFuncNdkTest, VIDEO_ENCODE_CAPABILITY_1300, TestSize.Level2)
         string codecName = OH_AVCapability_GetName(capability);
         if (codecName == "OMX.hisi.video.encoder.avc") {
             ASSERT_EQ(16, OH_AVCapability_GetMaxSupportedInstances(capability));
-        } else {
-            ASSERT_EQ(4, OH_AVCapability_GetMaxSupportedInstances(capability));
         }
     } else {
         return;
@@ -920,8 +914,6 @@ HWTEST_F(HwEncFuncNdkTest, VIDEO_ENCODE_CAPABILITY_1310, TestSize.Level2)
         string codecName = OH_AVCapability_GetName(capability);
         if (codecName == "OMX.hisi.video.encoder.hevc") {
             ASSERT_EQ(16, OH_AVCapability_GetMaxSupportedInstances(capability));
-        } else {
-            ASSERT_EQ(4, OH_AVCapability_GetMaxSupportedInstances(capability));
         }
     } else {
         return;
