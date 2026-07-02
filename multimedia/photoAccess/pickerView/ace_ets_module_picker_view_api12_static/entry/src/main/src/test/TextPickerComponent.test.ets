@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -325,7 +325,7 @@ export default function TextPicker(): void {
 
     let clickAgreeSave = async (driver: Driver): Promise<void> => {
       console.info('clickAgreeSave enter');
-      let btn = await driver.waitForComponent(ON.text('鍏佽', MatchPattern.EQUALS), 5000);
+      let btn = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 5000);
       if (btn === null) {
         console.info('no Agree button');
         return;
@@ -412,11 +412,9 @@ export default function TextPicker(): void {
       let code: Long = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       pickerOptions.checkBoxColor = '#000000';
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         if (!event.data) {
           console.error('Event data is null');
-          callbackCompleted = true;
           return;
         }
         let expectResult: String = pickerOptions.checkBoxColor ?? '';
@@ -426,7 +424,6 @@ export default function TextPicker(): void {
         console.info('SUB_PHOTO_PICKER_TEST_0001 result event.data.msg=:' + result);
         console.info('SUB_PHOTO_PICKER_TEST_0001 result expect =:' + expectResult);
         expect(result == expectResult).assertTrue();
-        callbackCompleted = true;
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -448,9 +445,6 @@ export default function TextPicker(): void {
       await clickResultButton(driver);
       routerInstance.back();
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       console.info('SUB_PHOTO_PICKER_TEST_0001 finish');
       done();
     });
@@ -471,11 +465,9 @@ export default function TextPicker(): void {
       let code: Long = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       pickerOptions.backgroundColor = '#000000';
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         if (!event.data) {
           console.error('Event data is null');
-          callbackCompleted = true;
           return;
         }
         const data = event.data as Record<string, RecordData>;
@@ -485,7 +477,6 @@ export default function TextPicker(): void {
         console.info('SUB_PHOTO_PICKER_TEST_0002 result event.data.msg=:' + result);
         console.info('SUB_PHOTO_PICKER_TEST_0002 result expect =:' + expectResult);
         expect(result == expectResult).assertTrue();
-        callbackCompleted = true;
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -506,11 +497,8 @@ export default function TextPicker(): void {
       expect(obj.getElement('$attrs').getString('visibility') == 'Visibility.Visible').assertTrue();
       await clickResultButton(driver);
       routerInstance.back();
-      events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       console.info('SUB_PHOTO_PICKER_TEST_0002 finish');
+      events_emitter.off(event.eventId);
       done();
     });
 
@@ -530,11 +518,9 @@ export default function TextPicker(): void {
       let code: long = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       pickerOptions.isRepeatSelectSupported = true;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         if (!event.data) {
           console.error('Event data is null');
-          callbackCompleted = true;
           return;
         }
         const data = event.data as Record<string, RecordData>
@@ -544,7 +530,6 @@ export default function TextPicker(): void {
         console.info('SUB_PHOTO_PICKER_TEST_0003 result event.data.msg=:' + result);
         console.info('SUB_PHOTO_PICKER_TEST_0003 result expect =:' + expectResult);
         expect(result == expectResult).assertTrue();
-        callbackCompleted = true;
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -567,9 +552,6 @@ export default function TextPicker(): void {
       routerInstance.back();
       console.info('SUB_PHOTO_PICKER_TEST_0003 finish');
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -590,11 +572,9 @@ export default function TextPicker(): void {
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       pickerOptions.checkboxTextColor = '#000000';
 
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         if (!event.data) {
           console.error('Event data is null');
-          callbackCompleted = true;
           return;
         }
         const data = event.data as Record<string, RecordData>;
@@ -604,7 +584,6 @@ export default function TextPicker(): void {
         console.info('SUB_PHOTO_PICKER_TEST_0004 result event.data.msg=:' + result);
         console.info('SUB_PHOTO_PICKER_TEST_0004 result expect =:' + expectResult);
         expect(result == expectResult).assertTrue();
-        callbackCompleted = true;
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -627,9 +606,6 @@ export default function TextPicker(): void {
       routerInstance.back();
       console.info('SUB_PHOTO_PICKER_TEST_0004 finish');
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -649,11 +625,9 @@ export default function TextPicker(): void {
       let code: long = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       pickerOptions.photoBrowserBackgroundColorMode = PickerColorMode.LIGHT;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         if (!event.data) {
           console.error('Event data is null');
-          callbackCompleted = true;
           return;
         }
         const data = event.data as Record<string, RecordData>;
@@ -663,7 +637,6 @@ export default function TextPicker(): void {
         console.info('SUB_PHOTO_PICKER_TEST_0005 result event.data.msg=:' + result);
         console.info('SUB_PHOTO_PICKER_TEST_0005 result expect =:' + expectResult);
         expect(result == expectResult).assertTrue();
-        callbackCompleted = true;
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -686,9 +659,6 @@ export default function TextPicker(): void {
       routerInstance.back();
       console.info('SUB_PHOTO_PICKER_TEST_0005 finish');
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -708,11 +678,9 @@ export default function TextPicker(): void {
       let code: long = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       pickerOptions.photoBrowserBackgroundColorMode = PickerColorMode.DARK;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         if (!event.data) {
           console.error('Event data is null');
-          callbackCompleted = true;
           return;
         }
         const data = event.data as Record<string, RecordData>;
@@ -722,7 +690,6 @@ export default function TextPicker(): void {
         console.info('SUB_PHOTO_PICKER_TEST_0006 result event.data.msg=:' + result);
         console.info('SUB_PHOTO_PICKER_TEST_0006 result expect =:' + expectResult);
         expect(result == expectResult).assertTrue();
-        callbackCompleted = true;
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -745,9 +712,6 @@ export default function TextPicker(): void {
       routerInstance.back();
       console.info('SUB_PHOTO_PICKER_TEST_0006 finish');
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -767,11 +731,9 @@ export default function TextPicker(): void {
       let code: long = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       pickerOptions.maxSelectedReminderMode = ReminderMode.NONE;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         if (!event.data) {
           console.error('Event data is null');
-          callbackCompleted = true;
           return;
         }
         const data = event.data as Record<string, RecordData>;
@@ -781,7 +743,6 @@ export default function TextPicker(): void {
         console.info('SUB_PHOTO_PICKER_TEST_0007 result event.data.msg=:' + result);
         console.info('SUB_PHOTO_PICKER_TEST_0007 result expect =:' + expectResult);
         expect(result == expectResult).assertTrue();
-        callbackCompleted = true;
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -804,9 +765,6 @@ export default function TextPicker(): void {
       routerInstance.back();
       console.info('SUB_PHOTO_PICKER_TEST_0007 finish');
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -826,11 +784,9 @@ export default function TextPicker(): void {
       let code: long = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       pickerOptions.maxSelectedReminderMode = ReminderMode.MASK;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         if (!event.data) {
           console.error('Event data is null');
-          callbackCompleted = true;
           return;
         }
         const data = event.data as Record<string, RecordData>;
@@ -840,7 +796,6 @@ export default function TextPicker(): void {
         console.info('SUB_PHOTO_PICKER_TEST_0008 result event.data.msg=:' + result);
         console.info('SUB_PHOTO_PICKER_TEST_0008 result expect =:' + expectResult);
         expect(result == expectResult).assertTrue();
-        callbackCompleted = true;
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -863,9 +818,6 @@ export default function TextPicker(): void {
       routerInstance.back();
       console.info('SUB_PHOTO_PICKER_TEST_0008 finish');
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -885,11 +837,9 @@ export default function TextPicker(): void {
       let code: long = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       pickerOptions.selectMode = SelectMode.SINGLE_SELECT;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         if (!event.data) {
           console.error('Event data is null');
-          callbackCompleted = true;
           return;
         }
         const data = event.data as Record<string, RecordData>;
@@ -899,7 +849,6 @@ export default function TextPicker(): void {
         console.info('SUB_PHOTO_PICKER_TEST_0009 result event.data.msg=:' + result);
         console.info('SUB_PHOTO_PICKER_TEST_0009 result expect =:' + expectResult);
         expect(result == expectResult).assertTrue();
-        callbackCompleted = true;
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -922,9 +871,6 @@ export default function TextPicker(): void {
       routerInstance.back();
       console.info('SUB_PHOTO_PICKER_TEST_0009 finish');
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -944,11 +890,9 @@ export default function TextPicker(): void {
       let code: long = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       pickerOptions.maxPhotoSelectNumber = 8;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         if (!event.data) {
           console.error('Event data is null');
-          callbackCompleted = true;
           return;
         }
         const data = event.data as Record<string, RecordData>;
@@ -958,7 +902,6 @@ export default function TextPicker(): void {
         console.info('SUB_PHOTO_PICKER_TEST_0010 result event.data.msg=:' + result);
         console.info('SUB_PHOTO_PICKER_TEST_0010 result expect =:' + expectResult);
         expect(result == expectResult).assertTrue();
-        callbackCompleted = true;
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -981,9 +924,6 @@ export default function TextPicker(): void {
       routerInstance.back();
       console.info('SUB_PHOTO_PICKER_TEST_0010 finish');
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -1003,11 +943,9 @@ export default function TextPicker(): void {
       let code: long = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       pickerOptions.maxVideoSelectNumber = 8;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         if (!event.data) {
           console.error('Event data is null');
-          callbackCompleted = true;
           return;
         }
         const data = event.data as Record<string, RecordData>;
@@ -1017,7 +955,6 @@ export default function TextPicker(): void {
         console.info('SUB_PHOTO_PICKER_TEST_0011 result event.data.msg=:' + result);
         console.info('SUB_PHOTO_PICKER_TEST_0011 result expect =:' + expectResult);
         expect(result == expectResult).assertTrue();
-        callbackCompleted = true;
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -1040,9 +977,6 @@ export default function TextPicker(): void {
       routerInstance.back();
       console.info('SUB_PHOTO_PICKER_TEST_0011 finish');
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -1062,11 +996,9 @@ export default function TextPicker(): void {
       let code: long = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       pickerOptions.maxSelectNumber = 8;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         if (!event.data) {
           console.error('Event data is null');
-          callbackCompleted = true;
           return;
         }
         const data = event.data as Record<string, RecordData>;
@@ -1076,7 +1008,6 @@ export default function TextPicker(): void {
         console.info('SUB_PHOTO_PICKER_TEST_0012 result event.data.msg=:' + result);
         console.info('SUB_PHOTO_PICKER_TEST_0012 result expect =:' + expectResult);
         expect(result == expectResult).assertTrue();
-        callbackCompleted = true;
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -1099,9 +1030,6 @@ export default function TextPicker(): void {
       routerInstance.back();
       console.info('SUB_PHOTO_PICKER_TEST_0012 finish');
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -1121,11 +1049,9 @@ export default function TextPicker(): void {
       let code: long = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       pickerOptions.orientation = PickerOrientation.VERTICAL;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         if (!event.data) {
           console.error('Event data is null');
-          callbackCompleted = true;
           return;
         }
         const data = event.data as Record<string, RecordData>;
@@ -1135,7 +1061,6 @@ export default function TextPicker(): void {
         console.info('SUB_PHOTO_PICKER_TEST_0013 result event.data.msg=:' + result);
         console.info('SUB_PHOTO_PICKER_TEST_0013 result expect =:' + expectResult);
         expect(result == expectResult).assertTrue();
-        callbackCompleted = true;
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -1158,9 +1083,6 @@ export default function TextPicker(): void {
       routerInstance.back();
       console.info('SUB_PHOTO_PICKER_TEST_0013 finish');
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -1180,11 +1102,9 @@ export default function TextPicker(): void {
       }
       let code: long = EventType.SELECT_ITEM_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         if (!event.data) {
           console.error('Event data is null');
-          callbackCompleted = true;
           return;
         }
         const data = event.data as Record<string, RecordData>;
@@ -1230,9 +1150,6 @@ export default function TextPicker(): void {
       routerInstance.back();
       console.info('SUB_PHOTO_PICKER_TEST_0014 finish');
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -1252,11 +1169,9 @@ export default function TextPicker(): void {
       let code: long = EventType.SELECT_ITEM_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       let selectCount: int = 0;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         if (!event.data) {
           console.error('Event data is null');
-          callbackCompleted = true;
           return;
         }
         const data = event.data as Record<string, RecordData>;
@@ -1310,9 +1225,6 @@ export default function TextPicker(): void {
       routerInstance.back();
       console.info('SUB_PHOTO_PICKER_TEST_0015 finish');
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -1334,11 +1246,9 @@ export default function TextPicker(): void {
       let albumOptions: AlbumPickerOptions = new AlbumPickerOptions();
       albumOptions.themeColorMode = PickerColorMode.DARK;
       albumOptions.filterType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         if (!event.data) {
           console.error('Event data is null');
-          callbackCompleted = true;
           return;
         }
         const data = event.data as Record<string, RecordData>;
@@ -1378,9 +1288,6 @@ export default function TextPicker(): void {
       routerInstance.back();
       console.info('SUB_PHOTO_PICKER_TEST_0016 finish');
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -1399,7 +1306,6 @@ export default function TextPicker(): void {
       }
       let code: long = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         if (!event.data) {
           console.error('Event data is missing');
@@ -1440,9 +1346,6 @@ export default function TextPicker(): void {
       routerInstance.back();
       console.info('SUB_PHOTO_PICKER_TEST_0017 finish');
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -1462,7 +1365,6 @@ export default function TextPicker(): void {
       let code: long = EventType.SELECT_CLICKTYPE;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       let clicked: boolean = false;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         if (!event.data) {
           console.error('Event data is missing');
@@ -1518,9 +1420,6 @@ export default function TextPicker(): void {
       routerInstance.back();
       console.info('SUB_PHOTO_PICKER_TEST_0018 finish');
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -1544,7 +1443,6 @@ export default function TextPicker(): void {
       recentPhotoOptions.photoSource = PhotoSource.ALL;
       recentPhotoOptions.isAutoRefreshSupported = true;
       recentPhotoOptions.colorMode = PickerColorMode.LIGHT;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         if (!event.data) {
           console.error('Event data is missing');
@@ -1589,9 +1487,6 @@ export default function TextPicker(): void {
       routerInstance.back();
       console.info('SUB_PHOTO_PICKER_TEST_0019 finish');
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -1613,7 +1508,6 @@ export default function TextPicker(): void {
       recentPhotoOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE;
       recentPhotoOptions.period = 0;
       recentPhotoOptions.photoSource = PhotoSource.CAMERA;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         if (!event.data) {
           console.error('Event data is missing');
@@ -1659,9 +1553,6 @@ export default function TextPicker(): void {
       routerInstance.back();
       console.info('SUB_PHOTO_PICKER_TEST_0020 finish');
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -1683,7 +1574,6 @@ export default function TextPicker(): void {
       recentPhotoOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE;
       recentPhotoOptions.period = 0;
       recentPhotoOptions.photoSource = PhotoSource.SCREENSHOT;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         if (!event.data) {
           console.error('Event data is missing');
@@ -1730,9 +1620,6 @@ export default function TextPicker(): void {
       routerInstance.back();
       console.info('SUB_PHOTO_PICKER_TEST_0021 finish');
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -1751,9 +1638,9 @@ export default function TextPicker(): void {
       }
       let code: Long = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
-      // 鏀寔婊戝姩澶氶€?
+      // 支持滑动多选
       pickerOptions.isSlidingSelectionSupported = true;
-      // 璁剧疆澶у浘椤礳heckbox浣嶇疆
+      // 设置大图页checkbox位置
       pickerOptions.photoBrowserCheckboxPosition = [0.5, 0.5];
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/PickerComponent',
@@ -1790,20 +1677,21 @@ export default function TextPicker(): void {
       let uris = ['file://media/photo/test.jpg'];
       let phAccessHelper: photoAccessHelper.PhotoAccessHelper | null = photoAccessHelper.getPhotoAccessHelper(appContext);
       try {
-        const result = await phAccessHelper!.requestPhotoUrisReadPermission(uris);
-        console.info('requestPhotoUrisReadPermission, result = ' + JSON.stringify(result));
-        if (result) {
-          console.info('requestPhotoUrisReadPermission success');
-        } else {
-          console.error('SUB_PHOTO_PICKER_TEST_0023 empty result');
-          expect().assertFail();
-        }
-        done();
+        phAccessHelper!.requestPhotoUrisReadPermission(uris).then((result: Array<string>) => {
+          console.info('requestPhotoUrisReadPermission, result = ' + JSON.stringify(result));
+          if (result) {
+            console.info('requestPhotoUrisReadPermission success');
+          } else {
+            console.error('SUB_PHOTO_PICKER_TEST_0023 empty result');
+            expect().assertFail();
+          }
+        })
       } catch (error) {
         console.error('SUB_PHOTO_PICKER_TEST_0023 error: ' + JSON.stringify(error));
         expect().assertFail();
-        done();
       }
+      console.info('SUB_PHOTO_PICKER_TEST_0023 finish');
+      done();
     });
 
     /**
@@ -1897,7 +1785,7 @@ export default function TextPicker(): void {
       }
       let code: Long = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
-      // 鏀寔浼犲叆瀹牸鍜屽ぇ鍥綧argin
+      // 支持传入宫格和大图Margin
       pickerOptions.gridMargin = { top: 10 };
       pickerOptions.photoBrowserMargin = { top: 20 };
       let options: router.RouterOptions = {
@@ -1932,11 +1820,9 @@ export default function TextPicker(): void {
       }
       let code: Long = EventType.VIDEO_PLAY_STATE;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         if (!event.data) {
           console.error('Event data is null');
-          callbackCompleted = true;
           return;
         }
         const eventData = event.data as Record<string, RecordData>;
@@ -1971,9 +1857,6 @@ export default function TextPicker(): void {
       routerInstance.back();
       console.info('SUB_PHOTO_PICKER_TEST_0027 finish');
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -2551,9 +2434,6 @@ export default function TextPicker(): void {
       if (component === null) {
         console.error('SUB_PHOTO_PICKER_TEST_0040 recentPhoto not found');
         events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
         expect().assertFail();
         done();
         return;
@@ -2562,9 +2442,6 @@ export default function TextPicker(): void {
       await Utils.msSleep(2000);
       routerInstance.back();
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       console.info('SUB_PHOTO_PICKER_TEST_0040 finish');
       done();
     });
@@ -3254,9 +3131,6 @@ export default function TextPicker(): void {
         expect(VideoPlayerState.SEEK_FINISH === 4).assertTrue();
       } finally {
         events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
         routerInstance.back();
         console.info('SUB_PHOTO_PICKER_TEST_0051 finish');
         done();
@@ -3412,11 +3286,9 @@ export default function TextPicker(): void {
       albumOptions.fontSize = '20vp';
       expect(albumOptions.fontSize === '20vp').assertTrue();
 
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         if (!event.data) {
           console.error('Event data is null');
-          callbackCompleted = true;
           return;
         }
         const data = event.data as Record<string, RecordData>;
@@ -3452,9 +3324,6 @@ export default function TextPicker(): void {
       expect(strJson !== null && strJson.length > 0).assertTrue();
       if (strJson === null || strJson.length === 0) {
         events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
         routerInstance.back();
         done();
         return;
@@ -3475,9 +3344,6 @@ export default function TextPicker(): void {
 
       routerInstance.back();
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       console.info('SUB_PHOTO_PICKER_TEST_0056 finish');
       done();
     });
