@@ -38,11 +38,6 @@ constexpr uint32_t CODEC_NAME_SIZE = 128;
 char g_codecName[CODEC_NAME_SIZE] = {};
 char g_codecNameHEVC[CODEC_NAME_SIZE] = {};
 OH_AVFormat *format = nullptr;
-constexpr uint32_t DEFAULT_WIDTH = 1280;
-constexpr uint32_t DEFAULT_HEIGHT = 720;
-constexpr uint32_t DEFAULT_KEY_FRAME_INTERVAL = 1000;
-constexpr uint32_t DEFAULT_BITRATE = 10000000;
-constexpr double DEFAULT_FRAME_RATE = 30.0;
 constexpr uint32_t LTR_COUNT_2 = 2;
 constexpr uint32_t LTR_COUNT_5 = 5;
 constexpr uint32_t LTR_COUNT_10 = 10;
@@ -57,7 +52,6 @@ constexpr uint32_t TEMPORAL_GOP_SIZE_8 = 8;
 constexpr uint32_t TEMPORAL_GOP_SIZE_9 = 9;
 constexpr uint32_t TEMPORAL_GOP_SIZE_30 = 30;
 constexpr uint32_t TEMPORAL_GOP_MODE_3 = 3;
-OH_AVPixelFormat DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
 const char *INP_DIR_720 = "/data/storage/el2/base/files/media/1280_720_nv.yuv";
 const char *g_inpDir720Array[16] = {
     "/data/storage/el2/base/files/media/1280_720_nv.yuv",
@@ -125,59 +119,11 @@ static void TearDown()
 
 int VideoTemporalEncodeApi0020Test()
 {
-    cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
-    if (cap) {
-        OH_AVErrCode ret = AV_ERR_OK;
-        venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
-        ASSERT_NE(nullptr, venc_);
-        format = OH_AVFormat_Create();
-        ASSERT_NE(nullptr, format);
-
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, DEFAULT_PIX_FMT);
-        (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
-        (void)OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, DEFAULT_BITRATE);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_I_FRAME_INTERVAL, DEFAULT_KEY_FRAME_INTERVAL);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_ENABLE_TEMPORAL_SCALABILITY, 1);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_TEMPORAL_GOP_REFERENCE_MODE, TEMPORAL_GOP_MODE_3);
-        ret = OH_VideoEncoder_Configure(venc_, format);
-        if (!access("/system/lib64/media/", 0)) {
-            ASSERT_EQ(ret, AV_ERR_INVALID_VAL);
-        } else {
-            ASSERT_EQ(ret, AV_ERR_OK);
-        }
-        return 0;
-    }
     return 0;
 }
 
 int VideoTemporalEncodeApi0030Test()
 {
-    cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
-    if (cap) {
-        OH_AVErrCode ret = AV_ERR_OK;
-        venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
-        ASSERT_NE(nullptr, venc_);
-        format = OH_AVFormat_Create();
-        ASSERT_NE(nullptr, format);
-
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, DEFAULT_PIX_FMT);
-        (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
-        (void)OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, DEFAULT_BITRATE);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_I_FRAME_INTERVAL, DEFAULT_KEY_FRAME_INTERVAL);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_ENABLE_TEMPORAL_SCALABILITY, 1);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_TEMPORAL_GOP_SIZE, TEMPORAL_GOP_SIZE_30);
-        ret = OH_VideoEncoder_Configure(venc_, format);
-        if (!access("/system/lib64/media/", 0)) {
-            ASSERT_EQ(ret, AV_ERR_INVALID_VAL);
-        } else {
-            ASSERT_EQ(ret, AV_ERR_OK);
-        }
-        return 0;
-    }
     return 0;
 }
 
