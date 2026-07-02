@@ -19,6 +19,9 @@
     "MainAbility/pages/scrollBar/scrollBarTest",
     "MainAbility/pages/maxHeight/maxHeightTest",
     "MainAbility/pages/targetSpace/targetSpaceTest",
-    "MainAbility/pages/bindContextMenu/ContextMenuMaxHeight"
+    "MainAbility/pages/bindContextMenu/ContextMenuMaxHeight",
+    "MainAbility/pages/bindContextMenuByIsShow/BindContextMenuByIsShowOptions",
+    "MainAbility/pages/bindContextMenuByIsShow/BindContextMenuByIsShowBlurMask",
+    "MainAbility/pages/bindContextMenuByIsShow/BindContextMenuByIsShowNullUndefined"
   ]
 }

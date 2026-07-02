@@ -43,7 +43,7 @@ export default class Utils {
   static rect_bottom: number = 0;
   static rect_value: RectValue = new RectValue();
 
-  static getComponentRect(key: string) {
+  static getComponentRect(key: string): RectValue {
     let strJson: string = inspector.getInspectorByKey(key);
     let obj: Record<String,undefined|null|Object> =
       JSON.parse<Object>(strJson, Class.from<String>()) as Record<String,undefined|null|Object>;
@@ -70,7 +70,7 @@ static sleep(count:int) : Promise<int> {
     })
   }
 
-  static async drag(downX: number, downY: number, upX: number, upY: number, steps: number) {
+  static async drag(downX: number, downY: number, upX: number, upY: number, steps: number): Promise<void> {
     console.info('start to drag')
     let xStep: number;
     let yStep: number;
