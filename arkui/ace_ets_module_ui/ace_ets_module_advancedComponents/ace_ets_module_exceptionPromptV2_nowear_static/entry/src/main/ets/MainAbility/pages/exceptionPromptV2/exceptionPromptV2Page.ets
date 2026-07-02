@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { Entry, ComponentV2, $r, Column, Scroll, Text, FontWeight, Button } from '@kit.ArkUI';
+import { Entry, ComponentV2, $r, Column, Scroll, Text, FontWeight, Button, ResourceStr } from '@kit.ArkUI';
 import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
 import { ExceptionPromptV2, PromptOptionsV2, PromptOptionsV2Config, MarginTypeV2 } from '@ohos.arkui.advanced.ExceptionPromptV2';
 import { Local } from '@ohos.arkui.stateManagement';
@@ -23,6 +23,19 @@ import { Local } from '@ohos.arkui.stateManagement';
 @ComponentV2
 struct ExceptionPromptV2Page {
   @Local callbackResult: string = '';
+  @Local actionText2: ResourceStr = '重试';
+
+  @Local _options01:PromptOptionsV2Config = {
+    icon: $r('sys.media.ohos_ic_public_fail'),
+    symbolStyle: new SymbolGlyphModifier($r('sys.symbol.wifi')),
+    actionText: '网络',
+    marginType: MarginTypeV2.DEFAULT_MARGIN,
+    marginTop: 490,
+    tip: '显示的提示',
+    isShown: true
+  }
+
+  @Local options01: PromptOptionsV2 = new PromptOptionsV2(this._options01)
 
   aboutToAppear(): void {
     console.info('ExceptionPromptV2Page aboutToAppear');
@@ -100,19 +113,14 @@ struct ExceptionPromptV2Page {
             marginType: MarginTypeV2.DEFAULT_MARGIN,
             marginTop: 430,
             tip: '服务器连接失败',
-            actionText: '重试',
+            actionText: this.actionText2,
             isShown: true
           })
         });
 
         // Visibility测试
         ExceptionPromptV2({
-          options: new PromptOptionsV2({
-            marginType: MarginTypeV2.DEFAULT_MARGIN,
-            marginTop: 490,
-            tip: '显示的提示',
-            isShown: true
-          })
+          options: this.options01,
         });
         ExceptionPromptV2({
           options: new PromptOptionsV2({
