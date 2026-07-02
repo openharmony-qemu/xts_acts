@@ -18,10 +18,12 @@ import composeListItemV2ContentTest from './composeListItemV2/composeListItemV2C
 import composeListItemV2OperateTest from './composeListItemV2/composeListItemV2Operate.test';
 import composeListItemV2IconTypeTest from './composeListItemV2/composeListItemV2IconType.test';
 import composeListItemV2InteractionTest from './composeListItemV2/composeListItemV2Interaction.test';
+import composeListItemV2InteractionOptionsTest from './composeListItemV2/composeListItemV2OperateOptions.test';
 
 export default function testsuite() {
   composeListItemV2ContentTest();
   composeListItemV2OperateTest();
   composeListItemV2IconTypeTest();
   composeListItemV2InteractionTest();
+  composeListItemV2InteractionOptionsTest();
 }
