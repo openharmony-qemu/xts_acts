@@ -205,14 +205,7 @@ struct CustomDialogControllerOptionsSystemMaterial {
 
       Text('enum13').height('10%')
         .bindContextMenuWithResponse(this.MenuBuilderWithParam, {
-          colorMode: null,
-          gridStyle: { count: 4, position: null },
-        } as ContextMenuOptions)
-
-      Text('enum13').height('10%')
-        .bindContextMenuWithResponse(this.MenuBuilderWithParam, {
-          colorMode: undefined,
-          gridStyle: { count: 4, position: undefined } as MenuGridStyleOptions,
+          gridStyle: { count: 4 } as MenuGridStyleOptions,
         } as ContextMenuOptions)
     }
     .width('100%')
