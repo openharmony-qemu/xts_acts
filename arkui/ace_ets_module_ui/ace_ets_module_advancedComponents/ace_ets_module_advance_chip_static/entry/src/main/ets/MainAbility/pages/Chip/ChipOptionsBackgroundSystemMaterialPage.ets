@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,6 @@
  * limitations under the License.
  */
 
-'use static';
 import { Chip, ChipOptions, LabelOptions } from '@ohos.arkui.advanced.Chip';
 import uiMaterial from '@ohos.arkui.uiMaterial';
 import { Entry, Component, Column, ColumnOptions, Row, $r } from '@ohos.arkui.component';

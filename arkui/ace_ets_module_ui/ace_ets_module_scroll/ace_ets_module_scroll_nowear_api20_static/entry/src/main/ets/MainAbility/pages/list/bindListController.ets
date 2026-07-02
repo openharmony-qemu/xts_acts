@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 import { BuilderNode, DrawContext, FrameNode, NodeContent, NodeController } from '@ohos.arkui.node'
 import {

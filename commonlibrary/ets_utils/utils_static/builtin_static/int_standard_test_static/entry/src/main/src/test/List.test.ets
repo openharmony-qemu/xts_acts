@@ -1,3 +1,4 @@
+'use static';
 import IntAddTest from "./int/IntAddTest.test";
 import IntCompareToTest from "./int/IntCompareToTest.test";
 import IntConstructor1Test from "./int/IntConstructor1Test.test";

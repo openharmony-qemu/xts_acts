@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -331,7 +332,7 @@ export default function AvPlayerEnumTest() {
       expect(Number(media.AVMetricsEventType.AV_METRICS_EVENT_LOADINGRATE_CHANGE)).assertEqual(3);
       expect(Number(media.AVMetricsEventType.AV_METRICS_EVENT_LOADING_ERROR)).assertEqual(4);
       expect(Number(media.AVMetricsEventType.AV_METRICS_EVENT_CONTENT_DISCONTINUITY)).assertEqual(6);
-      expect(Number(media.AVMetricsEventType.AV_METRICS_EVENT_CODEC_ABNORMAL)).assertEqual(7);
+      expect(Number(media.AVMetricsEventType.AV_METRICS_EVENT_AUDIO_ABNORMAL)).assertEqual(7);
       done();
     });
     /**

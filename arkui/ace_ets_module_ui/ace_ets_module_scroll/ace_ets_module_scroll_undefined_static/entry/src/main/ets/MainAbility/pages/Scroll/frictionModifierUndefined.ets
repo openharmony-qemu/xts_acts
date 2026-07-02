@@ -1,4 +1,4 @@
-'use static'
+'use static';
 import { Builder, Stack, Entry, Component, Column, Row, Alignment, Tabs, BarPosition, TabContent, NestedScrollMode, Refresh, Button, List, RefreshStatus, ForEach, LazyForEach, ListItemAlign, ListItem, ScrollState, Text, Scroller, TextAlign, BarState, Scroll, Edge, ContentClipMode, CrownSensitivity, EdgeEffect, Color, ClickEvent, Margin, ScrollDirection, ScrollSource, LengthMetrics, FadingEdgeOptions, Resource, AttributeModifier, CommonAttribute, ListAttribute } from '@ohos.arkui.component';
 import { State, Observed, Track } from '@ohos.arkui.stateManagement';
 // ===================== Modifier 定义 =====================

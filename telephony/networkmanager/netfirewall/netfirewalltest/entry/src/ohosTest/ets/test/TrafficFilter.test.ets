@@ -2947,77 +2947,13 @@ export default function TrafficFilterTest() {
     /**
      * @tc.name   testNetworkMgrNetfirewallTrafficFilterQueryProcess0200
      * @tc.number SUB_NetworkMgr_netfirewall_TrafficFilter_QueryProcess_0200
-     * @tc.desc   query corresponding process UID and PID_query TCP protocol process info
+     * @tc.desc   query corresponding process UID and PID_query non-TCP/UDP protocol process info
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it("testNetworkMgrNetfirewallTrafficFilterQueryProcess0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       const caseName: string = 'testNetworkMgrNetfirewallTrafficFilterQueryProcess0200';
-      hilog.info(domain, tag, `${caseName}---Start`);
-      try {
-        const connectionInfo:trafficFilterSdk.ConnectionInfo = {
-          srcIp: { family: IPFamily.IP_FAMILY_V4, addr: ['192.168.43.9'] },
-          srcPort: 0,
-          dstIp: { family: 0, addr: ['0.0.0.0'] },
-          dstPort: 0,
-          protocol: 6
-        };
-        const result: trafficFilterSdk.ProcessInfo = trafficFilterSdk.QueryProcess(connectionInfo);
-        hilog.info(domain, tag, `${caseName} query process ret: ${JSON.stringify(result)}`);
-        ExpectTrue(result.ret === 0);
-        done();
-
-      } catch (err) {
-        hilog.info(domain, tag, `${caseName} catch err -> ${JSON.stringify(err)}`);
-        ExpectFail();
-        done();
-      }
-    })
-
-
-    /**
-     * @tc.name   testNetworkMgrNetfirewallTrafficFilterQueryProcess0300
-     * @tc.number SUB_NetworkMgr_netfirewall_TrafficFilter_QueryProcess_0300
-     * @tc.desc   query corresponding process UID and PID_query UDP protocol process info
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("testNetworkMgrNetfirewallTrafficFilterQueryProcess0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
-      const caseName: string = 'testNetworkMgrNetfirewallTrafficFilterQueryProcess0300';
-      hilog.info(domain, tag, `${caseName}---Start`);
-      try {
-        const connectionInfo:trafficFilterSdk.ConnectionInfo = {
-          srcIp: { family: IPFamily.IP_FAMILY_V6, addr: ['240e:45c:ce10:1956:a1c3:8a3d:389:d338'] },
-          srcPort: 0,
-          dstIp: { family: 0, addr: ['0.0.0.0'] },
-          dstPort: 0,
-          protocol: 17
-        };
-        const result: trafficFilterSdk.ProcessInfo = trafficFilterSdk.QueryProcess(connectionInfo);
-        hilog.info(domain, tag, `${caseName} query process ret: ${JSON.stringify(result.ret)}`);
-        ExpectTrue(result.ret === 0);
-        done();
-
-      } catch (err) {
-        hilog.info(domain, tag, `${caseName} catch err -> ${JSON.stringify(err)}`);
-        ExpectFail();
-        done();
-      }
-    })
-
-
-    /**
-     * @tc.name   testNetworkMgrNetfirewallTrafficFilterQueryProcess0400
-     * @tc.number SUB_NetworkMgr_netfirewall_TrafficFilter_QueryProcess_0400
-     * @tc.desc   query corresponding process UID and PID_query non-TCP/UDP protocol process info
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("testNetworkMgrNetfirewallTrafficFilterQueryProcess0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
-      const caseName: string = 'testNetworkMgrNetfirewallTrafficFilterQueryProcess0400';
       hilog.info(domain, tag, `${caseName}---Start`);
       try {
         const connectionInfo:trafficFilterSdk.ConnectionInfo = {

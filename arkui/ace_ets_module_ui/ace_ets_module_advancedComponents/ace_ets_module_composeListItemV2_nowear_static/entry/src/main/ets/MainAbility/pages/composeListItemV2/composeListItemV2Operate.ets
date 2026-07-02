@@ -14,16 +14,17 @@
  * limitations under the License.
  */
 
-import { Entry, ComponentV2, $r, Column, Scroll, Text, FontWeight, Local, ColumnOptions } from '@kit.ArkUI';
+import { Entry, ComponentV2, $r, Column, Scroll, Text, FontWeight, Local, ColumnOptions, Color } from '@kit.ArkUI';
 import {
   ComposeListItemV2,
   ContentItemV2,
   OperateItemV2,
-  OperateIconV2,
-  OperateButtonV2,
-  OperateCheckV2,
+  OperateIconV2, OperateIconV2Options,
+  OperateButtonV2, OperateButtonV2Options,
+  OperateCheckV2, OperateCheckV2Options,
   IconTypeV2
 } from '@ohos.arkui.advanced.ComposeListItemV2';
+import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
 
 @Entry
 @ComponentV2
@@ -32,13 +33,72 @@ struct ComposeListItemV2OperateExample {
   @Local operateIcon: OperateIconV2 = new OperateIconV2({
     value: $r('sys.media.ohos_ic_public_more')
   });
-  @Local operateButton: OperateButtonV2 = new OperateButtonV2({ text: 'Button' });
-  @Local toggle: OperateCheckV2 = new OperateCheckV2({ isCheck: false });
-  @Local checkbox: OperateCheckV2 = new OperateCheckV2({ isCheck: false });
-  @Local radio: OperateCheckV2 = new OperateCheckV2({ isCheck: false });
-  @Local arrow: OperateIconV2 = new OperateIconV2({
-    value: $r('sys.media.ohos_ic_public_arrow_right')
+  @Local operateButton: OperateButtonV2 = new OperateButtonV2({
+    text: 'Button',
+    accessibilityDescription: '描述',
+    accessibilityLevel: 'auto',
+    accessibilityText: '文本'
   });
+
+  @Local operateButtonV2Options: OperateButtonV2Options = {
+    text: 'Button2',
+    accessibilityDescription: '描述',
+    accessibilityLevel: 'auto',
+    accessibilityText: '文本'
+  };
+  @Local operateButton2: OperateButtonV2 = new OperateButtonV2(this.operateButtonV2Options);
+
+  @Local isCheck1: boolean = false;
+  @Local toggle: OperateCheckV2 = new OperateCheckV2({
+    isCheck: false,
+    onChange: (value: boolean)=>{
+      this.isCheck1 = value;
+    },
+    accessibilityDescription: '描述',
+    accessibilityLevel: 'auto',
+    accessibilityText: '文本'
+  });
+
+  @Local isCheck2: boolean = false;
+  @Local checkboxOptions:OperateCheckV2Options = {
+    isCheck: false,
+    onChange: (value: boolean)=>{
+      this.isCheck2 = value;
+    },
+    accessibilityDescription: '描述',
+    accessibilityLevel: 'auto',
+    accessibilityText: '文本'
+  }
+
+  @Local checkbox: OperateCheckV2 = new OperateCheckV2(this.checkboxOptions);
+  @Local radio: OperateCheckV2 = new OperateCheckV2({ isCheck: false });
+
+  @Local arrow: OperateIconV2 = new OperateIconV2({
+    value: $r('sys.media.ohos_ic_public_arrow_right'),
+    symbolStyle: new SymbolGlyphModifier($r('sys.symbol.bell')),
+    action: () => {
+      this.getUIContext().getPromptAction().showToast({
+        message: 'arrow'
+      });
+    },
+    accessibilityDescription: '描述',
+    accessibilityLevel: 'auto',
+    accessibilityText: '文本'
+  });
+
+  @Local iconOptions: OperateIconV2Options = {
+    value: $r('sys.media.ohos_ic_public_arrow_right'),
+    symbolStyle: new SymbolGlyphModifier($r('sys.symbol.bell')),
+    action: () => {
+      this.getUIContext().getPromptAction().showToast({
+        message: 'arrow'
+      });
+    },
+    accessibilityDescription: '描述',
+    accessibilityLevel: 'auto',
+    accessibilityText: '文本'
+  }
+  @Local arrow2: OperateIconV2 = new OperateIconV2(this.iconOptions);
 
   aboutToAppear(): void {
     console.info('ComposeListItemV2OperateExample aboutToAppear');
@@ -46,20 +106,30 @@ struct ComposeListItemV2OperateExample {
 
   build(): void {
     Scroll() {
-      Column({ space: 10 } as ColumnOptions) {
+      Column({ space: 8 } as ColumnOptions) {
         Text('OperateItemV2 Test')
-          .fontSize(20)
+          .fontSize(16)
           .fontWeight(FontWeight.Bold)
-          .margin({ top: 10, bottom: 10 })
+          .margin({ top: 2, bottom: 2 })
 
         ComposeListItemV2({
           contentItemV2: new ContentItemV2({ primaryText: 'Operate Icon' }),
-          operateItemV2: new OperateItemV2({ icon: this.operateIcon })
+          operateItemV2: new OperateItemV2({
+            icon: this.operateIcon,
+            subIcon:{
+              value: $r('sys.media.ohos_app_icon')
+            },
+          })
         });
 
         ComposeListItemV2({
           contentItemV2: new ContentItemV2({ primaryText: 'Button Test' }),
           operateItemV2: new OperateItemV2({ button: this.operateButton })
+        });
+
+        ComposeListItemV2({
+          contentItemV2: new ContentItemV2({ primaryText: 'Button Test2' }),
+          operateItemV2: new OperateItemV2({ button: this.operateButton2 })
         });
 
         ComposeListItemV2({
@@ -83,9 +153,25 @@ struct ComposeListItemV2OperateExample {
         });
 
         ComposeListItemV2({
-          contentItemV2: new ContentItemV2({ primaryText: 'Operate Text' }),
-          operateItemV2: new OperateItemV2({ text: 'Operate Text' })
+          contentItemV2: new ContentItemV2({ primaryText: 'Arrow Test2' }),
+          operateItemV2: new OperateItemV2({ arrow: this.arrow2 })
         });
+
+        ComposeListItemV2({
+          contentItemV2: new ContentItemV2({ primaryText: 'Operate Text' }),
+          operateItemV2: new OperateItemV2({
+            text: 'Operate Text'
+          })
+        });
+
+        ComposeListItemV2({
+          contentItemV2: new ContentItemV2({ primaryText: 'Operate image' }),
+          operateItemV2: new OperateItemV2({
+            image: $r('sys.symbol.car'),
+            symbolStyle: new SymbolGlyphModifier($r('sys.symbol.heart')).fontColor([Color.Pink])
+          })
+        });
+
       }
       .width('100%')
       .padding(10)

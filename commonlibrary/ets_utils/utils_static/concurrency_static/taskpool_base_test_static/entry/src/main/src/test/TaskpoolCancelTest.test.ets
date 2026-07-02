@@ -1,4 +1,4 @@
-'use static'
+'use static';
 import { afterEach, describe, expect, it, Level, Size, TestType } from '../../../hypium';
 
 export function sleep(time: int): Promise<number> {

@@ -1,3 +1,4 @@
+'use static';
 import DataViewAttrTest from "./dateview/DataViewAttrTest.test";
 import DataViewConstructorTest from "./dateview/DataViewConstructorTest.test";
 import DataViewGetBigInt64Test from "./dateview/DataViewGetBigInt64Test.test";

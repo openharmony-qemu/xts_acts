@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 import { AppStorage, State, Observed } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';

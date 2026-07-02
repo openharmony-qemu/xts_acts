@@ -1,3 +1,4 @@
+'use static';
 
 import { expect } from '../../../../hypium/index';
 import hilog from '@ohos.hilog';

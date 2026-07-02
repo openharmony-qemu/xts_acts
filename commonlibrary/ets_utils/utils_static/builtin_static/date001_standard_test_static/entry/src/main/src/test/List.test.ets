@@ -1,3 +1,4 @@
+'use static';
 import DateConstructor1Test from "./date/DateConstructorTest.test";
 import DateGetDateTest from "./date/DateGetDateTest.test";
 import DateGetDayTest from "./date/DateGetDayTest.test";

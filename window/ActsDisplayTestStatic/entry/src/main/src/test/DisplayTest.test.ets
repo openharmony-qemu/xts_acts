@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -1607,340 +1608,7 @@ export default function DisplayTest():void {
                 done();
             }
         });
-        /**
-         * @tc.number   SUB_BASIC_WMS_SPCIAL_XTS_GET_AVAILABLEAREA_0400
-         * @tc.name     test_getAvailableArea_ststus_bar_hide_static_0400
-         * @tc.desc     test_getAvailableArea_ststus_bar_hide
-         * @tc.size     MediumTest
-         * @tc.type     Function
-         * @tc.level    Level 3
-         */
-        it('test_getAvailableArea_ststus_bar_hide_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName : string = 'test_getAvailableArea_ststus_bar_hide_static_0400';
-            let msgStr : string = 'jsunittest ' + caseName + ' ';
-            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
-            let displayClass: display.Display;
-            try {
-                let mainWindowClass:window.Window = await windowStage!.getMainWindow();
-                displayClass = display.getDefaultDisplaySync();
-                let promise1 = displayClass.getAvailableArea();
-                promise1.then(async (data:display.Rect) => {
-                    let AvailableArea:display.Rect = data;
-                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded get the available area in this display. AvailableArea: ' + JSON.stringify(AvailableArea));
-                    await mainWindowClass.setWindowLayoutFullScreen(true).then(async () => {
-                        hilog.info(0x0000, '[ANI]',msgStr + ' setWindowLayoutFullScreen success');
-                        await Utils.msSleep(1000);
-                        let displayClass1: display.Display = display.getDefaultDisplaySync();
-                        let promise = displayClass1.getAvailableArea();
-                        promise.then((data1:display.Rect) => {
-                            hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded get the available area in this display. data1: ' + JSON.stringify(data1));
-                            if (AvailableArea.top == 0) {
-                                mainWindowClass.setWindowLayoutFullScreen(false);
-                                done();
-                            }
-                            else if (AvailableArea.top != 0) {
-                                expect(data1.top).assertEqual(0);
-                                mainWindowClass.setWindowLayoutFullScreen(false);
-                                done();
-                            }
-                            else {
-                                expect(false).assertTrue();
-                                done();
-                            }
-                        }).catch((err: Error):PromiseLike<void>|undefined => {
-                            hilog.error(0x0000, '[ANI]',msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
-                            if (err.code == 801) {
-                                hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
-                                done();
-                            }
-                            else {
-                                expect().assertFail();
-                                done();
-                            }
-                        });
-                    }).catch((err: Error):PromiseLike<void>|undefined => {
-                        hilog.error(0x0000, '[ANI]',msgStr + `Failed to set setWindowLayoutFullScreen. Code: ${err.code}, message: ${err.message}`);
-                        expect().assertFail();
-                        done();
-                    })
 
-                }).catch((err: Error):PromiseLike<void>|undefined => {
-                    hilog.error(0x0000, '[ANI]',msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
-                    if (err.code == 801) {
-                        hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
-                        done();
-                    }
-                    else {
-                        expect().assertFail();
-                        done();
-                    }
-                });
-            }
-            catch (exception) {
-                hilog.error(0x0000, '[ANI]',msgStr + `Failed to obtain the default display object. Code: ${exception.code}, message: ${exception.message}`);
-                expect().assertFail();
-                done();
-            }
-        });
-
-        /**
-         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0200
-         * @tc.name      test_on_availableAreaChange_triggers_static_0200
-         * @tc.desc      test_on_availableAreaChange_triggers
-         * @tc.size      MediumTest
-         * @tc.type      Function
-         * @tc.level     Level 2
-         */
-        it('test_on_availableAreaChange_triggers_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            let caseName : string = 'test_on_availableAreaChange_triggers_static_0200';
-            let msgStr : string = 'jsunittest ' + caseName + ' ';
-            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
-            let displayClass: display.Display;
-            try {
-                let mainWindowClass:window.Window = await windowStage!.getMainWindow();
-                displayClass = display.getDefaultDisplaySync();
-                let promise1 = displayClass.getAvailableArea();
-                promise1.then(async (data:display.Rect) => {
-                    let AvailableArea:display.Rect = data;
-                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded get the available area in this display. AvailableArea: ' + JSON.stringify(AvailableArea));
-                    if (AvailableArea.top == 0) {
-                        done();
-                    }
-                    else if (AvailableArea.top != 0) {
-                        displayClass.onAvailableAreaChange((data: display.Rect) => {
-                            hilog.info(0x0000, '[ANI]',msgStr + 'Listening enabled. Data: ' + JSON.stringify(data));
-                            Utils.msSleep(500);
-                            expect(data.height).assertLarger(AvailableArea.height);
-                            displayClass.offAvailableAreaChange();
-                            mainWindowClass.recover();
-                            done();
-                        });
-                        await mainWindowClass.setWindowLayoutFullScreen(true);
-                        hilog.info(0x0000, '[ANI]',msgStr + ' setWindowLayoutFullScreen success');
-                        await Utils.msSleep(500);
-                    }
-                    else {
-                        expect(false).assertTrue();
-                        done();
-                    }
-                }).catch((err: Error):PromiseLike<void>|undefined => {
-                    hilog.error(0x0000, '[ANI]',msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
-                    if (err.code == 801) {
-                        hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
-                        done();
-                    }
-                    else {
-                        expect().assertFail();
-                        done();
-                    }
-                });
-            }
-            catch (exception) {
-                hilog.error(0x0000, '[ANI]',msgStr + `Failed to obtain the default display object. Code: ${exception.code}, message: ${exception.message}`);
-                expect().assertFail();
-                done();
-            }
-        });
-        /**
-         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0300
-         * @tc.name      test_on_availableAreaChange_Two_callback_static_0300
-         * @tc.desc      test_on_availableAreaChange_Two_callback
-         * @tc.size      MediumTest
-         * @tc.type      Function
-         * @tc.level     Level 2
-         */
-        it('test_on_availableAreaChange_Two_callback_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            let caseName : string = 'test_on_availableAreaChange_Two_callback_static_0300';
-            let msgStr : string = 'jsunittest ' + caseName + ' ';
-            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
-            let displayClass: display.Display;
-            let num :number = 0;
-            let callback1: Callback<display.Rect> = (data: display.Rect) => {
-                num++;
-                hilog.info(0x0000, '[ANI]','Listening callback1 enabled. Data: ' + JSON.stringify(data)+' , num:'+num);
-            };
-            let callback2: Callback<display.Rect> = (data: display.Rect) => {
-                num++;
-                hilog.info(0x0000, '[ANI]','Listening callback2 enabled. Data: ' + JSON.stringify(data)+' , num:'+num);
-            };
-            try {
-                let mainWindowClass:window.Window = await windowStage!.getMainWindow();
-                displayClass = display.getDefaultDisplaySync();
-                let promise1 = displayClass.getAvailableArea();
-                promise1.then(async (data:display.Rect) => {
-                    let AvailableArea:display.Rect = data;
-                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded get the available area in this display. AvailableArea: ' + JSON.stringify(AvailableArea));
-                    if (AvailableArea.top == 0) {
-                        done();
-                    }
-                    else if (AvailableArea.top != 0) {
-                        displayClass.onAvailableAreaChange(callback1);
-                        displayClass.onAvailableAreaChange(callback2);
-                        await mainWindowClass.setWindowLayoutFullScreen(true);
-                        hilog.info(0x0000, '[ANI]',msgStr + ' setWindowLayoutFullScreen success');
-                        await Utils.msSleep(1000);
-                        expect(num).assertEqual(4);
-                        displayClass.offAvailableAreaChange();
-                        mainWindowClass.recover();
-                        done();
-                    }
-                    else {
-                        expect(false).assertTrue();
-                        done();
-                    }
-                }).catch((err: Error):PromiseLike<void>|undefined => {
-                    hilog.error(0x0000, '[ANI]',msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
-                    if (err.code == 801) {
-                        hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
-                        done();
-                    }
-                    else {
-                        expect().assertFail();
-                        done();
-                    }
-                });
-            }
-            catch (exception) {
-                hilog.error(0x0000, '[ANI]',msgStr + `Failed to obtain the default display object. Code: ${exception.code}, message: ${exception.message}`);
-                expect().assertFail();
-                done();
-            }
-        });
-        /**
-         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0400
-         * @tc.name      test_on_availableAreaChange_off_callback1_static_0400
-         * @tc.desc      test_on_availableAreaChange_off_callback1
-         * @tc.size      MediumTest
-         * @tc.type      Function
-         * @tc.level     Level 2
-         */
-        it('test_on_availableAreaChange_off_callback1_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            let caseName : string = 'test_on_availableAreaChange_off_callback1_static_0400';
-            let msgStr : string = 'jsunittest ' + caseName + ' ';
-            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
-            let displayClass: display.Display;
-            let num:number = 0;
-            let callback1: Callback<display.Rect> = (data: display.Rect) => {
-                num--;
-                hilog.info(0x0000, '[ANI]','Listening callback1 enabled. Data: ' + JSON.stringify(data)+' , num:'+num);
-            };
-            let callback2: Callback<display.Rect> = (data: display.Rect) => {
-                num++;
-                hilog.info(0x0000, '[ANI]','Listening callback2 enabled. Data: ' + JSON.stringify(data)+' , num:'+num);
-            };
-            try {
-                let mainWindowClass:window.Window = await windowStage!.getMainWindow();
-                displayClass = display.getDefaultDisplaySync();
-                let promise1 = displayClass.getAvailableArea();
-                promise1.then(async (data:display.Rect) => {
-                    let AvailableArea:display.Rect = data;
-                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded get the available area in this display. AvailableArea: ' + JSON.stringify(AvailableArea));
-                    if (AvailableArea.top == 0) {
-                        done();
-                    }
-                    else if (AvailableArea.top != 0) {
-                        displayClass.onAvailableAreaChange(callback1);
-                        displayClass.onAvailableAreaChange(callback2);
-                        displayClass.offAvailableAreaChange(callback2);
-                        await mainWindowClass.setWindowLayoutFullScreen(true);
-                        hilog.info(0x0000, '[ANI]',msgStr + ' setWindowLayoutFullScreen success');
-                        await Utils.msSleep(1000);
-                        expect(num).assertEqual(2);
-                        displayClass.offAvailableAreaChange();
-                        mainWindowClass.recover();
-                        done();
-                    }
-                    else {
-                        expect(false).assertTrue();
-                        done();
-                    }
-                }).catch((err: Error):PromiseLike<void>|undefined => {
-                    hilog.error(0x0000, '[ANI]',msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
-                    if (err.code == 801) {
-                        hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
-                        done();
-                    }
-                    else {
-                        expect().assertFail();
-                        done();
-                    }
-                });
-            }
-            catch (exception) {
-                hilog.error(0x0000, '[ANI]',msgStr + `Failed to obtain the default display object. Code: ${exception.code}, message: ${exception.message}`);
-                expect().assertFail();
-                done();
-            }
-        });
-        /**
-         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0500
-         * @tc.name      test_on_availableAreaChange_off_callback_all_static_0500
-         * @tc.desc      test_on_availableAreaChange_off_callback_all_static_0500
-         * @tc.size      MediumTest
-         * @tc.type      Function
-         * @tc.level     Level 2
-         */
-        it('test_on_availableAreaChange_off_callback_all_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            let caseName : string = 'test_on_availableAreaChange_off_callback_all_static_0500';
-            let msgStr : string = 'jsunittest ' + caseName + ' ';
-            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
-            let displayClass: display.Display;
-            let num:number = 0;
-            let callback1: Callback<display.Rect> = (data: display.Rect) => {
-                num++;
-                hilog.info(0x0000, '[ANI]','Listening callback1 enabled. Data: ' + JSON.stringify(data)+' , num:'+num);
-                expect(data.left).assertLargerOrEqual(0);
-                expect(data.top).assertLargerOrEqual(0);
-                expect(data.width).assertLargerOrEqual(0);
-                expect(data.height).assertLargerOrEqual(0);
-            };
-            let callback2: Callback<display.Rect> = (data: display.Rect) => {
-                num++;
-                hilog.info(0x0000, '[ANI]','Listening callback2 enabled. Data: ' + JSON.stringify(data)+' , num:'+num);
-            };
-            try {
-                let mainWindowClass:window.Window = await windowStage!.getMainWindow();
-                displayClass = display.getDefaultDisplaySync();
-                let promise1 = displayClass.getAvailableArea();
-                promise1.then(async (data:display.Rect) => {
-                    let AvailableArea:display.Rect = data;
-                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded get the available area in this display. AvailableArea: ' + JSON.stringify(AvailableArea));
-                    if (AvailableArea.top == 0) {
-                        done();
-                    }
-                    else if (AvailableArea.top != 0) {
-                        displayClass.onAvailableAreaChange(callback1);
-                        displayClass.onAvailableAreaChange(callback2);
-                        displayClass.offAvailableAreaChange();
-                        await mainWindowClass.setWindowLayoutFullScreen(true);
-                        hilog.info(0x0000, '[ANI]',msgStr + ' setWindowLayoutFullScreen success');
-                        await Utils.msSleep(1000);
-                        expect(num).assertEqual(0);
-                        mainWindowClass.recover();
-                        done();
-                    }
-                    else {
-                        expect(false).assertTrue();
-                        done();
-                    }
-                }).catch((err: Error):PromiseLike<void>|undefined => {
-                    hilog.error(0x0000, '[ANI]',msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
-                    if (err.code == 801) {
-                        hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
-                        done();
-                    }
-                    else {
-                        expect().assertFail();
-                        done();
-                    }
-                });
-            }
-            catch (exception) {
-                hilog.error(0x0000, '[ANI]',msgStr + `Failed to obtain the default display object. Code: ${exception.code}, message: ${exception.message}`);
-                expect().assertFail();
-                done();
-            }
-        });
         /**
          * @tc.number   SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0600
          * @tc.name     test_off_availableAreaChange_static_0600
@@ -3969,6 +3637,94 @@ export default function DisplayTest():void {
                 done();
             } else {
                 expect(count).assertEqual(0);
+                done()
+            }
+        }
+        catch (err) {
+            hilog.error(0x0000, '[ANI]',msgStr + `Failed to on availableAreaChange. Code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+            done();
+        }
+    });
+
+    /**
+    * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0200
+    * @tc.name      test_on_availableAreaChange_static_0200
+    * @tc.desc      test_on_availableAreaChange
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    * @tc.level     Level 3
+    */
+    it('test_on_availableAreaChange_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName : string = 'test_on_availableAreaChange_static_0200';
+        let msgStr : string = 'jsunittest ' + caseName + ' ';
+        hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+        let windowClass:window.Window = windowStage!.getMainWindowSync();
+        let count1 = 0;
+        let count2 = 0;
+        let callback1: Callback<display.Rect> = (data: display.Rect) => {
+            console.info(0x0000, '[ANI]', msgStr + `Listening enabled. Data: ${JSON.stringify(data)}`);
+            count1++;
+        };
+        let callback2: Callback<display.Rect> = (data: display.Rect) => {
+            console.info(0x0000, '[ANI]', msgStr + `Listening enabled. Data: ${JSON.stringify(data)}`);
+            count2++;
+        };
+        try {
+            if (isFreeWindowMode) {
+                let cap:string = displayClass.getDisplayCapability();
+                let curFoldStatus: display.FoldStatus = display.getFoldStatus();
+                hilog.info(0x0000, '[ANI]', msgStr + `Succeeded in obtaining fold status. Data: ${curFoldStatus}`);
+                if (foldType === 5 && curFoldStatus === 3) {
+                    displayClass = display.getDisplayByIdSync(999);
+                    displayClass.onAvailableAreaChange(callback1);
+                    displayClass.onAvailableAreaChange(callback2);
+                    displayClass.offAvailableAreaChange(callback2);
+                    try {
+                        let moveConfiguration: window.MoveConfiguration = {
+                            displayId: 999
+                        };
+                        let promise2 = windowClass!.moveWindowToAsync(300, 300, moveConfiguration);
+                        promise2.then(() => {
+                            hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in moving the window2.');
+                            let rect = windowClass?.getWindowProperties().windowRect;
+                            hilog.info(0x0000, '[ANI]', msgStr + `Get window rect: ` + JSON.stringify(rect));
+                        }).catch((err: Error):PromiseLike<void>|undefined => {
+                            hilog.error(0x0000, '[ANI]', msgStr + `Failed to move the window. Cause code: ${err.code}, message: ${err.message}`);
+                        });
+                    } catch (exception) {
+                        hilog.error(0x0000, '[ANI]', msgStr + `Failed to move the window. Cause code: ${exception.code}, message: ${exception.message}`);
+                    }
+                } else {
+                    displayClass.onAvailableAreaChange(callback1);
+                    displayClass.onAvailableAreaChange(callback2);
+                    displayClass.offAvailableAreaChange(callback2);
+                }
+                windowClass!.maximize(window.MaximizePresentation.ENTER_IMMERSIVE);
+                windowClass!.setTitleAndDockHoverShown(false, false);
+                await Utils.msSleep(1000);
+                expect(count1).assertLarger(0);
+                expect(count2).assertEqual(0);
+                windowClass!.recover();
+                displayClass.offAvailableAreaChange();
+                done();
+            } else if (!isFreeWindowMode && isSupportRotate && isSyscapSessionManagerSupported) {
+                displayClass.onAvailableAreaChange(callback1);
+                displayClass.onAvailableAreaChange(callback2);
+                displayClass.offAvailableAreaChange(callback2);
+                await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+                await Utils.msSleep(1000);
+                await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
+                await Utils.msSleep(1000);
+                expect(count1).assertLarger(0);
+                expect(count2).assertEqual(0);
+                await Utils.msSleep(1000);
+                await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+                displayClass.offAvailableAreaChange();
+                done();
+            } else {
+                expect(count1).assertEqual(0);
+                expect(count2).assertEqual(0);
                 done()
             }
         }

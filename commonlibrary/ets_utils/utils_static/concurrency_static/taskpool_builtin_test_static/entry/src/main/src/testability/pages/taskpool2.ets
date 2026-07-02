@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 export function testUint8ArrayConstructor1() {
   let TAG = 'testUint8ArrayConstructor1'

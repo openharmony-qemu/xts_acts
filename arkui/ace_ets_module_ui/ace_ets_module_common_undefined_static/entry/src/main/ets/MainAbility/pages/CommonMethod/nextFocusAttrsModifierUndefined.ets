@@ -1,4 +1,4 @@
-'use static'
+'use static';
 import { Entry, Component, Column, Button, ColumnOptions, ClickEvent, AttributeModifier, ButtonAttribute, Row, FocusMovement, Optional, focusControl } from '@ohos.arkui.component';
 import { State, Observed } from '@ohos.arkui.stateManagement';
 @Observed

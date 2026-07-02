@@ -1,3 +1,4 @@
+'use static';
 import SparseArraySetTest from "./sparseArray/SparseArraySetTest.test";
 import SparseArrayGetTest from "./sparseArray/SparseArrayGetTest.test";
 import SparseArrayIteratorTest from "./sparseArray/SparseArrayIteratorTest.test";

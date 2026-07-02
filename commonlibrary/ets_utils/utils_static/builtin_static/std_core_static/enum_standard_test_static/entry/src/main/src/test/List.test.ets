@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 import baseEnumConstructorTest from "./enum/BaseEnumConstructorTest.test.ets";
 import baseEnumGetNameTest from "./enum/BaseEnumGetNameTest.test.ets";

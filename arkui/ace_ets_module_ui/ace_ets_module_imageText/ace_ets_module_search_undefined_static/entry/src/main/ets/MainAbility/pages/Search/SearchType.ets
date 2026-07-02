@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,6 @@
  * limitations under the License.
  */
 
-'use static'
 
 import { Entry, Text, Column, Component, Search, ColumnOptions, ClickEvent, Button, Color, SearchType } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'

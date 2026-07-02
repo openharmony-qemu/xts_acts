@@ -1,4 +1,4 @@
-'use static'
+'use static';
 import { Entry, Text, Column, Component, Button, ClickEvent, Flex, Row, HorizontalAlign, Font, TextClockController, TextClock, FlexDirection, FlexAlign, ItemAlign, Margin, DateTimeOptions, ShadowOptions, Color, FontWeight, FontStyle, UIContext, $rawfile, WrappedBuilder, Builder, TextClockConfiguration, ContentModifier, wrapBuilder, TimePicker, TimePickerFormat } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 @Entry
