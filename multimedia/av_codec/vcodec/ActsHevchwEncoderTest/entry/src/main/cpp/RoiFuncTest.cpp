@@ -19,6 +19,7 @@
 #include <multimedia/player_framework/native_averrors.h>
 #include <multimedia/player_framework/native_avcodec_base.h>
 #include <multimedia/player_framework/native_avcapability.h>
+#include <multimedia/player_framework/native_avcodec_videobase.h>
 #include "include/VideoencApi11Sample.h"
 #include "include/CommonToolTest.h"
 #include "include/RoiFuncTest.h"
@@ -559,7 +560,7 @@ int VIDEO_HW_ENCODE_ROI_API_021()
 
 int VIDEO_HW_ENCODE_ROI_API_022()
 {
-    int32_t roiCount = 0;
+    uint32_t roiCount = 0;
     OH_AVErrCode ret = OH_VideoMetadata_GetRoiCount(nullptr, &roiCount);
     EXPECT_NE(AV_ERR_OK, ret);
     return 0;
@@ -579,7 +580,7 @@ int VIDEO_HW_ENCODE_ROI_API_024()
 {
     uint32_t *roiCount = nullptr;
     int32_t capability = 6;
-    H_AVFormat **roiFormats = (OH_AVFormat **)calloc(capability, sizeof(OH_AVFormat *));
+    OH_AVFormat **roiFormats = (OH_AVFormat **)calloc(capability, sizeof(OH_AVFormat *));
     OH_AVErrCode ret = OH_VideoMetadata_ParseRoiString(nullptr, roiFormats, capability, roiCount);
     EXPECT_NE(AV_ERR_OK, ret);
     free(roiFormats);
@@ -590,7 +591,7 @@ int VIDEO_HW_ENCODE_ROI_API_025()
 {
     int32_t capability = 6;
     const char *roiString = "0,0-100,100=-8;100,100-200,200=dqp:-6,slb:1";
-    H_AVFormat **roiFormats = (OH_AVFormat **)calloc(capability, sizeof(OH_AVFormat *));
+    OH_AVFormat **roiFormats = (OH_AVFormat **)calloc(capability, sizeof(OH_AVFormat *));
     OH_AVErrCode ret = OH_VideoMetadata_ParseRoiString(roiString, roiFormats, capability, nullptr);
     EXPECT_NE(AV_ERR_OK, ret);
     free(roiFormats);
@@ -602,7 +603,7 @@ int VIDEO_HW_ENCODE_ROI_API_026()
     uint32_t *roiCount = nullptr;
     int32_t capability = 100;
     const char *roiString = "0,0-100,100=-8;100,100-200,200=dqp:-6,slb:1";
-    H_AVFormat **roiFormats = (OH_AVFormat **)calloc(capability, sizeof(OH_AVFormat *));
+    OH_AVFormat **roiFormats = (OH_AVFormat **)calloc(capability, sizeof(OH_AVFormat *));
     OH_AVErrCode ret = OH_VideoMetadata_ParseRoiString(roiString, roiFormats, capability, roiCount);
     EXPECT_NE(AV_ERR_OK, ret);
     free(roiFormats);
