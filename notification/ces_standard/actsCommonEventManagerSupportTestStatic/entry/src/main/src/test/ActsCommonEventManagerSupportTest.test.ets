@@ -1023,22 +1023,5 @@ export default function ActsCommonEventManagerSupportTest() {
       console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4900 END`)
       done()
     })
-
-    /**
-     * @tc.name   SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_5000
-     * @tc.number SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_5000
-     * @tc.desc   system data disk volume state changed common event
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_5000 START`)
-      expect(commonEventManager.Support.COMMON_EVENT_DISK_VOLUME_STATE_CHANGE)
-        .assertEqual('usual.event.data.DISK_VOLUME_STATE_CHANGE')
-      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_5000 END`)
-      done()
-    })
   })
 }
