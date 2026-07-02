@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -207,6 +208,51 @@ export default function abilityTest() {
             expect(AVCastPickerColorMode.LIGHT).assertEqual(AVCastPickerColorMode.fromValue(2));
             done();
         })
+        
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_DESCRIPTOR_TYPE_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_DESCRIPTOR_TYPE_STATIC_0100
+         * @tc.desc   compare all type in ConnectionState to number value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_DESCRIPTOR_TYPE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+            async (done: () => void): Promise<void> => {
+            avSession.onSessionCreate((descriptor: avSession.AVSessionDescriptor) => {
+              expect(descriptor.sessionId).not().assertNull();
+              expect(descriptor.type).not().assertNull();
+              expect(descriptor.sessionTag).not().assertNull();
+              expect(descriptor.elementName).not().assertNull();
+              expect(descriptor.isActive).not().assertNull();
+              expect(descriptor.isTopSession).not().assertNull();
+              expect(descriptor.outputDevice).not().assertNull();
+                done();
+            });
+            done();
+        });
 
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_EXTRAKEY_ENUM_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_EXTRAKEY_ENUM_STATIC_0100
+         * @tc.desc        compare all value in ExtraKey to number value
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
+        */
+        it('SUB_MULTIMEDIA_AVSESSION_EXTRAKEY_ENUM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 ,
+          async (done: () => void): Promise<void> => {
+            console.info(`TestLog: DLNA_DIDL_LITE is ${avSession.ExtraKey.DLNA_DIDL_LITE}`);
+            expect(avSession.ExtraKey.DLNA_DIDL_LITE).assertEqual('DIDL-Lite');
+            console.info(`TestLog: DLNA_CURRENT_URI_METADATA is ${avSession.ExtraKey.DLNA_CURRENT_URI_METADATA}`);
+            expect(avSession.ExtraKey.DLNA_CURRENT_URI_METADATA).assertEqual('CurrentURIMetadata');
+            console.info(`TestLog: SUPPORT_URL_CASTING is ${avSession.ExtraKey.SUPPORT_URL_CASTING}`);
+            expect(avSession.ExtraKey.SUPPORT_URL_CASTING).assertEqual('url-cast');
+            console.info(`TestLog: REQUIRE_ABILITY_LIST is ${avSession.ExtraKey.REQUIRE_ABILITY_LIST}`);
+            expect(avSession.ExtraKey.REQUIRE_ABILITY_LIST).assertEqual('requireAbilityList');
+            console.info(`TestLog: LIVE_VIEW_HIDDEN_WHEN_KEYGUARD is ${avSession.ExtraKey.LIVE_VIEW_HIDDEN_WHEN_KEYGUARD}`);
+            expect(avSession.ExtraKey.LIVE_VIEW_HIDDEN_WHEN_KEYGUARD).assertEqual('hw_live_view_hidden_when_keyguard');
+            done();
+        })
     })
 }

@@ -118,7 +118,7 @@ struct fillModeExample {
           console.info('Finish')
         })
       Row() {
-        Button('start').key('button').width(100).padding(5).onClick((e: ClickEvent) => {
+        Button('start').key('fillMode_button').width(100).padding(5).onClick((e: ClickEvent) => {
           this.state = AnimationStatus.Running
           this.fillMode = FillMode.Backwards
           try {
@@ -137,7 +137,7 @@ struct fillModeExample {
             console.info("button emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })
-        Button('pause').key('button1').width(100).padding(5).onClick((e: ClickEvent) => {
+        Button('pause').key('fillMode_button1').width(100).padding(5).onClick((e: ClickEvent) => {
           this.state = AnimationStatus.Paused
           this.fillMode = FillMode.Both
           try {
@@ -156,7 +156,7 @@ struct fillModeExample {
             console.info("button1 emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })
-        Button('stop').key('button2').width(100).padding(5).onClick((e: ClickEvent) => {
+        Button('stop').key('fillMode_button2').width(100).padding(5).onClick((e: ClickEvent) => {
           this.state = AnimationStatus.Stopped
           this.fillMode = FillMode.None
           try {
@@ -179,21 +179,21 @@ struct fillModeExample {
 
       Row() {
         Button('reverse')
-          .key('button3')
+          .key('fillMode_button3')
           .width(100)
           .padding(5)
           .onClick((e: ClickEvent) => {
             this.reverse = !this.reverse
           })
         Button('once')
-          .key('button4')
+          .key('fillMode_button4')
           .width(100)
           .padding(5)
           .onClick((e: ClickEvent) => {
             this.iterations = 1
           })
         Button('iteration')
-          .key('button5')
+          .key('fillMode_button5')
           .width(100)
           .padding(5)
           .onClick((e: ClickEvent) => {

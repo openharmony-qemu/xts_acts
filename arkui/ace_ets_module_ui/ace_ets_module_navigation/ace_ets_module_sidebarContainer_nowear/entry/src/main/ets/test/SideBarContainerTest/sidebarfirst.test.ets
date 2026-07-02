@@ -56,7 +56,7 @@ export default function sidebarIconsJsunit() {
     it('testsidebarIcons0011',  Level.LEVEL0, async (done: Function) => {
       console.info('sidebarIcons testsidebarIcons0011 START');
       await Utils.sleep(2000);
-      let strJson: string = getInspectorByKey('SideBarContainer');
+      let strJson: string = getInspectorByKey('sidebar2' + '_SideBarContainer');
       console.info("[testsidebarIcons0011] component controlButton strJson:" + strJson);
       expect(JSON.parse(strJson).$type).assertEqual('SideBarContainer');
       expect(JSON.parse(strJson).$attrs.controlButton.icons).assertEqual(undefined);

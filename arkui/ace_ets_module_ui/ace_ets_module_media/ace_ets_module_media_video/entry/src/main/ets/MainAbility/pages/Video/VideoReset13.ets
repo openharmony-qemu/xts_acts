@@ -49,27 +49,27 @@ struct VideoReset13 {
         })
 
       Row({space:2}) {
-        Text(this.text1).id('VideoReset13_text1')
-        Text(this.text2).id('VideoReset13_text2')
+        Text(this.text1).id('VideoReset13_text1').key('VideoReset13_text1')
+        Text(this.text2).id('VideoReset13_text2').key('VideoReset13_text2')
       }
 
       Row({space:2}) {
         Button('start').onClick(() => {
           this.controller.start()
         })
-          .id('VideoReset13_start')
+          .id('VideoReset13_start').key('VideoReset13_start')
 
         Button('reset').onClick(() => {
           this.controller.reset()
           console.log('testTag:' + 'reset' )
         })
-          .id('VideoReset13_reset')
+          .id('VideoReset13_reset').key('VideoReset13_reset')
 
         Button('pause').onClick(() => {
           this.controller.pause()
           console.log('testTag:' + 'pause' )
         })
-          .id('VideoReset13_pause')
+          .id('VideoReset13_pause').key('VideoReset13_pause')
       }
 
       Row({space:2}) {
@@ -77,7 +77,7 @@ struct VideoReset13 {
           .onClick(() => {
           this.autoPlayValue = !this.autoPlayValue
         })
-          .id('VideoReset13_autoPlay')
+          .id('VideoReset13_autoPlay').key('VideoReset13_autoPlay')
       }
 
     }.width('100%')

@@ -57,7 +57,7 @@ export default function UiTest() {
       const text2: Component = await driver.findComponent(ON.text('two'));
       const center1: Point = await text1.getBoundsCenter();
       const center2: Point = await text2.getBoundsCenter();
-      await driver.dragBetween(center1, center2)
+      await driver.dragBetweenWithOptions(center1, center2)
       await driver.delayMs(waitUiReadyMs)
       const text: Component | null = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
       expect(text).assertNull();
@@ -84,7 +84,7 @@ export default function UiTest() {
       const text2: Component = await driver.findComponent(ON.text('two'));
       const center1: Point = await text1.getBoundsCenter();
       const center2: Point = await text2.getBoundsCenter();
-      await driver.dragBetween(center1, center2, null)
+      await driver.dragBetweenWithOptions(center1, center2, null)
       await driver.delayMs(waitUiReadyMs)
       const text: Component | null = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
       expect(text).assertNull();
@@ -110,7 +110,7 @@ export default function UiTest() {
       const text2: Component = await driver.findComponent(ON.text('two'));
       const center1: Point = await text1.getBoundsCenter();
       const center2: Point = await text2.getBoundsCenter();
-      await driver.dragBetween(center1, center2, undefined)
+      await driver.dragBetweenWithOptions(center1, center2, undefined)
       await driver.delayMs(waitUiReadyMs)
       const text: Component | null = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
       expect(text).assertNull();
@@ -138,7 +138,7 @@ export default function UiTest() {
       const center1: Point = await text1.getBoundsCenter();
       const center2: Point = await text2.getBoundsCenter();
       const options: TouchOptions = {} as TouchOptions;
-      await driver.dragBetween(center1, center2, options)
+      await driver.dragBetweenWithOptions(center1, center2, options)
       await driver.delayMs(waitUiReadyMs)
       const text: Component | null = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
       expect(text).assertNull();
@@ -166,7 +166,7 @@ export default function UiTest() {
       const center1: Point = await text1.getBoundsCenter();
       const center2: Point = await text2.getBoundsCenter();
       const options: TouchOptions = { speed: 2000 };
-      await driver.dragBetween(center1, center2, options)
+      await driver.dragBetweenWithOptions(center1, center2, options)
       await driver.delayMs(waitUiReadyMs)
       const text: Component | null = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
       expect(text).assertNull();
@@ -194,7 +194,7 @@ export default function UiTest() {
       const center1: Point = await text1.getBoundsCenter();
       const center2: Point = await text2.getBoundsCenter();
       const options: TouchOptions = { duration: 2000 } as TouchOptions;
-      await driver.dragBetween(center1, center2, options)
+      await driver.dragBetweenWithOptions(center1, center2, options)
       await driver.delayMs(waitUiReadyMs)
       const text: Component | null = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
       expect(text).assertNull();
@@ -222,7 +222,7 @@ export default function UiTest() {
       const center1: Point = await text1.getBoundsCenter();
       const center2: Point = await text2.getBoundsCenter();
       const options: TouchOptions = { pressure: 0.5 };
-      await driver.dragBetween(center1, center2, options)
+      await driver.dragBetweenWithOptions(center1, center2, options)
       await driver.delayMs(waitUiReadyMs)
       const text: Component | null = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
       expect(text).assertNull();
@@ -250,7 +250,7 @@ export default function UiTest() {
       const center1: Point = await text1.getBoundsCenter();
       const center2: Point = await text2.getBoundsCenter();
       const options: TouchOptions = { speed: 2000, pressure: 0.8, duration: 3000 };
-      await driver.dragBetween(center1, center2, options)
+      await driver.dragBetweenWithOptions(center1, center2, options)
       await driver.delayMs(waitUiReadyMs)
       const text: Component | null = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
       expect(text).assertNull();
@@ -278,7 +278,7 @@ export default function UiTest() {
       const center1: Point = await text1.getBoundsCenter();
       const center2: Point = await text2.getBoundsCenter();
       const options: TouchOptions = { speed: 200 };
-      await driver.dragBetween(center1, center2, options);
+      await driver.dragBetweenWithOptions(center1, center2, options);
       await driver.delayMs(waitUiReadyMs)
       const text: Component | null = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
       expect(text).assertNull();
@@ -299,7 +299,7 @@ export default function UiTest() {
       try {
         const options: TouchOptions = { speed: 40000, duration: 3500 };
         // 速度太快未触发滑动。
-        let result = await driver.dragBetween({x: 100, y: 100}, {x: 100, y: 100}, options);
+        let result = await driver.dragBetweenWithOptions({x: 100, y: 100}, {x: 100, y: 100}, options);
         await driver.delayMs(waitUiReadyMs);
         expect(result).assertNull();
       } catch (error) {
@@ -329,7 +329,7 @@ export default function UiTest() {
       const center1: Point = await text1.getBoundsCenter();
       const center2: Point = await text2.getBoundsCenter();
       const options: TouchOptions = { duration: 1500 };
-      await driver.dragBetween(center1, center2, options);
+      await driver.dragBetweenWithOptions(center1, center2, options);
       await driver.delayMs(waitUiReadyMs)
       const text: Component | null = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
       expect(text).assertNull();
@@ -357,7 +357,7 @@ export default function UiTest() {
       const center1: Point = await text1.getBoundsCenter();
       const center2: Point = await text2.getBoundsCenter();
       const options: TouchOptions = { pressure: 0 };
-      await driver.dragBetween(center1, center2, options);
+      await driver.dragBetweenWithOptions(center1, center2, options);
       await driver.delayMs(waitUiReadyMs)
       const text: Component | null = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
       expect(text).assertNull();
@@ -385,7 +385,7 @@ export default function UiTest() {
       const center1: Point = await text1.getBoundsCenter();
       const center2: Point = await text2.getBoundsCenter();
       const options: TouchOptions = { pressure: 1 };
-      await driver.dragBetween(center1, center2, options);
+      await driver.dragBetweenWithOptions(center1, center2, options);
       await driver.delayMs(waitUiReadyMs)
       const text: Component | null = await driver.findComponent(ON.text('one').isBefore(ON.text('two')))
       expect(text).assertNull();
@@ -414,7 +414,7 @@ export default function UiTest() {
       let text2 = await driver.findComponent(ON.text('two'));
       let point1 = await text1.getBoundsCenter();
       let point2 = await text2.getBoundsCenter();
-      await driver.mouseDrag(point1, point2);
+      await driver.mouseDragWithOptions(point1, point2);
       await driver.delayMs(2000);
       let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')));
       expect(text).assertNull();
@@ -443,7 +443,7 @@ export default function UiTest() {
       let point1 = await text1.getBoundsCenter();
       let point2 = await text2.getBoundsCenter();
       const touchOptions: TouchOptions = { speed: 2000 };
-      await driver.mouseDrag(point1, point2, touchOptions);
+      await driver.mouseDragWithOptions(point1, point2, touchOptions);
       await driver.delayMs(2000);
       let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')));
       expect(text).assertNull();
@@ -472,7 +472,7 @@ export default function UiTest() {
       let point1 = await text1.getBoundsCenter();
       let point2 = await text2.getBoundsCenter();
       const touchOptions: TouchOptions = { duration: 2000 };
-      await driver.mouseDrag(point1, point2, touchOptions);
+      await driver.mouseDragWithOptions(point1, point2, touchOptions);
       await driver.delayMs(2000);
       let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')));
       expect(text).assertNull();
@@ -501,7 +501,7 @@ export default function UiTest() {
       let point1 = await text1.getBoundsCenter();
       let point2 = await text2.getBoundsCenter();
       const touchOptions: TouchOptions = { speed: 600 };
-      await driver.mouseDrag(point1, point2, touchOptions);
+      await driver.mouseDragWithOptions(point1, point2, touchOptions);
       await driver.delayMs(2000);
       let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')));
       expect(text).assertNull();
@@ -530,7 +530,7 @@ export default function UiTest() {
       let point1 = await text1.getBoundsCenter();
       let point2 = await text2.getBoundsCenter();
       const touchOptions: TouchOptions = { speed: 600, duration: 2500 };
-      await driver.mouseDrag(point1, point2, touchOptions);
+      await driver.mouseDragWithOptions(point1, point2, touchOptions);
       await driver.delayMs(2000);
       let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')));
       expect(text).assertNull();
@@ -560,7 +560,7 @@ export default function UiTest() {
       let point1 = await text1.getBoundsCenter();
       let point2 = await text2.getBoundsCenter();
       const keyOptions: KeyOptions = { key1: 0 };
-      await driver.mouseDrag(point1, point2, undefined, keyOptions);
+      await driver.mouseDragWithOptions(point1, point2, undefined, keyOptions);
       await driver.delayMs(2000);
       let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')));
       expect(text).assertNull();
@@ -589,7 +589,7 @@ export default function UiTest() {
       let point1 = await text1.getBoundsCenter();
       let point2 = await text2.getBoundsCenter();
       const keyOptions: KeyOptions = { key1: 0, key2: 0 };
-      await driver.mouseDrag(point1, point2, null, keyOptions);
+      await driver.mouseDragWithOptions(point1, point2, null, keyOptions);
       await driver.delayMs(2000);
       let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')));
       expect(text).assertNull();
@@ -619,7 +619,7 @@ export default function UiTest() {
       let point2 = await text2.getBoundsCenter();
       const touchOptions: TouchOptions = { speed: 600, duration: 2000};
       const keyOptions: KeyOptions = { key1: 0, key2: 0 };
-      await driver.mouseDrag(point1, point2, touchOptions, keyOptions);
+      await driver.mouseDragWithOptions(point1, point2, touchOptions, keyOptions);
       await driver.delayMs(2000);
       let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')));
       expect(text).assertNull();
@@ -647,7 +647,7 @@ export default function UiTest() {
       let text2 = await driver.findComponent(ON.text('two'));
       let point1 = await text1.getBoundsCenter();
       let point2 = await text2.getBoundsCenter();
-      await driver.mouseDrag(point1, point2, null, undefined);
+      await driver.mouseDragWithOptions(point1, point2, null, undefined);
       await driver.delayMs(2000);
       let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')));
       expect(text).assertNull();
@@ -675,7 +675,7 @@ export default function UiTest() {
       let text2 = await driver.findComponent(ON.text('two'));
       let point1 = await text1.getBoundsCenter();
       let point2 = await text2.getBoundsCenter();
-      await driver.mouseDrag(point1, point2, undefined, undefined);
+      await driver.mouseDragWithOptions(point1, point2, undefined, undefined);
       await driver.delayMs(2000);
       let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')));
       expect(text).assertNull();
@@ -704,7 +704,7 @@ export default function UiTest() {
       let point1 = await text1.getBoundsCenter();
       let point2 = await text2.getBoundsCenter();
       const touchOptions: TouchOptions = {};
-      await driver.mouseDrag(point1, point2, touchOptions);
+      await driver.mouseDragWithOptions(point1, point2, touchOptions);
       await driver.delayMs(2000);
       let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')));
       expect(text).assertNull();
@@ -733,7 +733,7 @@ export default function UiTest() {
       let point1 = await text1.getBoundsCenter();
       let point2 = await text2.getBoundsCenter();
       const keyOptions: KeyOptions = {};
-      await driver.mouseDrag(point1, point2, undefined, keyOptions);
+      await driver.mouseDragWithOptions(point1, point2, undefined, keyOptions);
       await driver.delayMs(2000);
       let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')));
       expect(text).assertNull();
@@ -762,7 +762,7 @@ export default function UiTest() {
       let point1 = await text1.getBoundsCenter();
       let point2 = await text2.getBoundsCenter();
       const touchOptions: TouchOptions = { speed: 2000 };
-      await driver.mouseDrag(point1, point2, touchOptions, null);
+      await driver.mouseDragWithOptions(point1, point2, touchOptions, null);
       await driver.delayMs(2000);
       let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')));
       expect(text).assertNull();
@@ -791,7 +791,7 @@ export default function UiTest() {
       let point1 = await text1.getBoundsCenter();
       let point2 = await text2.getBoundsCenter();
       const touchOptions: TouchOptions = { speed: 800 };
-      await driver.mouseDrag(point1, point2, touchOptions, undefined);
+      await driver.mouseDragWithOptions(point1, point2, touchOptions, undefined);
       await driver.delayMs(2000);
       let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')));
       expect(text).assertNull();
@@ -820,7 +820,7 @@ export default function UiTest() {
       let point1 = await text1.getBoundsCenter();
       let point2 = await text2.getBoundsCenter();
       const touchOptions: TouchOptions = { speed: 200 };
-      await driver.mouseDrag(point1, point2, touchOptions);
+      await driver.mouseDragWithOptions(point1, point2, touchOptions);
       await driver.delayMs(2000);
       let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')));
       expect(text).assertNull();
@@ -840,7 +840,7 @@ export default function UiTest() {
       try {
         const touchOptions: TouchOptions = { speed: 40000 };
         // 速度过快未触发滑动操作。
-        let result = await driver.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, touchOptions);
+        let result = await driver.mouseDragWithOptions({x: 100, y: 100}, {x: 100, y: 100}, touchOptions);
         await driver.delayMs(2000);
         expect(result).assertNull();
       } catch (error) {
@@ -872,7 +872,7 @@ export default function UiTest() {
       let point1 = await text1.getBoundsCenter();
       let point2 = await text2.getBoundsCenter();
       const touchOptions: TouchOptions = { duration: 1500 };
-      await driver.mouseDrag(point1, point2, touchOptions);
+      await driver.mouseDragWithOptions(point1, point2, touchOptions);
       await driver.delayMs(2000);
       let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')));
       expect(text).assertNull();
@@ -901,7 +901,7 @@ export default function UiTest() {
       let point1 = await text1.getBoundsCenter();
       let point2 = await text2.getBoundsCenter();
       const touchOptions: TouchOptions = { speed: 199 };
-      await driver.mouseDrag(point1, point2, touchOptions);
+      await driver.mouseDragWithOptions(point1, point2, touchOptions);
       await driver.delayMs(2000);
       let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')));
       expect(text).assertNull();
@@ -930,7 +930,7 @@ export default function UiTest() {
       let point1 = await text1.getBoundsCenter();
       let point2 = await text2.getBoundsCenter();
       const touchOptions: TouchOptions = { speed: 40001 };
-      await driver.mouseDrag(point1, point2, touchOptions);
+      await driver.mouseDragWithOptions(point1, point2, touchOptions);
       await driver.delayMs(2000);
       let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')));
       expect(text).assertNull();

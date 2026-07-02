@@ -78,15 +78,15 @@ export default function AlignContent_Center_FlexP_Fixed_Offset() {
      */
 it('testAlignContentCenterFlexPfixedOffset_static', Level.LEVEL0, async () => {
       console.info('testAlignContentCenterFlexPfixedOffset START');
-      let strJson = inspector.getInspectorByKey('AlignContent_Center_FlexP_Fixed_Offset_flex001');
+      let strJson = inspector.getInspectorByKey('AlignContent_Center_FlexP_Fixed_Offset' + '_flex001');
 
       console.info('flex [getInspectorByKey] is:' + JSON.stringify(JSON.parseJsonElement((strJson))));
       console.info('flex obj.$attrs.constructor is:' + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor')));
-      let AlignContentFlexCenter_flex001: RectValue = CommonFunc.getComponentRect('AlignContent_Center_FlexP_Fixed_Offset_flex001');
-      let AlignContentFlexCenter_1: RectValue = CommonFunc.getComponentRect('AlignContent_Center_FlexP_Fixed_Offset_1');
-      let AlignContentFlexCenter_2: RectValue = CommonFunc.getComponentRect('AlignContent_Center_FlexP_Fixed_Offset_2');
-      let AlignContentFlexCenter_3: RectValue = CommonFunc.getComponentRect('AlignContent_Center_FlexP_Fixed_Offset_3');
-      let AlignContentFlexCenter_4: RectValue = CommonFunc.getComponentRect('AlignContent_Center_FlexP_Fixed_Offset_4');
+      let AlignContentFlexCenter_flex001: RectValue = CommonFunc.getComponentRect('AlignContent_Center_FlexP_Fixed_Offset' + '_flex001');
+      let AlignContentFlexCenter_1: RectValue = CommonFunc.getComponentRect('AlignContent_Center_FlexP_Fixed_Offset' + '_1');
+      let AlignContentFlexCenter_2: RectValue = CommonFunc.getComponentRect('AlignContent_Center_FlexP_Fixed_Offset' + '_2');
+      let AlignContentFlexCenter_3: RectValue = CommonFunc.getComponentRect('AlignContent_Center_FlexP_Fixed_Offset' + '_3');
+      let AlignContentFlexCenter_4: RectValue = CommonFunc.getComponentRect('AlignContent_Center_FlexP_Fixed_Offset' + '_4');
 
       console.log('AlignContent_Center_FlexP_Fixed_Offset_flex001 rect_value is:' +
       JSON.stringify(AlignContentFlexCenter_flex001));

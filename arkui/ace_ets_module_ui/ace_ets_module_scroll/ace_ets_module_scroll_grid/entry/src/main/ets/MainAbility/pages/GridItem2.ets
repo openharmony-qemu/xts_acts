@@ -59,7 +59,7 @@ struct gridItem_testcasee {
             }.columnStart(1)
             .columnEnd(5)
             .forceRebuild(false)
-            .key('GridItem2')
+            .key('GridItem2_GridItem2')
           }
           .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
           .rowsTemplate('1fr 1fr 1fr 1fr 1fr')

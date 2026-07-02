@@ -35,11 +35,13 @@ struct ContainerSpanModifier1 {
         ContainerSpan() {
           ImageSpan($r('app.media.icon'))
             .id('ContainerSpanModifier_get_radius')
+            .key('ContainerSpanModifier_get_radius')
         }.attributeModifier(this.modifier)
       }.height('20%')
 
       TextArea({ text: this.value })
         .id('ContainerSpanModifier_get_type')
+        .key('ContainerSpanModifier_get_type')
         .height('10%')
     }
   }

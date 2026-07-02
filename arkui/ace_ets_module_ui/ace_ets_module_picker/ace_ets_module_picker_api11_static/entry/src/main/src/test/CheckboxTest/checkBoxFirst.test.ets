@@ -84,8 +84,8 @@ it('testcheckBoxGroup001_static', Level.LEVEL1, async (done: () => void): Promis
       console.info('checkBoxGroup testcheckBoxGroup001 START');
       await Utils.sleep(2000);
       try {
-        console.info("testcheckBoxGroup_0011 click result is: " + JSON.stringify(inspector.sendEventByKey('CheckboxGroup', 10, "")));
-        let strJson: string = inspector.getInspectorByKey('Checkbox2');
+        console.info("testcheckBoxGroup_0011 click result is: " + JSON.stringify(inspector.sendEventByKey('checkBox2' + '_CheckboxGroup', 10, "")));
+        let strJson: string = inspector.getInspectorByKey('checkBox2' + '_Checkbox2');
         console.info("[testcheckBoxGroup001] component select strJson:" + strJson);
         expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Checkbox');
         expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('select')).assertEqual("false");

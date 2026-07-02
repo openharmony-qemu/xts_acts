@@ -1577,6 +1577,22 @@ export default function AudioSuiteEngineTest() {
       expect(result).assertEqual(TEST_RESULT.TEST_PASS);
       done();
     })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOSUITENGINE_SETAUDIOFORMAT_0700
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOSUITENGINE_SETAUDIOFORMAT_0700
+     * @tc.desc        AudioSuiteEngine create test
+     * @tc.size        MEDIUM
+     * @tc.type        FUNCTION
+     * @tc.level       LEVEL 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSUITENGINE_SETAUDIOFORMAT_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      let result : number = audiosuiteenginetest.SUB_MULTIMEDIA_AUDIO_AUDIOSUITENGINE_SETAUDIOFORMAT_0700();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOSUITENGINE_SETAUDIOFORMAT_0700 : ${result}`);
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      done();
+    })
     
     /**
      * @tc.number      AudioSuiteEngine_DestroyNode_001

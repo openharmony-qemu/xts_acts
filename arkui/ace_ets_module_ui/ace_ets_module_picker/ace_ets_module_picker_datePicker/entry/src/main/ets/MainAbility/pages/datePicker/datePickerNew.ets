@@ -52,7 +52,7 @@ struct DatePickerLunar {
         end: new Date('2100-1-1'),
         selected: this.selectedDate,
       })
-        .key("DatePicker")
+        .key("datePickerNew_DatePicker")
         .lunar(true)
         .onChange((date: DatePickerResult) => {
           Log.showInfo(TAG, 'select current date is: ' + JSON.stringify(date))

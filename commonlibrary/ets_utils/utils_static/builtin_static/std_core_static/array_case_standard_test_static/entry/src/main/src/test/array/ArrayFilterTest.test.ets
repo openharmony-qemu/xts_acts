@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -273,7 +273,7 @@ export default function ArrayFilterTest(): void {
      * @tc.level Level 2
      */
     it('testArrayFilter013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(1, 5);
       const result1 = arr.filter((v: number): boolean => v > 3);
       expect(result1.length).assertEqual(1);
       expect(result1[0]).assertEqual(5);

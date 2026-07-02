@@ -27,7 +27,7 @@ struct geometryTransitionExample {
         .height(30)
         .backgroundColor(0x317aff)
         .margin({ bottom: 50 })
-        .key('button')
+        .key('geometryTransition2_button')
         .onClick(() => {
           try {
             let backData: events_emitter.EventData = {

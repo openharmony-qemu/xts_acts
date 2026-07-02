@@ -131,7 +131,7 @@ it('setWebControllerTest_static_003', Level.LEVEL0, async () => {
             try {
               emitKey = "emitHitTestValue";
               // Utils.registerContainEvent("HitTestValue", true, 1103);
-              inspector.sendEventByKey('web2', 10, '');
+              inspector.sendEventByKey('web_api_9_web2', 10, '');
             }catch(Error) {
                 expect().assertFail();
             }

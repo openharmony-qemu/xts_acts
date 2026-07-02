@@ -90,7 +90,7 @@ export default function imageSpanJsunit() {
 
       console.info('imageSpanTest_0003 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('imageSpan' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
 

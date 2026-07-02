@@ -441,7 +441,27 @@ static napi_value TestGetRenderNodeAt_005(napi_env env, napi_callback_info info)
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NodeChildMountPolicy",
         "TestGetRenderNodeAt_005 out of range ret=%{public}d", ret2);
     ASSERT_EQ(ret2, ARKUI_ERROR_CODE_PARAM_INVALID);
+
+    auto ret3 = OH_ArkUI_RenderNodeUtils_GetRenderNodeAt(custom, 10000000000, &retrievedChild);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NodeChildMountPolicy",
+        "TestGetRenderNodeAt_005 out of range ret3=%{public}d", ret3);
+    ASSERT_EQ(ret3, ARKUI_ERROR_CODE_PARAM_INVALID);
     
+    auto ret4 = OH_ArkUI_RenderNodeUtils_GetRenderNodeAt(custom, 10000000001, &retrievedChild);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NodeChildMountPolicy",
+        "TestGetRenderNodeAt_005 out of range ret4=%{public}d", ret4);
+    ASSERT_EQ(ret4, ARKUI_ERROR_CODE_PARAM_INVALID);
+
+    auto ret5 = OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(custom, child, 100000000);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NodeChildMountPolicy",
+        "TestGetRenderNodeAt_005 out of range ret5=%{public}d", ret5);
+    ASSERT_EQ(ret5, ARKUI_ERROR_CODE_PARAM_INVALID);
+    
+    auto ret6 = OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(custom, child, 100000001);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NodeChildMountPolicy",
+        "TestGetRenderNodeAt_005 out of range ret6=%{public}d", ret6);
+    ASSERT_EQ(ret6, ARKUI_ERROR_CODE_PARAM_INVALID);
+
     OH_ArkUI_RenderNodeUtils_DisposeNode(child);
     OH_ArkUI_RenderNodeUtils_DisposeNode(rsNodeRoot);
     NAPI_END;

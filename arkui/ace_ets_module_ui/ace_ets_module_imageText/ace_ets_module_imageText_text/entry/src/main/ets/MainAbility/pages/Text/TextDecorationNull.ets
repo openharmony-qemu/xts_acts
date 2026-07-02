@@ -29,17 +29,20 @@ struct TextDecoration {
       // 测试1: 默认值（未设置decoration）
       Text('Default decoration text content for testing default behavior when no decoration is set.')
         .id('text_decoration_default')
+        .key('text_decoration_default')
         .height('5%')
 
       // 测试2: null 参数
       Text('Decoration with null parameter text content for testing null behavior.')
         .id('text_decoration_null')
+        .key('text_decoration_null')
         .decoration(null)
         .height('5%')
 
       // 测试3: undefined 参数
       Text('Decoration with undefined parameter text content for testing undefined behavior.')
         .id('text_decoration_undefined')
+        .key('text_decoration_undefined')
         .decoration(undefined)
         .height('5%')
     }

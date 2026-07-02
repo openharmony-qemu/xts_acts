@@ -58,10 +58,10 @@ export default function rowNesting_alignItems() {
       console.info('[SUB_ACE_rowNesting_alignItems_TEST_0100] START');
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let rowNesting_alignItems_011: RectValue = CommonFunc.getComponentRect('rowNesting_alignItems_011');
-      let rowNesting_alignItems_012: RectValue = CommonFunc.getComponentRect('rowNesting_alignItems_012');
-      let rowNesting_alignItems_013: RectValue = CommonFunc.getComponentRect('rowNesting_alignItems_013');
-      let rowNesting_alignItems_01: RectValue = CommonFunc.getComponentRect('rowNesting_alignItems_01');
+      let rowNesting_alignItems_011: RectValue = CommonFunc.getComponentRect('rowNesting_alignItems' + '_011');
+      let rowNesting_alignItems_012: RectValue = CommonFunc.getComponentRect('rowNesting_alignItems' + '_012');
+      let rowNesting_alignItems_013: RectValue = CommonFunc.getComponentRect('rowNesting_alignItems' + '_013');
+      let rowNesting_alignItems_01: RectValue = CommonFunc.getComponentRect('rowNesting_alignItems' + '_01');
 
       console.log('assert position')
       expect(Math.abs((Math.round(rowNesting_alignItems_011.top - rowNesting_alignItems_01.top)) - (0)) <= 1)

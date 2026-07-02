@@ -17,10 +17,11 @@
 import { Entry, ComponentV2, $r, Column, Scroll, Text, FontWeight, Local, ColumnOptions } from '@kit.ArkUI';
 import {
   ComposeListItemV2,
-  ContentItemV2,
+  ContentItemV2, ContentItemV2Options,
   OperateItemV2,
   IconTypeV2
 } from '@ohos.arkui.advanced.ComposeListItemV2';
+import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
 
 @Entry
 @ComponentV2
@@ -35,12 +36,21 @@ struct ComposeListItemV2ContentExample {
     iconStyle: IconTypeV2.NORMAL_ICON,
     primaryText: 'Primary Text with Icon'
   });
-  @Local contentItem4: ContentItemV2 = new ContentItemV2({
+
+  @Local contentItem4Options:ContentItemV2Options = {
+    icon: $r('sys.media.ohos_ic_public_voice'),
+    symbolStyle: new SymbolGlyphModifier($r('sys.symbol.bell')),
+    iconStyle: IconTypeV2.NORMAL_ICON,
     primaryText: 'Primary Text',
-    description: 'Description Text'
-  });
+    description: 'Description Text',
+    secondaryText: 'Secondary Text',
+  }
+
+  @Local contentItem4: ContentItemV2 = new ContentItemV2(this.contentItem4Options);
+
   @Local contentItem5: ContentItemV2 = new ContentItemV2({
     icon: $r('sys.media.ohos_ic_public_voice'),
+    symbolStyle: new SymbolGlyphModifier($r('sys.symbol.bell')),
     iconStyle: IconTypeV2.NORMAL_ICON,
     primaryText: 'Full Content',
     secondaryText: 'Secondary',
@@ -59,7 +69,7 @@ struct ComposeListItemV2ContentExample {
           .fontWeight(FontWeight.Bold)
           .margin({ top: 10, bottom: 10 })
 
-        ComposeListItemV2({ contentItemV2: this.contentItem1 });
+        ComposeListItemV2({contentItemV2: this.contentItem1 });
 
         ComposeListItemV2({ contentItemV2: this.contentItem2 });
 

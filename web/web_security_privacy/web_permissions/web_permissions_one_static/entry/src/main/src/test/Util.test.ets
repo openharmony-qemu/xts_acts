@@ -1,4 +1,4 @@
-'use static'
+'use static';
 import events_emitter from '@ohos.events.emitter';
 import { expect } from "../../../hypium/index";
 import webview from '@ohos.web.webview';

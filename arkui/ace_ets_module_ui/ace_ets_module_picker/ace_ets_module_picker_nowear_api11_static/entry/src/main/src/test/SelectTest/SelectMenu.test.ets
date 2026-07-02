@@ -104,7 +104,7 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0200', Level.LEVEL1, async (done:
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_0200 start");
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('selectTest2');
+          let strJson = inspector.getInspectorByKey('SelectMenu' + '_selectTest2');
           let obj = JSON.parseJsonElement(strJson);
           console.info("[ArkUXII_Stage_Select_Menu_MenuAlign_static_0200]:" +
           JSON.stringify(obj.getElement('$attrs').getElement('menuAlign')));
@@ -131,7 +131,7 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0300', Level.LEVEL1, async (done:
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_0300 start");
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('selectTest3');
+          let strJson = inspector.getInspectorByKey('SelectMenu' + '_selectTest3');
           let obj = JSON.parseJsonElement(strJson);
           console.info("[ArkUXII_Stage_Select_Menu_MenuAlign_static_0300]:" +
           JSON.stringify(obj.getElement('$attrs').getElement('menuAlign')));

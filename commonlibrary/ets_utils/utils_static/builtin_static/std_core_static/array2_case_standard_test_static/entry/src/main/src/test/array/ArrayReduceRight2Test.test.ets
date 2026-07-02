@@ -1084,7 +1084,7 @@ export default function ArrayReduceRight2Test(): void {
     it('testArrayReduceRightTwo057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const groups = new Array<Array<string>>(
         new Array<string>('oh', 'xts'),
-        new Array<string>('ark'),
+        Array.create<string>(1, 'ark'),
         new Array<string>('ts', 'array')
       );
       const result = groups.reduceRight((acc: string, group: Array<string>, index: int): string => {
@@ -1103,7 +1103,7 @@ export default function ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayReduceRightTwo058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(9);
+      const arr = Array.create<number>(1, 9);
       let calls = 0;
       const result = arr.reduceRight((acc: number, cur: number): number => {
         calls++;

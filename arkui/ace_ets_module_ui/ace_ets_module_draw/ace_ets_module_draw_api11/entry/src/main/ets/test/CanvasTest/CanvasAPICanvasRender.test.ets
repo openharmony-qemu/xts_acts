@@ -51,7 +51,7 @@ export default function CanvasAPICanvasRenderTest() {
     it('ArkUI_Canvas_API_CanvasRender_0100', Level.LEVEL0, async (done: Function) => {
       let CASE: string = 'ArkUI_Canvas_API_CanvasRender_0100'
       console.info(`${SUITE} ${CASE} START`)
-      let strJson: string = getInspectorByKey('CanvasAPICanvasRender_Canvas1')
+      let strJson: string = getInspectorByKey('CanvasAPICanvasRender' + '_Canvas1')
       expect(JSON.parse(strJson).$type).assertEqual('Canvas')
       console.info(`${SUITE} ${CASE} END`)
       done()

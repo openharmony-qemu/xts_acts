@@ -1,13 +1,18 @@
 {
   "src": [
+    "MainAbility/pages/index/index",
     "MainAbility/pages/frameNode/frameNode",
     "MainAbility/pages/frameNode/frameNodeTestGetInterface",
     "MainAbility/pages/frameNode/nodeContainer",
-    "MainAbility/pages/index/index",
     "MainAbility/pages/frameNode/GetFrameNodeById",
     "MainAbility/pages/frameNode/GetFrameNodeByUniqueId",
     "MainAbility/pages/frameNode/createFrameNodesUIContextInt",
  	  "MainAbility/pages/frameNode/ComponentContentIsTransferred",
- 	  "MainAbility/pages/frameNode/ComponentContentIsDisposed"
+ 	  "MainAbility/pages/frameNode/ComponentContentIsDisposed",
+    "MainAbility/pages/frameNode/FrameNodeProvideChild",
+    "MainAbility/pages/LazyForEach/LazyForEachReusableMemOptStrategyStatic",
+    "MainAbility/pages/Repeat/RepeatReusableMemOptStrategyStatic",
+    "MainAbility/pages/frameNode/BuilderNodeAddBuilderProxyNode",
+    "MainAbility/pages/IfElse/IfElseExpression"
   ]
 }

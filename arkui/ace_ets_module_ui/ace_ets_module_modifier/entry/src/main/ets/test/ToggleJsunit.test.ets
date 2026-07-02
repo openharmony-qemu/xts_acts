@@ -101,7 +101,7 @@ export default function toggleJsunit() {
     it('ToggleJsunit003', Level.LEVEL0, async (done: Function) => {
       console.info('ToggleJsunit003 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('toggle' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
       let strJsonNew = getInspectorByKey('toggleCheckbox'); //测试组件的key名称

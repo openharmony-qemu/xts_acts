@@ -77,7 +77,7 @@ export default function List_aspectRatio_all() {
         name: 'aspectRatio1', value: '0'
       });
       await CommonFunc.sleep(1000);
-      let List01 = CommonFunc.getComponentRect('List_aspectRatio_all_01');
+      let List01 = CommonFunc.getComponentRect('List_aspectRatio_all' + '_01');
 
       expect(Math.abs(Math.round(List01.right - List01.left) - Math.round(vp2px(350))) <= 1).assertTrue();
       expect(Math.abs(Math.round(List01.bottom - List01.top) - Math.round(vp2px(700))) <= 1).assertTrue();
@@ -100,7 +100,7 @@ export default function List_aspectRatio_all() {
         name: 'aspectRatio1', value: '0.5'
       });
       await CommonFunc.sleep(1000);
-      let List01 = CommonFunc.getComponentRect('List_aspectRatio_all_01');
+      let List01 = CommonFunc.getComponentRect('List_aspectRatio_all' + '_01');
 
       expect(Math.abs(Math.round(List01.right - List01.left) - Math.round(vp2px(350))) <= 1).assertTrue();
       expect(Math.abs(Math.round(List01.bottom - List01.top) - Math.round(vp2px(700))) <= 1).assertTrue();
@@ -123,7 +123,7 @@ export default function List_aspectRatio_all() {
         name: 'aspectRatio1', value: '2'
       });
       await CommonFunc.sleep(1000);
-      let List01 = CommonFunc.getComponentRect('List_aspectRatio_all_01');
+      let List01 = CommonFunc.getComponentRect('List_aspectRatio_all' + '_01');
 
       expect(Math.abs(Math.round(List01.right - List01.left) - Math.round(vp2px(350))) <= 1).assertTrue();
       expect(Math.abs(Math.round(List01.bottom - List01.top) - Math.round(vp2px(175))) <= 1).assertTrue();
@@ -146,7 +146,7 @@ export default function List_aspectRatio_all() {
         name: 'aspectRatio1', value: '-1'
       });
       await CommonFunc.sleep(1000);
-      let List01 = CommonFunc.getComponentRect('List_aspectRatio_all_01');
+      let List01 = CommonFunc.getComponentRect('List_aspectRatio_all' + '_01');
 
       expect(Math.abs(Math.round(List01.right - List01.left) - Math.round(vp2px(350))) <= 1).assertTrue();
       expect(Math.abs(Math.round(List01.bottom - List01.top) - Math.round(vp2px(700))) <= 1).assertTrue();

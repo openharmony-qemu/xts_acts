@@ -137,6 +137,18 @@ export default function videoControllerAsyncStaticTest() {
       await CommonFunc.sleep(20000);
       let strJson9 = inspector.getInspectorByKey('videoControllerAsyncText');
 
+      let button10 = await driver.findComponent(ON.id('videoControllerAsyncSetTime1'));
+      await (button10?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+
+      let button11 = await driver.findComponent(ON.id('videoControllerAsyncSetTime2'));
+      await (button11?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+
+      let button12 = await driver.findComponent(ON.id('videoControllerAsyncSetTime3'));
+      await (button12?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('onPrepared');
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')).assertEqual('onStart');
       expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')).assertEqual('onUpdate');

@@ -59,9 +59,9 @@ export default function RelativeContainer_AnchorPoint_Offset() {
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let RelativeContainer_AnchorPoint_Offset_bt1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Offset_bt1');
-      let RelativeContainer_AnchorPoint_Offset_tx2: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Offset_tx2');
-      let RelativeContainer_AnchorPoint_Offset_r1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Offset_r1');
+      let RelativeContainer_AnchorPoint_Offset_bt1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Offset' + '_bt1');
+      let RelativeContainer_AnchorPoint_Offset_tx2: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Offset' + '_tx2');
+      let RelativeContainer_AnchorPoint_Offset_r1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Offset' + '_r1');
 
 
       console.log('assert position')

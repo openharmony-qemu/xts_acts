@@ -197,7 +197,7 @@ export default function waterFlowView() {
     it('waterFlowViewJsunit_1000', Level.LEVEL0, async (done: Function) => {
       console.info('waterFlowViewJsunit_1000 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('waterFlowView' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
       let strJsonNew = getInspectorByKey('WaterFlowKey1');

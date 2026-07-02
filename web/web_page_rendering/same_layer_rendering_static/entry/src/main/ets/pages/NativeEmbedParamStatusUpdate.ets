@@ -1,3 +1,4 @@
+'use static';
 import { NodeController, BuilderNode, NodeRenderType, FrameNode } from '@ohos.arkui.node';
 import { Color,NativeEmbedDataInfo,  Entry, Component, Column, Row, Button, ClickEvent, Web, $rawfile, NativeEmbedTouchInfo, NativeEmbedParamStatus, EmbedOptions, NativeEmbedParamItem, NativeEmbedParamDataInfo} from '@ohos.arkui.component'
 import webView from '@ohos.web.webview';

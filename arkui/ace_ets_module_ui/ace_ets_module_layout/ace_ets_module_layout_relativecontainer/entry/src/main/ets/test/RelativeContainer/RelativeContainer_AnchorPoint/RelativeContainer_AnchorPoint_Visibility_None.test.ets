@@ -61,11 +61,11 @@ export default function RelativeContainer_AnchorPoint_Visibility_None() {
       console.log('get Initial value')
 
       console.log('get RelativeContainer_AnchorPoint_Visibility_None_bt2 value')
-      let RelativeContainer_AnchorPoint_Visibility_None_bt2: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Visibility_None_bt2');
+      let RelativeContainer_AnchorPoint_Visibility_None_bt2: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Visibility_None' + '_bt2');
 
       console.log('get RelativeContainer_AnchorPoint_Visibility_None_tx2 value')
-      //      let RelativeContainer_AnchorPoint_Visibility_None_tx2:RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Visibility_None_tx2');
-      let RelativeContainer_AnchorPoint_Visibility_None_r1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Visibility_None_r1');
+      //      let RelativeContainer_AnchorPoint_Visibility_None_tx2:RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Visibility_None' + '_tx2');
+      let RelativeContainer_AnchorPoint_Visibility_None_r1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Visibility_None' + '_r1');
 
       console.log('assert position')
 

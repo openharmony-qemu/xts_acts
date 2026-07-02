@@ -88,7 +88,7 @@ export default function button3Jsunit() {
 it('testButton_static_01', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testButton_static_01] START');
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('button');
+      let strJson = inspector.getInspectorByKey('button3' + '_button');
       console.info("[testButton_static_01] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement("$type").asString()).assertEqual('Button');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString("type")).assertEqual('ButtonType.Normal');
@@ -105,7 +105,7 @@ it('testButton_static_01', Level.LEVEL1, async (done: () => void): Promise<void>
 it('testButton_static_02', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testButton_static_02] START');
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('button1');
+      let strJson = inspector.getInspectorByKey('button3' + '_button1');
       console.info("[testButton_static_02] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement("$type").asString()).assertEqual('Button');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString("type")).assertEqual('ButtonType.Normal');
@@ -122,7 +122,7 @@ it('testButton_static_02', Level.LEVEL1, async (done: () => void): Promise<void>
 it('testButton_static_03', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testButton_static_03] START');
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('button2');
+      let strJson = inspector.getInspectorByKey('button3' + '_button2');
       console.info("[testButton_static_03] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString("fontSize")).assertEqual('20.00px');
       done();
@@ -138,7 +138,7 @@ it('testButton_static_03', Level.LEVEL1, async (done: () => void): Promise<void>
 it('testButton_static_04', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testButton_static_04] START');
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('button3');
+      let strJson = inspector.getInspectorByKey('button3' + '_button3');
       console.info("[testButton_static_04] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString("borderColor")).assertEqual('#FF000000');
       done();
@@ -160,7 +160,7 @@ it('testButton_static_05', Level.LEVEL1, async (done: () => void): Promise<void>
         console.log("[testButton_static_05] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = inspector.getInspectorByKey('button');
+      let strJsonNew = inspector.getInspectorByKey('button3' + '_button');
 
       console.info("[testButton_static_05] component JSON.parseJsonElement(strJsonNew) is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString("type")).assertEqual('ButtonType.ROUNDED_RECTANGLE');
@@ -183,7 +183,7 @@ it('testButton_static_06', Level.LEVEL1, async (done: () => void): Promise<void>
         console.log("[testButton_static_06] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = inspector.getInspectorByKey('button2');
+      let strJsonNew = inspector.getInspectorByKey('button3' + '_button2');
 
       console.info("[testButton_static_05] component JSON.parseJsonElement(strJsonNew) is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString("fontSize")).assertEqual('30.00px');
@@ -206,7 +206,7 @@ it('testButton_static_07', Level.LEVEL1, async (done: () => void): Promise<void>
         console.log("[testButton_static_07] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = inspector.getInspectorByKey('button2');
+      let strJsonNew = inspector.getInspectorByKey('button3' + '_button2');
       const uiContext = AppStorage.get<UIContext>('uiContext')!;
       let resourceSize = uiContext.getHostContext()!.resourceManager.getDouble($r('sys.float.ohos_id_text_size_body1').id)
       console.info("[TextInputPageJsunit_0200] size: " + resourceSize);
@@ -231,7 +231,7 @@ it('testButton_static_08', Level.LEVEL1, async (done: () => void): Promise<void>
         console.log("[testButton_static_08] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = inspector.getInspectorByKey('button2');
+      let strJsonNew = inspector.getInspectorByKey('button3' + '_button2');
 
       console.info("[testButton_static_08] component JSON.parseJsonElement(strJsonNew) is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString("fontSize")).assertEqual('121212121.00px');
@@ -254,7 +254,7 @@ it('testButton_static_09', Level.LEVEL1, async (done: () => void): Promise<void>
         console.log("[testButton_static_09] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = inspector.getInspectorByKey('button2');
+      let strJsonNew = inspector.getInspectorByKey('button3' + '_button2');
 
       console.info("[testButton_static_09] component JSON.parseJsonElement(strJsonNew) is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString("fontSize")).assertEqual('121212121.00px');
@@ -277,7 +277,7 @@ it('testButton_static_10', Level.LEVEL1, async (done: () => void): Promise<void>
       }
       await CommonFunc.sleep(1000);
 
-      console.info("testButton_static_10 click result is: " + JSON.stringify(inspector.sendEventByKey('button3', 10, "")));
+      console.info("testButton_static_10 click result is: " + JSON.stringify(inspector.sendEventByKey('button3' + '_button3' + '_button3' + '_button3', 10, "")));
       await CommonFunc.sleep(1000);
       expect(AppStorage.get<Color>('fontColorValue')).assertEqual(Color.Pink)
       console.info('[testButton_static_10] END');
@@ -304,7 +304,7 @@ it('testButton_static_11', Level.LEVEL1, async (done: () => void): Promise<void>
         priority: events_emitter.EventPriority.LOW
       }
 
-      console.info("testButton_static_11 click result is: " + JSON.stringify(inspector.sendEventByKey('button2', 10, "")));
+      console.info("testButton_static_11 click result is: " + JSON.stringify(inspector.sendEventByKey('button3' + '_button3' + '_button3' + '_button3' + '_button2', 10, "")));
       await CommonFunc.sleep(1000);
       expect(AppStorage.get<number>('fontColorValue')).assertEqual(332)
       console.info('[testButton_static_11] END');
@@ -381,7 +381,7 @@ it('testButton_static_13', Level.LEVEL1, async (done: () => void): Promise<void>
         console.log("[testButton_static_13] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = inspector.getInspectorByKey('button');
+      let strJsonNew = inspector.getInspectorByKey('button3' + '_button');
 
       console.info("[testButton_static_13] component JSON.parseJsonElement(strJsonNew) is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)
         .getElement('$attrs')
@@ -407,7 +407,7 @@ it('testButton_static_14', Level.LEVEL1, async (done: () => void): Promise<void>
         console.log("[testButton_static_14] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = inspector.getInspectorByKey('button');
+      let strJsonNew = inspector.getInspectorByKey('button3' + '_button');
 
       console.info("[testButton_static_14] component JSON.parseJsonElement(strJsonNew) is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)
         .getElement('$attrs')
@@ -434,7 +434,7 @@ it('testButton_static_15', Level.LEVEL1, async (done: () => void): Promise<void>
       }
       await CommonFunc.sleep(500);
 
-      console.info("testButton_static_15 click result is: " + JSON.stringify(inspector.sendEventByKey('button4', 10, "")));
+      console.info("testButton_static_15 click result is: " + JSON.stringify(inspector.sendEventByKey('button3' + '_button3' + '_button3' + '_button4', 10, "")));
       await CommonFunc.sleep(500);
       expect(AppStorage.get<string>('fontColorValue')).assertEqual("ab996")
       done();

@@ -77,7 +77,7 @@ export default function ListItemGroup_aspectRatio_neither() {
         name: 'aspectRatio1', value: '0'
       });
       await CommonFunc.sleep(1000);
-      let ListItemGroup01 = CommonFunc.getComponentRect('ListItemGroup_aspectRatio_neither_01');
+      let ListItemGroup01 = CommonFunc.getComponentRect('ListItemGroup_aspectRatio_neither' + '_01');
 
       expect(Math.round(ListItemGroup01.right - ListItemGroup01.left)).assertEqual(Math.round(vp2px(300)));
       expect(Math.round(ListItemGroup01.bottom - ListItemGroup01.top)).assertEqual(Math.round(vp2px(420)));
@@ -100,7 +100,7 @@ export default function ListItemGroup_aspectRatio_neither() {
         name: 'aspectRatio1', value: '0.5'
       });
       await CommonFunc.sleep(1000);
-      let ListItemGroup01 = CommonFunc.getComponentRect('ListItemGroup_aspectRatio_neither_01');
+      let ListItemGroup01 = CommonFunc.getComponentRect('ListItemGroup_aspectRatio_neither' + '_01');
 
       expect(Math.round(ListItemGroup01.right - ListItemGroup01.left)).assertEqual(Math.round(vp2px(300)));
       expect(Math.round(ListItemGroup01.bottom - ListItemGroup01.top)).assertEqual(Math.round(vp2px(420)));
@@ -123,7 +123,7 @@ export default function ListItemGroup_aspectRatio_neither() {
         name: 'aspectRatio1', value: '2'
       });
       await CommonFunc.sleep(1000);
-      let ListItemGroup01 = CommonFunc.getComponentRect('ListItemGroup_aspectRatio_neither_01');
+      let ListItemGroup01 = CommonFunc.getComponentRect('ListItemGroup_aspectRatio_neither' + '_01');
 
       expect(Math.round(ListItemGroup01.right - ListItemGroup01.left)).assertEqual(Math.round(vp2px(300)));
       expect(Math.round(ListItemGroup01.bottom - ListItemGroup01.top)).assertEqual(Math.round(vp2px(420)));
@@ -146,7 +146,7 @@ export default function ListItemGroup_aspectRatio_neither() {
         name: 'aspectRatio1', value: '-1'
       });
       await CommonFunc.sleep(1000);
-      let ListItemGroup01 = CommonFunc.getComponentRect('ListItemGroup_aspectRatio_neither_01');
+      let ListItemGroup01 = CommonFunc.getComponentRect('ListItemGroup_aspectRatio_neither' + '_01');
 
       expect(Math.round(ListItemGroup01.right - ListItemGroup01.left)).assertEqual(Math.round(vp2px(300)));
       expect(Math.round(ListItemGroup01.bottom - ListItemGroup01.top)).assertEqual(Math.round(vp2px(420)));

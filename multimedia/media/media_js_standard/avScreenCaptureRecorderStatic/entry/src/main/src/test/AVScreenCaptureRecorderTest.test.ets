@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -913,6 +914,8 @@ export default function AVScreenCaptureRecorderTest() {
         // init
         mediaTestBase.INIT_EVENT,
         mediaTestBase.SETONCALLBACK_EVENT,
+        //setMicEnableFalse
+        mediaTestBase.SET_MIC_ENABLE_EVENT_FALSE,
         //setContentAutoRotation
         mediaTestBase.SET_CONTENT_AUTO_ROTATION,
         // start recorder
@@ -990,6 +993,56 @@ export default function AVScreenCaptureRecorderTest() {
       await mediaTestBase.toNextStep(mediaTestBase.avScreenCaptureRecorder, avConfig, 3000, mySteps, done)
 
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERE_SET_CONTENT_AUTO_ROTATION_static_0200 end')
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERE_SET_CONTENT_AUTO_ROTATION_static_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERE_SET_CONTENT_AUTO_ROTATION_static_0300
+     * @tc.desc   Close the automatic rotation function for screen recording
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERE_SET_CONTENT_AUTO_ROTATION_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERE_SET_CONTENT_AUTO_ROTATION_static_0300 start')
+
+      let mySteps = new Array<string>(
+        // create
+        mediaTestBase.CREATE_EVENT,
+        // init
+        mediaTestBase.INIT_EVENT,
+        mediaTestBase.SETONCALLBACK_EVENT,
+        //setMicEnableFalse
+        mediaTestBase.SET_MIC_ENABLE_EVENT_FALSE,
+        //setContentAutoRotationFalse
+        mediaTestBase.SET_CONTENT_AUTO_ROTATION_FALSE,
+        // start recorder
+        mediaTestBase.STARTRECORDER_EVENT,
+        // skip PrivacyMode
+        mediaTestBase.SKIPPRIVACYMODE_EVENT,
+        // stop recorder
+        mediaTestBase.STOPRECORDER_EVENT,
+        //release recorder
+        //close fd
+        mediaTestBase.RELEASECORDER_EVENT,
+        mediaTestBase.END_EVENT);
+
+      mediaTestBase.outputName = mediaTestBase.resourceName();
+      mediaTestBase.outputFdObject = mediaTestBase.getFd(mediaTestBase.outputName);
+      let avConfig: media.AVScreenCaptureRecordConfig = {
+        fd: mediaTestBase.outputFdObject.fd,
+        frameWidth: 640,
+        frameHeight: 480,
+        videoBitrate: 10000000,
+        audioSampleRate: 48000,
+        audioChannelCount: 1,
+        audioBitrate: 96000,
+        preset: media.AVScreenCaptureRecordPreset.SCREEN_RECORD_PRESET_H264_AAC_MP4,
+      }
+      expect(mediaTestBase.avScreenCaptureRecorder).assertNull();
+      await mediaTestBase.toNextStep(mediaTestBase.avScreenCaptureRecorder, avConfig, 3000, mySteps, done)
+
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERE_SET_CONTENT_AUTO_ROTATION_static_0300 end')
     })
   })
 }

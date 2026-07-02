@@ -90,7 +90,7 @@ struct rowSplit_testcase {
       .key('rowSplit1')
       .resizeable(true)
     }
-    .key('flex')
+    .key('RowSplit_flex')
     .width('100%')
     .height('100%')
   }

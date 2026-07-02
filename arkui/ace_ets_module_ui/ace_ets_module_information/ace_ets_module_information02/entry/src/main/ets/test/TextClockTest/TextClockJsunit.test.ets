@@ -55,7 +55,7 @@ export default function TextClockJsunit() {
     it('textClockTest01', Level.LEVEL2, async (done: Function) => {
       console.info('textClockTest01 START');
       await CommonFunc.sleep(1000);
-      let strJson: string = getInspectorByKey('textClock');
+      let strJson: string = getInspectorByKey('TextClockJsunit' + '_textClock');
       console.info("textClockTest01 component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$attrs.fontSize).assertEqual('30.00fp');
       await CommonFunc.sleep(1000);
@@ -88,7 +88,7 @@ export default function TextClockJsunit() {
         console.log("[textClockTest02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJsonNew = getInspectorByKey('textClock');
+      let strJsonNew = getInspectorByKey('TextClockJsunit' + '_textClock');
       console.info("[textClockTest02] component objNew is: " + JSON.stringify(JSON.parse(strJsonNew)));
       expect(JSON.parse(strJsonNew).$attrs.fontSize).assertEqual('30.00fp');
       done();
@@ -104,7 +104,7 @@ export default function TextClockJsunit() {
     it('textClockTest03', Level.LEVEL2, async (done: Function) => {
       console.info('[textClockTest03] START');
       await CommonFunc.sleep(2000);
-      let strJson: string = getInspectorByKey('textClock');
+      let strJson: string = getInspectorByKey('TextClockJsunit' + '_textClock');
       console.info("[textClockTest03] component strJson:" + strJson);
 
       console.info("[textClockTest03] fontColor:" + JSON.parse(strJson).$attrs.fontColor);
@@ -137,7 +137,7 @@ export default function TextClockJsunit() {
         console.log("[textClockTest04] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJson: string = getInspectorByKey('textClock');
+      let strJson: string = getInspectorByKey('TextClockJsunit' + '_textClock');
       console.info("[textClockTest04] component strJson:" + strJson);
 
       console.info("[textClockTest04] fontColor:" + JSON.parse(strJson).$attrs.fontColor);
@@ -155,7 +155,7 @@ export default function TextClockJsunit() {
     it('textClockTest05', Level.LEVEL2, async (done: Function) => {
       console.info('[textClockTest05] START');
       await CommonFunc.sleep(1000);
-      let strJson: string = getInspectorByKey('textClock');
+      let strJson: string = getInspectorByKey('TextClockJsunit' + '_textClock');
 
       console.info("[textClockTest05] JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$attrs.format).assertEqual('hhmmss');
@@ -188,7 +188,7 @@ export default function TextClockJsunit() {
         console.log("[textClockTest06] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
-      let strJson: string = getInspectorByKey('textClock');
+      let strJson: string = getInspectorByKey('TextClockJsunit' + '_textClock');
 
       console.info("[textClockTest06] JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$attrs.format).assertEqual('20');

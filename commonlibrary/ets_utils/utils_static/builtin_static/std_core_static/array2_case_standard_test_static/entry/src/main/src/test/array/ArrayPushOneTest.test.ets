@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -376,7 +376,7 @@ export default function ArrayPushOneTest(): void {
      * @tc.level Level 2
      */
     it('testArrayPushOne018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(100);
+      let arr = Array.create<number>(1, 100);
       let result = arr.pushOne(200);
       expect(result).assertEqual(2);
       expect(arr[1]).assertEqual(200);
@@ -953,7 +953,7 @@ export default function ArrayPushOneTest(): void {
      * @tc.level Level 2
      */
     it('testArrayPushOne052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(2);
+      const arr = Array.create<number>(1, 2);
       const result = arr.pushOne(1);
       expect(result).assertEqual(2);
       expect(arr[1]).assertEqual(1);

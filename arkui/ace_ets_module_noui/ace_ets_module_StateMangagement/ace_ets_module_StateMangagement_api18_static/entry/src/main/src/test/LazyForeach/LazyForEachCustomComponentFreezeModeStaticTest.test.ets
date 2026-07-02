@@ -36,7 +36,7 @@ let flexGrow = 3;
 let compareFlexGrow = 1;
 const uiContext = new UIContext();
  
-export default function LazyForEachCustomComponentFreezeModeStaticTest() {
+export default function LazyForEachCustomComponentFreezeModeStaticTest(): void {
   describe('LazyForEachCustomComponentFreezeModeStaticTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("LazyForEachCustomComponentFreezeModeStaticTest beforeEach start");

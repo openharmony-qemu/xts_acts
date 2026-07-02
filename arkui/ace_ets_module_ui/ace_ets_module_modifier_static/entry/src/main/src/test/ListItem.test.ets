@@ -106,7 +106,7 @@ it('testList_itemStatic00052', Level.LEVEL0, async (done: () => void): Promise<v
 it('testList_itemStatic00053', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testList_itemStatic00053 START');
       let driver = Driver.create();
-      let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button =  await (driver.findComponent(ON.id('listItem' + '_changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
 

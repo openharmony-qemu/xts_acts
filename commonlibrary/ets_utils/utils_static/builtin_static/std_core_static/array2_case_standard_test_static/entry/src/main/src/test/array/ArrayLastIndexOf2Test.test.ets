@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -331,7 +331,7 @@ export default function ArrayLastIndexOf2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayLastIndexOfTwo019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(42);
+      let arr = Array.create<number>(1, 42);
       expect(arr.lastIndexOf(42)).assertEqual(0);
     });
 
@@ -344,7 +344,7 @@ export default function ArrayLastIndexOf2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayLastIndexOfTwo020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<string>('only');
+      let arr = Array.create<string>(1, 'only');
       expect(arr.lastIndexOf('other')).assertEqual(-1);
     });
 
@@ -357,8 +357,8 @@ export default function ArrayLastIndexOf2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayLastIndexOfTwo021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr1 = new Array<number | null>(null);
-      let arr2 = new Array<number>(0);
+      let arr1 = Array.create<number | null>(1, null);
+      let arr2 = Array.create<number>(1, 0);
       expect(arr1.lastIndexOf(null)).assertEqual(0);
       expect(arr2.lastIndexOf(0)).assertEqual(0);
     });
@@ -416,7 +416,7 @@ export default function ArrayLastIndexOf2Test(): void {
      */
     it('testArrayLastIndexOfTwo025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let item = new Item003();
-      let arr = new Array<Item003>(item);
+      let arr = Array.create<Item003>(1, item);
       let other = new Item003();
       expect(arr.lastIndexOf(item)).assertEqual(0);
       expect(arr.lastIndexOf(other)).assertEqual(-1);
@@ -808,7 +808,7 @@ export default function ArrayLastIndexOf2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayLastIndexOfTwo053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(77);
+      const arr = Array.create<number>(1, 77);
       const result = arr.lastIndexOf(77);
       expect(result).assertEqual(0);
     });
@@ -822,7 +822,7 @@ export default function ArrayLastIndexOf2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayLastIndexOfTwo054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(77);
+      const arr = Array.create<number>(1, 77);
       const result = arr.lastIndexOf(78);
       expect(result).assertEqual(-1);
     });
@@ -1107,7 +1107,7 @@ export default function ArrayLastIndexOf2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayLastIndexOfTwo073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number | undefined>(undefined);
+      const arr = Array.create<number | undefined>(1, undefined);
       const result = arr.lastIndexOf(undefined);
       expect(result).assertEqual(0);
     });

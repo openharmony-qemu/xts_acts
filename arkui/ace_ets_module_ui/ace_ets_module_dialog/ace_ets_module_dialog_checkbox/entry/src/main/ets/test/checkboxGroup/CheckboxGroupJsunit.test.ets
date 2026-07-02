@@ -54,7 +54,7 @@ export default function checkboxGroupJsunit() {
     it('testCheckboxGroup_100', Level.LEVEL1, async (done: Function) => {
       console.info('[testCheckboxGroup_100] START');
       await Utils.sleep(1000);
-      let strJson: string = getInspectorByKey('CheckboxGroup');
+      let strJson: string = getInspectorByKey('checkboxGroup' + '_CheckboxGroup');
       console.info("testCheckboxGroup_100 component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$attrs.opacity).assertEqual(1);
       console.info('testCheckboxGroup_100 END');
@@ -72,7 +72,7 @@ export default function checkboxGroupJsunit() {
     it('testCheckboxGroup_200', Level.LEVEL1, async (done: Function) => {
       console.info('[testCheckboxGroup_200] START');
       await Utils.sleep(1000);
-      let strJson: string = getInspectorByKey('CheckboxGroup');
+      let strJson: string = getInspectorByKey('checkboxGroup' + '_CheckboxGroup');
       console.info("testCheckboxGroup_200 component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$attrs.alignSelf).assertEqual("ItemAlign.Auto");
       console.info('testCheckboxGroup_200 END');
@@ -90,7 +90,7 @@ export default function checkboxGroupJsunit() {
     it('testCheckboxGroup_300', Level.LEVEL1, async (done: Function) => {
       console.info('[testCheckboxGroup_300] START');
       await Utils.sleep(1000);
-      let strJson: string = getInspectorByKey('CheckboxGroup');
+      let strJson: string = getInspectorByKey('checkboxGroup' + '_CheckboxGroup');
       console.info("testCheckboxGroup_300 component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$attrs.scrollable).assertEqual(false);
       console.info('testCheckboxGroup_300 END');
@@ -108,7 +108,7 @@ export default function checkboxGroupJsunit() {
     it('testCheckboxGroup_400', Level.LEVEL1, async (done: Function) => {
       console.info('[testCheckboxGroup_400] START');
       await Utils.sleep(1000);
-      let strJson: string = getInspectorByKey('CheckboxGroup');
+      let strJson: string = getInspectorByKey('checkboxGroup' + '_CheckboxGroup');
       console.info("testCheckboxGroup_400 component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$attrs.borderRadius instanceof Object).assertTrue();
       console.info('testCheckboxGroup_400 END');
@@ -126,7 +126,7 @@ export default function checkboxGroupJsunit() {
     it('testCheckboxGroup_500', Level.LEVEL1, async (done: Function) => {
       console.info('[testCheckboxGroup_500] START');
       await Utils.sleep(1000);
-      let strJson: string = getInspectorByKey('CheckboxGroup');
+      let strJson: string = getInspectorByKey('checkboxGroup' + '_CheckboxGroup');
       console.info("testCheckboxGroup_500 component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$attrs.flexBasis).assertEqual("auto");
       console.info('testCheckboxGroup_500 END');
@@ -144,7 +144,7 @@ export default function checkboxGroupJsunit() {
     it('testCheckboxGroup_600', Level.LEVEL1, async (done: Function) => {
       console.info('[testCheckboxGroup_600] START');
       await Utils.sleep(1000);
-      let strJson: string = getInspectorByKey('CheckboxGroup');
+      let strJson: string = getInspectorByKey('checkboxGroup' + '_CheckboxGroup');
       console.info("testCheckboxGroup_600 component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$attrs.borderStyle).assertEqual("BorderStyle.Solid");
       console.info('testCheckboxGroup_600 END');

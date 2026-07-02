@@ -58,7 +58,7 @@ struct TextAreaOnCut {
         .onCut(() :void=> {
           console.log('onCut method is triggered');
         })
-        .key("onCutText")
+        .key("textArea6_onCutText")
 
       TextArea({ placeholder: "textArea-OnPaste" })
         .width(100)
@@ -73,7 +73,7 @@ struct TextAreaOnCut {
         .onPaste(() :void=> {
           console.log("onPaste method is  triggered")
         })
-        .key("onPasteText")
+        .key("textArea6_onPasteText")
 
       TextArea({ placeholder: "textArea-CopyOption" })
         .width(100)

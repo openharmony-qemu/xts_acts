@@ -1,6 +1,7 @@
 'use static';
+
 /**
- * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,7 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Button, Text, Row, Color, $r, Margin, ColumnOptions, Flex, Scroll, Padding, Position, Builder, Image, FlexDirection, ItemAlign, FlexAlign, Alignment, TextAlign, TextOverflow, FrameNode, NodeContainer, DragPreviewMode, ClickEvent } from '@ohos.arkui.component';
+
+import { Entry, Column, Component, Button, Text, Row, Color, $r, Margin, ColumnOptions, Flex,
+  Scroll, Padding, Position, Builder, Image, FlexDirection, ItemAlign, FlexAlign,
+  Alignment, TextAlign, TextOverflow, NodeContainer, DragPreviewMode, ClickEvent } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
 import { RenderNode, FrameNode, NodeController } from '@ohos.arkui.node';

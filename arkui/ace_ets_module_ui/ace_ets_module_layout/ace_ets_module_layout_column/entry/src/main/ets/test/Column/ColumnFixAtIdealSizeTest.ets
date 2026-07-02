@@ -58,12 +58,12 @@ export default function ColumnFixAtIdealSizeTest() {
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
-      let strJson = getInspectorByKey('ColumnFixAtIdealSizePage_Column');
+      let strJson = getInspectorByKey('ColumnFixAtIdealSizePage' + '_Column');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ColumnFixAtIdealSizeTest_0100] obj.$attrs.width is: " + obj.$attrs.width);
       console.info("[ColumnFixAtIdealSizeTest_0100] obj.$attrs.height is: " + obj.$attrs.height);
 
-      let column: RectValue = CommonFunc.getComponentRect('ColumnFixAtIdealSizePage_Column');
+      let column: RectValue = CommonFunc.getComponentRect('ColumnFixAtIdealSizePage' + '_Column');
       let column_width = column.right - column.left;
       let column_height = column.bottom - column.top;
       console.info("[ColumnFixAtIdealSizeTest_0100] column_width is: " + column_width);
@@ -72,17 +72,17 @@ export default function ColumnFixAtIdealSizeTest() {
       expect(Math.floor(Math.abs(column_width - vp2px(50))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(column_height - vp2px(50))) <= 1).assertTrue();
 
-      let button = await driver.findComponent(ON.id('ColumnFixAtIdealSizePage_Btn'));
+      let button = await driver.findComponent(ON.id('ColumnFixAtIdealSizePage' + '_Btn'));
       await button.click();
       console.info("[ColumnFixAtIdealSizeTest_0100] change width=160，height=120");
       await Utils.sleep(1000)
 
-      strJson = getInspectorByKey('ColumnFixAtIdealSizePage_Column');
+      strJson = getInspectorByKey('ColumnFixAtIdealSizePage' + '_Column');
       obj = JSON.parse(strJson);
       console.info("[ColumnFixAtIdealSizeTest_0100] obj.$attrs.width is: " + obj.$attrs.width);
       console.info("[ColumnFixAtIdealSizeTest_0100] obj.$attrs.height is: " + obj.$attrs.height);
 
-      column = CommonFunc.getComponentRect('ColumnFixAtIdealSizePage_Column');
+      column = CommonFunc.getComponentRect('ColumnFixAtIdealSizePage' + '_Column');
       column_width = column.right - column.left;
       column_height = column.bottom - column.top;
       console.info("[ColumnFixAtIdealSizeTest_0100] column_width is: " + column_width);

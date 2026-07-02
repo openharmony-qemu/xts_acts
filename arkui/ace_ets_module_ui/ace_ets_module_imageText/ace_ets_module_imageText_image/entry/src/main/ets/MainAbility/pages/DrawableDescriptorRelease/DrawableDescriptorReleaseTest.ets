@@ -19,6 +19,11 @@ import {
   PixelMapDrawableDescriptor,
   LayeredDrawableDescriptor
 } from '@kit.ArkUI';
+import {
+  hasDrawableReleaseApi,
+  isDrawableReleased,
+  releaseDrawable
+} from '../../common/DrawableReleaseCompat';
 
 @Entry
 @Component
@@ -38,155 +43,159 @@ struct DrawableDescriptorReleaseTest {
   @State testResult012: string = '';
 
   build() {
-    Scroll() {
-      Column({ space: 10 }) {
-        Text('DrawableDescriptor release/isReleased')
-          .fontSize(14)
-          .fontWeight(FontWeight.Bold)
-          .fontColor(0x333333)
+    Column({ space: 0 }) {
+      Text('DrawableDescriptor release/isReleased (API 26+)')
+        .fontSize(12)
+        .fontWeight(FontWeight.Bold)
+        .width('100%')
+        .height('4%')
 
-        this.BuildSectionTitle('1. DrawableDescriptor 测试')
-
-        Row() {
-          Button('release→isReleased')
-            .id('btnTest001')
-            .height('5%')
-            .onClick(() => this.Test001())
-          Text(this.testResult001)
-            .id('txtTestResult001')
-            .fontSize(10)
-        }
-
-        Row() {
-          Button('release→getPixelMap')
-            .id('btnTest002')
-            .height('5%')
-            .onClick(() => this.Test002())
-          Text(this.testResult002)
-            .id('txtTestResult002')
-            .fontSize(10)
-        }
-
-        Row() {
-          Button('double release')
-            .id('btnTest003')
-            .height('5%')
-            .onClick(() => this.Test003())
-          Text(this.testResult003)
-            .id('txtTestResult003')
-            .fontSize(10)
-        }
-
-        this.BuildSectionTitle('2. LayeredDrawableDescriptor 测试')
-
-        Row() {
-          Button('release→getForeground')
-            .id('btnTest004')
-            .height('5%')
-            .onClick(() => this.Test004())
-          Text(this.testResult004)
-            .id('txtTestResult004')
-            .fontSize(10)
-        }
-
-        Row() {
-          Button('release→getBackground')
-            .id('btnTest005')
-            .height('5%')
-            .onClick(() => this.Test005())
-          Text(this.testResult005)
-            .id('txtTestResult005')
-            .fontSize(10)
-        }
-
-        Row() {
-          Button('release→getMask')
-            .id('btnTest006')
-            .height('5%')
-            .onClick(() => this.Test006())
-          Text(this.testResult006)
-            .id('txtTestResult006')
-            .fontSize(10)
-        }
-
-        this.BuildSectionTitle('3. PixelMapDrawableDescriptor 测试')
-
-        Row() {
-          Button('release→getPixelMap')
-            .id('btnTest007')
-            .height('5%')
-            .onClick(() => this.Test007())
-          Text(this.testResult007)
-            .id('txtTestResult007')
-            .fontSize(10)
-        }
-
-        this.BuildSectionTitle('4. AnimatedDrawableDescriptor 测试')
-
-        Row() {
-          Button('release→getPixelMap')
-            .id('btnTest008')
-            .height('5%')
-            .onClick(() => this.Test008())
-          Text(this.testResult008)
-            .id('txtTestResult008')
-            .fontSize(10)
-        }
-
-        Row() {
-          Button('release→getController')
-            .id('btnTest009')
-            .height('5%')
-            .onClick(() => this.Test009())
-          Text(this.testResult009)
-            .id('txtTestResult009')
-            .fontSize(10)
-        }
-
-        Row() {
-          Button('release→loadSync')
-            .id('btnTest010')
-            .height('5%')
-            .onClick(() => this.Test010())
-          Text(this.testResult010)
-            .id('txtTestResult010')
-            .fontSize(10)
-        }
-
-        Row() {
-          Button('release→load')
-            .id('btnTest011')
-            .height('5%')
-            .onClick(async () => await this.Test011())
-          Text(this.testResult011)
-            .id('txtTestResult011')
-            .fontSize(10)
-        }
-
-        Row() {
-          Button('double release')
-            .id('btnTest012')
-            .height('5%')
-            .onClick(() => this.Test012())
-          Text(this.testResult012)
-            .id('txtTestResult012')
-            .fontSize(10)
-        }
+      Column({ space: 2 }) {
+        this.BuildAllTestRows()
       }
-      .width('80%')
+      .width('100%')
+      .height('96%')
     }
     .width('100%')
     .height('100%')
+    .padding({ left: 6, right: 6, top: 4, bottom: 4 })
     .backgroundColor(0xF5F5F5)
   }
 
   @Builder
-  BuildSectionTitle(title: string) {
-    Text(title)
-      .fontSize(12)
-      .fontWeight(FontWeight.Medium)
-      .fontColor(Color.Black)
-      .width('100%')
+  BuildAllTestRows() {
+  this.BuildTestRow001()
+  this.BuildTestRow002()
+  this.BuildTestRow003()
+  this.BuildTestRow004()
+  this.BuildTestRow005()
+  this.BuildTestRow006()
+  this.BuildTestRow007()
+  this.BuildTestRow008()
+  this.BuildTestRow009()
+  this.BuildTestRow010()
+  this.BuildTestRow011()
+  this.BuildTestRow012()
+  }
+
+  @Builder
+  BuildTestRow001() {
+    Column({ space: 1 }) {
+      Button('E2E_001').id('btnTest001').width('100%').height('55%')
+        .constraintSize({ minHeight: 28 }).fontSize(11).onClick((): void => { this.Test001(); })
+      Text(this.testResult001).id('txtTestResult001').key('txtTestResult001').width('100%').height('45%')
+        .fontSize(9).maxLines(1).textOverflow({ overflow: TextOverflow.Ellipsis })
+    }.width('100%').height('7.5%')
+  }
+
+  @Builder
+  BuildTestRow002() {
+    Column({ space: 1 }) {
+      Button('E2E_002').id('btnTest002').width('100%').height('55%')
+        .constraintSize({ minHeight: 28 }).fontSize(11).onClick((): void => { this.Test002(); })
+      Text(this.testResult002).id('txtTestResult002').key('txtTestResult002').width('100%').height('45%')
+        .fontSize(9).maxLines(1).textOverflow({ overflow: TextOverflow.Ellipsis })
+    }.width('100%').height('7.5%')
+  }
+
+  @Builder
+  BuildTestRow003() {
+    Column({ space: 1 }) {
+      Button('E2E_003').id('btnTest003').width('100%').height('55%')
+        .constraintSize({ minHeight: 28 }).fontSize(11).onClick((): void => { this.Test003(); })
+      Text(this.testResult003).id('txtTestResult003').key('txtTestResult003').width('100%').height('45%')
+        .fontSize(9).maxLines(1).textOverflow({ overflow: TextOverflow.Ellipsis })
+    }.width('100%').height('7.5%')
+  }
+
+  @Builder
+  BuildTestRow004() {
+    Column({ space: 1 }) {
+      Button('E2E_004').id('btnTest004').width('100%').height('55%')
+        .constraintSize({ minHeight: 28 }).fontSize(11).onClick((): void => { this.Test004(); })
+      Text(this.testResult004).id('txtTestResult004').key('txtTestResult004').width('100%').height('45%')
+        .fontSize(9).maxLines(1).textOverflow({ overflow: TextOverflow.Ellipsis })
+    }.width('100%').height('7.5%')
+  }
+
+  @Builder
+  BuildTestRow005() {
+    Column({ space: 1 }) {
+      Button('E2E_005').id('btnTest005').width('100%').height('55%')
+        .constraintSize({ minHeight: 28 }).fontSize(11).onClick((): void => { this.Test005(); })
+      Text(this.testResult005).id('txtTestResult005').key('txtTestResult005').width('100%').height('45%')
+        .fontSize(9).maxLines(1).textOverflow({ overflow: TextOverflow.Ellipsis })
+    }.width('100%').height('7.5%')
+  }
+
+  @Builder
+  BuildTestRow006() {
+    Column({ space: 1 }) {
+      Button('E2E_006').id('btnTest006').width('100%').height('55%')
+        .constraintSize({ minHeight: 28 }).fontSize(11).onClick((): void => { this.Test006(); })
+      Text(this.testResult006).id('txtTestResult006').key('txtTestResult006').width('100%').height('45%')
+        .fontSize(9).maxLines(1).textOverflow({ overflow: TextOverflow.Ellipsis })
+    }.width('100%').height('7.5%')
+  }
+
+  @Builder
+  BuildTestRow007() {
+    Column({ space: 1 }) {
+      Button('E2E_007').id('btnTest007').width('100%').height('55%')
+        .constraintSize({ minHeight: 28 }).fontSize(11).onClick((): void => { this.Test007(); })
+      Text(this.testResult007).id('txtTestResult007').key('txtTestResult007').width('100%').height('45%')
+        .fontSize(9).maxLines(1).textOverflow({ overflow: TextOverflow.Ellipsis })
+    }.width('100%').height('7.5%')
+  }
+
+  @Builder
+  BuildTestRow008() {
+    Column({ space: 1 }) {
+      Button('E2E_008').id('btnTest008').width('100%').height('55%')
+        .constraintSize({ minHeight: 28 }).fontSize(11).onClick((): void => { this.Test008(); })
+      Text(this.testResult008).id('txtTestResult008').key('txtTestResult008').width('100%').height('45%')
+        .fontSize(9).maxLines(1).textOverflow({ overflow: TextOverflow.Ellipsis })
+    }.width('100%').height('7.5%')
+  }
+
+  @Builder
+  BuildTestRow009() {
+    Column({ space: 1 }) {
+      Button('E2E_009').id('btnTest009').width('100%').height('55%')
+        .constraintSize({ minHeight: 28 }).fontSize(11).onClick((): void => { this.Test009(); })
+      Text(this.testResult009).id('txtTestResult009').key('txtTestResult009').width('100%').height('45%')
+        .fontSize(9).maxLines(1).textOverflow({ overflow: TextOverflow.Ellipsis })
+    }.width('100%').height('7.5%')
+  }
+
+  @Builder
+  BuildTestRow010() {
+    Column({ space: 1 }) {
+      Button('E2E_010').id('btnTest010').width('100%').height('55%')
+        .constraintSize({ minHeight: 28 }).fontSize(11).onClick((): void => { this.Test010(); })
+      Text(this.testResult010).id('txtTestResult010').key('txtTestResult010').width('100%').height('45%')
+        .fontSize(9).maxLines(1).textOverflow({ overflow: TextOverflow.Ellipsis })
+    }.width('100%').height('7.5%')
+  }
+
+  @Builder
+  BuildTestRow011() {
+    Column({ space: 1 }) {
+      Button('E2E_011').id('btnTest011').width('100%').height('55%')
+        .constraintSize({ minHeight: 28 }).fontSize(11).onClick((): void => { this.Test011(); })
+      Text(this.testResult011).id('txtTestResult011').key('txtTestResult011').width('100%').height('45%')
+        .fontSize(9).maxLines(1).textOverflow({ overflow: TextOverflow.Ellipsis })
+    }.width('100%').height('7.5%')
+  }
+
+  @Builder
+  BuildTestRow012() {
+    Column({ space: 1 }) {
+      Button('E2E_012').id('btnTest012').width('100%').height('55%')
+        .constraintSize({ minHeight: 28 }).fontSize(11).onClick((): void => { this.Test012(); })
+      Text(this.testResult012).id('txtTestResult012').key('txtTestResult012').width('100%').height('45%')
+        .fontSize(9).maxLines(1).textOverflow({ overflow: TextOverflow.Ellipsis })
+    }.width('100%').height('7.5%')
   }
 
   private getErrorCode(e: Object): number {
@@ -227,9 +236,13 @@ struct DrawableDescriptorReleaseTest {
         this.testResult001 = 'FAIL: 无法创建 DrawableDescriptor';
         return;
       }
-      let beforeRelease = drawable.isReleased();
-      drawable.release();
-      let afterRelease = drawable.isReleased();
+      if (!hasDrawableReleaseApi(drawable as ESObject)) {
+        this.testResult001 = 'FAIL: DrawableDescriptor 未提供 release/isReleased API';
+        return;
+      }
+      let beforeRelease = isDrawableReleased(drawable as ESObject);
+      releaseDrawable(drawable as ESObject);
+      let afterRelease = isDrawableReleased(drawable as ESObject);
       if (!beforeRelease && afterRelease) {
         this.testResult001 = 'PASS';
       } else {
@@ -248,7 +261,7 @@ struct DrawableDescriptorReleaseTest {
         this.testResult002 = 'FAIL: 无法创建 DrawableDescriptor';
         return;
       }
-      drawable.release();
+      releaseDrawable(drawable as ESObject);
       try {
         drawable.getPixelMap();
         this.testResult002 = 'FAIL: 预期抛出 111002 但未抛出';
@@ -273,9 +286,9 @@ struct DrawableDescriptorReleaseTest {
         this.testResult003 = 'FAIL: 无法创建 DrawableDescriptor';
         return;
       }
-      drawable.release();
-      drawable.release();
-      if (drawable.isReleased()) {
+      releaseDrawable(drawable as ESObject);
+      releaseDrawable(drawable as ESObject);
+      if (isDrawableReleased(drawable as ESObject)) {
         this.testResult003 = 'PASS';
       } else {
         this.testResult003 = 'FAIL: 第二次 release 后 isReleased 为 false';
@@ -289,7 +302,7 @@ struct DrawableDescriptorReleaseTest {
     const id = 'E2E_004';
     try {
       let drawable = new LayeredDrawableDescriptor();
-      drawable.release();
+      releaseDrawable(drawable as ESObject);
       try {
         drawable.getForeground();
         this.testResult004 = 'FAIL: 预期抛出 111002 但未抛出';
@@ -310,7 +323,7 @@ struct DrawableDescriptorReleaseTest {
     const id = 'E2E_005';
     try {
       let drawable = new LayeredDrawableDescriptor();
-      drawable.release();
+      releaseDrawable(drawable as ESObject);
       try {
         drawable.getBackground();
         this.testResult005 = 'FAIL: 预期抛出 111002 但未抛出';
@@ -331,7 +344,7 @@ struct DrawableDescriptorReleaseTest {
     const id = 'E2E_006';
     try {
       let drawable = new LayeredDrawableDescriptor();
-      drawable.release();
+      releaseDrawable(drawable as ESObject);
       try {
         drawable.getMask();
         this.testResult006 = 'FAIL: 预期抛出 111002 但未抛出';
@@ -352,7 +365,7 @@ struct DrawableDescriptorReleaseTest {
     const id = 'E2E_007';
     try {
       let drawable = new PixelMapDrawableDescriptor();
-      drawable.release();
+      releaseDrawable(drawable as ESObject);
       try {
         drawable.getPixelMap();
         this.testResult007 = 'FAIL: 预期抛出 111002 但未抛出';
@@ -373,7 +386,7 @@ struct DrawableDescriptorReleaseTest {
     const id = 'E2E_008';
     try {
       let drawable = this.createAnimatedDrawable();
-      drawable.release();
+      releaseDrawable(drawable as ESObject);
       try {
         drawable.getPixelMap();
         this.testResult008 = 'FAIL: 预期抛出 111002 但未抛出';
@@ -394,7 +407,7 @@ struct DrawableDescriptorReleaseTest {
     const id = 'E2E_009';
     try {
       let drawable = this.createAnimatedDrawable();
-      drawable.release();
+      releaseDrawable(drawable as ESObject);
       try {
         let controller = drawable.getAnimationController();
         if (controller === undefined) {
@@ -414,7 +427,7 @@ struct DrawableDescriptorReleaseTest {
     const id = 'E2E_010';
     try {
       let drawable = this.createAnimatedDrawable();
-      drawable.release();
+      releaseDrawable(drawable as ESObject);
       try {
         drawable.loadSync();
         this.testResult010 = 'FAIL: 预期抛出 111002 但未抛出';
@@ -435,7 +448,7 @@ struct DrawableDescriptorReleaseTest {
     const id = 'E2E_011';
     try {
       let drawable = this.createAnimatedDrawable();
-      drawable.release();
+      releaseDrawable(drawable as ESObject);
       try {
         await drawable.load();
         this.testResult011 = 'FAIL: 预期抛出 111002 但未抛出';
@@ -456,9 +469,9 @@ struct DrawableDescriptorReleaseTest {
     const id = 'E2E_012';
     try {
       let drawable = this.createAnimatedDrawable();
-      drawable.release();
-      drawable.release();
-      if (drawable.isReleased()) {
+      releaseDrawable(drawable as ESObject);
+      releaseDrawable(drawable as ESObject);
+      if (isDrawableReleased(drawable as ESObject)) {
         this.testResult012 = 'PASS';
       } else {
         this.testResult012 = 'FAIL: 第二次 release 后 isReleased 为 false';

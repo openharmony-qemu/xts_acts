@@ -1,3 +1,4 @@
+'use static';
 import arrayBufferAtTest from "./arrayBuffer/ArrayBufferAtTest.test";
 import arrayBufferAtomicTest from "./arrayBuffer/ArrayBufferAtomicTest.test";
 import arrayBufferBytesLengthTest from "./arrayBuffer/ArrayBufferBytesLengthTest.test";

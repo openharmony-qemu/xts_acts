@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -159,7 +159,7 @@ export default function ArrayReduce1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayReduceOne006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(100);
+      let arr = Array.create<number>(1, 100);
       let callbackCount = 0;
       let result = arr.reduce((acc: number, v: number): number => {
         callbackCount++;
@@ -424,7 +424,7 @@ export default function ArrayReduce1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayReduceOne023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(99);
+      const arr = Array.create<number>(1, 99);
       let calls = 0;
       const result = arr.reduce((acc: number, value: number): number => {
         calls++;
@@ -787,7 +787,7 @@ export default function ArrayReduce1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayReduceOne040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const shortArray = new Array<number>(1);
+      const shortArray = Array.create<number>(1, 1);
       const longArray = new Array<number>(1, 2, 3);
       const medium = new Array<number>(1, 2);
       const arr = new Array<Array<number>>(shortArray, longArray, medium);
@@ -984,7 +984,7 @@ export default function ArrayReduce1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayReduceOne052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<bigint>(9n);
+      const arr = Array.create<bigint>(1, 9n);
       let count = 0;
       const result = arr.reduce((acc: bigint, value: bigint): bigint => {
         count++;
@@ -1102,7 +1102,7 @@ export default function ArrayReduce1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayReduceOne058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<string>('solo');
+      const arr = Array.create<string>(1, 'solo');
       let calls = 0;
       const result = arr.reduce((acc: string, value: string): string => {
         calls++;
@@ -1121,7 +1121,7 @@ export default function ArrayReduce1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayReduceOne059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(7);
+      const arr = Array.create<number>(1, 7);
       let indexes = new Array<int>();
       const result = arr.reduce((acc: number, value: number, index: int): number => {
         indexes.pushOne(index);
@@ -1278,7 +1278,7 @@ export default function ArrayReduce1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayReduceOne066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<Array<number>>(new Array<number>(1), new Array<number>(2, 3), new Array<number>());
+      const arr = new Array<Array<number>>(Array.create<number>(1, 1), new Array<number>(2, 3), new Array<number>());
       const result = arr.reduce((acc: number, value: Array<number>): number => {
         return acc + value.length;
       }, 0);
@@ -1475,7 +1475,7 @@ export default function ArrayReduce1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayReduceOne078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(9);
+      const arr = Array.create<number>(1, 9);
       let calls = 0;
       const result = arr.reduce((acc: number, cur: number): number => {
         calls++;

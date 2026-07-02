@@ -68,7 +68,7 @@ struct CounterV2Api {
             }
           }
         }
-      }).key('CounterV2Api2').focusable(false)
+      }).key('CounterV2Api2')
         .height('28%')
 
       CounterV2Component({
@@ -77,11 +77,10 @@ struct CounterV2Api {
           dateOptions: {
             year: 2016,
             onDateChange: () => {
-
-            }
-          }
-        }
-      }).focusable(false)
+            },
+          },
+        },
+      }).key('CounterV2Api3')
         .height('28%')
 
     }

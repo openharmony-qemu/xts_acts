@@ -41,7 +41,7 @@ struct Badge3Example {
           .height(100)
           .backgroundColor(Color.White)
           .fontSize(20)
-      }.width(100).height(50).key('badge')
+      }.width(100).height(50).key('badge3_badge')
 
       Badge({
         value: this.message,
@@ -55,7 +55,7 @@ struct Badge3Example {
           .borderRadius(10)
           .textAlign(TextAlign.Center)
           .backgroundColor(Color.White)
-      }.width(80).height(50).key('badge2')
+      }.width(80).height(50).key('badge3_badge2')
 
       Badge({
         value: '',

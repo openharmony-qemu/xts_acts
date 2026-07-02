@@ -27,6 +27,7 @@ struct SpaceCross5AlignItems {
           Text('3').width('50%').height(50).backgroundColor(0xD2B48C)
         }
         .id("SpaceCross5AlignItems_1")
+        .key('SpaceCross5AlignItems_1')
         .width('90%')
         .padding(10)
         .backgroundColor(0xAFEEEE)
@@ -38,6 +39,7 @@ struct SpaceCross5AlignItems {
           Text('3').width('50%').height(50).backgroundColor(0xD2B48C)
         }
         .id("SpaceCross5AlignItems_Start")
+        .key('SpaceCross5AlignItems_Start')
         .width('90%')
         .padding(10)
         .backgroundColor(0xAFEEEE)
@@ -49,6 +51,7 @@ struct SpaceCross5AlignItems {
           Text('3').width('50%').height(50).backgroundColor(0xD2B48C)
         }
         .id("SpaceCross5AlignItems_Center")
+        .key('SpaceCross5AlignItems_Center')
         .width('90%')
         .padding(10)
         .backgroundColor(0xAFEEEE)
@@ -60,6 +63,7 @@ struct SpaceCross5AlignItems {
           Text('3').width('50%').height(50).backgroundColor(0xD2B48C)
         }
         .id("SpaceCross5AlignItems_End")
+        .key('SpaceCross5AlignItems_End')
         .width('90%')
         .padding(10)
         .backgroundColor(0xAFEEEE)
@@ -71,6 +75,7 @@ struct SpaceCross5AlignItems {
           Text('3').width('50%').height(50).backgroundColor(0xD2B48C)
         }
         .id("SpaceCross5AlignItems_Stretch")
+        .key('SpaceCross5AlignItems_Stretch')
         .width('90%')
         .padding(10)
         .backgroundColor(0xAFEEEE)
@@ -82,6 +87,7 @@ struct SpaceCross5AlignItems {
           Text('3').width('50%').height(50).backgroundColor(0xD2B48C)
         }
         .id("SpaceCross5AlignItems_Baseline")
+        .key('SpaceCross5AlignItems_Baseline')
         .width('90%')
         .padding(10)
         .backgroundColor(0xAFEEEE)
@@ -93,6 +99,7 @@ struct SpaceCross5AlignItems {
           Text('3').width('50%').height(50).backgroundColor(0xD2B48C).margin(5)
         }
         .id("SpaceCross5AlignItems_main5")
+        .key('SpaceCross5AlignItems_main5')
         .width('90%')
         .padding(10)
         .backgroundColor(0xAFEEEE)

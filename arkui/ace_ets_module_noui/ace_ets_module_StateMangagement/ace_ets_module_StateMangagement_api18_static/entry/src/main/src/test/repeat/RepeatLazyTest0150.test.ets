@@ -31,7 +31,7 @@ let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-export default function RepeatLazyTest0150() {
+export default function RepeatLazyTest0150(): void {
   describe('RepeatLazyTest0150', () => {
     beforeAll(async (): Promise<void> => {
 

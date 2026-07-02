@@ -25,7 +25,7 @@ import {UtilsTest,startAbility} from '../Util.test';
 import hilog from '@ohos.hilog'
 
 
-export default function reuseV2ComponentLifecycleTest() {
+export default function reuseV2ComponentLifecycleTest(): void {
   describe('reuseV2ComponentLifecycleTest', () => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api18.static", "EntryAbility");

@@ -102,6 +102,8 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("TestOHMetadataObjectExtGetRollAngle", TestOHMetadataObjectExtGetRollAngle),
     DESCRIPTOR("TestOHMetadataObjectExtGetTimestamp", TestOHMetadataObjectExtGetTimestamp),
     DESCRIPTOR("TestOHMetadataObjectExtGetYawAngle", TestOHMetadataObjectExtGetYawAngle),
+    DESCRIPTOR("TestOHMetadataObjectExtDestroy", TestOHMetadataObjectExtDestroy),
+    DESCRIPTOR("TestOHMetadataObjectExtIsLockFocusTracked", TestOHMetadataObjectExtIsLockFocusTracked),
 };
 
 EXTERN_C_START 

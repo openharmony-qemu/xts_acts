@@ -27,14 +27,16 @@ import { UtilsTest } from '../Util.test';
 
 const SLEEP_TIME = 1000;
 
-export default function ShowToastOptionsTest() {
+export default function ShowToastOptionsTest(): void {
   describe('ShowToastOptionsTest', () => {
-    beforeAll(async (): Promise<void> => {
+    beforeAll(async () => {
+
       console.info("ShowToastOptionsTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.popup.static", "EntryAbility");
     });
 
-    beforeEach(async (): Promise<void> => {
+    beforeEach(async () => {
+
       console.info("ShowToastOptionsTest beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/dialogSystemMaterial/ShowToastOptionsTestPage',
@@ -68,12 +70,13 @@ export default function ShowToastOptionsTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ShowToastOptionsTest_Message_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ShowToastOptionsTest_Message_0100', Level.LEVEL0, async () => {
+
       console.info('ShowToastOptionsTest_Message_0100 START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('btn_system_material'));
-      await (button?.click() as Promise<void>);
+      await ((await driver.findComponent(ON.id('PLACEHOLDER'))) as Component).click();
       await CommonFunc.sleep(1000);
 
       let tt1 = inspector.getInspectorByKey('title_text');
@@ -85,7 +88,6 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(500);
       console.info('ShowToastOptionsTest_Message_0100 Menu title is visible');
       console.info('ShowToastOptionsTest_Message_0100 END');
-      done();
     });
   });
 }

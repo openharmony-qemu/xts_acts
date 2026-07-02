@@ -292,7 +292,7 @@ it('ArkUI_Tabs_BarMode_static_0200', Level.LEVEL0, async (done: () => void): Pro
 it('ArkUI_Tabs_static_0011', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUI_Tabs_static_0011 START');
       let driver = Driver.create();
-      let button = await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button = await (driver.findComponent(ON.id('tabsFirst' + '_changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
 

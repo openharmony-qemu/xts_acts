@@ -96,7 +96,7 @@ struct ListPositionLanes {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key('onScrollBeginText')
+        .key('listTest_onScrollBeginText')
 
       Stack({ alignContent: Alignment.TopStart }) {
         Scroll(this.scroller) {

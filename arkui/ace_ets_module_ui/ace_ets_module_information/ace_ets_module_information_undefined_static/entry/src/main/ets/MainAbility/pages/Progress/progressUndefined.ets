@@ -1,4 +1,4 @@
-'use static'
+'use static';
 import { Button, Color, Column, ColumnOptions, Component, Entry, Progress, Row, Text, ClickEvent, Path, ProgressConfiguration, WrappedBuilder, Builder, ProgressStyleOptions, ContentModifier, wrapBuilder, Flex, FlexOptions, FlexAlign, Margin, ProgressType } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';

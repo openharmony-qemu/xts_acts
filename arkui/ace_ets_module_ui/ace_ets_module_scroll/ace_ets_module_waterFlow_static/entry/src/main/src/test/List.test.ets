@@ -1,4 +1,4 @@
-﻿'use static';
+'use static';
 import WaterFlowAttributeTest from './WaterFlowTest/WaterFlowAttribute.test';
 import WaterFlowFuncTest from './WaterFlowAttributeTest/WaterFlowFunc.test';
 

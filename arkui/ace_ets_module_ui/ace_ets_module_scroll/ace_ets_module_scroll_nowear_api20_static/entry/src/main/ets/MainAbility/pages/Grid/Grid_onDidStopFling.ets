@@ -1,4 +1,4 @@
-'use static'
+'use static';
 import {
   TabContentAnimatedTransition,
   ListScroller,
@@ -173,7 +173,7 @@ struct GridOnDidStopFlingDemo {
       Text(this.statusText)
         .fontSize(16)
         .fontColor(Color.Blue)
-        .key('onDidStopFling')
+        .key('Grid_onDidStopFling_onDidStopFling')
 
       Text(`Fling回调触发次数: ${this.flingTriggerCount}`)
         .fontSize(14)
@@ -200,7 +200,7 @@ struct GridOnDidStopFlingDemo {
       .width('100%')
       .height(400)
       .backgroundColor(0xF5F5F5)
-      .key('grid_dragging_fling')
+      .key('Grid_onDidStopFling_grid_dragging_fling')
 
       // 操作区域
       Row() {

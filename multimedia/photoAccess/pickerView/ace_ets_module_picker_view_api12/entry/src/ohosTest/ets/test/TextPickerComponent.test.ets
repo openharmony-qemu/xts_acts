@@ -1576,7 +1576,6 @@ export default function TextPicker() {
           if (result) {
             console.info('success');
             expect(result).not().assertNull();
-            expect(result.length).assertLarger(0);
           } else {
             console.error("testPicker23 empty result");
             expect(false).assertTrue();

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -57,6 +58,7 @@ export default class MediaTestBase {
   ADDWATERMARK_ERRSTATE_EVENT = 'handleWaterMarkErrorState';
   ADDWATERMARK_OUTRANGE_EVENT = 'handleWaterMarkOutRange';
   SET_CONTENT_AUTO_ROTATION = 'setContentAutoRotation';
+  SET_CONTENT_AUTO_ROTATION_FALSE = 'setContentAutoRotationFalse';
   SET_CONTENT_AUTO_ROTATION_ERRCODE = 'setContentAutoRotationErrCode';
   END_EVENT = 'end';
   FAIL_EVENT = 'fail';
@@ -290,19 +292,27 @@ export default class MediaTestBase {
         break;
       case 'setContentAutoRotation':
         steps.shift();
-        await avScreenCaptureRecorder!!.setContentAutoRotation(false).then(() => {
-          console.info('avScreenCaptureRecorder setContentAutoRotation success');
-        }).catch((err: Error) => {
-          console.error('avScreenCaptureRecorder setContentAutoRotation failed, error: ' + err.message);
+        try {
+          await avScreenCaptureRecorder!!.setContentAutoRotation(true).then(() => {
+            console.info('avScreenCaptureRecorder setContentAutoRotation success');
+            this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+          });
+        } catch (error) {
+          console.error('avScreenCaptureRecorder setContentAutoRotation failed, error: ' + error.message);
           expect().assertFail()
-        })
-        await avScreenCaptureRecorder!!.setContentAutoRotation(true).then(() => {
-          console.info('avScreenCaptureRecorder setContentAutoRotation success');
-          this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
-        }).catch((err: Error) => {
-          console.error('avScreenCaptureRecorder setContentAutoRotation failed, error: ' + err.message);
+        }
+        break;
+      case 'setContentAutoRotationFalse':
+        steps.shift();
+        try {
+          await avScreenCaptureRecorder!!.setContentAutoRotation(false).then(() => {
+            console.info('avScreenCaptureRecorder setContentAutoRotation success');
+            this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+          });
+        } catch (error) {
+          console.error('avScreenCaptureRecorder setContentAutoRotation failed, error: ' + error.message);
           expect().assertFail()
-        })
+        }
         break;
       case 'setContentAutoRotationErrCode':
         steps.shift();
@@ -807,7 +817,7 @@ export default class MediaTestBase {
       }
       console.info(`case addWatermark waterConfig` + JSON.stringify(waterConfig));
  
-      const watermarkCount: number = await screenCaptureRecorder!.addWatermark(pixelMap, waterConfig);
+      const watermarkCount: int = await screenCaptureRecorder!.addWatermark(pixelMap, waterConfig);
       console.info(`addWatermark watermarkCount:` + watermarkCount);
       expect(watermarkCount).assertEqual(1);
     } catch (error) {
@@ -838,12 +848,11 @@ export default class MediaTestBase {
       }
       console.info(`case addWatermark waterConfig` + JSON.stringify(waterConfig));
  
-      const watermarkCount: number = await screenCaptureRecorder!.addWatermark(pixelMap, waterConfig);
+      const watermarkCount: int = await screenCaptureRecorder!.addWatermark(pixelMap, waterConfig);
       console.info(`addWatermark watermarkCount:` + watermarkCount);
       expect().assertFail();
     } catch (error) {
       console.error('addWatermark failed and catch error is ' + error.message + error.code);
-      expect(typeof error.code).assertEqual('number');
       expect(error.code).assertEqual(5400102);
     }
   }
@@ -870,13 +879,12 @@ export default class MediaTestBase {
       }
       console.info(`case addWatermark waterConfig` + JSON.stringify(waterConfig));
       for (let i = 0; i < 6; i++) {
-        const watermarkCount: number = await screenCaptureRecorder!.addWatermark(pixelMap, waterConfig);
+        const watermarkCount: int = await screenCaptureRecorder!.addWatermark(pixelMap, waterConfig);
         console.info(`addWatermark success, times: ${i + 1}, watermarkCount: ${watermarkCount}`);
         expect(watermarkCount).assertEqual(i + 1);
       }
     } catch (error) {
       console.error('addWatermark failed and catch error is ' + error.message + error.code);
-      expect(typeof error.code).assertEqual('number');
       expect(error.code).assertEqual(5400108);
     }
   }

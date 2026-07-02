@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -297,7 +297,7 @@ export default function ArrayFrom1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFromOne015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source = new Array<string>('hello🌍');
+      let source = Array.create<string>(1, 'hello🌍');
       let arr = Array.from<string>(source);
       expect(arr[0]).assertEqual('hello🌍');
     });
@@ -311,7 +311,7 @@ export default function ArrayFrom1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFromOne016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source = new Array<string>('visible\u200B');
+      let source = Array.create<string>(1, 'visible\u200B');
       let arr = Array.from<string>(source);
       expect(arr[0]).assertEqual('visible\u200B');
     });

@@ -53,17 +53,17 @@ export default function CustomDialogRouter() {
       console.info('CustomDialogRouter1_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('Custom_Dialog_Router'));
+      let button = await driver.findComponent(ON.id('CustomDialogRouter' + '_Custom_Dialog_Router'));
       await button.click();
       await CommonFunc.sleep(1000);
 
       // router page is change
-      let routerButton = await driver.findComponent(ON.id('CustomDialogRouterButton'));
+      let routerButton = await driver.findComponent(ON.id('CustomDialogRouter' + '_CustomDialogRouterButton'));
       await routerButton.click();
       await CommonFunc.sleep(1000);
 
       // api 11, dialog is closed, confirmButton is not exist
-      let confirmButton = await driver.findComponent(ON.id('CustomDialogConfirm'));
+      let confirmButton = await driver.findComponent(ON.id('CustomDialogRouter' + '_CustomDialogConfirm'));
       expect(confirmButton != null).assertTrue();
       await driver.triggerKey(2070)
       await CommonFunc.sleep(1000);

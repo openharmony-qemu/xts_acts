@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -176,7 +176,7 @@ export default function ArrayReverseTest(): void {
      * @tc.level Level 2
      */
     it('testArrayReverse008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(42);
+      let arr = Array.create<number>(1, 42);
       let result = arr.reverse();
       expect(result.length).assertEqual(1);
       expect(result[0]).assertEqual(42);
@@ -1046,8 +1046,8 @@ export default function ArrayReverseTest(): void {
      * @tc.level Level 2
      */
     it('testArrayReverse064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const first = new Array<number>(1);
-      const second = new Array<number>(2);
+      const first = Array.create<number>(1, 1);
+      const second = Array.create<number>(1, 2);
       const arr = new Array<Array<number>>(first, second);
       const result = arr.reverse();
       expect(result[0] === second).assertTrue();

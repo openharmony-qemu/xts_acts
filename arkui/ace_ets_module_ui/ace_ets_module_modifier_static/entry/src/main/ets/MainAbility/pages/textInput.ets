@@ -64,7 +64,7 @@ struct TextTimerExample {
     Column({ space: 5 } as ColumnOptions) {
     Button("change value").onClick((e: ClickEvent) => {
       (this.customModifier as CustomModifier).onChange1();
-    }).key("changeButton")
+    }).key("textInput_changeButton")
     Column() {
       Button('Log Json Data')
         .onClick((e: ClickEvent) => {

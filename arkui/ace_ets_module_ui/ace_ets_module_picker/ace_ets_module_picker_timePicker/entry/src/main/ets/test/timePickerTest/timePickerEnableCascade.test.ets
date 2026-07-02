@@ -70,7 +70,7 @@ export default function timePickerEnableCascadeTest() {
       let switchButton = await driver.findComponent(ON.id('timePicker-true'));
       await switchButton.click();
       await Utils.sleep(1000);
-      let strJson = getInspectorByKey('timePicker');
+      let strJson = getInspectorByKey('timePickerEnableCascade' + '_timePicker');
       await Utils.sleep(1000);
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info('[timePickerEnableCascadeTest_001] attrs:' + JSON.stringify(obj.$attrs.enableCascade));
@@ -100,7 +100,7 @@ export default function timePickerEnableCascadeTest() {
       let switchButton = await driver.findComponent(ON.id('timePicker-false'));
       await switchButton.click();
       await Utils.sleep(1000);
-      let strJson = getInspectorByKey('timePicker');
+      let strJson = getInspectorByKey('timePickerEnableCascade' + '_timePicker');
       await Utils.sleep(1000);
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info('[timePickerEnableCascadeTest_002] attrs:' + JSON.stringify(obj.$attrs.enableCascade));
@@ -130,7 +130,7 @@ export default function timePickerEnableCascadeTest() {
       let switchButton = await driver.findComponent(ON.id('timePicker-null'));
       await switchButton.click();
       await Utils.sleep(1000);
-      let strJson = getInspectorByKey('timePicker');
+      let strJson = getInspectorByKey('timePickerEnableCascade' + '_timePicker');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info('[timePickerEnableCascadeTest_003] attrs:' + JSON.stringify(obj.$attrs.enableCascade));
       await Utils.sleep(1000);
@@ -160,7 +160,7 @@ export default function timePickerEnableCascadeTest() {
       let switchButton = await driver.findComponent(ON.id('timePicker-undefined'));
       await switchButton.click();
       await Utils.sleep(1000);
-      let strJson = getInspectorByKey('timePicker');
+      let strJson = getInspectorByKey('timePickerEnableCascade' + '_timePicker');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info('[timePickerEnableCascadeTest_004] attrs:' + JSON.stringify(obj.$attrs.enableCascade));
       await Utils.sleep(1000);

@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,7 +30,7 @@ let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-export default function AddMonitorErrorCode() {
+export default function AddMonitorErrorCode(): void {
   describe('AddMonitorErrorCode', () => {
     beforeAll(async (): Promise<void> => {
       console.info("AddMonitorErrorCode beforeEach start");

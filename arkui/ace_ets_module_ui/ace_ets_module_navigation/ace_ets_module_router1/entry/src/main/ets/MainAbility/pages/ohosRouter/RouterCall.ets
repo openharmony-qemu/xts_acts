@@ -94,6 +94,33 @@ struct RouterCall {
                 }})
             }
           })
+        
+        Button('routerPushUn')
+          .height('10%')
+          .id('router_push_undefined')
+          .onClick(()=>{
+            try {
+              router.push({
+                url: undefined
+              })
+            } catch (err) {
+              console.error(`push undefined failed, code is ${err.code}, message is ${err.message}`)
+              AppStorage.setOrCreate('push_url_undefined', err.code);
+            }
+          })
+        Button('routerPushNull')
+          .height('10%')
+          .id('router_push_null')
+          .onClick(()=>{
+            try {
+              router.push({
+                url: null
+              })
+            } catch (err) {
+              console.error(`push null failed, code is ${err.code}, message is ${err.message}`)
+              AppStorage.setOrCreate('push_url_null', err.code);
+            }
+          })
       }
     }
   }

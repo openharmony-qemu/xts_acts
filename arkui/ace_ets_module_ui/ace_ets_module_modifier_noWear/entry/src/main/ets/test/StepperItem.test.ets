@@ -77,7 +77,7 @@ export default function stepperItem() {
     it('ArkUX_Stage_StepperItem_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[ArkUX_Stage_StepperItem_0200] START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('stepperItem' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
       let strJson = getInspectorByKey('nextLabel1');

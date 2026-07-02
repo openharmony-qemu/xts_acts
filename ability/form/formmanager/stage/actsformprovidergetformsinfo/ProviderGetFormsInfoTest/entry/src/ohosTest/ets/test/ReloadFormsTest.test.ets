@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,6 +16,7 @@ import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import formProvider from '@ohos.app.form.formProvider';
 import { BusinessError } from '@ohos.base';
 import { common } from '@kit.AbilityKit';
+import hilog from '@ohos.hilog';
 
 function sleep(time: number): Promise<void> {
   return new Promise((resolve)=>setTimeout(resolve,time));
@@ -24,6 +25,8 @@ function sleep(time: number): Promise<void> {
 const moduleName: string = 'entry';
 const abilityName: string = 'EntryFormAbility';
 const formName: string = 'widget';
+const COMMON_TAG: string = 'ReloadForms';
+const DOMAIN: number = 0xF811;
 
 export default function ReloadFormsTest() {
   describe('ProviderReloadFormsTest', () => {
@@ -36,22 +39,22 @@ export default function ReloadFormsTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_ProviderReloadAllForms_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      let name: string = 'SUB_AA_OpenHarmony_ProviderReloadAllForms_0100';
-      console.info(`${name} start`);
+      const TAG: string = 'SUB_AA_OpenHarmony_ProviderReloadAllForms_0100';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
       let context: common.UIAbilityContext | undefined = await AppStorage.get<common.UIAbilityContext>("abilityContext");
       try {
         let reloadNum: number = await formProvider.reloadAllForms(context);
-        console.info(`${name}` + " formProvider::reloadAllForms count: " + reloadNum);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::reloadAllForms count: ${reloadNum}`);
         expect(reloadNum).assertEqual(9);
         await sleep(1000);
         done();
       } catch (err) {
         const businessError = err as BusinessError;
-        console.error(`${name} formProvider::reloadAllForms failed: code is ${businessError?.code}, message is ${businessError?.message}`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::reloadAllForms failed: code is ${businessError?.code}, message is ${businessError?.message}`);
         expect().assertFail();
         done();
       }
-      console.info(`${name} end`);
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
     });
 
     /**
@@ -63,17 +66,17 @@ export default function ReloadFormsTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_ProviderReloadAllForms_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      let name: string = 'SUB_AA_OpenHarmony_ProviderReloadAllForms_0200';
-      console.info(`${name} start`);
+      const TAG: string = 'SUB_AA_OpenHarmony_ProviderReloadAllForms_0200';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
       try {
         await formProvider.reloadAllForms(undefined);
       } catch (err) {
         const businessError = err as BusinessError;
-        console.error(`${name} formProvider::reloadAllForms failed: code is ${businessError?.code}, message is ${businessError?.message}`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::reloadAllForms failed: code is ${businessError?.code}, message is ${businessError?.message}`);
         expect(businessError.code).assertEqual(401);
         done();
       }
-      console.info(`${name} end`);
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
     });
 
     /**
@@ -85,17 +88,17 @@ export default function ReloadFormsTest() {
      * @tc.level  LEVEL0
      */
      it('SUB_AA_OpenHarmony_ProviderReloadAllForms_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      let name: string = 'SUB_AA_OpenHarmony_ProviderReloadAllForms_0300';
-      console.info(`${name} start`);
+      const TAG: string = 'SUB_AA_OpenHarmony_ProviderReloadAllForms_0300';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
       try {
         await formProvider.reloadAllForms(null);
       } catch (err) {
         const businessError = err as BusinessError;
-        console.error(`${name} formProvider::reloadAllForms failed: code is ${businessError?.code}, message is ${businessError?.message}`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::reloadAllForms failed: code is ${businessError?.code}, message is ${businessError?.message}`);
         expect(businessError.code).assertEqual(401);
         done();
       }
-      console.info(`${name} end`);
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
     });
 
     /**
@@ -107,22 +110,22 @@ export default function ReloadFormsTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_ProviderReloadForms_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      let name: string = 'SUB_AA_OpenHarmony_ProviderReloadForms_0100';
-      console.info(`${name} start`);
+      const TAG: string = 'SUB_AA_OpenHarmony_ProviderReloadForms_0100';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
       let context: common.UIAbilityContext | undefined = await AppStorage.get<common.UIAbilityContext>("abilityContext");
       try {
         let reloadNum: number = await formProvider.reloadForms(context, moduleName, abilityName, formName);
-        console.info(`${name}` + " formProvider::reloadForms count: " + reloadNum);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::reloadForms count: ${reloadNum}`);
         expect(reloadNum).assertEqual(9);
         await sleep(1000);
         done();
       } catch (err) {
         const businessError = err as BusinessError;
-        console.error(`${name} formProvider::reloadForms failed: code is ${businessError?.code}, message is ${businessError?.message}`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::reloadForms failed: code is ${businessError?.code}, message is ${businessError?.message}`);
         expect().assertFail();
         done();
       }
-      console.info(`${name} end`);
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
     });
 
     /**
@@ -134,19 +137,19 @@ export default function ReloadFormsTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_ProviderReloadForms_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      let name: string = 'SUB_AA_OpenHarmony_ProviderReloadForms_0200';
-      console.info(`${name} start`);
+      const TAG: string = 'SUB_AA_OpenHarmony_ProviderReloadForms_0200';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
       try {
         formProvider.reloadForms(undefined, moduleName, abilityName, formName);
         await sleep(1000);
         done();
       } catch (err) {
         const businessError = err as BusinessError;
-        console.error(`${name} formProvider::reloadForms failed: code is ${businessError?.code}, message is ${businessError?.message}`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::reloadForms failed: code is ${businessError?.code}, message is ${businessError?.message}`);
         expect(businessError.code).assertEqual(401);
         done();
       }
-      console.info(`${name} end`);
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
     });
 
     /**
@@ -158,8 +161,8 @@ export default function ReloadFormsTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_ProviderReloadForms_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      let name: string = 'SUB_AA_OpenHarmony_ProviderReloadForms_0300';
-      console.info(`${name} start`);
+      const TAG: string = 'SUB_AA_OpenHarmony_ProviderReloadForms_0300';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
       try {
         let context: common.UIAbilityContext | undefined = await AppStorage.get<common.UIAbilityContext>("abilityContext");
         formProvider.reloadForms(context, undefined, abilityName, formName);
@@ -167,11 +170,11 @@ export default function ReloadFormsTest() {
         done();
       } catch (err) {
         const businessError = err as BusinessError;
-        console.error(`${name} formProvider::reloadForms failed: code is ${businessError?.code}, message is ${businessError?.message}`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::reloadForms failed: code is ${businessError?.code}, message is ${businessError?.message}`);
         expect(businessError.code).assertEqual(401);
         done();
       }
-      console.info(`${name} end`);
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
     });
 
     /**
@@ -183,8 +186,8 @@ export default function ReloadFormsTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_ProviderReloadForms_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      let name: string = 'SUB_AA_OpenHarmony_ProviderReloadForms_0400';
-      console.info(`${name} start`);
+      const TAG: string = 'SUB_AA_OpenHarmony_ProviderReloadForms_0400';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
       try {
         let context: common.UIAbilityContext | undefined = await AppStorage.get<common.UIAbilityContext>("abilityContext");
         formProvider.reloadForms(context, moduleName, undefined, formName);
@@ -192,11 +195,11 @@ export default function ReloadFormsTest() {
         done();
       } catch (err) {
         const businessError = err as BusinessError;
-        console.error(`${name} formProvider::reloadForms failed: code is ${businessError?.code}, message is ${businessError?.message}`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::reloadForms failed: code is ${businessError?.code}, message is ${businessError?.message}`);
         expect(businessError.code).assertEqual(401);
         done();
       }
-      console.info(`${name} end`);
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
     });
 
     /**
@@ -208,8 +211,8 @@ export default function ReloadFormsTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_ProviderReloadForms_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      let name: string = 'SUB_AA_OpenHarmony_ProviderReloadForms_0500';
-      console.info(`${name} start`);
+      const TAG: string = 'SUB_AA_OpenHarmony_ProviderReloadForms_0500';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
       try {
         let context: common.UIAbilityContext | undefined = await AppStorage.get<common.UIAbilityContext>("abilityContext");
         formProvider.reloadForms(context, moduleName, abilityName, undefined);
@@ -217,11 +220,11 @@ export default function ReloadFormsTest() {
         done();
       } catch (err) {
         const businessError = err as BusinessError;
-        console.error(`${name} formProvider::reloadForms failed: code is ${businessError?.code}, message is ${businessError?.message}`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::reloadForms failed: code is ${businessError?.code}, message is ${businessError?.message}`);
         expect(businessError.code).assertEqual(401);
         done();
       }
-      console.info(`${name} end`);
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
     });
 
     /**
@@ -233,20 +236,20 @@ export default function ReloadFormsTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_ProviderReloadForms_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      let name: string = 'SUB_AA_OpenHarmony_ProviderReloadForms_0600';
-      console.info(`${name} start`);
+      const TAG: string = 'SUB_AA_OpenHarmony_ProviderReloadForms_0600';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
       let context: common.UIAbilityContext | undefined = await AppStorage.get<common.UIAbilityContext>("abilityContext");
       formProvider.reloadForms(context, '', abilityName, formName).then( async (value: number) => {
-        console.info(`${name}` + "formProvider::reloadForms value: " + value);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::reloadForms value: ${value}`);
         expect(value).assertEqual(0);
         await sleep(1000);
         done();
       }).catch((err: BusinessError) => {
-        console.error(`${name} formProvider::reloadForms failed: ${JSON.stringify(err)}`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::reloadForms failed: ${JSON.stringify(err)}`);
         expect().assertFail();
         done();
       })
-      console.info(`${name} end`);
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
     });
 
     /**
@@ -258,20 +261,20 @@ export default function ReloadFormsTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_ProviderReloadForms_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      let name: string = 'SUB_AA_OpenHarmony_ProviderReloadForms_0700';
-      console.info(`${name} start`);
+      const TAG: string = 'SUB_AA_OpenHarmony_ProviderReloadForms_0700';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
       let context: common.UIAbilityContext | undefined = await AppStorage.get<common.UIAbilityContext>("abilityContext");
       formProvider.reloadForms(context, moduleName, '', formName).then( async (value: number) => {
-        console.info(`${name}` + "formProvider::reloadForms value: " + value);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::reloadForms value: ${value}`);
         expect(value).assertEqual(0);
         await sleep(1000);
         done();
       }).catch((err: BusinessError) => {
-        console.error(`${name} formProvider::reloadForms failed: ${JSON.stringify(err)}`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::reloadForms failed: ${JSON.stringify(err)}`);
         expect().assertFail();
         done();
       })
-      console.info(`${name} end`);
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
     });
 
     /**
@@ -283,20 +286,20 @@ export default function ReloadFormsTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_ProviderReloadForms_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      let name: string = 'SUB_AA_OpenHarmony_ProviderReloadForms_0800';
-      console.info(`${name} start`);
+      const TAG: string = 'SUB_AA_OpenHarmony_ProviderReloadForms_0800';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
       let context: common.UIAbilityContext | undefined = await AppStorage.get<common.UIAbilityContext>("abilityContext");
       formProvider.reloadForms(context, moduleName, abilityName, '').then( async (value: number) => {
-        console.info(`${name}` + "formProvider::reloadForms value: " + value);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::reloadForms value: ${value}`);
         expect(value).assertEqual(0);
         await sleep(1000);
         done();
       }).catch((err: BusinessError) => {
-        console.error(`${name} formProvider::reloadForms failed: ${JSON.stringify(err)}`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::reloadForms failed: ${JSON.stringify(err)}`);
         expect().assertFail();
         done();
       })
-      console.info(`${name} end`);
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
     });
 
     /**
@@ -308,8 +311,8 @@ export default function ReloadFormsTest() {
      * @tc.level  LEVEL0
      */
      it('SUB_AA_OpenHarmony_ProviderReloadForms_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      let name: string = 'SUB_AA_OpenHarmony_ProviderReloadForms_0900';
-      console.info(`${name} start`);
+      const TAG: string = 'SUB_AA_OpenHarmony_ProviderReloadForms_0900';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
       let context: common.UIAbilityContext | undefined = await AppStorage.get<common.UIAbilityContext>("abilityContext");
       try {
         formProvider.reloadForms(null, '', '', '');
@@ -317,11 +320,11 @@ export default function ReloadFormsTest() {
         done();
       } catch (err) {
         const businessError = err as BusinessError;
-        console.error(`${name} formProvider::reloadForms failed: code is ${businessError?.code}, message is ${businessError?.message}`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::reloadForms failed: code is ${businessError?.code}, message is ${businessError?.message}`);
         expect(businessError.code).assertEqual(401);
         done();
       }
-      console.info(`${name} end`);
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
     });
 
     /**
@@ -333,19 +336,19 @@ export default function ReloadFormsTest() {
      * @tc.level  LEVEL0
      */
      it('SUB_AA_OpenHarmony_ProviderReloadForms_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      let name: string = 'SUB_AA_OpenHarmony_ProviderReloadForms_1000';
-      console.info(`${name} start`);
+      const TAG: string = 'SUB_AA_OpenHarmony_ProviderReloadForms_1000';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
       try {
         formProvider.reloadForms(null, null, null, null);
         await sleep(1000);
         done();
       } catch (err) {
         const businessError = err as BusinessError;
-        console.error(`${name} formProvider::reloadForms failed: code is ${businessError?.code}, message is ${businessError?.message}`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::reloadForms failed: code is ${businessError?.code}, message is ${businessError?.message}`);
         expect(businessError.code).assertEqual(401);
         done();
       }
-      console.info(`${name} end`);
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
     });    
 
     /**
@@ -357,19 +360,19 @@ export default function ReloadFormsTest() {
      * @tc.level  LEVEL0
      */
      it('SUB_AA_OpenHarmony_ProviderReloadForms_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      let name: string = 'SUB_AA_OpenHarmony_ProviderReloadForms_1100';
-      console.info(`${name} start`);
+      const TAG: string = 'SUB_AA_OpenHarmony_ProviderReloadForms_1100';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
       try {
         formProvider.reloadForms(undefined, undefined, undefined, undefined);
         await sleep(1000);
         done();
       } catch (err) {
         const businessError = err as BusinessError;
-        console.error(`${name} formProvider::reloadForms failed: code is ${businessError?.code}, message is ${businessError?.message}`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider::reloadForms failed: code is ${businessError?.code}, message is ${businessError?.message}`);
         expect(businessError.code).assertEqual(401);
         done();
       }
-      console.info(`${name} end`);
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
     }); 
   })
 }

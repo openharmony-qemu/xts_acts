@@ -61,10 +61,10 @@ export default function Row_flexShrink_Part() {
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_flexShrink_Part_011: RectValue = CommonFunc.getComponentRect('Row_flexShrink_Part_011');
-      let Row_flexShrink_Part_012: RectValue = CommonFunc.getComponentRect('Row_flexShrink_Part_012');
-      let Row_flexShrink_Part_013: RectValue = CommonFunc.getComponentRect('Row_flexShrink_Part_013');
-      let Row_flexShrink_Part_01: RectValue = CommonFunc.getComponentRect('Row_flexShrink_Part_01');
+      let Row_flexShrink_Part_011: RectValue = CommonFunc.getComponentRect('Row_flexShrink_Part' + '_011');
+      let Row_flexShrink_Part_012: RectValue = CommonFunc.getComponentRect('Row_flexShrink_Part' + '_012');
+      let Row_flexShrink_Part_013: RectValue = CommonFunc.getComponentRect('Row_flexShrink_Part' + '_013');
+      let Row_flexShrink_Part_01: RectValue = CommonFunc.getComponentRect('Row_flexShrink_Part' + '_01');
 
       console.log('assert position')
       expect(Math.abs(Math.round(Row_flexShrink_Part_011.top - Row_flexShrink_Part_01.top) - Math.round(Row_flexShrink_Part_01.bottom - Row_flexShrink_Part_011.bottom)) <= 1)
@@ -119,10 +119,10 @@ export default function Row_flexShrink_Part() {
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_flexShrink_Part_011: RectValue = CommonFunc.getComponentRect('Row_flexShrink_Part_011');
-      let Row_flexShrink_Part_012: RectValue = CommonFunc.getComponentRect('Row_flexShrink_Part_012');
-      let Row_flexShrink_Part_013: RectValue = CommonFunc.getComponentRect('Row_flexShrink_Part_013');
-      let Row_flexShrink_Part_01: RectValue = CommonFunc.getComponentRect('Row_flexShrink_Part_01');
+      let Row_flexShrink_Part_011: RectValue = CommonFunc.getComponentRect('Row_flexShrink_Part' + '_011');
+      let Row_flexShrink_Part_012: RectValue = CommonFunc.getComponentRect('Row_flexShrink_Part' + '_012');
+      let Row_flexShrink_Part_013: RectValue = CommonFunc.getComponentRect('Row_flexShrink_Part' + '_013');
+      let Row_flexShrink_Part_01: RectValue = CommonFunc.getComponentRect('Row_flexShrink_Part' + '_01');
 
       console.log('assert position')
       expect(Math.abs(Math.round(Row_flexShrink_Part_011.top - Row_flexShrink_Part_01.top) - Math.round(Row_flexShrink_Part_01.bottom - Row_flexShrink_Part_011.bottom)) <= 1)

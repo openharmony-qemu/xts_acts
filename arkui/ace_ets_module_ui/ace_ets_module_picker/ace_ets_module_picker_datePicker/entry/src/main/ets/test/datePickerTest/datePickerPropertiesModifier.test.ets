@@ -51,7 +51,7 @@ export default function datePickerPropertiesModifierTest() {
      */
     it('datePickerPropertiesModifierTest_001', Level.LEVEL1, async (done: Function) => {
       console.info('[datePickerPropertiesModifierTest_001] START');
-      let strJson = getInspectorByKey('DatePicker');
+      let strJson = getInspectorByKey('datePickerPropertiesModifier' + '_DatePicker');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[datePickerPropertiesModifierTest_001] obj is : " + JSON.stringify(obj.$attrs));
 
@@ -70,7 +70,7 @@ export default function datePickerPropertiesModifierTest() {
      */
     it('datePickerPropertiesModifierTest_002', Level.LEVEL1, async (done: Function) => {
       console.info('[datePickerPropertiesModifierTest_002] START');
-      let strJson = getInspectorByKey('DatePicker');
+      let strJson = getInspectorByKey('datePickerPropertiesModifier' + '_DatePicker');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[datePickerPropertiesModifierTest_002] obj is : " + JSON.stringify(obj.$attrs));
       let selectedTextStyle: ESObject = obj.$attrs.selectedTextStyle;
@@ -92,7 +92,7 @@ export default function datePickerPropertiesModifierTest() {
      */
     it('datePickerPropertiesModifierTest_003', Level.LEVEL1, async (done: Function) => {
       console.info('[datePickerPropertiesModifierTest_003] START');
-      let strJson = getInspectorByKey('DatePicker');
+      let strJson = getInspectorByKey('datePickerPropertiesModifier' + '_DatePicker');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[datePickerPropertiesModifierTest_003] obj is : " + JSON.stringify(obj.$attrs));
       let textStyle: ESObject = obj.$attrs.textStyle;
@@ -114,7 +114,7 @@ export default function datePickerPropertiesModifierTest() {
      */
     it('datePickerPropertiesModifierTest_004', Level.LEVEL1, async (done: Function) => {
       console.info('[datePickerPropertiesModifierTest_004] START');
-      let strJson = getInspectorByKey('DatePicker');
+      let strJson = getInspectorByKey('datePickerPropertiesModifier' + '_DatePicker');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[datePickerPropertiesModifierTest_004] obj is : " + JSON.stringify(obj.$attrs));
       let disappearTextStyle: ESObject = obj.$attrs.disappearTextStyle;

@@ -62,6 +62,44 @@ export default function dataShareConfigPutValueTest() {
     })
 
     /**
+     * @tc.name   dataShareConfigPutValueTest001
+     * @tc.number SUB_DistributedData_DataShare_SDK_PutValue_0010
+     * @tc.desc   The parameters of the function "putvalue" are all undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigPutValueTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        await g_handle!.putValue(undefined, undefined, undefined, undefined);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] dataShareConfigPutValueTest001 failed,code =" + err.code + ",message=" + err.message);
+        let result = err.code;
+        expect(result).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   dataShareConfigPutValueTest002
+     * @tc.number SUB_DistributedData_DataShare_SDK_PutValue_0020
+     * @tc.desc   The parameters of the function "putvalue" are all null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigPutValueTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        await g_handle!.putValue(null, null, null, null);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] dataShareConfigPutValueTest002 failed,code =" + err.code + ",message=" + err.message);
+        let result = err.code;
+        expect(result).assertEqual(401);
+      }
+    });
+
+    /**
      * @tc.name   dataShareConfigPutValueTest003
      * @tc.number SUB_DistributedData_DataShare_SDK_PutValue_0030
      * @tc.desc   call putValue when uri is not exist
@@ -470,6 +508,26 @@ export default function dataShareConfigPutValueTest() {
     });
 
     /**
+     * @tc.name   dataShareConfigPutValueTest017
+     * @tc.number SUB_DistributedData_DataShare_SDK_PutValue_0170
+     * @tc.desc   call putValue when uri length exceeds 256 bytes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigPutValueTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let overLengthUri = "datashareproxy://com.example.myapplication/" + 'X'.repeat(214);
+        await g_handle!.putValue(overLengthUri, 1, "test", g_config_4K);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] dataShareConfigPutValueTest017 failed,code =" + err.code + ",message=" + err.message);
+        let result = err.code;
+        expect(result).assertEqual(15700014);
+      }
+    });
+
+    /**
      * @tc.name   dataShareConfigPutValueTest018
      * @tc.number SUB_DistributedData_DataShare_SDK_PutValue_0180
      * @tc.desc   call putValue with bool type value
@@ -495,6 +553,25 @@ export default function dataShareConfigPutValueTest() {
       } catch (err) {
         console.error(TAG + "[DataShareProvider] dataShareConfigPutValueTest018 failed,code =" + err.code + ",message=" + err.message);
         expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   dataShareConfigPutValueTest0019
+     * @tc.number SUB_DistributedData_DataShare_SDK_PutValue_0190
+     * @tc.desc   call putValue when uri is not exist
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigPutValueTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let testUri = ""
+        await g_handle!.putValue(testUri, 1, "", g_config);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] dataShareConfigPutValueTest019 failed,code =" + err.code + ",message=" + err.message);
+        expect(err.code).assertEqual(15700011);
       }
     });
   })

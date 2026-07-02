@@ -42,11 +42,11 @@ import { CircleShape,RectShape } from '@ohos.arkui.shape';
 struct APIClipMaskShape {
   build() {
     Column({ space: 15 } as ColumnOptions) {
-      Image($r('app.media.icon')).key('APITextBackgroundStyleSpan').key('APIClipMaskShape_Image1')
+      Image($r('app.media.icon')).key('APIClipMaskShape_APITextBackgroundStyleSpan_01').key('APIClipMaskShape_Image1')
         .clipShape(new CircleShape({ width: '100px', height: '100px' }))
         .width('500px').height('280px')
 
-      Image($r('app.media.icon')).key('APITextBackgroundStyleSpan').key('APIClipMaskShape_Image2')
+      Image($r('app.media.icon')).key('APIClipMaskShape_APITextBackgroundStyleSpan_02').key('APIClipMaskShape_Image2')
         .maskShape(new RectShape().width('200px').height('200px').fill(Color.Red))
         .width('300px').height('300px')
 

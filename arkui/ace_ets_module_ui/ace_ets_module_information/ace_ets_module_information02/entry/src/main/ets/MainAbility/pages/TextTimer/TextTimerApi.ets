@@ -25,6 +25,7 @@ class MyTextTimerModifier implements ContentModifier<TextTimerConfiguration> {
   Column() {
     Text(config.started + '')
       .id('started')
+      .key('started')
     Stack({ alignContent: Alignment.Center }) {
       Circle({ width: 150, height: 150 }).fill(config.started ? (config.isCountDown ? 0xFF232323 : 0xFF717171) : 0xFF929292)
       Column(){

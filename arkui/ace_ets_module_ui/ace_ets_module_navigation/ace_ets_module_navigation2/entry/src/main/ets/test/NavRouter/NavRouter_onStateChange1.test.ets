@@ -77,7 +77,7 @@ export default function NavRouter_onStateChange1() {
       await btn1.click();
       await CommonFunc.sleep(1000);
 
-      let text1 = getInspectorByKey('NavRouter_onStateChange1_text1');
+      let text1 = getInspectorByKey('NavRouter_onStateChange1' + '_text1');
       expect(JSON.parse(text1).$attrs.content).assertEqual('true');
       console.info('[NavRouter_onStateChange1_0100] END');
       done();

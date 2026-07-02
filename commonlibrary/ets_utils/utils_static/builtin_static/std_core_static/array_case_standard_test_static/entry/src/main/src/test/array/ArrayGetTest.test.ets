@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -290,7 +290,7 @@ export default function ArrayGetTest(): void {
      * @tc.level Level 2
      */
     it('testArrayGet015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(42);
+      const arr = Array.create<int>(1, 42);
       const val = arr[0];
       expect(val == null).assertFalse();
       expect(val == 42).assertTrue();
@@ -305,7 +305,7 @@ export default function ArrayGetTest(): void {
      * @tc.level Level 2
      */
     it('testArrayGet016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<string>('hello');
+      const arr = Array.create<string>(1, 'hello');
       const val = arr[0];
       const valueType = Class.of(val).getName().split('.');
       expect(valueType[valueType.length - 1]).assertEqual('String');
@@ -405,7 +405,7 @@ export default function ArrayGetTest(): void {
      * @tc.level Level 2
      */
     it('testArrayGet023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<Item025>(new Item025(1));
+      const arr = Array.create<Item025>(1, new Item025(1));
       const val = arr[0];
       expect(val instanceof Item025).assertTrue();
     });
@@ -437,7 +437,7 @@ export default function ArrayGetTest(): void {
      * @tc.level Level 2
      */
     it('testArrayGet025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(5);
+      const arr = Array.create<int>(1, 5);
       expect(arr.length).assertEqual(1);
       const val = arr[0];
       expect(val).assertEqual(5);
@@ -608,7 +608,7 @@ export default function ArrayGetTest(): void {
      * @tc.level Level 2
      */
     it('testArrayGet036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(42);
+      const arr = Array.create<int>(1, 42);
       ;
       for (let i = 0; i < 100; i++) {
         expect(arr[0]).assertEqual(42);

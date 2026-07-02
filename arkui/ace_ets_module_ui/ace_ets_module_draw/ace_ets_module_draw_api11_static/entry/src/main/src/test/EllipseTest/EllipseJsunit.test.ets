@@ -89,7 +89,7 @@ export default function ellipseJsunit() {
     it('testEllipse_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testEllipse_static_01] START');
       await CommonFunc.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('ellipse');
+      let strJson: string = inspector.getInspectorByKey('ellipse' + '_ellipse');
       console.info("[testEllipse_static_01] obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('height')).assertEqual('200.00px');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('width')).assertEqual('200.00px');
@@ -123,7 +123,7 @@ export default function ellipseJsunit() {
         console.log("[testEllipse_static_02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('ellipse');
+      let strJson: string = inspector.getInspectorByKey('ellipse' + '_ellipse');
       console.info("[testEllipse_static_02] obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('width')).assertEqual('100.00px');
       console.info('testEllipse_static_02 END');
@@ -156,7 +156,7 @@ export default function ellipseJsunit() {
         console.log("[testEllipse_static_03] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('ellipse');
+      let strJson: string = inspector.getInspectorByKey('ellipse' + '_ellipse');
       console.info("[testEllipse_static_03] obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('height')).assertEqual('500.00px');
       console.info('testEllipse_static_03 END');
@@ -189,7 +189,7 @@ export default function ellipseJsunit() {
         console.log("[testEllipse_static_04] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('ellipse');
+      let strJson: string = inspector.getInspectorByKey('ellipse' + '_ellipse');
       console.info("[testEllipse_static_04] obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('width')).assertEqual('1111111111111.00px');
       console.info('testEllipse_static_04 END');
@@ -222,7 +222,7 @@ export default function ellipseJsunit() {
         console.log("[testEllipse_static_05] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('ellipse');
+      let strJson: string = inspector.getInspectorByKey('ellipse' + '_ellipse');
       console.info("[testEllipse_static_05] obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('height'))
         .assertEqual('12111111111111.00px');
@@ -256,7 +256,7 @@ export default function ellipseJsunit() {
         console.log("[testEllipse_static_06] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('ellipse');
+      let strJson: string = inspector.getInspectorByKey('ellipse' + '_ellipse');
       console.info("[testEllipse_static_06] obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('height')).assertEqual('0.00vp');
       console.info('testEllipse_static_06 END');
@@ -289,7 +289,7 @@ export default function ellipseJsunit() {
         console.log("[testEllipse07_static] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('ellipse');
+      let strJson: string = inspector.getInspectorByKey('ellipse' + '_ellipse');
       console.info("[testEllipse07_static] obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('width')).assertEqual('0.00vp');
       console.info('testEllipse07_static END');

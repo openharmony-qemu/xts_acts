@@ -87,7 +87,7 @@ it('RenderNodeDrawJsSuit_static_0100', Level.LEVEL2, async (done: () => void): P
       let button_Bottom = await driver.findComponent(ON.id('invalidate_draw'));
       await (button_Bottom?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('RenderNodeDraw_get');
+      let strJson = inspector.getInspectorByKey('RenderNodeDraw' + '_get');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[RenderNodeDrawJsSuit_0100] obj is: " + JSON.stringify(obj));
       console.info("[RenderNodeDrawJsSuit_0100] obj content is: " + JSON.stringify(obj.getElement('$attrs').getString('content')));

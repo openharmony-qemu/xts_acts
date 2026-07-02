@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -176,7 +176,7 @@ export default function ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testArrayToString006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(42);
+      const arr = Array.create<number>(1, 42);
       const result = arr.toString();
       expect(result).assertEqual('42');
     });
@@ -381,7 +381,7 @@ export default function ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testArrayToString020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const inner = new Array<number>(3);
+      const inner = Array.create<number>(1, 3);
       const middle = new Array<number | Object>(2, inner);
       const arr = new Array<number | Object>(1, middle, 4);
       const result = arr.toString();
@@ -492,7 +492,7 @@ export default function ArrayToStringTest(): void {
     it('testArrayToString027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const item = new ToStringItem028();
       item.value = 42;
-      const arr = new Array<ToStringItem028>(item);
+      const arr = Array.create<ToStringItem028>(1, item);
       const result = arr.toString();
       expect(result).assertEqual('Item[42]');
     });
@@ -508,7 +508,7 @@ export default function ArrayToStringTest(): void {
     it('testArrayToString028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const item = new ToStringSimpleItem029();
       item.value = 1;
-      const arr = new Array<ToStringSimpleItem029>(item);
+      const arr = Array.create<ToStringSimpleItem029>(1, item);
       const result = arr.toString();
       expect(typeof result).assertEqual('string');
       expect(result.length > 0).assertTrue();
@@ -769,7 +769,7 @@ export default function ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testArrayToString046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(999);
+      const arr = Array.create<number>(1, 999);
       expect(arr.toString()).assertEqual('999');
     });
 
@@ -925,7 +925,7 @@ export default function ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testArrayToString056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1);
+      const arr = Array.create<number>(1, 1);
       const result = Number.parseInt(arr.toString());
       expect(result).assertEqual(1);
     });
@@ -939,7 +939,7 @@ export default function ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testArrayToString057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1.5);
+      const arr = Array.create<number>(1, 1.5);
       const result = Number.parseFloat(arr.toString());
       expect(result).assertEqual(1.5);
     });
@@ -1235,7 +1235,7 @@ export default function ArrayToStringTest(): void {
     it('testArrayToString076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const first = new ToStringCommaItem061();
       first.text = 'old';
-      const arr = new Array<ToStringCommaItem061>(first);
+      const arr = Array.create<ToStringCommaItem061>(1, first);
       expect(arr.toString()).assertEqual('old');
       first.text = 'new';
       expect(arr.toString()).assertEqual('new');
@@ -1250,7 +1250,7 @@ export default function ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testArrayToString077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number | null | undefined>(1);
+      const arr = Array.create<number | null | undefined>(1, 1);
       arr.push(null, undefined, 4);
       expect(arr.toString()).assertEqual('1,,,4');
     });
@@ -1264,7 +1264,7 @@ export default function ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testArrayToString078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<string>('tail');
+      const arr = Array.create<string>(1, 'tail');
       arr.unshift('a,b', 'c');
       expect(arr.toString()).assertEqual('a,b,c,tail');
     });
@@ -1441,7 +1441,7 @@ export default function ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testArrayToString089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<Object>(1);
+      const arr = Array.create<Object>(1, 1);
       arr.pushOne(arr);
       expect(arr.toString()).assertEqual('1,');
     });
@@ -1455,7 +1455,7 @@ export default function ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testArrayToString090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<Object>(1);
+      const arr = Array.create<Object>(1, 1);
       const nested = new Array<Object>(2, arr);
       arr.pushOne(nested);
       expect(arr.toString()).assertEqual('1,2,');
@@ -1485,9 +1485,9 @@ export default function ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testArrayToString092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const inner = new Array<number>(1);
-      const middle = new Array<Object>(inner);
-      const arr = new Array<Object>(middle);
+      const inner = Array.create<number>(1, 1);
+      const middle = Array.create<Object>(1, inner);
+      const arr = Array.create<Object>(1, middle);
       expect(arr.toString()).assertEqual('1');
     });
 
@@ -1503,7 +1503,7 @@ export default function ArrayToStringTest(): void {
       const nested = new Array<number | undefined>(3, (_index) => undefined);
       nested[0] = 1;
       nested[2] = 3;
-      const arr = new Array<Object>(nested);
+      const arr = Array.create<Object>(1, nested);
       expect(arr.toString()).assertEqual('1,,3');
       expect(nested.indexOf(undefined)).assertEqual(1);
     });

@@ -75,10 +75,10 @@ export default function RichEditorTest() {
       console.info('[RichEditorTest_001] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('RichEditor_Start'));
+      let button = await driver.findComponent(ON.id('RichEditor' + '_Start'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('RichEditor_get'));
+      let button1 = await driver.findComponent(ON.id('RichEditor' + '_get'));
       await (button1?.click() as Promise<void>);
       console.info("RichEditorTest_001 click success");
       await CommonFunc.sleep(1000);
@@ -104,10 +104,10 @@ export default function RichEditorTest() {
       console.info('[RichEditorTest_002] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('RichEditor_End'));
+      let button = await driver.findComponent(ON.id('RichEditor' + '_End'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('RichEditor_get'));
+      let button1 = await driver.findComponent(ON.id('RichEditor' + '_get'));
       await (button1?.click() as Promise<void>);
       console.info("RichEditorTest_002 click success");
       await CommonFunc.sleep(1000);
@@ -133,10 +133,10 @@ export default function RichEditorTest() {
       console.info('[RichEditorTest_003] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('RichEditor_Center'));
+      let button = await driver.findComponent(ON.id('RichEditor' + '_Center'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('RichEditor_get'));
+      let button1 = await driver.findComponent(ON.id('RichEditor' + '_get'));
       await (button1?.click() as Promise<void>);
       console.info("RichEditorTest_003 click success");
       await CommonFunc.sleep(1000);

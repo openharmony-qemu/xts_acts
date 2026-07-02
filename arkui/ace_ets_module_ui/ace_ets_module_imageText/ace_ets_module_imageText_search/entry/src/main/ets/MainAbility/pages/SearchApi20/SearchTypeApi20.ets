@@ -32,6 +32,7 @@ struct SearchTypeApi20Page {
         placeholder: 'input your word...',
       })
         .id('SearchTypeApi20_ONE_TIME_CODE')
+        .key('SearchTypeApi20_ONE_TIME_CODE')
         .type(SearchType.ONE_TIME_CODE)
         .height('5%')
 
@@ -40,6 +41,7 @@ struct SearchTypeApi20Page {
         placeholder: 'input your word...',
       })
         .id('SearchTypeApi20_default')
+        .key('SearchTypeApi20_default')
         .height('5%')
 
       Search({
@@ -47,6 +49,7 @@ struct SearchTypeApi20Page {
         placeholder: 'input your word...',
       })
         .id('SearchTypeApi20_undefined')
+        .key('SearchTypeApi20_undefined')
         .type(undefined)
         .height('5%')
 
@@ -56,6 +59,7 @@ struct SearchTypeApi20Page {
       })
         .attributeModifier(this.searchModifier)
         .id('SearchTypeApi20_Modifier')
+        .key('SearchTypeApi20_Modifier')
         .height('5%')
         .margin(1)
         .borderWidth(1)

@@ -44,7 +44,7 @@ struct PathNew {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key('neText')
+        .key('pathNew_neText')
 
       Path().width("100px").height("100px").commands('M150 0 L300 300 L0 300 Z')
         .key('Path3')

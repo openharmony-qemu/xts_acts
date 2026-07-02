@@ -23,6 +23,7 @@ import datePickerLunarJsunit from './datePickerTest/datePicker3.test';
 import datePickerJsunit from './datePickerTest/DatePickerJsunit.test';
 import datePickerUIJsunit from './datePickerTest/datePickerUIJsunit.test';
 import datePickerPropertiesModifierTest from './datePickerTest/datePickerPropertiesModifier.test';
+import datePickerDigitalCrownSensitivityTest from './datePickerTest/datePickerDigitalCrownSensitivity.test';
 
 import DatePickerCanLoopNullUndefinedTest from './datePickerNullUndefined/DatePickerCanLoopNullUndefined.test';
 import DatePickerDisappearTextStyleNullUndefinedTest from './datePickerNullUndefined/DatePickerDisappearTextStyleNullUndefined.test';
@@ -52,6 +53,7 @@ export default function testsuite() {
   datePickerJsunit();
   datePickerUIJsunit();
   datePickerPropertiesModifierTest();
+  datePickerDigitalCrownSensitivityTest();
   DatePickerCanLoopNullUndefinedTest();
   DatePickerDisappearTextStyleNullUndefinedTest();
   DatePickerLunarNullUndefinedTest();

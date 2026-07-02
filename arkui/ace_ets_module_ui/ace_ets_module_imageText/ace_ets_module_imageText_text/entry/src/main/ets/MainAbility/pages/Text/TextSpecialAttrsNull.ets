@@ -25,12 +25,14 @@ struct TextSpecialAttrsNull {
         // Test 1: fallbackLineSpacing with null parameter
         Text('fallbackLineSpacing with null')
           .id('text_fallbackLineSpacing_null')
+          .key('text_fallbackLineSpacing_null')
           .fallbackLineSpacing(null)
           .height('5%')
 
         // Test 2: fallbackLineSpacing with undefined parameter
         Text('fallbackLineSpacing with undefined')
           .id('text_fallbackLineSpacing_undefined')
+          .key('text_fallbackLineSpacing_undefined')
           .fallbackLineSpacing(undefined)
           .height('5%')
       }
@@ -39,12 +41,14 @@ struct TextSpecialAttrsNull {
         // Test 3: compressLeadingPunctuation with null parameter
         Text('compressLeadingPunctuation with null')
           .id('text_compressLeadingPunctuation_null')
+          .key('text_compressLeadingPunctuation_null')
           .compressLeadingPunctuation(null)
           .height('5%')
 
         // Test 4: compressLeadingPunctuation with undefined parameter
         Text('compressLeadingPunctuation with undefined')
           .id('text_compressLeadingPunctuation_undefined')
+          .key('text_compressLeadingPunctuation_undefined')
           .compressLeadingPunctuation(undefined)
           .height('5%')
       }
@@ -53,12 +57,14 @@ struct TextSpecialAttrsNull {
         // Test 5: selectedDragPreviewStyle with null parameter
         Text('selectedDragPreviewStyle with null')
           .id('text_selectedDragPreviewStyle_null')
+          .key('text_selectedDragPreviewStyle_null')
           .selectedDragPreviewStyle(null)
           .height('5%')
 
         // Test 6: selectedDragPreviewStyle with undefined parameter
         Text('selectedDragPreviewStyle with undefined')
           .id('text_selectedDragPreviewStyle_undefined')
+          .key('text_selectedDragPreviewStyle_undefined')
           .selectedDragPreviewStyle(undefined)
           .height('5%')
       }
@@ -67,12 +73,14 @@ struct TextSpecialAttrsNull {
         // Test 7: textDirection with null parameter
         Text('textDirection with null')
           .id('text_textDirection_null')
+          .key('text_textDirection_null')
           .textDirection(null)
           .height('5%')
 
         // Test 8: textDirection with undefined parameter
         Text('textDirection with undefined')
           .id('text_textDirection_undefined')
+          .key('text_textDirection_undefined')
           .textDirection(undefined)
           .height('5%')
       }
@@ -81,17 +89,20 @@ struct TextSpecialAttrsNull {
         // Test 9: setStyledString with null parameter
         Text(undefined, { controller: this.controller1 })
           .id('text_setStyledString_null')
+          .key('text_setStyledString_null')
           .height('5%')
 
         // Test 10: setStyledString with undefined parameter
         Text(undefined, { controller: this.controller2 })
           .id('text_setStyledString_undefined')
+          .key('text_setStyledString_undefined')
           .height('5%')
       }
 
       // Default values for comparison
       Text('Default (for comparison)')
         .id('text_specialAttrs_default')
+        .key('text_specialAttrs_default')
         .height('5%')
     }
     .width('100%')

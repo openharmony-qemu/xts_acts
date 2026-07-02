@@ -48,7 +48,7 @@ struct SpanExample {
     Column() {
       Button("change value").onClick((e: ClickEvent) => {
         (this.customModifier1 as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("span_changeButton")
 
       Text() {
       	Span('I am')

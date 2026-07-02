@@ -69,10 +69,10 @@ export default function Row_Size() {
         name: 'height', value: 200
       });
       await CommonFunc.sleep(3000);
-      let Row: RectValue = CommonFunc.getComponentRect('Row_Size_Row');
-      let Text1: RectValue = CommonFunc.getComponentRect('Row_Size_Text1');
-      let Text2: RectValue = CommonFunc.getComponentRect('Row_Size_Text2');
-      let Text3: RectValue = CommonFunc.getComponentRect('Row_Size_Text3');
+      let Row: RectValue = CommonFunc.getComponentRect('Row_Size' + '_Row');
+      let Text1: RectValue = CommonFunc.getComponentRect('Row_Size' + '_Text1');
+      let Text2: RectValue = CommonFunc.getComponentRect('Row_Size' + '_Text2');
+      let Text3: RectValue = CommonFunc.getComponentRect('Row_Size' + '_Text3');
 
       console.log('Row rect_value is:' + JSON.stringify(Row));
 
@@ -119,10 +119,10 @@ export default function Row_Size() {
         name: 'height', value: 200
       });
       await CommonFunc.sleep(3000)
-      let Row: RectValue = CommonFunc.getComponentRect('Row_Size_Row');
-      let Text1: RectValue = CommonFunc.getComponentRect('Row_Size_Text1');
-      let Text2: RectValue = CommonFunc.getComponentRect('Row_Size_Text2');
-      let Text3: RectValue = CommonFunc.getComponentRect('Row_Size_Text3');
+      let Row: RectValue = CommonFunc.getComponentRect('Row_Size' + '_Row');
+      let Text1: RectValue = CommonFunc.getComponentRect('Row_Size' + '_Text1');
+      let Text2: RectValue = CommonFunc.getComponentRect('Row_Size' + '_Text2');
+      let Text3: RectValue = CommonFunc.getComponentRect('Row_Size' + '_Text3');
 
       console.log('Row rect_value is:' + JSON.stringify(Row));
 
@@ -166,10 +166,10 @@ export default function Row_Size() {
         name: 'height', value: 100
       });
       await CommonFunc.sleep(3000)
-      let Row: RectValue = CommonFunc.getComponentRect('Row_Size_Row');
-      let Text1: RectValue = CommonFunc.getComponentRect('Row_Size_Text1');
-      let Text2: RectValue = CommonFunc.getComponentRect('Row_Size_Text2');
-      let Text3: RectValue = CommonFunc.getComponentRect('Row_Size_Text3');
+      let Row: RectValue = CommonFunc.getComponentRect('Row_Size' + '_Row');
+      let Text1: RectValue = CommonFunc.getComponentRect('Row_Size' + '_Text1');
+      let Text2: RectValue = CommonFunc.getComponentRect('Row_Size' + '_Text2');
+      let Text3: RectValue = CommonFunc.getComponentRect('Row_Size' + '_Text3');
 
       console.log('Row rect_value is:' + JSON.stringify(Row));
 

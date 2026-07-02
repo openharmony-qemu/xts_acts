@@ -60,11 +60,11 @@ export default function OnlyColumnsTemplate4() {
       await CommonFunc.sleep(2000);
       let driver = Driver.create();
       await CommonFunc.sleep(300);
-      let button = await driver.findComponent(ON.id('OnlyColumnsTemplate1_button'));
+      let button = await driver.findComponent(ON.id('OnlyColumnsTemplate1' + '_button'));
       await button.click();
       await CommonFunc.sleep(2000);
-      let GridItem_01: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_01');
-      let GridItem_02: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_02');
+      let GridItem_01: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1' + '_GridItem_01');
+      let GridItem_02: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1' + '_GridItem_02');
       await CommonFunc.sleep(2000);
       globalThis.value.message.notify({
         name: 'columnStart1', value: 5
@@ -81,8 +81,8 @@ export default function OnlyColumnsTemplate4() {
       await CommonFunc.sleep(2000);
 
       console.log('get Initial value')
-      let GridItem_011: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_01');
-      let GridItem_022: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_02');
+      let GridItem_011: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1' + '_GridItem_01');
+      let GridItem_022: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1' + '_GridItem_02');
 
 
       console.log('assert size')
@@ -108,11 +108,11 @@ export default function OnlyColumnsTemplate4() {
       await CommonFunc.sleep(2000);
       let driver = Driver.create();
       await CommonFunc.sleep(300);
-      let button = await driver.findComponent(ON.id('OnlyColumnsTemplate1_button'));
+      let button = await driver.findComponent(ON.id('OnlyColumnsTemplate1' + '_button'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let GridItem_01: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_01');
-      let GridItem_02: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_02');
+      let GridItem_01: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1' + '_GridItem_01');
+      let GridItem_02: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1' + '_GridItem_02');
       await CommonFunc.sleep(1000);
       globalThis.value.message.notify({
         name: 'columnStart1', value: 2
@@ -129,8 +129,8 @@ export default function OnlyColumnsTemplate4() {
       await CommonFunc.sleep(2000);
 
       console.log('get Initial value')
-      let GridItem_011: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_01');
-      let GridItem_022: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_02');
+      let GridItem_011: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1' + '_GridItem_01');
+      let GridItem_022: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1' + '_GridItem_02');
 
 
       console.log('assert size')

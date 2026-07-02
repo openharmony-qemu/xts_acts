@@ -133,7 +133,7 @@ struct ListLanes {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("onScrollBeginText")
+        .key("listNew_onScrollBeginText")
 
       Stack({ alignContent: Alignment.TopStart }) {
         Scroll(this.scroller) {

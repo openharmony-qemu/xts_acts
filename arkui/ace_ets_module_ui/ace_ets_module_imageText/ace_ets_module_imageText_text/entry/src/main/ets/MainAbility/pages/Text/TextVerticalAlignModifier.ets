@@ -62,24 +62,28 @@ struct TextVerticalAlignModifier {
       Text('TextVerticalAlign.BASELINE')
         .height('5%')
         .id('Modifier_TextVerticalAlign_BASELINE')
+        .key('Modifier_TextVerticalAlign_BASELINE')
         .attributeModifier(this.TextModifier1)
         .borderWidth(1)
 
       Text('TextVerticalAlign.BOTTOM')
         .height('5%')
         .id('Modifier_TextVerticalAlign_BOTTOM')
+        .key('Modifier_TextVerticalAlign_BOTTOM')
         .attributeModifier(this.TextModifier2)
         .borderWidth(1)
 
       Text('TextVerticalAlign.CENTER')
         .height('5%')
         .id('Modifier_TextVerticalAlign_CENTER')
+        .key('Modifier_TextVerticalAlign_CENTER')
         .attributeModifier(this.TextModifier3)
         .borderWidth(1)
 
       Text('TextVerticalAlign.TOP')
         .height('5%')
         .id('Modifier_TextVerticalAlign_TOP')
+        .key('Modifier_TextVerticalAlign_TOP')
         .attributeModifier(this.TextModifier4)
         .borderWidth(1)
 
@@ -87,6 +91,7 @@ struct TextVerticalAlignModifier {
         .height('5%')
         .attributeModifier(this.TextModifier5)
         .id('Modifier_TextVerticalAlign_undefined')
+        .key('Modifier_TextVerticalAlign_undefined')
         .borderWidth(1)
     }
     .alignItems(HorizontalAlign.Center)

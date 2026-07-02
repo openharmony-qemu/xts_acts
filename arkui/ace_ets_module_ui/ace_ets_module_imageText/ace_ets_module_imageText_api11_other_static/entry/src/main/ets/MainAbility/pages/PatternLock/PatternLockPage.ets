@@ -107,7 +107,7 @@ struct PatternLockPage {
 
   build() {
     Column() {
-      Text(this.message).textAlign(TextAlign.Center).fontSize(10).key('text').height('5%')
+      Text(this.message).textAlign(TextAlign.Center).fontSize(10).key('PatternLockPage_text').height('5%')
       PatternLock(this.patternLockController)
         .sideLength(this.sideLength)
         .circleRadius(this.circleRadius)
@@ -149,7 +149,7 @@ struct PatternLockPage {
 
       Text(this.passwords.toString()).fontSize(15).key('password1').height('5%')
       PatternLock(this.patternLockController)
-        .key('default').height('25%')
+        .key('PatternLockPage_default').height('25%')
 
       PatternLock(this.patternLockController)
         .key('PatternLock')

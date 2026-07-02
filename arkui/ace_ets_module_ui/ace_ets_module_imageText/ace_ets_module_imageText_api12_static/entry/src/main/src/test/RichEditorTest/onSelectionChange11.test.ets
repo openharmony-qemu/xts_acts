@@ -80,25 +80,25 @@ export default function onSelectionChange11() {
 
       await driver.triggerKey(2049);
       await CommonFunc.sleep(1000);
-      let text1_1 = inspector.getInspectorByKey('onSelectionChange11_text1');
+      let text1_1 = inspector.getInspectorByKey('onSelectionChange11' + '_text1');
       let Obj1_1 = JSON.parseJsonElement(text1_1);
       expect(Obj1_1.getElement('$attrs').getString('content')).assertEqual('1');
-      let text2_1 = inspector.getInspectorByKey('onSelectionChange11_text2');
+      let text2_1 = inspector.getInspectorByKey('onSelectionChange11' + '_text2');
       let Obj2_1 = JSON.parseJsonElement(text2_1);
       expect(Obj2_1.getElement('$attrs').getString('content')).assertEqual('10');
-      let text3_1 = inspector.getInspectorByKey('onSelectionChange11_text3');
+      let text3_1 = inspector.getInspectorByKey('onSelectionChange11' + '_text3');
       let Obj3_1 = JSON.parseJsonElement(text3_1);
       expect(Obj3_1.getElement('$attrs').getString('content')).assertEqual('10');
 
       await driver.triggerCombineKeys(2047,2015);
       await CommonFunc.sleep(1000);
-      let text1_2 = inspector.getInspectorByKey('onSelectionChange11_text1');
+      let text1_2 = inspector.getInspectorByKey('onSelectionChange11' + '_text1');
       let Obj1_2 = JSON.parseJsonElement(text1_2);
       expect(Obj1_2.getElement('$attrs').getString('content')).assertEqual('1');
-      let text2_2 = inspector.getInspectorByKey('onSelectionChange11_text2');
+      let text2_2 = inspector.getInspectorByKey('onSelectionChange11' + '_text2');
       let Obj2_2 = JSON.parseJsonElement(text2_2);
       expect(Obj2_2.getElement('$attrs').getString('content')).assertEqual('10');
-      let text3_2 = inspector.getInspectorByKey('onSelectionChange11_text3');
+      let text3_2 = inspector.getInspectorByKey('onSelectionChange11' + '_text3');
       let Obj3_2 = JSON.parseJsonElement(text3_2);
       expect(Obj3_2.getElement('$attrs').getString('content')).assertEqual('10');
 

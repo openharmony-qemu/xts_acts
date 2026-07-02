@@ -70,7 +70,7 @@ export default function pathNewTest() {
     it('testPathNe0005', Level.LEVEL0, async (done: Function) => {
       console.info('testPathNe0005 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('path' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
 

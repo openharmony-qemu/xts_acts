@@ -38,11 +38,11 @@ struct FlexMargin_Start {
           alignItems: ItemAlign.Start,
           wrap: FlexWrap.NoWrap,
         } as FlexOptions) {
-          Text('1').width(150).height(50).backgroundColor(Color.Red).key('textFlexMargin01')
-          Text('2').width(150).height(100).backgroundColor(Color.Red).key('textFlexMargin02')
-          Text('3').width(150).height(150).backgroundColor(Color.Red).key('textFlexMargin03')
+          Text('1').width(150).height(50).backgroundColor(Color.Red).key('FlexMargin_textFlexMargin01')
+          Text('2').width(150).height(100).backgroundColor(Color.Red).key('FlexMargin_textFlexMargin02')
+          Text('3').width(150).height(150).backgroundColor(Color.Red).key('FlexMargin_textFlexMargin03')
         }
-        .key('flexMargin')
+        .key('FlexMargin_flexMargin')
         .height(200)
         .width(500)
         .margin(10)

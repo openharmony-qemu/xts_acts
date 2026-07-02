@@ -23,7 +23,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { UtilsTest } from '../Util.test';
 
-export default function updateMenuTest() {
+export default function updateMenuTest(): void {
   describe('updateMenuTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("updateMenuTest beforeAll start");

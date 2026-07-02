@@ -75,7 +75,7 @@ export default function ProgressCapsuleRadius() {
       console.info('testProgressCapsuleRadius0002 START');
       let driver: Driver = Driver.create();
       await driver.delayMs(1000);
-      let strJson = getInspectorByKey('ProgressCapsuleRadius_negative');
+      let strJson = getInspectorByKey('ProgressCapsuleRadius' + '_negative');
       await driver.delayMs(1000);
       let obj: ESObject = JSON.parse(strJson);
       console.info("[testProgressCapsuleRadius0002] component width strJson:" + JSON.stringify(strJson));
@@ -96,7 +96,7 @@ export default function ProgressCapsuleRadius() {
       console.info('testProgressCapsuleRadius0003 START');
       let driver: Driver = Driver.create();
       await driver.delayMs(1000);
-      let strJson = getInspectorByKey('ProgressCapsuleRadius_big');
+      let strJson = getInspectorByKey('ProgressCapsuleRadius' + '_big');
       await driver.delayMs(1000);
       let obj: ESObject = JSON.parse(strJson);
       console.info("[testProgressCapsuleRadius0003] component width strJson:" + JSON.stringify(strJson));

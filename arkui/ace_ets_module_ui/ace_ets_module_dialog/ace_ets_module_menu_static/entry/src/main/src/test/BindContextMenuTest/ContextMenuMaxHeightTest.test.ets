@@ -37,7 +37,7 @@ import { BusinessError } from '@ohos.base';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { BarState } from '@ohos.arkui.component';
 
-export default function ContextMenuMaxHeightTest() {
+export default function ContextMenuMaxHeightTest(): void {
   describe('ContextMenuMaxHeightTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("ContextMenuMaxHeightTest beforeAll start");

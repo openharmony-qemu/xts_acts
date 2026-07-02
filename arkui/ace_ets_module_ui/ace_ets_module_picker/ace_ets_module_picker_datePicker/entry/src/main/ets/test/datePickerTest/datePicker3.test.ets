@@ -56,7 +56,7 @@ export default function datePickerLunarJsunit() {
     it('testdatePickerLunar001', Level.LEVEL1, async (done: Function) => {
       console.info('datePickerLunar testdatePickerLunar001 START');
       await Utils.sleep(2000);
-      let strJson: string = getInspectorByKey('DatePicker');
+      let strJson: string = getInspectorByKey('datePickerNew' + '_DatePicker');
       console.info("[testdatePickerLunar001] component lunar strJson:" + strJson);
       expect(JSON.parse(strJson).$type).assertEqual('DatePicker');
       expect(JSON.parse(strJson).$attrs.lunar).assertEqual("true");

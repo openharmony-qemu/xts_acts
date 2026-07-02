@@ -19,6 +19,8 @@ group("actsautofilltest") {
     deps = [
       "ActsAutoFillAutomaticTest:ActsAutoFillAutomaticTest",
       "ActsAutoFillAutomaticTestStatic:ActsAutoFillAutomaticStaticTest",
+      "ActsAutoFillSaveTest:ActsAutoFillSaveTest",
+      "ActsAutoFillSaveTestStatic:ActsAutoFillSaveStaticTest"
     ]
   }
 }

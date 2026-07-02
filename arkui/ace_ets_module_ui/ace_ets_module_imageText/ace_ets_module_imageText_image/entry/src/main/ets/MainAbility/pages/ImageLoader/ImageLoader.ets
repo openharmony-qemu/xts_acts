@@ -34,14 +34,17 @@ struct AnimatedDrawableDescriptorTestLoader {
       Row({ space: 5 }){
         Text('imageWidth')
         Text(String(this.imageWidth)).id('imageWidth')
+        .key('imageWidth')
       }
       Row({ space: 5 }){
         Text('imageHeight')
         Text(String(this.imageHeight)).id('imageHeight')
+        .key('imageHeight')
       }
       Row({ space: 5 }){
         Text('errorCode')
         Text(this.errorCode).id('errorCode')
+        .key('errorCode')
       }
 
       Button('同步加载drawable')

@@ -16,18 +16,29 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import {
+  Component,
+  Driver,
+  UiWindow,
+  ON,
+  MatchPattern,
+  DisplayRotation,
+  ResizeDirection,
+  WindowMode,
+  PointerMatrix
+} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback, Message } from '../../../ets/MainAbility/common/MessageManager';
 import inspector from '@ohos.arkui.inspector';
 import { MarqueeManager } from '../../../ets/MainAbility/pages/marquee/marqueeUI';
-import hilog from '@ohos.hilog';
+import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UtilsTest } from '../Util.test';
 import { UtilsTest } from '../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -61,7 +72,7 @@ export default function marqueeUIJsunit() {
         }
       } catch (err) {
           console.error("push marqueeUIJsunit page error:" + err);
-          expect(false).assertEqual(true);
+          expect().assertFail();
       }
     });
 
@@ -75,7 +86,7 @@ export default function marqueeUIJsunit() {
       console.info('marqueeUIJsunit_static_0100 START');
       await CommonFunc.sleep(1000);
       // get the marquee component and test attribute
-      let strJson = inspector.getInspectorByKey('marquee');
+      let strJson = inspector.getInspectorByKey('marqueeUI' + '_marquee');
       console.info('marqueeUIJsunit_static_0100 hhe');
       const obj = JSON.parseJsonElement(strJson);
       // to confirm allowScale
@@ -102,7 +113,7 @@ export default function marqueeUIJsunit() {
       marqueeManager.message.notify({name: 'fromStart', value: true});
       await CommonFunc.sleep(200);
       // check the value of changed parameter
-      let strJson = inspector.getInspectorByKey('marquee');
+      let strJson = inspector.getInspectorByKey('marqueeUI' + '_marquee');
       const obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('fromStart')).assertEqual('true');
       done();
@@ -124,16 +135,16 @@ export default function marqueeUIJsunit() {
       btn ? await btn!.click(): null
       await driver.delayMs(5000);
       // check the test event
-      let ttx = await driver.findComponent(ON.id('text1'));
+      let ttx = await driver.findComponent(ON.id('marqueeUI' + '_text1'));
       let txt = await (ttx?.getText() as Promise<string>);
       console.info("[marqueeUIJsunit_static_0300'] component obj is: " + txt);
       expect(txt == 'onStart').assertTrue();
-      let ttxx = await driver.findComponent(ON.id('text2'));
+      let ttxx = await driver.findComponent(ON.id('marqueeUI' + '_text2'));
       let txtt = await (ttxx?.getText() as Promise<string>);
       console.info("[marqueeUIJsunit_static_0300'] component obj2 is: " + txtt);
       expect(txtt == 'onBounce').assertTrue();
       await driver.delayMs(1000);
-      let ttxxx = await driver.findComponent(ON.id('text3'));
+      let ttxxx = await driver.findComponent(ON.id('marqueeUI' + '_text3'));
       let txttt = await (ttxxx?.getText() as Promise<string>);
       console.info("[marqueeUIJsunit_static_0300'] component obj3 is: " + txttt);
       expect(txttt == 'onFinish').assertTrue();
@@ -154,7 +165,7 @@ export default function marqueeUIJsunit() {
       marqueeManager.message.notify({name: 'loop', value: -30})
       await CommonFunc.sleep(1000);
       // check the value of changed attribute
-      let strJson = inspector.getInspectorByKey('marquee');
+      let strJson = inspector.getInspectorByKey('marqueeUI' + '_marquee');
       const obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('loop')).assertEqual('-1');
       done();
@@ -173,7 +184,7 @@ export default function marqueeUIJsunit() {
       marqueeManager.message.notify({name: 'step', value: 50})
       await CommonFunc.sleep(200);
       // check the value of changed parameter
-      let strJson = inspector.getInspectorByKey('marquee');
+      let strJson = inspector.getInspectorByKey('marqueeUI' + '_marquee');
       const obj = JSON.parseJsonElement(strJson);
       expect(Math.abs( Number(obj.getElement('$attrs').getString('step')) - uiContext!.vp2px(50)) <= 1).assertTrue();
       done();
@@ -191,7 +202,7 @@ export default function marqueeUIJsunit() {
       const marqueeManager = AppStorage.get<MarqueeManager>("marqueeManager") as MarqueeManager
       marqueeManager.message.notify({name: 'step', value: -30});
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('marquee');
+      let strJson = inspector.getInspectorByKey('marqueeUI' + '_marquee');
       const obj = JSON.parseJsonElement(strJson);
       console.log("marqueeUIJsunit_static_0600" + obj.getElement('$attrs').getString('step'))
       console.log('========================================= ' + uiContext!.vp2px(6))
@@ -212,7 +223,7 @@ export default function marqueeUIJsunit() {
       const marqueeManager = AppStorage.get<MarqueeManager>("marqueeManager") as MarqueeManager
       marqueeManager.message.notify({name: 'loop', value: 2});
       await CommonFunc.sleep(100);
-      let strJson = inspector.getInspectorByKey('marquee');
+      let strJson = inspector.getInspectorByKey('marqueeUI' + '_marquee');
       const obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('loop')).assertEqual('2');
       done();
@@ -230,7 +241,7 @@ export default function marqueeUIJsunit() {
       const marqueeManager = AppStorage.get<MarqueeManager>("marqueeManager") as MarqueeManager
       marqueeManager.message.notify({name: 'src', value: 'Running Marquee starts rolling'});
       await CommonFunc.sleep(200);
-      let strJson = inspector.getInspectorByKey('marquee');
+      let strJson = inspector.getInspectorByKey('marqueeUI' + '_marquee');
       const obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('src')).assertEqual('Running Marquee starts rolling');
       done();

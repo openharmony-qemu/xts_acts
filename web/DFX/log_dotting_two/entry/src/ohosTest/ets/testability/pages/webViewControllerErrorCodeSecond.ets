@@ -84,6 +84,51 @@ struct Index {
               }
               break;
             }
+            case 'testLoadDataFullParamsError002': {
+              try {
+                this.controller.loadData(null, 'text/html', 'UTF-8');
+              } catch (error) {
+                let e: business_error.BusinessError = error as business_error.BusinessError;
+                console.error(`testLoadDataFullParamsError002 ErrorCode: ${e.code},  Message: ${e.message}`);
+                Utils.emitEvent(e.code, 115561);
+              }
+              break;
+            }
+
+            case 'testLoadDataFullParamsError003': {
+              let eventCode: string = '17100002';
+              try {
+                let invalidUrl: string = 'ftp://' + 'a'.repeat(2050);
+                this.controller.loadData('<html><body>loadData</body></html>',
+                  'text/html',
+                  'UTF-8',
+                  invalidUrl,
+                  invalidUrl
+                );
+              } catch (error) {
+                let e: business_error.BusinessError = error as business_error.BusinessError;
+                console.error(`testLoadDataFullParamsError003 ErrorCode: ${e.code},  Message: ${e.message}`);
+                eventCode = String(e.code);
+              }
+              Utils.emitEvent(eventCode, 115562);
+              break;
+            }
+
+            case 'testLoadDataFullParamsError004': {
+              try {
+                this.controllerNull.loadData('<html><body>loadData</body></html>',
+                  'text/html',
+                  'UTF-8',
+                  'data:text/html,base',
+                  'data:text/html,history'
+                );
+              } catch (error) {
+                let e: business_error.BusinessError = error as business_error.BusinessError;
+                console.error(`testLoadDataFullParamsError004 ErrorCode: ${e.code},  Message: ${e.message}`);
+                Utils.emitEvent(e.code, 115563);
+              }
+              break;
+            }
 
             case 'testIsIncognitoModeError001': {
               try {

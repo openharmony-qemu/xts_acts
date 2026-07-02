@@ -51,29 +51,29 @@ struct videoControllerAsyncStatic {
 
   build() {
     Column({space:2} as ColumnOptions) {
-      Text(this.str).height(20).id('videoControllerAsyncText')
-      Text(this.str1).height(20).id('videoControllerAsyncText1')
+      Text(this.str).height(15).id('videoControllerAsyncText')
+      Text(this.str1).height(15).id('videoControllerAsyncText1')
       Row() {
         Button('start')
           .onClick(() => {
             this.controller.start()
               .then(() => {
-                console.info('jyy start succeed');
+                console.info('start succeed');
               })
           })
           .id('videoControllerAsyncStart')
           .width(65)
-          .height(20)
+          .height(15)
         Button('pause')
           .onClick(() => {
             this.controller.pause()
               .then(() => {
-                console.info('jyy pause succeed');
+                console.info('pause succeed');
               })
           })
           .id('videoControllerAsyncPause')
           .width(65)
-          .height(20)
+          .height(15)
         Button('setTime')
           .onClick(() => {
             this.controller.setCurrentTime(1,SeekMode.PreviousKeyframe)
@@ -81,30 +81,30 @@ struct videoControllerAsyncStatic {
           })
           .id('videoControllerAsyncSetTime')
           .width(65)
-          .height(20)
+          .height(15)
       }
       Row(){
         Button('stop')
           .onClick(() => {
             this.controller.stop()
               .then(() => {
-                console.info('jyy stop succeed');
+                console.info('stop succeed');
               })
           })
           .id('videoControllerAsyncStop')
           .width(65)
-          .height(20)
+          .height(15)
         Button('reset')
           .onClick(() => {
             this.controller.reset()
               .then(() => {
                 this.str1 = 'reset'
-                console.info('jyy reset succeed');
+                console.info('reset succeed');
               })
           })
           .id('videoControllerAsyncReset')
           .width(65)
-          .height(20)
+          .height(15)
         Button('requestFullscreen')
           .onClick(() => {
             this.controller.requestFullscreen(true)
@@ -114,7 +114,7 @@ struct videoControllerAsyncStatic {
           })
           .id('videoControllerAsyncRequestFullscreen')
           .width(65)
-          .height(20)
+          .height(15)
       }
       Row(){
         Button('setNull')
@@ -123,21 +123,44 @@ struct videoControllerAsyncStatic {
           })
           .id('videoControllerAsyncSetNull')
           .width(65)
-          .height(20)
+          .height(15)
         Button('setUndefined')
           .onClick(() => {
 
           })
           .id('videoControllerAsyncSetUndefined')
           .width(65)
-          .height(20)
+          .height(15)
         Button('setFalse')
           .onClick(() => {
             this.controller.requestFullscreen(false)
           })
           .id('videoControllerAsyncSetFalse')
           .width(65)
-          .height(20)
+          .height(15)
+      }
+      Row(){
+        Button('setTime1')
+          .onClick(() => {
+            this.controller.setCurrentTime(1,SeekMode.NextKeyframe)
+          })
+          .id('videoControllerAsyncSetTime1')
+          .width(70)
+          .height(15)
+        Button('setTime2')
+          .onClick(() => {
+            this.controller.setCurrentTime(1,SeekMode.ClosestKeyframe)
+          })
+          .id('videoControllerAsyncSetTime2')
+          .width(70)
+          .height(15)
+        Button('setTime3')
+          .onClick(() => {
+            this.controller.setCurrentTime(1,SeekMode.Accurate)
+          })
+          .id('videoControllerAsyncSetTime3')
+          .width(70)
+          .height(15)
       }
       Video({
         src: this.videoSrc,
@@ -147,52 +170,52 @@ struct videoControllerAsyncStatic {
         .height(60)
         .onStart(() => {
           this.str = 'onStart'
-          console.info('jyy onStart');
+          console.info('onStart');
         })
         .onPause(() => {
           this.str = 'onPause'
-          console.info('jyy onPause');
+          console.info('onPause');
         })
         .onFinish(() => {
           this.str = 'onFinish'
-          console.info('jyy onFinish');
+          console.info('onFinish');
         })
         .onError(() => {
           this.str = 'onError'
-          console.error('jyy onError');
+          console.error('onError');
         })
         .onStop(() => {
           this.str = 'onStop'
-          console.info('jyy onStop');
+          console.info('onStop');
         })
         .onPrepared((e?: PreparedInfo) => {
           if (e != undefined) {
             this.str = 'onPrepared'
-            console.info(`jyy onPrepared is ${e.duration}`);
+            console.info(`onPrepared is ${e.duration}`);
           }
         })
         .onSeeking((e?: PlaybackInfo) => {
           if (e != undefined) {
             this.str = 'onSeeking'
-            console.info(`jyy onSeeking is ${e.time}`);
+            console.info(`onSeeking is ${e.time}`);
           }
         })
         .onSeeked((e?: PlaybackInfo) => {
           if (e != undefined) {
             this.str = 'onSeeked'
-            console.info(`jyy onSeeked is ${e.time}`);
+            console.info(`onSeeked is ${e.time}`);
           }
         })
         .onUpdate((e?: PlaybackInfo) => {
           if (e != undefined) {
             this.str1 = 'onUpdate'
-            console.info(`jyy onUpdate is ${e.time}`);
+            console.info(`onUpdate is ${e.time}`);
           }
         })
         .onFullscreenChange((e?: FullscreenInfo) => {
           if (e != undefined) {
             this.str = 'onFullscreenChange_' + e.fullscreen
-            console.info(`jyy onFullscreenChange is ${e.fullscreen}`);
+            console.info(`onFullscreenChange is ${e.fullscreen}`);
           }
         })
     }.width('100%').height('100%')

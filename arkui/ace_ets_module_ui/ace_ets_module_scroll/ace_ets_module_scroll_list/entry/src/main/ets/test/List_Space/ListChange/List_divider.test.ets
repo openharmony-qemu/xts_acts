@@ -79,14 +79,14 @@ export default function List_divider() {
         name: 'strokeWidth', value: 10
       })
       await CommonFunc.sleep(3000);
-      let strJson = getInspectorByKey('List_divider_01');
+      let strJson = getInspectorByKey('List_divider' + '_01');
 
       expect(JSON.parse(strJson).$type).assertEqual('List');
-      let List_divider_011 = CommonFunc.getComponentRect('List_divider_011');
-      let List_divider_012 = CommonFunc.getComponentRect('List_divider_012');
-      let List_divider_013 = CommonFunc.getComponentRect('List_divider_013');
-      let List_divider_014 = CommonFunc.getComponentRect('List_divider_014');
-      let List_divider_01 = CommonFunc.getComponentRect('List_divider_01');
+      let List_divider_011 = CommonFunc.getComponentRect('List_divider' + '_011');
+      let List_divider_012 = CommonFunc.getComponentRect('List_divider' + '_012');
+      let List_divider_013 = CommonFunc.getComponentRect('List_divider' + '_013');
+      let List_divider_014 = CommonFunc.getComponentRect('List_divider' + '_014');
+      let List_divider_01 = CommonFunc.getComponentRect('List_divider' + '_01');
       let left = List_divider_01.left;
       let top = List_divider_01.top;
       let right = List_divider_01.right;
@@ -115,7 +115,7 @@ export default function List_divider() {
       let driver = Driver.create();
       await driver.swipe(Math.round(globalThis.winLeft + left + (right -left)/2), Math.round(globalThis.winTop + (bottom-top)/2 + top), Math.round(globalThis.winLeft + left + (right -left)/2), Math.round(globalThis.winTop + top));
       await CommonFunc.sleep(3000);
-      let List_divider_014Again = CommonFunc.getComponentRect('List_divider_014');
+      let List_divider_014Again = CommonFunc.getComponentRect('List_divider' + '_014');
       expect(Math.floor(Math.abs(List_divider_014.top - List_divider_014Again.top)) <= 1).assertTrue();
       console.info('testListDividerStrokeWidthToTen END');
       done();
@@ -135,14 +135,14 @@ export default function List_divider() {
         name: 'strokeWidth', value: 40
       })
       await CommonFunc.sleep(3000);
-      let strJson = getInspectorByKey('List_divider_01');
+      let strJson = getInspectorByKey('List_divider' + '_01');
 
       expect(JSON.parse(strJson).$type).assertEqual('List');
-      let List_divider_011 = CommonFunc.getComponentRect('List_divider_011');
-      let List_divider_012 = CommonFunc.getComponentRect('List_divider_012');
-      let List_divider_013 = CommonFunc.getComponentRect('List_divider_013');
-      let List_divider_014 = CommonFunc.getComponentRect('List_divider_014');
-      let List_divider_01 = CommonFunc.getComponentRect('List_divider_01');
+      let List_divider_011 = CommonFunc.getComponentRect('List_divider' + '_011');
+      let List_divider_012 = CommonFunc.getComponentRect('List_divider' + '_012');
+      let List_divider_013 = CommonFunc.getComponentRect('List_divider' + '_013');
+      let List_divider_014 = CommonFunc.getComponentRect('List_divider' + '_014');
+      let List_divider_01 = CommonFunc.getComponentRect('List_divider' + '_01');
       let left = List_divider_01.left;
       let top = List_divider_01.top;
       let right = List_divider_01.right;
@@ -175,7 +175,7 @@ export default function List_divider() {
       let driver = Driver.create();
       await driver.swipe(Math.round(globalThis.winLeft + left + (right -left)/2),  Math.round(globalThis.winTop + (bottom-top)*0.4 + top), Math.round(globalThis.winLeft + left + (right -left)/2), Math.round(globalThis.winTop + top));
       await CommonFunc.sleep(3000);
-      let List_divider_014Again = CommonFunc.getComponentRect('List_divider_014');
+      let List_divider_014Again = CommonFunc.getComponentRect('List_divider' + '_014');
       expect(Math.floor(Math.abs(List_divider_01.bottom - List_divider_014Again.bottom)) <= 1)
         .assertTrue();
       console.info('testListDividerStrokeWidthToForty END');

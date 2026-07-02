@@ -119,7 +119,7 @@ export default function textAreaJsunit() {
      */
     it('testTextArea_static_020', Level.LEVEL1, async (done: ()=>void) => {
       console.info('testTextArea_static_020 START');
-      let strJson = inspector.getInspectorByKey('textArea2');
+      let strJson = inspector.getInspectorByKey('TextArea' + '_textArea2');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[textArea2] get inspector value is: " + JSON.stringify(obj));
       expect(obj.getString('$type')).assertEqual('TextArea')

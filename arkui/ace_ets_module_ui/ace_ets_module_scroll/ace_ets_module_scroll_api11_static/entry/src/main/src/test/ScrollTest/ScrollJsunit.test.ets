@@ -86,7 +86,7 @@ export default function ScrollJsunit() {
      */
 it('testScrollGetInspectorByKey010_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testGetInspectorByKey START');
-      let strJson = inspector.getInspectorByKey('scroll');
+      let strJson = inspector.getInspectorByKey('ScrollA' + '_scroll');
       let obj = JSON.parseJsonElement(strJson);
       console.info("cd scroll component obj is: " + JSON.stringify(obj));
       console.log("cd scroll type" + JSON.stringify(obj.getString('$type')));

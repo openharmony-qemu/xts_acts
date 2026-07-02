@@ -54,7 +54,7 @@ export default function swiperJsunit() {
      */
     it('swiperTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('swiperTest_0100 START');
-      let strJson: string = getInspectorByKey('swiper');
+      let strJson: string = getInspectorByKey('swiper' + '_swiper');
       console.info("swiperTest_0100 component strJson:" + strJson);
 
       console.info("swiperTest_0100 component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
@@ -76,7 +76,7 @@ export default function swiperJsunit() {
      */
     it('swiperTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('swiperTest_0200 START');
-      let strJson: string = getInspectorByKey('swiper');
+      let strJson: string = getInspectorByKey('swiper' + '_swiper');
       console.info("swiperTest_0200 component strJson:" + strJson);
       console.info("swiperTest_0200 component obj is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$attrs.indicator).assertEqual('true')
@@ -94,7 +94,7 @@ export default function swiperJsunit() {
      */
     it('swiperTest_0300', Level.LEVEL1, async (done: Function) => {
       console.info('swiperTest_0300 START');
-      let strJson: string = getInspectorByKey('swiper');
+      let strJson: string = getInspectorByKey('swiper' + '_swiper');
       console.info("swiperTest_0300 component strJson:" + strJson);
 
       console.info("swiperTest_0300 component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
@@ -113,7 +113,7 @@ export default function swiperJsunit() {
      */
     it('swiperTest_0400', Level.LEVEL1, async (done: Function) => {
       console.info('swiperTest_0400 START');
-      let strJson: string = getInspectorByKey('swiper');
+      let strJson: string = getInspectorByKey('swiper' + '_swiper');
       console.info("swiperTest_0400 component strJson:" + strJson);
 
       console.info("swiperTest_0400 component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
@@ -132,7 +132,7 @@ export default function swiperJsunit() {
      */
     it('swiperTest_0500', Level.LEVEL1, async (done: Function) => {
       console.info('swiperTest_0500 START');
-      let strJson: string = getInspectorByKey('swiper');
+      let strJson: string = getInspectorByKey('swiper' + '_swiper');
       console.info("swiperTest_0500 component strJson:" + strJson);
 
       console.info("swiperTest_0500 component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
@@ -167,7 +167,7 @@ export default function swiperJsunit() {
         console.log("swiperTest_0600 change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
-      let strJsonNew: string = getInspectorByKey('swiper');
+      let strJsonNew: string = getInspectorByKey('swiper' + '_swiper');
 
       console.info("swiperTest_0600 component JSON.parse(strJsonNew) is: " + JSON.stringify(JSON.parse(strJsonNew)));
       expect(JSON.parse(strJsonNew).$attrs.index).assertEqual('3');
@@ -200,7 +200,7 @@ export default function swiperJsunit() {
         console.log("swiperTest_0700 change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
-      let strJsonNew = getInspectorByKey('swiper');
+      let strJsonNew = getInspectorByKey('swiper' + '_swiper');
 
       console.info("swiperTest_0700 component JSON.parse(strJsonNew) is: " + JSON.stringify(JSON.parse(strJsonNew)));
       expect(JSON.parse(strJsonNew).$attrs.autoPlay).assertEqual('true');
@@ -338,7 +338,7 @@ export default function swiperJsunit() {
         console.log("swiperTest_1100 change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
-      let strJsonNew: string = getInspectorByKey('swiper');
+      let strJsonNew: string = getInspectorByKey('swiper' + '_swiper');
 
       console.info("swiperTest_1100 component JSON.parse(strJsonNew) is: " + JSON.stringify(JSON.parse(strJsonNew)));
       expect(JSON.parse(strJsonNew).$attrs.loop).assertEqual('true');
@@ -372,7 +372,7 @@ export default function swiperJsunit() {
         console.log("swiperTest_1200 change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
-      let strJsonNew: string = getInspectorByKey('swiper');
+      let strJsonNew: string = getInspectorByKey('swiper' + '_swiper');
 
       console.info("swiperTest_1200 component JSON.parse(strJsonNew) is: " + JSON.stringify(JSON.parse(strJsonNew)));
       expect(JSON.parse(strJsonNew).$attrs.vertical).assertEqual('true');
@@ -406,7 +406,7 @@ export default function swiperJsunit() {
         console.log("swiperTest_1300 change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
-      let strJsonNew = getInspectorByKey('swiper');
+      let strJsonNew = getInspectorByKey('swiper' + '_swiper');
 
       console.info("swiperTest_1300 component JSON.parse(strJsonNew) is: " + JSON.stringify(JSON.parse(strJsonNew)));
       expect(JSON.parse(strJsonNew).$attrs.interval).assertEqual('3000');
@@ -440,7 +440,7 @@ export default function swiperJsunit() {
         console.log("swiperTest_1400 change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
-      let strJsonNew = getInspectorByKey('swiper');
+      let strJsonNew = getInspectorByKey('swiper' + '_swiper');
       console.info("swiperTest_1400 component JSON.parse(strJson)New is: " + JSON.stringify(JSON.parse(strJsonNew)));
       expect(JSON.parse(strJsonNew).$attrs.indicator).assertEqual('false');
       console.info('swiperTest_1400 END');
@@ -473,7 +473,7 @@ export default function swiperJsunit() {
         console.log("swiperTest_1500 change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
-      let strJsonNew = getInspectorByKey('swiper');
+      let strJsonNew = getInspectorByKey('swiper' + '_swiper');
 
       console.info("swiperTest_1500 component JSON.parse(strJsonNew) is: " + JSON.stringify(JSON.parse(strJsonNew)));
       expect(JSON.parse(strJsonNew).$attrs.duration).assertEqual('500');
@@ -507,7 +507,7 @@ export default function swiperJsunit() {
         console.log("swiperTest_1600 change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
-      let strJsonNew = getInspectorByKey('swiper');
+      let strJsonNew = getInspectorByKey('swiper' + '_swiper');
 
       console.info("swiperTest_1600 component JSON.parse(strJsonNew) is: " + JSON.stringify(JSON.parse(strJsonNew)));
       expect(JSON.parse(strJsonNew).$attrs.itemSpace).assertEqual('1.00vp');
@@ -541,7 +541,7 @@ export default function swiperJsunit() {
         console.log("swiperTest_1700 change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
-      let strJsonNew = getInspectorByKey('swiper');
+      let strJsonNew = getInspectorByKey('swiper' + '_swiper');
 
       console.info("swiperTest_1700 component JSON.parse(strJsonNew) is: " + JSON.stringify(JSON.parse(strJsonNew)));
       expect(JSON.parse(strJsonNew).$attrs.loop).assertEqual('true');
@@ -575,7 +575,7 @@ export default function swiperJsunit() {
         console.log("swiperTest_1800 change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
-      let strJsonNew = getInspectorByKey('swiper');
+      let strJsonNew = getInspectorByKey('swiper' + '_swiper');
 
       console.info("swiperTest_1800 component JSON.parse(strJsonNew) is: " + JSON.stringify(JSON.parse(strJsonNew)));
       expect(JSON.parse(strJsonNew).$attrs.autoPlay).assertEqual('false');
@@ -609,7 +609,7 @@ export default function swiperJsunit() {
         console.log("swiperTest_1900 change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
-      let strJsonNew = getInspectorByKey('swiper');
+      let strJsonNew = getInspectorByKey('swiper' + '_swiper');
 
       console.info("swiperTest_1900 component JSON.parse(strJsonNew) is: " + JSON.stringify(JSON.parse(strJsonNew)));
       expect(JSON.parse(strJsonNew).$attrs.duration).assertEqual('0');
@@ -643,7 +643,7 @@ export default function swiperJsunit() {
         console.log("swiperTest_2000 change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
-      let strJsonNew = getInspectorByKey('swiper');
+      let strJsonNew = getInspectorByKey('swiper' + '_swiper');
 
       console.info("swiperTest_2000 component JSON.parse(strJsonNew) is: " + JSON.stringify(JSON.parse(strJsonNew)));
       expect(JSON.parse(strJsonNew).$attrs.duration).assertEqual('400');

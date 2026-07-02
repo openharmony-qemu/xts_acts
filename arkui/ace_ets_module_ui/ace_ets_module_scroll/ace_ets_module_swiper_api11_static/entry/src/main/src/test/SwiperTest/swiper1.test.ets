@@ -90,7 +90,7 @@ export default function swiperCurveJsunit() {
 it('testswiperCurve_static_0003', Level.LEVEL0, async (): Promise<void> => {
       console.info('swiperCurve testswiperCurve_static_0003 START');
       await CommonFunc.sleep(10000);
-      let strJson = inspector.getInspectorByKey('swiper');
+      let strJson = inspector.getInspectorByKey('swiperNew' + '_swiper');
       console.info("[testswiperCurve_static_0003] component index strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Swiper');
@@ -108,7 +108,7 @@ it('testswiperCurve_static_0003', Level.LEVEL0, async (): Promise<void> => {
 it('testswiperCurve_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('swiperCurve testswiperCurve_static_0001 START');
       await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('swiper');
+      let strJson = inspector.getInspectorByKey('swiperNew' + '_swiper');
       console.info("[testswiperCurve_static_0001] component width strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Swiper');
@@ -128,7 +128,7 @@ it('testswiperCurve_static_0001', Level.LEVEL0, async (): Promise<void> => {
 it('testswiperCurve_static_0002', Level.LEVEL0, async (): Promise<void> => {
       console.info('swiperCurve testswiperCurve_static_0002 START');
       await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('swiper');
+      let strJson = inspector.getInspectorByKey('swiperNew' + '_swiper');
       console.info("[testswiperCurve_static_0002] component cachedCount strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Swiper');
@@ -152,7 +152,7 @@ it('testswiperCurve_static_0002', Level.LEVEL0, async (): Promise<void> => {
 it('testswiperCurve_static_0004', Level.LEVEL0, async (): Promise<void> => {
       console.info('swiperCurve testswiperCurve_static_0004 START');
       await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('swiper');
+      let strJson = inspector.getInspectorByKey('swiperNew' + '_swiper');
       console.info("[testswiperCurve_static_0004] component autoPlay strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Swiper');
@@ -172,7 +172,7 @@ it('testswiperCurve_static_0004', Level.LEVEL0, async (): Promise<void> => {
 it('testswiperCurve_static_0005', Level.LEVEL0, async (): Promise<void> => {
       console.info('swiperCurve testswiperCurve_static_0005 START');
       await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('swiper');
+      let strJson = inspector.getInspectorByKey('swiperNew' + '_swiper');
       console.info("[testswiperCurve_static_0005] component interval strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Swiper');
@@ -192,7 +192,7 @@ it('testswiperCurve_static_0005', Level.LEVEL0, async (): Promise<void> => {
 it('testswiperCurve_static_0006', Level.LEVEL0, async (): Promise<void> => {
       console.info('swiperCurve testswiperCurve_static_0006 START');
       await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('swiper');
+      let strJson = inspector.getInspectorByKey('swiperNew' + '_swiper');
       console.info("[testswiperCurve_static_0006] component indicator strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Swiper');
@@ -212,7 +212,7 @@ it('testswiperCurve_static_0006', Level.LEVEL0, async (): Promise<void> => {
 it('testswiperCurve_static_0007', Level.LEVEL0, async (): Promise<void> => {
       console.info('swiperCurve testswiperCurve_static_0007 START');
       await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('swiper');
+      let strJson = inspector.getInspectorByKey('swiperNew' + '_swiper');
       console.info("[testswiperCurve_static_0007] component loop strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Swiper');
@@ -232,7 +232,7 @@ it('testswiperCurve_static_0007', Level.LEVEL0, async (): Promise<void> => {
 it('testswiperCurve_static_0008', Level.LEVEL0, async (): Promise<void> => {
       console.info('swiperCurve testswiperCurve_static_0008 START');
       await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('swiper');
+      let strJson = inspector.getInspectorByKey('swiperNew' + '_swiper');
       console.info("[testswiperCurve_static_0008] component duration strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Swiper');
@@ -252,7 +252,7 @@ it('testswiperCurve_static_0008', Level.LEVEL0, async (): Promise<void> => {
 it('testswiperCurve_static_0009', Level.LEVEL0, async (): Promise<void> => {
       console.info('swiperCurve testswiperCurve_static_0009 START');
       await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('swiper');
+      let strJson = inspector.getInspectorByKey('swiperNew' + '_swiper');
       console.info("[testswiperCurve_static_0009] component vertical strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Swiper');
@@ -272,7 +272,7 @@ it('testswiperCurve_static_0009', Level.LEVEL0, async (): Promise<void> => {
 it('testswiperCurve_static_00010', Level.LEVEL0, async (): Promise<void> => {
       console.info('swiperCurve testswiperCurve_static_00010 START');
       await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('swiper');
+      let strJson = inspector.getInspectorByKey('swiperNew' + '_swiper');
       console.info("[testswiperCurve_static_00010] component itemSpace strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Swiper');
@@ -294,7 +294,7 @@ it('testswiperCurve_static_00010', Level.LEVEL0, async (): Promise<void> => {
 it('testswiperCurve_static_00011', Level.LEVEL0, async (): Promise<void> => {
       console.info('swiperCurve testswiperCurve_static_00011 START');
       await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('swiper');
+      let strJson = inspector.getInspectorByKey('swiperNew' + '_swiper');
       console.info("[testswiperCurve_static_00011] component onChange strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Swiper');

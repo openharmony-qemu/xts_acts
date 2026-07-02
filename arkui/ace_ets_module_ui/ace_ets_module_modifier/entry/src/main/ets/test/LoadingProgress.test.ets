@@ -99,7 +99,7 @@ export default function loadingProgressJsunit() {
     it('ArkUX_Stage_loadingProgress_attrs_0102', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_loadingProgress_attrs_0102 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('loadingProgress' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
 

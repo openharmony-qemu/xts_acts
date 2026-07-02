@@ -103,7 +103,7 @@ export default function imageJsunit55() {
 it('imageTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('imageTest_0100 START');
       await CommonFunc.sleep(4000);
-      let strJson: string = inspector.getInspectorByKey('text');
+      let strJson: string = inspector.getInspectorByKey('image55' + '_text');
       console.info("imageTest_0100 component strJson:" + strJson);
       console.info("imageTest_0100 JSON.parseJsonElement(strJson).getElement('$attrs').getString('content') is: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('string_hello');

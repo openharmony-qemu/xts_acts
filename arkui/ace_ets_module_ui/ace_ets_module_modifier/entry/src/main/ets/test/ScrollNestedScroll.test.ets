@@ -53,7 +53,7 @@ export default function scrollNestedScrollJsunit() {
     it('ArkUI_Stage_scrollNestedScroll01', Level.LEVEL0, async (done: Function) => {
       console.info('[ArkUI_Stage_scrollNestedScroll01] START');
       await Utils.sleep(2000)
-      let webRect = Utils.getComponentRect('ColumnSize');
+      let webRect = Utils.getComponentRect('scrollNestedScroll' + '_ColumnSize');
       console.info(`ArkUI_Stage_scrollNestedScroll01 get webRect is:` + JSON.stringify(webRect));
       let x = Math.floor(Utils.getRectHorizontalCenterX(webRect))
       let y = Math.floor(Utils.getRectVerticalCenterY(webRect))

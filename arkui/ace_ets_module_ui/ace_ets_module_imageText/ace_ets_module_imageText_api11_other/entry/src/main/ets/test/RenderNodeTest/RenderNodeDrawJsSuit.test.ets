@@ -56,7 +56,7 @@ export default function RenderNodeDrawJsSuit() {
       let button_Bottom = await driver.findComponent(ON.id('invalidate_draw'));
       await button_Bottom.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('RenderNodeDraw_get');
+      let strJson = getInspectorByKey('RenderNodeDraw' + '_get');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[RenderNodeDrawJsSuit_0100] obj is: " + JSON.stringify(obj));
       console.info("[RenderNodeDrawJsSuit_0100] obj content is: " + JSON.stringify(obj.$attrs.content));

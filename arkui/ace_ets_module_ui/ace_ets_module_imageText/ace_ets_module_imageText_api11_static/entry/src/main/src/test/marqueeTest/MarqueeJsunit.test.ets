@@ -20,13 +20,14 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import emitter from '@ohos.events.emitter';
 import { Color } from '@ohos.arkui.component';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
+import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UtilsTest } from '../Util.test';
 import { UtilsTest } from '../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -91,7 +92,7 @@ export default function marqueeJsunit() {
       } catch (err) {
         console.info("testMarquee_static_0100 on emitter err : " + JSON.stringify(err));
       }
-      console.info("testMarquee_static_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('button', 10, "")));
+      console.info("testMarquee_static_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('marquee' + '_marquee' + '_marquee' + '_button', 10, "")));
       await CommonFunc.sleep(1000);
       let callback1 = (eventData: emitter.EventData) => {
         console.info("testMarquee_static_0100 get event state result is: " + JSON.stringify(eventData));
@@ -134,7 +135,7 @@ export default function marqueeJsunit() {
       } catch (err) {
         console.info("testMarquee_static_0200 on emitter err : " + JSON.stringify(err));
       }
-      console.info("testMarquee_static_0200 click result is: " + JSON.stringify(inspector.sendEventByKey('button', 10, "")));
+      console.info("testMarquee_static_0200 click result is: " + JSON.stringify(inspector.sendEventByKey('marquee' + '_marquee' + '_marquee' + '_button', 10, "")));
       await CommonFunc.sleep(1000);
       let callback1 = (eventData: emitter.EventData) => {
         console.info("testMarquee_static_0200 get event state result is: " + JSON.stringify(eventData));
@@ -177,7 +178,7 @@ export default function marqueeJsunit() {
       } catch (err) {
         console.info("testMarquee_static_0300 on emitter err : " + JSON.stringify(err));
       }
-      console.info("testMarquee_static_0300 click result is: " + JSON.stringify(inspector.sendEventByKey('button', 10, "")));
+      console.info("testMarquee_static_0300 click result is: " + JSON.stringify(inspector.sendEventByKey('marquee' + '_marquee' + '_marquee' + '_button', 10, "")));
       await CommonFunc.sleep(1000);
       let callback1 = (eventData: emitter.EventData) => {
         console.info("testMarquee_static_0300 get event state result is: " + JSON.stringify(eventData));

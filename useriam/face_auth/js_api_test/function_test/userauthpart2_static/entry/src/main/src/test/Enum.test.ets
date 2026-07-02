@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -36,6 +37,7 @@ export default function signNormalNotAccessBiometricEnumExecute() {
             expect('2').assertEqual(userAuth.UserAuthType.FACE + '');
             expect('4').assertEqual(userAuth.UserAuthType.FINGERPRINT + '');
             expect('16').assertEqual(userAuth.UserAuthType.PRIVATE_PIN + '');
+            expect('64').assertEqual(userAuth.UserAuthType.COMPANION_DEVICE  + '');
             hilog.info(domain, tag, '%{public}s', 'Security_IAM_userAuthType_Kit_Func_Static_0084 end');
         })
 

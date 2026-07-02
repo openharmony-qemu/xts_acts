@@ -43,7 +43,7 @@ export default function muneRadiusTest() {
         router.clear();
         let pages = router.getState();
         console.info("get muneRadiusTest state pages: " + JSON.stringify(pages));
-        if (!("muneRadiusTest" == pages.name)) {
+        if (!("menuradius" == pages.name)) {
           console.info("get muneRadiusTest state pages.name: " + JSON.stringify(pages.name));
           let result = await router.replace(options);
           await CommonFunc.sleep(2000);

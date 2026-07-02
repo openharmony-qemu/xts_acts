@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -786,9 +786,9 @@ export default function ArraySlice3Test(): void {
      * @tc.level Level 2
      */
     it('testArraySliceThree042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const first = new Array<number>(1);
-      const second = new Array<number>(2);
-      const third = new Array<number>(3);
+      const first = Array.create<number>(1, 1);
+      const second = Array.create<number>(1, 2);
+      const third = Array.create<number>(1, 3);
       const arr = new Array<Array<number>>(first, second, third);
       const start: int = 1;
       const end: int = 3;

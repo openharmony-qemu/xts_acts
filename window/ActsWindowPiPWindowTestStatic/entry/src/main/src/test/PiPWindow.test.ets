@@ -3005,6 +3005,8 @@ export default function PiPWindowTest() {
 
 
             await Utils.msSleep(1000);
+            await component!.click();
+            await Utils.msSleep(1000);
             let button3 = await driver.findComponent(ON.id('control_play'));
             console.log(`${msgStr} button3: ${JSON.stringify(button3)}`);
             await button3!.click();
@@ -3581,31 +3583,22 @@ export default function PiPWindowTest() {
           localStorage: undefined
         };
         try {
-          let promise = pipWindow.create(config);
-          promise.then((data: pipWindow.PiPController) => {
-            
-            if (!pipController!.isPiPSupported()) {
-  
-              done();
-            } else {
-              console.log(`${msgStr} Succeeded in creating pip controller, Data:${data}`)
-              pipController!.getPiPSettingSwitch().then((result: boolean) => {
-                console.log(`${msgStr} result: ${result}`)
-                expect(result).assertEqual(true);
-                done();
-              }).catch((err: Error) => {
-                console.error(`${msgStr} promise Failed getPiPSettingSwitch, Cause code ${err.code}, message ${err.message}`);
-                expect(err.code).assertEqual(801);
-                expect(err.message != null).assertTrue();
-                done();
-              });
-            }
-          }).catch((err: Error) => {
-            console.error(`${msgStr} promise Failed to create pipcontroller, Cause code ${err.code}, message ${err.message}`);
-            expect(err.code).assertEqual(801);
-            expect(err.message != null).assertTrue();
+          pipController = await pipWindow.create(config);
+          if (!pipController!.isPiPSupported()) {
             done();
-          });
+          } else {
+            console.log(`${msgStr} Succeeded in creating pip controller, Data:${pipController}`)
+            pipController!.getPiPSettingSwitch().then((result: boolean) => {
+              console.log(`${msgStr} result: ${result}`)
+              expect(result).assertEqual(true);
+              done();
+            }).catch((err: Error) => {
+              console.error(`${msgStr} promise Failed getPiPSettingSwitch, Cause code ${err.code}, message ${err.message}`);
+              expect(err.code).assertEqual(801);
+              expect(err.message != null).assertTrue();
+              done();
+            });
+          }
         } catch (err) {
           console.error(`${msgStr} Failed to test updateContentSize, Cause code ${err.code}, message ${err.message}`);
           expect().assertFail();
@@ -4329,6 +4322,7 @@ export default function PiPWindowTest() {
             expect(pipController != null).assertTrue();
             await pipController!.startPiP();
             pipController!.stopPiP();
+            await Utils.msSleep(500);
             let isPipActive = await pipController!.isPiPActive();
             console.log(msgStr + ' isPipActive: ' + isPipActive);
             expect(isPipActive).assertEqual(false);

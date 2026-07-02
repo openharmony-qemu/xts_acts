@@ -29,78 +29,78 @@ struct VideoSupportMoreSpeed {
       Row() {
         Button('start').onClick(() => {
           this.controller.start()
-        }).width(65).height(25).id('VideoSupportMoreSpeedStart')
-        Text(this.str).width(65).height(25).id('VideoSupportMoreSpeedText')
+        }).width(65).height(25).id('VideoSupportMoreSpeedStart').key('VideoSupportMoreSpeedStart')
+        Text(this.str).width(65).height(25).id('VideoSupportMoreSpeedText').key('VideoSupportMoreSpeedText')
       }
       Row() {
         Button('p_0.5').onClick(() => {
           this.curRate = PlaybackSpeed.SPEED_FORWARD_0_50_X
           this.str= this.curRate.toString()
-        }).width(65).height(25).id('VideoSupportMoreSpeed_p_0.5')
+        }).width(65).height(25).id('VideoSupportMoreSpeed_p_0.5').key('VideoSupportMoreSpeed_p_0.5')
         Button('p_1.5').onClick(() => {
           this.curRate = PlaybackSpeed.SPEED_FORWARD_1_50_X
           this.str= this.curRate.toString()
-        }).width(65).height(25).id('VideoSupportMoreSpeed_p_1.5')
+        }).width(65).height(25).id('VideoSupportMoreSpeed_p_1.5').key('VideoSupportMoreSpeed_p_1.5')
         Button('p_3').onClick(() => {
           this.curRate = PlaybackSpeed.SPEED_FORWARD_3_00_X
           this.str= this.curRate.toString()
-        }).width(65).height(25).id('VideoSupportMoreSpeed_p_3')
+        }).width(65).height(25).id('VideoSupportMoreSpeed_p_3').key('VideoSupportMoreSpeed_p_3')
       }
       Row() {
         Button('p_0.25').onClick(() => {
           this.curRate = PlaybackSpeed.SPEED_FORWARD_0_25_X
           this.str= this.curRate.toString()
-        }).width(65).height(25).id('VideoSupportMoreSpeed_p_0.25')
+        }).width(65).height(25).id('VideoSupportMoreSpeed_p_0.25').key('VideoSupportMoreSpeed_p_0.25')
         Button('p_0.125').onClick(() => {
           this.curRate = PlaybackSpeed.SPEED_FORWARD_0_125_X
           this.str= this.curRate.toString()
-        }).width(65).height(25).id('VideoSupportMoreSpeed_p_0.125')
+        }).width(65).height(25).id('VideoSupportMoreSpeed_p_0.125').key('VideoSupportMoreSpeed_p_0.125')
         Button('n_0.5').onClick(() => {
           this.curRate = 0.5
           this.str= this.curRate.toString()
-        }).width(65).height(25).id('VideoSupportMoreSpeed_n_0.5')
+        }).width(65).height(25).id('VideoSupportMoreSpeed_n_0.5').key('VideoSupportMoreSpeed_n_0.5')
       }
       Row() {
         Button('n_1.5').onClick(() => {
           this.curRate = 1.5
           this.str= this.curRate.toString()
-        }).width(65).height(25).id('VideoSupportMoreSpeed_n_1.5')
+        }).width(65).height(25).id('VideoSupportMoreSpeed_n_1.5').key('VideoSupportMoreSpeed_n_1.5')
         Button('n_3').onClick(() => {
           this.curRate = 3
           this.str= this.curRate.toString()
-        }).width(65).height(25).id('VideoSupportMoreSpeed_n_3')
+        }).width(65).height(25).id('VideoSupportMoreSpeed_n_3').key('VideoSupportMoreSpeed_n_3')
         Button('n_0.25').onClick(() => {
           this.curRate = 0.25
           this.str= this.curRate.toString()
-        }).width(65).height(25).id('VideoSupportMoreSpeed_n_0.25')
+        }).width(65).height(25).id('VideoSupportMoreSpeed_n_0.25').key('VideoSupportMoreSpeed_n_0.25')
       }
       Row() {
         Button('n_0.125').onClick(() => {
           this.curRate = 0.125
           this.str= this.curRate.toString()
-        }).width(65).height(25).id('VideoSupportMoreSpeed_n_0.125')
+        }).width(65).height(25).id('VideoSupportMoreSpeed_n_0.125').key('VideoSupportMoreSpeed_n_0.125')
         Button('s_0.5').onClick(() => {
           this.curRate = '0.5'
           this.str= this.curRate.toString()
-        }).width(65).height(25).id('VideoSupportMoreSpeed_s_0.5')
+        }).width(65).height(25).id('VideoSupportMoreSpeed_s_0.5').key('VideoSupportMoreSpeed_s_0.5')
         Button('s_1.5').onClick(() => {
           this.curRate = '1.5'
           this.str= this.curRate.toString()
-        }).width(65).height(25).id('VideoSupportMoreSpeed_s_1.5')
+        }).width(65).height(25).id('VideoSupportMoreSpeed_s_1.5').key('VideoSupportMoreSpeed_s_1.5')
       }
       Row() {
         Button('s_3').onClick(() => {
           this.curRate = '3'
           this.str= this.curRate.toString()
-        }).width(65).height(25).id('VideoSupportMoreSpeed_s_3')
+        }).width(65).height(25).id('VideoSupportMoreSpeed_s_3').key('VideoSupportMoreSpeed_s_3')
         Button('s_0.25').onClick(() => {
           this.curRate = '0.25'
           this.str= this.curRate.toString()
-        }).width(65).height(25).id('VideoSupportMoreSpeed_s_0.25')
+        }).width(65).height(25).id('VideoSupportMoreSpeed_s_0.25').key('VideoSupportMoreSpeed_s_0.25')
         Button('s_0.125').onClick(() => {
           this.curRate = '0.125'
           this.str= this.curRate.toString()
-        }).width(65).height(25).id('VideoSupportMoreSpeed_s_0.125')
+        }).width(65).height(25).id('VideoSupportMoreSpeed_s_0.125').key('VideoSupportMoreSpeed_s_0.125')
       }
       Video({
         src: this.videoSrc,

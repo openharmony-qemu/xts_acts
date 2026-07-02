@@ -93,7 +93,7 @@ it('TextTimerJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promis
       expect(obj.getElement('$attrs').getString('format')).assertEqual('mm:ss.SS');
 
       // Get default attributes of TextTimer component
-      let strJson1 = inspector.getInspectorByKey('default');
+      let strJson1 = inspector.getInspectorByKey('TextTimerPage' + '_default');
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[TextTimerJsunit_0100] component obj1 is: " + JSON.stringify(obj1));
       console.info("[TextTimerJsunit_0100] isCountDown1: " + JSON.stringify(obj1.getElement('$attrs').getString('isCountDown')));
@@ -168,7 +168,7 @@ it('TextTimerJsunit_static_0300', Level.LEVEL2, async (done: () => void): Promis
       console.info("[TextTimerJsunit_0300] time: " + JSON.stringify(time));
       expect(Number(time) > 100).assertTrue();
 
-      let start = await driver.findComponent(ON.id('start'));
+      let start = await driver.findComponent(ON.id('TextTimerPage' + '_start'));
       let startText = await (start?.getText() as Promise<string>);
       console.info("[TextTimerJsunit_0300] startText: " + JSON.stringify(startText));
       expect(startText).assertEqual('start:succ');
@@ -216,7 +216,7 @@ it('TextTimerJsunit_static_0400', Level.LEVEL2, async (done: () => void): Promis
       console.info("[TextTimerJsunit_0400] utcText2: " + JSON.stringify(utcText2));
       expect(Number(utcText1) < Number(utcText2)).assertTrue();
 
-      let pause = await driver.findComponent(ON.id('pause'));
+      let pause = await driver.findComponent(ON.id('TextTimerPage' + '_pause'));
       let pauseText = await (pause?.getText() as Promise<string>);
       console.info("[TextTimerJsunit_0400] pauseText: " + JSON.stringify(pauseText));
       expect(pauseText).assertEqual('pause:succ');

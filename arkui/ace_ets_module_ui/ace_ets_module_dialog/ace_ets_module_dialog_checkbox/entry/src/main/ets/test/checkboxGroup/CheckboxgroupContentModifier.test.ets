@@ -74,7 +74,7 @@ export default function CheckboxgroupContentModifier() {
      */
     it('CheckboxgroupContentModifier_002', Level.LEVEL0, async (done: Function) => {
       console.info('[CheckboxgroupContentModifier_002] START');
-      let strJson = getInspectorByKey('CheckboxgroupContentModifier_pentagon');
+      let strJson = getInspectorByKey('CheckboxgroupContentModifier' + '_pentagon');
       let obj: Record<string, ESObject>= JSON.parse(strJson);
       await Utils.sleep(1000);
       console.info('[CheckboxgroupContentModifier_002] obj is: ' + JSON.stringify(obj));
@@ -94,7 +94,7 @@ export default function CheckboxgroupContentModifier() {
      */
     it('CheckboxgroupContentModifier_003', Level.LEVEL0, async (done: Function) => {
       console.info('[CheckboxgroupContentModifier_003] START');
-      let strJson = getInspectorByKey('CheckboxgroupContentModifier_triangle1');
+      let strJson = getInspectorByKey('CheckboxgroupContentModifier' + '_triangle1');
       let obj: Record<string, ESObject>= JSON.parse(strJson);
       await Utils.sleep(1000);
       console.info('[CheckboxgroupContentModifier_003] obj is: ' + JSON.stringify(obj));
@@ -120,7 +120,7 @@ export default function CheckboxgroupContentModifier() {
      */
     it('CheckboxgroupContentModifier_004', Level.LEVEL0, async (done: Function) => {
       console.info('[CheckboxgroupContentModifier_004] START');
-      let strJson = getInspectorByKey('CheckboxgroupContentModifier_triangle2');
+      let strJson = getInspectorByKey('CheckboxgroupContentModifier' + '_triangle2');
       let obj: Record<string, ESObject>= JSON.parse(strJson);
       await Utils.sleep(1000);
       console.info('[CheckboxgroupContentModifier_004] obj is: ' + JSON.stringify(obj));
@@ -198,7 +198,7 @@ export default function CheckboxgroupContentModifier() {
         console.log('[CheckboxgroupContentModifier_006] change component data error: ' + (err as BusinessError).message);
       }
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('CheckboxgroupContentModifier_triangle1');
+      let strJson = getInspectorByKey('CheckboxgroupContentModifier' + '_triangle1');
       let obj: Record<string, ESObject>= JSON.parse(strJson);
       await Utils.sleep(1000);
       console.info('[CheckboxgroupContentModifier_006] obj is: ' + JSON.stringify(obj));
@@ -233,7 +233,7 @@ export default function CheckboxgroupContentModifier() {
         console.log('[CheckboxgroupContentModifier_007] change component data error: ' + (err as BusinessError).message);
       }
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('CheckboxgroupContentModifier_triangle2');
+      let strJson = getInspectorByKey('CheckboxgroupContentModifier' + '_triangle2');
       let obj: Record<string, ESObject>= JSON.parse(strJson);
       await Utils.sleep(1000);
       console.info('[CheckboxgroupContentModifier_007] obj is: ' + JSON.stringify(obj));
@@ -269,7 +269,7 @@ export default function CheckboxgroupContentModifier() {
         console.log('[CheckboxgroupContentModifier_008] change component data error: ' + (err as BusinessError).message);
       }
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('CheckboxgroupContentModifier_triangle2');
+      let strJson = getInspectorByKey('CheckboxgroupContentModifier' + '_triangle2');
       let obj: Record<string, ESObject>= JSON.parse(strJson);
       await Utils.sleep(1000);
       console.info('[CheckboxgroupContentModifier_008] obj is: ' + JSON.stringify(obj));
@@ -305,7 +305,7 @@ export default function CheckboxgroupContentModifier() {
         console.log('[CheckboxgroupContentModifier_009] change component data error: ' + (err as BusinessError).message);
       }
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('CheckboxgroupContentModifier_triangle2');
+      let strJson = getInspectorByKey('CheckboxgroupContentModifier' + '_triangle2');
       let obj: Record<string, ESObject>= JSON.parse(strJson);
       await Utils.sleep(1000);
       console.info('[CheckboxgroupContentModifier_009] obj is: ' + JSON.stringify(obj));
@@ -341,7 +341,7 @@ export default function CheckboxgroupContentModifier() {
         console.log('[CheckboxgroupContentModifier_010] change component data error: ' + (err as BusinessError).message);
       }
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('CheckboxgroupContentModifier_triangle1');
+      let strJson = getInspectorByKey('CheckboxgroupContentModifier' + '_triangle1');
       let obj: Record<string, ESObject>= JSON.parse(strJson);
       await Utils.sleep(1000);
       console.info('[CheckboxgroupContentModifier_010] obj is: ' + JSON.stringify(obj));
@@ -377,7 +377,7 @@ export default function CheckboxgroupContentModifier() {
         console.log('[CheckboxgroupContentModifier_011] change component data error: ' + (err as BusinessError).message);
       }
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('CheckboxgroupContentModifier_CheckboxGroup');
+      let strJson = getInspectorByKey('CheckboxgroupContentModifier' + '_CheckboxGroup');
       let obj: Record<string, ESObject>= JSON.parse(strJson);
       await Utils.sleep(1000);
       console.info('[CheckboxgroupContentModifier_011] obj is: ' + JSON.stringify(obj));
@@ -412,7 +412,7 @@ export default function CheckboxgroupContentModifier() {
         console.log('[CheckboxgroupContentModifier_012] change component data error: ' + (err as BusinessError).message);
       }
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('CheckboxgroupContentModifier_CheckboxGroup');
+      let strJson = getInspectorByKey('CheckboxgroupContentModifier' + '_CheckboxGroup');
       let obj: Record<string, ESObject>= JSON.parse(strJson);
       await Utils.sleep(1000);
       console.info('[CheckboxgroupContentModifier_012] obj is: ' + JSON.stringify(obj));
@@ -474,7 +474,7 @@ export default function CheckboxgroupContentModifier() {
       await component.click();
       
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('CheckboxgroupContentModifier_triangle1');
+      let strJson = getInspectorByKey('CheckboxgroupContentModifier' + '_triangle1');
       let obj: Record<string, ESObject>= JSON.parse(strJson);
       await Utils.sleep(1000);
       console.info('[CheckboxgroupContentModifier_014] obj is: ' + JSON.stringify(obj));

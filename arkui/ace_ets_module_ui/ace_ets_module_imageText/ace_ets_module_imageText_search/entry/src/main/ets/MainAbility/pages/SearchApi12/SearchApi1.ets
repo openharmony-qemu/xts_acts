@@ -20,6 +20,7 @@ struct SearchApi1 {
   build() {
     Column(){
       Search().enablePreviewText(false).id('SearchApi1')
+      .key('SearchApi1')
 
     }
   }

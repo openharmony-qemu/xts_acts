@@ -24,8 +24,8 @@ export default function localizedTextPadding() {
         url: "MainAbility/pages/segmentButton/localizedTextPadding",
       }
       try {
-        router.clear();
         let pages = router.getState();
+        router.clear();
         console.info("get localizedTextPadding state pages: " + JSON.stringify(pages));
         if (!("localizedTextPadding" == pages.name)) {
           console.info("get localizedTextPadding state pages.name: " + JSON.stringify(pages.name));
@@ -51,13 +51,14 @@ export default function localizedTextPadding() {
     it('localizedTextPadding_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('localizedTextPadding_0100 START');
       await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       let btn: Component = await driver.findComponent(ON.id('localizedTextPadding_start'));
       await btn.click();
       await CommonFunc.sleep(1000);
       let mText = getInspectorByKey('localizedTextPadding_start');
       console.info("[localizedTextPadding_0100] attrs is: " + JSON.stringify(JSON.parse(mText).$attrs));
-      expect(JSON.parse(mText).$attrs.label).assertEqual('start:{"unit":1,"value":20}');
+      expect(JSON.parse(mText).$attrs.label).assertEqual(
+        'start:{"unit":1,"value":20}');
       console.info('[localizedTextPadding_0100] END');
       done();
     });
@@ -72,13 +73,14 @@ export default function localizedTextPadding() {
     it('localizedTextPadding_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('localizedTextPadding_0200 START');
       await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       let btn: Component = await driver.findComponent(ON.id('localizedTextPadding_end'));
       await btn.click();
       await CommonFunc.sleep(1000);
       let mText2 = getInspectorByKey('localizedTextPadding_end');
       console.info("[localizedTextPadding_0200] attrs is: " + JSON.stringify(JSON.parse(mText2).$attrs));
-      expect(JSON.parse(mText2).$attrs.label).assertEqual('end:{"unit":1,"value":30}');
+      expect(JSON.parse(mText2).$attrs.label).assertEqual(
+        'end:{"unit":1,"value":30}');
       console.info('[localizedTextPadding_0200] END');
       done();
     });

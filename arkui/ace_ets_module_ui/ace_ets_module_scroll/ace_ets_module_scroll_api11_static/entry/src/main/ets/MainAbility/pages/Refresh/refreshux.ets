@@ -73,7 +73,7 @@ struct refreshux {
             .margin(10)
         }
         .pullDownRatio(1)
-        .key("ArkUX_Refresh_Visual_0010")
+        .key("refreshux_ArkUX_Refresh_Visual_0010")
         .onStateChange((refreshStatus: RefreshStatus) => {
           console.info('Refresh onStatueChange state is ' + refreshStatus)
         })
@@ -95,7 +95,7 @@ struct refreshux {
             .margin(10)
         }
         .pullDownRatio(1)
-        .key("ArkUX_Refresh_Visual_0020")
+        .key("refreshux_ArkUX_Refresh_Visual_0020")
         .onStateChange((refreshStatus: RefreshStatus) => {
           console.info('Refresh onStatueChange state is ' + refreshStatus)
         })
@@ -117,7 +117,7 @@ struct refreshux {
             .margin(10)
         }
         .pullDownRatio(1)
-        .key("ArkUX_Refresh_Visual_0030")
+        .key("refreshux_ArkUX_Refresh_Visual_0030")
         .onStateChange((refreshStatus: RefreshStatus) => {
           console.info('Refresh onStatueChange state is ' + refreshStatus)
         })
@@ -139,7 +139,7 @@ struct refreshux {
             .margin(10)
         }
         .pullDownRatio(1)
-        .key("ArkUX_Refresh_Visual_0040")
+        .key("refreshux_ArkUX_Refresh_Visual_0040")
         .onStateChange((refreshStatus: RefreshStatus) => {
           console.info('Refresh onStatueChange state is ' + refreshStatus)
         })
@@ -160,7 +160,7 @@ struct refreshux {
             .margin(10)
         }
         .pullDownRatio(1)
-        .key("ArkUX_Refresh_Visual_0050")
+        .key("refreshux_ArkUX_Refresh_Visual_0050")
         .onStateChange((refreshStatus: RefreshStatus) => {
           console.info('Refresh onStatueChange state is ' + refreshStatus)
         })

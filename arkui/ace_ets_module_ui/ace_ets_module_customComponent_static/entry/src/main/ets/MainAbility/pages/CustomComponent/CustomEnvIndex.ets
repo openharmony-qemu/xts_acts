@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 import {
   Entry, ComponentV2, Column, CustomEnv, Text, CustomEnvKey, FlexAlign

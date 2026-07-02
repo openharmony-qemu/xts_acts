@@ -21,20 +21,24 @@ struct SearchFontFeature {
     Column({ space: 5 }) {
       Search({ value: 'fontFeature: on' })
         .id('Search_fontFeature_on')
+        .key('Search_fontFeature_on')
         .fontFeature("\"ss01\" on")
         .height('5%')
 
       Search({ value: 'fontFeature: off' })
         .id('Search_fontFeature_off')
+        .key('Search_fontFeature_off')
         .fontFeature("\"ss01\" off")
         .height('5%')
 
       Search({ value: 'fontFeature: default' })
         .id('Search_fontFeature_default')
+        .key('Search_fontFeature_default')
         .height('5%')
 
       Search({ value: 'fontFeature: undefined' })
         .id('Search_fontFeature_undefined')
+        .key('Search_fontFeature_undefined')
         .fontFeature(undefined)
         .height('5%')
     }.width('90%')

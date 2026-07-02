@@ -203,7 +203,7 @@ export default function geolocationTest_geo5() {
         let geocoder1 = geolocationm.isGeocoderAvailable();
         if (geocoder1) {
             try {
-                let reverseGeocodeRequest = { "latitude": 31.265496, "longitude": 121.62771, "maxItems": 5};
+                let reverseGeocodeRequest = { "latitude": 31.265496, "longitude": 121.62771, "maxItems": 5, "locale": ""};
                 await geolocationm.getAddressesFromLocation(reverseGeocodeRequest).then((data) => {
                     console.info('[lbs_js] getAddressesFromLocation21 promise: ' + JSON.stringify(data));
                     if(data!="")

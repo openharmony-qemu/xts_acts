@@ -68,7 +68,7 @@ struct ProgressPage {
 
   build() {
     Column({ space: 15 } as ColumnOptions) {
-      Text('Linear Progress').fontSize(9).fontColor(0xCCCCCC).width('90%').key('text')
+      Text('Linear Progress').fontSize(9).fontColor(0xCCCCCC).width('90%').key('ProgressPage_text')
       Progress({ value: this.value, total: this.total, type: this.type })
         .color(this.color)
         .value(this.value)

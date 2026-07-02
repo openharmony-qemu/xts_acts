@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -23,7 +24,7 @@ export let IV_DEFAULT: number[] = [
   0xa6, 0xa6, 0xa6, 0xa6, 0xa6, 0xa6, 0xa6, 0xa6,
 ];
 
-export function JsSetIv(iv: number[] = IV_DEFAULT) {
+export function JsSetIv(iv: number[] = IV_DEFAULT): cryptoFramework.IvParamsSpec {
   let ivParamsSpec: cryptoFramework.IvParamsSpec = {
     algName: "IvParamsSpec",
     iv: {data: new Uint8Array(iv)},

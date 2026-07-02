@@ -25,6 +25,7 @@ struct TextClockDateTimeTest {
           .format('HH:mm:ss')
           .dateTimeOptions({ hour: 'numeric' })
           .id('numeric')
+          .key('numeric')
       }
 
       Row() {
@@ -35,6 +36,7 @@ struct TextClockDateTimeTest {
           .format('aa hh:mm:ss')
           .dateTimeOptions({ hour: '2-digit' })
           .id('digit')
+          .key('digit')
       }
     }
     .alignItems(HorizontalAlign.Start)

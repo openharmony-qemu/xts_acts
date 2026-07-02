@@ -55,7 +55,7 @@ struct ModifierComponent {
     Column(){
       Button("change value").onClick((e: ClickEvent) => {
         (this.customModifier as CustomModifier).onChangeTabs();
-      }).key("changeButton")
+      }).key("tabsFirst_changeButton")
 
       Tabs({ barPosition: BarPosition.Start, controller: this.controller }) {
         TabContent() {

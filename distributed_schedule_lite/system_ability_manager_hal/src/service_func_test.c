@@ -17,101 +17,34 @@
 #include "cmsis_os.h"
 #include "hctest.h"
 #include "samgr_lite.h"
+#include "samgr_maintenance.h"
+
 
 #define OPER_INTERVAL 200    // 200 ms
 #define PRESSURE_BASE (1024 * 10)
 
-typedef struct DefaultFeatureApi {
-    INHERIT_IUNKNOWN;
-} DefaultFeatureApi;
-
-typedef struct ExampleService {
-    INHERIT_SERVICE;
-    INHERIT_IUNKNOWNENTRY(DefaultFeatureApi);
-    Identity identity;
-} ExampleService;
-
-typedef struct DemoApi {
-    INHERIT_IUNKNOWN;
-} DemoApi;
-
-typedef struct DemoFeature {
-    INHERIT_FEATURE;
-    INHERIT_IUNKNOWNENTRY(DemoApi);
-    Identity identity;
-} DemoFeature;
-
-static const char *GetName(Service *service)
-{
-    (void)service;
-    return "serviceName101";
-}
-
-static BOOL Initialize(Service *service, Identity identity)
-{
-    ExampleService *example = (ExampleService *)service;
-    example->identity = identity;
-    return TRUE;
-}
-
-static BOOL MessageHandle(Service *service, Request *msg)
-{
-    (void)msg;
-    (void)service;
-    return FALSE;
-}
-
-static TaskConfig GetTaskConfig(Service *service)
-{
-    (void)service;
-    TaskConfig config = {LEVEL_HIGH, PRI_ABOVE_NORMAL, 0x800, 20, SHARED_TASK};
-    return config;
-}
-
-static ExampleService g_service = {
-    .GetName = GetName,
-    .Initialize = Initialize,
-    .MessageHandle = MessageHandle,
-    .GetTaskConfig = GetTaskConfig,
+static SamgrTestServiceEx g_service = {
+    .GetName = SamgrTestGetName,
+    .Initialize = SamgrTestServiceExInitialize,
+    .MessageHandle = SamgrTestMessageHandle,
+    .GetTaskConfig = SamgrTestGetTaskConfig,
+    .name = "serviceName101",
     .ref = 1,
     .iUnknown = {
         DEFAULT_IUNKNOWN_IMPL,
     }
 };
 
-static const char *FEATURE_GetName(Feature *feature)
-{
-    (void)feature;
-    return "featureName101";
-}
-static void FEATURE_OnInitialize(Feature *feature, Service *parent, Identity identity)
-{
-    DemoFeature *demoFeature = (DemoFeature *)feature;
-    demoFeature->identity = identity;
-    (void)parent;
-}
-static void FEATURE_OnStop(Feature *feature, Identity identity)
-{
-    (void)feature;
-    (void)identity;
-}
-
-static BOOL FEATURE_OnMessage(Feature *feature, Request *request)
-{
-    (void)feature;
-    (void)request;
-    return TRUE;
-}
-
-static DemoFeature g_feature = {
-    .GetName = FEATURE_GetName,
-    .OnInitialize = FEATURE_OnInitialize,
-    .OnStop = FEATURE_OnStop,
-    .OnMessage = FEATURE_OnMessage,
+static SamgrTestFeature g_feature = {
+    .GetName = SamgrTestFeatureGetName,
+    .OnInitialize = SamgrTestFeatureOnInitialize,
+    .OnStop = SamgrTestFeatureOnStop,
+    .OnMessage = SamgrTestFeatureOnMessage,
     .ref = 1,
     .iUnknown = {
         DEFAULT_IUNKNOWN_IMPL,
     },
+    .name = "featureName101",
     .identity = {-1, -1, NULL},
 };
 
@@ -129,25 +62,29 @@ static BOOL ServiceTestSuiteTearDown(void)
 }
 
 /**
- * @tc.name   testRegisterService0010
- * @tc.number DMSLite_SAMGR_RegisterService_0010
- * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.name   testRegisterServiceLifecycle0010
+ * @tc.number DMSLite_SAMGR_RegisterService_Lifecycle_0010
+ * @tc.desc   Register service and duplicate registration lifecycle.
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-LITE_TEST_CASE(ServiceTestSuite, testRegisterService0010, Function | MediumTest | Level1)
+LITE_TEST_CASE(ServiceTestSuite, testRegisterServiceLifecycle0010, Function | MediumTest | Level1)
 {
     BOOL result = SAMGR_GetInstance()->RegisterService((Service *)&g_service);
-    TEST_ASSERT_EQUAL_INT(result, TRUE);  // TRUE: regist success; FALSE: regist fail
+    TEST_ASSERT_EQUAL_INT(result, TRUE);
 
-    SAMGR_GetInstance()->UnregisterService("serviceName101");
+    result = SAMGR_GetInstance()->RegisterService((Service *)&g_service);
+    TEST_ASSERT_EQUAL_INT(result, FALSE);
+
+    Service *resultService = SAMGR_GetInstance()->UnregisterService("serviceName101");
+    TEST_ASSERT_EQUAL_INT(strcmp(resultService->GetName(resultService), "serviceName101"), 0);
 };
 
 /**
  * @tc.name   testRegisterService0020
  * @tc.number DMSLite_SAMGR_RegisterService_0020
- * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.desc   NULL service should fail
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
@@ -159,73 +96,30 @@ LITE_TEST_CASE(ServiceTestSuite, testRegisterService0020, Function | MediumTest 
 }
 
 /**
- * @tc.name   testRegisterService0030
- * @tc.number DMSLite_SAMGR_RegisterService_0030
- * @tc.desc   [C- SOFTWARE -0200]
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
-LITE_TEST_CASE(ServiceTestSuite, testRegisterService0030, Function | MediumTest | Level2)
-{
-    SAMGR_GetInstance()->RegisterService((Service *)&g_service);
-    BOOL result = SAMGR_GetInstance()->RegisterService((Service *)&g_service);
-    TEST_ASSERT_EQUAL_INT(result, FALSE);
-    SAMGR_GetInstance()->UnregisterService("serviceName101");
-}
-
-/**
- * @tc.name   testUnregisterService0010
- * @tc.number DMSLite_SAMGR_UnregisterService_0010
- * @tc.desc   [C- SOFTWARE -0200]
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
-LITE_TEST_CASE(ServiceTestSuite, testUnregisterService0010, Function | MediumTest | Level2)
-{
-    SAMGR_GetInstance()->RegisterService((Service *)&g_service);
-    Service *resultService = SAMGR_GetInstance()->UnregisterService("serviceName101");
-
-    // when unregist service samgr will return the target service
-    TEST_ASSERT_EQUAL_INT(strcmp(resultService->GetName(resultService), "serviceName101"), 0);
-}
-
-/**
- * @tc.name   testUnregisterService0020
+ * @tc.name   testUnregisterServiceInvalidParams0020
  * @tc.number DMSLite_SAMGR_UnregisterService_0020
- * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.desc   Merged invalid-param cases (was 0020/0030)
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
-LITE_TEST_CASE(ServiceTestSuite, testUnregisterService0020, Function | MediumTest | Level2)
+LITE_TEST_CASE(ServiceTestSuite, testUnregisterServiceInvalidParams0020, Function | MediumTest | Level2)
 {
-    Service *resultService = SAMGR_GetInstance()->UnregisterService(NULL);
-    TEST_ASSERT_EQUAL_INT(resultService == NULL, TRUE);
-
-    resultService = SAMGR_GetInstance()->UnregisterService("");
-    TEST_ASSERT_EQUAL_INT(resultService == NULL, TRUE);
-}
-
-/**
- * @tc.name   testUnregisterService0030
- * @tc.number DMSLite_SAMGR_UnregisterService_0030
- * @tc.desc   [C- SOFTWARE -0200]
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
-LITE_TEST_CASE(ServiceTestSuite, testUnregisterService0030, Function | MediumTest | Level2)
-{
-    Service *resultService = SAMGR_GetInstance()->UnregisterService("noExistServiceName");
-    TEST_ASSERT_EQUAL_INT(resultService == NULL, TRUE);
+    const char *cases[] = {
+        NULL,
+        "",
+        "noExistServiceName",
+    };
+    for (size_t i = 0; i < sizeof(cases) / sizeof(cases[0]); i++) {
+        Service *resultService = SAMGR_GetInstance()->UnregisterService(cases[i]);
+        TEST_ASSERT_EQUAL_INT(resultService == NULL, TRUE);
+    }
 }
 
 /**
  * @tc.name   testUnregisterService0040
  * @tc.number DMSLite_SAMGR_UnregisterService_0040
- * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.desc   cannot unregister service when its default api is registered
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
@@ -245,7 +139,7 @@ LITE_TEST_CASE(ServiceTestSuite, testUnregisterService0040, Function | MediumTes
 /**
  * @tc.name   testUnregisterService0050
  * @tc.number DMSLite_SAMGR_UnregisterService_0050
- * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.desc   cannot unregister service when feature is registered
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
@@ -257,7 +151,7 @@ LITE_TEST_CASE(ServiceTestSuite, testUnregisterService0050, Function | MediumTes
 
     Service *resultService = SAMGR_GetInstance()->UnregisterService("serviceName101");
     TEST_ASSERT_EQUAL_INT(resultService == NULL, TRUE);
-    
+
     SAMGR_GetInstance()->UnregisterFeature("serviceName101", "featureName101");
     SAMGR_GetInstance()->UnregisterService("serviceName101");
 }
@@ -265,18 +159,17 @@ LITE_TEST_CASE(ServiceTestSuite, testUnregisterService0050, Function | MediumTes
 /**
  * @tc.name   testUnregisterService0060
  * @tc.number DMSLite_SAMGR_UnregisterService_0060
- * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.desc   pressure test
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(ServiceTestSuite, testUnregisterService0060, Function | MediumTest | Level2)
 {
-    // RegisterService and unregister service over and over again, if there is memory leak samgr will crash
     for (int i = 0; i < PRESSURE_BASE; i++) {
         BOOL result = SAMGR_GetInstance()->RegisterService((Service *)&g_service);
         TEST_ASSERT_EQUAL_INT(result, TRUE);
-        
+
         Service *resultService = SAMGR_GetInstance()->UnregisterService("serviceName101");
         TEST_ASSERT_EQUAL_INT(strcmp(resultService->GetName(resultService), "serviceName101"), 0);
     }

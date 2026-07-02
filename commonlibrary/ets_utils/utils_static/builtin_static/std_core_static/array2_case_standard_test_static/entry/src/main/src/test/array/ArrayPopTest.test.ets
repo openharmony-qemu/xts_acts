@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -101,7 +101,7 @@ export default function ArrayPopTest(): void {
      * @tc.level Level 2
      */
     it('testArrayPop002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(42);
+      let arr = Array.create<number>(1, 42);
       let first = arr.pop();
       let second = arr.pop();
       expect(first).assertEqual(42);
@@ -344,7 +344,7 @@ export default function ArrayPopTest(): void {
      * @tc.level Level 2
      */
     it('testArrayPop017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(42);
+      let arr = Array.create<number>(1, 42);
       let result = arr.pop();
       expect(result).assertEqual(42);
       expect(arr.length).assertEqual(0);
@@ -763,7 +763,7 @@ export default function ArrayPopTest(): void {
      * @tc.level Level 2
      */
     it('testArrayPop042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number | undefined>(undefined);
+      const arr = Array.create<number | undefined>(1, undefined);
       const value = arr.pop();
       expect(value).assertUndefined();
       expect(arr.length).assertEqual(0);
@@ -778,7 +778,7 @@ export default function ArrayPopTest(): void {
      * @tc.level Level 2
      */
     it('testArrayPop043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number | null>(null);
+      const arr = Array.create<number | null>(1, null);
       const value = arr.pop();
       expect(value).assertNull();
       expect(arr.length).assertEqual(0);
@@ -793,7 +793,7 @@ export default function ArrayPopTest(): void {
      * @tc.level Level 2
      */
     it('testArrayPop044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(Double.NaN);
+      const arr = Array.create<number>(1, Double.NaN);
       const value = arr.pop();
       if (value === undefined) {
         expect().assertFail();
@@ -812,7 +812,7 @@ export default function ArrayPopTest(): void {
      * @tc.level Level 2
      */
     it('testArrayPop045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(Double.POSITIVE_INFINITY);
+      const arr = Array.create<number>(1, Double.POSITIVE_INFINITY);
       const value = arr.pop();
       expect(value).assertEqual(Double.POSITIVE_INFINITY);
       expect(arr.length).assertEqual(0);
@@ -828,7 +828,7 @@ export default function ArrayPopTest(): void {
      */
     it('testArrayPop046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const nested = new Array<number>(1, 2);
-      const arr = new Array<Array<number>>(nested);
+      const arr = Array.create<Array<number>>(1, nested);
       const value = arr.pop();
       expect(value).assertEqual(nested);
       expect(arr.length).assertEqual(0);
@@ -845,7 +845,7 @@ export default function ArrayPopTest(): void {
     it('testArrayPop047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const ref = new PopRefCase006();
       ref.value = 7;
-      const arr = new Array<PopRefCase006>(ref);
+      const arr = Array.create<PopRefCase006>(1, ref);
       const value = arr.pop();
       expect(value).assertEqual(ref);
       expect(arr.length).assertEqual(0);
@@ -942,7 +942,7 @@ export default function ArrayPopTest(): void {
      * @tc.level Level 2
      */
     it('testArrayPop053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<boolean>(false);
+      const arr = Array.create<boolean>(1, false);
       const value = arr.pop();
       expect(value).assertEqual(false);
       expect(arr.length).assertEqual(0);
@@ -957,7 +957,7 @@ export default function ArrayPopTest(): void {
      * @tc.level Level 2
      */
     it('testArrayPop054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(0);
+      const arr = Array.create<number>(1, 0);
       const value = arr.pop();
       expect(value).assertEqual(0);
       expect(arr.length).assertEqual(0);
@@ -972,7 +972,7 @@ export default function ArrayPopTest(): void {
      * @tc.level Level 2
      */
     it('testArrayPop055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<string>('');
+      const arr = Array.create<string>(1, '');
       const value = arr.pop();
       expect(value).assertEqual('');
       expect(arr.length).assertEqual(0);
@@ -987,7 +987,7 @@ export default function ArrayPopTest(): void {
      * @tc.level Level 2
      */
     it('testArrayPop056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<bigint>(10n);
+      const arr = Array.create<bigint>(1, 10n);
       const value = arr.pop();
       expect(value).assertEqual(10n);
       expect(arr.length).assertEqual(0);
@@ -1003,7 +1003,7 @@ export default function ArrayPopTest(): void {
      */
     it('testArrayPop057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const fn = (): int => 8;
-      const arr = new Array<() => int>(fn);
+      const arr = Array.create<() => int>(1, fn);
       const value = arr.pop();
       if (value === undefined) {
         expect().assertFail();
@@ -1022,8 +1022,8 @@ export default function ArrayPopTest(): void {
      * @tc.level Level 2
      */
     it('testArrayPop058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const nested = new Array<number>(1);
-      const arr = new Array<Array<number>>(nested);
+      const nested = Array.create<number>(1, 1);
+      const arr = Array.create<Array<number>>(1, nested);
       const value = arr.pop();
       if (value === undefined) {
         expect().assertFail();
@@ -1108,7 +1108,7 @@ export default function ArrayPopTest(): void {
      * @tc.level Level 2
      */
     it('testArrayPop063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(99);
+      const arr = Array.create<number>(1, 99);
       expect(arr.pop()).assertEqual(99);
       expect(arr.length).assertEqual(0);
     });
@@ -1621,7 +1621,7 @@ export default function ArrayPopTest(): void {
      * @tc.level Level 2
      */
     it('testArrayPop099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1).concat(new Array<number>(2, 3));
+      const arr = Array.create<number>(1, 1).concat(new Array<number>(2, 3));
       expect(arr.pop()).assertEqual(3);
     });
 

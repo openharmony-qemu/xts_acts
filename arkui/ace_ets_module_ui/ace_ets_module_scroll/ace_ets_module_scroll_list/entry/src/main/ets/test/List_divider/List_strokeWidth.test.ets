@@ -74,9 +74,9 @@ export default function List_strokeWidth() {
       console.info('[SUB_ACE_List_strokeWidth_0100] START');
       await CommonFunc.sleep(1000);
       console.log('get Initial value')
-      let ListItem_01 = CommonFunc.getComponentRect('List_strokeWidth_listItem_01');
-      let ListItem_02 = CommonFunc.getComponentRect('List_strokeWidth_listItem_02');
-      let List_01 = CommonFunc.getComponentRect('List_strokeWidth_list_01');
+      let ListItem_01 = CommonFunc.getComponentRect('List_strokeWidth' + '_listItem_01');
+      let ListItem_02 = CommonFunc.getComponentRect('List_strokeWidth' + '_listItem_02');
+      let List_01 = CommonFunc.getComponentRect('List_strokeWidth' + '_list_01');
 
       console.log('get divider width')
       expect(Math.abs(Math.round(ListItem_02.top - ListItem_01.bottom) - Math.round(vp2px(10))) <= 1).assertTrue();

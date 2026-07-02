@@ -1,6 +1,5 @@
 {
   "src": [
-    "MainAbility/pages/Index/index",
     "MainAbility/pages/index/index",
     "MainAbility/pages/GridCol/grid_col",
     "MainAbility/pages/GridRow/grid_row",

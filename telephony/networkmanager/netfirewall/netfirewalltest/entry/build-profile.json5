@@ -12,13 +12,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+
 {
   "apiType": 'stageMode',
+  "buildOption": {
+    "externalNativeOptions": {
+      "path": "./src/ohosTest/cpp/CMakeLists.txt",
+      "arguments": "",
+      "cppFlags": "",
+      "abiFilters": [
+        "arm64-v8a",
+        "x86_64",
+        "armeabi-v7a"
+      ]
+    }
+  },
   "targets": [
     {
       "name": "default",
-      "runtimeOS": "OpenHarmony"
     },
     {
       "name": "ohosTest",

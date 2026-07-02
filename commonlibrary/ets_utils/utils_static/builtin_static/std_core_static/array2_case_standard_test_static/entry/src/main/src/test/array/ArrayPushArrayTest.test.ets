@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -867,7 +867,7 @@ export default function ArrayPushArrayTest(): void {
      * @tc.level Level 2
      */
     it('testArrayPushArray049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const inner = new Array<number>(1);
+      const inner = Array.create<number>(1, 1);
       const arr = new Array<Array<number>>();
       arr.pushArray(inner);
       inner.pushOne(2);
@@ -996,7 +996,7 @@ export default function ArrayPushArrayTest(): void {
      * @tc.level Level 2
      */
     it('testArrayPushArray057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1);
+      const arr = Array.create<number>(1, 1);
       const result = arr.pushArray(...arr);
       expect(result).assertEqual(2);
       expect(arr.toString()).assertEqual('1,1');
@@ -1011,7 +1011,7 @@ export default function ArrayPushArrayTest(): void {
      * @tc.level Level 2
      */
     it('testArrayPushArray058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1);
+      const arr = Array.create<number>(1, 1);
       const result = arr.pushArray(arr.pushArray(2));
       expect(result).assertEqual(3);
       expect(arr.toString()).assertEqual('1,2,2');
@@ -1026,7 +1026,7 @@ export default function ArrayPushArrayTest(): void {
      * @tc.level Level 2
      */
     it('testArrayPushArray059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1);
+      const arr = Array.create<number>(1, 1);
       const result = arr.pushArray(arr.pushArray(2), 3);
       expect(result).assertEqual(4);
       expect(arr.toString()).assertEqual('1,2,2,3');
@@ -1041,7 +1041,7 @@ export default function ArrayPushArrayTest(): void {
      * @tc.level Level 2
      */
     it('testArrayPushArray060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1);
+      const arr = Array.create<number>(1, 1);
       const mapped = new Array<number>(2, 3).map((value: number): number => value * 2);
       const result = arr.pushArray(...mapped);
       expect(result).assertEqual(3);
@@ -1189,7 +1189,7 @@ export default function ArrayPushArrayTest(): void {
      * @tc.level Level 2
      */
     it('testArrayPushArray069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1).concat(new Array<number>(2, 3));
+      const arr = Array.create<number>(1, 1).concat(new Array<number>(2, 3));
       const result = arr.pushArray(4);
       expect(result).assertEqual(4);
       expect(arr.toString()).assertEqual('1,2,3,4');
@@ -1232,7 +1232,7 @@ export default function ArrayPushArrayTest(): void {
      * @tc.level Level 2
      */
     it('testArrayPushArray072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const anyArr = new Array<Any>(1);
+      const anyArr = Array.create<Any>(1, 1);
       const length = anyArr.pushArray('two', true);
       expect(length).assertEqual(3);
       expect(anyArr.toString()).assertEqual('1,two,true');

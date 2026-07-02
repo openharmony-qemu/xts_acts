@@ -34,7 +34,7 @@ struct DataPanelExample {
         Stack() {
           DataPanel({ values: this.values, max: this.maxValue, type: this.dataPanelType }).width(168).height(168).key('dp1')
 
-          DataPanel({ values: this.values}).width(168).height(168).key('dp2')
+          DataPanel({ values: this.values}).width(168).height(168).key('DatalPanelUI_dp2_01')
           
           Column() {
             Text('30').fontSize(35).fontColor('#182431')
@@ -50,7 +50,7 @@ struct DataPanelExample {
         }.margin({ right: 44 } as Margin)
 
         Stack() {
-          DataPanel({ values: [50, 12, 8, 5], max: 100, type: DataPanelType.Circle }).width(168).height(168).key('dp2')
+          DataPanel({ values: [50, 12, 8, 5], max: 100, type: DataPanelType.Circle }).width(168).height(168).key('DatalPanelUI_dp2_02')
           Column() {
             Text('75').fontSize(35).fontColor('#182431')
             Text('已使用98GB/128GB').fontSize(8.17).lineHeight(11.08).fontWeight(500).opacity(0.6)

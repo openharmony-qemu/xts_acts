@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 export function testError() {
   const TAG = 'testError';

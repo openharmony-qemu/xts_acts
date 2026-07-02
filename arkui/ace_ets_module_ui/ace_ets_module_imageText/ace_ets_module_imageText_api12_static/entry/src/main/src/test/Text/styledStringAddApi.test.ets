@@ -82,7 +82,7 @@ export default function styledStringAddApi() {
       await text.inputText('0');
 
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('styledStringText');
+      let strJson = inspector.getInspectorByKey('styledStringAddApi' + '_styledStringText');
       await CommonFunc.sleep(200);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[styledStringAddApi_001] component obj is: " + JSON.stringify(obj));

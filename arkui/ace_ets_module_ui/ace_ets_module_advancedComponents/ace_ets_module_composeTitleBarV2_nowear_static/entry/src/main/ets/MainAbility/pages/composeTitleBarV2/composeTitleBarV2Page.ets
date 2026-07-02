@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { ComposeTitleBarV2, ComposeTitleBarV2MenuItem } from '@ohos.arkui.advanced.ComposeTitleBarV2';
+import { ComposeTitleBarV2, ComposeTitleBarV2MenuItem, ComposeTitleBarV2MenuItemParams } from '@ohos.arkui.advanced.ComposeTitleBarV2';
 import { Entry, ComponentV2, $r, Column, Resource, Scroll, Local } from '@kit.ArkUI';
 import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
 
@@ -25,7 +25,10 @@ struct composeTitleBarV2Page {
     value: $r('sys.media.ohos_app_icon'),
     action: () => {
       console.info('Left item clicked');
-    }
+    },
+    accessibilityDescription: '描述',
+    accessibilityLevel: 'auto',
+    accessibilityText: '文本'
   });
 
   @Local menuItems: ComposeTitleBarV2MenuItem[] = [
@@ -38,7 +41,7 @@ struct composeTitleBarV2Page {
     }),
     new ComposeTitleBarV2MenuItem({
       value: $r('sys.media.ohos_ic_public_edit'),
-      isEnabled: true,
+      isEnabled: false,
       action: () => {
         console.info('Menu item 2 clicked');
       }
@@ -50,6 +53,7 @@ struct composeTitleBarV2Page {
     new ComposeTitleBarV2MenuItem({
       value: $r('sys.media.ohos_save_button_filled'),
       isEnabled: false,
+      label: '',
       action: () => {
         console.info('Clickable item clicked');
       }
@@ -57,8 +61,40 @@ struct composeTitleBarV2Page {
     new ComposeTitleBarV2MenuItem({
       value: $r('sys.media.ohos_save_button_filled'),
       isEnabled: true,
-      label: '标签文本'
+      label: '标签文本',
+      symbolStyle: new SymbolGlyphModifier($r('sys.symbol.bell'))
     })
+  ];
+
+  @Local menuItemOption1: ComposeTitleBarV2MenuItemParams = {
+    value: $r('sys.media.ohos_app_icon'),
+    symbolStyle: new SymbolGlyphModifier($r('sys.symbol.bell')),
+    isEnabled: true,
+    action: () => {
+      console.info('right item clicked');
+    },
+    label: '标签',
+    accessibilityDescription: '描述',
+    accessibilityLevel: 'auto',
+    accessibilityText: '文本'
+  }
+
+  @Local menuItemOption2: ComposeTitleBarV2MenuItemParams = {
+    value: $r('sys.media.ohos_app_icon'),
+    symbolStyle: new SymbolGlyphModifier($r('sys.symbol.bell')),
+    isEnabled: false,
+    action: () => {
+      console.info('right item clicked');
+    },
+    label: '',
+    accessibilityDescription: '',
+    accessibilityLevel: 'yes',
+    accessibilityText: ''
+  }
+
+  @Local menuItems2: ComposeTitleBarV2MenuItem[] = [
+    new ComposeTitleBarV2MenuItem(this.menuItemOption1),
+    new ComposeTitleBarV2MenuItem(this.menuItemOption2),
   ];
 
   aboutToAppear(): void {
@@ -73,6 +109,13 @@ struct composeTitleBarV2Page {
           subtitle: '副标题测试',
           item: this.leftItem,
           menuItems: this.menuItems
+        });
+
+        ComposeTitleBarV2({
+          title: '标题Title',
+          subtitle: '副标题subtitle',
+          item: this.leftItem,
+          menuItems: this.menuItems2
         });
       }
       .width('100%')

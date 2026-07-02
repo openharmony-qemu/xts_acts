@@ -1,4 +1,4 @@
-'use static'
+'use static';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../../hypium/index';
 
 async function sleep(time: int): Promise<int> {

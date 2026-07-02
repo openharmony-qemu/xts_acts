@@ -47,10 +47,28 @@ struct configurationSaveState {
   }
 
   build() {
-    Column({space: 10}) {
+    Column() {
       Text(this.allDestinations)
         .id('all_destinations_text')
         .fontSize(20)
+      
+      Navigation(this.stack) {
+        Button('stackSizeLimit undefined')
+      }
+      .title('undefined')
+      .height('5%')
+      .titleMode(NavigationTitleMode.Mini)
+      .navDestination(this.pageMap)
+      .configuration({stackSizeLimit: undefined})
+
+      Navigation(this.stack) {
+        Button('stackSizeLimit null')
+      }
+      .title('null')
+      .height('5%')
+      .titleMode(NavigationTitleMode.Mini)
+      .navDestination(this.pageMap)
+      .configuration({stackSizeLimit: null})
 
       Navigation(this.stack) {
         NavBody()

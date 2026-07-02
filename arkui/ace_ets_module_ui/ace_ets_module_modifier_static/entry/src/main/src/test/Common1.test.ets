@@ -811,7 +811,7 @@ it('Common1Static044', Level.LEVEL0, async (done: () => void): Promise<void> => 
 it('Common1Static046', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static046] START');
       let driver = Driver.create();
-      let button = await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button = await (driver.findComponent(ON.id('common1' + '_changeButton')) as Promise<Component>);
       await UtilsTest.msSleep(2000)
       await button.click();
       await UtilsTest.msSleep(2000)

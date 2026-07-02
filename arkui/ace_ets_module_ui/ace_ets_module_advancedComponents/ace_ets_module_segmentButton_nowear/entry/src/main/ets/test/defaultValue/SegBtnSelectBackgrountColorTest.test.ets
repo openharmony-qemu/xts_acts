@@ -14,6 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
+import Utils, { InspectorNode } from '../Utils';
 import CommonFunc from '../../MainAbility/common/Common';
 
 export default function SegBtnSelectBackgrountColorTest() {
@@ -24,8 +25,8 @@ export default function SegBtnSelectBackgrountColorTest() {
         url: "MainAbility/pages/defaultValue/SegBtnSelectBackgrountColor",
       }
       try {
-        router.clear();
         let pages = router.getState();
+        router.clear();
         console.info("get current pages:" + JSON.stringify(pages));
         if (!("SegBtnSelectBackgrountColorTest" == pages.name)) {
           console.info("get SegBtnSelectBackgrountColorTest pages.name:" + JSON.stringify(pages.name));
@@ -55,16 +56,14 @@ export default function SegBtnSelectBackgrountColorTest() {
     it('SegBtnSelectBackgrountColorTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('[SegBtnSelectBackgrountColorTest_001] START');
       await CommonFunc.sleep(1000);
-      let result: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-      await CommonFunc.sleep(1000);
-      let selectedBackgroundColor0: string =
-        result.$children[0].$children[0].$children[0].$children[1].$children[0].$attrs.backgroundColor;
-      let selectedBackgroundColor1: string =
-        result.$children[0].$children[1].$children[0].$children[1].$children[0].$attrs.backgroundColor;
-      let selectedBackgroundColor2: string =
-        result.$children[0].$children[2].$children[0].$children[1].$children[0].$attrs.backgroundColor;
-      let selectedBackgroundColor3: string =
-        result.$children[0].$children[3].$children[0].$children[1].$children[0].$attrs.backgroundColor;
+      let __sb_node_0: InspectorNode = Utils.navigateInspectorPath('SegBtnSelectBackgrountColorTest_001_sb0', [0, 0, 0, 1, 0]);
+      let selectedBackgroundColor0: string = __sb_node_0.$attrs.backgroundColor ?? '';
+      let __sb_node_1: InspectorNode = Utils.navigateInspectorPath('SegBtnSelectBackgrountColorTest_001_sb1', [0, 1, 0, 1, 0]);
+      let selectedBackgroundColor1: string = __sb_node_1.$attrs.backgroundColor ?? '';
+      let __sb_node_2: InspectorNode = Utils.navigateInspectorPath('SegBtnSelectBackgrountColorTest_001_sb2', [0, 2, 0, 1, 0]);
+      let selectedBackgroundColor2: string = __sb_node_2.$attrs.backgroundColor ?? '';
+      let __sb_node_3: InspectorNode = Utils.navigateInspectorPath('SegBtnSelectBackgrountColorTest_001_sb3', [0, 3, 0, 1, 0]);
+      let selectedBackgroundColor3: string = __sb_node_3.$attrs.backgroundColor ?? '';
       let selectedBackgroundColor_1: string | undefined = AppStorage.get<string>('selectedBackgroundColor_1')
       let selectedBackgroundColor_2: string | undefined = AppStorage.get<string>('selectedBackgroundColor_2')
       await CommonFunc.sleep(2000);

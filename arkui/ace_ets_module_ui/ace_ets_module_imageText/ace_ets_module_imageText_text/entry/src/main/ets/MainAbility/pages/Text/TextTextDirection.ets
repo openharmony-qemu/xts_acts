@@ -20,31 +20,37 @@ struct TextTextDirectionTest {
     Column() {
       Text('Text_textDirection_LTR')
         .id('Text_textDirection_LTR')
+        .key('Text_textDirection_LTR')
         .textDirection(TextDirection.LTR)
         .height('5%')
 
       Text('Text_textDirection_RTL')
         .id('Text_textDirection_RTL')
+        .key('Text_textDirection_RTL')
         .textDirection(TextDirection.RTL)
         .height('5%')
 
       Text('Text_textDirection_DEFAULT')
         .id('Text_textDirection_DEFAULT')
+        .key('Text_textDirection_DEFAULT')
         .textDirection(TextDirection.DEFAULT)
         .height('5%')
 
       Text('Text_textDirection_AUTO')
         .id('Text_textDirection_AUTO')
+        .key('Text_textDirection_AUTO')
         .textDirection(TextDirection.AUTO)
         .height('5%')
 
       Text('Text_textDirection_undefined')
         .id('Text_textDirection_undefined')
+        .key('Text_textDirection_undefined')
         .textDirection(undefined)
         .height('5%')
 
       Text('Text_textDirection_default')
         .id('Text_textDirection_default')
+        .key('Text_textDirection_default')
         .height('5%')
 
       Button('get textDirection').onClick(()=>{

@@ -29,23 +29,27 @@ struct TextFontFamily {
       // 测试1: 默认值（未设置fontFamily）
       Text('Default fontFamily text content for testing default behavior.')
         .id('text_fontfamily_default')
+        .key('text_fontfamily_default')
         .height('5%')
 
       // 测试2: null 参数
       Text('FontFamily with null parameter text content for testing null behavior.')
         .id('text_fontfamily_null')
+        .key('text_fontfamily_null')
         .fontFamily(null)
         .height('5%')
 
       // 测试3: undefined 参数
       Text('FontFamily with undefined parameter text content for testing undefined behavior.')
         .id('text_fontfamily_undefined')
+        .key('text_fontfamily_undefined')
         .fontFamily(undefined)
         .height('5%')
 
       // 测试4: 空字符串参数
       Text('FontFamily with empty string parameter text content for testing empty string behavior.')
         .id('text_fontfamily_empty')
+        .key('text_fontfamily_empty')
         .fontFamily('')
         .height('5%')
     }

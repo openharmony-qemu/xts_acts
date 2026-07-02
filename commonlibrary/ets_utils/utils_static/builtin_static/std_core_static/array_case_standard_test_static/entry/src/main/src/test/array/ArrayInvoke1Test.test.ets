@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -549,7 +549,7 @@ export default function ArrayInvoke1Test(): void {
       const arr1 = new Array<string>();
       expect(arr1.length).assertEqual(0);
 
-      const arr2 = new Array<int>(5);
+      const arr2 = Array.create<int>(1, 5);
       expect(arr2.length).assertEqual(1);
       expect(arr2[0]).assertEqual(5);
 
@@ -619,7 +619,7 @@ export default function ArrayInvoke1Test(): void {
      */
     it('testArrayInvoke1029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const emptyArr = new Array<int>();
-      const sizedArr = new Array<int>(100);
+      const sizedArr = Array.create<int>(1, 100);
 
       expect(emptyArr.length).assertEqual(0);
       expect(sizedArr.length).assertEqual(1);

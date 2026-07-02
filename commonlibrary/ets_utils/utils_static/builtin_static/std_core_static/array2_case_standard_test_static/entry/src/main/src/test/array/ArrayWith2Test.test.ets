@@ -978,7 +978,7 @@ export default function ArrayWith2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayWithTwo054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<string>('same');
+      const arr = Array.create<string>(1, 'same');
       const result = arr.with(0, 'same');
       result[0] = 'changed';
       expect(arr[0]).assertEqual('same');
@@ -1305,9 +1305,9 @@ export default function ArrayWith2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayWithTwo073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const head = new Array<number>(1);
-      const tail = new Array<number>(2);
-      const replacement = new Array<number>(9);
+      const head = Array.create<number>(1, 1);
+      const tail = Array.create<number>(1, 2);
+      const replacement = Array.create<number>(1, 9);
       const arr = new Array<Array<number>>(head, tail);
       const index: int = 1;
       const result = arr.with(index, replacement);
@@ -1580,7 +1580,7 @@ export default function ArrayWith2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayWithTwo088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<string>('only');
+      const arr = Array.create<string>(1, 'only');
       const index: int = -1;
       const result = arr.with(index, 'next');
       expect(result.toString()).assertEqual('next');

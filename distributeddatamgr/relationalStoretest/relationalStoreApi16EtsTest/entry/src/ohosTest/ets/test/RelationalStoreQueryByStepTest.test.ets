@@ -413,8 +413,11 @@ export default function queryByStepTest() {
         let resultSet = await store.queryByStep("SELECT * FROM test where name = ?",["hangman"]);
         console.info(TAG + " resultSet rowCount " + resultSet.rowCount);
         expect(resultSet.rowCount).assertEqual(1);
-        console.info(TAG + " resultSet columnNames " + resultSet.columnNames);
-        console.info(TAG + " resultSet columnCount " + resultSet.columnCount);
+        console.info(TAG + " resultSet columnNames " + JSON.stringify(resultSet.columnNames));
+        expect(resultSet.columnNames[0]).assertEqual("id");
+        console.info(TAG + " resultSet columnCount " + JSON.stringify(resultSet.columnCount));
+        expect(resultSet.columnCount).assertEqual(10);
+        console.info(TAG + " resultSet rowCount " + resultSet.rowCount);
         console.info(TAG + " resultSet rowCount " + resultSet.rowCount);
         console.info(TAG + " resultSet rowIndex " + resultSet.rowIndex);
         console.info(TAG + " resultSet isAtFirstRow " + resultSet.isAtFirstRow);

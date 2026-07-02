@@ -74,7 +74,7 @@ it('timeStampTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<
       } catch (err) {
         console.info("timeStampTest_0100 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("timeStampTest_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('button', 10, "")));
+      console.info("timeStampTest_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('timeStamp' + '_button', 10, "")));
       await Utils.sleep(1500);
       console.info('timeStampTest_0100 END');
       done();

@@ -77,8 +77,8 @@ export default function ListItemGroup_aspectRatio_neither2() {
         name: 'aspectRatio1', value: '0'
       });
       await CommonFunc.sleep(1000);
-      let ListItemGroup01 = CommonFunc.getComponentRect('ListItemGroup_aspectRatio_neither2_01');
-      let item01 = CommonFunc.getComponentRect('ListItemGroup_aspectRatio_neither2_001');
+      let ListItemGroup01 = CommonFunc.getComponentRect('ListItemGroup_aspectRatio_neither2' + '_01');
+      let item01 = CommonFunc.getComponentRect('ListItemGroup_aspectRatio_neither2' + '_001');
       let itemwidth: number = item01.right - item01.left;
       let itemheight: number = item01.bottom - item01.top;
 
@@ -103,8 +103,8 @@ export default function ListItemGroup_aspectRatio_neither2() {
         name: 'aspectRatio1', value: '0.5'
       });
       await CommonFunc.sleep(1000);
-      let ListItemGroup01 = CommonFunc.getComponentRect('ListItemGroup_aspectRatio_neither2_01');
-      let item01 = CommonFunc.getComponentRect('ListItemGroup_aspectRatio_neither2_001');
+      let ListItemGroup01 = CommonFunc.getComponentRect('ListItemGroup_aspectRatio_neither2' + '_01');
+      let item01 = CommonFunc.getComponentRect('ListItemGroup_aspectRatio_neither2' + '_001');
       let itemwidth: number = item01.right - item01.left;
       let itemheight: number = item01.bottom - item01.top;
 
@@ -129,8 +129,8 @@ export default function ListItemGroup_aspectRatio_neither2() {
         name: 'aspectRatio1', value: '2'
       });
       await CommonFunc.sleep(1000);
-      let ListItemGroup01 = CommonFunc.getComponentRect('ListItemGroup_aspectRatio_neither2_01');
-      let item01 = CommonFunc.getComponentRect('ListItemGroup_aspectRatio_neither2_001');
+      let ListItemGroup01 = CommonFunc.getComponentRect('ListItemGroup_aspectRatio_neither2' + '_01');
+      let item01 = CommonFunc.getComponentRect('ListItemGroup_aspectRatio_neither2' + '_001');
       let itemwidth: number = item01.right - item01.left;
       let itemheight: number = item01.bottom - item01.top;
 
@@ -155,8 +155,8 @@ export default function ListItemGroup_aspectRatio_neither2() {
         name: 'aspectRatio1', value: '-1'
       });
       await CommonFunc.sleep(1000);
-      let ListItemGroup01 = CommonFunc.getComponentRect('ListItemGroup_aspectRatio_neither2_01');
-      let item01 = CommonFunc.getComponentRect('ListItemGroup_aspectRatio_neither2_001');
+      let ListItemGroup01 = CommonFunc.getComponentRect('ListItemGroup_aspectRatio_neither2' + '_01');
+      let item01 = CommonFunc.getComponentRect('ListItemGroup_aspectRatio_neither2' + '_001');
       let itemwidth: number = item01.right - item01.left;
       let itemheight: number = item01.bottom - item01.top;
 

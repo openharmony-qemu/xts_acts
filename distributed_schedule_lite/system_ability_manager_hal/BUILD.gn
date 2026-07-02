@@ -13,11 +13,16 @@
 
 import("//test/xts/tools/lite/build/suite_lite.gni")
 
+declare_args() {
+  enable_ohos_test_xts_acts_use_samgr_lite_broadcast = true
+  enable_ohos_test_xts_acts_use_samgr_lite_debug = true
+  enable_ohos_test_xts_acts_use_samgr_lite_taskpool_notask = true
+  enable_ohos_test_xts_acts_use_samgr_lite_taskpool_specifiedtask = true
+}
+
 hctest_suite("ActsSamgrTest") {
   suite_name = "acts"
   sources = [
-    "src/broadcast_publish_func_test.c",
-    "src/broadcast_subscribe_func_test.c",
     "src/common_func_test.c",
     "src/defaultfeatureapi_func_test.c",
     "src/feature_func_test.c",
@@ -27,28 +32,54 @@ hctest_suite("ActsSamgrTest") {
     "src/sendresponse_func_test.c",
     "src/sendsharerequest_func_test.c",
     "src/service_func_test.c",
-    "src/taskpool_notask_func_test.c",
     "src/taskpool_sharedtask_func_test.c",
     "src/taskpool_singletask_func_test.c",
-    "src/taskpool_specifiedtask_func_test.c",
     "utils/samgr_maintenance.c",
   ]
+
+  if (enable_ohos_test_xts_acts_use_samgr_lite_broadcast) {
+    sources +=[
+      "src/broadcast_publish_func_test.c",
+      "src/broadcast_subscribe_func_test.c",
+    ]
+  }
+
+  if (enable_ohos_test_xts_acts_use_samgr_lite_taskpool_notask) {
+    sources +=[
+      "src/taskpool_notask_func_test.c",
+    ]
+  }
+
+  if (enable_ohos_test_xts_acts_use_samgr_lite_taskpool_specifiedtask) {
+    sources +=[
+      "src/taskpool_specifiedtask_func_test.c",
+    ]
+  }
 
   include_dirs = [
     "//test/xts/tools/hctest/include",
     "//third_party/unity/src",
     "//kernel/liteos_m/kal",
     "//foundation/systemabilitymgr/samgr_lite/interfaces/kits/samgr",
-    "//foundation/systemabilitymgr/samgr_lite/interfaces/kits/communication/broadcast",
     "//foundation/systemabilitymgr/samgr_lite/samgr/adapter",
     "//foundation/systemabilitymgr/samgr_lite/samgr/source",
     "src",
     "utils",
   ]
 
+  if (enable_ohos_test_xts_acts_use_samgr_lite_broadcast) {
+    include_dirs +=[
+      "//foundation/systemabilitymgr/samgr_lite/interfaces/kits/communication/broadcast",
+    ]
+  }
+
   public_deps =
       [ "//foundation/systemabilitymgr/samgr_lite/samgr/adapter:samgr_adapter" ]
   defines = [ "UNITY_INCLUDE_CONFIG_H" ]
+
+  if (enable_ohos_test_xts_acts_use_samgr_lite_debug) {
+    defines += [ "SAMGR_LITE_DEBUG" ]
+  }
 
   if (board_toolchain_type != "iccarm") {
     cflags = [ "-Wno-error" ]

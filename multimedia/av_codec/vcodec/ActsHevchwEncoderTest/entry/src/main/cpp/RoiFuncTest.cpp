@@ -434,5 +434,104 @@ int VIDEO_HW_ENCODE_ROI_FUNC_014()
     EXPECT_EQ(AV_ERR_OK, vEncSample->errCount);
     return 0;
 }
+
+int VIDEO_HW_ENCODE_ROI_FUNC_015()
+{
+    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capHevc, BITRATE_MODE_SQR);
+    if (!isSupported) {
+        return 0;
+    }
+    auto vEncSample = make_unique<VEncAPI11Sample>();
+    vEncSample->defaultWidth = DEFAULT_WIDTH_1080; //1080
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
+    vEncSample->roiInfo = "0,0-100,100";
+    vEncSample->outDir = OUT_DIR;
+    vEncSample->defaultBitrateMode = SQR;
+    vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
+    vEncSample->inpDir = INP_DIR_1080_30;
+    EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_HEVC));
+    EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
+    EXPECT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+    EXPECT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+    EXPECT_EQ(AV_ERR_OK, vEncSample->CompleteRoiWorkflow(vEncSample->roiInfo));
+    vEncSample->WaitForEOS();
+    EXPECT_EQ(AV_ERR_OK, vEncSample->errCount);
+    return 0;
+}
+
+int VIDEO_HW_ENCODE_ROI_FUNC_016()
+{
+    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capHevc, BITRATE_MODE_SQR);
+    if (!isSupported) {
+        return 0;
+    }
+    auto vEncSample = make_unique<VEncAPI11Sample>();
+    vEncSample->defaultWidth = DEFAULT_WIDTH_1080; //1080
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
+    vEncSample->roiInfo = "0,0-100,100=dqp:-6,slb:1";
+    vEncSample->outDir = OUT_DIR;
+    vEncSample->defaultBitrateMode = SQR;
+    vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
+    vEncSample->inpDir = INP_DIR_1080_30;
+    EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_HEVC));
+    EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
+    EXPECT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+    EXPECT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+    EXPECT_EQ(AV_ERR_OK, vEncSample->CompleteRoiWorkflow(vEncSample->roiInfo));
+    vEncSample->WaitForEOS();
+    EXPECT_EQ(AV_ERR_OK, vEncSample->errCount);
+    return 0;
+}
+
+int VIDEO_HW_ENCODE_ROI_FUNC_017()
+{
+    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capHevc, BITRATE_MODE_SQR);
+    if (!isSupported) {
+        return 0;
+    }
+    auto vEncSample = make_unique<VEncAPI11Sample>();
+    vEncSample->defaultWidth = DEFAULT_WIDTH_1080; //1080
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
+    vEncSample->roiInfo = "0,0-100,100=dqp:-6,slb:1;100,100-200,200=dqp:-6;"
+                        "200,200-300,300=slb:0;300,300-400,400";
+    vEncSample->outDir = OUT_DIR;
+    vEncSample->defaultBitrateMode = SQR;
+    vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
+    vEncSample->inpDir = INP_DIR_1080_30;
+    EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_HEVC));
+    EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
+    EXPECT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+    EXPECT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+    EXPECT_EQ(AV_ERR_OK, vEncSample->CompleteRoiWorkflow(vEncSample->roiInfo));
+    vEncSample->WaitForEOS();
+    EXPECT_EQ(AV_ERR_OK, vEncSample->errCount);
+    return 0;
+}
+
+int VIDEO_HW_ENCODE_ROI_FUNC_018()
+{
+    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capHevc, BITRATE_MODE_SQR);
+    if (!isSupported) {
+        return 0;
+    }
+    auto vEncSample = make_unique<VEncAPI11Sample>();
+    vEncSample->defaultWidth = DEFAULT_WIDTH_1080; //1080
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
+    vEncSample->roiInfo = "0,0-100,100=-8;100,100-200,200=dqp:-6,slb:1";
+    vEncSample->outDir = OUT_DIR;
+    vEncSample->defaultBitrateMode = SQR;
+    vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
+    vEncSample->inpDir = INP_DIR_1080_30;
+    EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_HEVC));
+    EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
+    EXPECT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+    EXPECT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+    EXPECT_EQ(AV_ERR_OK, vEncSample->CompleteRoiWorkflow(vEncSample->roiInfo));
+    vEncSample->WaitForEOS();
+    EXPECT_EQ(AV_ERR_OK, vEncSample->errCount);
+    return 0;
+}
+
+
 } // namespace Media
 } // namespace OHOS

@@ -13,20 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import {Component,  Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
-import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
+import inspector from '@ohos.arkui.inspector'
+import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
+import { UtilsTest } from '../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -79,7 +80,7 @@ export default function textArea_bottom() {
         let text_01 = CommonFunc.getComponentRect('textArea_bottom_text_01');
         let text_02 = CommonFunc.getComponentRect('textArea_bottom_text_02');
         let text_03 = CommonFunc.getComponentRect('textArea_bottom_text_03');
-        let column_01 = CommonFunc.getComponentRect('textArea_bottom_column_01');
+        let column_01 = CommonFunc.getComponentRect('textArea_bottom' + '_column_01');
 
         let driver = Driver.create();
         await CommonFunc.sleep(500);
@@ -87,7 +88,7 @@ export default function textArea_bottom() {
         await CommonFunc.sleep(1000);
 
         console.log('assert  click before position')
-        let textArea_01 = CommonFunc.getComponentRect('textArea_bottom_textArea_01');
+        let textArea_01 = CommonFunc.getComponentRect('textArea_bottom' + '_textArea_01');
         let y1 = textArea_01.top
         await driver.click(
           (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2)).toInt(),(Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) /45)).toInt()
@@ -95,7 +96,7 @@ export default function textArea_bottom() {
         await CommonFunc.sleep(1000);
 
         console.log('assert click after position')
-        let textArea_02 = CommonFunc.getComponentRect('textArea_bottom_textArea_01');
+        let textArea_02 = CommonFunc.getComponentRect('textArea_bottom' + '_textArea_01');
         let y2 = textArea_02.top
 
         expect(y1).assertEqual(y2);
@@ -121,14 +122,14 @@ export default function textArea_bottom() {
         let text_01 = CommonFunc.getComponentRect('textArea_bottom_text_01');
         let text_02 = CommonFunc.getComponentRect('textArea_bottom_text_02');
         let text_03 = CommonFunc.getComponentRect('textArea_bottom_text_03');
-        let column_01 = CommonFunc.getComponentRect('textArea_bottom_column_01');
+        let column_01 = CommonFunc.getComponentRect('textArea_bottom' + '_column_01');
 
         let driver = Driver.create();
         await CommonFunc.sleep(500);
         await driver.mouseScroll({x:360, y:640}, true, 30, 2072)
         await CommonFunc.sleep(1000);
 
-        let textArea_01 = CommonFunc.getComponentRect('textArea_bottom_textArea_01');
+        let textArea_01 = CommonFunc.getComponentRect('textArea_bottom' + '_textArea_01');
 
         console.log('assert position')
         let y1 = textArea_01.bottom
@@ -136,7 +137,7 @@ export default function textArea_bottom() {
           (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2)).toInt(),(Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) /2)).toInt()
         );
         await CommonFunc.sleep(1000);
-        let textArea_02 = CommonFunc.getComponentRect('textArea_bottom_textArea_01');
+        let textArea_02 = CommonFunc.getComponentRect('textArea_bottom' + '_textArea_01');
         let y2 = textArea_02.bottom
 
         expect(y1).assertEqual(y2);
@@ -162,21 +163,21 @@ export default function textArea_bottom() {
         let text_01 = CommonFunc.getComponentRect('textArea_bottom_text_01');
         let text_02 = CommonFunc.getComponentRect('textArea_bottom_text_02');
         let text_03 = CommonFunc.getComponentRect('textArea_bottom_text_03');
-        let column_01 = CommonFunc.getComponentRect('textArea_bottom_column_01');
+        let column_01 = CommonFunc.getComponentRect('textArea_bottom' + '_column_01');
 
         let driver = Driver.create();
         await CommonFunc.sleep(500);
         await driver.mouseScroll({x:360, y:640}, true, 30, 2072)
         await CommonFunc.sleep(1000);
 
-        let textArea_01 = CommonFunc.getComponentRect('textArea_bottom_textArea_01');
+        let textArea_01 = CommonFunc.getComponentRect('textArea_bottom' + '_textArea_01');
         console.log('assert position')
         let y1 = textArea_01.bottom
         await driver.click(
           (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2)).toInt(),(Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) /45 *44)).toInt()
         );
         await CommonFunc.sleep(1000);
-        let textArea_02 = CommonFunc.getComponentRect('textArea_bottom_textArea_01');
+        let textArea_02 = CommonFunc.getComponentRect('textArea_bottom' + '_textArea_01');
         let y2 = textArea_02.bottom
 
         expect(y1).assertEqual(y2);

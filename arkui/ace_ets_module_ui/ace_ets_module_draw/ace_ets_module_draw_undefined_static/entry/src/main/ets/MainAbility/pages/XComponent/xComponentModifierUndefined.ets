@@ -1,4 +1,4 @@
-'use static'
+'use static';
 import {
   Button,
   ClickEvent,
@@ -13,7 +13,6 @@ import {
   ItemAlign,
   VerticalAlign,
   Row,
-  State,
   SurfaceRect,
   SurfaceRotationOptions,
   Text,

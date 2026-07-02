@@ -36,7 +36,7 @@ struct DatePickerPropertiesModifierPage {
         end: new Date('2100-1-1'),
         selected: this.selectedDate
       })
-      .key('DatePicker')
+      .key('datePickerPropertiesModifier_DatePicker')
       .attributeModifier(this.DatePickerPropertiesModifier)
     }
     .width('100%')

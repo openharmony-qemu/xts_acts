@@ -23,7 +23,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import {UtilsTest,startAbility} from '../Util.test';
 import { UIUtils } from '@kit.ArkUI';
 
-export default function SVDeepListenMakeObservedTest() {
+export default function SVDeepListenMakeObservedTest(): void {
   describe('SVDeepListenMakeObservedTest', () => {
     beforeAll(async (): Promise<void> => {
       let options: router.RouterOptions = {

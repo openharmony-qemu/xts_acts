@@ -615,7 +615,7 @@ export default function ArrayToSpliced2Test(): void {
       item1.value = 100;
       let item2 = new ToSplicedTwoItem040();
       item2.value = 200;
-      const arr = new Array<ToSplicedTwoItem040>(item1);
+      const arr = Array.create<ToSplicedTwoItem040>(1, item1);
       const items: FixedArray<ToSplicedTwoItem040> = [item2];
       const result = toSplicedWithItems(arr, 1, 0, items);
       expect(result.length).assertEqual(2);
@@ -948,7 +948,7 @@ export default function ArrayToSpliced2Test(): void {
       const inserted = new ToSplicedTwoItem040();
       kept.value = 1;
       inserted.value = 2;
-      const arr = new Array<ToSplicedTwoItem040>(kept);
+      const arr = Array.create<ToSplicedTwoItem040>(1, kept);
       const result = arr.toSpliced(0, 0, inserted);
       expect(result.length).assertEqual(2);
       expect(result[0] === inserted).assertTrue();
@@ -1074,7 +1074,7 @@ export default function ArrayToSpliced2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayToSplicedTwo059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1);
+      const arr = Array.create<number>(1, 1);
       const result = arr.toSpliced(0, 0, 10, 20, 30, 40, 50);
       expect(result.length).assertEqual(6);
       expect(result.toString()).assertEqual('10,20,30,40,50,1');
@@ -1420,7 +1420,7 @@ export default function ArrayToSpliced2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayToSplicedTwo082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(1, 5);
       const result = arr.toSpliced(0, 1, 7, 8);
       expect(result.toString()).assertEqual('7,8');
     });
@@ -1516,7 +1516,7 @@ export default function ArrayToSpliced2Test(): void {
      */
     it('testArrayToSplicedTwo088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const unique = Array.from<number>(new Set<number>(new Array<number>(1, 1, 2)));
-      const result = new Array<number>(0).toSpliced(1, 0, unique[0], unique[1]);
+      const result = Array.create<number>(1, 0).toSpliced(1, 0, unique[0], unique[1]);
       expect(result.toString()).assertEqual('0,1,2');
     });
 

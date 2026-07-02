@@ -51,7 +51,7 @@ struct GridIrregular3 {
       .width('90%')
       .backgroundColor(0xFAEEE0)
       .height(300)
-      .key('GridIrregular2')
+      .key('GridIrregular3_GridIrregular2')
     }.width('100%').margin({ top: 5 })
   }
 }
