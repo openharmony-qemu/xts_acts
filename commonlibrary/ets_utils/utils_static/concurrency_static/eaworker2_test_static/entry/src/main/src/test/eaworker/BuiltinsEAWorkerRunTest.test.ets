@@ -99,12 +99,12 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerRunTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerRunTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('runNoArgs')
       eaWorker.start()
-      let result: number = await eaWorker.run<number>(runHelperNoArgs)
+      let result: number = eaWorker.run<number>(runHelperNoArgs).Await()
       expect(result).assertEqual(42)
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -115,12 +115,12 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerRunTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerRunTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('runSingleArg')
       eaWorker.start()
-      let result: number = await eaWorker.run<number>(runHelperSingleArg, 21.0)
+      let result: number = eaWorker.run<number>(runHelperSingleArg, 21.0).Await()
       expect(result).assertEqual(42)
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -131,12 +131,12 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerRunTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerRunTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('runMultiArgs')
       eaWorker.start()
-      let result: number = await eaWorker.run<number>(runHelperMultiArgs, 10.0, 20.0, 30.0)
+      let result: number = eaWorker.run<number>(runHelperMultiArgs, 10.0, 20.0, 30.0).Await()
       expect(result).assertEqual(60)
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -147,12 +147,12 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEAWorkerRunTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('BuiltinsEAWorkerRunTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let eaWorker = new EAWorker('runTenArgs')
       eaWorker.start()
-      let result: number = await eaWorker.run<number>(runHelperTenArgs, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0)
+      let result: number = eaWorker.run<number>(runHelperTenArgs, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0).Await()
       expect(result).assertEqual(55)
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -163,12 +163,12 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerRunTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerRunTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('runArrow')
       eaWorker.start()
-      let result: number = await eaWorker.run<number>((x: number): number => x * 2, 21.0)
+      let result: number = eaWorker.run<number>((x: number): number => x * 2, 21.0).Await()
       expect(result).assertEqual(42)
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -179,13 +179,13 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerRunTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerRunTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let voidExecuted: boolean = false
       let eaWorker = new EAWorker('runVoid')
       eaWorker.start()
-      await eaWorker.run<void>((): void => { voidExecuted = true })
+      eaWorker.run<void>((): void => { voidExecuted = true }).Await()
       expect(voidExecuted).assertTrue()
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -196,12 +196,12 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerRunTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerRunTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('runStringArg')
       eaWorker.start()
-      let result: string = await eaWorker.run<string>(runHelperStringArg, 'world')
+      let result: string = eaWorker.run<string>(runHelperStringArg, 'world').Await()
       expect(result).assertEqual('hello world')
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -212,12 +212,12 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerRunTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerRunTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('runBoolArg')
       eaWorker.start()
-      let result: string = await eaWorker.run<string>(runHelperBoolArg, true)
+      let result: string = eaWorker.run<string>(runHelperBoolArg, true).Await()
       expect(result).assertEqual('yes')
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -228,13 +228,13 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerRunTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerRunTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('runReturnStr')
       eaWorker.start()
-      let result: string = await eaWorker.run<string>(runHelperReturnString)
+      let result: string = eaWorker.run<string>(runHelperReturnString).Await()
       expect(typeof result).assertEqual('string')
       expect(result).assertEqual('test')
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -245,12 +245,12 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerRunTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerRunTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('runReturnBool')
       eaWorker.start()
-      let result: boolean = await eaWorker.run<boolean>(runHelperReturnBoolean)
+      let result: boolean = eaWorker.run<boolean>(runHelperReturnBoolean).Await()
       expect(result).assertTrue()
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -261,12 +261,12 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerRunTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerRunTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('runReturnFalse')
       eaWorker.start()
-      let result: boolean = await eaWorker.run<boolean>(runHelperReturnFalse)
+      let result: boolean = eaWorker.run<boolean>(runHelperReturnFalse).Await()
       expect(result).assertFalse()
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -277,12 +277,12 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEAWorkerRunTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('BuiltinsEAWorkerRunTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let eaWorker = new EAWorker('runReturnZero')
       eaWorker.start()
-      let result: number = await eaWorker.run<number>(runHelperReturnZero)
+      let result: number = eaWorker.run<number>(runHelperReturnZero).Await()
       expect(result).assertEqual(0)
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -293,14 +293,14 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerRunTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerRunTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('runTypeof')
       eaWorker.start()
-      let resultNum: number = await eaWorker.run<number>((): number => 123)
+      let resultNum: number = eaWorker.run<number>((): number => 123).Await()
       expect(typeof resultNum).assertEqual('number')
-      let resultStr: string = await eaWorker.run<string>((): string => 'test')
+      let resultStr: string = eaWorker.run<string>((): string => 'test').Await()
       expect(typeof resultStr).assertEqual('string')
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -311,18 +311,18 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEAWorkerRunTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('BuiltinsEAWorkerRunTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let eaWorker = new EAWorker('runThrow')
       eaWorker.start()
       let caught: boolean = false
       try {
-        await eaWorker.run<number>(runHelperThrowTask)
+        eaWorker.run<number>(runHelperThrowTask).Await()
         expect().assertFail()
       } catch (e) {
         caught = true
       }
       expect(caught).assertTrue()
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -333,18 +333,18 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsEAWorkerRunTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('BuiltinsEAWorkerRunTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let eaWorker = new EAWorker('runCustomErr')
       eaWorker.start()
       let caught: boolean = false
       try {
-        await eaWorker.run<number>(runHelperCustomErrorTask)
+        eaWorker.run<number>(runHelperCustomErrorTask).Await()
         expect().assertFail()
       } catch (e) {
         caught = true
       }
       expect(caught).assertTrue()
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -355,17 +355,17 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEAWorkerRunTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('BuiltinsEAWorkerRunTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let eaWorker = new EAWorker('runNoStart')
       let caught: boolean = false
       try {
-        await eaWorker.run<number>(runHelperNoArgs)
+        eaWorker.run<number>(runHelperNoArgs).Await()
       } catch (e) {
         caught = true
       }
       expect(caught).assertTrue()
       eaWorker.start()
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -376,12 +376,12 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerRunTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerRunTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('runCompute')
       eaWorker.start()
-      let result: number = await eaWorker.run<number>(runHelperComputeTask, 100.0)
+      let result: number = eaWorker.run<number>(runHelperComputeTask, 100.0).Await()
       expect(result).assertEqual(4950)
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -392,21 +392,21 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEAWorkerRunTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('BuiltinsEAWorkerRunTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let eaWorker = new EAWorker('runSeq')
       eaWorker.start()
       let results: number[] = []
-      let r1: number = await eaWorker.run<number>((): number => 1)
+      let r1: number = eaWorker.run<number>((): number => 1).Await()
       results.push(r1)
-      let r2: number = await eaWorker.run<number>((): number => 2)
+      let r2: number = eaWorker.run<number>((): number => 2).Await()
       results.push(r2)
-      let r3: number = await eaWorker.run<number>((): number => 3)
+      let r3: number = eaWorker.run<number>((): number => 3).Await()
       results.push(r3)
       expect(results.length).assertEqual(3)
       expect(results[0]).assertEqual(1)
       expect(results[1]).assertEqual(2)
       expect(results[2]).assertEqual(3)
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -417,18 +417,18 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsEAWorkerRunTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('BuiltinsEAWorkerRunTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let eaWorker = new EAWorker('runConc3')
       eaWorker.start()
-      let p1: Promise<number> = eaWorker.run<number>((): number => 10)
-      let p2: Promise<number> = eaWorker.run<number>((): number => 20)
-      let p3: Promise<number> = eaWorker.run<number>((): number => 30)
-      let results: number[] = await Promise.all([p1, p2, p3])
+      let p1: Job<number> = eaWorker.run<number>((): number => 10)
+      let p2: Job<number> = eaWorker.run<number>((): number => 20)
+      let p3: Job<number> = eaWorker.run<number>((): number => 30)
+      let results: number[] = [p1.Await(), p2.Await(), p3.Await()]
       expect(results.length).assertEqual(3)
       expect(results[0]).assertEqual(10)
       expect(results[1]).assertEqual(20)
       expect(results[2]).assertEqual(30)
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -439,17 +439,20 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsEAWorkerRunTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('BuiltinsEAWorkerRunTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let eaWorker = new EAWorker('runConc5')
       eaWorker.start()
-      let promises: Promise<number>[] = []
+      let jobs: Job<number>[] = []
       for (let i = 0; i < 5; i++) {
         let idx: number = i
-        promises.push(eaWorker.run<number>((): number => idx * 10))
+        jobs.push(eaWorker.run<number>((): number => idx * 10))
       }
-      let results: number[] = await Promise.all(promises)
+      let results: number[] = []
+      for (let i = 0; i < jobs.length; i++) {
+        results.push(jobs[i].Await())
+      }
       expect(results.length).assertEqual(5)
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -460,17 +463,20 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsEAWorkerRunTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('BuiltinsEAWorkerRunTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let eaWorker = new EAWorker('runConc10')
       eaWorker.start()
-      let promises: Promise<number>[] = []
+      let jobs: Job<number>[] = []
       for (let i = 0; i < 10; i++) {
         let idx: number = i
-        promises.push(eaWorker.run<number>((): number => idx))
+        jobs.push(eaWorker.run<number>((): number => idx))
       }
-      let results: number[] = await Promise.all(promises)
+      let results: number[] = []
+      for (let i = 0; i < jobs.length; i++) {
+        results.push(jobs[i].Await())
+      }
       expect(results.length).assertEqual(10)
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -481,15 +487,15 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsEAWorkerRunTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('BuiltinsEAWorkerRunTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let eaWorker = new EAWorker('runNested')
       eaWorker.start()
-      let result: number = await eaWorker.run<number>((): number => {
+      let result: number = eaWorker.run<number>((): number => {
         let innerResult: number = 100
         return innerResult
-      })
+      }).Await()
       expect(result).assertEqual(100)
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -500,12 +506,12 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEAWorkerRunTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('BuiltinsEAWorkerRunTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let eaWorker = new EAWorker('runInterop', true)
       eaWorker.start()
-      let result: number = await eaWorker.run<number>((): number => 99)
+      let result: number = eaWorker.run<number>((): number => 99).Await()
       expect(result).assertEqual(99)
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -516,12 +522,12 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerRunTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerRunTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('runPerf')
       eaWorker.start()
-      let result: number = await eaWorker.run<number>((): number => 42)
+      let result: number = eaWorker.run<number>((): number => 42).Await()
       expect(result).assertEqual(42)
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -532,18 +538,18 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEAWorkerRunTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('BuiltinsEAWorkerRunTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let eaWorker = new EAWorker('runTryCatch')
       eaWorker.start()
       let finallyExecuted: boolean = false
       try {
-        await eaWorker.run<number>(runHelperThrowTask)
+        eaWorker.run<number>(runHelperThrowTask).Await()
       } catch (e) {
       } finally {
         finallyExecuted = true
       }
       expect(finallyExecuted).assertTrue()
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -554,12 +560,12 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerRunTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerRunTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('runBoolFalse')
       eaWorker.start()
-      let result: string = await eaWorker.run<string>(runHelperBoolArg, false)
+      let result: string = eaWorker.run<string>(runHelperBoolArg, false).Await()
       expect(result).assertEqual('no')
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -570,19 +576,19 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('BuiltinsEAWorkerRunTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('BuiltinsEAWorkerRunTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       let eaWorker = new EAWorker('runBatch50')
       eaWorker.start()
       let results: number[] = []
       for (let i = 0; i < 50; i++) {
         let idx: number = i
-        let result: number = await eaWorker.run<number>((): number => idx)
+        let result: number = eaWorker.run<number>((): number => idx).Await()
         results.push(result)
       }
       expect(results.length).assertEqual(50)
       expect(results[0]).assertEqual(0)
       expect(results[49]).assertEqual(49)
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -593,23 +599,26 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsEAWorkerRunTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('BuiltinsEAWorkerRunTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let workers: EAWorker[] = []
-      let promises: Promise<number>[] = []
+      let jobs: Job<number>[] = []
       for (let i = 0; i < 3; i++) {
         let worker = new EAWorker(`multiW_${i}`)
         worker.start()
         workers.push(worker)
         let idx: number = i
-        promises.push(worker.run<number>((): number => idx * 100))
+        jobs.push(worker.run<number>((): number => idx * 100))
       }
-      let results: number[] = await Promise.all(promises)
+      let results: number[] = []
+      for (let i = 0; i < jobs.length; i++) {
+        results.push(jobs[i].Await())
+      }
       expect(results.length).assertEqual(3)
       expect(results[0]).assertEqual(0)
       expect(results[1]).assertEqual(100)
       expect(results[2]).assertEqual(200)
       for (let i = 0; i < workers.length; i++) {
-        await workers[i].join()
+        workers[i].join().Await()
       }
     })
 
@@ -621,13 +630,13 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerRunTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerRunTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('runPromise')
       eaWorker.start()
-      let promise: Promise<number> = eaWorker.run<number>((): number => 42)
-      let result: number = await promise
+      let job: Job<number> = eaWorker.run<number>((): number => 42)
+      let result: number = job.Await()
       expect(result).assertEqual(42)
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -638,12 +647,12 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEAWorkerRunTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('BuiltinsEAWorkerRunTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let eaWorker = new EAWorker('runNegArg')
       eaWorker.start()
-      let result: number = await eaWorker.run<number>(runHelperSingleArg, -5.0)
+      let result: number = eaWorker.run<number>(runHelperSingleArg, -5.0).Await()
       expect(result).assertEqual(-10)
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -654,12 +663,12 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEAWorkerRunTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('BuiltinsEAWorkerRunTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let eaWorker = new EAWorker('runFloatArg')
       eaWorker.start()
-      let result: number = await eaWorker.run<number>(runHelperSingleArg, 3.5)
+      let result: number = eaWorker.run<number>(runHelperSingleArg, 3.5).Await()
       expect(result).assertEqual(7)
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -670,12 +679,12 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEAWorkerRunTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('BuiltinsEAWorkerRunTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let eaWorker = new EAWorker('runEmptyStr')
       eaWorker.start()
-      let result: string = await eaWorker.run<string>(runHelperStringArg, '')
+      let result: string = eaWorker.run<string>(runHelperStringArg, '').Await()
       expect(result).assertEqual('hello ')
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -686,17 +695,17 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEAWorkerRunTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('BuiltinsEAWorkerRunTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let eaWorker = new EAWorker('runErrContinue')
       eaWorker.start()
       try {
-        await eaWorker.run<number>(runHelperThrowTask)
+        eaWorker.run<number>(runHelperThrowTask).Await()
       } catch (e) {
         // Expected error
       }
-      let result: number = await eaWorker.run<number>((): number => 42)
+      let result: number = eaWorker.run<number>((): number => 42).Await()
       expect(result).assertEqual(42)
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -707,16 +716,16 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEAWorkerRunTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('BuiltinsEAWorkerRunTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let handlerCalled: boolean = false
       let eaWorker = new EAWorker('runHandler')
       eaWorker.setUncaughtExceptionHandler((error: Error): void => {
         handlerCalled = true
       })
       eaWorker.start()
-      let result: number = await eaWorker.run<number>((): number => 42)
+      let result: number = eaWorker.run<number>((): number => 42).Await()
       expect(result).assertEqual(42)
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -727,12 +736,12 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerRunTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerRunTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('runNamed')
       eaWorker.start()
-      let result: number = await eaWorker.run<number>(runHelperSingleArg, 15.0)
+      let result: number = eaWorker.run<number>(runHelperSingleArg, 15.0).Await()
       expect(result).assertEqual(30)
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -743,14 +752,14 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEAWorkerRunTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('BuiltinsEAWorkerRunTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let eaWorker = new EAWorker('runAsync')
       eaWorker.start()
-      let result: number = await eaWorker.run<number>(async (): Promise<number> => {
+      let result: number = eaWorker.run<number>((): number => {
         return 42
-      })
+      }).Await()
       expect(result).assertEqual(42)
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -761,13 +770,13 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEAWorkerRunTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('BuiltinsEAWorkerRunTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let eaWorker = new EAWorker('runArray')
       eaWorker.start()
-      let result: number[] = await eaWorker.run<number[]>((): number[] => [1, 2, 3, 4, 5])
+      let result: number[] = eaWorker.run<number[]>((): number[] => [1, 2, 3, 4, 5]).Await()
       expect(result.length).assertEqual(5)
       expect(result[0]).assertEqual(1)
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -778,12 +787,12 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEAWorkerRunTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('BuiltinsEAWorkerRunTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let eaWorker = new EAWorker('runEmptyArr')
       eaWorker.start()
-      let result: number[] = await eaWorker.run<number[]>((): number[] => [])
+      let result: number[] = eaWorker.run<number[]>((): number[] => []).Await()
       expect(result.length).assertEqual(0)
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -794,17 +803,17 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEAWorkerRunTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('BuiltinsEAWorkerRunTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let eaWorker = new EAWorker('runNullTask')
       eaWorker.start()
       let caught: boolean = false
       try {
-        await eaWorker.run<number>(null as Object as ()=>number)
+        eaWorker.run<number>(null as Object as ()=>number).Await()
       } catch (e) {
         caught = true
       }
       expect(caught).assertTrue()
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -815,17 +824,17 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEAWorkerRunTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('BuiltinsEAWorkerRunTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let eaWorker = new EAWorker('runUndefTask')
       eaWorker.start()
       let caught: boolean = false
       try {
-        await eaWorker.run<number>(undefined as Object as ()=>number)
+        eaWorker.run<number>(undefined as Object as ()=>number).Await()
       } catch (e) {
         caught = true
       }
       expect(caught).assertTrue()
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -836,13 +845,13 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEAWorkerRunTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('BuiltinsEAWorkerRunTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let eaWorker = new EAWorker('runArrArg')
       eaWorker.start()
       let arr: number[] = [10, 20, 30]
-      let result: number = await eaWorker.run<number>((a: number[]): number => a.length, arr)
+      let result: number = eaWorker.run<number>((a: number[]): number => a.length, arr).Await()
       expect(result).assertEqual(3)
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -853,19 +862,19 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsEAWorkerRunTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('BuiltinsEAWorkerRunTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let eaWorker = new EAWorker('runOuter')
       eaWorker.start()
       let nestedCreated: boolean = false
-      let result: number = await eaWorker.run<number>((): number => {
+      let result: number = eaWorker.run<number>((): number => {
         let nestedWorker = new EAWorker('runNested')
         nestedWorker.start()
         nestedCreated = true
         return 42
-      })
+      }).Await()
       expect(result).assertEqual(42)
       expect(nestedCreated).assertTrue()
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -876,14 +885,14 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEAWorkerRunTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('BuiltinsEAWorkerRunTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let eaWorker = new EAWorker('runNull')
       eaWorker.start()
-      let result: Object | null = await eaWorker.run<Object | null>((): Object | null => {
+      let result: Object | null = eaWorker.run<Object | null>((): Object | null => {
         return null
-      })
+      }).Await()
       expect(result === null).assertTrue()
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -894,14 +903,14 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEAWorkerRunTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('BuiltinsEAWorkerRunTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let eaWorker = new EAWorker('runUndef')
       eaWorker.start()
-      let result: Object | undefined = await eaWorker.run<Object | undefined>((): Object | undefined => {
+      let result: Object | undefined = eaWorker.run<Object | undefined>((): Object | undefined => {
         return undefined
-      })
+      }).Await()
       expect(result === undefined).assertTrue()
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -912,15 +921,15 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEAWorkerRunTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('BuiltinsEAWorkerRunTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let eaWorker = new EAWorker('runObjArg')
       eaWorker.start()
       let objName: string = 'test'
-      let result: string = await eaWorker.run<string>((name: string): string => {
+      let result: string = eaWorker.run<string>((name: string): string => {
         return name
-      }, objName)
+      }, objName).Await()
       expect(result).assertEqual('test')
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -931,14 +940,14 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEAWorkerRunTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('BuiltinsEAWorkerRunTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let eaWorker = new EAWorker('runNullArg')
       eaWorker.start()
-      let result: boolean = await eaWorker.run<boolean>((n: number | null): boolean => {
+      let result: boolean = eaWorker.run<boolean>((n: number | null): boolean => {
         return n === null
-      }, null)
+      }, null).Await()
       expect(result).assertTrue()
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -949,14 +958,14 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerRunTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerRunTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('runAnon')
       eaWorker.start()
-      let result: number = await eaWorker.run<number>((): number => {
+      let result: number = eaWorker.run<number>((): number => {
         return 42
-      })
+      }).Await()
       expect(result).assertEqual(42)
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -967,19 +976,19 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEAWorkerRunTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('BuiltinsEAWorkerRunTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let eaWorker = new EAWorker('runObjReturn')
       eaWorker.start()
-      let result: Object = await eaWorker.run<Object>((): Object => {
+      let result: Object = eaWorker.run<Object>((): Object => {
         let obj: Record<string, Object> = {}
         obj['result'] = 42
         obj['status'] = 'success'
         return obj as Object
-      })
+      }).Await()
       let obj = result as Record<string, Object>
       expect(obj['result']).assertEqual(42)
       expect(obj['status']).assertEqual('success')
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -990,15 +999,15 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEAWorkerRunTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('BuiltinsEAWorkerRunTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let eaWorker = new EAWorker('runEmptyObj')
       eaWorker.start()
-      let result: Object = await eaWorker.run<Object>((): Object => {
+      let result: Object = eaWorker.run<Object>((): Object => {
         return {} as Object
-      })
+      }).Await()
       let keys: string[] = Object.keys(result)
       expect(keys.length).assertEqual(0)
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -1009,15 +1018,15 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsEAWorkerRunTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('BuiltinsEAWorkerRunTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let sharedCounter: number = 0
       let eaWorker = new EAWorker('runShared')
       eaWorker.start()
-      let result: number = await eaWorker.run<number>((counter: number): number => {
+      let result: number = eaWorker.run<number>((counter: number): number => {
         return counter + 1
-      }, sharedCounter)
+      }, sharedCounter).Await()
       expect(result).assertEqual(1)
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -1028,16 +1037,16 @@ export default function BuiltinsEAWorkerRunTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsEAWorkerRunTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('BuiltinsEAWorkerRunTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let eaWorker = new EAWorker('runNestedRun')
       eaWorker.start()
       let innerResult: number = 0
-      let result: number = await eaWorker.run<number>((): number => {
-        let innerJob: Promise<number> = eaWorker.run<number>((): number => 100)
+      let result: number = eaWorker.run<number>((): number => {
+        let innerJob: Job<number> = eaWorker.run<number>((): number => 100)
         return 42
-      })
+      }).Await()
       expect(result).assertEqual(42)
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
   })
 }

@@ -193,7 +193,7 @@ export default function taskpoolCancelTest() {
       let eaw = new EAWorker();
       eaw.start();
       eaw.run<void>(cancelById, task.taskId)
-      await eaw.join();
+      eaw.join().Await();
       while (!terminate) {
         await sleep(100);
       }
@@ -267,7 +267,7 @@ export default function taskpoolCancelTest() {
       let eaw = new EAWorker();
       eaw.start();
       eaw.run<void>(cancelById, task.taskId)
-      await eaw.join();
+      eaw.join().Await();
       while (!terminate) {
         await sleep(100);
       }

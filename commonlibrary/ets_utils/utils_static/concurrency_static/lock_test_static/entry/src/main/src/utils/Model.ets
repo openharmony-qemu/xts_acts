@@ -3,21 +3,20 @@
 
 export class Event {
   constructor() {
-    this.promise = new Promise<boolean>((resolve: (val: boolean) => void) => {
-      this.resolveFn = resolve;
-    })
+    this.state = new AtomicInt(0);
   }
 
   public Wait(): boolean {
-    return this.promise.awaitSync();
+    while (this.state.load() == 0) {
+    }
+    return this.state.load() > 0;
   }
 
   public Fire(val: boolean = true): void {
-    this.resolveFn!(val);
+    this.state.store(val ? 1 : -1);
   }
 
-  private promise: Promise<boolean>;
-  private resolveFn: ((val: boolean) => void) | null = null;
+  private state: AtomicInt;
 }
 
 export class BaseClass {
@@ -50,16 +49,16 @@ export class CountClass {
   }
 }
 
-export class SharedJob<T> {
+export class SharedJob<T extends Job<void>> {
   private jobs: Array<T>;
 
   constructor(jobs: Array<T>) {
     this.jobs = jobs;
   }
 
-  public async Await(): Promise<void> {
+  public Await(): void {
     for (let job of this.jobs) {
-      await job;
+      job.Await();
     }
   }
 }

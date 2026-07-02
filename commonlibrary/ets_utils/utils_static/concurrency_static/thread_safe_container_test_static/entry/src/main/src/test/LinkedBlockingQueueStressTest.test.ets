@@ -13,18 +13,18 @@ export default function LinkedBlockingQueueStressTest(): void {
      * @tc.type Function
      * @tc.level LEVEL1
      */
-    it("Linked_Blocking_Queue_Stress_Concurrent_Operations_static_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it("Linked_Blocking_Queue_Stress_Concurrent_Operations_static_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let queue: containers.LinkedBlockingQueue<number> = new containers.LinkedBlockingQueue<number>(100);
       let threadCount: number = 10;
       let operationsPerThread: number = 100;
 
-      let tasks: Promise<void>[] = [];
+      let tasks: Job<void>[] = [];
       let workers: EAWorker[] = [];
       for (let i: number = 0; i < threadCount; i++) {
         let eaw = new EAWorker()
         eaw.start()
         workers.push(eaw)
-        let task: Promise<void> = eaw.run<void>((q: containers.LinkedBlockingQueue<number>): void => {
+        let task: Job<void> = eaw.run<void>((q: containers.LinkedBlockingQueue<number>): void => {
           for (let j: number = 0; j < operationsPerThread; j++) {
             q.add(j);
             q.poll();
@@ -32,11 +32,11 @@ export default function LinkedBlockingQueueStressTest(): void {
         }, queue);
         tasks.push(task);
       }
-      for (let i = 0; i < tasks.length; i++) {
-        await tasks[i];
-      }
+      tasks.forEach((jb) => {
+        jb.Await();
+      })
       workers.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
 
       expect(queue.size >= 0).assertTrue();
@@ -51,20 +51,20 @@ export default function LinkedBlockingQueueStressTest(): void {
      * @tc.type Function
      * @tc.level LEVEL1
      */
-    it("Linked_Blocking_Queue_Stress_Producer_Consumer_static_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it("Linked_Blocking_Queue_Stress_Producer_Consumer_static_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let queue: containers.LinkedBlockingQueue<number> = new containers.LinkedBlockingQueue<number>(1000);
       let producerCount: number = 10;
       let consumerCount: number = 10;
       let itemsPerProducer: number = 100;
 
-      let tasks: Promise<void>[] = [];
+      let tasks: Job<void>[] = [];
       let workers: EAWorker[] = [];
 
       for (let i: number = 0; i < producerCount; i++) {
         let eaw = new EAWorker()
         eaw.start()
         workers.push(eaw)
-        let task: Promise<void> = eaw.run<void>((q: containers.LinkedBlockingQueue<number>, id: number, count: number): void => {
+        let task: Job<void> = eaw.run<void>((q: containers.LinkedBlockingQueue<number>, id: number, count: number): void => {
           for (let j: number = 0; j < count; j++) {
             q.push(id * count + j);
           }
@@ -76,7 +76,7 @@ export default function LinkedBlockingQueueStressTest(): void {
         let eaw = new EAWorker()
         eaw.start()
         workers.push(eaw)
-        let task: Promise<void> = eaw.run<void>((q: containers.LinkedBlockingQueue<number>, count: number): void => {
+        let task: Job<void> = eaw.run<void>((q: containers.LinkedBlockingQueue<number>, count: number): void => {
           for (let j: number = 0; j < count; j++) {
             q.pop();
           }
@@ -84,9 +84,11 @@ export default function LinkedBlockingQueueStressTest(): void {
         tasks.push(task);
       }
 
-      await Promise.all(tasks);
+      for (let i: int = 0; i < tasks.length; i++) {
+        tasks[i].Await();
+      }
       workers.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
 
       expect(queue.size).assertEqual(0);
@@ -100,17 +102,17 @@ export default function LinkedBlockingQueueStressTest(): void {
      * @tc.type Function
      * @tc.level LEVEL1
       */
-    it("Linked_Blocking_Queue_Stress_Add_Poll_Mix_static_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it("Linked_Blocking_Queue_Stress_Add_Poll_Mix_static_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let queue: containers.LinkedBlockingQueue<number> = new containers.LinkedBlockingQueue<number>(1000);
       let threadCount: number = 10;
 
-      let tasks: Promise<void>[] = [];
+      let tasks: Job<void>[] = [];
       let workers: EAWorker[] = [];
       for (let i: number = 0; i < threadCount; i++) {
         let eaw = new EAWorker()
         eaw.start()
         workers.push(eaw)
-        let task: Promise<void> = eaw.run<void>((q: containers.LinkedBlockingQueue<number>, id: number): void => {
+        let task: Job<void> = eaw.run<void>((q: containers.LinkedBlockingQueue<number>, id: number): void => {
           for (let j: number = 0; j < 20; j++) {
             q.add(id * 50 + j);
             if (j % 2 === 0) {
@@ -120,11 +122,11 @@ export default function LinkedBlockingQueueStressTest(): void {
         }, queue, i);
         tasks.push(task);
       }
-      for (let i = 0; i < tasks.length; i++) {
-        await tasks[i]
-      }
+      tasks.forEach((jb) => {
+        jb.Await();
+      })
       workers.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
 
       expect(queue.size == 100).assertTrue();

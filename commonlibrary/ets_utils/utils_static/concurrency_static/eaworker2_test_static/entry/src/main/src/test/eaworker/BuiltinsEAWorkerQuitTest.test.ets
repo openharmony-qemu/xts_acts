@@ -32,7 +32,7 @@ export default function BuiltinsEAWorkerQuitTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerQuitTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerQuitTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('quitType')
       eaWorker.start()
       let result: void = eaWorker.quit()
@@ -47,7 +47,7 @@ export default function BuiltinsEAWorkerQuitTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerQuitTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerQuitTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('quitAlive')
       eaWorker.start()
       expect(eaWorker.isAlive()).assertTrue()
@@ -63,7 +63,7 @@ export default function BuiltinsEAWorkerQuitTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEAWorkerQuitTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('BuiltinsEAWorkerQuitTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let eaWorker = new EAWorker('quitNoStart')
       let caught: boolean = false
       try {
@@ -73,7 +73,7 @@ export default function BuiltinsEAWorkerQuitTest(): void {
       }
       expect(caught).assertTrue()
       eaWorker.start()
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -84,7 +84,7 @@ export default function BuiltinsEAWorkerQuitTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerQuitTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerQuitTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('quitNoTasks')
       eaWorker.start()
       eaWorker.quit()
@@ -99,14 +99,14 @@ export default function BuiltinsEAWorkerQuitTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerQuitTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerQuitTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let taskCompleted: boolean = false
       let eaWorker = new EAWorker('quitAfterRun')
       eaWorker.start()
-      let result: number = await eaWorker.run<number>((): number => {
+      let result: number = eaWorker.run<number>((): number => {
         taskCompleted = true
         return 42
-      })
+      }).Await()
       expect(result).assertEqual(42)
       expect(taskCompleted).assertTrue()
       eaWorker.quit()
@@ -121,13 +121,13 @@ export default function BuiltinsEAWorkerQuitTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEAWorkerQuitTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('BuiltinsEAWorkerQuitTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let eaWorker = new EAWorker('quitAfterQuit')
       eaWorker.start()
       eaWorker.quit()
       let caught: boolean = false
       try {
-        await eaWorker.run<number>((): number => 100)
+        eaWorker.run<number>((): number => 100).Await()
       } catch (e) {
         caught = true
       }
@@ -142,7 +142,7 @@ export default function BuiltinsEAWorkerQuitTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEAWorkerQuitTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('BuiltinsEAWorkerQuitTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let eaWorker = new EAWorker('quitRestart')
       eaWorker.start()
       eaWorker.quit()
@@ -163,7 +163,7 @@ export default function BuiltinsEAWorkerQuitTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEAWorkerQuitTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('BuiltinsEAWorkerQuitTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let finallyExecuted: boolean = false
       let eaWorker = new EAWorker('quitTryCatch')
       eaWorker.start()
@@ -185,7 +185,7 @@ export default function BuiltinsEAWorkerQuitTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsEAWorkerQuitTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('BuiltinsEAWorkerQuitTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let workers: EAWorker[] = []
       for (let i = 0; i < 5; i++) {
         let worker = new EAWorker(`quitSeq_${i}`)
@@ -212,7 +212,7 @@ export default function BuiltinsEAWorkerQuitTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsEAWorkerQuitTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('BuiltinsEAWorkerQuitTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let workers: EAWorker[] = []
       for (let i = 0; i < 3; i++) {
         let worker = new EAWorker(`quitConc3_${i}`)
@@ -239,7 +239,7 @@ export default function BuiltinsEAWorkerQuitTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsEAWorkerQuitTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('BuiltinsEAWorkerQuitTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let workers: EAWorker[] = []
       for (let i = 0; i < 10; i++) {
         let worker = new EAWorker(`quitConc10_${i}`)
@@ -266,14 +266,14 @@ export default function BuiltinsEAWorkerQuitTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerQuitTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerQuitTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker1 = new EAWorker('quitVsJoin1')
       let eaWorker2 = new EAWorker('quitVsJoin2')
       eaWorker1.start()
       eaWorker2.start()
       eaWorker1.quit()
       expect(eaWorker1.isAlive()).assertFalse()
-      await eaWorker2.join()
+      eaWorker2.join().Await()
       expect(eaWorker2.isAlive()).assertFalse()
     })
 
@@ -285,7 +285,7 @@ export default function BuiltinsEAWorkerQuitTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerQuitTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerQuitTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let executed: boolean = false
       let eaWorker = new EAWorker('quitPostTask')
       eaWorker.start()
@@ -302,7 +302,7 @@ export default function BuiltinsEAWorkerQuitTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerQuitTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerQuitTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let taskExecuted: boolean = false
       let eaWorker = new EAWorker('quitInitTask', (): void => { taskExecuted = true })
       eaWorker.start()
@@ -318,7 +318,7 @@ export default function BuiltinsEAWorkerQuitTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerQuitTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerQuitTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('quitPerf')
       eaWorker.start()
       eaWorker.quit()
@@ -333,7 +333,7 @@ export default function BuiltinsEAWorkerQuitTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEAWorkerQuitTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('BuiltinsEAWorkerQuitTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let eaWorker = new EAWorker('quitInterop', true)
       eaWorker.start()
       eaWorker.quit()
@@ -348,7 +348,7 @@ export default function BuiltinsEAWorkerQuitTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEAWorkerQuitTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('BuiltinsEAWorkerQuitTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let eaWorker = new EAWorker('quitMulti')
       eaWorker.start()
       eaWorker.quit()
@@ -370,7 +370,7 @@ export default function BuiltinsEAWorkerQuitTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsEAWorkerQuitTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('BuiltinsEAWorkerQuitTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let workers: EAWorker[] = []
       for (let i = 0; i < 5; i++) {
         let worker = new EAWorker(`quit5_${i}`)
@@ -381,7 +381,7 @@ export default function BuiltinsEAWorkerQuitTest(): void {
       let allStopped: boolean = false
       let retryCount: number = 0
       while (!allStopped && retryCount < 10) {
-        await Utils.msSleep(100)
+        Utils.syncSleep(100)
         allStopped = true
         for (let i = 0; i < workers.length; i++) {
           if (workers[i].isAlive()) {
@@ -401,16 +401,16 @@ export default function BuiltinsEAWorkerQuitTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsEAWorkerQuitTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('BuiltinsEAWorkerQuitTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let nestedCreated: boolean = false
       let eaWorker = new EAWorker('outerQuit')
       eaWorker.start()
-      let result: number = await eaWorker.run<number>((): number => {
+      let result: number = eaWorker.run<number>((): number => {
         let nestedWorker = new EAWorker('nestedQuit')
         nestedWorker.start()
         nestedCreated = true
         return 100
-      })
+      }).Await()
       expect(result).assertEqual(100)
       expect(nestedCreated).assertTrue()
       eaWorker.quit()
