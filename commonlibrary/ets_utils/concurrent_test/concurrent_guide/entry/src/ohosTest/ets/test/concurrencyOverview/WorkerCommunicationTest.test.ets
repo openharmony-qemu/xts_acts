@@ -17,7 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import { worker, ErrorEvent, MessageEvents } from '@kit.ArkTS';
 
 export default function WorkerCommunicationTest(): void {
-  describe('WorkerCommunicationTest', (): void => {
+  describe('WorkerCommunicationOverviewTest', (): void => {
     let currentWorker: worker.ThreadWorker | null = null
 
     beforeAll((): void => {})
@@ -33,14 +33,14 @@ export default function WorkerCommunicationTest(): void {
     })
 
     /**
-     * @tc.name   WorkerCommunicationTest0100
+     * @tc.name   WorkerCommunicationOverviewTest0100
      * @tc.number SUB_WORKER_COMMUNICATION_OVERVIEW_TEST_0100
      * @tc.desc   Verify Worker thread creation and basic message echo communication
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('WorkerCommunicationTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('WorkerCommunicationOverviewTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       currentWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
 
       let result: string = await new Promise<string>((resolve: (value: string) => void) => {
@@ -54,14 +54,14 @@ export default function WorkerCommunicationTest(): void {
     })
 
     /**
-     * @tc.name   WorkerCommunicationTest0200
+     * @tc.name   WorkerCommunicationOverviewTest0200
      * @tc.number SUB_WORKER_COMMUNICATION_OVERVIEW_TEST_0200
      * @tc.desc   Verify Worker ping-pong message exchange pattern
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('WorkerCommunicationTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('WorkerCommunicationOverviewTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       currentWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
 
       let result: string = await new Promise<string>((resolve: (value: string) => void) => {
@@ -75,14 +75,14 @@ export default function WorkerCommunicationTest(): void {
     })
 
     /**
-     * @tc.name   WorkerCommunicationTest0300
+     * @tc.name   WorkerCommunicationOverviewTest0300
      * @tc.number SUB_WORKER_COMMUNICATION_OVERVIEW_TEST_0300
      * @tc.desc   Verify Worker handles compute task and returns calculation result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('WorkerCommunicationTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('WorkerCommunicationOverviewTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       currentWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
 
       let result: number = await new Promise<number>((resolve: (value: number) => void) => {
@@ -96,14 +96,14 @@ export default function WorkerCommunicationTest(): void {
     })
 
     /**
-     * @tc.name   WorkerCommunicationTest0400
+     * @tc.name   WorkerCommunicationOverviewTest0400
      * @tc.number SUB_WORKER_COMMUNICATION_OVERVIEW_TEST_0400
      * @tc.desc   Verify Worker handles long-running task with periodic tick messages
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('WorkerCommunicationTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('WorkerCommunicationOverviewTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       currentWorker = new worker.ThreadWorker('entry_test/ets/workers/LongTaskWorker.ets')
       let receivedMessages: string[] = []
 
@@ -129,14 +129,14 @@ export default function WorkerCommunicationTest(): void {
     })
 
     /**
-     * @tc.name   WorkerCommunicationTest0500
+     * @tc.name   WorkerCommunicationOverviewTest0500
      * @tc.number SUB_WORKER_COMMUNICATION_OVERVIEW_TEST_0500
      * @tc.desc   Verify Worker onexit callback is invoked after terminate
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('WorkerCommunicationTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('WorkerCommunicationOverviewTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let wk: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
       currentWorker = wk
 
@@ -152,14 +152,14 @@ export default function WorkerCommunicationTest(): void {
     })
 
     /**
-     * @tc.name   WorkerCommunicationTest0600
+     * @tc.name   WorkerCommunicationOverviewTest0600
      * @tc.number SUB_WORKER_COMMUNICATION_OVERVIEW_TEST_0600
      * @tc.desc   Verify Worker handles multiple sequential message exchanges correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('WorkerCommunicationTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('WorkerCommunicationOverviewTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       currentWorker = new worker.ThreadWorker('entry_test/ets/workers/EchoWorker.ets')
 
       let result1: string = await new Promise<string>((resolve: (value: string) => void) => {
