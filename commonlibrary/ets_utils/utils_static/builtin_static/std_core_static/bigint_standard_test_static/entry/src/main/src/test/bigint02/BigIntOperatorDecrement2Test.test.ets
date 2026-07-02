@@ -17,17 +17,17 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntOperatorDecrement2Test(): void {
-  describe('testBigIntOperatorDecrement2Test', () => {
+  describe('testBigIntOperatorDecrement2Test', (): void => {
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_DECREMENT_0100
-     * @tc.name testBigIntOperatorDecrement2Test0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_DECREMENT_1000
+     * @tc.name testBigIntOperatorDecrement2Test010
      * @tc.desc Mindmap huge number matrix: 2^64, 2^128, 2^256, googol and negatives
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorDecrement2Test0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorDecrement2Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt('18446744073709551616').operatorDecrement().toString()).assertEqual('18446744073709551615');
       expect(BigInt('18446744073709551617').operatorDecrement().toString()).assertEqual('18446744073709551616');
       expect(BigInt('340282366920938463463374607431768211456').operatorDecrement().toString()).assertEqual('340282366920938463463374607431768211455');
@@ -41,14 +41,14 @@ export default function BigIntOperatorDecrement2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_DECREMENT_0200
-     * @tc.name testBigIntOperatorDecrement2Test0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_DECREMENT_1100
+     * @tc.name testBigIntOperatorDecrement2Test011
      * @tc.desc Mindmap consecutive decrements: 10, 100, 1000 times and from long lower bound
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorDecrement2Test0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorDecrement2Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x = BigInt(0);
       for (let i = 0; i < 10; i++) {
         x = x.operatorDecrement();
@@ -87,14 +87,14 @@ export default function BigIntOperatorDecrement2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_DECREMENT_0300
-     * @tc.name testBigIntOperatorDecrement2Test0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_DECREMENT_1200
+     * @tc.name testBigIntOperatorDecrement2Test012
      * @tc.desc Mindmap immutability: reference identity, negative/huge/long bound unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorDecrement2Test0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorDecrement2Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = BigInt(-99);
       a.operatorDecrement();
       expect(a.toString()).assertEqual('-99');
@@ -111,28 +111,28 @@ export default function BigIntOperatorDecrement2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_DECREMENT_0400
-     * @tc.name testBigIntOperatorDecrement2Test0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_DECREMENT_1300
+     * @tc.name testBigIntOperatorDecrement2Test013
      * @tc.desc Mindmap return value: returns a different instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorDecrement2Test0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorDecrement2Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = BigInt(0);
       const res = src.operatorDecrement();
       expect(res!==src).assertTrue();
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_DECREMENT_0500
-     * @tc.name testBigIntOperatorDecrement2Test0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_DECREMENT_1400
+     * @tc.name testBigIntOperatorDecrement2Test014
      * @tc.desc Mindmap return value: doubleValue, getLong, equals, toString length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorDecrement2Test0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorDecrement2Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(0).operatorDecrement().doubleValue()).assertEqual(-1.0);
       expect(BigInt(100).operatorDecrement().getLong()).assertEqual(99);
       expect(BigInt(5).operatorDecrement().equals(BigInt(4))).assertTrue();
@@ -142,14 +142,14 @@ export default function BigIntOperatorDecrement2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_DECREMENT_0600
-     * @tc.name testBigIntOperatorDecrement2Test0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_DECREMENT_1500
+     * @tc.name testBigIntOperatorDecrement2Test015
      * @tc.desc Mindmap constructor diversity: boolean, string, "-50", copy, "007", "+42"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorDecrement2Test0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorDecrement2Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(true).operatorDecrement().toString()).assertEqual('0');
       expect(BigInt(false).operatorDecrement().toString()).assertEqual('-1');
       expect(BigInt('123').operatorDecrement().toString()).assertEqual('122');
@@ -161,14 +161,14 @@ export default function BigIntOperatorDecrement2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_DECREMENT_0700
-     * @tc.name testBigIntOperatorDecrement2Test0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_DECREMENT_1600
+     * @tc.name testBigIntOperatorDecrement2Test016
      * @tc.desc Mindmap chained calls: dec->inc, dec->add, dec->subtract, dec->dec->dec->multiply
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorDecrement2Test0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorDecrement2Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(100).operatorDecrement().operatorIncrement().toString()).assertEqual('100');
       expect(BigInt(5).operatorDecrement().operatorAdd(BigInt(10)).toString()).assertEqual('14');
       expect(BigInt(10).operatorDecrement().operatorSubtract(BigInt(5)).toString()).assertEqual('4');
@@ -176,28 +176,28 @@ export default function BigIntOperatorDecrement2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_DECREMENT_0800
-     * @tc.name testBigIntOperatorDecrement2Test0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_DECREMENT_1700
+     * @tc.name testBigIntOperatorDecrement2Test017
      * @tc.desc Mindmap positive boundary matrix: 9, 500, 12345 decrement
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorDecrement2Test0800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorDecrement2Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(9).operatorDecrement().toString()).assertEqual('8');
       expect(BigInt(500).operatorDecrement().toString()).assertEqual('499');
       expect(BigInt(12345).operatorDecrement().toString()).assertEqual('12344');
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_DECREMENT_0900
-     * @tc.name testBigIntOperatorDecrement2Test0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_DECREMENT_1800
+     * @tc.name testBigIntOperatorDecrement2Test018
      * @tc.desc Mindmap negative boundary matrix: -1, -9, -42, -500, -12345 decrement
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorDecrement2Test0900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorDecrement2Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(-1).operatorDecrement().toString()).assertEqual('-2');
       expect(BigInt(-9).operatorDecrement().toString()).assertEqual('-10');
       expect(BigInt(-42).operatorDecrement().toString()).assertEqual('-43');
@@ -206,27 +206,27 @@ export default function BigIntOperatorDecrement2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_DECREMENT_1000
-     * @tc.name testBigIntOperatorDecrement2Test1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_DECREMENT_1900
+     * @tc.name testBigIntOperatorDecrement2Test019
      * @tc.desc Mindmap power-of-two negatives: -1024, -(3^5) decrement
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorDecrement2Test1000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorDecrement2Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(-1024).operatorDecrement().toString()).assertEqual('-1025');
       expect(BigInt(-243).operatorDecrement().toString()).assertEqual('-244');
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_DECREMENT_1100
-     * @tc.name testBigIntOperatorDecrement2Test1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_DECREMENT_2000
+     * @tc.name testBigIntOperatorDecrement2Test020
      * @tc.desc Mindmap power-of-two positives: 1024, 65535, 1048576, 243 decrement
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorDecrement2Test1100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorDecrement2Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(1024).operatorDecrement().toString()).assertEqual('1023');
       expect(BigInt(65535).operatorDecrement().toString()).assertEqual('65534');
       expect(BigInt(1048576).operatorDecrement().toString()).assertEqual('1048575');
@@ -234,14 +234,14 @@ export default function BigIntOperatorDecrement2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_DECREMENT_1200
-     * @tc.name testBigIntOperatorDecrement2Test1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_DECREMENT_2100
+     * @tc.name testBigIntOperatorDecrement2Test021
      * @tc.desc Mindmap fromULong constructs: 0, 1024, -1(64-bit unsigned max), 999 decrement
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorDecrement2Test1200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorDecrement2Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt.fromULong(0).operatorDecrement().toString()).assertEqual('-1');
       expect(BigInt.fromULong(1024).operatorDecrement().toString()).assertEqual('1023');
       expect(BigInt.fromULong(-1).operatorDecrement().toString()).assertEqual('18446744073709551614');
@@ -249,14 +249,14 @@ export default function BigIntOperatorDecrement2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_DECREMENT_1300
-     * @tc.name testBigIntOperatorDecrement2Test1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_DECREMENT_2200
+     * @tc.name testBigIntOperatorDecrement2Test022
      * @tc.desc Mindmap asIntN/asUintN truncated constructs decrement
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorDecrement2Test1300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorDecrement2Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt.asIntN(8, BigInt(127)).operatorDecrement().toString()).assertEqual('126');
       expect(BigInt.asIntN(8, BigInt(-128)).operatorDecrement().toString()).assertEqual('-129');
       expect(BigInt.asUintN(8, BigInt(255)).operatorDecrement().toString()).assertEqual('254');
@@ -267,14 +267,14 @@ export default function BigIntOperatorDecrement2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_DECREMENT_1400
-     * @tc.name testBigIntOperatorDecrement2Test1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_DECREMENT_2300
+     * @tc.name testBigIntOperatorDecrement2Test023
      * @tc.desc Mindmap operator-derived BigInt: pow, negate, add, subtract, multiply, divide, mod, bitwise, shift
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorDecrement2Test1400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorDecrement2Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(3).pow(BigInt(3)).operatorDecrement().toString()).assertEqual('26');
       expect(BigInt(-2).pow(BigInt(3)).operatorDecrement().toString()).assertEqual('-9');
       expect(BigInt(-10).negate().operatorDecrement().toString()).assertEqual('9');
@@ -295,14 +295,14 @@ export default function BigIntOperatorDecrement2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_DECREMENT_1500
-     * @tc.name testBigIntOperatorDecrement2Test1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_DECREMENT_2400
+     * @tc.name testBigIntOperatorDecrement2Test024
      * @tc.desc Mindmap format/value-method round-trip: toString, toString(16), toLocaleString, getLong, getULong
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorDecrement2Test1500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorDecrement2Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       expect(BigInt(BigInt(123).toString()).operatorDecrement().toString()).assertEqual('122');
       expect(BigInt("0b"+BigInt(8).toString(2)).operatorDecrement().toString()).assertEqual('7');
@@ -312,14 +312,14 @@ export default function BigIntOperatorDecrement2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_DECREMENT_1600
-     * @tc.name testBigIntOperatorDecrement2Test1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_DECREMENT_2500
+     * @tc.name testBigIntOperatorDecrement2Test025
      * @tc.desc Mindmap mid-range numbers: 4294967295, 12345678, -12345678, 123456789, -123456789 decrement
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorDecrement2Test1600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorDecrement2Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(4294967295).operatorDecrement().toString()).assertEqual('4294967294');
       expect(BigInt(12345678).operatorDecrement().toString()).assertEqual('12345677');
       expect(BigInt(-12345678).operatorDecrement().toString()).assertEqual('-12345679');
@@ -328,51 +328,51 @@ export default function BigIntOperatorDecrement2Test(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_DECREMENT_1700
-     * @tc.name testBigIntOperatorDecrement2Test1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_DECREMENT_2600
+     * @tc.name testBigIntOperatorDecrement2Test026
      * @tc.desc Mindmap double float-argument constructed BigInt decrement: 64.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorDecrement2Test1700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorDecrement2Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(64.0).operatorDecrement().toString()).assertEqual('63');
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_DECREMENT_1800
-     * @tc.name testBigIntOperatorDecrement2Test1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_DECREMENT_2700
+     * @tc.name testBigIntOperatorDecrement2Test027
      * @tc.desc Mindmap copy negative instance decrement: new BigInt(new BigInt(-100))
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorDecrement2Test1800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorDecrement2Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(BigInt(-100)).operatorDecrement().toString()).assertEqual('-101');
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_DECREMENT_1900
-     * @tc.name testBigIntOperatorDecrement2Test1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_DECREMENT_2800
+     * @tc.name testBigIntOperatorDecrement2Test028
      * @tc.desc Mindmap asUintN 64-bit unsigned max decrement
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorDecrement2Test1900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorDecrement2Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const max = BigInt.asUintN(64, BigInt.fromULong(-1));
       expect(max.operatorDecrement().toString()).assertEqual('18446744073709551614');
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_DECREMENT_2000
-     * @tc.name testBigIntOperatorDecrement2Test2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_OPERATOR_DECREMENT_2900
+     * @tc.name testBigIntOperatorDecrement2Test029
      * @tc.desc Decrement from Long.MIN_VALUE produces correct value beyond 64-bit range
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorDecrement2Test2000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorDecrement2Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt('-9223372036854775808').operatorDecrement().toString()).assertEqual('-9223372036854775809');
       expect(BigInt('-9223372036854775808').operatorDecrement().operatorLessThan(BigInt('-9223372036854775808'))).assertTrue();
     });
