@@ -58,7 +58,7 @@ export default function APISearchExample() {
     it('APISearchExample_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('APISearchExample_0100 START');
       let driver = await Driver.create()
-      let textComponent = await driver.findComponent(ON.id('APISearchExample_Search'));
+      let textComponent = await driver.findComponent(ON.id('APISearchExample' + '_Search'));
       await textComponent.click()
       await CommonFunc.sleep(1000);
 	    await driver.triggerKey(2070);
@@ -67,7 +67,7 @@ export default function APISearchExample() {
       await CommonFunc.sleep(2000);
 	    await driver.triggerKey(2070);
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('APISearchExample_Text01');
+      let strJson = getInspectorByKey('APISearchExample' + '_Text01');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[APISearchExample_0100] component obj is: " + JSON.stringify(obj), obj.$attrs.content);
       expect(obj.$attrs.content).assertEqual('done');
@@ -86,14 +86,14 @@ export default function APISearchExample() {
     it('APISearchExample_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('APISearchExample_0200 START');
       let driver = await Driver.create()
-      let textComponent = await driver.findComponent(ON.id('APISearchExample_Search'));
+      let textComponent = await driver.findComponent(ON.id('APISearchExample' + '_Search'));
       await textComponent.inputText("1")
       await CommonFunc.sleep(1000);
 	    await driver.triggerKey(2070);
       await CommonFunc.sleep(1000);
       await textComponent.clearText();
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('APISearchExample_Text02');
+      let strJson = getInspectorByKey('APISearchExample' + '_Text02');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[APISearchExample_0200] component obj is: " + JSON.stringify(obj), obj.$attrs.content);
       expect(obj.$attrs.content).assertEqual('done');
@@ -111,7 +111,7 @@ export default function APISearchExample() {
     it('APISearchExample_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('APISearchExample_0200 START');
       let driver = await Driver.create()
-      let textComponent = await driver.findComponent(ON.id('APISearchExample_Search'));
+      let textComponent = await driver.findComponent(ON.id('APISearchExample' + '_Search'));
       await textComponent.click()
       await CommonFunc.sleep(1000);
 	    await driver.triggerKey(2070);
@@ -120,7 +120,7 @@ export default function APISearchExample() {
       await CommonFunc.sleep(2000);
 	    await driver.triggerKey(2070);
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('APISearchExample_Text03');
+      let strJson = getInspectorByKey('APISearchExample' + '_Text03');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[APISearchExample_0300] component obj is: " + JSON.stringify(obj), obj.$attrs.content);
       expect(obj.$attrs.content).assertEqual('init');
@@ -139,7 +139,7 @@ export default function APISearchExample() {
     it('APISearchExample_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('APISearchExample_0200 START');
       let driver = await Driver.create()
-      let textComponent = await driver.findComponent(ON.id('APISearchExample_Search'));
+      let textComponent = await driver.findComponent(ON.id('APISearchExample' + '_Search'));
       await textComponent.click()
       await CommonFunc.sleep(1000);
 	    await driver.triggerKey(2070);
@@ -148,7 +148,7 @@ export default function APISearchExample() {
       await CommonFunc.sleep(2000);
 	    await driver.triggerKey(2070);
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('APISearchExample_Text04');
+      let strJson = getInspectorByKey('APISearchExample' + '_Text04');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[APISearchExample_0200] component obj is: " + JSON.stringify(obj), obj.$attrs.content);
       expect(obj.$attrs.content).assertEqual('init');

@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -2378,5 +2379,94 @@ export default function audioRoutingManager() {
         }
         done();
     })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_DECLAREDEVICETYPESCOMPATIBILITY_PARAM_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_DECLAREDEVICETYPESCOMPATIBILITY_PARAM_STATIC_0100
+     * @tc.desc   declareDeviceTypesCompatibility - valid API20+ device types array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_DECLAREDEVICETYPESCOMPATIBILITY_PARAM_STATIC_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        try {
+          let audioRoutingManager = audio.getAudioManager().getRoutingManager();
+          let deviceTypes: audio.DeviceTypeArray = [audio.DeviceType.HEARING_AID, audio.DeviceType.NEARLINK];
+          audioRoutingManager.declareDeviceTypesCompatibility(deviceTypes);
+          console.info('declareDeviceTypesCompatibility with valid device types succeed');
+        } catch (err) {
+          console.error(`Failed to declareDeviceTypesCompatibility PARAM_0100. Code: ${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_DECLAREDEVICETYPESCOMPATIBILITY_PARAM_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_DECLAREDEVICETYPESCOMPATIBILITY_PARAM_STATIC_0200
+     * @tc.desc   declareDeviceTypesCompatibility - single API20+ device type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_DECLAREDEVICETYPESCOMPATIBILITY_PARAM_STATIC_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        try {
+          let audioRoutingManager = audio.getAudioManager().getRoutingManager();
+          let deviceTypes: audio.DeviceTypeArray = [audio.DeviceType.HEARING_AID];
+          audioRoutingManager.declareDeviceTypesCompatibility(deviceTypes);
+          console.info('declareDeviceTypesCompatibility with single device type succeed');
+        } catch (err) {
+          console.error(`Failed to declareDeviceTypesCompatibility PARAM_0200. Code: ${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      })
+    
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_DECLAREDEVICETYPESCOMPATIBILITY_PARAM_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_DECLAREDEVICETYPESCOMPATIBILITY_PARAM_STATIC_0300
+     * @tc.desc   declareDeviceTypesCompatibility - single API20+ device type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_DECLAREDEVICETYPESCOMPATIBILITY_PARAM_STATIC_0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        try {
+          let audioRoutingManager = audio.getAudioManager().getRoutingManager();
+          let deviceTypes: audio.DeviceTypeArray = [audio.DeviceType.NEARLINK];
+          audioRoutingManager.declareDeviceTypesCompatibility(deviceTypes);
+          console.info('declareDeviceTypesCompatibility with single device type succeed');
+        } catch (err) {
+          console.error(`Failed to declareDeviceTypesCompatibility PARAM_0300. Code: ${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_DECLAREDEVICETYPESCOMPATIBILITY_ERROR_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_DECLAREDEVICETYPESCOMPATIBILITY_ERROR_STATIC_0200
+     * @tc.desc   declareDeviceTypesCompatibility - legacy device types before API20.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_DECLAREDEVICETYPESCOMPATIBILITY_ERROR_STATIC_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        try {
+          let audioRoutingManager = audio.getAudioManager().getRoutingManager();
+          let deviceTypes: audio.DeviceTypeArray = [audio.DeviceType.SPEAKER, audio.DeviceType.WIRED_HEADSET];
+          audioRoutingManager.declareDeviceTypesCompatibility(deviceTypes);
+          console.info('declareDeviceTypesCompatibility with legacy device types should fail');
+          expect(false).assertTrue();
+        } catch (err) {
+          console.info(`declareDeviceTypesCompatibility ERROR_0200 err.code: ${err.code}, err.message: ${err.message}`);
+          expect(err.code).assertEqual(6800101);
+        }
+        done();
+      })
   })
 }

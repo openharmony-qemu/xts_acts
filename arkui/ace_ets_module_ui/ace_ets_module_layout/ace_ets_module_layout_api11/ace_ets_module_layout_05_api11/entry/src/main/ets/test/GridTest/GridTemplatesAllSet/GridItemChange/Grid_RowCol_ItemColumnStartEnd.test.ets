@@ -74,8 +74,8 @@ export default function grid_RowCol_ItemColumnStartEndTest() {
       let eleventhGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemColumnStartEnd11');
       let twelfthGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemColumnStartEnd12');
       let thirteenthGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemColumnStartEnd13');
-      let gridContainer: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemColumnStartEnd_Container01');
-      let gridContainerStrJson = getInspectorByKey('Grid_RowCol_ItemColumnStartEnd_Container01');
+      let gridContainer: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemColumnStartEnd' + '_Container01');
+      let gridContainerStrJson = getInspectorByKey('Grid_RowCol_ItemColumnStartEnd' + '_Container01');
 
       expect(JSON.parse(gridContainerStrJson).$type).assertEqual('Grid');
 
@@ -168,8 +168,8 @@ export default function grid_RowCol_ItemColumnStartEndTest() {
       let eleventhGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemColumnStartEnd11');
       let twelfthGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemColumnStartEnd12');
       let thirteenthGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemColumnStartEnd13');
-      let gridContainer: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemColumnStartEnd_Container01');
-      let gridContainerStrJson = getInspectorByKey('Grid_RowCol_ItemColumnStartEnd_Container01');
+      let gridContainer: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemColumnStartEnd' + '_Container01');
+      let gridContainerStrJson = getInspectorByKey('Grid_RowCol_ItemColumnStartEnd' + '_Container01');
 
       expect(JSON.parse(gridContainerStrJson).$type).assertEqual('Grid');
 

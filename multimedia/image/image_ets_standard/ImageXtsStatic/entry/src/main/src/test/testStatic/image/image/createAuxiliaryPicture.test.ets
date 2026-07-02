@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -41,15 +41,15 @@ export default function createAuxiliaryPictureTest(): void {
     });
 
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0600
-     * @tc.number SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0600
+     * @tc.name   SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0300
+     * @tc.number SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0300
      * @tc.desc   createAuxiliaryPicture
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0600', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0600';
+    it('SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0300', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0300';
       try {
         const resourceMgr = testContext.resourceManager;
         const rawFile = await resourceMgr.getRawFileContent('test.jpg');
@@ -71,15 +71,15 @@ export default function createAuxiliaryPictureTest(): void {
     })
 
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0200
-     * @tc.number SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0200
+     * @tc.name   SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0400
+     * @tc.number SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0400
      * @tc.desc   createAuxiliaryPicture
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0200', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0200';
+    it('SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0400', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0400';
       try {
         const resourceMgr = testContext.resourceManager;
         const rawFile = await resourceMgr.getRawFileContent('test.svg');
@@ -99,5 +99,140 @@ export default function createAuxiliaryPictureTest(): void {
         done();
       }
     })
+
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0500
+     * @tc.number SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0500
+     * @tc.desc   枚举覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0500', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0500';
+      const path = 'test_exif_v2.jpg';
+      const buffer = new ArrayBuffer(1000);
+      const auxSize: image.Size = { width: 10, height: 10 };
+      const auxType: image.AuxiliaryPictureType = image.AuxiliaryPictureType.FRAGMENT_MAP;
+      try {
+        console.info(TAG, testName, `Start`);
+        let result = image.createAuxiliaryPicture(buffer,auxSize,auxType)
+        console.info(TAG, testName, `Success createAuxiliaryPicture`);
+        expect(result != undefined).assertTrue();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `failed; error: ${error},${error?.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0600
+     * @tc.number SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0600
+     * @tc.desc   枚举覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0600', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0600';
+      const path = 'test_exif_v2.jpg';
+      const buffer = new ArrayBuffer(1000);
+      const auxSize: image.Size = { width: 10, height: 10 };
+      const auxType: image.AuxiliaryPictureType = image.AuxiliaryPictureType.GAINMAP;
+      try {
+        console.info(TAG, testName, `Start`);
+        let result = image.createAuxiliaryPicture(buffer,auxSize,auxType)
+        console.info(TAG, testName, `Success createAuxiliaryPicture`);
+        expect(result != undefined).assertTrue();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `failed; error: ${error},${error?.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0700
+     * @tc.number SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0700
+     * @tc.desc   枚举覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0700', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0700';
+      const path = 'test_exif_v2.jpg';
+      const buffer = new ArrayBuffer(1000);
+      const auxSize: image.Size = { width: 10, height: 10 };
+      const auxType: image.AuxiliaryPictureType = image.AuxiliaryPictureType.DEPTH_MAP;
+      try {
+        console.info(TAG, testName, `Start`);
+        let result = image.createAuxiliaryPicture(buffer,auxSize,auxType)
+        console.info(TAG, testName, `Success createAuxiliaryPicture`);
+        expect(result != undefined).assertTrue();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `failed; error: ${error},${error?.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0800
+     * @tc.number SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0800
+     * @tc.desc   枚举覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0800', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0800';
+      const path = 'test_exif_v2.jpg';
+      const buffer = new ArrayBuffer(1000);
+      const auxSize: image.Size = { width: 10, height: 10 };
+      const auxType: image.AuxiliaryPictureType = image.AuxiliaryPictureType.UNREFOCUS_MAP;
+      try {
+        console.info(TAG, testName, `Start`);
+        let result = image.createAuxiliaryPicture(buffer,auxSize,auxType)
+        console.info(TAG, testName, `Success createAuxiliaryPicture`);
+        expect(result != undefined).assertTrue();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `failed; error: ${error},${error?.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0900
+     * @tc.number SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0900
+     * @tc.desc   枚举覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0900', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createAuxiliaryPicture_static_0900';
+      const path = 'test_exif_v2.jpg';
+      const buffer = new ArrayBuffer(1000);
+      const auxSize: image.Size = { width: 10, height: 10 };
+      const auxType: image.AuxiliaryPictureType = image.AuxiliaryPictureType.LINEAR_MAP;
+      try {
+        console.info(TAG, testName, `Start`);
+        let result = image.createAuxiliaryPicture(buffer,auxSize,auxType)
+        console.info(TAG, testName, `Success createAuxiliaryPicture`);
+        expect(result != undefined).assertTrue();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `failed; error: ${error},${error?.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
   })
 }

@@ -13,22 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
-import hilog from '@ohos.hilog'
+import { describe, it, expect, TestType, Size, Level, beforeAll } from '../../../hypium/index';
+import hilog from '@ohos.hilog';
 import Utils from './Util.test';
-
 import display from '@ohos.display';
-// import { MyCallback } from '../models/MyCallback';
-import window from '@ohos.window'
+import window from '@ohos.window';
 import { UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import type { AsyncCallback, Callback} from '@ohos.base'
+import type { AsyncCallback, Callback } from '@ohos.base';
 import common from '@ohos.app.ability.common';
-
-import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
-import hilog from '@ohos.hilog'
-import Utils from './Util.test';
-
 import { image } from '@kit.ImageKit';
 import deviceInfo from '@ohos.deviceInfo';
 import settings from '@ohos.settings';
@@ -36,6 +29,8 @@ import Want from '@ohos.app.ability.Want';
 import StartOptions from '@ohos.app.ability.StartOptions'
 import { ImageFit } from '@ohos.arkui.component'
 import { canIUse } from "@internal.full.global";
+import { ColorMetrics } from "@ohos.arkui.node";
+import StartOptions from '@ohos.app.ability.StartOptions';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -459,6 +454,38 @@ export default function WindowControlsTest(): void {
 
 
 
+
+
+        /**
+     * @tc.name   testSetStartWindowBackgroundColorStatic_1300016
+     * @tc.number SUB_BASIC_WMS_SETSTARTWINDOWBACKGROUNDCOLOR_1300016
+     * @tc.desc   testSetStartWindowBackgroundColorStatic_1300016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetStartWindowBackgroundColorStatic_1300016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> =>{
+      let caseName: string = 'testSetStartWindowBackgroundColorStatic_1300016 ';
+      console.log(caseName + 'begin');
+      try {
+        let moduleName = 'entry_test'.repeat(21);
+        console.info(`${caseName} moduleName length: ${moduleName.length}`);
+        let abilityName = 'TestAbility';
+        window.setStartWindowBackgroundColor(moduleName, abilityName, ColorMetrics.numeric(0x112233)).then(async () => {
+          console.info(caseName + 'Succeeded in calling setStartWindowBackgroundColor.');
+          expect().assertFail();
+          done();
+        }).catch((err: Error): PromiseLike<void> | undefined =>  {
+          console.error(caseName + 'Failed to call setStartWindowBackgroundColor. Cause: ' + err.code + 'message :' + err.message);
+          expect(err.code).assertEqual(1300016)
+          done();
+        });
+      } catch (err) {
+        console.error(caseName + 'Failed. Cause:' + err.code);
+        expect().assertFail();
+        done();
+      }
+    });
 
     })
 

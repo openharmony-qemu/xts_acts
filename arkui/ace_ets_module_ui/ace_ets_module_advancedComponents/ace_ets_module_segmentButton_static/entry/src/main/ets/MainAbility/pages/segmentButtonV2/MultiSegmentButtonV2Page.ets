@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,36 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Local,
-  ComponentV2,
-  $r,
-  Column,
-  ColorMetrics,
-  LengthMetrics,
-  MultiCapsuleSegmentButtonV2,
-  SegmentButtonV2Items,
-  ColorMetrics,
-  Color,
-  BackgroundEffectOptions,
-  BlurStyle,
-  BackgroundBlurStyleOptions,
-  Scroll,
-  LocalizedPadding,
-  Text,
-  FontWeight,
-  Flex,
-  Direction,
-  ColumnOptions,
-  BlurStyleActivePolicy,
-  AdaptiveColor,
-  Button,
-  FlexWrap,
-  FlexAlign
-} from '@kit.ArkUI';
-import { SizeT } from '@ohos.arkui.node'
-
+import { Entry, Local, ComponentV2, $r, Column, ColorMetrics, LengthMetrics, MultiCapsuleSegmentButtonV2, SegmentButtonV2Items, Color, BackgroundEffectOptions, BlurStyle, BackgroundBlurStyleOptions, Scroll, LocalizedPadding, Text, FontWeight, Flex, Direction, ColumnOptions, BlurStyleActivePolicy, AdaptiveColor, Button, FlexWrap, FlexAlign } from '@kit.ArkUI';
+import { SizeT } from '@ohos.arkui.node';
 @Entry
 @ComponentV2
 struct MultiCapsuleSegmentButtonV2Example {

@@ -1282,7 +1282,12 @@ export default function bluetoothBleTest() {
                 gattServer.offBlePhyUpdate(onReceiveEvent_value);
             } catch (error) {
                 console.error(`[bt_arkts] server onBlePhyUpdate is failed, code is ${error.code},message is ${error.message}`);
-                expect().assertFail();
+                if (error.code === 801) {
+                    console.info('[bt_arkts] server onBlePhyUpdate is not support');
+                    expect(error.code).assertEqual(801);
+                } else {
+                    expect().assertFail();
+                }
             }
             done();
         })
@@ -1300,7 +1305,12 @@ export default function bluetoothBleTest() {
                 gattServer.offBlePhyUpdate();
             } catch (error) {
                 console.error(`[bt_arkts] server onBlePhyUpdate is failed, code is ${error.code},message is ${error.message}`);
-                expect().assertFail();
+                if (error.code === 801) {
+                    console.info('[bt_arkts] server onBlePhyUpdate is not support');
+                    expect(error.code).assertEqual(801);
+                } else {
+                    expect().assertFail();
+                }
             }
             done();
         })
@@ -1319,7 +1329,12 @@ export default function bluetoothBleTest() {
                 device.offBlePhyUpdate(onReceiveEvent_value);
             } catch (error) {
                 console.error(`[bt_arkts] client onBlePhyUpdate is failed, code is ${error.code},message is ${error.message}`);
-                expect().assertFail();
+                if (error.code === 801) {
+                    console.info('[bt_arkts] client onBlePhyUpdate is not support');
+                    expect(error.code).assertEqual(801);
+                } else {
+                    expect().assertFail();
+                }
             }
             done();
         })
@@ -1337,7 +1352,12 @@ export default function bluetoothBleTest() {
                 device.offBlePhyUpdate();
             } catch (error) {
                 console.error(`[bt_arkts] client onBlePhyUpdate is failed, code is ${error.code},message is ${error.message}`);
-                expect().assertFail();
+                if (error.code === 801) {
+                    console.info('[bt_arkts] client onBlePhyUpdate is not support');
+                    expect(error.code).assertEqual(801);
+                } else {
+                    expect().assertFail();
+                }
             }
             done();
         })

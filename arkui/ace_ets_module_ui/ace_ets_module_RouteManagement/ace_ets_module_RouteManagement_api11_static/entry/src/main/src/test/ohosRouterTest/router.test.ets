@@ -22,10 +22,8 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import router from '@ohos.router';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
-import Utils from '../../../ets/MainAbility/common/Utils'
 import events_emitter from '@ohos.events.emitter';
 import { RecordData } from '@ohos.base';
-
 export default function routerStandardJsunit() {
   describe('routerStandardTest', () => {
     beforeAll(async (): Promise<void> => {

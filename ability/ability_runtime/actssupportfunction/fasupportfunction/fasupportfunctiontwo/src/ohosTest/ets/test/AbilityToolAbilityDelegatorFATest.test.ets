@@ -157,6 +157,10 @@ export default function abilityToolAbilityDelegatorFATest() {
         let testAbilityName = abilityDelegatorArguments.parameters['-p'] + '.' + ABILITY_NAME
         let cmd = 'aa start -d 0 -a ' + testAbilityName + ' -b ' + abilityDelegatorArguments.bundleName
         let timeout = 1;
+        let user = abilityDelegatorArguments.parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} executeShellCommand : ${cmd}`);
         let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
         abilityDelegator.executeShellCommand(cmd, timeout, (err, data) => {

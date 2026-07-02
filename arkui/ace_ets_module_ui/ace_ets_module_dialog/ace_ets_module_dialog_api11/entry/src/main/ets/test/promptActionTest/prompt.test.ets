@@ -66,7 +66,7 @@ export default function promptShowDialogJsunit() {
           expect(eventData.data?.STATUS).assertEqual(true);
 
         }
-        console.info("onSelect_001 click result is: " + JSON.stringify(sendEventByKey('showDialogText', 10, "")));
+        console.info("onSelect_001 click result is: " + JSON.stringify(sendEventByKey('prompt1' + '_showDialogText', 10, "")));
         events_emitter.on(innerEventOne, callback1);
       } catch (err) {
         console.info("testpromptShowDialog001 on events_emitter err : " + JSON.stringify(err));
@@ -95,7 +95,7 @@ export default function promptShowDialogJsunit() {
           expect(backData1.data?.STATUS).assertEqual(true);
 
         }
-        console.info("onSelect_002 click result is: " + JSON.stringify(sendEventByKey('showActionMenuText', 10, "")));
+        console.info("onSelect_002 click result is: " + JSON.stringify(sendEventByKey('prompt1' + '_showActionMenuText', 10, "")));
         events_emitter.on(innerEventTwo, callback2);
       } catch (err) {
         console.info("onRequestPopupData_0011 on events_emitter err : " + JSON.stringify(err));

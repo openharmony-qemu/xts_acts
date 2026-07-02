@@ -26,7 +26,7 @@ class PurchaseItem {
 @Component
 struct BasketViewer {
   @Link @Watch('onBasketUpdated') shopBasket: PurchaseItem[];
-  @State totalPurchase: number = 0;
+  @State @Watch(undefined) totalPurchase: number = 0;
 
   updateTotal(): number {
     let total = this.shopBasket.reduce((sum, i) => sum + i.price, 0);

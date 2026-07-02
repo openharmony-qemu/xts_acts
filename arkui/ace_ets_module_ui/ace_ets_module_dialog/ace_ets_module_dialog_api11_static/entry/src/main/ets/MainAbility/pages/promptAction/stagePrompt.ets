@@ -96,7 +96,7 @@ struct stagePrompt {
           .padding(10)
           .textAlign(TextAlign.Center)
           .textOverflow({ overflow: TextOverflow.None })
-          .key("showDialogText")
+          .key("stagePrompt_showDialogText")
           .onClick((e: ClickEvent) => {
             try {
 
@@ -156,7 +156,7 @@ struct stagePrompt {
           .padding(10)
           .textAlign(TextAlign.Center)
           .textOverflow({ overflow: TextOverflow.None })
-          .key("showActionMenuText")
+          .key("stagePrompt_showActionMenuText")
           .onClick((e: ClickEvent) => {
             try {
               AppStorage.get<UIContext>('uiContent')!.getPromptAction()

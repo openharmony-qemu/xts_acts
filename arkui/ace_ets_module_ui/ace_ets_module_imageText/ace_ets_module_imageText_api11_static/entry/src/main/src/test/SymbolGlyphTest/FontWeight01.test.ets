@@ -58,7 +58,7 @@ export default function SymbolGlyphFontWeightTest() {
         }
       } catch (err) {
         console.error("push SymbolGlyphFontWeightTest page error: " + err);
-        expect().assertFail();
+        expect(false).assertEqual(true);
       }
     });
 

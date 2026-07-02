@@ -25,7 +25,7 @@ import {
 } from '@ohos.arkui.component';
 
 export default class CommonFunc {
-  public static FONT_FAMILY = 'Verdana';
+  public static FONT_FAMILY: string = 'Verdana';
   static rect_left: number;
   static rect_top: number;
   static rect_right: number;
@@ -84,7 +84,7 @@ export default class CommonFunc {
     }
   }
 
-    static getResourceColor(sysColor: Resource) {
+    static getResourceColor(sysColor: Resource): string {
     const UiContext = AppStorage.get<UIContext>('uiContext') as UIContext;
     let resourceColor = UiContext.getHostContext()!.resourceManager.getColorSync(sysColor.id)
     let color:string = resourceColor?.toString(16).toUpperCase()
@@ -95,7 +95,7 @@ export default class CommonFunc {
     console.info("[getResourceColor] current newArgb is: " + newArgb);
     return newArgb;
   }
-  static getResourceFloat(sysColor: Resource,unit:string) {
+  static getResourceFloat(sysColor: Resource, unit: string): string {
     const UiContext = AppStorage.get<UIContext>('uiContext') as UIContext;
     let resourceFloat = UiContext.getHostContext()!.resourceManager.getDouble(sysColor.id)
     let newResSize:string = ''

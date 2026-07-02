@@ -317,5 +317,56 @@ export default function blankLessInfoWithKeyTest() {
         });
       Utils.waitAndClickComponent('blankLessInfoWithKeyTestButton', driver);
     })
+
+    /**
+     * @tc.name   testblankLessInfoWithKey018
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_BLANKLESSINFOWITHKEYTEST_1800
+     * @tc.desc   test setBlanklessLoadingWithKey first parameter1 is empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testblankLessInfoWithKey018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testblankLessInfoWithKey018", 148001);
+      Utils.registerBaseEvent("testblankLessInfoWithKey018", -2, 148018, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected)
+        });
+      Utils.waitAndClickComponent('blankLessInfoWithKeyTestButton', driver);
+    })
+
+    /**
+     * @tc.name   testblankLessInfoWithKey019
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_BLANKLESSINFOWITHKEYTEST_1900
+     * @tc.desc   test setBlanklessLoadingWithKey first parameter1 is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testblankLessInfoWithKey019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testblankLessInfoWithKey019", 148001);
+      Utils.registerBaseEvent("testblankLessInfoWithKey019", 401, 148019, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected)
+        });
+      Utils.waitAndClickComponent('blankLessInfoWithKeyTestButton', driver);
+    })
+
+    /**
+     * @tc.name   testblankLessInfoWithKey020
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_BLANKLESSINFOWITHKEYTEST_2000
+     * @tc.desc   test setBlanklessLoadingWithKey first parameter1 is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testblankLessInfoWithKey020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testblankLessInfoWithKey020", 148001);
+      Utils.registerBaseEvent("testblankLessInfoWithKey020", 401, 148020, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected)
+        });
+      Utils.waitAndClickComponent('blankLessInfoWithKeyTestButton', driver);
+    })
   })
 }

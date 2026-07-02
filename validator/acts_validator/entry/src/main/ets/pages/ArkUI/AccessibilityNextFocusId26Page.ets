@@ -33,10 +33,10 @@ struct AccessibilityNextFocusId26Page {
     '3、依次滑动测试以下组件:\n' +
     '   - "正常入参-不传params"区域: A1获焦，无论上下滑走焦都是A1 A2循环\n' +
     '   - "正常入参-params=undefined"区域: B1获焦，无论上下滑都是B1 B2 循环\n' +
-    '   - "isConsiderDescendants=false"区域: C1获焦，无论上下滑都是C1 C4循环，testC2获焦下滑→testC3 下滑→isConsiderDescendants=true文本组件。\n' +
-    '   - testC3获焦上滑走焦：testC3 → testC2 → C4 → C1 → C4\n' +
-    '   - "isConsiderDescendants=true"区域: D1获焦下滑测试：D1 → testD2 → testD3 → D4 → D1;  D1获焦上滑测试：D1与D4内循环; \n' +
-    '   - testD3获焦上滑走焦：testD3 → testD2 → D1 → D4 → D1\n' +
+    '   - "isConsiderDescendants=false"区域: C1获焦下滑 → C4下滑 → C1，C1获焦上滑 → C4 → testC3,testC2获焦下滑→testC3 下滑→isConsiderDescendants=true文本组件。\n' +
+    '   - testC3获焦上滑走焦：testC3 → testC2 → C4 → testC3\n' +
+    '   - "isConsiderDescendants=true"区域: D1获焦下滑测试：D1 → testD2 → testD3 → D4 → D1;  D1获焦上滑 → D4 → testD3; \n' +
+    '   - testD3获焦上滑走焦：testD3 → testD2 → D1 → D4 → testD3\n' +
     '   - "nextId=null"区域:按钮E获焦下滑 → 按钮F\n' +
     '   - "nextId=undefined"区域:按钮G获焦下滑 → 按钮H\n' +
     '   - "nextId=空字符串"区域:按钮I获焦下滑 → 按钮J\n' +

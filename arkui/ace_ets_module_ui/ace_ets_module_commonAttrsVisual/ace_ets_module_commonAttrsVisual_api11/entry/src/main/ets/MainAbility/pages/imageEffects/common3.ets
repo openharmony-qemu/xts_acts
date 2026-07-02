@@ -52,7 +52,7 @@ struct CommonBackgroundBlurStyle {
       keyDownDuration: 0,
       isIntercepted: false
     }
-    let res1 = inputEventClient.injectEvent({ KeyEvent: keyEventDown });
+    
 
     let keyEventUp: inputEventClient.KeyEvent = {
       isPressed: false,
@@ -60,7 +60,7 @@ struct CommonBackgroundBlurStyle {
       keyDownDuration: 0,
       isIntercepted: false
     }
-    let res2 = inputEventClient.injectEvent({ KeyEvent: keyEventUp });
+    
   }
 
 

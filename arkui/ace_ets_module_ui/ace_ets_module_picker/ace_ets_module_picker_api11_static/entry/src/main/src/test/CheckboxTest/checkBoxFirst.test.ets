@@ -14,20 +14,20 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
+import inspector from '@ohos.arkui.inspector';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-import Utils  from "../../../ets/MainAbility/common/Utils";
+import Utils from '../../../ets/MainAbility/common/Utils';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -84,8 +84,8 @@ it('testcheckBoxGroup001_static', Level.LEVEL1, async (done: () => void): Promis
       console.info('checkBoxGroup testcheckBoxGroup001 START');
       await Utils.sleep(2000);
       try {
-        console.info("testcheckBoxGroup_0011 click result is: " + JSON.stringify(inspector.sendEventByKey('CheckboxGroup', 10, "")));
-        let strJson: string = inspector.getInspectorByKey('Checkbox2');
+        console.info("testcheckBoxGroup_0011 click result is: " + JSON.stringify(inspector.sendEventByKey('checkBox2' + '_CheckboxGroup', 10, "")));
+        let strJson: string = inspector.getInspectorByKey('checkBox2' + '_Checkbox2');
         console.info("[testcheckBoxGroup001] component select strJson:" + strJson);
         expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Checkbox');
         expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('select')).assertEqual("false");

@@ -22,10 +22,6 @@ import hilog from '@ohos.hilog';
 import { MyCallback } from '../models/MyCallback';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
-
-
-import Want from '@ohos.app.ability.Want';
-
 const TAG: string = '[ExampleEmbeddedAbility]'
 
 

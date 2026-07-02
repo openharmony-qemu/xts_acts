@@ -15,18 +15,17 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { Component, Driver, MouseButton, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import { Component, Driver, MouseButton, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UIContext,Router } from '@ohos.arkui.UIContext';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
-import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
+import { UtilsTest, startAbility } from '../Util.test';
+import inspector from '@ohos.arkui.inspector';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UtilsTest,  startAbility} from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -81,7 +80,7 @@ export default function styledStringApi() {
       let button2 = await (driver.findComponent(ON.id('styledStringBt3')) as Promise<Component>);
       await button2.click();
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('styledStringText');
+      let strJson = inspector.getInspectorByKey('styledStringApi' + '_styledStringText');
       await CommonFunc.sleep(200);
       let obj  = JSON.parseJsonElement(strJson);
       console.info("[styledStringApi_001] component obj is: " + JSON.stringify(obj));
@@ -110,7 +109,7 @@ export default function styledStringApi() {
       let button2 = await (driver.findComponent(ON.id('styledStringBt3')) as Promise<Component>);
       await button2.click();
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('styledStringText');
+      let strJson = inspector.getInspectorByKey('styledStringApi' + '_styledStringText');
       await CommonFunc.sleep(200);
       let obj  = JSON.parseJsonElement(strJson);
       console.info("[styledStringApi_002] component obj is: " + obj);

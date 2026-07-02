@@ -13,22 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Component,Image,Resource,$r,TextArea,TextClockController,ButtonAttribute,TransitionType,Padding,
-  TextTimerController,TextTimer,FlexAlign,TextClock,TextPicker,TextAreaController,PlaybackSpeed,$rawfile,
-  Column,Margin,ColumnOptions,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,
-  Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,
-  ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer,TransitionEffect
-} from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  PropRef,
-} from '@ohos.arkui.stateManagement';
+import { Entry, Component, Image, Resource, $r, TextArea, TextClockController, ButtonAttribute, TransitionType, Padding, TextTimerController, TextTimer, FlexAlign, TextClock, TextPicker, TextAreaController, PlaybackSpeed, $rawfile, Column, Margin, ColumnOptions, Text, Color, Flex, FlexDirection, ItemAlign, Row, Button, ClickEvent, Week, FontWeight, Axis, Swiper, ForEach, PickerTextStyle, CalendarAlign, CalendarPicker, EdgeEffect, Curve, SwiperDisplayMode, ArrowPosition, Select, BlurStyle, MenuAlignType, TextInputController, TextAlign, AlphabetIndexer, TransitionEffect } from '@ohos.arkui.component';
+import { State, Link, PropRef } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import events_emitter from '@ohos.events.emitter'
-import {ButtonModifier} from "@ohos.arkui.modifier";
+import events_emitter from '@ohos.events.emitter';
+import { ButtonModifier } from '@ohos.arkui.modifier';
 import { RecordData } from '@ohos.base';
-
 class CustomModifier extends ButtonModifier {
   applyNormalAttribute(instance: ButtonAttribute): void {
     // super.applyNormalAttribute?.(instance);
@@ -56,7 +46,7 @@ struct TransitionTest7Example {
         .height(30)
         .backgroundColor(0x317aff)
         .margin({ bottom: 50 } as Margin)
-        .key('button')
+        .key('transition_button')
         .onClick((e: ClickEvent) => {
           this.onActionCalled = true;
           try {
@@ -85,10 +75,10 @@ struct TransitionTest7Example {
         })
       if (this.btn1) {
         Button('') {
-          Image($r('app.media.icon')).width("80%").height(300).key('image')
+          Image($r('app.media.icon')).width("80%").height(300).key('transition_image')
         }
         .attributeModifier(this.transitionMod as ButtonModifier)
-          .key('button1')
+          .key('transition_button1')
       }
     }.height(400).width("100%").padding({ top: 100 } as Padding)
   }

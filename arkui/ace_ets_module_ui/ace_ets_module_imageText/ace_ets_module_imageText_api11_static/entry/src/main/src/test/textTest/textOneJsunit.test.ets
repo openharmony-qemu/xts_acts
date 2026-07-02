@@ -80,7 +80,7 @@ export default function textOneJsunit() {
        console.info('textOneJsunit_static_0100 START');
        await CommonFunc.sleep(1000);
        // get the text part component and test attribute
-       let strJson = inspector.getInspectorByKey('text1');
+       let strJson = inspector.getInspectorByKey('textOne' + '_text1');
        let obj = JSON.parseJsonElement(strJson);
        console.info('textOneJsunit_static_0100 component obj is: ' + obj.getElement('$attrs').getString('textAlign') + "---" + obj.getElement('$attrs').getString('content') + "--" + obj.getElement('$attrs').getString('fontSize'));
        expect(obj.getElement('$attrs').getString('textAlign')).assertEqual('TextAlign.Center');
@@ -102,13 +102,13 @@ export default function textOneJsunit() {
       const message: MessageManagerBase<TextAlign> = AppStorage.get<MessageManagerBase<TextAlign>>("messageManagerTextAlign")!
       message.notify({name:'textAlign',value:TextAlign.Start});
       await CommonFunc.sleep(200);
-      let strJson = inspector.getInspectorByKey('text1');
+      let strJson = inspector.getInspectorByKey('textOne' + '_text1');
       let obj = JSON.parseJsonElement(strJson);
       console.info('textOneJsunit_static_0200 component obj is: ' + obj.getElement('$attrs').getString('textAlign'));
       expect(obj.getElement('$attrs').getString('textAlign')).assertEqual('TextAlign.Start');
       message.notify({name:'textAlign',value:TextAlign.End});
       await CommonFunc.sleep(200);
-      let strJson2 = inspector.getInspectorByKey('text1');
+      let strJson2 = inspector.getInspectorByKey('textOne' + '_text1');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info('textOneJsunit_static_0200 component obj2 is: ' + obj.getElement('$attrs').getString('textAlign'));
       expect(obj2.getElement('$attrs').getString('textAlign')).assertEqual('TextAlign.End');
@@ -128,7 +128,7 @@ export default function textOneJsunit() {
     //   let message: MessageManagerBase<number|int|string> = AppStorage.get<MessageManagerBase<number|int|string>>("messageManager")!
     //   message.notify({name:'textAlign',value:4});  No enum TextAlign with value 4
     //   await CommonFunc.sleep(200);
-    //   let strJson = inspector.getInspectorByKey('text1');
+    //   let strJson = inspector.getInspectorByKey('textOne' + '_text1');
     //   let obj = JSON.parseJsonElement(strJson);
     //   console.info('textOneJsunit_static_0300 component obj is: ' + obj.getElement('$attrs').getString('textAlign'));
     //   expect(obj.getElement('$attrs').getString('textAlign')).assertEqual('TextAlign.Left');
@@ -197,14 +197,14 @@ export default function textOneJsunit() {
       let message: MessageManagerBase<number|int|string> = AppStorage.get<MessageManagerBase<number|int|string>>("messageManager")!
       message.notify({name:'lineHeightNumber',value:20 as double});
       await CommonFunc.sleep(200);
-      let strJson = inspector.getInspectorByKey('text5');
+      let strJson = inspector.getInspectorByKey('textOne' + '_text5');
       let obj = JSON.parseJsonElement(strJson);
       // console.info('textOneJsunit_static_0600 component obj is: ' + obj.getElement('$attrs').getString('lineHeight'));
       expect(obj.getElement('$attrs').getString('lineHeight')).assertEqual('20.00fp');
       let message2: MessageManagerBase<number|int|string> = AppStorage.get<MessageManagerBase<number|int|string>>("messageManager")!
       message2.notify({name:'lineHeightStr',value:"30fp"});
       await CommonFunc.sleep(200);
-      let strJson2 = inspector.getInspectorByKey('text5');
+      let strJson2 = inspector.getInspectorByKey('textOne' + '_text5');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info('textOneJsunit_static_0600 component obj is: ' + obj2.getElement('$attrs').getString('lineHeight'));
       expect(obj2.getElement('$attrs').getString('lineHeight')).assertEqual('30.00fp');

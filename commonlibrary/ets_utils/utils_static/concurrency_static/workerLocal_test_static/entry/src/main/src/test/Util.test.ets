@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,5 +21,11 @@ export default class Utils{
         resolve(0)
       }, count)
     })
+  }
+  static syncSleep(ms: number): void {
+    let start: number = Date.now();
+    while (Date.now() - start < ms) {
+      // busy wait
+    }
   }
 }

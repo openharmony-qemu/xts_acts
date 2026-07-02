@@ -14,28 +14,10 @@
  * limitations under the License.
  */
 
-import { Entry, Component, Scroll, Column, ColumnOptions, Text, Row, FontWeight, LocalizedPadding, ShadowStyle, BlurStyle, FlexAlign,
-  ClickEvent,
-  $r,
-  Color,
-  LengthMetrics
-} from '@ohos.arkui.component';
+import { Entry, Component, Scroll, Column, ColumnOptions, Text, Row, FontWeight, LocalizedPadding, ShadowStyle, BlurStyle, FlexAlign, ClickEvent, $r, Color, LengthMetrics } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
-import { Chip,
-  ChipOptions,
-  ChipSize,
-  PrefixIconOptions,
-  CloseOptions,
-  AccessibilitySelectedType,
-  LabelOptions,
-  LabelMarginOptions,
-  LocalizedLabelMarginOptions,
-  ChipSymbolGlyphOptions,
-  ChipSuffixSymbolGlyphOptions,
-  AccessibilityOptions,
-  CloseOptions} from '@ohos.arkui.advanced.Chip';
+import { Chip, ChipOptions, ChipSize, PrefixIconOptions, CloseOptions, AccessibilitySelectedType, LabelOptions, LabelMarginOptions, LocalizedLabelMarginOptions, ChipSymbolGlyphOptions, ChipSuffixSymbolGlyphOptions, AccessibilityOptions } from '@ohos.arkui.advanced.Chip';
 import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
-
 @Entry
 @Component
 struct ChipOptionsCloseOptionsExample {

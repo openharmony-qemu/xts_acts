@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,15 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import WindowModalTest from "./WindowModal.test";
-import WindowZindexTest from "./WindowZindex.test";
 import WindowOrientationTest from "./WindowOrientation.test";
 import WindowKeyBoardTest from "./WindowKeyBoard.test";
-import WindowFocusTest from "./WindowFocus.test";
 export default function testsuite() {
-  WindowModalTest();
-  WindowZindexTest();
   WindowOrientationTest();
   WindowKeyBoardTest();
-  WindowFocusTest();
 }

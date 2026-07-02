@@ -55,7 +55,7 @@ struct NavigatorCode {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Start, justifyContent: FlexAlign.SpaceBetween }) {
       Navigator({ target: 'pages/NavigatorDetailCode', type: NavigationType.Push }) {
         Text('Go to ' + this.Text + ' page').width('100%').textAlign(TextAlign.Center)
-      }.params({ text: this.Text }).key('button')
+      }.params({ text: this.Text }).key('NavigatorCode_button')
 
       Navigator() {
         Text('Back to previous page').width('100%').textAlign(TextAlign.Center)

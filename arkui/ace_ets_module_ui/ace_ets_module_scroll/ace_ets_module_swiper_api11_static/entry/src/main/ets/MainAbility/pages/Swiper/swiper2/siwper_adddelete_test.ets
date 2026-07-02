@@ -14,35 +14,8 @@
  * limitations under the License.
  */
 
-import {
-  Entry,
-  Component,
-  SwiperController,
-  Column,
-  Text,
-  LazyForEach,
-  Margin,
-  IDataSource,
-  DataChangeListener,
-  DotIndicator,
-  ColumnOptions,
-  Swiper,
-  TextAlign,
-  Color,
-  EdgeEffect,
-  Visibility,
-  ClickEvent,
-  SwiperDisplayMode,
-  SwiperAnimationEvent,
-  Row,
-  RowOptions,
-  Button,
-  Curve,
-  ForEach,
-  SwiperAnimationEvent
-} from '@ohos.arkui.component';
+import { Entry, Component, SwiperController, Column, Text, LazyForEach, Margin, IDataSource, DataChangeListener, DotIndicator, ColumnOptions, Swiper, TextAlign, Color, EdgeEffect, Visibility, ClickEvent, SwiperDisplayMode, SwiperAnimationEvent, Row, RowOptions, Button, Curve, ForEach } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
-
 export class MyDataSourceT5 implements IDataSource<number> {
   private list: number[] = []
   private count:number  = 0

@@ -658,13 +658,19 @@ export default function CameraMirrorTest() {
       if (isEmpty(mPhotoOutput)) {
         console.info('Enter mPhotoOutput == undefined | null')
       }
-
+      mPreviewOutput = mCameraManager.createPreviewOutput(cameraOutputCap.previewProfiles[0], surfaceIds);
+      if (isEmpty(mPreviewOutput)) {
+        console.info('Enter mPreviewOutput == undefined | null')
+      }
       let isCreateInput = await createInput(0)
       if (isCreateInput) {
         mCameraSession.addInput(mCameraInput)
       }
       if (!isEmpty(mPhotoOutput)) {
         mCameraSession.addOutput(mPhotoOutput)
+      }
+      if (!isEmpty(mPreviewOutput)) {
+        mCameraSession.addOutput(mPreviewOutput)
       }
       await mCameraSession.commitConfig()
       try {
@@ -710,6 +716,48 @@ export default function CameraMirrorTest() {
           "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_ENABLE_MIRROR_0300 FAILED err : " + JSON.stringify(err));
           expect(err.code == cameraObj.CameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
       }
+      done()
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_ENABLE_MIRROR_0400
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_ENABLE_MIRROR_0400
+     * @tc.desc   Test photo output enable mirror with only photoOutput
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_ENABLE_MIRROR_0400', Level.LEVEL2, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_ENABLE_MIRROR_0400--------------");
+      createCameraSessionInstance();
+      let cameraOutputCap = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[0]);
+      if (isEmpty(cameraOutputCap)) {
+        console.info('Enter cameraOutputCap == undefined | null')
+      }
+      if (!isEmpty(mPhotoOutput)) {
+        await mPhotoOutput.release();
+      }
+      mPhotoOutput = mCameraManager.createPhotoOutput(cameraOutputCap.photoProfiles[0], mPhotoSurface);
+      if (isEmpty(mPhotoOutput)) {
+        console.info('Enter mPhotoOutput == undefined | null')
+      }
+      let isCreateInput = await createInput(0)
+      if (isCreateInput) {
+        mCameraSession.addInput(mCameraInput)
+      }
+      if (!isEmpty(mPhotoOutput)) {
+        mCameraSession.addOutput(mPhotoOutput)
+      }
+      try {
+        await mCameraSession.commitConfig()
+        console.info(TAG + "Enter SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_ENABLE_MIRROR_0400 commitConfig expect failed, but success");
+        expect().assertFail()
+      } catch (err) {
+        console.info(TAG +
+          "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_ENABLE_MIRROR_0400 commitConfig FAILED err : " + JSON.stringify(err));
+          expect(err.code == cameraObj.CameraErrorCode.SERVICE_FATAL_ERROR).assertTrue();
+      }
+      stopCameraSession()
       done()
     })
 

@@ -15,36 +15,12 @@
  */
 
 import CommonFunc from '../../../MainAbility/common/Common';
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  Text,
-  Row,
-  Scroll,
-  ButtonType,
-  Flex,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  Alignment,
-  TextAlign,
-  TextOverflow,
-} from '@ohos.arkui.component'
-import {
-  State,
-  Link,StorageLink,
-  PropRef,Provide,Consume,PersistentStorage
-} from '@ohos.arkui.stateManagement'
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { Entry, Column, Component, Button, ClickEvent, Text, Row, Scroll, ButtonType, Flex, FlexDirection, ItemAlign, FlexAlign, Alignment, TextAlign, TextOverflow } from '@ohos.arkui.component';
+import { State, Link, StorageLink, PropRef, Provide, Consume, PersistentStorage, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
-import CommonFunc from '../../../MainAbility/common/Common';
 import common from '@ohos.app.ability.common';
 import resourceManager from '@ohos.resourceManager';
-
 export class ClassPS0040 {
   private _type: number
 

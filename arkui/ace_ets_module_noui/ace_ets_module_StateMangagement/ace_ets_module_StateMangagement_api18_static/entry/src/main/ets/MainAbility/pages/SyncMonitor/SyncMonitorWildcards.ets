@@ -34,7 +34,7 @@ struct SyncMonitorComponentV2Wildcards {
   @Local public num: int = 0;
  
   @SyncMonitor(['cls.*'])
-  onClsChanged(m: IMonitor) {
+  onClsChanged(m: IMonitor): void {
     this.num++
   }
  

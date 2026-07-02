@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,7 +25,7 @@ let tag: string = 'HttpTag'; //日志标识字符串,作为tag标识当前runner
 
 const ADDR_TEST_ILLEGAL: string = "abc";
 
-const ADDR_TEST_DOMAIN_HTTPS: string = "https://httpbin.org/anything";
+const ADDR_TEST_DOMAIN_HTTPS: string = "https://httpbin.moyufangge.com/anything";
 
 const ExpectFail = () => {
     try {

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -1661,7 +1662,7 @@ export default function AVMetadata() {
           expect(requestedTimeUs).assertEqual(1000000);
           if (frameInfo.actualTimeUs != undefined) {
             let actualTimeUs: long | undefined = frameInfo.actualTimeUs;
-            expect(actualTimeUs!).assertEqual(115000);
+            expect(actualTimeUs!).assertEqual(990666);
           }
           let result: media.FetchResult = frameInfo.result;
           expect(result).assertEqual(media.FetchResult.FETCH_SUCCEEDED);

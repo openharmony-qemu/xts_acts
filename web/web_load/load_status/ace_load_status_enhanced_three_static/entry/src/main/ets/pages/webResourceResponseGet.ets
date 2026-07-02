@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -14,18 +15,16 @@
  */
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import testsuite from '../../src/test/List.test';
-import {OnTitleReceiveEvent,OnHttpErrorReceiveEvent,$rawfile,Header,OnRenderExitedEvent, OnPageBeginEvent, RenderProcessNotRespondingReason, RenderProcessNotRespondingData, Entry, Component, Column, Row, Button, ClickEvent, Web } from "@ohos.arkui.component"
-import { State } from "@ohos.arkui.stateManagement" // should be insert by ui-plugins
-import web_webview from '@ohos.web.webview'
-import { BusinessError } from '@ohos.base';
+import { OnTitleReceiveEvent, OnHttpErrorReceiveEvent, $rawfile, Header, OnRenderExitedEvent, OnPageBeginEvent, RenderProcessNotRespondingReason, RenderProcessNotRespondingData, Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component';
+import { State } from '@ohos.arkui.stateManagement';
+import web_webview from '@ohos.web.webview';
+import webView from '@ohos.web.webview';
+import { BusinessError, Callback, RecordData } from '@ohos.base';
 import Utils from '../../src/test/Util.test';
+import emitter from '@ohos.events.emitter';
 import events_emitter from '@ohos.events.emitter';
 import image from '@ohos.multimedia.image';
-import  { BusinessError } from '@ohos.base';
 import { Hypium } from '../../../hypium/index';
-import emitter from '@ohos.events.emitter';
-import webView from '@ohos.web.webview';
-import { Callback, RecordData } from '@ohos.base'
 export class StringFields {
   public str: string = '';
 }

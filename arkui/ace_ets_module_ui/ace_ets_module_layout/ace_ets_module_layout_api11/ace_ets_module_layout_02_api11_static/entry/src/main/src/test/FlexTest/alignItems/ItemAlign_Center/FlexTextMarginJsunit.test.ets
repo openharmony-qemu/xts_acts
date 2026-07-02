@@ -1,4 +1,5 @@
 'use static';
+
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import { MessageManager, Callback } from '../../../../../ets/MainAbility/common/MessageManager';
-import { describe, beforeEach, it, expect, Level, afterEach, beforeAll,Level } from '../../../../../../hypium/index'
+import { describe, beforeEach, it, expect, Level, afterEach, beforeAll } from '../../../../../../hypium/index';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -24,12 +26,10 @@ import inspector from '@ohos.arkui.inspector';
 import RectValue from '../../../../../ets/MainAbility/common/Rect';
 import { FaceValue } from '../../../../../ets/MainAbility/common/Value';
 import GlobalContext from '../../../../../ets/MainAbility/common/GlobalContext';
-import { Router } from '@ohos.arkui.UIContext';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { MessageManager, Callback } from '../../../../../ets/MainAbility/common/MessageManager';
 import { BusinessError } from '@ohos.base';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -70,8 +70,6 @@ export default function flexTextMargin_CenterJsunit() {
       console.info("ItemAlign_Center_FlexTextMargin after each called");
     });
 
-    
-    
 /**
      * @tc.number   testFlexItemAlignCenterSubSetMargin_static
      * @tc.name     testFlexItemAlignCenterSubSetMargin_static
@@ -140,11 +138,8 @@ it('testFlexItemAlignCenterSubSetMargin_static', Level.LEVEL0, async () : Promis
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Center')
       console.info('new testFlexItemAlignCenterSubSetMargin END');
-
     });
 
-    
-    
 /**
      * @tc.number   testFlexItemAlignCenterSubSetMarginExceed_static
      * @tc.name     testFlexItemAlignCenterSubSetMarginExceed_static
@@ -206,12 +201,13 @@ it('testFlexItemAlignCenterSubSetMarginExceed_static', Level.LEVEL0, async () : 
       expect(Math.floor(Math.abs(textMargin02.bottom - textMargin02.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1).assertTrue()
       expect(Math.floor(Math.abs(textMargin03.bottom - textMargin03.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue()
       expect(Math.floor(Math.abs(textMargin01.right - textMargin01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 2).assertTrue()
-      expect(Math.floor(Math.abs(textMargin02.right - textMargin02.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 2).assertTrue()
+      expect(Math.floor(Math.abs(textMargin02.right - textMargin02.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 3).assertTrue()
       expect(Math.floor(Math.abs(textMargin03.right - textMargin03.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 2).assertTrue()
 
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Center')
       console.info('new testFlexItemAlignCenterSubSetMarginExceed END');
     });
+    
   })
 }

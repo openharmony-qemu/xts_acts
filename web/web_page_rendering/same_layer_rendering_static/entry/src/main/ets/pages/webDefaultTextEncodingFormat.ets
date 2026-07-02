@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -12,23 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Color,NativeEmbedDataInfo,  Entry, Component, Column, Row, Button, ClickEvent,Web } from '@ohos.arkui.component'
+import { Color, NativeEmbedDataInfo, Entry, Component, Column, Row, Button, ClickEvent, Web, Position, NativeEmbedTouchInfo, NativeEmbedVisibilityInfo, NativeEmbedStatus } from '@ohos.arkui.component';
 import web_webview from '@ohos.web.webview';
 import webView from '@ohos.web.webview';
-import events_emitter from '@ohos.events.emitter';
 import emitter from '@ohos.events.emitter';
-import { Callback } from '@ohos.base'
-import { State} from '@ohos.arkui.stateManagement'
+import events_emitter from '@ohos.events.emitter';
+import { Callback, BusinessError, RecordData } from '@ohos.base';
+import { State } from '@ohos.arkui.stateManagement';
 import Utils from '../../src/test/Util.test';
-import { BusinessError, RecordData } from '@ohos.base'
-import {NativeEmbedDataInfo,Position ,NativeEmbedTouchInfo} from '@ohos.arkui.component'
 import { Driver, ON } from '@ohos.UiTest';
 import hilog from '@ohos.hilog';
-import {NativeEmbedVisibilityInfo,NativeEmbedStatus} from '@ohos.arkui.component';
 import { Hypium } from '../../../hypium';
 import testsuite from '../../src/test/List.test';
-import { UIContext, Router } from '@ohos.arkui.UIContext'
-
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Entry
 @Component
 struct WebDefaultTextEncodingFormat  {

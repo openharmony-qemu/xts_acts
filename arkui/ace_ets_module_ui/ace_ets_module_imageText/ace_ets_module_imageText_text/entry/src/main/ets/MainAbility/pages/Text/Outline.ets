@@ -21,6 +21,7 @@ struct OutlineExample {
         // 线段
         Text('DASHED')
           .id('outline')
+          .key('outline')
           .backgroundColor(Color.Pink)
           .outlineStyle(OutlineStyle.DASHED).outlineWidth(5).outlineColor(0xAFEEEE).outlineRadius(10)
           .width(300).height(300).textAlign(TextAlign.Center).fontSize(30).textAlign(TextAlign.Center)

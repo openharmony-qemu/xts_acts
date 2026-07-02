@@ -1366,9 +1366,7 @@ export default function CrateImageSupp() {
           console.error(TAG, testName, `Error with format ${format}:`, JSON.stringify(error));
           expect().assertFail();
         } finally {
-          if (imageSourceIncrementalSApi) {
-            await imageSourceIncrementalSApi.release();
-          }
+          imageSourceIncrementalSApi = null;
         }
       }
       done();
@@ -1489,9 +1487,8 @@ export default function CrateImageSupp() {
           console.error(TAG, testName, `Error with format ${format}:`, JSON.stringify(error));
           expect().assertFail();
         } finally {
-          if (imageSourceIncrementalSApi) {
-            await imageSourceIncrementalSApi.release();
-          }
+          console.info(TAG, testName, `finally imageSourceIncrementalSApi.release`);
+          imageSourceIncrementalSApi = null;
         }
       }
       done();

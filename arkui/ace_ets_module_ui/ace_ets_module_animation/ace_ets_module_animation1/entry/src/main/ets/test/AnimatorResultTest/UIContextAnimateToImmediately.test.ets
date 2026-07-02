@@ -57,7 +57,7 @@ export default function UIContextAnimateToImmediately() {
       let button: Component = await driver.findComponent(ON.id('animateToTestBtn'));
       await button.click()
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('animateToTest');
+      let strJson = getInspectorByKey('UIContextAnimateToImmediately_animateToTest');
       await CommonFunc.sleep(200);
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info('[UIContextAnimateToImmediately_0100] component obj is: ' + JSON.stringify(obj));

@@ -38,11 +38,13 @@ struct SpanFontConfigsTest {
           Span('test font ')
             .font({size:20,weight:400},{fontWeightConfigs:null})
             .id('testFontConfigsNull')
+            .key('testFontConfigsNull')
         }
         Text(){
           Span('test font ')
             .font({size:20,weight:400},{fontWeightConfigs:undefined})
             .id('testFontConfigsUndefined')
+            .key('testFontConfigsUndefined')
         }
         Text(){
           Span('test font ')
@@ -51,6 +53,7 @@ struct SpanFontConfigsTest {
               enableDeviceFontWeightCategory:null
             }})
             .id('testConfigsALLNull')
+            .key('testConfigsALLNull')
         }
         Text(){
           Span('test font ')
@@ -59,6 +62,7 @@ struct SpanFontConfigsTest {
               enableDeviceFontWeightCategory:undefined
             }})
             .id('testConfigsALLUndefined')
+            .key('testConfigsALLUndefined')
         }
         Text(){
           Span('test font ')
@@ -67,6 +71,7 @@ struct SpanFontConfigsTest {
               enableDeviceFontWeightCategory:true
             }})
             .id('testConfigsALLTrue')
+            .key('testConfigsALLTrue')
         }
         Text(){
           Span('test font ')
@@ -75,6 +80,7 @@ struct SpanFontConfigsTest {
               enableDeviceFontWeightCategory:false
             }})
             .id('testConfigsALLFalse')
+            .key('testConfigsALLFalse')
         }
       }.height('100%').width('100%').justifyContent(FlexAlign.Center)
     }

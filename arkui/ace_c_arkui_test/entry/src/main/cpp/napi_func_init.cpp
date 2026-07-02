@@ -709,6 +709,7 @@
 #include "customdialog/customdialog_setautocancel_test.cpp"
 #include "customdialog/customdialog_setbackgroundcolor_test.cpp"
 #include "customdialog/customdialog_setcontent_test.cpp"
+#include "customdialog/customdialog_setsystemmaterial_test.cpp"
 #include "customdialog/customdialog_setcontentalignment_test.cpp"
 #include "customdialog/customdialog_setcornerradius_test.cpp"
 #include "customdialog/customdialog_setgridcolumncount_test.cpp"
@@ -7901,6 +7902,24 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr, napi_default, nullptr},
         {"testCustomDialogSetBackgroundColor004", nullptr, TestCustomDialogSetBackgroundColor004, nullptr, nullptr,
          nullptr, napi_default, nullptr},
+        {"testCustomDialogSetSystemMaterial001", nullptr, TestCustomDialogSetSystemMaterial001, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"testCustomDialogSetSystemMaterial002", nullptr, TestCustomDialogSetSystemMaterial002, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"testCustomDialogSetSystemMaterial003", nullptr, TestCustomDialogSetSystemMaterial003, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"testCustomDialogSetSystemMaterial004", nullptr, TestCustomDialogSetSystemMaterial004, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"testCustomDialogSetSystemMaterialInOptions001", nullptr, TestCustomDialogSetSystemMaterialInOptions001,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testCustomDialogSetSystemMaterialInOptions002", nullptr, TestCustomDialogSetSystemMaterialInOptions002,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testCustomDialogSetSystemMaterialInOptions003", nullptr, TestCustomDialogSetSystemMaterialInOptions003,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testCustomDialogSetSystemMaterialInOptions004", nullptr, TestCustomDialogSetSystemMaterialInOptions004,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testCustomDialogSetSystemMaterialInOptions005", nullptr, TestCustomDialogSetSystemMaterialInOptions005,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testCustomDialogSetCornerRadius001", nullptr, TestCustomDialogSetCornerRadius001, nullptr, nullptr,
          nullptr, napi_default, nullptr},
         {"testCustomDialogSetCornerRadius002", nullptr, TestCustomDialogSetCornerRadius002, nullptr, nullptr,

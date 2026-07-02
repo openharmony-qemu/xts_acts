@@ -20,7 +20,7 @@ import inspector from '@ohos.arkui.inspector'
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
 export default class CommonFunc {
-  public static FONT_FAMILY = 'Verdana';
+  public static FONT_FAMILY: string = 'Verdana';
   static rect_left: number;
   static rect_top: number;
   static rect_right: number;
@@ -36,15 +36,22 @@ export default class CommonFunc {
   }
 
   static getComponentRect(key: string): RectValue {
-    let strJson = inspector.getInspectorByKey(key);
-    let obj: Record<string, Object> =
-      JSON.parse<Object>(strJson, Class.from<String>()) as Record<string, Object>;
-    console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-    let rectInfo: Array<Array<number>> =
-      JSON.parse<Object>('[' + obj["$rect"]! + ']', Class.from<String>()) as Array<Array<number>>;
-    console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
-    console.info("windowRect Left: " + AppStorage.get<number>("winLeft")! + ',' + "windowRect Top: " +
-    AppStorage.get<number>("winTop"));
+    let node = JSON.parseJsonElement(inspector.getInspectorByKey(key));
+    let rectEl = node.getElement('$rect');
+    let rectInfo: Array<Array<number>> = [];
+    let rows = rectEl.tryAsArray();
+    if (rows) {
+      for (const row of rows) {
+        let rowArr = row.tryAsArray();
+        if (rowArr) {
+          let nums: Array<number> = [];
+          for (const cell of rowArr) {
+            nums.push(Number(cell.asDouble()));
+          }
+          rectInfo.push(nums);
+        }
+      }
+    }
     CommonFunc.rect_left = Number(rectInfo[0][0] ?? 0);
     CommonFunc.rect_top = Number(rectInfo[0][1] ?? 0);
     CommonFunc.rect_right = Number(rectInfo[1][0] ?? 0);
@@ -58,18 +65,25 @@ export default class CommonFunc {
   }
 
   static getComponentRectOnScreen(key: string): RectValue {
-    let strJson = inspector.getInspectorByKey(key);
-    let obj: Record<string, Object> =
-      JSON.parse<Object>(strJson, Class.from<String>()) as Record<string, Object>;
-    console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-    let rectInfo: Array<Array<number>> =
-      JSON.parse<Object>('[' + obj["$rect"]! + ']', Class.from<String>()) as Array<Array<number>>;
-    console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
-    console.info("windowRect Left: " + AppStorage.get<number>("winLeft")! + ',' + "windowRect Top: " +
-    AppStorage.get<number>("winTop"));
-    CommonFunc.rect_left = Number(Number(rectInfo[0][0] ?? 0) + Number(AppStorage.get<number>("winLeft")! ?? 0));
+    let node = JSON.parseJsonElement(inspector.getInspectorByKey(key));
+    let rectEl = node.getElement('$rect');
+    let rectInfo: Array<Array<number>> = [];
+    let rows = rectEl.tryAsArray();
+    if (rows) {
+      for (const row of rows) {
+        let rowArr = row.tryAsArray();
+        if (rowArr) {
+          let nums: Array<number> = [];
+          for (const cell of rowArr) {
+            nums.push(Number(cell.asDouble()));
+          }
+          rectInfo.push(nums);
+        }
+      }
+    }
+    CommonFunc.rect_left = Number(Number(rectInfo[0][0] ?? 0) + Number(AppStorage.get<number>("winLeft") ?? 0));
     CommonFunc.rect_top = Number(Number(rectInfo[0][1] ?? 0) + Number(AppStorage.get<number>("winTop") ?? 0));
-    CommonFunc.rect_right = Number(Number(rectInfo[1][0] ?? 0) + Number(AppStorage.get<number>("winLeft")! ?? 0));
+    CommonFunc.rect_right = Number(Number(rectInfo[1][0] ?? 0) + Number(AppStorage.get<number>("winLeft") ?? 0));
     CommonFunc.rect_bottom = Number(Number(rectInfo[1][1] ?? 0) + Number(AppStorage.get<number>("winTop") ?? 0));
     return CommonFunc.rect_value = {
       "left": CommonFunc.rect_left,

@@ -73,8 +73,8 @@ export default function rowPad_TextMarPadTest() {
       let firstText: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad1');
       let secondText: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad2');
       let thirdText: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad3');
-      let rowContainer: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad_Container01');
-      let rowContainerStrJson = getInspectorByKey('RowPad_TextMarPad_Container01');
+      let rowContainer: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad' + '_Container01');
+      let rowContainerStrJson = getInspectorByKey('RowPad_TextMarPad' + '_Container01');
 
       expect(JSON.parse(rowContainerStrJson).$type).assertEqual('Row');
 
@@ -125,8 +125,8 @@ export default function rowPad_TextMarPadTest() {
       let firstText: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad1');
       let secondText: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad2');
       let thirdText: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad3');
-      let rowContainer: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad_Container01');
-      let rowContainerStrJson = getInspectorByKey('RowPad_TextMarPad_Container01');
+      let rowContainer: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad' + '_Container01');
+      let rowContainerStrJson = getInspectorByKey('RowPad_TextMarPad' + '_Container01');
 
       expect(JSON.parse(rowContainerStrJson).$type).assertEqual('Row');
 
@@ -179,8 +179,8 @@ export default function rowPad_TextMarPadTest() {
       let firstText: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad1');
       let secondText: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad2');
       let thirdText: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad3');
-      let rowContainer: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad_Container01');
-      let rowContainerStrJson = getInspectorByKey('RowPad_TextMarPad_Container01');
+      let rowContainer: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad' + '_Container01');
+      let rowContainerStrJson = getInspectorByKey('RowPad_TextMarPad' + '_Container01');
 
       expect(JSON.parse(rowContainerStrJson).$type).assertEqual('Row');
 

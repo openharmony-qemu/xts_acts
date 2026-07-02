@@ -1,3 +1,4 @@
+'use static';
 /*
 * Copyright (c) 2021 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,33 +14,19 @@
 * limitations under the License.
 */
 import Utils from './Util.test';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import common from '@ohos.app.ability.common';
-import emitter from '@ohos.events.emitter'
+import emitter from '@ohos.events.emitter';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError, Callback } from '@ohos.base';
+import { BusinessError, Callback, RecordData } from '@ohos.base';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import notificationManager from '@ohos.notificationManager';
 import notificationSubscribe from '@ohos.notificationSubscribe';
-import {
-  describe,
-  beforeAll,
-  beforeEach,
-  afterEach,
-  afterAll,
-  it,
-  expect,
-  Level,
-  Size,
-  TestType
-} from '../../../hypium/index'
-import { Driver, ON } from '@ohos.UiTest'
-import { AppStorage } from '@ohos.arkui.stateManagement'
-import commonEventManager from '@ohos.commonEventManager'
-import { BusinessError, RecordData } from '@ohos.base';
-import hilog from '@ohos.hilog';
-import bundleManager from '@ohos.bundle.bundleManager'
-
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../hypium/index';
+import { Driver, ON } from '@ohos.UiTest';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import commonEventManager from '@ohos.commonEventManager';
+import bundleManager from '@ohos.bundle.bundleManager';
 const TAG = 'NotificationHits';
 const TEST_SUITE_NAME = 'Notification';
 let DOMAIN_NUMBER: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识

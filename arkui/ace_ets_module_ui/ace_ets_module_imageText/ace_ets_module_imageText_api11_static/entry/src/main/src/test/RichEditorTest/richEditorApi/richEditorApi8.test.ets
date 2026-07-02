@@ -97,7 +97,7 @@ export default function richEditorApi8() {
       }, MouseButton.MOUSE_BUTTON_LEFT)
 
       await CommonFunc.sleep(2000);
-      let text1 = inspector.getInspectorByKey('richEditorApi8_text1');
+      let text1 = inspector.getInspectorByKey('richEditorApi8' + '_text1');
       let Obj1 = JSON.parseJsonElement(text1);
       expect(Obj1.getElement('$attrs').getString('content')).assertEqual('444');
 

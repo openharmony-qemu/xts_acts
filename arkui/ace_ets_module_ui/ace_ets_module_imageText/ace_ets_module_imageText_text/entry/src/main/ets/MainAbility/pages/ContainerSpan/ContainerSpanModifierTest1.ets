@@ -37,6 +37,7 @@ struct ContainerSpanModifierTest {
           Span('I\'m ContainerSpan attributeModifier').fontSize('16fp').fontColor(Color.White)
         }.attributeModifier(this.ContainerSpanModifier1 as MyContainerSpanModifier)
       }.id('ContainerSpanModifierText')
+      .key('ContainerSpanModifierText')
     }.width('100%').alignItems(HorizontalAlign.Center)
   }
 }

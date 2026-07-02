@@ -1,3 +1,4 @@
+'use static';
 import booleanTest from './Boolean.test.ets'
 import DataViewTest from './DataView.test.ets'
 import EmojiRegExp from './EmojiBuilintsRegExp.test.ets'

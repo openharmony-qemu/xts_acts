@@ -15,57 +15,21 @@
  */
 
 import router from '@ohos.router';
-import {
-  Component,
-  Driver,
-  UiWindow,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix
-} from '@ohos.UiTest';
-import router from '@ohos.router';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import window from '@ohos.window';
 import events_emitter from '@ohos.events.emitter';
-import {
-  describe,
-  beforeAll,
-  beforeEach,
-  afterEach,
-  afterAll,
-  it,
-  expect,
-  Level,
-  TestType,
-  Size
-} from "../../../../hypium/index"
-import {
-  Driver,
-  Component,
-  UiWindow,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix
-} from '@ohos.UiTest';
-import { AppStorage } from '@ohos.arkui.stateManagement'
-import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '../../../../hypium/index';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import inspector from '@ohos.arkui.inspector';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import { UtilsTest, startAbility, stopApplication } from "../Util.test"
+import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import events_emitter from '@ohos.events.emitter'
-
-
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
@@ -123,7 +87,7 @@ it('RenderNodeDrawJsSuit_static_0100', Level.LEVEL2, async (done: () => void): P
       let button_Bottom = await driver.findComponent(ON.id('invalidate_draw'));
       await (button_Bottom?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('RenderNodeDraw_get');
+      let strJson = inspector.getInspectorByKey('RenderNodeDraw' + '_get');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[RenderNodeDrawJsSuit_0100] obj is: " + JSON.stringify(obj));
       console.info("[RenderNodeDrawJsSuit_0100] obj content is: " + JSON.stringify(obj.getElement('$attrs').getString('content')));

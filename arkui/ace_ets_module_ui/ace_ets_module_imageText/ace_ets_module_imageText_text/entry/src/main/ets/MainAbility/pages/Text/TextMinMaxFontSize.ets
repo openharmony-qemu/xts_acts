@@ -50,6 +50,7 @@ struct minMaxFontSizeDemo {
           Span('This is the text with the height adaptive policy set.')
         }
           .id('text1MinMaxFontSize')
+          .key('text1MinMaxFontSize')
           .width('80%')
           .height(90)
           .borderWidth(1)
@@ -64,6 +65,7 @@ struct minMaxFontSizeDemo {
           Span('This is the text with the height adaptive policy set.')
         }
         .id('text2MinMaxFontSize')
+        .key('text2MinMaxFontSize')
         .width('80%')
         .height(90)
         .borderWidth(1)
@@ -78,6 +80,7 @@ struct minMaxFontSizeDemo {
 
         Text(undefined, { controller: this.controller1 })
           .id('text3MinMaxFontSize')
+          .key('text3MinMaxFontSize')
           .width('80%')
           .height(90)
           .borderWidth(1)

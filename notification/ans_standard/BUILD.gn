@@ -51,8 +51,6 @@ group("ans_standard") {
       "actsNotificationSlotTestStatic:ActsNotificationSlotStaticTest",
       "actsNotificationSystemAPITest:ActsNotificationSystemAPITest",
       "actsNotificationSystemAPITestStatic:ActsNotificationSystemAPIStaticTest",
-      "actsNotificationSystemLiveViewTest:ActsNotificationSystemLiveViewTest",
-      "actsNotificationSystemLiveViewTestStatic:ActsNotificationSystemLiveViewStaticTest",
       "actsNotificationThirdPartyWatchTestStatic:actsNotificationThirdPartyWatchStaticTest",
       "actsNotificationVibrationSoundTest:ActsNotificationVibrationSoundTest",
       "actsNotificationVibrationSoundTestStatic:ActsNotificationVibrationSoundStaticTest",
@@ -101,7 +99,9 @@ group("ans_standard") {
       "actsAnsNotificationDisableNotificationFeatureTest:ActsAnsNotificationDisableNotificationFeatureTest",
       "actsNotificationReminderMeLaterTest:ActsNotificationReminderMeLaterTest",
       "actsNotificationReminderMeLaterTestStatic:ActsNotificationReminderMeLaterStaticTest",
-      "actsNotificationAnsThreePartyWatchWithInAbilityLittleTestStatic:ActsNotificationAnsThreePartyWatchWithInAbilityLittleStaticTest"
+      "actsNotificationAnsThreePartyWatchWithInAbilityLittleTestStatic:ActsNotificationAnsThreePartyWatchWithInAbilityLittleStaticTest",
+      "actsNotificationMessageAggregationNoSystemTest:ActsNotificationAnsMessageAggregationNoSystemTest",
+      "actsNotificationMessageAggregationNoSystemTestStatic:ActsNotificationMessageAggregationNoSystemStaticTest"
     ]
   }
 }

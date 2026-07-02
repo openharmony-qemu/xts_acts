@@ -27,12 +27,14 @@ struct orphanCharOptimizationExample{
           .fontSize(20)
           .width('38%')
           .orphanCharOptimization(this.orphanCharOptimizationXTS)
-          .id('jsText')
+          .id('OrphanCharOptimization_jsText')
+          .key('OrphanCharOptimization_jsText')
         TextArea({ text: this.message })
           .fontSize(20)
           .width('38%')
           .orphanCharOptimization(this.orphanCharOptimizationXTS)
-          .id('jsTextArea')
+          .id('OrphanCharOptimization_jsTextArea')
+          .key('OrphanCharOptimization_jsTextArea')
       }
 
       Row() {
@@ -40,7 +42,8 @@ struct orphanCharOptimizationExample{
           .fontSize(20)
           .width('38%')
           .orphanCharOptimization(this.orphanCharOptimizationXTS)
-          .id('jsTextInput')
+          .id('OrphanCharOptimization_jsTextInput')
+          .key('OrphanCharOptimization_jsTextInput')
         RichEditor({ controller: this.controller })
           .onReady(() => {
             this.controller.addTextSpan("凤舞龙飞凤舞龙飞凤舞",
@@ -51,7 +54,8 @@ struct orphanCharOptimizationExample{
                 },
               })
           })
-          .id('jsRichEditor')
+          .id('OrphanCharOptimization_jsRichEditor')
+          .key('OrphanCharOptimization_jsRichEditor')
           .width('38%')
           .orphanCharOptimization(this.orphanCharOptimizationXTS)
       }
@@ -61,17 +65,17 @@ struct orphanCharOptimizationExample{
           .onClick(() => {
             this.orphanCharOptimizationXTS = true;
           })
-          .id('true')
+          .id('OrphanCharOptimization_true')
         Button('F')
           .onClick(() => {
             this.orphanCharOptimizationXTS = false;
           })
-          .id('false')
+          .id('OrphanCharOptimization_false')
         Button('Un')
           .onClick(() => {
             this.orphanCharOptimizationXTS = undefined;
           })
-          .id('undefined')
+          .id('OrphanCharOptimization_undefined')
       }
     }.height('100%').width('100%')
   }

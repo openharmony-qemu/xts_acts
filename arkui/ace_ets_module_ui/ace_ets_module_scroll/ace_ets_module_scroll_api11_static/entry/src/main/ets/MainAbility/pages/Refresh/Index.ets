@@ -74,7 +74,7 @@ struct Index {
           Text('Pull Down and Refresh With Text: ' + this.counterText)
             .margin(10)
         }
-        .key("ArkUX_Refresh_Visual_0010")
+        .key("Index_ArkUX_Refresh_Visual_0010")
         .onStateChange((refreshStatus: RefreshStatus) => {
           console.info('Refresh onStatueChange state is ' + refreshStatus)
         })
@@ -96,7 +96,7 @@ struct Index {
           Text('Pull Down and Refresh With Text: ' + this.counterText)
             .margin(10)
         }
-        .key("ArkUX_Refresh_Visual_0020")
+        .key("Index_ArkUX_Refresh_Visual_0020")
         .onStateChange((refreshStatus: RefreshStatus) => {
           console.info('Refresh onStatueChange state is ' + refreshStatus)
         })
@@ -118,7 +118,7 @@ struct Index {
           Text('Pull Down and Refresh With Text: ' + this.counterText)
             .margin(10)
         }
-        .key("ArkUX_Refresh_Visual_0030")
+        .key("Index_ArkUX_Refresh_Visual_0030")
         .onStateChange((refreshStatus: RefreshStatus) => {
           console.info('Refresh onStatueChange state is ' + refreshStatus)
         })
@@ -141,7 +141,7 @@ struct Index {
             .margin(10)
         }
         .pullDownRatio(1)
-        .key("ArkUX_Refresh_Visual_0040")
+        .key("Index_ArkUX_Refresh_Visual_0040")
         .onStateChange((refreshStatus: RefreshStatus) => {
           console.info('Refresh onStatueChange state is ' + refreshStatus)
         })
@@ -162,7 +162,7 @@ struct Index {
             .margin(10)
         }
         .pullDownRatio(1)
-        .key("ArkUX_Refresh_Visual_0050")
+        .key("Index_ArkUX_Refresh_Visual_0050")
         .onStateChange((refreshStatus: RefreshStatus) => {
           console.info('Refresh onStatueChange state is ' + refreshStatus)
         })

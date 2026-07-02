@@ -20,7 +20,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { Driver, ON } from '@kit.TestKit';
 import settings from '@ohos.settings';
 import type Want from '@ohos.app.ability.Want';
-import { StartOptions, bundleManager } from '@kit.AbilityKit';
+import { StartOptions, bundleManager, AbilityConstant } from '@kit.AbilityKit';
 import display from '@ohos.display';
 import deviceInfo from '@ohos.deviceInfo';
 
@@ -3976,6 +3976,221 @@ export default function windowPCTest() {
       }
     });
 
+/**
+         * @tc.number      SUB_WINDOW_onWindowStatusChange_FULLSCREEN_001
+         * @tc.name        testOnWindowStatusChange_FULLSCREEN_001
+         * @tc.desc        on('windowStatusChange') callback returns FULL_SCREEN when maximize with ENTER_IMMERSIVE.
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
+         */
+        it('testOnWindowStatusChange_FULLSCREEN_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testOnWindowStatusChange_FULLSCREEN_001';
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            console.info(msgStr + 'begin');
+            if (isFreeWindowMode) {
+                let mainWindow: window.Window | undefined = undefined;
+                let finalStatus: window.WindowStatusType =window.WindowStatusType.UNDEFINED;
+                const callback: Callback<window.WindowStatusType> = (data: window.WindowStatusType) => {
+                    console.info(msgStr + `windowStatusChange callback received: ${JSON.stringify(data)}`);
+                    finalStatus = data;
+                };
+                try {
+                    let windowStageStart: window.WindowStage = await startAbility(caseName, context!);
+                    mainWindow = windowStageStart.getMainWindowSync();
+                    expect(!!mainWindow).assertTrue();
+                    mainWindow.on('windowStatusChange', callback);
+                    await mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE);
+                    console.info(msgStr + 'Succeeded in maximizing window with ENTER_IMMERSIVE.');
+                    await sleep(1000);
+                    console.info(msgStr + `final windowStatus: ${finalStatus}`);
+                    mainWindow.off('windowStatusChange', callback);
+                    console.info(msgStr + 'Succeeded in unregistering windowStatusChange callback.');
+                    await terminateAbility(caseName);
+                    console.info(msgStr + 'Succeeded in terminating ability.');
+                    expect(finalStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
+                    done();
+                } catch (exception) {
+                    if (mainWindow) {
+                        mainWindow.off('windowStatusChange', callback);
+                        console.info(msgStr + 'Succeeded in unregistering windowStatusChange callback in catch.');
+                    }
+                    await terminateAbility(caseName);
+                    console.error(msgStr + `Failed. Cause code: ${exception!.code}, message: ${exception.message}`);
+                    expect(false).assertTrue();
+                    done();
+                }
+            } else {
+                console.info(msgStr + `Device not 2in1 or not in free window mode, skip test.`);
+                done();
+            }
+        })
+
+        /**
+         * @tc.number      SUB_WINDOW_onWindowStatusChange_MAXIMIZE_002
+         * @tc.name        testOnWindowStatusChange_MAXIMIZE_002
+         * @tc.desc        on('windowStatusChange') callback returns MAXIMIZE when maximize with EXIT_IMMERSIVE.
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
+         */
+        it('testOnWindowStatusChange_MAXIMIZE_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testOnWindowStatusChange_MAXIMIZE_002';
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            console.info(msgStr + 'begin');
+            if (isFreeWindowMode) {
+                let mainWindow: window.Window | undefined = undefined;
+                 let finalStatus: window.WindowStatusType =window.WindowStatusType.UNDEFINED;
+                const callback: Callback<window.WindowStatusType> = (data: window.WindowStatusType) => {
+                    console.info(msgStr + `windowStatusChange callback received: ${JSON.stringify(data)}`);
+                    finalStatus = data;
+                };
+                try {
+                    let windowStageStart: window.WindowStage = await startAbility(caseName, context!);
+                    mainWindow = windowStageStart.getMainWindowSync();
+                    expect(!!mainWindow).assertTrue();
+                    mainWindow.on('windowStatusChange', callback);
+                    await mainWindow.maximize(window.MaximizePresentation.EXIT_IMMERSIVE);
+                    console.info(msgStr + 'Succeeded in maximizing window with EXIT_IMMERSIVE.');
+                    await sleep(1000);
+                    console.info(msgStr + `final windowStatus: ${finalStatus}`);
+                    mainWindow.off('windowStatusChange', callback);
+                    console.info(msgStr + 'Succeeded in unregistering windowStatusChange callback.');
+                    await terminateAbility(caseName);
+                    console.info(msgStr + 'Succeeded in terminating ability.');
+                    expect(finalStatus).assertEqual(window.WindowStatusType.MAXIMIZE);
+                    done();
+                } catch (exception) {
+                    if (mainWindow) {
+                        mainWindow.off('windowStatusChange', callback);
+                        console.info(msgStr + 'Succeeded in unregistering windowStatusChange callback in catch.');
+                    }
+                    await terminateAbility(caseName);
+                    console.error(msgStr + `Failed. Cause code: ${exception!.code}, message: ${exception.message}`);
+                    expect(false).assertTrue();
+                    done();
+                }
+            } else {
+                console.info(msgStr + `Device not 2in1 or not in free window mode, skip test.`);
+                done();
+            }
+        })
+
+        /**
+         * @tc.number      SUB_WINDOW_onWindowStatusChange_MINIMIZE_003
+         * @tc.name        testOnWindowStatusChange_MINIMIZE_003
+         * @tc.desc        on('windowStatusChange') callback returns MINIMIZE when minimize is called.
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
+         */
+        it('testOnWindowStatusChange_MINIMIZE_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testOnWindowStatusChange_MINIMIZE_003';
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            console.info(msgStr + 'begin');
+            if (isFreeWindowMode) {
+                let mainWindow: window.Window | undefined = undefined;
+                let finalStatus: window.WindowStatusType =window.WindowStatusType.UNDEFINED;
+                const callback: Callback<window.WindowStatusType> = (data: window.WindowStatusType) => {
+                    console.info(msgStr + `windowStatusChange callback received: ${JSON.stringify(data)}`);
+                    finalStatus = data;
+                };
+                try {
+                    let windowStageStart: window.WindowStage = await startAbility(caseName, context!);
+                    mainWindow = windowStageStart.getMainWindowSync();
+                    expect(!!mainWindow).assertTrue();
+                    mainWindow.on('windowStatusChange', callback);
+                    await mainWindow.minimize();
+                    console.info(msgStr + 'Succeeded in minimizing window.');
+                    await sleep(1000);
+                    console.info(msgStr + `final windowStatus: ${finalStatus}`);
+                    expect(finalStatus).assertEqual(window.WindowStatusType.MINIMIZE);
+                    await mainWindow.restore();
+                    console.info(msgStr + 'Succeeded in restoring window.');
+                    await sleep(1000);
+                    console.info(msgStr + `final windowStatus: ${finalStatus}`);
+                    mainWindow.off('windowStatusChange', callback);
+                    console.info(msgStr + 'Succeeded in unregistering windowStatusChange callback.');
+                    await terminateAbility(caseName);
+                    console.info(msgStr + 'Succeeded in terminating ability.');
+                    expect(finalStatus).assertEqual(window.WindowStatusType.FLOATING);
+                    done();
+                } catch (exception) {
+                    if (mainWindow) {	 
+                         mainWindow.off('windowStatusChange', callback);	 
+                         console.info(msgStr + 'Succeeded in unregistering windowStatusChange callback in catch.');	 
+                     }	 
+                     await terminateAbility(caseName);	 
+                     if (exception!.code === 801) {	 
+                         console.info(msgStr + 'Capability not supported.');	 
+                         expect(exception!.code).assertEqual(801);	 
+                         done();	 
+                     } else {	 
+                         console.error(msgStr + `Failed. Cause code: ${exception!.code}, message: ${exception.message}`);	 
+                         expect(false).assertTrue();	 
+                         done();	 
+                     }
+                }
+            } else {
+                console.info(msgStr + `Device not 2in1 or not in free window mode, skip test.`);
+                done();
+            }
+        })
+
+        /**
+         * @tc.number      SUB_WINDOW_onWindowStatusChange_SPLIT_SCREEN_005
+         * @tc.name        testOnWindowStatusChange_SPLIT_SCREEN_005
+         * @tc.desc        on('windowStatusChange') callback returns SPLIT_SCREEN when startAbility with WINDOW_MODE_SPLIT_SECONDARY.
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
+         */
+        it('testOnWindowStatusChange_SPLIT_SCREEN_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testOnWindowStatusChange_SPLIT_SCREEN_005';
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            console.info(msgStr + 'begin');
+            if (isFreeWindowMode) {
+                let mainWindow: window.Window | undefined = undefined;
+                let finalStatus: window.WindowStatusType =window.WindowStatusType.UNDEFINED;
+                const callback: Callback<window.WindowStatusType> = (data: window.WindowStatusType) => {
+                    console.info(msgStr + `windowStatusChange callback received: ${JSON.stringify(data)}`);
+                    finalStatus = data;
+                };
+                try {
+                    let options: StartOptions = {
+                        windowMode: AbilityConstant.WindowMode.WINDOW_MODE_SPLIT_SECONDARY
+                    };
+                    let windowStageStart: window.WindowStage = await startAbility(caseName, context!, options);
+                    mainWindow = windowStageStart.getMainWindowSync();
+                    expect(!!mainWindow).assertTrue();
+                    mainWindow.on('windowStatusChange', callback);
+                    await mainWindow.recover();
+                    console.info(msgStr + 'Succeeded in recovering window from split screen.');
+                    await sleep(1000);
+                    await startAbility(caseName, context!, options);
+                    console.info(msgStr + 'Succeeded in start window from split screen.');
+                    console.info(msgStr + `window status: ${finalStatus}`);
+                    mainWindow.off('windowStatusChange', callback);
+                    console.info(msgStr + 'Succeeded in unregistering windowStatusChange callback.');
+                    await terminateAbility(caseName);
+                    console.info(msgStr + 'Succeeded in terminating ability.');
+                    expect(finalStatus).assertEqual(window.WindowStatusType.SPLIT_SCREEN);
+                    done();
+                } catch (exception) {
+                    if (mainWindow) {
+                        mainWindow.off('windowStatusChange', callback);
+                        console.info(msgStr + 'Succeeded in unregistering windowStatusChange callback in catch.');
+                    }
+                    await terminateAbility(caseName);
+                    console.error(msgStr + `Failed. Cause code: ${exception!.code}, message: ${exception.message}`);
+                    expect(false).assertTrue();
+                    done();
+                }
+            } else {
+                console.info(msgStr + `Device not 2in1 or not in free window mode, skip test.`);
+                done();
+            }
+        })
 
   })
 }

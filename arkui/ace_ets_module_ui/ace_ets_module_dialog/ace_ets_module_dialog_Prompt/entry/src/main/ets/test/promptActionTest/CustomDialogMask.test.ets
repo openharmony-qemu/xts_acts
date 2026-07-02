@@ -62,7 +62,7 @@ export default function CustomDialogMaskTest() {
       await driver.delayMs(waitUiReadyMs)
       sendEventByKey('CustomDialogMask_Button_Open_1', 10, "")
       await driver.delayMs(waitUiReadyMs)
-      let strObj: string = getInspectorByKey('CustomDialogMask_Button_Close_1');
+      let strObj: string = getInspectorByKey('CustomDialogMask' + '_Button_Close_1');
       expect(JSON.parse(strObj).$attrs.visibility).assertEqual("Visibility.Visible");
       sendEventByKey('CustomDialogMask_Button_Close_1', 10, "")
       console.info(`${SUITE} ${CASE} END`);
@@ -86,7 +86,7 @@ export default function CustomDialogMaskTest() {
       await driver.delayMs(waitUiReadyMs)
       sendEventByKey('CustomDialogMask_Button_Open_2', 10, "")
       await driver.delayMs(waitUiReadyMs)
-      let strObj: string = getInspectorByKey('CustomDialogMask_Button_Close_1');
+      let strObj: string = getInspectorByKey('CustomDialogMask' + '_Button_Close_1');
       expect(JSON.parse(strObj).$attrs.visibility).assertEqual("Visibility.Visible");
       sendEventByKey('CustomDialogMask_Button_Close_1', 10, "")
       console.info(`${SUITE} ${CASE} END`);
@@ -109,7 +109,7 @@ export default function CustomDialogMaskTest() {
       await driver.delayMs(waitUiReadyMs)
       sendEventByKey('CustomDialogMask_Button_Open_3', 10, "")
       await driver.delayMs(waitUiReadyMs)
-      let strObj: string = getInspectorByKey('CustomDialogMask_Button_Close_1');
+      let strObj: string = getInspectorByKey('CustomDialogMask' + '_Button_Close_1');
       expect(JSON.parse(strObj).$attrs.visibility).assertEqual("Visibility.Visible");
       sendEventByKey('CustomDialogMask_Button_Close_1', 10, "")
       console.info(`${SUITE} ${CASE} END`);
@@ -132,7 +132,7 @@ export default function CustomDialogMaskTest() {
       await driver.delayMs(waitUiReadyMs)
       sendEventByKey('CustomDialogMask_Button_Open_4', 10, "")
       await driver.delayMs(waitUiReadyMs)
-      let strObj: string = getInspectorByKey('CustomDialogMask_Button_Close_1');
+      let strObj: string = getInspectorByKey('CustomDialogMask' + '_Button_Close_1');
       expect(JSON.parse(strObj).$attrs.visibility).assertEqual("Visibility.Visible");
       sendEventByKey('CustomDialogMask_Button_Close_1', 10, "")
       console.info(`${SUITE} ${CASE} END`);
@@ -155,7 +155,7 @@ export default function CustomDialogMaskTest() {
       await driver.delayMs(waitUiReadyMs)
       sendEventByKey('CustomDialogMask_Button_Open_5', 10, "")
       await driver.delayMs(waitUiReadyMs)
-      let strObj: string = getInspectorByKey('CustomDialogMask_Button_Close_1');
+      let strObj: string = getInspectorByKey('CustomDialogMask' + '_Button_Close_1');
       expect(JSON.parse(strObj).$attrs.visibility).assertEqual("Visibility.Visible");
       sendEventByKey('CustomDialogMask_Button_Close_1', 10, "")
       console.info(`${SUITE} ${CASE} END`);

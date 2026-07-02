@@ -17,100 +17,81 @@
 import {
   Entry,
   Component,
+  State,
   Column,
-  Row,
   Text,
-  ColumnOptions,
-  TouchType,
-  CustomBuilder,
-  DragItemInfo,
-  Color,
   Button,
+  Color,
   TouchEvent,
-  Margin,
-  Scroll,
-  GestureEvent,
-  LongPressGesture,
-  TapGesture,
-  ClickEvent,
-  FlexAlign
-} from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+  TouchType,
+} from '@kit.ArkUI';
 
 @Entry
 @Component
-struct ColumnGesture1 {
-  @State monopolize: boolean = true
-  @State logMsg1: string = ''
-  @State logMsg2: string = ''
-
-
+struct Index {
+  @State message: string = 'set monopolizeEvents false';
+  @State messageOut: string = ' ';
+  @State messageInner: string = ' ';
+  @State monopolize: boolean = false;
 
   build() {
-    Scroll() {
-      Column({ space: 20 } as ColumnOptions) {
-        Text("monopolize--" + this.monopolize)
-          .fontSize(20)
-          .margin(10)
-        Text(this.logMsg1 + ";" + this.logMsg2)
-          .id('columnText')
-          .fontSize(20)
-          .fontColor(Color.Pink)
-          .margin(10)
-        Column() {
-        }
-        .id('column1')
-        .width(100)
-        .height(80)
-        .backgroundColor(Color.Pink)
+    Column() {
+      Text(this.message)
+        .fontSize(22)
+        .id('textTrue')
+        .margin(10)
+      Text(this.messageOut)
+        .fontSize(22)
+        .margin(10)
+        .id('text1True')
+      Text(this.messageInner)
+        .fontSize(22)
+        .margin(10)
+        .id('text2True')
+      Button('clean')
+        .fontSize(22)
+        .margin(10)
+        .id('button1True')
+        .onClick(()=>{
+          this.messageOut = " "
+          this.messageInner = " "
+        })
+      Button('change monopolizeEvents')
+        .fontSize(22)
+        .margin(10)
+        .id('button2True')
+        .onClick(()=>{
+          this.monopolize = !this.monopolize
+          if (!this.monopolize) {
+            this.message = "set monopolizeEvents false"
+          } else {
+            this.message = "set monopolizeEvents true"
+          }
+        })
+      Column() {
+        Column(){}
         .monopolizeEvents(this.monopolize)
-        .gesture(
-          LongPressGesture()
-            .onAction((event: GestureEvent) => {
-              if (event) {
-                console.info('长按触发')
-                this.logMsg1 = 'LongPressGesture onAction success'
-              }
-            })
-        )
-
-        Column() {
-        }
-        .id('column2')
+        .width('100%')
+        .height('40%')
         .backgroundColor(Color.Blue)
-        .width(100)
-        .height(80)
-        .gesture(
-          TapGesture({ count: 1 })
-            .onAction((event: GestureEvent) => {
-              if (event) {
-                console.info('tap触发')
-                this.logMsg2 = 'TapGesture success'
-              }
-            })
-        )
-
-        Button('change monopolize')
-          .id('buttonBoolean')
-          .width(200)
-          .height(80)
-          .margin(10)
-          .onClick((e:ClickEvent) => {
-            console.info('按钮触发')
-            this.monopolize = !this.monopolize
-          })
-        Button('clean')
-          .id('button_clean')
-          .width(200)
-          .height(80)
-          .margin(10)
-          .onClick((e:ClickEvent) => {
-            this.logMsg1 = ''
-            this.logMsg2 = ''
-          })
-      }.height(500).width('100%').justifyContent(FlexAlign.Center)
+        .id('column1True')
+        .onTouch((event:TouchEvent)=>{
+          if (event.type == TouchType.Down) {
+            console.info("inner column touch down")
+            this.messageInner = "inner column touch down"
+          }
+        })
+      }
+      .backgroundColor(Color.Gray)
+      .height('100%')
+      .width('100%')
+      .onTouch((event)=>{
+        if (event.type == TouchType.Down) {
+          console.info("outside column touch down")
+          this.messageOut = "inner column touch down"
+        }
+      })
     }
-
+    .height('100%')
   }
 }

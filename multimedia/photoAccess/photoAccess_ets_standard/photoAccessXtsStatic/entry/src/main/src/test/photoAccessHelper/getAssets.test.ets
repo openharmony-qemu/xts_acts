@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -74,7 +74,7 @@ export default function getAssetsStaticTest(): void {
       try {
         helper!.getAssets(fetchOps, (error: BusinessError<void> | null,
           fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> | undefined) => {
-          expect(fetchResult !== undefined).assertTrue();
+          expect(fetchResult!.isAfterLast()).assertTrue();
           fetchResult!.close();
           done();
         });
@@ -101,7 +101,7 @@ export default function getAssetsStaticTest(): void {
       try {
         helper!.getAssets(fetchOps, (error: BusinessError<void> | null,
           fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> | undefined) => {
-          expect(fetchResult !== undefined).assertTrue();
+          expect(fetchResult!.isAfterLast()).assertTrue();
           done();
         });
       } catch (error) {
@@ -126,7 +126,7 @@ export default function getAssetsStaticTest(): void {
       try {
         helper!.getAssets(fetchOps, (error: BusinessError<void> | null,
           fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> | undefined) => {
-          expect(fetchResult !== undefined).assertTrue();
+          expect(fetchResult!.isAfterLast()).assertTrue();
           done();
         });
       } catch (error) {
@@ -152,7 +152,7 @@ export default function getAssetsStaticTest(): void {
       try {
         helper!.getAssets(fetchOps, (error: BusinessError<void> | null,
           fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> | undefined) => {
-          expect(fetchResult !== undefined).assertTrue();
+          expect(fetchResult!.isAfterLast()).assertTrue();
           done();
         });
       } catch (error) {
@@ -176,7 +176,7 @@ export default function getAssetsStaticTest(): void {
       const fetchOps: photoAccessHelper.FetchOptions = fetchOption(testName, photoAccessHelper.PhotoKeys.DISPLAY_NAME, imageDisplayName);
       try {
         const fetchResult = await helper!.getAssets(fetchOps);
-        expect(fetchResult !== undefined).assertTrue();
+        expect(fetchResult!.isAfterLast()).assertTrue();
         fetchResult.close();
         done();
       } catch (error) {
@@ -201,7 +201,7 @@ export default function getAssetsStaticTest(): void {
         fetchOption(testName, photoAccessHelper.PhotoKeys.DISPLAY_NAME, abnormalDisplayName);
       try {
         const fetchResult = await helper!.getAssets(fetchOps);
-        expect(fetchResult !== undefined).assertTrue();
+        expect(fetchResult!.isAfterLast()).assertTrue();
         fetchResult.close();
         done();
       } catch (error) {
@@ -224,7 +224,7 @@ export default function getAssetsStaticTest(): void {
       const fetchOps: photoAccessHelper.FetchOptions = fetchOption(testName, photoAccessHelper.PhotoKeys.DISPLAY_NAME, videoDisplayName);
       try {
         const fetchResult = await helper!.getAssets(fetchOps);
-        expect(fetchResult !== undefined).assertTrue();
+        expect(fetchResult!.isAfterLast()).assertTrue();
         fetchResult.close();
         done();
       } catch (error) {
@@ -249,7 +249,7 @@ export default function getAssetsStaticTest(): void {
         fetchOption(testName, photoAccessHelper.PhotoKeys.DISPLAY_NAME, abnormalDisplayName);
       try {
         const fetchResult = await helper!.getAssets(fetchOps);
-        expect(fetchResult !== undefined).assertTrue();
+        expect(fetchResult!.isAfterLast()).assertTrue();
         fetchResult.close();
         done();
       } catch (error) {

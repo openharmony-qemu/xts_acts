@@ -27,6 +27,7 @@ struct search {
         placeholder: 'This is Search',
       })
         .id('searchCompressLeadingPunctuation')
+        .key('searchCompressLeadingPunctuation')
         .borderWidth(1)
         .margin(2)
         .compressLeadingPunctuation(this.status)//新接口，控制行首标点符号是否缩进

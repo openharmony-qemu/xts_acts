@@ -34,10 +34,12 @@ struct SearchModifierApi11Page {
       Search({ value: 'SearchModifier' })
         .attributeModifier(this.modifier)
         .id('SearchModifier_get_value')
+        .key('SearchModifier_get_value')
         .height('20%')
 
       Text(this.value)
         .id('SearchModifier_get_type')
+        .key('SearchModifier_get_type')
         .height('10%')
     }.width("90%")
   }

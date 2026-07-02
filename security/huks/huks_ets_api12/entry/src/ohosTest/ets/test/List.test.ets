@@ -34,6 +34,7 @@ import SecurityHuksApiCoverInterfaceErrorCodeCallback from './SecurityHuksApiCov
 import SecurityHuksApiCoverInterfaceErrorCode from './SecurityHuksApiCoverInterfaceErrorCode.test';
 import SecurityHuksApiCoverInterfaceParamCallback from './SecurityHuksApiCoverInterfaceParamCallback.test';
 import SecurityHuksApiCoverInterfaceParam from './SecurityHuksApiCoverInterfaceParam.test';
+import SecurityHuksMlKemTest from './SecurityHuksMlKem.test';
 
 export default function testsuite() {
   SecurityHuksAccessControlAsUserTest();
@@ -58,4 +59,5 @@ export default function testsuite() {
   SecurityHuksApiCoverInterfaceErrorCode();
   SecurityHuksApiCoverInterfaceParam();
   SecurityHuksApiCoverInterfaceParamCallback();
+  SecurityHuksMlKemTest();
 }

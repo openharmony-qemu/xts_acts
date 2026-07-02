@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
 * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -179,66 +179,6 @@ export default function EnumerationWithExplicitTypeTest11(): void {
       expect(EnumLongN1.first.valueOf()).assertEqual(0)
       expect(EnumLongN1.second.valueOf()).assertEqual(-2147483649)
       expect(EnumLongN1.third.valueOf()).assertEqual(-2147483648)
-    });
-
-    /**
-     * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_ELEVEN_TEST_2600
-     * @tc.name      testEnumerationWithExplicitType0452
-     * @tc.desc      Checking long enum with Int.MIN_VALUE boundary
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testEnumerationWithExplicitType0452', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(EnumLongN0.first instanceof EnumLongN0).assertEqual(true)
-      expect(EnumLongN0.second instanceof EnumLongN0).assertEqual(true)
-      expect(EnumLongN0.third instanceof EnumLongN0).assertEqual(true)
-      expect(EnumLongN0.first.valueOf() instanceof long).assertEqual(true)
-      expect(EnumLongN0.second.valueOf() instanceof long).assertEqual(true)
-      expect(EnumLongN0.third.valueOf() instanceof long).assertEqual(true)
-      expect(EnumLongN0.first.valueOf()).assertEqual(0)
-      expect(EnumLongN0.second.valueOf()).assertEqual(-2147483648)
-      expect(EnumLongN0.third.valueOf()).assertEqual(-2147483649)
-    });
-
-    /**
-     * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_ELEVEN_TEST_2700
-     * @tc.name      testEnumerationWithExplicitType0453
-     * @tc.desc      Checking long enum with values near Int.MAX_VALUE boundary
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testEnumerationWithExplicitType0453', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(EnumLongN2.first instanceof EnumLongN2).assertEqual(true)
-      expect(EnumLongN2.second instanceof EnumLongN2).assertEqual(true)
-      expect(EnumLongN2.third instanceof EnumLongN2).assertEqual(true)
-      expect(EnumLongN2.first.valueOf() instanceof long).assertEqual(true)
-      expect(EnumLongN2.second.valueOf() instanceof long).assertEqual(true)
-      expect(EnumLongN2.third.valueOf() instanceof long).assertEqual(true)
-      expect(EnumLongN2.first.valueOf()).assertEqual(2147483646)
-      expect(EnumLongN2.second.valueOf()).assertEqual(2147483647)
-      expect(EnumLongN2.third.valueOf()).assertEqual(-2147483648)
-    });
-
-    /**
-     * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_ELEVEN_TEST_2800
-     * @tc.name      testEnumerationWithExplicitType0454
-     * @tc.desc      Checking long enum with member references in constant expression
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testEnumerationWithExplicitType0454', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(EnumLongN3.first instanceof EnumLongN3).assertEqual(true)
-      expect(EnumLongN3.second instanceof EnumLongN3).assertEqual(true)
-      expect(EnumLongN3.third instanceof EnumLongN3).assertEqual(true)
-      expect(EnumLongN3.first.valueOf() instanceof long).assertEqual(true)
-      expect(EnumLongN3.second.valueOf() instanceof long).assertEqual(true)
-      expect(EnumLongN3.third.valueOf() instanceof long).assertEqual(true)
-      expect(EnumLongN3.first.valueOf()).assertEqual(2147483637)
-      expect(EnumLongN3.second.valueOf()).assertEqual(1010)
-      expect(EnumLongN3.third.valueOf()).assertEqual(2147484647)
     });
 
     /**

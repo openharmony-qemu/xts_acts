@@ -16,33 +16,19 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
-import inspector from '@ohos.arkui.inspector'
+import inspector from '@ohos.arkui.inspector';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import RectValue from '../../../../ets/MainAbility/common/Rect';
 import { MessageManager } from '../../../../ets/MainAbility/common/MessageManager';
-import {
-  Component,
-  Driver,
-  UiWindow,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix,
-  UiDirection,
-  MouseButton
-} from '@ohos.UiTest';
-import hilog from '@ohos.hilog'
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, UiDirection, MouseButton } from '@ohos.UiTest';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../Util.test'
 import { UtilsTest, startAbility, stopApplication } from '../../Util.test';
-
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
@@ -98,7 +84,7 @@ it('testTabsItemPad_static_01', Level.LEVEL0, async (done: () => void): Promise<
         name: 'dadPadding', value: 20
       });
       await CommonFunc.sleep(3000);
-      let strJson = inspector.getInspectorByKey('Tabs_itemPadMar_01');
+      let strJson = inspector.getInspectorByKey('Tabs_itemPadMar' + '_01');
       let uiContext = AppStorage.get<UIContext>('uiContext')!;
       console.info(`[testTabsItemPad_static_01] type: ${JSON.stringify(JSON.parseJsonElement(strJson)
         .getString('$type'))}`);
@@ -116,8 +102,8 @@ it('testTabsItemPad_static_01', Level.LEVEL0, async (done: () => void): Promise<
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual("0");
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
-      let Tabs_itemPadMar_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar_001');
-      let Tabs_itemPadMar_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar_011');
+      let Tabs_itemPadMar_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar' + '_001');
+      let Tabs_itemPadMar_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar' + '_011');
       let driver = Driver.create();
       await driver.swipe((Math.round(Tabs_itemPadMar_011.right -
         ((Tabs_itemPadMar_011.right - Tabs_itemPadMar_011.left) / 6))).toInt(),
@@ -125,17 +111,17 @@ it('testTabsItemPad_static_01', Level.LEVEL0, async (done: () => void): Promise<
         (Math.round(Tabs_itemPadMar_011.left + ((Tabs_itemPadMar_011.right - Tabs_itemPadMar_011.left) / 6))).toInt(),
         (Math.round(Tabs_itemPadMar_011.top + ((Tabs_itemPadMar_011.bottom - Tabs_itemPadMar_011.top) / 2))).toInt());
       await CommonFunc.sleep(1000);
-      let Tabs_itemPadMar_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar_002');
-      let Tabs_itemPadMar_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar_012');
+      let Tabs_itemPadMar_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar' + '_002');
+      let Tabs_itemPadMar_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar' + '_012');
       await driver.swipe((Math.round(Tabs_itemPadMar_012.right -
         ((Tabs_itemPadMar_012.right - Tabs_itemPadMar_012.left) / 6))).toInt(),
         (Math.round(Tabs_itemPadMar_012.top + ((Tabs_itemPadMar_012.bottom - Tabs_itemPadMar_012.top) / 2))).toInt(),
         (Math.round(Tabs_itemPadMar_012.left + ((Tabs_itemPadMar_012.right - Tabs_itemPadMar_012.left) / 6))).toInt(),
         (Math.round(Tabs_itemPadMar_012.top + ((Tabs_itemPadMar_012.bottom - Tabs_itemPadMar_012.top) / 2))).toInt());
       await CommonFunc.sleep(1000);
-      let Tabs_itemPadMar_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar_003');
-      let Tabs_itemPadMar_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar_013');
-      let Tabs_itemPadMar_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar_01');
+      let Tabs_itemPadMar_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar' + '_003');
+      let Tabs_itemPadMar_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar' + '_013');
+      let Tabs_itemPadMar_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar' + '_01');
       let subGreen: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar_green');
       let subBlue: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar_blue');
       let subYellow: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar_yellow');
@@ -232,7 +218,7 @@ it('testTabsItemMar_static_02', Level.LEVEL0, async (done: () => void): Promise<
         name: 'dadMargin', value: 20
       });
       await CommonFunc.sleep(3000);
-      let strJson = inspector.getInspectorByKey('Tabs_itemPadMar_01');
+      let strJson = inspector.getInspectorByKey('Tabs_itemPadMar' + '_01');
       let uiContext = AppStorage.get<UIContext>('uiContext')!;
       console.info(`[testTabsItemMar_static_02] type: ${JSON.stringify(JSON.parseJsonElement(strJson)
         .getString('$type'))}`);
@@ -250,8 +236,8 @@ it('testTabsItemMar_static_02', Level.LEVEL0, async (done: () => void): Promise<
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual("0");
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
-      let Tabs_itemPadMar_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar_001');
-      let Tabs_itemPadMar_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar_011');
+      let Tabs_itemPadMar_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar' + '_001');
+      let Tabs_itemPadMar_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar' + '_011');
       let driver = Driver.create();
       await driver.swipe((Math.round(Tabs_itemPadMar_011.right -
         ((Tabs_itemPadMar_011.right - Tabs_itemPadMar_011.left) / 6))).toInt(),
@@ -259,17 +245,17 @@ it('testTabsItemMar_static_02', Level.LEVEL0, async (done: () => void): Promise<
         (Math.round(Tabs_itemPadMar_011.left + ((Tabs_itemPadMar_011.right - Tabs_itemPadMar_011.left) / 6))).toInt(),
         (Math.round(Tabs_itemPadMar_011.top + ((Tabs_itemPadMar_011.bottom - Tabs_itemPadMar_011.top) / 2))).toInt());
       await CommonFunc.sleep(1000);
-      let Tabs_itemPadMar_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar_002');
-      let Tabs_itemPadMar_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar_012');
+      let Tabs_itemPadMar_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar' + '_002');
+      let Tabs_itemPadMar_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar' + '_012');
       await driver.swipe((Math.round(Tabs_itemPadMar_012.right -
         ((Tabs_itemPadMar_012.right - Tabs_itemPadMar_012.left) / 6))).toInt(),
         (Math.round(Tabs_itemPadMar_012.top + ((Tabs_itemPadMar_012.bottom - Tabs_itemPadMar_012.top) / 2))).toInt(),
         (Math.round(Tabs_itemPadMar_012.left + ((Tabs_itemPadMar_012.right - Tabs_itemPadMar_012.left) / 6))).toInt(),
         (Math.round(Tabs_itemPadMar_012.top + ((Tabs_itemPadMar_012.bottom - Tabs_itemPadMar_012.top) / 2))).toInt());
       await CommonFunc.sleep(1000);
-      let Tabs_itemPadMar_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar_003');
-      let Tabs_itemPadMar_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar_013');
-      let Tabs_itemPadMar_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar_01');
+      let Tabs_itemPadMar_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar' + '_003');
+      let Tabs_itemPadMar_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar' + '_013');
+      let Tabs_itemPadMar_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar' + '_01');
       let subGreen: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar_green');
       let subBlue: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar_blue');
       let subYellow: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar_yellow');
@@ -365,7 +351,7 @@ it('testTabsItemPadMar_static_03', Level.LEVEL0, async (done: () => void): Promi
         name: 'dadMargin', value: 20
       });
       await CommonFunc.sleep(3000);
-      let strJson = inspector.getInspectorByKey('Tabs_itemPadMar_01');
+      let strJson = inspector.getInspectorByKey('Tabs_itemPadMar' + '_01');
       let uiContext = AppStorage.get<UIContext>('uiContext')!;
       console.info(`[testTabsItemPadMar_static_03] type: ${JSON.stringify(JSON.parseJsonElement(strJson)
         .getString('$type'))}`);
@@ -383,8 +369,8 @@ it('testTabsItemPadMar_static_03', Level.LEVEL0, async (done: () => void): Promi
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual("0");
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
-      let Tabs_itemPadMar_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar_001');
-      let Tabs_itemPadMar_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar_011');
+      let Tabs_itemPadMar_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar' + '_001');
+      let Tabs_itemPadMar_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar' + '_011');
       let driver = Driver.create();
       await driver.swipe((Math.round(Tabs_itemPadMar_011.right -
         ((Tabs_itemPadMar_011.right - Tabs_itemPadMar_011.left) / 6))).toInt(),
@@ -392,17 +378,17 @@ it('testTabsItemPadMar_static_03', Level.LEVEL0, async (done: () => void): Promi
         (Math.round(Tabs_itemPadMar_011.left + ((Tabs_itemPadMar_011.right - Tabs_itemPadMar_011.left) / 6))).toInt(),
         (Math.round(Tabs_itemPadMar_011.top + ((Tabs_itemPadMar_011.bottom - Tabs_itemPadMar_011.top) / 2))).toInt());
       await CommonFunc.sleep(1000);
-      let Tabs_itemPadMar_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar_002');
-      let Tabs_itemPadMar_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar_012');
+      let Tabs_itemPadMar_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar' + '_002');
+      let Tabs_itemPadMar_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar' + '_012');
       await driver.swipe((Math.round(Tabs_itemPadMar_012.right -
         ((Tabs_itemPadMar_012.right - Tabs_itemPadMar_012.left) / 6))).toInt(),
         (Math.round(Tabs_itemPadMar_012.top + ((Tabs_itemPadMar_012.bottom - Tabs_itemPadMar_012.top) / 2))).toInt(),
         (Math.round(Tabs_itemPadMar_012.left + ((Tabs_itemPadMar_012.right - Tabs_itemPadMar_012.left) / 6))).toInt(),
         (Math.round(Tabs_itemPadMar_012.top + ((Tabs_itemPadMar_012.bottom - Tabs_itemPadMar_012.top) / 2))).toInt());
       await CommonFunc.sleep(1000);
-      let Tabs_itemPadMar_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar_003');
-      let Tabs_itemPadMar_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar_013');
-      let Tabs_itemPadMar_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar_01');
+      let Tabs_itemPadMar_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar' + '_003');
+      let Tabs_itemPadMar_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar' + '_013');
+      let Tabs_itemPadMar_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar' + '_01');
       let subGreen: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar_green');
       let subBlue: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar_blue');
       let subYellow: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar_yellow');

@@ -3,6 +3,7 @@
     "pages/webMediaOption",
     "pages/WebOnFullScreenEnter",
     "pages/WebMediaPlayGestureAccess",
-    "pages/WebKeyBoardAvoidMode"
+    "pages/WebKeyBoardAvoidMode",
+    "pages/WebEnableFullscreenVideoOverlay"
   ]
 }

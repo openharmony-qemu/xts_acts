@@ -782,7 +782,7 @@ export default function penPart2Test() {
         console.info(msg + ' setShaderEffect successed');
       } catch( e ) {
         console.info(msg + ` setShaderEffect errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
-        expect(e.code).assertEqual(401);
+        expect().assertFail();
       }
     });
 
@@ -801,6 +801,7 @@ export default function penPart2Test() {
       try {
         pen.setShaderEffect(undefined);
         console.info(msg + ' setShaderEffect(null) succeeded');
+        expect().assertFail();
       } catch( e ) {
         console.info(msg + ` setShaderEffect(null) errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect(e.code).assertEqual(401);

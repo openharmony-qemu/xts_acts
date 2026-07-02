@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,7 +19,7 @@ import fs from '@ohos.file.fs';
 
 const TAG = 'ImageExifMetadataStaticTest:'
 
-export default function ImageExifMetadataStaticTest() {
+export default function ImageExifMetadataStaticTest() : void {
   let filesDir: string | undefined | null;
   let filePath: string = '';
   let fdNumber: int;

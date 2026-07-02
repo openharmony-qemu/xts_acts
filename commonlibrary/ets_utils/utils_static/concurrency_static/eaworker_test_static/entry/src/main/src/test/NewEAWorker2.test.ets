@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,22 +14,8 @@
  * limitations under the License.
  */
 
-import {
-  afterAll,
-  afterEach,
-  beforeAll,
-  beforeEach,
-  describe,
-  it,
-  expect,
-  TestType,
-  Size,
-  Level,
-  beforeAll
-} from "../../../hypium/index";
-import Utils from './Util.test';
-import {quitErrorMsg} from './Util.test';
-
+import { afterAll, afterEach, beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from '../../../hypium/index';
+import Utils, { quitErrorMsg } from './Util.test';
 class MessageObject {
   id: number
 

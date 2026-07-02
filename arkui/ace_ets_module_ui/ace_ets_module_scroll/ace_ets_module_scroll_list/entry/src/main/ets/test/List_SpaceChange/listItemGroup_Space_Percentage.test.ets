@@ -81,16 +81,16 @@ export default function listItemGroup_Space_Percentage() {
         name: 'space2', value: '10%'
       });
       await CommonFunc.sleep(1000);
-      let List01 = CommonFunc.getComponentRect('listItemGroup_Space_Percentage_01');
-      let ListItemGroup_1 = CommonFunc.getComponentRect('listItemGroup_Space_Percentage_ListItemGroup_1');
-      let ListItem11 = CommonFunc.getComponentRect('listItemGroup_Space_Percentage_ListItem_11');
-      let ListItem12 = CommonFunc.getComponentRect('listItemGroup_Space_Percentage_ListItem_12');
-      let ListItem13 = CommonFunc.getComponentRect('listItemGroup_Space_Percentage_ListItem_13');
+      let List01 = CommonFunc.getComponentRect('listItemGroup_Space_Percentage' + '_01');
+      let ListItemGroup_1 = CommonFunc.getComponentRect('listItemGroup_Space_Percentage' + '_ListItemGroup_1');
+      let ListItem11 = CommonFunc.getComponentRect('listItemGroup_Space_Percentage' + '_ListItem_11');
+      let ListItem12 = CommonFunc.getComponentRect('listItemGroup_Space_Percentage' + '_ListItem_12');
+      let ListItem13 = CommonFunc.getComponentRect('listItemGroup_Space_Percentage' + '_ListItem_13');
 
-      let ListItemGroup_2 = CommonFunc.getComponentRect('listItemGroup_Space_Percentage_ListItemGroup_2');
-      let ListItem21 = CommonFunc.getComponentRect('listItemGroup_Space_Percentage_ListItem_21');
-      let ListItem22 = CommonFunc.getComponentRect('listItemGroup_Space_Percentage_ListItem_22');
-      let ListItem23 = CommonFunc.getComponentRect('listItemGroup_Space_Percentage_ListItem_23');
+      let ListItemGroup_2 = CommonFunc.getComponentRect('listItemGroup_Space_Percentage' + '_ListItemGroup_2');
+      let ListItem21 = CommonFunc.getComponentRect('listItemGroup_Space_Percentage' + '_ListItem_21');
+      let ListItem22 = CommonFunc.getComponentRect('listItemGroup_Space_Percentage' + '_ListItem_22');
+      let ListItem23 = CommonFunc.getComponentRect('listItemGroup_Space_Percentage' + '_ListItem_23');
 
       expect(Math.abs(Math.round(ListItem11.right - ListItem11.left) - vp2px(300)) <= 1).assertTrue();
       expect(Math.abs(Math.round(ListItem11.bottom - ListItem11.top) - Math.round(vp2px(50))) <= 1).assertTrue();

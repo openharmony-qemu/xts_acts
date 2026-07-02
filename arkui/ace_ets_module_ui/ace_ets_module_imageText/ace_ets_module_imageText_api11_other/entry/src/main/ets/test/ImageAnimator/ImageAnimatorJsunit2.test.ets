@@ -101,7 +101,7 @@ export default function imageAnimatorJsunitt(){
       } catch (err) {
         console.info("imageAnimatorTest_0200 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("imageAnimatorTest_0200 click result is: " + JSON.stringify(sendEventByKey('button1',10,"")));
+      console.info("imageAnimatorTest_0200 click result is: " + JSON.stringify(sendEventByKey('imageAnimator2' + '_button1',10,"")));
       await CommonFunc.sleep(1000);
       console.info('imageAnimatorTest_0200 END');
     });
@@ -132,7 +132,7 @@ export default function imageAnimatorJsunitt(){
       } catch (err) {
         console.info("imageAnimatorTest_0300 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("imageAnimatorTest_0300 click result is: " + JSON.stringify(sendEventByKey('button2',10,"")));
+      console.info("imageAnimatorTest_0300 click result is: " + JSON.stringify(sendEventByKey('imageAnimator2' + '_button2',10,"")));
       await CommonFunc.sleep(1000);
       console.info('imageAnimatorTest_0300 END');
     });
@@ -162,7 +162,7 @@ export default function imageAnimatorJsunitt(){
       } catch (err) {
         console.info("imageAnimatorTest_0400 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("imageAnimatorTest_0400 click result is: " + JSON.stringify(sendEventByKey('button3',10,"")));
+      console.info("imageAnimatorTest_0400 click result is: " + JSON.stringify(sendEventByKey('imageAnimator2' + '_button3',10,"")));
       await CommonFunc.sleep(1000);
       console.info('imageAnimatorTest_0400 END');
     });
@@ -192,7 +192,7 @@ export default function imageAnimatorJsunitt(){
       } catch (err) {
         console.info("imageAnimatorTest_0500 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("imageAnimatorTest_0500 click result is: " + JSON.stringify(sendEventByKey('button4',10,"")));
+      console.info("imageAnimatorTest_0500 click result is: " + JSON.stringify(sendEventByKey('imageAnimator2' + '_button4',10,"")));
       await CommonFunc.sleep(1000);
       console.info('imageAnimatorTest_0500 END');
     });
@@ -267,7 +267,7 @@ export default function imageAnimatorJsunitt(){
       } catch (err) {
         console.info("imageAnimatorTest_0700 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("imageAnimatorTest_0700 click result is: " + JSON.stringify(sendEventByKey('button5',10,"")));
+      console.info("imageAnimatorTest_0700 click result is: " + JSON.stringify(sendEventByKey('imageAnimator2' + '_button5',10,"")));
       await CommonFunc.sleep(1000);
       console.info('imageAnimatorTest_0700 END');
     });

@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -145,6 +145,184 @@ export default function createImageReceiverPackerTest(): void {
       }
     })
 
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_createImageReceiver_static_0700
+     * @tc.name       SUB_MEDIA_IMAGE_createImageReceiver_static_0700
+     * @tc.desc       createImageReceiver cover size
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_createImageReceiver_static_0700', Level.LEVEL1, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createImageReceiver_static_0700';
+      try {
+        let size: image.Size = {
+          height: 8192,
+          width: 8192
+        }
+        let receiver: image.ImageReceiver | undefined = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
+        console.info(TAG, testName, 'receiver!.size为：' + receiver!.size.height);
+        expect(receiver!.size.height).assertEqual(8192);
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Fail: code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
 
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_createImageReceiver_static_0800
+     * @tc.name       SUB_MEDIA_IMAGE_createImageReceiver_static_0800
+     * @tc.desc       createImageReceiver cover size
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_createImageReceiver_static_0800', Level.LEVEL1, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createImageReceiver_static_0800';
+      try {
+        let size: image.Size = {
+          height: 8192,
+          width: 8192
+        }
+        let receiver: image.ImageReceiver | undefined = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
+        console.info(TAG, testName, 'receiver!.size为：' + receiver!.size.width);
+        expect(receiver!.size.width).assertEqual(8192);
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Fail: code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_createImageReceiver_static_0900
+     * @tc.name       SUB_MEDIA_IMAGE_createImageReceiver_static_0900
+     * @tc.desc       createImageReceiver cover capacity
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_createImageReceiver_static_0900', Level.LEVEL1, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createImageReceiver_static_0900';
+      try {
+        let size: image.Size = {
+          height: 8192,
+          width: 8192
+        }
+        let receiver: image.ImageReceiver | undefined = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
+        console.info(TAG, testName, 'receiver!.capacity为：' + receiver!.capacity);
+        expect(receiver!.capacity).assertEqual(8);
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Fail: code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_createImageReceiver_static_1000
+     * @tc.name       SUB_MEDIA_IMAGE_createImageReceiver_static_1000
+     * @tc.desc       createImageReceiver cover format
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_createImageReceiver_static_1000', Level.LEVEL1, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createImageReceiver_static_1000';
+      try {
+        let size: image.Size = {
+          height: 8192,
+          width: 8192
+        }
+        let receiver: image.ImageReceiver | undefined = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
+        console.info(TAG, testName, 'receiver!.format为：' + receiver!.format);
+        expect(receiver!.format).assertEqual(2000);
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Fail: code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_createImageReceiver_static_1100
+     * @tc.name       SUB_MEDIA_IMAGE_createImageReceiver_static_1100
+     * @tc.desc       createImageReceiver cover return size
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_createImageReceiver_static_1100', Level.LEVEL1, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createImageReceiver_static_1100';
+      try {
+        let options: image.ImageReceiverOptions = {
+          size: { width: 480, height: 480 },
+          capacity: 3
+        }
+        let receiver: image.ImageReceiver | undefined = image.createImageReceiver(options);
+        console.info(TAG, testName, 'size.height：'+ receiver!.size.height);
+        expect(receiver!.size.height).assertEqual(480);
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Fail: code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_createImageReceiver_static_1200
+     * @tc.name       SUB_MEDIA_IMAGE_createImageReceiver_static_1200
+     * @tc.desc       createImageReceiver cover return size
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_createImageReceiver_static_1200', Level.LEVEL1, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createImageReceiver_static_1200';
+      try {
+        let options: image.ImageReceiverOptions = {
+          size: { width: 480, height: 480 },
+          capacity: 3
+        }
+        let receiver: image.ImageReceiver | undefined = image.createImageReceiver(options);
+        console.info(TAG, testName, 'size.width为：'+ receiver!.size.width);
+        expect(receiver!.size.width).assertEqual(480);
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Fail: code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_createImageReceiver_static_1300
+     * @tc.name       SUB_MEDIA_IMAGE_createImageReceiver_static_1300
+     * @tc.desc       createImageReceiver cover return capacity
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_createImageReceiver_static_1300', Level.LEVEL1, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createImageReceiver_static_1300';
+      try {
+        let options: image.ImageReceiverOptions = {
+          size: { width: 480, height: 480 },
+          capacity: 3
+        }
+        let receiver: image.ImageReceiver | undefined = image.createImageReceiver(options);
+        console.info(TAG, testName, 'capacity为：'+ receiver!.capacity);
+        expect(receiver!.capacity).assertEqual(3);
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Fail: code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
   })
 }

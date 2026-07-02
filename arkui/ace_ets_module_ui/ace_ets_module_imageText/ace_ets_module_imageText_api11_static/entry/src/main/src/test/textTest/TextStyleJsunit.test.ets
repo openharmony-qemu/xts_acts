@@ -336,7 +336,7 @@ export default function textStyleJsunit() {
     it('testTextStyle_static_016', Level.LEVEL1, async () => {
       console.info('[testTextStyle_static_016] START');
       await CommonFunc.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('fontWeight');
+      let strJson: string = inspector.getInspectorByKey('textStyle' + '_fontWeight');
       console.info("[testTextStyle_static_016] component strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testTextStyle_static_016] fontWeight: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontWeight'));
@@ -362,7 +362,7 @@ export default function textStyleJsunit() {
         console.log("[testTextStyle_static_017] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
-      let strJson: string = inspector.getInspectorByKey('fontWeight');
+      let strJson: string = inspector.getInspectorByKey('textStyle' + '_fontWeight');
       console.info("[testTextStyle_static_017] component strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testTextStyle_static_017] fontWeight: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontWeight'));
@@ -388,7 +388,7 @@ export default function textStyleJsunit() {
         console.log("[testTextStyle_static_018] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
-      let strJson: string = inspector.getInspectorByKey('fontWeight');
+      let strJson: string = inspector.getInspectorByKey('textStyle' + '_fontWeight');
       console.info("[testTextStyle_static_018] component strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testTextStyle_static_018] fontWeight: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontWeight'));
@@ -414,7 +414,7 @@ export default function textStyleJsunit() {
         console.log("[testTextStyle_static_019] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
-      let strJson: string = inspector.getInspectorByKey('fontWeight');
+      let strJson: string = inspector.getInspectorByKey('textStyle' + '_fontWeight');
       console.info("[testTextStyle_static_019] component strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testTextStyle_static_019] fontWeight: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontWeight'));
@@ -440,7 +440,7 @@ export default function textStyleJsunit() {
         console.log("[testTextStyle_static_020] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
-      let strJson: string = inspector.getInspectorByKey('fontWeight');
+      let strJson: string = inspector.getInspectorByKey('textStyle' + '_fontWeight');
       console.info("[testTextStyle_static_020] component strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testTextStyle_static_020] fontWeight: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontWeight'));

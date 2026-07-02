@@ -13,11 +13,11 @@
 
 import("//test/xts/tools/build/suite.gni")
 
-ohos_js_app_static_suite("ActsAceEtsModuleMeasureStaticTest") {
+ohos_js_app_static_suite("ActsAceEtsModuleTextMeasureStaticTest") {
 #  test_hap = true
 #  testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsAceEtsModuleMeasureStaticTest"
+  hap_name = "ActsAceEtsModuleTextMeasureStaticTest"
   part_name = "ace_engine"
   subsystem_name = "arkui"
 }

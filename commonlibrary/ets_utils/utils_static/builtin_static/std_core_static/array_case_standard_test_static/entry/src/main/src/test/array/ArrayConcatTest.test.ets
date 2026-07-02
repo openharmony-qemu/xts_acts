@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -899,7 +899,7 @@ export default function ArrayConcatTest(): void {
      * @tc.level Level 2
      */
     it('testArrayConcat048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr1 = new Array<int>(1);
+      const arr1 = Array.create<int>(1, 1);
       const arr2 = new Array<int>(2, 3);
       const result = arr1.concat(arr2, arr2);
 

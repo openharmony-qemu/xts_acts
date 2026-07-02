@@ -76,7 +76,7 @@ struct Second {
         .fontSize(this.fontSize)
         .fontColor(this.fontColor)
       TextClock({ timeZoneOffset: -8, controller: this.controller })
-        .key('textClock')
+        .key('TextClockJsunit_textClock')
         .format(this.format)
         .fontSize(this.fontSize)
         .fontColor(this.fontColor)

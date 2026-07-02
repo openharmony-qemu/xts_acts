@@ -103,7 +103,7 @@ struct GridItemPage {
             .textAlign(TextAlign.Center)
         }.columnStart(this.columnStart).columnEnd(this.columnEnd).key("gridItem3")
       }
-      .key('grid1')
+      .key('GridItemPage_grid1')
       .columnsGap("4")
       .rowsGap("5")
       .multiSelectable(true)

@@ -82,7 +82,7 @@ struct ListExample11 {
             }
           }, (item: number) => item.toString())
         }
-        .key('list')
+        .key('List1_list')
         .listDirection(Axis.Vertical)
         .divider({
           strokeWidth: 2,

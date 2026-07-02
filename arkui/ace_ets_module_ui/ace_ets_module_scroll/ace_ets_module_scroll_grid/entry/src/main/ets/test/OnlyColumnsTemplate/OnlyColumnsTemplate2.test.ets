@@ -58,8 +58,8 @@ export default function OnlyColumnsTemplate2() {
       await CommonFunc.sleep(2000);
 
       console.log('get Initial value')
-      let GridItem_01 = CommonFunc.getComponentRect('OnlyColumnsTemplate2_GridItem_01');
-      let GridItem_02 = CommonFunc.getComponentRect('OnlyColumnsTemplate2_GridItem_02');
+      let GridItem_01 = CommonFunc.getComponentRect('OnlyColumnsTemplate2' + '_GridItem_01');
+      let GridItem_02 = CommonFunc.getComponentRect('OnlyColumnsTemplate2' + '_GridItem_02');
 
       console.log('assert size')
       expect(Math.abs(GridItem_01.right - GridItem_01.left - vp2px(60)) <= 1).assertTrue();

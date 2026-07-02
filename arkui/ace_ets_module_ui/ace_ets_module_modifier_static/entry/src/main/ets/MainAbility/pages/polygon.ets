@@ -43,7 +43,7 @@ class CustomModifier extends PolygonModifier {
     Column({ space: 10 } as ColumnOptions) {
       Button("change value").onClick((e: ClickEvent) => {
         (this.customModifier as CustomModifier).onChange();
-      }).key("changeButton")
+      }).key("polygon_changeButton")
 
       Polygon({ width: 200, height: 150 })
         .attributeModifier(this.customModifier  as CustomModifier)

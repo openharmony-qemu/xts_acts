@@ -62,8 +62,8 @@ export default function grid_RowCol_ItemVisibilityTest() {
       let secondGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemVisibility02');
       let thirdGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemVisibility03');
       let fourthGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemVisibility04');
-      let gridContainer: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemVisibility_Container01');
-      let gridContainerStrJson = getInspectorByKey('Grid_RowCol_ItemVisibility_Container01');
+      let gridContainer: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemVisibility' + '_Container01');
+      let gridContainerStrJson = getInspectorByKey('Grid_RowCol_ItemVisibility' + '_Container01');
 
       expect(JSON.parse(gridContainerStrJson).$type).assertEqual('Grid');
       let secondGridItemStrJson = getInspectorByKey('Grid_RowCol_ItemVisibility02');
@@ -106,8 +106,8 @@ export default function grid_RowCol_ItemVisibilityTest() {
       let secondGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemVisibility02');
       let thirdGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemVisibility03');
       let fourthGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemVisibility04');
-      let gridContainer: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemVisibility_Container01');
-      let gridContainerStrJson = getInspectorByKey('Grid_RowCol_ItemVisibility_Container01');
+      let gridContainer: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemVisibility' + '_Container01');
+      let gridContainerStrJson = getInspectorByKey('Grid_RowCol_ItemVisibility' + '_Container01');
 
       expect(JSON.parse(gridContainerStrJson).$type).assertEqual('Grid');
       let secondGridItemStrJson = getInspectorByKey('Grid_RowCol_ItemVisibility02');
@@ -153,8 +153,8 @@ export default function grid_RowCol_ItemVisibilityTest() {
       let secondGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemVisibility02');
       let thirdGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemVisibility03');
       let fourthGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemVisibility04');
-      let gridContainer: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemVisibility_Container01');
-      let gridContainerStrJson = getInspectorByKey('Grid_RowCol_ItemVisibility_Container01');
+      let gridContainer: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemVisibility' + '_Container01');
+      let gridContainerStrJson = getInspectorByKey('Grid_RowCol_ItemVisibility' + '_Container01');
 
       expect(JSON.parse(gridContainerStrJson).$type).assertEqual('Grid');
       let secondGridItemStrJson = getInspectorByKey('Grid_RowCol_ItemVisibility02');

@@ -14,12 +14,12 @@
  */
 import { beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { huks } from '@kit.UniversalKeystoreKit';
-import { AddParam, CheckSoftware, DeleteParam, MergeOptions, SetInData, SetMultiParam, SetParam } from './utils/huks/HuksOptionsUtils';
+import { AddParam, CheckSoftware, DeleteParam, GetEmptyOptions, MergeOptions, SetInData, SetMultiParam, SetParam } from './utils/huks/HuksOptionsUtils';
 import { StringToUint8Array } from './utils/common/CommonUtils';
 import { GetAttestKeyOptions } from './utils/huks/AttestKeyUtils';
-import { Get3DesGenerateOptions, GetAesGenerateOptions, GetEccGenerateOptions, GetSm2GenerateOptions } from './utils/huks/GenerateKeyUtils';
+import { Get3DesGenerateOptions, GetAesGenerateOptions, GetEccGenerateOptions, GetMlKemGenerateOptions, GetSm2GenerateOptions } from './utils/huks/GenerateKeyUtils';
 import { GetAesImportData } from './utils/huks/ImportKeyUtils';
-import { GetAccessControlOptions } from './utils/huks/AccessControlUtils';
+import { GetAccessControlOptions, GetUserAuthOptions, GetAlwaysValidOptions, GetChallengeNormalOptions, GetTuiPinOptions } from './utils/huks/AccessControlUtils';
 import { BuildWrappedKeyData } from './utils/huks/ImportWrappedKeyUtils';
 import { GetGenWrapKeyOptions, GetWrapKeyOptions } from './utils/huks/WrapKeyUtils';
 import { GetCbcNoPaddingOptions, GetCbcPkcs7Options, GetCtrNoPaddingOptions, GetSm3NoPaddingOptions } from './utils/huks/CipherUtils';
@@ -27,6 +27,7 @@ import { GetDeriveAgreeFinishOptions, GetHkdfDeriveOptions, GetSha256Options } f
 import { Logger } from './utils/common/Logger';
 import huksExternalCrypto from '@ohos.security.huksExternalCrypto';
 import { CheckWifiInfo } from './utils/common/NetworkUtils';
+import { GetAccessGroupOptions } from './utils/huks/AccessControlUtils.ets';
 
 
 export default function SecurityHuksApiCoverInterfaceErrorCode() {
@@ -72,7 +73,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.deleteKeyItem(testNumber, genKeyOptionMultiAlg);
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
         }
@@ -93,7 +94,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.deleteKeyItem(testNumber, genKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ITEM_NOT_EXIST);
       }
     })
@@ -113,7 +114,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.importKeyItem(testNumber, genKeyOptionNoAlg);
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_MISSING_CRYPTO_ALG_ARGUMENT);
         }
@@ -137,7 +138,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.exportKeyItem(testNumber, genKeyOptionMultiAlg);
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
         }
@@ -158,7 +159,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.exportKeyItem(testNumber, genKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ITEM_NOT_EXIST);
       }
     })
@@ -178,7 +179,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.getKeyItemProperties(testNumber, genKeyOptionMultiAlg);
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
         }
@@ -199,7 +200,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.getKeyItemProperties(testNumber, genKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ITEM_NOT_EXIST);
       }
     })
@@ -219,7 +220,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.hasKeyItem(testNumber, genKeyOptionMultiAlg);
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
         }
@@ -240,7 +241,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.initSession(testNumber, encryptOption);
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ITEM_NOT_EXIST);
         }
@@ -263,7 +264,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.updateSession(handle, encryptOptionMultiAlg);
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
         }
@@ -285,7 +286,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.updateSession(handle, encryptOption);
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ITEM_NOT_EXIST);
         }
@@ -308,7 +309,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.finishSession(handle, encryptOptionMultiAlg);
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
         }
@@ -330,7 +331,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.finishSession(handle, encryptOption);
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ITEM_NOT_EXIST);
         }
@@ -353,7 +354,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.abortSession(handle, encryptOptionMultiAlg);
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
         }
@@ -378,7 +379,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.anonAttestKeyItem(testNumber, attestOption);
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ITEM_NOT_EXIST);
         }
@@ -401,7 +402,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.importKeyItem(testNumber, genKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_CREDENTIAL_NOT_EXIST);
         }
@@ -422,7 +423,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.isKeyItemExist(testNumber, genKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ITEM_NOT_EXIST);
         }
@@ -454,7 +455,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
         }
@@ -486,7 +487,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_MISSING_CRYPTO_ALG_ARGUMENT);
         }
@@ -518,7 +519,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INVALID_CRYPTO_ALG_ARGUMENT);
         }
@@ -549,7 +550,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.importWrappedKeyItem(testNumber, deviceAKeyPairAlias + "emptyKey", importWrappedKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ITEM_NOT_EXIST);
         }
@@ -581,7 +582,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         if (err.code != 801 && err.code != 12000001) {
           expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_CREDENTIAL_NOT_EXIST);
         }
@@ -605,7 +606,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.update(handle, token, encryptOptionMultiAlg);
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
       }
     })
 
@@ -623,7 +624,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.wrapKeyItem(testNumber, SetMultiParam(GetWrapKeyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_AES));
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INVALID_ARGUMENT);
       }
     }
@@ -644,7 +645,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.unwrapKeyItem(testNumber, SetMultiParam(GetWrapKeyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_AES), wrapRes);
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INVALID_ARGUMENT);
       }
     }
@@ -664,7 +665,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.generateKeyItem(testNumber, MergeOptions(genKeyOption, GetGenWrapKeyOptions()));
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INSUFFICIENT_MEMORY);
       }
     }
@@ -684,7 +685,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.generateKeyItem(testNumber, genKeyOptionMultiAlg);
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
       }
     }
@@ -704,7 +705,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.generateKeyItem(testNumber, genKeyOptionNoAlg);
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_MISSING_CRYPTO_ALG_ARGUMENT);
       }
     }
@@ -724,7 +725,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.generateKeyItem(testNumber, genKeyOptionErrorAlg);
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INVALID_CRYPTO_ALG_ARGUMENT);
       }
     }
@@ -745,7 +746,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.generateKeyItem(testNumber, genKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_CREDENTIAL_NOT_EXIST);
       }
     })
@@ -766,7 +767,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.generateKeyItem(testNumber, genKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_KEY_ALREADY_EXIST);
       }
     })
@@ -785,7 +786,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.importKeyItem(testNumber, SetInData(genKeyOptionMultiAlg, GetAesImportData(256)));
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
       }
     })
@@ -804,7 +805,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.importKeyItem(testNumber, SetInData(genKeyOptionErrorAlg, GetAesImportData(256)));
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INVALID_CRYPTO_ALG_ARGUMENT);
       }
     })
@@ -823,7 +824,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.importKeyItem(testNumber, SetInData(MergeOptions(genKeyOption, GetGenWrapKeyOptions()), GetAesImportData(256)));
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INSUFFICIENT_MEMORY);
       }
     })
@@ -844,7 +845,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.importKeyItem(testNumber, SetInData(genKeyOption, GetAesImportData(256)));
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_KEY_ALREADY_EXIST);
       }
     })
@@ -868,7 +869,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.anonAttestKeyItem(testNumber, attestOptions);
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
       }
     })
@@ -899,7 +900,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INSUFFICIENT_MEMORY);
       }
     })
@@ -930,7 +931,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_KEY_ALREADY_EXIST);
       }
     })
@@ -950,7 +951,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.isKeyItemExist(testNumber, genKeyOptionMultiAlg);
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
       }
     })
@@ -970,7 +971,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.initSession(testNumber, encryptOptionMultiAlg);
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
       }
     })
@@ -990,7 +991,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.initSession(testNumber, MergeOptions(Get3DesGenerateOptions(192), GetCtrNoPaddingOptions(16)));
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_MISSING_CRYPTO_ALG_ARGUMENT);
       }
     })
@@ -1010,7 +1011,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.initSession(testNumber, MergeOptions(Get3DesGenerateOptions(192), GetCbcNoPaddingOptions(12)));
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INVALID_CRYPTO_ALG_ARGUMENT);
       }
     })
@@ -1031,7 +1032,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.updateSession(res.handle, MergeOptions(GetSm2GenerateOptions(256), GetSm3NoPaddingOptions()));
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INSUFFICIENT_MEMORY);
       }
     })
@@ -1052,7 +1053,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.finishSession(res.handle, MergeOptions(GetSm2GenerateOptions(256), GetSm3NoPaddingOptions()));
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INSUFFICIENT_MEMORY);
       }
     })
@@ -1079,7 +1080,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         await huks.finishSession(res.handle, finishOptions);
         expect(null).assertFail();
       } catch (err) {
-        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_KEY_ALREADY_EXIST);
       }
     })
@@ -1107,7 +1108,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
           expect(null).assertFail();
         } catch (err) {
           if (err.code != 801) {
-            Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+            Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
             expect(err.code).assertEqual(201);
           }
         }
@@ -1137,7 +1138,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
           expect(null).assertFail();
         } catch (err) {
           if (err.code != 801) {
-            Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+            Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
             expect(err.code).assertEqual(201);
           }
         }
@@ -1167,7 +1168,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
           expect(null).assertFail();
         } catch (err) {
           if (err.code != 801) {
-            Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+            Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
             expect(err.code).assertEqual(202);
           }
         }
@@ -1197,7 +1198,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
           expect(null).assertFail();
         } catch (err) {
           if (err.code != 801) {
-            Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+            Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
             expect(err.code).assertEqual(12000012);
           }
         }
@@ -1228,9 +1229,157 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
           expect(null).assertFail();
         } catch (err) {
           if (err.code != 801) {
-            Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+            Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
             expect(err.code).assertEqual(12000012);
           }
+        }
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_Ukey_UnLoad_API26_DFR_0000
+     * @tc.number SUB_Security_HUKS_Ukey_UnLoad_API26_DFR_0000
+     * @tc.desc   test clearUkeyPinAuthState, error code 12000012
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_HUKS_Ukey_UnLoad_API26_DFR_0000', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
+      let testNumber: string = "SUB_Security_HUKS_Ukey_UnLoad_API26_DFR_0000";
+
+      if (canIUse("SystemCapability.Security.Huks.CryptoExtension")) {
+        try {
+          const resourceId = testNumber;
+          await huksExternalCrypto.clearUkeyPinAuthState(resourceId);
+          expect(null).assertFail();
+        } catch (err) {
+          Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+          expect(err.code).assertEqual(12000012);
+        }
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_Ukey_UnLoad_API26_DFR_0100
+     * @tc.number SUB_Security_HUKS_Ukey_UnLoad_API26_DFR_0100
+     * @tc.desc   test generateKeyItem, error code 12000012
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_HUKS_Ukey_UnLoad_API26_DFR_0100', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
+      let testNumber: string = "SUB_Security_HUKS_Ukey_UnLoad_API26_DFR_0100";
+
+      if (canIUse("SystemCapability.Security.Huks.CryptoExtension")) {
+        try {
+          let resourceId = testNumber;
+          let huksOptions = GetEmptyOptions();
+          SetParam(huksOptions, huks.HuksTag.HUKS_TAG_KEY_CLASS, huks.HuksKeyClassType.HUKS_KEY_CLASS_EXTENSION);
+          await huks.generateKeyItem(resourceId, huksOptions);
+          expect(null).assertFail();
+        } catch (err) {
+          Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+          expect(err.code).assertEqual(12000012);
+        }
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_Ukey_UnLoad_API26_DFR_0200
+     * @tc.number SUB_Security_HUKS_Ukey_UnLoad_API26_DFR_0200
+     * @tc.desc   test exportKeyItem, error code 12000012
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_HUKS_Ukey_UnLoad_API26_DFR_0200', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
+      let testNumber: string = "SUB_Security_HUKS_Ukey_UnLoad_API26_DFR_0200";
+
+      if (canIUse("SystemCapability.Security.Huks.CryptoExtension")) {
+        try {
+          let resourceId = testNumber;
+          let huksOptions = GetEmptyOptions();
+          SetParam(huksOptions, huks.HuksTag.HUKS_TAG_KEY_CLASS, huks.HuksKeyClassType.HUKS_KEY_CLASS_EXTENSION);
+          await huks.exportKeyItem(resourceId, huksOptions);
+          expect(null).assertFail();
+        } catch (err) {
+          Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+          expect(err.code).assertEqual(12000012);
+        }
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_Ukey_UnLoad_API26_DFR_0300
+     * @tc.number SUB_Security_HUKS_Ukey_UnLoad_API26_DFR_0300
+     * @tc.desc   test importWrappedKeyItem, error code 12000012
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_HUKS_Ukey_UnLoad_API26_DFR_0300', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
+      let testNumber: string = "SUB_Security_HUKS_Ukey_UnLoad_API26_DFR_0300";
+
+      if (canIUse("SystemCapability.Security.Huks.CryptoExtension")) {
+        try {
+          let resourceId = testNumber;
+          let huksOptions = GetEmptyOptions();
+          SetParam(huksOptions, huks.HuksTag.HUKS_TAG_KEY_CLASS, huks.HuksKeyClassType.HUKS_KEY_CLASS_EXTENSION);
+          SetInData(huksOptions, new Uint8Array(4));
+          await huks.importWrappedKeyItem(resourceId, resourceId, huksOptions);
+          expect(null).assertFail();
+        } catch (err) {
+          Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+          expect(err.code).assertEqual(12000012);
+        }
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_Ukey_UnLoad_API26_DFR_0400
+     * @tc.number SUB_Security_HUKS_Ukey_UnLoad_API26_DFR_0400
+     * @tc.desc   test getResourceId, error code 12000012
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_HUKS_Ukey_UnLoad_API26_DFR_0400', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
+      let testNumber: string = "SUB_Security_HUKS_Ukey_UnLoad_API26_DFR_0400";
+
+      if (canIUse("SystemCapability.Security.Huks.CryptoExtension")) {
+        try {
+          let providerName = testNumber;
+          let params = [];
+          await huksExternalCrypto.getResourceId(providerName, params);
+          expect(null).assertFail();
+        } catch (err) {
+          Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+          expect(err.code).assertEqual(12000012);
+        }
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_Ukey_UnLoad_API26_DFR_0500
+     * @tc.number SUB_Security_HUKS_Ukey_UnLoad_API26_DFR_0500
+     * @tc.desc   test setProperty, error code 12000012
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_HUKS_Ukey_UnLoad_API26_DFR_0500', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
+      let testNumber: string = "SUB_Security_HUKS_Ukey_UnLoad_API26_DFR_0500";
+
+      if (canIUse("SystemCapability.Security.Huks.CryptoExtension")) {
+        try {
+          let resourceId = testNumber;
+          let propertyId = testNumber;
+          let params = [];
+          await huksExternalCrypto.setProperty(resourceId, propertyId, params);
+          expect(null).assertFail();
+        } catch (err) {
+          Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+          expect(err.code).assertEqual(12000012);
         }
       }
     })
@@ -1282,6 +1431,442 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
 
       try {
         await huks.anonAttestKeyItemOffline(keyAlias, attestOptions.properties);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000018);
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ErrorCode_Encapsulate_Interface_0000
+     * @tc.number SUB_Security_HUKS_ErrorCode_Encapsulate_Interface_0000
+     * @tc.desc   Encapsulate tui-pin , expect error 12000001
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_HUKS_ErrorCode_Encapsulate_Interface_0000', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
+      let testNumber: string = "SUB_Security_HUKS_ErrorCode_Encapsulate_Interface_0000";
+      let genKeyAlias: string = testNumber + "_gen";
+      let sharedKeyAlias: string = testNumber + "_shared";
+
+      let generateKeyOptions = GetMlKemGenerateOptions(768);
+      let encapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+      let sharedKeyParams = MergeOptions(GetAesGenerateOptions(256), GetAlwaysValidOptions(), GetChallengeNormalOptions(), GetTuiPinOptions());
+
+      await huks.generateKeyItem(genKeyAlias, generateKeyOptions);
+
+      try {
+        await huks.encapsulate(genKeyAlias, encapParams.properties, sharedKeyAlias, sharedKeyParams.properties);
+        expect(useSoftware).assertEqual(false);
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000001);
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ErrorCode_Encapsulate_Interface_0100
+     * @tc.number SUB_Security_HUKS_ErrorCode_Encapsulate_Interface_0100
+     * @tc.desc   Encapsulate with missing params, expect error 12000002
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_HUKS_ErrorCode_Encapsulate_Interface_0100', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
+      let testNumber: string = "SUB_Security_HUKS_ErrorCode_Encapsulate_Interface_0100";
+      let genKeyAlias: string = testNumber + "_gen";
+
+      let generateKeyOptions = GetMlKemGenerateOptions(768);
+      let emptyParams = GetEmptyOptions();
+
+      await huks.generateKeyItem(genKeyAlias, generateKeyOptions);
+
+      try {
+        await huks.encapsulate(genKeyAlias, emptyParams.properties);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000002);
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ErrorCode_Encapsulate_Interface_0200
+     * @tc.number SUB_Security_HUKS_ErrorCode_Encapsulate_Interface_0200
+     * @tc.desc   Encapsulate with wrong algorithm (RSA), expect error 12000003
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_HUKS_ErrorCode_Encapsulate_Interface_0200', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
+      let testNumber: string = "SUB_Security_HUKS_ErrorCode_Encapsulate_Interface_0200";
+      let genKeyAlias: string = testNumber + "_gen";
+
+      let generateKeyOptions = GetMlKemGenerateOptions(768);
+      let encapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_RSA);
+
+      await huks.generateKeyItem(genKeyAlias, generateKeyOptions);
+
+      try {
+        await huks.encapsulate(genKeyAlias, encapParams.properties);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000003);
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ErrorCode_Encapsulate_Interface_0600
+     * @tc.number SUB_Security_HUKS_ErrorCode_Encapsulate_Interface_0600
+     * @tc.desc   Encapsulate with non-existent key, expect error 12000011
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_HUKS_ErrorCode_Encapsulate_Interface_0600', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
+      let testNumber: string = "SUB_Security_HUKS_ErrorCode_Encapsulate_Interface_0600";
+
+      let nonExistKeyAlias: string = testNumber + "_nonexist";
+
+      let encapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+
+      try {
+        await huks.encapsulate(nonExistKeyAlias, encapParams.properties);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000011);
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ErrorCode_Encapsulate_Interface_0800
+     * @tc.number SUB_Security_HUKS_ErrorCode_Encapsulate_Interface_0800
+     * @tc.desc   Encapsulate with non-existent key, expect error 12000013
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_HUKS_ErrorCode_Encapsulate_Interface_0800', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
+      let testNumber: string = "SUB_Security_HUKS_ErrorCode_Encapsulate_Interface_0800";
+
+      let genKeyAlias: string = testNumber + "_gen";
+      let sharedKeyAlias: string = testNumber + "_shared";
+
+      let generateKeyOptions = GetMlKemGenerateOptions(768);
+      let encapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+      let sharedKeyParams = MergeOptions(GetAesGenerateOptions(256), GetAccessControlOptions());
+
+      await huks.generateKeyItem(genKeyAlias, generateKeyOptions);
+
+      try {
+        await huks.encapsulate(genKeyAlias, encapParams.properties, sharedKeyAlias, sharedKeyParams.properties);
+        expect(useSoftware).assertEqual(false);
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000013);
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ErrorCode_Encapsulate_Interface_1100
+     * @tc.number SUB_Security_HUKS_ErrorCode_Encapsulate_Interface_1100
+     * @tc.desc   Encapsulate with IS_DEVICE_PASSWORD_SET in sharedKeyParams, expect error 12000016
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_HUKS_ErrorCode_Encapsulate_Interface_1100', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
+      let testNumber: string = "SUB_Security_HUKS_ErrorCode_Encapsulate_Interface_1100";
+      let genKeyAlias: string = testNumber + "_gen";
+      let sharedKeyAlias: string = testNumber + "_shared";
+
+      let generateKeyOptions = GetMlKemGenerateOptions(768);
+      let encapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+      let sharedKeyParams = MergeOptions(GetCtrNoPaddingOptions(16), GetAesGenerateOptions(256));
+      AddParam(sharedKeyParams, huks.HuksTag.HUKS_TAG_IS_DEVICE_PASSWORD_SET, true);
+
+      await huks.generateKeyItem(genKeyAlias, generateKeyOptions);
+
+      try {
+        await huks.encapsulate(genKeyAlias, encapParams.properties, sharedKeyAlias, sharedKeyParams.properties);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000016);
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ErrorCode_Encapsulate_Interface_1200
+     * @tc.number SUB_Security_HUKS_ErrorCode_Encapsulate_Interface_1200
+     * @tc.desc   Encapsulate with IS_DEVICE_PASSWORD_SET in sharedKeyParams, expect error 12000017
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_HUKS_ErrorCode_Encapsulate_Interface_1200', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
+      let testNumber: string = "SUB_Security_HUKS_ErrorCode_Encapsulate_Interface_1200";
+      let genKeyAlias: string = testNumber + "_gen";
+      let sharedKeyAlias: string = testNumber + "_shared";
+
+      let generateKeyOptions = GetMlKemGenerateOptions(768);
+      let encapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+      let sharedKeyParams = MergeOptions(GetCtrNoPaddingOptions(16), GetAesGenerateOptions(256));
+      AddParam(sharedKeyParams, huks.HuksTag.HUKS_TAG_KEY_OVERRIDE, false);
+
+      await huks.generateKeyItem(genKeyAlias, generateKeyOptions);
+
+      await huks.generateKeyItem(sharedKeyAlias, generateKeyOptions);
+      try {
+        await huks.encapsulate(genKeyAlias, encapParams.properties, sharedKeyAlias, sharedKeyParams.properties);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000017);
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ErrorCode_Encapsulate_Interface_1300
+     * @tc.number SUB_Security_HUKS_ErrorCode_Encapsulate_Interface_1300
+     * @tc.desc   Encapsulate with user auth access control in sharedKeyParams, expect error 12000018
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_HUKS_ErrorCode_Encapsulate_Interface_1300', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
+      let testNumber: string = "SUB_Security_HUKS_ErrorCode_Encapsulate_Interface_1300";
+      let genKeyAlias: string = testNumber + "_gen";
+      let sharedKeyAlias: string = testNumber + "_shared";
+
+      let generateKeyOptions = GetMlKemGenerateOptions(768);
+      let encapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+      let sharedKeyParams = MergeOptions(GetAesGenerateOptions(256), GetAccessGroupOptions("group_not_exist"));
+
+      await huks.generateKeyItem(genKeyAlias, generateKeyOptions);
+
+      try {
+        await huks.encapsulate(genKeyAlias, encapParams.properties, sharedKeyAlias, sharedKeyParams.properties);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000018);
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ErrorCode_Decapsulate_Interface_0000
+     * @tc.number SUB_Security_HUKS_ErrorCode_Decapsulate_Interface_0000
+     * @tc.desc   Decapsulate tui-pin, expect error 12000001
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_HUKS_ErrorCode_Decapsulate_Interface_0000', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
+      let testNumber: string = "SUB_Security_HUKS_ErrorCode_Decapsulate_Interface_0000";
+      let genKeyAlias: string = testNumber + "_gen";
+      let sharedKeyAlias: string = testNumber + "_shared";
+
+      let generateKeyOptions = GetMlKemGenerateOptions(768);
+      let decapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+      let sharedKeyParams = MergeOptions(GetAesGenerateOptions(256), GetAlwaysValidOptions(), GetChallengeNormalOptions(), GetTuiPinOptions());
+
+      await huks.generateKeyItem(genKeyAlias, generateKeyOptions);
+
+      try {
+        await huks.decapsulate(genKeyAlias, decapParams.properties, new Uint8Array(1088), sharedKeyAlias, sharedKeyParams.properties);
+        expect(useSoftware).assertEqual(false);
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000001);
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ErrorCode_Decapsulate_Interface_0100
+     * @tc.number SUB_Security_HUKS_ErrorCode_Decapsulate_Interface_0100
+     * @tc.desc   Decapsulate with missing params, expect error 12000002
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_HUKS_ErrorCode_Decapsulate_Interface_0100', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
+      let testNumber: string = "SUB_Security_HUKS_ErrorCode_Decapsulate_Interface_0100";
+      let genKeyAlias: string = testNumber + "_gen";
+
+      let generateKeyOptions = GetMlKemGenerateOptions(768);
+      let emptyParams = GetEmptyOptions();
+
+      await huks.generateKeyItem(genKeyAlias, generateKeyOptions);
+
+      try {
+        await huks.decapsulate(genKeyAlias, emptyParams.properties, new Uint8Array(1088));
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000002);
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ErrorCode_Decapsulate_Interface_0200
+     * @tc.number SUB_Security_HUKS_ErrorCode_Decapsulate_Interface_0200
+     * @tc.desc   Decapsulate with wrong algorithm (RSA), expect error 12000003
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_HUKS_ErrorCode_Decapsulate_Interface_0200', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
+      let testNumber: string = "SUB_Security_HUKS_ErrorCode_Decapsulate_Interface_0200";
+      let genKeyAlias: string = testNumber + "_gen";
+
+      let generateKeyOptions = GetMlKemGenerateOptions(768);
+      let decapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_RSA);
+
+      await huks.generateKeyItem(genKeyAlias, generateKeyOptions);
+
+      try {
+        await huks.decapsulate(genKeyAlias, decapParams.properties, new Uint8Array(1088));
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000003);
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ErrorCode_Decapsulate_Interface_0600
+     * @tc.number SUB_Security_HUKS_ErrorCode_Decapsulate_Interface_0600
+     * @tc.desc   Decapsulate with non-existent key, expect error 12000011
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_HUKS_ErrorCode_Decapsulate_Interface_0600', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
+      let testNumber: string = "SUB_Security_HUKS_ErrorCode_Decapsulate_Interface_0600";
+      let nonExistKeyAlias: string = testNumber + "_nonexist";
+      let decapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+      try {
+        await huks.decapsulate(nonExistKeyAlias, decapParams.properties, new Uint8Array(1088));
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ITEM_NOT_EXIST);
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ErrorCode_Decapsulate_Interface_0800
+     * @tc.number SUB_Security_HUKS_ErrorCode_Decapsulate_Interface_0800
+     * @tc.desc   Decapsulate with access control in sharedKeyParams, expect error 12000013
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_HUKS_ErrorCode_Decapsulate_Interface_0800', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
+      let testNumber: string = "SUB_Security_HUKS_ErrorCode_Decapsulate_Interface_0800";
+      let genKeyAlias: string = testNumber + "_gen";
+      let sharedKeyAlias: string = testNumber + "_shared";
+
+      let generateKeyOptions = GetMlKemGenerateOptions(768);
+      let decapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+      let sharedKeyParams = MergeOptions(GetCtrNoPaddingOptions(16), GetAesGenerateOptions(256), GetAccessControlOptions());
+
+      await huks.generateKeyItem(genKeyAlias, generateKeyOptions);
+
+      try {
+        await huks.decapsulate(genKeyAlias, decapParams.properties, new Uint8Array(1088), sharedKeyAlias, sharedKeyParams.properties);
+        expect(useSoftware).assertEqual(false);
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_CREDENTIAL_NOT_EXIST);
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ErrorCode_Decapsulate_Interface_1100
+     * @tc.number SUB_Security_HUKS_ErrorCode_Decapsulate_Interface_1100
+     * @tc.desc   Decapsulate with IS_DEVICE_PASSWORD_SET in sharedKeyParams, expect error 12000016
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_HUKS_ErrorCode_Decapsulate_Interface_1100', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
+      let testNumber: string = "SUB_Security_HUKS_ErrorCode_Decapsulate_Interface_1100";
+      let genKeyAlias: string = testNumber + "_gen";
+      let sharedKeyAlias: string = testNumber + "_shared";
+
+      let generateKeyOptions = GetMlKemGenerateOptions(768);
+      let decapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+      let sharedKeyParams = MergeOptions(GetCtrNoPaddingOptions(16), GetAesGenerateOptions(256));
+      AddParam(sharedKeyParams, huks.HuksTag.HUKS_TAG_IS_DEVICE_PASSWORD_SET, true);
+
+      await huks.generateKeyItem(genKeyAlias, generateKeyOptions);
+
+      try {
+        await huks.decapsulate(genKeyAlias, decapParams.properties, new Uint8Array(1088), sharedKeyAlias, sharedKeyParams.properties);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_DEVICE_PASSWORD_UNSET);
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ErrorCode_Decapsulate_Interface_1200
+     * @tc.number SUB_Security_HUKS_ErrorCode_Decapsulate_Interface_1200
+     * @tc.desc   Decapsulate with KEY_OVERRIDE=false and key already exists, expect error 12000017
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_HUKS_ErrorCode_Decapsulate_Interface_1200', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
+      let testNumber: string = "SUB_Security_HUKS_ErrorCode_Decapsulate_Interface_1200";
+      let genKeyAlias: string = testNumber + "_gen";
+      let sharedKeyAlias: string = testNumber + "_shared";
+
+      let generateKeyOptions = GetMlKemGenerateOptions(768);
+      let decapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+      let sharedKeyParams = MergeOptions(GetCtrNoPaddingOptions(16), GetAesGenerateOptions(256));
+      AddParam(sharedKeyParams, huks.HuksTag.HUKS_TAG_KEY_OVERRIDE, false);
+
+      await huks.generateKeyItem(genKeyAlias, generateKeyOptions);
+      await huks.generateKeyItem(sharedKeyAlias, generateKeyOptions);
+
+      try {
+        await huks.decapsulate(genKeyAlias, decapParams.properties, new Uint8Array(1088), sharedKeyAlias, sharedKeyParams.properties);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000017);
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ErrorCode_Decapsulate_Interface_1300
+     * @tc.number SUB_Security_HUKS_ErrorCode_Decapsulate_Interface_1300
+     * @tc.desc   Decapsulate with user auth access group in sharedKeyParams, expect error 12000018
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_HUKS_ErrorCode_Decapsulate_Interface_1300', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
+      let testNumber: string = "SUB_Security_HUKS_ErrorCode_Decapsulate_Interface_1300";
+      let genKeyAlias: string = testNumber + "_gen";
+      let sharedKeyAlias: string = testNumber + "_shared";
+
+      let generateKeyOptions = GetMlKemGenerateOptions(768);
+      let decapParams = SetParam(GetEmptyOptions(), huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_ML_KEM);
+      let sharedKeyParams = MergeOptions(GetAesGenerateOptions(256), GetAccessGroupOptions("group_not_exist"));
+
+      await huks.generateKeyItem(genKeyAlias, generateKeyOptions);
+
+      try {
+        await huks.decapsulate(genKeyAlias, decapParams.properties, new Uint8Array(1088), sharedKeyAlias, sharedKeyParams.properties);
         expect(null).assertFail();
       } catch (err) {
         Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);

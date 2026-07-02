@@ -58,12 +58,12 @@ export default function AnimatorEase() {
       let driver = Driver.create();
       await Utils.sleep(1000);
 
-      let playBtn: Component = await driver.findComponent(ON.id('Play'));
+      let playBtn: Component = await driver.findComponent(ON.id('AnimatorEase_Play'));
       await playBtn.click()
       console.info('[AnimatorEase_0100] playBtn click');
       await driver.delayMs(2000);
 
-      let cancelBtn: Component = await driver.findComponent(ON.id('Cancel'));
+      let cancelBtn: Component = await driver.findComponent(ON.id('AnimatorEase_Cancel'));
       await cancelBtn.click()
       console.info('[AnimatorEase_0100] cancelBtn click');
       await driver.delayMs(2000);
@@ -72,11 +72,11 @@ export default function AnimatorEase() {
       console.info('[AnimatorEase_0100] strJson1: ' + JSON.parse(strJson1).$attrs.content);
       let strJson2: string = getInspectorByKey('Test002');
       console.info('[AnimatorEase_0100] strJson2: ' + JSON.parse(strJson2).$attrs.content);
-      let strJson3: string = getInspectorByKey('Test003');
+      let strJson3: string = getInspectorByKey('AnimatorEase_Test003');
       console.info('[AnimatorEase_0100] strJson3: ' + JSON.parse(strJson3).$attrs.content);
-      let strJson4: string = getInspectorByKey('Test004');
+      let strJson4: string = getInspectorByKey('AnimatorEase_Test004');
       console.info('[AnimatorEase_0100] strJson4: ' + JSON.parse(strJson4).$attrs.content);
-      let strJson5: string = getInspectorByKey('Test005');
+      let strJson5: string = getInspectorByKey('AnimatorEase_Test005');
       console.info('[AnimatorEase_0100] strJson5: ' + JSON.parse(strJson5).$attrs.content);
       let strJson6: string = getInspectorByKey('Test006');
       console.info('[AnimatorEase_0100] strJson6: ' + JSON.parse(strJson6).$attrs.content);

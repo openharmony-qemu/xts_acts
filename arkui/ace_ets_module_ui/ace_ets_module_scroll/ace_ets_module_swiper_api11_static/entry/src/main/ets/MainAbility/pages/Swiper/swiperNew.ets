@@ -13,52 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Component,
-  SwiperController,
-  Column,
-  Text,
-  LazyForEach,
-  Margin,
-  IDataSource,
-  DataChangeListener,
-  DotIndicator,
-  ColumnOptions,
-  Swiper,
-  TextAlign,
-  Color,
-  EdgeEffect,
-  Visibility,
-  ClickEvent,
-  SwiperDisplayMode,
-  SwiperAnimationEvent,
-  Row,
-  RowOptions,
-  Button,
-  Curve,
-  SwiperAnimationEvent,
-  HorizontalAlign,
-  ArrowStyle,
-  SwiperAutoFill,
-  Padding,
-  Indicator,
-  FontWeight,
-  Flex,
-  FlexAlign,
-  List,
-  ListItem,
-  $r,
-  Alignment,
-  TextOverflow,
-  SwiperAutoFill,
-  FlexDirection,
-  ItemAlign,
-  Scroll
-} from '@ohos.arkui.component';
+import { Entry, Component, SwiperController, Column, Text, LazyForEach, Margin, IDataSource, DataChangeListener, DotIndicator, ColumnOptions, Swiper, TextAlign, Color, EdgeEffect, Visibility, ClickEvent, SwiperDisplayMode, SwiperAnimationEvent, Row, RowOptions, Button, Curve, HorizontalAlign, ArrowStyle, SwiperAutoFill, Padding, Indicator, FontWeight, Flex, FlexAlign, List, ListItem, $r, Alignment, TextOverflow, FlexDirection, ItemAlign, Scroll } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import Log from '../../common/Log';
-
 export class MyDataSource implements IDataSource<number> {
   private list: number[] = [] as number[]
   private listener?: DataChangeListener = undefined
@@ -118,7 +75,7 @@ struct SwiperCurve {
               .fontSize(20)
           }, (item: number) => item.toString())
         }
-        .key("swiper")
+        .key("swiperNew_swiper")
         .cachedCount(2)
         .index(1)
         .autoPlay(true)

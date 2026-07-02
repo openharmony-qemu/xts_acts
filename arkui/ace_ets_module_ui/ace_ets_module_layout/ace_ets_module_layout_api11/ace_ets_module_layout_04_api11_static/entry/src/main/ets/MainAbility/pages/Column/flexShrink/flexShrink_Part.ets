@@ -37,10 +37,10 @@ struct flexShrink_Part {
   }
   build() {
     Column({space:10} as ColumnOptions) {
-      Column(){Text('1')}.width(300).height(300).backgroundColor(0xF5DEB3).key('Column_flexShrink_011')
-      Column(){Text('2')}.width(300).height(100).flexShrink(this.addflexShrink).backgroundColor(0xD2B48C).key('Column_flexShrink_012')
-      Column(){Text('3')}.width(300).height(100).flexShrink(this.addflexShrink).backgroundColor(0xF5DEB3).key('Column_flexShrink_013')
-    }.key('Column_flexShrink_01').width(350).height(450).backgroundColor(0xAFEEEE)
+      Column(){Text('1')}.width(300).height(300).backgroundColor(0xF5DEB3).key('flexShrink_Part_Column_flexShrink_011')
+      Column(){Text('2')}.width(300).height(100).flexShrink(this.addflexShrink).backgroundColor(0xD2B48C).key('flexShrink_Part_Column_flexShrink_012')
+      Column(){Text('3')}.width(300).height(100).flexShrink(this.addflexShrink).backgroundColor(0xF5DEB3).key('flexShrink_Part_Column_flexShrink_013')
+    }.key('flexShrink_Part_Column_flexShrink_01').width(350).height(450).backgroundColor(0xAFEEEE)
 
   }
 }

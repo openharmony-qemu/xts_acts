@@ -76,7 +76,7 @@ struct TextPickerTextStyleThreeExample {
         .disappearTextStyle(this.disappearTextStyle)
         .textStyle(this.textStyle)
         .selectedTextStyle(this.selectedTextStyle)
-        .key('textPicker')
+        .key('textPickerTextStyleThree_textPicker')
         .onChange((value: string | string[], index: number | number[]) => {
           console.info('Picker item changed, value: ' + value + ', index: ' + index)
         })
@@ -85,7 +85,7 @@ struct TextPickerTextStyleThreeExample {
         .disappearTextStyle(this.disappearTextStyleDefault)
         .textStyle(this.textStyleDefault)
         .selectedTextStyle(this.selectedTextStyleDefault)
-        .key('textPickerDefault')
+        .key('textPickerTextStyleThree_textPickerDefault')
         .onChange((value: string | string[], index: number | number[]) => {
           console.info('Picker item changed, value: ' + value + ', index: ' + index)
         })

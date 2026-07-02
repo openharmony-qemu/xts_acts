@@ -542,9 +542,9 @@ int VideoEncodeHevcCapability0200Test()
 
 int VideoEncodeHevcCapability0300Test()
 {
-    if (cap) {
-        ASSERT_NE(nullptr, cap);
-        ASSERT_EQ(true, OH_AVCapability_IsHardware(cap));
+    if (cap_hevc) {
+        ASSERT_NE(nullptr, cap_hevc);
+        ASSERT_EQ(true, OH_AVCapability_IsHardware(cap_hevc));
         return 0;
     }
     return 0;
@@ -552,9 +552,9 @@ int VideoEncodeHevcCapability0300Test()
 
 int VideoEncodeHevcCapability0400Test()
 {
-    if (cap) {
-        ASSERT_NE(nullptr, cap);
-        const char *name = OH_AVCapability_GetName(cap);
+    if (cap_hevc) {
+        ASSERT_NE(nullptr, cap_hevc);
+        const char *name = OH_AVCapability_GetName(cap_hevc);
         ASSERT_NE(name, nullptr);
         ASSERT_GT(strlen(name), 0);
         return 0;
@@ -1004,6 +1004,71 @@ int VideoEncodeHevcCapability3000Test()
     return 0;
 }
 
+int VideoEncodeSetMaxFrameDelayCount0100Test()
+{
+    if (cap) {
+        venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
+        ASSERT_NE(nullptr, venc_);
+        format = OH_AVFormat_Create();
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_MAX_FRAME_DELAY_COUNT, -1);
+        ASSERT_EQ(AV_ERR_INVALID_VAL, OH_VideoEncoder_Configure(venc_, format));
+    }
+    return 0;
+}
+
+int VideoEncodeSetMaxFrameDelayCount0200Test()
+{
+    if (cap_hevc) {
+        venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
+        ASSERT_NE(nullptr, venc_);
+        format = OH_AVFormat_Create();
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_MAX_FRAME_DELAY_COUNT, -1);
+        ASSERT_EQ(AV_ERR_INVALID_VAL, OH_VideoEncoder_Configure(venc_, format));
+    }
+    return 0;
+}
+
+int VideoEncodeSetMaxFrameDelayCount0300Test()
+{
+    if (cap) {
+        venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
+        ASSERT_NE(nullptr, venc_);
+        format = OH_AVFormat_Create();
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE, CBR);
+        (void)OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, DEFAULT_BITRATE);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_MAX_FRAME_DELAY_COUNT, MAX_PROFILE_NUM);
+        (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
+        ASSERT_EQ(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
+    }
+    return 0;
+}
+
+int VideoEncodeSetMaxFrameDelayCount0400Test()
+{
+    if (cap_hevc) {
+        venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
+        ASSERT_NE(nullptr, venc_);
+        format = OH_AVFormat_Create();
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE, CBR);
+        (void)OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, DEFAULT_BITRATE);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_MAX_FRAME_DELAY_COUNT, MAX_PROFILE_NUM);
+        (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
+        ASSERT_EQ(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
+    }
+    return 0;
+}
 void InitFuncTest2()
 {
     SetUpTestCase();

@@ -1,3 +1,4 @@
+'use static';
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -397,7 +398,7 @@ interface Ichainable_41<T> {
   transform(transformFn: (value: T) => T): this;
 }
 class Chainable_41<T> implements Ichainable_41<T> {
-  private value: T;
+  private value: T = undefined as T;
 
   set(value: T): this {
     this.value = value;
@@ -414,7 +415,7 @@ class Chainable_41<T> implements Ichainable_41<T> {
   }
 }
 class Chainable_42<T> implements Ichainable_41<T> {
-  private value: T;
+  private value: T = undefined as T;
 
   set(value: T): this {
     this.value = value;

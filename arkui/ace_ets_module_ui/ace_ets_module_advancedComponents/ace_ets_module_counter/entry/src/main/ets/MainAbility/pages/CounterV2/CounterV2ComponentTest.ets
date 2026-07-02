@@ -34,8 +34,16 @@ struct CounterV2ComponentTest {
             type: this.mType,
             dateOptions: {
               year: 2016,
+              month: 12,
+              day: 6,
               onDateChange: (date: CounterV2DateData) => {
                 console.log('onDateChange Date: ' + date.toString());
+              },
+              onHoverIncrease: () => {
+                this.value1 = 'onHoverIncrease trigger'
+              },
+              onHoverDecrease: () => {
+                this.value2 = 'onHoverDecrease trigger'
               }
             }
           }

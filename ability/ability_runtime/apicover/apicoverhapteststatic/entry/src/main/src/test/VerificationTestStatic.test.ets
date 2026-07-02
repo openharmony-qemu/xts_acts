@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,18 +14,16 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
-import hilog from '@ohos.hilog'
+import { describe, it, expect, TestType, Size, Level, beforeAll } from '../../../hypium/index';
+import hilog from '@ohos.hilog';
 import Utils from './Util.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { AppStorage } from '@ohos.arkui.stateManagement'
+import { AppStorage } from '@ohos.arkui.stateManagement';
 import Want from '@ohos.app.ability.Want';
 import window from '@ohos.window';
 import common from '@ohos.app.ability.common';
 import { BusinessError, RecordData } from '@ohos.base';
 import { Driver, ON } from '@ohos.UiTest';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 

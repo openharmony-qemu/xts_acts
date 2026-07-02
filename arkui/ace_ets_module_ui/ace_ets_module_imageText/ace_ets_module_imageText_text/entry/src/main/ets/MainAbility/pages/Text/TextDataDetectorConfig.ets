@@ -52,6 +52,7 @@ struct TextDataDetectorConfig1 {
         .padding(10)
         .width('100%')
         .id('text_dataDetectorConfig')
+        .key('text_dataDetectorConfig')
 
     }
 

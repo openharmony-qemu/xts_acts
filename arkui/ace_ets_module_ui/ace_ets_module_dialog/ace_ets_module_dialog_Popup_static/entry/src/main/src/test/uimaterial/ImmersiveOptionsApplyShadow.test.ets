@@ -16,7 +16,7 @@
 
 import router from '@ohos.router';
 import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { abilityDelegatorRegistry, Driver, ON, MatchPattern } from '@kit.TestKit';
+import { abilityDelegatorRegistry, Driver, ON, Component, MatchPattern } from '@kit.TestKit';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -25,13 +25,15 @@ import inspector from '@ohos.arkui.inspector';
 import { uiMaterial } from '@kit.ArkUI';
 import { UtilsTest } from '../Util.test';
 
-export default function ImmersiveOptionsApplyShadowTest() {
+export default function ImmersiveOptionsApplyShadowTest(): void {
   describe('ImmersiveOptionsApplyShadowTest', () => {
-    beforeAll(async (): Promise<void> => {
+    beforeAll(async () => {
+
       console.info("ImmersiveOptionsApplyShadowTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.popup.static", "EntryAbility");
     });
-    beforeEach(async (): Promise<void> => {
+    beforeEach(async () => {
+
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/uimaterial/ImmersiveOptionsApplyShadow',
       }
@@ -61,7 +63,8 @@ export default function ImmersiveOptionsApplyShadowTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ImmersiveOptionsApplyShadowTest_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('ImmersiveOptionsApplyShadowTest_0100', Level.LEVEL2, async () => {
+
       console.info('ImmersiveOptionsApplyShadowTest_0100 START');
       let strJson = JSON.parseJsonElement(inspector.getInspectorByKey('undefined'));
       console.info('ImmersiveOptionsApplyShadowTest_0100 strJson: ' + strJson);
@@ -69,7 +72,6 @@ export default function ImmersiveOptionsApplyShadowTest() {
         .assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveOptionsApplyShadowTest_0100 END');
-      done();
     });
 
     /**
@@ -80,14 +82,14 @@ export default function ImmersiveOptionsApplyShadowTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ImmersiveOptionsApplyShadowTest_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('ImmersiveOptionsApplyShadowTest_0200', Level.LEVEL2, async () => {
+
       console.info('ImmersiveOptionsApplyShadowTest_0200 START');
       let strJson = JSON.parseJsonElement(inspector.getInspectorByKey('true'));
       console.info('ImmersiveOptionsApplyShadowTest_0200 strJson: ' + strJson);
       expect(strJson.getElement('$attrs').getElement('systemMaterial').getElement('material').getString('type'))
         .assertEqual('MaterialType.IMMERSIVE');
       console.info('ImmersiveOptionsApplyShadowTest_0200 END');
-      done();
     });
 
     /**
@@ -98,7 +100,8 @@ export default function ImmersiveOptionsApplyShadowTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ImmersiveOptionsApplyShadowTest_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('ImmersiveOptionsApplyShadowTest_0300', Level.LEVEL2, async () => {
+
       console.info('ImmersiveOptionsApplyShadowTest_0300 START');
       let strJson = JSON.parseJsonElement(inspector.getInspectorByKey('false'));
       console.info('ImmersiveOptionsApplyShadowTest_0300 strJson: ' + strJson);
@@ -106,7 +109,6 @@ export default function ImmersiveOptionsApplyShadowTest() {
         .assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveOptionsApplyShadowTest_0300 END');
-      done();
     });
 
     /**
@@ -117,7 +119,8 @@ export default function ImmersiveOptionsApplyShadowTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ImmersiveOptionsApplyShadowTest_0400', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('ImmersiveOptionsApplyShadowTest_0400', Level.LEVEL2, async () => {
+
       console.info('ImmersiveOptionsApplyShadowTest_0400 START');
       let strJson = JSON.parseJsonElement(inspector.getInspectorByKey('default'));
       console.info('ImmersiveOptionsApplyShadowTest_0400 strJson: ' + strJson);
@@ -125,7 +128,6 @@ export default function ImmersiveOptionsApplyShadowTest() {
         .assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveOptionsApplyShadowTest_0400 END');
-      done();
     });
 
     /**
@@ -136,7 +138,8 @@ export default function ImmersiveOptionsApplyShadowTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ImmersiveOptionsApplyShadowTest_0500', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('ImmersiveOptionsApplyShadowTest_0500', Level.LEVEL2, async () => {
+
       console.info('ImmersiveOptionsApplyShadowTest_0500 START');
       let strJson = JSON.parseJsonElement(inspector.getInspectorByKey('empty'));
       console.info('ImmersiveOptionsApplyShadowTest_0500 strJson: ' + strJson);
@@ -144,7 +147,6 @@ export default function ImmersiveOptionsApplyShadowTest() {
         .assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveOptionsApplyShadowTest_0500 END');
-      done();
     });
   })
 }

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -492,6 +493,133 @@ export default function WindowLayoutTest2() {
       };
     });
 
+    /**
+     * @tc.name   SUB_WINDOW_WINDOWSTAGE_SetSupportedWindowModes_After_TerminateAbility_Static_0100
+     * @tc.number SUB_WINDOW_WINDOWSTAGE_SetSupportedWindowModes_After_TerminateAbility_Static_0100
+     * @tc.desc   SUB_WINDOW_WINDOWSTAGE_SetSupportedWindowModes_After_TerminateAbility_Static_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_WINDOW_WINDOWSTAGE_SetSupportedWindowModes_After_TerminateAbility_Static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        let caseName = "SUB_WINDOW_WINDOWSTAGE_SetSupportedWindowModes_After_TerminateAbility_Static_0100";
+        let msgStr = 'jsunittest ' + caseName + ' ';
+        console.log(msgStr + 'begin.');
+        let windowStageStart = await startAbility(caseName, context!)
+        await terminateAbility(caseName);
+        await Utils.msSleep(1000)
+        try {
+          windowStageStart!.setSupportedWindowModes([bundleManager.SupportWindowMode.SPLIT]).then(async () => {
+            console.info('Succeed in setting window support modes');
+            expect(true).assertFail();
+            done()
+          }).catch(async (err: Error) => {
+            console.error(`${msgStr} Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
+            expect(err.code).assertEqual(1300002);
+            expect(err.message !== '').assertTrue();
+            done();
+          });
+        } catch (err) {
+          console.error(`${msgStr} Failed to set window support modes2. Cause code:${err.code}, messege:${err.message}`);
+          expect(true).assertFail();
+          done();
+        };
+      });
+
+    /**
+     * @tc.name   SUB_WINDOW_WINDOWSTAGE_SetSupportedWindowModes_After_TerminateAbility_Static_0200
+     * @tc.number SUB_WINDOW_WINDOWSTAGE_SetSupportedWindowModes_After_TerminateAbility_Static_0200
+     * @tc.desc   SUB_WINDOW_WINDOWSTAGE_SetSupportedWindowModes_After_TerminateAbility_Static_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_WINDOW_WINDOWSTAGE_SetSupportedWindowModes_After_TerminateAbility_Static_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        let caseName = "SUB_WINDOW_WINDOWSTAGE_SetSupportedWindowModes_After_TerminateAbility_Static_0200";
+        let msgStr = 'jsunittest ' + caseName + ' ';
+        console.log(msgStr + 'begin.');
+        let windowStageStart = await startAbility(caseName, context!)
+        await terminateAbility(caseName);
+        await Utils.msSleep(1000)
+        try {
+          windowStageStart!.setSupportedWindowModes([bundleManager.SupportWindowMode.SPLIT], true).then(async () => {
+            console.info('Succeed in setting window support modes');
+            expect(true).assertFail();
+            done()
+          }).catch(async (err: Error) => {
+            console.error(`${msgStr} Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
+            expect(err.code).assertEqual(1300002);
+            expect(err.message !== '').assertTrue();
+            done();
+          });
+        } catch (err) {
+          console.error(`${msgStr} Failed to set window support modes2. Cause code:${err.code}, messege:${err.message}`);
+          expect(true).assertFail();
+          done();
+        }
+        ;
+      });
+
+    /**
+     * @tc.number      SUB_WINDOW_recoverError1300001_static_2200
+     * @tc.name        testRecoverError1300001_static_2200
+     * @tc.desc        recover 1300001 repeated operation test.
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level2
+     */
+    it('testRecoverError1300001_static_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testRecoverError1300001_static_2100';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let windowStageStart = await startAbility(caseName, context!);
+        try {
+          let mainWindow: window.Window = windowStageStart.getMainWindowSync();
+          let windowStatusBefore: window.WindowStatusType = mainWindow.getWindowStatus();
+          hilog.info(domain, tag, msgStr + `window status: ${JSON.stringify(windowStatusBefore)}`);
+          if (windowStatusBefore !== window.WindowStatusType.FLOATING) {
+            await mainWindow.recover();
+            hilog.info(domain, tag, msgStr + 'Succeeded in recover');
+          }
+          mainWindow.recover().then(async () => {
+            hilog.info(domain, tag, msgStr + 'Succeeded in recovering window from duration=200.');
+            await terminateAbility(caseName);
+            expect(false).assertTrue();
+            done();
+          }).catch(async (err: Error) => {
+            await terminateAbility(caseName);
+            if (!isFreeWindowMode) {
+              hilog.info(domain, tag,
+                msgStr + `Capability not supported, skip test. Cause code: ${err!.code}, message: ${err!.message}`);
+              expect(err!.code).assertEqual(801);
+              done();
+            } else {
+              hilog.info(domain, tag,
+                msgStr + `Repeated operation. Cause code: ${err!.code}, message: ${err!.message}`);
+              expect(err!.code).assertEqual(1300001);
+              expect(err!.message !== '').assertTrue();
+              done();
+            }
+          });
+        } catch (exception) {
+          await terminateAbility(caseName);
+          if (!isSyscapSessionManagerSupported || !isFreeWindowMode) {
+            hilog.info(domain, tag, msgStr +
+              `Capability not supported, skip test. Cause code: ${exception!.code}, message: ${exception.message}`);
+            expect(exception!.code).assertEqual(801);
+            done();
+          } else {
+            hilog.error(domain, tag, msgStr +
+              `Failed to recover window or getmainwindow. Cause code: ${exception!.code}, message: ${exception.message}`);
+            expect(false).assertTrue();
+            done();
+          }
+        }
+      })
+      
     })
 
 }

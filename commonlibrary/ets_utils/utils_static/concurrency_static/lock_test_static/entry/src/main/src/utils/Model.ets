@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 
 export class Event {
@@ -57,7 +57,7 @@ export class SharedJob<T> {
     this.jobs = jobs;
   }
 
-  public async Await() {
+  public async Await(): Promise<void> {
     for (let job of this.jobs) {
       await job;
     }

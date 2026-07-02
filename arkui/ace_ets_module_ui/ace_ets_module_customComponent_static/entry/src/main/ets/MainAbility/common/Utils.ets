@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,6 @@
  * limitations under the License.
  */
 
-'use static';
 /**
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -42,7 +42,7 @@ export default class Utils {
   static rect_bottom: number = 0;
   static rect_value: RectValue = new RectValue();
 
-  static getComponentRect(key: string) {
+  static getComponentRect(key: string): RectValue {
     let strJson: string = inspector.getInspectorByKey(key);
     let obj: Record<string, Object> = JSON.parse<Object>(strJson, Class.from<String>()) as Record<string, Object>;
     console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));

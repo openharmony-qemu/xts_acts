@@ -66,10 +66,10 @@ export default function AlertDialogJsunit() {
 	    await driver.pressBack();
 	    await CommonFunc.sleep(500);
 	  
-      let button2 = await driver.findComponent(ON.id('AlertDialog2'));
+      let button2 = await driver.findComponent(ON.id('AlertDialogParam' + '_AlertDialog2'));
       await button2.click();
       await CommonFunc.sleep(1000);
-	    let strJson2 = getInspectorByKey('AlertDialog2');
+	    let strJson2 = getInspectorByKey('AlertDialogParam' + '_AlertDialog2');
       let obj2: ESObject = JSON.parse(strJson2);
       console.info("[AlertDialogJsunit_0100] component obj2 is: " + JSON.stringify(obj2));
       expect(obj2.$attrs.label).assertEqual("two button dialog");

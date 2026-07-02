@@ -105,7 +105,7 @@ struct SwiperLoopTest {
             this.index = 8
             this.loop = false
             this.autoPlay = true
-          }).key('swiperLoopButton4')
+          }).key('SwiperLoop_swiperLoopButton4_01')
       }
 
       Button('autoPlay: true')
@@ -114,7 +114,7 @@ struct SwiperLoopTest {
             this.index = 8
             this.loop = false
             this.autoPlay = true
-          }).key('swiperLoopButton4')
+          }).key('SwiperLoop_swiperLoopButton4_02')
 
     }.width('100%')
     .margin({ top: 5 })

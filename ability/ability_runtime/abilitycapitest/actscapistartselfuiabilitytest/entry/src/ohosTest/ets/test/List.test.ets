@@ -24,6 +24,9 @@ import NdkSetIsolationUidTest from './NdkSetIsolationUidTest.test';
 import NdkGetLogDirTest from './NdkGetLogDirTest.test';
 import NdkKillChildProcessTest from './NdkKillChildProcessTest.test';
 import NdkNotifyPageChangedTest from './NdkNotifyPageChanged.test';
+import NdkModularObjectExtensionManagerTest from './NdkModularObjectExtensionManager.test';
+import NdkModularObjectExtensionContextTest from './NdkModularObjectExtensionContext.test';
+import NdkModularObjectExtensionAbilityTest from './NdkModularObjectExtensionAbility.test';
 
 export default function testsuite() {
   NdkWantTest();
@@ -37,4 +40,7 @@ export default function testsuite() {
   NdkGetLogDirTest();
   NdkKillChildProcessTest();
   NdkNotifyPageChangedTest();
+  NdkModularObjectExtensionManagerTest();
+  NdkModularObjectExtensionContextTest();
+  NdkModularObjectExtensionAbilityTest();
 }

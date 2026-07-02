@@ -14,13 +14,11 @@
  * limitations under the License.
  */
 
-import { ChipGroup, 	IconOptions, IconGroupSuffix,ChipGroupItemOptions,ChipItemStyle,IconItemOptions,SymbolItemOptions  } from '@ohos.arkui.advanced.ChipGroup';
+import { ChipGroup, IconOptions, IconGroupSuffix, ChipGroupItemOptions, ChipItemStyle, IconItemOptions, SymbolItemOptions } from '@ohos.arkui.advanced.ChipGroup';
 import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
-import { Entry, Component, Column, Color, $r,Builder } from '@ohos.arkui.component';
+import { Entry, Component, Column, Color, $r, Builder } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
-import { ChipSize } from '@ohos.arkui.advanced.Chip'
-import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
-
+import { ChipSize } from '@ohos.arkui.advanced.Chip';
 @Entry
 @Component
 struct ChipGroupSymbolItemOptionsPage {

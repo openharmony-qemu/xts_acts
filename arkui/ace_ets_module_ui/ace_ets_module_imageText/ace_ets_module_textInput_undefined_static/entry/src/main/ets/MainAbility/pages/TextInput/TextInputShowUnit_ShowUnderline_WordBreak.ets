@@ -1,13 +1,7 @@
-'use static'
-import { Entry, Row, Column, Component,Button, ClickEvent,
-  Text, TextArea, TextInput, Search, ResourceStr, $r, LineBreakStrategy, CancelButtonOptions, CancelButtonSymbolOptions,
-  CancelButtonStyle, IconOptions, Length, AttributeModifier, SearchAttribute, TextInputAttribute,
-  IconOptions, Color, CopyOptions, Resource, Font, ResourceColor, TextAreaAttribute, Scroll, TextInputStyle, Builder,
-  Alignment, Rectangle, Select, TextContentStyle, WordBreak
-} from '@ohos.arkui.component'
+'use static';
+import { Entry, Row, Column, Component, Button, ClickEvent, Text, TextArea, TextInput, Search, ResourceStr, $r, LineBreakStrategy, CancelButtonOptions, CancelButtonSymbolOptions, CancelButtonStyle, IconOptions, Length, AttributeModifier, SearchAttribute, TextInputAttribute, Color, CopyOptions, Resource, Font, ResourceColor, TextAreaAttribute, Scroll, TextInputStyle, Builder, Alignment, Rectangle, Select, TextContentStyle, WordBreak } from '@ohos.arkui.component';
 import { State, AppStorage, Observed } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-
 @Entry
 @Component
 struct Index {

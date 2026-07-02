@@ -84,7 +84,7 @@ export default function textAreaOnCaretAndKeyboardTest() {
       await CommonFunc.sleep(500);
       await driver.triggerKey(2070);
       await CommonFunc.sleep(1000);
-      let buttonComponent = await driver.findComponent(ON.id('button'));
+      let buttonComponent = await driver.findComponent(ON.id('textAreaOnCaretAndKeyboard' + '_button'));
       await (buttonComponent?.click() as Promise<void>);
       await CommonFunc.sleep(500);
       let strJson = inspector.getInspectorByKey('textAreaOnCaretAndKeyboard');

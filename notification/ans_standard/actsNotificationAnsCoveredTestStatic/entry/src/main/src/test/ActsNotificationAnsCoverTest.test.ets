@@ -1,3 +1,4 @@
+'use static';
 /*
 * Copyright (c) 2021 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -39,8 +40,7 @@ import router from '@ohos.router'
 import { Router } from '@ohos.arkui.UIContext';
 import { UIContext } from '@ohos.arkui.UIContext'
 import image from '@ohos.multimedia.image';
-import { BusinessError, RecordData } from '@ohos.base';
-import hilog from '@ohos.hilog';
+import { RecordData } from '@ohos.base';
 import WantAgent from '@ohos.app.ability.wantAgent';
 import wantagent from '@ohos.app.ability.wantAgent';
 import Want from '@ohos.app.ability.Want';
@@ -382,6 +382,51 @@ export default function actsNotificationAnsCoveredTest() {
       })
       console.info(TAG + 'Sub_Notification_Ans_Slot_GetSlot_Static_4300 END')
     })
+
+     /**
+     * @tc.name   SUB_Notification_Ans_Notification_Static_4100
+     * @tc.number SUB_Notification_Ans_Notification_Static_4100
+     * @tc.desc   verify the getSlot function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+     it('SUB_Notification_Ans_Notification_Static_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+     async (done: () => void): Promise<void> => {
+       let TAG: string = "SUB_Notification_Ans_Notification_Static_4100"
+       console.info('SUB_Notification_Ans_Notification_Static_4100 START');
+
+       let count: int = 0
+       notificationManager.addSlot(notificationManager.SlotType.LIVE_VIEW, (err: BusinessError<void> | null): void => {
+         if (err) {
+           console.error(TAG + `Failed to add slot. Code is ${err.code}, message is ${err.message}`);
+         } else {
+           console.info(TAG + `Succeeded in adding slot.`);
+           notificationManager.getSlot(notificationManager.SlotType.LIVE_VIEW, (err: BusinessError<void> | null,
+             data: notificationManager.NotificationSlot | undefined | null): void => {
+             if (err) {
+               console.info(`${TAG} getSlot AsyncCallback err: ${err?.code}`);
+               expect(false).assertTrue();
+               done();
+             } else {
+               console.info(`${TAG} getSlot AsyncCallback success ${JSON.stringify(data)}`);
+               expect(data?.notificationType).assertEqual(4);
+               expect(data?.badgeFlag).assertEqual(true);
+               expect(data?.bypassDnd).assertEqual(false);
+               expect(data?.vibrationEnabled).assertEqual(true);
+               expect(data?.lockscreenVisibility).assertEqual(2);
+               expect(data?.sound).assertEqual("file://system/etc/Light.ogg");
+               expect(data?.lightEnabled).assertEqual(false);
+               expect(data?.enabled).assertEqual(true);
+               expect(data?.vibrationValues?.[0]).assertEqual(200);
+               expect(data?.lightColor).assertEqual(0);
+               console.info(TAG + 'Acts_NotificationSlot_0100 END');
+               done();
+             }
+           })
+         }
+       })
+     })
 
     /**
      * @tc.name   Sub_Notification_Ans_Slot_DeleteSlot_Static_4000

@@ -28,7 +28,6 @@ public:
         return instance;
     }
 
-    // 函数指针类型定义
     using WcstofLFunc = float (*)(const wchar_t*, wchar_t**, locale_t);
     using FdeltChkFunc = long int (*)(long int);
     using ExplicitBzeroChkFunc = void (*)(void*, size_t, size_t);
@@ -69,7 +68,7 @@ private:
         qsortR_ = reinterpret_cast<QsortRFunc>(loadSymbol("qsort_r"));
     }
 
-    ~LibcFunctionLoader() = default;   // 无需 dlclose
+    ~LibcFunctionLoader() = default;
 
     LibcFunctionLoader(const LibcFunctionLoader&) = delete;
     LibcFunctionLoader& operator=(const LibcFunctionLoader&) = delete;

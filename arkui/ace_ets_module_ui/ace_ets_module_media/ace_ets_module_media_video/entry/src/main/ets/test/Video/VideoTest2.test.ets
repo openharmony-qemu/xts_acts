@@ -16,7 +16,7 @@
 import router from '@ohos.router';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium"
 import CommonFunc from '../../MainAbility/common/Common';
-import { Driver, ON } from '@ohos.UiTest';
+import {Driver, ON, UiDriver, BY} from '@ohos.UiTest';
 
 
 export default function VideoTest2() {
@@ -59,9 +59,9 @@ export default function VideoTest2() {
       console.info('[VideoTest2_0100] START');
       await CommonFunc.sleep(5000);
 
-      let driver = Driver.create();
+      let driver = await UiDriver.create();
       await CommonFunc.sleep(1000);
-      let btn1 = await driver.findComponent(ON.id('VideoTest2_start'));
+      let btn1 = await driver.findComponent(BY.key('VideoTest2_start'));
       await btn1.click()
       console.info("[VideoTest2_0100] btn1");
       await CommonFunc.sleep(3000);

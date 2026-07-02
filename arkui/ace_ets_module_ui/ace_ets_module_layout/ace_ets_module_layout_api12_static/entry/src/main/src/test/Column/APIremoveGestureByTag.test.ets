@@ -15,40 +15,18 @@
  */
 
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import {
-  describe,
-  beforeAll,
-  beforeEach,
-  afterEach,
-  afterAll,
-  it,
-  expect,
-  Level
-} from '../../../../hypium/index';
-import {
-  Component,
-  Driver,
-  UiWindow,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix
-} from '@ohos.UiTest';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import router from '@ohos.router';
-import { Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
-
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
@@ -95,7 +73,7 @@ export default function APIremoveGestureByTag() {
 it('APIremoveGestureByTag_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('APIremoveGestureByTag_static_0100 START');
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('APIremoveGestureByTag_Text01');
+      let strJson = inspector.getInspectorByKey('APIremoveGestureByTag' + '_Text01');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[APIremoveGestureByTag_static_0100] component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('init');

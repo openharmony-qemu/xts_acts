@@ -105,10 +105,10 @@ struct VideoComponentBC1 {
       Row() {
         Button('start').onClick(() => {
           this.controller.start() // 开始播放
-        }).margin(5).key('start')
+        }).margin(5).key('video1_start')
         Button('pause').onClick(() => {
           this.controller.pause() // 暂停播放
-        }).margin(5).key('pause')
+        }).margin(5).key('video1_pause')
         Button('stop').onClick(() => {
           this.controller.stop() // 结束播放
         }).margin(5)

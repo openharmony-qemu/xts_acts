@@ -1,3 +1,4 @@
+'use static';
 import BuiltinsNumberConstructorTest from "./Number001.test";
 import BuiltinsNumberIsFiniteTest from "./Number002.test";
 import BuiltinsNumberIsIntegerTest from "./Number003.test";

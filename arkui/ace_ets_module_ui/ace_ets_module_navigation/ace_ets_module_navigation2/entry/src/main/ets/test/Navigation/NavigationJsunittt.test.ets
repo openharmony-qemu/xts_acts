@@ -56,7 +56,7 @@ export default function navigationJsunittt() {
     it('testNavigation_100',  Level.LEVEL0, async  (done:Function) =>{
       console.info('[testNavigation_100] START');
       await Utils.sleep(1000);
-      let strJson: string = getInspectorByKey('Navigation');
+      let strJson: string = getInspectorByKey('navigationtt' + '_Navigation');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[testNavigation_100] obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.width).assertEqual("100.00%");
@@ -89,7 +89,7 @@ export default function navigationJsunittt() {
       } catch (err) {
         console.info("testNavigation_200 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("testNavigation_200 click result is: " + JSON.stringify(sendEventByKey('NavigationContent1',10,"")));
+      console.info("testNavigation_200 click result is: " + JSON.stringify(sendEventByKey('navigationtt' + '_NavigationContent1',10,"")));
       await Utils.sleep(2000);
       console.info('testNavigation_200 END');
     });
@@ -105,7 +105,7 @@ export default function navigationJsunittt() {
     it('testNavigation_300',  Level.LEVEL0, async  (done:Function) =>{
       console.info('[testNavigation_300] START');
       await Utils.sleep(1000);
-      let strJson: string = getInspectorByKey('Navigation');
+      let strJson: string = getInspectorByKey('navigationtt' + '_Navigation');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[testNavigation_300] obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.height).assertEqual("300.00vp");
@@ -124,7 +124,7 @@ export default function navigationJsunittt() {
     it('testNavigation_400',  Level.LEVEL0, async  (done:Function) =>{
       console.info('[testNavigation_400] START');
       await Utils.sleep(1000);
-      let strJson: string = getInspectorByKey('Navigation');
+      let strJson: string = getInspectorByKey('navigationtt' + '_Navigation');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[testNavigation_400] obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.align).assertEqual("Alignment.Center");

@@ -18,18 +18,14 @@ import router from '@ohos.router';
 import RectValue from '../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
-import { UIContext } from "@ohos.arkui.UIContext";
-import { Router } from '@ohos.arkui.UIContext';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../../Util.test';
-
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
@@ -83,15 +79,15 @@ export default function columnNesting_Space() {
       const uiContext = AppStorage.get<UIContext>('uiContext');
       await CommonFunc.sleep(4000);
       console.log('get Initial value')
-      let columnNesting_Space_011: RectValue = CommonFunc.getComponentRect('columnNesting_Space_011');
-      let columnNesting_Space_012: RectValue = CommonFunc.getComponentRect('columnNesting_Space_012');
-      let columnNesting_Space_013: RectValue = CommonFunc.getComponentRect('columnNesting_Space_013');
-      let columnNesting_Space_01: RectValue = CommonFunc.getComponentRect('columnNesting_Space_01');
-      let columnNesting_Space_021: RectValue = CommonFunc.getComponentRect('columnNesting_Space_021');
-      let columnNesting_Space_022: RectValue = CommonFunc.getComponentRect('columnNesting_Space_022');
-      let columnNesting_Space_023: RectValue = CommonFunc.getComponentRect('columnNesting_Space_023');
-      let columnNesting_Space_02: RectValue = CommonFunc.getComponentRect('columnNesting_Space_02');
-      let columnNesting_Space_1: RectValue = CommonFunc.getComponentRect('columnNesting_Space_1');
+      let columnNesting_Space_011: RectValue = CommonFunc.getComponentRect('columnNesting_Space' + '_011');
+      let columnNesting_Space_012: RectValue = CommonFunc.getComponentRect('columnNesting_Space' + '_012');
+      let columnNesting_Space_013: RectValue = CommonFunc.getComponentRect('columnNesting_Space' + '_013');
+      let columnNesting_Space_01: RectValue = CommonFunc.getComponentRect('columnNesting_Space' + '_01');
+      let columnNesting_Space_021: RectValue = CommonFunc.getComponentRect('columnNesting_Space' + '_021');
+      let columnNesting_Space_022: RectValue = CommonFunc.getComponentRect('columnNesting_Space' + '_022');
+      let columnNesting_Space_023: RectValue = CommonFunc.getComponentRect('columnNesting_Space' + '_023');
+      let columnNesting_Space_02: RectValue = CommonFunc.getComponentRect('columnNesting_Space' + '_02');
+      let columnNesting_Space_1: RectValue = CommonFunc.getComponentRect('columnNesting_Space' + '_1');
       console.log('assert position')
       expect(Math.floor(Math.abs((columnNesting_Space_011.left - columnNesting_Space_01.left) -
         (columnNesting_Space_01.right - columnNesting_Space_011.right))) <= 1)

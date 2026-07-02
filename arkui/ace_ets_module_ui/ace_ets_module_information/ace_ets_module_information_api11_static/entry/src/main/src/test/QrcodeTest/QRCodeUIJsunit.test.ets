@@ -56,7 +56,7 @@ export default function QRCodeUIJsunit() {
         }
       } catch (err) {
         console.error("push QRCodeUIJsunit page error: " + err);
-        expect().assertFail();
+        expect(false).assertEqual(true);
       }
     });
     /**

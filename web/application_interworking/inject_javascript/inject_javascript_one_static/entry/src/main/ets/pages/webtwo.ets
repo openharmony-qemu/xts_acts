@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,30 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  OnTouchIconUrlReceivedEvent,
-  OnPageEndEvent,
-  OnHttpErrorReceiveEvent,
-  OnSearchResultReceiveEvent,
-  WebDarkMode,
-  Entry,
-  Component,
-  Column,
-  Row,
-  Button,
-  ClickEvent,
-  Web,
-  Text
-} from "@ohos.arkui.component"
-import { State } from "@ohos.arkui.stateManagement" // should be insert by ui-plugins
-import web_webview from '@ohos.web.webview'
-import { BusinessError, RecordData } from '@ohos.base';
+import { OnTouchIconUrlReceivedEvent, OnPageEndEvent, OnHttpErrorReceiveEvent, OnSearchResultReceiveEvent, WebDarkMode, Entry, Component, Column, Row, Button, ClickEvent, Web, Text } from '@ohos.arkui.component';
+import { State } from '@ohos.arkui.stateManagement';
+import web_webview from '@ohos.web.webview';
+import { BusinessError, RecordData, Callback } from '@ohos.base';
 import Utils from '../../src/test/Util.test';
 import emitter from '@ohos.events.emitter';
 import events_emitter from '@ohos.events.emitter';
-import { UIContext, Router } from '@ohos.arkui.UIContext'
-import { Callback,RecordData } from '@ohos.base'
-
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 export class StringFields {
   public str: string = '';
 }

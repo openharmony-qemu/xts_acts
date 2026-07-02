@@ -512,5 +512,22 @@ export default function TypeNodeTest() {
       } catch (error) { expect().assertFail(); done(); }
     });
 
+    /**
+     * @tc.number SUB_ARKUI_ACE_TYPENODE_2800
+     * @tc.name tn_getSwiperAttribute
+     * @tc.desc Verify TypedFrameNode.getSwiperAttribute returns valid result stored in AppStorage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('tn_getSwiperAttribute', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        await CommonFunc.sleep(SLEEP_TIME);
+        let val = AppStorage.get<string>('tn_getSwiperAttribute');
+        expect(val != null && val != undefined).assertTrue();
+        done();
+      } catch (error) { expect().assertFail(); done(); }
+    });
+
   });
 }

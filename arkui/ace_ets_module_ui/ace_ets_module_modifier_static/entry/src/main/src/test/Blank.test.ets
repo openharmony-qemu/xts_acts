@@ -86,7 +86,7 @@ it('blankTest_static_0002', Level.LEVEL0, async (done: () => void): Promise<void
 
       console.info('blankTest_static_0002 START');
       let driver = Driver.create();
-      let button = await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button = await (driver.findComponent(ON.id('blank' + '_changeButton')) as Promise<Component>);
       await button.click();
       await UtilsTest.msSleep(2000)
 

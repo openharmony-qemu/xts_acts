@@ -15,8 +15,10 @@
 import pictureNdkTest from './PictureNdk.test'
 import packPictureNdkTest from './PackPictureNdk.test'
 import gifIncompleteTest from './GifIncomplete.test'
+import imagePrivateApiRectification from './ImagePrivateApiRectification.test'
 export default function testsuite() {
   pictureNdkTest()
   packPictureNdkTest()
   gifIncompleteTest()
+  imagePrivateApiRectification()
 }

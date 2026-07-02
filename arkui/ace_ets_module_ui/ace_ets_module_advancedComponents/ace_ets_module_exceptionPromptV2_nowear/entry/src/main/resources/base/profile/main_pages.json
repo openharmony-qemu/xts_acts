@@ -1,0 +1,7 @@
+{
+  "src": [
+    "MainAbility/pages/index/Index",
+    "MainAbility/pages/exceptionPromptV2/ExceptionPromptV2Page",
+    "MainAbility/pages/exceptionPromptV2/ExceptionPromptV2Page01"
+  ]
+}

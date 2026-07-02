@@ -22,7 +22,7 @@ let domain: Int = 0x0000;
 let tag: string = 'ActsAceEtsModuleImageTextNowearApi18StaticTest';
 
 class UtilsTest{
-  static isStartedAbility = false;
+  static isStartedAbility: boolean = false;
 
 
 

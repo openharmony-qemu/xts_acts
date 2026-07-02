@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -70,7 +70,7 @@ export default function getAlbumsStaticTest(): void {
         helper!.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC, fetchOps,
           (error: BusinessError<void> | null,
             fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> | undefined) => {
-            expect(fetchResult !== undefined).assertTrue();
+            expect(fetchResult!.isAfterLast()).assertFalse();
             done();
           });
       } catch (error) {
@@ -99,7 +99,7 @@ export default function getAlbumsStaticTest(): void {
         helper!.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.FAVORITE, fetchOps,
           (error: BusinessError<void> | null,
             fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> | undefined) => {
-            expect(fetchResult !== undefined).assertTrue();
+            expect(fetchResult!.isAfterLast()).assertTrue();
             done();
           });
       } catch (error) {
@@ -128,7 +128,7 @@ export default function getAlbumsStaticTest(): void {
         helper!.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.VIDEO, fetchOps,
           (error: BusinessError<void> | null,
             fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> | undefined) => {
-            expect(fetchResult !== undefined).assertTrue();
+            expect(fetchResult!.isAfterLast()).assertTrue();
             done();
           });
       } catch (error) {
@@ -157,7 +157,7 @@ export default function getAlbumsStaticTest(): void {
         helper!.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.IMAGE, fetchOps,
           (error: BusinessError<void> | null,
             fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> | undefined) => {
-            expect(fetchResult !== undefined).assertTrue();
+            expect(fetchResult!.isAfterLast()).assertTrue();
             done();
           });
       } catch (error) {
@@ -186,7 +186,7 @@ export default function getAlbumsStaticTest(): void {
         helper!.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.ANY, fetchOps,
           (error: BusinessError<void> | null,
             fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> | undefined) => {
-            expect(fetchResult !== undefined).assertTrue();
+            expect(fetchResult!.isAfterLast()).assertFalse();
             done();
           });
       } catch (error) {
@@ -215,7 +215,7 @@ export default function getAlbumsStaticTest(): void {
         helper!.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC, fetchOps,
           (error: BusinessError<void> | null,
             fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> | undefined) => {
-            expect(fetchResult !== undefined).assertTrue();
+            expect(fetchResult!.isAfterLast()).assertFalse();
             done();
           });
       } catch (error) {
@@ -244,7 +244,7 @@ export default function getAlbumsStaticTest(): void {
         helper!.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC, fetchOps,
           (error: BusinessError<void> | null,
             fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> | undefined) => {
-            expect(fetchResult !== undefined).assertTrue();
+            expect(fetchResult!.isAfterLast()).assertFalse();
             done();
           });
       } catch (error) {
@@ -272,7 +272,7 @@ export default function getAlbumsStaticTest(): void {
         helper!.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.USER_GENERIC, fetchOps,
           (error: BusinessError<void> | null,
             fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> | undefined) => {
-            expect(fetchResult !== undefined).assertTrue();
+            expect(fetchResult!.isAfterLast()).assertTrue();
             done();
           });
       } catch (error) {
@@ -301,7 +301,7 @@ export default function getAlbumsStaticTest(): void {
         helper!.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.FAVORITE, fetchOps,
           (error: BusinessError<void> | null,
             fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> | undefined) => {
-            expect(fetchResult !== undefined).assertTrue();
+            expect(fetchResult!.isAfterLast()).assertFalse();
             done();
           });
       } catch (error) {
@@ -330,7 +330,7 @@ export default function getAlbumsStaticTest(): void {
         helper!.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO, fetchOps,
           (error: BusinessError<void> | null,
             fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> | undefined) => {
-            expect(fetchResult !== undefined).assertTrue();
+            expect(fetchResult!.isAfterLast()).assertFalse();
             done();
           });
       } catch (error) {
@@ -359,7 +359,7 @@ export default function getAlbumsStaticTest(): void {
         helper!.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE, fetchOps,
           (error: BusinessError<void> | null,
             fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> | undefined) => {
-            expect(fetchResult !== undefined).assertTrue();
+            expect(fetchResult!.isAfterLast()).assertFalse();
             done();
           });
       } catch (error) {
@@ -389,7 +389,7 @@ export default function getAlbumsStaticTest(): void {
         helper!.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.ANY, fetchOps,
           (error: BusinessError<void> | null,
             fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> | undefined) => {
-            expect(fetchResult !== undefined).assertTrue();
+            expect(fetchResult!.isAfterLast()).assertFalse();
             done();
           });
       } catch (error) {
@@ -418,7 +418,7 @@ export default function getAlbumsStaticTest(): void {
         helper!.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.USER_GENERIC, fetchOps,
           (error: BusinessError<void> | null,
             fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> | undefined) => {
-            expect(fetchResult !== undefined).assertTrue();
+            expect(fetchResult!.isAfterLast()).assertFalse();
             done();
           });
       } catch (error) {
@@ -443,7 +443,7 @@ export default function getAlbumsStaticTest(): void {
         helper!.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC,
           (error: BusinessError<void> | null,
             fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> | undefined) => {
-            expect(fetchResult !== undefined).assertTrue();
+            expect(fetchResult!.isAfterLast()).assertFalse();
             done();
           });
       } catch (error) {
@@ -468,7 +468,7 @@ export default function getAlbumsStaticTest(): void {
         helper!.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.FAVORITE,
           (error: BusinessError<void> | null,
             fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> | undefined) => {
-            expect(fetchResult !== undefined).assertTrue();
+            expect(fetchResult!.isAfterLast()).assertTrue();
             done();
           });
       } catch (error) {
@@ -493,7 +493,7 @@ export default function getAlbumsStaticTest(): void {
         helper!.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.VIDEO,
           (error: BusinessError<void> | null,
             fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> | undefined) => {
-            expect(fetchResult !== undefined).assertTrue();
+            expect(fetchResult!.isAfterLast()).assertTrue();
             done();
           });
       } catch (error) {
@@ -518,7 +518,7 @@ export default function getAlbumsStaticTest(): void {
         helper!.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.IMAGE,
           (error: BusinessError<void> | null,
             fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> | undefined) => {
-            expect(fetchResult !== undefined).assertTrue();
+            expect(fetchResult!.isAfterLast()).assertTrue();
             done();
           });
       } catch (error) {
@@ -543,7 +543,7 @@ export default function getAlbumsStaticTest(): void {
         helper!.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.ANY,
           (error: BusinessError<void> | null,
             fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> | undefined) => {
-            expect(fetchResult !== undefined).assertTrue();
+            expect(fetchResult!.isAfterLast()).assertFalse();
             done();
           });
       } catch (error) {
@@ -569,7 +569,7 @@ export default function getAlbumsStaticTest(): void {
         helper!.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.USER_GENERIC,
           (error: BusinessError<void> | null,
             fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> | undefined) => {
-            expect(fetchResult !== undefined).assertTrue();
+            expect(fetchResult!.isAfterLast()).assertTrue();
             done();
           });
       } catch (error) {
@@ -594,7 +594,7 @@ export default function getAlbumsStaticTest(): void {
         helper!.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.FAVORITE,
           (error: BusinessError<void> | null,
             fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> | undefined) => {
-            expect(fetchResult !== undefined).assertTrue();
+            expect(fetchResult!.isAfterLast()).assertFalse();
             done();
           });
       } catch (error) {
@@ -619,7 +619,7 @@ export default function getAlbumsStaticTest(): void {
         helper!.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO,
           (error: BusinessError<void> | null,
             fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> | undefined) => {
-            expect(fetchResult !== undefined).assertTrue();
+            expect(fetchResult!.isAfterLast()).assertFalse();
             done();
           });
       } catch (error) {
@@ -644,7 +644,7 @@ export default function getAlbumsStaticTest(): void {
         helper!.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE,
           (error: BusinessError<void> | null,
             fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> | undefined) => {
-            expect(fetchResult !== undefined).assertTrue();
+            expect(fetchResult!.isAfterLast()).assertFalse();
             done();
           });
       } catch (error) {
@@ -669,7 +669,7 @@ export default function getAlbumsStaticTest(): void {
         helper!.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.ANY,
           (error: BusinessError<void> | null,
             fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> | undefined) => {
-            expect(fetchResult !== undefined).assertTrue();
+            expect(fetchResult!.isAfterLast()).assertFalse();
             done();
           });
       } catch (error) {
@@ -698,7 +698,7 @@ export default function getAlbumsStaticTest(): void {
       try {
         let fetchResult =
           await helper!.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.ANY, fetchOps)
-        expect(fetchResult != undefined).assertTrue();
+        expect(fetchResult!.isAfterLast()).assertFalse();
         console.info(TAG, testName, `getAlbums success`);
         fetchResult.close();
         done();
@@ -727,7 +727,7 @@ export default function getAlbumsStaticTest(): void {
       try {
         let fetchResult =
           await helper!.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.ANY, fetchOps)
-        expect(fetchResult != undefined).assertTrue();
+        expect(fetchResult!.isAfterLast()).assertFalse();
         console.info(TAG, testName, `getAlbums success`);
         fetchResult.close();
         done();
@@ -755,7 +755,7 @@ export default function getAlbumsStaticTest(): void {
       try {
         let fetchResult =
           await helper!.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.ANY, fetchOps)
-        expect(fetchResult != undefined).assertTrue();
+        expect(fetchResult!.isAfterLast()).assertFalse();
         console.info(TAG, testName, `getAlbums success`);
         fetchResult.close();
         done();
@@ -784,7 +784,7 @@ export default function getAlbumsStaticTest(): void {
       try {
         let fetchResult =
           await helper!.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.ANY, fetchOps)
-        expect(fetchResult != undefined).assertTrue();
+        expect(fetchResult!.isAfterLast()).assertFalse();
         console.info(TAG, testName, `getAlbums success`);
         fetchResult.close();
         done();
@@ -809,7 +809,7 @@ export default function getAlbumsStaticTest(): void {
       try {
         let fetchResult =
           await helper!.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.ANY)
-        expect(fetchResult != undefined).assertTrue();
+        expect(fetchResult!.isAfterLast()).assertFalse();
         console.info(TAG, testName, `getAlbums success`);
         fetchResult.close();
         done();
@@ -834,7 +834,7 @@ export default function getAlbumsStaticTest(): void {
       try {
         let fetchResult =
           await helper!.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.ANY)
-        expect(fetchResult != undefined).assertTrue();
+        expect(fetchResult!.isAfterLast()).assertFalse();
         console.info(TAG, testName, `getAlbums success`);
         fetchResult.close();
         done();

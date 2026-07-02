@@ -16,29 +16,8 @@
 
 import { EditableLeftIconType, EditableTitleBar } from '@ohos.arkui.advanced.EditableTitleBar';
 import promptAction from '@ohos.promptAction';
-import {
-  Entry,
-  Column,
-  Component,
-  TextAlign,
-  Text,
-  Color,
-  Row,
-  ClickEvent,
-  Stack,
-  Alignment,
-  Button,
-  Alignment,
-  Scroll,
-  HorizontalAlign,
-  Margin,
-  Divider,
-  Builder,
-  $r,
-  SafeAreaEdge
-} from '@ohos.arkui.component';
+import { Entry, Column, Component, TextAlign, Text, Color, Row, ClickEvent, Stack, Alignment, Button, Scroll, HorizontalAlign, Margin, Divider, Builder, $r, SafeAreaEdge } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
-
 @Entry
 @Component
 struct EditableTitleBarAccessibilityPage {

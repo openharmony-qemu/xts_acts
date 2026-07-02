@@ -13,23 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../hypium/index';
-import { UIContext } from "@ohos.arkui.UIContext";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
 import RectValue from '../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
-import { GlobalContext } from '../../../../ets/MainAbility/common/GlobalContext'
-import {MessageManager,Callback} from '../../../../ets/MainAbility/common/MessageManager';
-import { UIContext } from "@ohos.arkui.UIContext";
-import { Router } from '@ohos.arkui.UIContext';
+import { GlobalContext } from '../../../../ets/MainAbility/common/GlobalContext';
+import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -89,10 +85,10 @@ export default function flexShrink_Part() {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({name:'addflexShrink', value:1});
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Column_flexShrink_011: RectValue = CommonFunc.getComponentRect('Column_flexShrink_011');
-      let Column_flexShrink_012: RectValue = CommonFunc.getComponentRect('Column_flexShrink_012');
-      let Column_flexShrink_013: RectValue = CommonFunc.getComponentRect('Column_flexShrink_013');
-      let Column_flexShrink_01: RectValue = CommonFunc.getComponentRect('Column_flexShrink_01');
+      let Column_flexShrink_011: RectValue = CommonFunc.getComponentRect('flexShrink_Part' + '_Column_flexShrink_011');
+      let Column_flexShrink_012: RectValue = CommonFunc.getComponentRect('flexShrink_Part' + '_Column_flexShrink_012');
+      let Column_flexShrink_013: RectValue = CommonFunc.getComponentRect('flexShrink_Part' + '_Column_flexShrink_013');
+      let Column_flexShrink_01: RectValue = CommonFunc.getComponentRect('flexShrink_Part' + '_Column_flexShrink_01');
       console.log('assert position')
       expect(Math.abs(Math.round(Column_flexShrink_011.left - Column_flexShrink_01.left) - Math.round(Column_flexShrink_01.right - Column_flexShrink_011.right)) <= 1).assertTrue();
       expect(Math.abs(Math.round(Column_flexShrink_012.left - Column_flexShrink_01.left) - Math.round(Column_flexShrink_01.right - Column_flexShrink_012.right)) <= 1).assertTrue();
@@ -135,10 +131,10 @@ export default function flexShrink_Part() {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({name:'addflexShrink', value:2});
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Column_flexShrink_011: RectValue = CommonFunc.getComponentRect('Column_flexShrink_011');
-      let Column_flexShrink_012: RectValue = CommonFunc.getComponentRect('Column_flexShrink_012');
-      let Column_flexShrink_013: RectValue = CommonFunc.getComponentRect('Column_flexShrink_013');
-      let Column_flexShrink_01: RectValue = CommonFunc.getComponentRect('Column_flexShrink_01');
+      let Column_flexShrink_011: RectValue = CommonFunc.getComponentRect('flexShrink_Part' + '_Column_flexShrink_011');
+      let Column_flexShrink_012: RectValue = CommonFunc.getComponentRect('flexShrink_Part' + '_Column_flexShrink_012');
+      let Column_flexShrink_013: RectValue = CommonFunc.getComponentRect('flexShrink_Part' + '_Column_flexShrink_013');
+      let Column_flexShrink_01: RectValue = CommonFunc.getComponentRect('flexShrink_Part' + '_Column_flexShrink_01');
       console.log('assert position')
       expect(Math.abs(Math.round(Column_flexShrink_011.left - Column_flexShrink_01.left) - Math.round(Column_flexShrink_01.right - Column_flexShrink_011.right)) <= 1).assertTrue();
       expect(Math.abs(Math.round(Column_flexShrink_012.left - Column_flexShrink_01.left) - Math.round(Column_flexShrink_01.right - Column_flexShrink_012.right)) <= 1).assertTrue();

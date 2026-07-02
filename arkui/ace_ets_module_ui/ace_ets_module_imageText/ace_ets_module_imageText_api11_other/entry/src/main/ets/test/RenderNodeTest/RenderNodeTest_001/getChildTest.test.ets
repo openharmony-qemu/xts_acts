@@ -52,13 +52,13 @@ export default function getChildTest() {
       console.info('getChildTest_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('getChild_0'));
+      let button = await driver.findComponent(ON.id('getChild' + '_0'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('getChild_2'));
+      let button1 = await driver.findComponent(ON.id('getChild' + '_2'));
       await button1.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('getChild_2_text');
+      let strJson = getInspectorByKey('getChild' + '_2_text');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getChildTest_0100] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.content).assertEqual('width:100');
@@ -78,13 +78,13 @@ export default function getChildTest() {
       console.info('getChildTest_0200 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('getChild_0'));
+      let button = await driver.findComponent(ON.id('getChild' + '_0'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('getChild_3'));
+      let button1 = await driver.findComponent(ON.id('getChild' + '_3'));
       await button1.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('getChild_3_text');
+      let strJson = getInspectorByKey('getChild' + '_3_text');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getChildTest_0200] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.content).assertEqual('width:100');
@@ -104,15 +104,15 @@ export default function getChildTest() {
       console.info('getChildTest_0300 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('getChild_0'));
+      let button = await driver.findComponent(ON.id('getChild' + '_0'));
       await button.click();
       await CommonFunc.sleep(1000);
       await button.click();
       await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('getChild_4'));
+      let button1 = await driver.findComponent(ON.id('getChild' + '_4'));
       await button1.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('getChild_4_text');
+      let strJson = getInspectorByKey('getChild' + '_4_text');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getChildTest_0300] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.content).assertEqual('width:100');
@@ -132,18 +132,18 @@ export default function getChildTest() {
       console.info('getChildTest_0400 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('getChild_0'));
+      let button = await driver.findComponent(ON.id('getChild' + '_0'));
       await button.click();
       await CommonFunc.sleep(1000);
       await button.click();
       await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('getChild_1'));
+      let button1 = await driver.findComponent(ON.id('getChild' + '_1'));
       await button1.click();
       await CommonFunc.sleep(1000);
-      let button2 = await driver.findComponent(ON.id('getChild_5'));
+      let button2 = await driver.findComponent(ON.id('getChild' + '_5'));
       await button2.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('getChild_5_text');
+      let strJson = getInspectorByKey('getChild' + '_5_text');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[getChildTest_0400] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.content).assertEqual('width:100');

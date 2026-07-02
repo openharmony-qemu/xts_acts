@@ -204,7 +204,7 @@ export default function TextInputPageJsunit() {
       console.info("[TextInputPageJsunit_0400] inputText hello succ !");
 
       // Verify submit function of TextInput component
-      let textComponent1 = await driver.findComponent(BY.key('submit'));
+      let textComponent1 = await driver.findComponent(BY.key('TextInputPage' + '_submit'));
       let text1 = await textComponent1.getText();
       expect(text1).assertEqual('onSubmit:');
       console.info("[TextInputPageJsunit_0400] Verify submit succ !");
@@ -236,7 +236,7 @@ export default function TextInputPageJsunit() {
       await textComponent4.click()
       await textComponent.click()
       await CommonFunc.sleep(3000);
-      let strJson = getInspectorByKey('copy');
+      let strJson = getInspectorByKey('TextInputPage' + '_copy');
       await CommonFunc.sleep(3000);
       let obj: ESObject = JSON.parse(strJson);
       console.info("[TextInputPageJsunit_0400] component obj is: " + JSON.stringify(obj));
@@ -266,7 +266,7 @@ export default function TextInputPageJsunit() {
       let textComponent7 = await driver.findComponent(BY.text('粘贴'));
       await textComponent7.click()
       await CommonFunc.sleep(3000);
-      let strJson2 = getInspectorByKey('paste');
+      let strJson2 = getInspectorByKey('TextInputPage' + '_paste');
       let obj2: ESObject = JSON.parse(strJson2);
       console.info("[TextInputPageJsunit_0400] component obj2 is: " + JSON.stringify(obj2));
       expect(obj2.$attrs.content).assertEqual('onPaste:hello');

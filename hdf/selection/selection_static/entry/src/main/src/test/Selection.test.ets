@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,6 @@
  * limitations under the License.
  */
 
-'use static'
 import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';

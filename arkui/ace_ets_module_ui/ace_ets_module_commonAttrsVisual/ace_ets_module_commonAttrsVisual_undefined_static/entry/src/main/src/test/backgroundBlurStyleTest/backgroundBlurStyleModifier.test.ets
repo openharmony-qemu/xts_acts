@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -75,7 +75,7 @@ export default function BackgroundBlurStyleModifierTest() {
         expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)
           .getElement('$attrs')
           .getElement('backgroundBlurStyle')))
-          .assertEqual('{"value":"BlurStyle.Thin","options":{"colorMode":"ThemeColorMode.Light","adaptiveColor":"AdaptiveColor.Default","policy":"BlurStyleActivePolicy.ALWAYS_ACTIVE","type":"BlurType.WITHIN_WINDOW","inactiveColor":"#00000000","scale":1}}');
+          .assertEqual('{"value":"BlurStyle.Thin","options":{"colorMode":"ThemeColorMode.Light","adaptiveColor":"AdaptiveColor.Default","policy":"BlurStyleActivePolicy.ALWAYS_ACTIVE","type":"BlurType.WITHIN_WINDOW","inactiveColor":"#00000000","scale":1,"blurOption":"[0,0]"}}');
         let changeBtn = await driver.findComponent(ON.id('backgroundBlurStyleModifier'));
         await (changeBtn?.click() as Promise<void>);
         await CommonFunc.sleep(1000);
@@ -85,7 +85,7 @@ export default function BackgroundBlurStyleModifierTest() {
         expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)
           .getElement('$attrs')
           .getElement('backgroundBlurStyle')))
-          .assertEqual('{"value":"BlurStyle.NONE","options":{"colorMode":"ThemeColorMode.System","adaptiveColor":"AdaptiveColor.Default","policy":"BlurStyleActivePolicy.ALWAYS_ACTIVE","type":"BlurType.WITHIN_WINDOW","inactiveColor":"#00000000","scale":1}}');
+          .assertEqual('{"value":"BlurStyle.NONE","options":{"colorMode":"ThemeColorMode.System","adaptiveColor":"AdaptiveColor.Default","policy":"BlurStyleActivePolicy.ALWAYS_ACTIVE","type":"BlurType.WITHIN_WINDOW","inactiveColor":"#00000000","scale":1,"blurOption":"[0,0]"}}');
         console.info('[BackgroundBlurStyleModifierUndefinedTest_static_0100] END');
         done();
       });

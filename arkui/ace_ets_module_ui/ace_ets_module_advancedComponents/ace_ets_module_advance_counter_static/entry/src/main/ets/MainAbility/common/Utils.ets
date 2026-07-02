@@ -26,11 +26,24 @@ export default class Utils {
   static rect_bottom: number = 0;
   static rect_value: RectValue = new RectValue();
 
-  static getComponentRect(key: string) {
+  static getComponentRect(key: string): RectValue {
     let strJson: string = inspector.getInspectorByKey(key);
-    let obj: Record<string, Object> = JSON.parse<Object>(strJson, Class.from<String>()) as Record<string, Object>;
-    console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Class.from<String>()) as Array<Array<number>>;
+    let node = JSON.parseJsonElement(strJson);
+    let rectEl = node.getElement('$rect');
+    let rectInfo: Array<Array<number>> = [];
+    let rows = rectEl.tryAsArray();
+    if (rows) {
+      for (const row of rows) {
+        let rowArr = row.tryAsArray();
+        if (rowArr) {
+          let nums: Array<number> = [];
+          for (const cell of rowArr) {
+            nums.push(Number(cell.asDouble()));
+          }
+          rectInfo.push(nums);
+        }
+      }
+    }
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
     Utils.rect_left = Number(rectInfo[0][0] ?? 0);
     Utils.rect_top = Number(rectInfo[0][1] ?? 0);

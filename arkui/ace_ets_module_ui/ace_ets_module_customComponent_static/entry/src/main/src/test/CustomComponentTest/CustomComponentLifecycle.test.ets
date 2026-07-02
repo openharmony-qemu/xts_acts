@@ -25,7 +25,7 @@ import { CustomComponentLifecycleObserver, ReuseObject } from '@ohos.arkui.compo
 
 const SLEEP_TIME = 1000;
 
-export default function CustomComponentLifecycleTest() {
+export default function CustomComponentLifecycleTest(): void {
   describe('CustomComponentLifecycleTest', (): void => {
     beforeAll(async (): Promise<void> => {
       console.info('[ARKUI_NEW] CustomComponentLifecycleTest beforeAll start');

@@ -16,31 +16,18 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
-import inspector from '@ohos.arkui.inspector'
+import inspector from '@ohos.arkui.inspector';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import RectValue from '../../../../ets/MainAbility/common/Rect';
 import { MessageManager } from '../../../../ets/MainAbility/common/MessageManager';
-import {
-  Component,
-  Driver,
-  UiWindow,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix,
-  UiDirection,
-  MouseButton
-} from '@ohos.UiTest';
-import hilog from '@ohos.hilog'
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, UiDirection, MouseButton } from '@ohos.UiTest';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../Util.test'
 import { UtilsTest, startAbility, stopApplication } from '../../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -93,7 +80,7 @@ export default function Tabs_itemSize() {
 it('testTabsItemSize_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testTabsItemSize_static_01] START');
       await CommonFunc.sleep(3000);
-      let strJson = inspector.getInspectorByKey('Tabs_itemSize_01');
+      let strJson = inspector.getInspectorByKey('Tabs_itemSize' + '_01');
       let uiContext = AppStorage.get<UIContext>('uiContext')!;
       console.info(`[testTabsItemSize_static_01] type: ${JSON.stringify(JSON.parseJsonElement(strJson).getString('$type'))}`);
       console.info("[testTabsItemSize_static_01] barPosition: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition')));
@@ -105,24 +92,24 @@ it('testTabsItemSize_static_01', Level.LEVEL0, async (done: () => void): Promise
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual("0");
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
-      let Tabs_itemSize_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemSize_001');
-      let Tabs_itemSize_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemSize_011');
+      let Tabs_itemSize_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemSize' + '_001');
+      let Tabs_itemSize_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemSize' + '_011');
       let driver = Driver.create();
       await driver.swipe((Math.round(Tabs_itemSize_011.right - ((Tabs_itemSize_011.right - Tabs_itemSize_011.left) / 6))).toInt(),
       (Math.round(Tabs_itemSize_011.top + ((Tabs_itemSize_011.bottom - Tabs_itemSize_011.top) / 2))).toInt(),
       (Math.round(Tabs_itemSize_011.left + ((Tabs_itemSize_011.right - Tabs_itemSize_011.left) / 6))).toInt(),
       (Math.round(Tabs_itemSize_011.top + ((Tabs_itemSize_011.bottom - Tabs_itemSize_011.top) / 2))).toInt());
       await CommonFunc.sleep(1000);
-      let Tabs_itemSize_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemSize_002');
-      let Tabs_itemSize_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemSize_012');
+      let Tabs_itemSize_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemSize' + '_002');
+      let Tabs_itemSize_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemSize' + '_012');
       await driver.swipe((Math.round(Tabs_itemSize_012.right - ((Tabs_itemSize_012.right - Tabs_itemSize_012.left) / 6))).toInt(),
       (Math.round(Tabs_itemSize_012.top + ((Tabs_itemSize_012.bottom - Tabs_itemSize_012.top) / 2))).toInt(),
       (Math.round(Tabs_itemSize_012.left + ((Tabs_itemSize_012.right - Tabs_itemSize_012.left) / 6))).toInt(),
       (Math.round(Tabs_itemSize_012.top + ((Tabs_itemSize_012.bottom - Tabs_itemSize_012.top) / 2))).toInt());
       await CommonFunc.sleep(1000);
-      let Tabs_itemSize_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemSize_003');
-      let Tabs_itemSize_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemSize_013');
-      let Tabs_itemSize_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemSize_01');
+      let Tabs_itemSize_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemSize' + '_003');
+      let Tabs_itemSize_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemSize' + '_013');
+      let Tabs_itemSize_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemSize' + '_01');
       let subGreen: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemSize_green');
       let subBlue: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemSize_blue');
       let subYellow: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemSize_yellow');

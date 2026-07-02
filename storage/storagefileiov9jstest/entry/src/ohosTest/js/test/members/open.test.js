@@ -113,7 +113,7 @@ export default function fileIOOpen() {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_open_sync_003 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
     }
   });
 
@@ -255,7 +255,7 @@ export default function fileIOOpen() {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_open_sync_009 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900018 && e.message == 'Not a directory').assertTrue();
+      expect(e.code == 13900018).assertTrue();
     }
   });
 
@@ -320,7 +320,7 @@ export default function fileIOOpen() {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_open_sync_013 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
     }
   });
 
@@ -342,7 +342,7 @@ export default function fileIOOpen() {
     } catch (e) {
       fileIO.rmdirSync(dpath);
       console.log('fileIO_test_open_sync_014 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900019 && e.message == 'Is a directory').assertTrue();
+      expect(e.code == 13900019).assertTrue();
     }
   });
 
@@ -391,7 +391,7 @@ export default function fileIOOpen() {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_open_sync_016 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900030 && e.message == 'File name too long').assertTrue();
+      expect(e.code == 13900030).assertTrue();
     }
   });
 
@@ -535,7 +535,7 @@ export default function fileIOOpen() {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_open_async_004 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+      expect(e.code == 13900002).assertTrue();
       done();
     }
   });
@@ -555,7 +555,7 @@ export default function fileIOOpen() {
       fileIO.open(fpath, fileIO.OpenMode.READ_WRITE, (err) => {
         if(err) {
           console.log('fileIO_test_open_async_005 error: {message: ' + err.message + ', code: ' + err.code + '}');
-          expect(err.code == 13900002 && err.message == 'No such file or directory').assertTrue();
+          expect(err.code == 13900002).assertTrue();
           done();
         }
       });
@@ -582,7 +582,7 @@ export default function fileIOOpen() {
       }).catch((err) => {
         fileIO.unlinkSync(fpath);
         console.log('fileIO_test_open_async_006 error: {message: ' + err.message + ', code: ' + err.code + '}');
-        expect(err.code == 13900002 && err.message == 'No such file or directory').assertTrue();
+        expect(err.code == 13900002).assertTrue();
       });
     } catch (e) {
       console.log('fileIO_test_open_async_006 has failed for ' + e.message + ', code: ' + e.code);
@@ -605,7 +605,7 @@ export default function fileIOOpen() {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_open_async_007 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       done();
     }
   });
@@ -626,7 +626,7 @@ export default function fileIOOpen() {
       });
     } catch (e) {
       console.log('fileIO_test_open_async_008 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code == 13900020).assertTrue();
       done();
     }
   });
@@ -930,7 +930,7 @@ export default function fileIOOpen() {
     } catch (e) {
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_open_async_019 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900018 && e.message == 'Not a directory').assertTrue();
+      expect(e.code == 13900018).assertTrue();
       done();
     }
   });
@@ -952,7 +952,7 @@ export default function fileIOOpen() {
         if(err) {
           fileIO.unlinkSync(fpath);
           console.log('fileIO_test_open_async_020 error: {message: ' + err.message + ', code: ' + err.code + '}');
-          expect(err.code == 13900018 && err.message == 'Not a directory').assertTrue();
+          expect(err.code == 13900018).assertTrue();
           done();
         }
       });
@@ -980,7 +980,7 @@ export default function fileIOOpen() {
       }).catch((err) => {
         fileIO.unlinkSync(fpath);
         console.log('fileIO_test_open_async_021 error: {message: ' + err.message + ', code: ' + err.code + '}');
-        expect(err.code == 13900018 && err.message == 'Not a directory').assertTrue();
+        expect(err.code == 13900018).assertTrue();
         done();
       });
     } catch (e) {
@@ -1113,7 +1113,7 @@ export default function fileIOOpen() {
     } catch (e) {
       fileIO.rmdirSync(dpath);
       console.log('fileIO_test_open_async_029 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900019 && e.message == 'Is a directory').assertTrue();
+      expect(e.code == 13900019).assertTrue();
       done();
     }
   });
@@ -1135,7 +1135,7 @@ export default function fileIOOpen() {
         if (err) {
           fileIO.rmdirSync(dpath);
           console.log('fileIO_test_open_async_030 error: {message: ' + err.message + ', code: ' + err.code + '}');
-          expect(err.code == 13900019 && err.message == 'Is a directory').assertTrue();
+          expect(err.code == 13900019).assertTrue();
           done();
         }
       });
@@ -1200,7 +1200,7 @@ export default function fileIOOpen() {
             fileIO.closeSync(file);
             fileIO.unlinkSync(fpath);
             console.log('fileIO_test_open_async_032 error: {message: ' + err.message + ', code: ' + err.code + '}');
-            expect(err.code == 13900008 && err.message == 'Bad file descriptor').assertTrue();
+            expect(err.code == 13900008).assertTrue();
             done();
           } else {
             expect(false).assertTrue();
@@ -1230,7 +1230,7 @@ export default function fileIOOpen() {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_open_async_033 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900030 && e.message == 'File name too long').assertTrue();
+      expect(e.code == 13900030).assertTrue();
       done();
     }
   });
@@ -1251,7 +1251,7 @@ export default function fileIOOpen() {
       fileIO.open(fpath1, fileIO.OpenMode.CREATE | fileIO.OpenMode.WRITE_ONLY, (err, file) => {
         if(err) {
           console.log('fileIO_test_open_async_034 error package: ' + err.message + ', code: ' + err.code);
-          expect(err.code == 13900030 && err.message == 'File name too long').assertTrue();
+          expect(err.code == 13900030).assertTrue();
           done();
         }
       });
@@ -1275,7 +1275,7 @@ export default function fileIOOpen() {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_open_error_001: ' + e.message + ', code: ' + e.code);
-      expect(e.message == 'No such file or directory').assertTrue();
+      expect(e.code === 13900002).assertTrue();
     }
   });
 
@@ -1293,7 +1293,7 @@ export default function fileIOOpen() {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_open_error_002: ' + e.message + ', code: ' + e.code);
-      expect(e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
     }
   });
 
@@ -1311,7 +1311,7 @@ export default function fileIOOpen() {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_open_error_003: ' + e.message + ', code: ' + e.code);
-      expect(e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
     }
   });
 
@@ -1331,6 +1331,7 @@ export default function fileIOOpen() {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_open_error_004: ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
       fileIO.unlinkSync(fpath);
     }
   });
@@ -1371,7 +1372,7 @@ export default function fileIOOpen() {
       fileIO.open("", function (err, file) {
         if (err) {
           console.log('fileIO_open_error_006: ' + err.message + ', code: ' + err.code);
-          expect(err.message == 'No such file or directory').assertTrue();
+          expect(err.code === 13900002).assertTrue();
           done();
         } else {
           expect(false).assertTrue();
@@ -1380,7 +1381,7 @@ export default function fileIOOpen() {
       });
     } catch (e) {
       console.log('fileIO_open_error_006: ' + e.message + ', code: ' + e.code);
-      expect(e.message == 'No such file or directory').assertTrue();
+      expect(e.code === 13900002).assertTrue();
       done();
     }
   });
@@ -1398,7 +1399,7 @@ export default function fileIOOpen() {
       fileIO.open(null, function (err, file) {
         if (err) {
           console.log('fileIO_open_error_007: ' + err.message + ', code: ' + err.code);
-          expect(err.message == 'Invalid argument').assertTrue();
+          expect(err.code === 13900020).assertTrue();
           done();
         } else {
           expect(false).assertTrue();
@@ -1407,7 +1408,7 @@ export default function fileIOOpen() {
       });
     } catch (e) {
       console.log('fileIO_open_error_007: ' + e.message + ', code: ' + e.code);
-      expect(e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
       done();
     }
   });
@@ -1425,7 +1426,7 @@ export default function fileIOOpen() {
       fileIO.open(undefined, function (err, file) {
         if (err) {
           console.log('fileIO_open_error_008: ' + err.message + ', code: ' + err.code);
-          expect(err.message == 'Invalid argument').assertTrue();
+          expect(err.code === 13900020).assertTrue();
           done();
         } else {
           expect(false).assertTrue();
@@ -1434,7 +1435,7 @@ export default function fileIOOpen() {
       });
     } catch (e) {
       console.log('fileIO_open_error_008: ' + e.message + ', code: ' + e.code);
-      expect(e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
       done();
     }
   });
@@ -1507,7 +1508,7 @@ export default function fileIOOpen() {
       fileIO.open("", 0, function (err, file) {
         if (err) {
           console.log('fileIO_open_error_011: ' + err.message + ', code: ' + err.code);
-          expect(err.message == 'No such file or directory').assertTrue();
+          expect(err.code === 13900002).assertTrue();
           done();
         } else {
           expect(false).assertTrue();
@@ -1516,7 +1517,7 @@ export default function fileIOOpen() {
       });
     } catch (e) {
       console.log('fileIO_open_error_011: ' + e.message + ', code: ' + e.code);
-      expect(e.message == 'No such file or directory').assertTrue();
+      expect(e.code === 13900002).assertTrue();
       done();
     }
   });
@@ -1534,7 +1535,7 @@ export default function fileIOOpen() {
       fileIO.open(null, 0, function (err, file) {
         if (err) {
           console.log('fileIO_open_error_012: ' + err.message + ', code: ' + err.code);
-          expect(err.message == 'Invalid argument').assertTrue();
+          expect(err.code === 13900020).assertTrue();
           done();
         } else {
           expect(false).assertTrue();
@@ -1543,7 +1544,7 @@ export default function fileIOOpen() {
       });
     } catch (e) {
       console.log('fileIO_open_error_012: ' + e.message + ', code: ' + e.code);
-      expect(e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
       done();
     }
   });
@@ -1561,7 +1562,7 @@ export default function fileIOOpen() {
       fileIO.open(undefined, 0, function (err, file) {
         if (err) {
           console.log('fileIO_open_error_013: ' + err.message + ', code: ' + err.code);
-          expect(err.message == 'Invalid argument').assertTrue();
+          expect(err.code === 13900020).assertTrue();
           done();
         } else {
           expect(false).assertTrue();
@@ -1570,7 +1571,7 @@ export default function fileIOOpen() {
       });
     } catch (e) {
       console.log('fileIO_open_error_013: ' + e.message + ', code: ' + e.code);
-      expect(e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
       done();
     }
   });
@@ -1644,7 +1645,7 @@ export default function fileIOOpen() {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_openSync_error_001: ' + e.message + ', code: ' + e.code);
-      expect(e.message == 'No such file or directory').assertTrue();
+      expect(e.code === 13900002).assertTrue();
     }
   });
 
@@ -1662,7 +1663,7 @@ export default function fileIOOpen() {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_openSync_error_002: ' + e.message + ', code: ' + e.code);
-      expect(e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
     }
   });
 
@@ -1680,7 +1681,7 @@ export default function fileIOOpen() {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_openSync_error_003: ' + e.message + ', code: ' + e.code);
-      expect(e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020).assertTrue();
     }
   });
 

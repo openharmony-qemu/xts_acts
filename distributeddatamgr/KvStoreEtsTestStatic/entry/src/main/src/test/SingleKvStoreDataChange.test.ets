@@ -1,3 +1,4 @@
+'use static';
 /*
 * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,18 +13,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import {
-  describe,
-  beforeAll,
-  beforeEach,
-  afterEach,
-  afterAll,
-  it,
-  expect,
-  TestType,
-  Level,
-  Size
-} from "../../../hypium";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '../../../hypium';
 import factory from '@ohos.data.distributedKVStore';
 import hilog from '@ohos.hilog';
 import Utils from './Util.test';
@@ -32,8 +22,6 @@ import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
-import UIAbility from '@ohos.app.ability.UIAbility';
-
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 const KEY_TEST_STRING_1 = 'key_test_string_1';

@@ -89,7 +89,7 @@ export default function PanRecognizerTest() {
         { x: Math.round(areaObj.left + areaWidth * 0.3), y: Math.round(areaObj.top + areaHeight * 0.5) });
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(4000);
-      let strJson = getInspectorByKey('PanRecognizer');
+      let strJson = getInspectorByKey('PanRecognizer' + '_PanRecognizer_01');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[PanRecognizer_0100] component obj is: ' + JSON.stringify(obj));
       console.info('[PanRecognizer_0100] title: ' + JSON.stringify(obj.$attrs.content));

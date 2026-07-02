@@ -438,6 +438,49 @@ Camera_ErrorCode NDKCamera::GetCameraHostType(void)
     return ret_;
 }
 
+Camera_ErrorCode NDKCamera::GetAutomotiveCameraPosition(void)
+{
+    if (size_ <= 0) {
+        return CAMERA_OK;
+    }
+    OH_Camera_AutomotiveCameraPosition position;
+    ret_ = OH_CameraDevice_GetAutomotiveCameraPosition(&cameras_[cameraDeviceIndex_], &position);
+    switch (position) {
+        case OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_EXTERIOR_OTHER:
+        case OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_EXTERIOR_FRONT:
+        case OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_EXTERIOR_REAR:
+        case OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_EXTERIOR_LEFT:
+        case OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_EXTERIOR_RIGHT:
+        case OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_INTERIOR_OTHER:
+        case OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_1_LEFT:
+        case OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_1_CENTER:
+        case OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_1_RIGHT:
+        case OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_2_LEFT:
+        case OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_2_CENTER:
+        case OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_2_RIGHT:
+        case OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_3_LEFT:
+        case OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_3_CENTER:
+        case OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_3_RIGHT:
+            LOG("ndkXTS OH_CameraDevice_GetAutomotiveCameraPosition position: %{public}d", position);
+            break;
+        default:
+            break;
+    }
+    if (ret_ != CAMERA_OK) {
+        LOG("ndkXTS OH_CameraDevice_GetAutomotiveCameraPosition failed.");
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::GetAutomotiveCameraPositionErrorParameter(void)
+{
+    ret_ = OH_CameraDevice_GetAutomotiveCameraPosition(nullptr, nullptr);
+    if (ret_ != CAMERA_OK) {
+        LOG("ndkXTS OH_CameraDevice_GetAutomotiveCameraPosition with null params failed as expected.");
+    }
+    return ret_;
+}
+
 Camera_ErrorCode NDKCamera::TestOHGetSensorPixelArraySizeWithoutCamera(void)
 {
     uint32_t pixelWidth = 0;
@@ -4549,11 +4592,14 @@ Camera_ErrorCode NDKCamera::GetColorTint(int useCaseCode)
 
 OH_Camera_ZoomPointInfo* cameraZoomPointInfo;
 uint32_t g_zoomSize;
-Camera_ErrorCode NDKCamera::GetZoomPointInfos(int useCaseCode)
+int32_t NDKCamera::GetZoomPointInfos(int useCaseCode)
 {
     LOG("OH_CaptureSession_GetZoomPointInfos useCaseCode: %d", useCaseCode);
     if (useCaseCode == PARAMETER_OK) {
         ret_ = OH_CaptureSession_GetZoomPointInfos(captureSession_, &g_zoomSize, &cameraZoomPointInfo);
+        if (ret_ == CAMERA_OK && g_zoomSize == 0) {
+            return -1;
+        }
     } else if (useCaseCode == PARAMETER1_ERROR) {
         ret_ = OH_CaptureSession_GetZoomPointInfos(nullptr, &g_zoomSize, &cameraZoomPointInfo);
     } else if (useCaseCode == PARAMETER2_ERROR) {
@@ -4682,4 +4728,106 @@ Camera_ErrorCode NDKCamera::DestroyCameraNotificationInfo(int useCaseCode)
         OH_CameraNotificationInfo_Destroy(nullptr);
     }
     return CAMERA_OK;
+}
+
+
+Camera_ErrorCode NDKCamera::CreatePhotoCaptureSettingExt(int useCaseCode)
+{
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_PhotoOutput_CreatePhotoCaptureSettingExt(photoOutput_, &PhotoCaptureSettingExt_);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_PhotoOutput_CreatePhotoCaptureSettingExt(photoOutput_, nullptr);
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        ret_ = OH_PhotoOutput_CreatePhotoCaptureSettingExt(nullptr, &PhotoCaptureSettingExt_);
+    }
+    if (ret_ != CAMERA_OK) {
+        LOG("CreatePhotoCaptureSettingExt failed.");
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::DestroyPhotoCaptureSettingExt(int useCaseCode)
+{
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_PhotoOutput_DestroyPhotoCaptureSettingExt(PhotoCaptureSettingExt_);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_PhotoOutput_DestroyPhotoCaptureSettingExt(nullptr);
+    }
+    if (ret_ != CAMERA_OK) {
+        LOG("DestroyPhotoCaptureSettingExt failed.");
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::SetCompressionQuality(int useCaseCode, int compressionQuality)
+{
+    LOG("SetCompressionQuality compressionQuality: %d", compressionQuality);
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_PhotoCaptureSettingExt_SetCompressionQuality(PhotoCaptureSettingExt_, compressionQuality);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_PhotoCaptureSettingExt_SetCompressionQuality(nullptr, compressionQuality);
+    }
+    if (ret_ != CAMERA_OK) {
+        LOG("SetCompressionQuality failed.");
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::SetImageRotation(int useCaseCode, Camera_ImageRotation ImageRotation)
+{
+    LOG("SetImageRotation ImageRotation: %d", ImageRotation);
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_PhotoCaptureSettingExt_SetImageRotation(PhotoCaptureSettingExt_, ImageRotation);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_PhotoCaptureSettingExt_SetImageRotation(nullptr, ImageRotation);
+    }
+    if (ret_ != CAMERA_OK) {
+        LOG("SetImageRotation failed.");
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::SetMirror(int useCaseCode, bool isMirror)
+{
+    LOG("SetMirror isMirror: %d", isMirror);
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_PhotoCaptureSettingExt_SetMirror(PhotoCaptureSettingExt_, isMirror);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_PhotoCaptureSettingExt_SetMirror(nullptr, isMirror);
+    }
+    if (ret_ != CAMERA_OK) {
+        LOG("SetMirror failed.");
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::SetLocation(int useCaseCode, Camera_Location location)
+{
+    LOG("SetLocation location.altitude: %f", location.altitude);
+    LOG("SetLocation location.latitude: %f", location.latitude);
+    LOG("SetLocation location.longitude: %f", location.longitude);
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_PhotoCaptureSettingExt_SetLocation(PhotoCaptureSettingExt_, location);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_PhotoCaptureSettingExt_SetLocation(nullptr, location);
+    }
+    if (ret_ != CAMERA_OK) {
+        LOG("SetLocation failed.");
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::CaptureWithCaptureSettingExt(int useCaseCode)
+{
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_PhotoOutput_Capture_WithCaptureSettingExt(photoOutput_, PhotoCaptureSettingExt_);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_PhotoOutput_Capture_WithCaptureSettingExt(nullptr, PhotoCaptureSettingExt_);
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        ret_ = OH_PhotoOutput_Capture_WithCaptureSettingExt(photoOutput_, nullptr);
+    }
+    if (ret_ != CAMERA_OK) {
+        LOG("CaptureWithCaptureSettingExt failed.");
+    }
+    return ret_;
 }

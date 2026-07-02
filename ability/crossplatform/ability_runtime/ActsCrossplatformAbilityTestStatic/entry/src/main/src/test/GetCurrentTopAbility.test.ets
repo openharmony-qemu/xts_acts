@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,13 +14,12 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, afterEach, beforeAll, afterEach, beforeEach } from "../../../hypium/index";
-import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
+import { describe, it, expect, TestType, Size, Level, afterEach, beforeAll, beforeEach } from '../../../hypium/index';
+import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 import { Driver, ON } from '@ohos.UiTest';
-
 let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 const START_ABILITY_TIMEOUT_TWO_THOUSAND = 2000;
 

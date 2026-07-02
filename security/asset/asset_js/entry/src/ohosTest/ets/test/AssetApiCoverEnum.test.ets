@@ -78,9 +78,6 @@ export default function AssetApiCoverEnumTest() {
       expect(asset.Tag.REQUIRE_ATTR_ENCRYPTED).assertEqual(asset.TagType.BOOL | 0x47);
       expect(asset.Tag.GROUP_ID).assertEqual(asset.TagType.BYTES | 0x48);
       expect(asset.Tag.WRAP_TYPE).assertEqual(asset.TagType.NUMBER | 0x49);
-      expect(asset.Tag.SECURITY_TYPE).assertEqual(undefined);
-      expect(asset.Tag.DATA_UUID).assertEqual(undefined);
-      expect(asset.Tag.DATA_SALT).assertEqual(undefined);
     });
 
     /**

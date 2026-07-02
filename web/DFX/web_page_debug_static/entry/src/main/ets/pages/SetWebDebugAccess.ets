@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,25 +14,12 @@
  * limitations under the License.
  */
 
-import {
-  Button,
-  ClickEvent,
-  Column,
-  Component,
-  Entry,
-  Row,
-  Web,
-  Blank,
-  OnPageBeginEvent,
-  OnPageEndEvent
-} from '@ohos.arkui.component';
+import { Button, ClickEvent, Column, Component, Entry, Row, Web, Blank, OnPageBeginEvent, OnPageEndEvent } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
-import { Callback, RecordData } from '@ohos.base'
+import { Callback, RecordData, BusinessError } from '@ohos.base';
 import webView from '@ohos.web.webview';
-import { BusinessError, Callback } from '@ohos.base';
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../src/test/Utils.test';
-
 export class StringFields {
   public str: string = '';
 }

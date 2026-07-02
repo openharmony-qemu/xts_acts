@@ -5,6 +5,7 @@
     "MainAbility/pages/TextAreaApi26/TextAreaOnWillCopy",
     "MainAbility/pages/TextAreaApi26/TextAreaOnWillCut",
     "MainAbility/pages/TextAreaApi26/TextAreaShaderStyle",
-    "MainAbility/pages/TextAreaApi26/TextAreaStrokeJoinStyle"
+    "MainAbility/pages/TextAreaApi26/TextAreaStrokeJoinStyle",
+    "MainAbility/pages/TextAreaApi26/TextAreaPunctuationOverflow"
   ]
 }

@@ -56,7 +56,7 @@ export default function subMenuExpandingMode() {
       console.info('[subMenuExpandingMode_0100] START');
 
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('menuItemDividerText');
+      let strJson = getInspectorByKey('subMenuExpandingMode' + '_menuItemDividerText');
       await CommonFunc.sleep(200);
       let obj: ESObject = JSON.parse(strJson);
       console.info(`[subMenuExpandingMode_0100] component obj is:${JSON.stringify(obj)}`);

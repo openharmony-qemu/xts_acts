@@ -13,22 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 import RectValue from '../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
-import {GlobalContext} from '../../../../ets/MainAbility/common/GlobalContext'
+import { GlobalContext } from '../../../../ets/MainAbility/common/GlobalContext';
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
-import { Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UIContext } from "@ohos.arkui.UIContext";
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -93,10 +90,10 @@ export default function layoutWeight_Part() {
       });
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Column_layoutWeight_021: RectValue = CommonFunc.getComponentRect('Column_layoutWeight_021');
-      let Column_layoutWeight_022: RectValue = CommonFunc.getComponentRect('Column_layoutWeight_022');
-      let Column_layoutWeight_023: RectValue = CommonFunc.getComponentRect('Column_layoutWeight_023');
-      let Column_layoutWeight_02: RectValue = CommonFunc.getComponentRect('Column_layoutWeight_02');
+      let Column_layoutWeight_021: RectValue = CommonFunc.getComponentRect('layoutWeight_Part' + '_Column_layoutWeight_021');
+      let Column_layoutWeight_022: RectValue = CommonFunc.getComponentRect('layoutWeight_Part' + '_Column_layoutWeight_022');
+      let Column_layoutWeight_023: RectValue = CommonFunc.getComponentRect('layoutWeight_Part' + '_Column_layoutWeight_023');
+      let Column_layoutWeight_02: RectValue = CommonFunc.getComponentRect('layoutWeight_Part' + '_Column_layoutWeight_02');
       console.log('assert position')
       expect(Math.abs((Math.round(Column_layoutWeight_021.left - Column_layoutWeight_02.left)) - (Math.round(Column_layoutWeight_02.right - Column_layoutWeight_021.right))) <= 1)
         .assertTrue();
@@ -154,10 +151,10 @@ export default function layoutWeight_Part() {
       });
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Column_layoutWeight_021: RectValue = CommonFunc.getComponentRect('Column_layoutWeight_021');
-      let Column_layoutWeight_022: RectValue = CommonFunc.getComponentRect('Column_layoutWeight_022');
-      let Column_layoutWeight_023: RectValue = CommonFunc.getComponentRect('Column_layoutWeight_023');
-      let Column_layoutWeight_02: RectValue = CommonFunc.getComponentRect('Column_layoutWeight_02');
+      let Column_layoutWeight_021: RectValue = CommonFunc.getComponentRect('layoutWeight_Part' + '_Column_layoutWeight_021');
+      let Column_layoutWeight_022: RectValue = CommonFunc.getComponentRect('layoutWeight_Part' + '_Column_layoutWeight_022');
+      let Column_layoutWeight_023: RectValue = CommonFunc.getComponentRect('layoutWeight_Part' + '_Column_layoutWeight_023');
+      let Column_layoutWeight_02: RectValue = CommonFunc.getComponentRect('layoutWeight_Part' + '_Column_layoutWeight_02');
       console.log('assert position')
       expect(Math.abs((Math.round(Column_layoutWeight_021.left - Column_layoutWeight_02.left)) - (Math.round(Column_layoutWeight_02.right - Column_layoutWeight_021.right))) <= 1)
         .assertTrue();
@@ -215,10 +212,10 @@ export default function layoutWeight_Part() {
       });
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Column_layoutWeight_021: RectValue = CommonFunc.getComponentRect('Column_layoutWeight_021');
-      let Column_layoutWeight_022: RectValue = CommonFunc.getComponentRect('Column_layoutWeight_022');
-      let Column_layoutWeight_023: RectValue = CommonFunc.getComponentRect('Column_layoutWeight_023');
-      let Column_layoutWeight_02: RectValue = CommonFunc.getComponentRect('Column_layoutWeight_02');
+      let Column_layoutWeight_021: RectValue = CommonFunc.getComponentRect('layoutWeight_Part' + '_Column_layoutWeight_021');
+      let Column_layoutWeight_022: RectValue = CommonFunc.getComponentRect('layoutWeight_Part' + '_Column_layoutWeight_022');
+      let Column_layoutWeight_023: RectValue = CommonFunc.getComponentRect('layoutWeight_Part' + '_Column_layoutWeight_023');
+      let Column_layoutWeight_02: RectValue = CommonFunc.getComponentRect('layoutWeight_Part' + '_Column_layoutWeight_02');
       console.log('assert position')
       expect(Math.abs((Math.round(Column_layoutWeight_021.left - Column_layoutWeight_02.left)) - (Math.round(Column_layoutWeight_02.right - Column_layoutWeight_021.right))) <= 1)
         .assertTrue();

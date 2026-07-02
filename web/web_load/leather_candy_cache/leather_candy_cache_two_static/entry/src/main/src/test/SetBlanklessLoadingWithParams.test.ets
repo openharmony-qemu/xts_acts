@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
  * limitations under the License.
  */
 
+
 import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '../../../hypium/index';
 import Utils from './Util.test';
 import inspector from '@ohos.arkui.inspector';
@@ -20,12 +22,11 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import { Driver, ON } from '@ohos.UiTest';
-import inspector from '@ohos.arkui.inspector';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
 let testAbilityContext:common.UIAbilityContext;
 
-export default function SetBlanklessLoadingWithParams() {
+export default function SetBlanklessLoadingWithParams() : void{
   describe('SetBlanklessLoadingWithParams', (): void => {
     beforeAll(async (): Promise<void> => {
       await Utils.msSleep(2000)

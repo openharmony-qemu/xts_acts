@@ -63,8 +63,8 @@ export default function flex_NoWrap_TextSizeTest() {
       let firstText: RectValue = CommonFunc.getComponentRect('NoWrap_flex_TextSize1');
       let secondText: RectValue = CommonFunc.getComponentRect('NoWrap_flex_TextSize2');
       let thirdText: RectValue = CommonFunc.getComponentRect('NoWrap_flex_TextSize3');
-      let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_NoWrap_TextSize_Container01');
-      let flexContainerStrJson = getInspectorByKey('Flex_NoWrap_TextSize_Container01');
+      let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_NoWrap_TextSize' + '_Container01');
+      let flexContainerStrJson = getInspectorByKey('Flex_NoWrap_TextSize' + '_Container01');
 
       expect(JSON.parse(flexContainerStrJson).$type).assertEqual('Flex');
       expect(JSON.parse(flexContainerStrJson).$attrs.constructor.direction).assertEqual('FlexDirection.Row');
@@ -107,8 +107,8 @@ export default function flex_NoWrap_TextSizeTest() {
       let firstText: RectValue = CommonFunc.getComponentRect('NoWrap_flex_TextSize1');
       let secondText: RectValue = CommonFunc.getComponentRect('NoWrap_flex_TextSize2');
       let thirdText: RectValue = CommonFunc.getComponentRect('NoWrap_flex_TextSize3');
-      let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_NoWrap_TextSize_Container01');
-      let flexContainerStrJson = getInspectorByKey('Flex_NoWrap_TextSize_Container01');
+      let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_NoWrap_TextSize' + '_Container01');
+      let flexContainerStrJson = getInspectorByKey('Flex_NoWrap_TextSize' + '_Container01');
 
       expect(JSON.parse(flexContainerStrJson).$type).assertEqual('Flex');
       expect(JSON.parse(flexContainerStrJson).$attrs.constructor.direction).assertEqual('FlexDirection.Row');

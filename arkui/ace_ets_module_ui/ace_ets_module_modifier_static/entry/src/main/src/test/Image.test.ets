@@ -68,7 +68,7 @@ export default function imageJsunit() {
      */
 it('imageTest_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageTest_static_0001 START');
-      let strJsonNew = inspector.getInspectorByKey('image');
+      let strJsonNew = inspector.getInspectorByKey('image' + '_image');
 
       console.info("imageTest_static_0001 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$attrs')));
 
@@ -87,7 +87,7 @@ it('imageTest_static_0001', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('imageTest_static_0002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageTest_static_0002 START');
-      let strJsonNew = inspector.getInspectorByKey('image');
+      let strJsonNew = inspector.getInspectorByKey('image' + '_image');
 
       console.info("imageTest_static_0002 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$attrs')));
 
@@ -107,7 +107,7 @@ it('imageTest_static_0002', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('imageTest_static_0003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageTest_static_0003 START');
-      let strJsonNew = inspector.getInspectorByKey('image');
+      let strJsonNew = inspector.getInspectorByKey('image' + '_image');
 
       console.info("imageTest_static_0003 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$attrs')));
 
@@ -126,7 +126,7 @@ it('imageTest_static_0003', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('imageTest_static_0004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageTest_static_0004 START');
-      let strJsonNew = inspector.getInspectorByKey('image');
+      let strJsonNew = inspector.getInspectorByKey('image' + '_image');
 
       console.info("imageTest_static_0004 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$attrs')));
 
@@ -145,7 +145,7 @@ it('imageTest_static_0004', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('imageTest_static_0005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageTest_static_0005 START');
-      let strJsonNew = inspector.getInspectorByKey('image');
+      let strJsonNew = inspector.getInspectorByKey('image' + '_image');
 
       console.info("imageTest_static_0005 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$attrs')));
 
@@ -164,7 +164,7 @@ it('imageTest_static_0005', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('imageTest_static_0006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageTest_static_0006 START');
-      let strJsonNew = inspector.getInspectorByKey('image');
+      let strJsonNew = inspector.getInspectorByKey('image' + '_image');
 
       console.info("imageTest_static_0006 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$attrs')));
 
@@ -183,7 +183,7 @@ it('imageTest_static_0006', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('imageTest_static_0007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageTest_static_0007 START');
-      let strJsonNew = inspector.getInspectorByKey('image');
+      let strJsonNew = inspector.getInspectorByKey('image' + '_image');
 
       console.info("imageTest_static_0007 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$attrs')));
 
@@ -202,7 +202,7 @@ it('imageTest_static_0007', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('imageTest_static_0008', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageTest_static_0008 START');
-      let strJsonNew = inspector.getInspectorByKey('image');
+      let strJsonNew = inspector.getInspectorByKey('image' + '_image');
 
       console.info("imageTest_static_0008 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$attrs')));
 
@@ -221,7 +221,7 @@ it('imageTest_static_0008', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('imageTest_static_0009', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageTest_static_0009 START');
-      let strJsonNew = inspector.getInspectorByKey('image');
+      let strJsonNew = inspector.getInspectorByKey('image' + '_image');
 
       console.info("imageTest_static_0009 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$attrs')));
 
@@ -240,7 +240,7 @@ it('imageTest_static_0009', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('imageTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageTest_static_0010 START');
-      let strJsonNew = inspector.getInspectorByKey('image');
+      let strJsonNew = inspector.getInspectorByKey('image' + '_image');
 
       console.info("imageTest_static_0010 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$attrs')));
 
@@ -259,7 +259,7 @@ it('imageTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('imageTest_static_0011', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageTest_static_0011 START');
-      let strJsonNew = inspector.getInspectorByKey('image');
+      let strJsonNew = inspector.getInspectorByKey('image' + '_image');
 
       console.info("imageTest_static_0011 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$attrs')));
 
@@ -278,7 +278,7 @@ it('imageTest_static_0011', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('imageTest_static_0012', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageTest_static_0012 START');
-      let strJsonNew = inspector.getInspectorByKey('image');
+      let strJsonNew = inspector.getInspectorByKey('image' + '_image');
 
       console.info("imageTest_static_0012 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$attrs')));
 
@@ -297,7 +297,7 @@ it('imageTest_static_0012', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('imageTest_static_0013', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageTest_static_0013 START');
-      let strJsonNew = inspector.getInspectorByKey('image');
+      let strJsonNew = inspector.getInspectorByKey('image' + '_image');
 
       console.info("imageTest_static_0013 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$attrs')));
 
@@ -316,7 +316,7 @@ it('imageTest_static_0013', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('imageTest_static_0014', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageTest_static_0014 START');
-      let strJsonNew = inspector.getInspectorByKey('image');
+      let strJsonNew = inspector.getInspectorByKey('image' + '_image');
 
       console.info("imageTest_static_0014 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$attrs')));
 
@@ -337,11 +337,11 @@ it('imageTest_static_0015', Level.LEVEL0, async (done: () => void): Promise<void
 
       console.info('imageTest_static_0015 START');
       let driver = Driver.create();
-      let button = await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button = await (driver.findComponent(ON.id('image' + '_changeButton')) as Promise<Component>);
       await button.click();
       await UtilsTest.msSleep(2000)
 
-      let strJsonNew = inspector.getInspectorByKey('image');
+      let strJsonNew = inspector.getInspectorByKey('image' + '_image');
 
       console.info("imageTest_static_0015 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$attrs')));
 

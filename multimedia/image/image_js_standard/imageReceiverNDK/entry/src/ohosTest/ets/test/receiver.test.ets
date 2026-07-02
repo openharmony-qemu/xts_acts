@@ -1638,8 +1638,7 @@ export default function ImageReceiverTest() {
             let ret = false;
             if (typeof result != 'number') {
                 console.info(`${TAG} waitForCondition result is ${JSON.stringify(result)}`);
-                // 相机拍照/录像显示角度校正兜底策略，format强转为25
-                ret = (result.imageInfo!.format == 35 || result.imageInfo!.format == 25) &&
+                ret = (result.imageInfo!.format == 35) &&
                     result.imageInfo!.strideAlignedRet == true &&
                     isValidColorSpace(result.imageInfo!.colorSpace);
             } else {
@@ -1689,8 +1688,7 @@ export default function ImageReceiverTest() {
             let ret = false;
             if (typeof result != 'number') {
                 console.info(`${TAG} waitForCondition result is ${JSON.stringify(result)}`);
-                // 相机拍照/录像显示角度校正兜底策略，format强转为25
-                ret = (result.imageInfo!.format == 36 || result.imageInfo!.format == 25) &&
+                ret = (result.imageInfo!.format == 36) &&
                     result.imageInfo!.strideAlignedRet == true &&
                     isValidColorSpace(result.imageInfo!.colorSpace);
             } else {

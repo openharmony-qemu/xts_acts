@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -18,37 +19,9 @@ import emitter from '@ohos.events.emitter';
 import events_emitter from '@ohos.events.emitter';
 import { Driver, ON } from '@ohos.UiTest';
 import { BusinessError, Callback, RecordData } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext'
-import {
-  OnRenderExitedEvent,
-  OnPageBeginEvent,
-  RenderProcessNotRespondingReason,
-  RenderProcessNotRespondingData,
-  Entry,
-  Component,
-  Column,
-  Row,
-  Button,
-  ClickEvent,
-  Web,
-  LargestContentfulPaint,
-  Flex,
-  Image,
-  Builder,
-  Text,
-  FlexDirection,
-  FlexAlign,
-  ItemAlign,
-  ForEach,
-  Alignment,
-  Divider,
-  $r,
-} from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
-import { Callback } from '@ohos.base'
-import { UIContext, Router } from '@ohos.arkui.UIContext'
-
-
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { OnRenderExitedEvent, OnPageBeginEvent, RenderProcessNotRespondingReason, RenderProcessNotRespondingData, Entry, Component, Column, Row, Button, ClickEvent, Web, LargestContentfulPaint, Flex, Image, Builder, Text, FlexDirection, FlexAlign, ItemAlign, ForEach, Alignment, Divider, $r } from '@ohos.arkui.component';
+import { State } from '@ohos.arkui.stateManagement';
 export class StringFields {
   str: string = '';
 }

@@ -14,27 +14,8 @@
  * limitations under the License.
  */
 
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  ForEach,
-  Text,
-  Row,
-  List,
-  ListItem,
-  Color,
-  FlexAlign,ComponentV2
-} from '@ohos.arkui.component'
-import {
-  State,
-  Watch,
-  Link,Local,Trace,UIUtils,
-  StorageLink,LocalStorage,UIUtils,Observed,ObservedV2
-} from '@ohos.arkui.stateManagement'
-
+import { Entry, Column, Component, Button, ClickEvent, ForEach, Text, Row, List, ListItem, Color, FlexAlign, ComponentV2 } from '@ohos.arkui.component';
+import { State, Watch, Link, Local, Trace, UIUtils, StorageLink, LocalStorage, Observed, ObservedV2 } from '@ohos.arkui.stateManagement';
 @Observed
 export class InfoV1Observed {
   name: string = 'Tom';

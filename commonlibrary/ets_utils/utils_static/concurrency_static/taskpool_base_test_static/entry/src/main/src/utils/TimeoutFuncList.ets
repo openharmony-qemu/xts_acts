@@ -1,4 +1,4 @@
-// 'use static'
+'use static';
 
 import { asyncSleep } from './exportFunclist';
 import { SendableClassTest } from './sendable';

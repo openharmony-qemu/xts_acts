@@ -249,5 +249,55 @@ export default function accountManagerTest() {
       }
       done();
     })
+
+    /**
+     * @tc.name   test_removeOsAccount_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEOSACCOUNT_NO_PERMISSION_JS_0100
+     * @tc.desc   test removeOsAccount with permission denied 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_removeOsAccount_0100", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        await accountManager.removeOsAccount(SELFWANT, 101);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code === 801).assertTrue();
+        } else {
+          expect(error.code === 201).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_activateOsAccount_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_ACTIVATEOSACCOUNT_NO_PERMISSION_JS_0100
+     * @tc.desc   test activateOsAccount with permission denied 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_activateOsAccount_0100", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        await accountManager.activateOsAccount(SELFWANT, 100);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code === 801).assertTrue();
+        } else {
+          expect(error.code === 201).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
   })
 }

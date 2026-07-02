@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -1708,8 +1709,8 @@ export default function saveComponentStaticTest() {
       await UtilsTest.msSleep(1000);
       let strJson: string = inspector.getInspectorByKey('keySave');
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getString('maxFontSize')).assertEqual('20.00vp');
-      expect(obj.getElement('$attrs').getString('minFontSize')).assertEqual('10.00vp');
+      expect(obj.getElement('$attrs').getString('maxFontSize')).assertEqual('20.00fp');
+      expect(obj.getElement('$attrs').getString('minFontSize')).assertEqual('10.00fp');
       expect(obj.getElement('$attrs').getString('maxFontScale')).assertEqual('1.000000');
       expect(obj.getElement('$attrs').getString('minFontScale')).assertEqual('1.000000');
       expect(obj.getElement('$attrs').getBoolean('enabled')).assertEqual(true);

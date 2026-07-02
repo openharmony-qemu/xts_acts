@@ -1,0 +1,32 @@
+{
+    "description": "Configuration for DLP Enterprise Service Tests",
+    "driver": {
+        "type": "OHJSUnitTest",
+        "test-timeout": "1200000",
+        "shell-timeout": "900000",
+        "testcase-timeout": "600000",
+        "bundle-name": "com.ohos.dlp_xts",
+        "module-name": "entry_test"
+    },
+    "kits": [
+        {
+            "test-file-name": [
+                "ActsDlpEnterpriseServiceTest.hap"
+            ],
+            "type": "AppInstallKit",
+            "cleanup-apps": true
+        },
+        {
+            "type": "ShellKit",
+            "run-command": [
+                "sh -c 'if [ $$(param get const.product.devicetype) = 2in1 ]; then param set const.dlp.functiontypes 1; fi'",
+                "wait 2",
+                "sh -c 'if [ $$(param get const.product.devicetype) = 2in1 ]; then pkill dlp_credential; fi'"
+            ],
+            "teardown-command": [
+                "reboot"
+            ]
+        }
+
+    ]
+}

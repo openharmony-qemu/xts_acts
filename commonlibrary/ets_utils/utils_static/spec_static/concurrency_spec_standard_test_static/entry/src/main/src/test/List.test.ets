@@ -1,3 +1,4 @@
+'use static';
 import builtinsBlockTest from './BuiltinStatment/ConcurrentBuiltinsBlockTest.test.ets'
 import builtinsBreakTest from './BuiltinStatment/ConcurrentBuiltinsBreakTest.test.ets'
 import builtinsContinueTest from './BuiltinStatment/ConcurrentBuiltinsContinueTest.test.ets'

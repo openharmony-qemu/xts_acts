@@ -506,7 +506,7 @@ export default function objectAllPropTest() {
       expect(result[1].toString()).assertEqual(['customProp'].toString());
 
       expect(Object.keys(error).toString()).assertEqual(['customProp'].toString());
-      expect(result[2].toString()).assertEqual(['message','errorfunc', 'stack', 'topstack', 'customProp'].toString());
+      expect(result[2].toString()).assertEqual(['message','errorfunc', 'stack', 'topstack', 'nativeModuleErrorInfo', 'customProp'].toString());
     });
 
     /**

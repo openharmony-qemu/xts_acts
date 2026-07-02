@@ -14,82 +14,11 @@
  * limitations under the License.
  */
 import { MessageManager, Callback, Message } from '../../common/MessageManager';
-import {
-  TabContent,FlowItem,GridRowOptions,BreakpointsReference,GridColOptions,
-  ColumnOptions,
-  SideBarContainerType,
-  HorizontalAlign,
-  VerticalAlign,
-  GutterOption,BreakPoints,
-  BadgeParam,
-  BadgeStyle,
-  GridColColumnOption,
-  GridColOptions,
-  GridItem,
-  GridCol,GridColColumnOption,
-  GridRowDirection,
-  ToggleType,
-  TimePicker,
-  SliderStyle,
-  FlexDirection,
-  ProgressType,
-  MenuItemOptions,
-  MenuItem,
-  $r,
-  Entry,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  ForEach,
-  Text,
-  Row,
-  List,
-  ListItem,
-  Color,
-  FlexAlign,
-  ExpectedFrameRateRange,
-  Scroll,
-  Margin,
-  AlphabetIndexer,
-  Blank,
-  Checkbox,
-  CheckboxGroup,
-  DataPanel,
-  DatePicker,
-  Gauge,
-  Image,
-  ImageAnimator,
-  LoadingProgress,
-  Marquee,
-  Menu,
-  Navigation,
-  Progress,
-  QRCode,
-  Radio,
-  Rating,
-  RichText,
-  Scroller,
-  Flex,
-  BarState,
-  ScrollDirection,
-  Search,
-  Select,
-  Slider,
-  TextArea,
-  TextClock,ImageFit,BadgeParamWithNumber,
-  TextInput,TextPicker,TextTimer,Toggle,Web,Circle,Ellipse,
-  Line,Polyline,Polygon,Path,Rect,Shape,Badge,ColumnSplit,Counter,GridRow,Grid,CommonMethod,applyStyles,
-  Refresh,RelativeContainer,RowSplit,TextAlign,SideBarContainer,Stack,Swiper,Tabs,WaterFlow,DataPanelType,AlignRuleOption
-
-} from '@ohos.arkui.component'
-import {SetValue} from '../../common/Utils'
-import { State, StoragePropRef } from '@ohos.arkui.stateManagement'
+import { TabContent, FlowItem, GridRowOptions, BreakpointsReference, GridColOptions, ColumnOptions, SideBarContainerType, HorizontalAlign, VerticalAlign, GutterOption, BreakPoints, BadgeParam, BadgeStyle, GridColColumnOption, GridItem, GridCol, GridRowDirection, ToggleType, TimePicker, SliderStyle, FlexDirection, ProgressType, MenuItemOptions, MenuItem, $r, Entry, Column, Component, Button, ClickEvent, ForEach, Text, Row, List, ListItem, Color, FlexAlign, ExpectedFrameRateRange, Scroll, Margin, AlphabetIndexer, Blank, Checkbox, CheckboxGroup, DataPanel, DatePicker, Gauge, Image, ImageAnimator, LoadingProgress, Marquee, Menu, Navigation, Progress, QRCode, Radio, Rating, RichText, Scroller, Flex, BarState, ScrollDirection, Search, Select, Slider, TextArea, TextClock, ImageFit, BadgeParamWithNumber, TextInput, TextPicker, TextTimer, Toggle, Web, Circle, Ellipse, Line, Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, GridRow, Grid, CommonMethod, applyStyles, Refresh, RelativeContainer, RowSplit, TextAlign, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, DataPanelType, AlignRuleOption } from '@ohos.arkui.component';
+import { SetValue, RouterParams } from '../../common/Utils';
+import { State, StoragePropRef, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router';
-import { RouterParams } from '../../common/Utils';
-
 @Entry
 @Component
 struct LayoutWeightPageFlex {

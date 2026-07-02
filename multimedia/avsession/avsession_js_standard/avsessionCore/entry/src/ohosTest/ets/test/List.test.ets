@@ -19,7 +19,7 @@ import AVSessionController from './AVSessionController.test'
 import AVSessionController2 from './AVSessionController2.test'
 import AVSessionEnum from './AVSessionEnum.test'
 import AVSessionERRCode from './AVSessionERRCode.test'
-import AVSessionMetadata2 from './AVSessionMetadata.test'
+import AVSessionMetadata2 from './AVSessionMetadata2.test'
 
 
 export default function testsuite() {

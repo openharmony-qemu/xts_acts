@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,18 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Text,  Column, Component, Button,  ClickEvent,  Web, Row, Stack } from '@ohos.arkui.component'
-import { State} from '@ohos.arkui.stateManagement'
-import { Area, OnPageBeginEvent } from '@ohos.arkui.component'
+import { Entry, Text, Column, Component, Button, ClickEvent, Web, Row, Stack, Area, OnPageBeginEvent } from '@ohos.arkui.component';
+import { State } from '@ohos.arkui.stateManagement';
 import Utils from '../../src/test/Utils.test';
 import hilog from '@ohos.hilog';
+import emitter from '@ohos.events.emitter';
 import events_emitter from '@ohos.events.emitter';
-import { Callback } from '@ohos.base'
-import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
+import { Callback, RecordData, BusinessError } from '@ohos.base';
+import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import webview from '@ohos.web.webview';
-import emitter from '@ohos.events.emitter';
-import { Callback, RecordData ,BusinessError } from '@ohos.base'
 interface PageBeginParam {
   url: string
 }

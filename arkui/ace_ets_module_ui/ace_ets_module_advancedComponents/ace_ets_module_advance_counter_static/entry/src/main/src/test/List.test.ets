@@ -16,8 +16,27 @@
 
 import counterDirectionTest from './counter/counterDirection.test';
 import CounterAttrsTest from './counter/CounterAttrsTest.test';
+import CounterV2DirectionTest from './CounterV2/CounterV2Direction.test';
+import CounterV2AttrsTest from './CounterV2/CounterV2AttrsTest.test';
 
-export default function testsuite() {
+import CounterV2AbnormalOptionsTest from './CounterV2/CounterV2AbnormalOptionsTest.test';
+import CounterV2AbnormalNumberTest from './CounterV2/CounterV2AbnormalNumberTest.test';
+import CounterV2AbnormalInlineTest from './CounterV2/CounterV2AbnormalInlineTest.test';
+import CounterV2AbnormalDateTest from './CounterV2/CounterV2AbnormalDateTest.test';
+import CounterV2CallbackNormalTest from './CounterV2/CounterV2CallbackNormalTest.test';
+export default function testsuite(): void {
   counterDirectionTest();
   CounterAttrsTest();
+  CounterV2DirectionTest();
+  CounterV2AttrsTest();
+
+  CounterV2AbnormalOptionsTest();
+
+  CounterV2AbnormalNumberTest();
+
+  CounterV2AbnormalInlineTest();
+
+  CounterV2AbnormalDateTest();
+
+  CounterV2CallbackNormalTest();
 }

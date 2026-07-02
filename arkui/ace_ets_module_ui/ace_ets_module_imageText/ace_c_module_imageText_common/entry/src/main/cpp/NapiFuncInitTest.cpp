@@ -20,6 +20,13 @@
 #include "TextInput/TextInputGradientTest.cpp"
 #include "Richeditor/RichEditorPunctuationOverflowTest.cpp"
 #include "Richeditor/RichEditorScrollToVisibleTest.cpp"
+#include "TextCommon/TextPunctuationOverflowTest.cpp"
+#include "TextInput/TextInputPunctuationOverflowTest.cpp"
+#include "TextArea/TextAreaPunctuationOverflowTest.cpp"
+#include "TextCommon/TextTailIndentsTest.cpp"
+#include "TextCommon/ParagraphStyleTailIndentsTest.cpp"
+#include "StyledString/LinearGradientTest.cpp"
+#include "StyledString/RadialGradientTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -96,6 +103,102 @@ static napi_value Init(napi_env env, napi_value exports)
         {"RichEditorScrollToVisibleTest_003", nullptr, RichEditorScrollToVisibleTest_003, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"RichEditorScrollToVisibleTest_004", nullptr, RichEditorScrollToVisibleTest_004, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"RichEditorScrollToVisibleTest_005", nullptr, RichEditorScrollToVisibleTest_005, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"TextPunctuationOverflowTest_001", nullptr, TextPunctuationOverflowTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextPunctuationOverflowTest_002", nullptr, TextPunctuationOverflowTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextPunctuationOverflowTest_003", nullptr, TextPunctuationOverflowTest_003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextPunctuationOverflowTest_004", nullptr, TextPunctuationOverflowTest_004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextPunctuationOverflowTest_005", nullptr, TextPunctuationOverflowTest_005, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"TextInputPunctuationOverflowTest_001", nullptr, TextInputPunctuationOverflowTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextInputPunctuationOverflowTest_002", nullptr, TextInputPunctuationOverflowTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextInputPunctuationOverflowTest_003", nullptr, TextInputPunctuationOverflowTest_003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextInputPunctuationOverflowTest_004", nullptr, TextInputPunctuationOverflowTest_004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextInputPunctuationOverflowTest_005", nullptr, TextInputPunctuationOverflowTest_005, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"TextAreaPunctuationOverflowTest_001", nullptr, TextAreaPunctuationOverflowTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextAreaPunctuationOverflowTest_002", nullptr, TextAreaPunctuationOverflowTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextAreaPunctuationOverflowTest_003", nullptr, TextAreaPunctuationOverflowTest_003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextAreaPunctuationOverflowTest_004", nullptr, TextAreaPunctuationOverflowTest_004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextAreaPunctuationOverflowTest_005", nullptr, TextAreaPunctuationOverflowTest_005, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"TextTailIndentsTest_001", nullptr, TextTailIndentsTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextTailIndentsTest_002", nullptr, TextTailIndentsTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextTailIndentsTest_003", nullptr, TextTailIndentsTest_003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextTailIndentsTest_004", nullptr, TextTailIndentsTest_004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextTailIndentsTest_005", nullptr, TextTailIndentsTest_005, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"ParagraphStyleTailIndentsTest_001", nullptr, ParagraphStyleTailIndentsTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ParagraphStyleTailIndentsTest_002", nullptr, ParagraphStyleTailIndentsTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ParagraphStyleTailIndentsTest_003", nullptr, ParagraphStyleTailIndentsTest_003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ParagraphStyleTailIndentsTest_004", nullptr, ParagraphStyleTailIndentsTest_004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ParagraphStyleTailIndentsTest_005", nullptr, ParagraphStyleTailIndentsTest_005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ParagraphStyleTailIndentsTest_006", nullptr, ParagraphStyleTailIndentsTest_006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ParagraphStyleTailIndentsTest_007", nullptr, ParagraphStyleTailIndentsTest_007, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"LinearGradientTest_001", nullptr, LinearGradientTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LinearGradientTest_002", nullptr, LinearGradientTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LinearGradientTest_003", nullptr, LinearGradientTest_003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LinearGradientTest_004", nullptr, LinearGradientTest_004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LinearGradientTest_005", nullptr, LinearGradientTest_005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LinearGradientTest_006", nullptr, LinearGradientTest_006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LinearGradientTest_007", nullptr, LinearGradientTest_007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LinearGradientTest_008", nullptr, LinearGradientTest_008, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LinearGradientTest_009", nullptr, LinearGradientTest_009, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LinearGradientTest_010", nullptr, LinearGradientTest_010, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LinearGradientTest_011", nullptr, LinearGradientTest_011, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LinearGradientTest_012", nullptr, LinearGradientTest_012, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LinearGradientTest_013", nullptr, LinearGradientTest_013, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LinearGradientTest_014", nullptr, LinearGradientTest_014, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LinearGradientTest_015", nullptr, LinearGradientTest_015, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LinearGradientTest_016", nullptr, LinearGradientTest_016, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LinearGradientTest_017", nullptr, LinearGradientTest_017, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LinearGradientTest_018", nullptr, LinearGradientTest_018, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LinearGradientTest_019", nullptr, LinearGradientTest_019, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LinearGradientTest_020", nullptr, LinearGradientTest_020, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LinearGradientTest_021", nullptr, LinearGradientTest_021, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LinearGradientTest_022", nullptr, LinearGradientTest_022, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LinearGradientTest_023", nullptr, LinearGradientTest_023, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LinearGradientTest_024", nullptr, LinearGradientTest_024, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LinearGradientTest_025", nullptr, LinearGradientTest_025, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LinearGradientTest_026", nullptr, LinearGradientTest_026, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LinearGradientTest_027", nullptr, LinearGradientTest_027, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LinearGradientTest_028", nullptr, LinearGradientTest_028, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"LinearGradientTest_029", nullptr, LinearGradientTest_029, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"RadialGradientTest_001", nullptr, RadialGradientTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RadialGradientTest_002", nullptr, RadialGradientTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RadialGradientTest_003", nullptr, RadialGradientTest_003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RadialGradientTest_004", nullptr, RadialGradientTest_004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RadialGradientTest_005", nullptr, RadialGradientTest_005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RadialGradientTest_006", nullptr, RadialGradientTest_006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RadialGradientTest_007", nullptr, RadialGradientTest_007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RadialGradientTest_008", nullptr, RadialGradientTest_008, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RadialGradientTest_009", nullptr, RadialGradientTest_009, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RadialGradientTest_010", nullptr, RadialGradientTest_010, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RadialGradientTest_011", nullptr, RadialGradientTest_011, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RadialGradientTest_012", nullptr, RadialGradientTest_012, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RadialGradientTest_013", nullptr, RadialGradientTest_013, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RadialGradientTest_014", nullptr, RadialGradientTest_014, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RadialGradientTest_015", nullptr, RadialGradientTest_015, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RadialGradientTest_016", nullptr, RadialGradientTest_016, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RadialGradientTest_017", nullptr, RadialGradientTest_017, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RadialGradientTest_018", nullptr, RadialGradientTest_018, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RadialGradientTest_019", nullptr, RadialGradientTest_019, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RadialGradientTest_020", nullptr, RadialGradientTest_020, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RadialGradientTest_021", nullptr, RadialGradientTest_021, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RadialGradientTest_022", nullptr, RadialGradientTest_022, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RadialGradientTest_023", nullptr, RadialGradientTest_023, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RadialGradientTest_024", nullptr, RadialGradientTest_024, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RadialGradientTest_025", nullptr, RadialGradientTest_025, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RadialGradientTest_026", nullptr, RadialGradientTest_026, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RadialGradientTest_027", nullptr, RadialGradientTest_027, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RadialGradientTest_028", nullptr, RadialGradientTest_028, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RadialGradientTest_029", nullptr, RadialGradientTest_029, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RadialGradientTest_030", nullptr, RadialGradientTest_030, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RadialGradientTest_031", nullptr, RadialGradientTest_031, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RadialGradientTest_032", nullptr, RadialGradientTest_032, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RadialGradientTest_033", nullptr, RadialGradientTest_033, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

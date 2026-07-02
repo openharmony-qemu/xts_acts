@@ -106,17 +106,17 @@ it('promptTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<voi
       console.info('promptTest_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('prompt_3'));
+      let button = await driver.findComponent(ON.id('prompt' + '_3'));
       await (button?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
-      let strJson1 = inspector.getInspectorByKey('prompt_2');
+      let strJson1 = inspector.getInspectorByKey('prompt' + '_2');
       let obj1 = JSON.parseJsonElement(strJson1);
       expect(obj1.getElement('$attrs').getString("label")).assertEqual('确认');
       await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('prompt_2'));
+      let button1 = await driver.findComponent(ON.id('prompt' + '_2'));
       await (button1?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('prompt_3');
+      let strJson = inspector.getInspectorByKey('prompt' + '_3');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[promptTest_static_0100] component obj is: " + JSON.stringify(obj));
       console.info("[promptTest_static_0100] component obj.$attrs is: " + JSON.stringify(obj.getElement('$attrs')));

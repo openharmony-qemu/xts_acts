@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -59,7 +60,7 @@ let textLineRunExpectData: Array<Array<TextRunData>> = [
       "imageBounds": {
         "left": 5,
         "top": 8,
-        "right": 440.22,
+        "right": 472.11,
         "bottom": 41
       },
     }
@@ -84,7 +85,7 @@ let textLineRunExpectData: Array<Array<TextRunData>> = [
       "imageBounds": {
         "left": 2,
         "top": 1,
-        "right": 445.68,
+        "right": 471.78,
         "bottom": 27
       },
     }
@@ -109,7 +110,7 @@ let textLineRunExpectData: Array<Array<TextRunData>> = [
       "imageBounds": {
         "left": -7,
         "top": 8,
-        "right": 443.74,
+        "right": 469.18,
         "bottom": 41
       },
     }
@@ -134,7 +135,7 @@ let textLineRunExpectData: Array<Array<TextRunData>> = [
       "imageBounds": {
         "left": 2,
         "top": 1,
-        "right": 439.26,
+        "right": 470.54,
         "bottom": 27
       },
     }
@@ -177,9 +178,9 @@ let textLineRunExpectData: Array<Array<TextRunData>> = [
         "width": 275.14
       },
       "imageBounds": {
-        "left": 290.50,
+        "left": 222.86,
         "top": 8,
-        "right": 471.82,
+        "right": 470.03,
         "bottom": 41
       },
     }
@@ -322,13 +323,13 @@ export default function TextRunTest() {
 
     /**
      * @tc.name   testGetGlyphRunsStatic
-     * @tc.number testGetGlyphRunsStatic
+     * @tc.number SUB_GRAPHIC_Text_TestGetGlyphRunsStatic_0100
      * @tc.desc   To test method getGlyphRuns desc.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetGlyphRunsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testGetGlyphRunsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           globalParagraph?.layoutSync(500);

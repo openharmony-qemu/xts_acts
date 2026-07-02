@@ -13,24 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Builder,Component,Scroller,Scroll,GridItem,Grid,List,Video,Image,BarPosition,
-  ButtonAttribute,Resource,$r,FlexAlign,Divider,Tabs,TabContent,TabsController,TextPicker,TextAreaController,
-  PlaybackSpeed,$rawfile,Column,Margin,ColumnOptions,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,
-  Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,
-  EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,
-  GridAttribute,NestedScrollMode,ScrollSource,ScrollState,
-  TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  PropRef
-} from '@ohos.arkui.stateManagement';
+import { Entry, Builder, Component, Scroller, Scroll, GridItem, Grid, List, Video, Image, BarPosition, ButtonAttribute, Resource, $r, FlexAlign, Divider, Tabs, TabContent, TabsController, TextPicker, TextAreaController, PlaybackSpeed, $rawfile, Column, Margin, ColumnOptions, Text, Color, Flex, FlexDirection, ItemAlign, Row, Button, ClickEvent, Week, FontWeight, Axis, Swiper, ForEach, PickerTextStyle, CalendarAlign, CalendarPicker, EdgeEffect, Curve, SwiperDisplayMode, ArrowPosition, Select, BlurStyle, MenuAlignType, TextInputController, GridAttribute, NestedScrollMode, ScrollSource, ScrollState, TextAlign, AlphabetIndexer } from '@ohos.arkui.component';
+import { State, Link, PropRef } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../common/Utils';
-import { GridModifier } from "@ohos.arkui.modifier";
-import { BusinessError } from '@ohos.base';
-import { RecordData } from '@ohos.base';
-
+import { GridModifier } from '@ohos.arkui.modifier';
+import { BusinessError, RecordData } from '@ohos.base';
 class CustomModifier extends GridModifier {
   applyNormalAttribute(instance: GridAttribute): void {
     // super.applyNormalAttribute?.(instance);
@@ -126,6 +114,6 @@ struct GridNestedScroll {
       })
       .width('100%')
       .height('70%')
-    }.key('ColumnSize')
+    }.key('gridNestedScroll_ColumnSize')
   }
 }

@@ -82,7 +82,6 @@ export default function CustomSpanMeasureInfoTest() {
       await CommonFunc.sleep(500);
       
       let measureInfoData = AppStorage.get<CustomSpanMeasureInfo>('customSpanMeasure_maxWidth_300');
-      console.info('[customSpanMeasureInfo_maxWidth_0100] measureInfoData: ' + JSON.stringify(measureInfoData));
       
       expect(measureInfoData !=null).assertEqual(true);
       
@@ -121,7 +120,6 @@ export default function CustomSpanMeasureInfoTest() {
       await CommonFunc.sleep(500);
       
       let measureInfoData = AppStorage.get<CustomSpanMeasureInfo>('customSpanMeasure_maxWidth_500');
-      console.info('[customSpanMeasureInfo_maxWidth_0200] measureInfoData: ' + JSON.stringify(measureInfoData));
       
       expect(measureInfoData !=null).assertEqual(true);
       
@@ -156,7 +154,6 @@ export default function CustomSpanMeasureInfoTest() {
       await CommonFunc.sleep(500);
       
       let measureInfoData = AppStorage.get<CustomSpanMeasureInfo>('customSpanMeasure_maxWidth_full');
-      console.info('[customSpanMeasureInfo_maxWidth_0300] measureInfoData: ' + JSON.stringify(measureInfoData));
       
       expect(measureInfoData !=null).assertEqual(true);
       
@@ -191,7 +188,6 @@ export default function CustomSpanMeasureInfoTest() {
       await CommonFunc.sleep(500);
       
       let measureInfoData = AppStorage.get<CustomSpanMeasureInfo>('customSpanMeasure_maxWidth_percent');
-      console.info('[customSpanMeasureInfo_maxWidth_0400] measureInfoData: ' + JSON.stringify(measureInfoData));
       
       expect(measureInfoData !=null).assertEqual(true);
       
@@ -226,7 +222,6 @@ export default function CustomSpanMeasureInfoTest() {
       await CommonFunc.sleep(500);
       
       let measureInfoData = AppStorage.get<CustomSpanMeasureInfo>('customSpanMeasure_layoutPolicy_none');
-      console.info('[customSpanMeasureInfo_layoutPolicy_0100] measureInfoData: ' + JSON.stringify(measureInfoData));
       
       expect(measureInfoData !=null).assertEqual(true);
       
@@ -264,7 +259,6 @@ export default function CustomSpanMeasureInfoTest() {
       await CommonFunc.sleep(500);
       
       let measureInfoData = AppStorage.get<CustomSpanMeasureInfo>('customSpanMeasure_layoutPolicy_set');
-      console.info('[customSpanMeasureInfo_layoutPolicy_0200] measureInfoData: ' + JSON.stringify(measureInfoData));
       
       expect(measureInfoData !=null).assertEqual(true);
       
@@ -302,7 +296,6 @@ export default function CustomSpanMeasureInfoTest() {
       await CommonFunc.sleep(500);
       
       let measureInfoData = AppStorage.get<CustomSpanMeasureInfo>('customSpanMeasure_null_test');
-      console.info('[customSpanMeasureInfo_layoutPolicy_null_0100] measureInfoData: ' + JSON.stringify(measureInfoData));
       
       expect(measureInfoData !=null).assertEqual(true);
       
@@ -344,7 +337,6 @@ export default function CustomSpanMeasureInfoTest() {
       await CommonFunc.sleep(500);
       
       let measureInfoData = AppStorage.get<CustomSpanMeasureInfo>('customSpanMeasure_undefined_test');
-      console.info('[customSpanMeasureInfo_layoutPolicy_undefined_0100] measureInfoData: ' + JSON.stringify(measureInfoData));
       
       expect(measureInfoData !=null).assertEqual(true);
       

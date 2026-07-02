@@ -82,7 +82,7 @@ export default function systemRouterJsunit() {
         console.info("[systemRouterTest002] on events_emitter err : " + JSON.stringify(err));
       }
       console.info("[systemRouterTest002] click push button result is: "
-        + JSON.stringify(sendEventByKey('pushButtonA', 10, "")));
+        + JSON.stringify(sendEventByKey('systemRouterA_pushButtonA', 10, "")));
       await Utils.sleep(1000);
       router.back();
       await Utils.sleep(1000);

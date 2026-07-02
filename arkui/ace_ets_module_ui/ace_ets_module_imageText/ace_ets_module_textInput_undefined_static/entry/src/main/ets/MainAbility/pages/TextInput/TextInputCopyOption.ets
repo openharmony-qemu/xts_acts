@@ -1,13 +1,8 @@
-'use static'
+'use static';
 
-import { Entry, Row, Column, Component,Button, ClickEvent,
-  Text, TextArea, TextInput, Search, ResourceStr, $r, LineBreakStrategy, CancelButtonOptions, CancelButtonSymbolOptions,
-  CancelButtonStyle, IconOptions, Length, AttributeModifier, SearchAttribute, TextInputAttribute,
-  IconOptions, Color, CopyOptions
-} from '@ohos.arkui.component'
+import { Entry, Row, Column, Component, Button, ClickEvent, Text, TextArea, TextInput, Search, ResourceStr, $r, LineBreakStrategy, CancelButtonOptions, CancelButtonSymbolOptions, CancelButtonStyle, IconOptions, Length, AttributeModifier, SearchAttribute, TextInputAttribute, Color, CopyOptions } from '@ohos.arkui.component';
 import { State, AppStorage, Observed } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-
 @Observed
 export class TextInputModifier implements AttributeModifier<TextInputAttribute> {
   public index: Int = 0;

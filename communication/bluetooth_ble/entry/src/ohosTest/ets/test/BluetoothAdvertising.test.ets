@@ -2253,5 +2253,306 @@ export default function bluetoothAdvertisingTest() {
       await sleep(2000);
       done();
     })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_isExtended_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_isExtended_0100
+     * @tc.desc   Test bluetoothBle api26
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_isExtended_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+      let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_isExtended_0100"
+      let advManufactureValueBuffers = new Uint8Array(171);
+      for (let count = 0; count < 171; count++) {
+        advManufactureValueBuffers[count] = (count+1);
+      }
+      let advManufactureDataUnits: bluetooth.ManufactureData = {
+        manufactureId:4567,
+        manufactureValue:advManufactureValueBuffers.buffer
+      };
+      let serviceValueBuffer = new Uint8Array(4);
+      serviceValueBuffer[0] = 4;
+      serviceValueBuffer[1] = 6;
+      serviceValueBuffer[2] = 7;
+      serviceValueBuffer[3] = 8;
+      let setting: bluetooth.AdvertiseSetting = {
+        interval:32,
+        txPower:1,
+        connectable:true,
+        isExtended: true,
+      };
+      let manufactureDataUnit: bluetooth.ManufactureData = {
+        manufactureId:4567,
+        manufactureValue:manufactureValueBuffer.buffer
+      };
+      let serviceDataUnit: bluetooth.ServiceData = {
+        serviceUuid:"00001888-0000-1000-8000-00805f9b34fb",
+        serviceValue:serviceValueBuffer.buffer
+      };
+      let advData: bluetooth.AdvertiseData = {
+        serviceUuids:["00001888-0000-1000-8000-00805f9b34fb"],
+        manufactureData:[advManufactureDataUnits],
+        serviceData:[serviceDataUnit],
+        includeDeviceName:false,
+        includeTxPower:false
+      };
+      let advResponse: bluetooth.AdvertiseData = {
+        serviceUuids:[],
+        manufactureData:[],
+        serviceData:[],
+      };
+      let advertisingParams: bluetooth.AdvertisingParams = {
+        advertisingSettings: setting,
+        advertisingData: advData,
+        advertisingResponse: advResponse,
+        duration: 100,
+      }
+      try {
+        console.info(`${caseName} test start`);
+        let advHandle = await bluetooth.startAdvertising(advertisingParams);
+        console.info(`${caseName} ` +'[bluetooth_js]startAdvertising promise info02:'+JSON.stringify(advHandle));
+        await sleep(1500);
+        await bluetooth.stopAdvertising(advHandle);
+        console.info(`${caseName} ` +'[bluetooth_js] stopAdvertising promise success: ');
+      }catch (err) {
+        console.info("02errCode:" + err.code + ",02errMessage:" + err.message);
+        if (err.code === 801) {
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
+        } else {
+        expect(err.code === 2902054).assertTrue();
+        }
+      }
+      await sleep(2000);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_isExtended_0200
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_isExtended_0200
+     * @tc.desc   Test bluetoothBle api26
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_isExtended_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+      let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_isExtended_0200"
+      let advManufactureValueBuffers = new Uint8Array(191);
+      for (let count = 0; count < 191; count++) {
+        advManufactureValueBuffers[count] = (count+1);
+      }
+      let advManufactureDataUnits: bluetooth.ManufactureData = {
+        manufactureId:4567,
+        manufactureValue:advManufactureValueBuffers.buffer
+      };
+      let serviceValueBuffer = new Uint8Array(4);
+      serviceValueBuffer[0] = 4;
+      serviceValueBuffer[1] = 6;
+      serviceValueBuffer[2] = 7;
+      serviceValueBuffer[3] = 8;
+      let setting: bluetooth.AdvertiseSetting = {
+        interval:32,
+        txPower:1,
+        connectable:true,
+        isExtended: true,
+      };
+      let manufactureDataUnit: bluetooth.ManufactureData = {
+        manufactureId:4567,
+        manufactureValue:manufactureValueBuffer.buffer
+      };
+      let serviceDataUnit: bluetooth.ServiceData = {
+        serviceUuid:"00001888-0000-1000-8000-00805f9b34fb",
+        serviceValue:serviceValueBuffer.buffer
+      };
+      let advData: bluetooth.AdvertiseData = {
+        serviceUuids:["00001888-0000-1000-8000-00805f9b34fb"],
+        manufactureData:[advManufactureDataUnits],
+        serviceData:[serviceDataUnit],
+        includeDeviceName:false,
+        includeTxPower:false
+      };
+      let advResponse: bluetooth.AdvertiseData = {
+        serviceUuids:["00001888-0000-1000-8000-00805f9b34fb"],
+        manufactureData:[manufactureDataUnit],
+        serviceData:[serviceDataUnit],
+      };
+      let advertisingParams: bluetooth.AdvertisingParams = {
+        advertisingSettings: setting,
+        advertisingData: advData,
+        advertisingResponse: advResponse,
+        duration: 100,
+      }
+      try {
+        console.info(`${caseName} test start`)
+        let advHandle = await bluetooth.startAdvertising(advertisingParams);
+        console.info(`${caseName} ` +'[bluetooth_js]startAdvertising promise info02:'+JSON.stringify(advHandle));
+        await sleep(1500);
+        await bluetooth.stopAdvertising(advHandle);
+        console.info(`${caseName} ` +'[bluetooth_js] stopAdvertising promise success: ');
+        expect().assertFail();
+      }catch (err) {
+        console.info(`${caseName} ` + "02errCode:" + err.code + ",02errMessage:" + err.message);
+        if (err.code === 801) {
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
+        } else {
+          expect(err.code === 2902054).assertTrue();
+        }
+      }
+      await sleep(2000);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_isExtended_0300
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_isExtended_0300
+     * @tc.desc   Test bluetoothBle api26
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_isExtended_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+      let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_isExtended_0300"
+      let advManufactureValueBuffers = new Uint8Array(170);
+      for (let count = 0; count < 170; count++) {
+        advManufactureValueBuffers[count] = (count+1);
+      }
+      let advManufactureDataUnits: bluetooth.ManufactureData = {
+        manufactureId:4567,
+        manufactureValue:advManufactureValueBuffers.buffer
+      };
+      let serviceValueBuffer = new Uint8Array(4);
+      serviceValueBuffer[0] = 4;
+      serviceValueBuffer[1] = 6;
+      serviceValueBuffer[2] = 7;
+      serviceValueBuffer[3] = 8;
+      let setting: bluetooth.AdvertiseSetting = {
+        interval:32,
+        txPower:1,
+        connectable: false,
+        isExtended: true,
+      };
+      let manufactureDataUnit: bluetooth.ManufactureData = {
+        manufactureId:4567,
+        manufactureValue:manufactureValueBuffer.buffer
+      };
+      let serviceDataUnit: bluetooth.ServiceData = {
+        serviceUuid:"00001888-0000-1000-8000-00805f9b34fb",
+        serviceValue:serviceValueBuffer.buffer
+      };
+      let advData: bluetooth.AdvertiseData = {
+        serviceUuids:["00001888-0000-1000-8000-00805f9b34fb"],
+        manufactureData:[advManufactureDataUnits],
+        serviceData:[serviceDataUnit],
+        includeDeviceName:false,
+        includeTxPower:false
+      };
+      let advResponse: bluetooth.AdvertiseData = {
+        serviceUuids:["00001888-0000-1000-8000-00805f9b34fb"],
+        manufactureData:[manufactureDataUnit],
+        serviceData:[serviceDataUnit],
+      };
+      let advertisingParams: bluetooth.AdvertisingParams = {
+        advertisingSettings: setting,
+        advertisingData: advData,
+        advertisingResponse: advResponse,
+        duration: 100,
+      }
+      try {
+        console.info(`${caseName} test start`)
+        let advHandle = await bluetooth.startAdvertising(advertisingParams);
+        console.info(`${caseName} ` +'[bluetooth_js]startAdvertising promise info02:'+JSON.stringify(advHandle));
+        await sleep(1500);
+        await bluetooth.stopAdvertising(advHandle);
+        console.info(`${caseName} ` +'[bluetooth_js] stopAdvertising promise success: ');
+      }catch (err) {
+        console.info(`${caseName} `+ "02errCode:" + err.code + ",02errMessage:" + err.message);
+        if (err.code === 801) {
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
+        } else {
+          expect().assertFail();
+        }
+      }
+      await sleep(2000);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_isExtended_0400
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_isExtended_0400
+     * @tc.desc   Test bluetoothBle api26
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_isExtended_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+      let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_isExtended_0400"
+      let advManufactureValueBuffers = new Uint8Array(10);
+      for (let count = 0; count < 10; count++) {
+        advManufactureValueBuffers[count] = (count+1);
+      }
+      let advManufactureDataUnits: bluetooth.ManufactureData = {
+        manufactureId:4567,
+        manufactureValue:advManufactureValueBuffers.buffer
+      };
+      let serviceValueBuffer = new Uint8Array(4);
+      serviceValueBuffer[0] = 4;
+      serviceValueBuffer[1] = 6;
+      serviceValueBuffer[2] = 7;
+      serviceValueBuffer[3] = 8;
+      let setting: bluetooth.AdvertiseSetting = {
+        interval:32,
+        txPower:1,
+        connectable:true,
+        isExtended: false,
+      };
+      let manufactureDataUnit: bluetooth.ManufactureData = {
+        manufactureId:4567,
+        manufactureValue:manufactureValueBuffer.buffer
+      };
+      let serviceDataUnit: bluetooth.ServiceData = {
+        serviceUuid:"00001888-0000-1000-8000-00805f9b34fb",
+        serviceValue:serviceValueBuffer.buffer
+      };
+      let advData: bluetooth.AdvertiseData = {
+        serviceUuids:["00001888-0000-1000-8000-00805f9b34fb"],
+        manufactureData:[advManufactureDataUnits],
+        serviceData:[serviceDataUnit],
+        includeDeviceName:false,
+        includeTxPower:false
+      };
+      let advResponse: bluetooth.AdvertiseData = {
+        serviceUuids:["00001888-0000-1000-8000-00805f9b34fb"],
+        manufactureData:[manufactureDataUnit],
+        serviceData:[serviceDataUnit],
+      };
+      let advertisingParams: bluetooth.AdvertisingParams = {
+        advertisingSettings: setting,
+        advertisingData: advData,
+        advertisingResponse: advResponse,
+        duration: 100,
+      }
+      try {
+        console.info(`${caseName} test start`)
+        let advHandle = await bluetooth.startAdvertising(advertisingParams);
+        console.info(`${caseName} ` +'[bluetooth_js]startAdvertising promise info02:'+JSON.stringify(advHandle));
+        await sleep(1500);
+        await bluetooth.stopAdvertising(advHandle);
+        console.info(`${caseName} ` +'[bluetooth_js] stopAdvertising promise success: ');
+      }catch (err) {
+        console.info(`${caseName} ` + "02errCode:" + err.code + ",02errMessage:" + err.message);
+        if (err.code === 801) {
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
+        } else {
+          expect().assertFail();
+        }
+      }
+      await sleep(2000);
+      done();
+    })
   })
 }

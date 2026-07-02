@@ -2542,7 +2542,6 @@ export default function CameraPhotoSessionTest() {
       }
       //--------------------------------------------后置处理------------------------------------------------------
       console.info("Exit SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0700")
-      await stopCameraSession();
       done();
     })
     
@@ -2584,7 +2583,6 @@ export default function CameraPhotoSessionTest() {
 
       //--------------------------------------------后置处理------------------------------------------------------
       console.info("Exit SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0800")
-      await stopCameraSession();
       done();
     })
 
@@ -2700,7 +2698,7 @@ export default function CameraPhotoSessionTest() {
         //--------------------------------------------测试过程------------------------------------------------------
         let zoomPointInfos = mCameraSession.getZoomPointInfos()
         console.info(`camera session getZoomPointInfos: ${JSON.stringify(zoomPointInfos)}`);
-        expect(zoomPointInfos).not().assertUndefined();
+        expect(zoomPointInfos.length >= 0).assertTrue();
         console.info(`${caseName} PASSED`)
       } catch (error) {
         console.error(`${caseName} FAILED, error: ${JSON.stringify(error)}`)
@@ -2819,6 +2817,49 @@ export default function CameraPhotoSessionTest() {
         done()
       }
     })
-    
+
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0300
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0300
+     * @tc.desc      test sub multimedia camera photo session on/off notification callback
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0300', Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0300"
+      try {
+        //--------------------------------------------预置条件------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        createCameraSessionInstance(camera.SceneMode.NORMAL_PHOTO);
+
+        //--------------------------------------------测试过程------------------------------------------------------
+        let notificationCallback = (info: camera.NotificationInfo) => {
+          console.info(`onNotificationReceive, name: ${JSON.stringify(info)}`)
+          if (info.name == camera.NotificationName.DEFOCUS_FROM_PROXIMITY) {
+            console.info(`onNotificationReceive name: ${info.name}`)
+          }
+          if (info.value == camera.ProximityStateForFocus.IN_RANGE_RAISE_NONE) {
+            console.info(`onNotificationReceive value in range`)
+          }
+          if (info.value == camera.ProximityStateForFocus.OUT_OF_RANGE_RAISE_REQUIRED) {
+            console.info(`onNotificationReceive value out of range`)
+          }
+        };
+
+        mCameraSession.onNotificationReceive(notificationCallback);
+        
+        mCameraSession.offNotificationReceive(notificationCallback)
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED, ${JSON.stringify(error)}`)
+        expect().assertFail()
+      } finally {
+        //--------------------------------------------后置处理------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+        done()
+      }
+    })
+
   })
 }

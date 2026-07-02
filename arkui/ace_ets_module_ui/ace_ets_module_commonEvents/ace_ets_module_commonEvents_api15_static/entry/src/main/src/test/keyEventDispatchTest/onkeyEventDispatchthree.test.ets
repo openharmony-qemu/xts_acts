@@ -13,25 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { KeyCode } from '@ohos.multimodalInput.keyCode'
+import { KeyCode } from '@ohos.multimodalInput.keyCode';
 import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import { Driver, ON, Component, PointerMatrix, MouseButton } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import RectValue from '../../../ets/MainAbility/common/Rect';
-import { Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-
-import { Driver, ON } from '@ohos.UiTest';
-import {UtilsTest} from '../Util.test'
+import { UtilsTest } from '../Util.test';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
@@ -83,7 +79,7 @@ it('onKeyEventDispatchTest3_static_0100', Level.LEVEL0, async (done: () => void)
       await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_ALT_LEFT, KeyCode.KEYCODE_SHIFT_LEFT)
       await CommonFunc.sleep(1500);
 
-      let strJson = inspector.getInspectorByKey('modifierStatePress');
+      let strJson = inspector.getInspectorByKey('onkeyEventDispatch03' + '_modifierStatePress');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[onKeyEventDispatchTest3_static_0100] obj is: " + obj.getElement('$attrs').getString('content'));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('ctrl & alt & shift  is press');
@@ -91,7 +87,7 @@ it('onKeyEventDispatchTest3_static_0100', Level.LEVEL0, async (done: () => void)
       // test ctrl & shift
       await driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_CTRL_LEFT)
       await CommonFunc.sleep(1500);
-      let strJson3 = inspector.getInspectorByKey('modifierStatePress');
+      let strJson3 = inspector.getInspectorByKey('onkeyEventDispatch03' + '_modifierStatePress');
       let obj3 = JSON.parseJsonElement(strJson3);
       console.info("[onKeyEventDispatchTest3_static_0100] obj is: " + obj3.getElement('$attrs').getString('content'));
       expect(obj3.getElement('$attrs').getString('content')).assertEqual('ctrl & shift  is press');
@@ -99,7 +95,7 @@ it('onKeyEventDispatchTest3_static_0100', Level.LEVEL0, async (done: () => void)
       // test ctrl & alt
       await driver.triggerCombineKeys(KeyCode.KEYCODE_ALT_LEFT, KeyCode.KEYCODE_CTRL_LEFT)
       await CommonFunc.sleep(1500);
-      let strJson4 = inspector.getInspectorByKey('modifierStatePress');
+      let strJson4 = inspector.getInspectorByKey('onkeyEventDispatch03' + '_modifierStatePress');
       let obj4 = JSON.parseJsonElement(strJson4);
       console.info("[onKeyEventDispatchTest3_static_0100] obj is: " + obj4.getElement('$attrs').getString('content'));
       expect(obj4.getElement('$attrs').getString('content')).assertEqual('ctrl & alt  is press');
@@ -107,7 +103,7 @@ it('onKeyEventDispatchTest3_static_0100', Level.LEVEL0, async (done: () => void)
       // test alt & shift
       await driver.triggerCombineKeys(KeyCode.KEYCODE_ALT_LEFT, KeyCode.KEYCODE_SHIFT_LEFT)
       await CommonFunc.sleep(1500);
-      let strJson6 = inspector.getInspectorByKey('modifierStatePress');
+      let strJson6 = inspector.getInspectorByKey('onkeyEventDispatch03' + '_modifierStatePress');
       let obj6 = JSON.parseJsonElement(strJson6);
       console.info("[onKeyEventDispatchTest3_static_0100] obj is: " + obj6.getElement('$attrs').getString('content'));
       expect(obj6.getElement('$attrs').getString('content')).assertEqual('alt & shift  is press');
@@ -115,7 +111,7 @@ it('onKeyEventDispatchTest3_static_0100', Level.LEVEL0, async (done: () => void)
       //  test ctrl
       await driver.triggerKey(KeyCode.KEYCODE_CTRL_LEFT)
       await CommonFunc.sleep(1500);
-      let strJson8 = inspector.getInspectorByKey('modifierStatePress');
+      let strJson8 = inspector.getInspectorByKey('onkeyEventDispatch03' + '_modifierStatePress');
       let obj8 = JSON.parseJsonElement(strJson8);
       console.info("[onKeyEventDispatchTest3_static_0100] obj is: " + obj8.getElement('$attrs').getString('content'));
       expect(obj8.getElement('$attrs').getString('content')).assertEqual('ctrl is press');
@@ -123,7 +119,7 @@ it('onKeyEventDispatchTest3_static_0100', Level.LEVEL0, async (done: () => void)
       //  test alt
       await driver.triggerKey(KeyCode.KEYCODE_ALT_LEFT)
       await CommonFunc.sleep(1500);
-      let strJson9 = inspector.getInspectorByKey('modifierStatePress');
+      let strJson9 = inspector.getInspectorByKey('onkeyEventDispatch03' + '_modifierStatePress');
       let obj9 = JSON.parseJsonElement(strJson9);
       console.info("[onKeyEventDispatchTest3_static_0100] obj is: " + obj9.getElement('$attrs').getString('content'));
       expect(obj9.getElement('$attrs').getString('content')).assertEqual('alt is press');
@@ -131,7 +127,7 @@ it('onKeyEventDispatchTest3_static_0100', Level.LEVEL0, async (done: () => void)
       //  test shift
       await driver.triggerKey(KeyCode.KEYCODE_SHIFT_LEFT)
       await CommonFunc.sleep(1500);
-      let strJson10 = inspector.getInspectorByKey('modifierStatePress');
+      let strJson10 = inspector.getInspectorByKey('onkeyEventDispatch03' + '_modifierStatePress');
       let obj10 = JSON.parseJsonElement(strJson10);
       console.info("[onKeyEventDispatchTest3_static_0100] obj is: " + obj10.getElement('$attrs').getString('content'));
       expect(obj10.getElement('$attrs').getString('content')).assertEqual('shift is press');

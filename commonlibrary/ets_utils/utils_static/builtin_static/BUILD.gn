@@ -48,6 +48,15 @@ group("builtin_static") {
       "sparsearray_standard_test_static:ActsSparseArrayStaticTest",
       "string_standard_test_static:ActsStringStaticTest",
       "std_core_static:std_core_static",
+      "boolean_standard_test_static:ActsBooleanStaticTest",
+      "char_standard_test_static:ActsCharStaticTest",
+      "int_standard_test_static:ActsIntStaticTest",
+      "double_standard_test_static:ActsDoubleStaticTest",
+      "deepcopy_standard_test_static:ActsDeepcopyStaticTest",
+      "eithon_standard_test_static:ActsEithonStaticTest",
+      "byte_standard_test_static:ActsByteStaticTest",
+      "date001_standard_test_static:ActsDate1StaticTest",
+      "dateview001_standard_test_static:ActsDateView1StaticTest",
     ]
   }
 }

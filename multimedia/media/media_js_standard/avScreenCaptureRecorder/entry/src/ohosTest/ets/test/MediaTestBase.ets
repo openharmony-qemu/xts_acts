@@ -38,6 +38,7 @@ export default class MediaTestBase {
   PAUSERECORDER_EVENT = 'pause';
   RESUMERECORDER_EVENT = 'resume';
   SKIPPRIVACYMODE_EVENT = 'skipPrivacyMode';
+  SET_CONTENT_AUTO_ROTATION = 'setContentAutoRotation';
   STOPRECORDER_EVENT = 'stop';
   RELEASECORDER_EVENT = 'release';
   PRESENTT_PICKER_EVENT = 'presentPicker';
@@ -347,6 +348,18 @@ export default class MediaTestBase {
             console.info('avScreenCaptureRecorder setMicEnabled success');
           }).catch((err: BusinessError) => {
             console.error('avScreenCaptureRecorder setMicEnabled failed, error: ' + err.message);
+            this.testFail();
+          });
+        }
+        await this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        break;
+      case this.SET_CONTENT_AUTO_ROTATION:
+        steps.shift();
+        if (this.isTestSucceeded()) {
+          await avScreenCaptureRecorder?.setContentAutoRotation(true).then(() => {
+            console.info('avScreenCaptureRecorder setContentAutoRotation success');
+          }).catch((err: BusinessError) => {
+            console.error('avScreenCaptureRecorder setContentAutoRotation failed, error: ' + err.message);
             this.testFail();
           });
         }

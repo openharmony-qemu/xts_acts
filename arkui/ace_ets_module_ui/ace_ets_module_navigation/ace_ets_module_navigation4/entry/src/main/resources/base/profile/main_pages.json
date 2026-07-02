@@ -22,6 +22,7 @@
         "MainAbility/pages/Router/SideBarContainerControlButtonNullUndefined",
         "MainAbility/pages/Router/StepperItemApiNullUndefined",
         "MainAbility/pages/Navigation/NavScrollEffectOptions",
-        "MainAbility/pages/Navigation/navigationMaterial"
+        "MainAbility/pages/Navigation/navigationMaterial",
+        "MainAbility/pages/Navigation/configurationNav"
     ]
 }

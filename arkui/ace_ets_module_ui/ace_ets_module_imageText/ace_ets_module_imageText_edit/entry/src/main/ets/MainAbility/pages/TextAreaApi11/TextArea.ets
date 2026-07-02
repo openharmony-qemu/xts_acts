@@ -65,7 +65,7 @@ struct TextAreaApi11 {
         .onChange((value: string) => {
           this.text2 = value
         })
-        .key('textArea2')
+        .key('TextArea_textArea2')
 
       Text(this.text3).width('90%').height(60).fontSize(40)
       TextArea({ placeholder: 'Please entry keywords', text: this.text })
@@ -82,7 +82,7 @@ struct TextAreaApi11 {
         .onChange((value: string) => {
           this.text3 = value
         })
-        .key('textArea3')
+        .key('TextArea_textArea3')
     }
     .width('100%')
     .height('100%')

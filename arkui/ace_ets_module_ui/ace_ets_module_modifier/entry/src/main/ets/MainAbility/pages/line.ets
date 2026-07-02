@@ -36,7 +36,7 @@ struct LineNe {
     Column() {
       Button("change value").onClick(() => {
         (this.customModifier as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("line_changeButton")
 
       Line()
         .fillOpacity(0)

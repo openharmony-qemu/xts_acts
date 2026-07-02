@@ -35,6 +35,7 @@ import itemSpaceTest from './ChipGroupTest/itemSpaceTest.test'
 import localizedLabelMarginTest from './chip/localizedLabelMarginTest';
 import ChipGroupIconItemOptionsTest from './ChipGroupTest/ChipGroupIconItemOptionsTest.test';
 import ChipGroupSystemMaterialTest from './ChipGroupTest/ChipGroupSystemMaterialTest.test';
+import ChipGroupSystemMaterialTest2 from './ChipGroupTest/ChipGroupSystemMaterialTest2.test';
 import ChipGroupSymbolItemOptionsTest from './ChipGroupTest/ChipGroupSymbolItemOptionsTest.test';
 import accessibilitySelectedTypeTestV2 from './chipV2/accessibilitySelectedTypeTestV2.test';
 import ChipV2Action from './chipV2/ChipV2Action.test';
@@ -56,6 +57,19 @@ import ChipGroupV2IconItemOptionsTest from './ChipGroupV2Test/ChipGroupV2IconIte
 import ChipGroupV2ItemSpaceTest from './ChipGroupV2Test/ChipGroupV2ItemSpaceTest.test';
 import ChipGroupV2StartSpaceTest from './ChipGroupV2Test/ChipGroupV2StartSpaceTest.test';
 import ChipGroupV2SymbolItemOptionsTest from './ChipGroupV2Test/ChipGroupV2SymbolItemOptionsTest.test';
+import ChipGroupV2IconItemOptions2Test from './ChipGroupV2Test/ChipGroupV2IconItemOptions2Test.test';
+import ChipV2AbnormalOptionsTest from './chipV2/ChipV2AbnormalOptions.test';
+import ChipGroupV2AbnormalRootTest from './ChipGroupV2Test/ChipGroupV2AbnormalRoot.test';
+import ChipV2AbnormalLabelTest from './chipV2/ChipV2AbnormalLabelTest.test';
+import ChipV2AbnormalPrefixIconTest from './chipV2/ChipV2AbnormalPrefixIconTest.test';
+import ChipV2AbnormalSuffixIconTest from './chipV2/ChipV2AbnormalSuffixIconTest.test';
+import ChipV2AbnormalCloseIconTest from './chipV2/ChipV2AbnormalCloseIconTest.test';
+import ChipGroupV2AbnormalItemTest from './ChipGroupV2Test/ChipGroupV2AbnormalItemTest.test';
+import ChipGroupV2AbnormalItemStyleTest from './ChipGroupV2Test/ChipGroupV2AbnormalItemStyleTest.test';
+import ChipGroupV2AbnormalSpacePaddingTest from './ChipGroupV2Test/ChipGroupV2AbnormalSpacePaddingTest.test';
+import ChipGroupV2AbnormalSuffixTest from './ChipGroupV2Test/ChipGroupV2AbnormalSuffixTest.test';
+import ChipV2AbnormalComboTest from './chipV2/ChipV2AbnormalComboTest.test';
+import ChipGroupV2AbnormalComboTest from './ChipGroupV2Test/ChipGroupV2AbnormalComboTest.test';
 export default function testsuite() {
   chipDirectionTest();
   ChipAction();
@@ -77,6 +91,7 @@ export default function testsuite() {
   ChipFontScale();
   ChipCloseOptions();
   ChipGroupSystemMaterialTest();
+  ChipGroupSystemMaterialTest2();
   ChipBackgroundSystemMaterialTest();
   accessibilitySelectedTypeTestV2();
   ChipV2Action();
@@ -98,4 +113,17 @@ export default function testsuite() {
   ChipGroupV2ItemSpaceTest();
   ChipGroupV2StartSpaceTest();
   ChipGroupV2SymbolItemOptionsTest();
+  ChipGroupV2IconItemOptions2Test();
+  ChipV2AbnormalOptionsTest();
+  ChipGroupV2AbnormalRootTest();
+  ChipV2AbnormalLabelTest();
+  ChipV2AbnormalPrefixIconTest();
+  ChipV2AbnormalSuffixIconTest();
+  ChipV2AbnormalCloseIconTest();
+  ChipGroupV2AbnormalItemTest();
+  ChipGroupV2AbnormalItemStyleTest();
+  ChipGroupV2AbnormalSpacePaddingTest();
+  ChipGroupV2AbnormalSuffixTest();
+  ChipV2AbnormalComboTest();
+  ChipGroupV2AbnormalComboTest();
 }

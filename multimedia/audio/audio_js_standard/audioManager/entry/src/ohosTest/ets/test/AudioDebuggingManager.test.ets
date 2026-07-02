@@ -279,6 +279,27 @@ export default function audioDebuggingManagerTest() {
     });
 
     /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_PRINT_RENDERER_INFO_0500
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_PRINT_RENDERER_INFO_0500
+     * @tc.desc    printRendererInfo with undefined AudioRenderer throws 6800101 error.
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_PRINT_RENDERER_INFO_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        debugManager = audioManager.getDebuggingManager();
+        debugManager.printRendererInfo(undefined, -1);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${TAG}: Expected error caught: ${error.code}, ${error.message}`);
+        expect(error.code).assertEqual(6800101);
+        done();
+      }
+    });
+
+    /**
      * @tc.name    SUB_MULTIMEDIA_AUDIO_PRINT_CAPTURER_INFO_0100
      * @tc.number  SUB_MULTIMEDIA_AUDIO_PRINT_CAPTURER_INFO_0100
      * @tc.desc    printCapturerInfo with valid AudioCapturer and file descriptor.
@@ -413,6 +434,27 @@ export default function audioDebuggingManagerTest() {
     });
 
     /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_PRINT_CAPTURER_INFO_0500
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_PRINT_CAPTURER_INFO_0500
+     * @tc.desc    printCapturerInfo with undefined AudioCapturer throws 6800101 error.
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_PRINT_CAPTURER_INFO_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        debugManager = audioManager.getDebuggingManager();
+        debugManager.printCapturerInfo(undefined, -1);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${TAG}: Expected error caught: ${error.code}, ${error.message}`);
+        expect(error.code).assertEqual(6800101);
+        done();
+      }
+    });
+
+    /**
      * @tc.name    SUB_MULTIMEDIA_AUDIO_PRINT_SESSION_INFO_0100
      * @tc.number  SUB_MULTIMEDIA_AUDIO_PRINT_SESSION_INFO_0100
      * @tc.desc    printSessionInfo with valid AudioSessionManager and file descriptor.
@@ -514,6 +556,147 @@ export default function audioDebuggingManagerTest() {
         done();
       } catch (error) {
         console.error(`${TAG}: printSessionInfo failed: ${error.code}, ${error.message}`);
+        expect(error.code).assertEqual(6800101);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_PRINT_SESSION_INFO_0500
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_PRINT_SESSION_INFO_0500
+     * @tc.desc    printSessionInfo with undefined AudioSessionManager throws 6800101 error.
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_PRINT_SESSION_INFO_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        debugManager = audioManager.getDebuggingManager();
+        debugManager.printSessionInfo(undefined, -1);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${TAG}: Expected error caught: ${error.code}, ${error.message}`);
+        expect(error.code).assertEqual(6800101);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_PRINT_LOOPBACK_INFO_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_PRINT_LOOPBACK_INFO_0100
+     * @tc.desc    loopbackInfo with valid loopback and file descriptor.
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_PRINT_LOOPBACK_INFO_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
+        try {
+          debugManager = audioManager.getDebuggingManager();
+          let audioLoopback: audio.AudioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+          debugManager.printLoopbackInfo(audioLoopback, -1);
+          console.info(`${TAG}: loopbackInfo with valid loopback executed successfully`);
+          done();
+        } catch (error) {
+          console.error(`${TAG}: loopbackInfo failed: ${error.code}, ${error.message}`);
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_PRINT_LOOPBACK_INFO_0200
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_PRINT_LOOPBACK_INFO_0200
+     * @tc.desc    loopbackInfo with null loopback throws 6800101 error.
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_PRINT_LOOPBACK_INFO_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        debugManager = audioManager.getDebuggingManager();
+        debugManager.printLoopbackInfo(null, -1);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${TAG}: Expected error caught: ${error.code}, ${error.message}`);
+        expect(error.code).assertEqual(6800101);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_PRINT_LOOPBACK_INFO_0300
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_PRINT_LOOPBACK_INFO_0300
+     * @tc.desc    loopbackInfo with negative file descriptor outputs to hilog.
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_PRINT_LOOPBACK_INFO_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
+        try {
+          debugManager = audioManager.getDebuggingManager();
+          
+          let audioLoopback: audio.AudioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+          
+          debugManager.printLoopbackInfo(audioLoopback, null);
+          console.info(`${TAG}: loopbackInfo with negative fd executed successfully`);
+          expect().assertFail();
+          done();
+        } catch (error) {
+          console.error(`${TAG}: loopbackInfo failed: ${error.code}, ${error.message}`);
+          expect(error.code).assertEqual(6800101);
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_PRINT_LOOPBACK_INFO_0400
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_PRINT_LOOPBACK_INFO_0400
+     * @tc.desc    loopbackInfo with loopback in prepared state.
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_PRINT_LOOPBACK_INFO_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
+        try {
+          debugManager = audioManager.getDebuggingManager();
+          
+          let audioLoopback: audio.AudioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+          
+          debugManager.printLoopbackInfo(audioLoopback, undefined);
+          console.info(`${TAG}: loopbackInfo in prepared state executed successfully`);
+          expect().assertFail();
+          done();
+        } catch (error) {
+          console.error(`${TAG}: loopbackInfo failed: ${error.code}, ${error.message}`);
+          expect(error.code).assertEqual(6800101);
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_PRINT_LOOPBACK_INFO_0500
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_PRINT_LOOPBACK_INFO_0500
+     * @tc.desc    loopbackInfo with undefined loopback throws 6800101 error.
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_PRINT_LOOPBACK_INFO_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        debugManager = audioManager.getDebuggingManager();
+        debugManager.printLoopbackInfo(undefined, -1);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${TAG}: Expected error caught: ${error.code}, ${error.message}`);
         expect(error.code).assertEqual(6800101);
         done();
       }

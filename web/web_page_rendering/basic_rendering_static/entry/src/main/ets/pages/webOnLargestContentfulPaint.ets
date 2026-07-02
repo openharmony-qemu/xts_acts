@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,17 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import emitter from '@ohos.events.emitter';
 import events_emitter from '@ohos.events.emitter';
 import web_webview from '@ohos.web.webview';
 import Utils from '../../src/test/Util.test';
-import { LargestContentfulPaint, Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
+import { LargestContentfulPaint, Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component';
+import { State } from '@ohos.arkui.stateManagement';
 import hilog from '@ohos.hilog';
-import { Callback, RecordData } from '@ohos.base';
-import emitter from '@ohos.events.emitter';
-import { BusinessError, RecordData } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext'
-
+import { Callback, RecordData, BusinessError } from '@ohos.base';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Entry
 @Component
 struct webOnLargestContentfulPaint {

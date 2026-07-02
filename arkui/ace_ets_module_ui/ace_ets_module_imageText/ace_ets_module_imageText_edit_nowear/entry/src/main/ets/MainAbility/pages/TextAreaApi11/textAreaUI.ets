@@ -131,10 +131,10 @@ struct TextAreaExample {
         .key('textAreaResource')
         .height('10%')
 
-      Text(this.message1).key('change').height('5%')
-      Text(this.message2).key('copy').height('5%')
+      Text(this.message1).key('textAreaUI_change').height('5%')
+      Text(this.message2).key('textAreaUI_copy').height('5%')
       Text(this.message3).key('cut_textAreaUI').height('5%')
-      Text(this.message4).key('paste').height('5%')
+      Text(this.message4).key('textAreaUI_paste').height('5%')
       Button('Set caretPosition 1')
         .backgroundColor('#007DFF')
         .onClick(() => {

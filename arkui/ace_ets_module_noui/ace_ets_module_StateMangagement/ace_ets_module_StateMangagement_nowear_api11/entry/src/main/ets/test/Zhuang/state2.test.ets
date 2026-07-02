@@ -125,7 +125,7 @@ export default function state2() {
       let obj: ESObject = JSON.parse(strJson);
       console.info("[state2_0300] component obj is: " + JSON.stringify(obj));
       console.info("[state2_0300] title: " + JSON.stringify(obj.$attrs.fontSize));
-      let compareBtnStrJson = getInspectorByKey('compareBtn');
+      let compareBtnStrJson = getInspectorByKey('state2_compareBtn');
       let compareBtnObj: ESObject = JSON.parse(compareBtnStrJson);
       console.info("[state2_0300] component compareBtnObj is: " + JSON.stringify(compareBtnObj));
       console.info("[state2_0300] title: " + JSON.stringify(compareBtnObj.$attrs.fontSize));
@@ -153,7 +153,7 @@ export default function state2() {
       let obj: ESObject = JSON.parse(strJson);
       console.info("[state2_0400] component obj is: " + JSON.stringify(obj));
       console.info("[state2_0400] title: " + JSON.stringify(obj.$attrs.fontSize));
-      let compareBtnStrJson = getInspectorByKey('compareBtn');
+      let compareBtnStrJson = getInspectorByKey('state2_compareBtn');
       let compareBtnObj: ESObject = JSON.parse(compareBtnStrJson);
       console.info("[state2_0400] component compareBtnObj is: " + JSON.stringify(compareBtnObj));
       console.info("[state2_0400] title: " + JSON.stringify(compareBtnObj.$attrs.fontSize));

@@ -55,7 +55,7 @@ export default function textAreaOnCutJsunit() {
     it('testtextAreaOnCut0001', Level.LEVEL1, async () => {
       console.info('textAreaOnCut testtextAreaOnCut0001 START');
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('onCutText');
+      let strJson = getInspectorByKey('textArea6' + '_onCutText');
       console.info("[testtextAreaOnCut0001] component width strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('TextArea');
@@ -75,7 +75,7 @@ export default function textAreaOnCutJsunit() {
     it('testtextAreaOnCut0002', Level.LEVEL1, async () => {
       console.info('textAreaOnCut testtextAreaOnCut0002 START');
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('onCutText');
+      let strJson = getInspectorByKey('textArea6' + '_onCutText');
       console.info("[testtextAreaOnCut0002] component height strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('TextArea');
@@ -95,7 +95,7 @@ export default function textAreaOnCutJsunit() {
     it('testtextAreaOnCut0003', Level.LEVEL1, async () => {
       console.info('textAreaOnCut testtextAreaOnCut0003 START');
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('onCutText');
+      let strJson = getInspectorByKey('textArea6' + '_onCutText');
       console.info("[testtextAreaOnCut0003] component fontSize strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('TextArea');
@@ -115,7 +115,7 @@ export default function textAreaOnCutJsunit() {
     it('testtextAreaOnCut0004', Level.LEVEL1, async () => {
       console.info('textAreaOnCut testtextAreaOnCut0004 START');
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('onCutText');
+      let strJson = getInspectorByKey('textArea6' + '_onCutText');
       console.info("[testtextAreaOnCut0004] component opacity strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('TextArea');
@@ -135,7 +135,7 @@ export default function textAreaOnCutJsunit() {
     it('testtextAreaOnCut0005', Level.LEVEL1, async () => {
       console.info('textAreaOnCut testtextAreaOnCut0005 START');
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('onCutText');
+      let strJson = getInspectorByKey('textArea6' + '_onCutText');
       console.info("[testtextAreaOnCut0005] component align strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('TextArea');
@@ -155,7 +155,7 @@ export default function textAreaOnCutJsunit() {
     it('testtextAreaOnCut0006', Level.LEVEL1, async () => {
       console.info('textAreaOnCut testtextAreaOnCut0006 START');
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('onCutText');
+      let strJson = getInspectorByKey('textArea6' + '_onCutText');
       console.info("[testtextAreaOnCut0006] component fontColor strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('TextArea');
@@ -175,7 +175,7 @@ export default function textAreaOnCutJsunit() {
     it('testtextAreaOnCut0009', Level.LEVEL1, async () => {
       console.info('textAreaOnCut testtextAreaOnCut009 START');
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('onCutText');
+      let strJson = getInspectorByKey('textArea6' + '_onCutText');
       console.info("[testtextAreaOnCut0009] component padding strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('TextArea');
@@ -195,7 +195,7 @@ export default function textAreaOnCutJsunit() {
     it('testtextAreaOnCut0010', Level.LEVEL1, async () => {
       console.info('textAreaOnCut testtextAreaOnCut0010 START');
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('onCutText');
+      let strJson = getInspectorByKey('textArea6' + '_onCutText');
       console.info("[testtextAreaOnCut0010] component textAlign strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('TextArea');
@@ -215,7 +215,7 @@ export default function textAreaOnCutJsunit() {
     it('testtextAreaCopyOption0011', Level.LEVEL1, async () => {
       console.info('textAreaCopyOption testtextAreaCopyOption0011 START');
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('textAreaCopyOptionText');
+      let strJson = getInspectorByKey('textArea6' + '_textAreaCopyOptionText');
       console.info("[testtextAreaCopyOption0011] component copyOption strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('TextArea');

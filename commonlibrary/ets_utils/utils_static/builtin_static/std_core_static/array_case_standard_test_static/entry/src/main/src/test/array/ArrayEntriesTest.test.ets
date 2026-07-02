@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -815,7 +815,7 @@ export default function ArrayEntriesTest(): void {
       const item = new EntryObject014();
       item.id = 99;
       item.name = 'generic';
-      const entry = new Array<EntryObject014>(item).entries().next().value as [int, EntryObject014] | undefined;
+      const entry = Array.create<EntryObject014>(1, item).entries().next().value as [int, EntryObject014] | undefined;
       expect(entry != undefined).assertTrue();
       if (entry != undefined) {
         expect(entry[0]).assertEqual(0);

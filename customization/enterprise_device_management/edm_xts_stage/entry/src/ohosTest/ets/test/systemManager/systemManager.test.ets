@@ -18,6 +18,7 @@ import { ENTINFO1, SELFWANT, SELFHAPNAME, INVALID_WANT, UPDATE_VERSION, INVALID_
 import { BusinessError } from '@ohos.base';
 
 import adminManager from '@ohos.enterprise.adminManager';
+import bundleManager from '@ohos.enterprise.bundleManager';
 import systemManager from '@ohos.enterprise.systemManager';
 import systemParameterEnhance from "@ohos.systemParameterEnhance";
 
@@ -4093,6 +4094,19 @@ function testSetActivationLockDisabled() {
   */
   it("test_set_activation_lock_disabled_0004", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+
+    let findDeviceExisted: boolean = false;
+    let bundleInfos: bundleManager.BundleInfo[] = await bundleManager.getInstalledBundleList(SELFWANT,
+      DEFAULT_USER_ID);
+    expect(bundleInfos).not().assertUndefined();
+    expect(bundleInfos.length > 0).assertTrue();
+    let findBundleInfo = bundleInfos.find((bundleInfo) => {
+      return bundleInfo.name === 'com.huawei.hmos.finddevice';
+    })
+    if (findBundleInfo != undefined) {
+      findDeviceExisted = true;
+    }
+
     let credential: string = "test";
     let info: string = systemParameterEnhance.getSync("const.pc_security.activation_lock_allow_disable", "");
     await systemManager.setActivationLockDisabled(SELFWANT, true, credential).then(()=>{
@@ -4102,7 +4116,12 @@ function testSetActivationLockDisabled() {
           if (Number(error.code) === 801) {
             expect(Number(error.code) === 801).assertTrue();
           } else {
-            expect(Number(error.code) === 9201011).assertTrue();
+            if (Number(error.code) === 9200016) {
+              expect(Number(error.code) === 9200016).assertTrue();
+              expect(findDeviceExisted).assertFalse();
+            } else {
+              expect(Number(error.code) === 9201011).assertTrue();
+            }
           }
         } else {
           if (Number(error.code) === 801) {
@@ -4127,6 +4146,19 @@ function testSetActivationLockDisabled() {
   */
   it("test_set_activation_lock_disabled_0005", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+
+    let findDeviceExisted: boolean = false;
+    let bundleInfos: bundleManager.BundleInfo[] = await bundleManager.getInstalledBundleList(SELFWANT,
+      DEFAULT_USER_ID);
+    expect(bundleInfos).not().assertUndefined();
+    expect(bundleInfos.length > 0).assertTrue();
+    let findBundleInfo = bundleInfos.find((bundleInfo) => {
+      return bundleInfo.name === 'com.huawei.hmos.finddevice';
+    })
+    if (findBundleInfo != undefined) {
+      findDeviceExisted = true;
+    }
+
     let info: string = systemParameterEnhance.getSync("const.pc_security.activation_lock_allow_disable", "");
     await systemManager.setActivationLockDisabled(SELFWANT, false, "").then(()=>{
       if (info == "true") {
@@ -4136,7 +4168,12 @@ function testSetActivationLockDisabled() {
       }
     }).catch ((error: BusinessError)=> {
       if (info == "true") {
-        expect(Number(error.code) === 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200016).assertTrue();
+          expect(findDeviceExisted).assertFalse();
+        }
       } else {
         if (Number(error.code) === 801) {
           expect(Number(error.code) === 801).assertTrue();
@@ -4272,6 +4309,31 @@ function testSetActivationLockDisabled() {
         } else {
           expect(Number(error.code) === 401).assertTrue();
         }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_activation_lock_disabled_1100
+  * @tc.number SUB_CUSTOMIZATION_EDM_SET_ACTIVATION_LOCK_DISABLED_JS_1100
+  * @tc.desc   test systemManager setActivationLockDisabled with null isDisable
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_activation_lock_disabled_1100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let credential: string = "test";
+      await systemManager.setActivationLockDisabled(SELFWANT, null, credential).then(()=>{
+        expect(false).assertTrue();
+    }).catch ((error: BusinessError)=> {
+      expect(Number(error.code) === 801).assertTrue();
+    });
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }

@@ -13,20 +13,20 @@
 
 import("//test/xts/tools/build/suite.gni")
 
-ohos_app_assist_suite("ActsAceCArkUIImageTextCommon") {
+ohos_app_assist_suite("ActsAceCArkUITextCommon") {
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsAceCArkUIImageTextCommon"
+  hap_name = "ActsAceCArkUITextCommon"
   part_name = "ace_engine"
   subsystem_name = "arkui"
 }
 
-ohos_js_app_suite("ActsAceCArkUIImageTextCommonTest") {
+ohos_js_app_suite("ActsAceCArkUITextCommonTest") {
   test_hap = true
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsAceCArkUIImageTextCommonTest"
+  hap_name = "ActsAceCArkUITextCommonTest"
   part_name = "ace_engine"
   subsystem_name = "arkui"
-  deps = [ ":ActsAceCArkUIImageTextCommon" ]
+  deps = [ ":ActsAceCArkUITextCommon" ]
 }

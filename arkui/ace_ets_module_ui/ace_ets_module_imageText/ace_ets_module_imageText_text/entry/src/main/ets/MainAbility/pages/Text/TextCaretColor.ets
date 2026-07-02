@@ -28,6 +28,7 @@ struct TextCaretColorExample3 {
         .caretColor(Color.Red)
         .selectedBackgroundColor(Color.Green)
         .id('textTextCaretColor')
+        .key('textTextCaretColor')
 
       Text(this.text)
 

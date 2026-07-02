@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,25 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
-import hilog from '@ohos.hilog'
+import { describe, it, expect, TestType, Size, Level, beforeAll } from '../../../hypium/index';
+import hilog from '@ohos.hilog';
 import Utils from './Util.test';
-
 import display from '@ohos.display';
 import floatingBall from '@ohos.window.floatingBall';
-import { BusinessError } from '@ohos.base';
-// import { MyCallback } from '../models/MyCallback';
-import window from '@ohos.window'
+import type { BusinessError, AsyncCallback, Callback } from '@ohos.base';
+import window from '@ohos.window';
 import settings from '@ohos.settings';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import type { AsyncCallback, Callback} from '@ohos.base'
 import common from '@ohos.app.ability.common';
 import Want from '@ohos.app.ability.Want';
 import bundleManager from '@ohos.bundle.bundleManager';
-import StartOptions from '@ohos.app.ability.StartOptions'
+import StartOptions from '@ohos.app.ability.StartOptions';
 import screenshot from '@ohos.screenshot';
 import { image } from '@kit.ImageKit';
-import display from '@ohos.display';
 import { canIUse } from '@internal.full.global';
 import { ImageFit } from '@ohos.arkui.component';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';

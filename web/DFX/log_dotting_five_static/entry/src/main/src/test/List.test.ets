@@ -1,3 +1,4 @@
+'use static';
 
 import  WebDownloadEnumTest from './WebDownloadEnumTest.test'
 import  WebInitTest from './WebInitTest.test'

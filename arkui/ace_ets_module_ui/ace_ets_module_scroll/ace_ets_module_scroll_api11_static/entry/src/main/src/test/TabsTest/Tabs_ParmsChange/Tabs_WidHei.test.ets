@@ -16,33 +16,19 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
-import inspector from '@ohos.arkui.inspector'
+import inspector from '@ohos.arkui.inspector';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import RectValue from '../../../../ets/MainAbility/common/Rect';
 import { MessageManager } from '../../../../ets/MainAbility/common/MessageManager';
-import {
-  Component,
-  Driver,
-  UiWindow,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix,
-  UiDirection,
-  MouseButton
-} from '@ohos.UiTest';
-import hilog from '@ohos.hilog'
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, UiDirection, MouseButton } from '@ohos.UiTest';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../Util.test'
 import { UtilsTest, startAbility, stopApplication } from '../../Util.test';
-
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
@@ -100,7 +86,7 @@ it('testTabsWidHei01_static_01', Level.LEVEL0, async (done: () => void): Promise
         name: 'height', value: 350
       });
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('Tabs_WidHei_01');
+      let strJson = inspector.getInspectorByKey('Tabs_WidHei' + '_01');
       let uiContext = AppStorage.get<UIContext>('uiContext')!;
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Tabs');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition'))
@@ -108,9 +94,9 @@ it('testTabsWidHei01_static_01', Level.LEVEL0, async (done: () => void): Promise
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual("0");
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
-      let Tabs_WidHei_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei_01');
-      let Tabs_WidHei_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei_001');
-      let Tabs_WidHei_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei_011');
+      let Tabs_WidHei_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei' + '_01');
+      let Tabs_WidHei_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei' + '_001');
+      let Tabs_WidHei_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei' + '_011');
       console.info(`[testTabsWidHei01_static_01] type: ${JSON.stringify(JSON.parseJsonElement(strJson)
         .getString('$type'))}`);
       console.info(`[testTabsWidHei01_static_01] barPosition: ${JSON.stringify(JSON.parseJsonElement(strJson)
@@ -135,16 +121,16 @@ it('testTabsWidHei01_static_01', Level.LEVEL0, async (done: () => void): Promise
         (Math.round(Tabs_WidHei_011.left + ((Tabs_WidHei_011.right - Tabs_WidHei_011.left) / 6))).toInt(),
         (Math.round(Tabs_WidHei_011.top + ((Tabs_WidHei_011.bottom - Tabs_WidHei_011.top) / 2))).toInt());
       await CommonFunc.sleep(1000);
-      let Tabs_WidHei_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei_002');
-      let Tabs_WidHei_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei_012');
+      let Tabs_WidHei_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei' + '_002');
+      let Tabs_WidHei_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei' + '_012');
       await driver.swipe((Math.round(Tabs_WidHei_012.right -
         ((Tabs_WidHei_012.right - Tabs_WidHei_012.left) / 6))).toInt(),
         (Math.round(Tabs_WidHei_012.top + ((Tabs_WidHei_012.bottom - Tabs_WidHei_012.top) / 2))).toInt(),
         (Math.round(Tabs_WidHei_012.left + ((Tabs_WidHei_012.right - Tabs_WidHei_012.left) / 6))).toInt(),
         (Math.round(Tabs_WidHei_012.top + ((Tabs_WidHei_012.bottom - Tabs_WidHei_012.top) / 2))).toInt());
       await CommonFunc.sleep(1000);
-      let Tabs_WidHei_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei_003');
-      let Tabs_WidHei_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei_013');
+      let Tabs_WidHei_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei' + '_003');
+      let Tabs_WidHei_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei' + '_013');
       let subGreen: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei_Green');
       let subBlue: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei_Blue');
       let subYellow: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei_Yellow');
@@ -236,7 +222,7 @@ it('testTabsWidHei02_static_02', Level.LEVEL0, async (done: () => void): Promise
         name: 'height', value: 400
       });
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('Tabs_WidHei_01');
+      let strJson = inspector.getInspectorByKey('Tabs_WidHei' + '_01');
       let uiContext = AppStorage.get<UIContext>('uiContext')!;
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Tabs');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition'))
@@ -244,9 +230,9 @@ it('testTabsWidHei02_static_02', Level.LEVEL0, async (done: () => void): Promise
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual("0");
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
-      let Tabs_WidHei_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei_01');
-      let Tabs_WidHei_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei_001');
-      let Tabs_WidHei_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei_011');
+      let Tabs_WidHei_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei' + '_01');
+      let Tabs_WidHei_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei' + '_001');
+      let Tabs_WidHei_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei' + '_011');
       console.info(`[testTabsWidHei02_static_02] type: ${JSON.stringify(JSON.parseJsonElement(strJson)
         .getString('$type'))}`);
       console.info(`[testTabsWidHei02_static_02] barPosition: ${JSON.stringify(JSON.parseJsonElement(strJson)
@@ -271,16 +257,16 @@ it('testTabsWidHei02_static_02', Level.LEVEL0, async (done: () => void): Promise
         (Math.round(Tabs_WidHei_011.left + ((Tabs_WidHei_011.right - Tabs_WidHei_011.left) / 6))).toInt(),
         (Math.round(Tabs_WidHei_011.top + ((Tabs_WidHei_011.bottom - Tabs_WidHei_011.top) / 2))).toInt());
       await CommonFunc.sleep(1000);
-      let Tabs_WidHei_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei_002');
-      let Tabs_WidHei_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei_012');
+      let Tabs_WidHei_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei' + '_002');
+      let Tabs_WidHei_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei' + '_012');
       await driver.swipe((Math.round(Tabs_WidHei_012.right -
         ((Tabs_WidHei_012.right - Tabs_WidHei_012.left) / 6))).toInt(),
         (Math.round(Tabs_WidHei_012.top + ((Tabs_WidHei_012.bottom - Tabs_WidHei_012.top) / 2))).toInt(),
         (Math.round(Tabs_WidHei_012.left + ((Tabs_WidHei_012.right - Tabs_WidHei_012.left) / 6))).toInt(),
         (Math.round(Tabs_WidHei_012.top + ((Tabs_WidHei_012.bottom - Tabs_WidHei_012.top) / 2))).toInt());
       await CommonFunc.sleep(1000);
-      let Tabs_WidHei_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei_003');
-      let Tabs_WidHei_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei_013');
+      let Tabs_WidHei_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei' + '_003');
+      let Tabs_WidHei_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei' + '_013');
       let subGreen: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei_Green');
       let subBlue: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei_Blue');
       let subYellow: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei_Yellow');

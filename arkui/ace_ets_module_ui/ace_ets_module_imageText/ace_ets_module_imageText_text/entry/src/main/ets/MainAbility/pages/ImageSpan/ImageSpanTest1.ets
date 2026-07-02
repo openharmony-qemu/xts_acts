@@ -21,6 +21,7 @@ struct TextImageSpan1 {
   build() {
     Column({ space: 100 }) {
       Text(this.flag).id('ImageSpan_onComplete_1')
+      .key('ImageSpan_onComplete_1')
       Text(){
         ImageSpan('resources/base/media/icon.png')
           .onError(()=>{

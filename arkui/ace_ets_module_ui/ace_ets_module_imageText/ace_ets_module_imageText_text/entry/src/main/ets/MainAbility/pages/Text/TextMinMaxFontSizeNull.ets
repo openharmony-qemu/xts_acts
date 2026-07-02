@@ -27,12 +27,14 @@ struct TextMinMaxFontSize {
       // Test 1: minFontSize with null parameter
       Text('minFontSize with null')
         .id('text_minsize_null')
+        .key('text_minsize_null')
         .minFontSize(null)
         .height('5%')
 
       // Test 2: minFontSize with undefined parameter
       Text('minFontSize with undefined')
         .id('text_minsize_undefined')
+        .key('text_minsize_undefined')
         .minFontSize(undefined)
         .height('5%')
       }
@@ -41,18 +43,21 @@ struct TextMinMaxFontSize {
         // Test 3: minFontSize with empty string parameter
         Text('minFontSize with empty string')
           .id('text_minsize_empty')
+          .key('text_minsize_empty')
           .minFontSize('')
           .height('5%')
 
         // Test 4: maxFontSize with null parameter
         Text('maxFontSize with null')
           .id('text_maxsize_null')
+          .key('text_maxsize_null')
           .maxFontSize(null)
           .height('5%')
 
         // Test 5: maxFontSize with undefined parameter
         Text('maxFontSize with undefined')
           .id('text_maxsize_undefined')
+          .key('text_maxsize_undefined')
           .maxFontSize(undefined)
           .height('5%')
       }
@@ -61,12 +66,14 @@ struct TextMinMaxFontSize {
         // Test 6: maxFontSize with empty string parameter
         Text('maxFontSize with empty string')
           .id('text_maxsize_empty')
+          .key('text_maxsize_empty')
           .maxFontSize('')
           .height('5%')
 
         // Test 7: Default minFontSize/maxFontSize for comparison
         Text('Default minFontSize/maxFontSize (for comparison)')
           .id('text_sizing_default')
+          .key('text_sizing_default')
           .height('5%')
       }
     }

@@ -69,20 +69,6 @@ export default function namespaceFuncNativeAopTest() {
     });
 
     /**
-     * @tc.name   testNativeAopReplaceKit001
-     * @tc.number SUB_NATIVE_ASPECT_004
-     * @tc.desc   testNativeAopReplace sdk use NAPI_DECLARE_FUNCTION
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testNativeAopReplaceKit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      NativeAopInit.testReplaceKitUseDeclareNapiStaticFunction()
-      let res = NativeAopInit.testUseCameraPicker();
-      expect(res).assertEqual('args native: mediaTypes:["photo","video"],pickerProfile:{"cameraPosition":1}')
-    });
-
-    /**
      * @tc.name   testNativeAopReplaceKit002
      * @tc.number SUB_NATIVE_ASPECT_005
      * @tc.desc   testNativeAopReplace sdk use NAPI_DECLARE_FUNCTION

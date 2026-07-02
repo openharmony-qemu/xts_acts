@@ -14,21 +14,18 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 import RectValue from '../../../../ets/MainAbility/common/Rect';
-import {GlobalContext} from '../../../../ets/MainAbility/common/GlobalContext'
+import { GlobalContext } from '../../../../ets/MainAbility/common/GlobalContext';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
-import { Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UIContext } from "@ohos.arkui.UIContext";
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import { UtilsTest } from '../../Util.test';
 let domain: Int = 0x0000;
@@ -88,10 +85,10 @@ export default function Column_Space() {
         name: 'addSpace', value: 30
       });
       await CommonFunc.sleep(3000);
-      let Column_Space_011: RectValue = CommonFunc.getComponentRect('Column_Space_011');
-      let Column_Space_012: RectValue = CommonFunc.getComponentRect('Column_Space_012');
-      let Column_Space_013: RectValue = CommonFunc.getComponentRect('Column_Space_013');
-      let Column_Space_01: RectValue = CommonFunc.getComponentRect('Column_Space_01');
+      let Column_Space_011: RectValue = CommonFunc.getComponentRect('Column_Space' + '_011');
+      let Column_Space_012: RectValue = CommonFunc.getComponentRect('Column_Space' + '_012');
+      let Column_Space_013: RectValue = CommonFunc.getComponentRect('Column_Space' + '_013');
+      let Column_Space_01: RectValue = CommonFunc.getComponentRect('Column_Space' + '_01');
       expect(Math.floor(Math.abs((Column_Space_011.left - Column_Space_01.left) - (Column_Space_01.right - Column_Space_011.right))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((Column_Space_012.left - Column_Space_01.left) - (Column_Space_01.right - Column_Space_012.right))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((Column_Space_013.left - Column_Space_01.left) - (Column_Space_01.right - Column_Space_013.right))) <= 1).assertTrue();
@@ -126,10 +123,10 @@ export default function Column_Space() {
         name: 'addSpace', value: 50
       });
       await CommonFunc.sleep(3000);
-      let Column_Space_011: RectValue = CommonFunc.getComponentRect('Column_Space_011');
-      let Column_Space_012: RectValue = CommonFunc.getComponentRect('Column_Space_012');
-      let Column_Space_013: RectValue = CommonFunc.getComponentRect('Column_Space_013');
-      let Column_Space_01: RectValue = CommonFunc.getComponentRect('Column_Space_01');
+      let Column_Space_011: RectValue = CommonFunc.getComponentRect('Column_Space' + '_011');
+      let Column_Space_012: RectValue = CommonFunc.getComponentRect('Column_Space' + '_012');
+      let Column_Space_013: RectValue = CommonFunc.getComponentRect('Column_Space' + '_013');
+      let Column_Space_01: RectValue = CommonFunc.getComponentRect('Column_Space' + '_01');
       expect(Math.floor(Math.abs((Column_Space_011.left - Column_Space_01.left) - (Column_Space_01.right - Column_Space_011.right))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((Column_Space_012.left - Column_Space_01.left) - (Column_Space_01.right - Column_Space_012.right))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((Column_Space_013.left - Column_Space_01.left) - (Column_Space_01.right - Column_Space_013.right))) <= 1).assertTrue();
@@ -167,10 +164,10 @@ export default function Column_Space() {
         name: 'addSpace', value: 70
       });
       await CommonFunc.sleep(3000);
-      let Column_Space_011: RectValue = CommonFunc.getComponentRect('Column_Space_011');
-      let Column_Space_012: RectValue = CommonFunc.getComponentRect('Column_Space_012');
-      let Column_Space_013: RectValue = CommonFunc.getComponentRect('Column_Space_013');
-      let Column_Space_01: RectValue = CommonFunc.getComponentRect('Column_Space_01');
+      let Column_Space_011: RectValue = CommonFunc.getComponentRect('Column_Space' + '_011');
+      let Column_Space_012: RectValue = CommonFunc.getComponentRect('Column_Space' + '_012');
+      let Column_Space_013: RectValue = CommonFunc.getComponentRect('Column_Space' + '_013');
+      let Column_Space_01: RectValue = CommonFunc.getComponentRect('Column_Space' + '_01');
       expect(Math.floor(Math.abs(Column_Space_01.top - Column_Space_011.top)) <= 1).assertTrue();
       expect(Column_Space_013.bottom).assertLarger(Column_Space_01.bottom);
       expect(Math.floor(Math.abs((Column_Space_011.left - Column_Space_01.left) - (Column_Space_01.right - Column_Space_011.right))) <= 1)

@@ -103,32 +103,6 @@ export function GetEmptyOptions() {
   return huksOptions;
 }
 
-export function CopyHuksOptions(huksOptions: huks.HuksOptions): huks.HuksOptions {
-  let copyOne: huks.HuksOptions = {
-    properties: [],
-    inData: new Uint8Array
-  }
-  if (huksOptions?.properties) {
-    for (let param of huksOptions?.properties) {
-      if (param.value instanceof Uint8Array) {
-        copyOne?.properties?.push({
-          tag: param?.tag,
-          value: new Uint8Array(param?.value)
-        })
-      } else {
-        copyOne?.properties?.push({
-          tag: param.tag,
-          value: param.value
-        })
-      }
-    }
-  }
-  if (huksOptions?.inData) {
-    copyOne.inData = new Uint8Array(huksOptions?.inData)
-  }
-  return copyOne
-}
-
 export async function CheckSoftware() {
   let dsaAlias = "useDsaToCheckSoftware";
   let dsaOptions: huks.HuksOptions = {

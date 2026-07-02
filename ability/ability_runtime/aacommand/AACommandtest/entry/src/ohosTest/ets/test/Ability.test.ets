@@ -68,10 +68,10 @@ export default function abilityTest() {
         '-s unittest OpenHarmonyTestRunner ' +
         '-w 40 -s class ACTS_AACommand_01_3 -s level 1 -s size 0 -s testType aaa -s ' +
         'timeout 5 -s 1 3';
-        let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
-        if(user !== undefined){
-            cmd += ' -u ' + user;
-        }
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
       await abilityDelegator!.executeShellCommand(cmd).then((data: AbilityDelegatorRegistry.ShellCmdResult) => {
         console.log('ACTS_AACommand_0100 - executeShellCommand: start ');
         console.log('ACTS_AACommand_0100 stdResult = ' + data.stdResult);
@@ -97,6 +97,10 @@ export default function abilityTest() {
     it('ACTS_AACommand_0200', Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_AACommand_0200 --- start");
       let cmd = 'aa test -b invalid -m entry_test -s unittest OpenHarmonyTestRunner';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
       abilityDelegator!.executeShellCommand(cmd, (err: BusinessError, data: AbilityDelegatorRegistry.ShellCmdResult) => {
         console.log('ACTS_AACommand_0200 - executeShellCommand: start ');
         console.log('ACTS_AACommand_0200 stdResult = ' + data.stdResult);
@@ -122,6 +126,10 @@ export default function abilityTest() {
     it('ACTS_AACommand_0300', Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_AACommand_0300 --- start");
       let cmd = 'aa test -b com.example.actsaacommandtestatest -m entry_test -s invalid';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
       abilityDelegator!.executeShellCommand(cmd, (err: BusinessError, data: AbilityDelegatorRegistry.ShellCmdResult) => {
         console.log('ACTS_AACommand_0300 - executeShellCommand: start ');
         console.log('ACTS_AACommand_0300 stdResult = ' + data.stdResult);
@@ -149,6 +157,10 @@ export default function abilityTest() {
       let cmd = 'aa test -b com.example.actsaacommandtestatest -m entry_test ' +
         '-s unittest OpenHarmonyTestRunner ' +
         '-w 无效值';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
       abilityDelegator!.executeShellCommand(cmd, (err: BusinessError, data: AbilityDelegatorRegistry.ShellCmdResult) => {
         console.log('ACTS_AACommand_0400 - executeShellCommand: start ');
         console.log('ACTS_AACommand_0400 stdResult = ' + data.stdResult);
@@ -175,6 +187,10 @@ export default function abilityTest() {
       console.log("ACTS_AACommand_0500 --- start");
       let cmd = 'aa test -b aa test -b com.example.actsaacommandtestatest -m entry_test' +
         '-s unittest OpenHarmonyTestRunner -z invalid';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
       abilityDelegator!.executeShellCommand(cmd, (err: BusinessError, data: AbilityDelegatorRegistry.ShellCmdResult) => {
         console.log('ACTS_AACommand_0500 - executeShellCommand: start ');
         console.log('ACTS_AACommand_0500 stdResult = ' + data.stdResult);
@@ -200,6 +216,10 @@ export default function abilityTest() {
     it('ACTS_AACommand_0600', Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_AACommand_0600 --- start");
       let cmd = 'aa test -b com.example.actsaacommandtestatest -m aatest -s unittest OpenHarmonyTestRunner -w 20';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
       abilityDelegator!.executeShellCommand(cmd, (err: BusinessError, data: AbilityDelegatorRegistry.ShellCmdResult) => {
         console.log('ACTS_AACommand_0600 - executeShellCommand: start ');
         console.log('ACTS_AACommand_0600 stdResult = ' + data.stdResult);
@@ -243,6 +263,10 @@ export default function abilityTest() {
     it('ACTS_AACommand_0800', Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_AACommand_0800 --- start");
       let cmd = 'aa test -b com.example.aacommand08 -m entry_test -s unittest OpenHarmonyTestRunner -w 3';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
       abilityDelegator!.executeShellCommand(cmd, (err: BusinessError, data: AbilityDelegatorRegistry.ShellCmdResult) => {
         console.log('ACTS_AACommand_0800 - executeShellCommand: start ');
         console.log('ACTS_AACommand_0800 stdResult = ' + data.stdResult);

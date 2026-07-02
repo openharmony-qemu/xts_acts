@@ -1,26 +1,16 @@
-import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
-import hilog from '@ohos.hilog'
+'use static';
+import { describe, it, expect, TestType, Size, Level, beforeAll } from '../../../hypium/index';
+import hilog from '@ohos.hilog';
 import Utils from './Util.test';
-
 import common from '@ohos.app.ability.common';
-
-import { inputDevice } from '@kit.InputKit';
-import { inputConsumer } from '@kit.InputKit';
-import { KeyEvent, Action, KeyCode } from '@kit.InputKit';
+import { inputDevice, inputConsumer, KeyEvent, Action, KeyCode, infraredEmitter, pointer } from '@kit.InputKit';
 import { AsyncCallback } from '@kit.BasicServicesKit';
-import { BusinessError } from "@ohos.base"
-
-import { infraredEmitter } from '@kit.InputKit';
+import { BusinessError } from '@ohos.base';
 import { image } from '@kit.ImageKit';
-
 import pointer from '@ohos.multimodalInput.pointer';
 import window from '@ohos.window';
-import { AppStorage } from '@ohos.arkui.stateManagement'
-
-import { inputDevice, pointer } from '@kit.InputKit';
-
+import { AppStorage } from '@ohos.arkui.stateManagement';
 import { KeyCode } from '@ohos.multimodalInput.keyCode';
-
 let domain: int = 0x0000; 
 let tag: string = 'testTag'; 
 

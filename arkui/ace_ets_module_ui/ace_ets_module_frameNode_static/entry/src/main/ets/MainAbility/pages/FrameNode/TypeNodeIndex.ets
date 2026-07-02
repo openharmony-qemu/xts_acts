@@ -123,6 +123,9 @@ struct TypeNodeIndex {
       typeNode.bindSwiperController(swiperNode, swCtrl);
       AppStorage.setOrCreate<string>('tn_bindSwiperController', 'called');
 
+      let swiperAttr = typeNode.getSwiperAttribute(swiperNode);
+      AppStorage.setOrCreate<string>('tn_getSwiperAttribute', swiperAttr != null && swiperAttr != undefined ? 'ok' : 'undefined');
+
       listNode.addSupportedUIStates(UIState.PRESSED, (n: FrameNode, states: int): void => {
         console.info('[ARKUI_NEW] UIStatesChangeHandler triggered');
       });

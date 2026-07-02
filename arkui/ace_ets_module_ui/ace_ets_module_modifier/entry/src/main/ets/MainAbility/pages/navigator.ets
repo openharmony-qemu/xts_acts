@@ -41,7 +41,7 @@ struct NavigatorCode {
     Column() {
       Button("change value").onClick(() => {
         (this.customModifier as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("navigator_changeButton")
 
       Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Start, justifyContent: FlexAlign.SpaceBetween }) {
         Navigator() {

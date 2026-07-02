@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -571,7 +572,7 @@ export default function requestPermissionOnSettingStaticTest() {
                 done();
               }
             });
-            Utils.msSleep(2000).awaitSync()
+            Utils.msSleep(3000).awaitSync()
             if(!clickRequest(driver1, '允许')) {
               if(clickRequest(driver1, '始终允许')) {
                 clickRequest(driver1, '确定');
@@ -579,7 +580,7 @@ export default function requestPermissionOnSettingStaticTest() {
                } else {
                    clickRequest(driver1, '确定');
                }
-            Utils.msSleep(2000).awaitSync()
+            Utils.msSleep(3000).awaitSync()
             if(!clickRequest(driver1, '允许')) {
               if(clickRequest(driver1, '始终允许')) {
                 clickRequest(driver1, '确定');

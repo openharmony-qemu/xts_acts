@@ -46,7 +46,7 @@ struct counter {
         this.value--
       })
     }.width("100%")
-    .key('flex')
+    .key('Counter_flex')
     .width('100%')
     .height('100%')
   }

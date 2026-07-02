@@ -1,3 +1,4 @@
+'use static';
 import MediaAssetChangeRequestStaticTest from "./MediaAssetChangeRequest/MediaAssetChangeRequest.test";
 import MediaAssetManagerStaticTest from "./MediaAssetManager/MediaAssetManager.test";
 import getAssetsTest from "./photoAccessHelper/PhotoAccessHelper.test";
@@ -18,11 +19,23 @@ import getThumbnailStaticTest from "./PhotoAsset/getThumbnail.test";
 import MediaAssetRequestImageSuppStatic from "./MediaAssetManager/requestImage.test";
 import AddResourceChangeRequestUrlSuppTest from "./AddResource/AddResourceUrl.test";
 import CommitModifySuppTest from "./AddResource/CommitModifyTest.test";
+import ApplyChangesSuppTestStatic from "./ApplyChange/ApplyChangesSupp.test";
+import PhotoAccessHelperEnumStatic from "./photoAccessHelper/PhotoAccessHelperEnum.test";
+import photoAccessHelperEnumImageFileTypeStatic from "./photoAccessHelper/photoAccessHelperEnumImageFileType.test";
+import GetAlbumsSuppTestStatic from "./GetAlbums/GetAlbumsSuppTest.test";
+import getObjectsIndexSetTestStatic from "./photoAccessHelper/getObjectsIndexSet.test";
+import getRangeObjectsTestStatic from "./photoAccessHelper/getRangeObjects.test";
+import PhotoAccessHelperAssetsTestStatic from "./photoAccessHelper/PhotoAccessHelperAssets.test";
+import PhotoAccessHelperEnumAlbumKeysStatic from "./photoAccessHelper/PhotoAccessHelperEnumAlbumKeys.test";
+import singlePhotoAlbumChangeTest from "./photoAccessHelper/PhotoSinglePhotoAlbumChange.test";
+import MediaAlbumChangeRequestSetAlbumNameStatic from "./MediaAssetChangeRequest/setAlbumName.test";
+import getTest from "./PhotoAsset/get.test";
 
 export default function testsuite(): void {
   photoAccessHelperNoPermissionStaticTest();
   photoAccessHelperReadPermissionStaticTest();
   photoMediaLibraryNoPermissionStatic();
+  getTest();
   MediaLibraryAvailabilitySupp();
   MediaAssetManagerStaticTest();
   MediaAssetChangeRequestStaticTest();
@@ -34,10 +47,20 @@ export default function testsuite(): void {
   getThumbnailStaticTest();
   MediaAssetRequestImageSuppStatic();
   createPhotoAssetTest();
-  getAssetsByPredicatesTest();
   createAssetTest();
   getAlbumsStaticTest();
   getAssetsStaticTest();
   AddResourceChangeRequestUrlSuppTest();
   CommitModifySuppTest();
+  ApplyChangesSuppTestStatic();
+  GetAlbumsSuppTestStatic();
+  getObjectsIndexSetTestStatic();
+  getRangeObjectsTestStatic();
+  PhotoAccessHelperAssetsTestStatic();
+  PhotoAccessHelperEnumStatic();
+  PhotoAccessHelperEnumAlbumKeysStatic();
+  photoAccessHelperEnumImageFileTypeStatic();
+  MediaAlbumChangeRequestSetAlbumNameStatic();
+  getAssetsByPredicatesTest();
+  singlePhotoAlbumChangeTest();
 }

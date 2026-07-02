@@ -77,16 +77,16 @@ export default function ImageTextTest() {
       let CASE: string = 'ArkUI_Image_Text_static_0100'
       console.info(`${SUITE} ${CASE} START`);
 
-      let strJson1: string = inspector.getInspectorByKey('ImageText_ImageSpan1');
+      let strJson1: string = inspector.getInspectorByKey('ImageText' + '_ImageSpan1');
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('verticalAlign').split('.')[1]).assertEqual('BASELINE')
 
-      let strJson2: string  = inspector.getInspectorByKey('ImageText_ImageSpan2');
+      let strJson2: string  = inspector.getInspectorByKey('ImageText' + '_ImageSpan2');
       expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('verticalAlign').split('.')[1]).assertEqual('CENTER')
 
-      let strJson3: string  = inspector.getInspectorByKey('ImageText_ImageSpan3');
+      let strJson3: string  = inspector.getInspectorByKey('ImageText' + '_ImageSpan3');
       expect(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('verticalAlign').split('.')[1]).assertEqual('TOP')
 
-      let strJson4: string  = inspector.getInspectorByKey('ImageText_ImageSpan4');
+      let strJson4: string  = inspector.getInspectorByKey('ImageText' + '_ImageSpan4');
       expect(JSON.parseJsonElement(strJson4).getElement('$attrs').getString('verticalAlign').split('.')[1]).assertEqual('BOTTOM')
 
       console.info(`${SUITE} ${CASE} END`);
@@ -104,22 +104,22 @@ export default function ImageTextTest() {
       let CASE: string = 'ArkUI_Image_Text_static_0200'
       console.info(`${SUITE} ${CASE} START`);
 
-      let strJson5: string = inspector.getInspectorByKey('ImageText_ImageSpan5');
+      let strJson5: string = inspector.getInspectorByKey('ImageText' + '_ImageSpan5');
       expect(JSON.parseJsonElement(strJson5).getElement('$attrs').getString('objectFit')).assertEqual('ImageFit.Contain')
 
-      let strJson6: string = inspector.getInspectorByKey('ImageText_ImageSpan6');
+      let strJson6: string = inspector.getInspectorByKey('ImageText' + '_ImageSpan6');
       expect(JSON.parseJsonElement(strJson6).getElement('$attrs').getString('objectFit')).assertEqual('ImageFit.Cover')
 
-      let strJson7: string = inspector.getInspectorByKey('ImageText_ImageSpan7');
+      let strJson7: string = inspector.getInspectorByKey('ImageText' + '_ImageSpan7');
       expect(JSON.parseJsonElement(strJson7).getElement('$attrs').getString('objectFit')).assertEqual('ImageFit.Auto')
 
-      let strJson8: string = inspector.getInspectorByKey('ImageText_ImageSpan8');
+      let strJson8: string = inspector.getInspectorByKey('ImageText' + '_ImageSpan8');
       expect(JSON.parseJsonElement(strJson8).getElement('$attrs').getString('objectFit')).assertEqual('ImageFit.Fill')
 
-      let strJson9: string = inspector.getInspectorByKey('ImageText_ImageSpan9');
+      let strJson9: string = inspector.getInspectorByKey('ImageText' + '_ImageSpan9');
       expect(JSON.parseJsonElement(strJson9).getElement('$attrs').getString('objectFit')).assertEqual('ImageFit.ScaleDown')
 
-      let strJson10: string = inspector.getInspectorByKey('ImageText_ImageSpan10');
+      let strJson10: string = inspector.getInspectorByKey('ImageText' + '_ImageSpan10');
       expect(JSON.parseJsonElement(strJson10).getElement('$attrs').getString('objectFit')).assertEqual('ImageFit.None')
 
       console.info(`${SUITE} ${CASE} END`);
@@ -137,11 +137,11 @@ export default function ImageTextTest() {
       let CASE: string = 'ArkUI_Image_Text_static_0300'
       console.info(`${SUITE} ${CASE} START`);
 
-      let strJson: string = inspector.getInspectorByKey('ImageText_Text1');
+      let strJson: string = inspector.getInspectorByKey('ImageText' + '_Text1');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').tryGetElement('textIndent')).assertEqual(undefined)
       if (inspector.sendEventByKey('ImageText_Button1', 10, '')) {
-        let strJson: string = inspector.getInspectorByKey('ImageText_Text1');
+        let strJson: string = inspector.getInspectorByKey('ImageText' + '_Text1');
 
         expect(obj.getElement('$attrs').tryGetElement('textIndent')).assertEqual(undefined)
       }
@@ -160,13 +160,13 @@ export default function ImageTextTest() {
       let CASE: string = 'ArkUI_Image_Text_static_0400'
       console.info(`${SUITE} ${CASE} START`);
 
-      let strJson12: string = inspector.getInspectorByKey('ImageText_ImageSpan12');
+      let strJson12: string = inspector.getInspectorByKey('ImageText' + '_ImageSpan12');
       expect(JSON.parseJsonElement(strJson12).getElement('$attrs').getString('height')).assertEqual('183.00px')
       expect(JSON.parseJsonElement(strJson12).getElement('$attrs').getString('width')).assertEqual('276.00px')
-      let strJson13: string = inspector.getInspectorByKey('ImageText_ImageSpan13');
+      let strJson13: string = inspector.getInspectorByKey('ImageText' + '_ImageSpan13');
       expect(JSON.parseJsonElement(strJson13).getElement('$attrs').getString('height')).assertEqual('183.00px')
       expect(JSON.parseJsonElement(strJson13).getElement('$attrs').getString('width')).assertEqual('276.00px')
-      let strJson14: string = inspector.getInspectorByKey('ImageText_ImageSpan14');
+      let strJson14: string = inspector.getInspectorByKey('ImageText' + '_ImageSpan14');
       expect(JSON.parseJsonElement(strJson14).getElement('$attrs').getString('height')).assertEqual('183.00px')
       expect(JSON.parseJsonElement(strJson14).getElement('$attrs').getString('width')).assertEqual('276.00px')
 
@@ -185,10 +185,10 @@ export default function ImageTextTest() {
       let CASE: string = 'ArkUI_Image_Text_static_0500'
       console.info(`${SUITE} ${CASE} START`);
 
-      let strJson15: string = inspector.getInspectorByKey('ImageText_ImageSpan15');
+      let strJson15: string = inspector.getInspectorByKey('ImageText' + '_ImageSpan15');
       expect(JSON.parseJsonElement(strJson15).getElement('$attrs').getString('height')).assertEqual('183.00px')
       expect(JSON.parseJsonElement(strJson15).getElement('$attrs').getString('width')).assertEqual('276.00px')
-      let strJson16: string = inspector.getInspectorByKey('ImageText_ImageSpan16');
+      let strJson16: string = inspector.getInspectorByKey('ImageText' + '_ImageSpan16');
       expect(JSON.parseJsonElement(strJson16).getElement('$attrs').getString('height')).assertEqual('183.00px')
       expect(JSON.parseJsonElement(strJson16).getElement('$attrs').getString('width')).assertEqual('276.00px')
 
@@ -207,10 +207,10 @@ export default function ImageTextTest() {
       let CASE: string = 'ArkUI_Image_Text_static_0600'
       console.info(`${SUITE} ${CASE} START`);
 
-      let strJson17: string = inspector.getInspectorByKey('ImageText_ImageSpan17');
+      let strJson17: string = inspector.getInspectorByKey('ImageText' + '_ImageSpan17');
       expect(JSON.parseJsonElement(strJson17).getElement('$attrs').getString('height')).assertEqual('183.00px')
       expect(JSON.parseJsonElement(strJson17).getElement('$attrs').getString('width')).assertEqual('276.00px')
-      let strJson18: string = inspector.getInspectorByKey('ImageText_ImageSpan18');
+      let strJson18: string = inspector.getInspectorByKey('ImageText' + '_ImageSpan18');
       expect(JSON.parseJsonElement(strJson18).getElement('$attrs').getString('height')).assertEqual('183.00px')
       expect(JSON.parseJsonElement(strJson18).getElement('$attrs').getString('width')).assertEqual('276.00px')
 
@@ -229,10 +229,10 @@ export default function ImageTextTest() {
       let CASE: string = 'ArkUI_Image_Text_static_0700'
       console.info(`${SUITE} ${CASE} START`);
 
-      let strJson19: string = inspector.getInspectorByKey('ImageText_ImageSpan19');
+      let strJson19: string = inspector.getInspectorByKey('ImageText' + '_ImageSpan19');
       expect(JSON.parseJsonElement(strJson19).getElement('$attrs').getString('height')).assertEqual('183.00px')
       expect(JSON.parseJsonElement(strJson19).getElement('$attrs').getString('width')).assertEqual('276.00px')
-      let strJson20: string = inspector.getInspectorByKey('ImageText_ImageSpan20');
+      let strJson20: string = inspector.getInspectorByKey('ImageText' + '_ImageSpan20');
       expect(JSON.parseJsonElement(strJson20).getElement('$attrs').getString('height')).assertEqual('183.00px')
       expect(JSON.parseJsonElement(strJson20).getElement('$attrs').getString('width')).assertEqual('276.00px')
 

@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,17 +14,16 @@
  * limitations under the License.
  */
 
-import { $rawfile, Entry, Component, Column, Row, Button, ClickEvent, Web, CustomDialogController, CustomDialog, CustomDialog } from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
+import { $rawfile, Entry, Component, Column, Row, Button, ClickEvent, Web, CustomDialogController, CustomDialog } from '@ohos.arkui.component';
+import { State } from '@ohos.arkui.stateManagement';
+import emitter from '@ohos.events.emitter';
 import events_emitter from '@ohos.events.emitter';
 import { BusinessError, Callback, RecordData } from '@ohos.base';
 import Utils from '../../src/test/Util.test';
-import emitter from '@ohos.events.emitter';
 import { JsProxyObject } from '../../src/test/Interfaces';
-import { Callback } from '@ohos.base'
-import { UIContext, Router } from '@ohos.arkui.UIContext'
-import webview from '@ohos.web.webview'
-import {canIUse} from '@internal.full.global'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import webview from '@ohos.web.webview';
+import { canIUse } from '@internal.full.global';
 import { Driver, ON } from '@ohos.UiTest';
 let driver = Driver.create()
 

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,20 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
-import {
-  afterAll,
-  afterEach,
-  beforeAll,
-  beforeEach,
-  describe,
-  expect,
-  it,
-  Level,
-  Size,
-  TestType
-} from "../../../hypium/index";
-
+import { describe, it, expect, TestType, Size, Level, afterAll, afterEach, beforeAll, beforeEach } from '../../../hypium/index';
 class C{}
 export default function arrayTest(): void {
   describe("arrayTest", (): void => {

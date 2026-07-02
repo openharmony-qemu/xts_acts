@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,8 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Text, TextAttribute, Column, Component, Button, ClickEvent } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
-import { State} from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
+import { Entry, Text, TextAttribute, Column, Component, Button, ClickEvent, Row, FontWeight } from '@ohos.arkui.component'
+import { State, Env, AppStorage } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
 @Entry
@@ -21,6 +22,18 @@ import hilog from '@ohos.hilog'
 struct MyStateSample {
   @State stateVar: string = 'state var';
   message: string = 'var';
+  @Env('ReadonlyEnvKey.WINDOW_SYSTEM_DENSITY') SystemDensity: double;
+  @Env('ReadonlyEnvKey.WINDOW_DISPLAY_ID') DisplayId: long;
+  
+  aboutToAppear() {
+    hilog.info(0x0000, 'testTag', 'TestAbility index aboutToAppear');
+    hilog.info(0x0000, 'testTag', 'Index page SystemDensity: ' + this.SystemDensity);
+    hilog.info(0x0000, 'testTag', 'Index page DisplayId: ' + this.DisplayId);
+    
+    AppStorage.setOrCreate<double>('SystemDensity', this.SystemDensity);
+    AppStorage.setOrCreate<long>('DisplayId', this.DisplayId);
+  }
+  
   changeValue() {
     this.stateVar+='~'
   }

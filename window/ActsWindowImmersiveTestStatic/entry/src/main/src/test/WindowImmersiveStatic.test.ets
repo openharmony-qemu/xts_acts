@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -528,6 +528,46 @@ export default function WindowImmersiveStaticTest() {
             expect(avoidArea.leftRect.top).assertLargerOrEqual(0);
             expect(avoidArea.leftRect.width).assertLargerOrEqual(0);
             expect(avoidArea.leftRect.height).assertLargerOrEqual(0);
+            done();
+          }).catch((err: Error) => {
+            console.info(`${caseName} Failed in setFloatNavigationAvoidAreaEnabled. Cause code: ${err.code}, message: ${err.message}`);
+            if (!canIUseRes) {
+              expect(err.code).assertEqual(801)
+              expect(err.message !== '').assertTrue()
+            } else {
+              expect(true).assertFail();
+            }
+            done();
+          });
+        } catch (exception) {
+          console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+          expect().assertFail();
+          done();
+        }
+      })
+
+/**
+     * @tc.name SUB_WINDOW_GetWindowAvoidAreaIgnoringVisibility_TYPE_FLOAT_NAVIGATION_static_0200
+     * @tc.number SUB_WINDOW_GetWindowAvoidAreaIgnoringVisibility_TYPE_FLOAT_NAVIGATION_static_0200
+     * @tc.desc SUB_WINDOW_GetWindowAvoidAreaIgnoringVisibility_TYPE_FLOAT_NAVIGATION_static_0200
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_WINDOW_GetWindowAvoidAreaIgnoringVisibility_TYPE_FLOAT_NAVIGATION_static_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        let caseName = 'SUB_WINDOW_GetWindowAvoidAreaIgnoringVisibility_TYPE_FLOAT_NAVIGATION_static_0200';
+        let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+        console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+        try {
+          let windowClass: window.Window = windowStage!.getMainWindowSync();
+          windowClass.setFloatNavigationAvoidAreaEnabled(false).then(async () => {
+            console.info(`${caseName} Succeeded setFloatNavigationAvoidAreaEnabled`);
+            console.info(`${caseName} Succeeded in setting FloatNavigationAvoidAreaEnabled false.`);
+            await Utils.msSleep(500)
+            let isEnabled = windowClass.isFloatNavigationAvoidAreaEnabled();
+            console.info(`${caseName} isFloatNavigationAvoidAreaEnabled: ${isEnabled}`);
+            expect(isEnabled).assertEqual(false);
             done();
           }).catch((err: Error) => {
             console.info(`${caseName} Failed in setFloatNavigationAvoidAreaEnabled. Cause code: ${err.code}, message: ${err.message}`);

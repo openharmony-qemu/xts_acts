@@ -53,7 +53,7 @@ struct ContentTable {
       }
       .layoutWeight(2)
     }
-    .key('fontWeight')
+    .key('fontWeight_fontWeight')
   }
 
   build() {

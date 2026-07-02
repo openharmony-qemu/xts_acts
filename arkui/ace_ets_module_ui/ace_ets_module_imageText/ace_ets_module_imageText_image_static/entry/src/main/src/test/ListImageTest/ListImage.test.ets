@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /**
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.

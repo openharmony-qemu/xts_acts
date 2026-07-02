@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -1369,6 +1370,19 @@ export default function EnumerationStaticTest() {
      */
     it('SUB_Ability_BundleManager_ExtensionAbilityType_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       expect(38).assertEqual(bundleManager.ExtensionAbilityType.AGENT_UI);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_BundleManager_ExtensionAbilityType_Static_0300
+     * @tc.number SUB_Ability_BundleManager_ExtensionAbilityType_Static_0300
+     * @tc.desc   Test bundleManager ExtensionAbilityType.MODULAR_OBJECT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_BundleManager_ExtensionAbilityType_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      expect(39).assertEqual(bundleManager.ExtensionAbilityType.MODULAR_OBJECT);
       done();
     })
 

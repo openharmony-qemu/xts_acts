@@ -1,3 +1,4 @@
+'use static';
 /*
 * Copyright (C) 2024-2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -806,7 +807,7 @@ export default function taskPoolAsyncRunnerAbility2(): void {
                 console.info('======', Count3);
               })
               .catch((error: Error) => {
-                expect(error.message).assertContain('std.core.LineString cannot be cast');
+                expect(error.message).assertContain('std.core.String cannot be cast');
                 count++;
                 console.error(`error message error: ${JSON.stringify(error.message)}`);
               });
@@ -817,7 +818,7 @@ export default function taskPoolAsyncRunnerAbility2(): void {
                 console.info('======', Count4);
               })
               .catch((error: Error) => {
-                expect(error.message).assertContain('std.core.LineString cannot be cast');
+                expect(error.message).assertContain('std.core.String cannot be cast');
                 count2++;
                 console.error(`error message error: ${JSON.stringify(error.message)}`);
               });

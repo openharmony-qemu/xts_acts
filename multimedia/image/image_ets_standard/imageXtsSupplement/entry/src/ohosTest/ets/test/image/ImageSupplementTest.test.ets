@@ -39,17 +39,21 @@ async function getImageSource(path: string): Promise<image.ImageSource> {
 }
 
 async function createPictureSUPP(context : Context): Promise<image.Picture> {
-  let array = new ArrayBuffer(300000000);
+  let array = new ArrayBuffer(20000000);
   let pathUri = 'test_exif_v2.jpg'
   let path = `file://${context.filesDir}/${pathUri}`;
   const fd = await fs.open(path, fs.OpenMode.READ_ONLY);
+  console.info(TAG, 'get fd:', fd);
   let readLength = await fs.read(fd.fd, array);
   let ops: image.SourceOptions = {
     sourceDensity: 98,
   }
   let imageSource: image.ImageSource = image.createImageSource(array, ops);
+  console.info(TAG, 'createImageSource:', imageSource);
   let pixelMap: image.PixelMap = await imageSource.createPixelMap();
+  console.info(TAG, 'createPixelMap:', pixelMap);
   let pictureObj: image.Picture = image.createPicture(pixelMap);
+  console.info(TAG, 'createPicture:', pictureObj);
   return pictureObj;
 }
 
@@ -108,9 +112,12 @@ export default function ImageSupplementTest() {
       console.info(TAG, testName, 'metadataType');
       let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
       let pictureObj = await createPictureSUPP(context);
+      console.info(TAG, testName, 'createPictureSUPP', pictureObj);
       let metadataType: image.MetadataType = image.MetadataType.EXIF_METADATA;
       let metaData: image.Metadata | null = await pictureObj.getMetadata(metadataType);
+      console.info(TAG, testName, 'getMetadata', metaData);
       try {
+        console.info(TAG, testName, 'getProperties');
         await metaData.getProperties(null);
         expect().assertFail();
         done();
@@ -135,7 +142,8 @@ export default function ImageSupplementTest() {
       let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
       let pictureObj = await createPictureSUPP(context);
       let metadataType: image.MetadataType = image.MetadataType.EXIF_METADATA;
-      let metaData: image.Metadata | null = await pictureObj.getMetadata(metadataType);
+      let metaData: image.Metadata | null = await pictureObj.getMetadata(metadataType)
+
       try {
         await metaData.getProperties(undefined);
         expect().assertFail();

@@ -143,9 +143,13 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
     TEST_ASSERT_EQUAL_INT(0, ret);
 
     char key2[] = "rw.sys.version.version";
+#ifdef PARAM_VALUE_LEN_MAX_48
+    char value2[] = "abcdefghijklmnopqrstuvwxyz1234567890abcdefghijk";
+#else
     char value2[] =
         "abcdefghijklmnopqrstuvwxyz1234567890abcdefghijklm\
 nopqrstuvwxyz1234567890abcdefghijklmnopqrstuvw";
+#endif
     ret = SetParameter(key2, value2);
     TEST_ASSERT_EQUAL_INT(0, ret);
 };
@@ -496,9 +500,13 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
     TEST_ASSERT_EQUAL_STRING(rightVal1, value1);
 
     char key2[] = "rw.sys.version.version";
+#ifdef PARAM_VALUE_LEN_MAX_48
+    char rightVal2[] = "abcdefghijklmnopqrstuvwxyz1234567890abcdefghijk";
+#else
     char rightVal2[] =
         "abcdefghijklmnopqrstuvwxyz1234567890abcdefgh\
 ijklmnopqrstuvwxyz1234567890abcdefghijklmnopqrstuvw";
+#endif
     char value2[MAX_LEN] = {0};
     SetParameter(key2, rightVal2);
     ret = GetParameter(key2, g_defSysParam, value2, MAX_LEN);

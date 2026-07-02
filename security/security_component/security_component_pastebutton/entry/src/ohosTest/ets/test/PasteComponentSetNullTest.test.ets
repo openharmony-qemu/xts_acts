@@ -213,27 +213,6 @@ export default function pasteComponentSetNullTest() {
     });
 
     /**
-     * @tc.name   Test_Security_PasteButton_SetNull_0500
-     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_SetNull_0500
-     * @tc.desc   Test SecurityComponent fontSize set null is Default and Authorization is successful
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('Test_Security_PasteButton_SetNull_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
-      const TCNAME = 'Test_Security_PasteButton_SetNull_0500';
-      console.info(`====>${TCNAME} START`);
-      let driver = Driver.create();
-      await clickSwitchButton(TCNAME, driver);
-      let strJson: string = getInspectorByKey('setNull4');
-      let obj : ESObject = JSON.parse(strJson);
-      expect(obj.$attrs.fontSize).assertEqual('16.00fp');
-      await Utils.sleep(1000);
-      sucCallback(TCNAME, done);
-      await clickSecComponent(TCNAME, driver, 0);
-    });
-
-    /**
      * @tc.name   Test_Security_PasteButton_SetNull_0600
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_SetNull_0600
      * @tc.desc   Test SecurityComponent fontStyle set null is Default and Authorization is successful

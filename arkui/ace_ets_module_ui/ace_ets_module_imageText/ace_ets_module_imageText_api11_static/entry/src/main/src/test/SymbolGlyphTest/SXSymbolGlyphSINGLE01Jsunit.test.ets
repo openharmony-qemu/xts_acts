@@ -70,7 +70,7 @@ export default function SXSymbolGlyphSINGLE01Jsunit() {
         }
       } catch (err) {
         console.error("push SXSymbolGlyphSINGLE01Jsunit page error:" + err);
-        expect().assertFail();
+        expect(false).assertEqual(true);
       }
     });
 

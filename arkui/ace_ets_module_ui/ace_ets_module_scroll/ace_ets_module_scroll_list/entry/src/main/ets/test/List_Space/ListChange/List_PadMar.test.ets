@@ -76,15 +76,15 @@ export default function List_PadMar() {
     it('testListPadMar',  Level.LEVEL0, async (done: Function) => {
       console.info('testListPadMar START');
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('List_PadMar_01');
+      let strJson = getInspectorByKey('List_PadMar' + '_01');
 
       expect(JSON.parse(strJson).$type).assertEqual('List');
-      let List_PadMar_011: RectValue = CommonFunc.getComponentRect('List_PadMar_011');
-      let List_PadMar_012: RectValue = CommonFunc.getComponentRect('List_PadMar_012');
-      let List_PadMar_013: RectValue = CommonFunc.getComponentRect('List_PadMar_013');
-      let List_PadMar_014: RectValue = CommonFunc.getComponentRect('List_PadMar_014');
-      let List_PadMar_01: RectValue = CommonFunc.getComponentRect('List_PadMar_01');
-      let List_PadMar_01_Box: RectValue = CommonFunc.getComponentRect('List_PadMar_01_Box');
+      let List_PadMar_011: RectValue = CommonFunc.getComponentRect('List_PadMar' + '_011');
+      let List_PadMar_012: RectValue = CommonFunc.getComponentRect('List_PadMar' + '_012');
+      let List_PadMar_013: RectValue = CommonFunc.getComponentRect('List_PadMar' + '_013');
+      let List_PadMar_014: RectValue = CommonFunc.getComponentRect('List_PadMar' + '_014');
+      let List_PadMar_01: RectValue = CommonFunc.getComponentRect('List_PadMar' + '_01');
+      let List_PadMar_01_Box: RectValue = CommonFunc.getComponentRect('List_PadMar' + '_01_Box');
 
       expect(Math.abs(Math.round(List_PadMar_011.left - List_PadMar_01.left) - Math.round(vp2px(10))) <= 1)
         .assertTrue();
@@ -130,7 +130,7 @@ export default function List_PadMar() {
         .assertTrue();
       let driver = Driver.create();
       await driver.swipe(360, 690, 360, 30);
-      let List_PadMar_014Again: RectValue = CommonFunc.getComponentRect('List_PadMar_014');
+      let List_PadMar_014Again: RectValue = CommonFunc.getComponentRect('List_PadMar' + '_014');
       expect(Math.abs(List_PadMar_014.top - List_PadMar_014Again.top) <= 1).assertTrue();
       console.info('testListPadMar END');
       done();

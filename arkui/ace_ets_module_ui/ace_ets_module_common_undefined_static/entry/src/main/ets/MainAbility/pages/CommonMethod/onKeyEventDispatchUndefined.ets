@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 import { Entry, Text, Column, Component, Button, ClickEvent, Callback, KeyEvent, Row } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
@@ -38,7 +38,7 @@ struct onKeyEventExample4 {
           .onClick((e: ClickEvent) => {
             this.isOnKeyEventDispatchUndefined = !this.isOnKeyEventDispatchUndefined
           })
-          .key('Common_OnKeyEventDispatch')
+          .key('onKeyEventDispatchUndefined_Common_OnKeyEventDispatch')
       }
     }
   }

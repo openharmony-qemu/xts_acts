@@ -91,7 +91,7 @@ export default function TextfieldMultiTest() {
         expect(color).assertEqual("#FF0000FF");
         console.info('ArkUX_Text_Visual_static_0110 END ');
       } catch (err) {
-        expect().assertFail();
+        expect(false).assertEqual(true);
         console.info('ArkUX_Text_Visual_static_0110 ERR  ' + JSON.stringify(err));
       }
       done();
@@ -123,7 +123,7 @@ export default function TextfieldMultiTest() {
           expect(color).assertEqual("#FF008000");
           console.info('ArkUX_Text_Visual_static_0120 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Text_Visual_static_0120 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -156,7 +156,7 @@ export default function TextfieldMultiTest() {
           expect(color).assertEqual("#FFFFFFFF");
           console.info('ArkUX_Text_Visual_static_0130 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Text_Visual_static_0130 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -193,7 +193,7 @@ export default function TextfieldMultiTest() {
           expect(color).assertEqual("#FF000000");
           console.info('ArkUX_Text_Visual_static_0140 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Text_Visual_static_0140 ERR  ' + JSON.stringify(err));
         }
         done();

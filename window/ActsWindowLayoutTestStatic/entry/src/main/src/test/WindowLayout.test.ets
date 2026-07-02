@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -2635,9 +2636,8 @@ export default function WindowLayoutTest() {
                 expect(properties.windowRect.top).assertEqual(1000);
                 done();
             }).catch((err: Error):PromiseLike<void>|undefined => {
-                err === err as BusinessError;
                 if(err!.code !== 801){
-                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(err));
+                    hilog.error(0x0000, '[ANI]',`${msgStr} Failed to move the window. Cause code: ${err!.code}, message: ${err!.message}` );
                     expect(true).assertFalse();
                     done();
                 }else{

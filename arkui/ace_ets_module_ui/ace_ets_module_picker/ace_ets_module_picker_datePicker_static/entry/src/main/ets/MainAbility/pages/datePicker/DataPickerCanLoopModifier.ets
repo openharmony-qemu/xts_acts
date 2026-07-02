@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -13,15 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Text, Column, Row, Component, Button, ClickEvent, DatePicker,
-  DatePickerDialogOptions, DatePickerAttribute, AttributeModifier,
-  DatePickerAttribute} from '@ohos.arkui.component'
-import { State, Link, Observed } from '@ohos.arkui.stateManagement'
-import hilog from '@ohos.hilog'
-import promptAction from '@ohos.promptAction'
-import { LevelOrder, LevelMode } from '@ohos.promptAction'
-import { UIContext } from '@ohos.arkui.UIContext'
-
+import { Entry, Text, Column, Row, Component, Button, ClickEvent, DatePicker, DatePickerDialogOptions, DatePickerAttribute, AttributeModifier } from '@ohos.arkui.component';
+import { State, Link, Observed } from '@ohos.arkui.stateManagement';
+import hilog from '@ohos.hilog';
+import promptAction, { LevelOrder, LevelMode } from '@ohos.promptAction';
+import { UIContext } from '@ohos.arkui.UIContext';
 @Observed
 export class DatePickerModifier1 implements AttributeModifier<DatePickerAttribute> {
   applyNormalAttribute(instance: DatePickerAttribute): void {

@@ -1385,5 +1385,197 @@ export default function JsLeakNewConfigEnable() {
       console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_4400 end");
     })
 
+    /**
+     * @tc.name   testNewJsLeakWatcher45
+     * @tc.number SUB_DFX_DFR_jsLeakWatcherNew_Interface_4500
+     * @tc.desc   验证enableLeakWatcher接口使用jsLeakWatcher.MonitorObjectType.ALL正常返回
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNewJsLeakWatcher45', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_4500 start");
+      try {
+        let leakFilePath:Array<string> = [];
+        let config : jsLeakWatcher.LeakWatcherConfig = {
+          monitorObjectTypes : jsLeakWatcher.MonitorObjectType.ALL,
+        };
+        jsLeakWatcher.enableLeakWatcher(true, config, (filePath: Array<string>) => {
+          console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_4500 leaklistFileName:' + filePath[0]);
+          console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_4500 heapDumpFileName:' + filePath[1]);
+          leakFilePath = filePath;
+        });
+        expect(leakFilePath.length === 0).assertTrue();
+        console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_4500 MonitorObjectType.ALL success')
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_jsLeakWatcherNew_Interface_4500 > err code: ${err.code}, err msg: ${err.message}`)
+        console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_4500 fail!");
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_4500 end");
+    })
+
+    /**
+     * @tc.name   testNewJsLeakWatcher46
+     * @tc.number SUB_DFX_DFR_jsLeakWatcherNew_Interface_4600
+     * @tc.desc   验证enableLeakWatcher接口使用jsLeakWatcher.MonitorObjectType.CUSTOM_COMPONENT正常返回
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNewJsLeakWatcher46', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_4600 start");
+      try {
+        let leakFilePath:Array<string> = [];
+        let config : jsLeakWatcher.LeakWatcherConfig = {
+          monitorObjectTypes : jsLeakWatcher.MonitorObjectType.CUSTOM_COMPONENT,
+        };
+        jsLeakWatcher.enableLeakWatcher(true, config, (filePath: Array<string>) => {
+          console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_4600 leaklistFileName:' + filePath[0]);
+          console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_4600 heapDumpFileName:' + filePath[1]);
+          leakFilePath = filePath;
+        });
+        expect(leakFilePath.length === 0).assertTrue();
+        console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_4600 MonitorObjectType.CUSTOM_COMPONENT success')
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_jsLeakWatcherNew_Interface_4600 > err code: ${err.code}, err msg: ${err.message}`)
+        console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_4600 fail!");
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_4600 end");
+    })
+
+    /**
+     * @tc.name   testNewJsLeakWatcher47
+     * @tc.number SUB_DFX_DFR_jsLeakWatcherNew_Interface_4700
+     * @tc.desc   验证enableLeakWatcher接口使用jsLeakWatcher.MonitorObjectType.WINDOW正常返回
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNewJsLeakWatcher47', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_4700 start");
+      try {
+        let leakFilePath:Array<string> = [];
+        let config : jsLeakWatcher.LeakWatcherConfig = {
+          monitorObjectTypes : jsLeakWatcher.MonitorObjectType.WINDOW,
+        };
+        jsLeakWatcher.enableLeakWatcher(true, config, (filePath: Array<string>) => {
+          console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_4700 leaklistFileName:' + filePath[0]);
+          console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_4700 heapDumpFileName:' + filePath[1]);
+          leakFilePath = filePath;
+        });
+        expect(leakFilePath.length === 0).assertTrue();
+        console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_4700 MonitorObjectType.WINDOW success')
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_jsLeakWatcherNew_Interface_4700 > err code: ${err.code}, err msg: ${err.message}`)
+        console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_4700 fail!");
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_4700 end");
+    })
+
+    /**
+     * @tc.name   testNewJsLeakWatcher48
+     * @tc.number SUB_DFX_DFR_jsLeakWatcherNew_Interface_4800
+     * @tc.desc   验证enableLeakWatcher接口使用jsLeakWatcher.MonitorObjectType.NODE_CONTAINER正常返回
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNewJsLeakWatcher48', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_4800 start");
+      try {
+        let leakFilePath:Array<string> = [];
+        let config : jsLeakWatcher.LeakWatcherConfig = {
+          monitorObjectTypes : jsLeakWatcher.MonitorObjectType.NODE_CONTAINER,
+        };
+        jsLeakWatcher.enableLeakWatcher(true, config, (filePath: Array<string>) => {
+          console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_4800 leaklistFileName:' + filePath[0]);
+          console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_4800 heapDumpFileName:' + filePath[1]);
+          leakFilePath = filePath;
+        });
+        expect(leakFilePath.length === 0).assertTrue();
+        console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_4800 MonitorObjectType.NODE_CONTAINER success')
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_jsLeakWatcherNew_Interface_4800 > err code: ${err.code}, err msg: ${err.message}`)
+        console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_4800 fail!");
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_4800 end");
+    })
+
+    /**
+     * @tc.name   testNewJsLeakWatcher49
+     * @tc.number SUB_DFX_DFR_jsLeakWatcherNew_Interface_4900
+     * @tc.desc   验证enableLeakWatcher接口使用jsLeakWatcher.MonitorObjectType.X_COMPONENT正常返回
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNewJsLeakWatcher49', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_4900 start");
+      try {
+        let leakFilePath:Array<string> = [];
+        let config : jsLeakWatcher.LeakWatcherConfig = {
+          monitorObjectTypes : jsLeakWatcher.MonitorObjectType.X_COMPONENT,
+        };
+        jsLeakWatcher.enableLeakWatcher(true, config, (filePath: Array<string>) => {
+          console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_4900 leaklistFileName:' + filePath[0]);
+          console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_4900 heapDumpFileName:' + filePath[1]);
+          leakFilePath = filePath;
+        });
+        expect(leakFilePath.length === 0).assertTrue();
+        console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_4900 MonitorObjectType.X_COMPONENT success')
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_jsLeakWatcherNew_Interface_4900 > err code: ${err.code}, err msg: ${err.message}`)
+        console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_4900 fail!");
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_4900 end");
+    })
+
+    /**
+     * @tc.name   testNewJsLeakWatcher50
+     * @tc.number SUB_DFX_DFR_jsLeakWatcherNew_Interface_5000
+     * @tc.desc   验证enableLeakWatcher接口使用jsLeakWatcher.MonitorObjectType.ABILITY正常返回
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNewJsLeakWatcher50', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_5000 start");
+      try {
+        let leakFilePath:Array<string> = [];
+        let config : jsLeakWatcher.LeakWatcherConfig = {
+          monitorObjectTypes : jsLeakWatcher.MonitorObjectType.ABILITY,
+        };
+        jsLeakWatcher.enableLeakWatcher(true, config, (filePath: Array<string>) => {
+          console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_5000 leaklistFileName:' + filePath[0]);
+          console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_5000 heapDumpFileName:' + filePath[1]);
+          leakFilePath = filePath;
+        });
+        expect(leakFilePath.length === 0).assertTrue();
+        console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_5000 MonitorObjectType.ABILITY success')
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_jsLeakWatcherNew_Interface_5000 > err code: ${err.code}, err msg: ${err.message}`)
+        console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_5000 fail!");
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_5000 end");
+    })
+
   })
 }

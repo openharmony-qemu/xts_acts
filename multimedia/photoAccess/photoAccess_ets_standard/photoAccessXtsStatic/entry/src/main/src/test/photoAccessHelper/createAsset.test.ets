@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -283,7 +283,7 @@ export default function createAssetTest(): void {
       };
       try {
         const uri = await helper!.createAsset(photoAccessHelper.PhotoType.IMAGE, 'jpg', options);
-        expect(uri.length > 0).assertTrue();
+        expect(uri.toString().includes('file:')).assertTrue();
         console.info(TAG,testName, `createAsset success; uri: ${uri}`);
         done();
       } catch (error) {
@@ -336,7 +336,7 @@ export default function createAssetTest(): void {
       };
       try {
         const uri = await helper!.createAsset(photoAccessHelper.PhotoType.IMAGE, 'jpg', options);
-        expect(uri.length > 0).assertTrue();
+        expect(uri.toString().includes('file:')).assertTrue();
         console.info(TAG,testName, `createAsset success; uri: ${uri}`);
         done();
       } catch (error) {
@@ -363,7 +363,7 @@ export default function createAssetTest(): void {
       };
       try {
         const uri = await helper!.createAsset(photoAccessHelper.PhotoType.IMAGE, 'jpg', options);
-        expect(uri.length > 0).assertTrue();
+        expect(uri.toString().includes('file:')).assertTrue();
         console.info(TAG,testName, `createAsset success; uri: ${uri}`);
         done();
       } catch (error) {
@@ -389,7 +389,7 @@ export default function createAssetTest(): void {
       };
       try {
         const uri = await helper!.createAsset(photoAccessHelper.PhotoType.VIDEO, 'mp4', options);
-        expect(uri.length > 0).assertTrue();
+        expect(uri.toString().includes('file:')).assertTrue();
         console.info(TAG,testName, `createAsset success; uri: ${uri}`);
         done();
       } catch (error) {
@@ -442,7 +442,7 @@ export default function createAssetTest(): void {
       };
       try {
         const uri = await helper!.createAsset(photoAccessHelper.PhotoType.VIDEO, 'mp4', options);
-        expect(uri.length > 0).assertTrue();
+        expect(uri.toString().includes('file:')).assertTrue();
         console.info(TAG,testName, `createAsset success; uri: ${uri}`);
         done();
       } catch (error) {
@@ -469,7 +469,7 @@ export default function createAssetTest(): void {
       };
       try {
         const uri = await helper!.createAsset(photoAccessHelper.PhotoType.VIDEO, 'mp4', options);
-        expect(uri.length > 0).assertTrue();
+        expect(uri.toString().includes('file:')).assertTrue();
         console.info(TAG,testName, `createAsset success; uri: ${uri}`);
         done();
       } catch (error) {
@@ -493,7 +493,7 @@ export default function createAssetTest(): void {
 
       try {
         const uri = await helper!.createAsset(photoAccessHelper.PhotoType.IMAGE, 'jpg');
-        expect(uri.length > 0).assertTrue();
+        expect(uri.toString().includes('file:')).assertTrue();
         console.info(TAG,testName, `createAsset success; uri: ${uri}`);
         done();
       } catch (error) {
@@ -538,7 +538,7 @@ export default function createAssetTest(): void {
       console.info(TAG, testName);
       try {
         const uri = await helper!.createAsset(photoAccessHelper.PhotoType.VIDEO, 'mp4');
-        expect(uri.length > 0).assertTrue();
+        expect(uri.toString().includes('file:')).assertTrue();
         console.info(TAG,testName, `createAsset success; uri: ${uri}`);
         done();
       } catch (error) {

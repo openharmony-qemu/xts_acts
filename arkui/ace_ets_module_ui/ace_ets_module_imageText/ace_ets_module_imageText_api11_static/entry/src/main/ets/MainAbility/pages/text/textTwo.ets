@@ -85,7 +85,7 @@ struct TextExample2 {
         .fontSize(12)
         .border({ width: 1 })
         .padding(10)
-        .width('100%').key("text1")
+        .width('100%').key("textTwo_text1")
 
 
       Text('This is the text content with the decoration set to Overline and the color set to Red.')
@@ -116,7 +116,7 @@ struct TextExample2 {
         .fontSize(12)
         .border({ width: 1 })
         .padding(10)
-        .width('100%').key('text2')
+        .width('100%').key('textTwo_text2')
       Text('This is the text content with baselineOffset 30.')
         .baselineOffset(30)
         .fontSize(12)
@@ -137,7 +137,7 @@ struct TextExample2 {
         .fontSize(12)
         .border({ width: 1 })
         .padding(10)
-        .width('100%').key('text3')
+        .width('100%').key('textTwo_text3')
       Text('This is the text content with letterSpacing 3.')
         .letterSpacing(3)
         .fontSize(12)
@@ -157,7 +157,7 @@ struct TextExample2 {
         .fontSize(12)
         .border({ width: 1 })
         .padding(10)
-        .width('100%').key("text5")
+        .width('100%').key("textTwo_text5")
       // 文本全小写展示
       Text('This is the text content with textCase set to LowerCase.')
         .textCase(TextCase.LowerCase)

@@ -63,8 +63,8 @@ export default function row_TextPositionTest() {
       let firstText: RectValue = CommonFunc.getComponentRect('Row_TextPosition1');
       let secondText: RectValue = CommonFunc.getComponentRect('Row_TextPosition2');
       let thirdText: RectValue = CommonFunc.getComponentRect('Row_TextPosition3');
-      let rowContainer: RectValue = CommonFunc.getComponentRect('Row_TextPosition_Container01');
-      let rowContainerStrJson = getInspectorByKey('Row_TextPosition_Container01');
+      let rowContainer: RectValue = CommonFunc.getComponentRect('Row_TextPosition' + '_Container01');
+      let rowContainerStrJson = getInspectorByKey('Row_TextPosition' + '_Container01');
 
       expect(JSON.parse(rowContainerStrJson).$type).assertEqual('Row');
 
