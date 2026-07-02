@@ -32,6 +32,8 @@ import {
   MenuItemOptions,
   ResponseType,
   MenuGridPosition,
+  ContextMenuOptions,
+  MenuGridStyleOptions,
 } from '@ohos.arkui.component';
 
 import {
@@ -192,26 +194,26 @@ struct CustomDialogControllerOptionsSystemMaterial {
       Text('colorMode and gridStyle position').height('10%')
         .bindContextMenuWithResponse(this.MenuBuilderWithParam, {
           colorMode: AnchoredColorMode.FOLLOW_SYSTEM,
-          gridStyle: { count: 4, position: MenuGridPosition.TOP },
-        })
+          gridStyle: { count: 4, position: MenuGridPosition.TOP } as MenuGridStyleOptions,
+        } as ContextMenuOptions)
 
       Text('colorMode and gridStyle position').height('10%')
         .bindContextMenuWithResponse(this.MenuBuilderWithParam, {
           colorMode: AnchoredColorMode.FOLLOW_TARGET,
-          gridStyle: { count: 4, position: MenuGridPosition.BOTTOM },
-        })
+          gridStyle: { count: 4, position: MenuGridPosition.BOTTOM } as MenuGridStyleOptions,
+        } as ContextMenuOptions)
 
       Text('enum13').height('10%')
         .bindContextMenuWithResponse(this.MenuBuilderWithParam, {
           colorMode: null,
           gridStyle: { count: 4, position: null },
-        })
+        } as ContextMenuOptions)
 
       Text('enum13').height('10%')
         .bindContextMenuWithResponse(this.MenuBuilderWithParam, {
           colorMode: undefined,
-          gridStyle: { count: 4, position: undefined },
-        })
+          gridStyle: { count: 4, position: undefined } as MenuGridStyleOptions,
+        } as ContextMenuOptions)
     }
     .width('100%')
     .height('100%')

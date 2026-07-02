@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,12 +14,10 @@
  * limitations under the License.
  */
 
-'use static';
-
 import {
   Entry, Column, ColumnOptions, Component, Builder, Button, Text, Scroll, Row, RowOptions,
-  ContextMenuOptions, MenuElement, Menu, MenuItem, MenuItemOptions, MenuPreviewMode,
-  PreviewScaleMode, AvailableLayoutArea, ModalMode, MenuKeyboardAvoidMode,
+  ContextMenuOptions, ContextMenuAnimationOptions, MenuElement, Menu, MenuItem, MenuItemOptions,
+  MenuPreviewMode, PreviewScaleMode, AvailableLayoutArea, ModalMode, MenuKeyboardAvoidMode,
   HapticFeedbackMode, AnchoredColorMode, Color, FontWeight, $r, CustomBuilder,
   ResourceStr, Image
 } from '@ohos.arkui.component';
@@ -242,7 +241,7 @@ struct BindContextMenuByIsShowOptionsIndex {
           .onClick(() => { this.isShowAnimScale = true; })
           .bindContextMenuByIsShow(this.isShowAnimScale, this.bcmMenuElements, {
             preview: this.MyPreview,
-            previewAnimationOptions: { scale: [0.8, 1.0] },
+            previewAnimationOptions: { scale: [0.8, 1.0] } as ContextMenuAnimationOptions,
             onWillDisappear: () => {
               this.isShowAnimScale = false;
               this.txtAnimScale = 'scale';
@@ -260,7 +259,7 @@ struct BindContextMenuByIsShowOptionsIndex {
             previewAnimationOptions: {
               hoverScale: [1.0, 0.8],
               hoverScaleInterruption: false
-            },
+            } as ContextMenuAnimationOptions,
             onWillDisappear: () => {
               this.isShowAnimHoverF = false;
               this.txtAnimHoverF = 'false';
@@ -278,7 +277,7 @@ struct BindContextMenuByIsShowOptionsIndex {
             previewAnimationOptions: {
               hoverScale: [1.0, 0.8],
               hoverScaleInterruption: true
-            },
+            } as ContextMenuAnimationOptions,
             onWillDisappear: () => {
               this.isShowAnimHoverT = false;
               this.txtAnimHoverT = 'true';

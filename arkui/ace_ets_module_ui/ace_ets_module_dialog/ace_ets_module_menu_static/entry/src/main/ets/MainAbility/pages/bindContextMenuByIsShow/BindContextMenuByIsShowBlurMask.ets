@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,13 +14,11 @@
  * limitations under the License.
  */
 
-'use static';
-
 import {
   Entry, Column, ColumnOptions, Component, Builder, Button, Text, Scroll, Row, RowOptions,
   ContextMenuOptions, MenuElement, Menu, MenuItem, MenuItemOptions, BlurStyle,
   BlurStyleActivePolicy, ThemeColorMode, AdaptiveColor, BackgroundBlurStyleOptions,
-  BackgroundEffectOptions, Color, FontWeight,
+  BackgroundEffectOptions, Color, FontWeight, MenuMaskType,
   $r, ResourceStr
 } from '@ohos.arkui.component';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
@@ -45,7 +44,7 @@ struct BindContextMenuByIsShowBlurMaskIndex {
   ];
 
 
-  private fmtIdx(idx: int): string {
+  private fmtIdx(idx: number): string {
     let n: number = idx + 1;
     return n < 10 ? '0' + n : '' + n;
   }
@@ -372,7 +371,7 @@ struct BindContextMenuByIsShowBlurMaskIndex {
           .fontSize(8)
           .onClick(() => { this.maskShow0 = true; })
           .bindContextMenuByIsShow(this.maskShow0, this.bcmMenuElements, {
-            mask: { backgroundBlurStyle: BlurStyle.Thin },
+            mask: { backgroundBlurStyle: BlurStyle.Thin } as MenuMaskType,
             onWillDisappear: () => {
               this.maskShow0 = false;
               this.maskTxt0 = 'Thin';
@@ -386,7 +385,7 @@ struct BindContextMenuByIsShowBlurMaskIndex {
           .fontSize(8)
           .onClick(() => { this.maskShow1 = true; })
           .bindContextMenuByIsShow(this.maskShow1, this.bcmMenuElements, {
-            mask: { backgroundBlurStyle: BlurStyle.Regular },
+            mask: { backgroundBlurStyle: BlurStyle.Regular } as MenuMaskType,
             onWillDisappear: () => {
               this.maskShow1 = false;
               this.maskTxt1 = 'Regular';
@@ -400,7 +399,7 @@ struct BindContextMenuByIsShowBlurMaskIndex {
           .fontSize(8)
           .onClick(() => { this.maskShow2 = true; })
           .bindContextMenuByIsShow(this.maskShow2, this.bcmMenuElements, {
-            mask: { backgroundBlurStyle: BlurStyle.Thick },
+            mask: { backgroundBlurStyle: BlurStyle.Thick } as MenuMaskType,
             onWillDisappear: () => {
               this.maskShow2 = false;
               this.maskTxt2 = 'Thick';
@@ -414,7 +413,7 @@ struct BindContextMenuByIsShowBlurMaskIndex {
           .fontSize(8)
           .onClick(() => { this.maskShow3 = true; })
           .bindContextMenuByIsShow(this.maskShow3, this.bcmMenuElements, {
-            mask: { backgroundBlurStyle: BlurStyle.BACKGROUND_THIN },
+            mask: { backgroundBlurStyle: BlurStyle.BACKGROUND_THIN } as MenuMaskType,
             onWillDisappear: () => {
               this.maskShow3 = false;
               this.maskTxt3 = 'BGThin';
@@ -430,7 +429,7 @@ struct BindContextMenuByIsShowBlurMaskIndex {
           .fontSize(8)
           .onClick(() => { this.maskShow4 = true; })
           .bindContextMenuByIsShow(this.maskShow4, this.bcmMenuElements, {
-            mask: { backgroundBlurStyle: BlurStyle.BACKGROUND_REGULAR },
+            mask: { backgroundBlurStyle: BlurStyle.BACKGROUND_REGULAR } as MenuMaskType,
             onWillDisappear: () => {
               this.maskShow4 = false;
               this.maskTxt4 = 'BGReg';
@@ -444,7 +443,7 @@ struct BindContextMenuByIsShowBlurMaskIndex {
           .fontSize(8)
           .onClick(() => { this.maskShow5 = true; })
           .bindContextMenuByIsShow(this.maskShow5, this.bcmMenuElements, {
-            mask: { backgroundBlurStyle: BlurStyle.BACKGROUND_THICK },
+            mask: { backgroundBlurStyle: BlurStyle.BACKGROUND_THICK } as MenuMaskType,
             onWillDisappear: () => {
               this.maskShow5 = false;
               this.maskTxt5 = 'BGThick';
@@ -458,7 +457,7 @@ struct BindContextMenuByIsShowBlurMaskIndex {
           .fontSize(8)
           .onClick(() => { this.maskShow6 = true; })
           .bindContextMenuByIsShow(this.maskShow6, this.bcmMenuElements, {
-            mask: { backgroundBlurStyle: BlurStyle.BACKGROUND_ULTRA_THICK },
+            mask: { backgroundBlurStyle: BlurStyle.BACKGROUND_ULTRA_THICK } as MenuMaskType,
             onWillDisappear: () => {
               this.maskShow6 = false;
               this.maskTxt6 = 'BGUltra';
@@ -472,7 +471,7 @@ struct BindContextMenuByIsShowBlurMaskIndex {
           .fontSize(8)
           .onClick(() => { this.maskShow7 = true; })
           .bindContextMenuByIsShow(this.maskShow7, this.bcmMenuElements, {
-            mask: { backgroundBlurStyle: BlurStyle.NONE },
+            mask: { backgroundBlurStyle: BlurStyle.NONE } as MenuMaskType,
             onWillDisappear: () => {
               this.maskShow7 = false;
               this.maskTxt7 = 'None';
@@ -488,7 +487,7 @@ struct BindContextMenuByIsShowBlurMaskIndex {
           .fontSize(8)
           .onClick(() => { this.maskShow8 = true; })
           .bindContextMenuByIsShow(this.maskShow8, this.bcmMenuElements, {
-            mask: { backgroundBlurStyle: BlurStyle.COMPONENT_ULTRA_THIN },
+            mask: { backgroundBlurStyle: BlurStyle.COMPONENT_ULTRA_THIN } as MenuMaskType,
             onWillDisappear: () => {
               this.maskShow8 = false;
               this.maskTxt8 = 'CUltraThin';
@@ -502,7 +501,7 @@ struct BindContextMenuByIsShowBlurMaskIndex {
           .fontSize(8)
           .onClick(() => { this.maskShow9 = true; })
           .bindContextMenuByIsShow(this.maskShow9, this.bcmMenuElements, {
-            mask: { backgroundBlurStyle: BlurStyle.COMPONENT_THIN },
+            mask: { backgroundBlurStyle: BlurStyle.COMPONENT_THIN } as MenuMaskType,
             onWillDisappear: () => {
               this.maskShow9 = false;
               this.maskTxt9 = 'CThin';
@@ -516,7 +515,7 @@ struct BindContextMenuByIsShowBlurMaskIndex {
           .fontSize(8)
           .onClick(() => { this.maskShow10 = true; })
           .bindContextMenuByIsShow(this.maskShow10, this.bcmMenuElements, {
-            mask: { backgroundBlurStyle: BlurStyle.COMPONENT_REGULAR },
+            mask: { backgroundBlurStyle: BlurStyle.COMPONENT_REGULAR } as MenuMaskType,
             onWillDisappear: () => {
               this.maskShow10 = false;
               this.maskTxt10 = 'CReg';
@@ -530,7 +529,7 @@ struct BindContextMenuByIsShowBlurMaskIndex {
           .fontSize(8)
           .onClick(() => { this.maskShow11 = true; })
           .bindContextMenuByIsShow(this.maskShow11, this.bcmMenuElements, {
-            mask: { backgroundBlurStyle: BlurStyle.COMPONENT_THICK },
+            mask: { backgroundBlurStyle: BlurStyle.COMPONENT_THICK } as MenuMaskType,
             onWillDisappear: () => {
               this.maskShow11 = false;
               this.maskTxt11 = 'CThick';
@@ -546,7 +545,7 @@ struct BindContextMenuByIsShowBlurMaskIndex {
           .fontSize(8)
           .onClick(() => { this.maskShow12 = true; })
           .bindContextMenuByIsShow(this.maskShow12, this.bcmMenuElements, {
-            mask: { backgroundBlurStyle: BlurStyle.COMPONENT_ULTRA_THICK },
+            mask: { backgroundBlurStyle: BlurStyle.COMPONENT_ULTRA_THICK } as MenuMaskType,
             onWillDisappear: () => {
               this.maskShow12 = false;
               this.maskTxt12 = 'CUltraThick';
