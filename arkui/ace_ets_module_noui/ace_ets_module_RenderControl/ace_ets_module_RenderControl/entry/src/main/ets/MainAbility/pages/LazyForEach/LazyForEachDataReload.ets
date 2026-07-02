@@ -210,9 +210,12 @@ struct LazyForEachNewReloadTest {
   build() {
     Column() {
       Swiper() {
-        LazyForEachNewReloadTestV1({ useReusable: true, useDatasetChange: false, useDifferentComponent: false, useDifferentReuseId: false})
-        LazyForEachNewReloadTestV1({ useReusable: true, useDatasetChange: true, useDifferentComponent: false, useDifferentReuseId: false})
-        LazyForEachNewReloadTestV1({ useReusable: false, useDatasetChange: false, useDifferentComponent: false, useDifferentReuseId: false})
+        LazyForEachNewReloadTestV1({ useReusable: true, useDatasetChange: false, 
+        useDifferentComponent: false, useDifferentReuseId: false})
+        LazyForEachNewReloadTestV1({ useReusable: true, useDatasetChange: true, 
+        useDifferentComponent: false, useDifferentReuseId: false})
+        LazyForEachNewReloadTestV1({ useReusable: false, useDatasetChange: false, 
+        useDifferentComponent: false, useDifferentReuseId: false})
       }
       .cachedCount(0)
     }.width('100%').height('100%')
