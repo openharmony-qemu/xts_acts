@@ -33,5 +33,5 @@ ohos_js_app_suite("ActsApiCoverhapTest") {
 
   subsystem_name = "ability"
   part_name = "ability_runtime"
-  deps = [ ":ActsApiCoverhapMain" ]
+  deps = [ ":ActsApiCoverhapMain", "../stagesupplement: StageSupplement",]
 }
