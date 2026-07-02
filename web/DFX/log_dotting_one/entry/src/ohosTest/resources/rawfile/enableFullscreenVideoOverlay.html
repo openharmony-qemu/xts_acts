@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>enableFullscreenVideoOverlay Test</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+        }
+        .video-container {
+            margin: 10px 0;
+        }
+        button {
+            width: 120px;
+            height: 40px;
+            margin: 5px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <video id="myVideo1" controls width="320" height="180" muted>
+            <source src="./02.mp4" type="video/mp4">
+        </video>
+        <button id="btnPlay1">播放视频1</button>
+        <button id="btnFullScreen1">全屏视频1</button>
+        <button id="btnExitFullScreen1">退出全屏1</button>
+    </div>
+    <div class="video-container">
+        <video id="myVideo2" controls width="320" height="180" muted>
+            <source src="./02.mp4" type="video/mp4">
+        </video>
+        <button id="btnPlay2">播放视频2</button>
+        <button id="btnFullScreen2">全屏视频2</button>
+        <button id="btnExitFullScreen2">退出全屏2</button>
+    </div>
+    <script>
+        function getVideoElement(id) {
+            return document.getElementById(id);
+        }
+
+        function isDocumentFullScreen() {
+            return !!(document.fullscreenElement || document.webkitFullscreenElement ||
+                document.mozFullScreenElement || document.msFullscreenElement);
+        }
+
+        function requestVideoFullScreen(videoElement) {
+            if (!videoElement) {
+                return false;
+            }
+            if (videoElement.requestFullscreen) {
+                videoElement.requestFullscreen();
+                return true;
+            } else if (videoElement.webkitRequestFullscreen) {
+                videoElement.webkitRequestFullscreen();
+                return true;
+            } else if (videoElement.mozRequestFullScreen) {
+                videoElement.mozRequestFullScreen();
+                return true;
+            } else if (videoElement.msRequestFullscreen) {
+                videoElement.msRequestFullscreen();
+                return true;
+            }
+            return false;
+        }
+
+        function playVideo() {
+            const videoElement = getVideoElement('myVideo1');
+            if (videoElement && videoElement.paused) {
+                videoElement.play();
+            }
+            return videoElement ? !videoElement.paused : false;
+        }
+
+        function playVideo2() {
+            const videoElement = getVideoElement('myVideo2');
+            if (videoElement && videoElement.paused) {
+                videoElement.play();
+            }
+            return videoElement ? !videoElement.paused : false;
+        }
+
+        function exitFullScreen() {
+            if (!isDocumentFullScreen()) {
+                return 0;
+            }
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
+            return 1;
+        }
+
+        document.getElementById('btnPlay1').onclick = function() {
+            playVideo();
+        };
+
+        document.getElementById('btnFullScreen1').onclick = function() {
+            playVideo();
+            requestVideoFullScreen(getVideoElement('myVideo1'));
+        };
+
+        document.getElementById('btnExitFullScreen1').onclick = function() {
+            exitFullScreen();
+        };
+
+        document.getElementById('btnPlay2').onclick = function() {
+            playVideo2();
+        };
+
+        document.getElementById('btnFullScreen2').onclick = function() {
+            playVideo2();
+            requestVideoFullScreen(getVideoElement('myVideo2'));
+        };
+
+        document.getElementById('btnExitFullScreen2').onclick = function() {
+            exitFullScreen();
+        };
+    </script>
+</body>
+</html>
