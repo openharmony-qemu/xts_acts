@@ -64,7 +64,7 @@ let openDialog = async (dialogKey: string, text: string) => {
         hilog.info(DOMAIN, LOG_TAG, 'button %{public}s not found', text);
       }
     } else {
-      allowed = await driver.waitForComponent(ON.text(dialogKey, MatchPattern.CONTAINS), DELAY_TIME);
+      allowed = await driver.waitForComponent(ON.text('使用以下方式打开', MatchPattern.CONTAINS), DELAY_TIME);
       hilog.info(DOMAIN, LOG_TAG, 'needAllow: %{public}s', JSON.stringify(allowed));
       if (allowed) {
         hilog.info(DOMAIN, LOG_TAG, 'findComponents: start');
@@ -131,7 +131,7 @@ let closeDialog = async (dialogKey: string) => {
   } else {
     allowed = await driver.waitForComponent(ON.text('使用以下方式打开', MatchPattern.CONTAINS), DELAY_TIME);
     hilog.info(DOMAIN, LOG_TAG, 'needAllow: %{public}s', JSON.stringify(allowed));
-    let buttons = await driver.findComponents(ON.type('SymbolGlyph'));
+    let buttons = await driver.findComponents(ON.text('取消', MatchPattern.CONTAINS));
     if (buttons && buttons.length > 0) {
       await buttons[0].click();
       buttonClicked = true;
