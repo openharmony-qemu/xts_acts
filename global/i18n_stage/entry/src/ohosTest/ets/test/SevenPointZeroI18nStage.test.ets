@@ -4014,5 +4014,22 @@ export default function SevenPointZeroI18nStageTest() {
       }
     })
 
+    /**
+     * @tc.name SUB_GLOBAL_GetChineseCalendar_Test_1300
+     * @tc.number SUB_GLOBAL_GetChineseCalendar_Test_1300
+     * @tc.desc test setChineseCalendarTime with checkLeapMonth 2200, 20, 3
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('SUB_GLOBAL_GetChineseCalendar_Test_1300', Level.LEVEL3, () => {
+      try{
+        let value: boolean = i18n.ChineseCalendar.checkLeapMonth(2200, 20, 3);
+        console.log('SUB_GLOBAL_GetChineseCalendar_Test_1300 value:', value);
+      }catch(e){
+        expect(e.code).assertEqual('890001');
+      }
+    })
+
   })
 }
