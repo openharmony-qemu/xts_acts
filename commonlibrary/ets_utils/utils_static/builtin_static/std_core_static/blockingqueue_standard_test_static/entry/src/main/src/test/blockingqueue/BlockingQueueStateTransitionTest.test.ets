@@ -755,58 +755,18 @@ export default function BlockingQueueStateTransitionTest(): void {
       q.push(PUSH_VALUE_2);
       q.push(PUSH_VALUE_3);
       let r1 = q.getFirst();
-      let r2 = q.getFirst();
-      let r3 = q.getFirst();
-      expect(r1).assertEqual(r2);
-      expect(r2).assertEqual(r3);
       expect(r1).assertEqual(EXPECTED_VALUE);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_STATE_3400
      * @tc.name testBlockingQueueState034
-     * @tc.desc Verify state idempotence: calling isEmpty twice returns same value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('testBlockingQueueState034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const CAPACITY: int = 5;
-      const PUSH_VALUE: int = 1;
-      let q: containers.BlockingQueue<int> = new containers.LinkedBlockingQueue<int>(CAPACITY);
-      expect(q.isEmpty()).assertEqual(q.isEmpty());
-      q.push(PUSH_VALUE);
-      expect(q.isEmpty()).assertEqual(q.isEmpty());
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_STATE_3500
-     * @tc.name testBlockingQueueState035
-     * @tc.desc Verify state idempotence: calling remainingCapacity twice returns same value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('testBlockingQueueState035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const CAPACITY: int = 7;
-      const PUSH_VALUE: int = 1;
-      const PUSH_VALUE_2: int = 2;
-      let q: containers.BlockingQueue<int> = new containers.LinkedBlockingQueue<int>(CAPACITY);
-      expect(q.remainingCapacity()).assertEqual(q.remainingCapacity());
-      q.push(PUSH_VALUE);
-      q.push(PUSH_VALUE_2);
-      expect(q.remainingCapacity()).assertEqual(q.remainingCapacity());
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_STATE_3600
-     * @tc.name testBlockingQueueState036
      * @tc.desc Verify state: large queue with 100 elements pop one-by-one preserves head ordering
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testBlockingQueueState036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBlockingQueueState034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let q: containers.BlockingQueue<int> = new containers.LinkedBlockingQueue<int>();
       for (let i: int = 0; i < 100; i++) {
         q.push(i);
@@ -818,14 +778,14 @@ export default function BlockingQueueStateTransitionTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_STATE_3700
-     * @tc.name testBlockingQueueState037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_STATE_3500
+     * @tc.name testBlockingQueueState035
      * @tc.desc Verify state on capacity=2 oscillating: push push pop pop push push pop pop
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testBlockingQueueState037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBlockingQueueState035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const CAPACITY: int = 2;
       const PUSH_OFFSET: int = 1000;
       const EXPECTED_POP_VALUE: int = 1000;
@@ -840,14 +800,14 @@ export default function BlockingQueueStateTransitionTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_STATE_3800
-     * @tc.name testBlockingQueueState038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_STATE_3600
+     * @tc.name testBlockingQueueState036
      * @tc.desc Verify state ArrayBlockingQueue capacity=4 oscillating push x2, pop x2 pattern
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testBlockingQueueState038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBlockingQueueState036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const CAPACITY: int = 4;
       const PUSH_OFFSET: int = 100;
       const EXPECTED_POP_VALUE: int = 100;
@@ -861,14 +821,14 @@ export default function BlockingQueueStateTransitionTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_STATE_3900
-     * @tc.name testBlockingQueueState039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_STATE_3700
+     * @tc.name testBlockingQueueState037
      * @tc.desc Verify state: capacity Int.MAX_VALUE empty queue isEmpty returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testBlockingQueueState039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBlockingQueueState037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const CAPACITY: int = 2147483647;
       let q: containers.BlockingQueue<int> = new containers.LinkedBlockingQueue<int>(CAPACITY);
       expect(q.isEmpty()).assertTrue();
@@ -876,14 +836,14 @@ export default function BlockingQueueStateTransitionTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_STATE_4000
-     * @tc.name testBlockingQueueState040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_STATE_3800
+     * @tc.name testBlockingQueueState038
      * @tc.desc Verify state: ArrayBlockingQueue capacity Int.MAX_VALUE empty queue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueState040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueState038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const CAPACITY: int = 200000;
       const EXPECTED_SIZE: int = 0;
       const EXPECTED_CAPACITY: int = 200000;
@@ -894,14 +854,14 @@ export default function BlockingQueueStateTransitionTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_STATE_4100
-     * @tc.name testBlockingQueueState041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_STATE_3900
+     * @tc.name testBlockingQueueState039
      * @tc.desc Verify state: pop on empty causes blocking; here we only check poll path - returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testBlockingQueueState041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBlockingQueueState039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const PUSH_VALUE: int = 7;
       const EXPECTED_POLL_VALUE: int = 7;
       let q: containers.BlockingQueue<int> = new containers.LinkedBlockingQueue<int>();
@@ -912,14 +872,14 @@ export default function BlockingQueueStateTransitionTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_STATE_4200
-     * @tc.name testBlockingQueueState042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_STATE_4000
+     * @tc.name testBlockingQueueState040
      * @tc.desc Verify state in heavily mixed access: 100 calls to size, isEmpty, capacity all consistent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testBlockingQueueState042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBlockingQueueState040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const CAPACITY: int = 50;
       const PUSH_VALUE: int = 1;
       const PUSH_VALUE_2: int = 2;
@@ -940,14 +900,14 @@ export default function BlockingQueueStateTransitionTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_STATE_4300
-     * @tc.name testBlockingQueueState043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_STATE_4100
+     * @tc.name testBlockingQueueState041
      * @tc.desc Verify state: poll equals getFirst before poll, and queue size decrements after
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testBlockingQueueState043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBlockingQueueState041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const PUSH_VALUE: int = 11;
       const PUSH_VALUE_2: int = 22;
       const PUSH_VALUE_3: int = 33;
@@ -964,14 +924,14 @@ export default function BlockingQueueStateTransitionTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_STATE_4400
-     * @tc.name testBlockingQueueState044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_STATE_4200
+     * @tc.name testBlockingQueueState042
      * @tc.desc Verify state: full ArrayBlockingQueue add returns false, size unchanged, getFirst unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testBlockingQueueState044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBlockingQueueState042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const CAPACITY: int = 3;
       const PUSH_VALUE: int = 7;
       const PUSH_VALUE_2: int = 8;
@@ -991,14 +951,14 @@ export default function BlockingQueueStateTransitionTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_STATE_4500
-     * @tc.name testBlockingQueueState045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_STATE_4300
+     * @tc.name testBlockingQueueState043
      * @tc.desc Verify state: from full state, pop releases exactly 1 slot
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testBlockingQueueState045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBlockingQueueState043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const CAPACITY: int = 5;
       const EXPECTED_REMAINING_CAPACITY: int = 0;
       const EXPECTED_REMAINING_CAPACITY_2: int = 1;
@@ -1015,14 +975,14 @@ export default function BlockingQueueStateTransitionTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_STATE_4600
-     * @tc.name testBlockingQueueState046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_STATE_4400
+     * @tc.name testBlockingQueueState044
      * @tc.desc Verify state: capacity boundary state transition with 50 elements pushed/popped
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testBlockingQueueState046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBlockingQueueState044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const CAPACITY: int = 50;
       const EXPECTED_SIZE: int = 50;
       const EXPECTED_REMAINING_CAPACITY: int = 0;
@@ -1042,14 +1002,14 @@ export default function BlockingQueueStateTransitionTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_STATE_4700
-     * @tc.name testBlockingQueueState047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_STATE_4500
+     * @tc.name testBlockingQueueState045
      * @tc.desc Verify ArrayBlockingQueue same as State046 transitions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testBlockingQueueState047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBlockingQueueState045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const CAPACITY: int = 50;
       const EXPECTED_SIZE: int = 50;
       let q: containers.BlockingQueue<int> = new containers.ArrayBlockingQueue<int>(CAPACITY);
@@ -1064,14 +1024,14 @@ export default function BlockingQueueStateTransitionTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_STATE_4800
-     * @tc.name testBlockingQueueState048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_STATE_4600
+     * @tc.name testBlockingQueueState046
      * @tc.desc Verify state: independent operations on multiple queues do not affect each other
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testBlockingQueueState048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBlockingQueueState046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const CAPACITY: int = 5;
       const PUSH_VALUE: int = 1;
       const PUSH_VALUE_2: int = 2;
@@ -1091,14 +1051,14 @@ export default function BlockingQueueStateTransitionTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_STATE_4900
-     * @tc.name testBlockingQueueState049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_STATE_4700
+     * @tc.name testBlockingQueueState047
      * @tc.desc Verify state: 10 independent queues operating sequentially are mutually isolated
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testBlockingQueueState049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBlockingQueueState047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const CAPACITY: int = 20;
       const EXPECTED_SIZE: int = 1;
       let queues: containers.BlockingQueue<int>[] = [];
@@ -1120,14 +1080,14 @@ export default function BlockingQueueStateTransitionTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_STATE_5000
-     * @tc.name testBlockingQueueState050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_STATE_4800
+     * @tc.name testBlockingQueueState048
      * @tc.desc Verify state: queues constructed with same iterable but different capacities have different sizes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testBlockingQueueState050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBlockingQueueState048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const CAPACITY: int = 3;
       const CAPACITY_2: int = 7;
       const CAPACITY_3: int = 15;

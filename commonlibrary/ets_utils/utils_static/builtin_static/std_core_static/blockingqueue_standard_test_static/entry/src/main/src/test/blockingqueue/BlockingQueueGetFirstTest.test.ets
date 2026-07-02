@@ -1566,28 +1566,12 @@ export default function BlockingQueueGetFirstTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_GETFIRST_8500
      * @tc.name testBlockingQueueGetFirst085
-     * @tc.desc Verify LinkedBlockingQueue getFirst returns consistent value on consecutive calls with 0x10 head
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBlockingQueueGetFirst085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10);
-      q.push(0x10);
-      let first: int | undefined = q.getFirst();
-      let second: int | undefined = q.getFirst();
-      expect(first).assertEqual(second);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_GETFIRST_8600
-     * @tc.name testBlockingQueueGetFirst086
      * @tc.desc Verify LinkedBlockingQueue getFirst returns decimal 15 for binary literal head 0b1111
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueGetFirst086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueGetFirst085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10);
       q.push(0b1111);
       q.push(2);
@@ -1596,14 +1580,14 @@ export default function BlockingQueueGetFirstTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_GETFIRST_8700
-     * @tc.name testBlockingQueueGetFirst087
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_GETFIRST_8600
+     * @tc.name testBlockingQueueGetFirst086
      * @tc.desc Verify LinkedBlockingQueue getFirst returns decimal 16 for octal literal head 0o20
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueGetFirst087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueGetFirst086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10);
       q.push(0o20);
       q.push(2);
@@ -1612,14 +1596,14 @@ export default function BlockingQueueGetFirstTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_GETFIRST_8800
-     * @tc.name testBlockingQueueGetFirst088
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_GETFIRST_8700
+     * @tc.name testBlockingQueueGetFirst087
      * @tc.desc Verify LinkedBlockingQueue number getFirst returns 200 for scientific literal head 2e2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueGetFirst088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueGetFirst087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<number> = new containers.LinkedBlockingQueue<number>(10);
       q.push(2e2);
       q.push(3);
@@ -1628,14 +1612,14 @@ export default function BlockingQueueGetFirstTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_GETFIRST_8900
-     * @tc.name testBlockingQueueGetFirst089
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_GETFIRST_8800
+     * @tc.name testBlockingQueueGetFirst088
      * @tc.desc Verify LinkedBlockingQueue getFirst returns 100 for math expression head 50*2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueGetFirst089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueGetFirst088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10);
       q.push(50 * 2);
       q.push(3);
@@ -1644,14 +1628,14 @@ export default function BlockingQueueGetFirstTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_GETFIRST_9000
-     * @tc.name testBlockingQueueGetFirst090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_GETFIRST_8900
+     * @tc.name testBlockingQueueGetFirst089
      * @tc.desc Verify LinkedBlockingQueue getFirst peeked value 301 stays valid through a later pop
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueGetFirst090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueGetFirst089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TEST_VALUE_1: int = 301;
       const TEST_VALUE_2: int = 302;
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10);

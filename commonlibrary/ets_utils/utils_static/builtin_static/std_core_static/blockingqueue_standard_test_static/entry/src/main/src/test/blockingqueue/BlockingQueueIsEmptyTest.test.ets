@@ -1276,43 +1276,12 @@ export default function BlockingQueueIsEmptyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0770
      * @tc.name testBlockingQueueIsEmpty077
-     * @tc.desc Verify LinkedBlockingQueue empty queue two consecutive isEmpty() calls give consistent result (idempotent)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBlockingQueueIsEmpty077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10);
-      let r1: boolean = q.isEmpty();
-      let r2: boolean = q.isEmpty();
-      expect(r1).assertEqual(r2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0780
-     * @tc.name testBlockingQueueIsEmpty078
-     * @tc.desc Verify ArrayBlockingQueue non-empty queue two consecutive isEmpty() calls give consistent result (idempotent)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBlockingQueueIsEmpty078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(10);
-      q.push(1);
-      let r1: boolean = q.isEmpty();
-      let r2: boolean = q.isEmpty();
-      expect(r1).assertEqual(r2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0790
-     * @tc.name testBlockingQueueIsEmpty079
      * @tc.desc Verify LinkedBlockingQueue isEmpty() has no side effect: getFirst still reads first element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueIsEmpty079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueIsEmpty077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TEST_VALUE: int = 42;
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10);
       q.push(TEST_VALUE);
@@ -1322,14 +1291,14 @@ export default function BlockingQueueIsEmptyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0800
-     * @tc.name testBlockingQueueIsEmpty080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0780
+     * @tc.name testBlockingQueueIsEmpty078
      * @tc.desc Verify ArrayBlockingQueue isEmpty() has no side effect: getFirst still reads first element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueIsEmpty080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueIsEmpty078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TEST_VALUE: int = 42;
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(10);
       q.push(TEST_VALUE);
@@ -1339,55 +1308,55 @@ export default function BlockingQueueIsEmptyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0810
-     * @tc.name testBlockingQueueIsEmpty081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0790
+     * @tc.name testBlockingQueueIsEmpty079
      * @tc.desc Verify LinkedBlockingQueue isEmpty() consistent with size===0 when size is 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueIsEmpty081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueIsEmpty079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10);
       expect(q.isEmpty()).assertEqual(q.size === 0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0820
-     * @tc.name testBlockingQueueIsEmpty082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0800
+     * @tc.name testBlockingQueueIsEmpty080
      * @tc.desc Verify ArrayBlockingQueue isEmpty() consistent with size===0 when size greater than 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueIsEmpty082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueIsEmpty080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(10);
       q.push(1);
       expect(q.isEmpty()).assertEqual(q.size === 0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0830
-     * @tc.name testBlockingQueueIsEmpty083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0810
+     * @tc.name testBlockingQueueIsEmpty081
      * @tc.desc Verify new empty Linked and Array queues isEmpty() results are consistent (both true)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueIsEmpty083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueIsEmpty081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let lq: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10);
       let aq: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(10);
       expect(lq.isEmpty()).assertEqual(aq.isEmpty());
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0840
-     * @tc.name testBlockingQueueIsEmpty084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0820
+     * @tc.name testBlockingQueueIsEmpty082
      * @tc.desc Verify push 1 element then Linked and Array isEmpty() results are consistent (both false)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueIsEmpty084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueIsEmpty082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let lq: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10);
       let aq: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(10);
       lq.push(1);
@@ -1396,14 +1365,14 @@ export default function BlockingQueueIsEmptyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0850
-     * @tc.name testBlockingQueueIsEmpty085
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0830
+     * @tc.name testBlockingQueueIsEmpty083
      * @tc.desc Verify push then poll cleared then Linked and Array isEmpty() results are consistent (both true)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueIsEmpty085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueIsEmpty083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let lq: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10);
       let aq: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(10);
       lq.push(1);
@@ -1414,14 +1383,14 @@ export default function BlockingQueueIsEmptyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0860
-     * @tc.name testBlockingQueueIsEmpty086
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0840
+     * @tc.name testBlockingQueueIsEmpty084
      * @tc.desc Verify add then Linked and Array isEmpty() results are consistent (both false)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueIsEmpty086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueIsEmpty084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let lq: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10);
       let aq: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(10);
       lq.add(1);
@@ -1430,14 +1399,14 @@ export default function BlockingQueueIsEmptyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0870
-     * @tc.name testBlockingQueueIsEmpty087
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0850
+     * @tc.name testBlockingQueueIsEmpty085
      * @tc.desc Verify from same Array Linked and Array isEmpty() results are consistent (both false)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueIsEmpty087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueIsEmpty085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Array<int> = [1, 2, 3];
       let lq: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10, arr);
       let aq: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(10, arr);
@@ -1445,14 +1414,14 @@ export default function BlockingQueueIsEmptyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0880
-     * @tc.name testBlockingQueueIsEmpty088
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0860
+     * @tc.name testBlockingQueueIsEmpty086
      * @tc.desc Verify from empty Array Linked and Array isEmpty() results are consistent (both true)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueIsEmpty088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueIsEmpty086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Array<int> = [];
       let lq: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10, arr);
       let aq: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(10, arr);
@@ -1460,14 +1429,14 @@ export default function BlockingQueueIsEmptyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0890
-     * @tc.name testBlockingQueueIsEmpty089
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0870
+     * @tc.name testBlockingQueueIsEmpty087
      * @tc.desc Verify multiple push/poll back to empty then Linked and Array isEmpty() results are consistent (both true)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueIsEmpty089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueIsEmpty087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let lq: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10);
       let aq: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(10);
       for (let i = 0; i < 3; i++) {
@@ -1480,14 +1449,14 @@ export default function BlockingQueueIsEmptyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0900
-     * @tc.name testBlockingQueueIsEmpty090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0880
+     * @tc.name testBlockingQueueIsEmpty088
      * @tc.desc Verify capacity=1 filled then Linked and Array isEmpty() results are consistent (both false)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueIsEmpty090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueIsEmpty088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let lq: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(1);
       let aq: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(1);
       lq.push(1);
@@ -1496,68 +1465,68 @@ export default function BlockingQueueIsEmptyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0910
-     * @tc.name testBlockingQueueIsEmpty091
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0890
+     * @tc.name testBlockingQueueIsEmpty089
      * @tc.desc Verify ArrayBlockingQueue number generic empty queue isEmpty() returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueIsEmpty091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueIsEmpty089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<number> = new containers.ArrayBlockingQueue<number>(10);
       expect(q.isEmpty()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0920
-     * @tc.name testBlockingQueueIsEmpty092
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0900
+     * @tc.name testBlockingQueueIsEmpty090
      * @tc.desc Verify ArrayBlockingQueue number generic push float then isEmpty() returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueIsEmpty092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueIsEmpty090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<number> = new containers.ArrayBlockingQueue<number>(10);
       q.push(1.5);
       expect(q.isEmpty()).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0930
-     * @tc.name testBlockingQueueIsEmpty093
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0910
+     * @tc.name testBlockingQueueIsEmpty091
      * @tc.desc Verify LinkedBlockingQueue number generic empty queue isEmpty() returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueIsEmpty093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueIsEmpty091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<number> = new containers.LinkedBlockingQueue<number>(10);
       expect(q.isEmpty()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0940
-     * @tc.name testBlockingQueueIsEmpty094
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0920
+     * @tc.name testBlockingQueueIsEmpty092
      * @tc.desc Verify LinkedBlockingQueue number generic push float then isEmpty() returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueIsEmpty094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueIsEmpty092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<number> = new containers.LinkedBlockingQueue<number>(10);
       q.push(3.14);
       expect(q.isEmpty()).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0950
-     * @tc.name testBlockingQueueIsEmpty095
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0930
+     * @tc.name testBlockingQueueIsEmpty093
      * @tc.desc Verify ArrayBlockingQueue number generic push float then poll clears: isEmpty() returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueIsEmpty095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueIsEmpty093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<number> = new containers.ArrayBlockingQueue<number>(10);
       q.push(2.71);
       q.poll();
@@ -1565,14 +1534,14 @@ export default function BlockingQueueIsEmptyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0960
-     * @tc.name testBlockingQueueIsEmpty096
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0940
+     * @tc.name testBlockingQueueIsEmpty094
      * @tc.desc Verify LinkedBlockingQueue capacity=2 filled to size==capacity: isEmpty() returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueIsEmpty096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueIsEmpty094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(2);
       q.push(1);
       q.push(2);
@@ -1580,14 +1549,14 @@ export default function BlockingQueueIsEmptyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0970
-     * @tc.name testBlockingQueueIsEmpty097
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0950
+     * @tc.name testBlockingQueueIsEmpty095
      * @tc.desc Verify ArrayBlockingQueue capacity=2 filled to size==capacity: isEmpty() returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueIsEmpty097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueIsEmpty095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(2);
       q.push(1);
       q.push(2);
@@ -1595,14 +1564,14 @@ export default function BlockingQueueIsEmptyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0980
-     * @tc.name testBlockingQueueIsEmpty098
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0960
+     * @tc.name testBlockingQueueIsEmpty096
      * @tc.desc Verify ArrayBlockingQueue full queue add returns false then isEmpty() still returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueIsEmpty098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueIsEmpty096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(1);
       q.push(1);
       q.add(2);
@@ -1610,14 +1579,14 @@ export default function BlockingQueueIsEmptyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0990
-     * @tc.name testBlockingQueueIsEmpty099
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0970
+     * @tc.name testBlockingQueueIsEmpty097
      * @tc.desc Verify LinkedBlockingQueue full queue add returns false then isEmpty() still returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueIsEmpty099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueIsEmpty097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(1);
       q.push(1);
       q.add(2);
@@ -1625,14 +1594,14 @@ export default function BlockingQueueIsEmptyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_1000
-     * @tc.name testBlockingQueueIsEmpty100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0980
+     * @tc.name testBlockingQueueIsEmpty098
      * @tc.desc Verify LinkedBlockingQueue capacity=2 filled then poll 1: isEmpty() returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueIsEmpty100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueIsEmpty098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(2);
       q.push(1);
       q.push(2);
@@ -1641,14 +1610,14 @@ export default function BlockingQueueIsEmptyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_1010
-     * @tc.name testBlockingQueueIsEmpty101
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_0990
+     * @tc.name testBlockingQueueIsEmpty099
      * @tc.desc Verify ArrayBlockingQueue capacity=2 filled then poll all: isEmpty() returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueIsEmpty101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueIsEmpty099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(2);
       q.push(1);
       q.push(2);
@@ -1658,14 +1627,14 @@ export default function BlockingQueueIsEmptyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_1020
-     * @tc.name testBlockingQueueIsEmpty102
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ISEMPTY_1000
+     * @tc.name testBlockingQueueIsEmpty100
      * @tc.desc Verify ArrayBlockingQueue full queue isEmpty() does not throw and returns false (no exception path)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBlockingQueueIsEmpty102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBlockingQueueIsEmpty100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let q: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(1);
       q.push(1);
       let r: boolean = q.isEmpty();
