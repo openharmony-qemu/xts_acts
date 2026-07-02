@@ -212,8 +212,12 @@ struct CustomDialogExample {
     }),
   });
   // 若尝试在CustomDialog中传入多个其他的Controller，以实现在CustomDialog中打开另一个或另一些CustomDialog，那么此处需要将指向自己的controller放在最后
-  cancel!: () => void;
-  confirm!: () => void;
+  cancel!: () {
+    console.info('cancel');
+  };
+  confirm!: () {
+    console.info('confirm');
+  }
 
   build() {
     Column() {
