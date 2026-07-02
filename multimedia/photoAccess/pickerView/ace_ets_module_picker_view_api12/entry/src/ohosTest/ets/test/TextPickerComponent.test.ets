@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,12 +84,12 @@ interface DialogCreationExTestCase {
 
 async function driveFn() {
   let dr = Driver.create();
-  let power1 = await dr?.waitForComponent(ON.text('鍏佽', MatchPattern.EQUALS), 1000)
+  let power1 = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 1000)
   if (power1 === undefined) {
     power1 = await dr?.waitForComponent(ON.text('Allow', MatchPattern.EQUALS), 300)
   }
   if (power1 === undefined) {
-    power1 = await dr?.waitForComponent(ON.text('濮嬬粓鍏佽', MatchPattern.EQUALS), 300);
+    power1 = await dr?.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), 300);
   }
   await power1?.click();
   await CommonFunc.sleep(1000);
@@ -230,7 +230,7 @@ async function clickCompletedButton(driver: Driver) {
 
 async function clickAlbumButton(driver: Driver) {
   console.info("testpicker create");
-  let btn: Component = await driver.waitForComponent(ON.text('鍏ㄩ儴鐩稿唽').type('Button'), 5000);
+  let btn: Component = await driver.waitForComponent(ON.text('全部相册').type('Button'), 5000);
   if (btn === undefined || btn === null) {
     console.info("clickAlbumButton findComponent btn fail");
   } else {
@@ -273,7 +273,7 @@ function waitForSelectItemInfo(code: number, timeout = 5000): Promise<ItemInfo> 
 }
 
 async function clickExitBrowserButton(driver: Driver) {
-  const exitButton: Component = await driver.waitForComponent(ON.text('閫€鍑哄ぇ鍥?).type('Button'), 5000);
+  const exitButton: Component = await driver.waitForComponent(ON.text('退出大图').type('Button'), 5000);
   if (exitButton === undefined || exitButton === null) {
     console.log('exitButton is miss');
   } else {
@@ -480,14 +480,12 @@ export default function TextPicker() {
       pickerOptions.checkBoxColor = '#000000';
       pickerOptions.preselectedUris = undefined;
       pickerOptions.isPreviewForSingleSelectionSupported = undefined;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         let expectResult: String = pickerOptions.checkBoxColor ?? '';
         let result: PhotoPickerResult = event?.data?.msg.checkBoxColor;
         console.info('testPicker01 result event.data.msg=:' + result);
         console.info('testPicker01 result expect =:' + expectResult);
         expect(result).assertEqual(expectResult);
-        callbackCompleted = true;
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -508,21 +506,18 @@ export default function TextPicker() {
       await clickResultButton(driver);
       router.back();
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       console.info("testPicker01 finish");
       done();
     });
 
-/**
-      * @tc.name   testPicker02
-      * @tc.number testPicker02
-      * @tc.desc   Testing Change PhotoPickerComponent BackgroundColor
-      * @tc.type   FUNCTION
-      * @tc.size   MEDIUMTEST
-      * @tc.level  LEVEL0
-      */
+    /**
+     * @tc.name   testPicker02
+     * @tc.number testPicker02
+     * @tc.desc   Testing Change PhotoPickerComponent BackgroundColor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testPicker02', Level.LEVEL0, async (done: Function) => {
       if (!isExecutePicker) {
         done();
@@ -533,14 +528,12 @@ export default function TextPicker() {
       pickerOptions.backgroundColor = '#000000';
       pickerOptions.preselectedUris = [''];
       pickerOptions.isPreviewForSingleSelectionSupported = false;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         let expectResult: String = pickerOptions.backgroundColor ?? '';
         let result: PhotoPickerResult = event?.data?.msg.backgroundColor;
         console.info('testPicker02 result event.data.msg=:' + result);
         console.info('testPicker02 result expect =:' + expectResult);
         expect(result).assertEqual(expectResult);
-        callbackCompleted = true;
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -562,9 +555,6 @@ export default function TextPicker() {
       router.back();
       console.info("testPicker02 finish");
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -586,14 +576,12 @@ export default function TextPicker() {
       pickerOptions.isRepeatSelectSupported = true;
       pickerOptions.preselectedUris = [];
       pickerOptions.isPreviewForSingleSelectionSupported = true;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         let expectResult: boolean = pickerOptions.isRepeatSelectSupported ?? false;
         let result: PhotoPickerResult = event?.data?.msg.isRepeatSelectSupported;
         console.info('testPicker03 result event.data.msg=:' + result);
         console.info('testPicker03 result expect =:' + expectResult);
         expect(result).assertEqual(expectResult);
-        callbackCompleted = true;
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -615,9 +603,6 @@ export default function TextPicker() {
       router.back();
       console.info("testPicker03 finish");
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -637,14 +622,12 @@ export default function TextPicker() {
       let code: number = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       pickerOptions.checkboxTextColor = '#000000';
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         let expectResult: String = pickerOptions.checkboxTextColor ?? '';
         let result: PhotoPickerResult = event?.data?.msg.checkboxTextColor;
         console.info('testPicker04 result event.data.msg=:' + result);
         console.info('testPicker04 result expect =:' + expectResult);
         expect(result).assertEqual(expectResult);
-        callbackCompleted = true;
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -666,9 +649,6 @@ export default function TextPicker() {
       router.back();
       console.info("testPicker04 finish");
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -688,14 +668,12 @@ export default function TextPicker() {
       let code: number = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       pickerOptions.photoBrowserBackgroundColorMode = PickerColorMode.LIGHT;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         let expectResult: number = pickerOptions.photoBrowserBackgroundColorMode ?? PickerColorMode.AUTO;
         let result: PhotoPickerResult = event?.data?.msg.photoBrowserBackgroundColorMode;
         console.info('testPicker05 result event.data.msg=:' + result);
         console.info('testPicker05 result expect =:' + expectResult);
         expect(result).assertEqual(expectResult);
-        callbackCompleted = true;
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -717,9 +695,6 @@ export default function TextPicker() {
       router.back();
       console.info("testPicker05 finish");
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -739,14 +714,12 @@ export default function TextPicker() {
       let code: number = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       pickerOptions.photoBrowserBackgroundColorMode = PickerColorMode.DARK;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         let expectResult: number = pickerOptions.photoBrowserBackgroundColorMode ?? PickerColorMode.AUTO;
         let result: PhotoPickerResult = event?.data?.msg.photoBrowserBackgroundColorMode;
         console.info('testPicker06 result event.data.msg=:' + result);
         console.info('testPicker06 result expect =:' + expectResult);
         expect(result).assertEqual(expectResult);
-        callbackCompleted = true;
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -768,9 +741,6 @@ export default function TextPicker() {
       router.back();
       console.info("testPicker06 finish");
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -790,14 +760,12 @@ export default function TextPicker() {
       let code: number = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       pickerOptions.maxSelectedReminderMode = ReminderMode.NONE;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         let expectResult: number = pickerOptions.maxSelectedReminderMode ?? ReminderMode.TOAST;
         let result: PhotoPickerResult = event?.data?.msg.maxSelectedReminderMode;
         console.info('testPicker07 result event.data.msg=:' + result);
         console.info('testPicker07 result expect =:' + expectResult);
         expect(result).assertEqual(expectResult);
-        callbackCompleted = true;
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -819,9 +787,6 @@ export default function TextPicker() {
       router.back();
       console.info("testPicker07 finish");
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -841,14 +806,12 @@ export default function TextPicker() {
       let code: number = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       pickerOptions.maxSelectedReminderMode = ReminderMode.MASK;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         let expectResult: number = pickerOptions.maxSelectedReminderMode ?? ReminderMode.TOAST;
         let result: PhotoPickerResult = event?.data?.msg.maxSelectedReminderMode;
         console.info('testPicker08 result event.data.msg=:' + result);
         console.info('testPicker08 result expect =:' + expectResult);
         expect(result).assertEqual(expectResult);
-        callbackCompleted = true;
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -870,9 +833,6 @@ export default function TextPicker() {
       router.back();
       console.info("testPicker08 finish");
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -892,14 +852,12 @@ export default function TextPicker() {
       let code: number = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       pickerOptions.selectMode = SelectMode.SINGLE_SELECT;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         let expectResult: number = pickerOptions.selectMode ?? SelectMode.MULTI_SELECT;
         let result: PhotoPickerResult = event?.data?.msg.selectMode;
         console.info('testPicker09 result event.data.msg=:' + result);
         console.info('testPicker09 result expect =:' + expectResult);
         expect(result).assertEqual(expectResult);
-        callbackCompleted = true;
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -921,9 +879,6 @@ export default function TextPicker() {
       router.back();
       console.info("testPicker09 finish");
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -943,14 +898,12 @@ export default function TextPicker() {
       let code: number = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       pickerOptions.maxPhotoSelectNumber = 8;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         let expectResult: number = pickerOptions.maxPhotoSelectNumber ?? 500;
         let result: PhotoPickerResult = event?.data?.msg.maxPhotoSelectNumber;
         console.info('testPicker10 result event.data.msg=:' + result);
         console.info('testPicker10 result expect =:' + expectResult);
         expect(result).assertEqual(expectResult);
-        callbackCompleted = true;
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -972,9 +925,6 @@ export default function TextPicker() {
       router.back();
       console.info("testPicker10 finish");
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -994,14 +944,12 @@ export default function TextPicker() {
       let code: number = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       pickerOptions.maxVideoSelectNumber = 8;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         let expectResult: number = pickerOptions.maxVideoSelectNumber ?? 500;
         let result: PhotoPickerResult = event?.data?.msg.maxVideoSelectNumber;
         console.info('testPicker11 result event.data.msg=:' + result);
         console.info('testPicker11 result expect =:' + expectResult);
         expect(result).assertEqual(expectResult);
-        callbackCompleted = true;
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -1023,9 +971,6 @@ export default function TextPicker() {
       router.back();
       console.info("testPicker11 finish");
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -1045,14 +990,12 @@ export default function TextPicker() {
       let code: number = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       pickerOptions.maxSelectNumber = 8;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         let expectResult: number = pickerOptions.maxSelectNumber ?? 500;
         let result: PhotoPickerResult = event?.data?.msg.maxSelectCount;
         console.info('testPicker12 result event.data.msg=:' + result);
         console.info('testPicker12 result expect =:' + expectResult);
         expect(result).assertEqual(expectResult);
-        callbackCompleted = true;
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -1074,9 +1017,6 @@ export default function TextPicker() {
       router.back();
       console.info("testPicker12 finish");
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -1096,14 +1036,12 @@ export default function TextPicker() {
       let code: number = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       pickerOptions.orientation = PickerOrientation.VERTICAL;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         let expectResult: number = PickerOrientation.VERTICAL ?? PickerOrientation.HORIZONTAL;
         let result: PhotoPickerResult = event?.data?.msg.orientation;
         console.info('testPicker13 result event.data.msg=:' + result);
         console.info('testPicker13 result expect =:' + expectResult);
         expect(result).assertEqual(expectResult);
-        callbackCompleted = true;
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -1125,9 +1063,6 @@ export default function TextPicker() {
       router.back();
       console.info("testPicker13 finish");
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -1146,7 +1081,6 @@ export default function TextPicker() {
       }
       let code: number = EventType.SELECT_ITEM_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         let result: ItemInfo = event?.data?.msg;
         console.info('testPicker14 select ItemInfo=:' + JSON.stringify(result));
@@ -1190,9 +1124,6 @@ export default function TextPicker() {
       router.back();
       console.info("testPicker14 finish");
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -1212,7 +1143,6 @@ export default function TextPicker() {
       let code: number = EventType.SELECT_ITEM_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       let selectCount: number = 0;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         let result: ItemInfo = event?.data?.msg;
         selectCount++;
@@ -1233,7 +1163,7 @@ export default function TextPicker() {
       await routeToUrl(options);
       await CommonFunc.sleep(2000);
 
-      let changeNumButton: Component = await driver.waitForComponent(ON.text('閫夋嫨淇敼鏁伴噺').type('Button'), 5000);
+      let changeNumButton: Component = await driver.waitForComponent(ON.text('选择修改数量').type('Button'), 5000);
       if (changeNumButton === null || changeNumButton === undefined) {
         console.info("testPicker15 findComponent changeNumButton fail");
       } else {
@@ -1257,9 +1187,6 @@ export default function TextPicker() {
       router.back();
       console.info("testPicker15 finish");
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -1281,7 +1208,6 @@ export default function TextPicker() {
       let albumOptions: AlbumPickerOptions = new AlbumPickerOptions();
       albumOptions.themeColorMode = PickerColorMode.DARK;
       albumOptions.filterType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         let result: ItemInfo = event?.data?.msg;
         console.info('testPicker16 select ItemInfo=:' + JSON.stringify(result));
@@ -1312,9 +1238,6 @@ export default function TextPicker() {
       router.back();
       console.info("testPicker16 finish");
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -1333,7 +1256,6 @@ export default function TextPicker() {
       }
       let code: number = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         let result: PhotoBrowserInfo = event?.data?.msg;
         console.info('testPicker17 select PhotoBrowerInfo=:' + JSON.stringify(result));
@@ -1362,9 +1284,6 @@ export default function TextPicker() {
       router.back();
       console.info("testPicker17 finish");
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -1384,7 +1303,6 @@ export default function TextPicker() {
       let code: number = EventType.SELECT_CLICKTYPE;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       let clicked: boolean = false;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         let result: number = event?.data?.msg;
         console.info('testPicker18 select number =:' + JSON.stringify(result));
@@ -1430,9 +1348,6 @@ export default function TextPicker() {
       router.back();
       console.info("testPicker18 finish");
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -1455,7 +1370,6 @@ export default function TextPicker() {
       recentPhotoOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE;
       recentPhotoOptions.period = 0;
       recentPhotoOptions.photoSource = PhotoSource.ALL;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         let baseItemInfo: BaseItemInfo = event?.data?.msg;
         console.info('testPicker19 baseItemInfo =:' + JSON.stringify(baseItemInfo));
@@ -1491,9 +1405,6 @@ export default function TextPicker() {
       router.back();
       console.info("testPicker19 finish");
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -1515,7 +1426,6 @@ export default function TextPicker() {
       recentPhotoOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE;
       recentPhotoOptions.period = 0;
       recentPhotoOptions.photoSource = PhotoSource.CAMERA;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         let baseItemInfo: BaseItemInfo = event?.data?.msg;
         console.info('testPicker20 baseItemInfo =:' + JSON.stringify(baseItemInfo));
@@ -1551,9 +1461,6 @@ export default function TextPicker() {
       router.back();
       console.info("testPicker20 finish");
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -1575,7 +1482,6 @@ export default function TextPicker() {
       recentPhotoOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE;
       recentPhotoOptions.period = 0;
       recentPhotoOptions.photoSource = PhotoSource.SCREENSHOT;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         let baseItemInfo: BaseItemInfo = event?.data?.msg;
         console.info('testPicker21 baseItemInfo =:' + JSON.stringify(baseItemInfo));
@@ -1611,9 +1517,6 @@ export default function TextPicker() {
       router.back();
       console.info("testPicker21 finish");
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -1632,9 +1535,9 @@ export default function TextPicker() {
       }
       let code: number = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
-      // 鏀寔婊戝姩澶氶€?
+      // 支持滑动多选
       pickerOptions.isSlidingSelectionSupported = true;
-      // 璁剧疆澶у浘椤礳heckbox浣嶇疆
+      // 设置大图页checkbox位置
       pickerOptions.photoBrowserCheckboxPosition = [0.5, 0.5];
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/PickerComponent',
@@ -1668,33 +1571,35 @@ export default function TextPicker() {
       let uris = ['file://media/photo/test.jpg'];
       let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(getContext());
       try {
-        const result = await phAccessHelper.requestPhotoUrisReadPermission(uris);
-        console.info("requestPhotoUrisReadPermission, result = " + JSON.stringify(result));
-        if (result) {
-          console.info('success');
-          expect(result).not().assertNull();
-          expect(result.length).assertLarger(0);
-        } else {
-          console.error("testPicker23 empty result");
-          expect(false).assertTrue();
-        }
+        phAccessHelper.requestPhotoUrisReadPermission(uris).then((result: Array<string>) => {
+          console.info("requestPhotoUrisReadPermission, result = " + JSON.stringify(result));
+          if (result) {
+            console.info('success');
+            expect(result).not().assertNull();
+            expect(result.length).assertLarger(0);
+          } else {
+            console.error("testPicker23 empty result");
+            expect(false).assertTrue();
+          }
+        })
       } catch(error) {
         console.error("testPicer23 error: " + JSON.stringify(error));
         expect(false).assertTrue();
       }
 
       try {
-        const result = await phAccessHelper.requestPhotoUrisReadPermission([]);
-        console.info("requestPhotoUrisReadPermission, result = " + JSON.stringify(result));
-        if (result) {
-          console.info('success');
-          expect(result).not().assertNull();
-          expect(result.length).assertLarger(0);
-          expect(true).assertFalse();
-        } else {
-          console.error("testPicker23 empty result");
-          expect(result).assertFalse();
-        }
+        phAccessHelper.requestPhotoUrisReadPermission([]).then((result: Array<string>) => {
+          console.info("requestPhotoUrisReadPermission, result = " + JSON.stringify(result));
+          if (result) {
+            console.info('success');
+            expect(result).not().assertNull();
+            expect(result.length).assertLarger(0);
+            expect(true).assertFalse();
+          } else {
+            console.error("testPicker23 empty result");
+            expect(result).assertFalse();
+          }
+        })
       } catch(error) {
         console.error("testPicer23 error: " + JSON.stringify(error));
         expect(false).assertTrue();
@@ -1835,7 +1740,7 @@ export default function TextPicker() {
       }
       let code: number = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
-      // 鏀寔浼犲叆瀹牸鍜屽ぇ鍥綧argin
+      // 支持传入宫格和大图Margin
       pickerOptions.gridMargin = {top: 10};
       pickerOptions.photoBrowserMargin = {top: 20};
       let options: router.RouterOptions = {
@@ -1876,7 +1781,6 @@ export default function TextPicker() {
 
       let code: number = EventType.VIDEO_PLAY_STATE;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         let result: number = event?.data?.msg;
         console.info('testPicker27 state =:' + JSON.stringify(result));
@@ -1908,9 +1812,6 @@ export default function TextPicker() {
       router.back();
       console.info("testPicker27 finish");
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -2449,7 +2350,7 @@ export default function TextPicker() {
       pickerOptions.uiComponentColorMode = PickerColorMode.AUTO;
       pickerOptions.isPhotoTakingSupported = true;
       pickerOptions.isSearchSupported = true;
-      pickerOptions.recommendationOptions = { textContextInfo: { text: '浠婂勾'}};
+      pickerOptions.recommendationOptions = { textContextInfo: { text: '今年'}};
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/PickerComponent',
         params: {
@@ -2486,7 +2387,7 @@ export default function TextPicker() {
       pickerOptions.backgroundColor = '#f9f9f9';
       pickerOptions.isPhotoTakingSupported = true;
       pickerOptions.isSearchSupported = true;
-      pickerOptions.recommendationOptions = { textContextInfo: { text: '浠婂勾'}};
+      pickerOptions.recommendationOptions = { textContextInfo: { text: '今年'}};
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/PickerComponent',
         params: {
@@ -2523,7 +2424,7 @@ export default function TextPicker() {
       pickerOptions.backgroundColor = '#212121';
       pickerOptions.isPhotoTakingSupported = true;
       pickerOptions.isSearchSupported = true;
-      pickerOptions.recommendationOptions = { textContextInfo: { text: '浠婂勾'}};
+      pickerOptions.recommendationOptions = { textContextInfo: { text: '今年'}};
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/PickerComponent',
         params: {
@@ -2561,7 +2462,6 @@ export default function TextPicker() {
       recentPhotoOptions.photoSource = PhotoSource.ALL;
       recentPhotoOptions.isAutoRefreshSupported = true;
       recentPhotoOptions.colorMode=PickerColorMode.LIGHT;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         let baseItemInfo: BaseItemInfo = event?.data?.msg;
         console.info('testPicker44 baseItemInfo =:' + JSON.stringify(baseItemInfo));
@@ -2721,7 +2621,6 @@ export default function TextPicker() {
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       let albumOptions: AlbumPickerOptions = new AlbumPickerOptions();
       albumOptions.fontSize = 50;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         let result: ItemInfo = event?.data?.msg;
         console.info('testPicker47 select ItemInfo=:' + JSON.stringify(result));
@@ -2752,9 +2651,6 @@ export default function TextPicker() {
       router.back();
       console.info("testPicker47 finish");
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -2948,7 +2844,7 @@ export default function TextPicker() {
       }
 
       const checkbox = await driver.waitForComponent(ON.type('Checkbox'), 3000);
-      const finishBtn: Component = await driver.findComponent(ON.id('Complete')) || await driver.waitForComponent(ON.text('瀹屾垚').type('Button'), 5000);
+      const finishBtn: Component = await driver.findComponent(ON.id('Complete')) || await driver.waitForComponent(ON.text('完成').type('Button'), 5000);
       if (checkbox !== undefined && checkbox !== null && finishBtn !== undefined && finishBtn !== null) {
         await checkbox.click();
         await CommonFunc.sleep(1000);
@@ -2985,7 +2881,6 @@ export default function TextPicker() {
           preselectablePickerIndex: 1,
         }
       ];
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         let pickerIndex: number = event?.data?.msg?.pickerIndex;
         let preselectedInfos: PreselectedInfo[] = event?.data?.msg?.preselectedInfos;
@@ -3008,9 +2903,6 @@ export default function TextPicker() {
       await CommonFunc.sleep(1000);
       await clickResultButton(driver);
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
 
       await CommonFunc.sleep(2000);
       router.back();
@@ -3044,7 +2936,6 @@ export default function TextPicker() {
           preselectablePickerIndex: -1,
         }
       ];
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         let result: PhotoPickerResult = event?.data?.msg;
 
@@ -3088,9 +2979,6 @@ export default function TextPicker() {
 
       await clickResultButton(driver);
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       await CommonFunc.sleep(2000);
       router.back();
       console.info("testPicker53 finish");
@@ -3121,7 +3009,6 @@ export default function TextPicker() {
       pickerOptions.pickerIndex = 2;
       pickerOptions.preselectedInfos = preselectedInfos;
 
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         let result: PhotoPickerResult = event?.data?.msg;
         console.info('testPicker54 received result: ' + JSON.stringify(result));
@@ -3153,9 +3040,6 @@ export default function TextPicker() {
 
       await clickResultButton(driver);
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
 
       await CommonFunc.sleep(2000);
       router.back();
@@ -3232,7 +3116,7 @@ export default function TextPicker() {
           }
           console.info('testPicker55: no checkbox');
         }
-        // 澶辫触閲嶈瘯涓€娆★紝鍏滃簳heif杞爜
+        // 失败重试一次，兜底heif转码
         await selectMovingPhoto().catch(selectMovingPhoto);
       }
 
@@ -3261,7 +3145,6 @@ export default function TextPicker() {
       let code: number = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       let fail = false;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         let expectedMaxSelectNumber: number = 10;
         let expectedMaxSelectPhotoNumber: number = 5;
@@ -3342,9 +3225,6 @@ export default function TextPicker() {
       await clickUpdatablePickerButton(driver);
       router.back();
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       console.info("testPicker56 finish");
       if (fail) {
         expect().assertFail()
@@ -3368,14 +3248,12 @@ export default function TextPicker() {
       let code: number = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       pickerOptions.isSlidingSupported = true;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         let expectResult: boolean = pickerOptions.isSlidingSupported ?? false;
         let result: PhotoPickerResult = event?.data?.msg.isSlidingSupported;
         console.info('testPicker57 result event.data.msg=:' + result);
         console.info('testPicker57 result expect =:' + expectResult);
         expect(result).assertEqual(expectResult);
-        callbackCompleted = true;
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -3397,9 +3275,6 @@ export default function TextPicker() {
       router.back();
       console.info("testPicker57 finish");
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -3563,7 +3438,6 @@ export default function TextPicker() {
             let code: number = EventType.SELECT_ITEM_INFO;
             let pickerOptions: PickerOptions = getDefaultPickerOptions();
 
-      let callbackCompleted = false;
             let callback = (event: events_emitter.EventData) => {
               let result: ItemInfo = event?.data?.msg;
               console.info('testPicker59 select ItemInfo=:' + JSON.stringify(result));
@@ -3605,9 +3479,6 @@ export default function TextPicker() {
             }
             router.back();
             events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
             console.log(`originalUris = ${JSON.stringify(originalUris)}`);
             console.info("testPicker59 valid case finish");
 
@@ -3636,14 +3507,12 @@ export default function TextPicker() {
       let code: number = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       pickerOptions.edgeEffect = EdgeEffect.None;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         let expectResult: EdgeEffect = EdgeEffect.None;
         let result: PhotoPickerResult = event?.data?.msg.edgeEffect ?? EdgeEffect.Spring;
         console.info('testPicker60 result event.data.msg=:' + result);
         console.info('testPicker60 result expect =:' + expectResult);
         expect(result).assertEqual(expectResult);
-        callbackCompleted = true;
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -3665,9 +3534,6 @@ export default function TextPicker() {
       router.back();
       console.info("testPicker60 finish");
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -3731,15 +3597,15 @@ export default function TextPicker() {
       let photoPicker = new photoAccessHelper.PhotoViewPicker();
       try {
         photoPicker.select(pickerOptions).then((photoSelectResult: photoAccessHelper.PhotoSelectResult) => {
-          console.log('select閿欒鐮佽鐩?PhotoViewPicker.select success, PhotoPickerResult uri: ' +
+          console.log('select错误码覆盖 PhotoViewPicker.select success, PhotoPickerResult uri: ' +
           JSON.stringify(photoSelectResult))
         })
         await closePickerModel(driver);
       } catch (error) {
-        console.error("select閿欒鐮佽鐩?error:" + JSON.stringify(error) + error.code);
+        console.error("select错误码覆盖 error:" + JSON.stringify(error) + error.code);
         expect(error.code).assertEqual(23800151);
       }
-      console.info('select閿欒鐮佽鐩?finish');
+      console.info('select错误码覆盖 finish');
       done();
     });
 
@@ -3875,7 +3741,6 @@ export default function TextPicker() {
         gridPinchModeType: photoAccessHelper.GridPinchModeType.FULL_FUNCTION_GRID,
         defaultGridLevel: photoAccessHelper.GridLevel.COMPACT
       };
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         let expectResult: photoAccessHelper.GridLevel = pickerOptions.gridPinchMode?.defaultGridLevel ?? photoAccessHelper.GridLevel.STANDARD;
         let result: PhotoPickerResult = event?.data?.msg;
@@ -3885,7 +3750,6 @@ export default function TextPicker() {
         expect(photoAccessHelper.GridLevel.COMPACT).assertEqual(2);
         expect(photoAccessHelper.GridLevel.STANDARD).assertEqual(1);
         expect(photoAccessHelper.GridLevel.SPACIOUS).assertEqual(0);
-        callbackCompleted = true;
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -3907,9 +3771,6 @@ export default function TextPicker() {
       router.back();
       console.info("testPicker64 finish");
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -4061,7 +3922,7 @@ export default function TextPicker() {
         console.log(`testPicker66, r1=${JSON.stringify(e)}, code  ${e.code} msg=${e.message}`);
       }
       try {
-        // 闈炴硶鍦烘櫙閿欒鐮佽鐩?
+        // 非法场景错误码覆盖
         pickerController.setMovingPhotoState(-1);
       } catch (e) {
         console.log(`testPicker66, r2=${JSON.stringify(e)}`);
@@ -4069,42 +3930,7 @@ export default function TextPicker() {
       }
 
       try {
-        // 闈炴硶鍦烘櫙閿欒鐮佽鐩?
-        pickerController.setMovingPhotoState(photoAccessHelper.MovingPhotoBadgeStateType.MOVING_PHOTO_ENABLED);
-      } catch (e) {
-        console.log(`testPicker66, r3=${JSON.stringify(e)}`);
-        expect( e.code).assertEqual(23800202);
-      }
-
-      await CommonFunc.sleep(2000);
-      router.back();
-      console.info("testPicker66 finish");
-      done();
-    });
-
-    /**
-     * @tc.name   testPicker67
-     * @tc.number testPicker67
-     * @tc.desc   Testing requestPhotoUrisReadPermissionEx
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testPicker67', Level.LEVEL0, async (done: Function) => {
-      if (!isExecutePicker) {
-        done();
-        return;
-      }
-
-      let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(getContext());
-      console.info("testPicker67 start");
-      let requestPhotoUrisReadPermission = {
-        authorizedUris: ['file://media/photo/test.jpg'],
-        invalidUris: []
-      } as photoAccessHelper.RequestReadPermissionResult;
-      let validUris = ['file://media/photo/test.jpg'];
-      try {
-        // 闈炴硶鍦烘櫙閿欒鐮佽鐩?
+        // 非法场景错误码覆盖
         pickerController.setMovingPhotoState(photoAccessHelper.MovingPhotoBadgeStateType.MOVING_PHOTO_ENABLED);
       } catch (e) {
         console.log(`testPicker66, r3=${JSON.stringify(e)}`);
@@ -4211,7 +4037,6 @@ export default function TextPicker() {
         }
       ];
 
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         let msg: PhotoPickerResult = event?.data?.msg;
         let result: photoAccessHelper.AutoPlayScene[] = msg.autoPlayScenes;
@@ -4243,9 +4068,6 @@ export default function TextPicker() {
       router.back();
 
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       console.info('testPicker68 finish');
       done();
     });
@@ -4271,7 +4093,6 @@ export default function TextPicker() {
         ['com.example.sourceapp.album', 'com.example.sourceapp.album1', 'com.example.sourceapp.album2'];
       pickerOptions.appAlbumFilters = testBundleName;
 
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
 
         let expectResult: Array<string> = pickerOptions.appAlbumFilters ?? [];
@@ -4308,9 +4129,6 @@ export default function TextPicker() {
       router.back();
       console.info("testPicker69 finish");
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -4415,9 +4233,6 @@ export default function TextPicker() {
       }
 
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       events_emitter.off(EventType.PHOTO_PICKER_INFO);
 
       router.back();
@@ -4450,6 +4265,7 @@ export default function TextPicker() {
         let boxPath = fileUri.getUriFromPath(context.filesDir + "/test.jpg").toString();
         let result: Array<string> = [];
         photoAccessHelper.getPhotoAccessHelper(context).showAssetsCreationDialogEx([boxPath], [CreationSettingDef])
+        .then((res) => {
           result = res;
         });
         await driveFn();
@@ -4525,6 +4341,7 @@ export default function TextPicker() {
           let result: string = '';
           try {
             phAccessHelper.createAssetWithShortTermPermissionEx(item as AssetCreateOption)
+            .then((uri)=>{
               result = uri;
             })
 
@@ -4582,6 +4399,7 @@ export default function TextPicker() {
         let result: Array<string> = [];
         photoAccessHelper.getPhotoAccessHelper(context).showAssetsCreationDialogEx(
           [boxPath], [CreationSettingDef]
+        ).then((res) => {
           result = res;
         });
         await driveFn();
@@ -4614,6 +4432,7 @@ export default function TextPicker() {
           } else {
             console.log("testPicker73 replacePhotoPickerPreview success");
             pickerController.saveTrustedPhotoAssetsEx([], [], SaveMode.OVERWRITE);
+            pickerController.saveTrustedPhotoAssetsEx([boxPath]).then((result1) => {
               if (!result1) {
                 console.log("testPicker73 saveTrustedPhotoAssets (1 param) fail");
                 expect(result1).assertUndefined();
@@ -4627,6 +4446,7 @@ export default function TextPicker() {
               }
             });
 
+            pickerController.saveTrustedPhotoAssetsEx([boxPath], [CreationSettingDef]).then((result2)=>{
               if (!result2) {
                 console.log("testPicker73 saveTrustedPhotoAssets (2 param) fail");
                 expect(result2).assertUndefined();
@@ -4640,6 +4460,7 @@ export default function TextPicker() {
               }
             });
 
+            pickerController.saveTrustedPhotoAssetsEx([boxPath], [CreationSettingDef], SaveMode.SAVE_AS).then((result3)=> {
               if (!result3) {
                 console.log("testPicker73 saveTrustedPhotoAssets (3 param) fail");
                 expect(result3).assertUndefined();
@@ -4685,6 +4506,7 @@ export default function TextPicker() {
       }
       const photoPicker = new photoAccessHelper.PhotoViewPicker();
       try{
+        photoPicker.select(pickerOptions).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
           console.info('testPicker74, PhotoViewPicker.select successfully, PhotoSelectResult uri: ' +
           JSON.stringify(PhotoSelectResult));
         })
@@ -4697,6 +4519,7 @@ export default function TextPicker() {
         recommendationType: photoAccessHelper.RecommendationType.CAT
       }
       try{
+        photoPicker.select(pickerOptions).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
           console.info('testPicker74, PhotoViewPicker.select successfully, PhotoSelectResult uri: ' +
           JSON.stringify(PhotoSelectResult));
         })
@@ -4747,10 +4570,10 @@ export default function TextPicker() {
       try{
         photoPicker.select(pickerOptions, (err: BusinessError, PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
           if (err) {
-            console.error(`select callback閿欒鐮佽鐩?failed with err: ${err.code}, ${err.message}`);
+            console.error(`select callback错误码覆盖 failed with err: ${err.code}, ${err.message}`);
             return ;
           }
-          console.info('select callback閿欒鐮佽鐩?successfully,uri:' + JSON.stringify(PhotoSelectResult));
+          console.info('select callback错误码覆盖 successfully,uri:' + JSON.stringify(PhotoSelectResult));
         })
         await closePickerModel(driver);
       } catch(error) {
@@ -4769,10 +4592,10 @@ export default function TextPicker() {
         photoPicker.select(pickerOptions,
           (err: BusinessError, PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
             if (err) {
-              console.error(`select callback閿欒鐮佽鐩?failed with err: ${err.code}, ${err.message}`);
+              console.error(`select callback错误码覆盖 failed with err: ${err.code}, ${err.message}`);
               return;
             }
-            console.info('select callback閿欒鐮佽鐩?successfully,uri:' + JSON.stringify(PhotoSelectResult));
+            console.info('select callback错误码覆盖 successfully,uri:' + JSON.stringify(PhotoSelectResult));
           })
         await closePickerModel(driver);
       } catch (error) {
@@ -4785,10 +4608,10 @@ export default function TextPicker() {
         photoPicker.select(pickerOptions,
           (err: BusinessError, PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
             if (err) {
-              console.error(`select callback閿欒鐮佽鐩?failed with err: ${err.code}, ${err.message}`);
+              console.error(`select callback错误码覆盖 failed with err: ${err.code}, ${err.message}`);
               return;
             }
-            console.info('select callback閿欒鐮佽鐩?successfully,uri:' + JSON.stringify(PhotoSelectResult));
+            console.info('select callback错误码覆盖 successfully,uri:' + JSON.stringify(PhotoSelectResult));
           })
         await closePickerModel(driver);
       } catch (error) {
@@ -4799,10 +4622,10 @@ export default function TextPicker() {
       try{
         photoPicker.select(undefined, (err: BusinessError, PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
           if (err) {
-            console.error(`select callback閿欒鐮佽鐩?failed with err: ${err.code}, ${err.message}`);
+            console.error(`select callback错误码覆盖 failed with err: ${err.code}, ${err.message}`);
             return ;
           }
-          console.info('select callback閿欒鐮佽鐩?successfully,uri:' + JSON.stringify(PhotoSelectResult));
+          console.info('select callback错误码覆盖 successfully,uri:' + JSON.stringify(PhotoSelectResult));
         })
         await closePickerModel(driver);
       } catch(error) {
@@ -4813,10 +4636,10 @@ export default function TextPicker() {
       try{
         photoPicker.select(null, (err: BusinessError, PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
           if (err) {
-            console.error(`select callback閿欒鐮佽鐩?failed with err: ${err.code}, ${err.message}`);
+            console.error(`select callback错误码覆盖 failed with err: ${err.code}, ${err.message}`);
             return ;
           }
-          console.info('select callback閿欒鐮佽鐩?successfully,uri:' + JSON.stringify(PhotoSelectResult));
+          console.info('select callback错误码覆盖 successfully,uri:' + JSON.stringify(PhotoSelectResult));
         })
         await closePickerModel(driver);
       } catch(error) {
@@ -4844,7 +4667,6 @@ export default function TextPicker() {
       let code: number = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       pickerOptions.showDateOnScrollbar = true;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         let expectResult: boolean = pickerOptions.showDateOnScrollbar ?? false;
         let result: PhotoPickerResult = event?.data?.msg.showDateOnScrollbar;
@@ -4870,9 +4692,6 @@ export default function TextPicker() {
       expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
       router.back();
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       console.info("testPicker76 finish");
       done();
     });
@@ -4948,6 +4767,7 @@ export default function TextPicker() {
       }
       const photoPicker = new photoAccessHelper.PhotoViewPicker();
       try{
+        photoPicker.select(pickerOptions).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
           console.info('testPicker78, PhotoViewPicker.select successfully, PhotoSelectResult uri: ' +
           JSON.stringify(PhotoSelectResult));
         })
@@ -4976,7 +4796,6 @@ export default function TextPicker() {
       let code: number = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       pickerOptions.backgroundOpacity = 0.5;
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         let expectResult: number| undefined = pickerOptions.backgroundOpacity;
         let result: number | undefined = event?.data?.msg.backgroundOpacity;
@@ -5006,9 +4825,6 @@ export default function TextPicker() {
       router.back();
       console.info("testPicker79 finish");
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     })
 
@@ -5032,6 +4848,7 @@ export default function TextPicker() {
       }
       const photoPicker = new photoAccessHelper.PhotoViewPicker();
       try{
+        photoPicker.select(pickerOptions).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
           console.info('SUB_PHOTO_PICKER_TEST_0100, PhotoViewPicker.select successfully, PhotoSelectResult uri: ' +
           JSON.stringify(PhotoSelectResult));
         })
@@ -5061,6 +4878,7 @@ export default function TextPicker() {
       pickerOptions.preferredCompatibleMode = photoAccessHelper.PreferredCompatibleMode.DEFAULT;
       const photoPicker = new photoAccessHelper.PhotoViewPicker();
       try{
+        photoPicker.select(pickerOptions).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
           console.info('SUB_PHOTO_PICKER_TEST_0300, PhotoViewPicker.select successfully, PhotoSelectResult uri: ' +
           JSON.stringify(PhotoSelectResult));
         })
@@ -5097,10 +4915,11 @@ export default function TextPicker() {
         opts.isSelectionOrderAdjustable = true;
         return opts;
       };
-      // 鈹€鈹€ Helper: open picker, return promise that resolves with photoUris 鈹€鈹€
+      // ── Helper: open picker, return promise that resolves with photoUris ──
       const openPickerAndCollect = (label: string): Promise<string[]> => {
         return new Promise((resolve) => {
           const photoPicker = new photoAccessHelper.PhotoViewPicker();
+          photoPicker.select(buildPickerOptions()).then((result: photoAccessHelper.PhotoSelectResult) => {
             console.info(`SUB_PHOTO_PICKER_TEST_0400 [${label}] select returned, photoUris=` +
             JSON.stringify(result.photoUris));
             resolve(result.photoUris ?? []);
@@ -5116,7 +4935,7 @@ export default function TextPicker() {
         console.info("SUB_PHOTO_PICKER_TEST_0400 finish");
         done();
       }
-      // 鈹€鈹€ Helper: select 2 photos via Selector_0 and Selector_1 鈹€鈹€
+      // ── Helper: select 2 photos via Selector_0 and Selector_1 ──
       const selectTwoPhotos = async (label: string): Promise<boolean> => {
         await CommonFunc.sleep(500);
         const firstCheckbox: Component | null = await driver.findComponent(ON.id('Selector_0'));
@@ -5139,7 +4958,7 @@ export default function TextPicker() {
         }
         return true;
       };
-      // 鈹€鈹€ Helper: click Complete (Done) button 鈹€鈹€
+      // ── Helper: click Complete (Done) button ──
       const clickComplete = async (label: string): Promise<void> => {
         const completeBtn: Component | null = await driver.findComponent(ON.id('Complete'));
         if (completeBtn) {
@@ -5150,7 +4969,7 @@ export default function TextPicker() {
         }
         await CommonFunc.sleep(500);
       };
-      // 鈹€鈹€ Helper: enter browser mode by clicking selected count area 鈹€鈹€
+      // ── Helper: enter browser mode by clicking selected count area ──
       const openBrowserMode = async (label: string): Promise<void> => {
         const selectedText: Component | null = await driver.findComponent(ON.id('currentSelectCount'));
         if (selectedText) {
@@ -5161,7 +4980,7 @@ export default function TextPicker() {
           console.error(`SUB_PHOTO_PICKER_TEST_0400 [${label}] currentSelectCount not found, browser mode NOT opened`);
         }
       };
-      // 鈹€鈹€ Helper: drag first thumbnail onto second thumbnail in dock 鈹€鈹€
+      // ── Helper: drag first thumbnail onto second thumbnail in dock ──
       const reorderFirstTwoThumbnails = async (label: string): Promise<boolean> => {
         const allListItems: Component[] = await driver.findComponents(ON.type('ListItem'));
         console.info(`SUB_PHOTO_PICKER_TEST_0400 [${label}] ListItem count in browser: ${allListItems.length}`);
@@ -5177,13 +4996,13 @@ export default function TextPicker() {
         const startY: number = (firstBounds.top + firstBounds.bottom) / 2;
         const endX: number = (secondBounds.left + secondBounds.right) / 2;
         const endY: number = (secondBounds.top + secondBounds.bottom) / 2;
-        console.info(`SUB_PHOTO_PICKER_TEST_0400 [${label}] dragging (${startX},${startY}) 鈫?(${endX},${endY})`);
+        console.info(`SUB_PHOTO_PICKER_TEST_0400 [${label}] dragging (${startX},${startY}) → (${endX},${endY})`);
         await driver.drag(startX, startY, endX, endY, 1000);
         await CommonFunc.sleep(500);
         console.info(`SUB_PHOTO_PICKER_TEST_0400 [${label}] drag completed`);
         return true;
       };
-      // 鈹€鈹€ Helper: print URIs for diff 鈹€鈹€
+      // ── Helper: print URIs for diff ──
       const printUris = (label: string, uris: string[]): void => {
         console.info(`SUB_PHOTO_PICKER_TEST_0400 [${label}] count=${uris.length}`);
         uris.forEach((uri, i) => {
@@ -5193,7 +5012,7 @@ export default function TextPicker() {
       let originalUris: string[] = [];
       let reorderedUris: string[] = [];
       try {
-        console.info('SUB_PHOTO_PICKER_TEST_0400 鈺愨晲鈺?ROUND 1: select 2 photos and confirm 鈺愨晲鈺?);
+        console.info('SUB_PHOTO_PICKER_TEST_0400 ═══ ROUND 1: select 2 photos and confirm ═══');
         const round1Promise = openPickerAndCollect('R1');
         const R1Selected = await selectTwoPhotos('R1');
         if (!R1Selected) {
@@ -5204,7 +5023,7 @@ export default function TextPicker() {
         originalUris = await round1Promise;
         printUris('R1 ORIGINAL', originalUris);
         await CommonFunc.sleep(500);
-        console.info('SUB_PHOTO_PICKER_TEST_0400 鈺愨晲鈺?ROUND 2: select 2 photos, reorder, confirm 鈺愨晲鈺?);
+        console.info('SUB_PHOTO_PICKER_TEST_0400 ═══ ROUND 2: select 2 photos, reorder, confirm ═══');
         const round2Promise = openPickerAndCollect('R2');
         const R2Selected = await selectTwoPhotos('R2');
         if (!R2Selected) {
@@ -5217,7 +5036,7 @@ export default function TextPicker() {
         reorderedUris = await round2Promise;
         printUris('R2 REORDERED', reorderedUris);
         // VERIFY: order should be reversed
-        console.info('SUB_PHOTO_PICKER_TEST_0400 鈺愨晲鈺?COMPARISON 鈺愨晲鈺?);
+        console.info('SUB_PHOTO_PICKER_TEST_0400 ═══ COMPARISON ═══');
         console.info(`SUB_PHOTO_PICKER_TEST_0400 R1[0]=${originalUris[0]}`);
         console.info(`SUB_PHOTO_PICKER_TEST_0400 R2[0]=${reorderedUris[0]}`);
         console.info(`SUB_PHOTO_PICKER_TEST_0400 R1[1]=${originalUris[1]}`);
@@ -5259,7 +5078,6 @@ export default function TextPicker() {
       pickerOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE;
       pickerOptions.isMovingPhotoBadgeShown = true;
 
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         let result: PhotoPickerResult = event?.data?.msg;
         console.info('SUB_PHOTO_PICKER_TEST_0500 result =:' + JSON.stringify(result));
@@ -5317,9 +5135,6 @@ export default function TextPicker() {
       router.back();
       console.info("SUB_PHOTO_PICKER_TEST_0500 finish");
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
 
@@ -5352,7 +5167,6 @@ export default function TextPicker() {
       };
       pickerOptions.contextRecoveryInfo = contextRecoveryInfo;
 
-      let callbackCompleted = false;
       let callback = (event: events_emitter.EventData) => {
         let result: PhotoPickerResult = event?.data?.msg;
         console.info('SUB_PHOTO_PICKER_TEST_0600 result =:' + JSON.stringify(result));
@@ -5367,7 +5181,6 @@ export default function TextPicker() {
         expect(result.contextRecoveryInfo?.gridLevel).assertEqual(contextRecoveryInfo.gridLevel);
         expect(result.contextRecoveryInfo?.sortRule).assertEqual(contextRecoveryInfo.sortRule);
         expect(result.contextRecoveryInfo?.fileSize).assertEqual(contextRecoveryInfo.fileSize);
-        callbackCompleted = true;
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -5391,12 +5204,7 @@ export default function TextPicker() {
       router.back();
       console.info("SUB_PHOTO_PICKER_TEST_0600 finish");
       events_emitter.off(event.eventId);
-      while (!callbackCompleted) {
-        await Utils.msSleep(100);
-      }
       done();
     });
   })
 }
-
-
