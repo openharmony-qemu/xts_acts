@@ -120,5 +120,19 @@ export default function ParagraphStyleTailIndentsTest() {
       expect(nativeFunc.ParagraphStyleTailIndentsTest_007()).assertEqual(0)
       console.info('SUB_ARKUI_CAPI_PARAGRAPH_STYLE_TAIL_INDENTS_0700 END');
     });
+
+    /**
+     * @tc.name   SUB_ARKUI_CAPI_PARAGRAPH_STYLE_TAIL_INDENTS_0800
+     * @tc.number SUB_ARKUI_CAPI_PARAGRAPH_STYLE_TAIL_INDENTS_0800
+     * @tc.desc   Test OH_ArkUI_ParagraphStyle_GetTailIndents with nullptr buffer size small
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_ARKUI_CAPI_PARAGRAPH_STYLE_TAIL_INDENTS_0800', Level.LEVEL3, async () => {
+      console.info('SUB_ARKUI_CAPI_PARAGRAPH_STYLE_TAIL_INDENTS_0800 START');
+      expect(nativeFunc.ParagraphStyleTailIndentsTest_008()).assertEqual(0)
+      console.info('SUB_ARKUI_CAPI_PARAGRAPH_STYLE_TAIL_INDENTS_0800 END');
+    });
   });
 }

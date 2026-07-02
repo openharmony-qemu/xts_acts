@@ -133,4 +133,26 @@ static napi_value ParagraphStyleTailIndentsTest_007(napi_env env, napi_callback_
     NAPI_END(column);
 }
 
+static napi_value ParagraphStyleTailIndentsTest_008(napi_env env, napi_callback_info info)
+{
+    NAPI_START(column, ARKUI_NODE_COLUMN);
+    OH_ArkUI_ParagraphStyle* paragraphStyle = OH_ArkUI_ParagraphStyle_Create();
+    if (paragraphStyle == nullptr) {
+        napi_value errorResult = nullptr;
+        napi_create_int32(env, PARAM_NEGATIVE_1, &errorResult);
+        return errorResult;
+    }
+    float tailIndents[] = { 10.0f, 20.0f, 30.0f };
+    ArkUI_ErrorCode setResult = OH_ArkUI_ParagraphStyle_SetTailIndents(paragraphStyle, tailIndents, PARAM_3);
+    ASSERT_EQ(setResult, ARKUI_ERROR_CODE_NO_ERROR);
+    float  buffer[PARAM_3] = {PARAM_0};
+    float *getTailIndents = buffer;
+    uint32_t writeLength = PARAM_0;
+    ArkUI_ErrorCode getResult =
+        OH_ArkUI_ParagraphStyle_GetTailIndents(paragraphStyle, &getTailIndents, PARAM_2, &writeLength);
+    ASSERT_EQ(getResult, ARKUI_ERROR_CODE_BUFFER_SIZE_ERROR);
+    OH_ArkUI_ParagraphStyle_Destroy(paragraphStyle);
+    NAPI_END(column);
+}
+
 }
