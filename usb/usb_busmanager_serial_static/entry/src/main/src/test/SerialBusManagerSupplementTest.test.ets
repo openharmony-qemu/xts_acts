@@ -99,8 +99,15 @@ export default function SerialBusManagerSupplementTest(): void {
           console.error(TAG, 'afterAll close error: ', JSON.stringify(err));
           done()
         }
-      } else {
-        done()
+      } 
+      if (gPort1 != null) {
+        try {
+          await gPort1?.close();
+          done()
+        } catch (err) {
+          console.error(TAG, 'afterAll close error: ', JSON.stringify(err));
+          done()
+        }
       }
     })
 
