@@ -49,7 +49,7 @@ export default function ActsShortTimeTaskManagerStaticTest() {
         }
         delegator.executeShellCommand(cmd)
 
-      await Utils.msSleep(3500);
+        await Utils.msSleep(3500);
 
         try {
           let myReason = 'test requestSuspendDelay';
