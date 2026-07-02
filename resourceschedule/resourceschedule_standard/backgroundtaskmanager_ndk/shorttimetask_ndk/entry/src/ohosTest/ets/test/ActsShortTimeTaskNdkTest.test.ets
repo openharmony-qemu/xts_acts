@@ -106,5 +106,27 @@ export default function ActsShortTimeTaskNdkTest() {
       }
     })
 
+    /**
+     * @tc.name   SUB_Resourceschedule_ShortTimeTask_RequestSuspendDelayWithReasonIsNull_0100
+     * @tc.number SUB_Resourceschedule_ShortTimeTask_RequestSuspendDelayWithReasonIsNull_0100
+     * @tc.desc   Apply for a normal short-time task and input reason is empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Resourceschedule_ShortTimeTask_RequestSuspendDelayWithReasonIsNull_0100', Level.LEVEL3, async (done: Function) => {
+      try {
+        console.info("====>SUB_Resourceschedule_ShortTimeTask_RequestSuspendDelayWithReasonIsNull_0100 start====");
+        shortTimeTaskNdk.CancelSuspendDelay();
+        let requestId: number = shortTimeTaskNdk.RequestSuspendDelayWithReasonIsNull();
+        console.log("SUB_Resourceschedule_ShortTimeTask_RequestSuspendDelayWithReasonIsNull_0100 requestId: " + requestId);
+        expect(requestId).assertLarger(0);
+        done()
+      } catch (err) {
+        console.error("SUB_Resourceschedule_ShortTimeTask_RequestSuspendDelayWithReasonIsNull_0100 catch err: " + err);
+        done()
+      }
+    })
+
   })
 }
