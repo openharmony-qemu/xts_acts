@@ -622,7 +622,11 @@ export default function actslocationTest() {
           done();
         } catch (error) {
           console.info('[lbs_js] getCurrentWifiBssidForLocating_0100 catch err is:' + JSON.stringify(error));
-          expect(error.code).assertEqual(201);
+          if (error.code === 3301100) {
+            expect(error.code).assertEqual(3301100);
+          } else {
+            expect(error.code).assertEqual(201);
+          }
           done();
         }
       }

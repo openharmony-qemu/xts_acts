@@ -11,6 +11,7 @@
     "MainAbility/pages/datePicker/datePickerneww",
     "MainAbility/pages/datePicker/datePickerUI",
     "MainAbility/pages/datePicker/datePickerPropertiesModifier",
+    "MainAbility/pages/datePicker/datePickerDigitalCrownSensitivity",
     "MainAbility/pages/datePickerNullUndefined/DatePickerCanLoopNullUndefined",
     "MainAbility/pages/datePickerNullUndefined/DatePickerDisappearTextStyleNullUndefined",
     "MainAbility/pages/datePickerNullUndefined/DatePickerLunarNullUndefined",

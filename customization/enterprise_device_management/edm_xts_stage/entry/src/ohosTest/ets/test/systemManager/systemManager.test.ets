@@ -4314,6 +4314,31 @@ function testSetActivationLockDisabled() {
     }
     done();
   });
+
+  /**
+  * @tc.name   test_set_activation_lock_disabled_1100
+  * @tc.number SUB_CUSTOMIZATION_EDM_SET_ACTIVATION_LOCK_DISABLED_JS_1100
+  * @tc.desc   test systemManager setActivationLockDisabled with null isDisable
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_activation_lock_disabled_1100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let credential: string = "test";
+      await systemManager.setActivationLockDisabled(SELFWANT, null, credential).then(()=>{
+        expect(false).assertTrue();
+    }).catch ((error: BusinessError)=> {
+      expect(Number(error.code) === 801).assertTrue();
+    });
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
 }
 
 function testIsActivationLockDisabled() {

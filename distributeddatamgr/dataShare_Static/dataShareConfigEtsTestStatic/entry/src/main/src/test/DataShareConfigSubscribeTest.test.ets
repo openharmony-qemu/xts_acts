@@ -22,6 +22,7 @@ let g_config: dataShare.DataProxyConfig = {
 }
 let testUri1 = "datashareproxy://com.acts.dataShare.config.static/test1";
 let testUri2 = "datashareproxy://com.acts.dataShare.config.static/test2";
+let testUri3 = "datashareproxy://com.acts.dataShare.config.static/test3";
 let TAG = "ttt ";
 
 export default function dataShareConfigSubscribeTest() {
@@ -63,7 +64,8 @@ export default function dataShareConfigSubscribeTest() {
       console.info(TAG + "afterEach---------------------------------");
       let uris = [
         testUri1,
-        testUri2
+        testUri2,
+        testUri3
       ]
       try {
         await g_handle!.delete(uris, g_config).then((results: dataShare.DataProxyResult[]) => {
@@ -683,6 +685,68 @@ export default function dataShareConfigSubscribeTest() {
       } catch (err) {
         err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareConfigSubscribeTest028 failed.code =" + err.code + ",message=" + err.message);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   dataShareConfigSubscribeTest029
+     * @tc.number SUB_DistributedData_DataShare_SDK_Expansion_2900
+     * @tc.desc   single uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigSubscribeTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+      
+      let testUri = "datashareproxy://com.acts.dataShare.config.static/test3";
+      let uris = [
+        testUri
+      ]
+      await g_handle!.delete(uris, g_config);
+      let proxyData: dataShare.ProxyData[] = [{
+        uri: testUri,
+        values: { 1: "test1" },
+        isMultiValues: true,
+        allowList: [],
+        trustProviders: []
+      }];
+      await g_handle!.publish(proxyData, g_config);
+      try {
+        let results = g_handle!.onDataChange(uris, g_config, (changeInfo: dataShare.DataProxyChangeInfo[]) => {
+          console.log(TAG + "[DataShareProvider] onProxyData receive change:" + JSON.stringify(changeInfo));
+          changeInfo.forEach((info) => {
+            expect(info.type).assertEqual(2);
+            expect(info.uri).assertEqual(testUri);
+            let values = info.values;
+            if (values && values.length > 0) {
+              expect(values.length).assertEqual(2);
+              expect(values[0]).assertEqual("test1");
+              expect(values[1]).assertEqual("test2");
+            }
+          });
+          g_handle!.offDataChange(uris, g_config);
+          done();
+        });
+        console.log(TAG + "[DataShareProvider] dataShareConfigSubscribeTest029 success:" + JSON.stringify(results));
+        results.forEach((result) => {
+          console.info(TAG + `[DataShareProvider] URI: ${result.uri}, Result: ${result.result}`);
+          expect(result.result).assertEqual(0);
+        });
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] dataShareConfigSubscribeTest029failed.code =" + err.code +
+          ",message=" + err.message);
+        expect().assertFail();
+      }
+      try {
+        await g_handle!.putValue(testUri, 2, "test2", g_config);
+        let values = await g_handle!.getValues(testUri, g_config);
+        expect(values.length).assertEqual(2);
+        expect(values[0]).assertEqual("test1");
+        expect(values[1]).assertEqual("test2");
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] dataShareConfigSubscribeTest029 publish failed,code =" + err.code +
+          ",message=" + err.message);
         expect().assertFail();
       }
     });

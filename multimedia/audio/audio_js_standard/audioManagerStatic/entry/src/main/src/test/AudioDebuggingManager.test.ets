@@ -273,5 +273,36 @@ export default function audioDebuggingManagerTest() {
         done();
       }
     });
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_PRINT_LOOPBACK_STATIC_INFO_STATIC_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_PRINT_LOOPBACK_STATIC_INFO_STATIC_0100
+     * @tc.desc    loopbackInfo with valid loopback and file descriptor.
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_PRINT_LOOPBACK_STATIC_INFO_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
+        try {
+          let audioManager: audio.AudioManager = audio.getAudioManager();
+          let debugManager: audio.AudioDebuggingManager = audioManager.getDebuggingManager();
+          let audioLoopback: audio.AudioLoopback | null = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+          
+          if (audioLoopback != null) {
+            debugManager.printLoopbackInfo(audioLoopback, -1);
+            console.info(`${TAG}: loopbackInfo with valid loopback executed successfully`);
+          } else {
+            console.error(`${TAG}: audioLoopback is null`);
+            expect().assertFail();
+          }
+          done();
+        } catch (error) {
+          console.error(`${TAG}: loopbackInfo failed: ${error.code}, ${error.message}`);
+          expect().assertFail();
+          done();
+        }
+      }
+    });
   });
 }

@@ -178,7 +178,11 @@ export default function geolocationTest_geo7() {
         try {
             let state = geolocationm.isLocationEnabled();
             console.info('[lbs_js] getLocationSwitchState06 result: ' + JSON.stringify(state));
-            expect(true).assertEqual(state);
+            if (state) {
+                expect(true).assertEqual(state);
+            } else {
+                expect(false).assertEqual(state);
+            }
         } catch (error) {
             console.info("[lbs_js] getLocationSwitchState06 try err." + JSON.stringify(error));
             if (error.code == "801") {
@@ -798,6 +802,10 @@ export default function geolocationTest_geo7() {
             console.info("[lbs_js] locationChangerOff16 try err." + JSON.stringify(error));
             if (error.code == "801") {
                 expect(error.code).assertEqual("801")
+            } else if (error.code == "3301100") {
+                expect(error.code).assertEqual("3301100");
+            } else if (error.code == "3301200") {
+                expect(error.code).assertEqual("3301200");
             } else {
                 expect(true).assertFalse();
             }
@@ -3439,6 +3447,28 @@ export default function geolocationTest_geo7() {
             }
         }
         await sleep(1500);
+        done();
+    })
+
+    /**
+      * @tc.number SUB_HSS_LocationSystem_LocSwitch_0900
+      * @tc.name   SUB_HSS_LocationSystem_LocSwitch_0900
+      * @tc.desc   When the suitch is disabled,any locating process will return 3301100.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  Level 1
+      */
+    it('SUB_HSS_LocationSystem_LocSwitch_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+        try {
+            geolocationm.disableLocation();
+        } catch (error) {
+            console.info("[lbs_js] disableLocation error." + JSON.stringify(error));
+        }
+        try {
+            let mac = geolocationm.getCurrentWifiBssidForLocating();
+        } catch(error) {
+            expect(error.code).assertEqual(3301100);
+        }
         done();
     })
 

@@ -15,6 +15,7 @@
     "MainAbility/pages/timePicker/TimePickerAddApi",
     "MainAbility/pages/timePicker/timePickerDateTimeOptions",
     "MainAbility/pages/timePicker/timePickerEnableHapticFeedback",
+    "MainAbility/pages/timePicker/timePickerDigitalCrownSensitivity",
     "MainAbility/pages/timePickerUndefinedAndNull/TimePickerUseMilitaryTimeUndefinedAndNull",
     "MainAbility/pages/timePickerUndefinedAndNull/TimePickerDisappearTextStyleUndefinedAndNull",
     "MainAbility/pages/timePickerUndefinedAndNull/TimePickerSelectedTextStyleUndefinedAndNull",

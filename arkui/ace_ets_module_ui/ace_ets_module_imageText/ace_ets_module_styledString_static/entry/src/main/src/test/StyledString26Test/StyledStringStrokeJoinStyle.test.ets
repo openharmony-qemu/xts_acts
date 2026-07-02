@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level } from '../../../../hypium/index';
+import { describe, it, expect, Level, beforeAll, beforeEach  } from '../../../../hypium/index';
 import {
   TextStyle,
   StyledStringKey,
@@ -23,8 +23,43 @@ import {
   StrokeJoinStyle
 } from '@kit.ArkUI';
 
+import router from '@ohos.router';
+import Utils from '../../../ets/MainAbility/common/Utils';
+import CommonFunc from '../../../ets/MainAbility/common/Common';
+import { Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UtilsTest } from '../Util.test';
+import { Driver, ON } from '@kit.TestKit';
+
 export default function StyledStringStrokeJoinStyleTest() {
   describe('StyledStringStrokeJoinStyleTest', () => {
+
+    beforeAll(async (): Promise<void> => {
+      console.info("StyledStringStrokeJoinStyleTest beforeAll start");
+      await UtilsTest.msSleep(2000);
+      await UtilsTest.startAbility("com.arkui.ace.styledString.static", "EntryAbility");
+    });
+
+    beforeEach(async (): Promise<void> => {
+      console.info("StyledStringStrokeJoinStyleTest beforeEach start");
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/StyledString/StyledStringIndex',
+      }
+      try {
+        const routerInstance = AppStorage.get<Router>("router") as Router;
+        routerInstance.clear();
+        let pages = routerInstance.getState();
+        console.info("StyledStringStrokeJoinStyleTest state pages: " + JSON.stringify(pages));
+        if (pages.name !== "StyledStringIndex") {
+          routerInstance.replaceUrl(options);
+        }
+        await Utils.sleep(500);
+      } catch (err) {
+        console.error("push StyledStringStrokeJoinStyleTest page error:" + err);
+        expect().assertFail();
+      }
+      console.info("StyledStringStrokeJoinStyleTest beforeEach end");
+    });
     /**
      * @tc.name   styledStringStrokeJoinStyle_miter_join_0100
      * @tc.number SUB_ARKUI_STYLEDSTRING_STROKEJOINSTYLE_ENUM_0100

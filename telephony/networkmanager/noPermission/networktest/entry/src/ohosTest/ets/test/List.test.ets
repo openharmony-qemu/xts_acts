@@ -21,6 +21,7 @@ import ethernetNoPTest from './ethernetNoP.test';
 import dataNoPTest from './datatestNoP.test';
 import socketNopTest from './socketNop.test';
 import httpInterceptorNoPermission from './HttpInterceptorNoPermission.test';
+import TrafficFilterNopTest from './TrafficFilterNop.test'
 
 export default function testsuite() {
   httpInterceptorNoPermission();
@@ -35,5 +36,6 @@ export default function testsuite() {
   socketNopTest();
   if (canIUse('SystemCapability.Communication.NetManager.NetFirewall')){
     netfirewallNoPTest();
+    TrafficFilterNopTest();
   }
 }

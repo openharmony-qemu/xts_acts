@@ -798,6 +798,147 @@ export default function WindowAnimationTest() {
           done();
         }
       })
+
+
+    /**
+     * @tc.name   testGetWindowTransitionAnimation_0100
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_0200
+     * @tc.desc   curve为INTERPOLATION_SPRING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetWindowTransitionAnimation_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let caseName = 'testGetWindowTransitionAnimation_0100';
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin');
+      let mainWin = windowStage!.getMainWindowSync();
+      expect(!!mainWin).assertTrue();
+      console.info(msgStr + 'Succeeded getMainWindowSync.');
+      const animationConfig: window.WindowAnimationConfig = {
+        duration: 1000,
+        curve: window.WindowAnimationCurve.INTERPOLATION_SPRING,
+        param: [1.0, 1.0, 100.0, 10.0]
+      };
+      const transitionAnimation: window.TransitionAnimation = {
+        opacity: 0.5,
+        config: animationConfig
+      };
+      try {
+        mainWin.setWindowTransitionAnimation(window.WindowTransitionType.DESTROY, transitionAnimation).then(() => {
+          console.info(msgStr + 'Succeeded in setting window transition animation. Cause:');
+          try {
+            let transitionAnimationResult = mainWin.getWindowTransitionAnimation(window.WindowTransitionType.DESTROY);
+            console.error(msgStr + `success obtain the window transition animation.`+JSON.stringify(transitionAnimationResult));
+            expect(!!transitionAnimationResult).assertTrue();
+            expect(transitionAnimationResult!.opacity).assertEqual(0.5);
+            expect(transitionAnimationResult!.config.curve).assertEqual(window.WindowAnimationCurve.INTERPOLATION_SPRING);
+            done();
+          } catch (err) {
+            if (isFreeWindowMode) {
+              console.error(msgStr + `Failed to obtain the window transition animation. Cause code: ${err.code}, message: ${err.message}`);
+              expect().assertFail();
+            } else {
+              console.log(msgStr + 'getWindowTransitionAnimation 当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+              console.log(msgStr + JSON.stringify(err))
+              expect(err.code).assertEqual(801);
+            }
+            done();
+          }
+        }).catch((err: Error) => {
+          if (isFreeWindowMode) {
+            console.error(msgStr + `Failed to set window transition animation. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+          } else {
+            console.log(msgStr + 'setWindowTransitionAnimation inner catch 当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+            console.log(msgStr + JSON.stringify(err))
+            expect(err.code).assertEqual(801);
+          }
+          done();
+        });
+      } catch (err) {
+        if (err.code != 801) {
+          console.error(msgStr + `Failed to obtain the window status of window. Cause code: ${err.code}, message: ${err.message}`);
+          expect().assertFail();
+        } else {
+          console.log(msgStr + 'out catch 当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+          console.log(msgStr + JSON.stringify(err))
+          expect(err.code).assertEqual(801);
+        }
+        done();
+      }
+    })
+
+
+    /**
+     * @tc.name   testGetWindowTransitionAnimation_0200
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWANIMATION_JS_API_0300
+     * @tc.desc   curve为CUBIC_BEZIER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetWindowTransitionAnimation_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let caseName = 'testGetWindowTransitionAnimation_0200';
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin');
+      let mainWin = windowStage!.getMainWindowSync();
+      expect(!!mainWin).assertTrue();
+      console.info(msgStr + 'Succeeded getMainWindowSync.');
+      const animationConfig: window.WindowAnimationConfig = {
+        duration: 1000,
+        curve: window.WindowAnimationCurve.CUBIC_BEZIER,
+        param: [0.25, 0.1, 0.25, 1.0]
+      };
+      const transitionAnimation: window.TransitionAnimation = {
+        opacity: 0.5,
+        config: animationConfig
+      };
+      try {
+        mainWin.setWindowTransitionAnimation(window.WindowTransitionType.DESTROY, transitionAnimation).then(() => {
+          console.info(msgStr + 'Succeeded in setting window transition animation. Cause:');
+          try {
+            let transitionAnimationResult = mainWin.getWindowTransitionAnimation(window.WindowTransitionType.DESTROY);
+            console.error(msgStr + `success obtain the window transition animation.`+JSON.stringify(transitionAnimationResult));
+            expect(!!transitionAnimationResult).assertTrue();
+            expect(transitionAnimationResult!.opacity).assertLargerOrEqual(0.5);
+            expect(transitionAnimationResult!.config.curve).assertEqual(window.WindowAnimationCurve.CUBIC_BEZIER);
+            expect(transitionAnimationResult!.config.duration).assertEqual(1000);
+            done();
+          } catch (err) {
+            if (isFreeWindowMode) {
+              console.error(msgStr + `Failed to obtain the window transition animation. Cause code: ${err.code}, message: ${err.message}`);
+              expect().assertFail();
+            } else {
+              console.log(msgStr + 'getWindowTransitionAnimation 当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+              console.log(msgStr + JSON.stringify(err))
+              expect(err.code).assertEqual(801);
+            }
+            done();
+          }
+        }).catch((err: Error) => {
+          if (isFreeWindowMode) {
+            console.error(msgStr + `Failed to set window transition animation. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+          } else {
+            console.log(msgStr + 'setWindowTransitionAnimation inner catch 当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+            console.log(msgStr + JSON.stringify(err))
+            expect(err.code).assertEqual(801);
+          }
+          done();
+        });
+      } catch (err) {
+        if (err.code != 801) {
+          console.error(msgStr + `Failed to obtain the window status of window. Cause code: ${err.code}, message: ${err.message}`);
+          expect().assertFail();
+        } else {
+          console.log(msgStr + 'out catch 当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+          console.log(msgStr + JSON.stringify(err))
+          expect(err.code).assertEqual(801);
+        }
+        done();
+      }
+    }) 
       
     })
 

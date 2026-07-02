@@ -23,6 +23,8 @@
 #include "TextCommon/TextPunctuationOverflowTest.cpp"
 #include "TextInput/TextInputPunctuationOverflowTest.cpp"
 #include "TextArea/TextAreaPunctuationOverflowTest.cpp"
+#include "TextCommon/TextTailIndentsTest.cpp"
+#include "TextCommon/ParagraphStyleTailIndentsTest.cpp"
 #include "StyledString/LinearGradientTest.cpp"
 #include "StyledString/RadialGradientTest.cpp"
 
@@ -119,6 +121,20 @@ static napi_value Init(napi_env env, napi_value exports)
         {"TextAreaPunctuationOverflowTest_003", nullptr, TextAreaPunctuationOverflowTest_003, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TextAreaPunctuationOverflowTest_004", nullptr, TextAreaPunctuationOverflowTest_004, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TextAreaPunctuationOverflowTest_005", nullptr, TextAreaPunctuationOverflowTest_005, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"TextTailIndentsTest_001", nullptr, TextTailIndentsTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextTailIndentsTest_002", nullptr, TextTailIndentsTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextTailIndentsTest_003", nullptr, TextTailIndentsTest_003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextTailIndentsTest_004", nullptr, TextTailIndentsTest_004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextTailIndentsTest_005", nullptr, TextTailIndentsTest_005, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"ParagraphStyleTailIndentsTest_001", nullptr, ParagraphStyleTailIndentsTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ParagraphStyleTailIndentsTest_002", nullptr, ParagraphStyleTailIndentsTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ParagraphStyleTailIndentsTest_003", nullptr, ParagraphStyleTailIndentsTest_003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ParagraphStyleTailIndentsTest_004", nullptr, ParagraphStyleTailIndentsTest_004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ParagraphStyleTailIndentsTest_005", nullptr, ParagraphStyleTailIndentsTest_005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ParagraphStyleTailIndentsTest_006", nullptr, ParagraphStyleTailIndentsTest_006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ParagraphStyleTailIndentsTest_007", nullptr, ParagraphStyleTailIndentsTest_007, nullptr, nullptr, nullptr, napi_default, nullptr},
 
         {"LinearGradientTest_001", nullptr, LinearGradientTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"LinearGradientTest_002", nullptr, LinearGradientTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},

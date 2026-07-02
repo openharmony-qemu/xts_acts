@@ -57,6 +57,10 @@ function isDeviceSupportBiometrics(): boolean {
   return isDevicePhone() || isDeviceTablet() || isDevicePC();
 }
 
+function isDeviceSupportPhoneOrPad(): boolean {
+  return isDevicePhone() || isDeviceTablet();
+}
+
 function getBoolSystemParam(key: string, def: boolean): boolean {
   let defStr = def ? 'true' : 'false';
   try {
@@ -2767,4 +2771,204 @@ export default function settingUiJsunit() {
       done();
     });
   })
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openMobileNetworkSettingsPage_error_context_0100
+   * @tc.number SUB_Applications_Settings_openMobileNetworkSettingsPage_error_context_0100
+   * @tc.desc   openMobileNetworkSettingsPage_error_context
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openMobileNetworkSettingsPage_error_context_0100',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void) => {
+      if (!isDeviceSupportPhoneOrPad()) {
+        done();
+        return;
+      }
+      try {
+        settings.openMobileNetworkSettingsPage(abilityContext!.getApplicationContext());
+        expect().assertFail();
+      } catch (err) {
+        console.error("[openMobileNetworkSettingsPage_error_context] error = " + err);
+        expect(err?.code).assertEqual(16900010);
+      }
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openDisplaySettingsPage_error_context_0100
+   * @tc.number SUB_Applications_Settings_openDisplaySettingsPage_error_context_0100
+   * @tc.desc   Settings_openDisplaySettingsPage_error_context
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openDisplaySettingsPage_error_context_0100',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void) => {
+      if (!isDeviceSupportPhoneOrPad()) {
+        done();
+        return;
+      }
+      try {
+        settings.openDisplaySettingsPage(abilityContext!.getApplicationContext());
+        expect().assertFail();
+      } catch (err) {
+        console.error("[openDisplaySettingsPage_error_context] error = " + err);
+        expect(err?.code).assertEqual(16900010);
+      }
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openScreenRefreshRateSettingsPage_error_context_0100
+   * @tc.number SUB_Applications_Settings_openScreenRefreshRateSettingsPage_error_context_0100
+   * @tc.desc   openScreenRefreshRateSettingsPage_error_context
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openScreenRefreshRateSettingsPage_error_context_0100',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void) => {
+      if (!isDeviceSupportPhoneOrPad()) {
+        done();
+        return;
+      }
+      try {
+        settings.openScreenRefreshRateSettingsPage(abilityContext!.getApplicationContext());
+        expect().assertFail();
+      } catch (err) {
+        console.error("[openScreenRefreshRateSettingsPage_error_context] error = " + err);
+        expect(err?.code).assertEqual(16900010);
+      }
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openSoundSettingsPage_error_context_0100
+   * @tc.number SUB_Applications_Settings_openSoundSettingsPage_error_context_0100
+   * @tc.desc   Settings_openSoundSettingsPage_error_context
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openSoundSettingsPage_error_context_0100',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void) => {
+      if (!isDeviceSupportPhoneOrPad()) {
+        done();
+        return;
+      }
+      try {
+        settings.openSoundSettingsPage(abilityContext!.getApplicationContext());
+        expect().assertFail();
+      } catch (err) {
+        console.error("[openSoundSettingsPage_error_context] error = " + err);
+        expect(err?.code).assertEqual(16900010);
+      }
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openBiometricsSettingsPage_error_context_0100
+   * @tc.number SUB_Applications_Settings_openBiometricsSettingsPage_error_context_0100
+   * @tc.desc   Settings_openBiometricsSettingsPage_error_context
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openBiometricsSettingsPage_error_context_0100',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void) => {
+      if (!isDeviceSupportPhoneOrPad()) {
+        done();
+        return;
+      }
+      try {
+        settings.openBiometricsSettingsPage(abilityContext!.getApplicationContext());
+        expect().assertFail();
+      } catch (err) {
+        console.error("[openBiometricsSettingsPage_error_context] error = " + err);
+        expect(err?.code).assertEqual(16900010);
+      }
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openAboutDeviceSettingsPage_error_context_0100
+   * @tc.number SUB_Applications_Settings_openAboutDeviceSettingsPage_error_context_0100
+   * @tc.desc   Settings_openAboutDeviceSettingsPage_error_context
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openAboutDeviceSettingsPage_error_context_0100',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void) => {
+      if (!isDeviceSupportPhoneOrPad()) {
+        done();
+        return;
+      }
+      try {
+        settings.openAboutDeviceSettingsPage(abilityContext!.getApplicationContext());
+        expect().assertFail();
+      } catch (err) {
+        console.error("[openAboutDeviceSettingsPage_error_context] error = " + err);
+        expect(err?.code).assertEqual(16900010);
+      }
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openNfcSettingsPage_error_context_0100
+   * @tc.number SUB_Applications_Settings_openNfcSettingsPage_error_context_0100
+   * @tc.desc   Settings_openNfcSettingsPage_error_context
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openNfcSettingsPage_error_context_0100',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void) => {
+      if (!isDeviceSupportPhoneOrPad()) {
+        done();
+        return;
+      }
+      try {
+        settings.openNfcSettingsPage(abilityContext!.getApplicationContext());
+        expect().assertFail();
+      } catch (err) {
+        console.error("[openNfcSettingsPage_error_context] error = " + err);
+        expect(err?.code).assertEqual(16900010);
+      }
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openAppDetailSettingsPage_error_context_0100
+   * @tc.number SUB_Applications_Settings_openAppDetailSettingsPage_error_context_0100
+   * @tc.desc   Settings_openAppDetailSettingsPage_error_context
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openAppDetailSettingsPage_error_context_0100',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void) => {
+      if (!isDeviceSupportPhoneOrPad()) {
+        done();
+        return;
+      }
+      try {
+        settings.openAppDetailSettingsPage(abilityContext!.getApplicationContext(), 'com.example', 0);
+        expect().assertFail();
+      } catch (err) {
+        console.error("[openAppDetailSettingsPage_error_context] error = " + err);
+        expect(err?.code).assertEqual(16900010);
+      }
+      done();
+    });
 }

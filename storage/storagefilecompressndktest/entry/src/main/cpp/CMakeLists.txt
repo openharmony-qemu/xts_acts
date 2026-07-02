@@ -13,8 +13,7 @@ add_compile_definitions(entry UNIT_TEST)
 
 include_directories(${NATIVERENDER_ROOT_PATH}
                     ${NATIVERENDER_ROOT_PATH}/include)
-include_directories(${HMOS_SDK_NATIVE}/sysroot/usr/include)
-link_directories(${HMOS_SDK_NATIVE}/sysroot/usr/lib/aarch64-linux-ohos)
+
 
 aux_source_directory(. DIR_LIB_SRCS)
 aux_source_directory(ctests DIR_LIB_SRCS)
