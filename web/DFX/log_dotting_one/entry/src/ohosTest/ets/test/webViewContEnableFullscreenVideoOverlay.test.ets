@@ -146,7 +146,7 @@ export default function webViewContEnableFullscreenVideoOverlay() {
     /**
      * @tc.name   testEnableFullscreenVideoOverlay006
      * @tc.number SUB_WEB_ENABLEFULLSCREENVIDEOOVERLAY_0600
-     * @tc.desc   overlay关闭时，通过JS exitFullScreen退出全屏触发onFullScreenExit
+     * @tc.desc   overlay关闭时，点击HTML退出全屏按钮触发onFullScreenExit
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1

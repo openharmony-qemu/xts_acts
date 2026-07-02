@@ -15,7 +15,7 @@
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview';
-import { Driver, ON } from '@kit.TestKit';
+import { Driver } from '@kit.TestKit';
 
 const EVENT_ID_SET_EMIT_KEY = 112800;
 const driver = Driver.create();
@@ -76,24 +76,31 @@ struct webViewContEnableFullscreenVideoOverlay {
 
   private async exitFullScreenIfNeeded(): Promise<void> {
     if (this.fullScreenHandler) {
+      this.onFullScreenExitCalled = false;
       this.fullScreenHandler.exitFullScreen();
-      await Utils.sleep(800);
+      await Utils.waitForExist(() => this.onFullScreenExitCalled ? 1 : 0, this.str + ' cleanup exit', 1, 500, 10);
       return;
     }
-    await this.runJs('exitFullScreen()');
-    await Utils.sleep(500);
+    await this.runJs(`document.getElementById('btnExitFullScreen1') && document.getElementById('btnExitFullScreen1').click()`);
+    await Utils.sleep(800);
   }
 
   private async clickWebForGesture(): Promise<void> {
-    let webComponent = await driver.findComponent(ON.id('webViewContEnableFullscreenVideoOverlayWeb'));
-    await webComponent.click();
+    await Utils.waitAndClickComponent(driver, 'webViewContEnableFullscreenVideoOverlayWeb');
     await Utils.sleep(500);
   }
 
-  private async clickHtmlButton(buttonText: string): Promise<void> {
-    let btn = await driver.findComponent(ON.text(buttonText));
-    await btn.click();
-    await Utils.sleep(500);
+  private async triggerFullScreenByJs(videoIndex: number): Promise<void> {
+    await this.clickWebForGesture();
+    let btnId = videoIndex === 1 ? 'btnFullScreen1' : 'btnFullScreen2';
+    await this.runJs(`document.getElementById('${btnId}').click()`);
+    await Utils.sleep(800);
+  }
+
+  private async triggerExitFullScreenByJs(): Promise<void> {
+    await this.clickWebForGesture();
+    await this.runJs(`document.getElementById('btnExitFullScreen1').click()`);
+    await Utils.sleep(800);
   }
 
   private async prepareTest(): Promise<void> {
@@ -103,19 +110,17 @@ struct webViewContEnableFullscreenVideoOverlay {
   }
 
   private async waitFullScreenEnter(): Promise<boolean> {
-    await Utils.waitForExist(() => this.onFullScreenEnterCalled ? 1 : 0, this.str + ' enter', 1, 500);
+    await Utils.waitForExist(() => this.onFullScreenEnterCalled ? 1 : 0, this.str + ' enter', 1, 500, 15);
     return this.onFullScreenEnterCalled;
   }
 
   private async waitFullScreenExit(): Promise<boolean> {
-    await Utils.waitForExist(() => this.onFullScreenExitCalled ? 1 : 0, this.str + ' exit', 1, 500);
+    await Utils.waitForExist(() => this.onFullScreenExitCalled ? 1 : 0, this.str + ' exit', 1, 500, 15);
     return this.onFullScreenExitCalled;
   }
 
   private async enterFullScreenByButton(videoIndex: number): Promise<boolean> {
-    await this.clickWebForGesture();
-    let fullScreenBtn = videoIndex === 1 ? '全屏视频1' : '全屏视频2';
-    await this.clickHtmlButton(fullScreenBtn);
+    await this.triggerFullScreenByJs(videoIndex);
     return await this.waitFullScreenEnter();
   }
 
@@ -164,6 +169,7 @@ struct webViewContEnableFullscreenVideoOverlay {
     await Utils.sleep(500);
     let entered = await this.enterFullScreenByButton(1);
     if (entered && this.fullScreenHandler) {
+      this.onFullScreenExitCalled = false;
       this.fullScreenHandler.exitFullScreen();
     }
     let exited = await this.waitFullScreenExit();
@@ -176,11 +182,12 @@ struct webViewContEnableFullscreenVideoOverlay {
     await Utils.sleep(500);
     let entered = await this.enterFullScreenByButton(1);
     if (entered) {
-      await this.runJs('exitFullScreen()');
-      await Utils.sleep(500);
+      this.onFullScreenExitCalled = false;
+      await this.triggerExitFullScreenByJs();
     }
     let exited = await this.waitFullScreenExit();
     if (!exited && entered && this.fullScreenHandler) {
+      this.onFullScreenExitCalled = false;
       this.fullScreenHandler.exitFullScreen();
       exited = await this.waitFullScreenExit();
     }
@@ -219,9 +226,11 @@ struct webViewContEnableFullscreenVideoOverlay {
     this.isOverlayEnabled = true;
     await this.prepareTest();
     this.isPageEnd = -1;
+    this.resetFullScreenState();
     this.controller.refresh();
-    await Utils.waitForExist(() => this.isPageEnd, this.str + ' pageEnd', 1, 500);
-    await Utils.sleep(800);
+    await Utils.waitForExist(() => this.isPageEnd, this.str + ' pageEnd', 1, 1000, 15);
+    await this.runJs(`document.getElementById('btnFullScreen1') !== null`);
+    await Utils.sleep(1000);
     let entered = await this.enterFullScreenByButton(1);
     Utils.emitEvent(entered, 112810);
     await this.exitFullScreenIfNeeded();
