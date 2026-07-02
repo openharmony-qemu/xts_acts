@@ -532,6 +532,81 @@ int VIDEO_HW_ENCODE_ROI_FUNC_018()
     return 0;
 }
 
+int VIDEO_HW_ENCODE_ROI_API_019()
+{
+    OH_AVFormat *roiParam = OH_AVFormat_Create();
+    EXPECT_NE(nullptr, roiParam);
+    OH_AVErrCode ret = OH_VideoMetadata_AppendRoiString(nullptr, roiParam);
+    EXPECT_NE(AV_ERR_OK, ret);
+    return 0;
+}
 
+int VIDEO_HW_ENCODE_ROI_API_020()
+{
+    char **roiString = "0,0-100,100=-8;100,100-200,200=dqp:-6,slb:1";
+    OH_AVErrCode ret = OH_VideoMetadata_AppendRoiString(roiString, nullptr);
+    EXPECT_NE(AV_ERR_OK, ret);
+    return 0;
+}
+
+int VIDEO_HW_ENCODE_ROI_API_021()
+{
+    const char *roiString = "0,0-100,100=-8;100,100-200,200=dqp:-6,slb:1";
+    OH_AVErrCode ret = OH_VideoMetadata_GetRoiCount(roiString, nullptr);
+    EXPECT_NE(AV_ERR_OK, ret);
+    return 0;
+}
+
+int VIDEO_HW_ENCODE_ROI_API_022()
+{
+    int32_t roiCount = 0;
+    OH_AVErrCode ret = OH_VideoMetadata_GetRoiCount(nullptr, &roiCount);
+    EXPECT_NE(AV_ERR_OK, ret);
+    return 0;
+}
+
+int VIDEO_HW_ENCODE_ROI_API_023()
+{
+    uint32_t *roiCount = nullptr;
+    int32_t capability = 6;
+    const char *roiString = "0,0-100,100=-8;100,100-200,200=dqp:-6,slb:1";
+    OH_AVErrCode ret = OH_VideoMetadata_ParseRoiString(roiString, nullptr, capability, roiCount);
+    EXPECT_NE(AV_ERR_OK, ret);
+    return 0;
+}
+
+int VIDEO_HW_ENCODE_ROI_API_024()
+{
+    uint32_t *roiCount = nullptr;
+    int32_t capability = 6;
+    H_AVFormat **roiFormats = (OH_AVFormat **)calloc(capability, sizeof(OH_AVFormat *));
+    OH_AVErrCode ret = OH_VideoMetadata_ParseRoiString(nullptr, roiFormats, capability, roiCount);
+    EXPECT_NE(AV_ERR_OK, ret);
+    free(roiFormats);
+    return 0;
+}
+
+int VIDEO_HW_ENCODE_ROI_API_025()
+{
+    int32_t capability = 6;
+    const char *roiString = "0,0-100,100=-8;100,100-200,200=dqp:-6,slb:1";
+    H_AVFormat **roiFormats = (OH_AVFormat **)calloc(capability, sizeof(OH_AVFormat *));
+    OH_AVErrCode ret = OH_VideoMetadata_ParseRoiString(roiString, roiFormats, capability, nullptr);
+    EXPECT_NE(AV_ERR_OK, ret);
+    free(roiFormats);
+    return 0;
+}
+
+int VIDEO_HW_ENCODE_ROI_API_026()
+{
+    uint32_t *roiCount = nullptr;
+    int32_t capability = 100;
+    const char *roiString = "0,0-100,100=-8;100,100-200,200=dqp:-6,slb:1";
+    H_AVFormat **roiFormats = (OH_AVFormat **)calloc(capability, sizeof(OH_AVFormat *));
+    OH_AVErrCode ret = OH_VideoMetadata_ParseRoiString(roiString, roiFormats, capability, roiCount);
+    EXPECT_NE(AV_ERR_OK, ret);
+    free(roiFormats);
+    return 0;
+}
 } // namespace Media
 } // namespace OHOS
