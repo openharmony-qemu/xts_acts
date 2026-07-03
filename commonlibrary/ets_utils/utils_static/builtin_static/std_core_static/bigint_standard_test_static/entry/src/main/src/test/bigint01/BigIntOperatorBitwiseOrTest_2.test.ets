@@ -19,16 +19,16 @@ import { TestType, Size, Level } from '../../../../hypium/Constant';
 function getBigInt(): BigInt { return BigInt(0); }
 
 export default function BigIntOperatorBitwiseOrTest_2(): void {
-  describe('BigInt.operatorBitwiseOr - expanded param dimensions', () => {
+  describe('BigIntOperatorBitwiseOrTest_2', ()=>{
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_OR_1000
-     * @tc.name testBigIntOperatorBitwiseOrByteShortBoundary1000
+     * @tc.number SUB_BIGINT_STD_BITWISE_OR_0001
+     * @tc.name testBigIntOperatorBitwiseOrByteShortBoundary0001
      * @tc.desc operatorBitwiseOr with byte/short type boundary values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseOrByteShortBoundary1000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorBitwiseOrByteShortBoundary0001', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(127).operatorBitwiseOr(BigInt(127)).toString()).assertEqual('127');
       expect(BigInt(-128).operatorBitwiseOr(BigInt(-128)).toString()).assertEqual('-128');
       expect(BigInt(32767).operatorBitwiseOr(BigInt(32767)).toString()).assertEqual('32767');
@@ -42,14 +42,14 @@ export default function BigIntOperatorBitwiseOrTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_OR_1100
-     * @tc.name testBigIntOperatorBitwiseOrIntBoundary1100
+     * @tc.number SUB_BIGINT_STD_BITWISE_OR_0002
+     * @tc.name testBigIntOperatorBitwiseOrIntBoundary0002
      * @tc.desc operatorBitwiseOr with int type boundary values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseOrIntBoundary1100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorBitwiseOrIntBoundary0002', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(2147483647).operatorBitwiseOr(BigInt(0)).toString()).assertEqual('2147483647');
       expect(BigInt(-2147483648).operatorBitwiseOr(BigInt(0)).toString()).assertEqual('-2147483648');
       expect(BigInt(2147483647).operatorBitwiseOr(BigInt(-1)).toString()).assertEqual('-1');
@@ -61,14 +61,14 @@ export default function BigIntOperatorBitwiseOrTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_OR_1200
-     * @tc.name testBigIntOperatorBitwiseOrLongAdjacent1200
+     * @tc.number SUB_BIGINT_STD_BITWISE_OR_0003
+     * @tc.name testBigIntOperatorBitwiseOrLongAdjacent0003
      * @tc.desc operatorBitwiseOr with values adjacent to signed long extrema
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseOrLongAdjacent1200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorBitwiseOrLongAdjacent0003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const nearMax = BigInt('9223372036854775806');
       const nearMin = BigInt('-9223372036854775807');
 
@@ -78,18 +78,19 @@ export default function BigIntOperatorBitwiseOrTest_2(): void {
       expect(nearMin.operatorBitwiseOr(BigInt(-1)).toString()).assertEqual('-1');
       expect(nearMax.operatorBitwiseOr(nearMin).toString()).assertEqual('-1');
       expect(nearMax.operatorBitwiseOr(BigInt(1)).toString()).assertEqual('9223372036854775807');
-      expect(nearMin.operatorBitwiseOr(BigInt(-1)).toString()).assertEqual('-1');
+      expect(nearMax.toString()).assertEqual('9223372036854775806');
+      expect(nearMin.toString()).assertEqual('-9223372036854775807');
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_OR_1300
-     * @tc.name testBigIntOperatorBitwiseOrLargeDigitLength1300
+     * @tc.number SUB_BIGINT_STD_BITWISE_OR_0004
+     * @tc.name testBigIntOperatorBitwiseOrLargeDigitLength0004
      * @tc.desc operatorBitwiseOr with 20-digit and 40-digit large magnitude values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseOrLargeDigitLength1300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorBitwiseOrLargeDigitLength0004', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const v20 = '12345678901234567890';
       const v20_neg = '-12345678901234567890';
       const v40 = '1234567890123456789012345678901234567890';
@@ -108,14 +109,14 @@ export default function BigIntOperatorBitwiseOrTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_OR_1400
-     * @tc.name testBigIntOperatorBitwiseOrCrossFormatConsistency1400
+     * @tc.number SUB_BIGINT_STD_BITWISE_OR_0005
+     * @tc.name testBigIntOperatorBitwiseOrCrossFormatConsistency0005
      * @tc.desc operatorBitwiseOr with BigInt from different constructor formats (number vs string)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseOrCrossFormatConsistency1400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorBitwiseOrCrossFormatConsistency0005', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt('127').operatorBitwiseOr(BigInt('1')).toString()).assertEqual(
         BigInt(127).operatorBitwiseOr(BigInt(1)).toString());
       expect(BigInt('-128').operatorBitwiseOr(BigInt('-1')).toString()).assertEqual(
@@ -129,14 +130,14 @@ export default function BigIntOperatorBitwiseOrTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_OR_1500
-     * @tc.name testBigIntOperatorBitwiseOrNearZeroValues1500
+     * @tc.number SUB_BIGINT_STD_BITWISE_OR_0006
+     * @tc.name testBigIntOperatorBitwiseOrNearZeroValues0006
      * @tc.desc operatorBitwiseOr with values near zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseOrNearZeroValues1500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorBitwiseOrNearZeroValues0006', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(0).operatorBitwiseOr(BigInt(0)).toString()).assertEqual('0');
       expect(BigInt(1).operatorBitwiseOr(BigInt(0)).toString()).assertEqual('1');
       expect(BigInt(0).operatorBitwiseOr(BigInt(1)).toString()).assertEqual('1');
@@ -150,14 +151,14 @@ export default function BigIntOperatorBitwiseOrTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_OR_1600
-     * @tc.name testBigIntOperatorBitwiseOrPowerOfTwo1600
+     * @tc.number SUB_BIGINT_STD_BITWISE_OR_0007
+     * @tc.name testBigIntOperatorBitwiseOrPowerOfTwo0007
      * @tc.desc operatorBitwiseOr with power-of-2 values and adjacent all-1s boundaries
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseOrPowerOfTwo1600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorBitwiseOrPowerOfTwo0007', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(1024).operatorBitwiseOr(BigInt(1023)).toString()).assertEqual('2047');
       expect(BigInt(1048576).operatorBitwiseOr(BigInt(1048575)).toString()).assertEqual('2097151');
       expect(BigInt(2147483648).operatorBitwiseOr(BigInt(2147483647)).toString()).assertEqual('4294967295');
@@ -168,14 +169,14 @@ export default function BigIntOperatorBitwiseOrTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_OR_1700
-     * @tc.name testBigIntOperatorBitwiseOrMultiByteMask1700
+     * @tc.number SUB_BIGINT_STD_BITWISE_OR_0008
+     * @tc.name testBigIntOperatorBitwiseOrMultiByteMask0008
      * @tc.desc operatorBitwiseOr combining multi-byte masks (0x00FF, 0xFF00)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseOrMultiByteMask1700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorBitwiseOrMultiByteMask0008', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(255).operatorBitwiseOr(BigInt(65280)).toString()).assertEqual('65535');
       expect(BigInt(255).operatorBitwiseOr(BigInt(0)).toString()).assertEqual('255');
       expect(BigInt(65280).operatorBitwiseOr(BigInt(0)).toString()).assertEqual('65280');
@@ -187,14 +188,14 @@ export default function BigIntOperatorBitwiseOrTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_OR_1800
-     * @tc.name testBigIntOperatorBitwiseOrDeepBoundary1800
+     * @tc.number SUB_BIGINT_STD_BITWISE_OR_0009
+     * @tc.name testBigIntOperatorBitwiseOrDeepBoundary0009
      * @tc.desc operatorBitwiseOr with 100-digit extreme values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseOrDeepBoundary1800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorBitwiseOrDeepBoundary0009', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const big100 = '9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999';
       const negBig100 = '-' + big100;
 
@@ -206,14 +207,14 @@ export default function BigIntOperatorBitwiseOrTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_OR_1900
-     * @tc.name testBigIntOperatorBitwiseOrSequentialChaining1900
+     * @tc.number SUB_BIGINT_STD_BITWISE_OR_0010
+     * @tc.name testBigIntOperatorBitwiseOrSequentialChaining0010
      * @tc.desc sequential chained operatorBitwiseOr calls without throw
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseOrSequentialChaining1900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorBitwiseOrSequentialChaining0010', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a = BigInt(1);
       const b = BigInt(2);
       const c = BigInt(4);
@@ -228,14 +229,14 @@ export default function BigIntOperatorBitwiseOrTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_OR_2000
-     * @tc.name testBigIntOperatorBitwiseOrAlternatingPattern2000
+     * @tc.number SUB_BIGINT_STD_BITWISE_OR_0011
+     * @tc.name testBigIntOperatorBitwiseOrAlternatingPattern0011
      * @tc.desc operatorBitwiseOr with alternating bit masks (0xAAAA | 0x5555 = 0xFFFF)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseOrAlternatingPattern2000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorBitwiseOrAlternatingPattern0011', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const altEven = BigInt('2863311530');
       const altOdd = BigInt('1431655765');
       const allOnes = BigInt('4294967295');
@@ -249,14 +250,14 @@ export default function BigIntOperatorBitwiseOrTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_OR_2100
-     * @tc.name testBigIntOperatorBitwiseOrCommutativeAcrossBoundaries2100
+     * @tc.number SUB_BIGINT_STD_BITWISE_OR_0012
+     * @tc.name testBigIntOperatorBitwiseOrCommutativeAcrossBoundaries0012
      * @tc.desc operatorBitwiseOr commutativity validated across boundary value pairs
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseOrCommutativeAcrossBoundaries2100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorBitwiseOrCommutativeAcrossBoundaries0012', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const values: BigInt[] = [
         BigInt(0), BigInt(1), BigInt(-1),
         BigInt(127), BigInt(-128),
@@ -276,14 +277,14 @@ export default function BigIntOperatorBitwiseOrTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_OR_2200
-     * @tc.name testBigIntOperatorBitwiseOrIncrementalChain2200
+     * @tc.number SUB_BIGINT_STD_BITWISE_OR_0013
+     * @tc.name testBigIntOperatorBitwiseOrIncrementalChain0013
      * @tc.desc operatorBitwiseOr accumulating bits via incremental chained OR
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseOrIncrementalChain2200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorBitwiseOrIncrementalChain0013', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let acc = BigInt(0);
       const bits: BigInt[] = [
         BigInt(1), BigInt(2), BigInt(4), BigInt(8),
@@ -297,14 +298,14 @@ export default function BigIntOperatorBitwiseOrTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_OR_2300
-     * @tc.name testBigIntOperatorBitwiseOrDisjointHighLow2300
+     * @tc.number SUB_BIGINT_STD_BITWISE_OR_0014
+     * @tc.name testBigIntOperatorBitwiseOrDisjointHighLow0014
      * @tc.desc operatorBitwiseOr combining disjoint high and low bit regions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseOrDisjointHighLow2300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorBitwiseOrDisjointHighLow0014', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const low16 = BigInt(65535);
       const high16 = BigInt('4294901760');
       const full32 = BigInt('4294967295');
@@ -320,14 +321,14 @@ export default function BigIntOperatorBitwiseOrTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_OR_2400
-     * @tc.name testBigIntOperatorBitwiseOrBasicMissing2400
+     * @tc.number SUB_BIGINT_STD_BITWISE_OR_0015
+     * @tc.name testBigIntOperatorBitwiseOrBasicMissing0015
      * @tc.desc operatorBitwiseOr basic function cases not covered by existing tests
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseOrBasicMissing2400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorBitwiseOrBasicMissing0015', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(0).operatorBitwiseOr(BigInt(-5)).toString()).assertEqual('-5');
       expect(BigInt(-5).operatorBitwiseOr(BigInt(0)).toString()).assertEqual('-5');
       expect(BigInt(8).operatorBitwiseOr(BigInt(16)).toString()).assertEqual('24');
@@ -345,14 +346,14 @@ export default function BigIntOperatorBitwiseOrTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_OR_2500
-     * @tc.name testBigIntOperatorBitwiseOrBoundaryMissing2500
+     * @tc.number SUB_BIGINT_STD_BITWISE_OR_0016
+     * @tc.name testBigIntOperatorBitwiseOrBoundaryMissing0016
      * @tc.desc operatorBitwiseOr boundary cases not covered by existing tests
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseOrBoundaryMissing2500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorBitwiseOrBoundaryMissing0016', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const u32max = BigInt('4294967295');
       const u32next = BigInt('4294967296');
       const u64max = BigInt('18446744073709551615');
@@ -362,14 +363,14 @@ export default function BigIntOperatorBitwiseOrTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_OR_2600
-     * @tc.name testBigIntOperatorBitwiseOrSingleBitMissing2600
+     * @tc.number SUB_BIGINT_STD_BITWISE_OR_0017
+     * @tc.name testBigIntOperatorBitwiseOrSingleBitMissing0017
      * @tc.desc operatorBitwiseOr single-bit test cases not covered by existing tests
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseOrSingleBitMissing2600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorBitwiseOrSingleBitMissing0017', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(8).operatorBitwiseOr(BigInt(16)).toString()).assertEqual('24');
       expect(BigInt(16).operatorBitwiseOr(BigInt(32)).toString()).assertEqual('48');
       expect(BigInt(32).operatorBitwiseOr(BigInt(64)).toString()).assertEqual('96');
@@ -385,14 +386,14 @@ export default function BigIntOperatorBitwiseOrTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_OR_2700
-     * @tc.name testBigIntOperatorBitwiseOrMultiBitMissing2700
+     * @tc.number SUB_BIGINT_STD_BITWISE_OR_0018
+     * @tc.name testBigIntOperatorBitwiseOrMultiBitMissing0018
      * @tc.desc operatorBitwiseOr multi-bit combination cases not covered by existing tests
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseOrMultiBitMissing2700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorBitwiseOrMultiBitMissing0018', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(0x0F).operatorBitwiseOr(BigInt(0xF0)).toString()).assertEqual('255');
       expect(BigInt(0x0F0F0F0F).operatorBitwiseOr(BigInt(0xF0F0F0F0)).toString()).assertEqual('4294967295');
       const low32 = BigInt('4294967295');
@@ -408,14 +409,14 @@ export default function BigIntOperatorBitwiseOrTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_OR_2800
-     * @tc.name testBigIntOperatorBitwiseOrNegativeMissing2800
+     * @tc.number SUB_BIGINT_STD_BITWISE_OR_0019
+     * @tc.name testBigIntOperatorBitwiseOrNegativeMissing0019
      * @tc.desc operatorBitwiseOr negative number cases not covered by existing tests
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseOrNegativeMissing2800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorBitwiseOrNegativeMissing0019', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(-2).operatorBitwiseOr(BigInt(-1)).toString()).assertEqual('-1');
       expect(BigInt(-2).operatorBitwiseOr(BigInt(2)).toString()).assertEqual('-2');
       expect(BigInt(-3).operatorBitwiseOr(BigInt(3)).toString()).assertEqual('-1');
@@ -427,14 +428,14 @@ export default function BigIntOperatorBitwiseOrTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_OR_2900
-     * @tc.name testBigIntOperatorBitwiseOrLargeNumberMissing2900
+     * @tc.number SUB_BIGINT_STD_BITWISE_OR_0020
+     * @tc.name testBigIntOperatorBitwiseOrLargeNumberMissing0020
      * @tc.desc operatorBitwiseOr large number cases not covered by existing tests
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseOrLargeNumberMissing2900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorBitwiseOrLargeNumberMissing0020', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const twoPow100 = BigInt(1).operatorLeftShift(BigInt(100));
       expect(twoPow100.operatorBitwiseOr(twoPow100).toString()).assertEqual(twoPow100.toString());
       const twoPow101 = twoPow100.operatorMultiply(BigInt(2));
@@ -443,14 +444,14 @@ export default function BigIntOperatorBitwiseOrTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_OR_2910
-     * @tc.name testBigIntOperatorBitwiseOrLargePowerOfTen2910
+     * @tc.number SUB_BIGINT_STD_BITWISE_OR_0021
+     * @tc.name testBigIntOperatorBitwiseOrLargePowerOfTen0021
      * @tc.desc operatorBitwiseOr with 10^50 large number cases
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseOrLargePowerOfTen2910', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorBitwiseOrLargePowerOfTen0021', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const tenPow50 = BigInt('100000000000000000000000000000000000000000000000000');
       const negTenPow50 = BigInt('-100000000000000000000000000000000000000000000000000');
       expect(tenPow50.operatorBitwiseOr(BigInt(0)).toString()).assertEqual('100000000000000000000000000000000000000000000000000');
@@ -462,14 +463,14 @@ export default function BigIntOperatorBitwiseOrTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_OR_3000
-     * @tc.name testBigIntOperatorBitwiseOrOperationResult3000
+     * @tc.number SUB_BIGINT_STD_BITWISE_OR_0022
+     * @tc.name testBigIntOperatorBitwiseOrOperationResult0022
      * @tc.desc operatorBitwiseOr with operation results as operands
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseOrOperationResult3000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorBitwiseOrOperationResult0022', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(100).operatorAdd(BigInt(200)).operatorBitwiseOr(BigInt(50)).toString()).assertEqual('318');
       expect(BigInt(100).operatorMultiply(BigInt(100)).operatorBitwiseOr(BigInt(255)).toString()).assertEqual('10239');
       expect(BigInt(1).operatorLeftShift(BigInt(8)).operatorBitwiseOr(BigInt(15)).toString()).assertEqual('271');
@@ -484,14 +485,14 @@ export default function BigIntOperatorBitwiseOrTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_OR_3100
-     * @tc.name testBigIntOperatorBitwiseOrPowerAndSpecial3100
+     * @tc.number SUB_BIGINT_STD_BITWISE_OR_0023
+     * @tc.name testBigIntOperatorBitwiseOrPowerAndSpecial0023
      * @tc.desc operatorBitwiseOr power-of-two and special pattern cases
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseOrPowerAndSpecial3100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorBitwiseOrPowerAndSpecial0023', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(1).operatorBitwiseOr(BigInt(2)).operatorBitwiseOr(BigInt(4)).operatorBitwiseOr(BigInt(8)).toString()).assertEqual('15');
       expect(BigInt(1).operatorBitwiseOr(BigInt(4)).operatorBitwiseOr(BigInt(16)).operatorBitwiseOr(BigInt(64)).toString()).assertEqual('85');
       expect(BigInt(2).operatorBitwiseOr(BigInt(8)).operatorBitwiseOr(BigInt(32)).operatorBitwiseOr(BigInt(128)).toString()).assertEqual('170');
@@ -501,14 +502,14 @@ export default function BigIntOperatorBitwiseOrTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_OR_3200
-     * @tc.name testBigIntOperatorBitwiseOrPerformance3200
+     * @tc.number SUB_BIGINT_STD_BITWISE_OR_0024
+     * @tc.name testBigIntOperatorBitwiseOrPerformance0024
      * @tc.desc operatorBitwiseOr performance and stress test cases
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseOrPerformance3200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorBitwiseOrPerformance0024', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let acc = BigInt(0);
       for (let i = 0; i < 1000; i++) {
         acc = acc.operatorBitwiseOr(BigInt(i));
@@ -524,24 +525,19 @@ export default function BigIntOperatorBitwiseOrTest_2(): void {
       for (let i = 0; i < 100; i++) {
         acc3 = acc3.operatorBitwiseOr(BigInt(i));
       }
-      expect(acc3 instanceof BigInt).assertTrue();
-      expect(BigInt(100).operatorBitwiseOr(BigInt(200)).equals(BigInt(100).operatorBitwiseOr(BigInt(200)))).assertTrue();
-      let acc4 = BigInt(0);
-      for (let i = 1; i <= 1000; i++) {
-        acc4 = acc4.operatorBitwiseOr(BigInt(i));
-      }
-      expect(acc4.toString()).assertEqual('1023');
+      expect(acc3.toString()).assertEqual('12345678901234567935');
+      expect(BigInt(100).operatorBitwiseOr(BigInt(200)).toString()).assertEqual('236');
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_OR_3300
-     * @tc.name testBigIntOperatorBitwiseOrBoolAndStringConstruct3300
+     * @tc.number SUB_BIGINT_STD_BITWISE_OR_0025
+     * @tc.name testBigIntOperatorBitwiseOrBoolAndStringConstruct0025
      * @tc.desc operatorBitwiseOr with BigInt constructed from boolean, string "-0", and double
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseOrBoolAndStringConstruct3300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorBitwiseOrBoolAndStringConstruct0025', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(0).operatorBitwiseOr(BigInt(true)).toString()).assertEqual('1');
       expect(BigInt(0).operatorBitwiseOr(BigInt(false)).toString()).assertEqual('0');
       expect(BigInt(0).operatorBitwiseOr(BigInt('-0')).toString()).assertEqual('0');
@@ -550,14 +546,14 @@ export default function BigIntOperatorBitwiseOrTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_OR_3400
-     * @tc.name testBigIntOperatorBitwiseOrStringConstructCombos3400
+     * @tc.number SUB_BIGINT_STD_BITWISE_OR_0026
+     * @tc.name testBigIntOperatorBitwiseOrStringConstructCombos0026
      * @tc.desc operatorBitwiseOr with BigInt constructed from various string and copy-construct sources
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseOrStringConstructCombos3400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorBitwiseOrStringConstructCombos0026', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt('123').operatorBitwiseOr(BigInt('456')).toString()).assertEqual('507');
       const original = BigInt(10);
       expect(BigInt(original).operatorBitwiseOr(BigInt(true)).toString()).assertEqual('11');
@@ -566,14 +562,14 @@ export default function BigIntOperatorBitwiseOrTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_OR_3500
-     * @tc.name testBigIntOperatorBitwiseOrBoundaryExtrema3500
+     * @tc.number SUB_BIGINT_STD_BITWISE_OR_0027
+     * @tc.name testBigIntOperatorBitwiseOrBoundaryExtrema0027
      * @tc.desc operatorBitwiseOr with boundary extrema combinations: short-span, long-span, int-min|1, long-min|1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseOrBoundaryExtrema3500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorBitwiseOrBoundaryExtrema0027', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(32767).operatorBitwiseOr(BigInt(32768)).toString()).assertEqual('65535');
       expect(BigInt('9223372036854775807').operatorBitwiseOr(BigInt('9223372036854775808')).toString()).assertEqual('18446744073709551615');
       expect(BigInt(-2147483648).operatorBitwiseOr(BigInt(1)).toString()).assertEqual('-2147483647');
@@ -581,28 +577,28 @@ export default function BigIntOperatorBitwiseOrTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_OR_3600
-     * @tc.name testBigIntOperatorBitwiseOrCommonPatterns3600
+     * @tc.number SUB_BIGINT_STD_BITWISE_OR_0028
+     * @tc.name testBigIntOperatorBitwiseOrCommonPatterns0028
      * @tc.desc operatorBitwiseOr with common bit patterns: 0xAA|0x55, 127|1, 123456789|987654321
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseOrCommonPatterns3600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorBitwiseOrCommonPatterns0028', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(0xAA).operatorBitwiseOr(BigInt(0x55)).toString()).assertEqual('255');
       expect(BigInt(127).operatorBitwiseOr(BigInt(1)).toString()).assertEqual('127');
       expect(BigInt('123456789').operatorBitwiseOr(BigInt('987654321')).toString()).assertEqual('1071639989');
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_OR_3700
-     * @tc.name testBigIntOperatorBitwiseOrLargePowerOfTwo3700
+     * @tc.number SUB_BIGINT_STD_BITWISE_OR_0029
+     * @tc.name testBigIntOperatorBitwiseOrLargePowerOfTwo0029
      * @tc.desc operatorBitwiseOr with 2^200 and 2^201 using left shift
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseOrLargePowerOfTwo3700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorBitwiseOrLargePowerOfTwo0029', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const twoPow200 = BigInt(1).operatorLeftShift(BigInt(200));
       expect(twoPow200.operatorBitwiseOr(twoPow200).toString()).assertEqual(twoPow200.toString());
       const twoPow201 = twoPow200.operatorMultiply(BigInt(2));
@@ -611,14 +607,14 @@ export default function BigIntOperatorBitwiseOrTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_OR_3800
-     * @tc.name testBigIntOperatorBitwiseOrImmutabilityWithNegative3800
+     * @tc.number SUB_BIGINT_STD_BITWISE_OR_0030
+     * @tc.name testBigIntOperatorBitwiseOrImmutabilityWithNegative0030
      * @tc.desc operatorBitwiseOr does not mutate original operand when operand is -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseOrImmutabilityWithNegative3800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorBitwiseOrImmutabilityWithNegative0030', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a = BigInt(-1);
       const b = BigInt(999);
       const origValue = a.toString();
@@ -628,14 +624,14 @@ export default function BigIntOperatorBitwiseOrTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_OR_3900
-     * @tc.name testBigIntOperatorBitwiseOrEqualsVerify3900
+     * @tc.number SUB_BIGINT_STD_BITWISE_OR_0031
+     * @tc.name testBigIntOperatorBitwiseOrEqualsVerify0031
      * @tc.desc operatorBitwiseOr result verifiable via equals method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseOrEqualsVerify3900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorBitwiseOrEqualsVerify0031', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const result = BigInt(7).operatorBitwiseOr(BigInt(8));
       const expected = BigInt(15);
       expect(result.equals(expected)).assertTrue();
@@ -645,14 +641,14 @@ export default function BigIntOperatorBitwiseOrTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_OR_4000
-     * @tc.name testBigIntOperatorBitwiseOrCommutativityPairs4000
+     * @tc.number SUB_BIGINT_STD_BITWISE_OR_0032
+     * @tc.name testBigIntOperatorBitwiseOrCommutativityPairs0032
      * @tc.desc operatorBitwiseOr commutativity with specific representative pairs
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseOrCommutativityPairs4000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorBitwiseOrCommutativityPairs0032', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const r1 = BigInt(42).operatorBitwiseOr(BigInt(58));
       const r2 = BigInt(58).operatorBitwiseOr(BigInt(42));
       expect(r1.toString()).assertEqual(r2.toString());
@@ -669,14 +665,14 @@ export default function BigIntOperatorBitwiseOrTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_OR_4100
-     * @tc.name testBigIntOperatorBitwiseOrUndefinedAndNullError4100
+     * @tc.number SUB_BIGINT_STD_BITWISE_OR_0033
+     * @tc.name testBigIntOperatorBitwiseOrUndefinedAndNullError0033
      * @tc.desc operatorBitwiseOr throws ClassCastError for undefined and null directly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseOrUndefinedAndNullError4100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorBitwiseOrUndefinedAndNullError0033', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const left = BigInt(10);
       expect((): void => {
         (null as object as BigInt).operatorBitwiseOr(left);

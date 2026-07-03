@@ -25,16 +25,16 @@ class ObjA { a: BigInt = BigInt(0); }
 class ObjB { b: BigInt = BigInt(0); }
 
 export default function BigIntOperatorAddTest_2(): void {
-  describe('BigInt.operatorAdd - expanded param dimensions', () => {
+  describe('BigIntOperatorAddTest_2', () => {
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0800
-     * @tc.name testBigIntOperatorAddByteShortBoundary0800
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0001
+     * @tc.name testBigIntOperatorAddByteShortBoundary0001
      * @tc.desc operatorAdd with byte/short type boundary values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddByteShortBoundary0800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddByteShortBoundary0001', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect((BigInt(127) + BigInt(1)).toString()).assertEqual('128');
       expect((BigInt(-128) + BigInt(-1)).toString()).assertEqual('-129');
       expect((BigInt(127) + BigInt(-128)).toString()).assertEqual('-1');
@@ -44,14 +44,14 @@ export default function BigIntOperatorAddTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0900
-     * @tc.name testBigIntOperatorAddIntBoundary0900
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0002
+     * @tc.name testBigIntOperatorAddIntBoundary0002
      * @tc.desc operatorAdd with int type boundary values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddIntBoundary0900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddIntBoundary0002', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect((BigInt(2147483647) + BigInt(1)).toString()).assertEqual('2147483648');
       expect((BigInt(-2147483648) + BigInt(-1)).toString()).assertEqual('-2147483649');
       expect((BigInt(2147483647) + BigInt(-2147483648)).toString()).assertEqual('-1');
@@ -60,14 +60,14 @@ export default function BigIntOperatorAddTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1000
-     * @tc.name testBigIntOperatorAddLargeDigitLength1000
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0003
+     * @tc.name testBigIntOperatorAddLargeDigitLength0003
      * @tc.desc operatorAdd with 20-digit and 40-digit large magnitude values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddLargeDigitLength1000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddLargeDigitLength0003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const v20 = '12345678901234567890';
       const v20_neg = '-12345678901234567890';
       const v40 = '1234567890123456789012345678901234567890';
@@ -81,14 +81,14 @@ export default function BigIntOperatorAddTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1100
-     * @tc.name testBigIntOperatorAddCrossFormatConsistency1100
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0004
+     * @tc.name testBigIntOperatorAddCrossFormatConsistency0004
      * @tc.desc operatorAdd with BigInt from different constructor formats (number vs string)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddCrossFormatConsistency1100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddCrossFormatConsistency0004', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect((BigInt('127') + BigInt('1')).toString()).assertEqual((BigInt(127) + BigInt(1)).toString());
       expect((BigInt('-128') + BigInt('-1')).toString()).assertEqual((BigInt(-128) + BigInt(-1)).toString());
       expect((BigInt('32767') + BigInt('1')).toString()).assertEqual((BigInt(32767) + BigInt(1)).toString());
@@ -97,14 +97,14 @@ export default function BigIntOperatorAddTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1200
-     * @tc.name testBigIntOperatorAddNearZeroValues1200
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0005
+     * @tc.name testBigIntOperatorAddNearZeroValues0005
      * @tc.desc operatorAdd with values near zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddNearZeroValues1200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddNearZeroValues0005', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect((BigInt(0) + BigInt(0)).toString()).assertEqual('0');
       expect((BigInt(1) + BigInt(-1)).toString()).assertEqual('0');
       expect((BigInt(-1) + BigInt(1)).toString()).assertEqual('0');
@@ -115,14 +115,14 @@ export default function BigIntOperatorAddTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1300
-     * @tc.name testBigIntOperatorAddOrderOfTen1300
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0006
+     * @tc.name testBigIntOperatorAddOrderOfTen0006
      * @tc.desc operatorAdd with powers of 10 and all-9s boundaries
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddOrderOfTen1300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddOrderOfTen0006', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect((BigInt(10) + BigInt(10)).toString()).assertEqual('20');
       expect((BigInt(100) + BigInt(100)).toString()).assertEqual('200');
       expect((BigInt('1000000000000000000') + BigInt('1000000000000000000')).toString()).assertEqual('2000000000000000000');
@@ -132,14 +132,14 @@ export default function BigIntOperatorAddTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1400
-     * @tc.name testBigIntOperatorAddDeepBoundary1400
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0007
+     * @tc.name testBigIntOperatorAddDeepBoundary0007
      * @tc.desc operatorAdd with 100-digit extreme values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddDeepBoundary1400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddDeepBoundary0007', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const big100 = '9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999';
       const big100_2 = '9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999998';
       const negBig100 = '-' + big100;
@@ -152,14 +152,14 @@ export default function BigIntOperatorAddTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1500
-     * @tc.name testBigIntOperatorAddSequentialNoThrow1500
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0008
+     * @tc.name testBigIntOperatorAddSequentialNoThrow0008
      * @tc.desc sequential mixed operatorAdd calls without throw
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddSequentialNoThrow1500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddSequentialNoThrow0008', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a = BigInt(42);
       expect((a + BigInt(10)).toString()).assertEqual('52');
       expect((a + BigInt(-10)).toString()).assertEqual('32');
@@ -170,14 +170,14 @@ export default function BigIntOperatorAddTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1600
-     * @tc.name testBigIntOperatorAddNegPosSymmetry1600
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0009
+     * @tc.name testBigIntOperatorAddNegPosSymmetry0009
      * @tc.desc operatorAdd symmetry: positive + negative of same magnitude
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddNegPosSymmetry1600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddNegPosSymmetry0009', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect((BigInt(5) + BigInt(-5)).toString()).assertEqual('0');
       expect((BigInt(-5) + BigInt(5)).toString()).assertEqual('0');
       expect((BigInt('99999999999999999999') + BigInt('-99999999999999999999')).toString()).assertEqual('0');
@@ -186,14 +186,14 @@ export default function BigIntOperatorAddTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1700
-     * @tc.name testBigIntOperatorAddFromULongBatch
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0010
+     * @tc.name testBigIntOperatorAddFromULongBatch0010
      * @tc.desc operatorAdd with fromULong: positive, neg-arg, mixed, wrap, boundary, bool
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddFromULongBatch', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddFromULongBatch0010', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect((BigInt.fromULong(1) + BigInt.fromULong(2)).toString()).assertEqual('3');
 
       expect((BigInt.fromULong(-1) + BigInt.fromULong(1)).toString()).assertEqual('18446744073709551616');
@@ -212,14 +212,14 @@ export default function BigIntOperatorAddTest_2(): void {
 
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1720
-     * @tc.name testBigIntOperatorAddLargeDigitBatch
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0011
+     * @tc.name testBigIntOperatorAddLargeDigitBatch0011
      * @tc.desc operatorAdd with large multi-digit values (30-digit, 100-digit, 500-digit)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddLargeDigitBatch', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddLargeDigitBatch0011', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const pairs: string[][] = [
         ['122222222222222222222222222222', '988888888888888888888888888888'],
         ['1222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222', '9888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888'],
@@ -239,14 +239,14 @@ export default function BigIntOperatorAddTest_2(): void {
       }
     });
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1747
-     * @tc.name testBigIntOperatorAddVerifyBatch
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0012
+     * @tc.name testBigIntOperatorAddVerifyBatch0012
      * @tc.desc operatorAdd verification: reverse-subtract for representative pairs
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddVerifyBatch', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddVerifyBatch0012', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const pairs: BigInt[][] = [
         [BigInt('12345678901234567890'), BigInt('9876543210987654321')],
         [BigInt('99999999999999999999'), BigInt('1')],
@@ -264,14 +264,14 @@ export default function BigIntOperatorAddTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1780
-     * @tc.name testBigIntOperatorAddDistribBatch
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0013
+     * @tc.name testBigIntOperatorAddDistribBatch0013
      * @tc.desc operatorAdd distributive law: (a + b*c) == (a*c + b*c) for sign combinations
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddDistribBatch', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddDistribBatch0013', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
 
       expect(((BigInt(3) + BigInt(4)) * BigInt(5)).toString()).assertEqual((BigInt(3) * BigInt(5) + BigInt(4) * BigInt(5)).toString());
       expect((BigInt(5) * (BigInt(3) + BigInt(4))).toString()).assertEqual((BigInt(5) * BigInt(3) + BigInt(5) * BigInt(4)).toString());
@@ -291,14 +291,14 @@ export default function BigIntOperatorAddTest_2(): void {
 
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1794
-     * @tc.name testBigIntOperatorAddDistribSubDistrib1794
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0014
+     * @tc.name testBigIntOperatorAddDistribSubDistrib0014
      * @tc.desc operatorAdd with distributive law factor extraction: a*c + b*c = (a+b)*c
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddDistribSubDistrib1794', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddDistribSubDistrib0014', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a = BigInt(7);
       const b = BigInt(3);
       const c = BigInt(11);
@@ -308,14 +308,14 @@ export default function BigIntOperatorAddTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1795
-     * @tc.name testBigIntOperatorAddIdentityZeroBatch
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0015
+     * @tc.name testBigIntOperatorAddIdentityZeroBatch0015
      * @tc.desc operatorAdd zero identity: x + 0 = x for various 0 constructors
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddIdentityZeroBatch', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddIdentityZeroBatch0015', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect((BigInt(42) + BigInt(0)).toString()).assertEqual('42');
       expect((BigInt(42) + BigInt('0')).toString()).assertEqual('42');
       expect((BigInt(42) + BigInt('0x0')).toString()).assertEqual('42');
@@ -344,14 +344,14 @@ export default function BigIntOperatorAddTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1810
-     * @tc.name testBigIntOperatorAddCrossBatch
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0016
+     * @tc.name testBigIntOperatorAddCrossBatch0016
      * @tc.desc operatorAdd cross-constructor: byte+str, bool+int, ulong+str, str+hex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddCrossBatch', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddCrossBatch0016', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect((BigInt(100) + BigInt('50')).toString()).assertEqual('150');
       expect((BigInt(255) + BigInt('0xFF')).toString()).assertEqual('510');
       expect((BigInt(true) + BigInt(0)).toString()).assertEqual('1');
@@ -365,14 +365,14 @@ export default function BigIntOperatorAddTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1830
-     * @tc.name testBigIntOperatorAddRadixBatch
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0017
+     * @tc.name testBigIntOperatorAddRadixBatch0017
      * @tc.desc operatorAdd round-trip: sum.toString() round-trip for representative cases
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddRadixBatch', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddRadixBatch0017', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const cases: BigInt[][] = [
         [BigInt(12345), BigInt(67890)],
         [BigInt('123456789012345678901234567890'), BigInt('98765432109876543210987654321')],
@@ -389,14 +389,14 @@ export default function BigIntOperatorAddTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1845
-     * @tc.name testBigIntOperatorAddChainBatch
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0018
+     * @tc.name testBigIntOperatorAddChainBatch0018
      * @tc.desc operatorAdd chained addition: 3-small, 10-small sum=55, large accum, symmetry
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddChainBatch', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddChainBatch0018', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(((BigInt(10) + BigInt(20)) + BigInt(30)).toString()).assertEqual('60');
       expect((((BigInt(100) + BigInt(-30)) + BigInt(20)) + BigInt(-10)).toString()).assertEqual('80');
       let sum = BigInt(0);
@@ -415,14 +415,14 @@ export default function BigIntOperatorAddTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1860
-     * @tc.name testBigIntOperatorAddChainIdentityStep1860
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0019
+     * @tc.name testBigIntOperatorAddChainIdentityStep0019
      * @tc.desc operatorAdd with chain add with identity check at each step
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddChainIdentityStep1860', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddChainIdentityStep0019', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let s = BigInt(0);
       s = s + BigInt(10); expect(s.toString()).assertEqual('10');
       s = s + BigInt(20); expect(s.toString()).assertEqual('30');
@@ -431,27 +431,27 @@ export default function BigIntOperatorAddTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1861
-     * @tc.name testBigIntOperatorAddChainLargeAltSign1861
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0020
+     * @tc.name testBigIntOperatorAddChainLargeAltSign0020
      * @tc.desc operatorAdd with chain add large alternating sign values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddChainLargeAltSign1861', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddChainLargeAltSign0020', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(((BigInt('99999999999999999999') + BigInt('-50000000000000000000')) + BigInt('10000000000000000000')).toString()).assertEqual('59999999999999999999');
       expect(((BigInt('-99999999999999999999') + BigInt('50000000000000000000')) + BigInt('-10000000000000000000')).toString()).assertEqual('-59999999999999999999');
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1863
-     * @tc.name testBigIntOperatorAddChainHugeSeven1863
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0021
+     * @tc.name testBigIntOperatorAddChainHugeSeven0021
      * @tc.desc operatorAdd with chain add seven huge digit-length values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddChainHugeSeven1863', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddChainHugeSeven0021', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a = '111111111111111111111111111111';
       const b = '222222222222222222222222222222';
       const c = '333333333333333333333333333333';
@@ -464,46 +464,46 @@ export default function BigIntOperatorAddTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1864
-     * @tc.name testBigIntOperatorAddAssocBatch
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0022
+     * @tc.name testBigIntOperatorAddAssocBatch0022
      * @tc.desc operatorAdd associativity for representative sign/cross-format combinations
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddAssocBatch', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(((BigInt(3) + BigInt(5)) + BigInt(7)).toString()).assertEqual((BigInt(3) + BigInt(5) + BigInt(7)).toString());
-      expect(((BigInt(-3) + BigInt(-5)) + BigInt(-7)).toString()).assertEqual((BigInt(-3) + BigInt(-5) + BigInt(-7)).toString());
-      expect(((BigInt(10) + BigInt(-5)) + BigInt(3)).toString()).assertEqual((BigInt(10) + BigInt(-5) + BigInt(3)).toString());
+    it('testBigIntOperatorAddAssocBatch0022', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(((BigInt(3) + BigInt(5)) + BigInt(7)).toString()).assertEqual((BigInt(3) +( BigInt(5) + BigInt(7))).toString());
+      expect(((BigInt(-3) + BigInt(-5)) + BigInt(-7)).toString()).assertEqual((BigInt(-3) + (BigInt(-5) + BigInt(-7))).toString());
+      expect(((BigInt(10) + BigInt(-5)) + BigInt(3)).toString()).assertEqual((BigInt(10) +( BigInt(-5) + BigInt(3))).toString());
       expect(((BigInt('12345678901234567890') + BigInt('9876543210987654321')) + BigInt('11111111111111111111')).toString()).assertEqual((BigInt('12345678901234567890') + BigInt('9876543210987654321') + BigInt('11111111111111111111')).toString());
-      expect(((BigInt(7) + BigInt(7)) + BigInt(7)).toString()).assertEqual((BigInt(7) + BigInt(7) + BigInt(7)).toString());
+      expect(((BigInt(7) + BigInt(7)) + BigInt(7)).toString()).assertEqual((BigInt(7) + (BigInt(7) + BigInt(7))).toString());
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1878
-     * @tc.name testBigIntOperatorAddAssocExtreme1878
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0023
+     * @tc.name testBigIntOperatorAddAssocExtreme0023
      * @tc.desc operatorAdd with associativity at extreme value boundaries
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddAssocExtreme1878', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddAssocExtreme0023', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const max = BigInt('9223372036854775807');
       const min = BigInt('-9223372036854775808');
       const one = BigInt(1);
-      expect(((max + one) + min).toString()).assertEqual((max + one + min).toString());
+      expect(((max + one) + min).toString()).assertEqual((max +( one + min)).toString());
       expect(((max + one) + min).toString()).assertEqual('0');
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1879
-     * @tc.name testBigIntOperatorAddExtremeBatch
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0024
+     * @tc.name testBigIntOperatorAddExtremeBatch0024
      * @tc.desc operatorAdd extreme boundary: max+max, min+min, max+min, max+1, min-1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddExtremeBatch', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddExtremeBatch0024', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const max = BigInt('9223372036854775807');
       const min = BigInt('-9223372036854775808');
       expect((max + max).toString()).assertEqual('18446744073709551614');
@@ -520,27 +520,27 @@ export default function BigIntOperatorAddTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1899
-     * @tc.name testBigIntOperatorAddBonus11991899
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0025
+     * @tc.name testBigIntOperatorAddBonus0025
      * @tc.desc operatorAdd with bonus test for extra coverage
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddBonus11991899', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddBonus0025', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect((BigInt(1199) + BigInt(1199)).toString()).assertEqual('2398');
     expect((BigInt(-1199) + BigInt(-1199)).toString()).assertEqual('-2398');
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1900
-     * @tc.name testBigIntOperatorAddCrossDoubleInt1900
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0026
+     * @tc.name testBigIntOperatorAddCrossDoubleInt0026
      * @tc.desc operatorAdd with this from double and other from int
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddCrossDoubleInt1900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddCrossDoubleInt0026', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(5.0).operatorAdd(BigInt(3)).toString()).assertEqual('8');
       expect(BigInt(10.0).operatorAdd(BigInt(-4)).toString()).assertEqual('6');
       expect(BigInt(-7.0).operatorAdd(BigInt(2)).toString()).assertEqual('-5');
@@ -548,14 +548,14 @@ export default function BigIntOperatorAddTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1901
-     * @tc.name testBigIntOperatorAddCrossCopyBool1901
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0027
+     * @tc.name testBigIntOperatorAddCrossCopyBool0027
      * @tc.desc operatorAdd with this from BigInt copy and other from boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddCrossCopyBool1901', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddCrossCopyBool0027', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const orig10 = BigInt(10);
       const a = BigInt(orig10);
       expect(a.operatorAdd(BigInt(true)).toString()).assertEqual('11');
@@ -568,14 +568,14 @@ export default function BigIntOperatorAddTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1902
-     * @tc.name testBigIntOperatorAddPowerBatch
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0028
+     * @tc.name testBigIntOperatorAddPowerBatch0028
      * @tc.desc operatorAdd with power-of-2 and power-of-10 addition
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddPowerBatch', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddPowerBatch0028', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect((BigInt(2) ** BigInt(50) + BigInt(2) ** BigInt(50)).toString()).assertEqual((BigInt(2) ** BigInt(51)).toString());
       expect((BigInt(2) ** BigInt(100) + BigInt(2) ** BigInt(100)).toString()).assertEqual((BigInt(2) ** BigInt(101)).toString());
       expect((BigInt(2) ** BigInt(200) + BigInt(2) ** BigInt(200)).toString()).assertEqual((BigInt(2) ** BigInt(201)).toString());
@@ -584,55 +584,55 @@ export default function BigIntOperatorAddTest_2(): void {
       expect((BigInt(10) ** BigInt(100) + BigInt(10) ** BigInt(100)).toString()).assertEqual((BigInt(2) * BigInt(10) ** BigInt(100)).toString());
     });
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1905
-     * @tc.name testBigIntOperatorAddLargePowNeg1905
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0029
+     * @tc.name testBigIntOperatorAddLargePowNeg0029
      * @tc.desc operatorAdd with large power negative values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddLargePowNeg1905', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddLargePowNeg0029', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect((-(BigInt(10) ** BigInt(100)) + (-(BigInt(10) ** BigInt(100)))).toString()).assertEqual((-(BigInt(2) * BigInt(10) ** BigInt(100))).toString());
       expect((BigInt(10) ** BigInt(100) + (-(BigInt(10) ** BigInt(100)))).toString()).assertEqual('0');
       expect((BigInt(10) ** BigInt(100) + BigInt(1)).toString()).assertEqual(BigInt(10).pow(BigInt(100)).operatorAdd(BigInt(1)).toString());
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1906
-     * @tc.name testBigIntOperatorAddFuncReturnValue1906
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0030
+     * @tc.name testBigIntOperatorAddFuncReturnValue0030
      * @tc.desc operatorAdd with function return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddFuncReturnValue1906', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddFuncReturnValue0030', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
 
       expect(getBigInt().operatorAdd(BigInt(100)).toString()).assertEqual('200');
       expect(getBigInt().operatorAdd(BigInt(-50)).toString()).assertEqual('50');
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1907
-     * @tc.name testBigIntOperatorAddConditionalExpr1907
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0031
+     * @tc.name testBigIntOperatorAddConditionalExpr0031
      * @tc.desc operatorAdd with conditional expression result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddConditionalExpr1907', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddConditionalExpr0031', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect((true ? BigInt(10) : BigInt(20)).operatorAdd(BigInt(30)).toString()).assertEqual('40');
       expect((false ? BigInt(10) : BigInt(20)).operatorAdd(BigInt(30)).toString()).assertEqual('50');
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1908
-     * @tc.name testBigIntOperatorAddArrayElement1908
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0032
+     * @tc.name testBigIntOperatorAddArrayElement0032
      * @tc.desc operatorAdd with array element access
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddArrayElement1908', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddArrayElement0032', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr: BigInt[] = [BigInt(10), BigInt(20), BigInt(30)];
       expect(arr[0].operatorAdd(arr[1]).toString()).assertEqual('30');
       expect(arr[1].operatorAdd(arr[2]).toString()).assertEqual('50');
@@ -640,14 +640,14 @@ export default function BigIntOperatorAddTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1909
-     * @tc.name testBigIntOperatorAddObjectProperty1909
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0033
+     * @tc.name testBigIntOperatorAddObjectProperty0033
      * @tc.desc operatorAdd with object property access
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddObjectProperty1909', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddObjectProperty0033', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
 
       const objA: ObjA = new ObjA();
       objA.a = BigInt(10);
@@ -658,14 +658,14 @@ export default function BigIntOperatorAddTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1910
-     * @tc.name testBigIntOperatorAddEqualsConsistency1910
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0034
+     * @tc.name testBigIntOperatorAddEqualsConsistency0034
      * @tc.desc operatorAdd result consistency with equals and operator+
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddEqualsConsistency1910', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddEqualsConsistency0034', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a = BigInt(100);
       const b = BigInt(200);
       const result = a.operatorAdd(b);
@@ -676,14 +676,14 @@ export default function BigIntOperatorAddTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1911
-     * @tc.name testBigIntOperatorAddZeroToStringNegZero1911
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0035
+     * @tc.name testBigIntOperatorAddZeroToStringNegZero0035
      * @tc.desc operatorAdd with zero and string "-0" constructed BigInt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddZeroToStringNegZero1911', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddZeroToStringNegZero0035', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const zero = BigInt(0);
       const other = BigInt('-0');
       expect(zero.operatorAdd(other).toString()).assertEqual('0');
@@ -692,14 +692,14 @@ export default function BigIntOperatorAddTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1914
-     * @tc.name testBigIntOperatorAddReturnBigIntInstance1914
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0036
+     * @tc.name testBigIntOperatorAddReturnBigIntInstance0036
      * @tc.desc operatorAdd return value is BigInt instance and original unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddReturnBigIntInstance1914', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddReturnBigIntInstance0036', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a = BigInt(10);
       const b = BigInt(20);
       const result = a.operatorAdd(b);
@@ -712,28 +712,28 @@ export default function BigIntOperatorAddTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1915
-     * @tc.name testBigIntOperatorAddStringConstructPosPos1915
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0037
+     * @tc.name testBigIntOperatorAddStringConstructPosPos0037
      * @tc.desc operatorAdd with both operands from string constructor (positive)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddStringConstructPosPos1915', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddStringConstructPosPos0037', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect((BigInt('123') + BigInt('456')).toString()).assertEqual('579');
       expect((BigInt('111111111111111111111111111111') + BigInt('222222222222222222222222222222')).toString()).assertEqual('333333333333333333333333333333');
       expect((BigInt('999999999999999999999999999999') + BigInt('999999999999999999999999999999')).toString()).assertEqual('1999999999999999999999999999998');
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1916
-     * @tc.name testBigIntOperatorAddIntBoundaryCrossZero1916
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0038
+     * @tc.name testBigIntOperatorAddIntBoundaryCrossZero0038
      * @tc.desc operatorAdd with int boundary cross zero identity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddIntBoundaryCrossZero1916', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddIntBoundaryCrossZero0038', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect((BigInt(2147483647) + BigInt(-2147483647)).toString()).assertEqual('0');
       expect((BigInt(-2147483648) + BigInt('2147483648')).toString()).assertEqual('0');
       expect((BigInt('9223372036854775807') + BigInt('-9223372036854775807')).toString()).assertEqual('0');
@@ -741,14 +741,14 @@ export default function BigIntOperatorAddTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1917
-     * @tc.name testBigIntOperatorAddBasicPatternsBatch
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0039
+     * @tc.name testBigIntOperatorAddBasicPatternsBatch0039
      * @tc.desc operatorAdd with digit combos and neg-pos patterns
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddBasicPatternsBatch', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddBasicPatternsBatch0039', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect((BigInt(10) + BigInt(20)).toString()).assertEqual('30');
       expect((BigInt(100) + BigInt(200)).toString()).assertEqual('300');
       expect((BigInt(1000) + BigInt(2000)).toString()).assertEqual('3000');
@@ -763,14 +763,14 @@ export default function BigIntOperatorAddTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1919
-     * @tc.name testBigIntOperatorAddMapGetValue1919
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0040
+     * @tc.name testBigIntOperatorAddMapGetValue0040
      * @tc.desc operatorAdd with Map get value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddMapGetValue1919', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddMapGetValue0040', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
 
       const map: Map<string, BigInt> = new Map<string, BigInt>();
       map.set('a', BigInt(10));
@@ -783,42 +783,42 @@ export default function BigIntOperatorAddTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1920
-     * @tc.name testBigIntOperatorAddChainConsistency1920
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0041
+     * @tc.name testBigIntOperatorAddChainConsistency0041
      * @tc.desc operatorAdd chain result consistency with single addition
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddChainConsistency1920', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddChainConsistency0041', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(10).operatorAdd(BigInt(20)).operatorAdd(BigInt(30)).toString()).assertEqual('60');
       expect((BigInt(10) + BigInt(20) + BigInt(30)).toString()).assertEqual('60');
       expect(BigInt(10).operatorAdd(BigInt(20)).operatorAdd(BigInt(30)).equals(BigInt(10) + BigInt(20) + BigInt(30))).assertTrue();
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1921
-     * @tc.name testBigIntOperatorAddNegPosLargeMixed1921
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0042
+     * @tc.name testBigIntOperatorAddNegPosLargeMixed0042
      * @tc.desc operatorAdd with mixed large pos+neg crossing type boundaries
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddNegPosLargeMixed1921', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddNegPosLargeMixed0042', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect((BigInt('5000000000000000000') + BigInt('-1000000000000000000')).toString()).assertEqual('4000000000000000000');
       expect((BigInt('-5000000000000000000') + BigInt('1000000000000000000')).toString()).assertEqual('-4000000000000000000');
       expect((BigInt('18446744073709551615') + BigInt('-9223372036854775808')).toString()).assertEqual('9223372036854775807');
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1922
-     * @tc.name testBigIntOperatorAddLargePowMixed1922
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0043
+     * @tc.name testBigIntOperatorAddLargePowMixed0043
      * @tc.desc operatorAdd with large pow values + small adjust
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddLargePowMixed1922', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddLargePowMixed0043', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const pow100 = BigInt(10) ** BigInt(100);
       expect((pow100 + BigInt(1)).toString()).assertEqual(BigInt(10).pow(BigInt(100)).operatorAdd(BigInt(1)).toString());
       expect((pow100 + BigInt(-1)).toString()).assertEqual(BigInt(10).pow(BigInt(100)).operatorSubtract(BigInt(1)).toString());
@@ -831,14 +831,14 @@ export default function BigIntOperatorAddTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_1923
-     * @tc.name testBigIntOperatorAddHexDecimalLarge1923
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0044
+     * @tc.name testBigIntOperatorAddHexDecimalLarge0044
      * @tc.desc operatorAdd with hex large + decimal large
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddHexDecimalLarge1923', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddHexDecimalLarge0044', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect((BigInt('18446744073709551615') + BigInt('1')).toString()).assertEqual('18446744073709551616');
       expect((BigInt('18446744073709551615') + BigInt('-1')).toString()).assertEqual('18446744073709551614');
       expect((BigInt('-18446744073709551615') + BigInt('-1')).toString()).assertEqual('-18446744073709551616');
