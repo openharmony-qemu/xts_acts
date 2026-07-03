@@ -1437,7 +1437,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_10000
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_0100
      * @tc.name      testNumericCastingConversions0100
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -1451,7 +1451,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_10100
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_0200
      * @tc.name      testNumericCastingConversions0101
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -1465,7 +1465,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_10200
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_0300
      * @tc.name      testNumericCastingConversions0102
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -1479,7 +1479,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_10300
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_0400
      * @tc.name      testNumericCastingConversions0103
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -1493,7 +1493,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_10400
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_0500
      * @tc.name      testNumericCastingConversions0104
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -1507,7 +1507,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_10500
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_0600
      * @tc.name      testNumericCastingConversions0105
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -1521,7 +1521,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_10600
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_0700
      * @tc.name      testNumericCastingConversions0106
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -1535,7 +1535,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_10700
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_0800
      * @tc.name      testNumericCastingConversions0107
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -1549,7 +1549,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_10800
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_0900
      * @tc.name      testNumericCastingConversions0108
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -1563,7 +1563,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_10900
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_1000
      * @tc.name      testNumericCastingConversions0109
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -1577,7 +1577,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_11000
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_1100
      * @tc.name      testNumericCastingConversions0110
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -1591,7 +1591,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_11100
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_1200
      * @tc.name      testNumericCastingConversions0111
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -1605,7 +1605,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_11200
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_1300
      * @tc.name      testNumericCastingConversions0112
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -1619,7 +1619,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_11300
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_1400
      * @tc.name      testNumericCastingConversions0113
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -1633,7 +1633,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_11400
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_1500
      * @tc.name      testNumericCastingConversions0114
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -1647,7 +1647,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_11500
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_1600
      * @tc.name      testNumericCastingConversions0115
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -1661,7 +1661,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_11600
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_1700
      * @tc.name      testNumericCastingConversions0116
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -1675,7 +1675,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_11700
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_1800
      * @tc.name      testNumericCastingConversions0117
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -1689,7 +1689,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_11800
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_1900
      * @tc.name      testNumericCastingConversions0118
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -1703,7 +1703,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_11900
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_2000
      * @tc.name      testNumericCastingConversions0119
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -1717,7 +1717,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_12000
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_2100
      * @tc.name      testNumericCastingConversions0120
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -1731,7 +1731,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_12100
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_2200
      * @tc.name      testNumericCastingConversions0121
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -1745,7 +1745,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_12200
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_2300
      * @tc.name      testNumericCastingConversions0122
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -1759,7 +1759,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_12300
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_2400
      * @tc.name      testNumericCastingConversions0123
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -1773,7 +1773,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_12400
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_2500
      * @tc.name      testNumericCastingConversions0124
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -1787,7 +1787,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_12500
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_2600
      * @tc.name      testNumericCastingConversions0125
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -1801,7 +1801,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_12600
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_2700
      * @tc.name      testNumericCastingConversions0126
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -1815,7 +1815,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_12700
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_2800
      * @tc.name      testNumericCastingConversions0127
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -1829,7 +1829,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_12800
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_2900
      * @tc.name      testNumericCastingConversions0128
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -1843,7 +1843,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_12900
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_3000
      * @tc.name      testNumericCastingConversions0129
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -1857,7 +1857,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_13000
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_3100
      * @tc.name      testNumericCastingConversions0130
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -1871,7 +1871,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_13100
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_3200
      * @tc.name      testNumericCastingConversions0131
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -1885,7 +1885,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_13200
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_3300
      * @tc.name      testNumericCastingConversions0132
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -1899,7 +1899,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_13300
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_3400
      * @tc.name      testNumericCastingConversions0133
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -1913,91 +1913,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_13400
-     * @tc.name      testNumericCastingConversions0134
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0134", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s1: Double = Double.NEGATIVE_INFINITY;
-      let data1: Double = Double.toDouble(s1);
-      expect(data1).assertEqual(Double.NEGATIVE_INFINITY);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_13500
-     * @tc.name      testNumericCastingConversions0135
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0135", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s2: Double = -1.7976931348623157E308;
-      let data2: Double = Double.toDouble(s2);
-      expect(data2).assertEqual(-1.7976931348623157E308);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_13600
-     * @tc.name      testNumericCastingConversions0136
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0136", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s3: Double = -3.4028234663852886E38;
-      let data3: Double = Double.toDouble(s3);
-      expect(data3).assertEqual(-3.4028234663852886E38);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_13700
-     * @tc.name      testNumericCastingConversions0137
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0137", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s4: Double = -9.223372036854776E18;
-      let data4: Double = Double.toDouble(s4);
-      expect(data4).assertEqual(-9.223372036854776E18);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_13800
-     * @tc.name      testNumericCastingConversions0138
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0138", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s5: Double = -2.147483648E9;
-      let data5: Double = Double.toDouble(s5);
-      expect(data5).assertEqual(-2.147483648E9);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_13900
-     * @tc.name      testNumericCastingConversions0139
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0139", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s6: Double = -2.147483647E9;
-      let data6: Double = Double.toDouble(s6);
-      expect(data6).assertEqual(-2.147483647E9);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_14000
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_3500
      * @tc.name      testNumericCastingConversions0140
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -2011,147 +1927,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_14100
-     * @tc.name      testNumericCastingConversions0141
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0141", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s7: Double = -65537.0;
-      let data7: Double = Double.toDouble(s7);
-      expect(data7).assertEqual(-65537.0);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_14200
-     * @tc.name      testNumericCastingConversions0142
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0142", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s8: Double = -65536.0;
-      let data8: Double = Double.toDouble(s8);
-      expect(data8).assertEqual(-65536.0);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_14300
-     * @tc.name      testNumericCastingConversions0143
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0143", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s9: Double = -65535.0;
-      let data9: Double = Double.toDouble(s9);
-      expect(data9).assertEqual(-65535.0);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_14400
-     * @tc.name      testNumericCastingConversions0144
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0144", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s10: Double = -32769.0;
-      let data10: Double = Double.toDouble(s10);
-      expect(data10).assertEqual(-32769.0);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_14500
-     * @tc.name      testNumericCastingConversions0145
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0145", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s11: Double = -32768.0;
-      let data11: Double = Double.toDouble(s11);
-      expect(data11).assertEqual(-32768.0);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_14600
-     * @tc.name      testNumericCastingConversions0146
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0146", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s12: Double = -32767.0;
-      let data12: Double = Double.toDouble(s12);
-      expect(data12).assertEqual(-32767.0);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_14700
-     * @tc.name      testNumericCastingConversions0147
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0147", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s13: Double = -129.0;
-      let data13: Double = Double.toDouble(s13);
-      expect(data13).assertEqual(-129.0);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_14800
-     * @tc.name      testNumericCastingConversions0148
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0148", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s14: Double = -128.0;
-      let data14: Double = Double.toDouble(s14);
-      expect(data14).assertEqual(-128.0);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_14900
-     * @tc.name      testNumericCastingConversions0149
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0149", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s15: Double = -127.0;
-      let data15: Double = Double.toDouble(s15);
-      expect(data15).assertEqual(-127.0);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_15000
-     * @tc.name      testNumericCastingConversions0150
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0150", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s16: Double = -3.1415926;
-      let data16: Double = Double.toDouble(s16);
-      expect(data16).assertEqual(-3.1415926);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_15100
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_3600
      * @tc.name      testNumericCastingConversions0151
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -2165,147 +1941,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_15200
-     * @tc.name      testNumericCastingConversions0152
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0152", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s17: Double = -1.0;
-      let data17: Double = Double.toDouble(s17);
-      expect(data17).assertEqual(-1.0);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_15300
-     * @tc.name      testNumericCastingConversions0153
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0153", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s18: Double = -2.2250738585072014E-308;
-      let data18: Double = Double.toDouble(s18);
-      expect(data18).assertEqual(-2.2250738585072014E-308);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_15400
-     * @tc.name      testNumericCastingConversions0154
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0154", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s19: Double = -4.9E-308;
-      let data19: Double = Double.toDouble(s19);
-      expect(data19).assertEqual(-4.9E-308);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_15500
-     * @tc.name      testNumericCastingConversions0155
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0155", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s20: Double = -0.0;
-      let data20: Double = Double.toDouble(s20);
-      expect(data20).assertEqual(0.0);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_15600
-     * @tc.name      testNumericCastingConversions0156
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0156", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s21: Double = 0.0;
-      let data21: Double = Double.toDouble(s21);
-      expect(data21).assertEqual(0.0);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_15700
-     * @tc.name      testNumericCastingConversions0157
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0157", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s22: Double = 4.9E-308;
-      let data22: Double = Double.toDouble(s22);
-      expect(data22).assertEqual(4.9E-308);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_15800
-     * @tc.name      testNumericCastingConversions0158
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0158", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s23: Double = 2.2250738585072014E-308;
-      let data23: Double = Double.toDouble(s23);
-      expect(data23).assertEqual(2.2250738585072014E-308);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_15900
-     * @tc.name      testNumericCastingConversions0159
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0159", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s24: Double = 1.0;
-      let data24: Double = Double.toDouble(s24);
-      expect(data24).assertEqual(1.0);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_16000
-     * @tc.name      testNumericCastingConversions0160
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0160", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s25: Double = 3.1415926;
-      let data25: Double = Double.toDouble(s25);
-      expect(data25).assertEqual(3.1415926);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_16100
-     * @tc.name      testNumericCastingConversions0161
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0161", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s26: Double = 126.0;
-      let data26: Double = Double.toDouble(s26);
-      expect(data26).assertEqual(126.0);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_16200
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_3700
      * @tc.name      testNumericCastingConversions0162
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -2319,147 +1955,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_16300
-     * @tc.name      testNumericCastingConversions0163
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0163", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s27: Double = 127.0;
-      let data27: Double = Double.toDouble(s27);
-      expect(data27).assertEqual(127.0);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_16400
-     * @tc.name      testNumericCastingConversions0164
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0164", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s28: Double = 128.0;
-      let data28: Double = Double.toDouble(s28);
-      expect(data28).assertEqual(128.0);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_16500
-     * @tc.name      testNumericCastingConversions0165
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0165", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s29: Double = 32766.0;
-      let data29: Double = Double.toDouble(s29);
-      expect(data29).assertEqual(32766.0);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_16600
-     * @tc.name      testNumericCastingConversions0166
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0166", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s30: Double = 32767.0;
-      let data30: Double = Double.toDouble(s30);
-      expect(data30).assertEqual(32767.0);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_16700
-     * @tc.name      testNumericCastingConversions0167
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0167", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s31: Double = 32768.0;
-      let data31: Double = Double.toDouble(s31);
-      expect(data31).assertEqual(32768.0);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_16800
-     * @tc.name      testNumericCastingConversions0168
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0168", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s32: Double = 65534.0;
-      let data32: Double = Double.toDouble(s32);
-      expect(data32).assertEqual(65534.0);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_16900
-     * @tc.name      testNumericCastingConversions0169
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0169", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s33: Double = 65535.0;
-      let data33: Double = Double.toDouble(s33);
-      expect(data33).assertEqual(65535.0);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_17000
-     * @tc.name      testNumericCastingConversions0170
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0170", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s34: Double = 65536.0;
-      let data34: Double = Double.toDouble(s34);
-      expect(data34).assertEqual(65536.0);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_17100
-     * @tc.name      testNumericCastingConversions0171
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0171", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s35: Double = 2.147483646E9;
-      let data35: Double = Double.toDouble(s35);
-      expect(data35).assertEqual(2.147483646E9);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_17200
-     * @tc.name      testNumericCastingConversions0172
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0172", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s36: Double = 2.147483647E9;
-      let data36: Double = Double.toDouble(s36);
-      expect(data36).assertEqual(2.147483647E9);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_17300
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_3800
      * @tc.name      testNumericCastingConversions0173
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
@@ -2473,63 +1969,7 @@ export default function NumericCastingConversionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_17400
-     * @tc.name      testNumericCastingConversions0174
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0174", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s37: Double = 9.223372036854776E18;
-      let data37: Double = Double.toDouble(s37);
-      expect(data37).assertEqual(9.223372036854776E18);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_17500
-     * @tc.name      testNumericCastingConversions0175
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0175", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s38: Double = 3.4028234663852886E38;
-      let data38: Double = Double.toDouble(s38);
-      expect(data38).assertEqual(3.4028234663852886E38);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_17600
-     * @tc.name      testNumericCastingConversions0176
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0176", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s39: Double = 1.7976931348623157E308;
-      let data39: Double = Double.toDouble(s39);
-      expect(data39).assertEqual(1.7976931348623157E308);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_17700
-     * @tc.name      testNumericCastingConversions0177
-     * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericCastingConversions0177", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s40: Double = Double.POSITIVE_INFINITY;
-      let data40: Double = Double.toDouble(s40);
-      expect(data40).assertEqual(Double.POSITIVE_INFINITY);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_17800
+     * @tc.number    SUB_NUMERIC_CASTING_CONVERSIONS_ONE_3900
      * @tc.name      testNumericCastingConversions0178
      * @tc.desc      A numeric casting conversion occurs if the target type and the expression type are both numeric or char.
      * @tc.size      MediumTest
