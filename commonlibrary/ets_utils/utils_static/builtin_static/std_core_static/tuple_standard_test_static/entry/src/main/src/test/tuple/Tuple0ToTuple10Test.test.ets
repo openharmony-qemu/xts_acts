@@ -525,27 +525,27 @@ export default function Tuple0ToTuple10Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTuple0ToTuple032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v1: int = new Tuple1<int>(42).$0;
-      expect(v1).assertEqual(42);
+   it('testTuple0ToTuple032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s1i: int = new Tuple1<int>(42).$0;
+      expect(s1i).assertEqual(42);
       let s1: string = new Tuple1<string>("hello").$0;
       expect(s1).assertEqual("hello");
-      let v2: string = new Tuple2IS(1, "two").$1;
-      expect(v2).assertEqual("two");
-      let v3: boolean = new Tuple3ISB(100, "beta", false).$2;
-      expect(v3).assertFalse();
-      let v4: double = new Tuple4ISBD(200, "gamma", true, 2.71).$3;
-      expect(v4).assertEqual(2.71);
-      let v6: char = new Tuple6ISBDFC(20, "world", false, 2.71, 3.5 as float, c'Z').$5;
-      expect(v6).assertEqual(c'Z');
-      let v7: int = new Tuple7ISBDFCI(20, "world", false, 2.71, 3.5 as float, c'Z', 88).$6;
-      expect(v7).assertEqual(88);
-      let v8: string = new Tuple8ISBDFCIS(20, "world", false, 2.71, 3.5 as float, c'Z', 88, "done").$7;
-      expect(v8).assertEqual("done");
-      let v9: boolean = new Tuple9ISBDFCISB(20, "world", false, 2.71, 3.5 as float, c'Z', 88, "done", true).$8;
-      expect(v9).assertTrue();
-      let v10: int = new Tuple10ISBDFCISBI(20, "world", false, 2.71, 3.5, c'Z', 88, "done", true, 999).$9;
-      expect(v10).assertEqual(999);
+      let s2: string = new Tuple2IS(1, "two").$1;
+      expect(s2).assertEqual("two");
+      let s3: boolean = new Tuple3ISB(100, "beta", false).$2;
+      expect(s3).assertFalse();
+      let s4: double = new Tuple4ISBD(200, "gamma", true, 2.71).$3;
+      expect(s4).assertEqual(2.71);
+      let s6: char = new Tuple6ISBDFC(20, "world", false, 2.71, 3.5 as float, c'Z').$5;
+      expect(s6).assertEqual(c'Z');
+      let s7: int = new Tuple7ISBDFCI(20, "world", false, 2.71, 3.5 as float, c'Z', 88).$6;
+      expect(s7).assertEqual(88);
+      let s8: string = new Tuple8ISBDFCIS(20, "world", false, 2.71, 3.5 as float, c'Z', 88, "done").$7;
+      expect(s8).assertEqual("done");
+      let s9: boolean = new Tuple9ISBDFCISB(20, "world", false, 2.71, 3.5 as float, c'Z', 88, "done", true).$8;
+      expect(s9).assertTrue();
+      let s10: int = new Tuple10ISBDFCISBI(20, "world", false, 2.71, 3.5, c'Z', 88, "done", true, 999).$9;
+      expect(s10).assertEqual(999);
     });
 
     /**
