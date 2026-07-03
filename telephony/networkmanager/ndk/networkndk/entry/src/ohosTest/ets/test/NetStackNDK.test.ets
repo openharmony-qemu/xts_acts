@@ -822,5 +822,31 @@ export default function NetStackNDKTest() {
       done();
     });
 
+    /**
+     * @tc.name   testOHNetStackCreateAndVerifySortedCertChain_0100
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKCREATEANDVERIFYSORTEDCERTCHAIN_0100
+     * @tc.desc   ：Create and verify sorted cert chain with valid PEM cert and caCert.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackCreateAndVerifySortedCertChain_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackCreateAndVerifySortedCertChain(pemPath);
+      expect(result).assertEqual(WEBSOCKET_OK);
+    });
+
+    /**
+     * @tc.name   testOHNetStackFreeCertChain_0100
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNETSTACKFREECERTCHAIN_0100
+     * @tc.desc   ：Free cert chain allocated by CreateAndVerifySortedCertChain.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHNetStackFreeCertChain_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let result : number = wsAPI.OHNetStackFreeCertChain();
+      expect(result).assertEqual(WEBSOCKET_OK);
+    });
+
   });
 }

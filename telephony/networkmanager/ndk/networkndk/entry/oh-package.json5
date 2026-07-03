@@ -21,7 +21,7 @@
   "author": "",
   "license": "",
   "dependencies": {
-    "@types/libtestNetStackNdk.so": "file:./src/main/cpp/types/testNetStackNdk",
-    "@types/libtestNetConnectNdk.so": "file:./src/main/cpp/types/testNetConnectNdk"
+    "libtestNetStackNdk.so": "file:./src/main/cpp/types/testNetStackNdk",
+    "libtestNetConnectNdk.so": "file:./src/main/cpp/types/testNetConnectNdk"
   }
 }
