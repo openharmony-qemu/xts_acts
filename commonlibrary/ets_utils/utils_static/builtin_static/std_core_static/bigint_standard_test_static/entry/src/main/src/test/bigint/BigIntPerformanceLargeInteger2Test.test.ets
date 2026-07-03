@@ -20,13 +20,13 @@ export default function BigIntPerformanceLargeInteger2Test(): void {
   describe('testBigIntPerformanceLargeInteger2Test', (): void => {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_PERFORMANCE_LARGE_INTEGER_0800
-     * @tc.name testBigIntPerformanceLargeInteger2Test0100
+     * @tc.name testBigIntPerformanceLargeInteger2Test008
      * @tc.desc Verify 1280 repeated operatorDecrement steps subtract 1280 from 2^4096
      * @tc.size LargeTest
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('testBigIntPerformanceLargeInteger2Test0100', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
+    it('testBigIntPerformanceLargeInteger2Test008', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       const base = BigInt(2).pow(BigInt(4096));
       let acc = base;
       for (let i = 0; i < 1280; i++) {
@@ -547,7 +547,7 @@ export default function BigIntPerformanceLargeInteger2Test(): void {
       const p4096 = BigInt(2).pow(BigInt(4096));
       const str10 = p4096.toString(10);
       expect(str10.length).assertEqual(1234);
-      expect(str10.charAt(0)).assertEqual('1');
+      expect(str10.charAt(0)).assertEqual(c'1');
       expect(BigInt(str10).equals(p4096)).assertTrue();
       expect(p4096.toString()).assertEqual(str10);
     });

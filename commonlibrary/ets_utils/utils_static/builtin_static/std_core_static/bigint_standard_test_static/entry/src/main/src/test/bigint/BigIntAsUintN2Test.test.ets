@@ -209,11 +209,32 @@ export default function BigIntAsUintN2Test(): void {
       expect(once16.equals(BigInt(4464))).assertTrue();
       const twice16 = BigInt.asUintN(16, once16);
       expect(once16.equals(twice16)).assertTrue();
-      const once32 = BigInt.asUintN(32, Utils.biInt(4294967338));
+      const once32 = BigInt.asUintN(32, Utils.biStr('4294967338'));
       expect(once32.equals(BigInt(42))).assertTrue();
       const twice32 = BigInt.asUintN(32, once32);
       expect(once32.equals(twice32)).assertTrue();
     });
-
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_ASUINTN_2500
+     * @tc.name testBigIntAsUintN2Test025
+     * @tc.desc Verify non-integer Number/NaN/Infinity throws ClassCastError for BigInt.asUintN
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntAsUintN2Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect((): void => {
+        BigInt.asUintN(8, 1.5 as Object as BigInt);
+      }).assertThrowError('ClassCastError');
+      expect((): void => {
+        BigInt.asUintN(8, NaN as Object as BigInt);
+      }).assertThrowError('ClassCastError');
+      expect((): void => {
+        BigInt.asUintN(8, Infinity as Object as BigInt);
+      }).assertThrowError('ClassCastError');
+      expect((): void => {
+        BigInt.asUintN(8, -Infinity as Object as BigInt);
+      }).assertThrowError('ClassCastError');
+    });
   });
 }
