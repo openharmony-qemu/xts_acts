@@ -52,10 +52,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       const result: string = arr.join();
       const expectVal = "0.5,1.5,0.25";
       expect(result).assertEqual(expectVal);
@@ -70,9 +67,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const arr = Float64Array.of(-2147483648, -1, 0);
       const sep: String = "|";
       const result: string = arr.join(sep);
       const expectVal = "-2147483648|-1|0";
@@ -88,10 +83,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = new Float64Array([0.1, 9007199254740991, 0]);
       const sep: string = "|";
       const result: string = arr.join(sep);
       const expectVal = "0.1|9007199254740991|0";
@@ -107,10 +99,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       const sep = "-";
       const result: string = arr.join(sep);
       const expectVal = "0.5-1.5-0.25";
@@ -126,8 +115,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const arr = Float64Array.of(int16MinValue);
+      const arr = new Float64Array([-32768]);
       const result: string = arr.join(";");
       const expectVal = "-32768";
       expect(result).assertEqual(expectVal);
@@ -157,8 +145,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const arr = Float64Array.of(int32MinValue, -1);
+      const arr = new Float64Array([-2147483648, -1]);
       const result: string = arr.join("&");
       const expectVal = "-2147483648&-1";
       expect(result).assertEqual(expectVal);
@@ -173,12 +160,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const piValue: number = 3.141592653589793;
-      const tinyNegativeValue: number = -1e-100;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue, piValue, tinyNegativeValue);
+      const arr = Float64Array.of(0.1, 9007199254740991, 0, 3.141592653589793, -1e-100);
       const result: string = arr.join(",");
       const expectVal = "0.1,9007199254740991,0,3.141592653589793,-1e-100";
       expect(result).assertEqual(expectVal);
@@ -193,9 +175,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int16MinValue, -128, zeroValue);
+      const arr = new Float64Array([-32768, -128, 0]);
       const result1: string = arr.join(",");
       const result2: string = arr.join(",");
       const expectVal = result2;
@@ -211,9 +191,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const arr = Float64Array.of(-2147483648, -1, 0);
       const result1: string = arr.join(",");
       const result2: string = arr.join("|");
       const expectVal = "-2147483648,-1,0";
@@ -231,9 +209,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const arr = Float64Array.of(-2147483648, -1, 0);
       const result: string = arr.join("'; DROP TABLE--");
       const expectVal = "-2147483648'; DROP TABLE---1'; DROP TABLE--0";
       expect(result).assertEqual(expectVal);
@@ -250,7 +226,7 @@ export default function float64ArrayJoinTest(): void {
     it('testFloat64ArrayJoin012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const hexValue10: number = 0x10;
       const hexValue20: number = 0x20;
-      const arr = Float64Array.of(hexValue10, hexValue20, hexValue10);
+      const arr = new Float64Array([hexValue10, hexValue20, hexValue10]);
       const result: string = arr.join("1' OR '1'='1");
       const expectVal = "161' OR '1'='1321' OR '1'='116";
       expect(result).assertEqual(expectVal);
@@ -282,7 +258,7 @@ export default function float64ArrayJoinTest(): void {
     it('testFloat64ArrayJoin014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const binaryValue10: number = 0b10;
       const binaryValue100: number = 0b100;
-      const arr = Float64Array.of(binaryValue10, binaryValue100, binaryValue10);
+      const arr = new Float64Array([binaryValue10, binaryValue100, binaryValue10]);
       const result: string = arr.join(" = ");
       const expectVal = "2 = 4 = 2";
       expect(result).assertEqual(expectVal);
@@ -298,7 +274,7 @@ export default function float64ArrayJoinTest(): void {
      */
     it('testFloat64ArrayJoin015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroValue: number = 0;
-      const arr = Float64Array.of(zeroValue, zeroValue, zeroValue);
+      const arr = new Float64Array([zeroValue, zeroValue, zeroValue]);
       const result: string = arr.join(" <-> ");
       const expectVal = "0 <-> 0 <-> 0";
       expect(result).assertEqual(expectVal);
@@ -313,12 +289,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const pointOneTwoFive: number = 0.125;
-      const pointZeroSixTwoFive: number = 0.0625;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive, pointOneTwoFive, pointZeroSixTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25, 0.125, 0.0625]);
       const result: string = arr.join(";");
       const expectVal = "0.5;1.5;0.25;0.125;0.0625";
       expect(result).assertEqual(expectVal);
@@ -333,11 +304,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const zeroValue: number = 0;
-      const int8MaxValue: number = 127;
-      const int16MaxValue: number = 32767;
-      const arr = Float64Array.of(int16MinValue, -128, zeroValue, int8MaxValue, int16MaxValue);
+      const arr = new Float64Array([-32768, -128, 0, 127, 32767]);
       const result: string = arr.join("!");
       const expectVal = "-32768!-128!0!127!32767";
       expect(result).assertEqual(expectVal);
@@ -352,11 +319,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
-      const oneValue: number = 1;
-      const int32MaxValue: number = 2147483647;
-      const arr = Float64Array.of(int32MinValue, -1, zeroValue, oneValue, int32MaxValue);
+      const arr = new Float64Array([-2147483648, -1, 0, 1, 2147483647]);
       const result: string = arr.join("?");
       const expectVal = "-2147483648?-1?0?1?2147483647";
       expect(result).assertEqual(expectVal);
@@ -373,8 +336,7 @@ export default function float64ArrayJoinTest(): void {
     it('testFloat64ArrayJoin019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const tinyNegativeValue: number = -1e-100;
       const piValue: number = 3.141592653589793;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(tinyNegativeValue, piValue, zeroValue, piValue, tinyNegativeValue);
+      const arr = new Float64Array([tinyNegativeValue, piValue, 0, piValue, tinyNegativeValue]);
       const result: string = arr.join(",");
       const expectVal = "-1e-100,3.141592653589793,0,3.141592653589793,-1e-100";
       expect(result).assertEqual(expectVal);
@@ -389,10 +351,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const zeroValue: number = 0;
-      const int8MaxValue: number = 127;
-      const arr = Float64Array.of(int16MinValue, -128, zeroValue, int8MaxValue);
+      const arr = Float64Array.of(-32768, -128, 0, 127);
       const result: string = arr.join("|");
       const expectVal = "-32768|-128|0|127";
       expect(result).assertEqual(expectVal);
@@ -407,10 +366,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = new Float64Array([0.1, 9007199254740991, 0]);
       const result: string = arr.join("|");
       const expectVal = "0.1|9007199254740991|0";
       expect(result).assertEqual(expectVal);
@@ -443,7 +399,7 @@ export default function float64ArrayJoinTest(): void {
      */
     it('testFloat64ArrayJoin023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointTwoFive: number = 0.25;
-      const arr = Float64Array.of(pointTwoFive, pointTwoFive, pointTwoFive);
+      const arr = new Float64Array([pointTwoFive, pointTwoFive, pointTwoFive]);
       const result: string = arr.join(",");
       const expectVal = "0.25,0.25,0.25";
       expect(result).assertEqual(expectVal);
@@ -479,9 +435,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
-      const values = Float64Array.of(int32MinValue, -1, zeroValue);
+      const values = new Float64Array([-2147483648, -1, 0]);
       const result = values.join();
       const expectVal = "-2147483648,-1,0";
       expect(result).assertEqual(expectVal);
@@ -496,8 +450,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const values = Float64Array.of(pointFive);
+      const values = new Float64Array([0.5]);
       const result = values.join("-");
       const expectVal = "0.5";
       expect(result).assertEqual(expectVal);
@@ -512,9 +465,8 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
       const threeValue: number = 3;
-      const values = Float64Array.of(pointFive);
+      const values = new Float64Array([0.5]);
       const result = values.join("");
       const expectVal = threeValue;
       expect(result.length).assertEqual(expectVal);
@@ -532,7 +484,7 @@ export default function float64ArrayJoinTest(): void {
       const hexValueFF: number = 0xFF;
       const hexValueAA: number = 0xAA;
       const hexValue55: number = 0x55;
-      const arr = Float64Array.of(hexValueFF, hexValueAA, hexValue55);
+      const arr = new Float64Array([hexValueFF, hexValueAA, hexValue55]);
       const s: string = arr.join("\u200E");
       const actVal1 = s.includes("\u200E");
       const expectVal = true;
@@ -568,9 +520,7 @@ export default function float64ArrayJoinTest(): void {
      */
     it('testFloat64ArrayJoin030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const nanValue: number = NaN;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const arr = Float64Array.of(nanValue, onePointFive, pointTwoFive);
+      const arr = Float64Array.of(nanValue, 1.5, 0.25);
       const result: string = arr.join("^");
       const expectVal = "NaN^1.5^0.25";
       expect(result).assertEqual(expectVal);
@@ -586,8 +536,7 @@ export default function float64ArrayJoinTest(): void {
      */
     it('testFloat64ArrayJoin031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const positiveInfinity: number = Infinity;
-      const zeroPointZero: number = 0.0;
-      const arr = Float64Array.of(positiveInfinity, -positiveInfinity, zeroPointZero);
+      const arr = new Float64Array([positiveInfinity, -positiveInfinity, 0.0]);
       const result: string = arr.join(",");
       const expectVal = "Infinity,-Infinity,0";
       expect(result).assertEqual(expectVal);
@@ -603,7 +552,7 @@ export default function float64ArrayJoinTest(): void {
      */
     it('testFloat64ArrayJoin032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const nanValue: number = NaN;
-      const arr = Float64Array.of(nanValue, nanValue, nanValue);
+      const arr = new Float64Array([nanValue, nanValue, nanValue]);
       const result: string = arr.join(",");
       const expectVal = "NaN,NaN,NaN";
       expect(result).assertEqual(expectVal);
@@ -620,8 +569,7 @@ export default function float64ArrayJoinTest(): void {
     it('testFloat64ArrayJoin033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const nanValue: number = NaN;
       const positiveInfinity: number = Infinity;
-      const onePointZero: number = 1.0;
-      const arr = Float64Array.of(nanValue, positiveInfinity, -positiveInfinity, onePointZero);
+      const arr = Float64Array.of(nanValue, positiveInfinity, -positiveInfinity, 1.0);
       const result: string = arr.join(",");
       const expectVal = "NaN,Infinity,-Infinity,1";
       expect(result).assertEqual(expectVal);
@@ -636,10 +584,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const negativeZero: number = -0.0;
-      const zeroPointZero: number = 0.0;
-      const onePointZero: number = 1.0;
-      const arr = Float64Array.of(negativeZero, zeroPointZero, onePointZero);
+      const arr = Float64Array.of(-0.0, 0.0, 1.0);
       const result: string = arr.join("'");
       const expectVal = "0'0'1";
       expect(result).assertEqual(expectVal);
@@ -655,9 +600,7 @@ export default function float64ArrayJoinTest(): void {
      */
     it('testFloat64ArrayJoin035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const doubleMaxValue: number = Double.MAX_VALUE;
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
-      const arr = Float64Array.of(doubleMaxValue, onePointZero, twoPointZero);
+      const arr = new Float64Array([doubleMaxValue, 1.0, 2.0]);
       const result: string = arr.join(",");
       const expectVal = "1.7976931348623157e+308,1,2";
       expect(result).assertEqual(expectVal);
@@ -673,9 +616,7 @@ export default function float64ArrayJoinTest(): void {
      */
     it('testFloat64ArrayJoin036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const doubleMinValue: number = Double.MIN_VALUE;
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
-      const arr = Float64Array.of(doubleMinValue, onePointZero, twoPointZero);
+      const arr = Float64Array.of(doubleMinValue, 1.0, 2.0);
       const result: string = arr.join(",");
       const expectVal = "5e-324,1,2";
       expect(result).assertEqual(expectVal);
@@ -705,7 +646,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(1.0, 2.0, 3.0);
+      const arr = new Float64Array([1.0, 2.0, 3.0]);
       const result: string = arr.join(" -> ");
       const expectVal = "1 -> 2 -> 3";
       expect(result).assertEqual(expectVal);
@@ -720,7 +661,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(1.0, 2.0, 3.0);
+      const arr = new Float64Array([1.0, 2.0, 3.0]);
       const result: string = arr.join(".");
       const expectVal = "1.2.3";
       expect(result).assertEqual(expectVal);
@@ -735,7 +676,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(100.0, 200.0, 300.0);
+      const arr = new Float64Array([100.0, 200.0, 300.0]);
       const result: string = arr.join("，");
       const expectVal = "100，200，300";
       expect(result).assertEqual(expectVal);
@@ -750,7 +691,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(1.0, 2.0, 3.0);
+      const arr = new Float64Array([1.0, 2.0, 3.0]);
       const result: string = arr.join("");
       const expectVal = "123";
       expect(result).assertEqual(expectVal);
@@ -765,7 +706,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(8.0, 16.0, 32.0);
+      const arr = new Float64Array([8.0, 16.0, 32.0]);
       const result: string = arr.join(":");
       const expectVal = "8:16:32";
       expect(result).assertEqual(expectVal);
@@ -796,7 +737,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(10.0, 20.0, 30.0, 40.0);
+      const arr = new Float64Array([10.0, 20.0, 30.0, 40.0]);
       const sliced = arr.slice(0, 2);
       const result: string = sliced.join("|");
       const expectVal = "10|20";
@@ -832,7 +773,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(1.0, 2.0, 3.0);
+      const arr = new Float64Array([1.0, 2.0, 3.0]);
       const joined: string = arr.join("+");
       const expression: string = joined + "=" + "6";
       const expectVal = "1+2+3=6";
@@ -849,7 +790,7 @@ export default function float64ArrayJoinTest(): void {
      */
     it('testFloat64ArrayJoin047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const negativeZero: number = -0.0;
-      const arr = Float64Array.of(negativeZero, negativeZero);
+      const arr = new Float64Array([negativeZero, negativeZero]);
       const result: string = arr.join(",");
       const expectVal = "0,0";
       expect(result).assertEqual(expectVal);
@@ -864,7 +805,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(1.0e10, 2.0e-10, 3.0e5);
+      const arr = new Float64Array([1.0e10, 2.0e-10, 3.0e5]);
       const result: string = arr.join(",");
       const expectVal = "10000000000,2e-10,300000";
       expect(result).assertEqual(expectVal);
@@ -879,7 +820,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(1.0, 2.0, 3.0);
+      const arr = new Float64Array([1.0, 2.0, 3.0]);
       const result: string = arr.join("\n");
       const expected: string[] = result.split("\n");
       expect(expected.length).assertEqual(3);
@@ -897,7 +838,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(1.0, 2.0, 3.0);
+      const arr = new Float64Array([1.0, 2.0, 3.0]);
       const result: string = arr.join("\t");
       const expectVal = "1\t2\t3";
       expect(result).assertEqual(expectVal);
@@ -930,7 +871,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(100.0, 200.0, 300.0);
+      const arr = new Float64Array([100.0, 200.0, 300.0]);
       const result: string = arr.join("\r\n");
       const parts: string[] = result.split("\r\n");
       expect(parts.length).assertEqual(3);
@@ -948,7 +889,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(5.0, 10.0, 15.0);
+      const arr = new Float64Array([5.0, 10.0, 15.0]);
       const result: string = arr.join("\u200B");
       const expectVal = "5\u200B10\u200B15";
       expect(result).assertEqual(expectVal);
@@ -963,7 +904,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(1.0, 2.0, 3.0);
+      const arr = new Float64Array([1.0, 2.0, 3.0]);
       const result: string = arr.join("!@#$%^&*()");
       const expectVal = "1!@#$%^&*()2!@#$%^&*()3";
       expect(result).assertEqual(expectVal);
@@ -978,7 +919,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(1.0, 2.0, 3.0);
+      const arr = new Float64Array([1.0, 2.0, 3.0]);
       const result: string = arr.join("~");
       const expectVal = "1~2~3";
       expect(result).assertEqual(expectVal);
@@ -993,7 +934,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(1.0, 2.0, 3.0);
+      const arr = new Float64Array([1.0, 2.0, 3.0]);
       try {
         arr.join(null as String);
         expect().assertFail();
@@ -1011,7 +952,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(1.0, 2.0, 3.0);
+      const arr = new Float64Array([1.0, 2.0, 3.0]);
       try {
         arr.join(undefined as String);
         expect().assertFail();
@@ -1044,7 +985,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(100.0, 200.0, 300.0);
+      const arr = new Float64Array([100.0, 200.0, 300.0]);
       const result: string = arr.join("%");
       const expectVal = "100%200%300";
       expect(result).assertEqual(expectVal);
@@ -1059,7 +1000,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(5.0, 10.0, 15.0);
+      const arr = new Float64Array([5.0, 10.0, 15.0]);
       const result: string = arr.join("*");
       const expectVal = "5*10*15";
       expect(result).assertEqual(expectVal);
@@ -1074,7 +1015,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(1.0, 2.0, 3.0);
+      const arr = new Float64Array([1.0, 2.0, 3.0]);
       const result: string = arr.join("(");
       const expectVal = "1(2(3";
       expect(result).assertEqual(expectVal);
@@ -1089,7 +1030,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(1.0, 2.0, 3.0);
+      const arr = new Float64Array([1.0, 2.0, 3.0]);
       const result: string = arr.join(")");
       const expectVal = "1)2)3";
       expect(result).assertEqual(expectVal);
@@ -1119,7 +1060,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(1.0, 2.0, 3.0);
+      const arr = new Float64Array([1.0, 2.0, 3.0]);
       const result: string = arr.join(">");
       const expectVal = "1>2>3";
       expect(result).assertEqual(expectVal);
@@ -1134,7 +1075,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(1.0, 2.0, 3.0);
+      const arr = new Float64Array([1.0, 2.0, 3.0]);
       const result: string = arr.join("<");
       const expectVal = "1<2<3";
       expect(result).assertEqual(expectVal);
@@ -1149,7 +1090,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(1.0, 2.0, 3.0);
+      const arr = new Float64Array([1.0, 2.0, 3.0]);
       const result: string = arr.join("{");
       const expectVal = "1{2{3";
       expect(result).assertEqual(expectVal);
@@ -1164,7 +1105,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(1.0, 2.0, 3.0);
+      const arr = new Float64Array([1.0, 2.0, 3.0]);
       const result: string = arr.join("}");
       const expectVal = "1}2}3";
       expect(result).assertEqual(expectVal);
@@ -1179,7 +1120,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(1.0, 2.0, 3.0);
+      const arr = new Float64Array([1.0, 2.0, 3.0]);
       const result: string = arr.join("[");
       const expectVal = "1[2[3";
       expect(result).assertEqual(expectVal);
@@ -1194,7 +1135,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(1.0, 2.0, 3.0);
+      const arr = new Float64Array([1.0, 2.0, 3.0]);
       const result: string = arr.join("]");
       const expectVal = "1]2]3";
       expect(result).assertEqual(expectVal);
@@ -1209,7 +1150,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(1.0, 2.0, 3.0);
+      const arr = new Float64Array([1.0, 2.0, 3.0]);
       const result: string = arr.join("？");
       const expectVal = "1？2？3";
       expect(result).assertEqual(expectVal);
@@ -1239,7 +1180,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(100.0, 200.0, 300.0);
+      const arr = new Float64Array([100.0, 200.0, 300.0]);
       const result: string = arr.join("：");
       const expectVal = "100：200：300";
       expect(result).assertEqual(expectVal);
@@ -1254,7 +1195,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(5.0, 10.0, 15.0);
+      const arr = new Float64Array([5.0, 10.0, 15.0]);
       const result: string = arr.join("；");
       const expectVal = "5；10；15";
       expect(result).assertEqual(expectVal);
@@ -1269,7 +1210,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(1.0, 2.0, 3.0);
+      const arr = new Float64Array([1.0, 2.0, 3.0]);
       const result: string = arr.join("。");
       const expectVal = "1。2。3";
       expect(result).assertEqual(expectVal);
@@ -1284,7 +1225,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(3.0, 6.0, 9.0);
+      const arr = new Float64Array([3.0, 6.0, 9.0]);
       const result: string = arr.join("·");
       const expectVal = "3·6·9";
       expect(result).assertEqual(expectVal);
@@ -1299,7 +1240,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(1.0, 2.0, 3.0);
+      const arr = new Float64Array([1.0, 2.0, 3.0]);
       const result: string = arr.join("《");
       const expectVal = "1《2《3";
       expect(result).assertEqual(expectVal);
@@ -1314,7 +1255,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(1.0, 2.0, 3.0);
+      const arr = new Float64Array([1.0, 2.0, 3.0]);
       const result: string = arr.join("……");
       const expectVal = "1……2……3";
       expect(result).assertEqual(expectVal);
@@ -1329,7 +1270,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(1.0, 2.0, 3.0);
+      const arr = new Float64Array([1.0, 2.0, 3.0]);
       const sep: string = "测试\n换行";
       const result: string = arr.join(sep);
       const expectVal = "1测试\n换行2测试\n换行3";
@@ -1361,7 +1302,7 @@ export default function float64ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayJoin080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(100.0, 200.0, 300.0);
+      const arr = new Float64Array([100.0, 200.0, 300.0]);
       const result: string = arr.join("测试\\转义符");
       const expectVal = "100测试\\转义符200测试\\转义符300";
       expect(result).assertEqual(expectVal);
