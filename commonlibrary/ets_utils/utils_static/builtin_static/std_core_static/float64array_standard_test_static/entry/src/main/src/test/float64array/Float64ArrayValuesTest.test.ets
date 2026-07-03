@@ -1956,5 +1956,364 @@ export default function Float64ArrayValuesTest(): void {
       const expectVal = false;
       expect(found).assertEqual(expectVal);
     })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VALUES_0940
+     * @tc.name testFloat64ArrayValues094
+     * @tc.desc Verify indexOf finds existing element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayValues094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int16MinValue: number = -32768;
+      const int8MinValue: number = -128;
+      const zeroValue: number = 0;
+      const twoPointZero: number = 2.0;
+      const values = Float64Array.of(int16MinValue, int8MinValue, zeroValue);
+      const iter = values.values();
+      let found = false;
+      while (true) {
+        const r = iter.next();
+        if (r.done) {
+          break;
+        }
+        if (r.value === twoPointZero) {
+          found = true;
+        }
+      }
+      const expectVal = false;
+      expect(found).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VALUES_0950
+     * @tc.name testFloat64ArrayValues095
+     * @tc.desc Verify indexOf cannot find non-existent element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayValues095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int32MinValue: number = -2147483648;
+      const negativeOne: number = -1;
+      const zeroValue: number = 0;
+      const fivePointZero: number = 5.0;
+      const values = Float64Array.of(int32MinValue, negativeOne, zeroValue);
+      const iter = values.values();
+      let found = false;
+      while (true) {
+        const r = iter.next();
+        if (r.done) {
+          break;
+        }
+        if (r.value === fivePointZero) {
+          found = true;
+        }
+      }
+      const expectVal = false;
+      expect(found).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VALUES_0960
+     * @tc.name testFloat64ArrayValues096
+     * @tc.desc Verify lastIndexOf finds duplicate element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayValues096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointOne: number = 0.1;
+      const zeroValue: number = 0;
+      const piValue: number = 3.141592653589793;
+      const twoPointZero: number = 2.0;
+      const values = Float64Array.of(pointOne, zeroValue, zeroValue, piValue);
+      const iter = values.values();
+      let found = false;
+      while (true) {
+        const r = iter.next();
+        if (r.done) {
+          break;
+        }
+        if (r.value === twoPointZero) {
+          found = true;
+        }
+      }
+      const expectVal = false;
+      expect(found).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VALUES_0970
+     * @tc.name testFloat64ArrayValues097
+     * @tc.desc Verify includes with fromIndex argument
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayValues097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointFive: number = 0.5;
+      const onePointFive: number = 1.5;
+      const pointTwoFive: number = 0.25;
+      const twoPointZero: number = 2.0;
+      const values = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const iter = values.values();
+      let found = false;
+      let idx = 0;
+      while (true) {
+        const r = iter.next();
+        if (r.done) {
+          break;
+        }
+        if (idx >= 2 && r.value === twoPointZero) {
+          found = true;
+        }
+        idx++;
+      }
+      const expectVal = false;
+      expect(found).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VALUES_0980
+     * @tc.name testFloat64ArrayValues098
+     * @tc.desc Verify indexOf with fromIndex argument
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayValues098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int16MinValue: number = -32768;
+      const int8MinValue: number = -128;
+      const zeroValue: number = 0;
+      const twoPointZero: number = 2.0;
+      const values = Float64Array.of(int16MinValue, int8MinValue, zeroValue);
+      const iter = values.values();
+      let found = false;
+      let idx = 0;
+      while (true) {
+        const r = iter.next();
+        if (r.done) {
+          break;
+        }
+        if (idx >= 2 && r.value === twoPointZero) {
+          found = true;
+        }
+        idx++;
+      }
+      const expectVal = false;
+      expect(found).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VALUES_0990
+     * @tc.name testFloat64ArrayValues099
+     * @tc.desc Verify values iterates all element values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayValues099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int32MinValue: number = -2147483648;
+      const negativeOne: number = -1;
+      const zeroValue: number = 0;
+      const negnum2147483649Pointzero: number = -2147483649.0;
+      const values = Float64Array.of(int32MinValue, negativeOne, zeroValue);
+      let sum = 0.0;
+      for (const value of values.values()) {
+        sum += value;
+      }
+      const expectVal = negnum2147483649Pointzero;
+      expect(sum).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VALUES_1000
+     * @tc.name testFloat64ArrayValues100
+     * @tc.desc Verify values iterates single element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayValues100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointOne: number = 0.1;
+      const values = Float64Array.of(pointOne);
+      for (const value of values.values()) {
+        const expectVal = pointOne;
+        expect(value).assertEqual(expectVal);
+      }
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VALUES_1010
+     * @tc.name testFloat64ArrayValues101
+     * @tc.desc Verify values iterates array containing NaN
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayValues101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointFive: number = 0.5;
+      const onePointFive: number = 1.5;
+      const values = Float64Array.of(pointFive, onePointFive);
+      let hasNaN = false;
+      for (const value of values.values()) {
+        if (Number.isNaN(value)) {
+          hasNaN = true;
+        }
+      }
+      const expectVal = false;
+      expect(hasNaN).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VALUES_1020
+     * @tc.name testFloat64ArrayValues102
+     * @tc.desc Verify values iterates array containing Infinity
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayValues102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int16MinValue: number = -32768;
+      const int8MinValue: number = -128;
+      const values = Float64Array.of(int16MinValue, int8MinValue);
+      let hasInf = false;
+      for (const value of values.values()) {
+        if (value === Infinity) {
+          hasInf = true;
+        }
+      }
+      const expectVal = false;
+      expect(hasInf).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VALUES_1030
+     * @tc.name testFloat64ArrayValues103
+     * @tc.desc Verify values iterator can be used multiple times
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayValues103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int32MinValue: number = -2147483648;
+      const negativeOne: number = -1;
+      const values = Float64Array.of(int32MinValue, negativeOne);
+      let sum1 = 0.0;
+      for (const value of values.values()) {
+        sum1 += value;
+      }
+      let sum2 = 0.0;
+      for (const value of values.values()) {
+        sum2 += value;
+      }
+      const expectVal = sum2;
+      expect(sum1).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VALUES_1040
+     * @tc.name testFloat64ArrayValues104
+     * @tc.desc Verify values with hex literal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayValues104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const hexValueFF: number = 0xFF;
+      const hexValueAA: number = 0xAA;
+      const num255Value: number = 255;
+      const num170Pointzero: number = 170.0;
+      const arr = Float64Array.of(hexValueFF, hexValueAA);
+      const iter = arr.values();
+      const actVal10 = iter.next().value!;
+      const expectVal = num255Value;
+      expect(actVal10).assertEqual(expectVal);
+      const actVal11 = iter.next().value!;
+      const expectVal2 = num170Pointzero;
+      expect(actVal11).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VALUES_1050
+     * @tc.name testFloat64ArrayValues105
+     * @tc.desc Verify values with binary literal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayValues105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const binaryValue11111111: number = 0b11111111;
+      const binaryValue10101010: number = 0b10101010;
+      const num255Value: number = 255;
+      const num170Pointzero: number = 170.0;
+      const arr = Float64Array.of(binaryValue11111111, binaryValue10101010);
+      const iter = arr.values();
+      const actVal12 = iter.next().value!;
+      const expectVal = num255Value;
+      expect(actVal12).assertEqual(expectVal);
+      const actVal13 = iter.next().value!;
+      const expectVal2 = num170Pointzero;
+      expect(actVal13).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VALUES_1060
+     * @tc.name testFloat64ArrayValues106
+     * @tc.desc Verify values with Double.NaN
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayValues106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nanValue: number = Double.NaN;
+      const doubleMaxValue: number = Double.MAX_VALUE;
+      const arr = Float64Array.of(nanValue, doubleMaxValue);
+      const iter = arr.values();
+      const first = iter.next();
+      expect(first.done).assertEqual(false);
+      const actVal14 = Number.isNaN(first.value as number);
+      const expectVal = true;
+      expect(actVal14).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VALUES_1070
+     * @tc.name testFloat64ArrayValues107
+     * @tc.desc Verify values with Double.POSITIVE_INFINITY
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayValues107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const positiveInfinity: number = Double.POSITIVE_INFINITY;
+      const negativeInfinity: number = Double.NEGATIVE_INFINITY;
+      const arr = Float64Array.of(positiveInfinity, negativeInfinity);
+      const iter = arr.values();
+      const first = iter.next();
+      expect(first.done).assertEqual(false);
+      expect(first.value).assertEqual(positiveInfinity);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_VALUES_1080
+     * @tc.name testFloat64ArrayValues108
+     * @tc.desc Verify values with Double.MIN_VALUE/MAX_VALUE
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayValues108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const doubleMinValue: number = Double.MIN_VALUE;
+      const doubleMaxValue: number = Double.MAX_VALUE;
+      const arr = Float64Array.of(doubleMinValue, doubleMaxValue);
+      const iter = arr.values();
+      const first = iter.next();
+      expect(first.done).assertEqual(false);
+      expect(first.value).assertEqual(doubleMinValue);
+    })
+
   })
 }

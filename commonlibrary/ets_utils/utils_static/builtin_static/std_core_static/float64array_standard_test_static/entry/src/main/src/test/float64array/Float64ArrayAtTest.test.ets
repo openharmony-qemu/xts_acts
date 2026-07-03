@@ -1960,5 +1960,276 @@ export default function float64ArrayAtTest(): void {
       const expectVal = undefined;
       expect(actualValue).assertEqual(expectVal);
     })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_AT_0960
+     * @tc.name testFloat64ArrayAt096
+     * @tc.desc Verify calling at with Double.toInt(Double.MIN_VALUE/MAX_VALUE) index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayAt096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const tenPointZero: number = 10.0;
+      const arr = Float64Array.of(tenPointZero);
+      const idxMin: int = Double.toInt(Double.MIN_VALUE);
+      const idxMax: int = Double.toInt(Double.MAX_VALUE);
+      const actualValue = arr.at(idxMin);
+      const expectedValue: number = tenPointZero;
+      const expectVal = expectedValue;
+      expect(actualValue).assertEqual(expectVal);
+      const actVal5 = arr.at(idxMax);
+      const expectVal2 = undefined;
+      expect(actVal5).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_AT_0970
+     * @tc.name testFloat64ArrayAt097
+     * @tc.desc Verify at with byte type index parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayAt097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointOne: number = 0.1;
+      const maxSafeInteger: number = 9007199254740991;
+      const zeroValue: number = 0;
+      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const idx: byte = 1;
+      const actualValue = arr.at(idx);
+      const expectedValue: number = maxSafeInteger;
+      const expectVal = expectedValue;
+      expect(actualValue).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_AT_0980
+     * @tc.name testFloat64ArrayAt098
+     * @tc.desc Verify calling at with octal literal argument
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayAt098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const tenPointZero: number = 10.0;
+      const twentyPointZero: number = 20.0;
+      const thirtyPointZero: number = 30.0;
+      const arr = Float64Array.of(tenPointZero, twentyPointZero, thirtyPointZero);
+      const idx: int = 0o02;
+      const actualValue = arr.at(idx);
+      const expectedValue: number = thirtyPointZero;
+      const expectVal = expectedValue;
+      expect(actualValue).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_AT_0990
+     * @tc.name testFloat64ArrayAt099
+     * @tc.desc Verify at on Float64Array constructed from FixedArray<number>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayAt099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const fifteenPointzero: number = 15.0;
+      const fixedArrayInput: FixedArray<number> = [5.0, 10.0, 15.0];
+      const arr = new Float64Array(fixedArrayInput);
+      const fixedArrayConstructedNegIndex: int = -1;
+      const actualValue = arr.at(fixedArrayConstructedNegIndex);
+      const expectedValue: number = fifteenPointzero;
+      const expectVal = expectedValue;
+      expect(actualValue).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_AT_1000
+     * @tc.name testFloat64ArrayAt100
+     * @tc.desc Verify at on Float64Array constructed from Array<number>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayAt100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const thirtyPointzero: number = 30.0;
+      const arrayInput: Array<number> = [10.0, 20.0, 30.0];
+      const arr = new Float64Array(arrayInput);
+      const thirdIndex: int = 2;
+      const actualValue = arr.at(thirdIndex);
+      const expectedValue: number = thirtyPointzero;
+      const expectVal = expectedValue;
+      expect(actualValue).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_AT_1010
+     * @tc.name testFloat64ArrayAt101
+     * @tc.desc Verify first at result matches first element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayAt101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const tenPointZero: number = 10.0;
+      const twentyPointzero: number = 20.0;
+      const thirtyPointzero: number = 30.0;
+      const arr = Float64Array.of(tenPointZero, twentyPointzero, thirtyPointzero);
+      const firstIndex: int = 0;
+      const expectedFirstValue: number = tenPointZero;
+      const actVal6 = arr.at(firstIndex);
+      const expectVal = expectedFirstValue;
+      expect(actVal6).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_AT_1020
+     * @tc.name testFloat64ArrayAt102
+     * @tc.desc Verify nested at using at result as index for next at
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayAt102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const twoPointZero: number = 2.0;
+      const fillValue99: number = 99.0;
+      const onePointZero: number = 1.0;
+      const eightyeightPointzero: number = 88.0;
+      const fillValue77: number = 77.0;
+      const arr = Float64Array.of(twoPointZero, fillValue99, onePointZero, eightyeightPointzero, fillValue77);
+      const firstIndex: int = 0;
+      const firstElementAsIndex: number = arr.at(firstIndex) as number;
+      const actualValue = arr.at(Double.toInt(firstElementAsIndex));
+      const expectedValue: number = onePointZero;
+      const expectVal = expectedValue;
+      expect(actualValue).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_AT_1030
+     * @tc.name testFloat64ArrayAt103
+     * @tc.desc Verify at return value participating in arithmetic operations
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayAt103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const tenPointZero: number = 10.0;
+      const threePointZero: number = 3.0;
+      const twentyPointzero: number = 20.0;
+      const sevenPointZero: number = 7.0;
+      const thirtyPointzero: number = 30.0;
+      const preciseTenDividedByThree: number = 3.3333333333333335;
+      const arr = Float64Array.of(tenPointZero, threePointZero, twentyPointzero);
+      const firstIndex: int = 0;
+      const firstActualValue: number = arr.at(firstIndex) as number;
+      const secondIndex: int = 1;
+      const secondActualValue: number = arr.at(secondIndex) as number;
+      const expectedValue: number = sevenPointZero;
+      const expectedValue2: number = thirtyPointzero;
+      const expectedValue3: number = preciseTenDividedByThree;
+      expect(firstActualValue - secondActualValue).assertEqual(expectedValue);
+      expect(firstActualValue * secondActualValue).assertEqual(expectedValue2);
+      expect(firstActualValue / secondActualValue).assertEqual(expectedValue3);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_AT_1040
+     * @tc.name testFloat64ArrayAt104
+     * @tc.desc Verify at return value used in comparison operations
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayAt104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const fivePointZero: number = 5.0;
+      const tenPointZero: number = 10.0;
+      const arr = Float64Array.of(fivePointZero, tenPointZero);
+      const firstIndex: int = 0;
+      const firstActualValue: number = arr.at(firstIndex) as number;
+      const secondIndex: int = 1;
+      const secondActualValue: number = arr.at(secondIndex) as number;
+      expect(firstActualValue < secondActualValue).assertEqual(true);
+      expect(firstActualValue >= secondActualValue).assertEqual(false);
+      expect(firstActualValue <= secondActualValue).assertEqual(true);
+      expect(secondActualValue > firstActualValue).assertEqual(true);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_AT_1050
+     * @tc.name testFloat64ArrayAt105
+     * @tc.desc Verify at positive index matches direct bracket access
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayAt105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float64Array.of(10.0, 20.0, 30.0);
+      const secondIndex: int = 1;
+      const atResult = arr.at(secondIndex);
+      const bracketResult = arr[1 as int];
+      const expectVal = bracketResult;
+      expect(atResult).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_AT_1060
+     * @tc.name testFloat64ArrayAt106
+     * @tc.desc Verify at return value type narrowing guard pattern
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayAt106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const tenPointZero: number = 10.0;
+      const arr = Float64Array.of(tenPointZero);
+      const firstIndex: int = 0;
+      const value: number | undefined = arr.at(firstIndex);
+      if (value !== undefined) {
+        const expectVal = tenPointZero;
+        expect(value).assertEqual(expectVal);
+      } else {
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_AT_1070
+     * @tc.name testFloat64ArrayAt107
+     * @tc.desc Verify at reflects element mutation via bracket assignment
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayAt107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float64Array.of(10.0, 20.0, 30.0);
+      const secondIndex: int = 1;
+      const before = arr.at(secondIndex);
+      arr[1 as int] = 99.0;
+      const after = arr.at(secondIndex);
+      const expectVal = 20.0;
+      expect(before).assertEqual(expectVal);
+      const expectVal2 = 99.0;
+      expect(after).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_AT_1080
+     * @tc.name testFloat64ArrayAt108
+     * @tc.desc Verify at negative one reflects updated last element after reassignment
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayAt108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float64Array.of(10.0, 20.0);
+      const tailIndex: int = -1;
+      const originalTail = arr.at(tailIndex);
+      arr[1 as int] = 99.0;
+      const updatedTail = arr.at(tailIndex);
+      const expectVal = 20.0;
+      expect(originalTail).assertEqual(expectVal);
+      const expectVal2 = 99.0;
+      expect(updatedTail).assertEqual(expectVal2);
+    })
   })
 }

@@ -1901,5 +1901,416 @@ export default function float64ArrayKeysTest(): void {
       const expectVal3 = twoValue;
       expect(actVal126).assertEqual(expectVal3);
     })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_KEYS_8100
+     * @tc.name testFloat64ArrayKeys081
+     * @tc.desc Verify keys on toSorted array index order
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayKeys081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int32MinValue: number = -2147483648;
+      const zeroValue: number = 0;
+      const oneValue: number = 1;
+      const twoValue: number = 2;
+      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const sorted = arr.toSorted();
+      const iter = sorted.keys();
+      const actVal127 = iter.next().value!;
+      const expectVal = zeroValue;
+      expect(actVal127).assertEqual(expectVal);
+      const actVal128 = iter.next().value!;
+      const expectVal2 = oneValue;
+      expect(actVal128).assertEqual(expectVal2);
+      const actVal129 = iter.next().value!;
+      const expectVal3 = twoValue;
+      expect(actVal129).assertEqual(expectVal3);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_KEYS_8200
+     * @tc.name testFloat64ArrayKeys082
+     * @tc.desc Verify keys iterates all indices
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayKeys082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointOne: number = 0.1;
+      const maxSafeInteger: number = 9007199254740991;
+      const zeroValue: number = 0;
+      const values = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      let keys = "";
+      for (const key of values.keys()) {
+        keys += key;
+      }
+      const expectVal = "012";
+      expect(keys).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_KEYS_8300
+     * @tc.name testFloat64ArrayKeys083
+     * @tc.desc Verify keys iterates empty array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayKeys083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const zeroValue: number = 0;
+      const values = new Float64Array();
+      let count = 0;
+      for (const key of values.keys()) {
+        count++;
+      }
+      const expectVal = zeroValue;
+      expect(count).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_KEYS_8400
+     * @tc.name testFloat64ArrayKeys084
+     * @tc.desc Verify keys iterates single element returns 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayKeys084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointFive: number = 0.5;
+      const zeroValue: number = 0;
+      const values = Float64Array.of(pointFive);
+      for (const key of values.keys()) {
+        const expectVal = zeroValue;
+        expect(key).assertEqual(expectVal);
+      }
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_KEYS_8500
+     * @tc.name testFloat64ArrayKeys085
+     * @tc.desc Verify keys iterates n elements returns 0 to n-1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayKeys085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const fiveValue: number = 5;
+      const values = new Float64Array(5);
+      let count = 0;
+      for (const key of values.keys()) {
+        const expectVal = count;
+        expect(key).assertEqual(expectVal);
+        count++;
+      }
+      const expectVal2 = fiveValue;
+      expect(count).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_KEYS_8600
+     * @tc.name testFloat64ArrayKeys086
+     * @tc.desc Verify keys iterable can be interrupted
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayKeys086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int16MinValue: number = -32768;
+      const zeroValue: number = 0;
+      const oneValue: number = 1;
+      const values = Float64Array.of(int16MinValue, -128, zeroValue);
+      let count = 0;
+      for (const key of values.keys()) {
+        count++;
+        break;
+      }
+      const expectVal = oneValue;
+      expect(count).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_KEYS_8700
+     * @tc.name testFloat64ArrayKeys087
+     * @tc.desc Verify keys iterator negative check (D7 two-way)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayKeys087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int32MinValue: number = -2147483648;
+      const zeroValue: number = 0;
+      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const iter = arr.keys();
+      const actVal130 = iter.next().value! === 0;
+      const expectVal = true;
+      expect(actVal130).assertEqual(expectVal);
+      const actVal131 = iter.next().value! === 0;
+      const expectVal2 = false;
+      expect(actVal131).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_KEYS_8800
+     * @tc.name testFloat64ArrayKeys088
+     * @tc.desc Verify keys with hex literal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayKeys088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const hexValueFF: number = 0xFF;
+      const hexValueAA: number = 0xAA;
+      const zeroValue: number = 0;
+      const arr = Float64Array.of(hexValueFF, hexValueAA);
+      const iter = arr.keys();
+      const actVal132 = iter.next().value!;
+      const expectVal = zeroValue;
+      expect(actVal132).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_KEYS_8900
+     * @tc.name testFloat64ArrayKeys089
+     * @tc.desc Verify keys with binary literal (D8 binary)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayKeys089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const binaryValue11111111: number = 0b11111111;
+      const binaryValue10101010: number = 0b10101010;
+      const zeroValue: number = 0;
+      const arr = Float64Array.of(binaryValue11111111, binaryValue10101010);
+      const iter = arr.keys();
+      const actVal133 = iter.next().value!;
+      const expectVal = zeroValue;
+      expect(actVal133).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_KEYS_9000
+     * @tc.name testFloat64ArrayKeys090
+     * @tc.desc Verify keys with Double.NaN (D5 critical)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayKeys090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nanValue: number = Double.NaN;
+      const doubleMaxValue: number = Double.MAX_VALUE;
+      const zeroValue: number = 0;
+      const arr = Float64Array.of(nanValue, doubleMaxValue);
+      const iter = arr.keys();
+      const actVal134 = iter.next().value!;
+      const expectVal = zeroValue;
+      expect(actVal134).assertEqual(expectVal);
+      const actVal135 = Number.isNaN(arr[0]);
+      const expectVal2 = true;
+      expect(actVal135).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_KEYS_9100
+     * @tc.name testFloat64ArrayKeys091
+     * @tc.desc Verify keys with Double.POSITIVE_INFINITY (D5 critical)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayKeys091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const positiveInfinity: number = Double.POSITIVE_INFINITY;
+      const negativeInfinity: number = Double.NEGATIVE_INFINITY;
+      const zeroValue: number = 0;
+      const arr = Float64Array.of(positiveInfinity, negativeInfinity);
+      const iter = arr.keys();
+      const actVal136 = iter.next().value!;
+      const expectVal = zeroValue;
+      expect(actVal136).assertEqual(expectVal);
+      expect(arr[0] > 0.0).assertEqual(true);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_KEYS_9200
+     * @tc.name testFloat64ArrayKeys092
+     * @tc.desc Verify keys with Double.MIN_VALUE/MAX_VALUE (D5 critical)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayKeys092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const doubleMinValue: number = Double.MIN_VALUE;
+      const doubleMaxValue: number = Double.MAX_VALUE;
+      const zeroValue: number = 0;
+      const arr = Float64Array.of(doubleMinValue, doubleMaxValue);
+      const iter = arr.keys();
+      const actVal137 = iter.next().value!;
+      const expectVal = zeroValue;
+      expect(actVal137).assertEqual(expectVal);
+      expect(arr[0] > 0.0).assertEqual(true);
+      expect(arr[1] > 0.0).assertEqual(true);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_KEYS_9300
+     * @tc.name testFloat64ArrayKeys093
+     * @tc.desc Verify keys on empty array does not throw error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayKeys093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Float64Array(0);
+      let threw = false;
+      try {
+        const iter = arr.keys();
+        const r = iter.next();
+        expect(r.done).assertEqual(true);
+      } catch (e) {
+        threw = true;
+      }
+      const expectVal = false;
+      expect(threw).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_KEYS_9400
+     * @tc.name testFloat64ArrayKeys094
+     * @tc.desc Verify keys iteration with slice does not modify original array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayKeys094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointOne: number = 0.1;
+      const maxSafeInteger: number = 9007199254740991;
+      const zeroValue: number = 0;
+      const oneValue: number = 1;
+      const twoValue: number = 2;
+      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      arr.slice(1, 2);
+      const iter = arr.keys();
+      const actVal138 = iter.next().value!;
+      const expectVal = zeroValue;
+      expect(actVal138).assertEqual(expectVal);
+      const actVal139 = iter.next().value!;
+      const expectVal2 = oneValue;
+      expect(actVal139).assertEqual(expectVal2);
+      const actVal140 = iter.next().value!;
+      const expectVal3 = twoValue;
+      expect(actVal140).assertEqual(expectVal3);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_KEYS_9500
+     * @tc.name testFloat64ArrayKeys095
+     * @tc.desc Verify keys iteration during copyWithin concurrent modification
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayKeys095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointFive: number = 0.5;
+      const onePointFive: number = 1.5;
+      const pointTwoFive: number = 0.25;
+      const pointOneTwoFive: number = 0.125;
+      const zeroValue: number = 0;
+      const oneValue: number = 1;
+      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive, pointOneTwoFive);
+      const iter = arr.keys();
+      const actVal141 = iter.next().value!;
+      const expectVal = zeroValue;
+      expect(actVal141).assertEqual(expectVal);
+      arr.copyWithin(0, 2, 4);
+      const actVal142 = iter.next().value!;
+      const expectVal2 = oneValue;
+      expect(actVal142).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_KEYS_9600
+     * @tc.name testFloat64ArrayKeys096
+     * @tc.desc Verify keys iteration with set concurrent modification
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayKeys096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const threePointZero: number = 3.0;
+      const arr = new Float64Array(3);
+      const iter = arr.keys();
+      const k0 = iter.next().value! as int;
+      arr.$_set(k0, onePointZero);
+      arr.$_set(1, twoPointZero);
+      arr.$_set(2, threePointZero);
+      const actVal143 = arr.$_get(0);
+      const expectVal = onePointZero;
+      expect(actVal143).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_KEYS_9700
+     * @tc.name testFloat64ArrayKeys097
+     * @tc.desc Verify keys with byteLength property
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayKeys097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const zeroValue: number = 0;
+      const twentyfourValue: number = 24;
+      const arr = new Float64Array(3);
+      const iter = arr.keys();
+      const actVal144 = iter.next().value!;
+      const expectVal = zeroValue;
+      expect(actVal144).assertEqual(expectVal);
+      expect(arr.byteLength).assertEqual(twentyfourValue);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_KEYS_9800
+     * @tc.name testFloat64ArrayKeys098
+     * @tc.desc Verify keys with BYTES_PER_ELEMENT property
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayKeys098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointOne: number = 0.1;
+      const zeroValue: number = 0;
+      const eightValue: number = 8;
+      const arr = Float64Array.of(pointOne);
+      const iter = arr.keys();
+      const actVal145 = iter.next().value!;
+      const expectVal = zeroValue;
+      expect(actVal145).assertEqual(expectVal);
+      expect(arr.BYTES_PER_ELEMENT).assertEqual(eightValue);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_KEYS_9900
+     * @tc.name testFloat64ArrayKeys099
+     * @tc.desc Verify keys on nonzero byteOffset view uses local zero-based indexes
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayKeys099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const v = new Float64Array(new ArrayBuffer(40), 16, 2);
+      const iter = v.keys();
+      const actVal146 = iter.next().value!;
+      const expectVal = 0;
+      expect(actVal146).assertEqual(expectVal);
+      const actVal147 = iter.next().value!;
+      const expectVal2 = 1;
+      expect(actVal147).assertEqual(expectVal2);
+      const actVal148 = iter.next().done;
+      const expectVal3 = true;
+      expect(actVal148).assertEqual(expectVal3);
+    })
+
   })
 }

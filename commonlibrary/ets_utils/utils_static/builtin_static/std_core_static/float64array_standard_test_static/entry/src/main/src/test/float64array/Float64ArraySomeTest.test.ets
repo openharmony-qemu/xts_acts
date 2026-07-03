@@ -1939,5 +1939,289 @@ export default function float64ArraySomeTest(): void {
       expect(actVal57).assertEqual(expectVal);
     })
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_1010
+     * @tc.name testFloat64ArraySome101
+     * @tc.desc Verify some returns true when MAX_VALUE element is present
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySome101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const doubleMaxValue: number = Double.MAX_VALUE;
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const arr = Float64Array.of(doubleMaxValue, onePointZero, twoPointZero);
+      const actVal58 = arr.some((v: number): boolean => v === Double.MAX_VALUE);
+      const expectVal = true;
+      expect(actVal58).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_1020
+     * @tc.name testFloat64ArraySome102
+     * @tc.desc Verify some returns true when MIN_VALUE element is present
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySome102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const doubleMinValue: number = Double.MIN_VALUE;
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const arr = Float64Array.of(doubleMinValue, onePointZero, twoPointZero);
+      const actVal59 = arr.some((v: number): boolean => v === Double.MIN_VALUE);
+      const expectVal = true;
+      expect(actVal59).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_1030
+     * @tc.name testFloat64ArraySome103
+     * @tc.desc Verify some returns true when large scientific notation element is present
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySome103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const sciValue10e200: number = 1.0e+200;
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const arr = Float64Array.of(sciValue10e200, onePointZero, twoPointZero);
+      const actVal60 = arr.some((v: number): boolean => v === 1.0e+200);
+      const expectVal = true;
+      expect(actVal60).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_1040
+     * @tc.name testFloat64ArraySome104
+     * @tc.desc Verify some returns true when small scientific notation element is present
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySome104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const sciValue10e200: number = 1.0e-200;
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const arr = Float64Array.of(sciValue10e200, onePointZero, twoPointZero);
+      const actVal61 = arr.some((v: number): boolean => v === 1.0e-200);
+      const expectVal = true;
+      expect(actVal61).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_1050
+     * @tc.name testFloat64ArraySome105
+     * @tc.desc Verify some returns true when large negative element satisfies condition
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySome105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const negnum999999Pointninenine: number = -999999.99;
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const arr = Float64Array.of(negnum999999Pointninenine, onePointZero, twoPointZero);
+      const actVal62 = arr.some((v: number): boolean => v < -100000.0);
+      const expectVal = true;
+      expect(actVal62).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_1060
+     * @tc.name testFloat64ArraySome106
+     * @tc.desc Verify some with 0.0 and -0.0 elements matching 0.0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySome106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const zeroPointZero: number = 0.0;
+      const negativeZero: number = -0.0;
+      const onePointZero: number = 1.0;
+      const arr = Float64Array.of(zeroPointZero, negativeZero, onePointZero);
+      const actVal63 = arr.some((v: number): boolean => v === 0.0);
+      const expectVal = true;
+      expect(actVal63).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_1070
+     * @tc.name testFloat64ArraySome107
+     * @tc.desc Verify some on Array<number> constructed Float64Array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySome107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const src: Array<number> = [1.0, 2.0, 3.0];
+      const arr = new Float64Array(src);
+      const actVal64 = arr.some((v: number): boolean => v > 1.0);
+      const expectVal = true;
+      expect(actVal64).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_1080
+     * @tc.name testFloat64ArraySome108
+     * @tc.desc Verify some on all-zero array matching zero returns true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySome108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Float64Array(3);
+      const actVal65 = arr.some((v: number): boolean => v === 0.0);
+      const expectVal = true;
+      expect(actVal65).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_1090
+     * @tc.name testFloat64ArraySome109
+     * @tc.desc Verify some on all-identical array matching value returns true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySome109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const fivePointZero: number = 5.0;
+      const arr = Float64Array.of(fivePointZero, fivePointZero, fivePointZero);
+      const actVal66 = arr.some((v: number): boolean => v === 5.0);
+      const expectVal = true;
+      expect(actVal66).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_1100
+     * @tc.name testFloat64ArraySome110
+     * @tc.desc Verify some with mixed positive-negative checks negative
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySome110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const negonePointzero: number = -1.0;
+      const zeroPointZero: number = 0.0;
+      const onePointZero: number = 1.0;
+      const arr = Float64Array.of(negonePointzero, zeroPointZero, onePointZero);
+      const actVal67 = arr.some((v: number): boolean => v < 0.0);
+      const expectVal = true;
+      expect(actVal67).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_1110
+     * @tc.name testFloat64ArraySome111
+     * @tc.desc Verify some with hex literal 0x1234 element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySome111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const hexValue1234: number = 0x1234;
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const arr = Float64Array.of(hexValue1234, onePointZero, twoPointZero);
+      const actVal68 = arr.some((v: number): boolean => v === 0x1234);
+      const expectVal = true;
+      expect(actVal68).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_1120
+     * @tc.name testFloat64ArraySome112
+     * @tc.desc Verify some with octal literal 0o123 element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySome112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const arr = Float64Array.of(0o123, onePointZero, twoPointZero);
+      const actVal69 = arr.some((v: number): boolean => v === 0o123);
+      const expectVal = true;
+      expect(actVal69).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_1130
+     * @tc.name testFloat64ArraySome113
+     * @tc.desc Verify some with int overflow 2147483648 element (double exact)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySome113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const num2147483648Value: number = 2147483648;
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const arr = Float64Array.of(num2147483648Value, onePointZero, twoPointZero);
+      const actVal70 = arr.some((v: number): boolean => v === 2147483648);
+      const expectVal = true;
+      expect(actVal70).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_1140
+     * @tc.name testFloat64ArraySome114
+     * @tc.desc Verify some with 0x7FFF (short max) element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySome114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const hexValue7FFF: number = 0x7FFF;
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const arr = Float64Array.of(hexValue7FFF, onePointZero, twoPointZero);
+      const actVal71 = arr.some((v: number): boolean => v === 0x7FFF);
+      const expectVal = true;
+      expect(actVal71).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_1150
+     * @tc.name testFloat64ArraySome115
+     * @tc.desc Verify some with 1.0e6 scientific notation element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySome115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const sciValue10e6: number = 1.0e6;
+      const twoPointZero: number = 2.0;
+      const threePointZero: number = 3.0;
+      const arr = Float64Array.of(sciValue10e6, twoPointZero, threePointZero);
+      const actVal72 = arr.some((v: number): boolean => v === 1.0e6);
+      const expectVal = true;
+      expect(actVal72).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_1160
+     * @tc.name testFloat64ArraySome116
+     * @tc.desc Verify some reads modified value when callback changes array elements during forward iteration
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySome116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float64Array.of(1.0, 2.0, 3.0, 4.0, 5.0);
+      // At index 0, modify index 2 from 3.0 to 999.0
+      // some should use the modified value 999.0 when it reaches index 2
+      const result = arr.some((val: number, index: int): boolean => {
+        if (index === 0) {
+          arr.$_set(2, 999.0);
+        }
+        return val > 3.0;
+      })
+      const expectVal = true;
+      expect(result).assertEqual(expectVal);
+    })
+
   })
 }
