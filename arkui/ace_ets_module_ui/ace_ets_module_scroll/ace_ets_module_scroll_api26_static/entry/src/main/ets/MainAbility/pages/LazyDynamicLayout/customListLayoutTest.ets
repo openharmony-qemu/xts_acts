@@ -45,7 +45,7 @@ import { CustomLayoutAlgorithm} from '@ohos.arkui.layoutAlgorithm'
 import { LazyDynamicLayout, LazyDynamicLayoutAttribute } from '@ohos.arkui.components.ArkLazyDynamicLayout'
 import { LazyLayoutAlgorithm, LazyCustomLayoutAlgorithmOptions,
   LazyLayoutDirection, LazyLayoutHelper, LazyCustomLayoutAlgorithm } from '@ohos.arkui.lazyLayoutAlgorithm'
-import { LazyListLayout } from './data/LazyListLayout';
+import { LazyListLayout } from '../data/LazyListLayout';
 
 class MyLazyDynamicLayoutModifier implements AttributeModifier<LazyDynamicLayoutAttribute> {
 
