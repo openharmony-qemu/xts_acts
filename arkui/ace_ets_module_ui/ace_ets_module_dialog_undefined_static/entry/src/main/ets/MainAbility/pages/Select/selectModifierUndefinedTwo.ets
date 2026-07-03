@@ -61,7 +61,7 @@ export class ModifierSpace implements AttributeModifier<SelectAttribute> {
 @Entry
 @Component
 struct SelectExample {
-  @State public isUndefined: boolean = false;
+  public isUndefined: boolean = false;
   @State buttonText: string = 'false'
   @State modifier : ModifierMenuOutline = new ModifierMenuOutline()
   @State modifierSpace : ModifierSpace = new ModifierSpace()
