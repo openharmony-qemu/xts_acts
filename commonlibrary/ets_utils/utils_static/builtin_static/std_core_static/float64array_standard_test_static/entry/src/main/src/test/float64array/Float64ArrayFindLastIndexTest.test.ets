@@ -1963,5 +1963,786 @@ export default function Float64ArrayFindLastIndexTest(): void {
       expect(idx).assertEqual(expectVal);
     })
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_0840
+     * @tc.name testFloat64ArrayFindLastIndex084
+     * @tc.desc Verify findLastIndex with every combination
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int32MinValue: number = -2147483648;
+      const zeroValue: number = 0;
+      const oneValue: number = 1;
+      const int32MaxValue: number = 2147483647;
+      const fourValue: number = 4;
+      const arr = Float64Array.of(int32MinValue, -1, zeroValue, oneValue, int32MaxValue);
+      const idx = arr.findLastIndex((value: number, index: int, array: Float64Array): boolean => {
+        return value > 0.0;
+      })
+
+      const expectVal = fourValue;
+      expect(idx).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_0850
+     * @tc.name testFloat64ArrayFindLastIndex085
+     * @tc.desc Verify findLastIndex from copy of Float64Array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointOne: number = 0.1;
+      const maxSafeInteger: number = 9007199254740991;
+      const zeroValue: number = 0;
+      const piValue: number = 3.141592653589793;
+      const tinyNegativeValue: number = -1e-100;
+      const threeValue: number = 3;
+      const original = Float64Array.of(pointOne, maxSafeInteger, zeroValue, piValue, tinyNegativeValue);
+      const copy = new Float64Array(original);
+      const idx = copy.findLastIndex((value: number): boolean => {
+        return value > 3.0;
+      })
+
+      const expectVal = threeValue;
+      expect(idx).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_0860
+     * @tc.name testFloat64ArrayFindLastIndex086
+     * @tc.desc Verify findLastIndex with int type elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const twoValue: number = 2;
+      const a: int = 10;
+      const b: int = 20;
+      const c: int = 30;
+      const arr = Float64Array.of(a, b, c);
+      const result = arr.findLastIndex((value: number, index: int): boolean => {
+        return value > 10;
+      })
+
+      const expectVal = twoValue;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_0870
+     * @tc.name testFloat64ArrayFindLastIndex087
+     * @tc.desc Verify findLastIndex with float type elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const twoValue: number = 2;
+      const a: double = 1.5;
+      const b: double = 2.5;
+      const c: double = 3.5;
+      const arr = Float64Array.of(a, b, c);
+      const result = arr.findLastIndex((value: number, index: int, array: Float64Array): boolean => {
+        return value > 2.5;
+      })
+
+      const expectVal = twoValue;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_0880
+     * @tc.name testFloat64ArrayFindLastIndex088
+     * @tc.desc Verify findLastIndex with double type elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const twoValue: number = 2;
+      const a: double = 1.234;
+      const b: double = 2.345;
+      const c: double = 3.456;
+      const arr = Float64Array.of(a, b, c);
+      const result = arr.findLastIndex((value: number): boolean => {
+        return value > 2.0;
+      })
+
+      const expectVal = twoValue;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_0890
+     * @tc.name testFloat64ArrayFindLastIndex089
+     * @tc.desc Verify findLastIndex callback receives all positive values in reverse order
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointFive: number = 0.5;
+      const onePointFive: number = 1.5;
+      const pointTwoFive: number = 0.25;
+      const threeValue: number = 3;
+      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const receivedValues: number[] = [];
+      arr.findLastIndex((value: number): boolean => {
+        receivedValues.push(value);
+        return false;
+      })
+
+      const expectVal = threeValue;
+      expect(receivedValues.length).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_0900
+     * @tc.name testFloat64ArrayFindLastIndex090
+     * @tc.desc Verify findLastIndex callback receives negative values starting from last
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int16MinValue: number = -32768;
+      const zeroValue: number = 0;
+      const arr = Float64Array.of(int16MinValue, -128, zeroValue);
+      const receivedValues: number[] = [];
+      arr.findLastIndex((value: number): boolean => {
+        receivedValues.push(value);
+        return false;
+      })
+
+      const expectVal = zeroValue;
+      expect(receivedValues[0]).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_0910
+     * @tc.name testFloat64ArrayFindLastIndex091
+     * @tc.desc Verify findLastIndex callback receives zero value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const zeroValue: number = 0;
+      const arr = Float64Array.of(zeroValue, -1, zeroValue);
+      const receivedValues: number[] = [];
+      arr.findLastIndex((value: number): boolean => {
+        receivedValues.push(value);
+        return false;
+      })
+
+      const expectVal = zeroValue;
+      expect(receivedValues[0]).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_0920
+     * @tc.name testFloat64ArrayFindLastIndex092
+     * @tc.desc Verify findLastIndex callback receives negative zero value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const zeroValue: number = 0;
+      const maxSafeInteger: number = 9007199254740991;
+      const arr = Float64Array.of(zeroValue, maxSafeInteger, zeroValue);
+      const receivedValues: number[] = [];
+      arr.findLastIndex((value: number): boolean => {
+        receivedValues.push(value);
+        return false;
+      })
+
+      const expectVal = zeroValue;
+      expect(receivedValues[0]).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_0930
+     * @tc.name testFloat64ArrayFindLastIndex093
+     * @tc.desc Verify findLastIndex callback receives NaN value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointFive: number = 0.5;
+      const onePointFive: number = 1.5;
+      const pointTwoFive: number = 0.25;
+      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const receivedValues: number[] = [];
+      arr.findLastIndex((value: number): boolean => {
+        receivedValues.push(value);
+        return false;
+      })
+
+      const actVal5 = Number.isNaN(receivedValues[1]);
+      const expectVal = false;
+      expect(actVal5).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_0940
+     * @tc.name testFloat64ArrayFindLastIndex094
+     * @tc.desc Verify findLastIndex callback receives Infinity value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int16MinValue: number = -32768;
+      const zeroValue: number = 0;
+      const int8MinValue: number = -128;
+      const arr = Float64Array.of(int16MinValue, -128, zeroValue);
+      const receivedValues: number[] = [];
+      arr.findLastIndex((value: number): boolean => {
+        receivedValues.push(value);
+        return false;
+      })
+
+      const expectVal = int8MinValue;
+      expect(receivedValues[1]).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_0950
+     * @tc.name testFloat64ArrayFindLastIndex095
+     * @tc.desc Verify findLastIndex callback receives -Infinity value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int32MinValue: number = -2147483648;
+      const zeroValue: number = 0;
+      const negativeOne: number = -1;
+      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const receivedValues: number[] = [];
+      arr.findLastIndex((value: number): boolean => {
+        receivedValues.push(value);
+        return false;
+      })
+
+      const expectVal = negativeOne;
+      expect(receivedValues[1]).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_0960
+     * @tc.name testFloat64ArrayFindLastIndex096
+     * @tc.desc Verify findLastIndex callback receives MAX_VALUE
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointOne: number = 0.1;
+      const maxSafeInteger: number = 9007199254740991;
+      const zeroValue: number = 0;
+      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const receivedValues: number[] = [];
+      arr.findLastIndex((value: number): boolean => {
+        receivedValues.push(value);
+        return false;
+      })
+
+      const expectVal = maxSafeInteger;
+      expect(receivedValues[1]).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_0970
+     * @tc.name testFloat64ArrayFindLastIndex097
+     * @tc.desc Verify findLastIndex callback receives MIN_VALUE 5e-324
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointFive: number = 0.5;
+      const onePointFive: number = 1.5;
+      const pointTwoFive: number = 0.25;
+      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const receivedValues: number[] = [];
+      arr.findLastIndex((value: number): boolean => {
+        receivedValues.push(value);
+        return false;
+      })
+
+      const expectVal = onePointFive;
+      expect(receivedValues[1]).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_0980
+     * @tc.name testFloat64ArrayFindLastIndex098
+     * @tc.desc Verify findLastIndex callback receives indices in descending order from last
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointOne: number = 0.1;
+      const maxSafeInteger: number = 9007199254740991;
+      const zeroValue: number = 0;
+      const twoValue: number = 2;
+      const oneValue: number = 1;
+      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const receivedIndices: int[] = [];
+      arr.findLastIndex((value: number, index: int): boolean => {
+        receivedIndices.push(index);
+        return false;
+      })
+
+      expect(receivedIndices[0]).assertEqual(twoValue);
+      expect(receivedIndices[1]).assertEqual(oneValue);
+      expect(receivedIndices[2]).assertEqual(zeroValue);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_0990
+     * @tc.name testFloat64ArrayFindLastIndex099
+     * @tc.desc Verify findLastIndex callback receives index 0 for single element array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointFive: number = 0.5;
+      const zeroValue: number = 0;
+      const arr = Float64Array.of(pointFive);
+      const receivedIndices: int[] = [];
+      arr.findLastIndex((value: number, index: int): boolean => {
+        receivedIndices.push(index);
+        return false;
+      })
+
+      const expectVal = zeroValue;
+      expect(receivedIndices[0]).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_1000
+     * @tc.name testFloat64ArrayFindLastIndex100
+     * @tc.desc Verify findLastIndex on empty array does not invoke callback
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Float64Array(0);
+      let called = false;
+      arr.findLastIndex((value: number, index: int): boolean => {
+        called = true;
+        return false;
+      })
+
+      const expectVal = false;
+      expect(called).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_1010
+     * @tc.name testFloat64ArrayFindLastIndex101
+     * @tc.desc Verify findLastIndex callback array parameter references original array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int16MinValue: number = -32768;
+      const zeroValue: number = 0;
+      const arr = Float64Array.of(int16MinValue, -128, zeroValue);
+      let receivedArray: Object | null = null;
+      arr.findLastIndex((value: number, index: int, array: Float64Array): boolean => {
+        receivedArray = array;
+        return false;
+      })
+
+      const expectVal = arr;
+      expect(receivedArray).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_1020
+     * @tc.name testFloat64ArrayFindLastIndex102
+     * @tc.desc Verify findLastIndex callback array length matches original
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int32MinValue: number = -2147483648;
+      const zeroValue: number = 0;
+      const oneValue: number = 1;
+      const int32MaxValue: number = 2147483647;
+      const fiveValue: number = 5;
+      const arr = Float64Array.of(int32MinValue, -1, zeroValue, oneValue, int32MaxValue);
+      let receivedLength: int = -1;
+      arr.findLastIndex((value: number, index: int, array: Float64Array): boolean => {
+        receivedLength = array.length;
+        return false;
+      })
+
+      const expectVal = fiveValue;
+      expect(receivedLength).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_1030
+     * @tc.name testFloat64ArrayFindLastIndex103
+     * @tc.desc Verify findLastIndex cannot find NaN via equality comparison
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointOne: number = 0.1;
+      const maxSafeInteger: number = 9007199254740991;
+      const zeroValue: number = 0;
+      const negativeOne: number = -1;
+      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const result = arr.findLastIndex((value: number): boolean => {
+        return value === NaN;
+      })
+
+      const expectVal = negativeOne;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_1040
+     * @tc.name testFloat64ArrayFindLastIndex104
+     * @tc.desc Verify findLastIndex finds NaN using Number.isNaN in callback
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointFive: number = 0.5;
+      const onePointFive: number = 1.5;
+      const pointTwoFive: number = 0.25;
+      const negativeOne: number = -1;
+      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const result = arr.findLastIndex((value: number): boolean => {
+        return Number.isNaN(value);
+      })
+
+      const expectVal = negativeOne;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_1050
+     * @tc.name testFloat64ArrayFindLastIndex105
+     * @tc.desc Verify findLastIndex with negative zero as search target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const zeroValue: number = 0;
+      const twoValue: number = 2;
+      const arr = Float64Array.of(zeroValue, -128, zeroValue);
+      const result = arr.findLastIndex((value: number): boolean => {
+        return value === -0.0;
+      })
+
+      const expectVal = twoValue;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_1060
+     * @tc.name testFloat64ArrayFindLastIndex106
+     * @tc.desc Verify findLastIndex return value is an integer
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int32MinValue: number = -2147483648;
+      const zeroValue: number = 0;
+      const negativeOne: number = -1;
+      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const result = arr.findLastIndex((value: number): boolean => {
+        return value > 1.0;
+      })
+
+      const expectVal = negativeOne;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_1070
+     * @tc.name testFloat64ArrayFindLastIndex107
+     * @tc.desc Verify findLastIndex with all identical elements returns last index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const zeroValue: number = 0;
+      const negativeOne: number = -1;
+      const arr = Float64Array.of(zeroValue, zeroValue, zeroValue);
+      const result = arr.findLastIndex((value: number): boolean => {
+        return value === 5.0;
+      })
+
+      const expectVal = negativeOne;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_1080
+     * @tc.name testFloat64ArrayFindLastIndex108
+     * @tc.desc Verify findLastIndex with integer values in array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointFive: number = 0.5;
+      const onePointFive: number = 1.5;
+      const pointTwoFive: number = 0.25;
+      const pointOneTwoFive: number = 0.125;
+      const negativeOne: number = -1;
+      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive, pointOneTwoFive);
+      const result = arr.findLastIndex((value: number): boolean => {
+        return value > 20;
+      })
+
+      const expectVal = negativeOne;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_1090
+     * @tc.name testFloat64ArrayFindLastIndex109
+     * @tc.desc Verify findLastIndex returns last matching index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int16MinValue: number = -32768;
+      const int8MaxValue: number = 127;
+      const zeroValue: number = 0;
+      const negativeOne: number = -1;
+      const values = Float64Array.of(int16MinValue, int8MaxValue, zeroValue, int8MaxValue);
+      const actVal6 = values.findLastIndex((value) => value === 5.0);
+      const expectVal = negativeOne;
+      expect(actVal6).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_1100
+     * @tc.name testFloat64ArrayFindLastIndex110
+     * @tc.desc Verify findLastIndex returns -1 when not found
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int32MinValue: number = -2147483648;
+      const zeroValue: number = 0;
+      const negativeOne: number = -1;
+      const values = Float64Array.of(int32MinValue, -1, zeroValue);
+      const actVal7 = values.findLastIndex((value) => value > 10);
+      const expectVal = negativeOne;
+      expect(actVal7).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_1110
+     * @tc.name testFloat64ArrayFindLastIndex111
+     * @tc.desc Verify findLastIndex returns -1 for empty array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const negativeOne: number = -1;
+      const values = new Float64Array();
+      const actVal8 = values.findLastIndex((value) => value > 0);
+      const expectVal = negativeOne;
+      expect(actVal8).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_1120
+     * @tc.name testFloat64ArrayFindLastIndex112
+     * @tc.desc Verify findLastIndex with NaN element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointOne: number = 0.1;
+      const maxSafeInteger: number = 9007199254740991;
+      const negativeOne: number = -1;
+      const values = Float64Array.of(pointOne, maxSafeInteger);
+      const actVal9 = values.findLastIndex((value) => Number.isNaN(value));
+      const expectVal = negativeOne;
+      expect(actVal9).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_1130
+     * @tc.name testFloat64ArrayFindLastIndex113
+     * @tc.desc Verify findLastIndex with Infinity element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointFive: number = 0.5;
+      const pointOneTwoFive: number = 0.125;
+      const pointTwoFive: number = 0.25;
+      const negativeOne: number = -1;
+      const values = Float64Array.of(pointFive, pointOneTwoFive, pointTwoFive, pointOneTwoFive);
+      const actVal10 = values.findLastIndex((value) => value === Infinity);
+      const expectVal = negativeOne;
+      expect(actVal10).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_1140
+     * @tc.name testFloat64ArrayFindLastIndex114
+     * @tc.desc Verify findLastIndex returns -1 when no elements satisfy positive predicate
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int16MinValue: number = -32768;
+      const zeroValue: number = 0;
+      const negativeOne: number = -1;
+      const values = Float64Array.of(int16MinValue, -128, zeroValue);
+      const actVal11 = values.findLastIndex((value) => value > 0);
+      const expectVal = negativeOne;
+      expect(actVal11).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_1150
+     * @tc.name testFloat64ArrayFindLastIndex115
+     * @tc.desc Verify findLastIndex callback error propagation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int32MinValue: number = -2147483648;
+      const values = Float64Array.of(int32MinValue, -1);
+      try {
+        values.findLastIndex((value) => {
+          throw new Error("test");
+        })
+
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("Error");
+      }
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_1160
+     * @tc.name testFloat64ArrayFindLastIndex116
+     * @tc.desc Verify findLastIndex with hex literal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const hexValueFF: number = 0xFF;
+      const hexValueAA: number = 0xAA;
+      const hexValue55: number = 0x55;
+      const oneValue: number = 1;
+      const arr = Float64Array.of(hexValueFF, hexValueAA, hexValue55);
+      const idx = arr.findLastIndex((e: number): boolean => e > 0x55);
+      const expectVal = oneValue;
+      expect(idx).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_1170
+     * @tc.name testFloat64ArrayFindLastIndex117
+     * @tc.desc Verify findLastIndex with binary literal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const binaryValue11111111: number = 0b11111111;
+      const binaryValue10101010: number = 0b10101010;
+      const binaryValue01010101: number = 0b01010101;
+      const oneValue: number = 1;
+      const arr = Float64Array.of(binaryValue11111111, binaryValue10101010, binaryValue01010101);
+      const idx = arr.findLastIndex((e: number): boolean => e > 0b01010101);
+      const expectVal = oneValue;
+      expect(idx).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_1180
+     * @tc.name testFloat64ArrayFindLastIndex118
+     * @tc.desc Verify findlastindex with Double.NaN
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nanValue: number = Double.NaN;
+      const doubleMaxValue: number = Double.MAX_VALUE;
+      const arr = Float64Array.of(nanValue, doubleMaxValue);
+      const idx = arr.findLastIndex((e: number): boolean => Number.isNaN(e));
+      const expectVal = 0;
+      expect(idx).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_1190
+     * @tc.name testFloat64ArrayFindLastIndex119
+     * @tc.desc Verify findlastindex with Double.POSITIVE_INFINITY
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const positiveInfinity: number = Double.POSITIVE_INFINITY;
+      const negativeInfinity: number = Double.NEGATIVE_INFINITY;
+      const arr = Float64Array.of(positiveInfinity, negativeInfinity);
+      const idx = arr.findLastIndex((e: number): boolean => e < 0.0);
+      const expectVal = 1;
+      expect(idx).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDLASTINDEX_1200
+     * @tc.name testFloat64ArrayFindLastIndex120
+     * @tc.desc Verify findlastindex with Double.MIN_VALUE/MAX_VALUE
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindLastIndex120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const doubleMinValue: number = Double.MIN_VALUE;
+      const doubleMaxValue: number = Double.MAX_VALUE;
+      const arr = Float64Array.of(doubleMinValue, doubleMaxValue);
+      const idx = arr.findLastIndex((e: number): boolean => e === doubleMinValue);
+      const expectVal = 0;
+      expect(idx).assertEqual(expectVal);
+    })
+
   })
 }
