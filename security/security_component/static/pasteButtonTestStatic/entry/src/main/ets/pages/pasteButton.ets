@@ -93,7 +93,7 @@ struct pasteButton {
   @State chainStyle: ChainStyle | undefined = undefined
 
   @State backLineSpacingEnable: boolean | undefined = undefined;
-  @State accessibilityDescriptionValue:string | Resource| undefined = ""
+  @State accessibilityDescriptionValue:string | Resource| undefined = ''
   @State accessibilityRoleValue:SecurityComponentRoleType | undefined = undefined
 
   private stateChangeCallBack: (eventData:events_emitter.EventData) => void =
