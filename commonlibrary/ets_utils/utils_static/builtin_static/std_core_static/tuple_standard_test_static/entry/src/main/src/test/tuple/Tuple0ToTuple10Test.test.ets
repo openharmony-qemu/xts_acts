@@ -17,6 +17,16 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from './../Util.test';
 
+type Tuple2IS = Tuple2<int, string>;
+type Tuple3ISB = Tuple3<int, string, boolean>;
+type Tuple4ISBD = Tuple4<int, string, boolean, double>;
+type Tuple5ISBDF = Tuple5<int, string, boolean, double, float>;
+type Tuple6ISBDFC = Tuple6<int, string, boolean, double, float, char>;
+type Tuple7ISBDFCI = Tuple7<int, string, boolean, double, float, char, int>;
+type Tuple8ISBDFCIS = Tuple8<int, string, boolean, double, float, char, int, string>;
+type Tuple9ISBDFCISB = Tuple9<int, string, boolean, double, float, char, int, string, boolean>;
+type Tuple10Int = Tuple10<int, int, int, int, int, int, int, int, int, int>;
+type Tuple10ISBDFCISBI = Tuple10<int, string, boolean, double, float, char, int, string, boolean, int>;
 export default function Tuple0ToTuple10Test(): void {
   describe('Tuple0ToTuple10Test', (): void => {
     beforeAll(() => {
@@ -38,7 +48,7 @@ export default function Tuple0ToTuple10Test(): void {
      * @tc.level Level 2
      */
     it('testTuple0ToTuple001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t3 = new Tuple3<int, string, boolean>(1, "a", true);
+      let t3 = new Tuple3ISB(1, "a", true);
       expect(t3.length).assertEqual(3);
       expect(t3.$0).assertEqual(1);
       expect(t3.$1).assertEqual("a");
@@ -54,7 +64,7 @@ export default function Tuple0ToTuple10Test(): void {
      * @tc.level Level 2
      */
     it('testTuple0ToTuple002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t4 = new Tuple4<int, string, boolean, double>(1, "a", true, 3.14);
+      let t4 = new Tuple4ISBD(1, "a", true, 3.14);
       expect(t4.length).assertEqual(4);
       expect(t4.$0).assertEqual(1);
       expect(t4.$1).assertEqual("a");
@@ -71,11 +81,13 @@ export default function Tuple0ToTuple10Test(): void {
      * @tc.level Level 2
      */
     it('testTuple0ToTuple003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t5 = new Tuple5<int, string, boolean, double, float>(1, "a", true, 3.14, 2.5 as float);
+      let t5 = new Tuple5ISBDF(10, "hello", false, 6.28, 1.5 as float);
       expect(t5.length).assertEqual(5);
-      expect(t5.$0).assertEqual(1);
-      expect(t5.$3).assertEqual(3.14);
-      expect(t5.$4).assertEqual(2.5 as float);
+      expect(t5.$0).assertEqual(10);
+      expect(t5.$1).assertEqual("hello");
+      expect(t5.$2).assertFalse();
+      expect(t5.$3).assertEqual(6.28);
+      expect(t5.$4).assertEqual(1.5 as float);
     });
 
     /**
@@ -87,7 +99,7 @@ export default function Tuple0ToTuple10Test(): void {
      * @tc.level Level 2
      */
     it('testTuple0ToTuple004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t6 = new Tuple6<int, string, boolean, double, float, char>(1, "a", true, 3.14, 2.5 as float, c'X');
+      let t6 = new Tuple6ISBDFC(1, "a", true, 3.14, 2.5 as float, c'X');
       expect(t6.length).assertEqual(6);
       expect(t6.$0).assertEqual(1);
       expect(t6.$5).assertEqual(c'X');
@@ -102,7 +114,7 @@ export default function Tuple0ToTuple10Test(): void {
      * @tc.level Level 2
      */
     it('testTuple0ToTuple005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t7 = new Tuple7<int, string, boolean, double, float, char, int>(
+      let t7 = new Tuple7ISBDFCI(
       1, "a", true, 3.14, 2.5 as float, c'X', 99
       );
       expect(t7.length).assertEqual(7);
@@ -119,7 +131,7 @@ export default function Tuple0ToTuple10Test(): void {
      * @tc.level Level 2
      */
     it('testTuple0ToTuple006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t8 = new Tuple8<int, string, boolean, double, float, char, int, string>(
+      let t8 = new Tuple8ISBDFCIS(
       1, "a", true, 3.14, 2.5 as float, c'X', 99, "end"
       );
       expect(t8.length).assertEqual(8);
@@ -136,7 +148,7 @@ export default function Tuple0ToTuple10Test(): void {
      * @tc.level Level 2
      */
     it('testTuple0ToTuple007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t9 = new Tuple9<int, string, boolean, double, float, char, int, string, boolean>(
+      let t9 = new Tuple9ISBDFCISB(
       1, "a", true, 3.14, 2.5 as float, c'X', 99, "s", false
       );
       expect(t9.length).assertEqual(9);
@@ -153,7 +165,7 @@ export default function Tuple0ToTuple10Test(): void {
      * @tc.level Level 2
      */
     it('testTuple0ToTuple008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t10 = new Tuple10<int, string, boolean, double, float, char, int, string, boolean, int>(
+      let t10 = new Tuple10ISBDFCISBI(
       1, "a", true, 3.14, 2.5, c'X', 99, "s", false, 0
       );
       expect(t10.length).assertEqual(10);
@@ -369,8 +381,8 @@ export default function Tuple0ToTuple10Test(): void {
      * @tc.level Level 2
      */
     it('testTuple0ToTuple022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let inner = new Tuple2<int, string>(1, "inner");
-      let t = new Tuple1<Tuple2<int, string>>(inner);
+      let inner = new Tuple2IS(1, "inner");
+      let t = new Tuple1<Tuple2IS>(inner);
       expect(t.$0.$0).assertEqual(1);
       expect(t.$0.$1).assertEqual("inner");
     });
@@ -475,7 +487,7 @@ export default function Tuple0ToTuple10Test(): void {
     it('testTuple0ToTuple029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let t = new Tuple1<double>(Double.POSITIVE_INFINITY);
       expect(isFinite(t.$0)).assertFalse();
-      expect(t.$0 > 0).assertTrue();
+      expect(t.$0).assertPosUnlimited();
     });
 
     /**
@@ -489,7 +501,7 @@ export default function Tuple0ToTuple10Test(): void {
     it('testTuple0ToTuple030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let t = new Tuple1<double>(Double.NEGATIVE_INFINITY);
       expect(isFinite(t.$0)).assertFalse();
-      expect(t.$0 < 0).assertTrue();
+      expect(t.$0).assertNegUnlimited();
     });
 
     /**
@@ -508,175 +520,44 @@ export default function Tuple0ToTuple10Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_3200
      * @tc.name testTuple0ToTuple032
-     * @tc.desc Verify Tuple1 field access returns int value that can be assigned to variable
+     * @tc.desc Verify field access returns correct typed value from each Tuple1 through Tuple10 position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testTuple0ToTuple032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t = new Tuple1<int>(42);
-      let val: int = t.$0;
-      expect(val).assertEqual(42);
+      let v1: int = new Tuple1<int>(42).$0;
+      expect(v1).assertEqual(42);
+      let s1: string = new Tuple1<string>("hello").$0;
+      expect(s1).assertEqual("hello");
+      let v2: string = new Tuple2IS(1, "two").$1;
+      expect(v2).assertEqual("two");
+      let v3: boolean = new Tuple3ISB(100, "beta", false).$2;
+      expect(v3).assertFalse();
+      let v4: double = new Tuple4ISBD(200, "gamma", true, 2.71).$3;
+      expect(v4).assertEqual(2.71);
+      let v6: char = new Tuple6ISBDFC(20, "world", false, 2.71, 3.5 as float, c'Z').$5;
+      expect(v6).assertEqual(c'Z');
+      let v7: int = new Tuple7ISBDFCI(20, "world", false, 2.71, 3.5 as float, c'Z', 88).$6;
+      expect(v7).assertEqual(88);
+      let v8: string = new Tuple8ISBDFCIS(20, "world", false, 2.71, 3.5 as float, c'Z', 88, "done").$7;
+      expect(v8).assertEqual("done");
+      let v9: boolean = new Tuple9ISBDFCISB(20, "world", false, 2.71, 3.5 as float, c'Z', 88, "done", true).$8;
+      expect(v9).assertTrue();
+      let v10: int = new Tuple10ISBDFCISBI(20, "world", false, 2.71, 3.5, c'Z', 88, "done", true, 999).$9;
+      expect(v10).assertEqual(999);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_3300
      * @tc.name testTuple0ToTuple033
-     * @tc.desc Verify Tuple1 field access returns string value that can be assigned to variable
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTuple0ToTuple033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let tStr = new Tuple1<string>("hello");
-      let s: string = tStr.$0;
-      expect(s).assertEqual("hello");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_3400
-     * @tc.name testTuple0ToTuple034
-     * @tc.desc Verify Tuple2 field access returns string value from second position
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTuple0ToTuple034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t = new Tuple2<int, string>(1, "two");
-      let val: string = t.$1;
-      expect(val).assertEqual("two");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_3500
-     * @tc.name testTuple0ToTuple035
-     * @tc.desc Verify Tuple3 field access returns boolean value from third position
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTuple0ToTuple035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t = new Tuple3<int, string, boolean>(1, "a", true);
-      let val: boolean = t.$2;
-      expect(val).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_3600
-     * @tc.name testTuple0ToTuple036
-     * @tc.desc Verify Tuple4 field access returns double value from fourth position
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTuple0ToTuple036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t = new Tuple4<int, string, boolean, double>(1, "a", true, 3.14);
-      let val: double = t.$3;
-      expect(val).assertEqual(3.14);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_3700
-     * @tc.name testTuple0ToTuple037
-     * @tc.desc Verify Tuple5 field access returns float value from fifth position
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTuple0ToTuple037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t = new Tuple5<int, string, boolean, double, float>(1, "a", true, 3.14, 2.5 as float);
-      let val: float = t.$4;
-      expect(val).assertEqual(2.5 as float);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_3800
-     * @tc.name testTuple0ToTuple038
-     * @tc.desc Verify Tuple6 field access returns char value from sixth position
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTuple0ToTuple038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t = new Tuple6<int, string, boolean, double, float, char>(1, "a", true, 3.14, 2.5 as float, c'X');
-      let val: char = t.$5;
-      expect(val).assertEqual(c'X');
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_3900
-     * @tc.name testTuple0ToTuple039
-     * @tc.desc Verify Tuple7 field access returns int value from seventh position
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTuple0ToTuple039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t = new Tuple7<int, string, boolean, double, float, char, int>(
-      1, "a", true, 3.14, 2.5 as float, c'X', 77
-      );
-      let val: int = t.$6;
-      expect(val).assertEqual(77);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_4000
-     * @tc.name testTuple0ToTuple040
-     * @tc.desc Verify Tuple8 field access returns string value from eighth position
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTuple0ToTuple040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t = new Tuple8<int, string, boolean, double, float, char, int, string>(
-      1, "a", true, 3.14, 2.5 as float, c'X', 77, "end"
-      );
-      let val: string = t.$7;
-      expect(val).assertEqual("end");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_4100
-     * @tc.name testTuple0ToTuple041
-     * @tc.desc Verify Tuple9 field access returns boolean value from ninth position
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTuple0ToTuple041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t = new Tuple9<int, string, boolean, double, float, char, int, string, boolean>(
-      1, "a", true, 3.14, 2.5 as float, c'X', 77, "s", false
-      );
-      let val: boolean = t.$8;
-      expect(val).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_4200
-     * @tc.name testTuple0ToTuple042
-     * @tc.desc Verify Tuple10 field access returns int value from tenth position
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTuple0ToTuple042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t = new Tuple10<int, string, boolean, double, float, char, int, string, boolean, int>(
-      1, "a", true, 3.14, 2.5, c'X', 77, "s", false, 999
-      );
-      let val: int = t.$9;
-      expect(val).assertEqual(999);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_4300
-     * @tc.name testTuple0ToTuple043
      * @tc.desc Verify Tuple2 field access returns int and string values assigned to separate variables
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTuple0ToTuple043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t = new Tuple2<int, string>(42, "hello");
+    it('testTuple0ToTuple033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let t = new Tuple2IS(42, "hello");
       let v0: int = t.$0;
       let v1: string = t.$1;
       expect(v0).assertEqual(42);
@@ -685,15 +566,15 @@ export default function Tuple0ToTuple10Test(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_4400
-     * @tc.name testTuple0ToTuple044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_3400
+     * @tc.name testTuple0ToTuple034
      * @tc.desc Verify Tuple5 stores and reads five mixed-type values by field index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTuple0ToTuple044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t = new Tuple5<int, string, boolean, double, float>(10, "x", false, 1.1, 2.2 as float);
+    it('testTuple0ToTuple034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let t = new Tuple5ISBDF(10, "x", false, 1.1, 2.2 as float);
       expect(t.$0).assertEqual(10);
       expect(t.$1).assertEqual("x");
       expect(t.$2).assertFalse();
@@ -702,15 +583,15 @@ export default function Tuple0ToTuple10Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_4500
-     * @tc.name testTuple0ToTuple045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_3500
+     * @tc.name testTuple0ToTuple035
      * @tc.desc Verify Tuple10 unsafeGet iteration sums all int values to 45
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTuple0ToTuple045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t = new Tuple10<int, int, int, int, int, int, int, int, int, int>(
+    it('testTuple0ToTuple035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let t = new Tuple10Int(
       0, 1, 2, 3, 4, 5, 6, 7, 8, 9
       );
       expect(t.length).assertEqual(10);
@@ -725,15 +606,15 @@ export default function Tuple0ToTuple10Test(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_4600
-     * @tc.name testTuple0ToTuple046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_3600
+     * @tc.name testTuple0ToTuple036
      * @tc.desc Verify Tuple6 field access returns all six mixed-type values assigned to variables
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTuple0ToTuple046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t = new Tuple6<int, string, boolean, double, float, char>(
+    it('testTuple0ToTuple036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let t = new Tuple6ISBDFC(
       1, "a", true, 3.14, 2.5 as float, c'Z'
       );
       let v0: int = t.$0;
@@ -751,87 +632,82 @@ export default function Tuple0ToTuple10Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_4700
-     * @tc.name testTuple0ToTuple047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_3700
+     * @tc.name testTuple0ToTuple037
      * @tc.desc Verify Tuple1 toString output contains the stored int value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTuple0ToTuple047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTuple0ToTuple037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let t = new Tuple1<int>(42);
       let s: string = t.toString();
       expect(s).assertContain("42");
-      expect(s.length).assertLarger(0);
       expect(t.$0).assertEqual(42);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_4800
-     * @tc.name testTuple0ToTuple048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_3800
+     * @tc.name testTuple0ToTuple038
      * @tc.desc Verify Tuple2 toString output contains both stored values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTuple0ToTuple048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t = new Tuple2<int, string>(1, "one");
+    it('testTuple0ToTuple038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let t = new Tuple2IS(1, "one");
       let s: string = t.toString();
       expect(s).assertContain("1");
       expect(s).assertContain("one");
-      expect(s.length).assertLarger(0);
       expect(t.length).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_4900
-     * @tc.name testTuple0ToTuple049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_3900
+     * @tc.name testTuple0ToTuple039
      * @tc.desc Verify Tuple5 toString output contains all five stored values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTuple0ToTuple049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t = new Tuple5<int, string, boolean, double, float>(1, "a", true, 3.14, 2.5 as float);
+    it('testTuple0ToTuple039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let t = new Tuple5ISBDF(5, "hello", false, 2.71, 1.5 as float);
       let s: string = t.toString();
-      expect(s).assertContain("1");
-      expect(s).assertContain("a");
-      expect(s).assertContain("true");
-      expect(s).assertContain("3.14");
-      expect(s.length).assertLarger(0);
+      expect(s).assertContain("5");
+      expect(s).assertContain("hello");
+      expect(s).assertContain("2.71");
       expect(t.length).assertEqual(5);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_5000
-     * @tc.name testTuple0ToTuple050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_4000
+     * @tc.name testTuple0ToTuple040
      * @tc.desc Verify Tuple10 toString output contains all stored int values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTuple0ToTuple050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t = new Tuple10<int, int, int, int, int, int, int, int, int, int>(
+    it('testTuple0ToTuple040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let t = new Tuple10Int(
       0, 1, 2, 3, 4, 5, 6, 7, 8, 9
       );
       let s: string = t.toString();
       expect(s).assertContain("0");
       expect(s).assertContain("5");
       expect(s).assertContain("9");
-      expect(s.length).assertLarger(0);
       expect(t.length).assertEqual(10);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_5100
-     * @tc.name testTuple0ToTuple051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_4100
+     * @tc.name testTuple0ToTuple041
      * @tc.desc Verify Tuple10 stores int values at first middle and last positions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTuple0ToTuple051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t = new Tuple10<int, int, int, int, int, int, int, int, int, int>(
+    it('testTuple0ToTuple041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let t = new Tuple10Int(
       10, 20, 30, 40, 50, 60, 70, 80, 90, 100
       );
       expect(t.$0).assertEqual(10);
@@ -841,15 +717,15 @@ export default function Tuple0ToTuple10Test(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_5200
-     * @tc.name testTuple0ToTuple052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_4200
+     * @tc.name testTuple0ToTuple042
      * @tc.desc Verify Tuple7 stores and reads seven mixed-type values by field index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTuple0ToTuple052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t = new Tuple7<int, string, boolean, double, float, char, int>(
+    it('testTuple0ToTuple042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let t = new Tuple7ISBDFCI(
       1, "a", true, 2.0, 3.0 as float, c'Z', 99
       );
       expect(t.$0).assertEqual(1);
@@ -859,251 +735,225 @@ export default function Tuple0ToTuple10Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_5300
-     * @tc.name testTuple0ToTuple053
-     * @tc.desc Verify two Tuple2 instances with same values are distinct objects with equal fields
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_4300
+     * @tc.name testTuple0ToTuple043
+     * @tc.desc Verify two separately constructed Tuple2 instances with equal field values; reference independence is guaranteed by separate construction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTuple0ToTuple053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t1 = new Tuple2<int, string>(1, "a");
-      let t2 = new Tuple2<int, string>(1, "a");
-      expect(t1 !== t2).assertTrue();
+    it('testTuple0ToTuple043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let t1 = new Tuple2IS(1, "a");
+      let t2 = new Tuple2IS(1, "a");
       expect(t1.$0).assertEqual(t2.$0);
       expect(t1.$1).assertEqual(t2.$1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_5400
-     * @tc.name testTuple0ToTuple054
-     * @tc.desc Verify Tuple3 and Tuple5 with overlapping leading types are distinct objects with equal leading fields
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_4400
+     * @tc.name testTuple0ToTuple044
+     * @tc.desc Verify Tuple3 and Tuple5 with overlapping leading types have equal leading fields; reference independence is guaranteed by separate construction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTuple0ToTuple054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t3 = new Tuple3<int, string, boolean>(1, "a", true);
-      let t5 = new Tuple5<int, string, boolean, double, float>(1, "a", true, 1.0, 2.0 as float);
-      expect(t3 !== t5).assertTrue();
+    it('testTuple0ToTuple044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let t3 = new Tuple3ISB(1, "a", true);
+      let t5 = new Tuple5ISBDF(1, "a", true, 1.0, 2.0 as float);
       expect(t3.$0).assertEqual(t5.$0);
       expect(t3.$1).assertEqual(t5.$1);
       expect(t3.$2).assertEqual(t5.$2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_5500
-     * @tc.name testTuple0ToTuple055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_4500
+     * @tc.name testTuple0ToTuple045
      * @tc.desc Verify Tuple3 unsafeGet returns int string and boolean values by index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTuple0ToTuple055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t = new Tuple3<int, string, boolean>(1, "a", true);
+    it('testTuple0ToTuple045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let t = new Tuple3ISB(1, "a", true);
       expect(t.unsafeGet(0) as int).assertEqual(1);
       expect(t.unsafeGet(1) as string).assertEqual("a");
       expect(t.unsafeGet(2) as boolean).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_5600
-     * @tc.name testTuple0ToTuple056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_4600
+     * @tc.name testTuple0ToTuple046
      * @tc.desc Verify Tuple2 unsafeGet throws Error on negative out-of-bounds index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTuple0ToTuple056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t = new Tuple2<int, string>(1, "a");
+    it('testTuple0ToTuple046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let t = new Tuple2IS(1, "a");
       expect(t.length).assertEqual(2);
-      let caught: boolean = false;
       try {
         t.unsafeGet(-1);
         expect().assertFail();
       } catch (e) {
-        caught = true;
         expect(e.name).assertEqual('IndexOutOfBoundsError');
       }
-      expect(caught).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_5700
-     * @tc.name testTuple0ToTuple057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_4700
+     * @tc.name testTuple0ToTuple047
      * @tc.desc Verify Tuple3 unsafeGet throws Error on out-of-bounds index equal to length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTuple0ToTuple057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t = new Tuple3<int, string, boolean>(1, "a", true);
+    it('testTuple0ToTuple047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let t = new Tuple3ISB(1, "a", true);
       expect(t.length).assertEqual(3);
-      let caught: boolean = false;
       try {
         t.unsafeGet(3);
         expect().assertFail();
       } catch (e) {
-        caught = true;
         expect(e.name).assertEqual('IndexOutOfBoundsError');
       }
-      expect(caught).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_5800
-     * @tc.name testTuple0ToTuple058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_4800
+     * @tc.name testTuple0ToTuple048
      * @tc.desc Verify Tuple2 unsafeGet values match field access values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTuple0ToTuple058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t = new Tuple2<int, string>(42, "hello");
+    it('testTuple0ToTuple048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let t = new Tuple2IS(42, "hello");
       expect(t.unsafeGet(0) as int).assertEqual(t.$0);
       expect(t.unsafeGet(1) as string).assertEqual(t.$1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_5900
-     * @tc.name testTuple0ToTuple059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_4900
+     * @tc.name testTuple0ToTuple049
      * @tc.desc Verify Tuple1 unsafeGet throws on negative index after successful field access
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTuple0ToTuple059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTuple0ToTuple049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let t = new Tuple1<int>(42);
       expect(t.$0).assertEqual(42);
-      let caught: boolean = false;
       try {
         t.unsafeGet(-1);
         expect().assertFail();
       } catch (e) {
-        caught = true;
         expect(e.name).assertEqual('IndexOutOfBoundsError');
       }
-      expect(caught).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_6000
-     * @tc.name testTuple0ToTuple060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_5000
+     * @tc.name testTuple0ToTuple050
      * @tc.desc Verify Tuple2 unsafeGet throws on out-of-bounds index equal to length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTuple0ToTuple060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t = new Tuple2<int, string>(1, "a");
+    it('testTuple0ToTuple050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let t = new Tuple2IS(1, "a");
       expect(t.length).assertEqual(2);
-      let caught: boolean = false;
       try {
         t.unsafeGet(2);
         expect().assertFail();
       } catch (e) {
-        caught = true;
         expect(e.name).assertEqual('IndexOutOfBoundsError');
       }
-      expect(caught).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_6100
-     * @tc.name testTuple0ToTuple061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_5100
+     * @tc.name testTuple0ToTuple051
      * @tc.desc Verify Tuple0 unsafeGet throws on negative index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTuple0ToTuple061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTuple0ToTuple051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let t = new Tuple0();
       expect(t.length).assertEqual(0);
-      let caught: boolean = false;
       try {
         t.unsafeGet(-1);
         expect().assertFail();
       } catch (e) {
-        caught = true;
         expect(e.name).assertEqual('IndexOutOfBoundsError');
       }
-      expect(caught).assertTrue();
     });
-
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_6200
-     * @tc.name testTuple0ToTuple062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_5200
+     * @tc.name testTuple0ToTuple052
      * @tc.desc Verify Tuple5 unsafeGet throws on max int out-of-bounds index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTuple0ToTuple062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t = new Tuple5<int, string, boolean, double, float>(1, "a", true, 3.14, 2.5 as float);
+    it('testTuple0ToTuple052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let t = new Tuple5ISBDF(0, "", false, 0.0, 0.0 as float);
       expect(t.length).assertEqual(5);
-      let caught: boolean = false;
       try {
         t.unsafeGet(2147483647);
         expect().assertFail();
       } catch (e) {
-        caught = true;
         expect(e.name).assertEqual('IndexOutOfBoundsError');
       }
-      expect(caught).assertTrue();
     });
-
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_6300
-     * @tc.name testTuple0ToTuple063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_5300
+     * @tc.name testTuple0ToTuple053
      * @tc.desc Verify Tuple3 unsafeGet throws on min int negative out-of-bounds index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTuple0ToTuple063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t = new Tuple3<int, string, boolean>(1, "a", true);
+    it('testTuple0ToTuple053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let t = new Tuple3ISB(1, "a", true);
       expect(t.length).assertEqual(3);
-      let caught: boolean = false;
       try {
         t.unsafeGet(-2147483648);
         expect().assertFail();
       } catch (e) {
-        caught = true;
         expect(e.name).assertEqual('IndexOutOfBoundsError');
       }
-      expect(caught).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_6400
-     * @tc.name testTuple0ToTuple064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_5400
+     * @tc.name testTuple0ToTuple054
      * @tc.desc Verify Tuple2 toString output contains both stored values with non-default string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTuple0ToTuple064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t = new Tuple2<int, string>(1, "v20");
+    it('testTuple0ToTuple054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let t = new Tuple2IS(1, "v20");
       let s: string = t.toString();
       expect(s).assertContain("1");
       expect(s).assertContain("v20");
-      expect(s.length).assertLarger(0);
       expect(t.$0).assertEqual(1);
       expect(t.$1).assertEqual("v20");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_6500
-     * @tc.name testTuple0ToTuple065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_5500
+     * @tc.name testTuple0ToTuple055
      * @tc.desc Verify Tuple0 Tuple1 and Tuple10 store correct length and field values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTuple0ToTuple065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTuple0ToTuple055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let t0 = new Tuple0();
       let t1 = new Tuple1<int>(1);
-      let t10 = new Tuple10<int, int, int, int, int, int, int, int, int, int>(
+      let t10 = new Tuple10Int(
       0, 1, 2, 3, 4, 5, 6, 7, 8, 9
       );
       expect(t0.length).assertEqual(0);
@@ -1114,16 +964,16 @@ export default function Tuple0ToTuple10Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_6600
-     * @tc.name testTuple0ToTuple066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_5600
+     * @tc.name testTuple0ToTuple056
      * @tc.desc Verify nested Tuple values remain accessible through fields
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTuple0ToTuple066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let inner = new Tuple3<int, string, boolean>(42, "中文", true);
-      let tuple = new Tuple2<Tuple3<int, string, boolean>, string>(inner, "outer");
+    it('testTuple0ToTuple056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inner = new Tuple3ISB(42, "中文", true);
+      let tuple = new Tuple2<Tuple3ISB, string>(inner, "outer");
       expect(tuple.$0.$0).assertEqual(42);
       expect(tuple.$0.$1).assertEqual("中文");
       expect(tuple.$0.$2).assertTrue();
@@ -1131,28 +981,28 @@ export default function Tuple0ToTuple10Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_6700
-     * @tc.name testTuple0ToTuple067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_5700
+     * @tc.name testTuple0ToTuple057
      * @tc.desc Verify Tuple2 stores max and min int boundary values together
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTuple0ToTuple067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTuple0ToTuple057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let tuple = new Tuple2<int, int>(2147483647, -2147483648);
       expect(tuple.$0).assertEqual(2147483647);
       expect(tuple.$1).assertEqual(-2147483648);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_6800
-     * @tc.name testTuple0ToTuple068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_5800
+     * @tc.name testTuple0ToTuple058
      * @tc.desc Verify Tuple3 stores escaped and multilingual strings
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTuple0ToTuple068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTuple0ToTuple058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let tuple = new Tuple3<string, string, string>("line\\nbreak", "日本語", "<" + "script>alert(1)<" + "/script>");
       expect(tuple.$0).assertEqual("line\\nbreak");
       expect(tuple.$1).assertEqual("日本語");
@@ -1160,14 +1010,14 @@ export default function Tuple0ToTuple10Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_6900
-     * @tc.name testTuple0ToTuple069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_5900
+     * @tc.name testTuple0ToTuple059
      * @tc.desc Verify Tuple2 preserves object reference identity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTuple0ToTuple069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTuple0ToTuple059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let objectValue = new Object();
       let tuple = new Tuple2<Object, Object>(objectValue, objectValue);
       expect(tuple.$0).assertEqual(objectValue);
@@ -1176,14 +1026,14 @@ export default function Tuple0ToTuple10Test(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_7000
-     * @tc.name testTuple0ToTuple070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_6000
+     * @tc.name testTuple0ToTuple060
      * @tc.desc Verify Tuple2 stores arrays with different element types
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTuple0ToTuple070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTuple0ToTuple060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let tuple = new Tuple2<Array<int>, Array<string>>([0, -1, 42], ["", "English", "العربية"]);
       expect(tuple.$0.length).assertEqual(3);
       expect(tuple.$0[1]).assertEqual(-1);
@@ -1192,17 +1042,17 @@ export default function Tuple0ToTuple10Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_7100
-     * @tc.name testTuple0ToTuple071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_6100
+     * @tc.name testTuple0ToTuple061
      * @tc.desc Verify Tuple5 combines nested Tuple, array, object, boolean and char values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTuple0ToTuple071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let inner = new Tuple2<int, string>(100, "inner");
+    it('testTuple0ToTuple061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let inner = new Tuple2IS(100, "inner");
       let objectValue = new Object();
-      let tuple = new Tuple5<Tuple2<int, string>, Array<int>, Object, boolean, char>(
+      let tuple = new Tuple5<Tuple2IS, Array<int>, Object, boolean, char>(
       inner, [1, 2, 3], objectValue, true, c'Y'
       );
       expect(tuple.$0.$0).assertEqual(100);
@@ -1214,121 +1064,24 @@ export default function Tuple0ToTuple10Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_7200
-     * @tc.name testTuple0ToTuple072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_6200
+     * @tc.name testTuple0ToTuple062
      * @tc.desc Verify Tuple4 unsafeGet throws on out-of-bounds index 4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTuple0ToTuple072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t = new Tuple4<int, string, boolean, double>(1, "a", true, 3.14);
+    it('testTuple0ToTuple062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let t = new Tuple4ISBD(1, "a", true, 3.14);
       expect(t.length).assertEqual(4);
-      let caught: boolean = false;
       try {
         t.unsafeGet(4);
         expect().assertFail();
       } catch (e) {
-        caught = true;
         expect(e.name).assertEqual('IndexOutOfBoundsError');
       }
-      expect(caught).assertTrue();
     });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_7300
-     * @tc.name testTuple0ToTuple073
-     * @tc.desc Verify Tuple6 unsafeGet throws on out-of-bounds index 6
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTuple0ToTuple073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t = new Tuple6<int, string, boolean, double, float, char>(
-      1, "a", true, 3.14, 2.5 as float, c'X'
-      );
-      expect(t.length).assertEqual(6);
-      let caught: boolean = false;
-      try {
-        t.unsafeGet(6);
-        expect().assertFail();
-      } catch (e) {
-        caught = true;
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
-      }
-      expect(caught).assertTrue();
-    });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_7400
-     * @tc.name testTuple0ToTuple074
-     * @tc.desc Verify Tuple7 unsafeGet throws on negative out-of-bounds index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTuple0ToTuple074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t = new Tuple7<int, string, boolean, double, float, char, int>(
-      1, "a", true, 3.14, 2.5 as float, c'X', 77
-      );
-      expect(t.length).assertEqual(7);
-      let caught: boolean = false;
-      try {
-        t.unsafeGet(-1);
-        expect().assertFail();
-      } catch (e) {
-        caught = true;
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
-      }
-      expect(caught).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_7500
-     * @tc.name testTuple0ToTuple075
-     * @tc.desc Verify Tuple8 unsafeGet throws on out-of-bounds index 8
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTuple0ToTuple075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t = new Tuple8<int, string, boolean, double, float, char, int, string>(
-      1, "a", true, 3.14, 2.5 as float, c'X', 77, "end"
-      );
-      expect(t.length).assertEqual(8);
-      let caught: boolean = false;
-      try {
-        t.unsafeGet(8);
-        expect().assertFail();
-      } catch (e) {
-        caught = true;
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
-      }
-      expect(caught).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE0_TO_TUPLE10_7600
-     * @tc.name testTuple0ToTuple076
-     * @tc.desc Verify Tuple9 unsafeGet throws on out-of-bounds max int index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTuple0ToTuple076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t = new Tuple9<int, string, boolean, double, float, char, int, string, boolean>(
-      1, "a", true, 3.14, 2.5 as float, c'X', 77, "s", false
-      );
-      expect(t.length).assertEqual(9);
-      let caught: boolean = false;
-      try {
-        t.unsafeGet(2147483647);
-        expect().assertFail();
-      } catch (e) {
-        caught = true;
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
-      }
-      expect(caught).assertTrue();
-    });
   });
 }

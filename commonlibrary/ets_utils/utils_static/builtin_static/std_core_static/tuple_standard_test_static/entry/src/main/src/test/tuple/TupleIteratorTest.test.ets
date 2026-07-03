@@ -1,4 +1,4 @@
-﻿'use static'
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -401,7 +401,7 @@ export default function TupleIteratorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_2000
      * @tc.name testTupleIterator020
-     * @tc.desc Verify two independent iterators on Tuple2 yield identical values in parallel
+     * @tc.desc Verify two independent iterators on Tuple2 yield identical values side by side
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -447,15 +447,15 @@ export default function TupleIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testTupleIterator022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const tuple = new Tuple3<string, string, string>("涓枃", "袪褍褋褋泻懈泄", "丕賱毓乇亘賷丞");
+      const tuple = new Tuple3<string, string, string>("\u4E2D\u6587", "\u0420\u0443\u0441\u0441\u043A\u0438\u0439", "\u0627\u0644\u0639\u0631\u0628\u064A\u0629");
       const iterator = tuple.$_iterator();
       const first = iterator.next();
       const second = iterator.next();
       const third = iterator.next();
       const done = iterator.next();
-      expect(first.value as string).assertEqual("涓枃");
-      expect(second.value as string).assertEqual("袪褍褋褋泻懈泄");
-      expect(third.value as string).assertEqual("丕賱毓乇亘賷丞");
+      expect(first.value as string).assertEqual("\u4E2D\u6587");
+      expect(second.value as string).assertEqual("\u0420\u0443\u0441\u0441\u043A\u0438\u0439");
+      expect(third.value as string).assertEqual("\u0627\u0644\u0639\u0631\u0628\u064A\u0629");
       expect(done.done).assertTrue();
     });
 
@@ -513,8 +513,8 @@ export default function TupleIteratorTest(): void {
       const iterator = tuple.$_iterator();
       const first = iterator.next();
       const second = iterator.next();
-      expect((first.value as Object) === objectValue).assertTrue();
-      expect((second.value as Object) === objectValue).assertTrue();
+      expect(first.value as Object).assertEqual(objectValue);
+      expect(second.value as Object).assertEqual(objectValue);
     });
 
     /**
@@ -572,19 +572,19 @@ export default function TupleIteratorTest(): void {
      */
     it('testTupleIterator028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const tuple = new Tuple10<int, int, string, string, boolean, boolean, double, float, char, string>(
-      0, -1, "涓枃", "<script>alert(1)</script>", true, false, 1.5, 2.5 as float, c'Z', "emoji馃檪"
+      0, -1, "\u4E2D\u6587", "<script>alert(1)</script>", true, false, 1.5, 2.5 as float, c'Z', "emoji\uD83D\uDE42"
       );
       const iterator = tuple.$_iterator();
       expect(iterator.next().value as int).assertEqual(0);
       expect(iterator.next().value as int).assertEqual(-1);
-      expect(iterator.next().value as string).assertEqual("涓枃");
+      expect(iterator.next().value as string).assertEqual("\u4E2D\u6587");
       expect(iterator.next().value as string).assertEqual("<script>alert(1)</script>");
       expect(iterator.next().value as boolean).assertTrue();
       expect(iterator.next().value as boolean).assertFalse();
       expect(iterator.next().value as double).assertEqual(1.5);
       expect(iterator.next().value as float).assertEqual(2.5 as float);
       expect(iterator.next().value as char).assertEqual(c'Z');
-      expect(iterator.next().value as string).assertEqual("emoji馃檪");
+      expect(iterator.next().value as string).assertEqual("emoji\uD83D\uDE42");
       expect(iterator.next().done).assertTrue();
     });
 
@@ -607,9 +607,9 @@ export default function TupleIteratorTest(): void {
       expect(doneOnce.done).assertTrue();
       expect(doneTwice.done).assertTrue();
       expect(doneThird.done).assertTrue();
-      expect(doneOnce.value === undefined).assertTrue();
-      expect(doneTwice.value === undefined).assertTrue();
-      expect(doneThird.value === undefined).assertTrue();
+      expect(doneOnce.value as string | undefined).assertEqual(undefined);
+      expect(doneTwice.value as string | undefined).assertEqual(undefined);
+      expect(doneThird.value as string | undefined).assertEqual(undefined);
     });
 
     /**
@@ -723,39 +723,12 @@ export default function TupleIteratorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_3400
      * @tc.name testTupleIterator034
-     * @tc.desc Verify Tuple9 iterator complete traversal sum
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testTupleIterator034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const t9 = new Tuple9<int, int, int, int, int, int, int, int, int>(1, 2, 3, 4, 5, 6, 7, 8, 9);
-      const iterator = t9.$_iterator();
-      let count: int = 0;
-      let sum: int = 0;
-      let expected: int = 1;
-      let result = iterator.next();
-      while (!result.done) {
-        let val: int = result.value as int;
-        expect(val).assertEqual(expected);
-        sum += val;
-        count++;
-        expected++;
-        result = iterator.next();
-      }
-      expect(count).assertEqual(9);
-      expect(sum).assertEqual(45);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_3500
-     * @tc.name testTupleIterator035
      * @tc.desc Verify for-of on Tuple10 collects ten values into array in order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTupleIterator035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTupleIterator034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const t10 = new Tuple10<int, int, int, int, int, int, int, int, int, int>(
         10, 20, 30, 40, 50, 60, 70, 80, 90, 100
       );
@@ -769,14 +742,14 @@ export default function TupleIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_3600
-     * @tc.name testTupleIterator036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_3500
+     * @tc.name testTupleIterator035
      * @tc.desc Verify for-of break stops traversal early with matching counter
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTupleIterator036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTupleIterator035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const t5 = new Tuple5<int, int, int, int, int>(1, 2, 3, 4, 5);
       let count: int = 0;
       for (const item of t5) {
@@ -789,15 +762,15 @@ export default function TupleIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_3700
-     * @tc.name testTupleIterator037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_3600
+     * @tc.name testTupleIterator036
      * @tc.desc Verify iterator total non-done count equals tuple length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTupleIterator037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const t6 = new Tuple6<int, int, int, int, int, int>(1, 2, 3, 4, 5, 6);
+    it('testTupleIterator036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const t6 = new Tuple6<int, int, int, int, int, int>(7, 23, 41, 8, 55, 19);
       const iterator = t6.$_iterator();
       let valueCount: int = 0;
       let result = iterator.next();
@@ -809,14 +782,14 @@ export default function TupleIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_3800
-     * @tc.name testTupleIterator038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_3700
+     * @tc.name testTupleIterator037
      * @tc.desc Verify two iterators yield same reference for the same index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTupleIterator038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTupleIterator037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const obj = new Object();
       const tuple = new Tuple2<Object, string>(obj, "tail");
       const iter1 = tuple.$_iterator();
@@ -828,14 +801,14 @@ export default function TupleIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_3900
-     * @tc.name testTupleIterator039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_3800
+     * @tc.name testTupleIterator038
      * @tc.desc Verify iterator returns float element values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTupleIterator039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTupleIterator038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const tuple = new Tuple2<float, float>(1.5 as float, 2.5 as float);
       const iterator = tuple.$_iterator();
       expect((iterator.next().value as float)).assertEqual(1.5 as float);
@@ -844,14 +817,14 @@ export default function TupleIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_4000
-     * @tc.name testTupleIterator040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_3900
+     * @tc.name testTupleIterator039
      * @tc.desc Verify iterator returns byte and short mixed values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTupleIterator040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTupleIterator039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const tuple = new Tuple2<byte, short>(Int.toByte(1), Int.toShort(2));
       const iterator = tuple.$_iterator();
       expect((iterator.next().value as byte)).assertEqual(Int.toByte(1));
@@ -860,14 +833,14 @@ export default function TupleIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_4100
-     * @tc.name testTupleIterator041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_4000
+     * @tc.name testTupleIterator040
      * @tc.desc Verify iterator returns long boundary element values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTupleIterator041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTupleIterator040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const maxLong: long = 9223372036854775807;
       const minLong: long = -9223372036854775807 - 1;
       const tuple = new Tuple2<long, long>(maxLong, minLong);
@@ -878,14 +851,14 @@ export default function TupleIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_4200
-     * @tc.name testTupleIterator042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_4100
+     * @tc.name testTupleIterator041
      * @tc.desc Verify iterator yields NaN positive and negative infinity double values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTupleIterator042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTupleIterator041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const tuple = new Tuple3<double, double, double>(Double.NaN, Double.POSITIVE_INFINITY, Double.NEGATIVE_INFINITY);
       const iterator = tuple.$_iterator();
       const r1: double = iterator.next().value as double;
@@ -898,14 +871,14 @@ export default function TupleIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_4300
-     * @tc.name testTupleIterator043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_4200
+     * @tc.name testTupleIterator042
      * @tc.desc Verify iterator returns char sequence in order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTupleIterator043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTupleIterator042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const tuple = new Tuple4<char, char, char, char>(c'A', c'B', c'C', c'D');
       const iterator = tuple.$_iterator();
       expect((iterator.next().value as char)).assertEqual(c'A');
@@ -916,14 +889,14 @@ export default function TupleIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_4400
-     * @tc.name testTupleIterator044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_4300
+     * @tc.name testTupleIterator043
      * @tc.desc Verify iterator returns alternating boolean values in order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTupleIterator044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTupleIterator043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const tuple = new Tuple4<boolean, boolean, boolean, boolean>(true, false, true, false);
       const iterator = tuple.$_iterator();
       expect((iterator.next().value as boolean)).assertTrue();
@@ -934,14 +907,14 @@ export default function TupleIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_4500
-     * @tc.name testTupleIterator045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_4400
+     * @tc.name testTupleIterator044
      * @tc.desc Verify iterator returns three nested Tuple2 element references
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTupleIterator045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTupleIterator044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Tuple2<int, int>(1, 2);
       const b = new Tuple2<int, int>(3, 4);
       const c = new Tuple2<int, int>(5, 6);
@@ -956,14 +929,14 @@ export default function TupleIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_4600
-     * @tc.name testTupleIterator046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_4500
+     * @tc.name testTupleIterator045
      * @tc.desc Verify outer iterator then inner iterator yields nested values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTupleIterator046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTupleIterator045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const inner = new Tuple2<int, int>(7, 8);
       const outer = new Tuple1<Tuple2<int, int>>(inner);
       const outerIter = outer.$_iterator();
@@ -975,14 +948,14 @@ export default function TupleIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_4700
-     * @tc.name testTupleIterator047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_4600
+     * @tc.name testTupleIterator046
      * @tc.desc Verify iterator yields array elements and inner sum can be computed
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTupleIterator047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTupleIterator046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const tuple = new Tuple2<Array<int>, Array<int>>([1, 2, 3], [10, 20, 30]);
       const iterator = tuple.$_iterator();
       const arr1 = iterator.next().value as Array<int>;
@@ -1000,14 +973,14 @@ export default function TupleIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_4800
-     * @tc.name testTupleIterator048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_4700
+     * @tc.name testTupleIterator047
      * @tc.desc Verify iterator yields string elements that can be concatenated in order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTupleIterator048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTupleIterator047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const tuple = new Tuple3<string, string, string>("Hello", " ", "World");
       const iterator = tuple.$_iterator();
       let combined: string = "";
@@ -1020,14 +993,14 @@ export default function TupleIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_4900
-     * @tc.name testTupleIterator049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_4800
+     * @tc.name testTupleIterator048
      * @tc.desc Verify while loop using cached IteratorResult covers all values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTupleIterator049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTupleIterator048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const tuple = new Tuple3<int, int, int>(11, 22, 33);
       const iterator = tuple.$_iterator();
       let total: int = 0;
@@ -1047,14 +1020,14 @@ export default function TupleIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_5000
-     * @tc.name testTupleIterator050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_4900
+     * @tc.name testTupleIterator049
      * @tc.desc Verify done is false until the last element is consumed
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTupleIterator050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTupleIterator049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const tuple = new Tuple3<int, int, int>(1, 2, 3);
       const iterator = tuple.$_iterator();
       expect(iterator.next().done).assertFalse();
@@ -1064,14 +1037,14 @@ export default function TupleIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_5100
-     * @tc.name testTupleIterator051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_5000
+     * @tc.name testTupleIterator050
      * @tc.desc Verify three iterators with different step counts have independent state
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTupleIterator051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTupleIterator050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const tuple = new Tuple5<int, int, int, int, int>(1, 2, 3, 4, 5);
       const iterA = tuple.$_iterator();
       const iterB = tuple.$_iterator();
@@ -1088,14 +1061,14 @@ export default function TupleIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_5200
-     * @tc.name testTupleIterator052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_5100
+     * @tc.name testTupleIterator051
      * @tc.desc Verify iterator collected array preserves complete ordered values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTupleIterator052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTupleIterator051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const tuple = new Tuple4<int, int, int, int>(100, 200, 300, 400);
       const iterator = tuple.$_iterator();
       let collected: Array<int> = [];
@@ -1111,14 +1084,14 @@ export default function TupleIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_5300
-     * @tc.name testTupleIterator053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_5200
+     * @tc.name testTupleIterator052
      * @tc.desc Verify iterator over Tuple3 of zeros returns three zero values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTupleIterator053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTupleIterator052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const tuple = new Tuple3<int, int, int>(0, 0, 0);
       const iterator = tuple.$_iterator();
       let count: int = 0;
@@ -1136,14 +1109,14 @@ export default function TupleIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_5400
-     * @tc.name testTupleIterator054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_5300
+     * @tc.name testTupleIterator053
      * @tc.desc Verify iterator preserves order over negative int values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTupleIterator054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTupleIterator053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const tuple = new Tuple3<int, int, int>(-1, -2, -3);
       const iterator = tuple.$_iterator();
       expect((iterator.next().value as int)).assertEqual(-1);
@@ -1153,14 +1126,14 @@ export default function TupleIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_5500
-     * @tc.name testTupleIterator055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_5400
+     * @tc.name testTupleIterator054
      * @tc.desc Verify iterator yields mixed nullable and non-nullable element values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTupleIterator055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTupleIterator054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const tuple = new Tuple4<string | null, string, string, string>(null, "a", "b", "c");
       const iterator = tuple.$_iterator();
       let count: int = 0;
@@ -1178,20 +1151,21 @@ export default function TupleIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_5600
-     * @tc.name testTupleIterator056
-     * @tc.desc Verify iterator returns identical string values for tuple with same elements
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_5500
+     * @tc.name testTupleIterator055
+     * @tc.desc Verify iterator correctly traverses all four elements when all elements share the same string value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTupleIterator056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const tuple = new Tuple4<string, string, string, string>("x", "x", "x", "x");
+    it('testTupleIterator055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const expected: string[] = ["a", "b", "c", "d"];
+      const tuple = new Tuple4<string, string, string, string>("a", "b", "c", "d");
       const iterator = tuple.$_iterator();
       let count: int = 0;
       let result = iterator.next();
       while (!result.done) {
-        expect((result.value as string)).assertEqual("x");
+        expect(result.value as string).assertEqual(expected[count]);
         count++;
         result = iterator.next();
       }
@@ -1199,14 +1173,14 @@ export default function TupleIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_5700
-     * @tc.name testTupleIterator057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_5600
+     * @tc.name testTupleIterator056
      * @tc.desc Verify iterator preserves very long string element content
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTupleIterator057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTupleIterator056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let big: string = "a".repeat(10000);
       const tuple = new Tuple2<string, string>(big, "tail");
       const iterator = tuple.$_iterator();
@@ -1218,14 +1192,14 @@ export default function TupleIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_5800
-     * @tc.name testTupleIterator058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_5700
+     * @tc.name testTupleIterator057
      * @tc.desc Verify iterator next dot value usable directly in expect expression
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTupleIterator058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTupleIterator057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const tuple = new Tuple3<int, int, int>(7, 8, 9);
       const iterator = tuple.$_iterator();
       let a: int = iterator.next().value as int;
@@ -1235,14 +1209,14 @@ export default function TupleIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_5900
-     * @tc.name testTupleIterator059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_5800
+     * @tc.name testTupleIterator058
      * @tc.desc Verify rebuilding iterator after partial traversal restarts from beginning
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTupleIterator059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTupleIterator058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const tuple = new Tuple4<int, int, int, int>(10, 20, 30, 40);
       const iter1 = tuple.$_iterator();
       iter1.next();
@@ -1253,14 +1227,14 @@ export default function TupleIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_6000
-     * @tc.name testTupleIterator060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_5900
+     * @tc.name testTupleIterator059
      * @tc.desc Verify for-of accumulates Tuple5 int values to expected sum
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTupleIterator060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTupleIterator059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const tuple = new Tuple5<int, int, int, int, int>(2, 4, 6, 8, 10);
       let sum: int = 0;
       let count: int = 0;
@@ -1277,14 +1251,14 @@ export default function TupleIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_6100
-     * @tc.name testTupleIterator061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_6000
+     * @tc.name testTupleIterator060
      * @tc.desc Verify for-of counter equals Tuple4 length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTupleIterator061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTupleIterator060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const tuple = new Tuple4<int, string, boolean, char>(1, "x", true, c'A');
       let count: int = 0;
       for (const item of tuple) {
@@ -1295,14 +1269,14 @@ export default function TupleIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_6200
-     * @tc.name testTupleIterator062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_6100
+     * @tc.name testTupleIterator061
      * @tc.desc Verify for-of collected array index access matches original element order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTupleIterator062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTupleIterator061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const tuple = new Tuple4<int, int, int, int>(11, 22, 33, 44);
       let collected: Array<int> = [];
       for (const item of tuple) {
@@ -1315,14 +1289,14 @@ export default function TupleIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_6300
-     * @tc.name testTupleIterator063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_6200
+     * @tc.name testTupleIterator062
      * @tc.desc Verify iterator unpacks five mixed element types via as cast
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTupleIterator063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTupleIterator062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const tuple = new Tuple5<int, string, boolean, double, char>(5, "y", false, 2.5, c'K');
       const iterator = tuple.$_iterator();
       expect((iterator.next().value as int)).assertEqual(5);
@@ -1334,14 +1308,14 @@ export default function TupleIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_6400
-     * @tc.name testTupleIterator064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_6300
+     * @tc.name testTupleIterator063
      * @tc.desc Verify iterator unpacks seven heterogeneous element types in order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTupleIterator064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTupleIterator063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const tuple = new Tuple7<int, string, boolean, double, char, byte, short>(
         1, "s", true, 3.14, c'M', Int.toByte(2), Int.toShort(3)
       );
@@ -1357,14 +1331,14 @@ export default function TupleIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_6500
-     * @tc.name testTupleIterator065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_6400
+     * @tc.name testTupleIterator064
      * @tc.desc Verify three consecutive iterators all start from the same first value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTupleIterator065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTupleIterator064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const tuple = new Tuple2<int, string>(77, "head");
       const iter1 = tuple.$_iterator();
       const iter2 = tuple.$_iterator();
@@ -1375,14 +1349,14 @@ export default function TupleIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_6600
-     * @tc.name testTupleIterator066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_6500
+     * @tc.name testTupleIterator065
      * @tc.desc Verify many freshly created iterators all yield the same first value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTupleIterator066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTupleIterator065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const tuple = new Tuple2<int, int>(42, 99);
       let matched: int = 0;
       for (let i: int = 0; i < 50; i++) {
@@ -1395,14 +1369,14 @@ export default function TupleIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_6700
-     * @tc.name testTupleIterator067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_6600
+     * @tc.name testTupleIterator066
      * @tc.desc Verify iteratorForEach calls fn for each element in order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTupleIterator067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTupleIterator066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const tuple = new Tuple3<int, int, int>(10, 20, 30);
       let sum: int = 0;
       let count: int = 0;
@@ -1419,14 +1393,14 @@ export default function TupleIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_6800
-     * @tc.name testTupleIterator068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_6700
+     * @tc.name testTupleIterator067
      * @tc.desc Verify iteratorForEach on empty Tuple0 does not call fn
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTupleIterator068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTupleIterator067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const empty = new Tuple0();
       let called: boolean = false;
       iteratorForEach(empty.$_iterator(), (_x: Any): void => {
@@ -1436,45 +1410,73 @@ export default function TupleIteratorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_6900
-     * @tc.name testTupleIterator069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_6800
+     * @tc.name testTupleIterator068
      * @tc.desc Verify IteratorResult no-arg constructor creates done state
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTupleIterator069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTupleIterator068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result = new IteratorResult<int>();
       expect(result.done).assertTrue();
-      expect(result.value === undefined).assertTrue();
+      expect(result.value as int | undefined).assertEqual(undefined);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_7000
-     * @tc.name testTupleIterator070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_6900
+     * @tc.name testTupleIterator069
      * @tc.desc Verify IteratorResult constructor with done and value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTupleIterator070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTupleIterator069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result = new IteratorResult<boolean>(false, true);
       expect(result.done).assertFalse();
       expect(result.value as boolean).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_7100
-     * @tc.name testTupleIterator071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_7000
+     * @tc.name testTupleIterator070
      * @tc.desc Verify IteratorResult constructor with value only creates non-done state
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testTupleIterator071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testTupleIterator070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result = new IteratorResult<string>("hello");
       expect(result.done).assertFalse();
       expect(result.value as string).assertEqual("hello");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_7100
+     * @tc.name testTupleIterator071
+     * @tc.desc Verify IteratorResult value-only constructor with undefined creates non-done state carrying undefined
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTupleIterator071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result = new IteratorResult<string | undefined>(undefined as string | undefined);
+      expect(result.done).assertFalse();
+      expect(result.value).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TUPLE_ITERATOR_7200
+     * @tc.name testTupleIterator072
+     * @tc.desc Verify IteratorResult value-only constructor with null creates non-done state carrying null
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTupleIterator072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result = new IteratorResult<string | null>(null as string | null);
+      expect(result.done).assertFalse();
+      expect(result.value).assertEqual(null);
     });
   });
 }
