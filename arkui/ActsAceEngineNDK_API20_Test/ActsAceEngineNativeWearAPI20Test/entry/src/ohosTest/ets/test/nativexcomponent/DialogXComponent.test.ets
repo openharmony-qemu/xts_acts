@@ -24,6 +24,7 @@ export default function DialogXComponent() {
   describe('DialogXComponent', () => {
     beforeAll(async (done: Function) => {
       await Utils.pushPageNoClear(`NativeXComponent/DialogXComponent`, done);
+      await Utils.sleep(2000);
     })
     /**
      * @tc.name   testCustomDialogGetStateOk

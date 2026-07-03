@@ -26,6 +26,7 @@ export default function ArkUIKeyIntensionTest() {
     const y2: number = Math.floor(globalThis.winHeight / 4 + globalThis.winTop);
     beforeAll(async (done: Function) => {
       await Utils.pushPage(`ArkUIKeyEventTest/ArkUIKeyIntensionTest`, done);
+      await Utils.sleep(2000);
     });
 
     /**
