@@ -62,10 +62,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
       const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = Float64Array.of(0.1, maxSafeInteger, 0);
       const result = arr.find((value) => value > 1.0);
       const expectVal = maxSafeInteger;
       expect(result).assertEqual(expectVal);
@@ -81,9 +79,7 @@ export default function float64ArrayFindTest(): void {
      */
     it('testFloat64ArrayFind002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = Float64Array.of(pointFive, 1.5, 0.25);
       let capturedValue: number = 0.0;
       arr.find((value, index, array) => {
         capturedValue = value;
@@ -103,10 +99,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
       const zeroValue: number = 0;
-      const int8MaxValue: number = 127;
-      const arr = Float64Array.of(int16MinValue, -128, zeroValue, int8MaxValue);
+      const arr = new Float64Array([-32768, -128, zeroValue, 127]);
       let capturedValue: number = 0.0;
       arr.find((value, index, array) => {
         capturedValue = value;
@@ -126,9 +120,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
       const zeroValue: number = 0;
-      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const arr = new Float64Array([-2147483648, -1, zeroValue]);
       let capturedValue: number = 0.0;
       arr.find((value, index, array) => {
         capturedValue = value;
@@ -149,8 +142,7 @@ export default function float64ArrayFindTest(): void {
      */
     it('testFloat64ArrayFind005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const negonePointzero: number = -1.0;
-      const maxSafeInteger: number = 9007199254740991;
-      const arr = Float64Array.of(negonePointzero, maxSafeInteger, -3.0);
+      const arr = Float64Array.of(negonePointzero, 9007199254740991, -3.0);
       let capturedValue: number = 0.0;
       arr.find((value, index, array) => {
         capturedValue = value;
@@ -171,9 +163,7 @@ export default function float64ArrayFindTest(): void {
      */
     it('testFloat64ArrayFind006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroPointZero: number = 0.0;
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
-      const arr = Float64Array.of(zeroPointZero, onePointZero, twoPointZero);
+      const arr = Float64Array.of(zeroPointZero, 1.0, 2.0);
       let capturedValue: number = 0.0;
       arr.find((value, index, array) => {
         capturedValue = value;
@@ -193,10 +183,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const negativeZero: number = -0.0;
-      const twoPointZero: number = 2.0;
       const negativeInfinity: number = -Infinity;
-      const arr = Float64Array.of(negativeZero, -128, twoPointZero);
+      const arr = new Float64Array([-0.0, -128, 2.0]);
       let capturedValue: number = 0.0;
       arr.find((value, index, array) => {
         capturedValue = value;
@@ -216,10 +204,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
       const maxVal: number = 1.7976931348623157e+308;
-      const arr = Float64Array.of(maxVal, onePointZero, twoPointZero);
+      const arr = Float64Array.of(maxVal, 1.0, 2.0);
       let capturedValue: number = 0.0;
       arr.find((value, index, array) => {
         capturedValue = value;
@@ -239,10 +225,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
       const minVal: number = 5e-324;
-      const arr = Float64Array.of(minVal, onePointZero, twoPointZero);
+      const arr = new Float64Array([minVal, 1.0, 2.0]);
       let capturedValue: number = 0.0;
       arr.find((value, index, array) => {
         capturedValue = value;
@@ -262,10 +246,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
       const positiveInfinity: number = Infinity;
-      const threePointZero: number = 3.0;
-      const arr = Float64Array.of(onePointZero, positiveInfinity, threePointZero);
+      const arr = new Float64Array([1.0, positiveInfinity, 3.0]);
       let capturedValue: number = 0.0;
       arr.find((value, index, array) => {
         capturedValue = value;
@@ -285,11 +267,9 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
       const positiveInfinity: number = Infinity;
-      const threePointZero: number = 3.0;
       const negativeInfinity: number = -Infinity;
-      const arr = Float64Array.of(onePointZero, -positiveInfinity, threePointZero);
+      const arr = Float64Array.of(1.0, -positiveInfinity, 3.0);
       let capturedValue: number = 0.0;
       arr.find((value, index, array) => {
         capturedValue = value;
@@ -309,10 +289,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
       const nanValue: number = NaN;
-      const threePointZero: number = 3.0;
-      const arr = Float64Array.of(onePointZero, nanValue, threePointZero);
+      const arr = new Float64Array([1.0, nanValue, 3.0]);
       let capturedValue: number = 0.0;
       arr.find((value, index, array) => {
         capturedValue = value;
@@ -334,9 +312,7 @@ export default function float64ArrayFindTest(): void {
      */
     it('testFloat64ArrayFind013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const sciValue10e100: number = 1.0e+100;
-      const twoPointZero: number = 2.0;
-      const threePointZero: number = 3.0;
-      const arr = Float64Array.of(sciValue10e100, twoPointZero, threePointZero);
+      const arr = Float64Array.of(sciValue10e100, 2.0, 3.0);
       let capturedValue: number = 0.0;
       arr.find((value, index, array) => {
         capturedValue = value;
@@ -357,9 +333,7 @@ export default function float64ArrayFindTest(): void {
      */
     it('testFloat64ArrayFind014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const sciValue10e100: number = 1.0e-100;
-      const twoPointZero: number = 2.0;
-      const threePointZero: number = 3.0;
-      const arr = Float64Array.of(sciValue10e100, twoPointZero, threePointZero);
+      const arr = Float64Array.of(sciValue10e100, 2.0, 3.0);
       let capturedValue: number = 0.0;
       arr.find((value, index, array) => {
         capturedValue = value;
@@ -379,10 +353,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const pointThree: number = 0.3;
       const int32MinValue: number = -2147483648;
-      const arr = Float64Array.of(pointOne, -2147483648, pointThree);
+      const arr = new Float64Array([0.1, -2147483648, 0.3]);
       let capturedValue: number = 0.0;
       arr.find((value, index, array) => {
         capturedValue = value;
@@ -403,9 +375,7 @@ export default function float64ArrayFindTest(): void {
      */
     it('testFloat64ArrayFind016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const num2147483647Pointzero: number = 2147483647.0;
-      const twoPointZero: number = 2.0;
-      const threePointZero: number = 3.0;
-      const arr = Float64Array.of(num2147483647Pointzero, twoPointZero, threePointZero);
+      const arr = Float64Array.of(num2147483647Pointzero, 2.0, 3.0);
       let capturedValue: number = 0.0;
       arr.find((value, index, array) => {
         capturedValue = value;
@@ -426,9 +396,7 @@ export default function float64ArrayFindTest(): void {
      */
     it('testFloat64ArrayFind017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const negnum2147483648Pointzero: number = -2147483648.0;
-      const twoPointZero: number = 2.0;
-      const threePointZero: number = 3.0;
-      const arr = Float64Array.of(negnum2147483648Pointzero, twoPointZero, threePointZero);
+      const arr = new Float64Array([negnum2147483648Pointzero, 2.0, 3.0]);
       let capturedValue: number = 0.0;
       arr.find((value, index, array) => {
         capturedValue = value;
@@ -449,10 +417,8 @@ export default function float64ArrayFindTest(): void {
      */
     it('testFloat64ArrayFind018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const hexValue10: number = 0x10;
-      const twoPointZero: number = 2.0;
-      const threePointZero: number = 3.0;
       const sixteenPointzero: number = 16.0;
-      const arr = Float64Array.of(hexValue10, twoPointZero, threePointZero);
+      const arr = new Float64Array([hexValue10, 2.0, 3.0]);
       let capturedValue: number = 0.0;
       arr.find((value, index, array) => {
         capturedValue = value;
@@ -472,10 +438,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const twoPointZero: number = 2.0;
-      const threePointZero: number = 3.0;
       const eightPointZero: number = 8.0;
-      const arr = Float64Array.of(0o10, twoPointZero, threePointZero);
+      const arr = new Float64Array([0o10, 2.0, 3.0]);
       let capturedValue: number = 0.0;
       arr.find((value, index, array) => {
         capturedValue = value;
@@ -496,10 +460,8 @@ export default function float64ArrayFindTest(): void {
      */
     it('testFloat64ArrayFind020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const binaryValue1010: number = 0b1010;
-      const twoPointZero: number = 2.0;
-      const threePointZero: number = 3.0;
       const tenPointZero: number = 10.0;
-      const arr = Float64Array.of(binaryValue1010, twoPointZero, threePointZero);
+      const arr = Float64Array.of(binaryValue1010, 2.0, 3.0);
       let capturedValue: number = 0.0;
       arr.find((value, index, array) => {
         capturedValue = value;
@@ -521,8 +483,7 @@ export default function float64ArrayFindTest(): void {
     it('testFloat64ArrayFind021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const onePointZero: number = 1.0;
       const threePointZero: number = 3.0;
-      const twoPointZero: number = 2.0;
-      const arr = Float64Array.of(onePointZero / threePointZero, twoPointZero, threePointZero);
+      const arr = Float64Array.of(onePointZero / threePointZero, 2.0, threePointZero);
       let capturedValue: number = 0.0;
       arr.find((value, index, array) => {
         capturedValue = value;
@@ -542,11 +503,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const twoPointZero: number = 2.0;
-      const threePointZero: number = 3.0;
       const zeroValue: number = 0;
-      const arr = Float64Array.of(int16MinValue, twoPointZero, threePointZero);
+      const arr = Float64Array.of(-32768, 2.0, 3.0);
       let capturedIndex: int = -1;
       arr.find((value, index, array) => {
         capturedIndex = index;
@@ -566,11 +524,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
-      const oneValue: number = 1;
       const threeValue: number = 3;
-      const arr = Float64Array.of(int32MinValue, -1, zeroValue, oneValue);
+      const arr = new Float64Array([-2147483648, -1, 0, 1]);
       let capturedIndex: int = -1;
       arr.find((value, index, array) => {
         capturedIndex = index;
@@ -590,11 +545,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
       const twoValue: number = 2;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = new Float64Array([0.1, 9007199254740991, 0]);
       let capturedIndex: int = -1;
       arr.find((value, index, array) => {
         capturedIndex = index;
@@ -614,9 +566,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
       const zeroValue: number = 0;
-      const arr = Float64Array.of(pointFive);
+      const arr = new Float64Array([0.5]);
       let capturedIndex: int = -1;
       arr.find((value, index, array) => {
         capturedIndex = index;
@@ -636,9 +587,7 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int16MinValue, -128, zeroValue);
+      const arr = new Float64Array([-32768, -128, 0]);
       let capturedArray: Object | null = null;
       arr.find((value, index, array) => {
         capturedArray = array;
@@ -658,12 +607,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
-      const oneValue: number = 1;
-      const int32MaxValue: number = 2147483647;
       const fiveValue: number = 5;
-      const arr = Float64Array.of(int32MinValue, -1, zeroValue, oneValue, int32MaxValue);
+      const arr = new Float64Array([-2147483648, -1, 0, 1, 2147483647]);
       let capturedLength: int = 0;
       arr.find((value, index, array) => {
         capturedLength = array.length;
@@ -683,11 +628,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
       const num999Pointzero: number = 999.0;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = new Float64Array([0.1, 9007199254740991, 0]);
       arr.find((value, index, array) => {
         array.$_set(0, num999Pointzero);
         return value === 1.0;
@@ -708,9 +650,7 @@ export default function float64ArrayFindTest(): void {
      */
     it('testFloat64ArrayFind029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = Float64Array.of(pointFive, 1.5, 0.25);
       const result = arr.find((value, index, array) => value > 0.0);
       const expectVal = pointFive;
       expect(result).assertEqual(expectVal);
@@ -725,10 +665,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
       const twoPointZero: number = 2.0;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int16MinValue, twoPointZero, zeroValue);
+      const arr = new Float64Array([-32768, twoPointZero, 0]);
       const result = arr.find((value, index, array) => value > 1.5);
       const expectVal = twoPointZero;
       expect(result).assertEqual(expectVal);
@@ -743,9 +681,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
       const threePointZero: number = 3.0;
-      const arr = Float64Array.of(int32MinValue, -1, threePointZero);
+      const arr = new Float64Array([-2147483648, -1, threePointZero]);
       const result = arr.find((value, index, array) => value > 2.5);
       const expectVal = threePointZero;
       expect(result).assertEqual(expectVal);
@@ -760,10 +697,7 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = new Float64Array([0.1, 9007199254740991, 0]);
       const result = arr.find((value, index, array) => value > Number.MAX_VALUE);
       const expectVal = undefined;
       expect(result).assertEqual(expectVal);
@@ -793,8 +727,7 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const arr = Float64Array.of(pointFive);
+      const arr = new Float64Array([0.5]);
       const result = arr.find((value, index, array) => value > 2.0);
       const expectVal = undefined;
       expect(result).assertEqual(expectVal);
@@ -809,9 +742,7 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int16MinValue, -128, zeroValue);
+      const arr = new Float64Array([-32768, -128, 0]);
       try {
         arr.find((value, index, array) => {
           throw new Error("test error");
@@ -832,9 +763,7 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const arr = Float64Array.of(-2147483648, -1, 0);
       try {
         arr.find((value, index, array) => {
           throw new RangeError("index error");
@@ -855,10 +784,7 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = new Float64Array([0.1, 9007199254740991, 0]);
       try {
         arr.find((value, index, array) => {
           if (index === 1) {
@@ -882,10 +808,7 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       try {
         arr.find((value, index, array) => {
           if (index === 2) {
@@ -909,10 +832,7 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const twoPointFive: number = 2.5;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int16MinValue, twoPointFive, zeroValue);
+      const arr = Float64Array.of(-32768, 2.5, 0);
       try {
         arr.find((value, index, array) => {
           if (value > 1.5) {
@@ -935,10 +855,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
       const nanValue: number = NaN;
-      const threePointZero: number = 3.0;
-      const arr = Float64Array.of(onePointZero, nanValue, threePointZero);
+      const arr = new Float64Array([1.0, nanValue, 3.0]);
       const result = arr.find((value, index, array) => {
         return value !== value;
       })
@@ -958,9 +876,7 @@ export default function float64ArrayFindTest(): void {
      */
     it('testFloat64ArrayFind041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const nanValue: number = NaN;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(nanValue, maxSafeInteger, zeroValue);
+      const arr = Float64Array.of(nanValue, 9007199254740991, 0);
       const result = arr.find((value, index, array) => {
         return value !== value;
       })
@@ -978,10 +894,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
       const nanValue: number = NaN;
-      const arr = Float64Array.of(pointFive, onePointFive, nanValue);
+      const arr = Float64Array.of(0.5, 1.5, nanValue);
       const result = arr.find((value, index, array) => {
         return value !== value;
       })
@@ -1000,8 +914,7 @@ export default function float64ArrayFindTest(): void {
      */
     it('testFloat64ArrayFind043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const nanValue: number = NaN;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(nanValue, nanValue, zeroValue);
+      const arr = Float64Array.of(nanValue, nanValue, 0);
       const result = arr.find((value, index, array) => {
         return value !== value;
       })
@@ -1040,7 +953,7 @@ export default function float64ArrayFindTest(): void {
      */
     it('testFloat64ArrayFind045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointOne: number = 0.1;
-      const arr = Float64Array.of(pointOne);
+      const arr = new Float64Array([pointOne]);
       const result = arr.find((value, index, array) => value === 0.1);
       const expectVal = pointOne;
       expect(result).assertEqual(expectVal);
@@ -1056,7 +969,7 @@ export default function float64ArrayFindTest(): void {
      */
     it('testFloat64ArrayFind046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointFive: number = 0.5;
-      const arr = Float64Array.of(pointFive);
+      const arr = new Float64Array([pointFive]);
       const result = arr.find((value, index, array) => value !== 42.0);
       const expectVal = pointFive;
       expect(result).assertEqual(expectVal);
@@ -1071,9 +984,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
       const twoPointZero: number = 2.0;
-      const arr = Float64Array.of(int16MinValue, twoPointZero);
+      const arr = Float64Array.of(-32768, twoPointZero);
       const result = arr.find((value, index, array) => value >= 1.0);
       const expectVal = twoPointZero;
       expect(result).assertEqual(expectVal);
@@ -1088,9 +1000,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
       const twoPointZero: number = 2.0;
-      const arr = Float64Array.of(int32MinValue, twoPointZero);
+      const arr = new Float64Array([-2147483648, twoPointZero]);
       const result = arr.find((value, index, array) => value >= 2.0);
       const expectVal = twoPointZero;
       expect(result).assertEqual(expectVal);
@@ -1105,9 +1016,7 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const arr = Float64Array.of(pointOne, maxSafeInteger);
+      const arr = new Float64Array([0.1, 9007199254740991]);
       const result = arr.find((value, index, array) => value > Number.MAX_VALUE);
       const expectVal = undefined;
       expect(result).assertEqual(expectVal);
@@ -1123,7 +1032,7 @@ export default function float64ArrayFindTest(): void {
      */
     it('testFloat64ArrayFind050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointTwoFive: number = 0.25;
-      const arr = Float64Array.of(pointTwoFive, pointTwoFive, pointTwoFive);
+      const arr = new Float64Array([pointTwoFive, pointTwoFive, pointTwoFive]);
       const result = arr.find((value, index, array) => value === 0.25);
       const expectVal = pointTwoFive;
       expect(result).assertEqual(expectVal);
@@ -1139,7 +1048,7 @@ export default function float64ArrayFindTest(): void {
      */
     it('testFloat64ArrayFind051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const fivePointZero: number = 5.0;
-      const arr = Float64Array.of(fivePointZero, fivePointZero, fivePointZero);
+      const arr = new Float64Array([fivePointZero, fivePointZero, fivePointZero]);
       const result = arr.find((value, index, array) => value !== 5.0);
       const expectVal = undefined;
       expect(result).assertEqual(expectVal);
@@ -1155,7 +1064,7 @@ export default function float64ArrayFindTest(): void {
      */
     it('testFloat64ArrayFind052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroValue: number = 0;
-      const arr = Float64Array.of(zeroValue, zeroValue, zeroValue);
+      const arr = new Float64Array([zeroValue, zeroValue, zeroValue]);
       const result = arr.find((value, index, array) => value === 0.0);
       const expectVal = zeroValue;
       expect(result).assertEqual(expectVal);
@@ -1171,7 +1080,7 @@ export default function float64ArrayFindTest(): void {
      */
     it('testFloat64ArrayFind053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroValue: number = 0;
-      const arr = Float64Array.of(zeroValue, zeroValue, zeroValue);
+      const arr = new Float64Array([zeroValue, zeroValue, zeroValue]);
       const result = arr.find((value, index, array) => value !== 0.0);
       const expectVal = undefined;
       expect(result).assertEqual(expectVal);
@@ -1187,9 +1096,7 @@ export default function float64ArrayFindTest(): void {
      */
     it('testFloat64ArrayFind054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const negthreePointzero: number = -3.0;
-      const onePointFive: number = 1.5;
-      const twoPointZero: number = 2.0;
-      const arr = Float64Array.of(negthreePointzero, onePointFive, twoPointZero);
+      const arr = Float64Array.of(negthreePointzero, 1.5, 2.0);
       const result = arr.find((value, index, array) => value < 0.0);
       const expectVal = negthreePointzero;
       expect(result).assertEqual(expectVal);
@@ -1204,9 +1111,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const negthreePointzero: number = -3.0;
       const twoPointZero: number = 2.0;
-      const arr = Float64Array.of(negthreePointzero, -1.0, twoPointZero);
+      const arr = Float64Array.of(-3.0, -1.0, twoPointZero);
       const result = arr.find((value, index, array) => value > 0.0);
       const expectVal = twoPointZero;
       expect(result).assertEqual(expectVal);
@@ -1223,8 +1129,7 @@ export default function float64ArrayFindTest(): void {
     it('testFloat64ArrayFind056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const onePointZero: number = 1.0;
       const nanValue: number = NaN;
-      const threePointZero: number = 3.0;
-      const arr = Float64Array.of(onePointZero, nanValue, threePointZero);
+      const arr = Float64Array.of(onePointZero, nanValue, 3.0);
       const result = arr.find((value, index, array) => value > 0.0);
       const expectVal = onePointZero;
       expect(result).assertEqual(expectVal);
@@ -1239,10 +1144,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const threePointZero: number = 3.0;
       const maxVal: number = 1.7976931348623157e+308;
-      const arr = Float64Array.of(onePointZero, maxVal, threePointZero);
+      const arr = Float64Array.of(1.0, maxVal, 3.0);
       const result = arr.find((value, index, array) => value === maxVal);
       const expectVal = maxVal;
       expect(result).assertEqual(expectVal);
@@ -1257,10 +1160,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const threePointZero: number = 3.0;
       const minVal: number = 5e-324;
-      const arr = Float64Array.of(minVal, onePointZero, threePointZero);
+      const arr = Float64Array.of(minVal, 1.0, 3.0);
       const result = arr.find((value, index, array) => value === minVal);
       const expectVal = minVal;
       expect(result).assertEqual(expectVal);
@@ -1275,10 +1176,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const threePointZero: number = 3.0;
       const safeVal: number = 9007199254740991.0;
-      const arr = Float64Array.of(onePointZero, safeVal, threePointZero);
+      const arr = Float64Array.of(1.0, safeVal, 3.0);
       const result = arr.find((value, index, array) => value === safeVal);
       const expectVal = safeVal;
       expect(result).assertEqual(expectVal);
@@ -1293,10 +1192,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const threePointZero: number = 3.0;
       const minSafeVal: number = -9007199254740991.0;
-      const arr = Float64Array.of(onePointZero, minSafeVal, threePointZero);
+      const arr = new Float64Array([1.0, minSafeVal, 3.0]);
       const result = arr.find((value, index, array) => value === minSafeVal);
       const expectVal = minSafeVal;
       expect(result).assertEqual(expectVal);
@@ -1311,10 +1208,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
       const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = Float64Array.of(0.1, maxSafeInteger, 0);
       const result = arr.find((value, index, array) => value > 1.0);
       const expectVal = maxSafeInteger;
       expect(result).assertEqual(expectVal);
@@ -1329,10 +1224,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
       const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, onePointFive, 0.25]);
       const result = arr.find(pred062);
       const expectVal = onePointFive;
       expect(result).assertEqual(expectVal);
@@ -1348,8 +1241,7 @@ export default function float64ArrayFindTest(): void {
      */
     it('testFloat64ArrayFind063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const int16MinValue: number = -32768;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int16MinValue, -128, zeroValue);
+      const arr = Float64Array.of(int16MinValue, -128, 0);
       const result = arr.find((value, index, array) => true);
       const expectVal = int16MinValue;
       expect(result).assertEqual(expectVal);
@@ -1364,9 +1256,7 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const arr = Float64Array.of(-2147483648, -1, 0);
       const result = arr.find((value, index, array) => false);
       const expectVal = undefined;
       expect(result).assertEqual(expectVal);
@@ -1381,10 +1271,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
       const twoPointZero: number = 2.0;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(pointOne, twoPointZero, zeroValue);
+      const arr = Float64Array.of(0.1, twoPointZero, 0);
       const result = arr.find((value, index, array) => value === 2.0);
       const expectVal = twoPointZero;
       expect(result).assertEqual(expectVal);
@@ -1399,10 +1287,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
       const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, onePointFive, 0.25]);
       const result = arr.find((value, index, array) => value > 1.0 ? true : false);
       const expectVal = onePointFive;
       expect(result).assertEqual(expectVal);
@@ -1417,10 +1303,9 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
       const threePointZero: number = 3.0;
       const threshold: number = 2.0;
-      const arr = Float64Array.of(int16MinValue, -128, threePointZero);
+      const arr = new Float64Array([-32768, -128, threePointZero]);
       const result = arr.find((value, index, array) => value > threshold);
       const expectVal = threePointZero;
       expect(result).assertEqual(expectVal);
@@ -1435,11 +1320,9 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
       const threeValue: number = 3;
       let callCount: int = 0;
-      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const arr = Float64Array.of(-2147483648, -1, 0);
       arr.find((value, index, array) => {
         callCount = callCount + 1;
         return value > 2.0;
@@ -1458,14 +1341,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const externalArr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const externalArr = Float64Array.of(0.1, 9007199254740991, 0);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       const result = arr.find((value, index, array) => {
         return value === externalArr.$_get(index);
       })
@@ -1538,9 +1415,7 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int16MinValue, -128, zeroValue);
+      const arr = new Float64Array([-32768, -128, 0]);
       const result = arr.find((value, index, array) => value > 1.0);
       const expectVal = undefined;
       expect(result).assertEqual(expectVal);
@@ -1555,9 +1430,7 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const arr = Float64Array.of(-2147483648, -1, 0);
       const result = arr.find((value, index, array) => value > 100.0);
       const expectVal = undefined;
       expect(result).assertEqual(expectVal);
@@ -1572,10 +1445,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
       const zeroValue: number = 0;
-      const piValue: number = 3.141592653589793;
-      const arr = Float64Array.of(pointOne, zeroValue, zeroValue, piValue);
+      const arr = new Float64Array([0.1, zeroValue, zeroValue, 3.141592653589793]);
       const result = arr.find((value, index, array) => value === 2.0);
       const expectVal = undefined;
       expect(result).assertEqual(expectVal);
@@ -1590,10 +1461,7 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       const result = arr.find((value, index, array) => value === 1.5);
       const expectVal = arr.$_get(1);
       expect(result).assertEqual(expectVal);
@@ -1608,10 +1476,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const zeroValue: number = 0;
       const threeValue: number = 3;
-      const arr = Float64Array.of(int16MinValue, -128, zeroValue);
+      const arr = new Float64Array([-32768, -128, 0]);
       let callCount: int = 0;
       arr.find((value, index, array) => {
         callCount = callCount + 1;
@@ -1631,10 +1497,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
       const threeValue: number = 3;
-      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const arr = Float64Array.of(-2147483648, -1, 0);
       let callCount: int = 0;
       arr.find((value, index, array) => {
         callCount = callCount + 1;
@@ -1674,10 +1538,7 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = new Float64Array([0.1, 9007199254740991, 0]);
       try {
         arr.find((value, index, array) => {
           throw new RangeError("range error");
@@ -1698,10 +1559,7 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       try {
         arr.find((value, index, array) => {
           throw new TypeError("type error");
@@ -1722,9 +1580,7 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int16MinValue, -128, zeroValue);
+      const arr = new Float64Array([-32768, -128, 0]);
       try {
         arr.find((value, index, array) => {
           throw new Error("generic error");
@@ -1745,9 +1601,7 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const arr = Float64Array.of(-2147483648, -1, 0);
       try {
         arr.find((value, index, array) => {
           throw new CustomFindError074("custom error");
@@ -1768,11 +1622,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
       const num999Pointzero: number = 999.0;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = new Float64Array([0.1, 9007199254740991, 0]);
       const result = arr.find((value, index, array) => {
         if (index === 0) {
           array.$_set(1, num999Pointzero);
@@ -1797,7 +1648,7 @@ export default function float64ArrayFindTest(): void {
       const onePointFive: number = 1.5;
       const pointTwoFive: number = 0.25;
       const threeValue: number = 3;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([pointFive, onePointFive, pointTwoFive]);
       arr.find((value, index, array) => value > 1.0);
       expect(arr.length).assertEqual(threeValue);
       const actVal5 = arr.$_get(0);
@@ -1820,10 +1671,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const zeroValue: number = 0;
       const int8MinValue: number = -128;
-      const arr = Float64Array.of(int16MinValue, -128, zeroValue);
+      const arr = new Float64Array([-32768, -128, 0]);
       const outerResult = arr.find((value, index, array) => {
         return value === array.find((v, i, a) => i === 1);
       })
@@ -1842,8 +1691,7 @@ export default function float64ArrayFindTest(): void {
      */
     it('testFloat64ArrayFind087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const arr = new Float64Array([int32MinValue, -1, 0]);
       const result = arr.find((value, index, array) => {
         return array.indexOf(value) === index;
       })
@@ -1861,10 +1709,8 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
       const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const values = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const values = new Float64Array([0.1, maxSafeInteger, 0]);
       const actVal8 = values.find((value) => value > 4);
       const expectVal = maxSafeInteger;
       expect(actVal8).assertEqual(expectVal);
@@ -1879,10 +1725,7 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const values = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const values = Float64Array.of(0.5, 1.5, 0.25);
       const result = values.find((value) => value > 10);
       expect(result).assertUndefined();
     })
@@ -1896,8 +1739,7 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const values = Float64Array.of(int16MinValue, -128);
+      const values = new Float64Array([-32768, -128]);
       const actVal9 = values.find((value) => value === 4.0);
       const expectVal = undefined;
       expect(actVal9).assertEqual(expectVal);
@@ -1926,8 +1768,7 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const values = Float64Array.of(int32MinValue, -1);
+      const values = new Float64Array([-2147483648, -1]);
       const result = values.find((value): boolean => {
         return value != null && Number.isNaN(value);
       })
@@ -1945,9 +1786,7 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const values = Float64Array.of(pointOne, maxSafeInteger);
+      const values = Float64Array.of(0.1, 9007199254740991);
       const actVal10 = values.find((value) => value === Infinity);
       const expectVal = undefined;
       expect(actVal10).assertEqual(expectVal);
@@ -1962,11 +1801,9 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
       const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
       const twoValue: number = 2;
-      const values = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const values = new Float64Array([0.5, onePointFive, 0.25]);
       let externalSum = 0.0;
       const result = values.find((value) => {
         externalSum += value;
@@ -1988,8 +1825,7 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const values = Float64Array.of(int16MinValue, -128);
+      const values = new Float64Array([-32768, -128]);
       try {
         values.find((value) => {
           throw new Error("test");
@@ -2010,8 +1846,7 @@ export default function float64ArrayFindTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFind096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const values = Float64Array.of(int32MinValue, -1);
+      const values = new Float64Array([-2147483648, -1]);
       const result = values.find((value) => value > 100);
       expect(result).assertUndefined();
     })
@@ -2029,7 +1864,7 @@ export default function float64ArrayFindTest(): void {
       const hexValueAA: number = 0xAA;
       const hexValue55: number = 0x55;
       const num170Pointzero: number = 170.0;
-      const arr = Float64Array.of(hexValueFF, hexValueAA, hexValue55);
+      const arr = new Float64Array([hexValueFF, hexValueAA, hexValue55]);
       const v = arr.find((e: number): boolean => e === 0xAA);
       const expectVal = num170Pointzero;
       expect(v).assertEqual(expectVal);
@@ -2048,7 +1883,7 @@ export default function float64ArrayFindTest(): void {
       const binaryValue10101010: number = 0b10101010;
       const binaryValue01010101: number = 0b01010101;
       const num170Pointzero: number = 170.0;
-      const arr = Float64Array.of(binaryValue11111111, binaryValue10101010, binaryValue01010101);
+      const arr = new Float64Array([binaryValue11111111, binaryValue10101010, binaryValue01010101]);
       const v = arr.find((e: number): boolean => e === 0b10101010);
       const expectVal = num170Pointzero;
       expect(v).assertEqual(expectVal);
