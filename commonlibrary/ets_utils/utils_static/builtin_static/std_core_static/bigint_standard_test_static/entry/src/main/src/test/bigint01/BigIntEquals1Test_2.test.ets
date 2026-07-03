@@ -20,14 +20,14 @@ export default function BigIntEquals1Test_2(): void {
   describe('BigIntEquals1Test_2', ()=> {
 
     /**
-     * @tc.number SUB_BIGINT_STD_EQUALS_BI_0001
-     * @tc.name testBigIntEqualsBigIntBoolConstruct0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_EQUALS_BI_0100
+     * @tc.name testBigIntEqualsBiTest001
      * @tc.desc equals(to: BigInt) with boolean-constructed BigInt values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsBigIntBoolConstruct0001', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsBiTest001', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(true).equals(BigInt(1))).assertTrue();
       expect(BigInt(false).equals(BigInt(0))).assertTrue();
       expect(BigInt(true).equals(BigInt(0))).assertFalse();
@@ -35,14 +35,14 @@ export default function BigIntEquals1Test_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_EQUALS_BI_0002
-     * @tc.name testBigIntEqualsBigIntLeadingZeroPlus0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_EQUALS_BI_0200
+     * @tc.name testBigIntEqualsBiTest002
      * @tc.desc equals(to: BigInt) with leading-zero and plus-sign string formats
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsBigIntLeadingZeroPlus0002', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsBiTest002', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt('+123').equals(BigInt('123'))).assertTrue();
       expect(BigInt('007').equals(BigInt('7'))).assertTrue();
       expect(BigInt('+0').equals(BigInt(0))).assertTrue();
@@ -54,14 +54,14 @@ export default function BigIntEquals1Test_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_EQUALS_BI_0003
-     * @tc.name testBigIntEqualsBigIntCopyConstructorImmutability0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_EQUALS_BI_0300
+     * @tc.name testBigIntEqualsBiTest003
      * @tc.desc equals(to: BigInt) copy-constructed instance unchanged after source mutation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsBigIntCopyConstructorImmutability0003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsBiTest003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const src = BigInt(67890);
       const copy = BigInt(src);
       let modified = src.operatorAdd(BigInt(1));
@@ -75,14 +75,14 @@ export default function BigIntEquals1Test_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_EQUALS_BI_0004
-     * @tc.name testBigIntEqualsBigIntAdjacentValues0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_EQUALS_BI_0400
+     * @tc.name testBigIntEqualsBiTest004
      * @tc.desc equals(to: BigInt) for adjacent values not yet covered
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsBigIntAdjacentValues0004', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsBiTest004', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(999).equals(BigInt(1000))).assertFalse();
       expect(BigInt(-999).equals(BigInt(-1000))).assertFalse();
       expect(BigInt(500).equals(BigInt(501))).assertFalse();
@@ -92,14 +92,14 @@ export default function BigIntEquals1Test_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_EQUALS_BI_0005
-     * @tc.name testBigIntEqualsBigIntImmutability0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_EQUALS_BI_0500
+     * @tc.name testBigIntEqualsBiTest005
      * @tc.desc equals(to: BigInt) does not mutate left or right operand
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsBigIntImmutability0005', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsBiTest005', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a = BigInt(88);
       const b = BigInt(88);
       a.equals(b);
@@ -117,14 +117,14 @@ export default function BigIntEquals1Test_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_EQUALS_BI_0006
-     * @tc.name testBigIntEqualsBigIntBooleanCombine0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_EQUALS_BI_0600
+     * @tc.name testBigIntEqualsBiTest006
      * @tc.desc equals(to: BigInt) result can combine with boolean operators
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsBigIntBooleanCombine0006', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsBiTest006', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a = BigInt(11);
       const b = BigInt(22);
 
@@ -142,14 +142,14 @@ export default function BigIntEquals1Test_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_EQUALS_BI_0007
-     * @tc.name testBigIntEqualsBigIntNegPosLargeCrossSymmetry0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_EQUALS_BI_0700
+     * @tc.name testBigIntEqualsBiTest007
      * @tc.desc equals(to: BigInt) cross-symmetry for large positive vs negative values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsBigIntNegPosLargeCrossSymmetry0007', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsBiTest007', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(5).equals(BigInt(-5))).assertFalse();
       expect(BigInt(-5).equals(BigInt(5))).assertFalse();
       expect(BigInt(1000).equals(BigInt(-1000))).assertFalse();
@@ -159,14 +159,14 @@ export default function BigIntEquals1Test_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_EQUALS_BI_0008
-     * @tc.name testBigIntEqualsBigIntCrossFormatConsistencyExt0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_EQUALS_BI_0800
+     * @tc.name testBigIntEqualsBiTest008
      * @tc.desc equals(to: BigInt) cross-format: number vs string for ulong.MAX and extended boundaries
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsBigIntCrossFormatConsistencyExt0008', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsBiTest008', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt('18446744073709551615').equals(BigInt('18446744073709551615'))).assertTrue();
       expect(BigInt(65535).equals(BigInt('65535'))).assertTrue();
       expect(BigInt(256).equals(BigInt('256'))).assertTrue();
@@ -177,14 +177,14 @@ export default function BigIntEquals1Test_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_EQUALS_BI_0009
-     * @tc.name testBigIntEqualsBigIntTransitivityExtended0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_EQUALS_BI_0900
+     * @tc.name testBigIntEqualsBiTest009
      * @tc.desc equals(to: BigInt) transitivity verification for large numbers
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsBigIntTransitivityExtended0009', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsBiTest009', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a = BigInt(777);
       const b = BigInt(777);
       const c = BigInt(777);
@@ -203,14 +203,14 @@ export default function BigIntEquals1Test_2(): void {
 
 
     /**
-     * @tc.number SUB_BIGINT_STD_EQUALS_BI_0010
-     * @tc.name testBigIntEqualsBigIntZeroNegZeroExt0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_EQUALS_BI_1000
+     * @tc.name testBigIntEqualsBiTest010
      * @tc.desc equals(to: BigInt) zero and negative zero with string constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsBigIntZeroNegZeroExt0010', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsBiTest010', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt('-0').equals(BigInt(0))).assertTrue();
       expect(BigInt(0).equals(BigInt('-0'))).assertTrue();
       expect(BigInt('-0').equals(BigInt('0'))).assertTrue();
@@ -218,14 +218,14 @@ export default function BigIntEquals1Test_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_EQUALS_BI_0011
-     * @tc.name testBigIntEqualsBigIntBoundaryAdjacent0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_EQUALS_BI_1100
+     * @tc.name testBigIntEqualsBiTest011
      * @tc.desc equals(to: BigInt) boundary adjacent: 256 vs 255, 65535 vs 65536
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsBigIntBoundaryAdjacent0011', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsBiTest011', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(256).equals(BigInt(255))).assertFalse();
       expect(BigInt(65535).equals(BigInt(65536))).assertFalse();
       expect(BigInt(256).equals(BigInt(256))).assertTrue();
@@ -234,28 +234,28 @@ export default function BigIntEquals1Test_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_EQUALS_BI_0012
-     * @tc.name testBigIntEqualsBigIntAsymmetricStr0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_EQUALS_BI_1200
+     * @tc.name testBigIntEqualsBiTest012
      * @tc.desc equals(to: BigInt) asymmetric string: "9999999999999" vs "-9999999999999"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsBigIntAsymmetricStr0012', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsBiTest012', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt('9999999999999').equals(BigInt('-9999999999999'))).assertFalse();
       expect(BigInt('-9999999999999').equals(BigInt('9999999999999'))).assertFalse();
       expect(BigInt('0').equals(BigInt('-0'))).assertTrue();
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_EQUALS_BI_0013
-     * @tc.name testBigIntEqualsBigIntUlongMaxStr0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_EQUALS_BI_1300
+     * @tc.name testBigIntEqualsBiTest013
      * @tc.desc equals(to: BigInt) ulong.MAX string constructor comparison
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsBigIntUlongMaxStr0013', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsBiTest013', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const ulongMax = '18446744073709551615';
       expect(BigInt(ulongMax).equals(BigInt(ulongMax))).assertTrue();
       expect(BigInt(ulongMax).equals(BigInt('18446744073709551614'))).assertFalse();
