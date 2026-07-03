@@ -1989,5 +1989,915 @@ export default function Float64ArrayConstructor5Test(): void {
       expect(arr.byteLength).assertEqual(sixteenValue);
       expect(arr.length).assertEqual(twoValue);
     })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1030
+     * @tc.name testFloat64ArrayConstructor5103
+     * @tc.desc Verify three-arg ArrayBuffer plus int plus int dispatch
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const sixteenValue: number = 16;
+      const twoValue: number = 2;
+      const buf = new ArrayBuffer(48);
+      const arr = new Float64Array(buf, 16, 2);
+      expect(arr.buffer).assertEqual(buf);
+      expect(arr.byteOffset).assertEqual(sixteenValue);
+      expect(arr.length).assertEqual(twoValue);
+      expect(arr.byteLength).assertEqual(sixteenValue);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1040
+     * @tc.name testFloat64ArrayConstructor5104
+     * @tc.desc Verify three-arg ArrayBuffer plus undefined offset plus int length dispatch
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const zeroValue: number = 0;
+      const threeValue: number = 3;
+      const twentyfourValue: number = 24;
+      const buf = new ArrayBuffer(32);
+      const off: Number | undefined = undefined;
+      const arr = new Float64Array(buf, off, 3);
+      expect(arr.byteOffset).assertEqual(zeroValue);
+      expect(arr.length).assertEqual(threeValue);
+      expect(arr.byteLength).assertEqual(twentyfourValue);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1050
+     * @tc.name testFloat64ArrayConstructor5105
+     * @tc.desc Verify three-arg ArrayBuffer plus int offset plus undefined length dispatch
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const eightValue: number = 8;
+      const threeValue: number = 3;
+      const twentyfourValue: number = 24;
+      const buf = new ArrayBuffer(32);
+      const len: Number | undefined = undefined;
+      const arr = new Float64Array(buf, 8, len);
+      expect(arr.byteOffset).assertEqual(eightValue);
+      expect(arr.length).assertEqual(threeValue);
+      expect(arr.byteLength).assertEqual(twentyfourValue);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1060
+     * @tc.name testFloat64ArrayConstructor5106
+     * @tc.desc Verify length property consistency across all overloads
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const zeroValue: number = 0;
+      const fiveValue: number = 5;
+      const twoValue: number = 2;
+      const a = new Float64Array();
+      const b = new Float64Array(0);
+      const c = new Float64Array(5);
+      const d = new Float64Array([onePointZero, twoPointZero]);
+      const e = new Float64Array(new ArrayBuffer(16));
+      expect(a.length).assertEqual(zeroValue);
+      expect(b.length).assertEqual(zeroValue);
+      expect(c.length).assertEqual(fiveValue);
+      expect(d.length).assertEqual(twoValue);
+      expect(e.length).assertEqual(twoValue);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1070
+     * @tc.name testFloat64ArrayConstructor5107
+     * @tc.desc Verify byteLength property consistency across all overloads
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const threePointZero: number = 3.0;
+      const zeroValue: number = 0;
+      const fortyValue: number = 40;
+      const twentyfourValue: number = 24;
+      const a = new Float64Array();
+      const b = new Float64Array(5);
+      const c = new Float64Array([onePointZero, twoPointZero, threePointZero]);
+      const d = new Float64Array(new ArrayBuffer(24));
+      expect(a.byteLength).assertEqual(zeroValue);
+      expect(b.byteLength).assertEqual(fortyValue);
+      expect(c.byteLength).assertEqual(twentyfourValue);
+      expect(d.byteLength).assertEqual(twentyfourValue);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1080
+     * @tc.name testFloat64ArrayConstructor5108
+     * @tc.desc Verify byteOffset property consistency across all overloads
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const zeroValue: number = 0;
+      const a = new Float64Array();
+      const b = new Float64Array(5);
+      const c = new Float64Array([onePointZero]);
+      const buf = new ArrayBuffer(16);
+      const d = new Float64Array(buf);
+      expect(a.byteOffset).assertEqual(zeroValue);
+      expect(b.byteOffset).assertEqual(zeroValue);
+      expect(c.byteOffset).assertEqual(zeroValue);
+      expect(d.byteOffset).assertEqual(zeroValue);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1090
+     * @tc.name testFloat64ArrayConstructor5109
+     * @tc.desc Verify property consistency between copy construction and original
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const threePointZero: number = 3.0;
+      const src = new Float64Array([onePointZero, twoPointZero, threePointZero]);
+      const copy = new Float64Array(src);
+      expect(copy.length).assertEqual(src.length);
+      expect(copy.byteLength).assertEqual(src.byteLength);
+      expect(copy.byteOffset).assertEqual(src.byteOffset);
+      expect(copy.BYTES_PER_ELEMENT).assertEqual(src.BYTES_PER_ELEMENT);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1100
+     * @tc.name testFloat64ArrayConstructor5110
+     * @tc.desc Verify property relationship between view and original buffer
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const fortyValue: number = 40;
+      const twentyfourValue: number = 24;
+      const eightValue: number = 8;
+      const threeValue: number = 3;
+      const buf = new ArrayBuffer(40);
+      const view = new Float64Array(buf, 8, 3);
+      expect(view.buffer).assertEqual(buf);
+      expect(view.buffer.byteLength).assertEqual(fortyValue);
+      expect(view.byteLength).assertEqual(twentyfourValue);
+      expect(view.byteOffset).assertEqual(eightValue);
+      expect(view.length).assertEqual(threeValue);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1110
+     * @tc.name testFloat64ArrayConstructor5111
+     * @tc.desc Verify instance identity preserved after exception - valid construction properties
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const twoValue: number = 2;
+      const buf = new ArrayBuffer(16);
+      try {
+        new Float64Array(buf, 1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+      const valid = new Float64Array(buf, 0);
+      let isValid: boolean = false;
+      const obj: Object = valid as Object;
+      if (obj instanceof Float64Array) {
+        isValid = true;
+      }
+      const expectVal = true;
+      expect(isValid).assertEqual(expectVal);
+      expect(valid.length).assertEqual(twoValue);
+      expect(valid.name).assertEqual('Float64Array');
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1120
+     * @tc.name testFloat64ArrayConstructor5112
+     * @tc.desc Verify instance identity preserved after negative length exception
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const oneValue: number = 1;
+      try {
+        new Float64Array(-1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+      const valid = new Float64Array(1);
+      expect(valid.length).assertEqual(oneValue);
+      let isValid: boolean = false;
+      const obj: Object = valid as Object;
+      if (obj instanceof Float64Array) {
+        isValid = true;
+      }
+      const expectVal = true;
+      expect(isValid).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1130
+     * @tc.name testFloat64ArrayConstructor5113
+     * @tc.desc Verify instance identity preserved after huge offset exception
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const twoValue: number = 2;
+      try {
+        const buf = new ArrayBuffer(8);
+        new Float64Array(buf, 100);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+      const valid = new Float64Array(new ArrayBuffer(16), 0);
+      expect(valid.length).assertEqual(twoValue);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1140
+     * @tc.name testFloat64ArrayConstructor5114
+     * @tc.desc Verify all original array property immutability after copy construction
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const threePointZero: number = 3.0;
+      const fourPointZero: number = 4.0;
+      const fourValue: number = 4;
+      const thirtytwoValue: number = 32;
+      const zeroValue: number = 0;
+      const src = new Float64Array([onePointZero, twoPointZero, threePointZero, fourPointZero]);
+      const copy = new Float64Array(src);
+      copy[0] = 999.0;
+      expect(src.length).assertEqual(fourValue);
+      expect(src.byteLength).assertEqual(thirtytwoValue);
+      expect(src.byteOffset).assertEqual(zeroValue);
+      expect(src[0]).assertEqual(onePointZero);
+      expect(src.name).assertEqual('Float64Array');
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1150
+     * @tc.name testFloat64ArrayConstructor5115
+     * @tc.desc Verify all copy property immutability after modifying original
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const threePointZero: number = 3.0;
+      const fourPointZero: number = 4.0;
+      const fourValue: number = 4;
+      const thirtytwoValue: number = 32;
+      const zeroValue: number = 0;
+      const src = new Float64Array([onePointZero, twoPointZero, threePointZero, fourPointZero]);
+      const copy = new Float64Array(src);
+      src[0] = 888.0;
+      expect(copy.length).assertEqual(fourValue);
+      expect(copy.byteLength).assertEqual(thirtytwoValue);
+      expect(copy.byteOffset).assertEqual(zeroValue);
+      expect(copy[0]).assertEqual(onePointZero);
+      expect(copy.name).assertEqual('Float64Array');
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1160
+     * @tc.name testFloat64ArrayConstructor5116
+     * @tc.desc Verify parent view property immutability after view sharing
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const fourValue: number = 4;
+      const thirtytwoValue: number = 32;
+      const zeroValue: number = 0;
+      const buf = new ArrayBuffer(32);
+      const parent = new Float64Array(buf, 0, 4);
+      const child = new Float64Array(buf, 16, 2);
+      child[0] = 777.0;
+      expect(parent.length).assertEqual(fourValue);
+      expect(parent.byteLength).assertEqual(thirtytwoValue);
+      expect(parent.byteOffset).assertEqual(zeroValue);
+      expect(parent.buffer).assertEqual(buf);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1170
+     * @tc.name testFloat64ArrayConstructor5117
+     * @tc.desc Verify child view property immutability after view sharing
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const twoValue: number = 2;
+      const sixteenValue: number = 16;
+      const buf = new ArrayBuffer(32);
+      const parent = new Float64Array(buf, 0, 4);
+      const child = new Float64Array(buf, 16, 2);
+      parent[2] = 555.0;
+      expect(child.length).assertEqual(twoValue);
+      expect(child.byteLength).assertEqual(sixteenValue);
+      expect(child.byteOffset).assertEqual(sixteenValue);
+      expect(child.buffer).assertEqual(buf);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1180
+     * @tc.name testFloat64ArrayConstructor5118
+     * @tc.desc Verify multi-view shared buffer reference equality
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf = new ArrayBuffer(48);
+      const v1 = new Float64Array(buf, 0, 2);
+      const v2 = new Float64Array(buf, 16, 2);
+      const v3 = new Float64Array(buf, 32, 2);
+      expect(v1.buffer).assertEqual(v2.buffer);
+      expect(v2.buffer).assertEqual(v3.buffer);
+      expect(v1.buffer).assertEqual(buf);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1190
+     * @tc.name testFloat64ArrayConstructor5119
+     * @tc.desc Verify copy and original buffer reference equal but content independent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const threePointZero: number = 3.0;
+      const hundredPointzero: number = 100.0;
+      const num200Pointzero: number = 200.0;
+      const src = new Float64Array([onePointZero, twoPointZero, threePointZero]);
+      const copy = new Float64Array(src);
+      copy[0] = 100.0;
+      src[1] = 200.0;
+      expect(copy[0]).assertEqual(hundredPointzero);
+      expect(copy[1]).assertEqual(twoPointZero);
+      expect(src[0]).assertEqual(onePointZero);
+      expect(src[1]).assertEqual(num200Pointzero);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1200
+     * @tc.name testFloat64ArrayConstructor5120
+     * @tc.desc Verify visibility of all shared views after view write
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const num123Pointzero: number = 123.0;
+      const num456Pointzero: number = 456.0;
+      const buf = new ArrayBuffer(48);
+      const v1 = new Float64Array(buf, 0, 4);
+      const v2 = new Float64Array(buf, 8, 4);
+      v1[1] = 123.0;
+      expect(v2[0]).assertEqual(num123Pointzero);
+      v2[2] = 456.0;
+      expect(v1[3]).assertEqual(num456Pointzero);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1210
+     * @tc.name testFloat64ArrayConstructor5121
+     * @tc.desc Verify independence between original and copy after copy construction
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const threePointZero: number = 3.0;
+      const tenPointZero: number = 10.0;
+      const twentyPointzero: number = 20.0;
+      const threeValue: number = 3;
+      const src = new Float64Array([onePointZero, twoPointZero, threePointZero]);
+      const copy = new Float64Array(src);
+      src[0] = 10.0;
+      copy[0] = 20.0;
+      expect(src[0]).assertEqual(tenPointZero);
+      expect(copy[0]).assertEqual(twentyPointzero);
+      expect(src.length).assertEqual(threeValue);
+      expect(copy.length).assertEqual(threeValue);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1220
+     * @tc.name testFloat64ArrayConstructor5122
+     * @tc.desc Verify buffer sharing after copy construction
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const threePointZero: number = 3.0;
+      const twentyfourValue: number = 24;
+      const num999Pointzero: number = 999.0;
+      const src = new Float64Array([onePointZero, twoPointZero, threePointZero]);
+      const copy = new Float64Array(src);
+      expect(src.buffer.byteLength).assertEqual(twentyfourValue);
+      expect(copy.buffer.byteLength).assertEqual(twentyfourValue);
+      src.$_set(0, num999Pointzero);
+      const actVal5 = copy.$_get(0);
+      const expectVal = onePointZero;
+      expect(actVal5).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1230
+     * @tc.name testFloat64ArrayConstructor5123
+     * @tc.desc Verify byteOffset sharing after copy construction
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const eightValue: number = 8;
+      const zeroValue: number = 0;
+      const buf = new ArrayBuffer(32);
+      const src = new Float64Array(buf, 8, 2);
+      const copy = new Float64Array(src);
+      expect(src.byteOffset).assertEqual(eightValue);
+      expect(copy.byteOffset).assertEqual(zeroValue);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1240
+     * @tc.name testFloat64ArrayConstructor5124
+     * @tc.desc Verify byteLength sharing after copy construction
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const threePointZero: number = 3.0;
+      const fourPointZero: number = 4.0;
+      const thirtytwoValue: number = 32;
+      const src = new Float64Array([onePointZero, twoPointZero, threePointZero, fourPointZero]);
+      const copy = new Float64Array(src);
+      expect(src.byteLength).assertEqual(copy.byteLength);
+      expect(src.byteLength).assertEqual(thirtytwoValue);
+      expect(copy.byteLength).assertEqual(thirtytwoValue);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1250
+     * @tc.name testFloat64ArrayConstructor5125
+     * @tc.desc Verify BYTES_PER_ELEMENT consistency after copy construction
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const sixteenValue: number = 16;
+      const src = new Float64Array([onePointZero, twoPointZero]);
+      const copy = new Float64Array(src);
+      expect(src.BYTES_PER_ELEMENT).assertEqual(copy.BYTES_PER_ELEMENT);
+      expect(src.byteLength).assertEqual(sixteenValue);
+      expect(copy.byteLength).assertEqual(sixteenValue);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1260
+     * @tc.name testFloat64ArrayConstructor5126
+     * @tc.desc Verify name property consistency after copy construction
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const src = new Float64Array([onePointZero, twoPointZero]);
+      const copy = new Float64Array(src);
+      expect(src.name).assertEqual(copy.name);
+      expect(src.name).assertEqual('Float64Array');
+      expect(copy.name).assertEqual('Float64Array');
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1270
+     * @tc.name testFloat64ArrayConstructor5127
+     * @tc.desc Verify instanceof type check after copy construction
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const twoValue: number = 2;
+      const src = new Float64Array([onePointZero, twoPointZero]);
+      const copy = new Float64Array(src);
+      const objs: Array<Object> = [src, copy];
+      let count: int = 0;
+      for (let i: int = 0; i < objs.length; i++) {
+        if (objs[i] instanceof Float64Array) {
+          count = count + 1;
+        }
+      }
+      const expectVal = twoValue;
+      expect(count).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1280
+     * @tc.name testFloat64ArrayConstructor5128
+     * @tc.desc Verify ArrayBuffer originality after copy construction
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const threePointZero: number = 3.0;
+      const twoValue: number = 2;
+      const src = new Float64Array([onePointZero, twoPointZero, threePointZero]);
+      const copy = new Float64Array(src);
+      const objs: Array<Object> = [src.buffer, copy.buffer];
+      let count: int = 0;
+      for (let i: int = 0; i < objs.length; i++) {
+        if (objs[i] instanceof ArrayBuffer) {
+          count = count + 1;
+        }
+      }
+      const expectVal = twoValue;
+      expect(count).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1290
+     * @tc.name testFloat64ArrayConstructor5129
+     * @tc.desc Verify buffer not modified after copy construction
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const twentyfourValue: number = 24;
+      const buf = new ArrayBuffer(24);
+      const src = new Float64Array(buf, 0, 3);
+      const copy = new Float64Array(src);
+      copy[0] = 999.0;
+      expect(buf.byteLength).assertEqual(twentyfourValue);
+      expect(src.buffer).assertEqual(buf);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1300
+     * @tc.name testFloat64ArrayConstructor5130
+     * @tc.desc Verify value consistency across all views after multi-view write
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const threePointZero: number = 3.0;
+      const fourPointZero: number = 4.0;
+      const fivePointZero: number = 5.0;
+      const sixPointZero: number = 6.0;
+      const buf = new ArrayBuffer(48);
+      const v1 = new Float64Array(buf, 0, 4);
+      const v2 = new Float64Array(buf, 16, 2);
+      const v3 = new Float64Array(buf, 32, 2);
+      v1[0] = 1.0;
+      v1[1] = 2.0;
+      v2[0] = 3.0;
+      v2[1] = 4.0;
+      v3[0] = 5.0;
+      v3[1] = 6.0;
+      expect(v1[0]).assertEqual(onePointZero);
+      expect(v1[1]).assertEqual(twoPointZero);
+      expect(v2[0]).assertEqual(threePointZero);
+      expect(v2[1]).assertEqual(fourPointZero);
+      expect(v3[0]).assertEqual(fivePointZero);
+      expect(v3[1]).assertEqual(sixPointZero);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1310
+     * @tc.name testFloat64ArrayConstructor5131
+     * @tc.desc Verify original fields unchanged after modifying copy elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const threePointZero: number = 3.0;
+      const threeValue: number = 3;
+      const twentyfourValue: number = 24;
+      const src = new Float64Array([onePointZero, twoPointZero, threePointZero]);
+      const copy = new Float64Array(src);
+      copy[0] = 1.0e-10;
+      copy[1] = 1.0e10;
+      copy[2] = 0.0;
+      expect(src[0]).assertEqual(onePointZero);
+      expect(src[1]).assertEqual(twoPointZero);
+      expect(src[2]).assertEqual(threePointZero);
+      expect(src.length).assertEqual(threeValue);
+      expect(src.byteLength).assertEqual(twentyfourValue);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1320
+     * @tc.name testFloat64ArrayConstructor5132
+     * @tc.desc Verify copy fields unchanged after modifying original elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const threePointZero: number = 3.0;
+      const threeValue: number = 3;
+      const twentyfourValue: number = 24;
+      const src = new Float64Array([onePointZero, twoPointZero, threePointZero]);
+      const copy = new Float64Array(src);
+      src[0] = -1.0e-10;
+      src[1] = -1.0e10;
+      src[2] = -0.0;
+      expect(copy[0]).assertEqual(onePointZero);
+      expect(copy[1]).assertEqual(twoPointZero);
+      expect(copy[2]).assertEqual(threePointZero);
+      expect(copy.length).assertEqual(threeValue);
+      expect(copy.byteLength).assertEqual(twentyfourValue);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1330
+     * @tc.name testFloat64ArrayConstructor5133
+     * @tc.desc Verify value passing through overlapping region write in view sharing
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const twentyPointzero: number = 20.0;
+      const thirtyPointzero: number = 30.0;
+      const fortyPointzero: number = 40.0;
+      const buf = new ArrayBuffer(48);
+      const v1 = new Float64Array(buf, 0, 4);
+      const v2 = new Float64Array(buf, 8, 4);
+      v1[0] = 10.0;
+      v1[1] = 20.0;
+      v1[2] = 30.0;
+      v1[3] = 40.0;
+      expect(v2[0]).assertEqual(twentyPointzero);
+      expect(v2[1]).assertEqual(thirtyPointzero);
+      expect(v2[2]).assertEqual(fortyPointzero);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1340
+     * @tc.name testFloat64ArrayConstructor5134
+     * @tc.desc Verify child region write visibility from parent region in view sharing
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointFive: number = 0.5;
+      const pointTwoFive: number = 0.25;
+      const buf = new ArrayBuffer(32);
+      const parent = new Float64Array(buf, 0, 4);
+      const child = new Float64Array(buf, 8, 2);
+      child[0] = 0.5;
+      child[1] = 0.25;
+      expect(parent[1]).assertEqual(pointFive);
+      expect(parent[2]).assertEqual(pointTwoFive);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1350
+     * @tc.name testFloat64ArrayConstructor5135
+     * @tc.desc Verify parent region write visibility from child region in view sharing
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointOneTwoFive: number = 0.125;
+      const pointZeroSixTwoFive: number = 0.0625;
+      const buf = new ArrayBuffer(32);
+      const parent = new Float64Array(buf, 0, 4);
+      const child = new Float64Array(buf, 8, 2);
+      parent[1] = 0.125;
+      parent[2] = 0.0625;
+      expect(child[0]).assertEqual(pointOneTwoFive);
+      expect(child[1]).assertEqual(pointZeroSixTwoFive);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1360
+     * @tc.name testFloat64ArrayConstructor5136
+     * @tc.desc Verify all view value consistency after three-view continuous write
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const fourPointZero: number = 4.0;
+      const twoPointZero: number = 2.0;
+      const fivePointZero: number = 5.0;
+      const threePointZero: number = 3.0;
+      const sixPointZero: number = 6.0;
+      const buf = new ArrayBuffer(48);
+      const v1 = new Float64Array(buf, 0, 4);
+      const v2 = new Float64Array(buf, 16, 2);
+      const v3 = new Float64Array(buf, 32, 2);
+      v1[0] = 1.0;
+      v2[0] = 2.0;
+      v3[0] = 3.0;
+      v1[1] = 4.0;
+      v2[1] = 5.0;
+      v3[1] = 6.0;
+      expect(v1[0]).assertEqual(onePointZero);
+      expect(v1[1]).assertEqual(fourPointZero);
+      expect(v2[0]).assertEqual(twoPointZero);
+      expect(v2[1]).assertEqual(fivePointZero);
+      expect(v3[0]).assertEqual(threePointZero);
+      expect(v3[1]).assertEqual(sixPointZero);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1370
+     * @tc.name testFloat64ArrayConstructor5137
+     * @tc.desc Verify complete independence between original and copy after copy construction
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const threePointZero: number = 3.0;
+      const fourPointZero: number = 4.0;
+      const fivePointZero: number = 5.0;
+      const fiveValue: number = 5;
+      const fortyValue: number = 40;
+      const zeroValue: number = 0;
+      const num999Pointzero: number = 999.0;
+      const num888Pointzero: number = 888.0;
+      const src = new Float64Array([onePointZero, twoPointZero, threePointZero, fourPointZero, fivePointZero]);
+      const copy = new Float64Array(src);
+      expect(copy.length).assertEqual(fiveValue);
+      expect(copy.byteLength).assertEqual(fortyValue);
+      expect(copy.byteOffset).assertEqual(zeroValue);
+      expect(copy[0]).assertEqual(onePointZero);
+      expect(copy.name).assertEqual('Float64Array');
+      copy[0] = 999.0;
+      src[4] = 888.0;
+      expect(copy[0]).assertEqual(num999Pointzero);
+      expect(src[4]).assertEqual(num888Pointzero);
+      expect(copy[4]).assertEqual(fivePointZero);
+      expect(src[0]).assertEqual(onePointZero);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1380
+     * @tc.name testFloat64ArrayConstructor5138
+     * @tc.desc Verify dispatch differentiation between ArrayBuffer and ArrayLike for ArrayLike instance
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const twoValue: number = 2;
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const src: Array<number> = [1.0, 2.0];
+      const al: ArrayLike<Number> = src;
+      const arr = new Float64Array(al);
+      expect(arr.length).assertEqual(twoValue);
+      expect(arr[0]).assertEqual(onePointZero);
+      expect(arr[1]).assertEqual(twoPointZero);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1390
+     * @tc.name testFloat64ArrayConstructor5139
+     * @tc.desc Verify ArrayLike<Number> dispatch with first and last element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const threeValue: number = 3;
+      const tenPointZero: number = 10.0;
+      const thirtyPointzero: number = 30.0;
+      const src: Array<number> = [10.0, 20.0, 30.0];
+      const al: ArrayLike<Number> = src;
+      const arr = new Float64Array(al);
+      expect(arr.length).assertEqual(threeValue);
+      expect(arr[0]).assertEqual(tenPointZero);
+      expect(arr[2]).assertEqual(thirtyPointzero);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1400
+     * @tc.name testFloat64ArrayConstructor5140
+     * @tc.desc Verify Float64Array copy constructor keeps negative first value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int32MinValue: number = -2147483648;
+      const zeroValue: number = 0;
+      const src = Float64Array.of(int32MinValue, -1, zeroValue);
+      const arr = new Float64Array(src);
+      expect(arr[0] === 1.0).assertEqual(false);
+      expect(arr[0] === 9.0).assertEqual(false);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1410
+     * @tc.name testFloat64ArrayConstructor5141
+     * @tc.desc Verify Float64Array copy constructor preserves hex literal 0xFF
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const hexValueFF: number = 0xFF;
+      const num255Value: number = 255;
+      const arr = Float64Array.of(hexValueFF);
+      const copy = new Float64Array(arr);
+      const expectVal = num255Value;
+      expect(copy[0]).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_1420
+     * @tc.name testFloat64ArrayConstructor5142
+     * @tc.desc Verify Float64Array copy constructor preserves binary literal 0b11111111
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayConstructor5142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const binaryValue11111111: number = 0b11111111;
+      const num255Value: number = 255;
+      const arr = Float64Array.of(binaryValue11111111);
+      const copy = new Float64Array(arr);
+      const expectVal = num255Value;
+      expect(copy[0]).assertEqual(expectVal);
+    })
+
   })
 }

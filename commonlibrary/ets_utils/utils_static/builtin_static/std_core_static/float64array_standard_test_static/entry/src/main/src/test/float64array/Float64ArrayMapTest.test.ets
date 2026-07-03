@@ -1950,5 +1950,869 @@ export default function Float64ArrayMapTest(): void {
       const expectVal = true;
       expect(notEqual).assertEqual(expectVal);
     })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0860
+     * @tc.name testFloat64ArrayMap086
+     * @tc.desc Verify map doubles mixed decimal and safe-integer elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointOne: number = 0.1;
+      const maxSafeInteger: number = 9007199254740991;
+      const zeroValue: number = 0;
+      const piValue: number = 3.141592653589793;
+      const fourValue: number = 4;
+      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue, piValue);
+      const result = arr.map((v: number): number => {
+        return v * 2.0;
+      })
+
+      const expectVal = fourValue;
+      expect(result.length).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0870
+     * @tc.name testFloat64ArrayMap087
+     * @tc.desc Verify map callback catches and handles error internally
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointFive: number = 0.5;
+      const onePointFive: number = 1.5;
+      const pointTwoFive: number = 0.25;
+      const threeValue: number = 3;
+      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const result = arr.map((val: number, index: int, array: Float64Array): number => {
+        try {
+          return val * 2.0;
+        } catch (e) {
+          return 0.0;
+        }
+      })
+
+      const actVal72 = result.$_get(1);
+      const expectVal = threeValue;
+      expect(actVal72).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0880
+     * @tc.name testFloat64ArrayMap088
+     * @tc.desc Verify map with byte boundary value 127
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const byteMaxValue: number = 127;
+      const num128Value: number = 128;
+      const arr = Float64Array.of(byteMaxValue);
+      const result = arr.map((val: number): number => {
+        return val + 1.0;
+      })
+
+      const actVal73 = result.$_get(0);
+      const expectVal = num128Value;
+      expect(actVal73).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0890
+     * @tc.name testFloat64ArrayMap089
+     * @tc.desc Verify map with short boundary value 32767
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const shortMaxValue: number = 32767;
+      const num65534Value: number = 65534;
+      const arr = Float64Array.of(shortMaxValue);
+      const result = arr.map((val: number, index: int): number => {
+        return val * 2.0;
+      })
+
+      const actVal74 = result.$_get(0);
+      const expectVal = num65534Value;
+      expect(actVal74).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0900
+     * @tc.name testFloat64ArrayMap090
+     * @tc.desc Verify map with int max boundary 2147483647
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const intMaxValue: number = 2147483647;
+      const num2147483646Value: number = 2147483646;
+      const arr = Float64Array.of(intMaxValue);
+      const result = arr.map((val: number, index: int, array: Float64Array): number => {
+        return val - 1.0;
+      })
+
+      const actVal75 = result.$_get(0);
+      const expectVal = num2147483646Value;
+      expect(actVal75).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0910
+     * @tc.name testFloat64ArrayMap091
+     * @tc.desc Verify map with float MIN_VALUE 1.4e-45
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const floatMinValue: number = 1.4e-45;
+      const arr = Float64Array.of(floatMinValue);
+      const result = arr.map((val: number): number => {
+        return val * 2.0;
+      })
+
+      const actVal76 = result.$_get(0);
+      const expectVal = floatMinValue * 2.0;
+      expect(actVal76).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0920
+     * @tc.name testFloat64ArrayMap092
+     * @tc.desc Verify map with negative values all elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float64Array.of(-1.0, -2.0, -3.0, -4.0, -5.0);
+      const result = arr.map((val: number): number => {
+        return val * -1.0;
+      })
+
+      const actVal77 = result.$_get(0);
+      const expectVal = 1.0;
+      expect(actVal77).assertEqual(expectVal);
+      const actVal78 = result.$_get(4);
+      const expectVal2 = 5.0;
+      expect(actVal78).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0930
+     * @tc.name testFloat64ArrayMap093
+     * @tc.desc Verify map on decreasing sequence 10 to 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const oneValue: number = 1;
+      const tenValue: number = 10;
+      const elevenValue: number = 11;
+      const arr = new Float64Array(10);
+      for (let i: int = 0; i < 10; i++) {
+        arr.$_set(i, tenValue - i);
+      }
+      const result = arr.map((val: number, index: int, array: Float64Array): number => {
+        return val + 1.0;
+      })
+
+      const actVal79 = result.$_get(0);
+      const expectVal = elevenValue;
+      expect(actVal79).assertEqual(expectVal);
+      const actVal80 = result.$_get(9);
+      const expectVal2 = oneValue + 1.0;
+      expect(actVal80).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0940
+     * @tc.name testFloat64ArrayMap094
+     * @tc.desc Verify map on alternating positive negative values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float64Array.of(1.0, -2.0, 3.0, -4.0, 5.0);
+      const result = arr.map((val: number): number => {
+        return val * -1.0;
+      })
+
+      const actVal81 = result.$_get(0);
+      const expectVal = -1.0;
+      expect(actVal81).assertEqual(expectVal);
+      const actVal82 = result.$_get(1);
+      const expectVal2 = 2.0;
+      expect(actVal82).assertEqual(expectVal2);
+      const actVal83 = result.$_get(3);
+      const expectVal3 = 4.0;
+      expect(actVal83).assertEqual(expectVal3);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0950
+     * @tc.name testFloat64ArrayMap095
+     * @tc.desc Verify map on mixed integer and decimal format
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float64Array.of(1.0, 0.5, 2.0);
+      const result = arr.map((val: number, index: int): number => {
+        return val * 2.0;
+      })
+
+      const actVal84 = result.$_get(0);
+      const expectVal = 2.0;
+      expect(actVal84).assertEqual(expectVal);
+      const actVal85 = result.$_get(1);
+      const expectVal2 = 1.0;
+      expect(actVal85).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0960
+     * @tc.name testFloat64ArrayMap096
+     * @tc.desc Verify map with hex literal elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const hexValueFF: number = 0xFF;
+      const hexValueAA: number = 0xAA;
+      const arr = Float64Array.of(hexValueFF, hexValueAA);
+      const result = arr.map((val: number, index: int, array: Float64Array): number => {
+        return val + 1.0;
+      })
+
+      const actVal86 = result.$_get(0);
+      const expectVal = 256.0;
+      expect(actVal86).assertEqual(expectVal);
+      const actVal87 = result.$_get(1);
+      const expectVal2 = 171.0;
+      expect(actVal87).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0970
+     * @tc.name testFloat64ArrayMap097
+     * @tc.desc Verify map with octal literal elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const octalValue10: number = 0o10;
+      const octalValue20: number = 0o20;
+      const arr = Float64Array.of(octalValue10, octalValue20);
+      const result = arr.map((val: number): number => {
+        return val + 1.0;
+      })
+
+      const actVal88 = result.$_get(0);
+      const expectVal = 9.0;
+      expect(actVal88).assertEqual(expectVal);
+      const actVal89 = result.$_get(1);
+      const expectVal2 = 17.0;
+      expect(actVal89).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0980
+     * @tc.name testFloat64ArrayMap098
+     * @tc.desc Verify map with binary literal elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const binaryValue1111: number = 0b1111;
+      const binaryValue1010: number = 0b1010;
+      const arr = Float64Array.of(binaryValue1111, binaryValue1010);
+      const result = arr.map((val: number, index: int): number => {
+        return val * 2.0;
+      })
+
+      const actVal90 = result.$_get(0);
+      const expectVal = 30.0;
+      expect(actVal90).assertEqual(expectVal);
+      const actVal91 = result.$_get(1);
+      const expectVal2 = 20.0;
+      expect(actVal91).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_0990
+     * @tc.name testFloat64ArrayMap099
+     * @tc.desc Verify map with scientific notation sequence input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float64Array.of(1.0e-10, 2.0e5, 3.0e-20);
+      const result = arr.map((val: number, index: int, array: Float64Array): number => {
+        return val * 2.0;
+      })
+
+      const actVal92 = result.$_get(0);
+      const expectVal = 2.0e-10;
+      expect(actVal92).assertEqual(expectVal);
+      const actVal93 = result.$_get(1);
+      const expectVal2 = 4.0e5;
+      expect(actVal93).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1000
+     * @tc.name testFloat64ArrayMap100
+     * @tc.desc Verify map result used to construct new Float64Array via copy
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int16MinValue: number = -32768;
+      const zeroValue: number = 0;
+      const negnum65536Value: number = -65536;
+      const arr = Float64Array.of(int16MinValue, -128, zeroValue);
+      const result = arr.map((val: number): number => {
+        return val * 2.0;
+      })
+
+      const copied = new Float64Array(result);
+      const actVal94 = copied.$_get(0);
+      const expectVal = negnum65536Value;
+      expect(actVal94).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1010
+     * @tc.name testFloat64ArrayMap101
+     * @tc.desc Verify map with callback computing value from index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const zeroValue: number = 0;
+      const twoValue: number = 2;
+      const arr = Float64Array.of(zeroValue, zeroValue, zeroValue);
+      const result = arr.map((val: number, index: int): number => {
+        return index;
+      })
+
+      const actVal95 = result.$_get(0);
+      const expectVal = zeroValue;
+      expect(actVal95).assertEqual(expectVal);
+      const actVal96 = result.$_get(2);
+      const expectVal2 = twoValue;
+      expect(actVal96).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1020
+     * @tc.name testFloat64ArrayMap102
+     * @tc.desc Verify map with callback computing value from array length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const zeroValue: number = 0;
+      const arr = Float64Array.of(zeroValue, zeroValue, zeroValue);
+      const result = arr.map((val: number, index: int, array: Float64Array): number => {
+        return val * array.length;
+      })
+
+      const actVal97 = result.$_get(0);
+      const expectVal = zeroValue;
+      expect(actVal97).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1030
+     * @tc.name testFloat64ArrayMap103
+     * @tc.desc Verify map with all NaN array preserves NaN
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float64Array.of(NaN, NaN, NaN);
+      const result = arr.map((val: number): number => {
+        return Number.isNaN(val) ? val : val * 2.0;
+      })
+
+      const actVal98 = Number.isNaN(result.$_get(0));
+      const expectVal = true;
+      expect(actVal98).assertEqual(expectVal);
+      const actVal99 = Number.isNaN(result.$_get(2));
+      const expectVal2 = true;
+      expect(actVal99).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1040
+     * @tc.name testFloat64ArrayMap104
+     * @tc.desc Verify map with repeated MAX_VALUE elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const doubleMaxValue: number = 1.7976931348623157e+308;
+      const arr = Float64Array.of(doubleMaxValue, doubleMaxValue, doubleMaxValue);
+      const result = arr.map((val: number, index: int): number => {
+        return val === doubleMaxValue ? val : val * 2.0;
+      })
+
+      const actVal100 = result.$_get(0);
+      const expectVal = doubleMaxValue;
+      expect(actVal100).assertEqual(expectVal);
+      const actVal101 = result.$_get(2);
+      const expectVal2 = doubleMaxValue;
+      expect(actVal101).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1050
+     * @tc.name testFloat64ArrayMap105
+     * @tc.desc Verify map with SAFE_INTEGER boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const maxSafeInteger: number = 9007199254740991;
+      const minSafeInteger: number = -9007199254740991;
+      const arr = Float64Array.of(maxSafeInteger, minSafeInteger);
+      const result = arr.map((val: number, index: int, array: Float64Array): number => {
+        return val * 2.0;
+      })
+
+      const actVal102 = result.$_get(0);
+      const expectVal = maxSafeInteger * 2.0;
+      expect(actVal102).assertEqual(expectVal);
+      const actVal103 = result.$_get(1);
+      const expectVal2 = minSafeInteger * 2.0;
+      expect(actVal103).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1060
+     * @tc.name testFloat64ArrayMap106
+     * @tc.desc Verify map adds 1 to each element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointOne: number = 0.1;
+      const maxSafeInteger: number = 9007199254740991;
+      const zeroValue: number = 0;
+      const threeValue: number = 3;
+      const onePointone: number = 1.1;
+      const oneValue: number = 1;
+      const values = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const mapped = values.map((val, index, array) => val + 1);
+      expect(mapped.length).assertEqual(threeValue);
+      expect(mapped[0]).assertEqual(onePointone);
+      expect(mapped[2]).assertEqual(oneValue);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1070
+     * @tc.name testFloat64ArrayMap107
+     * @tc.desc Verify map multiplies each element by 2
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointFive: number = 0.5;
+      const onePointFive: number = 1.5;
+      const oneValue: number = 1;
+      const threeValue: number = 3;
+      const values = Float64Array.of(pointFive, onePointFive);
+      const mapped = values.map((val) => val * 2);
+      expect(mapped[0]).assertEqual(oneValue);
+      expect(mapped[1]).assertEqual(threeValue);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1080
+     * @tc.name testFloat64ArrayMap108
+     * @tc.desc Verify map with NaN element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values = Float64Array.of(NaN, 1.0);
+      const mapped = values.map((val: number): number => Number.isNaN(val) ? 0.0 : val);
+      expect(mapped[0]).assertEqual(0.0);
+      expect(mapped[1]).assertEqual(1.0);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1090
+     * @tc.name testFloat64ArrayMap109
+     * @tc.desc Verify map with Infinity element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values = Float64Array.of(Infinity, -Infinity);
+      const mapped = values.map((val: number): number => val > 0.0 ? 1.0 : -1.0);
+      expect(mapped[0]).assertEqual(1.0);
+      expect(mapped[1]).assertEqual(-1.0);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1100
+     * @tc.name testFloat64ArrayMap110
+     * @tc.desc Verify map returns constant value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointOne: number = 0.1;
+      const maxSafeInteger: number = 9007199254740991;
+      const zeroValue: number = 0;
+      const zeroPointZero: number = 0.0;
+      const values = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const mapped = values.map((val) => 0.0);
+      expect(mapped[0]).assertEqual(zeroPointZero);
+      expect(mapped[2]).assertEqual(zeroPointZero);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1110
+     * @tc.name testFloat64ArrayMap111
+     * @tc.desc Verify map on empty array returns empty
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const zeroValue: number = 0;
+      const values = new Float64Array();
+      const mapped = values.map((val) => val + 1);
+      const expectVal = zeroValue;
+      expect(mapped.length).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1120
+     * @tc.name testFloat64ArrayMap112
+     * @tc.desc Verify map with incrementing index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointFive: number = 0.5;
+      const onePointFive: number = 1.5;
+      const pointTwoFive: number = 0.25;
+      const twoPointFive: number = 2.5;
+      const twoPointtwofive: number = 2.25;
+      const values = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const mapped = values.map((val, index) => val + index);
+      expect(mapped[0]).assertEqual(pointFive);
+      expect(mapped[1]).assertEqual(twoPointFive);
+      expect(mapped[2]).assertEqual(twoPointtwofive);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1130
+     * @tc.name testFloat64ArrayMap113
+     * @tc.desc Verify map returns new array original unchanged
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int16MinValue: number = -32768;
+      const negnum65536Value: number = -65536;
+      const values = Float64Array.of(int16MinValue, -128);
+      const mapped = values.map((val) => val * 2);
+      values[0] = 999.0;
+      const expectVal = negnum65536Value;
+      expect(mapped[0]).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1140
+     * @tc.name testFloat64ArrayMap114
+     * @tc.desc Verify map((val) with [-2147483648, -1] exception handling
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int32MinValue: number = -2147483648;
+      const values = Float64Array.of(int32MinValue, -1);
+      try {
+        values.map((val) => {
+          throw new Error("test");
+        })
+
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("Error");
+      }
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1150
+     * @tc.name testFloat64ArrayMap115
+     * @tc.desc Verify map with maximum value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const maxValue: number = 1.7976931348623157e+308;
+      const values = Float64Array.of(maxValue);
+      const mapped = values.map((val: number): number => val * 2.0);
+      const expectVal = Infinity;
+      expect(mapped[0]).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1160
+     * @tc.name testFloat64ArrayMap116
+     * @tc.desc Verify map with minimum positive value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const minPositiveValue: number = 5e-324;
+      const values = Float64Array.of(minPositiveValue);
+      const mapped = values.map((val: number): number => val * 2.0);
+      const expectVal = minPositiveValue * 2.0;
+      expect(mapped[0]).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1170
+     * @tc.name testFloat64ArrayMap117
+     * @tc.desc Verify map with negative numbers
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int16MinValue: number = -32768;
+      const num32768Value: number = 32768;
+      const num128Value: number = 128;
+      const values = Float64Array.of(int16MinValue, -128);
+      const mapped = values.map((val) => -val);
+      expect(mapped[0]).assertEqual(num32768Value);
+      expect(mapped[1]).assertEqual(num128Value);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1180
+     * @tc.name testFloat64ArrayMap118
+     * @tc.desc Verify map with subtraction callback
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const twoValue: number = 2;
+      const oneValue: number = 0;
+      const source = Float64Array.of(1.0, 2.0);
+      const values = source.map((value) => value - 1.0);
+      expect(values.length).assertEqual(twoValue);
+      expect(values[0]).assertEqual(oneValue);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1190
+     * @tc.name testFloat64ArrayMap119
+     * @tc.desc Verify map with addition callback
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const twoPointZero: number = 2.0;
+      const source = Float64Array.of(1.0);
+      const values = source.map((value, index) => value + 1.0);
+      const expectVal = twoPointZero;
+      expect(values[0]).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1200
+     * @tc.name testFloat64ArrayMap120
+     * @tc.desc Verify map with hex literal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const hexValueFF: number = 0xFF;
+      const hexValueAA: number = 0xAA;
+      const fifteenValue: number = 15;
+      const tenValue: number = 10;
+      const arr = Float64Array.of(hexValueFF, hexValueAA);
+      const m = arr.map((v: number): number => v & 0x0F);
+      expect(m[0]).assertEqual(fifteenValue);
+      expect(m[1]).assertEqual(tenValue);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1210
+     * @tc.name testFloat64ArrayMap121
+     * @tc.desc Verify map with binary literal (D8 binary)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const binaryValue11111111: number = 0b11111111;
+      const binaryValue10101010: number = 0b10101010;
+      const fifteenValue: number = 15;
+      const tenValue: number = 10;
+      const arr = Float64Array.of(binaryValue11111111, binaryValue10101010);
+      const m = arr.map((v: number): number => (v.toInt() & 0b00001111).toDouble());
+      expect(m[0]).assertEqual(fifteenValue);
+      expect(m[1]).assertEqual(tenValue);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1220
+     * @tc.name testFloat64ArrayMap122
+     * @tc.desc Verify map with Double.NaN (D5 critical)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nanValue: number = Double.NaN;
+      const doubleMaxValue: number = Double.MAX_VALUE;
+      const arr = Float64Array.of(nanValue, doubleMaxValue);
+      const mapped = arr.map((v: number): number => Number.isNaN(v) ? 0.0 : v);
+      expect(mapped[0]).assertEqual(0.0);
+      expect(mapped[1]).assertEqual(doubleMaxValue);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1230
+     * @tc.name testFloat64ArrayMap123
+     * @tc.desc Verify map with Double.POSITIVE_INFINITY (D5 critical)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const positiveInfinity: number = Double.POSITIVE_INFINITY;
+      const negativeInfinity: number = Double.NEGATIVE_INFINITY;
+      const arr = Float64Array.of(positiveInfinity, negativeInfinity);
+      const mapped = arr.map((v: number): number => v > 0.0 ? 1.0 : -1.0);
+      expect(mapped[0]).assertEqual(1.0);
+      expect(mapped[1]).assertEqual(-1.0);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1240
+     * @tc.name testFloat64ArrayMap124
+     * @tc.desc Verify map with Double.MIN_VALUE/MAX_VALUE (D5 critical)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const doubleMinValue: number = Double.MIN_VALUE;
+      const doubleMaxValue: number = Double.MAX_VALUE;
+      const arr = Float64Array.of(doubleMinValue, doubleMaxValue);
+      const mapped = arr.map((v: number): number => v * 2.0);
+      expect(mapped[0]).assertEqual(doubleMinValue * 2.0);
+      expect(mapped[1]).assertEqual(doubleMaxValue * 2.0);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1250
+     * @tc.name testFloat64ArrayMap125
+     * @tc.desc Verify map callback index parameter type is int
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointOne: number = 0.1;
+      const arr = Float64Array.of(pointOne);
+      const types: Array<string> = [];
+      arr.map((val: number, index: int): number => {
+        types.push(typeof index);
+        return val;
+      })
+      const expectVal = 'int';
+      expect(types[0]).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1260
+     * @tc.name testFloat64ArrayMap126
+     * @tc.desc Verify map callback array parameter refers to original array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointFive: number = 0.5;
+      const onePointFive: number = 1.5;
+      const arr = Float64Array.of(pointFive, onePointFive);
+      let callbackArr: Float64Array = new Float64Array(0);
+      arr.map((val: number, index: int, array: Float64Array): number => {
+        callbackArr = array;
+        return val;
+      })
+      let same: boolean = false;
+      let o1: Object = arr as Object;
+      let o2: Object = callbackArr as Object;
+      same = o1 === o2;
+      const expectVal = true;
+      expect(same).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1270
+     * @tc.name testFloat64ArrayMap127
+     * @tc.desc Verify map identity callback preserves decimal values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayMap127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointFive: number = 0.5;
+      const onePointFive: number = 1.5;
+      const arr = Float64Array.of(pointFive, onePointFive);
+      const result = arr.map((val: number): number => {
+        return val;
+      })
+      expect(result[0]).assertEqual(pointFive);
+      expect(result[1]).assertEqual(onePointFive);
+    })
+
   })
 }
