@@ -8,8 +8,8 @@ import { State, Observed } from '@ohos.arkui.stateManagement';
 
 @Observed
 export class CheckboxModifier01 implements AttributeModifier<CheckboxAttribute> {
-  @State public isUndefined: boolean = false;
-  @State public flag: boolean = true;
+  public isUndefined: boolean = false;
+  public flag: boolean = true;
 
   applyNormalAttribute(instance: CheckboxAttribute): void {
     instance
@@ -21,7 +21,7 @@ export class CheckboxModifier01 implements AttributeModifier<CheckboxAttribute> 
 
 @Observed
 export class CheckboxModifier02 implements AttributeModifier<CheckboxAttribute> {
-  @State public isUndefined: boolean = true;
+  public isUndefined: boolean = true;
 
   applyNormalAttribute(instance: CheckboxAttribute): void {
     instance
