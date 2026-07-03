@@ -13,6 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import Utils from "../../../../Util.test";
+
 import {
   describe,
   beforeAll,
@@ -25,7 +27,6 @@ import {
   Level,
   expect
 } from "../../../../../../../hypium"
-
 
 class Int1 {
   value: int = 0
@@ -160,7 +161,6 @@ class PointAny<T> {}
 
 final class FinalPointAny<T> {}
 
-
 // 通用类定义
 class C<T extends A> {
   constructor(i: T) {
@@ -170,15 +170,7 @@ class C<T extends A> {
 
 let res: number = 0
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-
-export default function GenericClassesConstraintTest() {
+export default function GenericClassesConstraintTest(): void {
   describe("GenericClassesConstraintTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -189,7 +181,7 @@ export default function GenericClassesConstraintTest() {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.

@@ -13,6 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import Utils from "../../../Util.test";
+
 import {
   afterAll,
   afterEach,
@@ -226,14 +228,7 @@ class ImplBaseType10_2 implements BaseType10<number, OtherType10> {}
 class ImplBaseType19 implements BaseType19<SomeType19> {}
 class ImplBaseType19_2 implements BaseType19<SomeType19, OtherType19> {}
 class ImplBaseType19_3 implements BaseType19<SomeType19, Object, OtherType19> {}
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-export default function GenericTypeParameterDefaultTest() {
+export default function GenericTypeParameterDefaultTest(): void {
   describe("GenericTypeParameterDefaultTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -244,7 +239,7 @@ export default function GenericTypeParameterDefaultTest() {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
