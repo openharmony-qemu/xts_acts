@@ -1962,5 +1962,89 @@ export default function Float64ArrayDollarIteratorTest(): void {
       expect(actVal76).assertEqual(expectVal2);
     })
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_8600
+     * @tc.name testFloat64ArrayDollarIterator086
+     * @tc.desc Verify $_iterator observes mutation before later next call
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDollarIterator086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = Float64Array.of(1.0, 2.0, 3.0);
+      const iter = a.$_iterator();
+      const actVal77 = iter.next().value!;
+      const expectVal = 1.0;
+      expect(actVal77).assertEqual(expectVal);
+      a.$_set(2, 30.0);
+      const actVal78 = iter.next().value!;
+      const expectVal2 = 2.0;
+      expect(actVal78).assertEqual(expectVal2);
+      const actVal79 = iter.next().value!;
+      const expectVal3 = 30.0;
+      expect(actVal79).assertEqual(expectVal3);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_8700
+     * @tc.name testFloat64ArrayDollarIterator087
+     * @tc.desc Verify $_iterator over toReversed copy yields reversed values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDollarIterator087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const iter = Float64Array.of(1.0, 2.0, 3.0).toReversed().$_iterator();
+      const actVal80 = iter.next().value!;
+      const expectVal = 3.0;
+      expect(actVal80).assertEqual(expectVal);
+      const actVal81 = iter.next().value!;
+      const expectVal2 = 2.0;
+      expect(actVal81).assertEqual(expectVal2);
+      const actVal82 = iter.next().value!;
+      const expectVal3 = 1.0;
+      expect(actVal82).assertEqual(expectVal3);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_8800
+     * @tc.name testFloat64ArrayDollarIterator088
+     * @tc.desc Verify $_iterator over toSorted copy yields ascending values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDollarIterator088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const iter = Float64Array.of(3.0, 1.0, 2.0).toSorted().$_iterator();
+      const actVal83 = iter.next().value!;
+      const expectVal = 1.0;
+      expect(actVal83).assertEqual(expectVal);
+      const actVal84 = iter.next().value!;
+      const expectVal2 = 2.0;
+      expect(actVal84).assertEqual(expectVal2);
+      const actVal85 = iter.next().value!;
+      const expectVal3 = 3.0;
+      expect(actVal85).assertEqual(expectVal3);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_8900
+     * @tc.name testFloat64ArrayDollarIterator089
+     * @tc.desc Verify $_iterator yields NaN and Infinity values without reordering
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayDollarIterator089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const iter = Float64Array.of(NaN, Infinity).$_iterator();
+      const value: number = iter.next().value!;
+      const actVal86 = Number.isNaN(value);
+      const expectVal = true;
+      expect(actVal86).assertEqual(expectVal);
+      const actVal87 = iter.next().value!;
+      const expectVal2 = Infinity;
+      expect(actVal87).assertEqual(expectVal2);
+    })
+
   })
 }
