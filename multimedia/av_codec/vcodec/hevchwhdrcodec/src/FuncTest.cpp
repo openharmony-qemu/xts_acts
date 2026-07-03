@@ -138,7 +138,7 @@ HWTEST_F(HDRFuncNdkTest, DEMUXER_DEC_ENC_MUXER_FUNC_009, TestSize.Level1)
 HWTEST_F(HDRFuncNdkTest, DEMUXER_DEC_ENC_MUXER_FUNC_010, TestSize.Level1)
 {
     if (!access("/system/lib64/media/", 0) && (cap_h265) && (cap_mpeg2) &&
-        OH_AVCapability_IsFeatureSupported(cap_hevc, VIDEO_ENCODER_B_FRAME) ) {
+        OH_AVCapability_IsFeatureSupported(cap_hevc, VIDEO_ENCODER_B_FRAME)) {
         shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
         sample->DEFAULT_PROFILE = HEVC_PROFILE_MAIN;
         const char *file = "/data/test/media/mpeg2.mp4";
