@@ -1,4 +1,5 @@
-'use static';
+'use static'
+
 import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
