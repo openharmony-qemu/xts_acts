@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -625,7 +625,7 @@ export default function CameraVideoSessionTest() {
             mVideoOutput = mCameraManager.createVideoOutput(mVideoProfile, mVideoSurfaceId);
             mPreviewOutput = mCameraManager.createPreviewOutput(mPreviewProfile, indexSurfaceId);
             await beforeCommit(testName, mPreviewOutput, mVideoOutput);
-let callbackDone = false;
+           let callbackDone = false;
              mVideoSession.commitConfig((error) => {
                if (error !== undefined && error.code !== 0) {
                  console.error(TAG,
@@ -897,7 +897,7 @@ let callbackDone = false;
             expect(isEmpty(mVideoSession)).assertFalse();
             console.info(TAG, testName + ' session created successfully.');
             await videoSessionCommitConfig(testName);
-let callbackDone = false;
+           let callbackDone = false;
              mVideoSession.start(async (error) => {
                if (error !== undefined && error.code !== 0) {
                  console.error(TAG, testName + ' failed to start, err: ' + error.code + ', msg: ' + error.message);
@@ -994,7 +994,7 @@ let callbackDone = false;
         } else {
           expect(isEmpty(mVideoSession)).assertFalse();
           console.info(TAG, testName + ' session created successfully.');
-let callbackDone = false;
+           let callbackDone = false;
            mVideoSession.start((error) => {
              if (error !== undefined && error.code !== 0) {
                console.error(TAG,
@@ -1083,7 +1083,7 @@ let callbackDone = false;
             await videoSessionCommitConfig(testName);
             await mVideoSession.start();
             console.info(TAG, testName + ' session start successfully.');
-let callbackDone = false;
+           let callbackDone = false;
              mVideoSession.stop((error) => {
                if (error !== undefined && error.code !== 0) {
                  console.error(TAG,
@@ -1178,7 +1178,7 @@ let callbackDone = false;
           console.info(TAG, testName + ' session created successfully.');
           await mVideoSession.start();
           console.info(TAG, testName + ' session start successfully.');
-let callbackDone = false;
+           let callbackDone = false;
            mVideoSession.stop((error) => {
              if (error !== undefined && error.code !== 0) {
                console.error(TAG,
@@ -1268,7 +1268,7 @@ let callbackDone = false;
         } else {
           expect(isEmpty(mVideoSession)).assertFalse();
           console.info(TAG, testName + ' session created successfully.');
-let callbackDone = false;
+           let callbackDone = false;
            mVideoSession.release((error) => {
              if (error !== undefined && error.code !== 0) {
                console.error(TAG,
@@ -1444,7 +1444,7 @@ let callbackDone = false;
         } else {
           expect(isEmpty(mVideoSession)).assertFalse();
           console.info(TAG, testName + ' session created successfully.');
-let callbackDone = false;
+           let callbackDone = false;
            mVideoSession.commitConfig((error) => {
              if (error !== undefined && error.code !== 0) {
                console.error(TAG,
@@ -1497,7 +1497,7 @@ let callbackDone = false;
             expect(isEmpty(mVideoSession)).assertFalse();
             console.info(TAG, testName + ' session created successfully.');
             await videoSessionCommitConfig(testName);
-let callbackDone = false;
+           let callbackDone = false;
              mVideoSession.commitConfig((error) => {
                if (error !== undefined && error.code !== 0) {
                  console.error(TAG,
