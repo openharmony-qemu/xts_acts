@@ -1979,5 +1979,737 @@ export default function float64ArrayFillTest(): void {
       expect(actVal227).assertEqual(expectVal3);
     })
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILL_0860
+     * @tc.name testFloat64ArrayFill086
+     * @tc.desc Verify fill start=-4 end=5 fills all except first via negative start
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFill086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const eightPointeight: number = 8.8;
+      const zeroPointZero: number = 0.0;
+      const arr = new Float64Array(5);
+      arr.fill(eightPointeight, -4, 5);
+      const actVal228 = arr.$_get(0);
+      const expectVal = zeroPointZero;
+      expect(actVal228).assertEqual(expectVal);
+      const actVal229 = arr.$_get(1);
+      const expectVal2 = eightPointeight;
+      expect(actVal229).assertEqual(expectVal2);
+      const actVal230 = arr.$_get(4);
+      const expectVal3 = eightPointeight;
+      expect(actVal230).assertEqual(expectVal3);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILL_0870
+     * @tc.name testFloat64ArrayFill087
+     * @tc.desc Verify fill start=0 end=-1 fills all except last
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFill087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const eightPointeight: number = 8.8;
+      const zeroPointZero: number = 0.0;
+      const arr = new Float64Array(5);
+      arr.fill(eightPointeight, 0, -1);
+      const actVal231 = arr.$_get(0);
+      const expectVal = eightPointeight;
+      expect(actVal231).assertEqual(expectVal);
+      const actVal232 = arr.$_get(3);
+      const expectVal2 = eightPointeight;
+      expect(actVal232).assertEqual(expectVal2);
+      const actVal233 = arr.$_get(4);
+      const expectVal3 = zeroPointZero;
+      expect(actVal233).assertEqual(expectVal3);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILL_0880
+     * @tc.name testFloat64ArrayFill088
+     * @tc.desc Verify fill start=1 end=2 fills single element at index 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFill088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const eightPointeight: number = 8.8;
+      const zeroPointZero: number = 0.0;
+      const arr = new Float64Array(5);
+      arr.fill(eightPointeight, 1, 2);
+      const actVal234 = arr.$_get(0);
+      const expectVal = zeroPointZero;
+      expect(actVal234).assertEqual(expectVal);
+      const actVal235 = arr.$_get(1);
+      const expectVal2 = eightPointeight;
+      expect(actVal235).assertEqual(expectVal2);
+      const actVal236 = arr.$_get(2);
+      const expectVal3 = zeroPointZero;
+      expect(actVal236).assertEqual(expectVal3);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILL_0890
+     * @tc.name testFloat64ArrayFill089
+     * @tc.desc Verify fill start=-2 end=-1 fills single element via negative
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFill089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const eightPointeight: number = 8.8;
+      const zeroPointZero: number = 0.0;
+      const arr = new Float64Array(5);
+      arr.fill(eightPointeight, -2, -1);
+      const actVal237 = arr.$_get(2);
+      const expectVal = zeroPointZero;
+      expect(actVal237).assertEqual(expectVal);
+      const actVal238 = arr.$_get(3);
+      const expectVal2 = eightPointeight;
+      expect(actVal238).assertEqual(expectVal2);
+      const actVal239 = arr.$_get(4);
+      const expectVal3 = zeroPointZero;
+      expect(actVal239).assertEqual(expectVal3);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILL_0900
+     * @tc.name testFloat64ArrayFill090
+     * @tc.desc Verify fill start=-1 end=0 negative start greater than zero end fills nothing
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFill090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const eightPointeight: number = 8.8;
+      const zeroPointZero: number = 0.0;
+      const arr = new Float64Array(5);
+      arr.fill(eightPointeight, -1, 0);
+      const actVal240 = arr.$_get(0);
+      const expectVal = zeroPointZero;
+      expect(actVal240).assertEqual(expectVal);
+      const actVal241 = arr.$_get(4);
+      const expectVal2 = zeroPointZero;
+      expect(actVal241).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILL_0910
+     * @tc.name testFloat64ArrayFill091
+     * @tc.desc Verify fill with end=-2147483648 INT_MIN clamped to 0 fills nothing
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFill091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const zeroPointZero: number = 0.0;
+      const arr = new Float64Array(5);
+      arr.fill(onePointZero, 0, -2147483648);
+      const actVal242 = arr.$_get(0);
+      const expectVal = zeroPointZero;
+      expect(actVal242).assertEqual(expectVal);
+      const actVal243 = arr.$_get(4);
+      const expectVal2 = zeroPointZero;
+      expect(actVal243).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILL_0920
+     * @tc.name testFloat64ArrayFill092
+     * @tc.desc Verify fill with end=0123 octal literal clamped to length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFill092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const eightPointeight: number = 8.8;
+      const arr = new Float64Array(5);
+      arr.fill(eightPointeight, 0, 83);
+      const actVal244 = arr.$_get(0);
+      const expectVal = eightPointeight;
+      expect(actVal244).assertEqual(expectVal);
+      const actVal245 = arr.$_get(4);
+      const expectVal2 = eightPointeight;
+      expect(actVal245).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILL_0930
+     * @tc.name testFloat64ArrayFill093
+     * @tc.desc Verify fill with start=10000 large positive OOB fills nothing
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFill093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const eightPointeight: number = 8.8;
+      const zeroPointZero: number = 0.0;
+      const arr = new Float64Array(5);
+      arr.fill(eightPointeight, 10000, 5);
+      const actVal246 = arr.$_get(0);
+      const expectVal = zeroPointZero;
+      expect(actVal246).assertEqual(expectVal);
+      const actVal247 = arr.$_get(4);
+      const expectVal2 = zeroPointZero;
+      expect(actVal247).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILL_0940
+     * @tc.name testFloat64ArrayFill094
+     * @tc.desc Verify fill with start=0o777 octal literal OOB fills nothing
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFill094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const eightPointeight: number = 8.8;
+      const zeroPointZero: number = 0.0;
+      const arr = new Float64Array(5);
+      arr.fill(eightPointeight, 0o777, 5);
+      const actVal248 = arr.$_get(0);
+      const expectVal = zeroPointZero;
+      expect(actVal248).assertEqual(expectVal);
+      const actVal249 = arr.$_get(4);
+      const expectVal2 = zeroPointZero;
+      expect(actVal249).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILL_0950
+     * @tc.name testFloat64ArrayFill095
+     * @tc.desc Verify fill with value 1.0 + 0.1 precision test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFill095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const pointOne: number = 0.1;
+      const onePointone: number = 1.1;
+      const arr = new Float64Array(3);
+      arr.fill(onePointZero + pointOne);
+      const actVal250 = arr.$_get(0);
+      const expectVal = onePointone;
+      expect(actVal250).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILL_0960
+     * @tc.name testFloat64ArrayFill096
+     * @tc.desc Verify fill after fill verify elements via $_get
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFill096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const sevenPointseven: number = 7.7;
+      const arr = new Float64Array(5);
+      arr.fill(sevenPointseven);
+      const actVal251 = arr.$_get(0);
+      const expectVal = sevenPointseven;
+      expect(actVal251).assertEqual(expectVal);
+      const actVal252 = arr.$_get(2);
+      const expectVal2 = sevenPointseven;
+      expect(actVal252).assertEqual(expectVal2);
+      const actVal253 = arr.$_get(4);
+      const expectVal3 = sevenPointseven;
+      expect(actVal253).assertEqual(expectVal3);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILL_0970
+     * @tc.name testFloat64ArrayFill097
+     * @tc.desc Verify fill with negative scientific notation -1.0e+308
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFill097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const negsciValue10e308: number = -1.0e+308;
+      const arr = new Float64Array(3);
+      arr.fill(negsciValue10e308);
+      const actVal254 = arr.$_get(0);
+      const expectVal = negsciValue10e308;
+      expect(actVal254).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILL_0980
+     * @tc.name testFloat64ArrayFill098
+     * @tc.desc Verify fill with integer value 1 on all elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFill098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const arr = new Float64Array(3);
+      arr.fill(onePointZero);
+      const actVal255 = arr.$_get(0);
+      const expectVal = onePointZero;
+      expect(actVal255).assertEqual(expectVal);
+      const actVal256 = arr.$_get(2);
+      const expectVal2 = onePointZero;
+      expect(actVal256).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILL_0990
+     * @tc.name testFloat64ArrayFill099
+     * @tc.desc Verify fill without start and end fills entire array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFill099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const sevenPointfive: number = 7.5;
+      const arr = new Float64Array(5);
+      arr.fill(sevenPointfive);
+      const actVal257 = arr.$_get(0);
+      const expectVal = sevenPointfive;
+      expect(actVal257).assertEqual(expectVal);
+      const actVal258 = arr.$_get(4);
+      const expectVal2 = sevenPointfive;
+      expect(actVal258).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILL_1000
+     * @tc.name testFloat64ArrayFill100
+     * @tc.desc Verify fill with only start fills from start to end
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFill100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const sevenPointfive: number = 7.5;
+      const zeroPointZero: number = 0.0;
+      const arr = new Float64Array(5);
+      arr.fill(sevenPointfive, 2);
+      const actVal259 = arr.$_get(0);
+      const expectVal = zeroPointZero;
+      expect(actVal259).assertEqual(expectVal);
+      const actVal260 = arr.$_get(1);
+      const expectVal2 = zeroPointZero;
+      expect(actVal260).assertEqual(expectVal2);
+      const actVal261 = arr.$_get(2);
+      const expectVal3 = sevenPointfive;
+      expect(actVal261).assertEqual(expectVal3);
+      const actVal262 = arr.$_get(4);
+      const expectVal4 = sevenPointfive;
+      expect(actVal262).assertEqual(expectVal4);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILL_1010
+     * @tc.name testFloat64ArrayFill101
+     * @tc.desc Verify fill with negative start only fills from resolved index to end
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFill101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const sevenPointfive: number = 7.5;
+      const zeroPointZero: number = 0.0;
+      const arr = new Float64Array(5);
+      arr.fill(sevenPointfive, -2);
+      const actVal263 = arr.$_get(0);
+      const expectVal = zeroPointZero;
+      expect(actVal263).assertEqual(expectVal);
+      const actVal264 = arr.$_get(2);
+      const expectVal2 = zeroPointZero;
+      expect(actVal264).assertEqual(expectVal2);
+      const actVal265 = arr.$_get(3);
+      const expectVal3 = sevenPointfive;
+      expect(actVal265).assertEqual(expectVal3);
+      const actVal266 = arr.$_get(4);
+      const expectVal4 = sevenPointfive;
+      expect(actVal266).assertEqual(expectVal4);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILL_1020
+     * @tc.name testFloat64ArrayFill102
+     * @tc.desc Verify fill preserves unmodified regions after partial fill
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFill102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const hundredPointzero: number = 100.0;
+      const num200Pointzero: number = 200.0;
+      const onePointZero: number = 1.0;
+      const arr = new Float64Array(5);
+      arr.$_set(0, hundredPointzero);
+      arr.$_set(4, num200Pointzero);
+      arr.fill(onePointZero, 1, 4);
+      const actVal267 = arr.$_get(0);
+      const expectVal = hundredPointzero;
+      expect(actVal267).assertEqual(expectVal);
+      const actVal268 = arr.$_get(1);
+      const expectVal2 = onePointZero;
+      expect(actVal268).assertEqual(expectVal2);
+      const actVal269 = arr.$_get(3);
+      const expectVal3 = onePointZero;
+      expect(actVal269).assertEqual(expectVal3);
+      const actVal270 = arr.$_get(4);
+      const expectVal4 = num200Pointzero;
+      expect(actVal270).assertEqual(expectVal4);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILL_1030
+     * @tc.name testFloat64ArrayFill103
+     * @tc.desc Verify fill with negative start throws RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFill103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const arr = new Float64Array(5);
+      arr.fill(onePointZero, -100);
+      expect(arr[0]).assertEqual(onePointZero);
+      expect(arr[4]).assertEqual(onePointZero);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILL_1040
+     * @tc.name testFloat64ArrayFill104
+     * @tc.desc Verify fill with invalid end type
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFill104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const arr = new Float64Array(5);
+      arr.fill(onePointZero, 0, -1);
+      expect(arr[0]).assertEqual(onePointZero);
+      expect(arr[1]).assertEqual(onePointZero);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILL_1050
+     * @tc.name testFloat64ArrayFill105
+     * @tc.desc Verify fill does not set wrong value 
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFill105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const fivePointZero: number = 5.0;
+      const arr = new Float64Array(3);
+      arr.fill(fivePointZero);
+      expect(arr[0] === 5.0).assertEqual(true);
+      expect(arr[0] === 0.0).assertEqual(false);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILL_1060
+     * @tc.name testFloat64ArrayFill106
+     * @tc.desc Verify fill with hex literal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFill106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const hexValueFF: number = 0xFF;
+      const num255Value: number = 255;
+      const arr = new Float64Array(3);
+      arr.fill(hexValueFF);
+      const expectVal = num255Value;
+      expect(arr[0]).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILL_1070
+     * @tc.name testFloat64ArrayFill107
+     * @tc.desc Verify fill with binary literal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFill107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const binaryValue11111111: number = 0b11111111;
+      const num255Value: number = 255;
+      const arr = new Float64Array(3);
+      arr.fill(binaryValue11111111);
+      const expectVal = num255Value;
+      expect(arr[0]).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILL_1080
+     * @tc.name testFloat64ArrayFill108
+     * @tc.desc Verify fill with Double.NaN set all elements to NaN
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFill108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nanValue: number = Double.NaN;
+      const arr = new Float64Array(3);
+      arr.fill(nanValue);
+      const actVal271 = Number.isNaN(arr.$_get(0));
+      const expectVal = true;
+      expect(actVal271).assertEqual(expectVal);
+      const actVal272 = Number.isNaN(arr.$_get(1));
+      const expectVal2 = true;
+      expect(actVal272).assertEqual(expectVal2);
+      const actVal273 = Number.isNaN(arr.$_get(2));
+      const expectVal3 = true;
+      expect(actVal273).assertEqual(expectVal3);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILL_1090
+     * @tc.name testFloat64ArrayFill109
+     * @tc.desc Verify fill with Double.POSITIVE_INFINITY set all elements to Infinity
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFill109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const positiveInfinity: number = Double.POSITIVE_INFINITY;
+      const positiveInfinity2: number = Infinity;
+      const arr = new Float64Array(3);
+      arr.fill(positiveInfinity);
+      const actVal274 = arr.$_get(0);
+      const expectVal = positiveInfinity2;
+      expect(actVal274).assertEqual(expectVal);
+      const actVal275 = arr.$_get(1);
+      const expectVal2 = positiveInfinity2;
+      expect(actVal275).assertEqual(expectVal2);
+      const actVal276 = arr.$_get(2);
+      const expectVal3 = positiveInfinity2;
+      expect(actVal276).assertEqual(expectVal3);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILL_1100
+     * @tc.name testFloat64ArrayFill110
+     * @tc.desc Verify fill with Double.MIN_VALUE and Double.MAX_VALUE
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFill110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const doubleMaxValue: number = Double.MAX_VALUE;
+      const arr = new Float64Array(3);
+      arr.fill(doubleMaxValue);
+      const actVal277 = arr.$_get(0);
+      const expectVal = doubleMaxValue;
+      expect(actVal277).assertEqual(expectVal);
+      const actVal278 = arr.$_get(1);
+      const expectVal2 = doubleMaxValue;
+      expect(actVal278).assertEqual(expectVal2);
+      const actVal279 = arr.$_get(2);
+      const expectVal3 = doubleMaxValue;
+      expect(actVal279).assertEqual(expectVal3);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILL_1110
+     * @tc.name testFloat64ArrayFill111
+     * @tc.desc Verify fill sets every element in the target array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFill111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Float64Array(5);
+      arr.fill(3.0);
+      const actVal280 = arr.$_get(0);
+      const expectVal = 3.0;
+      expect(actVal280).assertEqual(expectVal);
+      const actVal281 = arr.$_get(1);
+      const expectVal2 = 3.0;
+      expect(actVal281).assertEqual(expectVal2);
+      const actVal282 = arr.$_get(2);
+      const expectVal3 = 3.0;
+      expect(actVal282).assertEqual(expectVal3);
+      const actVal283 = arr.$_get(3);
+      const expectVal4 = 3.0;
+      expect(actVal283).assertEqual(expectVal4);
+      const actVal284 = arr.$_get(4);
+      const expectVal5 = 3.0;
+      expect(actVal284).assertEqual(expectVal5);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILL_1120
+     * @tc.name testFloat64ArrayFill112
+     * @tc.desc Verify fill range matches equivalent direct $_set assignments
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFill112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Float64Array(5);
+      const arr2 = new Float64Array(5);
+      arr1.fill(5.0, 1, 3);
+      arr2.$_set(1, 5.0);
+      arr2.$_set(2, 5.0);
+      const actVal285 = arr1.$_get(1);
+      const expectVal = arr2.$_get(1);
+      expect(actVal285).assertEqual(expectVal);
+      const actVal286 = arr1.$_get(2);
+      const expectVal2 = arr2.$_get(2);
+      expect(actVal286).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILL_1130
+     * @tc.name testFloat64ArrayFill113
+     * @tc.desc Verify fill returned reference can be reused to modify array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFill113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Float64Array(3);
+      const result = arr.fill(7.0);
+      result.$_set(0, 9.0);
+      const actVal287 = arr.$_get(0);
+      const expectVal = 9.0;
+      expect(actVal287).assertEqual(expectVal);
+      expect(result === arr).assertEqual(true);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILL_1140
+     * @tc.name testFloat64ArrayFill114
+     * @tc.desc Verify fill on 10000-element large array affects all elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFill114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const arr = new Float64Array(10000);
+      arr.fill(onePointZero);
+      const actVal288 = arr.$_get(0);
+      const expectVal = onePointZero;
+      expect(actVal288).assertEqual(expectVal);
+      const actVal289 = arr.$_get(5000);
+      const expectVal2 = onePointZero;
+      expect(actVal289).assertEqual(expectVal2);
+      const actVal290 = arr.$_get(9999);
+      const expectVal3 = onePointZero;
+      expect(actVal290).assertEqual(expectVal3);
+      expect(arr.length).assertEqual(10000);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILL_1150
+     * @tc.name testFloat64ArrayFill115
+     * @tc.desc Verify fill with overflow double value converts to Infinity
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFill115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const overflowValue: number = Double.MAX_VALUE + Double.MAX_VALUE;
+      const infinityValue: number = Infinity;
+      const arr = new Float64Array(3);
+      arr.fill(overflowValue);
+      const actVal291 = arr.$_get(0);
+      const expectVal = infinityValue;
+      expect(actVal291).assertEqual(expectVal);
+      const actVal292 = arr.$_get(1);
+      const expectVal2 = infinityValue;
+      expect(actVal292).assertEqual(expectVal2);
+      const actVal293 = arr.$_get(2);
+      const expectVal3 = infinityValue;
+      expect(actVal293).assertEqual(expectVal3);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILL_1160
+     * @tc.name testFloat64ArrayFill116
+     * @tc.desc Verify fill with positive overflow literal 1.0e+309 converts to Infinity
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFill116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const sciValue10e309: number = 1.0e+308 + 1.0e+308;
+      const infinityValue: number = Infinity;
+      const arr = new Float64Array(3);
+      arr.fill(sciValue10e309);
+      const actVal294 = arr.$_get(0);
+      const expectVal = infinityValue;
+      expect(actVal294).assertEqual(expectVal);
+      const actVal295 = arr.$_get(1);
+      const expectVal2 = infinityValue;
+      expect(actVal295).assertEqual(expectVal2);
+      const actVal296 = arr.$_get(2);
+      const expectVal3 = infinityValue;
+      expect(actVal296).assertEqual(expectVal3);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILL_1170
+     * @tc.name testFloat64ArrayFill117
+     * @tc.desc Verify fill with positive underflow (MIN_VALUE/2) converts to 0.0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFill117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const underflowValue: number = Double.MIN_VALUE / 2.0;
+      const zeroPointZero: number = 0.0;
+      const arr = new Float64Array(3);
+      arr.fill(underflowValue);
+      const actVal297 = arr.$_get(0);
+      const expectVal = zeroPointZero;
+      expect(actVal297).assertEqual(expectVal);
+      const actVal298 = arr.$_get(1);
+      const expectVal2 = zeroPointZero;
+      expect(actVal298).assertEqual(expectVal2);
+      const actVal299 = arr.$_get(2);
+      const expectVal3 = zeroPointZero;
+      expect(actVal299).assertEqual(expectVal3);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILL_1180
+     * @tc.name testFloat64ArrayFill118
+     * @tc.desc Verify fill with negative underflow -(MIN_VALUE/2) converts to -0.0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFill118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const negUnderflowValue: number = -(Double.MIN_VALUE / 2.0);
+      const negativeZero: number = -0.0;
+      const negativeInfinity: number = -Infinity;
+      const arr = new Float64Array(3);
+      arr.fill(negUnderflowValue);
+      const actVal300 = arr.$_get(0);
+      const expectVal = negativeZero;
+      expect(actVal300).assertEqual(expectVal);
+      const actVal301 = 1.0 / arr.$_get(0);
+      const expectVal2 = negativeInfinity;
+      expect(actVal301).assertEqual(expectVal2);
+      const actVal302 = arr.$_get(1);
+      const expectVal3 = negativeZero;
+      expect(actVal302).assertEqual(expectVal3);
+      const actVal303 = 1.0 / arr.$_get(1);
+      const expectVal4 = negativeInfinity;
+      expect(actVal303).assertEqual(expectVal4);
+      const actVal304 = arr.$_get(2);
+      const expectVal5 = negativeZero;
+      expect(actVal304).assertEqual(expectVal5);
+      const actVal305 = 1.0 / arr.$_get(2);
+      const expectVal6 = negativeInfinity;
+      expect(actVal305).assertEqual(expectVal6);
+    })
   })
 }

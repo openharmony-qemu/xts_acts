@@ -1983,5 +1983,695 @@ export default function Float64ArrayReduce1Test(): void {
       expect(result).assertEqual(expectVal);
     })
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_1_1070
+     * @tc.name testFloat64ArrayReduce1107
+     * @tc.desc Verify reduce empty array returns initialValue MIN_SAFE_INTEGER
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReduce1107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const minSafeInteger: number = Number.MIN_SAFE_INTEGER;
+      const values = new Float64Array(0);
+      const result = values.reduce((sum, val) => sum + val, Number.MIN_SAFE_INTEGER);
+      const expectVal = minSafeInteger;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_1_1080
+     * @tc.name testFloat64ArrayReduce1108
+     * @tc.desc Verify reduce empty array returns initialValue object
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReduce1108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const num999Pointzero: number = 999.0;
+      const values = new Float64Array(0);
+      const result = values.reduce((acc, val) => acc + val, 999.0);
+      const expectVal = num999Pointzero;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_1_1090
+     * @tc.name testFloat64ArrayReduce1109
+     * @tc.desc Verify reduce empty array callbackfn never called
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReduce1109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const zeroPointZero: number = 0.0;
+      const zeroValue: number = 0;
+      const values = new Float64Array(0);
+      let callCount: int = 0;
+      const result = values.reduce((sum, val) => {
+        callCount++;
+        return sum + val;
+      }, 0.0);
+      const expectVal = zeroPointZero;
+      expect(result).assertEqual(expectVal);
+      const expectVal2 = zeroValue;
+      expect(callCount).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_1_1100
+     * @tc.name testFloat64ArrayReduce1110
+     * @tc.desc Verify reduce empty array initialValue 2147483647
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReduce1110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int32MaxValue: number = 2147483647;
+      const values = new Float64Array(0);
+      const result = values.reduce((sum, val) => sum + val, 2147483647.0);
+      const expectVal = int32MaxValue;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_1_1110
+     * @tc.name testFloat64ArrayReduce1111
+     * @tc.desc Verify reduce empty array initialValue -2147483648
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReduce1111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int32MinValue: number = -2147483648;
+      const values = new Float64Array(0);
+      const result = values.reduce((sum, val) => sum + val, -2147483648.0);
+      const expectVal = int32MinValue;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_1_1120
+     * @tc.name testFloat64ArrayReduce1112
+     * @tc.desc Verify reduce empty array initialValue 5e-324
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReduce1112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const doubleMinValue: number = 5e-324;
+      const values = new Float64Array(0);
+      const result = values.reduce((sum, val) => sum + val, 5e-324);
+      const expectVal = doubleMinValue;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_1_1130
+     * @tc.name testFloat64ArrayReduce1113
+     * @tc.desc Verify reduce empty array initialValue 1.7976931348623157e+308
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReduce1113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const doubleMaxValue: number = 1.7976931348623157e+308;
+      const values = new Float64Array(0);
+      const result = values.reduce((sum, val) => sum + val, 1.7976931348623157e+308);
+      const expectVal = doubleMaxValue;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_1_1140
+     * @tc.name testFloat64ArrayReduce1114
+     * @tc.desc Verify reduce empty array initialValue 0.1+0.2 precision boundary
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReduce1114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointThree: number = 0.3;
+      const values = new Float64Array(0);
+      const result = values.reduce((sum, val) => sum + val, 0.3);
+      const expectVal = pointThree;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_1_1150
+     * @tc.name testFloat64ArrayReduce1115
+     * @tc.desc Verify reduce empty array initialValue -0.0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReduce1115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const negativeZero: number = -0.0;
+      const values = new Float64Array(0);
+      const result = values.reduce((sum, val) => sum + val, -0.0);
+      const expectVal = negativeZero;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_1_1160
+     * @tc.name testFloat64ArrayReduce1116
+     * @tc.desc Verify reduce sum
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReduce1116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int16MinValue: number = -32768;
+      const zeroValue: number = 0;
+      const negnum32896Value: number = -32896;
+      const values = Float64Array.of(int16MinValue, -128, zeroValue);
+      const total = values.reduce((sum, value) => sum + value);
+      const expectVal = negnum32896Value;
+      expect(total).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_1_1170
+     * @tc.name testFloat64ArrayReduce1117
+     * @tc.desc Verify reduce product
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReduce1117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int32MinValue: number = -2147483648;
+      const zeroValue: number = 0;
+      const values = Float64Array.of(int32MinValue, -1, zeroValue);
+      const product = values.reduce((prod, value) => prod * value);
+      const expectVal = zeroValue;
+      expect(product).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_1_1180
+     * @tc.name testFloat64ArrayReduce1118
+     * @tc.desc Verify reduce((sum, value) exception handling
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReduce1118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const values = new Float64Array();
+        values.reduce((sum, value) => sum + value);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("TypeError");
+      }
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_1_1190
+     * @tc.name testFloat64ArrayReduce1119
+     * @tc.desc Verify reduce with initialValue sum
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReduce1119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointOne: number = 0.1;
+      const maxSafeInteger: number = 9007199254740991;
+      const sciValue9007199254740991e15: number = 9.007199254740991e+15;
+      const values = Float64Array.of(pointOne, maxSafeInteger);
+      const total = values.reduce((sum, value) => sum + value, 0.0);
+      const expectVal = sciValue9007199254740991e15;
+      expect(total).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_1_1200
+     * @tc.name testFloat64ArrayReduce1120
+     * @tc.desc Verify reduce with initialValue string concatenation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReduce1120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointFive: number = 0.5;
+      const onePointFive: number = 1.5;
+      const values = Float64Array.of(pointFive, onePointFive);
+      const text = values.reduce<string>((result, value) => result + value, "");
+      const expectVal = '0.51.5';
+      expect(text).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_1_1210
+     * @tc.name testFloat64ArrayReduce1121
+     * @tc.desc Verify reduce with negative initialValue
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReduce1121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int16MinValue: number = -32768;
+      const negnum32897Value: number = -32897;
+      const values = Float64Array.of(int16MinValue, -128);
+      const result = values.reduce((sum, value) => sum + value, -1.0);
+      const expectVal = negnum32897Value;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_1_1220
+     * @tc.name testFloat64ArrayReduce1122
+     * @tc.desc Verify reduce result with negative accumulator 
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReduce1122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int32MinValue: number = -2147483648;
+      const zeroValue: number = 0;
+      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const sum = arr.reduce((acc: number, val: number): number => acc + val, 0.0);
+      expect(sum === 6.0).assertEqual(false);
+      expect(sum === 0.0).assertEqual(false);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_1_1230
+     * @tc.name testFloat64ArrayReduce1123
+     * @tc.desc Verify reduce with hex literal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReduce1123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const hexValueFF: number = 0xFF;
+      const hexValueAA: number = 0xAA;
+      const num425Value: number = 425;
+      const arr = Float64Array.of(hexValueFF, hexValueAA);
+      const s = arr.reduce((a: number, v: number): number => a + v, 0x00);
+      const expectVal = num425Value;
+      expect(s).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_1_1240
+     * @tc.name testFloat64ArrayReduce1124
+     * @tc.desc Verify reduce with binary literal 
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReduce1124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const binaryValue11111111: number = 0b11111111;
+      const binaryValue10101010: number = 0b10101010;
+      const num425Value: number = 425;
+      const arr = Float64Array.of(binaryValue11111111, binaryValue10101010);
+      const s = arr.reduce((a: number, v: number): number => a + v, 0b00000000);
+      const expectVal = num425Value;
+      expect(s).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_1_1250
+     * @tc.name testFloat64ArrayReduce1125
+     * @tc.desc Verify reduce with Double.NaN
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReduce1125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nanValue: number = Double.NaN;
+      const doubleMaxValue: number = Double.MAX_VALUE;
+      const arr = Float64Array.of(nanValue, doubleMaxValue);
+      const result = arr.reduce((sum, val) => sum + val, 0.0);
+      const actVal17 = Number.isNaN(result);
+      const expectVal = true;
+      expect(actVal17).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_1_1260
+     * @tc.name testFloat64ArrayReduce1126
+     * @tc.desc Verify reduce with Double.POSITIVE_INFINITY
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReduce1126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const positiveInfinity: number = Double.POSITIVE_INFINITY;
+      const negativeInfinity: number = Double.NEGATIVE_INFINITY;
+      const arr = Float64Array.of(positiveInfinity, negativeInfinity);
+      const result = arr.reduce((sum, val) => sum + val, 0.0);
+      const actVal18 = Number.isNaN(result);
+      const expectVal = true;
+      expect(actVal18).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_1_1270
+     * @tc.name testFloat64ArrayReduce1127
+     * @tc.desc Verify reduce with Double.MIN_VALUE/MAX_VALUE
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReduce1127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const doubleMinValue: number = Double.MIN_VALUE;
+      const doubleMaxValue: number = Double.MAX_VALUE;
+      const arr = Float64Array.of(doubleMinValue, doubleMaxValue);
+      const result = arr.reduce((sum, val) => sum + val, 0.0);
+      const expectVal = doubleMaxValue;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_1_1280
+     * @tc.name testFloat64ArrayReduce1128
+     * @tc.desc Verify reduce callbackfn throws RangeError propagates
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReduce1128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const threePointZero: number = 3.0;
+      const values = Float64Array.of(onePointZero, twoPointZero, threePointZero);
+      try {
+        values.reduce((sum: Double, val: Double): Double => {
+          throw new RangeError("test error");
+        }, 0.0);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("RangeError");
+      }
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_1_1290
+     * @tc.name testFloat64ArrayReduce1129
+     * @tc.desc Verify reduce callbackfn throws TypeError propagates
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReduce1129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const threePointZero: number = 3.0;
+      const values = Float64Array.of(onePointZero, twoPointZero, threePointZero);
+      try {
+        values.reduce((sum: Double, val: Double): Double => {
+          throw new TypeError("type error");
+        }, 0.0);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("TypeError");
+      }
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_1_1300
+     * @tc.name testFloat64ArrayReduce1130
+     * @tc.desc Verify reduce callbackfn throws Error propagates
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReduce1130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const threePointZero: number = 3.0;
+      const values = Float64Array.of(onePointZero, twoPointZero, threePointZero);
+      try {
+        values.reduce((sum: Double, val: Double): Double => {
+          throw new Error("general error");
+        }, 0.0);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("Error");
+      }
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_1_1310
+     * @tc.name testFloat64ArrayReduce1131
+     * @tc.desc Verify reduce callbackfn throws on first element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReduce1131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const threePointZero: number = 3.0;
+      const values = Float64Array.of(onePointZero, twoPointZero, threePointZero);
+      try {
+        values.reduce((sum, val, idx) => {
+          if (idx === 0) {
+            throw new Error("first element");
+          }
+          return sum + val;
+        }, 0.0);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("Error");
+      }
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_1_1320
+     * @tc.name testFloat64ArrayReduce1132
+     * @tc.desc Verify reduce callbackfn throws on middle element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReduce1132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const threePointZero: number = 3.0;
+      const values = Float64Array.of(onePointZero, twoPointZero, threePointZero);
+      try {
+        values.reduce((sum, val, idx) => {
+          if (idx === 1) {
+            throw new Error("middle element");
+          }
+          return sum + val;
+        }, 0.0);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("Error");
+      }
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_1_1330
+     * @tc.name testFloat64ArrayReduce1133
+     * @tc.desc Verify reduce callbackfn throws on last element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReduce1133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const threePointZero: number = 3.0;
+      const values = Float64Array.of(onePointZero, twoPointZero, threePointZero);
+      try {
+        values.reduce((sum, val, idx) => {
+          if (idx === 2) {
+            throw new Error("last element");
+          }
+          return sum + val;
+        }, 0.0);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("Error");
+      }
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_1_1340
+     * @tc.name testFloat64ArrayReduce1134
+     * @tc.desc Verify reduce with 50-element array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReduce1134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const num1225Pointzero: number = 1225.0;
+      const values = new Float64Array(50);
+      for (let i: int = 0; i < 50; i++) {
+        values[i] = i;
+      }
+      const result = values.reduce((sum, val) => sum + val, 0.0);
+      const expectVal = num1225Pointzero;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_1_1350
+     * @tc.name testFloat64ArrayReduce1135
+     * @tc.desc Verify reduce with 100-element array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReduce1135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const num4950Pointzero: number = 4950.0;
+      const values = new Float64Array(100);
+      for (let i: int = 0; i < 100; i++) {
+        values[i] = i;
+      }
+      const result = values.reduce((sum, val) => sum + val, 0.0);
+      const expectVal = num4950Pointzero;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_1_1360
+     * @tc.name testFloat64ArrayReduce1136
+     * @tc.desc Verify reduce with 200-element array of 1.0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReduce1136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const num200Pointzero: number = 200.0;
+      const values = new Float64Array(200);
+      for (let i: int = 0; i < 200; i++) {
+        values[i] = 1.0;
+      }
+      const result = values.reduce((sum, val) => sum + val, 0.0);
+      const expectVal = num200Pointzero;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_1_1370
+     * @tc.name testFloat64ArrayReduce1137
+     * @tc.desc Verify reduce with 1000-element array of 1.0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReduce1137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const thousandPointzero: number = 1000.0;
+      const values = new Float64Array(1000);
+      for (let i: int = 0; i < 1000; i++) {
+        values[i] = 1.0;
+      }
+      const result = values.reduce((sum, val) => sum + val, 0.0);
+      const expectVal = thousandPointzero;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_1_1380
+     * @tc.name testFloat64ArrayReduce1138
+     * @tc.desc Verify reduce<boolean> with all positive values returns true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReduce1138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const threePointZero: number = 3.0;
+      const values = Float64Array.of(onePointZero, twoPointZero, threePointZero);
+      const result = values.reduce<boolean>((acc, val) => acc && val > 0, true);
+      const expectVal = true;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_1_1390
+     * @tc.name testFloat64ArrayReduce1139
+     * @tc.desc Verify reduce<boolean> with negative value returns false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReduce1139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const threePointZero: number = 3.0;
+      const values = Float64Array.of(onePointZero, -2.0, threePointZero);
+      const result = values.reduce<boolean>((acc, val) => acc && val > 0, true);
+      const expectVal = false;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_1_1400
+     * @tc.name testFloat64ArrayReduce1140
+     * @tc.desc Verify reduce callbackfn modifies array via array param
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReduce1140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const threePointZero: number = 3.0;
+      const fourPointZero: number = 4.0;
+      const sixPointZero: number = 6.0;
+      const values = Float64Array.of(onePointZero, twoPointZero, threePointZero);
+      values.reduce((sum, val, idx, ary) => {
+        ary[idx] = val * 2.0;
+        return sum + val;
+      }, 0.0);
+      const actVal19 = values.$_get(0);
+      const expectVal = twoPointZero;
+      expect(actVal19).assertEqual(expectVal);
+      const actVal20 = values.$_get(1);
+      const expectVal2 = fourPointZero;
+      expect(actVal20).assertEqual(expectVal2);
+      const actVal21 = values.$_get(2);
+      const expectVal3 = sixPointZero;
+      expect(actVal21).assertEqual(expectVal3);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_1_1410
+     * @tc.name testFloat64ArrayReduce1141
+     * @tc.desc Verify reduce callbackfn reads modified element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReduce1141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const threePointZero: number = 3.0;
+      const twelvePointzero: number = 12.0;
+      const values = Float64Array.of(onePointZero, twoPointZero, threePointZero);
+      const result = values.reduce((sum, val, idx, ary) => {
+        ary[idx] = val * 2.0;
+        return sum + ary[idx];
+      }, 0.0);
+      const expectVal = twelvePointzero;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_1_1420
+     * @tc.name testFloat64ArrayReduce1142
+     * @tc.desc Verify reduce on empty array without initialValue throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReduce1142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Float64Array(0);
+      try {
+        arr.reduce((sum: number, val: number): number => sum + val);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("TypeError");
+      }
+    })
+
   })
 }
