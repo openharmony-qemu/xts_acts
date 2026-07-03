@@ -811,9 +811,13 @@ export default function observerManagerTest() {
       try {
         observer.on('cellularDataFlowChange', {
           slotId: 0
-        }, (data: observer.DataFlowType) => {
-          console.info(`${caseName} data ${JSON.stringify(data)}`);
-          ExpectTrue(data == 0 || data == 1 || data == 2 || data == 3);
+        }, (flow: observer.DataFlowType) => {
+          console.info(`${caseName} data ${JSON.stringify(flow)}`);
+          ExpectTrue(flow === data.DataFlowType.DATA_FLOW_TYPE_NONE
+             || flow === data.DataFlowType.DATA_FLOW_TYPE_DOWN
+             || flow === data.DataFlowType.DATA_FLOW_TYPE_UP
+             || flow === data.DataFlowType.DATA_FLOW_TYPE_UP_DOWN
+             || flow === data.DataFlowType.DATA_FLOW_TYPE_DORMANT);
         });
         await data.disableCellularData();
         await sleep(3000);
