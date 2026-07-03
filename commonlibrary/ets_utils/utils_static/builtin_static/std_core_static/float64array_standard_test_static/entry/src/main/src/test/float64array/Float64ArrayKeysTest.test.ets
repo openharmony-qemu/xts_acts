@@ -1927,7 +1927,7 @@ export default function float64ArrayKeysTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_KEYS_8700
      * @tc.name testFloat64ArrayKeys087
-     * @tc.desc Verify keys iterator negative check (D7 two-way)
+     * @tc.desc Verify keys iterator negative check
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1965,7 +1965,7 @@ export default function float64ArrayKeysTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_KEYS_8900
      * @tc.name testFloat64ArrayKeys089
-     * @tc.desc Verify keys with binary literal (D8 binary)
+     * @tc.desc Verify keys with binary literal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1984,7 +1984,7 @@ export default function float64ArrayKeysTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_KEYS_9000
      * @tc.name testFloat64ArrayKeys090
-     * @tc.desc Verify keys with Double.NaN (D5 critical)
+     * @tc.desc Verify keys with Double.NaN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2006,7 +2006,7 @@ export default function float64ArrayKeysTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_KEYS_9100
      * @tc.name testFloat64ArrayKeys091
-     * @tc.desc Verify keys with Double.POSITIVE_INFINITY (D5 critical)
+     * @tc.desc Verify keys with Double.POSITIVE_INFINITY
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2026,7 +2026,7 @@ export default function float64ArrayKeysTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_KEYS_9200
      * @tc.name testFloat64ArrayKeys092
-     * @tc.desc Verify keys with Double.MIN_VALUE/MAX_VALUE (D5 critical)
+     * @tc.desc Verify keys with Double.MIN_VALUE/MAX_VALUE
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

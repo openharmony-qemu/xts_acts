@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -692,7 +692,7 @@ export default function Float64ArraySort2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_2_3900
      * @tc.name testFloat64ArraySort2039
-     * @tc.desc Verify sort subarray sort changes parent buffer (write child read parent)
+     * @tc.desc Verify sort subarray sort changes parent buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -740,7 +740,7 @@ export default function Float64ArraySort2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_2_4100
      * @tc.name testFloat64ArraySort2041
-     * @tc.desc Verify sort parent sort changes subarray view (write parent read child)
+     * @tc.desc Verify sort parent sort changes subarray view
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -946,7 +946,7 @@ export default function Float64ArraySort2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_2_5200
      * @tc.name testFloat64ArraySort2052
-     * @tc.desc Verify sort element sum unchanged after (three elements)
+     * @tc.desc Verify sort element sum unchanged after
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

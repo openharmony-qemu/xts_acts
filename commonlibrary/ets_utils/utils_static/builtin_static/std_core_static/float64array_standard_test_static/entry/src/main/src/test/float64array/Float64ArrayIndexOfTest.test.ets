@@ -2364,7 +2364,7 @@ export default function float64ArrayIndexOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INDEXOF_1200
      * @tc.name testFloat64ArrayIndexOf120
-     * @tc.desc Verify indexOf with Double.NaN and Double.POSITIVE_INFINITY (D5 critical)
+     * @tc.desc Verify indexOf with Double.NaN and Double.POSITIVE_INFINITY
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2386,7 +2386,7 @@ export default function float64ArrayIndexOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INDEXOF_1210
      * @tc.name testFloat64ArrayIndexOf121
-     * @tc.desc Verify indexOf with Double.NEGATIVE_INFINITY (negative infinity) (D5 critical)
+     * @tc.desc Verify indexOf with Double.NEGATIVE_INFINITY
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2408,7 +2408,7 @@ export default function float64ArrayIndexOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INDEXOF_1220
      * @tc.name testFloat64ArrayIndexOf122
-     * @tc.desc Verify indexOf with hex number literal (255)
+     * @tc.desc Verify indexOf with hex number literal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2430,7 +2430,7 @@ export default function float64ArrayIndexOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INDEXOF_1230
      * @tc.name testFloat64ArrayIndexOf123
-     * @tc.desc Verify indexOf on empty array returns -1 (D4)
+     * @tc.desc Verify indexOf on empty array returns -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2447,7 +2447,7 @@ export default function float64ArrayIndexOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INDEXOF_1240
      * @tc.name testFloat64ArrayIndexOf124
-     * @tc.desc Verify indexOf with NaN fromIndex (D2)
+     * @tc.desc Verify indexOf with NaN fromIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2466,7 +2466,7 @@ export default function float64ArrayIndexOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INDEXOF_1250
      * @tc.name testFloat64ArrayIndexOf125
-     * @tc.desc Verify indexOf returns -1 for nonexistent value (D7 reverse)
+     * @tc.desc Verify indexOf returns -1 for nonexistent value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2506,7 +2506,7 @@ export default function float64ArrayIndexOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INDEXOF_1270
      * @tc.name testFloat64ArrayIndexOf127
-     * @tc.desc Verify indexOf with binary literal (D8 binary)
+     * @tc.desc Verify indexOf with binary literal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2525,7 +2525,7 @@ export default function float64ArrayIndexOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INDEXOF_1280
      * @tc.name testFloat64ArrayIndexOf128
-     * @tc.desc Verify indexof with Double.NaN (D5 critical)
+     * @tc.desc Verify indexof with Double.NaN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2547,7 +2547,7 @@ export default function float64ArrayIndexOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INDEXOF_1290
      * @tc.name testFloat64ArrayIndexOf129
-     * @tc.desc Verify indexof with Double.POSITIVE_INFINITY (D5 critical)
+     * @tc.desc Verify indexof with Double.POSITIVE_INFINITY
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2569,7 +2569,7 @@ export default function float64ArrayIndexOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_INDEXOF_1300
      * @tc.name testFloat64ArrayIndexOf130
-     * @tc.desc Verify indexof with Double.MIN_VALUE/MAX_VALUE (D5 critical)
+     * @tc.desc Verify indexof with Double.MIN_VALUE/MAX_VALUE
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

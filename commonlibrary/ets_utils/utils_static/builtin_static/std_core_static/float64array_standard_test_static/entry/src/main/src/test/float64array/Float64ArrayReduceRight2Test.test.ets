@@ -1540,7 +1540,7 @@ export default function Float64ArrayReduceRight2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_8900
      * @tc.name testFloat64ArrayReduceRight2089
-     * @tc.desc Verify reduceRight with binary literal (D8 binary)
+     * @tc.desc Verify reduceRight with binary literal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1558,7 +1558,7 @@ export default function Float64ArrayReduceRight2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_9000
      * @tc.name testFloat64ArrayReduceRight2090
-     * @tc.desc Verify reduceright with Double.NaN (D5 critical)
+     * @tc.desc Verify reduceright with Double.NaN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1576,7 +1576,7 @@ export default function Float64ArrayReduceRight2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_9100
      * @tc.name testFloat64ArrayReduceRight2091
-     * @tc.desc Verify reduceright with Double.POSITIVE_INFINITY (D5 critical)
+     * @tc.desc Verify reduceright with Double.POSITIVE_INFINITY
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1594,7 +1594,7 @@ export default function Float64ArrayReduceRight2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_2_9200
      * @tc.name testFloat64ArrayReduceRight2092
-     * @tc.desc Verify reduceright with Double.MIN_VALUE/MAX_VALUE (D5 critical)
+     * @tc.desc Verify reduceright with Double.MIN_VALUE/MAX_VALUE
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

@@ -1613,7 +1613,7 @@ export default function float64ArraySomeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_0940
      * @tc.name testFloat64ArraySome094
-     * @tc.desc Verify some with binary literal (D8 binary)
+     * @tc.desc Verify some with binary literal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1921,7 +1921,7 @@ export default function float64ArraySomeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SOME_1130
      * @tc.name testFloat64ArraySome113
-     * @tc.desc Verify some with int overflow 2147483648 element (double exact)
+     * @tc.desc Verify some with int overflow 2147483648 element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

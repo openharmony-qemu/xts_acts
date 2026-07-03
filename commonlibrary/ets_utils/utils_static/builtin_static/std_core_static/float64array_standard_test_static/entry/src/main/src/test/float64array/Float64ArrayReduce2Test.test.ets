@@ -307,7 +307,7 @@ export default function Float64ArrayReduce2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_1700
      * @tc.name testFloat64ArrayReduce2017
-     * @tc.desc Verify reduce initialValue is 0 (integer)
+     * @tc.desc Verify reduce initialValue is 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -323,7 +323,7 @@ export default function Float64ArrayReduce2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_1800
      * @tc.name testFloat64ArrayReduce2018
-     * @tc.desc Verify reduce initialValue is -1 (negative integer)
+     * @tc.desc Verify reduce initialValue is -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -339,7 +339,7 @@ export default function Float64ArrayReduce2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_1900
      * @tc.name testFloat64ArrayReduce2019
-     * @tc.desc Verify reduce initialValue is 0.5 (decimal)
+     * @tc.desc Verify reduce initialValue is 0.5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -403,7 +403,7 @@ export default function Float64ArrayReduce2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_2300
      * @tc.name testFloat64ArrayReduce2023
-     * @tc.desc Verify reduce initialValue is 0x10 (hex literal 16)
+     * @tc.desc Verify reduce initialValue is 0x10
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -419,7 +419,7 @@ export default function Float64ArrayReduce2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_2400
      * @tc.name testFloat64ArrayReduce2024
-     * @tc.desc Verify reduce initialValue is 0o10 (octal literal 8)
+     * @tc.desc Verify reduce initialValue is 0o10
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -435,7 +435,7 @@ export default function Float64ArrayReduce2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_2500
      * @tc.name testFloat64ArrayReduce2025
-     * @tc.desc Verify reduce initialValue is 0b10 (binary literal 2)
+     * @tc.desc Verify reduce initialValue is 0b10
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -451,7 +451,7 @@ export default function Float64ArrayReduce2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_2600
      * @tc.name testFloat64ArrayReduce2026
-     * @tc.desc Verify reduce initialValue is 1e2 (scientific notation 100)
+     * @tc.desc Verify reduce initialValue is 1e2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -467,7 +467,7 @@ export default function Float64ArrayReduce2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_2700
      * @tc.name testFloat64ArrayReduce2027
-     * @tc.desc Verify reduce initialValue is 1.5e1 (scientific notation 15)
+     * @tc.desc Verify reduce initialValue is 1.5e1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -483,7 +483,7 @@ export default function Float64ArrayReduce2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_2800
      * @tc.name testFloat64ArrayReduce2028
-     * @tc.desc Verify reduce initialValue is 1.0e-308 (min scientific)
+     * @tc.desc Verify reduce initialValue is 1.0e-308
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -514,7 +514,7 @@ export default function Float64ArrayReduce2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_3000
      * @tc.name testFloat64ArrayReduce2030
-     * @tc.desc Verify reduce initialValue is 5e-324 (MIN_VALUE)
+     * @tc.desc Verify reduce initialValue is 5e-324
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -579,7 +579,7 @@ export default function Float64ArrayReduce2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_3400
      * @tc.name testFloat64ArrayReduce2034
-     * @tc.desc Verify reduce initialValue is 0x20 (hex literal 32)
+     * @tc.desc Verify reduce initialValue is 0x20
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -595,7 +595,7 @@ export default function Float64ArrayReduce2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_3500
      * @tc.name testFloat64ArrayReduce2035
-     * @tc.desc Verify reduce initialValue is 0b1111 (binary literal 15)
+     * @tc.desc Verify reduce initialValue is 0b1111
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -611,7 +611,7 @@ export default function Float64ArrayReduce2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_3600
      * @tc.name testFloat64ArrayReduce2036
-     * @tc.desc Verify reduce initialValue is 1e3 (scientific notation 1000)
+     * @tc.desc Verify reduce initialValue is 1e3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -627,7 +627,7 @@ export default function Float64ArrayReduce2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_3700
      * @tc.name testFloat64ArrayReduce2037
-     * @tc.desc Verify reduce initialValue is 2.5e2 (scientific notation 250)
+     * @tc.desc Verify reduce initialValue is 2.5e2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -643,7 +643,7 @@ export default function Float64ArrayReduce2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_3800
      * @tc.name testFloat64ArrayReduce2038
-     * @tc.desc Verify reduce initialValue is 1.0e+308 (max scientific)
+     * @tc.desc Verify reduce initialValue is 1.0e+308
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1099,7 +1099,7 @@ export default function Float64ArrayReduce2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_6300
      * @tc.name testFloat64ArrayReduce2063
-     * @tc.desc Verify reduce all same elements 7.0 (5 elements)
+     * @tc.desc Verify reduce all same elements 7.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1116,7 +1116,7 @@ export default function Float64ArrayReduce2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_6400
      * @tc.name testFloat64ArrayReduce2064
-     * @tc.desc Verify reduce all same elements 3.0 (10 elements)
+     * @tc.desc Verify reduce all same elements 3.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1478,7 +1478,7 @@ export default function Float64ArrayReduce2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_8500
      * @tc.name testFloat64ArrayReduce2085
-     * @tc.desc Verify reduce with all same elements 5.0 (4 elements)
+     * @tc.desc Verify reduce with all same elements 5.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1511,7 +1511,7 @@ export default function Float64ArrayReduce2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_2_8700
      * @tc.name testFloat64ArrayReduce2087
-     * @tc.desc Verify reduce initialValue true (boolean as number 1)
+     * @tc.desc Verify reduce initialValue true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

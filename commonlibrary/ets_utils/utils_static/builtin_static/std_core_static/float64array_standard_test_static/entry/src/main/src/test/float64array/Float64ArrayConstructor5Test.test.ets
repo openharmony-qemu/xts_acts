@@ -1534,7 +1534,7 @@ export default function Float64ArrayConstructor5Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_5_0820
      * @tc.name testFloat64ArrayConstructor5082
-     * @tc.desc Verify view offset alignment (8-multiple)
+     * @tc.desc Verify view offset alignment
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

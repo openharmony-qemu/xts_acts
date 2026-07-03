@@ -1323,7 +1323,7 @@ export default function Float64ArraySubarray2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_2_6700
      * @tc.name testFloat64ArraySubarray2067
-     * @tc.desc Verify subarray with int range values (int32 boundary)
+     * @tc.desc Verify subarray with int range values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1380,7 +1380,7 @@ export default function Float64ArraySubarray2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SUBARRAY_2_7000
      * @tc.name testFloat64ArraySubarray2070
-     * @tc.desc Verify subarray with double range values (large + special)
+     * @tc.desc Verify subarray with double range values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

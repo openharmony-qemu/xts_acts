@@ -128,7 +128,7 @@ export default function Float64ArrayConstructor3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_0600
      * @tc.name testFloat64ArrayConstructor3006
-     * @tc.desc Verify overload 3 buf is huge ArrayBuffer (1MB)
+     * @tc.desc Verify overload 3 buf is huge ArrayBuffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -802,7 +802,7 @@ export default function Float64ArrayConstructor3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_4300
      * @tc.name testFloat64ArrayConstructor3043
-     * @tc.desc Verify overload 11 buf is ArrayBuffer (16 bytes)
+     * @tc.desc Verify overload 11 buf is ArrayBuffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -820,7 +820,7 @@ export default function Float64ArrayConstructor3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_4400
      * @tc.name testFloat64ArrayConstructor3044
-     * @tc.desc Verify overload 11 buf is ArrayBuffer (0 bytes)
+     * @tc.desc Verify overload 11 buf is ArrayBuffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -836,7 +836,7 @@ export default function Float64ArrayConstructor3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_4500
      * @tc.name testFloat64ArrayConstructor3045
-     * @tc.desc Verify overload 11 buf is ArrayBuffer (8 bytes)
+     * @tc.desc Verify overload 11 buf is ArrayBuffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -853,7 +853,7 @@ export default function Float64ArrayConstructor3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_4600
      * @tc.name testFloat64ArrayConstructor3046
-     * @tc.desc Verify overload 11 buf is ArrayBuffer (64 bytes)
+     * @tc.desc Verify overload 11 buf is ArrayBuffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1053,7 +1053,7 @@ export default function Float64ArrayConstructor3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_5700
      * @tc.name testFloat64ArrayConstructor3057
-     * @tc.desc Verify overload 11 buf is ArrayLike super long (100 elements)
+     * @tc.desc Verify overload 11 buf is ArrayLike super long
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1093,7 +1093,7 @@ export default function Float64ArrayConstructor3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_5900
      * @tc.name testFloat64ArrayConstructor3059
-     * @tc.desc Verify overload 11 buf is Float64Array (deep copy)
+     * @tc.desc Verify overload 11 buf is Float64Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1115,7 +1115,7 @@ export default function Float64ArrayConstructor3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_6000
      * @tc.name testFloat64ArrayConstructor3060
-     * @tc.desc Verify overload 11 buf is Array<number> (deep copy)
+     * @tc.desc Verify overload 11 buf is Array<number>
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1136,7 +1136,7 @@ export default function Float64ArrayConstructor3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_3_6100
      * @tc.name testFloat64ArrayConstructor3061
-     * @tc.desc Verify overload 11 buf is FixedArray<number> (deep copy)
+     * @tc.desc Verify overload 11 buf is FixedArray<number>
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

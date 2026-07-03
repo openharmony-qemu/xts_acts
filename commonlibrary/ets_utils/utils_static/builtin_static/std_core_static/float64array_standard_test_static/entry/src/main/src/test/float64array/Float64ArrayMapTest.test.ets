@@ -2541,7 +2541,7 @@ export default function Float64ArrayMapTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1210
      * @tc.name testFloat64ArrayMap121
-     * @tc.desc Verify map with binary literal (D8 binary)
+     * @tc.desc Verify map with binary literal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2560,7 +2560,7 @@ export default function Float64ArrayMapTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1220
      * @tc.name testFloat64ArrayMap122
-     * @tc.desc Verify map with Double.NaN (D5 critical)
+     * @tc.desc Verify map with Double.NaN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2577,7 +2577,7 @@ export default function Float64ArrayMapTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1230
      * @tc.name testFloat64ArrayMap123
-     * @tc.desc Verify map with Double.POSITIVE_INFINITY (D5 critical)
+     * @tc.desc Verify map with Double.POSITIVE_INFINITY
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2594,7 +2594,7 @@ export default function Float64ArrayMapTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_MAP_1240
      * @tc.name testFloat64ArrayMap124
-     * @tc.desc Verify map with Double.MIN_VALUE/MAX_VALUE (D5 critical)
+     * @tc.desc Verify map with Double.MIN_VALUE/MAX_VALUE
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

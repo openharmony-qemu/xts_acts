@@ -801,7 +801,7 @@ export default function Float64ArrayOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_4100
      * @tc.name testFloat64ArrayOf041
-     * @tc.desc Verify of with no arguments (D4 boundary)
+     * @tc.desc Verify of with no arguments
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -816,7 +816,7 @@ export default function Float64ArrayOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_4200
      * @tc.name testFloat64ArrayOf042
-     * @tc.desc Verify of with large values negative (D7 two-way)
+     * @tc.desc Verify of with large values negative
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -860,7 +860,7 @@ export default function Float64ArrayOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_4400
      * @tc.name testFloat64ArrayOf044
-     * @tc.desc Verify of with binary literal (D8 binary)
+     * @tc.desc Verify of with binary literal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -878,7 +878,7 @@ export default function Float64ArrayOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_4500
      * @tc.name testFloat64ArrayOf045
-     * @tc.desc Verify of with Double.NaN (D5 critical)
+     * @tc.desc Verify of with Double.NaN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -895,7 +895,7 @@ export default function Float64ArrayOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_4600
      * @tc.name testFloat64ArrayOf046
-     * @tc.desc Verify of with Double.POSITIVE_INFINITY (D5 critical)
+     * @tc.desc Verify of with Double.POSITIVE_INFINITY
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -911,7 +911,7 @@ export default function Float64ArrayOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_4700
      * @tc.name testFloat64ArrayOf047
-     * @tc.desc Verify of with Double.MIN_VALUE/MAX_VALUE (D5 critical)
+     * @tc.desc Verify of with Double.MIN_VALUE/MAX_VALUE
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

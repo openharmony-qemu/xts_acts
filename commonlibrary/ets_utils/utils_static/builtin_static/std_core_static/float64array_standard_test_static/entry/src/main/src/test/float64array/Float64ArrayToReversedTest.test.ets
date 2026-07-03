@@ -1329,7 +1329,7 @@ export default function Float64ArrayToReversedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_5800
      * @tc.name testFloat64ArrayToReversed058
-     * @tc.desc Verify toReversed places large positive value first
+     * @tc.desc Verify toReversed puts large positive value first
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1346,7 +1346,7 @@ export default function Float64ArrayToReversedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_5900
      * @tc.name testFloat64ArrayToReversed059
-     * @tc.desc Verify toReversed places pi value at expected index
+     * @tc.desc Verify toReversed puts pi value at expected index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1364,7 +1364,7 @@ export default function Float64ArrayToReversedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_6000
      * @tc.name testFloat64ArrayToReversed060
-     * @tc.desc Verify toReversed places original first value last
+     * @tc.desc Verify toReversed puts original first value last
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

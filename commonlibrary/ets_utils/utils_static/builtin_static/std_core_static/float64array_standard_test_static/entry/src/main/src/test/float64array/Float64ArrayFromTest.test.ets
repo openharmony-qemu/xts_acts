@@ -1254,7 +1254,7 @@ export default function float64ArrayFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FROM_6200
      * @tc.name testFloat64ArrayFrom062
-     * @tc.desc Verify from with array negative check (D7 two-way)
+     * @tc.desc Verify from with array negative check
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1289,7 +1289,7 @@ export default function float64ArrayFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FROM_6400
      * @tc.name testFloat64ArrayFrom064
-     * @tc.desc Verify from with binary literal (D8 binary)
+     * @tc.desc Verify from with binary literal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

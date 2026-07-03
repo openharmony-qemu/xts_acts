@@ -600,7 +600,7 @@ export default function Float64ArrayToSortedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSORTED_3100
      * @tc.name testFloat64ArrayToSorted031
-     * @tc.desc Verify sorting with NaN places NaN at the end
+     * @tc.desc Verify sorting with NaN puts NaN at the end
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -965,7 +965,7 @@ export default function Float64ArrayToSortedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSORTED_5000
      * @tc.name testFloat64ArrayToSorted050
-     * @tc.desc Verify toSorted places NaN after ordered numeric elements
+     * @tc.desc Verify toSorted puts NaN after ordered numeric elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1221,7 +1221,7 @@ export default function Float64ArrayToSortedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSORTED_6200
      * @tc.name testFloat64ArrayToSorted062
-     * @tc.desc Verify toSorted places positive value after negatives
+     * @tc.desc Verify toSorted puts positive value after negatives
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1445,7 +1445,7 @@ export default function Float64ArrayToSortedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOSORTED_7300
      * @tc.name testFloat64ArrayToSorted073
-     * @tc.desc Verify toSorted returns new instance, original unchanged (D7)
+     * @tc.desc Verify toSorted returns new instance, original unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

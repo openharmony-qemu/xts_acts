@@ -1597,7 +1597,7 @@ export default function Float64ArrayForEachTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FOREACH_0680
      * @tc.name testFloat64ArrayForEach068
-     * @tc.desc Verify forEach on large array (100 elements)
+     * @tc.desc Verify forEach on large array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1621,7 +1621,7 @@ export default function Float64ArrayForEachTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FOREACH_0690
      * @tc.name testFloat64ArrayForEach069
-     * @tc.desc Verify forEach on large array (1000 elements)
+     * @tc.desc Verify forEach on large array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -3269,7 +3269,7 @@ export default function Float64ArrayForEachTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FOREACH_1400
      * @tc.name testFloat64ArrayForEach140
-     * @tc.desc Verify forEach callback index parameter type is int (number)
+     * @tc.desc Verify forEach callback index parameter type is int
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

@@ -1211,7 +1211,7 @@ export default function float64ArrayDollarSetTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_6300
      * @tc.name testFloat64ArrayDollarSet063
-     * @tc.desc Verify dollarset with 3 elements setting Double.MIN_VALUE (5e-324)
+     * @tc.desc Verify dollarset with 3 elements setting Double.MIN_VALUE
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1230,7 +1230,7 @@ export default function float64ArrayDollarSetTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_DOLLARSET_6400
      * @tc.name testFloat64ArrayDollarSet064
-     * @tc.desc Verify dollarset with 3 elements setting Double.MAX_VALUE (1.7976931348623157e+308)
+     * @tc.desc Verify dollarset with 3 elements setting Double.MAX_VALUE
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

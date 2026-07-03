@@ -1404,7 +1404,7 @@ export default function Float64ArrayEveryTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_EVERY_6900
      * @tc.name testFloat64ArrayEvery069
-     * @tc.desc Verify every with NaN element (NaN>0 is false)
+     * @tc.desc Verify every with NaN element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

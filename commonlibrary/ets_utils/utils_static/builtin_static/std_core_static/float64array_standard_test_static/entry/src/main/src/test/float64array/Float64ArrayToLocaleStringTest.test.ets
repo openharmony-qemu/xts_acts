@@ -546,7 +546,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_3300
      * @tc.name testFloat64ArrayToLocaleString033
-     * @tc.desc Verify overload: no arguments toLocaleString()
+     * @tc.desc Verify overload: no arguments toLocaleString
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -562,7 +562,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_3400
      * @tc.name testFloat64ArrayToLocaleString034
-     * @tc.desc Verify overload: only locales as string toLocaleString(string)
+     * @tc.desc Verify overload: only locales as string toLocaleString
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -578,7 +578,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_3500
      * @tc.name testFloat64ArrayToLocaleString035
-     * @tc.desc Verify overload: only locales as array toLocaleString(string[])
+     * @tc.desc Verify overload: only locales as array toLocaleString
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -594,7 +594,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_3600
      * @tc.name testFloat64ArrayToLocaleString036
-     * @tc.desc Verify overload: only locales as undefined toLocaleString(undefined)
+     * @tc.desc Verify overload: only locales as undefined toLocaleString
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -610,7 +610,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_3700
      * @tc.name testFloat64ArrayToLocaleString037
-     * @tc.desc Verify overload: locales as array and options toLocaleString(string[], object)
+     * @tc.desc Verify overload: locales as array and options toLocaleString
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -691,7 +691,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_4200
      * @tc.name testFloat64ArrayToLocaleString042
-     * @tc.desc Verify return value contains comma separator (en-US)
+     * @tc.desc Verify return value contains comma separator
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1469,7 +1469,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOLOCALESTRING_8900
      * @tc.name testFloat64ArrayToLocaleString089
-     * @tc.desc Verify toLocaleString with zh-u-nu-hanidec (Chinese numeral)
+     * @tc.desc Verify toLocaleString with zh-u-nu-hanidec
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

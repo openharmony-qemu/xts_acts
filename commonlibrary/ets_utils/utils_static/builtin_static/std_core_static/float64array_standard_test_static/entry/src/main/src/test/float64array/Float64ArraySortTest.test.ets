@@ -1485,7 +1485,7 @@ export default function Float64ArraySortTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_6400
      * @tc.name testFloat64ArraySort064
-     * @tc.desc Verify sort returns current array (chainable this)
+     * @tc.desc Verify sort returns current array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1543,7 +1543,7 @@ export default function Float64ArraySortTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_6700
      * @tc.name testFloat64ArraySort067
-     * @tc.desc Verify sort with binary literal (D8 binary)
+     * @tc.desc Verify sort with binary literal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

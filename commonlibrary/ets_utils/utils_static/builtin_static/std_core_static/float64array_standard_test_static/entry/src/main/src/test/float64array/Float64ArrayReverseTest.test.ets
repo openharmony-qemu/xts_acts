@@ -2011,7 +2011,7 @@ export default function float64ArrayReverseTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1170
      * @tc.name testFloat64ArrayReverse117
-     * @tc.desc Verify reverse returns current array (chainable this)
+     * @tc.desc Verify reverse returns current array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2026,7 +2026,7 @@ export default function float64ArrayReverseTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1180
      * @tc.name testFloat64ArrayReverse118
-     * @tc.desc Verify reverse result reversed flag (D7 two-way)
+     * @tc.desc Verify reverse result reversed flag
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -2062,7 +2062,7 @@ export default function float64ArrayReverseTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1200
      * @tc.name testFloat64ArrayReverse120
-     * @tc.desc Verify reverse with binary literal (D8 binary)
+     * @tc.desc Verify reverse with binary literal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

@@ -1774,7 +1774,7 @@ export default function Float64ArrayFilterTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0960
      * @tc.name testFloat64ArrayFilter096
-     * @tc.desc Verify filter with binary literal (D8 binary)
+     * @tc.desc Verify filter with binary literal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1796,7 +1796,7 @@ export default function Float64ArrayFilterTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0970
      * @tc.name testFloat64ArrayFilter097
-     * @tc.desc Verify filter with Double.NaN (D5 critical)
+     * @tc.desc Verify filter with Double.NaN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1815,7 +1815,7 @@ export default function Float64ArrayFilterTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0980
      * @tc.name testFloat64ArrayFilter098
-     * @tc.desc Verify filter with Double.POSITIVE_INFINITY (D5 critical)
+     * @tc.desc Verify filter with Double.POSITIVE_INFINITY
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1832,7 +1832,7 @@ export default function Float64ArrayFilterTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0990
      * @tc.name testFloat64ArrayFilter099
-     * @tc.desc Verify filter with Double.MIN_VALUE/MAX_VALUE (D5 critical)
+     * @tc.desc Verify filter with Double.MIN_VALUE/MAX_VALUE
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

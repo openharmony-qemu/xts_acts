@@ -46,7 +46,7 @@ export default function Float64ArrayReduceRight1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_1_0100
      * @tc.name testFloat64ArrayReduceRight1001
-     * @tc.desc Verify reduceRight with 0 arguments (compile-time restriction in ArkTS static)
+     * @tc.desc Verify reduceRight with 0 arguments
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -415,7 +415,7 @@ export default function Float64ArrayReduceRight1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REDUCE_RIGHT_1_2200
      * @tc.name testFloat64ArrayReduceRight1022
-     * @tc.desc Verify reduceRight callback throwing on second call (idx === 2)
+     * @tc.desc Verify reduceRight callback throwing on second call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

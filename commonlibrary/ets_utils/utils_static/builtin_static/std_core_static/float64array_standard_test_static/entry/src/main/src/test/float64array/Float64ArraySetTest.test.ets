@@ -1445,7 +1445,7 @@ export default function float64ArraySetTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SET_7300
      * @tc.name testFloat64ArraySet073
-     * @tc.desc Verify set with Double.NaN (D5 critical)
+     * @tc.desc Verify set with Double.NaN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1464,7 +1464,7 @@ export default function float64ArraySetTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SET_7400
      * @tc.name testFloat64ArraySet074
-     * @tc.desc Verify set with Double.POSITIVE_INFINITY (D5 critical)
+     * @tc.desc Verify set with Double.POSITIVE_INFINITY
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1481,7 +1481,7 @@ export default function float64ArraySetTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SET_7500
      * @tc.name testFloat64ArraySet075
-     * @tc.desc Verify set with Double.MIN_VALUE/MAX_VALUE (D5 critical)
+     * @tc.desc Verify set with Double.MIN_VALUE/MAX_VALUE
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

@@ -1071,7 +1071,7 @@ export default function Float64ArrayConstructor4Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_CONSTRUCTOR_4_6000
      * @tc.name testFloat64ArrayConstructor4060
-     * @tc.desc Verify buf is minimum ArrayBuffer (8 bytes)
+     * @tc.desc Verify buf is minimum ArrayBuffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

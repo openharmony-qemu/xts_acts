@@ -46,7 +46,7 @@ export default function float64ArraySet2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SET_2_0100
      * @tc.name testFloat64ArraySet2001
-     * @tc.desc Verify set with hex int literal (0xDE = 222)
+     * @tc.desc Verify set with hex int literal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1514,7 +1514,7 @@ export default function float64ArraySet2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SET_2_7700
      * @tc.name testFloat64ArraySet2077
-     * @tc.desc Verify set with Float64Array negative check (D7 two-way)
+     * @tc.desc Verify set with Float64Array negative check
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

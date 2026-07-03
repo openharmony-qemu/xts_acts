@@ -990,7 +990,7 @@ export default function Float64ArrayOf2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_4700
      * @tc.name testFloat64ArrayOf2047
-     * @tc.desc Verify of with binary number literal (10) (D8 binary)
+     * @tc.desc Verify of with binary number literal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1010,7 +1010,7 @@ export default function Float64ArrayOf2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_OF_2_4800
      * @tc.name testFloat64ArrayOf2048
-     * @tc.desc Verify of with integer boundary values (Number.MAX_SAFE_INTEGER) (D5 critical)
+     * @tc.desc Verify of with integer boundary values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
