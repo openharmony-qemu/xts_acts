@@ -1033,7 +1033,7 @@ struct WebComponent {
             try {
               await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.UNKNOWN);
               this.controller.startDownload('https://' +
-                'mirrors.tuna.tsinghua.edu.cn/nodejs-release/index.json');
+                'www.baidu.com');
               console.log(this.str + '开始下载')
             } catch (error) {
               console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);

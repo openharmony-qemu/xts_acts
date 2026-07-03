@@ -50,7 +50,7 @@ struct ListOriExample {
           this.speedValue = a?.$attrs?.scrollSnapAnimationSpeed
         })
         .id('getKeyBtn')
-      Text(this.speedValue).fontColor(Color.Blue).key('speedValue')
+      Text(this.speedValue).fontColor(Color.Blue).key('scrollSnapAnimationSpeed_speedValue')
       List() {
         ForEach(this.arr, (item: number, index?: number) => {
           ListItem() {

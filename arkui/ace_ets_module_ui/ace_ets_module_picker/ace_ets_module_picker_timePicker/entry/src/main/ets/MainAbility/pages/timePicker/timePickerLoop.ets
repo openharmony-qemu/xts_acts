@@ -10,6 +10,7 @@ struct TimePickerLoopExample {
         selected: this.selectedTime
       })
         .id('timePicker')
+        .key('timePickerLoop_timePicker')
         .loop(this.isLoop)
         .onChange((value: TimePickerResult) => {
           if (value.hour >= 0) {

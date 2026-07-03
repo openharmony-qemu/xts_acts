@@ -27,7 +27,7 @@ import {
   $r,
 } from '@ohos.arkui.component';
 
-export default function ChipV2OptionsSizeTest() {
+export default function ChipV2OptionsSizeTest(): void {
   describe('ChipV2OptionsSizeTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("ChipV2OptionsSizeTest beforeEach start");

@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -470,7 +470,7 @@ export default function ArrayOfTest(): void {
      */
     it('testArrayOf026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr1 = Array.of<number>(7);
-      let arr2 = new Array<number>(7);
+      let arr2 = Array.create<number>(1, 7);
       expect(arr1.length).assertEqual(1);
       expect(arr1[0]).assertEqual(7);
       expect(arr2.length).assertEqual(1);
@@ -502,7 +502,7 @@ export default function ArrayOfTest(): void {
      */
     it('testArrayOf028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clear = Array.of<number>(7);
-      let ctor = new Array<number>(7);
+      let ctor = Array.create<number>(1, 7);
       expect(clear.length).assertEqual(1);
       expect(clear[0]).assertEqual(7);
       expect(clear.toString()).assertEqual(ctor.toString());
@@ -676,7 +676,7 @@ export default function ArrayOfTest(): void {
      */
     it('testArrayOf039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr1 = Array.of<number>(7);
-      let arr2 = new Array<number>(7);
+      let arr2 = Array.create<number>(1, 7);
       expect(arr1[0]).assertEqual(7);
       expect(arr2[0]).assertEqual(7);
     });

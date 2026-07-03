@@ -92,7 +92,7 @@ it('SUB_ACE_Grid_Col_Offset_GridColColumnOption_TEST_static_0100', Level.LEVEL0,
       let Grid_Col_Offset_GridColColumnOption_05: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_05');
       let Grid_Col_Offset_GridColColumnOption_06: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_06');
       let Grid_Col_Offset_GridColColumnOption_07: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_07');
-      let Grid_Col_Offset_GridColColumnOption_G1: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_G1');
+      let Grid_Col_Offset_GridColColumnOption_G1: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption' + '_G1');
       console.log('assert space')
       expect(Math.floor(Math.abs((Grid_Col_Offset_GridColColumnOption_02.top - Grid_Col_Offset_GridColColumnOption_00.bottom) - UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
@@ -140,7 +140,7 @@ it('SUB_ACE_Grid_Col_Offset_GridColColumnOption_TEST_static_0200', Level.LEVEL0,
       let Grid_Col_Offset_GridColColumnOption_05: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_05');
       let Grid_Col_Offset_GridColColumnOption_06: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_06');
       let Grid_Col_Offset_GridColColumnOption_07: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_07');
-      let Grid_Col_Offset_GridColColumnOption_G1: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_G1');
+      let Grid_Col_Offset_GridColColumnOption_G1: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption' + '_G1');
       console.log('assert position')
       expect(Math.floor(Math.abs((Grid_Col_Offset_GridColColumnOption_00.left - Grid_Col_Offset_GridColColumnOption_G1.left) - (Grid_Col_Offset_GridColColumnOption_00.right - Grid_Col_Offset_GridColColumnOption_00.left + UIContext.resolveUIContext()!.vp2px(10)))) <= 2)
         .assertTrue();
@@ -219,7 +219,7 @@ it('SUB_ACE_Grid_Col_Offset_GridColColumnOption_TEST_static_0300', Level.LEVEL0,
       let Grid_Col_Offset_GridColColumnOption_05: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_05');
       let Grid_Col_Offset_GridColColumnOption_06: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_06');
       let Grid_Col_Offset_GridColColumnOption_07: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_07');
-      let Grid_Col_Offset_GridColColumnOption_G1: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_G1');
+      let Grid_Col_Offset_GridColColumnOption_G1: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption' + '_G1');
 
       console.log('assert position')
       expect(Math.floor(Math.abs((Grid_Col_Offset_GridColColumnOption_00.left - Grid_Col_Offset_GridColColumnOption_G1.left) - ((Grid_Col_Offset_GridColColumnOption_00.right - Grid_Col_Offset_GridColColumnOption_00.left) * 3 + UIContext.resolveUIContext()!.vp2px(30)))) <= 2)
@@ -301,7 +301,7 @@ it('SUB_ACE_Grid_Col_Offset_GridColColumnOption_TEST_static_0400', Level.LEVEL0,
       let Grid_Col_Offset_GridColColumnOption_05: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_05');
       let Grid_Col_Offset_GridColColumnOption_06: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_06');
       let Grid_Col_Offset_GridColColumnOption_07: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_07');
-      let Grid_Col_Offset_GridColColumnOption_G1: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_G1');
+      let Grid_Col_Offset_GridColColumnOption_G1: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption' + '_G1');
 
       console.log('assert position')
       expect(Math.floor(Math.abs((Grid_Col_Offset_GridColColumnOption_00.left - Grid_Col_Offset_GridColColumnOption_G1.left) - ((Grid_Col_Offset_GridColColumnOption_00.right - Grid_Col_Offset_GridColColumnOption_00.left) * 2 + UIContext.resolveUIContext()!.vp2px(20)))) <= 2)
@@ -371,7 +371,7 @@ it('SUB_ACE_Grid_Col_Offset_GridColColumnOption_TEST_static_0500', Level.LEVEL0,
       let Grid_Col_Offset_GridColColumnOption_05: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_05');
       let Grid_Col_Offset_GridColColumnOption_06: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_06');
       let Grid_Col_Offset_GridColColumnOption_07: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_07');
-      let Grid_Col_Offset_GridColColumnOption_G1: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_G1');
+      let Grid_Col_Offset_GridColColumnOption_G1: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption' + '_G1');
 
       console.log('assert position')
       expect(Math.floor(Math.abs((Grid_Col_Offset_GridColColumnOption_00.left - Grid_Col_Offset_GridColColumnOption_G1.left) - ((Grid_Col_Offset_GridColColumnOption_00.right - Grid_Col_Offset_GridColColumnOption_00.left) * 5 + UIContext.resolveUIContext()!.vp2px(50)))) <= 2)
@@ -442,7 +442,7 @@ it('SUB_ACE_Grid_Col_Offset_GridColColumnOption_TEST_static_0600', Level.LEVEL0,
       let Grid_Col_Offset_GridColColumnOption_05: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_05');
       let Grid_Col_Offset_GridColColumnOption_06: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_06');
       let Grid_Col_Offset_GridColColumnOption_07: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_07');
-      let Grid_Col_Offset_GridColColumnOption_G1: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption_G1');
+      let Grid_Col_Offset_GridColColumnOption_G1: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_GridColColumnOption' + '_G1');
 
       console.log('assert position')
       expect(Math.floor(Math.abs((Grid_Col_Offset_GridColColumnOption_00.left - Grid_Col_Offset_GridColColumnOption_G1.left) - ((Grid_Col_Offset_GridColColumnOption_00.right - Grid_Col_Offset_GridColColumnOption_00.left) * 3 + UIContext.resolveUIContext()!.vp2px(30)))) <= 2)

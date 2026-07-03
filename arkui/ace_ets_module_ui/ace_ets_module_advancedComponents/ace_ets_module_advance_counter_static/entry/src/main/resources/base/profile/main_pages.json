@@ -5,6 +5,11 @@
     "MainAbility/pages/ArrayLike/ArrayLikeString",
     "MainAbility/pages/counter/CounterAttrsPage",
     "MainAbility/pages/CounterV2/CounterV2AttrsPage",
-    "MainAbility/pages/CounterV2/CounterV2Direction"
+    "MainAbility/pages/CounterV2/CounterV2Direction",
+    "MainAbility/pages/CounterV2/CounterV2CallbackNormalPage",
+    "MainAbility/pages/CounterV2/abnormal/CounterV2AbnormalOptions",
+    "MainAbility/pages/CounterV2/abnormal/CounterV2AbnormalNumber",
+    "MainAbility/pages/CounterV2/abnormal/CounterV2AbnormalInline",
+    "MainAbility/pages/CounterV2/abnormal/CounterV2AbnormalDate"
   ]
 }

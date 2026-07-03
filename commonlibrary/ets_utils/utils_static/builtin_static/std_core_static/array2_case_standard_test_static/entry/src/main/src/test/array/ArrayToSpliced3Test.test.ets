@@ -909,9 +909,9 @@ export default function ArrayToSpliced3Test(): void {
      * @tc.level Level 2
      */
     it('testArrayToSplicedThree051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const first = new ToSplicedThreeNestedArrayItem(new Array<number>(1));
-      const second = new ToSplicedThreeNestedArrayItem(new Array<number>(2));
-      const inserted = new ToSplicedThreeNestedArrayItem(new Array<number>(3));
+      const first = new ToSplicedThreeNestedArrayItem(Array.create<number>(1, 1));
+      const second = new ToSplicedThreeNestedArrayItem(Array.create<number>(1, 2));
+      const inserted = new ToSplicedThreeNestedArrayItem(Array.create<number>(1, 3));
       const arr = new Array<ToSplicedThreeNestedArrayItem>(first, second);
       const start: int = 1;
       const deleteCount: int = 1;
@@ -1472,7 +1472,7 @@ export default function ArrayToSpliced3Test(): void {
      * @tc.level Level 2
      */
     it('testArrayToSplicedThree082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(1, 5);
       const start: int = 0;
       const deleteCount: int = 1;
       const items: FixedArray<int> = [7, 8];

@@ -113,7 +113,7 @@ it('ArkUI_Stage_CalendarPicker_attributeModifier_static_0101', Level.LEVEL0, asy
 it('ArkUI_Stage_CalendarPicker_attributeModifier_static_0102', Level.LEVEL0, async (done: () => void): Promise<void> => {
         console.info('ArkUI_Stage_CalendarPicker_attributeModifier_0102 START');
         let driver = Driver.create();
-        let button = await driver.findComponent(ON.id('changeButton'));
+        let button = await driver.findComponent(ON.id('calendarpicker' + '_changeButton'));
         await (button?.click() as Promise<void>);
         await Utils.sleep(2000)
 

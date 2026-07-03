@@ -79,7 +79,7 @@ struct TabsExampleApi12I13 {
           .height('100%')
           .backgroundColor('#FFBF00')
           .justifyContent(FlexAlign.Center)
-          .key("content3x4")
+          .key("tabs_onContentWillChangeIndex13_content3x4")
         } .tabBar(() => {this.tabBuilder('推荐',2)})
 
         TabContent() {
@@ -90,7 +90,7 @@ struct TabsExampleApi12I13 {
           .height('100%')
           .backgroundColor('#E67C92')
           .justifyContent(FlexAlign.Center)
-          .key("content4x4")
+          .key("tabs_onContentWillChangeIndex13_content4x4")
         } .tabBar(() => {this.tabBuilder('我的',3)})
 
         TabContent() {
@@ -101,7 +101,7 @@ struct TabsExampleApi12I13 {
           .height('100%')
           .backgroundColor('#E67C92')
           .justifyContent(FlexAlign.Center)
-          .key("content5x4")
+          .key("tabs_onContentWillChangeIndex13_content5x4")
         } .tabBar(() => {this.tabBuilder('党史1949',3)})
       }
       .vertical(true)

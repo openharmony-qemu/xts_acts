@@ -103,7 +103,7 @@ struct FormComponentExample {
     Column() {
       Button("change value").onClick((e: ClickEvent) => {
         //         (this.customModifier as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("formComponent_changeButton")
 
       Text('this is a card')
         .fontSize(50)

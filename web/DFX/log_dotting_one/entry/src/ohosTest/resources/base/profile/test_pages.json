@@ -10,6 +10,7 @@
     "testability/pages/webViewContJsMessageExtReturnError",
     "testability/pages/webViewContWebMessageExtReturnError",
 	"testability/pages/webViewContCreatePdfAndOthersError",
-    "testability/pages/WebViewContMicrophoneError"
+    "testability/pages/WebViewContMicrophoneError",
+    "testability/pages/webViewContEnableFullscreenVideoOverlay"
   ]
 }

@@ -25,6 +25,7 @@ struct SearchSetStyledPlaceholder {
     Column({ space: 5 }) {
       Search({ placeholder: 'Search default' })
         .id('Search_setStyledPlaceholder_default')
+        .key('Search_setStyledPlaceholder_default')
         .placeholderColor(Color.Red)
         .placeholderFont({ size: 20, weight: 400 })
         .width('90%')
@@ -32,6 +33,7 @@ struct SearchSetStyledPlaceholder {
 
       Search({ placeholder: 'Search default', controller: this.controller })
         .id('Search_setStyledPlaceholder_set')
+        .key('Search_setStyledPlaceholder_set')
         .placeholderColor(Color.Red)
         .placeholderFont({ size: 14, weight: 400 })
         .width('90%')

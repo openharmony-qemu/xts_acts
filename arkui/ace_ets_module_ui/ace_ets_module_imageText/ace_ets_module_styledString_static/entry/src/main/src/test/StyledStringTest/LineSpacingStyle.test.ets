@@ -24,9 +24,42 @@ LineSpacingOptions,
 TextStyle,
 Color } from '@kit.ArkUI';
 
+import router from '@ohos.router';
+import Utils from '../../../ets/MainAbility/common/Utils';
+import CommonFunc from '../../../ets/MainAbility/common/Common';
+import { Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UtilsTest } from '../Util.test';
+import { Driver, ON } from '@kit.TestKit';
+
 export default function LineSpacingStyleTest() {
   describe('LineSpacingStyleTest', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("LineSpacingStyleTest beforeAll start");
+      await UtilsTest.msSleep(2000);
+      await UtilsTest.startAbility("com.arkui.ace.styledString.static", "EntryAbility");
+    });
 
+    beforeEach(async (): Promise<void> => {
+      console.info("LineSpacingStyleTest beforeEach start");
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/StyledString/StyledStringIndex',
+      }
+      try {
+        const routerInstance = AppStorage.get<Router>("router") as Router;
+        routerInstance.clear();
+        let pages = routerInstance.getState();
+        console.info("LineSpacingStyleTest state pages: " + JSON.stringify(pages));
+        if (pages.name !== "StyledStringIndex") {
+          routerInstance.replaceUrl(options);
+        }
+        await Utils.sleep(500);
+      } catch (err) {
+        console.error("push LineSpacingStyleTest page error:" + err);
+        expect().assertFail();
+      }
+      console.info("LineSpacingStyleTest beforeEach end");
+    });
     /**
      * @tc.name   lineSpacingStyle_number_0100
      * @tc.number SUB_ARKUI_LINESPACINGSTYLE_PARAM_0100

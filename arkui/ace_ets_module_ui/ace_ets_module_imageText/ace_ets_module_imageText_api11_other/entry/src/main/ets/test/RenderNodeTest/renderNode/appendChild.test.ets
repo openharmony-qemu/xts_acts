@@ -53,10 +53,10 @@ export default function appendChildTest() {
       console.info('appendChildTest_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('appendChild_1'));
+      let button = await driver.findComponent(ON.id('appendChild' + '_1'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('appendChild_width1');
+      let strJson = getInspectorByKey('appendChild' + '_width1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[appendChildTest_0100] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.content).assertEqual('width1: 50');
@@ -79,7 +79,7 @@ export default function appendChildTest() {
       let button = await driver.findComponent(ON.id('insertChildAfter_1'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('appendChild_width1');
+      let strJson = getInspectorByKey('appendChild' + '_width1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[appendChildTest_0200] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.content).assertEqual('width1: 0');
@@ -104,7 +104,7 @@ export default function appendChildTest() {
       await CommonFunc.sleep(1000);
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('appendChild_width1');
+      let strJson = getInspectorByKey('appendChild' + '_width1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[appendChildTest_0300] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.content).assertEqual('width1: 0');
@@ -127,7 +127,7 @@ export default function appendChildTest() {
       let button = await driver.findComponent(ON.id('clearChild_1'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('appendChild_width1');
+      let strJson = getInspectorByKey('appendChild' + '_width1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[appendChildTest_0400] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.content).assertEqual('width1: 130');

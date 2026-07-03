@@ -29,6 +29,7 @@ struct ImageAdvancedImage14 {
         .fontSize(12)
         .fontWeight(FontWeight.Bold)
         .id('loadingJpg14')
+        .key('loadingJpg14')
 
       Image($r('app.media.icon_jpg'))
         .width(50)
@@ -42,6 +43,7 @@ struct ImageAdvancedImage14 {
         .fontSize(12)
         .fontWeight(FontWeight.Bold)
         .id('loadingPng14')
+        .key('loadingPng14')
 
       Image($r('app.media.icon_png'))
         .width(50)
@@ -55,6 +57,7 @@ struct ImageAdvancedImage14 {
         .fontSize(12)
         .fontWeight(FontWeight.Bold)
         .id('loadingBmp14')
+        .key('loadingBmp14')
 
       Image($r('app.media.icon_bmp'))
         .width(50)
@@ -68,6 +71,7 @@ struct ImageAdvancedImage14 {
         .fontSize(12)
         .fontWeight(FontWeight.Bold)
         .id('loadingSvg14')
+        .key('loadingSvg14')
 
       Image($r('app.media.icon_svg'))
         .width(50)
@@ -81,6 +85,7 @@ struct ImageAdvancedImage14 {
         .fontSize(12)
         .fontWeight(FontWeight.Bold)
         .id('loadingGif14')
+        .key('loadingGif14')
 
       Image($r('app.media.icon_gif'))
         .width(50)

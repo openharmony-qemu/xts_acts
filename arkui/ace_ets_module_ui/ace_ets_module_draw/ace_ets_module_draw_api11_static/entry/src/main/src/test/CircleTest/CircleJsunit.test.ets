@@ -14,19 +14,32 @@
  * limitations under the License.
  */
 import emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import {
+  Component,
+  Driver,
+  Component,
+  UiWindow,
+  ON,
+  MatchPattern,
+  DisplayRotation,
+  ResizeDirection,
+  WindowMode,
+  PointerMatrix
+} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
+import inspector from '@ohos.arkui.inspector'
+import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+import { RecordData } from '@ohos.base';
+
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
@@ -74,7 +87,7 @@ export default function circleJsunit() {
      */
 it('circleTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('circleTest_static_0100 START');
-      let strJson = inspector.getInspectorByKey('circle');
+      let strJson = inspector.getInspectorByKey('circle3' + '_circle');
       console.info("circleTest_static_0100 component strJson:" + strJson);
 
       console.info("circleTest_static_0100 component JSON.parseJsonElement(strJson) is: " +
@@ -112,7 +125,7 @@ it('circleTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<voi
         console.log("[circleTest_static_0200] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('circle');
+      let strJson = inspector.getInspectorByKey('circle3' + '_circle');
       console.info("[circleTest_static_0200] component objNew is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('height')).assertEqual('500.00px');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('width')).assertEqual('500.00px');
@@ -148,7 +161,7 @@ it('circleTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<voi
         console.log("[circleTest_030] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('circle');
+      let strJson = inspector.getInspectorByKey('circle3' + '_circle');
       console.info("[circleTest_static_0300] component objNew is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('width')).assertEqual('0.00vp');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('height')).assertEqual('0.00vp');

@@ -68,10 +68,10 @@ export default function APIFontPrimaryTest() {
       console.info('APIFontPrimaryTest_0100 START');
       let driver = await Driver.create()
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+      let button = await driver.findComponent(ON.id('APIFontPrimary' + '_Button'));
       await button.click();
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('APIFontPrimary_Text02');
+      let strJson = getInspectorByKey('APIFontPrimary' + '_Text02');
       
       console.info("[APIFontPrimaryTest_0100] component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       console.info("[APIFontPrimaryTest_0100] component JSON.parse(strJson) is: " + JSON.parse(strJson).$attrs.content);
@@ -91,10 +91,10 @@ export default function APIFontPrimaryTest() {
       console.info('APIFontPrimaryTest_0200 START');
       let driver = await Driver.create()
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+      let button = await driver.findComponent(ON.id('APIFontPrimary' + '_Button'));
       await button.click();
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('APIFontPrimary_Text03');
+      let strJson = getInspectorByKey('APIFontPrimary' + '_Text03');
       
       console.info("[APIFontPrimaryTest_0200] component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       console.info("[APIFontPrimaryTest_0200] component JSON.parse(strJson) is: " + JSON.parse(strJson).$attrs.content);
@@ -114,10 +114,10 @@ export default function APIFontPrimaryTest() {
       console.info('APIFontPrimaryTest_0300 START');
       let driver = await Driver.create()
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+      let button = await driver.findComponent(ON.id('APIFontPrimary' + '_Button'));
       await button.click();
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('APIFontPrimary_Text04');
+      let strJson = getInspectorByKey('APIFontPrimary' + '_Text04');
       
       console.info("[APIFontPrimaryTest_0300] component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       console.info("[APIFontPrimaryTest_0300] component JSON.parse(strJson) is: " + JSON.parse(strJson).$attrs.content);
@@ -137,10 +137,10 @@ export default function APIFontPrimaryTest() {
       console.info('APIFontPrimaryTest_0400 START');
       let driver = await Driver.create()
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+      let button = await driver.findComponent(ON.id('APIFontPrimary' + '_Button'));
       await button.click();
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('APIFontPrimary_Text05');
+      let strJson = getInspectorByKey('APIFontPrimary' + '_Text05');
       
       console.info("[APIFontPrimaryTest_0400] component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       console.info("[APIFontPrimaryTest_0400] component JSON.parse(strJson) is: " + JSON.parse(strJson).$attrs.content);
@@ -160,10 +160,10 @@ export default function APIFontPrimaryTest() {
       console.info('APIFontPrimaryTest_0500 START');
       let driver = await Driver.create()
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+      let button = await driver.findComponent(ON.id('APIFontPrimary' + '_Button'));
       await button.click();
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('APIFontPrimary_Text06');
+      let strJson = getInspectorByKey('APIFontPrimary' + '_Text06');
       
       console.info("[APIFontPrimaryTest_0500] component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       console.info("[APIFontPrimaryTest_0500] component JSON.parse(strJson) is: " + JSON.parse(strJson).$attrs.content);
@@ -183,10 +183,10 @@ export default function APIFontPrimaryTest() {
       console.info('APIFontPrimaryTest_0600 START');
       let driver = await Driver.create()
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+      let button = await driver.findComponent(ON.id('APIFontPrimary' + '_Button'));
       await button.click();
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('APIFontPrimary_Text07');
+      let strJson = getInspectorByKey('APIFontPrimary' + '_Text07');
       
       console.info("[APIFontPrimaryTest_0600] component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       console.info("[APIFontPrimaryTest_0600] component JSON.parse(strJson) is: " + JSON.parse(strJson).$attrs.content);
@@ -206,10 +206,10 @@ export default function APIFontPrimaryTest() {
       console.info('APIFontPrimaryTest_0700 START');
       let driver = await Driver.create()
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+      let button = await driver.findComponent(ON.id('APIFontPrimary' + '_Button'));
       await button.click();
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('APIFontPrimary_Text08');
+      let strJson = getInspectorByKey('APIFontPrimary' + '_Text08');
       
       console.info("[APIFontPrimaryTest_0700] component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       console.info("[APIFontPrimaryTest_0700] component JSON.parse(strJson) is: " + JSON.parse(strJson).$attrs.content);
@@ -229,10 +229,10 @@ export default function APIFontPrimaryTest() {
       console.info('APIFontPrimaryTest_0800 START');
       let driver = await Driver.create()
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+      let button = await driver.findComponent(ON.id('APIFontPrimary' + '_Button'));
       await button.click();
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('APIFontPrimary_Text09');
+      let strJson = getInspectorByKey('APIFontPrimary' + '_Text09');
       
       console.info("[APIFontPrimaryTest_0800] component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       console.info("[APIFontPrimaryTest_0800] component JSON.parse(strJson) is: " + JSON.parse(strJson).$attrs.content);
@@ -252,10 +252,10 @@ export default function APIFontPrimaryTest() {
       console.info('APIFontPrimaryTest_0900 START');
       let driver = await Driver.create()
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+      let button = await driver.findComponent(ON.id('APIFontPrimary' + '_Button'));
       await button.click();
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('APIFontPrimary_Text10');
+      let strJson = getInspectorByKey('APIFontPrimary' + '_Text10');
       
       console.info("[APIFontPrimaryTest_0900] component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       console.info("[APIFontPrimaryTest_0900] component JSON.parse(strJson) is: " + JSON.parse(strJson).$attrs.content);
@@ -275,10 +275,10 @@ export default function APIFontPrimaryTest() {
       console.info('APIFontPrimaryTest_1000 START');
       let driver = await Driver.create()
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+      let button = await driver.findComponent(ON.id('APIFontPrimary' + '_Button'));
       await button.click();
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('APIFontPrimary_Text11');
+      let strJson = getInspectorByKey('APIFontPrimary' + '_Text11');
       
       console.info("[APIFontPrimaryTest_1000] component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       console.info("[APIFontPrimaryTest_1000] component JSON.parse(strJson) is: " + JSON.parse(strJson).$attrs.content);
@@ -298,10 +298,10 @@ export default function APIFontPrimaryTest() {
       console.info('APIFontPrimaryTest_1100 START');
       let driver = await Driver.create()
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+      let button = await driver.findComponent(ON.id('APIFontPrimary' + '_Button'));
       await button.click();
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('APIFontPrimary_Text12');
+      let strJson = getInspectorByKey('APIFontPrimary' + '_Text12');
       
       console.info("[APIFontPrimaryTest_1100] component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       console.info("[APIFontPrimaryTest_1100] component JSON.parse(strJson) is: " + JSON.parse(strJson).$attrs.content);
@@ -321,10 +321,10 @@ export default function APIFontPrimaryTest() {
       console.info('APIFontPrimaryTest_1200 START');
       let driver = await Driver.create()
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+      let button = await driver.findComponent(ON.id('APIFontPrimary' + '_Button'));
       await button.click();
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('APIFontPrimary_Text13');
+      let strJson = getInspectorByKey('APIFontPrimary' + '_Text13');
       
       console.info("[APIFontPrimaryTest_1200] component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       console.info("[APIFontPrimaryTest_1200] component JSON.parse(strJson) is: " + JSON.parse(strJson).$attrs.content);
@@ -344,10 +344,10 @@ export default function APIFontPrimaryTest() {
       console.info('APIFontPrimaryTest_1300 START');
       let driver = await Driver.create()
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+      let button = await driver.findComponent(ON.id('APIFontPrimary' + '_Button'));
       await button.click();
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('APIFontPrimary_Text14');
+      let strJson = getInspectorByKey('APIFontPrimary' + '_Text14');
       
       console.info("[APIFontPrimaryTest_1300] component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       console.info("[APIFontPrimaryTest_1300] component JSON.parse(strJson) is: " + JSON.parse(strJson).$attrs.content);
@@ -367,10 +367,10 @@ export default function APIFontPrimaryTest() {
       console.info('APIFontPrimaryTest_1400 START');
       let driver = await Driver.create()
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+      let button = await driver.findComponent(ON.id('APIFontPrimary' + '_Button'));
       await button.click();
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('APIFontPrimary_Text15');
+      let strJson = getInspectorByKey('APIFontPrimary' + '_Text15');
       
       console.info("[APIFontPrimaryTest_1400] component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       console.info("[APIFontPrimaryTest_1400] component JSON.parse(strJson) is: " + JSON.parse(strJson).$attrs.content);
@@ -390,10 +390,10 @@ export default function APIFontPrimaryTest() {
       console.info('APIFontPrimaryTest_1500 START');
       let driver = await Driver.create()
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+      let button = await driver.findComponent(ON.id('APIFontPrimary' + '_Button'));
       await button.click();
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('APIFontPrimary_Text16');
+      let strJson = getInspectorByKey('APIFontPrimary' + '_Text16');
       
       console.info("[APIFontPrimaryTest_1500] component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       console.info("[APIFontPrimaryTest_1500] component JSON.parse(strJson) is: " + JSON.parse(strJson).$attrs.content);

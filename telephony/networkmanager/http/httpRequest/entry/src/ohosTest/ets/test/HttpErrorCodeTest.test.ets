@@ -1842,6 +1842,218 @@ export default function HttpErrorCodeTest() {
       }
       console.info(`${caseName}---End `);
     });
+
+    /**
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest10100
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_10100
+     * @tc.desc   Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrHttpHttpRequestOptionsTest10100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest10100';
+        console.info(`${caseName}---Start`);
+        try {
+          connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
+            if (data.netId == 0) {
+              console.info(`${caseName} Please connect to the network`);
+              ExpectTrue(false);
+              done();
+            } else {
+              console.info(`${caseName} Network connected`);
+              let remoteValidation_callback: http.ValidationCallback = async (context: http.ValidationContext) => {
+                return true;
+              };
+              let httpRequestOptions: http.HttpRequestOptions = {
+                method: http.RequestMethod.GET,
+                remoteValidation: remoteValidation_callback,
+              };
+              let httpRequest: http.HttpRequest = http.createHttp();
+              httpRequest.request('https://www.baidu.com', httpRequestOptions).then((data: http.HttpResponse) => {
+                console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
+                ExpectTrue(data.responseCode == 200);
+                httpRequest.destroy();
+                done();
+              }).catch((err: BusinessError) => {
+                console.info(
+                  `${caseName} request fail err : ${JSON.stringify(err)} code:---${JSON.stringify(err?.code)}`);
+                ExpectTrue(false);
+                done();
+              });
+            }
+          });
+        } catch (err) {
+          console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+          ExpectTrue(false);
+          done();
+        }
+        console.info(`${caseName}---End `);
+      });
+
+    /**
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest10200
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_10200
+     * @tc.desc   Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrHttpHttpRequestOptionsTest10200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest10200';
+        console.info(`${caseName}---Start`);
+        try {
+          connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
+            if (data.netId == 0) {
+              console.info(`${caseName} Please connect to the network`);
+              ExpectTrue(false);
+              done();
+            } else {
+              console.info(`${caseName} Network connected`);
+              let remoteValidation_callback: http.ValidationCallback = async (context: http.ValidationContext) => {
+                return false;
+              };
+              let httpRequestOptions: http.HttpRequestOptions = {
+                method: http.RequestMethod.GET,
+                remoteValidation: remoteValidation_callback,
+              };
+              let httpRequest: http.HttpRequest = http.createHttp();
+              httpRequest.request('https://www.baidu.com', httpRequestOptions).then((data: http.HttpResponse) => {
+                console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
+                httpRequest.destroy();
+                done();
+              }).catch((err: BusinessError) => {
+                console.info(
+                  `${caseName} request fail err : ${JSON.stringify(err)} code:---${JSON.stringify(err?.code)}`);
+                ExpectTrue(err.code == 2300060);
+                done();
+              });
+            }
+          });
+        } catch (err) {
+          console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+          ExpectTrue(false);
+          done();
+        }
+        console.info(`${caseName}---End `);
+      });
+
+    /**
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest10300
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_10300
+     * @tc.desc   Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrHttpHttpRequestOptionsTest10300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest10300';
+        console.info(`${caseName}---Start`);
+        try {
+          connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
+            if (data.netId == 0) {
+              console.info(`${caseName} Please connect to the network`);
+              ExpectTrue(false);
+              done();
+            } else {
+              console.info(`${caseName} Network connected`);
+              let remoteValidation_callback: http.ValidationCallback = async (context: http.ValidationContext) => {
+                context.pemCerts = [];
+                context.x509Certs = [];
+                context.ip = '';
+                context.host = '';
+                return true;
+              };
+              let httpRequestOptions: http.HttpRequestOptions = {
+                method: http.RequestMethod.GET,
+                remoteValidation: remoteValidation_callback,
+              };
+              let httpRequest: http.HttpRequest = http.createHttp();
+              httpRequest.request('https://www.baidu.com', httpRequestOptions).then((data: http.HttpResponse) => {
+                console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
+                ExpectTrue(data.responseCode == 200);
+                httpRequest.destroy();
+                done();
+              }).catch((err: BusinessError) => {
+                console.info(
+                  `${caseName} request fail err : ${JSON.stringify(err)} code:---${JSON.stringify(err?.code)}`);
+                ExpectTrue(false);
+                done();
+              });
+            }
+          });
+        } catch (err) {
+          console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+          ExpectTrue(false);
+          done();
+        }
+        console.info(`${caseName}---End `);
+      });
+
+    /**
+     * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest10400
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_10400
+     * @tc.desc   Test HttpRequestOptions property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrHttpHttpRequestOptionsTest10400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest10400';
+        console.info(`${caseName}---Start`);
+        try {
+          connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
+            if (data.netId == 0) {
+              console.info(`${caseName} Please connect to the network`);
+              ExpectTrue(false);
+              done();
+            } else {
+              console.info(`${caseName} Network connected`);
+              let remoteValidation_callback: http.ValidationCallback = async (context: http.ValidationContext) => {
+                console.info(`${caseName} pemCerts length: ${context.pemCerts?.length}`);
+                ExpectTrue(context.pemCerts instanceof Array);
+
+                console.info(`${caseName} x509Certs length: ${context.x509Certs?.length}`);
+                ExpectTrue(context.x509Certs instanceof Array);
+
+                console.info(`${caseName} ip: ${context.ip}`);
+                ExpectTrue(typeof context.ip === 'string');
+
+                console.info(`${caseName} host: ${context.host}`);
+                ExpectTrue(typeof context.host === 'string');
+
+                return true;
+              }
+              let httpRequestOptions: http.HttpRequestOptions = {
+                method: http.RequestMethod.GET,
+                remoteValidation: remoteValidation_callback,
+              };
+              let httpRequest: http.HttpRequest = http.createHttp();
+              httpRequest.request('https://www.baidu.com', httpRequestOptions).then((data: http.HttpResponse) => {
+                console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
+                ExpectTrue(data.responseCode == 200);
+                httpRequest.destroy();
+                done();
+              }).catch((err: BusinessError) => {
+                console.info(
+                  `${caseName} request fail err : ${JSON.stringify(err)} code:---${JSON.stringify(err?.code)}`);
+                ExpectTrue(false);
+                done();
+              });
+            }
+          });
+        } catch (err) {
+          console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+          ExpectTrue(false);
+          done();
+        }
+        console.info(`${caseName}---End `);
+      });
+
     /**
      * @tc.name   testHttpRequestMethodErrorCode4700
      * @tc.number SUB_NetworkMgr_Http_RequestMethod_ErrorCode_4700

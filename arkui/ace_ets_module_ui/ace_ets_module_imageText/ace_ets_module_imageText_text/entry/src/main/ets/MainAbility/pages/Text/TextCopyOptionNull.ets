@@ -28,18 +28,21 @@ struct TextCopyOptionNull {
       // Test 1: copyOption with null parameter
       Text('copyOption with null')
         .id('text_copyOption_null')
+        .key('text_copyOption_null')
         .copyOption(null)
         .height('5%')
 
       // Test 2: copyOption with undefined parameter
       Text('copyOption with undefined')
         .id('text_copyOption_undefined')
+        .key('text_copyOption_undefined')
         .copyOption(undefined)
         .height('5%')
 
       // Test 3: Default copyOption for comparison
       Text('Default copyOption (for comparison)')
         .id('text_copyOption_default')
+        .key('text_copyOption_default')
         .height('5%')
     }
     .width('100%')

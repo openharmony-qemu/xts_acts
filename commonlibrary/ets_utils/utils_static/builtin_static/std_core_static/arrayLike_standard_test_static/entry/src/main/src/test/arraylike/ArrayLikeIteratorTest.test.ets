@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -235,7 +235,7 @@ export default function ArrayLikeIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testArrayLikeIterator008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const values = new Array<int>(42);
+      const values = Array.create<int>(1, 42);
       const list: ArrayLike<int> = values;
       const iter = list.$_iterator();
       const first = iter.next();
@@ -526,7 +526,7 @@ export default function ArrayLikeIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testArrayLikeIterator020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const values = new Array<int>(1);
+      const values = Array.create<int>(1, 1);
       const list: ArrayLike<int> = values;
       const iter = list.$_iterator();
       const first = iter.next();
@@ -1078,7 +1078,7 @@ export default function ArrayLikeIteratorTest(): void {
     it('testArrayLikeIterator044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const longStr =
         "012345678901234567890123456789012345678901234567890123456789";
-      const values = new Array<string>(longStr);
+      const values = Array.create<string>(1, longStr);
       const list: ArrayLike<string> = values;
       let count = 0;
       for (const item of list) {
@@ -1278,7 +1278,7 @@ export default function ArrayLikeIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testArrayLikeIterator053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const values = new Array<int>(55);
+      const values = Array.create<int>(1, 55);
       const list: ArrayLike<int> = values;
       let count = 0;
       for (const item of list) {

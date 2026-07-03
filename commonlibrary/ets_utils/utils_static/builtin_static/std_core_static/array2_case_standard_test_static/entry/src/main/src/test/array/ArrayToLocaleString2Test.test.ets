@@ -93,7 +93,7 @@ export default function ArrayToLocaleString2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayToLocaleStringTwo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1000);
+      const arr = Array.create<number>(1, 1000);
       const locales = new Intl.Locale('en-US');
       const output = arr.toLocaleString(locales);
       expect(output).assertEqual('1,000');
@@ -108,7 +108,7 @@ export default function ArrayToLocaleString2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayToLocaleStringTwo002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1000);
+      const arr = Array.create<number>(1, 1000);
       const output = arr.toLocaleString(createEmptyLocalesOneArg());
       const noArgOutput = arr.toLocaleString();
       expect(output).assertEqual('1,000');
@@ -124,7 +124,7 @@ export default function ArrayToLocaleString2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayToLocaleStringTwo003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1000);
+      const arr = Array.create<number>(1, 1000);
       const locales: Intl.LocalesArgument = new Intl.Locale('en-US');
       const output = arr.toLocaleString(locales);
       expect(output).assertEqual('1,000');
@@ -139,7 +139,7 @@ export default function ArrayToLocaleString2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayToLocaleStringTwo004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1000);
+      const arr = Array.create<number>(1, 1000);
       const locales = new Intl.Locale('fr-FR');
       const output = arr.toLocaleString(locales);
       expect(normalizeFrenchGroupingSpacesTwo(output)).assertEqual('1 000');
@@ -154,7 +154,7 @@ export default function ArrayToLocaleString2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayToLocaleStringTwo005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1000);
+      const arr = Array.create<number>(1, 1000);
       const locales = createEmptyLocalesOneArg();
       const output = arr.toLocaleString(locales);
       expect(output).assertEqual('1,000');
@@ -199,7 +199,7 @@ export default function ArrayToLocaleString2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayToLocaleStringTwo008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1000);
+      const arr = Array.create<number>(1, 1000);
       const locales = new Intl.Locale('zh-CN');
       const output = arr.toLocaleString(locales);
       expect(output).assertEqual('1,000');
@@ -294,7 +294,7 @@ export default function ArrayToLocaleString2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayToLocaleStringTwo014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1000);
+      const arr = Array.create<number>(1, 1000);
       const locales = createLocaleWithRegion('en-US', 'US');
       const output = arr.toLocaleString(locales);
       expect(output).assertEqual('1,000');
@@ -309,7 +309,7 @@ export default function ArrayToLocaleString2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayToLocaleStringTwo015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1000);
+      const arr = Array.create<number>(1, 1000);
       const output = arr.toLocaleString(createEmptyLocalesOneArg());
       expect(output).assertEqual('1,000');
     });
@@ -369,7 +369,7 @@ export default function ArrayToLocaleString2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayToLocaleStringTwo019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1000);
+      const arr = Array.create<number>(1, 1000);
       const locales = new Intl.Locale('en-US');
       const oneArgOutput = arr.toLocaleString(locales);
       const options: Intl.NumberFormatOptions = { style: 'decimal' };
@@ -465,7 +465,7 @@ export default function ArrayToLocaleString2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayToLocaleStringTwo025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1000);
+      const arr = Array.create<number>(1, 1000);
       const locales = createEmptyLocalesOneArg();
       const output1 = arr.toLocaleString(locales);
       const output2 = arr.toLocaleString(locales);
@@ -482,7 +482,7 @@ export default function ArrayToLocaleString2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayToLocaleStringTwo026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1000);
+      const arr = Array.create<number>(1, 1000);
       const locales: Intl.LocalesArgument = createEmptyLocalesOneArg();
       const output = arr.toLocaleString(locales);
       expect(output).assertEqual('1,000');
@@ -580,7 +580,7 @@ export default function ArrayToLocaleString2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayToLocaleStringTwo032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1000);
+      const arr = Array.create<number>(1, 1000);
       const locales = new Intl.Locale('en');
       const output = arr.toLocaleString(locales);
       expect(output).assertEqual('1,000');
@@ -684,7 +684,7 @@ export default function ArrayToLocaleString2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayToLocaleStringTwo039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1000000);
+      const arr = Array.create<number>(1, 1000000);
       const locales = createLocaleWithRegion('en-US', 'US');
       const result = arr.toLocaleString(locales);
       expect(result).assertEqual('1,000,000');
@@ -699,7 +699,7 @@ export default function ArrayToLocaleString2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayToLocaleStringTwo040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1000);
+      const arr = Array.create<number>(1, 1000);
       const locales = new Array<string>('de-DE', 'en-US');
       const result = arr.toLocaleString(locales);
       expect(result).assertEqual('1.000');
@@ -980,7 +980,7 @@ export default function ArrayToLocaleString2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayToLocaleStringTwo057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<Date>(new Date(1593604800000));
+      const arr = Array.create<Date>(1, new Date(1593604800000));
       const locales = new Intl.Locale('en-US');
       const result = arr.toLocaleString(locales);
       expect(result).assertEqual('7/1/2020, 8:00:00 PM');
@@ -1011,7 +1011,7 @@ export default function ArrayToLocaleString2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayToLocaleStringTwo059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(200);
+      const arr = Array.create<number>(1, 200);
       const locales = new Intl.Locale('en-US');
       const result = arr.toLocaleString(locales);
       expect(result).assertEqual('200');
@@ -1041,7 +1041,7 @@ export default function ArrayToLocaleString2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayToLocaleStringTwo061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<LocaleStringItemTwo>(createLocaleStringItemTwo('single'));
+      const arr = Array.create<LocaleStringItemTwo>(1, createLocaleStringItemTwo('single'));
       const locales = new Intl.Locale('en-US');
       const result = arr.toLocaleString(locales);
       expect(result).assertEqual('local-single');

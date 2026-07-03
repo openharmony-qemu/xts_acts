@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 import {
   TabContentAnimatedTransition,
@@ -173,7 +173,7 @@ struct GridOnWillStopDraggingDemo {
       Text(this.statusText)
         .fontSize(16)
         .fontColor(Color.Blue)
-        .key('onWillStopDragging')
+        .key('Grid_onWillStopDragging_onWillStopDragging')
 
       Text(`回调触发次数: ${this.triggerCount}`)
         .fontSize(14)
@@ -204,7 +204,7 @@ struct GridOnWillStopDraggingDemo {
       .width('100%')
       .height(400)
       .backgroundColor(0xF5F5F5)
-      .key('grid_dragging')
+      .key('Grid_onWillStopDragging_grid_dragging')
 
 
       // 操作区域

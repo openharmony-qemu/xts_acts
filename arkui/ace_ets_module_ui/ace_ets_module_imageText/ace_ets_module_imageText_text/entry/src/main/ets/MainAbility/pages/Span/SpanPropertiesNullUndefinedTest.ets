@@ -32,6 +32,7 @@ struct SpanPropertiesNullUndefinedTest {
             Text() {
               Span('Test')
                 .id('Span_fontColor_default')
+                .key('Span_fontColor_default')
             }
             .fontSize(20)
 
@@ -41,6 +42,7 @@ struct SpanPropertiesNullUndefinedTest {
               Span('Test')
                 .fontColor(null)
                 .id('Span_fontColor_null')
+                .key('Span_fontColor_null')
             }
             .fontSize(20)
 
@@ -50,6 +52,7 @@ struct SpanPropertiesNullUndefinedTest {
               Span('Test')
                 .fontColor(undefined)
                 .id('Span_fontColor_undefined')
+                .key('Span_fontColor_undefined')
             }
             .fontSize(20)
 
@@ -59,6 +62,7 @@ struct SpanPropertiesNullUndefinedTest {
               Span('Test')
                 .fontColor('')
                 .id('Span_fontColor_empty')
+                .key('Span_fontColor_empty')
             }
             .fontSize(20)
 
@@ -76,6 +80,7 @@ struct SpanPropertiesNullUndefinedTest {
             Text() {
               Span('Test')
                 .id('Span_fontSize_default')
+                .key('Span_fontSize_default')
             }
             .fontSize(20)
 
@@ -85,6 +90,7 @@ struct SpanPropertiesNullUndefinedTest {
               Span('Test')
                 .fontSize(null)
                 .id('Span_fontSize_null')
+                .key('Span_fontSize_null')
             }
             .fontSize(20)
 
@@ -94,6 +100,7 @@ struct SpanPropertiesNullUndefinedTest {
               Span('Test')
                 .fontSize(undefined)
                 .id('Span_fontSize_undefined')
+                .key('Span_fontSize_undefined')
             }
             .fontSize(20)
 
@@ -103,6 +110,7 @@ struct SpanPropertiesNullUndefinedTest {
               Span('Test')
                 .fontSize('')
                 .id('Span_fontSize_empty')
+                .key('Span_fontSize_empty')
             }
             .fontSize(20)
 
@@ -120,6 +128,7 @@ struct SpanPropertiesNullUndefinedTest {
             Text() {
               Span('Test')
                 .id('Span_fontStyle_default')
+                .key('Span_fontStyle_default')
             }
             .fontSize(20)
 
@@ -129,6 +138,7 @@ struct SpanPropertiesNullUndefinedTest {
               Span('Test')
                 .fontStyle(null)
                 .id('Span_fontStyle_null')
+                .key('Span_fontStyle_null')
             }
             .fontSize(20)
 
@@ -138,6 +148,7 @@ struct SpanPropertiesNullUndefinedTest {
               Span('Test')
                 .fontStyle(undefined)
                 .id('Span_fontStyle_undefined')
+                .key('Span_fontStyle_undefined')
             }
             .fontSize(20)
 
@@ -155,6 +166,7 @@ struct SpanPropertiesNullUndefinedTest {
             Text() {
               Span('Test')
                 .id('Span_fontWeight_default')
+                .key('Span_fontWeight_default')
             }
             .fontSize(20)
 
@@ -164,6 +176,7 @@ struct SpanPropertiesNullUndefinedTest {
               Span('Test')
                 .fontWeight(null)
                 .id('Span_fontWeight_null')
+                .key('Span_fontWeight_null')
             }
             .fontSize(20)
 
@@ -173,6 +186,7 @@ struct SpanPropertiesNullUndefinedTest {
               Span('Test')
                 .fontWeight(undefined)
                 .id('Span_fontWeight_undefined')
+                .key('Span_fontWeight_undefined')
             }
             .fontSize(20)
 
@@ -182,6 +196,7 @@ struct SpanPropertiesNullUndefinedTest {
               Span('Test')
                 .fontWeight('')
                 .id('Span_fontWeight_empty')
+                .key('Span_fontWeight_empty')
             }
             .fontSize(20)
 
@@ -199,6 +214,7 @@ struct SpanPropertiesNullUndefinedTest {
             Text() {
               Span('Test')
                 .id('Span_fontFamily_default')
+                .key('Span_fontFamily_default')
             }
             .fontSize(20)
 
@@ -208,6 +224,7 @@ struct SpanPropertiesNullUndefinedTest {
               Span('Test')
                 .fontFamily(null)
                 .id('Span_fontFamily_null')
+                .key('Span_fontFamily_null')
             }
             .fontSize(20)
 
@@ -217,6 +234,7 @@ struct SpanPropertiesNullUndefinedTest {
               Span('Test')
                 .fontFamily(undefined)
                 .id('Span_fontFamily_undefined')
+                .key('Span_fontFamily_undefined')
             }
             .fontSize(20)
 
@@ -226,6 +244,7 @@ struct SpanPropertiesNullUndefinedTest {
               Span('Test')
                 .fontFamily('')
                 .id('Span_fontFamily_empty')
+                .key('Span_fontFamily_empty')
             }
             .fontSize(20)
 
@@ -243,6 +262,7 @@ struct SpanPropertiesNullUndefinedTest {
             Text() {
               Span('Test')
                 .id('Span_textCase_default')
+                .key('Span_textCase_default')
             }
             .fontSize(20)
 
@@ -252,6 +272,7 @@ struct SpanPropertiesNullUndefinedTest {
               Span('Test')
                 .textCase(null)
                 .id('Span_textCase_null')
+                .key('Span_textCase_null')
             }
             .fontSize(20)
 
@@ -261,6 +282,7 @@ struct SpanPropertiesNullUndefinedTest {
               Span('Test')
                 .textCase(undefined)
                 .id('Span_textCase_undefined')
+                .key('Span_textCase_undefined')
             }
             .fontSize(20)
 
@@ -278,6 +300,7 @@ struct SpanPropertiesNullUndefinedTest {
             Text() {
               Span('Test')
                 .id('Span_letterSpacing_default')
+                .key('Span_letterSpacing_default')
             }
             .fontSize(20)
 
@@ -287,6 +310,7 @@ struct SpanPropertiesNullUndefinedTest {
               Span('Test')
                 .letterSpacing(null)
                 .id('Span_letterSpacing_null')
+                .key('Span_letterSpacing_null')
             }
             .fontSize(20)
 
@@ -296,6 +320,7 @@ struct SpanPropertiesNullUndefinedTest {
               Span('Test')
                 .letterSpacing(undefined)
                 .id('Span_letterSpacing_undefined')
+                .key('Span_letterSpacing_undefined')
             }
             .fontSize(20)
 
@@ -305,6 +330,7 @@ struct SpanPropertiesNullUndefinedTest {
               Span('Test')
                 .letterSpacing('')
                 .id('Span_letterSpacing_empty')
+                .key('Span_letterSpacing_empty')
             }
             .fontSize(20)
 
@@ -322,6 +348,7 @@ struct SpanPropertiesNullUndefinedTest {
             Text() {
               Span('Test')
                 .id('Span_decoration_default')
+                .key('Span_decoration_default')
             }
             .fontSize(20)
 
@@ -331,6 +358,7 @@ struct SpanPropertiesNullUndefinedTest {
               Span('Test')
                 .decoration(null)
                 .id('Span_decoration_null')
+                .key('Span_decoration_null')
             }
             .fontSize(20)
 
@@ -340,6 +368,7 @@ struct SpanPropertiesNullUndefinedTest {
               Span('Test')
                 .decoration(undefined)
                 .id('Span_decoration_undefined')
+                .key('Span_decoration_undefined')
             }
             .fontSize(20)
 
@@ -357,6 +386,7 @@ struct SpanPropertiesNullUndefinedTest {
             Text() {
               Span('Test')
                 .id('Span_lineHeight_default')
+                .key('Span_lineHeight_default')
             }
             .fontSize(20)
 
@@ -366,6 +396,7 @@ struct SpanPropertiesNullUndefinedTest {
               Span('Test')
                 .lineHeight(null)
                 .id('Span_lineHeight_null')
+                .key('Span_lineHeight_null')
             }
             .fontSize(20)
 
@@ -375,6 +406,7 @@ struct SpanPropertiesNullUndefinedTest {
               Span('Test')
                 .lineHeight(undefined)
                 .id('Span_lineHeight_undefined')
+                .key('Span_lineHeight_undefined')
             }
             .fontSize(20)
 
@@ -384,6 +416,7 @@ struct SpanPropertiesNullUndefinedTest {
               Span('Test')
                 .lineHeight('')
                 .id('Span_lineHeight_empty')
+                .key('Span_lineHeight_empty')
             }
             .fontSize(20)
 
@@ -401,6 +434,7 @@ struct SpanPropertiesNullUndefinedTest {
             Text() {
               Span('Test')
                 .id('Span_font_default')
+                .key('Span_font_default')
             }
             .fontSize(20)
 
@@ -410,6 +444,7 @@ struct SpanPropertiesNullUndefinedTest {
               Span('Test')
                 .font(null)
                 .id('Span_font_null')
+                .key('Span_font_null')
             }
             .fontSize(20)
 
@@ -419,6 +454,7 @@ struct SpanPropertiesNullUndefinedTest {
               Span('Test')
                 .font(undefined)
                 .id('Span_font_undefined')
+                .key('Span_font_undefined')
             }
             .fontSize(20)
 
@@ -436,6 +472,7 @@ struct SpanPropertiesNullUndefinedTest {
             Text() {
               Span('Test')
                 .id('Span_textBackgroundStyle_default')
+                .key('Span_textBackgroundStyle_default')
             }
             .fontSize(20)
 
@@ -445,6 +482,7 @@ struct SpanPropertiesNullUndefinedTest {
               Span('Test')
                 .textBackgroundStyle(null)
                 .id('Span_textBackgroundStyle_null')
+                .key('Span_textBackgroundStyle_null')
             }
             .fontSize(20)
 
@@ -454,6 +492,7 @@ struct SpanPropertiesNullUndefinedTest {
               Span('Test')
                 .textBackgroundStyle(undefined)
                 .id('Span_textBackgroundStyle_undefined')
+                .key('Span_textBackgroundStyle_undefined')
             }
             .fontSize(20)
 
@@ -471,6 +510,7 @@ struct SpanPropertiesNullUndefinedTest {
             Text() {
               Span('Test')
                 .id('Span_baselineOffset_default')
+                .key('Span_baselineOffset_default')
             }
             .fontSize(20)
 
@@ -480,6 +520,7 @@ struct SpanPropertiesNullUndefinedTest {
               Span('Test')
                 .baselineOffset(null)
                 .id('Span_baselineOffset_null')
+                .key('Span_baselineOffset_null')
             }
             .fontSize(20)
 
@@ -489,6 +530,7 @@ struct SpanPropertiesNullUndefinedTest {
               Span('Test')
                 .baselineOffset(undefined)
                 .id('Span_baselineOffset_undefined')
+                .key('Span_baselineOffset_undefined')
             }
             .fontSize(20)
 
@@ -506,6 +548,7 @@ struct SpanPropertiesNullUndefinedTest {
             Text() {
               Span('Test')
                 .id('Span_textShadow_default')
+                .key('Span_textShadow_default')
             }
             .fontSize(20)
 
@@ -515,6 +558,7 @@ struct SpanPropertiesNullUndefinedTest {
               Span('Test')
                 .textShadow(null)
                 .id('Span_textShadow_null')
+                .key('Span_textShadow_null')
             }
             .fontSize(20)
 
@@ -524,6 +568,7 @@ struct SpanPropertiesNullUndefinedTest {
               Span('Test')
                 .textShadow(undefined)
                 .id('Span_textShadow_undefined')
+                .key('Span_textShadow_undefined')
             }
             .fontSize(20)
 

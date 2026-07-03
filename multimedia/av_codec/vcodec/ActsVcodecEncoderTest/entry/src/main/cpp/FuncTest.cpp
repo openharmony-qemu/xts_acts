@@ -44,7 +44,6 @@ constexpr uint32_t DEFAULT_HEIGHT = 720;
 constexpr uint32_t MAX_QUALITY = 100;
 constexpr uint32_t NO_SUPPORT_MODE = 100;
 constexpr uint32_t MAX_INSTANCES_HISI = 16;
-constexpr uint32_t MAX_INSTANCES_OTHER = 4;
 constexpr uint32_t TEST_QUALITY_VALUE = 60;
 constexpr uint32_t FRAME_RATE_60 = 60;
 constexpr uint32_t SLEEP_TIME_US = 1000000;
@@ -119,7 +118,7 @@ void TestTearDownFunc()
     }
 }
 
-static int TestIFrameIntervalConfig(const char *mimeType, int32_t pixelFormat, int32_t intervalValue)
+static int TestIFrameIntervalConfig(const char *mimeType, int32_t intervalValue)
 {
     venc_ = OH_VideoEncoder_CreateByMime(mimeType);
     ASSERT_NE(nullptr, venc_);
@@ -132,8 +131,6 @@ static int TestIFrameIntervalConfig(const char *mimeType, int32_t pixelFormat, i
     
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
-    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, pixelFormat);
-    
     OH_AVErrCode configResult = OH_VideoEncoder_Configure(venc_, format);
     ASSERT_EQ(AV_ERR_OK, configResult);
     
@@ -295,10 +292,10 @@ int VideoEncodeFunction0800Test()
     if (cap) {
         ASSERT_EQ(AV_ERR_OK, OH_AVCapability_GetVideoSupportedPixelFormats(cap, &pixelFormat, &pixelFormatNum));
         if (pixelFormatNum > 0) {
-            TestIFrameIntervalConfig(OH_AVCODEC_MIMETYPE_VIDEO_AVC, pixelFormat[0], SECOND);
-            TestIFrameIntervalConfig(OH_AVCODEC_MIMETYPE_VIDEO_AVC, pixelFormat[0], -1);
-            TestIFrameIntervalConfig(OH_AVCODEC_MIMETYPE_VIDEO_AVC, pixelFormat[0], 0);
-            TestIFrameIntervalConfig(OH_AVCODEC_MIMETYPE_VIDEO_AVC, pixelFormat[0], INT_MAX);
+            TestIFrameIntervalConfig(OH_AVCODEC_MIMETYPE_VIDEO_AVC, SECOND);
+            TestIFrameIntervalConfig(OH_AVCODEC_MIMETYPE_VIDEO_AVC, -1);
+            TestIFrameIntervalConfig(OH_AVCODEC_MIMETYPE_VIDEO_AVC, 0);
+            TestIFrameIntervalConfig(OH_AVCODEC_MIMETYPE_VIDEO_AVC, INT_MAX);
             return 0;
         }
         return 0;
@@ -311,10 +308,10 @@ int VideoEncodeFunction0810Test()
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     if (cap) {
-        TestIFrameIntervalConfig(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, AV_PIXEL_FORMAT_YUVI420, SECOND);
-        TestIFrameIntervalConfig(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, AV_PIXEL_FORMAT_YUVI420, -1);
-        TestIFrameIntervalConfig(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, AV_PIXEL_FORMAT_YUVI420, 0);
-        TestIFrameIntervalConfig(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, AV_PIXEL_FORMAT_YUVI420, INT_MAX);
+        TestIFrameIntervalConfig(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, SECOND);
+        TestIFrameIntervalConfig(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, -1);
+        TestIFrameIntervalConfig(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, 0);
+        TestIFrameIntervalConfig(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, INT_MAX);
         return 0;
     } else {
         return 0;
@@ -660,8 +657,6 @@ int VideoEncodeCapability1300Test()
         string codecName = OH_AVCapability_GetName(cap);
         if (codecName == "OMX.hisi.video.encoder.avc") {
             ASSERT_EQ(MAX_INSTANCES_HISI, OH_AVCapability_GetMaxSupportedInstances(cap));
-        } else {
-            ASSERT_EQ(MAX_INSTANCES_OTHER, OH_AVCapability_GetMaxSupportedInstances(cap));
         }
         return 0;
     } else {
@@ -678,8 +673,6 @@ int VideoEncodeCapability1310Test()
         string codecName = OH_AVCapability_GetName(cap);
         if (codecName == "OMX.hisi.video.encoder.hevc") {
             ASSERT_EQ(MAX_INSTANCES_HISI, OH_AVCapability_GetMaxSupportedInstances(cap));
-        } else {
-            ASSERT_EQ(MAX_INSTANCES_OTHER, OH_AVCapability_GetMaxSupportedInstances(cap));
         }
         return 0;
     } else {

@@ -93,8 +93,8 @@ it('testWrapWrapTextVisibilityNoneOverflow_static', Level.LEVEL0, async () => {
         await CommonFunc.sleep(3000);
         let secondText: RectValue = CommonFunc.getComponentRect('Wrap_Text_Visibility2');
         let thirdText: RectValue = CommonFunc.getComponentRect('Wrap_Text_Visibility3');
-        let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_Wrap_Visibility_Container01');
-        let flexContainerStrJson = inspector.getInspectorByKey('Flex_Wrap_Visibility_Container01');
+        let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_Wrap_Visibility' + '_Container01');
+        let flexContainerStrJson = inspector.getInspectorByKey('Flex_Wrap_Visibility' + '_Container01');
 
         expect(JSON.parseJsonElement(flexContainerStrJson).getString('$type')).assertEqual('Flex');
         expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('wrap')).assertEqual('FlexWrap.Wrap');
@@ -145,8 +145,8 @@ it('testWrapWrapTextVisibilityNoneMeet_static', Level.LEVEL0, async () => {
         await CommonFunc.sleep(3000);
         let secondText: RectValue = CommonFunc.getComponentRect('Wrap_Text_Visibility2');
         let thirdText: RectValue = CommonFunc.getComponentRect('Wrap_Text_Visibility3');
-        let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_Wrap_Visibility_Container01');
-        let flexContainerStrJson = inspector.getInspectorByKey('Flex_Wrap_Visibility_Container01');
+        let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_Wrap_Visibility' + '_Container01');
+        let flexContainerStrJson = inspector.getInspectorByKey('Flex_Wrap_Visibility' + '_Container01');
 
         expect(JSON.parseJsonElement(flexContainerStrJson).getString('$type')).assertEqual('Flex');
         expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('wrap')).assertEqual('FlexWrap.Wrap');
@@ -197,8 +197,8 @@ it('testWrapWrapTextVisibilityHidden_static', Level.LEVEL0, async () => {
         await CommonFunc.sleep(3000);
         let secondText: RectValue = CommonFunc.getComponentRect('Wrap_Text_Visibility2');
         let thirdText: RectValue = CommonFunc.getComponentRect('Wrap_Text_Visibility3');
-        let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_Wrap_Visibility_Container01');
-        let flexContainerStrJson = inspector.getInspectorByKey('Flex_Wrap_Visibility_Container01');
+        let flexContainer: RectValue = CommonFunc.getComponentRect('Flex_Wrap_Visibility' + '_Container01');
+        let flexContainerStrJson = inspector.getInspectorByKey('Flex_Wrap_Visibility' + '_Container01');
 
         expect(JSON.parseJsonElement(flexContainerStrJson).getString('$type')).assertEqual('Flex');
         expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('wrap')).assertEqual('FlexWrap.Wrap');

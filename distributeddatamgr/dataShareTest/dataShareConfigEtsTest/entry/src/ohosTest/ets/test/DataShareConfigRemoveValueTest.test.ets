@@ -31,7 +31,6 @@ let g_config_100K: dataShare.DataProxyConfig = {
   type: dataShare.DataProxyType.SHARED_CONFIG,
   maxValueLength: dataShare.DataProxyMaxValueLength.MAX_LENGTH_100K
 }
-
 let TAG = "ttt ";
 
 export default function dataShareConfigRemoveValuesTest() {
@@ -60,6 +59,42 @@ export default function dataShareConfigRemoveValuesTest() {
     afterAll(async () => {
       console.info(TAG + "afterAll---------------------------------");
     })
+
+    /**
+     * @tc.name   dataShareConfigRemoveValuesTest001
+     * @tc.number SUB_DistributedData_DataShare_SDK_RemoveValues_0010
+     * @tc.desc   The parameters of the function "removeValue" are all undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigRemoveValuesTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        await g_handle!.removeValue(undefined, undefined, undefined);
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] publishProxyDataTest001 failed,code =" + err.code + ",message=" + err.message);
+        let result = err.code;
+        expect(result).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   dataShareConfigRemoveValuesTest002
+     * @tc.number SUB_DistributedData_DataShare_SDK_RemoveValues_0020
+     * @tc.desc   The parameters of the function "removeValue" are all null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigRemoveValuesTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        await g_handle!.removeValue(null, null, null);
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] publishProxyDataTest002 failed,code =" + err.code + ",message=" + err.message);
+        let result = err.code;
+        expect(result).assertEqual(401);
+      }
+    });
 
     /**
      * @tc.name   dataShareConfigRemoveValuesTest003
@@ -135,6 +170,26 @@ export default function dataShareConfigRemoveValuesTest() {
     });
 
     /**
+     * @tc.name   dataShareConfigRemoveValuesTest006
+     * @tc.number SUB_DistributedData_DataShare_SDK_RemoveValues_0060
+     * @tc.desc   call removeValue when uri length exceeds 256 bytes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigRemoveValuesTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let overLengthUri = "datashareproxy://com.example.myapplication/" + 'X'.repeat(214);
+        await g_handle!.removeValue(overLengthUri, 1, g_config_4K);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] dataShareConfigRemoveValuesTest006 failed,code =" + err.code + ",message=" + err.message);
+        let result = err.code;
+        expect(result).assertEqual(15700014);
+      }
+    });
+
+    /**
      * @tc.name   dataShareConfigRemoveValuesTest007
      * @tc.number SUB_DistributedData_DataShare_SDK_RemoveValues_0070
      * @tc.desc   call removeValue when only has one key
@@ -192,5 +247,23 @@ export default function dataShareConfigRemoveValuesTest() {
       }
     });
 
+    /**
+     * @tc.name   dataShareConfigRemoveValuesTest090
+     * @tc.number SUB_DistributedData_DataShare_SDK_RemoveValues_0090
+     * @tc.desc   call removeValue when uri length exceeds 256 bytes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigRemoveValuesTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        let testUri = "";
+        await g_handle!.removeValue(testUri, 1, g_config_4K);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] dataShareConfigRemoveValuesTest009 failed,code =" + err.code + ",message=" + err.message);
+        expect(err.code).assertEqual(15700011);
+      }
+    });
   })
 }

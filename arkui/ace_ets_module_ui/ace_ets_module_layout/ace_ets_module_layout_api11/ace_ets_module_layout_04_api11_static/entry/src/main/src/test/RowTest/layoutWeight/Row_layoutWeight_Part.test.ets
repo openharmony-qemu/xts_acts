@@ -82,10 +82,10 @@ it('SUB_ACE_Row_layoutWeight_Part_TEST_static_0100', Level.LEVEL0, async (done: 
       });
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_layoutWeight_Part_011: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Part_011');
-      let Row_layoutWeight_Part_012: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Part_012');
-      let Row_layoutWeight_Part_013: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Part_013');
-      let Row_layoutWeight_Part_01: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Part_01');
+      let Row_layoutWeight_Part_011: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Part' + '_011');
+      let Row_layoutWeight_Part_012: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Part' + '_012');
+      let Row_layoutWeight_Part_013: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Part' + '_013');
+      let Row_layoutWeight_Part_01: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Part' + '_01');
 
       console.log('assert position')
       expect(Math.abs((Math.round(Row_layoutWeight_Part_011.top - Row_layoutWeight_Part_01.top)) - (Math.round(Row_layoutWeight_Part_01.bottom - Row_layoutWeight_Part_011.bottom))) <= 1)
@@ -142,10 +142,10 @@ it('SUB_ACE_Row_layoutWeight_Part_TEST_static_0200', Level.LEVEL0, async (done: 
       });
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_layoutWeight_Part_011: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Part_011');
-      let Row_layoutWeight_Part_012: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Part_012');
-      let Row_layoutWeight_Part_013: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Part_013');
-      let Row_layoutWeight_Part_01: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Part_01');
+      let Row_layoutWeight_Part_011: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Part' + '_011');
+      let Row_layoutWeight_Part_012: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Part' + '_012');
+      let Row_layoutWeight_Part_013: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Part' + '_013');
+      let Row_layoutWeight_Part_01: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Part' + '_01');
 
       console.log('assert position')
       expect(Math.abs((Math.round(Row_layoutWeight_Part_011.top - Row_layoutWeight_Part_01.top)) - (Math.round(Row_layoutWeight_Part_01.bottom - Row_layoutWeight_Part_011.bottom))) <= 1)
@@ -202,10 +202,10 @@ it('SUB_ACE_Row_layoutWeight_Part_TEST_static_0300', Level.LEVEL0, async (done: 
       });
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_layoutWeight_Part_011: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Part_011');
-      let Row_layoutWeight_Part_012: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Part_012');
-      let Row_layoutWeight_Part_013: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Part_013');
-      let Row_layoutWeight_Part_01: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Part_01');
+      let Row_layoutWeight_Part_011: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Part' + '_011');
+      let Row_layoutWeight_Part_012: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Part' + '_012');
+      let Row_layoutWeight_Part_013: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Part' + '_013');
+      let Row_layoutWeight_Part_01: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_Part' + '_01');
 
       console.log('assert position')
       expect(Math.abs(Math.round(Row_layoutWeight_Part_011.top - Row_layoutWeight_Part_01.top) - Math.round(Row_layoutWeight_Part_01.bottom - Row_layoutWeight_Part_011.bottom)) <= 1)

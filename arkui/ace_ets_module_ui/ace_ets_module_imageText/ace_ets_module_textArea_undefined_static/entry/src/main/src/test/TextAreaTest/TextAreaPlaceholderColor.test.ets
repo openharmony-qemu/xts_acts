@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';

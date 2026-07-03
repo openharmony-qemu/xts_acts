@@ -71,7 +71,7 @@ it('menuItemDivider_static_0100', Level.LEVEL2, async (done: () => void): Promis
       console.info('[menuItemDivider_0100] START');
 
       await CommonFunc.sleep(1000);
-      let myJson = inspector.getInspectorByKey('menuItemDividerText');
+      let myJson = inspector.getInspectorByKey('menuItemDivider' + '_menuItemDividerText');
       console.info(`[menuItemDivider_0100] component obj1 is:${JSON.stringify(myJson)}`);
       await CommonFunc.sleep(200);
       let obj1 = JSON.parseJsonElement(myJson);
@@ -96,7 +96,7 @@ it('menuItemDivider_static_0200', Level.LEVEL2, async (done: () => void): Promis
       console.info('[menuItemDivider_0200] START');
 
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('menuItemDividerText');
+      let strJson = inspector.getInspectorByKey('menuItemDivider' + '_menuItemDividerText');
       await CommonFunc.sleep(200);
       let obj = JSON.parseJsonElement(strJson);
       console.info(`[menuItemDivider_0200] component obj is:${JSON.stringify(obj)}`);
@@ -120,7 +120,7 @@ it('menuItemDivider_static_0300', Level.LEVEL2, async (done: () => void): Promis
       console.info('[menuItemDivider_0300] START');
 
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('menuItemDividerText');
+      let strJson = inspector.getInspectorByKey('menuItemDivider' + '_menuItemDividerText');
       await CommonFunc.sleep(200);
       let obj = JSON.parseJsonElement(strJson);
       console.info(`[menuItemDivider_0300] component obj is:${JSON.stringify(obj)}`);
@@ -144,7 +144,7 @@ it('menuItemDivider_static_0400', Level.LEVEL2, async (done: () => void): Promis
       console.info('[menuItemDivider_0400] START');
 
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('menuItemDividerText');
+      let strJson = inspector.getInspectorByKey('menuItemDivider' + '_menuItemDividerText');
       await CommonFunc.sleep(200);
       let obj = JSON.parseJsonElement(strJson);
       console.info(`[menuItemDivider_0400] component obj is:${JSON.stringify(obj)}`);

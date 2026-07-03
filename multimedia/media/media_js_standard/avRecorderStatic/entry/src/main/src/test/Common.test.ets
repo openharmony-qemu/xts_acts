@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -2878,7 +2879,7 @@ export default class Commmon {
       }
       console.info(`case addWatermark waterConfig` + JSON.stringify(waterConfig));
  
-      const watermarkCount: number = await avRecorder!.addWatermark(pixelMap, waterConfig);
+      const watermarkCount: int = await avRecorder!.addWatermark(pixelMap, waterConfig);
       console.info(`addWatermark watermarkCount:` + watermarkCount);
       expect(watermarkCount).assertEqual(1);
     } catch (error) {
@@ -2909,12 +2910,11 @@ export default class Commmon {
       }
       console.info(`case addWatermark waterConfig` + JSON.stringify(waterConfig));
  
-      const watermarkCount: number = await avRecorder!.addWatermark(pixelMap, waterConfig);
+      const watermarkCount: int = await avRecorder!.addWatermark(pixelMap, waterConfig);
       console.info(`addWatermark watermarkCount:` + watermarkCount);
       expect().assertFail();
     } catch (error) {
       console.error('addWatermark failed and catch error is ' + error.message + error.code);
-      expect(typeof error.code).assertEqual('number');
       expect(error.code).assertEqual(5400102);
     }
   }
@@ -2942,13 +2942,12 @@ export default class Commmon {
       console.info(`case addWatermark waterConfig` + JSON.stringify(waterConfig));
       // 循环调用 addWatermark 6次
       for (let i = 0; i < 6; i++) {
-        const watermarkCount: number = await avRecorder!.addWatermark(pixelMap, waterConfig);
+        const watermarkCount: int = await avRecorder!.addWatermark(pixelMap, waterConfig);
         console.info(`addWatermark success, times: ${i + 1}, watermarkCount: ${watermarkCount}`);
         expect(watermarkCount).assertEqual(i + 1);
       } 
     } catch (error) {
       console.error('addWatermark failed and catch error is ' + error.message + error.code);
-      expect(typeof error.code).assertEqual('number');
       expect(error.code).assertEqual(5400108);
     }
   }

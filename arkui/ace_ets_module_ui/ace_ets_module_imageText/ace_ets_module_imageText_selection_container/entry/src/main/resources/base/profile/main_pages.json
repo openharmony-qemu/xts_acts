@@ -1,0 +1,15 @@
+{
+    "src": [
+        "MainAbility/pages/index/index",
+        "MainAbility/pages/selectioncontainer/SelectionContainerConstructor",
+        "MainAbility/pages/selectioncontainer/SelectionContainerCopyOption",
+        "MainAbility/pages/selectioncontainer/SelectionContainerCaretColor",
+        "MainAbility/pages/selectioncontainer/SelectionContainerSelectedBackgroundColor",
+        "MainAbility/pages/selectioncontainer/SelectionContainerEnableHapticFeedback",
+        "MainAbility/pages/selectioncontainer/SelectionContainerTextJoinStyle",
+        "MainAbility/pages/selectioncontainer/SelectionContainerBindSelectionMenu",
+        "MainAbility/pages/selectioncontainer/SelectionContainerEditMenuOptions",
+        "MainAbility/pages/selectioncontainer/SelectionContainerEvents",
+        "MainAbility/pages/selectioncontainer/SelectionContainerModifier"
+    ]
+}

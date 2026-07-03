@@ -21,7 +21,9 @@ struct ImageOnErrorExample {
     Column({ space: 10 }) {
       Text('componentWidth: ' + this.componentWidthValue + ' componentHeight: ' + this.componentHeightValue)
       Text('' + this.componentWidthValue).id('componentWidth')
+      .key('componentWidth')
       Text('' + this.componentHeightValue).id('componentHeight')
+      .key('componentHeight')
       Image('xxx')
         .width(100)
         .height(100)
@@ -30,6 +32,7 @@ struct ImageOnErrorExample {
           this.componentHeightValue = err.componentHeight
         })
         .id('imageOnError')
+        .key('imageOnError')
     }.width('100%')
     .padding(20)
   }

@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /**
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
@@ -27,7 +27,7 @@ export class Test {
     this.valueMonitor = UIUtils.addMonitor(() => this.value, this.onChange);
   }
 
-  onChange(m: IMonitor) {
+  onChange(m: IMonitor): void {
     console.log(`[addMonitorTest] Callback triggered.`)
 
     m.dirty.forEach((path: string) => {

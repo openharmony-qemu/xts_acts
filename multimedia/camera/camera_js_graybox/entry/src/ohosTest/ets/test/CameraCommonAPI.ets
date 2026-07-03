@@ -33,6 +33,9 @@ let beginTime: number = Date.now();
 let endTime: number = 0;
 let conSumeTime: number = 0;
 
+// 当前拍照的照片名
+let curPhotoName: string = "";
+
 // 拍照相关
 let isFrameStart: boolean = false  // 预览是否开始
 globalThis.isCaptureReady = true; //是否可拍下一张回调函数
@@ -909,13 +912,13 @@ export function isSupportedZoomRatio(zoomRatioRange: Array<number>, zoomRatio: n
  * @param { Array<number> } zoomRatioRange 焦距比范围
  * @param { number } zoomRatio 需要设置的焦距比，默认为1
  */
-export function setZoomRatioRange(photoSession: ESObject, zoomRatioRange: Array<number>, zoomRatio: number = 1) {
+export function setZoomRatioRange(photoSession: ESObject, zoomRatioRange: Array<number>, zoomRatio: number = 1, testCameraId:number = 0) {
   console.info('zoomRatio is ' + zoomRatio);
   if (!isSupportedZoomRatio(zoomRatioRange, zoomRatio)) {
     console.error('device is not support zoomRatio ' + zoomRatio);
   } else {
     try {
-      photoSession.setZoomRatio(zoomRatioRange[0]);
+      photoSession.setZoomRatio(zoomRatioRange[testCameraId]);
     } catch (error) {
       let err = error as BusinessError;
       console.error('Failed to set the zoom ratio value. errorCode = ' + err.code);
@@ -1048,7 +1051,7 @@ export function offCaptureReady(photoOutput: camera.PhotoOutput) {
  * @param { number } captureNumber 拍照数量
  */
 export async function
-cameraCaptureRelyOnNum(photoOutput: ESObject, captureNumber: number) {
+cameraCaptureRelyOnNum(photoOutput: ESObject, captureNumber: number, photoName: string) {
   let captureLocation: camera.Location = {
     latitude: 0,
     longitude: 0,
@@ -1070,6 +1073,7 @@ cameraCaptureRelyOnNum(photoOutput: ESObject, captureNumber: number) {
   //使用当前拍照设置进行拍照。
   let iCapture = 0;
   console.info('before capture, globalThis.isCaptureReady ' + globalThis.isCaptureReady);
+  curPhotoName = photoName;
   while (iCapture < captureNumber) {
     if (globalThis.isCaptureReady) {
       iCapture++;
@@ -1200,13 +1204,14 @@ export async function photoAssetAvailableCallback(err: BusinessError, photoAsset
   let asset: photoAccessHelper.PhotoAsset = assetChangeRequest.getAsset()
   console.info('photoAssetAvailableCallback asset.uri is ' + asset.uri);
   console.info('photoAssetAvailableCallback asset.displayName is ' + asset.displayName);
-  realCapturePhotoNum++;
-  console.info('photoAssetAvailableCallback realCapturePhotoNum is ' + realCapturePhotoNum);
-  let tmpTime = Date.now();
-  if (tmpTime > endTime) {
-    endTime = tmpTime;
-  }
-  photoAccessArray.push(photoAsset);
+
+  //修改资产名字，方便问题后续定位
+  assetChangeRequest.setTitle(curPhotoName)
+  photoHelper.applyChanges(assetChangeRequest).then(() => {
+    console.info('apply setTitle successfully, name is ' + curPhotoName);
+  }).catch((err: BusinessError) => {
+    console.error(`apply setTitle fail with error: ${err.code}, ${err.message}`);
+  });
 }
 
 /**
@@ -1217,42 +1222,8 @@ export async function photoAssetAvailableCallback(err: BusinessError, photoAsset
  * @param { boolean } capturePhotoNum 是否拍照, 默认为false
  * @returns 拍照生成的资产列表
  */
-export async function offPhotoOutputPhotoAssetAvailable(photoOutput: camera.PhotoOutput, capturePhotoNum: number,
-  fileNames: Array<string>, isCapture: boolean = false): Promise<Array<photoAccessHelper.PhotoAsset>> {
-  beginTime = Date.now();
-  while (realCapturePhotoNum < capturePhotoNum) {
-    await sleep(200);
-    let tmpTime = Date.now();
-    if (tmpTime - beginTime > 150000) {
-      beginTime = 0;
-      console.info('delay fail realCapturePhotoNum is' + realCapturePhotoNum)
-      console.info('delay fail capturePhotoNum is' + capturePhotoNum)
-      expect().assertFail();
-      break;
-    }
-  }
-  while (photoAccessArray.length < capturePhotoNum) {
-    await sleep(200);
-  }
-  if (isCapture) {
-    expect(realCapturePhotoNum == capturePhotoNum && photoAccessArray.length == capturePhotoNum).assertTrue();
-  } else {
-    expect(realCapturePhotoNum >= capturePhotoNum).assertTrue();
-  }
-  realCapturePhotoNum = 0;
+export async function offPhotoOutputPhotoAssetAvailable(photoOutput: camera.PhotoOutput): Promise<void> {
   photoOutput.off('photoAssetAvailable', photoAssetAvailableCallback);
-  for (let i = 0; i < photoAccessArray.length; i++) {
-    fileNames.push(photoAccessArray[i].displayName);
-    let isWhitePicture = await checkCameraPhotoIsWhitePicture(photoAccessArray[i])
-    if (isWhitePicture) {
-      console.error('CameraPhoto is whilePicture');
-      realCapturePhotoNum = 0;
-      expect().assertFail();
-    }
-  }
-  let temp = photoAccessArray
-  photoAccessArray = []
-  return temp;
 }
 
 /**

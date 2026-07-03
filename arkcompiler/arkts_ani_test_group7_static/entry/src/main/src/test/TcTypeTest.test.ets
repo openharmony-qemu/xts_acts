@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -92,7 +93,7 @@ export default function TcTypeTest(): void {
     it("testTcType0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let cls = new Foo();
 
-      let floatResult = cls.test_EchoFloat(3.1415927 as float);
+      let floatResult = cls.test_EchoFloat(3.1415927.toFloat());
       let doubleResult = cls.test_EchoDouble(3.1415926535);
 
       expect(Math.abs(floatResult - 3.1415927) < 0.00001).assertTrue();

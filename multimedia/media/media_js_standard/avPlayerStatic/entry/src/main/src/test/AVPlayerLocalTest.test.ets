@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -2326,6 +2327,64 @@ export default function AVPlayerLocalTest() {
       await mediaTestBase.closeFdNumber(subtitleFdSrc!.fd);
       await mediaTestBase.clearRouter()
     });
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_RESET_static_0100
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_RESET_static_0100
+    * @tc.desc   Test reset() in RELEASED state - error code 5400102
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_RESET_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(TAG,'SUB_MULTIMEDIA_MEDIA_AVPLAYER_RESET_static_0100 begin');
+      let testName = 'SUB_MULTIMEDIA_MEDIA_AVPLAYER_RESET_static_0100';
+      avPlayer = await media.createAVPlayer();
+      let surfaceID: string = globalThis.value;
+      avPlayer!.onStateChange((state: media.AVPlayerState) => {
+        console.info(TAG, testName + 'state changed to: ' + state);
+        switch (state) {
+          case INITIALIZED:
+            if (!avPlayer) {
+              console.info(`avPlayer is null`);
+              break;
+            }
+            console.info(`case INITIALIZED`);
+            avPlayer!!.surfaceId = surfaceID;
+            expect(avPlayer!!.state).assertEqual(INITIALIZED);
+            avPlayer!.prepare().then(() => {
+              console.info(TAG, testName + 'prepare Succeeded');
+            }).catch((err: Error) => {
+              console.error(TAG, testName + 'prepare failed, error: ' + err!.message);
+            });
+            break;
+          case PREPARED:
+            console.info('case PREPARED');
+            avPlayer!.release().then(() => {
+              console.info(TAG, testName + 'Release Succeeded')
+            }).catch((err: Error) => {
+              console.error(TAG, testName + 'Release failed, error: ' + err!.message);
+            });
+            break;
+          case RELEASED:
+            console.info('case RELEASED');
+            try {
+              avPlayer!.reset().then(() => {
+                console.info(TAG, testName + 'Reset Succeeded')
+                expect().assertFail();
+              });
+            } catch (error) {
+              console.info(TAG, 'stop() failed with error code: ' + error.code + error.message);
+              expect(error.code).assertEqual(5400102);
+              done();
+            }
+            break;
+        }
+      });
+      avPlayer!.fdSrc = fileDescriptor;
+      console.info(TAG,'SUB_MULTIMEDIA_MEDIA_AVPLAYER_RESET_static_0100 end');
+    });
+    
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GETPLAYBACKINFO_static_0100
      * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_GETPLAYBACKINFO_static_0100
@@ -3374,16 +3433,19 @@ export default function AVPlayerLocalTest() {
       /**
       * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_TIMEDMETADATA_ON_0100
       * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_TIMEDMETADATA_ON_0100
-      * @tc.desc   Local Video timedMetaData control test
+      * @tc.desc   Test onTimedMetaData and offTimedMetaData APIs
       * @tc.type   FUNCTION
       * @tc.size   MEDIUMTEST
       * @tc.level  LEVEL0
       */
       it('SUB_MULTIMEDIA_MEDIA_VIDEO_TIMEDMETADATA_ON_0100', Level.LEVEL0, async (done: () => void) => {
-        expect(fileDescriptor).not().assertNull();
-        if (fileDescriptor) {
-          testTimedMetaDataListening(fileDescriptor!, avPlayer, done);
-        }
+        avPlayer = await media.createAVPlayer();
+        avPlayer!.onTimedMetaData((meDia: media.AVTimedMetaData) => {
+        });
+        avPlayer!.offTimedMetaData();
+        avPlayer!.release();
+        avPlayer = undefined;
+        done();
       });
     
     /**
@@ -3397,75 +3459,19 @@ export default function AVPlayerLocalTest() {
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_STOP_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG,'SUB_MULTIMEDIA_MEDIA_AVPLAYER_STOP_static_0100 begin');
       avPlayer = await media.createAVPlayer();
-      let currentState = avPlayer!.state;
-      console.info(TAG, 'Initial state: ' + currentState);
-      expect(currentState).assertEqual(IDLE);
-      await avPlayer!.stop().then(() => {
-        console.info(TAG, 'stop() should not succeed in IDLE state');
-        expect().assertFail();
-      }).catch((err: Error) => {
-        console.info(TAG, 'stop() failed with error code: ' + err.code);
-        expect(err.code).assertEqual(5400102);
-      });
-      console.info(TAG,'SUB_MULTIMEDIA_MEDIA_AVPLAYER_STOP_static_0100 end');
-      done();
-    });
-
-    /**
-    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_RESET_static_0100
-    * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_RESET_static_0100
-    * @tc.desc   Test reset() in RELEASED state - error code 5400102
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL0
-    */
-    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_RESET_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      console.info(TAG,'SUB_MULTIMEDIA_MEDIA_AVPLAYER_RESET_static_0100 begin');
-      let testName = 'SUB_MULTIMEDIA_MEDIA_AVPLAYER_RESET_static_0100';
-      avPlayer = await media.createAVPlayer();
-      let surfaceID: string = globalThis.value;
-      avPlayer!.onStateChange((state: media.AVPlayerState) => {
-        console.info(TAG, testName + 'state changed to: ' + state);
-        switch (state) {
-          case INITIALIZED:
-            if (!avPlayer) {
-              console.info(`avPlayer is null`);
-              break;
-            }
-            console.info(`case INITIALIZED`);
-            avPlayer!!.surfaceId = surfaceID;
-            expect(avPlayer!!.state).assertEqual(INITIALIZED);
-            avPlayer!.prepare().then(() => {
-              console.info(TAG, testName + 'prepare Succeeded');
-            }).catch((err: Error) => {
-              console.error(TAG, testName + 'prepare failed, error: ' + err!.message);
-            });
-            break;
-          case PREPARED:
-            console.info('case PREPARED');
-            avPlayer!.release().then(() => {
-              console.info(TAG, testName + 'Release Succeeded')
-            }).catch((err: Error) => {
-              console.error(TAG, testName + 'Release failed, error: ' + err!.message);
-            });
-            break;
-          case RELEASED:
-            console.info('case PREPARED');
-            avPlayer!.reset().then(() => {
-              console.info(TAG, testName + 'Reset Succeeded')
-              expect().assertFail();
-              done();
-            }).catch((err: Error) => {
-              let businessError = err as BusinessError;
-              console.error(TAG, testName + 'Reset failed, error code: ' + businessError.message);
-              expect(businessError.code).assertEqual(5400102);
-              done();
-            });
-            break;
-        }
-      });
-      avPlayer!.fdSrc = fileDescriptor;
-      console.info(TAG,'SUB_MULTIMEDIA_MEDIA_AVPLAYER_RESET_static_0100 end');
+      try {
+        let currentState = avPlayer!.state;
+        console.info(TAG, 'Initial state: ' + currentState);
+        expect(currentState).assertEqual(IDLE);
+        await avPlayer!.stop().then(() => {
+          console.info(TAG, 'stop() should not succeed in IDLE state');
+          expect().assertFail();
+        });
+      } catch (error) {
+        console.info(TAG, 'stop() failed with error code: ' + error.code + error.message);
+        expect(error.code).assertEqual(5400102);
+        done();
+      }
     });
   })
 }

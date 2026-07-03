@@ -203,7 +203,7 @@ export default function ArrayToReversedTest(): void {
      * @tc.level Level 2
      */
     it('testArrayToReversed008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(42);
+      const arr = Array.create<number>(1, 42);
       const result = arr.toReversed();
       expect(result.length).assertEqual(1);
       expect(result[0]).assertEqual(42);
@@ -1169,7 +1169,7 @@ export default function ArrayToReversedTest(): void {
      * @tc.level Level 2
      */
     it('testArrayToReversed068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1);
+      const arr = Array.create<number>(1, 1);
       const result = arr.toReversed();
       result.fill(7);
       expect(result.toString()).assertEqual('7');
@@ -1287,10 +1287,10 @@ export default function ArrayToReversedTest(): void {
      * @tc.level Level 2
      */
     it('testArrayToReversed075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const first = new Array<number>(1);
-      const second = new Array<number>(2);
-      const third = new Array<number>(3);
-      const replacement = new Array<number>(9);
+      const first = Array.create<number>(1, 1);
+      const second = Array.create<number>(1, 2);
+      const third = Array.create<number>(1, 3);
+      const replacement = Array.create<number>(1, 9);
       const arr = new Array<Array<number>>(first, second, third);
       const result = arr.toReversed();
       result[0].pushOne(4);
@@ -1518,7 +1518,7 @@ export default function ArrayToReversedTest(): void {
     it('testArrayToReversed087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const item = new ToReversedItem014();
       item.value = 7;
-      const arr = new Array<ToReversedItem014>(item);
+      const arr = Array.create<ToReversedItem014>(1, item);
       const result = arr.toReversed();
       expect(result !== arr).assertTrue();
       expect(result[0] === arr[0]).assertTrue();

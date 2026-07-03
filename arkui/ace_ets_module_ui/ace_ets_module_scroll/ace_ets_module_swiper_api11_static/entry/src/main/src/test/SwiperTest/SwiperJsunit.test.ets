@@ -99,7 +99,7 @@ export default function swiperJsunit() {
      */
 it('swiperTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('swiperTest_static_0100 START');
-      let strJson: string = inspector.getInspectorByKey('swiper');
+      let strJson: string = inspector.getInspectorByKey('swiper' + '_swiper');
       console.info("swiperTest_static_0100 component strJson:" + strJson);
 
       console.info("swiperTest_0100 component JSON.parse(strJson) is: " +
@@ -123,7 +123,7 @@ it('swiperTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
      */
 it('swiperTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('swiperTest_static_0200 START');
-      let strJson: string = inspector.getInspectorByKey('swiper');
+      let strJson: string = inspector.getInspectorByKey('swiper' + '_swiper');
       console.info("swiperTest_static_0200 component strJson:" + strJson);
       console.info("swiperTest_static_0200 component obj is: " + JSON.parseJsonElement(strJson));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('indicator')).assertEqual('true')
@@ -141,7 +141,7 @@ it('swiperTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<voi
      */
 it('swiperTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('swiperTest_static_0300 START');
-      let strJson: string = inspector.getInspectorByKey('swiper');
+      let strJson: string = inspector.getInspectorByKey('swiper' + '_swiper');
       console.info("swiperTest_static_0300 component strJson:" + strJson);
 
       console.info("swiperTest_static_0300 component JSON.parse(strJson) is: " + JSON.parseJsonElement(strJson));
@@ -160,7 +160,7 @@ it('swiperTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<voi
      */
 it('swiperTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('swiperTest_static_0400 START');
-      let strJson: string = inspector.getInspectorByKey('swiper');
+      let strJson: string = inspector.getInspectorByKey('swiper' + '_swiper');
       console.info("swiperTest_static_0400 component strJson:" + strJson);
 
       console.info("swiperTest_static_0400 component JSON.parse(strJson) is: " + JSON.parseJsonElement(strJson));
@@ -179,7 +179,7 @@ it('swiperTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<voi
      */
 it('swiperTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('swiperTest_static_0500 START');
-      let strJson: string = inspector.getInspectorByKey('swiper');
+      let strJson: string = inspector.getInspectorByKey('swiper' + '_swiper');
       console.info("swiperTest_static_0500 component strJson:" + strJson);
 
       console.info("swiperTest_static_0500 component JSON.parse(strJson) is: " + JSON.parseJsonElement(strJson));
@@ -214,7 +214,7 @@ it('swiperTest_static_0600', Level.LEVEL0, async (done: () => void): Promise<voi
         console.log("swiperTest_static_0600 change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
-      let strJsonNew: string = inspector.getInspectorByKey('swiper');
+      let strJsonNew: string = inspector.getInspectorByKey('swiper' + '_swiper');
 
       console.info("swiperTest_static_0600 component JSON.parse(strJsonNew) is: " +
       JSON.stringify(JSON.parseJsonElement(strJsonNew)));
@@ -248,7 +248,7 @@ it('swiperTest_static_0700', Level.LEVEL0, async (done: () => void): Promise<voi
         console.log("swiperTest_static_0700 change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
-      let strJsonNew = inspector.getInspectorByKey('swiper');
+      let strJsonNew = inspector.getInspectorByKey('swiper' + '_swiper');
 
       console.info("swiperTest_static_0700 component JSON.parse(strJsonNew) is: " +
       JSON.stringify(JSON.parseJsonElement(strJsonNew)));
@@ -386,7 +386,7 @@ it('swiperTest_static_1100', Level.LEVEL0, async (done: () => void): Promise<voi
         console.log("swiperTest_static_1100 change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
-      let strJsonNew: string = inspector.getInspectorByKey('swiper');
+      let strJsonNew: string = inspector.getInspectorByKey('swiper' + '_swiper');
 
       console.info("swiperTest_static_1100 component JSON.parse(strJsonNew) is: " +
       JSON.stringify(JSON.parseJsonElement(strJsonNew)));
@@ -420,7 +420,7 @@ it('swiperTest_static_1200', Level.LEVEL0, async (done: () => void): Promise<voi
         console.log("swiperTest_static_1200 change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
-      let strJsonNew: string = inspector.getInspectorByKey('swiper');
+      let strJsonNew: string = inspector.getInspectorByKey('swiper' + '_swiper');
 
       console.info("swiperTest_static_1200 component JSON.parse(strJsonNew) is: " +
       JSON.stringify(JSON.parseJsonElement(strJsonNew)));
@@ -454,7 +454,7 @@ it('swiperTest_static_1300', Level.LEVEL0, async (done: () => void): Promise<voi
         console.log("swiperTest_static_1300 change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
-      let strJsonNew = inspector.getInspectorByKey('swiper');
+      let strJsonNew = inspector.getInspectorByKey('swiper' + '_swiper');
 
       console.info("swiperTest_static_1300 component JSON.parse(strJsonNew) is: " +
       JSON.stringify(JSON.parseJsonElement(strJsonNew)));
@@ -488,7 +488,7 @@ it('swiperTest_static_1400', Level.LEVEL0, async (done: () => void): Promise<voi
         console.log("swiperTest_static_1400 change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
-      let strJsonNew = inspector.getInspectorByKey('swiper');
+      let strJsonNew = inspector.getInspectorByKey('swiper' + '_swiper');
       console.info("swiperTest_static_1400 component JSON.parse(strJson)New is: " +
       JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('indicator')).assertEqual('false');
@@ -521,7 +521,7 @@ it('swiperTest_static_1500', Level.LEVEL0, async (done: () => void): Promise<voi
         console.log("swiperTest_static_1500 change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
-      let strJsonNew = inspector.getInspectorByKey('swiper');
+      let strJsonNew = inspector.getInspectorByKey('swiper' + '_swiper');
 
       console.info("swiperTest_static_1500 component JSON.parse(strJsonNew) is: " +
       JSON.stringify(JSON.parseJsonElement(strJsonNew)));
@@ -555,7 +555,7 @@ it('swiperTest_static_1600', Level.LEVEL0, async (done: () => void): Promise<voi
         console.log("swiperTest_static_1600 change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
-      let strJsonNew = inspector.getInspectorByKey('swiper');
+      let strJsonNew = inspector.getInspectorByKey('swiper' + '_swiper');
 
       console.info("swiperTest_static_1600 component JSON.parse(strJsonNew) is: " +
       JSON.stringify(JSON.parseJsonElement(strJsonNew)));
@@ -589,7 +589,7 @@ it('swiperTest_static_1700', Level.LEVEL0, async (done: () => void): Promise<voi
         console.log("swiperTest_static_1700 change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
-      let strJsonNew = inspector.getInspectorByKey('swiper');
+      let strJsonNew = inspector.getInspectorByKey('swiper' + '_swiper');
 
       console.info("swiperTest_static_1700 component JSON.parse(strJsonNew) is: " +
       JSON.stringify(JSON.parseJsonElement(strJsonNew)));
@@ -623,7 +623,7 @@ it('swiperTest_static_1900', Level.LEVEL0, async (done: () => void): Promise<voi
         console.log("swiperTest_static_1900 change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
-      let strJsonNew = inspector.getInspectorByKey('swiper');
+      let strJsonNew = inspector.getInspectorByKey('swiper' + '_swiper');
 
       console.info("swiperTest_static_1900 component JSON.parse(strJsonNew) is: " +
       JSON.stringify(JSON.parseJsonElement(strJsonNew)));

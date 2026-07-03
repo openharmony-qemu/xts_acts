@@ -89,8 +89,8 @@ it('testGridRowColItemPosition_static_01', Level.LEVEL0, async (done: () => void
       let secondGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPosition02');
       let thirdGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPosition03');
       let fourthGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPosition04');
-      let gridContainer: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPosition_Container01');
-      let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_ItemPosition_Container01');
+      let gridContainer: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPosition' + '_Container01');
+      let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_ItemPosition' + '_Container01');
 
      expect(JSON.parseJsonElement(gridContainerStrJson).getString('$type')).assertEqual('Grid');
 

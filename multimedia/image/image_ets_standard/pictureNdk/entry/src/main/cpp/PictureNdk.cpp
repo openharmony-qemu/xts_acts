@@ -4055,11 +4055,11 @@ static napi_value GetAuxiliaryPictureTypes(napi_env env, napi_callback_info info
     OH_DecodingOptionsForPicture_Create(&decodingOptions);
     OH_PictureNative *nativePicture = nullptr;
     OH_ImageSourceNative_CreatePicture(imageSource, decodingOptions, &nativePicture);
-    uint32_t count = 9;
-    Image_AuxiliaryPictureType auxiliaryPictureTypes[9] = {
+    uint32_t count = 5;
+    Image_AuxiliaryPictureType auxiliaryPictureTypes[5] = {
         AUXILIARY_PICTURE_TYPE_GAINMAP,      AUXILIARY_PICTURE_TYPE_DEPTH_MAP,    AUXILIARY_PICTURE_TYPE_UNREFOCUS_MAP,
-        AUXILIARY_PICTURE_TYPE_LINEAR_MAP,   AUXILIARY_PICTURE_TYPE_FRAGMENT_MAP, AUXILIARY_PICTURE_TYPE_SNAP_MAP,
-        AUXILIARY_PICTURE_TYPE_SNAP_GAINMAP, AUXILIARY_PICTURE_TYPE_PAN_MAP,      AUXILIARY_PICTURE_TYPE_PAN_GAINMAP};
+        AUXILIARY_PICTURE_TYPE_LINEAR_MAP,   AUXILIARY_PICTURE_TYPE_FRAGMENT_MAP
+    };
 
     errCode = OH_PictureNative_GetAuxiliaryPictureTypes(nativePicture, auxiliaryPictureTypes, &count);
     for (uint32_t i = 0; i < count; i++) {
@@ -4280,12 +4280,8 @@ static napi_value GetMetadataTypes(napi_env env, napi_callback_info info)
     OH_DecodingOptions_Create(&ops);
     OH_ImageSourceNative_CreatePixelmap(imageSource, ops, &pixelMap);
     OH_PictureNative_CreatePicture(pixelMap, &nativePicture);
-    uint32_t count = 11;
-    Image_MetadataType metadataTypes[11] = {EXIF_METADATA,    FRAGMENT_METADATA, XTSTYLE_METADATA, RFDATAB_METADATA,
-                                            GIF_METADATA,     XDRAW_4K_METADATA, PRIVATE_METADATA, RFDATAN_METADATA,
-                                            RFDATAS_METADATA, HDRSNAP_METADATA,  DFXDATA_METADATA
-
-    };
+    uint32_t count = 3;
+    Image_MetadataType metadataTypes[3] = {EXIF_METADATA, FRAGMENT_METADATA, GIF_METADATA};
     errCode = OH_PictureNative_GetMetadataTypes(nativePicture, metadataTypes, &count);
     for (uint32_t i = 0; i < count; i++) {
         OH_LOG_INFO(LOG_APP, "MetaDataTypes Picture Type [%{public}u]: %{public}d", i, metadataTypes[i]);
@@ -4449,7 +4445,7 @@ static napi_value RemoveAuxiliaryPicturePicNull(napi_env env, napi_callback_info
 {
     napi_value result = nullptr;
     napi_create_int32(env, TEST_ERRCODE, &result);
-    Image_ErrorCode errCode = OH_PictureNative_RemoveAuxiliaryPicture(nullptr, AUXILIARY_PICTURE_TYPE_PAN_GAINMAP);
+    Image_ErrorCode errCode = OH_PictureNative_RemoveAuxiliaryPicture(nullptr, AUXILIARY_PICTURE_TYPE_GAINMAP);
     if (errCode == IMAGE_INVALID_PARAMETER) {
         napi_create_int32(env, TEST_SUCCESS, &result);
     }
@@ -4512,10 +4508,8 @@ static napi_value RemoveMetadata(napi_env env, napi_callback_info info)
     OH_DecodingOptions_Create(&ops);
     OH_ImageSourceNative_CreatePixelmap(imageSource, ops, &pixelMap);
     OH_PictureNative_CreatePicture(pixelMap, &nativePicture);
-    uint32_t count = 11;
-    Image_MetadataType metadataTypes[11] = {EXIF_METADATA,    FRAGMENT_METADATA, XTSTYLE_METADATA, RFDATAB_METADATA,
-                                            GIF_METADATA,     XDRAW_4K_METADATA, PRIVATE_METADATA, RFDATAN_METADATA,
-                                            RFDATAS_METADATA, HDRSNAP_METADATA,  DFXDATA_METADATA};
+    uint32_t count = 3;
+    Image_MetadataType metadataTypes[3] = {EXIF_METADATA, FRAGMENT_METADATA, GIF_METADATA};
     OH_PictureNative_GetMetadataTypes(nativePicture, metadataTypes, &count);
     errCode = OH_PictureNative_RemoveMetadata(nativePicture, metadataTypes[0]);
     if (errCode == IMAGE_SUCCESS) {
@@ -4532,7 +4526,7 @@ static napi_value RemoveMetadataPicNull(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     napi_create_int32(env, TEST_ERRCODE, &result);
-    Image_ErrorCode errCode = OH_PictureNative_RemoveMetadata(nullptr, DFXDATA_METADATA);
+    Image_ErrorCode errCode = OH_PictureNative_RemoveMetadata(nullptr, EXIF_METADATA);
     if (errCode == IMAGE_INVALID_PARAMETER) {
         napi_create_int32(env, TEST_SUCCESS, &result);
     }

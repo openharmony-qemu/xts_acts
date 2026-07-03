@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -123,274 +123,250 @@ export default function mathFroundTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_0700
      * @tc.name testMathFround007
-     * @tc.desc Verify fround method with double input 99999.999 for expected return 100000.0
+     * @tc.desc Verify fround method with double positive zero input preserves positive zero
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = 99999.999;
+      let input: double = 0.0;
       let result: double = Math.fround(input);
-      expect(result).assertEqual(100000.0);
+      expect(result).assertEqual(0.0);
+      expect(Utils.isPositiveZero(result)).assertTrue();
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_0800
      * @tc.name testMathFround008
-     * @tc.desc Verify fround method with double input -99999.001 for expected return -99999.0
+     * @tc.desc Verify fround method with double negative zero input preserves negative zero
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = -99999.001;
+      let input: double = -0.0;
       let result: double = Math.fround(input);
-      expect(result).assertEqual(-99999.0);
+      expect(result).assertEqual(-0.0);
+      expect(Utils.isNegativeZero(result)).assertTrue();
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_0900
      * @tc.name testMathFround009
-     * @tc.desc Verify fround method with double input 0.0 for expected return 0.0
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it('testMathFround009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = 0.0;
-      let result: double = Math.fround(input);
-      expect(result).assertEqual(0.0);
-    });
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_1000
-     * @tc.name testMathFround010
-     * @tc.desc Verify fround method with double input -0.0 for expected return -0.0
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it('testMathFround010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = -0.0;
-      let result: double = Math.fround(input);
-      expect(result).assertEqual(-0.0);
-    });
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_1100
-     * @tc.name testMathFround011
      * @tc.desc Verify fround method with double input 2.0000000001 for expected return 2.0
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathFround011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathFround009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = 2.0000000001;
       let result: double = Math.fround(input);
       expect(result).assertEqual(2.0);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_1200
-     * @tc.name testMathFround012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_1000
+     * @tc.name testMathFround010
      * @tc.desc Verify fround method with double input 1.9999999999 for expected return 2.0
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathFround012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathFround010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = 1.9999999999;
       let result: double = Math.fround(input);
       expect(result).assertEqual(2.0);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_1300
-     * @tc.name testMathFround013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_1100
+     * @tc.name testMathFround011
      * @tc.desc Verify fround method with double input -2.0000000001 for expected return -2.0
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathFround013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathFround011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = -2.0000000001;
       let result: double = Math.fround(input);
       expect(result).assertEqual(-2.0);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_1400
-     * @tc.name testMathFround014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_1200
+     * @tc.name testMathFround012
      * @tc.desc Verify fround method with double input -2.9999999999 for expected return -3.0
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathFround014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathFround012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = -2.9999999999;
       let result: double = Math.fround(input);
       expect(result).assertEqual(-3.0);
     });
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_1300
+     * @tc.name testMathFround013
+     * @tc.desc Verify fround method with Double.MAX_VALUE input overflows to Double.POSITIVE_INFINITY
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathFround013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: double = Double.MAX_VALUE;
+      let result: double = Math.fround(input);
+      expect(result).assertEqual(Double.POSITIVE_INFINITY);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_1400
+     * @tc.name testMathFround014
+     * @tc.desc Verify fround method with negative Double.MAX_VALUE input overflows to Double.NEGATIVE_INFINITY
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathFround014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: double = -Double.MAX_VALUE;
+      let result: double = Math.fround(input);
+      expect(result).assertEqual(Double.NEGATIVE_INFINITY);
+    });
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_1500
      * @tc.name testMathFround015
-     * @tc.desc Verify fround method with double input 1e+100 for expected return inf
+     * @tc.desc Verify fround method with Double.MIN_VALUE input underflows to positive zero
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = 1e+100;
+      let input: double = Double.MIN_VALUE;
       let result: double = Math.fround(input);
-      let expectedInf: double = 1.0 / 0.0;
-      expect(result).assertEqual(expectedInf);
+      expect(result).assertEqual(0.0);
+      expect(Utils.isPositiveZero(result)).assertTrue();
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_1600
      * @tc.name testMathFround016
-     * @tc.desc Verify fround method with double input -1e+100 for expected return -inf
+     * @tc.desc Verify fround method with negative Double.MIN_VALUE input underflows to negative zero
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = -1e+100;
+      let input: double = -Double.MIN_VALUE;
       let result: double = Math.fround(input);
-      let expectedNegInf: double = -1.0 / 0.0;
-      expect(result).assertEqual(expectedNegInf);
+      expect(result).assertEqual(-0.0);
+      expect(Utils.isNegativeZero(result)).assertTrue();
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_1700
      * @tc.name testMathFround017
-     * @tc.desc Verify fround method with double input 5e-324 for expected return 0.0
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it('testMathFround017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = 5e-324;
-      let result: double = Math.fround(input);
-      expect(result).assertEqual(0.0);
-    });
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_1800
-     * @tc.name testMathFround018
-     * @tc.desc Verify fround method with double input -5e-324 for expected return -0.0
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it('testMathFround018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = -5e-324;
-      let result: double = Math.fround(input);
-      expect(result).assertEqual(-0.0);
-    });
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_1900
-     * @tc.name testMathFround019
      * @tc.desc Verify fround method with double input 2147483647.0 for expected return 2147483648.0
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathFround019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathFround017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = 2147483647.0;
       let result: double = Math.fround(input);
       expect(result).assertEqual(2147483648.0);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_2000
-     * @tc.name testMathFround020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_1800
+     * @tc.name testMathFround018
      * @tc.desc Verify fround method with double input 0.5 for expected return 0.5
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathFround020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathFround018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = 0.5;
       let result: double = Math.fround(input);
       expect(result).assertEqual(0.5);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_2100
-     * @tc.name testMathFround021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_1900
+     * @tc.name testMathFround019
      * @tc.desc Verify fround method with double input -0.5 for expected return -0.5
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathFround021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathFround019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = -0.5;
       let result: double = Math.fround(input);
       expect(result).assertEqual(-0.5);
     });
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_2000
+     * @tc.name testMathFround020
+     * @tc.desc Verify fround method with Double.NaN input propagates Double.NaN
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathFround020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let nanValue: double = Double.NaN;
+      let result: double = Math.fround(nanValue);
+      expect(Utils.isNaNValue(result)).assertTrue();
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_2100
+     * @tc.name testMathFround021
+     * @tc.desc Verify fround method with Double.POSITIVE_INFINITY input preserves Double.POSITIVE_INFINITY
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathFround021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let infValue: double = Double.POSITIVE_INFINITY;
+      let result: double = Math.fround(infValue);
+      expect(result).assertEqual(Double.POSITIVE_INFINITY);
+    });
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_2200
      * @tc.name testMathFround022
-     * @tc.desc Verify fround method with double NaN input for NaN return
+     * @tc.desc Verify fround method with Double.NEGATIVE_INFINITY input preserves Double.NEGATIVE_INFINITY
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let nanValue: double = 0.0 / 0.0;
-      let result: double = Math.fround(nanValue);
-      expect(Utils.isNaNValue(result)).assertTrue();
+      let negInfValue: double = Double.NEGATIVE_INFINITY;
+      let result: double = Math.fround(negInfValue);
+      expect(result).assertEqual(Double.NEGATIVE_INFINITY);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_2300
      * @tc.name testMathFround023
-     * @tc.desc Verify fround method with double positive Infinity for Infinity return
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it('testMathFround023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let infValue: double = 1.0 / 0.0;
-      let result: double = Math.fround(infValue);
-      expect(result).assertEqual(infValue);
-    });
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_2400
-     * @tc.name testMathFround024
-     * @tc.desc Verify fround method with double negative Infinity for negative Infinity return
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it('testMathFround024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let negInfValue: double = -1.0 / 0.0;
-      let result: double = Math.fround(negInfValue);
-      expect(result).assertEqual(negInfValue);
-    });
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_2500
-     * @tc.name testMathFround025
      * @tc.desc Verify fround method with double variable for correct variable passing
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathFround025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathFround023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = 2.718;
       let result: double = Math.fround(input);
       expect(result).assertEqual(2.7179999351501465);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_2600
-     * @tc.name testMathFround026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_2400
+     * @tc.name testMathFround024
      * @tc.desc Verify fround is static method callable via Math class name
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testMathFround026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathFround024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = 1.5;
       let result: double = Math.fround(input);
       expect(result).assertEqual(1.5);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_2700
-     * @tc.name testMathFround027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_2500
+     * @tc.name testMathFround025
      * @tc.desc Verify fround idempotency with repeated same-input calls
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-    */
-    it('testMathFround027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+     */
+    it('testMathFround025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 3.14159;
       let firstCallResult: double = Math.fround(x);
       let secondCallResult: double = Math.fround(x);
@@ -400,530 +376,536 @@ export default function mathFroundTest(): void {
       expect(secondCallResult).assertEqual(thirdCallResult);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_2800
-     * @tc.name testMathFround028
-     * @tc.desc Verify fround returns finite values for representative inputs
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_2600
+     * @tc.name testMathFround026
+     * @tc.desc Verify fround method with widened byte zero input preserves positive zero
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-    */
+     */
+    it('testMathFround026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: byte = Int.toByte(0);
+      let result: double = Math.fround(input);
+      expect(result).assertEqual(0.0);
+      expect(Utils.isPositiveZero(result)).assertTrue();
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_2700
+     * @tc.name testMathFround027
+     * @tc.desc Verify fround method with widened byte normal input 12 returns the same integer value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathFround027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: byte = Int.toByte(12);
+      let result: double = Math.fround(input);
+      expect(result).assertEqual(12.0);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_2800
+     * @tc.name testMathFround028
+     * @tc.desc Verify fround method with byte underflow conversion input -129 follows the wrapped byte value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
     it('testMathFround028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let positiveFiniteInput: double = 3.14;
-      let negativeFiniteInput: double = -3.14;
-      let largeFiniteInput: double = 1.0e20;
-      let positiveFiniteResult: double = Math.fround(positiveFiniteInput);
-      let negativeFiniteResult: double = Math.fround(negativeFiniteInput);
-      let largeFiniteResult: double = Math.fround(largeFiniteInput);
-      expect(Utils.isNaNValue(positiveFiniteResult)).assertFalse();
-      expect(Utils.isNaNValue(negativeFiniteResult)).assertFalse();
-      expect(Utils.isNaNValue(largeFiniteResult)).assertFalse();
-      expect(Utils.isFiniteValue(positiveFiniteResult)).assertTrue();
-      expect(Utils.isFiniteValue(negativeFiniteResult)).assertTrue();
-      expect(Utils.isFiniteValue(largeFiniteResult)).assertTrue();
+      let input: byte = Int.toByte(-129);
+      let result: double = Math.fround(input);
+      expect(input).assertEqual(Int.toByte(127));
+      expect(result).assertEqual(127.0);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_2900
      * @tc.name testMathFround029
-     * @tc.desc Verify fround returns integer unchanged for integer inputs
+     * @tc.desc Verify fround method with widened byte maximum boundary 127 returns the same boundary value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-    */
+     */
     it('testMathFround029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let positiveIntegerInput: double = 5.0;
-      let negativeIntegerInput: double = -5.0;
-      let largeIntegerInput: double = 100.0;
-      expect(Math.fround(positiveIntegerInput)).assertEqual(positiveIntegerInput);
-      expect(Math.fround(negativeIntegerInput)).assertEqual(negativeIntegerInput);
-      expect(Math.fround(largeIntegerInput)).assertEqual(largeIntegerInput);
+      let input: byte = Int.toByte(127);
+      let result: double = Math.fround(input);
+      expect(result).assertEqual(127.0);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_3000
      * @tc.name testMathFround030
-     * @tc.desc Verify fround method with double input 1.1 for expected return 1.100000023841858
+     * @tc.desc Verify fround method with widened byte minimum boundary -128 returns the same boundary value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = 1.1;
+      let input: byte = Int.toByte(-128);
       let result: double = Math.fround(input);
-      expect(result).assertEqual(1.100000023841858);
+      expect(result).assertEqual(-128.0);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_3100
      * @tc.name testMathFround031
-     * @tc.desc Verify fround method with double input -1.1 for expected return -1.100000023841858
+     * @tc.desc Verify fround method with byte overflow conversion input 128 follows the wrapped byte value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = -1.1;
+      let input: byte = Int.toByte(128);
       let result: double = Math.fround(input);
-      expect(result).assertEqual(-1.100000023841858);
+      expect(input).assertEqual(Int.toByte(-128));
+      expect(result).assertEqual(-128.0);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_3200
      * @tc.name testMathFround032
-     * @tc.desc Verify fround method with double input 2.2 for expected return 2.200000047683716
+     * @tc.desc Verify fround method with widened short zero input preserves positive zero
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = 2.2;
+      let input: short = Int.toShort(0);
       let result: double = Math.fround(input);
-      expect(result).assertEqual(2.200000047683716);
+      expect(result).assertEqual(0.0);
+      expect(Utils.isPositiveZero(result)).assertTrue();
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_3300
      * @tc.name testMathFround033
-     * @tc.desc Verify fround method with double input -2.2 for expected return -2.200000047683716
+     * @tc.desc Verify fround method with widened short normal input 2048 returns the same integer value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = -2.2;
+      let input: short = Int.toShort(2048);
       let result: double = Math.fround(input);
-      expect(result).assertEqual(-2.200000047683716);
+      expect(result).assertEqual(2048.0);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_3400
      * @tc.name testMathFround034
-     * @tc.desc Verify fround method with double input 3.3 for expected return 3.299999952316284
+     * @tc.desc Verify fround method with short underflow conversion input -32769 follows the wrapped short value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = 3.3;
+      let input: short = Int.toShort(-32769);
       let result: double = Math.fround(input);
-      expect(result).assertEqual(3.299999952316284);
+      expect(input).assertEqual(Int.toShort(32767));
+      expect(result).assertEqual(32767.0);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_3500
      * @tc.name testMathFround035
-     * @tc.desc Verify fround method with double input -3.3 for expected return -3.299999952316284
+     * @tc.desc Verify fround method with widened short maximum boundary 32767 returns the same boundary value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = -3.3;
+      let input: short = Int.toShort(32767);
       let result: double = Math.fround(input);
-      expect(result).assertEqual(-3.299999952316284);
+      expect(result).assertEqual(32767.0);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_3600
      * @tc.name testMathFround036
-     * @tc.desc Verify fround method with double input 7.7 for expected return 7.699999809265137
+     * @tc.desc Verify fround method with widened short minimum boundary -32768 returns the same boundary value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = 7.7;
+      let input: short = Int.toShort(-32768);
       let result: double = Math.fround(input);
-      expect(result).assertEqual(7.699999809265137);
+      expect(result).assertEqual(-32768.0);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_3700
      * @tc.name testMathFround037
-     * @tc.desc Verify fround method with double input -7.7 for expected return -7.699999809265137
+     * @tc.desc Verify fround method with short mapped value 65535 follows the wrapped short value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = -7.7;
+      let input: short = Int.toShort(65535);
       let result: double = Math.fround(input);
-      expect(result).assertEqual(-7.699999809265137);
+      expect(input).assertEqual(Int.toShort(-1));
+      expect(result).assertEqual(-1.0);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_3800
      * @tc.name testMathFround038
-     * @tc.desc Verify fround method with double input 12.34 for expected return 12.34000015258789
+     * @tc.desc Verify fround method with int minimum underflow source follows the wrapped maximum value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = 12.34;
+      let minimumValue: int = Int.MIN_VALUE;
+      let input: int = minimumValue - 1;
       let result: double = Math.fround(input);
-      expect(result).assertEqual(12.34000015258789);
+      expect(input).assertEqual(Int.MAX_VALUE);
+      expect(result).assertEqual(2147483648.0);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_3900
      * @tc.name testMathFround039
-     * @tc.desc Verify fround method with double input -12.34 for expected return -12.34000015258789
+     * @tc.desc Verify fround method with widened int hexadecimal source 0x1234 returns the decimal integer value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = -12.34;
+      let input: int = 0x1234;
       let result: double = Math.fround(input);
-      expect(result).assertEqual(-12.34000015258789);
+      expect(result).assertEqual(4660.0);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_4000
      * @tc.name testMathFround040
-     * @tc.desc Verify fround method with double input 0.001 for expected return 0.0010000000474974513
+     * @tc.desc Verify fround method with widened int binary source 0b1010 returns the decimal integer value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = 0.001;
+      let input: int = 0b1010;
       let result: double = Math.fround(input);
-      let diff: double = Utils.getAbsDiff(result, input);
-      let scale: double = Utils.getAbsDiff(input, 0.0) + 1.0;
-      expect(diff < scale * 1e-06).assertTrue();
+      expect(result).assertEqual(10.0);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_4100
      * @tc.name testMathFround041
-     * @tc.desc Verify fround method with double input -0.001 for expected return -0.0010000000474974513
+     * @tc.desc Verify fround method with widened int maximum boundary rounds to nearest float32 integer
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = -0.001;
+      let input: int = Int.MAX_VALUE;
       let result: double = Math.fround(input);
-      let diff: double = Utils.getAbsDiff(result, input);
-      let scale: double = Utils.getAbsDiff(input, 0.0) + 1.0;
-      expect(diff < scale * 1e-06).assertTrue();
+      expect(result).assertEqual(2147483648.0);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_4200
      * @tc.name testMathFround042
-     * @tc.desc Verify fround method with double input 100.001 for expected return 100.0009994506836
+     * @tc.desc Verify fround method with widened int minimum boundary returns the same float32 boundary value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = 100.001;
+      let input: int = Int.MIN_VALUE;
       let result: double = Math.fround(input);
-      expect(result).assertEqual(100.0009994506836);
+      expect(result).assertEqual(-2147483648.0);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_4300
      * @tc.name testMathFround043
-     * @tc.desc Verify fround method with double input -100.001 for expected return -100.0009994506836
+     * @tc.desc Verify fround method with int maximum overflow source follows the wrapped minimum value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = -100.001;
+      let input: int = Int.MAX_VALUE + 1;
       let result: double = Math.fround(input);
-      expect(result).assertEqual(-100.0009994506836);
+      expect(input).assertEqual(Int.MIN_VALUE);
+      expect(result).assertEqual(-2147483648.0);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_4400
      * @tc.name testMathFround044
-     * @tc.desc Verify fround method with double input 0.25 for expected return 0.25
+     * @tc.desc Verify fround method with widened long zero input preserves positive zero
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = 0.25;
+      let input: long = Int.toLong(0);
       let result: double = Math.fround(input);
-      expect(result).assertEqual(0.25);
+      expect(result).assertEqual(0.0);
+      expect(Utils.isPositiveZero(result)).assertTrue();
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_4500
      * @tc.name testMathFround045
-     * @tc.desc Verify fround method with double input -0.25 for expected return -0.25
+     * @tc.desc Verify fround method with long hexadecimal source 0x1234 returns the decimal integer value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = -0.25;
+      let input: long = Long.toLong(0x1234);
       let result: double = Math.fround(input);
-      expect(result).assertEqual(-0.25);
+      expect(result).assertEqual(4660.0);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_4600
      * @tc.name testMathFround046
-     * @tc.desc Verify fround method with double input 1.75 for expected return 1.75
+     * @tc.desc Verify fround method with long minimum underflow source follows the wrapped maximum value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = 1.75;
+      let minimumValue: long = Long.MIN_VALUE;
+      let input: long = minimumValue - Int.toLong(1);
       let result: double = Math.fround(input);
-      expect(result).assertEqual(1.75);
+      expect(input).assertEqual(Long.MAX_VALUE);
+      let expectedValue: double = Long.MAX_VALUE;
+      expect(result).assertEqual(expectedValue);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_4700
      * @tc.name testMathFround047
-     * @tc.desc Verify fround method with double input -1.75 for expected return -1.75
+     * @tc.desc Verify fround method with Long.MAX_VALUE input returns its nearest float32 double representation
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = -1.75;
+      let input: long = Long.MAX_VALUE;
       let result: double = Math.fround(input);
-      expect(result).assertEqual(-1.75);
+      let expectedValue: double = Long.MAX_VALUE;
+      expect(result).assertEqual(expectedValue);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_4800
      * @tc.name testMathFround048
-     * @tc.desc Verify fround method with double input 123.456 for expected return 123.45600128173828
+     * @tc.desc Verify fround method with Long.MIN_VALUE input returns its nearest float32 double representation
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = 123.456;
+      let input: long = Long.MIN_VALUE;
       let result: double = Math.fround(input);
-      expect(result).assertEqual(123.45600128173828);
+      let expectedValue: double = Long.MIN_VALUE;
+      expect(result).assertEqual(expectedValue);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_4900
      * @tc.name testMathFround049
-     * @tc.desc Verify fround method with double input -123.456 for expected return -123.45600128173828
+     * @tc.desc Verify fround method with long overflow-mapped Long.MIN_VALUE source returns its nearest float32 double representation
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = -123.456;
+      let maximumValue: long = Long.MAX_VALUE;
+      let input: long = maximumValue + Int.toLong(1);
       let result: double = Math.fround(input);
-      let diff: double = Utils.getAbsDiff(result, input);
-      let scale: double = Utils.getAbsDiff(input, 0.0) + 1.0;
-      expect(diff < scale * 1e-06).assertTrue();
+      expect(input).assertEqual(Long.MIN_VALUE);
+      let expectedValue: double = Long.MIN_VALUE;
+      expect(result).assertEqual(expectedValue);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_5000
      * @tc.name testMathFround050
-     * @tc.desc Verify fround method with double input 0.333 for expected return 0.3330000042915344
+     * @tc.desc Verify fround method with float normal input 3.14 returns the widened float32 value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = 0.333;
+      let input: float = Double.toFloat(3.14);
+      let expected: double = input;
       let result: double = Math.fround(input);
-      expect(result).assertEqual(0.3330000042915344);
+      expect(result).assertEqual(expected);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_5100
      * @tc.name testMathFround051
-     * @tc.desc Verify fround method with double input -0.333 for expected return -0.3330000042915344
+     * @tc.desc Verify fround method with negative Float.MAX_VALUE boundary returns the widened finite boundary
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = -0.333;
+      let input: float = -Float.MAX_VALUE;
+      let expected: double = input;
       let result: double = Math.fround(input);
-      let diff: double = Utils.getAbsDiff(result, input);
-      let scale: double = Utils.getAbsDiff(input, 0.0) + 1.0;
-      expect(diff < scale * 1e-06).assertTrue();
+      expect(result).assertEqual(expected);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_5200
      * @tc.name testMathFround052
-     * @tc.desc Verify fround method with double input 2.718 for expected return 2.7179999351501465
+     * @tc.desc Verify fround method with Float.NEGATIVE_INFINITY input preserves Double.NEGATIVE_INFINITY
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = 2.718;
+      let input: float = Float.NEGATIVE_INFINITY;
       let result: double = Math.fround(input);
-      expect(result).assertEqual(2.7179999351501465);
+      expect(result).assertEqual(Double.NEGATIVE_INFINITY);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_5300
      * @tc.name testMathFround053
-     * @tc.desc Verify fround method with double input -2.718 for expected return -2.7179999351501465
+     * @tc.desc Verify fround method with Float.MAX_VALUE boundary returns the widened finite boundary
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = -2.718;
+      let input: float = Float.MAX_VALUE;
+      let expected: double = input;
       let result: double = Math.fround(input);
-      let diff: double = Utils.getAbsDiff(result, input);
-      let scale: double = Utils.getAbsDiff(input, 0.0) + 1.0;
-      expect(diff < scale * 1e-06).assertTrue();
+      expect(result).assertEqual(expected);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_5400
      * @tc.name testMathFround054
-     * @tc.desc Verify fround method with double input 10.01 for expected return 10.010000228881836
+     * @tc.desc Verify fround method with Float.MIN_VALUE boundary returns the widened minimum float value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = 10.01;
+      let input: float = Float.MIN_VALUE;
+      let expected: double = input;
       let result: double = Math.fround(input);
-      expect(result).assertEqual(10.010000228881836);
+      expect(result).assertEqual(expected);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_5500
      * @tc.name testMathFround055
-     * @tc.desc Verify fround method with double input -10.01 for expected return -10.010000228881836
+     * @tc.desc Verify fround method with negative Float.MIN_VALUE boundary returns the widened negative minimum float value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = -10.01;
+      let input: float = -Float.MIN_VALUE;
+      let expected: double = input;
       let result: double = Math.fround(input);
-      let diff: double = Utils.getAbsDiff(result, input);
-      let scale: double = Utils.getAbsDiff(input, 0.0) + 1.0;
-      expect(diff < scale * 1e-06).assertTrue();
+      expect(result).assertEqual(expected);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_5600
      * @tc.name testMathFround056
-     * @tc.desc Verify fround method with double input 0.9 for expected return 0.8999999761581421
+     * @tc.desc Verify fround method with Float.NaN input propagates Double.NaN
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = 0.9;
+      let input: float = Float.NaN;
       let result: double = Math.fround(input);
-      expect(result).assertEqual(0.8999999761581421);
+      expect(Utils.isNaNValue(result)).assertTrue();
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_5700
      * @tc.name testMathFround057
-     * @tc.desc Verify fround method with double input -0.9 for expected return -0.8999999761581421
+     * @tc.desc Verify fround method with Float.POSITIVE_INFINITY input preserves Double.POSITIVE_INFINITY
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = -0.9;
+      let input: float = Float.POSITIVE_INFINITY;
       let result: double = Math.fround(input);
-      let diff: double = Utils.getAbsDiff(result, input);
-      let scale: double = Utils.getAbsDiff(input, 0.0) + 1.0;
-      expect(diff < scale * 1e-06).assertTrue();
+      expect(result).assertEqual(Double.POSITIVE_INFINITY);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_5800
      * @tc.name testMathFround058
-     * @tc.desc Verify fround method with double input 20.2 for expected return 20.200000762939453
+     * @tc.desc Verify fround method with Math.PI constant input returns nearest float32 value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = 20.2;
+      let input: double = Math.PI;
       let result: double = Math.fround(input);
-      expect(result).assertEqual(20.200000762939453);
+      expect(result).assertEqual(3.1415927410125732);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_5900
      * @tc.name testMathFround059
-     * @tc.desc Verify fround method with double input -20.2 for expected return -20.200000762939453
+     * @tc.desc Verify fround method with Math.SQRT2 constant input returns nearest float32 value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = -20.2;
+      let input: double = Math.SQRT2;
       let result: double = Math.fround(input);
-      let diff: double = Utils.getAbsDiff(result, input);
-      let scale: double = Utils.getAbsDiff(input, 0.0) + 1.0;
-      expect(diff < scale * 1e-06).assertTrue();
+      expect(result).assertEqual(1.4142135381698608);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_6000
      * @tc.name testMathFround060
-     * @tc.desc Verify fround method with double input 0.05 for expected return 0.05000000074505806
+     * @tc.desc Verify fround method with double 2 power 24 minus one remains exactly representable
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = 0.05;
+      let input: double = 16777215.0;
       let result: double = Math.fround(input);
-      let diff: double = Utils.getAbsDiff(result, input);
-      let scale: double = Utils.getAbsDiff(input, 0.0) + 1.0;
-      expect(diff < scale * 1e-06).assertTrue();
+      expect(result).assertEqual(16777215.0);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_6100
      * @tc.name testMathFround061
-     * @tc.desc Verify fround method with double input -0.05 for expected return -0.05000000074505806
+     * @tc.desc Verify fround method with double 2 power 24 remains exactly representable
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = -0.05;
+      let input: double = 16777216.0;
       let result: double = Math.fround(input);
-      let diff: double = Utils.getAbsDiff(result, input);
-      let scale: double = Utils.getAbsDiff(input, 0.0) + 1.0;
-      expect(diff < scale * 1e-06).assertTrue();
+      expect(result).assertEqual(16777216.0);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_6200
      * @tc.name testMathFround062
-     * @tc.desc Verify fround method with double input 0.95 for expected return 0.949999988079071
+     * @tc.desc Verify fround method with double 2 power 24 plus one rounds to the even float32 value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = 0.95;
+      let input: double = 16777217.0;
       let result: double = Math.fround(input);
-      expect(result).assertEqual(0.949999988079071);
+      expect(result).assertEqual(16777216.0);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_6300
      * @tc.name testMathFround063
-     * @tc.desc Verify fround method with double input -0.95 for expected return -0.949999988079071
+     * @tc.desc Verify fround method rounds a positive subnormal threshold input to Float.MIN_VALUE
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = -0.95;
+      let input: double = 1.0509738482436128e-45;
+      let expected: double = Float.MIN_VALUE;
       let result: double = Math.fround(input);
-      expect(result).assertEqual(-0.949999988079071);
+      expect(result).assertEqual(expected);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_6400
      * @tc.name testMathFround064
-     * @tc.desc Verify fround method with double input 8.99 for expected return 8.989999771118164
+     * @tc.desc Verify fround method with a double near Float.MAX_VALUE rounds to the finite float32 maximum
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathFround064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = 8.99;
+      let input: double = 3.4028235e38;
+      let expected: double = Float.MAX_VALUE;
       let result: double = Math.fround(input);
-      expect(result).assertEqual(8.989999771118164);
-    });
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_6500
-     * @tc.name testMathFround065
-     * @tc.desc Verify fround method with double input -8.99 for expected return -8.989999771118164
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it('testMathFround065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: double = -8.99;
-      let result: double = Math.fround(input);
-      expect(result).assertEqual(-8.989999771118164);
+      expect(result).assertEqual(expected);
     });
   });
 }

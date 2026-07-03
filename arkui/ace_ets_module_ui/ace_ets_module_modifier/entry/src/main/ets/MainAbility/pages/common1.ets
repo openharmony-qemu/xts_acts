@@ -136,7 +136,7 @@ struct Common1Example {
     Column(){
       Button("change value").onClick(() => {
         (this.customModifier as CustomModifier).onChange();
-      }).key("changeButton")
+      }).key("common1_changeButton")
 
       Text("Modifier自定义")
         .attributeModifier(this.customModifier as CustomModifier)

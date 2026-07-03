@@ -69,7 +69,7 @@ export default function placementJsunit(){
       } catch (err) {
         console.info("placementTest_0100 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("placementTest_0100 click result is: " + JSON.stringify(sendEventByKey('button',10,"")));
+      console.info("placementTest_0100 click result is: " + JSON.stringify(sendEventByKey('placement' + '_button',10,"")));
       await Utils.sleep(1500);
       console.info("placementTest_0100 clickOne result is: " + JSON.stringify(sendEventByKey('image',10,"")));
       console.info('placementTest_0100 END');

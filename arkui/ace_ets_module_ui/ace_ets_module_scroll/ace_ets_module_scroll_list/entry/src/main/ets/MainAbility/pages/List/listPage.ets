@@ -120,7 +120,7 @@ struct ListMessagePage {
       }
       Row(){
         Text(this.onScrollText).fontSize(10).margin({right:10}).key('onScrollText')
-        Text(this.onScrollBeginText).fontSize(10).key('onScrollBeginText')
+        Text(this.onScrollBeginText).fontSize(10).key('listPage_onScrollBeginText')
       }
       Row(){
         Text(this.onReachStartText).fontSize(10).margin({right:10}).key('onReachStartText')

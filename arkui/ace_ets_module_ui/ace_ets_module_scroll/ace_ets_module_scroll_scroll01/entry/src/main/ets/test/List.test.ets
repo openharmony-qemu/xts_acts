@@ -72,6 +72,8 @@ import scrollDefaultTest3 from './scrollDefault/scrollDefault3.test';
 import getFrameNodeScroller from './FrameNode/getFrameNodeScroller.test';
 import scrollerGetFrameNode from './FrameNode/scrollerGetFrameNode.test';
 import scrollPropertiesTest from './scrollDefault/scrollPropertiesTest.test';
+import ScrollScrollBarHeight from './ScrollScrollBarHeight.test.ets';
+import ScrollBarHeightModifier from './ScrollBarHeightModifier.test.ets';
 
 export default function testsuite() {
   ScrollScrollBarWidthTest()
@@ -133,4 +135,6 @@ export default function testsuite() {
   getFrameNodeScroller()
   scrollerGetFrameNode()
   scrollPropertiesTest()
+  ScrollScrollBarHeight()
+  ScrollBarHeightModifier()
 }

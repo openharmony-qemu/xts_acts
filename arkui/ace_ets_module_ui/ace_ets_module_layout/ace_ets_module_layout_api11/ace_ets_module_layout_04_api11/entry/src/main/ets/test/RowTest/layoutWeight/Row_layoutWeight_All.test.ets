@@ -67,10 +67,10 @@ export default function Row_layoutWeight_All() {
       });
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_layoutWeight_All_011: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_All_011');
-      let Row_layoutWeight_All_012: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_All_012');
-      let Row_layoutWeight_All_013: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_All_013');
-      let Row_layoutWeight_All_01: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_All_01');
+      let Row_layoutWeight_All_011: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_All' + '_011');
+      let Row_layoutWeight_All_012: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_All' + '_012');
+      let Row_layoutWeight_All_013: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_All' + '_013');
+      let Row_layoutWeight_All_01: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_All' + '_01');
 
       console.log('assert position')
       expect(Math.abs(Math.round(Row_layoutWeight_All_011.top - Row_layoutWeight_All_01.top) - Math.round(Row_layoutWeight_All_01.bottom - Row_layoutWeight_All_011.bottom)) <= 1)
@@ -128,10 +128,10 @@ export default function Row_layoutWeight_All() {
       });
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_layoutWeight_All_011: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_All_011');
-      let Row_layoutWeight_All_012: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_All_012');
-      let Row_layoutWeight_All_013: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_All_013');
-      let Row_layoutWeight_All_01: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_All_01');
+      let Row_layoutWeight_All_011: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_All' + '_011');
+      let Row_layoutWeight_All_012: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_All' + '_012');
+      let Row_layoutWeight_All_013: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_All' + '_013');
+      let Row_layoutWeight_All_01: RectValue = CommonFunc.getComponentRect('Row_layoutWeight_All' + '_01');
 
       console.log('assert position')
       expect(Math.abs(Math.round(Row_layoutWeight_All_011.top - Row_layoutWeight_All_01.top) - Math.round(Row_layoutWeight_All_01.bottom - Row_layoutWeight_All_011.bottom)) <= 1)

@@ -41,7 +41,7 @@ struct TextPickerExample {
     Column() {
       Button("change value").onClick((e: ClickEvent) => {
         (this.customModifier as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("textPicker_changeButton")
 
       TextPicker({ range: ['peach1', 'peach2', 'peach3', 'peach4'] })
         .selectedIndex(3)

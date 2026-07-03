@@ -71,11 +71,11 @@ export default function StartAndStop() {
         1000);
       await CommonFunc.sleep(2000);
 
-      let strJson1 = getInspectorByKey('StartAndStop_start')
+      let strJson1 = getInspectorByKey('StartAndStop' + '_start')
       console.info("[StartAndStop_0300] component obj1 is: " + JSON.stringify(JSON.parse(strJson1)))
       expect(JSON.parse(strJson1).$attrs.content).assertEqual('onScrollStart');
 
-      let strJson2 = getInspectorByKey('StartAndStop_end')
+      let strJson2 = getInspectorByKey('StartAndStop' + '_end')
       console.info("[StartAndStop_0300] component obj2 is: " + JSON.stringify(JSON.parse(strJson2)))
       expect(JSON.parse(strJson2).$attrs.content).assertEqual('onScrollStop');
 

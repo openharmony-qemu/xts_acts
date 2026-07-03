@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -110,13 +111,13 @@ export default function MutexLockEnhancedTest(): void {
 
         await sleep(200);
         lock.unlock();
-        await job;
+        job.Await();
 
         while (workerCompleted.load() < 1) {
           await sleep(50);
         }
 
-        worker.join();
+        worker.join().Await();
         console.info(`${TAG} lock count: ${lockCount.load()}`);
         expect(lockCount.load()).assertEqual(2);
         expect(workerCompleted.load()).assertEqual(1);
@@ -322,24 +323,25 @@ export default function MutexLockEnhancedTest(): void {
         let exceptionHandled = new AtomicInt(0);
 
         let worker = new EAWorker();
-        worker.setUncaughtExceptionHandler((e: Error) => {
-          console.info(`${TAG} worker exception: ${e.message}`);
-          exceptionHandled.fetchAdd(1);
-          lock.unlock();
-        });
-
         worker.start();
         let job = worker.run<void>(() => {
           lock.lock();
-          count.fetchAdd(1);
-          throw new Error("worker exception");
+          try {
+            count.fetchAdd(1);
+            throw new Error("worker exception");
+          } finally {
+            lock.unlock();
+          }
         });
 
-        while (exceptionHandled.load() < 1) {
-          await sleep(50);
+        try {
+          job.Await();
+        } catch (e) {
+          console.info(`${TAG} worker exception: ${e.message}`);
+          exceptionHandled.fetchAdd(1);
         }
 
-        worker.join();
+        worker.join().Await();
 
         lock.lock();
         count.fetchAdd(1);
@@ -480,8 +482,8 @@ export default function MutexLockEnhancedTest(): void {
           lock1.unlock();
         });
 
-        await job;
-        worker.join();
+        job.Await();
+        worker.join().Await();
 
         console.info(`${TAG} result: ${result.load()}`);
         expect(result.load()).assertEqual('123');
@@ -504,7 +506,7 @@ export default function MutexLockEnhancedTest(): void {
         let count = new AtomicInt(0);
         let workerCount = 5;
 
-        let jobs: Promise<void>[] = [];
+        let jobs: Job<void>[] = [];
         for (let i = 0; i < workerCount; i++) {
           let worker = new EAWorker();
           worker.start();
@@ -520,7 +522,9 @@ export default function MutexLockEnhancedTest(): void {
           jobs.push(job);
         }
 
-        await Promise.all(jobs);
+        for (let i = 0; i < workerCount; i++) {
+          jobs[i].Await();
+        }
 
         while (count.load() < workerCount) {
           await sleep(50);

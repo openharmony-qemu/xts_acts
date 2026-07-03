@@ -25,6 +25,7 @@ struct TextCompressLeadingPunctuation {
       Row({ space: 5 }) {
         Text(this.text)
           .id('textCompressLeadingPunctuation')
+          .key('textCompressLeadingPunctuation')
           .height('25%')
           .fontSize(12)
           .borderWidth(1)
@@ -33,6 +34,7 @@ struct TextCompressLeadingPunctuation {
           Span(this.text).fontSize(12)
         }
           .id('textSpan')
+          .key('textSpan')
           .height('25%')
           .borderWidth(1)
           .compressLeadingPunctuation(this.status) //新接口，控制行首标点符号是否缩进

@@ -36,6 +36,7 @@ struct StartMoving9 {
             try {
               let windowClass = AppStorage.get('windowClass2') as window.Window;
               let windowRect = windowClass.getWindowProperties().windowRect;
+              let num = 0;
               console.log(`${caseName} subWindowClass windowRect: ${JSON.stringify(windowRect)}`);
               let offSetX = Math.round(windowRect.width / 2);
               console.log(`${caseName}  offSetX: ${JSON.stringify(offSetX)}`);
@@ -49,8 +50,12 @@ struct StartMoving9 {
                   console.error('start moving : ' + err.code + ',message:' + err.message)
                   if (err.code == 801) {
                     this.message = 'startMoving 801'
+                    num = 801;
+                    AppStorage.setOrCreate('num',num)
                   } else if (err.code == 1300001) {
                     this.message = 'startMoving 1300001'
+                    num = 1300001;
+                    AppStorage.setOrCreate('num',num)
                   }
                 })
             } catch (exception) {

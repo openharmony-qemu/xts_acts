@@ -51,7 +51,7 @@ struct MotionPath7Example {
   build() {
     Column() {
       Button('click me')
-        .key('button')
+        .key('motionPath_button')
         .attributeModifier(this.motionPathModifier1 as ButtonModifier)
         .onClick((e: ClickEvent) => {
           this.rotatable = true;
@@ -77,7 +77,7 @@ struct MotionPath7Example {
         })
         .backgroundColor(0x317aff)
       Button('next')
-        .key('button1')
+        .key('motionPath_button1')
         .onClick((e: ClickEvent) => {
           try {
             let backData: events_emitter.EventData = {

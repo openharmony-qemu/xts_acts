@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../hypium/index';
 import Utils from './Util.test';
 
 class MyClass {
@@ -754,16 +754,16 @@ export default function BuiltinsWorkerLocalGetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsWorkerLocalGetTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('BuiltinsWorkerLocalGetTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       wlGet_4000 = new WorkerLocal<number>(() => 0);
       wlGet_4000.set(100);
       expect(wlGet_4000.get()).assertEqual(100);
       let eaWorker: EAWorker = new EAWorker("get_4000");
       eaWorker.start();
-      let result: number = await eaWorker.run<number>(getEAWorkerTask4000);
+      let result: number = eaWorker.run<number>(getEAWorkerTask4000).Await();
       expect(result).assertEqual(0);
       expect(wlGet_4000.get()).assertEqual(100);
-      await eaWorker.join();
+      eaWorker.join();
     })
 
     /**
@@ -774,16 +774,16 @@ export default function BuiltinsWorkerLocalGetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsWorkerLocalGetTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('BuiltinsWorkerLocalGetTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       wlGet_4100 = new WorkerLocal<string>(() => "ea_init");
       wlGet_4100.set("main_value");
       expect(wlGet_4100.get()).assertEqual("main_value");
       let eaWorker: EAWorker = new EAWorker("get_4100");
       eaWorker.start();
-      let result: string = await eaWorker.run<string>(getEAWorkerTask4100);
+      let result: string = eaWorker.run<string>(getEAWorkerTask4100).Await();
       expect(result).assertEqual("ea_modified");
       expect(wlGet_4100.get()).assertEqual("main_value");
-      await eaWorker.join();
+      eaWorker.join();
     })
 
     /**
@@ -794,13 +794,13 @@ export default function BuiltinsWorkerLocalGetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsWorkerLocalGetTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('BuiltinsWorkerLocalGetTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       wlGet_4200 = new WorkerLocal<string>(() => "init");
       let eaWorker: EAWorker = new EAWorker("get_4200");
       eaWorker.start();
-      let result: string = await eaWorker.run<string>(getEAWorkerTask4200);
+      let result: string = eaWorker.run<string>(getEAWorkerTask4200).Await();
       expect(result).assertEqual("ea_outer|ea_inner");
-      await eaWorker.join();
+      eaWorker.join();
     })
   })
 }

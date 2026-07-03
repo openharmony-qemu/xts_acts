@@ -90,7 +90,7 @@ struct Second {
           this.controller.start()
         })
       Button("stop TextClock")
-        .key('button')
+        .key('textClock_button')
         .onClick((e:ClickEvent) => {
           this.controller.stop()
           this.onActionCalledOne = true;

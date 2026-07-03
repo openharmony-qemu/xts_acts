@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -1363,7 +1363,7 @@ export default function ArrayFrom3Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFromThree072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = Array.from<number, number>(new Array<number>(NaN), (value: number): number => value);
+      const result = Array.from<number, number>(Array.create<number>(1, NaN), (value: number): number => value);
       expect(result.length).assertEqual(1);
       expect(result[0] !== result[0]).assertTrue();
     });
@@ -1613,7 +1613,7 @@ export default function ArrayFrom3Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFromThree089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = Array.from<number, number>(new Array<number>(9), (value: number): number => value * 2);
+      const result = Array.from<number, number>(Array.create<number>(1, 9), (value: number): number => value * 2);
       expect(result.toString()).assertEqual('18');
     });
 

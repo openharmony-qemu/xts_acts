@@ -22,12 +22,12 @@ struct CustomDialogRouterExample{
     Column() {
       Text('CustomDialog router test').fontSize(20).margin({ top: 10, bottom: 10 })
 
-      Button('Go to new page').key('CustomDialogRouterButton')
+      Button('Go to new page').key('CustomDialogRouter_CustomDialogRouterButton')
         .onClick(() => {
           router.pushUrl({url: 'MainAbility/pages/customDialog/CustomDialog'})
         })
 
-      Button('Confirm').key('CustomDialogConfirm')
+      Button('Confirm').key('CustomDialogRouter_CustomDialogConfirm')
         .onClick(() => {
           if (this.controller != undefined) {
             this.controller.close()
@@ -47,7 +47,7 @@ struct CustomDialogRouter {
 
   build() {
     Column() {
-      Button('Click me').key('Custom_Dialog_Router')
+      Button('Click me').key('CustomDialogRouter_Custom_Dialog_Router')
         .onClick(() => {
           this.dialogController?.open()
         }).backgroundColor(0x317aff)

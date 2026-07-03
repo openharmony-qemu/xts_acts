@@ -28,8 +28,8 @@ export default function segmentButtonDirectionTest() {
         url: 'MainAbility/pages/segmentButton/SegmentButtonDirection',
       };
       try {
-        router.clear();
         let pages = router.getState();
+        router.clear();
         console.info("get segmentButtonDirectionTest state pages: " + JSON.stringify(pages));
         if (!('SegmentButtonDirection' == pages.name)) {
           console.info("get segmentButtonDirectionTest pages.name: " + JSON.stringify(pages.name));

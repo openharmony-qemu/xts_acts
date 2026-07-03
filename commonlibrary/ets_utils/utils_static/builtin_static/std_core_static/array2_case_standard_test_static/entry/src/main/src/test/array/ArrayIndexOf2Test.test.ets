@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -100,7 +100,7 @@ export default function ArrayIndexOf2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayIndexOfTwo003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(42);
+      let arr = Array.create<number>(1, 42);
       let result = arr.indexOf(42);
       expect(result).assertEqual(0);
     });
@@ -114,7 +114,7 @@ export default function ArrayIndexOf2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayIndexOfTwo004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(42);
+      let arr = Array.create<number>(1, 42);
       let result = arr.indexOf(1);
       expect(result).assertEqual(-1);
     });
@@ -715,7 +715,7 @@ export default function ArrayIndexOf2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayIndexOfTwo045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(Number.MAX_VALUE);
+      const arr = Array.create<number>(1, Number.MAX_VALUE);
       expect(arr.indexOf(Number.MAX_VALUE)).assertEqual(0);
     });
 
@@ -728,7 +728,7 @@ export default function ArrayIndexOf2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayIndexOfTwo046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(Number.MIN_VALUE);
+      const arr = Array.create<number>(1, Number.MIN_VALUE);
       expect(arr.indexOf(Number.MIN_VALUE)).assertEqual(0);
     });
 
@@ -756,7 +756,7 @@ export default function ArrayIndexOf2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayIndexOfTwo048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(0.1 + 0.2);
+      const arr = Array.create<number>(1, 0.1 + 0.2);
       expect(arr.indexOf(0.3)).assertEqual(-1);
     });
 
@@ -784,7 +784,7 @@ export default function ArrayIndexOf2Test(): void {
      */
     it('testArrayIndexOfTwo050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const fn = (): number => 1;
-      const arr = new Array<() => number>(fn);
+      const arr = Array.create<() => number>(1, fn);
       expect(arr.indexOf(fn)).assertEqual(0);
     });
 
@@ -798,7 +798,7 @@ export default function ArrayIndexOf2Test(): void {
      */
     it('testArrayIndexOfTwo051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const fn = (): number => 1;
-      const arr = new Array<() => number>(fn);
+      const arr = Array.create<() => number>(1, fn);
       expect(arr.indexOf((): number => 1)).assertEqual(-1);
     });
 
@@ -824,7 +824,7 @@ export default function ArrayIndexOf2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayIndexOfTwo053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<string>('👩‍');
+      const arr = Array.create<string>(1, '👩‍');
       expect(arr.indexOf('👩')).assertEqual(-1);
     });
 
@@ -837,7 +837,7 @@ export default function ArrayIndexOf2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayIndexOfTwo054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<string>('😀');
+      const arr = Array.create<string>(1, '😀');
       expect(arr.indexOf('😀')).assertEqual(0);
     });
 

@@ -37,6 +37,7 @@ struct ImageAltTestPage {
       Image('common/pages/apple')
         .width(80).height(80).margin(10)
         .id('image001')
+        .key('image001')
         .alt({
           placeholder:  'images/test1.jpg',
           error:  'images/test1.jpg'
@@ -44,6 +45,7 @@ struct ImageAltTestPage {
       Image('common/pages/apple')
         .width(80).height(80).margin(10)
         .id('image002')
+        .key('image002')
         .alt({
           placeholder: undefined,
           error: undefined
@@ -51,6 +53,7 @@ struct ImageAltTestPage {
       Image('common/pages/apple')
         .width(80).height(80).margin(10)
         .id('image003')
+        .key('image003')
         .alt({
           placeholder: null,
           error: null

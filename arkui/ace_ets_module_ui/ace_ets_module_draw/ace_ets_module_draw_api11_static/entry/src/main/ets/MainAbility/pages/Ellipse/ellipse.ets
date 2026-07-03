@@ -70,7 +70,7 @@ struct EllipseExample {
       Ellipse()
         .width(`${this.theWidth}`)
         .height(`${this.theHeight}`)
-        .key('ellipse')
+        .key('ellipse_ellipse')
     }
     .width('100%')
     .height('100%')

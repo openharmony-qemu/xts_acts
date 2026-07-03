@@ -16,7 +16,7 @@
 import CommonFunc from '../../MainAbility/common/Common';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
-import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import {Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, UiDriver, BY} from '@ohos.UiTest';
 
 export default function VideoContentTransitionEffectTest() {
   describe('VideoContentTransitionEffectTest', () => {
@@ -57,24 +57,24 @@ export default function VideoContentTransitionEffectTest() {
      */
     it('VideoContentTransitionEffectTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[VideoContentTransitionEffectTest_0100] START');
-      let driver = await Driver.create()
+      let driver = await UiDriver.create()
       await CommonFunc.sleep(1000);
 
-      let button1 = await driver.findComponent(ON.id('VideoContentTransitionEffect'));
+      let button1 = await driver.findComponent(BY.key('VideoContentTransitionEffect'));
       await button1.click();
       await CommonFunc.sleep(1000);
       let strJson1 = getInspectorByKey('VideoContentTransitionEffectStr');
       let obj1: ESObject = JSON.parse(strJson1);
       expect(obj1.$attrs.content).assertEqual('IDENTITY');
 
-      let button2 = await driver.findComponent(ON.id('VideoContentTransitionEffect'));
+      let button2 = await driver.findComponent(BY.key('VideoContentTransitionEffect'));
       await button2.click();
       await CommonFunc.sleep(1000);
       let strJson2 = getInspectorByKey('VideoContentTransitionEffectStr');
       let obj2: ESObject = JSON.parse(strJson2);
       expect(obj2.$attrs.content).assertEqual('OPACITY');
 
-      let button3 = await driver.findComponent(ON.id('VideoContentTransitionEffect'));
+      let button3 = await driver.findComponent(BY.key('VideoContentTransitionEffect'));
       await button3.click();
       await CommonFunc.sleep(1000);
       let strJson3 = getInspectorByKey('VideoContentTransitionEffectStr');

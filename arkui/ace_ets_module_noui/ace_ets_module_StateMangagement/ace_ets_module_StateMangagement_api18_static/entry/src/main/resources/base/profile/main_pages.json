@@ -29,6 +29,8 @@
     "MainAbility/pages/PersistentStorage/PersistentStorageApi",
     "MainAbility/pages/PersistenceV2/PersistenceV2Api",
     "MainAbility/pages/PersistenceV2/PersistenceV2NotifyOnErrorTest",
+    "MainAbility/pages/PersistenceV2/PersistenceV2DefaultSubCreators",
+    "MainAbility/pages/PersistenceV2/PersistenceV2AbnormalDefaultSubCreators",
     "MainAbility/pages/Monitor/MonitorWildcards",
     "MainAbility/pages/AddMonitor/AddMonitorWildcard",
     "MainAbility/pages/AddMonitor/AddMonitorWildcardUnerfined",
@@ -43,6 +45,9 @@
     "MainAbility/pages/Dump/DumpObject",
     "MainAbility/pages/uiutils/GlobalReusePool",
     "MainAbility/pages/uiutils/GlobalReusePool002",
-    "MainAbility/pages/uiutils/GlobalReusePool003"
+    "MainAbility/pages/uiutils/GlobalReusePool003",
+    "MainAbility/pages/uiutils/GlobalReusePool004",
+    "MainAbility/pages/AddMonitor/AddMonitorWildcard2",
+    "MainAbility/pages/Env/EnvBreakpoint"
   ]
 }

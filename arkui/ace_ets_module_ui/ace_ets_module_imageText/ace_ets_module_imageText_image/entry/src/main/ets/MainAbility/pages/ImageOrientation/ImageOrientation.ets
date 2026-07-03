@@ -27,6 +27,7 @@ struct ImageOrientation {
         .margin(5)
         .objectFit(ImageFit.Fill)
         .id('imageOrientation')
+        .key('imageOrientation')
 
       Flex({wrap: FlexWrap.Wrap}) {
         Button('AUTO').height('8%').fontSize(12)

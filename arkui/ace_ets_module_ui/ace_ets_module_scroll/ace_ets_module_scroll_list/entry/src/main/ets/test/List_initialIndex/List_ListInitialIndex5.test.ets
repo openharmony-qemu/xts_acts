@@ -82,8 +82,8 @@ export default function list_ListInitialIndex5Test() {
       let tenthListItem: RectValue = CommonFunc.getComponentRect('List_ListInitialIndex5_10');
       let eleventhListItem: RectValue = CommonFunc.getComponentRect('List_ListInitialIndex5_11');
       let twelfthListItem: RectValue = CommonFunc.getComponentRect('List_ListInitialIndex5_12');
-      let listContainer: RectValue = CommonFunc.getComponentRect('List_ListInitialIndex5_Container01');
-      let listContainerStrJson = getInspectorByKey('List_ListInitialIndex5_Container01');
+      let listContainer: RectValue = CommonFunc.getComponentRect('List_ListInitialIndex5' + '_Container01');
+      let listContainerStrJson = getInspectorByKey('List_ListInitialIndex5' + '_Container01');
       
       let listContainer_width = listContainer.right - listContainer.left
       let listContainer_height = listContainer.bottom - listContainer.top

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -286,6 +287,37 @@ export default function WindowFocusTest() {
                 done()
             }
         })
+
+    /**
+     * @tc.name testOffScreenShotAppEventwithDestoryedSubWindow_WithoutCallback_static
+     * @tc.number SUB_BASIC_WMS_OFF_SCREENSHOTAPPEVENT_static_0100
+     * @tc.desc 验证子窗销毁后取消监听off_screenshotAppEvent返回1300002错误码
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('testOffScreenShotAppEventwithDestoryedSubWindow_WithoutCallback_static',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName: string = "testOffScreenShotAppEventwithDestoryedSubWindow_WithoutCallback_static";
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        console.log(msgStr + 'begin.');
+        let windowClass: window.Window =
+          await windowStage!.createSubWindow('testOffScreenShotAppEvent_WithoutCallback_static');
+        await windowClass.destroyWindow();
+        try {
+          windowClass.offScreenshotAppEvent();
+          console.info(msgStr + 'Succeeded in calling off screenshotAppEvent.');
+          expect(true).assertFail();
+          done()
+        } catch (exception) {
+          console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code) + ',errMessage: ' +
+          exception.message);
+          expect(exception.code).assertEqual(1300002)
+          expect(exception.message !== '').assertTrue();
+          done()
+        }
+      })
+
         /**
          * @tc.name   testWindowOffDialogTargetTouch_RepeatOff_static
          * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_static_3650

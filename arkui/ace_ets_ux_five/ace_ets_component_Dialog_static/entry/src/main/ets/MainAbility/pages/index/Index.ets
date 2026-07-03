@@ -207,6 +207,8 @@ struct CustomDialogExample {
   @Link inputValue: string;
   controller: CustomDialogController = new CustomDialogController({
     builder: CustomDialogExample({
+      cancel:()=>{},
+      confirm:()=>{},
       textValue: '',
       inputValue: ''
     }),

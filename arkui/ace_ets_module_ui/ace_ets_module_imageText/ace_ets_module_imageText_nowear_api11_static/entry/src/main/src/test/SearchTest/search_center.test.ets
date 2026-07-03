@@ -92,7 +92,7 @@ export default function search_center() {
 
       if (AppStorage.get<number>("winLeft") == 0) {
         console.log('get click before Initial value')
-        let search_01 = CommonFunc.getComponentRect('search_center_search_01');
+        let search_01 = CommonFunc.getComponentRect('search_center' + '_search_01');
         let y1 = search_01.top
 
         let driver = Driver.create();
@@ -102,7 +102,7 @@ export default function search_center() {
           (Math.round(search_01.top + (search_01.bottom - search_01.top) / 2).toInt())
         );
         await CommonFunc.sleep(1000);
-        let search_02 = CommonFunc.getComponentRect('search_center_search_01');
+        let search_02 = CommonFunc.getComponentRect('search_center' + '_search_01');
         let y2 = search_02.top
         expect(y2).assertLess(y1);
       }

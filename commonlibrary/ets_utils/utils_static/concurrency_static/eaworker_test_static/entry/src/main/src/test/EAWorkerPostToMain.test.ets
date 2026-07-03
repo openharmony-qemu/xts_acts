@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -61,20 +62,17 @@ export default function EAWorkerPostToMainTest(): void {
                     worker.start();
                     mainThreadId = EAWorker.main()!.getWorkerId() as int;
 
-                    let resolver: ((val: Any)=>void) | undefined = undefined;
-                    let waiter = new Promise<Any>((resolve)=>{
-                        resolver = resolve;
-                    })
-                    worker.run<void>((): void => {
-                        EAWorker.postToMain<void>((): void => {
+                    const job = worker.run<void>((): void => {
+                        const jobInMain = EAWorker.postToMain<void>((): void => {
                             const currentId = EAWorker.current()!.getWorkerId() as int;
                             if (currentId === mainThreadId) {
                                 executedInMainThread = true;
-                                resolver!(undefined);
                             }
                         });
+                        jobInMain.Await();
                     });
-                    await waiter
+
+                    job.Await();
                     expect(executedInMainThread).assertTrue();
                 } catch (error) {
                     console.error(`${TAG} catch error: ${error.message}`);
@@ -107,19 +105,15 @@ export default function EAWorkerPostToMainTest(): void {
 
                 try {
                     worker.start();
-                    let resolver: ((val: Any)=>void) | undefined = undefined;
-                    let waiter = new Promise<Any>((resolve)=>{
-                        resolver = resolve;
-                    })
-                    worker.run<void>((): void => {
-                        EAWorker.postToMain<int>((): int => {
+
+                    const job = worker.run<void>((): void => {
+                        const jobInMain = EAWorker.postToMain<int>((): int => {
                             return 42;
-                        }).then((workerresult: int): void => {
-                            result = workerresult;
-                            resolver!(undefined);
-                        })
+                        });
+                        result = jobInMain.Await() as int;
                     });
-                    await waiter
+
+                    job.Await();
                     expect(result).assertEqual(42);
                 } catch (error) {
                     console.error(`${TAG} catch error: ${error.message}`);
@@ -153,20 +147,14 @@ export default function EAWorkerPostToMainTest(): void {
                 try {
                     worker.start();
 
-                    let resolver: ((val: Any)=>void) | undefined = undefined;
-                    let waiter = new Promise<Any>((resolve)=>{
-                        resolver = resolve;
-                    })
-                    worker.run<void>((): void => {
-                        EAWorker.postToMain<int>((arg: int): int => {
+                    const job = worker.run<void>((): void => {
+                        const jobInMain = EAWorker.postToMain<int>((arg: int): int => {
                             return arg * 2;
-                        }, 21).then((workerresult: int): void => {
-                            result = workerresult;
-                            resolver!(undefined);
-                        });
+                        }, 21);
+                        result = jobInMain.Await() as int;
                     });
-                    await waiter
 
+                    job.Await();
                     expect(result).assertEqual(42);
                 } catch (error) {
                     console.error(`${TAG} catch error: ${error.message}`);
@@ -200,20 +188,14 @@ export default function EAWorkerPostToMainTest(): void {
                 try {
                     worker.start();
 
-                    let resolver: ((val: Any)=>void) | undefined = undefined;
-                    let waiter = new Promise<Any>((resolve)=>{
-                        resolver = resolve;
-                    })
-                    worker.run<void>((): void => {
-                        EAWorker.postToMain<int>((a: int, b: int, c: int): int => {
+                    const job = worker.run<void>((): void => {
+                        const jobInMain = EAWorker.postToMain<int>((a: int, b: int, c: int): int => {
                             return a + b + c;
-                        }, 10, 20, 30).then((workerresult: int): void => {
-                            result = workerresult;
-                            resolver!(undefined);
-                        });
+                        }, 10, 20, 30);
+                        result = jobInMain.Await() as int;
                     });
-                    await waiter
 
+                    job.Await();
                     expect(result).assertEqual(60);
                 } catch (error) {
                     console.error(`${TAG} catch error: ${error.message}`);
@@ -246,19 +228,15 @@ export default function EAWorkerPostToMainTest(): void {
 
                 try {
                     worker.start();
-                    let resolver: ((val: Any)=>void) | undefined = undefined;
-                    let waiter = new Promise<Any>((resolve)=>{
-                        resolver = resolve;
-                    })
-                    worker.run<void>((): void => {
-                        EAWorker.postToMain<string>((str: string): string => {
+
+                    const job = worker.run<void>((): void => {
+                        const jobInMain = EAWorker.postToMain<string>((str: string): string => {
                             return "Hello " + str;
-                        }, "World").then((workerresult: string): void => {
-                            result = workerresult;
-                            resolver!(undefined);
-                        });
+                        }, "World");
+                        result = jobInMain.Await() as string;
                     });
-                    await waiter
+
+                    job.Await();
                     expect(result).assertEqual("Hello World");
                 } catch (error) {
                     console.error(`${TAG} catch error: ${error.message}`);
@@ -292,19 +270,14 @@ export default function EAWorkerPostToMainTest(): void {
                 try {
                     worker.start();
 
-                    let resolver: ((val: Any)=>void) | undefined = undefined;
-                    let waiter = new Promise<Any>((resolve)=>{
-                        resolver = resolve;
-                    })
-                    worker.run<void>((): void => {
-                        EAWorker.postToMain<boolean>((flag: boolean): boolean => {
+                    const job = worker.run<void>((): void => {
+                        const jobInMain = EAWorker.postToMain<boolean>((flag: boolean): boolean => {
                             return !flag;
-                        }, false).then((workerresult: boolean): void => {
-                            result = workerresult;
-                            resolver!(undefined);
-                        });
+                        }, false);
+                        result = jobInMain.Await() as boolean;
                     });
-                    await waiter
+
+                    job.Await();
                     expect(result).assertTrue();
                 } catch (error) {
                     console.error(`${TAG} catch error: ${error.message}`);
@@ -338,25 +311,20 @@ export default function EAWorkerPostToMainTest(): void {
                 try {
                     worker.start();
 
-                    let resolver: ((val: Any)=>void) | undefined = undefined;
-                    let waiter = new Promise<Any>((resolve)=>{
-                        resolver = resolve;
-                    })
-                    worker.run<void>((): void => {
+                    const job = worker.run<void>((): void => {
                         const input = new TestData();
                         input.value = 10;
                         input.name = "test";
 
-                        EAWorker.postToMain<TestData>((data: TestData): TestData => {
+                        const jobInMain = EAWorker.postToMain<TestData>((data: TestData): TestData => {
                             data.value = data.value * 2;
                             data.name = data.name + "_modified";
                             return data;
-                        }, input).then((workerresult: TestData): void => {
-                            result = workerresult;
-                            resolver!(undefined);
-                        });
+                        }, input);
+                        result = jobInMain.Await() as TestData;
                     });
-                    await waiter
+
+                    job.Await();
                     expect(result.value).assertEqual(20);
                     expect(result.name).assertEqual("test_modified");
                 } catch (error) {
@@ -391,25 +359,20 @@ export default function EAWorkerPostToMainTest(): void {
                 try {
                     worker.start();
 
-                    let resolver: ((val: Any)=>void) | undefined = undefined;
-                    let waiter = new Promise<Any>((resolve)=>{
-                        resolver = resolve;
-                    })
-                    worker.run<void>((): void => {
+                    const job = worker.run<void>((): void => {
                         const arr: Array<int> = [1, 2, 3, 4, 5];
 
-                        EAWorker.postToMain<int>((data: Array<int>): int => {
+                        const jobInMain = EAWorker.postToMain<int>((data: Array<int>): int => {
                             let sum: int = 0;
                             for (let i = 0; i < data.length; i++) {
                                 sum += data[i];
                             }
                             return sum;
-                        }, arr).then((workerresult: int): void => {
-                            result = workerresult;
-                            resolver!(undefined);
-                        });
+                        }, arr);
+                        result = jobInMain.Await() as int;
                     });
-                    await waiter
+
+                    job.Await();
                     expect(result).assertEqual(15);
                 } catch (error) {
                     console.error(`${TAG} catch error: ${error.message}`);
@@ -443,22 +406,17 @@ export default function EAWorkerPostToMainTest(): void {
                 try {
                     worker.start();
 
-                    let resolver: ((val: Any)=>void) | undefined = undefined;
-                    let waiter = new Promise<Any>((resolve)=>{
-                        resolver = resolve;
-                    })
-                    worker.run<void>((): void => {
-                        EAWorker.postToMain<ResultData>((): ResultData => {
+                    const job = worker.run<void>((): void => {
+                        const jobInMain = EAWorker.postToMain<ResultData>((): ResultData => {
                             const r = new ResultData();
                             r.sum = 100;
                             r.count = 10;
                             return r;
-                        }).then((workerresult: ResultData): void => {
-                            result = workerresult;
-                            resolver!(undefined);
                         });
+                        result = jobInMain.Await() as ResultData;
                     });
-                    await waiter
+
+                    job.Await();
                     expect(result.sum).assertEqual(100);
                     expect(result.count).assertEqual(10);
                 } catch (error) {
@@ -492,20 +450,16 @@ export default function EAWorkerPostToMainTest(): void {
 
                 try {
                     worker.start();
-                    let resolver: ((val: Any)=>void) | undefined = undefined;
-                    let waiter = new Promise<Any>((resolve)=>{
-                        resolver = resolve;
-                    })
-                    worker.run<void>((): void => {
-                        EAWorker.postToMain<Array<int>>((): Array<int> => {
+
+                    const job = worker.run<void>((): void => {
+                        const jobInMain = EAWorker.postToMain<Array<int>>((): Array<int> => {
                             const arr: Array<int> = [10, 20, 30, 40, 50];
                             return arr;
-                        }).then((workerresult: Array<int>): void => {
-                            result = workerresult;
-                            resolver!(undefined);
                         });
+                        result = jobInMain.Await() as Array<int>;
                     });
-                    await waiter
+
+                    job.Await();
                     expect(result.length).assertEqual(5);
                     expect(result[0]).assertEqual(10);
                     expect(result[4]).assertEqual(50);
@@ -541,21 +495,18 @@ export default function EAWorkerPostToMainTest(): void {
                 try {
                     worker.start();
 
-                    let resolver: ((val: Any)=>void) | undefined = undefined;
-                    let waiter = new Promise<Any>((resolve)=>{
-                        resolver = resolve;
-                    })
-                    await worker.run<void>(async (): Promise<void> => {
+                    const job = worker.run<void>((): void => {
                         try {
-                            await EAWorker.postToMain<int>((): int => {
+                            const jobInMain = EAWorker.postToMain<int>((): int => {
                                 throw new Error("Test exception in postToMain");
-                            })
+                            });
+                            jobInMain.Await();
                         } catch (e) {
                             exceptionCaught = true;
-                            resolver!(undefined);
                         }
                     });
-                    await waiter
+
+                    job.Await();
                     expect(exceptionCaught).assertTrue();
                 } catch (error) {
                     console.error(`${TAG} catch error: ${error.message}`);
@@ -588,29 +539,24 @@ export default function EAWorkerPostToMainTest(): void {
                 try {
                     worker.start();
 
-                    let resolver: ((val: Any)=>void) | undefined = undefined;
-                    let waiter = new Promise<Any>((resolve)=>{
-                        resolver = resolve;
-                    })
-                    worker.run<void>((): void => {
-                        EAWorker.postToMain<int>((): int => {
+                    const job = worker.run<void>((): void => {
+                        const job1 = EAWorker.postToMain<int>((): int => {
                             return 10;
-                        }).then((workerresult: int): void => {
-                            result += workerresult;
                         });
-                        EAWorker.postToMain<int>((): int => {
+                        const job2 = EAWorker.postToMain<int>((): int => {
                             return 20;
-                        }).then((workerresult: int): void => {
-                            result += workerresult;
                         });
-                        EAWorker.postToMain<int>((): int => {
+                        const job3 = EAWorker.postToMain<int>((): int => {
                             return 30;
-                        }).then((workerresult: int): void => {
-                            result += workerresult;
-                            resolver!(undefined);
                         });
+
+                        const r1 = job1.Await() as int;
+                        const r2 = job2.Await() as int;
+                        const r3 = job3.Await() as int;
+                        result = r1 + r2 + r3;
                     });
-                    await waiter
+
+                    job.Await();
                     expect(result).assertEqual(60);
                 } catch (error) {
                     console.error(`${TAG} catch error: ${error.message}`);
@@ -640,7 +586,7 @@ export default function EAWorkerPostToMainTest(): void {
                 console.info(`${TAG} test start`);
                 const numWorkers: int = 3;
                 const workers = Array.create<EAWorker | undefined>(numWorkers, undefined);
-                const jobs = Array.create<Promise<void> | undefined>(numWorkers, undefined);
+                const jobs = Array.create<Job<void> | undefined>(numWorkers, undefined);
                 let counter: int = 0;
 
                 try {
@@ -649,26 +595,20 @@ export default function EAWorkerPostToMainTest(): void {
                         workers[i]!.start();
                     }
 
-                    let resolver: ((val: Any)=>void) | undefined = undefined;
-                    let waiter = new Promise<Any>((resolve)=>{
-                        resolver = resolve;
-                    })
                     for (let i = 0; i < numWorkers; i++) {
                         const workerId = i;
                         jobs[i] = workers[i]!.run<void>((): void => {
                             const jobInMain = EAWorker.postToMain<void>((): void => {
                                 counter++;
-                                if (counter === numWorkers) {
-                                    resolver!(undefined);
-                                }
                             });
-                        })
+                            jobInMain.Await();
+                        });
                     }
 
                     for (let i = 0; i < numWorkers; i++) {
-                        await jobs[i]!;
+                        jobs[i]!.Await();
                     }
-                    await waiter
+
                     expect(counter).assertEqual(3);
                 } catch (error) {
                     console.error(`${TAG} catch error: ${error.message}`);
@@ -704,23 +644,23 @@ export default function EAWorkerPostToMainTest(): void {
                 try {
                     worker.start();
 
-                    let resolver: ((val: Any)=>void) | undefined = undefined;
-                    let waiter = new Promise<Any>((resolve)=>{
-                        resolver = resolve;
-                    })
-                    await worker.run<void>((): void => {
-                        EAWorker.postToMain<void>((): void => {
+                    const job = worker.run<void>((): void => {
+                        const job1 = EAWorker.postToMain<void>((): void => {
                             executionOrder.push(1);
                         });
-                        EAWorker.postToMain<void>((): void => {
+                        const job2 = EAWorker.postToMain<void>((): void => {
                             executionOrder.push(2);
                         });
-                        EAWorker.postToMain<void>((): void => {
+                        const job3 = EAWorker.postToMain<void>((): void => {
                             executionOrder.push(3);
-                            resolver!(undefined);
                         });
+
+                        job1.Await();
+                        job2.Await();
+                        job3.Await();
                     });
-                    await waiter
+
+                    job.Await();
                     expect(executionOrder.length).assertEqual(3);
                     expect(executionOrder[0]).assertEqual(1);
                     expect(executionOrder[1]).assertEqual(2);
@@ -753,29 +693,24 @@ export default function EAWorkerPostToMainTest(): void {
                 console.info(`${TAG} test start`);
                 const worker = new EAWorker();
                 const sharedData = new SharedData();
-                let result: int = 0;
 
                 try {
                     worker.start();
-                    
-                    let resolver: ((val: Any)=>void) | undefined = undefined;
-                    let waiter = new Promise<Any>((resolve)=>{
-                        resolver = resolve;
-                    })
-                    worker.run<void>((): void => {
-                        EAWorker.postToMain<void>((): void => {
+
+                    const job = worker.run<void>((): void => {
+                        const jobInMain = EAWorker.postToMain<void>((): void => {
                             sharedData.value = 100;
                         });
+                        jobInMain.Await();
 
-                        EAWorker.postToMain<int>((): int => {
+                        const jobInMain2 = EAWorker.postToMain<int>((): int => {
                             return sharedData.value * 2;
-                        }).then((workerresult: int): void => {
-                            result = workerresult;
-                            resolver!(undefined);
                         });
+                        const result = jobInMain2.Await() as int;
+                        expect(result).assertEqual(200);
                     });
-                    await waiter
-                    expect(result).assertEqual(200);
+
+                    job.Await();
                     expect(sharedData.value).assertEqual(100);
                 } catch (error) {
                     console.error(`${TAG} catch error: ${error.message}`);
@@ -809,20 +744,14 @@ export default function EAWorkerPostToMainTest(): void {
                 try {
                     worker.start();
 
-                    let resolver: ((val: Any)=>void) | undefined = undefined;
-                    let waiter = new Promise<Any>((resolve)=>{
-                        resolver = resolve;
-                    })
-                    worker.run<void>((): void => {
-                        EAWorker.postToMain<int | null>((arg: int | null): int | null => {
+                    const job = worker.run<void>((): void => {
+                        const jobInMain = EAWorker.postToMain<int | null>((arg: int | null): int | null => {
                             return arg;
-                        }, null).then((workerresult: int | null): void => {
-                            result = workerresult;
-                            resolver!(undefined);
-                        });
+                        }, null);
+                        result = jobInMain.Await() as int | null;
                     });
-                    await waiter
 
+                    job.Await();
                     expect(result).assertNull();
                 } catch (error) {
                     console.error(`${TAG} catch error: ${error.message}`);
@@ -856,19 +785,14 @@ export default function EAWorkerPostToMainTest(): void {
                 try {
                     worker.start();
 
-                    let resolver: ((val: Any)=>void) | undefined = undefined;
-                    let waiter = new Promise<Any>((resolve)=>{
-                        resolver = resolve;
-                    })
-                    worker.run<void>((): void => {
-                        EAWorker.postToMain<int | undefined>((arg: int | undefined): int | undefined => {
+                    const job = worker.run<void>((): void => {
+                        const jobInMain = EAWorker.postToMain<int | undefined>((arg: int | undefined): int | undefined => {
                             return arg;
-                        }, undefined).then((workerresult: int | undefined): void => {
-                            result = workerresult;
-                            resolver!(undefined);
-                        });
+                        }, undefined);
+                        result = jobInMain.Await() as int | undefined;
                     });
-                    await waiter
+
+                    job.Await();
                     expect(result).assertUndefined();
                 } catch (error) {
                     console.error(`${TAG} catch error: ${error.message}`);
@@ -902,19 +826,14 @@ export default function EAWorkerPostToMainTest(): void {
                 try {
                     worker.start();
 
-                    let resolver: ((val: Any)=>void) | undefined = undefined;
-                    let waiter = new Promise<Any>((resolve)=>{
-                        resolver = resolve;
-                    })
-                    worker.run<void>((): void => {
-                        EAWorker.postToMain<string>((): string => {
+                    const job = worker.run<void>((): void => {
+                        const jobInMain = EAWorker.postToMain<string>((): string => {
                             return "No arguments";
-                        }).then((workerresult: string): void => {
-                            result = workerresult;
-                            resolver!(undefined);
                         });
+                        result = jobInMain.Await() as string;
                     });
-                    await waiter
+
+                    job.Await();
                     expect(result).assertEqual("No arguments");
                 } catch (error) {
                     console.error(`${TAG} catch error: ${error.message}`);
@@ -948,17 +867,14 @@ export default function EAWorkerPostToMainTest(): void {
                 try {
                     worker.start();
 
-                    let resolver: ((val: Any)=>void) | undefined = undefined;
-                    let waiter = new Promise<Any>((resolve)=>{
-                        resolver = resolve;
-                    })
-                    worker.run<void>((): void => {
-                        EAWorker.postToMain<void>((): void => {
+                    const job = worker.run<void>((): void => {
+                        const jobInMain = EAWorker.postToMain<void>((): void => {
                             executed = true;
-                            resolver!(undefined);
-                        })
+                        });
+                        jobInMain.Await();
                     });
-                    await waiter
+
+                    job.Await();
                     expect(executed).assertTrue();
                 } catch (error) {
                     console.error(`${TAG} catch error: ${error.message}`);
@@ -992,20 +908,17 @@ export default function EAWorkerPostToMainTest(): void {
                 try {
                     worker.start();
 
-                    let resolver: ((val: Any)=>void) | undefined = undefined;
-                    let waiter = new Promise<Any>((resolve)=>{
-                        resolver = resolve;
-                    })
-                    worker.run<void>((): void => {
-                        EAWorker.postToMain<int>((): int => {
-                            return 42;
-                        }).then((workerresult: int): void => {
-                            result = workerresult;
-                            resolver!(undefined);
+                    const job = worker.run<void>((): void => {
+                        const jobInMain = EAWorker.postToMain<int>((): int => {
+                            const innerJob = EAWorker.postToMain<int>((): int => {
+                                return 42;
+                            });
+                            return innerJob.Await() as int;
                         });
+                        result = jobInMain.Await() as int;
                     });
-                    await waiter
 
+                    job.Await();
                     expect(result).assertEqual(42);
                 } catch (error) {
                     console.error(`${TAG} catch error: ${error.message}`);
@@ -1039,25 +952,20 @@ export default function EAWorkerPostToMainTest(): void {
                 try {
                     worker.start();
 
-                    let resolver: ((val: Any)=>void) | undefined = undefined;
-                    let waiter = new Promise<Any>((resolve)=>{
-                        resolver = resolve;
-                    })
-                    worker.run<void>((): void => {
+                    const job = worker.run<void>((): void => {
                         const input = new OuterData();
                         input.inner.value = 10;
                         input.name = "test";
 
-                        EAWorker.postToMain<OuterData>((data: OuterData): OuterData => {
+                        const jobInMain = EAWorker.postToMain<OuterData>((data: OuterData): OuterData => {
                             data.inner.value = data.inner.value * 3;
                             data.name = data.name + "_processed";
                             return data;
-                        }, input).then((workerresult: OuterData): void => {
-                            result = workerresult;
-                            resolver!(undefined);
-                        });
+                        }, input);
+                        result = jobInMain.Await() as OuterData;
                     });
-                    await waiter
+
+                    job.Await();
                     expect(result.inner.value).assertEqual(30);
                     expect(result.name).assertEqual("test_processed");
                 } catch (error) {
@@ -1089,32 +997,26 @@ export default function EAWorkerPostToMainTest(): void {
                 const worker = new EAWorker();
                 const iterations: int = 100;
                 let result: int = 0;
-                let sum: int = 0;
 
                 try {
                     worker.start();
 
-                    let resolver: ((val: Any)=>void) | undefined = undefined;
-                    let waiter = new Promise<Any>((resolve)=>{
-                        resolver = resolve;
-                    })
-                    worker.run<void>((): void => {
-                        const jobs = Array.create<Promise<int> | undefined>(iterations, undefined);
+                    const job = worker.run<void>((): void => {
+                        const jobs = Array.create<Job<int> | undefined>(iterations, undefined);
                         for (let i = 0; i < iterations; i++) {
-                            jobs.push(EAWorker.postToMain<int>((): int => {
+                            jobs[i] = EAWorker.postToMain<int>((): int => {
                                 return 1;
-                            }));
-                            jobs[i]!.then((workerresult: int): void => {
-                                sum += workerresult;
-                                if (sum == 100) {
-                                    result = sum;
-                                    resolver!(undefined);
-                                }
                             });
                         }
 
+                        let sum: int = 0;
+                        for (let i = 0; i < iterations; i++) {
+                            sum += jobs[i]!.Await() as int;
+                        }
+                        result = sum;
                     });
-                    await waiter
+
+                    job.Await();
                     expect(result).assertEqual(100);
                 } catch (error) {
                     console.error(`${TAG} catch error: ${error.message}`);

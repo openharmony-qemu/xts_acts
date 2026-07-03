@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../hypium/index';
 import Utils from './Util.test';
 
 let wlDel_2400: WorkerLocal<string> = new WorkerLocal<string>(() => "init");
@@ -671,13 +671,13 @@ export default function BuiltinsWorkerLocalDeleteTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsWorkerLocalDeleteTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('BuiltinsWorkerLocalDeleteTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       wlDel_3900 = new WorkerLocal<string>(() => "ea_init");
       let eaWorker: EAWorker = new EAWorker("del_ea_3900");
       eaWorker.start();
-      let result: string = await eaWorker.run<string>(deleteEAWorkerTask3900);
+      let result: string = eaWorker.run<string>(deleteEAWorkerTask3900).Await();
       expect(result).assertEqual("ea_init");
-      await eaWorker.join();
+      eaWorker.join();
     })
 
     /**
@@ -688,13 +688,13 @@ export default function BuiltinsWorkerLocalDeleteTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsWorkerLocalDeleteTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('BuiltinsWorkerLocalDeleteTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       wlDel_4000 = new WorkerLocal<string>(() => "ea_init");
       let eaWorker: EAWorker = new EAWorker("del_ea_4000");
       eaWorker.start();
-      let result: string = await eaWorker.run<string>(deleteEAWorkerTask4000);
+      let result: string = eaWorker.run<string>(deleteEAWorkerTask4000).Await();
       expect(result).assertEqual("ea_init");
-      await eaWorker.join();
+      eaWorker.join();
     })
 
     /**
@@ -705,13 +705,13 @@ export default function BuiltinsWorkerLocalDeleteTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsWorkerLocalDeleteTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('BuiltinsWorkerLocalDeleteTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       wlDel_4100 = new WorkerLocal<string>(() => "ea_init");
       let eaWorker: EAWorker = new EAWorker("del_ea_4100");
       eaWorker.start();
-      let result: string = await eaWorker.run<string>(deleteEAWorkerTask4100);
+      let result: string = eaWorker.run<string>(deleteEAWorkerTask4100).Await();
       expect(result).assertEqual("ea_init");
-      await eaWorker.join();
+      eaWorker.join();
     })
 
     /**
@@ -722,13 +722,13 @@ export default function BuiltinsWorkerLocalDeleteTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsWorkerLocalDeleteTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('BuiltinsWorkerLocalDeleteTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       wlDel_4200 = new WorkerLocal<string>(() => "ea_init");
       let eaWorker: EAWorker = new EAWorker("del_ea_4200");
       eaWorker.start();
-      let result: string = await eaWorker.run<string>(deleteEAWorkerTask4200);
+      let result: string = eaWorker.run<string>(deleteEAWorkerTask4200).Await();
       expect(result).assertEqual("ea_v3");
-      await eaWorker.join();
+      eaWorker.join();
     })
 
     /**
@@ -739,15 +739,15 @@ export default function BuiltinsWorkerLocalDeleteTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsWorkerLocalDeleteTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('BuiltinsWorkerLocalDeleteTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       wlDel_4300 = new WorkerLocal<string>(() => "ea_main_init");
       wlDel_4300.set("main_value");
       let eaWorker: EAWorker = new EAWorker("del_ea_4300");
       eaWorker.start();
-      let result: string = await eaWorker.run<string>(deleteEAWorkerTask4300);
+      let result: string = eaWorker.run<string>(deleteEAWorkerTask4300).Await();
       expect(result).assertEqual("ea_main_init");
       expect(wlDel_4300.get()).assertEqual("main_value");
-      await eaWorker.join();
+      eaWorker.join();
     })
 
     /**
@@ -758,7 +758,7 @@ export default function BuiltinsWorkerLocalDeleteTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsWorkerLocalDeleteTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('BuiltinsWorkerLocalDeleteTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       wlDel_4400 = new WorkerLocal<string>(() => "ea_shared_init");
       wlDel_4400.set("main_val");
       let ea1: EAWorker = new EAWorker("del_ea_4400_1");
@@ -770,15 +770,15 @@ export default function BuiltinsWorkerLocalDeleteTest(): void {
       let p1 = ea1.run<string>(deleteEAWorkerTask4400);
       let p2 = ea2.run<string>(deleteEAWorkerTask4400);
       let p3 = ea3.run<string>(deleteEAWorkerTask4400);
-      let results: string[] = await Promise.all([p1, p2, p3]);
+      let results: string[] = [p1.Await(), p2.Await(), p3.Await()];
       expect(results.length).assertEqual(3);
       expect(results[0]).assertEqual("ea_shared_init");
       expect(results[1]).assertEqual("ea_shared_init");
       expect(results[2]).assertEqual("ea_shared_init");
       expect(wlDel_4400.get()).assertEqual("main_val");
-      await ea1.join();
-      await ea2.join();
-      await ea3.join();
+      ea1.join();
+      ea2.join();
+      ea3.join();
     })
 
     /**

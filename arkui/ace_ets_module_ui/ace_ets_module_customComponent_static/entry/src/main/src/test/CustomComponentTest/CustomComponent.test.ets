@@ -25,7 +25,7 @@ import { CustomComponentLifecycleState, CustomComponentInvokeOptions } from '@oh
 
 const SLEEP_TIME = 1000;
 
-export default function CustomComponentTest() {
+export default function CustomComponentTest(): void {
   describe('CustomComponentTest', (): void => {
     beforeAll(async (): Promise<void> => {
       console.info('[ARKUI_NEW] CustomComponentTest beforeAll start');

@@ -106,7 +106,7 @@ struct stageAlertDialog {
           .padding(10)
           .textAlign(TextAlign.Center)
           .textOverflow({ overflow: TextOverflow.None })
-          .key("AlertDialog2")
+          .key("stageAlertDialog_AlertDialog2")
           .onClick((e: ClickEvent) => {
             try {
               AppStorage.get<UIContext>('uiContent')!.showAlertDialog(

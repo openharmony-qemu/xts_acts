@@ -62,7 +62,7 @@ export default function scrollSnapAnimationSpeedModifier() {
       let getKeyBtn = await driver.findComponent(ON.id('getKeyBtn'));
       await getKeyBtn.click();
       await CommonFunc.sleep(SLEEP_TIME);
-      let strJsonNew:string = getInspectorByKey('speedValue');
+      let strJsonNew:string = getInspectorByKey('scrollSnapAnimationSpeedModifier' + '_speedValue');
       expect(JSON.parse(strJsonNew).$attrs.content).assertEqual('ScrollSnapAnimationSpeed.SLOW');
       console.info('[testListSpeed001] END');
       done();
@@ -85,7 +85,7 @@ export default function scrollSnapAnimationSpeedModifier() {
       let getKeyBtn = await driver.findComponent(ON.id('getKeyBtn'));
       await getKeyBtn.click();
       await CommonFunc.sleep(SLEEP_TIME);
-      let strJsonNew:string = getInspectorByKey('speedValue');
+      let strJsonNew:string = getInspectorByKey('scrollSnapAnimationSpeedModifier' + '_speedValue');
       expect(JSON.parse(strJsonNew).$attrs.content).assertEqual('ScrollSnapAnimationSpeed.NORMAL');
       console.info('[testListSpeed002] END');
       done();
@@ -108,7 +108,7 @@ export default function scrollSnapAnimationSpeedModifier() {
       let getKeyBtn = await driver.findComponent(ON.id('getKeyBtn'));
       await getKeyBtn.click();
       await CommonFunc.sleep(SLEEP_TIME);
-      let strJsonNew:string = getInspectorByKey('speedValue');
+      let strJsonNew:string = getInspectorByKey('scrollSnapAnimationSpeedModifier' + '_speedValue');
       expect(JSON.parse(strJsonNew).$attrs.content).assertEqual('ScrollSnapAnimationSpeed.SLOW');
       console.info('[testListSpeed003] END');
       done();
@@ -131,7 +131,7 @@ export default function scrollSnapAnimationSpeedModifier() {
       let getKeyBtn = await driver.findComponent(ON.id('getKeyBtn'));
       await getKeyBtn.click();
       await CommonFunc.sleep(SLEEP_TIME);
-      let strJsonNew:string = getInspectorByKey('speedValue');
+      let strJsonNew:string = getInspectorByKey('scrollSnapAnimationSpeedModifier' + '_speedValue');
       expect(JSON.parse(strJsonNew).$attrs.content).assertEqual('ScrollSnapAnimationSpeed.NORMAL');
       console.info('[testListSpeed004] END');
       done();
@@ -154,7 +154,7 @@ export default function scrollSnapAnimationSpeedModifier() {
       let getKeyBtn = await driver.findComponent(ON.id('getKeyBtn'));
       await getKeyBtn.click();
       await CommonFunc.sleep(SLEEP_TIME);
-      let strJsonNew:string = getInspectorByKey('speedValue');
+      let strJsonNew:string = getInspectorByKey('scrollSnapAnimationSpeedModifier' + '_speedValue');
       expect(JSON.parse(strJsonNew).$attrs.content).assertEqual('ScrollSnapAnimationSpeed.NORMAL');
       console.info('[testListSpeed005] END');
       done();

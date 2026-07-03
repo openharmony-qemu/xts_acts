@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -102,6 +102,7 @@ class B_10 {
   static $_invoke(p: string): string { return p }
 }
 class C_10 extends B_10 {
+  static $_invoke(n: number): number { return n + n }
   static $_invoke(p: string): string { return p + p }
   static $_invoke(p: string, q: boolean): string { return p + q }
 }
@@ -112,6 +113,7 @@ class B_11 {
   static $_invoke(p: string): string { return p }
 }
 class C_11 extends B_11 {
+  static $_invoke(n: number): number { return n + n }
   static $_invoke(p: string): string { return p + p }
   static $_invoke(p: string, q: boolean): string { return p + q }
 }
@@ -121,9 +123,11 @@ class A_12 {
   static $_invoke(): string { return 'A' }
 }
 class B_12 extends A_12 {
+  static $_invoke(): string { return 'A' }
   $_invoke(): string { return 'B' }
 }
 class C_12 extends B_12 {
+  static $_invoke(): string { return 'A' }
   $_invoke(): string { return 'C' }
 }
 
@@ -146,6 +150,12 @@ class B_14 {
   }
 }
 class C_14 extends B_14 {
+  static $_invoke(p: boolean): string {
+    if (p) {
+      throw new Error('invoke error')
+    }
+    return 'B'
+  }
   $_invoke(): C_14 { return new C_14() }
 }
 function foo(p: boolean): string {

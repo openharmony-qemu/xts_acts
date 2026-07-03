@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -3662,10 +3663,11 @@ export default function WindowPropertiesTest() {
             let win: window.Window  = await windowStage!.createSubWindow('testWindowOffScreenshot_RepeatOff_static');
             console.log(msgStr + 'windowStage!.createSubWindow success');
             expect(!!win).assertTrue();
+            let callback = () => {
+             console.log(`${caseName} screenshot happened`);
+            }
             try {
-                (win as window.Window).onScreenshot(() => {
-                    console.info(msgStr + 'screenshot happened.');
-                });
+                (win as window.Window).onScreenshot(callback);
             } catch (exception) {
                 console.error(msgStr + 'Failed to register callback. Cause: ' + JSON.stringify(exception));
                 await (win as window.Window).destroyWindow();
@@ -3673,7 +3675,7 @@ export default function WindowPropertiesTest() {
                 done();
             }
             try {
-                (win as window.Window).offScreenshot();
+                (win as window.Window).offScreenshot(callback);
             } catch (exception) {
                 console.error(msgStr + 'Failed to register callback. Cause: ' + JSON.stringify(exception));
                 await (win as window.Window).destroyWindow();

@@ -22,6 +22,7 @@ struct TextExample1 {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Start }) {
       Text('LineBreakStrategy.GREEDY').fontSize(9).fontColor(0xCCCCCC).width('90%').padding(10)
       Text(this.message1).id('text_Strategy_1')
+      .key('text_Strategy_1')
         .fontSize(12)
         .border({ width: 1 })
         .padding(10)
@@ -29,6 +30,7 @@ struct TextExample1 {
         .lineBreakStrategy(LineBreakStrategy.GREEDY)
       Text('LineBreakStrategy.HIGH_QUALITY').fontSize(9).fontColor(0xCCCCCC).width('90%').padding(10)
       Text(this.message1).id('text_Strategy_2')
+      .key('text_Strategy_2')
         .fontSize(12)
         .border({ width: 1 })
         .padding(10)
@@ -36,6 +38,7 @@ struct TextExample1 {
         .lineBreakStrategy(LineBreakStrategy.HIGH_QUALITY)
       Text('LineBreakStrategy.BALANCED').fontSize(9).fontColor(0xCCCCCC).width('90%').padding(10)
       Text(this.message1).id('text_Strategy_3')
+      .key('text_Strategy_3')
         .fontSize(12)
         .border({ width: 1 })
         .padding(10)

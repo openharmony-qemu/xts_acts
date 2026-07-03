@@ -288,7 +288,7 @@ it('searchTest_static_013', Level.LEVEL0, async (done: () => void): Promise<void
 it('searchTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('searchTest_static_001 START');
       let driver = Driver.create();
-      let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button =  await (driver.findComponent(ON.id('search' + '_changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
       let strJsonNew = inspector.getInspectorByKey('search'); //测试组件的key名称

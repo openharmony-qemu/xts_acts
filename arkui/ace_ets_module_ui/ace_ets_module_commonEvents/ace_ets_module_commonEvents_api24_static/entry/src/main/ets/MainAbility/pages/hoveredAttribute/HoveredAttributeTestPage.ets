@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -33,7 +33,9 @@ import {
   CustomStyles,
   Scroll,
   NodeContainer,
-  Blank
+  Blank,
+  AttributeModifierState,
+  UIState
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 
@@ -54,7 +56,7 @@ class MyButtonModifier implements AttributeModifier<ButtonAttribute> {
   }
 
   monitoredStates(): int {
-    return 17;
+    return AttributeModifierState.HOVERED;
   }
 }
 
@@ -78,7 +80,7 @@ class MyNodeController extends NodeController {
       if (currentUIStates == 0) {
         node.commonAttribute.backgroundColor(Color.Red)
       }
-      if (currentUIStates == 16) {
+      if (currentUIStates == UIState.HOVERED) {
         node.commonAttribute.backgroundColor(Color.Blue)
       }
     }, false)

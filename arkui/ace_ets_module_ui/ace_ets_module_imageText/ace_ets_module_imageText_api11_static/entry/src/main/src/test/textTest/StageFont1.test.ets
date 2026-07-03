@@ -15,13 +15,14 @@
  */
 
 import hilog from '@ohos.hilog';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router, Font } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
-import inspector from '@ohos.arkui.inspector';
+import inspector from '@ohos.arkui.inspector'
+import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
@@ -87,7 +88,7 @@ export default function stageFontTest() {
       console.info('Stage_Font_static_0100 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('button');
+          let strJson = inspector.getInspectorByKey('stageFont' + '_button');
           console.info('Stage_Font_static_0100 START  :' + JSON.stringify(strJson));
           
           console.info("Stage_Font_static_0100 JSON.parseJsonElement(strJson).getElement('$attrs').getString('')labelStyle is: " +
@@ -97,7 +98,7 @@ export default function stageFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('labelStyle')).getString('font')).getString('family')).assertEqual("fontCustom");
           console.info('Stage_Font_static_0100 END ');
         } catch (err) {
-          expect(false).assertEqual(true);
+          expect().assertFail()
           console.info('Stage_Font_static_0100 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -115,7 +116,7 @@ export default function stageFontTest() {
       console.info('Stage_Font_static_0200 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('text');
+          let strJson = inspector.getInspectorByKey('stageFont' + '_text');
           console.info('Stage_Font_static_0200 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("Stage_Font_static_0200 JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontFamily') is: " +
@@ -123,7 +124,7 @@ export default function stageFontTest() {
           expect(obj.getElement('$attrs').getString('fontFamily')).assertEqual("fontCustom");
           console.info('Stage_Font_static_0200 END ');
         } catch (err) {
-          expect(false).assertEqual(true);
+          expect().assertFail()
           console.info('Stage_Font_static_0200 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -141,13 +142,13 @@ export default function stageFontTest() {
       console.info('Stage_Font_static_0300 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('textArea');
+          let strJson = inspector.getInspectorByKey('stageFont' + '_textArea');
           console.info('Stage_Font_static_0300 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           expect(obj.getElement('$attrs').getString('fontFamily')).assertEqual("fontCustom");
           console.info('Stage_Font_static_0300 END ');
         } catch (err) {
-          expect(false).assertEqual(true);
+          expect().assertFail()
           console.info('Stage_Font_static_0300 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -173,7 +174,7 @@ export default function stageFontTest() {
           expect(obj.getElement('$attrs').getString('fontFamily')).assertEqual("fontCustom");
           console.info('Stage_Font_static_0400 END ');
         } catch (err) {
-          expect(false).assertEqual(true);
+          expect().assertFail()
           console.info('Stage_Font_static_0400 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -199,7 +200,7 @@ export default function stageFontTest() {
           expect(obj.getElement('$attrs').getString('fontFamily')).assertEqual("fontCustom");
           console.info('Stage_Font_static_0500 END ');
         } catch (err) {
-          expect(false).assertEqual(true);
+          expect().assertFail()
           console.info('Stage_Font_static_0500 ERR  ' + JSON.stringify(err));
         }
         done();

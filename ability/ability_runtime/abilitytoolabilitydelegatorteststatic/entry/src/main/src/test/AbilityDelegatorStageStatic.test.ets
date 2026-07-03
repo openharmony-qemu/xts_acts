@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -726,6 +727,7 @@ export default function AbilityDelegatorStageStaticTest() {
 
             hilog.info(domain, tag, `${itName} doAbilityForeground`);
             try {
+              expect(ability.isDestroyed).assertFalse();
               await abilityDelegator.doAbilityForeground(ability);
               hilog.info(domain, tag, `${itName} doAbilityForeground success`);
 

@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -66,7 +66,7 @@ export default function pixelMapScaleTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_0100', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_0100";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let scaleX: number = 2.0;
       let scaleY: number = 1.0;
@@ -98,7 +98,7 @@ export default function pixelMapScaleTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_0200', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_0200";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let scaleX: int = 0;
       let scaleY: int = 0;
@@ -130,7 +130,7 @@ export default function pixelMapScaleTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_0300', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_0300";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let scaleX: int = 999;
       let scaleY: int = 999;
@@ -162,7 +162,7 @@ export default function pixelMapScaleTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_0400', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_0400";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let scaleX: number = 1.0;
       let scaleY: number = 2.0;
@@ -194,7 +194,7 @@ export default function pixelMapScaleTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_0500', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_0500";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let scaleX: number = 2.0;
       let scaleY: number = 1.0;
@@ -220,7 +220,7 @@ export default function pixelMapScaleTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_0600', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_0600";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let scaleX: int = 0;
       let scaleY: int = 0;
@@ -246,7 +246,7 @@ export default function pixelMapScaleTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_0700', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_0700";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let scaleX: int = 999;
       let scaleY: int = 999;
@@ -272,7 +272,7 @@ export default function pixelMapScaleTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_0800', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_0800";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let scaleX: number = 1.0;
       let scaleY: number = 2.0;
@@ -298,7 +298,7 @@ export default function pixelMapScaleTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_0900', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_0900";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let scaleX: number = 2.0;
       let scaleY: number = 1.0;
@@ -324,7 +324,7 @@ export default function pixelMapScaleTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_1000', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_1000";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let scaleX: number = 1.0;
       let scaleY: number = 2.0;
@@ -350,7 +350,7 @@ export default function pixelMapScaleTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_1100', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_1100";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let scaleX: int = 0;
       let scaleY: int = 0;
@@ -376,7 +376,7 @@ export default function pixelMapScaleTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_1200', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_1200";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let scaleX: int = 999;
       let scaleY: int = 999;
@@ -402,7 +402,7 @@ export default function pixelMapScaleTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_1300', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_1300";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let scaleX: number = 2.0;
       let scaleY: number = 1.0;
@@ -428,7 +428,7 @@ export default function pixelMapScaleTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_1400', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_1400";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let scaleX: number = 1.0;
       let scaleY: number = 2.0;
@@ -454,7 +454,7 @@ export default function pixelMapScaleTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_1500', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_1500";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let scaleX: int = 0;
       let scaleY: int = 0;
@@ -480,7 +480,7 @@ export default function pixelMapScaleTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_1600', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_1600";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let scaleX: int = 999;
       let scaleY: int = 999;
@@ -506,7 +506,7 @@ export default function pixelMapScaleTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_1700', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_1700";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let scaleX: number = 2.0;
       let scaleY: number = 1.0;
@@ -532,7 +532,7 @@ export default function pixelMapScaleTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_1800', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_1800";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let scaleX: number = 2.0;
       let scaleY: number = 1.0;
@@ -558,7 +558,7 @@ export default function pixelMapScaleTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_1900', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_1900";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let scaleX: number = 2.0;
       let scaleY: number = 1.0;
@@ -584,7 +584,7 @@ export default function pixelMapScaleTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_2000', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_2000";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let scaleX: number = 2.0;
       let scaleY: number = 1.0;
@@ -610,7 +610,7 @@ export default function pixelMapScaleTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_2100', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_2100";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let scaleX: number = 1.0;
       let scaleY: number = 2.0;
@@ -636,7 +636,7 @@ export default function pixelMapScaleTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_2200', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_2200";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let scaleX: int = 0;
       let scaleY: int = 0;
@@ -662,7 +662,7 @@ export default function pixelMapScaleTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_2300', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_2300";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let scaleX: int = 999;
       let scaleY: int = 999;
@@ -688,7 +688,7 @@ export default function pixelMapScaleTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_2400', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_2400";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let scaleX: int = 999;
       let scaleY: int = 999;
@@ -714,7 +714,7 @@ export default function pixelMapScaleTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_2500', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_2500";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let scaleX: int = 999;
       let scaleY: int = 999;
@@ -740,7 +740,7 @@ export default function pixelMapScaleTest(): void {
      */
     it('SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_2600', Level.LEVEL1, async (done: () => void) => {
       const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_SCALE_static_2600";
-      console.info(TAG, `startï¼?{testName}`);
+      console.info(TAG, `startï¿½?{testName}`);
       let pixelMapObj = await createPixelMapTest(context);
       let scaleX: int = 999;
       let scaleY: int = 999;

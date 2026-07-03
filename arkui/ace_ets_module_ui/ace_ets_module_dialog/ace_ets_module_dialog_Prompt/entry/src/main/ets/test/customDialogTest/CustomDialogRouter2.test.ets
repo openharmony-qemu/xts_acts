@@ -53,24 +53,24 @@ export default function CustomDialogRouter2() {
       console.info('CustomDialogRouter_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('Custom_Dialog_Router'));
+      let button = await driver.findComponent(ON.id('CustomDialogRouter2' + '_Custom_Dialog_Router'));
       await button.click();
       await CommonFunc.sleep(1000);
 
       // router page is change
-      let routerButton = await driver.findComponent(ON.id('CustomDialogRouterButton'));
+      let routerButton = await driver.findComponent(ON.id('CustomDialogRouter2' + '_CustomDialogRouterButton'));
       await routerButton.click();
       await CommonFunc.sleep(1000);
 
       // api 12, dialog is not closed, confirmButton is exist
-      let strJson = getInspectorByKey('CustomDialogConfirm');
+      let strJson = getInspectorByKey('CustomDialogRouter2' + '_CustomDialogConfirm');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[CustomDialogRouter_0100] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.label).assertEqual("Confirm");
       await CommonFunc.sleep(1000);
 
       // close dialog
-      let closeButton = await driver.findComponent(ON.id('CustomDialogConfirm'));
+      let closeButton = await driver.findComponent(ON.id('CustomDialogRouter2' + '_CustomDialogConfirm'));
       await closeButton.click();
       await CommonFunc.sleep(1000);
 

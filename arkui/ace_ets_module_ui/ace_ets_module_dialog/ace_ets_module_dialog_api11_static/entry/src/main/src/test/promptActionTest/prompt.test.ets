@@ -121,7 +121,7 @@ export default function promptShowDialogJsunit() {
           done()
         }
         console.info("onSelect_001 click result is: " +
-        JSON.stringify(inspector.sendEventByKey('showDialogText', 10, "")));
+        JSON.stringify(inspector.sendEventByKey('prompt1' + '_showDialogText', 10, "")));
         emitter.on(innerEventOne, callback1);
       } catch (err) {
         console.info("testpromptShowDialog001 on emitter err : " + JSON.stringify(err));
@@ -152,7 +152,7 @@ export default function promptShowDialogJsunit() {
           done()
         }
         console.info("onSelect_002 click result is: " +
-        JSON.stringify(inspector.sendEventByKey('showActionMenuText', 10, "")));
+        JSON.stringify(inspector.sendEventByKey('prompt1' + '_showActionMenuText', 10, "")));
         emitter.on(innerEventTwo, callback2);
       } catch (err) {
         console.info("onRequestPopupData_0011 on emitter err : " + JSON.stringify(err));

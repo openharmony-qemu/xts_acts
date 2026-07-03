@@ -55,7 +55,7 @@ export default function circleJsunit() {
      */
     it('circleTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('circleTest_0100 START');
-      let strJson = getInspectorByKey('circle');
+      let strJson = getInspectorByKey('circle3' + '_circle');
       console.info("circleTest_0100 component strJson:" + strJson);
 
       console.info("circleTest_0100 component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
@@ -92,7 +92,7 @@ export default function circleJsunit() {
         console.log("[circleTest_0200] change component data error: " + err.message);
       }
       await Utils.sleep(1000);
-      let strJson = getInspectorByKey('circle');
+      let strJson = getInspectorByKey('circle3' + '_circle');
       console.info("[circleTest_0200] component objNew is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$attrs.height).assertEqual('500.00px');
       expect(JSON.parse(strJson).$attrs.width).assertEqual('500.00px');
@@ -128,7 +128,7 @@ export default function circleJsunit() {
         console.log("[circleTest_030] change component data error: " + err.message);
       }
       await Utils.sleep(1000);
-      let strJson = getInspectorByKey('circle');
+      let strJson = getInspectorByKey('circle3' + '_circle');
       console.info("[circleTest_0300] component objNew is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$attrs.width).assertEqual('0.00vp');
       expect(JSON.parse(strJson).$attrs.height).assertEqual('0.00vp');

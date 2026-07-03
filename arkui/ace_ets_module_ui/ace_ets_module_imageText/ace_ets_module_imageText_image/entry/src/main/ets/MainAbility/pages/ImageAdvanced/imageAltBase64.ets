@@ -25,6 +25,7 @@ struct ImageAdvancedImageAltBase64 {
           .fontSize(50)
           .fontWeight(FontWeight.Bold)
           .id('loadingResultAlt')
+          .key('loadingResultAlt')
 
         Image($r('app.media.icon'))
           .width(100)

@@ -93,7 +93,7 @@ struct NavigationExamplett {
       Navigation({}) {
         Button(this.hideBar ? "tool bar" : "hide bar")
           .backgroundColor(Color.Red).width('20%').height('10%').fontSize(20)
-          .key('NavigationContent1')
+          .key('navigationtt_NavigationContent1')
           .onClick((e: ClickEvent) => {
             this.hideBar = !this.hideBar;
             console.info('navigationContent1 current action state is: ' + this.hideBar);
@@ -129,7 +129,7 @@ struct NavigationExamplett {
           }, (item: number) => String(item))
         }
         .listDirection(Axis.Vertical)
-        .key('Navigation')
+        .key('navigationtt_Navigation')
         .height(300)
         .margin({ top: 10, left: 18 } as Margin)
         .width('100%')

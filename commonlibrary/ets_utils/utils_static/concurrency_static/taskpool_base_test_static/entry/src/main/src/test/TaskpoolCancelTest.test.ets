@@ -1,4 +1,4 @@
-'use static'
+'use static';
 import { afterEach, describe, expect, it, Level, Size, TestType } from '../../../hypium';
 
 export function sleep(time: int): Promise<number> {
@@ -193,7 +193,7 @@ export default function taskpoolCancelTest() {
       let eaw = new EAWorker();
       eaw.start();
       eaw.run<void>(cancelById, task.taskId)
-      await eaw.join();
+      eaw.join().Await();
       while (!terminate) {
         await sleep(100);
       }
@@ -267,7 +267,7 @@ export default function taskpoolCancelTest() {
       let eaw = new EAWorker();
       eaw.start();
       eaw.run<void>(cancelById, task.taskId)
-      await eaw.join();
+      eaw.join().Await();
       while (!terminate) {
         await sleep(100);
       }

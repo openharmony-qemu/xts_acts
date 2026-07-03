@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -108,17 +109,17 @@ export default function CombLockTest(): void {
           count++
           lock.unlock()
         }
-        let jobs: Promise<void>[] = []
+        let jobs: Job<void>[] = []
         for (let i = 0; i < 10; i++) {
           let eaw1 = new EAWorker()
           eaw1.start()
-          jobs.push(eaw1.run<void>(() => {
-            funcC()
-            funcB()
-            funcA()
-            funcB()
-            funcC()
-          }))
+          await eaw1.run<Promise<void>>(async (): Promise<void> => {
+            await funcC()
+            await funcB()
+            await funcA()
+            await funcB()
+            await funcC()
+          }).Await()
           eaw1.join()
         }
         for (let i = 0; i < 10; i++) {
@@ -128,7 +129,9 @@ export default function CombLockTest(): void {
           funcB()
           funcC()
         }
-        await Promise.all(jobs)
+        jobs.map((value: Job<void>, index: int, array: Array<Job<void>>): void =>
+        value.Await()
+        )
         console.log(`TESTCASE ${tag} result: ` + count)
         expect(count).assertEqual(220)
         Done()
@@ -168,7 +171,7 @@ export default function CombLockTest(): void {
         }
         let eaw1 = new EAWorker()
         eaw1.start()
-        await eaw1.run<void>(() => {
+        eaw1.run<void>(() => {
           funcC('C')
           funcB('B')
           funcA('A')
@@ -177,7 +180,7 @@ export default function CombLockTest(): void {
           funcC('C')
           funcA('A')
           funcB('B')
-        })
+        }).Await()
         eaw1.join()
         console.log(`TESTCASE ${tag} result: ` + result)
         expect(result).assertEqual('CCCBBAABBCCCABB')
@@ -190,7 +193,7 @@ export default function CombLockTest(): void {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level .
+     * @tc.level Level 2
      */
     it('CombLockTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
@@ -219,7 +222,7 @@ export default function CombLockTest(): void {
         }
         let eaw1 = new EAWorker()
         eaw1.start()
-        await eaw1.run<void>(() => {
+        eaw1.run<void>(() => {
           funcC('C')
           funcB('B')
           funcA('A')
@@ -228,7 +231,7 @@ export default function CombLockTest(): void {
           funcC('C')
           funcA('A')
           funcB('B')
-        })
+        }).Await()
         eaw1.join()
         console.log(`TESTCASE ${tag} result: ` + result)
         expect(result).assertEqual('CCCBBAABBCCCABB')
@@ -269,20 +272,22 @@ export default function CombLockTest(): void {
           count++
           wLock.unlock()
         }
-        let jobs: Promise<void>[] = []
+        let jobs: Job<void>[] = []
         for (let i = 0; i < 10; i++) {
           let eaw1 = new EAWorker()
           eaw1.start()
-          jobs.push(eaw1.run<void>(() => {
-            funcC()
-            funcB()
-            funcA()
-            funcC()
-            funcB()
-          }))
+          await eaw1.run<Promise<void>>(async (): Promise<void> => {
+            await funcC()
+            await funcB()
+            await funcA()
+            await funcC()
+            await funcB()
+          }).Await()
           eaw1.join()
         }
-        await Promise.all(jobs)
+        jobs.map((value: Job<void>, index: int, array: Array<Job<void>>): void =>
+        value.Await()
+        )
         console.log(`TESTCASE ${tag} result: ` + count)
         expect(count).assertEqual(110)
         Done()
@@ -324,7 +329,7 @@ export default function CombLockTest(): void {
         }
         let eaw1 = new EAWorker()
         eaw1.start()
-        await eaw1.run<void>(() => {
+        await eaw1.run<Promise<void>>(async (): Promise<void> => {
           funcC('C')
           funcB('B')
           funcA('A')
@@ -333,7 +338,7 @@ export default function CombLockTest(): void {
           funcC('C')
           funcA('A')
           funcB('B')
-        })
+        }).Await()
         eaw1.join()
         console.log(`TESTCASE ${tag} result: ` + result)
         expect(result).assertEqual('CCCBBAABBCCCABB')
@@ -457,7 +462,7 @@ export default function CombLockTest(): void {
         })
         workers.forEach((eaw) => {
           try {
-            eaw.quit()
+            eaw.join().Await()
           } catch (e) {
 
           }
@@ -536,7 +541,7 @@ export default function CombLockTest(): void {
         })
         workers.forEach((eaw) => {
           try {
-            eaw.quit()
+            eaw.join().Await()
           } catch (e) {
 
           }
@@ -606,7 +611,7 @@ export default function CombLockTest(): void {
         })
         workers.forEach((eaw) => {
           try {
-            eaw.quit()
+            eaw.join().Await()
           } catch (e) {
 
           }
@@ -687,7 +692,7 @@ export default function CombLockTest(): void {
         })
         workers.forEach((eaw) => {
           try {
-            eaw.quit()
+            eaw.join().Await()
           } catch (e) {
 
           }
@@ -771,7 +776,7 @@ export default function CombLockTest(): void {
         })
         workers.forEach((eaw) => {
           try {
-            eaw.quit()
+            eaw.join().Await()
           } catch (e) {
 
           }
@@ -853,7 +858,7 @@ export default function CombLockTest(): void {
         })
         workers.forEach((eaw) => {
           try {
-            eaw.quit()
+            eaw.join().Await()
           } catch (e) {
 
           }
@@ -944,7 +949,7 @@ export default function CombLockTest(): void {
         })
         workers.forEach((eaw) => {
           try {
-            eaw.quit()
+            eaw.join().Await()
           } catch (e) {
 
           }
@@ -1034,7 +1039,7 @@ export default function CombLockTest(): void {
         })
         workers.forEach((eaw) => {
           try {
-            eaw.quit()
+            eaw.join().Await()
           } catch (e) {
 
           }
@@ -1126,7 +1131,7 @@ export default function CombLockTest(): void {
         })
         workers.forEach((eaw) => {
           try {
-            eaw.quit()
+            eaw.join().Await()
           } catch (e) {
 
           }
@@ -1221,7 +1226,7 @@ export default function CombLockTest(): void {
         })
         workers.forEach((eaw) => {
           try {
-            eaw.quit()
+            eaw.join().Await()
           } catch (e) {
 
           }
@@ -1248,7 +1253,7 @@ export default function CombLockTest(): void {
         const workload = 1000;
 
         let count = 0;
-        let jobs = new Array<Promise<void>>();
+        let jobs = new Array<Job<void>>();
         let workers = new Array<EAWorker>(coroutines, (i: int) => new EAWorker(`Worker-${i}`));
 
         for (let i = 0; i < coroutines; ++i) {
@@ -1264,8 +1269,8 @@ export default function CombLockTest(): void {
           }));
         }
         // 等待所有任务完成
-        let sharedJob = new SharedJob<Promise<void>>(jobs);
-        await sharedJob.Await();
+        let sharedJob = new SharedJob<Job<void>>(jobs);
+        sharedJob.Await();
 
         for (let worker of workers) {
           worker.quit();
@@ -1293,7 +1298,7 @@ export default function CombLockTest(): void {
         const workload = 1000;
 
         let count = 0;
-        let jobs = new Array<Promise<void>>();
+        let jobs = new Array<Job<void>>();
         let workers = new Array<EAWorker>(coroutines, (i: int) => new EAWorker(`Worker-${i}`));
 
         for (let i = 0; i < coroutines; ++i) {
@@ -1310,8 +1315,8 @@ export default function CombLockTest(): void {
         }
 
         // 等待所有任务完成
-        let sharedJob = new SharedJob<Promise<void>>(jobs);
-        await sharedJob.Await();
+        let sharedJob = new SharedJob<Job<void>>(jobs);
+        sharedJob.Await();
 
         for (let worker of workers) {
           worker.quit();
@@ -1338,7 +1343,7 @@ export default function CombLockTest(): void {
         const workload = 1000;
 
         let count = 0;
-        let jobs = new Array<Promise<void>>();
+        let jobs = new Array<Job<void>>();
         let workers = new Array<EAWorker>(coroutines, (i: int) => new EAWorker(`Worker-${i}`));
 
         for (let i = 0; i < coroutines; ++i) {
@@ -1355,8 +1360,8 @@ export default function CombLockTest(): void {
         }
 
         // 等待所有任务完成
-        let sharedJob = new SharedJob<Promise<void>>(jobs);
-        await sharedJob.Await();
+        let sharedJob = new SharedJob<Job<void>>(jobs);
+        sharedJob.Await();
 
         for (let worker of workers) {
           worker.quit();

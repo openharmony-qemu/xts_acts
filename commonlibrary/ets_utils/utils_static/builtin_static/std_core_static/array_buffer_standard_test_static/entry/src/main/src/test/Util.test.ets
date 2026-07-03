@@ -1,3 +1,4 @@
+'use static';
 class PlainObject {
 }
 

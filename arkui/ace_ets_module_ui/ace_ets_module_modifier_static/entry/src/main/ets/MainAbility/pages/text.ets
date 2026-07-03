@@ -69,7 +69,7 @@ struct TextExample {
     Column({ space: 5 } as ColumnOptions) {
       Button("change value").onClick((e: ClickEvent) => {
         (this.CustomModifier1 as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("text_changeButton")
 
       Text('This is the text content with textAlign set to Center.')
         .attributeModifier(this.CustomModifier1 as CustomModifier)

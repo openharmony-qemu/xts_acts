@@ -20,31 +20,37 @@ struct SearchTextDirectionTest {
     Column() {
       Search({ value: 'Search_textDirection_LTR'})
         .id('Search_textDirection_LTR')
+        .key('Search_textDirection_LTR')
         .textDirection(TextDirection.LTR)
         .height('3%')
 
       Search({ value: 'Search_textDirection_RTL'})
         .id('Search_textDirection_RTL')
+        .key('Search_textDirection_RTL')
         .textDirection(TextDirection.RTL)
         .height('3%')
 
       Search({ value: 'Search_textDirection_DEFAULT'})
         .id('Search_textDirection_DEFAULT')
+        .key('Search_textDirection_DEFAULT')
         .textDirection(TextDirection.DEFAULT)
         .height('3%')
 
       Search({ value: 'Search_textDirection_AUTO'})
         .id('Search_textDirection_AUTO')
+        .key('Search_textDirection_AUTO')
         .textDirection(TextDirection.AUTO)
         .height('3%')
 
       Search({ value: 'Search_textDirection_undefined'})
         .id('Search_textDirection_undefined')
+        .key('Search_textDirection_undefined')
         .textDirection(undefined)
         .height('3%')
 
       Search({ value: 'Search_textDirection_default'})
         .id('Search_textDirection_default')
+        .key('Search_textDirection_default')
         .height('3%')
 
       Button('get textDirection').onClick(()=>{

@@ -45,7 +45,7 @@ struct TextStyle1 {
       Text(`text font color ${this.fontColor}`)
         .fontColor('error')
         .fontSize(10)
-        .key('fontColor').height('10%').textAlign(TextAlign.Center)
+        .key('textStyle_fontColor').height('10%').textAlign(TextAlign.Center)
 
       Text(`text font size ${this.fontSize}`)
         .fontSize('error')
@@ -59,7 +59,7 @@ struct TextStyle1 {
       Text(`text fontWeight ${this.fontWeight}`)
         .fontWeight(this.fontWeight)
         .fontSize(10)
-        .key('fontWeight').height('10%').textAlign(TextAlign.Center)
+        .key('textStyle_fontWeight').height('10%').textAlign(TextAlign.Center)
 
       Text(`text fontFamily ${this.fontFamily}`)
         .fontFamily(this.fontFamily)

@@ -95,7 +95,7 @@ export default function RichEditorTransformation004() {
       expect(textStyleText).assertContain('"fontSize":"40.00vp"');
       expect(textStyleText).assertContain('"fontStyle":1');
       expect(textStyleText).assertContain('fontWeight":12');
-      expect(textStyleText).assertContain('"decoration":{"type":2,"color":"#80A91AF6"}');
+      expect(textStyleText).assertContain('"decoration":{"type":2,"color":"#80A91AF6","thicknessScale":0}');
       done();
     });
 

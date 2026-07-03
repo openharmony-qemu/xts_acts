@@ -25,6 +25,7 @@ export default function documentPickerCallback(abilityContext: Context) {
       await sleep(500);
       await stopAbility('com.huawei.hmos.filemanager');
       await stopAbility('com.ohos.filepicker');
+      await stopAbility('com.ohos.filemanager');
       await sleep(500);
     });
 

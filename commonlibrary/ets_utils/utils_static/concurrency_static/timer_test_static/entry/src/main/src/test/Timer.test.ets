@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -1272,7 +1273,8 @@ export default function TimerTest1() {
       const TAG: string = 'TimerTest041';
       console.info(`${TAG} test start`);
       // Define a task with timer that returns a boolean
-      const timerTask = async (): Promise<boolean> => {
+      const timerTask = (): boolean => {
+        return (async () => {
           let timerExecuted: boolean = false;
           let timeoutId: number | null = null;
           timeoutId = setTimeout(() => {
@@ -1286,6 +1288,7 @@ export default function TimerTest1() {
             console.log(`${TAG}: Timer cleared in taskpool`);
           }
           return timerExecuted;
+        })().awaitSync()
       };
       try {
         const task1 = taskpool.execute(timerTask);

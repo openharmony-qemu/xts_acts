@@ -107,7 +107,7 @@ struct Index {
           .fontSize(20)
           .width('100%')
         Text('range: ' + this.range).width('100%')
-        Text(this.replaceString).width('100%').key('styledStringText')
+        Text(this.replaceString).width('100%').key('styledStringAddApi_styledStringText')
         Text('onWillChange回调信息')
           .fontSize(20)
           .width('100%')

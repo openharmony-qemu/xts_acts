@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -917,7 +918,7 @@ export default function arkTSUtilsLockTest() {
           let job1 = async () => {
             let eaw1 = new EAWorker()
             eaw1.start()
-            let result: Array<Number> = await eaw1.run<Promise<Array<Number>>>(sharedTaskTime, TAG)
+            let result: Array<Number> = await eaw1.run<Promise<Array<Number>>>(sharedTaskTime, TAG).Await()
             l1_start = result[0];
             l1_end = result[1];
             state1 = true;
@@ -927,7 +928,7 @@ export default function arkTSUtilsLockTest() {
           let job2 = async () => {
             let eaw = new EAWorker()
             eaw.start()
-            let result: Array<Number> = await eaw.run<Promise<Array<Number>>>(sharedTaskTime, TAG)
+            let result: Array<Number> = await eaw.run<Promise<Array<Number>>>(sharedTaskTime, TAG).Await()
             l2_start = result[0];
             l2_end = result[1];
             state2 = true;
@@ -1106,7 +1107,7 @@ export default function arkTSUtilsLockTest() {
           let job1 = async () => {
             let eaw = new EAWorker()
             eaw.start()
-            eaw.run<Promise<Array<Number>>>(sharedTaskTime, TAG).then((value: Any) => {
+            eaw.run<Promise<Array<Number>>>(sharedTaskTime, TAG).Await().then((value: Any) => {
               const res = value as Array<number>;
               l1_start = res[0];
               l1_end = res[1];
@@ -1117,7 +1118,7 @@ export default function arkTSUtilsLockTest() {
           let job2 = async () => {
             let eaw = new EAWorker()
             eaw.start()
-            eaw.run<Promise<Array<Number>>>(sharedTaskTime, TAG).then((value: Any) => {
+            eaw.run<Promise<Array<Number>>>(sharedTaskTime, TAG).Await().then((value: Any) => {
               const res = value as Array<number>;
               l2_start = res[0];
               l2_end = res[1];

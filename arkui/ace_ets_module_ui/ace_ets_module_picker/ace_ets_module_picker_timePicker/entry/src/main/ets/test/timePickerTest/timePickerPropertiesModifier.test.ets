@@ -51,7 +51,7 @@ export default function timePickerPropertiesModifierTest() {
      * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_timepicker_1000', Level.LEVEL1, async (done: Function) => {
-      let strJson = getInspectorByKey('timePickerDefault');
+      let strJson = getInspectorByKey('timePickerPropertiesModifier' + '_timePickerDefault');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ArkUI_Stage_timepicker_1000] obj is: " + JSON.stringify(obj.$attrs));
       let textStyle: ESObject = obj.$attrs.textStyle;
@@ -70,7 +70,7 @@ export default function timePickerPropertiesModifierTest() {
      * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_timepicker_2000', Level.LEVEL1, async (done: Function) => {
-      let strJson = getInspectorByKey('timePickerDefault');
+      let strJson = getInspectorByKey('timePickerPropertiesModifier' + '_timePickerDefault');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ArkUI_Stage_timepicker_2000] obj is: " + JSON.stringify(obj.$attrs));
       let selectedTextStyle: ESObject = obj.$attrs.selectedTextStyle;
@@ -89,7 +89,7 @@ export default function timePickerPropertiesModifierTest() {
      * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_timepicker_3000', Level.LEVEL1, async (done: Function) => {
-      let strJson = getInspectorByKey('timePickerDefault');
+      let strJson = getInspectorByKey('timePickerPropertiesModifier' + '_timePickerDefault');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ArkUI_Stage_timepicker_3000] obj is: " + JSON.stringify(obj.$attrs));
       let disappearTextStyle: ESObject = obj.$attrs.disappearTextStyle;

@@ -26,6 +26,7 @@ import timePickerOnChangeModifierTest from './timePickerTest/timePickerOnChangeM
 import timePickerAddApiTest from './timePickerTest/TimePickerAddApi.test';
 import timePickerDateTimeOptionsTest from './timePickerTest/timePickerDateTimeOptions.test';
 import timePickerEnableHapticFeedbackTest from './timePickerTest/timePickerEnableHapticFeedbackTest.test';
+import TimePickerDigitalCrownSensitivityTest from './timePickerTest/TimePickerDigitalCrownSensitivity.test';
 import TimePickerUseMilitaryTimeUndefinedAndNullTest from './timePickerUndefinedAndNullTest/TimePickerUseMilitaryTimeUndefinedAndNull.test';
 import TimePickerDisappearTextStyleUndefinedAndNullTest from './timePickerUndefinedAndNullTest/TimePickerDisappearTextStyleUndefinedAndNull.test';
 import TimePickerSelectedTextStyleUndefinedAndNullTest from './timePickerUndefinedAndNullTest/TimePickerSelectedTextStyleUndefinedAndNull.test';
@@ -46,6 +47,7 @@ export default function testsuite() {
   timePickerAddApiTest();
   timePickerDateTimeOptionsTest();
   timePickerEnableHapticFeedbackTest();
+  TimePickerDigitalCrownSensitivityTest();
   TimePickerUseMilitaryTimeUndefinedAndNullTest();
   TimePickerDisappearTextStyleUndefinedAndNullTest();
   TimePickerSelectedTextStyleUndefinedAndNullTest();

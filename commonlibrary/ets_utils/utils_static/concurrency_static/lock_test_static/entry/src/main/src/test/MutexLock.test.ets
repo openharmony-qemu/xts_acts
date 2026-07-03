@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -73,12 +74,12 @@ export default function MutexLockTest(): void {
         console.info(`${TAG} test start2`);
         let eaw = new EAWorker()
         eaw.start()
-        await eaw.run<void>(() => {
+        eaw.run<void>(() => {
           lock.lock()
           count++
           lock.unlock()
-        })
-        eaw.join()
+        }).Await()
+        eaw.join().Await()
         console.info(`${TAG} test start3`);
         setTimeout(() => {
           lock.lock()
@@ -126,11 +127,11 @@ export default function MutexLockTest(): void {
         })
         let eaw = new EAWorker()
         eaw.start()
-        await eaw.run<void>(() => {
+        eaw.run<void>(() => {
           lock.lock()
           count++
-        })
-        eaw.join()
+        }).Await()
+        eaw.join().Await()
         setTimeout(() => {
           count++
           lock.unlock()
@@ -174,12 +175,13 @@ export default function MutexLockTest(): void {
         })
         let eaw = new EAWorker()
         eaw.start()
-        await eaw.run<void>(() => {
+        let workerJob = eaw.run<void>(() => {
           count++
           lock2.unlock()
           lock4.lock()
         })
-        eaw.join()
+        workerJob.Await()
+        eaw.join().Await()
         await new Promise<void>((resolve) => {
           count++
           lock3.unlock()
@@ -283,7 +285,7 @@ export default function MutexLockTest(): void {
             count++
             lock.unlock()
           })
-          eaw.quit()
+          eaw.join()
         }
         lock.lock()
         count++
@@ -332,7 +334,7 @@ export default function MutexLockTest(): void {
             }
             lock.unlock()
           })
-          eaw.quit()
+          eaw.join()
         }
         lock.lock()
         count++

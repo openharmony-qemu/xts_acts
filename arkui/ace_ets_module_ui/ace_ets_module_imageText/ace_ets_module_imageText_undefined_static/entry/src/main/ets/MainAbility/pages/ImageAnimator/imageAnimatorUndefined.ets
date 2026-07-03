@@ -1,4 +1,4 @@
-'use static'
+'use static';
 import { Entry, Text, Column, Component, Button, Image, Tabs, Color, $r, Row, ClickEvent, ImageAnimator, AnimationStatus, Margin, ForEach, TextAlign, Scroller, Scroll, Blank, FillMode, ImageFrameInfo } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import hilog from '@ohos.hilog';

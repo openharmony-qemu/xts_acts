@@ -29,6 +29,7 @@ import ImageColorFilterTest from './ImageColorFilterTest/ImageColorFilter.test';
 import ImageReloadKeyTest from './imageTest/ImageReloadKey.test';
 import DrawableDescriptorReleaseTest from './drawableDescriptorTest/DrawableDescriptorRelease.test';
 import PixelMapDrawableDescriptorConstructorTest from './drawableDescriptorTest/PixelMapDrawableDescriptorConstructor.test';
+import SetHdrCompositionTest from './drawableDescriptorTest/SetHdrComposition.test';
 
 export default function testsuite() {
   blendNodeTest();
@@ -46,4 +47,5 @@ export default function testsuite() {
   ImageReloadKeyTest();
   DrawableDescriptorReleaseTest();
   PixelMapDrawableDescriptorConstructorTest();
+  SetHdrCompositionTest();
 }

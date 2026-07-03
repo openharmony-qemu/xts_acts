@@ -171,7 +171,7 @@ struct WordListSample {
             }
           })
         }
-        .key('MyList1')
+        .key('ListScrollToItemInGroup_MyList1')
         .scrollBar(BarState.On)
         .divider({
           strokeWidth: 4,

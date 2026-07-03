@@ -24,6 +24,8 @@ import createFrameNodesUIContextIntTest from './frameNodeTest/createFrameNodesUI
 import ComponentContentIsTransferredTest from './frameNodeTest/ComponentContentIsTransferredTest.test';
 import ComponentContentIsDisposedTest from './frameNodeTest/ComponentContentIsDisposedTest.test';
 import FrameNodeProvideChildTest from './frameNodeTest/FrameNodeProvideChildTest.test';
+import BuilderNodeAddBuilderProxyNodeTest from './frameNodeTest/BuilderNodeAddBuilderProxyNodeTest.test';
+import IfElseExpressionTest from './IfElse/IfElseExpressionTest.test';
 
 export default function testsuite() {
   frameNodeGetInterfaceTest()
@@ -36,4 +38,6 @@ export default function testsuite() {
  	ComponentContentIsDisposedTest()
   FrameNodeProvideChildTest()
   createFrameNodesUIContextIntTest()
+  IfElseExpressionTest()
+  BuilderNodeAddBuilderProxyNodeTest()
 }

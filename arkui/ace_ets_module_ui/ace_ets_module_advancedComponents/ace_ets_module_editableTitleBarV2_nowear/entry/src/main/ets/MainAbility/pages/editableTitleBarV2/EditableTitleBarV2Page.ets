@@ -13,7 +13,11 @@
  * limitations under the License.
  */
 
-import { EditableTitleBarV2, EditableLeftIconV2, EditableTitleV2, EditableTitleBarMenuItemV2, EditableSaveButtonV2, EditableTitleBarStyleV2, EditableLeftIconTypeV2 } from '@ohos.arkui.advanced.EditableTitleBarV2';
+import {
+  EditableTitleBarV2, EditableLeftIconV2, EditableTitleV2, EditableTitleBarMenuItemV2, EditableTitleBarItemV2,
+  EditableTitleBarMenuItemV2Options, EditableSaveButtonV2, EditableTitleBarStyleV2, EditableLeftIconTypeV2
+} from '@ohos.arkui.advanced.EditableTitleBarV2';
+import { SymbolGlyphModifier } from '@kit.ArkUI'
 
 @Entry
 @ComponentV2
@@ -23,6 +27,38 @@ struct EditableTitleBarV2Page {
   @Local leftIconType: EditableLeftIconTypeV2 = EditableLeftIconTypeV2.Back;
   @Local saveButtonRequired: boolean = true;
   @Local menuItemCount: number = 2;
+
+  @Local itemOptions1: EditableTitleBarMenuItemV2Options = {
+    value: $r('sys.media.ohos_app_icon'),
+    symbolStyle: new SymbolGlyphModifier($r('sys.symbol.bell')).fontColor([Color.Red]),
+    isEnabled: true,
+    label: 'label',
+    defaultFocus: true,
+    action: () => {
+      console.info('Menu item 1 clicked');
+    },
+    accessibilityLevel: 'yes',
+    accessibilityText: '单指双击即可选中',
+    accessibilityDescription: '单指双击即可执行',
+  }
+
+  @Local itemOptions2: EditableTitleBarMenuItemV2Options = {
+    value: $r('sys.media.ohos_app_icon'),
+    symbolStyle: undefined,
+    isEnabled: false,
+    label: '',
+    defaultFocus: false,
+    action: () => {
+      console.info('Menu item 2 clicked');
+    },
+    accessibilityLevel: '',
+    accessibilityText: '',
+    accessibilityDescription: '',
+  }
+
+  @Local item1:EditableTitleBarItemV2 = new EditableTitleBarMenuItemV2(this.itemOptions1)
+  @Local item2:EditableTitleBarItemV2 = new EditableTitleBarMenuItemV2(this.itemOptions2)
+  @Local menuItemsList: Array<EditableTitleBarMenuItemV2> = [this.item1, this.item2]
 
   build() {
     Column() {
@@ -64,6 +100,7 @@ struct EditableTitleBarV2Page {
               mainTitle: this.titleText,
               subTitle: this.subTitleText
             }),
+            menuItems:this.menuItemsList,
             options: new EditableTitleBarStyleV2()
           })
 
@@ -79,13 +116,26 @@ struct EditableTitleBarV2Page {
                 value: $r('sys.symbol.album_compose'),
                 action: () => {
                   console.info('Menu item 1 clicked');
-                }
+                },
+                accessibilityDescription: '描述',
+                accessibilityLevel: 'auto',
+                accessibilityText: '文本',
+                defaultFocus: false,
+                isEnabled: true,
+                label: 'label'
               }),
               new EditableTitleBarMenuItemV2({
                 value: $r('sys.symbol.trash'),
+                symbolStyle: new SymbolGlyphModifier($r('sys.symbol.save')),
                 action: () => {
                   console.info('Menu item 2 clicked');
-                }
+                },
+                defaultFocus: true,
+                accessibilityDescription: '',
+                accessibilityLevel: '',
+                accessibilityText: '',
+                isEnabled: false,
+                label:''
               })
             ],
             options: new EditableTitleBarStyleV2()
@@ -98,6 +148,15 @@ struct EditableTitleBarV2Page {
 
           EditableTitleBarV2({
             title: 'With Save Button',
+            menuItems: [
+              new EditableTitleBarMenuItemV2({
+                value: $r('sys.symbol.trash'),
+                symbolStyle: undefined,
+                action: () => {
+                  console.info('Menu item clicked');
+                },
+              })
+            ],
             saveButton: new EditableSaveButtonV2({
               isRequired: this.saveButtonRequired,
               onAction: () => {
@@ -107,54 +166,6 @@ struct EditableTitleBarV2Page {
             options: new EditableTitleBarStyleV2()
           })
 
-          Text('EditableTitleBarV2 Complete Example')
-            .fontSize(20)
-            .fontWeight(FontWeight.Bold)
-            .margin({ top: 20 })
-
-          EditableTitleBarV2({
-            title: new EditableTitleV2({
-              mainTitle: 'Complete',
-              subTitle: 'All Features'
-            }),
-            leftIcon: new EditableLeftIconV2({
-              iconType: EditableLeftIconTypeV2.Cancel,
-              onAction: () => {
-                console.info('Cancel clicked');
-              }
-            }),
-            menuItems: [
-              new EditableTitleBarMenuItemV2({
-                value: $r('sys.symbol.share'),
-                action: () => {
-                  console.info('Share clicked');
-                }
-              })
-            ],
-            saveButton: new EditableSaveButtonV2({
-              isRequired: true,
-              defaultFocus: true,
-              onAction: () => {
-                console.info('Save clicked');
-              }
-            }),
-            options: new EditableTitleBarStyleV2({
-              backgroundColor: Color.White
-            })
-          })
-
-          Text('EditableTitleBarV2 With Custom Style')
-            .fontSize(20)
-            .fontWeight(FontWeight.Bold)
-            .margin({ top: 20 })
-
-          EditableTitleBarV2({
-            title: 'Custom Style',
-            options: new EditableTitleBarStyleV2({
-              backgroundColor: $r('sys.color.background_primary'),
-              safeAreaEdges: [SafeAreaEdge.TOP]
-            })
-          })
         }
         .alignItems(HorizontalAlign.Center)
         .width('100%')

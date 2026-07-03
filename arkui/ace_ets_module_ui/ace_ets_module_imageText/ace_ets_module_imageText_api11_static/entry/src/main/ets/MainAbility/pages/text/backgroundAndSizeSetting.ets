@@ -57,7 +57,7 @@ struct BackgroundExample {
         .fontSize(9)
         .width('90%')
         .fontColor(0xFF0000)
-        .key("fontColor")
+        .key("backgroundAndSizeSetting_fontColor")
       Row()
         .width('90%')
         .height(50)

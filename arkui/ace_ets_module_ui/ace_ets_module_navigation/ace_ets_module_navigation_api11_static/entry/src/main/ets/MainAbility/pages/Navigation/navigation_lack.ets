@@ -117,7 +117,7 @@ struct NavigationExample {
           }, (item: number) => String(item))
         }
         .listDirection(Axis.Vertical)
-        .key('Navigation')
+        .key('navigation_lack_Navigation')
         .height(300)
         .margin({ top: 10, left: 18 } as Margin)
         .width('100%')
@@ -127,7 +127,7 @@ struct NavigationExample {
           .width(200)
           .height(100)
           .fontSize(20)
-          .key('NavigationContent1')
+          .key('navigation_lack_NavigationContent1')
           .onClick((e: ClickEvent) => {
             this.hideBar = !this.hideBar;
             console.info('navigationContent1 current action state is: ' + this.hideBar);

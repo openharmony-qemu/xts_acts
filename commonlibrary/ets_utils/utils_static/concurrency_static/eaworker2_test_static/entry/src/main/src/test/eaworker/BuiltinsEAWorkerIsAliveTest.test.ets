@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -32,12 +32,12 @@ export default function BuiltinsEAWorkerIsAliveTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerIsAliveTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerIsAliveTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('aliveType')
       let result: boolean = eaWorker.isAlive()
       expect(typeof result).assertEqual('boolean')
       eaWorker.start()
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -48,11 +48,11 @@ export default function BuiltinsEAWorkerIsAliveTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerIsAliveTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerIsAliveTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('aliveBefore')
       expect(eaWorker.isAlive()).assertFalse()
       eaWorker.start()
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -63,11 +63,11 @@ export default function BuiltinsEAWorkerIsAliveTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerIsAliveTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerIsAliveTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('aliveAfter')
       eaWorker.start()
       expect(eaWorker.isAlive()).assertTrue()
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -78,11 +78,11 @@ export default function BuiltinsEAWorkerIsAliveTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerIsAliveTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerIsAliveTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('aliveJoin')
       eaWorker.start()
       expect(eaWorker.isAlive()).assertTrue()
-      await eaWorker.join()
+      eaWorker.join().Await()
       expect(eaWorker.isAlive()).assertFalse()
     })
 
@@ -94,7 +94,7 @@ export default function BuiltinsEAWorkerIsAliveTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerIsAliveTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerIsAliveTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('aliveQuit')
       eaWorker.start()
       expect(eaWorker.isAlive()).assertTrue()
@@ -110,12 +110,12 @@ export default function BuiltinsEAWorkerIsAliveTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerIsAliveTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerIsAliveTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('aliveTransition')
       expect(eaWorker.isAlive()).assertFalse()
       eaWorker.start()
       expect(eaWorker.isAlive()).assertTrue()
-      await eaWorker.join()
+      eaWorker.join().Await()
       expect(eaWorker.isAlive()).assertFalse()
     })
 
@@ -127,13 +127,13 @@ export default function BuiltinsEAWorkerIsAliveTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEAWorkerIsAliveTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('BuiltinsEAWorkerIsAliveTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let eaWorker = new EAWorker('aliveConsist')
       eaWorker.start()
       expect(eaWorker.isAlive()).assertTrue()
       expect(eaWorker.isAlive()).assertTrue()
       expect(eaWorker.isAlive()).assertTrue()
-      await eaWorker.join()
+      eaWorker.join().Await()
       expect(eaWorker.isAlive()).assertFalse()
       expect(eaWorker.isAlive()).assertFalse()
     })
@@ -146,7 +146,7 @@ export default function BuiltinsEAWorkerIsAliveTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEAWorkerIsAliveTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('BuiltinsEAWorkerIsAliveTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let finallyExecuted: boolean = false
       let eaWorker = new EAWorker('aliveTryCatch')
       try {
@@ -159,7 +159,7 @@ export default function BuiltinsEAWorkerIsAliveTest(): void {
       }
       expect(finallyExecuted).assertTrue()
       eaWorker.start()
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -170,13 +170,13 @@ export default function BuiltinsEAWorkerIsAliveTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerIsAliveTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerIsAliveTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('aliveDuringTask')
       eaWorker.start()
-      let result: number = await eaWorker.run<number>((): number => 42)
+      let result: number = eaWorker.run<number>((): number => 42).Await()
       expect(result).assertEqual(42)
       expect(eaWorker.isAlive()).assertTrue()
-      await eaWorker.join()
+      eaWorker.join().Await()
       expect(eaWorker.isAlive()).assertFalse()
     })
 
@@ -188,7 +188,7 @@ export default function BuiltinsEAWorkerIsAliveTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsEAWorkerIsAliveTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('BuiltinsEAWorkerIsAliveTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let workers: EAWorker[] = []
       for (let i = 0; i < 5; i++) {
         let worker = new EAWorker(`alive5_${i}`)
@@ -203,7 +203,7 @@ export default function BuiltinsEAWorkerIsAliveTest(): void {
       }
       expect(allAlive).assertTrue()
       for (let i = 0; i < workers.length; i++) {
-        await workers[i].join()
+        workers[i].join().Await()
       }
       let allDead: boolean = true
       for (let i = 0; i < workers.length; i++) {
@@ -222,7 +222,7 @@ export default function BuiltinsEAWorkerIsAliveTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsEAWorkerIsAliveTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('BuiltinsEAWorkerIsAliveTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let workers: EAWorker[] = []
       for (let i = 0; i < 10; i++) {
         let worker = new EAWorker(`alive10_${i}`)
@@ -237,7 +237,7 @@ export default function BuiltinsEAWorkerIsAliveTest(): void {
       }
       expect(aliveCount).assertEqual(10)
       for (let i = 0; i < workers.length; i++) {
-        await workers[i].join()
+        workers[i].join().Await()
       }
       let deadCount: number = 0
       for (let i = 0; i < workers.length; i++) {
@@ -256,12 +256,12 @@ export default function BuiltinsEAWorkerIsAliveTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerIsAliveTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerIsAliveTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('alivePerf')
       eaWorker.start()
       let result: boolean = eaWorker.isAlive()
       expect(result).assertTrue()
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -272,12 +272,12 @@ export default function BuiltinsEAWorkerIsAliveTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEAWorkerIsAliveTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('BuiltinsEAWorkerIsAliveTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let eaWorker = new EAWorker('aliveInterop', true)
       expect(eaWorker.isAlive()).assertFalse()
       eaWorker.start()
       expect(eaWorker.isAlive()).assertTrue()
-      await eaWorker.join()
+      eaWorker.join().Await()
       expect(eaWorker.isAlive()).assertFalse()
     })
 
@@ -289,16 +289,16 @@ export default function BuiltinsEAWorkerIsAliveTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerIsAliveTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerIsAliveTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('aliveCheck')
       if (!eaWorker.isAlive()) {
         eaWorker.start()
       }
       if (eaWorker.isAlive()) {
-        let result: number = await eaWorker.run<number>((): number => 42)
+        let result: number = eaWorker.run<number>((): number => 42).Await()
         expect(result).assertEqual(42)
       }
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -309,13 +309,13 @@ export default function BuiltinsEAWorkerIsAliveTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerIsAliveTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerIsAliveTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let taskExecuted: boolean = false
       let eaWorker = new EAWorker('aliveInitTask', (): void => { taskExecuted = true })
       expect(eaWorker.isAlive()).assertFalse()
       eaWorker.start()
       expect(eaWorker.isAlive()).assertTrue()
-      await eaWorker.join()
+      eaWorker.join().Await()
       expect(eaWorker.isAlive()).assertFalse()
       expect(taskExecuted).assertTrue()
     })
@@ -328,20 +328,20 @@ export default function BuiltinsEAWorkerIsAliveTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsEAWorkerIsAliveTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('BuiltinsEAWorkerIsAliveTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let nestedCreated: boolean = false
       let eaWorker = new EAWorker('outerAlive')
       eaWorker.start()
-      let result: number = await eaWorker.run<number>((): number => {
+      let result: number = eaWorker.run<number>((): number => {
         let nestedWorker = new EAWorker('nestedAlive')
         nestedWorker.start()
         nestedCreated = true
         return 100
-      })
+      }).Await()
       expect(result).assertEqual(100)
       expect(nestedCreated).assertTrue()
       expect(eaWorker.isAlive()).assertTrue()
-      await eaWorker.join()
+      eaWorker.join().Await()
       expect(eaWorker.isAlive()).assertFalse()
     })
   })

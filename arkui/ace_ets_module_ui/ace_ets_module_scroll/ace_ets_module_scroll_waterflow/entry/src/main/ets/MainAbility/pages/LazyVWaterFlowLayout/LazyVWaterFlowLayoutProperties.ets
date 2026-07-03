@@ -104,7 +104,7 @@ struct LazyVWaterFlowLayoutProperties {
               .id('lazyVWaterFlow_columnsTemplate_string2')
               .columnsTemplate('repeat(auto-fill, 100vp)')
             }
-            .width('30%')
+            .width('20%')
 
             Scroll(){
               LazyVWaterFlowLayout() {
@@ -123,7 +123,7 @@ struct LazyVWaterFlowLayoutProperties {
               .id('lazyVWaterFlow_columnsTemplate_undefined')
               .columnsTemplate(undefined)
             }
-            .width('30%')
+            .width('20%')
 
             Scroll(){
               LazyVWaterFlowLayout() {
@@ -143,7 +143,26 @@ struct LazyVWaterFlowLayoutProperties {
               .columnsTemplate(null)
               .onVisibleIndexesChange(null)
             }
-            .width('30%')
+            .width('20%')
+
+            Scroll(){
+              LazyVWaterFlowLayout() {
+                ForEach([1, 2, 3, 4, 5], (item: number) => {
+                  Column() {
+                    Text('item ' + item.toString())
+                      .fontSize(16)
+                      .fontColor(Color.Black)
+                  }
+                  .height('30%')
+                  .width('100%')
+                  .backgroundColor('#FFF9C4')
+                  .justifyContent(FlexAlign.Center)
+                })
+              }
+              .id('lazyVWaterFlow_columnsTemplate_emptyString')
+              .columnsTemplate('')
+            }
+            .width('20%')
           }
           .height('15%')
 

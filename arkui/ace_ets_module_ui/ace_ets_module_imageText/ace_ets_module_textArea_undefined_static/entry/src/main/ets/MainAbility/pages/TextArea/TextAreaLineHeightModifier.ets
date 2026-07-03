@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 import { Entry, Text, Column, Component, TextArea, ColumnOptions, Row, ClickEvent, Button,
   AttributeModifier, TextAreaAttribute } from '@ohos.arkui.component'

@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -112,8 +112,9 @@ class MyAbility extends UIAbility {
       abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs, testsuite: () => void) => {
       const worker = new EAWorker();
       worker.start();
-      await worker.run<void>(Hypium.hypiumTest, abilityDelegator, abilityDelegatorArguments, testsuite);
-      await worker.join();
+      const job = worker.run<void>(Hypium.hypiumTest, abilityDelegator, abilityDelegatorArguments, testsuite);
+      job.Await();
+      worker.join();
       };
       hypiumTestAsync(abilityDelegator, abilityDelegatorArguments, testsuite);
       hilog.info(0x0000, 'testTag', '%{public}s', 'onCreate end');

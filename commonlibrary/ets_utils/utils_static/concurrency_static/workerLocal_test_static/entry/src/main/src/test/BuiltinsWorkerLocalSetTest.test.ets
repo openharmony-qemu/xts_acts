@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../hypium/index';
 import Utils from './Util.test';
 
 class User {
@@ -989,16 +989,16 @@ export default function BuiltinsWorkerLocalSetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsWorkerLocalSetTest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('BuiltinsWorkerLocalSetTest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       wlSet_5700 = new WorkerLocal<string>(() => "init");
       wlSet_5700.set("main_value");
       expect(wlSet_5700.get()).assertEqual("main_value");
       let eaWorker: EAWorker = new EAWorker("set_5700");
       eaWorker.start();
-      let result: string = await eaWorker.run<string>(setEAWorkerTask5700);
+      let result: string = eaWorker.run<string>(setEAWorkerTask5700).Await();
       expect(result).assertEqual("ea_value");
       expect(wlSet_5700.get()).assertEqual("main_value");
-      await eaWorker.join();
+      eaWorker.join();
     })
 
     /**
@@ -1009,13 +1009,13 @@ export default function BuiltinsWorkerLocalSetTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsWorkerLocalSetTest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+    it('BuiltinsWorkerLocalSetTest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       wlSet_5800 = new WorkerLocal<string>(() => "init");
       let eaWorker: EAWorker = new EAWorker("set_5800");
       eaWorker.start();
-      let result: string = await eaWorker.run<string>(setEAWorkerTask5800);
+      let result: string = eaWorker.run<string>(setEAWorkerTask5800).Await();
       expect(result).assertEqual("level3");
-      await eaWorker.join();
+      eaWorker.join();
     })
   })
 }

@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -209,7 +209,7 @@ export default function ArrayReduce2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayReduceTwo007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(100);
+      let arr = Array.create<number>(1, 100);
       let result = arr.reduce((acc: number, v: number): number => acc + v, 0);
       expect(result).assertEqual(100);
     });
@@ -857,7 +857,7 @@ export default function ArrayReduce2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayReduceTwo040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const shortArray = new Array<number>(1);
+      const shortArray = Array.create<number>(1, 1);
       const longArray = new Array<number>(1, 2, 3);
       const medium = new Array<number>(1, 2);
       const arr = new Array<Array<number>>(shortArray, longArray, medium);
@@ -1137,7 +1137,7 @@ export default function ArrayReduce2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayReduceTwo055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<string>('x');
+      const arr = Array.create<string>(1, 'x');
       let seenIndex = -1;
       let sameArray = false;
       const result = arr.reduce((acc: string, value: string, index: int, source: Array<string>): string => {
@@ -1329,7 +1329,7 @@ export default function ArrayReduce2Test(): void {
       let sameSource = true;
       const result = arr.reduce((acc: number, value: number, index: int, source: Array<number>): number => {
         if (index === 0) {
-          arr = new Array<number>(9);
+          arr = Array.create<number>(1, 9);
         }
         sameSource = sameSource && source === original;
         return acc + value;
@@ -1577,12 +1577,12 @@ export default function ArrayReduce2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayReduceTwo078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<Array<number>>(new Array<number>(1, 2), new Array<number>(), new Array<number>(3));
+      const arr = new Array<Array<number>>(new Array<number>(1, 2), new Array<number>(), Array.create<number>(1, 3));
       let lengthMarks = new Array<number>();
       const result = arr.reduce((acc: Array<number>, cur: Array<number>, index: int): Array<number> => {
         lengthMarks.pushOne(cur.length + index);
         return acc.concat(cur);
-      }, new Array<number>(0));
+      }, Array.create<number>(1, 0));
       expect(result.toString()).assertEqual('0,1,2,3');
       expect(lengthMarks.toString()).assertEqual('2,1,3');
     });
@@ -1596,7 +1596,7 @@ export default function ArrayReduce2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayReduceTwo079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(9);
+      const arr = Array.create<number>(1, 9);
       let calls = 0;
       const result = arr.reduce((acc: number, cur: number): number => {
         calls++;

@@ -27,7 +27,7 @@ import {
   $r,
 } from '@ohos.arkui.component';
 
-export default function ChipV2OptionsFontScaleTest() {
+export default function ChipV2OptionsFontScaleTest(): void {
   describe('ChipV2OptionsFontScaleTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("ChipV2OptionsFontScaleTest beforeEach start");

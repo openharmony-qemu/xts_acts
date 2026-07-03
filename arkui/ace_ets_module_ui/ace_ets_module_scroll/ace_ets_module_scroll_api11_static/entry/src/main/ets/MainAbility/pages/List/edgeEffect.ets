@@ -66,7 +66,7 @@ struct ListExample {
             }
           }, (item: number) => item.toString())
         }
-        .key('list')
+        .key('edgeEffect_list')
         .listDirection(Axis.Vertical) // 排列方向
         .divider({
           strokeWidth: 2,

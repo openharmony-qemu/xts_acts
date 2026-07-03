@@ -37,7 +37,7 @@ struct RelativeContainerApi {
       RelativeContainer() {
         Row().width(100).height(100)
           .backgroundColor("#FF3333")
-          .key('row1')
+          .key('RelativeContainerApi_row1')
 
         Row()
           .width(100)
@@ -47,7 +47,7 @@ struct RelativeContainerApi {
             left: { anchor: "row1", align: HorizontalAlign.End },
             top: { anchor: "row1", align: VerticalAlign.Bottom }
           } as AlignRuleOption)
-          .key('row2')
+          .key('RelativeContainerApi_row2')
 
         Row()
           .width(100)
@@ -57,7 +57,7 @@ struct RelativeContainerApi {
             left: { anchor: "barrier1", align: HorizontalAlign.End },
             top: { anchor: "row1", align: VerticalAlign.Top }
           } as AlignRuleOption)
-          .key('row3')
+          .key('RelativeContainerApi_row3')
 
       }
       .width(300)

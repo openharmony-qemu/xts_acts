@@ -82,7 +82,7 @@ it('FrameNodeCreateStackNode_static_0100', Level.LEVEL0, async (done: () => void
       await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(strJson);
       console.info('[FrameNodeCreateStackNode_static_0100] content1:' + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('CreateStackNode success');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('createStackNode_success');
       
       await button.click();
       await CommonFunc.sleep(1000);

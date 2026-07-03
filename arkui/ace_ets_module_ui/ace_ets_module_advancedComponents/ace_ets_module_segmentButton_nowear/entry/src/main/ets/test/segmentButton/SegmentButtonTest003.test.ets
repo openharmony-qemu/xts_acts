@@ -16,6 +16,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation,
   ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import Utils, { InspectorNode } from '../Utils';
 import CommonFunc from '../../MainAbility/common/Common';
 
 export default function SegmentButtonTest003() {
@@ -26,8 +27,8 @@ export default function SegmentButtonTest003() {
         url: "MainAbility/pages/segmentButton/SegmentButton003",
       }
       try {
-        router.clear();
         let pages = router.getState();
+        router.clear();
         console.info("get current pages:" + JSON.stringify(pages));
         if (!("SegmentButton003" == pages.name)) {
           console.info("get SegmentButtonTest003 pages.name:" + JSON.stringify(pages.name));
@@ -57,14 +58,7 @@ export default function SegmentButtonTest003() {
     it('SegmentButtonTest003_001', Level.LEVEL1, async (done: Function) => {
       console.info('[SegmentButtonTest003_001] START');
       await CommonFunc.sleep(2000);
-      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[2]
-        .$children[3]
+      let obj: InspectorNode = Utils.navigateInspectorPath('SegmentButtonTest003.test_obj_1', [0, 0, 0, 0, 0, 2, 3]);
       console.info("[SegmentButtonTest003_001] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.accessibilityLevel).assertEqual('yes');
       console.info('[SegmentButtonTest003_001] END');
@@ -82,14 +76,7 @@ export default function SegmentButtonTest003() {
     it('SegmentButtonTest003_002', Level.LEVEL1, async (done: Function) => {
       console.info('[SegmentButtonTest003_002] START');
       await CommonFunc.sleep(2000);
-      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[2]
-        .$children[3]
+      let obj: InspectorNode = Utils.navigateInspectorPath('SegmentButtonTest003.test_obj_2', [0, 0, 0, 0, 0, 2, 3]);
       console.info("[SegmentButtonTest003_002] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.accessibilityDescription).assertEqual('Description');
       console.info('[SegmentButtonTest003_002] END');

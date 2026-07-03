@@ -44,7 +44,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 
-export default function ChipGroupV2ItemOptionsPage2Test() {
+export default function ChipGroupV2ItemOptionsPage2Test(): void {
   describe('ChipGroupV2ItemOptionsPage2Test', () => {
     beforeAll(async (): Promise<void> => {
       console.info("ChipGroupV2ItemOptionsPage2Test beforeEach start");

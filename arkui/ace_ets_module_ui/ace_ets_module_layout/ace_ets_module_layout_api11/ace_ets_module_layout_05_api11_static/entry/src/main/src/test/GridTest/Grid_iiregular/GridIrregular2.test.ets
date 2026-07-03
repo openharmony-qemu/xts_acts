@@ -85,7 +85,7 @@ it('GridIrregular2Jsunit_static_0001', Level.LEVEL0, async (done: () => void): P
       console.info('[GridIrregular2Jsunit_static_0001] START');
       let GridItem0: RectValue = CommonFunc.getComponentRect('GridArr0');
       let GridItem3: RectValue = CommonFunc.getComponentRect('GridArr3');
-      let Grid: RectValue = CommonFunc.getComponentRect('GridIrregular2')
+      let Grid: RectValue = CommonFunc.getComponentRect('GridIrregular2' + '_GridIrregular2')
       await CommonFunc.sleep(1000);
       expect(Math.abs(Math.round((GridItem3.right - GridItem3.left)- (Grid.right - Grid.left))) <= 1).assertTrue();
       expect(Math.abs(Math.round((GridItem3.top - GridItem3.bottom)- (GridItem0.top - GridItem0.bottom))) <= 1).assertTrue();

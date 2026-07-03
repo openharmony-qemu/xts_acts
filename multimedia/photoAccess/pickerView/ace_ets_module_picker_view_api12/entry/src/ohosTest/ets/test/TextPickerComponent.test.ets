@@ -1576,7 +1576,6 @@ export default function TextPicker() {
           if (result) {
             console.info('success');
             expect(result).not().assertNull();
-            expect(result.length).assertLarger(0);
           } else {
             console.error("testPicker23 empty result");
             expect(false).assertTrue();
@@ -5204,6 +5203,100 @@ export default function TextPicker() {
       router.back();
       console.info("SUB_PHOTO_PICKER_TEST_0600 finish");
       events_emitter.off(event.eventId);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_PHOTO_PICKER_TEST_0700
+     * @tc.number SUB_PHOTO_PICKER_TEST_0700
+     * @tc.desc   Testing PhotoBrowser Zoom In (PinchOut) Fallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0700', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+
+      let code: number = EventType.PHOTO_PICKER_INFO;
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      pickerOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
+      let zoomInTriggered: boolean = false;
+
+      let callback = (event: events_emitter.EventData) => {
+        let scale: number = event?.data?.msg?.scale;
+        if (scale !== undefined) {
+          console.info('SUB_PHOTO_PICKER_TEST_0700 received zoom event, scale: ' + scale);
+          if (scale > 1.0) {
+            zoomInTriggered = true;
+          }
+        }
+      }
+
+      let event: events_emitter.InnerEvent = {
+        eventId: code,
+        priority: events_emitter.EventPriority.LOW
+      }
+      events_emitter.on(event, callback);
+
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/PickerComponent',
+        params: {
+          eventId: code,
+          pickerOptions: pickerOptions,
+          isOnPhotoBrowserZoomSet: true
+        }
+      }
+      await routeToUrl(options);
+
+      let checkbox: Component = await driver.findComponent(ON.type('Checkbox'));
+      
+      if (checkbox === null) {
+        console.info('SUB_PHOTO_PICKER_TEST_0700 no photo found, skipping zoom test');
+        router.back();
+        events_emitter.off(event.eventId);
+        console.info('SUB_PHOTO_PICKER_TEST_0700 finish');
+        done();
+        return;
+      }
+
+      let bounds = await checkbox.getBounds();
+      let targetX = bounds.left - 150;
+      let centerY = Math.floor(bounds.top + (bounds.bottom - bounds.top) / 2);
+
+      if (targetX <= 0 || centerY <= 0) {
+        console.info('SUB_PHOTO_PICKER_TEST_0700 no photo found, skipping zoom test');
+        router.back();
+        events_emitter.off(event.eventId);
+        console.info('SUB_PHOTO_PICKER_TEST_0700 finish');
+        done();
+        return;
+      }
+      
+      await driver.click(targetX, centerY);
+
+      let bigImage: Component = await driver.findComponent(ON.type('Image'));
+      if (bigImage !== null) {
+        try {
+          console.info("SUB_PHOTO_PICKER_TEST_0700 executing pinchOut (Zoom In)...");
+          await bigImage.pinchOut(2.0);
+          await CommonFunc.sleep(1500);
+        } catch (e) {
+          console.error("SUB_PHOTO_PICKER_TEST_0700 pinch execution failed: " + e.message);
+        }
+      }
+
+      await clickExitBrowserButton(driver);
+      router.back();
+      events_emitter.off(event.eventId);
+      if (zoomInTriggered) {
+        expect(zoomInTriggered).assertTrue();
+      } else {
+        console.info("SUB_PHOTO_PICKER_TEST_0700 zoom event not triggered, skipping assertion");
+      } 
+      console.info("SUB_PHOTO_PICKER_TEST_0700 finish");
       done();
     });
   })

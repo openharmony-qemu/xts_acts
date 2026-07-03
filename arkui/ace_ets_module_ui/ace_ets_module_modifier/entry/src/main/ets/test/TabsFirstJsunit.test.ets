@@ -272,7 +272,7 @@ export default function tabsFirstJsunit() {
     it('ArkUI_Tabs_0011', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUI_Tabs_0011 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('tabsFirst' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
 

@@ -1,4 +1,4 @@
-'use static'
+'use static';
 import { State } from '@ohos.arkui.stateManagement'
 import { LevelMode, ImmersiveMode, LevelOrder} from '@ohos.promptAction'
 import promptAction from '@ohos.promptAction';

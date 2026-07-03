@@ -25,6 +25,7 @@ import webViewContPageAndprepareForPageLoadErrorOne from './webViewContPageAndpr
 import webViewContPageAndprepareForPageLoadErrorTwo from './webViewContPageAndprepareForPageLoadErrorTwo.test'
 import webViewContCreatePdfAndOthersError from './webViewContCreatePdfAndOthersError.test'
 import WebViewContMicrophoneError from './WebViewContMicrophoneError.test'
+import webViewContEnableFullscreenVideoOverlay from './webViewContEnableFullscreenVideoOverlay.test'
 
 export default function testsuite() {
   webViewContMessageError()
@@ -40,5 +41,6 @@ export default function testsuite() {
   //webViewContPageAndprepareForPageLoadErrorTwo()
   webViewContCreatePdfAndOthersError()
   WebViewContMicrophoneError()
+  webViewContEnableFullscreenVideoOverlay()
 
 }

@@ -104,10 +104,10 @@ it('AlertDialogJsunit_static_0100', Level.LEVEL2, async (done: () => void): Prom
       await driver.pressBack();
       await CommonFunc.sleep(500);
 
-      let button2 = await driver.findComponent(ON.id('AlertDialog2'));
+      let button2 = await driver.findComponent(ON.id('AlertDialogParam' + '_AlertDialog2'));
       await (button2?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let strJson2 = inspector.getInspectorByKey('AlertDialog2');
+      let strJson2 = inspector.getInspectorByKey('AlertDialogParam' + '_AlertDialog2');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[AlertDialogJsunit_static_0100] component obj2 is: " + JSON.stringify(obj2));
       expect(obj2.getElement('$attrs').getString('label')).assertEqual("two button dialog");

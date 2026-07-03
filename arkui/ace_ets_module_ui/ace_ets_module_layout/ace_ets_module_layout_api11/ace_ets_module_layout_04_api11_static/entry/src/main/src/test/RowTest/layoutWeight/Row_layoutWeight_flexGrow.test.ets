@@ -80,10 +80,10 @@ it('SUB_ACE_Row_layoutWeight_flexGrow_TEST_static_0100', Level.LEVEL0, async (do
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_layoutWeight_flexGrow_011: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_flexGrow_011');
-      let Row_layoutWeight_flexGrow_012: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_flexGrow_012');
-      let Row_layoutWeight_flexGrow_013: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_flexGrow_013');
-      let Row_layoutWeight_flexGrow_01: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_flexGrow_01');
+      let Row_layoutWeight_flexGrow_011: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_flexGrow' + '_011');
+      let Row_layoutWeight_flexGrow_012: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_flexGrow' + '_012');
+      let Row_layoutWeight_flexGrow_013: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_flexGrow' + '_013');
+      let Row_layoutWeight_flexGrow_01: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_flexGrow' + '_01');
 
       console.log('assert position')
       expect(Math.abs(Math.round(Row_layoutWeight_flexGrow_011.top - Row_layoutWeight_flexGrow_01.top) - Math.round(Row_layoutWeight_flexGrow_01.bottom - Row_layoutWeight_flexGrow_011.bottom)) <= 1)
@@ -138,10 +138,10 @@ it('SUB_ACE_Row_layoutWeight_flexGrow_TEST_static_0200', Level.LEVEL0, async (do
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_layoutWeight_flexGrow_011: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_flexGrow_011');
-      let Row_layoutWeight_flexGrow_012: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_flexGrow_012');
-      let Row_layoutWeight_flexGrow_013: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_flexGrow_013');
-      let Row_layoutWeight_flexGrow_01: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_flexGrow_01');
+      let Row_layoutWeight_flexGrow_011: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_flexGrow' + '_011');
+      let Row_layoutWeight_flexGrow_012: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_flexGrow' + '_012');
+      let Row_layoutWeight_flexGrow_013: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_flexGrow' + '_013');
+      let Row_layoutWeight_flexGrow_01: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_flexGrow' + '_01');
 
       console.log('assert position')
       expect(Math.abs(Math.round(Row_layoutWeight_flexGrow_011.top - Row_layoutWeight_flexGrow_01.top) - Math.round(Row_layoutWeight_flexGrow_01.bottom - Row_layoutWeight_flexGrow_011.bottom)) <= 1)
@@ -196,10 +196,10 @@ it('SUB_ACE_Row_layoutWeight_flexGrow_TEST_static_0300', Level.LEVEL0, async (do
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let Row_layoutWeight_flexGrow_011: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_flexGrow_011');
-      let Row_layoutWeight_flexGrow_012: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_flexGrow_012');
-      let Row_layoutWeight_flexGrow_013: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_flexGrow_013');
-      let Row_layoutWeight_flexGrow_01: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_flexGrow_01');
+      let Row_layoutWeight_flexGrow_011: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_flexGrow' + '_011');
+      let Row_layoutWeight_flexGrow_012: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_flexGrow' + '_012');
+      let Row_layoutWeight_flexGrow_013: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_flexGrow' + '_013');
+      let Row_layoutWeight_flexGrow_01: RectValue = await CommonFunc.getComponentRect('Row_layoutWeight_flexGrow' + '_01');
 
       console.log('assert position')
       expect(Math.abs(Math.round(Row_layoutWeight_flexGrow_011.top - Row_layoutWeight_flexGrow_01.top) - Math.round(Row_layoutWeight_flexGrow_01.bottom - Row_layoutWeight_flexGrow_011.bottom)) <= 1)

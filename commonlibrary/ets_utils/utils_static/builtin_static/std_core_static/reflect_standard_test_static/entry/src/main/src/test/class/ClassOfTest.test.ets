@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -58,8 +58,8 @@ class ChildClass025 extends ParentClass025 {}
 class ParentClass025 {}
 
 class GenericClass037<T, U> {
-  public first: T;
-  public second: U;
+  public first: T = undefined as T;
+  public second: U = undefined as U;
 }
 
 interface GenericInterface038<T> {

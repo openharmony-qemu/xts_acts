@@ -25,7 +25,7 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { $r} from '@ohos.arkui.component';
 
-export default function ChipV2OptionsAccessibilityTest() {
+export default function ChipV2OptionsAccessibilityTest(): void {
   describe('ChipV2OptionsAccessibilityTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("ChipV2OptionsAccessibilityTest beforeEach start");

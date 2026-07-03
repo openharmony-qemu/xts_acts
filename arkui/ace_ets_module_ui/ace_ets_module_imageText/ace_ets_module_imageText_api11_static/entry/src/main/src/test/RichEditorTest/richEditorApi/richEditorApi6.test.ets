@@ -94,7 +94,7 @@ export default function richEditorApi6() {
       await CommonFunc.sleep(1000);
 
       console.info("text1111");
-      let text1 = inspector.getInspectorByKey('richEditorApi6_text1');
+      let text1 = inspector.getInspectorByKey('richEditorApi6' + '_text1');
       console.info("text2222");
       let Obj1 = JSON.parseJsonElement(text1);
       expect(Obj1.getElement('$attrs').getString('content')).assertEqual('222');

@@ -1,4 +1,4 @@
-'use static'
+'use static';
 import { stream } from '@kit.ArkTS';
 
 export let writeSuccess = false;
