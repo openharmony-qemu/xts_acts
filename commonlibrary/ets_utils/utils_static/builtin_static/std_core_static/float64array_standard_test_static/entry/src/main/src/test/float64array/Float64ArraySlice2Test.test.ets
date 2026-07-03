@@ -56,13 +56,9 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
       const pointTwoFive: number = 0.25;
-      const pointOneTwoFive: number = 0.125;
-      const pointZeroSixTwoFive: number = 0.0625;
       const threeValue: number = 3;
-      const original = Float64Array.of(pointFive, onePointFive, pointTwoFive, pointOneTwoFive, pointZeroSixTwoFive);
+      const original = new Float64Array([0.5, 1.5, pointTwoFive, 0.125, 0.0625]);
       const result = original.slice(-3, 5);
       expect(result.length).assertEqual(threeValue);
       const actVal1 = result.$_get(0);
@@ -79,10 +75,8 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const int8MinValue: number = -128;
       const zeroValue: number = 0;
-      const original = Float64Array.of(int16MinValue, int8MinValue, zeroValue);
+      const original = new Float64Array([-32768, -128, zeroValue]);
       const result = original.slice(100, 101);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
@@ -97,13 +91,9 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
       const negativeOne: number = -1;
-      const zeroValue: number = 0;
-      const oneValue: number = 1;
-      const int32MaxValue: number = 2147483647;
       const twoValue: number = 2;
-      const original = Float64Array.of(int32MinValue, negativeOne, zeroValue, oneValue, int32MaxValue);
+      const original = new Float64Array([-2147483648, negativeOne, 0, 1, 2147483647]);
       const result = original.slice(0, -3);
       expect(result.length).assertEqual(twoValue);
       const actVal2 = result.$_get(1);
@@ -120,13 +110,10 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
       const maxSafeInteger: number = 9007199254740991;
       const zeroValue: number = 0;
-      const piValue: number = 3.141592653589793;
-      const tinyNegativeValue: number = -1e-100;
       const twoValue: number = 2;
-      const original = Float64Array.of(pointOne, maxSafeInteger, zeroValue, piValue, tinyNegativeValue);
+      const original = new Float64Array([0.1, maxSafeInteger, zeroValue, 3.141592653589793, -1e-100]);
       const result = original.slice(-4, 3);
       expect(result.length).assertEqual(twoValue);
       const actVal3 = result.$_get(0);
@@ -147,10 +134,9 @@ export default function Float64ArraySlice2Test(): void {
      */
     it('testFloat64ArraySlice2005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
       const zeroValue: number = 0;
       const threeValue: number = 3;
-      const original = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const original = new Float64Array([pointOne, 9007199254740991, zeroValue]);
       const result = original.slice(0, 3);
       expect(result.length).assertEqual(threeValue);
       const actVal5 = result.$_get(0);
@@ -170,11 +156,9 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
       const int8MinValue: number = -128;
-      const zeroValue: number = 0;
       const oneValue: number = 1;
-      const original = Float64Array.of(int16MinValue, int8MinValue, zeroValue);
+      const original = new Float64Array([-32768, int8MinValue, 0]);
       const result = original.slice(-2, -1);
       expect(result.length).assertEqual(oneValue);
       const actVal7 = result.$_get(0);
@@ -191,12 +175,10 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
       const negativeOne: number = -1;
       const zeroValue: number = 0;
-      const oneValue: number = 1;
       const twoValue: number = 2;
-      const original = Float64Array.of(int32MinValue, negativeOne, zeroValue, oneValue);
+      const original = new Float64Array([-2147483648, negativeOne, zeroValue, 1]);
       const result = original.slice(1, 3);
       expect(result.length).assertEqual(twoValue);
       const actVal8 = result.$_get(0);
@@ -216,10 +198,7 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const original = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const original = new Float64Array([0.1, 9007199254740991, 0]);
       const result = original.slice();
       const expectVal = false;
       expect(result === original).assertEqual(expectVal);
@@ -234,12 +213,9 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
       const oneValue: number = 1;
       const threeValue: number = 3;
-      const original = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const original = new Float64Array([0.5, 1.5, 0.25]);
       const result = original.slice(0, 1);
       expect(result.length).assertEqual(oneValue);
       expect(original.length).assertEqual(threeValue);
@@ -254,13 +230,9 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const int8MinValue: number = -128;
-      const zeroValue: number = 0;
-      const int8MaxValue: number = 127;
       const sixteenValue: number = 16;
       const thirtytwoValue: number = 32;
-      const original = Float64Array.of(int16MinValue, int8MinValue, zeroValue, int8MaxValue);
+      const original = new Float64Array([-32768, -128, 0, 127]);
       const result = original.slice(1, 3);
       expect(result.byteLength).assertEqual(sixteenValue);
       expect(original.byteLength).assertEqual(thirtytwoValue);
@@ -275,11 +247,8 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const negativeOne: number = -1;
-      const zeroValue: number = 0;
       const sixteenValue: number = 16;
-      const original = Float64Array.of(int32MinValue, negativeOne, zeroValue);
+      const original = Float64Array.of(-2147483648, -1, 0);
       const result = original.slice(0, 2);
       const expectVal = sixteenValue;
       expect(result.byteLength).assertEqual(expectVal);
@@ -294,13 +263,10 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
       const maxSafeInteger: number = 9007199254740991;
       const zeroValue: number = 0;
-      const piValue: number = 3.141592653589793;
-      const tinyNegativeValue: number = -1e-100;
       const twoValue: number = 2;
-      const original = Float64Array.of(pointOne, maxSafeInteger, zeroValue, piValue, tinyNegativeValue);
+      const original = new Float64Array([0.1, maxSafeInteger, zeroValue, 3.141592653589793, -1e-100]);
       const firstSlice = original.slice(1, 4);
       const secondSlice = firstSlice.slice(0, 2);
       expect(secondSlice.length).assertEqual(twoValue);
@@ -321,14 +287,11 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
       const onePointFive: number = 1.5;
       const pointTwoFive: number = 0.25;
-      const pointOneTwoFive: number = 0.125;
-      const pointZeroSixTwoFive: number = 0.0625;
       const num999Pointzero: number = 999.0;
       const num888Pointzero: number = 888.0;
-      const original = Float64Array.of(pointFive, onePointFive, pointTwoFive, pointOneTwoFive, pointZeroSixTwoFive);
+      const original = new Float64Array([0.5, onePointFive, pointTwoFive, 0.125, 0.0625]);
       const result = original.slice(1, 3);
       result.$_set(0, num999Pointzero);
       result.$_set(1, num888Pointzero);
@@ -349,13 +312,10 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
       const int8MinValue: number = -128;
-      const zeroValue: number = 0;
-      const int8MaxValue: number = 127;
       const int16MaxValue: number = 32767;
       const fourValue: number = 4;
-      const original = Float64Array.of(int16MinValue, int8MinValue, zeroValue, int8MaxValue, int16MaxValue);
+      const original = new Float64Array([-32768, int8MinValue, 0, 127, int16MaxValue]);
       const result = original.slice(-4, 5);
       expect(result.length).assertEqual(fourValue);
       const actVal14 = result.$_get(0);
@@ -375,13 +335,10 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const negativeOne: number = -1;
       const zeroValue: number = 0;
-      const oneValue: number = 1;
       const int32MaxValue: number = 2147483647;
       const threeValue: number = 3;
-      const original = Float64Array.of(int32MinValue, negativeOne, zeroValue, oneValue, int32MaxValue);
+      const original = new Float64Array([-2147483648, -1, zeroValue, 1, int32MaxValue]);
       const result = original.slice(-3, 5);
       expect(result.length).assertEqual(threeValue);
       const actVal16 = result.$_get(0);
@@ -402,12 +359,8 @@ export default function Float64ArraySlice2Test(): void {
      */
     it('testFloat64ArraySlice2016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const piValue: number = 3.141592653589793;
-      const tinyNegativeValue: number = -1e-100;
       const oneValue: number = 1;
-      const original = Float64Array.of(pointOne, maxSafeInteger, zeroValue, piValue, tinyNegativeValue);
+      const original = new Float64Array([pointOne, 9007199254740991, 0, 3.141592653589793, -1e-100]);
       const result = original.slice(0, -4);
       expect(result.length).assertEqual(oneValue);
       const actVal18 = result.$_get(0);
@@ -425,12 +378,9 @@ export default function Float64ArraySlice2Test(): void {
      */
     it('testFloat64ArraySlice2017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const int16MinValue: number = -32768;
-      const int8MinValue: number = -128;
       const zeroValue: number = 0;
-      const int8MaxValue: number = 127;
-      const int16MaxValue: number = 32767;
       const threeValue: number = 3;
-      const original = Float64Array.of(int16MinValue, int8MinValue, zeroValue, int8MaxValue, int16MaxValue);
+      const original = new Float64Array([int16MinValue, -128, zeroValue, 127, 32767]);
       const result = original.slice(-5, -2);
       expect(result.length).assertEqual(threeValue);
       const actVal19 = result.$_get(0);
@@ -450,12 +400,9 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const int8MinValue: number = -128;
-      const zeroValue: number = 0;
       const int8MaxValue: number = 127;
       const fourValue: number = 4;
-      const original = Float64Array.of(int16MinValue, int8MinValue, zeroValue, int8MaxValue);
+      const original = new Float64Array([-32768, -128, 0, int8MaxValue]);
       const result = original.slice(0, 104);
       expect(result.length).assertEqual(fourValue);
       const actVal21 = result.$_get(3);
@@ -472,10 +419,8 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const int8MinValue: number = -128;
       const zeroValue: number = 0;
-      const original = Float64Array.of(int16MinValue, int8MinValue, zeroValue);
+      const original = new Float64Array([-32768, -128, zeroValue]);
       const result = original.slice(100, 100);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
@@ -490,10 +435,8 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const negativeOne: number = -1;
       const zeroValue: number = 0;
-      const original = Float64Array.of(int32MinValue, negativeOne, zeroValue);
+      const original = Float64Array.of(-2147483648, -1, zeroValue);
       const result = original.slice(-100, -100);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
@@ -508,11 +451,8 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const int8MinValue: number = -128;
-      const zeroValue: number = 0;
       const threeValue: number = 3;
-      const original = Float64Array.of(int16MinValue, int8MinValue, zeroValue);
+      const original = new Float64Array([-32768, -128, 0]);
       try {
         const r1 = original.slice(-1000, -500);
         const r2 = original.slice(1000, 2000);
@@ -533,13 +473,9 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
       const negativeOne: number = -1;
-      const zeroValue: number = 0;
-      const oneValue: number = 1;
-      const int32MaxValue: number = 2147483647;
       const twoValue: number = 2;
-      const original = Float64Array.of(int32MinValue, negativeOne, zeroValue, oneValue, int32MaxValue);
+      const original = new Float64Array([-2147483648, negativeOne, 0, 1, 2147483647]);
       try {
         const result = original.slice(1, 3);
         expect(result.length).assertEqual(twoValue);
@@ -560,10 +496,8 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
       const zeroValue: number = 0;
-      const original = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const original = Float64Array.of(0.1, 9007199254740991, zeroValue);
       try {
         const result = original.slice(2147483647, 2147483647);
         expect(result.length).assertEqual(zeroValue);
@@ -581,11 +515,8 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
       const zeroValue: number = 0;
-      const original = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const original = new Float64Array([0.5, 1.5, 0.25]);
       const result = original.slice(2147483647, 2147483647);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
@@ -600,10 +531,8 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const int8MinValue: number = -128;
       const zeroValue: number = 0;
-      const original = Float64Array.of(int16MinValue, int8MinValue, zeroValue);
+      const original = new Float64Array([-32768, -128, zeroValue]);
       const result = original.slice(2147483647, 2147483646);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
@@ -618,11 +547,9 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const negativeOne: number = -1;
       const zeroValue: number = 0;
       const threeValue: number = 3;
-      const original = Float64Array.of(int32MinValue, negativeOne, zeroValue);
+      const original = Float64Array.of(-2147483648, -1, zeroValue);
       const result = original.slice(0, 2147483647);
       expect(result.length).assertEqual(threeValue);
       const actVal23 = result.$_get(2);
@@ -639,10 +566,8 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
       const zeroValue: number = 0;
-      const original = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const original = Float64Array.of(0.1, 9007199254740991, zeroValue);
       const result = original.slice(0, -2147483647);
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
@@ -657,13 +582,9 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const pointOneTwoFive: number = 0.125;
       const pointZeroSixTwoFive: number = 0.0625;
       const fiveValue: number = 5;
-      const original = Float64Array.of(pointFive, onePointFive, pointTwoFive, pointOneTwoFive, pointZeroSixTwoFive);
+      const original = Float64Array.of(0.5, 1.5, 0.25, 0.125, pointZeroSixTwoFive);
       const result = original.slice(0, 0o7);
       expect(result.length).assertEqual(fiveValue);
       const actVal24 = result.$_get(4);
@@ -683,7 +604,7 @@ export default function Float64ArraySlice2Test(): void {
       const zeroValue: number = 0;
       const int8MinValue: number = -128;
       const oneValue: number = 1;
-      const original = Float64Array.of(zeroValue, int8MinValue, zeroValue);
+      const original = new Float64Array([zeroValue, int8MinValue, zeroValue]);
       const result = original.slice(1, 2);
       expect(result.length).assertEqual(oneValue);
       const actVal25 = result.$_get(0);
@@ -700,13 +621,11 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
       const negativeOne: number = -1;
       const zeroValue: number = 0;
-      const oneValue: number = 1;
       const int32MaxValue: number = 2147483647;
       const fourValue: number = 4;
-      const original = Float64Array.of(int32MinValue, negativeOne, zeroValue, oneValue, int32MaxValue, zeroValue);
+      const original = Float64Array.of(-2147483648, negativeOne, zeroValue, 1, int32MaxValue, zeroValue);
       const result = original.slice(1, 5);
       expect(result.length).assertEqual(fourValue);
       const actVal26 = result.$_get(0);
@@ -726,13 +645,10 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
       const zeroValue: number = 0;
-      const piValue: number = 3.141592653589793;
       const tinyNegativeValue: number = -1e-100;
       const threeValue: number = 3;
-      const original = Float64Array.of(pointOne, maxSafeInteger, zeroValue, piValue, tinyNegativeValue, zeroValue);
+      const original = new Float64Array([0.1, 9007199254740991, zeroValue, 3.141592653589793, tinyNegativeValue, zeroValue]);
       const result = original.slice(2, 5);
       expect(result.length).assertEqual(threeValue);
       const actVal28 = result.$_get(0);
@@ -752,13 +668,10 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
       const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
       const pointOneTwoFive: number = 0.125;
-      const pointZeroSixTwoFive: number = 0.0625;
       const threeValue: number = 3;
-      const original = Float64Array.of(pointFive, onePointFive, pointTwoFive, pointOneTwoFive, pointZeroSixTwoFive);
+      const original = new Float64Array([0.5, onePointFive, 0.25, pointOneTwoFive, 0.0625]);
       const result = original.slice(1, 4);
       expect(result.length).assertEqual(threeValue);
       const actVal30 = result.$_get(0);
@@ -778,13 +691,10 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
       const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
       const piValue: number = 3.141592653589793;
-      const tinyNegativeValue: number = -1e-100;
       const threeValue: number = 3;
-      const original = Float64Array.of(pointOne, maxSafeInteger, zeroValue, piValue, tinyNegativeValue);
+      const original = new Float64Array([0.1, maxSafeInteger, 0, piValue, -1e-100]);
       const result = original.slice(1, 4);
       expect(result.length).assertEqual(threeValue);
       const actVal32 = result.$_get(0);
@@ -821,12 +731,9 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
       const negativeOne: number = -1;
       const zeroValue: number = 0;
-      const oneValue: number = 1;
-      const int32MaxValue: number = 2147483647;
-      const original = Float64Array.of(int32MinValue, negativeOne, zeroValue, oneValue, int32MaxValue);
+      const original = Float64Array.of(-2147483648, negativeOne, zeroValue, 1, 2147483647);
       const result = original.slice(1, 3);
       const actVal34 = result.$_get(0);
       const expectVal = negativeOne;
@@ -845,11 +752,8 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const int8MinValue: number = -128;
-      const zeroValue: number = 0;
       const oneValue: number = 1;
-      const original = Float64Array.of(int16MinValue, int8MinValue, zeroValue);
+      const original = new Float64Array([-32768, -128, 0]);
       const result = original.slice(1, 2);
       expect(result.length).assertEqual(oneValue);
       const actVal36 = Number.isNaN(result.$_get(0));
@@ -866,13 +770,12 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
       const negativeOne: number = -1;
       const zeroValue: number = 0;
       const oneValue: number = 1;
       const int32MaxValue: number = 2147483647;
       const sixValue: number = 6;
-      const original = Float64Array.of(int32MinValue, negativeOne, zeroValue, oneValue, int32MaxValue, zeroValue);
+      const original = Float64Array.of(-2147483648, negativeOne, zeroValue, oneValue, int32MaxValue, zeroValue);
       const result = original.slice(0, 6);
       expect(result.length).assertEqual(sixValue);
       const actVal37 = result.$_get(0) === Infinity;
@@ -904,13 +807,9 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
-      const threePointZero: number = 3.0;
-      const fourPointZero: number = 4.0;
       const fivePointZero: number = 5.0;
       const fiveValue: number = 5;
-      const arr = Float64Array.of(onePointZero, twoPointZero, threePointZero, fourPointZero, fivePointZero);
+      const arr = Float64Array.of(1.0, 2.0, 3.0, 4.0, fivePointZero);
       const s = arr.slice(0, 0x5);
       expect(s.length).assertEqual(fiveValue);
       expect(s[4]).assertEqual(fivePointZero);
@@ -925,13 +824,9 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
       const twoPointZero: number = 2.0;
-      const threePointZero: number = 3.0;
-      const fourPointZero: number = 4.0;
-      const fivePointZero: number = 5.0;
       const twoValue: number = 2;
-      const arr = Float64Array.of(onePointZero, twoPointZero, threePointZero, fourPointZero, fivePointZero);
+      const arr = new Float64Array([1.0, twoPointZero, 3.0, 4.0, 5.0]);
       const s = arr.slice(0o1, 3);
       expect(s.length).assertEqual(twoValue);
       expect(s[0]).assertEqual(twoPointZero);
@@ -946,13 +841,9 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
-      const threePointZero: number = 3.0;
       const fourPointZero: number = 4.0;
-      const fivePointZero: number = 5.0;
       const fourValue: number = 4;
-      const arr = Float64Array.of(onePointZero, twoPointZero, threePointZero, fourPointZero, fivePointZero);
+      const arr = new Float64Array([1.0, 2.0, 3.0, fourPointZero, 5.0]);
       const s = arr.slice(0, 0b100);
       expect(s.length).assertEqual(fourValue);
       expect(s[3]).assertEqual(fourPointZero);
@@ -968,12 +859,8 @@ export default function Float64ArraySlice2Test(): void {
      */
     it('testFloat64ArraySlice2041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
-      const threePointZero: number = 3.0;
-      const fourPointZero: number = 4.0;
-      const fivePointZero: number = 5.0;
       const twoValue: number = 2;
-      const arr = Float64Array.of(onePointZero, twoPointZero, threePointZero, fourPointZero, fivePointZero);
+      const arr = new Float64Array([onePointZero, 2.0, 3.0, 4.0, 5.0]);
       const s = arr.slice(0x0, 2);
       expect(s.length).assertEqual(twoValue);
       expect(s[0]).assertEqual(onePointZero);
@@ -988,13 +875,8 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
-      const threePointZero: number = 3.0;
-      const fourPointZero: number = 4.0;
-      const fivePointZero: number = 5.0;
       const threeValue: number = 3;
-      const arr = Float64Array.of(onePointZero, twoPointZero, threePointZero, fourPointZero, fivePointZero);
+      const arr = Float64Array.of(1.0, 2.0, 3.0, 4.0, 5.0);
       const s = arr.slice(2, 5);
       const actVal43 = isF64Arr(s);
       const expectVal = true;
@@ -1011,11 +893,8 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
-      const threePointZero: number = 3.0;
       const zeroValue: number = 0;
-      const arr = Float64Array.of(onePointZero, twoPointZero, threePointZero);
+      const arr = new Float64Array([1.0, 2.0, 3.0]);
       const s = arr.slice(0x7FFFFFFF, 3);
       const expectVal = zeroValue;
       expect(s.length).assertEqual(expectVal);
@@ -1030,13 +909,8 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
-      const threePointZero: number = 3.0;
-      const fourPointZero: number = 4.0;
-      const fivePointZero: number = 5.0;
       const zeroValue: number = 0;
-      const arr = Float64Array.of(onePointZero, twoPointZero, threePointZero, fourPointZero, fivePointZero);
+      const arr = Float64Array.of(1.0, 2.0, 3.0, 4.0, 5.0);
       const s = arr.slice(0b1010, 5);
       const expectVal = zeroValue;
       expect(s.length).assertEqual(expectVal);
@@ -1051,13 +925,8 @@ export default function Float64ArraySlice2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArraySlice2045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
-      const threePointZero: number = 3.0;
-      const fourPointZero: number = 4.0;
-      const fivePointZero: number = 5.0;
       const fiveValue: number = 5;
-      const arr = Float64Array.of(onePointZero, twoPointZero, threePointZero, fourPointZero, fivePointZero);
+      const arr = Float64Array.of(1.0, 2.0, 3.0, 4.0, 5.0);
       const s = arr.slice(-2147483648, 5);
       const expectVal = fiveValue;
       expect(s.length).assertEqual(expectVal);
