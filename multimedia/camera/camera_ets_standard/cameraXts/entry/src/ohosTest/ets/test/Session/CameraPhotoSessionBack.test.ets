@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -875,7 +875,7 @@ export default function CameraPhotoSessionBackTest() {
           mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCap.photoProfiles[0]);
           await getCommitConfig(mPreviewOutput, mPhotoOutput);
           console.info(TAG, testName + ' session commitConfig successfully.');
-let callbackDone = false;
+           let callbackDone = false;
            mPhotoSession.start((error) => {
              if (error !== undefined && error.code !== 0) {
                console.error(TAG,
@@ -979,7 +979,7 @@ let callbackDone = false;
         } else {
           expect(isEmpty(mPhotoSession)).assertFalse();
           console.info(TAG, testName + ' session created successfully.');
-let callbackDone = false;
+           let callbackDone = false;
            mPhotoSession.start((error) => {
              if (error !== undefined && error.code !== 0) {
                console.error(TAG,
@@ -1537,7 +1537,7 @@ let callbackDone = false;
           mPreviewOutput = mCameraManager.createPreviewOutput(mCameraOutputCap.previewProfiles[0], indexSurfaceId);
           mPhotoOutput = mCameraManager.createPhotoOutput(mCameraOutputCap.photoProfiles[0]);
           await getCommitConfig(mPreviewOutput, mPhotoOutput);
-let callbackDone = false;
+           let callbackDone = false;
            mPhotoSession.commitConfig((error) => {
              if (error !== undefined && error.code !== 0) {
                console.error(TAG,
