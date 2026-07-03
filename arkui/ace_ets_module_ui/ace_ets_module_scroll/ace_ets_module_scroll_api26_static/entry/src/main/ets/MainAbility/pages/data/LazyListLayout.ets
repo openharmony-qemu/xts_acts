@@ -558,10 +558,7 @@ export class LazyListLayout extends LazyCustomLayoutAlgorithm {
         currItem.end = correctStart + height;
 
         console.error(`  FIXED: [${i}] now starts at ${correctStart}px`);
-      }
-
-      // Check if positions are not monotonic (should always increase)
-      else if (currItem.start < prevItem.start) {
+      } else if (currItem.start < prevItem.start) {
         hasOverlap = true;
 
         console.error(`\n[POSITION VALIDATION] POSITION ORDER ERROR at index ${i}`);
