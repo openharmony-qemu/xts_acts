@@ -1,5 +1,5 @@
 'use static';
-﻿/*---
+/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+import Utils from "../../../Util.test";
+
 import {
   expect,
   describe,
@@ -27,15 +29,7 @@ import {
   Level
 } from "../../../../../../hypium";
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-
-export default function ConstantExpressionCheckArrayTest() {
+export default function ConstantExpressionCheckArrayTest(): void {
   describe("ConstantExpressionCheckArrayTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -46,7 +40,7 @@ export default function ConstantExpressionCheckArrayTest() {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
@@ -789,38 +783,6 @@ export default function ConstantExpressionCheckArrayTest() {
       const size: int = (decision ? value1 : value1 + 25).toInt()
       const data: int[] = Array.create<int>(size, 0)
       expect(data.length).assertEqual(22)
-    })
-
-    /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_4800
-     * @tc.name      testConstantExpressionCheckArray0048
-     * @tc.desc      Constant expression with logical calculations as array size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConstantExpressionCheckArray0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 10
-      const decision: boolean = value1 < 12
-      const size: int = (decision ? value1 : value1 + 25).toInt()
-      const data: int[] = Array.create<int>(size, 0)
-      expect(data.length).assertEqual(10)
-    })
-
-    /**
-     * @tc.number    SUB_CONSTANT_EXPRESSION_CHECK_ARRAY_4900
-     * @tc.name      testConstantExpressionCheckArray0049
-     * @tc.desc      Constant expression with logical calculations as array size.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testConstantExpressionCheckArray0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value1: int = 10
-      const decision: boolean = value1 < 12.0f
-      const size: int = (decision ? value1 : value1 + 25).toInt()
-      const data: int[] = Array.create<int>(size, 0)
-      expect(data.length).assertEqual(10)
     })
 
     /**

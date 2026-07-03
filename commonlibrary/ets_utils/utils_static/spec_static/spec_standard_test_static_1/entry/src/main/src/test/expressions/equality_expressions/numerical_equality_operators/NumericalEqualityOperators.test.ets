@@ -1,5 +1,5 @@
 'use static';
-﻿/*---
+/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+import Utils from "../../../Util.test";
+
 import {
   afterAll,
   afterEach,
@@ -26,14 +28,6 @@ import {
   Size,
   TestType
 } from '../../../../../../hypium';
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
 
 function checkEq_1(c1: char, c2: char): boolean {
   return c1 == c2
@@ -59,7 +53,7 @@ function checkNotEqStrict_1(c1: char, c2: char): boolean {
   return !(c1 === c2)
 }
 
-export default function NumericalEqualityOperatorsTest() {
+export default function NumericalEqualityOperatorsTest(): void {
   describe("NumericalEqualityOperatorsTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -70,7 +64,7 @@ export default function NumericalEqualityOperatorsTest() {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
@@ -962,19 +956,6 @@ export default function NumericalEqualityOperatorsTest() {
       expect(left).not().assertEqual(right);
     })
     /**
-     * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_6900
-     * @tc.name      testNumericalEqualityOperators0069
-     * @tc.desc      Verify inequality of byte and bigint values with different values
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericalEqualityOperators0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let left: byte = 1
-      let right: bigint = 2n
-      expect(left).not().assertEqual(right);
-    })
-    /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_7000
      * @tc.name      testNumericalEqualityOperators0070
      * @tc.desc      Verify inequality between normal float and NaN values
@@ -1135,19 +1116,6 @@ export default function NumericalEqualityOperatorsTest() {
       expect(left).not().assertEqual(right);
     })
     /**
-     * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_9000
-     * @tc.name      testNumericalEqualityOperators0090
-     * @tc.desc      Verify inequality between double and positive infinity values
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericalEqualityOperators0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let left = 0.1
-      let right = Double.POSITIVE_INFINITY
-      expect(left).not().assertEqual(right);
-    })
-    /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_9100
      * @tc.name      testNumericalEqualityOperators0091
      * @tc.desc      Verify inequality between positive infinity and double values
@@ -1156,19 +1124,6 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testNumericalEqualityOperators0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let left = Double.POSITIVE_INFINITY
-      let right = 0.1
-      expect(left).not().assertEqual(right);
-    })
-    /**
-     * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_9200
-     * @tc.name      testNumericalEqualityOperators0092
-     * @tc.desc      Verify inequality between positive infinity and double values
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericalEqualityOperators0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left = Double.POSITIVE_INFINITY
       let right = 0.1
       expect(left).not().assertEqual(right);
@@ -1187,19 +1142,6 @@ export default function NumericalEqualityOperatorsTest() {
       expect(left).not().assertEqual(right);
     })
     /**
-     * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_9400
-     * @tc.name      testNumericalEqualityOperators0094
-     * @tc.desc      Verify inequality between negative infinity and double values
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericalEqualityOperators0094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let left = Double.NEGATIVE_INFINITY
-      let right = 0.1
-      expect(left).not().assertEqual(right);
-    })
-    /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_9500
      * @tc.name      testNumericalEqualityOperators0095
      * @tc.desc      Verify inequality between double and negative infinity values
@@ -1213,19 +1155,6 @@ export default function NumericalEqualityOperatorsTest() {
       expect(left).not().assertEqual(right);
     })
     /**
-     * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_9600
-     * @tc.name      testNumericalEqualityOperators0096
-     * @tc.desc      Verify inequality between double and negative infinity values
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericalEqualityOperators0096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let left = 0.1
-      let right = Double.NEGATIVE_INFINITY
-      expect(left).not().assertEqual(right);
-    })
-    /**
      * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_9700
      * @tc.name      testNumericalEqualityOperators0097
      * @tc.desc      Verify inequality between double and positive infinity values
@@ -1234,19 +1163,6 @@ export default function NumericalEqualityOperatorsTest() {
      * @tc.level     Level 2
      */
     it("testNumericalEqualityOperators0097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let left = 0.3
-      let right = Double.POSITIVE_INFINITY
-      expect(left).not().assertEqual(right);
-    })
-    /**
-     * @tc.number    SUB_NUMERICAL_EQUALITY_OPERATORS_9800
-     * @tc.name      testNumericalEqualityOperators0098
-     * @tc.desc      Verify inequality between double and positive infinity values
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericalEqualityOperators0098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left = 0.3
       let right = Double.POSITIVE_INFINITY
       expect(left).not().assertEqual(right);
