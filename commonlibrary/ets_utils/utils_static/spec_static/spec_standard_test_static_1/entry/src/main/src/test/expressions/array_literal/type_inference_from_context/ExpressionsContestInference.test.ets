@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+import Utils from "../../../Util.test";
+
 import {
   expect,
   describe,
@@ -237,7 +239,6 @@ function arr4_foo_8(a: string[][]): void {
   expect(a.length).assertEqual(2);
 }
 
-
 function arr4_foo_12(a: bigint[][]): void {
   expect(a[0][0]).assertEqual(11111111111111111111111111111111111111111111111n);
   expect(a[2][0]).assertEqual(33333333333333333333333333333333333333333333333333n);
@@ -320,16 +321,7 @@ function arr4_foo_54(a: string[]|number[]): void {
   expect(x.length).assertEqual(3);
 }
 
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-
-export default function ExpressionsContestInferenceTest() {
+export default function ExpressionsContestInferenceTest(): void {
   describe("ExpressionsContestInferenceTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -340,7 +332,7 @@ export default function ExpressionsContestInferenceTest() {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.

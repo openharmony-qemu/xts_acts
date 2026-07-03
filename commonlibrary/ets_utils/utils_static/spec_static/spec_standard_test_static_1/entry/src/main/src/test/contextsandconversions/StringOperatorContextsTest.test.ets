@@ -25,6 +25,7 @@ import {
   Size,
   TestType
 } from '../../../../hypium/index';
+import Utils from "../Util.test";
 
 type Foo = () => int;
 
@@ -71,14 +72,7 @@ class B2 extends A2 implements J {
     return super.toString() + " :> B";
   }
 }
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-export default function StringOperatorContextsTest() {
+export default function StringOperatorContextsTest(): void {
 
   describe("StringOperatorContextsTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -90,7 +84,7 @@ export default function StringOperatorContextsTest() {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
@@ -175,22 +169,6 @@ export default function StringOperatorContextsTest() {
       let p1: Color = Color.Red;
       let res = p1 + "";
       let expected = "0";
-      expect(res).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number    SUB_STRING_OPERATOR_CONTEXTS_0600
-     * @tc.name      testStringOperatorContexts0006
-     * @tc.desc      String contexts conversion. String operand at the end of the expression: from 'enum' to string (toString)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testStringOperatorContexts0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      let p1: Color = Color.Red;
-      let res = p1 + "";
-      let expected = p1.toString();
       expect(res).assertEqual(expected);
     });
 
@@ -287,21 +265,6 @@ export default function StringOperatorContextsTest() {
     });
 
     /**
-     * @tc.number    SUB_STRING_OPERATOR_CONTEXTS_1300
-     * @tc.name      testStringOperatorContexts0013
-     * @tc.desc      String contexts conversion. String operand at the end of the expression: from 'Floating' to string
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testStringOperatorContexts0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let p1: float = 3.14f;
-      let res = p1 + "";
-      let expected = p1.toString();
-      expect(res).assertEqual(expected);
-    });
-
-    /**
      * @tc.number    SUB_STRING_OPERATOR_CONTEXTS_1400
      * @tc.name      testStringOperatorContexts0014
      * @tc.desc      String contexts conversion. String operand at the end of the expression: from 'Object|null' to string (null)
@@ -349,7 +312,7 @@ export default function StringOperatorContextsTest() {
     /**
      * @tc.number    SUB_STRING_OPERATOR_CONTEXTS_1700
      * @tc.name      testStringOperatorContexts0017
-     * @tc.desc      String contexts conversion. String operand at the middle of the expression: multiple primitive types
+     * @tc.desc      String contexts conversion. String operand at both beginning and middle of the expression: multiple primitive types
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -363,15 +326,18 @@ export default function StringOperatorContextsTest() {
       let p6: boolean = true;
       let p7: boolean = false;
       let p8: bigint = 42n;
-      let res = p1 + p2 + p3 + p4 + "" + p5 + p6 + p7 + p8;
-      let expected = 42 + 42 + 42 + 42 + " " + "true" + "false" + "42";
-      expect(res).assertEqual(expected);
+      let res1 = "" + p1 + p2 + p3 + p4 + p5 + p6 + p7 + p8;
+      let expected1 = "42" + "42" + "42" + "42" + " " + "true" + "false" + "42";
+      expect(res1).assertEqual(expected1);
+      let res2 = p1 + p2 + p3 + p4 + "" + p5 + p6 + p7 + p8;
+      let expected2 = 42 + 42 + 42 + 42 + " " + "true" + "false" + "42";
+      expect(res2).assertEqual(expected2);
     });
 
     /**
      * @tc.number    SUB_STRING_OPERATOR_CONTEXTS_1800
      * @tc.name      testStringOperatorContexts0018
-     * @tc.desc      String contexts conversion. String operand at the middle of the expression: multiple wrapper types
+     * @tc.desc      String contexts conversion. String operand at both beginning and middle of the expression: multiple wrapper types
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -384,9 +350,12 @@ export default function StringOperatorContextsTest() {
       let p5: Boolean = new Boolean(true);
       let p6: Boolean = new Boolean(false);
       let p7: bigint = new BigInt(42);
-      let res = p1 + p2 + p3 + p4 + "" + p5 + p6 + p7;
-      let expected = 42 + 42 + 42 + 42 + "true" + "false" + "42";
-      expect(res).assertEqual(expected);
+      let res1 = "" + p1 + p2 + p3 + p4 + p5 + p6 + p7;
+      let expected1 = "42" + "42" + "42" + "42" + "true" + "false" + "42";
+      expect(res1).assertEqual(expected1);
+      let res2 = p1 + p2 + p3 + p4 + "" + p5 + p6 + p7;
+      let expected2 = 42 + 42 + 42 + 42 + "true" + "false" + "42";
+      expect(res2).assertEqual(expected2);
     });
 
     /**
@@ -424,7 +393,7 @@ export default function StringOperatorContextsTest() {
     /**
      * @tc.number    SUB_STRING_OPERATOR_CONTEXTS_2100
      * @tc.name      testStringOperatorContexts0021
-     * @tc.desc      String contexts conversion. String operand at the middle of the expression: enum values
+     * @tc.desc      String contexts conversion. String operand at both beginning and middle of the expression: enum values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -434,27 +403,12 @@ export default function StringOperatorContextsTest() {
       let p1: Color = Color.Red;
       let p2: Color = Color.Blue;
       let p3: Color = Color.Green;
-      let res = p1 + p2 + "" + p3;
-      let expected = 0 + 2 + "1";
-      expect(res).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number    SUB_STRING_OPERATOR_CONTEXTS_2200
-     * @tc.name      testStringOperatorContexts0022
-     * @tc.desc      String contexts conversion. String operand at the middle of the expression: enum with toString
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testStringOperatorContexts0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      let p1: Color = Color.Red;
-      let p2: Color = Color.Blue;
-      let p3: Color = Color.Green;
-      let res = p1 + p2 + "" + p3;
-      let expected = p1 + p2 + p3.toString();
-      expect(res).assertEqual(expected);
+      let res1 = "" + p1 + p2 + p3;
+      let expected1 = "0" + "2" + "1";
+      expect(res1).assertEqual(expected1);
+      let res2 = p1 + p2 + "" + p3;
+      let expected2 = 0 + 2 + "1";
+      expect(res2).assertEqual(expected2);
     });
 
     /**
@@ -476,7 +430,7 @@ export default function StringOperatorContextsTest() {
     /**
      * @tc.number    SUB_STRING_OPERATOR_CONTEXTS_2400
      * @tc.name      testStringOperatorContexts0024
-     * @tc.desc      String contexts conversion. String operand at the middle of the expression: Integral types
+     * @tc.desc      String contexts conversion. String operand at both beginning and middle of the expression: Integral types
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -486,9 +440,12 @@ export default function StringOperatorContextsTest() {
       let p2: Integral = new Short(42);
       let p3: Integral = new Int(42);
       let p4: Integral = new Long(42);
-      let res = p1 + p2 + "" + p3 + p4;
-      let expected = 42 + 42 + "42" + "42";
-      expect(res).assertEqual(expected);
+      let res1 = "" + p1 + p2 + p3 + p4;
+      let expected1 = "42" + "42" + "42" + "42";
+      expect(res1).assertEqual(expected1);
+      let res2 = p1 + p2 + "" + p3 + p4;
+      let expected2 = 42 + 42 + "42" + "42";
+      expect(res2).assertEqual(expected2);
     });
 
     /**
@@ -612,49 +569,6 @@ export default function StringOperatorContextsTest() {
     });
 
     /**
-     * @tc.number    SUB_STRING_OPERATOR_CONTEXTS_3100
-     * @tc.name      testStringOperatorContexts0031
-     * @tc.desc      String contexts conversion. String operand at the beginning of the expression: multiple primitive types
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testStringOperatorContexts0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let p1: byte = 42 as byte;
-      let p2: short = 42;
-      let p3: int = 42;
-      let p4: long = 42;
-      let p5: char = c'\u0020';
-      let p6: boolean = true;
-      let p7: boolean = false;
-      let p8: bigint = 42n;
-      let res = "" + p1 + p2 + p3 + p4 + p5 + p6 + p7 + p8;
-      let expected = "42" + "42" + "42" + "42" + " " + "true" + "false" + "42";
-      expect(res).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number    SUB_STRING_OPERATOR_CONTEXTS_3200
-     * @tc.name      testStringOperatorContexts0032
-     * @tc.desc      String contexts conversion. String operand at the beginning of the expression: multiple wrapper types
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testStringOperatorContexts0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let p1: Byte = new Byte(42 as byte);
-      let p2: Short = new Short(42);
-      let p3: Int = new Int(42);
-      let p4: Long = new Long(42);
-      let p5: Boolean = new Boolean(true);
-      let p6: Boolean = new Boolean(false);
-      let p7: bigint = new BigInt(42);
-      let res = "" + p1 + p2 + p3 + p4 + p5 + p6 + p7;
-      let expected = "42" + "42" + "42" + "42" + "true" + "false" + "42";
-      expect(res).assertEqual(expected);
-    });
-
-    /**
      * @tc.number    SUB_STRING_OPERATOR_CONTEXTS_3300
      * @tc.name      testStringOperatorContexts0033
      * @tc.desc      String contexts conversion. String operand at the beginning of the expression: multiple FixedArray types
@@ -703,42 +617,6 @@ export default function StringOperatorContextsTest() {
     });
 
     /**
-     * @tc.number    SUB_STRING_OPERATOR_CONTEXTS_3500
-     * @tc.name      testStringOperatorContexts0035
-     * @tc.desc      String contexts conversion. String operand at the beginning of the expression: enum values
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testStringOperatorContexts0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      let p1: Color = Color.Red;
-      let p2: Color = Color.Blue;
-      let p3: Color = Color.Green;
-      let res = "" + p1 + p2 + p3;
-      let expected = "0" + "2" + "1";
-      expect(res).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number    SUB_STRING_OPERATOR_CONTEXTS_3600
-     * @tc.name      testStringOperatorContexts0036
-     * @tc.desc      String contexts conversion. String operand at the beginning of the expression: enum with toString
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testStringOperatorContexts0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      let p1: Color = Color.Red;
-      let p2: Color = Color.Blue;
-      let p3: Color = Color.Green;
-      let res = "" + p1 + p2 + p3;
-      let expected = p1.toString() + p2.toString() + p3.toString();
-      expect(res).assertEqual(expected);
-    });
-
-    /**
      * @tc.number    SUB_STRING_OPERATOR_CONTEXTS_3700
      * @tc.name      testStringOperatorContexts0037
      * @tc.desc      String contexts conversion. String operand at the beginning of the expression: function type
@@ -783,24 +661,6 @@ export default function StringOperatorContextsTest() {
       };
       let res = "" + p1;
       let expected = p1.toString();
-      expect(res).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number    SUB_STRING_OPERATOR_CONTEXTS_4000
-     * @tc.name      testStringOperatorContexts0040
-     * @tc.desc      String contexts conversion. String operand at the beginning of the expression: Integral types
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testStringOperatorContexts0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let p1: Integral = new Byte(42 as byte);
-      let p2: Integral = new Short(42);
-      let p3: Integral = new Int(42);
-      let p4: Integral = new Long(42);
-      let res = "" + p1 + p2 + p3 + p4;
-      let expected = "42" + "42" + "42" + "42";
       expect(res).assertEqual(expected);
     });
 
@@ -942,272 +802,174 @@ export default function StringOperatorContextsTest() {
     /**
      * @tc.number    SUB_STRING_OPERATOR_CONTEXTS_4700
      * @tc.name      testStringOperatorContexts0047
-     * @tc.desc      String conversion: null type to string (string|null)
+     * @tc.desc      String conversion: null type to string (string|null) at both beginning and end
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testStringOperatorContexts0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: string | null = null;
-      let dst: string = src + "";
-      expect(dst).assertEqual("null");
+      let dst1: string = "" + src;
+      expect(dst1).assertEqual("null");
+      let dst2: string = src + "";
+      expect(dst2).assertEqual("null");
     });
 
     /**
      * @tc.number    SUB_STRING_OPERATOR_CONTEXTS_4800
      * @tc.name      testStringOperatorContexts0048
-     * @tc.desc      String conversion: null type to string (Error|null)
+     * @tc.desc      String conversion: null type to string (Error|null) at both beginning and end
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testStringOperatorContexts0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Error | null = null;
-      let dst: string = src + "";
-      expect(dst).assertEqual("null");
-    });
-
-    /**
-     * @tc.number    SUB_STRING_OPERATOR_CONTEXTS_4900
-     * @tc.name      testStringOperatorContexts0049
-     * @tc.desc      String conversion: null type to string (string|null at beginning)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testStringOperatorContexts0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src: string | null = null;
-      let dst: string = "" + src;
-      expect(dst).assertEqual("null");
-    });
-
-    /**
-     * @tc.number    SUB_STRING_OPERATOR_CONTEXTS_5000
-     * @tc.name      testStringOperatorContexts0050
-     * @tc.desc      String conversion: null type to string (Error|null at beginning)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testStringOperatorContexts0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src: Error | null = null;
-      let dst: string = "" + src;
-      expect(dst).assertEqual("null");
+      let dst1: string = "" + src;
+      expect(dst1).assertEqual("null");
+      let dst2: string = src + "";
+      expect(dst2).assertEqual("null");
     });
 
     /**
      * @tc.number    SUB_STRING_OPERATOR_CONTEXTS_5100
      * @tc.name      testStringOperatorContexts0051
-     * @tc.desc      String conversion: primitive types to string
+     * @tc.desc      String conversion: primitive types to string (both beginning and end)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testStringOperatorContexts0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src_1: byte = -123;
-      let dst_1: string = "" + src_1;
+      let dst_1a: string = "" + src_1;
+      let dst_1b: string = src_1 + "";
       let exp_1: string = (new Byte(src_1)).toString();
-      expect(dst_1).assertEqual(exp_1);
+      expect(dst_1a).assertEqual(exp_1);
+      expect(dst_1b).assertEqual(exp_1);
 
       let src_2: short = -123;
-      let dst_2: string = "" + src_2;
+      let dst_2a: string = "" + src_2;
+      let dst_2b: string = src_2 + "";
       let exp_2: string = (new Short(src_2)).toString();
-      expect(dst_2).assertEqual(exp_2);
+      expect(dst_2a).assertEqual(exp_2);
+      expect(dst_2b).assertEqual(exp_2);
 
       let src_3: char = c'X';
-      let dst_3: string = "" + src_3;
+      let dst_3a: string = "" + src_3;
+      let dst_3b: string = src_3 + "";
       let exp_3: string = (new Char(src_3)).toString();
-      expect(dst_3).assertEqual(exp_3);
+      expect(dst_3a).assertEqual(exp_3);
+      expect(dst_3b).assertEqual(exp_3);
 
       let src_4: int = -123;
-      let dst_4: string = "" + src_4;
+      let dst_4a: string = "" + src_4;
+      let dst_4b: string = src_4 + "";
       let exp_4: string = (new Int(src_4)).toString();
-      expect(dst_4).assertEqual(exp_4);
+      expect(dst_4a).assertEqual(exp_4);
+      expect(dst_4b).assertEqual(exp_4);
 
       let src_5: long = -123;
-      let dst_5: string = "" + src_5;
+      let dst_5a: string = "" + src_5;
+      let dst_5b: string = src_5 + "";
       let exp_5: string = (new Long(src_5)).toString();
-      expect(dst_5).assertEqual(exp_5);
+      expect(dst_5a).assertEqual(exp_5);
+      expect(dst_5b).assertEqual(exp_5);
 
       let src_6: float = -123.0f;
-      let dst_6: string = "" + src_6;
+      let dst_6a: string = "" + src_6;
+      let dst_6b: string = src_6 + "";
       let exp_6: string = (new Float(src_6)).toString();
-      expect(dst_6).assertEqual(exp_6);
+      expect(dst_6a).assertEqual(exp_6);
+      expect(dst_6b).assertEqual(exp_6);
 
       let src_7: double = -123.0;
-      let dst_7: string = "" + src_7;
+      let dst_7a: string = "" + src_7;
+      let dst_7b: string = src_7 + "";
       let exp_7: string = (new Double(src_7)).toString();
-      expect(dst_7).assertEqual(exp_7);
-    });
-
-    /**
-     * @tc.number    SUB_STRING_OPERATOR_CONTEXTS_5200
-     * @tc.name      testStringOperatorContexts0052
-     * @tc.desc      String conversion: primitive types to string (string at end)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testStringOperatorContexts0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src_1: byte = -123;
-      let dst_1: string = src_1 + "";
-      let exp_1: string = (new Byte(src_1)).toString();
-      expect(dst_1).assertEqual(exp_1);
-
-      let src_2: short = -123;
-      let dst_2: string = src_2 + "";
-      let exp_2: string = (new Short(src_2)).toString();
-      expect(dst_2).assertEqual(exp_2);
-
-      let src_3: char = c'X';
-      let dst_3: string = src_3 + "";
-      let exp_3: string = (new Char(src_3)).toString();
-      expect(dst_3).assertEqual(exp_3);
-
-      let src_4: int = -123;
-      let dst_4: string = src_4 + "";
-      let exp_4: string = (new Int(src_4)).toString();
-      expect(dst_4).assertEqual(exp_4);
-
-      let src_5: long = -123;
-      let dst_5: string = src_5 + "";
-      let exp_5: string = (new Long(src_5)).toString();
-      expect(dst_5).assertEqual(exp_5);
-
-      let src_6: float = -123.0f;
-      let dst_6: string = src_6 + "";
-      let exp_6: string = (new Float(src_6)).toString();
-      expect(dst_6).assertEqual(exp_6);
-
-      let src_7: double = -123.0;
-      let dst_7: string = src_7 + "";
-      let exp_7: string = (new Double(src_7)).toString();
-      expect(dst_7).assertEqual(exp_7);
+      expect(dst_7a).assertEqual(exp_7);
+      expect(dst_7b).assertEqual(exp_7);
     });
     /**
      * @tc.number    SUB_STRING_OPERATOR_CONTEXTS_5300
      * @tc.name      testStringOperatorContexts0053
-     * @tc.desc      String conversion: reference types to string
+     * @tc.desc      String conversion: reference types to string (both beginning and end)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testStringOperatorContexts0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src_1: Object = new Object();
-      let dst_1: string = "" + src_1;
+      let dst_1a: string = "" + src_1;
+      let dst_1b: string = src_1 + "";
       let exp_1: string = src_1.toString();
-      expect(dst_1).assertEqual(exp_1);
+      expect(dst_1a).assertEqual(exp_1);
+      expect(dst_1b).assertEqual(exp_1);
 
       let src_2: string = new string();
-      let dst_2: string = "" + src_2;
+      let dst_2a: string = "" + src_2;
+      let dst_2b: string = src_2 + "";
       let exp_2: string = src_2.toString();
-      expect(dst_2).assertEqual(exp_2);
+      expect(dst_2a).assertEqual(exp_2);
+      expect(dst_2b).assertEqual(exp_2);
 
       let src_3: Error = new Error();
-      let dst_3: string = "" + src_3;
+      let dst_3a: string = "" + src_3;
+      let dst_3b: string = src_3 + "";
       let exp_3: string = src_3.toString();
-      expect(dst_3).assertEqual(exp_3);
+      expect(dst_3a).assertEqual(exp_3);
+      expect(dst_3b).assertEqual(exp_3);
 
       let src_4: A1 = new A1();
       let dst_4: string = "" + src_4;
       let exp_4: string = src_4.toString();
       expect(dst_4).assertEqual(exp_4);
 
-      let src_5: B1 = new B1();
-      let dst_5: string = "" + src_5;
-      let exp_5: string = src_5.toString();
-      expect(dst_5).assertEqual(exp_5);
-    });
-
-    /**
-     * @tc.number    SUB_STRING_OPERATOR_CONTEXTS_5400
-     * @tc.name      testStringOperatorContexts0054
-     * @tc.desc      String conversion: reference types to string (string at end)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testStringOperatorContexts0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src_1: Object = new Object();
-      let dst_1: string = src_1 + "";
-      let exp_1: string = src_1.toString();
-      expect(dst_1).assertEqual(exp_1);
-
-      let src_2: string = new string();
-      let dst_2: string = src_2 + "";
-      let exp_2: string = src_2.toString();
-      expect(dst_2).assertEqual(exp_2);
-
-      let src_3: Error = new Error();
-      let dst_3: string = src_3 + "";
-      let exp_3: string = src_3.toString();
-      expect(dst_3).assertEqual(exp_3);
-
-      let src_4: A2 = new A2();
-      let dst_4: string = src_4 + "";
-      let exp_4: string = src_4.toString();
-      expect(dst_4).assertEqual(exp_4);
-
-      let src_5: B2 = new B2();
+      let src_5: A2 = new A2();
       let dst_5: string = src_5 + "";
       let exp_5: string = src_5.toString();
       expect(dst_5).assertEqual(exp_5);
+
+      let src_6: B1 = new B1();
+      let dst_6: string = "" + src_6;
+      let exp_6: string = src_6.toString();
+      expect(dst_6).assertEqual(exp_6);
+
+      let src_7: B2 = new B2();
+      let dst_7: string = src_7 + "";
+      let exp_7: string = src_7.toString();
+      expect(dst_7).assertEqual(exp_7);
     });
 
     /**
      * @tc.number    SUB_STRING_OPERATOR_CONTEXTS_5500
      * @tc.name      testStringOperatorContexts0055
-     * @tc.desc      String conversion: undefined type to string (string|undefined at end)
+     * @tc.desc      String conversion: undefined type to string (string|undefined) at both beginning and end
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testStringOperatorContexts0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: string | undefined = undefined;
-      let dst: string = src + "";
-      expect(dst).assertEqual("undefined");
+      let dst1: string = "" + src;
+      expect(dst1).assertEqual("undefined");
+      let dst2: string = src + "";
+      expect(dst2).assertEqual("undefined");
     });
 
     /**
      * @tc.number    SUB_STRING_OPERATOR_CONTEXTS_5600
      * @tc.name      testStringOperatorContexts0056
-     * @tc.desc      String conversion: undefined type to string (Error|undefined at end)
+     * @tc.desc      String conversion: undefined type to string (Error|undefined) at both beginning and end
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testStringOperatorContexts0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Error | undefined = undefined;
-      let dst: string = src + "";
-      expect(dst).assertEqual("undefined");
-    });
-
-    /**
-     * @tc.number    SUB_STRING_OPERATOR_CONTEXTS_5700
-     * @tc.name      testStringOperatorContexts0057
-     * @tc.desc      String conversion: undefined type to string (string|undefined at beginning)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testStringOperatorContexts0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src: string | undefined = undefined;
-      let dst: string = "" + src;
-      expect(dst).assertEqual("undefined");
-    });
-
-    /**
-     * @tc.number    SUB_STRING_OPERATOR_CONTEXTS_5800
-     * @tc.name      testStringOperatorContexts0058
-     * @tc.desc      String conversion: undefined type to string (Error|undefined at beginning)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testStringOperatorContexts0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src: Error | undefined = undefined;
-      let dst: string = "" + src;
-      expect(dst).assertEqual("undefined");
+      let dst1: string = "" + src;
+      expect(dst1).assertEqual("undefined");
+      let dst2: string = src + "";
+      expect(dst2).assertEqual("undefined");
     });
 
     /**
