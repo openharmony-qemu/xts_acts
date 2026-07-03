@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -820,7 +820,7 @@ export default function Float64ArrayFilterTest(): void {
     it('testFloat64ArrayFilter045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroValue: number = 0;
       const arr = new Float64Array([-2147483648, -1, zeroValue]);
-      const result = arr.filter((val: number) => val === NaN);
+      const result = arr.filter((val: number) => Number.isNaN(val));
       const expectVal = zeroValue;
       expect(result.length).assertEqual(expectVal);
     })

@@ -34,7 +34,7 @@ export default function Float64ArrayConstructor2Test(): void {
     })
 
     beforeEach(async (): Promise<void> => {
-      await Utils.msSleep(30)
+      await Utils.msSleep(30);
     })
 
     afterEach((): void => {

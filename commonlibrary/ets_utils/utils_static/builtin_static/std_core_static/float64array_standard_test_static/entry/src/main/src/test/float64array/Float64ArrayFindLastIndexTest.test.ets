@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -771,7 +771,7 @@ export default function Float64ArrayFindLastIndexTest(): void {
       const negativeOne: number = -1;
       const arr = new Float64Array([0.5, 1.5, 0.25]);
       const result = arr.findLastIndex((value: number, index: int): boolean => {
-        return value === NaN;
+        return Number.isNaN(value);
       })
 
       const expectVal = negativeOne;
@@ -2127,7 +2127,7 @@ export default function Float64ArrayFindLastIndexTest(): void {
       const negativeOne: number = -1;
       const arr = new Float64Array([0.1, 9007199254740991, 0]);
       const result = arr.findLastIndex((value: number): boolean => {
-        return value === NaN;
+        return Number.isNaN(value);
       })
 
       const expectVal = negativeOne;
