@@ -46,7 +46,7 @@ export default function Float64ArrayReduceRight2Test(): void {
     })
 
     beforeEach(async (): Promise<void> => {
-      await Utils.msSleep(30)
+      await Utils.msSleep(30);
     })
 
     afterEach((): void => {
@@ -64,10 +64,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
       const twoPointZero: number = 2.0;
-      const arr = Float64Array.of(pointFive, onePointFive);
+      const arr = Float64Array.of(0.5, 1.5);
       const result = arr.reduceRight((prev: number, curr: number): number => prev + curr, 0.0);
       const expectVal = twoPointZero;
       expect(result).assertEqual(expectVal);
@@ -82,11 +80,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
       const twoPointtwofive: number = 2.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = twoPointtwofive;
       expect(result).assertEqual(expectVal);
@@ -101,9 +96,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
       const negnum32896Value: number = -32896;
-      const arr = Float64Array.of(int16MinValue, -128);
+      const arr = Float64Array.of(-32768, -128);
       const result = arr.reduceRight((prev, curr) => prev + curr, 0.0);
       const expectVal = negnum32896Value;
       expect(result).assertEqual(expectVal);
@@ -119,9 +113,7 @@ export default function Float64ArrayReduceRight2Test(): void {
      */
     it('testFloat64ArrayReduceRight2004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
-      const oneValue: number = 1;
-      const arr = Float64Array.of(int32MinValue, -1, zeroValue, oneValue);
+      const arr = Float64Array.of(int32MinValue, -1, 0, 1);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = int32MinValue;
       expect(result).assertEqual(expectVal);
@@ -136,11 +128,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
       const negnum9007199254740981Value: number = -9007199254740981;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = new Float64Array([0.1, 9007199254740991, 0]);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev - curr, 10.0);
       const expectVal = negnum9007199254740981Value;
       expect(result).assertEqual(expectVal);
@@ -155,14 +144,11 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
       const twoValue: number = 2;
       const oneValue: number = 1;
       const zeroValue: number = 0;
       const twoPointtwofive: number = 2.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       const indices: Array<int> = [];
       const result = arr.reduceRight((prev, curr, idx, ary) => {
         indices.push(idx);
@@ -184,9 +170,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
       const negnum32896Value: number = -32896;
-      const arr = Float64Array.of(int16MinValue, -128);
+      const arr = Float64Array.of(-32768, -128);
       const result = arr.reduceRight((prev, curr, idx, ary) => {
         const expectVal = arr;
         expect(ary).assertEqual(expectVal);
@@ -205,9 +190,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
       const negnum2147483638Value: number = -2147483638;
-      const arr = Float64Array.of(int32MinValue);
+      const arr = Float64Array.of(-2147483648);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 10.0);
       const expectVal = negnum2147483638Value;
       expect(result).assertEqual(expectVal);
@@ -222,10 +206,7 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = new Float64Array([0.1, 9007199254740991, 0]);
       const result = arr.reduceRight<string>((result, value, index, array) => result + value.toString(), "");
       const expectVal = '090071992547409910.1';
       expect(result).assertEqual(expectVal);
@@ -240,10 +221,7 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       const result = arr.reduceRight<boolean>((prev, curr, idx, ary) => prev && curr > 0, true);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
@@ -258,9 +236,7 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int16MinValue, -128, zeroValue);
+      const arr = new Float64Array([-32768, -128, 0]);
       const result = arr.reduceRight<boolean>((prev, curr, idx, ary) => prev || curr < 0, false);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
@@ -276,7 +252,7 @@ export default function Float64ArrayReduceRight2Test(): void {
      */
     it('testFloat64ArrayReduceRight2012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const int32MinValue: number = -2147483648;
-      const arr = Float64Array.of(int32MinValue);
+      const arr = new Float64Array([int32MinValue]);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = int32MinValue;
       expect(result).assertEqual(expectVal);
@@ -292,7 +268,7 @@ export default function Float64ArrayReduceRight2Test(): void {
      */
     it('testFloat64ArrayReduceRight2013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointOne: number = 0.1;
-      const arr = Float64Array.of(pointOne);
+      const arr = new Float64Array([pointOne]);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = pointOne;
       expect(result).assertEqual(expectVal);
@@ -307,10 +283,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
       const twoValue: number = 2;
-      const arr = Float64Array.of(pointFive, onePointFive);
+      const arr = Float64Array.of(0.5, 1.5);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = twoValue;
       expect(result).assertEqual(expectVal);
@@ -341,11 +315,9 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
       const negnum2147483649Value: number = -2147483649;
       let externalSum: number = 0.0;
-      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const arr = Float64Array.of(-2147483648, -1, 0);
       const result = arr.reduceRight((prev, curr, idx, ary) => {
         externalSum += curr;
         return prev + curr;
@@ -365,13 +337,10 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
       const threeValue: number = 3;
       const num9007199254740991Pointone: number = 9007199254740991.1;
       let counter: int = 0;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = new Float64Array([0.1, 9007199254740991, 0]);
       const result = arr.reduceRight((prev, curr, idx, ary) => {
         counter += 1;
         return prev + curr;
@@ -391,11 +360,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
       const twoPointtwofive: number = 2.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       const result = arr.reduceRight((prev, curr, idx, ary) => add026(prev, curr), 0.0);
       const expectVal = twoPointtwofive;
       expect(result).assertEqual(expectVal);
@@ -410,10 +376,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const zeroValue: number = 0;
       const fillValue42: number = 42.0;
-      const arr = Float64Array.of(int16MinValue, -128, zeroValue);
+      const arr = new Float64Array([-32768, -128, 0]);
       const result = arr.reduceRight((prev, curr, idx, ary) => 42.0, 0.0);
       const expectVal = fillValue42;
       expect(result).assertEqual(expectVal);
@@ -428,10 +392,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
       const negnum2147483649Value: number = -2147483649;
-      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const arr = Float64Array.of(-2147483648, -1, 0);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = negnum2147483649Value;
       expect(result).assertEqual(expectVal);
@@ -446,11 +408,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
       const num9007199254740981Value: number = 9007199254740981;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = new Float64Array([0.1, 9007199254740991, 0]);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, -10.0);
       const expectVal = num9007199254740981Value;
       expect(result).assertEqual(expectVal);
@@ -465,10 +424,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
       const positiveInfinity: number = Infinity;
-      const arr = Float64Array.of(pointFive, onePointFive);
+      const arr = Float64Array.of(0.5, 1.5);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, Infinity);
       const expectVal = positiveInfinity;
       expect(result).assertEqual(expectVal);
@@ -483,9 +440,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
       const negativeInfinity: number = -Infinity;
-      const arr = Float64Array.of(int16MinValue, -128);
+      const arr = Float64Array.of(-32768, -128);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, -Infinity);
       const expectVal = negativeInfinity;
       expect(result).assertEqual(expectVal);
@@ -500,8 +456,7 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const arr = Float64Array.of(int32MinValue, -1);
+      const arr = new Float64Array([-2147483648, -1]);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, NaN);
       const actVal1 = Number.isNaN(result);
       const expectVal = true;
@@ -517,9 +472,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
       const doubleMaxValueAlt: number = 1.7976931348623158e+308;
-      const arr = Float64Array.of(pointOne);
+      const arr = Float64Array.of(0.1);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 1.7976931348623157e+308);
       const expectVal = doubleMaxValueAlt;
       expect(result).assertEqual(expectVal);
@@ -535,7 +489,7 @@ export default function Float64ArrayReduceRight2Test(): void {
      */
     it('testFloat64ArrayReduceRight2026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointFive: number = 0.5;
-      const arr = Float64Array.of(pointFive);
+      const arr = new Float64Array([pointFive]);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 5e-324);
       const expectVal = pointFive;
       expect(result).assertEqual(expectVal);
@@ -550,9 +504,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
       const negnum32896Value: number = -32896;
-      const arr = Float64Array.of(int16MinValue, -128);
+      const arr = Float64Array.of(-32768, -128);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = negnum32896Value;
       expect(result).assertEqual(expectVal);
@@ -567,9 +520,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
       const negnum2147483649Value: number = -2147483649;
-      const arr = Float64Array.of(int32MinValue, -1);
+      const arr = new Float64Array([-2147483648, -1]);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, -0.0);
       const expectVal = negnum2147483649Value;
       expect(result).assertEqual(expectVal);
@@ -584,10 +536,7 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = new Float64Array([0.1, 9007199254740991, 0]);
       const result = arr.reduceRight<string>((prev, curr, idx, ary) => prev + curr.toString(), "start");
       const expectVal = "start090071992547409910.1";
       expect(result).assertEqual(expectVal);
@@ -602,9 +551,7 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const arr = Float64Array.of(pointFive, onePointFive);
+      const arr = Float64Array.of(0.5, 1.5);
       const result = arr.reduceRight<boolean>((prev, curr, idx, ary) => prev && curr > 0, true);
       const expectVal = true;
       expect(result).assertEqual(expectVal);
@@ -619,10 +566,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const zeroValue: number = 0;
       const negnum32896Value: number = -32896;
-      const arr = Float64Array.of(int16MinValue, -128, zeroValue);
+      const arr = new Float64Array([-32768, -128, 0]);
       const result = arr.reduceRight((prev, curr) => prev + curr, 0.0);
       const expectVal = negnum32896Value;
       expect(result).assertEqual(expectVal);
@@ -637,9 +582,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
       const num7852516351Value: number = 7852516351;
-      const arr = Float64Array.of(int32MinValue, -1);
+      const arr = new Float64Array([-2147483648, -1]);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 1.0e10);
       const expectVal = num7852516351Value;
       expect(result).assertEqual(expectVal);
@@ -654,10 +598,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
       const num9007199254741008Value: number = 9007199254741008;
-      const arr = Float64Array.of(pointOne, maxSafeInteger);
+      const arr = new Float64Array([0.1, 9007199254740991]);
       const result = arr.reduceRight((prev, curr) => prev + curr, 0x10 * 1.0);
       const expectVal = num9007199254741008Value;
       expect(result).assertEqual(expectVal);
@@ -672,10 +614,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
       const negnum99998Value: number = -99998;
-      const arr = Float64Array.of(pointFive, onePointFive);
+      const arr = Float64Array.of(0.5, 1.5);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, -1.0e5);
       const expectVal = negnum99998Value;
       expect(result).assertEqual(expectVal);
@@ -690,9 +630,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
       const doubleMaxValue: number = 1.7976931348623157e+308;
-      const arr = Float64Array.of(int16MinValue);
+      const arr = new Float64Array([-32768]);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 1.7976931348623158e+308);
       const expectVal = doubleMaxValue;
       expect(result).assertEqual(expectVal);
@@ -707,9 +646,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
       const num9007197107257343Value: number = 9007197107257343;
-      const arr = Float64Array.of(int32MinValue);
+      const arr = Float64Array.of(-2147483648);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 9007199254740991.0);
       const expectVal = num9007197107257343Value;
       expect(result).assertEqual(expectVal);
@@ -724,9 +662,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
       const minSafeInteger: number = -9007199254740991;
-      const arr = Float64Array.of(pointOne);
+      const arr = Float64Array.of(0.1);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, -9007199254740991.0);
       const expectVal = minSafeInteger;
       expect(result).assertEqual(expectVal);
@@ -741,11 +678,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
       const twoPointtwofive: number = 2.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       const result: number = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = twoPointtwofive;
       expect(result).assertEqual(expectVal);
@@ -760,8 +694,7 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const arr = Float64Array.of(int16MinValue, -128);
+      const arr = Float64Array.of(-32768, -128);
       const result: string = arr.reduceRight<string>((prev, curr, idx, ary) => prev + curr.toString(), "");
       const expectVal = "-128-32768";
       expect(result).assertEqual(expectVal);
@@ -776,8 +709,7 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const arr = Float64Array.of(int32MinValue, -1);
+      const arr = new Float64Array([-2147483648, -1]);
       const result: boolean = arr.reduceRight<boolean>((prev, curr, idx, ary) => prev && curr > 0, true);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
@@ -792,10 +724,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
       const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = Float64Array.of(0.1, maxSafeInteger, 0);
       const result = arr.reduceRight<number>((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = maxSafeInteger;
       expect(result).assertEqual(expectVal);
@@ -810,11 +740,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
       const twoPointtwofive: number = 2.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       const result = arr.reduceRight((prev, curr) => prev + curr, 0.0);
       const expectVal = twoPointtwofive;
       expect(result).assertEqual(expectVal);
@@ -829,8 +756,7 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const arr = Float64Array.of(int16MinValue, -128);
+      const arr = Float64Array.of(-32768, -128);
       const result = arr.reduceRight<string>((prev, curr, idx, ary) => prev + curr.toString(), "");
       const expectVal = "-128-32768";
       expect(result).assertEqual(expectVal);
@@ -891,9 +817,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
       const negnum2147483645Value: number = -2147483645;
-      const arr = Float64Array.of(int32MinValue);
+      const arr = Float64Array.of(-2147483648);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 3.0);
       const expectVal = negnum2147483645Value;
       expect(result).assertEqual(expectVal);
@@ -908,12 +833,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const piValue: number = 3.141592653589793;
       const num9007199254740994Value: number = 9007199254740994;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue, piValue, -1e-100);
+      const arr = Float64Array.of(0.1, 9007199254740991, 0, 3.141592653589793, -1e-100);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = num9007199254740994Value;
       expect(result).assertEqual(expectVal);
@@ -928,12 +849,9 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
       const threeValue: number = 3;
       const twoPointtwofive: number = 2.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       const lenBefore = arr.length;
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       expect(arr.length).assertEqual(threeValue);
@@ -950,9 +868,7 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int16MinValue, -128, zeroValue);
+      const arr = new Float64Array([-32768, -128, 0]);
       const val0 = arr[0];
       const val1 = arr[1];
       const val2 = arr[2];
@@ -990,9 +906,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
       const negnum2147483649Value: number = -2147483649;
-      const arr = Float64Array.of(int32MinValue, -1);
+      const arr = new Float64Array([-2147483648, -1]);
       const result = arr.reduceRight((prev, curr, idx, ary) => {
         if (idx >= 0 && idx < arr.length) {
           return prev + curr;
@@ -1012,10 +927,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
       const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = Float64Array.of(0.1, maxSafeInteger, 0);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = maxSafeInteger;
       expect(result).assertEqual(expectVal);
@@ -1030,10 +943,7 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       const result = arr.reduceRight<string>((prev, curr, idx, ary) => prev + curr.toString(), "");
       const expectVal = '0.251.50.5';
       expect(result).assertEqual(expectVal);
@@ -1048,9 +958,7 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int16MinValue, -128, zeroValue);
+      const arr = new Float64Array([-32768, -128, 0]);
       const result = arr.reduceRight<boolean>((prev, curr, idx, ary) => prev && curr > 0, true);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
@@ -1065,9 +973,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
       const twoValue: number = 2;
-      const arr = Float64Array.of(int32MinValue, -1);
+      const arr = new Float64Array([-2147483648, -1]);
       const result = arr.reduceRight<Counter072>((prev, curr, idx, ary) => {
         prev.value += 1;
         return prev;
@@ -1141,8 +1048,7 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const arr = Float64Array.of(int16MinValue);
+      const arr = new Float64Array([-32768]);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, NaN);
       const actVal2 = Number.isNaN(result);
       const expectVal = true;
@@ -1158,9 +1064,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
       const positiveInfinity: number = Infinity;
-      const arr = Float64Array.of(int32MinValue);
+      const arr = Float64Array.of(-2147483648);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, Infinity);
       const expectVal = positiveInfinity;
       expect(result).assertEqual(expectVal);
@@ -1175,9 +1080,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
       const negativeInfinity: number = -Infinity;
-      const arr = Float64Array.of(pointOne);
+      const arr = Float64Array.of(0.1);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, -Infinity);
       const expectVal = negativeInfinity;
       expect(result).assertEqual(expectVal);
@@ -1194,7 +1098,7 @@ export default function Float64ArrayReduceRight2Test(): void {
     it('testFloat64ArrayReduceRight2063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointOneTwoFive: number = 0.125;
       const pointFive: number = 0.5;
-      const arr = Float64Array.of(pointOneTwoFive, pointOneTwoFive, pointOneTwoFive, pointOneTwoFive);
+      const arr = new Float64Array([pointOneTwoFive, pointOneTwoFive, pointOneTwoFive, pointOneTwoFive]);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = pointFive;
       expect(result).assertEqual(expectVal);
@@ -1209,11 +1113,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const zeroValue: number = 0;
-      const int8MaxValue: number = 127;
       const negnum32769Value: number = -32769;
-      const arr = Float64Array.of(int16MinValue, -128, zeroValue, int8MaxValue);
+      const arr = Float64Array.of(-32768, -128, 0, 127);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = negnum32769Value;
       expect(result).assertEqual(expectVal);
@@ -1228,9 +1129,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
       const negnum2147483649Value: number = -2147483649;
-      const arr = Float64Array.of(int32MinValue, -1);
+      const arr = new Float64Array([-2147483648, -1]);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = negnum2147483649Value;
       expect(result).assertEqual(expectVal);
@@ -1247,7 +1147,7 @@ export default function Float64ArrayReduceRight2Test(): void {
     it('testFloat64ArrayReduceRight2066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const maxSafeInteger: number = 9007199254740991;
       const num18014398509481982Value: number = 18014398509481982;
-      const arr = Float64Array.of(maxSafeInteger, maxSafeInteger);
+      const arr = new Float64Array([maxSafeInteger, maxSafeInteger]);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = num18014398509481982Value;
       expect(result).assertEqual(expectVal);
@@ -1264,7 +1164,7 @@ export default function Float64ArrayReduceRight2Test(): void {
     it('testFloat64ArrayReduceRight2067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroValue: number = 0;
       const negativeOne: number = -1;
-      const arr = Float64Array.of(zeroValue, -1, zeroValue);
+      const arr = new Float64Array([zeroValue, -1, zeroValue]);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = negativeOne;
       expect(result).assertEqual(expectVal);
@@ -1279,13 +1179,13 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const hundredPointzero: number = 100.0;
+      const hundredPointZero: number = 100.0;
       const arr = new Float64Array(100);
       for (let i: int = 0; i < 100; i++) {
         arr[i] = 1.0;
       }
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
-      const expectVal = hundredPointzero;
+      const expectVal = hundredPointZero;
       expect(result).assertEqual(expectVal);
     })
 
@@ -1300,7 +1200,7 @@ export default function Float64ArrayReduceRight2Test(): void {
     it('testFloat64ArrayReduceRight2069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroValue: number = 0;
       const maxSafeInteger: number = 9007199254740991;
-      const arr = Float64Array.of(zeroValue, maxSafeInteger, zeroValue);
+      const arr = new Float64Array([zeroValue, maxSafeInteger, zeroValue]);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       const expectVal = maxSafeInteger;
       expect(result).assertEqual(expectVal);
@@ -1315,11 +1215,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
       const twoPointtwofive: number = 2.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       const result = arr.reduceRight((prev, curr, idx, ary) => curr > 0 ? prev + curr : prev, 0.0);
       const expectVal = twoPointtwofive;
       expect(result).assertEqual(expectVal);
@@ -1334,9 +1231,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
       const zeroValue: number = 0;
-      const arr = Float64Array.of(int16MinValue, -128, zeroValue);
+      const arr = new Float64Array([-32768, -128, zeroValue]);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev && curr, 1.0);
       const expectVal = zeroValue;
       expect(result).assertEqual(expectVal);
@@ -1351,10 +1247,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
       const negativeOne: number = -1;
-      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const arr = Float64Array.of(-2147483648, -1, 0);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev | curr, 0.0);
       const expectVal = negativeOne;
       expect(result).assertEqual(expectVal);
@@ -1369,10 +1263,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
       const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = Float64Array.of(0.1, maxSafeInteger, 0);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev > curr ? prev : curr, 0.0);
       const expectVal = maxSafeInteger;
       expect(result).assertEqual(expectVal);
@@ -1387,11 +1279,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
       const fourPointfive: number = 4.5;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev * 2 + curr, 0.0);
       const expectVal = fourPointfive;
       expect(result).assertEqual(expectVal);
@@ -1468,10 +1357,9 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
       const oneValue: number = 1;
       const zeroValue: number = 0;
-      const arr = Float64Array.of(int32MinValue, -1);
+      const arr = new Float64Array([-2147483648, -1]);
       const order: Array<int> = [];
       arr.reduceRight((prev, curr, idx, ary) => {
         order.push(idx);
@@ -1490,12 +1378,10 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
       const zeroValue: number = 0;
       const twoValue: number = 2;
       const oneValue: number = 1;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = Float64Array.of(0.1, 9007199254740991, zeroValue);
       const order: Array<int> = [];
       arr.reduceRight((prev, curr, idx, ary) => {
         order.push(idx);
@@ -1515,8 +1401,7 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const arr = Float64Array.of(pointFive);
+      const arr = new Float64Array([0.5]);
       const result1 = arr.reduceRight((prev, curr, idx, ary) => prev + curr, 0.0);
       const result2 = arr.reduceRight((prev, curr, idx, ary) => prev + curr, -0.0);
       const expectVal = result2;
@@ -1532,9 +1417,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
       const oneValue: number = 1;
-      const arr = Float64Array.of(int16MinValue, -128);
+      const arr = Float64Array.of(-32768, -128);
       const result = arr.reduceRight((prev, curr, idx, ary) => {
         let pow: number = 1.0;
         for (let i: int = 0; i < curr; i++) {
@@ -1555,10 +1439,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
       const ninePointZero: number = 9.0;
-      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const arr = Float64Array.of(-2147483648, -1, 0);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + ary.length, 0.0);
       const expectVal = ninePointZero;
       expect(result).assertEqual(expectVal);
@@ -1598,11 +1480,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
       const zeroPointoneeightsevenfive: number = 0.1875;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev * curr, 1.0);
       const expectVal = zeroPointoneeightsevenfive;
       expect(result).assertEqual(expectVal);
@@ -1617,10 +1496,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const zeroValue: number = 0;
       const negnum32640Value: number = -32640;
-      const arr = Float64Array.of(int16MinValue, -128, zeroValue);
+      const arr = new Float64Array([-32768, -128, 0]);
       const result = arr.reduceRight((prev, curr, idx, ary) => idx % 2 === 0 ? prev + curr : prev - curr, 0.0);
       const expectVal = negnum32640Value;
       expect(result).assertEqual(expectVal);
@@ -1635,10 +1512,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
       const fourteenValue: number = 14;
-      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const arr = Float64Array.of(-2147483648, -1, 0);
       const result = arr.reduceRight((prev, curr, idx, ary) => prev + curr.toString().length, 0.0);
       const expectVal = fourteenValue;
       expect(result).assertEqual(expectVal);
@@ -1742,10 +1617,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
       const twoValue: number = 2;
-      const arr = Float64Array.of(pointFive, onePointFive);
+      const arr = Float64Array.of(0.5, 1.5);
       const obj = new ObjRef097();
       const result = arr.reduceRight<ObjRef097>((prev, curr, idx, ary) => {
         obj.count += 1;
@@ -1765,11 +1638,8 @@ export default function Float64ArrayReduceRight2Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayReduceRight2094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
       const threeValue: number = 3;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       let callCount: int = 0;
       try {
         arr.reduceRight((prev, curr, idx, ary) => {
