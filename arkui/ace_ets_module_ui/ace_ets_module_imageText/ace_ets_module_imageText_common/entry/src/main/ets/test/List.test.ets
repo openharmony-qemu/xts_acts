@@ -77,6 +77,7 @@ import TextInputEllipsisModeTest from './EllipsisModeTest/TextInputEllipsisModeT
 import Marquee from './ScrollTest/Marquee.test';
 import MarqueeNull from './ScrollTest/Marquee_null.test';
 import MarqueeUndefined from './ScrollTest/Marquee_undefined.test';
+import TextSymbolWithEnvFontScaleTest from './WithEnvTest/TextSymbolWithEnvFontScale.test';
 
 export default function testsuite() {
   TextControllerTest();
@@ -142,4 +143,5 @@ export default function testsuite() {
   Marquee();
   MarqueeNull();
   MarqueeUndefined();
+  TextSymbolWithEnvFontScaleTest();
 }
