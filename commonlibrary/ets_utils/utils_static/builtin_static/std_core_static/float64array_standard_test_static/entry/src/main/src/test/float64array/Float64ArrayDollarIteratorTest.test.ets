@@ -33,7 +33,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
     beforeAll((): void => {
     })
     beforeEach(async (): Promise<void> => {
-      await Utils.msSleep(30)
+      await Utils.msSleep(30);
     })
     afterEach((): void => {
     })
@@ -49,9 +49,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
-      const values = Float64Array.of(int32MinValue, -1, zeroValue);
+      const values = new Float64Array([-2147483648, -1, 0]);
       const iter = values.$_iterator();
       const expectVal = false;
       expect(iter === null).assertEqual(expectVal);
@@ -81,9 +79,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const values = Float64Array.of(pointOne, maxSafeInteger);
+      const values = Float64Array.of(0.1, 9007199254740991);
       const iter = values.$_iterator();
       const expectVal = false;
       expect(iter.next === null).assertEqual(expectVal);
@@ -98,8 +94,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const values = Float64Array.of(pointFive);
+      const values = new Float64Array([0.5]);
       const iter = values.$_iterator();
       const result = iter.next();
       const expectVal = false;
@@ -115,8 +110,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const values = Float64Array.of(int16MinValue);
+      const values = Float64Array.of(-32768);
       const iter = values.$_iterator();
       const result = iter.next();
       const expectVal = false;
@@ -132,8 +126,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const values = Float64Array.of(int32MinValue);
+      const values = new Float64Array([-2147483648]);
       const iter = values.$_iterator();
       const result = iter.next();
       const expectVal = false;
@@ -149,8 +142,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const values = Float64Array.of(pointOne);
+      const values = Float64Array.of(0.1);
       const iter = values.$_iterator();
       const expectVal = false;
       expect(iter === null).assertEqual(expectVal);
@@ -221,7 +213,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
      */
     it('testFloat64ArrayDollarIterator011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointFive: number = 0.5;
-      const values = Float64Array.of(pointFive);
+      const values = new Float64Array([pointFive]);
       const iter = values.$_iterator();
       const result = iter.next();
       const expectVal = pointFive;
@@ -237,8 +229,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const values = Float64Array.of(int16MinValue);
+      const values = Float64Array.of(-32768);
       const iter = values.$_iterator();
       iter.next();
       const second = iter.next();
@@ -255,9 +246,8 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
       const oneValue: number = 1;
-      const values = Float64Array.of(int32MinValue);
+      const values = new Float64Array([-2147483648]);
       let count = 0;
       const iter013 = values.$_iterator();
       while (true) {
@@ -281,7 +271,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
      */
     it('testFloat64ArrayDollarIterator014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointOne: number = 0.1;
-      const values = Float64Array.of(pointOne);
+      const values = new Float64Array([pointOne]);
       const iter = values.$_iterator();
       const result = iter.next();
       const expectVal = pointOne;
@@ -319,9 +309,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const zeroValue: number = 0;
-      const values = Float64Array.of(int16MinValue, -128, zeroValue);
+      const values = new Float64Array([-32768, -128, 0]);
       const iter = values.$_iterator();
       iter.next();
       iter.next();
@@ -340,10 +328,8 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
       const threeValue: number = 3;
-      const values = Float64Array.of(int32MinValue, -1, zeroValue);
+      const values = new Float64Array([-2147483648, -1, 0]);
       let count = 0;
       const iter017 = values.$_iterator();
       while (true) {
@@ -366,11 +352,8 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
       const threeValue: number = 3;
-      const values = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const values = new Float64Array([0.1, 9007199254740991, 0]);
       const collected: Array<number> = [];
       const iter018 = values.$_iterator();
       while (true) {
@@ -393,16 +376,11 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const pointOneTwoFive: number = 0.125;
-      const pointZeroSixTwoFive: number = 0.0625;
       const zeroValue: number = 0;
       const tenValue: number = 10;
       const values =
-        Float64Array.of(pointFive, onePointFive, pointTwoFive, pointOneTwoFive, pointZeroSixTwoFive, zeroValue,
-          zeroValue, zeroValue, zeroValue, zeroValue);
+        new Float64Array([0.5, 1.5, 0.25, 0.125, 0.0625, zeroValue,
+          zeroValue, zeroValue, zeroValue, zeroValue]);
       const iter = values.$_iterator();
       let i = 0;
       while (!iter.next().done) {
@@ -421,13 +399,11 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
       const zeroValue: number = 0;
-      const int8MaxValue: number = 127;
       const int16MaxValue: number = 32767;
       const values =
-        Float64Array.of(int16MinValue, -128, zeroValue, int8MaxValue, int16MaxValue, zeroValue, zeroValue, zeroValue,
-          zeroValue, zeroValue);
+        new Float64Array([-32768, -128, zeroValue, 127, int16MaxValue, zeroValue, zeroValue, zeroValue,
+          zeroValue, zeroValue]);
       const iter = values.$_iterator();
       for (let j = 0; j < 4; j++) {
         iter.next();
@@ -463,10 +439,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const values = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const values = Float64Array.of(0.5, 1.5, 0.25);
       const iter = values.$_iterator();
       iter.next();
       const nanResult = iter.next();
@@ -484,10 +457,8 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const zeroValue: number = 0;
       const int8MinValue: number = -128;
-      const values = Float64Array.of(int16MinValue, -128, zeroValue);
+      const values = new Float64Array([-32768, -128, 0]);
       const iter = values.$_iterator();
       iter.next();
       const infResult = iter.next();
@@ -504,10 +475,8 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
       const negativeOne: number = -1;
-      const values = Float64Array.of(int32MinValue, -1, zeroValue);
+      const values = new Float64Array([-2147483648, -1, 0]);
       const iter = values.$_iterator();
       iter.next();
       const negInfResult = iter.next();
@@ -524,10 +493,8 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
       const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const values = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const values = new Float64Array([0.1, maxSafeInteger, 0]);
       const iter = values.$_iterator();
       iter.next();
       const negZeroResult = iter.next();
@@ -544,10 +511,8 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
       const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const values = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const values = new Float64Array([0.5, onePointFive, 0.25]);
       const iter = values.$_iterator();
       iter.next();
       const zeroResult = iter.next();
@@ -589,7 +554,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const int32MinValue: number = -2147483648;
       const zeroValue: number = 0;
       const negativeOne: number = -1;
-      const values = Float64Array.of(int32MinValue, -1, zeroValue);
+      const values = new Float64Array([int32MinValue, -1, zeroValue]);
       const iter = values.$_iterator();
       const r1 = iter.next();
       const r2 = iter.next();
@@ -611,7 +576,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const pointOne: number = 0.1;
       const maxSafeInteger: number = 9007199254740991;
       const zeroValue: number = 0;
-      const values = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const values = new Float64Array([pointOne, maxSafeInteger, zeroValue]);
       const iter = values.$_iterator();
       const r1 = iter.next();
       const r2 = iter.next();
@@ -631,7 +596,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
      */
     it('testFloat64ArrayDollarIterator030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const int16MinValue: number = -32768;
-      const values = Float64Array.of(int16MinValue);
+      const values = new Float64Array([int16MinValue]);
       const iter = values.$_iterator();
       const result = iter.next();
       const expectVal = int16MinValue;
@@ -648,11 +613,11 @@ export default function Float64ArrayDollarIteratorTest(): void {
      */
     it('testFloat64ArrayDollarIterator031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointFive: number = 0.5;
-      const values = Float64Array.of(pointFive);
+      const values = new Float64Array([pointFive]);
       const iter = values.$_iterator();
       const result = iter.next();
       expect(result.value).assertEqual(pointFive);
-      expect(result.done).assertEqual(false);
+      expect(result.done).assertFalse();
     })
 
     /**
@@ -664,8 +629,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const values = Float64Array.of(int16MinValue);
+      const values = Float64Array.of(-32768);
       const iter = values.$_iterator();
       iter.next();
       const exhausted = iter.next();
@@ -685,14 +649,14 @@ export default function Float64ArrayDollarIteratorTest(): void {
     it('testFloat64ArrayDollarIterator033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const int32MinValue: number = -2147483648;
       const negativeOne: number = -1;
-      const values = Float64Array.of(int32MinValue, -1);
+      const values = new Float64Array([int32MinValue, -1]);
       const iter = values.$_iterator();
       const r1 = iter.next();
       const r2 = iter.next();
       const r3 = iter.next();
       expect(r1.value).assertEqual(int32MinValue);
       expect(r2.value).assertEqual(negativeOne);
-      expect(r3.done).assertEqual(true);
+      expect(r3.done).assertTrue();
     })
 
     /**
@@ -707,7 +671,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const pointOne: number = 0.1;
       const maxSafeInteger: number = 9007199254740991;
       const zeroValue: number = 0;
-      const values = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const values = new Float64Array([pointOne, maxSafeInteger, zeroValue]);
       const iter = values.$_iterator();
       const r1 = iter.next();
       expect(r1.value).assertEqual(pointOne);
@@ -716,7 +680,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const r3 = iter.next();
       expect(r3.value).assertEqual(zeroValue);
       const r4 = iter.next();
-      expect(r4.done).assertEqual(true);
+      expect(r4.done).assertTrue();
     })
 
     /**
@@ -734,12 +698,12 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const iter = values.$_iterator();
       const r1 = iter.next();
       expect(r1.value).assertEqual(pointFive);
-      expect(r1.done).assertEqual(false);
+      expect(r1.done).assertFalse();
       const r2 = iter.next();
       expect(r2.value).assertEqual(onePointFive);
-      expect(r2.done).assertEqual(false);
+      expect(r2.done).assertFalse();
       const r3 = iter.next();
-      expect(r3.done).assertEqual(true);
+      expect(r3.done).assertTrue();
     })
 
     /**
@@ -751,8 +715,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const values = Float64Array.of(int16MinValue);
+      const values = Float64Array.of(-32768);
       const iter = values.$_iterator();
       const expectVal = false;
       expect(iter === null).assertEqual(expectVal);
@@ -770,7 +733,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const int32MinValue: number = -2147483648;
       const zeroValue: number = 0;
       const negativeOne: number = -1;
-      const values = Float64Array.of(int32MinValue, -1, zeroValue);
+      const values = new Float64Array([int32MinValue, -1, zeroValue]);
       const collected: Array<number> = [];
       const iter041 = values.$_iterator();
       while (true) {
@@ -794,11 +757,8 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
       const threeValue: number = 3;
-      const values = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const values = new Float64Array([0.1, 9007199254740991, 0]);
       let count = 0;
       const iter042 = values.$_iterator();
       while (true) {
@@ -824,11 +784,8 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
       const twoPointtwofive: number = 2.25;
-      const values = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const values = Float64Array.of(0.5, 1.5, 0.25);
       let sum = 0.0;
       const iter043 = values.$_iterator();
       while (true) {
@@ -877,9 +834,8 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
       const oneValue: number = 1;
-      const values = Float64Array.of(int16MinValue);
+      const values = Float64Array.of(-32768);
       let count = 0;
       const iter045 = values.$_iterator();
       while (true) {
@@ -902,9 +858,8 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
       const zeroValue: number = 0;
-      const values = Float64Array.of(int32MinValue, -1, zeroValue);
+      const values = new Float64Array([-2147483648, -1, zeroValue]);
       let nanCount = 0;
       const iter046 = values.$_iterator();
       while (true) {
@@ -929,10 +884,8 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
       const zeroValue: number = 0;
-      const values = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const values = Float64Array.of(0.1, 9007199254740991, zeroValue);
       let infCount = 0;
       const iter047 = values.$_iterator();
       while (true) {
@@ -999,7 +952,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
      */
     it('testFloat64ArrayDollarIterator046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const int16MinValue: number = -32768;
-      const values = Float64Array.of(int16MinValue);
+      const values = new Float64Array([int16MinValue]);
       const iter1 = values.$_iterator();
       const actVal6 = iter1.next().value!;
       const expectVal = int16MinValue;
@@ -1016,7 +969,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
      */
     it('testFloat64ArrayDollarIterator047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const int32MinValue: number = -2147483648;
-      const values = Float64Array.of(int32MinValue, -1);
+      const values = new Float64Array([int32MinValue, -1]);
       const iter1 = values.$_iterator();
       const iter2 = values.$_iterator();
       const actVal7 = iter1.next().value!;
@@ -1037,9 +990,8 @@ export default function Float64ArrayDollarIteratorTest(): void {
      */
     it('testFloat64ArrayDollarIterator048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
       const zeroValue: number = 0;
-      const values = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const values = Float64Array.of(pointOne, 9007199254740991, zeroValue);
       const iter1 = values.$_iterator();
       const iter2 = values.$_iterator();
       iter1.next();
@@ -1061,11 +1013,9 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
       const twoValue: number = 2;
       const twoPointZero: number = 2.0;
-      const values = Float64Array.of(pointFive, onePointFive);
+      const values = new Float64Array([0.5, 1.5]);
       let sum1 = 0.0;
       const iter1 = values.$_iterator();
       while (true) {
@@ -1100,9 +1050,8 @@ export default function Float64ArrayDollarIteratorTest(): void {
      */
     it('testFloat64ArrayDollarIterator050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const int16MinValue: number = -32768;
-      const zeroValue: number = 0;
       const threeValue: number = 3;
-      const values = Float64Array.of(int16MinValue, -128, zeroValue);
+      const values = Float64Array.of(int16MinValue, -128, 0);
       const iter = values.$_iterator();
       iter.next();
       iter.next();
@@ -1121,11 +1070,9 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
       const threeValue: number = 3;
       const negativeOne: number = -1;
-      const values = Float64Array.of(int32MinValue, -1, zeroValue);
+      const values = new Float64Array([-2147483648, -1, 0]);
       const iter055 = values.$_iterator();
       while (true) {
         const result = iter055.next();
@@ -1200,11 +1147,9 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
       const oneValue: number = 1;
       const twoValue: number = 2;
-      const values = new Float64Array([onePointZero, twoPointZero]);
+      const values = new Float64Array([1.0, 2.0]);
       const iter = values.$_iterator();
       const actVal18 = iter.next().value!;
       const expectVal = oneValue;
@@ -1217,7 +1162,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ITERATOR_5500
      * @tc.name testFloat64ArrayDollarIterator055
-     * @tc.desc Verify $_iterator after Float64Array.of(0.5, 1.5) construction
+     * @tc.desc Verify $_iterator after new Float64Array([0.5, 1.5]) construction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1368,8 +1313,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const values = Float64Array.of(int32MinValue);
+      const values = new Float64Array([-2147483648]);
       const iter = values.$_iterator();
       iter.next();
       iter.next();
@@ -1389,8 +1333,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
      */
     it('testFloat64ArrayDollarIterator062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const values = Float64Array.of(pointOne, maxSafeInteger);
+      const values = Float64Array.of(pointOne, 9007199254740991);
       const iter1 = values.$_iterator();
       iter1.next();
       const iter2 = values.$_iterator();
@@ -1408,11 +1351,8 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
       const twoPointtwofive: number = 2.25;
-      const values = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const values = Float64Array.of(0.5, 1.5, 0.25);
       const iter = values.$_iterator();
       let sum = 0.0;
       let result = iter.next();
@@ -1433,9 +1373,8 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
       const fourValue: number = 4;
-      const outer = Float64Array.of(int16MinValue, -128);
+      const outer = new Float64Array([-32768, -128]);
       let total = 0;
       const iter1_068 = outer.$_iterator();
       while (true) {
@@ -1466,7 +1405,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
      */
     it('testFloat64ArrayDollarIterator065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const int32MinValue: number = -2147483648;
-      const values = Float64Array.of(int32MinValue, -1);
+      const values = new Float64Array([int32MinValue, -1]);
       const outerIter = values.$_iterator();
       outerIter.next();
       const innerIter = values.$_iterator();
@@ -1581,10 +1520,8 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
       const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const values = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const values = new Float64Array([0.1, maxSafeInteger, 0]);
       const iter = values.$_iterator();
       iter.next();
       iter.next();
@@ -1602,10 +1539,8 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
       const tenPointZero: number = 10.0;
-      const values = Float64Array.of(pointFive, onePointFive);
+      const values = new Float64Array([0.5, 1.5]);
       const iter075 = values.$_iterator();
       while (true) {
         const result = iter075.next();
@@ -1653,7 +1588,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
      */
     it('testFloat64ArrayDollarIterator073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroValue: number = 0;
-      const values = Float64Array.of(zeroValue, zeroValue, zeroValue);
+      const values = new Float64Array([zeroValue, zeroValue, zeroValue]);
       const iter = values.$_iterator();
       const actVal40 = iter.next().value!;
       const expectVal = zeroValue;
@@ -1676,7 +1611,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
      */
     it('testFloat64ArrayDollarIterator074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroValue: number = 0;
-      const values = Float64Array.of(zeroValue, zeroValue, zeroValue);
+      const values = new Float64Array([zeroValue, zeroValue, zeroValue]);
       const iter = values.$_iterator();
       const actVal43 = Number.isNaN(iter.next().value! as number);
       const expectVal = false;
@@ -1705,7 +1640,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const pointZeroSixTwoFive: number = 0.0625;
       const zeroValue: number = 0;
       const values =
-        Float64Array.of(pointFive, onePointFive, pointTwoFive, pointOneTwoFive, pointZeroSixTwoFive, zeroValue);
+        new Float64Array([pointFive, onePointFive, pointTwoFive, pointOneTwoFive, pointZeroSixTwoFive, zeroValue]);
       const iter = values.$_iterator();
       const actVal46 = iter.next().value!;
       const expectVal = pointFive;
@@ -1741,7 +1676,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const int8MaxValue: number = 127;
       const int16MaxValue: number = 32767;
       const int8MinValue: number = -128;
-      const values = Float64Array.of(int16MinValue, -128, zeroValue, int8MaxValue, int16MaxValue);
+      const values = new Float64Array([int16MinValue, -128, zeroValue, int8MaxValue, int16MaxValue]);
       const iter = values.$_iterator();
       const actVal52 = iter.next().value!;
       const expectVal = int16MinValue;
@@ -1829,14 +1764,13 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const values = Float64Array.of(pointFive);
+      const values = new Float64Array([0.5]);
       const iter = values.$_iterator();
       const result = iter.next();
       const actVal66 = Number.isNaN(result.value as number);
       const expectVal = false;
       expect(actVal66).assertEqual(expectVal);
-      expect(result.done).assertEqual(false);
+      expect(result.done).assertFalse();
     })
 
     /**
@@ -1849,11 +1783,11 @@ export default function Float64ArrayDollarIteratorTest(): void {
      */
     it('testFloat64ArrayDollarIterator080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const int16MinValue: number = -32768;
-      const values = Float64Array.of(int16MinValue);
+      const values = new Float64Array([int16MinValue]);
       const iter = values.$_iterator();
       const result = iter.next();
       expect(result.value).assertEqual(int16MinValue);
-      expect(result.done).assertEqual(false);
+      expect(result.done).assertFalse();
     })
 
     /**
@@ -1870,7 +1804,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
       const iter = values.$_iterator();
       const result = iter.next();
       expect(result.value).assertEqual(int32MinValue);
-      expect(result.done).assertEqual(false);
+      expect(result.done).assertFalse();
     })
 
     /**
@@ -1951,7 +1885,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = Float64Array.of(1.0, 2.0);
+      const a = new Float64Array([1.0, 2.0]);
       const iter = a.$_iterator();
       a.$_set(0, 10.0);
       const actVal75 = iter.next().value!;
@@ -1971,7 +1905,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = Float64Array.of(1.0, 2.0, 3.0);
+      const a = new Float64Array([1.0, 2.0, 3.0]);
       const iter = a.$_iterator();
       const actVal77 = iter.next().value!;
       const expectVal = 1.0;
@@ -1994,7 +1928,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const iter = Float64Array.of(1.0, 2.0, 3.0).toReversed().$_iterator();
+      const iter = new Float64Array([1.0, 2.0, 3.0]).toReversed().$_iterator();
       const actVal80 = iter.next().value!;
       const expectVal = 3.0;
       expect(actVal80).assertEqual(expectVal);
@@ -2036,7 +1970,7 @@ export default function Float64ArrayDollarIteratorTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarIterator089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const iter = Float64Array.of(NaN, Infinity).$_iterator();
+      const iter = new Float64Array([NaN, Infinity]).$_iterator();
       const value: number = iter.next().value!;
       const actVal86 = Number.isNaN(value);
       const expectVal = true;

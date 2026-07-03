@@ -33,7 +33,7 @@ export default function Float64ArrayCopyWithin1Test(): void {
     beforeAll((): void => {
     })
     beforeEach(async (): Promise<void> => {
-      await Utils.msSleep(30)
+      await Utils.msSleep(30);
     })
     afterEach((): void => {
     })
@@ -57,7 +57,7 @@ export default function Float64ArrayCopyWithin1Test(): void {
       const num255Value: number = 255;
       const twentysixValue: number = 26;
       const num222Value: number = 222;
-      const arr = Float64Array.of(hexValue7FFF, hexValue8000, hexValueFF, hexValue1A, hexValueDE);
+      const arr = new Float64Array([hexValue7FFF, hexValue8000, hexValueFF, hexValue1A, hexValueDE]);
       const result = arr.copyWithin(0, 2, 100);
       expect(result[0]).assertEqual(num255Value);
       expect(result[1]).assertEqual(twentysixValue);
@@ -73,11 +73,9 @@ export default function Float64ArrayCopyWithin1Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayCopyWithin002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
       const piApprox: number = 3.14;
       const negative99Point99: number = -99.99;
-      const arr = Float64Array.of(pointFive, onePointFive, piApprox, -99.99);
+      const arr = new Float64Array([0.5, 1.5, piApprox, -99.99]);
       const result = arr.copyWithin(0, 2, 4);
       expect(result[0]).assertEqual(piApprox);
       expect(result[1]).assertEqual(negative99Point99);
@@ -92,10 +90,9 @@ export default function Float64ArrayCopyWithin1Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayCopyWithin003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
       const negativeOne: number = -1;
       const int16NegMaxValue: number = -32767;
-      const arr = Float64Array.of(int16MinValue, -128, -2147483648, -1, -32767);
+      const arr = Float64Array.of(-32768, -128, -2147483648, -1, -32767);
       const result = arr.copyWithin(1, 3, 5);
       expect(result[1]).assertEqual(negativeOne);
       expect(result[2]).assertEqual(int16NegMaxValue);
@@ -118,7 +115,7 @@ export default function Float64ArrayCopyWithin1Test(): void {
       const int16MaxValue: number = 32767;
       const num32768Value: number = 32768;
       const num255Value: number = 255;
-      const arr = Float64Array.of(hexValue7FFF, hexValue8000, hexValueFF, hexValue1A, hexValueDE);
+      const arr = new Float64Array([hexValue7FFF, hexValue8000, hexValueFF, hexValue1A, hexValueDE]);
       const result = arr.copyWithin(0, 0, 2);
       expect(result[0]).assertEqual(int16MaxValue);
       expect(result[1]).assertEqual(num32768Value);
@@ -134,11 +131,9 @@ export default function Float64ArrayCopyWithin1Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayCopyWithin005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
       const piApprox: number = 3.14;
       const negative99Point99: number = -99.99;
-      const arr = Float64Array.of(pointFive, onePointFive, piApprox, -99.99);
+      const arr = new Float64Array([0.5, 1.5, piApprox, -99.99]);
       const result = arr.copyWithin(0, 2);
       expect(result[0]).assertEqual(piApprox);
       expect(result[1]).assertEqual(negative99Point99);
@@ -181,7 +176,7 @@ export default function Float64ArrayCopyWithin1Test(): void {
       const hexValueFF: number = 0xFF;
       const hexValue1A: number = 0x1A;
       const hexValueDE: number = 0xDE;
-      const arr = Float64Array.of(hexValue7FFF, hexValue8000, hexValueFF, hexValue1A, hexValueDE);
+      const arr = new Float64Array([hexValue7FFF, hexValue8000, hexValueFF, hexValue1A, hexValueDE]);
       arr.copyWithin(0, 10, 12);
       expect(arr[0]).assertEqual(hexValue7FFF);
       expect(arr[1]).assertEqual(hexValue8000);
@@ -199,11 +194,9 @@ export default function Float64ArrayCopyWithin1Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayCopyWithin008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
       const piApprox: number = 3.14;
       const negative99Point99: number = -99.99;
-      const arr = Float64Array.of(pointFive, onePointFive, piApprox, -99.99);
+      const arr = new Float64Array([0.5, 1.5, piApprox, -99.99]);
       const result = arr.copyWithin(-10, 2, 4);
       expect(result[0]).assertEqual(piApprox);
       expect(result[1]).assertEqual(negative99Point99);
@@ -243,7 +236,7 @@ export default function Float64ArrayCopyWithin1Test(): void {
       const int16MaxValue: number = 32767;
       const num32768Value: number = 32768;
       const num255Value: number = 255;
-      const arr = Float64Array.of(hexValue7FFF, hexValue8000, hexValueFF, hexValue1A, hexValueDE);
+      const arr = new Float64Array([hexValue7FFF, hexValue8000, hexValueFF, hexValue1A, hexValueDE]);
       const result = arr.copyWithin(2);
       expect(result[2]).assertEqual(int16MaxValue);
       expect(result[3]).assertEqual(num32768Value);
@@ -262,7 +255,7 @@ export default function Float64ArrayCopyWithin1Test(): void {
       const pointFive: number = 0.5;
       const onePointFive: number = 1.5;
       const piApprox: number = 3.14;
-      const arr = Float64Array.of(pointFive, onePointFive, piApprox, -99.99);
+      const arr = new Float64Array([pointFive, onePointFive, piApprox, -99.99]);
       arr.copyWithin(0, 4, 2);
       expect(arr[0]).assertEqual(pointFive);
       expect(arr[1]).assertEqual(onePointFive);
@@ -306,7 +299,7 @@ export default function Float64ArrayCopyWithin1Test(): void {
       const hexValueFF: number = 0xFF;
       const hexValue1A: number = 0x1A;
       const hexValueDE: number = 0xDE;
-      const arr = Float64Array.of(hexValue7FFF, hexValue8000, hexValueFF, hexValue1A, hexValueDE);
+      const arr = new Float64Array([hexValue7FFF, hexValue8000, hexValueFF, hexValue1A, hexValueDE]);
       arr.copyWithin(2, 2, 4);
       expect(arr[0]).assertEqual(hexValue7FFF);
       expect(arr[1]).assertEqual(hexValue8000);
@@ -359,8 +352,7 @@ export default function Float64ArrayCopyWithin1Test(): void {
     it('testFloat64ArrayCopyWithin016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointFive: number = 0.5;
       const onePointFive: number = 1.5;
-      const piApprox: number = 3.14;
-      const arr = Float64Array.of(pointFive, onePointFive, piApprox, -99.99);
+      const arr = Float64Array.of(pointFive, onePointFive, 3.14, -99.99);
       const result = arr.copyWithin(-2, 0, 3);
       expect(result[2]).assertEqual(pointFive);
       expect(result[3]).assertEqual(onePointFive);
@@ -406,7 +398,7 @@ export default function Float64ArrayCopyWithin1Test(): void {
       const num255Value: number = 255;
       const twentysixValue: number = 26;
       const num222Value: number = 222;
-      const arr = Float64Array.of(hexValue7FFF, hexValue8000, hexValueFF, hexValue1A, hexValueDE);
+      const arr = new Float64Array([hexValue7FFF, hexValue8000, hexValueFF, hexValue1A, hexValueDE]);
       arr.copyWithin(0, 2, 4);
       expect(arr[0]).assertEqual(num255Value);
       expect(arr[1]).assertEqual(twentysixValue);
@@ -424,10 +416,7 @@ export default function Float64ArrayCopyWithin1Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayCopyWithin019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const piApprox: number = 3.14;
-      const arr = Float64Array.of(pointFive, onePointFive, piApprox, -99.99);
+      const arr = new Float64Array([0.5, 1.5, 3.14, -99.99]);
       const originalLength = arr.length;
       arr.copyWithin(0, 2);
       const expectVal = originalLength;
@@ -443,9 +432,8 @@ export default function Float64ArrayCopyWithin1Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayCopyWithin020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
       const fiveValue: number = 5;
-      const arr = Float64Array.of(int16MinValue, -128, -2147483648, -1, -32767);
+      const arr = Float64Array.of(-32768, -128, -2147483648, -1, -32767);
       const result = arr.copyWithin(0, 2, 4);
       const expectVal = fiveValue;
       expect(result.length).assertEqual(expectVal);
@@ -465,7 +453,7 @@ export default function Float64ArrayCopyWithin1Test(): void {
       const hexValueFF: number = 0xFF;
       const hexValue1A: number = 0x1A;
       const hexValueDE: number = 0xDE;
-      const arr = Float64Array.of(hexValue7FFF, hexValue8000, hexValueFF, hexValue1A, hexValueDE);
+      const arr = new Float64Array([hexValue7FFF, hexValue8000, hexValueFF, hexValue1A, hexValueDE]);
       const result = arr.copyWithin(0, 2, 4);
       const expectVal = arr;
       expect(result).assertEqual(expectVal);
@@ -480,10 +468,7 @@ export default function Float64ArrayCopyWithin1Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayCopyWithin022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const piApprox: number = 3.14;
-      const arr = Float64Array.of(pointFive, onePointFive, piApprox, -99.99);
+      const arr = new Float64Array([0.5, 1.5, 3.14, -99.99]);
       const originalByteLength = arr.byteLength;
       arr.copyWithin(0, 2, 4);
       const expectVal = originalByteLength;
@@ -538,7 +523,7 @@ export default function Float64ArrayCopyWithin1Test(): void {
     it('testFloat64ArrayCopyWithin025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const int16MinValue: number = -32768;
       const int32MinValue: number = -2147483648;
-      const src = Float64Array.of(int16MinValue, -128, -2147483648, -1, -32767);
+      const src = new Float64Array([int16MinValue, -128, -2147483648, -1, -32767]);
       const arr = new Float64Array(src);
       arr.copyWithin(0, 2, 4);
       expect(arr[0]).assertEqual(int32MinValue);
@@ -652,7 +637,7 @@ export default function Float64ArrayCopyWithin1Test(): void {
       const hexValue1A: number = 0x1A;
       const hexValueDE: number = 0xDE;
       const num222Value: number = 222;
-      const arr = Float64Array.of(hexValue7FFF, hexValue8000, hexValueFF, hexValue1A, hexValueDE);
+      const arr = new Float64Array([hexValue7FFF, hexValue8000, hexValueFF, hexValue1A, hexValueDE]);
       arr.reverse().copyWithin(2, 0, 2);
       const expectVal = num222Value;
       expect(arr[2]).assertEqual(expectVal);
@@ -723,10 +708,9 @@ export default function Float64ArrayCopyWithin1Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayCopyWithin034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const negonePointzero: number = -1.0;
       const negthreePointzero: number = -3.0;
       const negfourPointzero: number = -4.0;
-      const arr = Float64Array.of(negonePointzero, -2.0, -3.0, -4.0, -5.0);
+      const arr = new Float64Array([-1.0, -2.0, -3.0, -4.0, -5.0]);
       arr.copyWithin(0, 2, 4);
       expect(arr[0]).assertEqual(negthreePointzero);
       expect(arr[1]).assertEqual(negfourPointzero);
@@ -741,12 +725,9 @@ export default function Float64ArrayCopyWithin1Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayCopyWithin035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const pointTwo: number = 0.2;
       const pointThree: number = 0.3;
       const pointFour: number = 0.4;
-      const pointFive: number = 0.5;
-      const arr = Float64Array.of(pointOne, pointTwo, pointThree, pointFour, pointFive);
+      const arr = new Float64Array([0.1, 0.2, pointThree, pointFour, 0.5]);
       arr.copyWithin(0, 2, 4);
       expect(arr[0]).assertEqual(pointThree);
       expect(arr[1]).assertEqual(pointFour);
@@ -761,11 +742,9 @@ export default function Float64ArrayCopyWithin1Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayCopyWithin036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
       const threePointZero: number = 3.0;
-      const fivePointZero: number = 5.0;
       const negtwoPointzero: number = -2.0;
-      const arr = Float64Array.of(onePointZero, -2.0, threePointZero, -4.0, fivePointZero);
+      const arr = new Float64Array([1.0, -2.0, threePointZero, -4.0, 5.0]);
       arr.copyWithin(0, 1, 3);
       expect(arr[0]).assertEqual(negtwoPointzero);
       expect(arr[1]).assertEqual(threePointZero);
@@ -805,7 +784,7 @@ export default function Float64ArrayCopyWithin1Test(): void {
       const hexValueDE: number = 0xDE;
       const num255Value: number = 255;
       const twentysixValue: number = 26;
-      const arr = Float64Array.of(hexValue7FFF, hexValue8000, hexValueFF, hexValue1A, hexValueDE);
+      const arr = new Float64Array([hexValue7FFF, hexValue8000, hexValueFF, hexValue1A, hexValueDE]);
       arr.copyWithin(-0, 2, 4);
       expect(arr[0]).assertEqual(num255Value);
       expect(arr[1]).assertEqual(twentysixValue);
@@ -825,7 +804,7 @@ export default function Float64ArrayCopyWithin1Test(): void {
       const hexValueFF: number = 0xFF;
       const hexValue1A: number = 0x1A;
       const hexValueDE: number = 0xDE;
-      const arr = Float64Array.of(hexValue7FFF, hexValue8000, hexValueFF, hexValue1A, hexValueDE);
+      const arr = new Float64Array([hexValue7FFF, hexValue8000, hexValueFF, hexValue1A, hexValueDE]);
       arr.copyWithin(0, 0, 0);
       expect(arr[0]).assertEqual(hexValue7FFF);
       expect(arr[1]).assertEqual(hexValue8000);
@@ -848,7 +827,7 @@ export default function Float64ArrayCopyWithin1Test(): void {
       const hexValueFF: number = 0xFF;
       const hexValue1A: number = 0x1A;
       const hexValueDE: number = 0xDE;
-      const arr = Float64Array.of(hexValue7FFF, hexValue8000, hexValueFF, hexValue1A, hexValueDE);
+      const arr = new Float64Array([hexValue7FFF, hexValue8000, hexValueFF, hexValue1A, hexValueDE]);
       arr.copyWithin(0, 2, 4);
       expect(arr[0]).assertEqual(hexValueFF);
       expect(arr[1]).assertEqual(hexValue1A);
@@ -867,9 +846,8 @@ export default function Float64ArrayCopyWithin1Test(): void {
      */
     it('testFloat64ArrayCopyWithin041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
       const piApprox: number = 3.14;
-      const arr = Float64Array.of(pointFive, onePointFive, piApprox, -99.99);
+      const arr = new Float64Array([pointFive, 1.5, piApprox, -99.99]);
       arr.copyWithin(1, 3, 5);
       expect(arr[0]).assertEqual(pointFive);
       expect(arr[1]).assertEqual(-99.99);
@@ -904,10 +882,9 @@ export default function Float64ArrayCopyWithin1Test(): void {
      */
     it('testFloat64ArrayCopyWithin043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const numberMaxValue: number = Number.MAX_VALUE;
-      const twoPointZero: number = 2.0;
       const numberMinValue: number = Number.MIN_VALUE;
       const arr =
-        Float64Array.of(numberMaxValue, numberMaxValue / twoPointZero, numberMaxValue, numberMinValue, numberMaxValue);
+        new Float64Array([numberMaxValue, numberMaxValue / 2.0, numberMaxValue, numberMinValue, numberMaxValue]);
       const result = arr.copyWithin(0, 2, 4);
       expect(result[0]).assertEqual(numberMaxValue);
       expect(result[1]).assertEqual(numberMinValue);
@@ -925,8 +902,8 @@ export default function Float64ArrayCopyWithin1Test(): void {
       const numberMinValue: number = Number.MIN_VALUE;
       const twoPointZero: number = 2.0;
       const arr =
-        Float64Array.of(numberMinValue, numberMinValue * twoPointZero, numberMinValue, numberMinValue * twoPointZero,
-          numberMinValue);
+        new Float64Array([numberMinValue, numberMinValue * twoPointZero, numberMinValue, numberMinValue * twoPointZero,
+          numberMinValue]);
       const result = arr.copyWithin(0, 2, 4);
       expect(result[0]).assertEqual(numberMinValue);
       expect(result[1]).assertEqual(numberMinValue * twoPointZero);
@@ -945,7 +922,7 @@ export default function Float64ArrayCopyWithin1Test(): void {
       const negativeInfinity: number = Number.NEGATIVE_INFINITY;
       const positiveInfinity: number = Number.POSITIVE_INFINITY;
       const zeroPointZero: number = 0.0;
-      const arr = Float64Array.of(nanValue, negativeInfinity, positiveInfinity, -0.0, nanValue);
+      const arr = new Float64Array([nanValue, negativeInfinity, positiveInfinity, -0.0, nanValue]);
       const result = arr.copyWithin(0, 2, 4);
       expect(result[0]).assertEqual(positiveInfinity);
       expect(result[1]).assertEqual(zeroPointZero);
@@ -960,10 +937,9 @@ export default function Float64ArrayCopyWithin1Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayCopyWithin046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
       const int32MinValue: number = -2147483648;
       const negativeOne: number = -1;
-      const arr = Float64Array.of(int16MinValue, -128, -2147483648, -1, -32767);
+      const arr = Float64Array.of(-32768, -128, -2147483648, -1, -32767);
       const result = arr.copyWithin(0, 2, 4);
       expect(result[0]).assertEqual(int32MinValue);
       expect(result[1]).assertEqual(negativeOne);
@@ -985,7 +961,7 @@ export default function Float64ArrayCopyWithin1Test(): void {
       const hexValueDE: number = 0xDE;
       const num255Value: number = 255;
       const twentysixValue: number = 26;
-      const arr = Float64Array.of(hexValue7FFF, hexValue8000, hexValueFF, hexValue1A, hexValueDE);
+      const arr = new Float64Array([hexValue7FFF, hexValue8000, hexValueFF, hexValue1A, hexValueDE]);
       const result = arr.copyWithin(0, 2, 4);
       expect(result[0]).assertEqual(num255Value);
       expect(result[1]).assertEqual(twentysixValue);
@@ -1006,7 +982,7 @@ export default function Float64ArrayCopyWithin1Test(): void {
       const binaryMax31Bit: number = 0b1111111111111111111111111111111;
       const oneValue: number = 1;
       const int32MaxValue: number = 2147483647;
-      const arr = Float64Array.of(binaryValue1010, binaryValue1111, binaryValue1, binaryMax31Bit);
+      const arr = new Float64Array([binaryValue1010, binaryValue1111, binaryValue1, binaryMax31Bit]);
       const result = arr.copyWithin(0, 2, 4);
       expect(result[0]).assertEqual(oneValue);
       expect(result[1]).assertEqual(int32MaxValue);
@@ -1023,7 +999,7 @@ export default function Float64ArrayCopyWithin1Test(): void {
     it('testFloat64ArrayCopyWithin049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const maxSafeInteger: number = Number.MAX_SAFE_INTEGER;
       const minSafeInteger: number = Number.MIN_SAFE_INTEGER;
-      const arr = Float64Array.of(maxSafeInteger, minSafeInteger, maxSafeInteger, minSafeInteger);
+      const arr = new Float64Array([maxSafeInteger, minSafeInteger, maxSafeInteger, minSafeInteger]);
       const result = arr.copyWithin(0, 2, 4);
       expect(result[0]).assertEqual(maxSafeInteger);
       expect(result[1]).assertEqual(minSafeInteger);
@@ -1040,11 +1016,10 @@ export default function Float64ArrayCopyWithin1Test(): void {
     it('testFloat64ArrayCopyWithin050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointFive: number = 0.5;
       const onePointFive: number = 1.5;
-      const piApprox: number = 3.14;
-      const arr = Float64Array.of(pointFive, onePointFive, piApprox, -99.99);
+      const arr = Float64Array.of(pointFive, onePointFive, 3.14, -99.99);
       const result = arr.copyWithin(-2);
-      expect(result[2] == pointFive).assertEqual(false);
-      expect(result[3] == onePointFive).assertEqual(false);
+      expect(result[2] == pointFive).assertFalse();
+      expect(result[3] == onePointFive).assertFalse();
     })
 
     /**
@@ -1063,7 +1038,7 @@ export default function Float64ArrayCopyWithin1Test(): void {
       const hexValue8000: number = 0x8000;
       const num128Value: number = 128;
       const int16MaxValue: number = 32767;
-      const arr = Float64Array.of(hexValueAD, hexValue7F, hexValue80, hexValue7FFF, hexValue8000);
+      const arr = new Float64Array([hexValueAD, hexValue7F, hexValue80, hexValue7FFF, hexValue8000]);
       const result = arr.copyWithin(0, 2, 4);
       expect(result[0]).assertEqual(num128Value);
       expect(result[1]).assertEqual(int16MaxValue);
@@ -1078,10 +1053,9 @@ export default function Float64ArrayCopyWithin1Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayCopyWithin052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
       const int32MaxValue: number = 2147483647;
       const negativeOne: number = -1;
-      const arr = Float64Array.of(int16MinValue, -128, int32MaxValue, -1, -32767);
+      const arr = new Float64Array([-32768, -128, int32MaxValue, -1, -32767]);
       const result = arr.copyWithin(0, 2, 4);
       expect(result[0]).assertEqual(int32MaxValue);
       expect(result[1]).assertEqual(negativeOne);
@@ -1097,9 +1071,8 @@ export default function Float64ArrayCopyWithin1Test(): void {
      */
     it('testFloat64ArrayCopyWithin053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const numberMaxValue: number = Number.MAX_VALUE;
-      const twoPointZero: number = 2.0;
       const numberMinValue: number = Number.MIN_VALUE;
-      const arr = Float64Array.of(numberMaxValue, numberMaxValue / twoPointZero, numberMaxValue, numberMinValue);
+      const arr = new Float64Array([numberMaxValue, numberMaxValue / 2.0, numberMaxValue, numberMinValue]);
       const result = arr.copyWithin(0, 2, 4);
       expect(result[0]).assertEqual(numberMaxValue);
       expect(result[1]).assertEqual(numberMinValue);
@@ -1155,7 +1128,7 @@ export default function Float64ArrayCopyWithin1Test(): void {
       const negativeInfinity: number = Number.NEGATIVE_INFINITY;
       const positiveInfinity: number = Number.POSITIVE_INFINITY;
       const zeroPointZero: number = 0.0;
-      const arr = Float64Array.of(nanValue, negativeInfinity, positiveInfinity, -0.0, nanValue);
+      const arr = new Float64Array([nanValue, negativeInfinity, positiveInfinity, -0.0, nanValue]);
       const result = arr.copyWithin(1, 3, 5);
       const actVal1 = Number.isNaN(result[0]);
       const expectVal = true;
@@ -1182,7 +1155,7 @@ export default function Float64ArrayCopyWithin1Test(): void {
       const hexValueDE: number = 0xDE;
       const twentysixValue: number = 26;
       const num222Value: number = 222;
-      const arr = Float64Array.of(hexValue7FFF, hexValue8000, hexValueFF, hexValue1A, hexValueDE);
+      const arr = new Float64Array([hexValue7FFF, hexValue8000, hexValueFF, hexValue1A, hexValueDE]);
       const result = arr.copyWithin(1, 3, 5);
       expect(result[1]).assertEqual(twentysixValue);
       expect(result[2]).assertEqual(num222Value);
@@ -1219,10 +1192,9 @@ export default function Float64ArrayCopyWithin1Test(): void {
      */
     it('testFloat64ArrayCopyWithin059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const numberMaxValue: number = Number.MAX_VALUE;
-      const twoPointZero: number = 2.0;
       const numberMinValue: number = Number.MIN_VALUE;
       const arr =
-        Float64Array.of(numberMaxValue, numberMaxValue / twoPointZero, numberMinValue, numberMaxValue, numberMinValue);
+        new Float64Array([numberMaxValue, numberMaxValue / 2.0, numberMinValue, numberMaxValue, numberMinValue]);
       const result = arr.copyWithin(0, 2, 4);
       expect(result[0]).assertEqual(numberMinValue);
       expect(result[1]).assertEqual(numberMaxValue);
@@ -1238,10 +1210,9 @@ export default function Float64ArrayCopyWithin1Test(): void {
      */
     it('testFloat64ArrayCopyWithin060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
       const tinyValue1e20: number = 1e-20;
       const tinyValue1e21: number = 1e-21;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, tinyValue1e20, tinyValue1e21, pointOne);
+      const arr = new Float64Array([pointOne, 9007199254740991, tinyValue1e20, tinyValue1e21, pointOne]);
       const result = arr.copyWithin(0, 2, 4);
       expect(result[0]).assertEqual(tinyValue1e20);
       expect(result[1]).assertEqual(tinyValue1e21);
@@ -1263,7 +1234,7 @@ export default function Float64ArrayCopyWithin1Test(): void {
       const hexValueDE: number = 0xDE;
       const int16MaxValue: number = 32767;
       const num32768Value: number = 32768;
-      const arr = Float64Array.of(hexValue7FFF, hexValue8000, hexValueFF, hexValue1A, hexValueDE);
+      const arr = new Float64Array([hexValue7FFF, hexValue8000, hexValueFF, hexValue1A, hexValueDE]);
       const result = arr.copyWithin(0, 0, 2);
       expect(result[0]).assertEqual(int16MaxValue);
       expect(result[1]).assertEqual(num32768Value);
@@ -1278,11 +1249,10 @@ export default function Float64ArrayCopyWithin1Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayCopyWithin062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
       const int32MinValue: number = -2147483648;
       const negativeOne: number = -1;
       const int16NegMaxValue: number = -32767;
-      const arr = Float64Array.of(int16MinValue, -128, -2147483648, -1, -32767);
+      const arr = Float64Array.of(-32768, -128, -2147483648, -1, -32767);
       const result = arr.copyWithin(0, 2, undefined);
       expect(result[0]).assertEqual(int32MinValue);
       expect(result[1]).assertEqual(negativeOne);
@@ -1303,7 +1273,7 @@ export default function Float64ArrayCopyWithin1Test(): void {
       const hexValueFF: number = 0xFF;
       const hexValue1A: number = 0x1A;
       const hexValueDE: number = 0xDE;
-      const arr = Float64Array.of(hexValue7FFF, hexValue8000, hexValueFF, hexValue1A, hexValueDE);
+      const arr = new Float64Array([hexValue7FFF, hexValue8000, hexValueFF, hexValue1A, hexValueDE]);
       arr.copyWithin(0);
       expect(arr[0]).assertEqual(hexValue7FFF);
       expect(arr[1]).assertEqual(hexValue8000);
@@ -1324,7 +1294,7 @@ export default function Float64ArrayCopyWithin1Test(): void {
       const pointFive: number = 0.5;
       const onePointFive: number = 1.5;
       const piApprox: number = 3.14;
-      const arr = Float64Array.of(pointFive, onePointFive, piApprox, -99.99);
+      const arr = new Float64Array([pointFive, onePointFive, piApprox, -99.99]);
       arr.copyWithin(1);
       expect(arr[0]).assertEqual(pointFive);
       expect(arr[1]).assertEqual(pointFive);
@@ -1342,10 +1312,9 @@ export default function Float64ArrayCopyWithin1Test(): void {
      */
     it('testFloat64ArrayCopyWithin065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const numberMaxValue: number = Number.MAX_VALUE;
-      const twoPointZero: number = 2.0;
       const numberMinValue: number = Number.MIN_VALUE;
       const arr =
-        Float64Array.of(numberMaxValue, numberMaxValue / twoPointZero, numberMaxValue, numberMinValue, numberMaxValue);
+        new Float64Array([numberMaxValue, numberMaxValue / 2.0, numberMaxValue, numberMinValue, numberMaxValue]);
       const result = arr.copyWithin(-5, 2, 4);
       expect(result[0]).assertEqual(numberMaxValue);
       expect(result[1]).assertEqual(numberMinValue);

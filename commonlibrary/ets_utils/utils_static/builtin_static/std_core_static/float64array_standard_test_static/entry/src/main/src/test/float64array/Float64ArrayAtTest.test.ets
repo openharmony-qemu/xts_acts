@@ -53,9 +53,7 @@ export default function float64ArrayAtTest(): void {
      */
     it('testFloat64ArrayAt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = new Float64Array([pointOne, 9007199254740991, 0]);
       const firstIndex: int = 0;
       const actualValue = arr.at(firstIndex);
       const expectedValue: number = pointOne;
@@ -73,11 +71,7 @@ export default function float64ArrayAtTest(): void {
      */
     it('testFloat64ArrayAt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const pointOneTwoFive: number = 0.125;
-      const pointZeroSixTwoFive: number = 0.0625;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive, pointOneTwoFive, pointZeroSixTwoFive);
+      const arr = Float64Array.of(pointFive, 1.5, 0.25, 0.125, 0.0625);
       const firstIndex: int = 0;
       const actualValue = arr.at(firstIndex);
       const expectedValue: number = pointFive;
@@ -94,12 +88,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
       const int8MinValue: number = -128;
-      const zeroValue: number = 0;
-      const int8MaxValue: number = 127;
-      const int16MaxValue: number = 32767;
-      const arr = Float64Array.of(int16MinValue, int8MinValue, zeroValue, int8MaxValue, int16MaxValue);
+      const arr = Float64Array.of(-32768, int8MinValue, 0, 127, 32767);
       const secondIndex: int = 1;
       const actualValue = arr.at(secondIndex);
       const expectedValue: number = int8MinValue;
@@ -116,12 +106,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const negativeOne: number = -1;
-      const zeroValue: number = 0;
-      const oneValue: number = 1;
       const int32MaxValue: number = 2147483647;
-      const arr = Float64Array.of(int32MinValue, negativeOne, zeroValue, oneValue, int32MaxValue);
+      const arr = new Float64Array([-2147483648, -1, 0, 1, int32MaxValue]);
       const indexFour: int = 4;
       const actualValue = arr.at(indexFour);
       const expectedValue: number = int32MaxValue;
@@ -138,12 +124,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const piValue: number = 3.141592653589793;
       const tinyNegativeValue: number = -1e-100;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue, piValue, tinyNegativeValue);
+      const arr = Float64Array.of(0.1, 9007199254740991, 0, 3.141592653589793, tinyNegativeValue);
       const negativeLastIndex: int = -1;
       const actualValue = arr.at(negativeLastIndex);
       const expectedValue: number = tinyNegativeValue;
@@ -160,12 +142,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
       const pointOneTwoFive: number = 0.125;
-      const pointZeroSixTwoFive: number = 0.0625;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive, pointOneTwoFive, pointZeroSixTwoFive);
+      const arr = Float64Array.of(0.5, 1.5, 0.25, pointOneTwoFive, 0.0625);
       const secondFromLastIndex: int = -2;
       const actualValue = arr.at(secondFromLastIndex);
       const expectedValue: number = pointOneTwoFive;
@@ -183,11 +161,7 @@ export default function float64ArrayAtTest(): void {
      */
     it('testFloat64ArrayAt007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const int16MinValue: number = -32768;
-      const int8MinValue: number = -128;
-      const zeroValue: number = 0;
-      const int8MaxValue: number = 127;
-      const int16MaxValue: number = 32767;
-      const arr = Float64Array.of(int16MinValue, int8MinValue, zeroValue, int8MaxValue, int16MaxValue);
+      const arr = new Float64Array([int16MinValue, -128, 0, 127, 32767]);
       const fifthFromLastIndex: int = -5;
       const actualValue = arr.at(fifthFromLastIndex);
       const expectedValue: number = int16MinValue;
@@ -204,12 +178,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const negativeOne: number = -1;
       const zeroValue: number = 0;
-      const oneValue: number = 1;
-      const int32MaxValue: number = 2147483647;
-      const arr = Float64Array.of(int32MinValue, negativeOne, zeroValue, oneValue, int32MaxValue);
+      const arr = Float64Array.of(-2147483648, -1, zeroValue, 1, 2147483647);
       const thirdFromLastIndex: int = -3;
       const actualValue = arr.at(thirdFromLastIndex);
       const expectedValue: number = zeroValue;
@@ -226,12 +196,7 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const piValue: number = 3.141592653589793;
-      const tinyNegativeValue: number = -1e-100;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue, piValue, tinyNegativeValue);
+      const arr = Float64Array.of(0.1, 9007199254740991, 0, 3.141592653589793, -1e-100);
       const indexFive: int = 5;
       const actualValue = arr.at(indexFive);
       const expectVal = undefined;
@@ -247,12 +212,7 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const pointOneTwoFive: number = 0.125;
-      const pointZeroSixTwoFive: number = 0.0625;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive, pointOneTwoFive, pointZeroSixTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25, 0.125, 0.0625]);
       const indexSix: int = 6;
       const actualValue = arr.at(indexSix);
       const expectVal = undefined;
@@ -268,12 +228,7 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const int8MinValue: number = -128;
-      const zeroValue: number = 0;
-      const int8MaxValue: number = 127;
-      const int16MaxValue: number = 32767;
-      const arr = Float64Array.of(int16MinValue, int8MinValue, zeroValue, int8MaxValue, int16MaxValue);
+      const arr = new Float64Array([-32768, -128, 0, 127, 32767]);
       const indexNegativeSix: int = -6;
       const actualValue = arr.at(indexNegativeSix);
       const expectVal = undefined;
@@ -289,12 +244,7 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const negativeOne: number = -1;
-      const zeroValue: number = 0;
-      const oneValue: number = 1;
-      const int32MaxValue: number = 2147483647;
-      const arr = Float64Array.of(int32MinValue, negativeOne, zeroValue, oneValue, int32MaxValue);
+      const arr = new Float64Array([-2147483648, -1, 0, 1, 2147483647]);
       const indexNegativeSeven: int = -7;
       const actualValue = arr.at(indexNegativeSeven);
       const expectVal = undefined;
@@ -310,10 +260,7 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = new Float64Array([0.1, 9007199254740991, 0]);
       const millionOobIndex: int = 1000000;
       const actualValue = arr.at(millionOobIndex);
       const expectVal = undefined;
@@ -329,10 +276,7 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       const negativeMillionOobIndex: int = -1000000;
       const actualValue = arr.at(negativeMillionOobIndex);
       const expectVal = undefined;
@@ -399,7 +343,7 @@ export default function float64ArrayAtTest(): void {
      */
     it('testFloat64ArrayAt018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const int32MinValue: number = -2147483648;
-      const arr = Float64Array.of(int32MinValue);
+      const arr = new Float64Array([int32MinValue]);
       const singleElementNegIndex: int = -1;
       const actualValue = arr.at(singleElementNegIndex);
       const expectedValue: number = int32MinValue;
@@ -416,8 +360,7 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const arr = Float64Array.of(pointOne);
+      const arr = Float64Array.of(0.1);
       const secondIndex: int = 1;
       const actualValue = arr.at(secondIndex);
       const expectVal = undefined;
@@ -433,8 +376,7 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const arr = Float64Array.of(pointFive);
+      const arr = new Float64Array([0.5]);
       const secondFromLastIndex: int = -2;
       const actualValue = arr.at(secondFromLastIndex);
       const expectVal = undefined;
@@ -451,9 +393,7 @@ export default function float64ArrayAtTest(): void {
      */
     it('testFloat64ArrayAt021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroPointZero: number = 0.0;
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
-      const arr = Float64Array.of(zeroPointZero, onePointZero, twoPointZero);
+      const arr = Float64Array.of(zeroPointZero, 1.0, 2.0);
       const firstIndex: int = 0;
       const actualValue = arr.at(firstIndex);
       const expectedValue: number = zeroPointZero;
@@ -470,10 +410,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
       const negativeOne: number = -1;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int32MinValue, negativeOne, zeroValue);
+      const arr = Float64Array.of(-2147483648, negativeOne, 0);
       const secondIndex: int = 1;
       const actualValue = arr.at(secondIndex);
       const expectedValue: number = negativeOne;
@@ -491,9 +429,7 @@ export default function float64ArrayAtTest(): void {
      */
     it('testFloat64ArrayAt023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const positiveInfinity: number = Infinity;
-      const twoPointZero: number = 2.0;
-      const threePointZero: number = 3.0;
-      const arr = Float64Array.of(positiveInfinity, twoPointZero, threePointZero);
+      const arr = Float64Array.of(positiveInfinity, 2.0, 3.0);
       const firstIndex: int = 0;
       const actualValue = arr.at(firstIndex);
       const expectedValue: number = positiveInfinity;
@@ -510,10 +446,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
       const negativeInfinity: number = -Infinity;
-      const threePointZero: number = 3.0;
-      const arr = Float64Array.of(onePointZero, negativeInfinity, threePointZero);
+      const arr = Float64Array.of(1.0, negativeInfinity, 3.0);
       const secondIndex: int = 1;
       const actualValue = arr.at(secondIndex);
       const expectedValue: number = negativeInfinity;
@@ -530,10 +464,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
       const nanValue: number = NaN;
-      const arr = Float64Array.of(onePointZero, twoPointZero, nanValue);
+      const arr = new Float64Array([1.0, 2.0, nanValue]);
       const thirdIndex: int = 2;
       const actualValue = arr.at(thirdIndex);
       const actVal1 = Number.isNaN(actualValue as Double);
@@ -551,9 +483,7 @@ export default function float64ArrayAtTest(): void {
      */
     it('testFloat64ArrayAt026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const doubleMinValue: number = 5e-324;
-      const twoPointZero: number = 2.0;
-      const threePointZero: number = 3.0;
-      const arr = Float64Array.of(doubleMinValue, twoPointZero, threePointZero);
+      const arr = new Float64Array([doubleMinValue, 2.0, 3.0]);
       const firstIndex: int = 0;
       const actualValue = arr.at(firstIndex);
       const expectedValue: number = doubleMinValue;
@@ -570,10 +500,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
       const doubleMaxValue: number = 1.7976931348623157e+308;
-      const threePointZero: number = 3.0;
-      const arr = Float64Array.of(onePointZero, doubleMaxValue, threePointZero);
+      const arr = new Float64Array([1.0, doubleMaxValue, 3.0]);
       const secondIndex: int = 1;
       const actualValue = arr.at(secondIndex);
       const expectedValue: number = doubleMaxValue;
@@ -591,9 +519,7 @@ export default function float64ArrayAtTest(): void {
      */
     it('testFloat64ArrayAt028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const negativeZero: number = -0.0;
-      const twoPointZero: number = 2.0;
-      const threePointZero: number = 3.0;
-      const arr = Float64Array.of(negativeZero, twoPointZero, threePointZero);
+      const arr = Float64Array.of(negativeZero, 2.0, 3.0);
       const firstIndex: int = 0;
       const actualValue = arr.at(firstIndex);
       const expectedValue: number = negativeZero;
@@ -610,10 +536,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
       const sciValue10e308: number = 1.0e-308;
-      const threePointZero: number = 3.0;
-      const arr = Float64Array.of(onePointZero, sciValue10e308, threePointZero);
+      const arr = Float64Array.of(1.0, sciValue10e308, 3.0);
       const secondIndex: int = 1;
       const actualValue = arr.at(secondIndex);
       const expectedValue: number = sciValue10e308;
@@ -631,8 +555,7 @@ export default function float64ArrayAtTest(): void {
      */
     it('testFloat64ArrayAt030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const doubleMaxValue: number = 1.7976931348623157e+308;
-      const twoPointZero: number = 2.0;
-      const arr = Float64Array.of(doubleMaxValue, twoPointZero);
+      const arr = new Float64Array([doubleMaxValue, 2.0]);
       const firstIndex: int = 0;
       const actualValue = arr.at(firstIndex);
       const expectedValue: number = doubleMaxValue;
@@ -649,10 +572,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
       const doubleMinValue: number = 5e-324;
-      const threePointZero: number = 3.0;
-      const arr = Float64Array.of(onePointZero, doubleMinValue, threePointZero);
+      const arr = Float64Array.of(1.0, doubleMinValue, 3.0);
       const secondIndex: int = 1;
       const actualValue = arr.at(secondIndex);
       const expectedValue: number = doubleMinValue;
@@ -670,8 +591,7 @@ export default function float64ArrayAtTest(): void {
      */
     it('testFloat64ArrayAt032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const precisePointOnePlusPointTwo: number = 0.30000000000000004;
-      const twoPointZero: number = 2.0;
-      const arr = Float64Array.of(precisePointOnePlusPointTwo, twoPointZero);
+      const arr = Float64Array.of(precisePointOnePlusPointTwo, 2.0);
       const firstIndex: int = 0;
       const actualValue = arr.at(firstIndex);
       const expectedValue: number = precisePointOnePlusPointTwo;
@@ -688,9 +608,7 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const int8MinValue: number = -128;
-      const arr = Float64Array.of(int16MinValue, int8MinValue);
+      const arr = Float64Array.of(-32768, -128);
       const largeOobIndex: int = 100;
       const actualValue = arr.at(largeOobIndex);
       const expectVal = undefined;
@@ -706,9 +624,7 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const negativeOne: number = -1;
-      const arr = Float64Array.of(int32MinValue, negativeOne);
+      const arr = new Float64Array([-2147483648, -1]);
       const negativeLargeOobIndex: int = -100;
       const actualValue = arr.at(negativeLargeOobIndex);
       const expectVal = undefined;
@@ -813,14 +729,14 @@ export default function float64ArrayAtTest(): void {
      */
     it('testFloat64ArrayAt039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const onePointZero: number = 1.0;
-      const fiftyPointzero: number = 50.0;
+      const fiftyPointZero: number = 50.0;
       const arr = new Float64Array(100);
       for (let i: int = 0; i < 100; i++) {
         arr.$_set(i, i * onePointZero);
       }
       const indexFifty: int = 50;
       const actualValue = arr.at(indexFifty);
-      const expectedValue: number = fiftyPointzero;
+      const expectedValue: number = fiftyPointZero;
       const expectVal = expectedValue;
       expect(actualValue).assertEqual(expectVal);
     })
@@ -835,14 +751,14 @@ export default function float64ArrayAtTest(): void {
      */
     it('testFloat64ArrayAt040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const onePointZero: number = 1.0;
-      const fiftyPointzero: number = 50.0;
+      const fiftyPointZero: number = 50.0;
       const arr = new Float64Array(100);
       for (let i: int = 0; i < 100; i++) {
         arr.$_set(i, i * onePointZero);
       }
       const fiftyFromEndIndex: int = -50;
       const actualValue = arr.at(fiftyFromEndIndex);
-      const expectedValue: number = fiftyPointzero;
+      const expectedValue: number = fiftyPointZero;
       const expectVal = expectedValue;
       expect(actualValue).assertEqual(expectVal);
     })
@@ -857,9 +773,7 @@ export default function float64ArrayAtTest(): void {
      */
     it('testFloat64ArrayAt041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = new Float64Array([pointOne, 9007199254740991, 0]);
       const idx: int = 0;
       const actualValue = arr.at(idx);
       const expectedValue: number = pointOne;
@@ -876,10 +790,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
       const pointTwoFive: number = 0.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = Float64Array.of(0.5, 1.5, pointTwoFive);
       const idx: int = -1;
       const actualValue = arr.at(idx);
       const expectedValue: number = pointTwoFive;
@@ -896,10 +808,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const int8MinValue: number = -128;
       const zeroValue: number = 0;
-      const arr = Float64Array.of(int16MinValue, int8MinValue, zeroValue);
+      const arr = new Float64Array([-32768, -128, zeroValue]);
       const idx: int = arr.length - 1;
       const actualValue = arr.at(idx);
       const expectedValue: number = zeroValue;
@@ -917,9 +827,7 @@ export default function float64ArrayAtTest(): void {
      */
     it('testFloat64ArrayAt044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const int32MinValue: number = -2147483648;
-      const negativeOne: number = -1;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int32MinValue, negativeOne, zeroValue);
+      const arr = new Float64Array([int32MinValue, -1, 0]);
       const idx: int = -arr.length;
       const actualValue = arr.at(idx);
       const expectedValue: number = int32MinValue;
@@ -936,10 +844,7 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = new Float64Array([0.1, 9007199254740991, 0]);
       const firstIndex: int = 0;
       const actualValue = arr.at(firstIndex);
       const expectVal = false;
@@ -955,10 +860,7 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       const indexTen: int = 10;
       const actualValue = arr.at(indexTen);
       const expectVal = undefined;
@@ -974,11 +876,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const int8MinValue: number = -128;
-      const zeroValue: number = 0;
       const negnum32758Value: number = -32758;
-      const arr = Float64Array.of(int16MinValue, int8MinValue, zeroValue);
+      const arr = new Float64Array([-32768, -128, 0]);
       const firstIndex: int = 0;
       const actualValue = arr.at(firstIndex);
       const sum = (actualValue as number) + 10.0;
@@ -996,11 +895,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const negativeOne: number = -1;
-      const zeroValue: number = 0;
       const thresholdValue: number = 1.0;
-      const arr = Float64Array.of(int32MinValue, negativeOne, zeroValue);
+      const arr = Float64Array.of(-2147483648, -1, 0);
       const secondIndex: int = 1;
       const actualValue = arr.at(secondIndex);
       const expectVal = false;
@@ -1016,10 +912,7 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       const elementBeforeCall = arr.$_get(0);
       const firstIndex: int = 0;
       arr.at(firstIndex);
@@ -1037,10 +930,7 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const int8MinValue: number = -128;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int16MinValue, int8MinValue, zeroValue);
+      const arr = new Float64Array([-32768, -128, 0]);
       const secondIndex: int = 1;
       const firstActualValue = arr.at(secondIndex);
       const secondActualValue = arr.at(secondIndex);
@@ -1057,9 +947,7 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const negativeOne: number = -1;
-      const arr = Float64Array.of(int32MinValue, negativeOne);
+      const arr = new Float64Array([-2147483648, -1]);
       const indexFive: int = 5;
       const actualValue = arr.at(indexFive);
       const expectVal = undefined;
@@ -1076,9 +964,7 @@ export default function float64ArrayAtTest(): void {
      */
     it('testFloat64ArrayAt052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const tenPointZero: number = 10.0;
-      const twentyPointZero: number = 20.0;
-      const thirtyPointZero: number = 30.0;
-      const arr = Float64Array.of(tenPointZero, twentyPointZero, thirtyPointZero);
+      const arr = new Float64Array([tenPointZero, 20.0, 30.0]);
       const idx: int = -0;
       const actualValue = arr.at(idx);
       const expectedValue: number = tenPointZero;
@@ -1096,9 +982,7 @@ export default function float64ArrayAtTest(): void {
      */
     it('testFloat64ArrayAt053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const tenPointZero: number = 10.0;
-      const twentyPointZero: number = 20.0;
-      const thirtyPointZero: number = 30.0;
-      const arr = Float64Array.of(tenPointZero, twentyPointZero, thirtyPointZero);
+      const arr = new Float64Array([tenPointZero, 20.0, 30.0]);
       const idx: int = Double.toInt(NaN);
       const actualValue = arr.at(idx);
       const expectedValue: number = tenPointZero;
@@ -1115,10 +999,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const tenPointZero: number = 10.0;
       const twentyPointZero: number = 20.0;
-      const thirtyPointZero: number = 30.0;
-      const arr = Float64Array.of(tenPointZero, twentyPointZero, thirtyPointZero);
+      const arr = new Float64Array([10.0, twentyPointZero, 30.0]);
       const idx: int = Double.toInt(1.9);
       const actualValue = arr.at(idx);
       const expectedValue: number = twentyPointZero;
@@ -1136,7 +1018,7 @@ export default function float64ArrayAtTest(): void {
      */
     it('testFloat64ArrayAt055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const nanValue: number = NaN;
-      const arr = Float64Array.of(nanValue, nanValue, nanValue);
+      const arr = new Float64Array([nanValue, nanValue, nanValue]);
       const secondIndex: int = 1;
       const actualValue = arr.at(secondIndex);
       const actVal3 = Number.isNaN(actualValue as Double);
@@ -1155,7 +1037,7 @@ export default function float64ArrayAtTest(): void {
     it('testFloat64ArrayAt056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const positiveInfinity: number = Infinity;
       const negativeInfinity: number = -Infinity;
-      const arr = Float64Array.of(positiveInfinity, negativeInfinity, positiveInfinity);
+      const arr = new Float64Array([positiveInfinity, negativeInfinity, positiveInfinity]);
       const firstIndex: int = 0;
       const actualValue = arr.at(firstIndex);
       const expectedValue: number = positiveInfinity;
@@ -1172,10 +1054,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
       const negativeInfinity: number = -Infinity;
-      const threePointZero: number = 3.0;
-      const arr = Float64Array.of(onePointZero, negativeInfinity, threePointZero);
+      const arr = Float64Array.of(1.0, negativeInfinity, 3.0);
       const secondFromLastIndex: int = -2;
       const actualValue = arr.at(secondFromLastIndex);
       const expectedValue: number = negativeInfinity;
@@ -1193,9 +1073,7 @@ export default function float64ArrayAtTest(): void {
      */
     it('testFloat64ArrayAt058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const negativeZero: number = -0.0;
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
-      const arr = Float64Array.of(negativeZero, onePointZero, twoPointZero);
+      const arr = Float64Array.of(negativeZero, 1.0, 2.0);
       const firstIndex: int = 0;
       const actualValue = arr.at(firstIndex);
       const expectedValue: number = negativeZero;
@@ -1214,10 +1092,9 @@ export default function float64ArrayAtTest(): void {
     it('testFloat64ArrayAt059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointOne: number = 0.1;
       const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
       const piValue: number = 3.141592653589793;
       const tinyNegativeValue: number = -1e-100;
-      const sub = Float64Array.of(zeroValue, piValue);
+      const sub = Float64Array.of(0, piValue);
       const subArrayLastIndex: int = -1;
       const actualValue = sub.at(subArrayLastIndex);
       const expectedValue: number = piValue;
@@ -1235,11 +1112,9 @@ export default function float64ArrayAtTest(): void {
      */
     it('testFloat64ArrayAt060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
       const pointOneTwoFive: number = 0.125;
       const pointZeroSixTwoFive: number = 0.0625;
-      const sub = Float64Array.of(onePointFive, pointTwoFive, pointOneTwoFive);
+      const sub = Float64Array.of(1.5, 0.25, pointOneTwoFive);
       const thirdIndex: int = 2;
       const actualValue = sub.at(thirdIndex);
       const expectedValue: number = pointOneTwoFive;
@@ -1258,10 +1133,8 @@ export default function float64ArrayAtTest(): void {
     it('testFloat64ArrayAt061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const int16MinValue: number = -32768;
       const int8MinValue: number = -128;
-      const zeroValue: number = 0;
-      const int8MaxValue: number = 127;
       const int16MaxValue: number = 32767;
-      const sliced = Float64Array.of(int8MinValue, zeroValue, int8MaxValue);
+      const sliced = new Float64Array([int8MinValue, 0, 127]);
       const firstIndex: int = 0;
       const actualValue = sliced.at(firstIndex);
       const expectedValue: number = int8MinValue;
@@ -1279,7 +1152,7 @@ export default function float64ArrayAtTest(): void {
      */
     it('testFloat64ArrayAt062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const negnum4294967296Value: number = -4294967296;
-      const mapped = Float64Array.of(negnum4294967296Value, -2.0, 0.0);
+      const mapped = new Float64Array([negnum4294967296Value, -2.0, 0.0]);
       const firstIndex: int = 0;
       const actualValue = mapped.at(firstIndex);
       const expectedValue: number = negnum4294967296Value;
@@ -1297,8 +1170,7 @@ export default function float64ArrayAtTest(): void {
      */
     it('testFloat64ArrayAt063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const maxSafeInteger: number = 9007199254740991;
-      const piValue: number = 3.141592653589793;
-      const filtered = Float64Array.of(maxSafeInteger, piValue);
+      const filtered = Float64Array.of(maxSafeInteger, 3.141592653589793);
       const firstIndex: int = 0;
       const actualValue = filtered.at(firstIndex);
       const expectedValue: number = maxSafeInteger;
@@ -1315,9 +1187,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
       const onePointFive: number = 1.5;
-      const arr = Float64Array.of(pointFive, onePointFive);
+      const arr = new Float64Array([0.5, onePointFive]);
       const secondIndex: int = 1;
       const actualValue = arr.at(secondIndex);
       const expectedValue: number = onePointFive;
@@ -1414,12 +1285,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const negativeOne: number = -1;
-      const zeroValue: number = 0;
       const oneValue: number = 1;
-      const int32MaxValue: number = 2147483647;
-      const arr = Float64Array.of(int32MinValue, negativeOne, zeroValue, oneValue, int32MaxValue);
+      const arr = new Float64Array([-2147483648, -1, 0, oneValue, 2147483647]);
       const indexThree: int = 3;
       const actualValue = arr.at(indexThree);
       const expectedValue: number = oneValue;
@@ -1436,12 +1303,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
       const zeroValue: number = 0;
-      const piValue: number = 3.141592653589793;
-      const tinyNegativeValue: number = -1e-100;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue, piValue, tinyNegativeValue);
+      const arr = new Float64Array([0.1, 9007199254740991, zeroValue, 3.141592653589793, -1e-100]);
       const thirdFromLastIndex: int = -3;
       const actualValue = arr.at(thirdFromLastIndex);
       const expectedValue: number = zeroValue;
@@ -1458,12 +1321,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const pointOneTwoFive: number = 0.125;
       const pointZeroSixTwoFive: number = 0.0625;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive, pointOneTwoFive, pointZeroSixTwoFive);
+      const arr = Float64Array.of(0.5, 1.5, 0.25, 0.125, pointZeroSixTwoFive);
       const indexFour: int = 4;
       const actualValue = arr.at(indexFour);
       const expectedValue: number = pointZeroSixTwoFive;
@@ -1480,12 +1339,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const int8MinValue: number = -128;
-      const zeroValue: number = 0;
       const int8MaxValue: number = 127;
-      const int16MaxValue: number = 32767;
-      const arr = Float64Array.of(int16MinValue, int8MinValue, zeroValue, int8MaxValue, int16MaxValue);
+      const arr = Float64Array.of(-32768, -128, 0, int8MaxValue, 32767);
       const secondFromLastIndex: int = -2;
       const actualValue = arr.at(secondFromLastIndex);
       const expectedValue: number = int8MaxValue;
@@ -1502,12 +1357,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
       const negativeOne: number = -1;
-      const zeroValue: number = 0;
-      const oneValue: number = 1;
-      const int32MaxValue: number = 2147483647;
-      const arr = Float64Array.of(int32MinValue, negativeOne, zeroValue, oneValue, int32MaxValue);
+      const arr = Float64Array.of(-2147483648, negativeOne, 0, 1, 2147483647);
       const secondIndex: int = 1;
       const actualValue = arr.at(secondIndex);
       const expectedValue: number = negativeOne;
@@ -1524,10 +1375,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const sciValue10e308: number = 1.0e+308;
       const sciValue20e308: number = 2.0e-308;
-      const sciValue30e100: number = 3.0e+100;
-      const arr = Float64Array.of(sciValue10e308, sciValue20e308, sciValue30e100);
+      const arr = Float64Array.of(1.0e+308, sciValue20e308, 3.0e+100);
       const secondIndex: int = 1;
       const actualValue = arr.at(secondIndex);
       const expectedValue: number = sciValue20e308;
@@ -1547,9 +1396,7 @@ export default function float64ArrayAtTest(): void {
       const positiveInfinity: number = Infinity;
       const negativeInfinity: number = -Infinity;
       const nanValue: number = NaN;
-      const zeroPointZero: number = 0.0;
-      const negativeZero: number = -0.0;
-      const arr = Float64Array.of(positiveInfinity, negativeInfinity, nanValue, zeroPointZero, negativeZero);
+      const arr = new Float64Array([positiveInfinity, negativeInfinity, nanValue, 0.0, -0.0]);
       const thirdIndex: int = 2;
       const actualValue = arr.at(thirdIndex);
       const actVal4 = Number.isNaN(actualValue as Double);
@@ -1569,9 +1416,7 @@ export default function float64ArrayAtTest(): void {
       const positiveInfinity: number = Infinity;
       const negativeInfinity: number = -Infinity;
       const nanValue: number = NaN;
-      const zeroPointZero: number = 0.0;
-      const negativeZero: number = -0.0;
-      const arr = Float64Array.of(positiveInfinity, negativeInfinity, nanValue, zeroPointZero, negativeZero);
+      const arr = new Float64Array([positiveInfinity, negativeInfinity, nanValue, 0.0, -0.0]);
       const fourthFromLastIndex: int = -4;
       const actualValue = arr.at(fourthFromLastIndex);
       const expectedValue: number = negativeInfinity;
@@ -1588,10 +1433,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
       const negativeOne: number = -1;
-      const zeroValue: number = 0;
-      const original = Float64Array.of(int32MinValue, negativeOne, zeroValue);
+      const original = new Float64Array([-2147483648, negativeOne, 0]);
       const copy = new Float64Array(original);
       const secondIndex: int = 1;
       const actualValue = copy.at(secondIndex);
@@ -1610,15 +1453,15 @@ export default function float64ArrayAtTest(): void {
      */
     it('testFloat64ArrayAt078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const tenPointZero: number = 10.0;
-      const twentyPointzero: number = 20.0;
-      const thirtyPointzero: number = 30.0;
+      const twentyPointZero: number = 20.0;
+      const thirtyPointZero: number = 30.0;
       const arr = new Float64Array(3);
       arr.$_set(0, tenPointZero);
-      arr.$_set(1, twentyPointzero);
-      arr.$_set(2, thirtyPointzero);
+      arr.$_set(1, twentyPointZero);
+      arr.$_set(2, thirtyPointZero);
       const thirdIndex: int = 2;
       const actualValue = arr.at(thirdIndex);
-      const expectedValue: number = thirtyPointzero;
+      const expectedValue: number = thirtyPointZero;
       const expectVal = expectedValue;
       expect(actualValue).assertEqual(expectVal);
     })
@@ -1634,7 +1477,7 @@ export default function float64ArrayAtTest(): void {
     it('testFloat64ArrayAt079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroValue: number = 0;
       const piValue: number = 3.141592653589793;
-      const arr = Float64Array.of(zeroValue, piValue, zeroValue, piValue);
+      const arr = new Float64Array([zeroValue, piValue, zeroValue, piValue]);
       const firstIndex: int = 0;
       const actualValue = arr.at(firstIndex);
       const expectedValue: number = zeroValue;
@@ -1669,10 +1512,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
       const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, onePointFive, 0.25]);
       const secondIndex: int = 1;
       const actualValue = arr.at(secondIndex);
       const expectedValue: number = onePointFive;
@@ -1689,10 +1530,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const int8MinValue: number = -128;
       const zeroValue: number = 0;
-      const reversed = Float64Array.of(zeroValue, int8MinValue, int16MinValue);
+      const reversed = Float64Array.of(zeroValue, -128, -32768);
       const firstIndex: int = 0;
       const actualValue = reversed.at(firstIndex);
       const expectedValue: number = zeroValue;
@@ -1710,9 +1549,7 @@ export default function float64ArrayAtTest(): void {
      */
     it('testFloat64ArrayAt083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const int32MinValue: number = -2147483648;
-      const negativeOne: number = -1;
-      const zeroValue: number = 0;
-      const sorted = Float64Array.of(int32MinValue, negativeOne, zeroValue);
+      const sorted = new Float64Array([int32MinValue, -1, 0]);
       const firstIndex: int = 0;
       const actualValue = sorted.at(firstIndex);
       const expectedValue: number = int32MinValue;
@@ -1729,12 +1566,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const piValue: number = 3.141592653589793;
       const tinyNegativeValue: number = -1e-100;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue, piValue, tinyNegativeValue);
+      const arr = Float64Array.of(0.1, 9007199254740991, 0, 3.141592653589793, tinyNegativeValue);
       const idx: int = 4;
       const actualValue = arr.at(idx);
       const expectedValue: number = tinyNegativeValue;
@@ -1751,12 +1584,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
       const pointTwoFive: number = 0.25;
-      const pointOneTwoFive: number = 0.125;
-      const pointZeroSixTwoFive: number = 0.0625;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive, pointOneTwoFive, pointZeroSixTwoFive);
+      const arr = new Float64Array([0.5, 1.5, pointTwoFive, 0.125, 0.0625]);
       const thirdIndex: int = 2;
       const actualValue = arr.at(thirdIndex);
       const expectedValue: number = pointTwoFive;
@@ -1773,11 +1602,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const int8MinValue: number = -128;
-      const zeroValue: number = 0;
       const int8MaxValue: number = 127;
-      const arr = Float64Array.of(int16MinValue, int8MinValue, zeroValue, int8MaxValue);
+      const arr = new Float64Array([-32768, -128, 0, int8MaxValue]);
       const idx: int = 3;
       const actualValue = arr.at(idx);
       const expectedValue: number = int8MaxValue;
@@ -1794,10 +1620,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
       const negativeOne: number = -1;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int32MinValue, negativeOne, zeroValue);
+      const arr = Float64Array.of(-2147483648, negativeOne, 0);
       const shortIndex: short = 1;
       const actualValue = arr.at(shortIndex);
       const expectedValue: number = negativeOne;
@@ -1814,10 +1638,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
       const zeroValue: number = 0;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = Float64Array.of(0.1, 9007199254740991, zeroValue);
       const negativeShortIndex: short = -1;
       const actualValue = arr.at(negativeShortIndex);
       const expectedValue: number = zeroValue;
@@ -1834,11 +1656,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
       const pointOneTwoFive: number = 0.125;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive, pointOneTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25, pointOneTwoFive]);
       const idx: int = -1;
       const actualValue = arr.at(idx);
       const expectedValue: number = pointOneTwoFive;
@@ -1856,9 +1675,7 @@ export default function float64ArrayAtTest(): void {
      */
     it('testFloat64ArrayAt090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const int16MinValue: number = -32768;
-      const int8MinValue: number = -128;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int16MinValue, int8MinValue, zeroValue);
+      const arr = Float64Array.of(int16MinValue, -128, 0);
       const firstIndex: int = 0;
       const actualValue = arr.at(firstIndex);
       const expectedValue: number = int16MinValue;
@@ -1876,9 +1693,7 @@ export default function float64ArrayAtTest(): void {
      */
     it('testFloat64ArrayAt091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const int32MinValue: number = -2147483648;
-      const negativeOne: number = -1;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int32MinValue, negativeOne, zeroValue);
+      const arr = new Float64Array([int32MinValue, -1, 0]);
       const firstIndex: int = 0;
       const actualValue = arr.at(firstIndex);
       const expectedValue: number = int32MinValue;
@@ -1895,10 +1710,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const tenPointZero: number = 10.0;
-      const twentyPointZero: number = 20.0;
       const thirtyPointZero: number = 30.0;
-      const arr = Float64Array.of(tenPointZero, twentyPointZero, thirtyPointZero);
+      const arr = Float64Array.of(10.0, 20.0, thirtyPointZero);
       const idxHex: int = 0x02;
       const actualValue = arr.at(idxHex);
       const expectedValue: number = thirtyPointZero;
@@ -1915,10 +1728,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const tenPointZero: number = 10.0;
-      const twentyPointZero: number = 20.0;
       const thirtyPointZero: number = 30.0;
-      const arr = Float64Array.of(tenPointZero, twentyPointZero, thirtyPointZero);
+      const arr = Float64Array.of(10.0, 20.0, thirtyPointZero);
       const idx: int = 0b10;
       const actualValue = arr.at(idx);
       const expectedValue: number = thirtyPointZero;
@@ -1953,8 +1764,7 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const threePointzero: number = 3.0;
-      const arr = Float64Array.of(threePointzero);
+      const arr = new Float64Array([3.0]);
       const idx: int = Double.toInt(Double.POSITIVE_INFINITY);
       const actualValue = arr.at(idx);
       const expectVal = undefined;
@@ -1992,10 +1802,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
       const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = Float64Array.of(0.1, maxSafeInteger, 0);
       const idx: byte = 1;
       const actualValue = arr.at(idx);
       const expectedValue: number = maxSafeInteger;
@@ -2012,10 +1820,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const tenPointZero: number = 10.0;
-      const twentyPointZero: number = 20.0;
       const thirtyPointZero: number = 30.0;
-      const arr = Float64Array.of(tenPointZero, twentyPointZero, thirtyPointZero);
+      const arr = Float64Array.of(10.0, 20.0, thirtyPointZero);
       const idx: int = 0o02;
       const actualValue = arr.at(idx);
       const expectedValue: number = thirtyPointZero;
@@ -2051,12 +1857,12 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const thirtyPointzero: number = 30.0;
+      const thirtyPointZero: number = 30.0;
       const arrayInput: Array<number> = [10.0, 20.0, 30.0];
       const arr = new Float64Array(arrayInput);
       const thirdIndex: int = 2;
       const actualValue = arr.at(thirdIndex);
-      const expectedValue: number = thirtyPointzero;
+      const expectedValue: number = thirtyPointZero;
       const expectVal = expectedValue;
       expect(actualValue).assertEqual(expectVal);
     })
@@ -2071,9 +1877,7 @@ export default function float64ArrayAtTest(): void {
      */
     it('testFloat64ArrayAt101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const tenPointZero: number = 10.0;
-      const twentyPointzero: number = 20.0;
-      const thirtyPointzero: number = 30.0;
-      const arr = Float64Array.of(tenPointZero, twentyPointzero, thirtyPointzero);
+      const arr = new Float64Array([tenPointZero, 20.0, 30.0]);
       const firstIndex: int = 0;
       const expectedFirstValue: number = tenPointZero;
       const actVal6 = arr.at(firstIndex);
@@ -2090,12 +1894,8 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const twoPointZero: number = 2.0;
-      const fillValue99: number = 99.0;
       const onePointZero: number = 1.0;
-      const eightyeightPointzero: number = 88.0;
-      const fillValue77: number = 77.0;
-      const arr = Float64Array.of(twoPointZero, fillValue99, onePointZero, eightyeightPointzero, fillValue77);
+      const arr = Float64Array.of(2.0, 99.0, onePointZero, 88.0, 77.0);
       const firstIndex: int = 0;
       const firstElementAsIndex: number = arr.at(firstIndex) as number;
       const actualValue = arr.at(Double.toInt(firstElementAsIndex));
@@ -2113,19 +1913,16 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const tenPointZero: number = 10.0;
-      const threePointZero: number = 3.0;
-      const twentyPointzero: number = 20.0;
       const sevenPointZero: number = 7.0;
-      const thirtyPointzero: number = 30.0;
+      const thirtyPointZero: number = 30.0;
       const preciseTenDividedByThree: number = 3.3333333333333335;
-      const arr = Float64Array.of(tenPointZero, threePointZero, twentyPointzero);
+      const arr = new Float64Array([10.0, 3.0, 20.0]);
       const firstIndex: int = 0;
       const firstActualValue: number = arr.at(firstIndex) as number;
       const secondIndex: int = 1;
       const secondActualValue: number = arr.at(secondIndex) as number;
       const expectedValue: number = sevenPointZero;
-      const expectedValue2: number = thirtyPointzero;
+      const expectedValue2: number = thirtyPointZero;
       const expectedValue3: number = preciseTenDividedByThree;
       expect(firstActualValue - secondActualValue).assertEqual(expectedValue);
       expect(firstActualValue * secondActualValue).assertEqual(expectedValue2);
@@ -2141,17 +1938,15 @@ export default function float64ArrayAtTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayAt104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const fivePointZero: number = 5.0;
-      const tenPointZero: number = 10.0;
-      const arr = Float64Array.of(fivePointZero, tenPointZero);
+      const arr = new Float64Array([5.0, 10.0]);
       const firstIndex: int = 0;
       const firstActualValue: number = arr.at(firstIndex) as number;
       const secondIndex: int = 1;
       const secondActualValue: number = arr.at(secondIndex) as number;
-      expect(firstActualValue < secondActualValue).assertEqual(true);
-      expect(firstActualValue >= secondActualValue).assertEqual(false);
-      expect(firstActualValue <= secondActualValue).assertEqual(true);
-      expect(secondActualValue > firstActualValue).assertEqual(true);
+      expect(firstActualValue < secondActualValue).assertTrue();
+      expect(firstActualValue >= secondActualValue).assertFalse();
+      expect(firstActualValue <= secondActualValue).assertTrue();
+      expect(secondActualValue > firstActualValue).assertTrue();
     })
 
     /**
@@ -2166,7 +1961,7 @@ export default function float64ArrayAtTest(): void {
       const arr = Float64Array.of(10.0, 20.0, 30.0);
       const secondIndex: int = 1;
       const atResult = arr.at(secondIndex);
-      const bracketResult = arr[1 as int];
+      const bracketResult = arr[1];
       const expectVal = bracketResult;
       expect(atResult).assertEqual(expectVal);
     })
@@ -2204,7 +1999,7 @@ export default function float64ArrayAtTest(): void {
       const arr = Float64Array.of(10.0, 20.0, 30.0);
       const secondIndex: int = 1;
       const before = arr.at(secondIndex);
-      arr[1 as int] = 99.0;
+      arr[1] = 99.0;
       const after = arr.at(secondIndex);
       const expectVal = 20.0;
       expect(before).assertEqual(expectVal);
@@ -2224,7 +2019,7 @@ export default function float64ArrayAtTest(): void {
       const arr = Float64Array.of(10.0, 20.0);
       const tailIndex: int = -1;
       const originalTail = arr.at(tailIndex);
-      arr[1 as int] = 99.0;
+      arr[1] = 99.0;
       const updatedTail = arr.at(tailIndex);
       const expectVal = 20.0;
       expect(originalTail).assertEqual(expectVal);
