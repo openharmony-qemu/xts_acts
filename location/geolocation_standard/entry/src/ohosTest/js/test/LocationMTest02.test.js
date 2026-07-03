@@ -238,7 +238,9 @@ export default function geolocationTest_geo8() {
                 let location2 = {"latitude": 30.12, "longitude": 120.11, "altitude": 0, "accuracy": 0,
                     "speed": 0, "timeStamp": 0, "direction": 0, "timeSinceBoot": 0, "additionSize": 0}
                 let distance1 = geolocationm.getDistanceBetweenLocations(location1, location2);
+                console.log("distance1 before assert:" + distance1);
                 expect(distance1).assertClose(0,10e-6);
+                console.log("distance1 after assert:" + distance1);
             } catch(error) {
                 console.error("getDistanceBetweenLocations: errCode" + error.code + ", errMessage" + error.message);
                 expect(true).assertFail();
