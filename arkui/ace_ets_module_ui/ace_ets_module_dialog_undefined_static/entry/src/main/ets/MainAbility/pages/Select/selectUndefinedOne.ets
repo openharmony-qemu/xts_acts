@@ -29,7 +29,7 @@ struct SelectExample {
   @State index: number = 2;
   @State space: number = 8;
   @State arrowPosition: ArrowPosition = ArrowPosition.END;
-  @State public isUndefined: boolean = false;
+  public isUndefined: boolean = false;
   @State buttonText: string = 'false'
   @State modifier : ModifierMenuOutline = new ModifierMenuOutline()
 
