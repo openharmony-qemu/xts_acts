@@ -17,18 +17,18 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntValueOfTest_2(): void {
-  describe('BigInt.valueOf extension (mindmap valueOf)', () => {
+  describe('BigIntValueOfTest_2', () => {
 
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_0700
-     * @tc.name testBigIntValueOfRadixPrefixCombined0700
-     * @tc.desc Verify valueOf toString on hex/octal/binary prefixed string construction, including cross-radix zero equality (merged _0700/_0800/_0900/_3400)
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0001
+     * @tc.name testBigIntValueOfRadixPrefixCombined0001
+     * @tc.desc Verify valueOf toString on hex/octal/binary prefixed string construction, including cross-radix zero equality
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfRadixPrefixCombined0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfRadixPrefixCombined0001', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
 
       expect(BigInt('0xFF').valueOf().toString()).assertEqual('255');
       expect(BigInt('0xFF').negate().valueOf().toString()).assertEqual('-255');
@@ -48,27 +48,27 @@ export default function BigIntValueOfTest_2(): void {
 
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_1200
-     * @tc.name testBigIntValueOfUltraLargeNegative1200
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0002
+     * @tc.name testBigIntValueOfUltraLargeNegative0002
      * @tc.desc Verify valueOf toString on extremely large negative BigInt (100+ digits)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfUltraLargeNegative1200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfUltraLargeNegative0002', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const s = '-9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999';
       expect(BigInt(s).valueOf().toString()).assertEqual(s);
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_1300
-     * @tc.name testBigIntValueOfSmallExhaustive1300
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0003
+     * @tc.name testBigIntValueOfSmallExhaustive0003
      * @tc.desc Verify valueOf equals on every small integer from -5 to 5 for exhaustive boundary coverage
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfSmallExhaustive1300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfSmallExhaustive0003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(-5).valueOf().equals(BigInt(-5))).assertTrue();
       expect(BigInt(-4).valueOf().equals(BigInt(-4))).assertTrue();
       expect(BigInt(-3).valueOf().equals(BigInt(-3))).assertTrue();
@@ -83,14 +83,14 @@ export default function BigIntValueOfTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_1500
-     * @tc.name testBigIntValueOfLeadingZeros1500
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0004
+     * @tc.name testBigIntValueOfLeadingZeros0004
      * @tc.desc Verify valueOf toString on strings with multiple leading zeros
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfLeadingZeros1500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfLeadingZeros0004', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt('00000123').valueOf().toString()).assertEqual('123');
       expect(BigInt('-00000123').valueOf().toString()).assertEqual('-123');
       expect(BigInt('00000000000000000000000000001').valueOf().toString()).assertEqual('1');
@@ -98,14 +98,14 @@ export default function BigIntValueOfTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_1600
-     * @tc.name testBigIntValueOfWhitespacePrefix1600
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0005
+     * @tc.name testBigIntValueOfWhitespacePrefix0005
      * @tc.desc Verify valueOf toString on strings with leading/trailing whitespace
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfWhitespacePrefix1600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfWhitespacePrefix0005', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt('  42').valueOf().toString()).assertEqual('42');
       expect(BigInt('-42  ').valueOf().toString()).assertEqual('-42');
       expect(BigInt('  -42').valueOf().toString()).assertEqual('-42');
@@ -113,28 +113,28 @@ export default function BigIntValueOfTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_1700
-     * @tc.name testBigIntValueOfPlusPrefix1700
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0006
+     * @tc.name testBigIntValueOfPlusPrefix0006
      * @tc.desc Verify valueOf toString on plus-prefixed numeric strings covers explicit positive sign
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfPlusPrefix1700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfPlusPrefix0006', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt('+42').valueOf().toString()).assertEqual('42');
       expect(BigInt('+0').valueOf().toString()).assertEqual('0');
       expect(BigInt('+123456789').valueOf().toString()).assertEqual('123456789');
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_1800
-     * @tc.name testBigIntValueOfArithmeticOperations1800
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0007
+     * @tc.name testBigIntValueOfArithmeticOperations0007
      * @tc.desc Verify valueOf on results of addition/subtraction/multiplication operations (merged _1800/_1900/_2000)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfArithmeticOperations1800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfArithmeticOperations0007', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a = BigInt(100);
       const b = BigInt(200);
       expect(a.operatorAdd(b).valueOf().equals(BigInt(300))).assertTrue();
@@ -149,14 +149,14 @@ export default function BigIntValueOfTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_2100
-     * @tc.name testBigIntValueOfTripleIdempotent2100
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0008
+     * @tc.name testBigIntValueOfTripleIdempotent0008
      * @tc.desc Verify valueOf is stable across three consecutive calls on various values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfTripleIdempotent2100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfTripleIdempotent0008', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const pos = BigInt(42);
       const neg = BigInt(-99);
       const large = BigInt('9007199254740993');
@@ -170,14 +170,14 @@ export default function BigIntValueOfTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_2200
-     * @tc.name testBigIntValueOfPowerOfTwoBoundaries2200
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0009
+     * @tc.name testBigIntValueOfPowerOfTwoBoundaries0009
      * @tc.desc Verify valueOf toString at 2^n boundaries including 2^53, 2^64, 2^128
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfPowerOfTwoBoundaries2200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfPowerOfTwoBoundaries0009', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(9007199254740992).valueOf().toString()).assertEqual('9007199254740992');
       expect(BigInt('18446744073709551616').valueOf().toString()).assertEqual('18446744073709551616');
       expect(BigInt('-18446744073709551616').valueOf().toString()).assertEqual('-18446744073709551616');
@@ -185,31 +185,34 @@ export default function BigIntValueOfTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_2300
-     * @tc.name testBigIntValueOfIntShortBoundaries2300
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0010
+     * @tc.name testBigIntValueOfIntShortBoundaries0010
      * @tc.desc Verify valueOf toString on BigInt constructed from int/short type range boundaries
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfIntShortBoundaries2300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfIntShortBoundaries0010', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+
       expect(BigInt(127).valueOf().toString()).assertEqual('127');
       expect(BigInt(-128).valueOf().toString()).assertEqual('-128');
       expect(BigInt(32767).valueOf().toString()).assertEqual('32767');
       expect(BigInt(-32768).valueOf().toString()).assertEqual('-32768');
       expect(BigInt(2147483647).valueOf().toString()).assertEqual('2147483647');
       expect(BigInt(-2147483648).valueOf().toString()).assertEqual('-2147483648');
+      expect(BigInt(65536).valueOf().toString()).assertEqual('65536');
+      expect(BigInt('4294967296').valueOf().toString()).assertEqual('4294967296');
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_2500
-     * @tc.name testBigIntValueOfChainCall2500
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0011
+     * @tc.name testBigIntValueOfChainCall0011
      * @tc.desc Verify chained valueOf calls return equivalent BigInt to original
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfChainCall2500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfChainCall0011', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const v = BigInt(123456);
       expect(v.valueOf().valueOf().equals(v)).assertTrue();
       expect(v.valueOf().valueOf().valueOf().toString()).assertEqual('123456');
@@ -217,42 +220,42 @@ export default function BigIntValueOfTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_2600
-     * @tc.name testBigIntValueOfAfterNegate2600
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0012
+     * @tc.name testBigIntValueOfAfterNegate0012
      * @tc.desc Verify valueOf toString after negate operation preserves correct magnitude with flipped sign
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfAfterNegate2600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfAfterNegate0012', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(100).negate().valueOf().toString()).assertEqual('-100');
       expect(BigInt(-100).negate().valueOf().toString()).assertEqual('100');
       expect(BigInt(0).negate().valueOf().toString()).assertEqual('0');
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_2700
-     * @tc.name testBigIntValueOfStringVsNumberEqual2700
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0013
+     * @tc.name testBigIntValueOfStringVsNumberEqual0013
      * @tc.desc Verify valueOf from string construction and number construction with same value are equal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfStringVsNumberEqual2700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfStringVsNumberEqual0013', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(999).valueOf().equals(BigInt('999').valueOf())).assertTrue();
       expect(BigInt(0).valueOf().equals(BigInt('0').valueOf())).assertTrue();
       expect(BigInt(2147483647).valueOf().equals(BigInt('2147483647').valueOf())).assertTrue();
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_2900
-     * @tc.name testBigIntValueOfBooleanConstruct2900
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0014
+     * @tc.name testBigIntValueOfBooleanConstruct0014
      * @tc.desc Verify valueOf on BigInt constructed from boolean values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfBooleanConstruct2900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfBooleanConstruct0014', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(false).valueOf().toString()).assertEqual('0');
       expect(BigInt(true).valueOf().toString()).assertEqual('1');
       expect(BigInt(false).valueOf().equals(BigInt(0))).assertTrue();
@@ -260,32 +263,31 @@ export default function BigIntValueOfTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_3000
-     * @tc.name testBigIntValueOfNegativeZero3000
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0015
+     * @tc.name testBigIntValueOfNegativeZero0015
      * @tc.desc Verify valueOf on negative zero string forms normalizes to positive zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfNegativeZero3000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfNegativeZero0015', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt('-0').valueOf().toString()).assertEqual('0');
       expect(BigInt('-000').valueOf().toString()).assertEqual('0');
-      expect(BigInt('-0').valueOf().toString()).assertEqual('0');
-      expect(BigInt('-000').valueOf().toString()).assertEqual('0');
       expect(BigInt('0').valueOf().toString()).assertEqual('0');
-      expect(BigInt('0').valueOf().toString()).assertEqual('0');
-      expect(BigInt('0').valueOf().toString()).assertEqual('0');
+      expect(BigInt('-0000').valueOf().toString()).assertEqual('0');
+      expect(BigInt('+0').valueOf().toString()).assertEqual('0');
+      expect(BigInt('-0x0').valueOf().toString()).assertEqual('0');
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_3100
-     * @tc.name testBigIntValueOfReverseOperation3100
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0016
+     * @tc.name testBigIntValueOfReverseOperation0016
      * @tc.desc Verify valueOf is unchanged after add-subtract round-trip operation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfReverseOperation3100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfReverseOperation0016', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const v = BigInt(100);
       expect(v.operatorAdd(BigInt(5)).operatorSubtract(BigInt(5)).valueOf().equals(v)).assertTrue();
       const w = BigInt(-50);
@@ -293,41 +295,41 @@ export default function BigIntValueOfTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_3200
-     * @tc.name testBigIntValueOfMassiveNumber3200
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0017
+     * @tc.name testBigIntValueOfMassiveNumber0017
      * @tc.desc Verify valueOf toString on 500+ digit massive BigInt for extreme scale coverage
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfMassiveNumber3200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfMassiveNumber0017', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const s = '1' + '0'.repeat(499);
       expect(BigInt(s).valueOf().toString()).assertEqual(s);
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_3300
-     * @tc.name testBigIntValueOfFromULongBoundary3300
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0018
+     * @tc.name testBigIntValueOfFromULongBoundary0018
      * @tc.desc Verify valueOf on fromULong at 32-bit unsigned boundary
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfFromULongBoundary3300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfFromULongBoundary0018', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.fromULong(4294967295).valueOf().toString()).assertEqual('4294967295');
       expect(BigInt.fromULong(4294967296).valueOf().toString()).assertEqual('4294967296');
       expect(BigInt.fromULong(4294967295).valueOf().equals(BigInt('4294967295'))).assertTrue();
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_3500
-     * @tc.name testBigIntValueOfMixedCaseHex3500
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0019
+     * @tc.name testBigIntValueOfMixedCaseHex0019
      * @tc.desc Verify valueOf on mixed-case hex strings (0xFF vs 0xff) produces equal BigInt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfMixedCaseHex3500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfMixedCaseHex0019', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const parseHex = (str: string): BigInt => {
         let s = str;
         let isNegative = false;
@@ -375,14 +377,14 @@ export default function BigIntValueOfTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_3600
-     * @tc.name testBigIntValueOfSignMutualExclusive3600
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0020
+     * @tc.name testBigIntValueOfSignMutualExclusive0020
      * @tc.desc Verify valueOf equality and sign correlation across positive/negative values in a loop
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfSignMutualExclusive3600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfSignMutualExclusive0020', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const values: BigInt[] = [BigInt(-100), BigInt(-1), BigInt(0), BigInt(1), BigInt(100), BigInt(9223372036854775807), BigInt(-9223372036854775808), BigInt('999999999999999999999999999999')];
       for (let i = 0; i < values.length; i++) {
         const v = values[i];
@@ -393,14 +395,14 @@ export default function BigIntValueOfTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_3700
-     * @tc.name testBigIntValueOfDivResult3700
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0021
+     * @tc.name testBigIntValueOfDivResult0021
      * @tc.desc Verify valueOf on division result (TC099)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfDivResult3700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfDivResult0021', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(100).operatorDivide(BigInt(3)).valueOf().toString()).assertEqual('33');
       expect(BigInt(-100).operatorDivide(BigInt(3)).valueOf().toString()).assertEqual('-33');
       expect(BigInt(0).operatorDivide(BigInt(5)).valueOf().toString()).assertEqual('0');
@@ -408,14 +410,14 @@ export default function BigIntValueOfTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_3800
-     * @tc.name testBigIntValueOfModResult3800
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0022
+     * @tc.name testBigIntValueOfModResult0022
      * @tc.desc Verify valueOf on modulo result (TC100)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfModResult3800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfModResult0022', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(100n % 3n).valueOf().toString()).assertEqual('1');
       expect(BigInt(-100n % 3n).valueOf().toString()).assertEqual('-1');
       expect(BigInt(7n % 7n).valueOf().toString()).assertEqual('0');
@@ -423,14 +425,14 @@ export default function BigIntValueOfTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_3900
-     * @tc.name testBigIntValueOfPowResult3900
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0023
+     * @tc.name testBigIntValueOfPowResult0023
      * @tc.desc Verify valueOf on pow result including 2^100 extremely large value (merged _3900/_5100)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfPowResult3900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfPowResult0023', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(2).pow(BigInt(10)).valueOf().toString()).assertEqual('1024');
       expect(BigInt(2).pow(BigInt(0)).valueOf().toString()).assertEqual('1');
       expect(BigInt(3).pow(BigInt(5)).valueOf().toString()).assertEqual('243');
@@ -444,14 +446,14 @@ export default function BigIntValueOfTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_4000
-     * @tc.name testBigIntValueOfShiftResult4000
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0024
+     * @tc.name testBigIntValueOfShiftResult0024
      * @tc.desc Verify valueOf on left/right shift result (TC102, TC103)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfShiftResult4000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfShiftResult0024', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(1).operatorLeftShift(BigInt(10)).valueOf().toString()).assertEqual('1024');
       expect(BigInt(1024).operatorRightShift(BigInt(5)).valueOf().toString()).assertEqual('32');
       expect(BigInt(100).operatorLeftShift(BigInt(0)).valueOf().toString()).assertEqual('100');
@@ -459,14 +461,14 @@ export default function BigIntValueOfTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_4100
-     * @tc.name testBigIntValueOfBitAndResult4100
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0025
+     * @tc.name testBigIntValueOfBitAndResult0025
      * @tc.desc Verify valueOf on bitwise AND result (TC104)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfBitAndResult4100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfBitAndResult0025', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(255).operatorBitwiseAnd(BigInt(15)).valueOf().toString()).assertEqual('15');
       expect(BigInt(123).operatorBitwiseAnd(BigInt(0)).valueOf().toString()).assertEqual('0');
       expect(BigInt(0xFF).operatorBitwiseAnd(BigInt(0x0F)).valueOf().toString()).assertEqual('15');
@@ -474,14 +476,14 @@ export default function BigIntValueOfTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_4200
-     * @tc.name testBigIntValueOfBitOrResult4200
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0026
+     * @tc.name testBigIntValueOfBitOrResult0026
      * @tc.desc Verify valueOf on bitwise OR result (TC105)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfBitOrResult4200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfBitOrResult0026', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(240).operatorBitwiseOr(BigInt(15)).valueOf().toString()).assertEqual('255');
       expect(BigInt(0).operatorBitwiseOr(BigInt(0)).valueOf().toString()).assertEqual('0');
       expect(BigInt(1).operatorBitwiseOr(BigInt(2)).valueOf().toString()).assertEqual('3');
@@ -489,28 +491,28 @@ export default function BigIntValueOfTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_4300
-     * @tc.name testBigIntValueOfBitXorResult4300
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0027
+     * @tc.name testBigIntValueOfBitXorResult0027
      * @tc.desc Verify valueOf on bitwise XOR result (TC106)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfBitXorResult4300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfBitXorResult0027', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(255).operatorBitwiseXor(BigInt(15)).valueOf().toString()).assertEqual('240');
       expect(BigInt(123).operatorBitwiseXor(BigInt(123)).valueOf().toString()).assertEqual('0');
       expect(BigInt(7).operatorBitwiseXor(BigInt(3)).valueOf().toString()).assertEqual('4');
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_4400
-     * @tc.name testBigIntValueOfBitNotResult4400
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0028
+     * @tc.name testBigIntValueOfBitNotResult0028
      * @tc.desc Verify valueOf on bitwise NOT result (TC107)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfBitNotResult4400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfBitNotResult0028', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(255).operatorBitwiseNot().valueOf().toString()).assertEqual('-256');
       expect(BigInt(0).operatorBitwiseNot().valueOf().toString()).assertEqual('-1');
       expect(BigInt(-1).operatorBitwiseNot().valueOf().toString()).assertEqual('0');
@@ -518,14 +520,14 @@ export default function BigIntValueOfTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_4500
-     * @tc.name testBigIntValueOfComparison4500
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0029
+     * @tc.name testBigIntValueOfComparison0029
      * @tc.desc Verify valueOf return value can participate in comparison operations
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfComparison4500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfComparison0029', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const v = BigInt(100).valueOf();
       expect(v.operatorLessThan(BigInt(101))).assertTrue();
       expect(v.operatorGreaterThan(BigInt(99))).assertTrue();
@@ -537,14 +539,14 @@ export default function BigIntValueOfTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_4600
-     * @tc.name testBigIntValueOfRadixConvert4600
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0030
+     * @tc.name testBigIntValueOfRadixConvert0030
      * @tc.desc Verify valueOf return value toString(radix) conversion
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfRadixConvert4600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfRadixConvert0030', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(255).valueOf().toString(16)).assertEqual('ff');
       expect(BigInt(10).valueOf().toString(2)).assertEqual('1010');
       expect(BigInt(64).valueOf().toString(8)).assertEqual('100');
@@ -554,14 +556,14 @@ export default function BigIntValueOfTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_4700
-     * @tc.name testBigIntValueOfDoubleValue4700
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0031
+     * @tc.name testBigIntValueOfDoubleValue0031
      * @tc.desc Verify valueOf return value doubleValue() conversion
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfDoubleValue4700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfDoubleValue0031', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(99).valueOf().doubleValue()).assertEqual(99);
       expect(BigInt(0).valueOf().doubleValue()).assertEqual(0);
       expect(BigInt(-123).valueOf().doubleValue()).assertEqual(-123);
@@ -569,14 +571,14 @@ export default function BigIntValueOfTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_4800
-     * @tc.name testBigIntValueOfGetLong4800
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0032
+     * @tc.name testBigIntValueOfGetLong0032
      * @tc.desc Verify valueOf return value getLong() conversion
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfGetLong4800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfGetLong0032', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(700700).valueOf().getLong()).assertEqual(700700);
       expect(BigInt(0).valueOf().getLong()).assertEqual(0);
       expect(BigInt(9223372036854775807).valueOf().getLong()).assertEqual(9223372036854775807);
@@ -584,14 +586,14 @@ export default function BigIntValueOfTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_4900
-     * @tc.name testBigIntValueOfImmutability4900
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0033
+     * @tc.name testBigIntValueOfImmutability0033
      * @tc.desc Verify valueOf does not modify original BigInt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfImmutability4900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfImmutability0033', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const src1 = BigInt(333);
       src1.valueOf();
       expect(src1.toString()).assertEqual('333');
@@ -606,14 +608,14 @@ export default function BigIntValueOfTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_5000
-     * @tc.name testBigIntValueOfChainedArithmetic5000
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0034
+     * @tc.name testBigIntValueOfChainedArithmetic0034
      * @tc.desc Verify valueOf return value can chain into arithmetic operations
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfChainedArithmetic5000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfChainedArithmetic0034', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const v = BigInt(10).valueOf();
       expect(v.operatorAdd(BigInt(5)).toString()).assertEqual('15');
       expect(v.operatorSubtract(BigInt(3)).toString()).assertEqual('7');
@@ -627,14 +629,14 @@ export default function BigIntValueOfTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_5200
-     * @tc.name testBigIntValueOfTenPow505200
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0035
+     * @tc.name testBigIntValueOfTenPow0035
      * @tc.desc Verify valueOf on 10^50 extremely large value (TC095)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfTenPow505200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfTenPow0035', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const v50 = BigInt('1000000000000000000000000000000000000000000000000');
       expect(v50.valueOf().toString()).assertEqual('1000000000000000000000000000000000000000000000000');
       expect(v50.valueOf().equals(v50)).assertTrue();
@@ -644,14 +646,14 @@ export default function BigIntValueOfTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_5300
-     * @tc.name testBigIntValueOfNegZeroArithmetic5300
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0036
+     * @tc.name testBigIntValueOfNegZeroArithmetic0036
      * @tc.desc Verify valueOf on negative zero participates in arithmetic correctly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfNegZeroArithmetic5300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfNegZeroArithmetic0036', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const v = BigInt(-0).valueOf();
       expect(v.operatorAdd(BigInt(0)).toString()).assertEqual('0');
       expect(v.operatorAdd(BigInt(888)).toString()).assertEqual('888');
@@ -659,14 +661,14 @@ export default function BigIntValueOfTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_5400
-     * @tc.name testBigIntValueOfSelfAdd5400
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0037
+     * @tc.name testBigIntValueOfSelfAdd0037
      * @tc.desc Verify valueOf return value added to itself doubles correctly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfSelfAdd5400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfSelfAdd0037', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const v = BigInt('9007199254740993').valueOf();
       expect(v.operatorAdd(v).toString()).assertEqual('18014398509481986');
       const v2 = BigInt(99).valueOf();
@@ -674,14 +676,14 @@ export default function BigIntValueOfTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_5500
-     * @tc.name testBigIntValueOfIdentityElement5500
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0038
+     * @tc.name testBigIntValueOfIdentityElement0038
      * @tc.desc Verify valueOf on 1n (identity for multiplication) and 0n (identity for addition)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfIdentityElement5500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfIdentityElement0038', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const one = BigInt(1).valueOf();
       expect(one.operatorMultiply(BigInt(999)).toString()).assertEqual('999');
       const zero = BigInt(0).valueOf();
@@ -689,14 +691,14 @@ export default function BigIntValueOfTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_5600
-     * @tc.name testBigIntValueOfLiteralNegZero5600
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0039
+     * @tc.name testBigIntValueOfLiteralNegZero0039
      * @tc.desc Verify valueOf on numeric literal negative zero new BigInt(-0) returns "0" (VOF-INIT-001)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfLiteralNegZero5600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfLiteralNegZero0039', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const nz: BigInt = new BigInt(-0).valueOf();
       expect(nz.toString()).assertEqual('0');
       const pz: BigInt = new BigInt(0).valueOf();
@@ -706,14 +708,14 @@ export default function BigIntValueOfTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_5700
-     * @tc.name testBigIntValueOfNumericLiterals5700
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0040
+     * @tc.name testBigIntValueOfNumericLiterals0040
      * @tc.desc Verify valueOf on BigInt constructed from numeric literals hex/octal/binary/scientific (VOF-INIT-002)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfNumericLiterals5700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfNumericLiterals0040', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new BigInt(0xff).valueOf().toString()).assertEqual('255');
       expect(new BigInt(0o777).valueOf().toString()).assertEqual('511');
       expect(new BigInt(0b1010).valueOf().toString()).assertEqual('10');
@@ -724,14 +726,14 @@ export default function BigIntValueOfTest_2(): void {
       expect(new BigInt(1e3).valueOf().equals(new BigInt('1000').valueOf())).assertTrue();
     });
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_EXT_5800
-     * @tc.name testBigIntValueOfDoubleConstructed5800
+     * @tc.number SUB_BIGINT_STD_VALUEOF_EXT_0041
+     * @tc.name testBigIntValueOfDoubleConstructed0041
      * @tc.desc Verify valueOf on BigInt constructed from double integer 100.0 returns '100' (VOF-01)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfDoubleConstructed5800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfDoubleConstructed0041', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new BigInt(100.0).valueOf().toString()).assertEqual('100');
       expect(new BigInt(0.0).valueOf().toString()).assertEqual('0');
       expect(new BigInt(-50.0).valueOf().toString()).assertEqual('-50');
@@ -739,14 +741,14 @@ export default function BigIntValueOfTest_2(): void {
       expect(new BigInt(1e3).valueOf().equals(new BigInt(1000).valueOf())).assertTrue();
     });
     /**
-     * @tc.number SUB_BIGINT_STD_VALUEOF_EXT_5900
-     * @tc.name testBigIntValueOfDoubleValueEqualsOriginal5900
+     * @tc.number SUB_BIGINT_STD_VALUEOF_EXT_0042
+     * @tc.name testBigIntValueOfDoubleValueEqualsOriginal0042
      * @tc.desc Verify valueOf return value's doubleValue equals original BigInt's doubleValue (VOF-06)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfDoubleValueEqualsOriginal5900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntValueOfDoubleValueEqualsOriginal0042', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const src: BigInt = new BigInt(999);
       expect(src.valueOf().doubleValue()).assertEqual(src.doubleValue());
       const srcNeg: BigInt = new BigInt(-777);
@@ -756,5 +758,6 @@ export default function BigIntValueOfTest_2(): void {
       const srcLarge: BigInt = new BigInt(9007199254740992);
       expect(srcLarge.valueOf().doubleValue()).assertEqual(srcLarge.doubleValue());
     });
+
   });
 }
