@@ -40,10 +40,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const negativeOne: number = -1;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int32MinValue, negativeOne, zeroValue);
+      const arr = Float64Array.of(-2147483648, -1, 0);
       const result = arr.toLocaleString();
       const expected = "-2,147,483,648,-1,0";
       const expectVal = expected;
@@ -59,9 +56,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const arr = Float64Array.of(pointOne, maxSafeInteger);
+      const arr = new Float64Array([0.1, 9007199254740991]);
       const result = arr.toLocaleString("en-US");
       const expected = "0.1,9,007,199,254,740,991";
       const expectVal = expected;
@@ -77,9 +72,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const arr = Float64Array.of(pointFive, onePointFive);
+      const arr = Float64Array.of(0.5, 1.5);
       const result = arr.toLocaleString("en-US");
       const expected = "0.5,1.5";
       const expectVal = expected;
@@ -95,10 +88,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const int8MinValue: number = -128;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int16MinValue, int8MinValue, zeroValue);
+      const arr = new Float64Array([-32768, -128, 0]);
       const result = arr.toLocaleString("en-US");
       const expected = "-32,768,-128,0";
       const expectVal = expected;
@@ -114,10 +104,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const negativeOne: number = -1;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int32MinValue, negativeOne, zeroValue);
+      const arr = Float64Array.of(-2147483648, -1, 0);
       const result = arr.toLocaleString("zh-CN");
       const expected = "-2,147,483,648,-1,0";
       const expectVal = expected;
@@ -133,9 +120,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const arr = Float64Array.of(pointOne, maxSafeInteger);
+      const arr = new Float64Array([0.1, 9007199254740991]);
       const result = arr.toLocaleString("de-DE");
       const expected = "0,1,9.007.199.254.740.991";
       const expectVal = expected;
@@ -151,9 +136,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const arr = Float64Array.of(pointFive, onePointFive);
+      const arr = Float64Array.of(0.5, 1.5);
       const result = arr.toLocaleString("ja-JP");
       const expected = "0.5,1.5";
       const expectVal = expected;
@@ -169,9 +152,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const int8MinValue: number = -128;
-      const arr = Float64Array.of(int16MinValue, int8MinValue);
+      const arr = Float64Array.of(-32768, -128);
       const result = arr.toLocaleString("fr-FR");
       const expected = "-32\u202F768,-128";
       const expectVal = expected;
@@ -187,9 +168,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const negativeOne: number = -1;
-      const arr = Float64Array.of(int32MinValue, negativeOne);
+      const arr = new Float64Array([-2147483648, -1]);
       const result = arr.toLocaleString(["en-US"]);
       const expected = "-2,147,483,648,-1";
       const expectVal = expected;
@@ -205,9 +184,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const arr = Float64Array.of(pointOne, maxSafeInteger);
+      const arr = new Float64Array([0.1, 9007199254740991]);
       const result = arr.toLocaleString(["zh-CN", "en-US"]);
       const expected = "0.1,9,007,199,254,740,991";
       const expectVal = expected;
@@ -223,9 +200,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const arr = Float64Array.of(pointFive, onePointFive);
+      const arr = Float64Array.of(0.5, 1.5);
       const result = arr.toLocaleString(["de-DE", "fr-FR", "en-US"]);
       const expected = "0,5,1,5";
       const expectVal = expected;
@@ -241,9 +216,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const int8MinValue: number = -128;
-      const arr = Float64Array.of(int16MinValue, int8MinValue);
+      const arr = Float64Array.of(-32768, -128);
       const result = arr.toLocaleString("en-US");
       const expected = "-32,768,-128";
       const expectVal = expected;
@@ -259,9 +232,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const negativeOne: number = -1;
-      const arr = Float64Array.of(int32MinValue, negativeOne);
+      const arr = new Float64Array([-2147483648, -1]);
       const result = arr.toLocaleString();
       const expected = "-2,147,483,648,-1";
       const expectVal = expected;
@@ -277,9 +248,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const arr = Float64Array.of(pointOne, maxSafeInteger);
+      const arr = new Float64Array([0.1, 9007199254740991]);
       const result = arr.toLocaleString(undefined);
       const expected = "0.1,9,007,199,254,740,991";
       const expectVal = expected;
@@ -295,9 +264,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const arr = Float64Array.of(pointFive, onePointFive);
+      const arr = Float64Array.of(0.5, 1.5);
       const result = arr.toLocaleString();
       const expected = "0.5,1.5";
       const expectVal = expected;
@@ -313,10 +280,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = new Float64Array([0.1, 9007199254740991, 0]);
       const result = arr.toLocaleString("en-US");
       const expected = "0.1,9,007,199,254,740,991,0";
       const expectVal = expected;
@@ -332,10 +296,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       const result = arr.toLocaleString("zh-CN");
       const expected = "0.5,1.5,0.25";
       const expectVal = expected;
@@ -351,9 +312,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const int8MinValue: number = -128;
-      const arr = Float64Array.of(int16MinValue, int8MinValue);
+      const arr = Float64Array.of(-32768, -128);
       const result = arr.toLocaleString("zh-CN");
       const expected = "-32,768,-128";
       const expectVal = expected;
@@ -369,9 +328,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const negativeOne: number = -1;
-      const arr = Float64Array.of(int32MinValue, negativeOne);
+      const arr = new Float64Array([-2147483648, -1]);
       const result = arr.toLocaleString("en-US");
       const expected = "-2,147,483,648,-1";
       const expectVal = expected;
@@ -387,9 +344,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const arr = Float64Array.of(pointOne, maxSafeInteger);
+      const arr = new Float64Array([0.1, 9007199254740991]);
       const result = arr.toLocaleString("zh-CN");
       const expected = "0.1,9,007,199,254,740,991";
       const expectVal = expected;
@@ -405,9 +360,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const arr = Float64Array.of(pointFive, onePointFive);
+      const arr = Float64Array.of(0.5, 1.5);
       const result = arr.toLocaleString("zh-CN");
       const expected = "0.5,1.5";
       const expectVal = expected;
@@ -423,10 +376,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const int8MinValue: number = -128;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int16MinValue, int8MinValue, zeroValue);
+      const arr = new Float64Array([-32768, -128, 0]);
       const result = arr.toLocaleString("zh-CN");
       const expected = "-32,768,-128,0";
       const expectVal = expected;
@@ -442,9 +392,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const negativeOne: number = -1;
-      const arr = Float64Array.of(int32MinValue, negativeOne);
+      const arr = new Float64Array([-2147483648, -1]);
       const result = arr.toLocaleString("zh-CN");
       const expected = "-2,147,483,648,-1";
       const expectVal = expected;
@@ -460,9 +408,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const arr = Float64Array.of(pointFive, onePointFive);
+      const arr = Float64Array.of(0.5, 1.5);
       const result = arr.toLocaleString("de-DE");
       const expected = "0,5,1,5";
       const expectVal = expected;
@@ -478,9 +424,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const int8MinValue: number = -128;
-      const arr = Float64Array.of(int16MinValue, int8MinValue);
+      const arr = Float64Array.of(-32768, -128);
       const result = arr.toLocaleString("de-DE");
       const expected = "-32.768,-128";
       const expectVal = expected;
@@ -496,10 +440,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const negativeOne: number = -1;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int32MinValue, negativeOne, zeroValue);
+      const arr = Float64Array.of(-2147483648, -1, 0);
       const result = arr.toLocaleString("de-DE");
       const expected = "-2.147.483.648,-1,0";
       const expectVal = expected;
@@ -515,9 +456,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const int8MinValue: number = -128;
-      const arr = Float64Array.of(int16MinValue, int8MinValue);
+      const arr = Float64Array.of(-32768, -128);
       const result = arr.toLocaleString("ja-JP");
       const expected = "-32,768,-128";
       const expectVal = expected;
@@ -533,9 +472,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const negativeOne: number = -1;
-      const arr = Float64Array.of(int32MinValue, negativeOne);
+      const arr = new Float64Array([-2147483648, -1]);
       const result = arr.toLocaleString("ja-JP");
       const expected = "-2,147,483,648,-1";
       const expectVal = expected;
@@ -551,10 +488,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = new Float64Array([0.1, 9007199254740991, 0]);
       const result = arr.toLocaleString("ja-JP");
       const expected = "0.1,9,007,199,254,740,991,0";
       const expectVal = expected;
@@ -570,9 +504,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const negativeOne: number = -1;
-      const arr = Float64Array.of(int32MinValue, negativeOne);
+      const arr = new Float64Array([-2147483648, -1]);
       const result = arr.toLocaleString("fr-FR");
       const expected = "-2\u202F147\u202F483\u202F648,-1";
       const expectVal = expected;
@@ -588,9 +520,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const arr = Float64Array.of(pointOne, maxSafeInteger);
+      const arr = new Float64Array([0.1, 9007199254740991]);
       const result = arr.toLocaleString("fr-FR");
       const expected = "0,1,9\u202F007\u202F199\u202F254\u202F740\u202F991";
       const expectVal = expected;
@@ -606,10 +536,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       const result = arr.toLocaleString("fr-FR");
       const expected = "0,5,1,5,0,25";
       const expectVal = expected;
@@ -625,10 +552,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = new Float64Array([0.1, 9007199254740991, 0]);
       const result = arr.toLocaleString();
       const expected = "0.1,9,007,199,254,740,991,0";
       const expectVal = expected;
@@ -644,10 +568,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       const result = arr.toLocaleString("en-US");
       const expected = "0.5,1.5,0.25";
       const expectVal = expected;
@@ -663,10 +584,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const int8MinValue: number = -128;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int16MinValue, int8MinValue, zeroValue);
+      const arr = new Float64Array([-32768, -128, 0]);
       const result = arr.toLocaleString(["en-US", "zh-CN"]);
       const expected = "-32,768,-128,0";
       const expectVal = expected;
@@ -682,10 +600,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const negativeOne: number = -1;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int32MinValue, negativeOne, zeroValue);
+      const arr = Float64Array.of(-2147483648, -1, 0);
       const result = arr.toLocaleString(undefined);
       const expected = "-2,147,483,648,-1,0";
       const expectVal = expected;
@@ -701,10 +616,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       const result = arr.toLocaleString(["en-US"]);
       const expected = "0.5,1.5,0.25";
       const expectVal = expected;
@@ -720,9 +632,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const int8MinValue: number = -128;
-      const arr = Float64Array.of(int16MinValue, int8MinValue);
+      const arr = Float64Array.of(-32768, -128);
       const result = arr.toLocaleString(undefined);
       const expected = "-32,768,-128";
       const expectVal = expected;
@@ -738,10 +648,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       const result = arr.toLocaleString();
       const expected = "0.5,1.5,0.25";
       const expectVal = expected;
@@ -757,10 +664,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const int8MinValue: number = -128;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int16MinValue, int8MinValue, zeroValue);
+      const arr = new Float64Array([-32768, -128, 0]);
       const result = arr.toLocaleString();
       const combined = "prefix-" + result + "-suffix";
       const actVal1 = combined.startsWith("prefix-");
@@ -777,10 +681,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const negativeOne: number = -1;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int32MinValue, negativeOne, zeroValue);
+      const arr = Float64Array.of(-2147483648, -1, 0);
       const result = arr.toLocaleString();
       const upper = result.toUpperCase();
       const expectVal = result.length;
@@ -796,9 +697,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const arr = Float64Array.of(pointOne, maxSafeInteger);
+      const arr = new Float64Array([0.1, 9007199254740991]);
       const result = arr.toLocaleString("en-US");
       const actVal2 = result.indexOf(",") >= 0;
       const expectVal = true;
@@ -814,13 +713,11 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const arr = Float64Array.of(pointFive, onePointFive);
+      const arr = Float64Array.of(0.5, 1.5);
       const resultEn = arr.toLocaleString("en-US");
       const resultZh = arr.toLocaleString("zh-CN");
-      expect(resultEn !== undefined).assertEqual(true);
-      expect(resultZh !== undefined).assertEqual(true);
+      expect(resultEn !== undefined).assertTrue();
+      expect(resultZh !== undefined).assertTrue();
     })
 
     /**
@@ -832,10 +729,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const int8MinValue: number = -128;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int16MinValue, int8MinValue, zeroValue);
+      const arr = new Float64Array([-32768, -128, 0]);
       const r1 = arr.toLocaleString("en-US");
       const r2 = arr.toLocaleString("en-US");
       const expectVal = r2;
@@ -851,10 +745,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = new Float64Array([0.1, 9007199254740991, 0]);
       const valBefore = arr[0];
       arr.toLocaleString();
       const expectVal = valBefore;
@@ -900,8 +791,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const arr = Float64Array.of(pointFive);
+      const arr = new Float64Array([0.5]);
       const result = arr.toLocaleString();
       const expected = "0.5";
       const expectVal = expected;
@@ -917,8 +807,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const arr = Float64Array.of(int16MinValue);
+      const arr = new Float64Array([-32768]);
       const result = arr.toLocaleString("en-US");
       const expected = "-32,768";
       const expectVal = expected;
@@ -934,8 +823,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const arr = Float64Array.of(int32MinValue);
+      const arr = Float64Array.of(-2147483648);
       const result = arr.toLocaleString("en-US");
       const expected = "-2,147,483,648";
       const expectVal = expected;
@@ -1027,12 +915,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const pointOneTwoFive: number = 0.125;
-      const pointZeroSixTwoFive: number = 0.0625;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive, pointOneTwoFive, pointZeroSixTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25, 0.125, 0.0625]);
       const result = arr.toLocaleString();
       const expected = "0.5,1.5,0.25,0.125,0.063";
       const expectVal = expected;
@@ -1048,12 +931,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const int8MinValue: number = -128;
-      const zeroValue: number = 0;
-      const int8MaxValue: number = 127;
-      const int16MaxValue: number = 32767;
-      const arr = Float64Array.of(int16MinValue, int8MinValue, zeroValue, int8MaxValue, int16MaxValue);
+      const arr = new Float64Array([-32768, -128, 0, 127, 32767]);
       const result = arr.toLocaleString();
       const expected = "-32,768,-128,0,127,32,767";
       const expectVal = expected;
@@ -1069,12 +947,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const negativeOne: number = -1;
-      const zeroValue: number = 0;
-      const oneValue: number = 1;
-      const int32MaxValue: number = 2147483647;
-      const arr = Float64Array.of(int32MinValue, negativeOne, zeroValue, oneValue, int32MaxValue);
+      const arr = new Float64Array([-2147483648, -1, 0, 1, 2147483647]);
       const result = arr.toLocaleString();
       const expected = "-2,147,483,648,-1,0,1,2,147,483,647";
       const expectVal = expected;
@@ -1090,12 +963,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const piValue: number = 3.141592653589793;
-      const tinyNegativeValue: number = -1e-100;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue, piValue, tinyNegativeValue);
+      const arr = Float64Array.of(0.1, 9007199254740991, 0, 3.141592653589793, -1e-100);
       const result = arr.toLocaleString();
       const expected = "0.1,9,007,199,254,740,991,0,3.142,-0";
       const expectVal = expected;
@@ -1111,9 +979,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const int8MinValue: number = -128;
-      const arr = Float64Array.of(int16MinValue, int8MinValue);
+      const arr = Float64Array.of(-32768, -128);
       const result = arr.toLocaleString();
       const expected = "-32,768,-128";
       const expectVal = expected;
@@ -1129,9 +995,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const arr = Float64Array.of(pointOne, maxSafeInteger);
+      const arr = new Float64Array([0.1, 9007199254740991]);
       const result = arr.toLocaleString();
       const expected = "0.1,9,007,199,254,740,991";
       const expectVal = expected;
@@ -1147,10 +1011,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const int8MinValue: number = -128;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int16MinValue, int8MinValue, zeroValue);
+      const arr = new Float64Array([-32768, -128, 0]);
       const result = arr.toLocaleString();
       const expected = "-32,768,-128,0";
       const expectVal = expected;
@@ -1167,7 +1028,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      */
     it('testFloat64ArrayToLocaleString062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroValue: number = 0;
-      const arr = Float64Array.of(zeroValue, zeroValue, zeroValue);
+      const arr = new Float64Array([zeroValue, zeroValue, zeroValue]);
       const result = arr.toLocaleString("en-US");
       const expected = "0,0,0";
       const expectVal = expected;
@@ -1183,11 +1044,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const piValue: number = 3.141592653589793;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue, piValue);
+      const arr = Float64Array.of(0.1, 9007199254740991, 0, 3.141592653589793);
       const result = arr.toLocaleString("en-US");
       const expected = "0.1,9,007,199,254,740,991,0,3.142";
       const expectVal = expected;
@@ -1203,11 +1060,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const pointOneTwoFive: number = 0.125;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive, pointOneTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25, 0.125]);
       const result = arr.toLocaleString("zh-CN");
       const expected = "0.5,1.5,0.25,0.125";
       const expectVal = expected;
@@ -1223,12 +1076,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const int8MinValue: number = -128;
-      const zeroValue: number = 0;
-      const int8MaxValue: number = 127;
-      const int16MaxValue: number = 32767;
-      const arr = Float64Array.of(int16MinValue, int8MinValue, zeroValue, int8MaxValue, int16MaxValue);
+      const arr = new Float64Array([-32768, -128, 0, 127, 32767]);
       const result = arr.toLocaleString("en-US");
       const expected = "-32,768,-128,0,127,32,767";
       const expectVal = expected;
@@ -1244,12 +1092,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const negativeOne: number = -1;
-      const zeroValue: number = 0;
-      const oneValue: number = 1;
-      const int32MaxValue: number = 2147483647;
-      const arr = Float64Array.of(int32MinValue, negativeOne, zeroValue, oneValue, int32MaxValue);
+      const arr = new Float64Array([-2147483648, -1, 0, 1, 2147483647]);
       const result = arr.toLocaleString("zh-CN");
       const expected = "-2,147,483,648,-1,0,1,2,147,483,647";
       const expectVal = expected;
@@ -1265,8 +1108,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const arr = Float64Array.of(pointOne);
+      const arr = Float64Array.of(0.1);
       const result = arr.toLocaleString("en-US");
       const expected = "0.1";
       const expectVal = expected;
@@ -1282,8 +1124,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const arr = Float64Array.of(pointFive);
+      const arr = new Float64Array([0.5]);
       const result = arr.toLocaleString("en-US");
       const expected = "0.5";
       const expectVal = expected;
@@ -1299,9 +1140,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const arr = Float64Array.of(pointOne, maxSafeInteger);
+      const arr = new Float64Array([0.1, 9007199254740991]);
       const result = arr.toLocaleString("en-US", undefined);
       const expected = "0.1,9,007,199,254,740,991";
       const expectVal = expected;
@@ -1317,9 +1156,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const negativeOne: number = -1;
-      const arr = Float64Array.of(int32MinValue, negativeOne);
+      const arr = new Float64Array([-2147483648, -1]);
       const opts: Record<string, string> = { "unknownProp": "value" };
       const result = arr.toLocaleString("en-US", opts as object);
       const expected = "-2,147,483,648,-1";
@@ -1336,8 +1173,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const arr = Float64Array.of(pointOne);
+      const arr = Float64Array.of(0.1);
       const result = arr.toLocaleString("zh-CN");
       const expected = "0.1";
       const expectVal = expected;
@@ -1353,9 +1189,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const values = Float64Array.of(pointFive, onePointFive);
+      const values = new Float64Array([0.5, 1.5]);
       const result = values.toLocaleString();
       const expected = "0.5,1.5";
       const expectVal = expected;
@@ -1371,9 +1205,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const int8MinValue: number = -128;
-      const values = Float64Array.of(int16MinValue, int8MinValue);
+      const values = new Float64Array([-32768, -128]);
       const result = values.toLocaleString("en-US");
       const expected = "-32,768,-128";
       const expectVal = expected;
@@ -1404,8 +1236,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const values = Float64Array.of(int32MinValue);
+      const values = new Float64Array([-2147483648]);
       const result = values.toLocaleString("en-US");
       const expected = "-2,147,483,648";
       const expectVal = expected;
@@ -1421,9 +1252,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const values = Float64Array.of(pointOne, maxSafeInteger);
+      const values = Float64Array.of(0.1, 9007199254740991);
       const result = values.toLocaleString();
       const expectVal = "0.1,9,007,199,254,740,991";
       expect(result).assertEqual(expectVal);
@@ -1438,9 +1267,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const values = Float64Array.of(pointFive, onePointFive);
+      const values = new Float64Array([0.5, 1.5]);
       const result = values.toLocaleString("en-US");
       const expected = "0.5,1.5";
       const expectVal = expected;
@@ -1456,8 +1283,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const values = Float64Array.of(int16MinValue);
+      const values = Float64Array.of(-32768);
       const result = values.toLocaleString("en-US");
       const expected = "-32,768";
       const expectVal = expected;
@@ -1473,9 +1299,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const negativeOne: number = -1;
-      const values = Float64Array.of(int32MinValue, negativeOne);
+      const values = new Float64Array([-2147483648, -1]);
       const result = values.toLocaleString();
       const expectVal = "-2,147,483,648,-1";
       expect(result).assertEqual(expectVal);
@@ -1490,10 +1314,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const values = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const values = new Float64Array([0.1, 9007199254740991, 0]);
       const result = values.toLocaleString("ar-EG");
       const expected =
         "\u0660\u066B\u0661,\u0669\u066C\u0660\u0660\u0667\u066C\u0661\u0669\u0669\u066C\u0662\u0665\u0664\u066C\u0667\u0664\u0660\u066C\u0669\u0669\u0661,\u0660";
@@ -1510,10 +1331,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const values = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const values = Float64Array.of(0.5, 1.5, 0.25);
       const result = values.toLocaleString("hi-IN");
       const expected = "0.5,1.5,0.25";
       const expectVal = expected;
@@ -1529,10 +1347,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const int8MinValue: number = -128;
-      const zeroValue: number = 0;
-      const values = Float64Array.of(int16MinValue, int8MinValue, zeroValue);
+      const values = new Float64Array([-32768, -128, 0]);
       const result = values.toLocaleString("zh-CN");
       const expected = "-32,768,-128,0";
       const expectVal = expected;
@@ -1548,10 +1363,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const negativeOne: number = -1;
-      const zeroValue: number = 0;
-      const values = Float64Array.of(int32MinValue, negativeOne, zeroValue);
+      const values = new Float64Array([-2147483648, -1, 0]);
       const result = values.toLocaleString("th-TH");
       const expected = "-2,147,483,648,-1,0";
       const expectVal = expected;
@@ -1663,8 +1475,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const num123Pointzero: number = 123.0;
-      const arr = Float64Array.of(num123Pointzero);
+      const arr = Float64Array.of(123.0);
       const result = arr.toLocaleString("zh-u-nu-hanidec");
       const expected = "一二三";
       const expectVal = expected;
@@ -1680,10 +1491,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const twentythreePointzero: number = 23.0;
-      const num456Pointzero: number = 456.0;
-      const arr = Float64Array.of(onePointZero, twentythreePointzero, num456Pointzero);
+      const arr = Float64Array.of(1.0, 23.0, 456.0);
       const result = arr.toLocaleString("zh-u-nu-hanidec");
       const expected = "一,二三,四五六";
       const expectVal = expected;
@@ -1699,8 +1507,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const zeroPointZero: number = 0.0;
-      const arr = Float64Array.of(zeroPointZero);
+      const arr = new Float64Array([0.0]);
       const result = arr.toLocaleString("zh-u-nu-hanidec");
       const expected = "〇";
       const expectVal = expected;
@@ -1737,7 +1544,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = Float64Array.of(1.0, 2.0, 3.0);
+      const a = new Float64Array([1.0, 2.0, 3.0]);
       const v = a.subarray(1, 3);
       a.$_set(2, 30.0);
       const actVal12 = v.toLocaleString("en-US");
@@ -1754,7 +1561,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = Float64Array.of(1.0, 2.0, 3.0);
+      const a = new Float64Array([1.0, 2.0, 3.0]);
       const r = a.toReversed();
       const actVal13 = r.toLocaleString("en-US");
       const expectVal = "3,2,1";
@@ -1792,7 +1599,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const empty = Float64Array.of(1.0, 2.0).subarray(1, 1);
+      const empty = new Float64Array([1.0, 2.0]).subarray(1, 1);
       const actVal17 = empty.toLocaleString("en-US");
       const expectVal = "";
       expect(actVal17).assertEqual(expectVal);
@@ -1808,7 +1615,7 @@ export default function Float64ArrayToLocaleStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToLocaleString097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = Float64Array.of(1.5, 2.25);
+      const a = new Float64Array([1.5, 2.25]);
       const actVal18 = a.toLocaleString("en-US");
       const expectVal = "1.5,2.25";
       expect(actVal18).assertEqual(expectVal);
