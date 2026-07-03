@@ -18,6 +18,7 @@ import tapLocation from './TapGestureTest/tapLocation.test';
 import colorMetricsTest from './ColorTest/colorMetrics.test';
 import measureFromViewportTest from './measureFromViewport/measureFromViewport.test';
 import measureFromViewportOnVisibleTest from './measureFromViewport/measureFromViewportOnVisible.test';
+import onVisibleAreaNullUndefinedTest from './onVisibleAreaNullUndefined/onVisibleAreaApproximateChangeNullAndUndefined.test';
 export default function testsuite() {
   getDisplayId();//通用属性 onDragStart 失败用例1
   tapLocation();//交互框架 TapGesture 失败用例2
