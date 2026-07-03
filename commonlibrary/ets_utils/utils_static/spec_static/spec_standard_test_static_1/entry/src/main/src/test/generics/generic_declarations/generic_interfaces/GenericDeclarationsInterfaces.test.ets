@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+import Utils from "../../../Util.test";
+
 import {
   expect,
   describe,
@@ -27,8 +29,6 @@ import {
   Level
 } from "../../../../../../hypium"
 
-// 26
-// 接口、类、类型、枚举定义
 interface GenericInterfaceWithMethod_0 {
   getValue<T>(value: T): string;
 }
@@ -398,7 +398,7 @@ interface Ichainable_41<T> {
   transform(transformFn: (value: T) => T): this;
 }
 class Chainable_41<T> implements Ichainable_41<T> {
-  private value: T = undefined as T;
+  private value: T;
 
   set(value: T): this {
     this.value = value;
@@ -415,7 +415,7 @@ class Chainable_41<T> implements Ichainable_41<T> {
   }
 }
 class Chainable_42<T> implements Ichainable_41<T> {
-  private value: T = undefined as T;
+  private value: T;
 
   set(value: T): this {
     this.value = value;
@@ -601,15 +601,7 @@ class NumberProcessorImpl_14 implements NumberProcessor_0 {
   }
 }
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-
-export default function GenericDeclarationsInterfacesTest() {
+export default function GenericDeclarationsInterfacesTest(): void {
   describe("GenericDeclarationsInterfacesTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -620,7 +612,7 @@ export default function GenericDeclarationsInterfacesTest() {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
@@ -912,48 +904,6 @@ export default function GenericDeclarationsInterfacesTest() {
 
     /**
      * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_2200
-     * @tc.name      testGenericDeclarationsInterfaces0022
-     * @tc.desc      The return type of a generic interface method is a function type(return value
-     *               is different types).
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testGenericDeclarationsInterfaces0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let stringValue = new FunctionValue_23();
-      expect(stringValue.getFunctionValue()(33)).assertEqual(66);
-    })
-
-    /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_2300
-     * @tc.name      testGenericDeclarationsInterfaces0023
-     * @tc.desc      The return type of a generic interface method is a function type(return value
-     *               is different types-undefined).
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testGenericDeclarationsInterfaces0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let stringValue = new FunctionValue_25();
-      expect(stringValue.getFunctionValue()(33)).assertEqual(66);
-    })
-
-    /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_2400
-     * @tc.name      testGenericDeclarationsInterfaces0024
-     * @tc.desc      Test that when the generic is of type number, the method internally multiplies
-     *               the number by 2 and returns(33).
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testGenericDeclarationsInterfaces0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let stringValue = new FunctionValue_26();
-      expect(stringValue.getFunctionValue()(33)).assertEqual(66);
-    })
-
-    /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_2500
      * @tc.name      testGenericDeclarationsInterfaces0025
      * @tc.desc      Test that when the generic type is boolean, the method inverts the boolean value
      *               and returns it.
@@ -967,7 +917,7 @@ export default function GenericDeclarationsInterfacesTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_2600
+     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_2300
      * @tc.name      testGenericDeclarationsInterfaces0026
      * @tc.desc      When the generic is null, the method returns the original value directly.
      * @tc.size      MediumTest
@@ -980,7 +930,7 @@ export default function GenericDeclarationsInterfacesTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_2700
+     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_2400
      * @tc.name      testGenericDeclarationsInterfaces0027
      * @tc.desc      When the generic is undefined, the method returns the original value directly.
      * @tc.size      MediumTest
@@ -993,7 +943,7 @@ export default function GenericDeclarationsInterfacesTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_2800
+     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_2500
      * @tc.name      testGenericDeclarationsInterfaces0028
      * @tc.desc      Test that when the generic is of type number, the method internally multiplies
      *               the number by 2 and returns(-3).
@@ -1007,7 +957,7 @@ export default function GenericDeclarationsInterfacesTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_2900
+     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_2600
      * @tc.name      testGenericDeclarationsInterfaces0029
      * @tc.desc      Test that when the generic is of type number, the method internally multiplies
      *               the number by 2 and returns(0).
@@ -1021,7 +971,7 @@ export default function GenericDeclarationsInterfacesTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_3000
+     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_2700
      * @tc.name      testGenericDeclarationsInterfaces0030
      * @tc.desc      When the generic type is number, the method internally subtracts 2 from the
      *               number and returns the number.
@@ -1035,7 +985,7 @@ export default function GenericDeclarationsInterfacesTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_3100
+     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_2800
      * @tc.name      testGenericDeclarationsInterfaces0031
      * @tc.desc      When the generic type is number, the method divides the number by 2 and returns
      *               the value.
@@ -1049,7 +999,7 @@ export default function GenericDeclarationsInterfacesTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_3200
+     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_2900
      * @tc.name      testGenericDeclarationsInterfaces0032
      * @tc.desc      When the generic type is number, the method returns the number modulo.
      * @tc.size      MediumTest
@@ -1062,7 +1012,7 @@ export default function GenericDeclarationsInterfacesTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_3300
+     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_3000
      * @tc.name      testGenericDeclarationsInterfaces0033
      * @tc.desc      Two generic interfaces, using number and string as type parameters.
      * @tc.size      MediumTest
@@ -1076,7 +1026,7 @@ export default function GenericDeclarationsInterfacesTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_3400
+     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_3100
      * @tc.name      testGenericDeclarationsInterfaces0034
      * @tc.desc      Two generic interfaces, using string and boolean as type parameters.
      * @tc.size      MediumTest
@@ -1090,7 +1040,7 @@ export default function GenericDeclarationsInterfacesTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_3500
+     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_3200
      * @tc.name      testGenericDeclarationsInterfaces0035
      * @tc.desc      Two generic interfaces, using boolean and number as type parameters.
      * @tc.size      MediumTest
@@ -1104,7 +1054,7 @@ export default function GenericDeclarationsInterfacesTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_3600
+     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_3300
      * @tc.name      testGenericDeclarationsInterfaces0036
      * @tc.desc      Generic storage class, store and retrieve strings.
      * @tc.size      MediumTest
@@ -1118,7 +1068,7 @@ export default function GenericDeclarationsInterfacesTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_3700
+     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_3400
      * @tc.name      testGenericDeclarationsInterfaces0037
      * @tc.desc      Generic storage class, store and retrieve numbers.
      * @tc.size      MediumTest
@@ -1132,7 +1082,7 @@ export default function GenericDeclarationsInterfacesTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_3800
+     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_3500
      * @tc.name      testGenericDeclarationsInterfaces0038
      * @tc.desc      Generic storage class, store and retrieve objects.
      * @tc.size      MediumTest
@@ -1150,7 +1100,7 @@ export default function GenericDeclarationsInterfacesTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_3900
+     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_3600
      * @tc.name      testGenericDeclarationsInterfaces0039
      * @tc.desc      Generic chained call, chained operation string.
      * @tc.size      MediumTest
@@ -1164,7 +1114,7 @@ export default function GenericDeclarationsInterfacesTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_4000
+     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_3700
      * @tc.name      testGenericDeclarationsInterfaces0040
      * @tc.desc      Generic chained call, chained operation number.
      * @tc.size      MediumTest
@@ -1178,7 +1128,7 @@ export default function GenericDeclarationsInterfacesTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_4100
+     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_3800
      * @tc.name      testGenericDeclarationsInterfaces0041
      * @tc.desc      Generic processor, handle strings as numbers.
      * @tc.size      MediumTest
@@ -1191,7 +1141,7 @@ export default function GenericDeclarationsInterfacesTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_4200
+     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_3900
      * @tc.name      testGenericDeclarationsInterfaces0042
      * @tc.desc      Generic processor, processing numbers as boolean values.
      * @tc.size      MediumTest
@@ -1205,7 +1155,7 @@ export default function GenericDeclarationsInterfacesTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_4300
+     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_4000
      * @tc.name      testGenericDeclarationsInterfaces0043
      * @tc.desc      Generic composite class, combined class's logging and verification functions.
      * @tc.size      MediumTest
@@ -1222,7 +1172,7 @@ export default function GenericDeclarationsInterfacesTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_4400
+     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_4100
      * @tc.name      testGenericDeclarationsInterfaces0044
      * @tc.desc      Generic factory class, create string instance.
      * @tc.size      MediumTest
@@ -1235,7 +1185,7 @@ export default function GenericDeclarationsInterfacesTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_4500
+     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_4200
      * @tc.name      testGenericDeclarationsInterfaces0045
      * @tc.desc      Generic factory class, create number instance.
      * @tc.size      MediumTest
@@ -1248,7 +1198,7 @@ export default function GenericDeclarationsInterfacesTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_4600
+     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_4300
      * @tc.name      testGenericDeclarationsInterfaces0046
      * @tc.desc      Generic factory class, create objects instance.
      * @tc.size      MediumTest
@@ -1262,7 +1212,7 @@ export default function GenericDeclarationsInterfacesTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_4700
+     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_4400
      * @tc.name      testGenericDeclarationsInterfaces0047
      * @tc.desc      The return type of a generic interface method is a function type(return value
      *               is different types-undefined).
@@ -1276,7 +1226,7 @@ export default function GenericDeclarationsInterfacesTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_4800
+     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_4500
      * @tc.name      testGenericDeclarationsInterfaces0048
      * @tc.desc      Class methods implement interfaces for generic parameters.
      * @tc.size      MediumTest
@@ -1291,7 +1241,7 @@ export default function GenericDeclarationsInterfacesTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_4900
+     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_4600
      * @tc.name      testGenericDeclarationsInterfaces0049
      * @tc.desc      Verify that the method accepts undefined and returns undefined.
      * @tc.size      MediumTest
@@ -1305,7 +1255,7 @@ export default function GenericDeclarationsInterfacesTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_5000
+     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_4700
      * @tc.name      testGenericDeclarationsInterfaces0050
      * @tc.desc      Verify that the method accepts a function type with parameters and returns a
      *               function type.
@@ -1320,7 +1270,7 @@ export default function GenericDeclarationsInterfacesTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_5100
+     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_4800
      * @tc.name      testGenericDeclarationsInterfaces0051
      * @tc.desc      Verify that the method processes negative numbers and returns the correct doubled
      *               value.
@@ -1335,7 +1285,7 @@ export default function GenericDeclarationsInterfacesTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_5200
+     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_4900
      * @tc.name      testGenericDeclarationsInterfaces0052
      * @tc.desc      Verify that the method processes decimal numbers and returns the correct doubled
      *               value.
@@ -1350,7 +1300,7 @@ export default function GenericDeclarationsInterfacesTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_5300
+     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_5000
      * @tc.name      testGenericDeclarationsInterfaces0053
      * @tc.desc      Verify that the method processes a standard string and converts it to uppercase
      *               correctly.
@@ -1365,7 +1315,7 @@ export default function GenericDeclarationsInterfacesTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_5400
+     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_5100
      * @tc.name      testGenericDeclarationsInterfaces0054
      * @tc.desc      Verify that the method accepts a tuple type and returns a tuple type.
      * @tc.size      MediumTest
@@ -1380,7 +1330,7 @@ export default function GenericDeclarationsInterfacesTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_5500
+     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_5200
      * @tc.name      testGenericDeclarationsInterfaces0055
      * @tc.desc      Verify that the method accepts null and returns null.
      * @tc.size      MediumTest
@@ -1394,7 +1344,7 @@ export default function GenericDeclarationsInterfacesTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_5600
+     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_5300
      * @tc.name      testGenericDeclarationsInterfaces0056
      * @tc.desc      Verify that the method processes zero and returns the correct doubled value.
      * @tc.size      MediumTest
@@ -1408,7 +1358,7 @@ export default function GenericDeclarationsInterfacesTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_5700
+     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_5400
      * @tc.name      testGenericDeclarationsInterfaces0057
      * @tc.desc      Verify that the method accepts a function type and returns a function type.
      * @tc.size      MediumTest
@@ -1422,7 +1372,7 @@ export default function GenericDeclarationsInterfacesTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_5800
+     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_5500
      * @tc.name      testGenericDeclarationsInterfaces0058
      * @tc.desc      Verify that the method processes special character strings and returns the correct
      *               uppercase result.
@@ -1437,21 +1387,7 @@ export default function GenericDeclarationsInterfacesTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_5900
-     * @tc.name      testGenericDeclarationsInterfaces0059
-     * @tc.desc      Verify that the method accepts a normal string and returns a string.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testGenericDeclarationsInterfaces0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const processor = new StringProcessorImpl_11();
-      const result = processor.process("hello");
-      expect(result).assertEqual("HELLO");
-    })
-
-    /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_6000
+     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_5600
      * @tc.name      testGenericDeclarationsInterfaces0060
      * @tc.desc      Verify that the method accepts a function type with multiple parameters and
      *               returns a function type.
@@ -1466,7 +1402,7 @@ export default function GenericDeclarationsInterfacesTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_6100
+     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_5700
      * @tc.name      testGenericDeclarationsInterfaces0061
      * @tc.desc      Verify that the method processes multi-line strings and converts each line to
      *               uppercase correctly.
@@ -1482,7 +1418,7 @@ export default function GenericDeclarationsInterfacesTest() {
     })
 
     /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_6200
+     * @tc.number    SUB_GENERIC_DECLARATIONS_INTERFACES_5800
      * @tc.name      testGenericDeclarationsInterfaces0062
      * @tc.desc      Verify that the method accepts a positive integer and returns a number.
      * @tc.size      MediumTest
