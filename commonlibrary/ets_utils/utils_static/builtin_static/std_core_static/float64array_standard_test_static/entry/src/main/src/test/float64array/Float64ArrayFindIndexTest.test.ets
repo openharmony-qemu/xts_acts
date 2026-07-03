@@ -1954,5 +1954,987 @@ export default function Float64ArrayFindIndexTest(): void {
       const expectVal = zeroValue;
       expect(result).assertEqual(expectVal);
     })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_0880
+     * @tc.name testFloat64ArrayFindIndex088
+     * @tc.desc Verify findIndex with nested findIndex call
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int16MinValue: number = -32768;
+      const zeroValue: number = 0;
+      const arr = Float64Array.of(int16MinValue, -128, zeroValue);
+      const result = arr.findIndex((value: number): boolean => {
+        return arr.findIndex((v: number): boolean => {
+          return v === value;
+        }) >= 0;
+      })
+
+      const expectVal = zeroValue;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_0890
+     * @tc.name testFloat64ArrayFindIndex089
+     * @tc.desc Verify findIndex callback modifies external state
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int32MinValue: number = -2147483648;
+      const zeroValue: number = 0;
+      const negativeOne: number = -1;
+      const threeValue: number = 3;
+      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      let externalState: int = 0;
+      const result = arr.findIndex((value: number, index: int): boolean => {
+        externalState = externalState + 1;
+        return value > 1.5;
+      })
+
+      const expectVal = negativeOne;
+      expect(result).assertEqual(expectVal);
+      const expectVal2 = threeValue;
+      expect(externalState).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_0900
+     * @tc.name testFloat64ArrayFindIndex090
+     * @tc.desc Verify findIndex with int type elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const oneValue: number = 1;
+      const a: int = 10;
+      const b: int = 20;
+      const c: int = 30;
+      const arr = Float64Array.of(a, b, c);
+      const result = arr.findIndex((value: number, index: int, array: Float64Array): boolean => {
+        return value > 10;
+      })
+
+      const expectVal = oneValue;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_0910
+     * @tc.name testFloat64ArrayFindIndex091
+     * @tc.desc Verify findIndex with float type elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const twoValue: number = 2;
+      const a: float = 1.5f;
+      const b: float = 2.5f;
+      const c: float = 3.5f;
+      const arr = Float64Array.of(a, b, c);
+      const result = arr.findIndex((value: number): boolean => {
+        return value > 2.5;
+      })
+
+      const expectVal = twoValue;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_0920
+     * @tc.name testFloat64ArrayFindIndex092
+     * @tc.desc Verify findIndex with double type elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const oneValue: number = 1;
+      const a: double = 1.23456789;
+      const b: double = 2.34567891;
+      const c: double = 3.45678912;
+      const arr = Float64Array.of(a, b, c);
+      const result = arr.findIndex((value: number, index: int): boolean => {
+        return value > 2.0;
+      })
+
+      const expectVal = oneValue;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_0930
+     * @tc.name testFloat64ArrayFindIndex093
+     * @tc.desc Verify findIndex finds Infinity after NaN
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointOne: number = 0.1;
+      const maxSafeInteger: number = 9007199254740991;
+      const zeroValue: number = 0;
+      const negativeOne: number = -1;
+      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const result = arr.findIndex((value: number, index: int, array: Float64Array): boolean => {
+        return value === Infinity;
+      })
+
+      const expectVal = negativeOne;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_0940
+     * @tc.name testFloat64ArrayFindIndex094
+     * @tc.desc Verify findIndex finds negative non-NaN after negative Infinity
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointFive: number = 0.5;
+      const onePointFive: number = 1.5;
+      const pointTwoFive: number = 0.25;
+      const negativeOne: number = -1;
+      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const result = arr.findIndex((value: number): boolean => {
+        return value < 0.0 && value === value;
+      })
+
+      const expectVal = negativeOne;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_0950
+     * @tc.name testFloat64ArrayFindIndex095
+     * @tc.desc Verify findIndex finds negative boundary after int min
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int32MinValue: number = -2147483648;
+      const zeroValue: number = 0;
+      const oneValue: number = 1;
+      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const result = arr.findIndex((value: number, index: int, array: Float64Array): boolean => {
+        return value > -100.0;
+      })
+
+      const expectVal = oneValue;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_0960
+     * @tc.name testFloat64ArrayFindIndex096
+     * @tc.desc Verify findIndex finds integer boundary
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointOne: number = 0.1;
+      const maxSafeInteger: number = 9007199254740991;
+      const zeroValue: number = 0;
+      const oneValue: number = 1;
+      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const result = arr.findIndex((value: number): boolean => {
+        return value > 2147483647.0;
+      })
+
+      const expectVal = oneValue;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_0970
+     * @tc.name testFloat64ArrayFindIndex097
+     * @tc.desc Verify findIndex finds safe integer boundary
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointFive: number = 0.5;
+      const onePointFive: number = 1.5;
+      const pointTwoFive: number = 0.25;
+      const negativeOne: number = -1;
+      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const result = arr.findIndex((value: number, index: int): boolean => {
+        return value > 9007199254740991.0;
+      })
+
+      const expectVal = negativeOne;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_0980
+     * @tc.name testFloat64ArrayFindIndex098
+     * @tc.desc Verify findIndex finds normal value among extremes
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int16MinValue: number = -32768;
+      const zeroValue: number = 0;
+      const negativeOne: number = -1;
+      const arr = Float64Array.of(int16MinValue, -128, zeroValue);
+      const result = arr.findIndex((value: number, index: int, array: Float64Array): boolean => {
+        return value === 1.0;
+      })
+
+      const expectVal = negativeOne;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_0990
+     * @tc.name testFloat64ArrayFindIndex099
+     * @tc.desc Verify findIndex finds zero in negative-to-positive transition
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int32MinValue: number = -2147483648;
+      const zeroValue: number = 0;
+      const oneValue: number = 1;
+      const int32MaxValue: number = 2147483647;
+      const twoValue: number = 2;
+      const arr = Float64Array.of(int32MinValue, -1, zeroValue, oneValue, int32MaxValue);
+      const result = arr.findIndex((value: number): boolean => {
+        return value >= 0.0;
+      })
+
+      const expectVal = twoValue;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_1000
+     * @tc.name testFloat64ArrayFindIndex100
+     * @tc.desc Verify findIndex finds in decimal sequence
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointOne: number = 0.1;
+      const maxSafeInteger: number = 9007199254740991;
+      const zeroValue: number = 0;
+      const piValue: number = 3.141592653589793;
+      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue, piValue);
+      const result = arr.findIndex((value: number, index: int): boolean => {
+        return value > 0.025;
+      })
+
+      const expectVal = zeroValue;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_1010
+     * @tc.name testFloat64ArrayFindIndex101
+     * @tc.desc Verify findIndex finds in scientific notation sequence
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointFive: number = 0.5;
+      const onePointFive: number = 1.5;
+      const pointTwoFive: number = 0.25;
+      const pointOneTwoFive: number = 0.125;
+      const pointZeroSixTwoFive: number = 0.0625;
+      const oneValue: number = 1;
+      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive, pointOneTwoFive, pointZeroSixTwoFive);
+      const result = arr.findIndex((value: number, index: int, array: Float64Array): boolean => {
+        return value >= 1.0e0;
+      })
+
+      const expectVal = oneValue;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_1020
+     * @tc.name testFloat64ArrayFindIndex102
+     * @tc.desc Verify findIndex predicate returns undefined treated as falsy throws Error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int16MinValue: number = -32768;
+      const zeroValue: number = 0;
+      const arr = Float64Array.of(int16MinValue, -128, zeroValue);
+      const result = arr.findIndex((value: number): boolean => {
+        return value !== 0.0;
+      })
+
+      const expectVal = zeroValue;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_1030
+     * @tc.name testFloat64ArrayFindIndex103
+     * @tc.desc Verify findIndex with 0.0 as null equivalent element skips default value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int32MinValue: number = -2147483648;
+      const zeroValue: number = 0;
+      const negativeOne: number = -1;
+      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const result = arr.findIndex((value: number, index: int): boolean => {
+        return value > 0.0;
+      })
+
+      const expectVal = negativeOne;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_1040
+     * @tc.name testFloat64ArrayFindIndex104
+     * @tc.desc Verify findIndex with NaN as undefined equivalent element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointOne: number = 0.1;
+      const maxSafeInteger: number = 9007199254740991;
+      const zeroValue: number = 0;
+      const negativeOne: number = -1;
+      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const result = arr.findIndex((value: number, index: int, array: Float64Array): boolean => {
+        return value !== value;
+      })
+
+      const expectVal = negativeOne;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_1050
+     * @tc.name testFloat64ArrayFindIndex105
+     * @tc.desc Verify findIndex predicate returns NaN treated as falsy returns -1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointFive: number = 0.5;
+      const onePointFive: number = 1.5;
+      const pointTwoFive: number = 0.25;
+      const negativeOne: number = -1;
+      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const result = arr.findIndex((value: number, index: int, array: Float64Array): boolean => {
+        let nanVal: double = NaN;
+        if (nanVal !== nanVal) {
+          return false;
+        }
+        return true;
+      })
+
+      const expectVal = negativeOne;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_1060
+     * @tc.name testFloat64ArrayFindIndex106
+     * @tc.desc Verify findIndex propagates Error thrown from callback using throw new Error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int16MinValue: number = -32768;
+      const zeroValue: number = 0;
+      const arr = Float64Array.of(int16MinValue, -128, zeroValue);
+      try {
+        arr.findIndex((value: number): boolean => {
+          throw new Error("string throw");
+        })
+
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("Error");
+      }
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_1070
+     * @tc.name testFloat64ArrayFindIndex107
+     * @tc.desc Verify findIndex propagates EvalError from callback
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int32MinValue: number = -2147483648;
+      const zeroValue: number = 0;
+      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      try {
+        arr.findIndex((value: number, index: int): boolean => {
+          throw new EvalError("eval");
+        })
+
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("EvalError");
+      }
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_1080
+     * @tc.name testFloat64ArrayFindIndex108
+     * @tc.desc Verify findIndex propagates URIError from callback
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointOne: number = 0.1;
+      const maxSafeInteger: number = 9007199254740991;
+      const zeroValue: number = 0;
+      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      try {
+        arr.findIndex((value: number, index: int, array: Float64Array): boolean => {
+          throw new URIError("uri");
+        })
+
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("URIError");
+      }
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_1090
+     * @tc.name testFloat64ArrayFindIndex109
+     * @tc.desc Verify findIndex on single element default 0.0 returns -1 when not found
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const negativeOne: number = -1;
+      const arr = new Float64Array(1);
+      const result = arr.findIndex((value: number): boolean => {
+        return value > 0.0;
+      })
+
+      const expectVal = negativeOne;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_1100
+     * @tc.name testFloat64ArrayFindIndex110
+     * @tc.desc Verify findIndex with float MIN_VALUE 1.4e-45 element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointFive: number = 0.5;
+      const onePointFive: number = 1.5;
+      const pointTwoFive: number = 0.25;
+      const negativeOne: number = -1;
+      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const result = arr.findIndex((value: number, index: int): boolean => {
+        return value > 0.0 && value < 1.0e-40;
+      })
+
+      const expectVal = negativeOne;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_1110
+     * @tc.name testFloat64ArrayFindIndex111
+     * @tc.desc Verify findIndex with float MAX_VALUE 3.4028235e+38 element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int16MinValue: number = -32768;
+      const zeroValue: number = 0;
+      const negativeOne: number = -1;
+      const arr = Float64Array.of(int16MinValue, -128, zeroValue);
+      const result = arr.findIndex((value: number, index: int, array: Float64Array): boolean => {
+        return value > 1.0e+38;
+      })
+
+      const expectVal = negativeOne;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_1120
+     * @tc.name testFloat64ArrayFindIndex112
+     * @tc.desc Verify findIndex with byte boundary value 127
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int32MinValue: number = -2147483648;
+      const zeroValue: number = 0;
+      const negativeOne: number = -1;
+      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const result = arr.findIndex((value: number): boolean => {
+        return value === 127;
+      })
+
+      const expectVal = negativeOne;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_1130
+     * @tc.name testFloat64ArrayFindIndex113
+     * @tc.desc Verify findIndex with short boundary value 32767
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointOne: number = 0.1;
+      const maxSafeInteger: number = 9007199254740991;
+      const zeroValue: number = 0;
+      const negativeOne: number = -1;
+      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const result = arr.findIndex((value: number, index: int): boolean => {
+        return value === 32767;
+      })
+
+      const expectVal = negativeOne;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_1140
+     * @tc.name testFloat64ArrayFindIndex114
+     * @tc.desc Verify findIndex with hex literal element 0x100
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointFive: number = 0.5;
+      const onePointFive: number = 1.5;
+      const pointTwoFive: number = 0.25;
+      const negativeOne: number = -1;
+      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const result = arr.findIndex((value: number, index: int, array: Float64Array): boolean => {
+        return value === 256;
+      })
+
+      const expectVal = negativeOne;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_1150
+     * @tc.name testFloat64ArrayFindIndex115
+     * @tc.desc Verify findIndex returns -1 when octal literal value is absent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int16MinValue: number = -32768;
+      const zeroValue: number = 0;
+      const negativeOne: number = -1;
+      const arr = Float64Array.of(int16MinValue, -128, zeroValue);
+      const result = arr.findIndex((value: number): boolean => {
+        return value === 64;
+      })
+
+      const expectVal = negativeOne;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_1160
+     * @tc.name testFloat64ArrayFindIndex116
+     * @tc.desc Verify findIndex with binary literal element 0b1000 equals 8
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int32MinValue: number = -2147483648;
+      const zeroValue: number = 0;
+      const negativeOne: number = -1;
+      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const result = arr.findIndex((value: number, index: int): boolean => {
+        return value === 8;
+      })
+
+      const expectVal = negativeOne;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_1170
+     * @tc.name testFloat64ArrayFindIndex117
+     * @tc.desc Verify findIndex returns first matching index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointOne: number = 0.1;
+      const maxSafeInteger: number = 9007199254740991;
+      const zeroValue: number = 0;
+      const oneValue: number = 1;
+      const values = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const actVal3 = values.findIndex((value) => value > 4);
+      const expectVal = oneValue;
+      expect(actVal3).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_1180
+     * @tc.name testFloat64ArrayFindIndex118
+     * @tc.desc Verify findIndex returns -1 when not found
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointFive: number = 0.5;
+      const onePointFive: number = 1.5;
+      const pointTwoFive: number = 0.25;
+      const negativeOne: number = -1;
+      const values = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const actVal4 = values.findIndex((value) => value > 10);
+      const expectVal = negativeOne;
+      expect(actVal4).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_1190
+     * @tc.name testFloat64ArrayFindIndex119
+     * @tc.desc Verify findIndex returns index 0 for first element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int16MinValue: number = -32768;
+      const negativeOne: number = -1;
+      const values = Float64Array.of(int16MinValue, -128);
+      const actVal5 = values.findIndex((value) => value === 4. - 1);
+      const expectVal = negativeOne;
+      expect(actVal5).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_1200
+     * @tc.name testFloat64ArrayFindIndex120
+     * @tc.desc Verify findIndex returns -1 for empty array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const negativeOne: number = -1;
+      const values = new Float64Array();
+      const actVal6 = values.findIndex((value) => value > 0);
+      const expectVal = negativeOne;
+      expect(actVal6).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_1210
+     * @tc.name testFloat64ArrayFindIndex121
+     * @tc.desc Verify findIndex with NaN element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int32MinValue: number = -2147483648;
+      const negativeOne: number = -1;
+      const values = Float64Array.of(int32MinValue, -1);
+      const actVal7 = values.findIndex((value) => Number.isNaN(value));
+      const expectVal = negativeOne;
+      expect(actVal7).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_1220
+     * @tc.name testFloat64ArrayFindIndex122
+     * @tc.desc Verify findIndex with Infinity element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointOne: number = 0.1;
+      const maxSafeInteger: number = 9007199254740991;
+      const negativeOne: number = -1;
+      const values = Float64Array.of(pointOne, maxSafeInteger);
+      const actVal8 = values.findIndex((value) => value === Infinity);
+      const expectVal = negativeOne;
+      expect(actVal8).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_1230
+     * @tc.name testFloat64ArrayFindIndex123
+     * @tc.desc Verify findIndex callback with incrementing index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointFive: number = 0.5;
+      const onePointFive: number = 1.5;
+      const pointTwoFive: number = 0.25;
+      const twoValue: number = 2;
+      const values = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const actVal9 = values.findIndex((value, index) => index === 2);
+      const expectVal = twoValue;
+      expect(actVal9).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_1240
+     * @tc.name testFloat64ArrayFindIndex124
+     * @tc.desc Verify findIndex callback error propagation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int16MinValue: number = -32768;
+      const values = Float64Array.of(int16MinValue, -128);
+      try {
+        values.findIndex((value) => {
+          throw new Error("test");
+        })
+
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("Error");
+      }
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_1250
+     * @tc.name testFloat64ArrayFindIndex125
+     * @tc.desc Verify findIndex returns last index when all elements match
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int32MinValue: number = -2147483648;
+      const zeroValue: number = 0;
+      const twoValue: number = 2;
+      const values = Float64Array.of(int32MinValue, -1, zeroValue);
+      const actVal10 = values.findIndex((value) => value > -1);
+      const expectVal = twoValue;
+      expect(actVal10).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_1260
+     * @tc.name testFloat64ArrayFindIndex126
+     * @tc.desc Verify findIndex with hex literal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const hexValueFF: number = 0xFF;
+      const hexValueAA: number = 0xAA;
+      const hexValue55: number = 0x55;
+      const oneValue: number = 1;
+      const arr = Float64Array.of(hexValueFF, hexValueAA, hexValue55);
+      const idx = arr.findIndex((e: number): boolean => e === 0xAA);
+      const expectVal = oneValue;
+      expect(idx).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_1270
+     * @tc.name testFloat64ArrayFindIndex127
+     * @tc.desc Verify findIndex with binary literal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const binaryValue11111111: number = 0b11111111;
+      const binaryValue10101010: number = 0b10101010;
+      const binaryValue01010101: number = 0b01010101;
+      const oneValue: number = 1;
+      const arr = Float64Array.of(binaryValue11111111, binaryValue10101010, binaryValue01010101);
+      const idx = arr.findIndex((e: number): boolean => e === 0b10101010);
+      const expectVal = oneValue;
+      expect(idx).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_1280
+     * @tc.name testFloat64ArrayFindIndex128
+     * @tc.desc Verify findindex with Double.NaN
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nanValue: number = Double.NaN;
+      const doubleMaxValue: number = Double.MAX_VALUE;
+      const zeroValue: number = 0;
+      const arr = Float64Array.of(nanValue, doubleMaxValue);
+      const result = arr.findIndex((value: number): boolean => Number.isNaN(value));
+      const expectVal = zeroValue;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_1290
+     * @tc.name testFloat64ArrayFindIndex129
+     * @tc.desc Verify findindex with Double.POSITIVE_INFINITY
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const positiveInfinity: number = Double.POSITIVE_INFINITY;
+      const negativeInfinity: number = Double.NEGATIVE_INFINITY;
+      const zeroValue: number = 0;
+      const arr = Float64Array.of(positiveInfinity, negativeInfinity);
+      const result = arr.findIndex((value: number): boolean => value > 0.0);
+      const expectVal = zeroValue;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_1300
+     * @tc.name testFloat64ArrayFindIndex130
+     * @tc.desc Verify findindex with Double.MIN_VALUE/MAX_VALUE
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const doubleMinValue: number = Double.MIN_VALUE;
+      const doubleMaxValue: number = Double.MAX_VALUE;
+      const oneValue: number = 1;
+      const arr = Float64Array.of(doubleMinValue, doubleMaxValue);
+      const result = arr.findIndex((value: number): boolean => value === Double.MAX_VALUE);
+      const expectVal = oneValue;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_1310
+     * @tc.name testFloat64ArrayFindIndex131
+     * @tc.desc Verify findIndex with zero arguments throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const threePointZero: number = 3.0;
+      const arr = Float64Array.of(onePointZero, twoPointZero, threePointZero);
+      try {
+        arr.findIndex(undefined as Object as (value: number, index: int, array: Float64Array) => boolean);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_1320
+     * @tc.name testFloat64ArrayFindIndex132
+     * @tc.desc Verify findIndex reads modified value when callback changes array elements during iteration
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const twoValue: number = 2;
+      const arr = Float64Array.of(1.0, 2.0, 3.0, 4.0, 5.0);
+      // At index 0, modify index 2 from 3.0 to 999.0
+      // findIndex should use the modified value 999.0 when it reaches index 2
+      const result = arr.findIndex((val: number, index: int): boolean => {
+        if (index === 0) {
+          arr.$_set(2, 999.0);
+        }
+        return val > 3.0;
+      })
+      const expectVal = twoValue;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_1330
+     * @tc.name testFloat64ArrayFindIndex133
+     * @tc.desc Verify findIndex on a large array of 1000 elements completes without timeout
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Float64Array(1000);
+      for (let i = 0; i < 1000; i++) {
+        arr.$_set(i, i * 1.0);
+      }
+      const result = arr.findIndex((val: number): boolean => val > 500.0);
+      const expectVal = 501;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FINDINDEX_1340
+     * @tc.name testFloat64ArrayFindIndex134
+     * @tc.desc Verify findIndex returns a numeric int type value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFindIndex134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const oneValue: number = 1;
+      const twoValue: number = 2;
+      const arr = Float64Array.of(1.0, 2.0, 3.0);
+      const result = arr.findIndex((val: number): boolean => val > 1.0);
+      // Verify result is a numeric value usable in arithmetic
+      const expectVal = oneValue;
+      expect(result).assertEqual(expectVal);
+      const doubled: number = result * twoValue;
+      const expectVal2 = twoValue;
+      expect(doubled).assertEqual(expectVal2);
+    })
+
   })
 }
