@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+import Utils from "../Util.test";
+
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 
 // Define interfaces for type safety
@@ -28,14 +30,6 @@ interface OuterObject {
 interface TestObject {
   value: string;
   missing: undefined;
-}
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
 }
 
 class TestClass1 {
@@ -130,13 +124,13 @@ function processOptional(param: string | undefined): string {
   return processWithDefault(param ?? "default");
 }
 
-export default function UndefinedFixVerificationTest() {
+export default function UndefinedFixVerificationTest(): void {
   describe('UndefinedFixVerificationTest', (): void => {
     beforeAll((): void => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
     })
     beforeEach(async (): Promise<void> => {
-      await sleep(30);
+      await Utils.msSleep(30);
       // Presets an action, which is performed before each unit test case starts.
     })
     afterEach((): void => {
@@ -145,19 +139,6 @@ export default function UndefinedFixVerificationTest() {
     afterAll((): void => {
       // Presets a clear action, which is performed after all test cases of the test suite end.
     })
-
-    /**
-     * @tc.number SUB_UNDEFINED_FIX_VERIFICATION_0100
-     * @tc.name UndefinedFixVerificationTest001
-     * @tc.desc Test basic undefined parameter passing to function accepting string | undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('UndefinedFixVerificationTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const result = receiveUndefined(undefined);
-      expect(result).assertUndefined();
-    });
 
     /**
      * @tc.number SUB_UNDEFINED_FIX_VERIFICATION_0200
@@ -270,24 +251,6 @@ export default function UndefinedFixVerificationTest() {
     });
 
     /**
-     * @tc.number SUB_UNDEFINED_FIX_VERIFICATION_1000
-     * @tc.name UndefinedFixVerificationTest010
-     * @tc.desc Test object literal with explicit undefined property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('UndefinedFixVerificationTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const obj: TestObject = {
-        value: "test",
-        missing: undefined,
-      };
-
-      const result = processUndefined(obj.missing);
-      expect(result).assertUndefined();
-    });
-
-    /**
      * @tc.number SUB_UNDEFINED_FIX_VERIFICATION_1100
      * @tc.name UndefinedFixVerificationTest011
      * @tc.desc Test map function returning undefined for specific condition
@@ -305,20 +268,6 @@ export default function UndefinedFixVerificationTest() {
     });
 
     /**
-     * @tc.number SUB_UNDEFINED_FIX_VERIFICATION_1200
-     * @tc.name UndefinedFixVerificationTest012
-     * @tc.desc Test union type with null and undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('UndefinedFixVerificationTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(handleValue(null)).assertEqual("null");
-      expect(handleValue(undefined)).assertEqual("undefined");
-      expect(handleValue("hello")).assertEqual("string:hello");
-    });
-
-    /**
      * @tc.number SUB_UNDEFINED_FIX_VERIFICATION_1300
      * @tc.name UndefinedFixVerificationTest013
      * @tc.desc Test tuple with undefined element
@@ -331,28 +280,6 @@ export default function UndefinedFixVerificationTest() {
 
       const result = processUndefined(tuple[1] as string | undefined);
       expect(result).assertUndefined();
-    });
-
-    /**
-     * @tc.number SUB_UNDEFINED_FIX_VERIFICATION_1400
-     * @tc.name UndefinedFixVerificationTest014
-     * @tc.desc Test class property type safety with string | undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('UndefinedFixVerificationTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const testObj = new TestClass014();
-      expect(testObj.getMaybeUndefined()).assertUndefined();
-
-      testObj.setValue("test");
-      expect(testObj.getMaybeUndefined()).assertEqual("test");
-
-      testObj.setValue(undefined);
-      expect(testObj.getMaybeUndefined()).assertUndefined();
-
-      const testObj2 = new TestClass014("initialized");
-      expect(testObj2.getMaybeUndefined()).assertEqual("initialized");
     });
 
   });

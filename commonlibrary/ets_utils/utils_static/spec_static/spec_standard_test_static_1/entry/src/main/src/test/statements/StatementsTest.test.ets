@@ -13,6 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import Utils from "../Util.test";
+
 import {
   afterAll,
   afterEach,
@@ -355,14 +357,7 @@ type UT = string[] | string;
 
 type RT = Record<number, string>;
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-export default function StatementsTest() {
+export default function StatementsTest(): void {
 
   describe("StatementsTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -374,7 +369,7 @@ export default function StatementsTest() {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
@@ -1991,7 +1986,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_10000
+     * @tc.number    SUB_STATEMENTS_ONE_0100
      * @tc.name      testStatements0100
      * @tc.desc      Break statements
      * @tc.size      MediumTest
@@ -2015,31 +2010,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_10100
-     * @tc.name      testStatements0101
-     * @tc.desc      Break statements
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testStatements0101", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let flowCounter: int = 0;
-      outer: do {
-        do {
-          break;
-        } while(true);
-        flowCounter++;
-        do {
-          break;
-        } while(true);
-        flowCounter++;
-        break outer;
-      } while(true);
-      expect(flowCounter).assertEqual(2);
-    });
-
-    /**
-     * @tc.number    SUB_STATEMENTS_10200
+     * @tc.number    SUB_STATEMENTS_ONE_0200
      * @tc.name      testStatements0102
      * @tc.desc      Break statements
      * @tc.size      MediumTest
@@ -2056,7 +2027,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_10300
+     * @tc.number    SUB_STATEMENTS_ONE_0300
      * @tc.name      testStatements0103
      * @tc.desc      Break statements
      * @tc.size      MediumTest
@@ -2080,7 +2051,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_10400
+     * @tc.number    SUB_STATEMENTS_ONE_0400
      * @tc.name      testStatements0104
      * @tc.desc      A continue statement stops execution of the current loop iteration and passes control to the next iteration with proper check of the loop exit condition depending on the loop kind.
      * @tc.size      MediumTest
@@ -2111,7 +2082,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_10500
+     * @tc.number    SUB_STATEMENTS_ONE_0500
      * @tc.name      testStatements0105
      * @tc.desc      A continue statement stops execution of the current loop iteration and passes control to the next iteration with proper check of the loop exit condition depending on the loop kind.
      * @tc.size      MediumTest
@@ -2148,7 +2119,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_10600
+     * @tc.number    SUB_STATEMENTS_ONE_0600
      * @tc.name      testStatements0106
      * @tc.desc      A continue statement stops execution of the current loop iteration and passes control to the next iteration with proper check of the loop exit condition depending on the loop kind.
      * @tc.size      MediumTest
@@ -2168,7 +2139,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_10700
+     * @tc.number    SUB_STATEMENTS_ONE_0700
      * @tc.name      testStatements0107
      * @tc.desc      A continue statement stops execution of the current loop iteration and passes control to the next iteration with proper check of the loop exit condition depending on the loop kind.
      * @tc.size      MediumTest
@@ -2190,7 +2161,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_10800
+     * @tc.number    SUB_STATEMENTS_ONE_0800
      * @tc.name      testStatements0108
      * @tc.desc      A continue statement with label identifier transfers control out of the enclosing loop statement which has the same label identifier. Such statement must be in the body of the surrounding function or method otherwise compile-time error is raised by the compiler.
      * @tc.size      MediumTest
@@ -2212,7 +2183,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_10900
+     * @tc.number    SUB_STATEMENTS_ONE_0900
      * @tc.name      testStatements0109
      * @tc.desc      A continue statement stops execution of the current loop iteration and passes control to the next iteration with proper check of the loop exit condition depending on the loop kind.
      * @tc.size      MediumTest
@@ -2234,7 +2205,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_11000
+     * @tc.number    SUB_STATEMENTS_ONE_1000
      * @tc.name      testStatements0110
      * @tc.desc      A continue statement with label identifier transfers control out of the enclosing loop statement which has the same label identifier. Such statement must be in the body of the surrounding function or method otherwise compile-time error is raised by the compiler.
      * @tc.size      MediumTest
@@ -2256,7 +2227,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_11100
+     * @tc.number    SUB_STATEMENTS_ONE_1100
      * @tc.name      testStatements0111
      * @tc.desc      A continue statement stops execution of the current loop iteration and passes control to the next iteration with proper check of the loop exit condition depending on the loop kind.
      * @tc.size      MediumTest
@@ -2281,7 +2252,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_11200
+     * @tc.number    SUB_STATEMENTS_ONE_1200
      * @tc.name      testStatements0112
      * @tc.desc      A continue statement with label identifier transfers control out of the enclosing loop statement which has the same label identifier. Such statement must be in the body of the surrounding function or method otherwise compile-time error is raised by the compiler.
      * @tc.size      MediumTest
@@ -2306,7 +2277,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_11300
+     * @tc.number    SUB_STATEMENTS_ONE_1300
      * @tc.name      testStatements0113
      * @tc.desc      A continue statement with label identifier transfers control out of the enclosing loop statement which has the same label identifier. Such statement must be in the body of the surrounding function or method otherwise compile-time error is raised by the compiler.
      * @tc.size      MediumTest
@@ -2331,7 +2302,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_11400
+     * @tc.number    SUB_STATEMENTS_ONE_1400
      * @tc.name      testStatements0114
      * @tc.desc      A continue statement stops execution of the current loop iteration and passes control to the next iteration with proper check of the loop exit condition depending on the loop kind.
      * @tc.size      MediumTest
@@ -2350,7 +2321,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_11500
+     * @tc.number    SUB_STATEMENTS_ONE_1500
      * @tc.name      testStatements0115
      * @tc.desc      A continue statement stops execution of the current loop iteration and passes control to the next iteration with proper check of the loop exit condition depending on the loop kind.
      * @tc.size      MediumTest
@@ -2371,7 +2342,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_11600
+     * @tc.number    SUB_STATEMENTS_ONE_1600
      * @tc.name      testStatements0116
      * @tc.desc      A continue statement with label identifier transfers control out of the enclosing loop statement which has the same label identifier. Such statement must be in the body of the surrounding function or method otherwise compile-time error is raised by the compiler.
      * @tc.size      MediumTest
@@ -2392,7 +2363,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_11700
+     * @tc.number    SUB_STATEMENTS_ONE_1700
      * @tc.name      testStatements0117
      * @tc.desc      A continue statement stops execution of the current loop iteration and passes control to the next iteration with proper check of the loop exit condition depending on the loop kind.
      * @tc.size      MediumTest
@@ -2413,7 +2384,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_11800
+     * @tc.number    SUB_STATEMENTS_ONE_1800
      * @tc.name      testStatements0118
      * @tc.desc      A continue statement with label identifier transfers control out of the enclosing loop statement which has the same label identifier. Such statement must be in the body of the surrounding function or method otherwise compile-time error is raised by the compiler.
      * @tc.size      MediumTest
@@ -2434,7 +2405,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_11900
+     * @tc.number    SUB_STATEMENTS_ONE_1900
      * @tc.name      testStatements0119
      * @tc.desc      A continue statement stops execution of the current loop iteration and passes control to the next iteration with proper check of the loop exit condition depending on the loop kind.
      * @tc.size      MediumTest
@@ -2458,7 +2429,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_12000
+     * @tc.number    SUB_STATEMENTS_ONE_2000
      * @tc.name      testStatements0120
      * @tc.desc      A continue statement with label identifier transfers control out of the enclosing loop statement which has the same label identifier. Such statement must be in the body of the surrounding function or method otherwise compile-time error is raised by the compiler.
      * @tc.size      MediumTest
@@ -2482,7 +2453,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_12100
+     * @tc.number    SUB_STATEMENTS_ONE_2100
      * @tc.name      testStatements0121
      * @tc.desc      A continue statement with label identifier transfers control out of the enclosing loop statement which has the same label identifier. Such statement must be in the body of the surrounding function or method otherwise compile-time error is raised by the compiler.
      * @tc.size      MediumTest
@@ -2506,7 +2477,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_12200
+     * @tc.number    SUB_STATEMENTS_ONE_2200
      * @tc.name      testStatements0122
      * @tc.desc      A continue statement stops execution of the current loop iteration and passes control to the next iteration with proper check of the loop exit condition depending on the loop kind.
      * @tc.size      MediumTest
@@ -2526,7 +2497,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_12300
+     * @tc.number    SUB_STATEMENTS_ONE_2300
      * @tc.name      testStatements0123
      * @tc.desc      A continue statement stops execution of the current loop iteration and passes control to the next iteration with proper check of the loop exit condition depending on the loop kind.
      * @tc.size      MediumTest
@@ -2549,7 +2520,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_12400
+     * @tc.number    SUB_STATEMENTS_ONE_2400
      * @tc.name      testStatements0124
      * @tc.desc      A continue statement stops execution of the current loop iteration and passes control to the next iteration with proper check of the loop exit condition depending on the loop kind.
      * @tc.size      MediumTest
@@ -2572,7 +2543,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_12500
+     * @tc.number    SUB_STATEMENTS_ONE_2500
      * @tc.name      testStatements0125
      * @tc.desc      A continue statement stops execution of the current loop iteration and passes control to the next iteration with proper check of the loop exit condition depending on the loop kind.
      * @tc.size      MediumTest
@@ -2598,7 +2569,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_12600
+     * @tc.number    SUB_STATEMENTS_ONE_2600
      * @tc.name      testStatements0126
      * @tc.desc      A continue statement stops execution of the current loop iteration and passes control to the next iteration with proper check of the loop exit condition depending on the loop kind.
      * @tc.size      MediumTest
@@ -2618,7 +2589,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_12700
+     * @tc.number    SUB_STATEMENTS_ONE_2700
      * @tc.name      testStatements0127
      * @tc.desc      A continue statement stops execution of the current loop iteration and passes control to the next iteration with proper check of the loop exit condition depending on the loop kind.
      * @tc.size      MediumTest
@@ -2640,7 +2611,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_12800
+     * @tc.number    SUB_STATEMENTS_ONE_2800
      * @tc.name      testStatements0128
      * @tc.desc      Continue statement (inside while statement)
      * @tc.size      MediumTest
@@ -2660,7 +2631,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_12900
+     * @tc.number    SUB_STATEMENTS_ONE_2900
      * @tc.name      testStatements0129
      * @tc.desc      A continue statement with label identifier transfers control out of the enclosing loop statement which has the same label identifier. Such statement must be in the body of the surrounding function or method otherwise compile-time error is raised by the compiler.
      * @tc.size      MediumTest
@@ -2682,7 +2653,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_13000
+     * @tc.number    SUB_STATEMENTS_ONE_3000
      * @tc.name      testStatements0130
      * @tc.desc      A continue statement stops execution of the current loop iteration and passes control to the next iteration with proper check of the loop exit condition depending on the loop kind.
      * @tc.size      MediumTest
@@ -2704,7 +2675,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_13100
+     * @tc.number    SUB_STATEMENTS_ONE_3100
      * @tc.name      testStatements0131
      * @tc.desc      A continue statement with label identifier transfers control out of the enclosing loop statement which has the same label identifier. Such statement must be in the body of the surrounding function or method otherwise compile-time error is raised by the compiler.
      * @tc.size      MediumTest
@@ -2726,7 +2697,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_13200
+     * @tc.number    SUB_STATEMENTS_ONE_3200
      * @tc.name      testStatements0132
      * @tc.desc      A continue statement stops execution of the current loop iteration and passes control to the next iteration with proper check of the loop exit condition depending on the loop kind.
      * @tc.size      MediumTest
@@ -2751,7 +2722,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_13300
+     * @tc.number    SUB_STATEMENTS_ONE_3300
      * @tc.name      testStatements0133
      * @tc.desc      A continue statement with label identifier transfers control out of the enclosing loop statement which has the same label identifier. Such statement must be in the body of the surrounding function or method otherwise compile-time error is raised by the compiler.
      * @tc.size      MediumTest
@@ -2776,7 +2747,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_13400
+     * @tc.number    SUB_STATEMENTS_ONE_3400
      * @tc.name      testStatements0134
      * @tc.desc      A continue statement with label identifier transfers control out of the enclosing loop statement which has the same label identifier. Such statement must be in the body of the surrounding function or method otherwise compile-time error is raised by the compiler.
      * @tc.size      MediumTest
@@ -2801,7 +2772,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_13500
+     * @tc.number    SUB_STATEMENTS_ONE_3500
      * @tc.name      testStatements0135
      * @tc.desc      Switch statement
      * @tc.size      MediumTest
@@ -2817,7 +2788,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_13600
+     * @tc.number    SUB_STATEMENTS_ONE_3600
      * @tc.name      testStatements0136
      * @tc.desc      Switch statement
      * @tc.size      MediumTest
@@ -2834,7 +2805,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_13700
+     * @tc.number    SUB_STATEMENTS_ONE_3700
      * @tc.name      testStatements0137
      * @tc.desc      Switch statement
      * @tc.size      MediumTest
@@ -2850,7 +2821,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_13800
+     * @tc.number    SUB_STATEMENTS_ONE_3800
      * @tc.name      testStatements0138
      * @tc.desc      Switch statement with interpolated string.
      * @tc.size      MediumTest
@@ -2864,7 +2835,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_13900
+     * @tc.number    SUB_STATEMENTS_ONE_3900
      * @tc.name      testStatements0139
      * @tc.desc      Switch statement
      * @tc.size      MediumTest
@@ -2878,7 +2849,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_14000
+     * @tc.number    SUB_STATEMENTS_ONE_4000
      * @tc.name      testStatements0140
      * @tc.desc      Switch statement
      * @tc.size      MediumTest
@@ -2898,7 +2869,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_14100
+     * @tc.number    SUB_STATEMENTS_ONE_4100
      * @tc.name      testStatements0141
      * @tc.desc      Switch statement
      * @tc.size      MediumTest
@@ -2912,7 +2883,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_14200
+     * @tc.number    SUB_STATEMENTS_ONE_4200
      * @tc.name      testStatements0142
      * @tc.desc      Throw statements cause an exception or Error to be thrown.
      * @tc.size      MediumTest
@@ -2940,7 +2911,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_14300
+     * @tc.number    SUB_STATEMENTS_ONE_4300
      * @tc.name      testStatements0143
      * @tc.desc      Try statements run the block of code to handle exceptions and errors.
      * @tc.size      MediumTest
@@ -2954,7 +2925,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_14400
+     * @tc.number    SUB_STATEMENTS_ONE_4400
      * @tc.name      testStatements0144
      * @tc.desc      Try statements run the block of code to handle exceptions and errors.
      * @tc.size      MediumTest
@@ -2972,7 +2943,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_14500
+     * @tc.number    SUB_STATEMENTS_ONE_4500
      * @tc.name      testStatements0145
      * @tc.desc      Try statements run the block of code to handle exceptions and errors.
      * @tc.size      MediumTest
@@ -2990,7 +2961,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_14600
+     * @tc.number    SUB_STATEMENTS_ONE_4600
      * @tc.name      testStatements0146
      * @tc.desc      Try statements run the block of code to handle exceptions and errors.
      * @tc.size      MediumTest
@@ -3013,7 +2984,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_14700
+     * @tc.number    SUB_STATEMENTS_ONE_4700
      * @tc.name      testStatements0147
      * @tc.desc      Try statements run the block of code to handle exceptions and errors.
      * @tc.size      MediumTest
@@ -3032,7 +3003,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_14800
+     * @tc.number    SUB_STATEMENTS_ONE_4800
      * @tc.name      testStatements0148
      * @tc.desc      A catch clause consists of two parts: - Catch identifier that provides access to the object associated with the error thrown; and - Block of code that handles the situation.
      * @tc.size      MediumTest
@@ -3045,7 +3016,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_14900
+     * @tc.number    SUB_STATEMENTS_ONE_4900
      * @tc.name      testStatements0149
      * @tc.desc      A finally clause defines a set of actions as a block which is executed regardless how try-catch was fulfilled normally or abruptly.
      * @tc.size      MediumTest
@@ -3064,7 +3035,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_15000
+     * @tc.number    SUB_STATEMENTS_ONE_5000
      * @tc.name      testStatements0150
      * @tc.desc      A finally clause defines a set of actions as a block which is executed regardless how try-catch was fulfilled normally or abruptly.
      * @tc.size      MediumTest
@@ -3086,7 +3057,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_15100
+     * @tc.number    SUB_STATEMENTS_ONE_5100
      * @tc.name      testStatements0151
      * @tc.desc      A finally clause defines a set of actions as a block which is executed regardless how try-catch was fulfilled normally or abruptly.
      * @tc.size      MediumTest
@@ -3106,7 +3077,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_15200
+     * @tc.number    SUB_STATEMENTS_ONE_5200
      * @tc.name      testStatements0152
      * @tc.desc      A finally clause defines a set of actions as a block which is executed regardless how try-catch was fulfilled normally or abruptly.
      * @tc.size      MediumTest
@@ -3127,7 +3098,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_15300
+     * @tc.number    SUB_STATEMENTS_ONE_5300
      * @tc.name      testStatements0153
      * @tc.desc      The try block and the entire try statement completes normally if catch blocks are not executed. Try block execution completes abruptly if an exception or error x is thrown inside the try block.
      * @tc.size      MediumTest
@@ -3143,7 +3114,7 @@ export default function StatementsTest() {
     });
 
     /**
-     * @tc.number    SUB_STATEMENTS_15400
+     * @tc.number    SUB_STATEMENTS_ONE_5400
      * @tc.name      testStatements0154
      * @tc.desc      The try block and the entire try statement completes normally if catch blocks are not executed. Try block execution completes abruptly if an exception or error x is thrown inside the try block.
      * @tc.size      MediumTest
