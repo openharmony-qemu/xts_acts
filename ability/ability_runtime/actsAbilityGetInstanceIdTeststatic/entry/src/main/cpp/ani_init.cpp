@@ -135,6 +135,7 @@ ANI_EXPORT ani_status ANI_Constructor(ani_vm *vm, uint32_t *result)
     bindCase(vm, "entry.src.main.ets.abilitystage.MyAbilityStage.Calc");
     bindCase(vm, "entry.src.main.ets.entryability.EntryAbility.Calc");
     bindCase(vm, "entry.src.main.ets.pages.Index.Calc");
+    bindCase(vm, "entry.src.main.src.test.GetInstanceIdTestStatic.test.Calc");
     *result = ANI_VERSION_1;
     return ANI_OK;
 }

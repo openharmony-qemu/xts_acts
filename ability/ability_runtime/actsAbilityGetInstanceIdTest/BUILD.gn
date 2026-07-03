@@ -13,6 +13,14 @@
 
 import("//test/xts/tools/build/suite.gni")
 
+ohos_js_app_suite("ActsGetInstanceIdMainTest") {
+  testonly = true
+  certificate_profile = "./signature/openharmony_sx.p7b"
+  hap_name = "ActsGetInstanceIdMainTest"
+  part_name = "ability_runtime"
+  subsystem_name = "ability"
+}
+
 ohos_js_app_suite("ActsGetInstanceIdTest") {
   test_hap = true
   testonly = true
@@ -20,4 +28,5 @@ ohos_js_app_suite("ActsGetInstanceIdTest") {
   hap_name = "ActsGetInstanceIdTest"
   part_name = "ability_runtime"
   subsystem_name = "ability"
+  deps = [ ":ActsGetInstanceIdMainTest"]
 }
