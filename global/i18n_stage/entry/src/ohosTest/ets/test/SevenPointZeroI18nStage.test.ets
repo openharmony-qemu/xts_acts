@@ -4027,7 +4027,7 @@ export default function SevenPointZeroI18nStageTest() {
         let value: boolean = i18n.ChineseCalendar.checkLeapMonth(2200, 20, 3);
         console.log('SUB_GLOBAL_GetChineseCalendar_Test_1300 value:', value);
       }catch(e){
-        expect(e.code).assertEqual('890001');
+        expect(e.code).assertEqual('8900001');
       }
     })
 
