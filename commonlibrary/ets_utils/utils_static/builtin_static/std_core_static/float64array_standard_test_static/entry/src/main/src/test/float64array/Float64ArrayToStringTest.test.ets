@@ -52,10 +52,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
-      const threePointZero: number = 3.0;
-      const values = Float64Array.of(onePointZero, twoPointZero, threePointZero);
+      const values = Float64Array.of(1.0, 2.0, 3.0);
       const result = values.toString();
       const expectVal = "1,2,3";
       expect(result).assertEqual(expectVal);
@@ -70,8 +67,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const twoPointFive: number = 2.5;
-      const values = Float64Array.of(twoPointFive);
+      const values = new Float64Array([2.5]);
       const result = values.toString();
       const expectVal = "2.5";
       expect(result).assertEqual(expectVal);
@@ -86,8 +82,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const negOnePointFive: number = -1.5;
-      const values = Float64Array.of(negOnePointFive);
+      const values = Float64Array.of(-1.5);
       const result = values.toString();
       const expectVal = "-1.5";
       expect(result).assertEqual(expectVal);
@@ -117,8 +112,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const values = Float64Array.of(onePointZero);
+      const values = Float64Array.of(1.0);
       const result = values.toString();
       const expectVal = "1";
       expect(result).assertEqual(expectVal);
@@ -133,8 +127,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const negonePointzero: number = -1.0;
-      const values = Float64Array.of(negonePointzero);
+      const values = new Float64Array([-1.0]);
       const result = values.toString();
       const expectVal = "-1";
       expect(result).assertEqual(expectVal);
@@ -149,8 +142,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const zeroPointZero: number = 0.0;
-      const values = Float64Array.of(zeroPointZero);
+      const values = new Float64Array([0.0]);
       const result = values.toString();
       const expectVal = "0";
       expect(result).assertEqual(expectVal);
@@ -165,8 +157,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const negativeZero: number = -0.0;
-      const values = Float64Array.of(negativeZero);
+      const values = Float64Array.of(-0.0);
       const result = values.toString();
       const expectVal = "0";
       expect(result).assertEqual(expectVal);
@@ -182,7 +173,7 @@ export default function float64ArrayToStringTest(): void {
      */
     it('testFloat64ArrayToString009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const nanValue: number = Number.NaN;
-      const values = Float64Array.of(nanValue);
+      const values = new Float64Array([nanValue]);
       const result = values.toString();
       const expectVal = "NaN";
       expect(result).assertEqual(expectVal);
@@ -198,7 +189,7 @@ export default function float64ArrayToStringTest(): void {
      */
     it('testFloat64ArrayToString010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const positiveInfinity: number = Number.POSITIVE_INFINITY;
-      const values = Float64Array.of(positiveInfinity);
+      const values = new Float64Array([positiveInfinity]);
       const result = values.toString();
       const expectVal = "Infinity";
       expect(result).assertEqual(expectVal);
@@ -214,7 +205,7 @@ export default function float64ArrayToStringTest(): void {
      */
     it('testFloat64ArrayToString011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const negativeInfinity: number = Number.NEGATIVE_INFINITY;
-      const values = Float64Array.of(negativeInfinity);
+      const values = new Float64Array([negativeInfinity]);
       const result = values.toString();
       const expectVal = "-Infinity";
       expect(result).assertEqual(expectVal);
@@ -229,8 +220,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const doubleMinValue: number = 5e-324;
-      const values = Float64Array.of(doubleMinValue);
+      const values = new Float64Array([5e-324]);
       const result = values.toString();
       const expectVal = "5e-324";
       expect(result).assertEqual(expectVal);
@@ -245,8 +235,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const doubleMaxValue: number = 1.7976931348623157e+308;
-      const values = Float64Array.of(doubleMaxValue);
+      const values = new Float64Array([1.7976931348623157e+308]);
       const result = values.toString();
       const expectVal = "1.7976931348623157e+308";
       expect(result).assertEqual(expectVal);
@@ -261,8 +250,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const values = Float64Array.of(pointFive);
+      const values = new Float64Array([0.5]);
       const result = values.toString();
       const expectVal = "0.5";
       expect(result).assertEqual(expectVal);
@@ -277,9 +265,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
-      const values = Float64Array.of(onePointZero, twoPointZero);
+      const values = Float64Array.of(1.0, 2.0);
       const result = values.toString();
       const expectVal = "1,2";
       expect(result).assertEqual(expectVal);
@@ -294,10 +280,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const negonePointzero: number = -1.0;
-      const negtwoPointzero: number = -2.0;
-      const negthreePointzero: number = -3.0;
-      const values = Float64Array.of(negonePointzero, negtwoPointzero, negthreePointzero);
+      const values = new Float64Array([-1.0, -2.0, -3.0]);
       const result = values.toString();
       const expectVal = "-1,-2,-3";
       expect(result).assertEqual(expectVal);
@@ -328,10 +311,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const negonePointzero: number = -1.0;
-      const zeroPointZero: number = 0.0;
-      const onePointZero: number = 1.0;
-      const values = Float64Array.of(negonePointzero, zeroPointZero, onePointZero);
+      const values = new Float64Array([-1.0, 0.0, 1.0]);
       const result = values.toString();
       const expectVal = "-1,0,1";
       expect(result).assertEqual(expectVal);
@@ -346,10 +326,8 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
       const nanValue: number = Number.NaN;
-      const threePointZero: number = 3.0;
-      const values = Float64Array.of(onePointZero, nanValue, threePointZero);
+      const values = Float64Array.of(1.0, nanValue, 3.0);
       const result = values.toString();
       const expectVal = "1,NaN,3";
       expect(result).assertEqual(expectVal);
@@ -364,10 +342,8 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
       const positiveInfinity: number = Number.POSITIVE_INFINITY;
-      const threePointZero: number = 3.0;
-      const values = Float64Array.of(onePointZero, positiveInfinity, threePointZero);
+      const values = Float64Array.of(1.0, positiveInfinity, 3.0);
       const result = values.toString();
       const expectVal = "1,Infinity,3";
       expect(result).assertEqual(expectVal);
@@ -382,10 +358,8 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
       const negativeInfinity: number = Number.NEGATIVE_INFINITY;
-      const threePointZero: number = 3.0;
-      const values = Float64Array.of(onePointZero, negativeInfinity, threePointZero);
+      const values = Float64Array.of(1.0, negativeInfinity, 3.0);
       const result = values.toString();
       const expectVal = "1,-Infinity,3";
       expect(result).assertEqual(expectVal);
@@ -417,7 +391,7 @@ export default function float64ArrayToStringTest(): void {
      */
     it('testFloat64ArrayToString023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const positiveInfinity: number = Number.POSITIVE_INFINITY;
-      const values = Float64Array.of(positiveInfinity, positiveInfinity);
+      const values = new Float64Array([positiveInfinity, positiveInfinity]);
       const result = values.toString();
       const expectVal = "Infinity,Infinity";
       expect(result).assertEqual(expectVal);
@@ -432,10 +406,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const pointTwo: number = 0.2;
-      const pointThree: number = 0.3;
-      const values = Float64Array.of(pointOne, pointTwo, pointThree);
+      const values = new Float64Array([0.1, 0.2, 0.3]);
       const result = values.toString();
       const expectVal = "0.1,0.2,0.3";
       expect(result).assertEqual(expectVal);
@@ -450,9 +421,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const sciValue10e10: number = 1.0e-10;
-      const sciValue20e10: number = 2.0e+10;
-      const values = Float64Array.of(sciValue10e10, sciValue20e10);
+      const values = new Float64Array([1.0e-10, 2.0e+10]);
       const result = values.toString();
       const expectVal = "1e-10,20000000000";
       expect(result).assertEqual(expectVal);
@@ -467,9 +436,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const doubleMinValue: number = 5e-324;
-      const doubleMaxValue: number = 1.7976931348623157e+308;
-      const values = Float64Array.of(doubleMinValue, doubleMaxValue);
+      const values = Float64Array.of(5e-324, 1.7976931348623157e+308);
       const result = values.toString();
       const expectVal = "5e-324,1.7976931348623157e+308";
       expect(result).assertEqual(expectVal);
@@ -484,8 +451,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const fillValue42: number = 42.0;
-      const values = Float64Array.of(fillValue42);
+      const values = new Float64Array([42.0]);
       const actVal1 = values.toString();
       const expectVal = "42";
       expect(actVal1).assertEqual(expectVal);
@@ -500,12 +466,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
-      const threePointZero: number = 3.0;
-      const fourPointZero: number = 4.0;
-      const fivePointZero: number = 5.0;
-      const values = Float64Array.of(onePointZero, twoPointZero, threePointZero, fourPointZero, fivePointZero);
+      const values = new Float64Array([1.0, 2.0, 3.0, 4.0, 5.0]);
       const actVal2 = values.toString();
       const expectVal = "1,2,3,4,5";
       expect(actVal2).assertEqual(expectVal);
@@ -537,10 +498,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const neghundredPointzero: number = -100.0;
-      const negativeZero: number = -0.0;
-      const hundredPointzero: number = 100.0;
-      const values = Float64Array.of(neghundredPointzero, negativeZero, hundredPointzero);
+      const values = new Float64Array([-100.0, -0.0, 100.0]);
       const actVal4 = values.toString();
       const expectVal = "-100,0,100";
       expect(actVal4).assertEqual(expectVal);
@@ -555,9 +513,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const zeroPointonetwothree: number = 0.123;
-      const num456Pointseveneightnine: number = 456.789;
-      const values = Float64Array.of(zeroPointonetwothree, num456Pointseveneightnine);
+      const values = new Float64Array([0.123, 456.789]);
       const actVal5 = values.toString();
       const expectVal = "0.123,456.789";
       expect(actVal5).assertEqual(expectVal);
@@ -572,9 +528,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const sciValue10e308: number = 1.0e-308;
-      const sciValue10e3082: number = 1.0e+308;
-      const values = Float64Array.of(sciValue10e308, sciValue10e3082);
+      const values = Float64Array.of(1.0e-308, 1.0e+308);
       const actVal6 = values.toString();
       const expectVal = "1e-308,1e+308";
       expect(actVal6).assertEqual(expectVal);
@@ -589,8 +543,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const zeroPointZero: number = 0.0;
-      const values = Float64Array.of(+zeroPointZero);
+      const values = Float64Array.of(+0.0);
       const result = values.toString();
       const expectVal = "0";
       expect(result).assertEqual(expectVal);
@@ -605,9 +558,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const zeroPointZero: number = 0.0;
-      const negativeZero: number = -0.0;
-      const values = Float64Array.of(zeroPointZero, negativeZero);
+      const values = Float64Array.of(0.0, -0.0);
       const result = values.toString();
       const expectVal = "0,0";
       expect(result).assertEqual(expectVal);
@@ -622,8 +573,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const maxSafeIntegerValue: number = 9007199254740991.0;
-      const values = Float64Array.of(maxSafeIntegerValue);
+      const values = Float64Array.of(9007199254740991.0);
       const result = values.toString();
       const expectVal = "9007199254740991";
       expect(result).assertEqual(expectVal);
@@ -638,8 +588,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const negativeMaxSafeIntegerValue: number = -9007199254740991.0;
-      const values = Float64Array.of(negativeMaxSafeIntegerValue);
+      const values = new Float64Array([-9007199254740991.0]);
       const result = values.toString();
       const expectVal = "-9007199254740991";
       expect(result).assertEqual(expectVal);
@@ -654,8 +603,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const num2147483647Pointzero: number = 2147483647.0;
-      const values = Float64Array.of(num2147483647Pointzero);
+      const values = new Float64Array([2147483647.0]);
       const result = values.toString();
       const expectVal = "2147483647";
       expect(result).assertEqual(expectVal);
@@ -670,8 +618,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const negnum2147483648Pointzero: number = -2147483648.0;
-      const values = Float64Array.of(negnum2147483648Pointzero);
+      const values = new Float64Array([-2147483648.0]);
       const result = values.toString();
       const expectVal = "-2147483648";
       expect(result).assertEqual(expectVal);
@@ -686,10 +633,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
-      const threePointZero: number = 3.0;
-      const values = Float64Array.of(onePointZero, twoPointZero, threePointZero);
+      const values = Float64Array.of(1.0, 2.0, 3.0);
       const beforeLength = values.length;
       const before0 = values.$_get(0);
       const before1 = values.$_get(1);
@@ -719,7 +663,7 @@ export default function float64ArrayToStringTest(): void {
       const nanValue: number = Number.NaN;
       const positiveInfinity: number = Number.POSITIVE_INFINITY;
       const zeroPointZero: number = 0.0;
-      const values = Float64Array.of(nanValue, positiveInfinity, zeroPointZero);
+      const values = new Float64Array([nanValue, positiveInfinity, zeroPointZero]);
       const before0 = values.$_get(0);
       const before1 = values.$_get(1);
       const before2 = values.$_get(2);
@@ -746,10 +690,8 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
       const negativeOne: number = -1;
-      const values = Float64Array.of(onePointZero, twoPointZero);
+      const values = Float64Array.of(1.0, 2.0);
       const result = values.toString();
       const actVal12 = result.indexOf("|");
       const expectVal = negativeOne;
@@ -771,9 +713,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const negativeTwoPointFive: number = -2.5;
-      const values = Float64Array.of(onePointZero, negativeTwoPointFive);
+      const values = Float64Array.of(1.0, -2.5);
       const result = values.toString();
       const expectVal = "1,-2.5";
       expect(result).assertEqual(expectVal);
@@ -788,9 +728,8 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
       try {
-        const values = Float64Array.of(onePointZero);
+        const values = new Float64Array([1.0]);
         values.toString();
       } catch (e) {
         expect(e).assertNull();
@@ -827,7 +766,7 @@ export default function float64ArrayToStringTest(): void {
       const positiveInfinity: number = Number.POSITIVE_INFINITY;
       const negativeInfinity: number = Number.NEGATIVE_INFINITY;
       try {
-        const values = Float64Array.of(nanValue, positiveInfinity, negativeInfinity);
+        const values = new Float64Array([nanValue, positiveInfinity, negativeInfinity]);
         values.toString();
       } catch (e) {
         expect(e).assertNull();
@@ -858,10 +797,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
-      const threePointZero: number = 3.0;
-      const values = new Float64Array([onePointZero, twoPointZero, threePointZero]);
+      const values = new Float64Array([1.0, 2.0, 3.0]);
       const result = values.toString();
       const expectVal = "1,2,3";
       expect(result).assertEqual(expectVal);
@@ -876,10 +812,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const tenPointZero: number = 10.0;
-      const twentyPointzero: number = 20.0;
-      const thirtyPointzero: number = 30.0;
-      const values = Float64Array.of(tenPointZero, twentyPointzero, thirtyPointzero);
+      const values = Float64Array.of(10.0, 20.0, 30.0);
       const result = values.toString();
       const expectVal = "10,20,30";
       expect(result).assertEqual(expectVal);
@@ -894,9 +827,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const fivePointZero: number = 5.0;
-      const sixPointZero: number = 6.0;
-      const source = Float64Array.of(fivePointZero, sixPointZero);
+      const source = new Float64Array([5.0, 6.0]);
       const values = new Float64Array(source);
       const result = values.toString();
       const expectVal = "5,6";
@@ -929,19 +860,13 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
-      const threePointZero: number = 3.0;
-      const fourPointZero: number = 4.0;
-      const fivePointZero: number = 5.0;
-      const sixPointZero: number = 6.0;
       const sevenPointZero: number = 7.0;
       const eightPointZero: number = 8.0;
       const ninePointZero: number = 9.0;
       const tenPointZero: number = 10.0;
       const values =
-        Float64Array.of(onePointZero, twoPointZero, threePointZero, fourPointZero, fivePointZero, sixPointZero,
-          sevenPointZero, eightPointZero, ninePointZero, tenPointZero);
+        new Float64Array([1.0, 2.0, 3.0, 4.0, 5.0, 6.0,
+          sevenPointZero, eightPointZero, ninePointZero, tenPointZero]);
       const result = values.toString();
       const expectVal = "1,2,3,4,5,6,7,8,9,10";
       expect(result).assertEqual(expectVal);
@@ -956,9 +881,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const pointTwo: number = 0.2;
-      const values = Float64Array.of(pointOne + pointTwo);
+      const values = new Float64Array([0.1 + 0.2]);
       const result = values.toString();
       const expectVal = "0.30000000000000004";
       expect(result).assertEqual(expectVal);
@@ -973,8 +896,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const piHighPrecisionValue: number = 3.14159265358979;
-      const values = Float64Array.of(piHighPrecisionValue);
+      const values = new Float64Array([3.14159265358979]);
       const result = values.toString();
       const expectVal = "3.14159265358979";
       expect(result).assertEqual(expectVal);
@@ -989,8 +911,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const values = Float64Array.of(onePointZero);
+      const values = Float64Array.of(1.0);
       const result = values.toString();
       const concatenated = result + "suffix";
       const expectVal = "1suffix";
@@ -1006,8 +927,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const values = Float64Array.of(onePointZero);
+      const values = Float64Array.of(1.0);
       const result = values.toString();
       const expectVal = true;
       expect(result != null).assertEqual(expectVal);
@@ -1045,7 +965,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = Float64Array.of(5.0, 6.0, 7.0, 8.0);
+      const a = new Float64Array([5.0, 6.0, 7.0, 8.0]);
       const v = a.subarray(1, 3);
       a.$_set(2, 70.0);
       const actVal17 = v.toString();
@@ -1065,7 +985,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = Float64Array.of(1.0, 2.0, 3.0);
+      const a = new Float64Array([1.0, 2.0, 3.0]);
       const r = a.toReversed();
       const actVal19 = r.toString();
       const expectVal = "3,2,1";
@@ -1118,7 +1038,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = Float64Array.of(Infinity, -Infinity, NaN);
+      const a = new Float64Array([Infinity, -Infinity, NaN]);
       const actVal24 = a.toString();
       const expectVal = "Infinity,-Infinity,NaN";
       expect(actVal24).assertEqual(expectVal);
@@ -1133,8 +1053,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const minusZero: number = -0.0;
-      const a = Float64Array.of(minusZero, 0.0);
+      const a = Float64Array.of(-0.0, 0.0);
       const actVal25 = a.toString();
       const expectVal = "0,0";
       expect(actVal25).assertEqual(expectVal);
@@ -1152,7 +1071,7 @@ export default function float64ArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToString063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = Float64Array.of(1.0, 2.0, 3.0);
+      const a = new Float64Array([1.0, 2.0, 3.0]);
       a.fill(4.5);
       const actVal27 = a.toString();
       const expectVal = "4.5,4.5,4.5";
