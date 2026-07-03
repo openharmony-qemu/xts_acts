@@ -4445,7 +4445,7 @@ static napi_value RemoveAuxiliaryPicturePicNull(napi_env env, napi_callback_info
 {
     napi_value result = nullptr;
     napi_create_int32(env, TEST_ERRCODE, &result);
-    Image_ErrorCode errCode = OH_PictureNative_RemoveAuxiliaryPicture(nullptr, AUXILIARY_PICTURE_TYPE_PAN_GAINMAP);
+    Image_ErrorCode errCode = OH_PictureNative_RemoveAuxiliaryPicture(nullptr, AUXILIARY_PICTURE_TYPE_GAINMAP);
     if (errCode == IMAGE_INVALID_PARAMETER) {
         napi_create_int32(env, TEST_SUCCESS, &result);
     }
@@ -4526,7 +4526,7 @@ static napi_value RemoveMetadataPicNull(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     napi_create_int32(env, TEST_ERRCODE, &result);
-    Image_ErrorCode errCode = OH_PictureNative_RemoveMetadata(nullptr, DFXDATA_METADATA);
+    Image_ErrorCode errCode = OH_PictureNative_RemoveMetadata(nullptr, EXIF_METADATA);
     if (errCode == IMAGE_INVALID_PARAMETER) {
         napi_create_int32(env, TEST_SUCCESS, &result);
     }
