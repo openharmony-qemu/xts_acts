@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+import Utils from "../../../Util.test";
+
 import {
   expect,
   describe,
@@ -97,42 +99,22 @@ type TT_0 = [number, number, string, boolean, Object]
 enum Color_0 { Red, Green, Blue }
 enum Commands_0 { Open = "fopen", Close = "fclose" }
 type CC_0 = Color_0 | Commands_0
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-
-export default function RecordUtilityTypeTest() {
+export default function RecordUtilityTypeTest(): void {
   describe("RecordUtilityTypeTest", () => {
-    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
     })
     beforeEach(async () => {
-      // Presets an action, which is performed before each unit test case starts.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
     })
     afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
     })
 
     /**
      * @tc.number    SUB_RECORD_UTILITY_TYPE_0100
      * @tc.name      testRecordUtilityType0001
-     * @tc.desc      Type Record<K, V> constructs a container that maps keys (of type K) to values
-     *               (of type V).
+     * @tc.desc      Basic Record<string, Error>
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -147,8 +129,7 @@ export default function RecordUtilityTypeTest() {
     /**
      * @tc.number    SUB_RECORD_UTILITY_TYPE_0200
      * @tc.name      testRecordUtilityType0002
-     * @tc.desc      Type Record<K, V> constructs a container that maps keys (of type K) to values
-     *               (of type V).
+     * @tc.desc      Generic Record<string, Error> via R1_1<T>
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -163,8 +144,7 @@ export default function RecordUtilityTypeTest() {
     /**
      * @tc.number    SUB_RECORD_UTILITY_TYPE_0400
      * @tc.name      testRecordUtilityType0004
-     * @tc.desc      Type Record<K, V> constructs a container that maps keys (of type K) to values
-     *               (of type V).
+     * @tc.desc      Array of Record<string, number>
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -182,8 +162,7 @@ export default function RecordUtilityTypeTest() {
     /**
      * @tc.number    SUB_RECORD_UTILITY_TYPE_0500
      * @tc.name      testRecordUtilityType0005
-     * @tc.desc      Type Record<K, V> constructs a container that maps keys (of type K) to values
-     *               (of type V).
+     * @tc.desc      Tuple of Record types
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -205,8 +184,7 @@ export default function RecordUtilityTypeTest() {
     /**
      * @tc.number    SUB_RECORD_UTILITY_TYPE_0600
      * @tc.name      testRecordUtilityType0006
-     * @tc.desc      Type Record<K, V> constructs a container that maps keys (of type K) to values
-     *               (of type V).
+     * @tc.desc      Class with Record fields (string and number keys)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -224,8 +202,7 @@ export default function RecordUtilityTypeTest() {
     /**
      * @tc.number    SUB_RECORD_UTILITY_TYPE_0700
      * @tc.name      testRecordUtilityType0007
-     * @tc.desc      Type Record<K, V> constructs a container that maps keys (of type K) to values
-     *               (of type V).
+     * @tc.desc      Record with union string literal keys
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -243,8 +220,7 @@ export default function RecordUtilityTypeTest() {
     /**
      * @tc.number    SUB_RECORD_UTILITY_TYPE_0800
      * @tc.name      testRecordUtilityType0008
-     * @tc.desc      Type Record<K, V> constructs a container that maps keys (of type K) to values
-     *               (of type V).
+     * @tc.desc      Record with generic class inheritance
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -265,8 +241,7 @@ export default function RecordUtilityTypeTest() {
     /**
      * @tc.number    SUB_RECORD_UTILITY_TYPE_0900
      * @tc.name      testRecordUtilityType0009
-     * @tc.desc      Type Record<K, V> constructs a container that maps keys (of type K) to values
-     *               (of type V).
+     * @tc.desc      Record cast through Object
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -285,8 +260,7 @@ export default function RecordUtilityTypeTest() {
     /**
      * @tc.number    SUB_RECORD_UTILITY_TYPE_1000
      * @tc.name      testRecordUtilityType0010
-     * @tc.desc      Type Record<K, V> constructs a container that maps keys (of type K) to values
-     *               (of type V).
+     * @tc.desc      Record with string|number keys and bigint values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -309,8 +283,7 @@ export default function RecordUtilityTypeTest() {
     /**
      * @tc.number    SUB_RECORD_UTILITY_TYPE_1100
      * @tc.name      testRecordUtilityType0011
-     * @tc.desc      Type Record<K, V> constructs a container that maps keys (of type K) to values
-     *               (of type V).
+     * @tc.desc      Record with mixed value types
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -335,8 +308,7 @@ export default function RecordUtilityTypeTest() {
     /**
      * @tc.number    SUB_RECORD_UTILITY_TYPE_1200
      * @tc.name      testRecordUtilityType0012
-     * @tc.desc      Type Record<K, V> constructs a container that maps keys (of type K) to values
-     *               (of type V).
+     * @tc.desc      A_2 generic container with Record values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -353,8 +325,7 @@ export default function RecordUtilityTypeTest() {
     /**
      * @tc.number    SUB_RECORD_UTILITY_TYPE_1300
      * @tc.name      testRecordUtilityType0013
-     * @tc.desc      Type Record<K, V> constructs a container that maps keys (of type K) to values
-     *               (of type V).
+     * @tc.desc      A_3 generic container with Numeric keys
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -373,8 +344,7 @@ export default function RecordUtilityTypeTest() {
     /**
      * @tc.number    SUB_RECORD_UTILITY_TYPE_1400
      * @tc.name      testRecordUtilityType0014
-     * @tc.desc      Type Record<K, V> constructs a container that maps keys (of type K) to values
-     *               (of type V).
+     * @tc.desc      Record<Int, tuple>
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -388,8 +358,7 @@ export default function RecordUtilityTypeTest() {
     /**
      * @tc.number    SUB_RECORD_UTILITY_TYPE_1500
      * @tc.name      testRecordUtilityType0015
-     * @tc.desc      Type Record<K, V> constructs a container that maps keys (of type K) to values
-     *               (of type V).
+     * @tc.desc      Record<Int, FixedArray>
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -402,8 +371,7 @@ export default function RecordUtilityTypeTest() {
     /**
      * @tc.number    SUB_RECORD_UTILITY_TYPE_1600
      * @tc.name      testRecordUtilityType0016
-     * @tc.desc      Type Record<K, V> constructs a container that maps keys (of type K) to values
-     *               (of type V).
+     * @tc.desc      Nullable Record types
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -415,774 +383,184 @@ export default function RecordUtilityTypeTest() {
       } as Record<string, int>
       expect(r!['a']).assertEqual(1)
       expect(r!['b']).assertEqual(2)
-    })
 
-    /**
-     * @tc.number    SUB_RECORD_UTILITY_TYPE_1700
-     * @tc.name      testRecordUtilityType0017
-     * @tc.desc      Type Record<K, V> constructs a container that maps keys (of type K) to values
-     *               (of type V).
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testRecordUtilityType0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let r: Record<string, int>|undefined = {
+      let s: Record<string, int>|undefined = {
         'a': 1,
         'b': 2,
       } as Record<string, int>
-      expect(r!['a']).assertEqual(1)
-      expect(r!['b']).assertEqual(2)
-    })
+      expect(s!['a']).assertEqual(1)
+      expect(s!['b']).assertEqual(2)
 
-    /**
-     * @tc.number    SUB_RECORD_UTILITY_TYPE_1800
-     * @tc.name      testRecordUtilityType0018
-     * @tc.desc      Type Record<K, V> constructs a container that maps keys (of type K) to values
-     *               (of type V).
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testRecordUtilityType0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let r: Record<string, int|null>|null = {
+      let t: Record<string, int|null>|null = {
         'a': 1,
         'b': null,
       } as Record<string, int|null>
-      expect(r!['a']).assertEqual(1)
-      expect(r!['b']).assertEqual(null)
-    })
+      expect(t!['a']).assertEqual(1)
+      expect(t!['b']).assertEqual(null)
 
-    /**
-     * @tc.number    SUB_RECORD_UTILITY_TYPE_1900
-     * @tc.name      testRecordUtilityType0019
-     * @tc.desc      Type Record<K, V> constructs a container that maps keys (of type K) to values
-     *               (of type V).
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testRecordUtilityType0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let r: Record<string, int|undefined>|undefined = {
+      let u: Record<string, int|undefined>|undefined = {
         'a': 1,
         'b': undefined,
       } as Record<string, int|undefined>
-      expect(r!['a']).assertEqual(1)
-      expect(r!['b']).assertEqual(undefined)
-    })
+      expect(u!['a']).assertEqual(1)
+      expect(u!['b']).assertEqual(undefined)
 
-    /**
-     * @tc.number    SUB_RECORD_UTILITY_TYPE_2000
-     * @tc.name      testRecordUtilityType0020
-     * @tc.desc      Type Record<K, V> constructs a container that maps keys (of type K) to values
-     *               (of type V).
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testRecordUtilityType0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let r: Record<string, Record<string, int|null>|null>|null = {
+      let v: Record<string, Record<string, int|null>|null>|null = {
         'a': null,
         'b': { 'bb1': null, 'bb2': 42 } as Record<string, int|null>,
       } as Record<string, Record<string, int|null>|null>
-      expect(r!['a']).assertEqual(null)
-      expect(r!['b']!['bb1']).assertEqual(null)
-      expect(r!['b']!['bb2']).assertEqual(42)
-    })
+      expect(v!['a']).assertEqual(null)
+      expect(v!['b']!['bb1']).assertEqual(null)
+      expect(v!['b']!['bb2']).assertEqual(42)
 
-    /**
-     * @tc.number    SUB_RECORD_UTILITY_TYPE_2100
-     * @tc.name      testRecordUtilityType0021
-     * @tc.desc      Type Record<K, V> constructs a container that maps keys (of type K) to values
-     *               (of type V).
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testRecordUtilityType0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let r: Record<string, Record<string, int|undefined>|undefined>|undefined = {
+      let w: Record<string, Record<string, int|undefined>|undefined>|undefined = {
         'a': undefined,
         'b': { 'bb1': undefined, 'bb2': 42 } as Record<string, int|undefined>,
       } as Record<string, Record<string, int|undefined>|undefined>
-      expect(r!['a']).assertEqual(undefined)
-      expect(r!['b']!['bb1']).assertEqual(undefined)
-      expect(r!['b']!['bb2']).assertEqual(42)
+      expect(w!['a']).assertEqual(undefined)
+      expect(w!['b']!['bb1']).assertEqual(undefined)
+      expect(w!['b']!['bb2']).assertEqual(42)
     })
 
     /**
      * @tc.number    SUB_RECORD_UTILITY_TYPE_2200
      * @tc.name      testRecordUtilityType0022
-     * @tc.desc      Type K is restricted to numeric types, type string, string literal types, enum
-     *               types, and union types constructed from these types.
+     * @tc.desc      Record<numeric, numeric> with various numeric key types
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testRecordUtilityType0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 内联原全局变量声明和初始化
-      let key1: byte = 0, val1: byte = 0
-      let key2: byte = 0, val2: byte = 55
-      let key3: byte = Byte.MIN_VALUE, val3: byte = Byte.MIN_VALUE
-      let key4: byte = Byte.MIN_VALUE, val4: byte = Byte.MAX_VALUE
-      let key5: byte = Byte.MAX_VALUE, val5: byte = Byte.MAX_VALUE
-      let key6: byte = Byte.MAX_VALUE, val6: byte = Byte.MIN_VALUE
+      let r_byte: Record<byte, byte> = {}
+      r_byte[0] = 0; expect(r_byte[0] == 0).assertTrue()
+      r_byte[0] = 55; expect(r_byte[0] == 55).assertTrue()
+      r_byte[Byte.MIN_VALUE] = Byte.MIN_VALUE; expect(r_byte[Byte.MIN_VALUE] == Byte.MIN_VALUE).assertTrue()
+      r_byte[Byte.MAX_VALUE] = Byte.MAX_VALUE; expect(r_byte[Byte.MAX_VALUE] == Byte.MAX_VALUE).assertTrue()
 
-      let r: Record<byte, byte> = {}
-      r[key1] = val1
-      expect(r[key1] == val1).assertTrue()
-      r[key2] = val2
-      expect(r[key2] == val2).assertTrue()
-      r[key3] = val3
-      expect(r[key3] == val3).assertTrue()
-      r[key4] = val4
-      expect(r[key4] == val4).assertTrue()
-      r[key5] = val5
-      expect(r[key5] == val5).assertTrue()
-      r[key6] = val6
-      expect(r[key6] == val6).assertTrue()
-    })
+      let r_short: Record<short, short> = {}
+      r_short[0] = 0; expect(r_short[0] == 0).assertTrue()
+      r_short[0] = 55; expect(r_short[0] == 55).assertTrue()
+      r_short[Short.MIN_VALUE] = Short.MIN_VALUE; expect(r_short[Short.MIN_VALUE] == Short.MIN_VALUE).assertTrue()
+      r_short[Short.MAX_VALUE] = Short.MAX_VALUE; expect(r_short[Short.MAX_VALUE] == Short.MAX_VALUE).assertTrue()
 
-    /**
-     * @tc.number    SUB_RECORD_UTILITY_TYPE_2300
-     * @tc.name      testRecordUtilityType0023
-     * @tc.desc      Type K is restricted to numeric types, type string, string literal types, enum
-     *               types, and union types constructed from these types.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testRecordUtilityType0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let key1: short = 0, val1: short = 0
-      let key2: short = 0, val2: short = 55
-      let key3: short = Short.MIN_VALUE, val3: short = Short.MIN_VALUE
-      let key4: short = Short.MIN_VALUE, val4: short = Short.MAX_VALUE
-      let key5: short = Short.MAX_VALUE, val5: short = Short.MAX_VALUE
-      let key6: short = Short.MAX_VALUE, val6: short = Short.MIN_VALUE
+      let r_int: Record<int, int> = {}
+      r_int[0] = 0; expect(r_int[0] == 0).assertTrue()
+      r_int[0] = 55; expect(r_int[0] == 55).assertTrue()
+      r_int[Int.MIN_VALUE] = Int.MIN_VALUE; expect(r_int[Int.MIN_VALUE] == Int.MIN_VALUE).assertTrue()
+      r_int[Int.MAX_VALUE] = Int.MAX_VALUE; expect(r_int[Int.MAX_VALUE] == Int.MAX_VALUE).assertTrue()
 
-      let r: Record<short, short> = {}
-      r[key1] = val1
-      expect(r[key1] == val1).assertTrue()
-      r[key2] = val2
-      expect(r[key2] == val2).assertTrue()
-      r[key3] = val3
-      expect(r[key3] == val3).assertTrue()
-      r[key4] = val4
-      expect(r[key4] == val4).assertTrue()
-      r[key5] = val5
-      expect(r[key5] == val5).assertTrue()
-      r[key6] = val6
-      expect(r[key6] == val6).assertTrue()
-    })
+      let r_long: Record<long, long> = {}
+      r_long[0] = 0; expect(r_long[0] == 0).assertTrue()
+      r_long[0] = 55; expect(r_long[0] == 55).assertTrue()
+      r_long[Long.MIN_VALUE] = Long.MIN_VALUE; expect(r_long[Long.MIN_VALUE] == Long.MIN_VALUE).assertTrue()
+      r_long[Long.MAX_VALUE] = Long.MAX_VALUE; expect(r_long[Long.MAX_VALUE] == Long.MAX_VALUE).assertTrue()
 
-    /**
-     * @tc.number    SUB_RECORD_UTILITY_TYPE_2400
-     * @tc.name      testRecordUtilityType0024
-     * @tc.desc      Type K is restricted to numeric types, type string, string literal types, enum
-     *               types, and union types constructed from these types.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testRecordUtilityType0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let key1: int = 0, val1: int = 0
-      let key2: int = 0, val2: int = 55
-      let key3: int = Int.MIN_VALUE, val3: int = Int.MIN_VALUE
-      let key4: int = Int.MIN_VALUE, val4: int = Int.MAX_VALUE
-      let key5: int = Int.MAX_VALUE, val5: int = Int.MAX_VALUE
-      let key6: int = Int.MAX_VALUE, val6: int = Int.MIN_VALUE
+      let r_float: Record<float, float> = {}
+      r_float[0.0f] = 0.0f; expect(r_float[0.0f] == 0.0f).assertTrue()
+      r_float[0.0f] = 55.0f; expect(r_float[0.0f] == 55.0f).assertTrue()
+      r_float[Float.MIN_VALUE] = Float.MIN_VALUE; expect(r_float[Float.MIN_VALUE] == Float.MIN_VALUE).assertTrue()
+      r_float[Float.MAX_VALUE] = Float.MAX_VALUE; expect(r_float[Float.MAX_VALUE] == Float.MAX_VALUE).assertTrue()
+      r_float[Float.NEGATIVE_INFINITY] = Float.NEGATIVE_INFINITY; expect(r_float[Float.NEGATIVE_INFINITY] == Float.NEGATIVE_INFINITY).assertTrue()
+      r_float[Float.POSITIVE_INFINITY] = Float.POSITIVE_INFINITY; expect(r_float[Float.POSITIVE_INFINITY] == Float.POSITIVE_INFINITY).assertTrue()
+      r_float[Float.NaN] = 42.0f; expect(r_float[Float.NaN] == 42.0f).assertTrue()
 
-      let r: Record<int, int> = {}
-      r[key1] = val1
-      expect(r[key1] == val1).assertTrue()
-      r[key2] = val2
-      expect(r[key2] == val2).assertTrue()
-      r[key3] = val3
-      expect(r[key3] == val3).assertTrue()
-      r[key4] = val4
-      expect(r[key4] == val4).assertTrue()
-      r[key5] = val5
-      expect(r[key5] == val5).assertTrue()
-      r[key6] = val6
-      expect(r[key6] == val6).assertTrue()
-    })
-
-    /**
-     * @tc.number    SUB_RECORD_UTILITY_TYPE_2500
-     * @tc.name      testRecordUtilityType0025
-     * @tc.desc      Type K is restricted to numeric types, type string, string literal types, enum
-     *               types, and union types constructed from these types.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testRecordUtilityType0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let key1: long = 0, val1: long = 0
-      let key2: long = 0, val2: long = 55
-      let key3: long = Long.MIN_VALUE, val3: long = Long.MIN_VALUE
-      let key4: long = Long.MIN_VALUE, val4: long = Long.MAX_VALUE
-      let key5: long = Long.MAX_VALUE, val5: long = Long.MAX_VALUE
-      let key6: long = Long.MAX_VALUE, val6: long = Long.MIN_VALUE
-
-      let r: Record<long, long> = {}
-      r[key1] = val1
-      expect(r[key1] == val1).assertTrue()
-      r[key2] = val2
-      expect(r[key2] == val2).assertTrue()
-      r[key3] = val3
-      expect(r[key3] == val3).assertTrue()
-      r[key4] = val4
-      expect(r[key4] == val4).assertTrue()
-      r[key5] = val5
-      expect(r[key5] == val5).assertTrue()
-      r[key6] = val6
-      expect(r[key6] == val6).assertTrue()
-    })
-
-    /**
-     * @tc.number    SUB_RECORD_UTILITY_TYPE_2600
-     * @tc.name      testRecordUtilityType0026
-     * @tc.desc      Type K is restricted to numeric types, type string, string literal types, enum
-     *               types, and union types constructed from these types.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testRecordUtilityType0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let key1: float = 0.0f, val1: float = 0.0f
-      let key2: float = 0.0f, val2: float = 55.0f
-      let key3: float = Float.MIN_VALUE, val3: float = Float.MIN_VALUE
-      let key4: float = Float.MIN_VALUE, val4: float = Float.MAX_VALUE
-      let key5: float = Float.MAX_VALUE, val5: float = Float.MAX_VALUE
-      let key6: float = Float.MAX_VALUE, val6: float = Float.MIN_VALUE
-      let key7: float = Float.NEGATIVE_INFINITY, val7: float = Float.NEGATIVE_INFINITY
-      let key8: float = Float.NEGATIVE_INFINITY, val8: float = Float.POSITIVE_INFINITY
-      let key9: float = Float.POSITIVE_INFINITY, val9: float = Float.POSITIVE_INFINITY
-      let key10: float = Float.POSITIVE_INFINITY, val10: float = Float.NEGATIVE_INFINITY
-      let key11: float = Float.NaN, val11: float = 42.0f
-      let key12: float = Float.NaN, val12: float = 84.0f
-
-      let r: Record<float, float> = {}
-      r[key1] = val1
-      expect(r[key1] == val1).assertTrue()
-      r[key2] = val2
-      expect(r[key2] == val2).assertTrue()
-      r[key3] = val3
-      expect(r[key3] == val3).assertTrue()
-      r[key4] = val4
-      expect(r[key4] == val4).assertTrue()
-      r[key5] = val5
-      expect(r[key5] == val5).assertTrue()
-      r[key6] = val6
-      expect(r[key6] == val6).assertTrue()
-      r[key7] = val7
-      expect(r[key7] == val7).assertTrue()
-      r[key8] = val8
-      expect(r[key8] == val8).assertTrue()
-      r[key9] = val9
-      expect(r[key9] == val9).assertTrue()
-      r[key10] = val10
-      expect(r[key10] == val10).assertTrue()
-      r[key11] = val11
-      expect(r[key11] == val11).assertTrue()
-      r[key12] = val12
-      expect(r[key12] == val12).assertTrue()
-    })
-
-    /**
-     * @tc.number    SUB_RECORD_UTILITY_TYPE_2700
-     * @tc.name      testRecordUtilityType0027
-     * @tc.desc      Type K is restricted to numeric types, type string, string literal types, enum
-     *               types, and union types constructed from these types.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testRecordUtilityType0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let key1: double = 0.0, val1: double = 0.0
-      let key2: double = 0.0, val2: double = 55.0
-      let key3: double = Double.MIN_VALUE, val3: double = Double.MIN_VALUE
-      let key4: double = Double.MIN_VALUE, val4: double = Double.MAX_VALUE
-      let key5: double = Double.MAX_VALUE, val5: double = Double.MAX_VALUE
-      let key6: double = Double.MAX_VALUE, val6: double = Double.MIN_VALUE
-      let key7: double = Double.NEGATIVE_INFINITY, val7: double = Double.NEGATIVE_INFINITY
-      let key8: double = Double.NEGATIVE_INFINITY, val8: double = Double.POSITIVE_INFINITY
-      let key9: double = Double.POSITIVE_INFINITY, val9: double = Double.POSITIVE_INFINITY
-      let key10: double = Double.POSITIVE_INFINITY, val10: double = Double.NEGATIVE_INFINITY
-      let key11: double = Double.NaN, val11: double = 42.0
-      let key12: double = Double.NaN, val12: double = 84.0
-
-      let r: Record<double, double> = {}
-      r[key1] = val1
-      expect(r[key1] == val1).assertTrue()
-      r[key2] = val2
-      expect(r[key2] == val2).assertTrue()
-      r[key3] = val3
-      expect(r[key3] == val3).assertTrue()
-      r[key4] = val4
-      expect(r[key4] == val4).assertTrue()
-      r[key5] = val5
-      expect(r[key5] == val5).assertTrue()
-      r[key6] = val6
-      expect(r[key6] == val6).assertTrue()
-      r[key7] = val7
-      expect(r[key7] == val7).assertTrue()
-      r[key8] = val8
-      expect(r[key8] == val8).assertTrue()
-      r[key9] = val9
-      expect(r[key9] == val9).assertTrue()
-      r[key10] = val10
-      expect(r[key10] == val10).assertTrue()
-      r[key11] = val11
-      expect(r[key11] == val11).assertTrue()
-      r[key12] = val12
-      expect(r[key12] == val12).assertTrue()
+      let r_double: Record<double, double> = {}
+      r_double[0.0] = 0.0; expect(r_double[0.0] == 0.0).assertTrue()
+      r_double[0.0] = 55.0; expect(r_double[0.0] == 55.0).assertTrue()
+      r_double[Double.MIN_VALUE] = Double.MIN_VALUE; expect(r_double[Double.MIN_VALUE] == Double.MIN_VALUE).assertTrue()
+      r_double[Double.MAX_VALUE] = Double.MAX_VALUE; expect(r_double[Double.MAX_VALUE] == Double.MAX_VALUE).assertTrue()
+      r_double[Double.NEGATIVE_INFINITY] = Double.NEGATIVE_INFINITY; expect(r_double[Double.NEGATIVE_INFINITY] == Double.NEGATIVE_INFINITY).assertTrue()
+      r_double[Double.POSITIVE_INFINITY] = Double.POSITIVE_INFINITY; expect(r_double[Double.POSITIVE_INFINITY] == Double.POSITIVE_INFINITY).assertTrue()
+      r_double[Double.NaN] = 42.0; expect(r_double[Double.NaN] == 42.0).assertTrue()
     })
 
     /**
      * @tc.number    SUB_RECORD_UTILITY_TYPE_2800
      * @tc.name      testRecordUtilityType0028
-     * @tc.desc      Type K is restricted to numeric types, type string, string literal types, enum
-     *               types, and union types constructed from these types.
+     * @tc.desc      Record<string, string> with various string values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testRecordUtilityType0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let key1: string = "a", val1: string = ""
-      let key2: string = "a", val2: string = "\u0000"
-      let key3: string = "\u0000", val3: string = ""
-      let key4: string = "\u0000", val4: string = "a"
-      let key5: string = " ", val5: string = " "
-      let key6: string = " ", val6: string = "  "
-
       let r: Record<string, string> = {}
-      r[key1] = val1
-      expect(r[key1] == val1).assertTrue()
-      r[key2] = val2
-      expect(r[key2] == val2).assertTrue()
-      r[key3] = val3
-      expect(r[key3] == val3).assertTrue()
-      r[key4] = val4
-      expect(r[key4] == val4).assertTrue()
-      r[key5] = val5
-      expect(r[key5] == val5).assertTrue()
-      r[key6] = val6
-      expect(r[key6] == val6).assertTrue()
+      r["a"] = ""; expect(r["a"] == "").assertTrue()
+      r["a"] = "\u0000"; expect(r["a"] == "\u0000").assertTrue()
+      r["\u0000"] = ""; expect(r["\u0000"] == "").assertTrue()
+      r["\u0000"] = "a"; expect(r["\u0000"] == "a").assertTrue()
+      r[" "] = " "; expect(r[" "] == " ").assertTrue()
+      r[" "] = "  "; expect(r[" "] == "  ").assertTrue()
     })
 
     /**
      * @tc.number    SUB_RECORD_UTILITY_TYPE_2900
      * @tc.name      testRecordUtilityType0029
-     * @tc.desc      Type K is restricted to numeric types, type string, string literal types, enum
-     *               types, and union types constructed from these types.
+     * @tc.desc      Record<numeric|string, numeric|string> with various union key types
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testRecordUtilityType0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let key1: byte|string = 0, val1: byte|string = 0
-      let key2: byte|string = 0, val2: byte|string = 55
-      let key3: byte|string = Byte.MIN_VALUE, val3: byte|string = Byte.MIN_VALUE
-      let key4: byte|string = Byte.MIN_VALUE, val4: byte|string = Byte.MAX_VALUE
-      let key5: byte|string = Byte.MAX_VALUE, val5: byte|string = Byte.MAX_VALUE
-      let key6: byte|string = Byte.MAX_VALUE, val6: byte|string = Byte.MIN_VALUE
-      let key7: byte|string = "a", val7: byte|string = ""
-      let key8: byte|string = "a", val8: byte|string = "\u0000"
-      let key9: byte|string = "\u0000", val9: byte|string = ""
-      let key10: byte|string = "\u0000", val10: byte|string = "a"
-      let key11: byte|string = " ", val11: byte|string = " "
-      let key12: byte|string = " ", val12: byte|string = "  "
+      let r_byte: Record<byte|string, byte|string> = {}
+      r_byte[0] = 0; expect(r_byte[0] == 0).assertTrue()
+      r_byte[0] = 55; expect(r_byte[0] == 55).assertTrue()
+      r_byte[Byte.MIN_VALUE] = Byte.MIN_VALUE; expect(r_byte[Byte.MIN_VALUE] == Byte.MIN_VALUE).assertTrue()
+      r_byte[Byte.MAX_VALUE] = Byte.MAX_VALUE; expect(r_byte[Byte.MAX_VALUE] == Byte.MAX_VALUE).assertTrue()
+      r_byte["a"] = ""; expect(r_byte["a"] == "").assertTrue()
+      r_byte["\u0000"] = "a"; expect(r_byte["\u0000"] == "a").assertTrue()
 
-      let r: Record<byte|string, byte|string> = {}
-      r[key1] = val1
-      expect(r[key1] == val1).assertTrue()
-      r[key2] = val2
-      expect(r[key2] == val2).assertTrue()
-      r[key3] = val3
-      expect(r[key3] == val3).assertTrue()
-      r[key4] = val4
-      expect(r[key4] == val4).assertTrue()
-      r[key5] = val5
-      expect(r[key5] == val5).assertTrue()
-      r[key6] = val6
-      expect(r[key6] == val6).assertTrue()
-      r[key7] = val7
-      expect(r[key7] == val7).assertTrue()
-      r[key8] = val8
-      expect(r[key8] == val8).assertTrue()
-      r[key9] = val9
-      expect(r[key9] == val9).assertTrue()
-      r[key10] = val10
-      expect(r[key10] == val10).assertTrue()
-      r[key11] = val11
-      expect(r[key11] == val11).assertTrue()
-      r[key12] = val12
-      expect(r[key12] == val12).assertTrue()
-    })
+      let r_short: Record<short|string, short|string> = {}
+      r_short[0] = 0; expect(r_short[0] == 0).assertTrue()
+      r_short[0] = 55; expect(r_short[0] == 55).assertTrue()
+      r_short[Short.MIN_VALUE] = Short.MIN_VALUE; expect(r_short[Short.MIN_VALUE] == Short.MIN_VALUE).assertTrue()
+      r_short["a"] = "\u0000"; expect(r_short["a"] == "\u0000").assertTrue()
 
-    /**
-     * @tc.number    SUB_RECORD_UTILITY_TYPE_3000
-     * @tc.name      testRecordUtilityType0030
-     * @tc.desc      Type K is restricted to numeric types, type string, string literal types, enum
-     *               types, and union types constructed from these types.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testRecordUtilityType0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let key1: short|string = 0, val1: short|string = 0
-      let key2: short|string = 0, val2: short|string = 55
-      let key3: short|string = Short.MIN_VALUE, val3: short|string = Short.MIN_VALUE
-      let key4: short|string = Short.MIN_VALUE, val4: short|string = Short.MAX_VALUE
-      let key5: short|string = Short.MAX_VALUE, val5: short|string = Short.MAX_VALUE
-      let key6: short|string = Short.MAX_VALUE, val6: short|string = Short.MIN_VALUE
-      let key7: short|string = "a", val7: short|string = ""
-      let key8: short|string = "a", val8: short|string = "\u0000"
-      let key9: short|string = "\u0000", val9: short|string = ""
-      let key10: short|string = "\u0000", val10: short|string = "a"
-      let key11: short|string = " ", val11: short|string = " "
-      let key12: short|string = " ", val12: short|string = "  "
+      let r_int: Record<int|string, int|string> = {}
+      r_int[0] = 0; expect(r_int[0] == 0).assertTrue()
+      r_int[Int.MIN_VALUE] = Int.MIN_VALUE; expect(r_int[Int.MIN_VALUE] == Int.MIN_VALUE).assertTrue()
+      r_int["a"] = ""; expect(r_int["a"] == "").assertTrue()
 
-      let r: Record<short|string, short|string> = {}
-      r[key1] = val1
-      expect(r[key1] == val1).assertTrue()
-      r[key2] = val2
-      expect(r[key2] == val2).assertTrue()
-      r[key3] = val3
-      expect(r[key3] == val3).assertTrue()
-      r[key4] = val4
-      expect(r[key4] == val4).assertTrue()
-      r[key5] = val5
-      expect(r[key5] == val5).assertTrue()
-      r[key6] = val6
-      expect(r[key6] == val6).assertTrue()
-      r[key7] = val7
-      expect(r[key7] == val7).assertTrue()
-      r[key8] = val8
-      expect(r[key8] == val8).assertTrue()
-      r[key9] = val9
-      expect(r[key9] == val9).assertTrue()
-      r[key10] = val10
-      expect(r[key10] == val10).assertTrue()
-      r[key11] = val11
-      expect(r[key11] == val11).assertTrue()
-      r[key12] = val12
-      expect(r[key12] == val12).assertTrue()
-    })
+      let r_long: Record<long|string, long|string> = {}
+      r_long[0] = 0; expect(r_long[0] == 0).assertTrue()
+      r_long[Long.MAX_VALUE] = Long.MAX_VALUE; expect(r_long[Long.MAX_VALUE] == Long.MAX_VALUE).assertTrue()
 
-    /**
-     * @tc.number    SUB_RECORD_UTILITY_TYPE_3100
-     * @tc.name      testRecordUtilityType0031
-     * @tc.desc      Type K is restricted to numeric types, type string, string literal types, enum
-     *               types, and union types constructed from these types.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testRecordUtilityType0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let key1: int|string = 0, val1: int|string = 0
-      let key2: int|string = 0, val2: int|string = 55
-      let key3: int|string = Int.MIN_VALUE, val3: int|string = Int.MIN_VALUE
-      let key4: int|string = Int.MIN_VALUE, val4: int|string = Int.MAX_VALUE
-      let key5: int|string = Int.MAX_VALUE, val5: int|string = Int.MAX_VALUE
-      let key6: int|string = Int.MAX_VALUE, val6: int|string = Int.MIN_VALUE
-      let key7: int|string = "a", val7: int|string = ""
-      let key8: int|string = "a", val8: int|string = "\u0000"
-      let key9: int|string = "\u0000", val9: int|string = ""
-      let key10: int|string = "\u0000", val10: int|string = "a"
-      let key11: int|string = " ", val11: int|string = " "
-      let key12: int|string = " ", val12: int|string = "  "
+      let r_float: Record<float|string, float|string> = {}
+      r_float[0.0f] = 0.0f; expect(r_float[0.0f] == 0.0f).assertTrue()
+      r_float[Float.NaN] = 42.0f; expect(r_float[Float.NaN] == 42.0f).assertTrue()
 
-      let r: Record<int|string, int|string> = {}
-      r[key1] = val1
-      expect(r[key1] == val1).assertTrue()
-      r[key2] = val2
-      expect(r[key2] == val2).assertTrue()
-      r[key3] = val3
-      expect(r[key3] == val3).assertTrue()
-      r[key4] = val4
-      expect(r[key4] == val4).assertTrue()
-      r[key5] = val5
-      expect(r[key5] == val5).assertTrue()
-      r[key6] = val6
-      expect(r[key6] == val6).assertTrue()
-      r[key7] = val7
-      expect(r[key7] == val7).assertTrue()
-      r[key8] = val8
-      expect(r[key8] == val8).assertTrue()
-      r[key9] = val9
-      expect(r[key9] == val9).assertTrue()
-      r[key10] = val10
-      expect(r[key10] == val10).assertTrue()
-      r[key11] = val11
-      expect(r[key11] == val11).assertTrue()
-      r[key12] = val12
-      expect(r[key12] == val12).assertTrue()
-    })
-
-    /**
-     * @tc.number    SUB_RECORD_UTILITY_TYPE_3200
-     * @tc.name      testRecordUtilityType0032
-     * @tc.desc      Type K is restricted to numeric types, type string, string literal types, enum
-     *               types, and union types constructed from these types.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testRecordUtilityType0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let key1: long|string = 0, val1: long|string = 0
-      let key2: long|string = 0, val2: long|string = 55
-      let key3: long|string = Long.MIN_VALUE, val3: long|string = Long.MIN_VALUE
-      let key4: long|string = Long.MIN_VALUE, val4: long|string = Long.MAX_VALUE
-      let key5: long|string = Long.MAX_VALUE, val5: long|string = Long.MAX_VALUE
-      let key6: long|string = Long.MAX_VALUE, val6: long|string = Long.MIN_VALUE
-      let key7: long|string = "a", val7: long|string = ""
-      let key8: long|string = "a", val8: long|string = "\u0000"
-      let key9: long|string = "\u0000", val9: long|string = ""
-      let key10: long|string = "\u0000", val10: long|string = "a"
-      let key11: long|string = " ", val11: long|string = " "
-      let key12: long|string = " ", val12: long|string = "  "
-
-      let r: Record<long|string, long|string> = {}
-      r[key1] = val1
-      expect(r[key1] == val1).assertTrue()
-      r[key2] = val2
-      expect(r[key2] == val2).assertTrue()
-      r[key3] = val3
-      expect(r[key3] == val3).assertTrue()
-      r[key4] = val4
-      expect(r[key4] == val4).assertTrue()
-      r[key5] = val5
-      expect(r[key5] == val5).assertTrue()
-      r[key6] = val6
-      expect(r[key6] == val6).assertTrue()
-      r[key7] = val7
-      expect(r[key7] == val7).assertTrue()
-      r[key8] = val8
-      expect(r[key8] == val8).assertTrue()
-      r[key9] = val9
-      expect(r[key9] == val9).assertTrue()
-      r[key10] = val10
-      expect(r[key10] == val10).assertTrue()
-      r[key11] = val11
-      expect(r[key11] == val11).assertTrue()
-      r[key12] = val12
-      expect(r[key12] == val12).assertTrue()
-    })
-
-    /**
-     * @tc.number    SUB_RECORD_UTILITY_TYPE_3300
-     * @tc.name      testRecordUtilityType0033
-     * @tc.desc      Type K is restricted to numeric types, type string, string literal types, enum
-     *               types, and union types constructed from these types.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testRecordUtilityType0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let key1: float|string = 0.0f, val1: float|string = 0.0f
-      let key2: float|string = 0.0f, val2: float|string = 55.0f
-      let key3: float|string = Float.MIN_VALUE, val3: float|string = Float.MIN_VALUE
-      let key4: float|string = Float.MIN_VALUE, val4: float|string = Float.MAX_VALUE
-      let key5: float|string = Float.MAX_VALUE, val5: float|string = Float.MAX_VALUE
-      let key6: float|string = Float.MAX_VALUE, val6: float|string = Float.MIN_VALUE
-      let key7: float|string = Float.NEGATIVE_INFINITY, val7: float|string = Float.NEGATIVE_INFINITY
-      let key8: float|string = Float.NEGATIVE_INFINITY, val8: float|string = Float.POSITIVE_INFINITY
-      let key9: float|string = Float.POSITIVE_INFINITY, val9: float|string = Float.POSITIVE_INFINITY
-      let key10: float|string = Float.POSITIVE_INFINITY, val10: float|string = Float.NEGATIVE_INFINITY
-      let key11: float|string = Float.NaN, val11: float|string = 42.0f
-      let key12: float|string = Float.NaN, val12: float|string = 84.0f
-      let key13: float|string = "a", val13: float|string = ""
-      let key14: float|string = "a", val14: float|string = "\u0000"
-      let key15: float|string = "\u0000", val15: float|string = ""
-      let key16: float|string = "\u0000", val16: float|string = "a"
-      let key17: float|string = " ", val17: float|string = " "
-      let key18: float|string = " ", val18: float|string = "  "
-
-      let r: Record<float|string, float|string> = {}
-      r[key1] = val1
-      expect(r[key1] == val1).assertTrue()
-      r[key2] = val2
-      expect(r[key2] == val2).assertTrue()
-      r[key3] = val3
-      expect(r[key3] == val3).assertTrue()
-      r[key4] = val4
-      expect(r[key4] == val4).assertTrue()
-      r[key5] = val5
-      expect(r[key5] == val5).assertTrue()
-      r[key6] = val6
-      expect(r[key6] == val6).assertTrue()
-      r[key7] = val7
-      expect(r[key7] == val7).assertTrue()
-      r[key8] = val8
-      expect(r[key8] == val8).assertTrue()
-      r[key9] = val9
-      expect(r[key9] == val9).assertTrue()
-      r[key10] = val10
-      expect(r[key10] == val10).assertTrue()
-      r[key11] = val11
-      expect(r[key11] == val11).assertTrue()
-      r[key12] = val12
-      expect(r[key12] == val12).assertTrue()
-      r[key13] = val13
-      expect(r[key13] == val13).assertTrue()
-      r[key14] = val14
-      expect(r[key14] == val14).assertTrue()
-      r[key15] = val15
-      expect(r[key15] == val15).assertTrue()
-      r[key16] = val16
-      expect(r[key16] == val16).assertTrue()
-      r[key17] = val17
-      expect(r[key17] == val17).assertTrue()
-      r[key18] = val18
-      expect(r[key18] == val18).assertTrue()
-    })
-
-    /**
-     * @tc.number    SUB_RECORD_UTILITY_TYPE_3400
-     * @tc.name      testRecordUtilityType0034
-     * @tc.desc      Type K is restricted to numeric types, type string, string literal types, enum
-     *               types, and union types constructed from these types.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testRecordUtilityType0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let key1: double|string = 0.0, val1: double|string = 0.0
-      let key2: double|string = 0.0, val2: double|string = 55.0
-      let key3: double|string = Double.MIN_VALUE, val3: double|string = Double.MIN_VALUE
-      let key4: double|string = Double.MIN_VALUE, val4: double|string = Double.MAX_VALUE
-      let key5: double|string = Double.MAX_VALUE, val5: double|string = Double.MAX_VALUE
-      let key6: double|string = Double.MAX_VALUE, val6: double|string = Double.MIN_VALUE
-      let key7: double|string = Double.NEGATIVE_INFINITY, val7: double|string = Double.NEGATIVE_INFINITY
-      let key8: double|string = Double.NEGATIVE_INFINITY, val8: double|string = Double.POSITIVE_INFINITY
-      let key9: double|string = Double.POSITIVE_INFINITY, val9: double|string = Double.POSITIVE_INFINITY
-      let key10: double|string = Double.POSITIVE_INFINITY, val10: double|string = Double.NEGATIVE_INFINITY
-      let key11: double|string = Double.NaN, val11: double|string = 42.0
-      let key12: double|string = Double.NaN, val12: double|string = 84.0
-      let key13: double|string = "a", val13: double|string = ""
-      let key14: double|string = "a", val14: double|string = "\u0000"
-      let key15: double|string = "\u0000", val15: double|string = ""
-      let key16: double|string = "\u0000", val16: double|string = "a"
-      let key17: double|string = " ", val17: double|string = " "
-      let key18: double|string = " ", val18: double|string = "  "
-
-      let r: Record<double|string, double|string> = {}
-      r[key1] = val1
-      expect(r[key1] == val1).assertTrue()
-      r[key2] = val2
-      expect(r[key2] == val2).assertTrue()
-      r[key3] = val3
-      expect(r[key3] == val3).assertTrue()
-      r[key4] = val4
-      expect(r[key4] == val4).assertTrue()
-      r[key5] = val5
-      expect(r[key5] == val5).assertTrue()
-      r[key6] = val6
-      expect(r[key6] == val6).assertTrue()
-      r[key7] = val7
-      expect(r[key7] == val7).assertTrue()
-      r[key8] = val8
-      expect(r[key8] == val8).assertTrue()
-      r[key9] = val9
-      expect(r[key9] == val9).assertTrue()
-      r[key10] = val10
-      expect(r[key10] == val10).assertTrue()
-      r[key11] = val11
-      expect(r[key11] == val11).assertTrue()
-      r[key12] = val12
-      expect(r[key12] == val12).assertTrue()
-      r[key13] = val13
-      expect(r[key13] == val13).assertTrue()
-      r[key14] = val14
-      expect(r[key14] == val14).assertTrue()
-      r[key15] = val15
-      expect(r[key15] == val15).assertTrue()
-      r[key16] = val16
-      expect(r[key16] == val16).assertTrue()
-      r[key17] = val17
-      expect(r[key17] == val17).assertTrue()
-      r[key18] = val18
-      expect(r[key18] == val18).assertTrue()
+      let r_double: Record<double|string, double|string> = {}
+      r_double[0.0] = 0.0; expect(r_double[0.0] == 0.0).assertTrue()
+      r_double[Double.NaN] = 42.0; expect(r_double[Double.NaN] == 42.0).assertTrue()
     })
 
     /**
      * @tc.number    SUB_RECORD_UTILITY_TYPE_3500
      * @tc.name      testRecordUtilityType0035
-     * @tc.desc      Type K is restricted to numeric types, type string, string literal types, enum
-     *               types, and union types constructed from these types.
+     * @tc.desc      Record with enum key types
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testRecordUtilityType0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let key1: Color_0 = Color_0.Red, val1: Color_0 = Color_0.Red
-      let key2: Color_0 = Color_0.Green, val2: Color_0 = Color_0.Green
-      let key3: Color_0 = Color_0.Blue, val3: Color_0 = Color_0.Blue
+      let r_c: Record<Color_0, Color_0> = {}
+      r_c[Color_0.Red] = Color_0.Red; expect(r_c[Color_0.Red] == Color_0.Red).assertTrue()
+      r_c[Color_0.Green] = Color_0.Green; expect(r_c[Color_0.Green] == Color_0.Green).assertTrue()
+      r_c[Color_0.Blue] = Color_0.Blue; expect(r_c[Color_0.Blue] == Color_0.Blue).assertTrue()
 
-      let r: Record<Color_0, Color_0> = {}
-      r[key1] = val1
-      expect(r[key1] == val1).assertTrue()
-      r[key2] = val2
-      expect(r[key2] == val2).assertTrue()
-      r[key3] = val3
-      expect(r[key3] == val3).assertTrue()
-    })
+      let r_cmd: Record<Commands_0, Commands_0> = {}
+      r_cmd[Commands_0.Open] = Commands_0.Open; expect(r_cmd[Commands_0.Open] == Commands_0.Open).assertTrue()
+      r_cmd[Commands_0.Close] = Commands_0.Close; expect(r_cmd[Commands_0.Close] == Commands_0.Close).assertTrue()
 
-    /**
-     * @tc.number    SUB_RECORD_UTILITY_TYPE_3600
-     * @tc.name      testRecordUtilityType0036
-     * @tc.desc      Type K is restricted to numeric types, type string, string literal types, enum
-     *               types, and union types constructed from these types.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testRecordUtilityType0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let key1: Commands_0 = Commands_0.Open, val1: Commands_0 = Commands_0.Open
-      let key2: Commands_0 = Commands_0.Close, val2: Commands_0 = Commands_0.Close
-
-      let r: Record<Commands_0, Commands_0> = {}
-      r[key1] = val1
-      expect(r[key1] == val1).assertTrue()
-      r[key2] = val2
-      expect(r[key2] == val2).assertTrue()
-    })
-
-    /**
-     * @tc.number    SUB_RECORD_UTILITY_TYPE_3700
-     * @tc.name      testRecordUtilityType0037
-     * @tc.desc      Type K is restricted to numeric types, type string, string literal types, enum
-     *               types, and union types constructed from these types.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testRecordUtilityType0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let key1: CC_0 = Commands_0.Open, val1: CC_0 = Commands_0.Open
-      let key2: CC_0 = Commands_0.Close, val2: CC_0 = Commands_0.Close
-      let key3: CC_0 = Color_0.Red, val3: CC_0 = Color_0.Red
-      let key4: CC_0 = Color_0.Green, val4: CC_0 = Color_0.Green
-      let key5: CC_0 = Color_0.Blue, val5: CC_0 = Color_0.Blue
-
-      let r: Record<CC_0, CC_0> = {}
-      r[key1] = val1
-      expect(r[key1] == val1).assertTrue()
-      r[key2] = val2
-      expect(r[key2] == val2).assertTrue()
-      r[key3] = val3
-      expect(r[key3] == val3).assertTrue()
-      r[key4] = val4
-      expect(r[key4] == val4).assertTrue()
-      r[key5] = val5
-      expect(r[key5] == val5).assertTrue()
+      let r_cc: Record<CC_0, CC_0> = {}
+      r_cc[Commands_0.Open] = Commands_0.Open; expect(r_cc[Commands_0.Open] == Commands_0.Open).assertTrue()
+      r_cc[Color_0.Red] = Color_0.Red; expect(r_cc[Color_0.Red] == Color_0.Red).assertTrue()
+      r_cc[Color_0.Blue] = Color_0.Blue; expect(r_cc[Color_0.Blue] == Color_0.Blue).assertTrue()
     })
 
     /**
      * @tc.number    SUB_RECORD_UTILITY_TYPE_3800
      * @tc.name      testRecordUtilityType0038
-     * @tc.desc      Type K is restricted to numeric types, type string, string literal types, enum
-     *               types, and union types constructed from these types.
+     * @tc.desc      Record with string literal key types
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1202,32 +580,21 @@ export default function RecordUtilityTypeTest() {
       expect(r["b"] == "c").assertTrue()
       r["c"] = "a"
       expect(r["c"] == "a").assertTrue()
-    })
 
-    /**
-     * @tc.number    SUB_RECORD_UTILITY_TYPE_3900
-     * @tc.name      testRecordUtilityType0039
-     * @tc.desc      Type K is restricted to numeric types, type string, string literal types, enum
-     *               types, and union types constructed from these types.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testRecordUtilityType0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let r: Record<""|" "|"  ", ""|" "|"  "> = {
+      let s: Record<""|" "|"  ", ""|" "|"  "> = {
         "": "",
         " ": " ",
         "  ": "  ",
       }
-      expect(r[""] == "").assertTrue()
-      expect(r[" "] == " ").assertTrue()
-      expect(r["  "] == "  ").assertTrue()
-      r[""] = " "
-      expect(r[""] == " ").assertTrue()
-      r[" "] = "  "
-      expect(r[" "] == "  ").assertTrue()
-      r["  "] = ""
-      expect(r["  "] == "").assertTrue()
+      expect(s[""] == "").assertTrue()
+      expect(s[" "] == " ").assertTrue()
+      expect(s["  "] == "  ").assertTrue()
+      s[""] = " "
+      expect(s[""] == " ").assertTrue()
+      s[" "] = "  "
+      expect(s[" "] == "  ").assertTrue()
+      s["  "] = ""
+      expect(s["  "] == "").assertTrue()
     })
   });
 }
