@@ -240,17 +240,11 @@ export default function CameraVideoRecordWithMultiDiffConfig() {
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-it('SUB_MULTIMEDIA_CAMERA_HDR_VIDEO_RECORDER_MULTI_CONFIG_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_CAMERA_HDR_VIDEO_RECORDER_MULTI_CONFIG_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let testNum = 'SUB_MULTIMEDIA_CAMERA_HDR_VIDEO_RECORDER_MULTI_CONFIG_0100'
-      try {
-        let ret = await cameraVideoRecordTest(testNum, 0, 0);
-        expect(ret).assertTrue();
-        done();
-      } catch (error) {
-        console.error(`${testNum} error is ${JSON.stringify(error)}`);
-        expect().assertFail();
-        done();
-      }
+      let ret = await cameraVideoRecordTest(testNum, 0, 0);
+ 	    expect(ret).assertTrue();
+ 	    done();
     })
 
     /**
@@ -261,17 +255,11 @@ it('SUB_MULTIMEDIA_CAMERA_HDR_VIDEO_RECORDER_MULTI_CONFIG_0100', TestType.FUNCTI
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-it('SUB_MULTIMEDIA_CAMERA_HDR_VIDEO_RECORDER_MULTI_CONFIG_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_CAMERA_HDR_VIDEO_RECORDER_MULTI_CONFIG_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let testNum = 'SUB_MULTIMEDIA_CAMERA_HDR_VIDEO_RECORDER_MULTI_CONFIG_0200'
-      try {
-        let ret = await cameraVideoRecordTest(testNum, 0, 1);
-        expect(ret).assertTrue();
-        done();
-      } catch (error) {
-        console.error(`${testNum} error is ${JSON.stringify(error)}`);
-        expect().assertFail();
-        done();
-      }
+      let ret = await cameraVideoRecordTest(testNum, 0, 1);
+ 	    expect(ret).assertTrue();
+ 	    done();
     })
 
     /**
@@ -282,17 +270,11 @@ it('SUB_MULTIMEDIA_CAMERA_HDR_VIDEO_RECORDER_MULTI_CONFIG_0200', TestType.FUNCTI
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-it('SUB_MULTIMEDIA_CAMERA_HDR_VIDEO_RECORDER_MULTI_CONFIG_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_CAMERA_HDR_VIDEO_RECORDER_MULTI_CONFIG_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let testNum = 'SUB_MULTIMEDIA_CAMERA_HDR_VIDEO_RECORDER_MULTI_CONFIG_0300'
-      try {
-        let ret = await cameraVideoRecordTest(testNum, 0, 2);
-        expect(ret).assertTrue();
-        done();
-      } catch (error) {
-        console.error(`${testNum} error is ${JSON.stringify(error)}`);
-        expect().assertFail();
-        done();
-      }
+      let ret = await cameraVideoRecordTest(testNum, 0, 2);
+ 	    expect(ret).assertTrue();
+ 	    done();
     })
 
     /**
@@ -303,17 +285,11 @@ it('SUB_MULTIMEDIA_CAMERA_HDR_VIDEO_RECORDER_MULTI_CONFIG_0300', TestType.FUNCTI
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-it('SUB_MULTIMEDIA_CAMERA_HDR_VIDEO_RECORDER_MULTI_CONFIG_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_CAMERA_HDR_VIDEO_RECORDER_MULTI_CONFIG_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let testNum = 'SUB_MULTIMEDIA_CAMERA_HDR_VIDEO_RECORDER_MULTI_CONFIG_0400'
-      try {
-        let ret = await cameraVideoRecordTest(testNum, 1, 0);
-        expect(ret).assertTrue();
-        done();
-      } catch (error) {
-        console.error(`${testNum} error is ${JSON.stringify(error)}`);
-        expect().assertFail();
-        done();
-      }
+      let ret = await cameraVideoRecordTest(testNum, 1, 0);
+ 	    expect(ret).assertTrue();
+ 	    done();
     })
 
     /**
@@ -324,17 +300,11 @@ it('SUB_MULTIMEDIA_CAMERA_HDR_VIDEO_RECORDER_MULTI_CONFIG_0400', TestType.FUNCTI
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-it('SUB_MULTIMEDIA_CAMERA_HDR_VIDEO_RECORDER_MULTI_CONFIG_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_CAMERA_HDR_VIDEO_RECORDER_MULTI_CONFIG_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let testNum = 'SUB_MULTIMEDIA_CAMERA_HDR_VIDEO_RECORDER_MULTI_CONFIG_0500'
-      try {
-        let ret = await cameraVideoRecordTest(testNum, 1, 1);
-        expect(ret).assertTrue();
-        done();
-      } catch (error) {
-        console.error(`${testNum} error is ${JSON.stringify(error)}`);
-        expect().assertFail();
-        done();
-      }
+      let ret = await cameraVideoRecordTest(testNum, 1, 1);
+ 	    expect(ret).assertTrue();
+ 	    done();
     })
 
     /**
@@ -345,17 +315,11 @@ it('SUB_MULTIMEDIA_CAMERA_HDR_VIDEO_RECORDER_MULTI_CONFIG_0500', TestType.FUNCTI
      * @tc.type FUNCTION
      * @tc.level LEVEL0
      */
-it('SUB_MULTIMEDIA_CAMERA_HDR_VIDEO_RECORDER_MULTI_CONFIG_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_CAMERA_HDR_VIDEO_RECORDER_MULTI_CONFIG_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let testNum = 'SUB_MULTIMEDIA_CAMERA_HDR_VIDEO_RECORDER_MULTI_CONFIG_0600'
-      try {
-        let ret = await cameraVideoRecordTest(testNum, 1, 2);
-        expect(ret).assertTrue();
-        done();
-      } catch (error) {
-        console.error(`${testNum} error is ${JSON.stringify(error)}`);
-        expect().assertFail();
-        done();
-      }
+      let ret = await cameraVideoRecordTest(testNum, 1, 2);
+ 	    expect(ret).assertTrue();
+ 	    done();
     })
 
   })
