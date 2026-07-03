@@ -35,7 +35,7 @@ struct CheckboxTest {
   @State onChangeFlag: boolean = false;
   @State onChangeFlag02: boolean = false;
   @State onChangeFlag03: boolean = true;
-  @State public flag: boolean = true;
+  public flag: boolean = true;
 
   @State modifier01 : CheckboxModifier01 = new CheckboxModifier01()
   @State modifier02 : CheckboxModifier02 = new CheckboxModifier02()
