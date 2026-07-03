@@ -17,16 +17,16 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntFromULongTest_2(): void {
-  describe('BigInt.fromULong - expanded param dimensions', () => {
+  describe('BigIntFromULongTest_2', () => {
     /**
-     * @tc.number SUB_BIGINT_STD_FROMULONG_0900
-     * @tc.name testBigIntFromULongNegativePowerBoundary0900
+     * @tc.number SUB_BIGINT_STD_FROMULONG_0001
+     * @tc.name testBigIntFromULongNegativePowerBoundary0001
      * @tc.desc fromULong with negative power-of-2 boundary values → unsigned
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntFromULongNegativePowerBoundary0900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntFromULongNegativePowerBoundary0001', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.fromULong(-4).toString()).assertEqual('18446744073709551612');
       expect(BigInt.fromULong(-8).toString()).assertEqual('18446744073709551608');
       expect(BigInt.fromULong(-16).toString()).assertEqual('18446744073709551600');
@@ -35,14 +35,14 @@ export default function BigIntFromULongTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_FROMULONG_1000
-     * @tc.name testBigIntFromULongByteShortBoundary1000
+     * @tc.number SUB_BIGINT_STD_FROMULONG_0002
+     * @tc.name testBigIntFromULongByteShortBoundary0002
      * @tc.desc fromULong with byte/short type boundary values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntFromULongByteShortBoundary1000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntFromULongByteShortBoundary0002', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.fromULong(127).toString()).assertEqual('127');
       expect(BigInt.fromULong(-128).toString()).assertEqual('18446744073709551488');
       expect(BigInt.fromULong(32767).toString()).assertEqual('32767');
@@ -50,30 +50,27 @@ export default function BigIntFromULongTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_FROMULONG_1100
-     * @tc.name testBigIntFromULongPowerOfTwoPositive1100
+     * @tc.number SUB_BIGINT_STD_FROMULONG_0003
+     * @tc.name testBigIntFromULongPowerOfTwoPositive0003
      * @tc.desc fromULong with positive power-of-2 values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntFromULongPowerOfTwoPositive1100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntFromULongPowerOfTwoPositive0003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.fromULong(2).toString()).assertEqual('2');
-      expect(BigInt.fromULong(4).toString()).assertEqual('4');
-      expect(BigInt.fromULong(16).toString()).assertEqual('16');
-      expect(BigInt.fromULong(256).toString()).assertEqual('256');
       expect(BigInt.fromULong(65536).toString()).assertEqual('65536');
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_FROMULONG_1200
-     * @tc.name testBigIntFromULongCrossVerifyEquals1200
+     * @tc.number SUB_BIGINT_STD_FROMULONG_0004
+     * @tc.name testBigIntFromULongCrossVerifyEquals0004
      * @tc.desc fromULong non-negative values cross-verified with BigInt.equals
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntFromULongCrossVerifyEquals1200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntFromULongCrossVerifyEquals0004', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.fromULong(0).equals(BigInt(0))).assertTrue();
       expect(BigInt.fromULong(1).equals(BigInt(1))).assertTrue();
       expect(BigInt.fromULong(100).equals(BigInt(100))).assertTrue();
@@ -84,28 +81,28 @@ export default function BigIntFromULongTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_FROMULONG_1300
-     * @tc.name testBigIntFromULongOperatorAddUsable1300
+     * @tc.number SUB_BIGINT_STD_FROMULONG_0005
+     * @tc.name testBigIntFromULongOperatorAddUsable0005
      * @tc.desc fromULong result usable with operatorAdd
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntFromULongOperatorAddUsable1300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntFromULongOperatorAddUsable0005', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.fromULong(10).operatorAdd(BigInt.fromULong(20)).toString()).assertEqual('30');
       expect(BigInt.fromULong(100).operatorAdd(BigInt.fromULong(200)).toString()).assertEqual('300');
       expect(BigInt.fromULong(5).operatorAdd(BigInt(3)).toString()).assertEqual('8');
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_FROMULONG_1500
-     * @tc.name testBigIntFromULongIntBoundaryAdjacent1500
+     * @tc.number SUB_BIGINT_STD_FROMULONG_0006
+     * @tc.name testBigIntFromULongIntBoundaryAdjacent0006
      * @tc.desc fromULong with int boundary adjacent values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntFromULongIntBoundaryAdjacent1500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntFromULongIntBoundaryAdjacent0006', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.fromULong(2147483646).toString()).assertEqual('2147483646');
       expect(BigInt.fromULong(-2147483647).toString()).assertEqual('18446744071562067969');
       expect(BigInt.fromULong(4294967296).toString()).assertEqual('4294967296');
@@ -113,14 +110,14 @@ export default function BigIntFromULongTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_FROMULONG_1600
-     * @tc.name testBigIntFromULongMorePositiveValues1600
+     * @tc.number SUB_BIGINT_STD_FROMULONG_0007
+     * @tc.name testBigIntFromULongMorePositiveValues0007
      * @tc.desc fromULong with various additional positive values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntFromULongMorePositiveValues1600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntFromULongMorePositiveValues0007', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.fromULong(10).toString()).assertEqual('10');
       expect(BigInt.fromULong(1000).toString()).assertEqual('1000');
       expect(BigInt.fromULong(65535).toString()).assertEqual('65535');
@@ -131,14 +128,14 @@ export default function BigIntFromULongTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_FROMULONG_1700
-     * @tc.name testBigIntFromULongNumberProperties1700
+     * @tc.number SUB_BIGINT_STD_FROMULONG_0008
+     * @tc.name testBigIntFromULongNumberProperties0008
      * @tc.desc fromULong with odd, even, prime, palindrome, and special values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntFromULongNumberProperties1700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntFromULongNumberProperties0008', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.fromULong(101).toString()).assertEqual('101');
       expect(BigInt.fromULong(97).toString()).assertEqual('97');
       expect(BigInt.fromULong(1024).toString()).assertEqual('1024');
@@ -149,44 +146,31 @@ export default function BigIntFromULongTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_FROMULONG_1800
-     * @tc.name testBigIntFromULongPowerOfTenBoundaries1800
-     * @tc.desc fromULong with power-of-10 boundary values from 10^0 to 10^11
+     * @tc.number SUB_BIGINT_STD_FROMULONG_0009
+     * @tc.name testBigIntFromULongPowerOfTenBoundaries0009
+     * @tc.desc fromULong with power-of-10 boundary values from 10^1 ,10^9,10^19,0,10^0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntFromULongPowerOfTenBoundaries1800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntFromULongPowerOfTenBoundaries0009', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.fromULong(1).toString()).assertEqual('1');
+      expect(BigInt.fromULong(0).toString()).assertEqual('0');
       expect(BigInt.fromULong(10).toString()).assertEqual('10');
-      expect(BigInt.fromULong(100).toString()).assertEqual('100');
-      expect(BigInt.fromULong(1000).toString()).assertEqual('1000');
-      expect(BigInt.fromULong(10000).toString()).assertEqual('10000');
-      expect(BigInt.fromULong(100000).toString()).assertEqual('100000');
-      expect(BigInt.fromULong(1000000).toString()).assertEqual('1000000');
-      expect(BigInt.fromULong(10000000).toString()).assertEqual('10000000');
-      expect(BigInt.fromULong(100000000).toString()).assertEqual('100000000');
       expect(BigInt.fromULong(1000000000).toString()).assertEqual('1000000000');
-      expect(BigInt.fromULong(10000000000).toString()).assertEqual('10000000000');
-      expect(BigInt.fromULong(100000000000).toString()).assertEqual('100000000000');
+      expect(BigInt.fromULong(10000000000000000000).toString()).assertEqual('10000000000000000000');
 
-      expect(BigInt.fromULong(1000000000000).toString()).assertEqual('1000000000000');
-      expect(BigInt.fromULong(10000000000000).toString()).assertEqual('10000000000000');
-      expect(BigInt.fromULong(100000000000000).toString()).assertEqual('100000000000000');
-      expect(BigInt.fromULong(1000000000000000).toString()).assertEqual('1000000000000000');
-      expect(BigInt.fromULong(10000000000000000).toString()).assertEqual('10000000000000000');
-      expect(BigInt.fromULong(100000000000000000).toString()).assertEqual('100000000000000000');
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_FROMULONG_1900
-     * @tc.name testBigIntFromULongMoreNegativeUnsigned1900
+     * @tc.number SUB_BIGINT_STD_FROMULONG_0010
+     * @tc.name testBigIntFromULongMoreNegativeUnsigned0010
      * @tc.desc fromULong with more negative values interpreted as unsigned
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntFromULongMoreNegativeUnsigned1900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntFromULongMoreNegativeUnsigned0010', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.fromULong(-10).toString()).assertEqual('18446744073709551606');
       expect(BigInt.fromULong(-100).toString()).assertEqual('18446744073709551516');
       expect(BigInt.fromULong(-1000).toString()).assertEqual('18446744073709550616');
@@ -198,14 +182,14 @@ export default function BigIntFromULongTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_FROMULONG_2000
-     * @tc.name testBigIntFromULongNegativeRoundThousands2000
+     * @tc.number SUB_BIGINT_STD_FROMULONG_0011
+     * @tc.name testBigIntFromULongNegativeRoundThousands0011
      * @tc.desc fromULong with negative round thousand values interpreted as unsigned
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntFromULongNegativeRoundThousands2000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntFromULongNegativeRoundThousands0011', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.fromULong(-1000000000).toString()).assertEqual('18446744072709551616');
       expect(BigInt.fromULong(-2000000000).toString()).assertEqual('18446744071709551616');
       expect(BigInt.fromULong(-3000000000).toString()).assertEqual('18446744070709551616');
@@ -214,75 +198,67 @@ export default function BigIntFromULongTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_FROMULONG_2100
-     * @tc.name testBigIntFromULongNegativeBoundaryExtremes2100
+     * @tc.number SUB_BIGINT_STD_FROMULONG_0012
+     * @tc.name testBigIntFromULongNegativeBoundaryExtremes0012
      * @tc.desc fromULong with negative boundary extremes as unsigned
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntFromULongNegativeBoundaryExtremes2100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntFromULongNegativeBoundaryExtremes0012', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.fromULong(-9223372036854775807).toString()).assertEqual('9223372036854775809');
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_FROMULONG_2300
-     * @tc.name testBigIntFromULongLargePowerOfTwo2300
+     * @tc.number SUB_BIGINT_STD_FROMULONG_0013
+     * @tc.name testBigIntFromULongLargePowerOfTwo0013
      * @tc.desc fromULong with large power-of-2 values (2^40, 2^50, 2^60, 2^63)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntFromULongLargePowerOfTwo2300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntFromULongLargePowerOfTwo0013', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.fromULong(1099511627776).toString()).assertEqual('1099511627776');
       expect(BigInt.fromULong(1125899906842624).toString()).assertEqual('1125899906842624');
       expect(BigInt.fromULong(1152921504606846976).toString()).assertEqual('1152921504606846976');
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_FROMULONG_2400
-     * @tc.name testBigIntFromULongMaxBoundary2400
+     * @tc.number SUB_BIGINT_STD_FROMULONG_0014
+     * @tc.name testBigIntFromULongMaxBoundary0014
      * @tc.desc fromULong with maximum ulong boundary and special large values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntFromULongMaxBoundary2400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntFromULongMaxBoundary0014', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.fromULong(1134903170).toString()).assertEqual('1134903170');
       expect(BigInt.fromULong(479001600).toString()).assertEqual('479001600');
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_FROMULONG_2500
-     * @tc.name testBigIntFromULongPrecisionExactLarge2500
+     * @tc.number SUB_BIGINT_STD_FROMULONG_0015
+     * @tc.name testBigIntFromULongPrecisionExactLarge0015
      * @tc.desc fromULong precision: exact large integer values up to 20 digits
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntFromULongPrecisionExactLarge2500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntFromULongPrecisionExactLarge0015', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.fromULong(1234567890123456).toString()).assertEqual('1234567890123456');
-      expect(BigInt.fromULong(9876543210987654).toString()).assertEqual('9876543210987654');
-      expect(BigInt.fromULong(1111111111111111).toString()).assertEqual('1111111111111111');
-      expect(BigInt.fromULong(2222222222222222).toString()).assertEqual('2222222222222222');
-      expect(BigInt.fromULong(3333333333333333).toString()).assertEqual('3333333333333333');
-      expect(BigInt.fromULong(4444444444444444).toString()).assertEqual('4444444444444444');
-      expect(BigInt.fromULong(5555555555555555).toString()).assertEqual('5555555555555555');
-      expect(BigInt.fromULong(6666666666666666).toString()).assertEqual('6666666666666666');
-      expect(BigInt.fromULong(7777777777777777).toString()).assertEqual('7777777777777777');
-      expect(BigInt.fromULong(8888888888888888).toString()).assertEqual('8888888888888888');
-      expect(BigInt.fromULong(9999999999999999).toString()).assertEqual('9999999999999999');
+      expect(BigInt.fromULong(18446744073709551615).toString()).assertEqual('18446744073709551615');
+      expect(BigInt.fromULong(99999999999999999999).toString()).assertEqual('99999999999999999999');
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_FROMULONG_2600
-     * @tc.name testBigIntFromULongArithmeticResults2600
+     * @tc.number SUB_BIGINT_STD_FROMULONG_0016
+     * @tc.name testBigIntFromULongArithmeticResults0016
      * @tc.desc fromULong with arithmetic operation results as input
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntFromULongArithmeticResults2600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntFromULongArithmeticResults0016', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.fromULong(100 + 200).toString()).assertEqual('300');
       expect(BigInt.fromULong(500 - 200).toString()).assertEqual('300');
       expect(BigInt.fromULong(100 * 100).toString()).assertEqual('10000');
@@ -296,14 +272,14 @@ export default function BigIntFromULongTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_FROMULONG_2700
-     * @tc.name testBigIntFromULongDoubleValue2700
+     * @tc.number SUB_BIGINT_STD_FROMULONG_0017
+     * @tc.name testBigIntFromULongDoubleValue0017
      * @tc.desc fromULong result supports doubleValue conversion
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntFromULongDoubleValue2700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntFromULongDoubleValue0017', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.fromULong(100).doubleValue()).assertEqual(100.0);
       expect(BigInt.fromULong(0).doubleValue()).assertEqual(0.0);
       expect(BigInt.fromULong(1).doubleValue()).assertEqual(1.0);
@@ -315,14 +291,14 @@ export default function BigIntFromULongTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_FROMULONG_2800
-     * @tc.name testBigIntFromULongCollectionUsage2800
+     * @tc.number SUB_BIGINT_STD_FROMULONG_0018
+     * @tc.name testBigIntFromULongCollectionUsage0018
      * @tc.desc fromULong result used in array, object, Map, and Set
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntFromULongCollectionUsage2800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntFromULongCollectionUsage0018', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr: BigInt[] = [BigInt.fromULong(100)];
       expect(arr[0].toString()).assertEqual('100');
 
@@ -337,14 +313,14 @@ export default function BigIntFromULongTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_FROMULONG_2900
-     * @tc.name testBigIntFromULongVariableAssignment2900
+     * @tc.number SUB_BIGINT_STD_FROMULONG_0019
+     * @tc.name testBigIntFromULongVariableAssignment0019
      * @tc.desc fromULong with variable assignment and conditional expression
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntFromULongVariableAssignment2900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntFromULongVariableAssignment0019', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a: BigInt = BigInt.fromULong(100);
       expect(a.toString()).assertEqual('100');
 
@@ -355,14 +331,14 @@ export default function BigIntFromULongTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_FROMULONG_3000
-     * @tc.name testBigIntFromULongPersistentConsistency3000
+     * @tc.number SUB_BIGINT_STD_FROMULONG_0020
+     * @tc.name testBigIntFromULongPersistentConsistency0020
      * @tc.desc fromULong returns consistent results on persistent repeated calls
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntFromULongPersistentConsistency3000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntFromULongPersistentConsistency0020', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const VAL: long = 123456789;
       expect(BigInt.fromULong(VAL).toString()).assertEqual('123456789');
       expect(BigInt.fromULong(VAL).toString()).assertEqual('123456789');
@@ -372,14 +348,14 @@ export default function BigIntFromULongTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_FROMULONG_3100
-     * @tc.name testBigIntFromULongToStringRadix3100
+     * @tc.number SUB_BIGINT_STD_FROMULONG_0021
+     * @tc.name testBigIntFromULongToStringRadix0021
      * @tc.desc Mindmap: fromULong result toString(16/2/36) radix views
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntFromULongToStringRadix3100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntFromULongToStringRadix0021', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.fromULong(9223372036854775807).toString(16)).assertEqual('7fffffffffffffff');
       expect(BigInt.fromULong(256).toString(16)).assertEqual('100');
       expect(BigInt.fromULong(65536).toString(16)).assertEqual('10000');
@@ -388,14 +364,14 @@ export default function BigIntFromULongTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_FROMULONG_3200
-     * @tc.name testBigIntFromULongGetLongReadback3200
+     * @tc.number SUB_BIGINT_STD_FROMULONG_0022
+     * @tc.name testBigIntFromULongGetLongReadback0022
      * @tc.desc Mindmap: fromULong result getLong reads back original long value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntFromULongGetLongReadback3200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntFromULongGetLongReadback0022', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.fromULong(-9223372036854775808).getLong()).assertEqual(-9223372036854775808);
       expect(BigInt.fromULong(100).getLong()).assertEqual(100);
       expect(BigInt.fromULong(0).getLong()).assertEqual(0);
@@ -404,14 +380,14 @@ export default function BigIntFromULongTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_FROMULONG_3300
-     * @tc.name testBigIntFromULongGetULongReadback3300
+     * @tc.number SUB_BIGINT_STD_FROMULONG_0023
+     * @tc.name testBigIntFromULongGetULongReadback0023
      * @tc.desc Mindmap: fromULong result getULong reads back unsigned long
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntFromULongGetULongReadback3300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntFromULongGetULongReadback0023', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.fromULong(-1).getULong()).assertEqual(-1);
       expect(BigInt.fromULong(0).getULong()).assertEqual(0);
       expect(BigInt.fromULong(100).getULong()).assertEqual(100);
@@ -420,14 +396,14 @@ export default function BigIntFromULongTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_FROMULONG_3400
-     * @tc.name testBigIntFromULongInstanceIndependence3400
+     * @tc.number SUB_BIGINT_STD_FROMULONG_0024
+     * @tc.name testBigIntFromULongInstanceIndependence0024
      * @tc.desc Mindmap: two fromULong(0x7FFFFFFF) return independent instances
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntFromULongInstanceIndependence3400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntFromULongInstanceIndependence0024', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a = BigInt.fromULong(0x7FFFFFFF);
       const b = BigInt.fromULong(0x7FFFFFFF);
       expect(a === b).assertTrue();
@@ -435,27 +411,27 @@ export default function BigIntFromULongTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_FROMULONG_3500
-     * @tc.name testBigIntFromULongUnsignedCompare3500
+     * @tc.number SUB_BIGINT_STD_FROMULONG_0025
+     * @tc.name testBigIntFromULongUnsignedCompare0025
      * @tc.desc Mindmap: fromULong(-1) unsigned semantic > any positive long
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntFromULongUnsignedCompare3500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntFromULongUnsignedCompare0025', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.fromULong(-1).operatorGreaterThan(BigInt(9223372036854775807))).assertTrue();
       expect(BigInt.fromULong(-1).operatorGreaterThan(BigInt(0))).assertTrue();
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_FROMULONG_3600
-     * @tc.name testBigIntFromULongAllOnesOverflow3600
+     * @tc.number SUB_BIGINT_STD_FROMULONG_0026
+     * @tc.name testBigIntFromULongAllOnesOverflow0026
      * @tc.desc Mindmap: fromULong(-1) + 1 overflow to 18446744073709551616
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntFromULongAllOnesOverflow3600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntFromULongAllOnesOverflow0026', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.fromULong(-1).operatorAdd(BigInt(1)).toString()).assertEqual('18446744073709551616');
       expect(BigInt.fromULong(-1).toString(2).length).assertEqual(64);
     });

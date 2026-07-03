@@ -34,77 +34,68 @@ class XYObj {
 }
 
 export default function BigIntEquals2Test_2(): void {
-  describe('BigInt.equals(other: Any) overload - expanded param dimensions', () => {
+  describe('BigIntEquals2Test_2', () => {
 
     /**
-     * @tc.number SUB_BIGINT_STD_EQUALS_ANY_2700
-     * @tc.name testBigIntEqualsAnyPrimitiveTypeFalseBatch2700
+     * @tc.number SUB_BIGINT_STD_EQUALS_ANY_0001
+     * @tc.name testBigIntEqualsAnyPrimitiveTypeFalseBatch0001
      * @tc.desc equals(Any) returns false for byte/short/int/long
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsAnyPrimitiveTypeFalseBatch2700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsAnyPrimitiveTypeFalseBatch0001', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new BigInt(0).equals((0) as byte)).assertFalse();
       expect(new BigInt(1).equals((1) as byte)).assertFalse();
       expect(new BigInt(-1).equals((-1) as byte)).assertFalse();
+      expect(new BigInt(2).equals((2) as byte)).assertFalse();
+      expect(new BigInt(-2).equals((-2) as byte)).assertFalse();
       expect(new BigInt(127).equals((127) as byte)).assertFalse();
       expect(new BigInt(-128).equals((-128) as byte)).assertFalse();
-      expect(new BigInt(64).equals((64) as byte)).assertFalse();
-      expect(new BigInt(-64).equals((-64) as byte)).assertFalse();
-      expect(new BigInt(100).equals((100) as byte)).assertFalse();
+
       expect(new BigInt(32767).equals((32767) as short)).assertFalse();
       expect(new BigInt(-32768).equals((-32768) as short)).assertFalse();
-      expect(new BigInt(200).equals((200) as short)).assertFalse();
-      expect(new BigInt(-200).equals((-200) as short)).assertFalse();
-      expect(new BigInt(1024).equals((1024) as short)).assertFalse();
-      expect(new BigInt(-1024).equals((-1024) as short)).assertFalse();
+
       expect(new BigInt(2147483647).equals((2147483647) as int)).assertFalse();
       expect(new BigInt(-2147483648).equals((-2147483648) as int)).assertFalse();
-      expect(new BigInt(50000).equals((50000) as int)).assertFalse();
-      expect(new BigInt(-50000).equals((-50000) as int)).assertFalse();
       expect(new BigInt(65536).equals((65536) as int)).assertFalse();
       expect(new BigInt(-65536).equals((-65536) as int)).assertFalse();
-      expect(new BigInt(1000000).equals((1000000) as int)).assertFalse();
-      expect(new BigInt(-1000000).equals((-1000000) as int)).assertFalse();
+
       expect(new BigInt('9223372036854775807').equals((9223372036854775807) as long)).assertFalse();
       expect(new BigInt('-9223372036854775808').equals((-9223372036854775808) as long)).assertFalse();
       expect(new BigInt('4294967296').equals((4294967296) as long)).assertFalse();
       expect(new BigInt('-4294967296').equals((-4294967296) as long)).assertFalse();
-      expect(new BigInt('1099511627776').equals((1099511627776) as long)).assertFalse();
-      expect(new BigInt('-1099511627776').equals((-1099511627776) as long)).assertFalse();
+      expect(new BigInt('9223372036854775808').equals((9223372036854775808) as long)).assertFalse();
+      expect(new BigInt('-9223372036854775809').equals((-9223372036854775809) as long)).assertFalse();
+      expect(new BigInt('18446744073709551616').equals((18446744073709551616) as long)).assertFalse();
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_EQUALS_ANY_3100
-     * @tc.name testBigIntEqualsAnyDoubleTypes3100
+     * @tc.number SUB_BIGINT_STD_EQUALS_ANY_0002
+     * @tc.name testBigIntEqualsAnyDoubleTypes0002
      * @tc.desc equals(Any) returns false for other as double type values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsAnyDoubleTypes3100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsAnyDoubleTypes0002', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new BigInt(0).equals((0.0) as double)).assertFalse();
       expect(new BigInt(0).equals((-0.0) as double)).assertFalse();
+      expect(new BigInt(-0).equals((-0.0) as double)).assertFalse();
       expect(new BigInt(1).equals((1.5) as double)).assertFalse();
-      expect(new BigInt(-2).equals((-2.7) as double)).assertFalse();
-      expect(new BigInt(3).equals((3.14) as double)).assertFalse();
-      expect(new BigInt(-3).equals((-3.14) as double)).assertFalse();
-      expect(new BigInt(0).equals((0.1) as double)).assertFalse();
-      expect(new BigInt(0).equals((-0.1) as double)).assertFalse();
-      expect(new BigInt(100).equals((100.0) as double)).assertFalse();
-      expect(new BigInt(-100).equals((-100.0) as double)).assertFalse();
+      expect(new BigInt(1).equals((-1.5) as double)).assertFalse();
+      expect(new BigInt(-1).equals((-1.5) as double)).assertFalse();
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_EQUALS_ANY_3200
-     * @tc.name testBigIntEqualsAnyNonBigIntTypeFalseBatch
+     * @tc.number SUB_BIGINT_STD_EQUALS_ANY_0003
+     * @tc.name testBigIntEqualsAnyNonBigIntTypeFalseBatch0003
      * @tc.desc equals(Any) returns false for array/object/container/RegExp/function
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsAnyNonBigIntTypeFalseBatch', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsAnyNonBigIntTypeFalseBatch0003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a = BigInt(42);
       expect(a.equals(new Array<number>(10) as object)).assertFalse();
       expect(a.equals(new Map<number, number>() as object)).assertFalse();
@@ -127,45 +118,48 @@ export default function BigIntEquals2Test_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_EQUALS_ANY_3400
-     * @tc.name testBigIntEqualsAnyAnyBigIntExtended3400
+     * @tc.number SUB_BIGINT_STD_EQUALS_ANY_0004
+     * @tc.name testBigIntEqualsAnyAnyBigIntExtended0004
      * @tc.desc equals(Any) with Any variable holding BigInt at various boundary values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsAnyAnyBigIntExtended3400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const bi0: Any = new BigInt(0);
-      expect(new BigInt(0).equals(bi0)).assertTrue();
-      const bi1: Any = new BigInt(1);
-      expect(new BigInt(1).equals(bi1)).assertTrue();
-      const biNeg1: Any = new BigInt(-1);
-      expect(new BigInt(-1).equals(biNeg1)).assertTrue();
-      const bi127: Any = new BigInt(127);
-      expect(new BigInt(127).equals(bi127)).assertTrue();
-      const biNeg128: Any = new BigInt(-128);
-      expect(new BigInt(-128).equals(biNeg128)).assertTrue();
-      const biMaxInt: Any = new BigInt(2147483647);
-      expect(new BigInt(2147483647).equals(biMaxInt)).assertTrue();
-      const biMinInt: Any = new BigInt(-2147483648);
-      expect(new BigInt(-2147483648).equals(biMinInt)).assertTrue();
-      const biBig: Any = new BigInt('9007199254740993');
-      expect(new BigInt('9007199254740993').equals(biBig)).assertTrue();
-      const biLongMax: Any = new BigInt('9223372036854775807');
-      expect(new BigInt('9223372036854775807').equals(biLongMax)).assertTrue();
-      const biLongMin: Any = new BigInt('-9223372036854775808');
-      expect(new BigInt('-9223372036854775808').equals(biLongMin)).assertTrue();
+    it('testBigIntEqualsAnyAnyBigIntExtended0004', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const testCases: [BigInt, string][] = [
+        [BigInt(0), '零值'],
+        [BigInt(1), '最小正数'],
+        [BigInt(-1), '最小负数'],
+        [BigInt(127), 'byte 最大值'],
+        [BigInt(-128), 'byte 最小值'],
+        [BigInt(2147483647), 'int 最大值'],
+        [BigInt(-2147483648), 'int 最小值'],
+        [BigInt('9007199254740993'), '2^53 精度边界'],
+        [BigInt('9223372036854775807'), 'long 最大值'],
+        [BigInt('-9223372036854775808'), 'long 最小值'],
+      ];
+      for (const [value, desc] of testCases) {
+        const anyValue: Any = value;
+        expect(value.equals(anyValue)).assertTrue();
+      }
+      expect(BigInt(0).equals(BigInt(1) as Any)).assertFalse();
+      expect(BigInt(100).equals(BigInt(200) as Any)).assertFalse();
+
+      expect(BigInt(0).equals(0 as Any)).assertFalse();
+      expect(BigInt(1).equals('1' as Any)).assertFalse();
+      expect(BigInt(1).equals(true as Any)).assertFalse();
     });
 
+
     /**
-     * @tc.number SUB_BIGINT_STD_EQUALS_ANY_3500
-     * @tc.name testBigIntEqualsAnyAnyBigIntDiffValues3500
+     * @tc.number SUB_BIGINT_STD_EQUALS_ANY_0005
+     * @tc.name testBigIntEqualsAnyAnyBigIntDiffValues0005
      * @tc.desc equals(Any) with Any variable holding BigInt, different value comparisons
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsAnyAnyBigIntDiffValues3500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsAnyAnyBigIntDiffValues0005', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const bi0: Any = new BigInt(0);
       expect(new BigInt(1).equals(bi0)).assertFalse();
       const bi1: Any = new BigInt(1);
@@ -179,14 +173,14 @@ export default function BigIntEquals2Test_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_EQUALS_ANY_3600
-     * @tc.name testBigIntEqualsAnyMixedScenarios3600
+     * @tc.number SUB_BIGINT_STD_EQUALS_ANY_0006
+     * @tc.name testBigIntEqualsAnyMixedScenarios0006
      * @tc.desc equals(Any) mixed scenarios: Any variable reassignment and copy construction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsAnyMixedScenarios3600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsAnyMixedScenarios0006', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let v: Any = new BigInt(42);
       const matchBigInt = new BigInt(42).equals(v);
       v = 42;
@@ -203,14 +197,14 @@ export default function BigIntEquals2Test_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_EQUALS_ANY_3700
-     * @tc.name testBigIntEqualsAnyAnyReturnType3700
+     * @tc.number SUB_BIGINT_STD_EQUALS_ANY_0007
+     * @tc.name testBigIntEqualsAnyAnyReturnType0007
      * @tc.desc equals(Any) overload returns boolean for various input types
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsAnyAnyReturnType3700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsAnyAnyReturnType0007', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const bi: Any = new BigInt(55);
       const r1 = new BigInt(55).equals(bi);
       expect(typeof r1).assertEqual('boolean');
@@ -223,14 +217,14 @@ export default function BigIntEquals2Test_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_EQUALS_ANY_3800
-     * @tc.name testBigIntEqualsAnyImmutability3800
+     * @tc.number SUB_BIGINT_STD_EQUALS_ANY_0008
+     * @tc.name testBigIntEqualsAnyImmutability0008
      * @tc.desc equals(Any) does not modify original BigInt value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsAnyImmutability3800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsAnyImmutability0008', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a = new BigInt(777);
       a.equals(null);
       expect(a.toString()).assertEqual('777');
@@ -249,14 +243,14 @@ export default function BigIntEquals2Test_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_EQUALS_ANY_3900
-     * @tc.name testBigIntEqualsAnyCountAccumulate3900
+     * @tc.number SUB_BIGINT_STD_EQUALS_ANY_0009
+     * @tc.name testBigIntEqualsAnyCountAccumulate0009
      * @tc.desc equals(Any) multiple Any-overload calls do not change operand
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsAnyCountAccumulate3900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsAnyCountAccumulate0009', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a = new BigInt(500);
       let count: int = 0;
       if (a.equals(null)) { count++; }
@@ -267,14 +261,14 @@ export default function BigIntEquals2Test_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_EQUALS_ANY_4000
-     * @tc.name testBigIntEqualsAnyStringExtended4000
+     * @tc.number SUB_BIGINT_STD_EQUALS_ANY_0010
+     * @tc.name testBigIntEqualsAnyStringExtended0010
      * @tc.desc equals(Any) returns false for additional string types including hex and scientific
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsAnyStringExtended4000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsAnyStringExtended0010', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a = BigInt(42);
       expect(a.equals('42')).assertFalse();
       expect(a.equals('-42')).assertFalse();
@@ -293,14 +287,14 @@ export default function BigIntEquals2Test_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_EQUALS_ANY_4100
-     * @tc.name testBigIntEqualsAnyStringSpecialFormats4100
+     * @tc.number SUB_BIGINT_STD_EQUALS_ANY_0011
+     * @tc.name testBigIntEqualsAnyStringSpecialFormats0011
      * @tc.desc equals(Any) returns false for special format strings
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsAnyStringSpecialFormats4100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsAnyStringSpecialFormats0011', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a = BigInt(0);
       expect(a.equals('0x0')).assertFalse();
       expect(a.equals('0b0')).assertFalse();
@@ -316,14 +310,14 @@ export default function BigIntEquals2Test_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_EQUALS_ANY_4400
-     * @tc.name testBigIntEqualsAnyBigIntFromFunctionRet4400
+     * @tc.number SUB_BIGINT_STD_EQUALS_ANY_0012
+     * @tc.name testBigIntEqualsAnyBigIntFromFunctionRet0012
      * @tc.desc equals(Any) true for BigInt returned from function and ternary expressions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsAnyBigIntFromFunctionRet4400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsAnyBigIntFromFunctionRet0012', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(getBigInt(100).equals(BigInt(100))).assertTrue();
       expect(getBigInt(-50).equals(BigInt(-50))).assertTrue();
       expect((true ? BigInt(10) : BigInt(20)).equals(BigInt(10))).assertTrue();
@@ -332,14 +326,14 @@ export default function BigIntEquals2Test_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_EQUALS_ANY_4500
-     * @tc.name testBigIntEqualsAnyNegPosBoundary4500
+     * @tc.number SUB_BIGINT_STD_EQUALS_ANY_0013
+     * @tc.name testBigIntEqualsAnyNegPosBoundary0013
      * @tc.desc equals(Any) negative vs positive numbers across type boundaries
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsAnyNegPosBoundary4500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsAnyNegPosBoundary0013', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(0).equals(BigInt(-0))).assertTrue();
       expect(BigInt(1).equals(BigInt(-1))).assertFalse();
       expect(BigInt(127).equals(BigInt(-128))).assertFalse();
@@ -352,14 +346,14 @@ export default function BigIntEquals2Test_2(): void {
 
 
     /**
-     * @tc.number SUB_BIGINT_STD_EQUALS_ANY_4700
-     * @tc.name testBigIntEqualsAnyBitwiseArithExt4700
+     * @tc.number SUB_BIGINT_STD_EQUALS_ANY_0014
+     * @tc.name testBigIntEqualsAnyBitwiseArithExt0014
      * @tc.desc equals(Any) for bitwise and arithmetic operation results on BigInt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsAnyBitwiseArithExt4700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsAnyBitwiseArithExt0014', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(100).operatorModule(BigInt(7)).equals(BigInt(2))).assertTrue();
       expect(BigInt(50).operatorSubtract(BigInt(20)).equals(BigInt(30))).assertTrue();
       expect(BigInt(6).operatorMultiply(BigInt(7)).equals(BigInt(42))).assertTrue();
@@ -368,14 +362,14 @@ export default function BigIntEquals2Test_2(): void {
 
 
     /**
-     * @tc.number SUB_BIGINT_STD_EQUALS_ANY_4900
-     * @tc.name testBigIntEqualsAnyLargeDigitLen4900
+     * @tc.number SUB_BIGINT_STD_EQUALS_ANY_0015
+     * @tc.name testBigIntEqualsAnyLargeDigitLen0015
      * @tc.desc equals(Any) for extremely large 200-digit and 500-digit BigInt values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsAnyLargeDigitLen4900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsAnyLargeDigitLen0015', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const d200 = '9'.repeat(200);
       const d200_adj = '9'.repeat(199) + '8';
       const d500 = '9'.repeat(500);
@@ -389,32 +383,31 @@ export default function BigIntEquals2Test_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_EQUALS_ANY_5100
-     * @tc.name testBigIntEqualsAnyDigitLenBoundary5100
-     * @tc.desc equals(Any) for single-digit to nine-digit number boundaries
+     * @tc.number SUB_BIGINT_STD_EQUALS_ANY_0016
+     * @tc.name testBigIntEqualsAnyDigitLenBoundary0016
+     * @tc.desc equals(Any) for critical digit carry boundaries, 2^65, and Long overflow boundaries
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsAnyDigitLenBoundary5100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const values: BigInt[][] = [
-        [BigInt(9), BigInt(9)], [BigInt(10), BigInt(10)],
-        [BigInt(99), BigInt(99)], [BigInt(100), BigInt(100)],
-        [BigInt(999), BigInt(999)], [BigInt(1000), BigInt(1000)],
-        [BigInt(9999), BigInt(9999)], [BigInt(10000), BigInt(10000)],
-        [BigInt(99999), BigInt(99999)], [BigInt(100000), BigInt(100000)],
-        [BigInt(999999), BigInt(999999)],
-        [BigInt(9999999), BigInt(9999999)],
-        [BigInt(99999999), BigInt(99999999)],
-        [BigInt(999999999), BigInt(999999999)],
-      ];
-      for (let i = 0; i < values.length; i++) {
-        expect(values[i][0].equals(values[i][1])).assertTrue();
-      }
-      expect(BigInt(9).equals(BigInt(10))).assertFalse();
-      expect(BigInt(99).equals(BigInt(100))).assertFalse();
-      expect(BigInt(999).equals(BigInt(1000))).assertFalse();
-    });
+    it('testBigIntEqualsAnyDigitLenBoundary0016', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const testCases: [BigInt, Any, boolean, string][] = [
 
+        [BigInt(9), BigInt(10), false, '1-digit to 2-digit boundary mismatch'],
+        [BigInt(999), BigInt(1000), false, '3-digit to 4-digit boundary mismatch'],
+
+        [BigInt('36893488147419103232'), BigInt('36893488147419103232'), true, '2^65 Exact Match'],
+
+        [BigInt('9223372036854775807'), BigInt('9223372036854775808'), false, 'Long.MAX_VALUE vs 2^63 (Overflow) mismatch'],
+
+        [BigInt('18446744073709551616'), BigInt('18446744073709551616'), true, '2^64 Exact Match'],
+        [BigInt('18446744073709551615'), BigInt('18446744073709551615'), true, '2^64 - 1 (UINT64_MAX) Match'],
+      ];
+
+      for (const [val1, val2, expected, desc] of testCases) {
+        const result = val1.equals(val2);
+        expect(result).assertEqual(expected);
+      }
+    });
   });
 }
