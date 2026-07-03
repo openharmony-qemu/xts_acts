@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+import Utils from "../../../../Util.test";
+
 import {
   afterAll,
   afterEach,
@@ -135,7 +137,6 @@ class ConcreteChild_4 extends GenericParent_4<number> {
     return value * 2;
   }
 }
-
 
 class Generic_6<T> {
   items: T[] = [];
@@ -278,15 +279,7 @@ class Child_13 extends Parent_13<string> {
   }
 }
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-
-export default function GenericClassesBridgeTest() {
+export default function GenericClassesBridgeTest(): void {
   describe("GenericClassesBridgeTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -297,7 +290,7 @@ export default function GenericClassesBridgeTest() {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
