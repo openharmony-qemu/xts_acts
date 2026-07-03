@@ -34,7 +34,7 @@ export default function Float64ArrayConstructor3Test(): void {
     })
 
     beforeEach(async (): Promise<void> => {
-      await Utils.msSleep(30)
+      await Utils.msSleep(30);
     })
 
     afterEach((): void => {
@@ -438,13 +438,13 @@ export default function Float64ArrayConstructor3Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayConstructor3023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const hundredPointzero: number = 100.0;
+      const hundredPointZero: number = 100.0;
       const zeroPointZero: number = 0.0;
       const buf = new ArrayBuffer(32);
       const view1 = new Float64Array(buf, 0, 2);
       const view2 = new Float64Array(buf, 16, 2);
       view1[0] = 100.0;
-      expect(view1[0]).assertEqual(hundredPointzero);
+      expect(view1[0]).assertEqual(hundredPointZero);
       expect(view2[0]).assertEqual(zeroPointZero);
     })
 
@@ -1109,7 +1109,7 @@ export default function Float64ArrayConstructor3Test(): void {
       expect(view[0]).assertEqual(int32MinValue);
       expect(view[1]).assertEqual(negativeOne);
       expect(view[2]).assertEqual(zeroValue);
-      expect(view.buffer === src.buffer).assertEqual(false);
+      expect(view.buffer === src.buffer).assertFalse();
     })
 
     /**
@@ -1353,12 +1353,9 @@ export default function Float64ArrayConstructor3Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayConstructor3072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
-      const threePointZero: number = 3.0;
-      const arr = new Float64Array([onePointZero, twoPointZero, threePointZero]);
-      expect(arr[0] === 1.0).assertEqual(true);
-      expect(arr[0] === 9.0).assertEqual(false);
+      const arr = new Float64Array([1.0, 2.0, 3.0]);
+      expect(arr[0] === 1.0).assertTrue();
+      expect(arr[0] === 9.0).assertFalse();
     })
 
     /**

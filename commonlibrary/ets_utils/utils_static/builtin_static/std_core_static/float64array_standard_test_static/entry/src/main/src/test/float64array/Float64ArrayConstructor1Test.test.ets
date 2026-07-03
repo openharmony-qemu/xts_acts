@@ -34,7 +34,7 @@ export default function Float64ArrayConstructor1Test(): void {
     })
 
     beforeEach(async (): Promise<void> => {
-      await Utils.msSleep(30)
+      await Utils.msSleep(30);
     })
 
     afterEach((): void => {
@@ -1495,8 +1495,8 @@ export default function Float64ArrayConstructor1Test(): void {
      */
     it('testFloat64ArrayConstructor1084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array(3);
-      expect(arr[0] === 0.0).assertEqual(true);
-      expect(arr[0] === 1.0).assertEqual(false);
+      expect(arr[0] === 0.0).assertTrue();
+      expect(arr[0] === 1.0).assertFalse();
     })
 
     /**

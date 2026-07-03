@@ -34,7 +34,7 @@ export default function Float64ArrayToSortedTest(): void {
     })
 
     beforeEach(async (): Promise<void> => {
-      await Utils.msSleep(30)
+      await Utils.msSleep(30);
     })
 
     afterEach((): void => {
@@ -52,12 +52,9 @@ export default function Float64ArrayToSortedTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToSorted001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const threePointZero: number = 3.0;
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
       const eightValue: number = 8;
       const twentyfourValue: number = 24;
-      const arr = new Float64Array([threePointZero, onePointZero, twoPointZero]);
+      const arr = new Float64Array([3.0, 1.0, 2.0]);
       const sorted = arr.toSorted();
       expect(sorted.BYTES_PER_ELEMENT).assertEqual(eightValue);
       expect(sorted.byteLength).assertEqual(twentyfourValue);
@@ -72,10 +69,7 @@ export default function Float64ArrayToSortedTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToSorted002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const threePointZero: number = 3.0;
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
-      const arr = new Float64Array([threePointZero, onePointZero, twoPointZero]);
+      const arr = new Float64Array([3.0, 1.0, 2.0]);
       const sorted = arr.toSorted();
       const expectVal = true;
       expect(sorted !== arr).assertEqual(expectVal);
@@ -90,10 +84,7 @@ export default function Float64ArrayToSortedTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToSorted003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
-      const threePointZero: number = 3.0;
-      const arr = new Float64Array([onePointZero, twoPointZero, threePointZero]);
+      const arr = new Float64Array([1.0, 2.0, 3.0]);
       const sorted = arr.toSorted();
       const expectVal = true;
       expect(sorted !== arr).assertEqual(expectVal);
@@ -108,10 +99,7 @@ export default function Float64ArrayToSortedTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToSorted004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const fourPointZero: number = 4.0;
-      const twoPointZero: number = 2.0;
-      const sixPointZero: number = 6.0;
-      const arr = new Float64Array([fourPointZero, twoPointZero, sixPointZero]);
+      const arr = new Float64Array([4.0, 2.0, 6.0]);
       const sorted = arr.toSorted();
       const expectVal = true;
       expect(sorted.buffer !== arr.buffer).assertEqual(expectVal);
@@ -127,9 +115,7 @@ export default function Float64ArrayToSortedTest(): void {
      */
     it('testFloat64ArrayToSorted005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const threePointZero: number = 3.0;
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
-      const arr = new Float64Array([threePointZero, onePointZero, twoPointZero]);
+      const arr = new Float64Array([threePointZero, 1.0, 2.0]);
       arr.toSorted();
       const expectVal = threePointZero;
       expect(arr[0]).assertEqual(expectVal);
@@ -144,10 +130,8 @@ export default function Float64ArrayToSortedTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToSorted006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const threePointZero: number = 3.0;
       const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
-      const arr = new Float64Array([threePointZero, onePointZero, twoPointZero]);
+      const arr = new Float64Array([3.0, onePointZero, 2.0]);
       arr.toSorted();
       const expectVal = onePointZero;
       expect(arr[1]).assertEqual(expectVal);
@@ -162,10 +146,8 @@ export default function Float64ArrayToSortedTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToSorted007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const threePointZero: number = 3.0;
-      const onePointZero: number = 1.0;
       const twoPointZero: number = 2.0;
-      const arr = new Float64Array([threePointZero, onePointZero, twoPointZero]);
+      const arr = new Float64Array([3.0, 1.0, twoPointZero]);
       arr.toSorted();
       const expectVal = twoPointZero;
       expect(arr[2]).assertEqual(expectVal);
@@ -800,8 +782,7 @@ export default function Float64ArrayToSortedTest(): void {
     it('testFloat64ArrayToSorted040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const threePointZero: number = 3.0;
       const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
-      const arr = new Float64Array([threePointZero, onePointZero, twoPointZero]);
+      const arr = new Float64Array([threePointZero, onePointZero, 2.0]);
       const sorted1 = arr.toSorted();
       const sorted2 = arr.toSorted();
       expect(sorted1[0]).assertEqual(onePointZero);
@@ -818,12 +799,11 @@ export default function Float64ArrayToSortedTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToSorted041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const twoPointZero: number = 2.0;
       const onePointZero: number = 1.0;
-      const arr = new Float64Array([twoPointZero, onePointZero]);
+      const arr = new Float64Array([2.0, onePointZero]);
       const s1 = arr.toSorted();
       const s2 = arr.toSorted();
-      expect(s1 !== s2).assertEqual(true);
+      expect(s1 !== s2).assertTrue();
       expect(s1[0]).assertEqual(onePointZero);
       expect(s2[0]).assertEqual(onePointZero);
     })
@@ -838,10 +818,8 @@ export default function Float64ArrayToSortedTest(): void {
      */
     it('testFloat64ArrayToSorted042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const threePointZero: number = 3.0;
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
       const num999Pointzero: number = 999.0;
-      const arr = new Float64Array([threePointZero, onePointZero, twoPointZero]);
+      const arr = new Float64Array([threePointZero, 1.0, 2.0]);
       const sorted = arr.toSorted();
       sorted[0] = 999.0;
       expect(arr[0]).assertEqual(threePointZero);
@@ -857,11 +835,9 @@ export default function Float64ArrayToSortedTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToSorted043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const threePointZero: number = 3.0;
       const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
       const num999Pointzero: number = 999.0;
-      const arr = new Float64Array([threePointZero, onePointZero, twoPointZero]);
+      const arr = new Float64Array([3.0, onePointZero, 2.0]);
       const sorted = arr.toSorted();
       arr[0] = 999.0;
       expect(arr[0]).assertEqual(num999Pointzero);
@@ -1115,10 +1091,8 @@ export default function Float64ArrayToSortedTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToSorted055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const threePointZero: number = 3.0;
       const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
-      const arr = new Float64Array([threePointZero, onePointZero, twoPointZero]);
+      const arr = new Float64Array([3.0, onePointZero, 2.0]);
       const first = arr.toSorted().$_get(0);
       const expectVal = onePointZero;
       expect(first).assertEqual(expectVal);
@@ -1135,11 +1109,9 @@ export default function Float64ArrayToSortedTest(): void {
     it('testFloat64ArrayToSorted056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const fivePointZero: number = 5.0;
       const threePointZero: number = 3.0;
-      const onePointZero: number = 1.0;
-      const fourPointZero: number = 4.0;
       const twoPointZero: number = 2.0;
       const twoValue: number = 2;
-      const arr = new Float64Array([fivePointZero, threePointZero, onePointZero, fourPointZero, twoPointZero]);
+      const arr = new Float64Array([fivePointZero, threePointZero, 1.0, 4.0, twoPointZero]);
       const sorted = arr.toSorted();
       expect(sorted.length).assertEqual(fivePointZero);
       expect(sorted[1]).assertEqual(twoPointZero);
@@ -1155,11 +1127,8 @@ export default function Float64ArrayToSortedTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToSorted057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const threePointZero: number = 3.0;
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
       const sixPointZero: number = 6.0;
-      const arr = new Float64Array([threePointZero, onePointZero, twoPointZero]);
+      const arr = new Float64Array([3.0, 1.0, 2.0]);
       let sum = 0.0;
       arr.toSorted().forEach((val: number): void => {
         sum += val;
@@ -1223,11 +1192,8 @@ export default function Float64ArrayToSortedTest(): void {
      */
     it('testFloat64ArrayToSorted060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const fivePointZero: number = 5.0;
-      const threePointZero: number = 3.0;
-      const onePointZero: number = 1.0;
       const fourPointZero: number = 4.0;
-      const twoPointZero: number = 2.0;
-      const arr = new Float64Array([fivePointZero, threePointZero, onePointZero, fourPointZero, twoPointZero]);
+      const arr = new Float64Array([fivePointZero, 3.0, 1.0, fourPointZero, 2.0]);
       const sorted = arr.toSorted();
       expect(sorted[3]).assertEqual(fourPointZero);
       expect(sorted[4]).assertEqual(fivePointZero);
@@ -1486,9 +1452,8 @@ export default function Float64ArrayToSortedTest(): void {
      */
     it('testFloat64ArrayToSorted073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const int32MinValue: number = -2147483648;
-      const negativeOne: number = -1;
       const zeroValue: number = 0;
-      const arr = Float64Array.of(int32MinValue, negativeOne, zeroValue);
+      const arr = new Float64Array([int32MinValue, -1, zeroValue]);
       const sorted = arr.toSorted();
       expect(arr[0]).assertEqual(int32MinValue);
       expect(sorted[0]).assertEqual(int32MinValue);
@@ -1509,7 +1474,7 @@ export default function Float64ArrayToSortedTest(): void {
       const hexValue55: number = 0x55;
       const fillValue85: number = 85.0;
       const num255Value: number = 255;
-      const arr = Float64Array.of(hexValueFF, hexValueAA, hexValue55);
+      const arr = new Float64Array([hexValueFF, hexValueAA, hexValue55]);
       const s = arr.toSorted();
       expect(s[0]).assertEqual(fillValue85);
       expect(s[2]).assertEqual(num255Value);
@@ -1529,7 +1494,7 @@ export default function Float64ArrayToSortedTest(): void {
       const binaryValue01010101: number = 0b01010101;
       const fillValue85: number = 85.0;
       const num255Value: number = 255;
-      const arr = Float64Array.of(binaryValue11111111, binaryValue10101010, binaryValue01010101);
+      const arr = new Float64Array([binaryValue11111111, binaryValue10101010, binaryValue01010101]);
       const s = arr.toSorted();
       expect(s[0]).assertEqual(fillValue85);
       expect(s[2]).assertEqual(num255Value);
@@ -1664,7 +1629,7 @@ export default function Float64ArrayToSortedTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToSorted082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const s = Float64Array.of(2.0, 1.0, 2.0, 1.0).toSorted();
+      const s = new Float64Array([2.0, 1.0, 2.0, 1.0]).toSorted();
       const actVal13 = s.toString();
       const expectVal = "1,1,2,2";
       expect(actVal13).assertEqual(expectVal);
@@ -1701,7 +1666,7 @@ export default function Float64ArrayToSortedTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayToSorted084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const s = Float64Array.of(Double.MAX_VALUE, 0.0, -Double.MAX_VALUE).toSorted();
+      const s = new Float64Array([Double.MAX_VALUE, 0.0, -Double.MAX_VALUE]).toSorted();
       const actVal17 = s.$_get(0);
       const expectVal = -Double.MAX_VALUE;
       expect(actVal17).assertEqual(expectVal);

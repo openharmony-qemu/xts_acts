@@ -69,11 +69,11 @@ export default function float64ArrayDollarSetTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarSet002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const hundredPointzero: number = 100.0;
+      const hundredPointZero: number = 100.0;
       const arr = new Float64Array(3);
-      arr.$_set(0, hundredPointzero);
+      arr.$_set(0, hundredPointZero);
       const actVal2 = arr.$_get(0);
-      const expectVal = hundredPointzero;
+      const expectVal = hundredPointZero;
       expect(actVal2).assertEqual(expectVal);
     })
 
@@ -267,11 +267,11 @@ export default function float64ArrayDollarSetTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarSet013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const thirtyPointzero: number = 30.0;
+      const thirtyPointZero: number = 30.0;
       const arr = new Float64Array(5);
-      arr.$_set(0x3, thirtyPointzero);
+      arr.$_set(0x3, thirtyPointZero);
       const actVal5 = arr.$_get(3);
-      const expectVal = thirtyPointzero;
+      const expectVal = thirtyPointZero;
       expect(actVal5).assertEqual(expectVal);
     })
 
@@ -284,11 +284,11 @@ export default function float64ArrayDollarSetTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarSet014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const eightyPointzero: number = 80.0;
+      const eightyPointZero: number = 80.0;
       const arr = new Float64Array(10);
-      arr.$_set(0o10, eightyPointzero);
+      arr.$_set(0o10, eightyPointZero);
       const actVal6 = arr.$_get(8);
-      const expectVal = eightyPointzero;
+      const expectVal = eightyPointZero;
       expect(actVal6).assertEqual(expectVal);
     })
 
@@ -301,11 +301,11 @@ export default function float64ArrayDollarSetTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarSet015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const seventyPointzero: number = 70.0;
+      const seventyPointZero: number = 70.0;
       const arr = new Float64Array(10);
-      arr.$_set(0b111, seventyPointzero);
+      arr.$_set(0b111, seventyPointZero);
       const actVal7 = arr.$_get(7);
-      const expectVal = seventyPointzero;
+      const expectVal = seventyPointZero;
       expect(actVal7).assertEqual(expectVal);
     })
 
@@ -459,7 +459,7 @@ export default function float64ArrayDollarSetTest(): void {
     it('testFloat64ArrayDollarSet024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const tenPointZero: number = 10.0;
       const zeroPointZero: number = 0.0;
-      const fortyPointzero: number = 40.0;
+      const fortyPointZero: number = 40.0;
       const arr = new Float64Array(5);
       for (let i: int = 0; i < 5; i++) {
         arr.$_set(i, i * tenPointZero);
@@ -468,7 +468,7 @@ export default function float64ArrayDollarSetTest(): void {
       const expectVal = zeroPointZero;
       expect(actVal16).assertEqual(expectVal);
       const actVal17 = arr.$_get(4);
-      const expectVal2 = fortyPointzero;
+      const expectVal2 = fortyPointZero;
       expect(actVal17).assertEqual(expectVal2);
     })
 
@@ -576,12 +576,12 @@ export default function float64ArrayDollarSetTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarSet030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const fiftyPointzero: number = 50.0;
+      const fiftyPointZero: number = 50.0;
       const arr = new Float64Array(5);
       const s: short = 2;
-      arr.$_set(s, fiftyPointzero);
+      arr.$_set(s, fiftyPointZero);
       const actVal25 = arr.$_get(2);
-      const expectVal = fiftyPointzero;
+      const expectVal = fiftyPointZero;
       expect(actVal25).assertEqual(expectVal);
     })
 
@@ -926,13 +926,13 @@ export default function float64ArrayDollarSetTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarSet049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const hundredPointzero: number = 100.0;
+      const hundredPointZero: number = 100.0;
       const buf = new ArrayBuffer(24);
       const parent = new Float64Array(buf);
       const child = new Float64Array(buf, 8, 2);
-      parent.$_set(1, hundredPointzero);
+      parent.$_set(1, hundredPointZero);
       const actVal2 = child.$_get(0);
-      const expectVal = hundredPointzero;
+      const expectVal = hundredPointZero;
       expect(actVal2).assertEqual(expectVal);
     })
 
@@ -1031,17 +1031,17 @@ export default function float64ArrayDollarSetTest(): void {
      */
     it('testFloat64ArrayDollarSet054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const tenPointZero: number = 10.0;
-      const twentyPointzero: number = 20.0;
+      const twentyPointZero: number = 20.0;
       const buf = new ArrayBuffer(32);
       const v1 = new Float64Array(buf, 0, 2);
       const v2 = new Float64Array(buf, 16, 2);
       v1.$_set(0, tenPointZero);
-      v2.$_set(0, twentyPointzero);
+      v2.$_set(0, twentyPointZero);
       const actVal8 = v1.$_get(0);
       const expectVal = tenPointZero;
       expect(actVal8).assertEqual(expectVal);
       const actVal9 = v2.$_get(0);
-      const expectVal2 = twentyPointzero;
+      const expectVal2 = twentyPointZero;
       expect(actVal9).assertEqual(expectVal2);
     })
 
@@ -1542,7 +1542,7 @@ export default function float64ArrayDollarSetTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarSet079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = Float64Array.of(1.0, 2.0, 3.0);
+      const a = new Float64Array([1.0, 2.0, 3.0]);
       a.$_set(1, -Infinity);
       const actVal33 = a.$_get(0);
       const expectVal = 1.0;
@@ -1564,7 +1564,7 @@ export default function float64ArrayDollarSetTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarSet080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = Float64Array.of(1.0, 2.0);
+      const a = new Float64Array([1.0, 2.0]);
       a.$_set(0, NaN);
       const actVal36 = Number.isNaN(a.$_get(0));
       const expectVal = true;
@@ -1583,7 +1583,7 @@ export default function float64ArrayDollarSetTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarSet081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = Float64Array.of(4.0, 5.0, 6.0);
+      const a = new Float64Array([4.0, 5.0, 6.0]);
       a.$_set(1, 50.0);
       const actVal38 = a.$_get(0);
       const expectVal = 4.0;
@@ -1668,7 +1668,7 @@ export default function float64ArrayDollarSetTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarSet085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = Float64Array.of(3.0, 4.0);
+      const a = new Float64Array([3.0, 4.0]);
       const entry = a.entries().next().value!;
       a.$_set(entry[0], 30.0);
       const actVal48 = a.$_get(0);
@@ -1688,7 +1688,7 @@ export default function float64ArrayDollarSetTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarSet086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = Float64Array.of(1.0, 2.0);
+      const a = new Float64Array([1.0, 2.0]);
       let caught = false;
       try {
         a.$_set(2, 99.0);
@@ -1715,7 +1715,7 @@ export default function float64ArrayDollarSetTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayDollarSet087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = Float64Array.of(1.0, 2.0);
+      const a = new Float64Array([1.0, 2.0]);
       let caught = false;
       try {
         a.$_set(-1, 99.0);

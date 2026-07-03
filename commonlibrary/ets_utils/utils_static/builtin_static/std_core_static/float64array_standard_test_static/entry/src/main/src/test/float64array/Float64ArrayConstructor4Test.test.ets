@@ -34,7 +34,7 @@ export default function Float64ArrayConstructor4Test(): void {
     })
 
     beforeEach(async (): Promise<void> => {
-      await Utils.msSleep(30)
+      await Utils.msSleep(30);
     })
 
     afterEach((): void => {
@@ -52,10 +52,8 @@ export default function Float64ArrayConstructor4Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayConstructor4001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
       const twoValue: number = 2;
-      const source = new Float64Array([onePointZero, twoPointZero]);
+      const source = new Float64Array([1.0, 2.0]);
       const copy = new Float64Array(source);
       const expectVal = twoValue;
       expect(copy.length).assertEqual(expectVal);
@@ -87,13 +85,8 @@ export default function Float64ArrayConstructor4Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayConstructor4003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
-      const threePointZero: number = 3.0;
-      const fourPointZero: number = 4.0;
-      const fivePointZero: number = 5.0;
       const fiveValue: number = 5;
-      const source = new Float64Array([onePointZero, twoPointZero, threePointZero, fourPointZero, fivePointZero]);
+      const source = new Float64Array([1.0, 2.0, 3.0, 4.0, 5.0]);
       const copy = new Float64Array(source);
       const expectVal = fiveValue;
       expect(copy.length).assertEqual(expectVal);
@@ -125,12 +118,11 @@ export default function Float64ArrayConstructor4Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayConstructor4005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const negativeZero: number = -0.0;
       const twoValue: number = 2;
-      const source = new Float64Array([negativeZero, -0.0]);
+      const source = new Float64Array([-0.0, -0.0]);
       const copy = new Float64Array(source);
       expect(copy.length).assertEqual(twoValue);
-      expect(1 / copy[0] === -Infinity).assertEqual(true);
+      expect(1 / copy[0] === -Infinity).assertTrue();
     })
 
     /**
@@ -142,11 +134,9 @@ export default function Float64ArrayConstructor4Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayConstructor4006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
       const positiveInfinity: number = Infinity;
-      const threePointZero: number = 3.0;
       const threeValue: number = 3;
-      const source = new Float64Array([onePointZero, positiveInfinity, threePointZero]);
+      const source = new Float64Array([1.0, positiveInfinity, 3.0]);
       const copy = new Float64Array(source);
       expect(copy.length).assertEqual(threeValue);
       expect(copy[1]).assertEqual(positiveInfinity);
@@ -162,10 +152,8 @@ export default function Float64ArrayConstructor4Test(): void {
      */
     it('testFloat64ArrayConstructor4007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const negativeInfinity: number = -Infinity;
-      const zeroPointZero: number = 0.0;
-      const onePointZero: number = 1.0;
       const threeValue: number = 3;
-      const source = new Float64Array([negativeInfinity, zeroPointZero, onePointZero]);
+      const source = new Float64Array([negativeInfinity, 0.0, 1.0]);
       const copy = new Float64Array(source);
       expect(copy.length).assertEqual(threeValue);
       expect(copy[0]).assertEqual(negativeInfinity);
@@ -180,11 +168,9 @@ export default function Float64ArrayConstructor4Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayConstructor4008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
       const nanValue: number = NaN;
-      const threePointZero: number = 3.0;
       const threeValue: number = 3;
-      const source = new Float64Array([onePointZero, nanValue, threePointZero]);
+      const source = new Float64Array([1.0, nanValue, 3.0]);
       const copy = new Float64Array(source);
       expect(copy.length).assertEqual(threeValue);
       const actVal1 = Number.isNaN(copy[1]);
@@ -202,8 +188,7 @@ export default function Float64ArrayConstructor4Test(): void {
      */
     it('testFloat64ArrayConstructor4009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const doubleMinValue: number = 5e-324;
-      const onePointZero: number = 1.0;
-      const source = new Float64Array([doubleMinValue, onePointZero]);
+      const source = new Float64Array([doubleMinValue, 1.0]);
       const copy = new Float64Array(source);
       const expectVal = doubleMinValue;
       expect(copy[0]).assertEqual(expectVal);
@@ -251,9 +236,8 @@ export default function Float64ArrayConstructor4Test(): void {
      */
     it('testFloat64ArrayConstructor4012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const sciValue10e308: number = 1.0e-308;
-      const doubleMaxValue: number = 1.7976931348623157e+308;
       const twoValue: number = 2;
-      const source = new Float64Array([sciValue10e308, doubleMaxValue]);
+      const source = new Float64Array([sciValue10e308, 1.7976931348623157e+308]);
       const copy = new Float64Array(source);
       expect(copy.length).assertEqual(twoValue);
       expect(copy[0]).assertEqual(sciValue10e308);
@@ -287,10 +271,9 @@ export default function Float64ArrayConstructor4Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayConstructor4014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const negonePointzero: number = -1.0;
       const threeValue: number = 3;
       const negnum999999Pointninenine: number = -999999.99;
-      const source = new Float64Array([negonePointzero, -999999.99, -0.5]);
+      const source = new Float64Array([-1.0, -999999.99, -0.5]);
       const copy = new Float64Array(source);
       expect(copy.length).assertEqual(threeValue);
       expect(copy[1]).assertEqual(negnum999999Pointninenine);
@@ -305,14 +288,11 @@ export default function Float64ArrayConstructor4Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayConstructor4015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const pointTwo: number = 0.2;
-      const pointThree: number = 0.3;
       const threeValue: number = 3;
-      const source = new Float64Array([pointOne, pointTwo, pointThree]);
+      const source = new Float64Array([0.1, 0.2, 0.3]);
       const copy = new Float64Array(source);
       expect(copy.length).assertEqual(threeValue);
-      expect(copy[0] + copy[1] === 0.3).assertEqual(false);
+      expect(copy[0] + copy[1] === 0.3).assertFalse();
     })
 
     /**
@@ -359,16 +339,16 @@ export default function Float64ArrayConstructor4Test(): void {
      */
     it('testFloat64ArrayConstructor4018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const tenPointZero: number = 10.0;
-      const twentyPointzero: number = 20.0;
-      const thirtyPointzero: number = 30.0;
+      const twentyPointZero: number = 20.0;
+      const thirtyPointZero: number = 30.0;
       const source = new Float64Array(3);
       source[0] = 10.0;
       source[1] = 20.0;
       source[2] = 30.0;
       const copy = new Float64Array(source);
       expect(copy[0]).assertEqual(tenPointZero);
-      expect(copy[1]).assertEqual(twentyPointzero);
-      expect(copy[2]).assertEqual(thirtyPointzero);
+      expect(copy[1]).assertEqual(twentyPointZero);
+      expect(copy[2]).assertEqual(thirtyPointZero);
     })
 
     /**
@@ -416,8 +396,7 @@ export default function Float64ArrayConstructor4Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayConstructor4021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const source = new Float64Array([onePointZero]);
+      const source = new Float64Array([1.0]);
       const copy = new Float64Array(source);
       const obj: Object = copy as Object;
       let isF64: boolean = false;
@@ -437,9 +416,7 @@ export default function Float64ArrayConstructor4Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayConstructor4022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
-      const source = new Float64Array([onePointZero, twoPointZero]);
+      const source = new Float64Array([1.0, 2.0]);
       const copy = new Float64Array(source);
       const expectVal = false;
       expect(copy.buffer === source.buffer).assertEqual(expectVal);
@@ -474,9 +451,8 @@ export default function Float64ArrayConstructor4Test(): void {
      */
     it('testFloat64ArrayConstructor4024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
       const sciValue10e6: number = 1.0e6;
-      const source = new Float64Array([onePointZero, twoPointZero]);
+      const source = new Float64Array([onePointZero, 2.0]);
       const copy = new Float64Array(source);
       copy[0] = 1.0e6;
       expect(source[0]).assertEqual(onePointZero);
@@ -492,10 +468,9 @@ export default function Float64ArrayConstructor4Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayConstructor4025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
       const twoPointZero: number = 2.0;
       const negativeZero: number = -0.0;
-      const source = new Float64Array([onePointZero, twoPointZero]);
+      const source = new Float64Array([1.0, twoPointZero]);
       const copy = new Float64Array(source);
       source[1] = -0.0;
       expect(copy[1]).assertEqual(twoPointZero);
@@ -619,9 +594,8 @@ export default function Float64ArrayConstructor4Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayConstructor4032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const num: number = 5;
       try {
-        new Float64Array(num as Object as Float64Array);
+        new Float64Array(5 as Object as Float64Array);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("ClassCastError");
@@ -905,12 +879,12 @@ export default function Float64ArrayConstructor4Test(): void {
      */
     it('testFloat64ArrayConstructor4049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const oneValue: number = 1;
-      const hundredPointzero: number = 100.0;
+      const hundredPointZero: number = 100.0;
       const src: Array<number> = [100.0];
       const iterable: Iterable<Number> = src;
       const values = new Float64Array(iterable);
       expect(values.length).assertEqual(oneValue);
-      expect(values[0]).assertEqual(hundredPointzero);
+      expect(values[0]).assertEqual(hundredPointZero);
     })
 
     /**
@@ -1467,12 +1441,12 @@ export default function Float64ArrayConstructor4Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayConstructor4080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const fiftyPointzero: number = 50.0;
+      const fiftyPointZero: number = 50.0;
       const buffer = new ArrayBuffer(24);
       const view1 = new Float64Array(buffer, 0, 3);
       const view2 = new Float64Array(buffer, 8, 2);
       view1[1] = 50.0;
-      const expectVal = fiftyPointzero;
+      const expectVal = fiftyPointZero;
       expect(view2[0]).assertEqual(expectVal);
     })
 
@@ -1528,8 +1502,8 @@ export default function Float64ArrayConstructor4Test(): void {
      */
     it('testFloat64ArrayConstructor4083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const tenPointZero: number = 10.0;
-      const twentyPointzero: number = 20.0;
-      const thirtyPointzero: number = 30.0;
+      const twentyPointZero: number = 20.0;
+      const thirtyPointZero: number = 30.0;
       const buffer = new ArrayBuffer(40);
       const v1 = new Float64Array(buffer, 0, 2);
       const v2 = new Float64Array(buffer, 16, 2);
@@ -1538,8 +1512,8 @@ export default function Float64ArrayConstructor4Test(): void {
       v2[0] = 20.0;
       v3[0] = 30.0;
       expect(v1[0]).assertEqual(tenPointZero);
-      expect(v2[0]).assertEqual(twentyPointzero);
-      expect(v3[0]).assertEqual(thirtyPointzero);
+      expect(v2[0]).assertEqual(twentyPointZero);
+      expect(v3[0]).assertEqual(thirtyPointZero);
     })
 
     /**
@@ -1569,12 +1543,10 @@ export default function Float64ArrayConstructor4Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayConstructor4085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
       const threePointZero: number = 3.0;
       const sixValue: number = 6;
       const negonePointzero: number = -1.0;
-      const source = new Float64Array([onePointZero, -1.0, twoPointZero, -2.0, threePointZero, -3.0]);
+      const source = new Float64Array([1.0, -1.0, 2.0, -2.0, threePointZero, -3.0]);
       const copy = new Float64Array(source);
       expect(copy.length).assertEqual(sixValue);
       expect(copy[1]).assertEqual(negonePointzero);
@@ -1606,11 +1578,7 @@ export default function Float64ArrayConstructor4Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayConstructor4087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointFive: number = 1.5;
-      const twoPointFive: number = 2.5;
-      const threePointfive: number = 3.5;
-      const fourPointfive: number = 4.5;
-      const source = new Float64Array([onePointFive, twoPointFive, threePointfive, fourPointfive]);
+      const source = new Float64Array([1.5, 2.5, 3.5, 4.5]);
       const copy = new Float64Array(source);
       expect(copy.length).assertEqual(source.length);
       expect(copy[0]).assertEqual(source[0]);
@@ -1629,8 +1597,8 @@ export default function Float64ArrayConstructor4Test(): void {
      */
     it('testFloat64ArrayConstructor4088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Float64Array(5);
-      expect(arr.length === 5).assertEqual(true);
-      expect(arr.length === 0).assertEqual(false);
+      expect(arr.length === 5).assertTrue();
+      expect(arr.length === 0).assertFalse();
     })
 
     /**

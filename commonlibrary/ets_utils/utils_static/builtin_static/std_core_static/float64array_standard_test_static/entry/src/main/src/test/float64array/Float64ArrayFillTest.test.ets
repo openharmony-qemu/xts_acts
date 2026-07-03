@@ -2341,15 +2341,15 @@ export default function float64ArrayFillTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayFill102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const hundredPointzero: number = 100.0;
+      const hundredPointZero: number = 100.0;
       const num200Pointzero: number = 200.0;
       const onePointZero: number = 1.0;
       const arr = new Float64Array(5);
-      arr.$_set(0, hundredPointzero);
+      arr.$_set(0, hundredPointZero);
       arr.$_set(4, num200Pointzero);
       arr.fill(onePointZero, 1, 4);
       const actVal267 = arr.$_get(0);
-      const expectVal = hundredPointzero;
+      const expectVal = hundredPointZero;
       expect(actVal267).assertEqual(expectVal);
       const actVal268 = arr.$_get(1);
       const expectVal2 = onePointZero;
@@ -2406,8 +2406,8 @@ export default function float64ArrayFillTest(): void {
       const fivePointZero: number = 5.0;
       const arr = new Float64Array(3);
       arr.fill(fivePointZero);
-      expect(arr[0] === 5.0).assertEqual(true);
-      expect(arr[0] === 0.0).assertEqual(false);
+      expect(arr[0] === 5.0).assertTrue();
+      expect(arr[0] === 0.0).assertFalse();
     })
 
     /**
@@ -2579,7 +2579,7 @@ export default function float64ArrayFillTest(): void {
       const actVal287 = arr.$_get(0);
       const expectVal = 9.0;
       expect(actVal287).assertEqual(expectVal);
-      expect(result === arr).assertEqual(true);
+      expect(result === arr).assertTrue();
     })
 
     /**

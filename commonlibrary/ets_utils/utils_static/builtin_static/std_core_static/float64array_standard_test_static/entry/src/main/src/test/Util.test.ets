@@ -14,10 +14,6 @@
  * limitations under the License.
  */
 
-function checkIsFloat64Array(obj: Object): boolean {
-  return obj instanceof Float64Array;
-}
-
 export function isPositive103(value: number): boolean {
   return value > 0.0;
 }
@@ -57,8 +53,6 @@ export class CustomError004 extends Error {
 export function forEachHandler004(value: number, index: int, array: Float64Array): void {
   // named function for callback test - logic handled in test body
 }
-export { checkIsFloat64Array };
-
 export default class Utils{
   static async msSleep(count: int): Promise<int> {
     if (count <= 0) {
