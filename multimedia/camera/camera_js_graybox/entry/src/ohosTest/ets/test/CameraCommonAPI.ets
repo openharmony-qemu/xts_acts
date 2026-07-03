@@ -33,9 +33,6 @@ let beginTime: number = Date.now();
 let endTime: number = 0;
 let conSumeTime: number = 0;
 
-// 当前拍照的照片名
-let curPhotoName: string = "";
-
 // 拍照相关
 let isFrameStart: boolean = false  // 预览是否开始
 globalThis.isCaptureReady = true; //是否可拍下一张回调函数
@@ -634,13 +631,9 @@ export function stopVideoOutput(videoOutput: camera.VideoOutput) {
 export async function startAvRecoder(avRecorder: media.AVRecorder) {
   try {
     //等待预览帧开始
-    for (let i = 0; i < 10; i++) {
-      await sleep(200);
-      if (isFrameStart) {
-        break;
-      }
+    while (!isFrameStart) {
+      await sleep(20);
     }
-    expect(isFrameStart).assertTrue();
     await avRecorder.start();
   } catch (error) {
     let err = error as BusinessError;
@@ -1055,7 +1048,7 @@ export function offCaptureReady(photoOutput: camera.PhotoOutput) {
  * @param { number } captureNumber 拍照数量
  */
 export async function
-cameraCaptureRelyOnNum(photoOutput: ESObject, captureNumber: number, photoName: string) {
+cameraCaptureRelyOnNum(photoOutput: ESObject, captureNumber: number) {
   let captureLocation: camera.Location = {
     latitude: 0,
     longitude: 0,
@@ -1069,19 +1062,14 @@ cameraCaptureRelyOnNum(photoOutput: ESObject, captureNumber: number, photoName: 
   }
 
   //等待预览帧开始
-  for (let i = 0; i < 10; i++) {
-    await sleep(200);
-    if (isFrameStart) {
-      break;
-    }
+  while (!isFrameStart) {
+    await sleep(20);
   }
-  expect(isFrameStart).assertTrue();
 
   console.info('captureNumber is ' + captureNumber);
   //使用当前拍照设置进行拍照。
   let iCapture = 0;
   console.info('before capture, globalThis.isCaptureReady ' + globalThis.isCaptureReady);
-  curPhotoName = photoName;
   while (iCapture < captureNumber) {
     if (globalThis.isCaptureReady) {
       iCapture++;
@@ -1212,16 +1200,13 @@ export async function photoAssetAvailableCallback(err: BusinessError, photoAsset
   let asset: photoAccessHelper.PhotoAsset = assetChangeRequest.getAsset()
   console.info('photoAssetAvailableCallback asset.uri is ' + asset.uri);
   console.info('photoAssetAvailableCallback asset.displayName is ' + asset.displayName);
-
-  //修改资产名字，方便问题后续定位
-  assetChangeRequest.setTitle(curPhotoName)
-  try {
-    await photoHelper.applyChanges(assetChangeRequest);
-    console.info('apply setTitle successfully, name is ' + curPhotoName);
-  } catch (err) {
-    let error = err as BusinessError;
-    console.error(`apply setTitle fail with error: ${error.code}, ${error.message}`);
+  realCapturePhotoNum++;
+  console.info('photoAssetAvailableCallback realCapturePhotoNum is ' + realCapturePhotoNum);
+  let tmpTime = Date.now();
+  if (tmpTime > endTime) {
+    endTime = tmpTime;
   }
+  photoAccessArray.push(photoAsset);
 }
 
 /**
@@ -1232,8 +1217,42 @@ export async function photoAssetAvailableCallback(err: BusinessError, photoAsset
  * @param { boolean } capturePhotoNum 是否拍照, 默认为false
  * @returns 拍照生成的资产列表
  */
-export async function offPhotoOutputPhotoAssetAvailable(photoOutput: camera.PhotoOutput): Promise<void> {
+export async function offPhotoOutputPhotoAssetAvailable(photoOutput: camera.PhotoOutput, capturePhotoNum: number,
+  fileNames: Array<string>, isCapture: boolean = false): Promise<Array<photoAccessHelper.PhotoAsset>> {
+  beginTime = Date.now();
+  while (realCapturePhotoNum < capturePhotoNum) {
+    await sleep(200);
+    let tmpTime = Date.now();
+    if (tmpTime - beginTime > 150000) {
+      beginTime = 0;
+      console.info('delay fail realCapturePhotoNum is' + realCapturePhotoNum)
+      console.info('delay fail capturePhotoNum is' + capturePhotoNum)
+      expect().assertFail();
+      break;
+    }
+  }
+  while (photoAccessArray.length < capturePhotoNum) {
+    await sleep(200);
+  }
+  if (isCapture) {
+    expect(realCapturePhotoNum == capturePhotoNum && photoAccessArray.length == capturePhotoNum).assertTrue();
+  } else {
+    expect(realCapturePhotoNum >= capturePhotoNum).assertTrue();
+  }
+  realCapturePhotoNum = 0;
   photoOutput.off('photoAssetAvailable', photoAssetAvailableCallback);
+  for (let i = 0; i < photoAccessArray.length; i++) {
+    fileNames.push(photoAccessArray[i].displayName);
+    let isWhitePicture = await checkCameraPhotoIsWhitePicture(photoAccessArray[i])
+    if (isWhitePicture) {
+      console.error('CameraPhoto is whilePicture');
+      realCapturePhotoNum = 0;
+      expect().assertFail();
+    }
+  }
+  let temp = photoAccessArray
+  photoAccessArray = []
+  return temp;
 }
 
 /**
@@ -1707,14 +1726,12 @@ function getDateStringWithTimeStamp(timestamp: number): string {
  * @param { photoAccessHelper.PhotoAsset } asset 媒体库资产对象
  * @param { string } 新名称
  */
-export async function renameAsset(asset: photoAccessHelper.PhotoAsset, newTitle: string) {
+export function renameAsset(asset: photoAccessHelper.PhotoAsset, newTitle: string) {
   let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest = new photoAccessHelper.MediaAssetChangeRequest(asset!);
   assetChangeRequest.setTitle(newTitle)
-  try {
-    await photoHelper.applyChanges(assetChangeRequest);
+  photoHelper.applyChanges(assetChangeRequest).then(() => {
     console.info('apply setTitle successfully');
-  } catch (err) {
-    let error = err as BusinessError;
-    console.error(`apply setTitle failed with error: ${error.code}, ${error.message}`);
-  }
+  }).catch((err: BusinessError) => {
+    console.error(`apply setTitle failed with error: ${err.code}, ${err.message}`);
+  });;
 }
