@@ -44,7 +44,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_0100
      * @tc.name testFloat64ArrayEntries001
      * @tc.desc Verify entries first result contains index and value
      * @tc.size MediumTest
@@ -53,16 +53,15 @@ export default function Float64ArrayEntriesTest(): void {
      */
     it('testFloat64ArrayEntries001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
-      const values = Float64Array.of(onePointZero, twoPointZero);
+      const values = new Float64Array([onePointZero, 2.0]);
       const iter = values.entries();
       const result = iter.next();
-      expect(result.done).assertEqual(false);
+      expect(result.done).assertFalse();
       expect(result.value).assertDeepEquals([0, onePointZero]);
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_0200
      * @tc.name testFloat64ArrayEntries002
      * @tc.desc Verify entries iterator has next method
      * @tc.size MediumTest
@@ -70,8 +69,7 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const values = Float64Array.of(pointOne);
+      const values = Float64Array.of(0.1);
       const iter = values.entries();
       iter.next();
       const actVal1 = iter.next().done;
@@ -80,7 +78,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_0300
      * @tc.name testFloat64ArrayEntries003
      * @tc.desc Verify empty Float64Array entries iterator has no elements
      * @tc.size MediumTest
@@ -104,7 +102,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_0400
      * @tc.name testFloat64ArrayEntries004
      * @tc.desc Verify empty Float64Array entries first next returns done:true
      * @tc.size MediumTest
@@ -121,7 +119,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_0500
      * @tc.name testFloat64ArrayEntries005
      * @tc.desc Verify single element Float64Array entries returns [0, value]
      * @tc.size MediumTest
@@ -129,8 +127,7 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const values = Float64Array.of(pointFive);
+      const values = new Float64Array([0.5]);
       const iter = values.entries();
       const result = iter.next();
       const expectVal = false;
@@ -138,7 +135,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_0600
      * @tc.name testFloat64ArrayEntries006
      * @tc.desc Verify single element Float64Array entries value is 42.0
      * @tc.size MediumTest
@@ -146,17 +143,16 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const values = Float64Array.of(int16MinValue);
+      const values = Float64Array.of(-32768);
       const iter = values.entries();
       const result = iter.next();
 
-      expect(result.done).assertEqual(false);
+      expect(result.done).assertFalse();
       expect(result.value).assertDeepEquals([0, -32768]);
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_0700
      * @tc.name testFloat64ArrayEntries007
      * @tc.desc Verify single element Float64Array entries second next returns done:true
      * @tc.size MediumTest
@@ -164,8 +160,7 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const values = Float64Array.of(int32MinValue);
+      const values = new Float64Array([-2147483648]);
       const iter = values.entries();
       iter.next();
       const result = iter.next();
@@ -174,7 +169,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_0800
      * @tc.name testFloat64ArrayEntries008
      * @tc.desc Verify two element Float64Array entries first element index is 0
      * @tc.size MediumTest
@@ -182,18 +177,16 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const values = Float64Array.of(pointOne, maxSafeInteger);
+      const values = Float64Array.of(0.1, 9007199254740991);
       const iter = values.entries();
       const result1 = iter.next();
 
-      expect(result1.done).assertEqual(false);
+      expect(result1.done).assertFalse();
       expect(result1.value).assertDeepEquals([0, 0.1]);
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_0900
      * @tc.name testFloat64ArrayEntries009
      * @tc.desc Verify two element Float64Array entries first element value is 1.0
      * @tc.size MediumTest
@@ -201,18 +194,16 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const values = Float64Array.of(pointFive, onePointFive);
+      const values = new Float64Array([0.5, 1.5]);
       const iter = values.entries();
       const result1 = iter.next();
 
-      expect(result1.done).assertEqual(false);
+      expect(result1.done).assertFalse();
       expect(result1.value).assertDeepEquals([0, 0.5]);
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_1000
      * @tc.name testFloat64ArrayEntries010
      * @tc.desc Verify two element Float64Array entries second element index is 1
      * @tc.size MediumTest
@@ -220,18 +211,17 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const values = Float64Array.of(int16MinValue, -128);
+      const values = new Float64Array([-32768, -128]);
       const iter = values.entries();
       iter.next();
       const result2 = iter.next();
 
-      expect(result2.done).assertEqual(false);
+      expect(result2.done).assertFalse();
       expect(result2.value).assertDeepEquals([1, -128]);
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_1100
      * @tc.name testFloat64ArrayEntries011
      * @tc.desc Verify two element Float64Array entries second element value is 2.0
      * @tc.size MediumTest
@@ -239,18 +229,17 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const values = Float64Array.of(int32MinValue, -1);
+      const values = new Float64Array([-2147483648, -1]);
       const iter = values.entries();
       iter.next();
       const result2 = iter.next();
 
-      expect(result2.done).assertEqual(false);
+      expect(result2.done).assertFalse();
       expect(result2.value).assertDeepEquals([1, -1]);
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_1200
      * @tc.name testFloat64ArrayEntries012
      * @tc.desc Verify three element Float64Array entries complete traversal count
      * @tc.size MediumTest
@@ -258,11 +247,8 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
       const threeValue: number = 3;
-      const values = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const values = new Float64Array([0.1, 9007199254740991, 0]);
       const iter = values.entries();
       let count = 0;
       let entry = iter.next();
@@ -275,7 +261,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_1300
      * @tc.name testFloat64ArrayEntries013
      * @tc.desc Verify three element Float64Array entries third element index is 2
      * @tc.size MediumTest
@@ -283,21 +269,18 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const values = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const values = Float64Array.of(0.5, 1.5, 0.25);
       const iter = values.entries();
       iter.next();
       iter.next();
       const result3 = iter.next();
 
-      expect(result3.done).assertEqual(false);
+      expect(result3.done).assertFalse();
       expect(result3.value).assertDeepEquals([2, 0.25]);
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_1400
      * @tc.name testFloat64ArrayEntries014
      * @tc.desc Verify three element Float64Array entries third element value is 30.0
      * @tc.size MediumTest
@@ -305,20 +288,18 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const zeroValue: number = 0;
-      const values = Float64Array.of(int16MinValue, -128, zeroValue);
+      const values = new Float64Array([-32768, -128, 0]);
       const iter = values.entries();
       iter.next();
       iter.next();
       const result3 = iter.next();
 
-      expect(result3.done).assertEqual(false);
+      expect(result3.done).assertFalse();
       expect(result3.value).assertDeepEquals([2, 0]);
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_1500
      * @tc.name testFloat64ArrayEntries015
      * @tc.desc Verify Float64Array entries traverses NaN element
      * @tc.size MediumTest
@@ -327,17 +308,16 @@ export default function Float64ArrayEntriesTest(): void {
      */
     it('testFloat64ArrayEntries015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const nanValue: number = NaN;
-      const onePointZero: number = 1.0;
-      const values = Float64Array.of(nanValue, onePointZero);
+      const values = new Float64Array([nanValue, 1.0]);
       const iter = values.entries();
       const result1 = iter.next();
 
-      expect(result1.done).assertEqual(false);
+      expect(result1.done).assertFalse();
       expect(result1.value).assertDeepEquals([0, NaN]);
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_1600
      * @tc.name testFloat64ArrayEntries016
      * @tc.desc Verify Float64Array entries second element index is 1
      * @tc.size MediumTest
@@ -346,18 +326,17 @@ export default function Float64ArrayEntriesTest(): void {
      */
     it('testFloat64ArrayEntries016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const nanValue: number = NaN;
-      const onePointZero: number = 1.0;
-      const values = Float64Array.of(nanValue, onePointZero);
+      const values = new Float64Array([nanValue, 1.0]);
       const iter = values.entries();
       iter.next();
       const result2 = iter.next();
 
-      expect(result2.done).assertEqual(false);
+      expect(result2.done).assertFalse();
       expect(result2.value).assertDeepEquals([1, 1.0]);
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_1700
      * @tc.name testFloat64ArrayEntries017
      * @tc.desc Verify Float64Array entries second element value is 1.0
      * @tc.size MediumTest
@@ -372,12 +351,12 @@ export default function Float64ArrayEntriesTest(): void {
       iter.next();
       const result2 = iter.next();
 
-      expect(result2.done).assertEqual(false);
+      expect(result2.done).assertFalse();
       expect(result2.value![1]).assertEqual(onePointZero);
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_1800
      * @tc.name testFloat64ArrayEntries018
      * @tc.desc Verify Float64Array entries traverses positive infinity element
      * @tc.size MediumTest
@@ -385,19 +364,18 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
       const positiveInfinity: number = Infinity;
-      const values = Float64Array.of(onePointZero, positiveInfinity);
+      const values = new Float64Array([1.0, positiveInfinity]);
       const iter = values.entries();
       iter.next();
       const result2 = iter.next();
 
-      expect(result2.done).assertEqual(false);
+      expect(result2.done).assertFalse();
       expect(result2.value).assertDeepEquals([1, Infinity]);
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_1900
      * @tc.name testFloat64ArrayEntries019
      * @tc.desc Verify Float64Array entries traverses negative infinity element
      * @tc.size MediumTest
@@ -406,17 +384,16 @@ export default function Float64ArrayEntriesTest(): void {
      */
     it('testFloat64ArrayEntries019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const negativeInfinity: number = -Infinity;
-      const twoPointZero: number = 2.0;
-      const values = Float64Array.of(negativeInfinity, twoPointZero);
+      const values = Float64Array.of(negativeInfinity, 2.0);
       const iter = values.entries();
       const result1 = iter.next();
 
-      expect(result1.done).assertEqual(false);
+      expect(result1.done).assertFalse();
       expect(result1.value).assertDeepEquals([0, -Infinity]);
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_2000
      * @tc.name testFloat64ArrayEntries020
      * @tc.desc Verify Float64Array entries traverses positive zero element
      * @tc.size MediumTest
@@ -424,18 +401,16 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const zeroPointZero: number = 0.0;
-      const onePointZero: number = 1.0;
-      const values = Float64Array.of(zeroPointZero, onePointZero);
+      const values = new Float64Array([0.0, 1.0]);
       const iter = values.entries();
       const result1 = iter.next();
 
-      expect(result1.done).assertEqual(false);
+      expect(result1.done).assertFalse();
       expect(result1.value).assertDeepEquals([0, 0.0]);
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_2100
      * @tc.name testFloat64ArrayEntries021
      * @tc.desc Verify Float64Array entries traverses negative zero element
      * @tc.size MediumTest
@@ -443,18 +418,16 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const negativeZero: number = -0.0;
-      const onePointZero: number = 1.0;
-      const values = Float64Array.of(negativeZero, onePointZero);
+      const values = new Float64Array([-0.0, 1.0]);
       const iter = values.entries();
       const result1 = iter.next();
 
-      expect(result1.done).assertEqual(false);
+      expect(result1.done).assertFalse();
       expect(result1.value).assertDeepEquals([0, -0.0]);
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_2200
      * @tc.name testFloat64ArrayEntries022
      * @tc.desc Verify Float64Array entries traverses maximum value element
      * @tc.size MediumTest
@@ -462,17 +435,16 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const doubleMaxValue: number = 1.7976931348623157e+308;
-      const values = Float64Array.of(doubleMaxValue);
+      const values = new Float64Array([1.7976931348623157e+308]);
       const iter = values.entries();
       const result = iter.next();
 
-      expect(result.done).assertEqual(false);
+      expect(result.done).assertFalse();
       expect(result.value).assertDeepEquals([0, 1.7976931348623157e+308]);
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_2300
      * @tc.name testFloat64ArrayEntries023
      * @tc.desc Verify Float64Array entries traverses minimum positive value element
      * @tc.size MediumTest
@@ -480,17 +452,16 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const doubleMinValue: number = 5e-324;
-      const values = Float64Array.of(doubleMinValue);
+      const values = new Float64Array([5e-324]);
       const iter = values.entries();
       const result = iter.next();
 
-      expect(result.done).assertEqual(false);
+      expect(result.done).assertFalse();
       expect(result.value).assertDeepEquals([0, 5e-324]);
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_2400
      * @tc.name testFloat64ArrayEntries024
      * @tc.desc Verify Float64Array entries traverses negative large number element
      * @tc.size MediumTest
@@ -499,17 +470,16 @@ export default function Float64ArrayEntriesTest(): void {
      */
     it('testFloat64ArrayEntries024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const negnum999999Pointninenine: number = -999999.99;
-      const zeroPointZero: number = 0.0;
-      const values = Float64Array.of(negnum999999Pointninenine, zeroPointZero);
+      const values = Float64Array.of(negnum999999Pointninenine, 0.0);
       const iter = values.entries();
       const result1 = iter.next();
 
-      expect(result1.done).assertEqual(false);
+      expect(result1.done).assertFalse();
       expect(result1.value![1]).assertEqual(negnum999999Pointninenine);
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_2500
      * @tc.name testFloat64ArrayEntries025
      * @tc.desc Verify Float64Array entries traverses 1.0e-308 element
      * @tc.size MediumTest
@@ -517,18 +487,16 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const sciValue10e308: number = 1.0e-308;
-      const twoPointZero: number = 2.0;
-      const values = Float64Array.of(sciValue10e308, twoPointZero);
+      const values = new Float64Array([1.0e-308, 2.0]);
       const iter = values.entries();
       const result1 = iter.next();
 
-      expect(result1.done).assertEqual(false);
+      expect(result1.done).assertFalse();
       expect(result1.value).assertDeepEquals([0, 1.0e-308]);
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_2600
      * @tc.name testFloat64ArrayEntries026
      * @tc.desc Verify Float64Array entries traverses 1.0e+308 element
      * @tc.size MediumTest
@@ -536,17 +504,16 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const sciValue10e308: number = 1.0e+308;
-      const values = Float64Array.of(sciValue10e308);
+      const values = Float64Array.of(1.0e+308);
       const iter = values.entries();
       const result = iter.next();
 
-      expect(result.done).assertEqual(false);
+      expect(result.done).assertFalse();
       expect(result.value).assertDeepEquals([0, 1.0e+308]);
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_2700
      * @tc.name testFloat64ArrayEntries027
      * @tc.desc Verify Float64Array entries traverses integer 1.0 element
      * @tc.size MediumTest
@@ -555,18 +522,16 @@ export default function Float64ArrayEntriesTest(): void {
      */
     it('testFloat64ArrayEntries027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
-      const threePointZero: number = 3.0;
-      const values = Float64Array.of(onePointZero, twoPointZero, threePointZero);
+      const values = new Float64Array([onePointZero, 2.0, 3.0]);
       const iter = values.entries();
       const result1 = iter.next();
 
-      expect(result1.done).assertEqual(false);
+      expect(result1.done).assertFalse();
       expect(result1.value![1]).assertEqual(onePointZero);
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_2800
      * @tc.name testFloat64ArrayEntries028
      * @tc.desc Verify Float64Array entries traverses integer 2.0 element
      * @tc.size MediumTest
@@ -574,20 +539,18 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
       const twoPointZero: number = 2.0;
-      const threePointZero: number = 3.0;
-      const values = Float64Array.of(onePointZero, twoPointZero, threePointZero);
+      const values = Float64Array.of(1.0, twoPointZero, 3.0);
       const iter = values.entries();
       iter.next();
       const result2 = iter.next();
 
-      expect(result2.done).assertEqual(false);
+      expect(result2.done).assertFalse();
       expect(result2.value![1]).assertEqual(twoPointZero);
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_2900
      * @tc.name testFloat64ArrayEntries029
      * @tc.desc Verify Float64Array entries traverses integer 3.0 element
      * @tc.size MediumTest
@@ -595,21 +558,19 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
       const threePointZero: number = 3.0;
-      const values = Float64Array.of(onePointZero, twoPointZero, threePointZero);
+      const values = new Float64Array([1.0, 2.0, threePointZero]);
       const iter = values.entries();
       iter.next();
       iter.next();
       const result3 = iter.next();
 
-      expect(result3.done).assertEqual(false);
+      expect(result3.done).assertFalse();
       expect(result3.value![1]).assertEqual(threePointZero);
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_3000
      * @tc.name testFloat64ArrayEntries030
      * @tc.desc Verify Float64Array entries continuous index from 0 to n-1
      * @tc.size MediumTest
@@ -617,11 +578,8 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const zeroValue: number = 0;
-      const int8MaxValue: number = 127;
       const fourValue: number = 4;
-      const values = Float64Array.of(int16MinValue, -128, zeroValue, int8MaxValue);
+      const values = new Float64Array([-32768, -128, 0, 127]);
       const iter = values.entries();
       let expectedIndex = 0;
       let entry = iter.next();
@@ -638,7 +596,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_3100
      * @tc.name testFloat64ArrayEntries031
      * @tc.desc Verify Float64Array entries index increments correctly after traversal
      * @tc.size MediumTest
@@ -646,24 +604,22 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
-      const values = Float64Array.of(int32MinValue, -1, zeroValue);
+      const values = new Float64Array([-2147483648, -1, 0]);
       const iter = values.entries();
       const r1 = iter.next();
       const r2 = iter.next();
       const r3 = iter.next();
 
-      expect(r1.done).assertEqual(false);
+      expect(r1.done).assertFalse();
       expect(r1.value).assertDeepEquals([0, -2147483648]);
-      expect(r2.done).assertEqual(false);
+      expect(r2.done).assertFalse();
       expect(r2.value).assertDeepEquals([1, -1]);
-      expect(r3.done).assertEqual(false);
+      expect(r3.done).assertFalse();
       expect(r3.value).assertDeepEquals([2, 0]);
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_3200
      * @tc.name testFloat64ArrayEntries032
      * @tc.desc Verify multiple calls to entries return different iterator instances
      * @tc.size MediumTest
@@ -671,9 +627,7 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const values = Float64Array.of(pointOne, maxSafeInteger);
+      const values = Float64Array.of(0.1, 9007199254740991);
       const iter1 = values.entries();
       const iter2 = values.entries();
       const expectVal = false;
@@ -681,7 +635,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_3300
      * @tc.name testFloat64ArrayEntries033
      * @tc.desc Verify independent iterator traversal results are consistent
      * @tc.size MediumTest
@@ -689,20 +643,18 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const values = Float64Array.of(pointFive, onePointFive);
+      const values = new Float64Array([0.5, 1.5]);
       const iter1 = values.entries();
       const iter2 = values.entries();
       const r1 = iter1.next();
       const r2 = iter2.next();
-      expect(r1.done).assertEqual(false);
-      expect(r2.done).assertEqual(false);
+      expect(r1.done).assertFalse();
+      expect(r2.done).assertFalse();
       expect(r1.value![1]).assertEqual(r2.value![1]);
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_3400
      * @tc.name testFloat64ArrayEntries034
      * @tc.desc Verify original array element values unchanged after entries traversal
      * @tc.size MediumTest
@@ -712,7 +664,7 @@ export default function Float64ArrayEntriesTest(): void {
     it('testFloat64ArrayEntries034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const int32MinValue: number = -2147483648;
       const negativeOne: number = -1;
-      const values = Float64Array.of(int32MinValue, -1);
+      const values = new Float64Array([int32MinValue, -1]);
       const iter = values.entries();
       let entry = iter.next();
       while (!entry.done) {
@@ -727,7 +679,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_3500
      * @tc.name testFloat64ArrayEntries035
      * @tc.desc Verify Float64Array entries partial traversal then continue iteration
      * @tc.size MediumTest
@@ -735,21 +687,18 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const values = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const values = new Float64Array([0.1, 9007199254740991, 0]);
       const iter = values.entries();
       iter.next();
       iter.next();
       const result = iter.next();
 
-      expect(result.done).assertEqual(false);
+      expect(result.done).assertFalse();
       expect(result.value).assertDeepEquals([2, 0]);
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_3600
      * @tc.name testFloat64ArrayEntries036
      * @tc.desc Verify Float64Array entries only take first element then stop
      * @tc.size MediumTest
@@ -757,10 +706,7 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const values = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const values = Float64Array.of(0.5, 1.5, 0.25);
       const iter = values.entries();
       const first = iter.next();
       const second = iter.next();
@@ -769,7 +715,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_3700
      * @tc.name testFloat64ArrayEntries037
      * @tc.desc Verify traverse entries of multiple Float64Array
      * @tc.size MediumTest
@@ -777,13 +723,9 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
-      const threePointZero: number = 3.0;
-      const fourPointZero: number = 4.0;
       const tenPointZero: number = 10.0;
-      const arr1 = Float64Array.of(onePointZero, twoPointZero);
-      const arr2 = Float64Array.of(threePointZero, fourPointZero);
+      const arr1 = Float64Array.of(1.0, 2.0);
+      const arr2 = new Float64Array([3.0, 4.0]);
       let total = 0.0;
       for (const entry of arr1.entries()) {
         total += entry[1];
@@ -796,7 +738,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_3800
      * @tc.name testFloat64ArrayEntries038
      * @tc.desc Verify same array multiple entries traversal results are consistent
      * @tc.size MediumTest
@@ -804,9 +746,7 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const fivePointZero: number = 5.0;
-      const sixPointZero: number = 6.0;
-      const values = Float64Array.of(fivePointZero, sixPointZero);
+      const values = Float64Array.of(5.0, 6.0);
       let sum1 = 0.0;
       for (const entry of values.entries()) {
         sum1 += entry[1];
@@ -820,7 +760,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_3900
      * @tc.name testFloat64ArrayEntries039
      * @tc.desc Verify Float64Array entries traverses 0.1+0.2!=0.3 scenario
      * @tc.size MediumTest
@@ -828,12 +768,10 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const pointTwo: number = 0.2;
       const pointThree: number = 0.3;
       const precisionSumValue: number =
         0.30000000000000004;
-      const values = Float64Array.of(pointOne, pointTwo, pointThree);
+      const values = new Float64Array([0.1, 0.2, pointThree]);
       const iter = values.entries();
       const r1 = iter.next();
       const r2 = iter.next();
@@ -845,7 +783,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_4000
      * @tc.name testFloat64ArrayEntries040
      * @tc.desc Verify entries return value type is Number object
      * @tc.size MediumTest
@@ -854,16 +792,16 @@ export default function Float64ArrayEntriesTest(): void {
      */
     it('testFloat64ArrayEntries040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const onePointZero: number = 1.0;
-      const values = Float64Array.of(onePointZero);
+      const values = new Float64Array([onePointZero]);
       const iter = values.entries();
       const result = iter.next();
 
-      expect(result.done).assertEqual(false);
+      expect(result.done).assertFalse();
       expect(result.value![1]).assertEqual(onePointZero);
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_4100
      * @tc.name testFloat64ArrayEntries041
      * @tc.desc Verify entries return Number value can be obtained via valueOf
      * @tc.size MediumTest
@@ -872,16 +810,16 @@ export default function Float64ArrayEntriesTest(): void {
      */
     it('testFloat64ArrayEntries041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const fillValue42: number = 42.0;
-      const values = Float64Array.of(fillValue42);
+      const values = new Float64Array([fillValue42]);
       const iter = values.entries();
       const result = iter.next();
 
-      expect(result.done).assertEqual(false);
+      expect(result.done).assertFalse();
       expect(result.value![1]).assertEqual(fillValue42);
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_4200
      * @tc.name testFloat64ArrayEntries042
      * @tc.desc Verify 100 element Float64Array entries complete traversal
      * @tc.size MediumTest
@@ -907,7 +845,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_4300
      * @tc.name testFloat64ArrayEntries043
      * @tc.desc Verify 100 element Float64Array entries last element index is 99
      * @tc.size MediumTest
@@ -935,7 +873,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_4400
      * @tc.name testFloat64ArrayEntries044
      * @tc.desc Verify Float64Array entries done is true after traversing all elements
      * @tc.size MediumTest
@@ -943,8 +881,7 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const values = Float64Array.of(pointOne);
+      const values = Float64Array.of(0.1);
       const iter = values.entries();
       iter.next();
       const doneResult = iter.next();
@@ -954,7 +891,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_4500
      * @tc.name testFloat64ArrayEntries045
      * @tc.desc Verify Float64Array entries done is false before traversal completes
      * @tc.size MediumTest
@@ -962,9 +899,7 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const values = Float64Array.of(pointFive, onePointFive);
+      const values = new Float64Array([0.5, 1.5]);
       const iter = values.entries();
       const first = iter.next();
       const expectVal = false;
@@ -972,7 +907,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_4600
      * @tc.name testFloat64ArrayEntries046
      * @tc.desc Verify Float64Array entries destructuring in for-of loop
      * @tc.size MediumTest
@@ -980,20 +915,18 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const tenPointZero: number = 10.0;
-      const twentyPointzero: number = 20.0;
-      const thirtyPointzero: number = 30.0;
-      const values = Float64Array.of(tenPointZero, twentyPointzero);
+      const thirtyPointZero: number = 30.0;
+      const values = Float64Array.of(10.0, 20.0);
       let sum = 0.0;
       for (const entry of values.entries()) {
         sum += entry[1];
       }
-      const expectVal = thirtyPointzero;
+      const expectVal = thirtyPointZero;
       expect(sum).assertEqual(expectVal);
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_4700
      * @tc.name testFloat64ArrayEntries047
      * @tc.desc Verify Float64Array entries only use value in for-of loop
      * @tc.size MediumTest
@@ -1001,11 +934,8 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const hundredPointzero: number = 100.0;
-      const num200Pointzero: number = 200.0;
-      const num300Pointzero: number = 300.0;
       const num600Pointzero: number = 600.0;
-      const values = Float64Array.of(hundredPointzero, num200Pointzero, num300Pointzero);
+      const values = Float64Array.of(100.0, 200.0, 300.0);
       let sum = 0.0;
       for (const entry of values.entries()) {
         sum += entry[1];
@@ -1015,7 +945,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_4800
      * @tc.name testFloat64ArrayEntries048
      * @tc.desc Verify Float64Array entries only use index in for-of loop
      * @tc.size MediumTest
@@ -1023,11 +953,8 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const twoPointZero: number = 2.0;
-      const threePointZero: number = 3.0;
       const threeValue: number = 3;
-      const values = Float64Array.of(onePointZero, twoPointZero, threePointZero);
+      const values = Float64Array.of(1.0, 2.0, 3.0);
       let indexSum = 0;
       for (const entry of values.entries()) {
         indexSum += entry[0];
@@ -1037,7 +964,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_4900
      * @tc.name testFloat64ArrayEntries049
      * @tc.desc Verify Float64Array entries return expected indexes
      * @tc.size MediumTest
@@ -1045,11 +972,8 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
       const threeValue: number = 3;
-      const values = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const values = Float64Array.of(0.5, 1.5, 0.25);
       const entriesIter = values.entries();
       let count: int = 0;
       let entry = entriesIter.next();
@@ -1066,7 +990,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_5000
      * @tc.name testFloat64ArrayEntries050
      * @tc.desc Verify Float64Array entries return expected values
      * @tc.size MediumTest
@@ -1100,7 +1024,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_5100
      * @tc.name testFloat64ArrayEntries051
      * @tc.desc Verify Float64Array entries empty array multiple next calls do not throw error
      * @tc.size MediumTest
@@ -1119,7 +1043,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_5200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_5200
      * @tc.name testFloat64ArrayEntries052
      * @tc.desc Verify entries() iterates [index, value] pairs over array [0.1, 9007199254740991] with ascending indices 0,1 and total count 2
      * @tc.size MediumTest
@@ -1127,10 +1051,8 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
       const twoValue: number = 2;
-      const values = Float64Array.of(pointOne, maxSafeInteger);
+      const values = Float64Array.of(0.1, 9007199254740991);
       let count = 0;
       for (const entry of values.entries()) {
         expect(entry[0]).assertEqual(count);
@@ -1141,7 +1063,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_5300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_5300
      * @tc.name testFloat64ArrayEntries053
      * @tc.desc Verify entries iterates single element
      * @tc.size MediumTest
@@ -1151,7 +1073,7 @@ export default function Float64ArrayEntriesTest(): void {
     it('testFloat64ArrayEntries053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointFive: number = 0.5;
       const zeroValue: number = 0;
-      const values = Float64Array.of(pointFive);
+      const values = new Float64Array([pointFive]);
       for (const entry of values.entries()) {
         expect(entry[0]).assertEqual(zeroValue);
         expect(entry[1]).assertEqual(pointFive);
@@ -1159,7 +1081,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_5400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_5400
      * @tc.name testFloat64ArrayEntries054
      * @tc.desc Verify entries iterates array containing NaN
      * @tc.size MediumTest
@@ -1167,8 +1089,7 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const values = Float64Array.of(int16MinValue, -128);
+      const values = new Float64Array([-32768, -128]);
       let hasNaN = false;
       for (const entry of values.entries()) {
         if (Number.isNaN(entry[1])) {
@@ -1180,7 +1101,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_5500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_5500
      * @tc.name testFloat64ArrayEntries055
      * @tc.desc Verify entries iterates array containing Infinity
      * @tc.size MediumTest
@@ -1188,8 +1109,7 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const values = Float64Array.of(int32MinValue, -1);
+      const values = new Float64Array([-2147483648, -1]);
       let hasInf = false;
       let hasNegInf = false;
       for (const entry of values.entries()) {
@@ -1207,7 +1127,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_5600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_5600
      * @tc.name testFloat64ArrayEntries056
      * @tc.desc Verify entries with hex literal
      * @tc.size MediumTest
@@ -1226,7 +1146,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_5700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_5700
      * @tc.name testFloat64ArrayEntries057
      * @tc.desc Verify entries with binary literal
      * @tc.size MediumTest
@@ -1245,7 +1165,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_5800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_5800
      * @tc.name testFloat64ArrayEntries058
      * @tc.desc Verify entries with Double.NaN
      * @tc.size MediumTest
@@ -1270,7 +1190,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_5900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_5900
      * @tc.name testFloat64ArrayEntries059
      * @tc.desc Verify entries with Double.POSITIVE_INFINITY
      * @tc.size MediumTest
@@ -1295,7 +1215,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_6000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_6000
      * @tc.name testFloat64ArrayEntries060
      * @tc.desc Verify entries with Double.MIN_VALUE/MAX_VALUE
      * @tc.size MediumTest
@@ -1320,7 +1240,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_6100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_6100
      * @tc.name testFloat64ArrayEntries061
      * @tc.desc Verify entries can locate the index of a matching element
      * @tc.size MediumTest
@@ -1328,12 +1248,8 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const fivePointZero: number = 5.0;
-      const fifteenPointzero: number = 15.0;
-      const twentyfivePointzero: number = 25.0;
-      const thirtyfivePointzero: number = 35.0;
       const twoValue: number = 2;
-      const values = Float64Array.of(fivePointZero, fifteenPointzero, twentyfivePointzero, thirtyfivePointzero);
+      const values = new Float64Array([5.0, 15.0, 25.0, 35.0]);
       let foundIndex = -1;
       for (const entry of values.entries()) {
         if (entry[1] > 20.0) {
@@ -1346,7 +1262,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_6200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_6200
      * @tc.name testFloat64ArrayEntries062
      * @tc.desc Verify entries can drive reduce-style weighted sum accumulation
      * @tc.size MediumTest
@@ -1354,11 +1270,8 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const twoPointZero: number = 2.0;
-      const fivePointZero: number = 5.0;
-      const eightPointZero: number = 8.0;
       const twentyonePointzero: number = 21.0;
-      const values = Float64Array.of(twoPointZero, fivePointZero, eightPointZero);
+      const values = Float64Array.of(2.0, 5.0, 8.0);
       let weightedSum = 0.0;
       for (const entry of values.entries()) {
         weightedSum += entry[0] * entry[1];
@@ -1368,7 +1281,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_6300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_6300
      * @tc.name testFloat64ArrayEntries063
      * @tc.desc Verify entries supports index-based conditional filtering
      * @tc.size MediumTest
@@ -1376,13 +1289,8 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const threePointZero: number = 3.0;
-      const sixPointZero: number = 6.0;
-      const ninePointZero: number = 9.0;
-      const twelvePointzero: number = 12.0;
-      const fifteenPointzero: number = 15.0;
       const eighteenPointzero: number = 18.0;
-      const values = Float64Array.of(threePointZero, sixPointZero, ninePointZero, twelvePointzero, fifteenPointzero);
+      const values = new Float64Array([3.0, 6.0, 9.0, 12.0, 15.0]);
       let oddIndexSum = 0.0;
       for (const entry of values.entries()) {
         if (entry[0] % 2 == 1) {
@@ -1394,7 +1302,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_6400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_6400
      * @tc.name testFloat64ArrayEntries064
      * @tc.desc Verify entries on nonzero byteOffset view starts indexes at zero
      * @tc.size MediumTest
@@ -1414,7 +1322,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_6500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_6500
      * @tc.name testFloat64ArrayEntries065
      * @tc.desc Verify entries exhausted iterator remains done on repeated next calls
      * @tc.size MediumTest
@@ -1433,7 +1341,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_6600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_6600
      * @tc.name testFloat64ArrayEntries066
      * @tc.desc Verify entries creates independent iterator state for same array
      * @tc.size MediumTest
@@ -1441,7 +1349,7 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = Float64Array.of(4.0, 5.0);
+      const a = new Float64Array([4.0, 5.0]);
       const first = a.entries();
       const second = a.entries();
       const actVal9 = first.next().value!;
@@ -1453,7 +1361,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_6700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_6700
      * @tc.name testFloat64ArrayEntries067
      * @tc.desc Verify entries observes mutation made before first next call
      * @tc.size MediumTest
@@ -1461,7 +1369,7 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = Float64Array.of(1.0, 2.0);
+      const a = new Float64Array([1.0, 2.0]);
       const iter = a.entries();
       a.$_set(0, 10.0);
       const actVal12 = iter.next().value!;
@@ -1471,7 +1379,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_6800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_6800
      * @tc.name testFloat64ArrayEntries068
      * @tc.desc Verify entries observes mutation made before later next call
      * @tc.size MediumTest
@@ -1479,7 +1387,7 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = Float64Array.of(1.0, 2.0, 3.0);
+      const a = new Float64Array([1.0, 2.0, 3.0]);
       const iter = a.entries();
       const actVal14 = iter.next().value!;
       expect(actVal14).assertDeepEquals([0, 1.0]);
@@ -1491,7 +1399,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_6900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_6900
      * @tc.name testFloat64ArrayEntries069
      * @tc.desc Verify entries tuple can carry NaN value with stable index
      * @tc.size MediumTest
@@ -1499,7 +1407,7 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const first = Float64Array.of(NaN, 2.0).entries().next().value!;
+      const first = new Float64Array([NaN, 2.0]).entries().next().value!;
       const value: number = first[1];
       expect(first[0]).assertEqual(0);
       const actVal17 = Number.isNaN(value);
@@ -1508,7 +1416,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_7000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_7000
      * @tc.name testFloat64ArrayEntries070
      * @tc.desc Verify entries tuple preserves negative zero sign in value slot
      * @tc.size MediumTest
@@ -1516,15 +1424,14 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const minusZero: number = -0.0;
-      const first = Float64Array.of(minusZero).entries().next().value!;
+      const first = new Float64Array([-0.0]).entries().next().value!;
       const value: number = first[1];
       expect(first[0]).assertEqual(0);
       expect(1 / value).assertEqual(-Infinity);
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_7100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_7100
      * @tc.name testFloat64ArrayEntries071
      * @tc.desc Verify entries after reverse reports reversed values with new indexes
      * @tc.size MediumTest
@@ -1532,7 +1439,7 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = Float64Array.of(1.0, 2.0, 3.0);
+      const a = new Float64Array([1.0, 2.0, 3.0]);
       a.reverse();
       const iter = a.entries();
       const actVal18 = iter.next().value!;
@@ -1544,7 +1451,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_7200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_7200
      * @tc.name testFloat64ArrayEntries072
      * @tc.desc Verify entries over toReversed copy leaves original first element unchanged
      * @tc.size MediumTest
@@ -1552,7 +1459,7 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = Float64Array.of(1.0, 2.0, 3.0);
+      const a = new Float64Array([1.0, 2.0, 3.0]);
       const first = a.toReversed().entries().next().value!;
       expect(first).assertDeepEquals([0, 3.0]);
       const actVal21 = a.$_get(0);
@@ -1561,7 +1468,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_7300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_7300
      * @tc.name testFloat64ArrayEntries073
      * @tc.desc Verify entries over toSorted copy reports ascending values
      * @tc.size MediumTest
@@ -1579,7 +1486,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_7400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_7400
      * @tc.name testFloat64ArrayEntries074
      * @tc.desc Verify entries loop count matches view length after subarray
      * @tc.size MediumTest
@@ -1587,7 +1494,7 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const v = Float64Array.of(5.0, 6.0, 7.0, 8.0).subarray(1, 4);
+      const v = new Float64Array([5.0, 6.0, 7.0, 8.0]).subarray(1, 4);
       let count = 0;
       let lastIndex = -1;
       for (const entry of v.entries()) {
@@ -1601,7 +1508,7 @@ export default function Float64ArrayEntriesTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64_ARRAY_ENTRIES_7500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_ENTRIES_7500
      * @tc.name testFloat64ArrayEntries075
      * @tc.desc Verify entries tuple values can drive exact indexed rewrite
      * @tc.size MediumTest
@@ -1609,7 +1516,7 @@ export default function Float64ArrayEntriesTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEntries075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const a = Float64Array.of(1.0, 2.0, 3.0);
+      const a = new Float64Array([1.0, 2.0, 3.0]);
       for (const entry of a.entries()) {
         a.$_set(entry[0], entry[1] * 2.0);
       }

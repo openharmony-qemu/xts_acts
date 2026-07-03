@@ -34,7 +34,7 @@ export default function Float64ArrayEveryTest(): void {
     })
 
     beforeEach(async (): Promise<void> => {
-      await Utils.msSleep(30)
+      await Utils.msSleep(30);
     })
 
     afterEach((): void => {
@@ -52,10 +52,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = new Float64Array([0.1, 9007199254740991, 0]);
       const result: boolean = arr.every((value: number): boolean => {
         return value > 0.0;
       })
@@ -73,10 +70,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       const result = arr.every((value: number, index: int): boolean => {
         return value > 0.0;
       })
@@ -94,9 +88,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int16MinValue, -128, zeroValue);
+      const arr = new Float64Array([-32768, -128, 0]);
       const result = arr.every(everyPred003);
       const expectVal = false;
       expect(result).assertEqual(expectVal);
@@ -111,9 +103,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const arr = Float64Array.of(-2147483648, -1, 0);
       const result = arr.every((value: number, index: int, array: Float64Array): boolean => {
         return true;
       })
@@ -131,10 +121,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = new Float64Array([0.1, 9007199254740991, 0]);
       const result = arr.every((value: number, index: int): boolean => {
         return false;
       })
@@ -152,10 +139,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       const result = arr.every((value: number, index: int, array: Float64Array): boolean => {
         return index < 2;
       })
@@ -173,9 +157,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int16MinValue, -128, zeroValue);
+      const arr = new Float64Array([-32768, -128, 0]);
       const result: boolean = arr.every((value: number): boolean => {
         let ret: boolean = false;
         return ret;
@@ -194,9 +176,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const arr = Float64Array.of(-2147483648, -1, 0);
       const allPositive = arr.every((value: number, index: int, array: Float64Array): boolean => {
         return value > 0.0;
       })
@@ -252,10 +232,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = new Float64Array([0.1, 9007199254740991, 0]);
       const result = arr.every((value: number, index: int, array: Float64Array): boolean => {
         return value > 0.0;
       })
@@ -273,10 +250,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       const result = arr.every((value: number, index: int): boolean => {
         return value < 0.0;
       })
@@ -295,7 +269,7 @@ export default function Float64ArrayEveryTest(): void {
      */
     it('testFloat64ArrayEvery013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroValue: number = 0;
-      const arr = Float64Array.of(zeroValue, zeroValue, zeroValue);
+      const arr = new Float64Array([zeroValue, zeroValue, zeroValue]);
       const result = arr.every((value: number): boolean => {
         return value === 0.0;
       })
@@ -313,8 +287,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const negativeOne: number = -1;
-      const arr = Float64Array.of(negativeOne, -1);
+      const arr = new Float64Array([-1, -1]);
       const result = arr.every((value: number, index: int, array: Float64Array): boolean => {
         return value > 1.0e+308;
       })
@@ -333,7 +306,7 @@ export default function Float64ArrayEveryTest(): void {
      */
     it('testFloat64ArrayEvery015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroValue: number = 0;
-      const arr = Float64Array.of(zeroValue, zeroValue, zeroValue);
+      const arr = new Float64Array([zeroValue, zeroValue, zeroValue]);
       const result = arr.every((value: number, index: int): boolean => {
         return value !== value;
       })
@@ -352,7 +325,7 @@ export default function Float64ArrayEveryTest(): void {
      */
     it('testFloat64ArrayEvery016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointTwoFive: number = 0.25;
-      const arr = Float64Array.of(pointTwoFive, pointTwoFive, pointTwoFive);
+      const arr = new Float64Array([pointTwoFive, pointTwoFive, pointTwoFive]);
       const result = arr.every((value: number): boolean => {
         return value === 5.5;
       })
@@ -371,7 +344,7 @@ export default function Float64ArrayEveryTest(): void {
      */
     it('testFloat64ArrayEvery017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroValue: number = 0;
-      const arr = Float64Array.of(zeroValue, -128, zeroValue);
+      const arr = new Float64Array([zeroValue, -128, zeroValue]);
       const result = arr.every((value: number, index: int, array: Float64Array): boolean => {
         return value >= -0.0;
       })
@@ -389,9 +362,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const arr = Float64Array.of(-2147483648, -1, 0);
       const result = arr.every((value: number, index: int): boolean => {
         return value > 0.0;
       })
@@ -409,10 +380,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = new Float64Array([0.1, 9007199254740991, 0]);
       const result = arr.every((value: number): boolean => {
         return value > 0.0;
       })
@@ -430,10 +398,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       const result = arr.every((value: number, index: int, array: Float64Array): boolean => {
         return value > 0.0;
       })
@@ -451,9 +416,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int16MinValue, -128, zeroValue);
+      const arr = new Float64Array([-32768, -128, 0]);
       const result = arr.every((value: number, index: int): boolean => {
         return value > 0.0;
       })
@@ -471,9 +434,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const arr = Float64Array.of(-2147483648, -1, 0);
       const result = arr.every((value: number): boolean => {
         return value > 0.0;
       })
@@ -491,12 +452,8 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const zeroValue: number = 0;
-      const int8MaxValue: number = 127;
-      const int16MaxValue: number = 32767;
       const oneValue: number = 1;
-      const arr = Float64Array.of(int16MinValue, -128, zeroValue, int8MaxValue, int16MaxValue);
+      const arr = new Float64Array([-32768, -128, 0, 127, 32767]);
       let callCount: int = 0;
       const result = arr.every((value: number): boolean => {
         callCount = callCount + 1;
@@ -518,11 +475,8 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
       const oneValue: number = 1;
-      const int32MaxValue: number = 2147483647;
-      const arr = Float64Array.of(int32MinValue, -1, zeroValue, oneValue, int32MaxValue);
+      const arr = new Float64Array([-2147483648, -1, 0, oneValue, 2147483647]);
       let callCount: int = 0;
       const result = arr.every((value: number, index: int, array: Float64Array): boolean => {
         callCount = callCount + 1;
@@ -544,13 +498,8 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const piValue: number = 3.141592653589793;
-      const tinyNegativeValue: number = -1e-100;
       const threeValue: number = 3;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue, piValue, tinyNegativeValue);
+      const arr = Float64Array.of(0.1, 9007199254740991, 0, 3.141592653589793, -1e-100);
       let callCount: int = 0;
       const result = arr.every((value: number, index: int): boolean => {
         callCount = callCount + 1;
@@ -572,13 +521,8 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const pointOneTwoFive: number = 0.125;
-      const pointZeroSixTwoFive: number = 0.0625;
       const fiveValue: number = 5;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive, pointOneTwoFive, pointZeroSixTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25, 0.125, 0.0625]);
       let callCount: int = 0;
       const result = arr.every((value: number): boolean => {
         callCount = callCount + 1;
@@ -600,9 +544,8 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
       const oneValue: number = 1;
-      const arr = Float64Array.of(int16MinValue);
+      const arr = new Float64Array([-32768]);
       let callCount: int = 0;
       const result = arr.every((value: number, index: int, array: Float64Array): boolean => {
         callCount = callCount + 1;
@@ -651,9 +594,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const arr = Float64Array.of(-2147483648, -1, 0);
       try {
         arr.every((value: number): boolean => {
           throw new RangeError("test error");
@@ -674,10 +615,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = new Float64Array([0.1, 9007199254740991, 0]);
       try {
         arr.every((value: number, index: int, array: Float64Array): boolean => {
           throw new TypeError("test error");
@@ -698,10 +636,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       try {
         arr.every((value: number, index: int): boolean => {
           throw new Error("test error");
@@ -722,9 +657,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int16MinValue, -128, zeroValue);
+      const arr = new Float64Array([-32768, -128, 0]);
       try {
         arr.every((value: number, index: int, array: Float64Array): boolean => {
           if (index === 0) {
@@ -748,9 +681,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const arr = Float64Array.of(-2147483648, -1, 0);
       try {
         arr.every((value: number, index: int, array: Float64Array): boolean => {
           if (index === 1) {
@@ -774,10 +705,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = new Float64Array([0.1, 9007199254740991, 0]);
       try {
         arr.every((value: number, index: int, array: Float64Array): boolean => {
           if (index === 2) {
@@ -824,11 +752,8 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
       const oneValue: number = 1;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       let callCount: int = 0;
       try {
         arr.every((value: number, index: int, array: Float64Array): boolean => {
@@ -855,8 +780,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const arr = Float64Array.of(int16MinValue);
+      const arr = new Float64Array([-32768]);
       const result = arr.every((value: number, index: int): boolean => {
         return value === 42.0;
       })
@@ -874,8 +798,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const arr = Float64Array.of(int32MinValue);
+      const arr = Float64Array.of(-2147483648);
       const result = arr.every((value: number): boolean => {
         return value !== 42.0;
       })
@@ -893,8 +816,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const arr = Float64Array.of(pointOne);
+      const arr = Float64Array.of(0.1);
       const result = arr.every((value: number, index: int, array: Float64Array): boolean => {
         return value !== value;
       })
@@ -912,8 +834,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const arr = Float64Array.of(pointFive);
+      const arr = new Float64Array([0.5]);
       const result = arr.every((value: number, index: int): boolean => {
         return value > 1.0e+308;
       })
@@ -931,8 +852,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const arr = Float64Array.of(int16MinValue);
+      const arr = new Float64Array([-32768]);
       const result = arr.every((value: number): boolean => {
         return value === 0.0;
       })
@@ -950,8 +870,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const arr = Float64Array.of(int32MinValue, -1);
+      const arr = new Float64Array([-2147483648, -1]);
       const result = arr.every((value: number, index: int, array: Float64Array): boolean => {
         return value > 0.0;
       })
@@ -969,9 +888,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const arr = Float64Array.of(pointOne, maxSafeInteger);
+      const arr = new Float64Array([0.1, 9007199254740991]);
       const result = arr.every((value: number, index: int): boolean => {
         return value > 0.0;
       })
@@ -1103,10 +1020,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       const r1 = arr.every((value: number, index: int): boolean => {
         return value > 0.0;
       })
@@ -1128,8 +1042,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const arr = Float64Array.of(int16MinValue, -128);
+      const arr = Float64Array.of(-32768, -128);
       try {
         arr.every((value: number, index: int, array: Float64Array): boolean => {
           throw new SyntaxError("syntax");
@@ -1150,9 +1063,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const arr = Float64Array.of(-2147483648, -1, 0);
       const threshold: double = 0.0;
       const result = arr.every((value: number, index: int): boolean => {
         return value > threshold;
@@ -1171,9 +1082,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const pointTwo: number = 0.2;
-      const arr = Float64Array.of(pointOne + pointTwo);
+      const arr = Float64Array.of(0.1 + 0.2);
       const result = arr.every((value: number): boolean => {
         return value !== 0.3;
       })
@@ -1215,9 +1124,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const arr = Float64Array.of(pointOne, maxSafeInteger);
+      const arr = new Float64Array([0.1, 9007199254740991]);
       let isFloat64: boolean = false;
       arr.every((value: number, index: int, array: Float64Array): boolean => {
         let obj: Object = array as Object;
@@ -1262,10 +1169,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       try {
         arr.every((value: number): boolean => {
           throw new Error("string error");
@@ -1286,8 +1190,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const arr = Float64Array.of(int16MinValue, -128);
+      const arr = Float64Array.of(-32768, -128);
       try {
         arr.every((value: number, index: int, array: Float64Array): boolean => {
           throw new ReferenceError("undefined var");
@@ -1308,8 +1211,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const arr = Float64Array.of(int32MinValue, -1);
+      const arr = new Float64Array([-2147483648, -1]);
       try {
         arr.every((value: number, index: int): boolean => {
           throw new EvalError("eval error");
@@ -1330,9 +1232,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const arr = Float64Array.of(pointOne, maxSafeInteger);
+      const arr = new Float64Array([0.1, 9007199254740991]);
       try {
         arr.every((value: number): boolean => {
           throw new URIError("uri error");
@@ -1353,9 +1253,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const arr = Float64Array.of(pointFive, onePointFive);
+      const arr = Float64Array.of(0.5, 1.5);
       const result = arr.every((value: number, index: int, array: Float64Array): boolean => {
         return value === 0.0;
       })
@@ -1373,8 +1271,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const arr = Float64Array.of(int16MinValue);
+      const arr = new Float64Array([-32768]);
       const result = arr.every((value: number, index: int): boolean => {
         return value < 0.0;
       })
@@ -1411,10 +1308,8 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
       const oneValue: number = 1;
-      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const arr = Float64Array.of(-2147483648, -1, 0);
       let callCount: int = 0;
       const result = arr.every((value: number, index: int, array: Float64Array): boolean => {
         callCount = callCount + 1;
@@ -1437,7 +1332,7 @@ export default function Float64ArrayEveryTest(): void {
      */
     it('testFloat64ArrayEvery064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroValue: number = 0;
-      const arr = Float64Array.of(zeroValue, zeroValue, zeroValue);
+      const arr = new Float64Array([zeroValue, zeroValue, zeroValue]);
       const result = arr.every((value: number, index: int): boolean => {
         return value === Infinity;
       })
@@ -1455,10 +1350,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const values = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const values = Float64Array.of(0.5, 1.5, 0.25);
       const actVal4 = values.every((value) => value > 0);
       const expectVal = true;
       expect(actVal4).assertEqual(expectVal);
@@ -1473,9 +1365,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const zeroValue: number = 0;
-      const values = Float64Array.of(int16MinValue, -128, zeroValue);
+      const values = new Float64Array([-32768, -128, 0]);
       const actVal5 = values.every((value) => value > 4);
       const expectVal = false;
       expect(actVal5).assertEqual(expectVal);
@@ -1490,8 +1380,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const values = Float64Array.of(int32MinValue);
+      const values = new Float64Array([-2147483648]);
       const actVal6 = values.every((value) => value > 0);
       const expectVal = false;
       expect(actVal6).assertEqual(expectVal);
@@ -1506,8 +1395,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const values = Float64Array.of(pointOne);
+      const values = Float64Array.of(0.1);
       const actVal7 = values.every((value) => value > 10);
       const expectVal = false;
       expect(actVal7).assertEqual(expectVal);
@@ -1522,9 +1410,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const values = Float64Array.of(pointFive, onePointFive);
+      const values = new Float64Array([0.5, 1.5]);
       const actVal8 = values.every((value) => value > 0);
       const expectVal = true;
       expect(actVal8).assertEqual(expectVal);
@@ -1539,8 +1425,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const values = Float64Array.of(int16MinValue, -128);
+      const values = new Float64Array([-32768, -128]);
       const actVal9 = values.every((value) => value > 0);
       const expectVal = false;
       expect(actVal9).assertEqual(expectVal);
@@ -1555,10 +1440,8 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
       const threeValue: number = 3;
-      const values = Float64Array.of(int32MinValue, -1, zeroValue);
+      const values = new Float64Array([-2147483648, -1, 0]);
       let count = 0;
       values.every((value) => {
         count++;
@@ -1581,7 +1464,7 @@ export default function Float64ArrayEveryTest(): void {
       const hexValueFF: number = 0xFF;
       const hexValueAA: number = 0xAA;
       const hexValue55: number = 0x55;
-      const arr = Float64Array.of(hexValueFF, hexValueAA, hexValue55);
+      const arr = new Float64Array([hexValueFF, hexValueAA, hexValue55]);
       const r = arr.every((v: number): boolean => v > 0x00);
       const expectVal = true;
       expect(r).assertEqual(expectVal);
@@ -1599,7 +1482,7 @@ export default function Float64ArrayEveryTest(): void {
       const binaryValue11111111: number = 0b11111111;
       const binaryValue10101010: number = 0b10101010;
       const binaryValue01010101: number = 0b01010101;
-      const arr = Float64Array.of(binaryValue11111111, binaryValue10101010, binaryValue01010101);
+      const arr = new Float64Array([binaryValue11111111, binaryValue10101010, binaryValue01010101]);
       const r = arr.every((v: number): boolean => v > 0b00000000);
       const expectVal = true;
       expect(r).assertEqual(expectVal);
@@ -1671,9 +1554,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const sciValue10e308: number = 1.0e-308;
-      const sciValue20e308: number = 2.0e-308;
-      const arr = Float64Array.of(sciValue10e308, sciValue20e308);
+      const arr = new Float64Array([1.0e-308, 2.0e-308]);
       const result = arr.every((value: number): boolean => {
         return value > 0.0;
       })
@@ -1690,9 +1571,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const sciValue15e308: number = 1.5e+308;
-      const sciValue17e308: number = 1.7e+308;
-      const arr = Float64Array.of(sciValue15e308, sciValue17e308);
+      const arr = Float64Array.of(1.5e+308, 1.7e+308);
       const result = arr.every((value: number): boolean => {
         return value > 1.0e+307;
       })
@@ -1710,7 +1589,7 @@ export default function Float64ArrayEveryTest(): void {
      */
     it('testFloat64ArrayEvery079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const positiveInfinity: number = Double.POSITIVE_INFINITY;
-      const arr = Float64Array.of(positiveInfinity, positiveInfinity);
+      const arr = new Float64Array([positiveInfinity, positiveInfinity]);
       const result = arr.every((value: number, index: int, array: Float64Array): boolean => {
         return value > 1.0e+308;
       })
@@ -1728,7 +1607,7 @@ export default function Float64ArrayEveryTest(): void {
      */
     it('testFloat64ArrayEvery080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const nanValue: number = Double.NaN;
-      const arr = Float64Array.of(nanValue, nanValue, nanValue);
+      const arr = new Float64Array([nanValue, nanValue, nanValue]);
       const result = arr.every((value: number, index: int): boolean => {
         return Number.isNaN(value);
       })
@@ -1763,9 +1642,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const negativeZero: number = -0.0;
-      const zeroPointZero: number = 0.0;
-      const arr = Float64Array.of(negativeZero, zeroPointZero, -0.0);
+      const arr = new Float64Array([-0.0, 0.0, -0.0]);
       const result = arr.every((value: number, index: int, array: Float64Array): boolean => {
         return value >= -0.0;
       })
@@ -1782,10 +1659,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       let sameRef: boolean = false;
       arr.every((value: number, index: int, array: Float64Array): boolean => {
         if ((array as Object) === (arr as Object)) {
@@ -1806,9 +1680,7 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int16MinValue, -128, zeroValue);
+      const arr = new Float64Array([-32768, -128, 0]);
       let matchLen: boolean = false;
       arr.every((value: number, index: int, array: Float64Array): boolean => {
         if (array.length === arr.length) {
@@ -1829,10 +1701,8 @@ export default function Float64ArrayEveryTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayEvery085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
       const fillValue99: number = 99.0;
-      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const arr = Float64Array.of(-2147483648, -1, 0);
       arr.every((value: number, index: int, array: Float64Array): boolean => {
         array.$_set(0, fillValue99);
         return false;
