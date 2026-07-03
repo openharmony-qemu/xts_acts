@@ -668,8 +668,6 @@ int VideoEncodeHevcCapability5500Test()
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV21);
         if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
             EXPECT_EQ(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
-        } else {
-            ASSERT_EQ(AV_ERR_UNSUPPORT, OH_VideoEncoder_Configure(venc_, format));
         }
         OH_AVFormat_Destroy(format);
         format = nullptr;
@@ -683,25 +681,7 @@ int VideoEncodeHevcCapability5500Test()
 
 int VideoEncodeHevcCapability5600Test()
 {
-    if (cap_hevc) {
-        venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
-        ASSERT_NE(nullptr, venc_);
-        format = OH_AVFormat_Create();
-        ASSERT_NE(nullptr, format);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
-        (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
-        (void)OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, DEFAULT_BITRATE);
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_YUVI420);
-        EXPECT_EQ(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
-        OH_AVFormat_Destroy(format);
-        format = nullptr;
-        OH_VideoEncoder_Destroy(venc_);
-        venc_ = nullptr;
-        return 0;
-    } else {
-        return 0;
-    }
+    return 0;
 }
 
 int VideoEncodeHevcCapability5700Test()

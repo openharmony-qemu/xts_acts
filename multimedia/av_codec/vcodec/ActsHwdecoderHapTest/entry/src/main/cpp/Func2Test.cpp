@@ -677,7 +677,8 @@ int VIDEO_DECODE_SYNC_HW265_FUNC_0020()
  */
 int VIDEO_DECODE_SYNC_HW265_FUNC_0040()
 {
-    if (cap_hevc != nullptr && !access("/system/lib64/media/", 0)) {
+    if (cap_hevc != nullptr &&
+        OH_AVCapability_AreProfileAndLevelSupported(cap_hevc, HEVC_PROFILE_MAIN_10, HEVC_LEVEL_62)) {
         auto vDecSample = make_shared<VDecAPI11Sample>();
         vDecSample->inpDir = INP_DIR_VIVID;
         vDecSample->defaultProfile = HEVC_PROFILE_MAIN_10;
@@ -1099,7 +1100,8 @@ int VIDEO_DECODE_LOW_LATENCY_0006()
  */
 int VIDEO_DECODE_LOW_LATENCY_0007()
 {
-    if (cap_hevc != nullptr && !access("/system/lib64/media/", 0)) {
+    if (cap_hevc != nullptr &&
+        OH_AVCapability_AreProfileAndLevelSupported(cap_hevc, HEVC_PROFILE_MAIN_10, HEVC_LEVEL_62)) {
         auto vDecSample = make_shared<VDecAPI11Sample>();
         vDecSample->inpDir = INP_DIR_IPB_265_10BIT;
         vDecSample->defaultWidth = QCIF_WIDTH;
@@ -1154,7 +1156,8 @@ int VIDEO_DECODE_LOW_LATENCY_0008()
  */
 int VIDEO_DECODE_LOW_LATENCY_0009()
 {
-    if (cap_hevc != nullptr && !access("/system/lib64/media/", 0)) {
+    if (cap_hevc != nullptr &&
+        OH_AVCapability_AreProfileAndLevelSupported(cap_hevc, HEVC_PROFILE_MAIN_10, HEVC_LEVEL_62)) {
         auto vDecSample = make_shared<VDecAPI11Sample>();
         vDecSample->inpDir = INP_DIR_IPB_265_10BIT;
         vDecSample->defaultWidth = QCIF_WIDTH;
