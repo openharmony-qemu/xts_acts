@@ -13,16 +13,10 @@
  * limitations under the License.
  */
 
+import Utils from "../Util.test";
+
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import hilog from '@ohos.hilog'
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-
 // ================= 注解定义 =================
 
 @Target([AnnotationTargets.CLASS])
@@ -98,7 +92,7 @@ class Multi {
   }
 }
 
-export default function AnnotationsTest() {
+export default function AnnotationsTest(): void {
   describe('AnnotationsTest', (): void => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll((): void => {
@@ -106,7 +100,7 @@ export default function AnnotationsTest() {
       // This API supports only one parameter: preset action function.
     })
     beforeEach(async (): Promise<void> => {
-      await sleep(30);
+      await Utils.msSleep(30);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
