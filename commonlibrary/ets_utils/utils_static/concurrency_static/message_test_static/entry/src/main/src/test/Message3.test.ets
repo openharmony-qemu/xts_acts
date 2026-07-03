@@ -121,7 +121,7 @@ export default function Message3Test(): void {
           expect(false).assertFail();
         } finally {
           try {
-            await worker.join();
+            worker.join().Await();
           } catch (error) {
             console.warn(`${TAG} catch quit error: ${error.message}`);
           }
@@ -171,7 +171,7 @@ export default function Message3Test(): void {
           expect(false).assertFail();
         } finally {
           try {
-            await worker.join();
+            worker.join().Await();
           } catch (error) {
             console.warn(`${TAG} catch quit error: ${error.message}`);
           }
@@ -232,7 +232,7 @@ export default function Message3Test(): void {
           expect(false).assertFail();
         } finally {
           try {
-            await worker.join();
+            worker.join().Await();
           } catch (error) {
             console.warn(`${TAG} catch quit error: ${error.message}`);
           }
@@ -284,7 +284,7 @@ export default function Message3Test(): void {
           expect(false).assertFail();
         } finally {
           try {
-            await worker.join();
+            worker.join().Await();
           } catch (error) {
             console.warn(`${TAG} catch quit error: ${error.message}`);
           }
@@ -328,7 +328,7 @@ export default function Message3Test(): void {
           expect(false).assertFail();
         } finally {
           try {
-            await worker.join();
+            worker.join().Await();
           } catch (error) {
             console.warn(`${TAG} catch quit error: ${error.message}`);
           }
@@ -373,7 +373,7 @@ export default function Message3Test(): void {
           expect(false).assertFail();
         } finally {
           try {
-            await worker.join();
+            worker.join().Await();
           } catch (error) {
             console.warn(`${TAG} catch quit error: ${error.message}`);
           }
@@ -419,7 +419,7 @@ export default function Message3Test(): void {
           expect(false).assertFail();
         } finally {
           try {
-            await worker.join();
+            worker.join().Await();
           } catch (error) {
             console.warn(`${TAG} catch quit error: ${error.message}`);
           }
@@ -478,7 +478,7 @@ export default function Message3Test(): void {
           expect(false).assertFail();
         } finally {
           try {
-            await worker.join();
+            worker.join().Await();
           } catch (error) {
             console.warn(`${TAG} catch quit error: ${error.message}`);
           }
@@ -539,7 +539,7 @@ export default function Message3Test(): void {
           expect(false).assertFail();
         } finally {
           try {
-            await worker.join();
+            worker.join().Await();
           } catch (error) {
             console.warn(`${TAG} catch quit error: ${error.message}`);
           }
@@ -586,7 +586,7 @@ export default function Message3Test(): void {
           expect(false).assertFail();
         } finally {
           try {
-            await worker.join();
+            worker.join().Await();
           } catch (error) {
             console.warn(`${TAG} catch quit error: ${error.message}`);
           }
@@ -633,7 +633,7 @@ export default function Message3Test(): void {
           expect(false).assertFail();
         } finally {
           try {
-            await worker.join();
+            worker.join().Await();
           } catch (error) {
             console.warn(`${TAG} catch quit error: ${error.message}`);
           }
@@ -683,7 +683,7 @@ export default function Message3Test(): void {
           expect(false).assertFail();
         } finally {
           try {
-            await worker.join();
+            worker.join().Await();
           } catch (error) {
             console.warn(`${TAG} catch quit error: ${error.message}`);
           }
@@ -730,7 +730,7 @@ export default function Message3Test(): void {
           expect(false).assertFail();
         } finally {
           try {
-            await worker.join();
+            worker.join().Await();
           } catch (error) {
             console.warn(`${TAG} catch quit error: ${error.message}`);
           }
@@ -777,7 +777,7 @@ export default function Message3Test(): void {
           expect(false).assertFail();
         } finally {
           try {
-            await worker.join();
+            worker.join().Await();
           } catch (error) {
             console.warn(`${TAG} catch quit error: ${error.message}`);
           }
@@ -822,7 +822,7 @@ export default function Message3Test(): void {
           expect(false).assertFail();
         } finally {
           try {
-            await worker.join();
+            worker.join().Await();
           } catch (error) {
             console.warn(`${TAG} catch quit error: ${error.message}`);
           }
@@ -878,7 +878,7 @@ export default function Message3Test(): void {
           expect(false).assertFail();
         } finally {
           try {
-            await worker.join();
+            worker.join().Await();
           } catch (error) {
             console.warn(`${TAG} catch quit error: ${error.message}`);
           }
@@ -924,7 +924,7 @@ export default function Message3Test(): void {
           expect(false).assertFail();
         } finally {
           try {
-            await worker.join();
+            worker.join().Await();
           } catch (error) {
             console.warn(`${TAG} catch quit error: ${error.message}`);
           }
@@ -969,7 +969,7 @@ export default function Message3Test(): void {
           expect(false).assertFail();
         } finally {
           try {
-            await worker.join();
+            worker.join().Await();
           } catch (error) {
             console.warn(`${TAG} catch quit error: ${error.message}`);
           }

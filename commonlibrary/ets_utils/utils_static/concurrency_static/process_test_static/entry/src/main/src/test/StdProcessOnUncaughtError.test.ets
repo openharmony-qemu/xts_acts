@@ -796,7 +796,8 @@ export default function stdProcessOnUncaughtErrorTest(): void {
 
                 await Utils.msSleep(50);
 
-                eaw.quit();
+                let job = eaw.join();
+                job.Await();
 
                 expect(listenerCalled).assertTrue();
                 expect((capturedErrorObj! as Error).message).assertEqual("EAWorker destruction error");

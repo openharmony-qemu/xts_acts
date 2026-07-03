@@ -82,6 +82,7 @@ export default function AbilityDelegatorStageTest() {
               console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} ---onAbilityForegroundCallback time out`);
               abilityDelegator.getCurrentTopAbility(async (err, data) => {
                 console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} ====> err: ${JSON.stringify(err)} data:  ${JSON.stringify(data)}`);
+                expect(ability.isDestroyed).assertFalse();
                 let state = abilityDelegator.getAbilityState(ability);
                 console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> state --in Foregroundcallback: ${state}`);
                 expect(state).assertEqual(AbilityDelegatorRegistry.AbilityLifecycleState.FOREGROUND);

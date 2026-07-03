@@ -772,8 +772,8 @@ export default function taskPoolTest() {
           const executePromise = worker.run<Promise<Any>>(() => {
             return taskpool.execute(task);
           });
-          await executePromise;
-          worker.quit();
+          await executePromise.Await();
+          worker.join();
         } catch (err) {
           err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
@@ -1332,25 +1332,19 @@ export default function taskPoolTest() {
           const worker = new EAWorker();
           worker.start();
           const workerPromise = taskpool.execute(async (worker: EAWorker): Promise<EAWorker> => {
-            await worker.run<void>((): void => {
+            worker.run<void>((): void => {
               executedFlag1 = true;
-            });
+            }).Await();
             return worker;
           }, worker);
-          let resolver: ((val: Any)=>void) | undefined = undefined;
-          let waiter = new Promise<Any>((resolve)=>{
-            resolver = resolve;
-          })
           await workerPromise.then((value: Any): void => {
             const returnedWorker: EAWorker = value as EAWorker;
             returnedWorker.run<EAWorker>((): EAWorker => {
               executedFlag2 = true;
-              resolver!(undefined);
               return returnedWorker;
-            });
+            }).Await();
           })
-          worker.quit()
-          await waiter;
+          worker.join()
           expect(executedFlag1).assertEqual(true);
           expect(executedFlag2).assertEqual(true);
         } catch (err) {

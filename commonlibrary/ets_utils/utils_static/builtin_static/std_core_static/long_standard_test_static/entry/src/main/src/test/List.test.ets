@@ -54,6 +54,7 @@ import longToString1Test from "./long/LongToString1Test.test";
 import longToString2Test from "./long/LongToString2Test.test";
 import longToString3Test from "./long/LongToString3Test.test";
 import longToStringRadixTest from "./long/LongToStringRadixTest.test";
+import longMinValuePlusCaseTest from './long/LongMinValuePlusCaseTest.test';
 
 export default function testSuite(): void {
 
@@ -97,5 +98,6 @@ export default function testSuite(): void {
   longToString2Test();
   longToString3Test();
   longToStringRadixTest();
+  longMinValuePlusCaseTest();
 
 }

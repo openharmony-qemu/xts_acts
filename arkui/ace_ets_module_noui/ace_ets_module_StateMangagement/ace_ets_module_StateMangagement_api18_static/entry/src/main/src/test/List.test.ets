@@ -60,6 +60,7 @@ import GlobalReusePool002Test from './uiutilsTest/GlobalReusePool002.test';
 import GlobalReusePool003Test from './uiutilsTest/GlobalReusePool003.test';
 import GlobalReusePool004Test from './uiutilsTest/GlobalReusePool004.test';
 import AddMonitorWildcard2 from './AddMonitorTest/AddMonitorWildcard2.test';
+import EnvBreakpoint from './Env/EnvBreakpoint.test';
 
 
 export default function testsuite(): void {
@@ -109,4 +110,5 @@ export default function testsuite(): void {
   GlobalReusePool002Test();
   GlobalReusePool003Test();
   GlobalReusePoolTest();
+  EnvBreakpoint();
 }

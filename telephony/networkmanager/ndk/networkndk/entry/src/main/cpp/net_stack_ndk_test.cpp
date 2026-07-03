@@ -44,6 +44,12 @@
 #define SLEEP_TIME_3 3
 #define DEFAULT_HOST_LEN 20
 
+extern "C" {
+__attribute__((weak)) uint32_t OH_NetStack_CreateAndVerifySortedCertChain(const struct NetStack_CertBlob *, size_t,
+    const struct NetStack_CertBlob *, const char *, struct NetStack_CertBlob **, size_t *);
+__attribute__((weak)) void OH_NetStack_FreeCertChain(struct NetStack_CertBlob *, size_t);
+}
+
 static const int CLOSE_RESULT_FROM_CLIENT_CODE = 1000;
 
 static void OnOpen(struct WebSocket *client, WebSocket_OpenResult openResult)
@@ -634,6 +640,85 @@ static napi_value OHNetStackIsCleartextPermittedByHostName(napi_env env, napi_ca
     return result;
 }
 
+// 创建并验证排序后的证书链
+static uint32_t TestCaseCreateAndVerifySortedCertChain(char *pemCertPath)
+{
+    if (OH_NetStack_CreateAndVerifySortedCertChain == nullptr || OH_NetStack_FreeCertChain == nullptr) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, WEBSOCKET_LOG_DOMAIN, WEBSOCKET_LOG_TAG,
+                     "OH_NetStack_CreateAndVerifySortedCertChain or OH_NetStack_FreeCertChain is not available");
+        return -1;
+    }
+    NetStack_CertBlob cert;
+    NetStack_CertBlob caCert;
+    NetStack_CertBlob *outSortedChain = nullptr;
+    size_t outSortedCount = 0;
+    GetCertData(cert, pemCertPath, NetStack_CertType::NETSTACK_CERT_TYPE_PEM);
+    GetCertData(caCert, pemCertPath, NetStack_CertType::NETSTACK_CERT_TYPE_PEM);
+    uint32_t ret = OH_NetStack_CreateAndVerifySortedCertChain(&cert, 1, &caCert, nullptr, &outSortedChain,
+                                                              &outSortedCount);
+    if (ret == 0 && outSortedChain != nullptr) {
+        OH_NetStack_FreeCertChain(outSortedChain, outSortedCount);
+    }
+    if (cert.data != nullptr) {
+        delete[] cert.data;
+    }
+    if (caCert.data != nullptr) {
+        delete[] caCert.data;
+    }
+    return ret;
+}
+
+static napi_value OHNetStackCreateAndVerifySortedCertChain(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    char *pemCertPath = nullptr;
+    size_t pemBufSize = 0;
+    napi_get_value_string_utf8(env, args[0], pemCertPath, 0, &pemBufSize);
+    if (pemBufSize > 0) {
+        pemCertPath = new char[pemBufSize + 1];
+        napi_get_value_string_utf8(env, args[0], pemCertPath, pemBufSize + 1, nullptr);
+    }
+    uint32_t ret = TestCaseCreateAndVerifySortedCertChain(pemCertPath);
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    if (pemCertPath != nullptr) {
+        delete[] pemCertPath;
+    }
+    return result;
+}
+
+// 释放证书链内存
+static napi_value OHNetStackFreeCertChain(napi_env env, napi_callback_info info)
+{
+    if (OH_NetStack_FreeCertChain == nullptr) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, WEBSOCKET_LOG_DOMAIN, WEBSOCKET_LOG_TAG,
+                     "OH_NetStack_FreeCertChain is not available");
+        napi_value result = nullptr;
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    NetStack_CertBlob *certChain = new (std::nothrow) NetStack_CertBlob[1];
+    if (certChain == nullptr) {
+        napi_value result = nullptr;
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    certChain[0].type = NetStack_CertType::NETSTACK_CERT_TYPE_PEM;
+    const char *testData = "test cert data";
+    size_t dataLen = strlen(testData);
+    certChain[0].data = new uint8_t[dataLen];
+    for (size_t i = 0; i < dataLen; i++) {
+        certChain[0].data[i] = static_cast<uint8_t>(testData[i]);
+    }
+    certChain[0].size = static_cast<uint32_t>(dataLen);
+    OH_NetStack_FreeCertChain(certChain, 1);
+    napi_value result = nullptr;
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -661,9 +746,13 @@ static napi_value Init(napi_env env, napi_value exports)
         {"OHNetStackDestroyCertificatesContent", nullptr, OHNetStackDestroyCertificatesContent, nullptr, nullptr,
          nullptr, napi_default, nullptr},
         {"OHNetStackIsCleartextPermitted", nullptr, OHNetStackIsCleartextPermitted, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
+          nullptr, napi_default, nullptr},
         {"OHNetStackIsCleartextPermittedByHostName", nullptr, OHNetStackIsCleartextPermittedByHostName,
-         nullptr, nullptr, nullptr, napi_default, nullptr},
+          nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OHNetStackCreateAndVerifySortedCertChain", nullptr, OHNetStackCreateAndVerifySortedCertChain,
+          nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OHNetStackFreeCertChain", nullptr, OHNetStackFreeCertChain, nullptr, nullptr,
+          nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

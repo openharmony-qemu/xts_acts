@@ -52,7 +52,7 @@ export default function atomicConcurrentTest() {
         });
       }
       eaws.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
       while (count.load() < 20) {
         await sleep(10);
@@ -81,7 +81,7 @@ export default function atomicConcurrentTest() {
         });
       }
       eaws.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
       finalValue = atomicRef.load();
       expect(finalValue >= 0 && finalValue <= 190).assertTrue();
@@ -108,7 +108,7 @@ export default function atomicConcurrentTest() {
         });
       }
       eaws.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
       let finalValue = atomicRef.load();
       expect(finalValue >= 1 && finalValue <= 20).assertTrue();
@@ -139,7 +139,7 @@ export default function atomicConcurrentTest() {
         });
       }
       eaws.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
       expect(successCount.load()).assertEqual(1);
       let result = atomicRef.load()
@@ -170,7 +170,7 @@ export default function atomicConcurrentTest() {
         });
       }
       eaws.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
 
       expect(atomicRef.load() >= 0 && atomicRef.load() <= 19).assertTrue();
@@ -204,7 +204,7 @@ export default function atomicConcurrentTest() {
         });
       }
       eaws.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
       expect(finalValue >= 0 && finalValue <= 19).assertTrue();
       expect(atomicInt.load()).assertEqual(40);
@@ -233,7 +233,7 @@ export default function atomicConcurrentTest() {
         });
       }
       eaws.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
       finalValue = atomicInt.load();
       expect(finalValue).assertEqual(initial + 20);
@@ -261,7 +261,7 @@ export default function atomicConcurrentTest() {
         });
       }
       eaws.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
       finalValue = atomicInt.load();
       expect(finalValue).assertEqual(initial - 20);
@@ -292,7 +292,7 @@ export default function atomicConcurrentTest() {
         });
       }
       eaws.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
       finalValue = atomicInt.load();
       expect(finalValue).assertEqual(0);
@@ -322,7 +322,7 @@ export default function atomicConcurrentTest() {
         });
       }
       eaws.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
       expect(successCount.load()).assertEqual(1);
       expect(atomicInt.load()).assertEqual(1);
@@ -350,7 +350,7 @@ export default function atomicConcurrentTest() {
         });
       }
       eaws.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
       finalValue = atomicInt.load();
       expect(finalValue).assertEqual(255);
@@ -380,7 +380,7 @@ export default function atomicConcurrentTest() {
         });
       }
       eaws.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
       expect(finalValue >= 0 && finalValue <= 19).assertTrue();
     });
@@ -421,7 +421,7 @@ export default function atomicConcurrentTest() {
         });
       }
       eaws.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
       expect(finalValue).assertEqual(0);
       expect(fetchAddCount.load()).assertEqual(20);
@@ -453,7 +453,7 @@ export default function atomicConcurrentTest() {
         });
       }
       eaws.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
       finalValue = atomicLong.load();
       expect(finalValue).assertEqual(initial + 20);
@@ -483,7 +483,7 @@ export default function atomicConcurrentTest() {
         });
       }
       eaws.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
       expect(successCount.load()).assertEqual(1);
       expect(atomicLong.load()).assertEqual(1);
@@ -512,7 +512,7 @@ export default function atomicConcurrentTest() {
         });
       }
       eaws.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
       expect(finalValue >= 0 && finalValue <= 20).assertTrue();
     });
@@ -553,7 +553,7 @@ export default function atomicConcurrentTest() {
         });
       }
       eaws.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
       expect(finalValue).assertEqual(0);
       expect(fetchAddCount.load()).assertEqual(20);
@@ -585,7 +585,7 @@ export default function atomicConcurrentTest() {
         });
       }
       eaws.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
       finalValue = atomicShort.load();
       expect(finalValue).assertEqual(initial + 20);
@@ -615,7 +615,7 @@ export default function atomicConcurrentTest() {
         });
       }
       eaws.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
       expect(successCount.load()).assertEqual(1);
       expect(atomicShort.load()).assertEqual(1);
@@ -657,7 +657,7 @@ export default function atomicConcurrentTest() {
         });
       }
       eaws.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
       expect(finalValue).assertEqual(0);
       expect(fetchAddCount.load()).assertEqual(20);
@@ -689,7 +689,7 @@ export default function atomicConcurrentTest() {
         });
       }
       eaws.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
       finalValue = atomicByte.load();
       expect(finalValue).assertEqual(initial + 20);
@@ -719,7 +719,7 @@ export default function atomicConcurrentTest() {
         });
       }
       eaws.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
       expect(successCount.load()).assertEqual(1);
       expect(atomicByte.load()).assertEqual(1);
@@ -761,7 +761,7 @@ export default function atomicConcurrentTest() {
         });
       }
       eaws.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
       expect(finalValue).assertEqual(0);
       expect(fetchAddCount.load()).assertEqual(20);
@@ -792,7 +792,7 @@ export default function atomicConcurrentTest() {
         });
       }
       eaws.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
       finalValue = atomicChar.load();
       expect(finalValue).assertEqual(c'B');
@@ -822,7 +822,7 @@ export default function atomicConcurrentTest() {
         });
       }
       eaws.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
       expect(successCount.load()).assertEqual(1);
       expect(atomicChar.load()).assertEqual(c'B');
@@ -858,7 +858,7 @@ export default function atomicConcurrentTest() {
         });
       }
       eaws.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
       expect(finalValue).assertEqual(c'D');
       expect(storeCount.load()).assertEqual(20);
@@ -887,7 +887,7 @@ export default function atomicConcurrentTest() {
         });
       }
       eaws.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
       finalValue = atomicFloat.load();
       expect(finalValue).assertEqual(1.5f);
@@ -917,7 +917,7 @@ export default function atomicConcurrentTest() {
         });
       }
       eaws.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
       expect(successCount.load()).assertEqual(1);
       expect(atomicFloat.load()).assertEqual(1.5f);
@@ -953,7 +953,7 @@ export default function atomicConcurrentTest() {
         });
       }
       eaws.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
       expect(finalValue).assertEqual(3.5f);
       expect(storeCount.load()).assertEqual(20);
@@ -983,7 +983,7 @@ export default function atomicConcurrentTest() {
         });
       }
       eaws.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
       finalValue = atomicDouble.load();
       expect(finalValue).assertEqual(1.5);
@@ -1013,7 +1013,7 @@ export default function atomicConcurrentTest() {
         });
       }
       eaws.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
       expect(successCount.load()).assertEqual(1);
       expect(atomicDouble.load()).assertEqual(1.5);
@@ -1049,7 +1049,7 @@ export default function atomicConcurrentTest() {
         });
       }
       eaws.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
       expect(finalValue).assertEqual(3.5);
       expect(storeCount.load()).assertEqual(20);
@@ -1081,7 +1081,7 @@ export default function atomicConcurrentTest() {
         });
       }
       eaws.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
       expect(successCount.load()).assertEqual(1);
       expect(atomicBoolean.load()).assertEqual(true);
@@ -1111,7 +1111,7 @@ export default function atomicConcurrentTest() {
         });
       }
       eaws.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
       expect(atomicBoolean.load()).assertEqual(false);
       expect(mixedCount.load()).assertEqual(20);
@@ -1152,7 +1152,7 @@ export default function atomicConcurrentTest() {
         });
       }
       eaws.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
       expect(finalValue).assertEqual(true);
       expect(loadCount.load()).assertEqual(20);
@@ -1194,7 +1194,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
 
       expect(successCount.load()).assertEqual(20);
@@ -1238,7 +1238,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit();
+        eaw.join().Await();
       })
 
       expect(readCount.load()).assertEqual(10);
@@ -1276,7 +1276,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
 
       expect(acquired).assertEqual(true);
@@ -1323,11 +1323,11 @@ export default function atomicConcurrentTest() {
       }
 
       eaws1.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
 
       eaws2.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
 
       expect(writeCount.load()).assertEqual(20);
@@ -1361,7 +1361,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
 
       expect(instanceCount.load()).assertEqual(19);
@@ -1398,7 +1398,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
 
       expect(setCount.load()).assertEqual(19);
@@ -1434,7 +1434,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
 
       expect(failCount.load()).assertEqual(limit);
@@ -1467,7 +1467,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
 
       expect(initCount.load()).assertEqual(1);
@@ -1500,7 +1500,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
 
       expect(successCount.load()).assertEqual(20);
@@ -1534,7 +1534,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
 
       expect(successCount.load()).assertEqual(19);
@@ -1564,7 +1564,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
 
       count = counter.load();
@@ -1596,7 +1596,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
 
       finalValue = atomicInt.load();
@@ -1630,7 +1630,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
       finalValue = atomicInt.load();
       expect(exchangeValue).assertEqual(100);
@@ -1663,7 +1663,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
       loadedValue = atomicInt.load();
       expect(storedValue).assertEqual(42);
@@ -1694,7 +1694,7 @@ export default function atomicConcurrentTest() {
         });
       }
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
 
       loadedValue = atomicRef.load();
@@ -1727,7 +1727,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
       loadedValue = atomicLong.load();
       expect(storedValue).assertEqual(42);
@@ -1759,7 +1759,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
       loadedValue = atomicFloat.load();
       expect(storedValue).assertEqual(1.5f);
@@ -1791,7 +1791,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
       loadedValue = atomicDouble.load();
       expect(storedValue).assertEqual(1.5);
@@ -1823,7 +1823,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
       loadedValue = atomicByte.load();
       expect(storedValue).assertEqual(42);
@@ -1855,7 +1855,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
       loadedValue = atomicShort.load();
       expect(storedValue).assertEqual(42);
@@ -1887,7 +1887,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
       loadedValue = atomicChar.load();
       expect(storedValue).assertEqual(c'B');
@@ -1919,7 +1919,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
       loadedValue = atomicBoolean.load();
       expect(storedValue).assertEqual(true);
@@ -1950,7 +1950,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
       finalValue = atomicInt.load();
       expect(oldValue).assertEqual(42);
@@ -1981,7 +1981,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
       finalValue = atomicRef.load();
       expect(oldValue).assertEqual(42);
@@ -2012,7 +2012,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
       finalValue = atomicLong.load();
       expect(oldValue).assertEqual(42);
@@ -2043,7 +2043,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
       finalValue = atomicFloat.load();
       expect(oldValue).assertEqual(1.5f);
@@ -2074,7 +2074,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
       finalValue = atomicDouble.load();
       expect(oldValue).assertEqual(1.5);
@@ -2105,7 +2105,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
       finalValue = atomicByte.load();
       expect(oldValue).assertEqual(42);
@@ -2136,7 +2136,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
       finalValue = atomicShort.load();
       expect(oldValue).assertEqual(42);
@@ -2167,7 +2167,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
       finalValue = atomicChar.load();
       expect(oldValue).assertEqual(c'B');
@@ -2198,7 +2198,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
       finalValue = atomicBoolean.load();
       expect(oldValue).assertEqual(true);
@@ -2237,7 +2237,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
       expect(atomicInt1.load()).assertEqual(10);
       expect(atomicInt2.load()).assertEqual(10);
@@ -2269,7 +2269,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
       expect(successCount.load()).assertEqual(1);
       expect(atomicInt.load()).assertEqual(1);
@@ -2301,7 +2301,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
       expect(successCount.load()).assertEqual(10);
       expect(atomicRef.load()).assertEqual(0);
@@ -2333,7 +2333,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
       expect(successCount.load()).assertEqual(1);
       expect(atomicLong.load()).assertEqual(1);
@@ -2365,7 +2365,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
       expect(successCount.load()).assertEqual(1);
       expect(atomicFloat.load()).assertEqual(1.5f);
@@ -2397,7 +2397,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
       expect(successCount.load()).assertEqual(1);
       expect(atomicDouble.load()).assertEqual(1.5);
@@ -2429,7 +2429,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
       expect(successCount.load()).assertEqual(1);
       expect(atomicByte.load()).assertEqual(1);
@@ -2461,7 +2461,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
       expect(successCount.load()).assertEqual(1);
       expect(atomicShort.load()).assertEqual(1);
@@ -2493,7 +2493,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
       expect(successCount.load()).assertEqual(1);
       expect(atomicChar.load()).assertEqual(c'B');
@@ -2525,7 +2525,7 @@ export default function atomicConcurrentTest() {
       }
 
       eaws.forEach((eaw) => {
-        eaw.quit()
+        eaw.join().Await()
       })
       expect(successCount.load()).assertEqual(1);
       expect(atomicBoolean.load()).assertEqual(true);
