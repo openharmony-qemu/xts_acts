@@ -34,6 +34,7 @@ void OnScrollPositionChanged(ArkUI_NodeEvent *event)
     const ArkUI_NodeComponentEvent *eventData = OH_ArkUI_NodeEvent_GetNodeComponentEvent(event);
 
     int startArea = eventData->data[0].i32;
+    int centerArea = eventData->data[PARAM_3].i32;
     int endArea = eventData->data[PARAM_5].i32;
 
     if (startArea == ARKUI_LIST_ITEM_GROUP_AREA_OUTSIDE) {
@@ -50,6 +51,23 @@ void OnScrollPositionChanged(ArkUI_NodeEvent *event)
         g_areaHeaderResult = 1;
     } else if (startArea == ARKUI_LIST_ITEM_SWIPE_AREA_FOOTER) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "startArea", "startArea--->4", g_areaOutsideResult);
+        g_areaFooterResult = 1;
+    }
+
+    if (centerArea == ARKUI_LIST_ITEM_GROUP_AREA_OUTSIDE) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "centerArea", "centerArea--->0", g_areaOutsideResult);
+        g_areaOutsideResult = 1;
+    } else if (centerArea == ARKUI_LIST_ITEM_SWIPE_AREA_NONE) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "centerArea", "centerArea--->1", g_areaOutsideResult);
+        g_areaNoneResult = 1;
+    } else if (centerArea == ARKUI_LIST_ITEM_SWIPE_AREA_ITEM) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "centerArea", "centerArea--->2", g_areaOutsideResult);
+        g_areaItemResult = 1;
+    } else if (centerArea == ARKUI_LIST_ITEM_SWIPE_AREA_HEADER) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "centerArea", "centerArea--->3", g_areaOutsideResult);
+        g_areaHeaderResult = 1;
+    } else if (centerArea == ARKUI_LIST_ITEM_SWIPE_AREA_FOOTER) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "centerArea", "centerArea--->4", g_areaOutsideResult);
         g_areaFooterResult = 1;
     }
 
