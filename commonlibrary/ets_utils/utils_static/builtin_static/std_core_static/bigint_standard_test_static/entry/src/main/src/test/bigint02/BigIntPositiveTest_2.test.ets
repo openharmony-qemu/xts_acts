@@ -21,14 +21,14 @@ export default function BigIntPositiveTest_2(): void {
 
 
     /**
-     * @tc.number SUB_BIGINT_STD_POSITIVE_0001
-     * @tc.name testBigIntPositiveRadixString0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POSITIVE_0100
+     * @tc.name testBigIntPositiveTest001
      * @tc.desc Verify positive() on hex/octal/binary prefixed string values covers missing radix dimension
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveRadixString0001', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest001', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(255).positive()).assertTrue();
       expect(BigInt(63).positive()).assertTrue();
       expect(BigInt(10).positive()).assertTrue();
@@ -40,14 +40,14 @@ export default function BigIntPositiveTest_2(): void {
       expect(BigInt('-9223372036854775808').positive()).assertFalse();
     });
     /**
-     * @tc.number SUB_BIGINT_STD_POSITIVE_0002
-     * @tc.name testBigIntPositiveUltraLarge0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POSITIVE_0200
+     * @tc.name testBigIntPositiveTest002
      * @tc.desc Verify positive() on extremely large BigInt values (100+ digits) beyond original coverage
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveUltraLarge0002', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest002', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt('1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890').positive()).assertTrue();
       expect(BigInt('-1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890').positive()).assertFalse();
       expect(BigInt('9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999').positive()).assertTrue();
@@ -58,14 +58,14 @@ export default function BigIntPositiveTest_2(): void {
 
 
     /**
-     * @tc.number SUB_BIGINT_STD_POSITIVE_0003
-     * @tc.name testBigIntPositiveZeroVariants0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POSITIVE_0300
+     * @tc.name testBigIntPositiveTest003
      * @tc.desc Verify positive() returns true for zero across all construction methods
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveZeroVariants0003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(0).positive()).assertTrue();
       expect(BigInt('0').positive()).assertTrue();
       expect(BigInt('-0').positive()).assertTrue();
@@ -79,14 +79,14 @@ export default function BigIntPositiveTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POSITIVE_0004
-     * @tc.name testBigIntPositiveLeadingSignPrefix0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POSITIVE_0400
+     * @tc.name testBigIntPositiveTest004
      * @tc.desc Verify positive() on strings with leading zeros, plus sign and whitespace
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveLeadingSignPrefix0004', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest004', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt('  42').positive()).assertTrue();
       expect(BigInt('42  ').positive()).assertTrue();
       expect(BigInt('  -42').positive()).assertFalse();
@@ -95,14 +95,14 @@ export default function BigIntPositiveTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POSITIVE_0005
-     * @tc.name testBigIntPositiveArithmeticResult0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POSITIVE_0500
+     * @tc.name testBigIntPositiveTest005
      * @tc.desc Verify positive() on results of arithmetic operations covers missing dynamic result dimension
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveArithmeticResult0005', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest005', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(10).operatorAdd(BigInt(5)).positive()).assertTrue();
       expect(BigInt(5).operatorSubtract(BigInt(10)).positive()).assertFalse();
       expect(BigInt(-3).operatorMultiply(BigInt(4)).positive()).assertFalse();
@@ -115,14 +115,14 @@ export default function BigIntPositiveTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POSITIVE_0006
-     * @tc.name testBigIntPositivePowerOfTwoBoundaries0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POSITIVE_0600
+     * @tc.name testBigIntPositiveTest006
      * @tc.desc Verify positive() at 2^n boundaries including beyond 64-bit range
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositivePowerOfTwoBoundaries0006', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest006', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(1).positive()).assertTrue();
       expect(BigInt(2).positive()).assertTrue();
       expect(BigInt(4503599627370496).positive()).assertTrue();
@@ -133,14 +133,14 @@ export default function BigIntPositiveTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POSITIVE_0007
-     * @tc.name testBigIntPositiveFromIntAndShort0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POSITIVE_0700
+     * @tc.name testBigIntPositiveTest007
      * @tc.desc Verify positive() on BigInt constructed from int/short range values and boundary+1 extensions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveFromIntAndShort0007', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest007', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(127).positive()).assertTrue();
       expect(BigInt(-128).positive()).assertFalse();
       expect(BigInt(32767).positive()).assertTrue();
@@ -154,14 +154,14 @@ export default function BigIntPositiveTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POSITIVE_0008
-     * @tc.name testBigIntPositiveSignComplement0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POSITIVE_0800
+     * @tc.name testBigIntPositiveTest008
      * @tc.desc Verify positive() and negative() are mutually exclusive on all-value ranges
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveSignComplement0008', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest008', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const values: BigInt[] = [BigInt(-100), BigInt(-1), BigInt(0), BigInt(1), BigInt(100), BigInt(9223372036854775807), BigInt(-9223372036854775808), BigInt('999999999999999999999999999999')];
       for (let i = 0; i < values.length; i++) {
         const v = values[i];
@@ -174,14 +174,14 @@ export default function BigIntPositiveTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POSITIVE_0009
-     * @tc.name testBigIntPositiveWrappingConstruct0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POSITIVE_0900
+     * @tc.name testBigIntPositiveTest009
      * @tc.desc Verify positive() on BigInt constructed by wrapping another BigInt instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveWrappingConstruct0009', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest009', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
 
       expect(new BigInt(new BigInt(1)).positive()).assertTrue();
       expect(new BigInt(new BigInt(127)).positive()).assertTrue();
@@ -204,14 +204,14 @@ export default function BigIntPositiveTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POSITIVE_0010
-     * @tc.name testBigIntPositiveNegateResult0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POSITIVE_1000
+     * @tc.name testBigIntPositiveTest010
      * @tc.desc Verify positive() on negate() results for positive, negative, and zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveNegateResult0010', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest010', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
 
       const v1: BigInt = new BigInt(5).negate();
       expect(v1.positive()).assertFalse();
@@ -224,14 +224,14 @@ export default function BigIntPositiveTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POSITIVE_0011
-     * @tc.name testBigIntPositiveDivideResult0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POSITIVE_1100
+     * @tc.name testBigIntPositiveTest011
      * @tc.desc Verify positive() on operatorDivide results for positive and negative quotients
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveDivideResult0011', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest011', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
 
       const v1: BigInt = new BigInt(100).operatorDivide(new BigInt(5));
       expect(v1.positive()).assertTrue();
@@ -244,27 +244,27 @@ export default function BigIntPositiveTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POSITIVE_0012
-     * @tc.name testBigIntPositiveSubtractZeroResult0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POSITIVE_1200
+     * @tc.name testBigIntPositiveTest012
      * @tc.desc Verify positive() on operatorSubtract when result is zero (n - n)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveSubtractZeroResult0012', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest012', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const v: BigInt = new BigInt(5).operatorSubtract(new BigInt(5));
       expect(v.positive()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POSITIVE_0013
-     * @tc.name testBigIntPositiveImmutability0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POSITIVE_1300
+     * @tc.name testBigIntPositiveTest013
      * @tc.desc Verify positive() does not modify the original BigInt value (immutability)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveImmutability0013', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest013', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const v1: BigInt = new BigInt(123);
       v1.positive();
       expect(v1.toString()).assertEqual("123");
@@ -277,14 +277,14 @@ export default function BigIntPositiveTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POSITIVE_0014
-     * @tc.name testBigIntPositiveStringBoundary0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POSITIVE_1400
+     * @tc.name testBigIntPositiveTest014
      * @tc.desc Verify positive() on string-constructed values at and beyond type boundaries
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveStringBoundary0014', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest014', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new BigInt("2").positive()).assertTrue();
       expect(new BigInt("65536").positive()).assertTrue();
       expect(new BigInt("4294967296").positive()).assertTrue();
@@ -294,14 +294,14 @@ export default function BigIntPositiveTest_2(): void {
 
 
     /**
-     * @tc.number SUB_BIGINT_STD_POSITIVE_0015
-     * @tc.name testBigIntPositiveUltraLargeVariants0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POSITIVE_1500
+     * @tc.name testBigIntPositiveTest015
      * @tc.desc Verify positive() on ultra-large string values with various digit patterns
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveUltraLargeVariants0015', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest015', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
 
       expect(new BigInt("99999999999999999999999999999").positive()).assertTrue();
       expect(new BigInt("-99999999999999999999999999999").positive()).assertFalse();
@@ -315,14 +315,14 @@ export default function BigIntPositiveTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POSITIVE_0016
-     * @tc.name testBigIntPositiveSpecialNumbers0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POSITIVE_1600
+     * @tc.name testBigIntPositiveTest016
      * @tc.desc Verify positive() on decimal-precision boundaries, large numbers, and cross-magnitude power-of-2 boundaries, keep first/last, delete middle
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveSpecialNumbers0016', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest016', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new BigInt(9007199254740991).positive()).assertTrue();
       expect(new BigInt(-9007199254740991).positive()).assertFalse();
       expect(new BigInt("9007199254740993").positive()).assertTrue();
@@ -353,14 +353,14 @@ export default function BigIntPositiveTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POSITIVE_0017
-     * @tc.name testBigIntPositiveLargePowers0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POSITIVE_1700
+     * @tc.name testBigIntPositiveTest017
      * @tc.desc Verify positive() on large power-of-2 and power-of-10 values beyond 64-bit
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveLargePowers0017', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest017', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
 
       expect(new BigInt("1000000000000").positive()).assertTrue();
       expect(new BigInt("-1000000000000").positive()).assertFalse();
@@ -382,14 +382,14 @@ export default function BigIntPositiveTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POSITIVE_0018
-     * @tc.name testBigIntPositiveChainAndScenario0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POSITIVE_1800
+     * @tc.name testBigIntPositiveTest018
      * @tc.desc Verify positive() in chain calls and expression scenarios (TC111-TC120)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveChainAndScenario0018', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest018', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
 
       expect(new BigInt(100).positive()).assertEqual(true);
       expect(new BigInt(-100).positive()).assertEqual(false);
@@ -408,14 +408,14 @@ export default function BigIntPositiveTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POSITIVE_0019
-     * @tc.name testBigIntPositiveShiftResult0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POSITIVE_1900
+     * @tc.name testBigIntPositiveTest019
      * @tc.desc Verify positive() on left-shift and right-shift operation results
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveShiftResult0019', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest019', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
 
       const v1: BigInt = new BigInt(1).operatorLeftShift(new BigInt(10));
       expect(v1.positive()).assertTrue();
@@ -425,14 +425,14 @@ export default function BigIntPositiveTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POSITIVE_0020
-     * @tc.name testBigIntPositiveModuloResult0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POSITIVE_2000
+     * @tc.name testBigIntPositiveTest020
      * @tc.desc Verify positive() on modulo operation results
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveModuloResult0020', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest020', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
 
       const v1: BigInt = new BigInt(100) % new BigInt(3);
       expect(v1.positive()).assertTrue();
@@ -442,14 +442,14 @@ export default function BigIntPositiveTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POSITIVE_0021
-     * @tc.name testBigIntPositiveCompoundArithmetic0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POSITIVE_2100
+     * @tc.name testBigIntPositiveTest021
      * @tc.desc Verify positive() on compound arithmetic expression results (TC109)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveCompoundArithmetic0021', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest021', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
 
       const v1: BigInt = new BigInt(10).operatorSubtract(new BigInt(100)).operatorMultiply(new BigInt(3));
       expect(v1.positive()).assertFalse();
@@ -462,14 +462,14 @@ export default function BigIntPositiveTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POSITIVE_0022
-     * @tc.name testBigIntPositivePowerResult0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POSITIVE_2200
+     * @tc.name testBigIntPositiveTest022
      * @tc.desc Verify positive() on exponentiation results via operatorMultiply (TC105-TC106)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositivePowerResult0022', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest022', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const two10: BigInt = new BigInt(2).operatorMultiply(new BigInt(2)).operatorMultiply(new BigInt(2))
         .operatorMultiply(new BigInt(2)).operatorMultiply(new BigInt(2))
         .operatorMultiply(new BigInt(2)).operatorMultiply(new BigInt(2))
@@ -485,14 +485,14 @@ export default function BigIntPositiveTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POSITIVE_0023
-     * @tc.name testBigIntPositiveMapSetCollection0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POSITIVE_2300
+     * @tc.name testBigIntPositiveTest023
      * @tc.desc Verify positive() on BigInt values accessed from Map and Set collections (TC118-TC119)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveMapSetCollection0023', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest023', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
 
       const map: Map<string, BigInt> = new Map<string, BigInt>();
       map.set("k", new BigInt(10));
@@ -507,14 +507,14 @@ export default function BigIntPositiveTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POSITIVE_0024
-     * @tc.name testBigIntPositivePerformanceLoop0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POSITIVE_2400
+     * @tc.name testBigIntPositiveTest024
      * @tc.desc Verify positive() correctness and stability across multiple iterations (TC121-TC122)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositivePerformanceLoop0024', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest024', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
 
       const pos: BigInt = new BigInt(100);
       for (let i = 0; i < 100; i++) {
@@ -537,14 +537,14 @@ export default function BigIntPositiveTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POSITIVE_0025
-     * @tc.name testBigIntPositiveBoundaryRangeLoop0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POSITIVE_2500
+     * @tc.name testBigIntPositiveTest025
      * @tc.desc Verify positive() across a range of boundary values from -1000 to 1000 (TC125)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveBoundaryRangeLoop0025', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest025', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
 
       for (let i = -1000; i <= 1000; i++) {
         const v: BigInt = new BigInt(i);
@@ -559,14 +559,14 @@ export default function BigIntPositiveTest_2(): void {
 
 
     /**
-     * @tc.number SUB_BIGINT_STD_POSITIVE_0026
-     * @tc.name testBigIntPositiveMissingNumericLiterals0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POSITIVE_2600
+     * @tc.name testBigIntPositiveTest026
      * @tc.desc Verify positive() on numeric literals not covered in TC014-TC025: 100000, -100000, 123456789, -123456789, -4294967296, 101, -101
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveMissingNumericLiterals0026', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest026', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
 
       expect(new BigInt(100000).positive()).assertTrue();
 
@@ -584,14 +584,14 @@ export default function BigIntPositiveTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POSITIVE_0027
-     * @tc.name testBigIntPositiveLongHalfBoundaries0027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POSITIVE_2700
+     * @tc.name testBigIntPositiveTest027
      * @tc.desc Verify positive() on long half-boundary values: long.MIN/2 and long.MAX/2 (TC030-TC031)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveLongHalfBoundaries0027', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest027', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
 
       expect(new BigInt(-4611686018427387904).positive()).assertFalse();
 
@@ -599,14 +599,14 @@ export default function BigIntPositiveTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POSITIVE_0028
-     * @tc.name testBigIntPositiveArithmeticChainResults0028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POSITIVE_2800
+     * @tc.name testBigIntPositiveTest028
      * @tc.desc Verify positive() on arithmetic chain results covering TC096-TC100 and mindmap scenarios
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveArithmeticChainResults0028', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest028', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
 
       expect(new BigInt(100).operatorAdd(new BigInt(200)).positive()).assertTrue();
 
@@ -624,14 +624,14 @@ export default function BigIntPositiveTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POSITIVE_0029
-     * @tc.name testBigIntPositiveConsecutiveCalls0029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POSITIVE_2900
+     * @tc.name testBigIntPositiveTest029
      * @tc.desc Verify positive consecutive calls (TC123) and positive consistency check
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveConsecutiveCalls0029', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest029', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
 
       const posVal: BigInt = new BigInt(100);
       const negVal: BigInt = new BigInt(-100);
@@ -642,14 +642,14 @@ export default function BigIntPositiveTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POSITIVE_0030
-     * @tc.name testBigIntPositiveStringNegativeBoundaries0030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POSITIVE_3000
+     * @tc.name testBigIntPositiveTest030
      * @tc.desc Verify positive() returns false for string-constructed negative boundary values (POS-STR-NEG-001)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveStringNegativeBoundaries0030', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest030', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new BigInt("-1").positive()).assertFalse();
       expect(new BigInt("-2").positive()).assertFalse();
       expect(new BigInt("-65536").positive()).assertFalse();

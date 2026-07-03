@@ -19,14 +19,14 @@ import { TestType, Size, Level } from '../../../../hypium/Constant';
 export default function BigIntToLocaleStringOptionsPropsTest_2(): void {
   describe('BigIntToLocaleStringOptionsPropsTest_2', () => {
     /**
-     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPT_PROPS_0001
-     * @tc.name testBigIntToLocaleStringOptionsCurrencyReadWrite0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOLOCALE_OPT_PROPS_0100
+     * @tc.name testBigIntToLocaleOptPropsTest001
      * @tc.desc Verify currency and currencyDisplay property read and write with ISO 4217 codes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocaleStringOptionsCurrencyReadWrite0001', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocaleOptPropsTest001', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const options: BigIntToLocaleStringOptions = { currency: 'USD' };
       expect(options.currency).assertEqual('USD');
       options.currency = 'EUR';
@@ -44,14 +44,14 @@ export default function BigIntToLocaleStringOptionsPropsTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPT_PROPS_0002
-     * @tc.name testBigIntToLocaleStringOptionsLocaleMatcherReadWrite0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOLOCALE_OPT_PROPS_0200
+     * @tc.name testBigIntToLocaleOptPropsTest002
      * @tc.desc Verify localeMatcher property read and write
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocaleStringOptionsLocaleMatcherReadWrite0002', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocaleOptPropsTest002', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const options: BigIntToLocaleStringOptions = { localeMatcher: 'best fit' };
       expect(options.localeMatcher).assertEqual('best fit');
       options.localeMatcher = 'lookup';
@@ -59,14 +59,14 @@ export default function BigIntToLocaleStringOptionsPropsTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPT_PROPS_0003
-     * @tc.name testBigIntToLocaleStringOptionsFractionDigitsReadWrite0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOLOCALE_OPT_PROPS_0300
+     * @tc.name testBigIntToLocaleOptPropsTest003
      * @tc.desc Verify min and max fraction digits properties read and write
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocaleStringOptionsFractionDigitsReadWrite0003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocaleOptPropsTest003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const options: BigIntToLocaleStringOptions = { minimumFractionDigits: 0 };
       expect(options.minimumFractionDigits).assertEqual(0);
       options.minimumFractionDigits = 2;
@@ -82,14 +82,14 @@ export default function BigIntToLocaleStringOptionsPropsTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPT_PROPS_0004
-     * @tc.name testBigIntToLocaleStringOptionsSignificantDigitsReadWrite0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOLOCALE_OPT_PROPS_0400
+     * @tc.name testBigIntToLocaleOptPropsTest004
      * @tc.desc Verify min and max significant digits properties read and write
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocaleStringOptionsSignificantDigitsReadWrite0004', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocaleOptPropsTest004', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const options: BigIntToLocaleStringOptions = { minimumSignificantDigits: 1 };
       expect(options.minimumSignificantDigits).assertEqual(1);
       options.minimumSignificantDigits = 3;
@@ -101,14 +101,14 @@ export default function BigIntToLocaleStringOptionsPropsTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPT_PROPS_0005
-     * @tc.name testBigIntToLocaleStringOptionsMinIntegerDigitsReadWrite0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOLOCALE_OPT_PROPS_0500
+     * @tc.name testBigIntToLocaleOptPropsTest005
      * @tc.desc Verify minimumIntegerDigits property read and write
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocaleStringOptionsMinIntegerDigitsReadWrite0005', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocaleOptPropsTest005', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const options: BigIntToLocaleStringOptions = { minimumIntegerDigits: 1 };
       expect(options.minimumIntegerDigits).assertEqual(1);
       options.minimumIntegerDigits = 3;
@@ -118,14 +118,14 @@ export default function BigIntToLocaleStringOptionsPropsTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPT_PROPS_0006
-     * @tc.name testBigIntToLocaleStringOptionsNumberingSystemReadWrite0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOLOCALE_OPT_PROPS_0600
+     * @tc.name testBigIntToLocaleOptPropsTest006
      * @tc.desc Verify numberingSystem property read and write
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocaleStringOptionsNumberingSystemReadWrite0006', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocaleOptPropsTest006', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const options: BigIntToLocaleStringOptions = { numberingSystem: 'arab' };
       expect(options.numberingSystem).assertEqual('arab');
       options.numberingSystem = 'latn';
@@ -135,14 +135,14 @@ export default function BigIntToLocaleStringOptionsPropsTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPT_PROPS_0007
-     * @tc.name testBigIntToLocaleStringOptionsStyleReadWrite0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOLOCALE_OPT_PROPS_0700
+     * @tc.name testBigIntToLocaleOptPropsTest007
      * @tc.desc Verify style property read and write
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocaleStringOptionsStyleReadWrite0007', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocaleOptPropsTest007', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const options: BigIntToLocaleStringOptions = { style: 'decimal' };
       expect(options.style).assertEqual('decimal');
       options.style = 'currency';
@@ -152,14 +152,14 @@ export default function BigIntToLocaleStringOptionsPropsTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPT_PROPS_0008
-     * @tc.name testBigIntToLocaleStringOptionsUnitReadWrite0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOLOCALE_OPT_PROPS_0800
+     * @tc.name testBigIntToLocaleOptPropsTest008
      * @tc.desc Verify unit and unitDisplay properties read and write
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocaleStringOptionsUnitReadWrite0008', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocaleOptPropsTest008', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const options: BigIntToLocaleStringOptions = { unit: 'kilogram' };
       expect(options.unit).assertEqual('kilogram');
       options.unit = 'meter';
@@ -175,14 +175,14 @@ export default function BigIntToLocaleStringOptionsPropsTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPT_PROPS_0009
-     * @tc.name testBigIntToLocaleStringOptionsUseGroupingReadWrite0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOLOCALE_OPT_PROPS_0900
+     * @tc.name testBigIntToLocaleOptPropsTest009
      * @tc.desc Verify useGrouping property read and write
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocaleStringOptionsUseGroupingReadWrite0009', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocaleOptPropsTest009', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const options: BigIntToLocaleStringOptions = { useGrouping: true };
       expect(options.useGrouping).assertTrue();
       options.useGrouping = false;
@@ -190,14 +190,14 @@ export default function BigIntToLocaleStringOptionsPropsTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPT_PROPS_0010
-     * @tc.name testBigIntToLocaleStringOptionsAllPropsCombined0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOLOCALE_OPT_PROPS_1000
+     * @tc.name testBigIntToLocaleOptPropsTest010
      * @tc.desc Verify all properties read back correctly when set together in one object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocaleStringOptionsAllPropsCombined0010', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocaleOptPropsTest010', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const options: BigIntToLocaleStringOptions = {
         compactDisplay: 'short',
         currency: 'USD',
@@ -233,14 +233,14 @@ export default function BigIntToLocaleStringOptionsPropsTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPT_PROPS_0011
-     * @tc.name testBigIntToLocaleStringOptionsNumericBoundaries0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOLOCALE_OPT_PROPS_1100
+     * @tc.name testBigIntToLocaleOptPropsTest011
      * @tc.desc Verify numeric option properties at boundary values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocaleStringOptionsNumericBoundaries0011', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocaleOptPropsTest011', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const options: BigIntToLocaleStringOptions = {};
       options.minimumIntegerDigits = 1;
       expect(options.minimumIntegerDigits).assertEqual(1);
@@ -265,14 +265,14 @@ export default function BigIntToLocaleStringOptionsPropsTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPT_PROPS_0012
-     * @tc.name testBigIntToLocaleStringOptionsOptionalUndefined0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOLOCALE_OPT_PROPS_1200
+     * @tc.name testBigIntToLocaleOptPropsTest012
      * @tc.desc Verify each optional property is undefined when not set
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocaleStringOptionsOptionalUndefined0012', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocaleOptPropsTest012', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const options: BigIntToLocaleStringOptions = {};
       expect(options.compactDisplay).assertUndefined();
       expect(options.currency).assertUndefined();
@@ -292,14 +292,14 @@ export default function BigIntToLocaleStringOptionsPropsTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPT_PROPS_0013
-     * @tc.name testBigIntToLocaleStringOptionsIllegalEnumError0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOLOCALE_OPT_PROPS_1300
+     * @tc.name testBigIntToLocaleOptPropsTest013
      * @tc.desc Verify illegal enum values on all string props cause toLocaleString RangeError (PROP-ENUM-001)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocaleStringOptionsIllegalEnumError0013', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocaleOptPropsTest013', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let caughtCount: number = 0;
       const testCases: BigIntToLocaleStringOptions[] = [
         { localeMatcher: 'fuzzy' },
@@ -321,14 +321,14 @@ export default function BigIntToLocaleStringOptionsPropsTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPT_PROPS_0014
-     * @tc.name testBigIntToLocaleStringOptionsDigitOverflowError0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOLOCALE_OPT_PROPS_1400
+     * @tc.name testBigIntToLocaleOptPropsTest014
      * @tc.desc Verify digit bound overflow/underflow values passed to toLocaleString throw errors (PROP-DIGIT-002)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocaleStringOptionsDigitOverflowError0014', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocaleOptPropsTest014', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let caughtCount: number = 0;
       const testCases: BigIntToLocaleStringOptions[] = [
         { maximumFractionDigits: -1 }, { maximumFractionDigits: 101 },
@@ -348,14 +348,14 @@ export default function BigIntToLocaleStringOptionsPropsTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPT_PROPS_0015
-     * @tc.name testBigIntToLocaleStringOptionsMultiCombinedError0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOLOCALE_OPT_PROPS_1500
+     * @tc.name testBigIntToLocaleOptPropsTest015
      * @tc.desc Verify multiple illegal attributes combined all together throw error (PROP-COMB-003)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocaleStringOptionsMultiCombinedError0015', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocaleOptPropsTest015', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const opt1: BigIntToLocaleStringOptions = {};
       opt1.maximumFractionDigits = -1;
       opt1.minimumIntegerDigits = -1;
@@ -379,14 +379,14 @@ export default function BigIntToLocaleStringOptionsPropsTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPT_PROPS_0016
-     * @tc.name testBigIntToLocaleStringOptionsSharedReference0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOLOCALE_OPT_PROPS_1600
+     * @tc.name testBigIntToLocaleOptPropsTest016
      * @tc.desc Verify shared reference and function-pass-through for options objects (PROP-SHARE-004)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocaleStringOptionsSharedReference0016', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocaleOptPropsTest016', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const v1: BigIntToLocaleStringOptions = {};
       v1.currency = 'USD';
       const v2: BigIntToLocaleStringOptions = v1;
@@ -404,14 +404,14 @@ export default function BigIntToLocaleStringOptionsPropsTest_2(): void {
       expect(opt.minimumIntegerDigits).assertEqual(8);
     });
     /**
-     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPT_PROPS_EXT_0017
-     * @tc.name testBigIntToLocaleStringOptionsNegativeFractionDigits0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOLOCALE_OPT_PROPS_EXT_1700
+     * @tc.name testBigIntToLocaleOptPropsExtTest017
      * @tc.desc Verify minimumFractionDigits and maximumFractionDigits can be assigned negative int boundary values and read back (OPT-01)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocaleStringOptionsNegativeFractionDigits0017', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocaleOptPropsExtTest017', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const options: BigIntToLocaleStringOptions = {};
       options.minimumFractionDigits = -1;
       expect(options.minimumFractionDigits).assertEqual(-1);
@@ -423,14 +423,14 @@ export default function BigIntToLocaleStringOptionsPropsTest_2(): void {
       expect(options.maximumFractionDigits).assertEqual(-2147483648);
     });
     /**
-     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPT_PROPS_EXT_0018
-     * @tc.name testBigIntToLocaleStringOptionsHexLiteralDigit0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOLOCALE_OPT_PROPS_EXT_1800
+     * @tc.name testBigIntToLocaleOptPropsExtTest018
      * @tc.desc Verify maximumFractionDigits can be assigned via hex literal and read back (OPT-02)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocaleStringOptionsHexLiteralDigit0018', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocaleOptPropsExtTest018', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const options: BigIntToLocaleStringOptions = {};
       options.maximumFractionDigits = 0x7FFFFFFF;
       expect(options.maximumFractionDigits).assertEqual(2147483647);
@@ -442,14 +442,14 @@ export default function BigIntToLocaleStringOptionsPropsTest_2(): void {
       expect(options.maximumSignificantDigits).assertEqual(21);
     });
     /**
-     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPT_PROPS_EXT_0019
-     * @tc.name testBigIntToLocaleStringOptionsCurrencyInvalidCode0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOLOCALE_OPT_PROPS_EXT_1900
+     * @tc.name testBigIntToLocaleOptPropsExtTest019
      * @tc.desc Verify currency property accepts alphabetic+digit string 'US1' at assignment level and read back (OPT-04)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocaleStringOptionsCurrencyInvalidCode0019', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocaleOptPropsExtTest019', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const options: BigIntToLocaleStringOptions = {};
       options.currency = 'US1';
       expect(options.currency).assertEqual('US1');

@@ -300,7 +300,7 @@ export default function BigIntGetULongTest_2(): void {
       expect(BigInt(65536).getULong()).assertEqual(65536);
       expect(BigInt(4294967296).getULong()).assertEqual(4294967296);
       expect(Utils.ulongRoundTrip(BigInt('1152921504606846976'))).assertEqual('1152921504606846976');
-      expect(Utils.ulongRoundTrip(BigInt('36893488147419103232'))).assertEqual('36893488147419103232');
+      expect(Utils.ulongRoundTrip(BigInt('36893488147419103232'))).assertEqual('0');
       expect(Utils.ulongRoundTrip(BigInt('1000000000000000'))).assertEqual('1000000000000000');
     });
 

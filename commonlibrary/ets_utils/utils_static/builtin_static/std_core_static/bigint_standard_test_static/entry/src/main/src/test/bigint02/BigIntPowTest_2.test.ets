@@ -24,14 +24,14 @@ export default function BigIntPowTest_2(): void {
   describe('BigIntPowTest_2', (): void => {
 
     /**
-     * @tc.number SUB_BIGINT_STD_POW_0001
-     * @tc.name testBigIntPowNegativeBaseParity0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POW_0100
+     * @tc.name testBigIntPowTest001
      * @tc.desc Verify negative base parity: even exponent yields positive, odd exponent yields negative
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPowNegativeBaseParity0001', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPowTest001', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new BigInt(-3).pow(new BigInt(1)).toString()).assertEqual('-3');
       expect(new BigInt(-3).pow(new BigInt(2)).toString()).assertEqual('9');
       expect(new BigInt(-3).pow(new BigInt(3)).toString()).assertEqual('-27');
@@ -45,14 +45,14 @@ export default function BigIntPowTest_2(): void {
 
 
     /**
-     * @tc.number SUB_BIGINT_STD_POW_0002
-     * @tc.name testBigIntPowFromULongExponent0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POW_0200
+     * @tc.name testBigIntPowTest002
      * @tc.desc Verify pow correctness with fromULong constructed exponents
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPowFromULongExponent0002', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPowTest002', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new BigInt(2).pow(BigInt.fromULong(0)).toString()).assertEqual('1');
       expect(new BigInt(2).pow(BigInt.fromULong(1)).toString()).assertEqual('2');
       expect(new BigInt(2).pow(BigInt.fromULong(10)).toString()).assertEqual('1024');
@@ -62,14 +62,14 @@ export default function BigIntPowTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POW_0003
-     * @tc.name testBigIntPowStringConstructed0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POW_0300
+     * @tc.name testBigIntPowTest003
      * @tc.desc Verify pow correctness with string-constructed base and exponent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPowStringConstructed0003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPowTest003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt('123').pow(BigInt('2')).toString()).assertEqual('15129');
       expect(BigInt('-123').pow(BigInt('2')).toString()).assertEqual('15129');
       expect(BigInt('-123').pow(BigInt('3')).toString()).assertEqual('-1860867');
@@ -79,14 +79,14 @@ export default function BigIntPowTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POW_0004
-     * @tc.name testBigIntPowHexStringBaseExponent0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POW_0400
+     * @tc.name testBigIntPowTest004
      * @tc.desc Verify pow with hex/binary/octal prefixed string base and exponent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPowHexStringBaseExponent0004', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPowTest004', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(255).pow(BigInt(2)).toString()).assertEqual('65025');
       expect(BigInt(-255).pow(BigInt(2)).toString()).assertEqual('65025');
       expect(BigInt(255).pow(BigInt(1)).toString()).assertEqual('255');
@@ -96,14 +96,14 @@ export default function BigIntPowTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POW_0005
-     * @tc.name testBigIntPowLargeExponent0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POW_0500
+     * @tc.name testBigIntPowTest005
      * @tc.desc Verify pow correctness with large exponent greater than 100
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPowLargeExponent0005', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPowTest005', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new BigInt(2).pow(new BigInt(100)).toString()).assertEqual('1267650600228229401496703205376');
       expect(new BigInt(2).pow(new BigInt(128)).toString()).assertEqual('340282366920938463463374607431768211456');
       expect(new BigInt(3).pow(new BigInt(50)).toString()).assertEqual('717897987691852588770249');
@@ -112,14 +112,14 @@ export default function BigIntPowTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POW_0006
-     * @tc.name testBigIntPowHugeBase0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POW_0600
+     * @tc.name testBigIntPowTest006
      * @tc.desc Verify pow correctness with huge base of 100+ digits and small exponent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPowHugeBase0006', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPowTest006', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
         const huge = '1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890';
 
         const expectedSquare =
@@ -136,14 +136,14 @@ export default function BigIntPowTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POW_0007
-     * @tc.name testBigIntPowBooleanConstructed0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POW_0700
+     * @tc.name testBigIntPowTest007
      * @tc.desc Verify pow with boolean-constructed base and exponent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPowBooleanConstructed0007', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPowTest007', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(true).pow(BigInt(100)).toString()).assertEqual('1');
       expect(BigInt(false).pow(BigInt(0)).toString()).assertEqual('1');
       expect(BigInt(false).pow(BigInt(5)).toString()).assertEqual('0');
@@ -152,14 +152,14 @@ export default function BigIntPowTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POW_0008
-     * @tc.name testBigIntPowZeroVariants0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POW_0800
+     * @tc.name testBigIntPowTest008
      * @tc.desc Verify pow with zero constructed from different methods
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPowZeroVariants0008', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPowTest008', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt('0').pow(BigInt(10)).toString()).assertEqual('0');
       expect(BigInt('-0').pow(BigInt(10)).toString()).assertEqual('0');
       expect(BigInt('000').pow(BigInt(5)).toString()).assertEqual('0');
@@ -172,28 +172,28 @@ export default function BigIntPowTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POW_0009
-     * @tc.name testBigIntPowReturnType0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POW_0900
+     * @tc.name testBigIntPowTest009
      * @tc.desc Verify pow return type is BigInt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPowReturnType0009', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPowTest009', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(Class.of(new BigInt(2).pow(new BigInt(3)) as Object)).assertEqual(Class.from<BigInt>());
       expect(Class.of(new BigInt(0).pow(new BigInt(0)) as Object)).assertEqual(Class.from<BigInt>());
       expect(Class.of(BigInt('999').pow(BigInt(1)) as Object)).assertEqual(Class.from<BigInt>());
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POW_0010
-     * @tc.name testBigIntPowChainCall0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POW_1000
+     * @tc.name testBigIntPowTest010
      * @tc.desc Verify chained pow calls produce correct results
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPowChainCall0010', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPowTest010', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new BigInt(2).pow(new BigInt(3)).pow(new BigInt(2)).toString()).assertEqual('64');
       expect(new BigInt(3).pow(new BigInt(2)).pow(new BigInt(3)).toString()).assertEqual('729');
       expect(new BigInt(10).pow(new BigInt(2)).pow(new BigInt(2)).toString()).assertEqual('10000');
@@ -202,14 +202,14 @@ export default function BigIntPowTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POW_0011
-     * @tc.name testBigIntPowNegativeBaseLargeExponent0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POW_1100
+     * @tc.name testBigIntPowTest011
      * @tc.desc Verify negative base with large even/odd exponent sign and result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPowNegativeBaseLargeExponent0011', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPowTest011', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new BigInt(-2).pow(new BigInt(63)).toString()).assertEqual('-9223372036854775808');
       expect(new BigInt(-2).pow(new BigInt(64)).toString()).assertEqual('18446744073709551616');
       expect(new BigInt(-10).pow(new BigInt(10)).toString()).assertEqual('10000000000');
@@ -219,14 +219,14 @@ export default function BigIntPowTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POW_0012
-     * @tc.name testBigIntPowExponentConstructionEquivalence0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POW_1200
+     * @tc.name testBigIntPowTest012
      * @tc.desc Verify equivalent exponents from different constructions produce same pow result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPowExponentConstructionEquivalence0012', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPowTest012', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const base = new BigInt(2);
       expect(base.pow(new BigInt(10)).toString()).assertEqual('1024');
       expect(base.pow(BigInt('10')).toString()).assertEqual('1024');
@@ -237,38 +237,38 @@ export default function BigIntPowTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POW_0013
-     * @tc.name testBigIntPowAdditionalInvalidArgs0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POW_1300
+     * @tc.name testBigIntPowTest013
      * @tc.desc Verify additional invalid argument types throw ClassCastError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPowAdditionalInvalidArgs0013', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPowTest013', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const v = new BigInt(8);
       expect((): void => {
-        v.pow('' as object as BigInt);
+        v.pow('' as Any as BigInt);
       }).assertThrowError('ClassCastError');
       expect((): void => {
-        v.pow('  ' as object as BigInt);
+        v.pow('  ' as Any as BigInt);
       }).assertThrowError('ClassCastError');
       expect((): void => {
-        v.pow(0 as object as BigInt);
+        v.pow(0 as Any as BigInt);
       }).assertThrowError('ClassCastError');
       expect((): void => {
-        v.pow(3.14 as object as BigInt);
+        v.pow(3.14 as Any as BigInt);
       }).assertThrowError('ClassCastError');
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POW_0014
-     * @tc.name testBigIntPowLeadingSignPrefixConstructed0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POW_1400
+     * @tc.name testBigIntPowTest014
      * @tc.desc Verify pow with leading-zero/whitespace/plus-sign constructed strings
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPowLeadingSignPrefixConstructed0014', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPowTest014', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt('  2').pow(BigInt(10)).toString()).assertEqual('1024');
       expect(BigInt('0000010').pow(BigInt(3)).toString()).assertEqual('1000');
       expect(BigInt('-0000010').pow(BigInt(3)).toString()).assertEqual('-1000');
@@ -276,14 +276,14 @@ export default function BigIntPowTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POW_0015
-     * @tc.name testBigIntPowSquaresAndBeyond0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POW_1500
+     * @tc.name testBigIntPowTest015
      * @tc.desc Verify squares and higher powers: exp=2 for values 3~500, exp=3 for cubes, exp=4~6 for higher (merged _2500/_2700)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPowSquaresAndBeyond0015', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPowTest015', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new BigInt(3).pow(new BigInt(2)).toString()).assertEqual('9');
       expect(new BigInt(4).pow(new BigInt(2)).toString()).assertEqual('16');
       expect(new BigInt(5).pow(new BigInt(2)).toString()).assertEqual('25');
@@ -332,14 +332,14 @@ export default function BigIntPowTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POW_0016
-     * @tc.name testBigIntPowPowersOfTwo0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POW_1600
+     * @tc.name testBigIntPowTest016
      * @tc.desc Verify powers of two: 2^1-2^16, 2^20, 2^25, 2^30, 2^32, 2^40, 2^50, 2^60, 2^65
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPowPowersOfTwo0016', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPowTest016', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new BigInt(2).pow(new BigInt(1)).toString()).assertEqual('2');
       expect(new BigInt(2).pow(new BigInt(16)).toString()).assertEqual('65536');
       expect(new BigInt(2).pow(new BigInt(32)).toString()).assertEqual('4294967296');
@@ -347,14 +347,14 @@ export default function BigIntPowTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POW_0017
-     * @tc.name testBigIntPowNegativeBaseExtended0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POW_1700
+     * @tc.name testBigIntPowTest017
      * @tc.desc Verify negative base powers: -6, -7, -8, -9, -20, -30, -50, -100, -1000 squared; -6^3, -7^3, -8^3, -9^3, -100^3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPowNegativeBaseExtended0017', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPowTest017', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new BigInt(-6).pow(new BigInt(2)).toString()).assertEqual('36');
       expect(new BigInt(-6).pow(new BigInt(3)).toString()).assertEqual('-216');
       expect(new BigInt(-7).pow(new BigInt(2)).toString()).assertEqual('49');
@@ -372,14 +372,14 @@ export default function BigIntPowTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POW_0018
-     * @tc.name testBigIntPowZeroAndOneExponent0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POW_1800
+     * @tc.name testBigIntPowTest018
      * @tc.desc Verify any base to power 0 equals 1, and any base to power 1 equals itself (merged _3100/_3200/_0800)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPowZeroAndOneExponent0018', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPowTest018', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new BigInt(100).pow(new BigInt(0)).toString()).assertEqual('1');
       expect(new BigInt(-100).pow(new BigInt(0)).toString()).assertEqual('1');
       expect(new BigInt(-2).pow(new BigInt(0)).toString()).assertEqual('1');
@@ -409,14 +409,14 @@ export default function BigIntPowTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POW_0019
-     * @tc.name testBigIntPowLargeBaseSquares0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POW_1900
+     * @tc.name testBigIntPowTest019
      * @tc.desc Verify large base squares: 100000^2, 1000000^2, int/long/short/byte boundary squares
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPowLargeBaseSquares0019', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPowTest019', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new BigInt(100000).pow(new BigInt(2)).toString()).assertEqual('10000000000');
       expect(new BigInt(1000000).pow(new BigInt(2)).toString()).assertEqual('1000000000000');
       expect(new BigInt(2147483647).pow(new BigInt(2)).toString()).assertEqual('4611686014132420609');
@@ -436,14 +436,14 @@ export default function BigIntPowTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POW_0020
-     * @tc.name testBigIntPowStringConstructedVariants0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POW_2000
+     * @tc.name testBigIntPowTest020
      * @tc.desc Verify pow with string-constructed base variants: leading-zero, plus-sign, minus-zero, copy-constructed, negative strings
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPowStringConstructedVariants0020', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPowTest020', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt('007').pow(BigInt(2)).toString()).assertEqual('49');
       expect(BigInt('+123').pow(BigInt(1)).toString()).assertEqual('123');
       expect(BigInt('-0').pow(BigInt(5)).toString()).assertEqual('0');
@@ -460,14 +460,14 @@ export default function BigIntPowTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POW_0021
-     * @tc.name testBigIntPowTypedConstructionBase0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POW_2100
+     * @tc.name testBigIntPowTest021
      * @tc.desc Verify pow with base constructed from byte, short, long, double, fromULong
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPowTypedConstructionBase0021', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPowTest021', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let bb: byte = 2;
       expect(new BigInt(bb).pow(new BigInt(5)).toString()).assertEqual('32');
       let bn: byte = -128;
@@ -489,14 +489,14 @@ export default function BigIntPowTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POW_0022
-     * @tc.name testBigIntPowTypedConstructionExponent0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POW_2200
+     * @tc.name testBigIntPowTest022
      * @tc.desc Verify pow with exponent constructed from byte, short, long, double, fromULong
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPowTypedConstructionExponent0022', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPowTest022', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let eb0: byte = 0;
       expect(new BigInt(2).pow(new BigInt(eb0)).toString()).assertEqual('1');
       let eb1: byte = 1;
@@ -521,14 +521,14 @@ export default function BigIntPowTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POW_0023
-     * @tc.name testBigIntPowLargeExponentDigitCount0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POW_2300
+     * @tc.name testBigIntPowTest023
      * @tc.desc Verify pow result digit count for large exponents: 2^100, 2^128, 2^150, 2^200, 2^250, 10^200
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPowLargeExponentDigitCount0023', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPowTest023', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new BigInt(2).pow(new BigInt(100)).toString().length).assertEqual(31);
       expect(new BigInt(2).pow(new BigInt(128)).toString().length).assertEqual(39);
       expect(new BigInt(2).pow(new BigInt(150)).toString().length).assertEqual(46);
@@ -538,14 +538,14 @@ export default function BigIntPowTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POW_0024
-     * @tc.name testBigIntPowReturnValueTests0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POW_2400
+     * @tc.name testBigIntPowTest024
      * @tc.desc Verify pow return value properties: instanceof, typeof, immutability of base and exponent, equals, doubleValue, getLong, valueOf
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPowReturnValueTests0024', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPowTest024', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let base1 = new BigInt(6);
       let result1 = base1.pow(new BigInt(2));
       expect(result1 instanceof BigInt).assertTrue();
@@ -584,14 +584,14 @@ export default function BigIntPowTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POW_0025
-     * @tc.name testBigIntPowChainAndNested0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POW_2500
+     * @tc.name testBigIntPowTest025
      * @tc.desc Verify chained and nested pow: (3^2)^2=81, (2^2)^2^2=256, (2^2)^3=64, and more
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPowChainAndNested0025', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPowTest025', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new BigInt(3).pow(new BigInt(2)).pow(new BigInt(2)).toString()).assertEqual('81');
       expect(new BigInt(2).pow(new BigInt(2)).pow(new BigInt(2)).toString()).assertEqual('16');
       expect(new BigInt(2).pow(new BigInt(2)).pow(new BigInt(2)).pow(new BigInt(2)).toString()).assertEqual('256');
@@ -599,14 +599,14 @@ export default function BigIntPowTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POW_0026
-     * @tc.name testBigIntPowExpressionAsBase0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POW_2600
+     * @tc.name testBigIntPowTest026
      * @tc.desc Verify pow with expression results as base: add, subtract, multiply, divide, conditional, array element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPowExpressionAsBase0026', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPowTest026', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new BigInt(2).operatorAdd(new BigInt(3)).pow(new BigInt(2)).toString()).assertEqual('25');
       expect(new BigInt(10).operatorSubtract(new BigInt(5)).pow(new BigInt(2)).toString()).assertEqual('25');
       expect(new BigInt(2).operatorMultiply(new BigInt(3)).pow(new BigInt(2)).toString()).assertEqual('36');
@@ -615,14 +615,14 @@ export default function BigIntPowTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POW_0027
-     * @tc.name testBigIntPowVariableAndFunction0027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POW_2700
+     * @tc.name testBigIntPowTest027
      * @tc.desc Verify pow with variable assignment and function return values as base
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPowVariableAndFunction0027', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPowTest027', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let a = new BigInt(2);
       expect(a.pow(new BigInt(10)).toString()).assertEqual('1024');
       let base42 = getBigInt100();
@@ -630,28 +630,28 @@ export default function BigIntPowTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POW_0028
-     * @tc.name testBigIntPowNegativeExponentExtended0028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POW_2800
+     * @tc.name testBigIntPowTest028
      * @tc.desc Verify pow throws for negative exponent with various bases: 6, 1000, -6,
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPowNegativeExponentExtended0028', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPowTest028', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect((): void => { new BigInt(6).pow(new BigInt(-1)); }).assertThrowError('RangeError');
       expect((): void => { new BigInt(1000).pow(new BigInt(-1)); }).assertThrowError('RangeError');
       expect((): void => { new BigInt(-6).pow(new BigInt(-1)); }).assertThrowError('RangeError');
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POW_0029
-     * @tc.name testBigIntPowNegativeExponentDeeper0029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POW_2900
+     * @tc.name testBigIntPowTest029
      * @tc.desc Verify pow throws for deeper negative exponents: -2, -3, -1,3 and zero base with negative
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPowNegativeExponentDeeper0029', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPowTest029', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect((): void => { new BigInt(2).pow(new BigInt(-4)); }).assertThrowError('RangeError');
       expect((): void => { new BigInt(0).pow(new BigInt(-2)); }).assertThrowError('RangeError');
       expect((): void => { new BigInt(-1).pow(new BigInt(-3)); }).assertThrowError('RangeError');
@@ -659,14 +659,14 @@ export default function BigIntPowTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POW_0030
-     * @tc.name testBigIntPowBoundaryNegativeExponent0030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POW_3000
+     * @tc.name testBigIntPowTest030
      * @tc.desc Verify pow throws for negative exponent with byte boundary bases
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPowBoundaryNegativeExponent0030', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPowTest030', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let bMax: byte = 127;
       expect((): void => { new BigInt(bMax).pow(new BigInt(-1)); }).assertThrowError('RangeError');
       let bMin: byte = -128;
@@ -674,27 +674,27 @@ export default function BigIntPowTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POW_0031
-     * @tc.name testBigIntPowLargeExponentResult0031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POW_3100
+     * @tc.name testBigIntPowTest031
      * @tc.desc Verify large exponent results: 2^200 (10^20 removed as duplicate of test_1400)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPowLargeExponentResult0031', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPowTest031', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new BigInt(2).pow(new BigInt(200)).toString()).assertEqual(
         '1606938044258990275541962092341162602522202993782792835301376');
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POW_0032
-     * @tc.name testBigIntPowConsistencyWithOperator0032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POW_3200
+     * @tc.name testBigIntPowTest032
      * @tc.desc Verify pow consistency with ** operator
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPowConsistencyWithOperator0032', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPowTest032', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let r1 = new BigInt(2).pow(new BigInt(10));
       expect(r1.equals(new BigInt(2).operatorMultiply(new BigInt(2)).operatorMultiply(new BigInt(2))
         .operatorMultiply(new BigInt(2)).operatorMultiply(new BigInt(2)).operatorMultiply(new BigInt(2))
@@ -703,14 +703,14 @@ export default function BigIntPowTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POW_0033
-     * @tc.name testBigIntPowPerformanceLoop0033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POW_3300
+     * @tc.name testBigIntPowTest033
      * @tc.desc Verify pow stability in loops: 100, 1000, and boundary range
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPowPerformanceLoop0033', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPowTest033', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       for (let i = 1; i <= 100; i++) {
         let r = new BigInt(2).pow(new BigInt(i));
         expect(r.toString().length).assertLarger(0);
@@ -726,14 +726,14 @@ export default function BigIntPowTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POW_0034
-     * @tc.name testBigIntPowCopyConstructedExponent0034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POW_3400
+     * @tc.name testBigIntPowTest034
      * @tc.desc Verify pow with copy-constructed exponent and int boundary exponent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPowCopyConstructedExponent0034', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPowTest034', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let expSrc = new BigInt(4);
       let exp = new BigInt(expSrc);
       expect(new BigInt(2).pow(exp).toString()).assertEqual('16');
@@ -741,14 +741,14 @@ export default function BigIntPowTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_POW_0035
-     * @tc.name testBigIntPowReturnValueImmutable0035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POW_3500
+     * @tc.name testBigIntPowTest035
      * @tc.desc Verify pow returns a new instance (assertNotEqual) and original base/exponent unchanged (POW-RET-003)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPowReturnValueImmutable0035', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBigIntPowTest035', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const base: BigInt = new BigInt(6);
       const exp: BigInt = new BigInt(2);
       const result: BigInt = base.pow(exp);
@@ -768,14 +768,14 @@ export default function BigIntPowTest_2(): void {
       expect(result2.toString()).assertEqual('-27');
     });
     /**
-     * @tc.number SUB_BIGINT_STD_POW_EXT_0036
-     * @tc.name testBigIntPowMissingLargeExponents0036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_POW_EXT_3600
+     * @tc.name testBigIntPowExtTest036
      * @tc.desc Verify pow for intermediate large exponents: 5^15, 10^25 (PW-12, PW-13)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPowMissingLargeExponents0036', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPowExtTest036', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new BigInt(5).pow(new BigInt(15)).toString()).assertEqual('30517578125');
       expect(new BigInt(-5).pow(new BigInt(15)).toString()).assertEqual('-30517578125');
       expect(new BigInt(10).pow(new BigInt(25)).toString()).assertEqual('10000000000000000000000000');
