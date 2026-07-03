@@ -15,20 +15,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import notificationManager from '@ohos.notificationManager';
 import base, { BusinessError } from '@ohos.base';
-import {
-  UiComponent,
-  UiDriver,
-  Component,
-  Driver,
-  UiWindow,
-  ON,
-  BY,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix
-} from '@ohos.UiTest';
+import { Driver, ON } from '@kit.TestKit';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 
@@ -148,12 +135,13 @@ export default function ActsNotificationAnsReduceAlertsTest() {
       })
       let driver: Driver = Driver.create();
       await sleep(1500)
+      let scrollBar = await driver.findComponent(ON.type('Scroll').isAfter(ON.text('通知管理')))
+      console.info(TAG + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
+      expect(scrollBar != null).assertTrue()
+      await scrollBar.scrollToBottom()
+      await sleep(1500)
       await driver.assertComponentExist(ON.text('横幅通知'));
       await sleep(1500)
-      let scrollBarOne = await driver.findComponent(ON.type('Scroll').isAfter(ON.text('通知管理')));
-      console.info(TAG + `scrollToBottom Scroll, ${JSON.stringify(scrollBarOne)} `);
-      await scrollBarOne.scrollToBottom()
-      await sleep(500)
       let button = await driver.findComponent(ON.text('横幅通知'));
       console.info(TEST_SUITE_NAME + TAG + `button is ${JSON.stringify(button)}`);
       if (button !== null) {
