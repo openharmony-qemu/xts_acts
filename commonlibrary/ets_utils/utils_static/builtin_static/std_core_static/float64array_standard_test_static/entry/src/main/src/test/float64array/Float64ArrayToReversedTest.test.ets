@@ -1993,5 +1993,228 @@ export default function Float64ArrayToReversedTest(): void {
       const expectVal2 = positiveInfinity;
       expect(actVal169).assertEqual(expectVal2);
     })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_8500
+     * @tc.name testFloat64ArrayToReversed085
+     * @tc.desc Verify toReversed result toLocaleString returns correct string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayToReversed085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const threePointZero: number = 3.0;
+      const arr = Float64Array.of(onePointZero, twoPointZero, threePointZero);
+      const result = arr.toReversed();
+      const actVal170 = result.$_get(0);
+      const expectVal = threePointZero;
+      expect(actVal170).assertEqual(expectVal);
+      const actVal171 = result.$_get(1);
+      const expectVal2 = twoPointZero;
+      expect(actVal171).assertEqual(expectVal2);
+      const actVal172 = result.$_get(2);
+      const expectVal3 = onePointZero;
+      expect(actVal172).assertEqual(expectVal3);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_8600
+     * @tc.name testFloat64ArrayToReversed086
+     * @tc.desc Verify toReversed on offset view reverses only visible elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayToReversed086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const b = new ArrayBuffer(40);
+      const p = new Float64Array(b);
+      p.$_set(0, 10.0);
+      p.$_set(1, 20.0);
+      p.$_set(2, 30.0);
+      p.$_set(3, 40.0);
+      p.$_set(4, 50.0);
+      const r = new Float64Array(b, 8, 3).toReversed();
+      const actVal173 = r.toString();
+      const expectVal = "40,30,20";
+      expect(actVal173).assertEqual(expectVal);
+      const actVal174 = p.$_get(0);
+      const expectVal2 = 10.0;
+      expect(actVal174).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_8700
+     * @tc.name testFloat64ArrayToReversed087
+     * @tc.desc Verify toReversed from offset view returns zero byteOffset copy
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayToReversed087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const b = new ArrayBuffer(32);
+      const v = new Float64Array(b, 8, 2);
+      v.$_set(0, 4.0);
+      v.$_set(1, 5.0);
+      const r = v.toReversed();
+      expect(r.byteOffset).assertEqual(0);
+      const actVal175 = r.toString();
+      const expectVal = "5,4";
+      expect(actVal175).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_8800
+     * @tc.name testFloat64ArrayToReversed088
+     * @tc.desc Verify toReversed result mutation does not affect source
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayToReversed088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = Float64Array.of(1.0, 2.0, 3.0);
+      const r = a.toReversed();
+      r.$_set(0, 99.0);
+      const actVal176 = a.$_get(2);
+      const expectVal = 3.0;
+      expect(actVal176).assertEqual(expectVal);
+      const actVal177 = r.$_get(0);
+      const expectVal2 = 99.0;
+      expect(actVal177).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_8900
+     * @tc.name testFloat64ArrayToReversed089
+     * @tc.desc Verify toReversed source mutation does not affect existing result
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayToReversed089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = Float64Array.of(1.0, 2.0, 3.0);
+      const r = a.toReversed();
+      a.$_set(0, 100.0);
+      const actVal178 = r.toString();
+      const expectVal = "3,2,1";
+      expect(actVal178).assertEqual(expectVal);
+      const actVal179 = a.$_get(0);
+      const expectVal2 = 100.0;
+      expect(actVal179).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_9000
+     * @tc.name testFloat64ArrayToReversed090
+     * @tc.desc Verify double toReversed restores value order in a new copy
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayToReversed090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = Float64Array.of(1.0, 2.0, 3.0);
+      const r = a.toReversed().toReversed();
+      r.$_set(0, 10.0);
+      const actVal180 = r.toString();
+      const expectVal = "10,2,3";
+      expect(actVal180).assertEqual(expectVal);
+      const actVal181 = a.toString();
+      const expectVal2 = "1,2,3";
+      expect(actVal181).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_9100
+     * @tc.name testFloat64ArrayToReversed091
+     * @tc.desc Verify toReversed preserves middle value for odd length array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayToReversed091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = Float64Array.of(1.0, 2.0, 3.0, 4.0, 5.0).toReversed();
+      const actVal182 = r.$_get(2);
+      const expectVal = 3.0;
+      expect(actVal182).assertEqual(expectVal);
+      expect(r.length).assertEqual(5);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_9200
+     * @tc.name testFloat64ArrayToReversed092
+     * @tc.desc Verify toReversed on empty array returns empty metadata
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayToReversed092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = new Float64Array(0).toReversed();
+      expect(r.length).assertEqual(0);
+      expect(r.byteLength).assertEqual(0);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_9300
+     * @tc.name testFloat64ArrayToReversed093
+     * @tc.desc Verify toReversed single-element result is independent from source
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayToReversed093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = Float64Array.of(7.0);
+      const r = a.toReversed();
+      r.$_set(0, 70.0);
+      const actVal183 = a.$_get(0);
+      const expectVal = 7.0;
+      expect(actVal183).assertEqual(expectVal);
+      const actVal184 = r.$_get(0);
+      const expectVal2 = 70.0;
+      expect(actVal184).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_9400
+     * @tc.name testFloat64ArrayToReversed094
+     * @tc.desc Verify toReversed handles signed subnormal pair
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayToReversed094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = Float64Array.of(Double.MIN_VALUE, -Double.MIN_VALUE).toReversed();
+      const actVal185 = r.$_get(0);
+      const expectVal = -Double.MIN_VALUE;
+      expect(actVal185).assertEqual(expectVal);
+      const actVal186 = r.$_get(1);
+      const expectVal2 = Double.MIN_VALUE;
+      expect(actVal186).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_TOREVERSED_9500
+     * @tc.name testFloat64ArrayToReversed095
+     * @tc.desc Verify toReversed on offset view leaves parent buffer order intact
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayToReversed095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const b = new ArrayBuffer(32);
+      const p = new Float64Array(b);
+      p.$_set(0, 1.0);
+      p.$_set(1, 2.0);
+      p.$_set(2, 3.0);
+      p.$_set(3, 4.0);
+      const r = new Float64Array(b, 8, 2).toReversed();
+      const actVal187 = r.toString();
+      const expectVal = "3,2";
+      expect(actVal187).assertEqual(expectVal);
+      const actVal188 = p.toString();
+      const expectVal2 = "1,2,3,4";
+      expect(actVal188).assertEqual(expectVal2);
+    })
+
   });
 }

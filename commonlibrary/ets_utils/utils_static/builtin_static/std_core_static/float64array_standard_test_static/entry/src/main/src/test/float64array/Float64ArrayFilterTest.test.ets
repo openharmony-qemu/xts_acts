@@ -1967,5 +1967,158 @@ export default function Float64ArrayFilterTest(): void {
       }
     })
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0950
+     * @tc.name testFloat64ArrayFilter095
+     * @tc.desc Verify filter with hex literal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFilter095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const hexValueFF: number = 0xFF;
+      const hexValue00: number = 0x00;
+      const hexValueAA: number = 0xAA;
+      const twoValue: number = 2;
+      const num255Value: number = 255;
+      const num170Pointzero: number = 170.0;
+      const arr = Float64Array.of(hexValueFF, hexValue00, hexValueAA);
+      const f = arr.filter((v: number): boolean => v > 0x00);
+      expect(f.length).assertEqual(twoValue);
+      expect(f[0]).assertEqual(num255Value);
+      expect(f[1]).assertEqual(num170Pointzero);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0960
+     * @tc.name testFloat64ArrayFilter096
+     * @tc.desc Verify filter with binary literal (D8 binary)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFilter096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const binaryValue11111111: number = 0b11111111;
+      const binaryValue00000000: number = 0b00000000;
+      const binaryValue10101010: number = 0b10101010;
+      const twoValue: number = 2;
+      const num255Value: number = 255;
+      const num170Pointzero: number = 170.0;
+      const arr = Float64Array.of(binaryValue11111111, binaryValue00000000, binaryValue10101010);
+      const f = arr.filter((v: number): boolean => v > 0b00000000);
+      expect(f.length).assertEqual(twoValue);
+      expect(f[0]).assertEqual(num255Value);
+      expect(f[1]).assertEqual(num170Pointzero);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0970
+     * @tc.name testFloat64ArrayFilter097
+     * @tc.desc Verify filter with Double.NaN (D5 critical)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFilter097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nanValue: number = Double.NaN;
+      const doubleMaxValue: number = Double.MAX_VALUE;
+      const arr = Float64Array.of(nanValue, doubleMaxValue);
+      const f = arr.filter((v: number): boolean => Number.isNaN(v));
+      expect(f.length).assertEqual(1);
+      const actVal21 = Number.isNaN(f[0]);
+      const expectVal = true;
+      expect(actVal21).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0980
+     * @tc.name testFloat64ArrayFilter098
+     * @tc.desc Verify filter with Double.POSITIVE_INFINITY (D5 critical)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFilter098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const positiveInfinity: number = Double.POSITIVE_INFINITY;
+      const negativeInfinity: number = Double.NEGATIVE_INFINITY;
+      const arr = Float64Array.of(positiveInfinity, negativeInfinity);
+      const f = arr.filter((v: number): boolean => v > 0.0);
+      expect(f.length).assertEqual(1);
+      expect(f[0]).assertEqual(positiveInfinity);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_0990
+     * @tc.name testFloat64ArrayFilter099
+     * @tc.desc Verify filter with Double.MIN_VALUE/MAX_VALUE (D5 critical)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFilter099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const doubleMinValue: number = Double.MIN_VALUE;
+      const doubleMaxValue: number = Double.MAX_VALUE;
+      const arr = Float64Array.of(doubleMinValue, doubleMaxValue);
+      const f = arr.filter((v: number): boolean => v > 0.0);
+      expect(f.length).assertEqual(2);
+      expect(f[0]).assertEqual(doubleMinValue);
+      expect(f[1]).assertEqual(doubleMaxValue);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_1000
+     * @tc.name testFloat64ArrayFilter100
+     * @tc.desc Verify filter reads modified values when callback changes other elements in the array during first pass
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFilter100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const oneValue: number = 1;
+      const twoValue: number = 2;
+      const threeValue: number = 3;
+      const fourValue: number = 4;
+      const fiveValue: number = 5;
+      const num999Value: number = 999;
+      const arr = Float64Array.of(oneValue, twoValue, threeValue, fourValue, fiveValue);
+      // First pass: at index 0, callback modifies index 2 from 3 to 999
+      // Filter uses the modified value when it reaches index 2
+      const result = arr.filter((val: number, index: int): boolean => {
+        if (index === 0) {
+          arr.$_set(2, num999Value);
+        }
+        return val > 3.0;
+      })
+      expect(result.length).assertEqual(threeValue);
+      const actVal22 = result.$_get(0);
+      const expectVal = num999Value;
+      expect(actVal22).assertEqual(expectVal);
+      const actVal23 = result.$_get(1);
+      const expectVal2 = fourValue;
+      expect(actVal23).assertEqual(expectVal2);
+      const actVal24 = result.$_get(2);
+      const expectVal3 = fiveValue;
+      expect(actVal24).assertEqual(expectVal3);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FILTER_1010
+     * @tc.name testFloat64ArrayFilter101
+     * @tc.desc Verify filter returns a Float64Array instance, not a plain Array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFilter101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const oneValue: number = 1;
+      const twoValue: number = 2;
+      const threeValue: number = 3;
+      const arr = Float64Array.of(oneValue, twoValue, threeValue);
+      const result = arr.filter((val: number): boolean => val > 1.0);
+      const actVal25 = isFloat64Array(result);
+      const expectVal = true;
+      expect(actVal25).assertEqual(expectVal);
+    })
+
   })
 }

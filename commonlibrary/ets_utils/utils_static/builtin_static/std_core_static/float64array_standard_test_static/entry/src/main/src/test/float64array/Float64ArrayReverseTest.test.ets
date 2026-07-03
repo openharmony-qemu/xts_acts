@@ -1981,5 +1981,279 @@ export default function float64ArrayReverseTest(): void {
       expect(arr[0]).assertEqual(oneValue);
       expect(arr[2]).assertEqual(negativeOne);
     })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1090
+     * @tc.name testFloat64ArrayReverse109
+     * @tc.desc Verify reverse order with fractional values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReverse109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointFive: number = 0.5;
+      const onePointFive: number = 1.5;
+      const pointTwoFive: number = 0.25;
+      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      arr.reverse();
+      expect(arr[0]).assertEqual(pointTwoFive);
+      expect(arr[2]).assertEqual(pointFive);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1100
+     * @tc.name testFloat64ArrayReverse110
+     * @tc.desc Verify first index value after reverse
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReverse110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointFive: number = 0.5;
+      const onePointFive: number = 1.5;
+      const zeroValue: number = 0;
+      const arr = Float64Array.of(pointFive, onePointFive);
+      arr.reverse();
+      const expectVal = onePointFive;
+      expect(arr[0]).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1110
+     * @tc.name testFloat64ArrayReverse111
+     * @tc.desc Verify default iterator traversal after reverse
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReverse111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int32MinValue: number = -2147483648;
+      const negativeOne: number = -1;
+      const arr = Float64Array.of(int32MinValue, -1);
+      arr.reverse();
+      let firstVal = 0.0;
+      for (const v of arr) {
+        firstVal = v;
+        break;
+      }
+      const expectVal = negativeOne;
+      expect(firstVal).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1120
+     * @tc.name testFloat64ArrayReverse112
+     * @tc.desc Verify reverse three element array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReverse112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointOne: number = 0.1;
+      const maxSafeInteger: number = 9007199254740991;
+      const zeroValue: number = 0;
+      const values = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      values.reverse();
+      expect(values[0]).assertEqual(zeroValue);
+      expect(values[1]).assertEqual(maxSafeInteger);
+      expect(values[2]).assertEqual(pointOne);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1130
+     * @tc.name testFloat64ArrayReverse113
+     * @tc.desc Verify reverse two element array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReverse113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointFive: number = 0.5;
+      const onePointFive: number = 1.5;
+      const values = Float64Array.of(pointFive, onePointFive);
+      values.reverse();
+      expect(values[0]).assertEqual(onePointFive);
+      expect(values[1]).assertEqual(pointFive);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1140
+     * @tc.name testFloat64ArrayReverse114
+     * @tc.desc Verify reverse single element array unchanged
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReverse114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int16MinValue: number = -32768;
+      const values = Float64Array.of(int16MinValue);
+      values.reverse();
+      const expectVal = int16MinValue;
+      expect(values[0]).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1150
+     * @tc.name testFloat64ArrayReverse115
+     * @tc.desc Verify reverse array containing NaN
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReverse115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int32MinValue: number = -2147483648;
+      const negativeOne: number = -1;
+      const values = Float64Array.of(int32MinValue, -1);
+      values.reverse();
+      expect(values[0]).assertEqual(negativeOne);
+      const actVal12 = Number.isNaN(values[1]);
+      const expectVal = false;
+      expect(actVal12).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1160
+     * @tc.name testFloat64ArrayReverse116
+     * @tc.desc Verify reverse array containing Infinity
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReverse116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointOne: number = 0.1;
+      const maxSafeInteger: number = 9007199254740991;
+      const values = Float64Array.of(pointOne, maxSafeInteger);
+      values.reverse();
+      expect(values[0]).assertEqual(maxSafeInteger);
+      expect(values[1]).assertEqual(pointOne);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1170
+     * @tc.name testFloat64ArrayReverse117
+     * @tc.desc Verify reverse returns current array (chainable this)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReverse117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointFive: number = 0.5;
+      const onePointFive: number = 1.5;
+      const values = Float64Array.of(pointFive, onePointFive);
+      const result = values.reverse();
+      const expectVal = values;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1180
+     * @tc.name testFloat64ArrayReverse118
+     * @tc.desc Verify reverse result reversed flag (D7 two-way)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReverse118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int16MinValue: number = -32768;
+      const zeroValue: number = 0;
+      const int32MinValue: number = -2147483648;
+      const arr = Float64Array.of(int16MinValue, -128, zeroValue);
+      const reversed = Float64Array.of(int32MinValue, -1, zeroValue);
+      arr.reverse();
+      expect(arr[0] === reversed[0] && arr[1] === reversed[1] && arr[2] === reversed[2]).assertEqual(false);
+      expect(arr[0] === 1.0).assertEqual(false);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1190
+     * @tc.name testFloat64ArrayReverse119
+     * @tc.desc Verify reverse with hex literal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReverse119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const hexValueFF: number = 0xFF;
+      const hexValueAA: number = 0xAA;
+      const num170Pointzero: number = 170.0;
+      const num255Value: number = 255;
+      const arr = Float64Array.of(hexValueFF, hexValueAA);
+      arr.reverse();
+      expect(arr[0]).assertEqual(num170Pointzero);
+      expect(arr[1]).assertEqual(num255Value);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1200
+     * @tc.name testFloat64ArrayReverse120
+     * @tc.desc Verify reverse with binary literal (D8 binary)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReverse120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const binaryValue11111111: number = 0b11111111;
+      const binaryValue10101010: number = 0b10101010;
+      const num170Pointzero: number = 170.0;
+      const num255Value: number = 255;
+      const arr = Float64Array.of(binaryValue11111111, binaryValue10101010);
+      arr.reverse();
+      expect(arr[0]).assertEqual(num170Pointzero);
+      expect(arr[1]).assertEqual(num255Value);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1210
+     * @tc.name testFloat64ArrayReverse121
+     * @tc.desc Verify reverse with Double.NaN
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReverse121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nanValue: number = Double.NaN;
+      const doubleMaxValue: number = Double.MAX_VALUE;
+      const arr = Float64Array.of(nanValue, doubleMaxValue);
+      arr.reverse();
+      const actVal13 = Number.isNaN(arr[1]);
+      const expectVal = true;
+      expect(actVal13).assertEqual(expectVal);
+      expect(arr[0]).assertEqual(doubleMaxValue);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1220
+     * @tc.name testFloat64ArrayReverse122
+     * @tc.desc Verify reverse with Double.POSITIVE_INFINITY
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReverse122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const positiveInfinity: number = Double.POSITIVE_INFINITY;
+      const negativeInfinity: number = Double.NEGATIVE_INFINITY;
+      const arr = Float64Array.of(positiveInfinity, negativeInfinity);
+      arr.reverse();
+      expect(arr[0]).assertEqual(negativeInfinity);
+      expect(arr[1]).assertEqual(positiveInfinity);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_REVERSE_1230
+     * @tc.name testFloat64ArrayReverse123
+     * @tc.desc Verify reverse with Double.MIN_VALUE/MAX_VALUE
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayReverse123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const doubleMinValue: number = Double.MIN_VALUE;
+      const doubleMaxValue: number = Double.MAX_VALUE;
+      const arr = Float64Array.of(doubleMinValue, doubleMaxValue);
+      arr.reverse();
+      expect(arr[0]).assertEqual(doubleMaxValue);
+      expect(arr[1]).assertEqual(doubleMinValue);
+    })
+
   })
 }

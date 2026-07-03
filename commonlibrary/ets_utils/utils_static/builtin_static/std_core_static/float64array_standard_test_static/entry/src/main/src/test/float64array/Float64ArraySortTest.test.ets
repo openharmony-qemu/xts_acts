@@ -1959,5 +1959,195 @@ export default function Float64ArraySortTest(): void {
       expect(arr.length).assertEqual(expectVal);
     })
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_8400
+     * @tc.name testFloat64ArraySort084
+     * @tc.desc Verify sort() with NaN array [3.0, NaN, 1.0]
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySort084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const threePointZero: number = 3.0;
+      const nanValue: number = NaN;
+      const onePointZero: number = 1.0;
+      const arr = Float64Array.of(threePointZero, nanValue, onePointZero);
+      arr.sort();
+      expect(arr[0]).assertEqual(onePointZero);
+      expect(arr[1]).assertEqual(threePointZero);
+      const actVal57 = Number.isNaN(arr[2]);
+      const expectVal = true;
+      expect(actVal57).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_8500
+     * @tc.name testFloat64ArraySort085
+     * @tc.desc Verify sort() with -Infinity, Infinity and 0.0 array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySort085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const negativeInfinity: number = -Infinity;
+      const positiveInfinity: number = Infinity;
+      const zeroPointZero: number = 0.0;
+      const arr = Float64Array.of(negativeInfinity, positiveInfinity, zeroPointZero);
+      arr.sort();
+      expect(arr[0]).assertEqual(negativeInfinity);
+      expect(arr[1]).assertEqual(zeroPointZero);
+      expect(arr[2]).assertEqual(positiveInfinity);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_8600
+     * @tc.name testFloat64ArraySort086
+     * @tc.desc Verify sort() with -Infinity and negative values array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySort086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const negativeInfinity: number = -Infinity;
+      const negonePointzero: number = -1.0;
+      const negtwoPointzero: number = -2.0;
+      const arr = Float64Array.of(negativeInfinity, negonePointzero, negtwoPointzero);
+      arr.sort();
+      expect(arr[0]).assertEqual(negativeInfinity);
+      expect(arr[1]).assertEqual(negtwoPointzero);
+      expect(arr[2]).assertEqual(negonePointzero);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_8700
+     * @tc.name testFloat64ArraySort087
+     * @tc.desc Verify sort() with +Infinity array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySort087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const positiveInfinity: number = Infinity;
+      const onePointZero: number = 1.0;
+      const twoPointZero: number = 2.0;
+      const arr = Float64Array.of(positiveInfinity, onePointZero, twoPointZero);
+      arr.sort();
+      expect(arr[0]).assertEqual(onePointZero);
+      expect(arr[1]).assertEqual(twoPointZero);
+      expect(arr[2]).assertEqual(positiveInfinity);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_8800
+     * @tc.name testFloat64ArraySort088
+     * @tc.desc Verify sort() with MAX_SAFE_INTEGER array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySort088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const maxSafeInteger: number = 9007199254740991;
+      const onePointZero: number = 1.0;
+      const zeroPointZero: number = 0.0;
+      const arr = Float64Array.of(maxSafeInteger, onePointZero, zeroPointZero);
+      arr.sort();
+      expect(arr[0]).assertEqual(zeroPointZero);
+      expect(arr[1]).assertEqual(onePointZero);
+      expect(arr[2]).assertEqual(maxSafeInteger);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_8900
+     * @tc.name testFloat64ArraySort089
+     * @tc.desc Verify sort() with MIN_SAFE_INTEGER array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySort089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const minSafeInteger: number = -9007199254740991;
+      const negonePointzero: number = -1.0;
+      const zeroPointZero: number = 0.0;
+      const arr = Float64Array.of(minSafeInteger, negonePointzero, zeroPointZero);
+      arr.sort();
+      expect(arr[0]).assertEqual(minSafeInteger);
+      expect(arr[1]).assertEqual(negonePointzero);
+      expect(arr[2]).assertEqual(zeroPointZero);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_9000
+     * @tc.name testFloat64ArraySort090
+     * @tc.desc Verify sort() with 2147483647 boundary array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySort090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int32MaxValue: number = 2147483647;
+      const onePointZero: number = 1.0;
+      const zeroPointZero: number = 0.0;
+      const arr = Float64Array.of(int32MaxValue, onePointZero, zeroPointZero);
+      arr.sort();
+      expect(arr[0]).assertEqual(zeroPointZero);
+      expect(arr[1]).assertEqual(onePointZero);
+      expect(arr[2]).assertEqual(int32MaxValue);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_9100
+     * @tc.name testFloat64ArraySort091
+     * @tc.desc Verify sort() with overflow boundary [MAX_VALUE, MAX_VALUE - epsilon]
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySort091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const doubleMaxValue: number = 1.7976931348623157e+308;
+      const sciValue17976931348623156e308: number = 1.7976931348623156e+308;
+      const arr = Float64Array.of(doubleMaxValue, sciValue17976931348623156e308);
+      arr.sort();
+      expect(arr[0]).assertEqual(sciValue17976931348623156e308);
+      expect(arr[1]).assertEqual(doubleMaxValue);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_9200
+     * @tc.name testFloat64ArraySort092
+     * @tc.desc Verify sort() with decimal precision boundary [0.3, 0.1, 0.2]
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySort092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointThree: number = 0.3;
+      const pointOne: number = 0.1;
+      const pointTwo: number = 0.2;
+      const arr = Float64Array.of(pointThree, pointOne, pointTwo);
+      arr.sort();
+      expect(arr[0]).assertEqual(pointOne);
+      expect(arr[1]).assertEqual(pointTwo);
+      expect(arr[2]).assertEqual(pointThree);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SORT_9300
+     * @tc.name testFloat64ArraySort093
+     * @tc.desc Verify sort() with large negative decimal [-1.0, -999999.99, 0.0]
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySort093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const negonePointzero: number = -1.0;
+      const negnum999999Pointninenine: number = -999999.99;
+      const zeroPointZero: number = 0.0;
+      const arr = Float64Array.of(negonePointzero, negnum999999Pointninenine, zeroPointZero);
+      arr.sort();
+      expect(arr[0]).assertEqual(negnum999999Pointninenine);
+      expect(arr[1]).assertEqual(negonePointzero);
+      expect(arr[2]).assertEqual(zeroPointZero);
+    })
+
   })
 }

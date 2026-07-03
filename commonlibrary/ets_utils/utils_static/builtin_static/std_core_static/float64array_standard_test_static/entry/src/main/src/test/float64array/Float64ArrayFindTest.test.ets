@@ -1979,5 +1979,137 @@ export default function float64ArrayFindTest(): void {
       expect(externalSum).assertEqual(expectVal2);
     })
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0950
+     * @tc.name testFloat64ArrayFind095
+     * @tc.desc Verify find callback error propagation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFind095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int16MinValue: number = -32768;
+      const values = Float64Array.of(int16MinValue, -128);
+      try {
+        values.find((value) => {
+          throw new Error("test");
+        })
+
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("Error");
+      }
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0960
+     * @tc.name testFloat64ArrayFind096
+     * @tc.desc Verify find returns undefined type
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFind096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int32MinValue: number = -2147483648;
+      const values = Float64Array.of(int32MinValue, -1);
+      const result = values.find((value) => value > 100);
+      expect(result).assertUndefined();
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0970
+     * @tc.name testFloat64ArrayFind097
+     * @tc.desc Verify find with hex literal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFind097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const hexValueFF: number = 0xFF;
+      const hexValueAA: number = 0xAA;
+      const hexValue55: number = 0x55;
+      const num170Pointzero: number = 170.0;
+      const arr = Float64Array.of(hexValueFF, hexValueAA, hexValue55);
+      const v = arr.find((e: number): boolean => e === 0xAA);
+      const expectVal = num170Pointzero;
+      expect(v).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0980
+     * @tc.name testFloat64ArrayFind098
+     * @tc.desc Verify find with binary literal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFind098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const binaryValue11111111: number = 0b11111111;
+      const binaryValue10101010: number = 0b10101010;
+      const binaryValue01010101: number = 0b01010101;
+      const num170Pointzero: number = 170.0;
+      const arr = Float64Array.of(binaryValue11111111, binaryValue10101010, binaryValue01010101);
+      const v = arr.find((e: number): boolean => e === 0b10101010);
+      const expectVal = num170Pointzero;
+      expect(v).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_0990
+     * @tc.name testFloat64ArrayFind099
+     * @tc.desc Verify find with Double.NaN
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFind099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nanValue: number = Double.NaN;
+      const doubleMaxValue: number = Double.MAX_VALUE;
+      const arr = Float64Array.of(nanValue, doubleMaxValue);
+      const result = arr.find((value: number): boolean => {
+        return value !== value;
+      })
+      const expectVal = true;
+      expect(result !== result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_1000
+     * @tc.name testFloat64ArrayFind100
+     * @tc.desc Verify find with Double.POSITIVE_INFINITY
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFind100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const positiveInfinity: number = Double.POSITIVE_INFINITY;
+      const negativeInfinity: number = Double.NEGATIVE_INFINITY;
+      const arr = Float64Array.of(positiveInfinity, negativeInfinity);
+      const result = arr.find((value: number): boolean => {
+        return value === Double.POSITIVE_INFINITY;
+      })
+      const expectVal = positiveInfinity;
+      expect(result).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_FIND_1010
+     * @tc.name testFloat64ArrayFind101
+     * @tc.desc Verify find with Double.MIN_VALUE/MAX_VALUE
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayFind101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const doubleMinValue: number = Double.MIN_VALUE;
+      const doubleMaxValue: number = Double.MAX_VALUE;
+      const arr = Float64Array.of(doubleMinValue, doubleMaxValue);
+      const result = arr.find((value: number): boolean => {
+        return value === Double.MIN_VALUE;
+      })
+      const expectVal = doubleMinValue;
+      expect(result).assertEqual(expectVal);
+    })
+
   })
 }

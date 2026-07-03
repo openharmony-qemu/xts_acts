@@ -1975,5 +1975,151 @@ export default function float64ArrayLastIndexOfTest(): void {
       const expectVal = negativeOne;
       expect(idx).assertEqual(expectVal);
     })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_9200
+     * @tc.name testFloat64ArrayLastIndexOf092
+     * @tc.desc Verify lastIndexOf fromIndex=5 in mixed boundary array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayLastIndexOf092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointFive: number = 0.5;
+      const onePointFive: number = 1.5;
+      const pointTwoFive: number = 0.25;
+      const pointOneTwoFive: number = 0.125;
+      const pointZeroSixTwoFive: number = 0.0625;
+      const zeroValue: number = 0;
+      const negativeInfinity: number = -Infinity;
+      const negativeOne: number = -1;
+      const arr =
+        Float64Array.of(pointFive, onePointFive, pointTwoFive, pointOneTwoFive, pointZeroSixTwoFive, zeroValue,
+          zeroValue);
+      const idx = arr.lastIndexOf(negativeInfinity, 5);
+      const expectVal = negativeOne;
+      expect(idx).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_9300
+     * @tc.name testFloat64ArrayLastIndexOf093
+     * @tc.desc Verify lastIndexOf fromIndex=-3 searching NaN in mixed boundary array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayLastIndexOf093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int16MinValue: number = -32768;
+      const zeroValue: number = 0;
+      const int8MaxValue: number = 127;
+      const int16MaxValue: number = 32767;
+      const nanValue: number = NaN;
+      const negativeOne: number = -1;
+      const arr = Float64Array.of(int16MinValue, -128, zeroValue, int8MaxValue, int16MaxValue, zeroValue, zeroValue);
+      const idx = arr.lastIndexOf(nanValue, -3);
+      const expectVal = negativeOne;
+      expect(idx).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_9400
+     * @tc.name testFloat64ArrayLastIndexOf094
+     * @tc.desc Verify lastIndexOf with searchElement as 1e0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayLastIndexOf094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int32MinValue: number = -2147483648;
+      const zeroValue: number = 0;
+      const sciValue1e0: number = 1e0;
+      const negativeOne: number = -1;
+      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const idx = arr.lastIndexOf(sciValue1e0);
+      const expectVal = negativeOne;
+      expect(idx).assertEqual(expectVal);
+      const idxFound = arr.lastIndexOf(int32MinValue);
+      const expectVal2 = zeroValue;
+      expect(idxFound).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_9500
+     * @tc.name testFloat64ArrayLastIndexOf095
+     * @tc.desc Verify lastIndexOf with searchElement as 1e-323
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayLastIndexOf095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointOne: number = 0.1;
+      const maxSafeInteger: number = 9007199254740991;
+      const zeroValue: number = 0;
+      const sciValue10e323: number = 1.0e-323;
+      const negativeOne: number = -1;
+      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const idx = arr.lastIndexOf(sciValue10e323);
+      const expectVal = negativeOne;
+      expect(idx).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_9600
+     * @tc.name testFloat64ArrayLastIndexOf096
+     * @tc.desc Verify lastIndexOf with searchElement as negative scientific notation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayLastIndexOf096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pointFive: number = 0.5;
+      const onePointFive: number = 1.5;
+      const pointTwoFive: number = 0.25;
+      const negsciValue1e2: number = -1e2;
+      const negativeOne: number = -1;
+      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const idx = arr.lastIndexOf(negsciValue1e2);
+      const expectVal = negativeOne;
+      expect(idx).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_9700
+     * @tc.name testFloat64ArrayLastIndexOf097
+     * @tc.desc Verify lastIndexOf with searchElement as float 2.5
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayLastIndexOf097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int16MinValue: number = -32768;
+      const zeroValue: number = 0;
+      const twoPointFive: number = 2.5;
+      const negativeOne: number = -1;
+      const arr = Float64Array.of(int16MinValue, -128, zeroValue);
+      const idx = arr.lastIndexOf(twoPointFive);
+      const expectVal = negativeOne;
+      expect(idx).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_LASTINDEXOF_9800
+     * @tc.name testFloat64ArrayLastIndexOf098
+     * @tc.desc Verify lastIndexOf with searchElement as negative float -2.5
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArrayLastIndexOf098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const int32MinValue: number = -2147483648;
+      const zeroValue: number = 0;
+      const negtwoPointfive: number = -2.5;
+      const negativeOne: number = -1;
+      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const idx = arr.lastIndexOf(negtwoPointfive);
+      const expectVal = negativeOne;
+      expect(idx).assertEqual(expectVal);
+    })
   })
 }

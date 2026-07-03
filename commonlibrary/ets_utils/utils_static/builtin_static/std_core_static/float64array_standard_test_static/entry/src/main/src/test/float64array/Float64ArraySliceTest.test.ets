@@ -1966,5 +1966,217 @@ export default function Float64ArraySliceTest(): void {
       expect(sliced[0] === 1.0).assertEqual(false);
     })
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_8800
+     * @tc.name testFloat64ArraySlice088
+     * @tc.desc Verify slice with hex literal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySlice088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const hexValueFF: number = 0xFF;
+      const hexValueAA: number = 0xAA;
+      const hexValue55: number = 0x55;
+      const num255Value: number = 255;
+      const num170Pointzero: number = 170.0;
+      const twoValue: number = 2;
+      const arr = Float64Array.of(hexValueFF, hexValueAA, hexValue55);
+      const s = arr.slice(0, 2);
+      expect(s[0]).assertEqual(num255Value);
+      expect(s[1]).assertEqual(num170Pointzero);
+      expect(s.length).assertEqual(twoValue);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_8900
+     * @tc.name testFloat64ArraySlice089
+     * @tc.desc Verify slice with binary literal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySlice089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const binaryValue11111111: number = 0b11111111;
+      const binaryValue10101010: number = 0b10101010;
+      const binaryValue01010101: number = 0b01010101;
+      const num255Value: number = 255;
+      const num170Pointzero: number = 170.0;
+      const twoValue: number = 2;
+      const arr = Float64Array.of(binaryValue11111111, binaryValue10101010, binaryValue01010101);
+      const s = arr.slice(0, 2);
+      expect(s[0]).assertEqual(num255Value);
+      expect(s[1]).assertEqual(num170Pointzero);
+      expect(s.length).assertEqual(twoValue);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_9000
+     * @tc.name testFloat64ArraySlice090
+     * @tc.desc Verify slice with Double.NaN
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySlice090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nanValue: number = Double.NaN;
+      const doubleMaxValue: number = Double.MAX_VALUE;
+      const twoValue: number = 2;
+      const arr = Float64Array.of(nanValue, doubleMaxValue);
+      const s = arr.slice(0, 2);
+      const actVal89 = Number.isNaN(s[0]);
+      const expectVal = true;
+      expect(actVal89).assertEqual(expectVal);
+      expect(s[1]).assertEqual(doubleMaxValue);
+      expect(s.length).assertEqual(twoValue);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_9100
+     * @tc.name testFloat64ArraySlice091
+     * @tc.desc Verify slice with Double.POSITIVE_INFINITY
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySlice091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const positiveInfinity: number = Double.POSITIVE_INFINITY;
+      const negativeInfinity: number = Double.NEGATIVE_INFINITY;
+      const twoValue: number = 2;
+      const arr = Float64Array.of(positiveInfinity, negativeInfinity);
+      const s = arr.slice(0, 2);
+      expect(s[0]).assertEqual(positiveInfinity);
+      expect(s[1]).assertEqual(negativeInfinity);
+      expect(s.length).assertEqual(twoValue);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_9200
+     * @tc.name testFloat64ArraySlice092
+     * @tc.desc Verify slice with Double.MIN_VALUE/MAX_VALUE
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySlice092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const doubleMinValue: number = Double.MIN_VALUE;
+      const doubleMaxValue: number = Double.MAX_VALUE;
+      const twoValue: number = 2;
+      const arr = Float64Array.of(doubleMinValue, doubleMaxValue);
+      const s = arr.slice(0, 2);
+      expect(s[0]).assertEqual(doubleMinValue);
+      expect(s[1]).assertEqual(doubleMaxValue);
+      expect(s.length).assertEqual(twoValue);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_9300
+     * @tc.name testFloat64ArraySlice093
+     * @tc.desc Verify slice with begin=-0 treated as 0 returns full copy
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySlice093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float64Array.of(10.0, 20.0, 30.0);
+      const s = arr.slice(-0);
+      expect(s.length).assertEqual(3);
+      const actVal90 = s.$_get(0);
+      const expectVal = 10.0;
+      expect(actVal90).assertEqual(expectVal);
+      const actVal91 = s.$_get(2);
+      const expectVal2 = 30.0;
+      expect(actVal91).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_9400
+     * @tc.name testFloat64ArraySlice094
+     * @tc.desc Verify slice with end=-0 treated as 0 returns empty array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySlice094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float64Array.of(10.0, 20.0, 30.0);
+      const s = arr.slice(0, -0);
+      const expectVal = 0;
+      expect(s.length).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_9500
+     * @tc.name testFloat64ArraySlice095
+     * @tc.desc Verify slice with begin=-0 end=2 treated as slice(0,2) returns first two elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySlice095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float64Array.of(10.0, 20.0, 30.0);
+      const s = arr.slice(-0, 2);
+      expect(s.length).assertEqual(2);
+      const actVal92 = s.$_get(0);
+      const expectVal = 10.0;
+      expect(actVal92).assertEqual(expectVal);
+      const actVal93 = s.$_get(1);
+      const expectVal2 = 20.0;
+      expect(actVal93).assertEqual(expectVal2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_9600
+     * @tc.name testFloat64ArraySlice096
+     * @tc.desc Verify slice with begin=-0 end=-0 treated as slice(0,0) returns empty array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySlice096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float64Array.of(10.0, 20.0, 30.0);
+      const s = arr.slice(-0, -0);
+      const expectVal = 0;
+      expect(s.length).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_9700
+     * @tc.name testFloat64ArraySlice097
+     * @tc.desc Verify slice with begin=1 end=-0 treated as slice(1,0) returns empty array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySlice097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = Float64Array.of(10.0, 20.0, 30.0);
+      const s = arr.slice(1, -0);
+      const expectVal = 0;
+      expect(s.length).assertEqual(expectVal);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FLOAT64ARRAY_SLICE_9800
+     * @tc.name testFloat64ArraySlice098
+     * @tc.desc Verify slice with large array 10000 elements performance
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFloat64ArraySlice098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const oneValue: number = 1;
+      const arr = new Float64Array(10000);
+      for (let i: int = 0; i < 10000; i++) {
+        arr.$_set(i, i + oneValue);
+      }
+      const s = arr.slice(0, 10000);
+      expect(s.length).assertEqual(10000);
+      const actVal94 = s.$_get(0);
+      const expectVal = oneValue;
+      expect(actVal94).assertEqual(expectVal);
+      const actVal95 = s.$_get(9999);
+      const expectVal2 = 10000.0;
+      expect(actVal95).assertEqual(expectVal2);
+    })
+
   })
 }
