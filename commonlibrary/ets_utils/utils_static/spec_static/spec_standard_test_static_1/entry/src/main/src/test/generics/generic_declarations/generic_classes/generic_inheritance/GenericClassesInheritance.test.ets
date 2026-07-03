@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+import Utils from "../../../../Util.test";
+
 import {
   expect,
   describe,
@@ -416,15 +418,7 @@ class MultiGenericChild2<T, U> extends MultiGenericType_16<string, string> {
     super(first, second);
   }
 }
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-
-export default function GenericClassesInheritanceTest() {
+export default function GenericClassesInheritanceTest(): void {
   describe("GenericClassesInheritanceTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -435,7 +429,7 @@ export default function GenericClassesInheritanceTest() {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.

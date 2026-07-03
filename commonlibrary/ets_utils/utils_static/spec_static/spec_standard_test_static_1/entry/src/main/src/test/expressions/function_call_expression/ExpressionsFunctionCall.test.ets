@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+import Utils from "../../Util.test";
+
 import {
   expect,
   describe,
@@ -26,15 +28,6 @@ import {
   Size,
   Level
 } from "../../../../../hypium";
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-
 
 type F_args_type_evaluation = (p: string) => number
 type F_fcall_0 = (p: string) => number
@@ -59,12 +52,10 @@ interface User_fcall_18 {
 
 type LP_fcall_19 = () => User_fcall_18
 
-
 interface User_fcall_18_interface {
   name: string
   age: number
 }
-
 
 class A_fcall_1 {
   fld: number = 3.5
@@ -198,7 +189,6 @@ class C_fcall_many_params_6 {
   }
 }
 
-
 function eval0_args_type_evaluation(): string { return 'Hello World' }
 function eval1_args_type_evaluation(): int { return 100 }
 function eval2_args_type_evaluation(): boolean { return true }
@@ -270,7 +260,7 @@ function foo_fcall_many_params_5(k1: string, k2: string, k3: string, k4: string,
 function foo_fcall_many_params_6(k1: string, k2: string, k3: string, k4: string, k5: string, k6: string, k7: string, k8: string, lambda1?: () => void, lambda2?: () => void): boolean {
   return lambda2 == undefined
 }
-export default function ExpressionsFunctionCallTest() {
+export default function ExpressionsFunctionCallTest(): void {
   describe("ExpressionsFunctionCallTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -281,7 +271,7 @@ export default function ExpressionsFunctionCallTest() {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
@@ -502,7 +492,7 @@ export default function ExpressionsFunctionCallTest() {
       calls_fcall_12 = 0
       let ll: LT_fcall_12 = (s: Object, i: Object, b: Object) => foo_fcall_12(s, i, b)
       let r = ll("Hello", 42, true)
-      // 注意：ArkTS中 instanceof 检查可能需要调整
+      // 娉ㄦ剰锛欰rkTS涓?instanceof 妫€鏌ュ彲鑳介渶瑕佽皟鏁?
       expect(calls_fcall_12).assertEqual(1)
     })
 
