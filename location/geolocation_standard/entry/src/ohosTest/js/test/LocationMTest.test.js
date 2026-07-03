@@ -3478,9 +3478,9 @@ export default function geolocationTest_geo7() {
      * @tc.desc   Test off gnssFenceStatusChange returns error code 3301100 when location switch is off.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL1
      */
-    it('SUB_HSS_LOCATIONSYSTEM_GEOFENCE_OFF_3301100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+    it('SUB_HSS_LOCATIONSYSTEM_GEOFENCE_OFF_3301100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         var isAcessToken = canIUse("SystemCapability.Location.Location.Geofence");
         console.info("SUB_HSS_LOCATIONSYSTEM_GEOFENCE_OFF_3301100 : " + isAcessToken);
         if (!isAcessToken) {
@@ -3488,37 +3488,38 @@ export default function geolocationTest_geo7() {
             expect(isAcessToken).assertFalse();
             done();
         } else {
-            let geofence = {"latitude": 31.12, "longitude": 121.11, "radius": 100, "expiration": 10000, "coordinateSystemType": coordinate_WGS84};
-            let geofenceRequest = {"priority": request_priority_UNSET, "scenario": request_scenario_NAVIGATION, "geofence": geofence};
             try {
-                geolocationm.on('gnssFenceStatusChange', geofenceRequest,
-                    (want) => {
-                        console.info("[lbs_js] fenceStatusChange on callback result:" + JSON.stringify(want));
-                    });
+                geolocationm.disableLocation();
             } catch (error) {
-                console.info("[lbs_js] FenceStatusOn 3301100 try error:" + JSON.stringify(error));
-                if (error.code == "801") {
-                    expect(error.code).assertEqual("801");
-                } else if (error.code == "3301100") {
-                    expect(error.code).assertEqual("3301100");
-                } else {
-                    expect(error.code).assertEqual("401");
-                }
+                console.info("[lbs_js] disableLocation error." + JSON.stringify(error));
             }
+            await sleep(1000);
+            
+            let geofence = {"latitude": 31.12, "longitude": 121.11, "radius": 100, "expiration": 10000};
+            let geofenceRequest = {"scenario": request_scenario_NAVIGATION, "geofence": geofence};
+            
+            let wantAgentInfo = {
+                wants: [
+                    {
+                        bundleName: 'ohos.acts.location.geolocation.function',
+                        abilityName: 'EntryAbility',
+                        action: "action_geofence_test"
+                    }
+                ],
+                actionType: wantAgent.OperationType.START_ABILITY,
+                requestCode: 0,
+                wantAgentFlags: [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG]
+            };
+            
             try {
-                geolocationm.off('gnssFenceStatusChange', geofenceRequest,
-                    (want) => {
-                        console.info("[lbs_js] off fenceStatusChange callback result:" + JSON.stringify(want));
-                    });
+                let wantAgentObj = await wantAgent.getWantAgent(wantAgentInfo);
+                geolocationm.off('gnssFenceStatusChange', geofenceRequest, wantAgentObj);
+                console.info('[lbs_js] gnssFenceStatusChange off should return 3301100');
+                expect(true).assertFalse();
             } catch (error) {
-                console.info("[lbs_js] FenceStatusOff 3301100 try error:" + JSON.stringify(error));
-                if (error.code == "801") {
-                    expect(error.code).assertEqual("801");
-                } else if (error.code == "3301100") {
-                    expect(error.code).assertEqual("3301100");
-                } else {
-                    expect(error.code).assertEqual("401");
-                }
+                console.info("[lbs_js] SUB_HSS_LOCATIONSYSTEM_GEOFENCE_OFF_3301100 off try err." + JSON.stringify(error));
+                expect(error.code).assertEqual(3301100);
+                console.info('[lbs_js] gnssFenceStatusChange off return 3301100 success');
             }
             await sleep(1000);
             done();
