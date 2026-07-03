@@ -1,4 +1,4 @@
-﻿'use static'
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -38,7 +38,7 @@ export default function Float64ArrayMapTest(): void {
     })
 
     beforeEach(async (): Promise<void> => {
-      await Utils.msSleep(30)
+      await Utils.msSleep(30);
     })
 
     afterEach((): void => {
@@ -56,10 +56,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
       const twoValue: number = 2;
-      const arr = Float64Array.of(pointOne, maxSafeInteger);
+      const arr = new Float64Array([0.1, 9007199254740991]);
       const result = arr.map((val: number, index: int, array: Float64Array): number => {
         return val * 2.0;
       })
@@ -77,10 +75,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
       const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, onePointFive, 0.25]);
       const result = arr.map((val: number): number => {
         return val + 1.0;
       })
@@ -99,16 +95,16 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const twentyPointzero: number = 20.0;
+      const twentyPointZero: number = 20.0;
       const a: int = 10;
       const b: int = 20;
-      const arr = Float64Array.of(a, b);
+      const arr = new Float64Array([a, b]);
       const result = arr.map((val: number, index: int, array: Float64Array): number => {
         return val * 2.0;
       })
 
       const actVal2 = result.$_get(0);
-      const expectVal = twentyPointzero;
+      const expectVal = twentyPointZero;
       expect(actVal2).assertEqual(expectVal);
     })
 
@@ -121,9 +117,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
       const onePointZero: number = 1.0;
-      const arr = Float64Array.of(int16MinValue);
+      const arr = new Float64Array([-32768]);
       const result = arr.map((val: number): number => {
         return 1.0;
       })
@@ -142,9 +137,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
       const negonePointzero: number = -1.0;
-      const arr = Float64Array.of(int32MinValue);
+      const arr = Float64Array.of(-2147483648);
       const result = arr.map((val: number, index: int): number => {
         return -1.0;
       })
@@ -163,9 +157,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
       const zeroValue: number = 0;
-      const arr = Float64Array.of(pointOne);
+      const arr = Float64Array.of(0.1);
       const result = arr.map((val: number, index: int, array: Float64Array): number => {
         return 0.0;
       })
@@ -184,8 +177,7 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const arr = Float64Array.of(pointFive);
+      const arr = new Float64Array([0.5]);
       const result = arr.map((val: number): number => {
         return NaN;
       })
@@ -204,9 +196,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
       const positiveInfinity: number = Infinity;
-      const arr = Float64Array.of(int16MinValue);
+      const arr = new Float64Array([-32768]);
       const result = arr.map((val: number, index: int): number => {
         return Infinity;
       })
@@ -225,9 +216,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
       const negativeInfinity: number = -Infinity;
-      const arr = Float64Array.of(int32MinValue);
+      const arr = Float64Array.of(-2147483648);
       const result = arr.map((val: number, index: int, array: Float64Array): number => {
         return -Infinity;
       })
@@ -270,9 +260,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
       const doubleMinValue: number = 5e-324;
-      const arr = Float64Array.of(pointFive);
+      const arr = new Float64Array([0.5]);
       const result = arr.map((val: number, index: int): number => {
         return 5e-324;
       })
@@ -291,9 +280,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
       const maxSafeIntegerValue: number = 9007199254740991.0;
-      const arr = Float64Array.of(int16MinValue);
+      const arr = new Float64Array([-32768]);
       const result = arr.map((val: number, index: int, array: Float64Array): number => {
         return 9007199254740991.0;
       })
@@ -312,9 +300,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
       const sciValue10e308: number = 1.0e-308;
-      const arr = Float64Array.of(int32MinValue);
+      const arr = Float64Array.of(-2147483648);
       const result = arr.map((val: number): number => {
         return 1.0e-308;
       })
@@ -333,11 +320,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
       const twoValue: number = 2;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = new Float64Array([0.1, 9007199254740991, 0]);
       const result = arr.map((val: number, index: int): number => {
         return val + index;
       })
@@ -357,9 +341,7 @@ export default function Float64ArrayMapTest(): void {
      */
     it('testFloat64ArrayMap015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = Float64Array.of(pointFive, 1.5, 0.25);
       const result = arr.map((val: number, index: int): number => {
         return val * index;
       })
@@ -378,10 +360,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const zeroValue: number = 0;
       const negnum98304Value: number = -98304;
-      const arr = Float64Array.of(int16MinValue, -128, zeroValue);
+      const arr = new Float64Array([-32768, -128, 0]);
       const result = arr.map((val: number, index: int, array: Float64Array): number => {
         return val * array.length;
       })
@@ -400,10 +380,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
       const threeValue: number = 3;
-      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const arr = Float64Array.of(-2147483648, -1, 0);
       const result = arr.map((val: number, index: int, array: Float64Array): number => {
         return val + index + array.length;
       })
@@ -422,10 +400,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
       const twoValue: number = 2;
-      const arr = Float64Array.of(pointOne, maxSafeInteger);
+      const arr = new Float64Array([0.1, 9007199254740991]);
       let counter: int = 0;
       arr.map((val: number): number => {
         counter = counter + 1;
@@ -445,11 +421,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
       const fiveValue: number = 5;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       const mult: double = 10.0;
       const result = arr.map((val: number, index: int): number => {
         return val * mult;
@@ -469,8 +442,7 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const arr = Float64Array.of(int16MinValue, -128);
+      const arr = Float64Array.of(-32768, -128);
       const result = arr.map((val: number, index: int, array: Float64Array): number => {
         return val;
       })
@@ -489,8 +461,7 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const arr = Float64Array.of(int32MinValue, -1);
+      const arr = new Float64Array([-2147483648, -1]);
       const result = arr.map((val: number): number => {
         return val * 2.0;
       })
@@ -512,9 +483,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
       const negnum65535Value: number = -65535;
-      const arr = Float64Array.of(int16MinValue, -128);
+      const arr = Float64Array.of(-32768, -128);
       const result = arr.map((val: number): number => {
         return val * 2.0;
       }).map((val: number): number => {
@@ -535,9 +505,7 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const arr = Float64Array.of(-2147483648, -1, 0);
       const orig: number = arr.$_get(0);
       arr.map((val: number, index: int): number => {
         return val * 10.0;
@@ -557,11 +525,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
       const num90071992547409900Value: number = 90071992547409900;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = new Float64Array([0.1, 9007199254740991, 0]);
       const result = arr.map((val: number, index: int, array: Float64Array): number => {
         return val * 10.0;
       })
@@ -583,7 +548,7 @@ export default function Float64ArrayMapTest(): void {
       const threePointZero: number = 3.0;
       const a: double = 1.5;
       const b: double = 2.7;
-      const arr = Float64Array.of(a, b);
+      const arr = new Float64Array([a, b]);
       const result = arr.map((val: number): number => {
         return val * 2.0;
       })
@@ -641,9 +606,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
       const onePointFive: number = 1.5;
-      const arr = Float64Array.of(pointFive);
+      const arr = new Float64Array([0.5]);
       const result = arr.map((val: number, index: int): number => {
         return val * 3.0;
       })
@@ -662,9 +626,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
       const oneValue: number = 1;
-      const arr = Float64Array.of(int16MinValue);
+      const arr = new Float64Array([-32768]);
       let count: int = 0;
       arr.map((val: number, index: int, array: Float64Array): number => {
         count = count + 1;
@@ -684,12 +647,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const piValue: number = 3.141592653589793;
       const negsciValue2e100: number = -2e-100;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue, piValue, -1e-100);
+      const arr = Float64Array.of(0.1, 9007199254740991, 0, 3.141592653589793, -1e-100);
       const result = arr.map((val: number, index: int): number => {
         return val * 2.0;
       })
@@ -708,15 +667,9 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const pointOneTwoFive: number = 0.125;
-      const pointZeroSixTwoFive: number = 0.0625;
-      const zeroValue: number = 0;
       const sixValue: number = 6;
       const arr =
-        Float64Array.of(pointFive, onePointFive, pointTwoFive, pointOneTwoFive, pointZeroSixTwoFive, zeroValue);
+        new Float64Array([0.5, 1.5, 0.25, 0.125, 0.0625, 0]);
       let count: int = 0;
       arr.map((val: number, index: int, array: Float64Array): number => {
         count = count + 1;
@@ -736,12 +689,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const zeroValue: number = 0;
-      const int8MaxValue: number = 127;
-      const int16MaxValue: number = 32767;
       const fiveValue: number = 5;
-      const arr = Float64Array.of(int16MinValue, -128, zeroValue, int8MaxValue, int16MaxValue);
+      const arr = new Float64Array([-32768, -128, 0, 127, 32767]);
       const result = arr.map((val: number): number => {
         return val;
       })
@@ -759,9 +708,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
       const twoPointZero: number = 2.0;
-      const arr = Float64Array.of(NaN, onePointZero, twoPointZero);
+      const arr = Float64Array.of(NaN, 1.0, twoPointZero);
       const result = arr.map((val: number, index: int): number => {
         return Number.isNaN(val) ? val : val * 2.0;
       })
@@ -783,7 +731,7 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(Infinity, -Infinity);
+      const arr = new Float64Array([Infinity, -Infinity]);
       const result = arr.map((val: number, index: int, array: Float64Array): number => {
         return val === Infinity || val === -Infinity ? val : val * 2.0;
       })
@@ -806,7 +754,7 @@ export default function Float64ArrayMapTest(): void {
      */
     it('testFloat64ArrayMap035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const doubleMaxValue: number = 1.7976931348623157e+308;
-      const arr = Float64Array.of(doubleMaxValue);
+      const arr = new Float64Array([doubleMaxValue]);
       const result = arr.map((val: number): number => {
         return val;
       })
@@ -826,7 +774,7 @@ export default function Float64ArrayMapTest(): void {
      */
     it('testFloat64ArrayMap036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const doubleMinValue: number = 5e-324;
-      const arr = Float64Array.of(doubleMinValue, 1.0);
+      const arr = new Float64Array([doubleMinValue, 1.0]);
       const result = arr.map((val: number, index: int): number => {
         return val === doubleMinValue ? val : val * 2.0;
       })
@@ -872,9 +820,7 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const arr = Float64Array.of(pointOne, maxSafeInteger);
+      const arr = new Float64Array([0.1, 9007199254740991]);
       try {
         arr.map((val: number): number => {
           throw new RangeError("test");
@@ -895,9 +841,7 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const arr = Float64Array.of(pointFive, onePointFive);
+      const arr = Float64Array.of(0.5, 1.5);
       try {
         arr.map((val: number, index: int): number => {
           throw new TypeError("test");
@@ -918,8 +862,7 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const arr = Float64Array.of(int16MinValue, -128);
+      const arr = Float64Array.of(-32768, -128);
       try {
         arr.map((val: number, index: int, array: Float64Array): number => {
           throw new Error("test");
@@ -940,9 +883,7 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const arr = Float64Array.of(-2147483648, -1, 0);
       try {
         arr.map((val: number): number => {
           throw new Error("first");
@@ -963,10 +904,7 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = new Float64Array([0.1, 9007199254740991, 0]);
       try {
         arr.map((val: number, index: int): number => {
           if (index === 2) {
@@ -990,10 +928,7 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       const orig: number = arr.$_get(0);
       try {
         arr.map((val: number, index: int, array: Float64Array): number => {
@@ -1017,11 +952,10 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
       const zeroValue: number = 0;
       const negnum327680Value: number = -327680;
       const negnum1280Value: number = -1280;
-      const arr = Float64Array.of(int16MinValue, -128, zeroValue);
+      const arr = new Float64Array([-32768, -128, zeroValue]);
       const result = arr.map((val: number): number => {
         return val * 10.0;
       })
@@ -1046,9 +980,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
       const negnum1431655765Value: number = -1431655765;
-      const arr = Float64Array.of(int32MinValue, -1);
+      const arr = new Float64Array([-2147483648, -1]);
       const result = arr.map((v: number): number => {
         return v * 2.0;
       }).map((v: number): number => {
@@ -1071,11 +1004,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
       const threeValue: number = 3;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = new Float64Array([0.1, 9007199254740991, 0]);
       const result = arr.map((val: number, index: int): number => {
         return val * 2.0;
       })
@@ -1094,10 +1024,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
       const pointSeven: number = 0.7;
-      const arr = Float64Array.of(pointFive, onePointFive);
+      const arr = Float64Array.of(0.5, 1.5);
       const result = arr.map((val: number, index: int, array: Float64Array): number => {
         return val + 0.2;
       })
@@ -1140,8 +1068,7 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const arr = Float64Array.of(int32MinValue, -1);
+      const arr = new Float64Array([-2147483648, -1]);
       const result = arr.map((val: number, index: int): number => {
         return val * 2.0;
       })
@@ -1161,11 +1088,9 @@ export default function Float64ArrayMapTest(): void {
      */
     it('testFloat64ArrayMap050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
       const num9007199254741000Value: number = 9007199254741000;
       const twentyValue: number = 20;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = new Float64Array([pointOne, 9007199254740991, 0]);
       const result = arr.map((val: number, index: int, array: Float64Array): number => {
         return val + index * 10.0;
       })
@@ -1190,12 +1115,9 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
       const zeroPointsevenfive: number = 0.75;
       const factor: double = 3.0;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       const result = arr.map((val: number): number => {
         return val * factor;
       })
@@ -1214,10 +1136,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const zeroValue: number = 0;
       const negnum32896Value: number = -32896;
-      const arr = Float64Array.of(int16MinValue, -128, zeroValue);
+      const arr = new Float64Array([-32768, -128, 0]);
       let sum: double = 0.0;
       arr.map((val: number, index: int): number => {
         sum = sum + val;
@@ -1237,10 +1157,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
       const negnum4294967298Value: number = -4294967298;
-      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const arr = Float64Array.of(-2147483648, -1, 0);
       const result = arr.map((val: number, index: int, array: Float64Array): number => {
         return val * 2.0;
       })
@@ -1284,13 +1202,10 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
       const pointZeroSixTwoFive: number = 0.0625;
-      const pointTwoFive: number = 0.25;
-      const pointOneTwoFive: number = 0.125;
       const negativeHalfValue: number = -0.5;
       const negativeQuarterValue: number = -0.25;
-      const arr = Float64Array.of(pointFive, pointZeroSixTwoFive, pointTwoFive, pointOneTwoFive, pointZeroSixTwoFive);
+      const arr = new Float64Array([0.5, pointZeroSixTwoFive, 0.25, 0.125, pointZeroSixTwoFive]);
       const result = arr.map((val: number, index: int): number => {
         return val * -1.0;
       })
@@ -1357,9 +1272,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
       const negativeMaxSafeIntegerValue: number = -9007199254740991.0;
-      const arr = Float64Array.of(int16MinValue);
+      const arr = new Float64Array([-32768]);
       const result = arr.map((val: number): number => {
         return -9007199254740991.0;
       })
@@ -1378,9 +1292,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
       const sciValue10e308: number = 1.0e+308;
-      const arr = Float64Array.of(int32MinValue);
+      const arr = Float64Array.of(-2147483648);
       const result = arr.map((val: number, index: int): number => {
         return 1.0e+308;
       })
@@ -1400,7 +1313,7 @@ export default function Float64ArrayMapTest(): void {
      */
     it('testFloat64ArrayMap060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointOne: number = 0.1;
-      const arr = Float64Array.of(pointOne);
+      const arr = new Float64Array([pointOne]);
       const result = arr.map((val: number, index: int, array: Float64Array): number => {
         return 0.1;
       })
@@ -1419,9 +1332,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
       const negnum999999Pointninenine: number = -999999.99;
-      const arr = Float64Array.of(pointFive);
+      const arr = new Float64Array([0.5]);
       const result = arr.map((val: number): number => {
         return -999999.99;
       })
@@ -1440,9 +1352,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
       const sixteenPointzero: number = 16.0;
-      const arr = Float64Array.of(int16MinValue);
+      const arr = new Float64Array([-32768]);
       const result = arr.map((val: number, index: int): number => {
         return 16.0;
       })
@@ -1461,9 +1372,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
       const eightPointZero: number = 8.0;
-      const arr = Float64Array.of(int32MinValue);
+      const arr = Float64Array.of(-2147483648);
       const result = arr.map((val: number, index: int, array: Float64Array): number => {
         return 8.0;
       })
@@ -1482,8 +1392,7 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const onePointZero: number = 1.0;
-      const arr = Float64Array.of(0.0, onePointZero);
+      const arr = Float64Array.of(0.0, 1.0);
       const result = arr.map((val: number): number => {
         return val + 1.0;
       })
@@ -1502,7 +1411,7 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(NaN);
+      const arr = new Float64Array([NaN]);
       const result = arr.map((val: number, index: int): number => {
         return Number.isNaN(val) ? 0.0 : val * 2.0;
       })
@@ -1559,7 +1468,7 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(-1.0);
+      const arr = new Float64Array([-1.0]);
       const result = arr.map((val: number, index: int): number => {
         return Math.abs(val);
       })
@@ -1579,7 +1488,7 @@ export default function Float64ArrayMapTest(): void {
      */
     it('testFloat64ArrayMap069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const doubleMinValue: number = 5e-324;
-      const arr = Float64Array.of(doubleMinValue);
+      const arr = new Float64Array([doubleMinValue]);
       const result = arr.map((val: number, index: int, array: Float64Array): number => {
         return val * 3.0;
       })
@@ -1598,12 +1507,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const zeroValue: number = 0;
-      const oneValue: number = 1;
-      const int32MaxValue: number = 2147483647;
       const num2147483651Value: number = 2147483651;
-      const arr = Float64Array.of(int32MinValue, -1, zeroValue, oneValue, int32MaxValue);
+      const arr = new Float64Array([-2147483648, -1, 0, 1, 2147483647]);
       const result = arr.map((val: number, index: int): number => {
         return val + index;
       })
@@ -1622,10 +1527,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
       const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const arr = Float64Array.of(0.1, maxSafeInteger, 0);
       const result = arr.map((val: number, index: int, array: Float64Array): number => {
         return array.$_get(index);
       })
@@ -1644,9 +1547,7 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const arr = Float64Array.of(pointFive, onePointFive);
+      const arr = Float64Array.of(0.5, 1.5);
       const result = arr.map((val: number, index: int, array: Float64Array): number => {
         return val * 2.0;
       })
@@ -1669,8 +1570,7 @@ export default function Float64ArrayMapTest(): void {
      */
     it('testFloat64ArrayMap073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const int16MinValue: number = -32768;
-      const zeroValue: number = 0;
-      const arr = Float64Array.of(int16MinValue, -128, zeroValue);
+      const arr = Float64Array.of(int16MinValue, -128, 0);
       const result = arr.map((val: number, index: int, array: Float64Array): number => {
         return val + array.$_get(0);
       })
@@ -1689,9 +1589,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
       const twoValue: number = 2;
-      const arr = Float64Array.of(int32MinValue, -1);
+      const arr = new Float64Array([-2147483648, -1]);
       let count: int = 0;
       arr.map((val: number, index: int, array: Float64Array): number => {
         count = count + 1;
@@ -1711,9 +1610,7 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const arr = Float64Array.of(pointOne, maxSafeInteger);
+      const arr = new Float64Array([0.1, 9007199254740991]);
       const result = arr.map((val: number): number => {
         return val * 2.0;
       })
@@ -1735,9 +1632,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
       const zeroValue: number = 0;
-      const arr = Float64Array.of(int32MinValue, -1, zeroValue);
+      const arr = new Float64Array([-2147483648, -1, zeroValue]);
       const result = arr.map((val: number): number => {
         return val * -1.0;
       })
@@ -1759,7 +1655,7 @@ export default function Float64ArrayMapTest(): void {
       const threePointZero: number = 3.0;
       const a: double = 1.5;
       const b: double = 2.5;
-      const arr = Float64Array.of(a, b);
+      const arr = new Float64Array([a, b]);
       const result = arr.map((val: number, index: int, array: Float64Array): number => {
         return val * 2.0;
       })
@@ -1781,7 +1677,7 @@ export default function Float64ArrayMapTest(): void {
       const twoPointfoursixeight: number = 2.468;
       const a: double = 1.234;
       const b: double = 2.345;
-      const arr = Float64Array.of(a, b);
+      const arr = new Float64Array([a, b]);
       const result = arr.map((val: number): number => {
         return val * 2.0;
       })
@@ -1800,11 +1696,7 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
-      const pointOneTwoFive: number = 0.125;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive, pointOneTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25, 0.125]);
       try {
         arr.map((val: number, index: int): number => {
           if (index === 2) {
@@ -1828,8 +1720,7 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const arr = Float64Array.of(int16MinValue, -128);
+      const arr = Float64Array.of(-32768, -128);
       try {
         arr.map((val: number, index: int, array: Float64Array): number => {
           throw new SyntaxError("test");
@@ -1850,8 +1741,7 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const arr = Float64Array.of(int32MinValue, -1);
+      const arr = new Float64Array([-2147483648, -1]);
       try {
         arr.map((val: number): number => {
           throw new ReferenceError("test");
@@ -1872,9 +1762,7 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const arr = Float64Array.of(pointOne, maxSafeInteger);
+      const arr = new Float64Array([0.1, 9007199254740991]);
       try {
         arr.map((val: number, index: int): number => {
           throw new EvalError("test");
@@ -1895,9 +1783,7 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const arr = Float64Array.of(pointFive, onePointFive);
+      const arr = Float64Array.of(0.5, 1.5);
       try {
         arr.map((val: number, index: int, array: Float64Array): number => {
           throw new URIError("test");
@@ -1918,8 +1804,7 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const arr = Float64Array.of(int16MinValue);
+      const arr = new Float64Array([-32768]);
       try {
         arr.map((val: number): number => {
           throw new Error();
@@ -1940,8 +1825,7 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const arr = Float64Array.of(int32MinValue);
+      const arr = Float64Array.of(-2147483648);
       const result = arr.map((val: number, index: int): number => {
         return val + 0.2;
       })
@@ -1960,12 +1844,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
-      const piValue: number = 3.141592653589793;
       const fourValue: number = 4;
-      const arr = Float64Array.of(pointOne, maxSafeInteger, zeroValue, piValue);
+      const arr = Float64Array.of(0.1, 9007199254740991, 0, 3.141592653589793);
       const result = arr.map((v: number): number => {
         return v * 2.0;
       })
@@ -1983,11 +1863,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
       const threeValue: number = 3;
-      const arr = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const arr = new Float64Array([0.5, 1.5, 0.25]);
       const result = arr.map((val: number, index: int, array: Float64Array): number => {
         try {
           return val * 2.0;
@@ -2010,9 +1887,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const byteMaxValue: number = 127;
       const num128Value: number = 128;
-      const arr = Float64Array.of(byteMaxValue);
+      const arr = new Float64Array([127]);
       const result = arr.map((val: number): number => {
         return val + 1.0;
       })
@@ -2031,9 +1907,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const shortMaxValue: number = 32767;
       const num65534Value: number = 65534;
-      const arr = Float64Array.of(shortMaxValue);
+      const arr = new Float64Array([32767]);
       const result = arr.map((val: number, index: int): number => {
         return val * 2.0;
       })
@@ -2052,9 +1927,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const intMaxValue: number = 2147483647;
       const num2147483646Value: number = 2147483646;
-      const arr = Float64Array.of(intMaxValue);
+      const arr = Float64Array.of(2147483647);
       const result = arr.map((val: number, index: int, array: Float64Array): number => {
         return val - 1.0;
       })
@@ -2093,7 +1967,7 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(-1.0, -2.0, -3.0, -4.0, -5.0);
+      const arr = new Float64Array([-1.0, -2.0, -3.0, -4.0, -5.0]);
       const result = arr.map((val: number): number => {
         return val * -1.0;
       })
@@ -2168,7 +2042,7 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(1.0, 0.5, 2.0);
+      const arr = new Float64Array([1.0, 0.5, 2.0]);
       const result = arr.map((val: number, index: int): number => {
         return val * 2.0;
       })
@@ -2216,7 +2090,7 @@ export default function Float64ArrayMapTest(): void {
     it('testFloat64ArrayMap097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const octalValue10: number = 0o10;
       const octalValue20: number = 0o20;
-      const arr = Float64Array.of(octalValue10, octalValue20);
+      const arr = new Float64Array([octalValue10, octalValue20]);
       const result = arr.map((val: number): number => {
         return val + 1.0;
       })
@@ -2262,7 +2136,7 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(1.0e-10, 2.0e5, 3.0e-20);
+      const arr = new Float64Array([1.0e-10, 2.0e5, 3.0e-20]);
       const result = arr.map((val: number, index: int, array: Float64Array): number => {
         return val * 2.0;
       })
@@ -2284,10 +2158,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
-      const zeroValue: number = 0;
       const negnum65536Value: number = -65536;
-      const arr = Float64Array.of(int16MinValue, -128, zeroValue);
+      const arr = new Float64Array([-32768, -128, 0]);
       const result = arr.map((val: number): number => {
         return val * 2.0;
       })
@@ -2309,7 +2181,7 @@ export default function Float64ArrayMapTest(): void {
     it('testFloat64ArrayMap101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroValue: number = 0;
       const twoValue: number = 2;
-      const arr = Float64Array.of(zeroValue, zeroValue, zeroValue);
+      const arr = new Float64Array([zeroValue, zeroValue, zeroValue]);
       const result = arr.map((val: number, index: int): number => {
         return index;
       })
@@ -2332,7 +2204,7 @@ export default function Float64ArrayMapTest(): void {
      */
     it('testFloat64ArrayMap102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroValue: number = 0;
-      const arr = Float64Array.of(zeroValue, zeroValue, zeroValue);
+      const arr = new Float64Array([zeroValue, zeroValue, zeroValue]);
       const result = arr.map((val: number, index: int, array: Float64Array): number => {
         return val * array.length;
       })
@@ -2351,7 +2223,7 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Float64Array.of(NaN, NaN, NaN);
+      const arr = new Float64Array([NaN, NaN, NaN]);
       const result = arr.map((val: number): number => {
         return Number.isNaN(val) ? val : val * 2.0;
       })
@@ -2374,7 +2246,7 @@ export default function Float64ArrayMapTest(): void {
      */
     it('testFloat64ArrayMap104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const doubleMaxValue: number = 1.7976931348623157e+308;
-      const arr = Float64Array.of(doubleMaxValue, doubleMaxValue, doubleMaxValue);
+      const arr = new Float64Array([doubleMaxValue, doubleMaxValue, doubleMaxValue]);
       const result = arr.map((val: number, index: int): number => {
         return val === doubleMaxValue ? val : val * 2.0;
       })
@@ -2420,13 +2292,10 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
       const threeValue: number = 3;
       const onePointone: number = 1.1;
       const oneValue: number = 1;
-      const values = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const values = new Float64Array([0.1, 9007199254740991, 0]);
       const mapped = values.map((val, index, array) => val + 1);
       expect(mapped.length).assertEqual(threeValue);
       expect(mapped[0]).assertEqual(onePointone);
@@ -2442,11 +2311,9 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
       const oneValue: number = 1;
       const threeValue: number = 3;
-      const values = Float64Array.of(pointFive, onePointFive);
+      const values = new Float64Array([0.5, 1.5]);
       const mapped = values.map((val) => val * 2);
       expect(mapped[0]).assertEqual(oneValue);
       expect(mapped[1]).assertEqual(threeValue);
@@ -2461,7 +2328,7 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const values = Float64Array.of(NaN, 1.0);
+      const values = new Float64Array([NaN, 1.0]);
       const mapped = values.map((val: number): number => Number.isNaN(val) ? 0.0 : val);
       expect(mapped[0]).assertEqual(0.0);
       expect(mapped[1]).assertEqual(1.0);
@@ -2491,11 +2358,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const maxSafeInteger: number = 9007199254740991;
-      const zeroValue: number = 0;
       const zeroPointZero: number = 0.0;
-      const values = Float64Array.of(pointOne, maxSafeInteger, zeroValue);
+      const values = new Float64Array([0.1, 9007199254740991, 0]);
       const mapped = values.map((val) => 0.0);
       expect(mapped[0]).assertEqual(zeroPointZero);
       expect(mapped[2]).assertEqual(zeroPointZero);
@@ -2527,11 +2391,9 @@ export default function Float64ArrayMapTest(): void {
      */
     it('testFloat64ArrayMap112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const pointTwoFive: number = 0.25;
       const twoPointFive: number = 2.5;
       const twoPointtwofive: number = 2.25;
-      const values = Float64Array.of(pointFive, onePointFive, pointTwoFive);
+      const values = new Float64Array([pointFive, 1.5, 0.25]);
       const mapped = values.map((val, index) => val + index);
       expect(mapped[0]).assertEqual(pointFive);
       expect(mapped[1]).assertEqual(twoPointFive);
@@ -2547,9 +2409,8 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
       const negnum65536Value: number = -65536;
-      const values = Float64Array.of(int16MinValue, -128);
+      const values = new Float64Array([-32768, -128]);
       const mapped = values.map((val) => val * 2);
       values[0] = 999.0;
       const expectVal = negnum65536Value;
@@ -2565,8 +2426,7 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int32MinValue: number = -2147483648;
-      const values = Float64Array.of(int32MinValue, -1);
+      const values = new Float64Array([-2147483648, -1]);
       try {
         values.map((val) => {
           throw new Error("test");
@@ -2587,8 +2447,7 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const maxValue: number = 1.7976931348623157e+308;
-      const values = Float64Array.of(maxValue);
+      const values = new Float64Array([1.7976931348623157e+308]);
       const mapped = values.map((val: number): number => val * 2.0);
       const expectVal = Infinity;
       expect(mapped[0]).assertEqual(expectVal);
@@ -2619,10 +2478,9 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const int16MinValue: number = -32768;
       const num32768Value: number = 32768;
       const num128Value: number = 128;
-      const values = Float64Array.of(int16MinValue, -128);
+      const values = new Float64Array([-32768, -128]);
       const mapped = values.map((val) => -val);
       expect(mapped[0]).assertEqual(num32768Value);
       expect(mapped[1]).assertEqual(num128Value);
@@ -2759,8 +2617,7 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointOne: number = 0.1;
-      const arr = Float64Array.of(pointOne);
+      const arr = Float64Array.of(0.1);
       const types: Array<string> = [];
       arr.map((val: number, index: int): number => {
         types.push(typeof index);
@@ -2779,9 +2636,7 @@ export default function Float64ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayMap126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const pointFive: number = 0.5;
-      const onePointFive: number = 1.5;
-      const arr = Float64Array.of(pointFive, onePointFive);
+      const arr = Float64Array.of(0.5, 1.5);
       let callbackArr: Float64Array = new Float64Array(0);
       arr.map((val: number, index: int, array: Float64Array): number => {
         callbackArr = array;
@@ -2806,7 +2661,7 @@ export default function Float64ArrayMapTest(): void {
     it('testFloat64ArrayMap127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pointFive: number = 0.5;
       const onePointFive: number = 1.5;
-      const arr = Float64Array.of(pointFive, onePointFive);
+      const arr = new Float64Array([pointFive, onePointFive]);
       const result = arr.map((val: number): number => {
         return val;
       })
