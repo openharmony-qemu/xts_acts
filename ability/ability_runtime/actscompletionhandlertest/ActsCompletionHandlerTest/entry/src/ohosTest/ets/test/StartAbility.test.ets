@@ -558,7 +558,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
       if(isOpen){
         await sleep(500);
         try {
-          await openDialog('暂无可用打开方式', '知道了');
+          await openDialog('暂无可用打开方式', '知道了', done);
         } catch (e) {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0500 openDialog failed, ${JSON.stringify(e)}`);
           expect().assertFail();
