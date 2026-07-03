@@ -123,14 +123,14 @@ function fnReturnBigInt(): BigInt {
 export default function BigIntTypeAliasTest_2(): void {
   describe('BigIntTypeAliasTest_2', () => {
     /**
-     * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0001
-     * @tc.name testBigIntTypeAliasDoubleAssign0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BIGINT_ALIAS_0100
+     * @tc.name testBigIntBigIntAliasTest001
      * @tc.desc const bigint = BigInt(double) and BigInt(long min / int min)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntTypeAliasDoubleAssign0001', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBigIntAliasTest001', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const fromDouble: bigint = BigInt(100.0);
       expect(fromDouble.toString()).assertEqual('100');
       const fromSci: bigint = BigInt(1e10);
@@ -142,14 +142,14 @@ export default function BigIntTypeAliasTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0002
-     * @tc.name testBigIntTypeAliasReassignDiffType0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BIGINT_ALIAS_0200
+     * @tc.name testBigIntBigIntAliasTest002
      * @tc.desc let bigint reassign with different source types
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntTypeAliasReassignDiffType0002', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBigIntAliasTest002', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let v: bigint = BigInt(100);
       expect(v.toString()).assertEqual('100');
       v = BigInt('999');
@@ -161,14 +161,14 @@ export default function BigIntTypeAliasTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0003
-     * @tc.name testBigIntTypeAliasMultiDeclare0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BIGINT_ALIAS_0300
+     * @tc.name testBigIntBigIntAliasTest003
      * @tc.desc multiple bigint declarations and direct assign
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntTypeAliasMultiDeclare0003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBigIntAliasTest003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a: bigint = BigInt(1);
       const b: bigint = BigInt(2);
       const c: bigint = BigInt(3);
@@ -179,14 +179,14 @@ export default function BigIntTypeAliasTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0004
-     * @tc.name testBigIntTypeAliasMixedWithBigInt0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BIGINT_ALIAS_0400
+     * @tc.name testBigIntBigIntAliasTest004
      * @tc.desc bigint mixed with BigInt variable in expression and direct assign
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntTypeAliasMixedWithBigInt0004', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBigIntAliasTest004', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const b: bigint = BigInt(10);
       const B: BigInt = BigInt(20);
       const r: bigint = b.operatorAdd(B);
@@ -197,14 +197,14 @@ export default function BigIntTypeAliasTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0005
-     * @tc.name testBigIntTypeAliasConstructorStr0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BIGINT_ALIAS_0500
+     * @tc.name testBigIntBigIntAliasTest005
      * @tc.desc bigint from string with + sign, leading zero, large copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntTypeAliasConstructorStr0005', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBigIntAliasTest005', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const fromSignedStr: bigint = BigInt('+12345');
       expect(fromSignedStr.toString()).assertEqual('12345');
       const fromLeadingZero: bigint = BigInt('007');
@@ -215,14 +215,14 @@ export default function BigIntTypeAliasTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0006
-     * @tc.name testBigIntTypeAliasToStringRadix0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BIGINT_ALIAS_0600
+     * @tc.name testBigIntBigIntAliasTest006
      * @tc.desc bigint.toString with radix parameters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntTypeAliasToStringRadix0006', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBigIntAliasTest006', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const v: bigint = BigInt(255);
       expect(v.toString(16)).assertEqual('ff');
       expect(v.toString(2)).assertEqual('11111111');
@@ -234,14 +234,14 @@ export default function BigIntTypeAliasTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0007
-     * @tc.name testBigIntTypeAliasValueOfEdge0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BIGINT_ALIAS_0700
+     * @tc.name testBigIntBigIntAliasTest007
      * @tc.desc bigint.valueOf with zero, negative and chaining
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntTypeAliasValueOfEdge0007', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBigIntAliasTest007', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const v: bigint = BigInt(999);
       const r: bigint = v.valueOf();
       expect(v.equals(r)).assertTrue();
@@ -257,14 +257,14 @@ export default function BigIntTypeAliasTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0008
-     * @tc.name testBigIntTypeAliasEqualsFull0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BIGINT_ALIAS_0800
+     * @tc.name testBigIntBigIntAliasTest008
      * @tc.desc bigint.equals with various scenarios
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntTypeAliasEqualsFull0008', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBigIntAliasTest008', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a: bigint = BigInt(100);
       const b: bigint = BigInt(200);
       expect(a.equals(b)).assertFalse();
@@ -279,14 +279,14 @@ export default function BigIntTypeAliasTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0009
-     * @tc.name testBigIntTypeAliasToLocaleString0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BIGINT_ALIAS_0900
+     * @tc.name testBigIntBigIntAliasTest009
      * @tc.desc bigint.toLocaleString with locales and options
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntTypeAliasToLocaleString0009', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBigIntAliasTest009', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const v1: bigint = BigInt(12345);
       const s1: string = v1.toLocaleString();
       expect(s1.length > 0).assertTrue();
@@ -299,14 +299,14 @@ export default function BigIntTypeAliasTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0010
-     * @tc.name testBigIntTypeAliasArithmeticFull0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BIGINT_ALIAS_1000
+     * @tc.name testBigIntBigIntAliasTest010
      * @tc.desc bigint arithmetic: subtract, multiply, divide, modulo
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntTypeAliasArithmeticFull0010', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBigIntAliasTest010', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a100: bigint = BigInt(100);
       const a55: bigint = BigInt(55);
       const sub: bigint = a100.operatorSubtract(a55);
@@ -324,14 +324,14 @@ export default function BigIntTypeAliasTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0011
-     * @tc.name testBigIntTypeAliasArithmeticEdge0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BIGINT_ALIAS_1100
+     * @tc.name testBigIntBigIntAliasTest011
      * @tc.desc bigint arithmetic edge: subtract negative, add negatives, mul zero, div one, immutability
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntTypeAliasArithmeticEdge0011', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBigIntAliasTest011', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const v10: bigint = BigInt(10);
       const negRes: bigint = v10.operatorSubtract(100n);
       expect(negRes.toString()).assertEqual('-90');
@@ -354,14 +354,14 @@ export default function BigIntTypeAliasTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0012
-     * @tc.name testBigIntTypeAliasBigArith0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BIGINT_ALIAS_1200
+     * @tc.name testBigIntBigIntAliasTest012
      * @tc.desc bigint arithmetic with large numbers beyond long range
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntTypeAliasBigArith0012', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBigIntAliasTest012', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const bigA: bigint = BigInt('9007199254740993');
       const bigB: bigint = BigInt('9007199254740993');
       const bigAdd: bigint = bigA.operatorAdd(bigB);
@@ -373,14 +373,14 @@ export default function BigIntTypeAliasTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0013
-     * @tc.name testBigIntTypeAliasIncrDecr0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BIGINT_ALIAS_1300
+     * @tc.name testBigIntBigIntAliasTest013
      * @tc.desc bigint operatorIncrement and operatorDecrement
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntTypeAliasIncrDecr0013', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBigIntAliasTest013', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const v1: bigint = BigInt(1);
       const inc: bigint = v1.operatorIncrement();
       expect(inc.toString()).assertEqual('2');
@@ -399,14 +399,14 @@ export default function BigIntTypeAliasTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0014
-     * @tc.name testBigIntTypeAliasBitwise0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BIGINT_ALIAS_1400
+     * @tc.name testBigIntBigIntAliasTest014
      * @tc.desc bigint bitwise operators: and, or, xor, not, left shift, right shift
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntTypeAliasBitwise0014', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBigIntAliasTest014', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a12: bigint = BigInt(12);
       const a5: bigint = BigInt(5);
       const andR: bigint = a12.operatorBitwiseAnd(a5);
@@ -429,14 +429,14 @@ export default function BigIntTypeAliasTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0015
-     * @tc.name testBigIntTypeAliasBitwiseEdge0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BIGINT_ALIAS_1500
+     * @tc.name testBigIntBigIntAliasTest015
      * @tc.desc bigint bitwise edge: immutability, shift zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntTypeAliasBitwiseEdge0015', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBigIntAliasTest015', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a12: bigint = BigInt(12);
       const a5: bigint = BigInt(5);
       a12.operatorBitwiseAnd(a5);
@@ -450,14 +450,14 @@ export default function BigIntTypeAliasTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0016
-     * @tc.name testBigIntTypeAliasComparison0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BIGINT_ALIAS_1600
+     * @tc.name testBigIntBigIntAliasTest016
      * @tc.desc bigint comparison: gt, lt, ge, le, zero/neg/large
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntTypeAliasComparison0016', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBigIntAliasTest016', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a100: bigint = BigInt(100);
       const a50: bigint = BigInt(50);
       expect(a100.operatorGreaterThan(a50)).assertTrue();
@@ -484,14 +484,14 @@ export default function BigIntTypeAliasTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0017
-     * @tc.name testBigIntTypeAliasConversion0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BIGINT_ALIAS_1700
+     * @tc.name testBigIntBigIntAliasTest017
      * @tc.desc bigint type conversion: doubleValue, getLong, getULong
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntTypeAliasConversion0017', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBigIntAliasTest017', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const v42: bigint = BigInt(42);
       const d: double = v42.doubleValue();
       expect(d).assertEqual(42.0);
@@ -516,14 +516,14 @@ export default function BigIntTypeAliasTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0018
-     * @tc.name testBigIntTypeAliasUtility0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BIGINT_ALIAS_1800
+     * @tc.name testBigIntBigIntAliasTest018
      * @tc.desc bigint utility: negative, positive, negate, pow
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntTypeAliasUtility0018', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBigIntAliasTest018', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const negV: bigint = BigInt(-5);
       expect(negV.negative()).assertTrue();
       const posV: bigint = BigInt(10);
@@ -549,14 +549,14 @@ export default function BigIntTypeAliasTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0019
-     * @tc.name testBigIntTypeAliasFunctionParamReturn0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BIGINT_ALIAS_1900
+     * @tc.name testBigIntBigIntAliasTest019
      * @tc.desc bigint as function parameter type and return type (module-level helpers)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntTypeAliasFunctionParamReturn0019', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBigIntAliasTest019', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(fnParam(BigInt(42))).assertEqual('42');
       const r: bigint = fnReturn();
       expect(r.toString()).assertEqual('777');
@@ -568,14 +568,14 @@ export default function BigIntTypeAliasTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0020
-     * @tc.name testBigIntTypeAliasFunctionDefault0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BIGINT_ALIAS_2000
+     * @tc.name testBigIntBigIntAliasTest020
      * @tc.desc bigint as function default parameter and multi-parameter
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntTypeAliasFunctionDefault0020', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBigIntAliasTest020', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(defaultFn()).assertEqual('10');
       expect(defaultFn(BigInt(99))).assertEqual('99');
       const r: bigint = sumTwo(BigInt(30), BigInt(12));
@@ -583,14 +583,14 @@ export default function BigIntTypeAliasTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0021
-     * @tc.name testBigIntTypeAliasFunctionHigher0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BIGINT_ALIAS_2100
+     * @tc.name testBigIntBigIntAliasTest021
      * @tc.desc higher-order function with bigint and immutability
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntTypeAliasFunctionHigher0021', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBigIntAliasTest021', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const result: string = higher((v: bigint): string => v.toString(), BigInt(42));
       expect(result).assertEqual('42');
       const src: bigint = BigInt(50);
@@ -601,14 +601,14 @@ export default function BigIntTypeAliasTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0022
-     * @tc.name testBigIntTypeAliasArray0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BIGINT_ALIAS_2200
+     * @tc.name testBigIntBigIntAliasTest022
      * @tc.desc bigint array: declaration, access, traversal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntTypeAliasArray0022', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBigIntAliasTest022', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr: bigint[] = [BigInt(1), BigInt(2), BigInt(3)];
       expect(arr.length).assertEqual(3);
       const elem: bigint = arr[0];
@@ -623,14 +623,14 @@ export default function BigIntTypeAliasTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0023
-     * @tc.name testBigIntTypeAliasArray2dMap0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BIGINT_ALIAS_2300
+     * @tc.name testBigIntBigIntAliasTest023
      * @tc.desc bigint 2d array, array as param, map
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntTypeAliasArray2dMap0023', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBigIntAliasTest023', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const matrix: bigint[][] = [[BigInt(1), BigInt(2)], [BigInt(3), BigInt(4)]];
       expect(matrix[0][1].toString()).assertEqual('2');
       expect(matrix[1][0].toString()).assertEqual('3');
@@ -642,14 +642,14 @@ export default function BigIntTypeAliasTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0024
-     * @tc.name testBigIntTypeAliasClassFieldMethod0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BIGINT_ALIAS_2400
+     * @tc.name testBigIntBigIntAliasTest024
      * @tc.desc bigint as class field, method parameter/return, constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntTypeAliasClassFieldMethod0024', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBigIntAliasTest024', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const b: TypeAliasBox = new TypeAliasBox();
       b.val = BigInt(42);
       expect(b.val.toString()).assertEqual('42');
@@ -662,14 +662,14 @@ export default function BigIntTypeAliasTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0025
-     * @tc.name testBigIntTypeAliasInterfaceInheritGetSet0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BIGINT_ALIAS_2500
+     * @tc.name testBigIntBigIntAliasTest025
      * @tc.desc bigint in interface, inheritance, getter/setter
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntTypeAliasInterfaceInheritGetSet0025', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBigIntAliasTest025', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const obj: HasValue = { val: BigInt(999) };
       expect(obj.val.toString()).assertEqual('999');
       const op: Operator = {
@@ -687,14 +687,14 @@ export default function BigIntTypeAliasTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0026
-     * @tc.name testBigIntTypeAliasChaining0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BIGINT_ALIAS_2600
+     * @tc.name testBigIntBigIntAliasTest026
      * @tc.desc bigint method chaining
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntTypeAliasChaining0026', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBigIntAliasTest026', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const v10: bigint = BigInt(10);
       const chain1: bigint = v10.operatorAdd(5n).operatorMultiply(2n);
       expect(chain1.toString()).assertEqual('30');
@@ -713,14 +713,14 @@ export default function BigIntTypeAliasTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0027
-     * @tc.name testBigIntTypeAliasChainMore0027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BIGINT_ALIAS_2700
+     * @tc.name testBigIntBigIntAliasTest027
      * @tc.desc bigint chain: Add-Divide-toString, asIntN chain
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntTypeAliasChainMore0027', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBigIntAliasTest027', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const v2: bigint = BigInt(2);
       const len: int = v2.pow(10n).toString().length;
       expect(len > 0).assertTrue();
@@ -730,14 +730,14 @@ export default function BigIntTypeAliasTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0028
-     * @tc.name testBigIntTypeAliasStaticMore0028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BIGINT_ALIAS_2800
+     * @tc.name testBigIntBigIntAliasTest028
      * @tc.desc BigInt static methods with bigint type: fromULong, asIntN/asUintN with bigint source, zero-bit
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntTypeAliasStaticMore0028', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBigIntAliasTest028', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const fromUL1: bigint = BigInt.fromULong(-1);
       expect(fromUL1.toString()).assertEqual('18446744073709551615');
       const fromUL2: bigint = BigInt.fromULong(127);
@@ -759,14 +759,14 @@ export default function BigIntTypeAliasTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0029
-     * @tc.name testBigIntTypeAliasTypeCompat0029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BIGINT_ALIAS_2900
+     * @tc.name testBigIntBigIntAliasTest029
      * @tc.desc bigint/BigInt type compatibility: param BigInt accepts bigint, return bigint, equals
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntTypeAliasTypeCompat0029', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBigIntAliasTest029', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const b: bigint = BigInt(42);
       expect(fnBigIntParam(b)).assertEqual('42');
       const ret: bigint = fnReturnBigInt();
@@ -779,14 +779,14 @@ export default function BigIntTypeAliasTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0030
-     * @tc.name testBigIntTypeAliasAliasSemantics0030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BIGINT_ALIAS_3000
+     * @tc.name testBigIntBigIntAliasTest030
      * @tc.desc alias semantics: type alias, instanceof, typeof, union type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntTypeAliasAliasSemantics0030', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBigIntAliasTest030', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const v: MyBig = BigInt(100);
       expect(v.toString()).assertEqual('100');
       expect(v instanceof BigInt).assertTrue();
@@ -798,14 +798,14 @@ export default function BigIntTypeAliasTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0031
-     * @tc.name testBigIntTypeAliasHolderGeneric0031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BIGINT_ALIAS_3100
+     * @tc.name testBigIntBigIntAliasTest031
      * @tc.desc Holder class with bigint, shared reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntTypeAliasHolderGeneric0031', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBigIntAliasTest031', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const h = new Holder(BigInt(42));
       expect(h.v.toString()).assertEqual('42');
       const src: BigInt = new BigInt(42);
@@ -815,14 +815,14 @@ export default function BigIntTypeAliasTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0032
-     * @tc.name testBigIntTypeAliasEdgeLoop0032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BIGINT_ALIAS_3200
+     * @tc.name testBigIntBigIntAliasTest032
      * @tc.desc bigint in loop accumulation and cross assignment
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntTypeAliasEdgeLoop0032', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBigIntAliasTest032', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let sum: bigint = BigInt(0);
       for (let i: int = 1; i <= 10; i++) {
         sum = sum.operatorAdd(BigInt(i));
@@ -837,14 +837,14 @@ export default function BigIntTypeAliasTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0033
-     * @tc.name testBigIntTypeAliasEdgeTernaryDestructure0033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BIGINT_ALIAS_3300
+     * @tc.name testBigIntBigIntAliasTest033
      * @tc.desc bigint in ternary expression and destructuring assignment
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntTypeAliasEdgeTernaryDestructure0033', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBigIntAliasTest033', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const flag: boolean = true;
       const v: bigint = flag ? BigInt(100) : BigInt(200);
       expect(v.toString()).assertEqual('100');
@@ -855,14 +855,14 @@ export default function BigIntTypeAliasTest_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0034
-     * @tc.name testBigIntTypeAliasEdgeSelfDivideIf0034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BIGINT_ALIAS_3400
+     * @tc.name testBigIntBigIntAliasTest034
      * @tc.desc bigint divide by self, if-condition compare
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntTypeAliasEdgeSelfDivideIf0034', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBigIntAliasTest034', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const val: bigint = BigInt(100);
       const selfDiv: bigint = val.operatorDivide(val);
       expect(selfDiv.toString()).assertEqual('1');

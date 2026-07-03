@@ -19,14 +19,14 @@ import { TestType, Size, Level } from '../../../../hypium/Constant';
 export default function BigIntToString1Test_2(): void {
   describe('BigIntToString1Test_2', () => {
     /**
-     * @tc.number SUB_BIGINT_STD_TOSTRING_1_0001
-     * @tc.name testBigIntToString1ZeroVariants0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOSTRING_1_0100
+     * @tc.name testBigIntToString1Test001
      * @tc.desc Verify no-arg toString returns 0 for zero from different constructors
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString1ZeroVariants0001', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString1Test001', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt('0').toString()).assertEqual('0');
       expect(BigInt('-0').toString()).assertEqual('0');
       expect(BigInt('000').toString()).assertEqual('0');
@@ -39,14 +39,14 @@ export default function BigIntToString1Test_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOSTRING_1_0002
-     * @tc.name testBigIntToString1ExhaustiveSmall0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOSTRING_1_0200
+     * @tc.name testBigIntToString1Test002
      * @tc.desc Verify no-arg toString for every integer from -5 to 5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString1ExhaustiveSmall0002', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString1Test002', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(-5).toString()).assertEqual('-5');
       expect(BigInt(-4).toString()).assertEqual('-4');
       expect(BigInt(-3).toString()).assertEqual('-3');
@@ -61,41 +61,41 @@ export default function BigIntToString1Test_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOSTRING_1_0003
-     * @tc.name testBigIntToString1UltraLarge0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOSTRING_1_0300
+     * @tc.name testBigIntToString1Test003
      * @tc.desc Verify no-arg toString for 100+ digit huge BigInt values roundtrip
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString1UltraLarge0003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString1Test003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const huge: string = '1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890';
       expect(BigInt(huge).toString()).assertEqual(huge);
       expect(BigInt('-' + huge).toString()).assertEqual('-' + huge);
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOSTRING_1_0004
-     * @tc.name testBigIntToString1BooleanConstructed0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOSTRING_1_0400
+     * @tc.name testBigIntToString1Test004
      * @tc.desc Verify no-arg toString for boolean-constructed BigInt values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString1BooleanConstructed0004', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString1Test004', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(true).toString()).assertEqual('1');
       expect(BigInt(false).toString()).assertEqual('0');
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOSTRING_1_0005
-     * @tc.name testBigIntToString1LeadingPrefix0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOSTRING_1_0500
+     * @tc.name testBigIntToString1Test005
      * @tc.desc Verify no-arg toString strips leading zeros and whitespace from constructed strings
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString1LeadingPrefix0005', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString1Test005', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt('  42').toString()).assertEqual('42');
       expect(BigInt('42  ').toString()).assertEqual('42');
       expect(BigInt('  -42').toString()).assertEqual('-42');
@@ -105,42 +105,42 @@ export default function BigIntToString1Test_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOSTRING_1_0006
-     * @tc.name testBigIntToString1PowerOfTen0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOSTRING_1_0600
+     * @tc.name testBigIntToString1Test006
      * @tc.desc Verify no-arg toString for powers of ten from 10^0,10^9,10^19
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString1PowerOfTen0006', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString1Test006', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(1).toString()).assertEqual('1');
       expect(BigInt(1000000000).toString()).assertEqual('1000000000');
       expect(BigInt('10000000000000000000').toString()).assertEqual('10000000000000000000');
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOSTRING_1_0007
-     * @tc.name testBigIntToString1NegativeLarge0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOSTRING_1_0700
+     * @tc.name testBigIntToString1Test007
      * @tc.desc Verify no-arg toString for large negative values from string construction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString1NegativeLarge0007', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString1Test007', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt('-123456789012345678901234567890').toString()).assertEqual('-123456789012345678901234567890');
       expect(BigInt('-999999999999999999999999999999').toString()).assertEqual('-999999999999999999999999999999');
       expect(BigInt('-1000000000000000000000000000000').toString()).assertEqual('-1000000000000000000000000000000');
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOSTRING_1_0008
-     * @tc.name testBigIntToString1StepValues0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOSTRING_1_0800
+     * @tc.name testBigIntToString1Test008
      * @tc.desc Verify no-arg toString for sequential positive values 10 through 100 step 10
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString1StepValues0008', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString1Test008', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(10).toString()).assertEqual('10');
       expect(BigInt(20).toString()).assertEqual('20');
       expect(BigInt(30).toString()).assertEqual('30');
@@ -154,14 +154,14 @@ export default function BigIntToString1Test_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOSTRING_1_0009
-     * @tc.name testBigIntToString1NegativeStep0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOSTRING_1_0900
+     * @tc.name testBigIntToString1Test009
      * @tc.desc Verify no-arg toString for sequential negative values -10 through -100 step -10
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString1NegativeStep0009', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString1Test009', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(-10).toString()).assertEqual('-10');
       expect(BigInt(-20).toString()).assertEqual('-20');
       expect(BigInt(-30).toString()).assertEqual('-30');
@@ -175,14 +175,14 @@ export default function BigIntToString1Test_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOSTRING_1_0010
-     * @tc.name testBigIntToString1Roundtrip0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOSTRING_1_1000
+     * @tc.name testBigIntToString1Test010
      * @tc.desc Verify roundtrip BigInt(x).toString() roundtrips through BigInt constructor (merged _2700 type check, _2900 large values)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString1Roundtrip0010', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString1Test010', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const values: string[] = ['0', '1', '-1', '42', '-42', '9223372036854775807', '-9223372036854775808',
         '999999999999999999999999999999', '-999999999999999999999999999999',
         '8888888888888888888', '-8888888888888888888', '12345678901234567890', '-12345678901234567890'];
@@ -193,28 +193,28 @@ export default function BigIntToString1Test_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOSTRING_1_0011
-     * @tc.name testBigIntToString1Idempotent0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOSTRING_1_1100
+     * @tc.name testBigIntToString1Test011
      * @tc.desc Verify multiple consecutive no-arg toString calls return identical result and type is string (merged _2700 type check)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString1Idempotent0011', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString1Test011', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const v: BigInt = BigInt(123456789);
       expect(v.toString()).assertEqual('123456789');
       expect(typeof v.toString()).assertEqual('string');
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOSTRING_1_0012
-     * @tc.name testBigIntToString1MaxNineSequence0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOSTRING_1_1200
+     * @tc.name testBigIntToString1Test012
      * @tc.desc Verify no-arg toString for all-9 values of increasing length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString1MaxNineSequence0012', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString1Test012', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(9).toString()).assertEqual('9');
       expect(BigInt(99).toString()).assertEqual('99');
       expect(BigInt(999).toString()).assertEqual('999');
@@ -226,14 +226,14 @@ export default function BigIntToString1Test_2(): void {
       expect(BigInt(999999999).toString()).assertEqual('999999999');
     });
     /**
-     * @tc.number SUB_BIGINT_STD_TOSTRING_1_EXT_0013
-     * @tc.name testBigIntToString1LargeValues0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOSTRING_1_EXT_1300
+     * @tc.name testBigIntToString1ExtTest013
      * @tc.desc Verify no-arg toString for 65535, 123456789, 999999999, 1000000000 (TC008,TC009,TC015,TC017,TC018)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString1LargeValues0013', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString1ExtTest013', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(65535).toString()).assertEqual('65535');
       expect(BigInt(-65535).toString()).assertEqual('-65535');
       expect(BigInt(123456789).toString()).assertEqual('123456789');
@@ -243,28 +243,28 @@ export default function BigIntToString1Test_2(): void {
       expect(BigInt(1234567890).toString()).assertEqual('1234567890');
     });
     /**
-     * @tc.number SUB_BIGINT_STD_TOSTRING_1_EXT_0014
-     * @tc.name testBigIntToString1PlusPrefixConstructed0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOSTRING_1_EXT_1400
+     * @tc.name testBigIntToString1ExtTest014
      * @tc.desc Verify toString for plus-prefix string constructed BigInt returns value without + sign (TS1-01)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString1PlusPrefixConstructed0014', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString1ExtTest014', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new BigInt('+123').toString()).assertEqual('123');
       expect(new BigInt('+0').toString()).assertEqual('0');
       expect(new BigInt('+999999').toString()).assertEqual('999999');
       expect(new BigInt('+9223372036854775807').toString()).assertEqual('9223372036854775807');
     });
     /**
-     * @tc.number SUB_BIGINT_STD_TOSTRING_1_EXT_0015
-     * @tc.name testBigIntToString1LeadingZeroString0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOSTRING_1_EXT_1500
+     * @tc.name testBigIntToString1ExtTest015
      * @tc.desc Verify toString for leading-zero string constructed BigInt strips leading zeros (TS1-02)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString1LeadingZeroString0015', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString1ExtTest015', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new BigInt('007').toString()).assertEqual('7');
       expect(new BigInt('00123').toString()).assertEqual('123');
       expect(new BigInt('-007').toString()).assertEqual('-7');
@@ -272,14 +272,14 @@ export default function BigIntToString1Test_2(): void {
       expect(new BigInt('00000000000000000000000000001').toString()).assertEqual('1');
     });
     /**
-     * @tc.number SUB_BIGINT_STD_TOSTRING_1_EXT_0016
-     * @tc.name testBigIntToString1CopyConstructed0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOSTRING_1_EXT_1600
+     * @tc.name testBigIntToString1ExtTest016
      * @tc.desc Verify toString for copy-constructed BigInt produces same string as source (TS1-05)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString1CopyConstructed0016', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString1ExtTest016', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new BigInt(new BigInt(999)).toString()).assertEqual('999');
       expect(new BigInt(new BigInt(-888)).toString()).assertEqual('-888');
       expect(new BigInt(new BigInt(0)).toString()).assertEqual('0');

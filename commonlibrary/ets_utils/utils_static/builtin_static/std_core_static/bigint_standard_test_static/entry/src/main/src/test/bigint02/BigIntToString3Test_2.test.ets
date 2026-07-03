@@ -20,14 +20,14 @@ export default function BigIntToString3Test_2(): void {
   describe('BigIntToString3Test_2', () => {
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOSTRING_3_0001
-     * @tc.name testBigIntToString3DoubleRadixBoundary0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOSTRING_3_0100
+     * @tc.name testBigIntToString3Test001
      * @tc.desc Verify toString with double radix at boundary values 1.9 throws, 2.0 and 36.0 work, 36.1 works (truncated to 36)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString3DoubleRadixBoundary0001', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString3Test001', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const radix_1_9: double = 1.9;
       const radix2_0: double = 2.0;
       const radix36_0: double = 36.0;
@@ -41,14 +41,14 @@ export default function BigIntToString3Test_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOSTRING_3_EXT_0002
-     * @tc.name testBigIntToString3OtherRadicesDouble0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOSTRING_3_EXT_0200
+     * @tc.name testBigIntToString3ExtTest002
      * @tc.desc Verify toString with double-derived radices 15 36 (complements int radix)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString3OtherRadicesDouble0002', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString3ExtTest002', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const radix15: double = 15.0;
       const radix36: double = 36.0;
       expect(BigInt(10).toString(Double.toInt(radix15))).assertEqual('a');
@@ -56,14 +56,14 @@ export default function BigIntToString3Test_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOSTRING_3_EXT_0003
-     * @tc.name testBigIntToString3InvalidRadixDouble0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOSTRING_3_EXT_0300
+     * @tc.name testBigIntToString3ExtTest003
      * @tc.desc Verify toString with out-of-range double-derived radix throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString3InvalidRadixDouble0003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString3ExtTest003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const radix0: double = 0.0;
       const radix1: double = 1.0;
       const radix37: double = 37.0;
@@ -87,14 +87,14 @@ export default function BigIntToString3Test_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOSTRING_3_EXT_0004
-     * @tc.name testBigIntToString3NanDoubleRadix0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOSTRING_3_EXT_0400
+     * @tc.name testBigIntToString3ExtTest004
      * @tc.desc Verify toString with NaN double radix throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString3NanDoubleRadix0004', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString3ExtTest004', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const radixNaN: double = Double.NaN;
       expect((): void => {
         BigInt(10).toString(Double.toInt(radixNaN));
@@ -102,14 +102,14 @@ export default function BigIntToString3Test_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOSTRING_3_EXT_0005
-     * @tc.name testBigIntToString3InfinityDoubleRadix0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOSTRING_3_EXT_0500
+     * @tc.name testBigIntToString3ExtTest005
      * @tc.desc Verify toString with Infinity double radix throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString3InfinityDoubleRadix0005', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString3ExtTest005', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const radixInf: double = Double.POSITIVE_INFINITY;
       const radixNegInf: double = Double.NEGATIVE_INFINITY;
       expect((): void => {
@@ -121,14 +121,14 @@ export default function BigIntToString3Test_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOSTRING_3_EXT_0006
-     * @tc.name testBigIntToString3TruncatedDoubleRadix0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOSTRING_3_EXT_0600
+     * @tc.name testBigIntToString3ExtTest006
      * @tc.desc Verify toString with truncated double radix (2.7->2, 16.7->16) produces correct output
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString3TruncatedDoubleRadix0006', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString3ExtTest006', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const radix2_7: double = 2.7;
       const radix16_7: double = 16.7;
       const radix10_4: double = 10.4;
@@ -139,14 +139,14 @@ export default function BigIntToString3Test_2(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOSTRING_3_EXT_0007
-     * @tc.name testBigIntToString3NegativeDoubleRadix0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOSTRING_3_EXT_0700
+     * @tc.name testBigIntToString3ExtTest007
      * @tc.desc Verify toString with negative double radix (-2.0) throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString3NegativeDoubleRadix0007', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString3ExtTest007', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const radixNeg2: double = -2.0;
       const radixNeg36: double = -36.0;
       expect((): void => {
