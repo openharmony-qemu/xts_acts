@@ -18,7 +18,7 @@ import uiObserver from '@ohos.arkui.observer';
 
 @Entry
 @ComponentV2
-struct EnvBreakpoint {
+struct EnvBreakpoint2 {
   @Env(SystemProperties.BREAK_POINT) breakpoint: uiObserver.WindowSizeLayoutBreakpointInfo; 
 
   build() {

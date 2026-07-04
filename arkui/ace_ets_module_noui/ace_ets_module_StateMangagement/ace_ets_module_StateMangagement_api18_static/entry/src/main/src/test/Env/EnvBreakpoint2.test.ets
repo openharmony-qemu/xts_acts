@@ -32,8 +32,8 @@ import router from '@ohos.router';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 
-export default function EnvBreakpoint2() {
-  describe('EnvBreakpoint', () => {
+export default function EnvBreakpoint22() {
+  describe('EnvBreakpoint2', () => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api18.static", "EntryAbility");
       await UtilsTest.msSleep(1000);
@@ -41,26 +41,26 @@ export default function EnvBreakpoint2() {
     });
 
     beforeEach(async () => {
-      console.info("EnvBreakpoint beforeEach start");
+      console.info("EnvBreakpoint2 beforeEach start");
       let options: router.RouterOptions = {
         url: "MainAbility/pages/Env/EnvBreakpoint2",
       }
       try {
-        const EnvBreakpoint = AppStorage.get<Router>("router") as Router
-        EnvBreakpoint.clear();
-        let pages:router.RouterState = EnvBreakpoint.getState();
-        console.info("get EnvBreakpoint state pages: " + JSON.stringify(pages));
-        if (!("EnvBreakpoint" == pages.name)) {
-          console.info("get EnvBreakpoint state pages.name: " + JSON.stringify(pages.name));
-          // let result = await EnvBreakpoint.pushUrl(options);
-          EnvBreakpoint.pushUrl(options);
+        const EnvBreakpoint2 = AppStorage.get<Router>("router") as Router
+        EnvBreakpoint2.clear();
+        let pages:router.RouterState = EnvBreakpoint2.getState();
+        console.info("get EnvBreakpoint2 state pages: " + JSON.stringify(pages));
+        if (!("EnvBreakpoint2" == pages.name)) {
+          console.info("get EnvBreakpoint2 state pages.name: " + JSON.stringify(pages.name));
+          // let result = await EnvBreakpoint2.pushUrl(options);
+          EnvBreakpoint2.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push EnvBreakpoint success: " + JSON.stringify(result));
+          // console.info("push EnvBreakpoint2 success: " + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push EnvBreakpoint page error:" + err);
+        console.error("push EnvBreakpoint2 page error:" + err);
       }
-      console.info("EnvBreakpoint beforeEach end");
+      console.info("EnvBreakpoint2 beforeEach end");
     });
 
     afterEach(() => {
@@ -79,8 +79,8 @@ export default function EnvBreakpoint2() {
      * @tc.type   Function
      * @tc.level  Level 1
      */
-    it('SUB_ARKUI_API_EnvBreakpoint_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[SUB_ARKUI_API_EnvBreakpoint_0100] START');
+    it('SUB_ARKUI_API_EnvBreakpoint2_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('[SUB_ARKUI_API_EnvBreakpoint2_0100] START');
 
       // Get updated num value (should be incremented)
       let strJson2 = inspector.getInspectorByKey('Env_ComponentV2_001');
@@ -100,8 +100,8 @@ export default function EnvBreakpoint2() {
      * @tc.type   Function
      * @tc.level  Level 1
      */
-    it('SUB_ARKUI_API_EnvBreakpoint_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[SUB_ARKUI_API_EnvBreakpoint_0200] START');
+    it('SUB_ARKUI_API_EnvBreakpoint2_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('[SUB_ARKUI_API_EnvBreakpoint2_0200] START');
       let strJson2 = inspector.getInspectorByKey('Env_Component_001');
       await CommonFunc.sleep(1000);
       let Component_width = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('content'));
