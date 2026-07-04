@@ -77,6 +77,7 @@ it('listDidJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise<
       console.info('[listDidJsunit_static_0100] START');
       let listRect = CommonFunc.getComponentRectOnScreen('scrollSource_list')
       let driver = Driver.create()
+      await CommonFunc.sleep(1000);
       await driver.fling({
         x: (Number.parseInt(`${(listRect.right - listRect.left) * 0.5 + listRect.left}`)).toInt(),
         y: (Number.parseInt(`${(listRect.bottom - listRect.top) * 0.6 + listRect.top}`)).toInt()

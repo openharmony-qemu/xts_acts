@@ -76,6 +76,7 @@ export default function tabsCallBack2() {
 it('tabsCallBack2_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[tabsCallBack2_static_0100] START');
       let driver = Driver.create();
+      await CommonFunc.sleep(500);
       let btn = await driver.findComponent(ON.id('tabs_callback_index_2'));
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(1500);

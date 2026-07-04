@@ -71,6 +71,7 @@ export default function ScrollSourceBar() {
 it('ScrollSourceBar_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ScrollSourceBar_0100 START');
       let driver = Driver.create();
+      await CommonFunc.sleep(500);
       let swiperScroll = CommonFunc.getComponentRectOnScreen('scroller_scrollbar_bar');
       let top = swiperScroll.top;
       let right = swiperScroll.right;

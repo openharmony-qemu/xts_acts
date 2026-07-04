@@ -89,6 +89,7 @@ it('scrollDidJsunit_0100', Level.LEVEL0, async (done: () => void): Promise<void>
       console.info('[scrollDidJsunit_0100] START');
       let scrollRect = CommonFunc.getComponentRectOnScreen('scrollSource_scroll')
       let driver = Driver.create()
+      await CommonFunc.sleep(500);
       await driver.fling({
         x: (Number.parseInt(`${(scrollRect.right - scrollRect.left) * 0.5 + scrollRect.left}`)).toInt(),
         y: (Number.parseInt(`${(scrollRect.bottom - scrollRect.top) * 0.6 + scrollRect.top}`)).toInt()

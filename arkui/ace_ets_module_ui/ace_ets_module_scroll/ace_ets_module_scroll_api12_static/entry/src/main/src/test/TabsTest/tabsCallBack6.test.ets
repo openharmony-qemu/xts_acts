@@ -82,6 +82,7 @@ it('tabsCallBack6_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       let height = bottom - top;
       let width = right - left;
       let driver = Driver.create()
+      await CommonFunc.sleep(500);
       await driver.swipe((Math.round(left + width * 0.9)).toInt(), (Math.round(bottom - height / 2)).toInt(),
         (Math.round(left + width * 0.1)).toInt(), (Math.round(bottom - height / 2)).toInt());
       await CommonFunc.sleep(2000);

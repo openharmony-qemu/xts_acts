@@ -75,6 +75,7 @@ it('alphabetEnableJsunit_static_001', Level.LEVEL0, async (done: () => void): Pr
       console.info('[alphabetEnableJsunit_static_001] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
+      await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.text('B'));
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);

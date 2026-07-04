@@ -80,6 +80,7 @@ it('verticalTrue_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
       let height = bottom - top;
       let width = right - left;
       let driver = Driver.create()
+      await CommonFunc.sleep(500);
       await driver.swipe((Math.round(left + width / 2)).toInt(), (Math.round(top + height * 0.9)).toInt(),
         (Math.round(left + width / 2)).toInt(), (Math.round(top + height * 0.1)).toInt());
       await CommonFunc.sleep(2000);

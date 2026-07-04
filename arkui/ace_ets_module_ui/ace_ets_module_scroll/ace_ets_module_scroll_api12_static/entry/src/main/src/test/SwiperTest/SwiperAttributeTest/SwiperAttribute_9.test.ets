@@ -88,6 +88,7 @@ it('SwiperAttribute_static_0110', Level.LEVEL0, async (done: () => void): Promis
       console.info("SwiperAttribute_static_0110 swiper rect is " + rect.left + " --" + rect.right + "--" + rect.top +
         "--" + rect.bottom);
       let driver = Driver.create()
+      await CommonFunc.sleep(500);
       for (let i = 2; i <= 6; i++) {
         if (i > 1) {
           await driver.swipe(

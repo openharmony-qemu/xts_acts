@@ -73,6 +73,7 @@ it('chainAnimationList_static_0100', Level.LEVEL0, async (done: () => void): Pro
       console.info('[chainAnimationList_static_0100] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create()
+      await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('list_chain');
       console.info("[chainAnimationList_static_0100] component obj is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
