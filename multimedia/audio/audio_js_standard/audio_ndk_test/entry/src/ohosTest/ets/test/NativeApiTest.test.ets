@@ -7068,5 +7068,280 @@ export default function audioNDK() {
       expect(result).assertEqual(TEST_PASS);
       done();
     })
+
+    /**
+     * @tc.name SUB_MULTIMEDIA_AUDIO_NOISE_REDUCTION_MODE_ENUM_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_NOISE_REDUCTION_MODE_ENUM_0100
+     * @tc.desc Verify OH_AudioNoiseReductionMode enum values and error codes.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_NOISE_REDUCTION_MODE_ENUM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let ret = myaudioNdk.SUB_MULTIMEDIA_AUDIO_NOISE_REDUCTION_MODE_ENUM_0100();
+      expect(ret).assertEqual(TEST_PASS);
+      console.info(`${Tag} SUB_MULTIMEDIA_AUDIO_NOISE_REDUCTION_MODE_ENUM_0100 result: ${ret}`);
+      done();
+    });
+    
+    /**
+     * @tc.name SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0100
+     * @tc.desc OH_AudioCapturer_SetNoiseReductionMode - set FIDELITY mode if supported.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0100();
+      expect(ret).assertEqual(TEST_PASS);
+      console.info(`${Tag} SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0100 result: ${ret}`);
+      done();
+    });
+    
+    /**
+     * @tc.name SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0200
+     * @tc.desc OH_AudioCapturer_SetNoiseReductionMode - set PURE_VOCALS mode if supported.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0200();
+      expect(ret).assertEqual(TEST_PASS);
+      console.info(`${Tag} SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0200 result: ${ret}`);
+      done();
+    });
+    
+    /**
+     * @tc.name SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0300
+     * @tc.desc OH_AudioCapturer_SetNoiseReductionMode - set STANDARD mode if supported.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0300();
+      expect(ret).assertEqual(TEST_PASS);
+      console.info(`${Tag} SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0300 result: ${ret}`);
+      done();
+    });
+    
+    /**
+     * @tc.name SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0400
+     * @tc.desc OH_AudioCapturer_SetNoiseReductionMode - set invalid mode 9999.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let ret = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0400();
+      expect(ret).assertEqual(TEST_PASS);
+      console.info(`${Tag} SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0400 result: ${ret}`);
+      done();
+    });
+    
+    
+    /**
+     * @tc.name SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_PARAM_0100
+     * @tc.desc OH_AudioCapturer_SetNoiseReductionMode - capturer is nullptr.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let ret = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_PARAM_0100();
+      expect(ret).assertEqual(TEST_PASS);
+      console.info(`${Tag} SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_PARAM_0100 result: ${ret}`);
+      done();
+    });
+    
+    /**
+     * @tc.name SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_PARAM_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_PARAM_0200
+     * @tc.desc OH_AudioCapturer_SetNoiseReductionMode - capturer is nullptr, mode is nullptr.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_PARAM_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let ret = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_PARAM_0200();
+      expect(ret).assertEqual(TEST_PASS);
+      console.info(`${Tag} SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_PARAM_0200 result: ${ret}`);
+      done();
+    });
+    
+    
+    /**
+     * @tc.name SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_STATE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_STATE_0100
+     * @tc.desc OH_AudioCapturer_SetNoiseReductionMode - capturer is in running state.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_STATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let ret = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_STATE_0100();
+      expect(ret).assertEqual(TEST_PASS);
+      console.info(`${Tag} SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_STATE_0100 result: ${ret}`);
+      done();
+    });
+    
+    /**
+     * @tc.name SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_STATE_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_STATE_0200
+     * @tc.desc OH_AudioCapturer_SetNoiseReductionMode - capturer is in released state.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_STATE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let ret = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_STATE_0200();
+      expect(ret).assertEqual(TEST_PASS);
+      console.info(`${Tag} SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_STATE_0200 result: ${ret}`);
+      done();
+    });
+    
+    
+    /**
+     * @tc.name SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_PARAM_0100
+     * @tc.desc OH_AudioCapturer_GetNoiseReductionMode - get default mode FIDELITY.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let ret = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_PARAM_0100();
+      expect(ret).assertEqual(TEST_PASS);
+      console.info(`${Tag} SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_PARAM_0100 result: ${ret}`);
+      done();
+    });
+    
+    /**
+     * @tc.name SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_PARAM_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_PARAM_0200
+     * @tc.desc OH_AudioCapturer_GetNoiseReductionMode - capturer is nullptr.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_PARAM_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let ret = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_PARAM_0200();
+      expect(ret).assertEqual(TEST_PASS);
+      console.info(`${Tag} SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_PARAM_0200 result: ${ret}`);
+      done();
+    });
+    
+    
+    /**
+     * @tc.name SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0100
+     * @tc.desc OH_AudioCapturer_GetNoiseReductionMode - verify FIDELITY mode after setting.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0100();
+      expect(ret).assertEqual(TEST_PASS);
+      console.info(`${Tag} SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0100 result: ${ret}`);
+      done();
+    });
+    
+    /**
+     * @tc.name SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0200
+     * @tc.desc OH_AudioCapturer_GetNoiseReductionMode - verify PURE_VOCALS mode after setting.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0200();
+      expect(ret).assertEqual(TEST_PASS);
+      console.info(`${Tag} SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0200 result: ${ret}`);
+      done();
+    });
+    
+    /**
+     * @tc.name SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0300
+     * @tc.desc OH_AudioCapturer_GetNoiseReductionMode - verify STANDARD mode after setting.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0300();
+      expect(ret).assertEqual(TEST_PASS);
+      console.info(`${Tag} SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0300 result: ${ret}`);
+      done();
+    });
+    
+    
+    /**
+     * @tc.name SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0100
+     * @tc.desc OH_AudioCapturer_GetSupportedNoiseReductionModes - get supported modes.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let ret = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0100();
+      expect(ret).assertEqual(TEST_PASS);
+      console.info(`${Tag} SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0100 result: ${ret}`);
+      done();
+    });
+    
+    /**
+     * @tc.name SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0200
+     * @tc.desc OH_AudioCapturer_GetSupportedNoiseReductionModes - capturer is nullptr.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let ret = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0200();
+      expect(ret).assertEqual(TEST_PASS);
+      console.info(`${Tag} SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0200 result: ${ret}`);
+      done();
+    });
+    
+    /**
+     * @tc.name SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0300
+     * @tc.desc OH_AudioCapturer_GetSupportedNoiseReductionModes - modes array is nullptr.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let ret = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0300();
+      expect(ret).assertEqual(TEST_PASS);
+      console.info(`${Tag} SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0300 result: ${ret}`);
+      done();
+    });
+    
+    /**
+     * @tc.name SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0400
+     * @tc.desc OH_AudioCapturer_GetSupportedNoiseReductionModes - outSize is nullptr.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let ret = myaudioNdk.SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0400();
+      expect(ret).assertEqual(TEST_PASS);
+      console.info(`${Tag} SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0400 result: ${ret}`);
+      done();
+    });
   })
 }
