@@ -27,6 +27,16 @@ let isDeviceConnected: boolean = true;
 let testParam: TransferTestParam;
 const TAG = "[UsbDevicePipeTest]";
 
+interface FilteredDevice {
+  vendorId: number;
+  productId: number;
+}
+
+const FILTERED_DEVICES: Array<FilteredDevice> = [
+  { vendorId: 3034, productId: 33107 },
+  { vendorId: 65535, productId: 14131 },
+];
+
 interface TransferTestParam {
   config: usbMgr.USBConfiguration;
   device: usbMgr.USBDevice;
@@ -48,6 +58,12 @@ function deviceConnected() {
   }
   console.info(TAG, "Test USB device is not connected");
   return false;
+}
+
+function isFilteredDevice(device: usbMgr.USBDevice): boolean {
+  return FILTERED_DEVICES.some(item =>
+    device.vendorId === item.vendorId && device.productId === item.productId
+  );
 }
 
 async function driveFn() {
@@ -209,7 +225,7 @@ async function callControlTransferEx(pip: usbMgr.USBDevicePipe, controlParam: us
 }
 
 function toReleaseInterface(testCaseName: string, conIndex: number, interIndex: number) {
-  gDeviceList = usbMgr.getDevices();
+  gDeviceList = usbMgr.getDevices().filter(device => !isFilteredDevice(device));
   let tmpInterface = gDeviceList[0].configs[conIndex].interfaces[interIndex];
   let isClaim = usbMgr.releaseInterface(gPipe, tmpInterface);
   console.info(TAG, `usb ${testCaseName} toReleaseInterface ret: ${JSON.stringify(isClaim)}`);
@@ -224,7 +240,7 @@ export default function UsbDevicePipeTest() {
       console.log(TAG, '*************Usb Unit UsbDevicePipeTest Begin*************');
 
       // version > 17  host currentMode = 2 device currentMode = 1
-      gDeviceList = usbMgr.getDevices();
+      gDeviceList = usbMgr.getDevices().filter(device => !isFilteredDevice(device));
       isDeviceConnected = deviceConnected();
       if (isDeviceConnected) {
         let hasRight = usbMgr.hasRight(gDeviceList[0].name);
@@ -242,7 +258,7 @@ export default function UsbDevicePipeTest() {
 
     beforeEach(() => {
       console.info(TAG, 'beforeEach: *************Usb Unit Test Case*************');
-      gDeviceList = usbMgr.getDevices();
+      gDeviceList = usbMgr.getDevices().filter(device => !isFilteredDevice(device));
       console.info(TAG, 'beforeEach return getDevices : ' + JSON.stringify(gDeviceList));
       console.info(TAG, 'beforeEach return connectDevice gPipe : ' + JSON.stringify(gPipe));
     })

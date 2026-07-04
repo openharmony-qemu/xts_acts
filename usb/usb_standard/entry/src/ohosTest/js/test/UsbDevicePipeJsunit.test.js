@@ -192,7 +192,8 @@ describe('UsbDevicePipeJsFunctionsTest', function () {
   }
 
   function toReleaseInterface(testCaseName, conIndex, interIndex) {
-    gDeviceList = usbManager.getDevices();
+    let deviceList = usbManager.getDevices();
+    gDeviceList = deviceList.filter(device => !isFilteredDevice(device));
     let tmpInterface = gDeviceList[0].configs[conIndex].interfaces[interIndex];
     let isClaim = usbManager.releaseInterface(gPipe, tmpInterface);
     console.info(TAG, `usb ${testCaseName} toReleaseInterface ret: ${JSON.stringify(isClaim)}`);

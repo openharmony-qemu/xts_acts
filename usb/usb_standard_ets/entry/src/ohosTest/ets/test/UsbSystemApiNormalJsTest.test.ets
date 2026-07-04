@@ -17,6 +17,21 @@ import { beforeAll, afterAll, describe, it, expect, TestType, Size, Level } from
 import usbMgr from "@ohos.usbManager"
 import bundleManager from '@ohos.bundle.bundleManager'
 
+interface FilteredDevice {
+  vendorId: number;
+  productId: number;
+}
+
+const FILTERED_DEVICES: Array<FilteredDevice> = [
+  { vendorId: 3034, productId: 33107 },
+  { vendorId: 65535, productId: 14131 },
+];
+
+function isFilteredDevice(device: usbMgr.USBDevice): boolean {
+  return FILTERED_DEVICES.some(item =>
+    device.vendorId === item.vendorId && device.productId === item.productId
+  );
+}
 
 export default function UsbSystemApiNormalJsTest() {
   
@@ -24,7 +39,8 @@ export default function UsbSystemApiNormalJsTest() {
   describe('UsbSystemApiNormalJsTest', () => {
 
     const TAG: string = "[UsbSystemApiNormalJsTest]";
-    let deviceList = usbMgr.getDevices();
+
+    let deviceList: Array<usbMgr.USBDevice> = usbMgr.getDevices().filter(device => !isFilteredDevice(device));
     let portCurrentMode = 0;
     
 
