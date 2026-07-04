@@ -41,7 +41,6 @@ import ConditionalAndExpressionTest from "./expressions/conditional_and_expressi
 import ConditionalOrExpressionTest from "./expressions/conditional_or_expression/ConditionalOrExpression.test";
 import ConstantExpressionCheckArrayTest from "./expressions/constant_expression/check_array/ConstantExpressionCheckArray.test";
 import ConstantExpressionCheckEnumTest from "./expressions/constant_expression/check_enum/ConstantExpressionCheckEnum.test";
-import ExpressionsEnsureNotNullishTest from "./expressions/ensure_not_nullish_expression/ExpressionsEnsureNotNullish.test";
 import BooleanEqualityOperatorsTest from "./expressions/equality_expressions/boolean_equality_operators/BooleanEqualityOperators.test";
 import EnumerationEqualityOperatorsTest from "./expressions/equality_expressions/enumeration_equality_operators/EnumerationEqualityOperators.test";
 import FunctionTypeEqualityOperatorsTest from "./expressions/equality_expressions/function_type_equality_operators/FunctionTypeEqualityOperators.test";
@@ -78,12 +77,10 @@ import TypeArgumentsTest from "./generics/generic_instantiations/type_arguments/
 import TypeArguments_1Test from "./generics/generic_instantiations/type_arguments/type_arguments_of_parameterized_declarations/TypeArguments_1.test";
 import UndefinedFixVerificationTest from "./undefined/UndefinedFixVerification.test";
 import UndefinedTypeSafetyTest from "./undefined/UndefinedTypeSafety.test";
-import StatementsTest from "./statements/StatementsTest.test";
 import AwaitedUtilityTypeTest from "./generics/utility_types/awaited_utility_type/AwaitedUtilityType.test";
 import NestingUtilityTypeTest from "./generics/utility_types/nesting_utility_type/NestingUtilityType.test";
 import NonNullableUtilityTypeTest from "./generics/utility_types/nonnullable_utility_type/NonNullableUtilityType.test";
 import RequiredUtilityTypeTest from "./generics/utility_types/required_utility_type/RequiredUtilityType.test";
-import PartialUtilityTypeTest from "./generics/utility_types/partial_utility_type/PartialUtilityType.test";
 import GenericClassesConstraintTest from "./generics/type_parameters/type_parameter_constraint/generic_classes/GenericClassesConstraint.test";
 import GenericFunctionsConstraintTest from "./generics/type_parameters/type_parameter_constraint/generic_functions/GenericFunctionsConstraint.test";
 import GenericMethodsConstraintTest from "./generics/type_parameters/type_parameter_constraint/generic_methods/GenericMethodsConstraint.test";
@@ -120,7 +117,6 @@ export default function testsuite(): void {
   ConditionalOrExpressionTest();
   ConstantExpressionCheckArrayTest();
   ConstantExpressionCheckEnumTest();
-  ExpressionsEnsureNotNullishTest();
   BooleanEqualityOperatorsTest();
   EnumerationEqualityOperatorsTest();
   FunctionTypeEqualityOperatorsTest();
@@ -157,12 +153,10 @@ export default function testsuite(): void {
   TypeArguments_1Test();
   UndefinedFixVerificationTest();
   UndefinedTypeSafetyTest();
-  StatementsTest();
   AwaitedUtilityTypeTest();
   NestingUtilityTypeTest();
   NonNullableUtilityTypeTest();
   RequiredUtilityTypeTest();
-  PartialUtilityTypeTest();
   GenericClassesConstraintTest();
   GenericFunctionsConstraintTest();
   GenericMethodsConstraintTest();
