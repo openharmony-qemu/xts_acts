@@ -93,7 +93,7 @@ export default function ImageOHImageSourceInfoCreate() {
     /**
      * @tc.number  SUB_IMAGE_NATIVE_GET_BUFFER_DATA_SUPP_001
      * @tc.name    SUB_IMAGE_NATIVE_GET_BUFFER_DATA_SUPP_001
-     * @tc.desc    OH_IMAGE_NATIVE_GET_BUFFER_DATA-IMAGE_SUCCESS | EFFECT_ERROR_PARAM_INVALID
+     * @tc.desc    OH_IMAGE_NATIVE_GET_BUFFER_DATA-IMAGE_SUCCESS | IMAGE_BAD_PARAMETER
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 0
@@ -104,7 +104,7 @@ export default function ImageOHImageSourceInfoCreate() {
       let result: number = testNapi.OHImageNativeGetBufferDataTest(CASE_INDEX_1, (receiver: image.ImageReceiver) => {
       })
       console.info(TAG, testName, 'Success', JSON.stringify(result));
-      expect(result === EFFECT_SUCCESS || result === EFFECT_ERROR_PARAM_INVALID).assertTrue();
+      expect(result === IMAGE_SUCCESS || result === IMAGE_BAD_PARAMETER).assertTrue();
     });
     /**
      * @tc.number  SUB_IMAGE_NATIVE_GET_BUFFER_DATA_SUPP_002
@@ -171,7 +171,7 @@ export default function ImageOHImageSourceInfoCreate() {
     /**
      * @tc.number  SUB_IMAGE_NATIVE_GET_BUFFER_DATA_VALUE_SUPP_001
      * @tc.name    SUB_IMAGE_NATIVE_GET_BUFFER_DATA_VALUE_SUPP_001
-     * @tc.desc    OH_IMAGE_NATIVE_GET_BUFFER_DATA-IMAGE_SUCCESS | EFFECT_ERROR_PARAM_INVALID
+     * @tc.desc    OH_IMAGE_NATIVE_GET_BUFFER_DATA-IMAGE_SUCCESS | IMAGE_BAD_PARAMETER
      * @tc.size    MediumTest0
      * @tc.type    Function
      * @tc.level   Level 0
@@ -183,12 +183,12 @@ export default function ImageOHImageSourceInfoCreate() {
         testNapi.OHImageNativeGetBufferDataValueTest(CASE_INDEX_1, (receiver: image.ImageReceiver) => {
         })
       console.info(TAG, testName, 'Success', JSON.stringify(result));
-      expect(result === EFFECT_SUCCESS || result === EFFECT_ERROR_PARAM_INVALID).assertTrue();
+      expect(result === IMAGE_SUCCESS || result === IMAGE_BAD_PARAMETER).assertTrue();
     });
     /**
      * @tc.number  SUB_IMAGE_NATIVE_GET_BUFFER_DATA_VALUE_SUPP_002
      * @tc.name    SUB_IMAGE_NATIVE_GET_BUFFER_DATA_VALUE_SUPP_002
-     * @tc.desc    OH_IMAGE_NATIVE_GET_BUFFER_DATA-BUFFER_SIZE-IMAGE_SUCCESS | EFFECT_ERROR_PARAM_INVALID
+     * @tc.desc    OH_IMAGE_NATIVE_GET_BUFFER_DATA-BUFFER_SIZE-IMAGE_SUCCESS | IMAGE_BAD_PARAMETER
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 0
@@ -200,7 +200,7 @@ export default function ImageOHImageSourceInfoCreate() {
         testNapi.OHImageNativeGetBufferDataValueTest(CASE_INDEX_2, (receiver: image.ImageReceiver) => {
         })
       console.info(TAG, testName, 'Success', JSON.stringify(result));
-      expect(result === EFFECT_SUCCESS || result === EFFECT_ERROR_PARAM_INVALID).assertTrue();
+      expect(result === IMAGE_SUCCESS || result === IMAGE_BAD_PARAMETER).assertTrue();
     });
     /**
      * @tc.number  SUB_IMAGE_NATIVE_GET_BUFFER_DATA_VALUE_SUPP_003
