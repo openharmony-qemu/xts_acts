@@ -48,6 +48,7 @@
     "MainAbility/pages/uiutils/GlobalReusePool003",
     "MainAbility/pages/uiutils/GlobalReusePool004",
     "MainAbility/pages/AddMonitor/AddMonitorWildcard2",
-    "MainAbility/pages/Env/EnvBreakpoint"
+    "MainAbility/pages/Env/EnvBreakpoint",
+    "MainAbility/pages/Env/EnvBreakpoint2"
   ]
 }
