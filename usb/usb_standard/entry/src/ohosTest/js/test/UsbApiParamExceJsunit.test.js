@@ -35,6 +35,11 @@ describe('UsbApiParamExceJsunitTest', function () {
         busNum: null,
         devAddress: null
     };
+    const FILTERED_DEVICES = [
+        {vendorId: 3034, productId: 33107},
+        {vendorId: 65535, productId: 14131},
+    ];
+
     function deviceConnected() {
         if (gDeviceList.length > 0) {
             console.info(TAG, "Test USB device is connected");
@@ -44,13 +49,20 @@ describe('UsbApiParamExceJsunitTest', function () {
         return false;
     }
 
+    function isFilteredDevice(device) {
+        return FILTERED_DEVICES.some(item =>
+            device.vendorId === item.vendorId && device.productId === item.productId
+        );
+    }
+
     beforeAll(async function () {
         console.log(TAG, '*************Usb Unit UsbApiParamExceJsunitTest Begin*************');
         const Version = usbManager.getVersion();
         console.info(TAG, 'usb unit begin test getversion :' + Version);
 
         // version > 17  host currentMode = 2 device currentMode = 1
-        gDeviceList = usbManager.getDevices();
+        let deviceList = usbManager.getDevices();
+        gDeviceList = deviceList.filter(device => !isFilteredDevice(device));
         isDeviceConnected = deviceConnected();
         if (isDeviceConnected) {
             let hasRight = usbManager.hasRight(gDeviceList[0].name);
@@ -69,7 +81,8 @@ describe('UsbApiParamExceJsunitTest', function () {
 
     beforeEach(function () {
         console.info(TAG, 'beforeEach: *************Usb Unit Test CaseEx*************');
-        gDeviceList = usbManager.getDevices();
+        let deviceList = usbManager.getDevices();
+        gDeviceList = deviceList.filter(device => !isFilteredDevice(device));
         if (isDeviceConnected) {
             devices = gDeviceList[0];
             console.info(TAG, 'beforeEach return devices : ' + JSON.stringify(devices));

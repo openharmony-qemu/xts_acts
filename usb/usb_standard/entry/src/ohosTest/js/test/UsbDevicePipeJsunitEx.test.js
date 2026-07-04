@@ -29,6 +29,10 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   let devices;
   let isDeviceConnected;
   const TAG = "[UsbDevicePipeJsFunctionsTest]";
+  const FILTERED_DEVICES = [
+    {vendorId: 3034, productId: 33107},
+    {vendorId: 65535, productId: 14131},
+  ];
 
   function deviceConnected() {
     if (gDeviceList.length > 0) {
@@ -39,13 +43,20 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
     return false;
   }
 
+  function isFilteredDevice(device) {
+    return FILTERED_DEVICES.some(item =>
+      device.vendorId === item.vendorId && device.productId === item.productId
+    );
+  }
+
   beforeAll(async function () {
     console.log(TAG, '*************Usb Unit UsbDevicePipeJsFunctionsTestEx Begin*************');
     var Version = usbManager.getVersion();
     console.info(TAG, 'usb unit begin test getversion :' + Version);
 
     // version > 17  host currentMode = 2 device currentMode = 1
-    gDeviceList = usbManager.getDevices();
+    let deviceList = usbManager.getDevices();
+    gDeviceList = deviceList.filter(device => !isFilteredDevice(device));
     isDeviceConnected = deviceConnected();
     if (isDeviceConnected) {
       let hasRight = usbManager.hasRight(gDeviceList[0].name);
@@ -62,7 +73,8 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
   })
   beforeEach(function () {
     console.info(TAG, 'beforeEach: *************Usb Unit Test Ex Case*************');
-    gDeviceList = usbManager.getDevices();
+    let deviceList = usbManager.getDevices();
+    gDeviceList = deviceList.filter(device => !isFilteredDevice(device));
     console.info(TAG, 'beforeEach return devices : ' + JSON.stringify(gDeviceList));
   })
   afterEach(function () {
@@ -185,7 +197,8 @@ describe('UsbDevicePipeJsFunctionsTestEx', function () {
 
 
   function toReleaseInterface(testCaseName, conIndex, interIndex) {
-    gDeviceList = usbManager.getDevices();
+    let deviceList = usbManager.getDevices();
+    gDeviceList = deviceList.filter(device => !isFilteredDevice(device));
     let tmpInterface = gDeviceList[0].configs[conIndex].interfaces[interIndex];
     let isClaim = usbManager.releaseInterface(gPipe, tmpInterface);
     console.info(TAG, `usb ${testCaseName} toReleaseInterface ret: ${JSON.stringify(isClaim)}`);

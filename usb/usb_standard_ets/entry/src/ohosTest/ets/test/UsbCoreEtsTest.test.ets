@@ -24,6 +24,16 @@ let devices: usbMgr.USBDevice | null;
 let isDeviceConnected: boolean;
 const TAG = "[UsbCoreEtsTest]";
 
+interface FilteredDevice {
+  vendorId: number;
+  productId: number;
+}
+
+const FILTERED_DEVICES: Array<FilteredDevice> = [
+  { vendorId: 3034, productId: 33107 },
+  { vendorId: 65535, productId: 14131 },
+];
+
 function deviceConnected() {
   if (gDeviceList.length > 0) {
     console.info(TAG, "Test USB device is connected");
@@ -31,6 +41,12 @@ function deviceConnected() {
   }
   console.info(TAG, "Test USB device is not connected");
   return false;
+}
+
+function isFilteredDevice(device: usbMgr.USBDevice): boolean {
+  return FILTERED_DEVICES.some(item =>
+    device.vendorId === item.vendorId && device.productId === item.productId
+  );
 }
 
 async function driveFn() {
@@ -83,7 +99,7 @@ export default function UsbCoreEtsTest() {
       console.log(TAG, '*************Usb Unit UsbCoreEtsTest Begin*************');
 
       // version > 17  host currentMode = 2 device currentMode = 1
-      gDeviceList = usbMgr.getDevices();
+      gDeviceList = usbMgr.getDevices().filter(device => !isFilteredDevice(device));
       console.info(TAG, 'beforeAll: usb case gDeviceList.length return: ' + JSON.stringify(gDeviceList));
       isDeviceConnected = deviceConnected();
       if (isDeviceConnected) {
@@ -100,7 +116,7 @@ export default function UsbCoreEtsTest() {
 
     beforeEach(() =>  {
       console.info(TAG, 'beforeEach: *************Usb Unit Test  Case*************');
-      gDeviceList = usbMgr.getDevices();
+      gDeviceList = usbMgr.getDevices().filter(device => !isFilteredDevice(device));
       if (isDeviceConnected) {
         devices = gDeviceList[0];
         console.info(TAG, 'beforeEach return devices : ' + JSON.stringify(devices));
@@ -150,7 +166,7 @@ export default function UsbCoreEtsTest() {
     it('testGetDevices002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       console.info(TAG, 'usb testGetDevices002 begin');
       if (!isDeviceConnected) {
-        let res = usbMgr.getDevices();
+        let res = usbMgr.getDevices().filter(device => !isFilteredDevice(device));
         console.info(TAG, 'usb case getDevices ret length: ' + res.length);
         expect(res.length).assertEqual(0);
         done();
