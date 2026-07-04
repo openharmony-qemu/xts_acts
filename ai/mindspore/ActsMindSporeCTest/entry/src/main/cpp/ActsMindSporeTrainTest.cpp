@@ -1490,7 +1490,7 @@ int SUBAIMindSporeTrainExportModel0014()
     ASSERT_NE(inputs.handle_list, nullptr);
     FillInputsData(inputs, "lenet_train_infer", false);
     OHPrintf("==========Model Predict==========\n");
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     OH_AI_Status predictRet = OH_AI_ModelPredict(model2, inputs, &outputs, nullptr, nullptr);
     ASSERT_EQ(predictRet, OH_AI_STATUS_SUCCESS);
     OHPrintf("=========CompareResult===========\n");
