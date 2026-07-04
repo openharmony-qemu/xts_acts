@@ -2885,6 +2885,7 @@ export default function pasteComponentStaticTest() {
           priority: events_emitter.EventPriority.LOW
         }
         console.info('====>[SUB_SEC_AccCtl_SpecialItemStaticPaste_3300] start to publish emit');
+        
         events_emitter.emit(innerEvent, eventData);
       } catch (err) {
         console.error('====>[SUB_SEC_AccCtl_SpecialItemStaticPaste_3300] change component data error: ' + err.message);
