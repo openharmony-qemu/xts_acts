@@ -23,7 +23,7 @@ import fixedArrayTest from "./ActsFixedArray.test"
 import promiseTest from "./ActsPromise.test"
 import weakGlobalReferencesTest from "./ActsWeakGlobalReferences.test"
 
-export default function testsuite() {
+export default function testsuite(): void {
     moduleSupportTest();
     nameSpaceSupportTest();
     enumOperationsTest();

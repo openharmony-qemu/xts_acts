@@ -21,7 +21,7 @@ import { Foo } from '../ets/Index'
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
-export default function promiseTest() {
+export default function promiseTest(): void {
 
   describe("ActsPromiseTest", (): void => {
     try {

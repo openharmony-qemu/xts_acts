@@ -21,7 +21,7 @@ import { Foo } from '../ets/Index'
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
-export default function nameSpaceSupportTest() {
+export default function nameSpaceSupportTest(): void {
 
   describe("ActsNameSpaceSupportTest", (): void => {
     try {

@@ -21,7 +21,7 @@ import { Foo } from '../ets/Index'
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
-export default function vmOpsTest() {
+export default function vmOpsTest(): void {
 
   describe("ActsVmOpsTest", (): void => {
     try {

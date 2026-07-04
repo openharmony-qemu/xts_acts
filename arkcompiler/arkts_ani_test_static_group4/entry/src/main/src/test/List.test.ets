@@ -15,6 +15,6 @@
 
 import classOperationsTest from "./ActsClassOperations.test";
 
-export default function testsuite() {
+export default function testsuite(): void {
     classOperationsTest();
 }

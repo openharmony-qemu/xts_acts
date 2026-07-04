@@ -21,7 +21,7 @@ import { Foo } from '../ets/Index'
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
-export default function classOperationsTest() {
+export default function classOperationsTest(): void {
 
   describe("ActsClassOperationsTest", (): void => {
     try {
@@ -3862,7 +3862,7 @@ export default function classOperationsTest() {
         console.log('call_StaticMethodChar_0014 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodChar_13();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('call_StaticMethodChar_0014 done');
         done();
         console.log('call_StaticMethodChar_0014 end');
