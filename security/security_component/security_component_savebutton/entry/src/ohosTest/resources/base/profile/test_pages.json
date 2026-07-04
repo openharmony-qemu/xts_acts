@@ -5,6 +5,11 @@
     "testability/pages/saveButton_1",
     "testability/pages/saveButton_2",
     "testability/pages/saveButton_userCancel",
-    "testability/pages/saveButtonCustomize"
+    "testability/pages/saveButtonCustomize",
+    "testability/pages/accessibilityDefaultFocus",
+    "testability/pages/accessibilityNextFocusId",
+    "testability/pages/accessibilityRole",
+    "testability/pages/fallbackLineSpacing",
+    "testability/pages/fontSize"
   ]
 }
