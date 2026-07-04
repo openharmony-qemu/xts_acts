@@ -75,6 +75,7 @@ export default function GridFlingCallbackJsunit() {
 it('GridFlingCallbackTest_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('GridFlingCallbackTest_0100 START');
       let driver1 = Driver.create();
+      await CommonFunc.sleep(1000);
       let button = await (driver1.findComponent(ON.id('btn_grid_fling_01')) as Promise<Component>);
       await button.click();
       await CommonFunc.sleep(1000);
@@ -96,6 +97,7 @@ it('GridFlingCallbackTest_0100', Level.LEVEL0, async (done: () => void): Promise
 it('GridFlingCallbackTest_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('GridFlingCallbackTest_0200 START');
       let driver1 = Driver.create();
+      await CommonFunc.sleep(1000);
       let button = await (driver1.findComponent(ON.id('btn_grid_fling_02')) as Promise<Component>);
       await button.click();
       await CommonFunc.sleep(1000);

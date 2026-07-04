@@ -86,6 +86,7 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0050', Level.LEV
         console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0050 START");
         await CommonFunc.sleep(6000);
         let driver: Driver = Driver.create();
+        await CommonFunc.sleep(500);
         let btn = await driver.findComponent(ON.id('btnswiper0050'));
         await (btn?.click() as Promise<void>);
         await CommonFunc.sleep(1000);

@@ -68,6 +68,7 @@ it('testAlphabetAlignStyle_static_001', Level.LEVEL0, async (done: () => void): 
       let testName: string = '[testAlphabetAlignStyle_static_001]';
       console.log(`${testName} start`);
       let driver: Driver = Driver.create();
+      await driver.delayMs(1000);
       let startBtn = await driver.findComponent(ON.id('START'));
       await (startBtn?.click() as Promise<void>);
       console.log(`${testName} startBtn click`);
@@ -115,6 +116,7 @@ it('testAlphabetAlignStyle_static_002', Level.LEVEL0, async (done: () => void): 
       let testName: string = '[testAlphabetAlignStyle_static_002]';
       console.log(`${testName} start`);
       let driver: Driver = Driver.create();
+      await driver.delayMs(1000);
       let endBtn = await driver.findComponent(ON.id('END'));
       await (endBtn?.click() as Promise<void>);
       console.log(`${testName} endBtn click`);

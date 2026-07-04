@@ -401,6 +401,7 @@ it('listLevel1Test_static_1300', Level.LEVEL1, async (done: () => void): Promise
 
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
       let scrollColumn: Component = await driver.findComponent(ON.type('Scroll')) as Component;
       let button = await scrollColumn.scrollSearch(ON.id('GetItemRectButton')) as Component;
       await button.click();
@@ -449,6 +450,7 @@ it('listLevel1Test_static_1400', Level.LEVEL1, async (done: () => void): Promise
         .assertEqual("10.000000");
 
       let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
       let scrollColumn: Component = await driver.findComponent(ON.type('Scroll')) as Component;
       let button = await scrollColumn.scrollSearch(ON.id('currentOffsetButton')) as Component;
       await button.click();

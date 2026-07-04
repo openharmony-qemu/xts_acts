@@ -86,6 +86,7 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0710', Level.LEVEL0, async (d
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0710 START");
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
       let swiperArrow = await driver.findComponent(ON.id("swiperdrag0710"));
       let point2 = await (swiperArrow?.getBoundsCenter() as Promise<Point>);
       await CommonFunc.sleep(1000);

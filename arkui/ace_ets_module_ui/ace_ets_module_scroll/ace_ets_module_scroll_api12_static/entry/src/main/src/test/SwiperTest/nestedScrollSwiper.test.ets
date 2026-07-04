@@ -71,6 +71,7 @@ it('nestedScrollSwiper_static_0100', Level.LEVEL0, async (done: () => void): Pro
       console.info('[nestedScrollSwiper_static_0100] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create()
+      await CommonFunc.sleep(500);
       let strJson = inspector.getInspectorByKey('swiper_nestedScroll_1');
       console.info("[nestedScrollSwiper_static_0100] component obj is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));

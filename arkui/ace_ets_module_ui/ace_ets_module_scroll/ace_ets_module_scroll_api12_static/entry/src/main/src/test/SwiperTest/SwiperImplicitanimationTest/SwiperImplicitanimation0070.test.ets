@@ -87,6 +87,7 @@ export default function SwiperImplicitanimation0070() {
 it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0070', Level.LEVEL0, async (done: () => void): Promise<void> => {
         console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0070 START");
         let driver: Driver = Driver.create();
+        await CommonFunc.sleep(500);
         let swiperArrow = await driver.findComponent(ON.id("implicitanimation_0070"));
         let point2 = await (swiperArrow?.getBoundsCenter() as Promise<Point>);
         await driver.fling({

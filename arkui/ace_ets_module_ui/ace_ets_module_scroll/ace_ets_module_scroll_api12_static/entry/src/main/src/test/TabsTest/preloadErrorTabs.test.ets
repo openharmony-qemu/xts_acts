@@ -69,6 +69,7 @@ export default function preloadErrorTabs() {
 it('preloadErrorTabs_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[preloadErrorTabs_static_0100] START');
       let driver = Driver.create();
+      await CommonFunc.sleep(500);
       let btn = await driver.findComponent(ON.id('preloadItems_btn_401'));
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(1500);

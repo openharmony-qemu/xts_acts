@@ -75,6 +75,7 @@ export default function GridScrollEdgeCallbackJsunit() {
 it('GridScrollEdgeCallbackTest_1580', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('GridScrollEdgeCallbackTest_1580 START');
       let driver1 = Driver.create();
+      await CommonFunc.sleep(1000);
       let button = await (driver1.findComponent(ON.id('GridScrollEdgeCallback01')) as Promise<Component>);
       await button.click();
       await CommonFunc.sleep(1000);

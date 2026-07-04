@@ -87,6 +87,7 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ACROSS_static_0300', Level.LEVEL0, async 
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ACROSS_static_0300 START");
       await CommonFunc.sleep(3000);
       let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
       let btn = await driver.findComponent(ON.id('btnswiper_across0030'));
       await (btn?.click() as Promise<void>);
       let swiperArrow = await driver.findComponent(ON.id("swiperacr_0030"));
