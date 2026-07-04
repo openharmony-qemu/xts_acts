@@ -24,16 +24,16 @@ import RealWorldComboTest from './collections/RealWorldComboTest.test'
 import StressStabilityComboTest from './collections/StressStabilityComboTest.test'
 import ConcatArrayImplTest from './concatArray/ConcatArrayImplTest.test'
 import ConcatArrayConcurrentTest from './concatArray/ConcatArrayConcurrentTest.test'
-import Float32ArrayTest from './floatArray/Float32ArrayTest.test'
-import Int8ArrayTest from './intArray/Int8ArrayTest.test'
-import Int16ArrayTest from './intArray/Int16ArrayTest.test'
-import Int32ArrayTest from './intArray/Int32ArrayTest.test'
-import Uint8ArrayTest from './intArray/Uint8ArrayTest.test'
-import Uint8ClampedArrayCtorTest from './uintArray/Uint8ClampedArrayCtorTest.test'
-import Uint8ClampedArrayMethodTest from './uintArray/Uint8ClampedArrayMethodTest.test'
-import Uint8ClampedArrayConcurrentTest from './uintArray/Uint8ClampedArrayConcurrentTest.test'
-import Uint16ArrayTest from './uintArray/Uint16ArrayTest.test'
-import Uint32ArrayTest from './uintArray/Uint32ArrayTest.test'
+import FloatArrayTest from './floatArray/FloatArrayTest.test'
+import IntByteArrayTest from './intArray/IntByteArrayTest.test'
+import IntShortArrayTest from './intArray/IntShortArrayTest.test'
+import IntIntArrayTest from './intArray/IntIntArrayTest.test'
+import UintByteArrayTest from './intArray/UintByteArrayTest.test'
+import UintByteClampedArrayCtorTest from './uintArray/UintByteClampedArrayCtorTest.test'
+import UintByteClampedArrayMethodTest from './uintArray/UintByteClampedArrayMethodTest.test'
+import UintByteClampedArrayConcurrentTest from './uintArray/UintByteClampedArrayConcurrentTest.test'
+import UintShortArrayTest from './uintArray/UintShortArrayTest.test'
+import UintIntArrayTest from './uintArray/UintIntArrayTest.test'
 export default function testsuite(): void {
   BitVectorTest()
   ArrayBufferTest()
@@ -46,14 +46,14 @@ export default function testsuite(): void {
   StressStabilityComboTest()
   ConcatArrayImplTest()
   ConcatArrayConcurrentTest()
-  Float32ArrayTest()
-  Int8ArrayTest()
-  Int16ArrayTest()
-  Int32ArrayTest()
-  Uint8ArrayTest()
-  Uint8ClampedArrayCtorTest()
-  Uint8ClampedArrayMethodTest()
-  Uint8ClampedArrayConcurrentTest()
-  Uint16ArrayTest()
-  Uint32ArrayTest()
+  FloatArrayTest()
+  IntByteArrayTest()
+  IntShortArrayTest()
+  IntIntArrayTest()
+  UintByteArrayTest()
+  UintByteClampedArrayCtorTest()
+  UintByteClampedArrayMethodTest()
+  UintByteClampedArrayConcurrentTest()
+  UintShortArrayTest()
+  UintIntArrayTest()
 }
