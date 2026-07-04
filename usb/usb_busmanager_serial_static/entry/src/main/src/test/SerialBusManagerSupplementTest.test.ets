@@ -279,7 +279,7 @@ export default function SerialBusManagerSupplementTest(): void {
           done();
         } catch (err) {
           console.error(TAG, 'testOffDisconnect004 catch err code: ', err.code, ', message: ', err.message);
-          expect(err.code).assertEqual(35700002);
+          expect().assertFail();
           await gPort!.close();
           done();
         }
@@ -624,7 +624,7 @@ export default function SerialBusManagerSupplementTest(): void {
           gPort!.open();
           await driveFn();
           let writeData: Uint8Array = new Uint8Array(buffer.from('Hello', 'utf-8').buffer);
-          let nullTimeout: number | null = null;
+          let nullTimeout: int | null = null;
           await gPort!.write(writeData, nullTimeout!);
           expect().assertFail();
           done();
@@ -655,7 +655,7 @@ export default function SerialBusManagerSupplementTest(): void {
           gPort!.open();
           await driveFn();
           let writeData: Uint8Array = new Uint8Array(buffer.from('Hello', 'utf-8').buffer);
-          let undefinedTimeout: number | undefined = undefined;
+          let undefinedTimeout: int | undefined = undefined;
           let writeLen: int = await gPort!.write(writeData, undefinedTimeout!);
           console.info(TAG, 'testWrite013 writeLen: ', writeLen);
           expect(writeLen >= 0).assertTrue();
@@ -671,7 +671,7 @@ export default function SerialBusManagerSupplementTest(): void {
     /**
      * @tc.name   testWrite014
      * @tc.number SUB_BusManager_Serial_Static_write_RETURN_0100
-     * @tc.desc   write return value type is number and greater than 0.
+     * @tc.desc   write return value type is int and greater than 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -689,7 +689,7 @@ export default function SerialBusManagerSupplementTest(): void {
           let writeData: Uint8Array = new Uint8Array(buffer.from('Hello World', 'utf-8').buffer);
           let writeLen: int = await gPort!.write(writeData, 2000);
           console.info(TAG, 'testWrite014 writeLen: ', writeLen);
-          expect(typeof writeLen === 'number').assertTrue();
+          expect(typeof writeLen === 'int').assertTrue();
           expect(writeLen > 0).assertTrue();
           await gPort!.close();
           done();
@@ -982,7 +982,7 @@ export default function SerialBusManagerSupplementTest(): void {
           const portList: serial.SerialPort[] = await serial.getSerialPortList();
           console.info(TAG, 'testGetSerialPortList003 portList length: ', portList.length);
           expect(portList instanceof Array).assertTrue();
-          expect(typeof portList.length === 'number').assertTrue();
+          expect(typeof portList.length === 'int').assertTrue();
           expect(portList.length >= 0).assertTrue();
           if (portList.length === 0) {
             expect(portList.length).assertEqual(0);
