@@ -289,8 +289,8 @@ struct ExecuteAIPageCommandTest {
               }
               break;
             }
-            case "testExecuteAIPageCommand017": {
-              let msg = "testExecuteAIPageCommand017"
+            case 'testExecuteAIPageCommand017': {
+              let msg = 'testExecuteAIPageCommand017'
               try {
                 await this.controllerNull.executeAIPageCommand(fullDomFunction0001);
                 Utils.emitEvent(true, 148127)
