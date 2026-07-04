@@ -304,7 +304,7 @@ export default function ExecuteAIPageCommandTest() : void{
         await Utils.msSleep(2000);
         done();
       })
-      /**
+    /**
      * @tc.name   testExecuteAIPageCommand017
      * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_1700
      * @tc.desc   test executeAIPageCommand with unassociated controller
