@@ -119,7 +119,8 @@ HWTEST_F(HDRFuncNdkTest, HDR_FUNC_0020, TestSize.Level1)
  */
 HWTEST_F(HDRFuncNdkTest, HDR_FUNC_0030, TestSize.Level2)
 {
-    if (!access("/system/lib64/media/", 0) && (cap_hevc)) {
+    if (!access("/system/lib64/media/", 0) && (cap_hevc) &&
+        OH_AVCapability_AreProfileAndLevelSupported(cap_hevc, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
         sample->DEFAULT_PROFILE = HEVC_PROFILE_MAIN;
         sample->INP_DIR = "/data/test/media/pq_vivid.h265";
@@ -141,7 +142,8 @@ HWTEST_F(HDRFuncNdkTest, HDR_FUNC_0030, TestSize.Level2)
  */
 HWTEST_F(HDRFuncNdkTest, HDR_FUNC_0040, TestSize.Level2)
 {
-    if (!access("/system/lib64/media/", 0) && (cap_hevc)) {
+    if (!access("/system/lib64/media/", 0) && (cap_hevc) &&
+        OH_AVCapability_AreProfileAndLevelSupported(cap_hevc, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
         sample->DEFAULT_PROFILE = HEVC_PROFILE_MAIN;
         sample->INP_DIR = "/data/test/media/hlg_vivid_4k.h265";
