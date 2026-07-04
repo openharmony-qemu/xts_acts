@@ -33,8 +33,9 @@ import {
 class X1<in T1, out T2, T3> {
     readonly t2_obj: T2
     t3_obj: T3
-    constructor(p: T2) {
+    constructor(p: T2, t3: T3) {
         this.t2_obj = p
+        this.t3_obj = t3
     }
 
     f1(p: T1) {}
@@ -453,7 +454,7 @@ export default function GenericVarianceTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericVariance0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: X1<number, number, number> = new X1<number, number, number>(1)
+      let x: X1<number, number, number> = new X1<number, number, number>(1, 0)
       expect(x.f2()).assertEqual(1)
       expect(x.f3(1)).assertEqual(1)
     })

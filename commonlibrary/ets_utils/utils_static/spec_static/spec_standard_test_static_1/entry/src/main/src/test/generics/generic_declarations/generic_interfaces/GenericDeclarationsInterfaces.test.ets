@@ -399,6 +399,9 @@ interface Ichainable_41<T> {
 }
 class Chainable_41<T> implements Ichainable_41<T> {
   private value: T;
+  constructor() {
+    this.value = (undefined as T);
+  }
 
   set(value: T): this {
     this.value = value;
@@ -416,6 +419,9 @@ class Chainable_41<T> implements Ichainable_41<T> {
 }
 class Chainable_42<T> implements Ichainable_41<T> {
   private value: T;
+  constructor() {
+    this.value = (undefined as T);
+  }
 
   set(value: T): this {
     this.value = value;
