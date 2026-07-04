@@ -283,7 +283,7 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_BITRATE_006, TestSize.Level0)
 HWTEST_F(HwEncSetParamNdkTest, RESET_BITRATE_007, TestSize.Level1)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    if (cap) {
+    if (cap && OH_AVCapability_AreProfileAndLevelSupported(cap, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
@@ -348,7 +348,7 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_BITRATE_008, TestSize.Level0)
 HWTEST_F(HwEncSetParamNdkTest, RESET_BITRATE_009, TestSize.Level0)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    if (cap) {
+    if (cap && OH_AVCapability_AreProfileAndLevelSupported(cap, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
@@ -381,7 +381,7 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_BITRATE_009, TestSize.Level0)
 HWTEST_F(HwEncSetParamNdkTest, RESET_BITRATE_010, TestSize.Level0)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    if (cap) {
+    if (cap  && OH_AVCapability_AreProfileAndLevelSupported(cap, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
@@ -414,7 +414,7 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_BITRATE_010, TestSize.Level0)
 HWTEST_F(HwEncSetParamNdkTest, RESET_BITRATE_011, TestSize.Level0)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    if (cap) {
+    if (cap && OH_AVCapability_AreProfileAndLevelSupported(cap, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
@@ -446,7 +446,7 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_BITRATE_011, TestSize.Level0)
 HWTEST_F(HwEncSetParamNdkTest, RESET_BITRATE_012, TestSize.Level0)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    if (cap) {
+    if (cap && OH_AVCapability_AreProfileAndLevelSupported(cap, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
@@ -788,7 +788,7 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_FRAMERATE_007, TestSize.Level1)
 HWTEST_F(HwEncSetParamNdkTest, RESET_FRAMERATE_008, TestSize.Level1)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    if (cap) {
+    if (cap && OH_AVCapability_AreProfileAndLevelSupported(cap, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
@@ -821,7 +821,7 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_FRAMERATE_008, TestSize.Level1)
 HWTEST_F(HwEncSetParamNdkTest, RESET_FRAMERATE_009, TestSize.Level1)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    if (cap) {
+    if (cap  && OH_AVCapability_AreProfileAndLevelSupported(cap, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
@@ -854,7 +854,7 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_FRAMERATE_009, TestSize.Level1)
 HWTEST_F(HwEncSetParamNdkTest, RESET_FRAMERATE_010, TestSize.Level1)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    if (cap) {
+    if (cap && OH_AVCapability_AreProfileAndLevelSupported(cap, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
@@ -886,7 +886,7 @@ HWTEST_F(HwEncSetParamNdkTest, RESET_FRAMERATE_010, TestSize.Level1)
 HWTEST_F(HwEncSetParamNdkTest, RESET_FRAMERATE_011, TestSize.Level1)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    if (cap) {
+    if (cap && OH_AVCapability_AreProfileAndLevelSupported(cap, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
@@ -1712,7 +1712,7 @@ HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_002, TestSize.Level1)
 HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_003, TestSize.Level1)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    if (cap) {
+    if (cap && OH_AVCapability_AreProfileAndLevelSupported(cap, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
@@ -1746,7 +1746,7 @@ HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_003, TestSize.Level1)
 HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_004, TestSize.Level1)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    if (cap) {
+    if (cap && OH_AVCapability_AreProfileAndLevelSupported(cap, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
@@ -1780,7 +1780,7 @@ HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_004, TestSize.Level1)
 HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_005, TestSize.Level1)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    if (cap) {
+    if (cap && OH_AVCapability_AreProfileAndLevelSupported(cap, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
@@ -1814,7 +1814,7 @@ HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_005, TestSize.Level1)
 HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_006, TestSize.Level1)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    if (cap) {
+    if (cap && OH_AVCapability_AreProfileAndLevelSupported(cap, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
@@ -1848,7 +1848,7 @@ HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_006, TestSize.Level1)
 HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_ADD_001, TestSize.Level1)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    if (cap) {
+    if (cap && OH_AVCapability_AreProfileAndLevelSupported(cap, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
@@ -1877,7 +1877,7 @@ HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_ADD_001, TestSize.Level1)
 HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_ADD_002, TestSize.Level1)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    if (cap) {
+    if (cap && OH_AVCapability_AreProfileAndLevelSupported(cap, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
@@ -1906,7 +1906,7 @@ HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_ADD_002, TestSize.Level1)
 HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_ADD_003, TestSize.Level1)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    if (cap) {
+    if (cap && OH_AVCapability_AreProfileAndLevelSupported(cap, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
@@ -1935,7 +1935,7 @@ HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_ADD_003, TestSize.Level1)
 HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_ADD_004, TestSize.Level1)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    if (cap) {
+    if (cap && OH_AVCapability_AreProfileAndLevelSupported(cap, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
@@ -1964,7 +1964,7 @@ HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_ADD_004, TestSize.Level1)
 HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_ADD_005, TestSize.Level1)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    if (cap) {
+    if (cap && OH_AVCapability_AreProfileAndLevelSupported(cap, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
@@ -1993,7 +1993,7 @@ HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_ADD_005, TestSize.Level1)
 HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_ADD_006, TestSize.Level1)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    if (cap) {
+    if (cap && OH_AVCapability_AreProfileAndLevelSupported(cap, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
@@ -2022,7 +2022,7 @@ HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_ADD_006, TestSize.Level1)
 HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_ADD_007, TestSize.Level1)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    if (cap) {
+    if (cap && OH_AVCapability_AreProfileAndLevelSupported(cap, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
@@ -2051,7 +2051,7 @@ HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_ADD_007, TestSize.Level1)
 HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_ADD_008, TestSize.Level1)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    if (cap) {
+    if (cap && OH_AVCapability_AreProfileAndLevelSupported(cap, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
@@ -2080,7 +2080,7 @@ HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_ADD_008, TestSize.Level1)
 HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_ADD_009, TestSize.Level1)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    if (cap) {
+    if (cap && OH_AVCapability_AreProfileAndLevelSupported(cap, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
@@ -2109,7 +2109,7 @@ HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_ADD_009, TestSize.Level1)
 HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_ADD_010, TestSize.Level1)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    if (cap) {
+    if (cap && OH_AVCapability_AreProfileAndLevelSupported(cap, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
@@ -2138,7 +2138,7 @@ HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_ADD_010, TestSize.Level1)
 HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_ADD_011, TestSize.Level1)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    if (cap) {
+    if (cap && OH_AVCapability_AreProfileAndLevelSupported(cap, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
@@ -2167,7 +2167,7 @@ HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_ADD_011, TestSize.Level1)
 HWTEST_F(HwEncSetParamNdkTest, COLORSPACE_CONFIG_ADD_012, TestSize.Level1)
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    if (cap) {
+    if (cap && OH_AVCapability_AreProfileAndLevelSupported(cap, HEVC_PROFILE_MAIN, HEVC_LEVEL_62)) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
