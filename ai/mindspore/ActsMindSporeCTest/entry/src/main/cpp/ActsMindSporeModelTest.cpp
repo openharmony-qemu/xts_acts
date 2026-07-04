@@ -592,7 +592,7 @@ int SUBAIMindSporeModelCreate0019()
     ASSERT_NE(inputs.handle_list, nullptr);
     FillInputsData(inputs, "ml_face_isface", true);
     OHPrintf("==========Model Predict==========\n");
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     OH_AI_Status predictRet = OH_AI_ModelPredict(nullptr, inputs, &outputs, nullptr, nullptr);
     ASSERT_EQ(predictRet, OH_AI_STATUS_LITE_NULLPTR);
     OH_AI_ContextDestroy(&context);
@@ -622,9 +622,9 @@ int SUBAIMindSporeModelCreate0020()
         OH_AI_ModelBuildFromFile(model, FilePath("ml_face_isface.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context);
     ASSERT_EQ(buildRet, OH_AI_STATUS_SUCCESS);
     OHPrintf("==========FillModelInputs==========\n");
-    OH_AI_TensorHandleArray inputs;
+    OH_AI_TensorHandleArray inputs = {0, nullptr};
     OHPrintf("==========Model Predict==========\n");
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     OH_AI_Status predictRet = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
     OHPrintf("==========predictRet==========%d\n", predictRet);
     ASSERT_EQ(predictRet, OH_AI_STATUS_LITE_ERROR);
@@ -661,12 +661,12 @@ int SUBAIMindSporeModelCreate0021()
     OH_AI_TensorHandle tensor =
         OH_AI_TensorCreate("data", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32, createShape, createShapeNum, data, sizeof(data));
     ASSERT_NE(tensor, nullptr);
-    OH_AI_TensorHandleArray inTensorArray;
+    OH_AI_TensorHandleArray inTensorArray = {0, nullptr};
     inTensorArray.handle_num = 1;
     inTensorArray.handle_list = (OH_AI_TensorHandle*)malloc(sizeof(OH_AI_TensorHandle) * inTensorArray.handle_num);
     inTensorArray.handle_list[0] = tensor;
     OHPrintf("==========Model Predict==========\n");
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     OH_AI_Status predictRet = OH_AI_ModelPredict(model, inTensorArray, &outputs, nullptr, nullptr);
     std::cout << predictRet << std::endl;
     ASSERT_EQ(predictRet, OH_AI_STATUS_LITE_INPUT_TENSOR_ERROR);
@@ -702,7 +702,7 @@ int SUBAIMindSporeModelCreate0022()
     ASSERT_NE(inputs.handle_list, nullptr);
     FillInputsData(inputs, "ml_face_isface", true);
     OHPrintf("==========Model Predict Callback==========\n");
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     OH_AI_KernelCallBack beforeCallBack = PrintBeforeCallback;
     OH_AI_KernelCallBack afterCallBack = PrintAfterCallback;
     OH_AI_Status predictRet = OH_AI_ModelPredict(model, inputs, &outputs, beforeCallBack, afterCallBack);
@@ -801,7 +801,7 @@ int SUBAIMindSporeModelCreate0029()
     ASSERT_NE(inputs.handle_list, nullptr);
     FillInputsData(inputs, "ml_face_isface", true);
     OHPrintf("==========Model Predict==========\n");
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     OH_AI_Status predictRet = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
     ASSERT_EQ(predictRet, OH_AI_STATUS_SUCCESS);
     OHPrintf("==========CompareModelOutputs==========\n");
@@ -839,7 +839,7 @@ int SUBAIMindSporeModelCreate0030()
     ASSERT_NE(inputs2.handle_list, nullptr);
     FillInputsData(inputs2, "ml_face_isface", true);
     OHPrintf("==========Model Predict==========\n");
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     OH_AI_Status predictRet = OH_AI_ModelPredict(model, inputs2, &outputs, nullptr, nullptr);
     ASSERT_EQ(predictRet, OH_AI_STATUS_SUCCESS);
     OHPrintf("==========CompareModelOutputs==========\n");
@@ -982,13 +982,13 @@ int SUBAIMindSporeModelCreate0035()
     OHPrintf("==========OH_AI_ModelGetInputByTensorName==========\n");
     OH_AI_TensorHandle tensor = OH_AI_ModelGetInputByTensorName(model, "data");
     ASSERT_NE(tensor, nullptr);
-    OH_AI_TensorHandleArray inTensorArray;
+    OH_AI_TensorHandleArray inTensorArray = {0, nullptr};
     inTensorArray.handle_num = 1;
     inTensorArray.handle_list = (OH_AI_TensorHandle*)malloc(sizeof(OH_AI_TensorHandle) * 1);
     inTensorArray.handle_list[0] = tensor;
     FillInputsData(inTensorArray, "ml_face_isface", true);
     OHPrintf("==========OH_AI_ModelPredict==========\n");
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     OH_AI_Status predictRet = OH_AI_ModelPredict(model, inTensorArray, &outputs, nullptr, nullptr);
     ASSERT_EQ(predictRet, OH_AI_STATUS_SUCCESS);
     OHPrintf("==========CompareModelOutputs==========\n");
@@ -1071,7 +1071,7 @@ int SUBAIMindSporeModelCreate0038()
     OHPrintf("==========Model Predict==========\n");
     OH_AI_TensorHandle tensor = OH_AI_ModelGetOutputByTensorName(model, "prob");
     ASSERT_NE(tensor, nullptr);
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     outputs.handle_num = 1;
     outputs.handle_list = (OH_AI_TensorHandle*)malloc(sizeof(OH_AI_TensorHandle) * 1);
     outputs.handle_list[0] = tensor;
@@ -1287,7 +1287,7 @@ int SUBAIMindSporeModelLoadConfig0001()
     ASSERT_NE(inputs.handle_list, nullptr);
     FillInputsData(inputs, "ml_face_isface", true);
     OHPrintf("==========Model Predict==========\n");
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     OH_AI_Status predictRet = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
     ASSERT_EQ(predictRet, OH_AI_STATUS_SUCCESS);
     OHPrintf("==========CompareResult==========\n");
