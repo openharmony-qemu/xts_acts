@@ -17,6 +17,22 @@ import { beforeAll, describe, it, expect, TestType, Size, Level } from "@ohos/hy
 import usbDdk from 'libusbddkndk.so'
 import deviceManager from "@ohos.driver.deviceManager";
 
+interface FilteredDevice {
+  vendorId: number;
+  productId: number;
+}
+
+const FILTERED_DEVICES: Array<FilteredDevice> = [
+  { vendorId: 3034, productId: 33107 },
+  { vendorId: 65535, productId: 14131 },
+];
+
+function isFilteredDevice(device: deviceManager.USBDevice): boolean {
+  return FILTERED_DEVICES.some(item =>
+    device.vendorId === item.vendorId && device.productId === item.productId
+  );
+}
+
 export default function usbDdkTest() {
   let dev: number = -1;
   let deviceId: number = -1;
@@ -50,7 +66,12 @@ export default function usbDdkTest() {
     beforeAll(async () => {
       try {
         let devices: Array<deviceManager.Device> = deviceManager.queryDevices(deviceManager.BusType.USB);
-        for (let item of devices) {
+        let filteredList: Array<deviceManager.Device> = devices.filter(item => {
+          let device: deviceManager.USBDevice = item as deviceManager.USBDevice;
+          return !isFilteredDevice(device);
+        });
+        console.info('filter device list:', JSON.stringify(filteredList));
+        for (let item of filteredList) {
           let device: deviceManager.USBDevice = item as deviceManager.USBDevice;
           dev = device.deviceId;
           console.info(`Device id is ${device.deviceId}`);
