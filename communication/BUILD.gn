@@ -64,6 +64,7 @@ group("communication") {
       "wifi_standard_static:ActsWifiJSStaticTest",
       "wifi_switchoff:ActsWifiManagerSwitchOffTest",
       "wifimanager_switchoff_static:ActsManagerDisableStaticTest",
+      "wifi_enterprise_static:ActsWifiStaticEnterpriseTest",
     ]
   } else {
     deps = [ "wifi_standard:ActsWifiJSTest" ]
