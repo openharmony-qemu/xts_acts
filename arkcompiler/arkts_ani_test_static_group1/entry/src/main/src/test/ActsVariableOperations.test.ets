@@ -21,7 +21,7 @@ import { Foo } from '../ets/Index'
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
-export default function variableOperationsTest() {
+export default function variableOperationsTest(): void {
 
   describe("ActsVariableOperationsTest", (): void => {
     try {

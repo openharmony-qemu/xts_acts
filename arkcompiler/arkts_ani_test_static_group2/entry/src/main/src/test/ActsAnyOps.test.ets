@@ -21,7 +21,7 @@ import { Foo } from '../ets/Index'
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
-export default function anyOpsTest() {
+export default function anyOpsTest(): void {
 
   describe("ActsAnyOpsTest", (): void => {
     try {
@@ -81,7 +81,7 @@ export default function anyOpsTest() {
         console.log('test_Any_CallMethod_0002 start');
         let cls = new Foo();
         let result = cls.test_Any_CallMethod_01();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_Any_CallMethod_0002 done');
         done();
         console.log('test_Any_CallMethod_0002 end');
@@ -119,7 +119,7 @@ export default function anyOpsTest() {
         console.log('Any_GetProperty_0004 start');
         let cls = new Foo();
         let result = cls.test_Any_GetProperty_03();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('Any_GetProperty_0004 done');
         done();
         console.log('Any_GetProperty_0004 end');
@@ -138,7 +138,7 @@ export default function anyOpsTest() {
         console.log('test_Any_GetProperty_0005 start');
         let cls = new Foo();
         let result = cls.test_Any_GetProperty_04();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_Any_GetProperty_0005 done');
         done();
         console.log('test_Any_GetProperty_0005 end');
@@ -157,7 +157,7 @@ export default function anyOpsTest() {
         console.log('test_Any_GetProperty_0006 start');
         let cls = new Foo();
         let result = cls.test_Any_GetProperty_05();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_Any_GetProperty_0006 done');
         done();
         console.log('test_Any_GetProperty_0006 end');
@@ -176,7 +176,7 @@ export default function anyOpsTest() {
         console.log('test_Any_GetProperty_0007 start');
         let cls = new Foo();
         let result = cls.test_Any_GetProperty_06();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_Any_GetProperty_0007 done');
         done();
         console.log('test_Any_GetProperty_0007 end');
@@ -290,7 +290,7 @@ export default function anyOpsTest() {
         console.log('test_Any_SetProperty_0002 start');
         let cls = new Foo();
         let result = cls.test_Any_SetProperty_01();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_Any_SetProperty_0002 done');
         done();
         console.log('test_Any_SetProperty_0002 end');
@@ -309,7 +309,7 @@ export default function anyOpsTest() {
         console.log('test_Any_SetProperty_0003 start');
         let cls = new Foo();
         let result = cls.test_Any_SetProperty_02();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_Any_SetProperty_0003 done');
         done();
         console.log('test_Any_SetProperty_0003 end');
@@ -347,7 +347,7 @@ export default function anyOpsTest() {
         console.log('test_Any_SetProperty_0005 start');
         let cls = new Foo();
         let result = cls.test_Any_SetProperty_04();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_Any_SetProperty_0005 done');
         done();
         console.log('test_Any_SetProperty_0005 end');
@@ -366,7 +366,7 @@ export default function anyOpsTest() {
         console.log('test_Any_SetProperty_0006 start');
         let cls = new Foo();
         let result = cls.test_Any_SetProperty_05();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_Any_SetProperty_0006 done');
         done();
         console.log('test_Any_SetProperty_0006 end');

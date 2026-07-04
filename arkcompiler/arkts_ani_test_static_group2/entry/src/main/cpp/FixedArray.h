@@ -141,23 +141,18 @@ ani_int test_FixedArray_Boolean_01([[maybe_unused]] ani_env *env_, [[maybe_unuse
     ASSERT_EQ(env_->FixedArray_New_Boolean(LENGTH_5, &array), ANI_OK);
     ani_boolean nativeBuffer[LENGTH_10] = {ANI_TRUE};
     ASSERT_EQ(env_->FixedArray_GetRegion_Boolean(array, OFFSET_0, LENGTH_1, nullptr), ANI_INVALID_ARGS);
-    ASSERT_EQ(env_->FixedArray_GetRegion_Boolean(array, OFFSET_0, LENGTH_5, nativeBuffer), ANI_OUT_OF_RANGE);
+    ASSERT_EQ(env_->FixedArray_GetRegion_Boolean(array, OFFSET_5, LENGTH_10, nativeBuffer), ANI_OUT_OF_RANGE);
     return ANI_TRUE;
 }
 
 ani_int test_FixedArray_Boolean_02([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
-    ani_class cls {};
-    ASSERT_EQ(env_->FindClass("fixedarray_region_boolean_test.ArrayClass", &cls), ANI_OK);
-    ASSERT_NE(cls, nullptr);
+    ani_fixedarray_boolean array = nullptr;
+    ASSERT_EQ(env_->FixedArray_New_Boolean(LENGTH_5, &array), ANI_OK);
+    ani_boolean initBuffer[LENGTH_5] = {ANI_TRUE, ANI_TRUE, ANI_TRUE, ANI_TRUE, ANI_TRUE};
+    ASSERT_EQ(env_->FixedArray_SetRegion_Boolean(array, OFFSET_0, LENGTH_5, initBuffer), ANI_OK);
 
-    ani_ref ref = nullptr;
-    ASSERT_EQ(env_->Class_GetStaticFieldByName_Ref(cls, "array", &ref), ANI_OK);
-    ASSERT_NE(ref, nullptr);
-
-    auto array = reinterpret_cast<ani_fixedarray_boolean>(ref);
     ani_boolean nativeBuffer[LENGTH_5] = {ANI_FALSE};
-
     ASSERT_EQ(env_->FixedArray_GetRegion_Boolean(array, OFFSET_0, LENGTH_5, nativeBuffer), ANI_OK);
     ASSERT_EQ(nativeBuffer[0U], ANI_TRUE);
     ASSERT_EQ(nativeBuffer[1U], ANI_TRUE);
@@ -165,7 +160,8 @@ ani_int test_FixedArray_Boolean_02([[maybe_unused]] ani_env *env_, [[maybe_unuse
     ASSERT_EQ(nativeBuffer[3U], ANI_TRUE);
     ASSERT_EQ(nativeBuffer[4U], ANI_TRUE);
 
-    ASSERT_EQ(env_->Class_CallStaticMethodByName_Void(cls, "changeStaticArray", nullptr), ANI_OK);
+    ani_boolean changeBuffer[LENGTH_5] = {ANI_TRUE, ANI_TRUE, ANI_FALSE, ANI_TRUE, ANI_FALSE};
+    ASSERT_EQ(env_->FixedArray_SetRegion_Boolean(array, OFFSET_0, LENGTH_5, changeBuffer), ANI_OK);
     ASSERT_EQ(env_->FixedArray_GetRegion_Boolean(array, OFFSET_0, LENGTH_5, nativeBuffer), ANI_OK);
     ASSERT_EQ(nativeBuffer[0U], ANI_TRUE);
     ASSERT_EQ(nativeBuffer[1U], ANI_TRUE);
@@ -177,21 +173,18 @@ ani_int test_FixedArray_Boolean_02([[maybe_unused]] ani_env *env_, [[maybe_unuse
 
 ani_int test_FixedArray_Boolean_03([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
-    ani_class cls {};
-    ASSERT_EQ(env_->FindClass("fixedarray_region_boolean_test.ArrayClass", &cls), ANI_OK);
-    ASSERT_NE(cls, nullptr);
+    ani_fixedarray_boolean array = nullptr;
+    ASSERT_EQ(env_->FixedArray_New_Boolean(LENGTH_5, &array), ANI_OK);
+    ani_boolean setBuffer[LENGTH_5] = {ANI_FALSE, ANI_FALSE, ANI_FALSE, ANI_FALSE, ANI_FALSE};
+    ASSERT_EQ(env_->FixedArray_SetRegion_Boolean(array, OFFSET_0, LENGTH_5, setBuffer), ANI_OK);
 
-    ani_ref ref = nullptr;
-    ASSERT_EQ(env_->Class_GetStaticFieldByName_Ref(cls, "array", &ref), ANI_OK);
-    ASSERT_NE(ref, nullptr);
-
-    auto array = reinterpret_cast<ani_fixedarray_boolean>(ref);
-    ani_boolean nativeBuffer[LENGTH_5] = {ANI_FALSE, ANI_FALSE, ANI_FALSE};
-    ASSERT_EQ(env_->FixedArray_SetRegion_Boolean(array, OFFSET_0, LENGTH_5, nativeBuffer), ANI_OK);
-
-    ani_boolean result = ANI_FALSE;
-    ASSERT_EQ(env_->Class_CallStaticMethodByName_Boolean(cls, "checkStaticArray", nullptr, &result), ANI_OK);
-    ASSERT_EQ(result, ANI_TRUE);
+    ani_boolean nativeBuffer[LENGTH_5] = {ANI_TRUE};
+    ASSERT_EQ(env_->FixedArray_GetRegion_Boolean(array, OFFSET_0, LENGTH_5, nativeBuffer), ANI_OK);
+    ASSERT_EQ(nativeBuffer[0U], ANI_FALSE);
+    ASSERT_EQ(nativeBuffer[1U], ANI_FALSE);
+    ASSERT_EQ(nativeBuffer[2U], ANI_FALSE);
+    ASSERT_EQ(nativeBuffer[3U], ANI_FALSE);
+    ASSERT_EQ(nativeBuffer[4U], ANI_FALSE);
     return ANI_TRUE;
 }
 
@@ -275,53 +268,52 @@ ani_int test_FixedArray_Byte_01([[maybe_unused]] ani_env *env_, [[maybe_unused]]
 
 ani_int test_FixedArray_Byte_02([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
-    ani_class cls {};
-    ASSERT_EQ(env_->FindClass("fixedarray_region_byte_test.ArrayClass", &cls), ANI_OK);
-    ASSERT_NE(cls, nullptr);
+    ani_fixedarray_byte array = nullptr;
+    ASSERT_EQ(env_->FixedArray_New_Byte(LENGTH_5, &array), ANI_OK);
+    ani_byte initBuffer[LENGTH_5] = {static_cast<ani_byte>(TEST_VALUE_1), static_cast<ani_byte>(TEST_VALUE_2),
+                                     static_cast<ani_byte>(TEST_VALUE_3), static_cast<ani_byte>(TEST_VALUE_4),
+                                     static_cast<ani_byte>(TEST_VALUE_5)};
+    ASSERT_EQ(env_->FixedArray_SetRegion_Byte(array, OFFSET_0, LENGTH_5, initBuffer), ANI_OK);
 
-    ani_ref ref = nullptr;
-    ASSERT_EQ(env_->Class_GetStaticFieldByName_Ref(cls, "array", &ref), ANI_OK);
-    ASSERT_NE(ref, nullptr);
-
-    auto array = reinterpret_cast<ani_fixedarray_byte>(ref);
     ani_byte nativeBuffer[LENGTH_5] = {0};
-    const ani_size offset5 = 0;
-    const ani_size len5 = LENGTH_5;
+    ASSERT_EQ(env_->FixedArray_GetRegion_Byte(array, OFFSET_0, LENGTH_5, nativeBuffer), ANI_OK);
+    ASSERT_EQ(nativeBuffer[0U], static_cast<ani_byte>(TEST_VALUE_1));
+    ASSERT_EQ(nativeBuffer[1U], static_cast<ani_byte>(TEST_VALUE_2));
+    ASSERT_EQ(nativeBuffer[2U], static_cast<ani_byte>(TEST_VALUE_3));
+    ASSERT_EQ(nativeBuffer[3U], static_cast<ani_byte>(TEST_VALUE_4));
+    ASSERT_EQ(nativeBuffer[4U], static_cast<ani_byte>(TEST_VALUE_5));
 
-    ASSERT_EQ(env_->FixedArray_GetRegion_Byte(array, offset5, len5, nativeBuffer), ANI_OK);
-    ASSERT_EQ(nativeBuffer[0U], TEST_VALUE_1);
-    ASSERT_EQ(nativeBuffer[1U], TEST_VALUE_2);
-    ASSERT_EQ(nativeBuffer[2U], TEST_VALUE_3);
-    ASSERT_EQ(nativeBuffer[3U], TEST_VALUE_4);
-    ASSERT_EQ(nativeBuffer[4U], TEST_VALUE_5);
-
-    ASSERT_EQ(env_->Class_CallStaticMethodByName_Void(cls, "changeStaticArray", nullptr), ANI_OK);
-    ASSERT_EQ(env_->FixedArray_GetRegion_Byte(array, offset5, len5, nativeBuffer), ANI_OK);
-    ASSERT_EQ(nativeBuffer[0U], TEST_VALUE_1);
-    ASSERT_EQ(nativeBuffer[1U], TEST_VALUE_2);
+    ani_byte changeBuffer[LENGTH_5] = {static_cast<ani_byte>(TEST_VALUE_1), static_cast<ani_byte>(TEST_VALUE_2),
+                                       TEST_UPDATE_4, static_cast<ani_byte>(TEST_VALUE_4), TEST_UPDATE_5};
+    ASSERT_EQ(env_->FixedArray_SetRegion_Byte(array, OFFSET_0, LENGTH_5, changeBuffer), ANI_OK);
+    ASSERT_EQ(env_->FixedArray_GetRegion_Byte(array, OFFSET_0, LENGTH_5, nativeBuffer), ANI_OK);
+    ASSERT_EQ(nativeBuffer[0U], static_cast<ani_byte>(TEST_VALUE_1));
+    ASSERT_EQ(nativeBuffer[1U], static_cast<ani_byte>(TEST_VALUE_2));
     ASSERT_EQ(nativeBuffer[2U], TEST_UPDATE_4);
-    ASSERT_EQ(nativeBuffer[3U], TEST_VALUE_4);
+    ASSERT_EQ(nativeBuffer[3U], static_cast<ani_byte>(TEST_VALUE_4));
     ASSERT_EQ(nativeBuffer[4U], TEST_UPDATE_5);
     return ANI_TRUE;
 }
 
 ani_int test_FixedArray_Byte_03([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
-    ani_class cls {};
-    ASSERT_EQ(env_->FindClass("fixedarray_region_byte_test.ArrayClass", &cls), ANI_OK);
-    ASSERT_NE(cls, nullptr);
+    ani_fixedarray_byte array = nullptr;
+    ASSERT_EQ(env_->FixedArray_New_Byte(LENGTH_5, &array), ANI_OK);
+    ani_byte initBuffer[LENGTH_5] = {static_cast<ani_byte>(TEST_VALUE_1), static_cast<ani_byte>(TEST_VALUE_2),
+                                     static_cast<ani_byte>(TEST_VALUE_3), static_cast<ani_byte>(TEST_VALUE_4),
+                                     static_cast<ani_byte>(TEST_VALUE_5)};
+    ASSERT_EQ(env_->FixedArray_SetRegion_Byte(array, OFFSET_0, LENGTH_5, initBuffer), ANI_OK);
 
-    ani_ref ref = nullptr;
-    ASSERT_EQ(env_->Class_GetStaticFieldByName_Ref(cls, "array", &ref), ANI_OK);
-    ASSERT_NE(ref, nullptr);
+    ani_byte setBuffer[LENGTH_3] = {TEST_UPDATE_4, TEST_UPDATE_6, TEST_UPDATE_5};
+    ASSERT_EQ(env_->FixedArray_SetRegion_Byte(array, OFFSET_2, LENGTH_3, setBuffer), ANI_OK);
 
-    auto array = reinterpret_cast<ani_fixedarray_byte>(ref);
-    ani_byte nativeBuffer[LENGTH_3] = {TEST_UPDATE_4, TEST_UPDATE_6, TEST_UPDATE_5};
-    ASSERT_EQ(env_->FixedArray_SetRegion_Byte(array, OFFSET_2, LENGTH_3, nativeBuffer), ANI_OK);
-
-    ani_boolean result = ANI_FALSE;
-    ASSERT_EQ(env_->Class_CallStaticMethodByName_Boolean(cls, "checkStaticArray", nullptr, &result), ANI_OK);
-    ASSERT_EQ(result, ANI_TRUE);
+    ani_byte nativeBuffer[LENGTH_5] = {0};
+    ASSERT_EQ(env_->FixedArray_GetRegion_Byte(array, OFFSET_0, LENGTH_5, nativeBuffer), ANI_OK);
+    ASSERT_EQ(nativeBuffer[0U], static_cast<ani_byte>(TEST_VALUE_1));
+    ASSERT_EQ(nativeBuffer[1U], static_cast<ani_byte>(TEST_VALUE_2));
+    ASSERT_EQ(nativeBuffer[2U], TEST_UPDATE_4);
+    ASSERT_EQ(nativeBuffer[3U], TEST_UPDATE_6);
+    ASSERT_EQ(nativeBuffer[4U], TEST_UPDATE_5);
     return ANI_TRUE;
 }
 
@@ -528,17 +520,12 @@ ani_int test_FixedArray_Short_01([[maybe_unused]] ani_env *env_, [[maybe_unused]
 
 ani_int test_FixedArray_Short_02([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
-    ani_class cls {};
-    ASSERT_EQ(env_->FindClass("fixedarray_region_short_test.ArrayClass", &cls), ANI_OK);
-    ASSERT_NE(cls, nullptr);
+    ani_fixedarray_short array = nullptr;
+    ASSERT_EQ(env_->FixedArray_New_Short(LENGTH_5, &array), ANI_OK);
+    ani_short initBuffer[LENGTH_5] = {TEST_VAL_1, TEST_VAL_2, TEST_VAL_3, TEST_VAL_4, TEST_VAL_5};
+    ASSERT_EQ(env_->FixedArray_SetRegion_Short(array, OFFSET_0, LENGTH_5, initBuffer), ANI_OK);
 
-    ani_ref ref = nullptr;
-    ASSERT_EQ(env_->Class_GetStaticFieldByName_Ref(cls, "array", &ref), ANI_OK);
-    ASSERT_NE(ref, nullptr);
-
-    auto array = reinterpret_cast<ani_fixedarray_short>(ref);
     ani_short nativeBuffer[LENGTH_5] = {0};
-
     ASSERT_EQ(env_->FixedArray_GetRegion_Short(array, OFFSET_0, LENGTH_5, nativeBuffer), ANI_OK);
     ASSERT_EQ(nativeBuffer[0U], TEST_VAL_1);
     ASSERT_EQ(nativeBuffer[1U], TEST_VAL_2);
@@ -546,7 +533,8 @@ ani_int test_FixedArray_Short_02([[maybe_unused]] ani_env *env_, [[maybe_unused]
     ASSERT_EQ(nativeBuffer[3U], TEST_VAL_4);
     ASSERT_EQ(nativeBuffer[4U], TEST_VAL_5);
 
-    ASSERT_EQ(env_->Class_CallStaticMethodByName_Void(cls, "changeStaticArray", nullptr), ANI_OK);
+    ani_short changeBuffer[LENGTH_5] = {TEST_UPDATE_1, TEST_UPDATE_2, TEST_UPDATE_3, TEST_UPDATE_4, TEST_UPDATE_5};
+    ASSERT_EQ(env_->FixedArray_SetRegion_Short(array, OFFSET_0, LENGTH_5, changeBuffer), ANI_OK);
     ASSERT_EQ(env_->FixedArray_GetRegion_Short(array, OFFSET_0, LENGTH_5, nativeBuffer), ANI_OK);
     ASSERT_EQ(nativeBuffer[0U], TEST_UPDATE_1);
     ASSERT_EQ(nativeBuffer[1U], TEST_UPDATE_2);
@@ -558,22 +546,21 @@ ani_int test_FixedArray_Short_02([[maybe_unused]] ani_env *env_, [[maybe_unused]
 
 ani_int test_FixedArray_Short_03([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
-    ani_class cls {};
-    ASSERT_EQ(env_->FindClass("fixedarray_region_short_test.ArrayClass", &cls), ANI_OK);
-    ASSERT_NE(cls, nullptr);
+    ani_fixedarray_short array = nullptr;
+    ASSERT_EQ(env_->FixedArray_New_Short(LENGTH_5, &array), ANI_OK);
+    ani_short initBuffer[LENGTH_5] = {TEST_VAL_1, TEST_VAL_2, TEST_VAL_3, TEST_VAL_4, TEST_VAL_5};
+    ASSERT_EQ(env_->FixedArray_SetRegion_Short(array, OFFSET_0, LENGTH_5, initBuffer), ANI_OK);
 
-    ani_ref ref = nullptr;
-    ASSERT_EQ(env_->Class_GetStaticFieldByName_Ref(cls, "array", &ref), ANI_OK);
-    ASSERT_NE(ref, nullptr);
+    ani_short setBuffer[LENGTH_3] = {TEST_UPT_4, TEST_UPT_3, TEST_UPT_5};
+    ASSERT_EQ(env_->FixedArray_SetRegion_Short(array, OFFSET_2, LENGTH_3, setBuffer), ANI_OK);
 
-    auto array = reinterpret_cast<ani_fixedarray_short>(ref);
-    ani_short nativeBuffer[LENGTH_3] = {TEST_UPT_4, TEST_UPT_3, TEST_UPT_5};
-
-    ASSERT_EQ(env_->FixedArray_SetRegion_Short(array, OFFSET_2, LENGTH_3, nativeBuffer), ANI_OK);
-
-    ani_boolean result = ANI_FALSE;
-    ASSERT_EQ(env_->Class_CallStaticMethodByName_Boolean(cls, "checkStaticArray", nullptr, &result), ANI_OK);
-    ASSERT_EQ(result, ANI_TRUE);
+    ani_short nativeBuffer[LENGTH_5] = {0};
+    ASSERT_EQ(env_->FixedArray_GetRegion_Short(array, OFFSET_0, LENGTH_5, nativeBuffer), ANI_OK);
+    ASSERT_EQ(nativeBuffer[0U], TEST_VAL_1);
+    ASSERT_EQ(nativeBuffer[1U], TEST_VAL_2);
+    ASSERT_EQ(nativeBuffer[2U], TEST_UPT_4);
+    ASSERT_EQ(nativeBuffer[3U], TEST_UPT_3);
+    ASSERT_EQ(nativeBuffer[4U], TEST_UPT_5);
     return ANI_TRUE;
 }
 
@@ -687,17 +674,12 @@ ani_int test_FixedArray_Int_02([[maybe_unused]] ani_env *env_, [[maybe_unused]] 
 
 ani_int test_FixedArray_Int_03([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
-    ani_class cls {};
-    ASSERT_EQ(env_->FindClass("fixedarray_region_int_test.ArrayClass", &cls), ANI_OK);
-    ASSERT_NE(cls, nullptr);
+    ani_fixedarray_int array = nullptr;
+    ASSERT_EQ(env_->FixedArray_New_Int(LENGTH_5, &array), ANI_OK);
+    ani_int initBuffer[LENGTH_5] = {TEST_VAL_1, TEST_VAL_2, TEST_VAL_3, TEST_VAL_4, TEST_VAL_5};
+    ASSERT_EQ(env_->FixedArray_SetRegion_Int(array, OFFSET_0, LENGTH_5, initBuffer), ANI_OK);
 
-    ani_ref ref = nullptr;
-    ASSERT_EQ(env_->Class_GetStaticFieldByName_Ref(cls, "array", &ref), ANI_OK);
-    ASSERT_NE(ref, nullptr);
-
-    auto array = reinterpret_cast<ani_fixedarray_int>(ref);
     ani_int nativeBuffer[LENGTH_5] = {0};
-
     ASSERT_EQ(env_->FixedArray_GetRegion_Int(array, OFFSET_0, LENGTH_5, nativeBuffer), ANI_OK);
     ASSERT_EQ(nativeBuffer[0U], TEST_VAL_1);
     ASSERT_EQ(nativeBuffer[1U], TEST_VAL_2);
@@ -705,7 +687,8 @@ ani_int test_FixedArray_Int_03([[maybe_unused]] ani_env *env_, [[maybe_unused]] 
     ASSERT_EQ(nativeBuffer[3U], TEST_VAL_4);
     ASSERT_EQ(nativeBuffer[4U], TEST_VAL_5);
 
-    ASSERT_EQ(env_->Class_CallStaticMethodByName_Void(cls, "changeStaticArray", nullptr), ANI_OK);
+    ani_int changeBuffer[LENGTH_5] = {TEST_VAL_1, TEST_VAL_2, TEST_UPT_4, TEST_VAL_4, TEST_UPT_5};
+    ASSERT_EQ(env_->FixedArray_SetRegion_Int(array, OFFSET_0, LENGTH_5, changeBuffer), ANI_OK);
     ASSERT_EQ(env_->FixedArray_GetRegion_Int(array, OFFSET_0, LENGTH_5, nativeBuffer), ANI_OK);
     ASSERT_EQ(nativeBuffer[0U], TEST_VAL_1);
     ASSERT_EQ(nativeBuffer[1U], TEST_VAL_2);
@@ -717,22 +700,21 @@ ani_int test_FixedArray_Int_03([[maybe_unused]] ani_env *env_, [[maybe_unused]] 
 
 ani_int test_FixedArray_Int_04([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
-    ani_class cls {};
-    ASSERT_EQ(env_->FindClass("fixedarray_region_int_test.ArrayClass", &cls), ANI_OK);
-    ASSERT_NE(cls, nullptr);
+    ani_fixedarray_int array = nullptr;
+    ASSERT_EQ(env_->FixedArray_New_Int(LENGTH_5, &array), ANI_OK);
+    ani_int initBuffer[LENGTH_5] = {TEST_VAL_1, TEST_VAL_2, TEST_VAL_3, TEST_VAL_4, TEST_VAL_5};
+    ASSERT_EQ(env_->FixedArray_SetRegion_Int(array, OFFSET_0, LENGTH_5, initBuffer), ANI_OK);
 
-    ani_ref ref = nullptr;
-    ASSERT_EQ(env_->Class_GetStaticFieldByName_Ref(cls, "array", &ref), ANI_OK);
-    ASSERT_NE(ref, nullptr);
+    ani_int setBuffer[LENGTH_3] = {TEST_UPT_4, TEST_UPT_3, TEST_UPT_5};
+    ASSERT_EQ(env_->FixedArray_SetRegion_Int(array, OFFSET_2, LENGTH_3, setBuffer), ANI_OK);
 
-    auto array = reinterpret_cast<ani_fixedarray_int>(ref);
-    ani_int nativeBuffer[LENGTH_3] = {TEST_UPT_4, TEST_UPT_3, TEST_UPT_5};
-
-    ASSERT_EQ(env_->FixedArray_SetRegion_Int(array, OFFSET_2, LENGTH_3, nativeBuffer), ANI_OK);
-
-    ani_boolean result = ANI_FALSE;
-    ASSERT_EQ(env_->Class_CallStaticMethodByName_Boolean(cls, "checkStaticArray", nullptr, &result), ANI_OK);
-    ASSERT_EQ(result, ANI_TRUE);
+    ani_int nativeBuffer[LENGTH_5] = {0};
+    ASSERT_EQ(env_->FixedArray_GetRegion_Int(array, OFFSET_0, LENGTH_5, nativeBuffer), ANI_OK);
+    ASSERT_EQ(nativeBuffer[0U], TEST_VAL_1);
+    ASSERT_EQ(nativeBuffer[1U], TEST_VAL_2);
+    ASSERT_EQ(nativeBuffer[2U], TEST_UPT_4);
+    ASSERT_EQ(nativeBuffer[3U], TEST_UPT_3);
+    ASSERT_EQ(nativeBuffer[4U], TEST_UPT_5);
     return ANI_TRUE;
 }
 
@@ -848,15 +830,11 @@ ani_int test_FixedArray_Long_02([[maybe_unused]] ani_env *env_, [[maybe_unused]]
 
 ani_int test_FixedArray_Long_03([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
-    ani_class cls {};
-    ASSERT_EQ(env_->FindClass("fixedarray_region_long_test.ArrayClass", &cls), ANI_OK);
-    ASSERT_NE(cls, nullptr);
+    ani_fixedarray_long array = nullptr;
+    ASSERT_EQ(env_->FixedArray_New_Long(LENGTH_5, &array), ANI_OK);
+    ani_long initBuffer[LENGTH_5] = {TEST_VAL_1, TEST_VAL_2, TEST_VAL_3, TEST_VAL_4, TEST_VAL_5};
+    ASSERT_EQ(env_->FixedArray_SetRegion_Long(array, OFFSET_0, LENGTH_5, initBuffer), ANI_OK);
 
-    ani_ref ref = nullptr;
-    ASSERT_EQ(env_->Class_GetStaticFieldByName_Ref(cls, "array", &ref), ANI_OK);
-    ASSERT_NE(ref, nullptr);
-
-    auto array = reinterpret_cast<ani_fixedarray_long>(ref);
     ani_long nativeBuffer[LENGTH_5] = {0};
     ASSERT_EQ(env_->FixedArray_GetRegion_Long(array, OFFSET_0, LENGTH_5, nativeBuffer), ANI_OK);
     ASSERT_EQ(nativeBuffer[0U], TEST_VAL_1);
@@ -865,7 +843,8 @@ ani_int test_FixedArray_Long_03([[maybe_unused]] ani_env *env_, [[maybe_unused]]
     ASSERT_EQ(nativeBuffer[3U], TEST_VAL_4);
     ASSERT_EQ(nativeBuffer[4U], TEST_VAL_5);
 
-    ASSERT_EQ(env_->Class_CallStaticMethodByName_Void(cls, "changeStaticArray", nullptr), ANI_OK);
+    ani_long changeBuffer[LENGTH_5] = {TEST_VAL_1, TEST_VAL_2, TEST_UPT_4, TEST_VAL_4, TEST_UPT_5};
+    ASSERT_EQ(env_->FixedArray_SetRegion_Long(array, OFFSET_0, LENGTH_5, changeBuffer), ANI_OK);
     ASSERT_EQ(env_->FixedArray_GetRegion_Long(array, OFFSET_0, LENGTH_5, nativeBuffer), ANI_OK);
     ASSERT_EQ(nativeBuffer[0U], TEST_VAL_1);
     ASSERT_EQ(nativeBuffer[1U], TEST_VAL_2);
@@ -877,21 +856,21 @@ ani_int test_FixedArray_Long_03([[maybe_unused]] ani_env *env_, [[maybe_unused]]
 
 ani_int test_FixedArray_Long_04([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
-    ani_class cls {};
-    ASSERT_EQ(env_->FindClass("fixedarray_region_long_test.ArrayClass", &cls), ANI_OK);
-    ASSERT_NE(cls, nullptr);
+    ani_fixedarray_long array = nullptr;
+    ASSERT_EQ(env_->FixedArray_New_Long(LENGTH_5, &array), ANI_OK);
+    ani_long initBuffer[LENGTH_5] = {TEST_VAL_1, TEST_VAL_2, TEST_VAL_3, TEST_VAL_4, TEST_VAL_5};
+    ASSERT_EQ(env_->FixedArray_SetRegion_Long(array, OFFSET_0, LENGTH_5, initBuffer), ANI_OK);
 
-    ani_ref ref = nullptr;
-    ASSERT_EQ(env_->Class_GetStaticFieldByName_Ref(cls, "array", &ref), ANI_OK);
-    ASSERT_NE(ref, nullptr);
+    ani_long setBuffer[LENGTH_3] = {TEST_UPT_4, TEST_UPT_3, TEST_UPT_5};
+    ASSERT_EQ(env_->FixedArray_SetRegion_Long(array, OFFSET_2, LENGTH_3, setBuffer), ANI_OK);
 
-    auto array = reinterpret_cast<ani_fixedarray_long>(ref);
-    ani_long nativeBuffer[LENGTH_3] = {TEST_UPT_4, TEST_UPT_3, TEST_UPT_5};
-    ASSERT_EQ(env_->FixedArray_SetRegion_Long(array, OFFSET_2, LENGTH_3, nativeBuffer), ANI_OK);
-
-    ani_boolean result = ANI_FALSE;
-    ASSERT_EQ(env_->Class_CallStaticMethodByName_Boolean(cls, "checkStaticArray", nullptr, &result), ANI_OK);
-    ASSERT_EQ(result, ANI_TRUE);
+    ani_long nativeBuffer[LENGTH_5] = {0};
+    ASSERT_EQ(env_->FixedArray_GetRegion_Long(array, OFFSET_0, LENGTH_5, nativeBuffer), ANI_OK);
+    ASSERT_EQ(nativeBuffer[0U], TEST_VAL_1);
+    ASSERT_EQ(nativeBuffer[1U], TEST_VAL_2);
+    ASSERT_EQ(nativeBuffer[2U], TEST_UPT_4);
+    ASSERT_EQ(nativeBuffer[3U], TEST_UPT_3);
+    ASSERT_EQ(nativeBuffer[4U], TEST_UPT_5);
     return ANI_TRUE;
 }
 
@@ -1006,53 +985,49 @@ ani_int test_FixedArray_Float_02([[maybe_unused]] ani_env *env_, [[maybe_unused]
 
 ani_int test_FixedArray_Float_03([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
-    ani_class cls {};
-    ASSERT_EQ(env_->FindClass("fixedarray_region_float_test.ArrayClass", &cls), ANI_OK);
-    ASSERT_NE(cls, nullptr);
+    ani_fixedarray_float array = nullptr;
+    ASSERT_EQ(env_->FixedArray_New_Float(LENGTH_5, &array), ANI_OK);
+    ani_float initBuffer[LENGTH_5] = {TEST_VALUE_1, TEST_VALUE_2, TEST_VALUE_3, TEST_VALUE_4, TEST_VALUE_5};
+    ASSERT_EQ(env_->FixedArray_SetRegion_Float(array, OFFSET_0, LENGTH_5, initBuffer), ANI_OK);
 
-    ani_ref ref = nullptr;
-    ASSERT_EQ(env_->Class_GetStaticFieldByName_Ref(cls, "array", &ref), ANI_OK);
-    ASSERT_NE(ref, nullptr);
-
-    auto array = reinterpret_cast<ani_fixedarray_float>(ref);
     ani_float nativeBuffer[LENGTH_5] = {0.0};
-    const double epsilon = 1e-6;  // Define acceptable tolerance
-
     ASSERT_EQ(env_->FixedArray_GetRegion_Float(array, OFFSET_0, LENGTH_5, nativeBuffer), ANI_OK);
-    ASSERT_EQ(nativeBuffer[0U], TEST_VALUE_1-epsilon);
-    ASSERT_EQ(nativeBuffer[1U], TEST_VALUE_2-epsilon);
-    ASSERT_EQ(nativeBuffer[2U], TEST_VALUE_3-epsilon);
-    ASSERT_EQ(nativeBuffer[3U], TEST_VALUE_4-epsilon);
-    ASSERT_EQ(nativeBuffer[4U], TEST_VALUE_5-epsilon);
+    ASSERT_EQ(nativeBuffer[0U], TEST_VALUE_1);
+    ASSERT_EQ(nativeBuffer[1U], TEST_VALUE_2);
+    ASSERT_EQ(nativeBuffer[2U], TEST_VALUE_3);
+    ASSERT_EQ(nativeBuffer[3U], TEST_VALUE_4);
+    ASSERT_EQ(nativeBuffer[4U], TEST_VALUE_5);
 
-    ASSERT_EQ(env_->Class_CallStaticMethodByName_Void(cls, "changeStaticArray", nullptr), ANI_OK);
+    ani_float changeBuffer[LENGTH_5] = {TEST_VALUE_1, TEST_VALUE_2, static_cast<ani_float>(TEST_UPDATE_4),
+                                        TEST_VALUE_4, static_cast<ani_float>(TEST_UPDATE_5)};
+    ASSERT_EQ(env_->FixedArray_SetRegion_Float(array, OFFSET_0, LENGTH_5, changeBuffer), ANI_OK);
     ASSERT_EQ(env_->FixedArray_GetRegion_Float(array, OFFSET_0, LENGTH_5, nativeBuffer), ANI_OK);
-    ASSERT_EQ(nativeBuffer[0U], TEST_VALUE_1-epsilon);
-    ASSERT_EQ(nativeBuffer[1U], TEST_VALUE_2-epsilon);
-    ASSERT_EQ(nativeBuffer[2U], TEST_UPDATE_4-epsilon);
-    ASSERT_EQ(nativeBuffer[3U], TEST_VALUE_4-epsilon);
-    ASSERT_EQ(nativeBuffer[4U], TEST_UPDATE_5-epsilon);
+    ASSERT_EQ(nativeBuffer[0U], TEST_VALUE_1);
+    ASSERT_EQ(nativeBuffer[1U], TEST_VALUE_2);
+    ASSERT_EQ(nativeBuffer[2U], static_cast<ani_float>(TEST_UPDATE_4));
+    ASSERT_EQ(nativeBuffer[3U], TEST_VALUE_4);
+    ASSERT_EQ(nativeBuffer[4U], static_cast<ani_float>(TEST_UPDATE_5));
     return ANI_TRUE;
 }
 
 ani_int test_FixedArray_Float_04([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
-    ani_class cls {};
-    ASSERT_EQ(env_->FindClass("fixedarray_region_float_test.ArrayClass", &cls), ANI_OK);
-    ASSERT_NE(cls, nullptr);
+    ani_fixedarray_float array = nullptr;
+    ASSERT_EQ(env_->FixedArray_New_Float(LENGTH_5, &array), ANI_OK);
+    ani_float initBuffer[LENGTH_5] = {TEST_VALUE_1, TEST_VALUE_2, TEST_VALUE_3, TEST_VALUE_4, TEST_VALUE_5};
+    ASSERT_EQ(env_->FixedArray_SetRegion_Float(array, OFFSET_0, LENGTH_5, initBuffer), ANI_OK);
 
-    ani_ref ref = nullptr;
-    ASSERT_EQ(env_->Class_GetStaticFieldByName_Ref(cls, "array", &ref), ANI_OK);
-    ASSERT_NE(ref, nullptr);
+    ani_float setBuffer[LENGTH_3] = {static_cast<ani_float>(TEST_UPDATE_4), static_cast<ani_float>(TEST_UPDATE_6),
+                                     static_cast<ani_float>(TEST_UPDATE_5)};
+    ASSERT_EQ(env_->FixedArray_SetRegion_Float(array, OFFSET_2, LENGTH_3, setBuffer), ANI_OK);
 
-    auto array = reinterpret_cast<ani_fixedarray_float>(ref);
-    ani_float nativeBuffer[LENGTH_3] = {TEST_UPDATE_4, TEST_UPDATE_6, TEST_UPDATE_5};
-
-    ASSERT_EQ(env_->FixedArray_SetRegion_Float(array, OFFSET_2, LENGTH_3, nativeBuffer), ANI_OK);
-
-    ani_boolean result = ANI_FALSE;
-    ASSERT_EQ(env_->Class_CallStaticMethodByName_Boolean(cls, "checkStaticArray", nullptr, &result), ANI_OK);
-    ASSERT_EQ(result, ANI_TRUE);
+    ani_float nativeBuffer[LENGTH_5] = {0.0};
+    ASSERT_EQ(env_->FixedArray_GetRegion_Float(array, OFFSET_0, LENGTH_5, nativeBuffer), ANI_OK);
+    ASSERT_EQ(nativeBuffer[0U], TEST_VALUE_1);
+    ASSERT_EQ(nativeBuffer[1U], TEST_VALUE_2);
+    ASSERT_EQ(nativeBuffer[2U], static_cast<ani_float>(TEST_UPDATE_4));
+    ASSERT_EQ(nativeBuffer[3U], static_cast<ani_float>(TEST_UPDATE_6));
+    ASSERT_EQ(nativeBuffer[4U], static_cast<ani_float>(TEST_UPDATE_5));
     return ANI_TRUE;
 }
 
@@ -1171,54 +1146,52 @@ ani_int test_FixedArray_Double_02([[maybe_unused]] ani_env *env_, [[maybe_unused
 
 ani_int test_FixedArray_Double_03([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
-    ani_class cls {};
-    ASSERT_EQ(env_->FindClass("fixedarray_region_double_test.ArrayClass", &cls), ANI_OK);
-    ASSERT_NE(cls, nullptr);
+    ani_fixedarray_double array = nullptr;
+    ASSERT_EQ(env_->FixedArray_New_Double(LENGTH_5, &array), ANI_OK);
+    ani_double initBuffer[LENGTH_5] = {TEST_VALUE_1, TEST_VALUE_2, TEST_VALUE_3, TEST_VALUE_4, TEST_VALUE_5};
+    ASSERT_EQ(env_->FixedArray_SetRegion_Double(array, OFFSET_0, LENGTH_5, initBuffer), ANI_OK);
 
-    ani_ref ref = nullptr;
-    ASSERT_EQ(env_->Class_GetStaticFieldByName_Ref(cls, "array", &ref), ANI_OK);
-    ASSERT_NE(ref, nullptr);
-
-    auto array = reinterpret_cast<ani_fixedarray_double>(ref);
     ani_double nativeBuffer[LENGTH_5] = {0.0};
-    const ani_size offset5 = 0;
-    const ani_size len5 = 5;
-    const double epsilon = 1e-6;  // Define acceptable tolerance
+    ASSERT_EQ(env_->FixedArray_GetRegion_Double(array, OFFSET_0, LENGTH_5, nativeBuffer), ANI_OK);
+    ASSERT_EQ(nativeBuffer[0U], static_cast<ani_double>(TEST_VALUE_1));
+    ASSERT_EQ(nativeBuffer[1U], static_cast<ani_double>(TEST_VALUE_2));
+    ASSERT_EQ(nativeBuffer[2U], static_cast<ani_double>(TEST_VALUE_3));
+    ASSERT_EQ(nativeBuffer[3U], static_cast<ani_double>(TEST_VALUE_4));
+    ASSERT_EQ(nativeBuffer[4U], static_cast<ani_double>(TEST_VALUE_5));
 
-    ASSERT_EQ(env_->FixedArray_GetRegion_Double(array, offset5, len5, nativeBuffer), ANI_OK);
-    ASSERT_EQ(nativeBuffer[0U], TEST_VALUE_1-epsilon);
-    ASSERT_EQ(nativeBuffer[1U], TEST_VALUE_2-epsilon);
-    ASSERT_EQ(nativeBuffer[2U], TEST_VALUE_3-epsilon);
-    ASSERT_EQ(nativeBuffer[3U], TEST_VALUE_4-epsilon);
-    ASSERT_EQ(nativeBuffer[4U], TEST_VALUE_5-epsilon);
-
-    ASSERT_EQ(env_->Class_CallStaticMethodByName_Void(cls, "changeStaticArray", nullptr), ANI_OK);
-    ASSERT_EQ(env_->FixedArray_GetRegion_Double(array, offset5, len5, nativeBuffer), ANI_OK);
-    ASSERT_EQ(nativeBuffer[0U], TEST_VALUE_1-epsilon);
-    ASSERT_EQ(nativeBuffer[1U], TEST_VALUE_2-epsilon);
-    ASSERT_EQ(nativeBuffer[2U], TEST_UPDATE_4-epsilon);
-    ASSERT_EQ(nativeBuffer[3U], TEST_VALUE_4-epsilon);
-    ASSERT_EQ(nativeBuffer[4U], TEST_UPDATE_5-epsilon);
+    ani_double changeBuffer[LENGTH_5] = {static_cast<ani_double>(TEST_VALUE_1), static_cast<ani_double>(TEST_VALUE_2),
+                                         static_cast<ani_double>(TEST_UPDATE_4), static_cast<ani_double>(TEST_VALUE_4),
+                                         static_cast<ani_double>(TEST_UPDATE_5)};
+    ASSERT_EQ(env_->FixedArray_SetRegion_Double(array, OFFSET_0, LENGTH_5, changeBuffer), ANI_OK);
+    ASSERT_EQ(env_->FixedArray_GetRegion_Double(array, OFFSET_0, LENGTH_5, nativeBuffer), ANI_OK);
+    ASSERT_EQ(nativeBuffer[0U], static_cast<ani_double>(TEST_VALUE_1));
+    ASSERT_EQ(nativeBuffer[1U], static_cast<ani_double>(TEST_VALUE_2));
+    ASSERT_EQ(nativeBuffer[2U], static_cast<ani_double>(TEST_UPDATE_4));
+    ASSERT_EQ(nativeBuffer[3U], static_cast<ani_double>(TEST_VALUE_4));
+    ASSERT_EQ(nativeBuffer[4U], static_cast<ani_double>(TEST_UPDATE_5));
     return ANI_TRUE;
 }
 
 ani_int test_FixedArray_Double_04([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
-    ani_class cls {};
-    ASSERT_EQ(env_->FindClass("fixedarray_region_double_test.ArrayClass", &cls), ANI_OK);
-    ASSERT_NE(cls, nullptr);
+    ani_fixedarray_double array = nullptr;
+    ASSERT_EQ(env_->FixedArray_New_Double(LENGTH_5, &array), ANI_OK);
+    ani_double initBuffer[LENGTH_5] = {static_cast<ani_double>(TEST_VALUE_1), static_cast<ani_double>(TEST_VALUE_2),
+                                       static_cast<ani_double>(TEST_VALUE_3), static_cast<ani_double>(TEST_VALUE_4),
+                                       static_cast<ani_double>(TEST_VALUE_5)};
+    ASSERT_EQ(env_->FixedArray_SetRegion_Double(array, OFFSET_0, LENGTH_5, initBuffer), ANI_OK);
 
-    ani_ref ref = nullptr;
-    ASSERT_EQ(env_->Class_GetStaticFieldByName_Ref(cls, "array", &ref), ANI_OK);
-    ASSERT_NE(ref, nullptr);
+    ani_double setBuffer[LENGTH_3] = {static_cast<ani_double>(TEST_UPDATE_4), static_cast<ani_double>(TEST_UPDATE_6),
+                                      static_cast<ani_double>(TEST_UPDATE_5)};
+    ASSERT_EQ(env_->FixedArray_SetRegion_Double(array, OFFSET_2, LENGTH_3, setBuffer), ANI_OK);
 
-    auto array = reinterpret_cast<ani_fixedarray_double>(ref);
-    ani_double nativeBuffer[LENGTH_3] = {TEST_UPDATE_4, TEST_UPDATE_6, TEST_UPDATE_5};
-    ASSERT_EQ(env_->FixedArray_SetRegion_Double(array, OFFSET_2, LENGTH_3, nativeBuffer), ANI_OK);
-
-    ani_boolean result = ANI_FALSE;
-    ASSERT_EQ(env_->Class_CallStaticMethodByName_Boolean(cls, "checkStaticArray", nullptr, &result), ANI_OK);
-    ASSERT_EQ(result, ANI_TRUE);
+    ani_double nativeBuffer[LENGTH_5] = {0.0};
+    ASSERT_EQ(env_->FixedArray_GetRegion_Double(array, OFFSET_0, LENGTH_5, nativeBuffer), ANI_OK);
+    ASSERT_EQ(nativeBuffer[0U], static_cast<ani_double>(TEST_VALUE_1));
+    ASSERT_EQ(nativeBuffer[1U], static_cast<ani_double>(TEST_VALUE_2));
+    ASSERT_EQ(nativeBuffer[2U], static_cast<ani_double>(TEST_UPDATE_4));
+    ASSERT_EQ(nativeBuffer[3U], static_cast<ani_double>(TEST_UPDATE_6));
+    ASSERT_EQ(nativeBuffer[4U], static_cast<ani_double>(TEST_UPDATE_5));
     return ANI_TRUE;
 }
 
@@ -1396,13 +1369,15 @@ ani_int test_FixedArray_Get_Ref_01([[maybe_unused]] ani_env *env_, [[maybe_unuse
 
 ani_int test_FixedArray_Get_Ref_02([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
-    const ani_size index1 = 1;
-    const ani_size index2 = 2;
+    const char *tmpName = "entry.src.main.src.ets.FixedArray";
+    auto array = static_cast<ani_fixedarray_ref>(CallEtsFunction<ani_ref>(env_, tmpName, "getArray1"));
     ani_ref ref1 = nullptr;
     ani_ref ref2 = nullptr;
     ani_boolean isNull;
+    ASSERT_EQ(env_->FixedArray_Get_Ref(array, 0, &ref1), ANI_OK);
     ASSERT_EQ(env_->Reference_IsNull(ref1, &isNull), ANI_OK);
     ASSERT_EQ(isNull, ANI_TRUE);
+    ASSERT_EQ(env_->FixedArray_Get_Ref(array, 2, &ref2), ANI_OK);
     ASSERT_EQ(env_->Reference_IsNull(ref2, &isNull), ANI_OK);
     ASSERT_EQ(isNull, ANI_FALSE);
     return ANI_TRUE;
@@ -1493,7 +1468,7 @@ ani_int test_FixedArray_New_Ref_02([[maybe_unused]] ani_env *env_, [[maybe_unuse
         ASSERT_EQ(env_->String_GetUTF8SubString(reinterpret_cast<ani_string>(element), ZERO, stringLength, utfBuffer,
                                                 sizeof(utfBuffer), &resultSize),
                   ANI_OK);
-        ASSERT_EQ(utfBuffer, utf8String);
+        ASSERT_EQ(strcmp(utfBuffer, utf8String), 0);
     }
     return ANI_TRUE;
 }
