@@ -304,6 +304,25 @@ export default function ExecuteAIPageCommandTest() : void{
         await Utils.msSleep(2000);
         done();
       })
+      /**
+     * @tc.name   testExecuteAIPageCommand017
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_1700
+     * @tc.desc   test executeAIPageCommand with unassociated controller
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testExecuteAIPageCommand017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent("testExecuteAIPageCommand017", 148188)
+        await Utils.msSleep(500);
+        Utils.registerEvent("testExecuteAIPageCommand017", '17100001', 148127, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('ExecuteAIPageCommandTestButton', 148188, '');
+        await Utils.msSleep(2000);
+        done();
+      })
     /**
      * @tc.name   testExecuteAIPageCommand018
      * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_1800
