@@ -3613,11 +3613,18 @@ export default function abilityTest() {
         });
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
-        expect(e.code).assertEqual(401);
-        expect(e.message != null).assertTrue();
-        await floatViewController?.stop();
-        await sleep(1000);
-        done();
+        if (e.code === 801 && !isDeviceSupportFloatView) {
+          done();
+        } else if (e.code === 401) {
+          expect(e.code).assertEqual(401);
+          expect(e.message != null).assertTrue();
+          await floatViewController?.stop();
+          await sleep(1000);
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
       }
     })
 
@@ -3659,11 +3666,18 @@ export default function abilityTest() {
         });
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
-        await floatViewController?.stop();
-        await sleep(1000);
-        expect(e.code).assertEqual(401);
-        expect(e.message != null).assertTrue();
-        done();
+        if (e.code === 801 && !isDeviceSupportFloatView) {
+          done();
+        } else if (e.code === 401) {
+          expect(e.code).assertEqual(401);
+          expect(e.message != null).assertTrue();
+          await floatViewController?.stop();
+          await sleep(1000);
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
       }
     })
 
