@@ -22,7 +22,7 @@ import {hidebug} from '@kit.PerformanceAnalysisKit'
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
-export default function callingStaticMethodsTest() {
+export default function callingStaticMethodsTest(): void {
 
   describe("ActsClassCallingStaticMethodsTest", (): void => {
     try {
