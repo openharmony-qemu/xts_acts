@@ -15,6 +15,7 @@
 
 import { uiMaterial } from '@kit.ArkUI';
 import router from '@ohos.router';
+import { Size } from '@ohos/hypium';
 
 @Entry
 @Component
@@ -30,7 +31,7 @@ struct MenuSystemMaterialTestPage {
 
   build() {
     Scroll() {
-      Column({ space: 10 }) {
+      Column() {
         Text('menuSystemMaterial Test')
           .fontSize(10)
           .fontWeight(FontWeight.Bold)
@@ -45,175 +46,16 @@ struct MenuSystemMaterialTestPage {
           .fontWeight(FontWeight.Bold)
           .id('section_style')
 
-        Row({ space: 10 }) {
-          Select(this.selectOptions)
-            .value('ULTRA_THIN')
-            .id('select_ultra_thin')
-            .height('10vp')
-            .menuSystemMaterial(new uiMaterial.ImmersiveMaterial({
-              style: uiMaterial.ImmersiveStyle.ULTRA_THIN
-            }))
-
-          Select(this.selectOptions)
-            .value('THIN')
-            .id('select_thin')
-            .height(10)
-            .menuSystemMaterial(new uiMaterial.ImmersiveMaterial({
-              style: uiMaterial.ImmersiveStyle.THIN
-            }))
-        }
-
-        Row({ space: 10 }) {
-          Select(this.selectOptions)
-            .value('REGULAR')
-            .id('select_regular')
-            .height(10)
-            .menuSystemMaterial(new uiMaterial.ImmersiveMaterial({
-              style: uiMaterial.ImmersiveStyle.REGULAR
-            }))
-
-          Select(this.selectOptions)
-            .value('THICK')
-            .id('select_thick')
-            .height(10)
-            .menuSystemMaterial(new uiMaterial.ImmersiveMaterial({
-              style: uiMaterial.ImmersiveStyle.THICK
-            }))
-        }
-
-        Row({ space: 10 }) {
-          Select(this.selectOptions)
-            .value('ULTRA_THICK')
-            .id('select_ultra_thick')
-            .height(10)
-            .menuSystemMaterial(new uiMaterial.ImmersiveMaterial({
-              style: uiMaterial.ImmersiveStyle.ULTRA_THICK
-            }))
-
-          Select(this.selectOptions)
-            .value('Default(no param)')
-            .id('select_default_options')
-            .height(10)
-            .menuSystemMaterial(new uiMaterial.ImmersiveMaterial())
-        }
-
-        Text('ImmersiveOptions Params Tests')
-          .fontSize(10)
-          .fontWeight(FontWeight.Bold)
-          .id('section_options')
-
-        Row({ space: 10 }) {
-          Select(this.selectOptions)
-            .value('materialColor')
-            .id('select_material_color')
-            .height(10)
-            .menuSystemMaterial(new uiMaterial.ImmersiveMaterial({
-              style: uiMaterial.ImmersiveStyle.THICK,
-              materialColor: '#33FF0000'
-            }))
-
-          Select(this.selectOptions)
-            .value('colorInvert=true')
-            .id('select_color_invert_true')
-            .height(10)
-            .menuSystemMaterial(new uiMaterial.ImmersiveMaterial({
-              style: uiMaterial.ImmersiveStyle.THIN,
-              colorInvert: true
-            }))
-        }
-
-        Row({ space: 10 }) {
-          Select(this.selectOptions)
-            .value('colorInvert=false')
-            .id('select_color_invert_false')
-            .height(10)
-            .menuSystemMaterial(new uiMaterial.ImmersiveMaterial({
-              style: uiMaterial.ImmersiveStyle.THIN,
-              colorInvert: false
-            }))
-
-          Select(this.selectOptions)
-            .value('applyShadow=true')
-            .id('select_apply_shadow_true')
-            .height(10)
-            .menuSystemMaterial(new uiMaterial.ImmersiveMaterial({
-              style: uiMaterial.ImmersiveStyle.THICK,
-              applyShadow: true
-            }))
-        }
-
-        Row({ space: 10 }) {
-          Select(this.selectOptions)
-            .value('applyShadow=false')
-            .id('select_apply_shadow_false')
-            .height(10)
-            .menuSystemMaterial(new uiMaterial.ImmersiveMaterial({
-              style: uiMaterial.ImmersiveStyle.THICK,
-              applyShadow: false
-            }))
-
-          Select(this.selectOptions)
-            .value('All Options')
-            .id('select_all_options')
-            .height(10)
-            .menuSystemMaterial(new uiMaterial.ImmersiveMaterial({
-              style: uiMaterial.ImmersiveStyle.REGULAR,
-              materialColor: '#330000FF',
-              colorInvert: true,
-              applyShadow: true
-            }))
-        }
-
-        Text('Special Values Tests')
-          .fontSize(10)
-          .fontWeight(FontWeight.Bold)
-          .id('section_special')
-
-        Row({ space: 10 }) {
-          Select(this.selectOptions)
-            .value('undefined')
-            .id('select_undefined')
-            .menuSystemMaterial(undefined)
-
-          Select(this.selectOptions)
-            .value('Material.empty')
-            .id('select_empty')
-            .menuSystemMaterial(uiMaterial.Material.empty)
-        }
-
-        Text('Return Value Tests')
-          .fontSize(10)
-          .fontWeight(FontWeight.Bold)
-          .id('section_return')
-
-        Row({ space: 10 }) {
-          Button('Check ReturnValue')
-            .id('btn_check_return')
-            .height(10)
-            .onClick(() => {
-              this.resultText = 'menuSystemMaterial returns SelectAttribute for chaining';
-            })
-
-          Select(this.selectOptions)
-            .value('ChainTest')
-            .id('select_chain')
-            .height(10)
-            .menuSystemMaterial(new uiMaterial.ImmersiveMaterial({
-              style: uiMaterial.ImmersiveStyle.THICK
-            }))
-            .selected(0)
-            .fontColor(Color.Blue)
-        }
-
         Text('Enum Value Tests')
           .fontSize(10)
           .fontWeight(FontWeight.Bold)
           .id('section_enum')
 
-        Row({ space: 10 }) {
+        Row() {
           Button('Check ImmersiveStyle')
             .id('btn_check_style')
-            .height(10)
+            .height('10vp')
+            .width('20%')
             .onClick(() => {
               this.resultText = 'ULTRA_THIN=' + uiMaterial.ImmersiveStyle.ULTRA_THIN +
                 ', THIN=' + uiMaterial.ImmersiveStyle.THIN +
@@ -224,7 +66,8 @@ struct MenuSystemMaterialTestPage {
 
           Button('Check MaterialState')
             .id('btn_check_state')
-            .height(10)
+            .height('10vp')
+            .width('20%')
             .onClick(() => {
               let info = uiMaterial.getMaterialInfo();
               this.resultText = 'MaterialState.DEFAULT=' + uiMaterial.MaterialState.DEFAULT +
@@ -232,12 +75,11 @@ struct MenuSystemMaterialTestPage {
                 ', DISABLE=' + uiMaterial.MaterialState.DISABLE +
                 ', Current=' + info.state;
             })
-        }
 
-        Row({ space: 10 }) {
           Button('Check MaterialType')
             .id('btn_check_type')
-            .height(10)
+            .height('10vp')
+            .width('20%')
             .onClick(() => {
               let info = uiMaterial.getMaterialInfo();
               this.resultText = 'MaterialType.IMMERSIVE=' + uiMaterial.MaterialType.IMMERSIVE +
@@ -246,14 +88,237 @@ struct MenuSystemMaterialTestPage {
 
           Button('Check empty')
             .id('btn_check_empty')
-            .height(10)
+            .height('10vp')
+            .width('20%')
             .onClick(() => {
               let emptyMat = uiMaterial.Material.empty;
               this.resultText = 'Material.empty is ' + (emptyMat === uiMaterial.Material.empty ? 'valid empty object' : 'unknown');
             })
+
         }
 
 
+        Text('Return Value Tests')
+          .fontSize(10)
+          .fontWeight(FontWeight.Bold)
+          .id('section_return')
+
+        Row() {
+          Button('Check ReturnValue')
+            .id('btn_check_return')
+            .height('10vp')
+            .width('20%')
+            .onClick(() => {
+              this.resultText = 'menuSystemMaterial returns SelectAttribute for chaining';
+            })
+
+          Select(this.selectOptions)
+            .value('ChainTest')
+            .id('select_chain')
+            .width('20%')
+            .controlSize(ControlSize.SMALL)
+            .font({
+              size: 10
+            })
+            .menuSystemMaterial(new uiMaterial.ImmersiveMaterial({
+              style: uiMaterial.ImmersiveStyle.THICK
+            }))
+            .selected(0)
+            .fontColor(Color.Blue)
+
+          Select(this.selectOptions)
+            .controlSize(ControlSize.NORMAL)
+            .value('ULTRA_THIN')
+            .id('select_ultra_thin')
+            .width('20%')
+            .controlSize(ControlSize.SMALL)
+            .font({
+              size: 10
+            })
+            .padding(0)
+            .menuSystemMaterial(new uiMaterial.ImmersiveMaterial({
+              style: uiMaterial.ImmersiveStyle.ULTRA_THIN
+            }))
+          Select(this.selectOptions)
+            .value('THIN')
+            .id('select_thin')
+            .width('20%')
+            .controlSize(ControlSize.SMALL)
+            .font({
+              size: 10
+            })
+            .menuSystemMaterial(new uiMaterial.ImmersiveMaterial({
+              style: uiMaterial.ImmersiveStyle.THIN
+            }))
+        }
+
+        Row() {
+          Select(this.selectOptions)
+            .value('REGULAR')
+            .id('select_regular')
+            .width('20%')
+            .controlSize(ControlSize.SMALL)
+            .font({
+              size: 10
+            })
+            .padding(0)
+            .menuSystemMaterial(new uiMaterial.ImmersiveMaterial({
+              style: uiMaterial.ImmersiveStyle.REGULAR
+            }))
+
+          Select(this.selectOptions)
+            .value('THICK')
+            .id('select_thick')
+            .width('20%')
+            .controlSize(ControlSize.SMALL)
+            .font({
+              size: 10
+            })
+            .padding(0)
+            .menuSystemMaterial(new uiMaterial.ImmersiveMaterial({
+              style: uiMaterial.ImmersiveStyle.THICK
+            }))
+
+          Select(this.selectOptions)
+            .value('ULTRA_THICK')
+            .id('select_ultra_thick')
+            .width('20%')
+            .controlSize(ControlSize.SMALL)
+            .font({
+              size: 10
+            })
+            .padding(0)
+            .menuSystemMaterial(new uiMaterial.ImmersiveMaterial({
+              style: uiMaterial.ImmersiveStyle.ULTRA_THICK
+            }))
+
+          Select(this.selectOptions)
+            .value('Default(no param)')
+            .id('select_default_options')
+            .width('20%')
+            .controlSize(ControlSize.SMALL)
+            .font({
+              size: 10
+            })
+            .padding(0)
+            .menuSystemMaterial(new uiMaterial.ImmersiveMaterial())
+        }
+
+
+        Text('ImmersiveOptions Params Tests')
+          .fontSize(10)
+          .fontWeight(FontWeight.Bold)
+          .id('section_options')
+
+        Row() {
+          Select(this.selectOptions)
+            .value('materialColor')
+            .id('select_material_color')
+            .width('20%')
+            .controlSize(ControlSize.SMALL)
+            .font({
+              size: 10
+            })
+            .padding(0)
+            .menuSystemMaterial(new uiMaterial.ImmersiveMaterial({
+              style: uiMaterial.ImmersiveStyle.THICK,
+              materialColor: '#33FF0000'
+            }))
+
+          Select(this.selectOptions)
+            .value('colorInvert=true')
+            .id('select_color_invert_true')
+            .width('20%')
+            .controlSize(ControlSize.SMALL)
+            .font({
+              size: 10
+            })
+            .padding(0)
+            .menuSystemMaterial(new uiMaterial.ImmersiveMaterial({
+              style: uiMaterial.ImmersiveStyle.THIN,
+              colorInvert: true
+            }))
+          Select(this.selectOptions)
+            .value('colorInvert=false')
+            .id('select_color_invert_false')
+            .width('20%')
+            .controlSize(ControlSize.SMALL)
+            .font({
+              size: 10
+            })
+            .padding(0)
+            .menuSystemMaterial(new uiMaterial.ImmersiveMaterial({
+              style: uiMaterial.ImmersiveStyle.THIN,
+              colorInvert: false
+            }))
+
+          Select(this.selectOptions)
+            .value('applyShadow=true')
+            .id('select_apply_shadow_true')
+            .width('20%')
+            .controlSize(ControlSize.SMALL)
+            .font({
+              size: 10
+            })
+            .padding(0)
+            .menuSystemMaterial(new uiMaterial.ImmersiveMaterial({
+              style: uiMaterial.ImmersiveStyle.THICK,
+              applyShadow: true
+            }))
+        }
+
+        Row({ space: 10 }) {
+          Select(this.selectOptions)
+            .value('applyShadow=false')
+            .id('select_apply_shadow_false')
+            .width('20%')
+            .controlSize(ControlSize.SMALL)
+            .font({
+              size: 10
+            })
+            .padding(0)
+            .menuSystemMaterial(new uiMaterial.ImmersiveMaterial({
+              style: uiMaterial.ImmersiveStyle.THICK,
+              applyShadow: false
+            }))
+
+          Select(this.selectOptions)
+            .value('All Options')
+            .id('select_all_options')
+            .width('20%')
+            .controlSize(ControlSize.SMALL)
+            .font({
+              size: 10
+            })
+            .padding(0)
+            .menuSystemMaterial(new uiMaterial.ImmersiveMaterial({
+              style: uiMaterial.ImmersiveStyle.REGULAR,
+              materialColor: '#330000FF',
+              colorInvert: true,
+              applyShadow: true
+            }))
+          Select(this.selectOptions)
+            .value('undefined')
+            .id('select_undefined')
+            .width('20%')
+            .controlSize(ControlSize.SMALL)
+            .font({
+              size: 10
+            })
+            .padding(0)
+            .menuSystemMaterial(undefined)
+
+          Select(this.selectOptions)
+            .value('Material.empty')
+            .id('select_empty')
+            .width('20%')
+            .controlSize(ControlSize.SMALL)
+            .font({
+              size: 10
+            })
+            .padding(0)
+            .menuSystemMaterial(uiMaterial.Material.empty)
+        }
       }
       .width('100%')
       .justifyContent(FlexAlign.Start)
