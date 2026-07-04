@@ -11860,17 +11860,17 @@ static napi_value SUB_MULTIMEDIA_AUDIO_NOISE_REDUCTION_MODE_ENUM_0100(napi_env e
 {
     napi_value res;
     uint32_t fidelity = 0;
-    uint32_t pure_vocals = 1;
+    uint32_t pureVocals = 1;
     uint32_t standard = 2;
-    uint32_t unsupported_ability = 6800104;
-    uint32_t service_died = 6800302;
+    uint32_t unsupportedAbility = 6800104;
+    uint32_t serviceDied = 6800302;
 
     if (fidelity != OH_AudioNoiseReductionMode::AUDIO_NOISE_REDUCTION_MODE_FIDELITY) {
         napi_create_int32(env, TEST_FAIL, &res);
         LOG("AUDIO_NOISE_REDUCTION_MODE_FIDELITY fail, result is: %{public}d",
             OH_AudioNoiseReductionMode::AUDIO_NOISE_REDUCTION_MODE_FIDELITY);
     }
-    if (pure_vocals != OH_AudioNoiseReductionMode::AUDIO_NOISE_REDUCTION_MODE_PURE_VOCALS) {
+    if (pureVocals != OH_AudioNoiseReductionMode::AUDIO_NOISE_REDUCTION_MODE_PURE_VOCALS) {
         napi_create_int32(env, TEST_FAIL, &res);
         LOG("AUDIO_NOISE_REDUCTION_MODE_PURE_VOCALS fail, result is: %{public}d",
             OH_AudioNoiseReductionMode::AUDIO_NOISE_REDUCTION_MODE_PURE_VOCALS);
@@ -11880,12 +11880,12 @@ static napi_value SUB_MULTIMEDIA_AUDIO_NOISE_REDUCTION_MODE_ENUM_0100(napi_env e
         LOG("AUDIO_NOISE_REDUCTION_MODE_STANDARD fail, result is: %{public}d",
             OH_AudioNoiseReductionMode::AUDIO_NOISE_REDUCTION_MODE_STANDARD);
     }
-    if (unsupported_ability != OH_AudioStream_Result::AUDIOSTREAM_ERROR_UNSUPPORTED_ABILITY) {
+    if (unsupportedAbility != OH_AudioStream_Result::AUDIOSTREAM_ERROR_UNSUPPORTED_ABILITY) {
         napi_create_int32(env, TEST_FAIL, &res);
         LOG("AUDIOSTREAM_ERROR_UNSUPPORTED_ABILITY fail, result is: %{public}d",
             OH_AudioStream_Result::AUDIOSTREAM_ERROR_UNSUPPORTED_ABILITY);
     }
-    if (service_died != OH_AudioStream_Result::AUDIOSTREAM_ERROR_SERVICE_DIED) {
+    if (serviceDied != OH_AudioStream_Result::AUDIOSTREAM_ERROR_SERVICE_DIED) {
         napi_create_int32(env, TEST_FAIL, &res);
         LOG("AUDIOSTREAM_ERROR_SERVICE_DIED fail, result is: %{public}d",
             OH_AudioStream_Result::AUDIOSTREAM_ERROR_SERVICE_DIED);
