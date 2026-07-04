@@ -691,16 +691,6 @@ export const getEnumNotificationName: (index: number) => number;
 
 export const getEnumProximityStateForFocus: (index: number) => number;
 
-export const registerNotificationReceivedCallback: (index: number) => number;
-
-export const unregisterNotificationReceivedCallback: (index: number) => number;
-
-export const getNotificationName: (index: number) => number;
-
-export const getProximityStateForFocus: (index: number) => number;
-
-export const destroyCameraNotificationInfo: (index: number) => number;
-
 export const createPhotoCaptureSettingExt: (index: number) => number;
 
 export const destroyPhotoCaptureSettingExt: (index: number) => number;
