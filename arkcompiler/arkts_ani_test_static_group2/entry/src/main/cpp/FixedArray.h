@@ -1374,10 +1374,12 @@ ani_int test_FixedArray_Get_Ref_02([[maybe_unused]] ani_env *env_, [[maybe_unuse
     ani_ref ref1 = nullptr;
     ani_ref ref2 = nullptr;
     ani_boolean isNull;
-    ASSERT_EQ(env_->FixedArray_Get_Ref(array, 0, &ref1), ANI_OK);
+    const ani_size index0 = 0;
+    const ani_size index2 = 2;
+    ASSERT_EQ(env_->FixedArray_Get_Ref(array, index0, &ref1), ANI_OK);
     ASSERT_EQ(env_->Reference_IsNull(ref1, &isNull), ANI_OK);
     ASSERT_EQ(isNull, ANI_TRUE);
-    ASSERT_EQ(env_->FixedArray_Get_Ref(array, 2, &ref2), ANI_OK);
+    ASSERT_EQ(env_->FixedArray_Get_Ref(array, index2, &ref2), ANI_OK);
     ASSERT_EQ(env_->Reference_IsNull(ref2, &isNull), ANI_OK);
     ASSERT_EQ(isNull, ANI_FALSE);
     return ANI_TRUE;
