@@ -2638,6 +2638,31 @@ export default function settingUiJsunit() {
     }); 
 
     /**
+     * @tc.name   SUB_Applications_Settings_openDoubleClickSettingsPage_error_context_0100
+     * @tc.number SUB_Applications_Settings_openDoubleClickSettingsPage_error_context_0100
+     * @tc.desc   SUB_Applications_Settings_openDoubleClickSettingsPage_error_context_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Applications_Settings_openDoubleClickSettingsPage_error_context_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isDeviceSupportDoubleClick()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openDoubleClickSettingsPage(abilityContext!.getApplicationContext());
+        expect().assertFail();
+      } catch (err) {
+        console.error("[openDoubleClickSettingsPage_error_context_0100] error = " + err);
+        code = err?.code;
+      }
+      expect(code).assertEqual(16900010);
+      done();
+    }); 
+
+    /**
      * @tc.name   SUB_Applications_Settings_isDoubleClickAppForSelf_false_static_0100
      * @tc.number SUB_Applications_Settings_isDoubleClickAppForSelf_false_static_0100
      * @tc.desc   SUB_Applications_Settings_isDoubleClickAppForSelf_false_static_0100
