@@ -80,6 +80,7 @@ export default function ImageAntialiasedTest() {
     it('ImageAntialiasedTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('ImageAntialiasedTest002 START');
       const driver = Driver.create();
+      await CommonFunc.sleep(SLEEP_TIME);
       const button = await driver.findComponent(ON.id('true'));
       await button.click();
       await CommonFunc.sleep(SLEEP_TIME);
@@ -104,6 +105,7 @@ export default function ImageAntialiasedTest() {
     it('ImageAntialiasedTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('ImageAntialiasedTest003 START');
       const driver = Driver.create();
+      await CommonFunc.sleep(SLEEP_TIME);
       const button = await driver.findComponent(ON.id('false'));
       await button.click();
       await CommonFunc.sleep(SLEEP_TIME);
@@ -128,6 +130,7 @@ export default function ImageAntialiasedTest() {
     it('ImageAntialiasedTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('ImageAntialiasedTest004 START');
       const driver = Driver.create();
+      await CommonFunc.sleep(SLEEP_TIME);
       const button = await driver.findComponent(ON.id('undefined'));
       await button.click();
       await CommonFunc.sleep(SLEEP_TIME);
