@@ -36,8 +36,7 @@ let buttonClicked: boolean = false;
 let isOpen: boolean = false;
 let driver = Driver.create();
 
-<<<<<<< HEAD
-let openDialog = async (dialogKey: string, text: String, done: Function) => {
+let openDialog = async (dialogKey: string, text: string, done: Function) => {
   try {
     await sleep(500);
     let allowed = await driver.findComponents(ON.text('允许'));
@@ -49,9 +48,6 @@ let openDialog = async (dialogKey: string, text: String, done: Function) => {
   } catch (err) {
     console.error('findComponent failed: ' + JSON.stringify(err));
   }
-=======
-let openDialog = async (dialogKey: string, text: string, done: Function) => {
->>>>>>> 2a18810e6a709f0772659626f555bb5d60d22e6a
   if(dialogKey == '选择打开方式'){
     let allowed = await driver.waitForComponent(ON.text(dialogKey, MatchPattern.CONTAINS), DELAY_TIME);
     hilog.info(DOMAIN, LOG_TAG, 'needAllow: %{public}s', JSON.stringify(allowed));
