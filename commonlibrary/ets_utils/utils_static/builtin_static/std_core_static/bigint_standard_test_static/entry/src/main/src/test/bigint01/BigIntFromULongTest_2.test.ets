@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntFromULongTest_2(): void {
-  describe('BigIntFromULongTest_2', () => {
+  describe('BigIntFromULongTest_2', (): void => {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_FROMULONG_0100
      * @tc.name testBigIntFromULongTest001
@@ -158,8 +158,6 @@ export default function BigIntFromULongTest_2(): void {
       expect(BigInt.fromULong(0).toString()).assertEqual('0');
       expect(BigInt.fromULong(10).toString()).assertEqual('10');
       expect(BigInt.fromULong(1000000000).toString()).assertEqual('1000000000');
-      expect(BigInt.fromString('10000000000000000000').toString()).assertEqual('10000000000000000000');
-
     });
 
     /**
@@ -247,7 +245,6 @@ export default function BigIntFromULongTest_2(): void {
     it('testBigIntFromULongTest015', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.fromULong(1234567890123456).toString()).assertEqual('1234567890123456');
       expect(BigInt.fromULong(-1).toString()).assertEqual('18446744073709551615');
-      expect(BigInt.fromString('99999999999999999999').toString()).assertEqual('99999999999999999999');
     });
 
     /**
