@@ -34,7 +34,7 @@ void OnScrollPositionChanged(ArkUI_NodeEvent *event)
     const ArkUI_NodeComponentEvent *eventData = OH_ArkUI_NodeEvent_GetNodeComponentEvent(event);
 
     int startArea = eventData->data[0].i32;
-    int centerArea = eventData->data[PARAM_3].i32;
+    int centerArea = eventData->data[PARAM_1].i32;
     int endArea = eventData->data[PARAM_5].i32;
 
     if (startArea == ARKUI_LIST_ITEM_GROUP_AREA_OUTSIDE) {
