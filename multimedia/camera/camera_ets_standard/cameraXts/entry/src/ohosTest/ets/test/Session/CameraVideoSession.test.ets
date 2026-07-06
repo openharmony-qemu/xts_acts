@@ -1261,33 +1261,35 @@ export default function CameraVideoSessionTest() {
     it('release_video_session_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'release_video_session_callback_001';
       console.info(TAG, testName + ' begin.');
-      try {
+try {
         if (isEmpty(mCameraManager) && isEmpty(mSupportedModes)) {
           console.info(TAG, testName + ' cameraManager is null.');
           expect().assertFail();
+          done();
         } else {
           expect(isEmpty(mVideoSession)).assertFalse();
           console.info(TAG, testName + ' session created successfully.');
-           let callbackDone = false;
-           mVideoSession.release((error) => {
-             if (error !== undefined && error.code !== 0) {
-               console.error(TAG,
-                 testName + ' failed to release callback, err: ' + error.code + ', msg: ' + error.message);
-               expect().assertFail();
-             } else {
-               console.info(TAG, testName + ' session release passed.');
-               expect(true).assertTrue();
-             }
-             callbackDone = true;
-           });
-           for (let i = 0; i < 10; i++) {
-             await sleep(200);
-             if (callbackDone) {
-               break;
-             }
-           }
-           expect(callbackDone).assertTrue();
-           done();
+          let callbackDone = false;
+          mVideoSession.release((error) => {
+            if (error !== undefined && error.code !== 0) {
+              console.error(TAG,
+                testName + ' failed to release callback, err: ' + error.code + ', msg: ' + error.message);
+              expect().assertFail();
+            } else {
+              console.info(TAG, testName + ' session release passed.');
+              expect(true).assertTrue();
+            }
+            callbackDone = true;
+          });
+          for (let i = 0; i < 10; i++) {
+            await sleep(200);
+            if (callbackDone) {
+              break;
+            }
+          }
+          expect(callbackDone).assertTrue();
+          done();
+        }
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
         expect().assertFail();

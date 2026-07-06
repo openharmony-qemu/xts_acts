@@ -1384,10 +1384,11 @@ export default function CameraVideoSessionBackTest() {
         done();
         return;
       }
-      try {
+try {
         if (isEmpty(mCameraManager) && isEmpty(mSupportedModes)) {
           console.info(TAG, testName + ' cameraManager is null.');
           expect().assertFail();
+          done();
         } else {
           expect(isEmpty(mVideoSession)).assertFalse();
           console.info(TAG, testName + ' session created successfully.');
@@ -1411,6 +1412,7 @@ export default function CameraVideoSessionBackTest() {
           }
           expect(callbackDone).assertTrue();
           done();
+        }
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
         expect().assertFail();
