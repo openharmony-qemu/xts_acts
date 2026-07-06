@@ -1458,7 +1458,7 @@ export default function Font2Test() {
     /**
      * @tc.name   testOHDrawingSetTypographyAttributeBool0100
      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingSetTypographyAttributeBool_0100
-     * @tc.desc   test OH_Drawing_SetTypographyAttributeBool with TYPOGRAPH_ATTR_B_FORCE_REUSE_RASTER_RESULT
+     * @tc.desc   test OH_Drawing_SetTypographyAttributeBool with TYPOGRAPHY_ATTR_B_FORCE_REUSE_RASTER_RESULT
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
