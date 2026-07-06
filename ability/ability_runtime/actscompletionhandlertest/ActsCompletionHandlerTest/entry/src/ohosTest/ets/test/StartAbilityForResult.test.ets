@@ -36,6 +36,7 @@ let buttonClicked: boolean = false;
 let isOpen: boolean = false;
 let driver = Driver.create();
 
+<<<<<<< HEAD
 let openDialog = async (dialogKey: string, text: String, done: Function) => {
   try {
     await sleep(500);
@@ -48,6 +49,9 @@ let openDialog = async (dialogKey: string, text: String, done: Function) => {
   } catch (err) {
     console.error('findComponent failed: ' + JSON.stringify(err));
   }
+=======
+let openDialog = async (dialogKey: string, text: string, done: Function) => {
+>>>>>>> 2a18810e6a709f0772659626f555bb5d60d22e6a
   if(dialogKey == '选择打开方式'){
     let allowed = await driver.waitForComponent(ON.text(dialogKey, MatchPattern.CONTAINS), DELAY_TIME);
     hilog.info(DOMAIN, LOG_TAG, 'needAllow: %{public}s', JSON.stringify(allowed));
@@ -580,7 +584,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityForResultTest
       await sleep(500);
       if(isOpen){
         try {
-          await openDialog('暂无可用打开方式', '知道了');
+          await openDialog('暂无可用打开方式', '知道了', done);
         } catch (e) {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbilityForResult_0500 openDialog failed, ${JSON.stringify(e)}`);
           expect().assertFail();
