@@ -2239,5 +2239,24 @@ export default function AVSessionControllerErrorCode() {
         }
         done();
     })
+
+    /**
+      * @tc.name   SUB_MULTIMEDIA_AVSESSION_OFFMETADATACHANGE_CALLBACK_0400
+      * @tc.number SUB_MULTIMEDIA_AVSESSION_OFFMETADATACHANGE_CALLBACK_0400
+      * @tc.desc   test off('metadataChange')
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it("SUB_MULTIMEDIA_AVSESSION_OFFMETADATACHANGE_CALLBACK_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+        try {
+            controller.off('metadataChange', callback1);
+            done();
+        } catch (err) {
+            expect().assertFail();
+            done();
+        }
+        done();
+    })
     })
 }
