@@ -3694,5 +3694,119 @@ export default function TextPicker(): void {
       console.info('SUB_PHOTO_PICKER_TEST_0062 finish');
       done();
     });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0063
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0063
+     * @tc.desc     Testing PhotoViewPicker select(option) promise overload by direct invocation
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0063', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      try {
+        let photoPicker: photoAccessHelper.PhotoViewPicker =
+          new photoAccessHelper.PhotoViewPicker();
+        let photoSelectOptions: photoAccessHelper.PhotoSelectOptions =
+          getDefaultPhotoSelectOptions();
+        photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
+        photoSelectOptions.maxSelectNumber = 1;
+
+        let result: photoAccessHelper.PhotoSelectResult =
+          await photoPicker.select(photoSelectOptions);
+        console.info('SUB_PHOTO_PICKER_TEST_0063 result: ' + JSON.stringify(result));
+        expect(result).not().assertNull();
+      } catch (e) {
+        let error = e as BusinessError;
+        console.error('SUB_PHOTO_PICKER_TEST_0063 error code: ' + String(error.code) + ', ' + error.message);
+        let isValidErrorCode =
+          (error.code == -1 || error.code == 401 || error.code == 13900042 || error.code == 23800151);
+        expect(isValidErrorCode).assertTrue();
+      }
+      console.info('SUB_PHOTO_PICKER_TEST_0063 finish');
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0064
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0064
+     * @tc.desc     Testing PhotoViewPicker select(option, callback) overload by direct invocation
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0064', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      try {
+        let photoPicker: photoAccessHelper.PhotoViewPicker =
+          new photoAccessHelper.PhotoViewPicker();
+        let photoSelectOptions: photoAccessHelper.PhotoSelectOptions =
+          getDefaultPhotoSelectOptions();
+        photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
+        photoSelectOptions.maxSelectNumber = 1;
+
+        let selectCallback: AsyncCallback<photoAccessHelper.PhotoSelectResult> =
+          (err: BusinessError | null, result: photoAccessHelper.PhotoSelectResult | undefined): void => {
+            if (err !== null && err.code != 0) {
+              console.error('SUB_PHOTO_PICKER_TEST_0064 callback error code: ' + String(err.code));
+              let isValidErrorCode =
+                (err.code == -1 || err.code == 401 || err.code == 13900042 || err.code == 23800151);
+              expect(isValidErrorCode).assertTrue();
+              return;
+            }
+            if (result !== undefined) {
+              console.info('SUB_PHOTO_PICKER_TEST_0064 callback result: ' + JSON.stringify(result));
+              expect(result).not().assertNull();
+            }
+          };
+        photoPicker.select(photoSelectOptions, selectCallback);
+        await Utils.msSleep(2000);
+      } catch (e) {
+        let error = e as BusinessError;
+        console.error('SUB_PHOTO_PICKER_TEST_0064 sync error code: ' + String(error.code) + ', ' + error.message);
+        let isValidErrorCode = (error.code == -1 || error.code == 401);
+        expect(isValidErrorCode).assertTrue();
+      }
+      console.info('SUB_PHOTO_PICKER_TEST_0064 finish');
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0065
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0065
+     * @tc.desc     Testing PhotoViewPicker select() promise overload, option omitted branch
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0065', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      try {
+        let photoPicker: photoAccessHelper.PhotoViewPicker =
+          new photoAccessHelper.PhotoViewPicker();
+        let result: photoAccessHelper.PhotoSelectResult =
+          await photoPicker.select();
+        console.info('SUB_PHOTO_PICKER_TEST_0065 result: ' + JSON.stringify(result));
+        expect(result).not().assertNull();
+      } catch (e) {
+        let error = e as BusinessError;
+        console.error('SUB_PHOTO_PICKER_TEST_0065 error code: ' + String(error.code) + ', ' + error.message);
+        let isValidErrorCode =
+          (error.code == -1 || error.code == 401 || error.code == 13900042 || error.code == 23800151);
+        expect(isValidErrorCode).assertTrue();
+      }
+      console.info('SUB_PHOTO_PICKER_TEST_0065 finish');
+      done();
+    });
   })
 }
