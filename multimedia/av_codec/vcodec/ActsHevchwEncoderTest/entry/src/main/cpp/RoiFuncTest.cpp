@@ -540,7 +540,7 @@ int VIDEO_HW_ENCODE_ROI_API_019()
     const char *roiString = "110,110-120,120=dqp:-5,slb:0;110,110-120,120=dqp:-5,slb:0;110,110-120,120=dqp:-5,slb:0;"
                            "110,110-120,120=dqp:-5,slb:0;110,110-120,120=dqp:-5,slb:0;110,110-120,120=dqp:-5,slb:0;"
                            "110,110-120,120=dqp:-5,slb:0;110,110-120,120=dqp:-5,slb:0;110,110-120,120";
-    char* roiStrCopy =  (roiString);
+    char* roiStrCopy = strdup(roiString);
     int32_t top = 10;
     int32_t left = 10;
     int32_t bottom = 100;
