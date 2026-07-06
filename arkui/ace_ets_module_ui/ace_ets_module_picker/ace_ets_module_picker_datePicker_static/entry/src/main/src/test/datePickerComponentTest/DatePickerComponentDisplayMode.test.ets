@@ -108,5 +108,32 @@ export default function DatePickerComponentDisplayModeTest() {
         done();
       }
     })
+
+    /**
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_DISPLAYMODE_0300
+     * @tc.name DatePickerComponentDisplayMode_dateTime_0300
+     * @tc.desc Verify DatePickerComponent displayMode changes to DATE_TIME after clicking button
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('DatePickerComponentDisplayMode_dateTime_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info('DatePickerComponentDisplayMode_dateTime_0300 START')
+      try {
+        let driver = Driver.create();
+        let button = await driver.findComponent(ON.id('button_displayMode_dateTime'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(SLEEP_TIME);
+        let strJson = inspector.getInspectorByKey('text_displayMode_value');
+        let obj = JSON.parseJsonElement(strJson);
+        let content: string = obj.getElement('$attrs').getString('content');
+        expect(content).assertContain('displayMode: 2');
+        done()
+      } catch (err) {
+        console.error('DatePickerComponentDisplayMode_dateTime_0300 error: ' + err);
+        expect().assertFail();
+        done();
+      }
+    })
   })
 }

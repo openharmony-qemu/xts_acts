@@ -89,5 +89,29 @@ export default function DatePickerComponentDateModeTest() {
       console.info('DatePickerComponentDateModeTest_0200 END');
       done();
     });
+
+    /**
+     * @tc.name   DatePickerComponentDateModeTest_0300
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_DATEMODE_PARAM_0300
+     * @tc.desc   Test DatePickerComponent dateOptions.mode changes to DateMode.MONTH_AND_DAY when button clicked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('DatePickerComponentDateModeTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info('DatePickerComponentDateModeTest_0300 START');
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(1000);
+      let button: Component = await driver.findComponent(ON.id('button_dateMode_monthAndDay'));
+      await CommonFunc.sleep(1000);
+      await button.click();
+      await CommonFunc.sleep(1000);
+      let strJson = getInspectorByKey('text_dateMode_value');
+      let obj: ESObject = JSON.parse(strJson);
+      console.info('DatePickerComponentDateModeTest_0300 component obj is: ' + JSON.stringify(obj));
+      expect(obj.$attrs.content).assertContain('dateMode: 2');
+      console.info('DatePickerComponentDateModeTest_0300 END');
+      done();
+    });
   });
 }

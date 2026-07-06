@@ -51,6 +51,13 @@ struct DatePickerComponentDisplayMode {
           })
           .id('button_displayMode_time')
           .margin({ right: 10 })
+
+        Button('DATE_TIME')
+          .onClick(() => {
+            this.currentDisplayMode = DisplayMode.DATE_TIME;
+          })
+          .id('button_displayMode_dateTime')
+          .margin({ right: 10 })
       }
       .width('100%')
       .margin({ top: 10 })

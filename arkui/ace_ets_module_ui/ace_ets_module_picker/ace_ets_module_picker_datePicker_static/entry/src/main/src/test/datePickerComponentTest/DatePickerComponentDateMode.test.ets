@@ -108,5 +108,32 @@ export default function DatePickerComponentDateModeTest() {
         done();
       }
     })
+
+    /**
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_DATEMODE_0300
+     * @tc.name DatePickerComponentDateMode_monthAndDay_0300
+     * @tc.desc Verify DatePickerComponent dateMode changes to MONTH_AND_DAY after clicking button
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('DatePickerComponentDateMode_monthAndDay_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info('DatePickerComponentDateMode_monthAndDay_0300 START')
+      try {
+        let driver = await Driver.create();
+        let button = await driver.findComponent(ON.id('button_dateMode_monthAndDay'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(SLEEP_TIME);
+        let strJson = inspector.getInspectorByKey('text_dateMode_value');
+        let obj = JSON.parseJsonElement(strJson);
+        let content: string = obj.getElement('$attrs').getString('content');
+        expect(content).assertContain('dateMode: 2');
+        done();
+      } catch (err) {
+        console.error('DatePickerComponentDateMode_monthAndDay_0300 error: ' + err);
+        expect().assertFail();
+        done();
+      }
+    })
   })
 }
