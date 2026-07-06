@@ -346,7 +346,7 @@ export default function windowRotationTest() {
           expect(subWindowProperties3.windowRect.left).assertEqual(200);
           expect(subWindowProperties3.windowRect.top).assertEqual(200);
           expect(subWindowProperties3.windowRect.width).assertEqual(subWindowLimits.minWidth);
-          expect(subWindowProperties3.windowRect.width).assertEqual(subWindowLimits.minHeight);
+          expect(subWindowProperties3.windowRect.height).assertEqual(subWindowLimits.minHeight);
           subWindowClass.off('rotationChange', rotationCallback);
           console.log(`${msgStr} + 'count' : ${count}`);
           expect(count).assertEqual(2);
