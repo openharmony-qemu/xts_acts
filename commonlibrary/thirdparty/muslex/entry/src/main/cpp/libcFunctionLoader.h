@@ -41,6 +41,7 @@ public:
 
     using AcosfFiniteFunc = float (*)(float);
     using AsprintfChkFunc = int (*)(char**, int, const char*, ...);
+    using VasprintfChkFunc = int (*)(char**, int, const char*, va_list);
     using Atan2FiniteFunc = double (*)(double, double);
     using CmsgNxthdrFunc = struct cmsghdr* (*)(struct msghdr*, struct cmsghdr*);
     using DFXSetCrashLogConfigFunc = int (*)(uint8_t, uint32_t);
@@ -56,6 +57,7 @@ public:
     }
     AcosfFiniteFunc GetAcosfFinite() const { return LazyLoad(acosfFinite_, "__acosf_finite"); }
     AsprintfChkFunc GetAsprintfChk() const { return LazyLoad(asprintfChk_, "__asprintf_chk"); }
+    VasprintfChkFunc GetVasprintfChk() const { return LazyLoad(vasprintfChk_, "__vasprintf_chk"); }
     Atan2FiniteFunc GetAtan2Finite() const { return LazyLoad(atan2Finite_, "__atan2_finite"); }
     CmsgNxthdrFunc GetCmsgNxthdr() const { return LazyLoad(cmsgNxthdr_, "__cmsg_nxthdr"); }
     Exp2FiniteFunc GetExp2Finite() const { return LazyLoad(exp2Finite_, "__exp2_finite"); }
@@ -93,6 +95,7 @@ private:
 
     mutable AcosfFiniteFunc acosfFinite_ = nullptr;
     mutable AsprintfChkFunc asprintfChk_ = nullptr;
+    mutable VasprintfChkFunc vasprintfChk_ = nullptr;
     mutable Atan2FiniteFunc atan2Finite_ = nullptr;
     mutable CmsgNxthdrFunc cmsgNxthdr_ = nullptr;
     mutable DFXSetCrashLogConfigFunc dfxSetCrashLogConfig_ = nullptr;
