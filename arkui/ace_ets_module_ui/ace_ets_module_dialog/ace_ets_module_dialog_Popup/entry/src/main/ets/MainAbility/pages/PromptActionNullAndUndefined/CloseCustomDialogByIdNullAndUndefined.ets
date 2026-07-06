@@ -45,47 +45,52 @@ struct CloseCustomDialogByIdNullAndUndefined {
         .id('resultTextCloseById')
         .width('90%')
         .height('5%')
+        .margin({bottom:'5vp'})
 
       Scroll() {
         Column() {
-          Button('Open Dialog')
-            .id('btnOpenCustomDialogById')
-            .width('45%')
-            .onClick(() => {
-              this.promptAction.openCustomDialog({
-                builder: () => {
-                  this.customDialogBuilder()
-                }
-              }).then((id: number) => {
-                this.dialogId = id;
-                this.resultText = 'open dialog success, id: ' + id;
-              }).catch((err: BusinessError) => {
-                this.resultText = 'open dialog error: ' + err.code;
-              });
-            })
+          Row() {
+            Button('Open Dialog')
+              .id('btnOpenCustomDialogById')
+              .width('45%')
+              .height('5%')
+              .onClick(() => {
+                this.promptAction.openCustomDialog({
+                  builder: () => {
+                    this.customDialogBuilder()
+                  }
+                }).then((id: number) => {
+                  this.dialogId = id;
+                  this.resultText = 'open dialog success, id: ' + id;
+                }).catch((err: BusinessError) => {
+                  this.resultText = 'open dialog error: ' + err.code;
+                });
+              })
 
-          Button('Close by DialogId')
-            .id('btnCloseCustomDialogByIdSuccess')
-            .width('45%')
-
-            .onClick(() => {
-              if (this.dialogId >= 0) {
-                try {
-                  this.promptAction.closeCustomDialog(this.dialogId);
-                  this.resultText = 'close by dialogId success';
-                  this.dialogId = -1;
-                } catch (err) {
-                  this.resultText = 'close by dialogId error: ' + ((err as BusinessError).code);
+            Button('Close by DialogId')
+              .id('btnCloseCustomDialogByIdSuccess')
+              .width('45%')
+              .height('5%')
+              .onClick(() => {
+                if (this.dialogId >= 0) {
+                  try {
+                    this.promptAction.closeCustomDialog(this.dialogId);
+                    this.resultText = 'close by dialogId success';
+                    this.dialogId = -1;
+                  } catch (err) {
+                    this.resultText = 'close by dialogId error: ' + ((err as BusinessError).code);
+                  }
+                } else {
+                  this.resultText = 'dialogId not available';
                 }
-              } else {
-                this.resultText = 'dialogId not available';
-              }
-            })
+              })
+          }
+
 
           Button('DialogId null')
             .id('btnCloseCustomDialogByIdNull')
             .width('45%')
-
+            .height('5%')
             .onClick(() => {
               try {
                 this.promptAction.closeCustomDialog(null as ESObject);
@@ -98,7 +103,7 @@ struct CloseCustomDialogByIdNullAndUndefined {
           Button('DialogId undefined')
             .id('btnCloseCustomDialogByIdUndefined')
             .width('45%')
-
+            .height('5%')
             .onClick(() => {
               try {
                 this.promptAction.closeCustomDialog(undefined as ESObject);
@@ -109,10 +114,6 @@ struct CloseCustomDialogByIdNullAndUndefined {
             })
         }
       }
-      .width('100%')
-      .height('85%')
     }
-    .width('100%')
-    .height('100%')
   }
 }
