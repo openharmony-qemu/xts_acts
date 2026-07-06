@@ -145,5 +145,35 @@ export default function nativeColorSpaceTest() {
       expect(result).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.name   testOHCreateColorSpaceFromNameBt2020LogFull0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_COLOR_SPACE_OH_CreateColorSpaceFromNameBt2020LogFull_0100
+     * @tc.desc   test OH_Create_Color_Space_From_Name_BT2020_LOG_FULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCreateColorSpaceFromNameBt2020LogFull0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = nativeColorSpaceNdk.oHCreateColorSpaceFromNameBt2020LogFull0100();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHCreateColorSpaceFromNameBt2020LogLimit0100
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_COLOR_SPACE_OH_CreateColorSpaceFromNameBt2020LogLimit_0100
+     * @tc.desc   test OH_Create_Color_Space_From_Name_BT2020_LOG_LIMIT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCreateColorSpaceFromNameBt2020LogLimit0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = nativeColorSpaceNdk.oHCreateColorSpaceFromNameBt2020LogLimit0100();
+      expect(result).assertEqual(0);
+      done();
+    });
   })
 }
