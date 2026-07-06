@@ -56,7 +56,7 @@ static auto GetExp2fFinite()
     errno = 0;
     func(0.0f);
     if (errno == ENOSYS) {
-        return static_cast<decltype(func)>nullptr;
+        return static_cast<decltype(func)>(nullptr);
     }
     return func;
 }
