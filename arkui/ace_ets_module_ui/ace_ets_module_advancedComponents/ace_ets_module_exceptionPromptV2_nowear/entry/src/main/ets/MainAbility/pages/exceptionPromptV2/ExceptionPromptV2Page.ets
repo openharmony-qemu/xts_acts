@@ -27,7 +27,7 @@ struct ExceptionPromptV2Example {
   @Local actionClickCount: number = 0;
   @Local promptOptions: PromptOptionsV2Config = {
     marginType: MarginTypeV2.DEFAULT_MARGIN,
-    marginTop: 400,
+    marginTop: 420,
     icon: $r('sys.media.ohos_ic_public_edit'),
     symbolStyle: new SymbolGlyphModifier($r('sys.symbol.wifi')),
     actionText: '设置',
@@ -57,7 +57,7 @@ struct ExceptionPromptV2Example {
           ExceptionPromptV2({
             options: new PromptOptionsV2({
               marginType: MarginTypeV2.DEFAULT_MARGIN,
-              marginTop: 300,
+              marginTop: 320,
               icon: $r('sys.symbol.phone'),
               symbolStyle: new SymbolGlyphModifier($r('sys.symbol.bell')).fontColor([Color.Blue]),
               tip: '网络未连接',
@@ -82,7 +82,7 @@ struct ExceptionPromptV2Example {
           ExceptionPromptV2({
             options: new PromptOptionsV2({
               marginType: MarginTypeV2.FIT_MARGIN,
-              marginTop: 350,
+              marginTop: 370,
               icon: $r('sys.symbol.phone'),
               tip: '网络连接不稳定',
               actionText: '设置',
@@ -121,7 +121,7 @@ struct ExceptionPromptV2Example {
           ExceptionPromptV2({
             options: new PromptOptionsV2({
               marginType: MarginTypeV2.FIT_MARGIN,
-              marginTop: 450,
+              marginTop: 470,
               icon: $r('sys.media.ohos_ic_public_edit'),
               tip: '无法获取位置信息',
               actionText: '刷新',
@@ -141,13 +141,11 @@ struct ExceptionPromptV2Example {
             .fontSize(16)
             .margin({ top: 5 })
 
-          Row(){
-            Text('tip点击次数: ' + this.tipClickCount + ',    ')
-              .fontSize(12)
+          Text('tip点击次数: ' + this.tipClickCount)
+            .fontSize(12)
 
-            Text('action点击次数: ' + this.actionClickCount)
-              .fontSize(12)
-          }
+          Text('action点击次数: ' + this.actionClickCount)
+            .fontSize(12)
         }
         .alignItems(HorizontalAlign.Center)
         .width('100%')
