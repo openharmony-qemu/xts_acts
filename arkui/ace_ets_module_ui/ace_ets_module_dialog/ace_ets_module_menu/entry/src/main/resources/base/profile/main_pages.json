@@ -50,6 +50,9 @@
     "MainAbility/pages/MenuSystemMaterial/MenuSystemMaterialTestPage",
     "MainAbility/pages/GridStyle/GridStyleTestPage",
     "MainAbility/pages/bindMenu/bindContextMenuByResponseType",
-    "MainAbility/pages/Menu/subMenuBuilder"
+    "MainAbility/pages/Menu/subMenuBuilder",
+    "MainAbility/pages/bindContextMenuByIsShow/BindContextMenuByIsShowOptions",
+    "MainAbility/pages/bindContextMenuByIsShow/BindContextMenuByIsShowBlurMask",
+    "MainAbility/pages/bindContextMenuByIsShow/BindContextMenuByIsShowNullUndefined"
   ]
 }

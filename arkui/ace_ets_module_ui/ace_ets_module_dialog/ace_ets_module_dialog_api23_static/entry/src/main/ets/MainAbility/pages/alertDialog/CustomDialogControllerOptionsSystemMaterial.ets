@@ -26,11 +26,19 @@ import {
   Entry,
   FlexAlign,
   Text,
-  ClickEvent
+  ClickEvent,
+  Menu,
+  MenuItem,
+  MenuItemOptions,
+  ResponseType,
+  MenuGridPosition,
+  ContextMenuOptions,
+  MenuGridStyleOptions,
 } from '@ohos.arkui.component';
 
 import {
-  uiMaterial
+  uiMaterial,
+  AnchoredColorMode,
 } from '@kit.ArkUI';
 
 @Entry
@@ -121,6 +129,18 @@ struct CustomDialogControllerOptionsSystemMaterial {
     systemMaterial: new uiMaterial.ImmersiveMaterial({ style: uiMaterial.ImmersiveStyle.ULTRA_THIN }),
   });
 
+  @Builder
+  MenuBuilderWithParam(type: ResponseType): void {
+    Column() {
+      if (type === ResponseType.LongPress) {
+        Menu() {
+          MenuItem({ content: '菜单1' } as MenuItemOptions)
+          MenuItem({ content: '菜单2' } as MenuItemOptions)
+        }
+      }
+    }
+  }
+
   dialogController6: CustomDialogController = new CustomDialogController({
     builder: CustomContentDialog({
       primaryTitle: '标题',
@@ -169,6 +189,24 @@ struct CustomDialogControllerOptionsSystemMaterial {
         .onClick((e:ClickEvent) => {
           this.dialogController6.open()
         })
+
+      // 新增 colorMode and gridStyle position
+      Text('colorMode and gridStyle position').height('10%')
+        .bindContextMenuWithResponse(this.MenuBuilderWithParam, {
+          colorMode: AnchoredColorMode.FOLLOW_SYSTEM,
+          gridStyle: { count: 4, position: MenuGridPosition.TOP } as MenuGridStyleOptions,
+        } as ContextMenuOptions)
+
+      Text('colorMode and gridStyle position').height('10%')
+        .bindContextMenuWithResponse(this.MenuBuilderWithParam, {
+          colorMode: AnchoredColorMode.FOLLOW_TARGET,
+          gridStyle: { count: 4, position: MenuGridPosition.BOTTOM } as MenuGridStyleOptions,
+        } as ContextMenuOptions)
+
+      Text('enum13').height('10%')
+        .bindContextMenuWithResponse(this.MenuBuilderWithParam, {
+          gridStyle: { count: 4 } as MenuGridStyleOptions,
+        } as ContextMenuOptions)
     }
     .width('100%')
     .height('100%')
