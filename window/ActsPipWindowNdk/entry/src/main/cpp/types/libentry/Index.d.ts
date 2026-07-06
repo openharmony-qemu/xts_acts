@@ -58,3 +58,6 @@ export const testUnsetPipInitialSurfaceRect: (mainWindowId: number) => number;
 export const testPipSetParentWindowIdwithNonExistedWindowId: (windowId: number) => number;
 export const testPipSetParentWindowId: (windowId: number) => number;
 export const testPictureInPicture_PipState_enum: () => number;
+export const testSetAutoStartEnabled: (mainWindowId: number) => number;
+export const testSetAutoStartDisabled: (mainWindowId: number) => number;
+export const testSetAutoStartEnabledWithInvalidControllerId: () => number;
