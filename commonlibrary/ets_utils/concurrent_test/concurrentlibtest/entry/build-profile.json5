@@ -99,7 +99,9 @@
         "./src/ohosTest/ets/workers/ErrorCode/WorkerRegister5.ets",
         "./src/ohosTest/ets/workers/ErrorCode/WorkerDataWorker.ets",
         "./src/ohosTest/ets/workers/ErrorCode/WorkerData1.ets",
-        './src/ohosTest/ets/test/returnCovered/workers/Worker01.ets'
+        './src/ohosTest/ets/test/returnCovered/workers/Worker01.ets',
+        './src/ohosTest/ets/test/serialize/workers/ContainerReturnWorker.ets',
+        './src/ohosTest/ets/test/serialize/workers/ContainerLifecycleWorker.ets'
       ]
     }
   },
