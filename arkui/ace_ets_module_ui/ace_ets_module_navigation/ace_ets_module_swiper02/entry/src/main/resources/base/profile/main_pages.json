@@ -15,7 +15,6 @@
         "MainAbility/pages/SwiperAttributeNullUndefined/DotIndicatorNullUndefined",
         "MainAbility/pages/SwiperAttributeNullUndefined/SwiperNullUndefined",
         "MainAbility/pages/swiper/swiperCachedOptions",
-        "MainAbility/pages/swiper/swiperIndicatorIcon",
-        "MainAbility/pages/swiper/swiperSystemMaterial"
+        "MainAbility/pages/swiper/swiperIndicatorIcon"
     ]
 }
