@@ -14,7 +14,9 @@
  */
 
 import SerialBusManagerTest from './SerialBusManagerTest.test';
+import SerialBusManagerTest from './SerialBusManagerSignalTest.test';
 
 export default function testsuite() {
   SerialBusManagerTest()
+  SerialBusManagerSignalTest()
 }

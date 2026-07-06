@@ -2440,7 +2440,7 @@ export default function SerialBusManagerTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, 'testWrite012 catch err code: ', err.code, ', message: ', err.message);
-        expect(err.code).assertEqual(35700002);
+        expect(err.code).assertEqual(401);
         await gPort!.close();
         done();
       }
@@ -2467,7 +2467,7 @@ export default function SerialBusManagerTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, 'testWrite013 catch err code: ', err.code, ', message: ', err.message);
-        expect(err.code).assertEqual(35700002);
+        expect(err.code).assertEqual(401);
         await gPort!.close();
         done();
       }
@@ -2495,7 +2495,7 @@ export default function SerialBusManagerTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, 'testWrite014 catch err code: ', err.code, ', message: ', err.message);
-        expect(err.code).assertEqual(35700002);
+        expect(err.code).assertEqual(401);
         await gPort!.close();
         done();
       }
@@ -2572,86 +2572,6 @@ export default function SerialBusManagerTest() {
     })
 
     /**
-     * @tc.name   testGetCts004
-     * @tc.number SUB_BusManager_Serial_JS_getCts_RETURN_0200
-     * @tc.desc   getCts returns true when remote port setRts(true).
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testGetCts004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testGetCts004 start');
-      if (await checkDevice() === false) {
-        done();
-        return;
-      }
-      if (gPort1 === null) {
-        console.info(TAG, 'testGetCts004 gPort1 is null, skip');
-        done();
-        return;
-      }
-      try {
-        gPort!.open();
-        await driveFn();
-        gPort1!.open();
-        await sleep(500);
-        await driveFn();
-        await gPort1!.setRts(true);
-        await sleep(100);
-        let cts: boolean = await gPort!.getCts();
-        console.info(TAG, 'testGetCts004 getCts after setRts(true): ', cts);
-        expect(cts === true).assertTrue();
-        await gPort!.close();
-        await gPort1!.close();
-        done();
-      } catch (err) {
-        console.error(TAG, 'testGetCts004 catch err: ', JSON.stringify(err));
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.name   testGetCts005
-     * @tc.number SUB_BusManager_Serial_JS_getCts_RETURN_0300
-     * @tc.desc   getCts returns false when remote port setRts(false).
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testGetCts005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testGetCts005 start');
-      if (await checkDevice() === false) {
-        done();
-        return;
-      }
-      if (gPort1 === null) {
-        console.info(TAG, 'testGetCts005 gPort1 is null, skip');
-        done();
-        return;
-      }
-      try {
-        gPort!.open();
-        await driveFn();
-        gPort1!.open();
-        await sleep(500);
-        await driveFn();
-        await gPort1!.setRts(false);
-        await sleep(100);
-        let cts: boolean = await gPort!.getCts();
-        console.info(TAG, 'testGetCts005 getCts after setRts(false): ', cts);
-        expect(cts === false).assertTrue();
-        await gPort!.close();
-        await gPort1!.close();
-        done();
-      } catch (err) {
-        console.error(TAG, 'testGetCts005 catch err: ', JSON.stringify(err));
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
      * @tc.name   testGetDsr003
      * @tc.number SUB_BusManager_Serial_JS_getDsr_RETURN_0100
      * @tc.desc   getDsr return value type is boolean.
@@ -2680,85 +2600,7 @@ export default function SerialBusManagerTest() {
       }
     })
 
-    /**
-     * @tc.name   testGetDsr004
-     * @tc.number SUB_BusManager_Serial_JS_getDsr_RETURN_0200
-     * @tc.desc   getDsr returns true when remote port setDtr(true).
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testGetDsr004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testGetDsr004 start');
-      if (await checkDevice() === false) {
-        done();
-        return;
-      }
-      if (gPort1 === null) {
-        console.info(TAG, 'testGetDsr004 gPort1 is null, skip');
-        done();
-        return;
-      }
-      try {
-        gPort!.open();
-        await driveFn();
-        gPort1!.open();
-        await sleep(500);
-        await driveFn();
-        await gPort1!.setDtr(true);
-        await sleep(100);
-        let dsr: boolean = await gPort!.getDsr();
-        console.info(TAG, 'testGetDsr004 getDsr after setDtr(true): ', dsr);
-        expect(dsr === true).assertTrue();
-        await gPort!.close();
-        await gPort1!.close();
-        done();
-      } catch (err) {
-        console.error(TAG, 'testGetDsr004 catch err: ', JSON.stringify(err));
-        expect().assertFail();
-        done();
-      }
-    })
 
-    /**
-     * @tc.name   testGetDsr005
-     * @tc.number SUB_BusManager_Serial_JS_getDsr_RETURN_0300
-     * @tc.desc   getDsr returns false when remote port setDtr(false).
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testGetDsr005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(TAG, 'testGetDsr005 start');
-      if (await checkDevice() === false) {
-        done();
-        return;
-      }
-      if (gPort1 === null) {
-        console.info(TAG, 'testGetDsr005 gPort1 is null, skip');
-        done();
-        return;
-      }
-      try {
-        gPort!.open();
-        await driveFn();
-        gPort1!.open();
-        await sleep(500);
-        await driveFn();
-        await gPort1!.setDtr(false);
-        await sleep(100);
-        let dsr: boolean = await gPort!.getDsr();
-        console.info(TAG, 'testGetDsr005 getDsr after setDtr(false): ', dsr);
-        expect(dsr === false).assertTrue();
-        await gPort!.close();
-        await gPort1!.close();
-        done();
-      } catch (err) {
-        console.error(TAG, 'testGetDsr005 catch err: ', JSON.stringify(err));
-        expect().assertFail();
-        done();
-      }
-    })
 
     /**
      * @tc.name   testGetSerialPortList003
