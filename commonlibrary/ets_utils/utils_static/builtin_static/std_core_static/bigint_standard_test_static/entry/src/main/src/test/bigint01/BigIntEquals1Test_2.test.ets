@@ -27,7 +27,7 @@ export default function BigIntEquals1Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsBiTest001', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsBiTest001', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(true).equals(BigInt(1))).assertTrue();
       expect(BigInt(false).equals(BigInt(0))).assertTrue();
       expect(BigInt(true).equals(BigInt(0))).assertFalse();
@@ -42,7 +42,7 @@ export default function BigIntEquals1Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsBiTest002', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsBiTest002', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt('+123').equals(BigInt('123'))).assertTrue();
       expect(BigInt('007').equals(BigInt('7'))).assertTrue();
       expect(BigInt('+0').equals(BigInt(0))).assertTrue();
@@ -61,7 +61,7 @@ export default function BigIntEquals1Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsBiTest003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsBiTest003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = BigInt(67890);
       const copy = BigInt(src);
       let modified = src.operatorAdd(BigInt(1));
@@ -82,7 +82,7 @@ export default function BigIntEquals1Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsBiTest004', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsBiTest004', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(999).equals(BigInt(1000))).assertFalse();
       expect(BigInt(-999).equals(BigInt(-1000))).assertFalse();
       expect(BigInt(500).equals(BigInt(501))).assertFalse();
@@ -99,7 +99,7 @@ export default function BigIntEquals1Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsBiTest005', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsBiTest005', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = BigInt(88);
       const b = BigInt(88);
       a.equals(b);
@@ -124,7 +124,7 @@ export default function BigIntEquals1Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsBiTest006', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsBiTest006', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = BigInt(11);
       const b = BigInt(22);
 
@@ -149,7 +149,7 @@ export default function BigIntEquals1Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsBiTest007', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsBiTest007', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(5).equals(BigInt(-5))).assertFalse();
       expect(BigInt(-5).equals(BigInt(5))).assertFalse();
       expect(BigInt(1000).equals(BigInt(-1000))).assertFalse();
@@ -166,7 +166,7 @@ export default function BigIntEquals1Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsBiTest008', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsBiTest008', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt('18446744073709551615').equals(BigInt('18446744073709551615'))).assertTrue();
       expect(BigInt(65535).equals(BigInt('65535'))).assertTrue();
       expect(BigInt(256).equals(BigInt('256'))).assertTrue();
@@ -184,7 +184,7 @@ export default function BigIntEquals1Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsBiTest009', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsBiTest009', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = BigInt(777);
       const b = BigInt(777);
       const c = BigInt(777);
@@ -210,7 +210,7 @@ export default function BigIntEquals1Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsBiTest010', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsBiTest010', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt('-0').equals(BigInt(0))).assertTrue();
       expect(BigInt(0).equals(BigInt('-0'))).assertTrue();
       expect(BigInt('-0').equals(BigInt('0'))).assertTrue();
@@ -225,7 +225,7 @@ export default function BigIntEquals1Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsBiTest011', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsBiTest011', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(256).equals(BigInt(255))).assertFalse();
       expect(BigInt(65535).equals(BigInt(65536))).assertFalse();
       expect(BigInt(256).equals(BigInt(256))).assertTrue();
@@ -241,7 +241,7 @@ export default function BigIntEquals1Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsBiTest012', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsBiTest012', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt('9999999999999').equals(BigInt('-9999999999999'))).assertFalse();
       expect(BigInt('-9999999999999').equals(BigInt('9999999999999'))).assertFalse();
       expect(BigInt('0').equals(BigInt('-0'))).assertTrue();
@@ -255,7 +255,7 @@ export default function BigIntEquals1Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsBiTest013', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsBiTest013', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const ulongMax = '18446744073709551615';
       expect(BigInt(ulongMax).equals(BigInt(ulongMax))).assertTrue();
       expect(BigInt(ulongMax).equals(BigInt('18446744073709551614'))).assertFalse();

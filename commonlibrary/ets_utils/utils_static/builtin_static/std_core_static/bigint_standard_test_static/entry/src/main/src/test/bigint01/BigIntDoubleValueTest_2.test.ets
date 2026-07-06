@@ -26,7 +26,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest001', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest001', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const huge = BigInt('9223372036854775808');
       const d = huge.doubleValue();
       expect(d).assertEqual(9223372036854775808.0);
@@ -46,7 +46,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest002', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest002', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const negLarge = BigInt('-9223372036854775809');
       expect(negLarge.doubleValue()).assertEqual(-9223372036854775808.0);
       const negHuge = BigInt('-999999999999999999999999999999');
@@ -63,7 +63,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = BigInt(100);
       const b = BigInt(200);
       const c = BigInt(50);
@@ -83,7 +83,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest004', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest004', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(2).pow(BigInt(10)).doubleValue()).assertEqual(1024.0);
       expect(BigInt(3).pow(BigInt(6)).doubleValue()).assertEqual(729.0);
       expect(BigInt(10).pow(BigInt(9)).doubleValue()).assertEqual(1000000000.0);
@@ -98,7 +98,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest005', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest005', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(12).operatorBitwiseAnd(BigInt(5)).doubleValue()).assertEqual(4.0);
       expect(BigInt(12).operatorBitwiseOr(BigInt(5)).doubleValue()).assertEqual(13.0);
       expect(BigInt(12).operatorBitwiseXor(BigInt(5)).doubleValue()).assertEqual(9.0);
@@ -115,7 +115,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest006', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest006', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new BigInt(123456789012345).doubleValue()).assertEqual(123456789012345.0);
       expect(new BigInt('9876543210').doubleValue()).assertEqual(9876543210.0);
       expect(new BigInt(true).doubleValue()).assertEqual(1.0);
@@ -132,7 +132,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest007', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest007', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const val1 = BigInt(0);
       expect(val1.doubleValue()).assertEqual(Long.toDouble(val1.getLong()));
       const val2 = BigInt(42);
@@ -151,7 +151,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest008', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest008', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(1).operatorIncrement().doubleValue()).assertEqual(2.0);
       expect(BigInt(0).operatorIncrement().doubleValue()).assertEqual(1.0);
       expect(BigInt(-1).operatorIncrement().doubleValue()).assertEqual(0.0);
@@ -169,7 +169,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest009', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest009', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(42).negate().doubleValue()).assertEqual(-42.0);
       expect(BigInt(-42).negate().doubleValue()).assertEqual(42.0);
       expect(BigInt(0).negate().doubleValue()).assertEqual(0.0);
@@ -184,7 +184,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest010', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest010', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const val = BigInt('12345678901234567890');
       const first = val.doubleValue();
       const second = val.doubleValue();
@@ -208,7 +208,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest011', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest011', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(100).operatorModule(BigInt(30)).doubleValue()).assertEqual(10.0);
       expect(BigInt(17).operatorModule(BigInt(5)).doubleValue()).assertEqual(2.0);
       expect(BigInt(0).operatorModule(BigInt(1)).doubleValue()).assertEqual(0.0);
@@ -223,7 +223,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest012', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest012', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const evenAtEdge = BigInt('9007199254740994');
       const oddAtEdge = BigInt('9007199254740995');
       expect(Number.isFinite(evenAtEdge.doubleValue())).assertTrue();
@@ -239,7 +239,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest013', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest013', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const original = new BigInt(256);
       const copy = new BigInt(original);
       expect(copy.doubleValue()).assertEqual(256.0);
@@ -255,7 +255,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest014', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest014', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const vals: long[] = [99999, 100000, 123456789, 999999999, 1000000, 97, 100, 123456, 12321];
       for (let i = 0; i < vals.length; i++) {
         expect(BigInt(vals[i]).doubleValue()).assertEqual(Long.toDouble(vals[i]));
@@ -270,7 +270,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest015', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest015', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(100).doubleValue()).assertEqual(100.0);
       expect(BigInt(101).doubleValue()).assertEqual(101.0);
     });
@@ -283,7 +283,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest016', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest016', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(3628800).doubleValue()).assertEqual(3628800.0);
       expect(BigInt(55).doubleValue()).assertEqual(55.0);
       expect(BigInt(10000).doubleValue()).assertEqual(10000.0);
@@ -299,7 +299,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest017', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest017', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(255).doubleValue()).assertEqual(255.0);
       expect(BigInt(65535).doubleValue()).assertEqual(65535.0);
     });
@@ -312,7 +312,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest018', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest018', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(1001).doubleValue()).assertEqual(1001.0);
     });
 
@@ -324,7 +324,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest019', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest019', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(10).pow(BigInt(15)).doubleValue()).assertEqual(1000000000000000.0);
       expect(BigInt(10).pow(BigInt(16)).doubleValue()).assertEqual(10000000000000000.0);
       expect(BigInt(10).pow(BigInt(17)).doubleValue()).assertEqual(100000000000000000.0);
@@ -338,7 +338,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest020', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest020', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(10).pow(BigInt(20)).doubleValue()).assertEqual(1e20);
       expect(BigInt(10).pow(BigInt(30)).doubleValue()).assertEqual(1e30);
       expect(BigInt(10).pow(BigInt(50)).doubleValue()).assertEqual(1e50);
@@ -356,7 +356,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest021', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest021', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(10).pow(BigInt(308)).doubleValue()).assertEqual(1e+308);
       expect(BigInt(10).pow(BigInt(309)).doubleValue()).assertEqual(Double.POSITIVE_INFINITY);
       expect(BigInt(2).pow(BigInt(1024)).doubleValue()).assertEqual(Double.POSITIVE_INFINITY);
@@ -371,7 +371,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest022', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest022', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(10).pow(BigInt(308)).negate().doubleValue()).assertEqual(-1e+308);
       expect(BigInt(10).pow(BigInt(309)).negate().doubleValue()).assertEqual(Double.NEGATIVE_INFINITY);
       expect(BigInt(2).pow(BigInt(1024)).negate().doubleValue()).assertEqual(Double.NEGATIVE_INFINITY);
@@ -386,7 +386,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest023', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest023', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const nearMax = BigInt(2).pow(BigInt(1023)).doubleValue();
       expect(nearMax > 0).assertTrue();
       expect(Number.isFinite(nearMax)).assertTrue();
@@ -405,7 +405,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest024', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest024', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const v2p54a = BigInt('18014398509481984');
       const v2p54b = BigInt('18014398509481985');
       expect(v2p54a.doubleValue()).assertEqual(v2p54b.doubleValue());
@@ -422,7 +422,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest025', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest025', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const negBeyond = BigInt('-9007199254740993');
       expect(negBeyond.doubleValue()).assertEqual(-9007199254740992.0);
       const negBelow = BigInt('-9007199254740994');
@@ -437,7 +437,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest026', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest026', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt('1234567890123456').doubleValue()).assertEqual(1234567890123456.0);
       const huge1 = BigInt('12345678901234567890').doubleValue();
       const huge2 = BigInt('12345678901234567891').doubleValue();
@@ -452,7 +452,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest027', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest027', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const v19 = BigInt('9999999999999999999').doubleValue();
       const v20 = BigInt('99999999999999999999').doubleValue();
       const v21 = BigInt('999999999999999999999').doubleValue();
@@ -472,7 +472,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest028', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest028', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(100).operatorDivide(BigInt(3)).doubleValue()).assertEqual(33.0);
       expect(BigInt(100).operatorModule(BigInt(3)).doubleValue()).assertEqual(1.0);
     });
@@ -485,7 +485,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest029', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest029', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(10).operatorAdd(BigInt(20)).operatorMultiply(BigInt(3)).doubleValue()).assertEqual(90.0);
     });
 
@@ -497,7 +497,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest030', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest030', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(2).pow(BigInt(3)).pow(BigInt(2)).doubleValue()).assertEqual(64.0);
     });
 
@@ -509,7 +509,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest031', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest031', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const mul = BigInt(10).pow(BigInt(20)).operatorMultiply(BigInt(10).pow(BigInt(20))).doubleValue();
       expect(mul).assertEqual(1e40);
       const div = BigInt(10).pow(BigInt(50)).operatorDivide(BigInt(10).pow(BigInt(25))).doubleValue();
@@ -524,7 +524,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest032', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest032', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const val = true ? BigInt(10) : BigInt(20);
       expect(val.doubleValue()).assertEqual(10.0);
     });
@@ -537,7 +537,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest033', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest033', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: BigInt[] = [BigInt(10), BigInt(20)];
       expect(arr[0].doubleValue()).assertEqual(10.0);
       const map = new Map<string, BigInt>();
@@ -554,7 +554,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest034', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest034', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(parseInt('100')).doubleValue()).assertEqual(100.0);
       expect(BigInt(Math.round(100.7)).doubleValue()).assertEqual(101.0);
       expect(BigInt(Math.floor(100.7)).doubleValue()).assertEqual(100.0);
@@ -569,7 +569,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest035', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest035', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(`${100}`).doubleValue()).assertEqual(100.0);
     });
 
@@ -581,7 +581,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest036', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest036', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(Number.MAX_SAFE_INTEGER).doubleValue()).assertEqual(Number.MAX_SAFE_INTEGER);
     });
 
@@ -593,7 +593,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest037', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest037', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(0).doubleValue()).assertEqual(0.0);
     });
 
@@ -605,7 +605,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest038', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest038', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(10).pow(BigInt(100)).negate().doubleValue()).assertEqual(-1e100);
       expect(BigInt(10).pow(BigInt(200)).negate().doubleValue()).assertEqual(-1e200);
       expect(BigInt(10).pow(BigInt(307)).negate().doubleValue()).assertEqual(-1e307);
@@ -619,7 +619,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest039', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest039', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const v3 = BigInt('12345678901234567892').doubleValue();
       const v5 = BigInt('12345678901234567895').doubleValue();
       const v9 = BigInt('12345678901234567899').doubleValue();
@@ -639,7 +639,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest040', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest040', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const getBigInt = (): BigInt => {
         return BigInt(100);
       };
@@ -654,7 +654,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest041', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest041', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b1 = new BigInt("-0");
       expect(b1.doubleValue()).assertEqual(0.0);
       const b2 = new BigInt(0.0);
@@ -669,7 +669,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest042', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest042', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const max = BigInt('9223372036854775807').doubleValue();
       const maxMinus1 = BigInt('9223372036854775806').doubleValue();
       const maxMinus2 = BigInt('9223372036854775805').doubleValue();
@@ -685,7 +685,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest043', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest043', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const min = BigInt('-9223372036854775808').doubleValue();
       const minMinus1 = BigInt('-9223372036854775809').doubleValue();
       expect(min).assertEqual(minMinus1);
@@ -699,7 +699,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest044', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest044', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt('9007199254740990').doubleValue()).assertEqual(9007199254740990);
     });
 
@@ -711,7 +711,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest045', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest045', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const v1 = BigInt('18446744073709551615').doubleValue();
       const v2 = BigInt('18446744073709551616').doubleValue();
       const v3 = BigInt('18446744073709551617').doubleValue();
@@ -728,7 +728,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest046', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest046', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt('1000000000000000000000').doubleValue()).assertEqual(1e21);
       const v26 = BigInt('99999999999999999999999999').doubleValue();
       expect(v26).assertEqual(1e26);
@@ -742,7 +742,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest047', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest047', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const dv = BigInt('1267650600228229401496703205376').doubleValue();
       expect(dv > 0).assertTrue();
       expect(dv).assertEqual(1267650600228229400000000000000.0);
@@ -756,7 +756,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest048', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest048', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const n1 = BigInt('-18446744073709551615').doubleValue();
       expect(n1 < 0).assertTrue();
       expect(n1).assertEqual(-18446744073709551616.0);
@@ -773,7 +773,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest049', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest049', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const dv = BigInt('-1267650600228229401496703205376').doubleValue();
       expect(dv < 0).assertTrue();
       expect(dv).assertEqual(-1267650600228229400000000000000.0);
@@ -788,7 +788,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest050', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest050', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(2147483647).doubleValue()).assertEqual(2147483647);
       expect(BigInt(-2147483648).doubleValue()).assertEqual(-2147483648);
       expect(BigInt(32767).doubleValue()).assertEqual(32767);
@@ -806,7 +806,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest051', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest051', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b64 = BigInt('18446744073709551615');
       const dv64 = b64.doubleValue();
       const expected64 = BigInt('18446744073709552000');
@@ -826,7 +826,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest052', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest052', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r0 = BigInt(0).doubleValue();
       expect(!Number.isNaN(r0)).assertTrue();
       const r1 = BigInt(-999).doubleValue();
@@ -848,7 +848,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest053', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest053', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pz = new BigInt(0).doubleValue();
       const nz = new BigInt(-0).doubleValue();
       expect(pz).assertEqual(nz);
@@ -862,7 +862,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest054', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest054', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b1 = new BigInt(42);
       const before1 = b1.toString();
       b1.doubleValue();
@@ -901,7 +901,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest055', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest055', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b1 = BigInt(42);
       expect(b1.doubleValue()).assertEqual(42);
       const b2 = BigInt(0);
@@ -922,7 +922,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest056', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest056', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(42).doubleValue()).assertEqual(new BigInt(BigInt(42).toString()).doubleValue());
       expect(BigInt("9007199254740993").doubleValue()).assertEqual(new BigInt(BigInt("9007199254740993").toString()).doubleValue());
       expect(BigInt(-12345).doubleValue()).assertEqual(new BigInt(BigInt(-12345).toString()).doubleValue());
@@ -938,7 +938,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest057', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest057', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r0 = BigInt(0).doubleValue();
       expect(Number.isFinite(r0)).assertTrue();
       expect(r0).assertEqual(0);
@@ -978,7 +978,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest058', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest058', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = BigInt(100);
       const b = a.operatorAdd(BigInt(50)).operatorSubtract(BigInt(30)).operatorMultiply(BigInt(2));
       expect(b.doubleValue()).assertEqual(240.0);
@@ -992,7 +992,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest059', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest059', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new BigInt(Math.floor(0.5)).doubleValue()).assertEqual(0.0);
       expect(new BigInt(Math.floor(1.9)).doubleValue()).assertEqual(1.0);
       expect(new BigInt(Math.ceil(-1.9)).doubleValue()).assertEqual(-1.0);
@@ -1007,7 +1007,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest060', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest060', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const maxDoubleStr = "179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368";
       const posInf = BigInt(maxDoubleStr).doubleValue();
       expect(posInf).assertEqual(1.7976931348623157e+308);
@@ -1024,7 +1024,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest061', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest061', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const twoPow1023Str = "89884656743115795386465259539451236680898848947115328636715040578866337902750481566354238661203768010560056939935696678829494856907273492833014833222972584453125122221614724804174613203092639167350120522724633744938124729123925344760930294304993395501160861621523981070294769137332294702028519600617674322944";
       const dv = BigInt(twoPow1023Str).doubleValue();
 
@@ -1043,7 +1043,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest062', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest062', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(2).doubleValue()).assertEqual(2.0);
       expect(BigInt(-2).doubleValue()).assertEqual(-2.0);
       expect(BigInt(2147483647).doubleValue()).assertEqual(2147483647);
@@ -1058,7 +1058,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest063', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest063', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(1).doubleValue()).assertEqual(1.0);
       expect(BigInt(-1).doubleValue()).assertEqual(-1.0);
     });
@@ -1071,7 +1071,7 @@ export default function BigIntDoubleValueTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntDoubleValueTest064', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntDoubleValueTest064', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const twoPow53 = 9007199254740992;
       expect(BigInt('9007199254740992').doubleValue()).assertEqual(twoPow53);
       expect(BigInt('9007199254740993').doubleValue()).assertEqual(twoPow53);
