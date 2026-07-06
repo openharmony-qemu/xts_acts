@@ -393,5 +393,61 @@ export default function RoiFuncTest() {
       expect(result).assertEqual(0);
       done();
     })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_VIDEO_HW_ENCODE_ROI_FUNC_1700
+     * @tc.number SUB_MULTIMEDIA_VIDEO_HW_ENCODE_ROI_FUNC_1700
+     * @tc.desc   SUB_MULTIMEDIA_VIDEO_HW_ENCODE_ROI_FUNC_1700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_MULTIMEDIA_VIDEO_HW_ENCODE_ROI_FUNC_1700", Level.LEVEL1, async (done: Function) => {
+      const result = await entry.Roi_Func_Test(26);
+      expect(result).assertEqual(0);
+      done();
+    })
+
+        /**
+     * @tc.name   SUB_MULTIMEDIA_VIDEO_HW_ENCODE_ROI_FUNC_1800
+     * @tc.number SUB_MULTIMEDIA_VIDEO_HW_ENCODE_ROI_FUNC_1800
+     * @tc.desc   SUB_MULTIMEDIA_VIDEO_HW_ENCODE_ROI_FUNC_1800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_MULTIMEDIA_VIDEO_HW_ENCODE_ROI_FUNC_1800", Level.LEVEL1, async (done: Function) => {
+      const result = await entry.Roi_Func_Test(27);
+      expect(result).assertEqual(0);
+      done();
+    })
+
+        /**
+     * @tc.name   SUB_MULTIMEDIA_VIDEO_HW_ENCODE_ROI_FUNC_1900
+     * @tc.number SUB_MULTIMEDIA_VIDEO_HW_ENCODE_ROI_FUNC_1900
+     * @tc.desc   SUB_MULTIMEDIA_VIDEO_HW_ENCODE_ROI_FUNC_1900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_MULTIMEDIA_VIDEO_HW_ENCODE_ROI_FUNC_1900", Level.LEVEL1, async (done: Function) => {
+      const result = await entry.Roi_Func_Test(28);
+      expect(result).assertEqual(0);
+      done();
+    })
+
+        /**
+     * @tc.name   SUB_MULTIMEDIA_VIDEO_HW_ENCODE_ROI_FUNC_2000
+     * @tc.number SUB_MULTIMEDIA_VIDEO_HW_ENCODE_ROI_FUNC_2000
+     * @tc.desc   SUB_MULTIMEDIA_VIDEO_HW_ENCODE_ROI_FUNC_2000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_MULTIMEDIA_VIDEO_HW_ENCODE_ROI_FUNC_2000", Level.LEVEL1, async (done: Function) => {
+      const result = await entry.Roi_Func_Test(25);
+      expect(result).assertEqual(0);
+      done();
+    })
   })
 }
