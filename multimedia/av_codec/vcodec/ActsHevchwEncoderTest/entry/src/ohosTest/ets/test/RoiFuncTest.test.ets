@@ -408,7 +408,7 @@ export default function RoiFuncTest() {
       done();
     })
 
-        /**
+    /**
      * @tc.name   SUB_MULTIMEDIA_VIDEO_HW_ENCODE_ROI_FUNC_1800
      * @tc.number SUB_MULTIMEDIA_VIDEO_HW_ENCODE_ROI_FUNC_1800
      * @tc.desc   SUB_MULTIMEDIA_VIDEO_HW_ENCODE_ROI_FUNC_1800
@@ -422,7 +422,7 @@ export default function RoiFuncTest() {
       done();
     })
 
-        /**
+    /**
      * @tc.name   SUB_MULTIMEDIA_VIDEO_HW_ENCODE_ROI_FUNC_1900
      * @tc.number SUB_MULTIMEDIA_VIDEO_HW_ENCODE_ROI_FUNC_1900
      * @tc.desc   SUB_MULTIMEDIA_VIDEO_HW_ENCODE_ROI_FUNC_1900
@@ -436,7 +436,7 @@ export default function RoiFuncTest() {
       done();
     })
 
-        /**
+    /**
      * @tc.name   SUB_MULTIMEDIA_VIDEO_HW_ENCODE_ROI_FUNC_2000
      * @tc.number SUB_MULTIMEDIA_VIDEO_HW_ENCODE_ROI_FUNC_2000
      * @tc.desc   SUB_MULTIMEDIA_VIDEO_HW_ENCODE_ROI_FUNC_2000
@@ -445,7 +445,7 @@ export default function RoiFuncTest() {
      * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEDIA_VIDEO_HW_ENCODE_ROI_FUNC_2000", Level.LEVEL1, async (done: Function) => {
-      const result = await entry.Roi_Func_Test(25);
+      const result = await entry.Roi_Func_Test(29);
       expect(result).assertEqual(0);
       done();
     })

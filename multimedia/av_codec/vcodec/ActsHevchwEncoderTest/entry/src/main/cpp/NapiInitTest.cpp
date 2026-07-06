@@ -30,7 +30,7 @@ static constexpr int RESULT_ERROR = -1;
 static constexpr size_t BFRAME_FUNC_TEST_COUNT = 6;
 static constexpr size_t POST_SQR_FUNC_TEST_COUNT = 9;
 static constexpr size_t PTS_API_TEST_COUNT = 6;
-static constexpr size_t ROI_FUNC_TEST_COUNT = 26;
+static constexpr size_t ROI_FUNC_TEST_COUNT = 30;
 static constexpr size_t SQR_FUNC_TEST_COUNT = 14;
 static constexpr size_t PREPARE_FUNC_COUNT = 4;
 
