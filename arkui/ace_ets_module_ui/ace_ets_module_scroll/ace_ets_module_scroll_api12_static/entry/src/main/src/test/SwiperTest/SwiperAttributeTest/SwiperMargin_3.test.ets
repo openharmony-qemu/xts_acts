@@ -142,6 +142,7 @@ it('SwiperMargin_static_0190', Level.LEVEL0, async (done: () => void): Promise<v
         "--" +
       rect.bottom);
       let driver = Driver.create()
+      await CommonFunc.sleep(500);
       await driver.swipe(
         (Number.parseInt(`${(rect.right - rect.left) * 0.8 + rect.left}`)).toInt(),
         (Number.parseInt(`${(rect.bottom - rect.top) * 0.5 + rect.top}`)).toInt(),

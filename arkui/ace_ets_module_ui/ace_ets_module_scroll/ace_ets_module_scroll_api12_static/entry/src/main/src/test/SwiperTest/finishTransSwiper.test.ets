@@ -73,6 +73,7 @@ it('finishTransSwiper_static_0100', Level.LEVEL0, async (done: () => void): Prom
       console.info('[finishTransSwiper_static_0100] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
+      await CommonFunc.sleep(500);
       let swiperScroll = CommonFunc.getComponentRectOnScreen('finishTransition_swiper');
       let top = swiperScroll.top;
       let right = swiperScroll.right;

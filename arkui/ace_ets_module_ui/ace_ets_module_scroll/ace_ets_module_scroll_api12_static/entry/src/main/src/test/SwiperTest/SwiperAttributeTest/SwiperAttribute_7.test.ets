@@ -117,6 +117,7 @@ it('SwiperAttribute_static_0010', Level.LEVEL0, async (done: () => void): Promis
       expect(uiContext.px2vp(Math.abs(Math.round(ftBottom - fBottom))) - 20 <= 1).assertTrue();
 
       let driver = Driver.create()
+      await CommonFunc.sleep(500);
       for (let i = 2; i <= 6; i++) {
         await driver.swipe(
           (Number.parseInt(`${(rect.right - rect.left) * 0.8 + rect.left}`)).toInt(),

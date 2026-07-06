@@ -61,6 +61,7 @@ export default function ScrollSourceOther() {
     afterEach(async () => {
       await CommonFunc.sleep(1000);
       let driver = Driver.create()
+      await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('SCROLL_BAR_FLING'));
       await button!.click();
       await CommonFunc.sleep(1000);

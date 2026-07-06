@@ -492,12 +492,6 @@ public:
     Camera_ErrorCode GetColorTint(int useCaseCode);
     int32_t GetZoomPointInfos(int useCaseCode);
     Camera_ErrorCode DeleteZoomPointInfo(int useCaseCode);
-    // notification
-    Camera_ErrorCode RegisterNotificationReceivedCallback(int useCaseCode);
-    Camera_ErrorCode UnregisterNotificationReceivedCallback(int useCaseCode);
-    Camera_ErrorCode GetNotificationName(int useCaseCode);
-    Camera_ErrorCode GetProximityStateForFocus(int useCaseCode);
-    Camera_ErrorCode DestroyCameraNotificationInfo(int useCaseCode);
 
     Camera_ErrorCode CreatePhotoCaptureSettingExt(int useCaseCode);
     Camera_ErrorCode DestroyPhotoCaptureSettingExt(int useCaseCode);

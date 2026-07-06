@@ -42,7 +42,9 @@ import {
   AlignRuleOption,
   LocalizedAlignRuleOptions,
   Axis,
-  ChainStyle
+  ChainStyle,
+  SecurityComponentRoleType, 
+  Resource
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import { BusinessError, RecordData } from '@ohos.base'
@@ -90,6 +92,11 @@ struct pasteButton {
   @State alignRule: AlignRuleOption | LocalizedAlignRuleOptions | undefined = undefined
   @State chainDirection: Axis | undefined = undefined
   @State chainStyle: ChainStyle | undefined = undefined
+
+  @State backLineSpacingEnable: boolean | undefined = undefined;
+  @State accessibilityDescriptionValue:string | Resource| undefined = ''
+  @State accessibilityRoleValue:SecurityComponentRoleType | undefined = undefined
+
   private stateChangeCallBack: (eventData:events_emitter.EventData) => void =
     (eventData:events_emitter.EventData) => {
     if (eventData != null && eventData.data != undefined) {
@@ -227,6 +234,16 @@ struct pasteButton {
       if (data['chainStyle'] != null) {
         this.chainStyle = data['chainStyle'] as ChainStyle
       }
+
+      if (data['fallbackLineSpacing'] != null) {
+        this.backLineSpacingEnable = data['fallbackLineSpacing'] as Boolean
+      }
+      if (data['accessibilityDescriptionValue'] != null) {
+         this.accessibilityDescriptionValue = data['accessibilityDescriptionValue'] as String
+      }
+      if (data['accessibilityRoleValue'] != null) {
+        this.accessibilityRoleValue = data['accessibilityRoleValue'] as SecurityComponentRoleType
+      }
     }
   }
 
@@ -267,6 +284,9 @@ struct pasteButton {
                 console.info('====>page_pasteButton emit action state err: ' + JSON.stringify(err.message))
               }
             })
+            .fallbackLineSpacing(this.backLineSpacingEnable)
+            .accessibilityRole(this.accessibilityRoleValue)
+            .accessibilityDescription(this.accessibilityDescriptionValue)
             .iconSize(this.iconSize)
             .layoutDirection(this.direct)
             .position({ x: this.positionX, y: this.positionY })

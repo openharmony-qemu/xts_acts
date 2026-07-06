@@ -72,6 +72,7 @@ export default function tabsCallBack9() {
 it('tabsCallBack9_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[tabsCallBack9_static_0100] START');
       let driver = Driver.create()
+      await CommonFunc.sleep(500);
       let dragTabs = CommonFunc.getComponentRectOnScreen('callback_gestureSwipe_9')
       await driver.mouseDrag({
         x: (Math.round((dragTabs.right - dragTabs.left) * 0.9 + dragTabs.left)).toInt(),

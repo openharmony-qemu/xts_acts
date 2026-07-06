@@ -78,6 +78,7 @@ it('scrollSourceDrag_0100', Level.LEVEL0, async (done: () => void): Promise<void
       let height = bottom - top;
       let width = right - left;
       let driver = Driver.create()
+      await CommonFunc.sleep(500);
       await driver.drag((Math.round(left + width / 2)).toInt(), (Math.round(top + height * 0.2)).toInt(),
         (Math.round(left + width / 2)).toInt(), (Math.round(top + height * 0.6)).toInt());
       await CommonFunc.sleep(2000);

@@ -75,6 +75,7 @@ it('listOffsetJsunit_001', Level.LEVEL1, async (done: () => void): Promise<void>
       console.info('[listOffsetJsunit_001] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
+      await CommonFunc.sleep(500);
       let swiperScroll = CommonFunc.getComponentRectOnScreen('offset_list');
       let top = swiperScroll.top;
       let right = swiperScroll.right;

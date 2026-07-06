@@ -89,6 +89,7 @@ it('SwiperAttribute_static_0100', Level.LEVEL0, async (done: () => void): Promis
         "--" +
       rect.bottom);
       let driver = Driver.create()
+      await CommonFunc.sleep(500);
       for (let i = 1; i <= 6; i++) {
         if (i > 1) {
           await driver.swipe(

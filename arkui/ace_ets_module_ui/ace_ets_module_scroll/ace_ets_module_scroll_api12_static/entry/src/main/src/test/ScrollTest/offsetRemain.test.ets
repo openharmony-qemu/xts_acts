@@ -71,6 +71,7 @@ export default function offsetRemain() {
 it('offsetRemain_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('offsetRemain_0100 START');
       let driver = Driver.create();
+      await CommonFunc.sleep(500);
       let swiperScroll = CommonFunc.getComponentRectOnScreen('list_offsetRemain');
       let top = swiperScroll.top;
       let right = swiperScroll.right;

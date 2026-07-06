@@ -68,6 +68,7 @@ export default function tabsCallBack5() {
 it('tabsCallBack5_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[tabsCallBack5_static_0100] START');
       let driver = Driver.create();
+      await CommonFunc.sleep(500);
       let btn = await driver.findComponent(ON.text('Yellow'));
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(1500);
