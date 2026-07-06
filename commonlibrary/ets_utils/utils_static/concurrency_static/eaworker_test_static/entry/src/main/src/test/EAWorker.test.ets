@@ -1241,6 +1241,8 @@ export default function EAWorkerTest() {
               setTimeout(() => resolve(undefined), 3000);
             });
             const nestedTask = work2.run<void>(async () => {
+              worker.join();
+
               await new Promise<void>((resolve) => {
                 setTimeout(() => resolve(undefined), 1000);
               });
@@ -1248,7 +1250,7 @@ export default function EAWorkerTest() {
             });
             nestedTask.Await();
           });
-          await task.Await();
+          task.Await();
         } catch (err) {
           err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
@@ -1286,13 +1288,14 @@ export default function EAWorkerTest() {
             });
             const nestedTask = work2.run<void>(async () => {
               await new Promise<void>((resolve) => {
+                worker.join();
                 setTimeout(() => resolve(undefined), 1000);
               });
               executedFlag = true;
             });
             nestedTask.Await();
           });
-          await task.Await();
+          task.Await();
         } catch (err) {
           err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
@@ -1333,11 +1336,12 @@ export default function EAWorkerTest() {
               await new Promise<void>((resolve) => {
                 setTimeout(() => resolve(undefined), 1000);
               });
+              worker.join();
               executedFlag = true;
             });
             nestedTask.Await();
           });
-          await task.Await();
+          task.Await();
         } catch (err) {
           err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
