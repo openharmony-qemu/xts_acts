@@ -1,4 +1,5 @@
-﻿/*
+'use static'
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,12 +19,16 @@ import Utils from './../Util.test';
 
 class ProcessErrorHandlerGeneratedOwner {
   called: boolean = false;
+  static staticCalled: boolean = false;
+  static staticMessage: string = '';
 
   handle(error: Object): void {
     this.called = true;
   }
 
   static staticHandle(error: Object): void {
+    ProcessErrorHandlerGeneratedOwner.staticCalled = true;
+    ProcessErrorHandlerGeneratedOwner.staticMessage = (error as Error).message;
   }
 }
 
@@ -53,7 +58,7 @@ export default function ProcessErrorHandlerConstructorGeneratedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_0100
      * @tc.name testProcessErrorHandlerConstructorGenerated001
      * @tc.desc Verify callback uses if-else logic to distinguish different error types
      * @tc.size MediumTest
@@ -78,7 +83,7 @@ export default function ProcessErrorHandlerConstructorGeneratedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_0200
      * @tc.name testProcessErrorHandlerConstructorGenerated002
      * @tc.desc Verify multiple handler instances have isolated handleUncaughtError behavior
      * @tc.size MediumTest
@@ -102,7 +107,7 @@ export default function ProcessErrorHandlerConstructorGeneratedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_0300
      * @tc.name testProcessErrorHandlerConstructorGenerated003
      * @tc.desc Verify callback modifies external array observable after handleUncaughtError
      * @tc.size MediumTest
@@ -120,7 +125,7 @@ export default function ProcessErrorHandlerConstructorGeneratedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_0400
      * @tc.name testProcessErrorHandlerConstructorGenerated004
      * @tc.desc Verify static class method callback construction succeeds
      * @tc.size MediumTest
@@ -128,33 +133,24 @@ export default function ProcessErrorHandlerConstructorGeneratedTest(): void {
      * @tc.level Level 2
      */
     it('testProcessErrorHandlerConstructorGenerated004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      ProcessErrorHandlerGeneratedOwner.staticCalled = false;
+      ProcessErrorHandlerGeneratedOwner.staticMessage = '';
       let handler = new ProcessErrorHandler(ProcessErrorHandlerGeneratedOwner.staticHandle);
       expect(handler instanceof ProcessErrorHandler).assertTrue();
+      handler.handleUncaughtError(new Error('static callback'));
+      expect(ProcessErrorHandlerGeneratedOwner.staticCalled).assertTrue();
+      expect(ProcessErrorHandlerGeneratedOwner.staticMessage).assertEqual('static callback');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_0500
      * @tc.name testProcessErrorHandlerConstructorGenerated005
-     * @tc.desc Verify callback with empty function body can construct handler
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testProcessErrorHandlerConstructorGenerated005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let handler = new ProcessErrorHandler((error: Object): void => {
-      });
-      expect(handler instanceof ProcessErrorHandler).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_0006
-     * @tc.name testProcessErrorHandlerConstructorGenerated006
      * @tc.desc Verify callback uses multiple Error properties in conditional branching logic
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testProcessErrorHandlerConstructorGenerated006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testProcessErrorHandlerConstructorGenerated005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let severity = '';
       let handler = new ProcessErrorHandler((error: Object): void => {
         let err = error as Error;
@@ -169,14 +165,14 @@ export default function ProcessErrorHandlerConstructorGeneratedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_0007
-     * @tc.name testProcessErrorHandlerConstructorGenerated007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_0600
+     * @tc.name testProcessErrorHandlerConstructorGenerated006
      * @tc.desc Verify callback can capture external variables
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testProcessErrorHandlerConstructorGenerated007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testProcessErrorHandlerConstructorGenerated006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let count = 1;
       let handler = new ProcessErrorHandler((error: Object): void => {
         count++;
@@ -187,14 +183,14 @@ export default function ProcessErrorHandlerConstructorGeneratedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_0008
-     * @tc.name testProcessErrorHandlerConstructorGenerated008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_0700
+     * @tc.name testProcessErrorHandlerConstructorGenerated007
      * @tc.desc Verify callback can invoke a utility function with observable result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testProcessErrorHandlerConstructorGenerated008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testProcessErrorHandlerConstructorGenerated007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = '';
       let handler = new ProcessErrorHandler((error: Object): void => {
         result = (error as Error).name + '|' + (error as Error).message;
@@ -204,14 +200,14 @@ export default function ProcessErrorHandlerConstructorGeneratedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_0009
-     * @tc.name testProcessErrorHandlerConstructorGenerated009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_0800
+     * @tc.name testProcessErrorHandlerConstructorGenerated008
      * @tc.desc Verify each constructor call returns an independent instance with its own callback state
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testProcessErrorHandlerConstructorGenerated009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testProcessErrorHandlerConstructorGenerated008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let received1 = '';
       let received2 = '';
       let handler1 = new ProcessErrorHandler((error: Object): void => {
@@ -228,29 +224,14 @@ export default function ProcessErrorHandlerConstructorGeneratedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_0010
-     * @tc.name testProcessErrorHandlerConstructorGenerated010
-     * @tc.desc Verify handler construction succeeds and the instance remains an object at runtime
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testProcessErrorHandlerConstructorGenerated010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let handler = new ProcessErrorHandler((error: Object): void => {
-      });
-      let keys = Object.keys(handler);
-      expect(handler instanceof Object).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_0011
-     * @tc.name testProcessErrorHandlerConstructorGenerated011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_0900
+     * @tc.name testProcessErrorHandlerConstructorGenerated009
      * @tc.desc Verify callback receives the error message after handler construction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testProcessErrorHandlerConstructorGenerated011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testProcessErrorHandlerConstructorGenerated009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let received = '';
       let handler = new ProcessErrorHandler((error: Object): void => {
         received = (error as Error).message;
@@ -260,14 +241,14 @@ export default function ProcessErrorHandlerConstructorGeneratedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_0012
-     * @tc.name testProcessErrorHandlerConstructorGenerated012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_1000
+     * @tc.name testProcessErrorHandlerConstructorGenerated010
      * @tc.desc Verify try catch finally flow around safe construction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testProcessErrorHandlerConstructorGenerated012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testProcessErrorHandlerConstructorGenerated010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let finallyExecuted = false;
       let received = '';
       try {
@@ -283,35 +264,33 @@ export default function ProcessErrorHandlerConstructorGeneratedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_0013
-     * @tc.name testProcessErrorHandlerConstructorGenerated013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_1100
+     * @tc.name testProcessErrorHandlerConstructorGenerated011
      * @tc.desc Verify nested block flow around safe construction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testProcessErrorHandlerConstructorGenerated013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testProcessErrorHandlerConstructorGenerated011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let handled = false;
       {
-        {
           let handler = new ProcessErrorHandler((error: Object): void => {
             handled = (error as Error).message === 'nested block';
           });
           handler.handleUncaughtError(new Error('nested block'));
-        }
       }
       expect(handled).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_0014
-     * @tc.name testProcessErrorHandlerConstructorGenerated014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_1200
+     * @tc.name testProcessErrorHandlerConstructorGenerated012
      * @tc.desc Verify custom Error callback object construction does not invoke callback immediately
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testProcessErrorHandlerConstructorGenerated014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testProcessErrorHandlerConstructorGenerated012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let generatedError = new ProcessErrorHandlerGeneratedError('custom', 404);
       let observedCode = 0;
       let handler = new ProcessErrorHandler((error: Object): void => {
@@ -323,28 +302,14 @@ export default function ProcessErrorHandlerConstructorGeneratedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_0015
-     * @tc.name testProcessErrorHandlerConstructorGenerated015
-     * @tc.desc Verify public constructor and API availability through runtime construction
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testProcessErrorHandlerConstructorGenerated015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let handler: ProcessErrorHandler = new ProcessErrorHandler((error: Object): void => {
-      });
-      expect(handler instanceof ProcessErrorHandler).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_0016
-     * @tc.name testProcessErrorHandlerConstructorGenerated016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_1300
+     * @tc.name testProcessErrorHandlerConstructorGenerated013
      * @tc.desc Verify callback accumulates state across multiple handleUncaughtError calls
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testProcessErrorHandlerConstructorGenerated016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testProcessErrorHandlerConstructorGenerated013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let seen: string[] = [];
       let handler = new ProcessErrorHandler((error: Object): void => {
         if (seen.length === 0) {
@@ -363,70 +328,63 @@ export default function ProcessErrorHandlerConstructorGeneratedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_0017
-     * @tc.name testProcessErrorHandlerConstructorGenerated017
-     * @tc.desc Verify construction inside async function succeeds
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testProcessErrorHandlerConstructorGenerated017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      await Utils.msSleep(1);
-      let handler = new ProcessErrorHandler((error: Object): void => {
-      });
-      expect(handler instanceof ProcessErrorHandler).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_0018
-     * @tc.name testProcessErrorHandlerConstructorGenerated018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_1400
+     * @tc.name testProcessErrorHandlerConstructorGenerated014
      * @tc.desc Verify construction inside Promise then succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testProcessErrorHandlerConstructorGenerated018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testProcessErrorHandlerConstructorGenerated014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let constructed = false;
+      let received = '';
       await Promise.resolve().then((): void => {
-        new ProcessErrorHandler((error: Object): void => {
+        let handler = new ProcessErrorHandler((error: Object): void => {
+          received = (error as Error).message;
         });
+        handler.handleUncaughtError(new Error('promise constructed'));
         constructed = true;
       });
       expect(constructed).assertTrue();
+      expect(received).assertEqual('promise constructed');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_0019
-     * @tc.name testProcessErrorHandlerConstructorGenerated019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_1500
+     * @tc.name testProcessErrorHandlerConstructorGenerated015
      * @tc.desc Verify multiple Promise constructions complete
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testProcessErrorHandlerConstructorGenerated019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      let count = 0;
+    it('testProcessErrorHandlerConstructorGenerated015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      let first = '';
+      let second = '';
       await Promise.resolve().then((): void => {
-        new ProcessErrorHandler((error: Object): void => {
+        let handler = new ProcessErrorHandler((error: Object): void => {
+          first = (error as Error).message;
         });
-        count++;
+        handler.handleUncaughtError(new Error('first promise'));
       });
       await Promise.resolve().then((): void => {
-        new ProcessErrorHandler((error: Object): void => {
+        let handler = new ProcessErrorHandler((error: Object): void => {
+          second = (error as Error).message;
         });
-        count++;
+        handler.handleUncaughtError(new Error('second promise'));
       });
-      expect(count).assertEqual(2);
+      expect(first).assertEqual('first promise');
+      expect(second).assertEqual('second promise');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_0020
-     * @tc.name testProcessErrorHandlerConstructorGenerated020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_1600
+     * @tc.name testProcessErrorHandlerConstructorGenerated016
      * @tc.desc Verify reset callback captures closure variable and modifies it
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testProcessErrorHandlerConstructorGenerated020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testProcessErrorHandlerConstructorGenerated016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x = 10;
       let handler = new ProcessErrorHandler((error: Object): void => {
       });
@@ -438,32 +396,14 @@ export default function ProcessErrorHandlerConstructorGeneratedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_0021
-     * @tc.name testProcessErrorHandlerConstructorGenerated021
-     * @tc.desc Verify repeated construction creates expected number of instances
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testProcessErrorHandlerConstructorGenerated021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let count = 0;
-      for (let i = 0; i < 100; i++) {
-        new ProcessErrorHandler((error: Object): void => {
-        });
-        count++;
-      }
-      expect(count).assertEqual(100);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_0022
-     * @tc.name testProcessErrorHandlerConstructorGenerated022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_1700
+     * @tc.name testProcessErrorHandlerConstructorGenerated017
      * @tc.desc Verify closure state can be updated when callback runs after construction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testProcessErrorHandlerConstructorGenerated022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testProcessErrorHandlerConstructorGenerated017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let retained = true;
       let handler = new ProcessErrorHandler((error: Object): void => {
         retained = false;
@@ -474,14 +414,14 @@ export default function ProcessErrorHandlerConstructorGeneratedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_0023
-     * @tc.name testProcessErrorHandlerConstructorGenerated023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_1800
+     * @tc.name testProcessErrorHandlerConstructorGenerated018
      * @tc.desc Verify rapid consecutive handleUncaughtError calls preserve message order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testProcessErrorHandlerConstructorGenerated023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testProcessErrorHandlerConstructorGenerated018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let msgs: string[] = [];
       let handler = new ProcessErrorHandler((error: Object): void => {
         msgs.push((error as Error).message);
@@ -495,14 +435,14 @@ export default function ProcessErrorHandlerConstructorGeneratedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_0024
-     * @tc.name testProcessErrorHandlerConstructorGenerated024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_1900
+     * @tc.name testProcessErrorHandlerConstructorGenerated019
      * @tc.desc Verify callback can read the optional error.stack property
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testProcessErrorHandlerConstructorGenerated024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testProcessErrorHandlerConstructorGenerated019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let stackValue: string | undefined = undefined;
       let handler = new ProcessErrorHandler((error: Object): void => {
         stackValue = (error as Error).stack;
@@ -512,14 +452,14 @@ export default function ProcessErrorHandlerConstructorGeneratedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_0025
-     * @tc.name testProcessErrorHandlerConstructorGenerated025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_2000
+     * @tc.name testProcessErrorHandlerConstructorGenerated020
      * @tc.desc Verify that a callback set via constructor can be shared by multiple handlers without cross-contamination
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testProcessErrorHandlerConstructorGenerated025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testProcessErrorHandlerConstructorGenerated020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let seq: string[] = [];
       let cb = (err: Object): void => {
         seq.push((err as Error).message);
@@ -534,14 +474,14 @@ export default function ProcessErrorHandlerConstructorGeneratedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_0026
-     * @tc.name testProcessErrorHandlerConstructorGenerated026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_2100
+     * @tc.name testProcessErrorHandlerConstructorGenerated021
      * @tc.desc Verify custom error object can be captured by callback after construction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testProcessErrorHandlerConstructorGenerated026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testProcessErrorHandlerConstructorGenerated021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let receivedCode = 0;
       let handler = new ProcessErrorHandler((error: Object): void => {
         let generatedError = error as ProcessErrorHandlerGeneratedError;
@@ -552,14 +492,14 @@ export default function ProcessErrorHandlerConstructorGeneratedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_0027
-     * @tc.name testProcessErrorHandlerConstructorGenerated027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_2200
+     * @tc.name testProcessErrorHandlerConstructorGenerated022
      * @tc.desc Verify custom Error subclass preserves name message and custom property
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testProcessErrorHandlerConstructorGenerated027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testProcessErrorHandlerConstructorGenerated022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let captured: ProcessErrorHandlerGeneratedError | null = null;
       let handler = new ProcessErrorHandler((error: Object): void => {
         captured = error as ProcessErrorHandlerGeneratedError;
@@ -569,25 +509,6 @@ export default function ProcessErrorHandlerConstructorGeneratedTest(): void {
       expect(cap.message).assertEqual('sub test');
       expect(cap.errCode).assertEqual(999);
       expect(cap.name).assertEqual('ProcessErrorHandlerGeneratedError');
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS_ERROR_HANDLER_CONSTRUCTOR_GENERATED_0028
-     * @tc.name testProcessErrorHandlerConstructorGenerated028
-     * @tc.desc Verify callback invocation count matches number of handleUncaughtError calls
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testProcessErrorHandlerConstructorGenerated028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let callCount = 0;
-      let handler = new ProcessErrorHandler((error: Object): void => {
-        callCount++;
-      });
-      for (let i = 0; i < 5; i++) {
-        handler.handleUncaughtError(new Error('count ' + i));
-      }
-      expect(callCount).assertEqual(5);
     });
   });
 }
