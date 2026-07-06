@@ -145,7 +145,7 @@ export default function SerialBusManagerTest() {
         await driveFnReject();
         expect().assertFail();
         done();
-      }).catch((error) => {
+      }).catch((error: BusinessError) => {
         console.error(TAG, 'testOpen023 catch err code: ', error.code, ', message: ', error.message);
         expect(error.code).assertEqual(35700007);
         done();
@@ -2436,7 +2436,7 @@ export default function SerialBusManagerTest() {
       try {
         gPort!.open();
         await driveFn();
-        await gPort!.write(null as any, 1000);
+        await gPort!.write(null, 1000);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, 'testWrite012 catch err code: ', err.code, ', message: ', err.message);
@@ -2463,7 +2463,7 @@ export default function SerialBusManagerTest() {
       try {
         gPort!.open();
         await driveFn();
-        await gPort!.write(undefined as any, 1000);
+        await gPort!.write(undefined, 1000);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, 'testWrite013 catch err code: ', err.code, ', message: ', err.message);
@@ -2491,7 +2491,7 @@ export default function SerialBusManagerTest() {
         gPort!.open();
         await driveFn();
         let writeData: Uint8Array = new Uint8Array(buffer.from('Hello', 'utf-8').buffer);
-        await gPort!.write(writeData, null as any);
+        await gPort!.write(writeData, null);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, 'testWrite014 catch err code: ', err.code, ', message: ', err.message);
