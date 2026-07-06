@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -893,7 +893,6 @@ export default function ExpressionsChainingOperatorTest(): void {
     it("testExpressionsChainingOperator0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ex = new Example_chop2()
 
-      // 随机条件测试，这里我们模拟随机结果
       let cond: boolean = Math.random() > 0.5
       let aa = new Example_chop2()
       let a1: Example_chop2|undefined = cond ? aa : foo_undefined_chop2()
@@ -921,7 +920,6 @@ export default function ExpressionsChainingOperatorTest(): void {
     it("testExpressionsChainingOperator0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ex = new Example_chop2()
 
-      // 测试null版本
       let cond: boolean = Math.random() > 0.5
       let aa = new Example_chop2()
       let a1: Example_chop2|null = cond ? aa : foo_null_chop2()
@@ -949,7 +947,6 @@ export default function ExpressionsChainingOperatorTest(): void {
     it("testExpressionsChainingOperator0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ex = new Example_chop2()
 
-      // 测试lambda版本
       let cond: boolean = Math.random() > 0.5
       let aa = new Example_chop2()
       let a1: Example_chop2|undefined = cond ? aa : lambda_undefined_chop2()

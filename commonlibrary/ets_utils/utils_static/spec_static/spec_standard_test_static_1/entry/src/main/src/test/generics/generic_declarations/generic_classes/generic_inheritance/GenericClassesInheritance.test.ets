@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,7 +30,6 @@ import {
 } from "../../../../../../../hypium"
 
 // 22
-// 泛型基类和接口定义
 class GenericParent_0<T> {
   private data: T;
   constructor(data: T) {
@@ -247,7 +246,6 @@ class ComplexTypeParent_21<T extends user_21> {
     return this.data.marriedNo;
   }
 }
-// 辅助类定义 (用于泛型约束)
 class user_18 {
   name: string = '';
   age: number = 0;

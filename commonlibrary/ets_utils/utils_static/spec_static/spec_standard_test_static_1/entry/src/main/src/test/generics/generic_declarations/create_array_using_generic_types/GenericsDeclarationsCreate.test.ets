@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,7 +30,6 @@ import {
 } from "../../../../../../hypium"
 
 // 30
-// 类型定义
 type MyArray_0<T> = T[]
 type Direction_0 = number
 type MyArray_1<T> = T[]

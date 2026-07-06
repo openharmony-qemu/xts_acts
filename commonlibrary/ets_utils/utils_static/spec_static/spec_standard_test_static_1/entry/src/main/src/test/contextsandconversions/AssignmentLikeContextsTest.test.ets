@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -1967,7 +1967,6 @@ export default function AssignmentLikeContextsTest(): void {
     it("testAssignmentLikeContexts0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src_1: FixedArray<Boolean> = new FixedArray<Boolean>(1);
       let dst_1: FixedArray<boolean> = new FixedArray<boolean>(1);
-      // 预期编译阶段校验类型兼容性
       dst_1 = src_1 as FixedArray<boolean>;
       expect(dst_1.length).assertEqual(src_1.length);
     });
@@ -2730,7 +2729,6 @@ export default function AssignmentLikeContextsTest(): void {
      * @tc.level     Level 2
      */
     it("testAssignmentLikeContexts0103", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 基本类型身份转换
       let src_1: boolean = false;
       let dst_1: boolean = src_1;
       expect(src_1).assertEqual(dst_1);
@@ -2763,7 +2761,6 @@ export default function AssignmentLikeContextsTest(): void {
       let dst_8: char = src_8;
       expect(src_8).assertEqual(dst_8);
 
-      // 包装类型身份转换
       let src_9: Boolean = new Boolean(false);
       let dst_9: Boolean = src_9;
       expect(src_9).assertEqual(dst_9);
@@ -2776,7 +2773,6 @@ export default function AssignmentLikeContextsTest(): void {
       let dst_11: Char = src_11;
       expect(src_11).assertEqual(dst_11);
 
-      // 引用类型身份转换
       let src_12: Error = new Error("msg");
       let dst_12: Error = src_12;
       expect(src_12).assertEqual(dst_12);
@@ -2795,7 +2791,6 @@ export default function AssignmentLikeContextsTest(): void {
      * @tc.level     Level 2
      */
     it("testAssignmentLikeContexts0104", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 数值类型身份转换
       let src_1: long = Long.MAX_VALUE;
       let dst_1: long = src_1;
       expect(src_1).assertEqual(dst_1);
@@ -2804,12 +2799,10 @@ export default function AssignmentLikeContextsTest(): void {
       let dst_2: float = src_2;
       expect(src_2).assertEqual(dst_2);
 
-      // 函数类型身份转换
       let src_3: (a: Boolean) => Object[] = (a: Boolean): Object[] => { return [a]; };
       let dst_3: (a: Boolean) => Object[] = src_3;
       expect(src_3).assertEqual(dst_3);
 
-      // 可空类型身份转换
       let src_4: String|null = null;
       let dst_4: String|null = src_4;
       expect(src_4).assertEqual(dst_4);
@@ -2818,18 +2811,15 @@ export default function AssignmentLikeContextsTest(): void {
       let dst_5: ((a: Object) => Object)[]|null = src_5;
       expect(src_5).assertEqual(dst_5);
 
-      // 多维数组身份转换
       let src_6: (double|null)[][] = [[1.0, 2.0, null]];
       let dst_6: (double|null)[][] = src_6;
       expect(src_6).assertEqual(dst_6);
 
-      // 接口类型身份转换
 
       let src_7: I = new A44();
       let dst_7: I = src_7;
       expect(src_7).assertEqual(dst_7);
 
-      // 枚举类型身份转换
       let src_8: Color = Color.Red;
       let dst_8: Color = src_8;
       expect(src_8).assertEqual(dst_8);
@@ -2916,7 +2906,6 @@ export default function AssignmentLikeContextsTest(): void {
      * @tc.level     Level 2
      */
     it("testAssignmentLikeContexts0108", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 包装类型及数组、函数类型的 null 赋值
       let v_Boolean: Boolean|null = null;
       expect(v_Boolean).assertEqual(null);
       let a_Boolean: (Boolean[])|null = null;
@@ -3184,7 +3173,7 @@ export default function AssignmentLikeContextsTest(): void {
     it("testAssignmentLikeContexts0116", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Object[] = new Object[1](new Object());
       let dst: Object = src as Object;
-      expect(src).assertEqual(dst); // 引用相等性校验
+      expect(src).assertEqual(dst);
     });
 
     /**
@@ -3234,12 +3223,10 @@ export default function AssignmentLikeContextsTest(): void {
      * @tc.level     Level 2
      */
     it("testAssignmentLikeContexts0119", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 到 Object 的拓宽转换
       let src_Double: Double = new Double();
       let dst_Object: Object = src_Double as Object;
       expect(src_Double).assertEqual(dst_Object);
 
-      // 到 Integral 的拓宽转换
 
       let src_Byte: Byte = new Byte();
       let dst_Integral_Byte: Integral = src_Byte as Integral;
@@ -3257,7 +3244,6 @@ export default function AssignmentLikeContextsTest(): void {
       let dst_Integral_Long: Integral = src_Long as Integral;
       expect(src_Long).assertEqual(dst_Integral_Long as Long);
 
-      // 到 Floating 的拓宽转换
 
       let src_Float: Float = new Float();
       let dst_Floating_Float: Floating = src_Float as Floating;
@@ -3267,7 +3253,6 @@ export default function AssignmentLikeContextsTest(): void {
       let dst_Floating_Double: Floating = src_Double2 as Floating;
       expect(src_Double2).assertEqual(dst_Floating_Double as Double);
 
-      // 到 Comparable 的拓宽转换
       let src_Byte_Comp: Byte = new Byte();
       let dst_Comp_Byte: Comparable<Byte> = src_Byte_Comp as Comparable<Byte>;
       expect(src_Byte_Comp).assertEqual(dst_Comp_Byte as Byte);
@@ -3736,7 +3721,7 @@ export default function AssignmentLikeContextsTest(): void {
      * @tc.level     Level 2
      */
     it("testAssignmentLikeContexts0147", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let param: char = c'\u767D'; // 字符 '白'
+      let param: char = c'\u767D';
       foo5(param);
       expect(param).not().assertNull();
     });

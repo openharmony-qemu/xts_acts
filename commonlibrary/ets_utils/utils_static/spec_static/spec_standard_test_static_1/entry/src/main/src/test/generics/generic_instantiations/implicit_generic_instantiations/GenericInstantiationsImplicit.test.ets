@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -28,8 +28,6 @@ import {
   expect
 } from "../../../../../../hypium"
 
-//  (从30)
-// 函数定义
 function foo_0<T, U>(p: T, q: U): [T, U] {
     return [p, q]
 }
@@ -69,7 +67,6 @@ function foo_6<T>(p: T): T {
 
 function foo1_7(): number { return 1 }
 
-// 类型定义
 type X_8 = Array<Int>
 function foo_8<T>(this: X_8, el: int): T {
     return this[el] as T
@@ -79,7 +76,6 @@ function bar_8<T>(this: X_8, el: int): T {
     return x1
 }
 
-// 类定义
 class Cls_9 {
     foo<T, U>(p: T, q: U): [T, U] {
         return [p, q]
@@ -88,7 +84,7 @@ class Cls_9 {
 
 class Bar_10 {
   static bar<T>(p: T): Array<T> {
-    let x = Array.create<T>(5, p); // 创建一个长度为5的数组， 将数组中的所有元素填充为 `p`
+    let x = Array.create<T>(5, p);
     return x;
   }
 }

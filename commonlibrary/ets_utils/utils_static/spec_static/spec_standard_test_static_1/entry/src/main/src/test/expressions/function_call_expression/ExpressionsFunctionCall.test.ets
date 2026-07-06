@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -492,7 +492,6 @@ export default function ExpressionsFunctionCallTest(): void {
       calls_fcall_12 = 0
       let ll: LT_fcall_12 = (s: Object, i: Object, b: Object) => foo_fcall_12(s, i, b)
       let r = ll("Hello", 42, true)
-      // 娉ㄦ剰锛欰rkTS涓?instanceof 妫€鏌ュ彲鑳介渶瑕佽皟鏁?
       expect(calls_fcall_12).assertEqual(1)
     })
 

@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -379,7 +379,6 @@ export default function NumericOperatorContextsTest(): void {
       expect(new BigInt(y) !== x).assertEqual(false);
     });
 
-    // ----------------- conversions_byte 系列 -----------------
     /**
      * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_2000
      * @tc.name      testNumericOperatorContexts0041
@@ -583,7 +582,6 @@ export default function NumericOperatorContextsTest(): void {
       expect((y !== x)).assertEqual(false);
     });
 
-    // ----------------- conversions_double 系列 (共8个用例) -----------------
     /**
      * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_2700
      * @tc.name      testNumericOperatorContexts0105
@@ -704,7 +702,6 @@ export default function NumericOperatorContextsTest(): void {
       expect((y !== x)).assertEqual(false);
     });
 
-    // ----------------- conversions_float 系列 (共16个用例) -----------------
     /**
      * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_3500
      * @tc.name      testNumericOperatorContexts0113
@@ -945,7 +942,6 @@ export default function NumericOperatorContextsTest(): void {
       expect((y >= x)).assertEqual(true);
     });
 
-    // ----------------- conversions_int 系列 (共32个用例) -----------------
     /**
      * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_5100
      * @tc.name      testNumericOperatorContexts0129
@@ -1426,7 +1422,6 @@ export default function NumericOperatorContextsTest(): void {
       expect((y >= x)).assertEqual(true);
     });
 
-    // ----------------- conversions_long 系列 (共32个用例) -----------------
     /**
      * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_8300
      * @tc.name      testNumericOperatorContexts0161
@@ -1877,7 +1872,6 @@ export default function NumericOperatorContextsTest(): void {
       expect((y !== x)).assertEqual(false);
     });
 
-    // ----------------- conversions_short 系列 (共40个用例) -----------------
     /**
      * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_ONE_1400
      * @tc.name      testNumericOperatorContexts0191

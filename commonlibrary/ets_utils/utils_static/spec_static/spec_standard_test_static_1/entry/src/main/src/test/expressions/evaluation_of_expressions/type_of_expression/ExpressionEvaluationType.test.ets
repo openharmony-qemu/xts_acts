@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -346,7 +346,7 @@ export default function ExpressionEvaluationTypeTest(): void {
      */
     it("testExpressionEvaluationType0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x = ' ';
-      let a: number = x ? 1 : 0; // x 鏄?' ' (闈炵┖瀛楃涓?锛屾潯浠朵负鐪?
+      let a: number = x ? 1 : 0;
       expect(typeof a).assertEqual("number");
     })
 

@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -28,7 +28,6 @@ import {
   expect
 } from "../../../../../../../hypium"
 
-// 集中定义的类型、接口、类
 class Double1 {
   value: double = 0.0
   constructor() {}
@@ -37,7 +36,6 @@ class Int1 {
   value: int = 0
   constructor() {}
 }
-// 泛型类定义
 class PointIntOrDouble {
   static foo<X extends Int1 | Double1>(i: X): X { return i }
   foo<X extends Int1 | Double1>(i: X): X { return i }
@@ -98,16 +96,13 @@ class PointNull {
   foo<X extends null>(i: X): X { return i }
 }
 
-// 集中定义的类型、接口、类
 
-// Color 枚举定义
 enum Color {
   Red,
   Green,
   Blue
 }
 
-// 泛型类定义
 class PointUndefined {
   static foo<X extends undefined>(i: X): X { return i }
   foo<X extends undefined>(i: X): X { return i }

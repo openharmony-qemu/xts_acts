@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -77,7 +77,6 @@ function genericTwoParams<T, U>(p: T, q: U): [T, U] {
   return [p, q]
 }
 
-// 唯一逻辑函数
 function foo_14<T, U>(p: T, q: U): T|U {
   return (p! as object).toString() > (q! as object).toString() ? p : q
 }
@@ -91,13 +90,11 @@ function foo_15<T, U>(p: T, q: U): [Array<T>, Array<U>] {
   return [bar_15(p), bar_15(q)]
 }
 
-// 所有重复空类 → 统一只保留一套
 class BaseClass {}
 class DerivedClass extends BaseClass {}
 class C_17 extends BaseClass {}
 class C_36 extends BaseClass {}
 
-// 泛型约束函数
 function foo_16<T extends U, U extends Object>(p: T, q: U): boolean {
   return p.toString() + q.toString() > ""
 }

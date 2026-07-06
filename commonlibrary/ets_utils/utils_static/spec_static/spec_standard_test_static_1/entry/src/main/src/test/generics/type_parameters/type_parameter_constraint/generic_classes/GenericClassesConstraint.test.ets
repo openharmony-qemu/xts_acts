@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -64,7 +64,6 @@ class StringClass {
   value: string = ""
 }
 
-// 泛型类定义
 class Point<T extends Int1 | Double1> {}
 
 final class FinalPoint<T extends Int1 | Double1> {}
@@ -109,17 +108,14 @@ class PointString<T extends StringClass> {}
 
 final class FinalPointString<T extends StringClass> {}
 
-// FixedArray 类型定义
 type FixedArray<T> = T[]
 
-// Color 枚举定义
 enum Color {
   Red,
   Green,
   Blue
 }
 
-// 泛型类定义
 class PointVoid<T extends void> {}
 final class FinalPointVoid<T extends void> {}
 
@@ -150,18 +146,15 @@ final class FinalPointIntObject<T extends int, Z extends Object> {}
 class PointObject<T extends Object> {}
 final class FinalPointObject<T extends Object> {}
 
-// 集中定义的类型、接口、类
 class A {
   foo(): number { return 1 }
 }
 
-// 泛型类定义
 
 class PointAny<T> {}
 
 final class FinalPointAny<T> {}
 
-// 通用类定义
 class C<T extends A> {
   constructor(i: T) {
     i.foo()

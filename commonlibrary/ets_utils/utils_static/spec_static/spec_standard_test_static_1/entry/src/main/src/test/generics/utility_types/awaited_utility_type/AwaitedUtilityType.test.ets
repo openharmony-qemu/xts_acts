@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -36,7 +36,6 @@ interface I_22 {
 
 enum ENM_22 {Red = 8, Blue, Green}
 
-// 类型定义
 type p_0 = Awaited<number>
 type o_0 = Awaited<p_0>
 

@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,7 +30,6 @@ import {
 } from "../../../../../../hypium"
 
 // 3
-// 类、接口、类型别名定义
 class A_0 {}
 class C_0<T> {}
 type my_type_0<T> = C_0<T>

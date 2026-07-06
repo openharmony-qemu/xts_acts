@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,7 +30,6 @@ import {
 } from '../../../../../../../hypium';
 
 // 14
-// 泛型基类、子类定义
 class Pa_0<T> {
   p(v: T): T {
     return v;

@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -1727,7 +1727,7 @@ export default function ImplicitConversionsTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testImplicitConversions0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => { // 妯℃嫙 byte 绫诲瀷鍏ュ弬鍜岃繑鍥炲€?
+    it("testImplicitConversions0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(foo(0)).assertEqual(0);
       expect(foo(-128)).assertEqual(-128);
       expect(foo(127)).assertEqual(127);
@@ -1743,7 +1743,7 @@ export default function ImplicitConversionsTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testImplicitConversions0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => { // 妯℃嫙 short 绫诲瀷鍏ュ弬鍜岃繑鍥炲€?
+    it("testImplicitConversions0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(foo(0)).assertEqual(0);
       expect(foo(-32768)).assertEqual(-32768);
       expect(foo(32767)).assertEqual(32767);
@@ -1791,7 +1791,7 @@ export default function ImplicitConversionsTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testImplicitConversions0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => { // 妯℃嫙 float 绫诲瀷鍏ュ弬鍜岃繑鍥炲€?
+    it("testImplicitConversions0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(foo(+0.0)).assertEqual(+0.0);
       expect(foo(-0.0)).assertEqual(-0.0);
       expect(foo(3.4028234663852886e38)).assertEqual(3.4028234663852886e38);
@@ -1808,7 +1808,7 @@ export default function ImplicitConversionsTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testImplicitConversions0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => { // 妯℃嫙 double 绫诲瀷鍏ュ弬鍜岃繑鍥炲€?
+    it("testImplicitConversions0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(foo(0.0)).assertEqual(0.0);
       expect(foo(-0.0)).assertEqual(-0.0);
       expect(foo(3.4028234663852886e38)).assertEqual(3.4028234663852886e38);
@@ -1825,7 +1825,7 @@ export default function ImplicitConversionsTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testImplicitConversions0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => { // 妯℃嫙 char 绫诲瀷锛圲nicode 缂栫爜鍊硷級鍏ュ弬鍜岃繑鍥炲€?
+    it("testImplicitConversions0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(foo(0)).assertEqual(0); // c'\u0000'
       expect(foo(4095)).assertEqual(4095); // c'\u0FFF'
       expect(foo(65535)).assertEqual(65535); // c'\uFFFF'
@@ -1840,7 +1840,7 @@ export default function ImplicitConversionsTest(): void {
      * @tc.level     Level 2
      */
     it("testImplicitConversions0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s: number = NaN; // 妯℃嫙 Float.NaN
+      let s: number = NaN;
       expect(isNaN(foo(s))).assertEqual(true);
     });
 
@@ -1852,7 +1852,7 @@ export default function ImplicitConversionsTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testImplicitConversions0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => { // 鐩爣绫诲瀷涓?short
+    it("testImplicitConversions0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s1: number = 0;
       expect(foo(s1)).assertEqual(0);
       let s2: number = -128;
@@ -3501,11 +3501,11 @@ export default function ImplicitConversionsTest(): void {
      */
     it("testImplicitConversions0157", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a1: A38 = new A38();
-      expect(a1.d.charCodeAt(0)).assertEqual(0);  // 浣跨敤 charCodeAt 鑾峰彇 Unicode 鏁板€?
+      expect(a1.d.charCodeAt(0)).assertEqual(0);
       let a2: A39 = new A39();
-      expect(a2.d.charCodeAt(0)).assertEqual(4095); // Unicode 鍊?0x0FFF
+      expect(a2.d.charCodeAt(0)).assertEqual(4095);
       let a3: A40 = new A40();
-      expect(a3.d.charCodeAt(0)).assertEqual(65535); // Unicode 鍊?0xFFFF
+      expect(a3.d.charCodeAt(0)).assertEqual(65535);
     });
 
     /**

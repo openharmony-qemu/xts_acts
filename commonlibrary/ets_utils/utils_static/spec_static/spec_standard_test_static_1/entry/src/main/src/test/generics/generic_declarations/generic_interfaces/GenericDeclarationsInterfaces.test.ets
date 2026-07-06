@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -722,7 +722,6 @@ export default function GenericDeclarationsInterfacesTest(): void {
      */
     it("testGenericDeclarationsInterfaces0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let stringValue = new GenericClass_9();
-      // 原逻辑是检查不相等，这里比较数值
       expect(stringValue.getValue().name).assertEqual(66.66f);
     })
 

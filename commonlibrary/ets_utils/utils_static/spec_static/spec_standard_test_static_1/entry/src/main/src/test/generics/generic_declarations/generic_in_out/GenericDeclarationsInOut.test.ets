@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,7 +30,6 @@ import {
 } from "../../../../../../hypium"
 
 // 3
-// 接口、类和函数定义
 interface Producer_0<T> {
   produce(): T;
 }
