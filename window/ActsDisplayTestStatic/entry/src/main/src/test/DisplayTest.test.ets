@@ -3589,6 +3589,10 @@ export default function DisplayTest():void {
         let count = 0;
         let callback: Callback<display.Rect> = (data: display.Rect) => {
             console.info(0x0000, '[ANI]', msgStr + `Listening enabled. Data: ${JSON.stringify(data)}`);
+            expect(data.left).assertLargerOrEqual(0);
+            expect(data.top).assertLargerOrEqual(0);
+            expect(data.width).assertLargerOrEqual(0);
+            expect(data.height).assertLargerOrEqual(0);
             count++;
         };
         try {
