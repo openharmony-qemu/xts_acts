@@ -29,7 +29,7 @@ export default function BigIntOperatorBitwiseXorTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseXorTest001', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseXorTest001', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(127).operatorBitwiseXor(BigInt(127)).toString()).assertEqual('0');
       expect(BigInt(-128).operatorBitwiseXor(BigInt(-128)).toString()).assertEqual('0');
       expect(BigInt(32767).operatorBitwiseXor(BigInt(32767)).toString()).assertEqual('0');
@@ -52,7 +52,7 @@ export default function BigIntOperatorBitwiseXorTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseXorTest002', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseXorTest002', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(2147483647).operatorBitwiseXor(BigInt(0)).toString()).assertEqual('2147483647');
       expect(BigInt(-2147483648).operatorBitwiseXor(BigInt(0)).toString()).assertEqual('-2147483648');
       expect(BigInt(2147483647).operatorBitwiseXor(BigInt(-1)).toString()).assertEqual('-2147483648');
@@ -70,7 +70,7 @@ export default function BigIntOperatorBitwiseXorTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseXorTest003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseXorTest003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const nearMax = BigInt('9223372036854775806');
       const nearMin = BigInt('-9223372036854775807');
 
@@ -91,7 +91,7 @@ export default function BigIntOperatorBitwiseXorTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseXorTest004', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseXorTest004', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const v20 = '12345678901234567890';
       const v20_neg = '-12345678901234567890';
       const v40 = '1234567890123456789012345678901234567890';
@@ -116,7 +116,7 @@ export default function BigIntOperatorBitwiseXorTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseXorTest005', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseXorTest005', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt('127').operatorBitwiseXor(BigInt('1')).toString()).assertEqual(
         BigInt(127).operatorBitwiseXor(BigInt(1)).toString());
       expect(BigInt('-128').operatorBitwiseXor(BigInt('-1')).toString()).assertEqual(
@@ -137,7 +137,7 @@ export default function BigIntOperatorBitwiseXorTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseXorTest006', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseXorTest006', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(0).operatorBitwiseXor(BigInt(0)).toString()).assertEqual('0');
       expect(BigInt(1).operatorBitwiseXor(BigInt(0)).toString()).assertEqual('1');
       expect(BigInt(0).operatorBitwiseXor(BigInt(1)).toString()).assertEqual('1');
@@ -159,7 +159,7 @@ export default function BigIntOperatorBitwiseXorTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseXorTest007', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseXorTest007', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(1).operatorBitwiseXor(BigInt(1)).toString()).assertEqual('0');
       expect(BigInt(1024).operatorBitwiseXor(BigInt(1024)).toString()).assertEqual('0');
       expect(BigInt(1048576).operatorBitwiseXor(BigInt(1048576)).toString()).assertEqual('0');
@@ -180,7 +180,7 @@ export default function BigIntOperatorBitwiseXorTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseXorTest008', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseXorTest008', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(255).operatorBitwiseXor(BigInt(65280)).toString()).assertEqual('65535');
       expect(BigInt(255).operatorBitwiseXor(BigInt(255)).toString()).assertEqual('0');
       expect(BigInt(65280).operatorBitwiseXor(BigInt(65280)).toString()).assertEqual('0');
@@ -200,7 +200,7 @@ export default function BigIntOperatorBitwiseXorTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseXorTest009', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseXorTest009', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const big100 = '9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999';
       const negBig100 = '-' + big100;
 
@@ -217,7 +217,7 @@ export default function BigIntOperatorBitwiseXorTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseXorTest010', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseXorTest010', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = BigInt(1);
       const b = BigInt(2);
       const c = BigInt(4);
@@ -239,7 +239,7 @@ export default function BigIntOperatorBitwiseXorTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseXorTest011', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseXorTest011', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const altEven = BigInt('2863311530');
       const altOdd = BigInt('1431655765');
 
@@ -260,7 +260,7 @@ export default function BigIntOperatorBitwiseXorTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseXorTest012', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseXorTest012', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const sets: BigInt[][] = [
         [BigInt(12), BigInt(10), BigInt(5)],
         [BigInt(127), BigInt(-128), BigInt(-1)],
@@ -284,7 +284,7 @@ export default function BigIntOperatorBitwiseXorTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseXorTest013', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseXorTest013', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pairs: BigInt[][] = [
         [BigInt(127), BigInt(-128)],
         [BigInt(32767), BigInt(-32768)],
@@ -308,7 +308,7 @@ export default function BigIntOperatorBitwiseXorTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseXorTest014', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseXorTest014', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const targets: BigInt[] = [
         BigInt(0), BigInt(1), BigInt(-1),
         BigInt(127), BigInt(-128), BigInt(32767),
@@ -332,7 +332,7 @@ export default function BigIntOperatorBitwiseXorTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseXorTest015', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseXorTest015', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let acc = BigInt(0);
       const bits: BigInt[] = [
         BigInt(1), BigInt(2), BigInt(4), BigInt(8),
@@ -357,7 +357,7 @@ export default function BigIntOperatorBitwiseXorTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseXorTest016', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseXorTest016', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: BigInt[] = [
         BigInt(0), BigInt(1), BigInt(-1),
         BigInt(127), BigInt(-128),
@@ -384,7 +384,7 @@ export default function BigIntOperatorBitwiseXorTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseXorTest017', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseXorTest017', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const low16 = BigInt(65535);
       const high16 = BigInt('4294901760');
       const full32 = BigInt('4294967295');
@@ -405,7 +405,7 @@ export default function BigIntOperatorBitwiseXorTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseXorTest018', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseXorTest018', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(0).operatorBitwiseXor(BigInt(-5)).toString()).assertEqual('-5');
       expect(BigInt(-5).operatorBitwiseXor(BigInt(0)).toString()).assertEqual('-5');
       expect(BigInt(2).operatorBitwiseXor(BigInt(4)).toString()).assertEqual('6');
@@ -429,7 +429,7 @@ export default function BigIntOperatorBitwiseXorTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseXorTest019', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseXorTest019', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt('9223372036854775807').operatorBitwiseXor(BigInt(0)).toString()).assertEqual('9223372036854775807');
       expect(BigInt('9223372036854775807').operatorBitwiseXor(BigInt(-1)).toString()).assertEqual('-9223372036854775808');
       expect(BigInt(32767).operatorBitwiseXor(BigInt(0)).toString()).assertEqual('32767');
@@ -454,7 +454,7 @@ export default function BigIntOperatorBitwiseXorTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseXorTest020', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseXorTest020', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(2).operatorBitwiseXor(BigInt(4)).toString()).assertEqual('6');
       expect(BigInt(4).operatorBitwiseXor(BigInt(8)).toString()).assertEqual('12');
       expect(BigInt(8).operatorBitwiseXor(BigInt(16)).toString()).assertEqual('24');
@@ -471,7 +471,7 @@ export default function BigIntOperatorBitwiseXorTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseXorTest021', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseXorTest021', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(0x0F).operatorBitwiseXor(BigInt(0x0F)).toString()).assertEqual('0');
       expect(BigInt(0x0F).operatorBitwiseXor(BigInt(0xF0)).toString()).assertEqual('255');
       expect(BigInt(0x0F0F0F0F).operatorBitwiseXor(BigInt(0xF0F0F0F0)).toString()).assertEqual('4294967295');
@@ -492,7 +492,7 @@ export default function BigIntOperatorBitwiseXorTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseXorTest022', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseXorTest022', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(-2).operatorBitwiseXor(BigInt(2)).toString()).assertEqual('-4');
       expect(BigInt(-3).operatorBitwiseXor(BigInt(3)).toString()).assertEqual('-2');
       expect(BigInt(-4).operatorBitwiseXor(BigInt(4)).toString()).assertEqual('-8');
@@ -510,7 +510,7 @@ export default function BigIntOperatorBitwiseXorTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseXorTest023', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseXorTest023', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const two = BigInt(2);
       const twoPow100 = BigInt('1267650600228229401496703205376');
       expect(twoPow100.operatorBitwiseXor(twoPow100).toString()).assertEqual('0');
@@ -527,7 +527,7 @@ export default function BigIntOperatorBitwiseXorTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseXorTest024', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseXorTest024', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const tenPow50 = BigInt('100000000000000000000000000000000000000000000000000');
       const negTenPow50 = BigInt('-100000000000000000000000000000000000000000000000000');
       expect(tenPow50.operatorBitwiseXor(BigInt(0)).toString()).assertEqual('100000000000000000000000000000000000000000000000000');
@@ -546,7 +546,7 @@ export default function BigIntOperatorBitwiseXorTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseXorTest025', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseXorTest025', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(100).operatorAdd(BigInt(200)).operatorBitwiseXor(BigInt(255)).toString()).assertEqual('467');
       expect(BigInt(100).operatorMultiply(BigInt(100)).operatorBitwiseXor(BigInt(255)).toString()).assertEqual('10223');
       expect(BigInt(1).operatorLeftShift(BigInt(8)).operatorBitwiseXor(BigInt(255)).toString()).assertEqual('511');
@@ -570,7 +570,7 @@ export default function BigIntOperatorBitwiseXorTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseXorTest026', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseXorTest026', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(2).operatorBitwiseXor(BigInt(8)).toString()).assertEqual('10');
       const allOnes64 = BigInt('18446744073709551615');
       expect(BigInt(0).operatorBitwiseXor(allOnes64).toString()).assertEqual('18446744073709551615');
@@ -585,7 +585,7 @@ export default function BigIntOperatorBitwiseXorTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseXorTest027', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseXorTest027', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let acc = BigInt(0);
       for (let i = 0; i < 1000; i++) {
         acc = acc.operatorBitwiseXor(BigInt(i));
@@ -618,7 +618,7 @@ export default function BigIntOperatorBitwiseXorTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseXorTest028', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseXorTest028', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(0).operatorBitwiseXor(BigInt(true)).toString()).assertEqual('1');
       expect(BigInt(0).operatorBitwiseXor(BigInt(false)).toString()).assertEqual('0');
       expect(BigInt(0).operatorBitwiseXor(BigInt('-0')).toString()).assertEqual('0');
@@ -632,7 +632,7 @@ export default function BigIntOperatorBitwiseXorTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseXorTest029', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseXorTest029', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(5.0).operatorBitwiseXor(BigInt(3)).toString()).assertEqual('6');
       expect(BigInt('123').operatorBitwiseXor(BigInt('456')).toString()).assertEqual('435');
       const original = BigInt(10);
@@ -649,7 +649,7 @@ export default function BigIntOperatorBitwiseXorTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseXorTest030', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseXorTest030', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const nearMin = BigInt('-9223372036854775807');
       expect(nearMin.operatorBitwiseXor(BigInt(1)).toString()).assertEqual('-9223372036854775808');
     });
@@ -662,7 +662,7 @@ export default function BigIntOperatorBitwiseXorTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseXorTest031', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseXorTest031', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(0).operatorBitwiseXor(BigInt(-5)).toString()).assertEqual('-5');
       expect(BigInt(-5).operatorBitwiseXor(BigInt(0)).toString()).assertEqual('-5');
       expect(BigInt(0).operatorBitwiseXor(BigInt(-128)).toString()).assertEqual('-128');
@@ -678,7 +678,7 @@ export default function BigIntOperatorBitwiseXorTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseXorTest032', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseXorTest032', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(0).operatorBitwiseXor(BigInt(0)).toString()).assertEqual('0');
       expect(BigInt(0).operatorBitwiseXor(BigInt(4294967295)).toString()).assertEqual('4294967295');
       expect(BigInt(0).operatorBitwiseXor(BigInt('18446744073709551615')).toString()).assertEqual('18446744073709551615');
@@ -693,7 +693,7 @@ export default function BigIntOperatorBitwiseXorTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseXorTest033', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseXorTest033', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(255).operatorBitwiseXor(BigInt(128)).toString()).assertEqual('127');
       expect(BigInt(65535).operatorBitwiseXor(BigInt(32768)).toString()).assertEqual('32767');
       expect(BigInt(4294967295).operatorBitwiseXor(BigInt(2147483648)).toString()).assertEqual('2147483647');
@@ -707,7 +707,7 @@ export default function BigIntOperatorBitwiseXorTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseXorTest034', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseXorTest034', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt('-999999999999999999999999999999').operatorBitwiseXor(BigInt('-111111111111111111111111111111')).toString()).assertEqual('1106767244072376933172941917752');
       expect(BigInt('123456789012345678901234567890').operatorBitwiseXor(BigInt('-123456789012345678901234567890')).toString()).assertEqual('-4');
       expect(BigInt('123456789012345678901234567890').operatorBitwiseXor(BigInt(-1)).toString()).assertEqual('-123456789012345678901234567891');
@@ -721,7 +721,7 @@ export default function BigIntOperatorBitwiseXorTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseXorTest035', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseXorTest035', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const left = BigInt(10);
       expect((): void => {
         (null as Object as BigInt).operatorBitwiseXor(left);

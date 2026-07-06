@@ -28,7 +28,7 @@ export default function BigIntOperatorBitwiseAndTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseAndTest001', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseAndTest001', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(127).operatorBitwiseAnd(BigInt(127)).toString()).assertEqual('127');
       expect(BigInt(-128).operatorBitwiseAnd(BigInt(-128)).toString()).assertEqual('-128');
       expect(BigInt(32767).operatorBitwiseAnd(BigInt(32767)).toString()).assertEqual('32767');
@@ -47,7 +47,7 @@ export default function BigIntOperatorBitwiseAndTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseAndTest002', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseAndTest002', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(2147483647).operatorBitwiseAnd(BigInt(2147483647)).toString()).assertEqual('2147483647');
       expect(BigInt(-2147483648).operatorBitwiseAnd(BigInt(-2147483648)).toString()).assertEqual('-2147483648');
       expect(BigInt(2147483647).operatorBitwiseAnd(BigInt(0)).toString()).assertEqual('0');
@@ -64,7 +64,7 @@ export default function BigIntOperatorBitwiseAndTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseAndTest003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseAndTest003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const v20 = '12345678901234567890';
       const v20_neg = '-12345678901234567890';
       const v40 = '1234567890123456789012345678901234567890';
@@ -90,7 +90,7 @@ export default function BigIntOperatorBitwiseAndTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseAndTest004', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseAndTest004', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt('127').operatorBitwiseAnd(BigInt('1')).toString()).assertEqual(
         BigInt(127).operatorBitwiseAnd(BigInt(1)).toString());
       expect(BigInt('-128').operatorBitwiseAnd(BigInt('-1')).toString()).assertEqual(
@@ -111,7 +111,7 @@ export default function BigIntOperatorBitwiseAndTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseAndTest005', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseAndTest005', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(0).operatorBitwiseAnd(BigInt(0)).toString()).assertEqual('0');
       expect(BigInt(1).operatorBitwiseAnd(BigInt(1)).toString()).assertEqual('1');
       expect(BigInt(1).operatorBitwiseAnd(BigInt(0)).toString()).assertEqual('0');
@@ -130,7 +130,7 @@ export default function BigIntOperatorBitwiseAndTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseAndTest006', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseAndTest006', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(1).operatorBitwiseAnd(BigInt(1)).toString()).assertEqual('1');
       expect(BigInt(1).operatorBitwiseAnd(BigInt(2)).toString()).assertEqual('0');
       expect(BigInt(2).operatorBitwiseAnd(BigInt(1)).toString()).assertEqual('0');
@@ -151,7 +151,7 @@ export default function BigIntOperatorBitwiseAndTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseAndTest007', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseAndTest007', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const big100 = '9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999';
       const negBig100 = '-' + big100;
 
@@ -170,7 +170,7 @@ export default function BigIntOperatorBitwiseAndTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseAndTest008', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseAndTest008', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = BigInt(42);
       expect(a.operatorBitwiseAnd(BigInt(42)).toString()).assertEqual('42');
       expect(a.operatorBitwiseAnd(BigInt(99)).toString()).assertEqual('34');
@@ -182,12 +182,12 @@ export default function BigIntOperatorBitwiseAndTest_2(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_BITWISE_AND_0900
      * @tc.name testBigIntBitwiseAndTest009
-     * @tc.desc operatorBitwiseAnd with alternating bit masks (0xAAAAâ€¦ & 0x5555â€¦)
+     * @tc.desc operatorBitwiseAnd with alternating bit masks (0xAAAAâ€?& 0x5555â€?
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseAndTest009', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseAndTest009', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const altEven = BigInt('2863311530');
       const altOdd = BigInt('1431655765');
 
@@ -209,7 +209,7 @@ export default function BigIntOperatorBitwiseAndTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseAndTest010', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseAndTest010', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(5).operatorBitwiseAnd(BigInt(0)).toString()).assertEqual('0');
       expect(BigInt(0).operatorBitwiseAnd(BigInt(-5)).toString()).assertEqual('0');
       expect(BigInt(-5).operatorBitwiseAnd(BigInt(0)).toString()).assertEqual('0');
@@ -232,7 +232,7 @@ export default function BigIntOperatorBitwiseAndTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseAndTest011', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseAndTest011', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(0xFF).operatorBitwiseAnd(BigInt(0xFF)).toString()).assertEqual('255');
       expect(BigInt(0x0F).operatorBitwiseAnd(BigInt(0xF0)).toString()).assertEqual('0');
       expect(BigInt(0xF0).operatorBitwiseAnd(BigInt(0x0F)).toString()).assertEqual('0');
@@ -260,7 +260,7 @@ export default function BigIntOperatorBitwiseAndTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseAndTest012', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseAndTest012', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(2).operatorBitwiseAnd(BigInt(2)).toString()).assertEqual('2');
       expect(BigInt(2).operatorBitwiseAnd(BigInt(8)).toString()).assertEqual('0');
       expect(BigInt(128).operatorBitwiseAnd(BigInt(128)).toString()).assertEqual('128');
@@ -279,7 +279,7 @@ export default function BigIntOperatorBitwiseAndTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseAndTest013', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseAndTest013', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt('9223372036854775807').operatorBitwiseAnd(BigInt(-1)).toString())
         .assertEqual('9223372036854775807');
       expect(BigInt(32767).operatorBitwiseAnd(BigInt(0)).toString()).assertEqual('0');
@@ -297,7 +297,7 @@ export default function BigIntOperatorBitwiseAndTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseAndTest014', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseAndTest014', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(-2).operatorBitwiseAnd(BigInt(2)).toString()).assertEqual('2');
       expect(BigInt(-3).operatorBitwiseAnd(BigInt(3)).toString()).assertEqual('1');
       expect(BigInt(-4).operatorBitwiseAnd(BigInt(4)).toString()).assertEqual('4');
@@ -315,7 +315,7 @@ export default function BigIntOperatorBitwiseAndTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseAndTest015', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseAndTest015', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       const pow100 = BigInt(1).operatorLeftShift(BigInt(100));
       expect(pow100.operatorBitwiseAnd(pow100).toString()).assertEqual(pow100.toString());
@@ -339,7 +339,7 @@ export default function BigIntOperatorBitwiseAndTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseAndTest016', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseAndTest016', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(7).operatorBitwiseAnd(BigInt(3)).operatorBitwiseAnd(BigInt(1)).toString()).assertEqual('1');
       expect(BigInt(15).operatorBitwiseAnd(BigInt(7)).operatorBitwiseAnd(BigInt(3)).toString()).assertEqual('3');
       const a = BigInt(255);
@@ -358,7 +358,7 @@ export default function BigIntOperatorBitwiseAndTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseAndTest017', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseAndTest017', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(100).operatorBitwiseAnd(BigInt(200)).equals(BigInt(100 & 200)))
         .assertTrue();
       expect((BigInt(100).operatorAdd(BigInt(200))).operatorBitwiseAnd(BigInt(255)).toString()).assertEqual('44');
@@ -381,7 +381,7 @@ export default function BigIntOperatorBitwiseAndTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseAndTest018', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseAndTest018', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       expect(BigInt('-9223372036854775808').operatorBitwiseAnd(BigInt(-1)).toString())
         .assertEqual('-9223372036854775808');
@@ -402,7 +402,7 @@ export default function BigIntOperatorBitwiseAndTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseAndTest019', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseAndTest019', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       expect(BigInt(-2).operatorBitwiseAnd(BigInt(-3)).toString()).assertEqual('-4');
     });
@@ -415,7 +415,7 @@ export default function BigIntOperatorBitwiseAndTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseAndTest020', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseAndTest020', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(-128).operatorBitwiseAnd(BigInt(127)).toString()).assertEqual('0');
       expect(BigInt(-65536).operatorBitwiseAnd(BigInt(65535)).toString()).assertEqual('0');
       expect(BigInt(-2147483648).operatorBitwiseAnd(BigInt(2147483647)).toString()).assertEqual('0');
@@ -431,7 +431,7 @@ export default function BigIntOperatorBitwiseAndTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseAndTest021', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseAndTest021', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const hugePos = BigInt('123456789012345678901234567890');
       const hugeNeg = BigInt('-123456789012345678901234567890');
 
@@ -446,7 +446,7 @@ export default function BigIntOperatorBitwiseAndTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseAndTest022', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseAndTest022', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const largePos = BigInt('999999999999999999999999999999');
       const largeNeg = BigInt('-999999999999999999999999999999');
 
@@ -470,7 +470,7 @@ export default function BigIntOperatorBitwiseAndTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseAndTest023', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseAndTest023', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       expect(BigInt(42).operatorBitwiseAnd(BigInt(58)).toString())
         .assertEqual(BigInt(58).operatorBitwiseAnd(BigInt(42)).toString());
@@ -490,7 +490,7 @@ export default function BigIntOperatorBitwiseAndTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseAndTest024', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseAndTest024', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       const a = BigInt(-1);
       const origA = a.toString();
@@ -512,7 +512,7 @@ export default function BigIntOperatorBitwiseAndTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseAndTest025', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseAndTest025', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       expect(BigInt(5.0).operatorBitwiseAnd(BigInt(3)).toString()).assertEqual('1');
 
@@ -531,7 +531,7 @@ export default function BigIntOperatorBitwiseAndTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseAndTest026', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseAndTest026', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       expect(BigInt(0).operatorBitwiseAnd(BigInt(true)).toString()).assertEqual('0');
 
@@ -564,7 +564,7 @@ export default function BigIntOperatorBitwiseAndTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseAndTest027', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseAndTest027', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       expect(BigInt('111111111111111111111111111111').operatorBitwiseAnd(
         BigInt('222222222222222222222222222222')).toString())
@@ -583,7 +583,7 @@ export default function BigIntOperatorBitwiseAndTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseAndTest028', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseAndTest028', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       expect(BigInt(7).operatorBitwiseAnd(BigInt(8)).equals(BigInt(0))).assertTrue();
     });
@@ -596,7 +596,7 @@ export default function BigIntOperatorBitwiseAndTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntBitwiseAndTest029', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntBitwiseAndTest029', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       const bit63 = BigInt('9223372036854775808');
       expect(bit63.operatorBitwiseAnd(bit63).toString()).assertEqual('9223372036854775808');
