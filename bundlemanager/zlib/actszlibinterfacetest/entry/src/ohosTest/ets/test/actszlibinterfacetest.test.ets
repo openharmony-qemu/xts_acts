@@ -15,13 +15,38 @@
 */
 import zlib from '@ohos.zlib'
 import fs, { ReadOptions } from '@ohos.file.fs';
-import { describe, it, expect, beforeAll, TestType, Size, Level } from '@ohos/hypium'
+import { describe, it, expect, beforeAll, afterEach, TestType, Size, Level } from '@ohos/hypium'
 import { BusinessError } from '@ohos.base'
+
+let testPathsToClean: string[] = [];
+
+function removeTestPath(path: string): void {
+    if (!fs.accessSync(path)) {
+        return;
+    }
+    if (fs.statSync(path).isDirectory()) {
+        let names: string[] = fs.listFileSync(path);
+        names.forEach((name: string) => removeTestPath(path + '/' + name));
+        fs.rmdirSync(path);
+        return;
+    }
+    fs.unlinkSync(path);
+}
+
+function cleanUpKeepTopLevelFolderTestData(): void {
+    for (let i = testPathsToClean.length - 1; i >= 0; i--) {
+        removeTestPath(testPathsToClean[i]);
+    }
+    testPathsToClean = [];
+}
 
 export default function ActsZlibInterfaceTest() { 
  describe('ActsZlibInterfaceTest', () => {
 
     let filesDir = "/data/storage/el2/base/files";
+    afterEach(() => {
+        cleanUpKeepTopLevelFolderTestData();
+    });
 
     beforeAll(() => {
         // 创建一个文件
@@ -368,5 +393,257 @@ export default function ActsZlibInterfaceTest() {
         console.info("==================ACTS_ZlibInterfaceTest_08 end==================");
     })
 
+    /**
+     * @tc.name   ActsZlibInterfaceTest09
+     * @tc.number ACTS_ZlibInterfaceTest_09
+     * @tc.desc   test compressFile with keepTopLevelFolder option set to true,
+     *            verify that the top-level directory is preserved in the zip file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ActsZlibInterfaceTest09', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
+        console.info("==================ACTS_ZlibInterfaceTest_09 start==================");
+        let sourceName = 'keepTopLevelFolderSource' + Date.now();
+        let sourceDir = filesDir + '/' + sourceName;
+        let sourceFile = sourceDir + '/test.txt';
+        let zipFile = filesDir + '/' + sourceName + '.zip';
+        let outputDir = filesDir + '/' + sourceName + 'Output';
+        testPathsToClean.push(sourceDir, zipFile, outputDir);
+        try {
+            if (!fs.accessSync(sourceDir)) {
+                fs.mkdirSync(sourceDir);
+            }
+            let file = fs.openSync(sourceFile, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE | fs.OpenMode.TRUNC);
+            fs.writeSync(file.fd, 'keep top-level folder');
+            fs.closeSync(file);
+            await zlib.compressFile(sourceDir, zipFile, { keepTopLevelFolder: true });
+            fs.mkdirSync(outputDir);
+            await zlib.decompressFile(zipFile, outputDir);
+            expect(fs.accessSync(outputDir + '/' + sourceName + '/test.txt')).assertTrue();
+        } catch (errData) {
+            console.error(`ActsZlibInterfaceTest09 failed, errCode:${errData.code} message:${errData.message}`);
+            expect(errData).assertFail();
+        }
+        console.info("==================ACTS_ZlibInterfaceTest_09 end==================");
+        done();
+    })
+
+    /**
+     * @tc.name   ActsZlibInterfaceTest10
+     * @tc.number ACTS_ZlibInterfaceTest_10
+     * @tc.desc   test compressFile with keepTopLevelFolder option set to false,
+     *            verify that the top-level directory is NOT preserved in the zip file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ActsZlibInterfaceTest10', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
+        console.info("==================ACTS_ZlibInterfaceTest_10 start==================");
+        let sourceName = 'keepTopLevelFolderSourceFalse' + Date.now();
+        let sourceDir = filesDir + '/' + sourceName;
+        let sourceFile = sourceDir + '/test.txt';
+        let zipFile = filesDir + '/' + sourceName + '.zip';
+        let outputDir = filesDir + '/' + sourceName + 'Output';
+        testPathsToClean.push(sourceDir, zipFile, outputDir);
+        try {
+            if (!fs.accessSync(sourceDir)) {
+                fs.mkdirSync(sourceDir);
+            }
+            let file = fs.openSync(sourceFile, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE | fs.OpenMode.TRUNC);
+            fs.writeSync(file.fd, 'do not keep top-level folder');
+            fs.closeSync(file);
+            await zlib.compressFile(sourceDir, zipFile, { keepTopLevelFolder: false });
+            fs.mkdirSync(outputDir);
+            await zlib.decompressFile(zipFile, outputDir);
+            // Verify that files are extracted directly under outputDir.
+            expect(fs.accessSync(outputDir + '/test.txt')).assertTrue();
+            // Verify that the top-level source directory is absent.
+            expect(fs.accessSync(outputDir + '/' + sourceName)).assertFalse();
+        } catch (errData) {
+            console.error(`ActsZlibInterfaceTest10 failed, errCode:${errData.code} message:${errData.message}`);
+            expect(errData).assertFail();
+        }
+        console.info("==================ACTS_ZlibInterfaceTest_10 end==================");
+        done();
+    })
+
+    /**
+     * @tc.name   ActsZlibInterfaceTest11
+     * @tc.number ACTS_ZlibInterfaceTest_11
+     * @tc.desc   test compressFile without keepTopLevelFolder parameter (default behavior),
+     *            verify the default behavior when keepTopLevelFolder is not specified
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ActsZlibInterfaceTest11', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
+        console.info("==================ACTS_ZlibInterfaceTest_11 start==================");
+        let sourceName = 'defaultBehavior' + Date.now();
+        let sourceDir = filesDir + '/' + sourceName;
+        let sourceFile = sourceDir + '/test.txt';
+        let zipFile = filesDir + '/' + sourceName + '.zip';
+        let outputDir = filesDir + '/' + sourceName + 'Output';
+        testPathsToClean.push(sourceDir, zipFile, outputDir);
+        try {
+            if (!fs.accessSync(sourceDir)) {
+                fs.mkdirSync(sourceDir);
+            }
+            let file = fs.openSync(sourceFile, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE | fs.OpenMode.TRUNC);
+            fs.writeSync(file.fd, 'default behavior test');
+            fs.closeSync(file);
+            // Do not specify keepTopLevelFolder; use its default value.
+            let options: zlib.Options = {
+                level: zlib.CompressLevel.COMPRESS_LEVEL_DEFAULT_COMPRESSION,
+                memLevel: zlib.MemLevel.MEM_LEVEL_DEFAULT,
+                strategy: zlib.CompressStrategy.COMPRESS_STRATEGY_DEFAULT_STRATEGY
+            };
+            await zlib.compressFile(sourceDir, zipFile, options);
+            fs.mkdirSync(outputDir);
+            await zlib.decompressFile(zipFile, outputDir);
+            // The default value is false, so the top-level directory is not preserved.
+            expect(fs.accessSync(outputDir + '/test.txt')).assertTrue();
+            expect(fs.accessSync(outputDir + '/' + sourceName)).assertFalse();
+        } catch (errData) {
+            console.error(`ActsZlibInterfaceTest11 failed, errCode:${errData.code} message:${errData.message}`);
+            expect(errData).assertFail();
+        }
+        console.info("==================ACTS_ZlibInterfaceTest_11 end==================");
+        done();
+    })
+
+    /**
+     * @tc.name   ActsZlibInterfaceTest12
+     * @tc.number ACTS_ZlibInterfaceTest_12
+     * @tc.desc   test compressFile with keepTopLevelFolder true and multiple files,
+     *            verify that all files are correctly preserved with top-level directory
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ActsZlibInterfaceTest12', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
+        console.info("==================ACTS_ZlibInterfaceTest_12 start==================");
+        let sourceName = 'multiFileTest' + Date.now();
+        let sourceDir = filesDir + '/' + sourceName;
+        let zipFile = filesDir + '/' + sourceName + '.zip';
+        let outputDir = filesDir + '/' + sourceName + 'Output';
+        testPathsToClean.push(sourceDir, zipFile, outputDir);
+        try {
+            if (!fs.accessSync(sourceDir)) {
+                fs.mkdirSync(sourceDir);
+            }
+            // Create multiple files.
+            for (let i = 1; i <= 3; i++) {
+                let file = fs.openSync(sourceDir + '/test' + i + '.txt',
+                    fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE | fs.OpenMode.TRUNC);
+                fs.writeSync(file.fd, 'test file ' + i);
+                fs.closeSync(file);
+            }
+            await zlib.compressFile(sourceDir, zipFile, { keepTopLevelFolder: true });
+            fs.mkdirSync(outputDir);
+            await zlib.decompressFile(zipFile, outputDir);
+            // Verify that all files are preserved under the top-level directory.
+            expect(fs.accessSync(outputDir + '/' + sourceName + '/test1.txt')).assertTrue();
+            expect(fs.accessSync(outputDir + '/' + sourceName + '/test2.txt')).assertTrue();
+            expect(fs.accessSync(outputDir + '/' + sourceName + '/test3.txt')).assertTrue();
+        } catch (errData) {
+            console.error(`ActsZlibInterfaceTest12 failed, errCode:${errData.code} message:${errData.message}`);
+            expect(errData).assertFail();
+        }
+        console.info("==================ACTS_ZlibInterfaceTest_12 end==================");
+        done();
+    })
+
+    /**
+     * @tc.name   ActsZlibInterfaceTest13
+     * @tc.number ACTS_ZlibInterfaceTest_13
+     * @tc.desc   test compressFile with keepTopLevelFolder true and nested directories,
+     *            verify that nested directory structure is correctly preserved
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ActsZlibInterfaceTest13', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
+        console.info("==================ACTS_ZlibInterfaceTest_13 start==================");
+        let sourceName = 'nestedDirTest' + Date.now();
+        let sourceDir = filesDir + '/' + sourceName;
+        let subDir = sourceDir + '/subdir';
+        let zipFile = filesDir + '/' + sourceName + '.zip';
+        let outputDir = filesDir + '/' + sourceName + 'Output';
+        testPathsToClean.push(sourceDir, zipFile, outputDir);
+        try {
+            if (!fs.accessSync(sourceDir)) {
+                fs.mkdirSync(sourceDir);
+            }
+            if (!fs.accessSync(subDir)) {
+                fs.mkdirSync(subDir);
+            }
+            // Create files at different directory levels.
+            let file1 = fs.openSync(sourceDir + '/root.txt',
+                fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE | fs.OpenMode.TRUNC);
+            fs.writeSync(file1.fd, 'root file');
+            fs.closeSync(file1);
+
+            let file2 = fs.openSync(subDir + '/sub.txt',
+                fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE | fs.OpenMode.TRUNC);
+            fs.writeSync(file2.fd, 'sub file');
+            fs.closeSync(file2);
+
+            await zlib.compressFile(sourceDir, zipFile, { keepTopLevelFolder: true });
+            fs.mkdirSync(outputDir);
+            await zlib.decompressFile(zipFile, outputDir);
+            // Verify that the nested directory structure is preserved.
+            expect(fs.accessSync(outputDir + '/' + sourceName + '/root.txt')).assertTrue();
+            expect(fs.accessSync(outputDir + '/' + sourceName + '/subdir/sub.txt')).assertTrue();
+        } catch (errData) {
+            console.error(`ActsZlibInterfaceTest13 failed, errCode:${errData.code} message:${errData.message}`);
+            expect(errData).assertFail();
+        }
+        console.info("==================ACTS_ZlibInterfaceTest_13 end==================");
+        done();
+    })
+
+    /**
+     * @tc.name   ActsZlibInterfaceTest14
+     * @tc.number ACTS_ZlibInterfaceTest_14
+     * @tc.desc   test compressFiles with keepTopLevelFolder true and preserve every source directory
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ActsZlibInterfaceTest14', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
+      async (done: Function) => {
+        console.info("==================ACTS_ZlibInterfaceTest_14 start==================");
+        let testName = 'compressFilesKeepTopLevel' + Date.now();
+        let firstName = testName + 'First';
+        let secondName = testName + 'Second';
+        let firstDir = filesDir + '/' + firstName;
+        let secondDir = filesDir + '/' + secondName;
+        let zipFile = filesDir + '/' + testName + '.zip';
+        let outputDir = filesDir + '/' + testName + 'Output';
+        testPathsToClean.push(firstDir, secondDir, zipFile, outputDir);
+        try {
+            fs.mkdirSync(firstDir);
+            fs.mkdirSync(secondDir);
+            let firstFile = fs.openSync(firstDir + '/first.txt', fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE | fs.OpenMode.TRUNC);
+            fs.writeSync(firstFile.fd, 'first source directory');
+            fs.closeSync(firstFile);
+            let secondFile = fs.openSync(secondDir + '/second.txt', fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE | fs.OpenMode.TRUNC);
+            fs.writeSync(secondFile.fd, 'second source directory');
+            fs.closeSync(secondFile);
+            await zlib.compressFiles([firstDir, secondDir], zipFile, { keepTopLevelFolder: true });
+            fs.mkdirSync(outputDir);
+            await zlib.decompressFile(zipFile, outputDir);
+            expect(fs.accessSync(outputDir + '/' + firstName + '/first.txt')).assertTrue();
+            expect(fs.accessSync(outputDir + '/' + secondName + '/second.txt')).assertTrue();
+            expect(fs.accessSync(outputDir + '/first.txt')).assertFalse();
+            expect(fs.accessSync(outputDir + '/second.txt')).assertFalse();
+        } catch (errData) {
+            console.error(`ActsZlibInterfaceTest14 failed, errCode:${errData.code} message:${errData.message}`);
+            expect(errData).assertFail();
+        }
+        console.info("==================ACTS_ZlibInterfaceTest_14 end==================");
+        done();
+    })
  })
 }
