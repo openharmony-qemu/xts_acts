@@ -577,7 +577,7 @@ struct webViewIncognitoMode {
           })
       }
       if (this.isPrivacy) {
-        Web({ src:  $rawfile('index.html'), controller: this.controller, incognitoMode: true })
+        Web({ src:  $rawfile('index.html'), controller: this.controller, incognitoMode: false })
           .javaScriptAccess(this.javaScriptAccess)
           .fileAccess(this.fileAccess)
           .imageAccess(this.imageAccess)
