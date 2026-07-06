@@ -34,7 +34,7 @@ export default function BigIntToLocaleString1Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocale1Test001', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocale1Test001', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(1000).toLocaleString('en-US', { useGrouping: true })).assertEqual('1,000');
       expect(BigInt(1000000).toLocaleString('en-US', { useGrouping: true })).assertEqual('1,000,000');
       expect(BigInt(123456789).toLocaleString('en-US', { useGrouping: true })).assertEqual('123,456,789');
@@ -48,20 +48,17 @@ export default function BigIntToLocaleString1Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocale1Test002', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocale1Test002', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r1 = BigInt(1).toLocaleString();
       const r0 = BigInt(0).toLocaleString();
       const rNeg = BigInt(-1).toLocaleString();
       const rBig = BigInt(1000000).toLocaleString();
       const rNegBig = BigInt(-1000000).toLocaleString();
-      expect(typeof r1).assertEqual('string');
-      expect(typeof r0).assertEqual('string');
-      expect(typeof rNeg).assertEqual('string');
-      expect(typeof rBig).assertEqual('string');
-      expect(typeof rNegBig).assertEqual('string');
-      expect(r1.length).assertLarger(0);
+      expect(r1).assertEqual('1');
       expect(r0).assertEqual('0');
       expect(rNeg.startsWith('-')).assertTrue();
+      expect(rBig.indexOf(',')).assertLarger(-1);
+      expect(rNegBig.startsWith('-')).assertTrue();
     });
 
     /**
@@ -72,7 +69,7 @@ export default function BigIntToLocaleString1Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocale1Test003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocale1Test003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt('123456789').toLocaleString('en-US', { useGrouping: false })).assertEqual('123456789');
       expect(BigInt('-123456789').toLocaleString('en-US', { useGrouping: false })).assertEqual('-123456789');
       expect(BigInt('0xFF').toLocaleString('en-US', { useGrouping: false })).assertEqual('255');
@@ -90,7 +87,7 @@ export default function BigIntToLocaleString1Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocale1Test004', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocale1Test004', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const huge = '1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890';
       expect(BigInt(huge).toLocaleString('en-US', { useGrouping: false })).assertEqual(huge);
       expect(BigInt('-' + huge).toLocaleString('en-US', { useGrouping: false })).assertEqual('-' + huge);
@@ -104,7 +101,7 @@ export default function BigIntToLocaleString1Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocale1Test005', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocale1Test005', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(0).toLocaleString('en-US', { useGrouping: false })).assertEqual('0');
       expect(BigInt('0').toLocaleString('en-US', { useGrouping: false })).assertEqual('0');
       expect(BigInt('-0').toLocaleString('en-US', { useGrouping: false })).assertEqual('0');
@@ -121,7 +118,7 @@ export default function BigIntToLocaleString1Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocale1Test006', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocale1Test006', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(-5).toLocaleString('en-US', { useGrouping: false })).assertEqual('-5');
       expect(BigInt(-4).toLocaleString('en-US', { useGrouping: false })).assertEqual('-4');
       expect(BigInt(-3).toLocaleString('en-US', { useGrouping: false })).assertEqual('-3');
@@ -143,7 +140,7 @@ export default function BigIntToLocaleString1Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocale1Test007', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocale1Test007', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt('  1234').toLocaleString('en-US', { useGrouping: false })).assertEqual('1234');
       expect(BigInt('1234  ').toLocaleString('en-US', { useGrouping: false })).assertEqual('1234');
       expect(BigInt('00001234').toLocaleString('en-US', { useGrouping: false })).assertEqual('1234');
@@ -159,7 +156,7 @@ export default function BigIntToLocaleString1Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocale1Test008', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocale1Test008', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const v = BigInt(123456789);
       expect(v.toLocaleString('zh-CN', { useGrouping: false })).assertEqual('123456789');
       expect(v.toLocaleString('de-DE', { useGrouping: false })).assertEqual('123456789');
@@ -175,7 +172,7 @@ export default function BigIntToLocaleString1Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocale1Test009', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocale1Test009', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(-1).toLocaleString('en-US', { useGrouping: false })).assertEqual('-1');
       expect(BigInt(-1000).toLocaleString('en-US', { useGrouping: true })).assertEqual('-1,000');
       expect(BigInt(-1000000).toLocaleString('en-US', { useGrouping: true })).assertEqual('-1,000,000');
@@ -192,7 +189,7 @@ export default function BigIntToLocaleString1Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocale1Test010', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocale1Test010', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const v1 = BigInt(123456789);
       v1.toLocaleString('en-US');
       expect(v1.toString()).assertEqual('123456789');
@@ -220,7 +217,7 @@ export default function BigIntToLocaleString1Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocale1Test011', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocale1Test011', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       const v100 = BigInt('1267650600228229401496703205376');
       const r1 = v100.toLocaleString('en-US', { useGrouping: false });
@@ -241,7 +238,7 @@ export default function BigIntToLocaleString1Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocale1Test012', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocale1Test012', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       const v100 = BigInt('-1267650600228229401496703205376');
       const r1 = v100.toLocaleString('en-US', { useGrouping: false });
@@ -264,7 +261,7 @@ export default function BigIntToLocaleString1Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocale1Test013', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocale1Test013', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const v = BigInt(123456789);
       
       const r1 = v.toLocaleString('en-US', { useGrouping: true });
@@ -308,7 +305,7 @@ export default function BigIntToLocaleString1Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocale1Test015', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocale1Test015', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect((): void => {
         BigInt(100).toLocaleString('en-US', { style: 'currency' });
       }).assertThrowError('RangeError');
@@ -325,7 +322,7 @@ export default function BigIntToLocaleString1Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocale1Test016', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocale1Test016', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect((): void => {
         BigInt(7).toLocaleString('en-US', { minimumIntegerDigits: 0 });
       }).assertThrowError('RangeError');
@@ -353,7 +350,7 @@ export default function BigIntToLocaleString1Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocale1ExtTest017', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocale1ExtTest017', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect((): void => {
         BigInt(1234567).toLocaleString('zh--CN');
       }).assertThrowError('RangeError');

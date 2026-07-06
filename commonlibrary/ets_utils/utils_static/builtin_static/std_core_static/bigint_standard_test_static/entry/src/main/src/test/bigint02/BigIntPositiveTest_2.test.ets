@@ -28,7 +28,7 @@ export default function BigIntPositiveTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveTest001', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest001', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(255).positive()).assertTrue();
       expect(BigInt(63).positive()).assertTrue();
       expect(BigInt(10).positive()).assertTrue();
@@ -47,7 +47,7 @@ export default function BigIntPositiveTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveTest002', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest002', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt('1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890').positive()).assertTrue();
       expect(BigInt('-1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890').positive()).assertFalse();
       expect(BigInt('9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999').positive()).assertTrue();
@@ -65,7 +65,7 @@ export default function BigIntPositiveTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveTest003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(0).positive()).assertTrue();
       expect(BigInt('0').positive()).assertTrue();
       expect(BigInt('-0').positive()).assertTrue();
@@ -86,7 +86,7 @@ export default function BigIntPositiveTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveTest004', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest004', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt('  42').positive()).assertTrue();
       expect(BigInt('42  ').positive()).assertTrue();
       expect(BigInt('  -42').positive()).assertFalse();
@@ -102,7 +102,7 @@ export default function BigIntPositiveTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveTest005', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest005', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(10).operatorAdd(BigInt(5)).positive()).assertTrue();
       expect(BigInt(5).operatorSubtract(BigInt(10)).positive()).assertFalse();
       expect(BigInt(-3).operatorMultiply(BigInt(4)).positive()).assertFalse();
@@ -122,7 +122,7 @@ export default function BigIntPositiveTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveTest006', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest006', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(1).positive()).assertTrue();
       expect(BigInt(2).positive()).assertTrue();
       expect(BigInt(4503599627370496).positive()).assertTrue();
@@ -140,7 +140,7 @@ export default function BigIntPositiveTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveTest007', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest007', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(127).positive()).assertTrue();
       expect(BigInt(-128).positive()).assertFalse();
       expect(BigInt(32767).positive()).assertTrue();
@@ -161,7 +161,7 @@ export default function BigIntPositiveTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveTest008', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest008', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: BigInt[] = [BigInt(-100), BigInt(-1), BigInt(0), BigInt(1), BigInt(100), BigInt(9223372036854775807), BigInt(-9223372036854775808), BigInt('999999999999999999999999999999')];
       for (let i = 0; i < values.length; i++) {
         const v = values[i];
@@ -181,7 +181,7 @@ export default function BigIntPositiveTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveTest009', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest009', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       expect(new BigInt(new BigInt(1)).positive()).assertTrue();
       expect(new BigInt(new BigInt(127)).positive()).assertTrue();
@@ -211,7 +211,7 @@ export default function BigIntPositiveTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveTest010', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest010', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       const v1: BigInt = new BigInt(5).negate();
       expect(v1.positive()).assertFalse();
@@ -231,7 +231,7 @@ export default function BigIntPositiveTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveTest011', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest011', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       const v1: BigInt = new BigInt(100).operatorDivide(new BigInt(5));
       expect(v1.positive()).assertTrue();
@@ -251,7 +251,7 @@ export default function BigIntPositiveTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveTest012', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest012', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const v: BigInt = new BigInt(5).operatorSubtract(new BigInt(5));
       expect(v.positive()).assertTrue();
     });
@@ -264,7 +264,7 @@ export default function BigIntPositiveTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveTest013', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest013', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const v1: BigInt = new BigInt(123);
       v1.positive();
       expect(v1.toString()).assertEqual("123");
@@ -284,7 +284,7 @@ export default function BigIntPositiveTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveTest014', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest014', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new BigInt("2").positive()).assertTrue();
       expect(new BigInt("65536").positive()).assertTrue();
       expect(new BigInt("4294967296").positive()).assertTrue();
@@ -301,7 +301,7 @@ export default function BigIntPositiveTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveTest015', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest015', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       expect(new BigInt("99999999999999999999999999999").positive()).assertTrue();
       expect(new BigInt("-99999999999999999999999999999").positive()).assertFalse();
@@ -322,7 +322,7 @@ export default function BigIntPositiveTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveTest016', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest016', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new BigInt(9007199254740991).positive()).assertTrue();
       expect(new BigInt(-9007199254740991).positive()).assertFalse();
       expect(new BigInt("9007199254740993").positive()).assertTrue();
@@ -360,7 +360,7 @@ export default function BigIntPositiveTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveTest017', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest017', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       expect(new BigInt("1000000000000").positive()).assertTrue();
       expect(new BigInt("-1000000000000").positive()).assertFalse();
@@ -389,7 +389,7 @@ export default function BigIntPositiveTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveTest018', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest018', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       expect(new BigInt(100).positive()).assertEqual(true);
       expect(new BigInt(-100).positive()).assertEqual(false);
@@ -415,7 +415,7 @@ export default function BigIntPositiveTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveTest019', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest019', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       const v1: BigInt = new BigInt(1).operatorLeftShift(new BigInt(10));
       expect(v1.positive()).assertTrue();
@@ -432,7 +432,7 @@ export default function BigIntPositiveTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveTest020', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest020', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       const v1: BigInt = new BigInt(100) % new BigInt(3);
       expect(v1.positive()).assertTrue();
@@ -449,7 +449,7 @@ export default function BigIntPositiveTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveTest021', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest021', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       const v1: BigInt = new BigInt(10).operatorSubtract(new BigInt(100)).operatorMultiply(new BigInt(3));
       expect(v1.positive()).assertFalse();
@@ -469,7 +469,7 @@ export default function BigIntPositiveTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveTest022', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest022', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const two10: BigInt = new BigInt(2).operatorMultiply(new BigInt(2)).operatorMultiply(new BigInt(2))
         .operatorMultiply(new BigInt(2)).operatorMultiply(new BigInt(2))
         .operatorMultiply(new BigInt(2)).operatorMultiply(new BigInt(2))
@@ -492,7 +492,7 @@ export default function BigIntPositiveTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveTest023', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest023', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       const map: Map<string, BigInt> = new Map<string, BigInt>();
       map.set("k", new BigInt(10));
@@ -514,7 +514,7 @@ export default function BigIntPositiveTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveTest024', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest024', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       const pos: BigInt = new BigInt(100);
       for (let i = 0; i < 100; i++) {
@@ -544,7 +544,7 @@ export default function BigIntPositiveTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveTest025', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest025', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       for (let i = -1000; i <= 1000; i++) {
         const v: BigInt = new BigInt(i);
@@ -566,7 +566,7 @@ export default function BigIntPositiveTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveTest026', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest026', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       expect(new BigInt(100000).positive()).assertTrue();
 
@@ -591,7 +591,7 @@ export default function BigIntPositiveTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveTest027', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest027', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       expect(new BigInt(-4611686018427387904).positive()).assertFalse();
 
@@ -606,7 +606,7 @@ export default function BigIntPositiveTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveTest028', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest028', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       expect(new BigInt(100).operatorAdd(new BigInt(200)).positive()).assertTrue();
 
@@ -631,7 +631,7 @@ export default function BigIntPositiveTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveTest029', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest029', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       const posVal: BigInt = new BigInt(100);
       const negVal: BigInt = new BigInt(-100);
@@ -649,7 +649,7 @@ export default function BigIntPositiveTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveTest030', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntPositiveTest030', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new BigInt("-1").positive()).assertFalse();
       expect(new BigInt("-2").positive()).assertFalse();
       expect(new BigInt("-65536").positive()).assertFalse();
