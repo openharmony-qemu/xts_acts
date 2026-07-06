@@ -540,7 +540,7 @@ int VIDEO_HW_ENCODE_ROI_API_019()
     const char *roiString = "110,110-120,120=dqp:-5,slb:0;110,110-120,120=dqp:-5,slb:0;110,110-120,120=dqp:-5,slb:0;"
                            "110,110-120,120=dqp:-5,slb:0;110,110-120,120=dqp:-5,slb:0;110,110-120,120=dqp:-5,slb:0;"
                            "110,110-120,120=dqp:-5,slb:0;110,110-120,120=dqp:-5,slb:0;110,110-120,120";
-    char * roiStrCopy =  (roiString);
+    char* roiStrCopy =  (roiString);
     int32_t top = 10;
     int32_t left = 10;
     int32_t bottom = 100;
@@ -563,7 +563,7 @@ int VIDEO_HW_ENCODE_ROI_API_019()
 int VIDEO_HW_ENCODE_ROI_API_020()
 {
     const char *roiString = "0,0-100,100=-8;100,100-200,200=dqp:-6,slb:1";
-    char * roiStrCopy = strdup(roiString);
+    char* roiStrCopy = strdup(roiString);
     OH_AVErrCode ret = OH_VideoMetadata_AppendRoiString(&roiStrCopy, nullptr);
     EXPECT_EQ(AV_ERR_INVALID_VAL, ret);
     free(roiStrCopy);
@@ -574,7 +574,7 @@ int VIDEO_HW_ENCODE_ROI_API_021()
 {
     const char *roiString = "0,0-100,100=-8;100,100-200,200=dqp:-6,slb:1";
     OH_AVFormat *roiParam = OH_AVFormat_Create();
-    char * roiStrCopy = strdup(roiString);
+    char* roiStrCopy = strdup(roiString);
     if (roiParam == nullptr) {
         free(roiStrCopy);
         return 0;
@@ -620,7 +620,7 @@ int VIDEO_HW_ENCODE_ROI_API_024()
     int32_t capacity = 6;
     const char *roiString = "0,0-100,100=dqp:-6,slb:1";
     OH_AVFormat **roiFormats = (OH_AVFormat **)calloc(capacity, sizeof(OH_AVFormat *));
-    OH_AVErrCode ret = OH_VideoMetadata_ParseRoiString(roiString  , roiFormats, capacity, &roiCount);
+    OH_AVErrCode ret = OH_VideoMetadata_ParseRoiString(roiString, roiFormats, capacity, &roiCount);
     EXPECT_EQ(AV_ERR_OK, ret);
     for (int32_t i = 0; i < capacity && i < roiCount; i++) {
         if (roiFormats[i]) {
