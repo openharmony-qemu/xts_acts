@@ -14,7 +14,7 @@
  */
 
 import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
-import testNetManager from 'libentry.so';
+import testNetManager from 'libtrafficfilter';
 import hilog from '@ohos.hilog';
 
 let domain: number = 0x0000;
