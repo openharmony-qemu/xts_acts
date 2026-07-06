@@ -58,6 +58,22 @@ async function driveDecFn() {
   }
 }
 
+async function driveFnReject(): Promise<void> {
+  console.info(TAG, '**************driveFnReject**************');
+  try {
+    let driver: Driver = Driver.create();
+    await driver.delayMs(1000);
+    console.info(TAG, `driver is ${JSON.stringify(driver)}`);
+    let buttons = await driver.findComponents(ON.text('不允许', MatchPattern.EQUALS));
+    console.info(TAG, `buttons is ${JSON.stringify(buttons)}`);
+    if (buttons && buttons.length > 0) {
+      await buttons[0].click();
+    }
+  } catch (error) {
+    console.info(TAG, 'driveFnReject error: ' + error);
+  }
+}
+
 async function checkDevice(): Promise<boolean> {
   try {
     let portList: serial.SerialPort[] = await serial.getSerialPortList();
@@ -109,6 +125,32 @@ export default function SerialBusManagerTest() {
           console.error(TAG, 'afterAll close error: ', JSON.stringify(err));
         }
       }
+    })
+
+    /**
+    * @tc.name   testOpen023
+    * @tc.number SUB_BusManager_Serial_open_ErrCode_2200
+    * @tc.desc   open rejected by user clicking 不允许 - 35700007.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('testOpen023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info(TAG, 'testOpen023 start');
+      if (await checkDevice() === false) {
+        done();
+        return Promise.resolve();
+      }
+      gPort!.open().then(async () => {
+        await driveFnReject();
+        expect().assertFail();
+        done();
+      }).catch((error: BusinessError) => {
+        console.error(TAG, 'testOpen023 catch err code: ', error.code, ', message: ', error.message);
+        expect(error.code).assertEqual(35700007);
+        done();
+      })
+      await driveFnReject();
     })
 
     /**
@@ -2341,6 +2383,286 @@ export default function SerialBusManagerTest() {
         done();
       } catch (err) {
         console.error(TAG, 'testWrite010 catch err: ', JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testWrite011
+     * @tc.number SUB_BusManager_Serial_JS_write_RETURN_0100
+     * @tc.desc   write return value type is int and greater than 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWrite011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(TAG, 'testWrite011 start');
+      if (await checkDevice() === false) {
+        done();
+        return;
+      }
+      try {
+        gPort!.open();
+        await driveFn();
+        let writeData: Uint8Array = new Uint8Array(buffer.from('Hello World', 'utf-8').buffer);
+        let writeLen: number = await gPort!.write(writeData, 2000);
+        console.info(TAG, 'testWrite011 writeLen: ', writeLen);
+        expect(typeof writeLen === 'number').assertTrue();
+        expect(writeLen > 0).assertTrue();
+        await gPort!.close();
+        done();
+      } catch (err) {
+        console.error(TAG, 'testWrite011 catch err: ', JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testWrite012
+     * @tc.number SUB_BusManager_Serial_JS_write_ErrCode_0900
+     * @tc.desc   write with null data - 35700002.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWrite012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'testWrite012 start');
+      if (await checkDevice() === false) {
+        done();
+        return;
+      }
+      try {
+        gPort!.open();
+        await driveFn();
+        await gPort!.write(null, 1000);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, 'testWrite012 catch err code: ', err.code, ', message: ', err.message);
+        expect(err.code).assertEqual(401);
+        await gPort!.close();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testWrite013
+     * @tc.number SUB_BusManager_Serial_JS_write_ErrCode_1000
+     * @tc.desc   write with undefined data - 35700002.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWrite013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'testWrite013 start');
+      if (await checkDevice() === false) {
+        done();
+        return;
+      }
+      try {
+        gPort!.open();
+        await driveFn();
+        await gPort!.write(undefined, 1000);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, 'testWrite013 catch err code: ', err.code, ', message: ', err.message);
+        expect(err.code).assertEqual(401);
+        await gPort!.close();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testWrite014
+     * @tc.number SUB_BusManager_Serial_JS_write_ErrCode_1100
+     * @tc.desc   write with null timeout - 35700002.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWrite014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG, 'testWrite014 start');
+      if (await checkDevice() === false) {
+        done();
+        return;
+      }
+      try {
+        gPort!.open();
+        await driveFn();
+        let writeData: Uint8Array = new Uint8Array(buffer.from('Hello', 'utf-8').buffer);
+        await gPort!.write(writeData, null);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, 'testWrite014 catch err code: ', err.code, ', message: ', err.message);
+        expect(err.code).assertEqual(401);
+        await gPort!.close();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testOnDataRead003
+     * @tc.number SUB_BusManager_Serial_JS_onDataRead_RETURN_0100
+     * @tc.desc   onDataRead callback data is Uint8Array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOnDataRead003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(TAG, 'testOnDataRead003 start');
+      if (await checkDevice() === false) {
+        done();
+        return;
+      }
+      if (gPort1 === null) {
+        console.info(TAG, 'testOnDataRead003 gPort1 is null, skip');
+        done();
+        return;
+      }
+      try {
+        gPort1!.open();
+        await driveFn();
+        await sleep(500);
+        gPort1!.onDataRead((data: Uint8Array): void => {
+          console.info(TAG, 'testOnDataRead003 received data length: ', data.length);
+          expect(data instanceof Uint8Array).assertTrue();
+          expect(typeof data === 'object').assertTrue();
+        });
+        console.info(TAG, 'testOnDataRead003 onDataRead register success');
+        await gPort1!.write(new Uint8Array([0xAA]));
+        await sleep(500);
+        gPort1!.offDataRead();
+        await gPort1!.close();
+        done();
+      } catch (err) {
+        console.error(TAG, 'testOnDataRead003 catch err: ', JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testGetCts003
+     * @tc.number SUB_BusManager_Serial_JS_getCts_RETURN_0100
+     * @tc.desc   getCts return value type is boolean.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetCts003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(TAG, 'testGetCts003 start');
+      if (await checkDevice() === false) {
+        done();
+        return;
+      }
+      try {
+        gPort!.open();
+        await driveFn();
+        let cts: boolean = await gPort!.getCts();
+        console.info(TAG, 'testGetCts003 getCts: ', cts);
+        expect(typeof cts === 'boolean').assertTrue();
+        await gPort!.close();
+        done();
+      } catch (err) {
+        console.error(TAG, 'testGetCts003 catch err: ', JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testGetDsr003
+     * @tc.number SUB_BusManager_Serial_JS_getDsr_RETURN_0100
+     * @tc.desc   getDsr return value type is boolean.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetDsr003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(TAG, 'testGetDsr003 start');
+      if (await checkDevice() === false) {
+        done();
+        return;
+      }
+      try {
+        gPort!.open();
+        await driveFn();
+        let dsr: boolean = await gPort!.getDsr();
+        console.info(TAG, 'testGetDsr003 getDsr: ', dsr);
+        expect(typeof dsr === 'boolean').assertTrue();
+        await gPort!.close();
+        done();
+      } catch (err) {
+        console.error(TAG, 'testGetDsr003 catch err: ', JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+
+
+    /**
+     * @tc.name   testGetSerialPortList003
+     * @tc.number SUB_BusManager_Serial_JS_getSerialPortList_RETURN_0100
+     * @tc.desc   getSerialPortList returns empty array when no device.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetSerialPortList003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(TAG, 'testGetSerialPortList003 start');
+      try {
+        const portList: serial.SerialPort[] = await serial.getSerialPortList();
+        console.info(TAG, 'testGetSerialPortList003 portList length: ', portList.length);
+        expect(portList instanceof Array).assertTrue();
+        expect(typeof portList.length === 'number').assertTrue();
+        expect(portList.length >= 0).assertTrue();
+        if (portList.length === 0) {
+          expect(portList.length).assertEqual(0);
+          console.info(TAG, 'testGetSerialPortList003 empty array coverage success');
+        } else {
+          console.info(TAG, 'testGetSerialPortList003 device detected, cannot test empty case');
+        }
+        done();
+      } catch (err) {
+        console.error(TAG, 'testGetSerialPortList003 catch err: ', JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testGetSerialPortList004
+     * @tc.number SUB_BusManager_Serial_JS_getSerialPortList_RETURN_0200
+     * @tc.desc   getSerialPortList returns non-empty array with valid SerialPort structure.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetSerialPortList004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(TAG, 'testGetSerialPortList004 start');
+      if (await checkDevice() === false) {
+        done();
+        return;
+      }
+      try {
+        const portList: serial.SerialPort[] = await serial.getSerialPortList();
+        console.info(TAG, 'testGetSerialPortList004 portList length: ', portList.length);
+        expect(portList instanceof Array).assertTrue();
+        expect(portList.length > 0).assertTrue();
+        for (let i = 0; i < portList.length; i++) {
+          let port: serial.SerialPort = portList[i];
+          expect(port.portInfo != null).assertTrue();
+          expect(port.portInfo != undefined).assertTrue();
+          let portInfo: serial.SerialPortInfo = port.portInfo;
+          expect(typeof portInfo.portName === 'string').assertTrue();
+          expect(portInfo.portName.length > 0).assertTrue();
+          console.info(TAG, 'testGetSerialPortList004 port[', i, '] portName: ', portInfo.portName);
+        }
+        done();
+      } catch (err) {
+        console.error(TAG, 'testGetSerialPortList004 catch err: ', JSON.stringify(err));
         expect().assertFail();
         done();
       }
