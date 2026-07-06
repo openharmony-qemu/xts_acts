@@ -50,7 +50,7 @@ struct configurationSaveState {
     Column() {
       Text(this.allDestinations)
         .id('all_destinations_text')
-        .fontSize(20)
+        .fontSize(12)
       
       Navigation(this.stack) {
         Button('stackSizeLimit undefined')
@@ -136,21 +136,23 @@ struct NavBody {
         Button(`limit [${this.stackSizeLimit_}]`)
           .id('stack_limit_btn')
           .backgroundColor('#ccc')
-        Row({space: 5}) {
+          .height('8%')
+        Row({space: 2}) {
           Button('push')
             .id('push_standard_btn')
+            .height('8%')
             .onClick(() => {
               this.stack.pushPath({name: 'STANDARD ' + JSON.stringify(StandardHelper.standardCnt++)})
             })
           Button('replacePath')
             .id('replace_restore_btn')
+            .height('8%')
             .onClick(() => {
               this.stack.replacePath({name: 'NavParamOne'})
             })
         }
         .border({width: 1})
-        .padding(10)
-        .margin(10)
+        .padding(5)
       }
 
     }

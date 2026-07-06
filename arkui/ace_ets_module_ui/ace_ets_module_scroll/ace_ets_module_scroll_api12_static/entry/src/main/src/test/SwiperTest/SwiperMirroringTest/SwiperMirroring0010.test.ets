@@ -57,7 +57,7 @@ export default function SwiperMirroring0010() {
         console.info("get SwiperMirroring0010 state pages:" + JSON.stringify(pages));
         if (!("SwiperMirroring0010" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
-          router.pushUrl({
+          router.replaceUrl({
             url: 'MainAbility/pages/Swiper/SwiperMirroring/SwiperMirroring0010'
           })
           await CommonFunc.sleep(2000);
@@ -86,10 +86,13 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_MIRRORING_static_0010', Level.LEVEL0, asy
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_MIRRORING_static_0010 START");
       await CommonFunc.sleep(5000);
       let strJson2: string = inspector.getInspectorByKey('swiper_mirroring_0010');
+      console.info("[SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_MIRRORING_static_0010] strJson2:" + strJson2);
       let marq = JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content');
+      console.info("[SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_MIRRORING_static_0010] marq:" + marq);
       expect(marq).assertEqual("onChange");
       let strJson: string = inspector.getInspectorByKey('swipermirroring0010');
       let marq2 = JSON.parseJsonElement(strJson).getElement('$attrs').getString('interval');
+      console.info("[SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_MIRRORING_static_0010] marq2:" + marq2);
       expect(marq2).assertEqual("1000");
       await CommonFunc.sleep(1000);
       console.info('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_MIRRORING_static_0010 END');
@@ -110,10 +113,13 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_MIRRORING_static_0310', Level.LEVEL0, asy
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_MIRRORING_static_0310 START");
       await CommonFunc.sleep(5000);
       let strJson2: string = inspector.getInspectorByKey('swiper_mirroring_0310');
+      console.info("[SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_MIRRORING_static_0310] strJson2:" + strJson2);
       let marq = JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content');
+      console.info("[SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_MIRRORING_static_0310] marq:" + marq);
       expect(marq).assertEqual("onChange");
       let strJson: string = inspector.getInspectorByKey('swipermirroring0310');
       let marq2 = JSON.parseJsonElement(strJson).getElement('$attrs').getString('interval');
+      console.info("[SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_MIRRORING_static_0310] marq2:" + marq2);
       expect(marq2).assertEqual("1000");
       await CommonFunc.sleep(1000);
       console.info('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_MIRRORING_static_0310 END');
