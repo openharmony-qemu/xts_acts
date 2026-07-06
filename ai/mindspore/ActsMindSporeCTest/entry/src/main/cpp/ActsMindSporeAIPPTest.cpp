@@ -121,7 +121,7 @@ int SUBAIMindSporeAIPP0001()
     OH_AI_TensorHandleArray inTensorArray{};
     CreateAIPPModelData(model, &inTensorArray);
     FillInputsData(inTensorArray, "two_add_operators", false);
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     const char* predictConfig =
         "input_para:src_h=800,src_w=800;swap_func:rbuv_swap_switch=false,ax_swap_switch=false;crop_func:load_start_pos_"
         "w=0,load_start_pos_h=0,crop_size_w=640,crop_size_h=640;dtc_func:mean_chn_0=0,mean_chn_1=0,mean_chn_2=0,min_"
@@ -166,7 +166,7 @@ int SUBAIMindSporeAIPP0002()
     OH_AI_TensorHandleArray inTensorArray{};
     CreateAIPPModelData(model, &inTensorArray);
     FillInputsData(inTensorArray, "two_add_operators", false);
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     OH_AI_KernelCallBack beforeCallBack = PrintBeforeCallback;
     OH_AI_KernelCallBack afterCallBack = PrintAfterCallback;
     const char* predictConfig =
@@ -213,7 +213,7 @@ int SUBAIMindSporeAIPP0003()
     OH_AI_TensorHandleArray inTensorArray{};
     CreateAIPPModelData(model, &inTensorArray);
     FillInputsData(inTensorArray, "two_add_operators", false);
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     const char* predictConfig =
         "input_para:src_h=800,src_w=800;swap_func:rbuv_swap_switch=false,ax_swap_switch=false;crop_func:load_start_pos_"
         "w=0,load_start_pos_h=0,crop_size_w=640,crop_size_h=640;dtc_func:mean_chn_0=0,mean_chn_1=0,mean_chn_2=0,min_"
@@ -253,8 +253,8 @@ int SUBAIMindSporeAIPP0004()
     OH_AI_Status buildRet =
         OH_AI_ModelBuildFromFile(model, FilePath("two_add_operators.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context);
     ASSERT_EQ(buildRet, OH_AI_STATUS_SUCCESS);
-    OH_AI_TensorHandleArray inTensorArray;
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray inTensorArray = {0, nullptr};
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     const char* predictConfig =
         "input_para:src_h=800,src_w=800;swap_func:rbuv_swap_switch=false,ax_swap_switch=false;crop_func:load_start_pos_"
         "w=0,load_start_pos_h=0,crop_size_w=640,crop_size_h=640;dtc_func:mean_chn_0=0,mean_chn_1=0,mean_chn_2=0,min_"
@@ -294,7 +294,7 @@ int SUBAIMindSporeAIPP0005()
     OH_AI_Status buildRet =
         OH_AI_ModelBuildFromFile(model, FilePath("two_add_operators.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context);
     ASSERT_EQ(buildRet, OH_AI_STATUS_SUCCESS);
-    OH_AI_TensorHandleArray inTensorArray;
+    OH_AI_TensorHandleArray inTensorArray = {0, nullptr};
     OH_AI_TensorHandleArray inputsHandle = OH_AI_ModelGetInputs(model);
     inTensorArray.handle_num = inputsHandle.handle_num;
     inTensorArray.handle_list = (OH_AI_TensorHandle*)malloc(sizeof(OH_AI_TensorHandle) * inTensorArray.handle_num);
@@ -310,7 +310,7 @@ int SUBAIMindSporeAIPP0005()
                                                          sizeof(data));
         inTensorArray.handle_list[i] = inTensor;
     }
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     const char* predictConfig =
         "input_para:src_h=800,src_w=800;swap_func:rbuv_swap_switch=false,ax_swap_switch=false;crop_func:load_start_pos_"
         "w=0,load_start_pos_h=0,crop_size_w=640,crop_size_h=640;dtc_func:mean_chn_0=0,mean_chn_1=0,mean_chn_2=0,min_"
@@ -353,7 +353,7 @@ int SUBAIMindSporeAIPP0006()
     OH_AI_TensorHandleArray inTensorArray{};
     CreateAIPPModelData(model, &inTensorArray);
     FillInputsData(inTensorArray, "two_add_operators", false);
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     const char* predictConfig = "";
     OH_AI_Status predictRet =
         OH_AI_ModelPredictWithConfig(model, inTensorArray, &outputs, predictConfig, nullptr, nullptr);
@@ -475,7 +475,7 @@ int SUBAIMindSporeAIPP0008()
     OH_AI_TensorHandleArray inTensorArray{};
     CreateAIPPModelData(model, &inTensorArray);
     FillInputsData(inTensorArray, "two_add_operators", false);
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     const char* predictConfig =
         "input_para:src_h=800,src_w=800;swap_func:rbuv_swap_switch=false,ax_swap_switch=false;crop_func:load_start_pos_"
         "w=0,load_start_pos_h=0,crop_size_w=640,crop_size_h=640;dtc_func:mean_chn_0=0,mean_chn_1=0,mean_chn_2=0,min_"
@@ -549,7 +549,7 @@ int SUBAIMindSporeAIPP0010()
     OH_AI_TensorHandleArray inTensorArray{};
     CreateAIPPModelData(model, &inTensorArray);
     FillInputsData(inTensorArray, "two_add_operators", false);
-    OH_AI_TensorHandleArray outputs;
+    OH_AI_TensorHandleArray outputs = {0, nullptr};
     const char* predictConfig = "input_para_error:src_h=800,src_w=800;";
     OH_AI_Status predictRet =
         OH_AI_ModelPredictWithConfig(model, inTensorArray, &outputs, predictConfig, nullptr, nullptr);
