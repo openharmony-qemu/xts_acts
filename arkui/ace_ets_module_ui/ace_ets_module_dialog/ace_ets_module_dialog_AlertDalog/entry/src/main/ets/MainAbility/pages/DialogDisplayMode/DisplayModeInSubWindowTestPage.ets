@@ -27,8 +27,8 @@ struct Index {
   @Builder
   customDialogComponent() {
     Column() {
-      Text('弹窗').fontSize(30)
-      Row({ space: 50 }) {
+      Text('弹窗').fontSize(16)
+      Row() {
         Button('确认').onClick(() => {
           try {
             promptAction.closeCustomDialog(this.customDialogComponentId)
@@ -38,6 +38,8 @@ struct Index {
             console.error(`closeCustomDialog error code is ${code}, message is ${message}`);
           }
         })
+          .height('5%')
+          .width('30%')
         Button('取消').onClick(() => {
           try {
             promptAction.closeCustomDialog(this.customDialogComponentId)
@@ -47,26 +49,34 @@ struct Index {
             console.error(`closeCustomDialog error code is ${code}, message is ${message}`);
           }
         })
+          .height('5%')
+          .width('30%')
       }
-    }.height(200).padding(5).justifyContent(FlexAlign.SpaceBetween)
+    }
+    .padding(5)
+    .justifyContent(FlexAlign.SpaceBetween)
   }
 
   build() {
     Row() {
-      Column({ space: 20 }) {
+      Column() {
         Button('showInSubWindowValue is true')
           .id('trueBtn')
           .onClick(() => {
             this.showInSubWindowValue = true
           })
+          .height('5%')
+          .width('30%')
         Button('showInSubWindowValue is false')
           .id('falseBtn')
           .onClick(() => {
             this.showInSubWindowValue = false
           })
+          .height('5%')
+          .width('30%')
 
         Text('弹窗SCREEN_BASED')
-          .fontSize(30)
+          .fontSize(20)
           .onClick(() => {
             promptAction.openCustomDialog({
               showInSubWindow: this.showInSubWindowValue,
@@ -92,7 +102,7 @@ struct Index {
               })
           })
         Text('弹窗WINDOW_BASED')
-          .fontSize(30)
+          .fontSize(20)
           .onClick(() => {
             promptAction.openCustomDialog({
               showInSubWindow: this.showInSubWindowValue,
