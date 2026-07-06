@@ -1,0 +1,7 @@
+{
+  "src": [
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/navigation/navigationMaterial",
+    "MainAbility/pages/swiper/swiperSystemMaterial"
+  ]
+}
