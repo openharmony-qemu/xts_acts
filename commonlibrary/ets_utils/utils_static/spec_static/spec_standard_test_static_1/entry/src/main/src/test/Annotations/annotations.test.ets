@@ -18,7 +18,6 @@ import Utils from "../Util.test";
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import hilog from '@ohos.hilog'
-// ================= 注解定义 =================
 
 @Target([AnnotationTargets.CLASS])
 @interface ClassAnno {}
@@ -38,7 +37,6 @@ import hilog from '@ohos.hilog'
 @Target([AnnotationTargets.PARAMETER])
 @interface ParamAnno {}
 
-// TYPE 位置必须 SOURCE
 @Retention("SOURCE")
 @Target([AnnotationTargets.TYPE])
 @interface TypeUseAnno {}
@@ -51,7 +49,6 @@ import hilog from '@ohos.hilog'
 @interface MultiAnno {}
 
 
-// ================= 被测代码 =================
 
 @ClassAnno
 class MyClass {
