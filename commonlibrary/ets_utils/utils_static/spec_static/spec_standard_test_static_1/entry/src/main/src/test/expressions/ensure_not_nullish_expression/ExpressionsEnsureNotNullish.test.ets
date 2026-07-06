@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -117,7 +117,7 @@ async function sleep(time: int): Promise<int> {
   });
 }
 
-export default function ExpressionsEnsureNotNullishTest() {
+export default function ExpressionsEnsureNotNullishTest(): void {
   describe("ExpressionsEnsureNotNullishTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

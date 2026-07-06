@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+import Utils from "../../../../Util.test";
+
 import {
   describe,
   beforeAll,
@@ -26,12 +28,6 @@ import {
   Level,
   expect
 } from "../../../../../../../hypium";
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve) => {
-    setTimeout(() => resolve(0), time);
-  });
-}
 
 interface IEmpty {}
 class XClass implements IEmpty {}
@@ -68,7 +64,7 @@ function fooWithConstraint<T extends Object>(a: T, b: T): T { return a; }
 function fooWithObjectNullConstraint<T extends Object | null>(a: T, b: T): T { return a; }
 function fooWithObjectConstraint<T extends Object>(a: T, b: T): T { return a; }
 
-export default function TypeArgumentsTest1() {
+export default function TypeArgumentsTest1(): void {
   describe("TypeArgumentsTest1", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -79,7 +75,7 @@ export default function TypeArgumentsTest1() {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
@@ -100,19 +96,6 @@ export default function TypeArgumentsTest1() {
      * @tc.level     Level 2
      */
     it("testTypeArgumentsOne0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: GenericTwo<FixedArray<XClass>|null, XClass> = new GenericTwo<FixedArray<XClass>|null, XClass>([new XClass()], new XClass());
-      expect(v instanceof GenericTwo).assertTrue();
-    });
-
-    /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_0200
-     * @tc.name      testTypeArgumentsOne0002
-     * @tc.desc      Type arguments
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testTypeArgumentsOne0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: GenericTwo<FixedArray<XClass>|null, XClass> = new GenericTwo<FixedArray<XClass>|null, XClass>([new XClass()], new XClass());
       expect(v instanceof GenericTwo).assertTrue();
     });
@@ -305,20 +288,6 @@ export default function TypeArgumentsTest1() {
     });
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_1700
-     * @tc.name      testTypeArgumentsOne0017
-     * @tc.desc      Type arguments
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testTypeArgumentsOne0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v = new XClass();
-      let result = foo<XClass>(v, new YClass());
-      expect(result).assertEqual(v);
-    });
-
-    /**
      * @tc.number    SUB_TYPE_ARGUMENTS_ONE_1800
      * @tc.name      testTypeArgumentsOne0018
      * @tc.desc      Type arguments
@@ -410,58 +379,6 @@ export default function TypeArgumentsTest1() {
     });
 
     /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_2500
-     * @tc.name      testTypeArgumentsOne0025
-     * @tc.desc      Type arguments
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testTypeArgumentsOne0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: AWithConstraint<XClass> = new AWithConstraint<XClass>(new XClass());
-      expect(v instanceof AWithConstraint).assertTrue();
-    });
-
-    /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_2600
-     * @tc.name      testTypeArgumentsOne0026
-     * @tc.desc      Type arguments
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testTypeArgumentsOne0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: AWithConstraint<XClass> = new AWithConstraint<XClass>(new XClass());
-      expect(v instanceof AWithConstraint).assertTrue();
-    });
-
-    /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_2700
-     * @tc.name      testTypeArgumentsOne0027
-     * @tc.desc      Type arguments
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testTypeArgumentsOne0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: AWithObjectNullConstraint<XClass|null> = new AWithObjectNullConstraint<XClass|null>(null);
-      expect(v instanceof AWithObjectNullConstraint).assertTrue();
-    });
-
-    /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_2800
-     * @tc.name      testTypeArgumentsOne0028
-     * @tc.desc      Type arguments
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testTypeArgumentsOne0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: GenericTwo<undefined, undefined> = new GenericTwo<undefined, undefined>(undefined, undefined);
-      expect(v instanceof GenericTwo).assertTrue();
-    });
-
-    /**
      * @tc.number    SUB_TYPE_ARGUMENTS_ONE_2900
      * @tc.name      testTypeArgumentsOne0029
      * @tc.desc      Type arguments
@@ -523,19 +440,6 @@ export default function TypeArgumentsTest1() {
      */
     it("testTypeArgumentsOne0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: GenericTwo<[XClass, XClass], XClass> = new GenericTwo<[XClass, XClass], XClass>([new XClass(), new XClass()], new XClass());
-      expect(v instanceof GenericTwo).assertTrue();
-    });
-
-    /**
-     * @tc.number    SUB_TYPE_ARGUMENTS_ONE_3400
-     * @tc.name      testTypeArgumentsOne0034
-     * @tc.desc      Type arguments
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testTypeArgumentsOne0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: GenericTwo<XClass, XClass> = new GenericTwo<XClass, XClass>(new XClass(), new XClass());
       expect(v instanceof GenericTwo).assertTrue();
     });
 

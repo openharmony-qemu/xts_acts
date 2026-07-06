@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+import Utils from "../../../../Util.test";
+
 import {
   expect,
   describe,
@@ -28,7 +30,6 @@ import {
 } from "../../../../../../../hypium"
 
 // 22
-// 泛型基类和接口定义
 class GenericParent_0<T> {
   private data: T;
   constructor(data: T) {
@@ -245,7 +246,6 @@ class ComplexTypeParent_21<T extends user_21> {
     return this.data.marriedNo;
   }
 }
-// 辅助类定义 (用于泛型约束)
 class user_18 {
   name: string = '';
   age: number = 0;
@@ -416,15 +416,7 @@ class MultiGenericChild2<T, U> extends MultiGenericType_16<string, string> {
     super(first, second);
   }
 }
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-
-export default function GenericClassesInheritanceTest() {
+export default function GenericClassesInheritanceTest(): void {
   describe("GenericClassesInheritanceTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -435,7 +427,7 @@ export default function GenericClassesInheritanceTest() {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.

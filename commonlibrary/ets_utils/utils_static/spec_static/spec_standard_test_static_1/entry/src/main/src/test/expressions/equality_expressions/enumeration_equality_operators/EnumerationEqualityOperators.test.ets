@@ -1,5 +1,5 @@
-'use static';
-﻿/*---
+'use static'
+/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+import Utils from "../../../Util.test";
+
 import {
   afterAll,
   afterEach,
@@ -27,18 +29,11 @@ import {
   TestType
 } from '../../../../../../hypium';
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
 enum Enum_1 { first, second, third = 0 }
 enum Enum_2 { first = 11, second = 11, third = 11 }
 enum Enum_3 { first = "A", second = "B", third = "A" }
 enum Enum_4 { first = "ABC", second = "ABC", third = "ABC" }
-export default function EnumerationEqualityOperatorsTest() {
+export default function EnumerationEqualityOperatorsTest(): void {
   describe("EnumerationEqualityOperatorsTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -49,7 +44,7 @@ export default function EnumerationEqualityOperatorsTest() {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.

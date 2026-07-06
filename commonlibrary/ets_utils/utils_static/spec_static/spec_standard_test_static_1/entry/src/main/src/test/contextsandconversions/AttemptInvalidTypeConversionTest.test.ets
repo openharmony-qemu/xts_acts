@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,16 +25,9 @@ import {
   Size,
   TestType
 } from '../../../../hypium/index';
+import Utils from "../Util.test";
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-
-export default function AttemptInvalidTypeConversionTest() {
+export default function AttemptInvalidTypeConversionTest(): void {
 
   describe("AttemptInvalidTypeConversionTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -46,7 +39,7 @@ export default function AttemptInvalidTypeConversionTest() {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.

@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+import Utils from "../../Util.test";
+
 import {
   expect,
   describe,
@@ -26,14 +28,6 @@ import {
   Size,
   Level
 } from "../../../../../hypium";
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
 
 type lmbd_safe_fcall_ftype = () => A_safe_fcall_ftype|null
 type NullOrChaining_safe_call_arguments_evaluate = Chaining_safe_call_arguments_evaluate | null
@@ -183,7 +177,7 @@ class A_safe_function_call_3 {
 function f3(): A_safe_function_call_3|null {
   return null
 }
-export default function ExpressionsFunctionCallOneTest() {
+export default function ExpressionsFunctionCallOneTest(): void {
   describe("ExpressionsFunctionCallOneTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -194,7 +188,7 @@ export default function ExpressionsFunctionCallOneTest() {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.

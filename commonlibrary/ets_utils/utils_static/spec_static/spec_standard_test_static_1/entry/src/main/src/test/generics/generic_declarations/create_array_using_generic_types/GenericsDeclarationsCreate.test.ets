@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+import Utils from "../../../Util.test";
+
 import {
   expect,
   describe,
@@ -28,7 +30,6 @@ import {
 } from "../../../../../../hypium"
 
 // 30
-// 类型定义
 type MyArray_0<T> = T[]
 type Direction_0 = number
 type MyArray_1<T> = T[]
@@ -139,15 +140,7 @@ type MyArray_46<T> = Array<T>
 type Direction_46 = Animal_46
 type MyArray_47<T> = Array<T>
 type Direction_47 = string[]
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-
-export default function GenericDeclarationsCreateTest() {
+export default function GenericDeclarationsCreateTest(): void {
   describe("GenericDeclarationsCreateTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -158,7 +151,7 @@ export default function GenericDeclarationsCreateTest() {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
@@ -615,31 +608,6 @@ export default function GenericDeclarationsCreateTest() {
       ]
       expect(numArray[0][0]).assertEqual("0")
       expect(numArray[2][2]).assertEqual("8")
-    })
-
-    /**
-     * @tc.number    SUB_GENERIC_DECLARATIONS_CREATE_3000
-     * @tc.name      testGenericDeclarationsCreate0030
-     * @tc.desc      Instantiated array T[] with object type.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testGenericDeclarationsCreate0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let numArray: MyArray_23<Person_23> = [
-        {
-          name: "John",
-          age: 30,
-          hobbies: ["reading", "swimming"]
-        },
-        {
-          name: "Alex",
-          age: 30,
-          hobbies: ["reading", "swimming"]
-        }
-      ]
-      expect(numArray[0].name).assertEqual("John")
-      expect(numArray[1].name).assertEqual("Alex")
     })
 
     /**

@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -284,7 +284,7 @@ class A21<in T> implements I21<T> {
   f1(p: T): string { return "v = " + p }
 }
 
-export default function GenericInterfacesVarianceTest() {
+export default function GenericInterfacesVarianceTest(): void {
   describe("GenericInterfacesVarianceTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import Utils from "../../../../Util.test";
+
 import {
   describe,
   beforeAll,
@@ -26,8 +28,6 @@ import {
   expect
 } from "../../../../../../../hypium"
 
-
-// 集中定义的类型、接口、类
 class Double1 {
   value: double = 0.0
   constructor() {}
@@ -36,7 +36,6 @@ class Int1 {
   value: int = 0
   constructor() {}
 }
-// 泛型类定义
 class PointIntOrDouble {
   static foo<X extends Int1 | Double1>(i: X): X { return i }
   foo<X extends Int1 | Double1>(i: X): X { return i }
@@ -97,17 +96,13 @@ class PointNull {
   foo<X extends null>(i: X): X { return i }
 }
 
-// 集中定义的类型、接口、类
 
-
-// Color 枚举定义
 enum Color {
   Red,
   Green,
   Blue
 }
 
-// 泛型类定义
 class PointUndefined {
   static foo<X extends undefined>(i: X): X { return i }
   foo<X extends undefined>(i: X): X { return i }
@@ -138,15 +133,7 @@ class PointIntObject {
   foo<X extends int, Z extends Object>(i: X, j: Z): X { return i }
 }
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-
-export default function GenericMethodsConstraintTest() {
+export default function GenericMethodsConstraintTest(): void {
   describe("GenericMethodsConstraintTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -157,7 +144,7 @@ export default function GenericMethodsConstraintTest() {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.

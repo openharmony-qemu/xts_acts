@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,15 +14,9 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
+import Utils from "../Util.test";
 
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 
 class TestClassTS {
   private _value: string | undefined = undefined;
@@ -121,13 +115,13 @@ interface TestData {
   key2: undefined;
   key3: string;
 }
-export default function UndefinedTypeSafetyTest() {
+export default function UndefinedTypeSafetyTest(): void {
   describe('UndefinedTypeSafetyTest', (): void => {
     beforeAll((): void => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
     })
     beforeEach(async (): Promise<void> => {
-      await sleep(30);
+      await Utils.msSleep(30);
       // Presets an action, which is performed before each unit test case starts.
     })
     afterEach((): void => {
