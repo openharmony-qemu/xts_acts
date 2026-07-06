@@ -26,7 +26,7 @@ export default function BigIntToLocaleStringOptionsIfaceTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocaleOptIfaceTest001', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocaleOptIfaceTest001', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: string = BigInt(42).toLocaleString('en-US', { minimumIntegerDigits: 5, useGrouping: false });
       expect(result).assertEqual('00042');
     });
@@ -39,7 +39,7 @@ export default function BigIntToLocaleStringOptionsIfaceTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocaleOptIfaceTest002', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocaleOptIfaceTest002', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const opts: BigIntToLocaleStringOptions = { minimumFractionDigits: 2, maximumFractionDigits: 4 };
       const result: string = BigInt(123).toLocaleString('en-US', opts);
       expect(result).assertEqual('123.00');
@@ -54,7 +54,7 @@ export default function BigIntToLocaleStringOptionsIfaceTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocaleOptIfaceTest003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocaleOptIfaceTest003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(1000).toLocaleString('en-US', { localeMatcher: 'best fit' })).assertEqual('1,000');
       expect(BigInt(1000).toLocaleString('en-US', { localeMatcher: 'lookup' })).assertEqual('1,000');
     });
@@ -67,7 +67,7 @@ export default function BigIntToLocaleStringOptionsIfaceTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocaleOptIfaceTest004', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocaleOptIfaceTest004', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const opts: BigIntToLocaleStringOptions = {
         notation: 'compact',
         compactDisplay: 'short',
@@ -87,7 +87,7 @@ export default function BigIntToLocaleStringOptionsIfaceTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocaleOptIfaceTest005', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocaleOptIfaceTest005', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(-1).toLocaleString('en-US', { minimumIntegerDigits: 3, useGrouping: false })).assertEqual('-001');
       expect(BigInt(-123456).toLocaleString('en-US', { useGrouping: true })).assertEqual('-123,456');
       expect(BigInt(-999).toLocaleString('en-US', { notation: 'compact', compactDisplay: 'short' }).length).assertLarger(0);
@@ -101,7 +101,7 @@ export default function BigIntToLocaleStringOptionsIfaceTest_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocaleOptIfaceTest006', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToLocaleOptIfaceTest006', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const huge = BigInt('99999999999999999999999999999999999999999999999999');
       expect(huge.toLocaleString('en-US', { useGrouping: false })).assertEqual('99999999999999999999999999999999999999999999999999');
       expect(huge.toLocaleString('en-US', { notation: 'compact', compactDisplay: 'short' }).length).assertLarger(0);

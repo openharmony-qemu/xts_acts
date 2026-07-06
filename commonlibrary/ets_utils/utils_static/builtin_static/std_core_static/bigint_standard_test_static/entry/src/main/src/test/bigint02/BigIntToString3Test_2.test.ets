@@ -27,7 +27,7 @@ export default function BigIntToString3Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString3Test001', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString3Test001', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const radix_1_9: double = 1.9;
       const radix2_0: double = 2.0;
       const radix36_0: double = 36.0;
@@ -48,7 +48,7 @@ export default function BigIntToString3Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString3ExtTest002', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString3ExtTest002', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const radix15: double = 15.0;
       const radix36: double = 36.0;
       expect(BigInt(10).toString(Double.toInt(radix15))).assertEqual('a');
@@ -63,7 +63,7 @@ export default function BigIntToString3Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString3ExtTest003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString3ExtTest003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const radix0: double = 0.0;
       const radix1: double = 1.0;
       const radix37: double = 37.0;
@@ -94,7 +94,7 @@ export default function BigIntToString3Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString3ExtTest004', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString3ExtTest004', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const radixNaN: double = Double.NaN;
       expect((): void => {
         BigInt(10).toString(Double.toInt(radixNaN));
@@ -109,7 +109,7 @@ export default function BigIntToString3Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString3ExtTest005', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString3ExtTest005', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const radixInf: double = Double.POSITIVE_INFINITY;
       const radixNegInf: double = Double.NEGATIVE_INFINITY;
       expect((): void => {
@@ -128,7 +128,7 @@ export default function BigIntToString3Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString3ExtTest006', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString3ExtTest006', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const radix2_7: double = 2.7;
       const radix16_7: double = 16.7;
       const radix10_4: double = 10.4;
@@ -146,7 +146,7 @@ export default function BigIntToString3Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString3ExtTest007', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString3ExtTest007', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const radixNeg2: double = -2.0;
       const radixNeg36: double = -36.0;
       expect((): void => {
@@ -155,6 +155,38 @@ export default function BigIntToString3Test_2(): void {
       expect((): void => {
         BigInt(10).toString(Double.toInt(radixNeg36));
       }).assertThrowError('RangeError');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOSTRING_3_EXT_0800
+     * @tc.name testBigIntToString3ExtTest008
+     * @tc.desc Verify toString with double-derived radix 3 produces correct exact value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntToString3ExtTest008', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const radix3_0: double = 3.0;
+      const radix3_7: double = 3.7;
+      expect(BigInt(10).toString(Double.toInt(radix3_0))).assertEqual('101');
+      expect(BigInt(10).toString(Double.toInt(radix3_7))).assertEqual('101');
+      expect(Double.toInt(radix3_7)).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BIGINT_TOSTRING_3_EXT_0900
+     * @tc.name testBigIntToString3ExtTest009
+     * @tc.desc Verify toString with double-derived radix 7 produces correct exact value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntToString3ExtTest009', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const radix7_0: double = 7.0;
+      const radix7_8: double = 7.8;
+      expect(BigInt(10).toString(Double.toInt(radix7_0))).assertEqual('13');
+      expect(BigInt(10).toString(Double.toInt(radix7_8))).assertEqual('13');
+      expect(Double.toInt(radix7_8)).assertEqual(7);
     });
   });
 }

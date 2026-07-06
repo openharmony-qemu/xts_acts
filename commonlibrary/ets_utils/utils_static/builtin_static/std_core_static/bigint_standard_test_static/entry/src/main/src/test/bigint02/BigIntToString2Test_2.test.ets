@@ -27,7 +27,7 @@ export default function BigIntToString2Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString2Test001', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString2Test001', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(0).toString(2)).assertEqual('0');
       expect(BigInt(0).toString(8)).assertEqual('0');
       expect(BigInt(0).toString(10)).assertEqual('0');
@@ -44,7 +44,7 @@ export default function BigIntToString2Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString2Test002', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString2Test002', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const v: BigInt = BigInt(255);
       expect(v.toString(3)).assertEqual('100110');
       expect(v.toString(4)).assertEqual('3333');
@@ -66,7 +66,7 @@ export default function BigIntToString2Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString2Test003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString2Test003', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt('340282366920938463463374607431768211456').toString(16)).assertEqual('100000000000000000000000000000000');
       expect(BigInt('18446744073709551616').toString(16)).assertEqual('10000000000000000');
       expect(BigInt('340282366920938463463374607431768211455').toString(16)).assertEqual('ffffffffffffffffffffffffffffffff');
@@ -81,7 +81,7 @@ export default function BigIntToString2Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString2Test004', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString2Test004', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(-255).toString(2)).assertEqual('-11111111');
       expect(BigInt(-255).toString(8)).assertEqual('-377');
       expect(BigInt(-255).toString(10)).assertEqual('-255');
@@ -98,7 +98,7 @@ export default function BigIntToString2Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString2Test005', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString2Test005', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt('0xFF').toString(10)).assertEqual('255');
       expect(BigInt('0xFF').toString(16)).assertEqual('ff');
       expect(BigInt('0b1010').toString(10)).assertEqual('10');
@@ -115,7 +115,7 @@ export default function BigIntToString2Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString2Test006', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString2Test006', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(true).toString(2)).assertEqual('1');
       expect(BigInt(true).toString(10)).assertEqual('1');
       expect(BigInt(false).toString(2)).assertEqual('0');
@@ -130,7 +130,7 @@ export default function BigIntToString2Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString2Test007', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString2Test007', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const huge: string = '12345678901234567890123456789012345678901234567890';
       const result: string = BigInt(huge).toString(16);
 
@@ -151,7 +151,7 @@ export default function BigIntToString2Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString2Test008', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString2Test008', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(35).toString(36)).assertEqual('z');
       expect(BigInt(36).toString(36)).assertEqual('10');
       expect(BigInt(37).toString(36)).assertEqual('11');
@@ -169,7 +169,7 @@ export default function BigIntToString2Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString2Test009', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString2Test009', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt('-0').toString(10)).assertEqual('0');
       expect(BigInt('-0').toString(16)).assertEqual('0');
       expect(BigInt('-0').toString(2)).assertEqual('0');
@@ -185,7 +185,7 @@ export default function BigIntToString2Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString2ExtTest010', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString2ExtTest010', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const v0 = BigInt(0), v1 = BigInt(1), v10 = BigInt(10), v35 = BigInt(35);
       const v255 = BigInt(255), v1024 = BigInt(1024), v65535 = BigInt(65535), v1M = BigInt(1000000);
       const vN1 = BigInt(-1), vN100 = BigInt(-100);
@@ -218,7 +218,7 @@ export default function BigIntToString2Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString2ExtTest011', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString2ExtTest011', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt('1267650600228229401496703205376').toString()).assertEqual('1267650600228229401496703205376');
       expect(BigInt('1267650600228229401496703205376').toString(16)).assertEqual('10000000000000000000000000');
     });
@@ -230,7 +230,7 @@ export default function BigIntToString2Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString2ExtTest012', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString2ExtTest012', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt('1125899906842624').toString(2)).assertEqual('1' + '0'.repeat(50));
       expect(BigInt('1125899906842624').toString(16)).assertEqual('4000000000000');
       const hex200: string = '100000000000000000000000000000000000000000000000000';
@@ -244,7 +244,7 @@ export default function BigIntToString2Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString2ExtTest013', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString2ExtTest013', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(255).toString(10)).assertEqual('255');
       expect(BigInt(4294967295).toString(10)).assertEqual('4294967295');
       expect(BigInt(255).toString(10)).assertEqual(BigInt(255).toString());
@@ -258,7 +258,7 @@ export default function BigIntToString2Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString2ExtTest014', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString2ExtTest014', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(255).toString(2).length).assertEqual(8);
       expect(BigInt(255).toString(16).length).assertEqual(2);
       const hexStr: string = BigInt(255).toString(16);
@@ -275,10 +275,7 @@ export default function BigIntToString2Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString2ExtTest015', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-
-      expect(BigInt(255).toString(10)).assertEqual('255');
-
+    it('testBigIntToString2ExtTest015', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const v: BigInt = BigInt(255);
       expect(v.toString(16)).assertEqual('ff');
       expect(v.toString(10)).assertEqual('255');
@@ -299,7 +296,7 @@ export default function BigIntToString2Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString2ExtTest016', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString2ExtTest016', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const v: BigInt = BigInt(255);
       v.toString(16);
       expect(v.toString(10)).assertEqual('255');
@@ -316,7 +313,7 @@ export default function BigIntToString2Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString2ExtTest017', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString2ExtTest017', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const v: BigInt = new BigInt("8888888888888888888");
       const back: BigInt = new BigInt(v.toString(10));
       expect(back.toString(16)).assertEqual("7b5bad595e238e38");
@@ -338,7 +335,7 @@ export default function BigIntToString2Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString2ExtTest018', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString2ExtTest018', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect((): void => {
         BigInt(10).toString(2147483647);
       }).assertThrowError('RangeError');
@@ -354,7 +351,7 @@ export default function BigIntToString2Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString2ExtTest019', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString2ExtTest019', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const hex255: string = BigInt(255).toString(16);
       const hex256: string = BigInt(256).toString(16);
       expect(hex255).assertEqual('ff');
@@ -372,13 +369,14 @@ export default function BigIntToString2Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString2ExtTest020', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString2ExtTest020', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const v: BigInt = BigInt(255);
       let caught: boolean = false;
       try {
         v.toString(0);
       } catch (e) {
         caught = true;
+        expect(e.name).assertEqual('RangeError');
       }
       expect(caught).assertTrue();
       expect(v.toString(10)).assertEqual('255');
@@ -394,7 +392,7 @@ export default function BigIntToString2Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToStringAsBinaryExtTest021', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToStringAsBinaryExtTest021', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(0).toString(2)).assertEqual('0');
       expect(new BigInt(0).toString(2)).assertEqual('0');
       expect(BigInt('-0').toString(2)).assertEqual('0');
@@ -408,7 +406,7 @@ export default function BigIntToString2Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToStringAsBinaryExtTest022', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToStringAsBinaryExtTest022', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(1).toString(2)).assertEqual('1');
       expect(BigInt(2).toString(2)).assertEqual('10');
       expect(BigInt(255).toString(2)).assertEqual('11111111');
@@ -425,7 +423,7 @@ export default function BigIntToString2Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToStringAsBinaryExtTest023', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToStringAsBinaryExtTest023', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt('9223372036854775807').toString(2)).assertEqual('111111111111111111111111111111111111111111111111111111111111111');
       expect(BigInt('-9223372036854775808').toString(2)).assertEqual('-1000000000000000000000000000000000000000000000000000000000000000');
     });
@@ -438,7 +436,7 @@ export default function BigIntToString2Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToStringAsDecimalExtTest024', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToStringAsDecimalExtTest024', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(0).toString()).assertEqual('0');
       expect(BigInt(1).toString()).assertEqual('1');
       expect(BigInt(255).toString()).assertEqual('255');
@@ -454,7 +452,7 @@ export default function BigIntToString2Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToStringAsDecimalExtTest025', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToStringAsDecimalExtTest025', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const huge: string = '1234567890123456789012345678901234567890';
       expect(BigInt(huge).toString()).assertEqual(huge);
       expect(BigInt('9223372036854775807').toString()).assertEqual('9223372036854775807');
@@ -470,7 +468,7 @@ export default function BigIntToString2Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToStringAsPow2RadixExtTest026', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToStringAsPow2RadixExtTest026', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(255).toString(2)).assertEqual('11111111');
       expect(BigInt(255).toString(4)).assertEqual('3333');
       expect(BigInt(255).toString(8)).assertEqual('377');
@@ -487,7 +485,7 @@ export default function BigIntToString2Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToStringAsPow2RadixExtTest027', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToStringAsPow2RadixExtTest027', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(BigInt(-255).toString(16)).assertEqual('-ff');
       expect(BigInt(-1).toString(2)).assertEqual('-1');
       expect(BigInt('9223372036854775807').toString(16)).assertEqual('7fffffffffffffff');
@@ -502,13 +500,18 @@ export default function BigIntToString2Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToStringAsPow2RadixExtTest028', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const nonPow2Radices: int[] = [3, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15];
-      for (let i: int = 0; i < nonPow2Radices.length; i++) {
-        const radix: int = nonPow2Radices[i];
-        const result: string = BigInt(255).toString(radix);
-        expect(result.length).assertLarger(0);
-      }
+    it('testBigIntToStringAsPow2RadixExtTest028', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(BigInt(255).toString(3)).assertEqual('100110');
+      expect(BigInt(255).toString(5)).assertEqual('2010');
+      expect(BigInt(255).toString(6)).assertEqual('1103');
+      expect(BigInt(255).toString(7)).assertEqual('513');
+      expect(BigInt(255).toString(9)).assertEqual('313');
+      expect(BigInt(255).toString(10)).assertEqual('255');
+      expect(BigInt(255).toString(11)).assertEqual('212');
+      expect(BigInt(255).toString(12)).assertEqual('193');
+      expect(BigInt(255).toString(13)).assertEqual('168');
+      expect(BigInt(255).toString(14)).assertEqual('143');
+      expect(BigInt(255).toString(15)).assertEqual('120');
     });
 
     /**
@@ -519,7 +522,7 @@ export default function BigIntToString2Test_2(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToStringAsPow2RadixExtTest029', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToStringAsPow2RadixExtTest029', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const wideRadices: int[] = [17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36];
       for (let i: int = 0; i < wideRadices.length; i++) {
         const radix: int = wideRadices[i];
