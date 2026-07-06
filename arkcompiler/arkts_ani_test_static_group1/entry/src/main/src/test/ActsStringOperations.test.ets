@@ -22,7 +22,7 @@ import { Foo } from '../ets/Index'
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
-export default function stringOperationsTest() {
+export default function stringOperationsTest(): void {
 
   describe("ActsStringOperationsTest", (): void => {
     try {
@@ -1184,7 +1184,7 @@ export default function stringOperationsTest() {
         console.log('test_String_New_Utf8_0016 start');
         let cls = new Foo();
         let result = cls.test_String_New_UTF8_16();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_String_New_Utf8_0016 done');
         done();
         console.log('test_String_New_Utf8_0016 end');
@@ -1222,7 +1222,7 @@ export default function stringOperationsTest() {
         console.log('test_String_New_Utf8_0018 start');
         let cls = new Foo();
         let result = cls.test_String_New_UTF8_18();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_String_New_Utf8_0018 done');
         done();
         console.log('test_String_New_Utf8_0018 end');
@@ -1260,7 +1260,7 @@ export default function stringOperationsTest() {
         console.log('test_String_New_Utf8_0020 start');
         let cls = new Foo();
         let result = cls.test_String_New_UTF8_20();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('test_String_New_Utf8_0020 done');
         done();
         console.log('test_String_New_Utf8_0020 end');

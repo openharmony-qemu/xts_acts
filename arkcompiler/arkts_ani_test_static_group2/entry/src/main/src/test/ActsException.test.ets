@@ -22,7 +22,7 @@ import { Foo } from '../ets/Index'
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
-export default function exceptionsTest() {
+export default function exceptionsTest(): void {
 
   describe("ActsExceptionsTest", (): void => {
     try {

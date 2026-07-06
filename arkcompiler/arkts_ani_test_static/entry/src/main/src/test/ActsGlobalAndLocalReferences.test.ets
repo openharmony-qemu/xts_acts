@@ -23,7 +23,7 @@ import {hidebug} from '@kit.PerformanceAnalysisKit'
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
-export default function globalAndLocalReferencesTest() {
+export default function globalAndLocalReferencesTest(): void {
 
   describe("ActsGlobalAndLocalReferencesTest", (): void => {
     try {

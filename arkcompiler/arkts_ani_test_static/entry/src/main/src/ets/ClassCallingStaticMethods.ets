@@ -140,6 +140,226 @@
   static count: int = 0;
  }
 
+ class BoolOps {
+   static funcA(a0: boolean, a1: boolean): boolean {
+     return a0 || a1;
+   }
+   static funcA(a0: int, a1: int): int {
+     return a0 + a1;
+   }
+   static funcB(a0: boolean, a1: boolean): boolean {
+     return a0 || a1;
+   }
+ }
+
+ class BoolSubOps {
+   static funcB(a0: boolean, a1: boolean): boolean {
+     return a0 && a1;
+   }
+ }
+
+ class BoolCounter {
+   static count: boolean = true;
+   static increment(a0: boolean, a1: boolean): void {
+     BoolCounter.count = false;
+   }
+   static getCount(): boolean {
+     return BoolCounter.count;
+   }
+ }
+
+ class BoolVisibility {
+   static publicMethod(a0: boolean, a1: boolean): boolean {
+     return a0 || a1;
+   }
+   static callPrivateMethod(a0: boolean, a1: boolean): boolean {
+     return a0 && a1;
+   }
+ }
+
+ class IntOps {
+   static funcA(a0: int, a1: int): int {
+     return a0 + a1;
+   }
+   static funcA(a0: double, a1: double): double {
+     return a0 + a1;
+   }
+   static funcB(a0: int, a1: int): int {
+     return a0 + a1;
+   }
+ }
+
+ class IntSubOps {
+   static funcB(a0: int, a1: int): int {
+     return a1 - a0;
+   }
+ }
+
+ class IntCounter {
+   static count: int = 0;
+   static increment(a0: int, a1: int): void {
+     IntCounter.count = a0 + a1;
+   }
+   static getCount(): int {
+     return IntCounter.count;
+   }
+ }
+
+ class IntVisibility {
+   static publicMethod(a0: int, a1: int): int {
+     return a0 + a1;
+   }
+   static callPrivateMethod(a0: int, a1: int): int {
+     return a1 - a0;
+   }
+ }
+
+ class ShortOps {
+   static funcA(a0: short, a1: short): short {
+     return (a0 + a1).toShort();
+   }
+   static funcA(a0: int, a1: int): int {
+     return a0 + a1;
+   }
+   static funcB(a0: short, a1: short): short {
+     return (a0 + a1).toShort();
+   }
+ }
+
+ class ShortSubOps {
+   static funcB(a0: short, a1: short): short {
+     return (a1 - a0).toShort();
+   }
+ }
+
+ class ShortCounter {
+   static count: short = 0;
+   static increment(a0: short, a1: short): void {
+     ShortCounter.count = (a0 + a1).toShort();
+   }
+   static getCount(): short {
+     return ShortCounter.count;
+   }
+ }
+
+ class ShortVisibility {
+   static publicMethod(a0: short, a1: short): short {
+     return (a0 + a1).toShort();
+   }
+   static callPrivateMethod(a0: short, a1: short): short {
+     return (a1 - a0).toShort();
+   }
+ }
+
+ class ByteOps {
+   static funcA(a0: byte, a1: byte): byte {
+     return (a0 + a1).toByte();
+   }
+   static funcA(a0: int, a1: int): int {
+     return a0 + a1;
+   }
+   static funcB(a0: byte, a1: byte): byte {
+     return (a0 + a1).toByte();
+   }
+ }
+
+ class ByteSubOps {
+   static funcB(a0: byte, a1: byte): byte {
+     return (a1 - a0).toByte();
+   }
+ }
+
+ class ByteCounter {
+   static count: byte = 0;
+   static increment(a0: byte, a1: byte): void {
+     ByteCounter.count = (a0 + a1).toByte();
+   }
+   static getCount(): byte {
+     return ByteCounter.count;
+   }
+ }
+
+ class ByteVisibility {
+   static publicMethod(a0: byte, a1: byte): byte {
+     return (a0 + a1).toByte();
+   }
+   static callPrivateMethod(a0: byte, a1: byte): byte {
+     return (a1 - a0).toByte();
+   }
+ }
+
+ class TestBoolC {
+   static funcA(a0: boolean, a1: boolean): boolean {
+     return a0 || a1;
+   }
+ }
+
+ class TestBoolD {
+   static funcA(a0: boolean, a1: boolean): boolean {
+     return a0 && a1;
+   }
+ }
+
+ class TestBoolE {
+   static funcA(a0: boolean, a1: boolean): boolean {
+     return a0 || a1;
+   }
+ }
+
+ class TestIntC {
+   static funcA(a0: int, a1: int): int {
+     return a0 + a1;
+   }
+ }
+
+ class TestIntD {
+   static funcA(a0: int, a1: int): int {
+     return a1 - a0;
+   }
+ }
+
+ class TestIntE {
+   static funcA(a0: int, a1: int): int {
+     return a0 + a1;
+   }
+ }
+
+ class TestShortC {
+   static funcA(a0: int, a1: int): int {
+     return a0 + a1;
+   }
+ }
+
+ class TestShortD {
+   static funcA(a0: int, a1: int): int {
+     return a1 - a0;
+   }
+ }
+
+ class TestShortE {
+   static funcA(a0: int, a1: int): int {
+     return a0 + a1;
+   }
+ }
+
+ class TestByteC {
+   static funcA(a0: byte, a1: byte): byte {
+     return (a0 + a1).toByte();
+   }
+ }
+
+ class TestByteD {
+   static funcA(a0: byte, a1: byte): byte {
+     return (a1 - a0).toByte();
+   }
+ }
+
+ class TestByteE {
+   static funcA(a0: byte, a1: byte): byte {
+     return (a0 + a1).toByte();
+   }
+ }
+
  export class FooStatic {
    constructor() {
    }

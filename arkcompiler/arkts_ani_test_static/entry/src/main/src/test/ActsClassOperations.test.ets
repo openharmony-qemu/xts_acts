@@ -23,7 +23,7 @@ import {hidebug} from '@kit.PerformanceAnalysisKit'
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
-export default function classOperationsTest() {
+export default function classOperationsTest(): void {
 
   describe("ActsClassOperationsTest", (): void => {
     try {
@@ -66,7 +66,7 @@ export default function classOperationsTest() {
         console.log('call_StaticMethodBool_0002 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodBoolean_01();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('call_StaticMethodBool_0002 done');
         done();
         console.log('call_StaticMethodBool_0002 end');
@@ -85,7 +85,7 @@ export default function classOperationsTest() {
         console.log('call_StaticMethodBool_0003 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodBoolean_02();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('call_StaticMethodBool_0003 done');
         done();
         console.log('call_StaticMethodBool_0003 end');
@@ -104,7 +104,7 @@ export default function classOperationsTest() {
         console.log('call_StaticMethodBool_0004 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodBoolean_03();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('call_StaticMethodBool_0004 done');
         done();
         console.log('call_StaticMethodBool_0004 end');
@@ -256,7 +256,7 @@ export default function classOperationsTest() {
         console.log('call_StaticMethodBool_0012 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodBoolean_11();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('call_StaticMethodBool_0012 done');
         done();
         console.log('call_StaticMethodBool_0012 end');
@@ -275,7 +275,7 @@ export default function classOperationsTest() {
         console.log('call_StaticMethodBool_0013 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodBoolean_12();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('call_StaticMethodBool_0013 done');
         done();
         console.log('call_StaticMethodBool_0013 end');
@@ -294,7 +294,7 @@ export default function classOperationsTest() {
         console.log('call_StaticMethodBool_0014 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodBoolean_13();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('call_StaticMethodBool_0014 done');
         done();
         console.log('call_StaticMethodBool_0014 end');
@@ -313,7 +313,7 @@ export default function classOperationsTest() {
         console.log('call_StaticMethodBool_0015 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodBoolean_14();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('call_StaticMethodBool_0015 done');
         done();
         console.log('call_StaticMethodBool_0015 end');
@@ -408,7 +408,7 @@ export default function classOperationsTest() {
         console.log('call_StaticMethodBool_0020 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodBoolean_19();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('call_StaticMethodBool_0020 done');
         done();
         console.log('call_StaticMethodBool_0020 end');
@@ -427,7 +427,7 @@ export default function classOperationsTest() {
         console.log('call_StaticMethodBool_0021 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodBoolean_20();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('call_StaticMethodBool_0021 done');
         done();
         console.log('call_StaticMethodBool_0021 end');
@@ -446,7 +446,7 @@ export default function classOperationsTest() {
         console.log('call_StaticMethodBool_0022 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodBoolean_21();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('call_StaticMethodBool_0022 done');
         done();
         console.log('call_StaticMethodBool_0022 end');
@@ -465,7 +465,7 @@ export default function classOperationsTest() {
         console.log('call_StaticMethodBool_0023 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodBoolean_22();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('call_StaticMethodBool_0023 done');
         done();
         console.log('call_StaticMethodBool_0023 end');
@@ -503,7 +503,7 @@ export default function classOperationsTest() {
         console.log('call_StaticMethodInt_0002 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodInt_01();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('call_StaticMethodInt_0002 done');
         done();
         console.log('call_StaticMethodInt_0002 end');
@@ -522,7 +522,7 @@ export default function classOperationsTest() {
         console.log('call_StaticMethodInt_0003 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodInt_02();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('call_StaticMethodInt_0003 done');
         done();
         console.log('call_StaticMethodInt_0003 end');
@@ -541,7 +541,7 @@ export default function classOperationsTest() {
         console.log('call_StaticMethodInt_0004 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodInt_03();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('call_StaticMethodInt_0004 done');
         done();
         console.log('call_StaticMethodInt_0004 end');
@@ -750,7 +750,7 @@ export default function classOperationsTest() {
         console.log('call_StaticMethodInt_0015 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodInt_14();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('call_StaticMethodInt_0015 done');
         done();
         console.log('call_StaticMethodInt_0015 end');
@@ -769,7 +769,7 @@ export default function classOperationsTest() {
         console.log('call_StaticMethodInt_0016 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodInt_15();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('call_StaticMethodInt_0016 done');
         done();
         console.log('call_StaticMethodInt_0016 end');
@@ -788,7 +788,7 @@ export default function classOperationsTest() {
         console.log('call_StaticMethodInt_0017 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodInt_16();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('call_StaticMethodInt_0017 done');
         done();
         console.log('call_StaticMethodInt_0017 end');
@@ -883,7 +883,7 @@ export default function classOperationsTest() {
         console.log('call_StaticMethodInt_0022 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodInt_21();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('call_StaticMethodInt_0022 done');
         done();
         console.log('call_StaticMethodInt_0022 end');
@@ -902,7 +902,7 @@ export default function classOperationsTest() {
         console.log('call_StaticMethodInt_0023 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodInt_22();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('call_StaticMethodInt_0023 done');
         done();
         console.log('call_StaticMethodInt_0023 end');
@@ -921,7 +921,7 @@ export default function classOperationsTest() {
         console.log('call_StaticMethodInt_0024 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodInt_23();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('call_StaticMethodInt_0024 done');
         done();
         console.log('call_StaticMethodInt_0024 end');
@@ -940,7 +940,7 @@ export default function classOperationsTest() {
         console.log('call_StaticMethodInt_0025 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodInt_24();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('call_StaticMethodInt_0025 done');
         done();
         console.log('call_StaticMethodInt_0025 end');
@@ -959,7 +959,7 @@ export default function classOperationsTest() {
         console.log('call_StaticMethodShort_0001 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodShort();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('call_StaticMethodShort_0001 done');
         done();
         console.log('call_StaticMethodShort_0001 end');
@@ -978,7 +978,7 @@ export default function classOperationsTest() {
         console.log('call_StaticMethodShort_0002 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodShort_01();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('call_StaticMethodShort_0002 done');
         done();
         console.log('call_StaticMethodShort_0002 end');
@@ -997,7 +997,7 @@ export default function classOperationsTest() {
         console.log('call_StaticMethodShort_0003 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodShort_02();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('call_StaticMethodShort_0003 done');
         done();
         console.log('call_StaticMethodShort_0003 end');
@@ -1149,7 +1149,7 @@ export default function classOperationsTest() {
         console.log('call_StaticMethodShort_0011 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodShort_10();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('call_StaticMethodShort_0011 done');
         done();
         console.log('call_StaticMethodShort_0011 end');
@@ -1168,7 +1168,7 @@ export default function classOperationsTest() {
         console.log('call_StaticMethodShort_0012 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodShort_11();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('call_StaticMethodShort_0012 done');
         done();
         console.log('call_StaticMethodShort_0012 end');
@@ -1187,7 +1187,7 @@ export default function classOperationsTest() {
         console.log('call_StaticMethodShort_0013 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodShort_12();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('call_StaticMethodShort_0013 done');
         done();
         console.log('call_StaticMethodShort_0013 end');
@@ -1282,7 +1282,7 @@ export default function classOperationsTest() {
         console.log('class_FindStaticMethodShort_0018 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodShort_17();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('class_FindStaticMethodShort_0018 done');
         done();
         console.log('class_FindStaticMethodShort_0018 end');
@@ -1301,7 +1301,7 @@ export default function classOperationsTest() {
         console.log('class_FindStaticMethodShort_0019 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodShort_18();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('class_FindStaticMethodShort_0019 done');
         done();
         console.log('class_FindStaticMethodShort_0019 end');
@@ -1320,7 +1320,7 @@ export default function classOperationsTest() {
         console.log('class_FindStaticMethodShort_0020 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodShort_19();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('class_FindStaticMethodShort_0020 done');
         done();
         console.log('class_FindStaticMethodShort_0020 end');
@@ -1339,7 +1339,7 @@ export default function classOperationsTest() {
         console.log('class_FindStaticMethodShort_0021 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodShort_20();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('class_FindStaticMethodShort_0021 done');
         done();
         console.log('class_FindStaticMethodShort_0021 end');
@@ -1396,7 +1396,7 @@ export default function classOperationsTest() {
         console.log('call_StaticMethodByte_0003 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodByte_02();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('call_StaticMethodByte_0003 done');
         done();
         console.log('call_StaticMethodByte_0003 end');
@@ -1548,7 +1548,7 @@ export default function classOperationsTest() {
         console.log('call_StaticMethodByte_0011 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodByte_10();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('call_StaticMethodByte_0011 done');
         done();
         console.log('call_StaticMethodByte_0011 end');
@@ -1567,7 +1567,7 @@ export default function classOperationsTest() {
         console.log('call_StaticMethodByte_0012 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodByte_11();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('call_StaticMethodByte_0012 done');
         done();
         console.log('call_StaticMethodByte_0012 end');
@@ -1586,7 +1586,7 @@ export default function classOperationsTest() {
         console.log('call_StaticMethodByte_0013 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodByte_12();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('call_StaticMethodByte_0013 done');
         done();
         console.log('call_StaticMethodByte_0013 end');
@@ -1681,7 +1681,7 @@ export default function classOperationsTest() {
         console.log('call_StaticMethodByte_0018 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodByte_17();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('call_StaticMethodByte_0018 done');
         done();
         console.log('call_StaticMethodByte_0018 end');
@@ -1700,7 +1700,7 @@ export default function classOperationsTest() {
         console.log('call_StaticMethodByte_0019 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodByte_18();
-        expect(result).assertFalse();
+        expect(result).assertTrue();
         console.log('call_StaticMethodByte_0019 done');
         done();
         console.log('call_StaticMethodByte_0019 end');

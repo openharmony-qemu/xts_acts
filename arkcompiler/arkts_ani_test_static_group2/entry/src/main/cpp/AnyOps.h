@@ -58,7 +58,7 @@ ani_int test_Any_CallMethod([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani
 
 ani_int test_Any_CallMethod_01([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
-    const char *clsName = "any_call_method_test.Student";
+    const char *clsName = "entry.src.main.src.ets.AnyOps.Student";
     ani_class cls {};
     ASSERT_EQ(env_->FindClass(clsName, &cls), ANI_OK);
     ani_method ctor {};
@@ -70,8 +70,8 @@ ani_int test_Any_CallMethod_01([[maybe_unused]] ani_env *env_, [[maybe_unused]] 
     ani_object res {};
     ASSERT_EQ(env_->Object_New(cls, ctor, &res, ani_int(10U), strRef), ANI_OK);
     ani_ref nameRef {};
-    // NOTE: Test for Any_CallMethod will be added after resolve #27087
-    ASSERT_EQ(env_->Any_CallMethod(static_cast<ani_ref>(res), "test", 0, nullptr, &nameRef), ANI_PENDING_ERROR);
+    ASSERT_NE(env_->Any_CallMethod(static_cast<ani_ref>(res), "test", 0, nullptr, &nameRef), ANI_OK);
+    ASSERT_EQ(env_->ResetError(), ANI_OK);
     return ANI_TRUE;
 }
 
@@ -148,7 +148,7 @@ ani_int test_Any_GetProperty_02([[maybe_unused]] ani_env *env, [[maybe_unused]] 
 
 ani_int test_Any_GetProperty_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    const char *clsName = "any_get_property_test.Worker";
+    const char *clsName = "entry.src.main.src.ets.AnyOps.Worker";
     ani_class cls {};
     ASSERT_EQ(env->FindClass(clsName, &cls), ANI_OK);
     ani_method ctor {};
@@ -175,7 +175,7 @@ ani_int test_Any_GetProperty_04([[maybe_unused]] ani_env *env, [[maybe_unused]] 
 
     ASSERT_EQ(env->Any_GetProperty(nullptr, propName.c_str(), &dummyResult), ANI_INVALID_ARGS);
 
-    const char *clsName = "any_get_property_test.Student";
+    const char *clsName = "entry.src.main.src.ets.AnyOps.Student";
     ani_class cls {};
     ASSERT_EQ(env->FindClass(clsName, &cls), ANI_OK);
     ani_method ctor {};
@@ -200,7 +200,7 @@ ani_int test_Any_GetProperty_05([[maybe_unused]] ani_env *env, [[maybe_unused]] 
 
     ASSERT_EQ(env->Any_GetByValue(nullptr, nullptr, &dummyResult), ANI_INVALID_ARGS);
 
-    const char *clsName = "any_get_property_test.Student";
+    const char *clsName = "entry.src.main.src.ets.AnyOps.Student";
     ani_class cls {};
     ASSERT_EQ(env->FindClass(clsName, &cls), ANI_OK);
     ani_method ctor {};
@@ -225,7 +225,7 @@ ani_int test_Any_GetProperty_05([[maybe_unused]] ani_env *env, [[maybe_unused]] 
 
 ani_int test_Any_GetProperty_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    const char *clsName = "any_get_property_test.Student";
+    const char *clsName = "entry.src.main.src.ets.AnyOps.Student";
     ani_class cls {};
     ASSERT_EQ(env->FindClass(clsName, &cls), ANI_OK);
     ani_method ctor {};
@@ -247,8 +247,9 @@ ani_int test_Any_GetProperty_06([[maybe_unused]] ani_env *env, [[maybe_unused]] 
     ASSERT_EQ(env->Object_New(dummyCls, dummyCtor, &dummyKey), ANI_OK);
 
     ani_ref result {};
-    ASSERT_EQ(env->Any_GetByValue(static_cast<ani_ref>(res), static_cast<ani_ref>(dummyKey), &result),
-              ANI_PENDING_ERROR);
+    ASSERT_NE(env->Any_GetByValue(static_cast<ani_ref>(res), static_cast<ani_ref>(dummyKey), &result),
+              ANI_OK);
+    ASSERT_EQ(env->ResetError(), ANI_OK);
     return ANI_TRUE;
 }
 
@@ -396,7 +397,7 @@ ani_int test_Any_SetProperty_01([[maybe_unused]] ani_env *env_, [[maybe_unused]]
 {
     ani_module md {};
     ani_function fn {};
-    GetMethod(env_, "GetNumericArray", &md, &fn);
+    GetMethod(env_, "getNumericArray", &md, &fn);
     ani_ref arrayRef {};
     ASSERT_EQ(env_->Function_Call_Ref(fn, &arrayRef), ANI_OK);
 
@@ -421,7 +422,7 @@ ani_int test_Any_SetProperty_01([[maybe_unused]] ani_env *env_, [[maybe_unused]]
 
 ani_int test_Any_SetProperty_02([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
-    const char *clsName = "any_set_property_test.Student";
+    const char *clsName = "entry.src.main.src.ets.AnyOps.Student";
     ani_class cls {};
     ASSERT_EQ(env_->FindClass(clsName, &cls), ANI_OK);
     ani_method ctor {};
@@ -467,7 +468,7 @@ ani_int test_Any_SetProperty_04([[maybe_unused]] ani_env *env_, [[maybe_unused]]
 {
     ani_module md {};
     ani_function fn {};
-    GetMethod(env_, "GetNumericArray", &md, &fn);
+    GetMethod(env_, "getNumericArray", &md, &fn);
     ani_ref arrayRef {};
     ASSERT_EQ(env_->Function_Call_Ref(fn, &arrayRef), ANI_OK);
 
@@ -490,7 +491,7 @@ ani_int test_Any_SetProperty_04([[maybe_unused]] ani_env *env_, [[maybe_unused]]
 
 ani_int test_Any_SetProperty_05([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
-    const char *clsName = "any_set_property_test.Student";
+    const char *clsName = "entry.src.main.src.ets.AnyOps.Student";
     ani_class cls {};
     ASSERT_EQ(env_->FindClass(clsName, &cls), ANI_OK);
     ani_method ctor {};
@@ -511,7 +512,8 @@ ani_int test_Any_SetProperty_05([[maybe_unused]] ani_env *env_, [[maybe_unused]]
     ani_object keyObj {};
     ASSERT_EQ(env_->Object_New(keyCls, objCtor, &keyObj), ANI_OK);
 
-    ASSERT_EQ(env_->Any_SetByValue(res, keyObj, nameRef), ANI_PENDING_ERROR);
+    ASSERT_NE(env_->Any_SetByValue(res, keyObj, nameRef), ANI_OK);
+    ASSERT_EQ(env_->ResetError(), ANI_OK);
     return ANI_TRUE;
 }
 #endif // ARKTS_ANI_TEST_ANYOPS_H

@@ -22,7 +22,7 @@ import { Foo } from '../ets/Index'
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
-export default function ScopeSupportTest() {
+export default function ScopeSupportTest(): void {
 
   describe("ActsScopeSupportTest", (): void => {
     try {

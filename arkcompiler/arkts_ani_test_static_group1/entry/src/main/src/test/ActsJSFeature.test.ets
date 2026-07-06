@@ -22,7 +22,7 @@ import { Foo } from '../ets/Index'
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
-export default function JSFeatureTest() {
+export default function JSFeatureTest(): void {
 
   describe("ActsJSFeatureTest", (): void => {
     try {

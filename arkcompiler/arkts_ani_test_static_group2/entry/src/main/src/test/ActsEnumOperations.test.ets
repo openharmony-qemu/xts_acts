@@ -22,7 +22,7 @@ import { Foo } from '../ets/Index'
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
-export default function enumOperationsTest() {
+export default function enumOperationsTest(): void {
 
   describe("ActsEnumOperationsTest", (): void => {
     try {
