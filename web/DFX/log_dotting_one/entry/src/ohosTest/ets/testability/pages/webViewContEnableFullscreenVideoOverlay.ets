@@ -129,8 +129,8 @@ struct webViewContEnableFullscreenVideoOverlay {
     await this.prepareTest();
     await Utils.sleep(500);
     let entered = await this.enterFullScreenByButton(1);
-    Utils.emitEvent(entered, 112801);
     await this.exitFullScreenIfNeeded();
+    Utils.emitEvent(entered, 112801);
   }
 
   private async verifyOverlayEnabled(): Promise<void> {
@@ -139,8 +139,8 @@ struct webViewContEnableFullscreenVideoOverlay {
     await Utils.sleep(500);
     let entered = await this.enterFullScreenByButton(1);
     let hasVideoSize = this.videoWidth > 0 && this.videoHeight > 0;
-    Utils.emitEvent(entered && hasVideoSize, 112802);
     await this.exitFullScreenIfNeeded();
+    Utils.emitEvent(entered && hasVideoSize, 112802);
   }
 
   private async verifyExplicitDisabled(): Promise<void> {
@@ -148,8 +148,8 @@ struct webViewContEnableFullscreenVideoOverlay {
     await this.prepareTest();
     await Utils.sleep(500);
     let entered = await this.enterFullScreenByButton(1);
-    Utils.emitEvent(entered, 112803);
     await this.exitFullScreenIfNeeded();
+    Utils.emitEvent(entered, 112803);
   }
 
   private async verifyToggleBeforeEnter(): Promise<void> {
@@ -159,8 +159,8 @@ struct webViewContEnableFullscreenVideoOverlay {
     await this.prepareTest();
     await Utils.sleep(300);
     let entered = await this.enterFullScreenByButton(1);
-    Utils.emitEvent(entered, 112804);
     await this.exitFullScreenIfNeeded();
+    Utils.emitEvent(entered, 112804);
   }
 
   private async verifyExitViaHandler(): Promise<void> {
@@ -199,8 +199,8 @@ struct webViewContEnableFullscreenVideoOverlay {
     await this.prepareTest();
     await Utils.sleep(500);
     let entered = await this.enterFullScreenByButton(1);
-    Utils.emitEvent(entered, 112807);
     await this.exitFullScreenIfNeeded();
+    Utils.emitEvent(entered, 112807);
   }
 
   private async verifyClickButton(): Promise<void> {
@@ -208,8 +208,8 @@ struct webViewContEnableFullscreenVideoOverlay {
     await this.prepareTest();
     await Utils.sleep(500);
     let entered = await this.enterFullScreenByButton(1);
-    Utils.emitEvent(entered, 112808);
     await this.exitFullScreenIfNeeded();
+    Utils.emitEvent(entered, 112808);
   }
 
   private async verifySecondVideo(): Promise<void> {
@@ -218,8 +218,8 @@ struct webViewContEnableFullscreenVideoOverlay {
     await Utils.sleep(500);
     let entered = await this.enterFullScreenByButton(2);
     let hasVideoSize = this.videoWidth > 0 && this.videoHeight > 0;
-    Utils.emitEvent(entered && hasVideoSize, 112809);
     await this.exitFullScreenIfNeeded();
+    Utils.emitEvent(entered && hasVideoSize, 112809);
   }
 
   private async verifyReloadThenFullScreen(): Promise<void> {
@@ -232,8 +232,8 @@ struct webViewContEnableFullscreenVideoOverlay {
     await this.runJs(`document.getElementById('btnFullScreen1') !== null`);
     await Utils.sleep(1000);
     let entered = await this.enterFullScreenByButton(1);
-    Utils.emitEvent(entered, 112810);
     await this.exitFullScreenIfNeeded();
+    Utils.emitEvent(entered, 112810);
   }
 
   build() {
