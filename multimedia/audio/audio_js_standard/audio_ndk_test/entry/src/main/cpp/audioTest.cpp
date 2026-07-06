@@ -11856,8 +11856,703 @@ static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECUR
     return res;
 }
 
+static napi_value SUB_MULTIMEDIA_AUDIO_NOISE_REDUCTION_MODE_ENUM_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    uint32_t fidelity = 0;
+    uint32_t pureVocals = 1;
+    uint32_t standard = 2;
+    uint32_t unsupportedAbility = 6800104;
+    uint32_t serviceDied = 6800302;
+
+    if (fidelity != OH_AudioNoiseReductionMode::AUDIO_NOISE_REDUCTION_MODE_FIDELITY) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("AUDIO_NOISE_REDUCTION_MODE_FIDELITY fail, result is: %{public}d",
+            OH_AudioNoiseReductionMode::AUDIO_NOISE_REDUCTION_MODE_FIDELITY);
+    }
+    if (pureVocals != OH_AudioNoiseReductionMode::AUDIO_NOISE_REDUCTION_MODE_PURE_VOCALS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("AUDIO_NOISE_REDUCTION_MODE_PURE_VOCALS fail, result is: %{public}d",
+            OH_AudioNoiseReductionMode::AUDIO_NOISE_REDUCTION_MODE_PURE_VOCALS);
+    }
+    if (standard != OH_AudioNoiseReductionMode::AUDIO_NOISE_REDUCTION_MODE_STANDARD) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("AUDIO_NOISE_REDUCTION_MODE_STANDARD fail, result is: %{public}d",
+            OH_AudioNoiseReductionMode::AUDIO_NOISE_REDUCTION_MODE_STANDARD);
+    }
+    if (unsupportedAbility != OH_AudioStream_Result::AUDIOSTREAM_ERROR_UNSUPPORTED_ABILITY) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("AUDIOSTREAM_ERROR_UNSUPPORTED_ABILITY fail, result is: %{public}d",
+            OH_AudioStream_Result::AUDIOSTREAM_ERROR_UNSUPPORTED_ABILITY);
+    }
+    if (serviceDied != OH_AudioStream_Result::AUDIOSTREAM_ERROR_SERVICE_DIED) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("AUDIOSTREAM_ERROR_SERVICE_DIED fail, result is: %{public}d",
+            OH_AudioStream_Result::AUDIOSTREAM_ERROR_SERVICE_DIED);
+    }
+    napi_create_int32(env, TEST_PASS, &res);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0100(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    OH_AudioStreamBuilder_SetSamplingRate(builder, g_samplingRate);
+    OH_AudioStreamBuilder_SetChannelCount(builder, g_channelCount);
+    OH_AudioStream_SourceType sourceType = AUDIOSTREAM_SOURCE_TYPE_VOICE_MESSAGE;
+    OH_AudioStreamBuilder_SetCapturerInfo(builder, sourceType);
+    
+    OH_AudioCapturer* capturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    
+    OH_AudioNoiseReductionMode supportedModes[20];
+    uint32_t inSize = 20;
+    uint32_t outSize = 0;
+    OH_AudioCapturer_GetSupportedNoiseReductionModes(capturer, supportedModes, inSize, &outSize);
+    
+    bool hasFidelity = false;
+    for (uint32_t i = 0; i < outSize; i++) {
+        if (supportedModes[i] == AUDIO_NOISE_REDUCTION_MODE_FIDELITY) {
+            hasFidelity = true;
+            break;
+        }
+    }
+    LOG("VERIFY_0100: hasFidelity is %{public}d", hasFidelity);
+    OH_AudioCapturer_SetNoiseReductionMode(capturer, AUDIO_NOISE_REDUCTION_MODE_FIDELITY);
+    OH_AudioNoiseReductionMode mode;
+    OH_AudioStream_Result ret = OH_AudioCapturer_GetNoiseReductionMode(capturer, &mode);
+    
+    OH_AudioCapturer_Release(capturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    
+    napi_value res;
+    if (!hasFidelity || (ret == AUDIOSTREAM_SUCCESS && mode == AUDIO_NOISE_REDUCTION_MODE_FIDELITY)) {
+        napi_create_int32(env, TEST_PASS, &res);
+        LOG("VERIFY_0100: GetNoiseReductionMode returns correct FIDELITY mode");
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("VERIFY_0100: GetNoiseReductionMode FIDELITY failed, result=%{public}d, mode=%{public}d", ret, mode);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0200(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    OH_AudioStreamBuilder_SetSamplingRate(builder, g_samplingRate);
+    OH_AudioStreamBuilder_SetChannelCount(builder, g_channelCount);
+    OH_AudioStream_SourceType sourceType = AUDIOSTREAM_SOURCE_TYPE_VOICE_MESSAGE;
+    OH_AudioStreamBuilder_SetCapturerInfo(builder, sourceType);
+    
+    OH_AudioCapturer* capturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    
+    OH_AudioNoiseReductionMode supportedModes[20];
+    uint32_t inSize = 20;
+    uint32_t outSize = 0;
+    OH_AudioCapturer_GetSupportedNoiseReductionModes(capturer, supportedModes, inSize, &outSize);
+    
+    bool hasFidelity = false;
+    for (uint32_t i = 0; i < outSize; i++) {
+        if (supportedModes[i] == AUDIO_NOISE_REDUCTION_MODE_PURE_VOCALS) {
+            hasFidelity = true;
+            break;
+        }
+    }
+    LOG("VERIFY_0200: hasFidelity is %{public}d", hasFidelity);
+    OH_AudioCapturer_SetNoiseReductionMode(capturer, AUDIO_NOISE_REDUCTION_MODE_PURE_VOCALS);
+    OH_AudioNoiseReductionMode mode;
+    OH_AudioStream_Result ret = OH_AudioCapturer_GetNoiseReductionMode(capturer, &mode);
+    
+    OH_AudioCapturer_Release(capturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    
+    napi_value res;
+    if (!hasFidelity || (ret == AUDIOSTREAM_SUCCESS && mode == AUDIO_NOISE_REDUCTION_MODE_PURE_VOCALS)) {
+        napi_create_int32(env, TEST_PASS, &res);
+        LOG("VERIFY_0200: GetNoiseReductionMode returns correct VOCALS mode");
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("VERIFY_0200: GetNoiseReductionMode VOCALS failed, result=%{public}d, mode=%{public}d", ret, mode);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0300(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    OH_AudioStreamBuilder_SetSamplingRate(builder, g_samplingRate);
+    OH_AudioStreamBuilder_SetChannelCount(builder, g_channelCount);
+    OH_AudioStream_SourceType sourceType = AUDIOSTREAM_SOURCE_TYPE_VOICE_MESSAGE;
+    OH_AudioStreamBuilder_SetCapturerInfo(builder, sourceType);
+    
+    OH_AudioCapturer* capturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    
+    OH_AudioNoiseReductionMode supportedModes[20];
+    uint32_t inSize = 20;
+    uint32_t outSize = 0;
+    OH_AudioCapturer_GetSupportedNoiseReductionModes(capturer, supportedModes, inSize, &outSize);
+    
+    bool hasFidelity = false;
+    for (uint32_t i = 0; i < outSize; i++) {
+        if (supportedModes[i] == AUDIO_NOISE_REDUCTION_MODE_STANDARD) {
+            hasFidelity = true;
+            break;
+        }
+    }
+    LOG("VERIFY_0300: hasFidelity is %{public}d", hasFidelity);
+    OH_AudioCapturer_SetNoiseReductionMode(capturer, AUDIO_NOISE_REDUCTION_MODE_STANDARD);
+    OH_AudioNoiseReductionMode mode;
+    OH_AudioStream_Result ret = OH_AudioCapturer_GetNoiseReductionMode(capturer, &mode);
+    
+    OH_AudioCapturer_Release(capturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    
+    napi_value res;
+    if (!hasFidelity || (ret == AUDIOSTREAM_SUCCESS && mode == AUDIO_NOISE_REDUCTION_MODE_STANDARD)) {
+        napi_create_int32(env, TEST_PASS, &res);
+        LOG("VERIFY_0300: GetNoiseReductionMode returns correct STANDARD mode");
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("VERIFY_0300: GetNoiseReductionMode STANDARD failed, result=%{public}d, mode=%{public}d", ret, mode);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0100(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    OH_AudioStreamBuilder_SetSamplingRate(builder, g_samplingRate);
+    OH_AudioStreamBuilder_SetChannelCount(builder, g_channelCount);
+    OH_AudioStream_SourceType sourceType = AUDIOSTREAM_SOURCE_TYPE_VOICE_MESSAGE;
+    OH_AudioStreamBuilder_SetCapturerInfo(builder, sourceType);
+    
+    OH_AudioCapturer* capturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    
+    OH_AudioNoiseReductionMode supportedModes[20];
+    uint32_t inSize = 20;
+    uint32_t outSize = 0;
+    OH_AudioCapturer_GetSupportedNoiseReductionModes(capturer, supportedModes, inSize, &outSize);
+    
+    bool hasFidelity = false;
+    for (uint32_t i = 0; i < outSize; i++) {
+        if (supportedModes[i] == AUDIO_NOISE_REDUCTION_MODE_FIDELITY) {
+            hasFidelity = true;
+            break;
+        }
+    }
+    LOG("MODE_0100: hasFidelity is %{public}d", hasFidelity);
+    OH_AudioStream_Result ret = OH_AudioCapturer_SetNoiseReductionMode(capturer, AUDIO_NOISE_REDUCTION_MODE_FIDELITY);
+    
+    OH_AudioCapturer_Release(capturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    
+    napi_value res;
+    if (!hasFidelity){
+        if (ret == AUDIOSTREAM_ERROR_UNSUPPORTED_ABILITY) {
+            napi_create_int32(env, TEST_PASS, &res);
+            LOG("MODE_0100: SetNoiseReductionMode returns correct FIDELITY mode");
+        } else {
+            napi_create_int32(env, TEST_FAIL, &res);
+            LOG("MODE_0100: SetNoiseReductionMode FIDELITY failed, result=%{public}d", ret);
+        }
+    } else {
+        if (ret == AUDIOSTREAM_SUCCESS) {
+            napi_create_int32(env, TEST_PASS, &res);
+            LOG("MODE_0100: SetNoiseReductionMode returns correct FIDELITY mode");
+        } else {
+            napi_create_int32(env, TEST_FAIL, &res);
+            LOG("MODE_0100: SetNoiseReductionMode FIDELITY failed, result=%{public}d", ret);
+        }
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0200(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    OH_AudioStreamBuilder_SetSamplingRate(builder, g_samplingRate);
+    OH_AudioStreamBuilder_SetChannelCount(builder, g_channelCount);
+    OH_AudioStream_SourceType sourceType = AUDIOSTREAM_SOURCE_TYPE_VOICE_MESSAGE;
+    OH_AudioStreamBuilder_SetCapturerInfo(builder, sourceType);
+    
+    OH_AudioCapturer* capturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    
+    OH_AudioNoiseReductionMode supportedModes[20];
+    uint32_t inSize = 20;
+    uint32_t outSize = 0;
+    OH_AudioCapturer_GetSupportedNoiseReductionModes(capturer, supportedModes, inSize, &outSize);
+    
+    bool hasFidelity = false;
+    for (uint32_t i = 0; i < outSize; i++) {
+        if (supportedModes[i] == AUDIO_NOISE_REDUCTION_MODE_PURE_VOCALS) {
+            hasFidelity = true;
+            break;
+        }
+    }
+    LOG("MODE_0200: hasFidelity is %{public}d", hasFidelity);
+    OH_AudioStream_Result ret = OH_AudioCapturer_SetNoiseReductionMode(
+        capturer, AUDIO_NOISE_REDUCTION_MODE_PURE_VOCALS);
+    
+    OH_AudioCapturer_Release(capturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    
+    napi_value res;
+    if (!hasFidelity){
+        if (ret == AUDIOSTREAM_ERROR_UNSUPPORTED_ABILITY) {
+            napi_create_int32(env, TEST_PASS, &res);
+            LOG("MODE_0200: SetNoiseReductionMode returns correct PURE_VOCALS mode");
+        } else {
+            napi_create_int32(env, TEST_FAIL, &res);
+            LOG("MODE_0200: SetNoiseReductionMode PURE_VOCALS failed, result=%{public}d", ret);
+        }
+    } else {
+        if (ret == AUDIOSTREAM_SUCCESS) {
+            napi_create_int32(env, TEST_PASS, &res);
+            LOG("MODE_0200: SetNoiseReductionMode returns correct PURE_VOCALS mode");
+        } else {
+            napi_create_int32(env, TEST_FAIL, &res);
+            LOG("MODE_0200: SetNoiseReductionMode PURE_VOCALS failed, result=%{public}d", ret);
+        }
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0300(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    OH_AudioStreamBuilder_SetSamplingRate(builder, g_samplingRate);
+    OH_AudioStreamBuilder_SetChannelCount(builder, g_channelCount);
+    OH_AudioStream_SourceType sourceType = AUDIOSTREAM_SOURCE_TYPE_VOICE_MESSAGE;
+    OH_AudioStreamBuilder_SetCapturerInfo(builder, sourceType);
+    
+    OH_AudioCapturer* capturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    
+    OH_AudioNoiseReductionMode supportedModes[20];
+    uint32_t inSize = 20;
+    uint32_t outSize = 0;
+    OH_AudioCapturer_GetSupportedNoiseReductionModes(capturer, supportedModes, inSize, &outSize);
+    
+    bool hasFidelity = false;
+    for (uint32_t i = 0; i < outSize; i++) {
+        if (supportedModes[i] == AUDIO_NOISE_REDUCTION_MODE_STANDARD) {
+            hasFidelity = true;
+            break;
+        }
+    }
+    LOG("MODE_0300: hasFidelity is %{public}d", hasFidelity);
+    OH_AudioStream_Result ret = OH_AudioCapturer_SetNoiseReductionMode(capturer, AUDIO_NOISE_REDUCTION_MODE_STANDARD);
+    
+    OH_AudioCapturer_Release(capturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    
+    napi_value res;
+    if (!hasFidelity){
+        if (ret == AUDIOSTREAM_ERROR_UNSUPPORTED_ABILITY) {
+            napi_create_int32(env, TEST_PASS, &res);
+            LOG("MODE_0300: SetNoiseReductionMode returns correct STANDARD mode");
+        } else {
+            napi_create_int32(env, TEST_FAIL, &res);
+            LOG("MODE_0300: SetNoiseReductionMode STANDARD failed, result=%{public}d", ret);
+        }
+    } else {
+        if (ret == AUDIOSTREAM_SUCCESS) {
+            napi_create_int32(env, TEST_PASS, &res);
+            LOG("MODE_0300: SetNoiseReductionMode returns correct STANDARD mode");
+        } else {
+            napi_create_int32(env, TEST_FAIL, &res);
+            LOG("MODE_0300: SetNoiseReductionMode STANDARD failed, result=%{public}d", ret);
+        }
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0400(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    OH_AudioStreamBuilder_SetSamplingRate(builder, g_samplingRate);
+    OH_AudioStreamBuilder_SetChannelCount(builder, g_channelCount);
+    OH_AudioStream_SourceType sourceType = AUDIOSTREAM_SOURCE_TYPE_MIC;
+    OH_AudioStreamBuilder_SetCapturerInfo(builder, sourceType);
+    
+    OH_AudioCapturer* capturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    
+    OH_AudioNoiseReductionMode supportedModes[20];
+    uint32_t inSize = 20;
+    uint32_t outSize = 0;
+    OH_AudioCapturer_GetSupportedNoiseReductionModes(capturer, supportedModes, inSize, &outSize);
+    
+    bool hasFidelity = false;
+    for (uint32_t i = 0; i < outSize; i++) {
+        if (supportedModes[i] == AUDIO_NOISE_REDUCTION_MODE_FIDELITY) {
+            hasFidelity = true;
+            break;
+        }
+    }
+    LOG("MODE_0100: hasFidelity is %{public}d", hasFidelity);
+    OH_AudioStream_Result ret = OH_AudioCapturer_SetNoiseReductionMode(capturer, AUDIO_NOISE_REDUCTION_MODE_FIDELITY);
+    
+    OH_AudioCapturer_Release(capturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    
+    napi_value res;
+    if (!hasFidelity){
+        if (ret == AUDIOSTREAM_ERROR_UNSUPPORTED_ABILITY) {
+            napi_create_int32(env, TEST_PASS, &res);
+            LOG("MODE_0400: SetNoiseReductionMode returns correct FIDELITY mode");
+        } else {
+            napi_create_int32(env, TEST_FAIL, &res);
+            LOG("MODE_0400: SetNoiseReductionMode FIDELITY failed, result=%{public}d", ret);
+        }
+    } else {
+        if (ret == AUDIOSTREAM_SUCCESS) {
+            napi_create_int32(env, TEST_PASS, &res);
+            LOG("MODE_0400: SetNoiseReductionMode returns correct FIDELITY mode");
+        } else {
+            napi_create_int32(env, TEST_FAIL, &res);
+            LOG("MODE_0400: SetNoiseReductionMode FIDELITY failed, result=%{public}d", ret);
+        }
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_PARAM_0100(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStream_Result ret = OH_AudioCapturer_SetNoiseReductionMode(nullptr, AUDIO_NOISE_REDUCTION_MODE_FIDELITY);
+    
+    napi_value res;
+    if (ret == AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+        LOG("CAPTURER_PARAM_0100: nullptr capturer returns INVALID_PARAM correctly");
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("CAPTURER_PARAM_0100: Unexpected result=%{public}d", ret);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_PARAM_0200(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    
+    OH_AudioCapturer* capturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    
+    OH_AudioNoiseReductionMode invalidMode = static_cast<OH_AudioNoiseReductionMode>(9999);
+    OH_AudioStream_Result ret = OH_AudioCapturer_SetNoiseReductionMode(capturer, invalidMode);
+    
+    OH_AudioCapturer_Release(capturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    
+    napi_value res;
+    if (ret == AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+        LOG("CAPTURER_PARAM_0200: Invalid mode returns INVALID_PARAM correctly");
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("CAPTURER_PARAM_0200: Unexpected result=%{public}d", ret);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_STATE_0100(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    
+    OH_AudioCapturer* capturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    OH_AudioCapturer_Start(capturer);
+    
+    OH_AudioStream_Result ret = OH_AudioCapturer_SetNoiseReductionMode(capturer, AUDIO_NOISE_REDUCTION_MODE_FIDELITY);
+    
+    OH_AudioCapturer_Stop(capturer);
+    OH_AudioCapturer_Release(capturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    
+    napi_value res;
+    if (ret == AUDIOSTREAM_ERROR_ILLEGAL_STATE) {
+        napi_create_int32(env, TEST_PASS, &res);
+        LOG("CAPTURER_STATE_0100: Running state returns ILLEGAL_STATE correctly");
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("CAPTURER_STATE_0100: Unexpected result=%{public}d", ret);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_STATE_0200(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    
+    OH_AudioCapturer* capturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    
+    OH_AudioCapturer_Release(capturer);
+    
+    OH_AudioStream_Result ret = OH_AudioCapturer_SetNoiseReductionMode(capturer, AUDIO_NOISE_REDUCTION_MODE_FIDELITY);
+    
+    OH_AudioStreamBuilder_Destroy(builder);
+    
+    napi_value res;
+    if (ret == AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+        LOG("CAPTURER_STATE_0200: Released state returns INVALID_PARAM correctly");
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("CAPTURER_STATE_0200: Unexpected result=%{public}d", ret);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_PARAM_0100(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioNoiseReductionMode mode;
+    OH_AudioStream_Result ret = OH_AudioCapturer_GetNoiseReductionMode(nullptr, &mode);
+    
+    napi_value res;
+    if (ret == AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+        LOG("CAPTURER_GET_PARAM_0100: nullptr capturer returns INVALID_PARAM correctly");
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("CAPTURER_GET_PARAM_0100: Unexpected result=%{public}d", ret);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_PARAM_0200(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    
+    OH_AudioCapturer* capturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    
+    OH_AudioStream_Result ret = OH_AudioCapturer_GetNoiseReductionMode(capturer, nullptr);
+    
+    OH_AudioCapturer_Release(capturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    
+    napi_value res;
+    if (ret == AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+        LOG("CAPTURER_GET_PARAM_0200: nullptr mode returns INVALID_PARAM correctly");
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("CAPTURER_GET_PARAM_0200: Unexpected result=%{public}d", ret);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0100(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    OH_AudioStream_SourceType sourceType = AUDIOSTREAM_SOURCE_TYPE_VOICE_MESSAGE;
+    OH_AudioStreamBuilder_SetCapturerInfo(builder, sourceType);
+    
+    OH_AudioCapturer* capturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    
+    OH_AudioNoiseReductionMode modes[20];
+    uint32_t inSize = 20;
+    uint32_t outSize = 0;
+    OH_AudioStream_Result ret = OH_AudioCapturer_GetSupportedNoiseReductionModes(capturer, modes, inSize, &outSize);
+    
+    OH_AudioCapturer_Release(capturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    
+    napi_value res;
+    if (ret == AUDIOSTREAM_SUCCESS && outSize > 0) {
+        bool hasFidelity = false;
+        for (uint32_t i = 0; i < outSize; i++) {
+            if (modes[i] == AUDIO_NOISE_REDUCTION_MODE_FIDELITY) {
+                hasFidelity = true;
+                break;
+            }
+        }
+        if (hasFidelity) {
+            napi_create_int32(env, TEST_PASS, &res);
+            LOG("CAPTURER_GET_SUPPORTED_PARAM_0100: Get supported modes success, includes FIDELITY");
+        } else {
+            napi_create_int32(env, TEST_FAIL, &res);
+            LOG("CAPTURER_GET_SUPPORTED_PARAM_0100: Supported modes not include FIDELITY");
+        }
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("CAPTURER_GET_SUPPORTED_PARAM_0100: Failed, result=%{public}d, outSize=%{public}d", ret, outSize);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0200(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioNoiseReductionMode modes[20];
+    uint32_t inSize = 20;
+    uint32_t outSize = 0;
+    OH_AudioStream_Result ret = OH_AudioCapturer_GetSupportedNoiseReductionModes(nullptr, modes, inSize, &outSize);
+    
+    napi_value res;
+    if (ret == AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+        LOG("CAPTURER_GET_SUPPORTED_PARAM_0200: nullptr capturer returns INVALID_PARAM correctly");
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("CAPTURER_GET_SUPPORTED_PARAM_0200: Unexpected result=%{public}d", ret);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0300(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    
+    OH_AudioCapturer* capturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    
+    uint32_t inSize = 20;
+    uint32_t outSize = 0;
+    OH_AudioStream_Result ret = OH_AudioCapturer_GetSupportedNoiseReductionModes(capturer, nullptr, inSize, &outSize);
+    
+    OH_AudioCapturer_Release(capturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    
+    napi_value res;
+    if (ret == AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+        LOG("CAPTURER_GET_SUPPORTED_PARAM_0300: nullptr modes returns INVALID_PARAM correctly");
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("CAPTURER_GET_SUPPORTED_PARAM_0300: Unexpected result=%{public}d", ret);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0400(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioStreamBuilder* builder;
+    OH_AudioStream_Type type = AUDIOSTREAM_TYPE_CAPTURER;
+    OH_AudioStreamBuilder_Create(&builder, type);
+    
+    OH_AudioCapturer* capturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    
+    OH_AudioNoiseReductionMode modes[20];
+    uint32_t inSize = 20;
+    OH_AudioStream_Result ret = OH_AudioCapturer_GetSupportedNoiseReductionModes(capturer, modes, inSize, nullptr);
+    
+    OH_AudioCapturer_Release(capturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    
+    napi_value res;
+    if (ret == AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+        LOG("CAPTURER_GET_SUPPORTED_PARAM_0400: nullptr outSize returns INVALID_PARAM correctly");
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("CAPTURER_GET_SUPPORTED_PARAM_0400: Unexpected result=%{public}d", ret);
+    }
+    return res;
+}
+
 EXTERN_C_START
 napi_property_descriptor desc1[] = {
+    {"SUB_MULTIMEDIA_AUDIO_NOISE_REDUCTION_MODE_ENUM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_NOISE_REDUCTION_MODE_ENUM_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0100, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0200, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0300", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_VERIFY_0300, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0400", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0400, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0200, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0300", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_0300, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_PARAM_0100, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_PARAM_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_PARAM_0200, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_STATE_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_STATE_0100, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_STATE_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_NOISE_REDUCTION_MODE_STATE_0200, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_PARAM_0100, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_PARAM_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_NOISE_REDUCTION_MODE_PARAM_0200, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0100, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0200, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0300", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0300, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0400", nullptr,
+        SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_SUPPORTED_NOISE_REDUCTION_MODES_PARAM_0400, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
     {"SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_0100", nullptr,
         SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_0200", nullptr,
