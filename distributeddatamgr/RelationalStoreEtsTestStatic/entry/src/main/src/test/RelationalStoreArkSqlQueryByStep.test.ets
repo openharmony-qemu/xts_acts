@@ -127,13 +127,13 @@ export default function RelationalStoreArkSqlQueryByStepTest(): void {
     beforeAll(async () => {
       console.info(TAG + 'beforeAll')
       let cmd = "aa start -a EntryAbility -b com.example.relationalstore";
-            let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
-            if(user !== undefined){
-                cmd += ' -u ' + user;
-            }
-            abilityDelegator.executeShellCommand(cmd)
-            await Utils.msSleep(5000)
-            context = AppStorage.get<common.UIAbilityContext>('abilityContextMainAbility2') as common.UIAbilityContext;
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
+      await Utils.msSleep(5000)
+      context = AppStorage.get<common.UIAbilityContext>('abilityContextMainAbility2') as common.UIAbilityContext;
     })
     beforeEach(async () => {
       console.info(TAG + 'beforeEach');
