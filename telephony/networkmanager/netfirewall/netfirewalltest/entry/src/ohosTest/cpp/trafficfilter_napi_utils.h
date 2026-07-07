@@ -13,6 +13,8 @@ public:
     static bool ParseIPMatch(napi_env env, napi_value jsObj, OH_TrafficFilter_IPMatch &ipMatch);
     static bool ParsePortMatch(napi_env env, napi_value jsObj, OH_TrafficFilter_PortMatch &portMatch);
     static bool ParseInterfaceMatch(napi_env env, napi_value jsObj, OH_TrafficFilter_InterfaceMatch &ifMatch);
+    static bool ParseIPAddrElement(napi_env env, napi_value element, int32_t family,
+                                   OH_TrafficFilter_IPAddress &ipAddr);
     static bool ParseIPAddress(napi_env env, napi_value jsObj, OH_TrafficFilter_IPAddress &ipAddr);
     static bool ParseIPCidr(napi_env env, napi_value jsObj, OH_TrafficFilter_IPCidr &cidr);
     static bool ParseIPRange(napi_env env, napi_value jsObj, OH_TrafficFilter_IPRange &range);
