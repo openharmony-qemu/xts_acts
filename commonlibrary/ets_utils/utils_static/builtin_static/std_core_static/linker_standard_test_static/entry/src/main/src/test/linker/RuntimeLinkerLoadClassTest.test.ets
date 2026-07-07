@@ -266,7 +266,7 @@ export default function RuntimeLinkerLoadClassTest(): void {
       const cls = linker.loadClass("std.core.String", false)
       expect(cls.getName()).assertEqual("std.core.String")
       const type = linker.getType("std.core.String")
-      expect(type).not().assertEqual(undefined)
+      expect(type!.toString()).assertEqual("string")
     });
 
     /**
@@ -282,7 +282,7 @@ export default function RuntimeLinkerLoadClassTest(): void {
       const cls = linker.loadClass("std.core.Object", false)
       expect(cls.getName()).assertEqual("std.core.Object")
       const type = linker.getType("std.core.Object")
-      expect(type).not().assertEqual(undefined)
+      expect(type!.toString()).assertEqual("std.core.Object")
     });
 
     /**
@@ -345,7 +345,7 @@ export default function RuntimeLinkerLoadClassTest(): void {
       const cls = linker.loadClass("std.core.Array", false)
       expect(cls.getName()).assertEqual("std.core.Array")
       const type = linker.getType("std.core.Array")
-      expect(type).not().assertEqual(undefined)
+      expect(type!.toString()).assertEqual("std.core.Array")
     });
 
     /**

@@ -54,8 +54,8 @@ export default function RuntimeLinkerTest(): void {
     it('testRuntimeLinker002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const linker1 = getBootRuntimeLinker()
       const linker2 = getBootRuntimeLinker()
-      expect(linker1.getType("std.core.String")).not().assertEqual(undefined)
-      expect(linker2.getType("std.core.String")).not().assertEqual(undefined)
+      expect(linker1.getType("std.core.String")!.toString()).assertEqual("string")
+      expect(linker2.getType("std.core.String")!.toString()).assertEqual("string")
     });
 
     /**
@@ -100,7 +100,7 @@ export default function RuntimeLinkerTest(): void {
       const linker = getBootRuntimeLinker()
       const type = linker.getType("std.core.Object")
       const missingType = linker.getType("runtime.linker.MissingDescriptor")
-      expect(type).not().assertEqual(undefined)
+      expect(type!.toString()).assertEqual("std.core.Object")
       expect(missingType).assertEqual(undefined)
     });
 
@@ -161,7 +161,7 @@ export default function RuntimeLinkerTest(): void {
       const cls = linker.loadClass("std.core.String", false)
       const type = linker.getType("std.core.String")
       expect(cls.getName()).assertEqual("std.core.String")
-      expect(type).not().assertEqual(undefined)
+      expect(type!.toString()).assertEqual("string")
     });
 
     /**
@@ -211,7 +211,7 @@ export default function RuntimeLinkerTest(): void {
       const type = linker.getType("std.core.String")
       expect(cls.getName()).assertEqual("std.core.String")
       expect(found).assertEqual(cls)
-      expect(type).not().assertEqual(undefined)
+      expect(type!.toString()).assertEqual("string")
     });
 
     /**
@@ -243,7 +243,7 @@ export default function RuntimeLinkerTest(): void {
       const cls = linker.loadClass("std.core.String", false)
       const type = linker.getType("std.core.String")
       expect(cls.getName()).assertEqual("std.core.String")
-      expect(type).not().assertEqual(undefined)
+      expect(type!.toString()).assertEqual("string")
     });
 
     /**
@@ -304,7 +304,7 @@ export default function RuntimeLinkerTest(): void {
       const type = linker.getType("std.core.String")
       expect(linker).assertEqual(sameLinker)
       expect(found).assertEqual(cls)
-      expect(type).not().assertEqual(undefined)
+      expect(type!.toString()).assertEqual("string")
     });
 
     /**
@@ -321,7 +321,7 @@ export default function RuntimeLinkerTest(): void {
       const cls = linker.loadClass("std.core.Boolean", false)
       const found = linker.findLoadedClass("std.core.Boolean")
       const typeAfterLoad = linker.getType("std.core.Boolean")
-      expect(typeBeforeLoad).not().assertEqual(undefined)
+      expect(typeBeforeLoad!.toString()).assertEqual("std.core.Boolean")
       expect(found).assertEqual(cls)
       expect(typeAfterLoad).assertEqual(typeBeforeLoad)
     });
@@ -476,7 +476,7 @@ export default function RuntimeLinkerTest(): void {
       const beforeType = linker.getType("std.core.String")
       const loadedClass = linker.loadClass("std.core.String", false)
       const afterType = linker.getType("std.core.String")
-      expect(beforeType).not().assertEqual(undefined)
+      expect(beforeType!.toString()).assertEqual("string")
       expect(afterType).assertEqual(beforeType)
       expect(loadedClass.getName()).assertEqual("std.core.String")
     });
@@ -495,7 +495,7 @@ export default function RuntimeLinkerTest(): void {
       const foundClass = linker.findLoadedClass("std.core.String")
       const typeObject = linker.getType("std.core.String")
       expect(foundClass).assertEqual(loadedClass)
-      expect(typeObject).not().assertEqual(undefined)
+      expect(typeObject!.toString()).assertEqual("string")
       expect(loadedClass.getName()).assertEqual("std.core.String")
     });
 
@@ -547,7 +547,7 @@ export default function RuntimeLinkerTest(): void {
       const beforeType = linker.getType("std.core.Object")
       const loadedClass = linker.loadClass("std.core.Object", false)
       const afterType = linker.getType("std.core.Object")
-      expect(beforeType).not().assertEqual(undefined)
+      expect(beforeType!.toString()).assertEqual("std.core.Object")
       expect(afterType!.toString()).assertEqual(beforeType!.toString())
       expect(loadedClass.getName()).assertEqual("std.core.Object")
     });
@@ -582,7 +582,7 @@ export default function RuntimeLinkerTest(): void {
       const beforeType = linker.getType("std.core.Boolean")
       const loadedClass = linker.loadClass("std.core.Boolean", false)
       const afterType = linker.getType("std.core.Boolean")
-      expect(beforeType).not().assertEqual(undefined)
+      expect(beforeType!.toString()).assertEqual("std.core.Boolean")
       expect(afterType).assertEqual(beforeType)
       expect(loadedClass.getName()).assertEqual("std.core.Boolean")
     });
@@ -601,7 +601,7 @@ export default function RuntimeLinkerTest(): void {
       const foundClass = linker.findLoadedClass("std.core.Boolean")
       const typeObject = linker.getType("std.core.Boolean")
       expect(foundClass).assertEqual(loadedClass)
-      expect(typeObject).not().assertEqual(undefined)
+      expect(typeObject!.toString()).assertEqual("std.core.Boolean")
       expect(loadedClass.getName()).assertEqual("std.core.Boolean")
     });
 
@@ -653,7 +653,7 @@ export default function RuntimeLinkerTest(): void {
       const beforeType = linker.getType("std.core.Byte")
       const loadedClass = linker.loadClass("std.core.Byte", false)
       const afterType = linker.getType("std.core.Byte")
-      expect(beforeType).not().assertEqual(undefined)
+      expect(beforeType!.toString()).assertEqual("std.core.Byte")
       expect(afterType).assertEqual(beforeType)
       expect(loadedClass.getName()).assertEqual("std.core.Byte")
     });
@@ -706,7 +706,7 @@ export default function RuntimeLinkerTest(): void {
       const beforeType = linker.getType("std.core.Short")
       const loadedClass = linker.loadClass("std.core.Short", false)
       const afterType = linker.getType("std.core.Short")
-      expect(beforeType).not().assertEqual(undefined)
+      expect(beforeType!.toString()).assertEqual("std.core.Short")
       expect(afterType).assertEqual(beforeType)
       expect(loadedClass.getName()).assertEqual("std.core.Short")
     });
@@ -759,7 +759,7 @@ export default function RuntimeLinkerTest(): void {
       const beforeType = linker.getType("std.core.Char")
       const loadedClass = linker.loadClass("std.core.Char", false)
       const afterType = linker.getType("std.core.Char")
-      expect(beforeType).not().assertEqual(undefined)
+      expect(beforeType!.toString()).assertEqual("std.core.Char")
       expect(afterType).assertEqual(beforeType)
       expect(loadedClass.getName()).assertEqual("std.core.Char")
     });
@@ -812,7 +812,7 @@ export default function RuntimeLinkerTest(): void {
       const beforeType = linker.getType("std.core.Long")
       const loadedClass = linker.loadClass("std.core.Long", false)
       const afterType = linker.getType("std.core.Long")
-      expect(beforeType).not().assertEqual(undefined)
+      expect(beforeType!.toString()).assertEqual("std.core.Long")
       expect(afterType).assertEqual(beforeType)
       expect(loadedClass.getName()).assertEqual("std.core.Long")
     });
@@ -831,7 +831,7 @@ export default function RuntimeLinkerTest(): void {
       const foundClass = linker.findLoadedClass("std.core.Long")
       const typeObject = linker.getType("std.core.Long")
       expect(foundClass).assertEqual(loadedClass)
-      expect(typeObject).not().assertEqual(undefined)
+      expect(typeObject!.toString()).assertEqual("std.core.Long")
       expect(loadedClass.getName()).assertEqual("std.core.Long")
     });
 
@@ -903,7 +903,7 @@ export default function RuntimeLinkerTest(): void {
       const beforeType = linker.getType("std.core.Float")
       const loadedClass = linker.loadClass("std.core.Float", false)
       const afterType = linker.getType("std.core.Float")
-      expect(beforeType).not().assertEqual(undefined)
+      expect(beforeType!.toString()).assertEqual("std.core.Float")
       expect(afterType).assertEqual(beforeType)
       expect(loadedClass.getName()).assertEqual("std.core.Float")
     });
@@ -956,7 +956,7 @@ export default function RuntimeLinkerTest(): void {
       const beforeType = linker.getType("std.core.Double")
       const loadedClass = linker.loadClass("std.core.Double", false)
       const afterType = linker.getType("std.core.Double")
-      expect(beforeType).not().assertEqual(undefined)
+      expect(beforeType!.toString()).assertEqual("std.core.Double")
       expect(afterType).assertEqual(beforeType)
       expect(loadedClass.getName()).assertEqual("std.core.Double")
     });
@@ -975,7 +975,7 @@ export default function RuntimeLinkerTest(): void {
       const foundClass = linker.findLoadedClass("std.core.Double")
       const typeObject = linker.getType("std.core.Double")
       expect(foundClass).assertEqual(loadedClass)
-      expect(typeObject).not().assertEqual(undefined)
+      expect(typeObject!.toString()).assertEqual("std.core.Double")
       expect(loadedClass.getName()).assertEqual("std.core.Double")
     });
 
@@ -1047,8 +1047,7 @@ export default function RuntimeLinkerTest(): void {
       const beforeType = linker.getType("std.core.Array")
       const loadedClass = linker.loadClass("std.core.Array", false)
       const afterType = linker.getType("std.core.Array")
-      expect(beforeType).not().assertEqual(undefined)
-      expect(afterType).not().assertEqual(undefined)
+      expect(beforeType!.toString()).assertEqual("std.core.Array")
       expect(afterType!.toString()).assertEqual(beforeType!.toString())
       expect(loadedClass.getName()).assertEqual("std.core.Array")
     });
@@ -1098,20 +1097,21 @@ export default function RuntimeLinkerTest(): void {
      */
     it('testRuntimeLinker062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const linker = getBootRuntimeLinker()
-      expect(linker).not().assertEqual(undefined)
+      expect(linker).assertEqual(getBootRuntimeLinker())
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_RUNTIME_LINKER_6300
      * @tc.name testRuntimeLinker063
-     * @tc.desc Verify getBootRuntimeLinker returns a non-null RuntimeLinker instance
+     * @tc.desc Verify getBootRuntimeLinker instance can resolve std.core.Boolean type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testRuntimeLinker063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const linker = getBootRuntimeLinker()
-      expect(linker).not().assertEqual(null)
+      const type = linker.getType("std.core.Boolean")
+      expect(type!.toString()).assertEqual("std.core.Boolean")
     });
 
     /**

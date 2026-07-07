@@ -131,7 +131,7 @@ export default function RuntimeLinkerFindLoadedClassTest(): void {
       const linker = getBootRuntimeLinker()
       const typeObj = linker.getType("std.core.String")
       const foundClass = linker.findLoadedClass("std.core.String")
-      expect(typeObj === undefined).assertFalse()
+      expect(typeObj!.toString()).assertEqual("string")
       expect(foundClass!.getName()).assertEqual("std.core.String")
     });
 
@@ -150,7 +150,7 @@ export default function RuntimeLinkerFindLoadedClassTest(): void {
       const loaded = linker.findLoadedClass("std.core.Boolean")
       expect(loaded).assertEqual(loadedClass)
       expect(loaded!.getName()).assertEqual("std.core.Boolean")
-      expect(booleanType === undefined).assertFalse()
+      expect(booleanType!.toString()).assertEqual("std.core.Boolean")
     });
 
     /**
@@ -296,7 +296,7 @@ export default function RuntimeLinkerFindLoadedClassTest(): void {
       const linker = getBootRuntimeLinker()
       const type = linker.getType("std.core.Char")
       const found = linker.findLoadedClass("std.core.Char")
-      expect(type === undefined).assertFalse()
+      expect(type!.toString()).assertEqual("std.core.Char")
       expect(found!.getName()).assertEqual("std.core.Char")
     });
 
@@ -332,7 +332,7 @@ export default function RuntimeLinkerFindLoadedClassTest(): void {
       const type = linker.getType("std.core.Array")
       const cls = linker.loadClass("std.core.Array", false)
       const found = linker.findLoadedClass("std.core.Array")
-      expect(type === undefined).assertFalse()
+      expect(type!.toString()).assertEqual("std.core.Array")
       expect(found).assertEqual(cls)
     });
 
