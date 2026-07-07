@@ -262,5 +262,40 @@ export default function accessibilityRoleTest() {
         done();
       }
     });
+
+    /**
+     * @tc.name   Test_Security_Button_Accessibility_Description_0100
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Accessibility_Description_0100
+     * @tc.desc   Test SaveComponent accessibilityDescription is SaveAccessibility successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('Test_Security_Button_Accessibility_Description_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+      console.info('====>[Test_Security_Button_Accessibility_Description_0100] START====');
+      await Utils.sleep(1000);
+      try {
+        let eventData:events_emitter.EventData = {
+          data: {
+            'saveRole': SecurityComponentRoleType.BUTTON,
+            'description': 'SaveAccessibility'
+          }
+        }
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info('====>[Test_Security_Button_Accessibility_Description_0100] start to publish emit');
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        console.info('====>[Test_Security_Button_Accessibility_Description_0100] change component data error: ' + err.message);
+      }
+      await Utils.sleep(1000);
+      let strJson = getInspectorByKey('keyAccessibilityRole');
+      let obj : ESObject = JSON.parse(strJson);
+      expect(obj.$attrs.accessibilityDescription).assertEqual('SaveAccessibility');
+      await Utils.sleep(500);
+      done();
+    });
   })
 }
