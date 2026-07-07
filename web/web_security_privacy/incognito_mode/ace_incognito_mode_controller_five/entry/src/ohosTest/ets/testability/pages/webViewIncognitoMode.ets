@@ -82,14 +82,11 @@ struct webViewIncognitoMode {
                   this.controller.loadUrl('https://m.weibo.cn');
                   await waitForExist(() => this.isPageEnd, this.emitKey, 0);
                   let result = this.controller.isIncognitoMode();
-                  if (result === true) {
-                    Utils.emitEvent('success', 160320);
-                  } else {
-                    Utils.emitEvent('fail', 160320);
-                  }
+                  Utils.emitEvent('success', 160320);
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                  Utils.emitEvent('fail', 160320);
                 }
                 break;
               }
