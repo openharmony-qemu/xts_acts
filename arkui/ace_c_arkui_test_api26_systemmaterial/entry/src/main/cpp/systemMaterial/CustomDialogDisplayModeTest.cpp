@@ -54,7 +54,7 @@ napi_value TestCustomDialogSetDisplayModeInSubWindow003(napi_env env, napi_callb
 {
     (void)info;
     ASSERT_EQ(OH_ArkUI_CustomDialog_SetDisplayModeInSubWindow(
-                  nullptr, OH_ARKUI_DIALOG_DISPLAY_MODE_SCREEN_BASED),
+        nullptr, OH_ARKUI_DIALOG_DISPLAY_MODE_SCREEN_BASED),
         INVALID_PARAM);
     NAPI_END;
 }
