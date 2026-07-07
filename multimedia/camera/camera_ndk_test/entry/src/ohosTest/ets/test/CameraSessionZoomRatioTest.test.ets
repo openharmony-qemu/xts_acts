@@ -429,7 +429,6 @@ export default function cameraSessionZoomRatioTest() {
           cameraObj.sessionDeleteZoomPointInfos(0);
         }
         console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0100 PASSED");
-        cameraObj.sessionDeleteZoomPointInfos(0);
       }
       else {
         console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0100 FAILED");
