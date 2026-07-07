@@ -68,6 +68,13 @@ static napi_property_descriptor *GetMaterialProps(size_t *count)
             "testCustomDialogSetSystemMaterialInOptions007", TestCustomDialogSetSystemMaterialInOptions007),
         MakeMaterialProp("testNodeSystemMaterialAttrId001", TestNodeSystemMaterialAttrId001),
         MakeMaterialProp("testNodeSetSystemMaterial001", TestNodeSetSystemMaterial001),
+        MakeMaterialProp("testDialogDisplayModeEnumValues001", TestDialogDisplayModeEnumValues001),
+        MakeMaterialProp("testCustomDialogSetDisplayModeInSubWindow001",
+            TestCustomDialogSetDisplayModeInSubWindow001),
+        MakeMaterialProp("testCustomDialogSetDisplayModeInSubWindow002",
+            TestCustomDialogSetDisplayModeInSubWindow002),
+        MakeMaterialProp("testCustomDialogSetDisplayModeInSubWindow003",
+            TestCustomDialogSetDisplayModeInSubWindow003),
     };
     *count = sizeof(desc) / sizeof(desc[0]);
     return desc;

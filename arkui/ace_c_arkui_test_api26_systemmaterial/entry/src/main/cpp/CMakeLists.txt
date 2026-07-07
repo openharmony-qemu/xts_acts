@@ -14,6 +14,7 @@ add_library(nativefunc SHARED
     NapiFuncInitTest.cpp
     systemMaterial/ImmersiveMaterialTest.cpp
     systemMaterial/CustomDialogMaterialTest.cpp
+    systemMaterial/CustomDialogDisplayModeTest.cpp
     systemMaterial/NodeSystemMaterialTest.cpp
 )
 
